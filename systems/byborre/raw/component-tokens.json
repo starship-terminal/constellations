@@ -1,0 +1,682 @@
+{
+ "_about": "The token tree build_tokens.py turns into tokens.json. byborre.com declares a Tailwind custom-property layer in its Nuxt bundle (raw/css-vars.json) — the --color-primary-* green ramp and --color-gray-DEFAULT, held as rgb() channel triplets — plus measured computed styles (raw/components-computed.json) for the ink/cream neutrals, the yellow hover accent, Helvetica Neue, the 10px control radius and the 0.15s/0.3s motion. The 'dark' set is the #1b1b1b ink surfaces the light page paints (footer, marquee, hero media), not a user-selectable theme.",
+ "core": {
+  "font": {
+   "family": {
+    "sans": {
+     "value": "\"Helvetica Neue\", Arial, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+     "type": "fontFamily",
+     "source": "computed fontFamily of hero-cta default (raw/components-computed.json); @font-face 'Helvetica Neue' 400/500/700 declared in raw/css-vars.json",
+     "description": "The one stack the whole site paints: Helvetica Neue first, Arial and the system sans fallbacks."
+    }
+   },
+   "weight": {
+    "regular": {
+     "value": "400",
+     "type": "fontWeight",
+     "source": "computed fontWeight of nav-link default (raw/components-computed.json)",
+     "description": "Body/nav weight (400)."
+    },
+    "medium": {
+     "value": "500",
+     "type": "fontWeight",
+     "source": "computed fontWeight of page-title default (raw/components-computed.json)",
+     "description": "Display and button-label weight (500)."
+    },
+    "bold": {
+     "value": 700,
+     "type": "fontWeight",
+     "source": "@font-face 'Helvetica Neue' weight 700 in raw/css-vars.json",
+     "description": "The declared bold face; nothing on the captured surface paints it."
+    }
+   },
+   "size": {
+    "display": {
+     "type": "dimension",
+     "value": "80px",
+     "source": "computed fontSize of page-title default (raw/components-computed.json)",
+     "description": "The 80px display (Textile Room, FAQ, Contact titles)."
+    },
+    "display-mobile": {
+     "type": "dimension",
+     "value": "48px",
+     "source": "computed fontSize of m-hero default (raw/components-computed.json)",
+     "description": "The 48px display at 390px."
+    },
+    "h2": {
+     "type": "dimension",
+     "value": "48px",
+     "source": "computed fontSize of section-h2 default (raw/components-computed.json)",
+     "description": "The 48px section heading."
+    },
+    "title": {
+     "type": "dimension",
+     "value": "48px",
+     "source": "computed fontSize of textile-title default (raw/components-computed.json)",
+     "description": "The 48px textile-detail title."
+    },
+    "lede": {
+     "type": "dimension",
+     "value": "24px",
+     "source": "computed fontSize of hero-sub default (raw/components-computed.json)",
+     "description": "The 24px hero lede."
+    },
+    "name": {
+     "type": "dimension",
+     "value": "40px",
+     "source": "computed fontSize of person-card default (raw/components-computed.json)",
+     "description": "The 40px contact-name size."
+    },
+    "body": {
+     "type": "dimension",
+     "value": "16px",
+     "source": "computed fontSize of hero-cta default (raw/components-computed.json)",
+     "description": "The 16px body/button/nav size."
+    },
+    "small": {
+     "type": "dimension",
+     "value": "12px",
+     "source": "computed fontSize of filter-bar default (raw/components-computed.json)",
+     "description": "The 13px small text (filter bar, cards, spec rows, FAQ rows)."
+    },
+    "meta": {
+     "type": "dimension",
+     "value": "12px",
+     "source": "computed fontSize of pattern-dropdown default (raw/components-computed.json)",
+     "description": "The 12px meta size (dropdown trigger, card labels, nav badge)."
+    },
+    "micro": {
+     "type": "dimension",
+     "value": "11px",
+     "source": "computed fontSize of marquee default (raw/components-computed.json)",
+     "description": "The 11px marquee text."
+    },
+    "foot": {
+     "type": "dimension",
+     "value": "10px",
+     "source": "computed fontSize of footer-link default (raw/components-computed.json)",
+     "description": "The 10px footer links."
+    }
+   },
+   "lineHeight": {
+    "display": {
+     "type": "dimension",
+     "value": "84px",
+     "source": "computed lineHeight of page-title default (raw/components-computed.json)",
+     "description": "Display leading (84px on 80px type)."
+    },
+    "h2": {
+     "type": "dimension",
+     "value": "53px",
+     "source": "computed lineHeight of section-h2 default (raw/components-computed.json)",
+     "description": "Heading leading."
+    },
+    "lede": {
+     "type": "dimension",
+     "value": "32px",
+     "source": "computed lineHeight of hero-sub default (raw/components-computed.json)",
+     "description": "Lede leading."
+    },
+    "body": {
+     "type": "dimension",
+     "value": "24px",
+     "source": "computed lineHeight of hero-cta default (raw/components-computed.json)",
+     "description": "Body/button leading."
+    },
+    "small": {
+     "type": "dimension",
+     "value": "16px",
+     "source": "computed lineHeight of filter-bar default (raw/components-computed.json)",
+     "description": "Small-text leading."
+    },
+    "micro": {
+     "type": "dimension",
+     "value": "12px",
+     "source": "computed lineHeight of marquee default (raw/components-computed.json)",
+     "description": "Marquee leading."
+    }
+   }
+  },
+  "color": {
+   "neutral": {
+    "ink": {
+     "value": "#1b1b1b",
+     "type": "color",
+     "source": "computed color of hero-cta default (raw/components-computed.json)",
+     "description": "The black-BRAND ink #1b1b1b: all text, the dark button fill, the footer/marquee panels and the focus ring."
+    },
+    "cream": {
+     "value": "#f5f5f0",
+     "type": "color",
+     "source": "computed backgroundColor of filter-bar default (raw/components-computed.json)",
+     "description": "The cream #f5f5f0 canvas — page field, filter bar, secondary buttons, view tabs and the mobile menu."
+    },
+    "field": {
+     "value": "#ffffff",
+     "type": "color",
+     "source": "computed backgroundColor of text-field default (raw/components-computed.json)",
+     "description": "The white #ffffff fill inside the 1px field border."
+    },
+    "line": {
+     "value": "#ccccc4",
+     "type": "color",
+     "source": "computed borderTopColor of text-field default (raw/components-computed.json)",
+     "description": "The cream-300 #ccccc4 on every field, tab, dropdown, colour-chip ring and mobile-menu row border."
+    },
+    "muted": {
+     "value": "#646e69",
+     "type": "color",
+     "source": "computed placeholder of text-field default (raw/components-computed.json)",
+     "description": "The cream-500 #646e69 on field placeholders and text-link hover."
+    },
+    "hairline": {
+     "value": "rgb(229, 229, 225)",
+     "type": "color",
+     "source": "painted layer border of filter-bar default (raw/components-computed.json)",
+     "description": "The cream-200 #e5e5e1 hairline painted inside the collection filter bar."
+    },
+    "icon-muted": {
+     "value": "rgb(153, 153, 147)",
+     "type": "color",
+     "source": "painted layer bg of view-tab default (raw/components-computed.json)",
+     "description": "The cream-400 #999993 on the tabs' + icon, the Collaboration badge outline and the colour-chip hover ring."
+    },
+    "divider-dark": {
+     "value": "rgb(69, 69, 66)",
+     "type": "color",
+     "source": "painted layer border of footer default (raw/components-computed.json)",
+     "description": "The cream-600 #454542 divider inside the ink footer panel."
+    },
+    "grey": {
+     "var": "--color-gray-DEFAULT",
+     "type": "color",
+     "description": "The declared --color-gray-DEFAULT channel triplet #7c7c7c."
+    }
+   },
+   "brand": {
+    "primary-50": {
+     "var": "--color-primary-50",
+     "type": "color",
+     "description": "The declared primary 50 channel triplet (Tailwind rgb(var(--color-primary-50) / a))."
+    },
+    "primary-100": {
+     "var": "--color-primary-100",
+     "type": "color",
+     "description": "The declared primary 100 channel triplet (Tailwind rgb(var(--color-primary-100) / a))."
+    },
+    "primary-200": {
+     "var": "--color-primary-200",
+     "type": "color",
+     "description": "The declared primary 200 channel triplet (Tailwind rgb(var(--color-primary-200) / a))."
+    },
+    "primary-300": {
+     "var": "--color-primary-300",
+     "type": "color",
+     "description": "The declared primary 300 channel triplet (Tailwind rgb(var(--color-primary-300) / a))."
+    },
+    "primary-400": {
+     "var": "--color-primary-400",
+     "type": "color",
+     "description": "The declared primary 400 channel triplet (Tailwind rgb(var(--color-primary-400) / a))."
+    },
+    "primary-500": {
+     "var": "--color-primary-500",
+     "type": "color",
+     "description": "The declared primary 500 channel triplet (Tailwind rgb(var(--color-primary-500) / a))."
+    },
+    "primary-600": {
+     "var": "--color-primary-600",
+     "type": "color",
+     "description": "The declared primary 600 channel triplet (Tailwind rgb(var(--color-primary-600) / a))."
+    },
+    "primary-700": {
+     "var": "--color-primary-700",
+     "type": "color",
+     "description": "The declared primary 700 channel triplet (Tailwind rgb(var(--color-primary-700) / a))."
+    },
+    "primary-800": {
+     "var": "--color-primary-800",
+     "type": "color",
+     "description": "The declared primary 800 channel triplet (Tailwind rgb(var(--color-primary-800) / a))."
+    },
+    "primary-900": {
+     "var": "--color-primary-900",
+     "type": "color",
+     "description": "The declared primary 900 channel triplet (Tailwind rgb(var(--color-primary-900) / a))."
+    },
+    "primary-950": {
+     "var": "--color-primary-950",
+     "type": "color",
+     "description": "The declared primary 950 channel triplet (Tailwind rgb(var(--color-primary-950) / a))."
+    },
+    "primary": {
+     "var": "--color-primary-DEFAULT",
+     "type": "color",
+     "description": "primary DEFAULT: 500 in light, 400 under .dark."
+    },
+    "accent": {
+     "value": "#fae210",
+     "type": "color",
+     "source": "computed backgroundColor of order-cta hover (raw/components-computed.json)",
+     "description": "The #fae210 yellow every ink button and the hero CTA takes on hover — the site's signature accent."
+    },
+    "accent-border": {
+     "value": "#c8b50d",
+     "type": "color",
+     "source": "computed borderTopColor of order-cta hover (raw/components-computed.json)",
+     "description": "The deeper #c8b50d edge the yellow hover keeps."
+    }
+   }
+  },
+  "radius": {
+   "control": {
+    "value": "10px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of hero-cta default (raw/components-computed.json)",
+    "description": "The 10px radius on buttons, fields, tabs and the dropdown trigger."
+   },
+   "link": {
+    "value": "8px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of nav-link default (raw/components-computed.json)",
+    "description": "The 8px radius on nav links, flyout links, swatches and menu rows."
+   },
+   "panel": {
+    "value": "24px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of footer default (raw/components-computed.json)",
+    "description": "The 24px top radius on the ink footer panel."
+   },
+   "chip": {
+    "value": "9999px",
+    "type": "dimension",
+    "source": "painted layer radius of colour-chip (raw/components-computed.json)",
+    "description": "The 9999px pill on colour chips, the card badge and the card's circle actions."
+   },
+   "card": {
+    "value": "10px",
+    "type": "dimension",
+    "source": "painted layer radius of textile-card (raw/components-computed.json)",
+    "description": "The 10px radius on the textile-card image tile."
+   }
+  },
+  "measured": {
+   "focus-ring": {
+    "value": [
+     {
+      "color": "#ffffff",
+      "offsetX": "0px",
+      "offsetY": "0px",
+      "blur": "0px",
+      "spread": "0px",
+      "inset": true
+     },
+     {
+      "color": "#1b1b1b",
+      "offsetX": "0px",
+      "offsetY": "0px",
+      "blur": "0px",
+      "spread": "2px",
+      "inset": true
+     },
+     {
+      "color": "rgba(0, 0, 0, 0)",
+      "offsetX": "0px",
+      "offsetY": "0px",
+      "blur": "0px",
+      "spread": "0px",
+      "inset": false
+     }
+    ],
+    "type": "shadow",
+    "source": "computed boxShadow of nav-link focus-visible (raw/components-computed.json)",
+    "description": "The keyboard-focus ring on links/buttons/fields: a white 0-spread layer plus a 2px ink ring drawn inset — the outline itself is 2px rgba(0,0,0,0) offset 2px."
+   },
+   "focus-accent": {
+    "value": "#00e606",
+    "type": "color",
+    "source": "computed outlineColor of textile-card focus-visible (raw/components-computed.json)",
+    "description": "The #00e606 primary outline links and cards take on keyboard focus (1px auto)."
+   },
+   "focus-fallback": {
+    "value": "#005fcc",
+    "type": "color",
+    "source": "computed outlineColor of faq-question focus-visible (raw/components-computed.json)",
+    "description": "The #005fcc UA fallback outline the FAQ rows and view tabs get — the site styles no ring on them."
+   },
+   "chip-hover-border": {
+    "value": "#999993",
+    "type": "color",
+    "source": "painted layer border of colour-chip hover (raw/components-computed.json)",
+    "description": "The #999993 ring a colour chip takes on hover (was #ccccc4)."
+   },
+   "dropdown-hover": {
+    "value": "rgba(0, 0, 0, 0.1)",
+    "type": "color",
+    "source": "computed backgroundColor of pattern-dropdown hover (raw/components-computed.json)",
+    "description": "The 10%-black wash the Pattern dropdown gets on hover."
+   },
+   "card-scrim": {
+    "value": "rgba(0, 0, 0, 0.3)",
+    "type": "color",
+    "source": "painted scrim layer of textile-card default (raw/components-computed.json)",
+    "description": "The 30%-black scrim over textile-card imagery."
+   },
+   "chip-blue": {
+    "value": "#0e4c92",
+    "type": "color",
+    "source": "painted swatch fill of colour-chip default (raw/components-computed.json)",
+    "description": "The #0e4c92 fill the BLUE colour chip paints — a textile colour, not a UI role."
+   },
+   "control-transition": {
+    "value": "0.15s",
+    "type": "duration",
+    "source": "computed transition of hero-cta default (raw/components-computed.json)",
+    "description": "The 0.15s control transition (colour/background). (all)"
+   },
+   "link-transition": {
+    "value": "0.15s",
+    "type": "duration",
+    "source": "computed transition of nav-link default (raw/components-computed.json)",
+    "description": "The nav link's 0.15s transition. (color, background-color, border-color, text-decoration-color, fill, stroke)"
+   },
+   "pressed-scale": {
+    "value": 0.98,
+    "type": "number",
+    "source": "pressed rect / default rect of hero-cta (raw/components-computed.json)",
+    "description": "The 0.98 scale a pressed button takes."
+   },
+   "marquee-duration": {
+    "value": "10000ms",
+    "type": "duration",
+    "source": "animation 'marquee-063d6d2b' 10s linear infinite in the readable stylesheet (raw/css-vars.json) and the reducedMotion probe in raw/components-computed.json",
+    "description": "The top ticker's 10s linear scroll; it keeps running under prefers-reduced-motion."
+   },
+   "fade-300": {
+    "value": "300ms",
+    "type": "duration",
+    "source": "transition declarations in the readable sheets (raw/components-computed.json _meta.sheets)",
+    "description": "The 0.3s cubic-bezier(0.4,0,0.2,1) opacity/transform/max-height the site's toggles declare."
+   },
+   "ease-default": {
+    "value": [
+     0.4,
+     0,
+     0.2,
+     1
+    ],
+    "type": "cubicBezier",
+    "source": "transition declarations in the readable sheets (raw/components-computed.json _meta.sheets)",
+    "description": "The cubic-bezier(0.4,0,0.2,1) easing on the 0.3s toggles."
+   }
+  }
+ },
+ "light": {
+  "text": {
+   "primary": {
+    "value": "{color.neutral.ink}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "Body and display ink."
+   },
+   "muted": {
+    "value": "{color.neutral.muted}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "Placeholders and text-link hover."
+   },
+   "on": {
+    "dark": {
+     "value": "#ffffff",
+     "type": "color",
+     "source": "computed color of footer-link/hero-title (raw/components-computed.json)",
+     "description": "The white on the ink footer, marquee and hero media."
+    },
+    "action": {
+     "value": "{color.neutral.cream}",
+     "type": "color",
+     "source": "role alias over the core palette",
+     "description": "The cream label on the ink buttons."
+    }
+   }
+  },
+  "surface": {
+   "page": {
+    "value": "{color.neutral.cream}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The cream page field."
+   },
+   "field": {
+    "value": "{color.neutral.field}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The white field fill."
+   },
+   "alt": {
+    "value": "{color.neutral.cream}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "View tabs, filter bar, mobile menu and secondary buttons."
+   }
+  },
+  "action": {
+   "primary": {
+    "default": {
+     "value": "{color.neutral.ink}",
+     "type": "color",
+     "source": "role alias over the core palette",
+     "description": "The ink button fill."
+    },
+    "hover": {
+     "value": "{color.brand.accent}",
+     "type": "color",
+     "source": "role alias over the core palette",
+     "description": "The yellow every ink button takes on hover."
+    }
+   }
+  },
+  "border": {
+   "field": {
+    "value": "{color.neutral.line}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The 1px field/tab/dropdown border."
+   },
+   "hairline": {
+    "value": "{color.neutral.hairline}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The #e5e5e1 hairline."
+   },
+   "focus": {
+    "value": "{color.neutral.icon-muted}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The colour-chip ring's hover tone (#999993)."
+   }
+  },
+  "divider": {
+   "on": {
+    "dark": {
+     "value": "{color.neutral.divider-dark}",
+     "type": "color",
+     "source": "role alias over the core palette",
+     "description": "The footer divider on ink."
+    }
+   }
+  },
+  "icon": {
+   "muted": {
+    "value": "{color.neutral.icon-muted}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "Muted glyph colour (+ icons, badge outline)."
+   }
+  }
+ },
+ "dark": {
+  "text": {
+   "primary": {
+    "value": "#ffffff",
+    "type": "color",
+    "source": "computed color of footer/hero-title over ink (raw/components-computed.json)",
+    "description": "Text on the ink surfaces (footer links, hero title over dark media)."
+   },
+   "on": {
+    "dark": {
+     "value": "#ffffff",
+     "type": "color",
+     "source": "computed color of footer/hero-title over ink (raw/components-computed.json)",
+     "description": "White on ink."
+    },
+    "action": {
+     "value": "{color.neutral.cream}",
+     "type": "color",
+     "source": "role alias over the core palette",
+     "description": "Cream on the ink buttons."
+    }
+   },
+   "secondary": {
+    "value": "{color.neutral.cream}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The #f5f5f0 label on the ink buttons and the marquee bar."
+   }
+  },
+  "surface": {
+   "page": {
+    "value": "{color.neutral.ink}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The ink surface: footer panel, marquee bar, hero media."
+   }
+  },
+  "action": {
+   "primary": {
+    "default": {
+     "value": "{color.neutral.ink}",
+     "type": "color",
+     "source": "role alias over the core palette",
+     "description": "The ink button fill (unchanged)."
+    },
+    "hover": {
+     "value": "{color.brand.accent}",
+     "type": "color",
+     "source": "role alias over the core palette",
+     "description": "The same yellow hover accent."
+    }
+   }
+  },
+  "divider": {
+   "value": "{color.neutral.divider-dark}",
+   "type": "color",
+   "source": "role alias over the core palette",
+   "description": "The #454542 footer divider."
+  },
+  "border": {
+   "focus": {
+    "value": "{color.brand.primary}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The #00e606 primary focus outline on links and cards."
+   }
+  }
+ },
+ "component": {
+  "button": {
+   "height": {
+    "type": "dimension",
+    "value": "48px",
+    "source": "computed height of hero-cta default (raw/components-computed.json)",
+    "description": "The 48px primary/secondary button height."
+   }
+  },
+  "field": {
+   "height": {
+    "type": "dimension",
+    "value": "48px",
+    "source": "computed height of text-field default (raw/components-computed.json)",
+    "description": "The 48px field height."
+   }
+  },
+  "tab": {
+   "height": {
+    "type": "dimension",
+    "value": "36px",
+    "source": "computed height of view-tab default (raw/components-computed.json)",
+    "description": "The 36px view-tab height."
+   }
+  },
+  "dropdown": {
+   "height": {
+    "type": "dimension",
+    "value": "32px",
+    "source": "computed height of pattern-dropdown default (raw/components-computed.json)",
+    "description": "The 32px dropdown-trigger height."
+   }
+  },
+  "chip": {
+   "size": {
+    "type": "dimension",
+    "value": "32px",
+    "source": "computed height of colour-chip default (raw/components-computed.json)",
+    "description": "The 32px colour-chip circle."
+   }
+  },
+  "iconbutton": {
+   "size": {
+    "type": "dimension",
+    "value": "32px",
+    "source": "computed width of cart-button default (raw/components-computed.json)",
+    "description": "The 32px header icon buttons."
+   }
+  },
+  "navlink": {
+   "height": {
+    "type": "dimension",
+    "value": "28px",
+    "source": "computed height of nav-link default (raw/components-computed.json)",
+    "description": "The 28px nav-link row."
+   }
+  },
+  "menurow": {
+   "height": {
+    "type": "dimension",
+    "value": "48px",
+    "source": "computed height of m-nav-item default (raw/components-computed.json)",
+    "description": "The 48px mobile-menu row."
+   }
+  },
+  "header": {
+   "height": {
+    "type": "dimension",
+    "value": "57px",
+    "source": "computed height of header default (raw/components-computed.json)",
+    "description": "The 57px desktop header."
+   },
+   "height-mobile": {
+    "type": "dimension",
+    "value": "64px",
+    "source": "computed height of m-header default (raw/components-computed.json)",
+    "description": "The 64px mobile header."
+   }
+  },
+  "flyout": {
+   "height": {
+    "type": "dimension",
+    "value": "210px",
+    "source": "computed height of nav-dropdown default (raw/components-computed.json)",
+    "description": "The 210px nav flyout."
+   }
+  },
+  "faqrow": {
+   "height": {
+    "type": "dimension",
+    "value": "56px",
+    "source": "computed height of faq-question default (raw/components-computed.json)",
+    "description": "The 56px accordion row."
+   }
+  }
+ }
+}

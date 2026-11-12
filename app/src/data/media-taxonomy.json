@@ -906,6 +906,11 @@
       "referenceId": "systems:buymeacoffee",
       "media": 177,
       "assignedMedia": 41
+    },
+    {
+      "referenceId": "systems:byborre",
+      "media": 166,
+      "assignedMedia": 166
     }
   ],
   "assignments": [
@@ -197581,6 +197586,2197 @@
           "termId": "web-ux-patterns:searching",
           "rule": "ux-search",
           "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/screenshots/brands-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/screenshots/brands-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/screenshots/collection-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/screenshots/collection-light-filtered.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/screenshots/collection-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/screenshots/contact-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:contacts",
+          "rule": "page-contacts",
+          "reason": "Capture filename explicitly names contacts; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/screenshots/contact-light-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:contacts",
+          "rule": "page-contacts",
+          "reason": "Capture filename explicitly names contacts; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/screenshots/creative-control-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/screenshots/creative-control-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/screenshots/designers-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/screenshots/designers-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/screenshots/faq-light-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/screenshots/faq-light-full.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/screenshots/faq-light-open.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/screenshots/founders-story-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/screenshots/founders-story-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/screenshots/home-light-cart.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/screenshots/home-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/screenshots/home-light-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/screenshots/home-light-menu.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/screenshots/knit-innovation-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/screenshots/knit-innovation-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/screenshots/login-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:log-in",
+          "rule": "page-login",
+          "reason": "Capture filename explicitly names log in; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/screenshots/mobile-collection-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/screenshots/mobile-collection-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/screenshots/mobile-home-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/screenshots/mobile-home-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/screenshots/mobile-home-light-menu.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/screenshots/popup-store-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/screenshots/popup-store-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/screenshots/privacy-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/screenshots/projects-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/screenshots/projects-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/screenshots/responsibility-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/screenshots/responsibility-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/screenshots/team-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/screenshots/team-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/screenshots/terms-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/screenshots/textile-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/screenshots/textile-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/screenshots/textile-light-render.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/screenshots/ways-of-working-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/screenshots/ways-of-working-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/account-button-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/account-button-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/account-button-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/account-button-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/cart-button-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/cart-button-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/cart-button-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/cart-button-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/colour-chip-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/colour-chip-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/colour-chip-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/colour-chip-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/contact-title-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/email-field-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/email-field-focused.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/faq-question-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/faq-question-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/faq-question-hover.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/faq-question-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/faq-title-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/filter-bar-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/flyout-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/flyout-card-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/flyout-card-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/flyout-card-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/footer-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/footer-link-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/footer-link-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/footer-link-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/footer-link-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/forgot-link-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/forgot-link-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/forgot-link-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/forgot-link-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/header-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/hero-cta-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/hero-cta-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/hero-cta-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/hero-cta-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/hero-sub-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/hero-title-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/login-button-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/login-button-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/login-button-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/login-button-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/login-dialog-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dialog-modal-window",
+          "rule": "ui-dialog",
+          "reason": "Capture filename explicitly names dialog & modal window; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/login-email-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/login-email-filled.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/login-email-focused.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/login-password-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/login-password-focused.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/logo-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/m-header-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/m-hero-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/m-login-button-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/m-login-button-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/m-login-button-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/m-login-button-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/m-menu-button-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/m-menu-open-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/m-nav-item-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/m-nav-item-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/m-nav-item-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/m-nav-item-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/marquee-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/menu-link-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/menu-link-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/menu-link-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/menu-link-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/nav-badge-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:badge",
+          "rule": "ui-badge",
+          "reason": "Capture filename explicitly names badge; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/nav-dropdown-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dropdown",
+          "rule": "ui-dropdown",
+          "reason": "Capture filename explicitly names dropdown; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/nav-link-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/nav-link-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/nav-link-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/nav-link-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/nav-trigger-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/nav-trigger-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/nav-trigger-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/nav-trigger-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/order-cta-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/order-cta-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/order-cta-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/order-cta-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/page-title-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/pattern-dropdown-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dropdown",
+          "rule": "ui-dropdown",
+          "reason": "Capture filename explicitly names dropdown; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/pattern-dropdown-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dropdown",
+          "rule": "ui-dropdown",
+          "reason": "Capture filename explicitly names dropdown; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/pattern-dropdown-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dropdown",
+          "rule": "ui-dropdown",
+          "reason": "Capture filename explicitly names dropdown; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/pattern-dropdown-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dropdown",
+          "rule": "ui-dropdown",
+          "reason": "Capture filename explicitly names dropdown; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/person-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/section-h2-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/select-field-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/select-field-focused.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/signup-link-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/signup-link-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/signup-link-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/signup-link-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/social-icon-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:icon",
+          "rule": "ui-icon",
+          "reason": "Capture filename explicitly names icon; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/social-icon-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:icon",
+          "rule": "ui-icon",
+          "reason": "Capture filename explicitly names icon; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/social-icon-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:icon",
+          "rule": "ui-icon",
+          "reason": "Capture filename explicitly names icon; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/social-icon-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:icon",
+          "rule": "ui-icon",
+          "reason": "Capture filename explicitly names icon; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/spec-row-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/submit-button-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/submit-button-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/submit-button-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/submit-button-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/swatch-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/swatch-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/swatch-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/swatch-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/text-area-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/text-area-focused.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/text-field-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:text-field",
+          "rule": "ui-text-field",
+          "reason": "Capture filename explicitly names text field; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/text-field-filled.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:text-field",
+          "rule": "ui-text-field",
+          "reason": "Capture filename explicitly names text field; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/text-field-focused.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:text-field",
+          "rule": "ui-text-field",
+          "reason": "Capture filename explicitly names text field; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/textile-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/textile-card-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/textile-card-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/textile-card-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/textile-title-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/view-tab-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/view-tab-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/view-tab-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:byborre",
+      "mediaId": "systems/byborre/components/crops/view-tab-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
         }
       ]
     }

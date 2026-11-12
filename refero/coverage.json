@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 87,
-    "system_domains": 79,
-    "matched_domains": 54,
-    "missing_domains": 379,
+    "system_packages": 88,
+    "system_domains": 80,
+    "matched_domains": 55,
+    "missing_domains": 378,
     "system_domains_absent_from_catalog": 25
   },
   "matched": {
@@ -666,6 +666,23 @@
         }
       ]
     },
+    "byborre.com": {
+      "catalog": [
+        {
+          "name": "BYBORRE®",
+          "domain": "byborre.com",
+          "id": 455
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "byborre",
+          "name": "BYBORRE",
+          "url": "https://byborre.com",
+          "name_match": true
+        }
+      ]
+    },
     "cakeequity.com": {
       "catalog": [
         {
@@ -1004,13 +1021,6 @@
         "name": "Bento",
         "domain": "bento.me",
         "id": 284
-      }
-    ],
-    "byborre.com": [
-      {
-        "name": "BYBORRE®",
-        "domain": "byborre.com",
-        "id": 455
       }
     ],
     "calendly.com": [
