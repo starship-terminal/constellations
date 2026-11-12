@@ -6552,6 +6552,104 @@
    "layoutGaps": {
     "icons/": "the icon extraction pass was not run; the icons (the BYBORRE wordmark, the iconify Material-Design glyphs, the social glyphs and the textile photography) are visible in the crops and screenshots"
    }
+  },
+  {
+   "slug": "calendly",
+   "name": "Calendly",
+   "url": "https://calendly.com",
+   "category": "productivity",
+   "platform": "web",
+   "goodFor": "Scheduling-product marketing plus a real invitee flow: a declared --color-*/--text-ui-* token layer on a #fcfbf8 magnolia field with midnight #071a31 pill buttons and .dark islands, Calendly Sans/Geist/Wulkan Text type, 48px-radius auth cards, and the public booking calendar in a second token system (Proxima Nova, #006bff selected fills, #f4f8ff day wash, #004eba links)",
+   "tags": [
+    "web",
+    "scheduling",
+    "calendar",
+    "saas",
+    "marketing",
+    "astro",
+    "tailwind",
+    "booking",
+    "light",
+    "dark-islands",
+    "signed-out"
+   ],
+   "shape": "reference",
+   "captured": "2026-11-12",
+   "access": "signed out (every captured surface is public; the workspace, event-type editor, integrations and billing sit behind /app/login and were never reached; the invitee confirmation past a time slot was never opened)",
+   "themes": [
+    "light",
+    "dark"
+   ],
+   "widths": [
+    1440,
+    390
+   ],
+   "entry": "systems/calendly/README.md",
+   "tokens": "systems/calendly/tokens.json",
+   "styleGuide": "systems/calendly/style-guide.html",
+   "preview": {
+    "cover": "systems/calendly/screenshots/home-light-default.png",
+    "icon": "systems/calendly/icon.png",
+    "swatches": {
+     "light": {
+      "page": "core.color.neutral.magnolia",
+      "surface": "core.color.neutral.white",
+      "text": "core.color.neutral.midnight",
+      "muted": "core.color.neutral.steel",
+      "accent": "core.color.brand.cornflower",
+      "border": "core.color.neutral.silver"
+     },
+     "dark": {
+      "page": "core.color.neutral.midnight",
+      "surface": "core.color.brand.navy",
+      "text": "core.color.neutral.magnolia",
+      "muted": "core.color.neutral.alpha.magnolia-a70",
+      "accent": "core.color.brand.cornflower",
+      "border": "core.color.neutral.alpha.magnolia-a20"
+     }
+    },
+    "fonts": [
+     "core.font.family.sans",
+     "core.font.family.body",
+     "core.font.family.serif",
+     "core.font.family.booking"
+    ]
+   },
+   "capture": {
+    "method": "public-web",
+    "source": "calendly.com (an Astro/Tailwind marketing site declaring a --color-*/--text-ui-*/--radius-ui-* token layer with .dark islands, plus the public invitee booking pages on /calendly-demo — a separate booking-kit application with its own --coreColor*/--primary-color* layer in Proxima Nova) in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and crops from the live DOM. Both token layers are declared and used directly; the booking calendar's painted blues (#006bff, #004eba, #f4f8ff) are atomic classes measured on the elements. The workspace behind /app/login is a documented boundary",
+    "timestamp": "2026-11-12T10:00:00Z",
+    "harness": "Devin",
+    "model": "SWE-2 High",
+    "route": "public-web",
+    "routes": [
+     "/",
+     "/scheduling",
+     "/pricing",
+     "/about",
+     "/solutions/enterprise",
+     "/login",
+     "/signup",
+     "/calendly-demo",
+     "/calendly-demo/dog-nail-trim-shampoo-small",
+     "mobile / and /calendly-demo/dog-nail-trim-shampoo-small"
+    ],
+    "gaps": [
+     "the signed-in workspace entirely: event types, availability, meetings, routing, workflows, contacts, integrations, analytics and billing live behind /app/login and were never reached",
+     "/login and /signup were captured as surfaces, never filled or submitted",
+     "the invitee confirmation past a time slot (name/email form, $53 payment step) was never reached; a day was selected but nothing was booked",
+     "/integrations redirects to /app/login signed out",
+     "/enterprise returns 404 (the enterprise page is /solutions/enterprise)",
+     "menu-link pressed recorded a failed state (the mega-menu closes on the forced press)",
+     "icons: no standalone SVG set lifted this pass"
+    ],
+    "durationMin": 50,
+    "durationNote": "worktree creation to package-complete commit, 2026-11-12",
+    "pr": "https://github.com/starship-terminal/constellations/pull/493"
+   },
+   "layoutGaps": {
+    "icons/": "the icon extraction pass was not run; the icons (the Calendly wordmark, the Google SSO glyph, product illustrations and the booking pages' glyphs) are visible in the crops and screenshots"
+   }
   }
  ]
 }

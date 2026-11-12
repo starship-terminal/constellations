@@ -1,0 +1,2552 @@
+{
+ "_about": "The token tree build_tokens.py turns into tokens.json. calendly.com's marketing site declares a --color-*/--text-ui-*/--radius-ui-* design-token layer in its Astro stylesheets and paints it light with .dark islands; the public booking pages are a second application declaring a booking-kit token layer (--coreColor*/--primary-color*/--fontFamily* plus the same --color-* names) and painting light. Declared variables become var leaves (booking variables carry resolve: bookingLight); the painted booking blues and measured geometry are measured leaves from raw/components-computed.json.",
+ "core": {
+  "font": {
+   "family": {
+    "sans": {
+     "var": "--font-calendly-sans",
+     "type": "fontFamily",
+     "description": "Calendly Sans: headings, the wordmark, nav and button labels."
+    },
+    "body": {
+     "var": "--font-geist",
+     "type": "fontFamily",
+     "description": "Geist: the marketing body and form-text stack."
+    },
+    "serif": {
+     "var": "--font-wulkan",
+     "type": "fontFamily",
+     "description": "Wulkan Text: the editorial serif on section headings and pull quotes."
+    },
+    "system": {
+     "var": "--font-system",
+     "type": "fontFamily",
+     "description": "The plain system fallback stack."
+    },
+    "mono": {
+     "var": "--font-mono",
+     "type": "fontFamily",
+     "description": "The monospace stack (declared, used on code and IDs)."
+    },
+    "booking": {
+     "value": "\"Proxima Nova\", sans-serif",
+     "type": "fontFamily",
+     "source": "computed fontFamily of bk-timeslot default (raw/components-computed.json)",
+     "description": "Proxima Nova: the booking application's stack."
+    }
+   },
+   "size": {
+    "huge": {
+     "var": "--text-ui-huge",
+     "type": "dimension",
+     "description": "Declared --text-ui-huge step of the marketing type ramp."
+    },
+    "h1": {
+     "var": "--text-ui-h1",
+     "type": "dimension",
+     "description": "Declared --text-ui-h1 step of the marketing type ramp."
+    },
+    "h2": {
+     "var": "--text-ui-h2",
+     "type": "dimension",
+     "description": "Declared --text-ui-h2 step of the marketing type ramp."
+    },
+    "h3": {
+     "var": "--text-ui-h3",
+     "type": "dimension",
+     "description": "Declared --text-ui-h3 step of the marketing type ramp."
+    },
+    "h4": {
+     "var": "--text-ui-h4",
+     "type": "dimension",
+     "description": "Declared --text-ui-h4 step of the marketing type ramp."
+    },
+    "h5": {
+     "var": "--text-ui-h5",
+     "type": "dimension",
+     "description": "Declared --text-ui-h5 step of the marketing type ramp."
+    },
+    "h6": {
+     "var": "--text-ui-h6",
+     "type": "dimension",
+     "description": "Declared --text-ui-h6 step of the marketing type ramp."
+    },
+    "body-xl": {
+     "var": "--text-ui-body-xl",
+     "type": "dimension",
+     "description": "Declared --text-ui-body-xl step of the marketing type ramp."
+    },
+    "body-lg": {
+     "var": "--text-ui-body-lg",
+     "type": "dimension",
+     "description": "Declared --text-ui-body-lg step of the marketing type ramp."
+    },
+    "body-md": {
+     "var": "--text-ui-body-md",
+     "type": "dimension",
+     "description": "Declared --text-ui-body-md step of the marketing type ramp."
+    },
+    "body-sm": {
+     "var": "--text-ui-body-sm",
+     "type": "dimension",
+     "description": "Declared --text-ui-body-sm step of the marketing type ramp."
+    },
+    "body-xs": {
+     "var": "--text-ui-body-xs",
+     "type": "dimension",
+     "description": "Declared --text-ui-body-xs step of the marketing type ramp."
+    },
+    "caption": {
+     "var": "--text-ui-caption",
+     "type": "dimension",
+     "description": "Declared --text-ui-caption step of the marketing type ramp."
+    },
+    "overline": {
+     "var": "--text-ui-overline",
+     "type": "dimension",
+     "description": "Declared --text-ui-overline step of the marketing type ramp."
+    },
+    "booking-body": {
+     "var": "--fontSizeBodyMedium",
+     "type": "dimension",
+     "resolve": "bookingLight",
+     "description": "Booking declared body size (14px)."
+    },
+    "booking-slot": {
+     "value": "16px",
+     "type": "dimension",
+     "source": "computed fontSize of bk-timeslot default (raw/components-computed.json)",
+     "description": "The time-slot label size (16px)."
+    },
+    "mobile-hero": {
+     "value": "40px",
+     "type": "dimension",
+     "source": "computed fontSize of m-hero default (raw/components-computed.json)",
+     "description": "The hero size at 390px."
+    },
+    "booking-body-large": {
+     "var": "--fontSizeBodyLarge",
+     "type": "dimension",
+     "resolve": "bookingLight",
+     "description": "Booking declared large body (16px)."
+    },
+    "booking-small": {
+     "var": "--fontSizeBodySmall",
+     "type": "dimension",
+     "resolve": "bookingLight",
+     "description": "Booking declared small text (12px)."
+    },
+    "booking-headline-1": {
+     "var": "--fontSizeHeadline1",
+     "type": "dimension",
+     "resolve": "bookingLight",
+     "description": "Booking headline 1 (32px)."
+    },
+    "booking-headline-2": {
+     "var": "--fontSizeHeadline2",
+     "type": "dimension",
+     "resolve": "bookingLight",
+     "description": "Booking headline 2 (28px)."
+    },
+    "booking-headline-3": {
+     "var": "--fontSizeHeadline3",
+     "type": "dimension",
+     "resolve": "bookingLight",
+     "description": "Booking headline 3 (24px)."
+    },
+    "booking-title-large": {
+     "var": "--fontSizeTitleLarge",
+     "type": "dimension",
+     "resolve": "bookingLight",
+     "description": "Booking title large (22px)."
+    },
+    "booking-xsmall": {
+     "var": "--fontSizeXSmall",
+     "type": "dimension",
+     "resolve": "bookingLight",
+     "description": "Booking extra small (11px)."
+    }
+   },
+   "lineHeight": {
+    "huge": {
+     "var": "--leading-ui-huge",
+     "type": "number",
+     "description": "Declared --leading-ui-huge (1.1)."
+    },
+    "h1": {
+     "var": "--leading-ui-h1",
+     "type": "number",
+     "description": "Declared --leading-ui-h1 (1.1)."
+    },
+    "h2": {
+     "var": "--leading-ui-h2",
+     "type": "number",
+     "description": "Declared --leading-ui-h2 (1.1)."
+    },
+    "h3": {
+     "var": "--leading-ui-h3",
+     "type": "number",
+     "description": "Declared --leading-ui-h3 (1.1)."
+    },
+    "h4": {
+     "var": "--leading-ui-h4",
+     "type": "number",
+     "description": "Declared --leading-ui-h4 (1.2)."
+    },
+    "h5": {
+     "var": "--leading-ui-h5",
+     "type": "number",
+     "description": "Declared --leading-ui-h5 (1.4)."
+    },
+    "h6": {
+     "var": "--leading-ui-h6",
+     "type": "number",
+     "description": "Declared --leading-ui-h6 (1.4)."
+    },
+    "body-xl": {
+     "var": "--leading-ui-body-xl",
+     "type": "number",
+     "description": "Declared --leading-ui-body-xl (1.4)."
+    },
+    "body-lg": {
+     "var": "--leading-ui-body-lg",
+     "type": "number",
+     "description": "Declared --leading-ui-body-lg (1.4)."
+    },
+    "body-md": {
+     "var": "--leading-ui-body-md",
+     "type": "number",
+     "description": "Declared --leading-ui-body-md (1.4)."
+    },
+    "body-sm": {
+     "var": "--leading-ui-body-sm",
+     "type": "number",
+     "description": "Declared --leading-ui-body-sm (1.4)."
+    },
+    "body-xs": {
+     "var": "--leading-ui-body-xs",
+     "type": "number",
+     "description": "Declared --leading-ui-body-xs (1.4)."
+    },
+    "caption": {
+     "var": "--leading-ui-caption",
+     "type": "number",
+     "description": "Declared --leading-ui-caption (1.4)."
+    },
+    "overline": {
+     "var": "--leading-ui-overline",
+     "type": "number",
+     "description": "Declared --leading-ui-overline (1)."
+    },
+    "booking-body": {
+     "value": "24px",
+     "type": "dimension",
+     "source": "computed lineHeight of bk-panel default (raw/components-computed.json)",
+     "description": "The booking body leading (21px on 14px)."
+    },
+    "booking-lineheight": {
+     "var": "--lineHeightBodyMedium",
+     "type": "number",
+     "resolve": "bookingLight",
+     "description": "Booking body leading (1.4286)."
+    }
+   },
+   "tracking": {
+    "tighter": {
+     "var": "--tracking-ui-tighter",
+     "type": "dimension",
+     "description": "The -2px display tracking (hero and section heads)."
+    },
+    "tight": {
+     "var": "--tracking-ui-tight",
+     "type": "dimension",
+     "description": "The -1px tracking."
+    },
+    "none": {
+     "var": "--tracking-ui-none",
+     "type": "dimension",
+     "description": "Zero tracking."
+    },
+    "loose": {
+     "var": "--tracking-ui-loose",
+     "type": "dimension",
+     "description": "The +1px loose tracking (overlines)."
+    }
+   },
+   "weight": {
+    "regular": {
+     "var": "--font-weight-regular",
+     "type": "fontWeight",
+     "description": "400 body weight."
+    },
+    "medium": {
+     "var": "--font-weight-medium",
+     "type": "fontWeight",
+     "description": "500 heading/label weight."
+    },
+    "semibold": {
+     "var": "--font-weight-semibold",
+     "type": "fontWeight",
+     "description": "600."
+    },
+    "bold": {
+     "var": "--font-weight-bold",
+     "type": "fontWeight",
+     "description": "700 (booking time slots, strong text)."
+    },
+    "booking-button": {
+     "var": "--fontWeightButton",
+     "type": "fontWeight",
+     "resolve": "bookingLight",
+     "description": "Booking button label weight (500)."
+    }
+   }
+  },
+  "color": {
+   "neutral": {
+    "midnight": {
+     "var": "--color-midnight",
+     "type": "color",
+     "description": "Midnight #071a31: the brand ink, dark CTA fill and .dark island field."
+    },
+    "magnolia": {
+     "var": "--color-magnolia",
+     "type": "color",
+     "description": "Magnolia #fcfbf8: the warm off-white page field and text-on-dark."
+    },
+    "white": {
+     "var": "--color-white",
+     "type": "color",
+     "description": "Pure white: cards, fields and the booking surface."
+    },
+    "black": {
+     "var": "--color-black",
+     "type": "color",
+     "description": "Pure black (the computed body color before text vars paint)."
+    },
+    "linen": {
+     "var": "--color-linen",
+     "type": "color",
+     "description": "Linen #f5f3ee: the secondary surface tint."
+    },
+    "ash": {
+     "var": "--color-ash",
+     "type": "color",
+     "description": "Ash #e4e6e9: light grey fills."
+    },
+    "silver": {
+     "var": "--color-silver",
+     "type": "color",
+     "description": "Silver #d8dce0: the subtle border tone."
+    },
+    "steel": {
+     "var": "--color-steel",
+     "type": "color",
+     "description": "Steel #5f6d77: secondary text grey-blue."
+    },
+    "smoke": {
+     "var": "--color-smoke",
+     "type": "color",
+     "description": "Smoke #f5f5f7."
+    },
+    "gray-50": {
+     "var": "--color-gray-50",
+     "type": "color",
+     "description": "Tailwind gray 50."
+    },
+    "gray-200": {
+     "var": "--color-gray-200",
+     "type": "color",
+     "description": "Tailwind gray 200 (field borders)."
+    },
+    "gray-300": {
+     "var": "--color-gray-300",
+     "type": "color",
+     "description": "Tailwind gray 300."
+    },
+    "gray-500": {
+     "var": "--color-gray-500",
+     "type": "color",
+     "description": "Tailwind gray 500."
+    },
+    "gray-600": {
+     "var": "--color-gray-600",
+     "type": "color",
+     "description": "Tailwind gray 600."
+    },
+    "gray-700": {
+     "var": "--color-gray-700",
+     "type": "color",
+     "description": "Tailwind gray 700."
+    },
+    "gray-900": {
+     "var": "--color-gray-900",
+     "type": "color",
+     "description": "Tailwind gray 900."
+    },
+    "slate-100": {
+     "var": "--color-slate-100",
+     "type": "color",
+     "description": "Tailwind slate 100."
+    },
+    "slate-900": {
+     "var": "--color-slate-900",
+     "type": "color",
+     "description": "Tailwind slate 900."
+    },
+    "alpha": {
+     "midnight-a05": {
+      "var": "--color-midnight-a05",
+      "type": "color",
+      "description": "Declared translucency of the named neutral (badge, icon-button and veil fills)."
+     },
+     "midnight-a10": {
+      "var": "--color-midnight-a10",
+      "type": "color",
+      "description": "Declared translucency of the named neutral (badge, icon-button and veil fills)."
+     },
+     "midnight-a20": {
+      "var": "--color-midnight-a20",
+      "type": "color",
+      "description": "Declared translucency of the named neutral (badge, icon-button and veil fills)."
+     },
+     "midnight-a40": {
+      "var": "--color-midnight-a40",
+      "type": "color",
+      "description": "Declared translucency of the named neutral (badge, icon-button and veil fills)."
+     },
+     "midnight-a50": {
+      "var": "--color-midnight-a50",
+      "type": "color",
+      "description": "Declared translucency of the named neutral (badge, icon-button and veil fills)."
+     },
+     "midnight-a60": {
+      "var": "--color-midnight-a60",
+      "type": "color",
+      "description": "Declared translucency of the named neutral (badge, icon-button and veil fills)."
+     },
+     "midnight-a90": {
+      "var": "--color-midnight-a90",
+      "type": "color",
+      "description": "Declared translucency of the named neutral (badge, icon-button and veil fills)."
+     },
+     "magnolia-a05": {
+      "var": "--color-magnolia-a05",
+      "type": "color",
+      "description": "Declared translucency of the named neutral (badge, icon-button and veil fills)."
+     },
+     "magnolia-a10": {
+      "var": "--color-magnolia-a10",
+      "type": "color",
+      "description": "Declared translucency of the named neutral (badge, icon-button and veil fills)."
+     },
+     "magnolia-a20": {
+      "var": "--color-magnolia-a20",
+      "type": "color",
+      "description": "Declared translucency of the named neutral (badge, icon-button and veil fills)."
+     },
+     "magnolia-a30": {
+      "var": "--color-magnolia-a30",
+      "type": "color",
+      "description": "Declared translucency of the named neutral (badge, icon-button and veil fills)."
+     },
+     "magnolia-a40": {
+      "var": "--color-magnolia-a40",
+      "type": "color",
+      "description": "Declared translucency of the named neutral (badge, icon-button and veil fills)."
+     },
+     "magnolia-a70": {
+      "var": "--color-magnolia-a70",
+      "type": "color",
+      "description": "Declared translucency of the named neutral (badge, icon-button and veil fills)."
+     },
+     "magnolia-a90": {
+      "var": "--color-magnolia-a90",
+      "type": "color",
+      "description": "Declared translucency of the named neutral (badge, icon-button and veil fills)."
+     }
+    }
+   },
+   "brand": {
+    "cobalt": {
+     "var": "--color-cobalt",
+     "type": "color",
+     "description": "Cobalt #1e5ea7: deep brand blue."
+    },
+    "cornflower": {
+     "var": "--color-cornflower",
+     "type": "color",
+     "description": "Cornflower #6bb1ff: the focus-ring and info-badge blue."
+    },
+    "navy": {
+     "var": "--color-navy",
+     "type": "color",
+     "description": "Navy #0e396a: dark-island emphasis surface."
+    },
+    "lake": {
+     "var": "--color-lake",
+     "type": "color",
+     "description": "Lake #4890e3: mid brand blue."
+    },
+    "sky": {
+     "var": "--color-sky",
+     "type": "color",
+     "description": "Sky #c1defe: pale brand blue."
+    },
+    "rain": {
+     "var": "--color-rain",
+     "type": "color",
+     "description": "Rain #edf5ff: section tint."
+    },
+    "cloud": {
+     "var": "--color-cloud",
+     "type": "color",
+     "description": "Cloud #f4f9ff: section tint."
+    },
+    "haze": {
+     "var": "--color-haze",
+     "type": "color",
+     "description": "Haze #f7f4fc: section tint."
+    },
+    "lavender": {
+     "var": "--color-lavender",
+     "type": "color",
+     "description": "Lavender #eae3fa: section tint."
+    },
+    "lilac": {
+     "var": "--color-lilac",
+     "type": "color",
+     "description": "Lilac #b89ffa."
+    },
+    "iris": {
+     "var": "--color-iris",
+     "type": "color",
+     "description": "Iris #d4c2ff."
+    },
+    "plum": {
+     "var": "--color-plum",
+     "type": "color",
+     "description": "Plum #4d3589: the purple accent in gradients."
+    },
+    "alpha": {
+     "cornflower-a20": {
+      "var": "--color-cornflower-a20",
+      "type": "color",
+      "description": "Declared cornflower translucency (info badge on dark, highlights)."
+     },
+     "cornflower-a30": {
+      "var": "--color-cornflower-a30",
+      "type": "color",
+      "description": "Declared cornflower translucency (info badge on dark, highlights)."
+     },
+     "cornflower-a60": {
+      "var": "--color-cornflower-a60",
+      "type": "color",
+      "description": "Declared cornflower translucency (info badge on dark, highlights)."
+     },
+     "cornflower-a70": {
+      "var": "--color-cornflower-a70",
+      "type": "color",
+      "description": "Declared cornflower translucency (info badge on dark, highlights)."
+     }
+    }
+   },
+   "hue": {
+    "jade": {
+     "var": "--color-jade",
+     "type": "color",
+     "description": "Jade #5ddfd7."
+    },
+    "seafoam": {
+     "var": "--color-seafoam",
+     "type": "color",
+     "description": "Seafoam #baf0ec."
+    },
+    "lime": {
+     "var": "--color-lime",
+     "type": "color",
+     "description": "Lime #dbee9f (the success-badge green)."
+    },
+    "honeydew": {
+     "var": "--color-honeydew",
+     "type": "color",
+     "description": "Honeydew #f2f8de: section tint."
+    },
+    "olive": {
+     "var": "--color-olive",
+     "type": "color",
+     "description": "Olive #556425."
+    },
+    "avocado": {
+     "var": "--color-avocado",
+     "type": "color",
+     "description": "Avocado #343c17."
+    },
+    "sunbeam": {
+     "var": "--color-sunbeam",
+     "type": "color",
+     "description": "Sunbeam #fcf1de: warm section tint."
+    },
+    "peach": {
+     "var": "--color-peach",
+     "type": "color",
+     "description": "Peach #ffd39d."
+    },
+    "tangerine": {
+     "var": "--color-tangerine",
+     "type": "color",
+     "description": "Tangerine #f8961f."
+    },
+    "coffee": {
+     "var": "--color-coffee",
+     "type": "color",
+     "description": "Coffee #5d3e20."
+    }
+   },
+   "ramp": {
+    "blue": {
+     "100": {
+      "var": "--color-ramp-blue-100",
+      "type": "color",
+      "description": "Declared blue ramp step 100 (badge and status fills/text)."
+     },
+     "150": {
+      "var": "--color-ramp-blue-150",
+      "type": "color",
+      "description": "Declared blue ramp step 150 (badge and status fills/text)."
+     },
+     "250": {
+      "var": "--color-ramp-blue-250",
+      "type": "color",
+      "description": "Declared blue ramp step 250 (badge and status fills/text)."
+     },
+     "700": {
+      "var": "--color-ramp-blue-700",
+      "type": "color",
+      "description": "Declared blue ramp step 700 (badge and status fills/text)."
+     },
+     "800": {
+      "var": "--color-ramp-blue-800",
+      "type": "color",
+      "description": "Declared blue ramp step 800 (badge and status fills/text)."
+     }
+    },
+    "green": {
+     "150": {
+      "var": "--color-ramp-green-150",
+      "type": "color",
+      "description": "Declared green ramp step 150 (badge and status fills/text)."
+     },
+     "200": {
+      "var": "--color-ramp-green-200",
+      "type": "color",
+      "description": "Declared green ramp step 200 (badge and status fills/text)."
+     },
+     "700": {
+      "var": "--color-ramp-green-700",
+      "type": "color",
+      "description": "Declared green ramp step 700 (badge and status fills/text)."
+     }
+    },
+    "neutral": {
+     "200": {
+      "var": "--color-ramp-neutral-200",
+      "type": "color",
+      "description": "Declared neutral ramp step 200 (badge and status fills/text)."
+     },
+     "300": {
+      "var": "--color-ramp-neutral-300",
+      "type": "color",
+      "description": "Declared neutral ramp step 300 (badge and status fills/text)."
+     },
+     "350": {
+      "var": "--color-ramp-neutral-350",
+      "type": "color",
+      "description": "Declared neutral ramp step 350 (badge and status fills/text)."
+     },
+     "450": {
+      "var": "--color-ramp-neutral-450",
+      "type": "color",
+      "description": "Declared neutral ramp step 450 (badge and status fills/text)."
+     },
+     "650": {
+      "var": "--color-ramp-neutral-650",
+      "type": "color",
+      "description": "Declared neutral ramp step 650 (badge and status fills/text)."
+     },
+     "700": {
+      "var": "--color-ramp-neutral-700",
+      "type": "color",
+      "description": "Declared neutral ramp step 700 (badge and status fills/text)."
+     },
+     "750": {
+      "var": "--color-ramp-neutral-750",
+      "type": "color",
+      "description": "Declared neutral ramp step 750 (badge and status fills/text)."
+     }
+    },
+    "orange": {
+     "025": {
+      "var": "--color-ramp-orange-025",
+      "type": "color",
+      "description": "Declared orange ramp step 025 (badge and status fills/text)."
+     }
+    },
+    "red": {
+     "100": {
+      "var": "--color-ramp-red-100",
+      "type": "color",
+      "description": "Declared red ramp step 100 (badge and status fills/text)."
+     },
+     "150": {
+      "var": "--color-ramp-red-150",
+      "type": "color",
+      "description": "Declared red ramp step 150 (badge and status fills/text)."
+     },
+     "500": {
+      "var": "--color-ramp-red-500",
+      "type": "color",
+      "description": "Declared red ramp step 500 (badge and status fills/text)."
+     },
+     "700": {
+      "var": "--color-ramp-red-700",
+      "type": "color",
+      "description": "Declared red ramp step 700 (badge and status fills/text)."
+     }
+    },
+    "yellow": {
+     "100": {
+      "var": "--color-ramp-yellow-100",
+      "type": "color",
+      "description": "Declared yellow ramp step 100 (badge and status fills/text)."
+     },
+     "150": {
+      "var": "--color-ramp-yellow-150",
+      "type": "color",
+      "description": "Declared yellow ramp step 150 (badge and status fills/text)."
+     },
+     "750": {
+      "var": "--color-ramp-yellow-750",
+      "type": "color",
+      "description": "Declared yellow ramp step 750 (badge and status fills/text)."
+     }
+    }
+   },
+   "status": {
+    "error": {
+     "var": "--color-status-error",
+     "type": "color",
+     "description": "Error #b32812."
+    }
+   },
+   "booking": {
+    "blue-025": {
+     "var": "--coreColorBlue025",
+     "type": "color",
+     "resolve": "bookingLight",
+     "description": "Booking blue ramp 025 #f4f9ff."
+    },
+    "blue-050": {
+     "var": "--coreColorBlue050",
+     "type": "color",
+     "resolve": "bookingLight",
+     "description": "Booking blue ramp 050 #edf5ff."
+    },
+    "blue-100": {
+     "var": "--coreColorBlue100",
+     "type": "color",
+     "resolve": "bookingLight",
+     "description": "Booking blue ramp 100 #d5e8fe."
+    },
+    "blue-150": {
+     "var": "--coreColorBlue150",
+     "type": "color",
+     "resolve": "bookingLight",
+     "description": "Booking blue ramp 150 #c1defe."
+    },
+    "blue-200": {
+     "var": "--coreColorBlue200",
+     "type": "color",
+     "resolve": "bookingLight",
+     "description": "Booking blue ramp 200 #a3d0ff."
+    },
+    "blue-250": {
+     "var": "--coreColorBlue250",
+     "type": "color",
+     "resolve": "bookingLight",
+     "description": "Booking blue ramp 250 #84c1ff."
+    },
+    "blue-300": {
+     "var": "--coreColorBlue300",
+     "type": "color",
+     "resolve": "bookingLight",
+     "description": "Booking blue ramp 300 #6bb1ff."
+    },
+    "blue-350": {
+     "var": "--coreColorBlue350",
+     "type": "color",
+     "resolve": "bookingLight",
+     "description": "Booking blue ramp 350 #58a1f2."
+    },
+    "blue-400": {
+     "var": "--coreColorBlue400",
+     "type": "color",
+     "resolve": "bookingLight",
+     "description": "Booking blue ramp 400 #4890e3."
+    },
+    "blue-450": {
+     "var": "--coreColorBlue450",
+     "type": "color",
+     "resolve": "bookingLight",
+     "description": "Booking blue ramp 450 #3c84d6."
+    },
+    "blue-500": {
+     "var": "--coreColorBlue500",
+     "type": "color",
+     "resolve": "bookingLight",
+     "description": "Booking blue ramp 500 #3278c8."
+    },
+    "blue-550": {
+     "var": "--coreColorBlue550",
+     "type": "color",
+     "resolve": "bookingLight",
+     "description": "Booking blue ramp 550 #286cb9."
+    },
+    "blue-600": {
+     "var": "--coreColorBlue600",
+     "type": "color",
+     "resolve": "bookingLight",
+     "description": "Booking blue ramp 600 #1e5ea7."
+    },
+    "blue-650": {
+     "var": "--coreColorBlue650",
+     "type": "color",
+     "resolve": "bookingLight",
+     "description": "Booking blue ramp 650 #175295."
+    },
+    "blue-700": {
+     "var": "--coreColorBlue700",
+     "type": "color",
+     "resolve": "bookingLight",
+     "description": "Booking blue ramp 700 #114580."
+    },
+    "primary": {
+     "var": "--primary-color",
+     "type": "color",
+     "resolve": "bookingLight",
+     "description": "Declared booking primary #3c84d6."
+    },
+    "primary-alt": {
+     "var": "--primary-color-alternative",
+     "type": "color",
+     "resolve": "bookingLight",
+     "description": "Booking primary alternative #3278c8."
+    },
+    "primary-darker-10": {
+     "var": "--primary-color-darker-10",
+     "type": "color",
+     "resolve": "bookingLight",
+     "description": "Booking primary darker 10% #286cb9."
+    },
+    "primary-darker-30": {
+     "var": "--primary-color-darker-30",
+     "type": "color",
+     "resolve": "bookingLight",
+     "description": "Booking primary darker 30% #175295."
+    },
+    "primary-level2": {
+     "var": "--primary-color-level2",
+     "type": "color",
+     "resolve": "bookingLight",
+     "description": "Booking primary level 2 #6bb1ff."
+    },
+    "primary-level3": {
+     "var": "--primary-color-level3",
+     "type": "color",
+     "resolve": "bookingLight",
+     "description": "Booking primary level 3 #d5e8fe."
+    },
+    "primary-level4": {
+     "var": "--primary-color-level4",
+     "type": "color",
+     "resolve": "bookingLight",
+     "description": "Booking primary level 4 #edf5ff."
+    },
+    "primary-text": {
+     "var": "--primary-text-color",
+     "type": "color",
+     "resolve": "bookingLight",
+     "description": "White text on the booking primary."
+    },
+    "text": {
+     "var": "--text-color",
+     "type": "color",
+     "resolve": "bookingLight",
+     "description": "Booking text #0b0d0f."
+    },
+    "text-level2": {
+     "var": "--text-color-level2",
+     "type": "color",
+     "resolve": "bookingLight",
+     "description": "Booking muted text #545f69."
+    },
+    "static-text": {
+     "var": "--static-text-color",
+     "type": "color",
+     "resolve": "bookingLight",
+     "description": "Booking static text #0b0d0f."
+    },
+    "text-secondary-1": {
+     "var": "--text-color-secondary-1",
+     "type": "color",
+     "resolve": "bookingLight",
+     "description": "Booking secondary text #272e33."
+    },
+    "text-secondary-2": {
+     "var": "--text-color-secondary-2",
+     "type": "color",
+     "resolve": "bookingLight",
+     "description": "Booking secondary blue #286cb9."
+    },
+    "text-secondary-3": {
+     "var": "--text-color-secondary-3",
+     "type": "color",
+     "resolve": "bookingLight",
+     "description": "Booking secondary deep blue #1e5ea7."
+    },
+    "text-secondary-4": {
+     "var": "--text-color-secondary-4",
+     "type": "color",
+     "resolve": "bookingLight",
+     "description": "Booking secondary white."
+    },
+    "grey-1": {
+     "var": "--color-grey-1",
+     "type": "color",
+     "resolve": "bookingLight",
+     "description": "Booking grey 1 #545f69."
+    },
+    "grey-2": {
+     "var": "--color-grey-2",
+     "type": "color",
+     "resolve": "bookingLight",
+     "description": "Booking grey 2 #a4aeb7."
+    },
+    "grey-3": {
+     "var": "--color-grey-3",
+     "type": "color",
+     "resolve": "bookingLight",
+     "description": "Booking grey 3 #b5bdc4."
+    },
+    "grey-4": {
+     "var": "--color-grey-4",
+     "type": "color",
+     "resolve": "bookingLight",
+     "description": "Booking grey 4 #e4e6e9."
+    },
+    "bg-grey": {
+     "var": "--color-bg-grey-2",
+     "type": "color",
+     "resolve": "bookingLight",
+     "description": "Booking alt field #f8f9f9."
+    },
+    "bg-white-veil": {
+     "var": "--color-bg-white-l-2",
+     "type": "color",
+     "resolve": "bookingLight",
+     "description": "Booking white veil 70%."
+    },
+    "ink": {
+     "value": "#0a2540",
+     "type": "color",
+     "source": "computed color of bk-panel default (raw/components-computed.json)",
+     "description": "The #0a2540 booking ink (not a declared var)."
+    },
+    "blue": {
+     "value": "#006bff",
+     "type": "color",
+     "source": "computed borderTopColor of bk-timeslot default (raw/components-computed.json)",
+     "description": "The #006bff painted blue: time-slot border and selected-day fill."
+    },
+    "blue-text": {
+     "value": "#004eba",
+     "type": "color",
+     "source": "computed color of bk-day default (raw/components-computed.json)",
+     "description": "The #004eba link/day-number blue."
+    },
+    "day-fill": {
+     "value": "#f4f8ff",
+     "type": "color",
+     "source": "computed paint of bk-day default (raw/components-computed.json)",
+     "description": "The #f4f8ff enabled-day wash."
+    },
+    "hairline": {
+     "value": "#d4e0ed",
+     "type": "color",
+     "source": "computed borderTopColor of bk-event default (raw/components-computed.json)",
+     "description": "The #d4e0ed card hairline on booking pages."
+    },
+    "month-nav": {
+     "value": "#a6bbd1",
+     "type": "color",
+     "source": "computed color of bk-month-nav default (raw/components-computed.json)",
+     "description": "The #a6bbd1 month-nav grey-blue."
+    }
+   }
+  },
+  "radius": {
+   "xxs": {
+    "var": "--radius-ui-xxs",
+    "type": "dimension",
+    "description": "Declared --radius-ui-xxs (4px)."
+   },
+   "xs": {
+    "var": "--radius-ui-xs",
+    "type": "dimension",
+    "description": "Declared --radius-ui-xs (8px)."
+   },
+   "sm": {
+    "var": "--radius-ui-sm",
+    "type": "dimension",
+    "description": "Declared --radius-ui-sm (12px)."
+   },
+   "md": {
+    "var": "--radius-ui-md",
+    "type": "dimension",
+    "description": "Declared --radius-ui-md (16px)."
+   },
+   "lg": {
+    "var": "--radius-ui-lg",
+    "type": "dimension",
+    "description": "Declared --radius-ui-lg (20px)."
+   },
+   "xl": {
+    "var": "--radius-ui-xl",
+    "type": "dimension",
+    "description": "Declared --radius-ui-xl (24px)."
+   },
+   "2xl": {
+    "var": "--radius-ui-2xl",
+    "type": "dimension",
+    "description": "Declared --radius-ui-2xl (32px)."
+   },
+   "3xl": {
+    "var": "--radius-ui-3xl",
+    "type": "dimension",
+    "description": "Declared --radius-ui-3xl (40px)."
+   },
+   "4xl": {
+    "var": "--radius-ui-4xl",
+    "type": "dimension",
+    "description": "Declared --radius-ui-4xl (48px)."
+   },
+   "full": {
+    "var": "--radius-ui-full",
+    "type": "dimension",
+    "description": "Declared --radius-ui-full (9999px)."
+   },
+   "btn-small": {
+    "var": "--radius-btn-small",
+    "type": "dimension",
+    "description": "Small button radius (8px)."
+   },
+   "btn-standard": {
+    "var": "--radius-btn-standard",
+    "type": "dimension",
+    "description": "Standard button radius (10px) — declared; marketing buttons paint larger."
+   },
+   "button-pill": {
+    "value": "20px",
+    "type": "dimension",
+    "source": "painted layer radius under signup-google default (raw/components-computed.json)",
+    "description": "The 20px pill the Google button paints."
+   },
+   "cta": {
+    "value": "16px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of nav-cta default (raw/components-computed.json)",
+    "description": "The 16px radius on the header CTA / nav buttons."
+   },
+   "card-modal": {
+    "value": "48px",
+    "type": "dimension",
+    "source": "painted layer radius under login-card default (raw/components-computed.json)",
+    "description": "The 48px radius the login/signup cards paint."
+   },
+   "card-plan": {
+    "value": "40px",
+    "type": "dimension",
+    "source": "painted layer radius under plan-card default (raw/components-computed.json)",
+    "description": "The 40px radius plan cards paint."
+   },
+   "field": {
+    "value": "16px",
+    "type": "dimension",
+    "source": "painted layer radius under email-field default (raw/components-computed.json)",
+    "description": "The 16px input radius."
+   },
+   "day": {
+    "value": 0.5,
+    "type": "number",
+    "source": "painted layer radius under bk-day default (raw/components-computed.json)",
+    "description": "Booking day cells are full circles (50%)."
+   },
+   "slot": {
+    "value": "8px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of bk-timeslot default (raw/components-computed.json)",
+    "description": "The 8px time-slot radius."
+   }
+  },
+  "easing": {
+   "in": {
+    "var": "--ease-in",
+    "type": "cubicBezier",
+    "description": "Declared ease-in (.4,0,1,1)."
+   },
+   "out": {
+    "var": "--ease-out",
+    "type": "cubicBezier",
+    "description": "Declared ease-out (0,0,.2,1)."
+   },
+   "in-out": {
+    "var": "--ease-in-out",
+    "type": "cubicBezier",
+    "description": "Declared ease-in-out (.4,0,.2,1)."
+   },
+   "default": {
+    "var": "--default-transition-timing-function",
+    "type": "cubicBezier",
+    "description": "The default transition curve."
+   }
+  },
+  "duration": {
+   "default": {
+    "var": "--default-transition-duration",
+    "type": "duration",
+    "description": "The declared default transition duration (0.15s)."
+   }
+  },
+  "spacing": {
+   "xxs": {
+    "var": "--spacing-xxs",
+    "type": "dimension",
+    "description": "Declared --spacing-xxs (4px)."
+   },
+   "xs": {
+    "var": "--spacing-xs",
+    "type": "dimension",
+    "description": "Declared --spacing-xs (8px)."
+   },
+   "sm": {
+    "var": "--spacing-sm",
+    "type": "dimension",
+    "description": "Declared --spacing-sm (12px)."
+   },
+   "md": {
+    "var": "--spacing-md",
+    "type": "dimension",
+    "description": "Declared --spacing-md (16px)."
+   },
+   "lg": {
+    "var": "--spacing-lg",
+    "type": "dimension",
+    "description": "Declared --spacing-lg (24px)."
+   },
+   "xl": {
+    "var": "--spacing-xl",
+    "type": "dimension",
+    "description": "Declared --spacing-xl (32px)."
+   },
+   "2xl": {
+    "var": "--spacing-2xl",
+    "type": "dimension",
+    "description": "Declared --spacing-2xl (40px)."
+   },
+   "3xl": {
+    "var": "--spacing-3xl",
+    "type": "dimension",
+    "description": "Declared --spacing-3xl (48px)."
+   },
+   "4xl": {
+    "var": "--spacing-4xl",
+    "type": "dimension",
+    "description": "Declared --spacing-4xl (56px)."
+   },
+   "5xl": {
+    "var": "--spacing-5xl",
+    "type": "dimension",
+    "description": "Declared --spacing-5xl (64px)."
+   },
+   "section-default": {
+    "var": "--spacing-section-default",
+    "type": "dimension",
+    "description": "Default section padding (120px)."
+   },
+   "section-large": {
+    "var": "--spacing-section-large",
+    "type": "dimension",
+    "description": "Large section padding (96px)."
+   },
+   "section-medium": {
+    "var": "--spacing-section-medium",
+    "type": "dimension",
+    "description": "Medium section padding (64px)."
+   },
+   "section-small": {
+    "var": "--spacing-section-small",
+    "type": "dimension",
+    "description": "Small section padding (48px)."
+   },
+   "page-padding-horizontal": {
+    "var": "--spacing-page-padding-horizontal",
+    "type": "dimension",
+    "description": "Page horizontal padding (120px)."
+   },
+   "btn-vertical-standard": {
+    "var": "--spacing-btn-vertical-standard",
+    "type": "dimension",
+    "description": "Button vertical padding (12px)."
+   },
+   "btn-vertical-small": {
+    "var": "--spacing-btn-vertical-small",
+    "type": "dimension",
+    "description": "Small-button vertical padding (12px)."
+   },
+   "btn-vertical-tertiary": {
+    "var": "--spacing-btn-vertical-tertiary",
+    "type": "dimension",
+    "description": "Tertiary-button vertical padding (8px)."
+   },
+   "ui-section-y": {
+    "var": "--spacing-ui-section-y",
+    "type": "dimension",
+    "description": "UI section y padding (96px)."
+   },
+   "gap": {
+    "xxs": {
+     "var": "--gap-xxs",
+     "type": "dimension",
+     "description": "Declared --gap-xxs (4px)."
+    },
+    "xs": {
+     "var": "--gap-xs",
+     "type": "dimension",
+     "description": "Declared --gap-xs (8px)."
+    },
+    "sm": {
+     "var": "--gap-sm",
+     "type": "dimension",
+     "description": "Declared --gap-sm (12px)."
+    },
+    "md": {
+     "var": "--gap-md",
+     "type": "dimension",
+     "description": "Declared --gap-md (16px)."
+    },
+    "lg": {
+     "var": "--gap-lg",
+     "type": "dimension",
+     "description": "Declared --gap-lg (24px)."
+    },
+    "xl": {
+     "var": "--gap-xl",
+     "type": "dimension",
+     "description": "Declared --gap-xl (32px)."
+    },
+    "2xl": {
+     "var": "--gap-2xl",
+     "type": "dimension",
+     "description": "Declared --gap-2xl (48px)."
+    },
+    "3xl": {
+     "var": "--gap-3xl",
+     "type": "dimension",
+     "description": "Declared --gap-3xl (56px)."
+    },
+    "4xl": {
+     "var": "--gap-4xl",
+     "type": "dimension",
+     "description": "Declared --gap-4xl (64px)."
+    },
+    "8xl": {
+     "var": "--gap-8xl",
+     "type": "dimension",
+     "description": "Declared --gap-8xl (128px)."
+    }
+   }
+  },
+  "layout": {
+   "max-width": {
+    "var": "--layout-max-width",
+    "type": "dimension",
+    "description": "The 1920px layout cap."
+   },
+   "header-height": {
+    "var": "--header-height",
+    "type": "dimension",
+    "description": "The 68px desktop header."
+   },
+   "header-height-mobile": {
+    "var": "--header-height-mobile",
+    "type": "dimension",
+    "description": "The 56px compact header var (the measured mobile header is 64px)."
+   },
+   "mobile-nav-height": {
+    "var": "--mobile-nav-height",
+    "type": "dimension",
+    "description": "The 64px mobile nav bar."
+   },
+   "header-panel-default": {
+    "var": "--header-panel-width-default",
+    "type": "dimension",
+    "description": "Mega-menu panel width (924px)."
+   },
+   "header-panel-product": {
+    "var": "--header-panel-width-product",
+    "type": "dimension",
+    "description": "Product menu panel width (576px)."
+   },
+   "header-panel-resources": {
+    "var": "--header-panel-width-resources",
+    "type": "dimension",
+    "description": "Resources menu panel width (1005px)."
+   },
+   "max-width-heading": {
+    "var": "--max-width-heading",
+    "type": "dimension",
+    "description": "The 640px heading measure."
+   },
+   "max-width-subhead": {
+    "var": "--max-width-subhead",
+    "type": "dimension",
+    "description": "The 560px subhead measure."
+   },
+   "section-padding-x": {
+    "var": "--section-padding-x",
+    "type": "dimension",
+    "description": "Section horizontal padding (40px)."
+   },
+   "breakpoint-tb": {
+    "var": "--breakpoint-ui-tb",
+    "type": "dimension",
+    "description": "Tablet breakpoint (768px)."
+   },
+   "breakpoint-sdsk": {
+    "var": "--breakpoint-ui-sdsk",
+    "type": "dimension",
+    "description": "Small-desktop breakpoint (1024px)."
+   },
+   "breakpoint-dsk": {
+    "var": "--breakpoint-ui-dsk",
+    "type": "dimension",
+    "description": "Desktop breakpoint (1280px)."
+   }
+  },
+  "shadow": {
+   "ui-sm": {
+    "value": [
+     {
+      "color": "rgba(95, 109, 119, 0.04)",
+      "offsetX": "0px",
+      "offsetY": "4px",
+      "blur": "5px",
+      "spread": "0px"
+     },
+     {
+      "color": "rgba(95, 109, 119, 0.05)",
+      "offsetX": "0px",
+      "offsetY": "6px",
+      "blur": "10px",
+      "spread": "0px"
+     }
+    ],
+    "type": "shadow",
+    "source": "css-var --var-shadow-ui-sm (light)",
+    "description": "Small UI elevation."
+   },
+   "ui-md": {
+    "value": [
+     {
+      "color": "rgba(95, 109, 119, 0.04)",
+      "offsetX": "0px",
+      "offsetY": "4px",
+      "blur": "5px",
+      "spread": "0px"
+     },
+     {
+      "color": "rgba(95, 109, 119, 0.03)",
+      "offsetX": "0px",
+      "offsetY": "4px",
+      "blur": "10px",
+      "spread": "0px"
+     },
+     {
+      "color": "rgba(95, 109, 119, 0.05)",
+      "offsetX": "0px",
+      "offsetY": "10px",
+      "blur": "20px",
+      "spread": "0px"
+     }
+    ],
+    "type": "shadow",
+    "source": "css-var --var-shadow-ui-md (light)",
+    "description": "Medium UI elevation."
+   },
+   "ui-lg": {
+    "value": [
+     {
+      "color": "rgba(95, 109, 119, 0.04)",
+      "offsetX": "0px",
+      "offsetY": "4px",
+      "blur": "5px",
+      "spread": "0px"
+     },
+     {
+      "color": "rgba(95, 109, 119, 0.03)",
+      "offsetX": "0px",
+      "offsetY": "8px",
+      "blur": "15px",
+      "spread": "0px"
+     },
+     {
+      "color": "rgba(95, 109, 119, 0.06)",
+      "offsetX": "0px",
+      "offsetY": "15px",
+      "blur": "30px",
+      "spread": "0px"
+     }
+    ],
+    "type": "shadow",
+    "source": "css-var --var-shadow-ui-lg (light)",
+    "description": "Large UI elevation (the plan cards paint this)."
+   },
+   "ui-xl": {
+    "value": [
+     {
+      "color": "rgba(95, 109, 119, 0.04)",
+      "offsetX": "0px",
+      "offsetY": "4px",
+      "blur": "5px",
+      "spread": "0px"
+     },
+     {
+      "color": "rgba(95, 109, 119, 0.03)",
+      "offsetX": "0px",
+      "offsetY": "8px",
+      "blur": "15px",
+      "spread": "0px"
+     },
+     {
+      "color": "rgba(95, 109, 119, 0.08)",
+      "offsetX": "0px",
+      "offsetY": "30px",
+      "blur": "50px",
+      "spread": "0px"
+     }
+    ],
+    "type": "shadow",
+    "source": "css-var --var-shadow-ui-xl (light)",
+    "description": "Extra-large UI elevation."
+   },
+   "ui-2xl": {
+    "value": [
+     {
+      "color": "rgba(95, 109, 119, 0.04)",
+      "offsetX": "0px",
+      "offsetY": "4px",
+      "blur": "5px",
+      "spread": "0px"
+     },
+     {
+      "color": "rgba(95, 109, 119, 0.04)",
+      "offsetX": "0px",
+      "offsetY": "10px",
+      "blur": "15px",
+      "spread": "0px"
+     },
+     {
+      "color": "rgba(95, 109, 119, 0.1)",
+      "offsetX": "0px",
+      "offsetY": "40px",
+      "blur": "50px",
+      "spread": "0px"
+     }
+    ],
+    "type": "shadow",
+    "source": "css-var --var-shadow-ui-2xl (light)",
+    "description": "2xl UI elevation."
+   },
+   "dark-sm": {
+    "value": [
+     {
+      "color": "rgba(11, 13, 15, 0.2)",
+      "offsetX": "0px",
+      "offsetY": "4px",
+      "blur": "5px",
+      "spread": "0px"
+     },
+     {
+      "color": "rgba(11, 13, 15, 0.2)",
+      "offsetX": "0px",
+      "offsetY": "6px",
+      "blur": "10px",
+      "spread": "0px"
+     }
+    ],
+    "type": "shadow",
+    "source": "css-var --var-shadow-ui-dark-sm (light)",
+    "description": "Small elevation on dark surfaces."
+   },
+   "dark-md": {
+    "value": [
+     {
+      "color": "rgba(11, 13, 15, 0.2)",
+      "offsetX": "0px",
+      "offsetY": "4px",
+      "blur": "5px",
+      "spread": "0px"
+     },
+     {
+      "color": "rgba(11, 13, 15, 0.2)",
+      "offsetX": "0px",
+      "offsetY": "4px",
+      "blur": "10px",
+      "spread": "0px"
+     },
+     {
+      "color": "rgba(11, 13, 15, 0.2)",
+      "offsetX": "0px",
+      "offsetY": "10px",
+      "blur": "20px",
+      "spread": "0px"
+     }
+    ],
+    "type": "shadow",
+    "source": "css-var --var-shadow-ui-dark-md (light)",
+    "description": "Medium elevation on dark."
+   },
+   "dark-lg": {
+    "value": [
+     {
+      "color": "rgba(11, 13, 15, 0.2)",
+      "offsetX": "0px",
+      "offsetY": "4px",
+      "blur": "5px",
+      "spread": "0px"
+     },
+     {
+      "color": "rgba(11, 13, 15, 0.2)",
+      "offsetX": "0px",
+      "offsetY": "8px",
+      "blur": "15px",
+      "spread": "0px"
+     },
+     {
+      "color": "rgba(11, 13, 15, 0.2)",
+      "offsetX": "0px",
+      "offsetY": "15px",
+      "blur": "30px",
+      "spread": "0px"
+     }
+    ],
+    "type": "shadow",
+    "source": "css-var --var-shadow-ui-dark-lg (light)",
+    "description": "Large elevation on dark."
+   },
+   "dark-xl": {
+    "value": [
+     {
+      "color": "rgba(11, 13, 15, 0.2)",
+      "offsetX": "0px",
+      "offsetY": "4px",
+      "blur": "5px",
+      "spread": "0px"
+     },
+     {
+      "color": "rgba(11, 13, 15, 0.2)",
+      "offsetX": "0px",
+      "offsetY": "8px",
+      "blur": "15px",
+      "spread": "0px"
+     },
+     {
+      "color": "rgba(11, 13, 15, 0.2)",
+      "offsetX": "0px",
+      "offsetY": "30px",
+      "blur": "50px",
+      "spread": "0px"
+     }
+    ],
+    "type": "shadow",
+    "source": "css-var --var-shadow-ui-dark-xl (light)",
+    "description": "XL elevation on dark."
+   },
+   "dark-2xl": {
+    "value": [
+     {
+      "color": "rgba(11, 13, 15, 0.2)",
+      "offsetX": "0px",
+      "offsetY": "4px",
+      "blur": "5px",
+      "spread": "0px"
+     },
+     {
+      "color": "rgba(11, 13, 15, 0.2)",
+      "offsetX": "0px",
+      "offsetY": "10px",
+      "blur": "15px",
+      "spread": "0px"
+     },
+     {
+      "color": "rgba(11, 13, 15, 0.2)",
+      "offsetX": "0px",
+      "offsetY": "40px",
+      "blur": "50px",
+      "spread": "0px"
+     }
+    ],
+    "type": "shadow",
+    "source": "css-var --var-shadow-ui-dark-2xl (light)",
+    "description": "2xl elevation on dark."
+   },
+   "overlay": {
+    "value": [
+     {
+      "color": "rgba(11, 13, 15, 0.1)",
+      "offsetX": "0px",
+      "offsetY": "1px",
+      "blur": "5px",
+      "spread": "0px"
+     }
+    ],
+    "type": "shadow",
+    "source": "css-var --overlay-shadow (bookingLight)",
+    "description": "Overlay/dropdown elevation (booking bundle).",
+    "resolve": "bookingLight"
+   },
+   "spotlight": {
+    "value": [
+     {
+      "color": "rgba(11, 13, 15, 0.1)",
+      "offsetX": "0px",
+      "offsetY": "2px",
+      "blur": "6px",
+      "spread": "0px"
+     }
+    ],
+    "type": "shadow",
+    "source": "css-var --spotlight-shadow (bookingLight)",
+    "description": "Spotlight card elevation (booking bundle).",
+    "resolve": "bookingLight"
+   },
+   "modal": {
+    "value": [
+     {
+      "color": "rgba(25, 72, 112, 0.08)",
+      "offsetX": "0px",
+      "offsetY": "32px",
+      "blur": "96px",
+      "spread": "0px"
+     },
+     {
+      "color": "rgba(25, 72, 112, 0.08)",
+      "offsetX": "0px",
+      "offsetY": "0px",
+      "blur": "24px",
+      "spread": "0px"
+     }
+    ],
+    "type": "shadow",
+    "source": "css-var --shadowModal (bookingLight)",
+    "description": "Modal elevation (booking bundle).",
+    "resolve": "bookingLight"
+   },
+   "booking-card": {
+    "value": [
+     {
+      "color": "rgba(11, 13, 15, 0.1)",
+      "offsetX": "0px",
+      "offsetY": "1px",
+      "blur": "6px",
+      "spread": "0px"
+     }
+    ],
+    "type": "shadow",
+    "source": "css-var --card-shadow (bookingLight)",
+    "description": "The booking card elevation rgba(11,13,15,.1) 0 1 6."
+   },
+   "card-auth": {
+    "value": [
+     {
+      "color": "rgba(0, 0, 0, 0.1)",
+      "offsetX": "0px",
+      "offsetY": "20px",
+      "blur": "25px",
+      "spread": "-5px"
+     },
+     {
+      "color": "rgba(0, 0, 0, 0.1)",
+      "offsetX": "0px",
+      "offsetY": "8px",
+      "blur": "10px",
+      "spread": "-6px"
+     }
+    ],
+    "type": "shadow",
+    "source": "computed boxShadow of login-card default (raw/components-computed.json)",
+    "description": "The shadow-xl the login and signup cards paint (0 20px 25px -5px + 0 8px 10px -6px, 10% black)."
+   }
+  },
+  "measured": {
+   "focus-ring": {
+    "value": "#6bb1ff",
+    "type": "color",
+    "source": "computed outline of plan-cta focus-visible (raw/components-computed.json)",
+    "description": "The 2px solid #6bb1ff keyboard-focus outline (offset -2px)."
+   },
+   "focus-ring-width": {
+    "value": "2px",
+    "type": "dimension",
+    "source": "computed outlineWidth of plan-cta focus-visible (raw/components-computed.json)",
+    "description": "The 2px focus outline width."
+   },
+   "radio-checked": {
+    "value": "#071a31",
+    "type": "color",
+    "source": "painted checked dot under billing-radio default (raw/components-computed.json)",
+    "description": "The midnight dot inside a checked billing radio."
+   },
+   "slot-transition": {
+    "value": "0.3s",
+    "type": "duration",
+    "source": "computed transition of bk-timeslot default (raw/components-computed.json)",
+    "description": "The time-slot hover transition. (width, transform)"
+   }
+  }
+ },
+ "light": {
+  "color": {
+   "text": {
+    "primary": {
+     "var": "--color-text-primary",
+     "type": "color",
+     "source": "declared --color-* role on the marketing sheet",
+     "description": "Body and heading ink (#071a31)."
+    },
+    "secondary": {
+     "var": "--color-text-secondary",
+     "type": "color",
+     "source": "declared --color-* role on the marketing sheet",
+     "description": "Secondary text (#5f6d77)."
+    },
+    "tertiary": {
+     "var": "--color-text-tertiary",
+     "type": "color",
+     "source": "declared --color-* role on the marketing sheet",
+     "description": "Tertiary text (#93a0aa)."
+    }
+   },
+   "surface": {
+    "bg": {
+     "primary": {
+      "var": "--color-surface-bg-primary",
+      "type": "color",
+      "source": "declared --color-* role on the marketing sheet",
+      "description": "The page field (#fcfbf8 magnolia)."
+     },
+     "secondary": {
+      "var": "--color-surface-bg-secondary",
+      "type": "color",
+      "source": "declared --color-* role on the marketing sheet",
+      "description": "The alt field (#f5f3ee linen)."
+     },
+     "cloud": {
+      "var": "--color-surface-bg-cloud",
+      "type": "color",
+      "source": "declared --color-* role on the marketing sheet",
+      "description": "Cloud-tinted section field."
+     },
+     "honeydew": {
+      "var": "--color-surface-bg-honeydew",
+      "type": "color",
+      "source": "declared --color-* role on the marketing sheet",
+      "description": "Honeydew-tinted section field."
+     },
+     "rain": {
+      "var": "--color-surface-bg-rain",
+      "type": "color",
+      "source": "declared --color-* role on the marketing sheet",
+      "description": "Rain-tinted section field."
+     }
+    },
+    "fg": {
+     "secondary": {
+      "emphasis": {
+       "var": "--color-surface-fg-secondary-emphasis",
+       "type": "color",
+       "source": "declared --color-* role on the marketing sheet",
+       "description": "The raised secondary surface (#ffffff)."
+      }
+     }
+    }
+   },
+   "border": {
+    "default": {
+     "var": "--color-border-default",
+     "type": "color",
+     "source": "declared --color-* role on the marketing sheet",
+     "description": "Field and card borders (#c6ccd2)."
+    },
+    "strong": {
+     "var": "--color-border-strong",
+     "type": "color",
+     "source": "declared --color-* role on the marketing sheet",
+     "description": "Strong borders (#93a0aa)."
+    },
+    "subtle": {
+     "var": "--color-border-subtle",
+     "type": "color",
+     "source": "declared --color-* role on the marketing sheet",
+     "description": "Subtle borders (#d8dce0)."
+    }
+   },
+   "divider": {
+    "var": "--color-divider",
+    "type": "color",
+    "source": "declared --color-* role on the marketing sheet",
+    "description": "Dividers (10% midnight)."
+   },
+   "action": {
+    "primary": {
+     "bg": {
+      "var": "--color-action-primary-bg",
+      "type": "color",
+      "source": "declared --color-* role on the marketing sheet",
+      "description": "Primary button fill (#071a31)."
+     },
+     "text": {
+      "var": "--color-action-primary-text",
+      "type": "color",
+      "source": "declared --color-* role on the marketing sheet",
+      "description": "Text on the primary fill (#fcfbf8)."
+     }
+    },
+    "secondary": {
+     "border": {
+      "var": "--color-action-secondary-border",
+      "type": "color",
+      "source": "declared --color-* role on the marketing sheet",
+      "description": "Secondary-button outline (#071a31)."
+     }
+    },
+    "focus": {
+     "border": {
+      "var": "--color-action-focus-border",
+      "type": "color",
+      "source": "declared --color-* role on the marketing sheet",
+      "description": "Focus ring (#6bb1ff cornflower)."
+     }
+    }
+   },
+   "iconbutton": {
+    "bg": {
+     "default": {
+      "var": "--color-iconbutton-bg",
+      "type": "color",
+      "source": "declared --color-* role on the marketing sheet",
+      "description": "Icon-button rest fill."
+     },
+     "hover": {
+      "var": "--color-iconbutton-bg-hover",
+      "type": "color",
+      "source": "declared --color-* role on the marketing sheet",
+      "description": "Icon-button hover fill."
+     },
+     "pressed": {
+      "var": "--color-iconbutton-bg-pressed",
+      "type": "color",
+      "source": "declared --color-* role on the marketing sheet",
+      "description": "Icon-button pressed fill."
+     }
+    },
+    "border": {
+     "var": "--color-iconbutton-border",
+     "type": "color",
+     "source": "declared --color-* role on the marketing sheet",
+     "description": "Icon-button border."
+    },
+    "text": {
+     "var": "--color-iconbutton-text",
+     "type": "color",
+     "source": "declared --color-* role on the marketing sheet",
+     "description": "Icon-button glyph."
+    }
+   },
+   "badge": {
+    "error": {
+     "bg": {
+      "default": {
+       "var": "--color-badge-error-bg",
+       "type": "color",
+       "source": "declared --color-* role on the marketing sheet",
+       "description": "Error badge fill."
+      },
+      "hover": {
+       "var": "--color-badge-error-bg-hover",
+       "type": "color",
+       "source": "declared --color-* role on the marketing sheet",
+       "description": "Error badge hover fill."
+      }
+     },
+     "text": {
+      "var": "--color-badge-error-text",
+      "type": "color",
+      "source": "declared --color-* role on the marketing sheet",
+      "description": "Error badge text."
+     }
+    },
+    "info": {
+     "bg": {
+      "var": "--color-badge-info-bg",
+      "type": "color",
+      "source": "declared --color-* role on the marketing sheet",
+      "description": "Info badge fill."
+     }
+    },
+    "neutral": {
+     "bg": {
+      "default": {
+       "var": "--color-badge-neutral-bg",
+       "type": "color",
+       "source": "declared --color-* role on the marketing sheet",
+       "description": "Neutral badge fill."
+      },
+      "hover": {
+       "var": "--color-badge-neutral-bg-hover",
+       "type": "color",
+       "source": "declared --color-* role on the marketing sheet",
+       "description": "Neutral badge hover fill."
+      }
+     },
+     "text": {
+      "var": "--color-badge-neutral-text",
+      "type": "color",
+      "source": "declared --color-* role on the marketing sheet",
+      "description": "Neutral badge text."
+     }
+    },
+    "success": {
+     "bg": {
+      "default": {
+       "var": "--color-badge-success-bg",
+       "type": "color",
+       "source": "declared --color-* role on the marketing sheet",
+       "description": "Success badge fill."
+      },
+      "hover": {
+       "var": "--color-badge-success-bg-hover",
+       "type": "color",
+       "source": "declared --color-* role on the marketing sheet",
+       "description": "Success badge hover fill."
+      }
+     },
+     "text": {
+      "var": "--color-badge-success-text",
+      "type": "color",
+      "source": "declared --color-* role on the marketing sheet",
+      "description": "Success badge text."
+     }
+    },
+    "warning": {
+     "bg": {
+      "default": {
+       "var": "--color-badge-warning-bg",
+       "type": "color",
+       "source": "declared --color-* role on the marketing sheet",
+       "description": "Warning badge fill."
+      },
+      "hover": {
+       "var": "--color-badge-warning-bg-hover",
+       "type": "color",
+       "source": "declared --color-* role on the marketing sheet",
+       "description": "Warning badge hover fill."
+      }
+     },
+     "text": {
+      "var": "--color-badge-warning-text",
+      "type": "color",
+      "source": "declared --color-* role on the marketing sheet",
+      "description": "Warning badge text."
+     }
+    }
+   }
+  },
+  "text": {
+   "on": {
+    "dark": {
+     "value": "{color.neutral.magnolia}",
+     "type": "color",
+     "source": "role alias over the core palette",
+     "description": "Text on midnight fills (the .dark islands)."
+    }
+   }
+  },
+  "action": {
+   "link": {
+    "value": "{color.brand.cobalt}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "Inline link blue (#1e5ea7)."
+   }
+  },
+  "booking": {
+   "text-primary": {
+    "value": "{color.booking.ink}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The booking body ink (#0a2540)."
+   },
+   "text-link": {
+    "value": "{color.booking.blue-text}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "Booking link / day-number blue (#004eba)."
+   },
+   "action-primary": {
+    "value": "{color.booking.blue}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The painted booking blue (#006bff): selected day, slot border, confirm button."
+   },
+   "action-primary-text": {
+    "value": "{color.booking.primary-text}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "White on the booking blue."
+   },
+   "surface-page": {
+    "value": "{color.neutral.white}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The booking field (white)."
+   },
+   "surface-alt": {
+    "value": "{color.booking.bg-grey}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The booking alt field (#f8f9f9)."
+   },
+   "surface-day": {
+    "value": "{color.booking.day-fill}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The enabled-day wash (#f4f8ff)."
+   },
+   "border-card": {
+    "value": "{color.booking.hairline}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "Booking card hairline (#d4e0ed)."
+   },
+   "action-muted": {
+    "value": "{color.booking.month-nav}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The month-nav grey-blue (#a6bbd1)."
+   },
+   "focus-ring": {
+    "value": "{color.brand.cornflower}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "Booking focus ring (cornflower)."
+   },
+   "surface-scrim": {
+    "var": "--modal-scrim-backdrop",
+    "type": "color",
+    "resolve": "bookingLight",
+    "description": "The booking modal scrim (50% dark)."
+   }
+  }
+ },
+ "dark": {
+  "color": {
+   "text": {
+    "primary": {
+     "var": "--color-text-primary",
+     "type": "color",
+     "source": "declared --color-* role re-bound on the marketing sheet's .dark scope",
+     "description": "Text on .dark islands (#fcfbf8)."
+    },
+    "secondary": {
+     "var": "--color-text-secondary",
+     "type": "color",
+     "source": "declared --color-* role re-bound on the marketing sheet's .dark scope",
+     "description": "Secondary text on dark (#fcfbf8 — same as primary here)."
+    },
+    "tertiary": {
+     "var": "--color-text-tertiary",
+     "type": "color",
+     "source": "declared --color-* role re-bound on the marketing sheet's .dark scope",
+     "description": "Tertiary text on dark (unchanged: #93a0aa)."
+    }
+   },
+   "surface": {
+    "bg": {
+     "primary": {
+      "var": "--color-surface-bg-primary",
+      "type": "color",
+      "source": "declared --color-* role re-bound on the marketing sheet's .dark scope",
+      "description": "The .dark island field (#071a31 midnight)."
+     },
+     "secondary": {
+      "var": "--color-surface-bg-secondary",
+      "type": "color",
+      "source": "declared --color-* role re-bound on the marketing sheet's .dark scope",
+      "description": "The .dark secondary field (#0c2d54)."
+     },
+     "cloud": {
+      "var": "--color-surface-bg-cloud",
+      "type": "color",
+      "source": "declared --color-* role re-bound on the marketing sheet's .dark scope",
+      "description": "Cloud-tinted section field (unchanged on dark)."
+     },
+     "honeydew": {
+      "var": "--color-surface-bg-honeydew",
+      "type": "color",
+      "source": "declared --color-* role re-bound on the marketing sheet's .dark scope",
+      "description": "Honeydew-tinted section field (unchanged on dark)."
+     },
+     "rain": {
+      "var": "--color-surface-bg-rain",
+      "type": "color",
+      "source": "declared --color-* role re-bound on the marketing sheet's .dark scope",
+      "description": "Rain-tinted section field (unchanged on dark)."
+     }
+    },
+    "fg": {
+     "secondary": {
+      "emphasis": {
+       "var": "--color-surface-fg-secondary-emphasis",
+       "type": "color",
+       "source": "declared --color-* role re-bound on the marketing sheet's .dark scope",
+       "description": "The .dark raised secondary surface (#0e396a navy)."
+      }
+     }
+    }
+   },
+   "border": {
+    "default": {
+     "var": "--color-border-default",
+     "type": "color",
+     "source": "declared --color-* role re-bound on the marketing sheet's .dark scope",
+     "description": "Field and card borders (unchanged on dark)."
+    },
+    "strong": {
+     "var": "--color-border-strong",
+     "type": "color",
+     "source": "declared --color-* role re-bound on the marketing sheet's .dark scope",
+     "description": "Strong borders (unchanged on dark)."
+    },
+    "subtle": {
+     "var": "--color-border-subtle",
+     "type": "color",
+     "source": "declared --color-* role re-bound on the marketing sheet's .dark scope",
+     "description": "Subtle borders (unchanged on dark)."
+    }
+   },
+   "divider": {
+    "var": "--color-divider",
+    "type": "color",
+    "source": "declared --color-* role re-bound on the marketing sheet's .dark scope",
+    "description": "Dividers (unchanged on dark)."
+   },
+   "action": {
+    "primary": {
+     "bg": {
+      "var": "--color-action-primary-bg",
+      "type": "color",
+      "source": "declared --color-* role re-bound on the marketing sheet's .dark scope",
+      "description": "Primary fill inverted on dark (#fcfbf8)."
+     },
+     "text": {
+      "var": "--color-action-primary-text",
+      "type": "color",
+      "source": "declared --color-* role re-bound on the marketing sheet's .dark scope",
+      "description": "Text on the inverted fill (#071a31)."
+     }
+    },
+    "secondary": {
+     "border": {
+      "var": "--color-action-secondary-border",
+      "type": "color",
+      "source": "declared --color-* role re-bound on the marketing sheet's .dark scope",
+      "description": "Secondary-button outline on dark (#fcfbf8)."
+     }
+    },
+    "focus": {
+     "border": {
+      "var": "--color-action-focus-border",
+      "type": "color",
+      "source": "declared --color-* role re-bound on the marketing sheet's .dark scope",
+      "description": "Focus ring (cornflower)."
+     }
+    }
+   },
+   "iconbutton": {
+    "bg": {
+     "default": {
+      "var": "--color-iconbutton-bg",
+      "type": "color",
+      "source": "declared --color-* role re-bound on the marketing sheet's .dark scope",
+      "description": "Icon-button rest fill on dark."
+     },
+     "hover": {
+      "var": "--color-iconbutton-bg-hover",
+      "type": "color",
+      "source": "declared --color-* role re-bound on the marketing sheet's .dark scope",
+      "description": "Icon-button hover fill on dark."
+     },
+     "pressed": {
+      "var": "--color-iconbutton-bg-pressed",
+      "type": "color",
+      "source": "declared --color-* role re-bound on the marketing sheet's .dark scope",
+      "description": "Icon-button pressed fill on dark."
+     }
+    },
+    "border": {
+     "var": "--color-iconbutton-border",
+     "type": "color",
+     "source": "declared --color-* role re-bound on the marketing sheet's .dark scope",
+     "description": "Icon-button border on dark."
+    },
+    "text": {
+     "var": "--color-iconbutton-text",
+     "type": "color",
+     "source": "declared --color-* role re-bound on the marketing sheet's .dark scope",
+     "description": "Icon-button glyph on dark."
+    }
+   },
+   "badge": {
+    "error": {
+     "bg": {
+      "default": {
+       "var": "--color-badge-error-bg",
+       "type": "color",
+       "source": "declared --color-* role re-bound on the marketing sheet's .dark scope",
+       "description": "Error badge fill."
+      },
+      "hover": {
+       "var": "--color-badge-error-bg-hover",
+       "type": "color",
+       "source": "declared --color-* role re-bound on the marketing sheet's .dark scope",
+       "description": "Error badge hover fill."
+      }
+     },
+     "text": {
+      "var": "--color-badge-error-text",
+      "type": "color",
+      "source": "declared --color-* role re-bound on the marketing sheet's .dark scope",
+      "description": "Error badge text."
+     }
+    },
+    "info": {
+     "bg": {
+      "var": "--color-badge-info-bg",
+      "type": "color",
+      "source": "declared --color-* role re-bound on the marketing sheet's .dark scope",
+      "description": "Info badge fill on dark (60% cornflower)."
+     }
+    },
+    "neutral": {
+     "bg": {
+      "default": {
+       "var": "--color-badge-neutral-bg",
+       "type": "color",
+       "source": "declared --color-* role re-bound on the marketing sheet's .dark scope",
+       "description": "Neutral badge fill on dark (20% magnolia)."
+      },
+      "hover": {
+       "var": "--color-badge-neutral-bg-hover",
+       "type": "color",
+       "source": "declared --color-* role re-bound on the marketing sheet's .dark scope",
+       "description": "Neutral badge hover fill on dark."
+      }
+     },
+     "text": {
+      "var": "--color-badge-neutral-text",
+      "type": "color",
+      "source": "declared --color-* role re-bound on the marketing sheet's .dark scope",
+      "description": "Neutral badge text on dark."
+     }
+    },
+    "success": {
+     "bg": {
+      "default": {
+       "var": "--color-badge-success-bg",
+       "type": "color",
+       "source": "declared --color-* role re-bound on the marketing sheet's .dark scope",
+       "description": "Success badge fill."
+      },
+      "hover": {
+       "var": "--color-badge-success-bg-hover",
+       "type": "color",
+       "source": "declared --color-* role re-bound on the marketing sheet's .dark scope",
+       "description": "Success badge hover fill."
+      }
+     },
+     "text": {
+      "var": "--color-badge-success-text",
+      "type": "color",
+      "source": "declared --color-* role re-bound on the marketing sheet's .dark scope",
+      "description": "Success badge text."
+     }
+    },
+    "warning": {
+     "bg": {
+      "default": {
+       "var": "--color-badge-warning-bg",
+       "type": "color",
+       "source": "declared --color-* role re-bound on the marketing sheet's .dark scope",
+       "description": "Warning badge fill."
+      },
+      "hover": {
+       "var": "--color-badge-warning-bg-hover",
+       "type": "color",
+       "source": "declared --color-* role re-bound on the marketing sheet's .dark scope",
+       "description": "Warning badge hover fill."
+      }
+     },
+     "text": {
+      "var": "--color-badge-warning-text",
+      "type": "color",
+      "source": "declared --color-* role re-bound on the marketing sheet's .dark scope",
+      "description": "Warning badge text."
+     }
+    }
+   }
+  }
+ },
+ "component": {
+  "header": {
+   "height": {
+    "type": "dimension",
+    "value": "68px",
+    "source": "computed height of header default (raw/components-computed.json)",
+    "description": "The 68px marketing header."
+   },
+   "height-mobile": {
+    "type": "dimension",
+    "value": "64px",
+    "source": "computed height of m-header default (raw/components-computed.json)",
+    "description": "The 64px mobile header."
+   }
+  },
+  "logo": {
+   "width": {
+    "type": "dimension",
+    "value": "156.281px",
+    "source": "computed width of logo default (raw/components-computed.json)",
+    "description": "The Calendly wordmark width."
+   }
+  },
+  "button": {
+   "height": {
+    "type": "dimension",
+    "value": "48px",
+    "source": "computed height of nav-cta default (raw/components-computed.json)",
+    "description": "The 48px header CTA (Get started)."
+   },
+   "radius": {
+    "type": "dimension",
+    "value": "16px",
+    "source": "computed borderTopLeftRadius of nav-cta default (raw/components-computed.json)",
+    "description": "Header CTA radius (16px)."
+   }
+  },
+  "nav-link": {
+   "height": {
+    "type": "dimension",
+    "value": "35.5938px",
+    "source": "computed height of nav-link default (raw/components-computed.json)",
+    "description": "Nav link height."
+   }
+  },
+  "mega-menu": {
+   "width": {
+    "type": "dimension",
+    "value": "304px",
+    "source": "computed width of nav-dropdown default (raw/components-computed.json)",
+    "description": "The Products mega-menu panel width."
+   }
+  },
+  "hero-title": {
+   "width": {
+    "type": "dimension",
+    "value": "640px",
+    "source": "computed width of hero-title default (raw/components-computed.json)",
+    "description": "The hero heading measure (640px)."
+   }
+  },
+  "hero-card": {
+   "height": {
+    "type": "dimension",
+    "value": "408.844px",
+    "source": "computed height of hero-card default (raw/components-computed.json)",
+    "description": "The hero gradient card height."
+   },
+   "radius": {
+    "type": "dimension",
+    "value": "48px",
+    "source": "painted layer radius under hero-card default (raw/components-computed.json)",
+    "description": "The hero card's 48px painted radius."
+   }
+  },
+  "button-google": {
+   "height": {
+    "type": "dimension",
+    "value": "50px",
+    "source": "computed height of signup-google default (raw/components-computed.json)",
+    "description": "The 50px SSO button."
+   }
+  },
+  "badge": {
+   "height": {
+    "type": "dimension",
+    "value": "24.7969px",
+    "source": "computed height of badge default (raw/components-computed.json)",
+    "description": "The badge chip height."
+   }
+  },
+  "plan-card": {
+   "width": {
+    "type": "dimension",
+    "value": "266px",
+    "source": "computed width of plan-card default (raw/components-computed.json)",
+    "description": "Plan card width."
+   }
+  },
+  "plan-cta": {
+   "height": {
+    "type": "dimension",
+    "value": "50px",
+    "source": "computed height of plan-cta default (raw/components-computed.json)",
+    "description": "The 50px plan CTA."
+   }
+  },
+  "icon-button": {
+   "size": {
+    "type": "dimension",
+    "value": "32px",
+    "source": "computed height of icon-button default (raw/components-computed.json)",
+    "description": "The 32px square icon button."
+   }
+  },
+  "auth-card": {
+   "width": {
+    "type": "dimension",
+    "value": "464px",
+    "source": "computed width of login-card default (raw/components-computed.json)",
+    "description": "The login card width (464px)."
+   },
+   "radius": {
+    "type": "dimension",
+    "value": "48px",
+    "source": "painted layer radius under login-card default (raw/components-computed.json)",
+    "description": "The auth card's 48px radius."
+   }
+  },
+  "signup-card": {
+   "width": {
+    "type": "dimension",
+    "value": "912px",
+    "source": "computed width of signup-card default (raw/components-computed.json)",
+    "description": "The wider two-column signup card (912px)."
+   }
+  },
+  "field": {
+   "height": {
+    "type": "dimension",
+    "value": "48.3906px",
+    "source": "computed height of email-field default (raw/components-computed.json)",
+    "description": "Auth input height (48px)."
+   },
+   "radius": {
+    "type": "dimension",
+    "value": "16px",
+    "source": "painted layer radius under email-field default (raw/components-computed.json)",
+    "description": "Auth input radius (16px)."
+   }
+  },
+  "continue": {
+   "height": {
+    "type": "dimension",
+    "value": "50.3906px",
+    "source": "computed height of continue-btn default (raw/components-computed.json)",
+    "description": "The continue button height."
+   }
+  },
+  "booking-panel": {
+   "width": {
+    "type": "dimension",
+    "value": "1058px",
+    "source": "computed width of bk-panel default (raw/components-computed.json)",
+    "description": "The booking dialog width (~1058px)."
+   }
+  },
+  "booking-calendar": {
+   "width": {
+    "type": "dimension",
+    "value": "399px",
+    "source": "computed width of bk-calendar default (raw/components-computed.json)",
+    "description": "The month grid width (~399px)."
+   }
+  },
+  "booking-day": {
+   "size": {
+    "type": "dimension",
+    "value": "44px",
+    "source": "computed height of bk-day default (raw/components-computed.json)",
+    "description": "The 44px day cell."
+   }
+  },
+  "booking-month-nav": {
+   "size": {
+    "type": "dimension",
+    "value": "40px",
+    "source": "computed height of bk-month-nav default (raw/components-computed.json)",
+    "description": "The 40px month-nav button."
+   }
+  },
+  "booking-slot": {
+   "height": {
+    "type": "dimension",
+    "value": "52px",
+    "source": "computed height of bk-timeslot default (raw/components-computed.json)",
+    "description": "The 52px time slot."
+   },
+   "width": {
+    "type": "dimension",
+    "value": "278.391px",
+    "source": "computed width of bk-timeslot default (raw/components-computed.json)",
+    "description": "The time-slot width."
+   }
+  },
+  "booking-event-card": {
+   "width": {
+    "type": "dimension",
+    "value": "360px",
+    "source": "computed width of bk-event default (raw/components-computed.json)",
+    "description": "The booking event card width."
+   }
+  },
+  "mobile-nav-item": {
+   "height": {
+    "type": "dimension",
+    "value": "57px",
+    "source": "computed height of m-nav-item default (raw/components-computed.json)",
+    "description": "Mobile menu item height (57px)."
+   }
+  }
+ }
+}
