@@ -4253,7 +4253,8 @@
      "icons: no standalone SVG set lifted this pass"
     ],
     "durationMin": 120,
-    "durationNote": "wall-clock for the capture session including adaptation of the kit, the two-theme stylesheet harvest, screenshot and measurement passes and the token/docs build"
+    "durationNote": "wall-clock for the capture session including adaptation of the kit, the two-theme stylesheet harvest, screenshot and measurement passes and the token/docs build",
+    "pr": "https://github.com/starship-terminal/constellations/pull/500"
    },
    "layoutGaps": {
     "icons/": "the icon extraction pass was not run; the glyphs (the craftwork wordmark, the theme toggle, the menu glyph and the social icons) are visible in the crops and screenshots"
