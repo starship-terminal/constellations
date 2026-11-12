@@ -911,6 +911,16 @@
       "referenceId": "systems:byborre",
       "media": 166,
       "assignedMedia": 166
+    },
+    {
+      "referenceId": "systems:calendly",
+      "media": 142,
+      "assignedMedia": 142
+    },
+    {
+      "referenceId": "systems:canva",
+      "media": 133,
+      "assignedMedia": 61
     }
   ],
   "assignments": [
@@ -199777,6 +199787,2464 @@
           "termId": "web-fonts:helvetica-neue",
           "rule": "font-primary",
           "reason": "Exact primary family Helvetica Neue from systems/byborre/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/screenshots/about-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:about",
+          "rule": "page-about",
+          "reason": "Capture filename explicitly names about; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/screenshots/about-light-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:about",
+          "rule": "page-about",
+          "reason": "Capture filename explicitly names about; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/screenshots/booking-event-light-day.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/screenshots/booking-event-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/screenshots/booking-event-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/screenshots/booking-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/screenshots/booking-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/screenshots/home-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/screenshots/home-light-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/screenshots/home-light-menu.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/screenshots/login-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:log-in",
+          "rule": "page-login",
+          "reason": "Capture filename explicitly names log in; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/screenshots/mobile-booking-event-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/screenshots/mobile-booking-event-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/screenshots/mobile-home-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/screenshots/mobile-home-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/screenshots/mobile-home-light-menu.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/screenshots/pricing-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/screenshots/pricing-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/screenshots/pricing-light-yearly.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/screenshots/scheduling-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/screenshots/scheduling-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/screenshots/signup-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:sign-up",
+          "rule": "page-signup",
+          "reason": "Capture filename explicitly names sign up; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/screenshots/solutions-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/screenshots/solutions-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/badge-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:badge",
+          "rule": "ui-badge",
+          "reason": "Capture filename explicitly names badge; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/badge-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:badge",
+          "rule": "ui-badge",
+          "reason": "Capture filename explicitly names badge; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/badge-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:badge",
+          "rule": "ui-badge",
+          "reason": "Capture filename explicitly names badge; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/badge-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:badge",
+          "rule": "ui-badge",
+          "reason": "Capture filename explicitly names badge; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/billing-radio-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:checkbox-radio",
+          "rule": "ui-checkbox-radio",
+          "reason": "Capture filename explicitly names checkbox & radio; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:billing-plans",
+          "rule": "ux-billing",
+          "reason": "Capture filename explicitly names billing & plans; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/billing-radio-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:checkbox-radio",
+          "rule": "ui-checkbox-radio",
+          "reason": "Capture filename explicitly names checkbox & radio; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:billing-plans",
+          "rule": "ux-billing",
+          "reason": "Capture filename explicitly names billing & plans; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/billing-radio-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:checkbox-radio",
+          "rule": "ui-checkbox-radio",
+          "reason": "Capture filename explicitly names checkbox & radio; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:billing-plans",
+          "rule": "ux-billing",
+          "reason": "Capture filename explicitly names billing & plans; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/billing-radio-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:checkbox-radio",
+          "rule": "ui-checkbox-radio",
+          "reason": "Capture filename explicitly names checkbox & radio; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:billing-plans",
+          "rule": "ux-billing",
+          "reason": "Capture filename explicitly names billing & plans; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/bk-calendar-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:calendar",
+          "rule": "ux-calendar",
+          "reason": "Capture filename explicitly names calendar; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/bk-day-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/bk-day-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/bk-day-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/bk-day-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/bk-day-selected-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/bk-day-today-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/bk-event-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/bk-event-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/bk-event-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/bk-event-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/bk-month-nav-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/bk-month-nav-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/bk-month-nav-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/bk-month-nav-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/bk-panel-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/bk-poweredby-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/bk-poweredby-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/bk-poweredby-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/bk-poweredby-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/bk-timeslot-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/bk-timeslot-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/bk-timeslot-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/bk-timeslot-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/bk-timezone-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/bk-timezone-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/bk-timezone-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/bk-timezone-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/continue-btn-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/continue-btn-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/continue-btn-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/continue-btn-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/email-field-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/email-field-filled.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/email-field-focused.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/feature-tip-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/feature-tip-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/feature-tip-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/feature-tip-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/footer-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/footer-link-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/footer-link-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/footer-link-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/footer-link-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/h2-serif-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/header-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/hero-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/hero-lede-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/hero-title-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/icon-button-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ui-elements:icon",
+          "rule": "ui-icon",
+          "reason": "Capture filename explicitly names icon; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/icon-button-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ui-elements:icon",
+          "rule": "ui-icon",
+          "reason": "Capture filename explicitly names icon; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/icon-button-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ui-elements:icon",
+          "rule": "ui-icon",
+          "reason": "Capture filename explicitly names icon; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/icon-button-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ui-elements:icon",
+          "rule": "ui-icon",
+          "reason": "Capture filename explicitly names icon; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/login-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/logo-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/m-header-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/m-hero-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/m-menu-button-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/m-menu-open-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/m-nav-item-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/m-nav-item-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/m-nav-item-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/m-nav-item-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/menu-link-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/menu-link-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/menu-link-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/nav-cta-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/nav-cta-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/nav-cta-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/nav-cta-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/nav-dropdown-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dropdown",
+          "rule": "ui-dropdown",
+          "reason": "Capture filename explicitly names dropdown; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/nav-link-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/nav-link-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/nav-link-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/nav-link-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/nav-login-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/nav-login-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/nav-login-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/nav-login-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/nav-sales-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/nav-sales-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/nav-sales-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/nav-sales-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/nav-trigger-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/nav-trigger-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/nav-trigger-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/nav-trigger-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/plan-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/plan-cta-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/plan-cta-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/plan-cta-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/plan-cta-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/plan-name-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/plan-price-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/pricing-h1-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/signup-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/signup-email-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/signup-email-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/signup-email-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/signup-email-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/signup-field-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/signup-field-focused.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/signup-google-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/signup-google-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/signup-google-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/signup-google-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/sso-btn-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/sso-btn-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/sso-btn-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:calendly",
+      "mediaId": "systems/calendly/components/crops/sso-btn-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:proxima-nova",
+          "rule": "font-primary",
+          "reason": "Exact primary family Proxima Nova from systems/calendly/tokens.json#core.font.family.booking. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:canva",
+      "mediaId": "systems/canva/screenshots/home-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:canva",
+      "mediaId": "systems/canva/screenshots/home-light-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:canva",
+      "mediaId": "systems/canva/screenshots/home-light-menu.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:canva",
+      "mediaId": "systems/canva/screenshots/home-light-tools.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:canva",
+      "mediaId": "systems/canva/screenshots/login-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:log-in",
+          "rule": "page-login",
+          "reason": "Capture filename explicitly names log in; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:canva",
+      "mediaId": "systems/canva/screenshots/mobile-templates-light-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:templates",
+          "rule": "ux-templates",
+          "reason": "Capture filename explicitly names templates; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:canva",
+      "mediaId": "systems/canva/screenshots/mobile-templates-light-full.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:templates",
+          "rule": "ux-templates",
+          "reason": "Capture filename explicitly names templates; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:canva",
+      "mediaId": "systems/canva/screenshots/pricing-light-billing.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:billing-plans",
+          "rule": "ux-billing",
+          "reason": "Capture filename explicitly names billing & plans; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:canva",
+      "mediaId": "systems/canva/screenshots/signup-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:sign-up",
+          "rule": "page-signup",
+          "reason": "Capture filename explicitly names sign up; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:canva",
+      "mediaId": "systems/canva/screenshots/templates-light-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:templates",
+          "rule": "ux-templates",
+          "reason": "Capture filename explicitly names templates; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:canva",
+      "mediaId": "systems/canva/screenshots/templates-light-full.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:templates",
+          "rule": "ux-templates",
+          "reason": "Capture filename explicitly names templates; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:canva",
+      "mediaId": "systems/canva/screenshots/templates-presentations-light-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:templates",
+          "rule": "ux-templates",
+          "reason": "Capture filename explicitly names templates; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:canva",
+      "mediaId": "systems/canva/screenshots/templates-presentations-light-full.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:templates",
+          "rule": "ux-templates",
+          "reason": "Capture filename explicitly names templates; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:canva",
+      "mediaId": "systems/canva/components/crops/auth-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:canva",
+      "mediaId": "systems/canva/components/crops/billing-switch-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:switch-toggle",
+          "rule": "ui-toggle",
+          "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:billing-plans",
+          "rule": "ux-billing",
+          "reason": "Capture filename explicitly names billing & plans; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:canva",
+      "mediaId": "systems/canva/components/crops/billing-switch-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:switch-toggle",
+          "rule": "ui-toggle",
+          "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:billing-plans",
+          "rule": "ux-billing",
+          "reason": "Capture filename explicitly names billing & plans; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:canva",
+      "mediaId": "systems/canva/components/crops/billing-switch-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:switch-toggle",
+          "rule": "ui-toggle",
+          "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:billing-plans",
+          "rule": "ux-billing",
+          "reason": "Capture filename explicitly names billing & plans; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:canva",
+      "mediaId": "systems/canva/components/crops/billing-switch-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:switch-toggle",
+          "rule": "ui-toggle",
+          "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:billing-plans",
+          "rule": "ux-billing",
+          "reason": "Capture filename explicitly names billing & plans; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:canva",
+      "mediaId": "systems/canva/components/crops/category-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:canva",
+      "mediaId": "systems/canva/components/crops/category-card-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:canva",
+      "mediaId": "systems/canva/components/crops/category-card-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:canva",
+      "mediaId": "systems/canva/components/crops/category-card-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:canva",
+      "mediaId": "systems/canva/components/crops/continue-button-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:canva",
+      "mediaId": "systems/canva/components/crops/continue-button-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:canva",
+      "mediaId": "systems/canva/components/crops/continue-button-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:canva",
+      "mediaId": "systems/canva/components/crops/continue-button-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:canva",
+      "mediaId": "systems/canva/components/crops/feature-accordion-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:accordion-collapse",
+          "rule": "ui-accordion",
+          "reason": "Capture filename explicitly names accordion & collapse; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:canva",
+      "mediaId": "systems/canva/components/crops/feature-accordion-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:accordion-collapse",
+          "rule": "ui-accordion",
+          "reason": "Capture filename explicitly names accordion & collapse; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:canva",
+      "mediaId": "systems/canva/components/crops/feature-accordion-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:accordion-collapse",
+          "rule": "ui-accordion",
+          "reason": "Capture filename explicitly names accordion & collapse; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:canva",
+      "mediaId": "systems/canva/components/crops/feature-accordion-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:accordion-collapse",
+          "rule": "ui-accordion",
+          "reason": "Capture filename explicitly names accordion & collapse; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:canva",
+      "mediaId": "systems/canva/components/crops/feature-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:canva",
+      "mediaId": "systems/canva/components/crops/feature-card-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:canva",
+      "mediaId": "systems/canva/components/crops/feature-card-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:canva",
+      "mediaId": "systems/canva/components/crops/feature-card-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:canva",
+      "mediaId": "systems/canva/components/crops/footer-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:canva",
+      "mediaId": "systems/canva/components/crops/footer-link-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:canva",
+      "mediaId": "systems/canva/components/crops/footer-link-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:canva",
+      "mediaId": "systems/canva/components/crops/footer-link-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:canva",
+      "mediaId": "systems/canva/components/crops/footer-link-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:canva",
+      "mediaId": "systems/canva/components/crops/m-menu-button-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:canva",
+      "mediaId": "systems/canva/components/crops/nav-dropdown-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dropdown",
+          "rule": "ui-dropdown",
+          "reason": "Capture filename explicitly names dropdown; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:canva",
+      "mediaId": "systems/canva/components/crops/oauth-button-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:canva",
+      "mediaId": "systems/canva/components/crops/oauth-button-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:canva",
+      "mediaId": "systems/canva/components/crops/oauth-button-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:canva",
+      "mediaId": "systems/canva/components/crops/oauth-button-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:canva",
+      "mediaId": "systems/canva/components/crops/plan-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:canva",
+      "mediaId": "systems/canva/components/crops/plan-tab-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:canva",
+      "mediaId": "systems/canva/components/crops/plan-tab-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:canva",
+      "mediaId": "systems/canva/components/crops/plan-tab-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:canva",
+      "mediaId": "systems/canva/components/crops/plan-tab-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:canva",
+      "mediaId": "systems/canva/components/crops/search-field-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:search-field",
+          "rule": "ui-search-field",
+          "reason": "Capture filename explicitly names search field; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:canva",
+      "mediaId": "systems/canva/components/crops/search-field-focused.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:search-field",
+          "rule": "ui-search-field",
+          "reason": "Capture filename explicitly names search field; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:canva",
+      "mediaId": "systems/canva/components/crops/social-icon-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:icon",
+          "rule": "ui-icon",
+          "reason": "Capture filename explicitly names icon; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:canva",
+      "mediaId": "systems/canva/components/crops/social-icon-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:icon",
+          "rule": "ui-icon",
+          "reason": "Capture filename explicitly names icon; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:canva",
+      "mediaId": "systems/canva/components/crops/social-icon-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:icon",
+          "rule": "ui-icon",
+          "reason": "Capture filename explicitly names icon; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:canva",
+      "mediaId": "systems/canva/components/crops/social-icon-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:icon",
+          "rule": "ui-icon",
+          "reason": "Capture filename explicitly names icon; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:canva",
+      "mediaId": "systems/canva/components/crops/templates-h1-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:templates",
+          "rule": "ux-templates",
+          "reason": "Capture filename explicitly names templates; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:canva",
+      "mediaId": "systems/canva/components/crops/tool-tab-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:canva",
+      "mediaId": "systems/canva/components/crops/tool-tab-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:canva",
+      "mediaId": "systems/canva/components/crops/tool-tab-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:canva",
+      "mediaId": "systems/canva/components/crops/tool-tab-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
         }
       ]
     }
