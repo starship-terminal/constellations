@@ -1,6 +1,6 @@
 # Measured-system category migration
 
-The app's category assignments live in SQLite. [system-categories.json](../src/data/system-categories.json) supplies the one-time migration seed. The seed covers all 41 measured systems from the canonical [catalog](../../catalog.json), using the exact category labels captured in [Refero's catalog taxonomy](../src/data/refero-catalog-taxonomy.json). Each assignment records its reference ID, platform category group, labels and the local evidence used to choose them.
+The app's category assignments live in SQLite. [system-categories.json](../src/data/system-categories.json) supplies the one-time migration seed. The seed covers all 88 measured systems from the canonical [catalog](../../catalog.json), using the exact category labels captured in [Refero's catalog taxonomy](../src/data/refero-catalog-taxonomy.json). Each assignment records its reference ID, platform category group, labels and the local evidence used to choose them. New packages add a row here as they land.
 
 ## Scope and storage
 
@@ -10,12 +10,12 @@ The source adapter identifies measured packages as `systems:<slug>`. Native mobi
 
 | Package platform | Assigned category group | Packages |
 | --- | --- | ---: |
-| Web | `web-categories` | 13 |
+| Web | `web-categories` | 60 |
 | Desktop | `web-categories` | 13 |
 | Mobile | `ios-categories` | 15 |
-| Total | | 41 |
+| Total | | 88 |
 
-There are 59 label assignments across these packages. Each package has one or two relevant categories. Labels classify the product and captured workflows, rather than visual mood, UI components or every feature a product might provide.
+There are 123 label assignments across these packages. Each package has one or two relevant categories. Labels classify the product and captured workflows, rather than visual mood, UI components or every feature a product might provide.
 
 The separate 1,342-style Refero snapshot keeps its existing style categories. Refero's Web and iOS product categories and its Styles vocabulary describe different datasets, so this migration does not reinterpret the style snapshot.
 
@@ -35,6 +35,10 @@ The separate 1,342-style Refero snapshot keeps its existing style categories. Re
 | Grok Bot desktop | AI Tool | The [capture](../../systems/grokbot-desktop/README.md) describes a messenger for AI agents. General agent chat alone does not establish a developer workflow. |
 | Raycast | Productivity | The [catalog](../../catalog.json) describes the launcher and command palette, and records an ended AI trial. The captured core workflow supports Productivity. |
 | Refero | Inspiration Board, Reference | The [capture](../../systems/refero-design/README.md) records screenshot discovery, style galleries and documentation. These categories match the captured content without inferring AI behavior from its old `ai-research` label. |
+| Airbnb | Travel & Booking, Marketplace | The [catalog](../../catalog.json) describes a public travel marketplace: stay search, listing cards and wishlist. The legacy `travel` category maps to Travel & Booking. |
+| Awwwards | Inspiration Board, Reference | The catalog's `directory` category has no Refero equivalent; a curated awards gallery is closest to inspiration and reference material. |
+| B150 | Social Networking | The legacy `media` bucket held this builders' network; no consumption-media label fits a community product. |
+| Butter | Design & Media Editing | The legacy `media` bucket held this video editor; it is a creator tool, not a streaming product. |
 
 Notion's mobile and desktop captures explicitly include Notion AI alongside docs, notes and databases, so both receive AI Tool and Productivity. Desktop coding-agent products receive AI Tool and Development Tools when their catalog description explicitly identifies coding, repositories, terminals, files or agent development work.
 
@@ -42,4 +46,4 @@ Notion's mobile and desktop captures explicitly include Notion AI alongside docs
 
 The migration data must have exactly one row per measured package, with no unknown or duplicate reference IDs. Every category label must appear in its declared taxonomy group, every mobile row must use `ios-categories`, and every web or desktop row must use `web-categories`. An empty label list is invalid.
 
-The initial mapping was checked against the current catalog and captured taxonomy: 41 packages covered, no missing or duplicate IDs, no unknown labels, and no platform-group mismatches. Every row includes its own reason, including the choices above, so future edits can inspect the evidence without reconstructing this migration.
+The initial mapping was checked against the current catalog and captured taxonomy: 88 packages covered, no missing or duplicate IDs, no unknown labels, and no platform-group mismatches. Every row includes its own reason, including the choices above, so future edits can inspect the evidence without reconstructing this migration.

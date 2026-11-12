@@ -2952,6 +2952,196 @@
    }
   },
   {
+   "slug": "cakeequity",
+   "name": "Cake Equity",
+   "url": "https://www.cakeequity.com",
+   "category": "productivity",
+   "platform": "web",
+   "goodFor": "Startup equity-product marketing with a confident violet system: a declared --plum--*/--blackberry--* Webflow token layer, #4823ff pill buttons on 100px radii with #2b1599 hover, ghost-button twins, Exposure Light 60px display type over Inter, a mint #c6f0dc save pill, white plan cards with a 25%-plum featured border, the #0e0d12 Cake-MCP dark band with lemon eyebrows, and a Kinde-hosted login card on its own #5a38fd scale",
+   "tags": [
+    "web",
+    "equity",
+    "fintech",
+    "cap-table",
+    "saas",
+    "marketing",
+    "webflow",
+    "plum",
+    "light",
+    "signed-out"
+   ],
+   "shape": "reference",
+   "captured": "2026-11-11",
+   "access": "signed out (every captured surface is public; the equity-management workspace, cap table, grants, documents, billing and checkout sit behind app.cakeequity.com and were never reached)",
+   "themes": [
+    "light",
+    "dark"
+   ],
+   "widths": [
+    1440,
+    390
+   ],
+   "entry": "systems/cakeequity/README.md",
+   "tokens": "systems/cakeequity/tokens.json",
+   "styleGuide": "systems/cakeequity/style-guide.html",
+   "preview": {
+    "cover": "systems/cakeequity/screenshots/home-light-default.png",
+    "icon": "systems/cakeequity/icon.png",
+    "swatches": {
+     "light": {
+      "page": "core.color.neutral.white",
+      "surface": "core.color.plum.lightest",
+      "text": "core.color.ink.100",
+      "muted": "core.color.ink.50",
+      "accent": "core.color.plum.bright",
+      "border": "core.color.measured.field-border"
+     },
+     "dark": {
+      "page": "core.color.measured.dark-band",
+      "surface": "core.color.ink.100",
+      "text": "core.color.neutral.white",
+      "muted": "core.color.neutral.white-50",
+      "accent": "core.color.lemon.100",
+      "border": "core.color.measured.dark-hairline"
+     }
+    },
+    "fonts": [
+     "core.font.family.display",
+     "core.font.family.body",
+     "core.font.family.auth"
+    ]
+   },
+   "capture": {
+    "method": "public-web",
+    "source": "cakeequity.com (a Webflow marketing site, cakester.shared.* bundle) plus the Kinde-hosted login card app.cakeequity.com redirects to, in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and crops from the live DOM. The site declares a real --blackberry--*/--plum--*/--berry--*/--lemon--*/--lime--*/--tangerine--* token layer (a blackberry ink ramp, six plum steps, four bright accents and their alphas) used directly, plus measured computed values for the Kinde card, the save-pill, field borders and the two dark regions (the #18161a footer and #0e0d12 Cake-MCP band). The equity-management app behind app.cakeequity.com is a documented boundary",
+    "timestamp": "2026-11-11T10:00:00Z",
+    "harness": "Devin",
+    "model": "SWE-2 High",
+    "route": "public-web",
+    "routes": [
+     "/",
+     "/pricing",
+     "/features/cap-table",
+     "/blog",
+     "/demo-request",
+     "/product-tour",
+     "app.cakeequity.com/login",
+     "mobile / and /pricing"
+    ],
+    "gaps": [
+     "the signed-in workspace entirely: the equity app, cap table, grants, scenario models, documents, stakeholders, reports, billing and checkout live behind app.cakeequity.com and were never reached",
+     "the login card (Kinde hosted) was captured as a surface, never filled or submitted",
+     "signup and checkout were never followed; every Get-started-free, Start-free and Book-a-demo action was measured only; the HubSpot demo form is a cross-origin iframe captured as a region",
+     "calc-field recorded missing: the pricing calculator's inputs sit in .pp-hidden-fields (display:none) behind the region select",
+     "the mobile page forces a ~745px layout viewport (.comparison-grid min-width:700px): the hamburger sits outside the 390 visual viewport and the page pans",
+     "icons: no standalone SVG set lifted this pass"
+    ],
+    "durationMin": 90,
+    "pr": "https://github.com/starship-terminal/constellations/pull/487"
+   },
+   "layoutGaps": {
+    "icons/": "the icon extraction pass was not run; the icons (the cake. wordmark, chevrons, the +/- accordion glyph, social glyphs, the product-UI artwork) are visible in the crops and screenshots"
+   }
+  },
+  {
+   "slug": "cal",
+   "name": "Cal.com",
+   "url": "https://cal.com",
+   "category": "productivity",
+   "platform": "web",
+   "goodFor": "Scheduling-product marketing and booking flows: a floating 72%-white glass header bar with a mega-menu, an 80px calSans display, dark #242424 buttons with a white inset top line on 10-18px radii, a declared --color-hp-* marketing palette (#242424 ink, #6a6e78 muted, #e5e7eb/#dee1e6 hairlines, #cc4510 accent, #0f234b-tinted shadows), the declared --cal-* semantic layer on the public booker and auth cards (#3c3e44 text, #d1d5db borders, Inter and fontSans), and the booker's supported dark mode (#0f0f0f canvas, #4d4d4d borders, #d4d4d4 text, #f5f5f5 inverted buttons)",
+   "tags": [
+    "web",
+    "scheduling",
+    "booking",
+    "calendar",
+    "saas",
+    "marketing",
+    "tailwind",
+    "light",
+    "dark",
+    "signed-out"
+   ],
+   "shape": "reference",
+   "captured": "2026-11-11",
+   "access": "signed out (every captured surface is public; the product — scheduler, event types, availability, bookings, workflows, insights, settings — sits behind app.cal.com login and was never reached; no booking was created)",
+   "themes": [
+    "light",
+    "dark"
+   ],
+   "widths": [
+    1440,
+    390
+   ],
+   "entry": "systems/cal/README.md",
+   "tokens": "systems/cal/tokens.json",
+   "styleGuide": "systems/cal/style-guide.html",
+   "preview": {
+    "cover": "systems/cal/screenshots/home-light-default.png",
+    "icon": "systems/cal/icon.png",
+    "swatches": {
+     "light": {
+      "page": "core.color.hp.page",
+      "surface": "core.color.hp.field",
+      "text": "core.color.hp.ink",
+      "muted": "core.color.hp.muted",
+      "accent": "core.color.hp.accent",
+      "border": "core.color.hp.line"
+     },
+     "dark": {
+      "page": "dark.surface.page",
+      "surface": "dark.surface.subtle",
+      "text": "dark.text.primary",
+      "muted": "dark.text.muted",
+      "accent": "dark.action.primary",
+      "border": "dark.border.default"
+     }
+    },
+    "fonts": [
+     "core.font.family.sans",
+     "core.font.family.app",
+     "core.font.family.booker"
+    ]
+   },
+   "capture": {
+    "method": "public-web",
+    "source": "cal.com (a Next.js marketing app declaring the --color-hp-* homepage layer, plus the --cal-* semantic layer on the public booker at i.cal.com (cal.com/peer) and the app.cal.com auth cards) in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and crops from the live DOM. Both token layers are used directly, plus measured values; the booker also paints dark under its supported ?theme=dark&embed=true mode. The product behind app.cal.com is a documented boundary",
+    "timestamp": "2026-11-11T10:00:00Z",
+    "harness": "Devin",
+    "model": "SWE-2 High",
+    "route": "public-web",
+    "routes": [
+     "/",
+     "/pricing",
+     "/features/cal-video",
+     "/teams",
+     "/enterprise",
+     "/customers",
+     "/blog",
+     "/faq",
+     "cal.com/peer (booker, light + ?theme=dark&embed=true)",
+     "app.cal.com/auth/login",
+     "app.cal.com/signup",
+     "mobile / and cal.com/peer"
+    ],
+    "gaps": [
+     "the signed-in product entirely: the scheduler, event-type editor, availability, bookings, workflows, insights and settings live behind app.cal.com login and were never reached",
+     "the login and signup cards were captured as surfaces, never filled or submitted",
+     "no booking was created: the booker's day cells, slot list and guest-details form were toggled as local state and Confirm was never pressed",
+     "signup, SSO and checkout were never followed; every Get-started/Sign-up-with/Continue action was measured only",
+     "the FAQ accordion was measured closed; its answers are unexpanded",
+     "booking pages vary per host: this capture is cal.com/peer's event type with its #292929 brand paint",
+     "icons: no standalone SVG set lifted this pass"
+    ],
+    "durationMin": 240,
+    "durationNote": "capture, measurement and packaging across the session (wall-clock)",
+    "pr": "https://github.com/starship-terminal/constellations/pull/489"
+   },
+   "layoutGaps": {
+    "icons/": "the icon extraction pass was not run; the icons (the Cal.com wordmark, Google/Microsoft/Twitter marks, chevrons and calendar glyphs) are visible in the crops and screenshots"
+   }
+  },
+  {
    "slug": "capy-desktop",
    "name": "Capy (desktop)",
    "url": "https://capy.ai",
@@ -6166,6 +6356,201 @@
    },
    "layoutGaps": {
     "icons/": "Zed's icons are its own artwork and are not kept here (docs/RIGHTS.md)"
+   }
+  },
+  {
+   "slug": "buymeacoffee",
+   "name": "Buy Me a Coffee",
+   "url": "https://buymeacoffee.com",
+   "category": "e-commerce",
+   "platform": "web",
+   "goodFor": "Creator-monetisation marketing plus a real public product surface: a Nuxt marketing site (Circular faces on a #faf8f0 cream field, #222 ink, the #ffdd00 yellow pill CTAs whose ::before grows on hover) and the Vite-built public creator page and login card on white; the support widget with its quantity pills, fields and checkboxes themed per creator by inline --theme-color* vars (#ff813f on /cara.app), plus Tailwind's #2563eb focus ring",
+   "tags": [
+    "web",
+    "creator",
+    "monetisation",
+    "tips",
+    "membership",
+    "crowdfunding",
+    "vue",
+    "nuxt",
+    "tailwind",
+    "light",
+    "playful",
+    "signed-out"
+   ],
+   "shape": "reference",
+   "captured": "2026-11-11",
+   "access": "signed out (every captured surface is public; the creator dashboard, shop/membership/extras managers, payouts, analytics and settings sit behind /login, the Stripe checkout behind Support was never opened, and the password step behind Continue-with-email was never submitted)",
+   "themes": [
+    "light"
+   ],
+   "widths": [
+    1440,
+    390
+   ],
+   "entry": "systems/buymeacoffee/README.md",
+   "tokens": "systems/buymeacoffee/tokens.json",
+   "styleGuide": "systems/buymeacoffee/style-guide.html",
+   "preview": {
+    "cover": "systems/buymeacoffee/screenshots/home-light-default.png",
+    "icon": "systems/buymeacoffee/icon.png",
+    "swatches": {
+     "light": {
+      "page": "core.color.neutral.cream",
+      "surface": "core.color.neutral.paper",
+      "text": "core.color.neutral.ink",
+      "muted": "core.color.neutral.grey",
+      "accent": "core.color.brand.yellow",
+      "border": "core.color.neutral.divider"
+     }
+    },
+    "fonts": [
+     "core.font.family.bold",
+     "core.font.family.regular",
+     "core.font.family.medium",
+     "core.font.family.book",
+     "core.font.family.borel",
+     "core.font.family.app"
+    ]
+   },
+   "capture": {
+    "method": "public-web",
+    "source": "buymeacoffee.com (a Nuxt/Vue marketing site over the Vite-built creator page and login card served from cdn.buymeacoffee.com) in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and crops from the live DOM. The site declares no design-token layer beyond three :root layout vars, so the values are measured computed styles plus the inline --theme-color* accent set read off the creator page's DOM",
+    "timestamp": "2026-11-11T10:00:00Z",
+    "harness": "Devin",
+    "model": "SWE-2 High",
+    "route": "public-web",
+    "routes": [
+     "/",
+     "/cara.app",
+     "/faq",
+     "/reviews",
+     "/blog",
+     "/brand",
+     "/about",
+     "/stream-alerts",
+     "/login",
+     "/signup",
+     "/terms",
+     "mobile / and /cara.app"
+    ],
+    "gaps": [
+     "the signed-in dashboard entirely: the page editor, membership/shop/extras managers, payouts, analytics and settings live behind /login and were never reached",
+     "the Stripe checkout behind the Support and Join buttons was never opened; both are submits, measured never pressed",
+     "/login and /signup were captured as cards, never submitted; the password input lives in a second step behind Continue-with-email and was never reached",
+     "the search overlay was captured open; its results were never typed for",
+     "icons: no standalone SVG set lifted this pass"
+    ],
+    "durationMin": null,
+    "pr": "https://github.com/starship-terminal/constellations/pull/488"
+   },
+   "layoutGaps": {
+    "icons/": "the icon extraction pass was not run; the icons (the coffee-cup wordmark, heart and chevron glyphs, social icons, the payment brand marks) are visible in the crops and screenshots"
+   }
+  },
+  {
+   "slug": "byborre",
+   "name": "BYBORRE",
+   "url": "https://byborre.com",
+   "category": "e-commerce",
+   "platform": "web",
+   "goodFor": "Textile/materials brand marketing with a restrained two-tone system: a cream #f5f5f0 canvas under a single #1b1b1b ink (all text, button fills, footer and marquee panels), the #fae210 yellow every ink button flips to on hover, a declared --color-primary-* green ramp held as Tailwind channel triplets, Helvetica Neue 80px display type, 48px controls on a 10px radius, and a public /collection Textile Room catalogue with colour-chip filters",
+   "tags": [
+    "web",
+    "textile",
+    "materials",
+    "fashion",
+    "catalogue",
+    "marketing",
+    "nuxt",
+    "tailwind",
+    "light",
+    "two-tone",
+    "signed-out"
+   ],
+   "shape": "reference",
+   "captured": "2026-11-11",
+   "access": "signed out (every captured surface is public; the Design Studio, dashboard, saved designs, ordering, checkout and account sit behind the /login panel and were never reached)",
+   "themes": [
+    "light",
+    "dark"
+   ],
+   "widths": [
+    1440,
+    390
+   ],
+   "entry": "systems/byborre/README.md",
+   "tokens": "systems/byborre/tokens.json",
+   "styleGuide": "systems/byborre/style-guide.html",
+   "preview": {
+    "cover": "systems/byborre/screenshots/home-light-default.png",
+    "icon": "systems/byborre/icon.png",
+    "swatches": {
+     "light": {
+      "page": "core.color.neutral.cream",
+      "surface": "core.color.neutral.field",
+      "text": "core.color.neutral.ink",
+      "muted": "core.color.neutral.muted",
+      "accent": "core.color.brand.accent",
+      "border": "core.color.neutral.line"
+     },
+     "dark": {
+      "page": "core.color.neutral.ink",
+      "surface": "core.color.neutral.ink",
+      "text": "dark.text.primary",
+      "muted": "core.color.neutral.cream",
+      "accent": "core.color.brand.accent",
+      "border": "core.color.neutral.divider-dark"
+     }
+    },
+    "fonts": [
+     "core.font.family.sans"
+    ]
+   },
+   "capture": {
+    "method": "public-web",
+    "source": "byborre.com (a Nuxt marketing app and public /collection Textile Room catalogue in Tailwind) in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and crops from the live DOM. The inline :root block declares a Tailwind token layer (--color-primary-50..950 channel triplets, --color-gray-DEFAULT, a .dark flip of primary-DEFAULT); the ink/cream neutrals, yellow hover accent, radii, type ramp and motion are measured computed values. The Design Studio behind the login panel is a documented boundary",
+    "timestamp": "2026-11-11T16:00:00Z",
+    "harness": "Devin",
+    "model": "SWE-2 High",
+    "route": "public-web",
+    "routes": [
+     "/",
+     "/collection",
+     "/collection/blink",
+     "/creative-control",
+     "/knit-innovation",
+     "/projects",
+     "/brands",
+     "/designers",
+     "/founders-story",
+     "/responsibility",
+     "/ways-of-working",
+     "/team",
+     "/faq",
+     "/contact",
+     "/popup-store",
+     "/login",
+     "/terms-and-conditions",
+     "/privacy-policy",
+     "mobile / and /collection"
+    ],
+    "gaps": [
+     "the signed-in product entirely: the Design Studio, dashboard, saved designs, ordering, checkout and account sit behind the 'Log in to continue' panel and were never reached",
+     "/login was captured open as a surface, never filled or submitted",
+     "order, cart, Get-in-touch and every external link (help-center, news, the pcon catalogue, careers, socials) were measured or screenshotted, never followed",
+     "the cookie consent bar and newsletter overlays were hidden, never answered",
+     "filter-toggle recorded missing: 'Show all filters' exists in the DOM but renders 0x0 at 1440 wide",
+     "the /collection full-page shot is capped at eight chunks (31,333px stitched); the grid past the cap is a documented truncation",
+     "icons: no standalone SVG set lifted this pass"
+    ],
+    "durationMin": 240,
+    "durationNote": "wall-clock for the capture session including adaptation of the kit, the stylesheet harvest, screenshot and measurement passes, and the offline build",
+    "pr": "https://github.com/starship-terminal/constellations/pull/491"
+   },
+   "layoutGaps": {
+    "icons/": "the icon extraction pass was not run; the icons (the BYBORRE wordmark, the iconify Material-Design glyphs, the social glyphs and the textile photography) are visible in the crops and screenshots"
    }
   },
   {

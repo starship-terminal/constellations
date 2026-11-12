@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cake Equity style guide</title>
+<meta name="description" content="Cake Equity design tokens and the signed-out public surfaces' components, rendered from tokens.json with the declared and measured values.">
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  --sg-sans: var(--font-family-body, Inter, ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif);
+  --sg-serif: var(--font-family-display, "Times New Roman", Georgia, serif);
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+[data-mode="dark"], .dark {
+/*DARK*/
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text-primary, #18161a); background: var(--surface-page, #fff); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 400 40px/1.2 var(--sg-serif); margin: 0 0 4px; letter-spacing: -0.02em; }
+h2.sh { font: 600 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--text-primary, #18161a); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--border-subtle, #e5e5ea); }
+.lead { max-width: 62ch; color: var(--text-primary, #18161a); opacity: .8; }
+.note { font-size: 13px; color: var(--text-primary, #18161a); opacity: .65; max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 600 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--text-primary, #18161a); opacity: .6; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border-subtle, #e5e5ea); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--text-primary, #18161a); opacity: .65; }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--border-subtle, #e5e5ea); background: #fff; font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--text-primary, #18161a); opacity: .65; }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--border-subtle, #e5e5ea); overflow: hidden; background: var(--surface-page, #fff); }
+.navbar { display: flex; align-items: center; gap: 22px; height: 74px; padding: 0 12px 0 22px; font-size: 14px; background: var(--surface-page, #fff); border-bottom: 1px solid var(--border-subtle, #e5e5ea); }
+.navbar .wm { font-weight: 600; font-size: 20px; letter-spacing: -0.02em; }
+.navbar .sp { flex: 1; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-control-height, 59px); padding: 0 28px; font-size: 19px; font-weight: 400; border-radius: var(--radius-pill, 100px); border: 1px solid transparent; }
+.btn.primary { background: var(--action-primary-default, #4823ff); color: var(--text-on-accent, #fff); }
+.btn.small { height: var(--component-button-height, 44px); border-radius: var(--radius-pill, 100px); font-size: 14px; }
+.btn.ghost { background: transparent; border-color: var(--action-ghost-border, #4823ff); color: var(--action-ghost-border, #4823ff); }
+.hero { color: var(--text-primary, #18161a); padding: 72px 40px; font: 400 60px/1.1 var(--sg-serif); letter-spacing: -2px; }
+.hero small { display: block; font: 300 20px/1.6 var(--sg-sans); color: var(--text-primary, #000); margin: 16px auto 22px; max-width: 46ch; letter-spacing: -0.3px; }
+.chip { display: inline-flex; align-items: center; gap: 8px; background: var(--surface-card, #fff); border: 1px solid var(--border-chip, #ebe8f2); border-radius: var(--radius-pill, 100px); padding: 8px 14px; font-size: 15px; font-weight: 500; margin-bottom: 24px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
+.tile { border: 1px solid var(--border-subtle, #e5e5ea); padding: 14px; font-size: 13px; background: #fff; }
+.tile b { display: block; font: 400 18px/1.25 var(--sg-serif); margin-bottom: 4px; }
+.tile .sub { opacity: .65; font-size: 12px; }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--border-subtle, #e5e5ea); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--border-subtle, #e5e5ea); }
+.tr .ts { font-family: var(--sg-serif); }
+.tr .tv { font-size: 12px; color: var(--text-primary, #18161a); opacity: .65; font-family: var(--sg-mono); }
+.toggle { display: inline-flex; background: var(--surface-card, #fff); border: 1px solid var(--border-field-default, #d9d9e0); border-radius: 999px; padding: 4px; gap: 4px; font-size: 14px; }
+.toggle span { padding: 8px 22px; border-radius: 999px; }
+.toggle .on { background: var(--color-ink-100, #18161a); color: var(--text-on-dark, #fff); }
+.save { display: inline-block; background: var(--accent-success, #c6f0dc); border-radius: 30px; padding: 2px 9px; font-size: 12px; font-weight: 500; }
+.eyebrow { font: 600 14px/1.2 var(--sg-sans); letter-spacing: .8px; text-transform: uppercase; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Cake Equity style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">Cake Equity, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the declared <code>--plum--*</code>/<code>--blackberry--*</code> Webflow palette (the #4823ff brand violet and its #2b1599 pressed step, the #18161a ink, the berry/lemon/lime/tangerine accents and their alphas), the Exposure Light type ramp from the 60px display to the 13px badge, the 100px/999px pill radii and the 20-28px cards, the measured one-offs (the mint #c6f0dc save pill, the #d9d9e0 field borders, the #005fcc focus ring), the Kinde auth card's own violet scale, and the dark roles of the #18161a footer and #0e0d12 Cake-MCP band. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from cakeequity.com on 2026-11-11, signed out, in headless Chromium. The equity-management app behind app.cakeequity.com is a documented boundary; the login card on the hosted auth domain was measured as a form and never filled. Exposure, Youth and Cabinetgrotesk are served faces and are not loaded here: samples fall back to Times/system sans.</p>
+
+  <h2 class="sh">The chrome</h2>
+  <p class="lead">A fixed white navbar carries the cake. wordmark, the Product/Solutions mega-nav, Pricing, Login and Book-a-demo — and the violet 100px Get-started-free pill. The same violet fills every primary action on the page; the ghost variant is a 1px violet ring. Hover and press darken to #2b1599.</p>
+  <div class="mock" style="padding:0 0 20px">
+    <div class="navbar"><span class="wm">cake.</span><span>Product</span><span>Solutions</span><span>Resources</span><span>Pricing</span><span class="sp"></span><span>Login</span><span class="btn small ghost">Book a demo</span> <span class="btn small primary">Get started free</span></div>
+    <div class="hero"><span class="chip">Pulley is shutting down — How managed migration works &rarr;</span><br>The equity platform for growing startups<small>Cap table management, equity incentives, valuations and compliance — everything a startup needs to manage equity, without the complexity.</small><span class="btn primary">Get started free</span> <span class="btn ghost">Book a demo</span></div>
+  </div>
+
+  <h2 class="sh">Pricing</h2>
+  <p class="lead">/pricing carries a 200px region select and the white Yearly/Quarterly 999px switch (ink pill on the active half, a mint -20% save pill), over white plan cards — the featured Growth tier picks up a 25% plum border and an #ede9ff most-popular ribbon; its price paints 40px Inter.</p>
+  <div class="mock" style="padding:20px">
+    <div style="text-align:center;margin-bottom:18px"><span class="toggle"><span class="on">Yearly</span><span>Quarterly</span></span> <span class="save">-20% save</span></div>
+    <div class="grid">
+      <div class="tile" style="border-radius:20px"><b>Growth</b><span class="sub">S$1,128 billed annually</span></div>
+      <div class="tile" style="border-radius:20px;border:1px solid var(--border-plan,#c9c3ff);box-shadow:0 -32px 0 0 var(--accent-subtle,#ede9ff) inset"><b>Scale</b><span class="sub">Most popular</span></div>
+    </div>
+    <div style="margin-top:18px"><span class="btn small primary">Start free</span></div>
+  </div>
+
+  <h2 class="sh">The dark surfaces</h2>
+  <p class="lead">Not a theme — two regions on the light page paint dark: the #18161a footer (white links, #7e78ff hover) and the #0e0d12 Cake-MCP band with its lemon #e7ff6e eyebrows and 18%-white hairlines.</p>
+  <div class="mock dark" style="padding:24px;background:var(--surface-band,#0e0d12);border-radius:var(--radius-dark-band,28px);color:var(--text-primary,#fff)">
+    <div class="eyebrow" style="color:var(--text-eyebrow,#e7ff6e);margin-bottom:12px">Cake MCP</div>
+    <div style="font:300 24px/1.3 var(--sg-serif);max-width:30ch">Let your AI read the cap table.</div>
+    <div style="border-top:1px solid var(--border-hairline,rgba(244,244,244,0.18));margin-top:18px;padding-top:12px;font-size:14px;color:var(--text-muted,rgba(255,255,255,0.5))">Model Context Protocol server &mdash; query equity data from Claude.</div>
+  </div>
+
+  <h2 class="sh">The hosted login</h2>
+  <p class="lead">app.cakeequity.com/login hands off to Kinde (authentication.cakeequity.com): a 496px white card on 16px radius, an 8px email field, a #5a38fd Continue — close to but not the marketing plum — and #f5f5f5 OAuth buttons.</p>
+  <div class="mock" style="padding:32px;display:flex;justify-content:center">
+    <div style="width:340px;background:#fff;border:1px solid var(--border-subtle,#e5e5ea);border-radius:var(--radius-card,16px);padding:32px">
+      <div style="font:500 24px/1.3 var(--sg-sans);letter-spacing:-0.48px;margin-bottom:20px">Welcome back</div>
+      <div style="border:1px solid var(--color-auth-field-border,#ababab);border-radius:var(--radius-auth,8px);height:48px;margin-bottom:12px;padding:12px;font-size:14px;color:#999">Email</div>
+      <div style="background:var(--color-auth-primary,#5a38fd);color:#fff;border-radius:var(--radius-auth,8px);height:48px;display:flex;align-items:center;justify-content:center;font-weight:500">Continue</div>
+      <div style="text-align:center;font-size:13px;margin:12px 0;color:#666">Or</div>
+      <div style="background:var(--color-auth-oauth,#f5f5f5);border-radius:var(--radius-auth,8px);height:48px;display:flex;align-items:center;justify-content:center;font-weight:500;margin-bottom:8px">Continue with Google</div>
+      <div style="background:var(--color-auth-oauth,#f5f5f5);border-radius:var(--radius-auth,8px);height:48px;display:flex;align-items:center;justify-content:center;font-weight:500">Continue with LinkedIn</div>
+      <div style="text-align:center;margin-top:16px;font-size:14px">No account? <span style="color:var(--color-auth-link,#1c029d);font-weight:500">Create one</span></div>
+    </div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The declared <code>--blackberry--*</code>/<code>--plum--*</code> layer carries the ink and the accent ramps; the measured <code>color.measured.*</code> and <code>color.auth.*</code> readings carry the one-offs and the Kinde card. Light roles alias the palette, dark roles the two dark surfaces.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Radius, gradient and motion</h2>
+  <p class="lead">Pills everywhere: 100px on buttons and selects, 999px on the billing toggle, 50px on the nav Login. Cards run 16-28px; the Kinde controls 8px. Borders are hairlines: #d9d9e0 on fields, 10% ink inside content, 25% plum on the featured card.</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">Two painted faces: <code>Exposure Light</code> on display and headings (60/66 -2px h1s, 44/44 -1 h2s), <code>Inter</code> on everything else — 300 ledes, 600 menu links and eyebrows, 400 body. The Kinde card runs its own Inter/system stack at 24px/16px.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared --plum--*/--blackberry--* variables from the live Webflow bundle and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, opened and toggled states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = /*TOKENS*/null;
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  for (const [setname, label] of [['light', 'light roles'], ['dark', 'dark roles (footer + MCP band)']]) {
+    const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+    if (!roles.length) continue;
+    // The dark set's custom properties only resolve inside a .dark scope:
+    // swatch dots must live under it or they paint the light values/unset.
+    h += `<div class="pal-h">${label}</div><div class="pal${setname === 'dark' ? ' dark' : ''}">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.border || {}, 'border.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.easing || {}, 'easing.')) m += `<div><b>${esc(n)}</b> <span>cubic-bezier(${esc(t.v.join ? t.v.join(', ') : t.v)})</span></div>`;
+  for (const [n, t] of flat(TOK.core.duration || {}, 'duration.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.gradient || {}, 'gradient.')) m += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.color + ' ' + Math.round(x.position * 100) + '%').join(', ') : t.v)}</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  for (const [n, t] of flat(TOK.core.shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.light.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(t.v);
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Cake</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).letterSpacing || {}, 'font.letterSpacing.')) h += `<div class="tr"><span class="ts" style="letter-spacing:${esc(t.v)}">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>

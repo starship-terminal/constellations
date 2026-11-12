@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 85,
-    "system_domains": 77,
-    "matched_domains": 52,
-    "missing_domains": 381,
+    "system_packages": 89,
+    "system_domains": 81,
+    "matched_domains": 56,
+    "missing_domains": 377,
     "system_domains_absent_from_catalog": 25
   },
   "matched": {
@@ -649,6 +649,74 @@
         }
       ]
     },
+    "buymeacoffee.com": {
+      "catalog": [
+        {
+          "name": "Buy Me a Coffee",
+          "domain": "buymeacoffee.com",
+          "id": 334
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "buymeacoffee",
+          "name": "Buy Me a Coffee",
+          "url": "https://buymeacoffee.com",
+          "name_match": false
+        }
+      ]
+    },
+    "byborre.com": {
+      "catalog": [
+        {
+          "name": "BYBORRE®",
+          "domain": "byborre.com",
+          "id": 455
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "byborre",
+          "name": "BYBORRE",
+          "url": "https://byborre.com",
+          "name_match": true
+        }
+      ]
+    },
+    "cakeequity.com": {
+      "catalog": [
+        {
+          "name": "Cake Equity",
+          "domain": "cakeequity.com",
+          "id": 661
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "cakeequity",
+          "name": "Cake Equity",
+          "url": "https://www.cakeequity.com",
+          "name_match": false
+        }
+      ]
+    },
+    "cal.com": {
+      "catalog": [
+        {
+          "name": "Cal",
+          "domain": "cal.com",
+          "id": 282
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "cal",
+          "name": "Cal.com",
+          "url": "https://cal.com",
+          "name_match": true
+        }
+      ]
+    },
     "calendly.com": {
       "catalog": [
         {
@@ -970,34 +1038,6 @@
         "name": "Bento",
         "domain": "bento.me",
         "id": 284
-      }
-    ],
-    "buymeacoffee.com": [
-      {
-        "name": "Buy Me a Coffee",
-        "domain": "buymeacoffee.com",
-        "id": 334
-      }
-    ],
-    "byborre.com": [
-      {
-        "name": "BYBORRE®",
-        "domain": "byborre.com",
-        "id": 455
-      }
-    ],
-    "cakeequity.com": [
-      {
-        "name": "Cake Equity",
-        "domain": "cakeequity.com",
-        "id": 661
-      }
-    ],
-    "cal.com": [
-      {
-        "name": "Cal",
-        "domain": "cal.com",
-        "id": 282
       }
     ],
     "calm.com": [
