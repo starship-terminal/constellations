@@ -4097,7 +4097,8 @@
      "icons: no standalone SVG set lifted this pass"
     ],
     "durationMin": 180,
-    "durationNote": "wall-clock for the capture session including adaptation of the kit, the stylesheet harvest, screenshot and measurement passes, the token/docs build and the rubric review"
+    "durationNote": "wall-clock for the capture session including adaptation of the kit, the stylesheet harvest, screenshot and measurement passes, the token/docs build and the rubric review",
+    "pr": "https://github.com/starship-terminal/constellations/pull/504"
    },
    "layoutGaps": {
     "icons/": "the icon extraction pass was not run; the glyphs (the Cushion wordmark, the mock emoji channel markers, the post avatars and the social icons) are visible in the crops and screenshots"
