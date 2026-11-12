@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 89,
-    "system_domains": 81,
-    "matched_domains": 56,
-    "missing_domains": 377,
+    "system_packages": 90,
+    "system_domains": 82,
+    "matched_domains": 57,
+    "missing_domains": 376,
     "system_domains_absent_from_catalog": 25
   },
   "matched": {
@@ -734,6 +734,23 @@
         }
       ]
     },
+    "canva.com": {
+      "catalog": [
+        {
+          "name": "Canva",
+          "domain": "canva.com",
+          "id": 94
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "canva",
+          "name": "Canva",
+          "url": "https://www.canva.com",
+          "name_match": true
+        }
+      ]
+    },
     "chatgpt.com": {
       "catalog": [
         {
@@ -1045,13 +1062,6 @@
         "name": "Calm",
         "domain": "calm.com",
         "id": 227
-      }
-    ],
-    "canva.com": [
-      {
-        "name": "Canva",
-        "domain": "canva.com",
-        "id": 94
       }
     ],
     "care.com": [

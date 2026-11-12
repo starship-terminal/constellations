@@ -6650,6 +6650,111 @@
    "layoutGaps": {
     "icons/": "the icon extraction pass was not run; the icons (the Calendly wordmark, the Google SSO glyph, product illustrations and the booking pages' glyphs) are visible in the crops and screenshots"
    }
+  },
+  {
+   "slug": "canva",
+   "name": "Canva",
+   "url": "https://www.canva.com",
+   "category": "productivity",
+   "platform": "web",
+   "goodFor": "Design-tool marketing pages and galleries: Canva Sans 80px display over a white/#0f1015 two-tone, one #8b3dff -> #7630d7 -> #612dae purple ramp for every action, state layers instead of borders (6%/14% ink washes on light, 7%/15% white on the dark hero band), a 1px inset rgba(53,65,90,0.2) hairline ring on secondary controls, 9999px pill tabs next to flat 12px control radii, a dark .theme header+hero band over a gradient media layer, plan-card pricing and a public /templates gallery",
+   "tags": [
+    "web",
+    "design-tool",
+    "creative",
+    "marketing",
+    "templates",
+    "gallery",
+    "pricing",
+    "stylex",
+    "light",
+    "two-tone",
+    "signed-out"
+   ],
+   "shape": "reference",
+   "captured": "2026-11-12",
+   "access": "signed out (every captured surface is public; the editor, Brand Kit, dashboards, teams, billing and account sit behind the /login and /signup cards and were never reached; no form was submitted and no account created). Served the Singapore region: prices render S$",
+   "themes": [
+    "light",
+    "dark"
+   ],
+   "widths": [
+    1440,
+    390
+   ],
+   "entry": "systems/canva/README.md",
+   "tokens": "systems/canva/tokens.json",
+   "styleGuide": "systems/canva/style-guide.html",
+   "preview": {
+    "cover": "systems/canva/screenshots/home-light-default.png",
+    "icon": "systems/canva/icon.png",
+    "swatches": {
+     "light": {
+      "page": "core.color.neutral.white",
+      "surface": "core.color.neutral.white",
+      "text": "core.color.neutral.ink",
+      "muted": "core.color.neutral.muted",
+      "accent": "core.color.brand.purple",
+      "border": "core.color.neutral.hairline"
+     },
+     "dark": {
+      "page": "dark.surface.page",
+      "surface": "dark.surface.page",
+      "text": "dark.text.primary",
+      "muted": "dark.text.primary",
+      "accent": "core.color.brand.purple",
+      "border": "dark.border.ghost"
+     }
+    },
+    "fonts": [
+     "core.font.family.sans"
+    ]
+   },
+   "capture": {
+    "method": "public-web",
+    "source": "canva.com (a StyleX marketing app with public /templates and /pricing surfaces) in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and crops from the live DOM. The StyleX custom-property layer is hash-named (--8jnd6g is #8b3dff) with .light/.dark redeclarations, harvested from cross-origin static.canva.com responses and resolved both ways; the ink/white neutrals, the #8b3dff action ramp, the state washes, radii, type ramp and motion are measured computed values. The editor, Brand Kit and dashboards behind the auth card are a documented boundary. Served the Singapore region (S$ prices)",
+    "timestamp": "2026-11-12T16:00:00Z",
+    "harness": "Devin",
+    "model": "SWE-2 High",
+    "route": "public-web",
+    "routes": [
+     "/",
+     "/pricing/",
+     "/pro/",
+     "/features/",
+     "/templates/",
+     "/presentations/templates/",
+     "/presentations/",
+     "/docs/",
+     "/whiteboard/",
+     "/create/",
+     "/canva-business/",
+     "/login",
+     "/signup",
+     "/policies/terms-of-use/",
+     "/solutions/brand-management/ (generic 404 - recorded boundary)",
+     "mobile / and /templates"
+    ],
+    "gaps": [
+     "the signed-in product entirely: the design editor, Brand Kit, dashboards, teams, billing and account sit behind the auth card and were never reached",
+     "/login and /signup captured as a surface; 'Continue with email' was pressed once to reveal the username field (a local UI step, focused and sample-filled then deleted) - Continue was never pressed and no form was submitted",
+     "Sign up, Get started, Start a free trial, Contact Sales and the OAuth providers were measured or screenshotted, never followed",
+     "the cookie banner (Accept all cookies / Manage cookies) was hidden per capture, never answered",
+     "/solutions/brand-management/ returned Canva's generic 404 - recorded, not retried",
+     "the plan-audience tabs auto-activate on keyboard focus, so plan-tab focus-visible was measured on the view switching to Education",
+     "the Design mega-menu auto-closes a few seconds after opening; flyout-state readings re-opened it first",
+     "the hero's purple-teal band is painted by a media layer, not a CSS fill - dark.surface.page names the darkest declared .dark surface instead",
+     "full-page shots are capped at eight chunks; mobile-home's full page overflowed the GPU texture limit and stitched from two chunks (the second 10px short on a late layout settle - flagged in its sidecar)",
+     "pricing re-mounts while localised prices resolve; measurements wait for the grid, screenshots show the settled Singapore S$ state",
+     "icons: no standalone SVG set lifted this pass"
+    ],
+    "durationMin": 300,
+    "durationNote": "wall-clock for the capture session including adaptation of the kit, the stylesheet harvest, screenshot and measurement passes, the token/docs build and the rubric review",
+    "pr": "https://github.com/starship-terminal/constellations/pull/494"
+   },
+   "layoutGaps": {
+    "icons/": "the icon extraction pass was not run; the glyphs (the Canva wordmark, the tool-tab icons, the OAuth provider marks and the social icons) are visible in the crops and screenshots"
+   }
   }
  ]
 }
