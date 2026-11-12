@@ -668,6 +668,11 @@
       "assignedMedia": 35
     },
     {
+      "referenceId": "systems:cakeequity",
+      "media": 118,
+      "assignedMedia": 118
+    },
+    {
       "referenceId": "systems:capy-desktop",
       "media": 818,
       "assignedMedia": 818
@@ -33959,6 +33964,1484 @@
           "termId": "web-ui-elements:icon",
           "rule": "ui-icon",
           "reason": "Capture filename explicitly names icon; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/screenshots/blog-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/screenshots/blog-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/screenshots/demo-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/screenshots/demo-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/screenshots/feature-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/screenshots/feature-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/screenshots/home-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/screenshots/home-light-faq-open.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/screenshots/home-light-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/screenshots/home-light-menu.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/screenshots/login-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:log-in",
+          "rule": "page-login",
+          "reason": "Capture filename explicitly names log in; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/screenshots/mobile-home-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/screenshots/mobile-home-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/screenshots/mobile-home-light-menu.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/screenshots/mobile-pricing-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/screenshots/mobile-pricing-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/screenshots/pricing-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/screenshots/pricing-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/screenshots/pricing-light-quarterly.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/screenshots/tour-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/screenshots/tour-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/announce-pill-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/announce-pill-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/announce-pill-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/announce-pill-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/billing-toggle-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:switch-toggle",
+          "rule": "ui-toggle",
+          "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:billing-plans",
+          "rule": "ux-billing",
+          "reason": "Capture filename explicitly names billing & plans; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/blog-h1-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/collection-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/collection-card-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/collection-card-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/collection-card-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/country-select-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/country-select-focused.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/dark-section-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/demo-form-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/demo-h1-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/eyebrow-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/faq-item-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/faq-item-opened.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/feature-h1-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/footer-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/footer-link-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/footer-link-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/footer-link-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/footer-link-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/header-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/hero-cta-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/hero-cta-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/hero-cta-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/hero-cta-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/hero-demo-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/hero-demo-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/hero-demo-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/hero-demo-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/hero-sub-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/hero-title-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/login-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/login-cta-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/login-cta-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/login-cta-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/login-cta-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/login-field-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/login-field-focused.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/login-link-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/login-link-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/login-link-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/login-link-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/login-oauth-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/login-oauth-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/login-oauth-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/login-oauth-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/login-title-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/logo-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/m-header-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/m-hero-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/m-menu-button-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/menu-link-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/menu-link-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/menu-link-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/menu-link-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/nav-cta-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/nav-cta-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/nav-cta-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/nav-cta-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/nav-demo-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/nav-demo-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/nav-demo-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/nav-demo-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/nav-dropdown-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dropdown",
+          "rule": "ui-dropdown",
+          "reason": "Capture filename explicitly names dropdown; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/nav-link-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/nav-link-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/nav-link-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/nav-link-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/nav-login-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/nav-login-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/nav-login-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/nav-login-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/nav-trigger-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/nav-trigger-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/nav-trigger-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/nav-trigger-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/plan-badge-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:badge",
+          "rule": "ui-badge",
+          "reason": "Capture filename explicitly names badge; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/plan-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/plan-cta-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/plan-cta-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/plan-cta-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/plan-cta-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/plan-price-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/pricing-h1-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/section-h2-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/social-icon-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:icon",
+          "rule": "ui-icon",
+          "reason": "Capture filename explicitly names icon; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/social-icon-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:icon",
+          "rule": "ui-icon",
+          "reason": "Capture filename explicitly names icon; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/social-icon-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:icon",
+          "rule": "ui-icon",
+          "reason": "Capture filename explicitly names icon; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/social-icon-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:icon",
+          "rule": "ui-icon",
+          "reason": "Capture filename explicitly names icon; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/story-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/story-card-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/story-card-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cakeequity",
+      "mediaId": "systems/cakeequity/components/crops/story-card-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/cakeequity/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
         }
       ]
     },
