@@ -3042,7 +3042,8 @@
       "icons: no standalone SVG set lifted this pass"
      ],
      "durationMin": 240,
-     "durationNote": "capture, measurement and packaging across the session (wall-clock)"
+     "durationNote": "capture, measurement and packaging across the session (wall-clock)",
+     "pr": "https://github.com/starship-terminal/constellations/pull/489"
     },
     "layoutGaps": {
      "icons/": "the icon extraction pass was not run; the icons (the Cal.com wordmark, Google/Microsoft/Twitter marks, chevrons and calendar glyphs) are visible in the crops and screenshots"
