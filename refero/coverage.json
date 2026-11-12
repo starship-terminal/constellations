@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 87,
-    "system_domains": 79,
-    "matched_domains": 54,
-    "missing_domains": 379,
+    "system_packages": 88,
+    "system_domains": 80,
+    "matched_domains": 55,
+    "missing_domains": 378,
     "system_domains_absent_from_catalog": 25
   },
   "matched": {
@@ -700,6 +700,23 @@
         }
       ]
     },
+    "cal.com": {
+      "catalog": [
+        {
+          "name": "Cal",
+          "domain": "cal.com",
+          "id": 282
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "cal",
+          "name": "Cal.com",
+          "url": "https://cal.com",
+          "name_match": true
+        }
+      ]
+    },
     "chatgpt.com": {
       "catalog": [
         {
@@ -1004,13 +1021,6 @@
         "name": "Bento",
         "domain": "bento.me",
         "id": 284
-      }
-    ],
-    "cal.com": [
-      {
-        "name": "Cal",
-        "domain": "cal.com",
-        "id": 282
       }
     ],
     "calendly.com": [
