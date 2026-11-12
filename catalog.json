@@ -6260,7 +6260,7 @@
     ],
     "durationMin": 50,
     "durationNote": "worktree creation to package-complete commit, 2026-11-12",
-    "pr": ""
+    "pr": "https://github.com/starship-terminal/constellations/pull/493"
    },
    "layoutGaps": {
     "icons/": "the icon extraction pass was not run; the icons (the Calendly wordmark, the Google SSO glyph, product illustrations and the booking pages' glyphs) are visible in the crops and screenshots"
