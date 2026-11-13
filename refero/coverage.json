@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 95,
-    "system_domains": 87,
-    "matched_domains": 62,
-    "missing_domains": 371,
+    "system_packages": 96,
+    "system_domains": 88,
+    "matched_domains": 63,
+    "missing_domains": 370,
     "system_domains_absent_from_catalog": 25
   },
   "matched": {
@@ -848,6 +848,23 @@
         }
       ]
     },
+    "docusign.com": {
+      "catalog": [
+        {
+          "name": "DocuSign",
+          "domain": "docusign.com",
+          "id": 31
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "docusign",
+          "name": "DocuSign",
+          "url": "https://www.docusign.com",
+          "name_match": true
+        }
+      ]
+    },
     "dona.ai": {
       "catalog": [
         {
@@ -1399,13 +1416,6 @@
         "name": "DJI",
         "domain": "dji.com",
         "id": 332
-      }
-    ],
-    "docusign.com": [
-      {
-        "name": "DocuSign",
-        "domain": "docusign.com",
-        "id": 31
       }
     ],
     "dopper.com": [
