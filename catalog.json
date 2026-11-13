@@ -6853,7 +6853,8 @@
      "icons: no standalone SVG set lifted this pass"
     ],
     "durationMin": 75,
-    "durationNote": "a prior agent ran the capture passes (screenshots, css-vars, component measurements); this session covered the package pipeline (tokens, components.md, style guide, README, catalog, grading, PR)"
+    "durationNote": "a prior agent ran the capture passes (screenshots, css-vars, component measurements); this session covered the package pipeline (tokens, components.md, style guide, README, catalog, grading, PR)",
+    "pr": "https://github.com/starship-terminal/constellations/pull/519"
    },
    "layoutGaps": {
     "icons/": "the icon extraction pass was not run; the icons (the Dub wordmark, the mega-menu product glyphs, the SSO marks, the social icons and the docs chrome glyphs) are visible in the crops and screenshots"
