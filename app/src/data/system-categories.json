@@ -14,10 +14,7 @@
   {
     "referenceId": "systems:elevenmusic",
     "groupId": "web-categories",
-    "labels": [
-      "Music Streaming",
-      "AI Tool"
-    ],
+    "labels": ["Music Streaming", "AI Tool"],
     "reason": "catalog.json describes an AI music product: a song-generation composer, public charts and genre shelves, artist and playlist pages and a paid Pro tier."
   },
   {
@@ -697,8 +694,7 @@
     "groupId": "web-categories",
     "labels": ["Design & Media Editing", "Productivity"],
     "reason": "catalog.json describes a website builder's marketing surface: home, product, pricing, contact-form and FAQ pages."
-  }
-,
+  },
   {
     "referenceId": "systems:elektron",
     "groupId": "web-categories",
@@ -708,10 +704,7 @@
   {
     "referenceId": "systems:endel",
     "groupId": "web-categories",
-    "labels": [
-      "Health & Wellness",
-      "Music Streaming"
-    ],
+    "labels": ["Health & Wellness", "Music Streaming"],
     "reason": "catalog.json describes a personalized soundscapes product for focus, relaxation and sleep: a dark marketing site and a signed-out web app with a public player."
   },
   {
@@ -723,27 +716,19 @@
   {
     "referenceId": "systems:endlesstools",
     "groupId": "web-categories",
-    "labels": [
-      "Design & Media Editing",
-      "Productivity"
-    ],
+    "labels": ["Design & Media Editing", "Productivity"],
     "reason": "catalog.json describes a visual exploration tool for graphic designers: a dark marketing one-pager with pricing and a signed-out app login shell."
-  }
-,
+  },
   {
     "referenceId": "systems:elevenreader",
     "groupId": "web-categories",
-    "labels": [
-      "Books"
-    ],
+    "labels": ["Books"],
     "reason": "catalog.json describes an audiobook reader/listening product: marketing pages, the explore catalog and the reader sign-in/sign-up boundary cards."
   },
   {
     "referenceId": "systems:endless",
     "groupId": "web-categories",
-    "labels": [
-      "AI Tool"
-    ],
+    "labels": ["AI Tool"],
     "reason": "catalog.json describes a multi-model AI creation workspace: a prompt composer, 70+ generation models and free tool pages on a signed-out public system."
   }
 ]
