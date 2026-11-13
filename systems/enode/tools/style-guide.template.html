@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Enode style guide</title>
+<meta name="description" content="Enode design tokens and the public marketing surfaces' components, rendered from tokens.json with the declared and measured values.">
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  --sg-sans: "Enode Sans", ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-serif: "Enode Sans", ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-mono: "Enode Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+[data-mode="dark"], .dark {
+/*DARK*/
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--color-neutral-ink, #000); background: var(--color-neutral-paper, #fff); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 400 40px/1.2 var(--sg-serif); margin: 0 0 4px; letter-spacing: -0.02em; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--color-neutral-ink, #000); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--color-neutral-hairline, #ddd); }
+.lead { max-width: 62ch; color: var(--color-neutral-ink, #000); opacity: .8; }
+.note { font-size: 13px; color: var(--color-neutral-ink, #000); opacity: .65; max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--color-neutral-ink, #000); opacity: .6; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--color-neutral-hairline, #ddd); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--color-neutral-ink, #000); opacity: .65; }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--color-neutral-hairline, #ddd); background: #fff; font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--color-neutral-ink, #000); opacity: .65; }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--color-neutral-hairline, #ddd); overflow: hidden; background: var(--color-neutral-paper, #fff); }
+.navbar { display: flex; align-items: center; gap: 22px; height: var(--component-topbar-height, 58px); padding: 0 12px 0 22px; font-size: 15px; color: var(--color-foreground-primary, #252322); background: var(--color-background-glass-thin, rgba(244, 242, 241, .92)); box-shadow: var(--color-line-primary, rgba(21,20,19,.11)) 0 1px 0 0; }
+.navbar .wm { font-weight: 500; font-size: 17px; letter-spacing: -0.01em; }
+.navbar .sp { flex: 1; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-cta-height, 32px); padding: 0 14px; font-size: 14px; font-weight: 500; border-radius: var(--radius-cta, 999px); border: 1px solid transparent; }
+.btn.primary { background: var(--color-foreground-primary, #252322); color: var(--color-button-ink, #fff); }
+.btn.ghost { border-color: var(--color-border-primary-default, rgba(21,20,19,.165)); color: var(--color-foreground-primary, #252322); }
+.btn.small { height: var(--component-nav-pill-height, 34px); border-radius: var(--radius-nav-pill, 4px); font-size: 13px; font-weight: 500; }
+.hero { color: var(--color-foreground-primary, #252322); padding: 72px 40px; font: 475 var(--font-size-masthead, 68px)/1.05 var(--sg-serif); letter-spacing: -0.02em; text-align: left; background: var(--color-brand-75, #f0fde8); }
+.hero small { display: block; font: 400 18px/1.5 var(--sg-sans); color: var(--color-foreground-secondary, rgba(37,35,34,.72)); margin: 16px 0 22px; max-width: 46ch; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
+.tile { border: 1px solid var(--color-neutral-hairline, #ddd); padding: 14px; font-size: 13px; background: #fff; }
+.tile .img { height: 140px; background: #ddd; margin-bottom: 10px; display: flex; align-items: flex-end; padding: 10px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }
+.tile b { display: block; font: 475 18px/1.25 var(--sg-serif); margin-bottom: 4px; }
+.tile .sub { opacity: .65; font-size: 12px; }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--color-neutral-hairline, #ddd); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--color-neutral-hairline, #ddd); }
+.tr .ts { font-family: var(--sg-serif); }
+.tr .tv { font-size: 12px; color: var(--color-neutral-ink, #000); opacity: .65; font-family: var(--sg-mono); }
+.pill-nav { display: inline-flex; background: var(--color-card-background-default, rgba(21,20,19,.037)); border-radius: var(--radius-nav-pill, 4px); padding: 4px; gap: 4px; font-size: 14px; color: var(--color-foreground-secondary, rgba(37,35,34,.72)); }
+.pill-nav span { padding: 6px 12px; border-radius: var(--radius-nav-pill, 4px); }
+.pill-nav .on { background: var(--color-background-secondary, #fff); color: var(--color-foreground-primary, #252322); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Enode style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">Enode, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the site's declared <code>--color-brand-*</code>/<code>--color-gray-*</code>/<code>--color-enode-green-*</code> palette scales, the <code>--color-background-*</code>/<code>--color-foreground-*</code>/<code>--color-card-*</code>/<code>--color-border-*</code>/<code>--color-diagram-*</code> semantic roles that resolve under <code>data-mode="light"</code> and <code>data-mode="dark"</code>, the Enode Sans/Enode Mono variable faces (wght 375–635), the declared <code>--text-*</code>/<code>--leading-*</code>/<code>--tracking-*</code> type ramp, the 2–10px radii and full-pill CTAs, the 150ms cubic-bezier(.4,0,.2,1) control transition, and the measured component sizes. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from enode.com on 2026-11-13, signed out, in headless Chromium. Everything behind platform.enode.com is a documented boundary; the contact and login forms were measured, never submitted. Enode Sans and Enode Mono are served faces and are not loaded here: samples fall back to system sans.</p>
+
+  <h2 class="sh">The chrome</h2>
+  <p class="lead">The fixed 58px header is glass: the wordmark, the Platform/Resources mega-menu triggers, nav pills, Sign in and the dark "Talk to our team" pill float over the pale-green hero (<code>--color-brand-75</code> page background). The hero pairs a dark CTA pill with a hairline-bordered ghost pill under a 68px/475 masthead.</p>
+  <div class="mock" style="padding:0">
+    <div class="navbar"><span class="wm">Enode</span><span>Platform</span><span>Resources</span><span>Enterprise</span><span>Updates</span><span>Company</span><span class="sp"></span><span>Sign in</span><span class="btn small primary" style="border-radius:var(--radius-cta,999px)">Talk to our team</span></div>
+    <div class="hero">Orchestrating energy<br>for the next grid<small>One integration to connect 1,000+ energy devices.</small><span class="btn primary">Talk to our team</span> <span class="btn ghost">Explore our platform</span></div>
+  </div>
+
+  <h2 class="sh">The dark platform pages</h2>
+  <p class="lead">/platform/overview and /platform/flexibility paint <code>data-mode="dark"</code> on <code>&lt;html&gt;</code> itself: a #151413 page, white masthead, translucent card tiles and the green #b0f87c accent reserved for live metrics and focus rings. The same dark set paints the scoped showcase sections inside the light pages.</p>
+  <div class="mock dark" style="padding:20px;background:var(--color-background-primary,#151413);color:var(--color-foreground-primary,rgba(237,237,237,.97))">
+    <div class="grid">
+      <div class="tile" style="border-radius:var(--radius-md,6px);background:var(--color-card-background-default,rgba(255,255,255,.041));border:1px solid var(--color-card-hairline-default,rgba(255,255,255,.036));color:var(--color-foreground-primary,rgba(237,237,237,.97))"><b style="color:var(--color-foreground-primary,rgba(237,237,237,.97))">Asset connectivity</b><span class="sub" style="color:var(--color-foreground-secondary,rgba(237,237,237,.74))">One API for 1,000+ device models across 100+ brands.</span></div>
+      <div class="tile" style="border-radius:var(--radius-md,6px);background:var(--color-card-background-default,rgba(255,255,255,.041));border:1px solid var(--color-card-hairline-default,rgba(255,255,255,.036));color:var(--color-foreground-primary,rgba(237,237,237,.97))"><b style="color:var(--color-visual-diagram-accent,#b0f87c)">BALANCING&nbsp;&nbsp;9.24 MW</b><span class="sub" style="color:var(--color-foreground-secondary,rgba(237,237,237,.74))">Scoped [data-mode="dark"] showcase</span></div>
+    </div>
+    <div style="margin-top:18px"><span class="btn primary">Talk to our team</span></div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The declared <code>--color-brand-*</code> ramp runs pale-green #f0fde8 (75) to the signature #b0f87c (225) next to warm <code>--color-gray-*</code> neutrals (#f4f2f1 paper to #252322 ink) and the alpha ramps the glass surfaces are built from; the semantic <code>--color-background-*</code>/<code>--color-foreground-*</code>/<code>--color-card-*</code>/<code>--color-border-*</code>/<code>--color-line-*</code>/<code>--color-diagram-*</code> roles resolve per <code>data-mode</code> in the light and dark sets. Measured roles alias the declared values they match.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing, radius and motion</h2>
+  <p class="lead">Radii are small — 2/4/6/10px for pills, nav items, cards and fields — against full pills for the CTAs (33.5M px <code>--radius-full</code>). Controls transition color/background/border/shadow/transform over 150ms cubic-bezier(.4,0,.2,1); the layout is a 1308px grid with 20px base gutters.</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">Two served variable faces: <code>Enode Sans</code> (wght 375–635) carries every heading, control and body — the masthead runs 68px at weight 475, body 18px at ~470 — and <code>Enode Mono</code> draws the product demo and code frames. Sizes are the declared <code>--text-*</code> steps; samples fall back to system sans.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared --color-*/--text-*/--radius-* variables from the live stylesheets and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, open, focused and filled states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = /*TOKENS*/null;
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  for (const [setname, label] of [['light', 'light roles'], ['dark', 'dark roles (platform pages + scoped sections)']]) {
+    const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+    if (!roles.length) continue;
+    // The dark set's custom properties only resolve inside a .dark scope:
+    // swatch dots must live under it or they paint the light values/unset.
+    h += `<div class="pal-h">${label}</div><div class="pal${setname === 'dark' ? ' dark' : ''}">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.layout || {}, 'layout.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.container || {}, 'container.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.blur || {}, 'blur.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.duration || {}, 'duration.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.easing || {}, 'easing.')) m += `<div><b>${esc(n)}</b> <span>cubic-bezier(${esc(t.v.join ? t.v.join(', ') : t.v)})</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  for (const setname of ['light', 'dark']) {
+    for (const [n, t] of flat((TOK[setname] || {}).shadow || {}, `${setname}.shadow.`)) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  }
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.breakpoint || {}), 'breakpoint.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.aspect || {}), 'aspect.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.motion || {}), 'motion.')) m += `<div><b>${esc(n)}</b> <span>${esc(String(t.v).slice(0, 90))}…</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+const resolveVal = (v, depth) => {
+  if (depth > 6 || typeof v !== 'string') return v;
+  const m = v.match(/^\{(.+)\}$/);
+  if (!m) return v;
+  // Aliases are set-relative: {font.size.body} and the palette scales live
+  // under TOK.core, semantic roles under TOK.light / TOK.dark. Try each root.
+  for (const root of [TOK.core, TOK.light, TOK.dark, TOK]) {
+    let node = root;
+    for (const k of m[1].split('.')) node = node && node[k];
+    if (node && node.v !== undefined) return resolveVal(node.v, (depth || 0) + 1);
+  }
+  return v;
+};
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(resolveVal(t.v));
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Enode</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).tracking || {}, 'font.tracking.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>
