@@ -184,7 +184,10 @@ for n in sorted(R):
     if n.startswith("--dim-layout-") and re.fullmatch(r"--dim-layout-(\dx?l|\dx?s|xl|lg|md|sm|xs)", n):
         put(lay, ("breakpoint", n[len("--dim-layout-"):]), ref(n, "dimension", f"FRE layout step {n}."))
     if n.startswith("--dim-layout-elevation-"):
-        put(lay, ("elevation", n[len("--dim-layout-elevation-"):]), ref(n, "number", f"FRE z-elevation {n}."))
+        # The z-stacking roles go under layout.z with the --_z-level-* ladder;
+        # the name must not contain "elevation" or the DESIGN.md shadow table
+        # would list stacking levels (e.g. 8000000) as box-shadows.
+        put(lay, ("z", n[len("--dim-layout-elevation-"):]), ref(n, "number", f"FRE stacking level {n}."))
     if n.startswith("--dim-layout-grid-gap-"):
         put(lay, ("grid-gap", n[len("--dim-layout-grid-gap-"):]), ref(n, "dimension", f"FRE grid gap {n}."))
 
@@ -216,38 +219,74 @@ for n in sorted(R):
 
 # ------------------------------------------------------------- typography
 
-typegrp = SPEC["core"].setdefault("type", {})
-TYPE_ROWS = [
-    ("utility", "nav-header-xs", "The 13px utility-strip/nav meta style."),
-    ("nav-link", "nav-linktxt-md", "The 16px category-nav link style."),
-    ("button-md", "btn-md", "The button label style, if declared."),
-    ("body", "body", "The Lora article body style."),
-    ("body-serif", "body-blockquote", "The blockquote body style."),
-    ("lede", "desc-lede", "The 20px lede/standfirst style."),
-    ("card-title", "title-standard", "The standard card title style."),
-    ("headline-prominent", "headline-prominent", "The 24px prominent headline."),
-    ("headline-hero", "headline-hero", "The 48px hero headline."),
-    ("headline-lede", "headline-lede", "The 56px lede headline (negative tracking)."),
-    ("header-hero-topic", "header-hero-topic", "The 64px hero topic display."),
-    ("h2-body", "headline-body-h2", "The 36px in-article h2."),
-    ("h3-body", "headline-body-h3", "The 30px in-article h3."),
-    ("section-header", "header-standard", "The section-front header style."),
-    ("eyebrow", "eyebrow-standard", "The small uppercase eyebrow."),
-    ("meta", "meta-standard", "The meta/byline style."),
-    ("legal", "legal-standard", "The footer legal style."),
-    ("offer-price", "offer-price", "The plan-card price style."),
-    ("faq", "accordion-header", "The accordion/FAQ header style."),
-]
-for key, stem, desc in TYPE_ROWS:
-    for bp in ("desktop", "mobile"):
-        for prop, ty_ in (("size", "dimension"), ("line-height", "dimension"),
-                          ("weight", "fontWeight"), ("letter-spacing", "dimension")):
-            n = f"--type-{stem}-{prop}-{bp}"
-            put(typegrp, (key, bp, prop.replace("-", "_")), ref(n, ty_, desc + f" ({prop}, {bp})."))
-    n = f"--type-{stem}-family-mobile"
-    put(typegrp, (key, "family"), ref(n, "fontFamily", desc + " (family)."))
-    n = f"--type-{stem}-txt-case-mobile"
-    put(typegrp, (key, "case"), ref(n, "other", desc + " (text case)."))
+# FRE declares each style as --type-<stem>-<prop>-<bp>: size, line-height and
+# letter-spacing per breakpoint (mobile is the base; desktop, and for a few
+# styles laptop/tablet), while family, weight, style and txt-case are declared
+# only at the base (mobile) breakpoint. The export composes the parts into
+# DTCG typography tokens — one composite per stem per declared breakpoint —
+# under core.typography, the layout the DESIGN.md exporter reads.
+typegrp = SPEC["core"].setdefault("typography", {})
+TYPE_PROP = {"size": "fontSize", "line-height": "lineHeight", "letter-spacing": "letterSpacing",
+             "family": "fontFamily", "weight": "fontWeight", "style": "fontStyle", "txt-case": "textTransform"}
+TYPE_DESC = {
+    "nav-header-xs": "The 13px utility-strip/nav meta style.",
+    "nav-linktxt-md": "The 16px category-nav link style.",
+    "body": "The Lora article body style.",
+    "body-blockquote": "The blockquote body style.",
+    "desc-lede": "The 20px lede/standfirst style.",
+    "title-standard": "The standard card title style.",
+    "headline-prominent": "The 24px prominent headline.",
+    "headline-hero": "The 48px hero headline.",
+    "headline-lede": "The 56px lede headline (negative tracking).",
+    "header-hero-topic": "The 64px hero topic display.",
+    "headline-body-h2": "The 36px in-article h2.",
+    "headline-body-h3": "The 30px in-article h3.",
+    "header-standard": "The section-front header style.",
+    "eyebrow-standard": "The small uppercase eyebrow.",
+    "meta-author": "The byline/meta style.",
+    "meta-readtime": "The read-time meta style.",
+    "meta-timestamp-md": "The timestamp meta style.",
+    "legal-fine-print": "The footer legal style.",
+    "legal-terms": "The legal terms style.",
+    "offer-price-current": "The plan-card current price style.",
+    "offer-price-duration": "The plan-card price duration style.",
+    "offer-price-strikethrough": "The plan-card struck list-price style.",
+    "list-item": "The plan-card perk list style.",
+    "form-label": "The form label style.",
+    "pagination": "The pagination number style.",
+}
+# stem -> breakpoint -> {prop -> var name}, discovered from the resolved vars.
+TYPE_STEMS = {}
+for n in sorted(R):
+    m = re.fullmatch(r"--type-(.+)-(size|line-height|letter-spacing|family|weight|style|txt-case)-(desktop|mobile|tablet|laptop)", n)
+    if m:
+        TYPE_STEMS.setdefault(m.group(1), {}).setdefault(m.group(3), {})[m.group(2)] = n
+
+for stem in sorted(TYPE_STEMS):
+    bps = TYPE_STEMS[stem]
+    desc = TYPE_DESC.get(stem, f"The --type-{stem} style.")
+    for bp in sorted(bps):
+        val, used = {}, []
+        for prop in ("size", "line-height", "letter-spacing"):
+            n = bps[bp].get(prop)
+            if n:
+                val[TYPE_PROP[prop]] = R[n]
+                used.append(n)
+        # family/weight/style/case live on the base (mobile) declaration only.
+        base = bps.get("mobile", {})
+        for prop in ("family", "weight", "style", "txt-case"):
+            n = bps[bp].get(prop) or base.get(prop)
+            if n:
+                v = R[n]
+                val[TYPE_PROP[prop]] = int(v) if prop == "weight" and re.fullmatch(r"\d+", str(v)) else v
+                used.append(n)
+        if not val:
+            continue
+        put(typegrp, (stem, bp), {
+            "$value": val, "$type": "typography",
+            "$extensions": {"source": "; ".join(f"css-var {n}" for n in used) + " resolved (raw/css-vars.json)"},
+            "$description": desc + (f" ({bp} breakpoint; family/weight from the base mobile declaration)" if bp != "mobile" else " (mobile base breakpoint)"),
+        })
 
 # ----------------------------------------------------- semantic light roles
 
@@ -353,11 +392,31 @@ grab("accordion", "txt", ["--color-accordion-header-txt", "--color-accordion-txt
 
 # ------------------------------------------------------------- elevation
 
+# FRE splits each elevation level into --dim-elevation-shadow-<level>-{position-x,
+# position-y, blur, spread, color}; exporting the parts as separate leaves made
+# DESIGN.md list lone lengths (4px) as complete shadows. The export composes the
+# parts into DTCG shadow tokens, one layer each, so the shadow table reads a
+# whole box-shadow. The none and card levels are all-zero over a transparent
+# colour: card is kept as "none" so the tokens record that cards paint no
+# shadow, and none is dropped as a no-op declaration.
+def _px(v):
+    v = str(v if v is not None else "0").strip()
+    return v + "px" if re.fullmatch(r"-?\d+(\.\d+)?", v) else v
+
 sh = SPEC["core"].setdefault("shadow", {})
-for n in sorted(R):
-    if "shadow" in n and has(n) and str(R[n]).strip() not in ("", "none"):
-        leaf = re.sub(r"^--(comp|color|dim|_)-?", "", n).strip("-").replace("-", "_")
-        put(sh, (leaf[:60] or "default",), ref(n, "other", f"FRE shadow {n}."))
+for lvl in ("sm", "md", "lg"):
+    part = {p: R.get(f"--dim-elevation-shadow-{lvl}-{p}")
+            for p in ("position-x", "position-y", "blur", "spread", "color")}
+    if not all(v is not None for v in part.values()):
+        continue
+    layer = {"offsetX": _px(part["position-x"]), "offsetY": _px(part["position-y"]),
+             "blur": _px(part["blur"]), "spread": _px(part["spread"]), "color": str(part["color"])}
+    put(sh, (lvl,), {
+        "$value": [layer], "$type": "shadow",
+        "$extensions": {"source": f"css-var --dim-elevation-shadow-{lvl}-position-x/-position-y/-blur/-spread/-color resolved (raw/css-vars.json)"},
+        "$description": f"The {lvl} elevation shadow ({layer['offsetX']} {layer['offsetY']} {layer['blur']} {layer['spread']} {layer['color']}) from FRE's --dim-elevation-shadow-{lvl}-* parts."})
+put(sh, ("card",), lit("none", "other", "css-var --comp-card-dim-shadow-* resolved (raw/css-vars.json)",
+    "FRE declares the card shadow at 0 offsets over a transparent colour: cards paint no shadow."))
 
 # ------------------------------------------------------------------ motion
 
@@ -416,19 +475,19 @@ for name, cname, state, prop, desc in COMP_DIMS:
 # measured state moves on the interactive controls
 for name, cname, desc in [
     ("subscribe-pill-track", "nav-subscribe",
-     "Subscribe pill: red fill + white text at rest; hover/pressed deepen the fill; focus shows the browser outline."),
+     "Subscribe pill: #ff3a30 fill + #121212 text at rest; hover inverts to a white fill keeping the red border; pressed paints a #fff0f0 pale-red wash; focus shows the browser outline."),
     ("join-track", "plan-join",
-     "Join button: red fill + white text at rest; hover darkens the fill."),
+     "Join button: #ff3a30 fill + black text at rest; hover and pressed invert to a white fill keeping the red border; focus shows a dotted outline."),
     ("signup-track", "newsletter-signup",
-     "Newsletter Sign Up: red fill + white text at rest; hover darkens the fill."),
+     "Newsletter Sign Up: #ff3a30 fill + #121212 text at rest; hover inverts to a white fill; pressed paints a #fff0f0 pale-red wash."),
     ("see-more-track", "search-more",
-     "See More ghost: transparent + red border/text at rest; hover fills red with white text."),
+     "See More ghost: white fill, #ff3a30 text and a #121212 border at rest; hover/pressed paint a 4-8% dark grey wash — it never fills red."),
     ("nav-link-track", "nav-link",
-     "Category link: #121212 at rest; hover deepens to #3b3b3b; the megamenu underlines in #ffaca8."),
+     "Category link: #121212 in every state — no colour or decoration change on hover; focus shows the browser outline."),
     ("faq-track", "faq-header",
-     "FAQ header: white row, chevron rotates open; opened state reached by its own toggle."),
+     "FAQ header: a transparent row over the white page in every state; the opened state was reached by its own toggle."),
     ("more-track", "more-btn",
-     "More toggle: text button at rest; the opened state drops the overflow panel."),
+     "More toggle: text button at rest, a 16% red wash on press; the opened state drops the overflow panel."),
 ]:
     try:
         states = {s2: {p: C[cname]["states"][s2]["style"][p] for p in ("backgroundColor", "color", "transform", "outlineStyle", "borderTopColor") if C[cname]["states"][s2]["style"].get(p)}

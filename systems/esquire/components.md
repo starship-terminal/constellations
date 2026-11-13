@@ -2,13 +2,13 @@
 
 The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Captured from esquire.com on 2026-11-13, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was signed into, submitted or bought; the More dropdown, the FAQ accordion and the side panel are local UI toggles, and hover/focus/pressed states were forced. Sign In, Subscribe, Join, story links and the shop.esquire.com outbound links were measured, never followed; the search and newsletter fields were typed into and cleared, never submitted. The OneTrust consent layer was hidden, never answered, and third-party ad/tracker requests were aborted so ad slots read as blank containers.
 
-The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (90 components, 161 states). The page layouts are described in [patterns.md](patterns.md).
+The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (90 components, 157 states). The page layouts are described in [patterns.md](patterns.md).
 
 How to read an entry:
 
 - A colour is its value followed by the palette token in [tokens.json](tokens.json) with the same value, when there is one. Text is written family size/line-height weight, then its colour, for example `SF Pro 14/21 500, #21252e`, and is read from the first text node inside the component.
 - The state table has one row per state that differs. The first row lists every value; later rows list only what changes. A state with the same values as the first is named in its label, for example "default (same: focus-visible)". When the root paints nothing, "Child layers" names the first nodes inside it that do.
-- Crops are images of the component read from the live page, in [components/crops/](components/crops) (160 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
+- Crops are images of the component read from the live page, in [components/crops/](components/crops) (157 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
 
 ## Discovery list
 
@@ -44,7 +44,7 @@ Screenshots are named `{page}-{theme}-state.png`: every page paints `light`. Des
 
 Values that apply across entries, from the measurement files.
 
-**Focus.** 21 components were given a real keyboard focus. 21 draw an outline ring: `nav-edition` (1px auto #101010, offset 0px), `nav-newsletter` (1px auto #101010, offset 1px), `nav-signin` (1px auto #101010, offset 1px), `nav-subscribe` (1px auto #101010, offset 1px), `nav-search-btn` (1px auto #101010, offset 0px), `nav-link` (1px auto #101010, offset 1px), `nav-subchevron` (1px auto #101010, offset 0px), `more-btn` (1px auto #101010, offset 0px), `newsletter-signup` (1px auto #101010, offset 0px), `footer-link` (1px auto #101010, offset 1px), `sec-see-more` (1px auto #101010, offset 0px), `art-link` (2px dotted #000000 `core.palette.gray.0`, offset 5px), `plan-join` (2px dotted #000000 `core.palette.gray.0`, offset 4px), `faq-header` (1px auto #101010, offset 0px), `gift-cta` (2px dotted #000000 `core.palette.gray.0`, offset 4px), `search-btn` (2px dotted #000000 `core.palette.gray.0`, offset 4px), `search-sort` (on a child: 2px dotted rgb(0, 0, 0) offset 0px), `search-more` (1px auto #101010, offset 0px), `m-hamburger` (1px auto #e59700, offset 0px), `m-drawer-close` (1px auto #e59700, offset 0px), `m-search` (1px auto #e59700, offset 1px).
+**Focus.** 20 components were given a real keyboard focus. 20 draw an outline ring: `nav-edition` (1px auto #101010, offset 0px), `nav-newsletter` (1px auto #101010, offset 1px), `nav-signin` (1px auto #101010, offset 1px), `nav-subscribe` (1px auto #101010, offset 1px), `nav-search-btn` (1px auto #101010, offset 0px), `nav-link` (1px auto #101010, offset 1px), `nav-subchevron` (1px auto #101010, offset 0px), `more-btn` (1px auto #101010, offset 0px), `newsletter-signup` (1px auto #101010, offset 0px), `footer-link` (1px auto #101010, offset 1px), `sec-see-more` (1px auto #101010, offset 0px), `plan-join` (2px dotted #000000 `core.palette.gray.0`, offset 4px), `faq-header` (1px auto #101010, offset 0px), `gift-cta` (2px dotted #000000 `core.palette.gray.0`, offset 4px), `search-btn` (2px dotted #000000 `core.palette.gray.0`, offset 4px), `search-sort` (on a child: 2px dotted rgb(0, 0, 0) offset 0px), `search-more` (1px auto #101010, offset 0px), `m-hamburger` (1px auto #e59700, offset 0px), `m-drawer-close` (1px auto #e59700, offset 0px), `m-search` (1px auto #e59700, offset 1px).
 
 **Pressed.** Forced with DevTools (`CSS.forcePseudoState` :active:hover). Nothing a real press would submit was ever pressed.
 
@@ -54,14 +54,14 @@ Values that apply across entries, from the measurement files.
 |---|---|---|---|
 | 0.2s | `linear` | transform | m-drawer |
 | 0.25s | `ease-in-out` | height | faq-answer |
-| 0.3s | `cubic-bezier(0, 0, 0.2, 1)` | --tw-gradient-from, --tw-gradient-to, --tw-gradient-via, background-color, border-color, color, fill, outline-color, stroke, text-decoration-color | m-drawer-close, m-hamburger, m-logo, more-btn, nav-edition, nav-logo, nav-newsletter, nav-search-btn and more |
-| 0.3s | `ease-in-out` | all | art-byline, art-link, gift-cta, plan-join, search-btn |
+| 0.3s | `cubic-bezier(0, 0, 0.2, 1)` | --tw-gradient-from, --tw-gradient-to, --tw-gradient-via, background-color, border-color, color, fill, outline-color, stroke, text-decoration-color | m-drawer-close, m-hamburger, more-btn, nav-edition, nav-newsletter, nav-search-btn, nav-signin, nav-subchevron and more |
+| 0.3s | `ease-in-out` | all | art-byline, gift-cta, plan-join, search-btn |
 
 **Card shapes.** Default-state values; the entries hold the states.
 
 | Card | Size | Border | Radius | Background | Shadow | Padding |
 |---|---|---|---|---|---|---|
-| [Story list card](#story-list-card) | 302 x 108.8 | - | - | transparent | none | 0 |
+| [Story list card](#story-list-card) | 302 x 132 | - | - | transparent | none | 0 |
 | [Rail card](#rail-card) | 302 x 342.8 | - | - | transparent | none | 0 |
 | [Section card](#section-card) | 1440 x 1311.58 | - | - | #f5f6f8 `light.background.panel` | none | 10px 40px 30px 40px |
 | [Result card](#result-card) | 265 x 212.7 | - | - | transparent | none | 4px 5px 15px 5px |
@@ -116,9 +116,9 @@ The "Newsletter" utility link; measured, never followed. Read as `nav-newsletter
 ![Newsletter link default](components/crops/nav-newsletter-default.png) ![Newsletter link hover](components/crops/nav-newsletter-hover.png) ![Newsletter link focus-visible](components/crops/nav-newsletter-focus-visible.png) ![Newsletter link pressed](components/crops/nav-newsletter-pressed.png)
 
 #### Wordmark
-The Esquire wordmark lockup centred in the main bar (a link home holding a 296x60 inline svg). Read as `nav-logo` on the home page.
+The Esquire wordmark lockup centred in the main bar (a link home holding the widest inline svg). Read as `nav-logo` on the home page.
 
-**Values (default).** size 125 x 32; padding 0px 12px; border 1px solid #ff3a30 `light.brand.red`; radius 1024px; background #ff3a30 `light.brand.red`; text Lausanne 13/18.2 400, #121212 `core.palette.gray.7`; transition color 0.3s cubic-bezier(0, 0, 0.2, 1), background-color 0.3s cubic-bezier(0, 0, 0.2, 1), border-color 0.3s cubic-bezier(0, 0, 0.2, 1), outline-color 0.3s cubic-bezier(0, 0, 0.2, 1), text-decoration-color 0.3s cubic-bezier(0, 0, 0.2, 1), fill 0.3s cubic-bezier(0, 0, 0.2, 1), stroke 0.3s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-from 0.3s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-via 0.3s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-to 0.3s cubic-bezier(0, 0, 0.2, 1); icon 16 x 16, #121212 `core.palette.gray.7`.
+**Values (default).** size 296 x 60; background transparent; text sans-serif 16/18.4 400, #121212 `core.palette.gray.7`; transform translate(-148px, 0px).
 
 ![Wordmark default](components/crops/nav-logo-default.png)
 
@@ -238,14 +238,14 @@ A home-page section heading ("The Latest") — 32px Lausanne. Read as `section-h
 #### Story list card
 A story row in "The Latest": thumbnail, 18px Lausanne headline, byline and read-time. Read as `story-card` on the home page.
 
-**Values (default).** size 302 x 108.8; background transparent; text Lausanne 12/16.8 400, #3b3b3b `core.palette.gray.23`; icon 16 x 16, #3b3b3b `core.palette.gray.23`.
+**Values (default).** size 302 x 132; background transparent; text Lausanne 12/16.8 400, #3b3b3b `core.palette.gray.23`; icon 16 x 16, #3b3b3b `core.palette.gray.23`.
 
 ![Story list card default](components/crops/story-card-default.png)
 
 #### Story headline
 An 18px Lausanne story headline in the Latest list. Read as `story-title` on the home page.
 
-**Values (default).** size 214 x 46.41; background transparent; text Lausanne 18/23.2 400, #121212 `core.palette.gray.7`.
+**Values (default).** size 214 x 69.61; background transparent; text Lausanne 18/23.2 400, #121212 `core.palette.gray.7`.
 
 ![Story headline default](components/crops/story-title-default.png)
 
@@ -259,14 +259,14 @@ The thumbnail image inside a story list card. Read as `story-thumb` on the home 
 #### Byline
 A "BY <AUTHOR>" byline under a story headline. Read as `byline` on the home page.
 
-**Values (default).** size 125.81 x 12; background transparent; text Lausanne 12/16.8 400, #3b3b3b `core.palette.gray.23`.
+**Values (default).** size 114.41 x 12; background transparent; text Lausanne 12/16.8 400, #3b3b3b `core.palette.gray.23`.
 
 ![Byline default](components/crops/byline-default.png)
 
 #### Read time
 The "min read" duration label with its clock icon on a story card. Read as `readtime` on the home page.
 
-**Values (default).** size 87 x 16.8; background transparent; text Lausanne 12/16.8 400, #3b3b3b `core.palette.gray.23`; icon 16 x 16, #3b3b3b `core.palette.gray.23`.
+**Values (default).** size 86 x 16.8; background transparent; text Lausanne 12/16.8 400, #3b3b3b `core.palette.gray.23`; icon 16 x 16, #3b3b3b `core.palette.gray.23`.
 
 ![Read time default](components/crops/readtime-default.png)
 
@@ -282,7 +282,7 @@ The cover hero headline painted at display size (56px PlayFair). Read as `hero-s
 
 **Values (default).** size 628 x 112; background transparent; text PlayFair 56/56 400, #121212 `core.palette.gray.7`.
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Hero story default](components/crops/hero-story-default.png)
 
 #### Hero dek
 The standfirst paragraph under the hero headline. Read as `hero-dek` on the home page.
@@ -358,9 +358,11 @@ Child layers that carry the look: a 118x24 border 1px solid #000000 `core.palett
 ![Section description default](components/crops/sec-desc-default.png)
 
 #### Section lead card
-The lead story card on the section front. Read as `sec-hero` on the style section page.
+The lead story card on the section front — the first image-carrying story link on the front. Read as `sec-hero` on the style section page.
 
-**Values (default).** size 1200 x 72.8; padding 20px 0px 0px 0px; background transparent; text Lausanne 44/52.8 400, #000000 `core.palette.gray.0`.
+**Values (default).** size 1200 x 813; background transparent; text Lausanne 40/48 400, #000000 `core.palette.gray.0`; layers div.css-wjntws.e11w5h812 1200.0x213.0 rgb(245, 246, 248).
+
+Child layers that carry the look: div 1200x213 background #f5f6f8 `light.background.panel`.
 
 ![Section lead card default](components/crops/sec-hero-default.png)
 
@@ -376,10 +378,10 @@ A standard story card lower on the section front. Read as `sec-card` on the styl
 
 **Values (default).** size 1440 x 1311.58; padding 10px 40px 30px 40px; background #f5f6f8 `light.background.panel`; text Lausanne 44/52.8 400, #000000 `core.palette.gray.0`.
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Section card default](components/crops/sec-card-default.png)
 
 #### See More button
-The red-outline "See More" pagination button; measured, never pressed. Read as `sec-see-more` on the style section page.
+The "See More" pagination ghost button — dark #121212 outline, red text; measured, never pressed. Read as `sec-see-more` on the style section page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -477,16 +479,9 @@ The lede paragraph whose first letter paints a drop cap. Read as `art-dropcap` o
 ![Drop-cap paragraph default](components/crops/art-dropcap-default.png)
 
 #### Inline story link
-An inline link inside body copy; measured, never followed. Read as `art-link` on the article page.
+An inline text link inside body copy; measured, never followed. Not every story carries one — this story had only the styled SUBSCRIBE CTA, so the link is a gap rather than a mislabelled button. Read as `art-link` on the article page.
 
-| State | Values (later rows list only what changes from the first row) |
-|---|---|
-| default | size 123.48 x 34.78; padding 9.6px 18px 5px 18px; border 1px solid #ff3a30 `light.brand.red`; radius 32px; background #ff3a30 `light.brand.red`; text Lausanne 14/18.2 400, #000000 `core.palette.gray.0`; transition all 0.3s ease-in-out; ancestors p.body-tip.css-rn1sws bg #f5f6f8 `light.background.panel` |
-| hover | background #ffffff `core.palette.gray.100`; text Lausanne 14/18.2 400, #525252 |
-| focus-visible | outline 2px dotted #000000 `core.palette.gray.0`, offset 5px |
-| pressed | background #ffffff `core.palette.gray.100`; text Lausanne 14/18.2 400, #525252 |
-
-![Inline story link default](components/crops/art-link-default.png) ![Inline story link hover](components/crops/art-link-hover.png) ![Inline story link focus-visible](components/crops/art-link-focus-visible.png) ![Inline story link pressed](components/crops/art-link-pressed.png)
+Not on the page when it was captured.
 
 #### Pull quote
 A display pull quote inside the story. Read as `art-pullquote` on the article page.
@@ -621,14 +616,14 @@ An FAQ collapsible header ("When will my magazine be delivered?") — a local UI
 ![FAQ accordion header default](components/crops/faq-header-default.png) ![FAQ accordion header hover](components/crops/faq-header-hover.png) ![FAQ accordion header focus-visible](components/crops/faq-header-focus-visible.png) ![FAQ accordion header pressed](components/crops/faq-header-pressed.png) ![FAQ accordion header opened](components/crops/faq-header-opened.png)
 
 #### FAQ answer
-The answer panel revealed by the FAQ header toggle. Read as `faq-answer` on the membership offers page.
+The answer panel revealed by the FAQ header toggle — the region its aria-controls names, or the sibling of the header heading when the attribute is absent; captured only when visible with text. Read as `faq-answer` on the membership offers page.
 
-**Values (default).** size 1200 x 4; padding 0px 0px 4px 0px; background transparent; text Lora 18/28.8 400, #000000 `core.palette.gray.0`; transition height 0.25s ease-in-out.
+**Values (default).** size 1200 x 284; padding 0px 0px 4px 0px; background transparent; text SF Pro 16/20 400, #000000 `core.palette.gray.0`; transition height 0.25s ease-in-out.
 
 ![FAQ answer default](components/crops/faq-answer-default.png)
 
 #### Gift subscription CTA
-The "GIVE A GIFT SUBSCRIPTION" red-outline action; measured, never followed. Read as `gift-cta` on the membership offers page.
+The "GIVE A GIFT SUBSCRIPTION" ghost action — red text on white at rest, filling red on hover; measured, never followed. Read as `gift-cta` on the membership offers page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -807,7 +802,7 @@ The hamburger button that toggles the side panel — a local UI toggle; the open
 #### Mobile wordmark
 The Esquire wordmark centred in the phone bar. Read as `m-logo` on the home page at 390 wide.
 
-**Values (default).** size 125 x 32; padding 0px 12px; border 1px solid #ff3a30 `light.brand.red`; radius 1024px; background #ff3a30 `light.brand.red`; text Lausanne 13/18.2 400, #121212 `core.palette.gray.7`; transition color 0.3s cubic-bezier(0, 0, 0.2, 1), background-color 0.3s cubic-bezier(0, 0, 0.2, 1), border-color 0.3s cubic-bezier(0, 0, 0.2, 1), outline-color 0.3s cubic-bezier(0, 0, 0.2, 1), text-decoration-color 0.3s cubic-bezier(0, 0, 0.2, 1), fill 0.3s cubic-bezier(0, 0, 0.2, 1), stroke 0.3s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-from 0.3s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-via 0.3s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-to 0.3s cubic-bezier(0, 0, 0.2, 1); icon 16 x 16, #121212 `core.palette.gray.7`.
+**Values (default).** size 192 x 48; background transparent; text sans-serif 16/18.4 400, #121212 `core.palette.gray.7`; transform translate(-96px, 0px).
 
 ![Mobile wordmark default](components/crops/m-logo-default.png)
 
@@ -838,7 +833,7 @@ The uppercase eyebrow over a phone headline. Read as `m-eyebrow` on the home pag
 #### Mobile byline
 A "BY <AUTHOR>" byline on the phone feed. Read as `m-byline` on the home page at 390 wide.
 
-**Values (default).** size 125.81 x 12; background transparent; text Lausanne 12/16.8 400, #3b3b3b `core.palette.gray.23`.
+**Values (default).** size 114.41 x 12; background transparent; text Lausanne 12/16.8 400, #3b3b3b `core.palette.gray.23`.
 
 ![Mobile byline default](components/crops/m-byline-default.png)
 

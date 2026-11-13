@@ -47,11 +47,11 @@ Each rule links the screenshot or crop that shows it, under [Do and don't](#do-a
 | accent | #ff3a30 `light.brand.red` |
 | border | #bdbdbd `light.border.divider` |
 
-Fonts: `core.font.family.sans` is Lausanne, then 10 fallbacks; `core.font.family.display` is PlayFair, then 8 fallbacks; `core.font.family.content` is Lora, then 8 fallbacks. Scales, counted as [DESIGN.md](DESIGN.md) holds them: no type styles under `core.typography`, 10 radius steps (`core.radius`), 13 spacing steps (`core.space`).
+Fonts: `core.font.family.sans` is Lausanne, then 10 fallbacks; `core.font.family.display` is PlayFair, then 8 fallbacks; `core.font.family.content` is Lora, then 8 fallbacks. Scales, counted as [DESIGN.md](DESIGN.md) holds them: 167 type styles (`core.typography`), 10 radius steps (`core.radius`), 13 spacing steps (`core.space`).
 
 ### Using components
 
-Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 160 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
+Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 157 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
 
 ### Accessibility
 

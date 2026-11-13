@@ -101,6 +101,11 @@
      "animation": ""
     },
     {
+     "selector": "#ot-sdk-btn.ot-sdk-show-settings, #ot-sdk-btn.optanon-show-settings",
+     "transition": "0.1s",
+     "animation": ""
+    },
+    {
      "selector": ".P1ekSe-ZMv3u",
      "transition": "height 0.2s linear",
      "animation": ""
@@ -118,11 +123,6 @@
     {
      "selector": ".nsm7Bb-HzV7m-LgbsSe .nsm7Bb-HzV7m-LgbsSe-MJoBVe",
      "transition": "background-color 0.218s",
-     "animation": ""
-    },
-    {
-     "selector": "#ot-sdk-btn.ot-sdk-show-settings, #ot-sdk-btn.optanon-show-settings",
-     "transition": "0.1s",
      "animation": ""
     }
    ],
@@ -630,11 +630,6 @@
      "animation": ""
     },
     {
-     "selector": "#ot-sdk-btn.ot-sdk-show-settings, #ot-sdk-btn.optanon-show-settings",
-     "transition": "0.1s",
-     "animation": ""
-    },
-    {
      "selector": ".P1ekSe-ZMv3u",
      "transition": "height 0.2s linear",
      "animation": ""
@@ -652,6 +647,11 @@
     {
      "selector": ".nsm7Bb-HzV7m-LgbsSe .nsm7Bb-HzV7m-LgbsSe-MJoBVe",
      "transition": "background-color 0.218s",
+     "animation": ""
+    },
+    {
+     "selector": "#ot-sdk-btn.ot-sdk-show-settings, #ot-sdk-btn.optanon-show-settings",
+     "transition": "0.1s",
      "animation": ""
     },
     {
@@ -1517,21 +1517,21 @@
      "node": "div.css-56diik",
      "z": "auto",
      "pos": "sticky",
-     "rect": "400x138@920,2280",
+     "rect": "400x138@920,2303",
      "text": ""
     },
     {
      "node": "div.css-56diik",
      "z": "auto",
      "pos": "sticky",
-     "rect": "400x138@920,5496",
+     "rect": "400x138@920,5519",
      "text": ""
     },
     {
      "node": "div.css-56diik",
      "z": "auto",
      "pos": "sticky",
-     "rect": "400x138@920,9060",
+     "rect": "400x138@920,9068",
      "text": ""
     }
    ],
@@ -1628,7 +1628,7 @@
      "node": "div.ad-container",
      "z": "2000000",
      "pos": "sticky",
-     "rect": "390x12@0,21853",
+     "rect": "390x12@0,21827",
      "text": ""
     },
     {
@@ -1663,7 +1663,7 @@
      "node": "div.gpt-breaker-container",
      "z": "auto",
      "pos": "sticky",
-     "rect": "390x523@0,21819",
+     "rect": "390x523@0,21792",
      "text": "Advertisement - Continue Reading Below"
     }
    ]
@@ -2955,55 +2955,55 @@
    "states": {
     "default": {
      "tag": "a",
-     "classes": "hds-do-not-use inline-flex items-center justify-center",
-     "text": "Newsletter",
+     "classes": "hds-do-not-use no-underline text-(--comp-link-inline-txt-primary-txt) hover:text-(--comp-link-inline-txt-primary-txt-hover)",
+     "text": "Esquire",
      "rect": {
-      "x": 148.8,
-      "y": 121,
-      "w": 125,
-      "h": 32
+      "x": 572,
+      "y": 158.1,
+      "w": 296,
+      "h": 60
      },
      "style": {
-      "display": "flex",
-      "position": "static",
+      "display": "block",
+      "position": "absolute",
       "boxSizing": "border-box",
-      "width": "125px",
-      "height": "32px",
-      "minWidth": "auto",
+      "width": "296px",
+      "height": "60px",
+      "minWidth": "0px",
       "maxWidth": "none",
-      "minHeight": "auto",
+      "minHeight": "0px",
       "paddingTop": "0px",
-      "paddingRight": "12px",
+      "paddingRight": "0px",
       "paddingBottom": "0px",
-      "paddingLeft": "12px",
+      "paddingLeft": "0px",
       "marginTop": "0px",
       "marginRight": "0px",
       "marginBottom": "0px",
       "marginLeft": "0px",
-      "gap": "4px",
-      "rowGap": "4px",
-      "columnGap": "4px",
+      "gap": "normal",
+      "rowGap": "normal",
+      "columnGap": "normal",
       "flexDirection": "row",
-      "alignItems": "center",
-      "justifyContent": "center",
+      "alignItems": "normal",
+      "justifyContent": "normal",
       "gridTemplateColumns": "none",
-      "borderTopWidth": "1px",
-      "borderTopStyle": "solid",
-      "borderTopColor": "rgb(255, 58, 48)",
-      "borderRightWidth": "1px",
-      "borderRightStyle": "solid",
-      "borderRightColor": "rgb(255, 58, 48)",
-      "borderBottomWidth": "1px",
-      "borderBottomStyle": "solid",
-      "borderBottomColor": "rgb(255, 58, 48)",
-      "borderLeftWidth": "1px",
-      "borderLeftStyle": "solid",
-      "borderLeftColor": "rgb(255, 58, 48)",
-      "borderTopLeftRadius": "1024px",
-      "borderTopRightRadius": "1024px",
-      "borderBottomRightRadius": "1024px",
-      "borderBottomLeftRadius": "1024px",
-      "backgroundColor": "rgb(255, 58, 48)",
+      "borderTopWidth": "0px",
+      "borderTopStyle": "none",
+      "borderTopColor": "rgb(18, 18, 18)",
+      "borderRightWidth": "0px",
+      "borderRightStyle": "none",
+      "borderRightColor": "rgb(18, 18, 18)",
+      "borderBottomWidth": "0px",
+      "borderBottomStyle": "none",
+      "borderBottomColor": "rgb(18, 18, 18)",
+      "borderLeftWidth": "0px",
+      "borderLeftStyle": "none",
+      "borderLeftColor": "rgb(18, 18, 18)",
+      "borderTopLeftRadius": "0px",
+      "borderTopRightRadius": "0px",
+      "borderBottomRightRadius": "0px",
+      "borderBottomLeftRadius": "0px",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
@@ -3011,52 +3011,31 @@
       "outlineStyle": "none",
       "outlineColor": "rgb(18, 18, 18)",
       "outlineOffset": "0px",
-      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
-      "fontSize": "13px",
+      "fontFamily": "sans-serif",
+      "fontSize": "16px",
       "fontWeight": "400",
-      "lineHeight": "18.2px",
-      "letterSpacing": "0.4px",
-      "textTransform": "capitalize",
+      "lineHeight": "18.4px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
       "color": "rgb(18, 18, 18)",
       "textDecorationLine": "none",
       "textDecorationColor": "rgb(18, 18, 18)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
-      "transitionProperty": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to",
-      "transitionDuration": "0.3s",
-      "transitionTimingFunction": "cubic-bezier(0, 0, 0.2, 1)",
+      "transitionProperty": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
       "transitionDelay": "0s",
       "cursor": "pointer",
       "opacity": "1",
-      "transform": "none",
+      "transform": "matrix(1, 0, 0, 1, -148, 0)",
       "overflow": "visible",
       "zIndex": "auto",
-      "top": "auto"
-     },
-     "paint": [
-      {
-       "node": "a.hds-do-not-use.inline-flex",
-       "size": "125.0x32.0",
-       "border": "T:1px solid rgb(255, 58, 48) | R:1px solid rgb(255, 58, 48) | B:1px solid rgb(255, 58, 48) | L:1px solid rgb(255, 58, 48)",
-       "bg": "rgb(255, 58, 48)",
-       "radius": "1024px"
-      }
-     ],
-     "textStyle": {
-      "node": "span.translate-y-(--comp-btn-md-dim-offset-y).[text-decoration-line:var(--comp-btn-primary-md-type-decoration-line-mobile)]",
-      "text": "Newsletter",
-      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
-      "fontSize": "13px",
-      "lineHeight": "18.2px",
-      "fontWeight": "400",
-      "letterSpacing": "0.4px",
-      "color": "rgb(18, 18, 18)",
-      "textDecorationLine": "none",
-      "textTransform": "capitalize"
+      "top": "5.14062px"
      },
      "icon": {
-      "w": 16,
-      "h": 16,
+      "w": 296,
+      "h": 60,
       "fill": "rgb(0, 0, 0)",
       "stroke": "none",
       "color": "rgb(18, 18, 18)"
@@ -3070,8 +3049,8 @@
    "url": "https://www.esquire.com/",
    "title": "Wordmark",
    "group": "Navigation and site chrome",
-   "desc": "The Esquire wordmark lockup centred in the main bar (a link home holding a 296x60 inline svg).",
-   "selector": "nav a:has(svg)"
+   "desc": "The Esquire wordmark lockup centred in the main bar (a link home holding the widest inline svg).",
+   "selector": "widest svg inside a nav anchor"
   },
   "nav-signin": {
    "states": {
@@ -6504,19 +6483,19 @@
     "default": {
      "tag": "div",
      "classes": "css-362t2g e12xmg6f0",
-     "text": "‘Rings of Power’ Is Still More of the Same BY ERIC FRANCISCO 29 minutes ago 5 mi",
+     "text": "27 New Products Esquire’s Editors Loved This Week BY LUKE GUILLORY 37 minutes ag",
      "rect": {
       "x": 80,
       "y": 379.1,
       "w": 302,
-      "h": 108.8
+      "h": 132
      },
      "style": {
       "display": "flex",
       "position": "relative",
       "boxSizing": "border-box",
       "width": "302px",
-      "height": "108.797px",
+      "height": "132px",
       "minWidth": "auto",
       "maxWidth": "none",
       "minHeight": "auto",
@@ -6617,19 +6596,19 @@
     "default": {
      "tag": "h3",
      "classes": "css-1ohsk08 e1epsj610",
-     "text": "‘Rings of Power’ Is Still More of the Same",
+     "text": "27 New Products Esquire’s Editors Loved This Week",
      "rect": {
       "x": 168,
       "y": 379.1,
       "w": 214,
-      "h": 46.41
+      "h": 69.61
      },
      "style": {
       "display": "block",
       "position": "static",
       "boxSizing": "border-box",
       "width": "214px",
-      "height": "46.4062px",
+      "height": "69.6094px",
       "minWidth": "auto",
       "maxWidth": "none",
       "minHeight": "auto",
@@ -6805,11 +6784,11 @@
     "default": {
      "tag": "span",
      "classes": "",
-     "text": "BY ERIC FRANCISCO",
+     "text": "BY LUKE GUILLORY",
      "rect": {
       "x": 168,
-      "y": 431.5,
-      "w": 125.81,
+      "y": 444.7,
+      "w": 114.41,
       "h": 12
      },
      "style": {
@@ -6899,18 +6878,18 @@
     "default": {
      "tag": "div",
      "classes": "css-q1swb1 e12xmg6f2",
-     "text": "5 min read",
+     "text": "3 min read",
      "rect": {
       "x": 168,
-      "y": 442.1,
-      "w": 87,
+      "y": 442.3,
+      "w": 86,
       "h": 16.8
      },
      "style": {
       "display": "flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "87px",
+      "width": "86px",
       "height": "16.7969px",
       "minWidth": "auto",
       "maxWidth": "none",
@@ -7171,7 +7150,7 @@
       "zIndex": "auto",
       "top": "auto"
      },
-     "cropError": "page.screenshot: Timeout 8000ms exceeded.\nCall log:\n  - taking page screenshot\n  - waiting for fonts to load...\n  - font",
+     "crop": "components/crops/hero-story-default.png",
      "via": "at rest"
     }
    },
@@ -9155,31 +9134,31 @@
   "sec-hero": {
    "states": {
     "default": {
-     "tag": "div",
-     "classes": "css-13mjo99 euwyntb0",
-     "text": "just landed",
+     "tag": "a",
+     "classes": "e11w5h810 css-ktdy9i enrmkiw0",
+     "text": "Boots, Bags, and All the New Launches Esquire’s Editors Loved This Week",
      "rect": {
       "x": 120,
-      "y": 414.1,
+      "y": 43.9,
       "w": 1200,
-      "h": 72.8
+      "h": 813
      },
      "style": {
       "display": "block",
-      "position": "relative",
+      "position": "static",
       "boxSizing": "border-box",
       "width": "1200px",
-      "height": "72.7969px",
-      "minWidth": "auto",
+      "height": "813px",
+      "minWidth": "0px",
       "maxWidth": "none",
-      "minHeight": "auto",
-      "paddingTop": "20px",
+      "minHeight": "0px",
+      "paddingTop": "0px",
       "paddingRight": "0px",
       "paddingBottom": "0px",
       "paddingLeft": "0px",
       "marginTop": "0px",
       "marginRight": "0px",
-      "marginBottom": "10px",
+      "marginBottom": "0px",
       "marginLeft": "0px",
       "gap": "normal",
       "rowGap": "normal",
@@ -9227,24 +9206,31 @@
       "transitionDuration": "0s",
       "transitionTimingFunction": "ease",
       "transitionDelay": "0s",
-      "cursor": "auto",
+      "cursor": "pointer",
       "opacity": "1",
       "transform": "none",
       "overflow": "visible",
       "zIndex": "auto",
-      "top": "0px"
+      "top": "auto"
      },
+     "paint": [
+      {
+       "node": "div.css-wjntws.e11w5h812",
+       "size": "1200.0x213.0",
+       "bg": "rgb(245, 246, 248)"
+      }
+     ],
      "textStyle": {
-      "node": "span",
-      "text": "Just Landed",
+      "node": "span.css-ecg1iu.e1otnc5c1",
+      "text": "Boots, Bags, and All the New Launches Es",
       "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, Helvetica, Arial, sans-serif",
-      "fontSize": "44px",
-      "lineHeight": "52.8px",
+      "fontSize": "40px",
+      "lineHeight": "48px",
       "fontWeight": "400",
       "letterSpacing": "normal",
       "color": "rgb(0, 0, 0)",
       "textDecorationLine": "none",
-      "textTransform": "lowercase"
+      "textTransform": "none"
      },
      "crop": "components/crops/sec-hero-default.png",
      "via": "at rest"
@@ -9255,8 +9241,8 @@
    "url": "https://www.esquire.com/style/",
    "title": "Section lead card",
    "group": "Section front",
-   "desc": "The lead story card on the section front.",
-   "selector": "section lead card"
+   "desc": "The lead story card on the section front — the first image-carrying story link on the front.",
+   "selector": "first main a with img"
   },
   "sec-eyebrow": {
    "states": {
@@ -9365,10 +9351,10 @@
     "default": {
      "tag": "section",
      "classes": "css-1l0vm3i e17377vn1",
-     "text": "the latest 5 Essentials That'll Transform Your Fall Wardrobe How to Look Like a ",
+     "text": "the latest Louis Vuitton’s Bold New Furniture Collection 5 Essentials That'll Tr",
      "rect": {
       "x": 0,
-      "y": -205.6,
+      "y": -205.8,
       "w": 1440,
       "h": 1311.58
      },
@@ -9461,7 +9447,7 @@
       "textDecorationLine": "none",
       "textTransform": "lowercase"
      },
-     "cropError": "locator.screenshot: Timeout 7985.429999999993ms exceeded.\nCall log:\n  - taking element screenshot\n  - waiting for fonts ",
+     "crop": "components/crops/sec-card-default.png",
      "via": "at rest"
     }
    },
@@ -9481,7 +9467,7 @@
      "text": "See More",
      "rect": {
       "x": 120,
-      "y": 431.2,
+      "y": 431.8,
       "w": 101.61,
       "h": 38.3
      },
@@ -9585,7 +9571,7 @@
      "text": "See More",
      "rect": {
       "x": 120,
-      "y": 431.2,
+      "y": 431.8,
       "w": 101.61,
       "h": 38.3
      },
@@ -9689,7 +9675,7 @@
      "text": "See More",
      "rect": {
       "x": 120,
-      "y": 437.2,
+      "y": 436.8,
       "w": 101.61,
       "h": 38.3
      },
@@ -9794,7 +9780,7 @@
      "text": "See More",
      "rect": {
       "x": 120,
-      "y": 431.2,
+      "y": 431.8,
       "w": 101.61,
       "h": 38.3
      },
@@ -9898,7 +9884,7 @@
    "url": "https://www.esquire.com/style/",
    "title": "See More button",
    "group": "Section front",
-   "desc": "The red-outline \"See More\" pagination button; measured, never pressed.",
+   "desc": "The \"See More\" pagination ghost button — dark #121212 outline, red text; measured, never pressed.",
    "selector": "See More"
   },
   "related-strip": {
@@ -10975,420 +10961,15 @@
    "selector": "p.body-dropcap"
   },
   "art-link": {
-   "states": {
-    "default": {
-     "tag": "a",
-     "classes": "css-18t265p ev6gbdc0",
-     "text": "SUBSCRIBE",
-     "rect": {
-      "x": 658.3,
-      "y": 432.7,
-      "w": 123.48,
-      "h": 34.78
-     },
-     "style": {
-      "display": "inline-block",
-      "position": "static",
-      "boxSizing": "border-box",
-      "width": "123.484px",
-      "height": "34.7812px",
-      "minWidth": "0px",
-      "maxWidth": "none",
-      "minHeight": "0px",
-      "paddingTop": "9.6px",
-      "paddingRight": "18px",
-      "paddingBottom": "5px",
-      "paddingLeft": "18px",
-      "marginTop": "0px",
-      "marginRight": "0px",
-      "marginBottom": "0px",
-      "marginLeft": "0px",
-      "gap": "normal",
-      "rowGap": "normal",
-      "columnGap": "normal",
-      "flexDirection": "row",
-      "alignItems": "normal",
-      "justifyContent": "normal",
-      "gridTemplateColumns": "none",
-      "borderTopWidth": "1px",
-      "borderTopStyle": "solid",
-      "borderTopColor": "rgb(255, 58, 48)",
-      "borderRightWidth": "1px",
-      "borderRightStyle": "solid",
-      "borderRightColor": "rgb(255, 58, 48)",
-      "borderBottomWidth": "1px",
-      "borderBottomStyle": "solid",
-      "borderBottomColor": "rgb(255, 58, 48)",
-      "borderLeftWidth": "1px",
-      "borderLeftStyle": "solid",
-      "borderLeftColor": "rgb(255, 58, 48)",
-      "borderTopLeftRadius": "32px",
-      "borderTopRightRadius": "32px",
-      "borderBottomRightRadius": "32px",
-      "borderBottomLeftRadius": "32px",
-      "backgroundColor": "rgb(255, 58, 48)",
-      "backgroundImage": "none",
-      "boxShadow": "none",
-      "backdropFilter": "none",
-      "outlineWidth": "0px",
-      "outlineStyle": "none",
-      "outlineColor": "rgb(0, 0, 0)",
-      "outlineOffset": "0px",
-      "fontFamily": "Lausanne, Lausanne-upcase-roboto, Lausanne-upcase-local, Helvetica, Arial, sans-serif",
-      "fontSize": "14px",
-      "fontWeight": "400",
-      "lineHeight": "18.2px",
-      "letterSpacing": "0.72px",
-      "textTransform": "uppercase",
-      "color": "rgb(0, 0, 0)",
-      "textDecorationLine": "none",
-      "textDecorationColor": "rgb(0, 0, 0)",
-      "textDecorationThickness": "1px",
-      "textUnderlineOffset": "4px",
-      "transitionProperty": "all",
-      "transitionDuration": "0.3s",
-      "transitionTimingFunction": "ease-in-out",
-      "transitionDelay": "0s",
-      "cursor": "pointer",
-      "opacity": "1",
-      "transform": "none",
-      "overflow": "visible",
-      "zIndex": "auto",
-      "top": "auto"
-     },
-     "paint": [
-      {
-       "node": "a.css-18t265p.ev6gbdc0",
-       "size": "123.5x34.8",
-       "border": "T:1px solid rgb(255, 58, 48) | R:1px solid rgb(255, 58, 48) | B:1px solid rgb(255, 58, 48) | L:1px solid rgb(255, 58, 48)",
-       "bg": "rgb(255, 58, 48)",
-       "radius": "32px"
-      }
-     ],
-     "ancestors": [
-      {
-       "up": 1,
-       "node": "p.body-tip.css-rn1sws",
-       "shadow": "rgb(21, 38, 61) 6.4px 6.4px 0px 0px",
-       "radius": "10px",
-       "bg": "rgb(245, 246, 248)"
-      }
-     ],
-     "crop": "components/crops/art-link-default.png",
-     "via": "at rest"
-    },
-    "hover": {
-     "tag": "a",
-     "classes": "css-18t265p ev6gbdc0",
-     "text": "SUBSCRIBE",
-     "rect": {
-      "x": 658.3,
-      "y": 432.7,
-      "w": 123.48,
-      "h": 34.78
-     },
-     "style": {
-      "display": "inline-block",
-      "position": "static",
-      "boxSizing": "border-box",
-      "width": "123.484px",
-      "height": "34.7812px",
-      "minWidth": "0px",
-      "maxWidth": "none",
-      "minHeight": "0px",
-      "paddingTop": "9.6px",
-      "paddingRight": "18px",
-      "paddingBottom": "5px",
-      "paddingLeft": "18px",
-      "marginTop": "0px",
-      "marginRight": "0px",
-      "marginBottom": "0px",
-      "marginLeft": "0px",
-      "gap": "normal",
-      "rowGap": "normal",
-      "columnGap": "normal",
-      "flexDirection": "row",
-      "alignItems": "normal",
-      "justifyContent": "normal",
-      "gridTemplateColumns": "none",
-      "borderTopWidth": "1px",
-      "borderTopStyle": "solid",
-      "borderTopColor": "rgb(255, 58, 48)",
-      "borderRightWidth": "1px",
-      "borderRightStyle": "solid",
-      "borderRightColor": "rgb(255, 58, 48)",
-      "borderBottomWidth": "1px",
-      "borderBottomStyle": "solid",
-      "borderBottomColor": "rgb(255, 58, 48)",
-      "borderLeftWidth": "1px",
-      "borderLeftStyle": "solid",
-      "borderLeftColor": "rgb(255, 58, 48)",
-      "borderTopLeftRadius": "32px",
-      "borderTopRightRadius": "32px",
-      "borderBottomRightRadius": "32px",
-      "borderBottomLeftRadius": "32px",
-      "backgroundColor": "rgb(255, 255, 255)",
-      "backgroundImage": "none",
-      "boxShadow": "none",
-      "backdropFilter": "none",
-      "outlineWidth": "0px",
-      "outlineStyle": "none",
-      "outlineColor": "rgb(82, 82, 82)",
-      "outlineOffset": "0px",
-      "fontFamily": "Lausanne, Lausanne-upcase-roboto, Lausanne-upcase-local, Helvetica, Arial, sans-serif",
-      "fontSize": "14px",
-      "fontWeight": "400",
-      "lineHeight": "18.2px",
-      "letterSpacing": "0.72px",
-      "textTransform": "uppercase",
-      "color": "rgb(82, 82, 82)",
-      "textDecorationLine": "none",
-      "textDecorationColor": "rgb(82, 82, 82)",
-      "textDecorationThickness": "1px",
-      "textUnderlineOffset": "4px",
-      "transitionProperty": "all",
-      "transitionDuration": "0.3s",
-      "transitionTimingFunction": "ease-in-out",
-      "transitionDelay": "0s",
-      "cursor": "pointer",
-      "opacity": "1",
-      "transform": "none",
-      "overflow": "visible",
-      "zIndex": "auto",
-      "top": "auto"
-     },
-     "paint": [
-      {
-       "node": "a.css-18t265p.ev6gbdc0",
-       "size": "123.5x34.8",
-       "border": "T:1px solid rgb(255, 58, 48) | R:1px solid rgb(255, 58, 48) | B:1px solid rgb(255, 58, 48) | L:1px solid rgb(255, 58, 48)",
-       "bg": "rgb(255, 255, 255)",
-       "radius": "32px"
-      }
-     ],
-     "ancestors": [
-      {
-       "up": 1,
-       "node": "p.body-tip.css-rn1sws",
-       "shadow": "rgb(21, 38, 61) 6.4px 6.4px 0px 0px",
-       "radius": "10px",
-       "bg": "rgb(245, 246, 248)"
-      }
-     ],
-     "crop": "components/crops/art-link-hover.png",
-     "via": "mouse hover"
-    },
-    "focus-visible": {
-     "tag": "a",
-     "classes": "css-18t265p ev6gbdc0",
-     "text": "SUBSCRIBE",
-     "rect": {
-      "x": 658.3,
-      "y": 1443.7,
-      "w": 123.48,
-      "h": 34.78
-     },
-     "style": {
-      "display": "inline-block",
-      "position": "static",
-      "boxSizing": "border-box",
-      "width": "123.484px",
-      "height": "34.7812px",
-      "minWidth": "0px",
-      "maxWidth": "none",
-      "minHeight": "0px",
-      "paddingTop": "9.6px",
-      "paddingRight": "18px",
-      "paddingBottom": "5px",
-      "paddingLeft": "18px",
-      "marginTop": "0px",
-      "marginRight": "0px",
-      "marginBottom": "0px",
-      "marginLeft": "0px",
-      "gap": "normal",
-      "rowGap": "normal",
-      "columnGap": "normal",
-      "flexDirection": "row",
-      "alignItems": "normal",
-      "justifyContent": "normal",
-      "gridTemplateColumns": "none",
-      "borderTopWidth": "1px",
-      "borderTopStyle": "solid",
-      "borderTopColor": "rgb(255, 58, 48)",
-      "borderRightWidth": "1px",
-      "borderRightStyle": "solid",
-      "borderRightColor": "rgb(255, 58, 48)",
-      "borderBottomWidth": "1px",
-      "borderBottomStyle": "solid",
-      "borderBottomColor": "rgb(255, 58, 48)",
-      "borderLeftWidth": "1px",
-      "borderLeftStyle": "solid",
-      "borderLeftColor": "rgb(255, 58, 48)",
-      "borderTopLeftRadius": "32px",
-      "borderTopRightRadius": "32px",
-      "borderBottomRightRadius": "32px",
-      "borderBottomLeftRadius": "32px",
-      "backgroundColor": "rgb(255, 58, 48)",
-      "backgroundImage": "none",
-      "boxShadow": "none",
-      "backdropFilter": "none",
-      "outlineWidth": "2px",
-      "outlineStyle": "dotted",
-      "outlineColor": "rgb(0, 0, 0)",
-      "outlineOffset": "5px",
-      "fontFamily": "Lausanne, Lausanne-upcase-roboto, Lausanne-upcase-local, Helvetica, Arial, sans-serif",
-      "fontSize": "14px",
-      "fontWeight": "400",
-      "lineHeight": "18.2px",
-      "letterSpacing": "0.72px",
-      "textTransform": "uppercase",
-      "color": "rgb(0, 0, 0)",
-      "textDecorationLine": "none",
-      "textDecorationColor": "rgb(0, 0, 0)",
-      "textDecorationThickness": "1px",
-      "textUnderlineOffset": "4px",
-      "transitionProperty": "all",
-      "transitionDuration": "0.3s",
-      "transitionTimingFunction": "ease-in-out",
-      "transitionDelay": "0s",
-      "cursor": "pointer",
-      "opacity": "1",
-      "transform": "none",
-      "overflow": "visible",
-      "zIndex": "auto",
-      "top": "auto"
-     },
-     "paint": [
-      {
-       "node": "a.css-18t265p.ev6gbdc0",
-       "size": "123.5x34.8",
-       "border": "T:1px solid rgb(255, 58, 48) | R:1px solid rgb(255, 58, 48) | B:1px solid rgb(255, 58, 48) | L:1px solid rgb(255, 58, 48)",
-       "bg": "rgb(255, 58, 48)",
-       "outline": "2px dotted rgb(0, 0, 0) offset 5px",
-       "radius": "32px"
-      }
-     ],
-     "ancestors": [
-      {
-       "up": 1,
-       "node": "p.body-tip.css-rn1sws",
-       "shadow": "rgb(21, 38, 61) 6.4px 6.4px 0px 0px",
-       "radius": "10px",
-       "bg": "rgb(245, 246, 248)"
-      }
-     ],
-     "crop": "components/crops/art-link-focus-visible.png",
-     "via": "Shift+Tab, Tab"
-    },
-    "pressed": {
-     "tag": "a",
-     "classes": "css-18t265p ev6gbdc0",
-     "text": "SUBSCRIBE",
-     "rect": {
-      "x": 658.3,
-      "y": 432.7,
-      "w": 123.48,
-      "h": 34.78
-     },
-     "style": {
-      "display": "inline-block",
-      "position": "static",
-      "boxSizing": "border-box",
-      "width": "123.484px",
-      "height": "34.7812px",
-      "minWidth": "0px",
-      "maxWidth": "none",
-      "minHeight": "0px",
-      "paddingTop": "9.6px",
-      "paddingRight": "18px",
-      "paddingBottom": "5px",
-      "paddingLeft": "18px",
-      "marginTop": "0px",
-      "marginRight": "0px",
-      "marginBottom": "0px",
-      "marginLeft": "0px",
-      "gap": "normal",
-      "rowGap": "normal",
-      "columnGap": "normal",
-      "flexDirection": "row",
-      "alignItems": "normal",
-      "justifyContent": "normal",
-      "gridTemplateColumns": "none",
-      "borderTopWidth": "1px",
-      "borderTopStyle": "solid",
-      "borderTopColor": "rgb(255, 58, 48)",
-      "borderRightWidth": "1px",
-      "borderRightStyle": "solid",
-      "borderRightColor": "rgb(255, 58, 48)",
-      "borderBottomWidth": "1px",
-      "borderBottomStyle": "solid",
-      "borderBottomColor": "rgb(255, 58, 48)",
-      "borderLeftWidth": "1px",
-      "borderLeftStyle": "solid",
-      "borderLeftColor": "rgb(255, 58, 48)",
-      "borderTopLeftRadius": "32px",
-      "borderTopRightRadius": "32px",
-      "borderBottomRightRadius": "32px",
-      "borderBottomLeftRadius": "32px",
-      "backgroundColor": "rgb(255, 255, 255)",
-      "backgroundImage": "none",
-      "boxShadow": "none",
-      "backdropFilter": "none",
-      "outlineWidth": "0px",
-      "outlineStyle": "none",
-      "outlineColor": "rgb(82, 82, 82)",
-      "outlineOffset": "0px",
-      "fontFamily": "Lausanne, Lausanne-upcase-roboto, Lausanne-upcase-local, Helvetica, Arial, sans-serif",
-      "fontSize": "14px",
-      "fontWeight": "400",
-      "lineHeight": "18.2px",
-      "letterSpacing": "0.72px",
-      "textTransform": "uppercase",
-      "color": "rgb(82, 82, 82)",
-      "textDecorationLine": "none",
-      "textDecorationColor": "rgb(82, 82, 82)",
-      "textDecorationThickness": "1px",
-      "textUnderlineOffset": "4px",
-      "transitionProperty": "all",
-      "transitionDuration": "0.3s",
-      "transitionTimingFunction": "ease-in-out",
-      "transitionDelay": "0s",
-      "cursor": "pointer",
-      "opacity": "1",
-      "transform": "none",
-      "overflow": "visible",
-      "zIndex": "auto",
-      "top": "auto"
-     },
-     "paint": [
-      {
-       "node": "a.css-18t265p.ev6gbdc0",
-       "size": "123.5x34.8",
-       "border": "T:1px solid rgb(255, 58, 48) | R:1px solid rgb(255, 58, 48) | B:1px solid rgb(255, 58, 48) | L:1px solid rgb(255, 58, 48)",
-       "bg": "rgb(255, 255, 255)",
-       "radius": "32px"
-      }
-     ],
-     "ancestors": [
-      {
-       "up": 1,
-       "node": "p.body-tip.css-rn1sws",
-       "shadow": "rgb(21, 38, 61) 6.4px 6.4px 0px 0px",
-       "radius": "10px",
-       "bg": "rgb(245, 246, 248)"
-      }
-     ],
-     "crop": "components/crops/art-link-pressed.png",
-     "via": "CDP forcePseudoState :active:hover"
-    }
-   },
+   "states": {},
    "page": "article",
    "run": "2026-11-13",
    "url": "https://www.esquire.com/entertainment/movies/a71465908/dwayne-johnson-the-rock-interview-2026/",
    "title": "Inline story link",
    "group": "Article page",
-   "desc": "An inline link inside body copy; measured, never followed.",
-   "selector": "article body a"
+   "desc": "An inline text link inside body copy; measured, never followed. Not every story carries one — this story had only the styled SUBSCRIBE CTA, so the link is a gap rather than a mislabelled button.",
+   "selector": "inline body-copy anchor",
+   "missing": true
   },
   "art-pullquote": {
    "states": {
@@ -11398,7 +10979,7 @@
      "text": "What if ... what if this moment, using AI to study himself after some tequilas a",
      "rect": {
       "x": 398,
-      "y": 296.9,
+      "y": 297,
       "w": 644,
       "h": 307.77
      },
@@ -11512,7 +11093,7 @@
      "text": "readers also read",
      "rect": {
       "x": 120,
-      "y": 424.4,
+      "y": 424.5,
       "w": 1200,
       "h": 52.8
      },
@@ -11756,7 +11337,7 @@
      "text": "Glen Powell Found What He Was Looking For Trump Will Never Tell The Truth About ",
      "rect": {
       "x": 120,
-      "y": -40.6,
+      "y": -40.5,
       "w": 800,
       "h": 982
      },
@@ -13757,20 +13338,20 @@
    "states": {
     "default": {
      "tag": "div",
-     "classes": "css-krokd8 eupr88z3",
-     "text": "",
+     "classes": "css-avl945 eupr88z3",
+     "text": "Your first print issue usually arrives in 4-8 weeks. Ship times can vary due to ",
      "rect": {
       "x": 120,
       "y": 505.3,
       "w": 1200,
-      "h": 4
+      "h": 284
      },
      "style": {
       "display": "block",
       "position": "static",
       "boxSizing": "border-box",
       "width": "1200px",
-      "height": "4px",
+      "height": "284px",
       "minWidth": "auto",
       "maxWidth": "none",
       "minHeight": "auto",
@@ -13835,6 +13416,18 @@
       "zIndex": "auto",
       "top": "auto"
      },
+     "textStyle": {
+      "node": "div.css-lz1flv.eiafxuc3",
+      "text": "Your first print issue usually arrives i",
+      "fontFamily": "\"SF Pro\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Hiragino Kaku Gothic ProN\", Meiryo, \"Noto Sans\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+      "fontSize": "16px",
+      "lineHeight": "20px",
+      "fontWeight": "400",
+      "letterSpacing": "normal",
+      "color": "rgb(0, 0, 0)",
+      "textDecorationLine": "none",
+      "textTransform": "none"
+     },
      "crop": "components/crops/faq-answer-default.png",
      "via": "at rest"
     }
@@ -13844,9 +13437,8 @@
    "url": "https://www.esquire.com/offers/premium-membership/",
    "title": "FAQ answer",
    "group": "Membership offers",
-   "desc": "The answer panel revealed by the FAQ header toggle.",
-   "selector": "collapsible content",
-   "recaptureMissed": "2026-11-13"
+   "desc": "The answer panel revealed by the FAQ header toggle — the region its aria-controls names, or the sibling of the header heading when the attribute is absent; captured only when visible with text.",
+   "selector": "aria-controls region, else header-heading sibling"
   },
   "gift-cta": {
    "states": {
@@ -14064,7 +13656,7 @@
      "text": "GIVE A GIFT SUBSCRIPTION",
      "rect": {
       "x": 558.9,
-      "y": 1259.7,
+      "y": 1469.7,
       "w": 322.28,
       "h": 40.59
      },
@@ -14273,7 +13865,7 @@
    "url": "https://www.esquire.com/offers/premium-membership/",
    "title": "Gift subscription CTA",
    "group": "Membership offers",
-   "desc": "The \"GIVE A GIFT SUBSCRIPTION\" red-outline action; measured, never followed.",
+   "desc": "The \"GIVE A GIFT SUBSCRIPTION\" ghost action — red text on white at rest, filling red on hover; measured, never followed.",
    "selector": "a[data-theme-key=button-primary] gift"
   },
   "offers-fine": {
@@ -17965,55 +17557,55 @@
    "states": {
     "default": {
      "tag": "a",
-     "classes": "hds-do-not-use inline-flex items-center justify-center",
-     "text": "Newsletter",
+     "classes": "hds-do-not-use no-underline text-(--comp-link-inline-txt-primary-txt) hover:text-(--comp-link-inline-txt-primary-txt-hover)",
+     "text": "Esquire",
      "rect": {
-      "x": 16,
-      "y": 0,
-      "w": 125,
-      "h": 32
+      "x": 99,
+      "y": 45,
+      "w": 192,
+      "h": 48
      },
      "style": {
-      "display": "flex",
-      "position": "static",
+      "display": "block",
+      "position": "absolute",
       "boxSizing": "border-box",
-      "width": "125px",
-      "height": "32px",
-      "minWidth": "auto",
+      "width": "192px",
+      "height": "48px",
+      "minWidth": "0px",
       "maxWidth": "none",
-      "minHeight": "auto",
+      "minHeight": "0px",
       "paddingTop": "0px",
-      "paddingRight": "12px",
+      "paddingRight": "0px",
       "paddingBottom": "0px",
-      "paddingLeft": "12px",
+      "paddingLeft": "0px",
       "marginTop": "0px",
       "marginRight": "0px",
       "marginBottom": "0px",
       "marginLeft": "0px",
-      "gap": "4px",
-      "rowGap": "4px",
-      "columnGap": "4px",
+      "gap": "normal",
+      "rowGap": "normal",
+      "columnGap": "normal",
       "flexDirection": "row",
-      "alignItems": "center",
-      "justifyContent": "center",
+      "alignItems": "normal",
+      "justifyContent": "normal",
       "gridTemplateColumns": "none",
-      "borderTopWidth": "1px",
-      "borderTopStyle": "solid",
-      "borderTopColor": "rgb(255, 58, 48)",
-      "borderRightWidth": "1px",
-      "borderRightStyle": "solid",
-      "borderRightColor": "rgb(255, 58, 48)",
-      "borderBottomWidth": "1px",
-      "borderBottomStyle": "solid",
-      "borderBottomColor": "rgb(255, 58, 48)",
-      "borderLeftWidth": "1px",
-      "borderLeftStyle": "solid",
-      "borderLeftColor": "rgb(255, 58, 48)",
-      "borderTopLeftRadius": "1024px",
-      "borderTopRightRadius": "1024px",
-      "borderBottomRightRadius": "1024px",
-      "borderBottomLeftRadius": "1024px",
-      "backgroundColor": "rgb(255, 58, 48)",
+      "borderTopWidth": "0px",
+      "borderTopStyle": "none",
+      "borderTopColor": "rgb(18, 18, 18)",
+      "borderRightWidth": "0px",
+      "borderRightStyle": "none",
+      "borderRightColor": "rgb(18, 18, 18)",
+      "borderBottomWidth": "0px",
+      "borderBottomStyle": "none",
+      "borderBottomColor": "rgb(18, 18, 18)",
+      "borderLeftWidth": "0px",
+      "borderLeftStyle": "none",
+      "borderLeftColor": "rgb(18, 18, 18)",
+      "borderTopLeftRadius": "0px",
+      "borderTopRightRadius": "0px",
+      "borderBottomRightRadius": "0px",
+      "borderBottomLeftRadius": "0px",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
@@ -18021,52 +17613,31 @@
       "outlineStyle": "none",
       "outlineColor": "rgb(18, 18, 18)",
       "outlineOffset": "0px",
-      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
-      "fontSize": "13px",
+      "fontFamily": "sans-serif",
+      "fontSize": "16px",
       "fontWeight": "400",
-      "lineHeight": "18.2px",
-      "letterSpacing": "0.4px",
-      "textTransform": "capitalize",
+      "lineHeight": "18.4px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
       "color": "rgb(18, 18, 18)",
       "textDecorationLine": "none",
       "textDecorationColor": "rgb(18, 18, 18)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
-      "transitionProperty": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to",
-      "transitionDuration": "0.3s",
-      "transitionTimingFunction": "cubic-bezier(0, 0, 0.2, 1)",
+      "transitionProperty": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
       "transitionDelay": "0s",
       "cursor": "pointer",
       "opacity": "1",
-      "transform": "none",
+      "transform": "matrix(1, 0, 0, 1, -96, 0)",
       "overflow": "visible",
       "zIndex": "auto",
-      "top": "auto"
-     },
-     "paint": [
-      {
-       "node": "a.hds-do-not-use.inline-flex",
-       "size": "125.0x32.0",
-       "border": "T:1px solid rgb(255, 58, 48) | R:1px solid rgb(255, 58, 48) | B:1px solid rgb(255, 58, 48) | L:1px solid rgb(255, 58, 48)",
-       "bg": "rgb(255, 58, 48)",
-       "radius": "1024px"
-      }
-     ],
-     "textStyle": {
-      "node": "span.translate-y-(--comp-btn-md-dim-offset-y).[text-decoration-line:var(--comp-btn-primary-md-type-decoration-line-mobile)]",
-      "text": "Newsletter",
-      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
-      "fontSize": "13px",
-      "lineHeight": "18.2px",
-      "fontWeight": "400",
-      "letterSpacing": "0.4px",
-      "color": "rgb(18, 18, 18)",
-      "textDecorationLine": "none",
-      "textTransform": "capitalize"
+      "top": "13px"
      },
      "icon": {
-      "w": 16,
-      "h": 16,
+      "w": 192,
+      "h": 48,
       "fill": "rgb(0, 0, 0)",
       "stroke": "none",
       "color": "rgb(18, 18, 18)"
@@ -18081,7 +17652,7 @@
    "title": "Mobile wordmark",
    "group": "Mobile (390 wide)",
    "desc": "The Esquire wordmark centred in the phone bar.",
-   "selector": "mobile a:has(svg)"
+   "selector": "widest svg inside a nav anchor"
   },
   "m-search": {
    "states": {
@@ -18654,11 +18225,11 @@
     "default": {
      "tag": "span",
      "classes": "",
-     "text": "BY ERIC FRANCISCO",
+     "text": "BY LUKE GUILLORY",
      "rect": {
       "x": 104,
-      "y": 416.6,
-      "w": 125.81,
+      "y": 416.8,
+      "w": 114.41,
       "h": 12
      },
      "style": {
@@ -18861,8 +18432,7 @@
       "color": "rgb(87, 87, 87)"
      },
      "crop": "components/crops/m-newsletter-default.png",
-     "via": "at rest",
-     "rerunError": "locator.evaluate: Timeout 8000ms exceeded.\nCall log:\n  - waiting for locator('form').filter({ hasText: /email/i }).first().first().first()\n"
+     "via": "at rest"
     }
    },
    "page": "mobile",
@@ -18881,7 +18451,7 @@
      "text": "Newsletter About Us Media Kit Press Room Contact Us Community Guidelines Adverti",
      "rect": {
       "x": 16,
-      "y": -214,
+      "y": -214.1,
       "w": 358,
       "h": 1272.7
      },

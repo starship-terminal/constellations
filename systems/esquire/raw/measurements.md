@@ -118,28 +118,26 @@ Crops: `nav-newsletter-default.png`, `nav-newsletter-hover.png`, `nav-newsletter
 
 #### nav-logo
 
-Wordmark. The Esquire wordmark lockup centred in the main bar (a link home holding a 296x60 inline svg).
+Wordmark. The Esquire wordmark lockup centred in the main bar (a link home holding the widest inline svg).
 
-Page: home. Selector: `nav a:has(svg)`. States: default.
+Page: home. Selector: `widest svg inside a nav anchor`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 125 x 32 |
-| Padding | 0px 12px |
-| Gap | 4px |
-| Border | 1px solid #ff3a30 |
-| Radius | 1024px |
-| Background | #ff3a30 |
+| Size (w x h) | 296 x 60 |
+| Padding | 0px |
+| Border | none |
+| Radius | 0px |
+| Background | transparent |
 | Box shadow | none |
 | Outline | none |
-| Font | Lausanne 13px/18.2px 400 |
-| Letter spacing | 0.4px |
+| Font | sans-serif 16px/18.4px 400 |
+| Letter spacing | normal |
 | Colour | #121212 |
-| Text node | span.translate-y-(--comp-btn-md-dim-offset-y).[text-decoration-line:var(--comp-btn-primary-md-type-decoration-line-mobile)]: Lausanne 13px/18.2px 400, #121212, ls 0.4px |
-| Transition | color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.3s cubic-bezier(0, 0, 0.2, 1) |
+| Transition | none |
+| Transform | matrix(1, 0, 0, 1, -148, 0) |
 | Cursor | pointer |
-| Icon | 16 x 16, colour #121212, fill #000000 |
-| Painted layers | a.hds-do-not-use.inline-flex 125.0x32.0 bg #ff3a30 border T:1px solid #ff3a30 / R:1px solid #ff3a30 / B:1px solid #ff3a30 / L:1px solid #ff3a30 r 1024px |
+| Icon | 296 x 60, colour #121212, fill #000000 |
 | How | at rest |
 
 Crops: `nav-logo-default.png`.
@@ -442,7 +440,7 @@ Page: home. Selector: `ancestor of first main h3`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 302 x 108.8 |
+| Size (w x h) | 302 x 132 |
 | Padding | 0px |
 | Gap | 8px |
 | Border | none |
@@ -468,7 +466,7 @@ Page: home. Selector: `main h3`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 214 x 46.41 |
+| Size (w x h) | 214 x 69.61 |
 | Padding | 0px |
 | Border | none |
 | Radius | 0px |
@@ -514,7 +512,7 @@ Page: home. Selector: `main BY-line`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 125.81 x 12 |
+| Size (w x h) | 114.41 x 12 |
 | Padding | 0px |
 | Border | none |
 | Radius | 0px |
@@ -537,7 +535,7 @@ Page: home. Selector: `min read label`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 87 x 16.8 |
+| Size (w x h) | 86 x 16.8 |
 | Padding | 0px |
 | Gap | 4px |
 | Border | none |
@@ -599,7 +597,7 @@ Page: home. Selector: `largest h3 by computed font-size`. States: default.
 | Transition | none |
 | How | at rest |
 
-Crops: none.
+Crops: `hero-story-default.png`.
 
 #### hero-dek
 
@@ -873,14 +871,14 @@ Crops: `sec-desc-default.png`.
 
 #### sec-hero
 
-Section lead card. The lead story card on the section front.
+Section lead card. The lead story card on the section front — the first image-carrying story link on the front.
 
-Page: section. Selector: `section lead card`. States: default.
+Page: section. Selector: `first main a with img`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 1200 x 72.8 |
-| Padding | 20px 0px 0px 0px |
+| Size (w x h) | 1200 x 813 |
+| Padding | 0px |
 | Border | none |
 | Radius | 0px |
 | Background | transparent |
@@ -889,8 +887,10 @@ Page: section. Selector: `section lead card`. States: default.
 | Font | sans-serif 16px/18.4px 400 |
 | Letter spacing | normal |
 | Colour | #000000 |
-| Text node | span: Lausanne 44px/52.8px 400, #000000 |
+| Text node | span.css-ecg1iu.e1otnc5c1: Lausanne 40px/48px 400, #000000 |
 | Transition | none |
+| Cursor | pointer |
+| Painted layers | div.css-wjntws.e11w5h812 1200.0x213.0 bg #f5f6f8 |
 | How | at rest |
 
 Crops: `sec-hero-default.png`.
@@ -943,11 +943,11 @@ Page: section. Selector: `section card`. States: default.
 | Painted layers | section.css-1l0vm3i.e17377vn1 1440.0x1311.6 bg #f5f6f8 |
 | How | at rest |
 
-Crops: none.
+Crops: `sec-card-default.png`.
 
 #### sec-see-more
 
-See More button. The red-outline "See More" pagination button; measured, never pressed.
+See More button. The "See More" pagination ghost button — dark #121212 outline, red text; measured, never pressed.
 
 Page: section. Selector: `See More`. States: default, hover, focus-visible, pressed.
 
@@ -1237,29 +1237,11 @@ Crops: `art-dropcap-default.png`.
 
 #### art-link
 
-Inline story link. An inline link inside body copy; measured, never followed.
+Inline story link. An inline text link inside body copy; measured, never followed. Not every story carries one — this story had only the styled SUBSCRIBE CTA, so the link is a gap rather than a mislabelled button.
 
-Page: article. Selector: `article body a`. States: default, hover, focus-visible, pressed.
+Page: article. Selector: `inline body-copy anchor`. States: .
 
-| Property | default | hover | focus-visible | pressed |
-|---|---|---|---|---|
-| Size (w x h) | 123.48 x 34.78 | = | = | = |
-| Padding | 9.6px 18px 5px 18px | = | = | = |
-| Border | 1px solid #ff3a30 | = | = | = |
-| Radius | 32px | = | = | = |
-| Background | #ff3a30 | #ffffff | = | #ffffff |
-| Box shadow | none | = | = | = |
-| Outline | none | = | 2px dotted #000000 offset 5px | = |
-| Font | Lausanne 14px/18.2px 400 | = | = | = |
-| Letter spacing | 0.72px | = | = | = |
-| Colour | #000000 | #525252 | = | #525252 |
-| Transition | all 0.3s ease-in-out | = | = | = |
-| Cursor | pointer | = | = | = |
-| Painted layers | a.css-18t265p.ev6gbdc0 123.5x34.8 bg #ff3a30 border T:1px solid #ff3a30 / R:1px solid #ff3a30 / B:1px solid #ff3a30 / L:1px solid #ff3a30 r 32px | a.css-18t265p.ev6gbdc0 123.5x34.8 bg #ffffff border T:1px solid #ff3a30 / R:1px solid #ff3a30 / B:1px solid #ff3a30 / L:1px solid #ff3a30 r 32px | a.css-18t265p.ev6gbdc0 123.5x34.8 bg #ff3a30 border T:1px solid #ff3a30 / R:1px solid #ff3a30 / B:1px solid #ff3a30 / L:1px solid #ff3a30 r 32px outline 2px dotted #000000 offset 5px | a.css-18t265p.ev6gbdc0 123.5x34.8 bg #ffffff border T:1px solid #ff3a30 / R:1px solid #ff3a30 / B:1px solid #ff3a30 / L:1px solid #ff3a30 r 32px |
-| Ancestor paint | 1 up p.body-tip.css-rn1sws bg #f5f6f8 shadow #15263d 6.4px 6.4px 0px 0px | = | = | = |
-| How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
-
-Crops: `art-link-default.png`, `art-link-hover.png`, `art-link-focus-visible.png`, `art-link-pressed.png`.
+Not found on the page at capture time.
 
 #### art-pullquote
 
@@ -1656,13 +1638,13 @@ Crops: `faq-header-default.png`, `faq-header-hover.png`, `faq-header-focus-visib
 
 #### faq-answer
 
-FAQ answer. The answer panel revealed by the FAQ header toggle.
+FAQ answer. The answer panel revealed by the FAQ header toggle — the region its aria-controls names, or the sibling of the header heading when the attribute is absent; captured only when visible with text.
 
-Page: offers. Selector: `collapsible content`. States: default.
+Page: offers. Selector: `aria-controls region, else header-heading sibling`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 1200 x 4 |
+| Size (w x h) | 1200 x 284 |
 | Padding | 0px 0px 4px 0px |
 | Border | none |
 | Radius | 0px |
@@ -1672,6 +1654,7 @@ Page: offers. Selector: `collapsible content`. States: default.
 | Font | Lora 18px/28.8px 400 |
 | Letter spacing | normal |
 | Colour | #000000 |
+| Text node | div.css-lz1flv.eiafxuc3: SF Pro 16px/20px 400, #000000 |
 | Transition | height 0.25s ease-in-out |
 | How | at rest |
 
@@ -1679,7 +1662,7 @@ Crops: `faq-answer-default.png`.
 
 #### gift-cta
 
-Gift subscription CTA. The "GIVE A GIFT SUBSCRIPTION" red-outline action; measured, never followed.
+Gift subscription CTA. The "GIVE A GIFT SUBSCRIPTION" ghost action — red text on white at rest, filling red on hover; measured, never followed.
 
 Page: offers. Selector: `a[data-theme-key=button-primary] gift`. States: default, hover, focus-visible, pressed.
 
@@ -2013,26 +1996,24 @@ Crops: `m-hamburger-default.png`, `m-hamburger-hover.png`, `m-hamburger-focus-vi
 
 Mobile wordmark. The Esquire wordmark centred in the phone bar.
 
-Page: mobile. Selector: `mobile a:has(svg)`. States: default.
+Page: mobile. Selector: `widest svg inside a nav anchor`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 125 x 32 |
-| Padding | 0px 12px |
-| Gap | 4px |
-| Border | 1px solid #ff3a30 |
-| Radius | 1024px |
-| Background | #ff3a30 |
+| Size (w x h) | 192 x 48 |
+| Padding | 0px |
+| Border | none |
+| Radius | 0px |
+| Background | transparent |
 | Box shadow | none |
 | Outline | none |
-| Font | Lausanne 13px/18.2px 400 |
-| Letter spacing | 0.4px |
+| Font | sans-serif 16px/18.4px 400 |
+| Letter spacing | normal |
 | Colour | #121212 |
-| Text node | span.translate-y-(--comp-btn-md-dim-offset-y).[text-decoration-line:var(--comp-btn-primary-md-type-decoration-line-mobile)]: Lausanne 13px/18.2px 400, #121212, ls 0.4px |
-| Transition | color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.3s cubic-bezier(0, 0, 0.2, 1) |
+| Transition | none |
+| Transform | matrix(1, 0, 0, 1, -96, 0) |
 | Cursor | pointer |
-| Icon | 16 x 16, colour #121212, fill #000000 |
-| Painted layers | a.hds-do-not-use.inline-flex 125.0x32.0 bg #ff3a30 border T:1px solid #ff3a30 / R:1px solid #ff3a30 / B:1px solid #ff3a30 / L:1px solid #ff3a30 r 1024px |
+| Icon | 192 x 48, colour #121212, fill #000000 |
 | How | at rest |
 
 Crops: `m-logo-default.png`.
@@ -2118,7 +2099,7 @@ Page: mobile. Selector: `mobile byline`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 125.81 x 12 |
+| Size (w x h) | 114.41 x 12 |
 | Padding | 0px |
 | Border | none |
 | Radius | 0px |

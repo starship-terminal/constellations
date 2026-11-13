@@ -4,9 +4,6 @@
 version: "alpha"
 name: "Esquire"
 description: "editorial magazine design: a declared Hearst FRE design-token layer (~4,400 resolved custom properties - --_palette/--_size/--_font primitives, --color-*/--type-*/--dim-*/--comp-* scales) under a white editorial surface with a #ff3a30 brand red (the utility strip, a Subscribe pill that inverts to white on hover, Join buttons), Lausanne UI type under PlayFair display headlines and Lora article body text, a ~155px three-band top chrome with a mega-menu and More overflow, story-card section fronts, a ~38,000px article layout with drop cap/pull quote/ad furniture, and a premium membership offers page with plan cards and an FAQ accordion"
-omitted:
-  - section: "typography"
-    reason: "tokens.json has no typography tokens under `core.typography`"
 colors:
   primary: "#ff3a30"
   neutral: "#ffffff"
@@ -115,6 +112,999 @@ colors:
   pullquote-txt: "#121212"
   hr-bg: "#121212"
   accordion-txt: "#121212"
+typography:
+  body-mobile:
+    fontFamily: "Lora"
+    fontSize: "18px"
+    fontWeight: 400
+    lineHeight: "26.0938px"
+    letterSpacing: "0px"
+  body-blockquote-mobile:
+    fontFamily: "Lausanne"
+    fontSize: "24px"
+    fontWeight: 400
+    lineHeight: "32.3906px"
+    letterSpacing: "0px"
+  body-dropcap-mobile:
+    fontFamily: "Lausanne"
+    fontSize: "96px"
+    fontWeight: 700
+    lineHeight: "105.594px"
+    letterSpacing: "0px"
+  body-tip-mobile:
+    fontFamily: "Lausanne"
+    fontSize: "18px"
+    fontWeight: 400
+    lineHeight: "26.0938px"
+    letterSpacing: "0px"
+  caption-md-mobile:
+    fontFamily: "Lausanne"
+    fontSize: "14px"
+    fontWeight: 400
+    lineHeight: "20.2969px"
+    letterSpacing: "0.390625px"
+  caption-sm-mobile:
+    fontFamily: "Lausanne"
+    fontSize: "13px"
+    fontWeight: 400
+    lineHeight: "18.1875px"
+    letterSpacing: "0.390625px"
+  credit-mobile:
+    fontFamily: "Lausanne"
+    fontSize: "13px"
+    fontWeight: 400
+    lineHeight: "18.1875px"
+    letterSpacing: "0.390625px"
+  desc-compact-desktop:
+    fontFamily: "Lausanne"
+    fontSize: "20px"
+    fontWeight: 400
+    lineHeight: "28px"
+    letterSpacing: "0px"
+  desc-compact-mobile:
+    fontFamily: "Lausanne"
+    fontSize: "13px"
+    fontWeight: 400
+    lineHeight: "18.1875px"
+    letterSpacing: "0.390625px"
+  desc-hero-desktop:
+    fontFamily: "Lausanne"
+    fontSize: "28px"
+    fontWeight: 400
+    lineHeight: "36.3906px"
+    letterSpacing: "0px"
+  desc-hero-mobile:
+    fontFamily: "Lausanne"
+    fontSize: "28px"
+    fontWeight: 400
+    lineHeight: "36.3906px"
+    letterSpacing: "0px"
+  desc-immersive-lede-desktop:
+    fontFamily: "Lausanne"
+    fontSize: "20px"
+    fontWeight: 400
+    lineHeight: "20.2969px"
+    letterSpacing: "0px"
+  desc-immersive-lede-laptop:
+    fontFamily: "Lausanne"
+    fontSize: "20px"
+    fontWeight: 400
+    lineHeight: "20.2969px"
+    letterSpacing: "0px"
+  desc-immersive-lede-mobile:
+    fontFamily: "Lausanne"
+    fontSize: "18px"
+    fontWeight: 400
+    lineHeight: "20.2969px"
+    letterSpacing: "0px"
+  desc-immersive-lede-tablet:
+    fontFamily: "Lausanne"
+    fontSize: "18px"
+    fontWeight: 400
+    lineHeight: "20.2969px"
+    letterSpacing: "0px"
+  desc-lede-desktop:
+    fontFamily: "Lausanne"
+    fontSize: "20px"
+    fontWeight: 400
+    lineHeight: "26.0938px"
+    letterSpacing: "0px"
+  desc-lede-mobile:
+    fontFamily: "Lausanne"
+    fontSize: "18px"
+    fontWeight: 400
+    lineHeight: "23.1875px"
+    letterSpacing: "0px"
+  desc-marquee-dek-desktop:
+    fontFamily: "Lausanne"
+    fontSize: "40px"
+    fontWeight: 700
+    lineHeight: "50px"
+    letterSpacing: "0px"
+  desc-marquee-dek-laptop:
+    fontFamily: "Lausanne"
+    fontSize: "40px"
+    fontWeight: 700
+    lineHeight: "50px"
+    letterSpacing: "0px"
+  desc-marquee-dek-mobile:
+    fontFamily: "Lausanne"
+    fontSize: "20px"
+    fontWeight: 700
+    lineHeight: "28px"
+    letterSpacing: "0px"
+  desc-marquee-dek-tablet:
+    fontFamily: "Lausanne"
+    fontSize: "28px"
+    fontWeight: 700
+    lineHeight: "36.3906px"
+    letterSpacing: "0px"
+  desc-marquee-intro-desktop:
+    fontFamily: "Lora"
+    fontSize: "18px"
+    fontWeight: 400
+    lineHeight: "26.0938px"
+    letterSpacing: "0px"
+  desc-marquee-intro-mobile:
+    fontFamily: "Lora"
+    fontSize: "16px"
+    fontWeight: 400
+    lineHeight: "23.1875px"
+    letterSpacing: "0.1875px"
+  desc-marquee-intro-tablet:
+    fontFamily: "Lora"
+    fontSize: "16px"
+    fontWeight: 400
+    lineHeight: "20.2969px"
+    letterSpacing: "0.1875px"
+  desc-standard-desktop:
+    fontFamily: "Lausanne"
+    fontSize: "14px"
+    fontWeight: 400
+    lineHeight: "18.1875px"
+    letterSpacing: "0.390625px"
+  desc-standard-mobile:
+    fontFamily: "Lausanne"
+    fontSize: "14px"
+    fontWeight: 400
+    lineHeight: "18.1875px"
+    letterSpacing: "0.390625px"
+  divider-desktop:
+    fontFamily: "Lausanne"
+    fontSize: "16px"
+    fontWeight: 400
+    lineHeight: "23.1875px"
+    letterSpacing: "0.1875px"
+  divider-mobile:
+    fontFamily: "Lausanne"
+    fontSize: "16px"
+    fontWeight: 400
+    lineHeight: "23.1875px"
+    letterSpacing: "0.1875px"
+  eyebrow-promo-desktop:
+    fontFamily: "Lausanne"
+    fontWeight: 400
+    letterSpacing: "0px"
+  eyebrow-promo-mobile:
+    fontFamily: "Lausanne"
+    fontSize: "13px"
+    fontWeight: 400
+    lineHeight: "18.1875px"
+    letterSpacing: "0.390625px"
+  eyebrow-standard-mobile:
+    fontFamily: "Lausanne"
+    fontSize: "13px"
+    fontWeight: 400
+    lineHeight: "18.1875px"
+    letterSpacing: "0.390625px"
+  form-label-mobile:
+    fontFamily: "Lausanne"
+    fontSize: "16px"
+    fontWeight: 400
+    lineHeight: "23.1875px"
+    letterSpacing: "0.1875px"
+  form-placeholder-lg-mobile:
+    fontFamily: "Lausanne"
+    fontSize: "16px"
+    fontWeight: 400
+    lineHeight: "20.2969px"
+    letterSpacing: "0.1875px"
+  form-placeholder-md-mobile:
+    fontFamily: "Lausanne"
+    fontSize: "14px"
+    fontWeight: 400
+    lineHeight: "18.1875px"
+    letterSpacing: "0.390625px"
+  header-compact-desktop:
+    fontFamily: "Lausanne"
+    fontSize: "16px"
+    fontWeight: 400
+    lineHeight: "23.1875px"
+    letterSpacing: "0.1875px"
+  header-compact-mobile:
+    fontFamily: "Lausanne"
+    fontSize: "16px"
+    fontWeight: 400
+    lineHeight: "23.1875px"
+    letterSpacing: "0.1875px"
+  header-hero-desktop:
+    fontFamily: "Lausanne"
+    fontSize: "32px"
+    fontWeight: 400
+    lineHeight: "41.5938px"
+    letterSpacing: "0px"
+  header-hero-mobile:
+    fontFamily: "Lausanne"
+    fontSize: "28px"
+    fontWeight: 400
+    lineHeight: "46.7969px"
+    letterSpacing: "0px"
+  header-hero-topic-desktop:
+    fontFamily: "Lausanne"
+    fontSize: "64px"
+    fontWeight: 700
+    lineHeight: "76.7969px"
+    letterSpacing: "0px"
+  header-hero-topic-mobile:
+    fontFamily: "Lausanne"
+    fontSize: "48px"
+    fontWeight: 700
+    lineHeight: "57.5938px"
+    letterSpacing: "0px"
+  header-immersive-lede-desktop:
+    fontFamily: "Lausanne"
+    fontSize: "30px"
+    fontWeight: 700
+    lineHeight: "40.5px"
+    letterSpacing: "0px"
+  header-immersive-lede-mobile:
+    fontFamily: "Lausanne"
+    fontSize: "30px"
+    fontWeight: 700
+    lineHeight: "40.5px"
+    letterSpacing: "0px"
+  header-lede-desktop:
+    fontFamily: "Lausanne"
+    fontSize: "32px"
+    fontWeight: 400
+    lineHeight: "41.5938px"
+    letterSpacing: "0px"
+  header-lede-mobile:
+    fontFamily: "Lausanne"
+    fontSize: "28px"
+    fontWeight: 400
+    lineHeight: "36.3906px"
+    letterSpacing: "0px"
+  header-marquee-desktop:
+    fontFamily: "Lausanne"
+    fontSize: "112px"
+    fontWeight: 700
+    lineHeight: "112px"
+    letterSpacing: "0px"
+  header-marquee-laptop:
+    fontFamily: "Lausanne"
+    fontSize: "112px"
+    fontWeight: 700
+    lineHeight: "112px"
+    letterSpacing: "0px"
+  header-marquee-mobile:
+    fontFamily: "Lausanne"
+    fontSize: "52px"
+    fontWeight: 700
+    lineHeight: "62.3906px"
+    letterSpacing: "0px"
+  header-marquee-tablet:
+    fontFamily: "Lausanne"
+    fontSize: "64px"
+    fontWeight: 700
+    lineHeight: "67.1875px"
+    letterSpacing: "0px"
+  header-marquee-vertical-desktop:
+    fontFamily: "Lausanne"
+    fontSize: "112px"
+    fontWeight: 700
+    lineHeight: "112px"
+    letterSpacing: "0px"
+  header-marquee-vertical-laptop:
+    fontFamily: "Lausanne"
+    fontSize: "112px"
+    fontWeight: 700
+    lineHeight: "112px"
+    letterSpacing: "0px"
+  header-marquee-vertical-mobile:
+    fontFamily: "Lausanne"
+    fontSize: "52px"
+    fontWeight: 700
+    lineHeight: "62.3906px"
+    letterSpacing: "0px"
+  header-marquee-vertical-tablet:
+    fontFamily: "Lausanne"
+    fontSize: "96px"
+    fontWeight: 700
+    lineHeight: "105.594px"
+    letterSpacing: "0px"
+  header-promo-desktop:
+    fontFamily: "Lausanne"
+    fontSize: "28px"
+    fontWeight: 400
+    lineHeight: "36.3906px"
+    letterSpacing: "0px"
+  header-promo-mobile:
+    fontFamily: "Lausanne"
+    fontSize: "28px"
+    fontWeight: 400
+    lineHeight: "36.3906px"
+    letterSpacing: "0px"
+  header-standard-desktop:
+    fontFamily: "Lausanne"
+    fontSize: "18px"
+    fontWeight: 700
+    lineHeight: "26.0938px"
+    letterSpacing: "0px"
+  header-standard-mobile:
+    fontFamily: "Lausanne"
+    fontSize: "16px"
+    fontWeight: 700
+    lineHeight: "23.1875px"
+    letterSpacing: "0.1875px"
+  headline-body-h2-desktop:
+    fontFamily: "Lausanne"
+    fontSize: "36px"
+    fontWeight: 700
+    lineHeight: "46.7969px"
+    letterSpacing: "0px"
+  headline-body-h2-mobile:
+    fontFamily: "Lausanne"
+    fontSize: "28px"
+    fontWeight: 700
+    lineHeight: "36.3906px"
+    letterSpacing: "0px"
+  headline-body-h3-desktop:
+    fontFamily: "Lausanne"
+    fontSize: "30px"
+    fontWeight: 700
+    lineHeight: "40.5px"
+    letterSpacing: "0px"
+  headline-body-h3-mobile:
+    fontFamily: "Lausanne"
+    fontSize: "24px"
+    fontWeight: 700
+    lineHeight: "32.3906px"
+    letterSpacing: "0px"
+  headline-body-h4-desktop:
+    fontFamily: "Lausanne"
+    fontSize: "28px"
+    fontWeight: 700
+    lineHeight: "36.3906px"
+    letterSpacing: "0px"
+  headline-body-h4-mobile:
+    fontFamily: "Lausanne"
+    fontSize: "22px"
+    fontWeight: 700
+    lineHeight: "29.6875px"
+    letterSpacing: "0px"
+  headline-compact-desktop:
+    fontFamily: "Lausanne"
+    fontSize: "18px"
+    fontWeight: 400
+    lineHeight: "23.1875px"
+    letterSpacing: "0px"
+  headline-compact-mobile:
+    fontFamily: "Lausanne"
+    fontSize: "18px"
+    fontWeight: 400
+    lineHeight: "23.1875px"
+    letterSpacing: "0px"
+  headline-hero-desktop:
+    fontFamily: "Lausanne"
+    fontSize: "48px"
+    fontWeight: 700
+    lineHeight: "57.5938px"
+    letterSpacing: "0px"
+  headline-hero-mobile:
+    fontFamily: "Lausanne"
+    fontSize: "48px"
+    fontWeight: 700
+    lineHeight: "57.5938px"
+    letterSpacing: "0px"
+  headline-immersive-lede-desktop:
+    fontFamily: "Lausanne"
+    fontSize: "32px"
+    fontWeight: 700
+    lineHeight: "41.5938px"
+    letterSpacing: "0px"
+  headline-immersive-lede-laptop:
+    fontFamily: "Lausanne"
+    fontSize: "32px"
+    fontWeight: 700
+    lineHeight: "41.5938px"
+    letterSpacing: "0px"
+  headline-immersive-lede-mobile:
+    fontFamily: "Lausanne"
+    fontSize: "28px"
+    fontWeight: 700
+    lineHeight: "36.3906px"
+    letterSpacing: "0px"
+  headline-immersive-lede-tablet:
+    fontFamily: "Lausanne"
+    fontSize: "28px"
+    fontWeight: 700
+    lineHeight: "36.3906px"
+    letterSpacing: "0px"
+  headline-lede-desktop:
+    fontFamily: "PlayFair"
+    fontSize: "56px"
+    fontWeight: 400
+    lineHeight: "56px"
+    letterSpacing: "-1.5px"
+  headline-lede-mobile:
+    fontFamily: "PlayFair"
+    fontSize: "48px"
+    fontWeight: 400
+    lineHeight: "48px"
+    letterSpacing: "-1.5px"
+  headline-prominent-desktop:
+    fontFamily: "Lausanne"
+    fontSize: "24px"
+    fontWeight: 400
+    lineHeight: "29.6875px"
+    letterSpacing: "0px"
+  headline-prominent-mobile:
+    fontFamily: "Lausanne"
+    fontSize: "20px"
+    fontWeight: 400
+    lineHeight: "26.0938px"
+    letterSpacing: "0px"
+  headline-standard-desktop:
+    fontFamily: "Lausanne"
+    fontSize: "20px"
+    fontWeight: 400
+    lineHeight: "26.0938px"
+    letterSpacing: "0px"
+  headline-standard-laptop:
+    fontFamily: "Lausanne"
+    fontSize: "20px"
+    fontWeight: 400
+    lineHeight: "28px"
+    letterSpacing: "0px"
+  headline-standard-mobile:
+    fontFamily: "Lausanne"
+    fontSize: "20px"
+    fontWeight: 400
+    lineHeight: "26.0938px"
+    letterSpacing: "0px"
+  headline-standard-tablet:
+    fontFamily: "Lausanne"
+    fontSize: "20px"
+    fontWeight: 400
+    lineHeight: "26.0938px"
+    letterSpacing: "0.1875px"
+  helper-txt-lg-mobile:
+    fontFamily: "Lausanne"
+    fontSize: "16px"
+    fontWeight: 400
+    lineHeight: "23.1875px"
+    letterSpacing: "0.1875px"
+  helper-txt-md-mobile:
+    fontFamily: "Lausanne"
+    fontSize: "14px"
+    fontWeight: 400
+    lineHeight: "20.2969px"
+    letterSpacing: "0.390625px"
+  helper-txt-sm-mobile:
+    fontFamily: "Lausanne"
+    fontSize: "13px"
+    fontWeight: 400
+    lineHeight: "18.1875px"
+    letterSpacing: "0.390625px"
+  label-lg-mobile:
+    fontFamily: "Lausanne"
+    fontSize: "16px"
+    fontWeight: 400
+    lineHeight: "20.2969px"
+    letterSpacing: "0.1875px"
+  label-md-mobile:
+    fontFamily: "Lausanne"
+    fontSize: "16px"
+    fontWeight: 400
+    lineHeight: "20.2969px"
+    letterSpacing: "0.1875px"
+  label-sm-mobile:
+    fontFamily: "Lausanne"
+    fontSize: "13px"
+    fontWeight: 400
+    lineHeight: "18.1875px"
+    letterSpacing: "0.390625px"
+  legal-disclaimer-mobile:
+    fontFamily: "Lausanne"
+    fontSize: "14px"
+    fontWeight: 400
+    lineHeight: "20.2969px"
+    letterSpacing: "0.390625px"
+  legal-disclosure-desktop:
+    fontFamily: "Lausanne"
+    fontSize: "13px"
+    fontWeight: 400
+    lineHeight: "18.1875px"
+  legal-disclosure-mobile:
+    fontFamily: "Lausanne"
+    fontSize: "12px"
+    fontWeight: 400
+    lineHeight: "16.7969px"
+    letterSpacing: "0.390625px"
+  legal-fine-print-mobile:
+    fontFamily: "Lausanne"
+    fontSize: "11px"
+    fontWeight: 400
+    lineHeight: "14.8438px"
+    letterSpacing: "0.390625px"
+  legal-terms-desktop:
+    fontFamily: "Lausanne"
+    fontSize: "13px"
+    fontWeight: 400
+    lineHeight: "18.1875px"
+    letterSpacing: "0.390625px"
+  legal-terms-mobile:
+    fontFamily: "Lausanne"
+    fontSize: "13px"
+    fontWeight: 400
+    lineHeight: "18.1875px"
+    letterSpacing: "0.390625px"
+  list-header-mobile:
+    fontFamily: "Lausanne"
+    fontSize: "18px"
+    fontWeight: 700
+    lineHeight: "23.1875px"
+    letterSpacing: "0px"
+  list-item-desktop:
+    fontFamily: "Lausanne"
+    fontSize: "16px"
+    fontWeight: 400
+    lineHeight: "23.1875px"
+    letterSpacing: "0.1875px"
+  list-item-mobile:
+    fontFamily: "Lausanne"
+    fontSize: "16px"
+    fontWeight: 400
+    lineHeight: "23.1875px"
+    letterSpacing: "0.1875px"
+  list-paragraph-mobile:
+    fontFamily: "Lausanne"
+    fontSize: "18px"
+    fontWeight: 400
+    lineHeight: "26.0938px"
+    letterSpacing: "0px"
+  member-desktop:
+    fontFamily: "Lausanne"
+    fontSize: "14px"
+    fontWeight: 400
+    lineHeight: "20.2969px"
+  member-mobile:
+    fontFamily: "Lausanne"
+    fontSize: "14px"
+    fontWeight: 400
+    lineHeight: "20.2969px"
+    letterSpacing: "0.390625px"
+  meta-author-mobile:
+    fontFamily: "Lausanne"
+    fontSize: "12px"
+    fontWeight: 400
+    lineHeight: "16.7969px"
+    letterSpacing: "0.390625px"
+  meta-readtime-mobile:
+    fontFamily: "Lausanne"
+    fontSize: "12px"
+    fontWeight: 400
+    lineHeight: "16.7969px"
+    letterSpacing: "0.390625px"
+  meta-recipe-mobile:
+    fontFamily: "Lausanne"
+    fontSize: "14px"
+    fontWeight: 400
+    lineHeight: "20.2969px"
+    letterSpacing: "0.390625px"
+  meta-timestamp-md-desktop:
+    fontFamily: "Lausanne"
+    fontSize: "18px"
+    fontWeight: 400
+    lineHeight: "26.0938px"
+    letterSpacing: "0px"
+  meta-timestamp-md-mobile:
+    fontFamily: "Lausanne"
+    fontSize: "14px"
+    fontWeight: 400
+    lineHeight: "20.2969px"
+    letterSpacing: "0.390625px"
+  meta-timestamp-sm-mobile:
+    fontFamily: "Lausanne"
+    fontSize: "12px"
+    fontWeight: 400
+    lineHeight: "16.7969px"
+    letterSpacing: "0.390625px"
+  nav-header-md-desktop:
+    fontFamily: "Lausanne"
+    fontSize: "18px"
+    fontWeight: 400
+    lineHeight: "26.0938px"
+  nav-header-md-mobile:
+    fontFamily: "Lausanne"
+    fontSize: "18px"
+    fontWeight: 400
+    lineHeight: "26.0938px"
+    letterSpacing: "0px"
+  nav-header-sm-desktop:
+    fontFamily: "Lausanne"
+    fontSize: "16px"
+    fontWeight: 400
+    lineHeight: "23.1875px"
+    letterSpacing: "0.1875px"
+  nav-header-sm-mobile:
+    fontFamily: "Lausanne"
+    fontSize: "16px"
+    fontWeight: 400
+    lineHeight: "23.1875px"
+    letterSpacing: "0.1875px"
+  nav-header-xs-mobile:
+    fontFamily: "Lausanne"
+    fontSize: "14px"
+    fontWeight: 400
+    lineHeight: "20.2969px"
+    letterSpacing: "0.390625px"
+  nav-linktxt-md-desktop:
+    fontFamily: "Lausanne"
+    fontSize: "16px"
+    fontWeight: 400
+    lineHeight: "23.1875px"
+    letterSpacing: "0.1875px"
+  nav-linktxt-md-mobile:
+    fontFamily: "Lausanne"
+    fontSize: "16px"
+    fontWeight: 400
+    lineHeight: "23.1875px"
+    letterSpacing: "0.1875px"
+  nav-linktxt-sm-mobile:
+    fontFamily: "Lausanne"
+    fontSize: "14px"
+    fontWeight: 400
+    lineHeight: "20.2969px"
+    letterSpacing: "0.390625px"
+  nav-linktxt-xs-mobile:
+    fontFamily: "Lausanne"
+    fontSize: "13px"
+    fontWeight: 600
+    lineHeight: "18.1875px"
+    letterSpacing: "0.390625px"
+  nav-sidepanel-linktxt-mobile:
+    fontFamily: "Lausanne"
+    fontSize: "14px"
+    fontWeight: 400
+    lineHeight: "20.2969px"
+    letterSpacing: "0.390625px"
+  number-lg-mobile:
+    fontFamily: "Lausanne"
+    fontSize: "24px"
+    fontWeight: 700
+    lineHeight: "26.0938px"
+    letterSpacing: "0px"
+  number-md-desktop:
+    fontFamily: "Lausanne"
+    fontSize: "24px"
+    fontWeight: 700
+    lineHeight: "26.0938px"
+    letterSpacing: "0px"
+  number-md-mobile:
+    fontFamily: "Lausanne"
+    fontSize: "22px"
+    fontWeight: 700
+    lineHeight: "23.1875px"
+    letterSpacing: "0px"
+  offer-price-current-desktop:
+    fontFamily: "Lausanne"
+    fontSize: "20px"
+    fontWeight: 400
+    lineHeight: "28px"
+    letterSpacing: "0px"
+  offer-price-current-mobile:
+    fontFamily: "Lausanne"
+    fontSize: "20px"
+    fontWeight: 400
+    lineHeight: "28px"
+    letterSpacing: "0px"
+  offer-price-duration-desktop:
+    fontFamily: "Lausanne"
+    fontSize: "20px"
+    fontWeight: 400
+    lineHeight: "28px"
+    letterSpacing: "0px"
+  offer-price-duration-mobile:
+    fontFamily: "Lausanne"
+    fontSize: "20px"
+    fontWeight: 400
+    lineHeight: "28px"
+    letterSpacing: "0px"
+  offer-price-strikethrough-desktop:
+    fontFamily: "Lausanne"
+    fontSize: "20px"
+    fontWeight: 400
+    lineHeight: "28px"
+    letterSpacing: "0px"
+  offer-price-strikethrough-mobile:
+    fontFamily: "Lausanne"
+    fontSize: "20px"
+    fontWeight: 400
+    lineHeight: "28px"
+    letterSpacing: "0px"
+  pagination-desktop:
+    fontFamily: "Lausanne"
+    fontSize: "14px"
+    fontWeight: 400
+    lineHeight: "20.2969px"
+  pagination-mobile:
+    fontFamily: "Lausanne"
+    fontSize: "14px"
+    fontWeight: 400
+    lineHeight: "20.2969px"
+    letterSpacing: "0.390625px"
+  pagination-txt-active-mobile:
+    fontWeight: 400
+  product-discount-mobile:
+    fontFamily: "Lausanne"
+    fontSize: "14px"
+    fontWeight: 400
+    lineHeight: "20.2969px"
+    letterSpacing: "0.390625px"
+  product-price-mobile:
+    fontFamily: "Lausanne"
+    fontSize: "14px"
+    fontWeight: 400
+    lineHeight: "20.2969px"
+    letterSpacing: "0.390625px"
+  pullquote-author-desktop:
+    fontFamily: "Lausanne"
+    fontSize: "14px"
+    fontWeight: 600
+    lineHeight: "18.1875px"
+    letterSpacing: "0.1875px"
+  pullquote-author-mobile:
+    fontFamily: "Lausanne"
+    fontSize: "14px"
+    fontWeight: 600
+    lineHeight: "18.1875px"
+    letterSpacing: "0.1875px"
+  pullquote-author-tablet:
+    fontFamily: "Lausanne"
+    fontSize: "14px"
+    fontWeight: 600
+    lineHeight: "18.1875px"
+    letterSpacing: "0.1875px"
+  pullquote-credit-desktop:
+    fontFamily: "Lausanne"
+    fontSize: "13px"
+    fontWeight: 400
+    lineHeight: "18.1875px"
+    letterSpacing: "0.1875px"
+  pullquote-credit-mobile:
+    fontFamily: "Lausanne"
+    fontSize: "13px"
+    fontWeight: 400
+    lineHeight: "18.1875px"
+    letterSpacing: "0.1875px"
+  pullquote-credit-tablet:
+    fontFamily: "Lausanne"
+    fontSize: "13px"
+    fontWeight: 400
+    lineHeight: "18.1875px"
+    letterSpacing: "0.1875px"
+  pullquote-prominent-desktop:
+    fontFamily: "Lausanne"
+    fontSize: "32px"
+    fontWeight: 700
+    lineHeight: "41.5938px"
+    letterSpacing: "0px"
+  pullquote-prominent-mobile:
+    fontFamily: "Lausanne"
+    fontSize: "28px"
+    fontWeight: 700
+    lineHeight: "36.3906px"
+    letterSpacing: "0px"
+  pullquote-prominent-tablet:
+    fontFamily: "Lausanne"
+    fontSize: "32px"
+    fontWeight: 700
+    lineHeight: "41.5938px"
+    letterSpacing: "0px"
+  pullquote-standard-desktop:
+    fontFamily: "Lausanne"
+    fontSize: "32px"
+    fontWeight: 700
+    lineHeight: "41.5938px"
+    letterSpacing: "0px"
+  pullquote-standard-mobile:
+    fontFamily: "Lausanne"
+    fontSize: "28px"
+    fontWeight: 700
+    lineHeight: "36.3906px"
+    letterSpacing: "0px"
+  pullquote-standard-tablet:
+    fontFamily: "Lausanne"
+    fontSize: "32px"
+    fontWeight: 700
+    lineHeight: "41.5938px"
+    letterSpacing: "0px"
+  slide-compact-desktop:
+    fontFamily: "Lausanne"
+    fontSize: "20px"
+    fontWeight: 700
+    lineHeight: "28px"
+    letterSpacing: "0px"
+  slide-compact-mobile:
+    fontFamily: "Lausanne"
+    fontSize: "18px"
+    fontWeight: 700
+    lineHeight: "26.0938px"
+    letterSpacing: "0px"
+  slide-lede-desktop:
+    fontFamily: "Lausanne"
+    fontSize: "28px"
+    fontWeight: 700
+    lineHeight: "36.3906px"
+    letterSpacing: "0px"
+  slide-lede-mobile:
+    fontFamily: "Lausanne"
+    fontSize: "24px"
+    fontWeight: 700
+    lineHeight: "32.3906px"
+    letterSpacing: "0px"
+  slide-standard-desktop:
+    fontFamily: "Lausanne"
+    fontSize: "22px"
+    fontWeight: 700
+    lineHeight: "29.6875px"
+    letterSpacing: "0px"
+  slide-standard-mobile:
+    fontFamily: "Lausanne"
+    fontSize: "20px"
+    fontWeight: 700
+    lineHeight: "28px"
+    letterSpacing: "0px"
+  stats-md-mobile:
+    fontFamily: "Lausanne"
+    fontSize: "18px"
+    fontWeight: 700
+    lineHeight: "20.2969px"
+    letterSpacing: "0px"
+  subheadline-compact-desktop:
+    fontFamily: "Lausanne"
+    fontSize: "20px"
+    fontWeight: 700
+    lineHeight: "28px"
+    letterSpacing: "0px"
+  subheadline-compact-mobile:
+    fontFamily: "Lausanne"
+    fontSize: "18px"
+    fontWeight: 700
+    lineHeight: "26.0938px"
+    letterSpacing: "0px"
+  subheadline-marquee-desktop:
+    fontFamily: "Lausanne"
+    fontSize: "20px"
+    fontWeight: 700
+    lineHeight: "28px"
+    letterSpacing: "0px"
+  subheadline-marquee-laptop:
+    fontFamily: "Lausanne"
+    fontSize: "20px"
+    fontWeight: 700
+    lineHeight: "28px"
+    letterSpacing: "0px"
+  subheadline-marquee-mobile:
+    fontFamily: "Lausanne"
+    fontSize: "18px"
+    fontWeight: 700
+    lineHeight: "26.0938px"
+    letterSpacing: "0px"
+  subheadline-marquee-tablet:
+    fontFamily: "Lausanne"
+    fontSize: "20px"
+    fontWeight: 700
+    lineHeight: "28px"
+    letterSpacing: "0px"
+  subheadline-standard-desktop:
+    fontFamily: "PlayFair"
+    fontSize: "56px"
+    fontWeight: 400
+    lineHeight: "56px"
+    letterSpacing: "0px"
+  subheadline-standard-mobile:
+    fontFamily: "PlayFair"
+    fontSize: "48px"
+    fontWeight: 400
+    lineHeight: "50px"
+    letterSpacing: "0px"
+  table-header-mobile:
+    fontFamily: "Lausanne"
+    fontSize: "16px"
+    fontWeight: 400
+    lineHeight: "23.1875px"
+    letterSpacing: "0.1875px"
+  table-row-mobile:
+    fontFamily: "Lausanne"
+    fontSize: "16px"
+    fontWeight: 400
+    lineHeight: "23.1875px"
+    letterSpacing: "0.1875px"
+  tag-lg-mobile:
+    fontFamily: "Lausanne"
+    fontSize: "14px"
+    fontWeight: 400
+    lineHeight: "20.2969px"
+    letterSpacing: "0.390625px"
+  tag-md-mobile:
+    fontFamily: "Lausanne"
+    fontSize: "14px"
+    fontWeight: 400
+    lineHeight: "20.2969px"
+    letterSpacing: "0.390625px"
+  tag-sm-mobile:
+    fontFamily: "Lausanne"
+    fontSize: "14px"
+    fontWeight: 400
+    lineHeight: "18.1875px"
+    letterSpacing: "0.1875px"
+  tag-xs-mobile:
+    fontFamily: "Lausanne"
+    fontSize: "11px"
+    fontWeight: 400
+    lineHeight: "14.8438px"
+    letterSpacing: "0.390625px"
+  title-compact-desktop:
+    fontFamily: "Lausanne"
+    fontSize: "20px"
+    fontWeight: 700
+    lineHeight: "28px"
+    letterSpacing: "0px"
+  title-compact-mobile:
+    fontFamily: "Lausanne"
+    fontSize: "18px"
+    fontWeight: 700
+    lineHeight: "26.0938px"
+    letterSpacing: "0px"
+  title-lede-desktop:
+    fontFamily: "Lausanne"
+    fontSize: "28px"
+    fontWeight: 700
+    lineHeight: "36.3906px"
+    letterSpacing: "0px"
+  title-lede-mobile:
+    fontFamily: "Lausanne"
+    fontSize: "24px"
+    fontWeight: 700
+    lineHeight: "32.3906px"
+    letterSpacing: "0px"
+  title-standard-desktop:
+    fontFamily: "Lausanne"
+    fontSize: "22px"
+    fontWeight: 700
+    lineHeight: "29.6875px"
+    letterSpacing: "0px"
+  title-standard-mobile:
+    fontFamily: "Lausanne"
+    fontSize: "20px"
+    fontWeight: 700
+    lineHeight: "28px"
+    letterSpacing: "0px"
+  transcript-desktop:
+    fontFamily: "PlayFair"
+    fontSize: "16px"
+    fontWeight: 400
+    lineHeight: "23.1875px"
+    letterSpacing: "0.1875px"
+  transcript-mobile:
+    fontFamily: "PlayFair"
+    fontSize: "16px"
+    fontWeight: 400
+    lineHeight: "23.1875px"
+    letterSpacing: "0.1875px"
 rounded:
   square: "0px"
   sm: "4px"
@@ -148,7 +1138,7 @@ components:
   megamenu:
     height: "53.2px"
   logo:
-    width: "125px"
+    width: "296px"
   search-input:
     width: "211.81px"
     height: "26.19px"
@@ -197,7 +1187,7 @@ components:
   m-nav:
     height: "154.2px"
   m-logo:
-    width: "125px"
+    width: "192px"
   m-hamburger:
     size: "42px"
   m-drawer:
@@ -233,7 +1223,7 @@ The roles below are the catalog's swatches for the `light` theme. The front matt
 
 ## Typography
 
-No composite type styles in tokens.json; the README text below names the faces and sizes.
+167 styles from `core.typography`. `fontFamily` is the first family of each stack; the full stacks, and properties DESIGN.md has no field for (text case, decoration), are in tokens.json. Families: Lausanne, Lora, PlayFair.
 
 ## Layout
 
@@ -245,35 +1235,9 @@ Shadows, resolved to CSS:
 
 | Token | box-shadow |
 |---|---|
-| `core.layout.elevation.base` | `0` |
-| `core.layout.elevation.drawer` | `8000000` |
-| `core.layout.elevation.floating` | `12000000` |
-| `core.layout.elevation.gate` | `14000000` |
-| `core.layout.elevation.nav` | `6000000` |
-| `core.layout.elevation.overlay` | `10000000` |
-| `core.layout.elevation.raised` | `2000000` |
-| `core.layout.elevation.subnav` | `4000000` |
-| `core.layout.elevation.sunken` | `-2000000` |
-| `core.shadow.card_dim_shadow_blur` | `0px` |
-| `core.shadow.card_dim_shadow_position_x` | `0px` |
-| `core.shadow.card_dim_shadow_position_y` | `0px` |
-| `core.shadow.card_dim_shadow_spread` | `0px` |
-| `core.shadow.elevation_shadow_lg_blur` | `0px` |
-| `core.shadow.elevation_shadow_lg_position_x` | `0px` |
-| `core.shadow.elevation_shadow_lg_position_y` | `4px` |
-| `core.shadow.elevation_shadow_lg_spread` | `8px` |
-| `core.shadow.elevation_shadow_md_blur` | `0px` |
-| `core.shadow.elevation_shadow_md_position_x` | `0` |
-| `core.shadow.elevation_shadow_md_position_y` | `2px` |
-| `core.shadow.elevation_shadow_md_spread` | `6px` |
-| `core.shadow.elevation_shadow_none_blur` | `0px` |
-| `core.shadow.elevation_shadow_none_position_x` | `0px` |
-| `core.shadow.elevation_shadow_none_position_y` | `0px` |
-| `core.shadow.elevation_shadow_none_spread` | `0px` |
-| `core.shadow.elevation_shadow_sm_blur` | `0px` |
-| `core.shadow.elevation_shadow_sm_position_x` | `0px` |
-| `core.shadow.elevation_shadow_sm_position_y` | `1px` |
-| `core.shadow.elevation_shadow_sm_spread` | `2px` |
+| `core.shadow.sm` | `0px 1px 0px 2px rgba(0, 0, 0, 0.2)` |
+| `core.shadow.md` | `0px 2px 0px 6px rgba(0, 0, 0, 0.2)` |
+| `core.shadow.lg` | `0px 4px 0px 8px rgba(0, 0, 0, 0.12)` |
 
 ## Shapes
 

@@ -1364,101 +1364,61 @@
      "description": "FRE layout step --dim-layout-xs."
     }
    },
-   "elevation": {
+   "z": {
     "base": {
      "var": "--dim-layout-elevation-base",
      "type": "number",
      "source": "css-var --dim-layout-elevation-base resolved (raw/css-vars.json)",
-     "description": "FRE z-elevation --dim-layout-elevation-base."
+     "description": "FRE stacking level --dim-layout-elevation-base."
     },
     "drawer": {
      "var": "--dim-layout-elevation-drawer",
      "type": "number",
      "source": "css-var --dim-layout-elevation-drawer resolved (raw/css-vars.json)",
-     "description": "FRE z-elevation --dim-layout-elevation-drawer."
+     "description": "FRE stacking level --dim-layout-elevation-drawer."
     },
     "floating": {
      "var": "--dim-layout-elevation-floating",
      "type": "number",
      "source": "css-var --dim-layout-elevation-floating resolved (raw/css-vars.json)",
-     "description": "FRE z-elevation --dim-layout-elevation-floating."
+     "description": "FRE stacking level --dim-layout-elevation-floating."
     },
     "gate": {
      "var": "--dim-layout-elevation-gate",
      "type": "number",
      "source": "css-var --dim-layout-elevation-gate resolved (raw/css-vars.json)",
-     "description": "FRE z-elevation --dim-layout-elevation-gate."
+     "description": "FRE stacking level --dim-layout-elevation-gate."
     },
     "nav": {
      "var": "--dim-layout-elevation-nav",
      "type": "number",
      "source": "css-var --dim-layout-elevation-nav resolved (raw/css-vars.json)",
-     "description": "FRE z-elevation --dim-layout-elevation-nav."
+     "description": "FRE stacking level --dim-layout-elevation-nav."
     },
     "overlay": {
      "var": "--dim-layout-elevation-overlay",
      "type": "number",
      "source": "css-var --dim-layout-elevation-overlay resolved (raw/css-vars.json)",
-     "description": "FRE z-elevation --dim-layout-elevation-overlay."
+     "description": "FRE stacking level --dim-layout-elevation-overlay."
     },
     "raised": {
      "var": "--dim-layout-elevation-raised",
      "type": "number",
      "source": "css-var --dim-layout-elevation-raised resolved (raw/css-vars.json)",
-     "description": "FRE z-elevation --dim-layout-elevation-raised."
+     "description": "FRE stacking level --dim-layout-elevation-raised."
     },
     "subnav": {
      "var": "--dim-layout-elevation-subnav",
      "type": "number",
      "source": "css-var --dim-layout-elevation-subnav resolved (raw/css-vars.json)",
-     "description": "FRE z-elevation --dim-layout-elevation-subnav."
+     "description": "FRE stacking level --dim-layout-elevation-subnav."
     },
     "sunken": {
      "var": "--dim-layout-elevation-sunken",
      "type": "number",
      "source": "css-var --dim-layout-elevation-sunken resolved (raw/css-vars.json)",
-     "description": "FRE z-elevation --dim-layout-elevation-sunken."
-    }
-   },
-   "grid-gap": {
-    "lg": {
-     "var": "--dim-layout-grid-gap-lg",
-     "type": "dimension",
-     "source": "css-var --dim-layout-grid-gap-lg resolved (raw/css-vars.json)",
-     "description": "FRE grid gap --dim-layout-grid-gap-lg."
+     "description": "FRE stacking level --dim-layout-elevation-sunken."
     },
-    "md": {
-     "var": "--dim-layout-grid-gap-md",
-     "type": "dimension",
-     "source": "css-var --dim-layout-grid-gap-md resolved (raw/css-vars.json)",
-     "description": "FRE grid gap --dim-layout-grid-gap-md."
-    },
-    "none": {
-     "var": "--dim-layout-grid-gap-none",
-     "type": "dimension",
-     "source": "css-var --dim-layout-grid-gap-none resolved (raw/css-vars.json)",
-     "description": "FRE grid gap --dim-layout-grid-gap-none."
-    },
-    "sm": {
-     "var": "--dim-layout-grid-gap-sm",
-     "type": "dimension",
-     "source": "css-var --dim-layout-grid-gap-sm resolved (raw/css-vars.json)",
-     "description": "FRE grid gap --dim-layout-grid-gap-sm."
-    },
-    "xl": {
-     "var": "--dim-layout-grid-gap-xl",
-     "type": "dimension",
-     "source": "css-var --dim-layout-grid-gap-xl resolved (raw/css-vars.json)",
-     "description": "FRE grid gap --dim-layout-grid-gap-xl."
-    },
-    "xs": {
-     "var": "--dim-layout-grid-gap-xs",
-     "type": "dimension",
-     "source": "css-var --dim-layout-grid-gap-xs resolved (raw/css-vars.json)",
-     "description": "FRE grid gap --dim-layout-grid-gap-xs."
-    }
-   },
-   "z": {
     "level-0": {
      "var": "--_z-level-0",
      "type": "number",
@@ -1512,6 +1472,44 @@
      "type": "number",
      "source": "css-var --_z-level-neg-1 resolved (raw/css-vars.json)",
      "description": "FRE z-level --_z-level-neg-1."
+    }
+   },
+   "grid-gap": {
+    "lg": {
+     "var": "--dim-layout-grid-gap-lg",
+     "type": "dimension",
+     "source": "css-var --dim-layout-grid-gap-lg resolved (raw/css-vars.json)",
+     "description": "FRE grid gap --dim-layout-grid-gap-lg."
+    },
+    "md": {
+     "var": "--dim-layout-grid-gap-md",
+     "type": "dimension",
+     "source": "css-var --dim-layout-grid-gap-md resolved (raw/css-vars.json)",
+     "description": "FRE grid gap --dim-layout-grid-gap-md."
+    },
+    "none": {
+     "var": "--dim-layout-grid-gap-none",
+     "type": "dimension",
+     "source": "css-var --dim-layout-grid-gap-none resolved (raw/css-vars.json)",
+     "description": "FRE grid gap --dim-layout-grid-gap-none."
+    },
+    "sm": {
+     "var": "--dim-layout-grid-gap-sm",
+     "type": "dimension",
+     "source": "css-var --dim-layout-grid-gap-sm resolved (raw/css-vars.json)",
+     "description": "FRE grid gap --dim-layout-grid-gap-sm."
+    },
+    "xl": {
+     "var": "--dim-layout-grid-gap-xl",
+     "type": "dimension",
+     "source": "css-var --dim-layout-grid-gap-xl resolved (raw/css-vars.json)",
+     "description": "FRE grid gap --dim-layout-grid-gap-xl."
+    },
+    "xs": {
+     "var": "--dim-layout-grid-gap-xs",
+     "type": "dimension",
+     "source": "css-var --dim-layout-grid-gap-xs resolved (raw/css-vars.json)",
+     "description": "FRE grid gap --dim-layout-grid-gap-xs."
     }
    }
   },
@@ -1655,918 +1653,2798 @@
     }
    }
   },
-  "type": {
-   "utility": {
-    "mobile": {
-     "size": {
-      "var": "--type-nav-header-xs-size-mobile",
-      "type": "dimension",
-      "source": "css-var --type-nav-header-xs-size-mobile resolved (raw/css-vars.json)",
-      "description": "The 13px utility-strip/nav meta style. (size, mobile)."
-     },
-     "line_height": {
-      "var": "--type-nav-header-xs-line-height-mobile",
-      "type": "dimension",
-      "source": "css-var --type-nav-header-xs-line-height-mobile resolved (raw/css-vars.json)",
-      "description": "The 13px utility-strip/nav meta style. (line-height, mobile)."
-     },
-     "weight": {
-      "var": "--type-nav-header-xs-weight-mobile",
-      "type": "fontWeight",
-      "source": "css-var --type-nav-header-xs-weight-mobile resolved (raw/css-vars.json)",
-      "description": "The 13px utility-strip/nav meta style. (weight, mobile)."
-     },
-     "letter_spacing": {
-      "var": "--type-nav-header-xs-letter-spacing-mobile",
-      "type": "dimension",
-      "source": "css-var --type-nav-header-xs-letter-spacing-mobile resolved (raw/css-vars.json)",
-      "description": "The 13px utility-strip/nav meta style. (letter-spacing, mobile)."
-     }
-    },
-    "family": {
-     "var": "--type-nav-header-xs-family-mobile",
-     "type": "fontFamily",
-     "source": "css-var --type-nav-header-xs-family-mobile resolved (raw/css-vars.json)",
-     "description": "The 13px utility-strip/nav meta style. (family)."
-    },
-    "case": {
-     "var": "--type-nav-header-xs-txt-case-mobile",
-     "type": "other",
-     "source": "css-var --type-nav-header-xs-txt-case-mobile resolved (raw/css-vars.json)",
-     "description": "The 13px utility-strip/nav meta style. (text case)."
-    }
-   },
-   "nav-link": {
-    "desktop": {
-     "size": {
-      "var": "--type-nav-linktxt-md-size-desktop",
-      "type": "dimension",
-      "source": "css-var --type-nav-linktxt-md-size-desktop resolved (raw/css-vars.json)",
-      "description": "The 16px category-nav link style. (size, desktop)."
-     },
-     "line_height": {
-      "var": "--type-nav-linktxt-md-line-height-desktop",
-      "type": "dimension",
-      "source": "css-var --type-nav-linktxt-md-line-height-desktop resolved (raw/css-vars.json)",
-      "description": "The 16px category-nav link style. (line-height, desktop)."
-     },
-     "letter_spacing": {
-      "var": "--type-nav-linktxt-md-letter-spacing-desktop",
-      "type": "dimension",
-      "source": "css-var --type-nav-linktxt-md-letter-spacing-desktop resolved (raw/css-vars.json)",
-      "description": "The 16px category-nav link style. (letter-spacing, desktop)."
-     }
-    },
-    "mobile": {
-     "size": {
-      "var": "--type-nav-linktxt-md-size-mobile",
-      "type": "dimension",
-      "source": "css-var --type-nav-linktxt-md-size-mobile resolved (raw/css-vars.json)",
-      "description": "The 16px category-nav link style. (size, mobile)."
-     },
-     "line_height": {
-      "var": "--type-nav-linktxt-md-line-height-mobile",
-      "type": "dimension",
-      "source": "css-var --type-nav-linktxt-md-line-height-mobile resolved (raw/css-vars.json)",
-      "description": "The 16px category-nav link style. (line-height, mobile)."
-     },
-     "weight": {
-      "var": "--type-nav-linktxt-md-weight-mobile",
-      "type": "fontWeight",
-      "source": "css-var --type-nav-linktxt-md-weight-mobile resolved (raw/css-vars.json)",
-      "description": "The 16px category-nav link style. (weight, mobile)."
-     },
-     "letter_spacing": {
-      "var": "--type-nav-linktxt-md-letter-spacing-mobile",
-      "type": "dimension",
-      "source": "css-var --type-nav-linktxt-md-letter-spacing-mobile resolved (raw/css-vars.json)",
-      "description": "The 16px category-nav link style. (letter-spacing, mobile)."
-     }
-    },
-    "family": {
-     "var": "--type-nav-linktxt-md-family-mobile",
-     "type": "fontFamily",
-     "source": "css-var --type-nav-linktxt-md-family-mobile resolved (raw/css-vars.json)",
-     "description": "The 16px category-nav link style. (family)."
-    },
-    "case": {
-     "var": "--type-nav-linktxt-md-txt-case-mobile",
-     "type": "other",
-     "source": "css-var --type-nav-linktxt-md-txt-case-mobile resolved (raw/css-vars.json)",
-     "description": "The 16px category-nav link style. (text case)."
-    }
-   },
+  "typography": {
    "body": {
     "mobile": {
-     "size": {
-      "var": "--type-body-size-mobile",
-      "type": "dimension",
-      "source": "css-var --type-body-size-mobile resolved (raw/css-vars.json)",
-      "description": "The Lora article body style. (size, mobile)."
+     "$value": {
+      "fontSize": "18px",
+      "lineHeight": "26.0938px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lora, Lora-roboto, Lora-local, ui-serif, Georgia, Cambria, \"Times New Roman\", Times, Serif",
+      "fontWeight": 400,
+      "textTransform": "none"
      },
-     "line_height": {
-      "var": "--type-body-line-height-mobile",
-      "type": "dimension",
-      "source": "css-var --type-body-line-height-mobile resolved (raw/css-vars.json)",
-      "description": "The Lora article body style. (line-height, mobile)."
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-body-size-mobile; css-var --type-body-line-height-mobile; css-var --type-body-letter-spacing-mobile; css-var --type-body-family-mobile; css-var --type-body-weight-mobile; css-var --type-body-txt-case-mobile resolved (raw/css-vars.json)"
      },
-     "weight": {
-      "var": "--type-body-weight-mobile",
-      "type": "fontWeight",
-      "source": "css-var --type-body-weight-mobile resolved (raw/css-vars.json)",
-      "description": "The Lora article body style. (weight, mobile)."
-     },
-     "letter_spacing": {
-      "var": "--type-body-letter-spacing-mobile",
-      "type": "dimension",
-      "source": "css-var --type-body-letter-spacing-mobile resolved (raw/css-vars.json)",
-      "description": "The Lora article body style. (letter-spacing, mobile)."
-     }
-    },
-    "family": {
-     "var": "--type-body-family-mobile",
-     "type": "fontFamily",
-     "source": "css-var --type-body-family-mobile resolved (raw/css-vars.json)",
-     "description": "The Lora article body style. (family)."
-    },
-    "case": {
-     "var": "--type-body-txt-case-mobile",
-     "type": "other",
-     "source": "css-var --type-body-txt-case-mobile resolved (raw/css-vars.json)",
-     "description": "The Lora article body style. (text case)."
+     "$description": "The Lora article body style. (mobile base breakpoint)"
     }
    },
-   "body-serif": {
+   "body-blockquote": {
     "mobile": {
-     "size": {
-      "var": "--type-body-blockquote-size-mobile",
-      "type": "dimension",
-      "source": "css-var --type-body-blockquote-size-mobile resolved (raw/css-vars.json)",
-      "description": "The blockquote body style. (size, mobile)."
+     "$value": {
+      "fontSize": "24px",
+      "lineHeight": "32.3906px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "textTransform": "none"
      },
-     "line_height": {
-      "var": "--type-body-blockquote-line-height-mobile",
-      "type": "dimension",
-      "source": "css-var --type-body-blockquote-line-height-mobile resolved (raw/css-vars.json)",
-      "description": "The blockquote body style. (line-height, mobile)."
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-body-blockquote-size-mobile; css-var --type-body-blockquote-line-height-mobile; css-var --type-body-blockquote-letter-spacing-mobile; css-var --type-body-blockquote-family-mobile; css-var --type-body-blockquote-weight-mobile; css-var --type-body-blockquote-txt-case-mobile resolved (raw/css-vars.json)"
      },
-     "weight": {
-      "var": "--type-body-blockquote-weight-mobile",
-      "type": "fontWeight",
-      "source": "css-var --type-body-blockquote-weight-mobile resolved (raw/css-vars.json)",
-      "description": "The blockquote body style. (weight, mobile)."
-     },
-     "letter_spacing": {
-      "var": "--type-body-blockquote-letter-spacing-mobile",
-      "type": "dimension",
-      "source": "css-var --type-body-blockquote-letter-spacing-mobile resolved (raw/css-vars.json)",
-      "description": "The blockquote body style. (letter-spacing, mobile)."
-     }
-    },
-    "family": {
-     "var": "--type-body-blockquote-family-mobile",
-     "type": "fontFamily",
-     "source": "css-var --type-body-blockquote-family-mobile resolved (raw/css-vars.json)",
-     "description": "The blockquote body style. (family)."
-    },
-    "case": {
-     "var": "--type-body-blockquote-txt-case-mobile",
-     "type": "other",
-     "source": "css-var --type-body-blockquote-txt-case-mobile resolved (raw/css-vars.json)",
-     "description": "The blockquote body style. (text case)."
+     "$description": "The blockquote body style. (mobile base breakpoint)"
     }
    },
-   "lede": {
+   "body-dropcap": {
+    "mobile": {
+     "$value": {
+      "fontSize": "96px",
+      "lineHeight": "105.594px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 700,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-body-dropcap-size-mobile; css-var --type-body-dropcap-line-height-mobile; css-var --type-body-dropcap-letter-spacing-mobile; css-var --type-body-dropcap-family-mobile; css-var --type-body-dropcap-weight-mobile; css-var --type-body-dropcap-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-body-dropcap style. (mobile base breakpoint)"
+    }
+   },
+   "body-tip": {
+    "mobile": {
+     "$value": {
+      "fontSize": "18px",
+      "lineHeight": "26.0938px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-body-tip-size-mobile; css-var --type-body-tip-line-height-mobile; css-var --type-body-tip-letter-spacing-mobile; css-var --type-body-tip-family-mobile; css-var --type-body-tip-weight-mobile; css-var --type-body-tip-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-body-tip style. (mobile base breakpoint)"
+    }
+   },
+   "caption-md": {
+    "mobile": {
+     "$value": {
+      "fontSize": "14px",
+      "lineHeight": "20.2969px",
+      "letterSpacing": "0.390625px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-caption-md-size-mobile; css-var --type-caption-md-line-height-mobile; css-var --type-caption-md-letter-spacing-mobile; css-var --type-caption-md-family-mobile; css-var --type-caption-md-weight-mobile; css-var --type-caption-md-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-caption-md style. (mobile base breakpoint)"
+    }
+   },
+   "caption-sm": {
+    "mobile": {
+     "$value": {
+      "fontSize": "13px",
+      "lineHeight": "18.1875px",
+      "letterSpacing": "0.390625px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-caption-sm-size-mobile; css-var --type-caption-sm-line-height-mobile; css-var --type-caption-sm-letter-spacing-mobile; css-var --type-caption-sm-family-mobile; css-var --type-caption-sm-weight-mobile; css-var --type-caption-sm-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-caption-sm style. (mobile base breakpoint)"
+    }
+   },
+   "credit": {
+    "mobile": {
+     "$value": {
+      "fontSize": "13px",
+      "lineHeight": "18.1875px",
+      "letterSpacing": "0.390625px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "textTransform": "uppercase"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-credit-size-mobile; css-var --type-credit-line-height-mobile; css-var --type-credit-letter-spacing-mobile; css-var --type-credit-family-mobile; css-var --type-credit-weight-mobile; css-var --type-credit-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-credit style. (mobile base breakpoint)"
+    }
+   },
+   "desc-compact": {
     "desktop": {
-     "size": {
-      "var": "--type-desc-lede-size-desktop",
-      "type": "dimension",
-      "source": "css-var --type-desc-lede-size-desktop resolved (raw/css-vars.json)",
-      "description": "The 20px lede/standfirst style. (size, desktop)."
+     "$value": {
+      "fontSize": "20px",
+      "lineHeight": "28px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "textTransform": "none"
      },
-     "line_height": {
-      "var": "--type-desc-lede-line-height-desktop",
-      "type": "dimension",
-      "source": "css-var --type-desc-lede-line-height-desktop resolved (raw/css-vars.json)",
-      "description": "The 20px lede/standfirst style. (line-height, desktop)."
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-desc-compact-size-desktop; css-var --type-desc-compact-line-height-desktop; css-var --type-desc-compact-letter-spacing-desktop; css-var --type-desc-compact-family-mobile; css-var --type-desc-compact-weight-mobile; css-var --type-desc-compact-txt-case-mobile resolved (raw/css-vars.json)"
      },
-     "letter_spacing": {
-      "var": "--type-desc-lede-letter-spacing-desktop",
-      "type": "dimension",
-      "source": "css-var --type-desc-lede-letter-spacing-desktop resolved (raw/css-vars.json)",
-      "description": "The 20px lede/standfirst style. (letter-spacing, desktop)."
-     }
+     "$description": "The --type-desc-compact style. (desktop breakpoint; family/weight from the base mobile declaration)"
     },
     "mobile": {
-     "size": {
-      "var": "--type-desc-lede-size-mobile",
-      "type": "dimension",
-      "source": "css-var --type-desc-lede-size-mobile resolved (raw/css-vars.json)",
-      "description": "The 20px lede/standfirst style. (size, mobile)."
+     "$value": {
+      "fontSize": "13px",
+      "lineHeight": "18.1875px",
+      "letterSpacing": "0.390625px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "textTransform": "none"
      },
-     "line_height": {
-      "var": "--type-desc-lede-line-height-mobile",
-      "type": "dimension",
-      "source": "css-var --type-desc-lede-line-height-mobile resolved (raw/css-vars.json)",
-      "description": "The 20px lede/standfirst style. (line-height, mobile)."
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-desc-compact-size-mobile; css-var --type-desc-compact-line-height-mobile; css-var --type-desc-compact-letter-spacing-mobile; css-var --type-desc-compact-family-mobile; css-var --type-desc-compact-weight-mobile; css-var --type-desc-compact-txt-case-mobile resolved (raw/css-vars.json)"
      },
-     "weight": {
-      "var": "--type-desc-lede-weight-mobile",
-      "type": "fontWeight",
-      "source": "css-var --type-desc-lede-weight-mobile resolved (raw/css-vars.json)",
-      "description": "The 20px lede/standfirst style. (weight, mobile)."
-     },
-     "letter_spacing": {
-      "var": "--type-desc-lede-letter-spacing-mobile",
-      "type": "dimension",
-      "source": "css-var --type-desc-lede-letter-spacing-mobile resolved (raw/css-vars.json)",
-      "description": "The 20px lede/standfirst style. (letter-spacing, mobile)."
-     }
-    },
-    "family": {
-     "var": "--type-desc-lede-family-mobile",
-     "type": "fontFamily",
-     "source": "css-var --type-desc-lede-family-mobile resolved (raw/css-vars.json)",
-     "description": "The 20px lede/standfirst style. (family)."
-    },
-    "case": {
-     "var": "--type-desc-lede-txt-case-mobile",
-     "type": "other",
-     "source": "css-var --type-desc-lede-txt-case-mobile resolved (raw/css-vars.json)",
-     "description": "The 20px lede/standfirst style. (text case)."
+     "$description": "The --type-desc-compact style. (mobile base breakpoint)"
     }
    },
-   "card-title": {
+   "desc-hero": {
     "desktop": {
-     "size": {
-      "var": "--type-title-standard-size-desktop",
-      "type": "dimension",
-      "source": "css-var --type-title-standard-size-desktop resolved (raw/css-vars.json)",
-      "description": "The standard card title style. (size, desktop)."
+     "$value": {
+      "fontSize": "28px",
+      "lineHeight": "36.3906px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "textTransform": "none"
      },
-     "line_height": {
-      "var": "--type-title-standard-line-height-desktop",
-      "type": "dimension",
-      "source": "css-var --type-title-standard-line-height-desktop resolved (raw/css-vars.json)",
-      "description": "The standard card title style. (line-height, desktop)."
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-desc-hero-size-desktop; css-var --type-desc-hero-line-height-desktop; css-var --type-desc-hero-letter-spacing-desktop; css-var --type-desc-hero-family-mobile; css-var --type-desc-hero-weight-mobile; css-var --type-desc-hero-txt-case-mobile resolved (raw/css-vars.json)"
      },
-     "letter_spacing": {
-      "var": "--type-title-standard-letter-spacing-desktop",
-      "type": "dimension",
-      "source": "css-var --type-title-standard-letter-spacing-desktop resolved (raw/css-vars.json)",
-      "description": "The standard card title style. (letter-spacing, desktop)."
-     }
+     "$description": "The --type-desc-hero style. (desktop breakpoint; family/weight from the base mobile declaration)"
     },
     "mobile": {
-     "size": {
-      "var": "--type-title-standard-size-mobile",
-      "type": "dimension",
-      "source": "css-var --type-title-standard-size-mobile resolved (raw/css-vars.json)",
-      "description": "The standard card title style. (size, mobile)."
+     "$value": {
+      "fontSize": "28px",
+      "lineHeight": "36.3906px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "textTransform": "none"
      },
-     "line_height": {
-      "var": "--type-title-standard-line-height-mobile",
-      "type": "dimension",
-      "source": "css-var --type-title-standard-line-height-mobile resolved (raw/css-vars.json)",
-      "description": "The standard card title style. (line-height, mobile)."
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-desc-hero-size-mobile; css-var --type-desc-hero-line-height-mobile; css-var --type-desc-hero-letter-spacing-mobile; css-var --type-desc-hero-family-mobile; css-var --type-desc-hero-weight-mobile; css-var --type-desc-hero-txt-case-mobile resolved (raw/css-vars.json)"
      },
-     "weight": {
-      "var": "--type-title-standard-weight-mobile",
-      "type": "fontWeight",
-      "source": "css-var --type-title-standard-weight-mobile resolved (raw/css-vars.json)",
-      "description": "The standard card title style. (weight, mobile)."
-     },
-     "letter_spacing": {
-      "var": "--type-title-standard-letter-spacing-mobile",
-      "type": "dimension",
-      "source": "css-var --type-title-standard-letter-spacing-mobile resolved (raw/css-vars.json)",
-      "description": "The standard card title style. (letter-spacing, mobile)."
-     }
-    },
-    "family": {
-     "var": "--type-title-standard-family-mobile",
-     "type": "fontFamily",
-     "source": "css-var --type-title-standard-family-mobile resolved (raw/css-vars.json)",
-     "description": "The standard card title style. (family)."
-    },
-    "case": {
-     "var": "--type-title-standard-txt-case-mobile",
-     "type": "other",
-     "source": "css-var --type-title-standard-txt-case-mobile resolved (raw/css-vars.json)",
-     "description": "The standard card title style. (text case)."
+     "$description": "The --type-desc-hero style. (mobile base breakpoint)"
     }
    },
-   "headline-prominent": {
+   "desc-immersive-lede": {
     "desktop": {
-     "size": {
-      "var": "--type-headline-prominent-size-desktop",
-      "type": "dimension",
-      "source": "css-var --type-headline-prominent-size-desktop resolved (raw/css-vars.json)",
-      "description": "The 24px prominent headline. (size, desktop)."
+     "$value": {
+      "fontSize": "20px",
+      "lineHeight": "20.2969px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "textTransform": "none"
      },
-     "line_height": {
-      "var": "--type-headline-prominent-line-height-desktop",
-      "type": "dimension",
-      "source": "css-var --type-headline-prominent-line-height-desktop resolved (raw/css-vars.json)",
-      "description": "The 24px prominent headline. (line-height, desktop)."
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-desc-immersive-lede-size-desktop; css-var --type-desc-immersive-lede-line-height-desktop; css-var --type-desc-immersive-lede-letter-spacing-desktop; css-var --type-desc-immersive-lede-family-mobile; css-var --type-desc-immersive-lede-weight-mobile; css-var --type-desc-immersive-lede-txt-case-mobile resolved (raw/css-vars.json)"
      },
-     "letter_spacing": {
-      "var": "--type-headline-prominent-letter-spacing-desktop",
-      "type": "dimension",
-      "source": "css-var --type-headline-prominent-letter-spacing-desktop resolved (raw/css-vars.json)",
-      "description": "The 24px prominent headline. (letter-spacing, desktop)."
-     }
+     "$description": "The --type-desc-immersive-lede style. (desktop breakpoint; family/weight from the base mobile declaration)"
+    },
+    "laptop": {
+     "$value": {
+      "fontSize": "20px",
+      "lineHeight": "20.2969px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-desc-immersive-lede-size-laptop; css-var --type-desc-immersive-lede-line-height-laptop; css-var --type-desc-immersive-lede-letter-spacing-laptop; css-var --type-desc-immersive-lede-family-mobile; css-var --type-desc-immersive-lede-weight-mobile; css-var --type-desc-immersive-lede-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-desc-immersive-lede style. (laptop breakpoint; family/weight from the base mobile declaration)"
     },
     "mobile": {
-     "size": {
-      "var": "--type-headline-prominent-size-mobile",
-      "type": "dimension",
-      "source": "css-var --type-headline-prominent-size-mobile resolved (raw/css-vars.json)",
-      "description": "The 24px prominent headline. (size, mobile)."
+     "$value": {
+      "fontSize": "18px",
+      "lineHeight": "20.2969px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "textTransform": "none"
      },
-     "line_height": {
-      "var": "--type-headline-prominent-line-height-mobile",
-      "type": "dimension",
-      "source": "css-var --type-headline-prominent-line-height-mobile resolved (raw/css-vars.json)",
-      "description": "The 24px prominent headline. (line-height, mobile)."
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-desc-immersive-lede-size-mobile; css-var --type-desc-immersive-lede-line-height-mobile; css-var --type-desc-immersive-lede-letter-spacing-mobile; css-var --type-desc-immersive-lede-family-mobile; css-var --type-desc-immersive-lede-weight-mobile; css-var --type-desc-immersive-lede-txt-case-mobile resolved (raw/css-vars.json)"
      },
-     "weight": {
-      "var": "--type-headline-prominent-weight-mobile",
-      "type": "fontWeight",
-      "source": "css-var --type-headline-prominent-weight-mobile resolved (raw/css-vars.json)",
-      "description": "The 24px prominent headline. (weight, mobile)."
-     },
-     "letter_spacing": {
-      "var": "--type-headline-prominent-letter-spacing-mobile",
-      "type": "dimension",
-      "source": "css-var --type-headline-prominent-letter-spacing-mobile resolved (raw/css-vars.json)",
-      "description": "The 24px prominent headline. (letter-spacing, mobile)."
-     }
+     "$description": "The --type-desc-immersive-lede style. (mobile base breakpoint)"
     },
-    "family": {
-     "var": "--type-headline-prominent-family-mobile",
-     "type": "fontFamily",
-     "source": "css-var --type-headline-prominent-family-mobile resolved (raw/css-vars.json)",
-     "description": "The 24px prominent headline. (family)."
-    },
-    "case": {
-     "var": "--type-headline-prominent-txt-case-mobile",
-     "type": "other",
-     "source": "css-var --type-headline-prominent-txt-case-mobile resolved (raw/css-vars.json)",
-     "description": "The 24px prominent headline. (text case)."
+    "tablet": {
+     "$value": {
+      "fontSize": "18px",
+      "lineHeight": "20.2969px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-desc-immersive-lede-size-tablet; css-var --type-desc-immersive-lede-line-height-tablet; css-var --type-desc-immersive-lede-letter-spacing-tablet; css-var --type-desc-immersive-lede-family-tablet; css-var --type-desc-immersive-lede-weight-tablet; css-var --type-desc-immersive-lede-txt-case-tablet resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-desc-immersive-lede style. (tablet breakpoint; family/weight from the base mobile declaration)"
     }
    },
-   "headline-hero": {
+   "desc-lede": {
     "desktop": {
-     "size": {
-      "var": "--type-headline-hero-size-desktop",
-      "type": "dimension",
-      "source": "css-var --type-headline-hero-size-desktop resolved (raw/css-vars.json)",
-      "description": "The 48px hero headline. (size, desktop)."
+     "$value": {
+      "fontSize": "20px",
+      "lineHeight": "26.0938px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "textTransform": "none"
      },
-     "line_height": {
-      "var": "--type-headline-hero-line-height-desktop",
-      "type": "dimension",
-      "source": "css-var --type-headline-hero-line-height-desktop resolved (raw/css-vars.json)",
-      "description": "The 48px hero headline. (line-height, desktop)."
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-desc-lede-size-desktop; css-var --type-desc-lede-line-height-desktop; css-var --type-desc-lede-letter-spacing-desktop; css-var --type-desc-lede-family-mobile; css-var --type-desc-lede-weight-mobile; css-var --type-desc-lede-txt-case-mobile resolved (raw/css-vars.json)"
      },
-     "letter_spacing": {
-      "var": "--type-headline-hero-letter-spacing-desktop",
-      "type": "dimension",
-      "source": "css-var --type-headline-hero-letter-spacing-desktop resolved (raw/css-vars.json)",
-      "description": "The 48px hero headline. (letter-spacing, desktop)."
-     }
+     "$description": "The 20px lede/standfirst style. (desktop breakpoint; family/weight from the base mobile declaration)"
     },
     "mobile": {
-     "size": {
-      "var": "--type-headline-hero-size-mobile",
-      "type": "dimension",
-      "source": "css-var --type-headline-hero-size-mobile resolved (raw/css-vars.json)",
-      "description": "The 48px hero headline. (size, mobile)."
+     "$value": {
+      "fontSize": "18px",
+      "lineHeight": "23.1875px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "textTransform": "none"
      },
-     "line_height": {
-      "var": "--type-headline-hero-line-height-mobile",
-      "type": "dimension",
-      "source": "css-var --type-headline-hero-line-height-mobile resolved (raw/css-vars.json)",
-      "description": "The 48px hero headline. (line-height, mobile)."
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-desc-lede-size-mobile; css-var --type-desc-lede-line-height-mobile; css-var --type-desc-lede-letter-spacing-mobile; css-var --type-desc-lede-family-mobile; css-var --type-desc-lede-weight-mobile; css-var --type-desc-lede-txt-case-mobile resolved (raw/css-vars.json)"
      },
-     "weight": {
-      "var": "--type-headline-hero-weight-mobile",
-      "type": "fontWeight",
-      "source": "css-var --type-headline-hero-weight-mobile resolved (raw/css-vars.json)",
-      "description": "The 48px hero headline. (weight, mobile)."
-     },
-     "letter_spacing": {
-      "var": "--type-headline-hero-letter-spacing-mobile",
-      "type": "dimension",
-      "source": "css-var --type-headline-hero-letter-spacing-mobile resolved (raw/css-vars.json)",
-      "description": "The 48px hero headline. (letter-spacing, mobile)."
-     }
-    },
-    "family": {
-     "var": "--type-headline-hero-family-mobile",
-     "type": "fontFamily",
-     "source": "css-var --type-headline-hero-family-mobile resolved (raw/css-vars.json)",
-     "description": "The 48px hero headline. (family)."
-    },
-    "case": {
-     "var": "--type-headline-hero-txt-case-mobile",
-     "type": "other",
-     "source": "css-var --type-headline-hero-txt-case-mobile resolved (raw/css-vars.json)",
-     "description": "The 48px hero headline. (text case)."
+     "$description": "The 20px lede/standfirst style. (mobile base breakpoint)"
     }
    },
-   "headline-lede": {
+   "desc-marquee-dek": {
     "desktop": {
-     "size": {
-      "var": "--type-headline-lede-size-desktop",
-      "type": "dimension",
-      "source": "css-var --type-headline-lede-size-desktop resolved (raw/css-vars.json)",
-      "description": "The 56px lede headline (negative tracking). (size, desktop)."
+     "$value": {
+      "fontSize": "40px",
+      "lineHeight": "50px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 700,
+      "textTransform": "none"
      },
-     "line_height": {
-      "var": "--type-headline-lede-line-height-desktop",
-      "type": "dimension",
-      "source": "css-var --type-headline-lede-line-height-desktop resolved (raw/css-vars.json)",
-      "description": "The 56px lede headline (negative tracking). (line-height, desktop)."
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-desc-marquee-dek-size-desktop; css-var --type-desc-marquee-dek-line-height-desktop; css-var --type-desc-marquee-dek-letter-spacing-desktop; css-var --type-desc-marquee-dek-family-mobile; css-var --type-desc-marquee-dek-weight-mobile; css-var --type-desc-marquee-dek-txt-case-mobile resolved (raw/css-vars.json)"
      },
-     "letter_spacing": {
-      "var": "--type-headline-lede-letter-spacing-desktop",
-      "type": "dimension",
-      "source": "css-var --type-headline-lede-letter-spacing-desktop resolved (raw/css-vars.json)",
-      "description": "The 56px lede headline (negative tracking). (letter-spacing, desktop)."
-     }
+     "$description": "The --type-desc-marquee-dek style. (desktop breakpoint; family/weight from the base mobile declaration)"
+    },
+    "laptop": {
+     "$value": {
+      "fontSize": "40px",
+      "lineHeight": "50px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 700,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-desc-marquee-dek-size-laptop; css-var --type-desc-marquee-dek-line-height-laptop; css-var --type-desc-marquee-dek-letter-spacing-laptop; css-var --type-desc-marquee-dek-family-mobile; css-var --type-desc-marquee-dek-weight-mobile; css-var --type-desc-marquee-dek-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-desc-marquee-dek style. (laptop breakpoint; family/weight from the base mobile declaration)"
     },
     "mobile": {
-     "size": {
-      "var": "--type-headline-lede-size-mobile",
-      "type": "dimension",
-      "source": "css-var --type-headline-lede-size-mobile resolved (raw/css-vars.json)",
-      "description": "The 56px lede headline (negative tracking). (size, mobile)."
+     "$value": {
+      "fontSize": "20px",
+      "lineHeight": "28px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 700,
+      "textTransform": "none"
      },
-     "line_height": {
-      "var": "--type-headline-lede-line-height-mobile",
-      "type": "dimension",
-      "source": "css-var --type-headline-lede-line-height-mobile resolved (raw/css-vars.json)",
-      "description": "The 56px lede headline (negative tracking). (line-height, mobile)."
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-desc-marquee-dek-size-mobile; css-var --type-desc-marquee-dek-line-height-mobile; css-var --type-desc-marquee-dek-letter-spacing-mobile; css-var --type-desc-marquee-dek-family-mobile; css-var --type-desc-marquee-dek-weight-mobile; css-var --type-desc-marquee-dek-txt-case-mobile resolved (raw/css-vars.json)"
      },
-     "weight": {
-      "var": "--type-headline-lede-weight-mobile",
-      "type": "fontWeight",
-      "source": "css-var --type-headline-lede-weight-mobile resolved (raw/css-vars.json)",
-      "description": "The 56px lede headline (negative tracking). (weight, mobile)."
-     },
-     "letter_spacing": {
-      "var": "--type-headline-lede-letter-spacing-mobile",
-      "type": "dimension",
-      "source": "css-var --type-headline-lede-letter-spacing-mobile resolved (raw/css-vars.json)",
-      "description": "The 56px lede headline (negative tracking). (letter-spacing, mobile)."
-     }
+     "$description": "The --type-desc-marquee-dek style. (mobile base breakpoint)"
     },
-    "family": {
-     "var": "--type-headline-lede-family-mobile",
-     "type": "fontFamily",
-     "source": "css-var --type-headline-lede-family-mobile resolved (raw/css-vars.json)",
-     "description": "The 56px lede headline (negative tracking). (family)."
+    "tablet": {
+     "$value": {
+      "fontSize": "28px",
+      "lineHeight": "36.3906px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 700,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-desc-marquee-dek-size-tablet; css-var --type-desc-marquee-dek-line-height-tablet; css-var --type-desc-marquee-dek-letter-spacing-tablet; css-var --type-desc-marquee-dek-family-mobile; css-var --type-desc-marquee-dek-weight-mobile; css-var --type-desc-marquee-dek-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-desc-marquee-dek style. (tablet breakpoint; family/weight from the base mobile declaration)"
+    }
+   },
+   "desc-marquee-intro": {
+    "desktop": {
+     "$value": {
+      "fontSize": "18px",
+      "lineHeight": "26.0938px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lora, Lora-roboto, Lora-local, ui-serif, Georgia, Cambria, \"Times New Roman\", Times, Serif",
+      "fontWeight": 400,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-desc-marquee-intro-size-desktop; css-var --type-desc-marquee-intro-line-height-desktop; css-var --type-desc-marquee-intro-letter-spacing-desktop; css-var --type-desc-marquee-intro-family-mobile; css-var --type-desc-marquee-intro-weight-mobile; css-var --type-desc-marquee-intro-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-desc-marquee-intro style. (desktop breakpoint; family/weight from the base mobile declaration)"
     },
-    "case": {
-     "var": "--type-headline-lede-txt-case-mobile",
-     "type": "other",
-     "source": "css-var --type-headline-lede-txt-case-mobile resolved (raw/css-vars.json)",
-     "description": "The 56px lede headline (negative tracking). (text case)."
+    "mobile": {
+     "$value": {
+      "fontSize": "16px",
+      "lineHeight": "23.1875px",
+      "letterSpacing": "0.1875px",
+      "fontFamily": "Lora, Lora-roboto, Lora-local, ui-serif, Georgia, Cambria, \"Times New Roman\", Times, Serif",
+      "fontWeight": 400,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-desc-marquee-intro-size-mobile; css-var --type-desc-marquee-intro-line-height-mobile; css-var --type-desc-marquee-intro-letter-spacing-mobile; css-var --type-desc-marquee-intro-family-mobile; css-var --type-desc-marquee-intro-weight-mobile; css-var --type-desc-marquee-intro-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-desc-marquee-intro style. (mobile base breakpoint)"
+    },
+    "tablet": {
+     "$value": {
+      "fontSize": "16px",
+      "lineHeight": "20.2969px",
+      "letterSpacing": "0.1875px",
+      "fontFamily": "Lora, Lora-roboto, Lora-local, ui-serif, Georgia, Cambria, \"Times New Roman\", Times, Serif",
+      "fontWeight": 400,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-desc-marquee-intro-size-tablet; css-var --type-desc-marquee-intro-line-height-tablet; css-var --type-desc-marquee-intro-letter-spacing-tablet; css-var --type-desc-marquee-intro-family-mobile; css-var --type-desc-marquee-intro-weight-mobile; css-var --type-desc-marquee-intro-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-desc-marquee-intro style. (tablet breakpoint; family/weight from the base mobile declaration)"
+    }
+   },
+   "desc-standard": {
+    "desktop": {
+     "$value": {
+      "fontSize": "14px",
+      "lineHeight": "18.1875px",
+      "letterSpacing": "0.390625px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-desc-standard-size-desktop; css-var --type-desc-standard-line-height-desktop; css-var --type-desc-standard-letter-spacing-desktop; css-var --type-desc-standard-family-mobile; css-var --type-desc-standard-weight-mobile; css-var --type-desc-standard-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-desc-standard style. (desktop breakpoint; family/weight from the base mobile declaration)"
+    },
+    "mobile": {
+     "$value": {
+      "fontSize": "14px",
+      "lineHeight": "18.1875px",
+      "letterSpacing": "0.390625px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-desc-standard-size-mobile; css-var --type-desc-standard-line-height-mobile; css-var --type-desc-standard-letter-spacing-mobile; css-var --type-desc-standard-family-mobile; css-var --type-desc-standard-weight-mobile; css-var --type-desc-standard-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-desc-standard style. (mobile base breakpoint)"
+    }
+   },
+   "divider": {
+    "desktop": {
+     "$value": {
+      "fontSize": "16px",
+      "lineHeight": "23.1875px",
+      "letterSpacing": "0.1875px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-divider-size-desktop; css-var --type-divider-line-height-desktop; css-var --type-divider-letter-spacing-desktop; css-var --type-divider-family-mobile; css-var --type-divider-weight-mobile; css-var --type-divider-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-divider style. (desktop breakpoint; family/weight from the base mobile declaration)"
+    },
+    "mobile": {
+     "$value": {
+      "fontSize": "16px",
+      "lineHeight": "23.1875px",
+      "letterSpacing": "0.1875px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-divider-size-mobile; css-var --type-divider-line-height-mobile; css-var --type-divider-letter-spacing-mobile; css-var --type-divider-family-mobile; css-var --type-divider-weight-mobile; css-var --type-divider-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-divider style. (mobile base breakpoint)"
+    }
+   },
+   "eyebrow-promo": {
+    "desktop": {
+     "$value": {
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-eyebrow-promo-letter-spacing-desktop; css-var --type-eyebrow-promo-family-mobile; css-var --type-eyebrow-promo-weight-mobile; css-var --type-eyebrow-promo-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-eyebrow-promo style. (desktop breakpoint; family/weight from the base mobile declaration)"
+    },
+    "mobile": {
+     "$value": {
+      "fontSize": "13px",
+      "lineHeight": "18.1875px",
+      "letterSpacing": "0.390625px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-eyebrow-promo-size-mobile; css-var --type-eyebrow-promo-line-height-mobile; css-var --type-eyebrow-promo-letter-spacing-mobile; css-var --type-eyebrow-promo-family-mobile; css-var --type-eyebrow-promo-weight-mobile; css-var --type-eyebrow-promo-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-eyebrow-promo style. (mobile base breakpoint)"
+    }
+   },
+   "eyebrow-standard": {
+    "mobile": {
+     "$value": {
+      "fontSize": "13px",
+      "lineHeight": "18.1875px",
+      "letterSpacing": "0.390625px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "textTransform": "uppercase"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-eyebrow-standard-size-mobile; css-var --type-eyebrow-standard-line-height-mobile; css-var --type-eyebrow-standard-letter-spacing-mobile; css-var --type-eyebrow-standard-family-mobile; css-var --type-eyebrow-standard-weight-mobile; css-var --type-eyebrow-standard-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The small uppercase eyebrow. (mobile base breakpoint)"
+    }
+   },
+   "form-label": {
+    "mobile": {
+     "$value": {
+      "fontSize": "16px",
+      "lineHeight": "23.1875px",
+      "letterSpacing": "0.1875px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "textTransform": "capitalize"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-form-label-size-mobile; css-var --type-form-label-line-height-mobile; css-var --type-form-label-letter-spacing-mobile; css-var --type-form-label-family-mobile; css-var --type-form-label-weight-mobile; css-var --type-form-label-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The form label style. (mobile base breakpoint)"
+    }
+   },
+   "form-placeholder-lg": {
+    "mobile": {
+     "$value": {
+      "fontSize": "16px",
+      "lineHeight": "20.2969px",
+      "letterSpacing": "0.1875px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-form-placeholder-lg-size-mobile; css-var --type-form-placeholder-lg-line-height-mobile; css-var --type-form-placeholder-lg-letter-spacing-mobile; css-var --type-form-placeholder-lg-family-mobile; css-var --type-form-placeholder-lg-weight-mobile; css-var --type-form-placeholder-lg-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-form-placeholder-lg style. (mobile base breakpoint)"
+    }
+   },
+   "form-placeholder-md": {
+    "mobile": {
+     "$value": {
+      "fontSize": "14px",
+      "lineHeight": "18.1875px",
+      "letterSpacing": "0.390625px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-form-placeholder-md-size-mobile; css-var --type-form-placeholder-md-line-height-mobile; css-var --type-form-placeholder-md-letter-spacing-mobile; css-var --type-form-placeholder-md-family-mobile; css-var --type-form-placeholder-md-weight-mobile; css-var --type-form-placeholder-md-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-form-placeholder-md style. (mobile base breakpoint)"
+    }
+   },
+   "header-compact": {
+    "desktop": {
+     "$value": {
+      "fontSize": "16px",
+      "lineHeight": "23.1875px",
+      "letterSpacing": "0.1875px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "textTransform": "uppercase"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-header-compact-size-desktop; css-var --type-header-compact-line-height-desktop; css-var --type-header-compact-letter-spacing-desktop; css-var --type-header-compact-family-mobile; css-var --type-header-compact-weight-mobile; css-var --type-header-compact-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-header-compact style. (desktop breakpoint; family/weight from the base mobile declaration)"
+    },
+    "mobile": {
+     "$value": {
+      "fontSize": "16px",
+      "lineHeight": "23.1875px",
+      "letterSpacing": "0.1875px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "textTransform": "uppercase"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-header-compact-size-mobile; css-var --type-header-compact-line-height-mobile; css-var --type-header-compact-letter-spacing-mobile; css-var --type-header-compact-family-mobile; css-var --type-header-compact-weight-mobile; css-var --type-header-compact-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-header-compact style. (mobile base breakpoint)"
+    }
+   },
+   "header-hero": {
+    "desktop": {
+     "$value": {
+      "fontSize": "32px",
+      "lineHeight": "41.5938px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "fontStyle": "normal",
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-header-hero-size-desktop; css-var --type-header-hero-line-height-desktop; css-var --type-header-hero-letter-spacing-desktop; css-var --type-header-hero-family-mobile; css-var --type-header-hero-weight-mobile; css-var --type-header-hero-style-mobile; css-var --type-header-hero-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-header-hero style. (desktop breakpoint; family/weight from the base mobile declaration)"
+    },
+    "mobile": {
+     "$value": {
+      "fontSize": "28px",
+      "lineHeight": "46.7969px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "fontStyle": "normal",
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-header-hero-size-mobile; css-var --type-header-hero-line-height-mobile; css-var --type-header-hero-letter-spacing-mobile; css-var --type-header-hero-family-mobile; css-var --type-header-hero-weight-mobile; css-var --type-header-hero-style-mobile; css-var --type-header-hero-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-header-hero style. (mobile base breakpoint)"
     }
    },
    "header-hero-topic": {
     "desktop": {
-     "size": {
-      "var": "--type-header-hero-topic-size-desktop",
-      "type": "dimension",
-      "source": "css-var --type-header-hero-topic-size-desktop resolved (raw/css-vars.json)",
-      "description": "The 64px hero topic display. (size, desktop)."
+     "$value": {
+      "fontSize": "64px",
+      "lineHeight": "76.7969px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 700,
+      "fontStyle": "normal",
+      "textTransform": "none"
      },
-     "line_height": {
-      "var": "--type-header-hero-topic-line-height-desktop",
-      "type": "dimension",
-      "source": "css-var --type-header-hero-topic-line-height-desktop resolved (raw/css-vars.json)",
-      "description": "The 64px hero topic display. (line-height, desktop)."
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-header-hero-topic-size-desktop; css-var --type-header-hero-topic-line-height-desktop; css-var --type-header-hero-topic-letter-spacing-desktop; css-var --type-header-hero-topic-family-mobile; css-var --type-header-hero-topic-weight-mobile; css-var --type-header-hero-topic-style-mobile; css-var --type-header-hero-topic-txt-case-mobile resolved (raw/css-vars.json)"
      },
-     "letter_spacing": {
-      "var": "--type-header-hero-topic-letter-spacing-desktop",
-      "type": "dimension",
-      "source": "css-var --type-header-hero-topic-letter-spacing-desktop resolved (raw/css-vars.json)",
-      "description": "The 64px hero topic display. (letter-spacing, desktop)."
-     }
+     "$description": "The 64px hero topic display. (desktop breakpoint; family/weight from the base mobile declaration)"
     },
     "mobile": {
-     "size": {
-      "var": "--type-header-hero-topic-size-mobile",
-      "type": "dimension",
-      "source": "css-var --type-header-hero-topic-size-mobile resolved (raw/css-vars.json)",
-      "description": "The 64px hero topic display. (size, mobile)."
+     "$value": {
+      "fontSize": "48px",
+      "lineHeight": "57.5938px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 700,
+      "fontStyle": "normal",
+      "textTransform": "none"
      },
-     "line_height": {
-      "var": "--type-header-hero-topic-line-height-mobile",
-      "type": "dimension",
-      "source": "css-var --type-header-hero-topic-line-height-mobile resolved (raw/css-vars.json)",
-      "description": "The 64px hero topic display. (line-height, mobile)."
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-header-hero-topic-size-mobile; css-var --type-header-hero-topic-line-height-mobile; css-var --type-header-hero-topic-letter-spacing-mobile; css-var --type-header-hero-topic-family-mobile; css-var --type-header-hero-topic-weight-mobile; css-var --type-header-hero-topic-style-mobile; css-var --type-header-hero-topic-txt-case-mobile resolved (raw/css-vars.json)"
      },
-     "weight": {
-      "var": "--type-header-hero-topic-weight-mobile",
-      "type": "fontWeight",
-      "source": "css-var --type-header-hero-topic-weight-mobile resolved (raw/css-vars.json)",
-      "description": "The 64px hero topic display. (weight, mobile)."
-     },
-     "letter_spacing": {
-      "var": "--type-header-hero-topic-letter-spacing-mobile",
-      "type": "dimension",
-      "source": "css-var --type-header-hero-topic-letter-spacing-mobile resolved (raw/css-vars.json)",
-      "description": "The 64px hero topic display. (letter-spacing, mobile)."
-     }
-    },
-    "family": {
-     "var": "--type-header-hero-topic-family-mobile",
-     "type": "fontFamily",
-     "source": "css-var --type-header-hero-topic-family-mobile resolved (raw/css-vars.json)",
-     "description": "The 64px hero topic display. (family)."
-    },
-    "case": {
-     "var": "--type-header-hero-topic-txt-case-mobile",
-     "type": "other",
-     "source": "css-var --type-header-hero-topic-txt-case-mobile resolved (raw/css-vars.json)",
-     "description": "The 64px hero topic display. (text case)."
+     "$description": "The 64px hero topic display. (mobile base breakpoint)"
     }
    },
-   "h2-body": {
+   "header-immersive-lede": {
     "desktop": {
-     "size": {
-      "var": "--type-headline-body-h2-size-desktop",
-      "type": "dimension",
-      "source": "css-var --type-headline-body-h2-size-desktop resolved (raw/css-vars.json)",
-      "description": "The 36px in-article h2. (size, desktop)."
+     "$value": {
+      "fontSize": "30px",
+      "lineHeight": "40.5px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 700,
+      "fontStyle": "normal",
+      "textTransform": "none"
      },
-     "line_height": {
-      "var": "--type-headline-body-h2-line-height-desktop",
-      "type": "dimension",
-      "source": "css-var --type-headline-body-h2-line-height-desktop resolved (raw/css-vars.json)",
-      "description": "The 36px in-article h2. (line-height, desktop)."
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-header-immersive-lede-size-desktop; css-var --type-header-immersive-lede-line-height-desktop; css-var --type-header-immersive-lede-letter-spacing-desktop; css-var --type-header-immersive-lede-family-mobile; css-var --type-header-immersive-lede-weight-mobile; css-var --type-header-immersive-lede-style-mobile; css-var --type-header-immersive-lede-txt-case-mobile resolved (raw/css-vars.json)"
      },
-     "letter_spacing": {
-      "var": "--type-headline-body-h2-letter-spacing-desktop",
-      "type": "dimension",
-      "source": "css-var --type-headline-body-h2-letter-spacing-desktop resolved (raw/css-vars.json)",
-      "description": "The 36px in-article h2. (letter-spacing, desktop)."
-     }
+     "$description": "The --type-header-immersive-lede style. (desktop breakpoint; family/weight from the base mobile declaration)"
     },
     "mobile": {
-     "size": {
-      "var": "--type-headline-body-h2-size-mobile",
-      "type": "dimension",
-      "source": "css-var --type-headline-body-h2-size-mobile resolved (raw/css-vars.json)",
-      "description": "The 36px in-article h2. (size, mobile)."
+     "$value": {
+      "fontSize": "30px",
+      "lineHeight": "40.5px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 700,
+      "fontStyle": "normal",
+      "textTransform": "none"
      },
-     "line_height": {
-      "var": "--type-headline-body-h2-line-height-mobile",
-      "type": "dimension",
-      "source": "css-var --type-headline-body-h2-line-height-mobile resolved (raw/css-vars.json)",
-      "description": "The 36px in-article h2. (line-height, mobile)."
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-header-immersive-lede-size-mobile; css-var --type-header-immersive-lede-line-height-mobile; css-var --type-header-immersive-lede-letter-spacing-mobile; css-var --type-header-immersive-lede-family-mobile; css-var --type-header-immersive-lede-weight-mobile; css-var --type-header-immersive-lede-style-mobile; css-var --type-header-immersive-lede-txt-case-mobile resolved (raw/css-vars.json)"
      },
-     "weight": {
-      "var": "--type-headline-body-h2-weight-mobile",
-      "type": "fontWeight",
-      "source": "css-var --type-headline-body-h2-weight-mobile resolved (raw/css-vars.json)",
-      "description": "The 36px in-article h2. (weight, mobile)."
-     },
-     "letter_spacing": {
-      "var": "--type-headline-body-h2-letter-spacing-mobile",
-      "type": "dimension",
-      "source": "css-var --type-headline-body-h2-letter-spacing-mobile resolved (raw/css-vars.json)",
-      "description": "The 36px in-article h2. (letter-spacing, mobile)."
-     }
-    },
-    "family": {
-     "var": "--type-headline-body-h2-family-mobile",
-     "type": "fontFamily",
-     "source": "css-var --type-headline-body-h2-family-mobile resolved (raw/css-vars.json)",
-     "description": "The 36px in-article h2. (family)."
-    },
-    "case": {
-     "var": "--type-headline-body-h2-txt-case-mobile",
-     "type": "other",
-     "source": "css-var --type-headline-body-h2-txt-case-mobile resolved (raw/css-vars.json)",
-     "description": "The 36px in-article h2. (text case)."
+     "$description": "The --type-header-immersive-lede style. (mobile base breakpoint)"
     }
    },
-   "h3-body": {
+   "header-lede": {
     "desktop": {
-     "size": {
-      "var": "--type-headline-body-h3-size-desktop",
-      "type": "dimension",
-      "source": "css-var --type-headline-body-h3-size-desktop resolved (raw/css-vars.json)",
-      "description": "The 30px in-article h3. (size, desktop)."
+     "$value": {
+      "fontSize": "32px",
+      "lineHeight": "41.5938px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "fontStyle": "normal",
+      "textTransform": "none"
      },
-     "line_height": {
-      "var": "--type-headline-body-h3-line-height-desktop",
-      "type": "dimension",
-      "source": "css-var --type-headline-body-h3-line-height-desktop resolved (raw/css-vars.json)",
-      "description": "The 30px in-article h3. (line-height, desktop)."
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-header-lede-size-desktop; css-var --type-header-lede-line-height-desktop; css-var --type-header-lede-letter-spacing-desktop; css-var --type-header-lede-family-mobile; css-var --type-header-lede-weight-mobile; css-var --type-header-lede-style-mobile; css-var --type-header-lede-txt-case-mobile resolved (raw/css-vars.json)"
      },
-     "letter_spacing": {
-      "var": "--type-headline-body-h3-letter-spacing-desktop",
-      "type": "dimension",
-      "source": "css-var --type-headline-body-h3-letter-spacing-desktop resolved (raw/css-vars.json)",
-      "description": "The 30px in-article h3. (letter-spacing, desktop)."
-     }
+     "$description": "The --type-header-lede style. (desktop breakpoint; family/weight from the base mobile declaration)"
     },
     "mobile": {
-     "size": {
-      "var": "--type-headline-body-h3-size-mobile",
-      "type": "dimension",
-      "source": "css-var --type-headline-body-h3-size-mobile resolved (raw/css-vars.json)",
-      "description": "The 30px in-article h3. (size, mobile)."
+     "$value": {
+      "fontSize": "28px",
+      "lineHeight": "36.3906px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "fontStyle": "normal",
+      "textTransform": "none"
      },
-     "line_height": {
-      "var": "--type-headline-body-h3-line-height-mobile",
-      "type": "dimension",
-      "source": "css-var --type-headline-body-h3-line-height-mobile resolved (raw/css-vars.json)",
-      "description": "The 30px in-article h3. (line-height, mobile)."
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-header-lede-size-mobile; css-var --type-header-lede-line-height-mobile; css-var --type-header-lede-letter-spacing-mobile; css-var --type-header-lede-family-mobile; css-var --type-header-lede-weight-mobile; css-var --type-header-lede-style-mobile; css-var --type-header-lede-txt-case-mobile resolved (raw/css-vars.json)"
      },
-     "weight": {
-      "var": "--type-headline-body-h3-weight-mobile",
-      "type": "fontWeight",
-      "source": "css-var --type-headline-body-h3-weight-mobile resolved (raw/css-vars.json)",
-      "description": "The 30px in-article h3. (weight, mobile)."
-     },
-     "letter_spacing": {
-      "var": "--type-headline-body-h3-letter-spacing-mobile",
-      "type": "dimension",
-      "source": "css-var --type-headline-body-h3-letter-spacing-mobile resolved (raw/css-vars.json)",
-      "description": "The 30px in-article h3. (letter-spacing, mobile)."
-     }
-    },
-    "family": {
-     "var": "--type-headline-body-h3-family-mobile",
-     "type": "fontFamily",
-     "source": "css-var --type-headline-body-h3-family-mobile resolved (raw/css-vars.json)",
-     "description": "The 30px in-article h3. (family)."
-    },
-    "case": {
-     "var": "--type-headline-body-h3-txt-case-mobile",
-     "type": "other",
-     "source": "css-var --type-headline-body-h3-txt-case-mobile resolved (raw/css-vars.json)",
-     "description": "The 30px in-article h3. (text case)."
+     "$description": "The --type-header-lede style. (mobile base breakpoint)"
     }
    },
-   "section-header": {
+   "header-marquee": {
     "desktop": {
-     "size": {
-      "var": "--type-header-standard-size-desktop",
-      "type": "dimension",
-      "source": "css-var --type-header-standard-size-desktop resolved (raw/css-vars.json)",
-      "description": "The section-front header style. (size, desktop)."
+     "$value": {
+      "fontSize": "112px",
+      "lineHeight": "112px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 700,
+      "fontStyle": "normal",
+      "textTransform": "none"
      },
-     "line_height": {
-      "var": "--type-header-standard-line-height-desktop",
-      "type": "dimension",
-      "source": "css-var --type-header-standard-line-height-desktop resolved (raw/css-vars.json)",
-      "description": "The section-front header style. (line-height, desktop)."
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-header-marquee-size-desktop; css-var --type-header-marquee-line-height-desktop; css-var --type-header-marquee-letter-spacing-desktop; css-var --type-header-marquee-family-mobile; css-var --type-header-marquee-weight-mobile; css-var --type-header-marquee-style-mobile; css-var --type-header-marquee-txt-case-mobile resolved (raw/css-vars.json)"
      },
-     "letter_spacing": {
-      "var": "--type-header-standard-letter-spacing-desktop",
-      "type": "dimension",
-      "source": "css-var --type-header-standard-letter-spacing-desktop resolved (raw/css-vars.json)",
-      "description": "The section-front header style. (letter-spacing, desktop)."
-     }
+     "$description": "The --type-header-marquee style. (desktop breakpoint; family/weight from the base mobile declaration)"
+    },
+    "laptop": {
+     "$value": {
+      "fontSize": "112px",
+      "lineHeight": "112px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 700,
+      "fontStyle": "normal",
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-header-marquee-size-laptop; css-var --type-header-marquee-line-height-laptop; css-var --type-header-marquee-letter-spacing-laptop; css-var --type-header-marquee-family-mobile; css-var --type-header-marquee-weight-mobile; css-var --type-header-marquee-style-mobile; css-var --type-header-marquee-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-header-marquee style. (laptop breakpoint; family/weight from the base mobile declaration)"
     },
     "mobile": {
-     "size": {
-      "var": "--type-header-standard-size-mobile",
-      "type": "dimension",
-      "source": "css-var --type-header-standard-size-mobile resolved (raw/css-vars.json)",
-      "description": "The section-front header style. (size, mobile)."
+     "$value": {
+      "fontSize": "52px",
+      "lineHeight": "62.3906px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 700,
+      "fontStyle": "normal",
+      "textTransform": "none"
      },
-     "line_height": {
-      "var": "--type-header-standard-line-height-mobile",
-      "type": "dimension",
-      "source": "css-var --type-header-standard-line-height-mobile resolved (raw/css-vars.json)",
-      "description": "The section-front header style. (line-height, mobile)."
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-header-marquee-size-mobile; css-var --type-header-marquee-line-height-mobile; css-var --type-header-marquee-letter-spacing-mobile; css-var --type-header-marquee-family-mobile; css-var --type-header-marquee-weight-mobile; css-var --type-header-marquee-style-mobile; css-var --type-header-marquee-txt-case-mobile resolved (raw/css-vars.json)"
      },
-     "weight": {
-      "var": "--type-header-standard-weight-mobile",
-      "type": "fontWeight",
-      "source": "css-var --type-header-standard-weight-mobile resolved (raw/css-vars.json)",
-      "description": "The section-front header style. (weight, mobile)."
-     },
-     "letter_spacing": {
-      "var": "--type-header-standard-letter-spacing-mobile",
-      "type": "dimension",
-      "source": "css-var --type-header-standard-letter-spacing-mobile resolved (raw/css-vars.json)",
-      "description": "The section-front header style. (letter-spacing, mobile)."
-     }
+     "$description": "The --type-header-marquee style. (mobile base breakpoint)"
     },
-    "family": {
-     "var": "--type-header-standard-family-mobile",
-     "type": "fontFamily",
-     "source": "css-var --type-header-standard-family-mobile resolved (raw/css-vars.json)",
-     "description": "The section-front header style. (family)."
-    },
-    "case": {
-     "var": "--type-header-standard-txt-case-mobile",
-     "type": "other",
-     "source": "css-var --type-header-standard-txt-case-mobile resolved (raw/css-vars.json)",
-     "description": "The section-front header style. (text case)."
+    "tablet": {
+     "$value": {
+      "fontSize": "64px",
+      "lineHeight": "67.1875px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 700,
+      "fontStyle": "normal",
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-header-marquee-size-tablet; css-var --type-header-marquee-line-height-tablet; css-var --type-header-marquee-letter-spacing-tablet; css-var --type-header-marquee-family-mobile; css-var --type-header-marquee-weight-mobile; css-var --type-header-marquee-style-mobile; css-var --type-header-marquee-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-header-marquee style. (tablet breakpoint; family/weight from the base mobile declaration)"
     }
    },
-   "eyebrow": {
+   "header-marquee-vertical": {
+    "desktop": {
+     "$value": {
+      "fontSize": "112px",
+      "lineHeight": "112px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 700,
+      "fontStyle": "normal",
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-header-marquee-vertical-size-desktop; css-var --type-header-marquee-vertical-line-height-desktop; css-var --type-header-marquee-vertical-letter-spacing-desktop; css-var --type-header-marquee-vertical-family-mobile; css-var --type-header-marquee-vertical-weight-mobile; css-var --type-header-marquee-vertical-style-mobile; css-var --type-header-marquee-vertical-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-header-marquee-vertical style. (desktop breakpoint; family/weight from the base mobile declaration)"
+    },
+    "laptop": {
+     "$value": {
+      "fontSize": "112px",
+      "lineHeight": "112px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 700,
+      "fontStyle": "normal",
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-header-marquee-vertical-size-laptop; css-var --type-header-marquee-vertical-line-height-laptop; css-var --type-header-marquee-vertical-letter-spacing-laptop; css-var --type-header-marquee-vertical-family-mobile; css-var --type-header-marquee-vertical-weight-mobile; css-var --type-header-marquee-vertical-style-mobile; css-var --type-header-marquee-vertical-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-header-marquee-vertical style. (laptop breakpoint; family/weight from the base mobile declaration)"
+    },
     "mobile": {
-     "size": {
-      "var": "--type-eyebrow-standard-size-mobile",
-      "type": "dimension",
-      "source": "css-var --type-eyebrow-standard-size-mobile resolved (raw/css-vars.json)",
-      "description": "The small uppercase eyebrow. (size, mobile)."
+     "$value": {
+      "fontSize": "52px",
+      "lineHeight": "62.3906px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 700,
+      "fontStyle": "normal",
+      "textTransform": "none"
      },
-     "line_height": {
-      "var": "--type-eyebrow-standard-line-height-mobile",
-      "type": "dimension",
-      "source": "css-var --type-eyebrow-standard-line-height-mobile resolved (raw/css-vars.json)",
-      "description": "The small uppercase eyebrow. (line-height, mobile)."
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-header-marquee-vertical-size-mobile; css-var --type-header-marquee-vertical-line-height-mobile; css-var --type-header-marquee-vertical-letter-spacing-mobile; css-var --type-header-marquee-vertical-family-mobile; css-var --type-header-marquee-vertical-weight-mobile; css-var --type-header-marquee-vertical-style-mobile; css-var --type-header-marquee-vertical-txt-case-mobile resolved (raw/css-vars.json)"
      },
-     "weight": {
-      "var": "--type-eyebrow-standard-weight-mobile",
-      "type": "fontWeight",
-      "source": "css-var --type-eyebrow-standard-weight-mobile resolved (raw/css-vars.json)",
-      "description": "The small uppercase eyebrow. (weight, mobile)."
-     },
-     "letter_spacing": {
-      "var": "--type-eyebrow-standard-letter-spacing-mobile",
-      "type": "dimension",
-      "source": "css-var --type-eyebrow-standard-letter-spacing-mobile resolved (raw/css-vars.json)",
-      "description": "The small uppercase eyebrow. (letter-spacing, mobile)."
-     }
+     "$description": "The --type-header-marquee-vertical style. (mobile base breakpoint)"
     },
-    "family": {
-     "var": "--type-eyebrow-standard-family-mobile",
-     "type": "fontFamily",
-     "source": "css-var --type-eyebrow-standard-family-mobile resolved (raw/css-vars.json)",
-     "description": "The small uppercase eyebrow. (family)."
+    "tablet": {
+     "$value": {
+      "fontSize": "96px",
+      "lineHeight": "105.594px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 700,
+      "fontStyle": "normal",
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-header-marquee-vertical-size-tablet; css-var --type-header-marquee-vertical-line-height-tablet; css-var --type-header-marquee-vertical-letter-spacing-tablet; css-var --type-header-marquee-vertical-family-mobile; css-var --type-header-marquee-vertical-weight-mobile; css-var --type-header-marquee-vertical-style-mobile; css-var --type-header-marquee-vertical-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-header-marquee-vertical style. (tablet breakpoint; family/weight from the base mobile declaration)"
+    }
+   },
+   "header-promo": {
+    "desktop": {
+     "$value": {
+      "fontSize": "28px",
+      "lineHeight": "36.3906px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "fontStyle": "normal",
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-header-promo-size-desktop; css-var --type-header-promo-line-height-desktop; css-var --type-header-promo-letter-spacing-desktop; css-var --type-header-promo-family-mobile; css-var --type-header-promo-weight-mobile; css-var --type-header-promo-style-mobile; css-var --type-header-promo-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-header-promo style. (desktop breakpoint; family/weight from the base mobile declaration)"
     },
-    "case": {
-     "var": "--type-eyebrow-standard-txt-case-mobile",
-     "type": "other",
-     "source": "css-var --type-eyebrow-standard-txt-case-mobile resolved (raw/css-vars.json)",
-     "description": "The small uppercase eyebrow. (text case)."
+    "mobile": {
+     "$value": {
+      "fontSize": "28px",
+      "lineHeight": "36.3906px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "fontStyle": "normal",
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-header-promo-size-mobile; css-var --type-header-promo-line-height-mobile; css-var --type-header-promo-letter-spacing-mobile; css-var --type-header-promo-family-mobile; css-var --type-header-promo-weight-mobile; css-var --type-header-promo-style-mobile; css-var --type-header-promo-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-header-promo style. (mobile base breakpoint)"
+    }
+   },
+   "header-standard": {
+    "desktop": {
+     "$value": {
+      "fontSize": "18px",
+      "lineHeight": "26.0938px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 700,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-header-standard-size-desktop; css-var --type-header-standard-line-height-desktop; css-var --type-header-standard-letter-spacing-desktop; css-var --type-header-standard-family-mobile; css-var --type-header-standard-weight-mobile; css-var --type-header-standard-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The section-front header style. (desktop breakpoint; family/weight from the base mobile declaration)"
+    },
+    "mobile": {
+     "$value": {
+      "fontSize": "16px",
+      "lineHeight": "23.1875px",
+      "letterSpacing": "0.1875px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 700,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-header-standard-size-mobile; css-var --type-header-standard-line-height-mobile; css-var --type-header-standard-letter-spacing-mobile; css-var --type-header-standard-family-mobile; css-var --type-header-standard-weight-mobile; css-var --type-header-standard-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The section-front header style. (mobile base breakpoint)"
+    }
+   },
+   "headline-body-h2": {
+    "desktop": {
+     "$value": {
+      "fontSize": "36px",
+      "lineHeight": "46.7969px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 700,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-headline-body-h2-size-desktop; css-var --type-headline-body-h2-line-height-desktop; css-var --type-headline-body-h2-letter-spacing-desktop; css-var --type-headline-body-h2-family-mobile; css-var --type-headline-body-h2-weight-mobile; css-var --type-headline-body-h2-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The 36px in-article h2. (desktop breakpoint; family/weight from the base mobile declaration)"
+    },
+    "mobile": {
+     "$value": {
+      "fontSize": "28px",
+      "lineHeight": "36.3906px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 700,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-headline-body-h2-size-mobile; css-var --type-headline-body-h2-line-height-mobile; css-var --type-headline-body-h2-letter-spacing-mobile; css-var --type-headline-body-h2-family-mobile; css-var --type-headline-body-h2-weight-mobile; css-var --type-headline-body-h2-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The 36px in-article h2. (mobile base breakpoint)"
+    }
+   },
+   "headline-body-h3": {
+    "desktop": {
+     "$value": {
+      "fontSize": "30px",
+      "lineHeight": "40.5px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 700,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-headline-body-h3-size-desktop; css-var --type-headline-body-h3-line-height-desktop; css-var --type-headline-body-h3-letter-spacing-desktop; css-var --type-headline-body-h3-family-mobile; css-var --type-headline-body-h3-weight-mobile; css-var --type-headline-body-h3-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The 30px in-article h3. (desktop breakpoint; family/weight from the base mobile declaration)"
+    },
+    "mobile": {
+     "$value": {
+      "fontSize": "24px",
+      "lineHeight": "32.3906px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 700,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-headline-body-h3-size-mobile; css-var --type-headline-body-h3-line-height-mobile; css-var --type-headline-body-h3-letter-spacing-mobile; css-var --type-headline-body-h3-family-mobile; css-var --type-headline-body-h3-weight-mobile; css-var --type-headline-body-h3-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The 30px in-article h3. (mobile base breakpoint)"
+    }
+   },
+   "headline-body-h4": {
+    "desktop": {
+     "$value": {
+      "fontSize": "28px",
+      "lineHeight": "36.3906px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 700,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-headline-body-h4-size-desktop; css-var --type-headline-body-h4-line-height-desktop; css-var --type-headline-body-h4-letter-spacing-desktop; css-var --type-headline-body-h4-family-mobile; css-var --type-headline-body-h4-weight-mobile; css-var --type-headline-body-h4-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-headline-body-h4 style. (desktop breakpoint; family/weight from the base mobile declaration)"
+    },
+    "mobile": {
+     "$value": {
+      "fontSize": "22px",
+      "lineHeight": "29.6875px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 700,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-headline-body-h4-size-mobile; css-var --type-headline-body-h4-line-height-mobile; css-var --type-headline-body-h4-letter-spacing-mobile; css-var --type-headline-body-h4-family-mobile; css-var --type-headline-body-h4-weight-mobile; css-var --type-headline-body-h4-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-headline-body-h4 style. (mobile base breakpoint)"
+    }
+   },
+   "headline-compact": {
+    "desktop": {
+     "$value": {
+      "fontSize": "18px",
+      "lineHeight": "23.1875px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-headline-compact-size-desktop; css-var --type-headline-compact-line-height-desktop; css-var --type-headline-compact-letter-spacing-desktop; css-var --type-headline-compact-family-mobile; css-var --type-headline-compact-weight-mobile; css-var --type-headline-compact-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-headline-compact style. (desktop breakpoint; family/weight from the base mobile declaration)"
+    },
+    "mobile": {
+     "$value": {
+      "fontSize": "18px",
+      "lineHeight": "23.1875px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-headline-compact-size-mobile; css-var --type-headline-compact-line-height-mobile; css-var --type-headline-compact-letter-spacing-mobile; css-var --type-headline-compact-family-mobile; css-var --type-headline-compact-weight-mobile; css-var --type-headline-compact-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-headline-compact style. (mobile base breakpoint)"
+    }
+   },
+   "headline-hero": {
+    "desktop": {
+     "$value": {
+      "fontSize": "48px",
+      "lineHeight": "57.5938px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 700,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-headline-hero-size-desktop; css-var --type-headline-hero-line-height-desktop; css-var --type-headline-hero-letter-spacing-desktop; css-var --type-headline-hero-family-mobile; css-var --type-headline-hero-weight-mobile; css-var --type-headline-hero-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The 48px hero headline. (desktop breakpoint; family/weight from the base mobile declaration)"
+    },
+    "mobile": {
+     "$value": {
+      "fontSize": "48px",
+      "lineHeight": "57.5938px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 700,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-headline-hero-size-mobile; css-var --type-headline-hero-line-height-mobile; css-var --type-headline-hero-letter-spacing-mobile; css-var --type-headline-hero-family-mobile; css-var --type-headline-hero-weight-mobile; css-var --type-headline-hero-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The 48px hero headline. (mobile base breakpoint)"
+    }
+   },
+   "headline-immersive-lede": {
+    "desktop": {
+     "$value": {
+      "fontSize": "32px",
+      "lineHeight": "41.5938px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 700,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-headline-immersive-lede-size-desktop; css-var --type-headline-immersive-lede-line-height-desktop; css-var --type-headline-immersive-lede-letter-spacing-desktop; css-var --type-headline-immersive-lede-family-mobile; css-var --type-headline-immersive-lede-weight-mobile; css-var --type-headline-immersive-lede-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-headline-immersive-lede style. (desktop breakpoint; family/weight from the base mobile declaration)"
+    },
+    "laptop": {
+     "$value": {
+      "fontSize": "32px",
+      "lineHeight": "41.5938px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 700,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-headline-immersive-lede-size-laptop; css-var --type-headline-immersive-lede-line-height-laptop; css-var --type-headline-immersive-lede-letter-spacing-laptop; css-var --type-headline-immersive-lede-family-mobile; css-var --type-headline-immersive-lede-weight-mobile; css-var --type-headline-immersive-lede-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-headline-immersive-lede style. (laptop breakpoint; family/weight from the base mobile declaration)"
+    },
+    "mobile": {
+     "$value": {
+      "fontSize": "28px",
+      "lineHeight": "36.3906px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 700,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-headline-immersive-lede-size-mobile; css-var --type-headline-immersive-lede-line-height-mobile; css-var --type-headline-immersive-lede-letter-spacing-mobile; css-var --type-headline-immersive-lede-family-mobile; css-var --type-headline-immersive-lede-weight-mobile; css-var --type-headline-immersive-lede-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-headline-immersive-lede style. (mobile base breakpoint)"
+    },
+    "tablet": {
+     "$value": {
+      "fontSize": "28px",
+      "lineHeight": "36.3906px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 700,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-headline-immersive-lede-size-tablet; css-var --type-headline-immersive-lede-line-height-tablet; css-var --type-headline-immersive-lede-letter-spacing-tablet; css-var --type-headline-immersive-lede-family-mobile; css-var --type-headline-immersive-lede-weight-mobile; css-var --type-headline-immersive-lede-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-headline-immersive-lede style. (tablet breakpoint; family/weight from the base mobile declaration)"
+    }
+   },
+   "headline-lede": {
+    "desktop": {
+     "$value": {
+      "fontSize": "56px",
+      "lineHeight": "56px",
+      "letterSpacing": "-1.5px",
+      "fontFamily": "PlayFair, PlayFair-roboto, PlayFair-local, ui-serif, Georgia, Cambria, \"Times New Roman\", Times, Serif",
+      "fontWeight": 400,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-headline-lede-size-desktop; css-var --type-headline-lede-line-height-desktop; css-var --type-headline-lede-letter-spacing-desktop; css-var --type-headline-lede-family-mobile; css-var --type-headline-lede-weight-mobile; css-var --type-headline-lede-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The 56px lede headline (negative tracking). (desktop breakpoint; family/weight from the base mobile declaration)"
+    },
+    "mobile": {
+     "$value": {
+      "fontSize": "48px",
+      "lineHeight": "48px",
+      "letterSpacing": "-1.5px",
+      "fontFamily": "PlayFair, PlayFair-roboto, PlayFair-local, ui-serif, Georgia, Cambria, \"Times New Roman\", Times, Serif",
+      "fontWeight": 400,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-headline-lede-size-mobile; css-var --type-headline-lede-line-height-mobile; css-var --type-headline-lede-letter-spacing-mobile; css-var --type-headline-lede-family-mobile; css-var --type-headline-lede-weight-mobile; css-var --type-headline-lede-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The 56px lede headline (negative tracking). (mobile base breakpoint)"
+    }
+   },
+   "headline-prominent": {
+    "desktop": {
+     "$value": {
+      "fontSize": "24px",
+      "lineHeight": "29.6875px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-headline-prominent-size-desktop; css-var --type-headline-prominent-line-height-desktop; css-var --type-headline-prominent-letter-spacing-desktop; css-var --type-headline-prominent-family-mobile; css-var --type-headline-prominent-weight-mobile; css-var --type-headline-prominent-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The 24px prominent headline. (desktop breakpoint; family/weight from the base mobile declaration)"
+    },
+    "mobile": {
+     "$value": {
+      "fontSize": "20px",
+      "lineHeight": "26.0938px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-headline-prominent-size-mobile; css-var --type-headline-prominent-line-height-mobile; css-var --type-headline-prominent-letter-spacing-mobile; css-var --type-headline-prominent-family-mobile; css-var --type-headline-prominent-weight-mobile; css-var --type-headline-prominent-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The 24px prominent headline. (mobile base breakpoint)"
+    }
+   },
+   "headline-standard": {
+    "desktop": {
+     "$value": {
+      "fontSize": "20px",
+      "lineHeight": "26.0938px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-headline-standard-size-desktop; css-var --type-headline-standard-line-height-desktop; css-var --type-headline-standard-letter-spacing-desktop; css-var --type-headline-standard-family-mobile; css-var --type-headline-standard-weight-mobile; css-var --type-headline-standard-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-headline-standard style. (desktop breakpoint; family/weight from the base mobile declaration)"
+    },
+    "laptop": {
+     "$value": {
+      "fontSize": "20px",
+      "lineHeight": "28px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-headline-standard-size-laptop; css-var --type-headline-standard-line-height-laptop; css-var --type-headline-standard-letter-spacing-laptop; css-var --type-headline-standard-family-mobile; css-var --type-headline-standard-weight-mobile; css-var --type-headline-standard-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-headline-standard style. (laptop breakpoint; family/weight from the base mobile declaration)"
+    },
+    "mobile": {
+     "$value": {
+      "fontSize": "20px",
+      "lineHeight": "26.0938px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-headline-standard-size-mobile; css-var --type-headline-standard-line-height-mobile; css-var --type-headline-standard-letter-spacing-mobile; css-var --type-headline-standard-family-mobile; css-var --type-headline-standard-weight-mobile; css-var --type-headline-standard-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-headline-standard style. (mobile base breakpoint)"
+    },
+    "tablet": {
+     "$value": {
+      "fontSize": "20px",
+      "lineHeight": "26.0938px",
+      "letterSpacing": "0.1875px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-headline-standard-size-tablet; css-var --type-headline-standard-line-height-tablet; css-var --type-headline-standard-letter-spacing-tablet; css-var --type-headline-standard-family-mobile; css-var --type-headline-standard-weight-mobile; css-var --type-headline-standard-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-headline-standard style. (tablet breakpoint; family/weight from the base mobile declaration)"
+    }
+   },
+   "helper-txt-lg": {
+    "mobile": {
+     "$value": {
+      "fontSize": "16px",
+      "lineHeight": "23.1875px",
+      "letterSpacing": "0.1875px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-helper-txt-lg-size-mobile; css-var --type-helper-txt-lg-line-height-mobile; css-var --type-helper-txt-lg-letter-spacing-mobile; css-var --type-helper-txt-lg-family-mobile; css-var --type-helper-txt-lg-weight-mobile; css-var --type-helper-txt-lg-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-helper-txt-lg style. (mobile base breakpoint)"
+    }
+   },
+   "helper-txt-md": {
+    "mobile": {
+     "$value": {
+      "fontSize": "14px",
+      "lineHeight": "20.2969px",
+      "letterSpacing": "0.390625px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-helper-txt-md-size-mobile; css-var --type-helper-txt-md-line-height-mobile; css-var --type-helper-txt-md-letter-spacing-mobile; css-var --type-helper-txt-md-family-mobile; css-var --type-helper-txt-md-weight-mobile; css-var --type-helper-txt-md-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-helper-txt-md style. (mobile base breakpoint)"
+    }
+   },
+   "helper-txt-sm": {
+    "mobile": {
+     "$value": {
+      "fontSize": "13px",
+      "lineHeight": "18.1875px",
+      "letterSpacing": "0.390625px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-helper-txt-sm-size-mobile; css-var --type-helper-txt-sm-line-height-mobile; css-var --type-helper-txt-sm-letter-spacing-mobile; css-var --type-helper-txt-sm-family-mobile; css-var --type-helper-txt-sm-weight-mobile; css-var --type-helper-txt-sm-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-helper-txt-sm style. (mobile base breakpoint)"
+    }
+   },
+   "label-lg": {
+    "mobile": {
+     "$value": {
+      "fontSize": "16px",
+      "lineHeight": "20.2969px",
+      "letterSpacing": "0.1875px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "textTransform": "capitalize"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-label-lg-size-mobile; css-var --type-label-lg-line-height-mobile; css-var --type-label-lg-letter-spacing-mobile; css-var --type-label-lg-family-mobile; css-var --type-label-lg-weight-mobile; css-var --type-label-lg-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-label-lg style. (mobile base breakpoint)"
+    }
+   },
+   "label-lg-decoration": {
+    "mobile": {
+     "$value": {
+      "fontStyle": "solid"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-label-lg-decoration-style-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-label-lg-decoration style. (mobile base breakpoint)"
+    }
+   },
+   "label-md": {
+    "mobile": {
+     "$value": {
+      "fontSize": "16px",
+      "lineHeight": "20.2969px",
+      "letterSpacing": "0.1875px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "textTransform": "capitalize"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-label-md-size-mobile; css-var --type-label-md-line-height-mobile; css-var --type-label-md-letter-spacing-mobile; css-var --type-label-md-family-mobile; css-var --type-label-md-weight-mobile; css-var --type-label-md-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-label-md style. (mobile base breakpoint)"
+    }
+   },
+   "label-md-decoration": {
+    "mobile": {
+     "$value": {
+      "fontStyle": "solid"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-label-md-decoration-style-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-label-md-decoration style. (mobile base breakpoint)"
+    }
+   },
+   "label-sm": {
+    "mobile": {
+     "$value": {
+      "fontSize": "13px",
+      "lineHeight": "18.1875px",
+      "letterSpacing": "0.390625px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "textTransform": "capitalize"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-label-sm-size-mobile; css-var --type-label-sm-line-height-mobile; css-var --type-label-sm-letter-spacing-mobile; css-var --type-label-sm-family-mobile; css-var --type-label-sm-weight-mobile; css-var --type-label-sm-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-label-sm style. (mobile base breakpoint)"
+    }
+   },
+   "label-sm-decoration": {
+    "mobile": {
+     "$value": {
+      "fontStyle": "solid"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-label-sm-decoration-style-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-label-sm-decoration style. (mobile base breakpoint)"
+    }
+   },
+   "legal-disclaimer": {
+    "mobile": {
+     "$value": {
+      "fontSize": "14px",
+      "lineHeight": "20.2969px",
+      "letterSpacing": "0.390625px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-legal-disclaimer-size-mobile; css-var --type-legal-disclaimer-line-height-mobile; css-var --type-legal-disclaimer-letter-spacing-mobile; css-var --type-legal-disclaimer-family-mobile; css-var --type-legal-disclaimer-weight-mobile; css-var --type-legal-disclaimer-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-legal-disclaimer style. (mobile base breakpoint)"
+    }
+   },
+   "legal-disclosure": {
+    "desktop": {
+     "$value": {
+      "fontSize": "13px",
+      "lineHeight": "18.1875px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-legal-disclosure-size-desktop; css-var --type-legal-disclosure-line-height-desktop; css-var --type-legal-disclosure-family-mobile; css-var --type-legal-disclosure-weight-mobile; css-var --type-legal-disclosure-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-legal-disclosure style. (desktop breakpoint; family/weight from the base mobile declaration)"
+    },
+    "mobile": {
+     "$value": {
+      "fontSize": "12px",
+      "lineHeight": "16.7969px",
+      "letterSpacing": "0.390625px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-legal-disclosure-size-mobile; css-var --type-legal-disclosure-line-height-mobile; css-var --type-legal-disclosure-letter-spacing-mobile; css-var --type-legal-disclosure-family-mobile; css-var --type-legal-disclosure-weight-mobile; css-var --type-legal-disclosure-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-legal-disclosure style. (mobile base breakpoint)"
+    }
+   },
+   "legal-fine-print": {
+    "mobile": {
+     "$value": {
+      "fontSize": "11px",
+      "lineHeight": "14.8438px",
+      "letterSpacing": "0.390625px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-legal-fine-print-size-mobile; css-var --type-legal-fine-print-line-height-mobile; css-var --type-legal-fine-print-letter-spacing-mobile; css-var --type-legal-fine-print-family-mobile; css-var --type-legal-fine-print-weight-mobile; css-var --type-legal-fine-print-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The footer legal style. (mobile base breakpoint)"
+    }
+   },
+   "legal-terms": {
+    "desktop": {
+     "$value": {
+      "fontSize": "13px",
+      "lineHeight": "18.1875px",
+      "letterSpacing": "0.390625px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-legal-terms-size-desktop; css-var --type-legal-terms-line-height-desktop; css-var --type-legal-terms-letter-spacing-desktop; css-var --type-legal-terms-family-mobile; css-var --type-legal-terms-weight-mobile; css-var --type-legal-terms-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The legal terms style. (desktop breakpoint; family/weight from the base mobile declaration)"
+    },
+    "mobile": {
+     "$value": {
+      "fontSize": "13px",
+      "lineHeight": "18.1875px",
+      "letterSpacing": "0.390625px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-legal-terms-size-mobile; css-var --type-legal-terms-line-height-mobile; css-var --type-legal-terms-letter-spacing-mobile; css-var --type-legal-terms-family-mobile; css-var --type-legal-terms-weight-mobile; css-var --type-legal-terms-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The legal terms style. (mobile base breakpoint)"
+    }
+   },
+   "list-header": {
+    "mobile": {
+     "$value": {
+      "fontSize": "18px",
+      "lineHeight": "23.1875px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 700,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-list-header-size-mobile; css-var --type-list-header-line-height-mobile; css-var --type-list-header-letter-spacing-mobile; css-var --type-list-header-family-mobile; css-var --type-list-header-weight-mobile; css-var --type-list-header-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-list-header style. (mobile base breakpoint)"
+    }
+   },
+   "list-item": {
+    "desktop": {
+     "$value": {
+      "fontSize": "16px",
+      "lineHeight": "23.1875px",
+      "letterSpacing": "0.1875px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-list-item-size-desktop; css-var --type-list-item-line-height-desktop; css-var --type-list-item-letter-spacing-desktop; css-var --type-list-item-family-mobile; css-var --type-list-item-weight-mobile; css-var --type-list-item-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The plan-card perk list style. (desktop breakpoint; family/weight from the base mobile declaration)"
+    },
+    "mobile": {
+     "$value": {
+      "fontSize": "16px",
+      "lineHeight": "23.1875px",
+      "letterSpacing": "0.1875px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-list-item-size-mobile; css-var --type-list-item-line-height-mobile; css-var --type-list-item-letter-spacing-mobile; css-var --type-list-item-family-mobile; css-var --type-list-item-weight-mobile; css-var --type-list-item-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The plan-card perk list style. (mobile base breakpoint)"
+    }
+   },
+   "list-paragraph": {
+    "mobile": {
+     "$value": {
+      "fontSize": "18px",
+      "lineHeight": "26.0938px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-list-paragraph-size-mobile; css-var --type-list-paragraph-line-height-mobile; css-var --type-list-paragraph-letter-spacing-mobile; css-var --type-list-paragraph-family-mobile; css-var --type-list-paragraph-weight-mobile; css-var --type-list-paragraph-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-list-paragraph style. (mobile base breakpoint)"
+    }
+   },
+   "member": {
+    "desktop": {
+     "$value": {
+      "fontSize": "14px",
+      "lineHeight": "20.2969px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-member-size-desktop; css-var --type-member-line-height-desktop; css-var --type-member-family-mobile; css-var --type-member-weight-mobile; css-var --type-member-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-member style. (desktop breakpoint; family/weight from the base mobile declaration)"
+    },
+    "mobile": {
+     "$value": {
+      "fontSize": "14px",
+      "lineHeight": "20.2969px",
+      "letterSpacing": "0.390625px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-member-size-mobile; css-var --type-member-line-height-mobile; css-var --type-member-letter-spacing-mobile; css-var --type-member-family-mobile; css-var --type-member-weight-mobile; css-var --type-member-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-member style. (mobile base breakpoint)"
+    }
+   },
+   "meta-author": {
+    "mobile": {
+     "$value": {
+      "fontSize": "12px",
+      "lineHeight": "16.7969px",
+      "letterSpacing": "0.390625px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "textTransform": "uppercase"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-meta-author-size-mobile; css-var --type-meta-author-line-height-mobile; css-var --type-meta-author-letter-spacing-mobile; css-var --type-meta-author-family-mobile; css-var --type-meta-author-weight-mobile; css-var --type-meta-author-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The byline/meta style. (mobile base breakpoint)"
+    }
+   },
+   "meta-readtime": {
+    "mobile": {
+     "$value": {
+      "fontSize": "12px",
+      "lineHeight": "16.7969px",
+      "letterSpacing": "0.390625px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-meta-readtime-size-mobile; css-var --type-meta-readtime-line-height-mobile; css-var --type-meta-readtime-letter-spacing-mobile; css-var --type-meta-readtime-family-mobile; css-var --type-meta-readtime-weight-mobile; css-var --type-meta-readtime-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The read-time meta style. (mobile base breakpoint)"
+    }
+   },
+   "meta-recipe": {
+    "mobile": {
+     "$value": {
+      "fontSize": "14px",
+      "lineHeight": "20.2969px",
+      "letterSpacing": "0.390625px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-meta-recipe-size-mobile; css-var --type-meta-recipe-line-height-mobile; css-var --type-meta-recipe-letter-spacing-mobile; css-var --type-meta-recipe-family-mobile; css-var --type-meta-recipe-weight-mobile; css-var --type-meta-recipe-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-meta-recipe style. (mobile base breakpoint)"
+    }
+   },
+   "meta-timestamp-md": {
+    "desktop": {
+     "$value": {
+      "fontSize": "18px",
+      "lineHeight": "26.0938px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-meta-timestamp-md-size-desktop; css-var --type-meta-timestamp-md-line-height-desktop; css-var --type-meta-timestamp-md-letter-spacing-desktop; css-var --type-meta-timestamp-md-family-mobile; css-var --type-meta-timestamp-md-weight-mobile; css-var --type-meta-timestamp-md-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The timestamp meta style. (desktop breakpoint; family/weight from the base mobile declaration)"
+    },
+    "mobile": {
+     "$value": {
+      "fontSize": "14px",
+      "lineHeight": "20.2969px",
+      "letterSpacing": "0.390625px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-meta-timestamp-md-size-mobile; css-var --type-meta-timestamp-md-line-height-mobile; css-var --type-meta-timestamp-md-letter-spacing-mobile; css-var --type-meta-timestamp-md-family-mobile; css-var --type-meta-timestamp-md-weight-mobile; css-var --type-meta-timestamp-md-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The timestamp meta style. (mobile base breakpoint)"
+    }
+   },
+   "meta-timestamp-sm": {
+    "mobile": {
+     "$value": {
+      "fontSize": "12px",
+      "lineHeight": "16.7969px",
+      "letterSpacing": "0.390625px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-meta-timestamp-sm-size-mobile; css-var --type-meta-timestamp-sm-line-height-mobile; css-var --type-meta-timestamp-sm-letter-spacing-mobile; css-var --type-meta-timestamp-sm-family-mobile; css-var --type-meta-timestamp-sm-weight-mobile; css-var --type-meta-timestamp-sm-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-meta-timestamp-sm style. (mobile base breakpoint)"
+    }
+   },
+   "nav-header-md": {
+    "desktop": {
+     "$value": {
+      "fontSize": "18px",
+      "lineHeight": "26.0938px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-nav-header-md-size-desktop; css-var --type-nav-header-md-line-height-desktop; css-var --type-nav-header-md-family-mobile; css-var --type-nav-header-md-weight-mobile; css-var --type-nav-header-md-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-nav-header-md style. (desktop breakpoint; family/weight from the base mobile declaration)"
+    },
+    "mobile": {
+     "$value": {
+      "fontSize": "18px",
+      "lineHeight": "26.0938px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-nav-header-md-size-mobile; css-var --type-nav-header-md-line-height-mobile; css-var --type-nav-header-md-letter-spacing-mobile; css-var --type-nav-header-md-family-mobile; css-var --type-nav-header-md-weight-mobile; css-var --type-nav-header-md-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-nav-header-md style. (mobile base breakpoint)"
+    }
+   },
+   "nav-header-sm": {
+    "desktop": {
+     "$value": {
+      "fontSize": "16px",
+      "lineHeight": "23.1875px",
+      "letterSpacing": "0.1875px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-nav-header-sm-size-desktop; css-var --type-nav-header-sm-line-height-desktop; css-var --type-nav-header-sm-letter-spacing-desktop; css-var --type-nav-header-sm-family-mobile; css-var --type-nav-header-sm-weight-mobile; css-var --type-nav-header-sm-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-nav-header-sm style. (desktop breakpoint; family/weight from the base mobile declaration)"
+    },
+    "mobile": {
+     "$value": {
+      "fontSize": "16px",
+      "lineHeight": "23.1875px",
+      "letterSpacing": "0.1875px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-nav-header-sm-size-mobile; css-var --type-nav-header-sm-line-height-mobile; css-var --type-nav-header-sm-letter-spacing-mobile; css-var --type-nav-header-sm-family-mobile; css-var --type-nav-header-sm-weight-mobile; css-var --type-nav-header-sm-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-nav-header-sm style. (mobile base breakpoint)"
+    }
+   },
+   "nav-header-xs": {
+    "mobile": {
+     "$value": {
+      "fontSize": "14px",
+      "lineHeight": "20.2969px",
+      "letterSpacing": "0.390625px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-nav-header-xs-size-mobile; css-var --type-nav-header-xs-line-height-mobile; css-var --type-nav-header-xs-letter-spacing-mobile; css-var --type-nav-header-xs-family-mobile; css-var --type-nav-header-xs-weight-mobile; css-var --type-nav-header-xs-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The 13px utility-strip/nav meta style. (mobile base breakpoint)"
+    }
+   },
+   "nav-linktxt-md": {
+    "desktop": {
+     "$value": {
+      "fontSize": "16px",
+      "lineHeight": "23.1875px",
+      "letterSpacing": "0.1875px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-nav-linktxt-md-size-desktop; css-var --type-nav-linktxt-md-line-height-desktop; css-var --type-nav-linktxt-md-letter-spacing-desktop; css-var --type-nav-linktxt-md-family-mobile; css-var --type-nav-linktxt-md-weight-mobile; css-var --type-nav-linktxt-md-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The 16px category-nav link style. (desktop breakpoint; family/weight from the base mobile declaration)"
+    },
+    "mobile": {
+     "$value": {
+      "fontSize": "16px",
+      "lineHeight": "23.1875px",
+      "letterSpacing": "0.1875px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-nav-linktxt-md-size-mobile; css-var --type-nav-linktxt-md-line-height-mobile; css-var --type-nav-linktxt-md-letter-spacing-mobile; css-var --type-nav-linktxt-md-family-mobile; css-var --type-nav-linktxt-md-weight-mobile; css-var --type-nav-linktxt-md-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The 16px category-nav link style. (mobile base breakpoint)"
+    }
+   },
+   "nav-linktxt-sm": {
+    "mobile": {
+     "$value": {
+      "fontSize": "14px",
+      "lineHeight": "20.2969px",
+      "letterSpacing": "0.390625px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-nav-linktxt-sm-size-mobile; css-var --type-nav-linktxt-sm-line-height-mobile; css-var --type-nav-linktxt-sm-letter-spacing-mobile; css-var --type-nav-linktxt-sm-family-mobile; css-var --type-nav-linktxt-sm-weight-mobile; css-var --type-nav-linktxt-sm-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-nav-linktxt-sm style. (mobile base breakpoint)"
+    }
+   },
+   "nav-linktxt-xs": {
+    "mobile": {
+     "$value": {
+      "fontSize": "13px",
+      "lineHeight": "18.1875px",
+      "letterSpacing": "0.390625px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 600,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-nav-linktxt-xs-size-mobile; css-var --type-nav-linktxt-xs-line-height-mobile; css-var --type-nav-linktxt-xs-letter-spacing-mobile; css-var --type-nav-linktxt-xs-family-mobile; css-var --type-nav-linktxt-xs-weight-mobile; css-var --type-nav-linktxt-xs-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-nav-linktxt-xs style. (mobile base breakpoint)"
+    }
+   },
+   "nav-sidepanel-linktxt": {
+    "mobile": {
+     "$value": {
+      "fontSize": "14px",
+      "lineHeight": "20.2969px",
+      "letterSpacing": "0.390625px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "textTransform": "capitalize"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-nav-sidepanel-linktxt-size-mobile; css-var --type-nav-sidepanel-linktxt-line-height-mobile; css-var --type-nav-sidepanel-linktxt-letter-spacing-mobile; css-var --type-nav-sidepanel-linktxt-family-mobile; css-var --type-nav-sidepanel-linktxt-weight-mobile; css-var --type-nav-sidepanel-linktxt-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-nav-sidepanel-linktxt style. (mobile base breakpoint)"
+    }
+   },
+   "number-lg": {
+    "mobile": {
+     "$value": {
+      "fontSize": "24px",
+      "lineHeight": "26.0938px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 700,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-number-lg-size-mobile; css-var --type-number-lg-line-height-mobile; css-var --type-number-lg-letter-spacing-mobile; css-var --type-number-lg-family-mobile; css-var --type-number-lg-weight-mobile; css-var --type-number-lg-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-number-lg style. (mobile base breakpoint)"
+    }
+   },
+   "number-md": {
+    "desktop": {
+     "$value": {
+      "fontSize": "24px",
+      "lineHeight": "26.0938px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 700,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-number-md-size-desktop; css-var --type-number-md-line-height-desktop; css-var --type-number-md-letter-spacing-desktop; css-var --type-number-md-family-mobile; css-var --type-number-md-weight-mobile; css-var --type-number-md-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-number-md style. (desktop breakpoint; family/weight from the base mobile declaration)"
+    },
+    "mobile": {
+     "$value": {
+      "fontSize": "22px",
+      "lineHeight": "23.1875px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 700,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-number-md-size-mobile; css-var --type-number-md-line-height-mobile; css-var --type-number-md-letter-spacing-mobile; css-var --type-number-md-family-mobile; css-var --type-number-md-weight-mobile; css-var --type-number-md-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-number-md style. (mobile base breakpoint)"
+    }
+   },
+   "offer-price-current": {
+    "desktop": {
+     "$value": {
+      "fontSize": "20px",
+      "lineHeight": "28px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-offer-price-current-size-desktop; css-var --type-offer-price-current-line-height-desktop; css-var --type-offer-price-current-letter-spacing-desktop; css-var --type-offer-price-current-family-mobile; css-var --type-offer-price-current-weight-mobile; css-var --type-offer-price-current-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The plan-card current price style. (desktop breakpoint; family/weight from the base mobile declaration)"
+    },
+    "mobile": {
+     "$value": {
+      "fontSize": "20px",
+      "lineHeight": "28px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-offer-price-current-size-mobile; css-var --type-offer-price-current-line-height-mobile; css-var --type-offer-price-current-letter-spacing-mobile; css-var --type-offer-price-current-family-mobile; css-var --type-offer-price-current-weight-mobile; css-var --type-offer-price-current-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The plan-card current price style. (mobile base breakpoint)"
+    }
+   },
+   "offer-price-duration": {
+    "desktop": {
+     "$value": {
+      "fontSize": "20px",
+      "lineHeight": "28px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-offer-price-duration-size-desktop; css-var --type-offer-price-duration-line-height-desktop; css-var --type-offer-price-duration-letter-spacing-desktop; css-var --type-offer-price-duration-family-mobile; css-var --type-offer-price-duration-weight-mobile; css-var --type-offer-price-duration-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The plan-card price duration style. (desktop breakpoint; family/weight from the base mobile declaration)"
+    },
+    "mobile": {
+     "$value": {
+      "fontSize": "20px",
+      "lineHeight": "28px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-offer-price-duration-size-mobile; css-var --type-offer-price-duration-line-height-mobile; css-var --type-offer-price-duration-letter-spacing-mobile; css-var --type-offer-price-duration-family-mobile; css-var --type-offer-price-duration-weight-mobile; css-var --type-offer-price-duration-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The plan-card price duration style. (mobile base breakpoint)"
+    }
+   },
+   "offer-price-strikethrough": {
+    "desktop": {
+     "$value": {
+      "fontSize": "20px",
+      "lineHeight": "28px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-offer-price-strikethrough-size-desktop; css-var --type-offer-price-strikethrough-line-height-desktop; css-var --type-offer-price-strikethrough-letter-spacing-desktop; css-var --type-offer-price-strikethrough-family-mobile; css-var --type-offer-price-strikethrough-weight-mobile; css-var --type-offer-price-strikethrough-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The plan-card struck list-price style. (desktop breakpoint; family/weight from the base mobile declaration)"
+    },
+    "mobile": {
+     "$value": {
+      "fontSize": "20px",
+      "lineHeight": "28px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-offer-price-strikethrough-size-mobile; css-var --type-offer-price-strikethrough-line-height-mobile; css-var --type-offer-price-strikethrough-letter-spacing-mobile; css-var --type-offer-price-strikethrough-family-mobile; css-var --type-offer-price-strikethrough-weight-mobile; css-var --type-offer-price-strikethrough-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The plan-card struck list-price style. (mobile base breakpoint)"
+    }
+   },
+   "pagination": {
+    "desktop": {
+     "$value": {
+      "fontSize": "14px",
+      "lineHeight": "20.2969px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "textTransform": "capitalize"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-pagination-size-desktop; css-var --type-pagination-line-height-desktop; css-var --type-pagination-family-mobile; css-var --type-pagination-weight-mobile; css-var --type-pagination-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The pagination number style. (desktop breakpoint; family/weight from the base mobile declaration)"
+    },
+    "mobile": {
+     "$value": {
+      "fontSize": "14px",
+      "lineHeight": "20.2969px",
+      "letterSpacing": "0.390625px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "textTransform": "capitalize"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-pagination-size-mobile; css-var --type-pagination-line-height-mobile; css-var --type-pagination-letter-spacing-mobile; css-var --type-pagination-family-mobile; css-var --type-pagination-weight-mobile; css-var --type-pagination-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The pagination number style. (mobile base breakpoint)"
+    }
+   },
+   "pagination-txt-active": {
+    "mobile": {
+     "$value": {
+      "fontWeight": 400
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-pagination-txt-active-weight-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-pagination-txt-active style. (mobile base breakpoint)"
+    }
+   },
+   "product-discount": {
+    "mobile": {
+     "$value": {
+      "fontSize": "14px",
+      "lineHeight": "20.2969px",
+      "letterSpacing": "0.390625px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-product-discount-size-mobile; css-var --type-product-discount-line-height-mobile; css-var --type-product-discount-letter-spacing-mobile; css-var --type-product-discount-family-mobile; css-var --type-product-discount-weight-mobile; css-var --type-product-discount-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-product-discount style. (mobile base breakpoint)"
+    }
+   },
+   "product-price": {
+    "mobile": {
+     "$value": {
+      "fontSize": "14px",
+      "lineHeight": "20.2969px",
+      "letterSpacing": "0.390625px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "textTransform": "uppercase"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-product-price-size-mobile; css-var --type-product-price-line-height-mobile; css-var --type-product-price-letter-spacing-mobile; css-var --type-product-price-family-mobile; css-var --type-product-price-weight-mobile; css-var --type-product-price-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-product-price style. (mobile base breakpoint)"
+    }
+   },
+   "pullquote-author": {
+    "desktop": {
+     "$value": {
+      "fontSize": "14px",
+      "lineHeight": "18.1875px",
+      "letterSpacing": "0.1875px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 600,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-pullquote-author-size-desktop; css-var --type-pullquote-author-line-height-desktop; css-var --type-pullquote-author-letter-spacing-desktop; css-var --type-pullquote-author-family-mobile; css-var --type-pullquote-author-weight-mobile; css-var --type-pullquote-author-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-pullquote-author style. (desktop breakpoint; family/weight from the base mobile declaration)"
+    },
+    "mobile": {
+     "$value": {
+      "fontSize": "14px",
+      "lineHeight": "18.1875px",
+      "letterSpacing": "0.1875px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 600,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-pullquote-author-size-mobile; css-var --type-pullquote-author-line-height-mobile; css-var --type-pullquote-author-letter-spacing-mobile; css-var --type-pullquote-author-family-mobile; css-var --type-pullquote-author-weight-mobile; css-var --type-pullquote-author-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-pullquote-author style. (mobile base breakpoint)"
+    },
+    "tablet": {
+     "$value": {
+      "fontSize": "14px",
+      "lineHeight": "18.1875px",
+      "letterSpacing": "0.1875px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 600,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-pullquote-author-size-tablet; css-var --type-pullquote-author-line-height-tablet; css-var --type-pullquote-author-letter-spacing-tablet; css-var --type-pullquote-author-family-mobile; css-var --type-pullquote-author-weight-mobile; css-var --type-pullquote-author-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-pullquote-author style. (tablet breakpoint; family/weight from the base mobile declaration)"
+    }
+   },
+   "pullquote-credit": {
+    "desktop": {
+     "$value": {
+      "fontSize": "13px",
+      "lineHeight": "18.1875px",
+      "letterSpacing": "0.1875px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-pullquote-credit-size-desktop; css-var --type-pullquote-credit-line-height-desktop; css-var --type-pullquote-credit-letter-spacing-desktop; css-var --type-pullquote-credit-family-mobile; css-var --type-pullquote-credit-weight-mobile; css-var --type-pullquote-credit-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-pullquote-credit style. (desktop breakpoint; family/weight from the base mobile declaration)"
+    },
+    "mobile": {
+     "$value": {
+      "fontSize": "13px",
+      "lineHeight": "18.1875px",
+      "letterSpacing": "0.1875px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-pullquote-credit-size-mobile; css-var --type-pullquote-credit-line-height-mobile; css-var --type-pullquote-credit-letter-spacing-mobile; css-var --type-pullquote-credit-family-mobile; css-var --type-pullquote-credit-weight-mobile; css-var --type-pullquote-credit-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-pullquote-credit style. (mobile base breakpoint)"
+    },
+    "tablet": {
+     "$value": {
+      "fontSize": "13px",
+      "lineHeight": "18.1875px",
+      "letterSpacing": "0.1875px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-pullquote-credit-size-tablet; css-var --type-pullquote-credit-line-height-tablet; css-var --type-pullquote-credit-letter-spacing-tablet; css-var --type-pullquote-credit-family-mobile; css-var --type-pullquote-credit-weight-mobile; css-var --type-pullquote-credit-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-pullquote-credit style. (tablet breakpoint; family/weight from the base mobile declaration)"
+    }
+   },
+   "pullquote-prominent": {
+    "desktop": {
+     "$value": {
+      "fontSize": "32px",
+      "lineHeight": "41.5938px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 700,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-pullquote-prominent-size-desktop; css-var --type-pullquote-prominent-line-height-desktop; css-var --type-pullquote-prominent-letter-spacing-desktop; css-var --type-pullquote-prominent-family-mobile; css-var --type-pullquote-prominent-weight-mobile; css-var --type-pullquote-prominent-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-pullquote-prominent style. (desktop breakpoint; family/weight from the base mobile declaration)"
+    },
+    "mobile": {
+     "$value": {
+      "fontSize": "28px",
+      "lineHeight": "36.3906px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 700,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-pullquote-prominent-size-mobile; css-var --type-pullquote-prominent-line-height-mobile; css-var --type-pullquote-prominent-letter-spacing-mobile; css-var --type-pullquote-prominent-family-mobile; css-var --type-pullquote-prominent-weight-mobile; css-var --type-pullquote-prominent-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-pullquote-prominent style. (mobile base breakpoint)"
+    },
+    "tablet": {
+     "$value": {
+      "fontSize": "32px",
+      "lineHeight": "41.5938px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 700,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-pullquote-prominent-size-tablet; css-var --type-pullquote-prominent-line-height-tablet; css-var --type-pullquote-prominent-letter-spacing-tablet; css-var --type-pullquote-prominent-family-mobile; css-var --type-pullquote-prominent-weight-mobile; css-var --type-pullquote-prominent-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-pullquote-prominent style. (tablet breakpoint; family/weight from the base mobile declaration)"
+    }
+   },
+   "pullquote-standard": {
+    "desktop": {
+     "$value": {
+      "fontSize": "32px",
+      "lineHeight": "41.5938px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 700,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-pullquote-standard-size-desktop; css-var --type-pullquote-standard-line-height-desktop; css-var --type-pullquote-standard-letter-spacing-desktop; css-var --type-pullquote-standard-family-mobile; css-var --type-pullquote-standard-weight-mobile; css-var --type-pullquote-standard-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-pullquote-standard style. (desktop breakpoint; family/weight from the base mobile declaration)"
+    },
+    "mobile": {
+     "$value": {
+      "fontSize": "28px",
+      "lineHeight": "36.3906px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 700,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-pullquote-standard-size-mobile; css-var --type-pullquote-standard-line-height-mobile; css-var --type-pullquote-standard-letter-spacing-mobile; css-var --type-pullquote-standard-family-mobile; css-var --type-pullquote-standard-weight-mobile; css-var --type-pullquote-standard-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-pullquote-standard style. (mobile base breakpoint)"
+    },
+    "tablet": {
+     "$value": {
+      "fontSize": "32px",
+      "lineHeight": "41.5938px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 700,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-pullquote-standard-size-tablet; css-var --type-pullquote-standard-line-height-tablet; css-var --type-pullquote-standard-letter-spacing-tablet; css-var --type-pullquote-standard-family-mobile; css-var --type-pullquote-standard-weight-mobile; css-var --type-pullquote-standard-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-pullquote-standard style. (tablet breakpoint; family/weight from the base mobile declaration)"
+    }
+   },
+   "slide-compact": {
+    "desktop": {
+     "$value": {
+      "fontSize": "20px",
+      "lineHeight": "28px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 700,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-slide-compact-size-desktop; css-var --type-slide-compact-line-height-desktop; css-var --type-slide-compact-letter-spacing-desktop; css-var --type-slide-compact-family-mobile; css-var --type-slide-compact-weight-mobile; css-var --type-slide-compact-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-slide-compact style. (desktop breakpoint; family/weight from the base mobile declaration)"
+    },
+    "mobile": {
+     "$value": {
+      "fontSize": "18px",
+      "lineHeight": "26.0938px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 700,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-slide-compact-size-mobile; css-var --type-slide-compact-line-height-mobile; css-var --type-slide-compact-letter-spacing-mobile; css-var --type-slide-compact-family-mobile; css-var --type-slide-compact-weight-mobile; css-var --type-slide-compact-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-slide-compact style. (mobile base breakpoint)"
+    }
+   },
+   "slide-lede": {
+    "desktop": {
+     "$value": {
+      "fontSize": "28px",
+      "lineHeight": "36.3906px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 700,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-slide-lede-size-desktop; css-var --type-slide-lede-line-height-desktop; css-var --type-slide-lede-letter-spacing-desktop; css-var --type-slide-lede-family-mobile; css-var --type-slide-lede-weight-mobile; css-var --type-slide-lede-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-slide-lede style. (desktop breakpoint; family/weight from the base mobile declaration)"
+    },
+    "mobile": {
+     "$value": {
+      "fontSize": "24px",
+      "lineHeight": "32.3906px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 700,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-slide-lede-size-mobile; css-var --type-slide-lede-line-height-mobile; css-var --type-slide-lede-letter-spacing-mobile; css-var --type-slide-lede-family-mobile; css-var --type-slide-lede-weight-mobile; css-var --type-slide-lede-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-slide-lede style. (mobile base breakpoint)"
+    }
+   },
+   "slide-standard": {
+    "desktop": {
+     "$value": {
+      "fontSize": "22px",
+      "lineHeight": "29.6875px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 700,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-slide-standard-size-desktop; css-var --type-slide-standard-line-height-desktop; css-var --type-slide-standard-letter-spacing-desktop; css-var --type-slide-standard-family-mobile; css-var --type-slide-standard-weight-mobile; css-var --type-slide-standard-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-slide-standard style. (desktop breakpoint; family/weight from the base mobile declaration)"
+    },
+    "mobile": {
+     "$value": {
+      "fontSize": "20px",
+      "lineHeight": "28px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 700,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-slide-standard-size-mobile; css-var --type-slide-standard-line-height-mobile; css-var --type-slide-standard-letter-spacing-mobile; css-var --type-slide-standard-family-mobile; css-var --type-slide-standard-weight-mobile; css-var --type-slide-standard-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-slide-standard style. (mobile base breakpoint)"
+    }
+   },
+   "stats-md": {
+    "mobile": {
+     "$value": {
+      "fontSize": "18px",
+      "lineHeight": "20.2969px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 700,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-stats-md-size-mobile; css-var --type-stats-md-line-height-mobile; css-var --type-stats-md-letter-spacing-mobile; css-var --type-stats-md-family-mobile; css-var --type-stats-md-weight-mobile; css-var --type-stats-md-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-stats-md style. (mobile base breakpoint)"
+    }
+   },
+   "subheadline-compact": {
+    "desktop": {
+     "$value": {
+      "fontSize": "20px",
+      "lineHeight": "28px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 700,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-subheadline-compact-size-desktop; css-var --type-subheadline-compact-line-height-desktop; css-var --type-subheadline-compact-letter-spacing-desktop; css-var --type-subheadline-compact-family-mobile; css-var --type-subheadline-compact-weight-mobile; css-var --type-subheadline-compact-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-subheadline-compact style. (desktop breakpoint; family/weight from the base mobile declaration)"
+    },
+    "mobile": {
+     "$value": {
+      "fontSize": "18px",
+      "lineHeight": "26.0938px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 700,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-subheadline-compact-size-mobile; css-var --type-subheadline-compact-line-height-mobile; css-var --type-subheadline-compact-letter-spacing-mobile; css-var --type-subheadline-compact-family-mobile; css-var --type-subheadline-compact-weight-mobile; css-var --type-subheadline-compact-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-subheadline-compact style. (mobile base breakpoint)"
+    }
+   },
+   "subheadline-marquee": {
+    "desktop": {
+     "$value": {
+      "fontSize": "20px",
+      "lineHeight": "28px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 700,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-subheadline-marquee-size-desktop; css-var --type-subheadline-marquee-line-height-desktop; css-var --type-subheadline-marquee-letter-spacing-desktop; css-var --type-subheadline-marquee-family-mobile; css-var --type-subheadline-marquee-weight-mobile; css-var --type-subheadline-marquee-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-subheadline-marquee style. (desktop breakpoint; family/weight from the base mobile declaration)"
+    },
+    "laptop": {
+     "$value": {
+      "fontSize": "20px",
+      "lineHeight": "28px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 700,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-subheadline-marquee-size-laptop; css-var --type-subheadline-marquee-line-height-laptop; css-var --type-subheadline-marquee-letter-spacing-laptop; css-var --type-subheadline-marquee-family-mobile; css-var --type-subheadline-marquee-weight-mobile; css-var --type-subheadline-marquee-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-subheadline-marquee style. (laptop breakpoint; family/weight from the base mobile declaration)"
+    },
+    "mobile": {
+     "$value": {
+      "fontSize": "18px",
+      "lineHeight": "26.0938px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 700,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-subheadline-marquee-size-mobile; css-var --type-subheadline-marquee-line-height-mobile; css-var --type-subheadline-marquee-letter-spacing-mobile; css-var --type-subheadline-marquee-family-mobile; css-var --type-subheadline-marquee-weight-mobile; css-var --type-subheadline-marquee-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-subheadline-marquee style. (mobile base breakpoint)"
+    },
+    "tablet": {
+     "$value": {
+      "fontSize": "20px",
+      "lineHeight": "28px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 700,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-subheadline-marquee-size-tablet; css-var --type-subheadline-marquee-line-height-tablet; css-var --type-subheadline-marquee-letter-spacing-tablet; css-var --type-subheadline-marquee-family-mobile; css-var --type-subheadline-marquee-weight-mobile; css-var --type-subheadline-marquee-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-subheadline-marquee style. (tablet breakpoint; family/weight from the base mobile declaration)"
+    }
+   },
+   "subheadline-standard": {
+    "desktop": {
+     "$value": {
+      "fontSize": "56px",
+      "lineHeight": "56px",
+      "letterSpacing": "0px",
+      "fontFamily": "PlayFair, PlayFair-roboto, PlayFair-local, ui-serif, Georgia, Cambria, \"Times New Roman\", Times, Serif",
+      "fontWeight": 400,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-subheadline-standard-size-desktop; css-var --type-subheadline-standard-line-height-desktop; css-var --type-subheadline-standard-letter-spacing-desktop; css-var --type-subheadline-standard-family-mobile; css-var --type-subheadline-standard-weight-mobile; css-var --type-subheadline-standard-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-subheadline-standard style. (desktop breakpoint; family/weight from the base mobile declaration)"
+    },
+    "mobile": {
+     "$value": {
+      "fontSize": "48px",
+      "lineHeight": "50px",
+      "letterSpacing": "0px",
+      "fontFamily": "PlayFair, PlayFair-roboto, PlayFair-local, ui-serif, Georgia, Cambria, \"Times New Roman\", Times, Serif",
+      "fontWeight": 400,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-subheadline-standard-size-mobile; css-var --type-subheadline-standard-line-height-mobile; css-var --type-subheadline-standard-letter-spacing-mobile; css-var --type-subheadline-standard-family-mobile; css-var --type-subheadline-standard-weight-mobile; css-var --type-subheadline-standard-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-subheadline-standard style. (mobile base breakpoint)"
+    }
+   },
+   "table-header": {
+    "mobile": {
+     "$value": {
+      "fontSize": "16px",
+      "lineHeight": "23.1875px",
+      "letterSpacing": "0.1875px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-table-header-size-mobile; css-var --type-table-header-line-height-mobile; css-var --type-table-header-letter-spacing-mobile; css-var --type-table-header-family-mobile; css-var --type-table-header-weight-mobile; css-var --type-table-header-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-table-header style. (mobile base breakpoint)"
+    }
+   },
+   "table-row": {
+    "mobile": {
+     "$value": {
+      "fontSize": "16px",
+      "lineHeight": "23.1875px",
+      "letterSpacing": "0.1875px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-table-row-size-mobile; css-var --type-table-row-line-height-mobile; css-var --type-table-row-letter-spacing-mobile; css-var --type-table-row-family-mobile; css-var --type-table-row-weight-mobile; css-var --type-table-row-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-table-row style. (mobile base breakpoint)"
+    }
+   },
+   "tag-lg": {
+    "mobile": {
+     "$value": {
+      "fontSize": "14px",
+      "lineHeight": "20.2969px",
+      "letterSpacing": "0.390625px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-tag-lg-size-mobile; css-var --type-tag-lg-line-height-mobile; css-var --type-tag-lg-letter-spacing-mobile; css-var --type-tag-lg-family-mobile; css-var --type-tag-lg-weight-mobile; css-var --type-tag-lg-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-tag-lg style. (mobile base breakpoint)"
+    }
+   },
+   "tag-md": {
+    "mobile": {
+     "$value": {
+      "fontSize": "14px",
+      "lineHeight": "20.2969px",
+      "letterSpacing": "0.390625px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-tag-md-size-mobile; css-var --type-tag-md-line-height-mobile; css-var --type-tag-md-letter-spacing-mobile; css-var --type-tag-md-family-mobile; css-var --type-tag-md-weight-mobile; css-var --type-tag-md-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-tag-md style. (mobile base breakpoint)"
+    }
+   },
+   "tag-sm": {
+    "mobile": {
+     "$value": {
+      "fontSize": "14px",
+      "lineHeight": "18.1875px",
+      "letterSpacing": "0.1875px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-tag-sm-size-mobile; css-var --type-tag-sm-line-height-mobile; css-var --type-tag-sm-letter-spacing-mobile; css-var --type-tag-sm-family-mobile; css-var --type-tag-sm-weight-mobile; css-var --type-tag-sm-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-tag-sm style. (mobile base breakpoint)"
+    }
+   },
+   "tag-xs": {
+    "mobile": {
+     "$value": {
+      "fontSize": "11px",
+      "lineHeight": "14.8438px",
+      "letterSpacing": "0.390625px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 400,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-tag-xs-size-mobile; css-var --type-tag-xs-line-height-mobile; css-var --type-tag-xs-letter-spacing-mobile; css-var --type-tag-xs-family-mobile; css-var --type-tag-xs-weight-mobile; css-var --type-tag-xs-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-tag-xs style. (mobile base breakpoint)"
+    }
+   },
+   "title-compact": {
+    "desktop": {
+     "$value": {
+      "fontSize": "20px",
+      "lineHeight": "28px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 700,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-title-compact-size-desktop; css-var --type-title-compact-line-height-desktop; css-var --type-title-compact-letter-spacing-desktop; css-var --type-title-compact-family-mobile; css-var --type-title-compact-weight-mobile; css-var --type-title-compact-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-title-compact style. (desktop breakpoint; family/weight from the base mobile declaration)"
+    },
+    "mobile": {
+     "$value": {
+      "fontSize": "18px",
+      "lineHeight": "26.0938px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 700,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-title-compact-size-mobile; css-var --type-title-compact-line-height-mobile; css-var --type-title-compact-letter-spacing-mobile; css-var --type-title-compact-family-mobile; css-var --type-title-compact-weight-mobile; css-var --type-title-compact-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-title-compact style. (mobile base breakpoint)"
+    }
+   },
+   "title-lede": {
+    "desktop": {
+     "$value": {
+      "fontSize": "28px",
+      "lineHeight": "36.3906px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 700,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-title-lede-size-desktop; css-var --type-title-lede-line-height-desktop; css-var --type-title-lede-letter-spacing-desktop; css-var --type-title-lede-family-mobile; css-var --type-title-lede-weight-mobile; css-var --type-title-lede-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-title-lede style. (desktop breakpoint; family/weight from the base mobile declaration)"
+    },
+    "mobile": {
+     "$value": {
+      "fontSize": "24px",
+      "lineHeight": "32.3906px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 700,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-title-lede-size-mobile; css-var --type-title-lede-line-height-mobile; css-var --type-title-lede-letter-spacing-mobile; css-var --type-title-lede-family-mobile; css-var --type-title-lede-weight-mobile; css-var --type-title-lede-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-title-lede style. (mobile base breakpoint)"
+    }
+   },
+   "title-standard": {
+    "desktop": {
+     "$value": {
+      "fontSize": "22px",
+      "lineHeight": "29.6875px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 700,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-title-standard-size-desktop; css-var --type-title-standard-line-height-desktop; css-var --type-title-standard-letter-spacing-desktop; css-var --type-title-standard-family-mobile; css-var --type-title-standard-weight-mobile; css-var --type-title-standard-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The standard card title style. (desktop breakpoint; family/weight from the base mobile declaration)"
+    },
+    "mobile": {
+     "$value": {
+      "fontSize": "20px",
+      "lineHeight": "28px",
+      "letterSpacing": "0px",
+      "fontFamily": "Lausanne, Lausanne-roboto, Lausanne-local, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "fontWeight": 700,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-title-standard-size-mobile; css-var --type-title-standard-line-height-mobile; css-var --type-title-standard-letter-spacing-mobile; css-var --type-title-standard-family-mobile; css-var --type-title-standard-weight-mobile; css-var --type-title-standard-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The standard card title style. (mobile base breakpoint)"
+    }
+   },
+   "transcript": {
+    "desktop": {
+     "$value": {
+      "fontSize": "16px",
+      "lineHeight": "23.1875px",
+      "letterSpacing": "0.1875px",
+      "fontFamily": "PlayFair, PlayFair-roboto, PlayFair-local, ui-serif, Georgia, Cambria, \"Times New Roman\", Times, Serif",
+      "fontWeight": 400,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-transcript-size-desktop; css-var --type-transcript-line-height-desktop; css-var --type-transcript-letter-spacing-desktop; css-var --type-transcript-family-mobile; css-var --type-transcript-weight-mobile; css-var --type-transcript-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-transcript style. (desktop breakpoint; family/weight from the base mobile declaration)"
+    },
+    "mobile": {
+     "$value": {
+      "fontSize": "16px",
+      "lineHeight": "23.1875px",
+      "letterSpacing": "0.1875px",
+      "fontFamily": "PlayFair, PlayFair-roboto, PlayFair-local, ui-serif, Georgia, Cambria, \"Times New Roman\", Times, Serif",
+      "fontWeight": 400,
+      "textTransform": "none"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --type-transcript-size-mobile; css-var --type-transcript-line-height-mobile; css-var --type-transcript-letter-spacing-mobile; css-var --type-transcript-family-mobile; css-var --type-transcript-weight-mobile; css-var --type-transcript-txt-case-mobile resolved (raw/css-vars.json)"
+     },
+     "$description": "The --type-transcript style. (mobile base breakpoint)"
     }
    }
   },
   "shadow": {
-   "card_dim_shadow_blur": {
-    "var": "--comp-card-dim-shadow-blur",
-    "type": "other",
-    "source": "css-var --comp-card-dim-shadow-blur resolved (raw/css-vars.json)",
-    "description": "FRE shadow --comp-card-dim-shadow-blur."
+   "sm": {
+    "$value": [
+     {
+      "offsetX": "0px",
+      "offsetY": "1px",
+      "blur": "0px",
+      "spread": "2px",
+      "color": "rgba(0, 0, 0, 0.2)"
+     }
+    ],
+    "$type": "shadow",
+    "$extensions": {
+     "source": "css-var --dim-elevation-shadow-sm-position-x/-position-y/-blur/-spread/-color resolved (raw/css-vars.json)"
+    },
+    "$description": "The sm elevation shadow (0px 1px 0px 2px rgba(0, 0, 0, 0.2)) from FRE's --dim-elevation-shadow-sm-* parts."
    },
-   "card_dim_shadow_color": {
-    "var": "--comp-card-dim-shadow-color",
-    "type": "other",
-    "source": "css-var --comp-card-dim-shadow-color resolved (raw/css-vars.json)",
-    "description": "FRE shadow --comp-card-dim-shadow-color."
+   "md": {
+    "$value": [
+     {
+      "offsetX": "0px",
+      "offsetY": "2px",
+      "blur": "0px",
+      "spread": "6px",
+      "color": "rgba(0, 0, 0, 0.2)"
+     }
+    ],
+    "$type": "shadow",
+    "$extensions": {
+     "source": "css-var --dim-elevation-shadow-md-position-x/-position-y/-blur/-spread/-color resolved (raw/css-vars.json)"
+    },
+    "$description": "The md elevation shadow (0px 2px 0px 6px rgba(0, 0, 0, 0.2)) from FRE's --dim-elevation-shadow-md-* parts."
    },
-   "card_dim_shadow_position_x": {
-    "var": "--comp-card-dim-shadow-position-x",
-    "type": "other",
-    "source": "css-var --comp-card-dim-shadow-position-x resolved (raw/css-vars.json)",
-    "description": "FRE shadow --comp-card-dim-shadow-position-x."
+   "lg": {
+    "$value": [
+     {
+      "offsetX": "0px",
+      "offsetY": "4px",
+      "blur": "0px",
+      "spread": "8px",
+      "color": "rgba(0, 0, 0, 0.12)"
+     }
+    ],
+    "$type": "shadow",
+    "$extensions": {
+     "source": "css-var --dim-elevation-shadow-lg-position-x/-position-y/-blur/-spread/-color resolved (raw/css-vars.json)"
+    },
+    "$description": "The lg elevation shadow (0px 4px 0px 8px rgba(0, 0, 0, 0.12)) from FRE's --dim-elevation-shadow-lg-* parts."
    },
-   "card_dim_shadow_position_y": {
-    "var": "--comp-card-dim-shadow-position-y",
+   "card": {
+    "value": "none",
     "type": "other",
-    "source": "css-var --comp-card-dim-shadow-position-y resolved (raw/css-vars.json)",
-    "description": "FRE shadow --comp-card-dim-shadow-position-y."
-   },
-   "card_dim_shadow_spread": {
-    "var": "--comp-card-dim-shadow-spread",
-    "type": "other",
-    "source": "css-var --comp-card-dim-shadow-spread resolved (raw/css-vars.json)",
-    "description": "FRE shadow --comp-card-dim-shadow-spread."
-   },
-   "elevation_shadow_lg_blur": {
-    "var": "--dim-elevation-shadow-lg-blur",
-    "type": "other",
-    "source": "css-var --dim-elevation-shadow-lg-blur resolved (raw/css-vars.json)",
-    "description": "FRE shadow --dim-elevation-shadow-lg-blur."
-   },
-   "elevation_shadow_lg_color": {
-    "var": "--dim-elevation-shadow-lg-color",
-    "type": "other",
-    "source": "css-var --dim-elevation-shadow-lg-color resolved (raw/css-vars.json)",
-    "description": "FRE shadow --dim-elevation-shadow-lg-color."
-   },
-   "elevation_shadow_lg_position_x": {
-    "var": "--dim-elevation-shadow-lg-position-x",
-    "type": "other",
-    "source": "css-var --dim-elevation-shadow-lg-position-x resolved (raw/css-vars.json)",
-    "description": "FRE shadow --dim-elevation-shadow-lg-position-x."
-   },
-   "elevation_shadow_lg_position_y": {
-    "var": "--dim-elevation-shadow-lg-position-y",
-    "type": "other",
-    "source": "css-var --dim-elevation-shadow-lg-position-y resolved (raw/css-vars.json)",
-    "description": "FRE shadow --dim-elevation-shadow-lg-position-y."
-   },
-   "elevation_shadow_lg_spread": {
-    "var": "--dim-elevation-shadow-lg-spread",
-    "type": "other",
-    "source": "css-var --dim-elevation-shadow-lg-spread resolved (raw/css-vars.json)",
-    "description": "FRE shadow --dim-elevation-shadow-lg-spread."
-   },
-   "elevation_shadow_md_blur": {
-    "var": "--dim-elevation-shadow-md-blur",
-    "type": "other",
-    "source": "css-var --dim-elevation-shadow-md-blur resolved (raw/css-vars.json)",
-    "description": "FRE shadow --dim-elevation-shadow-md-blur."
-   },
-   "elevation_shadow_md_color": {
-    "var": "--dim-elevation-shadow-md-color",
-    "type": "other",
-    "source": "css-var --dim-elevation-shadow-md-color resolved (raw/css-vars.json)",
-    "description": "FRE shadow --dim-elevation-shadow-md-color."
-   },
-   "elevation_shadow_md_position_x": {
-    "var": "--dim-elevation-shadow-md-position-x",
-    "type": "other",
-    "source": "css-var --dim-elevation-shadow-md-position-x resolved (raw/css-vars.json)",
-    "description": "FRE shadow --dim-elevation-shadow-md-position-x."
-   },
-   "elevation_shadow_md_position_y": {
-    "var": "--dim-elevation-shadow-md-position-y",
-    "type": "other",
-    "source": "css-var --dim-elevation-shadow-md-position-y resolved (raw/css-vars.json)",
-    "description": "FRE shadow --dim-elevation-shadow-md-position-y."
-   },
-   "elevation_shadow_md_spread": {
-    "var": "--dim-elevation-shadow-md-spread",
-    "type": "other",
-    "source": "css-var --dim-elevation-shadow-md-spread resolved (raw/css-vars.json)",
-    "description": "FRE shadow --dim-elevation-shadow-md-spread."
-   },
-   "elevation_shadow_none_blur": {
-    "var": "--dim-elevation-shadow-none-blur",
-    "type": "other",
-    "source": "css-var --dim-elevation-shadow-none-blur resolved (raw/css-vars.json)",
-    "description": "FRE shadow --dim-elevation-shadow-none-blur."
-   },
-   "elevation_shadow_none_color": {
-    "var": "--dim-elevation-shadow-none-color",
-    "type": "other",
-    "source": "css-var --dim-elevation-shadow-none-color resolved (raw/css-vars.json)",
-    "description": "FRE shadow --dim-elevation-shadow-none-color."
-   },
-   "elevation_shadow_none_position_x": {
-    "var": "--dim-elevation-shadow-none-position-x",
-    "type": "other",
-    "source": "css-var --dim-elevation-shadow-none-position-x resolved (raw/css-vars.json)",
-    "description": "FRE shadow --dim-elevation-shadow-none-position-x."
-   },
-   "elevation_shadow_none_position_y": {
-    "var": "--dim-elevation-shadow-none-position-y",
-    "type": "other",
-    "source": "css-var --dim-elevation-shadow-none-position-y resolved (raw/css-vars.json)",
-    "description": "FRE shadow --dim-elevation-shadow-none-position-y."
-   },
-   "elevation_shadow_none_spread": {
-    "var": "--dim-elevation-shadow-none-spread",
-    "type": "other",
-    "source": "css-var --dim-elevation-shadow-none-spread resolved (raw/css-vars.json)",
-    "description": "FRE shadow --dim-elevation-shadow-none-spread."
-   },
-   "elevation_shadow_sm_blur": {
-    "var": "--dim-elevation-shadow-sm-blur",
-    "type": "other",
-    "source": "css-var --dim-elevation-shadow-sm-blur resolved (raw/css-vars.json)",
-    "description": "FRE shadow --dim-elevation-shadow-sm-blur."
-   },
-   "elevation_shadow_sm_color": {
-    "var": "--dim-elevation-shadow-sm-color",
-    "type": "other",
-    "source": "css-var --dim-elevation-shadow-sm-color resolved (raw/css-vars.json)",
-    "description": "FRE shadow --dim-elevation-shadow-sm-color."
-   },
-   "elevation_shadow_sm_position_x": {
-    "var": "--dim-elevation-shadow-sm-position-x",
-    "type": "other",
-    "source": "css-var --dim-elevation-shadow-sm-position-x resolved (raw/css-vars.json)",
-    "description": "FRE shadow --dim-elevation-shadow-sm-position-x."
-   },
-   "elevation_shadow_sm_position_y": {
-    "var": "--dim-elevation-shadow-sm-position-y",
-    "type": "other",
-    "source": "css-var --dim-elevation-shadow-sm-position-y resolved (raw/css-vars.json)",
-    "description": "FRE shadow --dim-elevation-shadow-sm-position-y."
-   },
-   "elevation_shadow_sm_spread": {
-    "var": "--dim-elevation-shadow-sm-spread",
-    "type": "other",
-    "source": "css-var --dim-elevation-shadow-sm-spread resolved (raw/css-vars.json)",
-    "description": "FRE shadow --dim-elevation-shadow-sm-spread."
+    "source": "css-var --comp-card-dim-shadow-* resolved (raw/css-vars.json)",
+    "description": "FRE declares the card shadow at 0 offsets over a transparent colour: cards paint no shadow."
    }
   },
   "motion": {
@@ -3261,7 +5139,7 @@
    "description": "The ~53px category strip."
   },
   "logo-width": {
-   "value": "125px",
+   "value": "296px",
    "type": "dimension",
    "source": "computed w of nav-logo default (raw/components-computed.json)",
    "description": "The ~296px Esquire wordmark."
@@ -3417,7 +5295,7 @@
    "description": "The ~154px phone top chrome."
   },
   "m-logo-width": {
-   "value": "125px",
+   "value": "192px",
    "type": "dimension",
    "source": "computed w of m-logo default (raw/components-computed.json)",
    "description": "The phone wordmark."
@@ -3468,7 +5346,7 @@
      }
     },
     "source": "computed styles of nav-subscribe across states (raw/components-computed.json)",
-    "description": "Subscribe pill: red fill + white text at rest; hover/pressed deepen the fill; focus shows the browser outline."
+    "description": "Subscribe pill: #ff3a30 fill + #121212 text at rest; hover inverts to a white fill keeping the red border; pressed paints a #fff0f0 pale-red wash; focus shows the browser outline."
    },
    "join-track": {
     "type": "other",
@@ -3503,7 +5381,7 @@
      }
     },
     "source": "computed styles of plan-join across states (raw/components-computed.json)",
-    "description": "Join button: red fill + white text at rest; hover darkens the fill."
+    "description": "Join button: #ff3a30 fill + black text at rest; hover and pressed invert to a white fill keeping the red border; focus shows a dotted outline."
    },
    "signup-track": {
     "type": "other",
@@ -3538,7 +5416,7 @@
      }
     },
     "source": "computed styles of newsletter-signup across states (raw/components-computed.json)",
-    "description": "Newsletter Sign Up: red fill + white text at rest; hover darkens the fill."
+    "description": "Newsletter Sign Up: #ff3a30 fill + #121212 text at rest; hover inverts to a white fill; pressed paints a #fff0f0 pale-red wash."
    },
    "see-more-track": {
     "type": "other",
@@ -3573,7 +5451,7 @@
      }
     },
     "source": "computed styles of search-more across states (raw/components-computed.json)",
-    "description": "See More ghost: transparent + red border/text at rest; hover fills red with white text."
+    "description": "See More ghost: white fill, #ff3a30 text and a #121212 border at rest; hover/pressed paint a 4-8% dark grey wash — it never fills red."
    },
    "nav-link-track": {
     "type": "other",
@@ -3608,7 +5486,7 @@
      }
     },
     "source": "computed styles of nav-link across states (raw/components-computed.json)",
-    "description": "Category link: #121212 at rest; hover deepens to #3b3b3b; the megamenu underlines in #ffaca8."
+    "description": "Category link: #121212 in every state — no colour or decoration change on hover; focus shows the browser outline."
    },
    "faq-track": {
     "type": "other",
@@ -3650,7 +5528,7 @@
      }
     },
     "source": "computed styles of faq-header across states (raw/components-computed.json)",
-    "description": "FAQ header: white row, chevron rotates open; opened state reached by its own toggle."
+    "description": "FAQ header: a transparent row over the white page in every state; the opened state was reached by its own toggle."
    },
    "more-track": {
     "type": "other",
@@ -3692,7 +5570,7 @@
      }
     },
     "source": "computed styles of more-btn across states (raw/components-computed.json)",
-    "description": "More toggle: text button at rest; the opened state drops the overflow panel."
+    "description": "More toggle: text button at rest, a 16% red wash on press; the opened state drops the overflow panel."
    }
   },
   "focus-ring": {

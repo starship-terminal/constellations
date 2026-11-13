@@ -169,14 +169,22 @@ async function S(key, target, list, meta = {}, opts = {}) {
   const loc = target.filter({ visible: true }).first();
   if (!(await loc.count())) {
     const has = Object.keys(out.components[key].states || {}).length > 0;
-    log('  ! missing', key, has ? '(earlier states kept)' : '');
+    log('  ! missing', key, has && !opts.dropPrior ? '(earlier states kept)' : '');
     // Keep earlier evidence under its own provenance: the states stay but the
     // entry keeps its original page/run/url and records the miss, so a re-run
-    // never republishes old readings under a new date.
-    if (!has) out.components[key].missing = true;
+    // never republishes old readings under a new date. opts.dropPrior is for
+    // entries whose saved states were read off the wrong element — that is not
+    // evidence to keep, so the miss lands as a plain gap.
+    if (opts.dropPrior) {
+      out.components[key].states = {};
+      out.components[key].missing = true;
+      delete out.components[key].recaptureMissed;
+    } else if (!has) out.components[key].missing = true;
     else { Object.assign(out.components[key], keep); out.components[key].recaptureMissed = run; }
     return;
   }
+  // The component was found this run: any earlier miss note is stale.
+  delete out.components[key].recaptureMissed;
   for (const st of list) {
     let undo, via;
     try {
@@ -331,8 +339,18 @@ async function home() {
   await S('nav-utility', q(NAV + ' button').filter({ hasText: /^\s*US\s*$/ }).filter({ visible: true }).first().locator('xpath=ancestor::div[1]'), ['default'], { group: g, title: 'Utility strip', desc: 'The 32px top utility bar holding the US edition switcher and the Newsletter link.', sel: 'div ancestor of the US button' }, { noScroll: true });
   await S('nav-edition', q(NAV + ' button').filter({ hasText: /^\s*US\s*$/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Edition switcher', desc: 'The "US" edition button in the utility strip; measured, never toggled open beyond a hover.', sel: 'nav US button' }, { noScroll: true });
   await S('nav-newsletter', q(NAV + ' a').filter({ hasText: /^\s*Newsletter\s*$/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Newsletter link', desc: 'The "Newsletter" utility link; measured, never followed.', sel: 'nav a Newsletter' }, { noScroll: true });
-  // The wordmark anchor holds the 296x60 inline svg and paints no text.
-  await S('nav-logo', q(NAV + ' a:has(svg)').filter({ visible: true }).first(), ['default'], { group: g, title: 'Wordmark', desc: 'The Esquire wordmark lockup centred in the main bar (a link home holding a 296x60 inline svg).', sel: 'nav a:has(svg)' }, { noScroll: true });
+  // The wordmark anchor holds the big inline svg and paints no text; a bare
+  // a:has(svg) first-matches the Newsletter link's icon, so mark the nav
+  // anchor whose svg paints widest (data-m-mark per FIELD-NOTES).
+  await page.evaluate(() => {
+    let best = null, w = 0;
+    for (const a of document.querySelectorAll('nav[data-tracking-id="topNav"] a')) {
+      const r = a.querySelector('svg') && a.querySelector('svg').getBoundingClientRect();
+      if (r && r.width > w) { w = r.width; best = a; }
+    }
+    if (best) best.setAttribute('data-m-mark', 'nav-logo');
+  }).catch(() => {});
+  await S('nav-logo', q('[data-m-mark="nav-logo"]'), ['default'], { group: g, title: 'Wordmark', desc: 'The Esquire wordmark lockup centred in the main bar (a link home holding the widest inline svg).', sel: 'widest svg inside a nav anchor' }, { noScroll: true });
   await S('nav-signin', q(NAV + ' a').filter({ hasText: /^\s*Sign In\s*$/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Sign In link', desc: 'The "Sign In" link to account.esquire.com; measured, never followed.', sel: 'nav a Sign In' }, { noScroll: true });
   await S('nav-subscribe', q(NAV + ' a, ' + NAV + ' button').filter({ hasText: /^\s*Subscribe\s*$/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Subscribe button', desc: 'The red "Subscribe" call-to-action in the main bar; measured, never followed.', sel: 'nav Subscribe' }, { noScroll: true });
   await S('megamenu', q('.megaMenu').filter({ visible: true }).first(), ['default'], { group: g, title: 'Category menu', desc: 'The .megaMenu category strip under the main bar: Entertainment through Food and Drinks plus the "More" overflow toggle.', sel: '.megaMenu' }, { noScroll: true });
@@ -381,10 +399,23 @@ async function section() {
   const g = G.section;
   await S('sec-h1', q('h1').filter({ visible: true }).first(), ['default'], { group: g, title: 'Section title', desc: 'The section-front title ("Style") — the display word at the top of the front.', sel: 'section h1' }, { noScroll: true });
   await S('sec-desc', q('main p, main div').filter({ hasText: /style advice|fashion|menswear|latest/i }).filter({ visible: true }).first(), ['default'], { group: g, title: 'Section description', desc: 'The standfirst describing the section under its title.', sel: 'section description' });
-  await S('sec-hero', q('main h2, main h3').filter({ visible: true }).first().locator('xpath=ancestor::*[self::a or self::article or self::li or self::div][1]'), ['default'], { group: g, title: 'Section lead card', desc: 'The lead story card on the section front.', sel: 'section lead card' });
+  // The lead story card is the first main link that carries an image — a card
+  // big enough to be the feature. First-match on a heading alone caught the
+  // "just landed" band title, and climbing from it caught the whole band
+  // section. Mark the linked card, then measure the mark.
+  await page.evaluate(() => {
+    for (const a of document.querySelectorAll('main a')) {
+      const r = a.getBoundingClientRect();
+      if (r.width < 200 || r.height < 100) continue;
+      if (!a.querySelector('img')) continue;
+      a.setAttribute('data-m-mark', 'lead');
+      return;
+    }
+  }).catch(() => {});
+  await S('sec-hero', q('[data-m-mark="lead"]'), ['default'], { group: g, title: 'Section lead card', desc: 'The lead story card on the section front — the first image-carrying story link on the front.', sel: 'first main a with img' });
   await S('sec-eyebrow', q('main').locator('xpath=.//*[contains(" NEWS MAN AT HIS BEST STYLE LIFESTYLE WATCHES ENTERTAINMENT FOOD ",concat(" ",translate(normalize-space(.),"abcdefghijklmnopqrstuvwxyz","ABCDEFGHIJKLMNOPQRSTUVWXYZ")," "))][string-length(normalize-space(.))<30][not(.//*[string-length(normalize-space(.))<30])]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Section eyebrow', desc: 'The uppercase eyebrow over the lead story.', sel: 'section eyebrow' });
   await S('sec-card', q('main h3, main h2').filter({ visible: true }).last().locator('xpath=ancestor::*[.//img][1]'), ['default'], { group: g, title: 'Section card', desc: 'A standard story card lower on the section front.', sel: 'section card' });
-  await S('sec-see-more', q('button, a').filter({ hasText: /^\s*(see more|load more|more stories)\s*$/i }).filter({ visible: true }).first(), B4, { group: g, title: 'See More button', desc: 'The red-outline "See More" pagination button; measured, never pressed.', sel: 'See More' });
+  await S('sec-see-more', q('button, a').filter({ hasText: /^\s*(see more|load more|more stories)\s*$/i }).filter({ visible: true }).first(), B4, { group: g, title: 'See More button', desc: 'The "See More" pagination ghost button — dark #121212 outline, red text; measured, never pressed.', sel: 'See More' });
   save();
 }
 
@@ -402,7 +433,24 @@ async function article() {
   await S('art-caption', q('figcaption').filter({ visible: true }).first(), ['default'], { group: g, title: 'Caption', desc: 'The photo caption / credit line under the hero.', sel: 'figcaption' });
   await S('art-para', q('.article-body p').filter({ visible: true }).nth(1), ['default'], { group: g, title: 'Body paragraph', desc: 'A body paragraph — Lora 18px on the measure.', sel: 'article body p' });
   await S('art-dropcap', q('p.body-dropcap, [class*="dropcap" i]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Drop-cap paragraph', desc: 'The lede paragraph whose first letter paints a drop cap.', sel: 'p.body-dropcap' });
-  await S('art-link', q('.article-body p a, .body-content p a, article p a').filter({ visible: true }).first(), B4, { group: g, title: 'Inline story link', desc: 'An inline link inside body copy; measured, never followed.', sel: 'article body a' });
+  // An inline story link sits inside the text flow: inline display, no button
+  // chrome, not a standalone CTA. A bare first-match on the body anchors
+  // caught a styled "SUBSCRIBE" button, so mark a link that reads as text.
+  // When no inline link exists on the story the entry must be a gap, not the
+  // CTA re-published — dropPrior keeps the miss honest.
+  await page.evaluate(() => {
+    for (const a of document.querySelectorAll('.article-body p a, .body-content p a, article p a')) {
+      const cs = getComputedStyle(a);
+      const r = a.getBoundingClientRect();
+      const t = (a.innerText || '').trim();
+      if (!r.width || !r.height || !t) continue;
+      if (cs.display !== 'inline' || parseFloat(cs.borderTopWidth) > 0 || parseFloat(cs.paddingTop) > 0 || cs.backgroundColor !== 'rgba(0, 0, 0, 0)') continue;
+      if (/^(subscribe|sign up|shop|buy|join|watch now|read more|learn more)/i.test(t)) continue;
+      a.setAttribute('data-m-mark', 'art-link');
+      return;
+    }
+  }).catch(() => {});
+  await S('art-link', q('[data-m-mark="art-link"]'), B4, { group: g, title: 'Inline story link', desc: 'An inline text link inside body copy; measured, never followed. Not every story carries one — this story had only the styled SUBSCRIBE CTA, so the link is a gap rather than a mislabelled button.', sel: 'inline body-copy anchor' }, { dropPrior: true });
   await S('art-pullquote', q('blockquote, [data-theme-key*="pullquote" i], [class*="pullquote" i]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Pull quote', desc: 'A display pull quote inside the story.', sel: 'article blockquote' });
   await S('art-blockhead', q('h2, h3').filter({ hasText: /readers also read|related|more from/i }).filter({ visible: true }).first(), ['default'], { group: g, title: 'Block heading', desc: 'A mid-story block heading ("readers also read…").', sel: 'article h2 block' });
   await S('art-ad', q('.ad-disclaimer').filter({ visible: true }).first(), ['default'], { group: g, title: 'Ad furniture', desc: 'The "Advertisement - Continue Reading Below" furniture inside the story; the slot below it stays blank because ad requests are aborted.', sel: '.ad-disclaimer' });
@@ -435,11 +483,31 @@ async function offers() {
   await S('perks-h2', q('h2').filter({ hasText: /membership perks/i }).filter({ visible: true }).first(), ['default'], { group: g, title: 'Membership Perks heading', desc: 'The "Membership Perks" section heading on the offers page.', sel: 'h2 Membership Perks' });
   await S('faq-h2', q('h2').filter({ hasText: /frequently asked/i }).filter({ visible: true }).first(), ['default'], { group: g, title: 'FAQ heading', desc: 'The "Frequently Asked Questions" section heading.', sel: 'h2 FAQ' });
   await S('faq-header', q('button[data-theme-key="collapsible-header-button"]').filter({ visible: true }).first(), [...B4, 'opened'], { group: g, title: 'FAQ accordion header', desc: 'An FAQ collapsible header ("When will my magazine be delivered?") — a local UI toggle; the opened state was measured after clicking it.', sel: 'collapsible-header-button' });
-  // The header's aria-controls names its region; read that after toggling it open.
+  // The answer region sits next to the header's heading — aria-controls is
+  // absent on this build, so resolve the region by that name first and fall
+  // back to the sibling of the header's h-ancestor. Capture it only when the
+  // toggled-open region is visible and holds text — a sibling guess saved an
+  // empty 1200x4 box before, and a miss must be a gap, not a stale stub.
   await page.evaluate(() => { const b = document.querySelector('button[data-theme-key="collapsible-header-button"]'); if (b && b.getAttribute('aria-expanded') !== 'true') b.click(); }).catch(() => {});
   await page.waitForTimeout(900);
-  await S('faq-answer', page.locator('xpath=//button[@data-theme-key="collapsible-header-button"][@aria-expanded="true"]').first().locator('xpath=following-sibling::*[1]'), ['default'], { group: g, title: 'FAQ answer', desc: 'The answer panel revealed by the FAQ header toggle.', sel: 'collapsible content' }, { noScroll: true, noReset: true });
-  await S('gift-cta', q('a[data-theme-key="button-primary"]').filter({ hasText: /gift/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Gift subscription CTA', desc: 'The "GIVE A GIFT SUBSCRIPTION" red-outline action; measured, never followed.', sel: 'a[data-theme-key=button-primary] gift' });
+  await page.evaluate(() => {
+    const b = document.querySelector('button[data-theme-key="collapsible-header-button"]');
+    if (!b) return;
+    let region = null;
+    const id = b.getAttribute('aria-controls');
+    if (id) region = document.getElementById(id);
+    if (!region) {
+      const head = b.closest('h1,h2,h3,h4,h5,h6');
+      region = head && head.nextElementSibling;
+    }
+    if (region) {
+      const r = region.getBoundingClientRect();
+      const cs = getComputedStyle(region);
+      if (r.height > 8 && cs.visibility !== 'hidden' && cs.display !== 'none' && (region.innerText || '').trim()) region.setAttribute('data-m-mark', 'faq-a');
+    }
+  }).catch(() => {});
+  await S('faq-answer', q('[data-m-mark="faq-a"]'), ['default'], { group: g, title: 'FAQ answer', desc: 'The answer panel revealed by the FAQ header toggle — the region its aria-controls names, or the sibling of the header heading when the attribute is absent; captured only when visible with text.', sel: 'aria-controls region, else header-heading sibling' }, { noScroll: true, noReset: true, dropPrior: true });
+  await S('gift-cta', q('a[data-theme-key="button-primary"]').filter({ hasText: /gift/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Gift subscription CTA', desc: 'The "GIVE A GIFT SUBSCRIPTION" ghost action — red text on white at rest, filling red on hover; measured, never followed.', sel: 'a[data-theme-key=button-primary] gift' });
   await S('offers-fine', q('p').filter({ hasText: /cancel anytime|automatically renew/i }).filter({ visible: true }).first(), ['default'], { group: g, title: 'Renewal fine print', desc: 'The "Cancel anytime…" fine print under the plan grid.', sel: 'renewal fine print' });
   save();
 }
@@ -463,7 +531,7 @@ async function search() {
   await S('search-sort', q('button[data-theme-key="popover-trigger"], button').filter({ hasText: /sort by/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Sort control', desc: 'The "Sort By: Relevance" popover trigger; measured, never toggled.', sel: 'Sort By' });
   await S('search-card', q('.custom-item-title, h3').filter({ visible: true }).first().locator('xpath=ancestor::*[self::a or self::article or self::li or self::div][1]'), ['default'], { group: g, title: 'Result card', desc: 'A search-result card: thumbnail, 40px Lausanne title, muted dek.', sel: 'result card' });
   await S('search-title', q('.custom-item-title, h3').filter({ visible: true }).first(), ['default'], { group: g, title: 'Result title', desc: 'A 40px Lausanne result title.', sel: '.custom-item-title' });
-  await S('search-more', q('button, a').filter({ hasText: /^\s*see more\s*$/i }).filter({ visible: true }).first(), B4, { group: g, title: 'See More button', desc: 'The red-outline "See More" button at the foot of the results; measured, never pressed.', sel: 'See More' });
+  await S('search-more', q('button, a').filter({ hasText: /^\s*see more\s*$/i }).filter({ visible: true }).first(), B4, { group: g, title: 'See More button', desc: 'The "See More" ghost button at the foot of the results — dark #121212 outline, red text; measured, never pressed.', sel: 'See More' });
   save();
 }
 
@@ -487,7 +555,18 @@ async function mobile() {
   await S('m-drawer-close', q('.new-sidepanel-menu.visible button[aria-label*="Close" i], nav#sidepanel:not(.hidden) button[aria-label*="Close" i]').filter({ visible: true }).first(), B4, { group: G.overlay, title: 'Drawer close', desc: 'The "Close Sidepanel" icon button; measured, never pressed.', sel: 'sidepanel close' }, { open: openSidepanel, noScroll: true, noReset: true });
   await page.keyboard.press('Escape').catch(() => {});
   await page.evaluate(() => { const b = document.querySelector('.new-sidepanel-menu.visible button[aria-label*="Close" i]'); if (b) b.click(); }).catch(() => {});
-  await S('m-logo', q(NAV + ' a:has(svg)').filter({ visible: true }).first(), ['default'], { group: g, title: 'Mobile wordmark', desc: 'The Esquire wordmark centred in the phone bar.', sel: 'mobile a:has(svg)' }, { noScroll: true });
+  // Same wordmark fix as the desktop nav-logo: mark the nav anchor whose
+  // inline svg paints widest rather than first-matching a:has(svg), which
+  // caught the Newsletter link's icon.
+  await page.evaluate(() => {
+    let best = null, w = 0;
+    for (const a of document.querySelectorAll('nav[data-tracking-id="topNav"] a')) {
+      const r = a.querySelector('svg') && a.querySelector('svg').getBoundingClientRect();
+      if (r && r.width > w) { w = r.width; best = a; }
+    }
+    if (best) best.setAttribute('data-m-mark', 'm-logo');
+  }).catch(() => {});
+  await S('m-logo', q('[data-m-mark="m-logo"]'), ['default'], { group: g, title: 'Mobile wordmark', desc: 'The Esquire wordmark centred in the phone bar.', sel: 'widest svg inside a nav anchor' }, { noScroll: true });
   await S('m-search', q(NAV + ' a[href*="/search"], ' + NAV + ' a[title*="Search" i], ' + NAV + ' a:has(img[alt="Search"])').filter({ visible: true }).first(), B4, { group: g, title: 'Mobile search link', desc: 'The search icon link in the phone bar; measured, never followed.', sel: 'mobile search a' }, { noScroll: true });
   await S('m-story', q('main h3, main h2').filter({ visible: true }).first(), ['default'], { group: g, title: 'Mobile story headline', desc: 'A story headline in the phone feed.', sel: 'mobile h3' });
   await S('m-eyebrow', q('main').locator('xpath=.//*[contains(" NEWS MAN AT HIS BEST STYLE LIFESTYLE WATCHES ENTERTAINMENT FOOD ",concat(" ",translate(normalize-space(.),"abcdefghijklmnopqrstuvwxyz","ABCDEFGHIJKLMNOPQRSTUVWXYZ")," "))][string-length(normalize-space(.))<30][not(.//*[string-length(normalize-space(.))<30])]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Mobile eyebrow', desc: 'The uppercase eyebrow over a phone headline.', sel: 'mobile eyebrow' });
