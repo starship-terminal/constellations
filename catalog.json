@@ -9018,7 +9018,7 @@
         ],
         "durationMin": 300,
         "durationNote": "wall-clock across the capture sessions including kit adaptation, the stylesheet harvest (including the radii-override body-class correction), screenshot and measurement passes on a headless Linux server, and the offline build",
-        "pr": ""
+        "pr": "https://github.com/starship-terminal/constellations/pull/541"
       },
       "layoutGaps": {
         "icons/": "the icon extraction pass was not run; the marks (the ES glyph, transport icons, social sign-in marks) are visible in the crops and screenshots"
