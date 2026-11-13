@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 90,
-    "system_domains": 82,
-    "matched_domains": 57,
-    "missing_domains": 376,
+    "system_packages": 91,
+    "system_domains": 83,
+    "matched_domains": 58,
+    "missing_domains": 375,
     "system_domains_absent_from_catalog": 25
   },
   "matched": {
@@ -831,6 +831,23 @@
         }
       ]
     },
+    "elevenlabs.io": {
+      "catalog": [
+        {
+          "name": "ElevenLabs",
+          "domain": "elevenlabs.io",
+          "id": 772
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "elevenlabs",
+          "name": "ElevenLabs",
+          "url": "https://elevenlabs.io",
+          "name_match": true
+        }
+      ]
+    },
     "github.com": {
       "catalog": [
         {
@@ -1412,13 +1429,6 @@
         "name": "Elementor",
         "domain": "elementor.com",
         "id": 466
-      }
-    ],
-    "elevenlabs.io": [
-      {
-        "name": "ElevenLabs",
-        "domain": "elevenlabs.io",
-        "id": 772
       }
     ],
     "elevenmusic.io": [
