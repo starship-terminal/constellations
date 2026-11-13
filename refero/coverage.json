@@ -848,6 +848,23 @@
         }
       ]
     },
+    "doctronic.ai": {
+      "catalog": [
+        {
+          "name": "Doctronic AI",
+          "domain": "doctronic.ai",
+          "id": 940
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "doctronic",
+          "name": "Doctronic",
+          "url": "https://www.doctronic.ai",
+          "name_match": true
+        }
+      ]
+    },
     "dona.ai": {
       "catalog": [
         {
@@ -1392,13 +1409,6 @@
         "name": "DJI",
         "domain": "dji.com",
         "id": 332
-      }
-    ],
-    "doctronic.ai": [
-      {
-        "name": "Doctronic AI",
-        "domain": "doctronic.ai",
-        "id": 940
       }
     ],
     "docusign.com": [
