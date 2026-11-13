@@ -3,8 +3,9 @@
 //   RAW=/some/scratch/dir PLAYWRIGHT=/path/to/playwright/index.mjs node public.mjs [page,page,...]
 //
 // Names are {page}-{theme}-{state}.png; mobile ones get a `mobile-` prefix. The public surface
-// paints one light theme. Desktop shots are 1440x900 at 1x, mobile 390x844 at 2x, `*-full` shots
-// 1x. A page taller than one GPU texture is saved as name.partN.png tiles, which quantize.py
+// paints one light theme. Desktop shots are 1440x900 at 1x, mobile 390x844 at 2x; `*-full` shots
+// use the context's device scale (no css scale is passed), so desktop fulls are 1x and mobile
+// fulls are 2x — the `.capture.json` sidecars record the actual scale and dimensions. A page taller than one GPU texture is saved as name.partN.png tiles, which quantize.py
 // stitches back together; an unbounded page truncates at 8 chunks and the log records the
 // boundary. Nothing is sent, bought or signed into: the only presses are local UI toggles —
 // the Watch video button, which opens the site's own YouTube-embed modal. The "This website

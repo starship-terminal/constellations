@@ -73,9 +73,14 @@ glyph, "This website uses cookies." with a **Learn more** link whose
 underline is a 1px ink ::before bar
 ([cookie-learn](components/crops/cookie-learn-default.png)), and the grey
 **Accept** pill ([cookie-accept](components/crops/cookie-accept-default.png))
-— never clicked. At 390 wide it becomes a full-width top bar with the shadow
-layers flipped upward
-([m-cookie-banner](components/crops/m-cookie-banner-default.png)).
+— never clicked. On the 390 pass the consent node never painted:
+[mobile-home-light-cookies](screenshots/mobile-home-light-cookies.png) shows
+no banner, and the marked node read as a fixed 555x64 bar at `top:1138px` —
+offscreen and wider than the 390 viewport — so the
+[m-cookie-banner](components/crops/m-cookie-banner-default.png) crop caught
+body text, not the banner. Its computed shadow layers run upward
+(−8/−16px), the shape of a top-anchored variant, but the real phone
+placement is unverified until a re-measure.
 
 ## The video modal
 
@@ -117,5 +122,6 @@ Login pills — there is no hamburger — the display drops from 84px to
 52px height ([m-try](components/crops/m-try-default.png)), the email field
 shrinks to 28px/36
 ([m-email-input](components/crops/m-email-input-default.png)), and the
-cookie banner becomes the top bar described above
+cookie banner never appeared — its DOM node read offscreen as described
+above
 ([mobile-home-light-default](screenshots/mobile-home-light-default.png)).

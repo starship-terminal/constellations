@@ -377,7 +377,7 @@ for key, comp, state, desc in [
     ("join", "join-btn", "default", "The Join button's shadow — the action lift plus a 999px inset overlay used for hover dimming (rgba(0,0,0,0) at rest)."),
     ("card", "hero-video", "default", "The hero-media card shadow: drop + 80px ambient + a #e6e9ed inset hairline ring."),
     ("banner", "cookie-banner", "default", "The floating cookie-banner shadow (three ascending layers)."),
-    ("banner-mobile", "m-cookie-banner", "default", "The mobile banner's upward variant — it is pinned top, so the 8/16/40 layers run negative."),
+    ("banner-mobile", "m-cookie-banner", "default", "The mobile banner variant's upward shadow (the 8/16/40 layers run negative, the shape of a top-anchored bar) — read from the marked consent node, which sat offscreen on the 390 pass; its real placement is unverified."),
     ("chip", "social-link", "default", "The social chip's bevel — same shape as the button lift but keyed on black, not #0c1442."),
 ]:
     try:

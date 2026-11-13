@@ -11643,7 +11643,7 @@
     },
     "F12": {
      "grade": "meets",
-     "evidence": "core.shadow.button (hairline drop + inset bevel), action (drop + 40px ambient + bevel), join (+ the 999px hover-dim inset), card (drop + 80px ambient + ring), banner + banner-mobile (3-layer, sign-flipped on the top bar), chip and the #6fabff 140px glow — each tied to a use."
+     "evidence": "core.shadow.button (hairline drop + inset bevel), action (drop + 40px ambient + bevel), join (+ the 999px hover-dim inset), card (drop + 80px ambient + ring), banner + banner-mobile (3-layer, sign-flipped upward — the mobile consent node read offscreen so the top-bar placement is unverified), chip and the #6fabff 140px glow — each tied to a use."
     },
     "F13": {
      "grade": "partly",
@@ -11651,7 +11651,7 @@
     },
     "F14": {
      "grade": "partly",
-     "evidence": "layout.container 1140px, content 1100px, gutter 20px, grid-gap 32px and the 2x534 tile grid tokenised; the 390 pass measured the mobile variants (40px display, top-bar banner). Breakpoints and z-index layers are not tokenised."
+     "evidence": "layout.container 1140px, content 1100px, gutter 20px, grid-gap 32px and the 2x534 tile grid tokenised; the 390 pass measured the mobile variants (40px display; the consent node read offscreen at top:1138px — the banner never painted, placement unverified). Breakpoints and z-index layers are not tokenised."
     },
     "C1": {
      "grade": "partly",
@@ -11659,11 +11659,11 @@
     },
     "C2": {
      "grade": "partly",
-     "evidence": "default/hover/focus-visible/pressed on every interactive entry, focused/filled on the email field, opened on the video modal. No selected/disabled/loading/error states exist signed out; the newsletter success state needs a real submit (never sent)."
+     "evidence": "default/hover/focus-visible/pressed on the interactive entries (legal-link recorded missing — its catch-all selector hit the footer link; modal-close's focus reading was hover-contaminated), focused/filled on the email field, opened on the video modal. No selected/disabled/loading/error states exist signed out; the newsletter success state needs a real submit (never sent)."
     },
     "C3": {
      "grade": "meets",
-     "evidence": "12 interactive entries carry a real keyboard-focus reading: 5 draw the 1px #005fcc ring (cookie-learn, social-link, legal-link, footer-link, footer-twitter) tokenised as measured.focus-outline; the pills show no measured change, documented per entry."
+     "evidence": "10 interactive entries carry a real keyboard-focus reading: 4 draw the 1px #005fcc ring (cookie-learn, social-link, footer-link, footer-twitter) tokenised as measured.focus-outline; the pills show no measured change, documented per entry. The logo and team-card are not keyboard-focusable (recorded focus failed); legal-link's catch-all selector landed on the footer and modal-close's focus reading caught the hover fill — both recorded as misses pending re-measure."
     },
     "C4": {
      "grade": "partly",

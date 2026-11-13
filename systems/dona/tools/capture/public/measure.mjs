@@ -197,6 +197,14 @@ async function S(key, target, list, meta = {}, opts = {}) {
         if (opts.noToggle) via = 'held open by an earlier toggle';
         else { await toggle(loc, { allowLink: opts.allowLink }); await page.waitForTimeout(900); via = 'own toggle'; }
       } else via = via || 'at rest';
+      // A focus attempt that never landed is not a focus-visible reading:
+      // record the failure instead of publishing a default-state style under
+      // the focus-visible name. Builders treat via 'focus failed' as uncaptured.
+      if (st === 'focus-visible' && via === 'focus failed') {
+        out.components[key].states[st] = { via, error: 'the element did not take keyboard focus — no focus-visible style was measured' };
+        log('  !', key, st, 'focus failed — recorded, not measured');
+        continue;
+      }
       await measure(key, st, loc, { ...opts, via });
     } catch (e) {
       out.components[key].states[st] = { error: String(e.message || e).slice(0, 200) };
@@ -319,7 +327,9 @@ async function home() {
   await S('header', q('div[class*="Header__Wrapper"]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Header', desc: 'The top bar: the About button, the centred dona wordmark and the Login action.', sel: 'Header__Wrapper' }, { noScroll: true });
   // The logo anchor is display:block with width 0 — the SVG inside overflows
   // it — so the mark is measured on the SVG itself.
-  await S('logo', q('a[class*="Header__LogoLink"] svg').filter({ visible: true }).first(), B4, { group: g, title: 'Logo', desc: 'The centred dona logo (ring mark + wordmark), inside an anchor to / whose own box is 0 wide.', sel: 'Header__LogoLink svg' }, { noScroll: true });
+  // The SVG itself is not keyboard-focusable — focus its enclosing anchor so
+  // the focus-visible reading is real (the crop stays on the SVG).
+  await S('logo', q('a[class*="Header__LogoLink"] svg').filter({ visible: true }).first(), B4, { group: g, title: 'Logo', desc: 'The centred dona logo (ring mark + wordmark), inside an anchor to / whose own box is 0 wide.', sel: 'Header__LogoLink svg' }, { noScroll: true, focusLoc: q('a[class*="Header__LogoLink"]').first() });
   await S('nav-about', q('div[class*="Header__Wrapper"] button').filter({ hasText: /^\s*About\s*$/ }).filter({ visible: true }).first(), B4, { group: g, title: 'About button', desc: 'The header About action (routes to /about).', sel: 'header button About' }, { noScroll: true });
   await S('nav-login', q('div[class*="Header__Wrapper"] button').filter({ hasText: /^\s*Login\s*$/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Login button', desc: 'The header Login action — opens https://app.dona.ai in a new tab; measured, never pressed.', sel: 'header button Login' }, { noScroll: true });
   const h = G.home;
@@ -343,7 +353,11 @@ async function home() {
   } catch (e) { log('  ! video modal open failed', String(e.message).split('\n')[0]); }
   await markModal();
   await S('video-modal', q('[data-m-mark="vmodal"]').filter({ visible: true }).first(), ['default'], { group: h, title: 'Video modal', desc: 'The fixed overlay the Watch video button mounts: a YouTube iframe ("Say hello to Dona") on a dimmed page with a close button.', sel: 'pages__Modal' }, { noScroll: true, noReset: true });
-  await S('modal-close', q('[data-m-mark="vmodal"] button, [data-m-mark="vmodal"] [role="button"], [class*="Modal"] svg').filter({ visible: true }).first(), B4, { group: h, title: 'Modal close', desc: 'The close (x) control on the video modal.', sel: 'modal close' }, { noScroll: true, noReset: true });
+  // Reset between states: without it the pointer stays on the button after the
+  // hover reading and the focus state is measured with the hover fill. The
+  // reset only blurs and parks the pointer in the corner — it cannot close the
+  // modal.
+  await S('modal-close', q('[data-m-mark="vmodal"] button, [data-m-mark="vmodal"] [role="button"], [class*="Modal"] svg').filter({ visible: true }).first(), B4, { group: h, title: 'Modal close', desc: 'The close (x) control on the video modal.', sel: 'modal close' }, { noScroll: true });
   await hideModal();
   save();
 }
@@ -368,7 +382,18 @@ async function privacy() {
   await S('legal-h1', q('h1').filter({ visible: true }).first(), ['default'], { group: g, title: 'Legal heading', desc: 'The "Privacy / policy" display on /privacy-policy; /terms-of-service is the same layout.', sel: 'h1' }, { noScroll: true });
   await S('legal-text', q('p').filter({ visible: true }).first(), ['default'], { group: g, title: 'Legal paragraph', desc: 'A body paragraph of the legal copy.', sel: 'p' });
   await S('legal-h4', q('h4, h3').filter({ hasText: /Cookies|Terms|Disclaimer/ }).filter({ visible: true }).first(), ['default'], { group: g, title: 'Legal subheading', desc: 'A section subheading inside the legal copy ("Cookies", "Terms").', sel: 'legal h3/h4' });
-  await S('legal-link', q('p a, li a, div a').filter({ hasText: /dona\.ai|contact|privacy/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Legal link', desc: 'A link inside the legal copy.', sel: 'legal a' });
+  // The legal link must come from the legal copy itself: a bare `div a`
+  // reaches past the article and lands on the footer's "Privacy policy" link.
+  // Mark the first qualifying in-copy anchor (paragraphs and list items, never
+  // inside the footer wrapper); when the copy holds no link the selector below
+  // matches nothing and the miss is recorded instead of a footer reading.
+  await page.evaluate(() => {
+    const footer = document.querySelector('[class*="Footer__Wrapper"]');
+    const a = [...document.querySelectorAll('p a, li a')].find((el) =>
+      /dona\.ai|contact|privacy/i.test(el.innerText || '') && !(footer && footer.contains(el)));
+    if (a) a.setAttribute('data-m-mark', 'legal-link');
+  });
+  await S('legal-link', q('[data-m-mark="legal-link"]').filter({ visible: true }).first(), B4, { group: g, title: 'Legal link', desc: 'A link inside the legal copy.', sel: 'legal copy a (never the footer)' });
   save();
 }
 
@@ -388,7 +413,7 @@ async function mobile() {
   await chrome('mobile');
   const g = G.mobile;
   await markCookies();
-  await S('m-cookie-banner', q('[data-m-mark="cookies"]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Cookie banner (mobile)', desc: 'The consent notice at 390 wide; hidden after its own reading, never answered.', sel: 'fixed cookie banner at 390' }, { noScroll: true });
+  await S('m-cookie-banner', q('[data-m-mark="cookies"]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Cookie banner (mobile)', desc: 'The consent notice at 390 wide; hidden after its own reading, never answered. Note: the marked node read as a 555x64 fixed bar at top:1138px — offscreen in the 390x844 viewport and wider than it — and it never painted on the phone pass (the crop caught body text), so the real mobile placement is unverified.', sel: 'fixed cookie banner at 390' }, { noScroll: true });
   await closePromo(page);
   await S('m-header', q('div[class*="Header__Wrapper"]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Mobile header', sel: 'Header__Wrapper at 390' }, { noScroll: true });
   await S('m-hero', q('h1').filter({ visible: true }).first(), ['default'], { group: g, title: 'Mobile headline', sel: 'h1 at 390' });

@@ -555,7 +555,7 @@
     ],
     "type": "shadow",
     "source": "computed boxShadow of m-cookie-banner default (raw/components-computed.json)",
-    "description": "The mobile banner's upward variant — it is pinned top, so the 8/16/40 layers run negative."
+    "description": "The mobile banner variant's upward shadow (the 8/16/40 layers run negative, the shape of a top-anchored bar) — read from the marked consent node, which sat offscreen on the 390 pass; its real placement is unverified."
    },
    "chip": {
     "value": [

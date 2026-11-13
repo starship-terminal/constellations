@@ -531,24 +531,25 @@ Page: home. Selector: `modal close`. States: default, hover, focus-visible, pres
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 56 x 56 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 50% | = | = | = |
-| Background | #b0b5ba | #a8adb3 | #a8adb3 | #a8adb3 |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Inter 16px/23.2px 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #ffffff | = | = | = |
-| Transition | background-color 0.15s ease | = | = | = |
-| Cursor | pointer | = | = | = |
-| Icon | 18 x 18, colour #ffffff | = | = | = |
-| Painted layers | button.pages__Close-sc-vcj8q7-11.geCrA-D 56.0x56.0 bg #b0b5ba r 50% | button.pages__Close-sc-vcj8q7-11.geCrA-D 56.0x56.0 bg #a8adb3 r 50% | button.pages__Close-sc-vcj8q7-11.geCrA-D 56.0x56.0 bg #a8adb3 r 50% | button.pages__Close-sc-vcj8q7-11.geCrA-D 56.0x56.0 bg #a8adb3 r 50% |
-| Ancestor paint | 1 up div.pages__Modal-sc-vcj8q7-9.fFVDGS bg #bfc3c8 @ 0.8 | = | = | = |
-| How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
+| Size (w x h) | 56 x 56 | = | - | = |
+| Padding | 0px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 50% | = | - | = |
+| Background | #b0b5ba | #a8adb3 | - | #a8adb3 |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Inter 16px/23.2px 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #ffffff | = | - | = |
+| Transition | background-color 0.15s ease | = | - | = |
+| Cursor | pointer | = | - | = |
+| Icon | 18 x 18, colour #ffffff | = | - | = |
+| Painted layers | button.pages__Close-sc-vcj8q7-11.geCrA-D 56.0x56.0 bg #b0b5ba r 50% | button.pages__Close-sc-vcj8q7-11.geCrA-D 56.0x56.0 bg #a8adb3 r 50% | - | button.pages__Close-sc-vcj8q7-11.geCrA-D 56.0x56.0 bg #a8adb3 r 50% |
+| Ancestor paint | 1 up div.pages__Modal-sc-vcj8q7-9.fFVDGS bg #bfc3c8 @ 0.8 | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Error | - | = | contaminated reading: the pointer stayed over the button from the hover state (the spec ran noReset), so this measured the #a8adb3 hover fill, not a real focus style — re-measure queued | = |
 
-Crops: `modal-close-default.png`, `modal-close-hover.png`, `modal-close-focus-visible.png`, `modal-close-pressed.png`.
+Crops: `modal-close-default.png`, `modal-close-hover.png`, `modal-close-pressed.png`.
 
 ### About
 
@@ -774,28 +775,11 @@ Crops: `legal-h4-default.png`.
 
 #### legal-link
 
-Legal link. A link inside the legal copy.
+Legal link. A link inside the legal copy. The `div a` catch-all landed on the footer's 'Privacy policy' link (14px/20.3px), not a legal-body link, so no in-copy link was verified — the selector is now scoped to the legal content and the entry re-measures on the next capture.
 
-Page: privacy. Selector: `legal a`. States: default, hover, focus-visible, pressed.
+Page: privacy. Selector: `legal a`. States: .
 
-| Property | default | hover | focus-visible | pressed |
-|---|---|---|---|---|
-| Size (w x h) | 91.56 x 17 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | 1px auto #005fcc offset 1px | = |
-| Font | Inter 14px/20.3px 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #19191b | = | = | = |
-| Transition | none | = | = | = |
-| Cursor | pointer | = | = | = |
-| How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
-| Painted layers | - | = | a 91.6x17.0 outline 1px auto #005fcc offset 1px | = |
-
-Crops: `legal-link-default.png`, `legal-link-hover.png`, `legal-link-focus-visible.png`, `legal-link-pressed.png`.
+Not found on the page at capture time.
 
 ### Footer
 
@@ -880,7 +864,7 @@ Crops: `footer-twitter-default.png`, `footer-twitter-hover.png`, `footer-twitter
 
 #### m-cookie-banner
 
-Cookie banner (mobile). The consent notice at 390 wide; hidden after its own reading, never answered.
+Cookie banner (mobile). The consent notice at 390 wide; hidden after its own reading, never answered. Note: the marked node read as a 555x64 fixed bar at top:1138px — offscreen in the 390x844 viewport and wider than it — and it never painted on the phone pass (the crop caught body text), so the real mobile placement is unverified.
 
 Page: mobile. Selector: `fixed cookie banner at 390`. States: default.
 

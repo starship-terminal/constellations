@@ -6804,6 +6804,12 @@
      "core.font.family.sans"
     ]
    },
+   "designMd": {
+    "colors": [
+     "core.",
+     "light."
+    ]
+   },
    "capture": {
     "method": "public-web",
     "source": "dona.ai (a Gatsby 4 + styled-components marketing site) in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and crops from the live DOM. The stylesheets declare only component-scoped vars (--button-color, --icon-*, --blur-opacity) and the Inter @font-face faces, so tokens are measured computed values cross-checked against the declared vars. app.dona.ai (the product, with the advertised light/dark/black themes) sits behind sign-in and is a documented boundary",

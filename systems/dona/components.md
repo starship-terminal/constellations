@@ -2,17 +2,17 @@
 
 The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Captured from dona.ai on 2026-11-12, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was signed into, created, submitted or consented to; the email field was filled with sample text and cleared, the Watch video button's own modal was opened and hidden again, and the Login and Try for free routes to app.dona.ai were never followed.
 
-The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (40 components, 84 states). The page layouts are described in [patterns.md](patterns.md).
+The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (40 components, 80 states). The page layouts are described in [patterns.md](patterns.md).
 
 How to read an entry:
 
 - A colour is its value followed by the palette token in [tokens.json](tokens.json) with the same value, when there is one. Text is written family size/line-height weight, then its colour, for example `Inter 16/23.2 400, #19191b`, and is read from the first text node inside the component.
 - The state table has one row per state that differs. The first row lists every value; later rows list only what changes. A state with the same values as the first is named in its label, for example "default (same: focus-visible)". When the root paints nothing, "Child layers" names the first nodes inside it that do.
-- Crops are images of the component read from the live page, in [components/crops/](components/crops) (84 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
+- Crops are images of the component read from the live page, in [components/crops/](components/crops) (79 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
 
 ## Discovery list
 
-Screenshots are named `{page}-light-{state}.png`: the public surface paints one light theme (the light/dark/black app UI themes live inside the product). Desktop shots are 1440 x 900 at 1x; `-full` shots are whole pages at 1x; mobile shots are `mobile-{page}-light-{state}.png`, 780 wide (390 at 2x).
+Screenshots are named `{page}-light-{state}.png`: the public surface paints one light theme (the light/dark/black app UI themes live inside the product). Desktop shots are 1440 x 900 at 1x; `-full` shots are whole pages at the context's device scale (1x on the desktop pass, 2x on mobile); mobile shots are `mobile-{page}-light-{state}.png`, 780 wide (390 at 2x).
 
 | Surface | URL | Screenshots |
 |---|---|---|
@@ -37,7 +37,7 @@ Screenshots are named `{page}-light-{state}.png`: the public surface paints one 
 
 Values that apply across entries, from the measurement files.
 
-**Focus.** 12 components were given a real keyboard focus. 5 draw an outline ring: `cookie-learn` (1px auto #005fcc `measured.focus-outline`, offset 1px), `social-link` (1px auto #005fcc `measured.focus-outline`, offset 1px), `legal-link` (1px auto #005fcc `measured.focus-outline`, offset 1px), `footer-link` (1px auto #005fcc `measured.focus-outline`, offset 1px), `footer-twitter` (1px auto #005fcc `measured.focus-outline`, offset 1px). The other 7 show no measured change: `cookie-accept`, `nav-about`, `nav-login`, `watch-video`, `try-cta`, `join-btn`, `modal-close`.
+**Focus.** 10 components were given a real keyboard focus. 4 draw an outline ring: `cookie-learn` (1px auto #005fcc `measured.focus-outline`, offset 1px), `social-link` (1px auto #005fcc `measured.focus-outline`, offset 1px), `footer-link` (1px auto #005fcc `measured.focus-outline`, offset 1px), `footer-twitter` (1px auto #005fcc `measured.focus-outline`, offset 1px). The other 6 show no measured change: `cookie-accept`, `nav-about`, `nav-login`, `watch-video`, `try-cta`, `join-btn`.
 
 **Pressed.** Forced with DevTools (`CSS.forcePseudoState` :active:hover): the pill buttons fall back to their resting fill when pressed (the hover grey is a :hover rule, so :active:hover reads as default), the grey chips keep stepping darker (#e0e3e7 → #dde0e4 → #dadde1), and the unstyled social/logo anchors pick up the UA :active link red #ff0000 — a browser default, not a Dona value. Nothing a real press would submit was ever pressed.
 
@@ -109,9 +109,9 @@ The centred dona logo (ring mark + wordmark), inside an anchor to / whose own bo
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 95.19 x 28; background transparent; text Inter 16/23.2 400, #0000ee `measured.ua-link`; transform translate(-47.5938px, 0px); icon 95.19 x 28, #0000ee `measured.ua-link` |
+| default (same: hover, pressed) | size 95.19 x 28; background transparent; text Inter 16/23.2 400, #0000ee `measured.ua-link`; transform translate(-47.5938px, 0px); icon 95.19 x 28, #0000ee `measured.ua-link` |
 
-![Logo default](components/crops/logo-default.png) ![Logo hover](components/crops/logo-hover.png) ![Logo focus-visible](components/crops/logo-focus-visible.png) ![Logo pressed](components/crops/logo-pressed.png)
+![Logo default](components/crops/logo-default.png) ![Logo hover](components/crops/logo-hover.png) ![Logo pressed](components/crops/logo-pressed.png)
 
 #### About button
 The header About action (routes to /about). Read as `nav-about` on the home page.
@@ -250,9 +250,9 @@ The close (x) control on the video modal. Read as `modal-close` on the home page
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 56 x 56; radius 50%; background #b0b5ba `color.fill.close`; text Inter 16/23.2 400, #ffffff `color.neutral.paper`; transition background-color 0.15s ease; icon 18 x 18, #ffffff `color.neutral.paper` |
-| hover, focus-visible, pressed | background #a8adb3 `color.fill.close-hover` |
+| hover, pressed | background #a8adb3 `color.fill.close-hover` |
 
-![Modal close default](components/crops/modal-close-default.png) ![Modal close hover](components/crops/modal-close-hover.png) ![Modal close focus-visible](components/crops/modal-close-focus-visible.png) ![Modal close pressed](components/crops/modal-close-pressed.png)
+![Modal close default](components/crops/modal-close-default.png) ![Modal close hover](components/crops/modal-close-hover.png) ![Modal close pressed](components/crops/modal-close-pressed.png)
 
 ### About
 
@@ -286,11 +286,11 @@ A team-member card: photo, name, one-line bio and social links (Jakub Antalik / 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 286.66 x 330.05; background transparent; text Inter 18/24.3 600, #19191b `color.neutral.ink`; icon 16 x 16, #0000ee `measured.ua-link`; layers a.about__Social-sc-xipocs-7.kgPcWG 40.0x40.0 rgb(224, 227, 231) rgba(0, 0, 0, 0.02) 0px 2px 4px 0px, rgba(0, 0, 0, 0.03) 0px -1px 2px 0px inset 14px; a.about__Social-sc-xipocs-7.kgPcWG 40.0x40.0 rgb(224, 227, 231) rgba(0, 0, 0, 0.02) 0px 2px 4px 0px, rgba(0, 0, 0, 0.03) 0px -1px 2px 0px inset 14px |
+| default (same: hover, pressed) | size 286.66 x 330.05; background transparent; text Inter 18/24.3 600, #19191b `color.neutral.ink`; icon 16 x 16, #0000ee `measured.ua-link`; layers a.about__Social-sc-xipocs-7.kgPcWG 40.0x40.0 rgb(224, 227, 231) rgba(0, 0, 0, 0.02) 0px 2px 4px 0px, rgba(0, 0, 0, 0.03) 0px -1px 2px 0px inset 14px; a.about__Social-sc-xipocs-7.kgPcWG 40.0x40.0 rgb(224, 227, 231) rgba(0, 0, 0, 0.02) 0px 2px 4px 0px, rgba(0, 0, 0, 0.03) 0px -1px 2px 0px inset 14px |
 
 Child layers that carry the look: a 40x40 background #e0e3e7 `color.fill.chip` radius 14px shadow rgba(0, 0, 0, 0.02) 0px 2px 4px 0px, rgba(0, 0, 0, 0.03) 0px -1px 2px 0px inset; a 40x40 background #e0e3e7 `color.fill.chip` radius 14px shadow rgba(0, 0, 0, 0.02) 0px 2px 4px 0px, rgba(0, 0, 0, 0.03) 0px -1px 2px 0px inset.
 
-![Team card default](components/crops/team-card-default.png) ![Team card hover](components/crops/team-card-hover.png) ![Team card focus-visible](components/crops/team-card-focus-visible.png) ![Team card pressed](components/crops/team-card-pressed.png)
+![Team card default](components/crops/team-card-default.png) ![Team card hover](components/crops/team-card-hover.png) ![Team card pressed](components/crops/team-card-pressed.png)
 
 #### Team avatar
 A member photo inside the team card. Read as `team-avatar` on the about page.
@@ -339,14 +339,9 @@ A section subheading inside the legal copy ("Cookies", "Terms"). Read as `legal-
 ![Legal subheading default](components/crops/legal-h4-default.png)
 
 #### Legal link
-A link inside the legal copy. Read as `legal-link` on the privacy policy page.
+A link inside the legal copy. The `div a` catch-all landed on the footer's 'Privacy policy' link (14px/20.3px), not a legal-body link, so no in-copy link was verified — the selector is now scoped to the legal content and the entry re-measures on the next capture. Read as `legal-link` on the privacy policy page.
 
-| State | Values (later rows list only what changes from the first row) |
-|---|---|
-| default (same: hover, pressed) | size 91.56 x 17; background transparent; text Inter 14/20.3 400, #19191b `color.neutral.ink` |
-| focus-visible | outline 1px auto #005fcc `measured.focus-outline`, offset 1px; layers a 91.6x17.0 1px auto rgb(0, 95, 204) offset 1px |
-
-![Legal link default](components/crops/legal-link-default.png) ![Legal link hover](components/crops/legal-link-hover.png) ![Legal link focus-visible](components/crops/legal-link-focus-visible.png) ![Legal link pressed](components/crops/legal-link-pressed.png)
+Not on the page when it was captured.
 
 ### Footer
 
@@ -383,10 +378,10 @@ The @getdona icon link in the footer; measured, never followed. Read as `footer-
 
 ### Mobile (390 wide)
 
-The same surface at phone width — the cookie banner becomes a top bar and the display drops to 40px.
+The same surface at phone width — the cookie banner's marked node measured as an offscreen 555x64 fixed bar (it never painted on the phone pass, so its real placement is unverified) and the display drops to 40px.
 
 #### Cookie banner (mobile)
-The consent notice at 390 wide; hidden after its own reading, never answered. Read as `m-cookie-banner` on the home page at 390 wide.
+The consent notice at 390 wide; hidden after its own reading, never answered. Note: the marked node read as a 555x64 fixed bar at top:1138px — offscreen in the 390x844 viewport and wider than it — and it never painted on the phone pass (the crop caught body text), so the real mobile placement is unverified. Read as `m-cookie-banner` on the home page at 390 wide.
 
 **Values (default).** size 555 x 64; padding 12px; background #ffffff `color.neutral.paper`; shadow rgba(12, 20, 66, 0.03) 0px 1px 3px 0px, rgba(12, 20, 66, 0.04) 0px -8px 16px 0px, rgba(12, 20, 66, 0.04) 0px -16px 40px 0px; text Inter 16/23.2 400, #19191b `color.neutral.ink`; icon 40 x 40, #19191b `color.neutral.ink`.
 

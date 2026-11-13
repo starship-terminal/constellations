@@ -162,7 +162,9 @@ ORDER = ["size", "padding", "border", "radius", "background", "image", "shadow",
 
 
 def state_rows(c):
-    states = [s for s in c["states"] if "style" in c["states"][s]]
+    # A focus attempt that never landed is not a focus-visible reading: via
+    # 'focus failed' is kept on the entry as a record but is not a state.
+    states = [s for s in c["states"] if "style" in c["states"][s] and c["states"][s].get("via") != "focus failed"]
     if not states:
         return [], states
     base = props(c["states"][states[0]])
@@ -224,7 +226,7 @@ GROUP_INTRO = {
     "About": "The mission page: the same 84px display, the mission paragraphs and the team card grid with its social chips.",
     "Legal pages": "The privacy policy (the terms page paints the same layout): display head, 16px body and 18px subheads.",
     "Footer": "The footer row: the dona wordmark, legal links and the grey social chip.",
-    "Mobile (390 wide)": "The same surface at phone width — the cookie banner becomes a top bar and the display drops to 40px.",
+    "Mobile (390 wide)": "The same surface at phone width — the cookie banner's marked node measured as an offscreen 555x64 fixed bar (it never painted on the phone pass, so its real placement is unverified) and the display drops to 40px.",
 }
 
 SHOTS = [
@@ -275,7 +277,7 @@ W(f"- Crops are images of the component read from the live page, in [components/
 W()
 W("## Discovery list")
 W()
-W("Screenshots are named `{page}-light-{state}.png`: the public surface paints one light theme (the light/dark/black app UI themes live inside the product). Desktop shots are 1440 x 900 at 1x; `-full` shots are whole pages at 1x; mobile shots are `mobile-{page}-light-{state}.png`, 780 wide (390 at 2x).")
+W("Screenshots are named `{page}-light-{state}.png`: the public surface paints one light theme (the light/dark/black app UI themes live inside the product). Desktop shots are 1440 x 900 at 1x; `-full` shots are whole pages at the context's device scale (1x on the desktop pass, 2x on mobile); mobile shots are `mobile-{page}-light-{state}.png`, 780 wide (390 at 2x).")
 W()
 W("| Surface | URL | Screenshots |")
 W("|---|---|---|")

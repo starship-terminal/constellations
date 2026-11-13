@@ -42,14 +42,14 @@ code { font-family: var(--sg-mono); font-size: .9em; }
 .btn.primary { background: var(--action-primary-default, #008ffd); color: #fff; box-shadow: var(--shadow-action, none); }
 .btn.ink { background: var(--color-brand-ink, #19191b); color: #fff; box-shadow: var(--shadow-join, none); }
 .btn.ghosty { background: transparent; color: var(--color-neutral-ink, #19191b); box-shadow: none; }
-.hero { color: var(--color-neutral-ink, #19191b); padding: 72px 40px; font: 700 56px/1.1 var(--sg-sans); letter-spacing: -0.02em; text-align: center; }
-.hero small { display: block; font: 500 18px/1.45 var(--sg-sans); color: var(--color-neutral-ink, #19191b); margin: 16px auto 22px; max-width: 46ch; }
+.hero { color: var(--color-neutral-ink, #19191b); padding: 72px 40px; font: var(--font-weight-display, 700) var(--font-size-display, 84px)/var(--font-lineHeight-display, 1.1) var(--sg-sans); letter-spacing: -0.02em; text-align: center; }
+.hero small { display: block; font: var(--font-weight-lede, 500) var(--font-size-lede, 24px)/var(--font-lineHeight-lede, 1.45) var(--sg-sans); color: var(--color-neutral-ink, #19191b); margin: 16px auto 22px; max-width: 46ch; }
 .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px; padding: 0 0 4px; }
 .tile { padding: 20px; font-size: 13px; background: var(--color-fill-tile, #f4f4f5); border-radius: var(--radius-card, 20px); min-height: 140px; }
 .tile b { display: block; font: 600 20px/1.35 var(--sg-sans); color: var(--color-neutral-ink, #19191b); margin-bottom: 6px; }
 .tile .sub { color: var(--color-neutral-muted, #616870); font-size: 15px; }
 .nl { padding: 28px 24px; border-top: 1px solid var(--color-fill-control, #aaa); }
-.nl .fld { font: 400 32px/1.5 var(--sg-sans); color: var(--color-neutral-placeholder, #bfc3c8); border: 0; border-bottom: 2px solid var(--color-fill-control, #eceff2); padding: 4px 0; margin-bottom: 18px; }
+.nl .fld { font: 400 var(--font-size-field-display, 40px)/var(--font-lineHeight-field-display, 1.5) var(--sg-sans); color: var(--color-neutral-placeholder, #bfc3c8); border: 0; padding: 4px 0; margin-bottom: 18px; }
 .chip { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: var(--radius-chip, 14px); background: var(--color-fill-chip, #e0e3e7); color: var(--color-neutral-ink, #19191b); font-size: 13px; }
 .bnr { display: flex; align-items: center; gap: 14px; padding: 18px; border-radius: var(--radius-banner, 40px); background: #fff; box-shadow: var(--shadow-banner, none); font-size: 14px; }
 table.cmp { border-collapse: collapse; font-size: 14px; }
@@ -151,7 +151,7 @@ const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) 
 
 (function elev() {
   let e = '';
-  for (const [n, t] of flat(TOK.core.shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => (x.inset ? 'inset ' : '') + x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + (x.spread ?? '0px') + ' ' + x.color).join(', ') : t.v)}</span></div>`;
   $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
 })();
 
