@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 123,
-    "system_domains": 115,
-    "matched_domains": 90,
-    "missing_domains": 343,
+    "system_packages": 124,
+    "system_domains": 116,
+    "matched_domains": 91,
+    "missing_domains": 342,
     "system_domains_absent_from_catalog": 25
   },
   "matched": {
@@ -1392,6 +1392,23 @@
         }
       ]
     },
+    "epidemicsound.com": {
+      "catalog": [
+        {
+          "name": "Epidemic Sound",
+          "domain": "epidemicsound.com",
+          "id": 75
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "epidemicsound",
+          "name": "Epidemic Sound",
+          "url": "https://www.epidemicsound.com",
+          "name_match": false
+        }
+      ]
+    },
     "github.com": {
       "catalog": [
         {
@@ -1798,13 +1815,6 @@
         "name": "Epic Games",
         "domain": "epicgames.com",
         "id": 84
-      }
-    ],
-    "epidemicsound.com": [
-      {
-        "name": "Epidemic Sound",
-        "domain": "epidemicsound.com",
-        "id": 75
       }
     ],
     "equals.app": [
