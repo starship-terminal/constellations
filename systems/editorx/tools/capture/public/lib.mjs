@@ -1,5 +1,5 @@
-// Shared helpers for the editorx.com public captures (adapted from the
-// canva.com copy, which came from the Boords/Blue Apron/Bloomberg lineage).
+// Shared helpers for the editorx.com public captures (kit lineage:
+// Boords / Blue Apron / Bloomberg).
 // Run with PLAYWRIGHT pointing at a Playwright install (index.mjs) when this
 // directory has no node_modules.
 import fs from 'node:fs';

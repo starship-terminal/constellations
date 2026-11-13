@@ -164,8 +164,8 @@ async function S(key, target, list, meta = {}, opts = {}) {
   delete out.components[key].missing;
   if (opts.open) { await reset(); try { await opts.open(); } catch (e) { log('  ! open failed', key, String(e.message).slice(0, 80)); } }
   const loc = target.filter({ visible: true }).first();
-  // Canva's SPA re-mounts subtrees when async data resolves (the pricing
-  // plans grid re-renders once localised prices arrive): give a briefly
+  // Thunderbolt pages re-mount subtrees when async data resolves (the
+  // plans grid re-renders once its data arrives): give a briefly
   // unmounted element up to 6s to come back before declaring a miss.
   await loc.waitFor({ state: 'visible', timeout: 6000 }).catch(() => {});
   if (!(await loc.count())) {
