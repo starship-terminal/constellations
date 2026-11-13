@@ -8928,6 +8928,298 @@
       }
     },
     {
+      "slug": "epidemicsound",
+      "name": "Epidemic Sound",
+      "url": "https://www.epidemicsound.com",
+      "category": "media",
+      "platform": "web",
+      "goodFor": "music-and-SFX-licensing design: a declared --es-* token layer (151 semantic colour roles, es-heading/subheading/text type scales, radii/elevation/grid/trackrow scales, Inter + Sebenta stacks) across two signed-out surfaces - an ecru alternative-light marketing site (pill header, serif display hero, #ff82c2 accent, black pill CTAs) and a dark catalog app (pink #ff82c2 genre banner, 56px track rows with cover-play buttons and icon actions, sticky pill nav) plus dark login.epidemicsound.com Keycloak forms",
+      "tags": [
+        "web",
+        "music",
+        "streaming",
+        "licensing",
+        "design-tokens",
+        "dark",
+        "light",
+        "pink-accent",
+        "player",
+        "catalog",
+        "signed-out"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-14",
+      "access": "read-only (the marketing site, the public catalog, SFX and artist pages and the account forms are fully public; everything behind login.epidemicsound.com is an authenticated boundary never reached; Play, Download, Subscribe, Create-free-account and Log-in actions were measured, never followed; the login and signup forms were never submitted)",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/epidemicsound/README.md",
+      "tokens": "systems/epidemicsound/tokens.json",
+      "styleGuide": "systems/epidemicsound/style-guide.html",
+      "preview": {
+        "cover": "systems/epidemicsound/screenshots/home-light-default.png",
+        "icon": "systems/epidemicsound/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.color.background.surface",
+            "text": "light.text.ink",
+            "muted": "light.color.text.secondary",
+            "accent": "light.color.action.accent.default",
+            "border": "light.border.focus"
+          },
+          "dark": {
+            "page": "dark.background.canvas",
+            "surface": "dark.background.surface",
+            "text": "dark.color.text.primary",
+            "muted": "dark.color.text.secondary",
+            "accent": "dark.action.accent",
+            "border": "dark.border.focus"
+          }
+        },
+        "fonts": [
+          "core.font.family.display",
+          "core.font.family.ui"
+        ]
+      },
+      "capture": {
+        "method": "public-web",
+        "source": "epidemicsound.com in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and crops from the live DOM. The site declares a real --es-* design-token layer in its stylesheets (294 resolved custom properties per theme pass), resolved per body theme class (light/alternative-light and the shipped radii-override), so the colour roles are declared values and the component values are measured computed values. Everything behind login.epidemicsound.com is a documented authenticated boundary",
+        "timestamp": "2026-11-14T04:45:00Z",
+        "harness": "Devin",
+        "model": "SWE-2 High",
+        "route": "public-web",
+        "routes": [
+          "/",
+          "/pricing/",
+          "/music/",
+          "/sound-effects/",
+          "/how-it-works/",
+          "/music/genres/pop/",
+          "/music/themes/vlogs/lifestyle-vlog/",
+          "/artists/ooyy/",
+          "/sound-effects/categories/ambience/",
+          "login.epidemicsound.com (login card, at rest)",
+          "login.epidemicsound.com (registration card, at rest)",
+          "mobile / and /music/genres/pop/"
+        ],
+        "gaps": [
+          "every post-login surface (library, playlists, downloads, billing, account settings) lives behind login.epidemicsound.com - an authenticated boundary never reached",
+          "the login and signup forms were measured at rest, never filled with real credentials or submitted; validation, error and success states are absent rather than measured",
+          "playback was never started - Play, Download, queue and player controls were measured at rest; what playing does signed out is unverified",
+          "the #es-cookie-banner consent card was hidden for clean captures, never answered",
+          "the track-row cover play button's hover state is a real 0x0 - row hover swaps the cover button out of the layout",
+          "icons: no standalone SVG set lifted this pass"
+        ],
+        "durationMin": 300,
+        "durationNote": "wall-clock across the capture sessions including kit adaptation, the stylesheet harvest (including the radii-override body-class correction), screenshot and measurement passes on a headless Linux server, and the offline build",
+        "pr": "https://github.com/starship-terminal/constellations/pull/541"
+      },
+      "layoutGaps": {
+        "icons/": "the icon extraction pass was not run; the marks (the ES glyph, transport icons, social sign-in marks) are visible in the crops and screenshots"
+      }
+    },
+    {
+      "slug": "enode",
+      "name": "Enode",
+      "url": "https://enode.com",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "energy-tech marketing design: a declared token layer (--color-brand-*/--color-gray-*/--color-enode-green-* palette scales, per-mode --color-background-*/--color-foreground-*/--color-card-*/--color-border-*/--color-line-*/--color-diagram-* semantic roles, --text-*/--leading-*/--tracking-* type ramp, --radius-* 2-10px plus full pills, grid/gutter/breakpoint/blur/ease tokens) under per-page data-mode themes - pale-green #f0fde8 light marketing with a 58px glass header and dark-glass mega-menus, whole-dark /platform pages (#151413 canvas, translucent tiles), scoped dark showcase sections with #b0f87c live-metric green, and a dark-framed platform login with a light panel",
+      "tags": [
+        "web",
+        "energy",
+        "saas",
+        "design-tokens",
+        "light",
+        "dark",
+        "per-page-theme",
+        "green-accent",
+        "variable-font",
+        "signed-out"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-13",
+      "access": "read-only (the marketing site and the platform login page are fully public signed out; everything behind platform.enode.com - the dashboard, docs portal, API surfaces - is an authenticated boundary never reached; the contact and login forms were measured and typed into then cleared, never submitted; every CTA and link was measured, never followed; the dormant Cookiebot layer shows no banner and was never answered)",
+      "themes": ["light", "dark"],
+      "widths": [1440, 390],
+      "entry": "systems/enode/README.md",
+      "tokens": "systems/enode/tokens.json",
+      "styleGuide": "systems/enode/style-guide.html",
+      "preview": {
+        "cover": "systems/enode/screenshots/home-light-default.png",
+        "icon": "systems/enode/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.color.background.primary",
+            "surface": "light.color.background.secondary",
+            "text": "light.color.foreground.primary",
+            "muted": "light.color.foreground.secondary",
+            "accent": "light.color.visual.diagram.accent",
+            "border": "light.color.border.primary.default"
+          },
+          "dark": {
+            "page": "dark.color.background.primary",
+            "surface": "dark.color.background.secondary",
+            "text": "dark.color.foreground.primary",
+            "muted": "dark.color.foreground.secondary",
+            "accent": "dark.color.visual.diagram.accent",
+            "border": "dark.color.border.primary.default"
+          }
+        },
+        "fonts": [
+          "core.font.family.sans",
+          "core.font.family.mono"
+        ]
+      },
+      "capture": {
+        "method": "public-web",
+        "source": "enode.com in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and crops from the live DOM. The site declares its token layer in ~160KB of inline CSS (283 resolved custom properties per mode probe), so the scales are declared values and the surface roles are measured computed values aliased to the declarations they match. The mode is per-page (data-mode on <html>), not a user toggle: most marketing pages paint light, /platform/overview and /platform/flexibility paint dark, and light pages carry scoped [data-mode=\"dark\"] showcase sections. Everything behind platform.enode.com is a documented authenticated boundary; the login app does not share this token layer",
+        "timestamp": "2026-11-13T20:00:00Z",
+        "harness": "Devin",
+        "model": "SWE-2 High",
+        "route": "public-web",
+        "routes": [
+          "/",
+          "/platform/overview",
+          "/platform/homes",
+          "/platform/flexibility",
+          "/platform/assets",
+          "/enterprise",
+          "/customers",
+          "/customers/vattenfall",
+          "/company",
+          "/careers",
+          "/partnerships",
+          "/newsroom",
+          "/newsroom/vattenfall-and-enode-bring-smart-charging-to-ev-owners-in-sweden",
+          "/updates",
+          "/updates/introducing-asset-overview-find-the-right-assets-in-seconds-not-days",
+          "/contact",
+          "/contact/partnerships",
+          "/privacy-policy",
+          "platform.enode.com/login",
+          "mobile /, /platform/overview, /contact and /updates"
+        ],
+        "gaps": [
+          "every post-login platform surface (dashboard, asset management, API keys) and docs.enode.com lives behind an account - an authenticated boundary never reached",
+          "the /contact, /contact/partnerships and platform login forms were measured at rest and typed into then cleared, never submitted - validation, error, loading and success states are absent rather than measured",
+          "the careers 'View open positions' link leaves enode.com for the ATS; the positions board was not captured",
+          "newsroom/updates articles and customer stories are covered by one captured example each; other article routes are the same templates, unmeasured",
+          "the hero showcase and mega-menu demo tiles hold live canvas/video content; a screenshot freezes one frame, so sparse-looking panels are a capture artifact",
+          "pressed states are forced with DevTools (CSS.forcePseudoState), so any script-applied mousedown state is missing",
+          "mega-menu items' focus/hover is partially covered - the panel closes on blur before a keyboard focus can always be held",
+          "icons: no standalone SVG set lifted this pass"
+        ],
+        "durationMin": 420,
+        "durationNote": "wall-clock across the capture sessions including kit adaptation (shooter, measurement and docs builders rewritten to the Enode DOM), the stylesheet harvest, screenshot and measurement passes on a headless Linux server, and the offline build",
+        "pr": "https://github.com/starship-terminal/constellations/pull/539"
+      },
+      "layoutGaps": {
+        "icons/": "the icon extraction pass was not run; the icons (the Enode mark, the mono product-area glyphs in the mega-menu, social glyphs, the node/diagram marks) are visible in the crops and screenshots"
+      }
+    },
+{
+      "slug": "delphi",
+      "name": "Delphi",
+      "url": "https://www.delphi.co",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "expert-Q&A and AI-clone product design: a full declared token layer (Radix-style 12-step palette scales, a shadcn semantic layer, Delphi --fg-*/--surface-*/--mind-* roles and a Tailwind utility scale) over a white light surface (#21201c ink, #63635e/#82827c mid-low text, #f7f3f0 warm cards, translucent-ink hairlines, #fd5400 brand-orange create actions), Delphi Pythia display + Delphi Inter UI, big ask-field heroes, coloured topic cards, two-sided perspective flip cards, signed-out /search results, public expert profiles and a chat composer, plus Sign-In and onboarding dialogs",
+      "tags": [
+        "web",
+        "ai",
+        "q-and-a",
+        "chat",
+        "tailwind",
+        "radix-tokens",
+        "light",
+        "orange-accent",
+        "serif-display",
+        "cards",
+        "signed-out"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-14",
+      "access": "read-only (the home page, /discover/<topic> galleries, /search/<question> results, /<expert> profiles and /<expert>/chat are fully public signed out; creating a clone, saving perspectives and every post-login surface is an authenticated boundary never reached; Sign In, Continue with Google/Email, Share, Save, Expand, Personalize, suggested-question chips, the microphone and the chat send were measured, never followed or submitted)",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/delphi/README.md",
+      "tokens": "systems/delphi/tokens.json",
+      "styleGuide": "systems/delphi/style-guide.html",
+      "preview": {
+        "cover": "systems/delphi/screenshots/discover-light-default.png",
+        "icon": "systems/delphi/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.surface.secondary",
+            "text": "light.text.ink",
+            "muted": "light.text.mid",
+            "accent": "light.action.accent",
+            "border": "light.border.hairline"
+          },
+          "dark": {
+            "page": "dark.background.default",
+            "surface": "dark.surface.secondary",
+            "text": "dark.fg.high",
+            "muted": "dark.fg.mid",
+            "accent": "dark.brand.accent",
+            "border": "dark.border.default"
+          }
+        },
+        "fonts": [
+          "core.font.family.display",
+          "core.font.family.ui"
+        ]
+      },
+      "capture": {
+        "method": "public-web",
+        "source": "www.delphi.co (delphi.ai redirects here) in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and crops from the live DOM. The site declares its token layer in its stylesheets (425 resolved custom properties per theme), so the scales are declared values and the surface roles are measured computed values aliased to the declarations they match. Only the light theme paints signed out; the dark set is declared evidence. The Sign-In dialog and the post-login product are documented authenticated boundaries",
+        "timestamp": "2026-11-14T12:00:00Z",
+        "harness": "Devin",
+        "model": "SWE-2 High",
+        "route": "public-web",
+        "routes": [
+          "/",
+          "/discover/productivity",
+          "/search/i-want-to-bring-my-different-groups-of-friends-together-and-buil",
+          "/karpathy",
+          "/karpathy/chat",
+          "/auth (Sign-In dialog over home)",
+          "/onboarding (same Sign-In dialog)",
+          "mobile / and /karpathy/chat"
+        ],
+        "gaps": [
+          "creating a clone, saving perspectives, personalising results and every post-login surface need an account - an authenticated boundary never reached",
+          "the Sign-In/onboarding dialogs were measured as dialogs; Continue with Google/Email were never pressed, so the auth flow past the dialog is unmeasured",
+          "no question was ever asked and no chat message was ever sent - the ask/search fields were typed and cleared, and the chat send button was measured with text in the field, then cleared",
+          "the dark theme is declared (276 of 425 vars differ from light) but only light ever paints signed out - dark tokens are declared evidence, unverified on a painted surface",
+          "full-page captures scroll a nested inner container and are viewport-tall tiles stitched together, capped at 8 tiles - a recorded boundary",
+          "disabled, error and loading states were not observed; pressed states are DevTools-forced :active and may not match real mousedown",
+          "a transient edge challenge interrupted two passes mid-capture; they were retried clean, no route stayed blocked",
+          "icons: no standalone SVG set lifted this pass"
+        ],
+        "durationMin": 300,
+        "durationNote": "wall-clock across the capture sessions including kit adaptation, the stylesheet harvest, screenshot and measurement passes on a headless Linux server, selector retries against hidden-duplicate DOM, and the offline build",
+        "pr": "https://github.com/starship-terminal/constellations/pull/537"
+      },
+      "layoutGaps": {
+        "icons/": "the icon extraction pass was not run; the icons (the Delphi glyph, microphone, send and Share marks) are visible in the crops and screenshots"
+      }
+    },
+    {
       "slug": "esquire",
       "name": "Esquire",
       "url": "https://www.esquire.com",
