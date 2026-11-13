@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 123,
-    "system_domains": 115,
-    "matched_domains": 90,
-    "missing_domains": 343,
+    "system_packages": 124,
+    "system_domains": 116,
+    "matched_domains": 91,
+    "missing_domains": 342,
     "system_domains_absent_from_catalog": 25
   },
   "matched": {
@@ -1392,6 +1392,23 @@
         }
       ]
     },
+    "exactly.ai": {
+      "catalog": [
+        {
+          "name": "Exactly.ai",
+          "domain": "exactly.ai",
+          "id": 645
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "exactly",
+          "name": "Exactly.ai",
+          "url": "https://exactly.ai",
+          "name_match": true
+        }
+      ]
+    },
     "github.com": {
       "catalog": [
         {
@@ -1826,13 +1843,6 @@
         "name": "Exa",
         "domain": "exa.ai",
         "id": 898
-      }
-    ],
-    "exactly.ai": [
-      {
-        "name": "Exactly.ai",
-        "domain": "exactly.ai",
-        "id": 645
       }
     ],
     "excalidraw.com": [

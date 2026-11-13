@@ -1,0 +1,16 @@
+file	name	rendered sizes	viewBox	source	seen on
+desktop.svg	desktop	91x16	0 0 90.667 16	inline	pricing
+dot.svg	dot	6x6	0 0 6 6	inline	home
+laurel-left.svg	laurel-left	28x56	0 0 27.98 56	inline	home, mobile-home, pricing
+laurel-right.svg	laurel-right	28x56	0 0 27.98 56	inline	home, mobile-home, pricing
+logo-on-image.svg	logo-on-image	24x24	0 0 24 24	inline	home
+logo-on-light.svg	logo-on-light	24x24	0 0 24 24	inline	book-a-demo, case-studies, help-center, help-center-frequently-asked-questions, industries, pricing, showcase
+plan-glyph-1.svg	plan-glyph-1	60x60	0 0 60 60	inline	home, mobile-home, pricing
+plan-glyph-2.svg	plan-glyph-2	64x64	0 0 64 64	inline	home, mobile-home, pricing
+plan-glyph-3.svg	plan-glyph-3	63x63	0 0 63 63	inline	home, mobile-home, pricing
+plus-c1cd28e8.svg	plus-c1cd28e8	23x23	0 0 22.403 22.4	inline	pricing
+plus-d7dee377.svg	plus-d7dee377	20x20	0 0 19.914 19.911	inline	industries
+plus.svg	plus	23x23	0 0 22.403 22.4	inline	pricing, showcase
+search.svg	search	15x15	0 0 15.068 15.067	inline	help-center, help-center-frequently-asked-questions
+wordmark-on-image.svg	wordmark-on-image	86x24	0 0 85.383 24	inline	home
+wordmark-on-light.svg	wordmark-on-light	86x24	0 0 85.383 24	inline	book-a-demo, case-studies, help-center, help-center-frequently-asked-questions, industries, mobile-home, pricing, showcase

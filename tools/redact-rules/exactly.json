@@ -1,0 +1,10 @@
+{
+ "families": [
+  {"name": "invite illustration addresses",
+   "files": ["screenshots/home-light-full.png"],
+   "rects": [[300, 11440, 680, 11500], [320, 11715, 680, 11765]]},
+  {"name": "invite illustration addresses",
+   "files": ["screenshots/mobile-home-light-full.png"],
+   "rects": [[70, 11535, 330, 11580], [70, 11735, 330, 11780]]}
+ ]
+}
