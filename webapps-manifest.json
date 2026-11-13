@@ -1224,8 +1224,8 @@
     465
    ],
    "description": "Makes it easy to create sales proposals, onboarding plans, client portals, and project hubs",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/dock",
    "notes": "",
    "batch": 5
   },
@@ -1239,8 +1239,8 @@
     940
    ],
    "description": "Your Personal AI Doctor",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/doctronic",
    "notes": "",
    "batch": 5
   },
@@ -1269,8 +1269,8 @@
     643
    ],
    "description": "A more humane to-do list",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/dona",
    "notes": "",
    "batch": 5
   },
@@ -1284,8 +1284,8 @@
     298
    ],
    "description": "Food, grocery and retail - fast same day delivery",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/doordash",
    "notes": "",
    "batch": 5
   },
@@ -1299,8 +1299,8 @@
     723
    ],
    "description": "Just Refill",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/dopper",
    "notes": "",
    "batch": 5
   },
@@ -1329,8 +1329,8 @@
     688
    ],
    "description": "Mixology-crafted non-alcoholic cocktails to elevate your mood",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/drinkdouze",
    "notes": "",
    "batch": 5
   },
