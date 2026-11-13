@@ -33,11 +33,18 @@ class KitQuantizeTest(unittest.TestCase):
             Image.new("RGB", (4, 3), (10, 20, 30)).save(raw / "page.part0.png")
             Image.new("RGB", (4, 5), (40, 50, 60)).save(raw / "page.part1.png")
             Image.new("RGB", (4, 4), (70, 80, 90)).save(raw / "x.partial.png")
+            # Copies whose public.mjs writes a completion manifest only stitch a
+            # marked set; give this complete two-tile set its manifest.
+            if "parts.json" in source.read_text():
+                (raw / "page.parts.json").write_text('{"tiles": ["page.part0.png", "page.part1.png"]}')
             done = subprocess.run([sys.executable, str(script), str(raw)], capture_output=True, text=True)
             self.assertEqual(done.returncode, 0, done.stderr[-500:])
             with Image.open(raw / "page.png") as im:
                 self.assertEqual(im.size, (4, 8))
-            self.assertEqual(sorted(p.name for p in (tmp / "pkg" / "screenshots").iterdir()), ["page.png"])
+            # Newer copies carry the capture sidecars through to screenshots/ and
+            # write a stitched sidecar for tiled images; older copies quantize only.
+            expected = ["page.png"] + (["page.png.capture.json"] if "stitchedParts" in source.read_text() else [])
+            self.assertEqual(sorted(p.name for p in (tmp / "pkg" / "screenshots").iterdir()), expected)
 
     def test_a_partial_name_is_not_a_tile(self):
         self.run_copy(KIT)

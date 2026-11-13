@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dribbble style guide</title>
+<meta name="description" content="Dribbble design tokens and the public signed-out surface's components, rendered from tokens.json with the declared Shoelace and measured mini-master values.">
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  --sg-sans: "Mona Sans", "Helvetica Neue", Helvetica, Arial, ui-sans-serif, system-ui, sans-serif;
+  --sg-serif: "Source Serif 4", ui-serif, Georgia, "Times New Roman", serif;
+  --sg-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+[data-mode="dark"], .dark {
+/*DARK*/
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--color-text, #0d0c22); background: var(--color-page, #fff); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 500 40px/1.1 var(--sg-sans); margin: 0 0 4px; letter-spacing: -0.02em; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--color-text, #0d0c22); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--color-border, #e7e7e9); }
+.lead { max-width: 62ch; color: var(--color-text, #0d0c22); opacity: .8; }
+.note { font-size: 13px; color: var(--color-text, #0d0c22); opacity: .65; max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--color-text, #0d0c22); opacity: .6; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.pal.dark { background: #0d0c22; padding: 12px; border-radius: 8px; }
+.pal.dark .nm, .pal.dark .vl { color: #fff; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--color-border, #e7e7e9); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--color-text, #0d0c22); opacity: .65; }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--color-border, #e7e7e9); background: var(--color-surface, #fff); font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--color-text, #0d0c22); opacity: .65; }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--color-border, #e7e7e9); overflow: hidden; background: var(--color-page, #fff); }
+.navbar { display: flex; align-items: center; gap: 22px; height: var(--component-header-height, 68px); padding: 0 12px 0 22px; font-size: 15px; color: var(--color-text, #0d0c22); }
+.navbar .wm { font-weight: 700; font-size: 24px; font-family: var(--sg-serif); font-style: italic; letter-spacing: -0.02em; }
+.navbar .sp { flex: 1; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-button-height, 48px); padding: 0 16px; font-size: 15px; font-weight: 500; border-radius: var(--radius-button-pill, 20px); border: 1px solid transparent; }
+.btn.dark { background: var(--color-measured-ink-deep, #060318); color: var(--color-on-accent, #fff); }
+.btn.plain { color: var(--color-text, #0d0c22); }
+.btn.pink { background: var(--color-accent, #ea4c89); color: var(--color-on-accent, #fff); }
+.promo { background: var(--color-surface-alt, #f8f8fc); color: var(--color-muted, #6e6d7a); font-size: 12px; height: 30px; display: flex; align-items: center; justify-content: center; gap: 6px; }
+.hero { color: var(--color-text, #0d0c22); padding: 56px 40px 32px; font: 600 52px/1.2 var(--sg-sans); letter-spacing: -0.02em; text-align: left; }
+.hero .pk { color: var(--color-accent, #ea4c89); }
+.hero small { display: block; font: 400 18px/1.5 var(--sg-sans); color: var(--color-muted, #6e6d7a); letter-spacing: 0; margin: 16px 0 22px; max-width: 46ch; }
+.searchbar { display: flex; align-items: center; gap: 8px; height: var(--component-search-height, 56px); border: 1px solid var(--color-border, #e7e7e9); border-radius: var(--radius-search, 12px); padding: 0 6px 0 18px; background: var(--color-surface, #fff); font-size: 14px; color: var(--color-muted, #6e6d7a); margin: 0 40px 24px; }
+.searchbar .sp { flex: 1; }
+.searchbar .go { width: var(--component-search-go-size, 40px); height: var(--component-search-go-size, 40px); border-radius: 50%; background: var(--color-accent, #ea4c89); display: inline-flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; padding: 0 40px 32px; }
+.chip { display: inline-flex; align-items: center; height: var(--component-chip-height, 32px); padding: 0 14px; border-radius: var(--radius-chip, 8px); background: var(--color-surface-alt, #f8f8fc); color: var(--color-text, #0d0c22); font-size: 13px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
+.tile { border: 1px solid var(--color-border, #e7e7e9); border-radius: var(--radius-card, 8px); padding: 14px; font-size: 13px; background: var(--color-surface, #fff); }
+.tile b { display: block; font: 500 18px/1.25 var(--sg-sans); margin-bottom: 4px; }
+.tile .sub { opacity: .65; font-size: 12px; }
+.shot { border-radius: var(--radius-card, 8px); overflow: hidden; border: 1px solid var(--color-border, #e7e7e9); background: var(--color-surface, #fff); }
+.shot .art { height: 120px; background: linear-gradient(135deg, #f8f8fc, #fde7f0 55%, #ea4c89 160%); }
+.shot .who { display: flex; align-items: center; gap: 8px; padding: 10px 12px; font-size: 13px; font-weight: 500; }
+.shot .av { width: 24px; height: 24px; border-radius: 50%; background: var(--color-surface-alt, #f8f8fc); border: 1px solid var(--color-border, #e7e7e9); }
+.shot .pro { font-size: 10px; font-weight: 700; background: var(--color-accent, #ea4c89); color: #fff; border-radius: 4px; padding: 1px 5px; }
+.shot .stats { margin-left: auto; font-size: 12px; color: var(--color-muted, #6e6d7a); font-weight: 400; }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--color-border, #e7e7e9); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--color-border, #e7e7e9); }
+.tr .ts { font-family: var(--sg-sans); }
+.tr .tv { font-size: 12px; color: var(--color-text, #0d0c22); opacity: .65; font-family: var(--sg-mono); }
+.wall { margin: 0 40px 32px; border: 1px solid var(--color-border, #e7e7e9); border-radius: var(--radius-card, 8px); background: var(--color-surface, #fff); padding: 28px; text-align: center; font-size: 14px; color: var(--color-muted, #6e6d7a); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Dribbble style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">Dribbble, measured</h2>
+  <p class="lead">dribbble.com is a Rails app in three CSS eras painting one light surface. Its declared token layer is Shoelace's — the --sl-* set with the --sl-color-primary-* ramp re-bound to the Dribbble pink (#ea4c89), plus neutral and gray ramps, radii, spacing, shadows, transitions and the focus ring. Most of the signed-out surface is styled by the older mini-master bundle instead: Mona Sans at 52px/600 on the hero, the #0d0c22 ink, #6e6d7a muted text, the #f8f8fc promo and chip tint, 8px cards, the 12px search field, 20px pills and the 40px pink Go circle — measured off the live components. The dark set names the ink surfaces the page paints (the dark pills, the certified chip), not a user theme. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from dribbble.com, signed out, in headless Chromium (the capture date is in README.md and raw/css-vars.json). The signed-out feed ends at a Sign-up-to-continue wall — a documented boundary; nothing was signed into, filled, followed, liked or submitted. Mona Sans, Source Serif 4 and IBM Plex Mono are served faces and are not loaded here: samples fall back to system sans.</p>
+
+  <h2 class="sh">The chrome</h2>
+  <p class="lead">Every page carries the same header on white: the script wordmark, the Explore / Hire Talent / Get Hired / Community dropdowns, a plain Sign up and the deep-ink Log-in pill. Under it on the home page the WELCOME20 strip sits on the #f8f8fc tint.</p>
+  <div class="mock">
+    <div class="navbar"><span class="wm">dribbble</span><span>Explore &#9662;</span><span>Hire Talent &#9662;</span><span>Get Hired &#9662;</span><span>Community &#9662;</span><span class="sp"></span><span class="btn plain" style="height:40px;font-size:14px">Sign up</span><span class="btn dark" style="height:40px;font-size:14px">Log in</span></div>
+    <div class="promo">Get 20% off Dribbble Pro with code WELCOME20 — offer ends soon. Get Started</div>
+  </div>
+
+  <h2 class="sh">The hero and search</h2>
+  <p class="lead">The hire-focused hero runs 52px/600 in Mona Sans with one rotating word in the pink; below it the big search field carries a 12px radius and the 40px pink Go circle, over a row of Popular-search tag chips.</p>
+  <div class="mock">
+    <div class="hero">Work with the world's best in <span class="pk">web design</span><small>Join the world's leading designers, agencies and brands on Dribbble.</small></div>
+    <div class="searchbar">What type of design are you interested in?<span class="sp"></span><span class="go">&#8594;</span></div>
+    <div class="chips"><span class="chip">dashboard</span><span class="chip">landing page</span><span class="chip">mobile app</span><span class="chip">ecommerce</span><span class="chip">animation</span><span class="chip">illustration</span></div>
+  </div>
+
+  <h2 class="sh">The feed and the wall</h2>
+  <p class="lead">Shot cards paint an 8px radius with the designer's avatar, name, a pink PRO chip and heart/eye counts. Signed out, the feed paints a teaser then the Sign-up-to-continue wall — the public boundary.</p>
+  <div class="mock" style="padding:20px 0 0">
+    <div class="grid" style="padding:0 40px 20px">
+      <div class="shot"><div class="art"></div><div class="who"><span class="av"></span>Studio Name <span class="pro">PRO+</span><span class="stats">&#9825; 128 &nbsp; &#128065; 3.2k</span></div></div>
+      <div class="shot"><div class="art"></div><div class="who"><span class="av"></span>Designer <span class="pro">PRO</span><span class="stats">&#9825; 64 &nbsp; &#128065; 1.1k</span></div></div>
+    </div>
+    <div class="wall">Sign up to continue — the signed-in feed is behind this wall.</div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">core.color.pink is the declared Shoelace primary ramp re-bound to Dribbble's pinks; neutral and gray are the declared ramps; hue holds the full Shoelace hue set; measured holds the mini-master values the page actually paints. Light roles name the semantic reads; the dark set names the ink surfaces inside the light page.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing and radius</h2>
+  <p class="lead">Spacing is the declared --sl-spacing scale (4px-64px); radii run 2-16px on the declared scale, with the measured 12px search field, 20px pills, 8px cards and the circle on top.</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead"><code>Mona Sans</code> is the whole product stack (52px/600 hero down to 12px tags); <code>Source Serif 4</code> and <code>IBM Plex Mono</code> are served on the newer surfaces. Sizes mix the declared --sl-font-size steps with the measured mini-master sizes; samples fall back to system sans.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Motion, focus, stacking and the rest</h2>
+  <p class="lead">The declared --sl-transition duration scale, the focus-ring bindings (declared plus the measured outline), the --zi-* and --sl-z-index layers, the scoped container widths, Dribbble's own --btn-*/--site-nav-*/--input-* declared layer, and the measured extras — every remaining token group.</p>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared --sl-* variables from the live stylesheets and computed styles on the components across the public routes</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed and open states measured per component, plus the Explore dropdown and mobile menu opened by their own toggles</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = /*TOKENS*/null;
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  const lightRoles = flat(TOK.light || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+  if (lightRoles.length) {
+    h += `<div class="pal-h">light roles</div><div class="pal">`;
+    for (const [n, t] of lightRoles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  // The dark set's custom properties only resolve inside a .dark scope:
+  // swatch dots must live under it or they paint the light values/unset.
+  const darkRoles = flat(TOK.dark || {}, '').filter(([n, t]) => t.t === 'color');
+  if (darkRoles.length) {
+    h += `<div class="pal-h">dark roles (the ink surfaces)</div><div class="pal dark">`;
+    for (const [n, t] of darkRoles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.border || {}, 'border.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.easing || {}, 'easing.')) m += `<div><b>${esc(n)}</b> <span>cubic-bezier(${esc(t.v.join ? t.v.join(', ') : t.v)})</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  for (const [n, t] of flat(TOK.core.shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const grp of ['duration', 'focusRing', 'zIndex', 'layout', 'dribbble', 'measured']) {
+    const items = flat(TOK.core[grp] || {}, grp + '.');
+    if (!items.length) continue;
+    m += `<div class="pal-h" style="grid-column:1/-1;margin:14px 0 0">${esc(grp)}</div>`;
+    for (const [n, t] of items) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  }
+  const comp = flat((TOK.light.component || {}), 'component.');
+  if (comp.length) {
+    m += `<div class="pal-h" style="grid-column:1/-1;margin:14px 0 0">component</div>`;
+    for (const [n, t] of comp) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  }
+  $('#meas-out').innerHTML = m;
+})();
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(t.v);
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).tracking || {}, 'font.tracking.')) h += `<div class="tr"><span class="ts" style="letter-spacing:${esc(t.v)}em">${esc(n)} — Dribbble</span><span class="tv">${esc(t.v)}em on font size</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Dribbble</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).face || {}, 'font.face.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>

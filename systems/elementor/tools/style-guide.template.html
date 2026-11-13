@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Elementor style guide</title>
+<meta name="description" content="Elementor design tokens and the public signed-out surface's components, rendered from tokens.json with the declared CSS custom properties and the measured computed styles.">
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  --sg-sans: "Roobert", ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+[data-mode="dark"], .dark {
+/*DARK*/
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text, var(--palette-kernel-black, #000)); background: var(--page, #fff); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 600 40px/1.2 var(--sg-sans); margin: 0 0 4px; letter-spacing: -0.02em; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--text, #000); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--border, #d1d1d1); }
+.lead { max-width: 62ch; color: var(--text, #000); opacity: .8; }
+.note { font-size: 13px; color: var(--text, #000); opacity: .65; max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--text, #000); opacity: .6; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.pal.dark { background: #000; padding: 12px; border-radius: 12px; }
+.pal.dark .nm, .pal.dark .vl { color: #fff; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border, #d1d1d1); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--text, #000); opacity: .65; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--text, #000); opacity: .65; }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--border, #d1d1d1); overflow: hidden; background: var(--page, #fff); }
+.hdr { display: flex; align-items: center; gap: 18px; height: var(--component-headerHeight, 72px); padding: 0 12px 0 20px; margin: 18px; background: #fff; border-radius: var(--radius-pill, 24px); box-shadow: var(--shadow-header); font-size: 16px; color: var(--palette-grey-800, #212121); }
+.hdr .wm { font-weight: 700; font-size: 20px; letter-spacing: -0.02em; color: #000; }
+.hdr .nl { padding: 8.96px 16px; border-radius: var(--radius-control, 8px); }
+.hdr .nl:hover { background: var(--tintHover, #fae4fa); }
+.hdr .sp { flex: 1; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-buttonHeight, 48px); padding: 0 24px; font: 500 18px/1 var(--sg-sans); letter-spacing: -0.36px; border-radius: var(--radius-control, 8px); border: none; color: #fff; background: var(--accent, #000); transition: background-color 0.2s ease; }
+.btn:hover { background: var(--accentHover, #ed01ee); }
+.btn.outline { background: transparent; color: #000; box-shadow: inset 0 0 0 2px var(--borderStrong, #000); height: 56px; }
+.btn.outline:hover { background: var(--accentHover, #ed01ee); color: #fff; box-shadow: inset 0 0 0 2px var(--accentHover, #ed01ee); }
+.dark-isl { background: var(--palette-kernel-black, #000); color: #fff; padding: 72px 40px 80px; }
+.dark-isl .hero { font: 600 56px/1.1 var(--sg-sans); letter-spacing: -0.88px; color: #fff; }
+.dark-isl .lede { font: 400 20px/28px var(--sg-sans); color: var(--palette-grey-200, #f6f6f6); margin: 16px 0 22px; max-width: 46ch; }
+.dark-isl .btn { background: #fff; color: #000; }
+.dark-isl .btn:hover { background: var(--accentHover, #ed01ee); color: #fff; }
+.mega { display: grid; grid-template-columns: 1fr 343px; gap: 12px; margin: 18px; padding: 24px; background: #fff; border-radius: var(--radius-pill, 24px); box-shadow: var(--shadow-header); }
+.mega .col a { display: block; padding: 16px; border-radius: var(--radius-control, 8px); font: 600 14px/22.4px var(--sg-sans); color: #000; text-decoration: none; }
+.mega .col a:hover { background: var(--tintHover, #fae4fa); }
+.mega .feat { border-radius: var(--radius-control, 8px); background: linear-gradient(297deg, #620856 9.99%, #1b0317 60.15%); color: #fff; padding: 40px 24px; font: 400 14px/22.4px var(--sg-sans); letter-spacing: .7px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+.plan { border: 1px solid var(--border, #d1d1d1); border-radius: var(--radius-planCard, 8px); padding: 24px; background: #fff; }
+.plan .nm { font: 600 20px/32px var(--sg-sans); }
+.plan .price { font: 600 40px/40px var(--sg-sans); margin: 12px 0 4px; }
+.plan .per { font: 400 14px/1.4 var(--sg-sans); color: #000; opacity: .7; }
+.plan .btn { width: 100%; margin-top: 16px; }
+.twrap { display: inline-flex; background: var(--palette-grey-300, #ebebeb); border-radius: var(--radius-control, 8px); padding: 4px; gap: 4px; font: 700 16px/34px var(--sg-sans); }
+.twrap span { padding: 0 22px; border-radius: var(--radius-control, 8px); color: var(--palette-grey-800, #212121); }
+.twrap .on { background: #fff; }
+.frow { display: flex; gap: 10px; align-items: baseline; padding: 6px 0; font: 400 14px/19.6px var(--sg-sans); color: var(--palette-grey-800, #212121); }
+.frow::before { content: "\2713"; font-weight: 700; }
+.field { display: block; width: 100%; height: 40.4px; padding: 8px; margin: 8px 0; border: var(--component-fieldBorder, 1px solid #d1d1d1); border-radius: var(--radius-field, 4px); font: 400 16px/22.4px var(--sg-sans); background: #fff; color: #000; }
+.field:focus { border-color: #000; box-shadow: 0 0 6px 0 #e2e2e2; outline: none; }
+textarea.field { height: 107.6px; }
+.ck { display: flex; align-items: center; gap: 8px; font: 400 14px/22.4px var(--sg-sans); margin: 12px 0; }
+.ck i { width: var(--component-checkboxSize, 16px); height: var(--component-checkboxSize, 16px); border: 1px solid var(--border, #d1d1d1); display: inline-block; background: #fff; }
+.faq-row { display: flex; justify-content: space-between; align-items: center; padding: 20px 80px 20px 0; border-bottom: 1px solid var(--border, #d1d1d1); font: 700 20px/28px var(--sg-sans); color: var(--palette-grey-800, #212121); }
+.faq-row .x { font-weight: 400; font-size: 24px; }
+.ftr { background: #000; color: #fff; padding: 48px 96px; display: flex; flex-wrap: wrap; gap: 48px; }
+.ftr .col { min-width: 140px; }
+.ftr b { display: block; font: 700 14px/19.6px var(--sg-sans); color: #fff; margin-bottom: 12px; }
+.ftr a { display: block; font: 400 14px/19.6px var(--sg-sans); color: var(--palette-grey-200, #f6f6f6); text-decoration: none; padding: 4px 0; }
+.ftr a:hover { text-decoration: underline; }
+.cmp { border-collapse: collapse; font-size: 14px; }
+.cmp td, .cmp th { border: 1px solid var(--border, #d1d1d1); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--border, #d1d1d1); }
+.tr .tv { font-size: 12px; color: var(--text, #000); opacity: .65; font-family: var(--sg-mono); }
+.focus-demo { outline: 2px auto var(--focusRing, #005fcc); outline-offset: 2px; }
+/* Phone layout: the mocks are reconstructions, so on a narrow screen they
+   stack and wrap rather than clip inside .mock's hidden overflow. */
+@media (max-width: 720px) {
+  main { padding: 24px 14px 72px; }
+  .hdr { flex-wrap: wrap; height: auto; padding: 12px 16px; row-gap: 8px; }
+  .mega { grid-template-columns: 1fr; padding: 16px; margin: 12px; }
+  .form-mock { grid-template-columns: 1fr !important; }
+  .ftr { padding: 32px 24px; gap: 24px; }
+  .faq-row { padding-right: 16px; }
+  .dark-isl { padding: 48px 20px 56px; }
+  .dark-isl .hero { font-size: 36px; }
+  .twrap { font-size: 14px; }
+}
+</style>
+</head>
+<body>
+<main>
+  <h1>Elementor style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">Elementor, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the <code>--Kernel-Black</code>/<code>--Blank-Canvas-White</code> pair the whole site is typed in, the grey ramp, the Neon-Loop magenta every primary action rebounds to on hover, the Syntax-Glow tint behind hovered menu items, the three marketing gradients, the declared <code>--e-global-color-*</code> set, Roobert's scale, and the 4/8/16/24 radius ladder. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from elementor.com on 2026-11-13, signed out, in headless Chromium at 1440x900 and 390x844. The editor, the my.elementor.com dashboard, checkout and account creation are documented boundaries, not captured. Roobert is a self-hosted licensed face and is not loaded here: samples fall back to system sans.</p>
+
+  <h2 class="sh">The chrome</h2>
+  <p class="lead">The header floats as a white 24px-radius pill, 72px tall on desktop (64px at 390 wide), carrying the wordmark, the Products mega-menu trigger, Agency/Enterprise/Pricing/App-Builder links, a language selector, Log in, and the black 48px Get-started action. Triggers and menu items tint Syntax-Glow on hover; every primary fill rebounds to Neon-Loop.</p>
+  <div class="mock">
+    <div class="hdr"><span class="wm">elementor</span><span class="nl">Products</span><span class="nl">Agency</span><span class="nl">Enterprise</span><span class="nl">Pricing</span><span class="sp"></span><span>En</span><span class="nl">Log in</span><span class="btn">Get started</span></div>
+  </div>
+
+  <h2 class="sh">The dark islands</h2>
+  <p class="lead">One light page paints <code>.dark-mode</code> islands: the photo hero, the dark card sections and the footer. Under that class the same named vars re-bind - Kernel-Black to #fff, Blank-Canvas-White to #000 - so the hero headline reads white and the inverted Get-started pill paints Blank-Canvas-White.</p>
+  <div class="mock dark-isl">
+    <div class="hero">Build sites that move the web forward</div>
+    <div class="lede">The website builder for WordPress, measured signed out.</div>
+    <span class="btn">Get started</span>
+  </div>
+
+  <h2 class="sh">The mega-menu</h2>
+  <p class="lead">The Products trigger opens a full-width white panel under the same 24px radius and header shadow: product link columns whose rows tint Syntax-Glow on hover, and a featured tile painting the Codeberry gradient.</p>
+  <div class="mock">
+    <div class="mega">
+      <div class="col"><a href="#">Website Builder</a><a href="#">AI Site Planner</a><a href="#">Image Optimizer</a><a href="#">Hosting</a></div>
+      <div class="feat">Agent Ready Scanner<br>Scan your site for AI-agent readiness.</div>
+    </div>
+  </div>
+
+  <h2 class="sh">Pricing</h2>
+  <p class="lead">/pricing puts a grey-well variant toggle above white plan cards: an 8px-radius tile with a 1px Grey-500 border, a 20px/600 plan name, a 40px/600 price and a 56px Buy-now drawn as a 2px black outline that fills Neon-Loop on hover. Feature rows carry a drawn check.</p>
+  <div class="mock" style="padding:20px">
+    <div style="text-align:center;margin-bottom:18px"><span class="twrap"><span class="on">Essential</span><span>Advanced Solo</span><span>Advanced</span></span></div>
+    <div class="grid">
+      <div class="plan"><div class="nm">Essential</div><div class="price">$4.99</div><div class="per">/month billed yearly</div><span class="btn outline">Buy now</span></div>
+      <div class="plan"><div class="nm">Advanced Solo</div><div class="price">$6.99</div><div class="per">/month billed yearly</div>
+        <div class="frow">1 site</div><div class="frow">25K visits</div><div class="frow">10GB storage</div>
+        <span class="btn outline">Buy now</span></div>
+      <div class="plan"><div class="nm">Advanced</div><div class="price">$9.99</div><div class="per">/month billed yearly</div><span class="btn outline">Buy now</span></div>
+    </div>
+  </div>
+
+  <h2 class="sh">The contact form</h2>
+  <p class="lead">A contact-option card (Grey-200 fill that lifts to a 1px black ring on hover) opens an Elementor popup: 4px-radius fields on a 1px Grey-500 border that tightens to black with a soft grey glow on focus, a 16px acceptance checkbox, and the black 48px submit. Measured, never submitted.</p>
+  <div class="mock form-mock" style="padding:24px;display:grid;grid-template-columns:1fr 1fr;gap:24px">
+    <div style="background:var(--surface,#f6f6f6);border-radius:var(--radius-card,16px);padding:32px 24px;font:600 24px/31.2px var(--sg-sans)">Legal department inquiries</div>
+    <div>
+      <input class="field" placeholder="Full name">
+      <input class="field" placeholder="Email">
+      <textarea class="field" placeholder="How can we help?"></textarea>
+      <span class="ck"><i></i> I accept the terms</span>
+      <span class="btn focus-demo">Submit</span>
+    </div>
+  </div>
+
+  <h2 class="sh">FAQ and footer</h2>
+  <p class="lead">/faq heads the page at 72px/600 with -0.72px tracking; each accordion row is a 20px/700 question with a drawn plus that rotates open. The footer is the last dark island: white 14px link columns over Kernel-Black.</p>
+  <div class="mock">
+    <div style="padding:0 24px"><div class="faq-row"><span>Is Elementor compatible with my theme?</span><span class="x">+</span></div><div class="faq-row"><span>Can I use Elementor for free?</span><span class="x">+</span></div></div>
+    <div class="ftr"><div class="col"><b>Products</b><a href="#">Website Builder</a><a href="#">Hosting</a><a href="#">AI tools</a></div><div class="col"><b>Company</b><a href="#">About</a><a href="#">Careers</a><a href="#">Contact</a></div><div class="col"><b>Resources</b><a href="#">Help center</a><a href="#">Blog</a><a href="#">FAQ</a></div></div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The core set is the site's own variable layer read off <code>:root</code> and the darkscope rules: the Kernel-Black / Blank-Canvas-White axis, the Grey ramp, the Neon-Loop action pink with its hover, the Syntax-Glow tint, the Startup-Lime / Seedling-Spark / Vision-Violet / Founder-Forest accents and the three named gradients. <code>globalColor</code> is the declared <code>--e-global-color-*</code> kit palette. Light roles alias the palette; the dark set is the island re-binding, not a user toggle.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing and radius</h2>
+  <p class="lead"><code>spacePrimitive</code> is the measured pixel ladder (the 8px grid runs 8-160); <code>spaceScale</code> names the section padding bands small through large. Radius runs fields at 4px, controls and plan cards at 8px, cards at 16px and the floating header, mega-menu and pills at 24px.</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows and motion</h2>
+  <p class="lead">One measured shadow: the floating header's 5% black 15px blur with a 3px spread. Motion is short - 0.2s ease on button fills, 0.3s on links and toggles, 0.5s on panels.</p>
+  <div id="elev-out" class="kv"></div>
+  <div id="motion-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">Roobert everywhere the surface is styled: 88/96.8 600 display with -0.88px tracking on the hero, 72/79.2 on the FAQ page, 24/31.2 section titles, 18px/500 buttons with -0.36px, 16/22.4 nav and fields, 14px lists and footer. Roboto serves the editor-side chrome. Samples fall back to system sans.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the site's own custom-property layer (<code>:root</code>, <code>.dark-mode *</code>, kit vars) and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, focused, filled and open states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = /*TOKENS*/null;
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.palette ? { palette: TOK.core.palette, globalColor: TOK.core.globalColor || {} } : {})) {
+    const items = (grp && grp.t ? [[g, grp]] : flat(grp, g + '.')).filter(([, t]) => t.t === 'color' || t.t === 'other');
+    if (!items.length) continue;
+    h += `<div class="pal-h">core.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  for (const [setname, label] of [['light', 'light roles'], ['dark', 'dark roles (the .dark-mode islands)']]) {
+    const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color');
+    if (!roles.length) continue;
+    // The dark set's custom properties only resolve inside a .dark scope:
+    // swatch dots must live under it or they paint the light values/unset.
+    h += `<div class="pal-h">${label}</div><div class="pal${setname === 'dark' ? ' dark' : ''}">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.spacePrimitive || {}, 'spacePrimitive.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.spaceScale || {}, 'spaceScale.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  for (const [n, t] of flat(TOK.core.shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function motion() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.motion || {}, 'motion.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  $('#motion-out').innerHTML = m;
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.component || {}, 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat(TOK.core.typeScale || {}, 'typeScale.')) {
+    const px = parseFloat(t.v);
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} - The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat(TOK.core.fontFamily || {}, 'fontFamily.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>

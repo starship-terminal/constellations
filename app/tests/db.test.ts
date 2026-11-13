@@ -174,7 +174,7 @@ test("version-two stores preserve existing state while adding independent screen
       (await migrated.client.execute("PRAGMA user_version")).rows[0]
         .user_version,
     ),
-  ).toBe(5);
+  ).toBe(6);
   expect((await migrated.getConversation(conversation.id))?.title).toBe(
     "Keep research",
   );
@@ -251,15 +251,63 @@ test("version-two stores preserve existing state while adding independent screen
   expect(await reopened.listSavedMedia()).toHaveLength(1);
 });
 
+test("version-five stores gain curated rows added since, without touching their own labels", async () => {
+  const { dir, store } = await open();
+  // A manual relabelling replaces the curated rows and must survive the
+  // top-up; only references carrying no labels at all are seeded.
+  await store.assignReferenceCategories(
+    "systems:linear",
+    "web-categories",
+    ["Design & Media Editing"],
+    "user's own call",
+  );
+  // A v5 store opened before the Dub rows existed: drop them and rewind.
+  await store.client.execute(
+    "DELETE FROM reference_categories WHERE reference_id='systems:dub'",
+  );
+  await store.client.execute(
+    "DELETE FROM media_term_assignments WHERE reference_id='systems:dub'",
+  );
+  await store.client.execute("PRAGMA user_version=5");
+  store.close();
+  stores.splice(stores.indexOf(store), 1);
+  const migrated = await createResearchStore(dir);
+  stores.push(migrated);
+  expect(
+    Number(
+      (await migrated.client.execute("PRAGMA user_version")).rows[0]
+        .user_version,
+    ),
+  ).toBe(6);
+  const categories = await migrated.listReferenceCategories();
+  expect(
+    categories.filter((row) => row.referenceId === "systems:dub"),
+  ).toHaveLength(1);
+  expect(
+    categories.filter((row) => row.referenceId === "systems:linear"),
+  ).toHaveLength(1);
+  expect(
+    (await migrated.listReferenceCategoryDetails(["systems:linear"]))[0]
+      .label,
+  ).toBe("Design & Media Editing");
+  expect(
+    (await migrated.listReferenceCategoryDetails(["systems:dub"]))[0].label,
+  ).toBe("Productivity");
+  const media = await migrated.listMediaTermAssignments();
+  expect(
+    media.filter((row) => row.referenceId === "systems:dub").length,
+  ).toBeGreaterThan(0);
+});
+
 test("future database versions are rejected without downgrading their schema", async () => {
   const { dir, store } = await open();
-  await store.client.execute("PRAGMA user_version=6");
+  await store.client.execute("PRAGMA user_version=7");
   await expect(createResearchStore(dir)).rejects.toThrow("newer application");
   expect(
     Number(
       (await store.client.execute("PRAGMA user_version")).rows[0].user_version,
     ),
-  ).toBe(6);
+  ).toBe(7);
 });
 
 test("updateSettings writes JSON on a fresh row and on a conflicting row", async () => {
