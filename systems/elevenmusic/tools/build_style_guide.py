@@ -3,7 +3,7 @@
 
 Every colour, radius, shadow and type style on the page is a CSS custom property generated from
 tokens.json, so the guide cannot drift from the token file. The `core` and `light` sets go on
-`:root` and the `dark` set on `[data-mode="dark"]`/`.dark`, matching how calendly.com scopes
+`:root` and the `dark` set on `[data-mode="dark"]`/`.dark`, matching how elevenmusic.io scopes
 its .dark islands: the guide's theme toggle sets data-mode on <html>. Aliases like
 {text.primary} become var(--text-primary).
 
