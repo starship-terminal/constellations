@@ -1,7 +1,7 @@
 {
  "date": "2026-11-13",
  "rubric": "4",
- "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): reviewed against scorecard/criteria.json v4 (rubric 4 wording for web) by re-reading systems/docusign/{tokens.json,components.md,patterns.md,README.md}, raw/components-computed.json and the screenshots; grades set by the capturing agent",
+ "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): Re-reviewed dock's C2/C3/F8 against the saved evidence after a Greptile pass on PR #507: repaired the shadow-DOM focus-via labels (8 of 9 'focus failed' reads painted the real ink ring), confirmed 14 of 19 landed focuses draw a ring and 5 show no measured change, and counted 14 distinct exported type sizes",
  "systems": [
   {
    "slug": "brilliant",
@@ -11595,103 +11595,107 @@
    "reviewedPlatform": "web"
   },
   {
-   "slug": "docusign",
+   "slug": "dock",
    "grades": {
     "F1": {
      "grade": "partly",
-     "evidence": "Ramps exist per hue family but are short measured state ramps: cobalt #4c00ff/#4000cc/#330099, auth-deep violet #260559/#2b047f/#37039e, a 7-step ink alpha ramp, plus the declared --ds-* palette (mist, ecru, poppy). The only 10-step ramp is the sierra.chat assistant's accentBlue layer, a vendor surface kept at vendor provenance."
+     "evidence": "The blue the actions paint has real steps — blue/blue-hover/blue-pressed measured off the controls plus blue-deep (band), blue-light/-soft/-tint/sky declared hues — and the shared shell declares an _anchor colour ramp (captured in raw/css-vars.json). Neutrals have ink, muted, white, two wash steps, hairline and border. The illustration accent hues (green, pink, purple, sky, warm, yellow) are single declared values, not ramps — a marketing palette, not a 10-step ramp set."
     },
     "F2": {
-     "grade": "meets",
-     "evidence": "light.color has page (white), surface.card/raised white, surface.band deep violet, surface.wash, surface.ecru, surface.violet, surface.mist and overlay.scrim (90% ink, from the video dialog)."
+     "grade": "partly",
+     "evidence": "light carries surface.page (white) and surface.subtle (#f7f7f8 wash); dark (the painted islands) adds surface.band (#002fa6 hero) and surface.pane (#242d7d signup testimonial). No overlay or scrim role paints on the public surface — the mega-menu paints an opaque 19px panel, not a scrimmed overlay."
     },
     "F3": {
      "grade": "partly",
-     "evidence": "text.primary/secondary/tertiary/on-dark/on-violet-quiet are measured; the link colour sits under action.link. No disabled text or error message text was observable on the signed-out surface."
+     "evidence": "light carries text.primary (#121722), text.muted and text.on-action (white on blue); dark carries white roles. No disabled text role exists on the public surface and links paint the default ink — no link role."
     },
     "F4": {
-     "grade": "meets",
-     "evidence": "border.default (15% ink hairline), border.strong (50% ink, plan cards), border.ecom, border.auth, border.mist and border.focus (cobalt) are all captured."
+     "grade": "partly",
+     "evidence": "light carries border.hairline (#dedfe3 bars/dividers) and border.default, plus the measured 0.5px/1px inset ring values; focus.ring.default is the measured 2px rgba(18,23,34,0.6) outline. No named 'strong' border role — the hairline is the only painted border weight."
     },
     "F5": {
      "grade": "meets",
-     "evidence": "action.primary-bg/#4000cc hover/#330099 pressed, action.ink-bg with hover and pressed triples, action.link + link-pressed — all measured with CDP-forced pressed."
+     "evidence": "action.primary.default #0068f9, .hover #0060eb and .pressed #005fe4, each measured off the real controls (nav-cta, hero-cta, plan-cta) across forced CDP states; the blue-band ghost states (transparent -> rgba(255,255,255,0.06) -> 0.1) sit in dark.action.ghost."
     },
     "F6": {
      "grade": "missing",
-     "evidence": "Only color.error (#ff0000, the generator canvas default) and the assistant's green focus ring were observable; success/warning/info palettes live on authenticated and transactional surfaces."
+     "evidence": "No success/warning/danger/info roles are declared or painted on the signed-out marketing and auth surfaces — the only accent hues are single-value illustration colours (brand.green/pink/purple/...). Nothing to capture."
     },
     "F7": {
-     "grade": "meets",
-     "evidence": "The product ships one public theme; every semantic role in the package exists in it (catalog themes: light only)."
+     "grade": "partly",
+     "evidence": "The marketing light/dark resolutions are identical apart from one menu value: Dock ships no dark theme. The dark set tokenises the painted deep-blue islands (band text/ghost/ring roles, 10 tokens) — parity is partial by construction, not by omission."
     },
     "F8": {
-     "grade": "meets",
-     "evidence": "Four families with fallback stacks (sans, sans-app, mono, signature scripts), an 11-step named scale (display 80 through tiny), weights 300-700, line heights and tracking all measured."
+     "grade": "partly",
+     "evidence": "Three families with fallbacks (DockWebflowHome, DockWebflowNavigation, Roobert — licensed served faces, not shipped), weights 400-700 and per-step line-heights, roles named in components. The exported ramp has fourteen distinct sizes (80.6/70/62/60/38/29.25 display, 20/19/18/16/15.5/14.5/14/12.5) against the rubric's six-to-eight: a marketing site really does paint that many steps — every one is a measured reading, not a designed scale."
     },
     "F9": {
      "grade": "meets",
-     "evidence": "A 12-step spacing scale on a 4px base, tokenised from measured padding and gaps."
+     "evidence": "The declared --space-* scale (4-56px steps) is captured in core.space.* with css-var sources."
     },
     "F10": {
-     "grade": "partly",
-     "evidence": "Radius scale 2-16 + pill is tokenised; border widths exist only inside component specs (1px hairlines, 2px rings), not as a width scale."
+     "grade": "meets",
+     "evidence": "core.radius.* carries the painted radii — 100px pills, 19px menu viewport, 18.9px artwork, 12px popular column, 8px menu items, 60px filter pill, 6px HubSpot fields, 4-6px Chakra controls — plus the 0.5px/1px ring and #dedfe3 hairline widths."
     },
     "F11": {
      "grade": "partly",
-     "evidence": "Control heights are recorded per component (61px fields, 45px CTA, 28px toggle); the focus ring's 2px width at 2px offset is in focus.ring's value. No icon-size scale: glyphs come from the 7_Docusign icon font, and no icon extraction ran."
+     "evidence": "Control heights measured across components (nav 38px, CTAs 40-44px, fields, header 70/76px, panels 258/386px) in light.component.*; focus ring width/offset captured. No icon-size scale — icons were not extracted (declared layoutGaps)."
     },
     "F12": {
-     "grade": "meets",
-     "evidence": "Six shadow tokens each tied to a use: soft (tabs/cards), launcher (chat pill), field-focus, ring-double (ecom focus), mist-ring, hairline-inset."
+     "grade": "partly",
+     "evidence": "Dock paints elevation rarely — the pattern is the inset hairline ring, and the measured rings plus the plan-cta layered shadow are tokenised in core.measured.*. There is no 3-5 level shadow scale on the public surface; the declared --shadow-* vars were captured in raw/css-vars.json."
     },
     "F13": {
      "grade": "partly",
-     "evidence": "Four durations (fast, colour, field, panel) measured from transitions; no distinct easing tokens (all easings were cubic-bezier on the same curve) and prefers-reduced-motion behaviour was not observable."
+     "evidence": "Declared motion captured: --duration-fast .14s, --duration-menu .24s and --ease-menu cubic-bezier(.22,1,.36,1) plus measured transitions per component. No reduced-motion behaviour was observable on the public surface."
     },
     "F14": {
      "grade": "partly",
-     "evidence": "Breakpoints (1440/390 with restacked mobile), content widths (1360px menu, 1280px FAQ) and z-layers (sticky header, 9999px-pill launcher, modal scrim) are documented in patterns.md and component entries, not as layout tokens."
+     "evidence": "Component boxes, header/container widths and the 1440/390 mobile reflow are measured (component.*), and the mobile panel/measures captured. No named breakpoint/grid/z tokens published by the Webflow layer."
     },
     "C1": {
      "grade": "partly",
-     "evidence": "13-14 of the 19 checklist items: button, icon button, link, text field, select, checkbox, tabs, menu, dialog, card, list row (FAQ/feature rows) — plus the billing toggle read as segmented radios and story-logo tiles. Text area, switch, tooltip, toast, table, avatar and badge do not appear on the signed-out surface."
+     "evidence": "A signed-out marketing surface: button (nav-cta, hero-cta, plan-cta, auth buttons), link, menu (mega-menu + mobile accordion), card (plan/customer/template/auth), badge (filter pill, trust badge), radio (filter-radio), text field (subdomain/signup/demo iframe) and FAQ list rows — ~9 of the 19 checklist components paint publicly; select lives inside the HubSpot iframe, the Turnstile checkbox stayed 1px, the rest never paint."
     },
     "C2": {
-     "grade": "meets",
-     "evidence": "209 states across 73 components: hover, focus-visible (real keyboard focus), pressed (CDP-forced), focused and filled on fields, selected on swatches/faces, open on menus/dialogs/accordions. Disabled, loading and error states are not reachable without submitting."
+     "grade": "partly",
+     "evidence": "Every interactive component carries default + hover + focus-visible + CDP-forced pressed, plus opened (mega-menu, mobile menu, FAQ rows) and selected (filter pill) where they apply, and disabled/error/loading are honestly recorded as absent. Two caveats keep this from meets: the Chakra Continue's focus-visible genuinely would not hold (recorded `via: focus failed`), and signup-submit's four states describe the OAuth 'Continue with Google' action — the selector was fixed and a re-measure is queued."
     },
     "C3": {
-     "grade": "meets",
-     "evidence": "A visible focus state is captured for every interactive component — cobalt 2px+2px rings on marketing, mist on violet bands, the white+cobalt double ring on ecom, inkwell on the account card."
+     "grade": "partly",
+     "evidence": "Focus landed on 19 of 20 attempted components (the Chakra Continue's focus failed). 14 paint a visible ring — the 2px rgba(18,23,34,0.6) ink outline on marketing controls, 2px #0068f9 on pricing/demo buttons, the same ink ring on the blue band — tokenised as focus.ring.*. Five (filter-radio, customer-card, sidebar-link, template-card, signup-submit) paint no ring on the public surface — a measured absence, and signup-submit's read is the misidentified OAuth action pending re-measure."
     },
     "C4": {
-     "grade": "meets",
-     "evidence": "Every components.md entry annotates values with the palette token that carries them ('#ffffff color.white'), and component specs in raw/component-tokens.json are written against the token names."
+     "grade": "partly",
+     "evidence": "components.md annotates colours with the matching palette token and the shared-values section names them; spec values in raw/component-tokens.json resolve to tokens. Some entries still quote measured values alongside (intentional, as evidence), so not every spec is tokens-only."
     },
     "P1": {
      "grade": "partly",
-     "evidence": "patterns.md covers the app shell (two-bar chrome, mega-menu, footer), forms (hero capture, trial, sign-in), filtering (stories filters, billing toggle), data display (cards, accordion, plan tables) and the generator workflow. Empty/loading/error, destructive confirmation and onboarding exist only behind auth or form submission."
+     "evidence": "patterns.md covers the app shell (header/mega-menu/footer), the hero, pricing, index grids, the demo form and auth cards. Validation, empty/loading/error, destructive confirmation and toasts do not paint on the public surface — recorded as gaps, not patterns."
     },
     "A1": {
      "grade": "partly",
-     "evidence": "Fonts are named with fallbacks (DSIndigo/'DS Indigo', Noto Sans Mono, six script faces, 7_Docusign icon font) — all proprietary, no licence file. No icon set was extracted (catalog layoutGaps); glyphs appear in crops only."
+     "evidence": "Fonts named with licence handling (Roobert/DockWebflow faces are licensed served fonts, not shipped; fallbacks declared). Icons were not extracted — declared in catalog layoutGaps and visible in crops/screenshots."
     },
     "K1": {
      "grade": "meets",
-     "evidence": "README covers the three-surface capture, the vars/measure/screenshot pipeline, the regional ecom redirect caveat, vendor-variable provenance, Emotion-hash fragility and the signed-out boundary."
+     "evidence": "The README states what was captured (routes, widths, surfaces), how (headless Chromium, shadow-DOM piercing, iframe reads, CDP states, the two token layers), and a What-to-distrust section (the non-theme dark set, the two font/ink systems, hidden prompt fields, the 1px Turnstile, 256-colour screenshots)."
+    },
+    "V1": {
+     "grade": "partly",
+     "evidence": "The README's Do-and-don't section carries 10 evidence-linked principles (blue pill actions, band ghost states, inset rings, family-per-surface, measured washes) — beyond the 3-5 rubric ask, each with a crop/screenshot link."
     },
     "F15": {
      "grade": "meets",
-     "evidence": "Script: all 4 pairs pass 4.5:1 across 1 themes; lowest 9.37:1 light muted (light.color.text.secondary) on page (light.color.page)"
+     "evidence": "Script: all 8 pairs pass 4.5:1 across 2 themes; lowest 7.51:1 dark muted (core.color.brand.blue-light) on page (core.color.brand.blue-deep)"
     },
     "F16": {
      "grade": "meets",
-     "evidence": "Script: 181 of 181 tokens name their source"
+     "evidence": "Script: 138 of 138 tokens name their source"
     },
     "K2": {
      "grade": "meets",
-     "evidence": "Script: 7 rules, each linking a screenshot or crop"
+     "evidence": "Script: 10 rules, each linking a screenshot or crop"
     },
     "K3": {
      "grade": "meets",
@@ -11701,21 +11705,18 @@
      "grade": "na",
      "evidence": "Optional for a capture, and this product does not publish it."
     },
-    "V1": {
-     "grade": "na",
-     "evidence": "Optional for a capture, and this product does not publish it."
-    },
     "V2": {
      "grade": "na",
      "evidence": "Optional for a capture, and this product does not publish it."
     }
    },
-   "name": "DocuSign",
-   "goodFor": "Agreement-platform marketing plus a live signature tool: inkwell #130032 on white with deep-violet #26065d bands and cobalt #4c00ff actions (#4000cc hover, #330099 pressed), declared --ds-* tokens on the signature generator, DS Indigo weight-300 display type, squared 4-8px radii, 2px cobalt focus rings and a white+cobalt double ring on the ecom storefront",
-   "url": "https://www.docusign.com",
+   "name": "Dock",
+   "goodFor": "Sales-collateral / enablement marketing plus a public demo form: a declared --ds-*/--color-* token layer on a white Webflow surface with #0068f9 blue 100px-pill actions (#0060eb hover, #005fe4 pressed), a #002fa6 deep-blue hero band with white-alpha ghost buttons, DockWebflow/Roobert type, 0.5px inset hairline rings, a shadow-DOM mega-menu, and a separate Chakra auth face (#4058ff, 4px radii, #1a202c)",
+   "url": "https://dock.us",
    "captured": "2026-11-13",
    "themes": [
-    "light"
+    "light",
+    "dark"
    ],
    "platform": "web",
    "category": "Productivity",
@@ -11724,5 +11725,5 @@
   }
  ],
  "base": "2026-10-16",
- "reviewMethod": "reviewed against scorecard/criteria.json v4 (rubric 4 wording for web) by re-reading systems/docusign/{tokens.json,components.md,patterns.md,README.md}, raw/components-computed.json and the screenshots; grades set by the capturing agent"
+ "reviewMethod": "Re-reviewed dock's C2/C3/F8 against the saved evidence after a Greptile pass on PR #507: repaired the shadow-DOM focus-via labels (8 of 9 'focus failed' reads painted the real ink ring), confirmed 14 of 19 landed focuses draw a ring and 5 show no measured change, and counted 14 distinct exported type sizes"
 }
