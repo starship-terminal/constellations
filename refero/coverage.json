@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 107,
-    "system_domains": 99,
-    "matched_domains": 74,
-    "missing_domains": 359,
+    "system_packages": 108,
+    "system_domains": 100,
+    "matched_domains": 75,
+    "missing_domains": 358,
     "system_domains_absent_from_catalog": 25
   },
   "matched": {
@@ -876,6 +876,23 @@
         }
       ]
     },
+    "craftwork.design": {
+      "catalog": [
+        {
+          "name": "Craftwork Design",
+          "domain": "craftwork.design",
+          "id": 188
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "craftwork",
+          "name": "Craftwork",
+          "url": "https://craftwork.design",
+          "name_match": true
+        }
+      ]
+    },
     "cursor.com": {
       "catalog": [
         {
@@ -1435,13 +1452,6 @@
         "name": "Copperx",
         "domain": "copperx.io",
         "id": 789
-      }
-    ],
-    "craftwork.design": [
-      {
-        "name": "Craftwork Design",
-        "domain": "craftwork.design",
-        "id": 188
       }
     ],
     "createwithplay.com": [
