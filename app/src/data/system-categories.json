@@ -787,5 +787,11 @@
       "Food & Drink"
     ],
     "reason": "catalog.json describes a French DTC beverage storefront: a Shopify marketing site and shop for flavoured drinks with product pages, a subscription pitch and a store locator."
+  },
+  {
+    "referenceId": "systems:dailyartmagazine",
+    "groupId": "web-categories",
+    "labels": ["Magazines & Newspapers"],
+    "reason": "catalog.json describes an art-history online magazine's editorial surfaces: the feed, category and article pages, and the newsletter and contact forms."
   }
 ]
