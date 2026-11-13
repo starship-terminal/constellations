@@ -7953,6 +7953,888 @@
       }
     },
     {
+      "slug": "elevenlabs",
+      "name": "ElevenLabs",
+      "url": "https://elevenlabs.io",
+      "category": "media",
+      "platform": "web",
+      "goodFor": "Voice-AI marketing and docs shells: Waldenburg 48px display over a #FDFCFC eggshell field, Inter UI text, pure-black 9999px pill CTAs that take one #44403b warm-dark step on hover and pressed, 5% warm-ink washes on ghost controls, #2b7fff blue kept for links, gradients and the 1px focus ring, white cards on #e5e5e5 hairlines, a second 12px-radius auth-card dialect, a working TTS playground on the home page and plan-card pricing",
+      "tags": [
+        "web",
+        "ai",
+        "voice",
+        "audio",
+        "marketing",
+        "minimal",
+        "pills",
+        "light",
+        "pricing",
+        "playground",
+        "signed-out"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-13",
+      "access": "signed out (every captured surface is public; the Studio, agents platform, voice library, API keys, billing and account sit behind the /app/sign-in and /app/sign-up cards and were never reached; no form was submitted, no account created and the Cookiebot layer was hidden, never answered). The home TTS playground's Play was pressed once, a public affordance that generates without an account",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/elevenlabs/README.md",
+      "tokens": "systems/elevenlabs/tokens.json",
+      "styleGuide": "systems/elevenlabs/style-guide.html",
+      "preview": {
+        "cover": "systems/elevenlabs/screenshots/home-light-default.png",
+        "icon": "systems/elevenlabs/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.surface.page",
+            "surface": "light.surface.card",
+            "text": "light.text.primary",
+            "muted": "light.text.muted",
+            "accent": "light.accent",
+            "border": "light.border"
+          }
+        },
+        "fonts": [
+          "core.font.family.display",
+          "core.font.family.sans"
+        ]
+      },
+      "capture": {
+        "method": "public-web",
+        "source": "elevenlabs.io (a Next.js + Tailwind 4 marketing app with a public TTS playground and docs shell) in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and crops from the live DOM. The custom-property layer (the --f-* type ramp, --spacing-*/--section-*/--rounded-* layout vars, --eggshell, the Waldenburg/Inter/Geist-Mono stacks and the shadcn triplets) is real and harvested from the cross-origin eleven-public-cdn.elevenlabs.io responses, resolved light; the ink/eggshell/white neutrals, the #000 -> #44403b action ramp, the warm state washes, radii, type ramp and motion are measured computed values. Everything behind the auth card is a documented boundary",
+        "timestamp": "2026-11-13T03:00:00Z",
+        "harness": "Devin",
+        "model": "SWE-2 High",
+        "route": "public-web",
+        "routes": [
+          "/",
+          "/pricing",
+          "/text-to-speech",
+          "/conversational-ai",
+          "/sound-effects",
+          "/api",
+          "/docs",
+          "/about",
+          "/enterprise",
+          "/blog",
+          "/app/sign-in",
+          "/app/sign-up",
+          "mobile /, /pricing and /text-to-speech"
+        ],
+        "gaps": [
+          "the signed-in product entirely: the Studio, agents platform, voice library, API keys, billing and account sit behind the auth card; /app redirects to /app/sign-in and was never entered",
+          "/app/sign-in and /app/sign-up captured as surfaces; the email/password fields were focused and sample-filled then deleted, leaving the submits disabled and never pressed; no form was submitted",
+          "Sign up, Subscribe, Get API key, Contact Sales and the OAuth providers (Google / Apple / SSO) were measured or screenshotted, never followed",
+          "the home TTS playground's Play was pressed once and generated without an account; the voice-orb and sample-card play buttons were measured but not played, and the voice-chat launcher was never opened",
+          "the Cookiebot consent layer was hidden per capture, never answered",
+          "the Products mega-menu auto-closes a few seconds after opening; flyout-state readings re-opened it first",
+          "the gradient voice orbs, card artwork, blog imagery and the wordmark are painted media layers, not CSS values",
+          "the promo strips carry live countdown timers - the captured values are point-in-time",
+          "no dark theme: every public surface paints light and the bundles declare no .dark scope or prefers-color-scheme rebind",
+          "full-page shots are capped at eight chunks; mobile-home's and text-to-speech's full pages overflowed the GPU texture limit and stitched from three / two chunks",
+          "icons: no standalone SVG set lifted this pass"
+        ],
+        "durationMin": null,
+        "durationNote": "multi-session capture: the screenshot, stylesheet-harvest and measurement passes ran in an earlier session whose evidence was resumed; this session ran the token/docs build, the rubric review and the packaging",
+        "pr": "https://github.com/starship-terminal/constellations/pull/523"
+      },
+      "layoutGaps": {
+        "icons/": "the icon extraction pass was not run; the glyphs (the ElevenLabs wordmark and its II mark, the gradient voice orbs, the Google/Apple/SSO provider glyphs, the social icons and the card artwork) are visible in the crops and screenshots"
+      }
+    },
+    {
+      "slug": "elektron",
+      "name": "Elektron",
+      "url": "https://www.elektron.se",
+      "category": "e-commerce",
+      "platform": "web",
+      "goodFor": "Instrument-grade hardware storefronts and product pages: a fully inverted monochrome (#151515 ground, #eeeef2 paper that is text, icon, 2px action stroke and hover fill at once), Neue Haas Grotesk Text/Display typography with digi one v2 button labels and an Analog One V2 search field, square corners on every control, a 7px space rhythm, #333333 gradient underline-sweep link hovers, light #eeeef2 field slabs, right-drawer modals over a 50% scrim and a double (white spread + black outline) focus ring",
+      "tags": [
+        "web",
+        "e-commerce",
+        "hardware",
+        "music",
+        "storefront",
+        "product-page",
+        "dark",
+        "monochrome",
+        "signed-out"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-13",
+      "access": "signed out (every captured surface is public; the account dashboard, order history, serial-registered downloads and checkout sit behind the /my-account magic-login card and were never reached; no code was requested, no form submitted, nothing added to the cart and no account created)",
+      "themes": [
+        "dark"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/elektron/README.md",
+      "tokens": "systems/elektron/tokens.json",
+      "styleGuide": "systems/elektron/style-guide.html",
+      "preview": {
+        "cover": "systems/elektron/screenshots/home-dark-default.png",
+        "icon": "systems/elektron/icon.png",
+        "swatches": {
+          "dark": {
+            "page": "dark.page",
+            "surface": "dark.surface",
+            "text": "dark.text",
+            "muted": "dark.text-muted",
+            "accent": "dark.accent",
+            "border": "dark.border"
+          }
+        },
+        "fonts": [
+          "core.font.family.display",
+          "core.font.family.text",
+          "core.font.family.button"
+        ]
+      },
+      "capture": {
+        "method": "public-web",
+        "source": "elektron.se (a WordPress/WooCommerce storefront on the thedock theme) in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and crops from the live DOM. The same-origin sheets declare readable custom-property layers --thedock-* and --tdc-* var-referenced where the surface paints them; the #cccccc/#757575/#333333/#808080 greys, the inverted outline-button and double focus-ring state layers, the type ramp, all-square radii and the 7px space rhythm are measured computed values. The account area, checkout and serial-registered downloads behind the magic-login card are a documented boundary",
+        "timestamp": "2026-11-13T10:00:00Z",
+        "harness": "Devin",
+        "model": "SWE-2 Max",
+        "route": "public-web",
+        "routes": [
+          "/",
+          "/shop",
+          "/product/digitakt-ii",
+          "/product/pl-2-protective-lid",
+          "/explore",
+          "/kulture",
+          "/support-downloads",
+          "/who-we-are",
+          "/contact-us",
+          "/cart",
+          "/my-account",
+          "/store-locator",
+          "mobile /, /shop and /product/digitakt-ii"
+        ],
+        "gaps": [
+          "the signed-in product entirely: the account dashboard, orders, registered machines and serial downloads sit behind the magic-login card and were never reached; no code was requested",
+          "ADD TO CART, EXPLORE, SUBMIT, CONTINUE SHOPPING, Send me a code and Create New Account were measured across their states, never pressed; the cart stayed empty and no checkout surface was reached",
+          "the thedock cookie consent modal was hidden before every shot and reading, never answered",
+          "pressed states were forced with DevTools CSS.forcePseudoState; product-card and accordion would not hold a real keyboard focus (via: focus failed, recorded)",
+          "field states were typed sample text that was deleted again; nothing was submitted",
+          "mobile-home and mobile-shop full-page captures overflowed the GPU texture limit and were stitched from chunks (the .partN PNGs and sidecars are in raw/full/)",
+          "Kulture articles, product configurators, download flows and outbound surfaces were never opened",
+          "icons: no standalone SVG set lifted this pass"
+        ],
+        "durationMin": 240,
+        "durationNote": "wall-clock across two sessions: the first ran the stylesheet harvest, screenshot and measurement passes; the second (this one) adapted the builders, wrote the token spec, README and patterns, and did the rubric review",
+        "pr": "https://github.com/starship-terminal/constellations/pull/526"
+      },
+      "layoutGaps": {
+        "icons/": "the icon extraction pass was not run; the glyphs (the Elektron wordmark, the 28px header icons, the 35px menu icons and the social glyphs) are visible in the crops and screenshots"
+      }
+    },
+    {
+      "slug": "elementor",
+      "name": "Elementor",
+      "url": "https://elementor.com",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "Site-builder and marketing pages: Roobert display at 88px down to 14px lists on a strict #000/#fff two-tone where no colour rests (every action black until it rebounds to #ed01ee Neon-Loop on hover), #fae4fa Syntax-Glow row tints, a floating 24px-radius pill header under one soft shadow, a 4/8/16/24 radius ladder, .dark-mode islands that re-bind the same vars, 2px-outline plan CTAs and the default e-global-color kit declarations",
+      "tags": [
+        "web",
+        "site-builder",
+        "wordpress",
+        "marketing",
+        "pricing",
+        "forms",
+        "faq",
+        "light",
+        "two-tone",
+        "signed-out"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-13",
+      "access": "signed out (every captured surface is public; the Elementor editor, the my.elementor.com dashboard, hosting, billing and account sit behind Log in/Get started and were never reached; the contact form was never submitted, Buy now never pressed, and the Cookiebot consent dialog was hidden rather than answered)",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/elementor/README.md",
+      "tokens": "systems/elementor/tokens.json",
+      "styleGuide": "systems/elementor/style-guide.html",
+      "preview": {
+        "cover": "systems/elementor/screenshots/home-light-default.png",
+        "icon": "systems/elementor/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.page",
+            "surface": "light.surface",
+            "text": "light.text",
+            "muted": "light.textMuted",
+            "accent": "light.accent",
+            "border": "light.border"
+          },
+          "dark": {
+            "page": "dark.page",
+            "surface": "dark.surface",
+            "text": "dark.text",
+            "muted": "dark.textMuted",
+            "accent": "dark.accent",
+            "border": "dark.border"
+          }
+        },
+        "fonts": [
+          "core.fontFamily.roobert"
+        ]
+      },
+      "capture": {
+        "method": "public-web",
+        "source": "elementor.com (a WordPress site built with Elementor itself, so its stylesheets carry the company's shipped marketing system) in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and crops from the live DOM. The token layer is the site's own custom properties (--Kernel-Black, --Blank-Canvas-White, the Grey ramp, Neon-Loop, Syntax-Glow, three named gradients, the --e-global-color-* kit vars), harvested from uploads/elementor/css/*.css, plugin widget CSS and inline styles, resolved plain and inside body.dark-mode (the islands' re-binding); geometry, fields, focus rings and motion are measured computed values. The editor and everything behind my.elementor.com are a documented boundary",
+        "timestamp": "2026-11-13T02:00:00Z",
+        "harness": "Devin",
+        "model": "SWE-2 High",
+        "route": "public-web",
+        "routes": [
+          "/",
+          "/products/website-builder/",
+          "/pricing/",
+          "/solutions/enterprise/",
+          "/about/",
+          "/contact/",
+          "/faq/",
+          "mobile / and /pricing/"
+        ],
+        "gaps": [
+          "the signed-in product entirely: the Elementor editor, the my.elementor.com dashboard, hosting, billing and account sit behind Log in/Get started and were never reached",
+          "/contact captured as a surface: the popup form was opened by its card, the name field sample-filled and deleted, the checkbox toggled locally - submit was never pressed and nothing was sent",
+          "Buy now, Get started, Log in and every signup action were measured or screenshotted, never followed (they open checkout or my.elementor.com)",
+          "the Cookiebot consent dialog was hidden with CSS per capture, never answered - no consent was posted",
+          "the Angie chat widget (#elementor-angie-root) and promo popups were hidden or closed, never interacted with",
+          "\"dark\" is a painted island, not a toggle: .dark-mode * re-binds --Kernel-Black to #fff and --Blank-Canvas-White to #000; the dark token set is that re-binding, not a user mode",
+          "the --e-global-color-* kit palette is generic Elementor defaults (#61CE70 accent never paints an action); the real action colour is the named Neon-Loop var",
+          "pressed states were forced with DevTools forcePseudoState, so any script-added mousedown styling is missing; nav-trigger and m-nav-item draw no focus ring",
+          "full-page shots are capped at eight chunks; home, builder and both mobile pages stitched from two chunks",
+          "icons: no standalone SVG set lifted this pass"
+        ],
+        "durationMin": 420,
+        "durationNote": "wall-clock across two sessions: the original capture pass (stylesheet harvest, screenshots, measurements, token build) and a resume that finished the style guide, docs, catalog, scan and rubric review",
+        "pr": "https://github.com/starship-terminal/constellations/pull/524"
+      },
+      "layoutGaps": {
+        "icons/": "no standalone SVG set was lifted this pass; the wordmark, social glyphs and control markers are visible in the crops and screenshots"
+      }
+    },
+    {
+      "slug": "endel",
+      "name": "Endel",
+      "url": "https://endel.io",
+      "category": "media",
+      "platform": "web",
+      "goodFor": "Near-black wellness pages and a signed-out web player: a pure #000 ground, a five-step grey ramp (#191919 cards, #262626 buttons, #808080 borders and hover fills, #bfbfbf muted text, #e0e0e0 faint), white text and strong borders, apercuPro at a 60/44/36/28 display and 22/18/16/14/10 text scale, 12px button corners and 100px pills, a 1280px 12-column grid, and one white-glow CTA",
+      "tags": [
+        "web",
+        "media",
+        "audio",
+        "wellness",
+        "focus",
+        "dark",
+        "dark-only",
+        "nextjs",
+        "signed-out"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-13",
+      "access": "signed out (every captured surface is public: the endel.io marketing pages plus app.endel.io's explore, player and sign-in card; the account, library, premium unlock/checkout and any form submit were never crossed; the Set Timer sheet, More flyout and mobile menu were opened by their own toggles and closed again)",
+      "themes": [
+        "dark"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/endel/README.md",
+      "tokens": "systems/endel/tokens.json",
+      "styleGuide": "systems/endel/style-guide.html",
+      "preview": {
+        "cover": "systems/endel/screenshots/home-dark-default.png",
+        "icon": "systems/endel/icon.png",
+        "swatches": {
+          "dark": {
+            "page": "dark.page",
+            "surface": "dark.surfaceRaised",
+            "text": "dark.text",
+            "muted": "dark.muted",
+            "accent": "dark.borderStrong",
+            "border": "dark.border"
+          }
+        },
+        "fonts": [
+          "core.font.family.sans"
+        ]
+      },
+      "designMd": {
+        "colors": [
+          "core.",
+          "dark."
+        ]
+      },
+      "capture": {
+        "method": "public-web",
+        "source": "endel.io and app.endel.io (Next.js builds) in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and crops from the live DOM, CSS custom properties read through the CSSOM and re-parsed in a probe document per host (raw/css-vars.json resolved.site/resolved.app). The bundles declare named :root vars (a grey ramp, declared accent greens and orange, the 1280px/12-column grid, the apercuPro scale) which the palette, layout and type tokens resolve through; roles and component metrics are measured computed values. Everything behind sign-in or checkout on app.endel.io is a documented boundary",
+        "timestamp": "2026-11-13T16:20:00Z",
+        "harness": "Devin",
+        "model": "SWE-2 High",
+        "route": "public-web",
+        "routes": [
+          "/",
+          "/focus",
+          "/sleep",
+          "/relax",
+          "/activity",
+          "/adhd",
+          "/soundscapes",
+          "/science",
+          "/technology",
+          "/streaming",
+          "/community",
+          "/about",
+          "/blog",
+          "/newsroom",
+          "/privacy-policy",
+          "/impressum",
+          "app.endel.io/ (explore, signed out)",
+          "app.endel.io/player/focus",
+          "app.endel.io/ sign-in card via its own Sign In button",
+          "mobile /, /focus, /soundscapes and app.endel.io/"
+        ],
+        "gaps": [
+          "the signed-in app entirely: account, library, sync, settings, purchase and the premium unlock/checkout the timer sheet's Unlock row starts were never reached; the FREEMIUM chip, scenario pills, Unlock, Continue and the OAuth buttons were measured, never pressed for real",
+          "no form was submitted and no account created: the footer newsletter field and the sign-in card's email field were measured, never sent; Try Today, Subscribe, Continue, Unlock and every outbound link were never followed",
+          "the native apps (iOS, Android, macOS, Apple Watch, TV) the site advertises are not in this package",
+          "the home page's mid-page newsletter row (input-email, btn-subscribe) was not on the page at capture time; the footer's own field was painted instead",
+          "no disabled, error or loading states exist on the captured surface; the app shell's skeleton shimmer was seen only as a declared animation",
+          "audio was never started: the player and mini player are captured paused, the volume slider never dragged",
+          "icons: no standalone SVG set lifted this pass"
+        ],
+        "durationMin": 210,
+        "pr": "https://github.com/starship-terminal/constellations/pull/528",
+        "durationNote": "resumed capture: a first pass died after the screenshots and css-vars harvest (2026-11-13 morning UTC); the component measurement, token/docs build and rubric review ran in the resume"
+      },
+      "layoutGaps": {
+        "icons/": "no standalone SVG icon set was lifted; the glyphs (the Endel mark, mode icons, transport controls, social marks) are visible in the crops and screenshots"
+      }
+    },
+    {
+     "slug": "editorx",
+     "name": "Editor X (Wix Studio)",
+     "url": "https://www.editorx.com",
+     "category": "productivity",
+     "platform": "web",
+     "goodFor": "Pro-site-builder marketing pages and galleries: Madefor display 60-157px at 1.0 line-height with -0.03em tracking over pure #000 ink on white, sharp 0px corners with stadium pills where a control is meant to be pushed, one #3910ed purple reserved for the Start Creating actions, a #deff00 lime closing band, #0e0e0e near-black chrome (the footer) with #f6f6f6 links dimming to #828282, double box-shadow focus rings per surface, a plans card grid with navy accent edges and mint RECOMMENDED badges, and inspiration/templates galleries",
+     "tags": [
+      "web",
+      "design-tool",
+      "site-builder",
+      "creative",
+      "marketing",
+      "templates",
+      "gallery",
+      "pricing",
+      "thunderbolt",
+      "light",
+      "signed-out"
+     ],
+     "shape": "reference",
+     "captured": "2026-11-13",
+     "access": "signed out (every captured surface is public; editorx.com 301s to wix.com/studio for every path except /pricing, which served its Premium-plans error pane at capture time; the Studio editor, workspaces and checkout sit behind Log In / Start Creating and were never reached; no form was submitted and no account created)",
+     "themes": [
+      "light",
+      "dark"
+     ],
+     "widths": [
+      1440,
+      390
+     ],
+     "entry": "systems/editorx/README.md",
+     "tokens": "systems/editorx/tokens.json",
+     "styleGuide": "systems/editorx/style-guide.html",
+     "preview": {
+      "cover": "systems/editorx/screenshots/home-light-default.png",
+      "icon": "systems/editorx/icon.png",
+      "swatches": {
+       "light": {
+        "page": "core.color.neutral.white",
+        "surface": "core.color.neutral.white",
+        "text": "core.color.neutral.ink",
+        "muted": "light.text.muted",
+        "accent": "core.color.brand.studio-purple",
+        "border": "light.border.hairline"
+       },
+       "dark": {
+        "page": "dark.surface.page",
+        "surface": "dark.surface.page",
+        "text": "dark.text.primary",
+        "muted": "dark.text.muted",
+        "accent": "core.color.brand.studio-purple",
+        "border": "dark.border.default"
+       }
+      },
+      "fonts": [
+       "core.font.family.display",
+       "core.font.family.text"
+      ]
+     },
+     "capture": {
+      "method": "public-web",
+      "source": "editorx.com (a redirect shell for wix.com/studio; /pricing still serves on-domain) in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and crops from the live DOM. The thunderbolt theme is openly named custom properties (--color_0..65, --font_0..10, the --wst-* semantic layer), harvested from inline styles and linked static.parastorage.com bundles; the Wix Studio purple, lime band, chrome neutrals, double focus rings, radii and spx-scaled type ramp are measured computed values. The Studio editor behind Log In / Start Creating is a documented boundary",
+      "timestamp": "2026-11-13T00:00:00Z",
+      "harness": "Devin",
+      "model": "SWE-2 High",
+      "route": "public-web",
+      "routes": [
+       "/",
+       "/studio/features",
+       "/studio/design",
+       "/studio/plans",
+       "/pricing",
+       "/studio/inspiration",
+       "/studio/templates",
+       "/studio/academy",
+       "/studio/enterprise",
+       "mobile / and /studio/plans"
+      ],
+      "gaps": [
+       "the signed-in product entirely: the Studio editor, workspaces, dashboards, signup and checkout sit behind Log In / Start Creating and were never reached",
+       "every editorx.com path 301s to wix.com/studio except /pricing; the package documents the Wix Studio surface it serves today, not the defunct Editor X brand",
+       "/pricing answered with the 'Couldn't load Premium plans' error pane at capture time - the product's own error surface, recorded as a boundary",
+       "the cookie banner was hidden per capture, never answered - no consent was ever posted",
+       "the only presses were local UI toggles: the Product dropdown, the FAQ expander, the mobile menu; no form was submitted and no action followed",
+       "display sizes are spx-scaled through --theme-spx-ratio; the recorded px values are the 1440px and 390px readings, not fixed sizes",
+       "the hero pill anchor computes rgb(0,0,238) default / rgb(255,0,0) pressed - browser link-state quirks of the anchor; the label inside paints white and the purple fill lives on a child layer",
+       "full-page shots are capped at eight chunks; home, design and mobile-home overflowed the GPU texture limit and stitched from chunks",
+       "icons: no standalone SVG set lifted this pass"
+      ],
+      "durationMin": 300,
+      "durationNote": "wall-clock for the capture session including adaptation of the kit, the stylesheet harvest, screenshot and measurement passes, the token/docs build and the rubric review",
+      "pr": "https://github.com/starship-terminal/constellations/pull/527"
+     },
+     "layoutGaps": {
+      "icons/": "the icon extraction pass was not run; the glyphs (the Wix Studio wordmark, the language globe, social marks and template-card icons) are visible in the crops and screenshots"
+     }
+    },
+    {
+      "slug": "endlesstools",
+      "name": "Endless Tools",
+      "url": "https://endlesstools.io",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "Dark, confident designer-tool marketing pages: #000 and #0a0a0a fields under white/#efefef ink with #959595 muted text, fully-rounded 35-38px pills on the marketing controls (the app shell takes a 10px radius), #121212 33px cards under a #222 hairline ring, a single #ff13b1 pink reserved for the hero CTA and #ff3dae save pill, #2c5cff blue for education, inverted white-pill primary actions and a declared Inter type ramp from 42/46 down to 12/14",
+      "tags": [
+            "web",
+            "design",
+            "creative-tools",
+            "marketing",
+            "nextjs",
+            "tailwind",
+            "inter",
+            "dark",
+            "signed-out"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-13",
+      "access": "signed out (every captured surface is public: / on endlesstools.io plus /login, /legal/privacy_policy and /legal/terms_of_use on app.endlesstools.io; the product editor behind sign-in was never reached; no form was submitted and the only presses were local UI toggles)",
+      "themes": [
+            "dark"
+      ],
+      "widths": [
+            1440,
+            390
+      ],
+      "entry": "systems/endlesstools/README.md",
+      "tokens": "systems/endlesstools/tokens.json",
+      "styleGuide": "systems/endlesstools/style-guide.html",
+      "preview": {
+            "cover": "systems/endlesstools/screenshots/home-dark-default.png",
+            "icon": "systems/endlesstools/icon.png",
+            "swatches": {
+                  "dark": {
+                        "page": "dark.surface.page",
+                        "surface": "dark.surface.card",
+                        "text": "dark.text.primary",
+                        "muted": "dark.text.muted",
+                        "accent": "dark.accent.pink",
+                        "border": "dark.border.card"
+                  }
+            },
+            "fonts": [
+                  "core.font.family.sans"
+            ]
+      },
+      "designMd": {
+            "colors": [
+                  "core.",
+                  "dark."
+            ]
+      },
+      "capture": {
+            "method": "public-web",
+            "source": "endlesstools.io (a Next.js + Tailwind v4 marketing site) and app.endlesstools.io (the signed-out app shell, Tailwind v3) in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass at 2x; computed styles and crops from the live DOM. The bundles declare a real @theme layer (--color-*, --text-*, --radius-*, --ease-*) plus the Inter and Flow Rounded @font-face faces; the pink/blue accents and card greys are arbitrary-value utilities, so those tokens are measured computed values cross-checked against the declared vars. The editor behind sign-in is a documented boundary",
+            "timestamp": "2026-11-13T00:00:00Z",
+            "harness": "Devin",
+            "model": "SWE-2 High",
+            "route": "public-web",
+            "routes": [
+                  "https://endlesstools.io/",
+                  "https://app.endlesstools.io/login",
+                  "https://app.endlesstools.io/legal/privacy_policy",
+                  "https://app.endlesstools.io/legal/terms_of_use",
+                  "mobile / and /login"
+            ],
+            "gaps": [
+                  "the editor entirely: the canvas, tools, panels, library and AI features live behind sign-in on app.endlesstools.io and were never reached; Start for free, the plan CTAs and Create team open signup and were never followed",
+                  "the login card's two forms (OTP send-code and password) were measured and locally switched; neither was submitted, so the code entry, errors and signed-in redirect are uncaptured",
+                  "the newsletter form was measured and its consent checkbox toggled for the capture; it was never submitted, so its success and any error state are uncaptured",
+                  "no consent overlay appeared in this region; had one painted it would have been hidden, never answered",
+                  "no disabled, error or loading states exist on the public surfaces",
+                  "privacy and terms are taller than one GPU texture (14,086px and 16,366px); their -full shots are stitched from part tiles",
+                  "the hero's orbiting asset cards and the auto-advancing testimonial carousel animate, so repeated captures of the same view differ",
+                  "icons: no standalone SVG set was lifted this pass; glyphs (the wordmark, social marks, the carousel arrow) are visible in the crops and screenshots"
+            ],
+            "durationMin": 180,
+            "durationNote": "a resumed capture: a prior run left its raw evidence (screens, CSS/HTML copies, computed styles and crops) under ~/.design-systems/endlesstools; this pass assessed and reused it, re-quantised the crops, stitched the tiled full-page shots, then ran the token/docs build and the rubric review",
+            "pr": "https://github.com/starship-terminal/constellations/pull/525"
+      },
+      "layoutGaps": {
+            "icons/": "no standalone SVG icon set was lifted; the glyphs (the Endless Tools wordmark, social marks, the carousel arrow) are visible in the crops and screenshots"
+      }
+    },
+    {
+      "slug": "elevenreader",
+      "name": "ElevenReader",
+      "url": "https://elevenreader.io",
+      "category": "media",
+      "platform": "web",
+      "goodFor": "Audiobook-reader marketing pages: near-monochrome ink #000 on white with a #F5F3F1 promo band and #FAF8F8 FAQ tints, a declared --themed-*/--color-* Tailwind v4 token layer that inverts on a .dark scope, the --f-* type scale (Waldenburg display at 60px -1.8px tracking, Inter UI/body), 9999px pill geometry on every button, chip and input, 20-40px card radii, a layered ring shadow on white pills, 2px black focus outlines, and bare 360px sign-in/sign-up cards",
+      "tags": [
+        "web",
+        "audiobooks",
+        "reader",
+        "media",
+        "marketing",
+        "nextjs",
+        "tailwind",
+        "light",
+        "declared-dark",
+        "signed-out"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-13",
+      "access": "signed out (every captured surface is public: the marketing pages, one public audiobook page and the /reader sign-in/sign-up cards; the reader app - library, upload, player, settings, billing - sits behind /reader/sign-in and was never reached; the email forms were revealed by their own toggles and never submitted)",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/elevenreader/README.md",
+      "tokens": "systems/elevenreader/tokens.json",
+      "styleGuide": "systems/elevenreader/style-guide.html",
+      "preview": {
+        "cover": "systems/elevenreader/screenshots/home-light-default.png",
+        "icon": "systems/elevenreader/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.surface.page",
+            "surface": "light.surface.card",
+            "text": "light.text.default",
+            "muted": "light.text.muted",
+            "accent": "light.accent",
+            "border": "light.border.default"
+          },
+          "dark": {
+            "page": "dark.surface.page",
+            "surface": "dark.surface.card",
+            "text": "dark.text.default",
+            "muted": "dark.text.muted",
+            "accent": "dark.accent",
+            "border": "dark.border.default"
+          }
+        },
+        "fonts": [
+          "core.font.family.inter",
+          "core.font.family.waldenburg"
+        ]
+      },
+      "designMd": {
+        "colors": [
+          "core.",
+          "light."
+        ]
+      },
+      "capture": {
+        "method": "public-web",
+        "source": "elevenreader.io (a Next.js + Tailwind v4 marketing site declaring a --themed-*/--color-* token layer, an --f-* type scale and a --reader-* reader palette, in Inter + Waldenburg) in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and crops from the live DOM. Most tokens are declared variables resolved light and under the declared .dark scope (unpainted on the public surface); the painted fills no variable names (#F5F3F1 band, #FAF8F8 FAQ, #FDFCFC plan cards, #E1F5E0 Save badge, the #6E6E6E button hover) are measured computed values. The reader app behind /reader/sign-in is a documented boundary",
+        "timestamp": "2026-11-13T16:30:00Z",
+        "harness": "Devin",
+        "model": "SWE-2 High",
+        "route": "public-web",
+        "routes": [
+          "/",
+          "/pricing",
+          "/explore",
+          "/collections",
+          "/genres",
+          "/free-audiobooks",
+          "/iconic-voices",
+          "/compare",
+          "/blog",
+          "/audiobooks/the-art-of-war-audiobook/CrZjqfHD4d1FYEemlTHB",
+          "/reader/sign-in",
+          "/reader/sign-up?source=homepage",
+          "mobile / and /explore"
+        ],
+        "gaps": [
+          "the reader app entirely: library, upload, the reader/player, settings and billing live behind /reader/sign-in and were never reached; /reader/sign-in and /reader/sign-up were captured as boundary cards",
+          "the OAuth buttons were never pressed; the email credential forms were revealed by their own 'with email' toggles (local UI, nothing sent), fields were focused and sample text was typed and deleted - no form was ever submitted, so error/success states are uncaptured",
+          "the .dark token scope is declared and tokenised but no public page paints it; the --reader-* palette is likewise declared-only on this surface",
+          "every CTA (Start listening, Try it free, plan actions, Get this offer, App Store/Google Play badges) was measured, never followed; external and ElevenLabs links were never followed",
+          "no disabled, error or loading states exist on the public surface",
+          "icons: no standalone SVG set lifted this pass",
+          "pressed states are CDP-forced :active:hover readings, so any mousedown-script state is uncaptured"
+        ],
+        "durationMin": 0,
+        "durationNote": "resumed capture: screenshots and recon predated this pass; measurement, tokens, docs and the rubric review completed in this session",
+        "pr": "https://github.com/starship-terminal/constellations/pull/530"
+      },
+      "layoutGaps": {
+        "icons/": "no standalone SVG icon set was lifted; the wordmark, SSO glyphs, chevrons and footer arrows are visible in the crops and screenshots"
+      }
+    },
+    {
+      "slug": "endless",
+      "name": "Endless",
+      "url": "https://endless.io",
+      "category": "ai-agent",
+      "platform": "web",
+      "goodFor": "Multi-model AI creation workspace marketing and free tool pages: a full shadcn-style semantic token layer on a #fcfcfc field with one #01bcff sky accent, TikTok Sans display type at -1.9px tracking, a 20px-radius prompt composer on a floating shadow, 8-16px controls, .dark class theme, and translucent 50% field fills",
+      "tags": [
+        "web",
+        "ai",
+        "workspace",
+        "generative",
+        "saas",
+        "marketing",
+        "nextjs",
+        "tailwind",
+        "shadcn",
+        "light",
+        "dark",
+        "signed-out"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-13",
+      "access": "signed out (every captured surface is public; the workspace behind sign-up on s.endless.app, auth on clerk.endless.app, was never reached; no form was submitted and no tool was run)",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/endless/README.md",
+      "tokens": "systems/endless/tokens.json",
+      "styleGuide": "systems/endless/style-guide.html",
+      "preview": {
+        "cover": "systems/endless/screenshots/home-light-default.png",
+        "icon": "systems/endless/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background",
+            "surface": "light.card.default",
+            "text": "light.foreground",
+            "muted": "light.muted.foreground",
+            "accent": "core.color.brand.accent",
+            "border": "light.border"
+          },
+          "dark": {
+            "page": "dark.background",
+            "surface": "dark.card.default",
+            "text": "dark.foreground",
+            "muted": "dark.muted.foreground",
+            "accent": "core.color.brand.accent",
+            "border": "dark.border"
+          }
+        },
+        "fonts": [
+          "core.font.family.sans",
+          "core.font.family.mono"
+        ]
+      },
+      "capture": {
+        "method": "public-web",
+        "source": "endless.app (what endless.io redirects to; a Next.js + Tailwind v4 surface declaring a shadcn-style --background/--primary/--card/--sidebar-* token layer plus --label-*/--mode-*/--chart-*/--series-* product palettes, themed by a .dark class under next-themes) in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and crops from the live DOM, CSS variables harvested from the same-origin Next.js chunks and resolved per theme. Dark is the same declared roles re-bound by the .dark scope. The workspace behind s.endless.app is a documented boundary",
+        "timestamp": "2026-11-13T03:00:00Z",
+        "harness": "Devin",
+        "model": "SWE-2 High",
+        "route": "public-web",
+        "routes": [
+          "/",
+          "/pricing",
+          "/contact",
+          "/tools",
+          "/tools/ai-image-generator",
+          "/models",
+          "/model-index",
+          "/blog",
+          "/brand",
+          "/docs",
+          "/radar",
+          "/mcp",
+          "/about",
+          "/industries",
+          "/compare",
+          "/status",
+          "mobile /, /pricing, /tools/ai-image-generator and /models"
+        ],
+        "gaps": [
+          "the signed-in workspace entirely: chat, canvas, projects, files, MCP connections, billing and onboarding live behind s.endless.app (auth on clerk.endless.app) and were never reached",
+          "no form was ever submitted and no tool was ever run: the contact Send button and every Generate action were measured, not pressed, so success, error, progress and result-gallery states are uncaptured",
+          "there is no desktop Industries dropdown: the header nav is flat links, and nav-dropdown/menu-link are recorded missing; the mobile menu overlay is the only menu",
+          "radar-search does not exist on the public /radar page; recorded missing",
+          "no disabled, error, loading or empty states paint on the public surface",
+          "a few component readings predate the selector fixes and record a larger painted ancestor, noted on the entry",
+          "icons: no standalone SVG icon set lifted this pass",
+          "checkout, plan purchase and localized routes were never reached"
+        ],
+        "durationMin": 150,
+        "durationNote": "resumed a dead mid-capture agent: existing raw-shots kept, missing mobile passes re-shot, then vars, measurement, tokens, docs and rubric review across 2026-11-13",
+        "pr": "https://github.com/starship-terminal/constellations/pull/529"
+      },
+      "layoutGaps": {
+        "icons/": "no standalone SVG icon set was lifted; the glyphs (the Endless mark, the model-pill chevron, the send arrow, modality and social icons) are visible in the crops and screenshots"
+      }
+    },
+    {
+      "slug": "elevenmusic",
+      "name": "ElevenMusic",
+      "url": "https://elevenmusic.io",
+      "category": "media",
+      "platform": "web",
+      "goodFor": "Dark, quiet, tool-like music apps: a true-black field with white-alpha surface steps (#131313/#1c1c1c/#262626), white as the action colour (inverted Start-free/Create pills), hairlines at rgba(255,255,255,.08-.12), one #5d88e7 brand blue, a fixed 248px rail + 52px header + inner scroller + 72px player bar, 999px pill controls, waldenburg light display over Inter, and a real warm-paper light theme (#fdfcfb) behind the footer's own System/Light/Dark control",
+      "tags": [
+        "web",
+        "media",
+        "music",
+        "ai",
+        "dark",
+        "sidebar",
+        "app-shell",
+        "nextjs",
+        "tailwind",
+        "inter",
+        "signed-out"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-13",
+      "access": "signed out (every captured surface is public: /, /explore, /charts, /tracks, /genres, /genres/electronic, /sounds, /tools, an artist profile, a playlist, /blog, /pricing, /login, /sign-in; Create/Composer/Library/Chat/publish, Likes, Remixes, Shares and search itself sit behind sign-in and were never entered or submitted)",
+      "themes": [
+        "dark",
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/elevenmusic/README.md",
+      "tokens": "systems/elevenmusic/tokens.json",
+      "styleGuide": "systems/elevenmusic/style-guide.html",
+      "preview": {
+        "cover": "systems/elevenmusic/screenshots/home-dark-default.png",
+        "icon": "systems/elevenmusic/icon.png",
+        "swatches": {
+          "dark": {
+            "page": "dark.color.surface.background",
+            "surface": "dark.color.surface.surface-1",
+            "text": "dark.color.ink.foreground",
+            "muted": "dark.color.ink.muted-foreground",
+            "accent": "dark.color.action.brand",
+            "border": "dark.color.border.border"
+          },
+          "light": {
+            "page": "light.color.surface.background",
+            "surface": "light.color.surface.surface-1",
+            "text": "light.color.ink.foreground",
+            "muted": "light.color.ink.muted-foreground",
+            "accent": "light.color.action.brand",
+            "border": "light.color.border.border"
+          }
+        },
+        "fonts": [
+          "core.font.family.sans",
+          "core.font.family.display",
+          "core.font.family.mono"
+        ]
+      },
+      "designMd": {
+        "colors": [
+          "core.",
+          "light."
+        ]
+      },
+      "capture": {
+        "method": "public-web",
+        "source": "elevenmusic.io (a Next.js App Router app shell over Tailwind v4, painting html.dark by default) in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; a declared shadcn-style semantic token layer harvested and resolved per theme, plus computed styles and crops from the live DOM. Everything behind sign-in (Create, Composer, Library, Chat, publishing, Likes, Remixes, Shares and search) is a documented boundary",
+        "timestamp": "2026-11-13T17:00:00Z",
+        "harness": "Devin",
+        "model": "SWE-2 High",
+        "route": "public-web",
+        "routes": [
+          "/",
+          "/explore",
+          "/charts",
+          "/tracks",
+          "/genres",
+          "/genres/electronic",
+          "/sounds",
+          "/tools",
+          "/artists/ghostmkc-5JuuiL",
+          "/playlists/69eb381eb3c0fe73c21c695c",
+          "/blog",
+          "/pricing",
+          "/login",
+          "/sign-in",
+          "mobile /, /explore and /charts"
+        ],
+        "gaps": [
+          "the signed-in product entirely: Create, Composer, Chat, Library, artist-page publishing, account settings and billing need an account and were never reached; /login and /sign-in were measured as forms and never submitted",
+          "search is gated: the rail's Search button opens the log-in dialog (captured as evidence), so a real search surface is uncaptured",
+          "every Create button, prompt submit and Attach control was measured, never pressed — a prompt is a generation request",
+          "Like, Remix, Share and every player-bar gated control were measured, never pressed",
+          "the Get-Pro and Start-free CTAs were measured, never followed past the public card; checkout is uncaptured",
+          "the Cookiebot overlay and Google One-Tap prompt were hidden, never answered",
+          "no error, loading or empty states on the public surface; two failed hovers (player-prev/player-next) are recorded as failures in the JSON",
+          "/charts and mobile / scroll past one GPU texture; their full shots are tiled *.part0/.part1 — an inner-scroller boundary",
+          "icons: no standalone SVG set lifted this pass"
+        ],
+        "durationMin": 150,
+        "durationNote": "worktree creation to package-complete commit, 2026-11-13 UTC: recon, CSS-var harvest and shots, then a stalled pass recovered (measure.mjs rewritten to the real DOM), the token/docs build and the rubric review",
+        "pr": "https://github.com/starship-terminal/constellations/pull/531"
+      },
+      "layoutGaps": {
+        "icons/": "no standalone SVG icon set was lifted; the icons (the ElevenMusic mark, the Google and Apple SSO glyphs, the control glyphs, album/artist artwork) are visible in the crops and screenshots"
+      }
+    },
+    {
       "slug": "deezer",
       "name": "Deezer",
       "url": "https://www.deezer.com",

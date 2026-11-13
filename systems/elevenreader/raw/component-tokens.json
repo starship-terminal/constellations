@@ -1,0 +1,3526 @@
+{
+ "_about": "The token tree build_tokens.py turns into tokens.json. elevenreader.io declares a Tailwind v4 token layer (--themed-* RGB triplets bound into --color-* roles, a --f-* type scale, --font-*, --spacing-*, --container-*) and paints every public surface light; the stylesheet's .dark scope inverts the same triplets but no public page applies it, so the dark set is a declared inversion, not a painted surface. Declared variables become var leaves; painted values without a variable are measured leaves from raw/components-computed.json.",
+ "core": {
+  "font": {
+   "family": {
+    "inter": {
+     "value": "Inter, \"Inter Fallback\"",
+     "type": "fontFamily",
+     "source": "computed fontFamily of hero-cta default (raw/components-computed.json)",
+     "description": "Inter (+ its 'Inter Fallback' metrics clone): every UI, body and form text on the public surface."
+    },
+    "waldenburg": {
+     "value": "Waldenburg, \"Waldenburg Fallback\", sans-serif",
+     "type": "fontFamily",
+     "source": "computed fontFamily of hero-h1 default (raw/components-computed.json)",
+     "description": "Waldenburg: the display face on h1s, pricing/audiobook titles, section heads and the FAQ."
+    },
+    "sans": {
+     "var": "--font-sans",
+     "type": "fontFamily",
+     "description": "The declared system-ui fallback stack (--font-sans)."
+    },
+    "serif": {
+     "var": "--font-serif",
+     "type": "fontFamily",
+     "description": "The declared serif fallback stack (--font-serif)."
+    },
+    "mono": {
+     "var": "--font-mono",
+     "type": "fontFamily",
+     "description": "The declared monospace stack (--font-mono)."
+    }
+   },
+   "weight": {
+    "normal": {
+     "var": "--font-weight-normal",
+     "type": "fontWeight",
+     "description": "400 — body, UI labels, the Waldenburg book weight."
+    },
+    "medium": {
+     "var": "--font-weight-medium",
+     "type": "fontWeight",
+     "description": "500 — SSO buttons, badges, rail links, footer columns."
+    },
+    "semibold": {
+     "var": "--font-weight-semibold",
+     "type": "fontWeight",
+     "description": "600 — declared."
+    },
+    "bold": {
+     "var": "--font-weight-bold",
+     "type": "fontWeight",
+     "description": "700 — the declared f-* bold steps (uppercase UI labels)."
+    },
+    "display": {
+     "value": 400,
+     "type": "fontWeight",
+     "source": "computed fontWeight of hero-h1 default (raw/components-computed.json)",
+     "description": "The painted Waldenburg weight on h1s (400 — the f-heading steps declare 700 but the loaded book face paints lighter)."
+    }
+   }
+  },
+  "color": {
+   "accent": {
+    "var": "--color-accent",
+    "type": "color",
+    "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+    "description": "Accent blue #4680fd — the declared action accent (declared; the marketing surface paints black/white)."
+   },
+   "amber": {
+    "100": {
+     "var": "--color-amber-100",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette amber-100 (declared)."
+    },
+    "200": {
+     "var": "--color-amber-200",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette amber-200 (declared)."
+    },
+    "300": {
+     "var": "--color-amber-300",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette amber-300 (declared)."
+    },
+    "400": {
+     "var": "--color-amber-400",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette amber-400 (declared)."
+    },
+    "50": {
+     "var": "--color-amber-50",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette amber-50 (declared)."
+    },
+    "500": {
+     "var": "--color-amber-500",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette amber-500 (declared)."
+    },
+    "600": {
+     "var": "--color-amber-600",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette amber-600 (declared)."
+    },
+    "700": {
+     "var": "--color-amber-700",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette amber-700 (declared)."
+    },
+    "800": {
+     "var": "--color-amber-800",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette amber-800 (declared)."
+    },
+    "900": {
+     "var": "--color-amber-900",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette amber-900 (declared)."
+    },
+    "950": {
+     "var": "--color-amber-950",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette amber-950 (declared)."
+    }
+   },
+   "black": {
+    "default": {
+     "var": "--color-black",
+     "type": "color",
+     "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+     "description": "Black — the inverse fill, heading ink, focus ring (inverts to white on .dark)."
+    },
+    "alpha": {
+     "10": {
+      "var": "--color-black-alpha-10",
+      "type": "color",
+      "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+      "description": "Declared black alpha 10 translucency — overlays, veils, scrims."
+     },
+     "100": {
+      "var": "--color-black-alpha-100",
+      "type": "color",
+      "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+      "description": "Declared black alpha 100 translucency — overlays, veils, scrims."
+     },
+     "5": {
+      "var": "--color-black-alpha-5",
+      "type": "color",
+      "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+      "description": "Declared black alpha 5 translucency — overlays, veils, scrims."
+     },
+     "60": {
+      "var": "--color-black-alpha-60",
+      "type": "color",
+      "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+      "description": "Declared black alpha 60 translucency — overlays, veils, scrims."
+     },
+     "80": {
+      "var": "--color-black-alpha-80",
+      "type": "color",
+      "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+      "description": "Declared black alpha 80 translucency — overlays, veils, scrims."
+     }
+    }
+   },
+   "blue": {
+    "100": {
+     "var": "--color-blue-100",
+     "type": "color",
+     "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+     "description": "Themed blue 100 step — re-bound on .dark."
+    },
+    "200": {
+     "var": "--color-blue-200",
+     "type": "color",
+     "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+     "description": "Themed blue 200 step — re-bound on .dark."
+    },
+    "300": {
+     "var": "--color-blue-300",
+     "type": "color",
+     "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+     "description": "Themed blue 300 step — re-bound on .dark."
+    },
+    "400": {
+     "var": "--color-blue-400",
+     "type": "color",
+     "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+     "description": "Themed blue 400 step — re-bound on .dark."
+    },
+    "50": {
+     "var": "--color-blue-50",
+     "type": "color",
+     "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+     "description": "Themed blue 50 step — re-bound on .dark."
+    },
+    "500": {
+     "var": "--color-blue-500",
+     "type": "color",
+     "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+     "description": "Themed blue 500 step — re-bound on .dark."
+    },
+    "600": {
+     "var": "--color-blue-600",
+     "type": "color",
+     "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+     "description": "Themed blue 600 step — re-bound on .dark."
+    },
+    "700": {
+     "var": "--color-blue-700",
+     "type": "color",
+     "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+     "description": "Themed blue 700 step — re-bound on .dark."
+    },
+    "800": {
+     "var": "--color-blue-800",
+     "type": "color",
+     "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+     "description": "Themed blue 800 step — re-bound on .dark."
+    },
+    "900": {
+     "var": "--color-blue-900",
+     "type": "color",
+     "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+     "description": "Themed blue 900 step — re-bound on .dark."
+    },
+    "950": {
+     "var": "--color-blue-950",
+     "type": "color",
+     "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+     "description": "Themed blue 950 step — re-bound on .dark."
+    }
+   },
+   "cyan": {
+    "100": {
+     "var": "--color-cyan-100",
+     "type": "color",
+     "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+     "description": "Themed cyan 100 step — re-bound on .dark."
+    },
+    "200": {
+     "var": "--color-cyan-200",
+     "type": "color",
+     "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+     "description": "Themed cyan 200 step — re-bound on .dark."
+    },
+    "300": {
+     "var": "--color-cyan-300",
+     "type": "color",
+     "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+     "description": "Themed cyan 300 step — re-bound on .dark."
+    },
+    "400": {
+     "var": "--color-cyan-400",
+     "type": "color",
+     "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+     "description": "Themed cyan 400 step — re-bound on .dark."
+    },
+    "50": {
+     "var": "--color-cyan-50",
+     "type": "color",
+     "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+     "description": "Themed cyan 50 step — re-bound on .dark."
+    },
+    "500": {
+     "var": "--color-cyan-500",
+     "type": "color",
+     "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+     "description": "Themed cyan 500 step — re-bound on .dark."
+    },
+    "600": {
+     "var": "--color-cyan-600",
+     "type": "color",
+     "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+     "description": "Themed cyan 600 step — re-bound on .dark."
+    },
+    "700": {
+     "var": "--color-cyan-700",
+     "type": "color",
+     "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+     "description": "Themed cyan 700 step — re-bound on .dark."
+    },
+    "800": {
+     "var": "--color-cyan-800",
+     "type": "color",
+     "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+     "description": "Themed cyan 800 step — re-bound on .dark."
+    },
+    "900": {
+     "var": "--color-cyan-900",
+     "type": "color",
+     "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+     "description": "Themed cyan 900 step — re-bound on .dark."
+    },
+    "950": {
+     "var": "--color-cyan-950",
+     "type": "color",
+     "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+     "description": "Themed cyan 950 step — re-bound on .dark."
+    }
+   },
+   "emerald": {
+    "100": {
+     "var": "--color-emerald-100",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette emerald-100 (declared)."
+    },
+    "200": {
+     "var": "--color-emerald-200",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette emerald-200 (declared)."
+    },
+    "300": {
+     "var": "--color-emerald-300",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette emerald-300 (declared)."
+    },
+    "400": {
+     "var": "--color-emerald-400",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette emerald-400 (declared)."
+    },
+    "50": {
+     "var": "--color-emerald-50",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette emerald-50 (declared)."
+    },
+    "500": {
+     "var": "--color-emerald-500",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette emerald-500 (declared)."
+    },
+    "600": {
+     "var": "--color-emerald-600",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette emerald-600 (declared)."
+    },
+    "700": {
+     "var": "--color-emerald-700",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette emerald-700 (declared)."
+    },
+    "800": {
+     "var": "--color-emerald-800",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette emerald-800 (declared)."
+    },
+    "900": {
+     "var": "--color-emerald-900",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette emerald-900 (declared)."
+    },
+    "950": {
+     "var": "--color-emerald-950",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette emerald-950 (declared)."
+    }
+   },
+   "fog": {
+    "gray": {
+     "var": "--color-fog-gray",
+     "type": "color",
+     "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+     "description": "Fog gray #babcd3 — a named brand hue."
+    }
+   },
+   "forest": {
+    "green": {
+     "var": "--color-forest-green",
+     "type": "color",
+     "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+     "description": "Forest green #003412 — a named brand hue (iconic-voices accents)."
+    }
+   },
+   "fuchsia": {
+    "100": {
+     "var": "--color-fuchsia-100",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette fuchsia-100 (declared)."
+    },
+    "200": {
+     "var": "--color-fuchsia-200",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette fuchsia-200 (declared)."
+    },
+    "300": {
+     "var": "--color-fuchsia-300",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette fuchsia-300 (declared)."
+    },
+    "400": {
+     "var": "--color-fuchsia-400",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette fuchsia-400 (declared)."
+    },
+    "50": {
+     "var": "--color-fuchsia-50",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette fuchsia-50 (declared)."
+    },
+    "500": {
+     "var": "--color-fuchsia-500",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette fuchsia-500 (declared)."
+    },
+    "600": {
+     "var": "--color-fuchsia-600",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette fuchsia-600 (declared)."
+    },
+    "700": {
+     "var": "--color-fuchsia-700",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette fuchsia-700 (declared)."
+    },
+    "800": {
+     "var": "--color-fuchsia-800",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette fuchsia-800 (declared)."
+    },
+    "900": {
+     "var": "--color-fuchsia-900",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette fuchsia-900 (declared)."
+    },
+    "950": {
+     "var": "--color-fuchsia-950",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette fuchsia-950 (declared)."
+    }
+   },
+   "gold": {
+    "var": "--color-gold",
+    "type": "color",
+    "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+    "description": "Gold #fdb95f — a named brand hue."
+   },
+   "grapefruit": {
+    "var": "--color-grapefruit",
+    "type": "color",
+    "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+    "description": "Grapefruit #f58971 — a named brand hue."
+   },
+   "gray": {
+    "100": {
+     "var": "--color-gray-100",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette gray-100 (declared)."
+    },
+    "200": {
+     "var": "--color-gray-200",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette gray-200 (declared)."
+    },
+    "300": {
+     "var": "--color-gray-300",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette gray-300 (declared)."
+    },
+    "400": {
+     "var": "--color-gray-400",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette gray-400 (declared)."
+    },
+    "50": {
+     "var": "--color-gray-50",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette gray-50 (declared)."
+    },
+    "500": {
+     "var": "--color-gray-500",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette gray-500 (declared)."
+    },
+    "600": {
+     "var": "--color-gray-600",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette gray-600 (declared)."
+    },
+    "700": {
+     "var": "--color-gray-700",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette gray-700 (declared)."
+    },
+    "800": {
+     "var": "--color-gray-800",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette gray-800 (declared)."
+    },
+    "900": {
+     "var": "--color-gray-900",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette gray-900 (declared)."
+    },
+    "950": {
+     "var": "--color-gray-950",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette gray-950 (declared)."
+    }
+   },
+   "green": {
+    "100": {
+     "var": "--color-green-100",
+     "type": "color",
+     "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+     "description": "Themed green 100 step — re-bound on .dark."
+    },
+    "200": {
+     "var": "--color-green-200",
+     "type": "color",
+     "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+     "description": "Themed green 200 step — re-bound on .dark."
+    },
+    "300": {
+     "var": "--color-green-300",
+     "type": "color",
+     "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+     "description": "Themed green 300 step — re-bound on .dark."
+    },
+    "400": {
+     "var": "--color-green-400",
+     "type": "color",
+     "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+     "description": "Themed green 400 step — re-bound on .dark."
+    },
+    "50": {
+     "var": "--color-green-50",
+     "type": "color",
+     "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+     "description": "Themed green 50 step — re-bound on .dark."
+    },
+    "500": {
+     "var": "--color-green-500",
+     "type": "color",
+     "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+     "description": "Themed green 500 step — re-bound on .dark."
+    },
+    "600": {
+     "var": "--color-green-600",
+     "type": "color",
+     "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+     "description": "Themed green 600 step — re-bound on .dark."
+    },
+    "700": {
+     "var": "--color-green-700",
+     "type": "color",
+     "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+     "description": "Themed green 700 step — re-bound on .dark."
+    },
+    "800": {
+     "var": "--color-green-800",
+     "type": "color",
+     "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+     "description": "Themed green 800 step — re-bound on .dark."
+    },
+    "900": {
+     "var": "--color-green-900",
+     "type": "color",
+     "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+     "description": "Themed green 900 step — re-bound on .dark."
+    },
+    "950": {
+     "var": "--color-green-950",
+     "type": "color",
+     "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+     "description": "Themed green 950 step — re-bound on .dark."
+    }
+   },
+   "hovered": {
+    "var": "--color-hovered",
+    "type": "color",
+    "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+    "description": "Hovered #f0f0f0 — the cover-card backing and hover fill."
+   },
+   "indigo": {
+    "default": {
+     "var": "--color-indigo",
+     "type": "color",
+     "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+     "description": "Indigo #7072bc — a named brand hue."
+    },
+    "100": {
+     "var": "--color-indigo-100",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette indigo-100 (declared)."
+    },
+    "200": {
+     "var": "--color-indigo-200",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette indigo-200 (declared)."
+    },
+    "300": {
+     "var": "--color-indigo-300",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette indigo-300 (declared)."
+    },
+    "400": {
+     "var": "--color-indigo-400",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette indigo-400 (declared)."
+    },
+    "50": {
+     "var": "--color-indigo-50",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette indigo-50 (declared)."
+    },
+    "500": {
+     "var": "--color-indigo-500",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette indigo-500 (declared)."
+    },
+    "600": {
+     "var": "--color-indigo-600",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette indigo-600 (declared)."
+    },
+    "700": {
+     "var": "--color-indigo-700",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette indigo-700 (declared)."
+    },
+    "800": {
+     "var": "--color-indigo-800",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette indigo-800 (declared)."
+    },
+    "900": {
+     "var": "--color-indigo-900",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette indigo-900 (declared)."
+    },
+    "950": {
+     "var": "--color-indigo-950",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette indigo-950 (declared)."
+    }
+   },
+   "lime": {
+    "default": {
+     "var": "--color-lime",
+     "type": "color",
+     "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+     "description": "Lime #d9de95 — a named brand hue."
+    },
+    "100": {
+     "var": "--color-lime-100",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette lime-100 (declared)."
+    },
+    "200": {
+     "var": "--color-lime-200",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette lime-200 (declared)."
+    },
+    "300": {
+     "var": "--color-lime-300",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette lime-300 (declared)."
+    },
+    "400": {
+     "var": "--color-lime-400",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette lime-400 (declared)."
+    },
+    "50": {
+     "var": "--color-lime-50",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette lime-50 (declared)."
+    },
+    "500": {
+     "var": "--color-lime-500",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette lime-500 (declared)."
+    },
+    "600": {
+     "var": "--color-lime-600",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette lime-600 (declared)."
+    },
+    "700": {
+     "var": "--color-lime-700",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette lime-700 (declared)."
+    },
+    "800": {
+     "var": "--color-lime-800",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette lime-800 (declared)."
+    },
+    "900": {
+     "var": "--color-lime-900",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette lime-900 (declared)."
+    },
+    "950": {
+     "var": "--color-lime-950",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette lime-950 (declared)."
+    }
+   },
+   "magenta": {
+    "100": {
+     "var": "--color-magenta-100",
+     "type": "color",
+     "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+     "description": "Themed magenta 100 step — re-bound on .dark."
+    },
+    "200": {
+     "var": "--color-magenta-200",
+     "type": "color",
+     "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+     "description": "Themed magenta 200 step — re-bound on .dark."
+    },
+    "300": {
+     "var": "--color-magenta-300",
+     "type": "color",
+     "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+     "description": "Themed magenta 300 step — re-bound on .dark."
+    },
+    "400": {
+     "var": "--color-magenta-400",
+     "type": "color",
+     "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+     "description": "Themed magenta 400 step — re-bound on .dark."
+    },
+    "50": {
+     "var": "--color-magenta-50",
+     "type": "color",
+     "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+     "description": "Themed magenta 50 step — re-bound on .dark."
+    },
+    "500": {
+     "var": "--color-magenta-500",
+     "type": "color",
+     "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+     "description": "Themed magenta 500 step — re-bound on .dark."
+    },
+    "600": {
+     "var": "--color-magenta-600",
+     "type": "color",
+     "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+     "description": "Themed magenta 600 step — re-bound on .dark."
+    },
+    "700": {
+     "var": "--color-magenta-700",
+     "type": "color",
+     "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+     "description": "Themed magenta 700 step — re-bound on .dark."
+    },
+    "800": {
+     "var": "--color-magenta-800",
+     "type": "color",
+     "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+     "description": "Themed magenta 800 step — re-bound on .dark."
+    },
+    "900": {
+     "var": "--color-magenta-900",
+     "type": "color",
+     "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+     "description": "Themed magenta 900 step — re-bound on .dark."
+    },
+    "950": {
+     "var": "--color-magenta-950",
+     "type": "color",
+     "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+     "description": "Themed magenta 950 step — re-bound on .dark."
+    },
+    "light": {
+     "var": "--color-magenta-light",
+     "type": "color",
+     "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+     "description": "Magenta light #510142 — a named brand hue."
+    }
+   },
+   "mauve": {
+    "default": {
+     "var": "--color-mauve",
+     "type": "color",
+     "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+     "description": "Mauve #9967a0 — a named brand hue."
+    },
+    "100": {
+     "var": "--color-mauve-100",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette mauve-100 (declared)."
+    },
+    "200": {
+     "var": "--color-mauve-200",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette mauve-200 (declared)."
+    },
+    "300": {
+     "var": "--color-mauve-300",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette mauve-300 (declared)."
+    },
+    "400": {
+     "var": "--color-mauve-400",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette mauve-400 (declared)."
+    },
+    "50": {
+     "var": "--color-mauve-50",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette mauve-50 (declared)."
+    },
+    "500": {
+     "var": "--color-mauve-500",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette mauve-500 (declared)."
+    },
+    "600": {
+     "var": "--color-mauve-600",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette mauve-600 (declared)."
+    },
+    "700": {
+     "var": "--color-mauve-700",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette mauve-700 (declared)."
+    },
+    "800": {
+     "var": "--color-mauve-800",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette mauve-800 (declared)."
+    },
+    "900": {
+     "var": "--color-mauve-900",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette mauve-900 (declared)."
+    },
+    "950": {
+     "var": "--color-mauve-950",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette mauve-950 (declared)."
+    }
+   },
+   "mist": {
+    "100": {
+     "var": "--color-mist-100",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette mist-100 (declared)."
+    },
+    "200": {
+     "var": "--color-mist-200",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette mist-200 (declared)."
+    },
+    "300": {
+     "var": "--color-mist-300",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette mist-300 (declared)."
+    },
+    "400": {
+     "var": "--color-mist-400",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette mist-400 (declared)."
+    },
+    "50": {
+     "var": "--color-mist-50",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette mist-50 (declared)."
+    },
+    "500": {
+     "var": "--color-mist-500",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette mist-500 (declared)."
+    },
+    "600": {
+     "var": "--color-mist-600",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette mist-600 (declared)."
+    },
+    "700": {
+     "var": "--color-mist-700",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette mist-700 (declared)."
+    },
+    "800": {
+     "var": "--color-mist-800",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette mist-800 (declared)."
+    },
+    "900": {
+     "var": "--color-mist-900",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette mist-900 (declared)."
+    },
+    "950": {
+     "var": "--color-mist-950",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette mist-950 (declared)."
+    }
+   },
+   "neutral": {
+    "100": {
+     "var": "--color-neutral-100",
+     "type": "color",
+     "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+     "description": "Themed neutral 100 step — re-bound on .dark."
+    },
+    "200": {
+     "var": "--color-neutral-200",
+     "type": "color",
+     "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+     "description": "Themed neutral 200 step — re-bound on .dark."
+    },
+    "300": {
+     "var": "--color-neutral-300",
+     "type": "color",
+     "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+     "description": "Themed neutral 300 step — re-bound on .dark."
+    },
+    "400": {
+     "var": "--color-neutral-400",
+     "type": "color",
+     "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+     "description": "Themed neutral 400 step — re-bound on .dark."
+    },
+    "50": {
+     "var": "--color-neutral-50",
+     "type": "color",
+     "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+     "description": "Themed neutral 50 step — re-bound on .dark."
+    },
+    "500": {
+     "var": "--color-neutral-500",
+     "type": "color",
+     "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+     "description": "Themed neutral 500 step — re-bound on .dark."
+    },
+    "600": {
+     "var": "--color-neutral-600",
+     "type": "color",
+     "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+     "description": "Themed neutral 600 step — re-bound on .dark."
+    },
+    "700": {
+     "var": "--color-neutral-700",
+     "type": "color",
+     "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+     "description": "Themed neutral 700 step — re-bound on .dark."
+    },
+    "800": {
+     "var": "--color-neutral-800",
+     "type": "color",
+     "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+     "description": "Themed neutral 800 step — re-bound on .dark."
+    },
+    "900": {
+     "var": "--color-neutral-900",
+     "type": "color",
+     "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+     "description": "Themed neutral 900 step — re-bound on .dark."
+    },
+    "950": {
+     "var": "--color-neutral-950",
+     "type": "color",
+     "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+     "description": "Themed neutral 950 step — re-bound on .dark."
+    }
+   },
+   "olive": {
+    "100": {
+     "var": "--color-olive-100",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette olive-100 (declared)."
+    },
+    "200": {
+     "var": "--color-olive-200",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette olive-200 (declared)."
+    },
+    "300": {
+     "var": "--color-olive-300",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette olive-300 (declared)."
+    },
+    "400": {
+     "var": "--color-olive-400",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette olive-400 (declared)."
+    },
+    "50": {
+     "var": "--color-olive-50",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette olive-50 (declared)."
+    },
+    "500": {
+     "var": "--color-olive-500",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette olive-500 (declared)."
+    },
+    "600": {
+     "var": "--color-olive-600",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette olive-600 (declared)."
+    },
+    "700": {
+     "var": "--color-olive-700",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette olive-700 (declared)."
+    },
+    "800": {
+     "var": "--color-olive-800",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette olive-800 (declared)."
+    },
+    "900": {
+     "var": "--color-olive-900",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette olive-900 (declared)."
+    },
+    "950": {
+     "var": "--color-olive-950",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette olive-950 (declared)."
+    }
+   },
+   "orange": {
+    "100": {
+     "var": "--color-orange-100",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette orange-100 (declared)."
+    },
+    "200": {
+     "var": "--color-orange-200",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette orange-200 (declared)."
+    },
+    "300": {
+     "var": "--color-orange-300",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette orange-300 (declared)."
+    },
+    "400": {
+     "var": "--color-orange-400",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette orange-400 (declared)."
+    },
+    "50": {
+     "var": "--color-orange-50",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette orange-50 (declared)."
+    },
+    "500": {
+     "var": "--color-orange-500",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette orange-500 (declared)."
+    },
+    "600": {
+     "var": "--color-orange-600",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette orange-600 (declared)."
+    },
+    "700": {
+     "var": "--color-orange-700",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette orange-700 (declared)."
+    },
+    "800": {
+     "var": "--color-orange-800",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette orange-800 (declared)."
+    },
+    "900": {
+     "var": "--color-orange-900",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette orange-900 (declared)."
+    },
+    "950": {
+     "var": "--color-orange-950",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette orange-950 (declared)."
+    }
+   },
+   "pink": {
+    "default": {
+     "var": "--color-pink",
+     "type": "color",
+     "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+     "description": "Pink #e099ad — a named brand hue."
+    },
+    "100": {
+     "var": "--color-pink-100",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette pink-100 (declared)."
+    },
+    "200": {
+     "var": "--color-pink-200",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette pink-200 (declared)."
+    },
+    "300": {
+     "var": "--color-pink-300",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette pink-300 (declared)."
+    },
+    "400": {
+     "var": "--color-pink-400",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette pink-400 (declared)."
+    },
+    "50": {
+     "var": "--color-pink-50",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette pink-50 (declared)."
+    },
+    "500": {
+     "var": "--color-pink-500",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette pink-500 (declared)."
+    },
+    "600": {
+     "var": "--color-pink-600",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette pink-600 (declared)."
+    },
+    "700": {
+     "var": "--color-pink-700",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette pink-700 (declared)."
+    },
+    "800": {
+     "var": "--color-pink-800",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette pink-800 (declared)."
+    },
+    "900": {
+     "var": "--color-pink-900",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette pink-900 (declared)."
+    },
+    "950": {
+     "var": "--color-pink-950",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette pink-950 (declared)."
+    }
+   },
+   "purple": {
+    "100": {
+     "var": "--color-purple-100",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette purple-100 (declared)."
+    },
+    "200": {
+     "var": "--color-purple-200",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette purple-200 (declared)."
+    },
+    "300": {
+     "var": "--color-purple-300",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette purple-300 (declared)."
+    },
+    "400": {
+     "var": "--color-purple-400",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette purple-400 (declared)."
+    },
+    "50": {
+     "var": "--color-purple-50",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette purple-50 (declared)."
+    },
+    "500": {
+     "var": "--color-purple-500",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette purple-500 (declared)."
+    },
+    "600": {
+     "var": "--color-purple-600",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette purple-600 (declared)."
+    },
+    "700": {
+     "var": "--color-purple-700",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette purple-700 (declared)."
+    },
+    "800": {
+     "var": "--color-purple-800",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette purple-800 (declared)."
+    },
+    "900": {
+     "var": "--color-purple-900",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette purple-900 (declared)."
+    },
+    "950": {
+     "var": "--color-purple-950",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette purple-950 (declared)."
+    }
+   },
+   "red": {
+    "100": {
+     "var": "--color-red-100",
+     "type": "color",
+     "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+     "description": "Themed red 100 step — re-bound on .dark."
+    },
+    "200": {
+     "var": "--color-red-200",
+     "type": "color",
+     "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+     "description": "Themed red 200 step — re-bound on .dark."
+    },
+    "300": {
+     "var": "--color-red-300",
+     "type": "color",
+     "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+     "description": "Themed red 300 step — re-bound on .dark."
+    },
+    "400": {
+     "var": "--color-red-400",
+     "type": "color",
+     "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+     "description": "Themed red 400 step — re-bound on .dark."
+    },
+    "50": {
+     "var": "--color-red-50",
+     "type": "color",
+     "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+     "description": "Themed red 50 step — re-bound on .dark."
+    },
+    "500": {
+     "var": "--color-red-500",
+     "type": "color",
+     "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+     "description": "Themed red 500 step — re-bound on .dark."
+    },
+    "600": {
+     "var": "--color-red-600",
+     "type": "color",
+     "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+     "description": "Themed red 600 step — re-bound on .dark."
+    },
+    "700": {
+     "var": "--color-red-700",
+     "type": "color",
+     "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+     "description": "Themed red 700 step — re-bound on .dark."
+    },
+    "800": {
+     "var": "--color-red-800",
+     "type": "color",
+     "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+     "description": "Themed red 800 step — re-bound on .dark."
+    },
+    "900": {
+     "var": "--color-red-900",
+     "type": "color",
+     "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+     "description": "Themed red 900 step — re-bound on .dark."
+    },
+    "950": {
+     "var": "--color-red-950",
+     "type": "color",
+     "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+     "description": "Themed red 950 step — re-bound on .dark."
+    }
+   },
+   "rose": {
+    "100": {
+     "var": "--color-rose-100",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette rose-100 (declared)."
+    },
+    "200": {
+     "var": "--color-rose-200",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette rose-200 (declared)."
+    },
+    "300": {
+     "var": "--color-rose-300",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette rose-300 (declared)."
+    },
+    "400": {
+     "var": "--color-rose-400",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette rose-400 (declared)."
+    },
+    "50": {
+     "var": "--color-rose-50",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette rose-50 (declared)."
+    },
+    "500": {
+     "var": "--color-rose-500",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette rose-500 (declared)."
+    },
+    "600": {
+     "var": "--color-rose-600",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette rose-600 (declared)."
+    },
+    "700": {
+     "var": "--color-rose-700",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette rose-700 (declared)."
+    },
+    "800": {
+     "var": "--color-rose-800",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette rose-800 (declared)."
+    },
+    "900": {
+     "var": "--color-rose-900",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette rose-900 (declared)."
+    },
+    "950": {
+     "var": "--color-rose-950",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette rose-950 (declared)."
+    }
+   },
+   "sage": {
+    "var": "--color-sage",
+    "type": "color",
+    "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+    "description": "Sage #96bda3 — a named brand hue."
+   },
+   "sea": {
+    "var": "--color-sea",
+    "type": "color",
+    "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+    "description": "Sea #94c1c5 — a named brand hue."
+   },
+   "sky": {
+    "100": {
+     "var": "--color-sky-100",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette sky-100 (declared)."
+    },
+    "200": {
+     "var": "--color-sky-200",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette sky-200 (declared)."
+    },
+    "300": {
+     "var": "--color-sky-300",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette sky-300 (declared)."
+    },
+    "400": {
+     "var": "--color-sky-400",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette sky-400 (declared)."
+    },
+    "50": {
+     "var": "--color-sky-50",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette sky-50 (declared)."
+    },
+    "500": {
+     "var": "--color-sky-500",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette sky-500 (declared)."
+    },
+    "600": {
+     "var": "--color-sky-600",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette sky-600 (declared)."
+    },
+    "700": {
+     "var": "--color-sky-700",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette sky-700 (declared)."
+    },
+    "800": {
+     "var": "--color-sky-800",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette sky-800 (declared)."
+    },
+    "900": {
+     "var": "--color-sky-900",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette sky-900 (declared)."
+    },
+    "950": {
+     "var": "--color-sky-950",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette sky-950 (declared)."
+    },
+    "blue": {
+     "var": "--color-sky-blue",
+     "type": "color",
+     "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+     "description": "Sky blue #98c7eb — a named brand hue."
+    }
+   },
+   "slate": {
+    "100": {
+     "var": "--color-slate-100",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette slate-100 (declared)."
+    },
+    "200": {
+     "var": "--color-slate-200",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette slate-200 (declared)."
+    },
+    "300": {
+     "var": "--color-slate-300",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette slate-300 (declared)."
+    },
+    "400": {
+     "var": "--color-slate-400",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette slate-400 (declared)."
+    },
+    "50": {
+     "var": "--color-slate-50",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette slate-50 (declared)."
+    },
+    "500": {
+     "var": "--color-slate-500",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette slate-500 (declared)."
+    },
+    "600": {
+     "var": "--color-slate-600",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette slate-600 (declared)."
+    },
+    "700": {
+     "var": "--color-slate-700",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette slate-700 (declared)."
+    },
+    "800": {
+     "var": "--color-slate-800",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette slate-800 (declared)."
+    },
+    "900": {
+     "var": "--color-slate-900",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette slate-900 (declared)."
+    },
+    "950": {
+     "var": "--color-slate-950",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette slate-950 (declared)."
+    }
+   },
+   "stone": {
+    "100": {
+     "var": "--color-stone-100",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette stone-100 (declared)."
+    },
+    "200": {
+     "var": "--color-stone-200",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette stone-200 (declared)."
+    },
+    "300": {
+     "var": "--color-stone-300",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette stone-300 (declared)."
+    },
+    "400": {
+     "var": "--color-stone-400",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette stone-400 (declared)."
+    },
+    "50": {
+     "var": "--color-stone-50",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette stone-50 (declared)."
+    },
+    "500": {
+     "var": "--color-stone-500",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette stone-500 (declared)."
+    },
+    "600": {
+     "var": "--color-stone-600",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette stone-600 (declared)."
+    },
+    "700": {
+     "var": "--color-stone-700",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette stone-700 (declared)."
+    },
+    "800": {
+     "var": "--color-stone-800",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette stone-800 (declared)."
+    },
+    "900": {
+     "var": "--color-stone-900",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette stone-900 (declared)."
+    },
+    "950": {
+     "var": "--color-stone-950",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette stone-950 (declared)."
+    }
+   },
+   "surface": {
+    "var": "--color-surface",
+    "type": "color",
+    "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+    "description": "Surface #f6f6f6 — the nav-link hover fill and raised card tone."
+   },
+   "tan": {
+    "var": "--color-tan",
+    "type": "color",
+    "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+    "description": "Tan #ac8a65 — a named brand hue."
+   },
+   "taupe": {
+    "100": {
+     "var": "--color-taupe-100",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette taupe-100 (declared)."
+    },
+    "200": {
+     "var": "--color-taupe-200",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette taupe-200 (declared)."
+    },
+    "300": {
+     "var": "--color-taupe-300",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette taupe-300 (declared)."
+    },
+    "400": {
+     "var": "--color-taupe-400",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette taupe-400 (declared)."
+    },
+    "50": {
+     "var": "--color-taupe-50",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette taupe-50 (declared)."
+    },
+    "500": {
+     "var": "--color-taupe-500",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette taupe-500 (declared)."
+    },
+    "600": {
+     "var": "--color-taupe-600",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette taupe-600 (declared)."
+    },
+    "700": {
+     "var": "--color-taupe-700",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette taupe-700 (declared)."
+    },
+    "800": {
+     "var": "--color-taupe-800",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette taupe-800 (declared)."
+    },
+    "900": {
+     "var": "--color-taupe-900",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette taupe-900 (declared)."
+    },
+    "950": {
+     "var": "--color-taupe-950",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette taupe-950 (declared)."
+    }
+   },
+   "teal": {
+    "100": {
+     "var": "--color-teal-100",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette teal-100 (declared)."
+    },
+    "200": {
+     "var": "--color-teal-200",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette teal-200 (declared)."
+    },
+    "300": {
+     "var": "--color-teal-300",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette teal-300 (declared)."
+    },
+    "400": {
+     "var": "--color-teal-400",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette teal-400 (declared)."
+    },
+    "50": {
+     "var": "--color-teal-50",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette teal-50 (declared)."
+    },
+    "500": {
+     "var": "--color-teal-500",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette teal-500 (declared)."
+    },
+    "600": {
+     "var": "--color-teal-600",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette teal-600 (declared)."
+    },
+    "700": {
+     "var": "--color-teal-700",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette teal-700 (declared)."
+    },
+    "800": {
+     "var": "--color-teal-800",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette teal-800 (declared)."
+    },
+    "900": {
+     "var": "--color-teal-900",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette teal-900 (declared)."
+    },
+    "950": {
+     "var": "--color-teal-950",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette teal-950 (declared)."
+    }
+   },
+   "violet": {
+    "100": {
+     "var": "--color-violet-100",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette violet-100 (declared)."
+    },
+    "200": {
+     "var": "--color-violet-200",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette violet-200 (declared)."
+    },
+    "300": {
+     "var": "--color-violet-300",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette violet-300 (declared)."
+    },
+    "400": {
+     "var": "--color-violet-400",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette violet-400 (declared)."
+    },
+    "50": {
+     "var": "--color-violet-50",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette violet-50 (declared)."
+    },
+    "500": {
+     "var": "--color-violet-500",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette violet-500 (declared)."
+    },
+    "600": {
+     "var": "--color-violet-600",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette violet-600 (declared)."
+    },
+    "700": {
+     "var": "--color-violet-700",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette violet-700 (declared)."
+    },
+    "800": {
+     "var": "--color-violet-800",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette violet-800 (declared)."
+    },
+    "900": {
+     "var": "--color-violet-900",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette violet-900 (declared)."
+    },
+    "950": {
+     "var": "--color-violet-950",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette violet-950 (declared)."
+    }
+   },
+   "white": {
+    "default": {
+     "var": "--color-white",
+     "type": "color",
+     "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+     "description": "White — the default surface and inverse text (inverts to black on .dark)."
+    },
+    "alpha": {
+     "10": {
+      "var": "--color-white-alpha-10",
+      "type": "color",
+      "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+      "description": "Declared white alpha 10 translucency — overlays, veils, scrims."
+     },
+     "5": {
+      "var": "--color-white-alpha-5",
+      "type": "color",
+      "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+      "description": "Declared white alpha 5 translucency — overlays, veils, scrims."
+     },
+     "60": {
+      "var": "--color-white-alpha-60",
+      "type": "color",
+      "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+      "description": "Declared white alpha 60 translucency — overlays, veils, scrims."
+     },
+     "75": {
+      "var": "--color-white-alpha-75",
+      "type": "color",
+      "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+      "description": "Declared white alpha 75 translucency — overlays, veils, scrims."
+     },
+     "80": {
+      "var": "--color-white-alpha-80",
+      "type": "color",
+      "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+      "description": "Declared white alpha 80 translucency — overlays, veils, scrims."
+     }
+    }
+   },
+   "yellow": {
+    "100": {
+     "var": "--color-yellow-100",
+     "type": "color",
+     "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+     "description": "Themed yellow 100 step — re-bound on .dark."
+    },
+    "200": {
+     "var": "--color-yellow-200",
+     "type": "color",
+     "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+     "description": "Themed yellow 200 step — re-bound on .dark."
+    },
+    "300": {
+     "var": "--color-yellow-300",
+     "type": "color",
+     "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+     "description": "Themed yellow 300 step — re-bound on .dark."
+    },
+    "400": {
+     "var": "--color-yellow-400",
+     "type": "color",
+     "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+     "description": "Themed yellow 400 step — re-bound on .dark."
+    },
+    "50": {
+     "var": "--color-yellow-50",
+     "type": "color",
+     "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+     "description": "Themed yellow 50 step — re-bound on .dark."
+    },
+    "500": {
+     "var": "--color-yellow-500",
+     "type": "color",
+     "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+     "description": "Themed yellow 500 step — re-bound on .dark."
+    },
+    "600": {
+     "var": "--color-yellow-600",
+     "type": "color",
+     "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+     "description": "Themed yellow 600 step — re-bound on .dark."
+    },
+    "700": {
+     "var": "--color-yellow-700",
+     "type": "color",
+     "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+     "description": "Themed yellow 700 step — re-bound on .dark."
+    },
+    "800": {
+     "var": "--color-yellow-800",
+     "type": "color",
+     "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+     "description": "Themed yellow 800 step — re-bound on .dark."
+    },
+    "900": {
+     "var": "--color-yellow-900",
+     "type": "color",
+     "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+     "description": "Themed yellow 900 step — re-bound on .dark."
+    },
+    "950": {
+     "var": "--color-yellow-950",
+     "type": "color",
+     "source": "declared --color-* var over the --themed-* triplets; the .dark scope inverts it",
+     "description": "Themed yellow 950 step — re-bound on .dark."
+    }
+   },
+   "zinc": {
+    "100": {
+     "var": "--color-zinc-100",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette zinc-100 (declared)."
+    },
+    "200": {
+     "var": "--color-zinc-200",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette zinc-200 (declared)."
+    },
+    "300": {
+     "var": "--color-zinc-300",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette zinc-300 (declared)."
+    },
+    "400": {
+     "var": "--color-zinc-400",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette zinc-400 (declared)."
+    },
+    "50": {
+     "var": "--color-zinc-50",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette zinc-50 (declared)."
+    },
+    "500": {
+     "var": "--color-zinc-500",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette zinc-500 (declared)."
+    },
+    "600": {
+     "var": "--color-zinc-600",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette zinc-600 (declared)."
+    },
+    "700": {
+     "var": "--color-zinc-700",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette zinc-700 (declared)."
+    },
+    "800": {
+     "var": "--color-zinc-800",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette zinc-800 (declared)."
+    },
+    "900": {
+     "var": "--color-zinc-900",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette zinc-900 (declared)."
+    },
+    "950": {
+     "var": "--color-zinc-950",
+     "type": "color",
+     "source": "declared Tailwind v4 default palette var (same value both themes)",
+     "description": "Tailwind v4 palette zinc-950 (declared)."
+    }
+   },
+   "painted": {
+    "banner": {
+     "value": "#f5f3f1",
+     "type": "color",
+     "source": "computed backgroundColor of promo-banner default (raw/components-computed.json)",
+     "description": "The #F5F3F1 announcement-band fill (arbitrary value, not a token var)."
+    },
+    "faq": {
+     "value": "#faf8f8",
+     "type": "color",
+     "source": "computed backgroundColor of faq-item default (raw/components-computed.json)",
+     "description": "The #FAF8F8 closed-FAQ tint (arbitrary value)."
+    },
+    "plan-card": {
+     "value": "#fdfcfc",
+     "type": "color",
+     "source": "computed backgroundColor of plan-card default (raw/components-computed.json)",
+     "description": "The #FDFCFC plan-card field (the reader-page off-white, arbitrary)."
+    },
+    "plan-card-border": {
+     "value": "#eae9e9",
+     "type": "color",
+     "source": "computed borderTopColor of plan-card default (raw/components-computed.json)",
+     "description": "The #EAE9E9 plan-card hairline (arbitrary rgba)."
+    },
+    "save-badge-bg": {
+     "value": "#e1f5e0",
+     "type": "color",
+     "source": "computed backgroundColor of save-badge default (raw/components-computed.json)",
+     "description": "The #E1F5E0 Save-25% badge fill (arbitrary value)."
+    },
+    "save-badge-fg": {
+     "value": "#307d18",
+     "type": "color",
+     "source": "computed color of save-badge default (raw/components-computed.json)",
+     "description": "The #307D18 Save-25% badge text (arbitrary value)."
+    },
+    "primary-hover": {
+     "value": "#6e6e6e",
+     "type": "color",
+     "source": "computed backgroundColor of hero-cta hover (raw/components-computed.json)",
+     "description": "The #6E6E6E dark-button hover (bg-darkest role, painted not declared)."
+    },
+    "overlay-hover": {
+     "value": "rgba(0, 0, 0, 0.1)",
+     "type": "color",
+     "source": "computed backgroundColor of sso-google hover (raw/components-computed.json)",
+     "description": "The 10% black overlay the secondary buttons paint on hover (bg-overlay-darker)."
+    },
+    "input-border": {
+     "value": "#e5e5e5",
+     "type": "color",
+     "source": "computed borderTopColor of email-field default (raw/components-computed.json)",
+     "description": "The #E5E5E5 input hairline (border-gray-alpha-200)."
+    },
+    "menu-hairline": {
+     "value": "#f2f2f2",
+     "type": "color",
+     "source": "computed borderTopColor of nav-dropdown default (raw/components-computed.json)",
+     "description": "The #F2F2F2 mega-menu border."
+    }
+   },
+   "reader": {
+    "page-bg": {
+     "var": "--reader-page-bg",
+     "type": "color",
+     "description": "Reader page background (#ffffff light / #000000 dark). (reader app role; declared on the site sheet, unpainted on the public surface)"
+    },
+    "active-sentence-bg": {
+     "var": "--reader-active-sentence-bg-color",
+     "type": "color",
+     "description": "Active-sentence highlight (#ddf5ff). (reader app role; declared on the site sheet, unpainted on the public surface)"
+    },
+    "active-word-bg": {
+     "var": "--reader-active-word-bg-color",
+     "type": "color",
+     "description": "Active-word highlight (#73dbf2). (reader app role; declared on the site sheet, unpainted on the public surface)"
+    },
+    "bookmark-bg": {
+     "var": "--reader-bookmark-bg-color",
+     "type": "color",
+     "description": "Bookmark fill (#fff7dc). (reader app role; declared on the site sheet, unpainted on the public surface)"
+    },
+    "bookmark-hover-bg": {
+     "var": "--reader-bookmark-hover-bg-color",
+     "type": "color",
+     "description": "Bookmark hover fill (#ffe69c). (reader app role; declared on the site sheet, unpainted on the public surface)"
+    },
+    "find-match-bg": {
+     "var": "--reader-find-match-bg-color",
+     "type": "color",
+     "description": "Find-match highlight (#fff1a8). (reader app role; declared on the site sheet, unpainted on the public surface)"
+    },
+    "find-current-bg": {
+     "var": "--reader-find-current-bg-color",
+     "type": "color",
+     "description": "Current find match (#ffc94a). (reader app role; declared on the site sheet, unpainted on the public surface)"
+    },
+    "podcast-warning-bg": {
+     "var": "--reader-podcast-warning-bg-color",
+     "type": "color",
+     "description": "Podcast warning fill. (reader app role; declared on the site sheet, unpainted on the public surface)"
+    },
+    "podcast-warning-text": {
+     "var": "--reader-podcast-warning-text-color",
+     "type": "color",
+     "description": "Podcast warning text. (reader app role; declared on the site sheet, unpainted on the public surface)"
+    }
+   }
+  },
+  "typography": {
+   "display": {
+    "01": {
+     "$value": {
+      "fontFamily": "{font.family.inter}",
+      "fontSize": "100px",
+      "fontWeight": 700,
+      "lineHeight": 0.95,
+      "letterSpacing": "0px"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --f-display-01-* (light, resolved at 1440px)"
+     },
+     "$description": "The f-display-01 display step (desktop 1440px; the sheet steps it down at <80rem and <64rem)."
+    },
+    "02": {
+     "$value": {
+      "fontFamily": "{font.family.inter}",
+      "fontSize": "64px",
+      "fontWeight": 700,
+      "lineHeight": 1.0,
+      "letterSpacing": "0px"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --f-display-02-* (light, resolved at 1440px)"
+     },
+     "$description": "The f-display-02 display step (desktop 1440px; the sheet steps it down at <80rem and <64rem)."
+    }
+   },
+   "heading": {
+    "01": {
+     "$value": {
+      "fontFamily": "{font.family.waldenburg}",
+      "fontSize": "64px",
+      "fontWeight": 700,
+      "lineHeight": 1.1,
+      "letterSpacing": "0px"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --f-heading-01-* (light, resolved at 1440px)"
+     },
+     "$description": "The f-heading-01 Waldenburg heading step (desktop 1440px; the sheet steps it down at <80rem and <64rem)."
+    },
+    "02": {
+     "$value": {
+      "fontFamily": "{font.family.waldenburg}",
+      "fontSize": "56px",
+      "fontWeight": 700,
+      "lineHeight": 1.1,
+      "letterSpacing": "0px"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --f-heading-02-* (light, resolved at 1440px)"
+     },
+     "$description": "The f-heading-02 Waldenburg heading step (desktop 1440px; the sheet steps it down at <80rem and <64rem)."
+    },
+    "03": {
+     "$value": {
+      "fontFamily": "{font.family.waldenburg}",
+      "fontSize": "48px",
+      "fontWeight": 700,
+      "lineHeight": 1.1,
+      "letterSpacing": "0px"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --f-heading-03-* (light, resolved at 1440px)"
+     },
+     "$description": "The f-heading-03 Waldenburg heading step (desktop 1440px; the sheet steps it down at <80rem and <64rem)."
+    },
+    "04": {
+     "$value": {
+      "fontFamily": "{font.family.waldenburg}",
+      "fontSize": "32px",
+      "fontWeight": 700,
+      "lineHeight": 1.1,
+      "letterSpacing": "0.32px"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --f-heading-04-* (light, resolved at 1440px)"
+     },
+     "$description": "The f-heading-04 Waldenburg heading step (desktop 1440px; the sheet steps it down at <80rem and <64rem)."
+    },
+    "05": {
+     "$value": {
+      "fontFamily": "{font.family.waldenburg}",
+      "fontSize": "28px",
+      "fontWeight": 700,
+      "lineHeight": 1.1,
+      "letterSpacing": "0.28px"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --f-heading-05-* (light, resolved at 1440px)"
+     },
+     "$description": "The f-heading-05 Waldenburg heading step (desktop 1440px; the sheet steps it down at <80rem and <64rem)."
+    }
+   },
+   "subhead": {
+    "01": {
+     "$value": {
+      "fontFamily": "{font.family.inter}",
+      "fontSize": "22px",
+      "fontWeight": 700,
+      "lineHeight": 1.4,
+      "letterSpacing": "0.22px"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --f-subhead-01-* (light, resolved at 1440px)"
+     },
+     "$description": "The f-subhead-01 bold subhead step (desktop 1440px; the sheet steps it down at <80rem and <64rem)."
+    },
+    "02": {
+     "$value": {
+      "fontFamily": "{font.family.inter}",
+      "fontSize": "18px",
+      "fontWeight": 700,
+      "lineHeight": 1.4,
+      "letterSpacing": "0.18px"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --f-subhead-02-* (light, resolved at 1440px)"
+     },
+     "$description": "The f-subhead-02 bold subhead step (desktop 1440px; the sheet steps it down at <80rem and <64rem)."
+    },
+    "03": {
+     "$value": {
+      "fontFamily": "{font.family.inter}",
+      "fontSize": "16px",
+      "fontWeight": 700,
+      "lineHeight": 1.4,
+      "letterSpacing": "0.16px"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --f-subhead-03-* (light, resolved at 1440px)"
+     },
+     "$description": "The f-subhead-03 bold subhead step (desktop 1440px; the sheet steps it down at <80rem and <64rem)."
+    }
+   },
+   "description": {
+    "01": {
+     "$value": {
+      "fontFamily": "{font.family.inter}",
+      "fontSize": "22px",
+      "fontWeight": 400,
+      "lineHeight": 1.4,
+      "letterSpacing": "0.22px"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --f-description-01-* (light, resolved at 1440px)"
+     },
+     "$description": "The f-description-01 lede/description step (desktop 1440px; the sheet steps it down at <80rem and <64rem)."
+    },
+    "02": {
+     "$value": {
+      "fontFamily": "{font.family.inter}",
+      "fontSize": "18px",
+      "fontWeight": 400,
+      "lineHeight": 1.4,
+      "letterSpacing": "0.18px"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --f-description-02-* (light, resolved at 1440px)"
+     },
+     "$description": "The f-description-02 lede/description step (desktop 1440px; the sheet steps it down at <80rem and <64rem)."
+    },
+    "03": {
+     "$value": {
+      "fontFamily": "{font.family.inter}",
+      "fontSize": "16px",
+      "fontWeight": 400,
+      "lineHeight": 1.4,
+      "letterSpacing": "0.16px"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --f-description-03-* (light, resolved at 1440px)"
+     },
+     "$description": "The f-description-03 lede/description step (desktop 1440px; the sheet steps it down at <80rem and <64rem)."
+    },
+    "04": {
+     "$value": {
+      "fontFamily": "{font.family.inter}",
+      "fontSize": "14px",
+      "fontWeight": 400,
+      "lineHeight": 1.4,
+      "letterSpacing": "0.14px"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --f-description-04-* (light, resolved at 1440px)"
+     },
+     "$description": "The f-description-04 lede/description step (desktop 1440px; the sheet steps it down at <80rem and <64rem)."
+    }
+   },
+   "body": {
+    "01": {
+     "$value": {
+      "fontFamily": "{font.family.inter}",
+      "fontSize": "18px",
+      "fontWeight": 400,
+      "lineHeight": 1.6,
+      "letterSpacing": "0px"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --f-body-01-* (light, resolved at 1440px)"
+     },
+     "$description": "The f-body-01 body step (desktop 1440px; the sheet steps it down at <80rem and <64rem)."
+    }
+   },
+   "ui": {
+    "01": {
+     "$value": {
+      "fontFamily": "{font.family.inter}",
+      "fontSize": "18px",
+      "fontWeight": 700,
+      "lineHeight": 1.1,
+      "letterSpacing": "0px",
+      "textTransform": "uppercase"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --f-ui-01-* (light, resolved at 1440px)"
+     },
+     "$description": "The f-ui-01 UI label step (desktop 1440px; the sheet steps it down at <80rem and <64rem)."
+    },
+    "02": {
+     "$value": {
+      "fontFamily": "{font.family.inter}",
+      "fontSize": "14px",
+      "fontWeight": 400,
+      "lineHeight": 1.4,
+      "letterSpacing": "0px"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --f-ui-02-* (light, resolved at 1440px)"
+     },
+     "$description": "The f-ui-02 UI label step (desktop 1440px; the sheet steps it down at <80rem and <64rem)."
+    },
+    "03": {
+     "$value": {
+      "fontFamily": "{font.family.inter}",
+      "fontSize": "14px",
+      "fontWeight": 700,
+      "lineHeight": 1.1,
+      "letterSpacing": "0px",
+      "textTransform": "uppercase"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --f-ui-03-* (light, resolved at 1440px)"
+     },
+     "$description": "The f-ui-03 UI label step (desktop 1440px; the sheet steps it down at <80rem and <64rem)."
+    },
+    "04": {
+     "$value": {
+      "fontFamily": "{font.family.inter}",
+      "fontSize": "12px",
+      "fontWeight": 700,
+      "lineHeight": 1.1,
+      "letterSpacing": "0px",
+      "textTransform": "uppercase"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --f-ui-04-* (light, resolved at 1440px)"
+     },
+     "$description": "The f-ui-04 UI label step (desktop 1440px; the sheet steps it down at <80rem and <64rem)."
+    },
+    "05": {
+     "$value": {
+      "fontFamily": "{font.family.inter}",
+      "fontSize": "12px",
+      "fontWeight": 400,
+      "lineHeight": 1.4,
+      "letterSpacing": "0px"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --f-ui-05-* (light, resolved at 1440px)"
+     },
+     "$description": "The f-ui-05 UI label step (desktop 1440px; the sheet steps it down at <80rem and <64rem)."
+    },
+    "06": {
+     "$value": {
+      "fontFamily": "{font.family.inter}",
+      "fontSize": "14px",
+      "fontWeight": 700,
+      "lineHeight": 1.1,
+      "letterSpacing": "0px"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --f-ui-06-* (light, resolved at 1440px)"
+     },
+     "$description": "The f-ui-06 UI label step (desktop 1440px; the sheet steps it down at <80rem and <64rem)."
+    },
+    "07": {
+     "$value": {
+      "fontFamily": "{font.family.inter}",
+      "fontSize": "10px",
+      "fontWeight": 400,
+      "lineHeight": 1.4,
+      "letterSpacing": "0px"
+     },
+     "$type": "typography",
+     "$extensions": {
+      "source": "css-var --f-ui-07-* (light, resolved at 1440px)"
+     },
+     "$description": "The f-ui-07 UI label step (desktop 1440px; the sheet steps it down at <80rem and <64rem)."
+    }
+   }
+  },
+  "radius": {
+   "pill": {
+    "value": "9999px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of hero-cta default (raw/components-computed.json)",
+    "description": "The 9999px pill every button, chip, input and badge paints (rounded-full)."
+   },
+   "shadcn": {
+    "var": "--shadcn-radius",
+    "type": "dimension",
+    "description": "The declared 8px shadcn radius (book covers, small cards)."
+   },
+   "faq": {
+    "value": "20px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of faq-item default (raw/components-computed.json)",
+    "description": "The 20px FAQ-item radius."
+   },
+   "plan-card": {
+    "value": "40px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of plan-card default (raw/components-computed.json)",
+    "description": "The 40px plan-card radius."
+   },
+   "cover-orbit": {
+    "value": "16px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of book-cover default (raw/components-computed.json)",
+    "description": "The 16px orbit cover-card radius."
+   },
+   "compare-link": {
+    "value": "10px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of cmp-link default (raw/components-computed.json)",
+    "description": "The 10px compare-link radius."
+   }
+  },
+  "easing": {
+   "standard": {
+    "var": "--default-transition-timing-function",
+    "type": "cubicBezier",
+    "description": "The default transition curve (cubic-bezier(.4,0,.2,1))."
+   },
+   "out": {
+    "var": "--ease-out",
+    "type": "cubicBezier",
+    "description": "Declared ease-out (0,0,.2,1)."
+   },
+   "in-out": {
+    "var": "--ease-in-out",
+    "type": "cubicBezier",
+    "description": "Declared ease-in-out (.4,0,.2,1)."
+   }
+  },
+  "duration": {
+   "default": {
+    "var": "--default-transition-duration",
+    "type": "duration",
+    "description": "The declared default transition duration (0.15s)."
+   }
+  },
+  "spacing": {
+   "unit": {
+    "var": "--spacing",
+    "type": "dimension",
+    "description": "The 4px Tailwind base unit every spacing utility multiplies."
+   },
+   "inner-gutter": {
+    "var": "--spacing-inner-gutter",
+    "type": "dimension",
+    "description": "Inner gutter (20px at 1440px). Declared --spacing var; responsive."
+   },
+   "outer-gutter": {
+    "var": "--spacing-outer-gutter",
+    "type": "dimension",
+    "description": "Outer gutter (64px at 1440px). Declared --spacing var; responsive."
+   },
+   "outer-content": {
+    "var": "--spacing-outer-content",
+    "type": "dimension",
+    "description": "Outer content spacing (100px). Declared --spacing var; responsive."
+   },
+   "content-wide": {
+    "var": "--spacing-content-wide",
+    "type": "dimension",
+    "description": "Wide content spacing (160px). Declared --spacing var; responsive."
+   },
+   "content-xwide": {
+    "var": "--spacing-content-xwide",
+    "type": "dimension",
+    "description": "Extra-wide content spacing (200px). Declared --spacing var; responsive."
+   }
+  },
+  "layout": {
+   "container-sm": {
+    "var": "--container-sm",
+    "type": "dimension",
+    "description": "Container sm (384px)."
+   },
+   "container-md": {
+    "var": "--container-md",
+    "type": "dimension",
+    "description": "Container md (448px)."
+   },
+   "container-2xl": {
+    "var": "--container-2xl",
+    "type": "dimension",
+    "description": "Container 2xl (672px)."
+   },
+   "container-3xl": {
+    "var": "--container-3xl",
+    "type": "dimension",
+    "description": "Container 3xl (768px)."
+   },
+   "container-4xl": {
+    "var": "--container-4xl",
+    "type": "dimension",
+    "description": "Container 4xl (896px)."
+   },
+   "container-5xl": {
+    "var": "--container-5xl",
+    "type": "dimension",
+    "description": "Container 5xl (1024px)."
+   },
+   "container-6xl": {
+    "var": "--container-6xl",
+    "type": "dimension",
+    "description": "Container 6xl (1152px)."
+   },
+   "grid-columns": {
+    "var": "--grid-columns",
+    "type": "number",
+    "description": "The declared 12-column grid."
+   },
+   "container": {
+    "value": "1304px",
+    "type": "dimension",
+    "source": "computed width of header default (raw/components-computed.json)",
+    "description": "The 1304px content width inside the 1440px viewport (inner + outer gutters)."
+   },
+   "header-height": {
+    "value": "64px",
+    "type": "dimension",
+    "source": "computed height of header default (raw/components-computed.json)",
+    "description": "The 64px header bar."
+   },
+   "header-height-mobile": {
+    "value": "64px",
+    "type": "dimension",
+    "source": "computed height of m-header default (raw/components-computed.json)",
+    "description": "The 64px mobile header."
+   },
+   "promo-height": {
+    "value": "49px",
+    "type": "dimension",
+    "source": "computed height of promo-banner default (raw/components-computed.json)",
+    "description": "The 49px promo band."
+   }
+  },
+  "shadow": {
+   "drop-lg": {
+    "value": [
+     {
+      "color": "rgba(0, 0, 0, 0.15)",
+      "offsetX": "0px",
+      "offsetY": "4px",
+      "blur": "4px",
+      "spread": "0px"
+     }
+    ],
+    "type": "shadow",
+    "source": "css-var --drop-shadow-lg (light)",
+    "description": "The declared lg drop shadow (rgba(0,0,0,.15) 0 4 4)."
+   },
+   "pill": {
+    "value": [
+     {
+      "color": "rgba(0, 0, 0, 0.06)",
+      "offsetX": "0px",
+      "offsetY": "0px",
+      "blur": "0px",
+      "spread": "1px"
+     },
+     {
+      "color": "rgba(0, 0, 0, 0.04)",
+      "offsetX": "0px",
+      "offsetY": "1px",
+      "blur": "2px",
+      "spread": "0px"
+     },
+     {
+      "color": "rgba(0, 0, 0, 0.04)",
+      "offsetX": "0px",
+      "offsetY": "2px",
+      "blur": "4px",
+      "spread": "0px"
+     }
+    ],
+    "type": "shadow",
+    "source": "computed boxShadow of hero-cta-2 default (raw/components-computed.json)",
+    "description": "The layered ring shadow the secondary pills paint (ring 6% + 1px/2px lifts, 4% black)."
+   },
+   "menu": {
+    "value": [
+     {
+      "color": "rgba(16, 24, 40, 0.03)",
+      "offsetX": "0px",
+      "offsetY": "4px",
+      "blur": "6px",
+      "spread": "-2px"
+     },
+     {
+      "color": "rgba(16, 24, 40, 0.08)",
+      "offsetX": "0px",
+      "offsetY": "12px",
+      "blur": "16px",
+      "spread": "-4px"
+     }
+    ],
+    "type": "shadow",
+    "source": "computed boxShadow of nav-dropdown default (raw/components-computed.json)",
+    "description": "The mega-menu/card elevation (16,24,40 at .03/.08)."
+   },
+   "faq-open": {
+    "value": [
+     {
+      "color": "rgba(0, 0, 0, 0.4)",
+      "offsetX": "0px",
+      "offsetY": "0px",
+      "blur": "1px",
+      "spread": "0px"
+     },
+     {
+      "color": "rgba(0, 0, 0, 0.04)",
+      "offsetX": "0px",
+      "offsetY": "1px",
+      "blur": "1px",
+      "spread": "0px"
+     },
+     {
+      "color": "rgba(0, 0, 0, 0.04)",
+      "offsetX": "0px",
+      "offsetY": "2px",
+      "blur": "4px",
+      "spread": "0px"
+     }
+    ],
+    "type": "shadow",
+    "source": "computed boxShadow of faq-item open (raw/components-computed.json)",
+    "description": "The open-FAQ lift (1px ring 40% + 1-2px lifts 4%)."
+   }
+  },
+  "measured": {
+   "focus-ring": {
+    "value": "#000000",
+    "type": "color",
+    "source": "computed outline of hero-cta focus-visible (raw/components-computed.json)",
+    "description": "The 2px solid #000000 keyboard-focus outline (offset 2px); the declared --focus-ring var inverts to white on .dark."
+   },
+   "focus-ring-width": {
+    "value": "2px",
+    "type": "dimension",
+    "source": "computed outlineWidth of hero-cta focus-visible (raw/components-computed.json)",
+    "description": "The 2px focus outline width."
+   },
+   "focus-ring-offset": {
+    "value": "2px",
+    "type": "dimension",
+    "source": "computed outlineOffset of hero-cta focus-visible (raw/components-computed.json)",
+    "description": "The 2px focus outline offset."
+   },
+   "color": {
+    "value": "0.3s",
+    "type": "duration",
+    "source": "computed transition of hero-cta default (raw/components-computed.json)",
+    "description": "The standard colour/background transition. (color, background-color, border-color, transform)"
+   },
+   "menu": {
+    "value": "0.3s",
+    "type": "duration",
+    "source": "computed transition of nav-dropdown default (raw/components-computed.json)",
+    "description": "The mega-menu open animation. (width, height)"
+   },
+   "faq": {
+    "value": "0.65s",
+    "type": "duration",
+    "source": "computed transition of faq-item default (raw/components-computed.json)",
+    "description": "The FAQ open/close animation. (box-shadow, background-color, margin, border-radius)"
+   },
+   "mobile-menu": {
+    "value": "0.5s",
+    "type": "duration",
+    "source": "computed transition of m-menu-open default (raw/components-computed.json)",
+    "description": "The mobile menu slide-in. (color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events)"
+   }
+  }
+ },
+ "light": {
+  "surface": {
+   "page": {
+    "var": "--color-white",
+    "type": "color",
+    "source": "declared --color-* role",
+    "description": "The default page field (bg-default)."
+   },
+   "card": {
+    "var": "--color-surface",
+    "type": "color",
+    "source": "declared --color-* role",
+    "description": "The raised card surface (#f6f6f6)."
+   },
+   "hovered": {
+    "var": "--color-hovered",
+    "type": "color",
+    "source": "declared --color-* role",
+    "description": "The hover fill (#f0f0f0)."
+   },
+   "inverse": {
+    "var": "--color-black",
+    "type": "color",
+    "source": "declared --color-* role",
+    "description": "The inverse fill — dark buttons, chips-on-dark (bg-inverse)."
+   },
+   "sunken": {
+    "var": "--color-neutral-50",
+    "type": "color",
+    "source": "declared --color-* role",
+    "description": "The sunken surface — the Google SSO fill, cover backings (bg-dark)."
+   },
+   "overlay": {
+    "var": "--color-black-alpha-5",
+    "type": "color",
+    "source": "declared --color-* role",
+    "description": "The 5% overlay fill (bg-overlay)."
+   },
+   "overlayDarker": {
+    "var": "--color-black-alpha-10",
+    "type": "color",
+    "source": "declared --color-* role",
+    "description": "The 10% overlay — secondary-button hover (bg-overlay-darker)."
+   },
+   "scrim": {
+    "var": "--color-black-alpha-60",
+    "type": "color",
+    "source": "declared --color-* role",
+    "description": "The 60% scrim (bg-overlay-darkest)."
+   },
+   "informative": {
+    "var": "--color-blue-200",
+    "type": "color",
+    "source": "declared --color-* role",
+    "description": "Informative surface (bg-informative)."
+   },
+   "positive": {
+    "var": "--color-green-200",
+    "type": "color",
+    "source": "declared --color-* role",
+    "description": "Positive surface (bg-positive)."
+   },
+   "negative": {
+    "var": "--color-red-200",
+    "type": "color",
+    "source": "declared --color-* role",
+    "description": "Negative surface (bg-negative)."
+   },
+   "warning": {
+    "var": "--color-yellow-100",
+    "type": "color",
+    "source": "declared --color-* role",
+    "description": "Warning surface (bg-warning)."
+   },
+   "banner": {
+    "value": "#f5f3f1",
+    "type": "color",
+    "source": "computed backgroundColor of promo-banner default (raw/components-computed.json)",
+    "description": "The #F5F3F1 announcement band (painted, not declared)."
+   },
+   "faq": {
+    "value": "#faf8f8",
+    "type": "color",
+    "source": "computed backgroundColor of faq-item default (raw/components-computed.json)",
+    "description": "The #FAF8F8 closed-FAQ tint."
+   },
+   "planCard": {
+    "value": "#fdfcfc",
+    "type": "color",
+    "source": "computed backgroundColor of plan-card default (raw/components-computed.json)",
+    "description": "The #FDFCFC plan-card field."
+   },
+   "saveBadge": {
+    "value": "#e1f5e0",
+    "type": "color",
+    "source": "computed backgroundColor of save-badge default (raw/components-computed.json)",
+    "description": "The #E1F5E0 Save-badge fill."
+   },
+   "primaryHover": {
+    "value": "#6e6e6e",
+    "type": "color",
+    "source": "computed backgroundColor of hero-cta hover (raw/components-computed.json)",
+    "description": "The #6E6E6E dark-button hover (bg-darkest)."
+   }
+  },
+  "text": {
+   "default": {
+    "var": "--color-black",
+    "type": "color",
+    "source": "declared --color-* role",
+    "description": "Primary text (text-default)."
+   },
+   "secondary": {
+    "var": "--color-neutral-600",
+    "type": "color",
+    "source": "declared --color-* role",
+    "description": "Secondary text (text-light-ish)."
+   },
+   "muted": {
+    "var": "--color-neutral-500",
+    "type": "color",
+    "source": "declared --color-* role",
+    "description": "Muted text (text-lighter)."
+   },
+   "faint": {
+    "var": "--color-neutral-400",
+    "type": "color",
+    "source": "declared --color-* role",
+    "description": "Faint text (text-lightest)."
+   },
+   "inverse": {
+    "var": "--color-white",
+    "type": "color",
+    "source": "declared --color-* role",
+    "description": "Text on inverse fills (text-inverse)."
+   },
+   "inverseMuted": {
+    "var": "--color-neutral-200",
+    "type": "color",
+    "source": "declared --color-* role",
+    "description": "Muted text on dark (text-inverse-light)."
+   },
+   "accent": {
+    "var": "--color-accent",
+    "type": "color",
+    "source": "declared --color-* role",
+    "description": "Accent text/link (text-accent)."
+   },
+   "error": {
+    "var": "--color-red-500",
+    "type": "color",
+    "source": "declared --color-* role",
+    "description": "Error text (text-error)."
+   },
+   "negative": {
+    "var": "--color-red-800",
+    "type": "color",
+    "source": "declared --color-* role",
+    "description": "Negative text on negative surfaces (text-negative)."
+   },
+   "positive": {
+    "var": "--color-green-800",
+    "type": "color",
+    "source": "declared --color-* role",
+    "description": "Positive text on positive surfaces (text-positive)."
+   },
+   "saveBadge": {
+    "value": "#307d18",
+    "type": "color",
+    "source": "computed color of save-badge default (raw/components-computed.json)",
+    "description": "The #307D18 Save-badge text."
+   }
+  },
+  "border": {
+   "default": {
+    "var": "--color-neutral-100",
+    "type": "color",
+    "source": "declared --color-* role",
+    "description": "The default hairline (border-default)."
+   },
+   "light": {
+    "var": "--color-neutral-50",
+    "type": "color",
+    "source": "declared --color-* role",
+    "description": "The lighter hairline (border-light)."
+   },
+   "strong": {
+    "var": "--color-neutral-400",
+    "type": "color",
+    "source": "declared --color-* role",
+    "description": "Strong borders (border-strong)."
+   },
+   "darker": {
+    "var": "--color-neutral-900",
+    "type": "color",
+    "source": "declared --color-* role",
+    "description": "Darker borders (border-darker)."
+   },
+   "darkest": {
+    "var": "--color-black",
+    "type": "color",
+    "source": "declared --color-* role",
+    "description": "The darkest border (border-darkest)."
+   },
+   "input": {
+    "var": "--color-neutral-100",
+    "type": "color",
+    "source": "declared --color-* role",
+    "description": "Input hairline (border-gray-alpha-200 paints #E5E5E5)."
+   },
+   "inverse": {
+    "var": "--color-white",
+    "type": "color",
+    "source": "declared --color-* role",
+    "description": "Borders on inverse fills (border-inverse)."
+   },
+   "negative": {
+    "var": "--color-red-800",
+    "type": "color",
+    "source": "declared --color-* role",
+    "description": "Negative borders."
+   },
+   "positive": {
+    "var": "--color-green-800",
+    "type": "color",
+    "source": "declared --color-* role",
+    "description": "Positive borders."
+   },
+   "planCard": {
+    "value": "#eae9e9",
+    "type": "color",
+    "source": "computed borderTopColor of plan-card default (raw/components-computed.json)",
+    "description": "The #EAE9E9 plan-card hairline."
+   }
+  },
+  "accent": {
+   "var": "--color-accent",
+   "type": "color",
+   "source": "declared --color-* role",
+   "description": "The declared accent blue (#4680fd)."
+  },
+  "focusRing": {
+   "var": "--focus-ring",
+   "type": "color",
+   "source": "declared --color-* role",
+   "description": "The declared focus ring (black light / white dark)."
+  }
+ },
+ "dark": {
+  "surface": {
+   "page": {
+    "var": "--color-white",
+    "type": "color",
+    "source": "declared --color-* role",
+    "description": "The default page field (bg-default)."
+   },
+   "card": {
+    "var": "--color-surface",
+    "type": "color",
+    "source": "declared --color-* role",
+    "description": "The raised card surface (#f6f6f6)."
+   },
+   "hovered": {
+    "var": "--color-hovered",
+    "type": "color",
+    "source": "declared --color-* role",
+    "description": "The hover fill (#f0f0f0)."
+   },
+   "inverse": {
+    "var": "--color-black",
+    "type": "color",
+    "source": "declared --color-* role",
+    "description": "The inverse fill — dark buttons, chips-on-dark (bg-inverse)."
+   },
+   "sunken": {
+    "var": "--color-neutral-50",
+    "type": "color",
+    "source": "declared --color-* role",
+    "description": "The sunken surface — the Google SSO fill, cover backings (bg-dark)."
+   },
+   "overlay": {
+    "var": "--color-black-alpha-5",
+    "type": "color",
+    "source": "declared --color-* role",
+    "description": "The 5% overlay fill (bg-overlay)."
+   },
+   "overlayDarker": {
+    "var": "--color-black-alpha-10",
+    "type": "color",
+    "source": "declared --color-* role",
+    "description": "The 10% overlay — secondary-button hover (bg-overlay-darker)."
+   },
+   "scrim": {
+    "var": "--color-black-alpha-60",
+    "type": "color",
+    "source": "declared --color-* role",
+    "description": "The 60% scrim (bg-overlay-darkest)."
+   },
+   "informative": {
+    "var": "--color-blue-200",
+    "type": "color",
+    "source": "declared --color-* role",
+    "description": "Informative surface (bg-informative)."
+   },
+   "positive": {
+    "var": "--color-green-200",
+    "type": "color",
+    "source": "declared --color-* role",
+    "description": "Positive surface (bg-positive)."
+   },
+   "negative": {
+    "var": "--color-red-200",
+    "type": "color",
+    "source": "declared --color-* role",
+    "description": "Negative surface (bg-negative)."
+   },
+   "warning": {
+    "var": "--color-yellow-100",
+    "type": "color",
+    "source": "declared --color-* role",
+    "description": "Warning surface (bg-warning)."
+   }
+  },
+  "text": {
+   "default": {
+    "var": "--color-black",
+    "type": "color",
+    "source": "declared --color-* role",
+    "description": "Primary text (text-default)."
+   },
+   "secondary": {
+    "var": "--color-neutral-600",
+    "type": "color",
+    "source": "declared --color-* role",
+    "description": "Secondary text (text-light-ish)."
+   },
+   "muted": {
+    "var": "--color-neutral-500",
+    "type": "color",
+    "source": "declared --color-* role",
+    "description": "Muted text (text-lighter)."
+   },
+   "faint": {
+    "var": "--color-neutral-400",
+    "type": "color",
+    "source": "declared --color-* role",
+    "description": "Faint text (text-lightest)."
+   },
+   "inverse": {
+    "var": "--color-white",
+    "type": "color",
+    "source": "declared --color-* role",
+    "description": "Text on inverse fills (text-inverse)."
+   },
+   "inverseMuted": {
+    "var": "--color-neutral-200",
+    "type": "color",
+    "source": "declared --color-* role",
+    "description": "Muted text on dark (text-inverse-light)."
+   },
+   "accent": {
+    "var": "--color-accent",
+    "type": "color",
+    "source": "declared --color-* role",
+    "description": "Accent text/link (text-accent)."
+   },
+   "error": {
+    "var": "--color-red-500",
+    "type": "color",
+    "source": "declared --color-* role",
+    "description": "Error text (text-error)."
+   },
+   "negative": {
+    "var": "--color-red-800",
+    "type": "color",
+    "source": "declared --color-* role",
+    "description": "Negative text on negative surfaces (text-negative)."
+   },
+   "positive": {
+    "var": "--color-green-800",
+    "type": "color",
+    "source": "declared --color-* role",
+    "description": "Positive text on positive surfaces (text-positive)."
+   }
+  },
+  "border": {
+   "default": {
+    "var": "--color-neutral-100",
+    "type": "color",
+    "source": "declared --color-* role",
+    "description": "The default hairline (border-default)."
+   },
+   "light": {
+    "var": "--color-neutral-50",
+    "type": "color",
+    "source": "declared --color-* role",
+    "description": "The lighter hairline (border-light)."
+   },
+   "strong": {
+    "var": "--color-neutral-400",
+    "type": "color",
+    "source": "declared --color-* role",
+    "description": "Strong borders (border-strong)."
+   },
+   "darker": {
+    "var": "--color-neutral-900",
+    "type": "color",
+    "source": "declared --color-* role",
+    "description": "Darker borders (border-darker)."
+   },
+   "darkest": {
+    "var": "--color-black",
+    "type": "color",
+    "source": "declared --color-* role",
+    "description": "The darkest border (border-darkest)."
+   },
+   "input": {
+    "var": "--color-neutral-100",
+    "type": "color",
+    "source": "declared --color-* role",
+    "description": "Input hairline (border-gray-alpha-200 paints #E5E5E5)."
+   },
+   "inverse": {
+    "var": "--color-white",
+    "type": "color",
+    "source": "declared --color-* role",
+    "description": "Borders on inverse fills (border-inverse)."
+   },
+   "negative": {
+    "var": "--color-red-800",
+    "type": "color",
+    "source": "declared --color-* role",
+    "description": "Negative borders."
+   },
+   "positive": {
+    "var": "--color-green-800",
+    "type": "color",
+    "source": "declared --color-* role",
+    "description": "Positive borders."
+   }
+  },
+  "accent": {
+   "var": "--color-accent",
+   "type": "color",
+   "source": "declared --color-* role",
+   "description": "The declared accent blue (#4680fd)."
+  },
+  "focusRing": {
+   "var": "--focus-ring",
+   "type": "color",
+   "source": "declared --color-* role",
+   "description": "The declared focus ring (black light / white dark)."
+  }
+ },
+ "component": {
+  "header": {
+   "height": {
+    "type": "dimension",
+    "value": "64px",
+    "source": "computed height of header default (raw/components-computed.json)",
+    "description": "The 64px header bar."
+   },
+   "height-mobile": {
+    "type": "dimension",
+    "value": "64px",
+    "source": "computed height of m-header default (raw/components-computed.json)",
+    "description": "The 64px mobile header."
+   },
+   "container": {
+    "type": "dimension",
+    "value": "1304px",
+    "source": "computed width of header default (raw/components-computed.json)",
+    "description": "The 1304px content column at 1440px."
+   }
+  },
+  "logo": {
+   "width": {
+    "type": "dimension",
+    "value": "164px",
+    "source": "computed width of logo default (raw/components-computed.json)",
+    "description": "The wordmark width (164px rendered)."
+   }
+  },
+  "button": {
+   "height": {
+    "nav": {
+     "type": "dimension",
+     "value": "36px",
+     "source": "computed height of nav-cta default (raw/components-computed.json)",
+     "description": "The 36px nav pill."
+    },
+    "cta": {
+     "type": "dimension",
+     "value": "52px",
+     "source": "computed height of hero-cta default (raw/components-computed.json)",
+     "description": "The 52px hero/pricing CTA."
+    },
+    "chip": {
+     "type": "dimension",
+     "value": "44px",
+     "source": "computed height of genre-chip default (raw/components-computed.json)",
+     "description": "The 44px chip / view-all pill."
+    },
+    "small": {
+     "type": "dimension",
+     "value": "32px",
+     "source": "computed height of promo-cta default (raw/components-computed.json)",
+     "description": "The 32px promo pill."
+    },
+    "sso": {
+     "type": "dimension",
+     "value": "40px",
+     "source": "computed height of sso-google default (raw/components-computed.json)",
+     "description": "The 40px SSO / form pill."
+    }
+   },
+   "radius": {
+    "type": "dimension",
+    "value": "9999px",
+    "source": "computed borderTopLeftRadius of hero-cta default (raw/components-computed.json)",
+    "description": "Every button paints the 9999px pill."
+   }
+  },
+  "nav-link": {
+   "height": {
+    "type": "dimension",
+    "value": "36px",
+    "source": "computed height of nav-link default (raw/components-computed.json)",
+    "description": "Nav link height (36px)."
+   }
+  },
+  "mega-menu": {
+   "width": {
+    "type": "dimension",
+    "value": "846px",
+    "source": "computed width of nav-dropdown default (raw/components-computed.json)",
+    "description": "The Discover mega-menu width (846px)."
+   }
+  },
+  "field": {
+   "height": {
+    "type": "dimension",
+    "value": "40px",
+    "source": "computed height of email-field default (raw/components-computed.json)",
+    "description": "The 40px auth input."
+   },
+   "radius": {
+    "type": "dimension",
+    "value": "9999px",
+    "source": "computed borderTopLeftRadius of email-field default (raw/components-computed.json)",
+    "description": "Inputs paint the full pill."
+   }
+  },
+  "auth-card": {
+   "width": {
+    "type": "dimension",
+    "value": "360px",
+    "source": "computed width of signin-card default (raw/components-computed.json)",
+    "description": "The 360px max-w-90 auth card column."
+   }
+  },
+  "plan-card": {
+   "width": {
+    "type": "dimension",
+    "value": "584px",
+    "source": "computed width of plan-card default (raw/components-computed.json)",
+    "description": "Plan card width (584px)."
+   },
+   "radius": {
+    "type": "dimension",
+    "value": "40px",
+    "source": "computed borderTopLeftRadius of plan-card default (raw/components-computed.json)",
+    "description": "The 40px plan-card radius."
+   }
+  },
+  "plan-cta": {
+   "height": {
+    "type": "dimension",
+    "value": "52px",
+    "source": "computed height of plan-cta default (raw/components-computed.json)",
+    "description": "The 52px plan CTA."
+   }
+  },
+  "faq": {
+   "radius": {
+    "type": "dimension",
+    "value": "20px",
+    "source": "computed borderTopLeftRadius of faq-item default (raw/components-computed.json)",
+    "description": "The 20px FAQ radius."
+   },
+   "height-closed": {
+    "type": "dimension",
+    "value": "67px",
+    "source": "computed height of faq-item default (raw/components-computed.json)",
+    "description": "The 67px closed FAQ row."
+   }
+  },
+  "billing": {
+   "height": {
+    "type": "dimension",
+    "value": "48px",
+    "source": "computed height of billing-on default (raw/components-computed.json)",
+    "description": "The 48px billing segment."
+   }
+  },
+  "cover": {
+   "radius": {
+    "type": "dimension",
+    "value": "16px",
+    "source": "computed borderTopLeftRadius of book-cover default (raw/components-computed.json)",
+    "description": "The 16px orbit cover radius."
+   }
+  },
+  "mobile-menu": {
+   "item-height": {
+    "type": "dimension",
+    "value": "24px",
+    "source": "computed height of m-nav-item default (raw/components-computed.json)",
+    "description": "Mobile menu item row height (24px)."
+   },
+   "button": {
+    "type": "dimension",
+    "value": "40px",
+    "source": "computed height of m-menu-button default (raw/components-computed.json)",
+    "description": "The 40px hamburger button."
+   }
+  },
+  "state": {
+   "button": {
+    "primary": {
+     "bg": {
+      "type": "color",
+      "value": "#000000",
+      "source": "computed backgroundColor of hero-cta default (raw/components-computed.json)",
+      "description": "Primary pill fill (#000)."
+     },
+     "fg": {
+      "type": "color",
+      "value": "#ffffff",
+      "source": "computed color of hero-cta default (raw/components-computed.json)",
+      "description": "Text on the primary pill (#fff)."
+     },
+     "hoverBg": {
+      "type": "color",
+      "value": "#6e6e6e",
+      "source": "computed backgroundColor of hero-cta hover (raw/components-computed.json)",
+      "description": "Primary pill hover (#6E6E6E)."
+     }
+    },
+    "secondary": {
+     "bg": {
+      "type": "color",
+      "value": "#ffffff",
+      "source": "computed backgroundColor of hero-cta-2 default (raw/components-computed.json)",
+      "description": "Secondary pill fill (#fff)."
+     }
+    },
+    "sso": {
+     "bg": {
+      "type": "color",
+      "value": "#f2f2f2",
+      "source": "computed backgroundColor of sso-google default (raw/components-computed.json)",
+      "description": "The SSO fill (bg-dark #F2F2F2)."
+     },
+     "hoverBg": {
+      "type": "color",
+      "value": "rgba(0, 0, 0, 0.1)",
+      "source": "computed backgroundColor of sso-google hover (raw/components-computed.json)",
+      "description": "SSO hover (10% overlay)."
+     }
+    }
+   },
+   "chip": {
+    "bg": {
+     "type": "color",
+     "value": "#ffffff",
+     "source": "computed backgroundColor of genre-chip default (raw/components-computed.json)",
+     "description": "Genre chip fill."
+    }
+   },
+   "badge": {
+    "save": {
+     "bg": {
+      "type": "color",
+      "value": "#e1f5e0",
+      "source": "computed backgroundColor of save-badge default (raw/components-computed.json)",
+      "description": "Save badge fill (#E1F5E0)."
+     },
+     "fg": {
+      "type": "color",
+      "value": "#307d18",
+      "source": "computed color of save-badge default (raw/components-computed.json)",
+      "description": "Save badge text (#307D18)."
+     }
+    }
+   },
+   "field": {
+    "border": {
+     "type": "color",
+     "value": "#e5e5e5",
+     "source": "computed borderTopColor of email-field default (raw/components-computed.json)",
+     "description": "Input hairline (#E5E5E5)."
+    }
+   },
+   "nav-link": {
+    "hoverBg": {
+     "type": "color",
+     "value": "#f6f6f6",
+     "source": "computed backgroundColor of nav-link hover (raw/components-computed.json)",
+     "description": "Nav-link hover fill."
+    }
+   }
+  }
+ }
+}

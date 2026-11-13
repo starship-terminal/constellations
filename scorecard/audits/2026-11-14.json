@@ -1,7 +1,7 @@
 {
  "date": "2026-11-14",
  "rubric": "4",
- "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): public-web capture of deezer.com on 2026-11-13 in headless Chromium at 1440x900 and 390x844; graded from the declared Tempo layer (raw/css-vars.json), the measured computed styles (raw/components-computed.json) and the screenshots; reviewer: the capturing agent",
+ "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): public-web capture review (re-applied after main merge)",
  "systems": [
   {
    "slug": "brilliant",
@@ -14550,107 +14550,103 @@
    "reviewedPlatform": "web"
   },
   {
-   "slug": "deezer",
+   "slug": "elevenlabs",
    "grades": {
     "F1": {
-     "grade": "meets",
-     "evidence": "The Tempo layer declares full palette scales outright: 675 numeric-stepped tokens exported under core.color.tempo (neutral/gray first, purple, lightPrimary/darkPrimary plus ~40 themed ramps in 9-11 steps each); the semantic per-theme roles sit beside them."
+     "grade": "partly",
+     "evidence": "The measured ramps are short: the ink action ramp runs #000000 -> #44403b only (hover and pressed share the step), and the neutrals are a measured set (eggshell #fdfcfc, sand #f5f3f1, wash #ebe8e4, hairline #e5e5e5, muted #777169, white) rather than a 10-step scale. The blue accent #2b7fff, destructive #ef4444 and ring #0a0a0a are single declared hues. No hue carries a ramp of about 10 steps."
     },
     "F2": {
-     "grade": "meets",
-     "evidence": "Declared background roles resolve per theme (color.background.neutral/accent families, --background-primary/intermediate/contrast) and the measured roles alias them: light.background.page/card, dark.background.canvas/surface/raised/field-focus/banner/toggle; the overlay popover surface is measured (#141216, radius.popover, shadow.popover). A scrim behind the GDPR modal was hidden with the layer, never measured."
+     "grade": "partly",
+     "evidence": "light.surface.page (#FDFCFC eggshell) and light.surface.card (#ffffff) are tokenised; the flyout panel, auth card and playground card all raise white-on-white with no distinct raised role, no scrim role exists (the only overlay is the mobile menu over its own page), and the #f5f3f1 promo-strip fill and #ebe8e4 selected-tab wash are measured in component states, not role tokens."
     },
     "F3": {
-     "grade": "meets",
-     "evidence": "Declared text roles per theme (color.text.neutral/accent/feedback families, --text-primary/intermediate/muted/inverse, disabled variants) plus measured light.text.ink/on-dark and dark.text.text/muted; links share the body colour (the accent is reserved for actions) - evidenced in the measurements, not a declared role."
+     "grade": "partly",
+     "evidence": "light.text.primary (ink #000000), text.muted (#777169 warm grey) and text.on.action (#ffffff) are tokenised. No disabled-text role (the disabled submit is a fill, #a3a3a3), no link-specific role (links are ink or the #2b7fff accent), and the docs shell's rgba(0,0,0,0.875)/0.608 text levels are component-measured, not roles."
     },
     "F4": {
-     "grade": "meets",
-     "evidence": "Declared border roles (color.border.neutral/accent/feedback families with default/hovered/focused/pressed/disabled, --divider-primary/secondary) plus the measured 2px #ad47ff field-focus border (dark.border.focus) and the #555257 light-header focus border."
+     "grade": "partly",
+     "evidence": "light.border is the #e5e5e5 hairline (default) and focus is a measured outline role (measured.focus-ring-light #2b7fff 1px at 2px offset; docs uses 2px #404040). No strong border role exists on the surface; the ghost controls' ring shadows are component values."
     },
     "F5": {
      "grade": "meets",
-     "evidence": "Accent states are both declared (background.accent.primary.default/hovered/pressed/disabled) and measured: #ad47ff -> #bb73ff on hover across a-signup/mix-btn/track-play, pressed states recorded per control."
+     "evidence": "light.action.primary.default/hover/pressed are tokenised from the measured pill states (#000000 -> #44403b -> #44403b; the pressed step repeats the hover step, which is what the site paints), plus light.state.hover/pressed for the ghost washes."
     },
     "F6": {
-     "grade": "partly",
-     "evidence": "The declared layer carries full feedback roles - error, success and warning each with background/text/icon/border in default/hovered/pressed/disabled/focused - exported under color.*.feedback; nothing paints them on the public surface and there is no info role."
+     "grade": "missing",
+     "evidence": "The shadcn layer declares a destructive #ef4444 and a near-black ring #0a0a0a as single hues, but no success, warning or info hue and no fill/text/border status roles paint anywhere on the public surface - single declared hues, not a status set."
     },
     "F7": {
      "grade": "meets",
-     "evidence": "Both painted themes are real declared themes: the same semantic names resolve under [data-theme=\"light\"] and [data-theme=\"dark\"], and the light (397) and dark (389) sets hold the full role list each - 170 values genuinely differ."
+     "evidence": "The product ships one theme on the public surface - the #FDFCFC light field; the bundles declare no .dark scope or prefers-color-scheme rebind and no dark island was captured. Every semantic role exists in the one theme, so parity holds."
     },
     "F8": {
      "grade": "meets",
-     "evidence": "Four families with fallback stacks (Inter UI, Deezer Product, Deezer Brand display, Deezer Headline VF); declared scales exported: tempo font-size (xs-3xl+), 38 named fontWeights, 43 lineHeights, letterSpacings, the marketing --font-size-h* ramp and the measured 140-13px ramp; named family roles exist in --tempo-fonts-body/display/title-*."
+     "evidence": "Three families with fallback stacks (Waldenburg display, Inter sans, Geist Mono code), a 7-step measured scale (48 display / 36 product+mobile display / 20 price / 16 h2+lede+body+control / 15 breadcrumb / 14 menu-item / 13 meta), line heights for the major roles, and named roles throughout (display-hero, display, display-tts, display-mobile, h2, page-title, lede, body, menu-item, control, meta, price). Every measured weight is 400 - the site ships a single weight, recorded as such."
     },
     "F9": {
-     "grade": "meets",
-     "evidence": "Declared spacing scale on the 4px unit exported under core.spacing (--tempo-space-1..N, 4px steps through 96px+), plus the --tempo-sizes-* element scale with container widths."
+     "grade": "partly",
+     "evidence": "Only three layout vars are declared and tokenised (--spacing-inset 20px, --spacing-gutter 12px, --section-py-md 80px) - anchors, not a scale on one base unit; Tailwind compiles the rest away, so per-component paddings live in components.md."
     },
     "F10": {
      "grade": "meets",
-     "evidence": "Declared radius scale exported (--tempo-radii-base 4px through 3xl 24px and full 9999px) and the measured roles alias it: plan card 4px, promo 8px, small pills 12px, controls 16px, popover 24px, toggle/round buttons 256px->full; border widths declared in --tempo-borders-1/2/4/8px and the measured 2px focus border."
+     "evidence": "core.radius carries the measured shape set: 9999px pill/tab/ghost, 16px card (--rounded-card), 12px card-sm/field, plus component-measured 8px (docs-search) and 4px (faq-item); border widths are captured in the entries (1px fields, 0.5px hairline layers, 0 elsewhere)."
     },
     "F11": {
-     "grade": "meets",
-     "evidence": "Declared sizes scale (tempo-sizes xs-3xl + container) plus measured control heights: 48px search field, 34-40px buttons, 56px track rows, 80px top bar/banner/player; icon sizes measured in crops; the focus treatment is a 2px accent border, recorded (no outline offset by design)."
+     "grade": "partly",
+     "evidence": "light.component.* tokenises the measured heights (button 44, nav action 36, field 46, playground textarea 136, nav control 36, menu row 44, header 36/36, flyout 565.5, plan card 739, auth card 519, playground card 208) and the focus ring is measured at 1px solid offset 2px (2px on the playground selects and docs nav). Icon sizes are visible in crops but no icon-size tokens exist."
     },
     "F12": {
-     "grade": "meets",
-     "evidence": "Declared shadow scale exported under core.shadow (--tempo-shadows-* levels) plus the measured popover shadow (layered rgba(0,0,0,.4)/(.04)); shadow.popover ties a level to its use."
+     "grade": "partly",
+     "evidence": "A few real shadows were measured - the layered ring shadows on ghost controls (contact-sales, billing-select, the announcement pill) and the auth fields' resting ring - but the surface paints no 3-to-5-level elevation scale; cards are flat white on hairlines."
     },
     "F13": {
      "grade": "partly",
-     "evidence": "Declared durations fast 150ms/normal 200ms/slow 300ms plus property and timing scales and --ease-* curves; the measured 0.2s background/border transition on buttons and fields matches duration-normal (tokenised as core.motion.control). Reduced-motion behaviour is not separately captured on the public surface."
+     "evidence": "Measured: 0.15s cubic-bezier(0.4,0,0.2,1) control transitions on the marketing surface, 0.075s inside the auth card, and a ~0.98 pressed scale on the big CTAs. No prefers-reduced-motion probe was run this pass - the gap is recorded."
     },
     "F14": {
-     "grade": "meets",
-     "evidence": "Declared breakpoints (--tempo-breakpoints-*), container widths (--tempo-sizes-container-*), topbar height (--layout-topbar-height 80px, matching the measured 80px bar) and the --tempo-z* layer indices are all tokenised; measured component geometry covers the rest."
+     "grade": "partly",
+     "evidence": "Component geometry was measured at 1440 and 390 (the mobile menu is exactly 390x732; the display type steps 48 -> 36), and the declared --spacing/--section vars are tokenised, but breakpoints, grid columns and z-layers are not tokenised."
     },
     "C1": {
      "grade": "partly",
-     "evidence": "11 of 19 checklist components paint publicly: button (pills/CTAs), icon button (back/overflow/burger/transport), link (nav/footer/view-all), text field (search, e-mail, password), tabs (catalog strip), menu (overflow popover, burger drawer), card (plan/playlist/promo), list row (track rows), avatar (artist image), badge (PREMIUM chip), segmented control (billing toggle). No text area/select/checkbox/radio/switch/tooltip/dialog/toast/table exists on the signed-out surface."
+     "evidence": "~13 of 19: button (signup-cta/plan-cta/hero-cta/convert-cta/apikey-cta/try-voice/learn-more/m-signup), icon button (m-menu-button, card-play, voice-prev), link (nav-link/login-link/menu-link/footer-link/social-icon), text field (email-field/password-field/docs-search), text area (tts-textarea), select (tts-language/tts-voice/billing-select), checkbox (tos-checkbox), tabs (product-tab/tool-tab/demo-tab), menu (nav-dropdown + m-menu-open), card (plan/feature/voice/auth/tts), list row (m-nav-item, feature-row, faq-item, docs-nav-item), badge (plan-badge). No radio, switch, tooltip, dialog, toast, table or avatar exists on the public surface."
     },
     "C2": {
      "grade": "meets",
-     "evidence": "hover, focus-visible, pressed and open measured across every control; selected on tabs and the billing toggle; disabled/loading/error do not exist on the public surface - 198 state readings over 76 components."
+     "evidence": "default/hover/focus-visible/pressed were measured on every interactive entry (172 states over 71 components); toggled/opened states captured as screenshots (mega-menu, mobile menu, hero product tab, billing dropdown, playground Play); selected-tab fills measured; the auth submits were captured in their real disabled resting state. Loading and error states do not exist on the surface."
     },
     "C3": {
      "grade": "meets",
-     "evidence": "Focus captured on controls: fields draw a 2px #ad47ff border (a-search/login fields focused), buttons swap border colour; the one failure (menu-item focus-visible inside an auto-closing popover) is recorded as via:focus failed, not silently absent."
+     "evidence": "25 components draw a measured focus ring - 1px solid #2b7fff at 2px offset on most controls, 2px on the playground selects and docs-nav-item (#404040 in the docs shell) - plus 3 shadow-ring fields; the shared-values Focus section in components.md enumerates all 32 focused components including the 4 with no measured change."
     },
     "C4": {
-     "grade": "meets",
-     "evidence": "Component colours are written as value + the matching token name (e.g. #ad47ff `color.tempo.darkPrimary.100`); the measured roles themselves alias the declared Tempo semantics."
+     "grade": "partly",
+     "evidence": "Entries cite tokens where values match (color.brand.ink/ink-hover, color.neutral.white/eggshell, color.brand.accent, radius pills auto-resolved in components.md); painted-layer values (washes, ring shadows, media-layer backgrounds, the warm greys) are measured computed values with provenance - a mix, not pure token specs."
     },
     "P1": {
      "grade": "partly",
-     "evidence": "patterns.md covers the app shell (sidebar/header/content/banner/player), forms, search-as-navigation, data display (track rows/cards) and mobile; empty/loading/error, destructive confirmation, onboarding and toast/feedback patterns do not exist on the signed-out surface - a documented boundary, not a missing pattern."
+     "evidence": "Nine written patterns: the promo-strip + nav chrome with the mega-menu and voice launcher, the hero product/tool tabs, the TTS playground, the pricing grid, the product pages, the docs shell, the auth cards, footer + the 390px pass, and the state signature (ink ramp + warm washes + blue focus ring). Forms validation, empty/loading/error, destructive confirmation, feedback and onboarding do not exist on the signed-out surface."
     },
     "A1": {
      "grade": "partly",
-     "evidence": "No standalone SVG set lifted (declared layoutGap): glyphs are visible in crops/screenshots. Fonts fully named with stacks (Inter; proprietary Deezer Product/Brand/Headline-VF served from the CDN, licence not redistributed - style guide falls back to system sans)."
+     "evidence": "Waldenburg/WaldenburgFH, Inter and Geist Mono named with licensed/not-distributed provenance and full fallback stacks; the @font-face srcs are harvested in raw/css-vars.json. No icon index - the extraction pass was not run (declared layoutGap); the wordmark, orbs, provider glyphs and social icons are visible in the crops."
     },
     "K1": {
      "grade": "meets",
-     "evidence": "README states what was captured (routes, widths, themes), how (Playwright + computed styles + declared harvest) and what to distrust (auth/playback boundaries, hidden consent layer, uncaptured menu-item focus)."
-    },
-    "V1": {
-     "grade": "meets",
-     "evidence": "The README's Do-and-don't states 8 evidence-linked principles: let Tempo carry the design, spend purple on actions, keep the two painted themes honest, pair the four voices, the 16px control pill, focus-as-border, and the two honesty rules (no signed-in styling, no fabricated playback)."
+     "evidence": "The README names the capture (routes, date, signed-out, both viewports), the method (vars.mjs harvest, measure.mjs, public.mjs, quantize.py), and a What-to-distrust section covering the workspace boundary, light-only surface, media layers, the auth dialect, CDP-forced pressed states, the auto-closing menu and quantised shots."
     },
     "F15": {
      "grade": "meets",
-     "evidence": "Script: all 8 pairs pass 4.5:1 across 2 themes; lowest 5.00:1 light muted (light.color.text.secondary) on surface (light.background.card)"
+     "evidence": "Script: all 4 pairs pass 4.5:1 across 1 themes; lowest 4.71:1 light muted (light.text.muted) on page (light.surface.page)"
     },
     "F16": {
      "grade": "meets",
-     "evidence": "Script: 1856 of 1856 tokens name their source"
+     "evidence": "Script: 75 of 75 tokens name their source"
     },
     "K2": {
      "grade": "partly",
-     "evidence": "Script: 8 rules, 5 linking an image (needs 3+, all linked)"
+     "evidence": "Script: 8 rules, 6 linking an image (needs 3+, all linked)"
     },
     "K3": {
      "grade": "meets",
@@ -14660,18 +14656,21 @@
      "grade": "na",
      "evidence": "Optional for a capture, and this product does not publish it."
     },
+    "V1": {
+     "grade": "na",
+     "evidence": "Optional for a capture, and this product does not publish it."
+    },
     "V2": {
      "grade": "na",
      "evidence": "Optional for a capture, and this product does not publish it."
     }
    },
-   "name": "Deezer",
-   "goodFor": "music-streaming design: a declared Tempo token layer (675-step palette scales, per-theme semantic background/text/icon/border roles, spacing/radii/shadow/transition scales) under a light marketing hero (140px Deezer Brand display, #a238ff accent) and a dark signed-out Chakra app shell (243px #141216 sidebar, #0f0d13 canvas, #242326 fields with 2px #ad47ff focus borders, #ad47ff Mix/Sign-up pills with #bb73ff hover, 56px track rows, 24px popovers, a lavender #ead1ff signup banner over an 80px player bar) plus dark account.deezer.com auth forms",
-   "url": "https://www.deezer.com",
+   "name": "ElevenLabs",
+   "goodFor": "Voice-AI marketing and docs shells: Waldenburg 48px display over a #FDFCFC eggshell field, Inter UI text, pure-black 9999px pill CTAs that take one #44403b warm-dark step on hover and pressed, 5% warm-ink washes on ghost controls, #2b7fff blue kept for links, gradients and the 1px focus ring, white cards on #e5e5e5 hairlines, a second 12px-radius auth-card dialect, a working TTS playground on the home page and plan-card pricing",
+   "url": "https://elevenlabs.io",
    "captured": "2026-11-13",
    "themes": [
-    "light",
-    "dark"
+    "light"
    ],
    "platform": "web",
    "category": "Media",
@@ -14680,5 +14679,5 @@
   }
  ],
  "base": "2026-10-16",
- "reviewMethod": "public-web capture of deezer.com on 2026-11-13 in headless Chromium at 1440x900 and 390x844; graded from the declared Tempo layer (raw/css-vars.json), the measured computed styles (raw/components-computed.json) and the screenshots; reviewer: the capturing agent"
+ "reviewMethod": "public-web capture review (re-applied after main merge)"
 }

@@ -1,7 +1,7 @@
 {
  "date": "2026-11-14",
  "rubric": "4",
- "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): public-web capture of deezer.com on 2026-11-13 in headless Chromium at 1440x900 and 390x844; graded from the declared Tempo layer (raw/css-vars.json), the measured computed styles (raw/components-computed.json) and the screenshots; reviewer: the capturing agent",
+ "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): public-web capture review (re-applied after main merge)",
  "systems": [
   {
    "slug": "brilliant",
@@ -14550,107 +14550,103 @@
    "reviewedPlatform": "web"
   },
   {
-   "slug": "deezer",
+   "slug": "elevenlabs",
    "grades": {
     "F1": {
-     "grade": "meets",
-     "evidence": "The Tempo layer declares full palette scales outright: 675 numeric-stepped tokens exported under core.color.tempo (neutral/gray first, purple, lightPrimary/darkPrimary plus ~40 themed ramps in 9-11 steps each); the semantic per-theme roles sit beside them."
+     "grade": "partly",
+     "evidence": "The measured ramps are short: the ink action ramp runs #000000 -> #44403b only (hover and pressed share the step), and the neutrals are a measured set (eggshell #fdfcfc, sand #f5f3f1, wash #ebe8e4, hairline #e5e5e5, muted #777169, white) rather than a 10-step scale. The blue accent #2b7fff, destructive #ef4444 and ring #0a0a0a are single declared hues. No hue carries a ramp of about 10 steps."
     },
     "F2": {
-     "grade": "meets",
-     "evidence": "Declared background roles resolve per theme (color.background.neutral/accent families, --background-primary/intermediate/contrast) and the measured roles alias them: light.background.page/card, dark.background.canvas/surface/raised/field-focus/banner/toggle; the overlay popover surface is measured (#141216, radius.popover, shadow.popover). A scrim behind the GDPR modal was hidden with the layer, never measured."
+     "grade": "partly",
+     "evidence": "light.surface.page (#FDFCFC eggshell) and light.surface.card (#ffffff) are tokenised; the flyout panel, auth card and playground card all raise white-on-white with no distinct raised role, no scrim role exists (the only overlay is the mobile menu over its own page), and the #f5f3f1 promo-strip fill and #ebe8e4 selected-tab wash are measured in component states, not role tokens."
     },
     "F3": {
-     "grade": "meets",
-     "evidence": "Declared text roles per theme (color.text.neutral/accent/feedback families, --text-primary/intermediate/muted/inverse, disabled variants) plus measured light.text.ink/on-dark and dark.text.text/muted; links share the body colour (the accent is reserved for actions) - evidenced in the measurements, not a declared role."
+     "grade": "partly",
+     "evidence": "light.text.primary (ink #000000), text.muted (#777169 warm grey) and text.on.action (#ffffff) are tokenised. No disabled-text role (the disabled submit is a fill, #a3a3a3), no link-specific role (links are ink or the #2b7fff accent), and the docs shell's rgba(0,0,0,0.875)/0.608 text levels are component-measured, not roles."
     },
     "F4": {
-     "grade": "meets",
-     "evidence": "Declared border roles (color.border.neutral/accent/feedback families with default/hovered/focused/pressed/disabled, --divider-primary/secondary) plus the measured 2px #ad47ff field-focus border (dark.border.focus) and the #555257 light-header focus border."
+     "grade": "partly",
+     "evidence": "light.border is the #e5e5e5 hairline (default) and focus is a measured outline role (measured.focus-ring-light #2b7fff 1px at 2px offset; docs uses 2px #404040). No strong border role exists on the surface; the ghost controls' ring shadows are component values."
     },
     "F5": {
      "grade": "meets",
-     "evidence": "Accent states are both declared (background.accent.primary.default/hovered/pressed/disabled) and measured: #ad47ff -> #bb73ff on hover across a-signup/mix-btn/track-play, pressed states recorded per control."
+     "evidence": "light.action.primary.default/hover/pressed are tokenised from the measured pill states (#000000 -> #44403b -> #44403b; the pressed step repeats the hover step, which is what the site paints), plus light.state.hover/pressed for the ghost washes."
     },
     "F6": {
-     "grade": "partly",
-     "evidence": "The declared layer carries full feedback roles - error, success and warning each with background/text/icon/border in default/hovered/pressed/disabled/focused - exported under color.*.feedback; nothing paints them on the public surface and there is no info role."
+     "grade": "missing",
+     "evidence": "The shadcn layer declares a destructive #ef4444 and a near-black ring #0a0a0a as single hues, but no success, warning or info hue and no fill/text/border status roles paint anywhere on the public surface - single declared hues, not a status set."
     },
     "F7": {
      "grade": "meets",
-     "evidence": "Both painted themes are real declared themes: the same semantic names resolve under [data-theme=\"light\"] and [data-theme=\"dark\"], and the light (397) and dark (389) sets hold the full role list each - 170 values genuinely differ."
+     "evidence": "The product ships one theme on the public surface - the #FDFCFC light field; the bundles declare no .dark scope or prefers-color-scheme rebind and no dark island was captured. Every semantic role exists in the one theme, so parity holds."
     },
     "F8": {
      "grade": "meets",
-     "evidence": "Four families with fallback stacks (Inter UI, Deezer Product, Deezer Brand display, Deezer Headline VF); declared scales exported: tempo font-size (xs-3xl+), 38 named fontWeights, 43 lineHeights, letterSpacings, the marketing --font-size-h* ramp and the measured 140-13px ramp; named family roles exist in --tempo-fonts-body/display/title-*."
+     "evidence": "Three families with fallback stacks (Waldenburg display, Inter sans, Geist Mono code), a 7-step measured scale (48 display / 36 product+mobile display / 20 price / 16 h2+lede+body+control / 15 breadcrumb / 14 menu-item / 13 meta), line heights for the major roles, and named roles throughout (display-hero, display, display-tts, display-mobile, h2, page-title, lede, body, menu-item, control, meta, price). Every measured weight is 400 - the site ships a single weight, recorded as such."
     },
     "F9": {
-     "grade": "meets",
-     "evidence": "Declared spacing scale on the 4px unit exported under core.spacing (--tempo-space-1..N, 4px steps through 96px+), plus the --tempo-sizes-* element scale with container widths."
+     "grade": "partly",
+     "evidence": "Only three layout vars are declared and tokenised (--spacing-inset 20px, --spacing-gutter 12px, --section-py-md 80px) - anchors, not a scale on one base unit; Tailwind compiles the rest away, so per-component paddings live in components.md."
     },
     "F10": {
      "grade": "meets",
-     "evidence": "Declared radius scale exported (--tempo-radii-base 4px through 3xl 24px and full 9999px) and the measured roles alias it: plan card 4px, promo 8px, small pills 12px, controls 16px, popover 24px, toggle/round buttons 256px->full; border widths declared in --tempo-borders-1/2/4/8px and the measured 2px focus border."
+     "evidence": "core.radius carries the measured shape set: 9999px pill/tab/ghost, 16px card (--rounded-card), 12px card-sm/field, plus component-measured 8px (docs-search) and 4px (faq-item); border widths are captured in the entries (1px fields, 0.5px hairline layers, 0 elsewhere)."
     },
     "F11": {
-     "grade": "meets",
-     "evidence": "Declared sizes scale (tempo-sizes xs-3xl + container) plus measured control heights: 48px search field, 34-40px buttons, 56px track rows, 80px top bar/banner/player; icon sizes measured in crops; the focus treatment is a 2px accent border, recorded (no outline offset by design)."
+     "grade": "partly",
+     "evidence": "light.component.* tokenises the measured heights (button 44, nav action 36, field 46, playground textarea 136, nav control 36, menu row 44, header 36/36, flyout 565.5, plan card 739, auth card 519, playground card 208) and the focus ring is measured at 1px solid offset 2px (2px on the playground selects and docs nav). Icon sizes are visible in crops but no icon-size tokens exist."
     },
     "F12": {
-     "grade": "meets",
-     "evidence": "Declared shadow scale exported under core.shadow (--tempo-shadows-* levels) plus the measured popover shadow (layered rgba(0,0,0,.4)/(.04)); shadow.popover ties a level to its use."
+     "grade": "partly",
+     "evidence": "A few real shadows were measured - the layered ring shadows on ghost controls (contact-sales, billing-select, the announcement pill) and the auth fields' resting ring - but the surface paints no 3-to-5-level elevation scale; cards are flat white on hairlines."
     },
     "F13": {
      "grade": "partly",
-     "evidence": "Declared durations fast 150ms/normal 200ms/slow 300ms plus property and timing scales and --ease-* curves; the measured 0.2s background/border transition on buttons and fields matches duration-normal (tokenised as core.motion.control). Reduced-motion behaviour is not separately captured on the public surface."
+     "evidence": "Measured: 0.15s cubic-bezier(0.4,0,0.2,1) control transitions on the marketing surface, 0.075s inside the auth card, and a ~0.98 pressed scale on the big CTAs. No prefers-reduced-motion probe was run this pass - the gap is recorded."
     },
     "F14": {
-     "grade": "meets",
-     "evidence": "Declared breakpoints (--tempo-breakpoints-*), container widths (--tempo-sizes-container-*), topbar height (--layout-topbar-height 80px, matching the measured 80px bar) and the --tempo-z* layer indices are all tokenised; measured component geometry covers the rest."
+     "grade": "partly",
+     "evidence": "Component geometry was measured at 1440 and 390 (the mobile menu is exactly 390x732; the display type steps 48 -> 36), and the declared --spacing/--section vars are tokenised, but breakpoints, grid columns and z-layers are not tokenised."
     },
     "C1": {
      "grade": "partly",
-     "evidence": "11 of 19 checklist components paint publicly: button (pills/CTAs), icon button (back/overflow/burger/transport), link (nav/footer/view-all), text field (search, e-mail, password), tabs (catalog strip), menu (overflow popover, burger drawer), card (plan/playlist/promo), list row (track rows), avatar (artist image), badge (PREMIUM chip), segmented control (billing toggle). No text area/select/checkbox/radio/switch/tooltip/dialog/toast/table exists on the signed-out surface."
+     "evidence": "~13 of 19: button (signup-cta/plan-cta/hero-cta/convert-cta/apikey-cta/try-voice/learn-more/m-signup), icon button (m-menu-button, card-play, voice-prev), link (nav-link/login-link/menu-link/footer-link/social-icon), text field (email-field/password-field/docs-search), text area (tts-textarea), select (tts-language/tts-voice/billing-select), checkbox (tos-checkbox), tabs (product-tab/tool-tab/demo-tab), menu (nav-dropdown + m-menu-open), card (plan/feature/voice/auth/tts), list row (m-nav-item, feature-row, faq-item, docs-nav-item), badge (plan-badge). No radio, switch, tooltip, dialog, toast, table or avatar exists on the public surface."
     },
     "C2": {
      "grade": "meets",
-     "evidence": "hover, focus-visible, pressed and open measured across the controls (the overflow popover's opened state, the burger drawer's open); the current tab's selected look is its measured default; disabled, loading and error states do not exist on the signed-out surface - 198 state readings over 76 components."
+     "evidence": "default/hover/focus-visible/pressed were measured on every interactive entry (172 states over 71 components); toggled/opened states captured as screenshots (mega-menu, mobile menu, hero product tab, billing dropdown, playground Play); selected-tab fills measured; the auth submits were captured in their real disabled resting state. Loading and error states do not exist on the surface."
     },
     "C3": {
      "grade": "meets",
-     "evidence": "Focus captured on the controls: fields draw a 2px #ad47ff border (a-search and the login fields' focused readings), buttons swap border colour. Four focus attempts are honestly recorded as via:focus failed (player-prev, billing-toggle, m-hamburger, signup-cta) and menu-item focus-visible is uncapturable inside the auto-closing popover - failures are recorded, never read as absent rings."
+     "evidence": "25 components draw a measured focus ring - 1px solid #2b7fff at 2px offset on most controls, 2px on the playground selects and docs-nav-item (#404040 in the docs shell) - plus 3 shadow-ring fields; the shared-values Focus section in components.md enumerates all 32 focused components including the 4 with no measured change."
     },
     "C4": {
-     "grade": "meets",
-     "evidence": "Component colours are written as value + the matching token name (e.g. #ad47ff `color.tempo.darkPrimary.100`); the measured roles themselves alias the declared Tempo semantics."
+     "grade": "partly",
+     "evidence": "Entries cite tokens where values match (color.brand.ink/ink-hover, color.neutral.white/eggshell, color.brand.accent, radius pills auto-resolved in components.md); painted-layer values (washes, ring shadows, media-layer backgrounds, the warm greys) are measured computed values with provenance - a mix, not pure token specs."
     },
     "P1": {
      "grade": "partly",
-     "evidence": "patterns.md covers the app shell (sidebar/header/content/banner/player), forms, search-as-navigation, data display (track rows/cards) and mobile; empty/loading/error, destructive confirmation, onboarding and toast/feedback patterns do not exist on the signed-out surface - a documented boundary, not a missing pattern."
+     "evidence": "Nine written patterns: the promo-strip + nav chrome with the mega-menu and voice launcher, the hero product/tool tabs, the TTS playground, the pricing grid, the product pages, the docs shell, the auth cards, footer + the 390px pass, and the state signature (ink ramp + warm washes + blue focus ring). Forms validation, empty/loading/error, destructive confirmation, feedback and onboarding do not exist on the signed-out surface."
     },
     "A1": {
      "grade": "partly",
-     "evidence": "No standalone SVG set lifted (declared layoutGap): glyphs are visible in crops/screenshots. Fonts fully named with stacks (Inter; proprietary Deezer Product/Brand/Headline-VF served from the CDN, licence not redistributed - style guide falls back to system sans)."
+     "evidence": "Waldenburg/WaldenburgFH, Inter and Geist Mono named with licensed/not-distributed provenance and full fallback stacks; the @font-face srcs are harvested in raw/css-vars.json. No icon index - the extraction pass was not run (declared layoutGap); the wordmark, orbs, provider glyphs and social icons are visible in the crops."
     },
     "K1": {
      "grade": "meets",
-     "evidence": "README states what was captured (routes, widths, themes), how (Playwright + computed styles + declared harvest) and what to distrust (auth/playback boundaries, hidden consent layer, uncaptured menu-item focus)."
-    },
-    "V1": {
-     "grade": "meets",
-     "evidence": "The README's Do-and-don't states 8 evidence-linked principles: let Tempo carry the design, spend purple on actions, keep the two painted themes honest, pair the four voices, the 16px control pill, focus-as-border, and the two honesty rules (no signed-in styling, no fabricated playback)."
+     "evidence": "The README names the capture (routes, date, signed-out, both viewports), the method (vars.mjs harvest, measure.mjs, public.mjs, quantize.py), and a What-to-distrust section covering the workspace boundary, light-only surface, media layers, the auth dialect, CDP-forced pressed states, the auto-closing menu and quantised shots."
     },
     "F15": {
      "grade": "meets",
-     "evidence": "Script: all 8 pairs pass 4.5:1 across 2 themes; lowest 5.00:1 light muted (light.color.text.secondary) on surface (light.background.card)"
+     "evidence": "Script: all 4 pairs pass 4.5:1 across 1 themes; lowest 4.71:1 light muted (light.text.muted) on page (light.surface.page)"
     },
     "F16": {
      "grade": "meets",
-     "evidence": "Script: 1886 of 1886 tokens name their source"
+     "evidence": "Script: 75 of 75 tokens name their source"
     },
     "K2": {
      "grade": "partly",
-     "evidence": "Script: 8 rules, 5 linking an image (needs 3+, all linked)"
+     "evidence": "Script: 8 rules, 6 linking an image (needs 3+, all linked)"
     },
     "K3": {
      "grade": "meets",
@@ -14660,25 +14656,285 @@
      "grade": "na",
      "evidence": "Optional for a capture, and this product does not publish it."
     },
+    "V1": {
+     "grade": "na",
+     "evidence": "Optional for a capture, and this product does not publish it."
+    },
     "V2": {
      "grade": "na",
      "evidence": "Optional for a capture, and this product does not publish it."
     }
    },
-   "name": "Deezer",
-   "goodFor": "music-streaming design: a declared Tempo token layer (675-step palette scales, per-theme semantic background/text/icon/border roles, spacing/radii/shadow/transition scales) under a light marketing hero (140px Deezer Brand display, #a238ff accent) and a dark signed-out Chakra app shell (243px #141216 sidebar, #0f0d13 canvas, #242326 fields with 2px #ad47ff focus borders, #ad47ff Mix/Sign-up pills with #bb73ff hover, 56px track rows, 24px popovers, a lavender #ead1ff signup banner over an 80px player bar) plus dark account.deezer.com auth forms",
-   "url": "https://www.deezer.com",
+   "name": "ElevenLabs",
+   "goodFor": "Voice-AI marketing and docs shells: Waldenburg 48px display over a #FDFCFC eggshell field, Inter UI text, pure-black 9999px pill CTAs that take one #44403b warm-dark step on hover and pressed, 5% warm-ink washes on ghost controls, #2b7fff blue kept for links, gradients and the 1px focus ring, white cards on #e5e5e5 hairlines, a second 12px-radius auth-card dialect, a working TTS playground on the home page and plan-card pricing",
+   "url": "https://elevenlabs.io",
+   "captured": "2026-11-13",
+   "themes": [
+    "light"
+   ],
+   "platform": "web",
+   "category": "Media",
+   "reviewed": "2026-11-14",
+   "reviewedPlatform": "web"
+  },
+  {
+   "slug": "elektron",
+   "grades": {
+    "F1": {
+     "grade": "meets",
+     "evidence": "The design is monochrome by intent and the neutral ramp is full: 15 steps under core.color.neutral (ink #151515, surface #1e1e1e, raised #212121, borders #363636/#444444/#777778, muted #97979a/#b8b8bb, grey #cccccc, placeholder #757575, sweep #333333, rule #808080, scrim rgba(0,0,0,0.5), paper #eeeef2, white #ffffff) - var-referenced to --thedock-*/--tdc-* where declared, measured where not. The only hues on the site are the declared status singles #d63638/#1e7a3c (color-mix bases), never painted as ramps."
+    },
+    "F2": {
+     "grade": "meets",
+     "evidence": "dark.page #151515, dark.surface #1e1e1e, dark.surface-raised #212121 (the drawer fill), dark.scrim rgba(0,0,0,0.5) covering overlay; all var-referenced to --thedock-bg/--thedock-surface/--tdc-surface/--thedock-overlay."
+    },
+    "F3": {
+     "grade": "partly",
+     "evidence": "dark.text #eeeef2, text-muted #97979a, text-muted2 #b8b8bb, accent-text #151515 on paper fills, field-text #151515 in the light fields, placeholder #757575. No disabled or distinct link role - links share the paper text colour."
+    },
+    "F4": {
+     "grade": "meets",
+     "evidence": "dark.border #363636, control-border #777778 (strong), and the double focus ring - focus-ring #ffffff 0 0 0 2px spread + focus-outline 2px #000000 offset 2px - measured on 14 interactive components."
+    },
+    "F5": {
+     "grade": "meets",
+     "evidence": "Hover and pressed measured on every action class: outline buttons go transparent -> #eeeef2 with the label flipping #eeeef2 -> #151515 (pdp-explore, add-to-cart, submit-button, cart-continue); secondary buttons #cccccc -> #151515 with #cccccc label (magic-send, login-send, login-create); links show the #333333 underline-sweep."
+    },
+    "F6": {
+     "grade": "missing",
+     "evidence": "--tdc-danger and --tdc-success are declared as color-mix bases (#d63638, #1e7a3c) in the component layer but never paint on the public surface; no warning or info hue exists and no fill/text/border status roles."
+    },
+    "F7": {
+     "grade": "meets",
+     "evidence": "The product ships one theme only: every captured route paints the same dark ground and the sheets declare no light variant, so the semantic set is complete within the single dark set (spotify convention)."
+    },
+    "F8": {
+     "grade": "meets",
+     "evidence": "Five families (Neue Haas Grotesk Text/Display Pro, digi one v2, Analog One V2., mono stack) with three weights (400/450/500), a 7-step size ramp (64.05 display -> 14 body), 8 line-height and 8 letter-spacing tokens named by role (display, display-mid, title, heading, product, body, search, title-mobile). No fallback stacks on the brand families - licensed faces; the guide falls back to system sans."
+    },
+    "F9": {
+     "grade": "meets",
+     "evidence": "A declared scale on a 7px unit: --tdc-space-1..5 (3.5/7/14/21/35) var-referenced and the measured 10.5/17.5/44/70 steps fill the same 3.5px grid - core.spacing.s1-s9."
+    },
+    "F10": {
+     "grade": "meets",
+     "evidence": "core.radius.none 0px (var --tdc-radius) on every button/field/card/drawer plus the single 7px exception (search field); border.control 2px (var --tdc-border-width) on the outline actions, border.search 1px self-coloured."
+    },
+    "F11": {
+     "grade": "meets",
+     "evidence": "Control heights tokenised: block-button 46, block-input 42, nav row 28, search field 40.5, menu row 36; headers 56/63; drawer 420 panel / 392 content; icons 28 nav / 35 menu; layout width 1100 (var). Focus ring is 2px white spread + 2px black outline at 2px offset - both halves tokenised."
+    },
+    "F12": {
+     "grade": "partly",
+     "evidence": "Two elevation pieces only: the -7px/35px rgba(0,0,0,0.18) drawer drop (core.shadow.drawer) and the 50% scrim under it; the rest of the surface is flat - no card/popover levels exist to name."
+    },
+    "F13": {
+     "grade": "partly",
+     "evidence": "Three easings (standard cubic-bezier(0.365,0.305,0,1), bounce (0,1.05,0.65,1.01), sweep (.77,0,.175,1)) and three measured durations (0.3s control, 0.4s sweep, 0.8s header) tokenised; the 1.5s line-reveal animations are recorded in _meta.sheets. Nothing about reduced motion."
+    },
+    "F14": {
+     "grade": "partly",
+     "evidence": "component.layout.width 1100px (var --tdc-layout-width) plus measured boxes at 1440 and 390; the mobile breakpoint behaviour is captured (63px header, fullscreen menu) but no breakpoint, grid-column or z-index tokens exist."
+    },
+    "C1": {
+     "grade": "partly",
+     "evidence": "About 10 of 19 checklist components on the public surface: button (outline + secondary), icon button (m-menu-button, social-icon, download-row), link (nav/footer/explore), text field, text area, select, menu (mobile sheet), dialog (search dropdown, account/cart drawers), card (product-card, login-panel). No checkbox/radio/switch/tabs/tooltip/toast/list-row/table/avatar/badge."
+    },
+    "C2": {
+     "grade": "meets",
+     "evidence": "default/hover/focus-visible/pressed on every interactive entry (pressed via CDP), opened on the drawers/accordion/menu, focused+filled on fields with deleted sample text, and the empty cart state. Disabled/error/loading never surface publicly - none exist to capture."
+    },
+    "C3": {
+     "grade": "meets",
+     "evidence": "A real keyboard focus was driven and measured on 14 components, all painting the double ring; product-card and accordion could not hold focus (via: focus failed, recorded as uncaptured rather than absent)."
+    },
+    "C4": {
+     "grade": "meets",
+     "evidence": "Every measured colour in components.md names its matching palette token; the dark roles alias core tokens; dimensions stay raw px only where the site declares no scale."
+    },
+    "P1": {
+     "grade": "partly",
+     "evidence": "Six written patterns in patterns.md: shell, the outline-action vocabulary, the underline-sweep, shop/product, forms+drawers, footer. Empty state captured (the empty cart drawer); search captured as an overlay. No validation, destructive, loading or onboarding patterns exist on the public surface."
+    },
+    "A1": {
+     "grade": "partly",
+     "evidence": "No icons/ dir (declared layoutGaps: the glyphs - wordmark, 28px header icons, 35px menu icons, social marks - are visible in crops/screenshots). Fonts are named with licence status: Neue Haas Grotesk (Linotype, licensed) and Elektron's own faces; 27 @font-face declarations in raw/css-vars.json, not committed."
+    },
+    "K1": {
+     "grade": "meets",
+     "evidence": "README covers what was captured (12 routes + 3 mobile, the overlays), how (Playwright public-web route, vars/measure/quantize pipeline), and a full What-to-distrust list including the inverted monochrome, the two-part focus ring, rem-resolved fractional sizes and the focus-failed components."
+    },
+    "F15": {
+     "grade": "meets",
+     "evidence": "Script: all 4 pairs pass 4.5:1 across 1 themes; lowest 5.72:1 dark muted (dark.text-muted) on surface (dark.surface)"
+    },
+    "F16": {
+     "grade": "meets",
+     "evidence": "Script: 102 of 102 tokens name their source"
+    },
+    "K2": {
+     "grade": "partly",
+     "evidence": "Script: 9 rules, 8 linking an image (needs 3+, all linked)"
+    },
+    "K3": {
+     "grade": "meets",
+     "evidence": "Script: DESIGN.md matches a fresh generation"
+    },
+    "C5": {
+     "grade": "na",
+     "evidence": "Optional for a capture, and this product does not publish it."
+    },
+    "V1": {
+     "grade": "na",
+     "evidence": "Optional for a capture, and this product does not publish it."
+    },
+    "V2": {
+     "grade": "na",
+     "evidence": "Optional for a capture, and this product does not publish it."
+    }
+   },
+   "name": "Elektron",
+   "goodFor": "Instrument-grade hardware storefronts and product pages: a fully inverted monochrome (#151515 ground, #eeeef2 paper that is text, icon, 2px action stroke and hover fill at once), Neue Haas Grotesk Text/Display typography with digi one v2 button labels and an Analog One V2 search field, square corners on every control, a 7px space rhythm, #333333 gradient underline-sweep link hovers, light #eeeef2 field slabs, right-drawer modals over a 50% scrim and a double (white spread + black outline) focus ring",
+   "url": "https://www.elektron.se",
+   "captured": "2026-11-13",
+   "themes": [
+    "dark"
+   ],
+   "platform": "web",
+   "category": "E-commerce",
+   "reviewed": "2026-11-14",
+   "reviewedPlatform": "web"
+  },
+  {
+   "slug": "elementor",
+   "grades": {
+    "F1": {
+     "grade": "partly",
+     "evidence": "The neutral ramp is real but 7 steps (Grey-200 #f6f6f6 through Grey-800 #212121, the site's own vars); the pink family runs Neon-Loop #ed01ee, Pink-200 #ff7be5 + hover #ffa8ee, Pixel-Blush #f2adf3, Syntax-Glow #fae4fa. Startup-Lime, Seedling-Spark, Vision-Violet, Founder-Forest, Codeberry and Deep-Burgundy are single declared hues; the three gradients are named tokens. No hue carries a ~10-step scale."
+    },
+    "F2": {
+     "grade": "meets",
+     "evidence": "light.page #fff, light.surface Grey-200 #f6f6f6, surfaceRaised #fff, menuPanel and fieldSurface #fff, overlayScrim rgba(0,0,0,0.4) measured under the popup; the dark islands re-bind page/surface to Kernel-Black. All five roles exist as tokens."
+    },
+    "F3": {
+     "grade": "partly",
+     "evidence": "light.text Kernel-Black, textStrong Grey-800 #212121, textMuted #7a7a7a (measured, and honestly graded as failing 4.5:1 in the Brief), accentOn #fff on the black fill, link #0000ee, iconMuted #69727d; dark.text #fff and textMuted #f6f6f6. No disabled-text role exists on the public surface."
+    },
+    "F4": {
+     "grade": "meets",
+     "evidence": "light.border Grey-500 #d1d1d1 (fields, plan cards, mobile menu rows), borderStrong Kernel-Black (the 2px plan-cta ring and focused fields), focusRing #005fcc + focusRingWidth 2px measured on 15 of 17 focused components; dark.border Grey-700 #484848."
+    },
+    "F5": {
+     "grade": "meets",
+     "evidence": "light.accent #000 -> accentHover #ed01ee and dark accentOn equivalents measured on every primary control (nav-cta, hero-cta, plan-cta, cta-dark, submit-btn): default/hover/focus-visible/pressed all read, hover and pressed sharing the Neon-Loop step exactly as the site paints it, plus tintHover #fae4fa for the row states."
+    },
+    "F6": {
+     "grade": "missing",
+     "evidence": "Only the kit-default --e-global-color-accent #61CE70 is declared (recorded as generic, never painting an action); no success, warning, danger or info fill/text/border roles paint anywhere on the public surface."
+    },
+    "F7": {
+     "grade": "partly",
+     "evidence": "light carries 19 roles, dark 7 (page, surface, text, textMuted, accent, accentOn, border) - the .dark-mode island re-binding read as roles, a surface subset rather than a user theme; parity is partial by construction and documented as such."
+    },
+    "F8": {
+     "grade": "partly",
+     "evidence": "Roobert with a real fallback stack plus Roboto for editor chrome; the tokenised typeScale holds 5 steps (display 88, planPrice 40, section 24, body 16, small 14) under the 6-8 bar - the measured 72/79.2 FAQ title, 20px plan/FAQ text and 18px control face live in components.md. Weights 400-900 are measured per component; named roles exist but line heights are per-entry, not tokens."
+    },
+    "F9": {
+     "grade": "meets",
+     "evidence": "spacePrimitive is the measured 8px-grid ladder (8-160, 19 steps) and spaceScale names the section padding bands sm100-sm500/md100-md400/lg100-lg400; per-component paddings are in components.md."
+    },
+    "F10": {
+     "grade": "meets",
+     "evidence": "core.radius: field 4px, control 8px (buttons, plan cards, menu rows), card 16px, planCard 8px, pill 24px (header, mega-menu) - all measured; border widths captured (1px #d1d1d1 fields/cards, 2px #000 plan-cta, 0 elsewhere)."
+    },
+    "F11": {
+     "grade": "partly",
+     "evidence": "component.headerHeight 72 (64 mobile), buttonHeight/heroButtonHeight 48, fieldHeight 40.4, checkboxSize 16, planCtaBorder 2px, focusRingWidth 2px at a 2px offset - all tokenised. Icon sizes (16x16 markers, 32x32 card icons, 20x20 chevrons) are measured in painted layers but carry no icon-size tokens."
+    },
+    "F12": {
+     "grade": "partly",
+     "evidence": "One real shadow measured: the floating header/mega-menu's rgba(0,0,0,0.05) 0 0 15.008px 3.008px (shadow.header). The surface genuinely paints one level - cards raise on borders or flat fills; no 3-5 level scale exists to tokenise."
+    },
+    "F13": {
+     "grade": "partly",
+     "evidence": "motion.button 0.2s ease, motion.link 0.3s ease-in-out, motion.panel 0.5s ease tokenised; the per-component transition table in components.md adds 0.4s transforms and the accordion's 0.5s grid-rows. No prefers-reduced-motion probe was run - recorded as a gap."
+    },
+    "F14": {
+     "grade": "partly",
+     "evidence": "Component geometry measured at 1440 and 390 (header 1248x72/358x64, mega-menu 1248x693, popup 602x721, FAQ rows 1024, mobile menu exactly 390x844) and the chrome z-map is in components-computed _meta; breakpoints and a grid/z-layer token set are not tokenised."
+    },
+    "C1": {
+     "grade": "partly",
+     "evidence": "~13 of 19: button (nav-cta/hero-cta/plan-cta/cta-dark/submit-btn), icon button (m-menu-button), link (nav-link/nav-login/footer-link/social-icon), text field (field-name/field-email), text area (field-message), select (field-select), checkbox, tabs/segmented (plan-toggle), menu (nav-dropdown + m-menu-open), dialog (form-popup), card (plan-card/contact-card/card/menu-feature), list row (m-nav-item, feature-row, icon-item). No radio, real switch, tooltip, toast, table, avatar or badge exists on the public surface."
+    },
+    "C2": {
+     "grade": "partly",
+     "evidence": "default/hover/focus-visible/pressed on every interactive entry (100 states over 45 components) plus opened (mega-menu, popup, FAQ row, mobile menu), focused and filled (name field), selected (checkbox); pressed is CDP-forced so any mousedown script state is missing; no disabled/loading/error states exist on the surface."
+    },
+    "C3": {
+     "grade": "meets",
+     "evidence": "A real keyboard focus was driven onto 17 components: 15 draw the 2px auto #005fcc ring at 2px offset (checkbox 1px, faq-item 1px at 0); nav-trigger and m-nav-item draw none - recorded, so the product's own gap is captured rather than assumed."
+    },
+    "C4": {
+     "grade": "partly",
+     "evidence": "Entries cite palette tokens where values match (backtick names in components.md, resolved via component-tokens.json -> build_tokens.py); geometry, the Syntax-Glow/Neon-Loop state fills and painted-layer values are measured raw with provenance."
+    },
+    "P1": {
+     "grade": "partly",
+     "evidence": "patterns.md covers the app shell (floating pill chrome + mega-menu), the dark hero island, pricing data display, the contact popup form, FAQ accordion, footer and mobile, plus the state signature and boundaries. No validation, empty/loading/error, destructive, feedback, search or onboarding pattern exists on the signed-out surface."
+    },
+    "A1": {
+     "grade": "partly",
+     "evidence": "Roobert named as self-hosted/licensed with the full fallback stack tokenised, Roboto noted for editor chrome; no icons/ index - the layoutGaps entry records that no standalone SVG set was lifted (glyphs visible in crops)."
+    },
+    "K1": {
+     "grade": "meets",
+     "evidence": "The README opens with what was captured (routes, widths, date, signed-out), how (vars.mjs harvest resolved plain + .dark-mode, measure.mjs states, public.mjs toggles), what to distrust (island-not-toggle, generic kit accent, #0000ee anchors, media hero, Times wrappers, quantised shots) and an explicit Coverage list."
+    },
+    "F15": {
+     "grade": "partly",
+     "evidence": "Script: primary text passes; secondary fails 2 pairs, worst 3.97:1 light muted (light.textMuted) on surface (light.surface)"
+    },
+    "F16": {
+     "grade": "meets",
+     "evidence": "Script: 110 of 110 tokens name their source"
+    },
+    "K2": {
+     "grade": "meets",
+     "evidence": "Script: 10 rules, each linking a screenshot or crop"
+    },
+    "K3": {
+     "grade": "meets",
+     "evidence": "Script: DESIGN.md matches a fresh generation"
+    },
+    "C5": {
+     "grade": "na",
+     "evidence": "Optional for a capture, and this product does not publish it."
+    },
+    "V1": {
+     "grade": "na",
+     "evidence": "Optional for a capture, and this product does not publish it."
+    },
+    "V2": {
+     "grade": "na",
+     "evidence": "Optional for a capture, and this product does not publish it."
+    }
+   },
+   "name": "Elementor",
+   "goodFor": "Site-builder and marketing pages: Roobert display at 88px down to 14px lists on a strict #000/#fff two-tone where no colour rests (every action black until it rebounds to #ed01ee Neon-Loop on hover), #fae4fa Syntax-Glow row tints, a floating 24px-radius pill header under one soft shadow, a 4/8/16/24 radius ladder, .dark-mode islands that re-bind the same vars, 2px-outline plan CTAs and the default e-global-color kit declarations",
+   "url": "https://elementor.com",
    "captured": "2026-11-13",
    "themes": [
     "light",
     "dark"
    ],
    "platform": "web",
-   "category": "Media",
+   "category": "Productivity",
    "reviewed": "2026-11-14",
    "reviewedPlatform": "web"
   }
  ],
  "base": "2026-10-16",
- "reviewMethod": "public-web capture of deezer.com on 2026-11-13 in headless Chromium at 1440x900 and 390x844; graded from the declared Tempo layer (raw/css-vars.json), the measured computed styles (raw/components-computed.json) and the screenshots; reviewer: the capturing agent"
+ "reviewMethod": "public-web capture review (re-applied after main merge)"
 }

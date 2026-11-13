@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 114,
-    "system_domains": 106,
-    "matched_domains": 81,
-    "missing_domains": 352,
+    "system_packages": 123,
+    "system_domains": 115,
+    "matched_domains": 90,
+    "missing_domains": 343,
     "system_domains_absent_from_catalog": 25
   },
   "matched": {
@@ -1239,6 +1239,159 @@
         }
       ]
     },
+    "editorx.com": {
+      "catalog": [
+        {
+          "name": "Editor X",
+          "domain": "editorx.com",
+          "id": 279
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "editorx",
+          "name": "Editor X (Wix Studio)",
+          "url": "https://www.editorx.com",
+          "name_match": false
+        }
+      ]
+    },
+    "elektron.se": {
+      "catalog": [
+        {
+          "name": "Elektron",
+          "domain": "elektron.se",
+          "id": 56
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "elektron",
+          "name": "Elektron",
+          "url": "https://www.elektron.se",
+          "name_match": true
+        }
+      ]
+    },
+    "elementor.com": {
+      "catalog": [
+        {
+          "name": "Elementor",
+          "domain": "elementor.com",
+          "id": 466
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "elementor",
+          "name": "Elementor",
+          "url": "https://elementor.com",
+          "name_match": true
+        }
+      ]
+    },
+    "elevenlabs.io": {
+      "catalog": [
+        {
+          "name": "ElevenLabs",
+          "domain": "elevenlabs.io",
+          "id": 772
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "elevenlabs",
+          "name": "ElevenLabs",
+          "url": "https://elevenlabs.io",
+          "name_match": true
+        }
+      ]
+    },
+    "elevenmusic.io": {
+      "catalog": [
+        {
+          "name": "ElevenMusic",
+          "domain": "elevenmusic.io",
+          "id": 917
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "elevenmusic",
+          "name": "ElevenMusic",
+          "url": "https://elevenmusic.io",
+          "name_match": true
+        }
+      ]
+    },
+    "elevenreader.io": {
+      "catalog": [
+        {
+          "name": "ElevenReader",
+          "domain": "elevenreader.io",
+          "id": 776
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "elevenreader",
+          "name": "ElevenReader",
+          "url": "https://elevenreader.io",
+          "name_match": true
+        }
+      ]
+    },
+    "endel.io": {
+      "catalog": [
+        {
+          "name": "Endel",
+          "domain": "endel.io",
+          "id": 105
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "endel",
+          "name": "Endel",
+          "url": "https://endel.io",
+          "name_match": true
+        }
+      ]
+    },
+    "endless.io": {
+      "catalog": [
+        {
+          "name": "Endless",
+          "domain": "endless.io",
+          "id": 569
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "endless",
+          "name": "Endless",
+          "url": "https://endless.io",
+          "name_match": true
+        }
+      ]
+    },
+    "endlesstools.io": {
+      "catalog": [
+        {
+          "name": "Endless Tools",
+          "domain": "endlesstools.io",
+          "id": 527
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "endlesstools",
+          "name": "Endless Tools",
+          "url": "https://endlesstools.io",
+          "name_match": false
+        }
+      ]
+    },
     "github.com": {
       "catalog": [
         {
@@ -1631,69 +1784,6 @@
         "name": "DJI",
         "domain": "dji.com",
         "id": 332
-      }
-    ],
-    "editorx.com": [
-      {
-        "name": "Editor X",
-        "domain": "editorx.com",
-        "id": 279
-      }
-    ],
-    "elektron.se": [
-      {
-        "name": "Elektron",
-        "domain": "elektron.se",
-        "id": 56
-      }
-    ],
-    "elementor.com": [
-      {
-        "name": "Elementor",
-        "domain": "elementor.com",
-        "id": 466
-      }
-    ],
-    "elevenlabs.io": [
-      {
-        "name": "ElevenLabs",
-        "domain": "elevenlabs.io",
-        "id": 772
-      }
-    ],
-    "elevenmusic.io": [
-      {
-        "name": "ElevenMusic",
-        "domain": "elevenmusic.io",
-        "id": 917
-      }
-    ],
-    "elevenreader.io": [
-      {
-        "name": "ElevenReader",
-        "domain": "elevenreader.io",
-        "id": 776
-      }
-    ],
-    "endel.io": [
-      {
-        "name": "Endel",
-        "domain": "endel.io",
-        "id": 105
-      }
-    ],
-    "endless.io": [
-      {
-        "name": "Endless",
-        "domain": "endless.io",
-        "id": 569
-      }
-    ],
-    "endlesstools.io": [
-      {
-        "name": "Endless Tools",
-        "domain": "endlesstools.io",
-        "id": 527
       }
     ],
     "enode.com": [
