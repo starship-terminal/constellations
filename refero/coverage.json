@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 112,
-    "system_domains": 104,
-    "matched_domains": 79,
-    "missing_domains": 354,
+    "system_packages": 113,
+    "system_domains": 105,
+    "matched_domains": 80,
+    "missing_domains": 353,
     "system_domains_absent_from_catalog": 25
   },
   "matched": {
@@ -1188,6 +1188,23 @@
         }
       ]
     },
+    "dub.co": {
+      "catalog": [
+        {
+          "name": "Dub",
+          "domain": "dub.co",
+          "id": 418
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "dub",
+          "name": "Dub",
+          "url": "https://dub.co",
+          "name_match": true
+        }
+      ]
+    },
     "duolingo.com": {
       "catalog": [
         {
@@ -1604,13 +1621,6 @@
         "name": "DJI",
         "domain": "dji.com",
         "id": 332
-      }
-    ],
-    "dub.co": [
-      {
-        "name": "Dub",
-        "domain": "dub.co",
-        "id": 418
       }
     ],
     "editorx.com": [

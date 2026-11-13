@@ -670,5 +670,11 @@
     "groupId": "web-categories",
     "labels": ["Communication Tools"],
     "reason": "catalog.json category messaging maps to Communication Tools."
+  },
+  {
+    "referenceId": "systems:dub",
+    "groupId": "web-categories",
+    "labels": ["Productivity"],
+    "reason": "catalog.json describes a link-attribution product's marketing, auth and docs surfaces."
   }
 ]
