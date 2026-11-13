@@ -743,6 +743,11 @@
       "assignedMedia": 577
     },
     {
+      "referenceId": "systems:dock",
+      "media": 143,
+      "assignedMedia": 143
+    },
+    {
       "referenceId": "systems:duolingo",
       "media": 446,
       "assignedMedia": 272
@@ -921,6 +926,16 @@
       "referenceId": "systems:canva",
       "media": 133,
       "assignedMedia": 61
+    },
+    {
+      "referenceId": "systems:doordash",
+      "media": 200,
+      "assignedMedia": 58
+    },
+    {
+      "referenceId": "systems:dona",
+      "media": 98,
+      "assignedMedia": 98
     }
   ],
   "assignments": [
@@ -107398,6 +107413,1844 @@
       ]
     },
     {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/screenshots/about-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:about",
+          "rule": "page-about",
+          "reason": "Capture filename explicitly names about; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/screenshots/about-light-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:about",
+          "rule": "page-about",
+          "reason": "Capture filename explicitly names about; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/screenshots/customers-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/screenshots/customers-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/screenshots/demo-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/screenshots/demo-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/screenshots/home-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/screenshots/home-light-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/screenshots/home-light-menu.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/screenshots/library-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/screenshots/library-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/screenshots/login-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:log-in",
+          "rule": "page-login",
+          "reason": "Capture filename explicitly names log in; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/screenshots/mobile-home-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/screenshots/mobile-home-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/screenshots/mobile-pricing-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/screenshots/mobile-pricing-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/screenshots/pricing-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/screenshots/pricing-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/screenshots/product-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/screenshots/product-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/screenshots/signup-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:sign-up",
+          "rule": "page-signup",
+          "reason": "Capture filename explicitly names sign up; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/screenshots/solutions-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/screenshots/solutions-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/screenshots/templates-light-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:templates",
+          "rule": "ux-templates",
+          "reason": "Capture filename explicitly names templates; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/screenshots/templates-light-full.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:templates",
+          "rule": "ux-templates",
+          "reason": "Capture filename explicitly names templates; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/continue-btn-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/continue-btn-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/continue-btn-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/continue-btn-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/customer-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/customer-card-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/customer-card-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/customer-card-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/customers-h1-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/demo-field-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/demo-field-focused.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/demo-form-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/demo-h1-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/demo-submit-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/demo-submit-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/demo-submit-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/demo-submit-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/faq-item-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/faq-item-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/faq-item-hover.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/faq-item-opened.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/faq-item-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/filter-radio-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:checkbox-radio",
+          "rule": "ui-checkbox-radio",
+          "reason": "Capture filename explicitly names checkbox & radio; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/filter-radio-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:checkbox-radio",
+          "rule": "ui-checkbox-radio",
+          "reason": "Capture filename explicitly names checkbox & radio; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/filter-radio-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:checkbox-radio",
+          "rule": "ui-checkbox-radio",
+          "reason": "Capture filename explicitly names checkbox & radio; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/filter-radio-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:checkbox-radio",
+          "rule": "ui-checkbox-radio",
+          "reason": "Capture filename explicitly names checkbox & radio; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/footer-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/footer-link-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/footer-link-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/footer-link-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/footer-link-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/header-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/hero-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/hero-cta-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/hero-cta-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/hero-cta-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/hero-cta-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/hero-demo-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/hero-demo-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/hero-demo-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/hero-demo-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/hero-lede-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/hero-title-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/login-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/logo-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/m-header-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/m-hero-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/m-menu-button-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/m-menu-open-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/m-nav-item-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/m-nav-item-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/m-nav-item-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/m-nav-item-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/mcp-copy-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/mcp-copy-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/mcp-copy-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/mcp-copy-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/mcp-prompt-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/menu-group-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/menu-link-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/menu-link-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/menu-link-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/menu-link-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/nav-cta-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/nav-cta-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/nav-cta-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/nav-cta-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/nav-demo-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/nav-demo-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/nav-demo-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/nav-demo-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/nav-dropdown-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dropdown",
+          "rule": "ui-dropdown",
+          "reason": "Capture filename explicitly names dropdown; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/nav-link-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/nav-link-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/nav-link-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/nav-link-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/nav-login-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/nav-login-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/nav-login-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/nav-login-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/nav-trigger-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/nav-trigger-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/nav-trigger-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/nav-trigger-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/plan-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/plan-cta-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/plan-cta-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/plan-cta-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/plan-cta-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/plan-name-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/plan-price-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/pr-sticky-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/pricing-h1-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/section-h2-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/sidebar-link-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:sidebar-drawer",
+          "rule": "ui-sidebar",
+          "reason": "Capture filename explicitly names sidebar & drawer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/sidebar-link-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:sidebar-drawer",
+          "rule": "ui-sidebar",
+          "reason": "Capture filename explicitly names sidebar & drawer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/sidebar-link-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:sidebar-drawer",
+          "rule": "ui-sidebar",
+          "reason": "Capture filename explicitly names sidebar & drawer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/sidebar-link-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:sidebar-drawer",
+          "rule": "ui-sidebar",
+          "reason": "Capture filename explicitly names sidebar & drawer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/signup-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/signup-check-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/signup-field-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/signup-field-filled.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/signup-field-focused.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/signup-submit-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/signup-submit-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/signup-submit-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/signup-submit-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/subdomain-field-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/subdomain-field-filled.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/subdomain-field-focused.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/template-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:templates",
+          "rule": "ux-templates",
+          "reason": "Capture filename explicitly names templates; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/template-card-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:templates",
+          "rule": "ux-templates",
+          "reason": "Capture filename explicitly names templates; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/template-card-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:templates",
+          "rule": "ux-templates",
+          "reason": "Capture filename explicitly names templates; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/template-card-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:templates",
+          "rule": "ux-templates",
+          "reason": "Capture filename explicitly names templates; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/templates-h1-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:templates",
+          "rule": "ux-templates",
+          "reason": "Capture filename explicitly names templates; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/templates-sidebar-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:sidebar-drawer",
+          "rule": "ui-sidebar",
+          "reason": "Capture filename explicitly names sidebar & drawer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:templates",
+          "rule": "ux-templates",
+          "reason": "Capture filename explicitly names templates; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/testimonial-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dock",
+      "mediaId": "systems/dock/components/crops/trust-badge-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:badge",
+          "rule": "ui-badge",
+          "reason": "Capture filename explicitly names badge; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/dock/tokens.json#core.font.family.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
       "referenceId": "systems:duolingo",
       "mediaId": "systems/duolingo/screenshots/error-404-light-default.png",
       "terms": [
@@ -202245,6 +204098,1877 @@
           "termId": "web-ui-elements:tabs",
           "rule": "ui-tabs",
           "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:doordash",
+      "mediaId": "systems/doordash/screenshots/home-light-cuisines.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:doordash",
+      "mediaId": "systems/doordash/screenshots/home-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:doordash",
+      "mediaId": "systems/doordash/screenshots/home-light-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:doordash",
+      "mediaId": "systems/doordash/components/crops/address-pill-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:doordash",
+      "mediaId": "systems/doordash/components/crops/address-pill-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:doordash",
+      "mediaId": "systems/doordash/components/crops/address-pill-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:doordash",
+      "mediaId": "systems/doordash/components/crops/address-pill-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:doordash",
+      "mediaId": "systems/doordash/components/crops/appstore-badge-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:badge",
+          "rule": "ui-badge",
+          "reason": "Capture filename explicitly names badge; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:doordash",
+      "mediaId": "systems/doordash/components/crops/appstore-badge-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:badge",
+          "rule": "ui-badge",
+          "reason": "Capture filename explicitly names badge; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:doordash",
+      "mediaId": "systems/doordash/components/crops/appstore-badge-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:badge",
+          "rule": "ui-badge",
+          "reason": "Capture filename explicitly names badge; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:doordash",
+      "mediaId": "systems/doordash/components/crops/appstore-badge-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:badge",
+          "rule": "ui-badge",
+          "reason": "Capture filename explicitly names badge; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:doordash",
+      "mediaId": "systems/doordash/components/crops/breadcrumb-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:breadcrumb",
+          "rule": "ui-breadcrumb",
+          "reason": "Capture filename explicitly names breadcrumb; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:doordash",
+      "mediaId": "systems/doordash/components/crops/card-cta-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:doordash",
+      "mediaId": "systems/doordash/components/crops/card-cta-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:doordash",
+      "mediaId": "systems/doordash/components/crops/card-cta-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:doordash",
+      "mediaId": "systems/doordash/components/crops/card-cta-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:doordash",
+      "mediaId": "systems/doordash/components/crops/faq-block-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:doordash",
+      "mediaId": "systems/doordash/components/crops/footer-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:doordash",
+      "mediaId": "systems/doordash/components/crops/footer-link-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:doordash",
+      "mediaId": "systems/doordash/components/crops/footer-link-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:doordash",
+      "mediaId": "systems/doordash/components/crops/footer-link-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:doordash",
+      "mediaId": "systems/doordash/components/crops/footer-link-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:doordash",
+      "mediaId": "systems/doordash/components/crops/fulfil-toggle-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:switch-toggle",
+          "rule": "ui-toggle",
+          "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:doordash",
+      "mediaId": "systems/doordash/components/crops/fulfil-toggle-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:switch-toggle",
+          "rule": "ui-toggle",
+          "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:doordash",
+      "mediaId": "systems/doordash/components/crops/fulfil-toggle-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:switch-toggle",
+          "rule": "ui-toggle",
+          "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:doordash",
+      "mediaId": "systems/doordash/components/crops/fulfil-toggle-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:switch-toggle",
+          "rule": "ui-toggle",
+          "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:doordash",
+      "mediaId": "systems/doordash/components/crops/hsa-search-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:doordash",
+      "mediaId": "systems/doordash/components/crops/hsa-search-focused.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:search-field",
+          "rule": "ui-search-field",
+          "reason": "Capture filename explicitly names search field; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:doordash",
+      "mediaId": "systems/doordash/components/crops/hsa-toggle-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:switch-toggle",
+          "rule": "ui-toggle",
+          "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:doordash",
+      "mediaId": "systems/doordash/components/crops/hsa-toggle-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:switch-toggle",
+          "rule": "ui-toggle",
+          "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:doordash",
+      "mediaId": "systems/doordash/components/crops/hsa-toggle-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:switch-toggle",
+          "rule": "ui-toggle",
+          "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:doordash",
+      "mediaId": "systems/doordash/components/crops/hsa-toggle-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:switch-toggle",
+          "rule": "ui-toggle",
+          "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:doordash",
+      "mediaId": "systems/doordash/components/crops/leaderboard-badge-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:badge",
+          "rule": "ui-badge",
+          "reason": "Capture filename explicitly names badge; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:leaderboard",
+          "rule": "ux-leaderboard",
+          "reason": "Capture filename explicitly names leaderboard; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:doordash",
+      "mediaId": "systems/doordash/components/crops/location-pill-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:doordash",
+      "mediaId": "systems/doordash/components/crops/location-pill-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:doordash",
+      "mediaId": "systems/doordash/components/crops/location-pill-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:doordash",
+      "mediaId": "systems/doordash/components/crops/location-pill-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:doordash",
+      "mediaId": "systems/doordash/components/crops/offer-badge-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:badge",
+          "rule": "ui-badge",
+          "reason": "Capture filename explicitly names badge; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:doordash",
+      "mediaId": "systems/doordash/components/crops/pagination-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:page-control-pagination",
+          "rule": "ui-pagination",
+          "reason": "Capture filename explicitly names page control & pagination; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:doordash",
+      "mediaId": "systems/doordash/components/crops/pagination-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:page-control-pagination",
+          "rule": "ui-pagination",
+          "reason": "Capture filename explicitly names page control & pagination; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:doordash",
+      "mediaId": "systems/doordash/components/crops/pagination-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:page-control-pagination",
+          "rule": "ui-pagination",
+          "reason": "Capture filename explicitly names page control & pagination; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:doordash",
+      "mediaId": "systems/doordash/components/crops/pagination-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:page-control-pagination",
+          "rule": "ui-pagination",
+          "reason": "Capture filename explicitly names page control & pagination; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:doordash",
+      "mediaId": "systems/doordash/components/crops/rest-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:doordash",
+      "mediaId": "systems/doordash/components/crops/rest-card-sub-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:doordash",
+      "mediaId": "systems/doordash/components/crops/rest-card-title-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:doordash",
+      "mediaId": "systems/doordash/components/crops/sidenav-toggle-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:switch-toggle",
+          "rule": "ui-toggle",
+          "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:doordash",
+      "mediaId": "systems/doordash/components/crops/tab-idle-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:doordash",
+      "mediaId": "systems/doordash/components/crops/tab-idle-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:doordash",
+      "mediaId": "systems/doordash/components/crops/tab-idle-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:doordash",
+      "mediaId": "systems/doordash/components/crops/tab-idle-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:doordash",
+      "mediaId": "systems/doordash/components/crops/tab-selected-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:doordash",
+      "mediaId": "systems/doordash/components/crops/tab-selected-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:doordash",
+      "mediaId": "systems/doordash/components/crops/tab-selected-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:doordash",
+      "mediaId": "systems/doordash/components/crops/tab-selected-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:doordash",
+      "mediaId": "systems/doordash/components/crops/value-prop-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:doordash",
+      "mediaId": "systems/doordash/components/crops/value-prop-card-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:doordash",
+      "mediaId": "systems/doordash/components/crops/value-prop-card-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:doordash",
+      "mediaId": "systems/doordash/components/crops/value-prop-card-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/screenshots/about-light-cookies.png",
+      "terms": [
+        {
+          "termId": "web-page-types:about",
+          "rule": "page-about",
+          "reason": "Capture filename explicitly names about; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/screenshots/about-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:about",
+          "rule": "page-about",
+          "reason": "Capture filename explicitly names about; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/screenshots/about-light-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:about",
+          "rule": "page-about",
+          "reason": "Capture filename explicitly names about; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/screenshots/home-light-cookies.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/screenshots/home-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/screenshots/home-light-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/screenshots/home-light-video.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/screenshots/mobile-about-light-cookies.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/screenshots/mobile-about-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/screenshots/mobile-about-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/screenshots/mobile-home-light-cookies.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/screenshots/mobile-home-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/screenshots/mobile-home-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/screenshots/privacy-policy-light-cookies.png",
+      "terms": [
+        {
+          "termId": "web-page-types:privacy-policy",
+          "rule": "page-privacy",
+          "reason": "Capture filename explicitly names privacy policy; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/screenshots/privacy-policy-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:privacy-policy",
+          "rule": "page-privacy",
+          "reason": "Capture filename explicitly names privacy policy; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/screenshots/privacy-policy-light-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:privacy-policy",
+          "rule": "page-privacy",
+          "reason": "Capture filename explicitly names privacy policy; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/screenshots/terms-of-service-light-cookies.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/screenshots/terms-of-service-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/screenshots/terms-of-service-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/components/crops/about-h1-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/components/crops/cookie-accept-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/components/crops/cookie-accept-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/components/crops/cookie-accept-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/components/crops/cookie-accept-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/components/crops/cookie-banner-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/components/crops/cookie-learn-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/components/crops/cookie-learn-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/components/crops/cookie-learn-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/components/crops/cookie-learn-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/components/crops/email-input-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/components/crops/email-input-filled.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/components/crops/email-input-focused.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/components/crops/feature-tile-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/components/crops/footer-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/components/crops/footer-link-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/components/crops/footer-link-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/components/crops/footer-link-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/components/crops/footer-link-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/components/crops/footer-twitter-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/components/crops/footer-twitter-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/components/crops/footer-twitter-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/components/crops/footer-twitter-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/components/crops/header-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/components/crops/hero-h1-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/components/crops/hero-lede-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/components/crops/hero-video-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/components/crops/join-btn-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/components/crops/join-btn-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/components/crops/join-btn-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/components/crops/join-btn-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/components/crops/legal-h1-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/components/crops/legal-h4-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/components/crops/legal-text-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/components/crops/logo-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/components/crops/logo-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/components/crops/logo-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/components/crops/logo-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/components/crops/m-cookie-banner-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/components/crops/m-email-input-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/components/crops/m-header-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/components/crops/m-hero-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/components/crops/m-try-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/components/crops/m-watch-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/components/crops/mission-text-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/components/crops/modal-close-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dialog-modal-window",
+          "rule": "ui-dialog",
+          "reason": "Capture filename explicitly names dialog & modal window; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/components/crops/modal-close-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dialog-modal-window",
+          "rule": "ui-dialog",
+          "reason": "Capture filename explicitly names dialog & modal window; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/components/crops/modal-close-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dialog-modal-window",
+          "rule": "ui-dialog",
+          "reason": "Capture filename explicitly names dialog & modal window; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/components/crops/nav-about-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/components/crops/nav-about-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/components/crops/nav-about-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/components/crops/nav-about-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/components/crops/nav-login-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/components/crops/nav-login-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/components/crops/nav-login-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/components/crops/nav-login-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/components/crops/newsletter-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/components/crops/section-h2-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/components/crops/section-h3-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/components/crops/section-para-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/components/crops/social-link-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/components/crops/social-link-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/components/crops/social-link-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/components/crops/social-link-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/components/crops/team-avatar-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:avatar",
+          "rule": "ui-avatar",
+          "reason": "Capture filename explicitly names avatar; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/components/crops/team-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/components/crops/team-card-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/components/crops/team-card-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/components/crops/team-card-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/components/crops/team-h2-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/components/crops/try-cta-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/components/crops/try-cta-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/components/crops/try-cta-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/components/crops/try-cta-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/components/crops/video-modal-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dialog-modal-window",
+          "rule": "ui-dialog",
+          "reason": "Capture filename explicitly names dialog & modal window; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/components/crops/watch-video-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/components/crops/watch-video-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/components/crops/watch-video-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dona",
+      "mediaId": "systems/dona/components/crops/watch-video-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/dona/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
         }
       ]
     }
