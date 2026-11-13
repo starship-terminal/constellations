@@ -7119,6 +7119,7 @@
           "icons: no standalone SVG set lifted this pass"
         ],
         "durationMin": 210,
+        "pr": "https://github.com/starship-terminal/constellations/pull/528",
         "durationNote": "resumed capture: a first pass died after the screenshots and css-vars harvest (2026-11-13 morning UTC); the component measurement, token/docs build and rubric review ran in the resume"
       },
       "layoutGaps": {
