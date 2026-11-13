@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 91,
-    "system_domains": 83,
-    "matched_domains": 58,
-    "missing_domains": 375,
+    "system_packages": 104,
+    "system_domains": 96,
+    "matched_domains": 71,
+    "missing_domains": 362,
     "system_domains_absent_from_catalog": 25
   },
   "matched": {
@@ -751,6 +751,40 @@
         }
       ]
     },
+    "care.com": {
+      "catalog": [
+        {
+          "name": "Care",
+          "domain": "care.com",
+          "id": 908
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "care",
+          "name": "Care.com",
+          "url": "https://www.care.com",
+          "name_match": true
+        }
+      ]
+    },
+    "cartesia.ai": {
+      "catalog": [
+        {
+          "name": "Cartesia",
+          "domain": "cartesia.ai",
+          "id": 756
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "cartesia",
+          "name": "Cartesia",
+          "url": "https://www.cartesia.ai",
+          "name_match": true
+        }
+      ]
+    },
     "chatgpt.com": {
       "catalog": [
         {
@@ -791,6 +825,23 @@
         }
       ]
     },
+    "copy.ai": {
+      "catalog": [
+        {
+          "name": "Copy.ai",
+          "domain": "copy.ai",
+          "id": 435
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "copy",
+          "name": "Copy.ai",
+          "url": "https://www.copy.ai",
+          "name_match": true
+        }
+      ]
+    },
     "cosmos.so": {
       "catalog": [
         {
@@ -827,6 +878,176 @@
           "slug": "cursor-ios",
           "name": "Cursor for iOS",
           "url": "https://cursor.com",
+          "name_match": true
+        }
+      ]
+    },
+    "dailyartmagazine.com": {
+      "catalog": [
+        {
+          "name": "DailyArt Magazine",
+          "domain": "dailyartmagazine.com",
+          "id": 571
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "dailyartmagazine",
+          "name": "DailyArt Magazine",
+          "url": "https://www.dailyartmagazine.com",
+          "name_match": false
+        }
+      ]
+    },
+    "deel.com": {
+      "catalog": [
+        {
+          "name": "Deel",
+          "domain": "deel.com",
+          "id": 148
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "deel",
+          "name": "Deel",
+          "url": "https://www.deel.com",
+          "name_match": true
+        }
+      ]
+    },
+    "dock.us": {
+      "catalog": [
+        {
+          "name": "Dock",
+          "domain": "dock.us",
+          "id": 465
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "dock",
+          "name": "Dock",
+          "url": "https://dock.us",
+          "name_match": true
+        }
+      ]
+    },
+    "doctronic.ai": {
+      "catalog": [
+        {
+          "name": "Doctronic AI",
+          "domain": "doctronic.ai",
+          "id": 940
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "doctronic",
+          "name": "Doctronic",
+          "url": "https://www.doctronic.ai",
+          "name_match": true
+        }
+      ]
+    },
+    "docusign.com": {
+      "catalog": [
+        {
+          "name": "DocuSign",
+          "domain": "docusign.com",
+          "id": 31
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "docusign",
+          "name": "DocuSign",
+          "url": "https://www.docusign.com",
+          "name_match": true
+        }
+      ]
+    },
+    "dona.ai": {
+      "catalog": [
+        {
+          "name": "Dona",
+          "domain": "dona.ai",
+          "id": 643
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "dona",
+          "name": "Dona",
+          "url": "https://dona.ai",
+          "name_match": true
+        }
+      ]
+    },
+    "doordash.com": {
+      "catalog": [
+        {
+          "name": "DoorDash",
+          "domain": "doordash.com",
+          "id": 298
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "doordash",
+          "name": "DoorDash",
+          "url": "https://www.doordash.com",
+          "name_match": true
+        }
+      ]
+    },
+    "doppler.com": {
+      "catalog": [
+        {
+          "name": "Doppler",
+          "domain": "doppler.com",
+          "id": 193
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "doppler",
+          "name": "Doppler",
+          "url": "https://www.doppler.com",
+          "name_match": true
+        }
+      ]
+    },
+    "drinkdouze.com": {
+      "catalog": [
+        {
+          "name": "Douze",
+          "domain": "drinkdouze.com",
+          "id": 688
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "drinkdouze",
+          "name": "Douze",
+          "url": "https://drinkdouze.com",
+          "name_match": false
+        }
+      ]
+    },
+    "dropbox.com": {
+      "catalog": [
+        {
+          "name": "Dropbox",
+          "domain": "dropbox.com",
+          "id": 2
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "dropbox",
+          "name": "Dropbox",
+          "url": "https://www.dropbox.com",
           "name_match": true
         }
       ]
@@ -1081,20 +1302,6 @@
         "id": 227
       }
     ],
-    "care.com": [
-      {
-        "name": "Care",
-        "domain": "care.com",
-        "id": 908
-      }
-    ],
-    "cartesia.ai": [
-      {
-        "name": "Cartesia",
-        "domain": "cartesia.ai",
-        "id": 756
-      }
-    ],
     "chargetrip.com": [
       {
         "name": "Chargetrip",
@@ -1179,13 +1386,6 @@
         "id": 789
       }
     ],
-    "copy.ai": [
-      {
-        "name": "Copy.ai",
-        "domain": "copy.ai",
-        "id": 435
-      }
-    ],
     "craft.do": [
       {
         "name": "Craft",
@@ -1240,20 +1440,6 @@
         "name": "Cycle",
         "domain": "cycle.app",
         "id": 504
-      }
-    ],
-    "dailyartmagazine.com": [
-      {
-        "name": "DailyArt Magazine",
-        "domain": "dailyartmagazine.com",
-        "id": 571
-      }
-    ],
-    "deel.com": [
-      {
-        "name": "Deel",
-        "domain": "deel.com",
-        "id": 148
       }
     ],
     "deezer.com": [
@@ -1326,41 +1512,6 @@
         "id": 332
       }
     ],
-    "dock.us": [
-      {
-        "name": "Dock",
-        "domain": "dock.us",
-        "id": 465
-      }
-    ],
-    "doctronic.ai": [
-      {
-        "name": "Doctronic AI",
-        "domain": "doctronic.ai",
-        "id": 940
-      }
-    ],
-    "docusign.com": [
-      {
-        "name": "DocuSign",
-        "domain": "docusign.com",
-        "id": 31
-      }
-    ],
-    "dona.ai": [
-      {
-        "name": "Dona",
-        "domain": "dona.ai",
-        "id": 643
-      }
-    ],
-    "doordash.com": [
-      {
-        "name": "DoorDash",
-        "domain": "doordash.com",
-        "id": 298
-      }
-    ],
     "dopper.com": [
       {
         "name": "Dopper",
@@ -1368,32 +1519,11 @@
         "id": 723
       }
     ],
-    "doppler.com": [
-      {
-        "name": "Doppler",
-        "domain": "doppler.com",
-        "id": 193
-      }
-    ],
     "dribbble.com": [
       {
         "name": "Dribbble",
         "domain": "dribbble.com",
         "id": 257
-      }
-    ],
-    "drinkdouze.com": [
-      {
-        "name": "Douze",
-        "domain": "drinkdouze.com",
-        "id": 688
-      }
-    ],
-    "dropbox.com": [
-      {
-        "name": "Dropbox",
-        "domain": "dropbox.com",
-        "id": 2
       }
     ],
     "dub.co": [
@@ -3786,10 +3916,7 @@
         "slug": "luma-ios",
         "name": "Luma",
         "url": "https://luma.com",
-        "ios_guess": [
-          "Luma",
-          "Luma AI"
-        ]
+        "ios_guess": ["Luma", "Luma AI"]
       }
     ],
     "metabase.com": [
@@ -3805,25 +3932,19 @@
         "slug": "notion-calendar-desktop",
         "name": "Notion Calendar (desktop)",
         "url": "https://www.notion.com/product/calendar",
-        "ios_guess": [
-          "Notion"
-        ]
+        "ios_guess": ["Notion"]
       },
       {
         "slug": "notion-desktop",
         "name": "Notion (desktop)",
         "url": "https://www.notion.com/desktop",
-        "ios_guess": [
-          "Notion"
-        ]
+        "ios_guess": ["Notion"]
       },
       {
         "slug": "notion-ios",
         "name": "Notion for iOS",
         "url": "https://www.notion.com/mobile",
-        "ios_guess": [
-          "Notion"
-        ]
+        "ios_guess": ["Notion"]
       }
     ],
     "opencode.ai": [
@@ -3871,9 +3992,7 @@
         "slug": "substack",
         "name": "Substack",
         "url": "https://substack.com",
-        "ios_guess": [
-          "Substack"
-        ]
+        "ios_guess": ["Substack"]
       }
     ],
     "supabase.com": [
