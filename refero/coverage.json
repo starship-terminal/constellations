@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 99,
-    "system_domains": 91,
-    "matched_domains": 66,
-    "missing_domains": 367,
+    "system_packages": 102,
+    "system_domains": 94,
+    "matched_domains": 69,
+    "missing_domains": 364,
     "system_domains_absent_from_catalog": 25
   },
   "matched": {
@@ -751,6 +751,23 @@
         }
       ]
     },
+    "care.com": {
+      "catalog": [
+        {
+          "name": "Care",
+          "domain": "care.com",
+          "id": 908
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "care",
+          "name": "Care.com",
+          "url": "https://www.care.com",
+          "name_match": true
+        }
+      ]
+    },
     "chatgpt.com": {
       "catalog": [
         {
@@ -810,6 +827,40 @@
           "slug": "cursor-ios",
           "name": "Cursor for iOS",
           "url": "https://cursor.com",
+          "name_match": true
+        }
+      ]
+    },
+    "dailyartmagazine.com": {
+      "catalog": [
+        {
+          "name": "DailyArt Magazine",
+          "domain": "dailyartmagazine.com",
+          "id": 571
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "dailyartmagazine",
+          "name": "DailyArt Magazine",
+          "url": "https://www.dailyartmagazine.com",
+          "name_match": false
+        }
+      ]
+    },
+    "deel.com": {
+      "catalog": [
+        {
+          "name": "Deel",
+          "domain": "deel.com",
+          "id": 148
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "deel",
+          "name": "Deel",
+          "url": "https://www.deel.com",
           "name_match": true
         }
       ]
@@ -1217,13 +1268,6 @@
         "id": 227
       }
     ],
-    "care.com": [
-      {
-        "name": "Care",
-        "domain": "care.com",
-        "id": 908
-      }
-    ],
     "cartesia.ai": [
       {
         "name": "Cartesia",
@@ -1383,20 +1427,6 @@
         "name": "Cycle",
         "domain": "cycle.app",
         "id": 504
-      }
-    ],
-    "dailyartmagazine.com": [
-      {
-        "name": "DailyArt Magazine",
-        "domain": "dailyartmagazine.com",
-        "id": 571
-      }
-    ],
-    "deel.com": [
-      {
-        "name": "Deel",
-        "domain": "deel.com",
-        "id": 148
       }
     ],
     "deezer.com": [
