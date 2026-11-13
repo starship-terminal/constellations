@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 94,
-    "system_domains": 86,
-    "matched_domains": 61,
-    "missing_domains": 372,
+    "system_packages": 95,
+    "system_domains": 87,
+    "matched_domains": 62,
+    "missing_domains": 371,
     "system_domains_absent_from_catalog": 25
   },
   "matched": {
@@ -831,6 +831,23 @@
         }
       ]
     },
+    "doctronic.ai": {
+      "catalog": [
+        {
+          "name": "Doctronic AI",
+          "domain": "doctronic.ai",
+          "id": 940
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "doctronic",
+          "name": "Doctronic",
+          "url": "https://www.doctronic.ai",
+          "name_match": true
+        }
+      ]
+    },
     "dona.ai": {
       "catalog": [
         {
@@ -1382,13 +1399,6 @@
         "name": "DJI",
         "domain": "dji.com",
         "id": 332
-      }
-    ],
-    "doctronic.ai": [
-      {
-        "name": "Doctronic AI",
-        "domain": "doctronic.ai",
-        "id": 940
       }
     ],
     "docusign.com": [
