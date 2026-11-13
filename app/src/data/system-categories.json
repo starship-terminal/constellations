@@ -538,5 +538,17 @@
     "groupId": "web-categories",
     "labels": ["Design & Media Editing", "Productivity"],
     "reason": "catalog.json describes a design tool: template galleries and the marketing pages for the design editor, docs, whiteboards and presentations."
+  },
+  {
+    "referenceId": "systems:dock",
+    "groupId": "web-categories",
+    "labels": ["Productivity"],
+    "reason": "catalog.json describes a sales-collateral and enablement product: asset workspaces, customer-facing deal rooms and a public demo form."
+  },
+  {
+    "referenceId": "systems:doordash",
+    "groupId": "web-categories",
+    "labels": ["Food Delivery", "Marketplace"],
+    "reason": "catalog.json describes a delivery marketplace: restaurant storefronts, menu tiles with quick-adds and an SEO directory of cuisines and cities."
   }
 ]
