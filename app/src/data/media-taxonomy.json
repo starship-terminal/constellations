@@ -969,8 +969,8 @@
     },
     {
       "referenceId": "systems:deel",
-      "media": 95,
-      "assignedMedia": 95
+      "media": 98,
+      "assignedMedia": 98
     }
   ],
   "assignments": [
@@ -214484,6 +214484,22 @@
     },
     {
       "referenceId": "systems:deel",
+      "mediaId": "systems/deel/components/crops/faq-item-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/deel/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:deel",
       "mediaId": "systems/deel/components/crops/faq-item-opened.png",
       "terms": [
         {
@@ -214902,6 +214918,17 @@
     },
     {
       "referenceId": "systems:deel",
+      "mediaId": "systems/deel/components/crops/menu-item-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/deel/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:deel",
       "mediaId": "systems/deel/components/crops/menu-panel-default.png",
       "terms": [
         {
@@ -215238,6 +215265,22 @@
     {
       "referenceId": "systems:deel",
       "mediaId": "systems/deel/components/crops/product-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/deel/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:deel",
+      "mediaId": "systems/deel/components/crops/product-card-focus-visible.png",
       "terms": [
         {
           "termId": "web-ui-elements:cards-tiles",
