@@ -8430,6 +8430,92 @@
      }
     },
     {
+      "slug": "endlesstools",
+      "name": "Endless Tools",
+      "url": "https://endlesstools.io",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "Dark, confident designer-tool marketing pages: #000 and #0a0a0a fields under white/#efefef ink with #959595 muted text, fully-rounded 35-38px pills on the marketing controls (the app shell takes a 10px radius), #121212 33px cards under a #222 hairline ring, a single #ff13b1 pink reserved for the hero CTA and #ff3dae save pill, #2c5cff blue for education, inverted white-pill primary actions and a declared Inter type ramp from 42/46 down to 12/14",
+      "tags": [
+            "web",
+            "design",
+            "creative-tools",
+            "marketing",
+            "nextjs",
+            "tailwind",
+            "inter",
+            "dark",
+            "signed-out"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-13",
+      "access": "signed out (every captured surface is public: / on endlesstools.io plus /login, /legal/privacy_policy and /legal/terms_of_use on app.endlesstools.io; the product editor behind sign-in was never reached; no form was submitted and the only presses were local UI toggles)",
+      "themes": [
+            "dark"
+      ],
+      "widths": [
+            1440,
+            390
+      ],
+      "entry": "systems/endlesstools/README.md",
+      "tokens": "systems/endlesstools/tokens.json",
+      "styleGuide": "systems/endlesstools/style-guide.html",
+      "preview": {
+            "cover": "systems/endlesstools/screenshots/home-dark-default.png",
+            "icon": "systems/endlesstools/icon.png",
+            "swatches": {
+                  "dark": {
+                        "page": "dark.surface.page",
+                        "surface": "dark.surface.card",
+                        "text": "dark.text.primary",
+                        "muted": "dark.text.muted",
+                        "accent": "dark.accent.pink",
+                        "border": "dark.border.card"
+                  }
+            },
+            "fonts": [
+                  "core.font.family.sans"
+            ]
+      },
+      "designMd": {
+            "colors": [
+                  "core.",
+                  "dark."
+            ]
+      },
+      "capture": {
+            "method": "public-web",
+            "source": "endlesstools.io (a Next.js + Tailwind v4 marketing site) and app.endlesstools.io (the signed-out app shell, Tailwind v3) in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass at 2x; computed styles and crops from the live DOM. The bundles declare a real @theme layer (--color-*, --text-*, --radius-*, --ease-*) plus the Inter and Flow Rounded @font-face faces; the pink/blue accents and card greys are arbitrary-value utilities, so those tokens are measured computed values cross-checked against the declared vars. The editor behind sign-in is a documented boundary",
+            "timestamp": "2026-11-13T00:00:00Z",
+            "harness": "Devin",
+            "model": "SWE-2 High",
+            "route": "public-web",
+            "routes": [
+                  "https://endlesstools.io/",
+                  "https://app.endlesstools.io/login",
+                  "https://app.endlesstools.io/legal/privacy_policy",
+                  "https://app.endlesstools.io/legal/terms_of_use",
+                  "mobile / and /login"
+            ],
+            "gaps": [
+                  "the editor entirely: the canvas, tools, panels, library and AI features live behind sign-in on app.endlesstools.io and were never reached; Start for free, the plan CTAs and Create team open signup and were never followed",
+                  "the login card's two forms (OTP send-code and password) were measured and locally switched; neither was submitted, so the code entry, errors and signed-in redirect are uncaptured",
+                  "the newsletter form was measured and its consent checkbox toggled for the capture; it was never submitted, so its success and any error state are uncaptured",
+                  "no consent overlay appeared in this region; had one painted it would have been hidden, never answered",
+                  "no disabled, error or loading states exist on the public surfaces",
+                  "privacy and terms are taller than one GPU texture (14,086px and 16,366px); their -full shots are stitched from part tiles",
+                  "the hero's orbiting asset cards and the auto-advancing testimonial carousel animate, so repeated captures of the same view differ",
+                  "icons: no standalone SVG set was lifted this pass; glyphs (the wordmark, social marks, the carousel arrow) are visible in the crops and screenshots"
+            ],
+            "durationMin": 180,
+            "durationNote": "a resumed capture: a prior run left its raw evidence (screens, CSS/HTML copies, computed styles and crops) under ~/.design-systems/endlesstools; this pass assessed and reused it, re-quantised the crops, stitched the tiled full-page shots, then ran the token/docs build and the rubric review",
+            "pr": "https://github.com/starship-terminal/constellations/pull/525"
+      },
+      "layoutGaps": {
+            "icons/": "no standalone SVG icon set was lifted; the glyphs (the Endless Tools wordmark, social marks, the carousel arrow) are visible in the crops and screenshots"
+      }
+    },
+    {
       "slug": "endless",
       "name": "Endless",
       "url": "https://endless.io",
