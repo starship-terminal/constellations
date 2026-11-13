@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 122,
-    "system_domains": 114,
-    "matched_domains": 89,
-    "missing_domains": 344,
+    "system_packages": 123,
+    "system_domains": 115,
+    "matched_domains": 90,
+    "missing_domains": 343,
     "system_domains_absent_from_catalog": 25
   },
   "matched": {
@@ -1018,6 +1018,23 @@
         }
       ]
     },
+    "deezer.com": {
+      "catalog": [
+        {
+          "name": "Deezer",
+          "domain": "deezer.com",
+          "id": 853
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "deezer",
+          "name": "Deezer",
+          "url": "https://www.deezer.com",
+          "name_match": true
+        }
+      ]
+    },
     "dock.us": {
       "catalog": [
         {
@@ -1704,13 +1721,6 @@
         "name": "Cycle",
         "domain": "cycle.app",
         "id": 504
-      }
-    ],
-    "deezer.com": [
-      {
-        "name": "Deezer",
-        "domain": "deezer.com",
-        "id": 853
       }
     ],
     "delphi.ai": [
