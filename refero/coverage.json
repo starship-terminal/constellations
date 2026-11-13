@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 106,
-    "system_domains": 98,
-    "matched_domains": 73,
-    "missing_domains": 360,
+    "system_packages": 107,
+    "system_domains": 99,
+    "matched_domains": 74,
+    "missing_domains": 359,
     "system_domains_absent_from_catalog": 25
   },
   "matched": {
@@ -859,6 +859,23 @@
         }
       ]
     },
+    "craft.do": {
+      "catalog": [
+        {
+          "name": "Craft",
+          "domain": "craft.do",
+          "id": 112
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "craft",
+          "name": "Craft",
+          "url": "https://www.craft.do",
+          "name_match": true
+        }
+      ]
+    },
     "cursor.com": {
       "catalog": [
         {
@@ -1418,13 +1435,6 @@
         "name": "Copperx",
         "domain": "copperx.io",
         "id": 789
-      }
-    ],
-    "craft.do": [
-      {
-        "name": "Craft",
-        "domain": "craft.do",
-        "id": 112
       }
     ],
     "craftwork.design": [

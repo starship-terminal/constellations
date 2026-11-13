@@ -630,6 +630,12 @@
     "reason": "catalog.json category directory maps to Inspiration Board."
   },
   {
+    "referenceId": "systems:craft",
+    "groupId": "web-categories",
+    "labels": ["Productivity"],
+    "reason": "catalog.json category productivity maps to Productivity."
+  },
+  {
     "referenceId": "systems:dribbble",
     "groupId": "web-categories",
     "labels": ["Inspiration Board", "Marketplace"],

@@ -1,7 +1,7 @@
 {
  "date": "2026-11-13",
  "rubric": "4",
- "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): public-web capture review (re-applied after main merge)",
+ "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): Re-applying the craft review after merging main into the capture branch (audit snapshot index collision; grades unchanged)",
  "systems": [
   {
    "slug": "brilliant",
@@ -13009,107 +13009,91 @@
    "reviewedPlatform": "web"
   },
   {
-   "slug": "dribbble",
+   "slug": "craft",
    "grades": {
     "F1": {
-     "grade": "meets",
-     "evidence": "Real declared ramps: --sl-color-primary-50..950 re-bound to the Dribbble pink (core.color.pink, 11 steps), --sl-color-neutral-0..1000 (13 steps), --sl-color-gray-50..950 (11 steps), 17 hue ramps of 8 steps each under core.color.hue, and the declared --sl-color-danger/-success/-warning ramps under core.color.status (8 steps each). Measured ink/pink/surface values sit beside them in core.color.measured."
+     "grade": "partly",
+     "evidence": "Tailwind-scale declared primitives: gray/neutral full ramps plus amber/blue/green/orange/pink/purple/red/sky/yellow steps and the black-alpha black-50..500 series, but several brand hues are single steps (tokens.json core.color.palette)."
     },
     "F2": {
-     "grade": "partly",
-     "evidence": "light.color.page, .surface and .surface-alt (the promo/chip tint) exist as roles; there is no raised/overlay/scrim role — the public surface paints flat white cards and one absolutely-positioned dropdown, and no scrim or overlay surface is declared or painted signed out."
+     "grade": "meets",
+     "evidence": "Declared roles cover page (--background beige), surface (card/popover/input/sidebar), raised (sidebar-accent, muted) and overlay conventions; scrim is the 4-9% ink alpha system (tokens.json light.color.background)."
     },
     "F3": {
-     "grade": "partly",
-     "evidence": "light.color.text (#0d0c22), .muted (#3a3546 + measured.muted-2 #6e6d7a), .on-accent (white on the dark pills) and .link (#060318) exist; no disabled text role exists on the public surface — nothing disabled paints signed out."
+     "grade": "meets",
+     "evidence": "foreground/card/popover-foreground, muted-foreground (50% ink), sidebar foregrounds, measured on-primary white and footer white; link colour is the ink default, no distinct link role."
     },
     "F4": {
-     "grade": "meets",
-     "evidence": "Default border: measured.field-border rgba(219,218,222,.9) and the #e7e7e9/#f3f3f4 hairlines; strong: measured.card-border #0d0c22; focus: core.focusRing.* (declared --sl-focus-ring-*, 3px #e44a85) plus the measured 2px #f3afe4 focus outlines. Declared border.width.input/panel (1px) back them."
+     "grade": "partly",
+     "evidence": "--border 9% ink hairline + --ring 12% ink for focus + sidebar-border are declared; no explicit strong/default pair beyond the two alpha steps."
     },
     "F5": {
      "grade": "partly",
-     "evidence": "light.color.accent (#ea4c89) and .accent-hover (#ec5e95 measured on the pink hover) exist; no pressed accent role — the pink controls were never pressed and no pressed pink paints on the surface."
+     "evidence": "The black CTA's hover lift to 75% ink is measured (component.button.state-move); pressed was CDP-forced on controls; the hovers are not a declared ramp."
     },
     "F6": {
      "grade": "partly",
-     "evidence": "Declared --sl-color-danger/-success/-warning ramps (8 steps each) are tokenised under core.color.status, but they are raw hues with no semantic fill/text/border roles, no info family exists on the site, and nothing status-coloured paints signed out."
+     "evidence": "--destructive #bb433a and the chart/status primitives are declared; no success/warning/info roles with fill+text+border were seen on the public surface."
     },
     "F7": {
-     "grade": "partly",
-     "evidence": "The product ships one light theme — every semantic role exists in it. The package's dark set deliberately holds only the 3 ink-island values the light page paints (dark pills/chip), not a parallel theme, so parity is partial by construction; the only declared dark CSS scope re-binds the third-party Algolia dropdown and never paints as a product theme."
+     "grade": "na",
+     "evidence": "Single theme: the sheets declare one light set only, no dark set exists to mirror."
     },
     "F8": {
-     "grade": "partly",
-     "evidence": "Mona Sans stack with fallbacks (core.font.family.sans) plus the served faces tokenised (font.face.source-serif-4, ibm-plex-mono, walsheim, inter, wf-visual-sans); 14 size steps (10 declared --sl-font-size-* plus measured hero 52/h1 32/body/meta/mobile-hero), weights 300-700, declared line-height + tracking scales. Named text roles exist only as size names (hero/h1-page/body/meta) — no display/label/caption/code role set."
+     "grade": "meets",
+     "evidence": "Untitled Serif + Untitled Sans + declared mono fallback; declared ramp --text-xs..7xl (8 sizes) with line-heights, weights 300-800, measured named roles (serif display 48-70px, sans UI 14-16px) (tokens.json core.font)."
     },
     "F9": {
-     "grade": "meets",
-     "evidence": "The declared --sl-spacing-3x-small..4x-large scale (10 steps, rem-based) is tokenised under core.spacing; measured paddings (24px buttons, 28px cards, 48px auth card sides) land on or near it."
+     "grade": "partly",
+     "evidence": "Declared --spacing 4px base plus the --container-* width set; no multi-step spacing scale beyond the single base unit."
     },
     "F10": {
-     "grade": "partly",
-     "evidence": "Radii are complete: declared --sl-border-radius small..x-large + circle (50%, kept under a non-standard 'other' type) + pill (9999px), plus measured card 8px/field 8px/search 12px/pill 1e+07px/chip/search-go. Border widths exist only as the declared input/panel 1px and measured hairlines — no width scale."
+     "grade": "meets",
+     "evidence": "Declared --radius 10px + 2xl/3xl/4xl; measured radius-full (CSS max) on pills, 26px nav pill, 24px footer/team card; 1px hairline borders (tokens.json core.radius, core.border)."
     },
     "F11": {
-     "grade": "meets",
-     "evidence": "Control heights measured per size: 48px dark pills (login-btn/profile-cta/continue), 40px buttons and icon circles (shot-cta/designer-cta/bookmark-btn/search-go), 47px fields, 54px search, 31px chips, header 92px desktop/58px mobile; --btn-height 40px and --btn-icon-size 16px declared; focus ring 3px width/1px offset declared plus measured 2px rings."
+     "grade": "partly",
+     "evidence": "Control heights measured (36px nav CTA, 48px hero/platform, 112px toggle segments, 24px menu glyph); the focus ring's blur is measured (3px) but its offset was not separately recorded."
     },
     "F12": {
-     "grade": "meets",
-     "evidence": "The declared --sl-shadow-x-small..x-large scale (5 levels) is tokenised, plus two measured use-shadows: the designer-card's faint 0 1px 10px rgba(18,22,25,.02) and the nav dropdown's 0 15px 50px rgba(27,32,50,.1) popover elevation."
+     "grade": "partly",
+     "evidence": "shadow-block on the team card + the 3px focus ring are measured; declared drop-shadow-sm/2xl exist; no 3-5 level elevation ramp tied to uses."
     },
     "F13": {
      "grade": "partly",
-     "evidence": "The declared --sl-transition-x-slow..x-fast duration scale (5 steps) is tokenised and per-component transitions were measured on real elements (0.05-0.4s: button colour flips, dropdown opacity/transform, menu open). No --sl-easing-* variables exist on the site (easing curves are measured, not declared) and the reduced-motion probe on the header recorded only the ambient delta the page paints."
+     "evidence": "Declared --animate-ping/pulse/spin + default transition duration/easing (0.15s, ease-in-out) (tokens.json core.motion); prefers-reduced-motion was probed on a nav link but reduced-motion behaviour is otherwise undocumented."
     },
     "F14": {
      "grade": "partly",
-     "evidence": "Scoped container widths declared and tokenised (layout.container-max-home 1650px, container-max-designers 1622px, container-gutter 72px), the --site-nav-* geometry and 9 z-index layers (--zi-* + --sl-z-index-* incl. resolved calc expressions). Breakpoints and grid column templates are not declared as variables and were not tokenised."
+     "evidence": "--container-* widths (320-1280px) declared, --breakpoint-lg 1024px declared, two viewports measured; intermediate breakpoints and z-index layers were not recorded."
     },
     "C1": {
-     "grade": "partly",
-     "evidence": "About 13 of 19 checklist components paint signed out: button (login-btn/hero-cta/profile-cta/designer-cta/job-apply/continue/wall-cta), icon button (shot-icon-btn/bookmark-btn/rail-btn/profile-icon-btn/m-menu-button), link (nav/footer/menu/auth), text field (email-field/home-search/search-input), select (sort-select/scope-select/filter-select/profile-sort/filter-sort), tabs (view-tab/profile-tab/filter-tab), menu (nav-dropdown, m-menu-open), card (shot/designer/job/story/auth/hero-media), list row (menu-link/job-card/story-card), avatar (profile-avatar/shot-author), badge (pro-badge/badge-select/promoted-tag). No textarea, checkbox, radio, switch, tooltip, dialog, toast or table paints on the public surface."
+     "grade": "missing",
+     "evidence": "The public signed-out surface exposes ~9 of the 19 checklist components (button, link, accordion, card, nav, menu, toggle, text display); text field, select, checkbox, radio, switch, tooltip, dialog, toast, table, avatar and badge never appear publicly - boundary documented."
     },
     "C2": {
-     "grade": "partly",
-     "evidence": "default/hover/focus-visible/pressed on every interactive entry (245 states over 87 components), focused and filled on the email field (sample text typed and deleted), opened on the Explore dropdown and mobile menu via their own controls. Disabled, loading and error states do not paint on the public surface — the product's state depth sits behind sign-in."
+     "grade": "meets",
+     "evidence": "Per-component default/hover/focus-visible/pressed plus the billing toggle's switched state (raw/components-computed.json, 28 components, 70 state crops)."
     },
     "C3": {
      "grade": "meets",
-     "evidence": "A real keyboard focus (Shift+Tab, Tab) was captured for 50 components; 47 draw the 2px #f3afe4 outline and 2 a shadow ring — components.md's Shared values lists each with its offset."
+     "evidence": "Keyboard focus captured on controls; the FAQ row's 3px 6% ink ring is the measured focus-visible reading."
     },
     "C4": {
-     "grade": "meets",
-     "evidence": "Component entries name the palette token beside every value that has one (e.g. '#ea4c89 color.measured.pink', '#ffffff color.neutral.0'); the component.* set in tokens.json carries the measured heights and widths as tokens."
+     "grade": "partly",
+     "evidence": "components.md entries name the matching declared token per value where one exists; many values are raw computed readings without a declared token twin."
     },
     "P1": {
      "grade": "partly",
-     "evidence": "Eight written patterns cover what exists: the site header/dropdown, the home hero and search strip, the shots feed and its sign-up wall, the shot detail, the profile and directory, jobs/search/stories, the auth split layout, and the footer/mobile shell — app shell, search+filtering and data display are covered; forms-and-validation, empty/loading/error, destructive confirmation, feedback and onboarding do not exist on the public surface."
+     "evidence": "patterns.md covers the floating-pill shell, hero+CTA, pricing toggle/cards, accordion FAQ, download CTAs and the mobile overlay menu; forms/validation, empty/loading/error, destructive and feedback patterns were never seen publicly."
     },
     "A1": {
      "grade": "partly",
-     "evidence": "Fonts are named with provenance and fallbacks (Mona Sans — Dribbble's licensed brand face, never ship it; Source Serif Pro on the jobs board, IBM Plex Mono served). No icon index — the extraction pass was not run; declared under layoutGaps."
+     "evidence": "Untitled Serif/Sans named with their Klim licence note and fallbacks; no standalone icon set was lifted (declared in layoutGaps)."
     },
     "K1": {
      "grade": "meets",
-     "evidence": "The README states what was captured (routes, widths, signed-out boundary), how (stylesheet harvest, computed-style measurement, bounded full-page shots) and a full What-to-distrust list (one light surface, two coexisting style systems, the animated hero, percentage/1e+07px radii, the zero-sized pink nav link, third-party feed content)."
-    },
-    "F15": {
-     "grade": "meets",
-     "evidence": "Script: all 8 pairs pass 4.5:1 across 2 themes; lowest 11.81:1 light muted (core.color.measured.muted) on page (core.color.measured.page)"
-    },
-    "F16": {
-     "grade": "meets",
-     "evidence": "Script: 422 of 422 tokens name their source"
-    },
-    "K2": {
-     "grade": "meets",
-     "evidence": "Script: 8 rules, each linking a screenshot or crop"
-    },
-    "K3": {
-     "grade": "meets",
-     "evidence": "Script: DESIGN.md matches a fresh generation"
+     "evidence": "README lists what was captured, the method and viewports, and the distrust list (no auth card, regional pricing, single theme, icon gap)."
     },
     "C5": {
      "grade": "na",
@@ -13122,22 +13106,37 @@
     "V2": {
      "grade": "na",
      "evidence": "Optional for a capture, and this product does not publish it."
+    },
+    "F15": {
+     "grade": "partly",
+     "evidence": "Script: primary text passes; secondary fails 2 pairs, worst 3.86:1 light muted (light.color.text.muted-foreground) on page (light.color.background.page)"
+    },
+    "F16": {
+     "grade": "meets",
+     "evidence": "Script: 177 of 177 tokens name their source"
+    },
+    "K2": {
+     "grade": "missing",
+     "evidence": "Script: no \"Do and don't\" section in the README"
+    },
+    "K3": {
+     "grade": "meets",
+     "evidence": "Script: DESIGN.md matches a fresh generation"
     }
    },
-   "name": "Dribbble",
-   "goodFor": "Design-community and portfolio pages: Mona Sans in three CSS eras (Rails mini-master, Vite/Shoelace, Algolia vendor), #0d0c22 ink on white with #6e6d7a muted text, the #ea4c89 Dribbble pink reserved for the search circle, hero accent word and PRO badges, 2px #f3afe4 pink focus rings, full-pill dark #0d0c22 action buttons, quiet 8px cards on 1px #f3f3f4 borders, shot grids capped by a sign-up wall, a serif-led jobs board, split-layout auth cards and a horizontally-scrolling category footer",
-   "url": "https://dribbble.com",
-   "captured": "2026-11-13",
+   "name": "Craft",
+   "goodFor": "Docs/notes marketing surfaces: Untitled Serif 400 display (54-70px page titles, 66px hero, 48px mobile) over a #fcf9f7 warm beige with #030302 ink everywhere, a shadcn-style semantic layer (--background/--card/--primary/--accent teal/--border hairlines), a floating 52px white nav pill, rounded-full pills on every CTA and the Yearly/Monthly billing toggle, a 3px 6%-ink focus ring, the black CTA's 75%-ink hover lift, and a 24px-radius black footer panel",
+   "url": "https://www.craft.do",
+   "captured": "2026-11-12",
    "themes": [
-    "light",
-    "dark"
+    "light"
    ],
    "platform": "web",
-   "category": "Directories",
+   "category": "Productivity",
    "reviewed": "2026-11-13",
    "reviewedPlatform": "web"
   }
  ],
  "base": "2026-10-16",
- "reviewMethod": "public-web capture review (re-applied after main merge)"
+ "reviewMethod": "Re-applying the craft review after merging main into the capture branch (audit snapshot index collision; grades unchanged)"
 }
