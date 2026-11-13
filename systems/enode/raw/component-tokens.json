@@ -199,7 +199,7 @@
         "masthead": {
           "var": "--text-masthead",
           "type": "dimension",
-          "responsive": null
+          "responsive": "fluid — apply `clamp(2.125rem, 1.211rem + 3.9vw, 4.25rem)`; the px value resolves it at 1440 x 900 (measured 34.586px at 390 x 844)"
         },
         "quote": {
           "var": "--text-quote",
@@ -219,7 +219,7 @@
         "standfirst": {
           "var": "--text-standfirst",
           "type": "dimension",
-          "responsive": null
+          "responsive": "fluid — apply `clamp(1.5rem, .866rem + 2.7vw, 2.5rem)`; the px value resolves it at 1440 x 900"
         },
         "measured": {
           "masthead": {
@@ -939,10 +939,10 @@
     },
     "radius": {
       "full": {
-        "value": "3.35544e+07px",
-        "type": "other",
+        "value": "33554400px",
+        "type": "dimension",
         "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --radius-full",
-        "description": "The declared `--radius-full`."
+        "description": "The declared `--radius-full` — `calc(infinity * 1px)`, which Chromium resolves to 33554400px (effectively a full pill)."
       },
       "lg": {
         "value": "10px",
@@ -987,10 +987,10 @@
         "description": "The 4px nav-pill radius (rounded-sm → radius-sm)."
       },
       "menu": {
-        "value": "0px",
+        "value": "{radius.lg}",
         "type": "dimension",
-        "source": "computed borderTopLeftRadius of nav-panel default (raw/components-computed.json)",
-        "description": "The mega-menu panel corner radius."
+        "source": "the painted radius of nav-panel's rounded child default (raw/components-computed.json paint list); matches declared --radius-lg",
+        "description": "The mega-menu panel corner radius — read from the painted rounded-lg child; the wrapper itself is unrounded."
       },
       "statCard": {
         "value": "{radius.md}",
@@ -1178,7 +1178,7 @@
     },
     "motion": {
       "control": {
-        "value": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events 0.15s cubic-bezier(0.4, 0, 0.2, 1)",
+        "value": "color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1), transform 0.15s cubic-bezier(0.4, 0, 0.2, 1), translate 0.15s cubic-bezier(0.4, 0, 0.2, 1), scale 0.15s cubic-bezier(0.4, 0, 0.2, 1), rotate 0.15s cubic-bezier(0.4, 0, 0.2, 1), filter 0.15s cubic-bezier(0.4, 0, 0.2, 1), -webkit-backdrop-filter 0.15s cubic-bezier(0.4, 0, 0.2, 1), backdrop-filter 0.15s cubic-bezier(0.4, 0, 0.2, 1), display 0.15s cubic-bezier(0.4, 0, 0.2, 1), content-visibility 0.15s cubic-bezier(0.4, 0, 0.2, 1), overlay 0.15s cubic-bezier(0.4, 0, 0.2, 1), pointer-events 0.15s cubic-bezier(0.4, 0, 0.2, 1)",
         "type": "other",
         "source": "computed transition of nav-cta default (raw/components-computed.json); the declared --default-transition-duration/.4-0-.2-1 pair",
         "description": "The 0.15s transition on pills and controls."
@@ -1668,19 +1668,19 @@
       "ink": {
         "value": "{color.gray.800}",
         "type": "color",
-        "source": "computed color of hero-h1 default (raw/components-computed.json); matches declared color.gray.800",
+        "source": "computed color of hero-h1 default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared color.gray.800",
         "description": "The near-black ink on display copy, headings and card text."
       },
       "nav-ink": {
         "value": "{color.nav.ink.default}",
         "type": "color",
-        "source": "computed color of nav-link default (raw/components-computed.json); matches declared color.nav.ink.default",
+        "source": "computed color of nav-link default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared color.nav.ink.default",
         "description": "The translucent nav-pill ink."
       },
       "stat-ink": {
         "value": "{color.gray.800}",
         "type": "color",
-        "source": "computed color of stat-card default (raw/components-computed.json); matches declared color.gray.800",
+        "source": "computed color of stat-card default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared color.gray.800",
         "description": "The stat-card figure ink."
       }
     },
@@ -1694,16 +1694,16 @@
       "cta-ink": {
         "value": "{color.white}",
         "type": "color",
-        "source": "computed color of nav-cta default (raw/components-computed.json); matches declared color.white",
+        "source": "computed color of nav-cta default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared color.white",
         "description": "The white text on the dark CTA pill."
       }
     },
     "border": {
       "cta-outline": {
-        "value": "{color.gray.800}",
+        "value": "{color.border.primary.default}",
         "type": "color",
-        "source": "computed borderTopColor of hero-cta2 default (raw/components-computed.json); matches declared color.gray.800",
-        "description": "The hairline outline of the 'Explore our platform' secondary pill."
+        "source": "the inset box-shadow layer painted on hero-cta2 default (raw/components-computed.json); matches declared color.border.primary.default",
+        "description": "The translucent inset ring of the 'Explore our platform' secondary pill — a 1px inset shadow; its border-width is 0."
       },
       "focus-ring": {
         "value": "{color.brand.225}",
@@ -2210,10 +2210,10 @@
     },
     "text": {
       "ink": {
-        "value": "{color.gray.800}",
+        "value": "{color.enodeGreen}",
         "type": "color",
-        "source": "computed color of demo-card default (raw/components-computed.json); matches declared color.gray.800",
-        "description": "The light ink inside the dark showcase (BALANCING/diagram labels)."
+        "source": "computed color of demo-card default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared color.enodeGreen",
+        "description": "The brand-green label ink inside the dark showcase (the demo diagram's PRODUCING/CHARGING/BALANCING metrics)."
       }
     }
   },

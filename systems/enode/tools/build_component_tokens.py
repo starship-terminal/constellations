@@ -182,9 +182,16 @@ def declared(name):
 
 def decl(name, ty="dimension"):
     v = declared(name)
-    if ty == "dimension" and not re.fullmatch(r"-?\d+(\.\d+)?(px|rem)", str(v).strip()):
-        ty = "other"
-    return lit(v, ty, f"{DECL_SRC}: {name}", f"The declared `{name}`.")
+    desc = f"The declared `{name}`."
+    if ty == "dimension":
+        nv = norm_len(v)
+        if nv != v:
+            raw = (RL.get(name) or {}).get("raw")
+            desc = f"The declared `{name}` — `{raw}`, which Chromium resolves to {nv} (effectively a full pill)."
+            v = nv
+        if not re.fullmatch(r"-?\d+(\.\d+)?(px|rem)", str(v).strip()):
+            ty = "other"
+    return lit(v, ty, f"{DECL_SRC}: {name}", desc)
 
 
 COLOR_V = re.compile(r"(#[0-9a-fA-F]{3,8}|rgba?\([^)]*\)|hsla?\([^)]*\)|(ok)?lab\([^)]*\)|(ok)?lch\([^)]*\)|color-mix\([^)]*\))")
@@ -204,6 +211,43 @@ def ratio(name):
         return lit(round(float(m.group(1)) / float(m.group(2)), 4), "number",
                    f"{DECL_SRC}: {name}", f"The declared `{name}` line-height ratio.")
     return decl(name, "other")
+
+
+def norm_len(v):
+    """Exponential lengths become ordinary pixel strings: Chromium serialises
+    `calc(infinity * 1px)` as `3.35544e+07px`, which is a real length, not an
+    `other` — it is how the site spells a full pill."""
+    m = re.fullmatch(r"(-?[\d.]+[eE][+-]?\d+)(px|rem)", str(v).strip())
+    if not m:
+        return v
+    return f"{float(m.group(1)):f}".rstrip("0").rstrip(".") + m.group(2)
+
+
+def painted(comp, state, key):
+    """A reading from the kit's paint list — the layers actually painted
+    (rounded children, pseudo-elements, inset shadows) rather than the
+    wrapper's computed style, which is often an unpainted positioning box.
+    An entry whose recorded size matches the element's own rect wins."""
+    c = C[comp]["states"][state]
+    entries = [p for p in c.get("paint") or [] if p.get(key)]
+    if not entries:
+        raise KeyError(key)
+    rect = c.get("rect") or {}
+    for p in entries:
+        m = re.fullmatch(r"([\d.]+)x([\d.]+)", str(p.get("size") or ""))
+        if m and abs(float(m.group(1)) - rect.get("w", -9)) <= 1 and abs(float(m.group(2)) - rect.get("h", -9)) <= 1:
+            return p[key]
+    return entries[0][key]
+
+
+def inset_shadow_color(comp, state):
+    """The colour of the painted inset (hairline) box-shadow layer — how the
+    site draws a 'border' when border-width is 0."""
+    sh = painted(comp, state, "shadow")
+    m = re.search(COLOR_V.pattern + r"(?:\s+-?[\d.]+px){2,4}\s+inset", sh)
+    if not m:
+        raise KeyError("insetShadowColor")
+    return m.group(1)
 
 
 # ------------------------------------------------------------------- fonts
@@ -242,10 +286,26 @@ RESPONSIVE_SIZE = {
     "--text-quote": "1.125rem under 48rem",
     "--text-quote-lg": "1.5rem under 48rem",
 }
+# Small-viewport sizes measured on the 390px phone capture.
+MOBILE_MEASURED = {}
+try:
+    MOBILE_MEASURED["masthead"] = st("m-hero-h1", "default")["fontSize"]
+except KeyError:
+    pass
 sizes = SPEC["core"].setdefault("font", {}).setdefault("size", {})
 for name in sorted(k for k in R if re.fullmatch(r"--text-[a-z0-9]+(-[a-z0-9]+)*", k)):
     key = name[len("--text-"):]
-    sizes[key] = var(name, "dimension", responsive=RESPONSIVE_SIZE.get(name))
+    raw = str((RL.get(name) or {}).get("raw") or "")
+    responsive = RESPONSIVE_SIZE.get(name)
+    if responsive is None and raw and not re.fullmatch(r"-?[\d.]+(px|rem)", raw):
+        # The declaration is a fluid expression, not a fixed step: the exported
+        # px is only its resolution at the 1440px capture viewport, so the
+        # expression is preserved here and applying it reproduces smaller
+        # viewports.
+        responsive = f"fluid — apply `{raw}`; the px value resolves it at 1440 x 900"
+        if key in MOBILE_MEASURED:
+            responsive += f" (measured {MOBILE_MEASURED[key]} at 390 x 844)"
+    sizes[key] = var(name, "dimension", responsive=responsive)
 
 lineheights = SPEC["core"].setdefault("font", {}).setdefault("lineHeight", {})
 for name in sorted(k for k in R if k.startswith("--leading-")):
@@ -316,7 +376,7 @@ radius_alias = {}
 radii = SPEC["core"].setdefault("radius", {})
 for name in sorted(k for k in R if re.fullmatch(r"--radius-[a-z]+", k)):
     radii[name[len("--radius-"):]] = decl(name)
-    radius_alias[R[name]] = name[len("--radius-"):]
+    radius_alias[norm_len(R[name])] = name[len("--radius-"):]
 
 containers = SPEC["core"].setdefault("container", {})
 for name in sorted(k for k in R if re.fullmatch(r"--container-[a-z0-9]+", k)):
@@ -413,8 +473,8 @@ for root, theme, key, comp, state, prop, group, desc in [
      "The dark fill of the 'Talk to our team' pill CTAs."),
     (sem, "light", "cta-ink", "nav-cta", "default", "color", "action",
      "The white text on the dark CTA pill."),
-    (sem, "light", "cta-outline", "hero-cta2", "default", "borderTopColor", "border",
-     "The hairline outline of the 'Explore our platform' secondary pill."),
+    (sem, "light", "cta-outline", "hero-cta2", "default", "insetShadowColor", "border",
+     "The translucent inset ring of the 'Explore our platform' secondary pill — a 1px inset shadow; its border-width is 0."),
     (sem, "light", "focus-ring", "nav-menu-btn", "focus-visible", "outlineColor", "border",
      "The brand-green keyboard focus ring (focus-visible:outline-control-focus-ring)."),
     (sem, "light", "stat-ink", "stat-card", "default", "color", "text",
@@ -422,11 +482,22 @@ for root, theme, key, comp, state, prop, group, desc in [
     (dsem, "dark", "panel", "dark-showcase", "default", "backgroundColor", "background",
      "The near-black showcase panel fill inside the light page."),
     (dsem, "dark", "ink", "demo-card", "default", "color", "text",
-     "The light ink inside the dark showcase (BALANCING/diagram labels)."),
+     "The brand-green label ink inside the dark showcase (the demo diagram's PRODUCING/CHARGING/BALANCING metrics)."),
 ]:
     try:
-        raw = st(comp, state)[prop]
-        src = f"computed {prop} of {comp} {state} (raw/components-computed.json)"
+        if prop == "color":
+            # The element's own `color` is often inherited onto an unpainted
+            # wrapper; the kit's first-text-node reading is the painted ink.
+            raw = ts(comp, state, "color")
+            src = f"computed color of {comp} {state} — the first text node's reading where the kit recorded one (raw/components-computed.json)"
+        elif prop == "insetShadowColor":
+            raw = inset_shadow_color(comp, state)
+            src = f"the inset box-shadow layer painted on {comp} {state} (raw/components-computed.json)"
+        else:
+            raw = st(comp, state)[prop]
+            src = f"computed {prop} of {comp} {state} (raw/components-computed.json)"
+        if raw in (None, ""):
+            raise KeyError(prop)
         root.setdefault(group, {})[key] = semcolor(raw, src, desc, theme)
     except KeyError:
         pass
@@ -469,13 +540,17 @@ for key, comp, state, desc in [
 for key, comp, state, prop, desc in [
     ("cta", "nav-cta", "default", "borderTopLeftRadius", "The fully-rounded CTA pill radius (radius-full)."),
     ("navPill", "nav-link", "default", "borderTopLeftRadius", "The 4px nav-pill radius (rounded-sm → radius-sm)."),
-    ("menu", "nav-panel", "default", "borderTopLeftRadius", "The mega-menu panel corner radius."),
+    ("menu", "nav-panel", "default", "paint:radius", "The mega-menu panel corner radius — read from the painted rounded-lg child; the wrapper itself is unrounded."),
     ("statCard", "stat-card", "default", "borderTopLeftRadius", "The stat-card corner radius."),
     ("field", "field-firstname", "default", "borderTopLeftRadius", "The contact field radius."),
 ]:
     try:
-        v = st(comp, state)[prop]
-        src = f"computed {prop} of {comp} {state} (raw/components-computed.json)"
+        if prop == "paint:radius":
+            v = norm_len(painted(comp, state, "radius"))
+            src = f"the painted radius of {comp}'s rounded child {state} (raw/components-computed.json paint list)"
+        else:
+            v = norm_len(st(comp, state)[prop])
+            src = f"computed {prop} of {comp} {state} (raw/components-computed.json)"
         dkey = radius_alias.get(v)
         if dkey:
             radii[key] = lit(f"{{radius.{dkey}}}", "dimension", src + f"; matches declared --radius-{dkey}", desc)
@@ -491,7 +566,12 @@ try:
     s = st("nav-cta", "default")
     dur, ease = s.get("transitionDuration"), s.get("transitionTimingFunction")
     if dur and dur != "0s":
-        mo["control"] = lit(f"{s.get('transitionProperty', 'all')} {dur} {ease or ''}".strip(), "other",
+        # A CSS transition list pairs every comma entry with its own timing:
+        # appending one duration after the whole property list would leave the
+        # earlier entries at the 0s default.
+        props = [p.strip() for p in s.get("transitionProperty", "all").split(",") if p.strip()]
+        val = ", ".join(f"{p} {dur} {ease or ''}".strip() for p in props)
+        mo["control"] = lit(val, "other",
             "computed transition of nav-cta default (raw/components-computed.json); the declared --default-transition-duration/.4-0-.2-1 pair",
             "The 0.15s transition on pills and controls.")
 except KeyError:

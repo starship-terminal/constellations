@@ -84,7 +84,7 @@ table.cmp td, table.cmp th { border: 1px solid var(--color-neutral-hairline, #dd
       <div class="tile" style="border-radius:var(--radius-md,6px);background:var(--color-card-background-default,rgba(255,255,255,.041));border:1px solid var(--color-card-hairline-default,rgba(255,255,255,.036));color:var(--color-foreground-primary,rgba(237,237,237,.97))"><b style="color:var(--color-foreground-primary,rgba(237,237,237,.97))">Asset connectivity</b><span class="sub" style="color:var(--color-foreground-secondary,rgba(237,237,237,.74))">One API for 1,000+ device models across 100+ brands.</span></div>
       <div class="tile" style="border-radius:var(--radius-md,6px);background:var(--color-card-background-default,rgba(255,255,255,.041));border:1px solid var(--color-card-hairline-default,rgba(255,255,255,.036));color:var(--color-foreground-primary,rgba(237,237,237,.97))"><b style="color:var(--color-visual-diagram-accent,#b0f87c)">BALANCING&nbsp;&nbsp;9.24 MW</b><span class="sub" style="color:var(--color-foreground-secondary,rgba(237,237,237,.74))">Scoped [data-mode="dark"] showcase</span></div>
     </div>
-    <div style="margin-top:18px"><span class="btn" style="height:32px;border-radius:var(--radius-cta,999px);background:var(--color-button-ink,#252322);color:#fff;padding:0 14px;font-size:14px">Talk to our team</span></div>
+    <div style="margin-top:18px"><span class="btn primary">Talk to our team</span></div>
   </div>
 
   <h2 class="sh">Palette</h2>
@@ -170,9 +170,14 @@ const resolveVal = (v, depth) => {
   if (depth > 6 || typeof v !== 'string') return v;
   const m = v.match(/^\{(.+)\}$/);
   if (!m) return v;
-  let node = TOK, seen = [];
-  for (const k of m[1].split('.')) { node = node && node[k]; seen.push(k); }
-  return node && node.v !== undefined ? resolveVal(node.v, (depth || 0) + 1) : v;
+  // Aliases are set-relative: {font.size.body} and the palette scales live
+  // under TOK.core, semantic roles under TOK.light / TOK.dark. Try each root.
+  for (const root of [TOK.core, TOK.light, TOK.dark, TOK]) {
+    let node = root;
+    for (const k of m[1].split('.')) node = node && node[k];
+    if (node && node.v !== undefined) return resolveVal(node.v, (depth || 0) + 1);
+  }
+  return v;
 };
 
 (function type() {

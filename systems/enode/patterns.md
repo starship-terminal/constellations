@@ -24,7 +24,7 @@ platform.enode.com/login is a different product that does not share this token l
 
 ## Mobile (390px)
 
-The phone surface keeps the same system: a 60px top bar (`component.mobile-topbar-height`), the wordmark and a 36px round menu button (`component.mobile-menu-size`) that toggles a full-viewport nav overlay (`m-drawer`, 390 x 844). The hero drops to a smaller masthead step (`font.size.measured.masthead` resolves to `font.size.masthead` under the mobile `@media` overrides), and the CTAs keep the full-pill profile.
+The phone surface keeps the same system: a 60px top bar (`component.mobile-topbar-height`), the wordmark and a 36px round menu button (`component.mobile-menu-size`) that toggles a full-viewport nav overlay (`m-drawer`, 390 x 844). The hero masthead is fluid, not stepped: `font.size.masthead` declares `clamp(2.125rem, 1.211rem + 3.9vw, 4.25rem)` (kept on `$extensions.responsive`), which resolves to the measured 34.586px at 390px, and the CTAs keep the full-pill profile.
 
 ## Motion and focus
 

@@ -48,7 +48,7 @@ Each rule links the screenshot or crop that shows it, under [Do and don't](#do-a
 | accent | #b0f87c `light.color.visual.diagram.accent` | #b0f87c `dark.color.visual.diagram.accent` |
 | border | rgba(21, 20, 19, 0.165) `light.color.border.primary.default` | rgba(255, 255, 255, 0.584) `dark.color.border.primary.default` |
 
-Fonts: `core.font.family.sans` is Enode Sans, then 7 fallbacks; `core.font.family.mono` is Enode Mono, then 8 fallbacks. Scales, counted as [DESIGN.md](DESIGN.md) holds them: no type styles under `core.typography`, 9 radius steps (`core.radius`), 1 spacing step (`core.spacing`).
+Fonts: `core.font.family.sans` is Enode Sans, then 7 fallbacks; `core.font.family.mono` is Enode Mono, then 8 fallbacks. Scales, counted as [DESIGN.md](DESIGN.md) holds them: no type styles under `core.typography`, 11 radius steps (`core.radius`), 1 spacing step (`core.spacing`).
 
 ### Using components
 
@@ -146,5 +146,5 @@ python3 tools/build_component_tokens.py                                         
 python3 tools/build_tokens.py                                                              # -> tokens.json
 python3 tools/build_style_guide.py                                                         # -> style-guide.html
 python3 tools/build_components_md.py                                                       # -> components.md
-make design-md grade check                                                                 # repo-level: DESIGN.md, health, validation
+make -C ../.. design-md grade check                                                        # repo-level (the Makefile is at the root): DESIGN.md, health, validation
 ```
