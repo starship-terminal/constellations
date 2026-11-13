@@ -795,5 +795,13 @@
       "AI Tool"
     ],
     "reason": "catalog.json describes an AI health product: the personal-AI-doctor marketing pages and the signed-out chat-adjacent surfaces."
+  },
+  {
+    "referenceId": "systems:docusign",
+    "groupId": "web-categories",
+    "labels": [
+      "Productivity"
+    ],
+    "reason": "catalog.json describes an agreement and e-signature platform: marketing pages, pricing and a signed-out public signature generator."
   }
 ]
