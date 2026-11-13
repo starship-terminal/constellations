@@ -1,7 +1,7 @@
 {
  "date": "2026-11-13",
  "rubric": "4",
- "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): manual review of the harvested DIG/DWG token layers (raw/css-vars.json on five probe scopes), the 139 measured component states (raw/components-computed.json, components.md), the 27 screenshots and the package docs against the web wording of scorecard/criteria.json; scripted criteria left to grade.py",
+ "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): read the package (tokens.json, components.md, patterns.md, README), the raw readings and the 31 screenshots; graded against scorecard/criteria.json web wording",
  "systems": [
   {
    "slug": "brilliant",
@@ -11593,137 +11593,8 @@
    "category": "Productivity",
    "reviewed": "2026-11-12",
    "reviewedPlatform": "web"
-  },
-  {
-   "slug": "dropbox",
-   "grades": {
-    "F1": {
-     "grade": "partly",
-     "evidence": "core.color.brand carries a coconut ramp (default/200/300/500/600 = five usable steps from #ffffff through #eee9e2) and a graphite ramp (default/200/300/500/600, #2b2929 to #161313), and every DIG role colour resolves as base/state-1/state-2 variants. But the accent hues are single named swatches — azalea, banana, canopy, cloud, crimson, gold, lime, navy, ocean, orchid and more at one step each — and there is no blue ramp behind #0061fe beyond the three state variants, so not every hue has an ~10-step ramp."
-    },
-    "F2": {
-     "grade": "meets",
-     "evidence": "light.page (color.background.base), light.surface.default/raised/sunken, color.background.overlay plus utility.overlay (scrim role 'scrim' top-level) all exist in the light set; each dwg-theme scope rebinds background/overlay per section (light.dwg.coconut|graphite|navy)."
-    },
-    "F3": {
-     "grade": "meets",
-     "evidence": "light.text (color.text.base), light.muted (text.subtle), color.disabled.base/on.base/on.surface (disabled), color.primary.on.base and primary-cta.on.base (on-accent) and the top-level link role all exist; each dwg scope declares standard.text and inverse variants."
-    },
-    "F4": {
-     "grade": "meets",
-     "evidence": "light.border.default/subtle.default/bold plus the focus roles: color.utility.focus.ring and the measured 3px #428bff shadow ring (core.measured.focus-ring); each dwg scope rebinds border per section."
-    },
-    "F5": {
-     "grade": "meets",
-     "evidence": "light.accent.default/hover/pressed alias color.primary.base.default/state-1/state-2 (#0061fe/#004dc7/#0044af declared) and the painted CTA ladder is measured separately (core.measured.cta-fill #0061fe -> #0057e5 -> #0050d0, matching --dwg-theme__color__primary__button--*)."
-    },
-    "F6": {
-     "grade": "partly",
-     "evidence": "alert (danger), warning, attention and success families each carry base/state variants, on-base, on-surface and surface variants, plus dwg per-theme attention/disabled roles — but there is no info/neutral-status family in the harvested DIG layer, so three of the four statuses are covered."
-    },
-    "F7": {
-     "grade": "partly",
-     "evidence": "Every DIG colour role resolves in both the bright scope (light set) and the declared vis2023--dark scope (dark set, 168 tokens), but the dark scope is declared-only — it never paints on the signed-out surface — so parity is proven for the declared roles, not for a theme a user can see; the dwg-theme section palettes exist only in light (that is how the product ships them)."
-    },
-    "F8": {
-     "grade": "meets",
-     "evidence": "core.font.family.title (Sharp Grotesk), .body (Atlas Grotesk Web), .mono plus role- variants with full fallback stacks; a ramp of title-small..xlarge (16-40px), text-xsmall..xlarge (10-20px), action-small..xlarge (11-15px) with line-height, weight (400/500) and letter-spacing steps; core.typography holds 12 named composites (title-*, text-*, action-*) and measured display steps sit in core.font.size.measured-*."
-    },
-    "F9": {
-     "grade": "meets",
-     "evidence": "core.spacing.dimension-* is the declared --dig-spacing__dimension__* scale on an 8px base (4-128px steps) plus micro/macro groups; every measured box lands on it (40px buttons, 48px fields, 72px nav)."
-    },
-    "F10": {
-     "grade": "partly",
-     "evidence": "core.radius.* covers 4-24px plus a 999px pill, and painted radii were measured (CTAs 16px, cards 12-24px, nav-cta 12px, sso-button 4px); border widths are not a declared family — the only widths are the single 1px borders and the 3px focus-ring utility — so widths are present but not a scale."
-    },
-    "F11": {
-     "grade": "meets",
-     "evidence": "Control heights measured per size: 40px nav/secondary CTAs, 48px email field and mobile menu button, 55px plan/register CTAs, 32px icon button; the focus ring is a 3px #428bff shadow (core.measured.focus-ring, layout.focusring-width); nav heights 72px desktop / 48px mobile."
-    },
-    "F12": {
-     "grade": "partly",
-     "evidence": "light.shadow and dark.shadow resolve the declared --dig-utilities__boxshadow__* stack (focus-ring, inset, raised, floating — about four levels) but Dropbox's marketing surface is flat: the measured cards and menu panels paint hairline borders, not elevation, so the levels exist in the token layer more than on the page."
-    },
-    "F13": {
-     "grade": "partly",
-     "evidence": "core.duration.* and core.easing.* hold the declared --dig-motion__* scale and a 0.1-0.125s control transition was measured on real elements (nav links, CTAs); no reduced-motion behaviour was observable or declared on the public surface, so the 'what changes' half is absent."
-    },
-    "F14": {
-     "grade": "partly",
-     "evidence": "core.layout carries the declared --dig-breakpoint__* set, the 3px focus-ring utility and measured nav/panel dimensions, but content widths, grid columns and z-index layers were not declared as tokens on the public surface and were not independently derived."
-    },
-    "C1": {
-     "grade": "missing",
-     "evidence": "The public surface paints about eight of the nineteen checklist components: button (nav-cta/hero-cta/plan-cta/biz-cta/sign-cta/sso/register/continue), icon button (carousel arrow), link (nav-link/menu-link/text-link/footer-link), text field (email-field/register-email), radio (billing-radio), menu (mega-menu + mobile menu), card (plan/feat/auth/bands) and a list row (menu rows/nav items). No select, textarea, checkbox, switch, tabs, tooltip, dialog, toast, avatar or badge paints signed out — the product's component breadth lives behind the auth boundary."
-    },
-    "C2": {
-     "grade": "partly",
-     "evidence": "Every interactive entry was measured in default, hover, focus-visible and a CDP-forced pressed state (139 states over 53 components), plus opened (mega-menu, mobile menu) and toggled (Billed-monthly radio); disabled, error and loading states never paint on the public surface and the mega-menu's hover-only links could not hold focus/pressed (documented gap)."
-    },
-    "C3": {
-     "grade": "meets",
-     "evidence": "Keyboard focus paints a 3px #428bff box-shadow ring, measured on nav-cta, nav links, billing-radio and the email field (crops nav-cta-focus-visible, billing-radio-focus-visible, email-field-focused); it is tokenised as core.measured.focus-ring and light.focus."
-    },
-    "C4": {
-     "grade": "meets",
-     "evidence": "components.md entries write each measured value with its token ref in backticks (e.g. '#0061fe color.brand.status.attention.border.default'), so specs read as token + literal, and tokens.json's light.component.* group carries the same readings as token paths."
-    },
-    "P1": {
-     "grade": "partly",
-     "evidence": "patterns.md writes the patterns the public surface actually composes — the header/mega-menu shell, the hero, plans/pricing with the billing radio, the auth cards, the footer and the mobile collapse — but the product-side patterns in the checklist (forms and validation, empty/loading/error, destructive confirmation, search) live behind the sign-in boundary and are honestly absent rather than invented."
-    },
-    "A1": {
-     "grade": "partly",
-     "evidence": "Fonts are named with full stacks and roles (Sharp Grotesk display, Atlas Grotesk Web body, lucida-grande auth sheet) and served paths are recorded, but no licence was determinable and no standalone icon set was lifted this pass (recorded as a layoutGap; glyphs are visible in the crops)."
-    },
-    "K1": {
-     "grade": "meets",
-     "evidence": "The README's opening block names the domain, date, viewports and route list; 'How the values were read' documents the stylesheet harvest, probe scopes, measurement and screenshot passes; 'What to distrust' lists the auth boundary, the declared-vs-painted CTA and dark-scope discrepancies, the older auth sheet, the hover-only menu and A/B variance."
-    },
-    "F15": {
-     "grade": "meets",
-     "evidence": "Script: all 8 pairs pass 4.5:1 across 2 themes; lowest 5.01:1 light muted (light.muted) on surface (light.surface.default)"
-    },
-    "F16": {
-     "grade": "meets",
-     "evidence": "Script: 708 of 708 tokens name their source"
-    },
-    "K2": {
-     "grade": "meets",
-     "evidence": "Script: 10 rules, each linking a screenshot or crop"
-    },
-    "K3": {
-     "grade": "meets",
-     "evidence": "Script: DESIGN.md matches a fresh generation"
-    },
-    "C5": {
-     "grade": "na",
-     "evidence": "Optional for a capture, and this product does not publish it."
-    },
-    "V1": {
-     "grade": "na",
-     "evidence": "Optional for a capture, and this product does not publish it."
-    },
-    "V2": {
-     "grade": "na",
-     "evidence": "Optional for a capture, and this product does not publish it."
-    }
-   },
-   "name": "Dropbox",
-   "goodFor": "Cloud-storage/productivity marketing and product landings: a shipped DIG token layer (--dig-color__* roles, --dig-type__* Sharp Grotesk/Atlas Grotesk ramp, 8px spacing, 4-24px radii, --dig-motion__*) over the --DWG__TEMP__color__* brand palette rebound per section by dwg-theme--coconut/graphite/navy — coconut #f7f5f2 fields, #0061fe painted CTAs (#0057e5/#0050d0 states) despite a declared black primary-cta role, 3px #428bff focus-shadow rings, a hover-driven Products mega-menu, and an older lucida-grande auth sheet on /login and /register",
-   "url": "https://www.dropbox.com",
-   "captured": "2026-11-13",
-   "themes": [
-    "light",
-    "dark"
-   ],
-   "platform": "web",
-   "category": "Productivity",
-   "reviewed": "2026-11-13",
-   "reviewedPlatform": "web"
   }
  ],
  "base": "2026-10-16",
- "reviewMethod": "manual review of the harvested DIG/DWG token layers (raw/css-vars.json on five probe scopes), the 139 measured component states (raw/components-computed.json, components.md), the 27 screenshots and the package docs against the web wording of scorecard/criteria.json; scripted criteria left to grade.py"
+ "reviewMethod": "read the package (tokens.json, components.md, patterns.md, README), the raw readings and the 31 screenshots; graded against scorecard/criteria.json web wording"
 }

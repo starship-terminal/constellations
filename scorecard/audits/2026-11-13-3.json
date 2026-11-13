@@ -1,7 +1,7 @@
 {
  "date": "2026-11-13",
  "rubric": "4",
- "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): manual review of the harvested DIG/DWG token layers (raw/css-vars.json on five probe scopes), the 139 measured component states (raw/components-computed.json, components.md), the 27 screenshots and the package docs against the web wording of scorecard/criteria.json; scripted criteria left to grade.py",
+ "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): Re-reviewed dock's C2/C3/F8 against the saved evidence after a Greptile pass on PR #507: repaired the shadow-DOM focus-via labels (8 of 9 'focus failed' reads painted the real ink ring), confirmed 14 of 19 landed focuses draw a ring and 5 show no measured change, and counted 14 distinct exported type sizes",
  "systems": [
   {
    "slug": "brilliant",
@@ -11595,113 +11595,113 @@
    "reviewedPlatform": "web"
   },
   {
-   "slug": "dropbox",
+   "slug": "dock",
    "grades": {
     "F1": {
      "grade": "partly",
-     "evidence": "core.color.brand carries a coconut ramp (default/200/300/500/600 = five usable steps from #ffffff through #eee9e2) and a graphite ramp (default/200/300/500/600, #2b2929 to #161313), and every DIG role colour resolves as base/state-1/state-2 variants. But the accent hues are single named swatches — azalea, banana, canopy, cloud, crimson, gold, lime, navy, ocean, orchid and more at one step each — and there is no blue ramp behind #0061fe beyond the three state variants, so not every hue has an ~10-step ramp."
+     "evidence": "The blue the actions paint has real steps — blue/blue-hover/blue-pressed measured off the controls plus blue-deep (band), blue-light/-soft/-tint/sky declared hues — and the shared shell declares an _anchor colour ramp (captured in raw/css-vars.json). Neutrals have ink, muted, white, two wash steps, hairline and border. The illustration accent hues (green, pink, purple, sky, warm, yellow) are single declared values, not ramps — a marketing palette, not a 10-step ramp set."
     },
     "F2": {
-     "grade": "meets",
-     "evidence": "light.page (color.background.base), light.surface.default/raised/sunken, color.background.overlay plus utility.overlay (scrim role 'scrim' top-level) all exist in the light set; each dwg-theme scope rebinds background/overlay per section (light.dwg.coconut|graphite|navy)."
+     "grade": "partly",
+     "evidence": "light carries surface.page (white) and surface.subtle (#f7f7f8 wash); dark (the painted islands) adds surface.band (#002fa6 hero) and surface.pane (#242d7d signup testimonial). No overlay or scrim role paints on the public surface — the mega-menu paints an opaque 19px panel, not a scrimmed overlay."
     },
     "F3": {
-     "grade": "meets",
-     "evidence": "light.text (color.text.base), light.muted (text.subtle), color.disabled.base/on.base/on.surface (disabled), color.primary.on.base and primary-cta.on.base (on-accent) and the top-level link role all exist; each dwg scope declares standard.text and inverse variants."
+     "grade": "partly",
+     "evidence": "light carries text.primary (#121722), text.muted and text.on-action (white on blue); dark carries white roles. No disabled text role exists on the public surface and links paint the default ink — no link role."
     },
     "F4": {
-     "grade": "meets",
-     "evidence": "light.border.default/subtle.default/bold plus the focus roles: color.utility.focus.ring and the measured 3px #428bff shadow ring (core.measured.focus-ring); each dwg scope rebinds border per section."
+     "grade": "partly",
+     "evidence": "light carries border.hairline (#dedfe3 bars/dividers) and border.default, plus the measured 0.5px/1px inset ring values; focus.ring.default is the measured 2px rgba(18,23,34,0.6) outline. No named 'strong' border role — the hairline is the only painted border weight."
     },
     "F5": {
      "grade": "meets",
-     "evidence": "light.accent.default/hover/pressed alias color.primary.base.default/state-1/state-2 (#0061fe/#004dc7/#0044af declared) and the painted CTA ladder is measured separately (core.measured.cta-fill #0061fe -> #0057e5 -> #0050d0, matching --dwg-theme__color__primary__button--*)."
+     "evidence": "action.primary.default #0068f9, .hover #0060eb and .pressed #005fe4, each measured off the real controls (nav-cta, hero-cta, plan-cta) across forced CDP states; the blue-band ghost states (transparent -> rgba(255,255,255,0.06) -> 0.1) sit in dark.action.ghost."
     },
     "F6": {
-     "grade": "partly",
-     "evidence": "alert (danger), warning, attention and success families each carry base/state variants, on-base, on-surface and surface variants, plus dwg per-theme attention/disabled roles — but there is no info/neutral-status family in the harvested DIG layer, so three of the four statuses are covered."
+     "grade": "missing",
+     "evidence": "No success/warning/danger/info roles are declared or painted on the signed-out marketing and auth surfaces — the only accent hues are single-value illustration colours (brand.green/pink/purple/...). Nothing to capture."
     },
     "F7": {
      "grade": "partly",
-     "evidence": "Every DIG colour role resolves in both the bright scope (light set) and the declared vis2023--dark scope (dark set, 168 tokens), but the dark scope is declared-only — it never paints on the signed-out surface — so parity is proven for the declared roles, not for a theme a user can see; the dwg-theme section palettes exist only in light (that is how the product ships them)."
+     "evidence": "The marketing light/dark resolutions are identical apart from one menu value: Dock ships no dark theme. The dark set tokenises the painted deep-blue islands (band text/ghost/ring roles, 10 tokens) — parity is partial by construction, not by omission."
     },
     "F8": {
-     "grade": "meets",
-     "evidence": "core.font.family.title (Sharp Grotesk), .body (Atlas Grotesk Web), .mono plus role- variants with full fallback stacks; a ramp of title-small..xlarge (16-40px), text-xsmall..xlarge (10-20px), action-small..xlarge (11-15px) with line-height, weight (400/500) and letter-spacing steps; core.typography holds 12 named composites (title-*, text-*, action-*) and measured display steps sit in core.font.size.measured-*."
+     "grade": "partly",
+     "evidence": "Three families with fallbacks (DockWebflowHome, DockWebflowNavigation, Roobert — licensed served faces, not shipped), weights 400-700 and per-step line-heights, roles named in components. The exported ramp has fourteen distinct sizes (80.6/70/62/60/38/29.25 display, 20/19/18/16/15.5/14.5/14/12.5) against the rubric's six-to-eight: a marketing site really does paint that many steps — every one is a measured reading, not a designed scale."
     },
     "F9": {
      "grade": "meets",
-     "evidence": "core.spacing.dimension-* is the declared --dig-spacing__dimension__* scale on an 8px base (4-128px steps) plus micro/macro groups; every measured box lands on it (40px buttons, 48px fields, 72px nav)."
+     "evidence": "The declared --space-* scale (4-56px steps) is captured in core.space.* with css-var sources."
     },
     "F10": {
-     "grade": "partly",
-     "evidence": "core.radius.* covers 4-24px plus a 999px pill, and painted radii were measured (CTAs 16px, cards 12-24px, nav-cta 12px, sso-button 4px); border widths are not a declared family — the only widths are the single 1px borders and the 3px focus-ring utility — so widths are present but not a scale."
+     "grade": "meets",
+     "evidence": "core.radius.* carries the painted radii — 100px pills, 19px menu viewport, 18.9px artwork, 12px popular column, 8px menu items, 60px filter pill, 6px HubSpot fields, 4-6px Chakra controls — plus the 0.5px/1px ring and #dedfe3 hairline widths."
     },
     "F11": {
-     "grade": "meets",
-     "evidence": "Control heights measured per size: 40px nav/secondary CTAs, 48px email field and mobile menu button, 55px plan/register CTAs, 32px icon button; the focus ring is a 3px #428bff shadow (core.measured.focus-ring, layout.focusring-width); nav heights 72px desktop / 48px mobile."
+     "grade": "partly",
+     "evidence": "Control heights measured across components (nav 38px, CTAs 40-44px, fields, header 70/76px, panels 258/386px) in light.component.*; focus ring width/offset captured. No icon-size scale — icons were not extracted (declared layoutGaps)."
     },
     "F12": {
      "grade": "partly",
-     "evidence": "light.shadow and dark.shadow resolve the declared --dig-utilities__boxshadow__* stack (focus-ring, inset, raised, floating — about four levels) but Dropbox's marketing surface is flat: the measured cards and menu panels paint hairline borders, not elevation, so the levels exist in the token layer more than on the page."
+     "evidence": "Dock paints elevation rarely — the pattern is the inset hairline ring, and the measured rings plus the plan-cta layered shadow are tokenised in core.measured.*. There is no 3-5 level shadow scale on the public surface; the declared --shadow-* vars were captured in raw/css-vars.json."
     },
     "F13": {
      "grade": "partly",
-     "evidence": "core.duration.* and core.easing.* hold the declared --dig-motion__* scale and a 0.1-0.125s control transition was measured on real elements (nav links, CTAs); no reduced-motion behaviour was observable or declared on the public surface, so the 'what changes' half is absent."
+     "evidence": "Declared motion captured: --duration-fast .14s, --duration-menu .24s and --ease-menu cubic-bezier(.22,1,.36,1) plus measured transitions per component. No reduced-motion behaviour was observable on the public surface."
     },
     "F14": {
      "grade": "partly",
-     "evidence": "core.layout carries the declared --dig-breakpoint__* set, the 3px focus-ring utility and measured nav/panel dimensions, but content widths, grid columns and z-index layers were not declared as tokens on the public surface and were not independently derived."
+     "evidence": "Component boxes, header/container widths and the 1440/390 mobile reflow are measured (component.*), and the mobile panel/measures captured. No named breakpoint/grid/z tokens published by the Webflow layer."
     },
     "C1": {
-     "grade": "missing",
-     "evidence": "The public surface paints about eight of the nineteen checklist components: button (nav-cta/hero-cta/plan-cta/biz-cta/sign-cta/sso/register/continue), icon button (carousel arrow), link (nav-link/menu-link/text-link/footer-link), text field (email-field/register-email), radio (billing-radio), menu (mega-menu + mobile menu), card (plan/feat/auth/bands) and a list row (menu rows/nav items). No select, textarea, checkbox, switch, tabs, tooltip, dialog, toast, avatar or badge paints signed out — the product's component breadth lives behind the auth boundary."
+     "grade": "partly",
+     "evidence": "A signed-out marketing surface: button (nav-cta, hero-cta, plan-cta, auth buttons), link, menu (mega-menu + mobile accordion), card (plan/customer/template/auth), badge (filter pill, trust badge), radio (filter-radio), text field (subdomain/signup/demo iframe) and FAQ list rows — ~9 of the 19 checklist components paint publicly; select lives inside the HubSpot iframe, the Turnstile checkbox stayed 1px, the rest never paint."
     },
     "C2": {
      "grade": "partly",
-     "evidence": "Every interactive entry was measured in default, hover, focus-visible and a CDP-forced pressed state (139 states over 53 components), plus opened (mega-menu, mobile menu) and toggled (Billed-monthly radio); disabled, error and loading states never paint on the public surface and the mega-menu's hover-only links could not hold focus/pressed (documented gap)."
+     "evidence": "Every interactive component carries default + hover + focus-visible + CDP-forced pressed, plus opened (mega-menu, mobile menu, FAQ rows) and selected (filter pill) where they apply, and disabled/error/loading are honestly recorded as absent. Two caveats keep this from meets: the Chakra Continue's focus-visible genuinely would not hold (recorded `via: focus failed`), and signup-submit's four states describe the OAuth 'Continue with Google' action — the selector was fixed and a re-measure is queued."
     },
     "C3": {
-     "grade": "meets",
-     "evidence": "Keyboard focus paints a 3px #428bff box-shadow ring, measured on nav-cta, nav links, billing-radio and the email field (crops nav-cta-focus-visible, billing-radio-focus-visible, email-field-focused); it is tokenised as core.measured.focus-ring and light.focus."
+     "grade": "partly",
+     "evidence": "Focus landed on 19 of 20 attempted components (the Chakra Continue's focus failed). 14 paint a visible ring — the 2px rgba(18,23,34,0.6) ink outline on marketing controls, 2px #0068f9 on pricing/demo buttons, the same ink ring on the blue band — tokenised as focus.ring.*. Five (filter-radio, customer-card, sidebar-link, template-card, signup-submit) paint no ring on the public surface — a measured absence, and signup-submit's read is the misidentified OAuth action pending re-measure."
     },
     "C4": {
-     "grade": "meets",
-     "evidence": "components.md entries write each measured value with its token ref in backticks (e.g. '#0061fe color.brand.status.attention.border.default'), so specs read as token + literal, and tokens.json's light.component.* group carries the same readings as token paths."
+     "grade": "partly",
+     "evidence": "components.md annotates colours with the matching palette token and the shared-values section names them; spec values in raw/component-tokens.json resolve to tokens. Some entries still quote measured values alongside (intentional, as evidence), so not every spec is tokens-only."
     },
     "P1": {
      "grade": "partly",
-     "evidence": "patterns.md writes the patterns the public surface actually composes — the header/mega-menu shell, the hero, plans/pricing with the billing radio, the auth cards, the footer and the mobile collapse — but the product-side patterns in the checklist (forms and validation, empty/loading/error, destructive confirmation, search) live behind the sign-in boundary and are honestly absent rather than invented."
+     "evidence": "patterns.md covers the app shell (header/mega-menu/footer), the hero, pricing, index grids, the demo form and auth cards. Validation, empty/loading/error, destructive confirmation and toasts do not paint on the public surface — recorded as gaps, not patterns."
     },
     "A1": {
      "grade": "partly",
-     "evidence": "Fonts are named with full stacks and roles (Sharp Grotesk display, Atlas Grotesk Web body, lucida-grande auth sheet) and served paths are recorded, but no licence was determinable and no standalone icon set was lifted this pass (recorded as a layoutGap; glyphs are visible in the crops)."
+     "evidence": "Fonts named with licence handling (Roobert/DockWebflow faces are licensed served fonts, not shipped; fallbacks declared). Icons were not extracted — declared in catalog layoutGaps and visible in crops/screenshots."
     },
     "K1": {
      "grade": "meets",
-     "evidence": "The README's opening block names the domain, date, viewports and route list; 'How the values were read' documents the stylesheet harvest, probe scopes, measurement and screenshot passes; 'What to distrust' lists the auth boundary, the declared-vs-painted CTA and dark-scope discrepancies, the older auth sheet, the hover-only menu and A/B variance."
+     "evidence": "The README states what was captured (routes, widths, surfaces), how (headless Chromium, shadow-DOM piercing, iframe reads, CDP states, the two token layers), and a What-to-distrust section (the non-theme dark set, the two font/ink systems, hidden prompt fields, the 1px Turnstile, 256-colour screenshots)."
+    },
+    "V1": {
+     "grade": "partly",
+     "evidence": "The README's Do-and-don't section carries 10 evidence-linked principles (blue pill actions, band ghost states, inset rings, family-per-surface, measured washes) — beyond the 3-5 rubric ask, each with a crop/screenshot link."
     },
     "F15": {
      "grade": "meets",
-     "evidence": "Script: all 8 pairs pass 4.5:1 across 2 themes; lowest 5.01:1 light muted (light.muted) on surface (light.surface.default)"
+     "evidence": "Script: all 8 pairs pass 4.5:1 across 2 themes; lowest 7.51:1 dark muted (core.color.brand.blue-light) on page (core.color.brand.blue-deep)"
     },
     "F16": {
      "grade": "meets",
-     "evidence": "Script: 717 of 717 tokens name their source"
+     "evidence": "Script: 138 of 138 tokens name their source"
     },
     "K2": {
      "grade": "meets",
      "evidence": "Script: 10 rules, each linking a screenshot or crop"
     },
     "K3": {
-     "grade": "meets",
-     "evidence": "Script: DESIGN.md matches a fresh generation"
+     "grade": "missing",
+     "evidence": "Script: dock: systems/dock/DESIGN.md is out of date or hand-edited; run `make design-md`"
     },
     "C5": {
-     "grade": "na",
-     "evidence": "Optional for a capture, and this product does not publish it."
-    },
-    "V1": {
      "grade": "na",
      "evidence": "Optional for a capture, and this product does not publish it."
     },
@@ -11710,9 +11710,9 @@
      "evidence": "Optional for a capture, and this product does not publish it."
     }
    },
-   "name": "Dropbox",
-   "goodFor": "Cloud-storage/productivity marketing and product landings: a shipped DIG token layer (--dig-color__* roles, --dig-type__* Sharp Grotesk/Atlas Grotesk ramp, 8px spacing, 4-24px radii, --dig-motion__*) over the --DWG__TEMP__color__* brand palette rebound per section by dwg-theme--coconut/graphite/navy: coconut #f7f5f2 fields, #0061fe painted CTAs (#0057e5/#0050d0 states) despite a declared black primary-cta role, 3px #428bff focus-shadow rings, a hover-driven Products mega-menu, and a mixed lucida-grande/Atlas auth sheet on /login and /register",
-   "url": "https://www.dropbox.com",
+   "name": "Dock",
+   "goodFor": "Sales-collateral / enablement marketing plus a public demo form: a declared --ds-*/--color-* token layer on a white Webflow surface with #0068f9 blue 100px-pill actions (#0060eb hover, #005fe4 pressed), a #002fa6 deep-blue hero band with white-alpha ghost buttons, DockWebflow/Roobert type, 0.5px inset hairline rings, a shadow-DOM mega-menu, and a separate Chakra auth face (#4058ff, 4px radii, #1a202c)",
+   "url": "https://dock.us",
    "captured": "2026-11-13",
    "themes": [
     "light",
@@ -11725,5 +11725,5 @@
   }
  ],
  "base": "2026-10-16",
- "reviewMethod": "manual review of the harvested DIG/DWG token layers (raw/css-vars.json on five probe scopes), the 139 measured component states (raw/components-computed.json, components.md), the 27 screenshots and the package docs against the web wording of scorecard/criteria.json; scripted criteria left to grade.py"
+ "reviewMethod": "Re-reviewed dock's C2/C3/F8 against the saved evidence after a Greptile pass on PR #507: repaired the shadow-DOM focus-via labels (8 of 9 'focus failed' reads painted the real ink ring), confirmed 14 of 19 landed focuses draw a ring and 5 show no measured change, and counted 14 distinct exported type sizes"
 }
