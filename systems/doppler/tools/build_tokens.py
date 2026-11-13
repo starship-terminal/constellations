@@ -108,7 +108,9 @@ def check(path, ty, val):
         for stop in val:
             if not str(stop["color"]).startswith("{"):
                 norm_color(stop["color"])
-            if not 0 <= stop["position"] <= 1:
+            # Stops outside 0-1 are valid CSS (the browser extrapolates them) and
+            # real measured evidence: the cardSheen sheen begins at -6.99%.
+            if not isinstance(stop["position"], (int, float)) or not -1 <= stop["position"] <= 2:
                 raise ValueError(f"{path}: gradient position {stop['position']!r}")
 
 

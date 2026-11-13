@@ -447,34 +447,37 @@ for comp, state, key, prop, desc in [
 # ------------------------------------------------------------- gradients
 def gradient_leaves():
     out = {}
-    m = re.search(r"linear-gradient\(([\d.]+)deg,\s*(.*)\)", stprop("hero-title", "default", "paint.0.bgImage") or "")
+    m = re.search(r"linear-gradient\((-?[\d.]+)deg,\s*(.*)\)", stprop("hero-title", "default", "paint.0.bgImage") or "")
     if m:
         stops = []
-        for cm in re.finditer(r"(rgba?\([^)]*\)|#[0-9a-fA-F]{3,8})\s+([\d.]+)%", m.group(2)):
+        for cm in re.finditer(r"(rgba?\([^)]*\)|#[0-9a-fA-F]{3,8})\s+(-?[\d.]+)%", m.group(2)):
             stops.append({"color": norm_color(cm.group(1)), "position": round(float(cm.group(2)) / 100, 4)})
         if len(stops) >= 2:
             out["headline"] = {"value": stops, "type": "gradient", "angle": "%gdeg" % float(m.group(1)),
                                "source": "computed paint.0.bgImage of hero-title default (raw/components-computed.json): the lilac-to-carmine gradient text span",
                                "description": "The display-headline gradient, ~91deg from #855aff to #ff5632."}
-    m = re.search(r"linear-gradient\(([\d.]+)deg,\s*(.*)\)", stprop("feature-card", "default", "paint.1.bgImage") or "")
+    m = re.search(r"linear-gradient\((-?[\d.]+)deg,\s*(.*)\)", stprop("feature-card", "default", "paint.1.bgImage") or "")
     if m:
         stops = []
-        for cm in re.finditer(r"(rgba?\([^)]*\)|#[0-9a-fA-F]{3,8})\s+([\d.]+)%", m.group(2)):
+        for cm in re.finditer(r"(rgba?\([^)]*\)|#[0-9a-fA-F]{3,8})\s+(-?[\d.]+)%", m.group(2)):
             stops.append({"color": norm_color(cm.group(1)), "position": round(float(cm.group(2)) / 100, 4)})
         if len(stops) >= 2:
             out["cardSheen"] = {"value": stops, "type": "gradient", "angle": "%gdeg" % float(m.group(1)),
                                 "source": "computed paint.1.bgImage of feature-card default (raw/components-computed.json): the interactive-card ::before sheen",
                                 "description": "The diagonal sheen painted across .interactive-card tiles (white 16% fading out)."}
-    # declared brand gradient stops: from-purple / via-lilac / to-light-purple
+    # declared brand gradient stops: from-purple / via-lilac / to-light-purple.
+    # cls() returns each declaration's VALUE ("#6b13f5 var(--tw-gradient-from-position)"),
+    # so the hex is matched inside the value, not after a property name.
     try:
-        frm = re.search(r"--tw-gradient-from:\s*(#[0-9a-fA-F]{3,8})", color_of(".from-purple", "--tw-gradient-from")).group(1)
+        frm = re.search(r"#[0-9a-fA-F]{3,8}", color_of(".from-purple", "--tw-gradient-from")).group(0)
         via = re.search(r",\s*(#[0-9a-fA-F]{3,8})\s+var", color_of(".via-lilac", "--tw-gradient-stops")).group(1)
-        to = re.search(r"--tw-gradient-to:\s*(#[0-9a-fA-F]{3,8})", color_of(".to-light-purple", "--tw-gradient-to")).group(1)
+        to = re.search(r"#[0-9a-fA-F]{3,8}", color_of(".to-light-purple", "--tw-gradient-to")).group(0)
         out["brand"] = {"value": [{"color": norm_color(frm), "position": 0},
                                   {"color": norm_color(via), "position": 0.5},
                                   {"color": norm_color(to), "position": 1}],
-                        "type": "gradient", "angle": "declared stop order (from -> via -> to)",
-                        "source": "declared .from-purple + .via-lilac + .to-light-purple (raw/utility-classes.json)",
+                        "type": "gradient", "angle": "120deg",
+                        "source": "declared .from-purple + .via-lilac + .to-light-purple stops (raw/utility-classes.json); "
+                                  "direction from the computed 120deg brand gradient on demo-card/post-card (raw/components-computed.json)",
                         "description": "The brand gradient stops used on glows and text: purple -> lilac -> light-purple."}
     except (KeyError, AttributeError):
         pass

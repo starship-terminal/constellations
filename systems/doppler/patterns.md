@@ -33,25 +33,27 @@ Cookie Preferences text button
 
 Two recipes cover every action on the surface:
 
-- **Green pill** — `#00f575` fill, warm-black `#1c1624` 15/15 bold text, 12px
+- **Green pill** — `#00f575` fill, warm-black `#1c1624` text, 12px
   radius: the header's 36px Start for Free, the hero's 45px variant, the
   demo form's 43px Choose a Time submit
   ([demo-submit](components/crops/demo-submit-default.png)) and the Team
-  plan's CTA. Hover drops the fill to `#00bf5b`; text stays black.
+  plan's CTA, all at 15/15 bold — plus two 44px variants at 16/24 regular:
+  the integrations page's Request an Integration
+  ([request-integration](components/crops/request-integration-default.png),
+  208 x 44) and the agents page's Pick Your Tool button
+  ([agents-cta](components/crops/agents-cta-default.png), 161 x 44, an
+  in-page scroll link painted as a button). Hover drops the fill to
+  `#00bf5b`; text stays black.
 - **Bordered ghost** — transparent fill, 1px `#f1f0ec` border, same 12px
   radius and 15/15 bold text: the hero Get Demo
-  ([hero-cta](components/crops/hero-cta-default.png), 136 x 45), Sign In,
+  ([hero-cta](components/crops/hero-cta-default.png), 136 x 45), Sign In and
   the Developer/Enterprise plan CTAs
-  ([plan-cta](components/crops/plan-cta-default.png), 332 x 45) and the
-  integrations page's Request an Integration
-  ([request-integration](components/crops/request-integration-default.png)).
+  ([plan-cta](components/crops/plan-cta-default.png), 332 x 45).
   Hover adds an 8% warm-white veil.
 
-Plain silver links round out the vocabulary — nav items, Read More anchors
-([read-more](components/crops/read-more-default.png)) and the scroll-down
-"Pick Your Tool" link on /agents
-([agents-cta](components/crops/agents-cta-default.png), green text with a
-dashed underline) — with hover to warm-white.
+Plain silver links round out the vocabulary — nav items and Read More
+anchors ([read-more](components/crops/read-more-default.png)) — with hover
+to warm-white.
 
 ## Hero and section type
 
@@ -148,5 +150,6 @@ opens a fixed 390 x 789 warm-black sheet
 [mobile-home-dark-menu](screenshots/mobile-home-dark-menu.png)) of 50px
 nav rows ([m-nav-item](components/crops/m-nav-item-default.png)) — the
 menu's own toggle was used for the open state, never a script. The hero
-stacks at 24px/700 ([m-hero](components/crops/m-hero-default.png)) with the
+stacks at the `h3Mobile` step — 36px at weight 450 on a 36px line
+([m-hero](components/crops/m-hero-default.png)) — with the
 same 36px green pill ([m-cta](components/crops/m-cta-default.png)).

@@ -125,6 +125,21 @@ function comp(key, meta) {
   return c;
 }
 
+// A failed recapture must not erase an earlier good reading: keep the saved
+// state and record the failed attempt beside it (under this run's date), the
+// same way a missing target keeps earlier states under their own provenance.
+function recordError(c, state, e, prevRun) {
+  const err = String(e.message || e).slice(0, 200);
+  const earlier = c.states[state];
+  if (earlier && !earlier.error) {
+    if (prevRun) earlier.run = prevRun;
+    earlier.recaptureFailed = run;
+    earlier.recaptureError = err;
+  } else {
+    c.states[state] = { error: err };
+  }
+}
+
 async function measure(key, state, target, opts = {}) {
   const loc = target.filter({ visible: true }).first();
   const c = out.components[key];
@@ -140,7 +155,7 @@ async function measure(key, state, target, opts = {}) {
     if (opts.extra) c.states[state].extra = await opts.extra(loc);
     log('  ', key, state, s.rect.w + 'x' + s.rect.h);
   } catch (e) {
-    c.states[state] = { error: String(e.message || e).slice(0, 200) };
+    recordError(c, state, e, opts.prevRun);
     log('  !', key, state, String(e.message).slice(0, 120));
   }
 }
@@ -181,9 +196,18 @@ async function S(key, target, list, meta = {}, opts = {}) {
         via = 'CDP forcePseudoState :active:hover';
       } else if (st === 'focused') {
         const fld = (opts.fieldLoc || loc).filter({ visible: true }).first();
-        await fld.click({ timeout: 4000 }).catch(() => fld.evaluate((el) => el.focus()));
+        // A range input's whole track is clickable: clicking it to focus also
+        // moves the thumb, so the "focused" reading would capture a changed
+        // value. Focus sliders by el.focus() and click everything else.
+        const isRange = await fld.evaluate((el) => el.tagName === 'INPUT' && (el.getAttribute('type') || '').toLowerCase() === 'range').catch(() => false);
+        if (isRange) {
+          await fld.evaluate((el) => el.focus());
+          via = 'focus() (a click would move the thumb)';
+        } else {
+          await fld.click({ timeout: 4000 }).catch(() => fld.evaluate((el) => el.focus()));
+          via = 'clicked into the field';
+        }
         await page.waitForTimeout(400);
-        via = 'clicked into the field';
       } else if (st === 'filled') {
         const f = (opts.fieldLoc || loc).filter({ visible: true }).first();
         await f.click({ timeout: 4000 });
@@ -195,9 +219,9 @@ async function S(key, target, list, meta = {}, opts = {}) {
         if (opts.noToggle) via = 'held selected by an earlier toggle';
         else { await toggle(loc, { allowLink: opts.allowLink }); await page.waitForTimeout(900); via = 'own toggle'; }
       } else via = via || 'at rest';
-      await measure(key, st, loc, { ...opts, via });
+      await measure(key, st, loc, { ...opts, via, prevRun: keep && keep.run });
     } catch (e) {
-      out.components[key].states[st] = { error: String(e.message || e).slice(0, 200) };
+      recordError(out.components[key], st, e, keep && keep.run);
       log('  !', key, st, String(e.message).slice(0, 120));
     }
     if (undo) await undo().catch(() => {});
@@ -239,25 +263,37 @@ async function sheetsFor(key) {
 }
 
 // Whether the page paints a different transition under prefers-reduced-motion:
-// the same component re-read in a context with reduce on.
+// the same selector read in both a no-preference and a reduce context, on an
+// element that actually transitions, so the delta is a real comparison — not
+// a restatement of an element with no motion either way.
 async function reducedMotion(key, sel) {
   out._meta.reducedMotion ??= {};
-  try {
+  const probe = async (reduced) => {
     const b = context.browser();
-    const ctx = await b.newContext({ viewport: { width: 1440, height: 900 }, deviceScaleFactor: 1, userAgent: UA, locale: 'en-US', reducedMotion: 'reduce' });
+    const ctx = await b.newContext({ viewport: { width: 1440, height: 900 }, deviceScaleFactor: 1, userAgent: UA, locale: 'en-US', reducedMotion: reduced ? 'reduce' : 'no-preference' });
     await patch(ctx);
     const p = await ctx.newPage();
-    await p.goto(BASE + URLS[key], { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
-    await p.waitForTimeout(7000);
-    await closePromo(p);
-    const v = await p.evaluate((s) => {
-      const el = document.querySelector(s);
-      if (!el) return null;
-      const cs = getComputedStyle(el);
-      return { transition: cs.transition, animation: cs.animation, scrollBehavior: getComputedStyle(document.documentElement).scrollBehavior };
-    }, sel).catch(() => null);
-    out._meta.reducedMotion[key] = { selector: sel, reduce: v };
-    await ctx.close();
+    try {
+      await p.goto(BASE + URLS[key], { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
+      await p.waitForTimeout(7000);
+      await closePromo(p);
+      return await p.evaluate((s) => {
+        const el = document.querySelector(s);
+        if (!el) return null;
+        const cs = getComputedStyle(el);
+        return { transitionProperty: cs.transitionProperty, transitionDuration: cs.transitionDuration,
+                 transitionTimingFunction: cs.transitionTimingFunction,
+                 animationName: cs.animationName, animationDuration: cs.animationDuration,
+                 scrollBehavior: getComputedStyle(document.documentElement).scrollBehavior };
+      }, sel).catch(() => null);
+    } finally {
+      await ctx.close();
+    }
+  };
+  try {
+    const noPreference = await probe(false);
+    const reduce = await probe(true);
+    out._meta.reducedMotion[key] = { selector: sel, noPreference, reduce };
   } catch (e) { out._meta.reducedMotion[key] = { selector: sel, error: String(e).slice(0, 120) }; }
 }
 
@@ -387,7 +423,7 @@ async function integrations() {
   await chrome('integrations');
   const g = G.integrations;
   await S('integrations-h1', q('h1').filter({ visible: true }).first(), ['default'], { group: g, title: 'Integrations title', desc: 'The integrations display heading.', sel: 'h1 on /integrations' }, { noScroll: true });
-  await S('search-field', q('input[placeholder*="Search" i], input[type="search"], input').filter({ visible: true }).first(), ['default', 'focused', 'filled'], { group: g, title: 'Search field', desc: 'The integrations search input; sample text was typed and deleted, nothing sent.', sel: 'input "Search"', fillText: 'aws' });
+  await S('search-field', q('input[placeholder*="Search" i], input[type="search"], input').filter({ visible: true }).first(), ['default', 'focused', 'filled'], { group: g, title: 'Search field', desc: 'The integrations search input; sample text was typed and deleted, nothing sent.', sel: 'input "Search"' }, { fillText: 'aws' });
   await S('filter-chip', q('button').filter({ hasText: /^\s*(WEBHOOKS|KUBERNETES|SYNCS|SCIM)\s*$/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Filter chip', desc: 'An integration-category filter button; measured, never toggled (a toggle would filter the grid).', sel: 'category filter button' });
   const icard = await markPainted('a[href*="/integrations/"], [class*="card" i]', 'm-int', { minW: 150, minH: 80 }).catch(() => null);
   await S('integration-card', icard || q('a[href*="/integrations/"]').filter({ visible: true }).first(), ['default', 'hover'], { group: g, title: 'Integration card', desc: 'An integration tile (a provider name and glyph) in the grid; never followed.', sel: 'integration tile' });
@@ -485,9 +521,11 @@ try {
   for (const k of order) { if (k !== 'mobile') await plan[k](); }
   if (!pages.length || pages.includes('home')) await footer();
   if (!pages.length || pages.includes('mobile')) await plan.mobile();
-  // Reduced-motion check on an element that transitions (the header), so the
-  // delta is meaningful.
-  if (!pages.length || pages.includes('home')) await reducedMotion('home', 'header');
+  // Reduced-motion check on an element that actually transitions — the header
+  // links' measured 0.3s colour transition — read under both settings. The
+  // header bar itself has no transition, so probing it shows no change either
+  // way.
+  if (!pages.length || pages.includes('home')) await reducedMotion('home', 'header a[href*="dashboard.doppler.com"], header nav a');
 } finally {
   for (const [key, c] of Object.entries(out.components)) {
     // An untouched entry is pruned only when its page was not blocked this
