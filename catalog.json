@@ -9018,7 +9018,8 @@
           "icons: no standalone SVG set lifted this pass"
         ],
         "durationMin": 240,
-        "durationNote": "wall-clock across the capture sessions including kit adaptation, the three-surface stylesheet harvest (including the .accent--* class probes and the RGB-triplet resolution fix), screenshot and measurement passes on a headless Linux server, and the offline build"
+        "durationNote": "wall-clock across the capture sessions including kit adaptation, the three-surface stylesheet harvest (including the .accent--* class probes and the RGB-triplet resolution fix), screenshot and measurement passes on a headless Linux server, and the offline build",
+        "pr": "https://github.com/starship-terminal/constellations/pull/538"
       },
       "layoutGaps": {
         "icons/": "the icon extraction pass was not run; the icons (the Equals wordmark, the chevrons and hamburger strokes, the mock-toolbar glyphs, social and integration logos) are visible in the crops and screenshots"
