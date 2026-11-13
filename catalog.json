@@ -7025,6 +7025,105 @@
       "layoutGaps": {
         "icons/": "no standalone SVG icon set was lifted; the declared --icon-size vars (14/16/30/40px) are tokenised under light.component.icon.* and the glyphs (the dona ring-and-wordmark logo, social marks, play/close) are visible in the crops and screenshots"
       }
+    },
+    {
+      "slug": "endel",
+      "name": "Endel",
+      "url": "https://endel.io",
+      "category": "media",
+      "platform": "web",
+      "goodFor": "Near-black wellness pages and a signed-out web player: a pure #000 ground, a five-step grey ramp (#191919 cards, #262626 buttons, #808080 borders and hover fills, #bfbfbf muted text, #e0e0e0 faint), white text and strong borders, apercuPro at a 60/44/36/28 display and 22/18/16/14/10 text scale, 12px button corners and 100px pills, a 1280px 12-column grid, and one white-glow CTA",
+      "tags": [
+        "web",
+        "media",
+        "audio",
+        "wellness",
+        "focus",
+        "dark",
+        "dark-only",
+        "nextjs",
+        "signed-out"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-13",
+      "access": "signed out (every captured surface is public: the endel.io marketing pages plus app.endel.io's explore, player and sign-in card; the account, library, premium unlock/checkout and any form submit were never crossed; the Set Timer sheet, More flyout and mobile menu were opened by their own toggles and closed again)",
+      "themes": [
+        "dark"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/endel/README.md",
+      "tokens": "systems/endel/tokens.json",
+      "styleGuide": "systems/endel/style-guide.html",
+      "preview": {
+        "cover": "systems/endel/screenshots/home-dark-default.png",
+        "icon": "systems/endel/icon.png",
+        "swatches": {
+          "dark": {
+            "page": "dark.page",
+            "surface": "dark.surfaceRaised",
+            "text": "dark.text",
+            "muted": "dark.muted",
+            "accent": "dark.borderStrong",
+            "border": "dark.border"
+          }
+        },
+        "fonts": [
+          "core.font.family.sans"
+        ]
+      },
+      "designMd": {
+        "colors": [
+          "core.",
+          "dark."
+        ]
+      },
+      "capture": {
+        "method": "public-web",
+        "source": "endel.io and app.endel.io (Next.js builds) in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and crops from the live DOM, CSS custom properties read through the CSSOM and re-parsed in a probe document per host (raw/css-vars.json resolved.site/resolved.app). The bundles declare named :root vars (a grey ramp, declared accent greens and orange, the 1280px/12-column grid, the apercuPro scale) which the palette, layout and type tokens resolve through; roles and component metrics are measured computed values. Everything behind sign-in or checkout on app.endel.io is a documented boundary",
+        "timestamp": "2026-11-13T16:20:00Z",
+        "harness": "Devin",
+        "model": "SWE-2 High",
+        "route": "public-web",
+        "routes": [
+          "/",
+          "/focus",
+          "/sleep",
+          "/relax",
+          "/activity",
+          "/adhd",
+          "/soundscapes",
+          "/science",
+          "/technology",
+          "/streaming",
+          "/community",
+          "/about",
+          "/blog",
+          "/newsroom",
+          "/privacy-policy",
+          "/impressum",
+          "app.endel.io/ (explore, signed out)",
+          "app.endel.io/player/focus",
+          "app.endel.io/ sign-in card via its own Sign In button",
+          "mobile /, /focus, /soundscapes and app.endel.io/"
+        ],
+        "gaps": [
+          "the signed-in app entirely: account, library, sync, settings, purchase and the premium unlock/checkout the timer sheet's Unlock row starts were never reached; the FREEMIUM chip, scenario pills, Unlock, Continue and the OAuth buttons were measured, never pressed for real",
+          "no form was submitted and no account created: the footer newsletter field and the sign-in card's email field were measured, never sent; Try Today, Subscribe, Continue, Unlock and every outbound link were never followed",
+          "the native apps (iOS, Android, macOS, Apple Watch, TV) the site advertises are not in this package",
+          "the home page's mid-page newsletter row (input-email, btn-subscribe) was not on the page at capture time; the footer's own field was painted instead",
+          "no disabled, error or loading states exist on the captured surface; the app shell's skeleton shimmer was seen only as a declared animation",
+          "audio was never started: the player and mini player are captured paused, the volume slider never dragged",
+          "icons: no standalone SVG set lifted this pass"
+        ],
+        "durationMin": 210,
+        "durationNote": "resumed capture: a first pass died after the screenshots and css-vars harvest (2026-11-13 morning UTC); the component measurement, token/docs build and rubric review ran in the resume"
+      },
+      "layoutGaps": {
+        "icons/": "no standalone SVG icon set was lifted; the glyphs (the Endel mark, mode icons, transport controls, social marks) are visible in the crops and screenshots"
+      }
     }
   ]
 }

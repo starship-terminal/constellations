@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 93,
-    "system_domains": 85,
-    "matched_domains": 60,
-    "missing_domains": 373,
+    "system_packages": 94,
+    "system_domains": 86,
+    "matched_domains": 61,
+    "missing_domains": 372,
     "system_domains_absent_from_catalog": 25
   },
   "matched": {
@@ -882,6 +882,23 @@
         }
       ]
     },
+    "endel.io": {
+      "catalog": [
+        {
+          "name": "Endel",
+          "domain": "endel.io",
+          "id": 105
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "endel",
+          "name": "Endel",
+          "url": "https://endel.io",
+          "name_match": true
+        }
+      ]
+    },
     "github.com": {
       "catalog": [
         {
@@ -1463,13 +1480,6 @@
         "name": "ElevenReader",
         "domain": "elevenreader.io",
         "id": 776
-      }
-    ],
-    "endel.io": [
-      {
-        "name": "Endel",
-        "domain": "endel.io",
-        "id": 105
       }
     ],
     "endless.io": [

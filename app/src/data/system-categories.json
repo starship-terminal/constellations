@@ -779,5 +779,14 @@
       "Productivity"
     ],
     "reason": "catalog.json describes a to-do productivity product: task lists, a quiet marketing site and a signed-out public system."
+  },
+  {
+    "referenceId": "systems:endel",
+    "groupId": "web-categories",
+    "labels": [
+      "Health & Wellness",
+      "Music Streaming"
+    ],
+    "reason": "catalog.json describes a personalized soundscapes product for focus, relaxation and sleep: a dark marketing site and a signed-out web app with a public player."
   }
 ]
