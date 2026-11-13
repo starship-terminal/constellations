@@ -34,10 +34,45 @@ def flat(node, prefix=""):
             yield from flat(v, prefix + k + ".")
 
 
+def _resolve_alias(value, node, depth=0):
+    m = re.fullmatch(r"\{(.+)\}", str(value))
+    if not m or depth > 6:
+        return value
+    tgt = node
+    for part in m.group(1).split("."):
+        tgt = tgt.get(part) if isinstance(tgt, dict) else None
+        if tgt is None:
+            return value
+    return _resolve_alias(tgt.get("$value", value), node, depth + 1)
+
+
 BY_COLOR = {}
-for n, t in flat(T["core"]):
-    if t["$type"] == "color":
-        BY_COLOR.setdefault(t["$value"], n)
+for _set in ("core", "light", "dark"):
+    for n, t in flat(T[_set]):
+        if t["$type"] == "color":
+            BY_COLOR.setdefault(_resolve_alias(t["$value"], T[_set]), n)
+
+
+def _srgb_byte(x):
+    x = max(0.0, min(1.0, x))
+    x = x * 12.92 if x <= 0.0031308 else 1.055 * x ** (1 / 2.4) - 0.055
+    return round(x * 255)
+
+
+def _oklab_to_rgb(L, A, B):
+    l_ = L + 0.3963377774 * A + 0.2158037573 * B
+    m_ = L - 0.1055613458 * A - 0.0638541728 * B
+    s_ = L - 0.0894841775 * A - 1.2914855480 * B
+    l, m, s_ = l_ ** 3, m_ ** 3, s_ ** 3
+    r = +4.0767416621 * l - 3.3077115913 * m + 0.2309699292 * s_
+    g = -1.2684380046 * l + 2.6097574011 * m - 0.3413193965 * s_
+    b = -0.0041960863 * l - 0.7034186147 * m + 1.7076147010 * s_
+    return _srgb_byte(r), _srgb_byte(g), _srgb_byte(b)
+
+
+def _oklch_to_rgb(L, C, H):
+    import math
+    return _oklab_to_rgb(L, C * math.cos(math.radians(H)), C * math.sin(math.radians(H)))
 
 
 def norm(r, g, b, a=None):
@@ -54,6 +89,11 @@ def colour(c, tokens=True):
         tok = BY_COLOR.get(v) if tokens else None
         return f"{v} `{tok}`" if tok else v
 
+    c = re.sub(r"oklch\(([\d.]+) ([\d.]+) ([\d.]+)(?:deg)?(?: / ([\d.]+%?))?\)",
+               lambda m: label(norm(*_oklch_to_rgb(float(m.group(1)), float(m.group(2)), float(m.group(3))),
+                                   (float(m.group(4).rstrip('%')) / (100 if '%' in m.group(4) else 1)) if m.group(4) else None)), c)
+    c = re.sub(r"oklab\(([\d.]+) (-?[\d.]+) (-?[\d.]+)(?: / ([\d.]+))?\)",
+               lambda m: label(norm(*_oklab_to_rgb(float(m.group(1)), float(m.group(2)), float(m.group(3))), m.group(4))), c)
     c = re.sub(r"color\(srgb ([\d.]+) ([\d.]+) ([\d.]+)(?: / ([\d.]+))?\)",
                lambda m: label(norm(*(round(float(x) * 255) for x in m.group(1, 2, 3)), m.group(4))), c)
     return re.sub(r"rgba?\((\d+), (\d+), (\d+)(?:, ([\d.]+))?\)", lambda m: label(norm(*m.group(1, 2, 3), m.group(4))), c)
@@ -156,7 +196,7 @@ def props(v):
     # where a state-carrying child outline (the 3px cyan CTA ring) shows up.
     if s["backgroundColor"] == "rgba(0, 0, 0, 0)" and s["borderTopWidth"] == "0px" and s["backgroundImage"] == "none":
         for p in v.get("paint", [])[:6]:
-            bits.append(" ".join(x for x in (p["node"], p.get("size"), p.get("bg"), p.get("border"), p.get("shadow"), p.get("outline"), p.get("radius")) if x))
+            bits.append(" ".join(x for x in (p["node"], p.get("size"), colour(p["bg"]) if p.get("bg") else None, p.get("border"), p.get("shadow"), p.get("outline"), p.get("radius")) if x))
     if bits:
         o["layers"] = "; ".join(bits)[:400]
     return o

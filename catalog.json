@@ -8974,12 +8974,12 @@
             "border": "light.border.hairline"
           },
           "dark": {
-            "page": "dark.background",
+            "page": "dark.background.default",
             "surface": "dark.surface.secondary",
             "text": "dark.fg.high",
             "muted": "dark.fg.mid",
             "accent": "dark.brand.accent",
-            "border": "dark.border"
+            "border": "dark.border.default"
           }
         },
         "fonts": [

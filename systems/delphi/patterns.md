@@ -8,7 +8,7 @@ A 64px top bar (`core.component.topbar-height`, 91.5px wordmark `core.component.
 
 ## The ask hero
 
-Home and every /discover/<topic> page open with a Delphi Pythia display heading (`core.font.family.display`, `core.font.size.display` 50px, 32px at 390px `core.font.size.mobile-display`) over a wide centered ask field — 664px on search results, 624px on home (`core.component.query-field-width`, `core.component.search-field-width`): a white pill on `light.surface.primary` with a `#dad9d6` border (`light.border.default`) and a microphone control. Under it, a horizontally scrolling row of topic chips on `light.background.chip` that invert to `#f15a24` brand orange (`light.brand.accent`) on the selected topic.
+Home and every /discover/<topic> page open with a Delphi Pythia display heading (`core.font.family.display`, `core.font.size.measured.display` 50px, 32px at 390px `core.font.size.measured.mobile-display`) over a wide centered ask field — 664px on search results, 624px on home (`core.component.query-field-width`, `core.component.search-field-width`): a white pill on `light.surface.primary` with a `#dad9d6` border (`light.border.default`) and a microphone control. Under it, a horizontally scrolling row of topic chips on `light.background.chip` that invert to `#f15a24` brand orange (`light.brand.accent`) on the selected topic.
 
 ## The card grids
 

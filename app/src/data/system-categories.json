@@ -614,7 +614,7 @@
   {
     "referenceId": "systems:delphi",
     "groupId": "web-categories",
-    "labels": ["AI Tool"],
+    "labels": ["AI Tool", "Productivity"],
     "reason": "catalog.json describes an AI-clone Q&A product: ask fields, discover galleries, public search results, expert profiles and a chat composer."
   },
   {

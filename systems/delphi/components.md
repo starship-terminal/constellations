@@ -40,7 +40,7 @@ Screenshots are named `{page}-light-{state}.png`: every public surface paints `l
 
 Values that apply across entries, from the measurement files.
 
-**Focus.** 18 components were given a real keyboard focus. 8 draw an outline ring: `nav-topic` (1px auto oklab(0.67 0.163492 0.147209 / 0.5), offset 1px), `topic-card` (2px solid #21201c, offset 4px), `persp-flip` (2px solid oklch(0.67 0.22 42), offset -5px), `disc-cat` (1px auto oklab(0.67 0.163492 0.147209 / 0.5), offset 1px), `disc-ask` (2px solid #21201c, offset 4px), `srch-personalize` (1px auto oklab(0.67 0.163492 0.147209 / 0.5), offset 1px), `m-signin` (1px auto oklab(0.67 0.163492 0.147209 / 0.5), offset 1px), `m-topic-card` (2px solid #21201c, offset 4px). 9 draw a focus ring as a shadow instead: `signin-btn`, `create-cta`, `mic-btn`, `dialog-google`, `dialog-email`, `share-btn`, `suggested-chip`, `srch-save`, `srch-expand`. The other 1 show no measured change: `chat-send`.
+**Focus.** 18 components were given a real keyboard focus. 8 draw an outline ring: `nav-topic` (1px auto rgba(253, 84, 0, 0.5), offset 1px), `topic-card` (2px solid #21201c `accent.foreground`, offset 4px), `persp-flip` (2px solid #fd5400 `color.tangerine.9`, offset -5px), `disc-cat` (1px auto rgba(253, 84, 0, 0.5), offset 1px), `disc-ask` (2px solid #21201c `accent.foreground`, offset 4px), `srch-personalize` (1px auto rgba(253, 84, 0, 0.5), offset 1px), `m-signin` (1px auto rgba(253, 84, 0, 0.5), offset 1px), `m-topic-card` (2px solid #21201c `accent.foreground`, offset 4px). 9 draw a focus ring as a shadow instead: `signin-btn`, `create-cta`, `mic-btn`, `dialog-google`, `dialog-email`, `share-btn`, `suggested-chip`, `srch-save`, `srch-expand`. The other 1 show no measured change: `chat-send`.
 
 **Pressed.** Forced with DevTools (`CSS.forcePseudoState` :active:hover). Nothing a real press would submit was ever pressed.
 
@@ -67,14 +67,14 @@ Values that apply across entries, from the measurement files.
 
 | Card | Size | Border | Radius | Background | Shadow | Padding |
 |---|---|---|---|---|---|---|
-| [Topic card](#topic-card) | 346.66 x 280 | - | 24px | #f7f3f0 | none | 20px |
+| [Topic card](#topic-card) | 346.66 x 280 | - | 24px | #f7f3f0 `background.warm` | none | 20px |
 | [Perspective flip](#perspective-flip) | 272.23 x 360.3 | 1px solid transparent | 28px | transparent | none | 0 |
-| [Expert tile](#expert-tile) | 528 x 192 | 1px solid rgba(33, 32, 28, 0.09) | 24px | #ffffff `color.white` | none | 24px 24px 18px 24px |
-| [Ask card](#ask-card) | 346.66 x 280 | - | 24px | #f7f3f0 | none | 20px |
-| [Result expert card](#result-expert-card) | 672 x 318 | 1px solid oklab(0.641239 -0.00290832 0.00981319 / 0.2) | 26px | #ffffff `color.white` | none | 18px 0px 20px 0px |
-| [Suggested question](#suggested-question) | 245.33 x 83.75 | 1px solid transparent | 18px | oklab(0.641239 -0.00290832 0.00981319 / 0.1) | none | 12px 14px |
-| [Sign-in dialog](#sign-in-dialog) | 448 x 360 | - | 26px | #ffffff `color.white` | oklab(0.243135 -0.000696592 0.00753608 / 0.05) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.1) 0px 8px 10px -6px | 0 |
-| [Mobile topic card](#mobile-topic-card) | 350 x 150 | - | 20px | #f7f3f0 | none | 16px 18px |
+| [Expert tile](#expert-tile) | 528 x 192 | 1px solid rgba(33, 32, 28, 0.09) `border.hairline` `border.hairline` | 24px | #ffffff `color.white` | none | 24px 24px 18px 24px |
+| [Ask card](#ask-card) | 346.66 x 280 | - | 24px | #f7f3f0 `background.warm` | none | 20px |
+| [Result expert card](#result-expert-card) | 672 x 318 | 1px solid rgba(141, 141, 134, 0.2) `border.card-border` `border.card-border` | 26px | #ffffff `color.white` | none | 18px 0px 20px 0px |
+| [Suggested question](#suggested-question) | 245.33 x 83.75 | 1px solid transparent | 18px | rgba(141, 141, 134, 0.1) `background.chip` `background.chip` | none | 12px 14px |
+| [Sign-in dialog](#sign-in-dialog) | 448 x 360 | - | 26px | #ffffff `color.white` | rgba(33, 32, 28, 0.05) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.1) 0px 8px 10px -6px | 0 |
+| [Mobile topic card](#mobile-topic-card) | 350 x 150 | - | 20px | #f7f3f0 `background.warm` | none | 16px 18px |
 
 ## Components
 
@@ -85,7 +85,7 @@ The public top bar on every surface: the Delphi wordmark, topic nav pills, Sign 
 #### Site header
 The fixed top bar: Delphi wordmark, Sign In and the Create Your Delphi pill. Read as `mkt-header` on the home page.
 
-**Values (default).** size 1440 x 64; padding 0px 20px 0px 12px; background transparent; text Delphi Inter 14/20 500, #63635e; transition translate 0.3s cubic-bezier(0.3, 0.9, 0.25, 1), opacity 0.3s cubic-bezier(0.3, 0.9, 0.25, 1), visibility 0.3s cubic-bezier(0.3, 0.9, 0.25, 1); icon 84.5 x 26, #82827c; layers ::before rgb(255, 255, 255) 0px none 1; header::before.fixed.inset-x-0 1440pxx0px rgb(255, 255, 255); div.absolute.inset-x-0 1440.0x88.0; a.group/button.inline-flex 96.0x36.0 T:1px solid rgba(0, 0, 0, 0) / R:1px solid rgba(0, 0, 0, 0) / B:1px solid rgba(0, 0, 0, 0) / L:1px solid rgba(0, 0, 0, 0) 26px; a.group/button.inline-flex 180.0x36.0 oklch(0.67 0.22 42) T:1px solid rgba(0, 0, 0, 0) / R:1px so.
+**Values (default).** size 1440 x 64; padding 0px 20px 0px 12px; background transparent; text Delphi Inter 14/20 500, #63635e `color.sand.11`; transition translate 0.3s cubic-bezier(0.3, 0.9, 0.25, 1), opacity 0.3s cubic-bezier(0.3, 0.9, 0.25, 1), visibility 0.3s cubic-bezier(0.3, 0.9, 0.25, 1); icon 84.5 x 26, #82827c `color.sand.10`; layers ::before rgb(255, 255, 255) 0px none 1; header::before.fixed.inset-x-0 1440pxx0px #ffffff `color.white`; div.absolute.inset-x-0 1440.0x88.0; a.group/button.inline-flex 96.0x36.0 T:1px solid rgba(0, 0, 0, 0) / R:1px solid rgba(0, 0, 0, 0) / B:1px solid rgba(0, 0, 0, 0) / L:1px solid rgba(0, 0, 0, 0) 26px; a.group/button.inline-flex 180.0x36.0 #fd5400 `color.tangerine.9` T:1px solid rgba(0, 0, 0, 0).
 
 Child layers that carry the look: header::before 1440pxx0px background #ffffff `color.white`; div 1440x88 image linear-gradient(#ffffff `color.white` 0%, rgba(255, 255, 255, 0.9888) 6.25%, rgba(255, 255; a 96x36 border 1px solid transparent radius 26px.
 
@@ -94,7 +94,7 @@ Child layers that carry the look: header::before 1440pxx0px background #ffffff `
 #### Logo
 The Delphi mark at the left of the header. Read as `mkt-logo` on the home page.
 
-**Values (default).** size 91.5 x 40; padding 0px 0px 0px 7px; background transparent; text Delphi Inter 16/24 400, #82827c; transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 84.5 x 26, #82827c.
+**Values (default).** size 91.5 x 40; padding 0px 0px 0px 7px; background transparent; text Delphi Inter 16/24 400, #82827c `color.sand.10`; transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 84.5 x 26, #82827c `color.sand.10`.
 
 ![Logo default](components/crops/mkt-logo-default.png)
 
@@ -103,10 +103,10 @@ A topic link in the header/category strip ("Career & Work"); measured, never fol
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 79 x 40; padding 10px 16px; radius 3.35544e+07px; background oklab(0.641239 -0.00290832 0.00981319 / 0.1); text Delphi Inter 14/20 500, #63635e; transition all 0.2s cubic-bezier(0, 0, 0.2, 1) |
-| hover | background oklab(0.641239 -0.00290832 0.00981319 / 0.15); text Delphi Inter 14/20 500, #21201c |
-| focus-visible | outline 1px auto oklab(0.67 0.163492 0.147209 / 0.5), offset 1px |
-| pressed | size 77.42 x 39.2; background oklab(0.641239 -0.00290832 0.00981319 / 0.15); text Delphi Inter 14/20 500, #21201c |
+| default | size 79 x 40; padding 10px 16px; radius 3.35544e+07px; background rgba(141, 141, 134, 0.1) `background.chip` `background.chip`; text Delphi Inter 14/20 500, #63635e `color.sand.11`; transition all 0.2s cubic-bezier(0, 0, 0.2, 1) |
+| hover | background rgba(141, 141, 134, 0.15); text Delphi Inter 14/20 500, #21201c `accent.foreground` |
+| focus-visible | outline 1px auto rgba(253, 84, 0, 0.5), offset 1px |
+| pressed | size 77.42 x 39.2; background rgba(141, 141, 134, 0.15); text Delphi Inter 14/20 500, #21201c `accent.foreground` |
 
 ![Topic link default](components/crops/nav-topic-default.png) ![Topic link hover](components/crops/nav-topic-hover.png) ![Topic link focus-visible](components/crops/nav-topic-focus-visible.png) ![Topic link pressed](components/crops/nav-topic-pressed.png)
 
@@ -115,10 +115,10 @@ The header Sign-In action; it opens the auth dialog (measured below), never foll
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 96 x 36; padding 0px 12px; border 1px solid transparent; radius 26px; background transparent; text Delphi Inter 14/20 500, #63635e; transition color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), background-color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), opacity 0.15s cubic-bezier(0.165, 0.84, 0.44, 1); icon 13.6 x 13.6, #63635e |
-| hover | background oklab(0.641239 -0.00290832 0.00981319 / 0.1); text Delphi Inter 14/20 500, #21201c; icon 13.6 x 13.6, #21201c |
-| focus-visible | border 1px solid oklch(0.67 0.22 42); shadow oklab(0.67 0.163492 0.147209 / 0.3) 0px 0px 0px 3px |
-| pressed | size 94.08 x 35.28; background oklab(0.641239 -0.00290832 0.00981319 / 0.1); text Delphi Inter 14/20 500, #21201c; icon 13.33 x 13.33, #21201c |
+| default | size 96 x 36; padding 0px 12px; border 1px solid transparent; radius 26px; background transparent; text Delphi Inter 14/20 500, #63635e `color.sand.11`; transition color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), background-color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), opacity 0.15s cubic-bezier(0.165, 0.84, 0.44, 1); icon 13.6 x 13.6, #63635e `color.sand.11` |
+| hover | background rgba(141, 141, 134, 0.1) `background.chip` `background.chip`; text Delphi Inter 14/20 500, #21201c `accent.foreground`; icon 13.6 x 13.6, #21201c `accent.foreground` |
+| focus-visible | border 1px solid #fd5400 `color.tangerine.9`; shadow rgba(253, 84, 0, 0.3) 0px 0px 0px 3px |
+| pressed | size 94.08 x 35.28; background rgba(141, 141, 134, 0.1) `background.chip` `background.chip`; text Delphi Inter 14/20 500, #21201c `accent.foreground`; icon 13.33 x 13.33, #21201c `accent.foreground` |
 
 ![Sign In default](components/crops/signin-btn-default.png) ![Sign In hover](components/crops/signin-btn-hover.png) ![Sign In focus-visible](components/crops/signin-btn-focus-visible.png) ![Sign In pressed](components/crops/signin-btn-pressed.png)
 
@@ -127,10 +127,10 @@ The "Create Your Delphi" primary pill in the header; measured, never followed (i
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 180 x 36; padding 0px 12px; border 1px solid transparent; radius 26px; background oklch(0.67 0.22 42); text Delphi Inter 14/20 500, #ffffff `color.white`; transition color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), background-color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), opacity 0.15s cubic-bezier(0.165, 0.84, 0.44, 1); icon 13.6 x 13.6, #ffffff `color.white` |
-| hover | background oklch(0.6 0.21 42) |
-| focus-visible | border 1px solid oklch(0.67 0.22 42); shadow oklab(0.67 0.163492 0.147209 / 0.3) 0px 0px 0px 3px |
-| pressed | size 176.4 x 35.28; background oklch(0.6 0.21 42); icon 13.33 x 13.33, #ffffff `color.white` |
+| default | size 180 x 36; padding 0px 12px; border 1px solid transparent; radius 26px; background #fd5400 `color.tangerine.9`; text Delphi Inter 14/20 500, #ffffff `color.white`; transition color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), background-color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), opacity 0.15s cubic-bezier(0.165, 0.84, 0.44, 1); icon 13.6 x 13.6, #ffffff `color.white` |
+| hover | background #df4000 |
+| focus-visible | border 1px solid #fd5400 `color.tangerine.9`; shadow rgba(253, 84, 0, 0.3) 0px 0px 0px 3px |
+| pressed | size 176.4 x 35.28; background #df4000; icon 13.33 x 13.33, #ffffff `color.white` |
 
 ![Create CTA default](components/crops/create-cta-default.png) ![Create CTA hover](components/crops/create-cta-hover.png) ![Create CTA focus-visible](components/crops/create-cta-focus-visible.png) ![Create CTA pressed](components/crops/create-cta-pressed.png)
 
@@ -141,7 +141,7 @@ The home hero: the 50px Pythia display, the ask-anything textarea, topic cards a
 #### Hero headline
 "Find people who’ve been there" — the Pythia serif display heading. Read as `hero-h1` on the home page.
 
-**Values (default).** size 597.25 x 51; background transparent; text Delphi Pythia 50/51 500, #21201c; layers ::before rgba(0, 0, 0, 0) 0px none 1; h1::before.font-heading 821.25pxx115px 50%.
+**Values (default).** size 597.25 x 51; background transparent; text Delphi Pythia 50/51 500, #21201c `accent.foreground`; layers ::before rgba(0, 0, 0, 0) 0px none 1; h1::before.font-heading 821.25pxx115px 50%.
 
 Child layers that carry the look: h1::before 821.25pxx115px image radial-gradient(#fcf8f3 30%, rgba(252, 248, 243, 0.92) 48%, transparent 74%) radius 50%.
 
@@ -152,7 +152,7 @@ The "Describe your situation" hero textarea — the product’s front door; focu
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focused, filled) | size 624 x 52; background transparent; text Delphi Inter 18/26 400, #21201c; transition color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), background-color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.15s cubic-bezier(0.165, 0.84, 0.44, 1); placeholder #63635e; layers textarea.min-w-0.placeholder:text-fg-mid 624.0x52.0 rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px |
+| default (same: focused, filled) | size 624 x 52; background transparent; text Delphi Inter 18/26 400, #21201c `accent.foreground`; transition color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), background-color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.15s cubic-bezier(0.165, 0.84, 0.44, 1); placeholder #63635e `color.sand.11`; layers textarea.min-w-0.placeholder:text-fg-mid 624.0x52.0 rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px |
 
 ![Ask field default](components/crops/hero-search-default.png) ![Ask field focused](components/crops/hero-search-focused.png) ![Ask field filled](components/crops/hero-search-filled.png)
 
@@ -161,9 +161,9 @@ The "Say your situation" mic button beside the ask field; measured, never presse
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 32 x 32; radius 3.35544e+07px; background transparent; text Delphi Inter 14/20 500, #63635e; transition opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), color 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1); icon 17 x 17, #63635e |
-| focus-visible | shadow rgba(255, 255, 255, 0.992) 0px 0px 0px 1.98098px, oklab(0.67 0.163492 0.147209 / 0.990492) 0px 0px 0px 3.96197px; layers button.inline-flex.shrink-0 32.0x32.0 rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.992) 0px 0px 0px 1.98098px, oklab(0.67 0.163492 0.147209 / 0.990492) 0px 0px 0px 3.96197px, rgba(0, 0, 0, 0) 0px 0px 0px 0px 3.35544e+07px |
-| pressed | background #e9e8e6; text Delphi Inter 14/20 500, #21201c; icon 17 x 17, #21201c |
+| default (same: hover) | size 32 x 32; radius 3.35544e+07px; background transparent; text Delphi Inter 14/20 500, #63635e `color.sand.11`; transition opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), color 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1); icon 17 x 17, #63635e `color.sand.11` |
+| focus-visible | shadow rgba(255, 255, 255, 0.992) 0px 0px 0px 1.98098px, rgba(253, 84, 0, 0.990492) 0px 0px 0px 3.96197px; layers button.inline-flex.shrink-0 32.0x32.0 rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.992) 0px 0px 0px 1.98098px, oklab(0.67 0.163492 0.147209 / 0.990492) 0px 0px 0px 3.96197px, rgba(0, 0, 0, 0) 0px 0px 0px 0px 3.35544e+07px |
+| pressed | background #e9e8e6 `color.sand.4`; text Delphi Inter 14/20 500, #21201c `accent.foreground`; icon 17 x 17, #21201c `accent.foreground` |
 
 ![Voice button default](components/crops/mic-btn-default.png) ![Voice button hover](components/crops/mic-btn-hover.png) ![Voice button focus-visible](components/crops/mic-btn-focus-visible.png) ![Voice button pressed](components/crops/mic-btn-pressed.png)
 
@@ -172,17 +172,17 @@ A shuffled topic card ("Ask ex-Googlers about scaling under pressure"); measured
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 346.66 x 280; padding 20px; radius 24px; background #f7f3f0; image radial-gradient(140% 85% at 50% 118%, oklch(0.807277 0.106961 56.5286 / 0.27), transparent 72%); text Delphi Pythia 22/25.3 600, #23211f; transition translate 0.26s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.26s cubic-bezier(0.165, 0.84, 0.44, 1); icon 18 x 18, #23211f |
-| focus-visible | outline 2px solid #21201c, offset 4px |
+| default (same: hover, pressed) | size 346.66 x 280; padding 20px; radius 24px; background #f7f3f0 `background.warm`; image radial-gradient(140% 85% at 50% 118%, rgba(245, 174, 123, 0.27), transparent 72%); text Delphi Pythia 22/25.3 600, #23211f; transition translate 0.26s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.26s cubic-bezier(0.165, 0.84, 0.44, 1); icon 18 x 18, #23211f |
+| focus-visible | outline 2px solid #21201c `accent.foreground`, offset 4px |
 
 ![Topic card default](components/crops/topic-card-default.png) ![Topic card hover](components/crops/topic-card-hover.png) ![Topic card focus-visible](components/crops/topic-card-focus-visible.png) ![Topic card pressed](components/crops/topic-card-pressed.png)
 
 #### Expert card
 An expert portrait card on the home rail (name, claim, the Read-perspective flip). Read as `persp-card` on the home page.
 
-**Values (default).** size 272 x 360; background transparent; text Delphi Pythia 24/25.2 500, #ffffff `color.white`; icon 20.02 x 20.02, #ffffff `color.white`; layers div.perspective-flip-front 272.2x360.3 color(srgb 0.967647 0.954706 0.941765) oklch(0.67 0.22 42) 0px 0px 0px 2px, color(srgb 0.990616 0.33041 -0.139183 / 0.85) 0px 12px 28px -8px 28px; span.portrait-well.relative 272.2x360.3 color(srgb 0.967647 0.954706 0.941765); span.perspective-scrim 272.2x198.2; button.group/button.inline-flex 272.2x360.3 T:1px solid rgba(0, 0, 0, 0) / R:1px solid rgba(0, 0, .
+**Values (default).** size 272 x 360; background transparent; text Delphi Pythia 24/25.2 500, #ffffff `color.white`; icon 20.02 x 20.02, #ffffff `color.white`; layers div.perspective-flip-front 272.2x360.3 #f7f3f0 `background.warm` oklch(0.67 0.22 42) 0px 0px 0px 2px, color(srgb 0.990616 0.33041 -0.139183 / 0.85) 0px 12px 28px -8px 28px; span.portrait-well.relative 272.2x360.3 #f7f3f0 `background.warm`; span.perspective-scrim 272.2x198.2; button.group/button.inline-flex 272.2x360.3 T:1px solid rgba(0, 0, 0, 0) / R:1px solid rgba(0, 0, 0, 0) / B:1px solid rgba(0.
 
-Child layers that carry the look: div 272.2x360.3 background #f7f3f0 radius 28px shadow oklch(0.67 0.22 42) 0px 0px 0px 2px, color(srgb 0.990616 0.33041 -0.139183 / 0.85) 0px 12px 28px -8px; span 272.2x360.3 background #f7f3f0; span 272.2x198.2 image linear-gradient(transparent, rgba(0, 0, 0, 0.35) 50%, rgba(0, 0, 0, 0.8)).
+Child layers that carry the look: div 272.2x360.3 background #f7f3f0 `background.warm` radius 28px shadow #fd5400 `color.tangerine.9` 0px 0px 0px 2px, color(srgb 0.990616 0.33041 -0.139183 / 0.85) 0px 12px 28px -8px; span 272.2x360.3 background #f7f3f0 `background.warm`; span 272.2x198.2 image linear-gradient(transparent, rgba(0, 0, 0, 0.35) 50%, rgba(0, 0, 0, 0.8)).
 
 No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
 
@@ -191,24 +191,24 @@ The "Read <name>’s perspective" card toggle — a local flip, never a navigati
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 272.23 x 360.3; border 1px solid transparent; radius 28px; background transparent; text Delphi Inter 14/20 500, #63635e; transition color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), background-color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), opacity 0.15s cubic-bezier(0.165, 0.84, 0.44, 1) |
-| hover | radius 133.769px 133.769px 28px 28px; text Delphi Inter 14/20 500, #21201c |
-| focus-visible | border 1px solid oklch(0.67 0.22 42); radius 127.551px 127.551px 28px 28px; shadow oklab(0.67 0.163492 0.147209 / 0.3) 0px 0px 0px 3px; outline 2px solid oklch(0.67 0.22 42), offset -5px |
-| pressed | size 266.78 x 353.09; text Delphi Inter 14/20 500, #21201c |
+| default | size 272.23 x 360.3; border 1px solid transparent; radius 28px; background transparent; text Delphi Inter 14/20 500, #63635e `color.sand.11`; transition color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), background-color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), opacity 0.15s cubic-bezier(0.165, 0.84, 0.44, 1) |
+| hover | radius 133.769px 133.769px 28px 28px; text Delphi Inter 14/20 500, #21201c `accent.foreground` |
+| focus-visible | border 1px solid #fd5400 `color.tangerine.9`; radius 127.551px 127.551px 28px 28px; shadow rgba(253, 84, 0, 0.3) 0px 0px 0px 3px; outline 2px solid #fd5400 `color.tangerine.9`, offset -5px |
+| pressed | size 266.78 x 353.09; text Delphi Inter 14/20 500, #21201c `accent.foreground` |
 
 ![Perspective flip default](components/crops/persp-flip-default.png) ![Perspective flip hover](components/crops/persp-flip-hover.png) ![Perspective flip focus-visible](components/crops/persp-flip-focus-visible.png) ![Perspective flip pressed](components/crops/persp-flip-pressed.png)
 
 #### Perspective quote
 A quoted perspective on a card ("Nir on why we reach for our phones..."). Read as `persp-quote` on the home page.
 
-**Values (default).** size 227.81 x 171.29; background transparent; text Delphi Inter 13/15.86 500, #f0eae4.
+**Values (default).** size 227.81 x 171.29; background transparent; text Delphi Inter 13/15.86 500, #f0eae4 `text.on-dark`.
 
 ![Perspective quote default](components/crops/persp-quote-default.png)
 
 #### Section heading
 A home section heading ("Ask people who’ve lived it"). Read as `section-h2` on the home page.
 
-**Values (default).** size 228 x 28; background transparent; text Delphi Inter 20/28 500, #21201c.
+**Values (default).** size 228 x 28; background transparent; text Delphi Inter 20/28 500, #21201c `accent.foreground`.
 
 ![Section heading default](components/crops/section-h2-default.png)
 
@@ -219,7 +219,7 @@ The Sign-In dialog — reached via /auth on home and mounted again by /onboardin
 #### Sign-in dialog
 The auth dialog opened by the header Sign In (Continue with Google / Continue with Email); its buttons were measured, never pressed. Read as `signin-dialog` on the home page.
 
-**Values (default).** size 448 x 360; radius 26px; background #ffffff `color.white`; shadow oklab(0.243135 -0.000696592 0.00753608 / 0.05) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.1) 0px 8px 10px -6px; text Delphi Inter 24/32 500, #21201c; transition all 0.1s ease; icon 13.6 x 13.6, #63635e.
+**Values (default).** size 448 x 360; radius 26px; background #ffffff `color.white`; shadow rgba(33, 32, 28, 0.05) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.1) 0px 8px 10px -6px; text Delphi Inter 24/32 500, #21201c `accent.foreground`; transition all 0.1s ease; icon 13.6 x 13.6, #63635e `color.sand.11`.
 
 ![Sign-in dialog default](components/crops/signin-dialog-default.png)
 
@@ -228,10 +228,10 @@ The auth dialog opened by the header Sign In (Continue with Google / Continue wi
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 400 x 40; padding 0px 16px 0px 12px; border 1px solid transparent; radius 26px; background #21201c; text Delphi Inter 14/20 500, #ffffff `color.white`; transition color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), background-color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), opacity 0.15s cubic-bezier(0.165, 0.84, 0.44, 1); icon 13.6 x 13.6, #ffffff `color.white` |
-| hover | background #63635e |
-| focus-visible | border 1px solid oklch(0.67 0.22 42); background #63635e; shadow oklab(0.67 0.163492 0.147209 / 0.3) 0px 0px 0px 3px |
-| pressed | size 392 x 39.2; border 1px solid oklch(0.67 0.22 42); background #63635e; shadow oklab(0.67 0.163492 0.147209 / 0.3) 0px 0px 0px 3px; icon 13.33 x 13.33, #ffffff `color.white` |
+| default | size 400 x 40; padding 0px 16px 0px 12px; border 1px solid transparent; radius 26px; background #21201c `accent.foreground`; text Delphi Inter 14/20 500, #ffffff `color.white`; transition color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), background-color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), opacity 0.15s cubic-bezier(0.165, 0.84, 0.44, 1); icon 13.6 x 13.6, #ffffff `color.white` |
+| hover | background #63635e `color.sand.11` |
+| focus-visible | border 1px solid #fd5400 `color.tangerine.9`; background #63635e `color.sand.11`; shadow rgba(253, 84, 0, 0.3) 0px 0px 0px 3px |
+| pressed | size 392 x 39.2; border 1px solid #fd5400 `color.tangerine.9`; background #63635e `color.sand.11`; shadow rgba(253, 84, 0, 0.3) 0px 0px 0px 3px; icon 13.33 x 13.33, #ffffff `color.white` |
 
 ![Google SSO button default](components/crops/dialog-google-default.png) ![Google SSO button hover](components/crops/dialog-google-hover.png) ![Google SSO button focus-visible](components/crops/dialog-google-focus-visible.png) ![Google SSO button pressed](components/crops/dialog-google-pressed.png)
 
@@ -240,10 +240,10 @@ The auth dialog opened by the header Sign In (Continue with Google / Continue wi
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 400 x 40; padding 0px 16px 0px 12px; border 1px solid transparent; radius 26px; background oklab(0.641239 -0.00290832 0.00981319 / 0.1); text Delphi Inter 14/20 500, #21201c; transition color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), background-color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), opacity 0.15s cubic-bezier(0.165, 0.84, 0.44, 1); icon 13.6 x 13.6, #21201c |
-| hover | background oklab(0.641239 -0.00290832 0.00981319 / 0.15) |
-| focus-visible | border 1px solid oklch(0.67 0.22 42); background oklab(0.641239 -0.00290832 0.00981319 / 0.15); shadow oklab(0.67 0.163492 0.147209 / 0.3) 0px 0px 0px 3px |
-| pressed | size 392 x 39.2; border 1px solid oklch(0.67 0.22 42); background oklab(0.641239 -0.00290832 0.00981319 / 0.15); shadow oklab(0.67 0.163492 0.147209 / 0.3) 0px 0px 0px 3px; icon 13.33 x 13.33, #21201c |
+| default | size 400 x 40; padding 0px 16px 0px 12px; border 1px solid transparent; radius 26px; background rgba(141, 141, 134, 0.1) `background.chip` `background.chip`; text Delphi Inter 14/20 500, #21201c `accent.foreground`; transition color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), background-color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), opacity 0.15s cubic-bezier(0.165, 0.84, 0.44, 1); icon 13.6 x 13.6, #21201c `accent.foreground` |
+| hover | background rgba(141, 141, 134, 0.15) |
+| focus-visible | border 1px solid #fd5400 `color.tangerine.9`; background rgba(141, 141, 134, 0.15); shadow rgba(253, 84, 0, 0.3) 0px 0px 0px 3px |
+| pressed | size 392 x 39.2; border 1px solid #fd5400 `color.tangerine.9`; background rgba(141, 141, 134, 0.15); shadow rgba(253, 84, 0, 0.3) 0px 0px 0px 3px; icon 13.33 x 13.33, #21201c `accent.foreground` |
 
 ![Email button default](components/crops/dialog-email-default.png) ![Email button hover](components/crops/dialog-email-hover.png) ![Email button focus-visible](components/crops/dialog-email-focus-visible.png) ![Email button pressed](components/crops/dialog-email-pressed.png)
 
@@ -254,7 +254,7 @@ The /discover/<topic> gallery: the 50px Pythia page title, category pills, quote
 #### Gallery headline
 "Productivity advice from people who’ve been there" — the topic gallery heading. Read as `disc-h1` on the discover page.
 
-**Values (default).** size 700 x 102; background transparent; text Delphi Pythia 50/51 500, #21201c; layers ::before rgba(0, 0, 0, 0) 0px none 1; h1::before.font-heading 924pxx166px 50%.
+**Values (default).** size 700 x 102; background transparent; text Delphi Pythia 50/51 500, #21201c `accent.foreground`; layers ::before rgba(0, 0, 0, 0) 0px none 1; h1::before.font-heading 924pxx166px 50%.
 
 Child layers that carry the look: h1::before 924pxx166px image radial-gradient(#fcf8f3 30%, rgba(252, 248, 243, 0.92) 48%, transparent 74%) radius 50%.
 
@@ -263,9 +263,9 @@ Child layers that carry the look: h1::before 924pxx166px image radial-gradient(#
 #### Topic chip strip
 The category chip strip under the gallery heading (Career & Work / Money & Business / ...). Read as `disc-cats` on the discover page.
 
-**Values (default).** size 1072 x 320.59; background transparent; text Delphi Inter 13/13 400, #63635e; layers span.hl-ripples-paper 1440.0x788.6; span.hl-ripples-warmth 1440.0x544.6; span.breath-fallback.absolute 1440.0x570.6; span.hl-topic-pill 136.0x32.0 color(srgb 0.949588 0.934431 0.915) 999px; span.hl-topic-pill 158.0x32.0 color(srgb 0.949588 0.934431 0.915) 999px; span.hl-topic-pill 155.0x32.0 color(srgb 0.949588 0.934431 0.915) 999px.
+**Values (default).** size 1072 x 320.59; background transparent; text Delphi Inter 13/13 400, #63635e `color.sand.11`; layers span.hl-ripples-paper 1440.0x788.6; span.hl-ripples-warmth 1440.0x544.6; span.breath-fallback.absolute 1440.0x570.6; span.hl-topic-pill 136.0x32.0 #f2eee9 999px; span.hl-topic-pill 158.0x32.0 #f2eee9 999px; span.hl-topic-pill 155.0x32.0 #f2eee9 999px.
 
-Child layers that carry the look: span 1440x788.6 image linear-gradient(#fcf8f3 62%, #f9f9f8); span 1440x544.6 image radial-gradient(520px 300px at 50% 300px, color(srgb 0.990616 0.33041 -0.139183 / 0.04), t; span 1440x570.6 image radial-gradient(80% 52% at 46% 40%, rgba(255, 158, 102, 0.56) 0%, transparent 70%), radial.
+Child layers that carry the look: span 1440x788.6 image linear-gradient(#fcf8f3 62%, #f9f9f8 `accent.default`); span 1440x544.6 image radial-gradient(520px 300px at 50% 300px, color(srgb 0.990616 0.33041 -0.139183 / 0.04), t; span 1440x570.6 image radial-gradient(80% 52% at 46% 40%, rgba(255, 158, 102, 0.56) 0%, transparent 70%), radial.
 
 ![Topic chip strip default](components/crops/disc-cats-default.png)
 
@@ -274,24 +274,24 @@ A category chip in the gallery strip; measured, never followed. Read as `disc-ca
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 79 x 40; padding 10px 16px; radius 3.35544e+07px; background oklab(0.641239 -0.00290832 0.00981319 / 0.1); text Delphi Inter 14/20 500, #63635e; transition all 0.2s cubic-bezier(0, 0, 0.2, 1) |
-| hover | background oklab(0.641239 -0.00290832 0.00981319 / 0.15); text Delphi Inter 14/20 500, #21201c |
-| focus-visible | outline 1px auto oklab(0.67 0.163492 0.147209 / 0.5), offset 1px |
-| pressed | size 77.43 x 39.2; background oklab(0.641239 -0.00290832 0.00981319 / 0.149813); text Delphi Inter 14/20 500, #21201c |
+| default | size 79 x 40; padding 10px 16px; radius 3.35544e+07px; background rgba(141, 141, 134, 0.1) `background.chip` `background.chip`; text Delphi Inter 14/20 500, #63635e `color.sand.11`; transition all 0.2s cubic-bezier(0, 0, 0.2, 1) |
+| hover | background rgba(141, 141, 134, 0.15); text Delphi Inter 14/20 500, #21201c `accent.foreground` |
+| focus-visible | outline 1px auto rgba(253, 84, 0, 0.5), offset 1px |
+| pressed | size 77.43 x 39.2; background rgba(141, 141, 134, 0.149813); text Delphi Inter 14/20 500, #21201c `accent.foreground` |
 
 ![Topic chip default](components/crops/disc-cat-default.png) ![Topic chip hover](components/crops/disc-cat-hover.png) ![Topic chip focus-visible](components/crops/disc-cat-focus-visible.png) ![Topic chip pressed](components/crops/disc-cat-pressed.png)
 
 #### Gallery quote
 A quoted expert perspective in the gallery. Read as `disc-quote` on the discover page.
 
-**Values (default).** size 227.81 x 149.36; background transparent; text Delphi Inter 13/15.86 500, #f0eae4.
+**Values (default).** size 227.81 x 149.36; background transparent; text Delphi Inter 13/15.86 500, #f0eae4 `text.on-dark`.
 
 ![Gallery quote default](components/crops/disc-quote-default.png)
 
 #### Expert tile
 An expert portrait tile in the gallery grid. Read as `disc-card` on the discover page.
 
-**Values (default).** size 528 x 192; padding 24px 24px 18px 24px; border 1px solid rgba(33, 32, 28, 0.09); radius 24px; background #ffffff `color.white`; text Delphi Inter 23/29.9 500, #63635e; transition box-shadow 0.26s cubic-bezier(0.22, 1, 0.36, 1), transform 0.26s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.18s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.26s ease.
+**Values (default).** size 528 x 192; padding 24px 24px 18px 24px; border 1px solid rgba(33, 32, 28, 0.09) `border.hairline` `border.hairline`; radius 24px; background #ffffff `color.white`; text Delphi Inter 23/29.9 500, #63635e `color.sand.11`; transition box-shadow 0.26s cubic-bezier(0.22, 1, 0.36, 1), transform 0.26s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.18s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.26s ease.
 
 ![Expert tile default](components/crops/disc-card-default.png)
 
@@ -300,8 +300,8 @@ A gallery "Ask <group> about <topic>" card; measured, never pressed. Read as `di
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 346.66 x 280; padding 20px; radius 24px; background #f7f3f0; image radial-gradient(140% 85% at 50% 118%, oklch(0.807277 0.106961 56.5286 / 0.27), transparent 72%); text Delphi Pythia 22/25.3 600, #23211f; transition translate 0.26s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.26s cubic-bezier(0.165, 0.84, 0.44, 1); icon 18 x 18, #23211f |
-| focus-visible | outline 2px solid #21201c, offset 4px |
+| default (same: hover, pressed) | size 346.66 x 280; padding 20px; radius 24px; background #f7f3f0 `background.warm`; image radial-gradient(140% 85% at 50% 118%, rgba(245, 174, 123, 0.27), transparent 72%); text Delphi Pythia 22/25.3 600, #23211f; transition translate 0.26s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.26s cubic-bezier(0.165, 0.84, 0.44, 1); icon 18 x 18, #23211f |
+| focus-visible | outline 2px solid #21201c `accent.foreground`, offset 4px |
 
 ![Ask card default](components/crops/disc-ask-default.png) ![Ask card hover](components/crops/disc-ask-hover.png) ![Ask card focus-visible](components/crops/disc-ask-focus-visible.png) ![Ask card pressed](components/crops/disc-ask-pressed.png)
 
@@ -312,7 +312,7 @@ Public /search/<question> results: the pre-filled query field, Top perspectives,
 #### Top perspectives
 The "Top perspectives" results heading over the quoted answers. Read as `srch-top` on the search page.
 
-**Values (default).** size 150 x 28; background transparent; text Delphi Inter 18/28 500, #63635e.
+**Values (default).** size 150 x 28; background transparent; text Delphi Inter 18/28 500, #63635e `color.sand.11`.
 
 ![Top perspectives default](components/crops/srch-top-default.png)
 
@@ -321,9 +321,9 @@ The "Personalize your results" action; measured, never followed. Read as `srch-p
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 180 x 20; background transparent; text Delphi Inter 14/20 400, #63635e; transition color 0.3s cubic-bezier(0, 0, 0.2, 1), background-color 0.3s cubic-bezier(0, 0, 0.2, 1), border-color 0.3s cubic-bezier(0, 0, 0.2, 1), outline-color 0.3s cubic-bezier(0, 0, 0.2, 1), text-decoration-color 0.3s cubic-bezier(0, 0, 0.2, 1), fill 0.3s cubic-bezier(0, 0, 0.2, 1), stroke 0.3s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-from 0.3s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-via 0.3s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-to 0.3s cubic-bezier(0, 0, 0.2, 1); icon 13.6 x 13.6, #63635e |
+| default | size 180 x 20; background transparent; text Delphi Inter 14/20 400, #63635e `color.sand.11`; transition color 0.3s cubic-bezier(0, 0, 0.2, 1), background-color 0.3s cubic-bezier(0, 0, 0.2, 1), border-color 0.3s cubic-bezier(0, 0, 0.2, 1), outline-color 0.3s cubic-bezier(0, 0, 0.2, 1), text-decoration-color 0.3s cubic-bezier(0, 0, 0.2, 1), fill 0.3s cubic-bezier(0, 0, 0.2, 1), stroke 0.3s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-from 0.3s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-via 0.3s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-to 0.3s cubic-bezier(0, 0, 0.2, 1); icon 13.6 x 13.6, #63635e `color.sand.11` |
 | hover | text Delphi Inter 14/20 400, #f48734; icon 13.6 x 13.6, #f48734 |
-| focus-visible | outline 1px auto oklab(0.67 0.163492 0.147209 / 0.5), offset 1px; layers a.inline-flex.items-center 180.0x20.0 1px auto oklab(0.67 0.163492 0.147209 / 0.5) offset 1px |
+| focus-visible | outline 1px auto rgba(253, 84, 0, 0.5), offset 1px; layers a.inline-flex.items-center 180.0x20.0 1px auto oklab(0.67 0.163492 0.147209 / 0.5) offset 1px |
 | pressed | text Delphi Inter 14/20 400, #f48734; icon 13.6 x 13.6, #f48734 |
 
 ![Personalize link default](components/crops/srch-personalize-default.png) ![Personalize link hover](components/crops/srch-personalize-hover.png) ![Personalize link focus-visible](components/crops/srch-personalize-focus-visible.png) ![Personalize link pressed](components/crops/srch-personalize-pressed.png)
@@ -331,23 +331,23 @@ The "Personalize your results" action; measured, never followed. Read as `srch-p
 #### Result quote
 A quoted expert answer in the results. Read as `srch-quote` on the search page.
 
-**Values (default).** size 630 x 82; padding 14px 16px 20px 16px; background transparent; text Delphi Inter 16/24 400, #82827c; icon 20 x 20, #63635e; layers ::before color(srgb 0.946353 0.946353 0.943059) 0px none 1; ::after color(srgb 0.946353 0.946353 0.943059) 0px none 1; blockquote::before.perspective-bubble.relative 630pxx82px color(srgb 0.946353 0.946353 0.943059) 14px; blockquote::after.perspective-bubble.relative 40pxx44px color(srgb 0.946353 0.946353 0.943059).
+**Values (default).** size 630 x 82; padding 14px 16px 20px 16px; background transparent; text Delphi Inter 16/24 400, #82827c `color.sand.10`; icon 20 x 20, #63635e `color.sand.11`; layers ::before color(srgb 0.946353 0.946353 0.943059) 0px none 1; ::after color(srgb 0.946353 0.946353 0.943059) 0px none 1; blockquote::before.perspective-bubble.relative 630pxx82px #f1f1f0 14px; blockquote::after.perspective-bubble.relative 40pxx44px #f1f1f0.
 
-Child layers that carry the look: blockquote::before 630pxx82px background #f1f1f0 image radial-gradient(42% 120% at 50% calc(160%), oklch(0.67 0.22 42 / 0.16) 0%, transparent 100 radius 14px; blockquote::after 40pxx44px background #f1f1f0.
+Child layers that carry the look: blockquote::before 630pxx82px background #f1f1f0 image radial-gradient(42% 120% at 50% calc(160%), rgba(253, 84, 0, 0.16) 0%, transparent 100%) radius 14px; blockquote::after 40pxx44px background #f1f1f0.
 
 ![Result quote default](components/crops/srch-quote-default.png)
 
 #### Result expert card
 An expert result card (portrait, name, role, badges, quoted answer, Save/Expand). Read as `srch-expert-card` on the search page.
 
-**Values (default).** size 672 x 318; padding 18px 0px 20px 0px; border 1px solid oklab(0.641239 -0.00290832 0.00981319 / 0.2); radius 26px; background #ffffff `color.white`; text Delphi Pythia 24/28 600, #21201c; transition box-shadow 0.2s cubic-bezier(0.165, 0.84, 0.44, 1), --quote-glow 1.8s cubic-bezier(0.3, 0, 0, 1); icon 24 x 24, #21201c.
+**Values (default).** size 672 x 318; padding 18px 0px 20px 0px; border 1px solid rgba(141, 141, 134, 0.2) `border.card-border` `border.card-border`; radius 26px; background #ffffff `color.white`; text Delphi Pythia 24/28 600, #21201c `accent.foreground`; transition box-shadow 0.2s cubic-bezier(0.165, 0.84, 0.44, 1), --quote-glow 1.8s cubic-bezier(0.3, 0, 0, 1); icon 24 x 24, #21201c `accent.foreground`.
 
 ![Result expert card default](components/crops/srch-expert-card-default.png)
 
 #### Credential badge
 A credential badge on a result card ("VP OF GLOBAL COMMUNITY AT TORC"). Read as `srch-badge` on the search page.
 
-**Values (default).** size 228 x 20; radius 6px; background rgba(33, 32, 28, 0.06); text Delphi Pythia 10/20 600, #63635e.
+**Values (default).** size 228 x 20; radius 6px; background rgba(33, 32, 28, 0.06) `background.badge` `background.badge`; text Delphi Pythia 10/20 600, #63635e `color.sand.11`.
 
 ![Credential badge default](components/crops/srch-badge-default.png)
 
@@ -356,7 +356,7 @@ The large query textarea at the top of results, pre-filled with the asked questi
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focused) | size 664 x 72; padding 16px 48px 8px 20px; background transparent; text Delphi Inter 16/24 400, #21201c; transition color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), background-color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.15s cubic-bezier(0.165, 0.84, 0.44, 1); placeholder #63635e; layers textarea.min-w-0.resize-none 664.0x72.0 rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px |
+| default (same: focused) | size 664 x 72; padding 16px 48px 8px 20px; background transparent; text Delphi Inter 16/24 400, #21201c `accent.foreground`; transition color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), background-color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.15s cubic-bezier(0.165, 0.84, 0.44, 1); placeholder #63635e `color.sand.11`; layers textarea.min-w-0.resize-none 664.0x72.0 rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px |
 
 ![Query field default](components/crops/srch-field-default.png) ![Query field focused](components/crops/srch-field-focused.png)
 
@@ -365,10 +365,10 @@ The card’s "Save" action; measured, never pressed. Read as `srch-save` on the 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 81 x 36; padding 0px 12px 0px 10px; border 1px solid transparent; radius 26px; background transparent; text Delphi Inter 14/20 500, #63635e; transition color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), background-color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), opacity 0.15s cubic-bezier(0.165, 0.84, 0.44, 1); icon 13.6 x 13.6, #63635e |
-| hover | background oklab(0.641239 -0.00290832 0.00981319 / 0.1); text Delphi Inter 14/20 500, #21201c; icon 13.6 x 13.6, #21201c |
-| focus-visible | border 1px solid oklch(0.67 0.22 42); shadow oklab(0.67 0.163492 0.147209 / 0.3) 0px 0px 0px 3px |
-| pressed | size 79.38 x 35.28; background oklab(0.641239 -0.00290832 0.00981319 / 0.1); text Delphi Inter 14/20 500, #21201c; icon 13.33 x 13.33, #21201c |
+| default | size 81 x 36; padding 0px 12px 0px 10px; border 1px solid transparent; radius 26px; background transparent; text Delphi Inter 14/20 500, #63635e `color.sand.11`; transition color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), background-color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), opacity 0.15s cubic-bezier(0.165, 0.84, 0.44, 1); icon 13.6 x 13.6, #63635e `color.sand.11` |
+| hover | background rgba(141, 141, 134, 0.1) `background.chip` `background.chip`; text Delphi Inter 14/20 500, #21201c `accent.foreground`; icon 13.6 x 13.6, #21201c `accent.foreground` |
+| focus-visible | border 1px solid #fd5400 `color.tangerine.9`; shadow rgba(253, 84, 0, 0.3) 0px 0px 0px 3px |
+| pressed | size 79.38 x 35.28; background rgba(141, 141, 134, 0.1) `background.chip` `background.chip`; text Delphi Inter 14/20 500, #21201c `accent.foreground`; icon 13.33 x 13.33, #21201c `accent.foreground` |
 
 ![Save button default](components/crops/srch-save-default.png) ![Save button hover](components/crops/srch-save-hover.png) ![Save button focus-visible](components/crops/srch-save-focus-visible.png) ![Save button pressed](components/crops/srch-save-pressed.png)
 
@@ -377,10 +377,10 @@ The orange "Expand" card action; measured, never followed. Read as `srch-expand`
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 97 x 36; padding 0px 10px 0px 12px; border 1px solid transparent; radius 26px; background oklch(0.67 0.22 42); text Delphi Inter 14/20 500, #ffffff `color.white`; transition color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), background-color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), opacity 0.15s cubic-bezier(0.165, 0.84, 0.44, 1); icon 13.6 x 13.6, #ffffff `color.white` |
-| hover | background oklch(0.6 0.21 42) |
-| focus-visible | border 1px solid oklch(0.67 0.22 42); shadow oklab(0.67 0.163492 0.147209 / 0.3) 0px 0px 0px 3px |
-| pressed | size 95.06 x 35.28; background oklch(0.6 0.21 42); icon 13.33 x 13.33, #ffffff `color.white` |
+| default | size 97 x 36; padding 0px 10px 0px 12px; border 1px solid transparent; radius 26px; background #fd5400 `color.tangerine.9`; text Delphi Inter 14/20 500, #ffffff `color.white`; transition color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), background-color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), opacity 0.15s cubic-bezier(0.165, 0.84, 0.44, 1); icon 13.6 x 13.6, #ffffff `color.white` |
+| hover | background #df4000 |
+| focus-visible | border 1px solid #fd5400 `color.tangerine.9`; shadow rgba(253, 84, 0, 0.3) 0px 0px 0px 3px |
+| pressed | size 95.06 x 35.28; background #df4000; icon 13.33 x 13.33, #ffffff `color.white` |
 
 ![Expand button default](components/crops/srch-expand-default.png) ![Expand button hover](components/crops/srch-expand-hover.png) ![Expand button focus-visible](components/crops/srch-expand-focus-visible.png) ![Expand button pressed](components/crops/srch-expand-pressed.png)
 
@@ -391,7 +391,7 @@ The public /<expert> profile: portrait, Pythia display name, Share pill, About c
 #### Expert name
 The expert’s display name heading on their public profile. Read as `exp-name` on the expert page.
 
-**Values (default).** size 418.19 x 41.47; padding 0px 23.8px 4.08px 0px; background transparent; text Delphi Pythia 34/37.4 600, #21201c; icon 17 x 17, #21201c.
+**Values (default).** size 418.19 x 41.47; padding 0px 23.8px 4.08px 0px; background transparent; text Delphi Pythia 34/37.4 600, #21201c `accent.foreground`; icon 17 x 17, #21201c `accent.foreground`.
 
 ![Expert name default](components/crops/exp-name-default.png)
 
@@ -407,23 +407,23 @@ The "Share" profile action; measured, never pressed. Read as `share-btn` on the 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 77.81 x 40; padding 0px 16px; border 1px solid transparent; radius 26px; background oklab(0.243135 -0.000696592 0.00753608 / 0.1); text Delphi Inter 16/24 450, #63635e; transition color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), background-color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), outline-color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), text-decoration-color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), fill 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), stroke 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), --tw-gradient-from 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), --tw-gradient-via 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), --tw-gradient-to 0.15s cubic-bezier(0.165, 0.84, 0.44, 1) |
-| focus-visible | border 1px solid oklch(0.67 0.22 42); shadow oklab(0.67 0.163492 0.147209 / 0.3) 0px 0px 0px 3px |
-| pressed | size 76.26 x 39.2; background oklab(0.243135 -0.000696592 0.00753608 / 0.15); text Delphi Inter 16/24 450, #21201c |
+| default (same: hover) | size 77.81 x 40; padding 0px 16px; border 1px solid transparent; radius 26px; background rgba(33, 32, 28, 0.1) `action.share` `action.share`; text Delphi Inter 16/24 450, #63635e `color.sand.11`; transition color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), background-color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), outline-color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), text-decoration-color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), fill 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), stroke 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), --tw-gradient-from 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), --tw-gradient-via 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), --tw-gradient-to 0.15s cubic-bezier(0.165, 0.84, 0.44, 1) |
+| focus-visible | border 1px solid #fd5400 `color.tangerine.9`; shadow rgba(253, 84, 0, 0.3) 0px 0px 0px 3px |
+| pressed | size 76.26 x 39.2; background rgba(33, 32, 28, 0.15); text Delphi Inter 16/24 450, #21201c `accent.foreground` |
 
 ![Share button default](components/crops/share-btn-default.png) ![Share button focus-visible](components/crops/share-btn-focus-visible.png) ![Share button pressed](components/crops/share-btn-pressed.png)
 
 #### About text
 The expert’s About copy on the profile. Read as `exp-about` on the expert page.
 
-**Values (default).** size 650 x 48; background transparent; text Delphi Inter 16/24 400, #82827c.
+**Values (default).** size 650 x 48; background transparent; text Delphi Inter 16/24 400, #82827c `color.sand.10`.
 
 ![About text default](components/crops/exp-about-default.png)
 
 #### Profile section
 A profile section heading ("Experiences"). Read as `exp-section` on the expert page.
 
-**Values (default).** size 672 x 22.5; background transparent; text Delphi Inter 18/22.5 500, #161615.
+**Values (default).** size 672 x 22.5; background transparent; text Delphi Inter 18/22.5 500, #161615 `text.strong`.
 
 ![Profile section default](components/crops/exp-section-default.png)
 
@@ -443,23 +443,23 @@ The public /<expert>/chat surface: greeting, suggested-question chips, the compo
 #### Chat expert name
 The expert’s name in the chat header. Read as `chat-name` on the chat page.
 
-**Values (default).** size 163 x 80; background transparent; text Delphi Inter 14/20 500, #21201c; icon 13.6 x 13.6, #63635e; layers span.avatar-squircle.group/avatar 48.0x48.0 rgb(255, 255, 255) T:1px solid oklab(0.641239 -0.00290832 0.00981319 / 0.12) / R:1px solid oklab(0.641239 -0.00290832 0.00981319 / 0.12) / B:1px solid oklab(0.641239 -0.00290832 0.00981319 / 0.12) / L:1px solid oklab(0.641239 -0.00290832 0.00981319 / 0.12) rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0p.
+**Values (default).** size 163 x 80; background transparent; text Delphi Inter 14/20 500, #21201c `accent.foreground`; icon 13.6 x 13.6, #63635e `color.sand.11`; layers span.avatar-squircle.group/avatar 48.0x48.0 #ffffff `color.white` T:1px solid oklab(0.641239 -0.00290832 0.00981319 / 0.12) / R:1px solid oklab(0.641239 -0.00290832 0.00981319 / 0.12) / B:1px solid oklab(0.641239 -0.00290832 0.00981319 / 0.12) / L:1px solid oklab(0.641239 -0.00290832 0.00981319 / 0.12) rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px.
 
-Child layers that carry the look: span 48x48 background #ffffff `color.white` border 1px solid oklab(0.641239 -0.00290832 0.00981319 / 0.12) radius 28% shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 32.25px 32.25px 0px, rgba(0, 0, 0, 0.1) 0px 17.2px 17.2px -8.6px, rgba(0, 0, 0, 0.03) 0px 8.6px 8.6px -4.3px, rgba(0, 0, 0, 0.05) 0px 4.3px 4.3px -2.15px, rgba(0, 0, 0, 0.05) 0px 1.075px 1.075px -0.538px, rgba(255, 255, 255, 0.5) 0px 2px 4px 0px inset, rgba(255, 255, 255, 0.4) 0px -2px 4px 0px inset; span 46x46 radius 28% shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(255, 255, 255, 0.5) 0px 2px 4px 0px inset, rgba(255, 255, 255, 0.4) 0px -2px 4px 0px inset; div 163x34 background #ffffff `color.white` border 1px solid oklab(0.641239 -0.00290832 0.00981319 / 0.12) radius 3.35544e+07px shadow rgba(0, 0, 0, 0.1) 0px 2px 12px -2px, rgba(0, 0, 0, 0.08) 0px 4px 20px -4px.
+Child layers that carry the look: span 48x48 background #ffffff `color.white` border 1px solid rgba(141, 141, 134, 0.12) radius 28% shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 32.25px 32.25px 0px, rgba(0, 0, 0, 0.1) 0px 17.2px 17.2px -8.6px, rgba(0, 0, 0, 0.03) 0px 8.6px 8.6px -4.3px, rgba(0, 0, 0, 0.05) 0px 4.3px 4.3px -2.15px, rgba(0, 0, 0, 0.05) 0px 1.075px 1.075px -0.538px, rgba(255, 255, 255, 0.5) 0px 2px 4px 0px inset, rgba(255, 255, 255, 0.4) 0px -2px 4px 0px inset; span 46x46 radius 28% shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(255, 255, 255, 0.5) 0px 2px 4px 0px inset, rgba(255, 255, 255, 0.4) 0px -2px 4px 0px inset; div 163x34 background #ffffff `color.white` border 1px solid rgba(141, 141, 134, 0.12) radius 3.35544e+07px shadow rgba(0, 0, 0, 0.1) 0px 2px 12px -2px, rgba(0, 0, 0, 0.08) 0px 4px 20px -4px.
 
 No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
 
 #### Greeting bubble
 The clone’s opening message ("Hi there. What problem you trying to solve?"). Read as `chat-greeting` on the chat page.
 
-**Values (default).** size 287 x 20; background transparent; text Delphi Inter 14/20 400, #63635e.
+**Values (default).** size 287 x 20; background transparent; text Delphi Inter 14/20 400, #63635e `color.sand.11`.
 
 ![Greeting bubble default](components/crops/chat-greeting-default.png)
 
 #### Suggested label
 The "Suggested" label over the starter questions. Read as `suggested-label` on the chat page.
 
-**Values (default).** size 752 x 26; background transparent; text Delphi Inter 12/16 500, #82827c; icon 8.5 x 8.5, #82827c; layers button.group/button.inline-flex 88.0x26.0 T:1px solid rgba(0, 0, 0, 0) / R:1px solid rgba(0, 0, 0, 0) / B:1px solid rgba(0, 0, 0, 0) / L:1px solid rgba(0, 0, 0, 0); button.group/button.inline-flex 20.0x20.0 T:1px solid rgba(0, 0, 0, 0) / R:1px solid rgba(0, 0, 0, 0) / B:1px solid rgba(0, 0, 0, 0) / L:1px solid rgba(0, 0, 0, 0).
+**Values (default).** size 752 x 26; background transparent; text Delphi Inter 12/16 500, #82827c `color.sand.10`; icon 8.5 x 8.5, #82827c `color.sand.10`; layers button.group/button.inline-flex 88.0x26.0 T:1px solid rgba(0, 0, 0, 0) / R:1px solid rgba(0, 0, 0, 0) / B:1px solid rgba(0, 0, 0, 0) / L:1px solid rgba(0, 0, 0, 0); button.group/button.inline-flex 20.0x20.0 T:1px solid rgba(0, 0, 0, 0) / R:1px solid rgba(0, 0, 0, 0) / B:1px solid rgba(0, 0, 0, 0) / L:1px solid rgba(0, 0, 0, 0).
 
 Child layers that carry the look: button 88x26 border 1px solid transparent; button 20x20 border 1px solid transparent.
 
@@ -470,10 +470,10 @@ A suggested starter question chip; measured, never pressed — pressing it would
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 245.33 x 83.75; padding 12px 14px; border 1px solid transparent; radius 18px; background oklab(0.641239 -0.00290832 0.00981319 / 0.1); text Delphi Inter 14/19.25 500, #21201c; transition color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), background-color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), opacity 0.15s cubic-bezier(0.165, 0.84, 0.44, 1) |
-| hover | background oklab(0.641239 -0.00290832 0.00981319 / 0.15) |
-| focus-visible | border 1px solid oklch(0.67 0.22 42); shadow oklab(0.67 0.163492 0.147209 / 0.3) 0px 0px 0px 3px |
-| pressed | size 240.42 x 82.07; background oklab(0.641239 -0.00290832 0.00981319 / 0.15) |
+| default | size 245.33 x 83.75; padding 12px 14px; border 1px solid transparent; radius 18px; background rgba(141, 141, 134, 0.1) `background.chip` `background.chip`; text Delphi Inter 14/19.25 500, #21201c `accent.foreground`; transition color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), background-color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), opacity 0.15s cubic-bezier(0.165, 0.84, 0.44, 1) |
+| hover | background rgba(141, 141, 134, 0.15) |
+| focus-visible | border 1px solid #fd5400 `color.tangerine.9`; shadow rgba(253, 84, 0, 0.3) 0px 0px 0px 3px |
+| pressed | size 240.42 x 82.07; background rgba(141, 141, 134, 0.15) |
 
 ![Suggested question default](components/crops/suggested-chip-default.png) ![Suggested question hover](components/crops/suggested-chip-hover.png) ![Suggested question focus-visible](components/crops/suggested-chip-focus-visible.png) ![Suggested question pressed](components/crops/suggested-chip-pressed.png)
 
@@ -482,7 +482,7 @@ The "Send a message..." composer; focused and typed into then cleared, never sub
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focused, filled) | size 592 x 52; padding 12px 4px 12px 12px; background transparent; shadow #21201c 0px 0px 0px 0px; text Delphi Inter 18/28 400, #21201c; placeholder #82827c; layers textarea.text-fg-high.placeholder:text-fg-low 592.0x52.0 rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgb(33, 32, 28) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px |
+| default (same: focused, filled) | size 592 x 52; padding 12px 4px 12px 12px; background transparent; shadow #21201c 0px 0px 0px 0px; text Delphi Inter 18/28 400, #21201c `accent.foreground`; placeholder #82827c `color.sand.10`; layers textarea.text-fg-high.placeholder:text-fg-low 592.0x52.0 rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgb(33, 32, 28) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px |
 
 ![Message field default](components/crops/chat-input-default.png) ![Message field focused](components/crops/chat-input-focused.png) ![Message field filled](components/crops/chat-input-filled.png)
 
@@ -491,7 +491,7 @@ The composer submit button — it only renders once text is in the field; its st
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible) | size 48 x 48; radius 3.35544e+07px; background oklch(0.67 0.22 42); shadow rgba(0, 0, 0, 0.05) 0px 24.348px 24.348px 0px, rgba(239, 5, 240, 0) 0px 12.986px 12.986px -6.493px, rgba(0, 0, 0, 0.05) 0px 6.493px 6.493px -3.246px, rgba(0, 0, 0, 0.05) 0px 3.246px 3.246px -1.623px, rgba(239, 95, 0, 0.05) 0px 0.812px 0.812px -0.406px, rgba(0, 0, 0, 0.04) 0px 0px 0px 0.812px, rgba(255, 255, 255, 0.2) 0px -1.623px 1.623px 0px inset, rgba(255, 255, 255, 0.2) 0px 1.623px 1.623px 0px inset; text Delphi Inter 14/20 500, #ffffff `color.white`; transition opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), color 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1); icon 17 x 17, #ffffff `color.white` |
+| default (same: hover, focus-visible) | size 48 x 48; radius 3.35544e+07px; background #fd5400 `color.tangerine.9`; shadow rgba(0, 0, 0, 0.05) 0px 24.348px 24.348px 0px, rgba(239, 5, 240, 0) 0px 12.986px 12.986px -6.493px, rgba(0, 0, 0, 0.05) 0px 6.493px 6.493px -3.246px, rgba(0, 0, 0, 0.05) 0px 3.246px 3.246px -1.623px, rgba(239, 95, 0, 0.05) 0px 0.812px 0.812px -0.406px, rgba(0, 0, 0, 0.04) 0px 0px 0px 0.812px, rgba(255, 255, 255, 0.2) 0px -1.623px 1.623px 0px inset, rgba(255, 255, 255, 0.2) 0px 1.623px 1.623px 0px inset; text Delphi Inter 14/20 500, #ffffff `color.white`; transition opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), color 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1); icon 17 x 17, #ffffff `color.white` |
 | pressed | size 45.6 x 45.6; icon 16.15 x 16.15, #ffffff `color.white` |
 
 ![Send button default](components/crops/chat-send-default.png) ![Send button hover](components/crops/chat-send-hover.png) ![Send button focus-visible](components/crops/chat-send-focus-visible.png) ![Send button pressed](components/crops/chat-send-pressed.png)
@@ -501,8 +501,8 @@ The "Scroll to bottom" helper pill; measured, never pressed. Read as `scroll-bot
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 30.4 x 30.4; border 1px solid oklab(0.641239 -0.00290832 0.00981319 / 0.12); radius 3.35544e+07px; background #ffffff `color.white`; shadow rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.1) 0px 1px 2px -1px; text Delphi Inter 14/20 500, #63635e; transition translate 0.4s cubic-bezier(0.7, 0, 0.84, 0), scale 0.4s cubic-bezier(0.7, 0, 0.84, 0), opacity 0.4s cubic-bezier(0.7, 0, 0.84, 0); opacity 0; icon 12.92 x 12.92, #63635e |
-| pressed | size 31.36 x 31.36; border 1px solid #8d8d86; text Delphi Inter 14/20 500, #21201c; icon 13.33 x 13.33, #21201c |
+| default (same: hover) | size 30.4 x 30.4; border 1px solid rgba(141, 141, 134, 0.12); radius 3.35544e+07px; background #ffffff `color.white`; shadow rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.1) 0px 1px 2px -1px; text Delphi Inter 14/20 500, #63635e `color.sand.11`; transition translate 0.4s cubic-bezier(0.7, 0, 0.84, 0), scale 0.4s cubic-bezier(0.7, 0, 0.84, 0), opacity 0.4s cubic-bezier(0.7, 0, 0.84, 0); opacity 0; icon 12.92 x 12.92, #63635e `color.sand.11` |
+| pressed | size 31.36 x 31.36; border 1px solid #8d8d86 `color.sand.9`; text Delphi Inter 14/20 500, #21201c `accent.foreground`; icon 13.33 x 13.33, #21201c `accent.foreground` |
 
 **Focus not capturable.** A real keyboard focus could not be held on this element (`focus-visible` recorded `via: focus failed`), so its focus look is uncaptured — not measured as absent.
 
@@ -511,9 +511,9 @@ The "Scroll to bottom" helper pill; measured, never pressed. Read as `scroll-bot
 #### Terms line
 The "By using this service, you..." terms line under the composer. Read as `chat-terms` on the chat page.
 
-**Values (default).** size 429.25 x 16; padding 0px 0px 0px 8px; background transparent; text Delphi Inter 12/16 400, #63635e; layers a.border-b.border-sand-9/40 97.2x16.0 B:1px solid oklab(0.641239 -0.00290832 0.00981319 / 0.4); a.border-b.border-sand-9/40 77.8x16.0 B:1px solid oklab(0.641239 -0.00290832 0.00981319 / 0.4).
+**Values (default).** size 429.25 x 16; padding 0px 0px 0px 8px; background transparent; text Delphi Inter 12/16 400, #63635e `color.sand.11`; layers a.border-b.border-sand-9/40 97.2x16.0 B:1px solid oklab(0.641239 -0.00290832 0.00981319 / 0.4); a.border-b.border-sand-9/40 77.8x16.0 B:1px solid oklab(0.641239 -0.00290832 0.00981319 / 0.4).
 
-Child layers that carry the look: a 97.2x16 border 1px solid oklab(0.641239 -0.00290832 0.00981319 / 0.4); a 77.8x16 border 1px solid oklab(0.641239 -0.00290832 0.00981319 / 0.4).
+Child layers that carry the look: a 97.2x16 border 1px solid rgba(141, 141, 134, 0.4); a 77.8x16 border 1px solid rgba(141, 141, 134, 0.4).
 
 ![Terms line default](components/crops/chat-terms-default.png)
 
@@ -524,9 +524,9 @@ The phone surface at 390 wide: the mobile top bar, hero, ask field and topic car
 #### Mobile header
 The phone top bar: wordmark, Sign In, Create pill. Read as `m-header` on the home page at 390 wide.
 
-**Values (default).** size 390 x 64; padding 0px 20px 0px 12px; background transparent; text Delphi Inter 14/20 500, #ffffff `color.white`; transition translate 0.3s cubic-bezier(0.3, 0.9, 0.25, 1), opacity 0.3s cubic-bezier(0.3, 0.9, 0.25, 1), visibility 0.3s cubic-bezier(0.3, 0.9, 0.25, 1); icon 84.5 x 26, #82827c; layers ::before rgb(255, 255, 255) 0px none 1; header::before.fixed.inset-x-0 390pxx0px rgb(255, 255, 255); div.absolute.inset-x-0 390.0x88.0; a.group/button.inline-flex 102.0x36.0 oklch(0.67 0.22 42) T:1px solid rgba(0, 0, 0, 0) / R:1px solid rgba(0, 0, 0, 0) / B:1px solid rgba(0, 0, 0, 0) / L:1px solid rgba(0, 0, 0, 0) 26px.
+**Values (default).** size 390 x 64; padding 0px 20px 0px 12px; background transparent; text Delphi Inter 14/20 500, #ffffff `color.white`; transition translate 0.3s cubic-bezier(0.3, 0.9, 0.25, 1), opacity 0.3s cubic-bezier(0.3, 0.9, 0.25, 1), visibility 0.3s cubic-bezier(0.3, 0.9, 0.25, 1); icon 84.5 x 26, #82827c `color.sand.10`; layers ::before rgb(255, 255, 255) 0px none 1; header::before.fixed.inset-x-0 390pxx0px #ffffff `color.white`; div.absolute.inset-x-0 390.0x88.0; a.group/button.inline-flex 102.0x36.0 #fd5400 `color.tangerine.9` T:1px solid rgba(0, 0, 0, 0) / R:1px solid rgba(0, 0, 0, 0) / B:1px solid rgba(0, 0, 0, 0) / L:1px solid rgba(0, 0, 0, 0) 26px.
 
-Child layers that carry the look: header::before 390pxx0px background #ffffff `color.white`; div 390x88 image linear-gradient(#ffffff `color.white` 0%, rgba(255, 255, 255, 0.9888) 6.25%, rgba(255, 255; a 102x36 background oklch(0.67 0.22 42) border 1px solid transparent radius 26px.
+Child layers that carry the look: header::before 390pxx0px background #ffffff `color.white`; div 390x88 image linear-gradient(#ffffff `color.white` 0%, rgba(255, 255, 255, 0.9888) 6.25%, rgba(255, 255; a 102x36 background #fd5400 `color.tangerine.9` border 1px solid transparent radius 26px.
 
 ![Mobile header default](components/crops/m-header-default.png)
 
@@ -535,15 +535,15 @@ The Sign-In action on the phone header; measured, never followed. Read as `m-sig
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 42 x 17.88; background transparent; text Delphi Inter 13/17.87 400, #82827c; transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
-| focus-visible | outline 1px auto oklab(0.67 0.163492 0.147209 / 0.5), offset 1px; layers a.text-fg-low.text-[13px] 42.0x17.9 1px auto oklab(0.67 0.163492 0.147209 / 0.5) offset 1px |
+| default (same: hover, pressed) | size 42 x 17.88; background transparent; text Delphi Inter 13/17.87 400, #82827c `color.sand.10`; transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
+| focus-visible | outline 1px auto rgba(253, 84, 0, 0.5), offset 1px; layers a.text-fg-low.text-[13px] 42.0x17.9 1px auto oklab(0.67 0.163492 0.147209 / 0.5) offset 1px |
 
 ![Mobile Sign In default](components/crops/m-signin-default.png) ![Mobile Sign In hover](components/crops/m-signin-hover.png) ![Mobile Sign In focus-visible](components/crops/m-signin-focus-visible.png) ![Mobile Sign In pressed](components/crops/m-signin-pressed.png)
 
 #### Mobile headline
 The phone hero heading. Read as `m-h1` on the home page at 390 wide.
 
-**Values (default).** size 350 x 65.25; background transparent; text Delphi Pythia 32/32.64 500, #21201c; layers ::before rgba(0, 0, 0, 0) 0px none 1; h1::before.font-heading 390pxx121.25px 50%.
+**Values (default).** size 350 x 65.25; background transparent; text Delphi Pythia 32/32.64 500, #21201c `accent.foreground`; layers ::before rgba(0, 0, 0, 0) 0px none 1; h1::before.font-heading 390pxx121.25px 50%.
 
 Child layers that carry the look: h1::before 390pxx121.25px image radial-gradient(#fcf8f3 30%, rgba(252, 248, 243, 0.92) 48%, transparent 74%) radius 50%.
 
@@ -554,7 +554,7 @@ The ask textarea on the phone hero; focused and typed then cleared, never submit
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focused, filled) | size 342 x 52; background transparent; text Delphi Inter 18/26 400, #21201c; transition color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), background-color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.15s cubic-bezier(0.165, 0.84, 0.44, 1); placeholder #63635e; layers textarea.min-w-0.placeholder:text-fg-mid 342.0x52.0 rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px |
+| default (same: focused, filled) | size 342 x 52; background transparent; text Delphi Inter 18/26 400, #21201c `accent.foreground`; transition color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), background-color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.15s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.15s cubic-bezier(0.165, 0.84, 0.44, 1); placeholder #63635e `color.sand.11`; layers textarea.min-w-0.placeholder:text-fg-mid 342.0x52.0 rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px |
 
 ![Mobile ask field default](components/crops/m-search-default.png) ![Mobile ask field focused](components/crops/m-search-focused.png) ![Mobile ask field filled](components/crops/m-search-filled.png)
 
@@ -563,17 +563,17 @@ A topic card on the phone rail; measured, never pressed. Read as `m-topic-card` 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 350 x 150; padding 16px 18px; radius 20px; background #f7f3f0; image radial-gradient(140% 85% at 50% 118%, oklch(0.807277 0.106961 56.5286 / 0.27), transparent 72%); text Delphi Pythia 20/23 600, #23211f; transition translate 0.26s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.26s cubic-bezier(0.165, 0.84, 0.44, 1); icon 18 x 18, #23211f |
-| focus-visible | outline 2px solid #21201c, offset 4px |
+| default (same: hover, pressed) | size 350 x 150; padding 16px 18px; radius 20px; background #f7f3f0 `background.warm`; image radial-gradient(140% 85% at 50% 118%, rgba(245, 174, 123, 0.27), transparent 72%); text Delphi Pythia 20/23 600, #23211f; transition translate 0.26s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.26s cubic-bezier(0.165, 0.84, 0.44, 1); icon 18 x 18, #23211f |
+| focus-visible | outline 2px solid #21201c `accent.foreground`, offset 4px |
 
 ![Mobile topic card default](components/crops/m-topic-card-default.png) ![Mobile topic card hover](components/crops/m-topic-card-hover.png) ![Mobile topic card focus-visible](components/crops/m-topic-card-focus-visible.png) ![Mobile topic card pressed](components/crops/m-topic-card-pressed.png)
 
 #### Mobile footer
 The phone footer. Read as `m-footer` on the home page at 390 wide.
 
-**Values (default).** size 390 x 372.75; padding 0px 20px 24px 20px; background transparent; text Delphi Inter 14/20 400, #63635e; icon 78 x 24, #21201c; layers div.shrink-0.data-horizontal:h-px 350.0x1.0 oklab(0.641239 -0.00290832 0.00981319 / 0.12).
+**Values (default).** size 390 x 372.75; padding 0px 20px 24px 20px; background transparent; text Delphi Inter 14/20 400, #63635e `color.sand.11`; icon 78 x 24, #21201c `accent.foreground`; layers div.shrink-0.data-horizontal:h-px 350.0x1.0 rgba(141, 141, 134, 0.12).
 
-Child layers that carry the look: div 350x1 background oklab(0.641239 -0.00290832 0.00981319 / 0.12).
+Child layers that carry the look: div 350x1 background rgba(141, 141, 134, 0.12).
 
 ![Mobile footer default](components/crops/m-footer-default.png)
 
@@ -584,9 +584,9 @@ The sitemap footer on the long-scroll surfaces.
 #### Site footer
 The sitemap footer (Discover / About Delphi / Blog / Premium...). Read as `site-footer` on the home page.
 
-**Values (default).** size 1152 x 242.88; padding 0px 40px 24px 40px; background transparent; text Delphi Inter 14/20 400, #63635e; icon 78 x 24, #21201c; layers div.shrink-0.data-horizontal:h-px 1072.0x1.0 oklab(0.641239 -0.00290832 0.00981319 / 0.12).
+**Values (default).** size 1152 x 242.88; padding 0px 40px 24px 40px; background transparent; text Delphi Inter 14/20 400, #63635e `color.sand.11`; icon 78 x 24, #21201c `accent.foreground`; layers div.shrink-0.data-horizontal:h-px 1072.0x1.0 rgba(141, 141, 134, 0.12).
 
-Child layers that carry the look: div 1072x1 background oklab(0.641239 -0.00290832 0.00981319 / 0.12).
+Child layers that carry the look: div 1072x1 background rgba(141, 141, 134, 0.12).
 
 ![Site footer default](components/crops/site-footer-default.png)
 

@@ -506,9 +506,13 @@ def put_sem(root, group, key, leaf):
 sem = SPEC["light"]
 # A measured group that collides with a declared leaf (--background under
 # background, --border under border) demotes it before roles read EMITTED,
-# so aliases resolve to the leaf's new path.
+# so aliases resolve to the leaf's new path. Run the demotion on BOTH theme
+# sets: the declared paths must stay identical light vs dark even when only
+# light gains measured roles, or the generated CSS would mix --background
+# (dark) with --background-default (light).
 for group in ("background", "text", "action", "border", "surface", "foreground"):
-    _demote_leaf_group(sem, group)
+    for root in (SPEC["light"], SPEC["dark"]):
+        _demote_leaf_group(root, group)
 for key, comp, state, prop, group, prefer, desc in [
     ("page", "mkt-header", "default", "_body-bg", "background", ("--background",),
      "The white field the whole public surface paints."),
@@ -575,7 +579,7 @@ for key, comp, state, desc in [
         raw = st(comp, state)["fontSize"]
         src = f"computed fontSize of {comp} {state} (raw/components-computed.json)"
         alias = size_alias.get(raw)
-        ty[key] = lit(f"{{{alias[0]}}}" if alias else raw, "fontSize",
+        ty.setdefault("measured", {})[key] = lit(f"{{{alias[0]}}}" if alias else raw, "fontSize",
                       src + (f"; matches declared {alias[1]}" if alias else ""), desc)
     except KeyError:
         pass
@@ -595,9 +599,10 @@ for key, comp, state, prop, desc in [
     try:
         v = st(comp, state)[prop]
         src = f"computed {prop} of {comp} {state} (raw/components-computed.json)"
-        if float(re.fullmatch(r"[\d.eE+-]+", v).group(0)) > 9999 and "px" in v:
+        mnum = re.match(r"[\d.eE+-]+", v)
+        if mnum and float(mnum.group(0)) > 9999 and "px" in v:
             v = "calc(infinity * 1px)"
-        dkey = {v_: k for k_, v_ in R.items() if k_.startswith("--radius-")}.get(v)
+        dkey = {v_: k_ for k_, v_ in R.items() if k_.startswith("--radius-")}.get(v)
         if dkey:
             radii[key] = lit(f"{{radius.{dkey[len('--radius-'):]}}}", "dimension", src + f"; matches declared {dkey}", desc)
         else:

@@ -76,124 +76,144 @@
       },
       "size": {
         "2xl": {
-          "value": "24px",
+          "value": "1.5rem",
           "type": "dimension",
           "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --text-2xl",
           "description": "The declared `--text-2xl`."
         },
         "3xl": {
-          "value": "30px",
+          "value": "1.875rem",
           "type": "dimension",
           "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --text-3xl",
           "description": "The declared `--text-3xl`."
         },
         "4xl": {
-          "value": "36px",
+          "value": "2.25rem",
           "type": "dimension",
           "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --text-4xl",
           "description": "The declared `--text-4xl`."
         },
         "5xl": {
-          "value": "48px",
+          "value": "3rem",
           "type": "dimension",
           "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --text-5xl",
           "description": "The declared `--text-5xl`."
         },
         "6xl": {
-          "value": "60px",
+          "value": "3.75rem",
           "type": "dimension",
           "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --text-6xl",
           "description": "The declared `--text-6xl`."
         },
         "7xl": {
-          "value": "72px",
+          "value": "4.5rem",
           "type": "dimension",
           "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --text-7xl",
           "description": "The declared `--text-7xl`."
         },
         "8xl": {
-          "value": "96px",
+          "value": "6rem",
           "type": "dimension",
           "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --text-8xl",
           "description": "The declared `--text-8xl`."
         },
         "9xl": {
-          "value": "128px",
+          "value": "8rem",
           "type": "dimension",
           "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --text-9xl",
           "description": "The declared `--text-9xl`."
         },
         "base": {
-          "value": "16px",
+          "value": "1rem",
           "type": "dimension",
           "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --text-base",
           "description": "The declared `--text-base`."
         },
         "lg": {
-          "value": "{font.size.lg}",
-          "type": "fontSize",
-          "source": "computed fontSize of hero-search default (raw/components-computed.json); matches declared --text-lg",
-          "description": "The 18px ask fields, quotes and section headings."
+          "value": "1.125rem",
+          "type": "dimension",
+          "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --text-lg",
+          "description": "The declared `--text-lg`."
         },
         "sm": {
-          "value": "13px",
-          "type": "fontSize",
-          "source": "computed fontSize of m-signin default (raw/components-computed.json)",
-          "description": "The 13px mobile sign-in link."
+          "value": ".875rem",
+          "type": "other",
+          "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --text-sm",
+          "description": "The declared `--text-sm`."
         },
         "xl": {
-          "value": "20px",
+          "value": "1.25rem",
           "type": "dimension",
           "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --text-xl",
           "description": "The declared `--text-xl`."
         },
         "xs": {
-          "value": "{font.size.xs}",
-          "type": "fontSize",
-          "source": "computed fontSize of chat-terms default (raw/components-computed.json); matches declared --text-xs",
-          "description": "The 12px terms/helper line under the composer."
+          "value": ".75rem",
+          "type": "other",
+          "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --text-xs",
+          "description": "The declared `--text-xs`."
         },
-        "badge": {
-          "value": "10px",
-          "type": "fontSize",
-          "source": "computed fontSize of srch-badge default (raw/components-computed.json)",
-          "description": "The 10px uppercase credential badge (Pythia 600)."
-        },
-        "control": {
-          "value": "{font.size.sm}",
-          "type": "fontSize",
-          "source": "computed fontSize of signin-btn default (raw/components-computed.json); matches declared --text-sm",
-          "description": "The 14px pill-button, chip and nav-topic label."
-        },
-        "body": {
-          "value": "{font.size.base}",
-          "type": "fontSize",
-          "source": "computed fontSize of chat-name default (raw/components-computed.json); matches declared --text-base",
-          "description": "The 16px body, card and profile text."
-        },
-        "section": {
-          "value": "{font.size.xl}",
-          "type": "fontSize",
-          "source": "computed fontSize of section-h2 default (raw/components-computed.json); matches declared --text-xl",
-          "description": "The 20px marketing section heading."
-        },
-        "mobile-display": {
-          "value": "32px",
-          "type": "fontSize",
-          "source": "computed fontSize of m-h1 default (raw/components-computed.json)",
-          "description": "The 32px mobile display size at 390px."
-        },
-        "name": {
-          "value": "34px",
-          "type": "fontSize",
-          "source": "computed fontSize of exp-name default (raw/components-computed.json)",
-          "description": "The 34px expert display name (Pythia 600)."
-        },
-        "display": {
-          "value": "50px",
-          "type": "fontSize",
-          "source": "computed fontSize of hero-h1 default (raw/components-computed.json)",
-          "description": "The 50px Pythia display on home and discover."
+        "measured": {
+          "badge": {
+            "value": "10px",
+            "type": "fontSize",
+            "source": "computed fontSize of srch-badge default (raw/components-computed.json)",
+            "description": "The 10px uppercase credential badge (Pythia 600)."
+          },
+          "xs": {
+            "value": "12px",
+            "type": "fontSize",
+            "source": "computed fontSize of chat-terms default (raw/components-computed.json)",
+            "description": "The 12px terms/helper line under the composer."
+          },
+          "sm": {
+            "value": "13px",
+            "type": "fontSize",
+            "source": "computed fontSize of m-signin default (raw/components-computed.json)",
+            "description": "The 13px mobile sign-in link."
+          },
+          "control": {
+            "value": "14px",
+            "type": "fontSize",
+            "source": "computed fontSize of signin-btn default (raw/components-computed.json)",
+            "description": "The 14px pill-button, chip and nav-topic label."
+          },
+          "body": {
+            "value": "16px",
+            "type": "fontSize",
+            "source": "computed fontSize of chat-name default (raw/components-computed.json)",
+            "description": "The 16px body, card and profile text."
+          },
+          "lg": {
+            "value": "18px",
+            "type": "fontSize",
+            "source": "computed fontSize of hero-search default (raw/components-computed.json)",
+            "description": "The 18px ask fields, quotes and section headings."
+          },
+          "section": {
+            "value": "20px",
+            "type": "fontSize",
+            "source": "computed fontSize of section-h2 default (raw/components-computed.json)",
+            "description": "The 20px marketing section heading."
+          },
+          "mobile-display": {
+            "value": "32px",
+            "type": "fontSize",
+            "source": "computed fontSize of m-h1 default (raw/components-computed.json)",
+            "description": "The 32px mobile display size at 390px."
+          },
+          "name": {
+            "value": "34px",
+            "type": "fontSize",
+            "source": "computed fontSize of exp-name default (raw/components-computed.json)",
+            "description": "The 34px expert display name (Pythia 600)."
+          },
+          "display": {
+            "value": "50px",
+            "type": "fontSize",
+            "source": "computed fontSize of hero-h1 default (raw/components-computed.json)",
+            "description": "The 50px Pythia display on home and discover."
+          }
         }
       },
       "lineHeight": {
@@ -302,8 +322,8 @@
       },
       "tracking": {
         "normal": {
-          "value": "0px",
-          "type": "dimension",
+          "value": "0em",
+          "type": "other",
           "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --tracking-normal",
           "description": "The declared `--tracking-normal`."
         },
@@ -314,14 +334,14 @@
           "description": "The declared `--tracking-tight`."
         },
         "wide": {
-          "value": "0.390625px",
-          "type": "dimension",
+          "value": ".025em",
+          "type": "other",
           "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --tracking-wide",
           "description": "The declared `--tracking-wide`."
         },
         "widest": {
-          "value": "1.59375px",
-          "type": "dimension",
+          "value": ".1em",
+          "type": "other",
           "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --tracking-widest",
           "description": "The declared `--tracking-widest`."
         }
@@ -550,61 +570,61 @@
     "size": {
       "container": {
         "2xl": {
-          "value": "672px",
+          "value": "42rem",
           "type": "dimension",
           "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --container-2xl",
           "description": "The declared `--container-2xl`."
         },
         "3xl": {
-          "value": "768px",
+          "value": "48rem",
           "type": "dimension",
           "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --container-3xl",
           "description": "The declared `--container-3xl`."
         },
         "4xl": {
-          "value": "896px",
+          "value": "56rem",
           "type": "dimension",
           "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --container-4xl",
           "description": "The declared `--container-4xl`."
         },
         "5xl": {
-          "value": "1024px",
+          "value": "64rem",
           "type": "dimension",
           "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --container-5xl",
           "description": "The declared `--container-5xl`."
         },
         "6xl": {
-          "value": "1152px",
+          "value": "72rem",
           "type": "dimension",
           "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --container-6xl",
           "description": "The declared `--container-6xl`."
         },
         "lg": {
-          "value": "512px",
+          "value": "32rem",
           "type": "dimension",
           "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --container-lg",
           "description": "The declared `--container-lg`."
         },
         "md": {
-          "value": "448px",
+          "value": "28rem",
           "type": "dimension",
           "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --container-md",
           "description": "The declared `--container-md`."
         },
         "sm": {
-          "value": "384px",
+          "value": "24rem",
           "type": "dimension",
           "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --container-sm",
           "description": "The declared `--container-sm`."
         },
         "xl": {
-          "value": "576px",
+          "value": "36rem",
           "type": "dimension",
           "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --container-xl",
           "description": "The declared `--container-xl`."
         },
         "xs": {
-          "value": "320px",
+          "value": "20rem",
           "type": "dimension",
           "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --container-xs",
           "description": "The declared `--container-xs`."
@@ -613,13 +633,13 @@
     },
     "breakpoint": {
       "2xl": {
-        "value": "1536px",
+        "value": "96rem",
         "type": "dimension",
         "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --breakpoint-2xl",
         "description": "The declared `--breakpoint-2xl`."
       },
       "xl": {
-        "value": "1280px",
+        "value": "80rem",
         "type": "dimension",
         "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --breakpoint-xl",
         "description": "The declared `--breakpoint-xl`."
@@ -633,16 +653,58 @@
         "description": "The declared `--radius-xl`."
       },
       "xs": {
-        "value": "2px",
-        "type": "dimension",
+        "value": ".125rem",
+        "type": "other",
         "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --radius-xs",
         "description": "The declared `--radius-xs`."
       },
       "default": {
-        "value": "10px",
+        "value": ".625rem",
         "type": "other",
         "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --radius",
         "description": "The declared `--radius`."
+      },
+      "badge": {
+        "value": "6px",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of srch-badge default (raw/components-computed.json)",
+        "description": "The 6px credential-badge radius."
+      },
+      "chip": {
+        "value": "18px",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of suggested-chip default (raw/components-computed.json)",
+        "description": "The 18px suggested-question chip."
+      },
+      "card-sm": {
+        "value": "20px",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of m-topic-card default (raw/components-computed.json)",
+        "description": "The 20px mobile topic card and experience item."
+      },
+      "card": {
+        "value": "24px",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of topic-card default (raw/components-computed.json)",
+        "description": "The 24px topic/gallery card."
+      },
+      "button": {
+        "value": "26px",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of create-cta default (raw/components-computed.json)",
+        "description": "The 26px button/dialog radius — CTAs, dialog actions, expert cards, Share."
+      },
+      "flip": {
+        "value": "28px",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of persp-flip default (raw/components-computed.json)",
+        "description": "The 28px perspective flip card."
+      },
+      "pill": {
+        "value": "calc(infinity * 1px)",
+        "type": "other",
+        "source": "computed borderTopLeftRadius of mic-btn default (raw/components-computed.json)",
+        "description": "The full-pill (calc(infinity * 1px)) on round and topic buttons."
       }
     },
     "duration": {
@@ -930,7 +992,7 @@
         "lvh": {
           "dvh": {
             "pct": {
-              "value": "720px",
+              "value": "900px",
               "type": "other",
               "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --silk-100-lvh-dvh-pct",
               "description": "The declared `--silk-100-lvh-dvh-pct`."
@@ -940,7 +1002,7 @@
       }
     },
     "spacing": {
-      "value": "4px",
+      "value": ".25rem",
       "type": "other",
       "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --spacing",
       "description": "The declared `--spacing`."
@@ -3302,12 +3364,16 @@
       }
     },
     "background": {
-      "var": "--background",
-      "type": "color"
+      "default": {
+        "var": "--background",
+        "type": "color"
+      }
     },
     "border": {
-      "var": "--border",
-      "type": "color"
+      "default": {
+        "var": "--border",
+        "type": "color"
+      }
     },
     "brand": {
       "accent": {
@@ -3392,8 +3458,10 @@
       }
     },
     "foreground": {
-      "var": "--foreground",
-      "type": "color"
+      "default": {
+        "var": "--foreground",
+        "type": "color"
+      }
     },
     "input": {
       "var": "--input",

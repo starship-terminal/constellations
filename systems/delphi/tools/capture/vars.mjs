@@ -67,7 +67,8 @@ const sheets = [...bodies.entries()].concat(inline);
 await page.close();
 
 // ---- harvest: every rule with --* declarations ----
-const probe = await browser.newPage();
+const probeCtx = await browser.newContext({ viewport: { width: 1440, height: 900 }, deviceScaleFactor: 1 });
+const probe = await probeCtx.newPage();
 const result = await probe.evaluate((sheets) => {
   const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v);
   const rules = [];
@@ -165,6 +166,9 @@ for (const pass of ['dark', 'light']) {
       } else if (!raw.includes('%') && CSS.supports('width', raw)) {
         p.style.width = raw; r.kind = 'dimension'; r.value = getComputedStyle(p).width;
         if (/vw|vh|dvh/.test(raw)) r.note = 'viewport-relative, resolved at 1440 x 900';
+        // font-relative units (em/rem) resolve against the probe's font size
+        // and stop scaling with the element's own font — keep them as declared.
+        if (/(em|rem)$/.test(raw)) { r.value = raw; r.note = 'font-relative length, kept as declared'; }
         // max-content/min-content/fit-content/auto resolve to 0px on an empty
         // probe: keep the keyword instead of publishing a bogus length.
         if (r.value === '0px' && !/^[.\d]/.test(raw)) { r.value = raw; r.note = 'sizing keyword, not a fixed length'; }
@@ -180,6 +184,7 @@ for (const pass of ['dark', 'light']) {
     return out;
   }, want);
 }
+await probeCtx.close().catch(() => {});
 await browser.close();
 
 const THEME = /^--(amber|blue|brown|crimson|cyan|gold|grass|gray|green|indigo|jade|plum|red|ruby|sand|silk|tangerine|teal|tomato|violet|yellow|color|font|text|fg|background|foreground|card|popover|primary|secondary|muted|accent|destructive|border|input|ring|chart|sidebar|mind|person|bubble|avatar|surface|normal|duration|error|info|warning|success|toast|overlay|size|grid|reveal|slide|tag|quote|brand|note|debug|z|radius|spacing|shadow|ease|breakpoint|leading|tracking|weight|opacity)-?/;
