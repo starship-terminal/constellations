@@ -113,8 +113,12 @@ const mobile = {
   home: { path: '/', wait: 10000, run: async (p, S) => {
     await S.view('default');
     await step('menu', async () => {
-      const m = p.locator('.nav-mobile-toggle, button[aria-label*="menu" i], button[aria-label*="navigation" i]').filter({ visible: true }).first();
-      if (await m.count()) { await clickEl(m); await wait(p, 1800); await S.view('menu'); await p.keyboard.press('Escape'); }
+      // The mobile menu control is the header's <summary.navigation-toggle>
+      // (see measure.mjs's m-menu-button) — a missing toggle is a failed
+      // shot, so it is thrown, not silently skipped.
+      const m = p.locator('summary.navigation-toggle, .nav-mobile-toggle, button[aria-label*="menu" i], button[aria-label*="navigation" i]').filter({ visible: true }).first();
+      if (!(await m.count())) throw new Error('no mobile menu toggle found (expected summary.navigation-toggle)');
+      await clickEl(m); await wait(p, 1800); await S.view('menu'); await p.keyboard.press('Escape');
     });
     await S.full();
   } },

@@ -158,7 +158,9 @@ const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) 
 
 (function spacing() {
   let m = '';
-  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  // This package stores the space scale under core.space (spacing is the
+  // older kit's name; keep both so a renamed group never silently empties).
+  for (const [n, t] of flat(TOK.core.space || TOK.core.spacing || {}, 'space.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
   for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
   for (const [n, t] of flat(TOK.core.border || {}, 'border.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
   for (const [n, t] of flat(TOK.core.easing || {}, 'easing.')) m += `<div><b>${esc(n)}</b> <span>cubic-bezier(${esc(t.v.join ? t.v.join(', ') : t.v)})</span></div>`;
@@ -167,7 +169,11 @@ const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) 
 
 (function elev() {
   let e = '';
-  for (const [n, t] of flat(TOK.core.shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  // Dock's shadows live under core.measured (inset rings + the plan-cta
+  // layered shadow) typed 'shadow', not under a core.shadow group.
+  const shadows = flat(TOK.core.shadow || {}, 'shadow.').concat(
+    flat(TOK.core.measured || {}, 'measured.').filter(([, t]) => t.t === 'shadow'));
+  for (const [n, t] of shadows) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => (x.inset ? 'inset ' : '') + x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.spread + ' ' + x.color).join(', ') : t.v)}</span></div>`;
   $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
 })();
 

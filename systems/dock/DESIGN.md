@@ -136,6 +136,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - **The two font/ink systems are not interchangeable.** Roobert/#4058ff/#1a202c belongs to the auth app; DockWebflowHome/Navigation and #0068f9/#121722 to the marketing site. The pricing and demo pages sit between: marketing chrome with Roobert content.
 - **Agent/MCP prompt fields** (input/textarea) are display:none until the widget's own interaction; their values are honest misses — the visible `.mcp-prompt` widget was measured instead.
 - **The Turnstile widget** stayed a 1px placeholder headless; its 1x1 reading is what was painted, not the widget's real chrome.
+- **Two entries measured a neighbouring control** in the 2026-11-13 run: `signup-submit` read the "Continue with Google" OAuth action (not the email form's submit) and `hero-lede` read the hero eyebrow (not the lede). Both selectors were fixed in `tools/capture/public/measure.mjs`; the entries carry notes and a re-measure is queued — until then their values describe the neighbouring control.
 - **Screenshots are 256-colour PNGs** — read exact colours from tokens.json or raw files, never from a screenshot.
 
 ### Do and don't (from README.md)

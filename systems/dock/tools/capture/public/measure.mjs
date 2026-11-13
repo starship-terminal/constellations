@@ -111,12 +111,18 @@ async function kbFocus(loc) {
   await loc.evaluate((el) => el.focus());
   await page.keyboard.press('Shift+Tab');
   await page.keyboard.press('Tab');
-  let ok = await loc.evaluate((el) => document.activeElement === el || el.contains(document.activeElement));
+  // A control inside a shadow root (the dock-site-header/footer web
+  // components) never lands on document.activeElement — that reads the
+  // shadow host. :focus and :focus-within are evaluated on the element in
+  // its own root, so they see focus wherever it actually landed.
+  const hasFocus = (el) => el.matches(':focus') || el.matches(':focus-within')
+    || el === document.activeElement || el.contains(document.activeElement);
+  let ok = await loc.evaluate(hasFocus);
   let how = 'Shift+Tab, Tab';
   if (!ok) {
     await page.keyboard.press('Shift');
     await loc.evaluate((el) => el.focus());
-    ok = await loc.evaluate((el) => document.activeElement === el);
+    ok = await loc.evaluate(hasFocus);
     how = 'keydown then focus()';
   }
   await page.waitForTimeout(350);
@@ -428,7 +434,26 @@ async function home() {
   await page.keyboard.press('Escape'); await page.waitForTimeout(400);
   const h = G.home;
   await S('hero-title', q('h1').filter({ visible: true }).first(), ['default'], { group: h, title: 'Hero headline', desc: 'The "Build high-performing sales teams" display headline.', sel: 'h1' }, { noScroll: true });
-  await S('hero-lede', q('p, main p').filter({ hasText: /revenue|sales team|seller|buyer|workspace/i }).filter({ visible: true }).first(), ['default'], { group: h, title: 'Hero copy', desc: 'The lede under the hero headline.', sel: 'hero lede' });
+  // The lede is the first real paragraph after the hero h1 — a broad
+  // "revenue|seller" text match lands on p.hero-eyebrow (the "AI Revenue
+  // Enablement" tag) instead, so mark the intended node by structure: a
+  // visible paragraph below the headline that is not an eyebrow/kicker and
+  // carries real sentence-length copy.
+  await page.evaluate(() => {
+    const h1 = [...document.querySelectorAll('main h1, h1')].find((n) => n.getBoundingClientRect().width > 0);
+    if (!h1) return;
+    const top = h1.getBoundingClientRect().top;
+    for (const p of [...document.querySelectorAll('main p, p')]) {
+      const r = p.getBoundingClientRect();
+      const t = (p.innerText || '').trim();
+      if (r.width <= 0 || r.top < top - 40) continue;
+      if (/eyebrow|kicker|overline|tagline|tag/i.test(String(p.className))) continue;
+      if (t.length < 40) continue;
+      p.setAttribute('data-m-mark', 'herolede');
+      return;
+    }
+  });
+  await S('hero-lede', q('[data-m-mark="herolede"]').filter({ visible: true }).first(), ['default'], { group: h, title: 'Hero copy', desc: 'The lede under the hero headline — the first sentence-length paragraph after the h1, not the hero-eyebrow tag.', sel: 'first p after h1 (data-m-mark)' });
   await S('hero-cta', q('a.dock-home-button').filter({ hasText: /Start for free/i }).filter({ visible: true }).first(), B4, { group: h, title: 'Hero CTA', desc: 'The primary Start-for-free action in the hero; measured, never followed.', sel: 'a.dock-home-button "Start for free"' });
   await S('hero-demo', q('a.dock-home-button').filter({ hasText: /Request demo/i }).filter({ visible: true }).first(), B4, { group: h, title: 'Hero demo action', desc: 'The secondary Request-demo action in the hero; measured, never followed.', sel: 'a.dock-home-button "Request demo"' });
   await S('hero-card', q('.hero-screen, .sales-room, .hero-intro .page-placeholder').filter({ visible: true }).first(), ['default'], { group: h, title: 'Hero artwork', desc: 'The painted product-scene layer behind the hero copy (the sales-room artwork panel).', sel: '.hero-screen' });
@@ -512,7 +537,18 @@ async function signup() {
   await S('signup-card', q('[data-m-mark="signupcard"]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Signup card', desc: 'The create-account card on auth.dock.us; captured, never used.', sel: 'signup card' }, { noScroll: true });
   await S('signup-field', q('input[type="email"], input[name="email"], input').filter({ visible: true }).first(), ['default', 'focused', 'filled'], { group: g, title: 'Signup email field', desc: 'The signup email input; focused and given sample text that was deleted again — nothing sent.', sel: 'input[type=email]' }, { noScroll: true });
   await S('signup-check', q('iframe[src*="challenges.cloudflare" i], iframe[src*="turnstile" i], iframe').filter({ visible: true }).first(), ['default'], { group: g, title: 'Human check', desc: 'The Cloudflare Turnstile "Verify you are human" widget on the signup card (an iframe; its inner checkbox cannot be read and was never toggled).', sel: 'turnstile iframe' }, { noScroll: true });
-  await S('signup-submit', q('button[type="submit"], button').filter({ hasText: /Sign up|Create|Continue|Get started/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Signup submit', desc: 'The signup submit action; measured, never pressed.', sel: 'signup submit' }, { noScroll: true });
+  // The email form's submit, not the OAuth actions above it: prefer the
+  // form's type="submit" button and fall back to an exact label match, so a
+  // broad text match can never save "Continue with Google" as the submit.
+  let submit = q('button[type="submit"]').filter({ hasText: /Sign up|Create|Continue/i }).filter({ visible: true }).first();
+  if (!(await submit.count())) {
+    submit = q('button').filter({ hasText: /^\s*(Sign up|Create account|Create|Continue)\s*$/i }).filter({ visible: true }).first();
+  }
+  if (await submit.count()) {
+    const picked = await submit.evaluate((el) => (el.innerText || '').trim()).catch(() => '');
+    if (/google|microsoft|apple|sso|saml/i.test(picked)) log('  ! signup-submit matched an OAuth action, not the email submit:', JSON.stringify(picked));
+  }
+  await S('signup-submit', submit, B4, { group: g, title: 'Signup submit', desc: "The signup card's email-form submit (the OAuth actions above it are different controls); measured, never pressed.", sel: 'button[type=submit] on sign-up' }, { noScroll: true });
   save();
 }
 

@@ -112,12 +112,17 @@ def st(comp, state):
 
 def ts(comp, state, prop):
     """The first text node's reading (textStyle) when the kit recorded one —
-    the wrapper's own fontSize can be the container's, not the text's."""
+    the wrapper's own fontSize can be the container's, not the text's. A
+    sup/sub first child is a glyph, not the running text (plan-price's "$"
+    sits in a 12px sup over the 19px figure), so for those the element's own
+    computed style is the reading."""
     try:
         c = C[comp]["states"][state]
         t = c.get("textStyle") or {}
         v = t.get(prop)
-        return v if v else c["style"].get(prop)
+        if v and str(t.get("node") or "").split(".")[0] not in ("sup", "sub"):
+            return v
+        return c["style"].get(prop) or v
     except KeyError:
         return None
 

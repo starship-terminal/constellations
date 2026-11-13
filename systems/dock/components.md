@@ -47,7 +47,7 @@ Screenshots are named `{page}-{theme}-state.png`: every captured surface paints 
 
 Values that apply across entries, from the measurement files.
 
-**Focus.** 11 components were given a real keyboard focus. 6 draw an outline ring: `hero-cta` (2px solid rgba(18, 23, 34, 0.6) `measured.focus-ring` `measured.focus-ring`, offset 4px), `hero-demo` (2px solid rgba(18, 23, 34, 0.6) `measured.focus-ring` `measured.focus-ring`, offset 4px), `plan-cta` (2px solid #0068f9 `color.brand.blue`, offset 4px), `faq-item` (2px solid #0068f9 `color.brand.blue`, offset 4px), `demo-submit` (2px solid #0068f9 `color.brand.blue`, offset 4px), `mcp-copy` (2px solid rgba(18, 23, 34, 0.6) `measured.focus-ring` `measured.focus-ring`, offset 4px). The other 5 show no measured change: `filter-radio`, `customer-card`, `sidebar-link`, `template-card`, `signup-submit`.
+**Focus.** 19 components were given a real keyboard focus. 14 draw an outline ring: `nav-trigger` (2px solid rgba(18, 23, 34, 0.6) `measured.focus-ring` `measured.focus-ring`, offset 4px), `nav-link` (2px solid rgba(18, 23, 34, 0.6) `measured.focus-ring` `measured.focus-ring`, offset 4px), `nav-login` (2px solid rgba(18, 23, 34, 0.6) `measured.focus-ring` `measured.focus-ring`, offset 4px), `nav-demo` (2px solid rgba(18, 23, 34, 0.6) `measured.focus-ring` `measured.focus-ring`, offset 4px), `nav-cta` (2px solid rgba(18, 23, 34, 0.6) `measured.focus-ring` `measured.focus-ring`, offset 4px), `menu-link` (2px solid rgba(18, 23, 34, 0.6) `measured.focus-ring` `measured.focus-ring`, offset 4px), `hero-cta` (2px solid rgba(18, 23, 34, 0.6) `measured.focus-ring` `measured.focus-ring`, offset 4px), `hero-demo` (2px solid rgba(18, 23, 34, 0.6) `measured.focus-ring` `measured.focus-ring`, offset 4px), `plan-cta` (2px solid #0068f9 `color.brand.blue`, offset 4px), `faq-item` (2px solid #0068f9 `color.brand.blue`, offset 4px), `footer-link` (2px solid rgba(18, 23, 34, 0.6) `measured.focus-ring` `measured.focus-ring`, offset 4px), `m-nav-item` (2px solid rgba(18, 23, 34, 0.6) `measured.focus-ring` `measured.focus-ring`, offset 4px), `demo-submit` (2px solid #0068f9 `color.brand.blue`, offset 4px), `mcp-copy` (2px solid rgba(18, 23, 34, 0.6) `measured.focus-ring` `measured.focus-ring`, offset 4px). The other 5 show no measured change: `filter-radio`, `customer-card`, `sidebar-link`, `template-card`, `signup-submit`.
 
 **Pressed.** Forced with DevTools (`CSS.forcePseudoState` :active:hover). Nothing a real press would submit was ever pressed.
 
@@ -102,11 +102,11 @@ The Product <summary> that opens the header mega-menu; toggled, never followed. 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 105.7 x 38.19; padding 9px 14px 10px 16px; radius 100px; background transparent; text DockWebflowNavigation 16/19.2 500, #121722 `color.neutral.ink`; icon 12 x 12, #121722 `color.neutral.ink` |
-| hover, pressed | background #f8f8f8 `color.neutral.wash-hover` |
+| hover | background #f8f8f8 `color.neutral.wash-hover` |
+| focus-visible | outline 2px solid rgba(18, 23, 34, 0.6) `measured.focus-ring` `measured.focus-ring`, offset 4px; layers summary.nav-trigger 105.7x38.2 2px solid color(srgb 0.0705882 0.0901961 0.133333 / 0.6) offset 4px 100px |
+| pressed | background #f8f8f8 `color.neutral.wash-hover` |
 
-**Focus not capturable.** A real keyboard focus could not be held on this element (`focus-visible` recorded `via: focus failed`), so its focus look is uncaptured — not measured as absent.
-
-![Nav trigger default](components/crops/nav-trigger-default.png) ![Nav trigger hover](components/crops/nav-trigger-hover.png) ![Nav trigger pressed](components/crops/nav-trigger-pressed.png)
+![Nav trigger default](components/crops/nav-trigger-default.png) ![Nav trigger hover](components/crops/nav-trigger-hover.png) ![Nav trigger focus-visible](components/crops/nav-trigger-focus-visible.png) ![Nav trigger pressed](components/crops/nav-trigger-pressed.png)
 
 #### Nav link
 The plain Pricing header link. Read as `nav-link` on the home page.
@@ -114,11 +114,11 @@ The plain Pricing header link. Read as `nav-link` on the home page.
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 81.98 x 38.19; padding 9px 16px 10px 16px; radius 100px; background transparent; text DockWebflowNavigation 16/19.2 500, #121722 `color.neutral.ink` |
-| hover, pressed | background #f8f8f8 `color.neutral.wash-hover` |
+| hover | background #f8f8f8 `color.neutral.wash-hover` |
+| focus-visible | outline 2px solid rgba(18, 23, 34, 0.6) `measured.focus-ring` `measured.focus-ring`, offset 4px; layers a.nav-trigger.nav-direct 82.0x38.2 2px solid color(srgb 0.0705882 0.0901961 0.133333 / 0.6) offset 4px 100px |
+| pressed | background #f8f8f8 `color.neutral.wash-hover` |
 
-**Focus not capturable.** A real keyboard focus could not be held on this element (`focus-visible` recorded `via: focus failed`), so its focus look is uncaptured — not measured as absent.
-
-![Nav link default](components/crops/nav-link-default.png) ![Nav link hover](components/crops/nav-link-hover.png) ![Nav link pressed](components/crops/nav-link-pressed.png)
+![Nav link default](components/crops/nav-link-default.png) ![Nav link hover](components/crops/nav-link-hover.png) ![Nav link focus-visible](components/crops/nav-link-focus-visible.png) ![Nav link pressed](components/crops/nav-link-pressed.png)
 
 #### Log-in link
 The Log-in header action (to auth.dock.us); measured, never followed. Read as `nav-login` on the home page.
@@ -126,11 +126,11 @@ The Log-in header action (to auth.dock.us); measured, never followed. Read as `n
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 75.8 x 38.19; padding 9px 16px 10px 16px; radius 100px; background transparent; text DockWebflowNavigation 16/19.2 500, #121722 `color.neutral.ink` |
-| hover, pressed | background #f8f8f8 `color.neutral.wash-hover` |
+| hover | background #f8f8f8 `color.neutral.wash-hover` |
+| focus-visible | outline 2px solid rgba(18, 23, 34, 0.6) `measured.focus-ring` `measured.focus-ring`, offset 4px; layers a.nav-trigger.nav-direct 75.8x38.2 2px solid color(srgb 0.0705882 0.0901961 0.133333 / 0.6) offset 4px 100px |
+| pressed | background #f8f8f8 `color.neutral.wash-hover` |
 
-**Focus not capturable.** A real keyboard focus could not be held on this element (`focus-visible` recorded `via: focus failed`), so its focus look is uncaptured — not measured as absent.
-
-![Log-in link default](components/crops/nav-login-default.png) ![Log-in link hover](components/crops/nav-login-hover.png) ![Log-in link pressed](components/crops/nav-login-pressed.png)
+![Log-in link default](components/crops/nav-login-default.png) ![Log-in link hover](components/crops/nav-login-hover.png) ![Log-in link focus-visible](components/crops/nav-login-focus-visible.png) ![Log-in link pressed](components/crops/nav-login-pressed.png)
 
 #### Demo button
 The Request-demo header action; measured, never followed. Read as `nav-demo` on the home page.
@@ -139,11 +139,10 @@ The Request-demo header action; measured, never followed. Read as `nav-demo` on 
 |---|---|
 | default | size 137 x 38.19; padding 9px 16px 10px 16px; radius 100px; background #ffffff `color.neutral.white`; shadow rgba(18, 23, 34, 0.2) 0px 0px 0px 0.5px inset; text DockWebflowNavigation 16/19.2 500, #121722 `color.neutral.ink`; transition background-color 0.14s ease, box-shadow 0.14s ease |
 | hover | background #f8f8f8 `color.neutral.wash-hover` |
+| focus-visible | outline 2px solid rgba(18, 23, 34, 0.6) `measured.focus-ring` `measured.focus-ring`, offset 4px |
 | pressed | background #f2f2f3 `color.neutral.wash-pressed` |
 
-**Focus not capturable.** A real keyboard focus could not be held on this element (`focus-visible` recorded `via: focus failed`), so its focus look is uncaptured — not measured as absent.
-
-![Demo button default](components/crops/nav-demo-default.png) ![Demo button hover](components/crops/nav-demo-hover.png) ![Demo button pressed](components/crops/nav-demo-pressed.png)
+![Demo button default](components/crops/nav-demo-default.png) ![Demo button hover](components/crops/nav-demo-hover.png) ![Demo button focus-visible](components/crops/nav-demo-focus-visible.png) ![Demo button pressed](components/crops/nav-demo-pressed.png)
 
 #### Nav CTA
 The Start-for-free primary header action; measured, never followed. Read as `nav-cta` on the home page.
@@ -152,11 +151,10 @@ The Start-for-free primary header action; measured, never followed. Read as `nav
 |---|---|
 | default | size 124.25 x 38.19; padding 9px 16px 10px 16px; radius 100px; background #0068f9 `color.brand.blue`; shadow rgba(11, 68, 147, 0.4) 0px 0px 0px 0.5px inset; text DockWebflowNavigation 16/19.2 500, #ffffff `color.neutral.white`; transition background-color 0.14s ease, box-shadow 0.14s ease |
 | hover | background #0060eb `color.brand.blue-hover` |
+| focus-visible | outline 2px solid rgba(18, 23, 34, 0.6) `measured.focus-ring` `measured.focus-ring`, offset 4px |
 | pressed | background #005fe4 `color.brand.blue-pressed` |
 
-**Focus not capturable.** A real keyboard focus could not be held on this element (`focus-visible` recorded `via: focus failed`), so its focus look is uncaptured — not measured as absent.
-
-![Nav CTA default](components/crops/nav-cta-default.png) ![Nav CTA hover](components/crops/nav-cta-hover.png) ![Nav CTA pressed](components/crops/nav-cta-pressed.png)
+![Nav CTA default](components/crops/nav-cta-default.png) ![Nav CTA hover](components/crops/nav-cta-hover.png) ![Nav CTA focus-visible](components/crops/nav-cta-focus-visible.png) ![Nav CTA pressed](components/crops/nav-cta-pressed.png)
 
 #### Nav dropdown
 The Product mega-menu panel inside dock-site-header, opened by its own <summary> trigger. Read as `nav-dropdown` on the home page.
@@ -178,11 +176,9 @@ A feature link inside the opened mega-menu. Read as `menu-link` on the home page
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default (same: hover) | size 172.06 x 40; padding 8px; radius 8px; background transparent; text DockWebflowNavigation 15.5/20 500, #121722 `color.neutral.ink`; icon 16 x 16, #121722 `color.neutral.ink` |
-| pressed | outline 2px solid rgba(18, 23, 34, 0.6) `measured.focus-ring` `measured.focus-ring`, offset 4px; layers a.menu-link 172.1x40.0 2px solid color(srgb 0.0705882 0.0901961 0.133333 / 0.6) offset 4px 8px |
+| focus-visible, pressed | outline 2px solid rgba(18, 23, 34, 0.6) `measured.focus-ring` `measured.focus-ring`, offset 4px; layers a.menu-link 172.1x40.0 2px solid color(srgb 0.0705882 0.0901961 0.133333 / 0.6) offset 4px 8px |
 
-**Focus not capturable.** A real keyboard focus could not be held on this element (`focus-visible` recorded `via: focus failed`), so its focus look is uncaptured — not measured as absent.
-
-![Menu link default](components/crops/menu-link-default.png) ![Menu link hover](components/crops/menu-link-hover.png) ![Menu link pressed](components/crops/menu-link-pressed.png)
+![Menu link default](components/crops/menu-link-default.png) ![Menu link hover](components/crops/menu-link-hover.png) ![Menu link focus-visible](components/crops/menu-link-focus-visible.png) ![Menu link pressed](components/crops/menu-link-pressed.png)
 
 ### Home
 
@@ -197,6 +193,7 @@ The "Build high-performing sales teams" display headline. Read as `hero-title` o
 
 #### Hero copy
 The lede under the hero headline. Read as `hero-lede` on the home page.
+**Note:** This run's reading and crop describe the hero eyebrow ('AI Revenue Enablement'), not the lede under the headline — the broad text match landed on p.hero-eyebrow. The selector was fixed in measure.mjs (the first sentence-length paragraph after the h1) and a re-measure is queued.
 
 **Values (default).** size 202.23 x 38.19; padding 9px 16px 10px 16px; radius 100px; background #002fa6 `color.brand.blue-deep`; text DockWebflowHome 16/19.2 500, #ffffff `color.neutral.white`.
 
@@ -513,6 +510,7 @@ The Cloudflare Turnstile "Verify you are human" widget on the signup card (an if
 
 #### Signup submit
 The signup submit action; measured, never pressed. Read as `signup-submit` on the signup page.
+**Note:** This run's readings and crops describe the 'Continue with Google' OAuth action, not the email form's submit — the broad button+text selector matched it first. The selector was fixed in measure.mjs (button[type=submit] first, exact-label fallback) and a re-measure is queued.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -538,10 +536,9 @@ Read as `footer-link` on the home page.
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default (same: hover, pressed) | size 127.44 x 22.39; background transparent; text DockWebflowNavigation 16/22.4 400, #121722 `color.neutral.ink` |
+| focus-visible | outline 2px solid rgba(18, 23, 34, 0.6) `measured.focus-ring` `measured.focus-ring`, offset 4px; layers a 127.4x22.4 2px solid color(srgb 0.0705882 0.0901961 0.133333 / 0.6) offset 4px |
 
-**Focus not capturable.** A real keyboard focus could not be held on this element (`focus-visible` recorded `via: focus failed`), so its focus look is uncaptured — not measured as absent.
-
-![Footer link default](components/crops/footer-link-default.png) ![Footer link hover](components/crops/footer-link-hover.png) ![Footer link pressed](components/crops/footer-link-pressed.png)
+![Footer link default](components/crops/footer-link-default.png) ![Footer link hover](components/crops/footer-link-hover.png) ![Footer link focus-visible](components/crops/footer-link-focus-visible.png) ![Footer link pressed](components/crops/footer-link-pressed.png)
 
 #### Trust badge
 A compliance badge in the footer (GDPR / SOC 2 …). Read as `trust-badge` on the home page.
@@ -585,11 +582,9 @@ A nav item inside the opened mobile menu. Read as `m-nav-item` on the home page 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default (same: hover) | size 302 x 56; padding 16px 0px; background transparent; text DockWebflowNavigation 18/21.6 500, #121722 `color.neutral.ink`; icon 12 x 12, #121722 `color.neutral.ink` |
-| pressed | outline 2px solid rgba(18, 23, 34, 0.6) `measured.focus-ring` `measured.focus-ring`, offset 4px; layers summary.nav-trigger 302.0x56.0 2px solid color(srgb 0.0705882 0.0901961 0.133333 / 0.6) offset 4px |
+| focus-visible, pressed | outline 2px solid rgba(18, 23, 34, 0.6) `measured.focus-ring` `measured.focus-ring`, offset 4px; layers summary.nav-trigger 302.0x56.0 2px solid color(srgb 0.0705882 0.0901961 0.133333 / 0.6) offset 4px |
 
-**Focus not capturable.** A real keyboard focus could not be held on this element (`focus-visible` recorded `via: focus failed`), so its focus look is uncaptured — not measured as absent.
-
-![Mobile nav item default](components/crops/m-nav-item-default.png) ![Mobile nav item hover](components/crops/m-nav-item-hover.png) ![Mobile nav item pressed](components/crops/m-nav-item-pressed.png)
+![Mobile nav item default](components/crops/m-nav-item-default.png) ![Mobile nav item hover](components/crops/m-nav-item-hover.png) ![Mobile nav item focus-visible](components/crops/m-nav-item-focus-visible.png) ![Mobile nav item pressed](components/crops/m-nav-item-pressed.png)
 
 #### Mobile headline
 Read as `m-hero` on the home page at 390 wide.

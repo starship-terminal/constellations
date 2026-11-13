@@ -93,7 +93,7 @@
     },
     "price": {
      "type": "dimension",
-     "value": "12px",
+     "value": "19px",
      "source": "computed fontSize of plan-price default (raw/components-computed.json)",
      "description": "The 19px plan price figure."
     },
@@ -179,7 +179,7 @@
     },
     "price": {
      "type": "dimension",
-     "value": "0px",
+     "value": "24px",
      "source": "computed lineHeight of plan-price default (raw/components-computed.json)",
      "description": "Price leading (24px on 19px)."
     },

@@ -81,7 +81,12 @@ if (!bodies.size && !inlines.length) { console.log('no stylesheets harvested; cs
 const sheets = [...bodies.entries()].concat(inlines);
 
 // ---- harvest: every rule with --* declarations ----
-const probe = await browser.newPage();
+// The probe must resolve at the capture viewport: vw/vh units (and the
+// clamps built on them) read the page's own width — a default-context page
+// resolves 100vw as 1280, not the recorded 1440 x 900.
+const probeCtx = await browser.newContext({ viewport: { width: 1440, height: 900 }, deviceScaleFactor: 2, userAgent: UA, locale: 'en-US' });
+await patch(probeCtx);
+const probe = await probeCtx.newPage();
 const result = await probe.evaluate((sheets) => {
   const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v);
   const rules = [];
@@ -201,6 +206,7 @@ for (const [pass, attrs] of PASSES) {
     return out;
   }, want);
 }
+await probeCtx.close();
 await browser.close();
 
 // Design-token-looking names. The marketing site declares three layers:

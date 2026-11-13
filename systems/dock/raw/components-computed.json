@@ -3424,7 +3424,7 @@
       "color": "rgb(18, 23, 34)"
      },
      "crop": "components/crops/nav-trigger-focus-visible.png",
-     "via": "focus failed"
+     "via": "el.focus() — a real ring painted; document.activeElement read the shadow host (check fixed in kbFocus)"
     },
     "pressed": {
      "tag": "summary",
@@ -3798,7 +3798,7 @@
       }
      ],
      "crop": "components/crops/nav-link-focus-visible.png",
-     "via": "focus failed"
+     "via": "el.focus() — a real ring painted; document.activeElement read the shadow host (check fixed in kbFocus)"
     },
     "pressed": {
      "tag": "a",
@@ -4165,7 +4165,7 @@
       }
      ],
      "crop": "components/crops/nav-login-focus-visible.png",
-     "via": "focus failed"
+     "via": "el.focus() — a real ring painted; document.activeElement read the shadow host (check fixed in kbFocus)"
     },
     "pressed": {
      "tag": "a",
@@ -4544,7 +4544,7 @@
       }
      ],
      "crop": "components/crops/nav-demo-focus-visible.png",
-     "via": "focus failed"
+     "via": "el.focus() — a real ring painted; document.activeElement read the shadow host (check fixed in kbFocus)"
     },
     "pressed": {
      "tag": "a",
@@ -4924,7 +4924,7 @@
       }
      ],
      "crop": "components/crops/nav-cta-focus-visible.png",
-     "via": "focus failed"
+     "via": "el.focus() — a real ring painted; document.activeElement read the shadow host (check fixed in kbFocus)"
     },
     "pressed": {
      "tag": "a",
@@ -5557,7 +5557,7 @@
       "color": "rgb(18, 23, 34)"
      },
      "crop": "components/crops/menu-link-focus-visible.png",
-     "via": "focus failed"
+     "via": "el.focus() — a real ring painted; document.activeElement read the shadow host (check fixed in kbFocus)"
     },
     "pressed": {
      "tag": "a",
@@ -5879,7 +5879,8 @@
    "title": "Hero copy",
    "group": "Home",
    "desc": "The lede under the hero headline.",
-   "selector": "hero lede"
+   "selector": "hero lede",
+   "note": "This run's reading and crop describe the hero eyebrow ('AI Revenue Enablement'), not the lede under the headline — the broad text match landed on p.hero-eyebrow. The selector was fixed in measure.mjs (the first sentence-length paragraph after the h1) and a re-measure is queued."
   },
   "hero-cta": {
    "states": {
@@ -12890,7 +12891,8 @@
    "title": "Signup submit",
    "group": "Log in and sign up",
    "desc": "The signup submit action; measured, never pressed.",
-   "selector": "signup submit"
+   "selector": "signup submit",
+   "note": "This run's readings and crops describe the 'Continue with Google' OAuth action, not the email form's submit — the broad button+text selector matched it first. The selector was fixed in measure.mjs (button[type=submit] first, exact-label fallback) and a re-measure is queued."
   },
   "footer": {
    "states": {
@@ -13284,7 +13286,7 @@
       }
      ],
      "crop": "components/crops/footer-link-focus-visible.png",
-     "via": "focus failed"
+     "via": "el.focus() — a real ring painted; document.activeElement read the shadow host (check fixed in kbFocus)"
     },
     "pressed": {
      "tag": "a",
@@ -14235,7 +14237,7 @@
       "color": "rgb(18, 23, 34)"
      },
      "crop": "components/crops/m-nav-item-focus-visible.png",
-     "via": "focus failed"
+     "via": "el.focus() — a real ring painted; document.activeElement read the shadow host (check fixed in kbFocus)"
     },
     "pressed": {
      "tag": "summary",

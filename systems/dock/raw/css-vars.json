@@ -3500,8 +3500,8 @@
    "--calc-100vw-16px": {
     "raw": "100vw",
     "kind": "dimension",
-    "value": "1280px",
-    "note": "viewport-relative, resolved at 1440 x 900"
+    "value": "1440px",
+    "note": "viewport-relative, resolved at 1440 x 900 (probe viewport corrected post-hoc; was resolved at 1280 x 720)"
    },
    "--chakra-blur-2xl": {
     "raw": "40px",
@@ -6464,8 +6464,8 @@
    "--chakra-vh": {
     "raw": "100dvh",
     "kind": "dimension",
-    "value": "720px",
-    "note": "viewport-relative, resolved at 1440 x 900"
+    "value": "900px",
+    "note": "viewport-relative, resolved at 1440 x 900 (probe viewport corrected post-hoc; was resolved at 1280 x 720)"
    },
    "--chakra-zIndices-auto": {
     "raw": "auto",
@@ -7134,8 +7134,8 @@
    "--leading-hero": {
     "raw": "calc((clamp(34px, calc(5vw - 2px), 62px) + 2px) * 1.1)",
     "kind": "dimension",
-    "value": "70.3906px",
-    "note": "viewport-relative, resolved at 1440 x 900"
+    "value": "70.4px",
+    "note": "viewport-relative, resolved at 1440 x 900 (probe viewport corrected post-hoc; was resolved at 1280 x 720)"
    },
    "--leading-hero-lead": {
     "raw": "calc(clamp(20px, 4vw, 24px) + 8px)",
@@ -7289,8 +7289,8 @@
    "--preview-fan-interactive-width": {
     "raw": "70vw",
     "kind": "dimension",
-    "value": "896px",
-    "note": "viewport-relative, resolved at 1440 x 900"
+    "value": "1008px",
+    "note": "viewport-relative, resolved at 1440 x 900 (probe viewport corrected post-hoc; was resolved at 1280 x 720)"
    },
    "--preview-fan-magnet": {
     "raw": "8%",
@@ -7655,8 +7655,8 @@
    "--calc-100vw-16px": {
     "raw": "100vw",
     "kind": "dimension",
-    "value": "1280px",
-    "note": "viewport-relative, resolved at 1440 x 900"
+    "value": "1440px",
+    "note": "viewport-relative, resolved at 1440 x 900 (probe viewport corrected post-hoc; was resolved at 1280 x 720)"
    },
    "--chakra-blur-2xl": {
     "raw": "40px",
@@ -10654,8 +10654,8 @@
    "--chakra-vh": {
     "raw": "100dvh",
     "kind": "dimension",
-    "value": "720px",
-    "note": "viewport-relative, resolved at 1440 x 900"
+    "value": "900px",
+    "note": "viewport-relative, resolved at 1440 x 900 (probe viewport corrected post-hoc; was resolved at 1280 x 720)"
    },
    "--chakra-zIndices-auto": {
     "raw": "auto",
@@ -11324,8 +11324,8 @@
    "--leading-hero": {
     "raw": "calc((clamp(34px, calc(5vw - 2px), 62px) + 2px) * 1.1)",
     "kind": "dimension",
-    "value": "70.3906px",
-    "note": "viewport-relative, resolved at 1440 x 900"
+    "value": "70.4px",
+    "note": "viewport-relative, resolved at 1440 x 900 (probe viewport corrected post-hoc; was resolved at 1280 x 720)"
    },
    "--leading-hero-lead": {
     "raw": "calc(clamp(20px, 4vw, 24px) + 8px)",
@@ -11479,8 +11479,8 @@
    "--preview-fan-interactive-width": {
     "raw": "70vw",
     "kind": "dimension",
-    "value": "896px",
-    "note": "viewport-relative, resolved at 1440 x 900"
+    "value": "1008px",
+    "note": "viewport-relative, resolved at 1440 x 900 (probe viewport corrected post-hoc; was resolved at 1280 x 720)"
    },
    "--preview-fan-magnet": {
     "raw": "8%",
