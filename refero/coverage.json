@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 93,
-    "system_domains": 85,
-    "matched_domains": 60,
-    "missing_domains": 373,
+    "system_packages": 94,
+    "system_domains": 86,
+    "matched_domains": 61,
+    "missing_domains": 372,
     "system_domains_absent_from_catalog": 25
   },
   "matched": {
@@ -882,6 +882,23 @@
         }
       ]
     },
+    "elevenmusic.io": {
+      "catalog": [
+        {
+          "name": "ElevenMusic",
+          "domain": "elevenmusic.io",
+          "id": 917
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "elevenmusic",
+          "name": "ElevenMusic",
+          "url": "https://elevenmusic.io",
+          "name_match": true
+        }
+      ]
+    },
     "github.com": {
       "catalog": [
         {
@@ -1449,13 +1466,6 @@
         "name": "ElevenLabs",
         "domain": "elevenlabs.io",
         "id": 772
-      }
-    ],
-    "elevenmusic.io": [
-      {
-        "name": "ElevenMusic",
-        "domain": "elevenmusic.io",
-        "id": 917
       }
     ],
     "elevenreader.io": [
