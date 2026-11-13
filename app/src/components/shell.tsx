@@ -1,13 +1,7 @@
 "use client";
 import Link from "next/link";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import {
-  Suspense,
-  useEffect,
-  useRef,
-  useState,
-  type ReactNode,
-} from "react";
+import { Suspense, useEffect, useRef, useState, type ReactNode } from "react";
 import {
   Grid2X2,
   BookOpen,
