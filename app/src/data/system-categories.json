@@ -704,6 +704,11 @@
       "Music Streaming"
     ],
     "reason": "catalog.json describes a personalized soundscapes product for focus, relaxation and sleep: a dark marketing site and a signed-out web app with a public player."
+  },
+  {
+    "referenceId": "systems:editorx",
+    "groupId": "web-categories",
+    "labels": ["Design & Media Editing", "Productivity"],
+    "reason": "catalog.json describes a pro site builder: template and inspiration galleries plus the marketing pages for the Wix Studio editor."
   }
 ]
-

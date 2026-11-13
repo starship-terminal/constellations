@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 117,
-    "system_domains": 109,
-    "matched_domains": 84,
-    "missing_domains": 349,
+    "system_packages": 118,
+    "system_domains": 110,
+    "matched_domains": 85,
+    "missing_domains": 348,
     "system_domains_absent_from_catalog": 25
   },
   "matched": {
@@ -1222,6 +1222,23 @@
         }
       ]
     },
+    "editorx.com": {
+      "catalog": [
+        {
+          "name": "Editor X",
+          "domain": "editorx.com",
+          "id": 279
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "editorx",
+          "name": "Editor X (Wix Studio)",
+          "url": "https://www.editorx.com",
+          "name_match": false
+        }
+      ]
+    },
     "elektron.se": {
       "catalog": [
         {
@@ -1689,13 +1706,6 @@
         "name": "DJI",
         "domain": "dji.com",
         "id": 332
-      }
-    ],
-    "editorx.com": [
-      {
-        "name": "Editor X",
-        "domain": "editorx.com",
-        "id": 279
       }
     ],
     "elevenmusic.io": [
