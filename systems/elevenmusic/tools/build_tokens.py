@@ -71,7 +71,10 @@ def norm_color(v):
     raise ValueError("not a colour: " + v)
 
 
-DIM = re.compile(r"-?\d+(\.\d+)?(px|rem)")
+# em is a dimension the tracking scale keeps on purpose: letter-spacing
+# declared in em must scale with the text it sits on (DESIGN.md allows
+# px, rem and em for the same reason).
+DIM = re.compile(r"-?\d+(\.\d+)?(px|rem|em)")
 
 
 def check(path, ty, val):
@@ -79,7 +82,7 @@ def check(path, ty, val):
     if isinstance(val, str) and val.startswith("{"):
         return
     if ty == "dimension" and not DIM.fullmatch(str(val)):
-        raise ValueError(f"{path}: dimension must be one px or rem length, got {val!r}")
+        raise ValueError(f"{path}: dimension must be one px, rem or em length, got {val!r}")
     if ty == "color":
         norm_color(val) if not str(val).startswith("{") else None
     if ty == "shadow":

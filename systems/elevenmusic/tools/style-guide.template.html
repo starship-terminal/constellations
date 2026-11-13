@@ -26,7 +26,12 @@ h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: 
 code { font-family: var(--sg-mono); font-size: .9em; }
 .pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--color-ink-foreground, #fafafa); opacity: .6; margin: 18px 0 6px; }
 .pal { display: flex; flex-wrap: wrap; gap: 8px; }
-.pal.light { background: var(--color-surface-background, #fdfcfb); padding: 12px; border-radius: 8px; }
+/* The light palette re-binds the token names to their light values inside
+   its own scope: the page paints dark, so :root's light bindings are
+   overridden everywhere else and the dots would read the dark set. */
+.pal.light {
+/*LIGHTSCOPE*/
+  background: var(--color-surface-background, #fdfcfb); padding: 12px; border-radius: 8px; }
 .pal.light .nm, .pal.light .vl { color: var(--color-ink-foreground, #000); }
 .sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
 .sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--color-border-border, rgba(255,255,255,.1)); display: inline-flex; flex: 0 0 auto; }

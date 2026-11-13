@@ -16,23 +16,23 @@ Screenshots are named `{page}-{theme}-state.png`: the app paints `dark` by defau
 
 | Surface | URL | Screenshots |
 |---|---|---|
-| Home | `/` |  |
-| Explore | `/explore` |  |
-| Charts | `/charts` |  |
-| Tracks | `/tracks` |  |
-| Genres | `/genres` |  |
-| Genre: Electronic | `/genres/electronic` |  |
-| Sounds | `/sounds` |  |
-| Tools | `/tools` |  |
-| Artist profile | `/artists/ghostmkc-5JuuiL` |  |
-| Playlist | `/playlists/69eb381eb3c0fe73c21c695c` |  |
-| Blog | `/blog` |  |
-| Pricing | `/pricing` |  |
-| Log in | `/login` |  |
-| Sign in (alias) | `/sign-in` |  |
-| Home, phone | `/` |  |
-| Explore, phone | `/explore` |  |
-| Charts, phone | `/charts` |  |
+| Home | `/` | [default](screenshots/home-dark-default.png), [full](screenshots/home-dark-full.png), [menu](screenshots/home-dark-menu.png), [search](screenshots/home-dark-search.png), [default](screenshots/home-light-default.png), [full](screenshots/home-light-full.png) |
+| Explore | `/explore` | [default](screenshots/explore-dark-default.png), [full](screenshots/explore-dark-full.png), [playing](screenshots/explore-dark-playing.png), [default](screenshots/explore-light-default.png) |
+| Charts | `/charts` | [default](screenshots/charts-dark-default.png), [full](screenshots/charts-dark-full.png), [default](screenshots/charts-light-default.png) |
+| Tracks | `/tracks` | [default](screenshots/tracks-dark-default.png), [full](screenshots/tracks-dark-full.png) |
+| Genres | `/genres` | [default](screenshots/genres-dark-default.png), [full](screenshots/genres-dark-full.png) |
+| Genre: Electronic | `/genres/electronic` | [default](screenshots/genre-electronic-dark-default.png), [full](screenshots/genre-electronic-dark-full.png) |
+| Sounds | `/sounds` | [default](screenshots/sounds-dark-default.png), [full](screenshots/sounds-dark-full.png) |
+| Tools | `/tools` | [default](screenshots/tools-dark-default.png), [full](screenshots/tools-dark-full.png) |
+| Artist profile | `/artists/ghostmkc-5JuuiL` | [default](screenshots/artist-dark-default.png), [full](screenshots/artist-dark-full.png) |
+| Playlist | `/playlists/69eb381eb3c0fe73c21c695c` | [default](screenshots/playlist-dark-default.png), [full](screenshots/playlist-dark-full.png) |
+| Blog | `/blog` | [default](screenshots/blog-dark-default.png), [full](screenshots/blog-dark-full.png) |
+| Pricing | `/pricing` | [default](screenshots/pricing-dark-default.png), [full](screenshots/pricing-dark-full.png), [default](screenshots/pricing-light-default.png) |
+| Log in | `/login` | [default](screenshots/login-dark-default.png), [options](screenshots/login-dark-options.png), [default](screenshots/login-light-default.png) |
+| Sign in (alias) | `/sign-in` | [default](screenshots/signin-dark-default.png) |
+| Home, phone | `/` | [default](screenshots/mobile-home-dark-default.png), [full](screenshots/mobile-home-dark-full.png) |
+| Explore, phone | `/explore` | [default](screenshots/mobile-explore-dark-default.png), [full](screenshots/mobile-explore-dark-full.png) |
+| Charts, phone | `/charts` | [default](screenshots/mobile-charts-dark-default.png) |
 
 ### Overlays and transient states
 
@@ -50,7 +50,7 @@ Screenshots are named `{page}-{theme}-state.png`: the app paints `dark` by defau
 
 Values that apply across entries, from the measurement files.
 
-**Focus.** 58 components were given a real keyboard focus. 52 draw an outline ring: `sidebar-nav` (1px solid lab(98.26 0 0), offset 2px), `sidebar-action` (1px solid lab(98.26 0 0), offset 2px), `sidebar-promo` (1px solid lab(98.26 0 0), offset 2px), `playlist-row` (1px solid lab(98.26 0 0), offset 1px), `icon-button` (1px solid lab(100 0 0), offset 2px), `sidebar-collapse` (1px solid lab(100 0 0), offset 2px), `new-playlist-btn` (1px solid lab(100 0 0), offset 2px), `signin-btn` (1px solid lab(100 0 0), offset 2px), `cta-btn` (1px solid lab(100 0 0), offset 2px), `attach-btn` (1px solid lab(100 0 0), offset 2px), `send-button` (1px solid lab(100 0 0), offset 2px), `seg-tab-on` (1px solid lab(100 0 0), offset 2px), `demo-card` (1px solid lab(100 0 0), offset 2px), `carousel-prev` (1px solid lab(100 0 0), offset 2px), `carousel-dot` (1px solid lab(100 0 0), offset 2px), `footer-link` (1px solid lab(100 0 0), offset 2px), `lang-btn` (1px solid lab(100 0 0), offset 2px), `cookie-btn` (1px solid lab(100 0 0), offset 2px), `theme-dark-btn` (1px solid lab(100 0 0), offset 2px), `theme-light-btn` (1px solid lab(100 0 0), offset 2px), `play-feature` (1px solid lab(100 0 0), offset 2px), `remix-chip` (1px solid lab(100 0 0), offset 2px), `genre-card` (on a child: 1px solid lab(100 0 0) offset 2px), `play-genre` (1px solid lab(100 0 0), offset 2px), `artist-link` (1px auto oklab(0.999998 -0.00000980496 0.0000234246 / 0.5), offset 1px), `player-play` (1px solid lab(100 0 0), offset 2px), `player-prev` (1px solid lab(100 0 0), offset 2px), `player-next` (1px solid lab(100 0 0), offset 2px), `player-repeat` (1px solid lab(100 0 0), offset 2px), `chart-play` (1px solid lab(100 0 0), offset 2px), `shuffle-btn` (1px solid lab(100 0 0), offset 2px), `share-btn` (1px solid lab(100 0 0), offset 2px), `chart-row` (on a child: 1px auto oklab(0.999998 -0.00000980496 0.0000234246 / 0.5) offset 1px), `like-btn` (1px solid lab(100 0 0), offset 2px), `remix-btn` (1px solid lab(100 0 0), offset 2px), `chart-artist` (1px auto oklab(0.999998 -0.00000980496 0.0000234246 / 0.5), offset 1px), `plan-cta-free` (2px solid lab(98.26 0 0), offset 4px), `plan-cta-pro` (2px solid lab(98.26 0 0), offset 4px), `faq-item` (1px solid lab(100 0 0), offset 2px), `sso-google` (1px solid lab(100 0 0), offset 2px), `sso-apple` (1px solid lab(100 0 0), offset 2px), `options-btn` (1px solid lab(100 0 0), offset 2px), `tos-checkbox` (1px solid lab(100 0 0), offset 2px), `tos-link` (1px auto oklab(0.999998 -0.00000980496 0.0000234246 / 0.5), offset 1px), `tryit-link` (1px auto oklab(0.999998 -0.00000980496 0.0000234246 / 0.5), offset 1px), `m-search-btn` (1px solid lab(100 0 0), offset 2px), `m-cta` (1px solid lab(100 0 0), offset 2px), `m-tab` (1px auto oklab(0.999998 -0.00000980496 0.0000234246 / 0.5), offset 1px), `m-menu-btn` (1px solid lab(100 0 0), offset 2px), `player-volume` (1px solid lab(100 0 0), offset 2px), `player-queue` (1px solid lab(100 0 0), offset 2px), `m-menu-link` (1px solid lab(100 0 0), offset 2px). 2 draw a focus ring as a shadow instead: `nav-link`, `nav-trigger`. The other 4 show no measured change: `menu-link`, `prompt-chip`, `track-row`, `play-hero`.
+**Focus.** 58 components were given a real keyboard focus. 52 draw an outline ring: `sidebar-nav` (1px solid #fafafa `dark.color.ink.foreground`, offset 2px), `sidebar-action` (1px solid #fafafa `dark.color.ink.foreground`, offset 2px), `sidebar-promo` (1px solid #fafafa `dark.color.ink.foreground`, offset 2px), `playlist-row` (1px solid #fafafa `dark.color.ink.foreground`, offset 1px), `icon-button` (1px solid #ffffff `dark.color.focus.ring`, offset 2px), `sidebar-collapse` (1px solid #ffffff `dark.color.focus.ring`, offset 2px), `new-playlist-btn` (1px solid #ffffff `dark.color.focus.ring`, offset 2px), `signin-btn` (1px solid #ffffff `dark.color.focus.ring`, offset 2px), `cta-btn` (1px solid #ffffff `dark.color.focus.ring`, offset 2px), `attach-btn` (1px solid #ffffff `dark.color.focus.ring`, offset 2px), `send-button` (1px solid #ffffff `dark.color.focus.ring`, offset 2px), `seg-tab-on` (1px solid #ffffff `dark.color.focus.ring`, offset 2px), `demo-card` (1px solid #ffffff `dark.color.focus.ring`, offset 2px), `carousel-prev` (1px solid #ffffff `dark.color.focus.ring`, offset 2px), `carousel-dot` (1px solid #ffffff `dark.color.focus.ring`, offset 2px), `footer-link` (1px solid #ffffff `dark.color.focus.ring`, offset 2px), `lang-btn` (1px solid #ffffff `dark.color.focus.ring`, offset 2px), `cookie-btn` (1px solid #ffffff `dark.color.focus.ring`, offset 2px), `theme-dark-btn` (1px solid #ffffff `dark.color.focus.ring`, offset 2px), `theme-light-btn` (1px solid #ffffff `dark.color.focus.ring`, offset 2px), `play-feature` (1px solid #ffffff `dark.color.focus.ring`, offset 2px), `remix-chip` (1px solid #ffffff `dark.color.focus.ring`, offset 2px), `genre-card` (on a child: 1px solid #ffffff `dark.color.focus.ring` offset 2px), `play-genre` (1px solid #ffffff `dark.color.focus.ring`, offset 2px), `artist-link` (1px auto rgba(255, 255, 255, 0.5) `dark.color.border.field-border-focus`, offset 1px), `player-play` (1px solid #ffffff `dark.color.focus.ring`, offset 2px), `player-prev` (1px solid #ffffff `dark.color.focus.ring`, offset 2px), `player-next` (1px solid #ffffff `dark.color.focus.ring`, offset 2px), `player-repeat` (1px solid #ffffff `dark.color.focus.ring`, offset 2px), `chart-play` (1px solid #ffffff `dark.color.focus.ring`, offset 2px), `shuffle-btn` (1px solid #ffffff `dark.color.focus.ring`, offset 2px), `share-btn` (1px solid #ffffff `dark.color.focus.ring`, offset 2px), `chart-row` (on a child: 1px auto rgba(255, 255, 255, 0.5) `dark.color.border.field-border-focus` offset 1px), `like-btn` (1px solid #ffffff `dark.color.focus.ring`, offset 2px), `remix-btn` (1px solid #ffffff `dark.color.focus.ring`, offset 2px), `chart-artist` (1px auto rgba(255, 255, 255, 0.5) `dark.color.border.field-border-focus`, offset 1px), `plan-cta-free` (2px solid #fafafa `dark.color.ink.foreground`, offset 4px), `plan-cta-pro` (2px solid #fafafa `dark.color.ink.foreground`, offset 4px), `faq-item` (1px solid #ffffff `dark.color.focus.ring`, offset 2px), `sso-google` (1px solid #ffffff `dark.color.focus.ring`, offset 2px), `sso-apple` (1px solid #ffffff `dark.color.focus.ring`, offset 2px), `options-btn` (1px solid #ffffff `dark.color.focus.ring`, offset 2px), `tos-checkbox` (1px solid #ffffff `dark.color.focus.ring`, offset 2px), `tos-link` (1px auto rgba(255, 255, 255, 0.5) `dark.color.border.field-border-focus`, offset 1px), `tryit-link` (1px auto rgba(255, 255, 255, 0.5) `dark.color.border.field-border-focus`, offset 1px), `m-search-btn` (1px solid #ffffff `dark.color.focus.ring`, offset 2px), `m-cta` (1px solid #ffffff `dark.color.focus.ring`, offset 2px), `m-tab` (1px auto rgba(255, 255, 255, 0.5) `dark.color.border.field-border-focus`, offset 1px), `m-menu-btn` (1px solid #ffffff `dark.color.focus.ring`, offset 2px), `player-volume` (1px solid #ffffff `dark.color.focus.ring`, offset 2px), `player-queue` (1px solid #ffffff `dark.color.focus.ring`, offset 2px), `m-menu-link` (1px solid #ffffff `dark.color.focus.ring`, offset 2px). 2 draw a focus ring as a shadow instead: `nav-link`, `nav-trigger`. The other 4 show no measured change: `menu-link`, `prompt-chip`, `track-row`, `play-hero`.
 
 **Pressed.** Forced with DevTools (`CSS.forcePseudoState` :active:hover). Nothing a real press would submit was ever pressed.
 
@@ -73,14 +73,14 @@ Values that apply across entries, from the measurement files.
 
 | Card | Size | Border | Radius | Background | Shadow | Padding |
 |---|---|---|---|---|---|---|
-| [Feature card](#feature-card) | 328 x 328.5 | - | 6px | lab(7.78201 -0.0000149012 0) | lab(100 0 0 / 0.1) 0px 0px 0px 1px inset | 0 |
+| [Feature card](#feature-card) | 328 x 328.5 | - | 6px | #171717 `dark.color.surface.muted` | rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset | 0 |
 | [Track card](#track-card) | 208 x 237 | - | - | transparent | none | 0px 0px 0px 16px |
-| [Genre card](#genre-card) | 192 x 192 | - | 14px | rgba(255, 255, 255, 0.043) | none | 0 |
-| [Stem card](#stem-card) | 156 x 68 | - | 16px | lab(13 0 0) | rgba(255, 255, 255, 0.07) 0px 0px 0px 1px, rgba(0, 0, 0, 0.5) 0px 1px 2px 0px | 12px |
-| [Plan card, Free](#plan-card-free) | 472 x 909.38 | - | 24px | lab(0 0 0) | none | 0 |
-| [Plan card, Pro](#plan-card-pro) | 472 x 909.38 | - | 24px | lab(98.26 0 0) | none | 0 |
+| [Genre card](#genre-card) | 192 x 192 | - | 14px | rgba(255, 255, 255, 0.04) `dark.color.alpha.gray-50` | none | 0 |
+| [Stem card](#stem-card) | 156 x 68 | - | 16px | #222222 `dark.color.surface.elevated` | rgba(255, 255, 255, 0.07) 0px 0px 0px 1px, rgba(0, 0, 0, 0.5) 0px 1px 2px 0px | 12px |
+| [Plan card, Free](#plan-card-free) | 472 x 909.38 | - | 24px | #000000 `dark.color.surface.background` | none | 0 |
+| [Plan card, Pro](#plan-card-pro) | 472 x 909.38 | - | 24px | #fafafa `dark.color.ink.foreground` | none | 0 |
 | [Auth column](#auth-column) | 384 x 844 | - | - | transparent | none | 0 |
-| [Sidebar promo](#sidebar-promo) | 224 x 49 | - | 24px | lab(13 0 0) | rgba(255, 255, 255, 0.07) 0px 0px 0px 1px, rgba(0, 0, 0, 0.5) 0px 1px 2px 0px | 6px 14px 6px 6px |
+| [Sidebar promo](#sidebar-promo) | 224 x 49 | - | 24px | #222222 `dark.color.surface.elevated` | rgba(255, 255, 255, 0.07) 0px 0px 0px 1px, rgba(0, 0, 0, 0.5) 0px 1px 2px 0px | 6px 14px 6px 6px |
 
 ## Components
 
@@ -91,9 +91,9 @@ The app chrome: the fixed left rail (logo, Search, nav, the Publish promo, playl
 #### Sidebar
 The fixed left rail (248px): logo, Search, primary nav, the Publish-your-music promo and the Playlists list. Read as `sidebar` on the home page.
 
-**Values (default).** size 248 x 900; background transparent; text Inter 14/20 450, lab(55.92 -0.0000298023 0); icon 7.72 x 13, lab(98.26 0 0); layers button.font-normal.focus-visible:focus-ring 224.0x49.0 lab(13 0 0) rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px, rgba(0, 0, 0, 0.5) 0px 1px 2px 0px 24px; span.-right-1.-bottom-1 18.0x18.0 lab(0 0 0) 3.35544e+07px; div.absolute.inset-0 0.0x0.0 lab(7.78201 -0.000014901.
+**Values (default).** size 248 x 900; background transparent; text Inter 14/20 450, #868686 `dark.color.ink.muted-foreground`; icon 7.72 x 13, #fafafa `dark.color.ink.foreground`; layers button.font-normal.focus-visible:focus-ring 224.0x49.0 #222222 `dark.color.surface.elevated` transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px, rgba(0, 0, 0, 0.5) 0px 1px 2px 0px 24px; span.-right-1.-bottom-1 18.0x18.0 #000000 `dark.color.surface.background` 3.35544e+07px; div.absolute.inset.
 
-Child layers that carry the look: button 224x49 background lab(13 0 0) radius 24px shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px, rgba(0, 0, 0, 0.5) 0px 1px 2px 0px; span 18x18 background lab(0 0 0) radius 3.35544e+07px; div 0x0 background lab(7.78201 -0.0000149012 0).
+Child layers that carry the look: button 224x49 background #222222 `dark.color.surface.elevated` radius 24px shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px, rgba(0, 0, 0, 0.5) 0px 1px 2px 0px; span 18x18 background #000000 `dark.color.surface.background` radius 3.35544e+07px; div 0x0 background #171717 `dark.color.surface.muted`.
 
 ![Sidebar default](components/crops/sidebar-default.png)
 
@@ -102,10 +102,10 @@ A primary nav row in the rail (icon + label, 36px); Explore holds the selected s
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 224 x 36; padding 0px 8px 2px 8px; radius 10px; background transparent; text Inter 14/20 450, lab(55.92 -0.0000298023 0); icon 18 x 18, lab(55.92 -0.0000298023 0); layers ::before rgba(0, 0, 0, 0) 0px none 1 |
-| hover | text Inter 14/20 450, lab(98.26 0 0); icon 18 x 18, lab(98.26 0 0); layers ::before rgba(255, 255, 255, 0.043) 0px none 1; a::before.group/row.relative 224pxx34px rgba(255, 255, 255, 0.043) 10px |
-| focus-visible | outline 1px solid lab(98.26 0 0), offset 2px; layers ::before rgba(0, 0, 0, 0) 0px none 1; a.group/row.relative 224.0x36.0 1px solid lab(98.26 0 0) offset 2px 10px |
-| pressed | text Inter 14/20 450, lab(98.26 0 0); icon 18 x 18, lab(98.26 0 0); layers ::before rgba(255, 255, 255, 0.043) 0px none 1; a::before.group/row.relative 224pxx34px rgba(255, 255, 255, 0.043) 10px |
+| default | size 224 x 36; padding 0px 8px 2px 8px; radius 10px; background transparent; text Inter 14/20 450, #868686 `dark.color.ink.muted-foreground`; icon 18 x 18, #868686 `dark.color.ink.muted-foreground`; layers ::before transparent 0px none 1 |
+| hover | text Inter 14/20 450, #fafafa `dark.color.ink.foreground`; icon 18 x 18, #fafafa `dark.color.ink.foreground`; layers ::before rgba(255, 255, 255, 0.04) `dark.color.alpha.gray-50` 0px none 1; a::before.group/row.relative 224pxx34px rgba(255, 255, 255, 0.04) `dark.color.alpha.gray-50` 10px |
+| focus-visible | outline 1px solid #fafafa `dark.color.ink.foreground`, offset 2px; layers ::before transparent 0px none 1; a.group/row.relative 224.0x36.0 1px solid #fafafa `dark.color.ink.foreground` offset 2px 10px |
+| pressed | text Inter 14/20 450, #fafafa `dark.color.ink.foreground`; icon 18 x 18, #fafafa `dark.color.ink.foreground`; layers ::before rgba(255, 255, 255, 0.04) `dark.color.alpha.gray-50` 0px none 1; a::before.group/row.relative 224pxx34px rgba(255, 255, 255, 0.04) `dark.color.alpha.gray-50` 10px |
 
 ![Sidebar nav item default](components/crops/sidebar-nav-default.png) ![Sidebar nav item hover](components/crops/sidebar-nav-hover.png) ![Sidebar nav item focus-visible](components/crops/sidebar-nav-focus-visible.png) ![Sidebar nav item pressed](components/crops/sidebar-nav-pressed.png)
 
@@ -114,10 +114,10 @@ A gated rail action (Composer/Chat) that prompts sign-in; measured, never presse
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 224 x 36; padding 0px 8px 2px 8px; radius 10px; background transparent; text Inter 14/20 450, lab(55.92 -0.0000298023 0); transition background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), color 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 18 x 18, lab(55.92 -0.0000298023 0); layers ::before rgba(0, 0, 0, 0) 0px none 1 |
-| hover | text Inter 14/20 450, lab(98.26 0 0); icon 18 x 18, lab(98.26 0 0); layers ::before rgba(255, 255, 255, 0.043) 0px none 1; button::before.transition-[background-color,color,box-shadow,border-color].focus-visible:focus-ring 224pxx34px rgba(255, 255, 255, 0.043) 10px |
-| focus-visible | outline 1px solid lab(98.26 0 0), offset 2px; layers ::before rgba(0, 0, 0, 0) 0px none 1; button.transition-[background-color,color,box-shadow,border-color].focus-visible:focus-ring 224.0x36.0 1px solid lab(98.26 0 0) offset 2px 10px |
-| pressed | text Inter 14/20 450, lab(98.26 0 0); icon 18 x 18, lab(98.26 0 0); layers ::before rgba(255, 255, 255, 0.043) 0px none 1; button::before.transition-[background-color,color,box-shadow,border-color].focus-visible:focus-ring 224pxx34px rgba(255, 255, 255, 0.043) 10px |
+| default | size 224 x 36; padding 0px 8px 2px 8px; radius 10px; background transparent; text Inter 14/20 450, #868686 `dark.color.ink.muted-foreground`; transition background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), color 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 18 x 18, #868686 `dark.color.ink.muted-foreground`; layers ::before transparent 0px none 1 |
+| hover | text Inter 14/20 450, #fafafa `dark.color.ink.foreground`; icon 18 x 18, #fafafa `dark.color.ink.foreground`; layers ::before rgba(255, 255, 255, 0.04) `dark.color.alpha.gray-50` 0px none 1; button::before.transition-[background-color,color,box-shadow,border-color].focus-visible:focus-ring 224pxx34px rgba(255, 255, 255, 0.04) `dark.color.alpha.gray-50` 10px |
+| focus-visible | outline 1px solid #fafafa `dark.color.ink.foreground`, offset 2px; layers ::before transparent 0px none 1; button.transition-[background-color,color,box-shadow,border-color].focus-visible:focus-ring 224.0x36.0 1px solid #fafafa `dark.color.ink.foreground` offset 2px 10px |
+| pressed | text Inter 14/20 450, #fafafa `dark.color.ink.foreground`; icon 18 x 18, #fafafa `dark.color.ink.foreground`; layers ::before rgba(255, 255, 255, 0.04) `dark.color.alpha.gray-50` 0px none 1; button::before.transition-[background-color,color,box-shadow,border-color].focus-visible:focus-ring 224pxx34px rgba(255, 255, 255, 0.04) `dark.color.alpha.gray-50` 10px |
 
 ![Sidebar action default](components/crops/sidebar-action-default.png) ![Sidebar action hover](components/crops/sidebar-action-hover.png) ![Sidebar action focus-visible](components/crops/sidebar-action-focus-visible.png) ![Sidebar action pressed](components/crops/sidebar-action-pressed.png)
 
@@ -126,10 +126,10 @@ The Publish-your-music promo card in the rail (surface-1 fill, artwork chip). Re
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 224 x 49; padding 6px 14px 6px 6px; radius 24px; background lab(13 0 0); shadow rgba(255, 255, 255, 0.07) 0px 0px 0px 1px, rgba(0, 0, 0, 0.5) 0px 1px 2px 0px; text Inter 13/20 500, lab(98.26 0 0); transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, lab(66.128 -0.0000298023 0.0000119209) |
-| hover | background lab(17.64 -0.0000149012 0) |
-| focus-visible | outline 1px solid lab(98.26 0 0), offset 2px |
-| pressed | background lab(17.64 -0.0000149012 0) |
+| default | size 224 x 49; padding 6px 14px 6px 6px; radius 24px; background #222222 `dark.color.surface.elevated`; shadow rgba(255, 255, 255, 0.07) 0px 0px 0px 1px, rgba(0, 0, 0, 0.5) 0px 1px 2px 0px; text Inter 13/20 500, #fafafa `dark.color.ink.foreground`; transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, #a1a1a1 `dark.color.ink.sidebar-foreground` |
+| hover | background #2b2b2b `dark.color.surface.elevated-hover` |
+| focus-visible | outline 1px solid #fafafa `dark.color.ink.foreground`, offset 2px |
+| pressed | background #2b2b2b `dark.color.surface.elevated-hover` |
 
 ![Sidebar promo default](components/crops/sidebar-promo-default.png) ![Sidebar promo hover](components/crops/sidebar-promo-hover.png) ![Sidebar promo focus-visible](components/crops/sidebar-promo-focus-visible.png) ![Sidebar promo pressed](components/crops/sidebar-promo-pressed.png)
 
@@ -138,12 +138,12 @@ A media row in the rail's Playlists list (36px art + name + Featured tag). Read 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 224 x 50; padding 0px 7px; radius 15px; background transparent; text Inter 13/18 400, oklab(0.984998 -0.00000956655 0.0000230074 / 0.85); layers ::before rgba(0, 0, 0, 0) 0px none 1; div.absolute.inset-0 36.0x36.0 lab(7.78201 -0.0000149012 0); div.cover-border.pointer-events-none 36.0x36.0 rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset 8px |
-| hover | background rgba(255, 255, 255, 0.043); layers ::before rgba(0, 0, 0, 0) 0px none 1 |
-| focus-visible | outline 1px solid lab(98.26 0 0), offset 1px; layers ::before rgba(0, 0, 0, 0) 0px none 1; a.group/media.[--row:3.125rem] 224.0x50.0 1px solid lab(98.26 0 0) offset 1px 15px; div.absolute.inset-0 36.0x36.0 lab(7.78201 -0.0000149012 0); div.cover-border.pointer-events-none 36.0x36.0 rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset 8px |
-| pressed | background rgba(255, 255, 255, 0.043); layers ::before rgba(0, 0, 0, 0) 0px none 1 |
+| default | size 224 x 50; padding 0px 7px; radius 15px; background transparent; text Inter 13/18 400, rgba(250, 250, 250, 0.85); layers ::before transparent 0px none 1; div.absolute.inset-0 36.0x36.0 #171717 `dark.color.surface.muted`; div.cover-border.pointer-events-none 36.0x36.0 rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset 8px |
+| hover | background rgba(255, 255, 255, 0.04) `dark.color.alpha.gray-50`; layers ::before transparent 0px none 1 |
+| focus-visible | outline 1px solid #fafafa `dark.color.ink.foreground`, offset 1px; layers ::before transparent 0px none 1; a.group/media.[--row:3.125rem] 224.0x50.0 1px solid #fafafa `dark.color.ink.foreground` offset 1px 15px; div.absolute.inset-0 36.0x36.0 #171717 `dark.color.surface.muted`; div.cover-border.pointer-events-none 36.0x36.0 rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset 8px |
+| pressed | background rgba(255, 255, 255, 0.04) `dark.color.alpha.gray-50`; layers ::before transparent 0px none 1 |
 
-Child layers that carry the look: div 36x36 background lab(7.78201 -0.0000149012 0); div 36x36 radius 8px shadow rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset.
+Child layers that carry the look: div 36x36 background #171717 `dark.color.surface.muted`; div 36x36 radius 8px shadow rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset.
 
 ![Playlist row default](components/crops/playlist-row-default.png) ![Playlist row hover](components/crops/playlist-row-hover.png) ![Playlist row focus-visible](components/crops/playlist-row-focus-visible.png) ![Playlist row pressed](components/crops/playlist-row-pressed.png)
 
@@ -152,10 +152,10 @@ The rail's 30px Search icon button (opens the sign-in dialog). Read as `icon-but
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 30 x 30; radius 10px; background transparent; text Inter 14/20 400, lab(55.92 -0.0000298023 0); transition background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), color 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, lab(55.92 -0.0000298023 0) |
-| hover | background rgba(255, 255, 255, 0.08); text Inter 14/20 400, lab(98.26 0 0); icon 16 x 16, lab(98.26 0 0) |
-| focus-visible | outline 1px solid lab(100 0 0), offset 2px; layers button.inline-flex.items-center 30.0x30.0 1px solid lab(100 0 0) offset 2px 10px |
-| pressed | size 29.4 x 29.4; background rgba(255, 255, 255, 0.08); text Inter 14/20 400, lab(98.26 0 0); icon 15.68 x 15.68, lab(98.26 0 0) |
+| default | size 30 x 30; radius 10px; background transparent; text Inter 14/20 400, #868686 `dark.color.ink.muted-foreground`; transition background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), color 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, #868686 `dark.color.ink.muted-foreground` |
+| hover | background rgba(255, 255, 255, 0.08) `dark.color.border.sidebar-border`; text Inter 14/20 400, #fafafa `dark.color.ink.foreground`; icon 16 x 16, #fafafa `dark.color.ink.foreground` |
+| focus-visible | outline 1px solid #ffffff `dark.color.focus.ring`, offset 2px; layers button.inline-flex.items-center 30.0x30.0 1px solid #ffffff `dark.color.focus.ring` offset 2px 10px |
+| pressed | size 29.4 x 29.4; background rgba(255, 255, 255, 0.08) `dark.color.border.sidebar-border`; text Inter 14/20 400, #fafafa `dark.color.ink.foreground`; icon 15.68 x 15.68, #fafafa `dark.color.ink.foreground` |
 
 ![Icon button default](components/crops/icon-button-default.png) ![Icon button hover](components/crops/icon-button-hover.png) ![Icon button focus-visible](components/crops/icon-button-focus-visible.png) ![Icon button pressed](components/crops/icon-button-pressed.png)
 
@@ -164,10 +164,10 @@ The 32px rail-collapse icon button; measured, never pressed. Read as `sidebar-co
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 32 x 32; radius 10px; background transparent; text Inter 14/20 400, lab(55.92 -0.0000298023 0); transition background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), color 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, lab(55.92 -0.0000298023 0) |
-| hover | background rgba(255, 255, 255, 0.08); text Inter 14/20 400, lab(98.26 0 0); icon 16 x 16, lab(98.26 0 0) |
-| focus-visible | outline 1px solid lab(100 0 0), offset 2px; layers button.items-center.justify-center 32.0x32.0 1px solid lab(100 0 0) offset 2px 10px |
-| pressed | size 31.36 x 31.36; background rgba(255, 255, 255, 0.08); text Inter 14/20 400, lab(98.26 0 0); icon 15.68 x 15.68, lab(98.26 0 0) |
+| default | size 32 x 32; radius 10px; background transparent; text Inter 14/20 400, #868686 `dark.color.ink.muted-foreground`; transition background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), color 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, #868686 `dark.color.ink.muted-foreground` |
+| hover | background rgba(255, 255, 255, 0.08) `dark.color.border.sidebar-border`; text Inter 14/20 400, #fafafa `dark.color.ink.foreground`; icon 16 x 16, #fafafa `dark.color.ink.foreground` |
+| focus-visible | outline 1px solid #ffffff `dark.color.focus.ring`, offset 2px; layers button.items-center.justify-center 32.0x32.0 1px solid #ffffff `dark.color.focus.ring` offset 2px 10px |
+| pressed | size 31.36 x 31.36; background rgba(255, 255, 255, 0.08) `dark.color.border.sidebar-border`; text Inter 14/20 400, #fafafa `dark.color.ink.foreground`; icon 15.68 x 15.68, #fafafa `dark.color.ink.foreground` |
 
 ![Sidebar collapse default](components/crops/sidebar-collapse-default.png) ![Sidebar collapse hover](components/crops/sidebar-collapse-hover.png) ![Sidebar collapse focus-visible](components/crops/sidebar-collapse-focus-visible.png) ![Sidebar collapse pressed](components/crops/sidebar-collapse-pressed.png)
 
@@ -176,24 +176,24 @@ The 24px + button on the Playlists heading; measured, never pressed. Read as `ne
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 24 x 24; radius 6px; background transparent; text Inter 12/16 400, rgba(255, 255, 255, 0.4); transition background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), color 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, rgba(255, 255, 255, 0.4) |
-| hover | background rgba(255, 255, 255, 0.08); text Inter 12/16 400, lab(98.26 0 0); icon 16 x 16, lab(98.26 0 0) |
-| focus-visible | outline 1px solid lab(100 0 0), offset 2px; layers button.inline-flex.items-center 24.0x24.0 1px solid lab(100 0 0) offset 2px 6px |
-| pressed | background rgba(255, 255, 255, 0.08); text Inter 12/16 400, lab(98.26 0 0); icon 16 x 16, lab(98.26 0 0) |
+| default | size 24 x 24; radius 6px; background transparent; text Inter 12/16 400, rgba(255, 255, 255, 0.4) `dark.color.ink.subtle`; transition background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), color 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, rgba(255, 255, 255, 0.4) `dark.color.ink.subtle` |
+| hover | background rgba(255, 255, 255, 0.08) `dark.color.border.sidebar-border`; text Inter 12/16 400, #fafafa `dark.color.ink.foreground`; icon 16 x 16, #fafafa `dark.color.ink.foreground` |
+| focus-visible | outline 1px solid #ffffff `dark.color.focus.ring`, offset 2px; layers button.inline-flex.items-center 24.0x24.0 1px solid #ffffff `dark.color.focus.ring` offset 2px 6px |
+| pressed | background rgba(255, 255, 255, 0.08) `dark.color.border.sidebar-border`; text Inter 12/16 400, #fafafa `dark.color.ink.foreground`; icon 16 x 16, #fafafa `dark.color.ink.foreground` |
 
 ![New-playlist button default](components/crops/new-playlist-btn-default.png) ![New-playlist button hover](components/crops/new-playlist-btn-hover.png) ![New-playlist button focus-visible](components/crops/new-playlist-btn-focus-visible.png) ![New-playlist button pressed](components/crops/new-playlist-btn-pressed.png)
 
 #### Header
 The app header (52px, translucent lab(0 0 0 / .95)): Main nav, Sign in, Start free. Read as `header` on the home page.
 
-**Values (default).** size 1186 x 52; padding 0px 10px; background oklab(0 0 0 / 0.95); text Inter 13/19.5 500, lab(55.92 -0.0000298023 0); icon 16 x 16, lab(55.92 -0.0000298023 0).
+**Values (default).** size 1186 x 52; padding 0px 10px; background rgba(0, 0, 0, 0.95); text Inter 13/19.5 500, #868686 `dark.color.ink.muted-foreground`; icon 16 x 16, #868686 `dark.color.ink.muted-foreground`.
 
 ![Header default](components/crops/header-default.png)
 
 #### Logo
 The ElevenMusic wordmark/mark anchor. Read as `logo` on the home page.
 
-**Values (default).** size 124.33 x 32; padding 0px 8px; radius 10px; background transparent; text Inter 16/24 400, lab(98.26 0 0); icon 7.72 x 13, lab(98.26 0 0).
+**Values (default).** size 124.33 x 32; padding 0px 8px; radius 10px; background transparent; text Inter 16/24 400, #fafafa `dark.color.ink.foreground`; icon 7.72 x 13, #fafafa `dark.color.ink.foreground`.
 
 ![Logo default](components/crops/logo-default.png)
 
@@ -202,10 +202,10 @@ A header nav link (28px pill); measured, never followed. Read as `nav-link` on t
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 62.56 x 28; padding 0px 10px; radius 3.35544e+07px; background transparent; text Inter 13/19.5 500, lab(55.92 -0.0000298023 0); transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
-| hover | background rgba(255, 255, 255, 0.043); text Inter 13/19.5 500, lab(98.26 0 0) |
-| focus-visible | shadow lab(100 0 0) 0px 0px 0px 2px; layers a.flex.h-7 62.6x28.0 rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, lab(100 0 0) 0px 0px 0px 2px, rgba(0, 0, 0, 0) 0px 0px 0px 0px 3.35544e+07px |
-| pressed | background rgba(255, 255, 255, 0.043); text Inter 13/19.5 500, lab(98.26 0 0) |
+| default | size 62.56 x 28; padding 0px 10px; radius 3.35544e+07px; background transparent; text Inter 13/19.5 500, #868686 `dark.color.ink.muted-foreground`; transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
+| hover | background rgba(255, 255, 255, 0.04) `dark.color.alpha.gray-50`; text Inter 13/19.5 500, #fafafa `dark.color.ink.foreground` |
+| focus-visible | shadow #ffffff 0px 0px 0px 2px; layers a.flex.h-7 62.6x28.0 transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, #ffffff `dark.color.focus.ring` 0px 0px 0px 2px, transparent 0px 0px 0px 0px 3.35544e+07px |
+| pressed | background rgba(255, 255, 255, 0.04) `dark.color.alpha.gray-50`; text Inter 13/19.5 500, #fafafa `dark.color.ink.foreground` |
 
 ![Header nav link default](components/crops/nav-link-default.png) ![Header nav link hover](components/crops/nav-link-hover.png) ![Header nav link focus-visible](components/crops/nav-link-focus-visible.png) ![Header nav link pressed](components/crops/nav-link-pressed.png)
 
@@ -214,10 +214,10 @@ The header Resources button that opens the dropdown; toggled for the open state.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 86.55 x 28; padding 0px 10px; radius 3.35544e+07px; background transparent; text Inter 13/19.5 500, lab(55.92 -0.0000298023 0); transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
-| hover | background rgba(255, 255, 255, 0.08); text Inter 13/19.5 500, lab(98.26 0 0) |
-| focus-visible | shadow lab(100 0 0) 0px 0px 0px 2px; layers button.flex.h-7 86.5x28.0 rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, lab(100 0 0) 0px 0px 0px 2px, rgba(0, 0, 0, 0) 0px 0px 0px 0px 3.35544e+07px |
-| pressed | background rgba(255, 255, 255, 0.043); text Inter 13/19.5 500, lab(98.26 0 0) |
+| default | size 86.55 x 28; padding 0px 10px; radius 3.35544e+07px; background transparent; text Inter 13/19.5 500, #868686 `dark.color.ink.muted-foreground`; transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
+| hover | background rgba(255, 255, 255, 0.08) `dark.color.border.sidebar-border`; text Inter 13/19.5 500, #fafafa `dark.color.ink.foreground` |
+| focus-visible | shadow #ffffff 0px 0px 0px 2px; layers button.flex.h-7 86.5x28.0 transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, #ffffff `dark.color.focus.ring` 0px 0px 0px 2px, transparent 0px 0px 0px 0px 3.35544e+07px |
+| pressed | background rgba(255, 255, 255, 0.04) `dark.color.alpha.gray-50`; text Inter 13/19.5 500, #fafafa `dark.color.ink.foreground` |
 
 ![Resources trigger default](components/crops/nav-trigger-default.png) ![Resources trigger hover](components/crops/nav-trigger-hover.png) ![Resources trigger focus-visible](components/crops/nav-trigger-focus-visible.png) ![Resources trigger pressed](components/crops/nav-trigger-pressed.png)
 
@@ -226,10 +226,10 @@ The dark Sign-in pill (surface-2 fill); measured, never pressed. Read as `signin
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 69.84 x 32; padding 0px 12px; radius 3.35544e+07px; background lab(13 0 0); shadow rgba(255, 255, 255, 0.07) 0px 0px 0px 1px, rgba(0, 0, 0, 0.5) 0px 1px 2px 0px; text Inter 14/20 400, lab(98.26 0 0); transition background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), color 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
-| hover | background lab(17.64 -0.0000149012 0) |
-| focus-visible | outline 1px solid lab(100 0 0), offset 2px |
-| pressed | size 68.45 x 31.36; background lab(17.64 -0.0000149012 0) |
+| default | size 69.84 x 32; padding 0px 12px; radius 3.35544e+07px; background #222222 `dark.color.surface.elevated`; shadow rgba(255, 255, 255, 0.07) 0px 0px 0px 1px, rgba(0, 0, 0, 0.5) 0px 1px 2px 0px; text Inter 14/20 400, #fafafa `dark.color.ink.foreground`; transition background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), color 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
+| hover | background #2b2b2b `dark.color.surface.elevated-hover` |
+| focus-visible | outline 1px solid #ffffff `dark.color.focus.ring`, offset 2px |
+| pressed | size 68.45 x 31.36; background #2b2b2b `dark.color.surface.elevated-hover` |
 
 ![Sign-in button default](components/crops/signin-btn-default.png) ![Sign-in button hover](components/crops/signin-btn-hover.png) ![Sign-in button focus-visible](components/crops/signin-btn-focus-visible.png) ![Sign-in button pressed](components/crops/signin-btn-pressed.png)
 
@@ -238,17 +238,17 @@ The white Start-free pill (primary fill); measured, never pressed. Read as `cta-
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 85.66 x 32; padding 0px 12px; radius 3.35544e+07px; background lab(98.26 0 0); text Inter 14/20 400, lab(2.75381 0 0); transition background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), color 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
-| hover | background lab(97.7639 0.243843 0.872088) |
-| focus-visible | outline 1px solid lab(100 0 0), offset 2px |
-| pressed | size 83.94 x 31.36; background lab(97.7639 0.243843 0.872088) |
+| default | size 85.66 x 32; padding 0px 12px; radius 3.35544e+07px; background #fafafa `dark.color.ink.foreground`; text Inter 14/20 400, #0a0a0a `dark.color.ink.primary-foreground`; transition background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), color 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
+| hover | background #faf8f7 `dark.color.action.primary-hover` |
+| focus-visible | outline 1px solid #ffffff `dark.color.focus.ring`, offset 2px |
+| pressed | size 83.94 x 31.36; background #faf8f7 `dark.color.action.primary-hover` |
 
 ![Start-free CTA default](components/crops/cta-btn-default.png) ![Start-free CTA hover](components/crops/cta-btn-hover.png) ![Start-free CTA focus-visible](components/crops/cta-btn-focus-visible.png) ![Start-free CTA pressed](components/crops/cta-btn-pressed.png)
 
 #### Resources dropdown
 The Resources menu panel (popover fill, opened by its own trigger). Read as `nav-dropdown` on the home page.
 
-**Values (default).** size 274 x 194; radius 14px; background lab(18.8 0 0); shadow rgba(0, 0, 0, 0.35) 0px 20px 24px 0px, rgba(0, 0, 0, 0.18) 0px 5px 8px 0px, rgba(255, 255, 255, 0.06) 0px 0px 0px 0.5px; text Inter 13/20 500, lab(98.26 0 0); transition width 0.3s cubic-bezier(0.4, 0, 0.2, 1), height 0.3s cubic-bezier(0.4, 0, 0.2, 1).
+**Values (default).** size 274 x 194; radius 14px; background #2e2e2e `dark.color.surface.popover`; shadow rgba(0, 0, 0, 0.35) 0px 20px 24px 0px, rgba(0, 0, 0, 0.18) 0px 5px 8px 0px, rgba(255, 255, 255, 0.06) 0px 0px 0px 0.5px; text Inter 13/20 500, #fafafa `dark.color.ink.foreground`; transition width 0.3s cubic-bezier(0.4, 0, 0.2, 1), height 0.3s cubic-bezier(0.4, 0, 0.2, 1).
 
 ![Resources dropdown default](components/crops/nav-dropdown-default.png)
 
@@ -257,8 +257,8 @@ A link inside the opened Resources dropdown. Read as `menu-link` on the home pag
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 222 x 20; background transparent; text Inter 13/20 500, lab(98.26 0 0); transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
-| hover, focus-visible, pressed | text Inter 13/20 500, lab(55.92 -0.0000298023 0) |
+| default | size 222 x 20; background transparent; text Inter 13/20 500, #fafafa `dark.color.ink.foreground`; transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
+| hover, focus-visible, pressed | text Inter 13/20 500, #868686 `dark.color.ink.muted-foreground` |
 
 ![Menu link default](components/crops/menu-link-default.png) ![Menu link hover](components/crops/menu-link-hover.png) ![Menu link focus-visible](components/crops/menu-link-focus-visible.png) ![Menu link pressed](components/crops/menu-link-pressed.png)
 
@@ -269,14 +269,14 @@ The 'Make music yours.' waldenburg headline over the composer — the prompt fie
 #### Hero headline
 The "Make music yours." display headline (font-display light). Read as `hero-title` on the home page.
 
-**Values (default).** size 349.08 x 44; background transparent; text waldenburg 40/44 300, lab(98.26 0 0).
+**Values (default).** size 349.08 x 44; background transparent; text waldenburg 40/44 300, #fafafa `dark.color.ink.foreground`.
 
 ![Hero headline default](components/crops/hero-title-default.png)
 
 #### Hero copy
 The muted lede under the headline. Read as `hero-lede` on the home page.
 
-**Values (default).** size 349.08 x 20; background transparent; text Inter 14/20 400, lab(55.92 -0.0000298023 0).
+**Values (default).** size 349.08 x 20; background transparent; text Inter 14/20 400, #868686 `dark.color.ink.muted-foreground`.
 
 ![Hero copy default](components/crops/hero-lede-default.png)
 
@@ -285,7 +285,7 @@ The prompt input in the hero composer (556px); sample text was typed and deleted
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focused, filled) | size 556 x 36; padding 0px 8px 0px 6px; background transparent; text Inter 15/22.5 400, lab(98.26 0 0); placeholder lab(98.26 0 0) |
+| default (same: focused, filled) | size 556 x 36; padding 0px 8px 0px 6px; background transparent; text Inter 15/22.5 400, #fafafa `dark.color.ink.foreground`; placeholder #fafafa `dark.color.ink.foreground` |
 
 ![Composer field default](components/crops/composer-field-default.png) ![Composer field focused](components/crops/composer-field-focused.png) ![Composer field filled](components/crops/composer-field-filled.png)
 
@@ -294,8 +294,8 @@ The composer's 36px + button (black circle); measured, never pressed. Read as `a
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 36 x 36; radius 3.35544e+07px; background lab(0 0 0); shadow oklab(0.999998 -0.00000980496 0.0000234246 / 0.06) 0px 0px 0px 1px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px, rgba(0, 0, 0, 0.06) 0px 1px 1px -0.5px, rgba(0, 0, 0, 0.06) 0px 3px 3px -1.5px; text Inter 16/24 500, lab(98.26 0 0); transition color 0.075s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.075s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.075s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.075s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.075s cubic-bezier(0.4, 0, 0.2, 1), fill 0.075s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.075s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.075s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.075s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.075s cubic-bezier(0.4, 0, 0.2, 1); icon 10 x 10, lab(98.26 0 0) |
-| focus-visible | shadow oklab(0.999998 -0.00000980496 0.0000234246 / 0.6) 0px 0px 0px 2px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px, rgba(0, 0, 0, 0.06) 0px 1px 1px -0.5px, rgba(0, 0, 0, 0.06) 0px 3px 3px -1.5px; outline 1px solid lab(100 0 0), offset 2px |
+| default (same: hover, pressed) | size 36 x 36; radius 3.35544e+07px; background #000000 `dark.color.surface.background`; shadow rgba(255, 255, 255, 0.06) 0px 0px 0px 1px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px, rgba(0, 0, 0, 0.06) 0px 1px 1px -0.5px, rgba(0, 0, 0, 0.06) 0px 3px 3px -1.5px; text Inter 16/24 500, #fafafa `dark.color.ink.foreground`; transition color 0.075s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.075s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.075s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.075s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.075s cubic-bezier(0.4, 0, 0.2, 1), fill 0.075s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.075s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.075s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.075s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.075s cubic-bezier(0.4, 0, 0.2, 1); icon 10 x 10, #fafafa `dark.color.ink.foreground` |
+| focus-visible | shadow rgba(255, 255, 255, 0.6) 0px 0px 0px 2px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px, rgba(0, 0, 0, 0.06) 0px 1px 1px -0.5px, rgba(0, 0, 0, 0.06) 0px 3px 3px -1.5px; outline 1px solid #ffffff `dark.color.focus.ring`, offset 2px |
 
 ![Attach button default](components/crops/attach-btn-default.png) ![Attach button hover](components/crops/attach-btn-hover.png) ![Attach button focus-visible](components/crops/attach-btn-focus-visible.png) ![Attach button pressed](components/crops/attach-btn-pressed.png)
 
@@ -304,9 +304,9 @@ The composer's white 36px circular send button (Create); measured, never pressed
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 36 x 36; radius 3.35544e+07px; background lab(98.26 0 0); text Inter 16/24 400, lab(0 0 0); transition opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1), transform 0.2s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, lab(0 0 0) |
-| focus-visible | outline 1px solid lab(100 0 0), offset 2px |
-| pressed | size 34.2 x 34.2; icon 15.2 x 15.2, lab(0 0 0) |
+| default (same: hover) | size 36 x 36; radius 3.35544e+07px; background #fafafa `dark.color.ink.foreground`; text Inter 16/24 400, #000000 `dark.color.surface.background`; transition opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1), transform 0.2s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, #000000 `dark.color.surface.background` |
+| focus-visible | outline 1px solid #ffffff `dark.color.focus.ring`, offset 2px |
+| pressed | size 34.2 x 34.2; icon 15.2 x 15.2, #000000 `dark.color.surface.background` |
 
 ![Send button default](components/crops/send-button-default.png) ![Send button hover](components/crops/send-button-hover.png) ![Send button focus-visible](components/crops/send-button-focus-visible.png) ![Send button pressed](components/crops/send-button-pressed.png)
 
@@ -315,9 +315,9 @@ A suggestion chip under the composer (lighten-100 fill, pill). Read as `prompt-c
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 78.53 x 28; padding 0px 12px; radius 3.35544e+07px; background rgba(255, 255, 255, 0.08); text Inter 12/16 400, lab(55.92 -0.0000298023 0); transition background-color 0.15s cubic-bezier(0, 0, 0.2, 1), color 0.15s cubic-bezier(0, 0, 0.2, 1), transform 0.15s cubic-bezier(0, 0, 0.2, 1) |
-| hover | background rgba(255, 255, 255, 0.114); text Inter 12/16 400, lab(98.26 0 0) |
-| pressed | size 76.18 x 27.16; background rgba(255, 255, 255, 0.114); text Inter 12/16 400, lab(98.26 0 0) |
+| default (same: focus-visible) | size 78.53 x 28; padding 0px 12px; radius 3.35544e+07px; background rgba(255, 255, 255, 0.08) `dark.color.border.sidebar-border`; text Inter 12/16 400, #868686 `dark.color.ink.muted-foreground`; transition background-color 0.15s cubic-bezier(0, 0, 0.2, 1), color 0.15s cubic-bezier(0, 0, 0.2, 1), transform 0.15s cubic-bezier(0, 0, 0.2, 1) |
+| hover | background rgba(255, 255, 255, 0.11) `dark.color.alpha.gray-150`; text Inter 12/16 400, #fafafa `dark.color.ink.foreground` |
+| pressed | size 76.18 x 27.16; background rgba(255, 255, 255, 0.11) `dark.color.alpha.gray-150`; text Inter 12/16 400, #fafafa `dark.color.ink.foreground` |
 
 ![Prompt chip default](components/crops/prompt-chip-default.png) ![Prompt chip hover](components/crops/prompt-chip-hover.png) ![Prompt chip focus-visible](components/crops/prompt-chip-focus-visible.png) ![Prompt chip pressed](components/crops/prompt-chip-pressed.png)
 
@@ -326,8 +326,8 @@ The selected segment (Songs) of the Songs/Sounds control (lighten-150 fill). Rea
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 74.52 x 40; padding 0px 16px; radius 3.35544e+07px; background rgba(255, 255, 255, 0.114); text Inter 14/20 500, lab(98.26 0 0); transition color 0.1s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), fill 0.1s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.1s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.1s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.1s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.1s cubic-bezier(0.4, 0, 0.2, 1); layers ::after lab(98.26 0 0) 0px none 0 |
-| focus-visible | outline 1px solid lab(100 0 0), offset 2px |
+| default (same: hover, pressed) | size 74.52 x 40; padding 0px 16px; radius 3.35544e+07px; background rgba(255, 255, 255, 0.11) `dark.color.alpha.gray-150`; text Inter 14/20 500, #fafafa `dark.color.ink.foreground`; transition color 0.1s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), fill 0.1s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.1s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.1s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.1s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.1s cubic-bezier(0.4, 0, 0.2, 1); layers ::after #fafafa `dark.color.ink.foreground` 0px none 0 |
+| focus-visible | outline 1px solid #ffffff `dark.color.focus.ring`, offset 2px |
 
 ![Segmented tab, selected default](components/crops/seg-tab-on-default.png) ![Segmented tab, selected hover](components/crops/seg-tab-on-hover.png) ![Segmented tab, selected focus-visible](components/crops/seg-tab-on-focus-visible.png) ![Segmented tab, selected pressed](components/crops/seg-tab-on-pressed.png)
 
@@ -336,12 +336,12 @@ An unselected segment (Sounds/Featured rail tabs). Read as `seg-tab-off` on the 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 82.84 x 40; padding 0px 16px; radius 3.35544e+07px; background transparent; text Inter 14/20 500, lab(55.92 -0.0000298023 0); transition color 0.1s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), fill 0.1s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.1s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.1s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.1s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.1s cubic-bezier(0.4, 0, 0.2, 1); layers ::after lab(98.26 0 0) 0px none 0; button::after.relative.inline-flex 82.8438pxx2px lab(98.26 0 0) |
-| hover, pressed | background rgba(255, 255, 255, 0.08); text Inter 14/20 500, lab(98.26 0 0); layers ::after lab(98.26 0 0) 0px none 0 |
+| default | size 82.84 x 40; padding 0px 16px; radius 3.35544e+07px; background transparent; text Inter 14/20 500, #868686 `dark.color.ink.muted-foreground`; transition color 0.1s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), fill 0.1s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.1s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.1s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.1s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.1s cubic-bezier(0.4, 0, 0.2, 1); layers ::after #fafafa `dark.color.ink.foreground` 0px none 0; button::after.relative.inline-flex 82.8438pxx2px #fafafa `dark.color.ink.foreground` |
+| hover, pressed | background rgba(255, 255, 255, 0.08) `dark.color.border.sidebar-border`; text Inter 14/20 500, #fafafa `dark.color.ink.foreground`; layers ::after #fafafa `dark.color.ink.foreground` 0px none 0 |
 
 **Focus not capturable.** A real keyboard focus could not be held on this element (`focus-visible` recorded `via: focus failed`), so its focus look is uncaptured — not measured as absent.
 
-Child layers that carry the look: button::after 82.8438pxx2px background lab(98.26 0 0).
+Child layers that carry the look: button::after 82.8438pxx2px background #fafafa `dark.color.ink.foreground`.
 
 ![Segmented tab default](components/crops/seg-tab-off-default.png) ![Segmented tab hover](components/crops/seg-tab-off-hover.png) ![Segmented tab pressed](components/crops/seg-tab-off-pressed.png)
 
@@ -350,7 +350,7 @@ A song row in the demo list (art + title + artist); measured, never pressed. Rea
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 614.66 x 52; radius 16px; background transparent; text Inter 16/24 400, lab(98.26 0 0); transition background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), color 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
+| default (same: hover, focus-visible, pressed) | size 614.66 x 52; radius 16px; background transparent; text Inter 16/24 400, #fafafa `dark.color.ink.foreground`; transition background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), color 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
 
 ![Track row default](components/crops/track-row-default.png) ![Track row hover](components/crops/track-row-hover.png) ![Track row focus-visible](components/crops/track-row-focus-visible.png) ![Track row pressed](components/crops/track-row-pressed.png)
 
@@ -359,10 +359,10 @@ A stem/description card in the hero demo (surface-1 fill). Read as `demo-card` o
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 156 x 68; padding 12px; radius 16px; background lab(13 0 0); shadow rgba(255, 255, 255, 0.07) 0px 0px 0px 1px, rgba(0, 0, 0, 0.5) 0px 1px 2px 0px; text Inter 14/20 500, lab(98.26 0 0); transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
-| hover | background lab(17.64 -0.0000149012 0) |
-| focus-visible | outline 1px solid lab(100 0 0), offset 2px |
-| pressed | background lab(17.64 -0.0000149012 0) |
+| default | size 156 x 68; padding 12px; radius 16px; background #222222 `dark.color.surface.elevated`; shadow rgba(255, 255, 255, 0.07) 0px 0px 0px 1px, rgba(0, 0, 0, 0.5) 0px 1px 2px 0px; text Inter 14/20 500, #fafafa `dark.color.ink.foreground`; transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
+| hover | background #2b2b2b `dark.color.surface.elevated-hover` |
+| focus-visible | outline 1px solid #ffffff `dark.color.focus.ring`, offset 2px |
+| pressed | background #2b2b2b `dark.color.surface.elevated-hover` |
 
 ![Stem card default](components/crops/demo-card-default.png) ![Stem card hover](components/crops/demo-card-hover.png) ![Stem card focus-visible](components/crops/demo-card-focus-visible.png) ![Stem card pressed](components/crops/demo-card-pressed.png)
 
@@ -371,10 +371,10 @@ The 32px frosted carousel arrow. Read as `carousel-prev` on the home page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 32 x 32; radius 3.35544e+07px; background oklab(0.299999 -0.00000295043 0.00000701845 / 0.85); shadow rgba(0, 0, 0, 0.35) 0px 20px 24px 0px, rgba(0, 0, 0, 0.18) 0px 5px 8px 0px, rgba(255, 255, 255, 0.06) 0px 0px 0px 0.5px; text Inter 16/24 400, lab(98.26 0 0); transition transform 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, lab(98.26 0 0) |
-| hover | background lab(18.8 0 0) |
-| focus-visible | outline 1px solid lab(100 0 0), offset 2px |
-| pressed | size 30.4 x 30.4; background lab(18.8 0 0); icon 15.2 x 15.2, lab(98.26 0 0) |
+| default | size 32 x 32; radius 3.35544e+07px; background rgba(46, 46, 46, 0.85); shadow rgba(0, 0, 0, 0.35) 0px 20px 24px 0px, rgba(0, 0, 0, 0.18) 0px 5px 8px 0px, rgba(255, 255, 255, 0.06) 0px 0px 0px 0.5px; text Inter 16/24 400, #fafafa `dark.color.ink.foreground`; transition transform 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, #fafafa `dark.color.ink.foreground` |
+| hover | background #2e2e2e `dark.color.surface.popover` |
+| focus-visible | outline 1px solid #ffffff `dark.color.focus.ring`, offset 2px |
+| pressed | size 30.4 x 30.4; background #2e2e2e `dark.color.surface.popover`; icon 15.2 x 15.2, #fafafa `dark.color.ink.foreground` |
 
 ![Carousel previous default](components/crops/carousel-prev-default.png) ![Carousel previous hover](components/crops/carousel-prev-hover.png) ![Carousel previous focus-visible](components/crops/carousel-prev-focus-visible.png) ![Carousel previous pressed](components/crops/carousel-prev-pressed.png)
 
@@ -383,8 +383,8 @@ The 32px frosted carousel arrow. Read as `carousel-next` on the home page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 32 x 32; radius 3.35544e+07px; background oklab(0.299999 -0.00000295043 0.00000701845 / 0.85); shadow rgba(0, 0, 0, 0.35) 0px 20px 24px 0px, rgba(0, 0, 0, 0.18) 0px 5px 8px 0px, rgba(255, 255, 255, 0.06) 0px 0px 0px 0.5px; text Inter 16/24 400, lab(98.26 0 0); transition transform 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, lab(98.26 0 0) |
-| pressed | size 30.4 x 30.4; background lab(18.8 0 0); icon 15.2 x 15.2, lab(98.26 0 0) |
+| default (same: hover) | size 32 x 32; radius 3.35544e+07px; background rgba(46, 46, 46, 0.85); shadow rgba(0, 0, 0, 0.35) 0px 20px 24px 0px, rgba(0, 0, 0, 0.18) 0px 5px 8px 0px, rgba(255, 255, 255, 0.06) 0px 0px 0px 0.5px; text Inter 16/24 400, #fafafa `dark.color.ink.foreground`; transition transform 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, #fafafa `dark.color.ink.foreground` |
+| pressed | size 30.4 x 30.4; background #2e2e2e `dark.color.surface.popover`; icon 15.2 x 15.2, #fafafa `dark.color.ink.foreground` |
 
 **Focus not capturable.** A real keyboard focus could not be held on this element (`focus-visible` recorded `via: focus failed`), so its focus look is uncaptured — not measured as absent.
 
@@ -395,10 +395,10 @@ A carousel pagination dot (the active one is a white 32x6 pill). Read as `carous
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 6 x 6; radius 3.35544e+07px; background oklab(0.984998 -0.00000956655 0.0000230074 / 0.3); text Inter 16/24 400, lab(98.26 0 0); transition width 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), background-color 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) |
-| hover | background oklab(0.984998 -0.00000956655 0.0000230074 / 0.499765) |
-| focus-visible | outline 1px solid lab(100 0 0), offset 2px |
-| pressed | background oklab(0.984998 -0.00000956655 0.0000230074 / 0.497926) |
+| default | size 6 x 6; radius 3.35544e+07px; background rgba(250, 250, 250, 0.3); text Inter 16/24 400, #fafafa `dark.color.ink.foreground`; transition width 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), background-color 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) |
+| hover | background rgba(250, 250, 250, 0.5) |
+| focus-visible | outline 1px solid #ffffff `dark.color.focus.ring`, offset 2px |
+| pressed | background rgba(250, 250, 250, 0.5) |
 
 ![Carousel dot default](components/crops/carousel-dot-default.png) ![Carousel dot hover](components/crops/carousel-dot-hover.png) ![Carousel dot focus-visible](components/crops/carousel-dot-focus-visible.png) ![Carousel dot pressed](components/crops/carousel-dot-pressed.png)
 
@@ -407,9 +407,9 @@ A white circular play button (36-48px); measured, never pressed here. Read as `p
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 48 x 48; radius 3.35544e+07px; background oklab(0.999994 0.0000455678 0.0000200868 / 0.1); shadow rgba(255, 255, 255, 0.12) 0px 0px 0px 1px inset; text Inter 16/24 400, #ffffff `color.tailwind.white.default`; transition background-color 0.2s cubic-bezier(0, 0, 0.2, 1), transform 0.2s cubic-bezier(0, 0, 0.2, 1); icon 20 x 20, #ffffff `color.tailwind.white.default` |
-| hover | background oklab(0.999994 0.0000455678 0.0000200868 / 0.15) |
-| pressed | size 45.6 x 45.6; background oklab(0.999994 0.0000455678 0.0000200868 / 0.15); icon 19 x 19, #ffffff `color.tailwind.white.default` |
+| default (same: focus-visible) | size 48 x 48; radius 3.35544e+07px; background rgba(255, 255, 255, 0.1) `dark.color.border.border`; shadow rgba(255, 255, 255, 0.12) 0px 0px 0px 1px inset; text Inter 16/24 400, #ffffff `dark.color.focus.ring`; transition background-color 0.2s cubic-bezier(0, 0, 0.2, 1), transform 0.2s cubic-bezier(0, 0, 0.2, 1); icon 20 x 20, #ffffff `dark.color.focus.ring` |
+| hover | background rgba(255, 255, 255, 0.15) `dark.color.alpha.gray-200` |
+| pressed | size 45.6 x 45.6; background rgba(255, 255, 255, 0.15) `dark.color.alpha.gray-200`; icon 19 x 19, #ffffff `dark.color.focus.ring` |
 
 ![Round play button default](components/crops/play-hero-default.png) ![Round play button hover](components/crops/play-hero-hover.png) ![Round play button focus-visible](components/crops/play-hero-focus-visible.png) ![Round play button pressed](components/crops/play-hero-pressed.png)
 
@@ -420,25 +420,25 @@ The create surface: the pill nav, the prompt input, the featured carousel, track
 #### Sidebar nav item, selected
 The Explore row held selected on its own page. Read as `sidebar-nav-selected` on the explore page.
 
-**Values (selected).** size 224 x 36; padding 0px 8px 2px 8px; radius 10px; background transparent; text Inter 14/20 450, lab(98.26 0 0); icon 18 x 18, lab(98.26 0 0); layers ::before lab(13 0 0) 0px rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px, rgba(0, 0, 0, 0.5) 0px 1px 2px 0px 1; a::before.group/row.relative 224pxx34px lab(13 0 0) rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba.
+**Values (selected).** size 224 x 36; padding 0px 8px 2px 8px; radius 10px; background transparent; text Inter 14/20 450, #fafafa `dark.color.ink.foreground`; icon 18 x 18, #fafafa `dark.color.ink.foreground`; layers ::before #222222 `dark.color.surface.elevated` 0px transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px, rgba(0, 0, 0, 0.5) 0px 1px 2px 0px 1; a::before.group/row.relative 224pxx34px #222222 `dark.color.surface.elevated` transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px .
 
-Child layers that carry the look: a::before 224pxx34px background lab(13 0 0) radius 10px shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px, rgba(0, 0, 0, 0.5) 0px 1px 2px 0px.
+Child layers that carry the look: a::before 224pxx34px background #222222 `dark.color.surface.elevated` radius 10px shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px, rgba(0, 0, 0, 0.5) 0px 1px 2px 0px.
 
 ![Sidebar nav item, selected selected](components/crops/sidebar-nav-selected-selected.png)
 
 #### Explore title
 The "Create music" page heading. Read as `explore-title` on the explore page.
 
-**Values (default).** size 444.42 x 44; background transparent; text waldenburg 40/44 300, lab(98.26 0 0).
+**Values (default).** size 444.42 x 44; background transparent; text waldenburg 40/44 300, #fafafa `dark.color.ink.foreground`.
 
 ![Explore title default](components/crops/explore-title-default.png)
 
 #### Create nav
 The pill nav under the title (Create/Composer/Styles/Sounds/Library — every item gated behind sign-in). Read as `create-nav` on the explore page.
 
-**Values (default).** size 752 x 70; background transparent; text Inter 14/20 500, lab(98.26 0 0); icon 20 x 20, lab(55.92 -0.0000298023 0); layers div.composer-hairline.flex 40.0x40.0 lab(6.8014 -0.00000745058 0) rgba(255, 255, 255, 0.15) 0px 1px 0px 0px inset, lab(17.64 -0.0000149012 0) 0px 0px 0px 1px inset, rgba(255, 255, 255, 0.08) 0px -1px 0px 0px inset, rgba(28, 25, 23, 0.53) 0px 1px 2px -1px, rgba(28, 25, 23, 0.53) 0px 10px 24px -10px 12px; div.composer-hairline.flex 40.0x40.0 lab(6.8014 -0.00000745058 0) rgba(255, 255, 255, 0.15) 0px.
+**Values (default).** size 752 x 70; background transparent; text Inter 14/20 500, #fafafa `dark.color.ink.foreground`; icon 20 x 20, #868686 `dark.color.ink.muted-foreground`; layers div.composer-hairline.flex 40.0x40.0 #151515 `dark.color.surface.composer-surface` rgba(255, 255, 255, 0.15) `dark.color.alpha.gray-200` 0px 1px 0px 0px inset, #2b2b2b `dark.color.surface.elevated-hover` 0px 0px 0px 1px inset, rgba(255, 255, 255, 0.08) `dark.color.border.sidebar-border` 0px -1px 0px 0px inset, rgba(28, 25, 23, 0.53) `light.color.alpha.gray-500` 0px 1px 2px -1px, rgba(28, 25, 23, 0.
 
-Child layers that carry the look: div 40x40 background lab(6.8014 -0.00000745058 0) radius 12px shadow rgba(255, 255, 255, 0.15) 0px 1px 0px 0px inset, lab(17.64 -0.0000149012 0) 0px 0px 0px 1px inset, rgba(255, 255, 255, 0.08) 0px -1px 0px 0px inset, rgba(28, 25, 23, 0.53) `color.tailwind.overlay.darken.500` 0px 1px 2px -1px, rgba(28, 25, 23, 0.53) `color.tailwind.overlay.darken.500` 0px 10px 24px -10px; div 40x40 background lab(6.8014 -0.00000745058 0) radius 12px shadow rgba(255, 255, 255, 0.15) 0px 1px 0px 0px inset, lab(17.64 -0.0000149012 0) 0px 0px 0px 1px inset, rgba(255, 255, 255, 0.08) 0px -1px 0px 0px inset, rgba(28, 25, 23, 0.53) `color.tailwind.overlay.darken.500` 0px 1px 2px -1px, rgba(28, 25, 23, 0.53) `color.tailwind.overlay.darken.500` 0px 10px 24px -10px; div 40x40 background lab(6.8014 -0.00000745058 0) radius 12px shadow rgba(255, 255, 255, 0.15) 0px 1px 0px 0px inset, lab(17.64 -0.0000149012 0) 0px 0px 0px 1px inset, rgba(255, 255, 255, 0.08) 0px -1px 0px 0px inset, rgba(28, 25, 23, 0.53) `color.tailwind.overlay.darken.500` 0px 1px 2px -1px, rgba(28, 25, 23, 0.53) `color.tailwind.overlay.darken.500` 0px 10px 24px -10px.
+Child layers that carry the look: div 40x40 background #151515 `dark.color.surface.composer-surface` radius 12px shadow rgba(255, 255, 255, 0.15) `dark.color.alpha.gray-200` 0px 1px 0px 0px inset, #2b2b2b `dark.color.surface.elevated-hover` 0px 0px 0px 1px inset, rgba(255, 255, 255, 0.08) `dark.color.border.sidebar-border` 0px -1px 0px 0px inset, rgba(28, 25, 23, 0.53) `light.color.alpha.gray-500` 0px 1px 2px -1px, rgba(28, 25, 23, 0.53) `light.color.alpha.gray-500` 0px 10px 24px -10px; div 40x40 background #151515 `dark.color.surface.composer-surface` radius 12px shadow rgba(255, 255, 255, 0.15) `dark.color.alpha.gray-200` 0px 1px 0px 0px inset, #2b2b2b `dark.color.surface.elevated-hover` 0px 0px 0px 1px inset, rgba(255, 255, 255, 0.08) `dark.color.border.sidebar-border` 0px -1px 0px 0px inset, rgba(28, 25, 23, 0.53) `light.color.alpha.gray-500` 0px 1px 2px -1px, rgba(28, 25, 23, 0.53) `light.color.alpha.gray-500` 0px 10px 24px -10px; div 40x40 background #151515 `dark.color.surface.composer-surface` radius 12px shadow rgba(255, 255, 255, 0.15) `dark.color.alpha.gray-200` 0px 1px 0px 0px inset, #2b2b2b `dark.color.surface.elevated-hover` 0px 0px 0px 1px inset, rgba(255, 255, 255, 0.08) `dark.color.border.sidebar-border` 0px -1px 0px 0px inset, rgba(28, 25, 23, 0.53) `light.color.alpha.gray-500` 0px 1px 2px -1px, rgba(28, 25, 23, 0.53) `light.color.alpha.gray-500` 0px 10px 24px -10px.
 
 ![Create nav default](components/crops/create-nav-default.png)
 
@@ -447,14 +447,14 @@ The "Describe your song" prompt field (556px); sample text typed and deleted, no
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focused, filled) | size 556 x 36; padding 0px 8px 0px 6px; background transparent; text Inter 15/22.5 400, lab(98.26 0 0); placeholder lab(98.26 0 0) |
+| default (same: focused, filled) | size 556 x 36; padding 0px 8px 0px 6px; background transparent; text Inter 15/22.5 400, #fafafa `dark.color.ink.foreground`; placeholder #fafafa `dark.color.ink.foreground` |
 
 ![Prompt input default](components/crops/explore-input-default.png) ![Prompt input focused](components/crops/explore-input-focused.png) ![Prompt input filled](components/crops/explore-input-filled.png)
 
 #### Feature card
 The featured track's carousel card (artwork, title, artist, Remix chip). Read as `feature-card` on the explore page.
 
-**Values (default).** size 328 x 328.5; radius 6px; background lab(7.78201 -0.0000149012 0); shadow lab(100 0 0 / 0.1) 0px 0px 0px 1px inset; text Inter 16/24 400, lab(98.26 0 0); icon 16 x 16, #000000 `color.tailwind.black.default`.
+**Values (default).** size 328 x 328.5; radius 6px; background #171717 `dark.color.surface.muted`; shadow rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset; text Inter 16/24 400, #fafafa `dark.color.ink.foreground`; icon 16 x 16, #000000 `dark.color.surface.background`.
 
 ![Feature card default](components/crops/feature-card-default.png)
 
@@ -463,10 +463,10 @@ The 36px play control on a feature card; pressed once below to mount the player 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 36 x 36; background transparent; text Inter 16/24 400, lab(98.26 0 0); transition background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), color 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, #000000 `color.tailwind.black.default`; layers span.flex.h-9 36.0x36.0 rgb(255, 255, 255) rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.1) 0px 4px 6px -4px 3.35544e+07px |
-| focus-visible | outline 1px solid lab(100 0 0), offset 2px; layers button.items-center.transition-[background-color,color,box-shadow,border-color] 36.0x36.0 1px solid lab(100 0 0) offset 2px; span.flex.h-9 36.0x36.0 rgb(255, 255, 255) rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.1) 0px 4px 6px -4px 3.35544e+07px |
+| default (same: hover, pressed) | size 36 x 36; background transparent; text Inter 16/24 400, #fafafa `dark.color.ink.foreground`; transition background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), color 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, #000000 `dark.color.surface.background`; layers span.flex.h-9 36.0x36.0 #ffffff `dark.color.focus.ring` transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.1) 0px 4px 6px -4px 3.35544e+07px |
+| focus-visible | outline 1px solid #ffffff `dark.color.focus.ring`, offset 2px; layers button.items-center.transition-[background-color,color,box-shadow,border-color] 36.0x36.0 1px solid #ffffff `dark.color.focus.ring` offset 2px; span.flex.h-9 36.0x36.0 #ffffff `dark.color.focus.ring` transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.1) 0px 4px 6px -4px 3.35544e+ |
 
-Child layers that carry the look: span 36x36 background #ffffff `color.tailwind.white.default` radius 3.35544e+07px shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.1) 0px 4px 6px -4px.
+Child layers that carry the look: span 36x36 background #ffffff `dark.color.focus.ring` radius 3.35544e+07px shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.1) 0px 4px 6px -4px.
 
 ![Card play button default](components/crops/play-feature-default.png) ![Card play button hover](components/crops/play-feature-hover.png) ![Card play button focus-visible](components/crops/play-feature-focus-visible.png) ![Card play button pressed](components/crops/play-feature-pressed.png)
 
@@ -475,10 +475,10 @@ The Remix chip on a feature card; measured, never pressed (gated). Read as `remi
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 78.42 x 32; padding 0px 10px; radius 3.35544e+07px; background lab(10.1 0 0.00000298023); text Inter 12/16 500, lab(98.26 0 0); transition background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), color 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, lab(98.26 0 0) |
-| hover | background lab(16.48 0 0) |
-| focus-visible | outline 1px solid lab(100 0 0), offset 2px |
-| pressed | size 76.85 x 31.36; background lab(16.48 0 0); icon 15.68 x 15.68, lab(98.26 0 0) |
+| default | size 78.42 x 32; padding 0px 10px; radius 3.35544e+07px; background #1c1c1c `dark.color.surface.surface-2`; text Inter 12/16 500, #fafafa `dark.color.ink.foreground`; transition background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), color 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, #fafafa `dark.color.ink.foreground` |
+| hover | background #292929 `dark.color.surface.composer-chip-hover` |
+| focus-visible | outline 1px solid #ffffff `dark.color.focus.ring`, offset 2px |
+| pressed | size 76.85 x 31.36; background #292929 `dark.color.surface.composer-chip-hover`; icon 15.68 x 15.68, #fafafa `dark.color.ink.foreground` |
 
 ![Remix chip default](components/crops/remix-chip-default.png) ![Remix chip hover](components/crops/remix-chip-hover.png) ![Remix chip focus-visible](components/crops/remix-chip-focus-visible.png) ![Remix chip pressed](components/crops/remix-chip-pressed.png)
 
@@ -487,10 +487,10 @@ A 208px track card in a shelf (artwork, title, artist, version badge); hover rai
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 208 x 237; padding 0px 0px 0px 16px; background transparent; text Inter 13/20 500, lab(98.26 0 0); icon 14.4 x 14.4, #000000 `color.tailwind.black.default`; layers div.absolute.overflow-hidden 192.0x192.0 rgba(255, 255, 255, 0.043) 14px; div.absolute.inset-0 192.0x192.0 lab(7.78201 -0.0000149012 0); button.transition-[background-color,color,box-shadow,border-color].outline-hidden 32.4x32.4 rgb(255, 255, 255) rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0. |
-| hover | icon 16 x 16, #000000 `color.tailwind.black.default`; layers div.absolute.overflow-hidden 192.0x192.0 rgba(255, 255, 255, 0.043) 14px; div.absolute.inset-0 192.0x192.0 lab(7.78201 -0.0000149012 0); button.transition-[background-color,color,box-shadow,border-color].outline-hidden 36.0x36.0 rgb(255, 255, 255) rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0. |
+| default | size 208 x 237; padding 0px 0px 0px 16px; background transparent; text Inter 13/20 500, #fafafa `dark.color.ink.foreground`; icon 14.4 x 14.4, #000000 `dark.color.surface.background`; layers div.absolute.overflow-hidden 192.0x192.0 rgba(255, 255, 255, 0.04) `dark.color.alpha.gray-50` 14px; div.absolute.inset-0 192.0x192.0 #171717 `dark.color.surface.muted`; button.transition-[background-color,color,box-shadow,border-color].outline-hidden 32.4x32.4 #ffffff `dark.color.focus.ring` transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px  |
+| hover | icon 16 x 16, #000000 `dark.color.surface.background`; layers div.absolute.overflow-hidden 192.0x192.0 rgba(255, 255, 255, 0.04) `dark.color.alpha.gray-50` 14px; div.absolute.inset-0 192.0x192.0 #171717 `dark.color.surface.muted`; button.transition-[background-color,color,box-shadow,border-color].outline-hidden 36.0x36.0 #ffffff `dark.color.focus.ring` transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px  |
 
-Child layers that carry the look: div 192x192 background rgba(255, 255, 255, 0.043) radius 14px; div 192x192 background lab(7.78201 -0.0000149012 0); button 32.4x32.4 background #ffffff `color.tailwind.white.default` radius 3.35544e+07px shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.1) 0px 4px 6px -4px.
+Child layers that carry the look: div 192x192 background rgba(255, 255, 255, 0.04) `dark.color.alpha.gray-50` radius 14px; div 192x192 background #171717 `dark.color.surface.muted`; button 32.4x32.4 background #ffffff `dark.color.focus.ring` radius 3.35544e+07px shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.1) 0px 4px 6px -4px.
 
 ![Track card default](components/crops/track-card-default.png) ![Track card hover](components/crops/track-card-hover.png)
 
@@ -499,8 +499,8 @@ The white 32px circular play button a card raises on hover. Read as `play-track`
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: pressed) | size 32.4 x 32.4; radius 3.35544e+07px; background #ffffff `color.tailwind.white.default`; shadow rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.1) 0px 4px 6px -4px; text Inter 16/24 400, lab(98.26 0 0); transition background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), color 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 14.4 x 14.4, #000000 `color.tailwind.black.default` |
-| hover | size 36 x 36; icon 16 x 16, #000000 `color.tailwind.black.default` |
+| default (same: pressed) | size 32.4 x 32.4; radius 3.35544e+07px; background #ffffff `dark.color.focus.ring`; shadow rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.1) 0px 4px 6px -4px; text Inter 16/24 400, #fafafa `dark.color.ink.foreground`; transition background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), color 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 14.4 x 14.4, #000000 `dark.color.surface.background` |
+| hover | size 36 x 36; icon 16 x 16, #000000 `dark.color.surface.background` |
 
 **Focus not capturable.** A real keyboard focus could not be held on this element (`focus-visible` recorded `via: focus failed`), so its focus look is uncaptured — not measured as absent.
 
@@ -509,9 +509,9 @@ The white 32px circular play button a card raises on hover. Read as `play-track`
 #### Version badge
 The "v2.5" badge on track cards. Read as `version-badge` on the explore page.
 
-**Values (default).** size 34.25 x 16; background transparent; text Inter 10/10 500, lab(55.92 -0.0000298023 0); layers span.inline-flex.h-4 34.3x16.0 T:1px solid rgba(255, 255, 255, 0.15) / R:1px solid rgba(255, 255, 255, 0.15) / B:1px solid rgba(255, 255, 255, 0.15) / L:1px solid rgba(255, 255, 255, 0.15) 3.35544e+07px.
+**Values (default).** size 34.25 x 16; background transparent; text Inter 10/10 500, #868686 `dark.color.ink.muted-foreground`; layers span.inline-flex.h-4 34.3x16.0 T:1px solid rgba(255, 255, 255, 0.15) `dark.color.alpha.gray-200` / R:1px solid rgba(255, 255, 255, 0.15) `dark.color.alpha.gray-200` / B:1px solid rgba(255, 255, 255, 0.15) `dark.color.alpha.gray-200` / L:1px solid rgba(255, 255, 255, 0.15) `dark.color.alpha.gray-200` 3.35544e+07px.
 
-Child layers that carry the look: span 34.3x16 border 1px solid rgba(255, 255, 255, 0.15) radius 3.35544e+07px.
+Child layers that carry the look: span 34.3x16 border 1px solid rgba(255, 255, 255, 0.15) `dark.color.alpha.gray-200` radius 3.35544e+07px.
 
 ![Version badge default](components/crops/version-badge-default.png)
 
@@ -520,8 +520,8 @@ A genre tile in Genres & Moods (artwork + name + play chip). Read as `genre-card
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible, pressed) | size 192 x 192; radius 14px; background rgba(255, 255, 255, 0.043); text Inter 16/24 400, lab(98.26 0 0); transition transform 0.22s cubic-bezier(0.23, 1, 0.32, 1), translate 0.22s cubic-bezier(0.23, 1, 0.32, 1), scale 0.22s cubic-bezier(0.23, 1, 0.32, 1), rotate 0.22s cubic-bezier(0.23, 1, 0.32, 1); icon 14.4 x 14.4, #000000 `color.tailwind.black.default` |
-| hover | size 192.26 x 188.96; transform matrix3d(0.998, 0, 0, 0, 0, 0.996444, 0.0557099, -6.33067e-05, 0, -0.0558215, 0.998441, -0.00113459, 0, 0, 0, 1); icon 16.13 x 16.04, #000000 `color.tailwind.black.default` |
+| default (same: focus-visible, pressed) | size 192 x 192; radius 14px; background rgba(255, 255, 255, 0.04) `dark.color.alpha.gray-50`; text Inter 16/24 400, #fafafa `dark.color.ink.foreground`; transition transform 0.22s cubic-bezier(0.23, 1, 0.32, 1), translate 0.22s cubic-bezier(0.23, 1, 0.32, 1), scale 0.22s cubic-bezier(0.23, 1, 0.32, 1), rotate 0.22s cubic-bezier(0.23, 1, 0.32, 1); icon 14.4 x 14.4, #000000 `dark.color.surface.background` |
+| hover | size 192.26 x 188.96; transform matrix3d(0.998, 0, 0, 0, 0, 0.996444, 0.0557099, -6.33067e-05, 0, -0.0558215, 0.998441, -0.00113459, 0, 0, 0, 1); icon 16.13 x 16.04, #000000 `dark.color.surface.background` |
 
 ![Genre card default](components/crops/genre-card-default.png) ![Genre card hover](components/crops/genre-card-hover.png) ![Genre card focus-visible](components/crops/genre-card-focus-visible.png) ![Genre card pressed](components/crops/genre-card-pressed.png)
 
@@ -530,9 +530,9 @@ The white 25px circular play button on a genre tile. Read as `play-genre` on the
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: pressed) | size 25.2 x 25.2; radius 3.35544e+07px; background #ffffff `color.tailwind.white.default`; shadow rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.1) 0px 4px 6px -4px; text Inter 16/24 400, lab(98.26 0 0); transition background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), color 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 14.4 x 14.4, #000000 `color.tailwind.black.default` |
-| hover | size 28.22 x 28.07; icon 16.13 x 16.04, #000000 `color.tailwind.black.default` |
-| focus-visible | outline 1px solid lab(100 0 0), offset 2px |
+| default (same: pressed) | size 25.2 x 25.2; radius 3.35544e+07px; background #ffffff `dark.color.focus.ring`; shadow rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.1) 0px 4px 6px -4px; text Inter 16/24 400, #fafafa `dark.color.ink.foreground`; transition background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), color 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 14.4 x 14.4, #000000 `dark.color.surface.background` |
+| hover | size 28.22 x 28.07; icon 16.13 x 16.04, #000000 `dark.color.surface.background` |
+| focus-visible | outline 1px solid #ffffff `dark.color.focus.ring`, offset 2px |
 
 ![Genre play button default](components/crops/play-genre-default.png) ![Genre play button hover](components/crops/play-genre-hover.png) ![Genre play button focus-visible](components/crops/play-genre-focus-visible.png) ![Genre play button pressed](components/crops/play-genre-pressed.png)
 
@@ -541,15 +541,15 @@ An artist-name link under a track title; measured, never followed. Read as `arti
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 95.34 x 18.75; background transparent; text Inter 15/18.75 500, lab(55.92 -0.0000298023 0); icon 12 x 12, lab(98.26 0 0) |
-| focus-visible | outline 1px auto oklab(0.999998 -0.00000980496 0.0000234246 / 0.5), offset 1px; layers a.inline-flex.min-w-0 95.3x18.8 1px auto oklab(0.999998 -0.00000980496 0.0000234246 / 0.5) offset 1px |
+| default (same: hover, pressed) | size 95.34 x 18.75; background transparent; text Inter 15/18.75 500, #868686 `dark.color.ink.muted-foreground`; icon 12 x 12, #fafafa `dark.color.ink.foreground` |
+| focus-visible | outline 1px auto rgba(255, 255, 255, 0.5) `dark.color.border.field-border-focus`, offset 1px; layers a.inline-flex.min-w-0 95.3x18.8 1px auto rgba(255, 255, 255, 0.5) `dark.color.border.field-border-focus` offset 1px |
 
 ![Artist link default](components/crops/artist-link-default.png) ![Artist link hover](components/crops/artist-link-hover.png) ![Artist link focus-visible](components/crops/artist-link-focus-visible.png) ![Artist link pressed](components/crops/artist-link-pressed.png)
 
 #### Shelf heading
 A shelf heading ("Featured", "Genres & Moods"). Read as `shelf-heading` on the explore page.
 
-**Values (default).** size 85.73 x 28; background transparent; text Inter 20/28 400, lab(98.26 0 0).
+**Values (default).** size 85.73 x 28; background transparent; text Inter 20/28 400, #fafafa `dark.color.ink.foreground`.
 
 ![Shelf heading default](components/crops/shelf-heading-default.png)
 
@@ -560,7 +560,7 @@ The transport bar mounted by pressing a card's own Play: progress, prev/play/nex
 #### Player bar
 The bottom transport bar mounted by pressing a card's Play (art, progress, transport, volume). Read as `player-bar` on the explore page.
 
-**Values (default).** size 1186 x 72; radius 16px; background lab(0 0 0); shadow rgba(255, 255, 255, 0.16) 0px 0px 0px 0.5px, rgba(0, 0, 0, 0.45) 0px 1px 2px 0px, rgba(0, 0, 0, 0.4) 0px 4px 8px -2px, rgba(0, 0, 0, 0.35) 0px 12px 24px -6px; text Inter 14/20 500, lab(98.26 0 0); icon 12 x 12, lab(98.26 0 0).
+**Values (default).** size 1186 x 72; radius 16px; background #000000 `dark.color.surface.background`; shadow rgba(255, 255, 255, 0.16) 0px 0px 0px 0.5px, rgba(0, 0, 0, 0.45) 0px 1px 2px 0px, rgba(0, 0, 0, 0.4) 0px 4px 8px -2px, rgba(0, 0, 0, 0.35) 0px 12px 24px -6px; text Inter 14/20 500, #fafafa `dark.color.ink.foreground`; icon 12 x 12, #fafafa `dark.color.ink.foreground`.
 
 ![Player bar default](components/crops/player-bar-default.png)
 
@@ -569,10 +569,10 @@ The transport's central pause button (a playing track). Read as `player-play` on
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 36 x 36; radius 3.35544e+07px; background lab(98.26 0 0); text Inter 14/20 400, lab(0 0 0); transition transform 0.15s cubic-bezier(0.4, 0, 0.2, 1), translate 0.15s cubic-bezier(0.4, 0, 0.2, 1), scale 0.15s cubic-bezier(0.4, 0, 0.2, 1), rotate 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, lab(0 0 0) |
-| hover | background oklab(0.984998 -0.00000956655 0.0000230074 / 0.9) |
-| focus-visible | outline 1px solid lab(100 0 0), offset 2px |
-| pressed | size 34.2 x 34.2; background oklab(0.984998 -0.00000956655 0.0000230074 / 0.9); icon 15.2 x 15.2, lab(0 0 0) |
+| default | size 36 x 36; radius 3.35544e+07px; background #fafafa `dark.color.ink.foreground`; text Inter 14/20 400, #000000 `dark.color.surface.background`; transition transform 0.15s cubic-bezier(0.4, 0, 0.2, 1), translate 0.15s cubic-bezier(0.4, 0, 0.2, 1), scale 0.15s cubic-bezier(0.4, 0, 0.2, 1), rotate 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, #000000 `dark.color.surface.background` |
+| hover | background rgba(250, 250, 250, 0.9) |
+| focus-visible | outline 1px solid #ffffff `dark.color.focus.ring`, offset 2px |
+| pressed | size 34.2 x 34.2; background rgba(250, 250, 250, 0.9); icon 15.2 x 15.2, #000000 `dark.color.surface.background` |
 
 ![Player play/pause default](components/crops/player-play-default.png) ![Player play/pause hover](components/crops/player-play-hover.png) ![Player play/pause focus-visible](components/crops/player-play-focus-visible.png) ![Player play/pause pressed](components/crops/player-play-pressed.png)
 
@@ -581,10 +581,10 @@ The transport previous button (the unlabeled control before Pause). Read as `pla
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 36 x 36; radius 3.35544e+07px; background transparent; text Inter 14/20 400, oklab(0.984998 -0.00000956654 0.0000230074 / 0.8); transition background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), color 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, oklab(0.984998 -0.00000956654 0.0000230074 / 0.8) |
-| hover | background rgba(255, 255, 255, 0.08); text Inter 14/20 400, lab(98.26 0 0); icon 16 x 16, lab(98.26 0 0) |
-| focus-visible | outline 1px solid lab(100 0 0), offset 2px; layers button.inline-flex.items-center 36.0x36.0 1px solid lab(100 0 0) offset 2px 3.35544e+07px |
-| pressed | size 35.28 x 35.28; background rgba(255, 255, 255, 0.08); text Inter 14/20 400, lab(98.26 0 0); icon 15.68 x 15.68, lab(98.26 0 0) |
+| default | size 36 x 36; radius 3.35544e+07px; background transparent; text Inter 14/20 400, rgba(250, 250, 250, 0.8); transition background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), color 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, rgba(250, 250, 250, 0.8) |
+| hover | background rgba(255, 255, 255, 0.08) `dark.color.border.sidebar-border`; text Inter 14/20 400, #fafafa `dark.color.ink.foreground`; icon 16 x 16, #fafafa `dark.color.ink.foreground` |
+| focus-visible | outline 1px solid #ffffff `dark.color.focus.ring`, offset 2px; layers button.inline-flex.items-center 36.0x36.0 1px solid #ffffff `dark.color.focus.ring` offset 2px 3.35544e+07px |
+| pressed | size 35.28 x 35.28; background rgba(255, 255, 255, 0.08) `dark.color.border.sidebar-border`; text Inter 14/20 400, #fafafa `dark.color.ink.foreground`; icon 15.68 x 15.68, #fafafa `dark.color.ink.foreground` |
 
 ![Player previous default](components/crops/player-prev-default.png) ![Player previous hover](components/crops/player-prev-hover.png) ![Player previous focus-visible](components/crops/player-prev-focus-visible.png) ![Player previous pressed](components/crops/player-prev-pressed.png)
 
@@ -593,10 +593,10 @@ The transport next button (the unlabeled control after Pause). Read as `player-n
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 36 x 36; radius 3.35544e+07px; background transparent; text Inter 14/20 400, oklab(0.984998 -0.00000956654 0.0000230074 / 0.8); transition background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), color 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, oklab(0.984998 -0.00000956654 0.0000230074 / 0.8) |
-| hover | background rgba(255, 255, 255, 0.08); text Inter 14/20 400, lab(98.26 0 0); icon 16 x 16, lab(98.26 0 0) |
-| focus-visible | outline 1px solid lab(100 0 0), offset 2px; layers button.inline-flex.items-center 36.0x36.0 1px solid lab(100 0 0) offset 2px 3.35544e+07px |
-| pressed | size 35.28 x 35.28; background rgba(255, 255, 255, 0.08); text Inter 14/20 400, lab(98.26 0 0); icon 15.68 x 15.68, lab(98.26 0 0) |
+| default | size 36 x 36; radius 3.35544e+07px; background transparent; text Inter 14/20 400, rgba(250, 250, 250, 0.8); transition background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), color 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, rgba(250, 250, 250, 0.8) |
+| hover | background rgba(255, 255, 255, 0.08) `dark.color.border.sidebar-border`; text Inter 14/20 400, #fafafa `dark.color.ink.foreground`; icon 16 x 16, #fafafa `dark.color.ink.foreground` |
+| focus-visible | outline 1px solid #ffffff `dark.color.focus.ring`, offset 2px; layers button.inline-flex.items-center 36.0x36.0 1px solid #ffffff `dark.color.focus.ring` offset 2px 3.35544e+07px |
+| pressed | size 35.28 x 35.28; background rgba(255, 255, 255, 0.08) `dark.color.border.sidebar-border`; text Inter 14/20 400, #fafafa `dark.color.ink.foreground`; icon 15.68 x 15.68, #fafafa `dark.color.ink.foreground` |
 
 ![Player next default](components/crops/player-next-default.png) ![Player next hover](components/crops/player-next-hover.png) ![Player next focus-visible](components/crops/player-next-focus-visible.png) ![Player next pressed](components/crops/player-next-pressed.png)
 
@@ -605,17 +605,17 @@ The transport repeat toggle. Read as `player-repeat` on the explore page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 36 x 36; radius 3.35544e+07px; background transparent; text Inter 14/20 400, oklab(0.984998 -0.00000956654 0.0000230074 / 0.8); transition background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), color 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 14 x 14, oklab(0.984998 -0.00000956654 0.0000230074 / 0.8) |
-| hover | background rgba(255, 255, 255, 0.08); text Inter 14/20 400, lab(98.26 0 0); icon 14 x 14, lab(98.26 0 0) |
-| focus-visible | outline 1px solid lab(100 0 0), offset 2px; layers button.inline-flex.items-center 36.0x36.0 1px solid lab(100 0 0) offset 2px 3.35544e+07px |
-| pressed | size 35.28 x 35.28; background rgba(255, 255, 255, 0.08); text Inter 14/20 400, lab(98.26 0 0); icon 13.72 x 13.72, lab(98.26 0 0) |
+| default | size 36 x 36; radius 3.35544e+07px; background transparent; text Inter 14/20 400, rgba(250, 250, 250, 0.8); transition background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), color 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 14 x 14, rgba(250, 250, 250, 0.8) |
+| hover | background rgba(255, 255, 255, 0.08) `dark.color.border.sidebar-border`; text Inter 14/20 400, #fafafa `dark.color.ink.foreground`; icon 14 x 14, #fafafa `dark.color.ink.foreground` |
+| focus-visible | outline 1px solid #ffffff `dark.color.focus.ring`, offset 2px; layers button.inline-flex.items-center 36.0x36.0 1px solid #ffffff `dark.color.focus.ring` offset 2px 3.35544e+07px |
+| pressed | size 35.28 x 35.28; background rgba(255, 255, 255, 0.08) `dark.color.border.sidebar-border`; text Inter 14/20 400, #fafafa `dark.color.ink.foreground`; icon 13.72 x 13.72, #fafafa `dark.color.ink.foreground` |
 
 ![Player repeat default](components/crops/player-repeat-default.png) ![Player repeat hover](components/crops/player-repeat-hover.png) ![Player repeat focus-visible](components/crops/player-repeat-focus-visible.png) ![Player repeat pressed](components/crops/player-repeat-pressed.png)
 
 #### Player progress
 The seek rail across the player's top edge. Read as `player-progress` on the explore page.
 
-**Values (default).** size 328 x 4; radius 3.35544e+07px; background oklab(0.984998 -0.00000956655 0.0000230074 / 0.15); text Inter 16/24 400, lab(98.26 0 0).
+**Values (default).** size 328 x 4; radius 3.35544e+07px; background rgba(250, 250, 250, 0.15); text Inter 16/24 400, #fafafa `dark.color.ink.foreground`.
 
 ![Player progress default](components/crops/player-progress-default.png)
 
@@ -624,10 +624,10 @@ The transport volume control. Read as `player-volume` on the explore page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 36 x 36; radius 3.35544e+07px; background transparent; text Inter 14/20 400, oklab(0.984998 -0.00000956654 0.0000230074 / 0.8); transition background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), color 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, oklab(0.984998 -0.00000956654 0.0000230074 / 0.8) |
-| hover | background rgba(255, 255, 255, 0.08); text Inter 14/20 400, lab(98.26 0 0); icon 16 x 16, lab(98.26 0 0) |
-| focus-visible | outline 1px solid lab(100 0 0), offset 2px; layers button.inline-flex.items-center 36.0x36.0 1px solid lab(100 0 0) offset 2px 3.35544e+07px |
-| pressed | size 35.28 x 35.28; background rgba(255, 255, 255, 0.08); text Inter 14/20 400, lab(98.26 0 0); icon 15.68 x 15.68, lab(98.26 0 0) |
+| default | size 36 x 36; radius 3.35544e+07px; background transparent; text Inter 14/20 400, rgba(250, 250, 250, 0.8); transition background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), color 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, rgba(250, 250, 250, 0.8) |
+| hover | background rgba(255, 255, 255, 0.08) `dark.color.border.sidebar-border`; text Inter 14/20 400, #fafafa `dark.color.ink.foreground`; icon 16 x 16, #fafafa `dark.color.ink.foreground` |
+| focus-visible | outline 1px solid #ffffff `dark.color.focus.ring`, offset 2px; layers button.inline-flex.items-center 36.0x36.0 1px solid #ffffff `dark.color.focus.ring` offset 2px 3.35544e+07px |
+| pressed | size 35.28 x 35.28; background rgba(255, 255, 255, 0.08) `dark.color.border.sidebar-border`; text Inter 14/20 400, #fafafa `dark.color.ink.foreground`; icon 15.68 x 15.68, #fafafa `dark.color.ink.foreground` |
 
 ![Player volume default](components/crops/player-volume-default.png) ![Player volume hover](components/crops/player-volume-hover.png) ![Player volume focus-visible](components/crops/player-volume-focus-visible.png) ![Player volume pressed](components/crops/player-volume-pressed.png)
 
@@ -636,10 +636,10 @@ The transport queue button. Read as `player-queue` on the explore page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 36 x 36; radius 3.35544e+07px; background transparent; text Inter 14/20 400, oklab(0.984998 -0.00000956654 0.0000230074 / 0.8); transition background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), color 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, oklab(0.984998 -0.00000956654 0.0000230074 / 0.8) |
-| hover | background rgba(255, 255, 255, 0.08); text Inter 14/20 400, lab(98.26 0 0); icon 16 x 16, lab(98.26 0 0) |
-| focus-visible | outline 1px solid lab(100 0 0), offset 2px; layers button.inline-flex.items-center 36.0x36.0 1px solid lab(100 0 0) offset 2px 3.35544e+07px |
-| pressed | size 35.28 x 35.28; background rgba(255, 255, 255, 0.08); text Inter 14/20 400, lab(98.26 0 0); icon 15.68 x 15.68, lab(98.26 0 0) |
+| default | size 36 x 36; radius 3.35544e+07px; background transparent; text Inter 14/20 400, rgba(250, 250, 250, 0.8); transition background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), color 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, rgba(250, 250, 250, 0.8) |
+| hover | background rgba(255, 255, 255, 0.08) `dark.color.border.sidebar-border`; text Inter 14/20 400, #fafafa `dark.color.ink.foreground`; icon 16 x 16, #fafafa `dark.color.ink.foreground` |
+| focus-visible | outline 1px solid #ffffff `dark.color.focus.ring`, offset 2px; layers button.inline-flex.items-center 36.0x36.0 1px solid #ffffff `dark.color.focus.ring` offset 2px 3.35544e+07px |
+| pressed | size 35.28 x 35.28; background rgba(255, 255, 255, 0.08) `dark.color.border.sidebar-border`; text Inter 14/20 400, #fafafa `dark.color.ink.foreground`; icon 15.68 x 15.68, #fafafa `dark.color.ink.foreground` |
 
 ![Player queue default](components/crops/player-queue-default.png) ![Player queue hover](components/crops/player-queue-hover.png) ![Player queue focus-visible](components/crops/player-queue-focus-visible.png) ![Player queue pressed](components/crops/player-queue-pressed.png)
 
@@ -648,8 +648,8 @@ The transport Remix button; measured, never pressed (gated). Read as `player-rem
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 31.36 x 31.36; radius 3.35544e+07px; background transparent; text Inter 16/24 400, oklab(0.999994 0.0000455677 0.0000200868 / 0.7); transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 17.64 x 17.64, oklab(0.999994 0.0000455677 0.0000200868 / 0.7) |
-| pressed | text Inter 16/24 400, #ffffff `color.tailwind.white.default`; icon 17.64 x 17.64, #ffffff `color.tailwind.white.default` |
+| default | size 31.36 x 31.36; radius 3.35544e+07px; background transparent; text Inter 16/24 400, rgba(255, 255, 255, 0.7) `dark.color.alpha.gray-700`; transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 17.64 x 17.64, rgba(255, 255, 255, 0.7) `dark.color.alpha.gray-700` |
+| pressed | text Inter 16/24 400, #ffffff `dark.color.focus.ring`; icon 17.64 x 17.64, #ffffff `dark.color.focus.ring` |
 
 **Focus not capturable.** A real keyboard focus could not be held on this element (`focus-visible` recorded `via: focus failed`), so its focus look is uncaptured — not measured as absent.
 
@@ -662,7 +662,7 @@ The ranked chart: the Play-all and Shuffle pills, Share, chart rows and the gate
 #### Charts title
 The charts page heading. Read as `charts-title` on the charts page.
 
-**Values (default).** size 842 x 83; padding 0px 0px 8px 0px; background transparent; text waldenburg 60/75 300, #ffffff `color.tailwind.white.default`.
+**Values (default).** size 842 x 83; padding 0px 0px 8px 0px; background transparent; text waldenburg 60/75 300, #ffffff `dark.color.focus.ring`.
 
 ![Charts title default](components/crops/charts-title-default.png)
 
@@ -671,10 +671,10 @@ The white 40px Play pill at the top of the chart. Read as `chart-play` on the ch
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 79.86 x 40; padding 0px 14px; radius 3.35544e+07px; background #ffffff `color.tailwind.white.default`; text Inter 14/20 400, #000000 `color.tailwind.black.default`; transition background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), color 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, #000000 `color.tailwind.black.default` |
-| hover | background oklab(0.999994 0.0000455678 0.0000200868 / 0.9) |
-| focus-visible | outline 1px solid lab(100 0 0), offset 2px |
-| pressed | size 78.26 x 39.2; background oklab(0.999994 0.0000455678 0.0000200868 / 0.9); icon 15.68 x 15.68, #000000 `color.tailwind.black.default` |
+| default | size 79.86 x 40; padding 0px 14px; radius 3.35544e+07px; background #ffffff `dark.color.focus.ring`; text Inter 14/20 400, #000000 `dark.color.surface.background`; transition background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), color 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, #000000 `dark.color.surface.background` |
+| hover | background rgba(255, 255, 255, 0.9) `light.color.surface.composer` |
+| focus-visible | outline 1px solid #ffffff `dark.color.focus.ring`, offset 2px |
+| pressed | size 78.26 x 39.2; background rgba(255, 255, 255, 0.9) `light.color.surface.composer`; icon 15.68 x 15.68, #000000 `dark.color.surface.background` |
 
 ![Play-all button default](components/crops/chart-play-default.png) ![Play-all button hover](components/crops/chart-play-hover.png) ![Play-all button focus-visible](components/crops/chart-play-focus-visible.png) ![Play-all button pressed](components/crops/chart-play-pressed.png)
 
@@ -683,10 +683,10 @@ The 40px Shuffle pill next to Play. Read as `shuffle-btn` on the charts page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 98.92 x 40; padding 0px 14px; radius 3.35544e+07px; background oklab(0.999994 0.0000455678 0.0000200868 / 0.15); text Inter 14/20 400, #ffffff `color.tailwind.white.default`; transition background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), color 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, #ffffff `color.tailwind.white.default` |
-| hover | background oklab(0.999994 0.0000455678 0.0000200868 / 0.25) |
-| focus-visible | outline 1px solid lab(100 0 0), offset 2px |
-| pressed | size 96.94 x 39.2; background oklab(0.999994 0.0000455678 0.0000200868 / 0.25); icon 15.68 x 15.68, #ffffff `color.tailwind.white.default` |
+| default | size 98.92 x 40; padding 0px 14px; radius 3.35544e+07px; background rgba(255, 255, 255, 0.15) `dark.color.alpha.gray-200`; text Inter 14/20 400, #ffffff `dark.color.focus.ring`; transition background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), color 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, #ffffff `dark.color.focus.ring` |
+| hover | background rgba(255, 255, 255, 0.25) |
+| focus-visible | outline 1px solid #ffffff `dark.color.focus.ring`, offset 2px |
+| pressed | size 96.94 x 39.2; background rgba(255, 255, 255, 0.25); icon 15.68 x 15.68, #ffffff `dark.color.focus.ring` |
 
 ![Shuffle button default](components/crops/shuffle-btn-default.png) ![Shuffle button hover](components/crops/shuffle-btn-hover.png) ![Shuffle button focus-visible](components/crops/shuffle-btn-focus-visible.png) ![Shuffle button pressed](components/crops/shuffle-btn-pressed.png)
 
@@ -695,10 +695,10 @@ The 32px Share pill; measured, never pressed. Read as `share-btn` on the charts 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 82.33 x 32; padding 0px 10px; radius 3.35544e+07px; background oklab(0.999994 0.0000455678 0.0000200868 / 0.15); text Inter 14/20 400, #ffffff `color.tailwind.white.default`; transition background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), color 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, #ffffff `color.tailwind.white.default` |
-| hover | background oklab(0.999994 0.0000455678 0.0000200868 / 0.25) |
-| focus-visible | outline 1px solid lab(100 0 0), offset 2px |
-| pressed | size 80.68 x 31.36; background oklab(0.999994 0.0000455678 0.0000200868 / 0.25); icon 15.68 x 15.68, #ffffff `color.tailwind.white.default` |
+| default | size 82.33 x 32; padding 0px 10px; radius 3.35544e+07px; background rgba(255, 255, 255, 0.15) `dark.color.alpha.gray-200`; text Inter 14/20 400, #ffffff `dark.color.focus.ring`; transition background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), color 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, #ffffff `dark.color.focus.ring` |
+| hover | background rgba(255, 255, 255, 0.25) |
+| focus-visible | outline 1px solid #ffffff `dark.color.focus.ring`, offset 2px |
+| pressed | size 80.68 x 31.36; background rgba(255, 255, 255, 0.25); icon 15.68 x 15.68, #ffffff `dark.color.focus.ring` |
 
 ![Share button default](components/crops/share-btn-default.png) ![Share button hover](components/crops/share-btn-hover.png) ![Share button focus-visible](components/crops/share-btn-focus-visible.png) ![Share button pressed](components/crops/share-btn-pressed.png)
 
@@ -707,10 +707,10 @@ A ranked chart row (rank, art, title, artist, Like/Remix icons). Read as `chart-
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 810 x 40; background transparent; text Inter 14/17.5 500, lab(98.26 0 0); icon 12 x 12, lab(55.92 -0.0000298023 0); layers span.inline-flex.cursor-default 18.0x18.0 oklab(0.205 -0.00000207871 0.00000478327 / 0.6) T:1px solid oklab(0.999998 -0.00000980496 0.0000234246 / 0.06) / R:1px solid oklab(0.999998 -0.00000980496 0.0000234246 / 0.06) / B:1px solid oklab(0.999998 -0.00000980496 0.0000234246 / 0.06) / L:1px solid oklab(0.999998 -0.00000980496 0.0000234246 / 0.06) 3.35544e+07px |
-| focus-visible | layers a.pointer-events-auto.min-w-0 55.7x16.3 1px auto oklab(0.999998 -0.00000980496 0.0000234246 / 0.5) offset 1px; span.inline-flex.cursor-default 18.0x18.0 oklab(0.205 -0.00000207871 0.00000478327 / 0.6) T:1px solid oklab(0.999998 -0.00000980496 0.0000234246 / 0.06) / R:1px solid oklab(0.999998 -0.00000980496 0.0000234246 / 0.06) / B:1px solid oklab(0.999998 -0.00000980496 0.0000234246 / 0.06) / L:1p |
+| default (same: hover, pressed) | size 810 x 40; background transparent; text Inter 14/17.5 500, #fafafa `dark.color.ink.foreground`; icon 12 x 12, #868686 `dark.color.ink.muted-foreground`; layers span.inline-flex.cursor-default 18.0x18.0 rgba(23, 23, 23, 0.6) T:1px solid rgba(255, 255, 255, 0.06) / R:1px solid rgba(255, 255, 255, 0.06) / B:1px solid rgba(255, 255, 255, 0.06) / L:1px solid rgba(255, 255, 255, 0.06) 3.35544e+07px |
+| focus-visible | layers a.pointer-events-auto.min-w-0 55.7x16.3 1px auto rgba(255, 255, 255, 0.5) `dark.color.border.field-border-focus` offset 1px; span.inline-flex.cursor-default 18.0x18.0 rgba(23, 23, 23, 0.6) T:1px solid rgba(255, 255, 255, 0.06) / R:1px solid rgba(255, 255, 255, 0.06) / B:1px solid rgba(255, 255, 255, 0.06) / L:1px solid rgba(255, 255, 255, 0.06) 3.35544e+07px |
 
-Child layers that carry the look: span 18x18 background oklab(0.205 -0.00000207871 0.00000478327 / 0.6) border 1px solid oklab(0.999998 -0.00000980496 0.0000234246 / 0.06) radius 3.35544e+07px.
+Child layers that carry the look: span 18x18 background rgba(23, 23, 23, 0.6) border 1px solid rgba(255, 255, 255, 0.06) radius 3.35544e+07px.
 
 ![Chart row default](components/crops/chart-row-default.png) ![Chart row hover](components/crops/chart-row-hover.png) ![Chart row focus-visible](components/crops/chart-row-focus-visible.png) ![Chart row pressed](components/crops/chart-row-pressed.png)
 
@@ -719,10 +719,10 @@ A row's 32px heart icon button; measured, never pressed (gated). Read as `like-b
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 32 x 32; radius 3.35544e+07px; background transparent; text Inter 14/20 400, lab(55.92 -0.0000298023 0); transition background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), color 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, lab(55.92 -0.0000298023 0) |
-| hover | background rgba(255, 255, 255, 0.08); text Inter 14/20 400, lab(98.26 0 0); icon 16 x 16, lab(98.26 0 0) |
-| focus-visible | outline 1px solid lab(100 0 0), offset 2px; layers button.inline-flex.shrink-0 32.0x32.0 1px solid lab(100 0 0) offset 2px 3.35544e+07px |
-| pressed | size 31.36 x 31.36; background rgba(255, 255, 255, 0.08); text Inter 14/20 400, lab(98.26 0 0); icon 15.68 x 15.68, lab(98.26 0 0) |
+| default | size 32 x 32; radius 3.35544e+07px; background transparent; text Inter 14/20 400, #868686 `dark.color.ink.muted-foreground`; transition background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), color 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, #868686 `dark.color.ink.muted-foreground` |
+| hover | background rgba(255, 255, 255, 0.08) `dark.color.border.sidebar-border`; text Inter 14/20 400, #fafafa `dark.color.ink.foreground`; icon 16 x 16, #fafafa `dark.color.ink.foreground` |
+| focus-visible | outline 1px solid #ffffff `dark.color.focus.ring`, offset 2px; layers button.inline-flex.shrink-0 32.0x32.0 1px solid #ffffff `dark.color.focus.ring` offset 2px 3.35544e+07px |
+| pressed | size 31.36 x 31.36; background rgba(255, 255, 255, 0.08) `dark.color.border.sidebar-border`; text Inter 14/20 400, #fafafa `dark.color.ink.foreground`; icon 15.68 x 15.68, #fafafa `dark.color.ink.foreground` |
 
 ![Like button default](components/crops/like-btn-default.png) ![Like button hover](components/crops/like-btn-hover.png) ![Like button focus-visible](components/crops/like-btn-focus-visible.png) ![Like button pressed](components/crops/like-btn-pressed.png)
 
@@ -731,10 +731,10 @@ A row's 32px Remix icon button; measured, never pressed (gated). Read as `remix-
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 32 x 32; radius 3.35544e+07px; background transparent; text Inter 14/20 400, lab(55.92 -0.0000298023 0); transition background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), color 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, lab(55.92 -0.0000298023 0) |
-| hover | background lab(11.26 0.00000745058 -0.00000298023); text Inter 14/20 400, lab(98.26 0 0); icon 16 x 16, lab(98.26 0 0) |
-| focus-visible | outline 1px solid lab(100 0 0), offset 2px; layers button.inline-flex.shrink-0 32.0x32.0 1px solid lab(100 0 0) offset 2px 3.35544e+07px |
-| pressed | size 31.36 x 31.36; background lab(11.26 0.00000745058 -0.00000298023); text Inter 14/20 400, lab(98.26 0 0); icon 15.68 x 15.68, lab(98.26 0 0) |
+| default | size 32 x 32; radius 3.35544e+07px; background transparent; text Inter 14/20 400, #868686 `dark.color.ink.muted-foreground`; transition background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), color 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, #868686 `dark.color.ink.muted-foreground` |
+| hover | background #1e1e1e `dark.color.surface.secondary`; text Inter 14/20 400, #fafafa `dark.color.ink.foreground`; icon 16 x 16, #fafafa `dark.color.ink.foreground` |
+| focus-visible | outline 1px solid #ffffff `dark.color.focus.ring`, offset 2px; layers button.inline-flex.shrink-0 32.0x32.0 1px solid #ffffff `dark.color.focus.ring` offset 2px 3.35544e+07px |
+| pressed | size 31.36 x 31.36; background #1e1e1e `dark.color.surface.secondary`; text Inter 14/20 400, #fafafa `dark.color.ink.foreground`; icon 15.68 x 15.68, #fafafa `dark.color.ink.foreground` |
 
 ![Remix button default](components/crops/remix-btn-default.png) ![Remix button hover](components/crops/remix-btn-hover.png) ![Remix button focus-visible](components/crops/remix-btn-focus-visible.png) ![Remix button pressed](components/crops/remix-btn-pressed.png)
 
@@ -743,10 +743,10 @@ An artist link inside a chart row. Read as `chart-artist` on the charts page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 55.7 x 16.25; background transparent; text Inter 13/16.25 400, lab(55.92 -0.0000298023 0) |
-| hover | text Inter 13/16.25 400, lab(98.26 0 0) |
-| focus-visible | outline 1px auto oklab(0.999998 -0.00000980496 0.0000234246 / 0.5), offset 1px; layers a.pointer-events-auto.min-w-0 55.7x16.3 1px auto oklab(0.999998 -0.00000980496 0.0000234246 / 0.5) offset 1px |
-| pressed | text Inter 13/16.25 400, lab(98.26 0 0) |
+| default | size 55.7 x 16.25; background transparent; text Inter 13/16.25 400, #868686 `dark.color.ink.muted-foreground` |
+| hover | text Inter 13/16.25 400, #fafafa `dark.color.ink.foreground` |
+| focus-visible | outline 1px auto rgba(255, 255, 255, 0.5) `dark.color.border.field-border-focus`, offset 1px; layers a.pointer-events-auto.min-w-0 55.7x16.3 1px auto rgba(255, 255, 255, 0.5) `dark.color.border.field-border-focus` offset 1px |
+| pressed | text Inter 13/16.25 400, #fafafa `dark.color.ink.foreground` |
 
 ![Chart artist link default](components/crops/chart-artist-default.png) ![Chart artist link hover](components/crops/chart-artist-hover.png) ![Chart artist link focus-visible](components/crops/chart-artist-focus-visible.png) ![Chart artist link pressed](components/crops/chart-artist-pressed.png)
 
@@ -757,37 +757,37 @@ The pricing surface: Free and Pro plan cards (the Pro card an inverted white isl
 #### Pricing title
 The "Free to start. Pro when you're ready." heading. Read as `pricing-h1` on the pricing page.
 
-**Values (default).** size 960 x 42; background transparent; text waldenburg 36/42 300, lab(98.26 0 0).
+**Values (default).** size 960 x 42; background transparent; text waldenburg 36/42 300, #fafafa `dark.color.ink.foreground`.
 
 ![Pricing title default](components/crops/pricing-h1-default.png)
 
 #### Plan card, Free
 The Free plan card (dark surface, hairline border). Read as `plan-card` on the pricing page.
 
-**Values (default).** size 472 x 909.38; radius 24px; background lab(0 0 0); text Inter 14/20 500, lab(98.26 0 0); icon 16 x 16, lab(98.26 0 0).
+**Values (default).** size 472 x 909.38; radius 24px; background #000000 `dark.color.surface.background`; text Inter 14/20 500, #fafafa `dark.color.ink.foreground`; icon 16 x 16, #fafafa `dark.color.ink.foreground`.
 
 ![Plan card, Free default](components/crops/plan-card-default.png)
 
 #### Plan card, Pro
 The Pro plan card — an inverted white island on the dark page. Read as `plan-card-pro` on the pricing page.
 
-**Values (default).** size 472 x 909.38; radius 24px; background lab(98.26 0 0); text Inter 14/20 500, lab(0 0 0); icon 16 x 16, lab(0 0 0).
+**Values (default).** size 472 x 909.38; radius 24px; background #fafafa `dark.color.ink.foreground`; text Inter 14/20 500, #000000 `dark.color.surface.background`; icon 16 x 16, #000000 `dark.color.surface.background`.
 
 ![Plan card, Pro default](components/crops/plan-card-pro-default.png)
 
 #### Plan price
 The $9.99/month price figure on the Pro card. Read as `plan-price` on the pricing page.
 
-**Values (default).** size 126.69 x 52; background transparent; text waldenburg 48/52 300, lab(0 0 0).
+**Values (default).** size 126.69 x 52; background transparent; text waldenburg 48/52 300, #000000 `dark.color.surface.background`.
 
 ![Plan price default](components/crops/plan-price-default.png)
 
 #### Plan feature row
 A checked feature row inside a plan card. Read as `plan-feature` on the pricing page.
 
-**Values (default).** size 408 x 47; padding 12px 0px; border B: 1px solid lab(100 0 0 / 0.1); background transparent; text Inter 15/22 400, lab(98.26 0 0); icon 16 x 16, lab(98.26 0 0); layers li.flex.items-center 408.0x47.0 B:1px solid lab(100 0 0 / 0.1).
+**Values (default).** size 408 x 47; padding 12px 0px; border B: 1px solid rgba(255, 255, 255, 0.1) `dark.color.border.border`; background transparent; text Inter 15/22 400, #fafafa `dark.color.ink.foreground`; icon 16 x 16, #fafafa `dark.color.ink.foreground`; layers li.flex.items-center 408.0x47.0 B:1px solid rgba(255, 255, 255, 0.1) `dark.color.border.border`.
 
-Child layers that carry the look: li 408x47 border 1px solid lab(100 0 0 / 0.1).
+Child layers that carry the look: li 408x47 border 1px solid rgba(255, 255, 255, 0.1) `dark.color.border.border`.
 
 ![Plan feature row default](components/crops/plan-feature-default.png)
 
@@ -796,9 +796,9 @@ The Start-free pill on the Free card (white fill on dark); measured, never follo
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 110.91 x 44; padding 0px 20px; radius 3.35544e+07px; background lab(98.26 0 0); text Inter 16/24 400, lab(0 0 0); transition transform 0.3s cubic-bezier(0, 0, 0.2, 1), background-color 0.3s cubic-bezier(0, 0, 0.2, 1) |
+| default | size 110.91 x 44; padding 0px 20px; radius 3.35544e+07px; background #fafafa `dark.color.ink.foreground`; text Inter 16/24 400, #000000 `dark.color.surface.background`; transition transform 0.3s cubic-bezier(0, 0, 0.2, 1), background-color 0.3s cubic-bezier(0, 0, 0.2, 1) |
 | hover | opacity 0.85 |
-| focus-visible | outline 2px solid lab(98.26 0 0), offset 4px |
+| focus-visible | outline 2px solid #fafafa `dark.color.ink.foreground`, offset 4px |
 | pressed | size 108.69 x 43.12; opacity 0.85 |
 
 ![Plan CTA, Free default](components/crops/plan-cta-free-default.png) ![Plan CTA, Free hover](components/crops/plan-cta-free-hover.png) ![Plan CTA, Free focus-visible](components/crops/plan-cta-free-focus-visible.png) ![Plan CTA, Free pressed](components/crops/plan-cta-free-pressed.png)
@@ -808,8 +808,8 @@ The Get-Pro pill on the Pro card (dark fill on the white island); measured, neve
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 96.58 x 44; padding 0px 20px; radius 3.35544e+07px; background lab(11.26 0.00000745058 -0.00000298023); shadow rgba(255, 255, 255, 0.07) 0px 0px 0px 1px, rgba(0, 0, 0, 0.5) 0px 1px 2px 0px; text Inter 16/24 400, lab(98.26 0 0); transition transform 0.3s cubic-bezier(0, 0, 0.2, 1), background-color 0.3s cubic-bezier(0, 0, 0.2, 1) |
-| focus-visible | outline 2px solid lab(98.26 0 0), offset 4px |
+| default (same: hover) | size 96.58 x 44; padding 0px 20px; radius 3.35544e+07px; background #1e1e1e `dark.color.surface.secondary`; shadow rgba(255, 255, 255, 0.07) 0px 0px 0px 1px, rgba(0, 0, 0, 0.5) 0px 1px 2px 0px; text Inter 16/24 400, #fafafa `dark.color.ink.foreground`; transition transform 0.3s cubic-bezier(0, 0, 0.2, 1), background-color 0.3s cubic-bezier(0, 0, 0.2, 1) |
+| focus-visible | outline 2px solid #fafafa `dark.color.ink.foreground`, offset 4px |
 | pressed | size 94.65 x 43.12 |
 
 ![Plan CTA, Pro default](components/crops/plan-cta-pro-default.png) ![Plan CTA, Pro hover](components/crops/plan-cta-pro-hover.png) ![Plan CTA, Pro focus-visible](components/crops/plan-cta-pro-focus-visible.png) ![Plan CTA, Pro pressed](components/crops/plan-cta-pro-pressed.png)
@@ -819,17 +819,17 @@ A pricing FAQ row (68px, border-t); the expanded state was opened by its own tog
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: expanded) | size 960 x 68; padding 20px 0px; radius 4px; background transparent; text Inter 18/28 400, lab(98.26 0 0); transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 5.3 x 5.3, lab(55.92 -0.0000298023 0) |
-| hover | icon 5.3 x 5.3, lab(98.26 0 0) |
-| focus-visible | outline 1px solid lab(100 0 0), offset 2px; layers button.flex.flex-1 960.0x68.0 1px solid lab(100 0 0) offset 2px 4px |
-| pressed | icon 5.3 x 5.3, lab(98.26 0 0) |
+| default | size 960 x 68; padding 20px 0px; radius 4px; background transparent; text Inter 18/28 400, #fafafa `dark.color.ink.foreground`; transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 5.3 x 5.3, #868686 `dark.color.ink.muted-foreground` |
+| hover | icon 5.3 x 5.3, #fafafa `dark.color.ink.foreground` |
+| focus-visible | outline 1px solid #ffffff `dark.color.focus.ring`, offset 2px; layers button.flex.flex-1 960.0x68.0 1px solid #ffffff `dark.color.focus.ring` offset 2px 4px |
+| pressed, expanded | icon 5.3 x 5.3, #fafafa `dark.color.ink.foreground` |
 
 ![FAQ accordion default](components/crops/faq-item-default.png) ![FAQ accordion hover](components/crops/faq-item-hover.png) ![FAQ accordion focus-visible](components/crops/faq-item-focus-visible.png) ![FAQ accordion pressed](components/crops/faq-item-pressed.png) ![FAQ accordion expanded](components/crops/faq-item-expanded.png)
 
 #### FAQ row
 The accordion item wrapper (question + answer region). Read as `faq-answer` on the pricing page.
 
-**Values (default).** size 960 x 68; background transparent; text Inter 18/28 400, lab(98.26 0 0); icon 5.3 x 5.3, lab(55.92 -0.0000298023 0).
+**Values (default).** size 960 x 152; background transparent; text Inter 18/28 400, #fafafa `dark.color.ink.foreground`; icon 5.3 x 5.3, #868686 `dark.color.ink.muted-foreground`.
 
 ![FAQ row default](components/crops/faq-answer-default.png)
 
@@ -840,16 +840,16 @@ The auth boundary card, measured but never submitted: the SSO buttons, the expan
 #### Auth column
 The centred 384px log-in/sign-up column on the bare page; nothing submitted. Read as `auth-card` on the log in page.
 
-**Values (default).** size 384 x 844; background transparent; text waldenburg 30/36 300, lab(98.26 0 0); icon 24.08 x 28, lab(98.26 0 0); layers button.inline-flex.shrink-0 384.0x40.0 lab(13 0 0) rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px, rgba(0, 0, 0, 0.5) 0px 1px 2px 0px 3.35544e+07px; button.inline-flex.shrink-0 384.0x40.0 lab(13 0 0) rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, r.
+**Values (default).** size 384 x 844; background transparent; text waldenburg 30/36 300, #fafafa `dark.color.ink.foreground`; icon 24.08 x 28, #fafafa `dark.color.ink.foreground`; layers button.inline-flex.shrink-0 384.0x40.0 #222222 `dark.color.surface.elevated` transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px, rgba(0, 0, 0, 0.5) 0px 1px 2px 0px 3.35544e+07px; button.inline-flex.shrink-0 384.0x40.0 #222222 `dark.color.surface.elevated` transparent 0px 0px 0px 0px, transpar.
 
-Child layers that carry the look: button 384x40 background lab(13 0 0) radius 3.35544e+07px shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px, rgba(0, 0, 0, 0.5) 0px 1px 2px 0px; button 384x40 background lab(13 0 0) radius 3.35544e+07px shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px, rgba(0, 0, 0, 0.5) 0px 1px 2px 0px; div 173.2x1 border 1px dashed lab(100 0 0 / 0.1).
+Child layers that carry the look: button 384x40 background #222222 `dark.color.surface.elevated` radius 3.35544e+07px shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px, rgba(0, 0, 0, 0.5) 0px 1px 2px 0px; button 384x40 background #222222 `dark.color.surface.elevated` radius 3.35544e+07px shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px, rgba(0, 0, 0, 0.5) 0px 1px 2px 0px; div 173.2x1 border 1px dashed rgba(255, 255, 255, 0.1) `dark.color.border.border`.
 
 ![Auth column default](components/crops/auth-card-default.png)
 
 #### Auth title
 The "Log in or sign up" heading. Read as `auth-title` on the log in page.
 
-**Values (default).** size 384 x 36; background transparent; text waldenburg 30/36 300, lab(98.26 0 0).
+**Values (default).** size 384 x 36; background transparent; text waldenburg 30/36 300, #fafafa `dark.color.ink.foreground`.
 
 ![Auth title default](components/crops/auth-title-default.png)
 
@@ -858,10 +858,10 @@ The Continue-with-Google button (surface-1 fill, 40px); measured, never pressed.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 384 x 40; padding 0px 16px; radius 3.35544e+07px; background lab(13 0 0); shadow rgba(255, 255, 255, 0.07) 0px 0px 0px 1px, rgba(0, 0, 0, 0.5) 0px 1px 2px 0px; text Inter 14/20 400, lab(98.26 0 0); transition background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), color 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, lab(98.26 0 0) |
-| hover | background lab(17.64 -0.0000149012 0) |
-| focus-visible | outline 1px solid lab(100 0 0), offset 2px |
-| pressed | size 376.32 x 39.2; background lab(17.64 -0.0000149012 0); icon 15.68 x 15.68, lab(98.26 0 0) |
+| default | size 384 x 40; padding 0px 16px; radius 3.35544e+07px; background #222222 `dark.color.surface.elevated`; shadow rgba(255, 255, 255, 0.07) 0px 0px 0px 1px, rgba(0, 0, 0, 0.5) 0px 1px 2px 0px; text Inter 14/20 400, #fafafa `dark.color.ink.foreground`; transition background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), color 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, #fafafa `dark.color.ink.foreground` |
+| hover | background #2b2b2b `dark.color.surface.elevated-hover` |
+| focus-visible | outline 1px solid #ffffff `dark.color.focus.ring`, offset 2px |
+| pressed | size 376.32 x 39.2; background #2b2b2b `dark.color.surface.elevated-hover`; icon 15.68 x 15.68, #fafafa `dark.color.ink.foreground` |
 
 ![Google SSO button default](components/crops/sso-google-default.png) ![Google SSO button hover](components/crops/sso-google-hover.png) ![Google SSO button focus-visible](components/crops/sso-google-focus-visible.png) ![Google SSO button pressed](components/crops/sso-google-pressed.png)
 
@@ -870,10 +870,10 @@ The Continue-with-Apple button; measured, never pressed. Read as `sso-apple` on 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 384 x 40; padding 0px 16px; radius 3.35544e+07px; background lab(13 0 0); shadow rgba(255, 255, 255, 0.07) 0px 0px 0px 1px, rgba(0, 0, 0, 0.5) 0px 1px 2px 0px; text Inter 14/20 400, lab(98.26 0 0); transition background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), color 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, lab(98.26 0 0) |
-| hover | background lab(17.64 -0.0000149012 0) |
-| focus-visible | outline 1px solid lab(100 0 0), offset 2px |
-| pressed | size 376.32 x 39.2; background lab(17.64 -0.0000149012 0); icon 15.68 x 15.68, lab(98.26 0 0) |
+| default | size 384 x 40; padding 0px 16px; radius 3.35544e+07px; background #222222 `dark.color.surface.elevated`; shadow rgba(255, 255, 255, 0.07) 0px 0px 0px 1px, rgba(0, 0, 0, 0.5) 0px 1px 2px 0px; text Inter 14/20 400, #fafafa `dark.color.ink.foreground`; transition background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), color 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, #fafafa `dark.color.ink.foreground` |
+| hover | background #2b2b2b `dark.color.surface.elevated-hover` |
+| focus-visible | outline 1px solid #ffffff `dark.color.focus.ring`, offset 2px |
+| pressed | size 376.32 x 39.2; background #2b2b2b `dark.color.surface.elevated-hover`; icon 15.68 x 15.68, #fafafa `dark.color.ink.foreground` |
 
 ![Apple SSO button default](components/crops/sso-apple-default.png) ![Apple SSO button hover](components/crops/sso-apple-hover.png) ![Apple SSO button focus-visible](components/crops/sso-apple-focus-visible.png) ![Apple SSO button pressed](components/crops/sso-apple-pressed.png)
 
@@ -882,10 +882,10 @@ The Show-other-options button that expands the email form in place; toggled for 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 384 x 36; padding 0px 14px; radius 3.35544e+07px; background lab(11.26 0.00000745058 -0.00000298023); text Inter 14/20 400, lab(98.26 0 0); transition background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), color 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
-| hover | background lab(17.64 -0.0000149012 0) |
-| focus-visible | outline 1px solid lab(100 0 0), offset 2px |
-| pressed | size 376.32 x 35.28; background lab(17.64 -0.0000149012 0) |
+| default | size 384 x 36; padding 0px 14px; radius 3.35544e+07px; background #1e1e1e `dark.color.surface.secondary`; text Inter 14/20 400, #fafafa `dark.color.ink.foreground`; transition background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), color 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
+| hover | background #2b2b2b `dark.color.surface.elevated-hover` |
+| focus-visible | outline 1px solid #ffffff `dark.color.focus.ring`, offset 2px |
+| pressed | size 376.32 x 35.28; background #2b2b2b `dark.color.surface.elevated-hover` |
 
 ![Other-options toggle default](components/crops/options-btn-default.png) ![Other-options toggle hover](components/crops/options-btn-hover.png) ![Other-options toggle focus-visible](components/crops/options-btn-focus-visible.png) ![Other-options toggle pressed](components/crops/options-btn-pressed.png)
 
@@ -894,8 +894,8 @@ The Enter-email-address input revealed by the options toggle; sample text was ty
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 376 x 36; padding 4px 14px; border 1px solid lab(100 0 0 / 0.12); radius 12px; background rgba(255, 255, 255, 0.043); text Inter 14/20 400, lab(98.26 0 0); transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1); placeholder lab(55.92 -0.0000298023 0) |
-| focused, filled | border 1px solid rgba(255, 255, 255, 0.5) |
+| default | size 376 x 36; padding 4px 14px; border 1px solid rgba(255, 255, 255, 0.12) `dark.color.border.input`; radius 12px; background rgba(255, 255, 255, 0.04) `dark.color.alpha.gray-50`; text Inter 14/20 400, #fafafa `dark.color.ink.foreground`; transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1); placeholder #868686 `dark.color.ink.muted-foreground` |
+| focused, filled | border 1px solid rgba(255, 255, 255, 0.5) `dark.color.border.field-border-focus` |
 
 ![Email field default](components/crops/email-field-default.png) ![Email field focused](components/crops/email-field-focused.png) ![Email field filled](components/crops/email-field-filled.png)
 
@@ -904,8 +904,8 @@ The agree-to-Terms checkbox; measured, never checked. Read as `tos-checkbox` on 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 16 x 16; border 1px solid rgba(255, 255, 255, 0.2); radius 4px; background transparent; text Inter 14/20 400, lab(98.26 0 0); transition box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
-| focus-visible | outline 1px solid lab(100 0 0), offset 2px |
+| default (same: hover, pressed) | size 16 x 16; border 1px solid rgba(255, 255, 255, 0.2) `dark.color.border.outline`; radius 4px; background transparent; text Inter 14/20 400, #fafafa `dark.color.ink.foreground`; transition box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
+| focus-visible | outline 1px solid #ffffff `dark.color.focus.ring`, offset 2px |
 
 ![Terms checkbox default](components/crops/tos-checkbox-default.png) ![Terms checkbox hover](components/crops/tos-checkbox-hover.png) ![Terms checkbox focus-visible](components/crops/tos-checkbox-focus-visible.png) ![Terms checkbox pressed](components/crops/tos-checkbox-pressed.png)
 
@@ -914,8 +914,8 @@ The Continue-with-Email submit (disabled until the box is checked); measured, ne
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 376 x 36; padding 0px 14px; radius 3.35544e+07px; background lab(98.26 0 0); text Inter 14/20 400, lab(2.75381 0 0); transition background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), color 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1); opacity 0.4 |
-| pressed | size 368.48 x 35.28; background lab(97.7639 0.243843 0.872088) |
+| default (same: hover) | size 376 x 36; padding 0px 14px; radius 3.35544e+07px; background #fafafa `dark.color.ink.foreground`; text Inter 14/20 400, #0a0a0a `dark.color.ink.primary-foreground`; transition background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), color 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1); opacity 0.4 |
+| pressed | size 368.48 x 35.28; background #faf8f7 `dark.color.action.primary-hover` |
 
 **Focus not capturable.** A real keyboard focus could not be held on this element (`focus-visible` recorded `via: focus failed`), so its focus look is uncaptured — not measured as absent.
 
@@ -926,10 +926,10 @@ An underlined legal link; measured, never followed. Read as `tos-link` on the lo
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 96.66 x 15; background transparent; text Inter 12/19.5 400, lab(55.92 -0.0000298023 0); transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
-| hover | text Inter 12/19.5 400, lab(98.26 0 0) |
-| focus-visible | outline 1px auto oklab(0.999998 -0.00000980496 0.0000234246 / 0.5), offset 1px; layers a.underline.transition-colors 96.7x15.0 1px auto oklab(0.999998 -0.00000980496 0.0000234246 / 0.5) offset 1px |
-| pressed | text Inter 12/19.5 400, lab(98.26 0 0) |
+| default | size 96.66 x 15; background transparent; text Inter 12/19.5 400, #868686 `dark.color.ink.muted-foreground`; transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
+| hover | text Inter 12/19.5 400, #fafafa `dark.color.ink.foreground` |
+| focus-visible | outline 1px auto rgba(255, 255, 255, 0.5) `dark.color.border.field-border-focus`, offset 1px; layers a.underline.transition-colors 96.7x15.0 1px auto rgba(255, 255, 255, 0.5) `dark.color.border.field-border-focus` offset 1px |
+| pressed | text Inter 12/19.5 400, #fafafa `dark.color.ink.foreground` |
 
 ![Terms link default](components/crops/tos-link-default.png) ![Terms link hover](components/crops/tos-link-hover.png) ![Terms link focus-visible](components/crops/tos-link-focus-visible.png) ![Terms link pressed](components/crops/tos-link-pressed.png)
 
@@ -938,10 +938,10 @@ The muted Try-it-first link under the form. Read as `tryit-link` on the log in p
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 63.27 x 20; background transparent; text Inter 14/20 400, lab(55.92 -0.0000298023 0); transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
-| hover | text Inter 14/20 400, lab(98.26 0 0) |
-| focus-visible | outline 1px auto oklab(0.999998 -0.00000980496 0.0000234246 / 0.5), offset 1px; layers a.text-muted-foreground.underline-offset-4 63.3x20.0 1px auto oklab(0.999998 -0.00000980496 0.0000234246 / 0.5) offset 1px |
-| pressed | text Inter 14/20 400, lab(98.26 0 0) |
+| default | size 63.27 x 20; background transparent; text Inter 14/20 400, #868686 `dark.color.ink.muted-foreground`; transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
+| hover | text Inter 14/20 400, #fafafa `dark.color.ink.foreground` |
+| focus-visible | outline 1px auto rgba(255, 255, 255, 0.5) `dark.color.border.field-border-focus`, offset 1px; layers a.text-muted-foreground.underline-offset-4 63.3x20.0 1px auto rgba(255, 255, 255, 0.5) `dark.color.border.field-border-focus` offset 1px |
+| pressed | text Inter 14/20 400, #fafafa `dark.color.ink.foreground` |
 
 ![Try-it link default](components/crops/tryit-link-default.png) ![Try-it link hover](components/crops/tryit-link-hover.png) ![Try-it link focus-visible](components/crops/tryit-link-focus-visible.png) ![Try-it link pressed](components/crops/tryit-link-pressed.png)
 
@@ -952,9 +952,9 @@ The site footer inside the shell: language selector, link columns, legal, Cookie
 #### Footer
 The site footer inside the shell: language selector, link columns, legal and the theme control. Read as `footer` on the home page.
 
-**Values (default).** size 1186 x 708; background transparent; text Inter 14/20 500, lab(98.26 0 0); icon 24.08 x 28, lab(98.26 0 0); layers div.flex.items-center 76.0x28.0 oklab(0.984998 -0.00000956654 0.0000230074 / 0.05) rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.984998 -0.00000956655 0.0000230074 / 0.06) 0px 0px 0px 1px, rgba(0, 0, 0, 0) 0px 0px 0px 0px 3.35544e+07px; span.absolute.inset-0 24.0x24.0 oklab(0.984998 -0.00000956655 0.0000230074 / 0.08) rgba(0, 0, 0, 0).
+**Values (default).** size 1186 x 708; background transparent; text Inter 14/20 500, #fafafa `dark.color.ink.foreground`; icon 24.08 x 28, #fafafa `dark.color.ink.foreground`; layers div.flex.items-center 76.0x28.0 rgba(250, 250, 250, 0.05) transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(250, 250, 250, 0.06) 0px 0px 0px 1px, transparent 0px 0px 0px 0px 3.35544e+07px; span.absolute.inset-0 24.0x24.0 rgba(250, 250, 250, 0.08) transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(250, 250, 250, 0.08.
 
-Child layers that carry the look: div 76x28 background oklab(0.984998 -0.00000956654 0.0000230074 / 0.05) radius 3.35544e+07px shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, oklab(0.984998 -0.00000956655 0.0000230074 / 0.06) 0px 0px 0px 1px, transparent 0px 0px 0px 0px; span 24x24 background oklab(0.984998 -0.00000956655 0.0000230074 / 0.08) radius 3.35544e+07px shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, oklab(0.984998 -0.00000956655 0.0000230074 / 0.08) 0px 0px 0px 1px, rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.1) 0px 1px 2px -1px.
+Child layers that carry the look: div 76x28 background rgba(250, 250, 250, 0.05) radius 3.35544e+07px shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(250, 250, 250, 0.06) 0px 0px 0px 1px, transparent 0px 0px 0px 0px; span 24x24 background rgba(250, 250, 250, 0.08) radius 3.35544e+07px shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(250, 250, 250, 0.08) 0px 0px 0px 1px, rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.1) 0px 1px 2px -1px.
 
 ![Footer default](components/crops/footer-default.png)
 
@@ -963,10 +963,10 @@ A footer column link (36px row). Read as `footer-link` on the home page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 106.14 x 36; padding 8px 6px; radius 6px; background transparent; text Inter 14/20 500, lab(98.26 0 0); transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
-| hover | text Inter 14/20 500, lab(55.92 -0.0000298023 0) |
-| focus-visible | outline 1px solid lab(100 0 0), offset 2px; layers a.focus-visible:focus-ring.-mx-1.5 106.1x36.0 1px solid lab(100 0 0) offset 2px 6px |
-| pressed | text Inter 14/20 500, lab(55.92 -0.0000298023 0) |
+| default | size 106.14 x 36; padding 8px 6px; radius 6px; background transparent; text Inter 14/20 500, #fafafa `dark.color.ink.foreground`; transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
+| hover | text Inter 14/20 500, #868686 `dark.color.ink.muted-foreground` |
+| focus-visible | outline 1px solid #ffffff `dark.color.focus.ring`, offset 2px; layers a.focus-visible:focus-ring.-mx-1.5 106.1x36.0 1px solid #ffffff `dark.color.focus.ring` offset 2px 6px |
+| pressed | text Inter 14/20 500, #868686 `dark.color.ink.muted-foreground` |
 
 ![Footer link default](components/crops/footer-link-default.png) ![Footer link hover](components/crops/footer-link-hover.png) ![Footer link focus-visible](components/crops/footer-link-focus-visible.png) ![Footer link pressed](components/crops/footer-link-pressed.png)
 
@@ -975,8 +975,8 @@ The English locale button; measured, never opened. Read as `lang-btn` on the hom
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 103.17 x 28; padding 0px 6px; radius 6px; background transparent; text Inter 14/20 500, lab(98.26 0 0); transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, lab(98.26 0 0) |
-| focus-visible | outline 1px solid lab(100 0 0), offset 2px; layers button.group.focus-visible:focus-ring 103.2x28.0 1px solid lab(100 0 0) offset 2px 6px |
+| default (same: hover, pressed) | size 103.17 x 28; padding 0px 6px; radius 6px; background transparent; text Inter 14/20 500, #fafafa `dark.color.ink.foreground`; transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, #fafafa `dark.color.ink.foreground` |
+| focus-visible | outline 1px solid #ffffff `dark.color.focus.ring`, offset 2px; layers button.group.focus-visible:focus-ring 103.2x28.0 1px solid #ffffff `dark.color.focus.ring` offset 2px 6px |
 
 ![Language selector default](components/crops/lang-btn-default.png) ![Language selector hover](components/crops/lang-btn-hover.png) ![Language selector focus-visible](components/crops/lang-btn-focus-visible.png) ![Language selector pressed](components/crops/lang-btn-pressed.png)
 
@@ -985,17 +985,17 @@ The Cookie-settings button (opens Cookiebot; measured, never pressed). Read as `
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 114.5 x 36; padding 8px 6px; radius 6px; background transparent; text Inter 14/20 500, lab(98.26 0 0); transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
-| hover | text Inter 14/20 500, lab(55.92 -0.0000298023 0) |
-| focus-visible | outline 1px solid lab(100 0 0), offset 2px; layers button.items-center.outline-hidden 114.5x36.0 1px solid lab(100 0 0) offset 2px 6px |
-| pressed | text Inter 14/20 500, lab(55.92 -0.0000298023 0) |
+| default | size 114.5 x 36; padding 8px 6px; radius 6px; background transparent; text Inter 14/20 500, #fafafa `dark.color.ink.foreground`; transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
+| hover | text Inter 14/20 500, #868686 `dark.color.ink.muted-foreground` |
+| focus-visible | outline 1px solid #ffffff `dark.color.focus.ring`, offset 2px; layers button.items-center.outline-hidden 114.5x36.0 1px solid #ffffff `dark.color.focus.ring` offset 2px 6px |
+| pressed | text Inter 14/20 500, #868686 `dark.color.ink.muted-foreground` |
 
 ![Cookie settings default](components/crops/cookie-btn-default.png) ![Cookie settings hover](components/crops/cookie-btn-hover.png) ![Cookie settings focus-visible](components/crops/cookie-btn-focus-visible.png) ![Cookie settings pressed](components/crops/cookie-btn-pressed.png)
 
 #### Theme control
 The System/Light/Dark segmented control in the footer. Read as `theme-seg` on the home page.
 
-**Values (default).** size 76 x 28; padding 2px; radius 3.35544e+07px; background oklab(0.984998 -0.00000956654 0.0000230074 / 0.05); shadow oklab(0.984998 -0.00000956655 0.0000230074 / 0.06) 0px 0px 0px 1px; text Inter 16/24 400, lab(98.26 0 0); icon 14 x 14, lab(55.92 -0.0000298023 0).
+**Values (default).** size 76 x 28; padding 2px; radius 3.35544e+07px; background rgba(250, 250, 250, 0.05); shadow rgba(250, 250, 250, 0.06) 0px 0px 0px 1px; text Inter 16/24 400, #fafafa `dark.color.ink.foreground`; icon 14 x 14, #868686 `dark.color.ink.muted-foreground`.
 
 ![Theme control default](components/crops/theme-seg-default.png)
 
@@ -1004,10 +1004,10 @@ The Dark segment of the theme control (selected when the page paints dark). Read
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 24 x 24; radius 3.35544e+07px; background transparent; text Inter 16/24 400, lab(98.26 0 0); transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 14 x 14, lab(98.26 0 0); layers span.absolute.inset-0 24.0x24.0 oklab(0.984998 -0.00000956655 0.0000230074 / 0.08) rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.984998 -0.00000956655 0.0000230074 / 0.08) 0px 0px 0px 1px, rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.1) 0px 1px 2px -1px 3.35544e+07px |
-| focus-visible | outline 1px solid lab(100 0 0), offset 2px; layers button.focus-visible:focus-ring.motion-reduce:active:scale-100 24.0x24.0 1px solid lab(100 0 0) offset 2px 3.35544e+07px; span.absolute.inset-0 24.0x24.0 oklab(0.984998 -0.00000956655 0.0000230074 / 0.08) rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.984998 -0.00000956655 0.0000230074 / 0.08) 0px 0px 0px 1px, rgba(0, 0, 0, 0.1) 0px 1p |
+| default (same: hover, pressed) | size 24 x 24; radius 3.35544e+07px; background transparent; text Inter 16/24 400, #fafafa `dark.color.ink.foreground`; transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 14 x 14, #fafafa `dark.color.ink.foreground`; layers span.absolute.inset-0 24.0x24.0 rgba(250, 250, 250, 0.08) transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(250, 250, 250, 0.08) 0px 0px 0px 1px, rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.1) 0px 1px 2px -1px 3.35544e+07px |
+| focus-visible | outline 1px solid #ffffff `dark.color.focus.ring`, offset 2px; layers button.focus-visible:focus-ring.motion-reduce:active:scale-100 24.0x24.0 1px solid #ffffff `dark.color.focus.ring` offset 2px 3.35544e+07px; span.absolute.inset-0 24.0x24.0 rgba(250, 250, 250, 0.08) transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(250, 250, 250, 0.08) 0px 0px 0px 1px, rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.1) 0px 1px 2px -1px |
 
-Child layers that carry the look: span 24x24 background oklab(0.984998 -0.00000956655 0.0000230074 / 0.08) radius 3.35544e+07px shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, oklab(0.984998 -0.00000956655 0.0000230074 / 0.08) 0px 0px 0px 1px, rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.1) 0px 1px 2px -1px.
+Child layers that carry the look: span 24x24 background rgba(250, 250, 250, 0.08) radius 3.35544e+07px shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(250, 250, 250, 0.08) 0px 0px 0px 1px, rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.1) 0px 1px 2px -1px.
 
 ![Theme dark button default](components/crops/theme-dark-btn-default.png) ![Theme dark button hover](components/crops/theme-dark-btn-hover.png) ![Theme dark button focus-visible](components/crops/theme-dark-btn-focus-visible.png) ![Theme dark button pressed](components/crops/theme-dark-btn-pressed.png)
 
@@ -1016,10 +1016,10 @@ The Light segment of the theme control; measured, never pressed here (the light 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 24 x 24; radius 3.35544e+07px; background transparent; text Inter 16/24 400, lab(55.92 -0.0000298023 0); transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 14 x 14, lab(55.92 -0.0000298023 0) |
-| hover | text Inter 16/24 400, lab(98.26 0 0); icon 14 x 14, lab(98.26 0 0) |
-| focus-visible | outline 1px solid lab(100 0 0), offset 2px; layers button.focus-visible:focus-ring.motion-reduce:active:scale-100 24.0x24.0 1px solid lab(100 0 0) offset 2px 3.35544e+07px |
-| pressed | text Inter 16/24 400, lab(98.26 0 0); icon 14 x 14, lab(98.26 0 0) |
+| default | size 24 x 24; radius 3.35544e+07px; background transparent; text Inter 16/24 400, #868686 `dark.color.ink.muted-foreground`; transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 14 x 14, #868686 `dark.color.ink.muted-foreground` |
+| hover | text Inter 16/24 400, #fafafa `dark.color.ink.foreground`; icon 14 x 14, #fafafa `dark.color.ink.foreground` |
+| focus-visible | outline 1px solid #ffffff `dark.color.focus.ring`, offset 2px; layers button.focus-visible:focus-ring.motion-reduce:active:scale-100 24.0x24.0 1px solid #ffffff `dark.color.focus.ring` offset 2px 3.35544e+07px |
+| pressed | text Inter 16/24 400, #fafafa `dark.color.ink.foreground`; icon 14 x 14, #fafafa `dark.color.ink.foreground` |
 
 ![Theme light button default](components/crops/theme-light-btn-default.png) ![Theme light button hover](components/crops/theme-light-btn-hover.png) ![Theme light button focus-visible](components/crops/theme-light-btn-focus-visible.png) ![Theme light button pressed](components/crops/theme-light-btn-pressed.png)
 
@@ -1030,14 +1030,14 @@ The app at phone width: the compact header, the bottom Explore/Create/Library ta
 #### Mobile header
 The compact header at 390: mark, Search, Start free, menu. Read as `m-header` on the home page at 390 wide.
 
-**Values (default).** size 390 x 52; padding 0px 10px; background oklab(0 0 0 / 0.95); text Inter 14/20 400, lab(2.75381 0 0).
+**Values (default).** size 390 x 52; padding 0px 10px; background rgba(0, 0, 0, 0.95); text Inter 14/20 400, #0a0a0a `dark.color.ink.primary-foreground`.
 
 ![Mobile header default](components/crops/m-header-default.png)
 
 #### Mobile logo
 The mark at 390. Read as `m-logo` on the home page at 390 wide.
 
-**Values (default).** size 29.2 x 32; padding 0px 6px; radius 10px; background transparent; text Inter 16/24 400, lab(98.26 0 0); icon 17.2 x 20, lab(98.26 0 0).
+**Values (default).** size 29.2 x 32; padding 0px 6px; radius 10px; background transparent; text Inter 16/24 400, #fafafa `dark.color.ink.foreground`; icon 17.2 x 20, #fafafa `dark.color.ink.foreground`.
 
 ![Mobile logo default](components/crops/m-logo-default.png)
 
@@ -1046,8 +1046,8 @@ The header search icon at 390. Read as `m-search-btn` on the home page at 390 wi
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 32 x 32; radius 3.35544e+07px; background lab(6.8014 -0.00000745058 0); text Inter 16/24 400, lab(98.26 0 0); transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 18.39 x 18.39, lab(98.26 0 0); layers ::after rgba(0, 0, 0, 0) 0px none 1 |
-| focus-visible | outline 1px solid lab(100 0 0), offset 2px |
+| default (same: hover, pressed) | size 32 x 32; radius 3.35544e+07px; background #151515 `dark.color.surface.composer-surface`; text Inter 16/24 400, #fafafa `dark.color.ink.foreground`; transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 18.39 x 18.39, #fafafa `dark.color.ink.foreground`; layers ::after transparent 0px none 1 |
+| focus-visible | outline 1px solid #ffffff `dark.color.focus.ring`, offset 2px |
 
 ![Mobile search button default](components/crops/m-search-btn-default.png) ![Mobile search button hover](components/crops/m-search-btn-hover.png) ![Mobile search button focus-visible](components/crops/m-search-btn-focus-visible.png) ![Mobile search button pressed](components/crops/m-search-btn-pressed.png)
 
@@ -1056,8 +1056,8 @@ The Start-free pill at 390. Read as `m-cta` on the home page at 390 wide.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 85.66 x 32; padding 0px 12px; radius 3.35544e+07px; background lab(98.26 0 0); text Inter 14/20 400, lab(2.75381 0 0); transition background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), color 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1); layers ::after rgba(0, 0, 0, 0) 0px none 1 |
-| focus-visible | outline 1px solid lab(100 0 0), offset 2px |
+| default (same: hover) | size 85.66 x 32; padding 0px 12px; radius 3.35544e+07px; background #fafafa `dark.color.ink.foreground`; text Inter 14/20 400, #0a0a0a `dark.color.ink.primary-foreground`; transition background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), color 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1); layers ::after transparent 0px none 1 |
+| focus-visible | outline 1px solid #ffffff `dark.color.focus.ring`, offset 2px |
 | pressed | size 83.94 x 31.36 |
 
 ![Mobile CTA default](components/crops/m-cta-default.png) ![Mobile CTA hover](components/crops/m-cta-hover.png) ![Mobile CTA focus-visible](components/crops/m-cta-focus-visible.png) ![Mobile CTA pressed](components/crops/m-cta-pressed.png)
@@ -1065,28 +1065,28 @@ The Start-free pill at 390. Read as `m-cta` on the home page at 390 wide.
 #### Mobile headline
 The "Make music yours." headline at 390. Read as `m-hero` on the home page at 390 wide.
 
-**Values (default).** size 349.08 x 35.52; background transparent; text waldenburg 32.29/35.52 300, lab(98.26 0 0).
+**Values (default).** size 349.08 x 35.52; background transparent; text waldenburg 32.29/35.52 300, #fafafa `dark.color.ink.foreground`.
 
 ![Mobile headline default](components/crops/m-hero-default.png)
 
 #### Mobile composer
 The prompt field at 390. Read as `m-composer` on the home page at 390 wide.
 
-**Values (default).** size 258 x 36; padding 0px 8px 0px 6px; background transparent; text Inter 15/22.5 400, lab(98.26 0 0); placeholder lab(98.26 0 0).
+**Values (default).** size 258 x 36; padding 0px 8px 0px 6px; background transparent; text Inter 15/22.5 400, #fafafa `dark.color.ink.foreground`; placeholder #fafafa `dark.color.ink.foreground`.
 
 ![Mobile composer default](components/crops/m-composer-default.png)
 
 #### Mobile prompt chip
 A suggestion chip at 390. Read as `m-chip` on the home page at 390 wide.
 
-**Values (default).** size 82.53 x 40; padding 0px 14px; radius 3.35544e+07px; background rgba(255, 255, 255, 0.08); text Inter 12/16 400, lab(55.92 -0.0000298023 0); transition background-color 0.15s cubic-bezier(0, 0, 0.2, 1), color 0.15s cubic-bezier(0, 0, 0.2, 1), transform 0.15s cubic-bezier(0, 0, 0.2, 1).
+**Values (default).** size 82.53 x 40; padding 0px 14px; radius 3.35544e+07px; background rgba(255, 255, 255, 0.08) `dark.color.border.sidebar-border`; text Inter 12/16 400, #868686 `dark.color.ink.muted-foreground`; transition background-color 0.15s cubic-bezier(0, 0, 0.2, 1), color 0.15s cubic-bezier(0, 0, 0.2, 1), transform 0.15s cubic-bezier(0, 0, 0.2, 1).
 
 ![Mobile prompt chip default](components/crops/m-chip-default.png)
 
 #### Mobile tab bar
 The bottom tab bar pinned to the viewport (Explore / Create / Library). Read as `m-tab-bar` on the home page at 390 wide.
 
-**Values (default).** size 390 x 56; border T: 1px solid lab(100 0 0 / 0.1); background lab(0 0 0); text Inter 11/11 600, lab(98.26 0 0); icon 22 x 22, lab(98.26 0 0).
+**Values (default).** size 390 x 56; border T: 1px solid rgba(255, 255, 255, 0.1) `dark.color.border.border`; background #000000 `dark.color.surface.background`; text Inter 11/11 600, #fafafa `dark.color.ink.foreground`; icon 22 x 22, #fafafa `dark.color.ink.foreground`.
 
 ![Mobile tab bar default](components/crops/m-tab-bar-default.png)
 
@@ -1095,9 +1095,9 @@ A tab-bar item (the selected Explore tab). Read as `m-tab` on the home page at 3
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 132.5 x 55; background transparent; text Inter 11/11 600, lab(98.26 0 0); transition transform 0.1s cubic-bezier(0.4, 0, 0.2, 1), translate 0.1s cubic-bezier(0.4, 0, 0.2, 1), scale 0.1s cubic-bezier(0.4, 0, 0.2, 1), rotate 0.1s cubic-bezier(0.4, 0, 0.2, 1); icon 22 x 22, lab(98.26 0 0) |
-| focus-visible | outline 1px auto oklab(0.999998 -0.00000980496 0.0000234246 / 0.5), offset 1px; layers a.flex.h-full 132.5x55.0 1px auto oklab(0.999998 -0.00000980496 0.0000234246 / 0.5) offset 1px |
-| pressed | size 124.55 x 51.7; icon 20.68 x 20.68, lab(98.26 0 0) |
+| default (same: hover) | size 132.5 x 55; background transparent; text Inter 11/11 600, #fafafa `dark.color.ink.foreground`; transition transform 0.1s cubic-bezier(0.4, 0, 0.2, 1), translate 0.1s cubic-bezier(0.4, 0, 0.2, 1), scale 0.1s cubic-bezier(0.4, 0, 0.2, 1), rotate 0.1s cubic-bezier(0.4, 0, 0.2, 1); icon 22 x 22, #fafafa `dark.color.ink.foreground` |
+| focus-visible | outline 1px auto rgba(255, 255, 255, 0.5) `dark.color.border.field-border-focus`, offset 1px; layers a.flex.h-full 132.5x55.0 1px auto rgba(255, 255, 255, 0.5) `dark.color.border.field-border-focus` offset 1px |
+| pressed | size 124.55 x 51.7; icon 20.68 x 20.68, #fafafa `dark.color.ink.foreground` |
 
 ![Mobile tab default](components/crops/m-tab-default.png) ![Mobile tab hover](components/crops/m-tab-hover.png) ![Mobile tab focus-visible](components/crops/m-tab-focus-visible.png) ![Mobile tab pressed](components/crops/m-tab-pressed.png)
 
@@ -1106,19 +1106,19 @@ The header hamburger. Read as `m-menu-btn` on the home page at 390 wide.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 36 x 36; padding 6px; radius 3.35544e+07px; background transparent; text Inter 16/24 400, lab(98.26 0 0); transition background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), color 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1); layers ::after rgba(0, 0, 0, 0) 0px none 1; span.absolute.left-0 18.0x1.5 lab(98.26 0 0) 3.35544e+07px; span.absolute.left-0 18.0x1.5 lab(98.26 0 0) 3.35544e+07px |
-| focus-visible | shadow lab(100 0 0) 0px 0px 0px 2px; outline 1px solid lab(100 0 0), offset 2px; layers ::after rgba(0, 0, 0, 0) 0px none 1; button.inline-flex.items-center 36.0x36.0 rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, lab(100 0 0) 0px 0px 0px 2px, rgba(0, 0, 0, 0) 0px 0px 0px 0px 1px solid lab(100 0 0) offset 2px 3.35544e+07px; span.absolute.left-0 18.0x1.5 lab(98.26 0 0) 3.35544e+07px; span.absolute.left-0 18.0x1.5 lab(98.26 0 0) 3. |
+| default (same: hover, pressed) | size 36 x 36; padding 6px; radius 3.35544e+07px; background transparent; text Inter 16/24 400, #fafafa `dark.color.ink.foreground`; transition background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), color 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1); layers ::after transparent 0px none 1; span.absolute.left-0 18.0x1.5 #fafafa `dark.color.ink.foreground` 3.35544e+07px; span.absolute.left-0 18.0x1.5 #fafafa `dark.color.ink.foreground` 3.35544e+07px |
+| focus-visible | shadow #ffffff 0px 0px 0px 2px; outline 1px solid #ffffff `dark.color.focus.ring`, offset 2px; layers ::after transparent 0px none 1; button.inline-flex.items-center 36.0x36.0 transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, #ffffff `dark.color.focus.ring` 0px 0px 0px 2px, transparent 0px 0px 0px 0px 1px solid #ffffff `dark.color.focus.ring` offset 2px 3.35544e+07px; span.absolute.left-0 18.0x1.5 #fafafa `dark.color.ink.foreground` 3.35544e+07px; span.absolute |
 
-Child layers that carry the look: span 18x1.5 background lab(98.26 0 0) radius 3.35544e+07px; span 18x1.5 background lab(98.26 0 0) radius 3.35544e+07px.
+Child layers that carry the look: span 18x1.5 background #fafafa `dark.color.ink.foreground` radius 3.35544e+07px; span 18x1.5 background #fafafa `dark.color.ink.foreground` radius 3.35544e+07px.
 
 ![Mobile menu button default](components/crops/m-menu-btn-default.png) ![Mobile menu button hover](components/crops/m-menu-btn-hover.png) ![Mobile menu button focus-visible](components/crops/m-menu-btn-focus-visible.png) ![Mobile menu button pressed](components/crops/m-menu-btn-pressed.png)
 
 #### Mobile menu, open
 The fullscreen nav sheet the hamburger opens (measured, then dismissed). Read as `m-menu-sheet` on the home page at 390 wide.
 
-**Values (default).** size 390 x 844; background transparent; text Inter 14/20 400, lab(2.75381 0 0); icon 17.2 x 20, lab(98.26 0 0); layers div.flex.h-[3.25rem] 390.0x52.0 lab(0 0 0); button.inline-flex.shrink-0 0.0x0.0 lab(13 0 0) rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px, rgba(0, 0, 0, 0.5) 0px 1px 2px 0px 3.35544e+07px; button.inline-flex.shrink-0 85.7x32.0 lab(98.26 0 0) 3.35544e+07px; span.absolu.
+**Values (default).** size 390 x 844; background transparent; text Inter 14/20 400, #0a0a0a `dark.color.ink.primary-foreground`; icon 17.2 x 20, #fafafa `dark.color.ink.foreground`; layers div.flex.h-[3.25rem] 390.0x52.0 #000000 `dark.color.surface.background`; button.inline-flex.shrink-0 0.0x0.0 #222222 `dark.color.surface.elevated` transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px, rgba(0, 0, 0, 0.5) 0px 1px 2px 0px 3.35544e+07px; button.inline-flex.shrink-0 85.7x32.0 #fafaf.
 
-Child layers that carry the look: div 390x52 background lab(0 0 0); button 0x0 background lab(13 0 0) radius 3.35544e+07px shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px, rgba(0, 0, 0, 0.5) 0px 1px 2px 0px; button 85.7x32 background lab(98.26 0 0) radius 3.35544e+07px.
+Child layers that carry the look: div 390x52 background #000000 `dark.color.surface.background`; button 0x0 background #222222 `dark.color.surface.elevated` radius 3.35544e+07px shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px, rgba(0, 0, 0, 0.5) 0px 1px 2px 0px; button 85.7x32 background #fafafa `dark.color.ink.foreground` radius 3.35544e+07px.
 
 ![Mobile menu, open default](components/crops/m-menu-sheet-default.png)
 
@@ -1127,8 +1127,8 @@ A link inside the open nav sheet. Read as `m-menu-link` on the home page at 390 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 366 x 44; padding 12px 12px 12px 16px; radius 12px; background transparent; text Inter 12/20 500, lab(98.26 0 0); transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 20 x 20, lab(55.92 -0.0000298023 0) |
-| focus-visible, pressed | shadow lab(100 0 0) 0px 0px 0px 2px; outline 1px solid lab(100 0 0), offset 2px; layers button.focus-visible:focus-ring.motion-reduce:active:scale-100 366.0x44.0 rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, lab(100 0 0) 0px 0px 0px 2px, rgba(0, 0, 0, 0) 0px 0px 0px 0px 1px solid lab(100 0 0) offset 2px 12px |
+| default (same: hover) | size 366 x 44; padding 12px 12px 12px 16px; radius 12px; background transparent; text Inter 12/20 500, #fafafa `dark.color.ink.foreground`; transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 20 x 20, #868686 `dark.color.ink.muted-foreground` |
+| focus-visible, pressed | shadow #ffffff 0px 0px 0px 2px; outline 1px solid #ffffff `dark.color.focus.ring`, offset 2px; layers button.focus-visible:focus-ring.motion-reduce:active:scale-100 366.0x44.0 transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, #ffffff `dark.color.focus.ring` 0px 0px 0px 2px, transparent 0px 0px 0px 0px 1px solid #ffffff `dark.color.focus.ring` offset 2px 12px |
 
 ![Mobile menu link default](components/crops/m-menu-link-default.png) ![Mobile menu link hover](components/crops/m-menu-link-hover.png) ![Mobile menu link focus-visible](components/crops/m-menu-link-focus-visible.png) ![Mobile menu link pressed](components/crops/m-menu-link-pressed.png)
 

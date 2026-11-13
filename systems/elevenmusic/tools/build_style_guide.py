@@ -116,7 +116,11 @@ def icon(m):
 
 
 tpl = (HERE / "tools" / "style-guide.template.html").read_text()
+# /*LIGHTSCOPE*/ re-binds the light set inside .pal.light only: the page
+# paints dark, so the same custom properties on :root read dark everywhere
+# else and the light swatches would show dark colours.
 html = (tpl.replace("/*CORE*/", block("core")).replace("/*LIGHT*/", block("light")).replace("/*DARK*/", block("dark"))
+        .replace("/*LIGHTSCOPE*/", block("light"))
         .replace("/*TOKENS*/null", data))
 html = re.sub(r"<!--icon:([a-z0-9-]+)(?::(\d+))?-->", icon, html)
 (HERE / "style-guide.html").write_text(html)

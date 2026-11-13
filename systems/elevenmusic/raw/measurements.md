@@ -1528,7 +1528,7 @@ Page: explore. Selector: `thin wide rail inside the player bar`. States: default
 | Colour | #fafafa |
 | Transition | none |
 | Cursor | pointer |
-| Painted layers | div.relative.w-full 328.0x4.0 bg #fafafa @ 0.15 r 3.35544e+07px; div.absolute.inset-y-0 0.0x4.0 bg #fafafa @ 0.25 r 3.35544e+07px; div.absolute.inset-y-0 55.2x4.0 bg #fafafa r 3.35544e+07px |
+| Painted layers | div.relative.w-full 328.0x4.0 bg #fafafa @ 0.15 r 3.35544e+07px; div.absolute.inset-y-0 0.0x4.0 bg #fafafa @ 0.25 r 3.35544e+07px; div.absolute.inset-y-0 54.8x4.0 bg #fafafa r 3.35544e+07px |
 | How | at rest |
 
 Crops: `player-progress-default.png`.
@@ -2033,8 +2033,8 @@ Page: pricing. Selector: `pricing faq button`. States: default, hover, focus-vis
 | Text node | span.flex-auto: Inter 18px/28px 400, #fafafa | = | = | = | = |
 | Transition | all 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = | = | = |
 | Cursor | pointer | = | = | = | = |
-| Icon | 5.3 x 5.3, colour #868686, fill #000000 | 5.3 x 5.3, colour #fafafa, fill #000000 | = | 5.3 x 5.3, colour #fafafa, fill #000000 | = |
-| How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover | at rest |
+| Icon | 5.3 x 5.3, colour #868686, fill #000000 | 5.3 x 5.3, colour #fafafa, fill #000000 | = | 5.3 x 5.3, colour #fafafa, fill #000000 | 5.3 x 5.3, colour #fafafa, fill #000000 |
+| How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover | own accordion toggle |
 | Painted layers | - | = | button.flex.flex-1 960.0x68.0 r 4px outline 1px solid #ffffff offset 2px | = | = |
 
 Crops: `faq-item-default.png`, `faq-item-hover.png`, `faq-item-focus-visible.png`, `faq-item-pressed.png`, `faq-item-expanded.png`.
@@ -2047,7 +2047,7 @@ Page: pricing. Selector: `faq item wrapper`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 960 x 68 |
+| Size (w x h) | 960 x 152 |
 | Padding | 0px |
 | Border | none |
 | Radius | 0px |

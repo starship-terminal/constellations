@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-13T16:00:58.314Z",
+  "capturedAt": "2026-11-13T17:24:02.192Z",
   "screenshot": "explore-dark-full.png",
   "sanitizedSourceUrl": "https://elevenmusic.io/explore",
   "requested": {
@@ -36,7 +36,7 @@
       "pageTop": 0
     },
     "documentSize": {
-      "width": 3662,
+      "width": 1440,
       "height": 5096
     },
     "scroll": {
@@ -50,13 +50,13 @@
     "clip": null
   },
   "png": {
-    "width": 3662,
+    "width": 1440,
     "height": 5096
   },
   "dimensionCheck": {
     "status": "pass",
     "expected": {
-      "width": 3662,
+      "width": 1440,
       "height": 5096
     },
     "basis": "fullPage"

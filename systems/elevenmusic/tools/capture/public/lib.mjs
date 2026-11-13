@@ -132,26 +132,29 @@ export async function scrollMain(page, y = 'bottom') {
 
 // For a whole-page shot on an inner-scroll page: release the scroller and its
 // ancestors up to body from their viewport-height constraints so the document
-// reaches full content height, shoot, then restore. Returns the restore fn.
+// reaches full content height, shoot, then restore. Height opens up; width and
+// horizontal clipping do not — overflow-x stays clipped on every element in
+// the chain (overflow:visible would let wide content stretch the document past
+// the viewport: the shot then records a page wider than any visitor sees).
 export async function expandScroller(page) {
   await page.evaluate(() => {
     const sc = document.querySelector('[data-em-scroller="1"]');
     if (!sc) return;
     const saved = [];
-    for (let n = sc; n && n !== document.body; n = n.parentElement) {
+    const widen = (n) => {
       saved.push([n, n.style.cssText]);
       n.style.setProperty('height', 'auto', 'important');
       n.style.setProperty('max-height', 'none', 'important');
       n.style.setProperty('min-height', '0', 'important');
-      n.style.setProperty('overflow', 'visible', 'important');
+      // overflow-y visible + overflow-x clip is a legal pair: clip does not
+      // force the other axis to auto the way hidden/scroll/auto would.
+      n.style.setProperty('overflow-y', 'visible', 'important');
+      n.style.setProperty('overflow-x', 'clip', 'important');
       n.style.setProperty('flex', '0 0 auto', 'important');
-    }
-    document.body && saved.push([document.body, document.body.style.cssText]);
-    document.documentElement && saved.push([document.documentElement, document.documentElement.style.cssText]);
-    document.body.style.setProperty('height', 'auto', 'important');
-    document.body.style.setProperty('overflow', 'visible', 'important');
-    document.documentElement.style.setProperty('height', 'auto', 'important');
-    document.documentElement.style.setProperty('overflow', 'visible', 'important');
+    };
+    for (let n = sc; n && n !== document.body; n = n.parentElement) widen(n);
+    if (document.body) widen(document.body);
+    if (document.documentElement) widen(document.documentElement);
     window.__emRestore = () => saved.forEach(([n, s]) => { n.style.cssText = s; });
   }).catch(() => {});
 }

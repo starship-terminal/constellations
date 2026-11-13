@@ -15461,7 +15461,7 @@
    "url": "https://elevenmusic.io/explore",
    "title": "Create nav",
    "group": "Explore and browse",
-   "desc": "The pill nav under the title (Create/Composer/Styles/Sounds/Library \u2014 every item gated behind sign-in).",
+   "desc": "The pill nav under the title (Create/Composer/Styles/Sounds/Library — every item gated behind sign-in).",
    "selector": "nav[aria-label=\"Create\"]"
   },
   "explore-input": {
@@ -20925,7 +20925,7 @@
       },
       {
        "node": "div.absolute.inset-y-0",
-       "size": "55.2x4.0",
+       "size": "54.8x4.0",
        "bg": "lab(98.26 0 0)",
        "radius": "3.35544e+07px"
       }
@@ -23873,7 +23873,7 @@
     "default": {
      "tag": "h1",
      "classes": "",
-     "text": "Free to start. Pro when you\u2019re ready.",
+     "text": "Free to start. Pro when you’re ready.",
      "rect": {
       "x": 361,
       "y": 179,
@@ -24369,7 +24369,7 @@
    "url": "https://elevenmusic.io/pricing",
    "title": "Plan card, Pro",
    "group": "Pricing",
-   "desc": "The Pro plan card \u2014 an inverted white island on the dark page.",
+   "desc": "The Pro plan card — an inverted white island on the dark page.",
    "selector": "painted ancestor of the Pro plan",
    "recaptureMissed": "2026-11-13"
   },
@@ -25846,10 +25846,10 @@
       "h": 5.3,
       "fill": "rgb(0, 0, 0)",
       "stroke": "none",
-      "color": "lab(55.92 -0.0000298023 0)"
+      "color": "lab(98.26 0 0)"
      },
      "crop": "components/crops/faq-item-expanded.png",
-     "via": "at rest"
+     "via": "own accordion toggle"
     }
    },
    "page": "pricing",
@@ -25865,19 +25865,19 @@
     "default": {
      "tag": "div",
      "classes": "last:border-b-0 border-0",
-     "text": "Is it free?",
+     "text": "Is it free? Yes. A free account makes 25 songs a day, remixes anything on Eleven",
      "rect": {
       "x": 361,
-      "y": 416.4,
+      "y": 374.4,
       "w": 960,
-      "h": 68
+      "h": 152
      },
      "style": {
       "display": "block",
       "position": "static",
       "boxSizing": "border-box",
       "width": "960px",
-      "height": "68px",
+      "height": "152px",
       "minWidth": "0px",
       "maxWidth": "none",
       "minHeight": "0px",

@@ -4,19 +4,19 @@
     "font": {
       "family": {
         "sans": {
-          "value": "Inter\", \"Inter Fallback",
+          "value": "\"Inter\", \"Inter Fallback\"",
           "type": "fontFamily",
           "source": "declared --font-inter (1jj-z3nt2o826.css .C3Inkq_variable)",
           "description": "Inter variable (100-900): the UI face \u2014 nav, labels, fields, track titles. --font-sans resolves to it."
         },
         "display": {
-          "value": "waldenburg\", \"waldenburg Fallback\", Arial",
+          "value": "\"waldenburg\", \"waldenburg Fallback\", Arial",
           "type": "fontFamily",
           "source": "declared --font-waldenburg (1jj-z3nt2o826.css .CCd5nq_variable)",
           "description": "waldenburg light/regular: the display face \u2014 the hero headline and page titles."
         },
         "mono": {
-          "value": "GeistMono\", ui-monospace, SFMono-Regular, Roboto Mono, Menlo, Monaco, Liberation Mono, DejaVu Sans Mono, Courier New, monospace",
+          "value": "\"GeistMono\", ui-monospace, SFMono-Regular, Roboto Mono, Menlo, Monaco, Liberation Mono, DejaVu Sans Mono, Courier New, monospace",
           "type": "fontFamily",
           "source": "declared --font-geist-mono (1jj-z3nt2o826.css .i8lDNW_variable)",
           "description": "GeistMono variable: the declared mono stack for IDs and code."
@@ -185,24 +185,27 @@
       },
       "tracking": {
         "tight": {
-          "value": "-0.025rem",
+          "value": "-0.025em",
           "type": "dimension",
-          "source": "css-var --tracking-tight (light, em read as rem)",
+          "source": "declared --tracking-tight (em, scales with the font size)",
           "description": "Declared --tracking-tight."
         },
         "wide": {
-          "var": "--tracking-wide",
+          "value": "0.025em",
           "type": "dimension",
+          "source": "declared --tracking-wide (em, scales with the font size)",
           "description": "Declared --tracking-wide."
         },
         "wider": {
-          "var": "--tracking-wider",
+          "value": "0.05em",
           "type": "dimension",
+          "source": "declared --tracking-wider (em, scales with the font size)",
           "description": "Declared --tracking-wider."
         },
         "widest": {
-          "var": "--tracking-widest",
+          "value": "0.1em",
           "type": "dimension",
+          "source": "declared --tracking-widest (em, scales with the font size)",
           "description": "Declared --tracking-widest."
         }
       }

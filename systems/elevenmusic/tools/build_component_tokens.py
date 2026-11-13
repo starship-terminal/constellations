@@ -171,7 +171,10 @@ for key, vname, fallback, desc in [
     raw, where = decl(vname)
     if raw:
         stack = re.sub(r"var\(--font-[a-z-]+\)", fallback.split(",")[0], raw)
-        fam[key] = {"value": stack.strip('"'), "type": "fontFamily",
+        # The declared stack keeps its per-family quotes: '"Inter", "Inter
+        # Fallback"'. Stripping '"' off the whole string would leave the
+        # inner quotes in place and mangle every family after the first.
+        fam[key] = {"value": stack.strip(), "type": "fontFamily",
                     "source": f"declared {vname} ({where})", "description": desc}
 
 wgt = SPEC["core"].setdefault("font", {}).setdefault("weight", {})
@@ -240,11 +243,14 @@ trk = SPEC["core"].setdefault("font", {}).setdefault("tracking", {})
 for key, vname in [("tight", "--tracking-tight"), ("wide", "--tracking-wide"),
                    ("wider", "--tracking-wider"), ("widest", "--tracking-widest")]:
     if vname in L:
-        v = L[vname]
-        if v.endswith("em"):  # the dim check takes px|rem; ems read as rems here
-            v = re.sub(r"^(-?)\.(\d)", r"\g<1>0.\2", v[:-2]) + "rem"
+        # Keep the declared em: tracking must scale with the text it sits on.
+        # The probe's resolved px reading (L[vname]) freezes the em at one
+        # font size, so the raw declaration is the token's value.
+        raw = RL[vname].get("raw") or L[vname]
+        if raw.strip().endswith("em"):
+            v = re.sub(r"^(-?)\.(\d)", r"\g<1>0.\2", raw.strip())
             trk[key] = {"value": v, "type": "dimension",
-                        "source": f"css-var {vname} (light, em read as rem)", "description": f"Declared {vname}."}
+                        "source": f"declared {vname} (em, scales with the font size)", "description": f"Declared {vname}."}
         else:
             trk[key] = var(vname, "dimension", description=f"Declared {vname}.")
 
