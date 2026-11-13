@@ -82,7 +82,16 @@ for (const [surface, url] of PAGES) {
   await context.close();
 }
 function locationHost(u) { try { return new URL(u).host; } catch { return 'page'; } }
-if (!loaded.length) { console.log('blocked on every surface; css-vars.json not written'); await browser.close(); process.exit(2); }
+// A surface that stayed behind its challenge page must not cost its saved
+// readings: writing a partial harvest would drop the blocked surface's vars
+// and builders would read them as absent tokens. Refuse until every surface
+// loaded; the previous css-vars.json stays in place.
+if (loaded.length !== PAGES.length) {
+  const missed = PAGES.filter(([, u]) => !loaded.includes(u)).map(([s, u]) => `${s} (${u})`);
+  console.log('blocked on', missed.join(', '), '; css-vars.json not written — the earlier readings stay');
+  await browser.close();
+  process.exit(2);
+}
 const sheets = Object.entries(surfaceSheets).flatMap(([surface, list]) => list.map(([n, t]) => [`${surface}:${n}`, t]));
 console.log('sheets:', sheets.length, 'from', loaded.join(', '));
 
@@ -169,8 +178,10 @@ const resolveIn = async (sheetPairs, dark) => {
       else if ((m = c.match(/^oklab\(([-\d.e]+%?) ([-\d.e]+) ([-\d.e]+)(?: \/ ([\d.]+%?))?\)$/))) { rgb = fromOklab(num(m[1]), +m[2], +m[3]); a = m[4] === undefined ? 1 : num(m[4]); }
       else if ((m = c.match(/^oklch\(([-\d.e]+%?) ([-\d.e]+) ([-\d.e]+)(?: \/ ([\d.]+%?))?\)$/))) { const h = (+m[3] * Math.PI) / 180; rgb = fromOklab(num(m[1]), +m[2] * Math.cos(h), +m[2] * Math.sin(h)); a = m[4] === undefined ? 1 : num(m[4]); }
       else if ((m = c.match(/^lab\(([-\d.e]+%?) ([-\d.e]+) ([-\d.e]+)(?: \/ ([\d.]+%?))?\)$/))) {
-        // CIELAB D50 -> sRGB
-        const fy = (num(m[1]) + 16) / 116, fx = fy + (+m[2]) / 500, fz = fy - (+m[3]) / 200;
+        // CIELAB D50 -> sRGB. Lab lightness is already on the 0-100 scale in
+        // both its forms (94.3433% === 94.3433), so parseFloat is right — the
+        // /100 that num() applies to % is the OKLab 0-1 convention, not Lab's.
+        const fy = (parseFloat(m[1]) + 16) / 116, fx = fy + (+m[2]) / 500, fz = fy - (+m[3]) / 200;
         const eps = 216 / 24389, kap = 24389 / 27;
         const f = (t) => (t ** 3 > eps ? t ** 3 : (116 * t - 16) / kap);
         const X = 0.96422 * f(fx), Y = f(fy), Z = 0.82521 * f(fz);

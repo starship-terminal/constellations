@@ -1648,56 +1648,67 @@
         "diatype": {
           "var": "--font-family-sans",
           "type": "fontFamily",
+          "surface": "marketing",
           "description": "ABCDiatype — the marketing body/UI face."
         },
         "arizona": {
           "var": "--font-family-serif",
           "type": "fontFamily",
+          "surface": "marketing",
           "description": "Arizona (ABC Arizona Flare) — the marketing display face ('The world's data for AI agents')."
         },
         "mono": {
           "var": "--font-family-monospace",
           "type": "fontFamily",
+          "surface": "marketing",
           "description": "SuisseIntlMono — the marketing mono."
         },
         "auth-sans": {
           "var": "--font-family-sans",
           "type": "fontFamily",
+          "surface": "auth",
           "description": "ABC Diatype Unlicensed Trial — the sign-in card's face."
         },
         "auth-flare": {
           "var": "--font-family-arizona-flare",
           "type": "fontFamily",
+          "surface": "auth",
           "description": "ABC Arizona Flare — the sign-in card's display face."
         },
         "geist-mono": {
           "var": "--font-family-geist-mono",
           "type": "fontFamily",
+          "surface": "auth",
           "description": "Geist Mono — the sign-in card's code face."
         },
         "inter": {
           "var": "--font-inter",
           "type": "fontFamily",
+          "surface": "docs-light",
           "description": "Inter — the docs body/UI face."
         },
         "paper-mono": {
           "var": "--font-paper-mono",
           "type": "fontFamily",
+          "surface": "docs-light",
           "description": "Paper Mono — the docs code face."
         },
         "docs-sans": {
           "var": "--default-font-family",
           "type": "fontFamily",
+          "surface": "docs-light",
           "description": "The docs' declared default stack (Inter first)."
         },
         "docs-mono": {
           "var": "--default-mono-font-family",
           "type": "fontFamily",
+          "surface": "docs-light",
           "description": "The docs' declared default mono stack (Paper Mono first)."
         },
         "docs-headings": {
           "var": "--font-family-headings-custom",
           "type": "fontFamily",
+          "surface": "docs-light",
           "description": "The docs' headings stack — ABCDiatype first, the marketing face reused."
         }
       },
@@ -1705,31 +1716,37 @@
         "normal": {
           "var": "--font-weight-normal",
           "type": "fontWeight",
+          "surface": "docs-light",
           "description": "400 — body and UI text everywhere."
         },
         "medium": {
           "var": "--font-weight-medium",
           "type": "fontWeight",
+          "surface": "docs-light",
           "description": "500 — nav items, labels, docs code."
         },
         "semibold": {
           "var": "--font-weight-semibold",
           "type": "fontWeight",
+          "surface": "docs-light",
           "description": "600 — docs headings."
         },
         "bold": {
           "var": "--font-weight-bold",
           "type": "fontWeight",
+          "surface": "docs-light",
           "description": "700 — declared."
         },
         "extrabold": {
           "var": "--font-weight-extrabold",
           "type": "fontWeight",
+          "surface": "docs-light",
           "description": "800 — declared."
         },
         "headings": {
           "var": "--font-weight-headings-custom",
           "type": "fontWeight",
+          "surface": "docs-light",
           "description": "The docs headings' declared weight."
         }
       },
@@ -2112,10 +2129,10 @@
         "description": "The demo field's radius."
       },
       "menu-measured": {
-        "value": "0px",
+        "value": "8px",
         "type": "dimension",
-        "source": "computed borderTopLeftRadius of mkt-menu default (raw/components-computed.json)",
-        "description": "The mega-menu card radius."
+        "source": "the painted radius of mkt-menu's rounded child default (raw/components-computed.json paint list)",
+        "description": "The mega-menu card radius — the rounded child paints 8px; the wrapper itself is unrounded."
       },
       "cta-measured": {
         "value": "4px",
@@ -2137,6 +2154,12 @@
       }
     },
     "shadow": {
+      "menu": {
+        "value": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.1) 0px 4px 6px -4px",
+        "type": "other",
+        "source": "the painted shadow of mkt-menu's rounded child default (raw/components-computed.json paint list)",
+        "description": "The mega-menu's drop shadow — painted on the rounded child; the wrapper itself is an unshadowed positioning box."
+      },
       "docs-code-shadow": {
         "var": "--docs-code-shadow",
         "type": "other",
@@ -2648,10 +2671,10 @@
         "description": "The Contact-sales button's border."
       },
       "menu-surface": {
-        "value": "rgba(0, 0, 0, 0)",
+        "value": "{color.secondary.default}",
         "type": "color",
-        "source": "computed backgroundColor of mkt-menu default (raw/components-computed.json)",
-        "description": "The mega-menu surface."
+        "source": "the painted background of mkt-menu's rounded child default (raw/components-computed.json paint list); matches declared color.secondary.default",
+        "description": "The mega-menu surface — painted on the rounded child; the wrapper is a transparent positioning box."
       },
       "menu-hover": {
         "value": "rgba(0, 0, 0, 0)",

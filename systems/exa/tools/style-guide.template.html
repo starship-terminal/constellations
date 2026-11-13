@@ -65,6 +65,24 @@ code { font-family: var(--sg-mono); font-size: .9em; }
 .tile { border: 1px solid var(--color-gray-200, rgba(0,0,0,.08)); padding: 24px; font-size: 13px; background: var(--color-neutral-white, #fff); border-radius: var(--radius-10, 10px); }
 .tile b { display: block; font: 400 30px/1.1 var(--sg-serif); margin-bottom: 4px; }
 .tile .sub { opacity: .65; font-size: 12px; }
+/* pricing table mock — one row-divided grid, not three cards */
+.usecases { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin: 0 0 14px; }
+.usecases .cap { font: 500 10px/1.6 var(--sg-sans); letter-spacing: .08em; color: var(--marketing-muted, rgba(0,0,0,.5)); margin-right: 4px; }
+.usecases .pill { height: 28px; display: inline-flex; align-items: center; padding: 0 12px; border-radius: var(--radius-docs, 6px); border: 1px solid rgba(17,17,17,.12); font-size: 12px; font-weight: 500; color: rgb(75,85,99); }
+.plans { display: grid; grid-template-columns: repeat(3, 1fr); font-size: 13px; color: var(--marketing-text, #111); background: var(--color-neutral-white, #fff); }
+.plans .pcol { display: flex; flex-direction: column; padding: 0 18px 18px; border-left: 1px solid var(--color-gray-200, rgba(0,0,0,.08)); }
+.plans .pcol:first-child { border-left: 0; padding-left: 0; }
+.plans .pcol:last-child { padding-right: 0; }
+.phead { border-radius: var(--radius-10, 10px); padding: 16px 18px; background: rgb(245,244,241); margin-bottom: 14px; }
+.phead.blue { background: var(--color-brand-default, #1f40ed); color: #fff; }
+.phead .tier { display: block; font: 500 11px/1 var(--sg-sans); letter-spacing: .1em; opacity: .75; margin-bottom: 10px; }
+.phead .price { display: block; font: 400 32px/1.1 var(--sg-serif); margin-bottom: 10px; }
+.phead .pdesc { display: block; font-size: 12px; line-height: 1.45; opacity: .8; }
+.pact { display: flex; gap: 8px; padding: 0 0 14px; border-bottom: 1px solid var(--color-gray-200, rgba(0,0,0,.08)); }
+.pact .btn { flex: 1; }
+.pfeat { padding-top: 12px; }
+.pfeat .fl { font: 500 10px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; opacity: .5; margin-bottom: 4px; }
+.pfeat span { display: block; padding: 6px 0; border-bottom: 1px solid var(--color-gray-200, rgba(0,0,0,.07)); }
 table.cmp { border-collapse: collapse; font-size: 14px; }
 table.cmp td, table.cmp th { border: 1px solid var(--color-gray-200, rgba(0,0,0,.08)); padding: 6px 14px; text-align: left; }
 .tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--color-gray-200, rgba(0,0,0,.08)); }
@@ -127,11 +145,25 @@ table.cmp td, table.cmp th { border: 1px solid var(--color-gray-200, rgba(0,0,0,
   </div>
 
   <h2 class="sh">Pricing</h2>
-  <p class="lead">/pricing keeps the cream field; plan cards sit on white with 10px radius, the price sets in Arizona and each card's action is a black pill. The use-case pills switch the scenario locally.</p>
+  <p class="lead">/pricing keeps the cream field; the use-case pills switch the scenario locally, and the plans paint as one row-divided table rather than three cards — a tinted header tile per tier (the Starter tile in the brand blue, the others on the greige field), the price set in Arizona, a black action row and checkmarked Includes rows.</p>
   <div class="mock" style="padding:20px">
-    <div class="grid">
-      <div class="tile"><b>Starter</b><span class="sub">For trying the API</span><p style="font:400 36px/1.1 var(--sg-serif);margin:14px 0">$0</p><span class="btn black" style="height:38px;width:100%">Get started</span></div>
-      <div class="tile"><b>Growth</b><span class="sub">For production search</span><p style="font:400 36px/1.1 var(--sg-serif);margin:14px 0">Usage-based</p><span class="btn sales" style="height:38px;width:100%">Contact sales</span></div>
+    <div class="usecases"><span class="cap">USE CASES</span><span class="pill">Coding agents</span><span class="pill">Chatbots</span><span class="pill">News monitoring</span><span class="pill">Enrichments</span><span class="pill">Voice agents</span><span class="pill">People search</span><span class="pill">Company search</span></div>
+    <div class="plans">
+      <div class="pcol">
+        <div class="phead blue"><span class="tier">STARTER</span><span class="price">Free</span><span class="pdesc">$10 credits every month plus a $10 onboarding bonus. No payment method required.</span></div>
+        <div class="pact"><span class="btn black" style="height:38px">Start building for free</span></div>
+        <div class="pfeat"><div class="fl">Includes:</div><span>&#10003; Free $10 credits per month</span><span>&#10003; MCP server access</span><span>&#10003; Claude Connector</span><span>&#10003; 10 Search Queries Per Second (QPS)</span></div>
+      </div>
+      <div class="pcol">
+        <div class="phead"><span class="tier">DEVELOPER</span><span class="price">Pay as you go</span><span class="pdesc">Use the Search API with no commitment with our flexible per-request pricing</span></div>
+        <div class="pact"><span class="btn black" style="height:38px">Get an API key</span></div>
+        <div class="pfeat"><div class="fl">Includes:</div><span>&#10003; Everything in Starter</span><span>&#10003; PAYGO usage-based billing</span><span>&#10003; Standard email support</span><span>&#10003; Up to 25 Search QPS</span></div>
+      </div>
+      <div class="pcol">
+        <div class="phead"><span class="tier">ENTERPRISE</span><span class="price">Custom</span><span class="pdesc">Tailored for your organization to solve for large scale requirements and enterprise needs</span></div>
+        <div class="pact"><span class="btn black" style="height:38px">Upgrade now</span><span class="btn sales" style="height:38px">Talk to sales</span></div>
+        <div class="pfeat"><div class="fl">Includes:</div><span>&#10003; Everything in Developer</span><span>&#10003; Zero data retention</span><span>&#10003; 25 Search QPS</span></div>
+      </div>
     </div>
   </div>
 
@@ -173,7 +205,7 @@ table.cmp td, table.cmp th { border: 1px solid var(--color-gray-200, rgba(0,0,0,
 <script>
 const TOK = /*TOKENS*/null;
 const $ = (s) => document.querySelector(s);
-const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
 const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
 

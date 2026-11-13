@@ -286,7 +286,8 @@ def links(prefix):
 
 n_crops = len(list(Path("components/crops").glob("*.png")))
 n_states = sum(len(c["states"]) for c in C.values())
-icons = []
+icons_idx = Path("icons/INDEX.tsv")
+icons = [r.split("\t") for r in icons_idx.read_text().strip().split("\n")[1:]] if icons_idx.exists() else []
 
 W("# Exa components")
 W()
@@ -464,17 +465,18 @@ for g in groups:
         W(" ".join(imgs) if imgs else "No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.")
 
 # ------------------------------------------------ icons
-W()
-W("## Icons")
-W()
-W("No standalone SVG icon set was lifted on this pass; the icons in the crops and screenshots (the exa wordmark and its corner-bracket mark, the chevrons and hamburger strokes, the mega-menu product glyphs, the demo icons, social and integration logos) are the product's artwork. Declared under layoutGaps in the catalog entry.")
-W()
-W("| Icon | Rendered sizes | View box | Style | Seen on | Next to |")
-W("|---|---|---|---|---|---|")
-for r in icons:
-    f, name, h, sizes, vb, style, seen, place, label = (r + [""] * 9)[:9]
-    W(f"| [{name}](icons/{f}) | {sizes} | {vb} | {style} | {seen} | {label.replace('|', '/')[:60]} |")
-W()
+if icons:
+    W()
+    W("## Icons")
+    W()
+    W(f"{len(icons)} SVGs were lifted from the pages into [icons/](icons), named by role where a label gave one, with the source table in [icons/INDEX.tsv](icons/INDEX.tsv). Colour is `currentColor` wherever the icon took its colour from the text, so each recolours from CSS `color`. The set holds the chevrons and hamburger strokes, the mega-menu product glyphs, the demo controls (search, run-preview, clear-query, show-code-view), the use-case pill glyphs and the social/integration marks (parallel, perplexity, brave…). The SVGs are Exa's property, kept for reference only.")
+    W()
+    W("| Icon | Rendered sizes | View box | Style | Seen on | Next to |")
+    W("|---|---|---|---|---|---|")
+    for r in icons:
+        f, name, h, sizes, vb, style, seen, place, label = (r + [""] * 9)[:9]
+        W(f"| [{name}](icons/{f}) | {sizes} | {vb} | {style} | {seen} | {label.replace('|', '/')[:60]} |")
+    W()
 
 # ------------------------------------------------ gaps
 W("## Gaps")

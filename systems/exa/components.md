@@ -759,10 +759,65 @@ Child layers that carry the look: textarea 330x24.
 
 ## Icons
 
-No standalone SVG icon set was lifted on this pass; the icons in the crops and screenshots (the exa wordmark and its corner-bracket mark, the chevrons and hamburger strokes, the mega-menu product glyphs, the demo icons, social and integration logos) are the product's artwork. Declared under layoutGaps in the catalog entry.
+55 SVGs were lifted from the pages into [icons/](icons), named by role where a label gave one, with the source table in [icons/INDEX.tsv](icons/INDEX.tsv). Colour is `currentColor` wherever the icon took its colour from the text, so each recolours from CSS `color`. The set holds the chevrons and hamburger strokes, the mega-menu product glyphs, the demo controls (search, run-preview, clear-query, show-code-view), the use-case pill glyphs and the social/integration marks (parallel, perplexity, brave…). The SVGs are Exa's property, kept for reference only.
 
 | Icon | Rendered sizes | View box | Style | Seen on | Next to |
 |---|---|---|---|---|---|
+| [products](icons/products.svg) | 12x12 | 0 0 24 24 | stroke | home; pricing; product | Products / Solutions / Resources |
+| [dismiss-announcement](icons/dismiss-announcement.svg) | 12x12 | 0 0 24 24 | stroke | home; pricing; product | Dismiss announcement |
+| [parallel](icons/parallel.svg) | 14x14 16x16 | 0 0 273 273 | fill | home; product | Parallel |
+| [perplexity](icons/perplexity.svg) | 11x14 12x16 | 0 0 28 36 | stroke | home; product | Perplexity |
+| [icon-bee2464c](icons/icon-bee2464c.svg) | 13x16 | 0 0 78.1818 100 | fill | home; product |  |
+| [icon-1b666b36](icons/icon-1b666b36.svg) | 15x15 | 0 0 15 15 | fill | home | Watch Cognition case study video |
+| [show-code-view](icons/show-code-view.svg) | 13x13 | 0 0 24 24 | stroke | home | Show code view |
+| [search](icons/search.svg) | 14x14 | 0 0 24 24 | stroke | home | Search |
+| [run-preview](icons/run-preview.svg) | 20x20 | 0 0 24 24 | stroke | home | Run preview |
+| [clear-query](icons/clear-query.svg) | 16x16 | 0 0 24 24 | stroke | home | Clear query |
+| [brave](icons/brave.svg) | 12x14 14x16 | 0 0 34 40 | fill | home | Brave |
+| [exa](icons/exa.svg) | 11x14 | 0 0 78.1818 100 | fill | home | Exa |
+| [api-playground](icons/api-playground.svg) | 13x13 | 0 0 24 24 | stroke | home | API Playground |
+| [enrichments](icons/enrichments.svg) | 20x20 | 0 0 24 24 | stroke | pricing | Enrichments |
+| [icon-0de5e38f](icons/icon-0de5e38f.svg) | 14x16 | 0 0 34 40 | fill | product |  |
+| [icon-0e48c38c](icons/icon-0e48c38c.svg) | 18x18 | 0 0 24 24 | stroke | home | Inference Providers Search for open and  |
+| [curl](icons/curl.svg) | 14x14 | 0 0 24 24 | stroke | docs | cURL |
+| [people-search](icons/people-search.svg) | 20x20 | 0 0 24 24 | stroke | pricing | People search |
+| [found-5-results](icons/found-5-results.svg) | 12x14 | 0 0 107 129 | fill | product | Found 5 results / Found 3 brands / Found 4 results |
+| [daily-at-9-00am](icons/daily-at-9-00am.svg) | 11x11 | 0 0 24 24 | stroke | pricing | Daily at 9:00AM / Weekly, Mondays / Daily at 6:00PM |
+| [icon-3fcb0bde](icons/icon-3fcb0bde.svg) | 18x18 | 0 0 24 24 | stroke | home | Search API Accurate real-time web search |
+| [news-monitoring](icons/news-monitoring.svg) | 20x20 | 0 0 24 24 | stroke | pricing | News monitoring |
+| [icon-42c79811](icons/icon-42c79811.svg) | 20x20 | 0 0 24 24 | stroke | product | What is the Exa Search API? / How is Exa different from a SE |
+| [icon-456d0dca](icons/icon-456d0dca.svg) | 18x18 | 0 0 24 24 | stroke | home | Agent API Async deep research / AI Assistants Live web knowl |
+| [read-the-docs](icons/read-the-docs.svg) | 16x16 | 0 0 24 24 | stroke | product | Read the docs / Read about Exa 3.0 |
+| [icon-498e3316](icons/icon-498e3316.svg) | 18x18 | 0 0 24 24 | stroke | home | Monitors API Track changes on the web / Model Training Pre-t |
+| [icon-4d20378c](icons/icon-4d20378c.svg) | 18x18 | 0 0 24 24 | stroke | home | Exa Library Structured data for your age |
+| [icon-4e34fdea](icons/icon-4e34fdea.svg) | 16x16 | 0 0 24 24 | stroke | pricing | Free $10 credits per month / MCP server access / Claude Conn |
+| [coding-agents](icons/coding-agents-4f0f75d5.svg) | 18x18 | 0 0 24 24 | stroke | pricing | Coding agents / Chatbots / News monitoring |
+| [send-message](icons/send-message.svg) | 10x10 |  | fill | docs | Send message |
+| [icon-5fb71824](icons/icon-5fb71824.svg) | 18x18 | 0 0 24 24 | stroke | home | GTM Account and contact intelligence |
+| [get-api-key](icons/get-api-key.svg) | 14x14 | 0 0 14 14 | fill | docs | Get API Key |
+| [javascript](icons/javascript.svg) | 14x14 | 0 0 15 16 | fill | docs | JavaScript |
+| [change-theme-preference](icons/change-theme-preference.svg) | 14x16 |  | fill | docs | Change theme preference |
+| [voice-agents](icons/voice-agents.svg) | 20x20 | 0 0 24 24 | stroke | pricing | Voice agents |
+| [icon-7f88d096](icons/icon-7f88d096.svg) | 13x13 | 0 0 16 16 | stroke | product |  |
+| [company-search](icons/company-search.svg) | 20x20 | 0 0 24 24 | stroke | pricing | Company search |
+| [icon-8282bccf](icons/icon-8282bccf.svg) | 18x18 | 0 0 24 24 | stroke | home | Exa Connect Access third-party data prov |
+| [x](icons/x.svg) | 20x20 |  | fill | docs | x / linkedin |
+| [python](icons/python.svg) | 14x14 | 0 0 16 16 | fill | docs | Python |
+| [coding-agents](icons/coding-agents-96d1b602.svg) | 20x20 | 0 0 24 24 | stroke | pricing | Coding agents |
+| [ask-assistant](icons/ask-assistant.svg) | 16x16 |  | fill | docs | Ask Assistant |
+| [icon-a12beb9f](icons/icon-a12beb9f.svg) | 18x18 | 0 0 24 24 | stroke | home | Contents API Token efficient page extrac |
+| [api-dashboard](icons/api-dashboard.svg) | 12x12 |  | fill | docs | API Dashboard |
+| [icon-b107ee10](icons/icon-b107ee10.svg) | 18x18 | 0 0 24 24 | stroke | home | Enterprise Search infrastructure at scal |
+| [icon-bfbc3fe2](icons/icon-bfbc3fe2.svg) | 18x18 | 0 0 24 24 | stroke | home | Recruiting Find talent by expertise, not |
+| [icon-c16a6c99](icons/icon-c16a6c99.svg) | 20x20 | 0 0 24 24 | stroke | pricing | Scroll right through API products |
+| [icon-c4bb7a30](icons/icon-c4bb7a30.svg) | 20x20 | 0 0 24 24 | stroke | pricing | Scroll left through API products |
+| [icon-d224dd27](icons/icon-d224dd27.svg) | 18x18 | 0 0 24 24 | stroke | home | Exa Snapshot Search the web as it was on |
+| [icon-dcfdeccf](icons/icon-dcfdeccf.svg) | 18x18 | 0 0 24 24 | stroke | home | Coding Code and documentation context |
+| [data-floating-buttons-bg-gray-10](icons/data-floating-buttons-bg-gray-10.svg) | 16x16 |  | fill | docs | Copy the contents from the code block |
+| [chatbots](icons/chatbots.svg) | 20x20 | 0 0 24 24 | stroke | pricing | Chatbots |
+| [icon-e4380971](icons/icon-e4380971.svg) | 18x18 | 0 0 24 24 | stroke | home | Legal Case law, statutes, and regulation |
+| [icon-eac2b7f5](icons/icon-eac2b7f5.svg) | 18x18 | 0 0 24 24 | stroke | home | Finance Filings, news, and market maps |
+| [open-search](icons/open-search.svg) | 16x16 | 0 0 18 18 | stroke | docs | Open search |
 
 ## Gaps
 

@@ -115,6 +115,23 @@ def ts(comp, state, prop):
         return None
 
 
+def painted(comp, state, key):
+    """A reading from the kit's paint list — the layers actually painted
+    (rounded children, pseudo-elements, inset shadows) rather than the
+    wrapper's computed style, which is often an unpainted positioning box.
+    An entry whose recorded size matches the element's own rect wins."""
+    c = C[comp]["states"][state]
+    entries = [p for p in c.get("paint") or [] if p.get(key)]
+    if not entries:
+        raise KeyError(key)
+    rect = c.get("rect") or {}
+    for p in entries:
+        m = re.fullmatch(r"([\d.]+)x([\d.]+)", str(p.get("size") or ""))
+        if m and abs(float(m.group(1)) - rect.get("w", -9)) <= 1 and abs(float(m.group(2)) - rect.get("h", -9)) <= 1:
+            return p[key]
+    return entries[0][key]
+
+
 def norm_color(v):
     v = (v or "").strip()
     m = re.fullmatch(r"#([0-9a-fA-F]{3,8})", v)
@@ -409,21 +426,21 @@ for name in sorted(k for k in RLD if k.startswith("--docs-")):
 # ABCDiatype.
 
 fam = SPEC["core"].setdefault("font", {}).setdefault("family", {})
-for name, m, key, desc in [
-    ("--font-family-sans", RM, "diatype", "ABCDiatype — the marketing body/UI face."),
-    ("--font-family-serif", RM, "arizona", "Arizona (ABC Arizona Flare) — the marketing display face ('The world's data for AI agents')."),
-    ("--font-family-monospace", RM, "mono", "SuisseIntlMono — the marketing mono."),
-    ("--font-family-sans", RA, "auth-sans", "ABC Diatype Unlicensed Trial — the sign-in card's face."),
-    ("--font-family-arizona-flare", RA, "auth-flare", "ABC Arizona Flare — the sign-in card's display face."),
-    ("--font-family-geist-mono", RA, "geist-mono", "Geist Mono — the sign-in card's code face."),
-    ("--font-inter", RLD, "inter", "Inter — the docs body/UI face."),
-    ("--font-paper-mono", RLD, "paper-mono", "Paper Mono — the docs code face."),
-    ("--default-font-family", RLD, "docs-sans", "The docs' declared default stack (Inter first)."),
-    ("--default-mono-font-family", RLD, "docs-mono", "The docs' declared default mono stack (Paper Mono first)."),
-    ("--font-family-headings-custom", RLD, "docs-headings", "The docs' headings stack — ABCDiatype first, the marketing face reused."),
+for name, m, where, key, desc in [
+    ("--font-family-sans", RM, "marketing", "diatype", "ABCDiatype — the marketing body/UI face."),
+    ("--font-family-serif", RM, "marketing", "arizona", "Arizona (ABC Arizona Flare) — the marketing display face ('The world's data for AI agents')."),
+    ("--font-family-monospace", RM, "marketing", "mono", "SuisseIntlMono — the marketing mono."),
+    ("--font-family-sans", RA, "auth", "auth-sans", "ABC Diatype Unlicensed Trial — the sign-in card's face."),
+    ("--font-family-arizona-flare", RA, "auth", "auth-flare", "ABC Arizona Flare — the sign-in card's display face."),
+    ("--font-family-geist-mono", RA, "auth", "geist-mono", "Geist Mono — the sign-in card's code face."),
+    ("--font-inter", RLD, "docs-light", "inter", "Inter — the docs body/UI face."),
+    ("--font-paper-mono", RLD, "docs-light", "paper-mono", "Paper Mono — the docs code face."),
+    ("--default-font-family", RLD, "docs-light", "docs-sans", "The docs' declared default stack (Inter first)."),
+    ("--default-mono-font-family", RLD, "docs-light", "docs-mono", "The docs' declared default mono stack (Paper Mono first)."),
+    ("--font-family-headings-custom", RLD, "docs-light", "docs-headings", "The docs' headings stack — ABCDiatype first, the marketing face reused."),
 ]:
     if name in m:
-        fam[key] = var(name, "fontFamily", description=desc)
+        fam[key] = var(name, "fontFamily", where, description=desc)
 
 weights = SPEC["core"].setdefault("font", {}).setdefault("weight", {})
 for name, m, key, desc in [
@@ -435,7 +452,7 @@ for name, m, key, desc in [
     ("--font-weight-headings-custom", RLD, "headings", "The docs headings' declared weight."),
 ]:
     if name in m:
-        weights[key] = var(name, "fontWeight", description=desc)
+        weights[key] = var(name, "fontWeight", "docs-light", description=desc)
 
 # ------------------------------------------------------------- type ramp
 
@@ -536,27 +553,39 @@ for name, key, desc in [
 for key, comp, state, prop, desc in [
     ("control", "demo-pill", "default", "borderTopLeftRadius", "The demo pill radius."),
     ("field", "demo-textarea", "default", "borderTopLeftRadius", "The demo field's radius."),
-    ("menu", "mkt-menu", "default", "borderTopLeftRadius", "The mega-menu card radius."),
+    ("menu", "mkt-menu", "default", "paint:radius", "The mega-menu card radius — the rounded child paints 8px; the wrapper itself is unrounded."),
     ("cta", "hero-cta", "default", "borderTopLeftRadius", "The CTA pill radius."),
     ("auth-field", "auth-email", "default", "borderTopLeftRadius", "The sign-in field radius."),
     ("search", "docs-search", "default", "borderTopLeftRadius", "The docs search pill radius."),
 ]:
-    if have(comp, state, prop):
+    if prop == "paint:radius":
+        try:
+            radii.setdefault(key + "-measured", lit(painted(comp, state, "radius"), "dimension",
+                f"the painted radius of {comp}'s rounded child {state} (raw/components-computed.json paint list)", desc))
+        except KeyError:
+            pass
+    elif have(comp, state, prop):
         radii.setdefault(key + "-measured", lit(st(comp, state)[prop], "dimension",
             f"computed {prop} of {comp} {state} (raw/components-computed.json)", desc))
 
 # ------------------------------------------------------------- elevation
 
 sh = SPEC["core"].setdefault("shadow", {})
-for key, comp, desc in [
-    ("menu", "mkt-menu", "The mega-menu's drop shadow."),
-    ("widget", "demo-widget", "The demo widget's shadow."),
-    ("cta", "hero-cta", "The CTA's shadow."),
+for key, comp, prop, desc in [
+    ("menu", "mkt-menu", "paint:shadow", "The mega-menu's drop shadow — painted on the rounded child; the wrapper itself is an unshadowed positioning box."),
+    ("widget", "demo-widget", "boxShadow", "The demo widget's shadow."),
+    ("cta", "hero-cta", "boxShadow", "The CTA's shadow."),
 ]:
     state = "default"
-    if have(comp, state, "boxShadow") and st(comp, state)["boxShadow"] != "none":
-        sh[key] = lit(st(comp, state)["boxShadow"], "other",
-                      f"computed boxShadow of {comp} {state} (raw/components-computed.json)", desc)
+    try:
+        shadow = painted(comp, state, "shadow") if prop == "paint:shadow" else st(comp, state)[prop]
+    except KeyError:
+        continue
+    if shadow and shadow != "none":
+        src = (f"the painted shadow of {comp}'s rounded child {state} (raw/components-computed.json paint list)"
+               if prop == "paint:shadow" else
+               f"computed boxShadow of {comp} {state} (raw/components-computed.json)")
+        sh[key] = lit(shadow, "other", src, desc)
 for name in sorted(k for k in RLD if re.search(r"shadow", k)):
     key = name.lstrip("-")
     sh.setdefault(key, var(name, "other", "docs-light", description=f"The declared `{name}`."))
@@ -688,7 +717,7 @@ for key, comp, state, prop, desc in [
     ("action", "mkt-signup", "default", "backgroundColor", "The black Sign-up pill fill."),
     ("on-action", "mkt-signup", "default", "color", "White text on the Sign-up pill."),
     ("sales-border", "mkt-sales", "default", "borderTopColor", "The Contact-sales button's border."),
-    ("menu-surface", "mkt-menu", "default", "backgroundColor", "The mega-menu surface."),
+    ("menu-surface", "mkt-menu", "default", "paint:bg", "The mega-menu surface — painted on the rounded child; the wrapper is a transparent positioning box."),
     ("menu-hover", "mkt-menu-item", "default", "backgroundColor", "The menu item's field."),
     ("demo-surface", "demo-widget", "default", "backgroundColor", "The demo widget's surface."),
     ("demo-pill-active", "demo-pill", "default", "color", "The active demo pill's ink."),
@@ -696,8 +725,12 @@ for key, comp, state, prop, desc in [
     ("announce-surface", "mkt-announce", "default", "backgroundColor", "The announcement strip's field."),
 ]:
     try:
-        raw = st(comp, state)[prop]
-        src = f"computed {prop} of {comp} {state} (raw/components-computed.json)"
+        if prop == "paint:bg":
+            raw = painted(comp, state, "bg")
+            src = f"the painted background of {comp}'s rounded child {state} (raw/components-computed.json paint list)"
+        else:
+            raw = st(comp, state)[prop]
+            src = f"computed {prop} of {comp} {state} (raw/components-computed.json)"
         mkt[key] = semcolor(raw, src, desc, "light")
     except (KeyError, TypeError):
         pass
