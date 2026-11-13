@@ -7402,6 +7402,107 @@
       "layoutGaps": {
         "icons/": "the icon extraction pass was not run; the site's icons (the asterisk wordmark, the menu-link glyphs, the integration logos and the footer badges) are visible in the crops and screenshots"
       }
+    },
+    {
+      "slug": "dropbox",
+      "name": "Dropbox",
+      "url": "https://www.dropbox.com",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "Cloud-storage/productivity marketing and product landings: a shipped DIG token layer (--dig-color__* roles, --dig-type__* Sharp Grotesk/Atlas Grotesk ramp, 8px spacing, 4-24px radii, --dig-motion__*) over the --DWG__TEMP__color__* brand palette rebound per section by dwg-theme--coconut/graphite/navy: coconut #f7f5f2 fields, #0061fe painted CTAs (#0057e5/#0050d0 states) despite a declared black primary-cta role, 3px #428bff focus-shadow rings, a hover-driven Products mega-menu, and a mixed lucida-grande/Atlas auth sheet on /login and /register",
+      "tags": [
+        "web",
+        "cloud-storage",
+        "productivity",
+        "saas",
+        "marketing",
+        "dig",
+        "coconut",
+        "light",
+        "graphite-islands",
+        "signed-out"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-13",
+      "access": "signed out (every captured surface is public; the file dashboard, Paper/Dash/Replay/Sign workspaces, account and billing sit behind the auth cards and were never reached; dash.dropbox.com and the sign-in-embed hosts were never opened; the login/register fields were focused and sample-filled then deleted, never submitted)",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/dropbox/README.md",
+      "tokens": "systems/dropbox/tokens.json",
+      "styleGuide": "systems/dropbox/style-guide.html",
+      "preview": {
+        "cover": "systems/dropbox/screenshots/home-light-default.png",
+        "icon": "systems/dropbox/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.page",
+            "surface": "light.surface.default",
+            "text": "light.text",
+            "muted": "light.muted",
+            "accent": "light.accent.default",
+            "border": "light.border.default"
+          },
+          "dark": {
+            "page": "dark.page",
+            "surface": "dark.surface.default",
+            "text": "dark.text",
+            "muted": "dark.muted",
+            "accent": "dark.accent.default",
+            "border": "dark.border.default"
+          }
+        },
+        "fonts": [
+          "core.font.family.title",
+          "core.font.family.body"
+        ]
+      },
+      "capture": {
+        "method": "public-web",
+        "source": "dropbox.com (marketing pages, the /dropbox, /replay, /sign and /docsend product pages, /business, /enterprise, /plans, /features, and the /login and /register auth cards) in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass. The site ships the real DIG token layer: linked cfl.dropboxstatic.com bundles (dig-components/tokens.css, the dwg-components index, warp page CSS) read from network responses because they are cross-origin to the CSSOM, resolved on five probe scopes (painted bright, declared dark, dwg coconut/graphite/navy). Computed styles and crops from the live DOM; painted CTA blues (#0061fe->#0057e5->#0050d0) measured on the elements. The product behind the auth cards is a documented boundary",
+        "timestamp": "2026-11-13T00:00:00Z",
+        "harness": "Devin",
+        "model": "SWE-2 High",
+        "route": "public-web",
+        "routes": [
+          "/",
+          "/dropbox",
+          "/replay",
+          "/sign",
+          "/docsend",
+          "/business",
+          "/enterprise",
+          "/plans",
+          "/features",
+          "/login",
+          "/register",
+          "mobile / and /plans",
+          "/dash redirects externally to dash.dropbox.com (recorded boundary)",
+          "/paper resolves to /paper/start (public start surface)"
+        ],
+        "gaps": [
+          "the signed-in product entirely: the file dashboard, Paper/Dash/Replay/Sign workspaces, account, billing and checkout sit behind the auth cards and were never reached",
+          "/login and /register captured as surfaces: the email fields were focused and given sample text that was deleted; Continue, the SSO buttons and every Try-for-free/Buy-now/Get-started action were measured, never followed",
+          "the privacy consent banner, the intermittent CCPA consent iframe (which scroll-locks the document) and Google One Tap were hidden or their requests aborted - no consent was ever answered",
+          "the Products mega-menu opens on pointer hover and closes on keyboard focus, so menu-link focus-visible/pressed are a documented gap",
+          "the dark set is the declared dig-Theme-vis2023--dark scope - shipped in the token layer, never painted signed-out; the painted dark sections are dwg-theme--graphite bands tokenised under light.dwg.graphite.*",
+          "the DIG layer declares primary-cta black (#050505) but marketing CTAs paint #0061fe - the discrepancy is recorded, both values kept",
+          "the auth cards run an older susi sheet (lucida grande stack, 4px radii) distinct from the DIG marketing system",
+          "the home hero rotates A/B variants; captures show the painted state",
+          "icons: no standalone SVG set lifted this pass"
+        ],
+        "durationMin": 240,
+        "durationNote": "wall-clock for the capture session including adapting the kit from the canva lineage, the stylesheet harvest, two mobile re-captures for the consent-iframe scroll-lock, the plans billing toggle fix, measurement, the token/docs build and the rubric review",
+        "pr": "https://github.com/starship-terminal/constellations/pull/514"
+      },
+      "layoutGaps": {
+        "icons/": "the icon extraction pass was not run; the glyphs (the box mark, the product marks in the mega-menu, the SSO provider marks and the social icons) are visible in the crops and screenshots"
+      }
     }
   ]
 }

@@ -811,5 +811,13 @@
       "Development Tools"
     ],
     "reason": "catalog.json describes a secrets-management developer platform: marketing pages, pricing and developer-docs surfaces, all signed out."
+  },
+  {
+    "referenceId": "systems:dropbox",
+    "groupId": "web-categories",
+    "labels": [
+      "Productivity"
+    ],
+    "reason": "catalog.json describes a cloud-storage and file-sharing productivity product: marketing pages, pricing and signed-out auth surfaces."
   }
 ]

@@ -956,6 +956,11 @@
       "referenceId": "systems:doppler",
       "media": 161,
       "assignedMedia": 161
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "media": 166,
+      "assignedMedia": 166
     }
   ],
   "assignments": [
@@ -211416,6 +211421,2107 @@
           "termId": "web-fonts:inter",
           "rule": "font-primary",
           "reason": "Exact primary family Inter from systems/doppler/tokens.json#core.font.family.inter. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/screenshots/business-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/screenshots/business-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/screenshots/docsend-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/screenshots/docsend-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/screenshots/dropbox-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/screenshots/dropbox-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/screenshots/enterprise-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/screenshots/enterprise-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/screenshots/features-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/screenshots/features-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/screenshots/home-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/screenshots/home-light-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/screenshots/home-light-menu.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/screenshots/login-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:log-in",
+          "rule": "page-login",
+          "reason": "Capture filename explicitly names log in; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/screenshots/mobile-home-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/screenshots/mobile-home-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/screenshots/mobile-home-light-menu.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/screenshots/mobile-plans-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/screenshots/mobile-plans-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/screenshots/plans-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/screenshots/plans-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/screenshots/plans-light-monthly.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/screenshots/register-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:sign-up",
+          "rule": "page-signup",
+          "reason": "Capture filename explicitly names sign up; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/screenshots/replay-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/screenshots/replay-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/screenshots/sign-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/screenshots/sign-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/auth-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/billing-radio-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:checkbox-radio",
+          "rule": "ui-checkbox-radio",
+          "reason": "Capture filename explicitly names checkbox & radio; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:billing-plans",
+          "rule": "ux-billing",
+          "reason": "Capture filename explicitly names billing & plans; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/billing-radio-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:checkbox-radio",
+          "rule": "ui-checkbox-radio",
+          "reason": "Capture filename explicitly names checkbox & radio; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:billing-plans",
+          "rule": "ux-billing",
+          "reason": "Capture filename explicitly names billing & plans; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/billing-radio-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:checkbox-radio",
+          "rule": "ui-checkbox-radio",
+          "reason": "Capture filename explicitly names checkbox & radio; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:billing-plans",
+          "rule": "ux-billing",
+          "reason": "Capture filename explicitly names billing & plans; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/billing-radio-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:checkbox-radio",
+          "rule": "ui-checkbox-radio",
+          "reason": "Capture filename explicitly names checkbox & radio; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:billing-plans",
+          "rule": "ux-billing",
+          "reason": "Capture filename explicitly names billing & plans; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/biz-cta-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/biz-cta-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/biz-cta-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/biz-cta-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/biz-title-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/coconut-band-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/continue-button-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/continue-button-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/continue-button-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/continue-button-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/diff-toggle-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:switch-toggle",
+          "rule": "ui-toggle",
+          "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/diff-toggle-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:switch-toggle",
+          "rule": "ui-toggle",
+          "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/diff-toggle-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:switch-toggle",
+          "rule": "ui-toggle",
+          "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/diff-toggle-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:switch-toggle",
+          "rule": "ui-toggle",
+          "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/email-field-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/email-field-filled.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/email-field-focused.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/feat-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/feat-card-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/feat-card-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/feat-card-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/feat-title-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/footer-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/footer-link-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/footer-link-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/footer-link-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/footer-link-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/graphite-band-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/header-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/help-choose-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/help-choose-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/help-choose-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/help-choose-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/hero-cta-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/hero-cta-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/hero-cta-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/hero-cta-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/hero-sub-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/hero-title-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/icon-button-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ui-elements:icon",
+          "rule": "ui-icon",
+          "reason": "Capture filename explicitly names icon; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/icon-button-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ui-elements:icon",
+          "rule": "ui-icon",
+          "reason": "Capture filename explicitly names icon; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/icon-button-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ui-elements:icon",
+          "rule": "ui-icon",
+          "reason": "Capture filename explicitly names icon; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/icon-button-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ui-elements:icon",
+          "rule": "ui-icon",
+          "reason": "Capture filename explicitly names icon; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/logo-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/m-header-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/m-hero-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/m-menu-button-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/m-menu-open-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/m-nav-item-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/m-nav-item-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/m-nav-item-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/m-nav-item-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/m-signup-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/m-signup-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/m-signup-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/m-signup-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/menu-link-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/menu-link-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/nav-contact-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/nav-contact-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/nav-contact-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/nav-contact-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/nav-cta-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/nav-cta-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/nav-cta-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/nav-cta-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/nav-dropdown-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dropdown",
+          "rule": "ui-dropdown",
+          "reason": "Capture filename explicitly names dropdown; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/nav-link-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/nav-link-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/nav-link-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/nav-link-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/nav-login-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/nav-login-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/nav-login-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/nav-login-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/nav-signup-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/nav-signup-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/nav-signup-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/nav-signup-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/nav-trigger-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/nav-trigger-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/nav-trigger-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/nav-trigger-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/navy-band-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/plan-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/plan-cta-alt-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/plan-cta-alt-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/plan-cta-alt-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/plan-cta-alt-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/plan-cta-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/plan-cta-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/plan-cta-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/plan-cta-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/plan-name-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/plan-outline-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/plan-outline-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/plan-outline-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/plan-outline-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/plan-price-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/plans-title-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/register-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/register-cta-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/register-cta-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/register-cta-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/register-cta-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/register-email-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/register-email-filled.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/register-email-focused.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/section-h2-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/sign-cta-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/sign-cta-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/sign-cta-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/sign-cta-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/sign-title-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/social-icon-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:icon",
+          "rule": "ui-icon",
+          "reason": "Capture filename explicitly names icon; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/social-icon-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:icon",
+          "rule": "ui-icon",
+          "reason": "Capture filename explicitly names icon; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/social-icon-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:icon",
+          "rule": "ui-icon",
+          "reason": "Capture filename explicitly names icon; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/social-icon-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:icon",
+          "rule": "ui-icon",
+          "reason": "Capture filename explicitly names icon; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/sso-button-alt-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/sso-button-alt-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/sso-button-alt-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/sso-button-alt-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/sso-button-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/sso-button-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/sso-button-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/sso-button-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/text-link-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/text-link-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/text-link-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/text-link-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/transparent-btn-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/transparent-btn-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/transparent-btn-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dropbox",
+      "mediaId": "systems/dropbox/components/crops/transparent-btn-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:sharp-grotesk",
+          "rule": "font-primary",
+          "reason": "Exact primary family Sharp Grotesk from systems/dropbox/tokens.json#core.font.family.title. Inherited package evidence; fallback families excluded."
         }
       ]
     }
