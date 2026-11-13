@@ -35,9 +35,10 @@ def flat(node, prefix=""):
 
 
 BY_COLOR = {}
-for n, t in flat(T["core"]):
-    if t["$type"] == "color":
-        BY_COLOR.setdefault(t["$value"], n)
+for _set in ("core", "light", "dark"):
+    for n, t in flat(T.get(_set, {}), prefix=_set + "."):
+        if t["$type"] == "color":
+            BY_COLOR.setdefault(t["$value"], n)
 
 
 def norm(r, g, b, a=None):
@@ -159,10 +160,13 @@ def props(v):
             bits.append(" ".join(x for x in (p["node"], p.get("size"), p.get("bg"), p.get("border"), p.get("shadow"), p.get("outline"), p.get("radius")) if x))
     if bits:
         o["layers"] = "; ".join(bits)[:400]
+    anc = [f"{a['node']} bg {colour(a['bg'])}" for a in v.get("ancestors", []) if a.get("bg")]
+    if anc:
+        o["ancestors"] = "; ".join(anc)[:200]
     return o
 
 
-ORDER = ["size", "padding", "border", "radius", "background", "image", "shadow", "outline", "text", "transition", "transform", "opacity", "icon", "placeholder", "layers"]
+ORDER = ["size", "padding", "border", "radius", "background", "image", "shadow", "outline", "text", "transition", "transform", "opacity", "icon", "placeholder", "layers", "ancestors"]
 
 
 def state_rows(c):
@@ -289,7 +293,7 @@ W(f"- Crops are images of the component read from the live page, in [components/
 W()
 W("## Discovery list")
 W()
-W("Screenshots are named `{page}-{theme}-state.png`: every page paints `light`. Desktop shots are 1440 x 900 at 1x; `-full` shots are whole pages at 1x; mobile shots are `mobile-{page}-{theme}-{state}.png`, 780 wide (390 at 2x).")
+W("Screenshots are named `{page}-{theme}-state.png`: every page paints `light`. Desktop shots are 1440 x 900 at 1x; `-full` shots are whole pages at CSS scale (one CSS pixel per image pixel — mobile fulls are 390 wide); mobile viewport shots are `mobile-{page}-{theme}-{state}.png`, 780 wide (390 at 2x).")
 W()
 W("| Surface | URL | Screenshots |")
 W("|---|---|---|")
@@ -389,7 +393,7 @@ W()
 W("| Card | Size | Border | Radius | Background | Shadow | Padding |")
 W("|---|---|---|---|---|---|---|")
 # The card-like components to compare in one table.
-for k in ["plan-panel", "blog-card", "blog-featured", "mock-post", "mock-frame", "update-entry"]:
+for k in ["hero-card", "post-card-h", "post-card-v", "cat-card", "related-card", "search-card", "donation"]:
     c = C.get(k)
     # A card the capture could not find is saved with missing: true and no states.
     if not c or c.get("missing"):

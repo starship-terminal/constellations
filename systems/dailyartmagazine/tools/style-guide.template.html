@@ -17,7 +17,7 @@
 /*DARK*/
 }
 * { box-sizing: border-box; }
-body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--light-color-text-ink, #000); background: var(--light-color-background-field-surface, #fff); }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text-ink, #000); background: var(--background-field-surface, #fff); }
 main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
 h1 { font: 400 40px/1.1 var(--sg-serif); margin: 0 0 4px; }
 h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--color-neutral-ink, #0f1015); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--color-neutral-hairline, rgba(53, 65, 90, 0.2)); }
@@ -39,30 +39,30 @@ code { font-family: var(--sg-mono); font-size: .9em; }
 .kv span { color: var(--color-neutral-ink, #0f1015); opacity: .65; }
 /* ---- mocks ---- */
 .mock { border: 1px solid var(--color-neutral-hairline, rgba(53, 65, 90, 0.2)); overflow: hidden; background: var(--surface-page, #fff); }
-.navbar { display: flex; align-items: center; gap: 20px; height: var(--component-spacing-header-h, 52px); padding: 0 10px 0 18px; font-size: 16px; color: var(--color-brand-ink, #030302); background: #fff; border-radius: var(--radius-nav, 26px); box-shadow: 0 1px 3px rgba(3,3,2,.08); margin: 12px 18px; }
+.navbar { display: flex; align-items: center; gap: 20px; height: var(--component-nav-height, 65px); padding: 0 10px 0 18px; font-size: 16px; color: var(--color-brand-ink, #030302); background: #fff; border-radius: var(--radius-nav, 26px); box-shadow: 0 1px 3px rgba(3,3,2,.08); margin: 12px 18px; }
 .navbar .wm { font-weight: 800; font-size: 18px; letter-spacing: -0.02em; }
 .navbar .sp { flex: 1; }
 .navbar .link { color: var(--color-brand-ink, #030302); }
-.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-button-height-large, 48px); padding: 0 24px; font-size: 16px; font-weight: 500; border-radius: var(--radius-full, 9999px); border: 1px solid transparent; }
-.btn.primary { background: var(--light-color-action-primary, #030302); color: var(--light-color-text-on-primary, #fff); height: var(--component-button-height-nav, 36px); font-size: 14px; }
-.btn.light { background: var(--light-color-background-card, #fff); color: var(--color-brand-ink, #030302); box-shadow: 0 1px 4px rgba(3,3,2,.12); }
-.btn.outline { background: transparent; color: var(--color-brand-ink, #030302); box-shadow: inset 0 0 0 1px var(--light-color-border-border, rgba(3,3,2,.09)); }
-.hero { color: var(--color-brand-ink, #030302); padding: 96px 40px 90px; font: 400 52px/1 var(--sg-serif); text-align: center; background: linear-gradient(180deg, #bfe0ee 0%, #dceef7 60%, var(--light-color-background-page, #fcf9f7) 100%); }
-.hero small { display: block; font: 400 16px/1.5 var(--sg-sans); color: var(--light-color-text-muted-foreground, rgba(3,3,2,.5)); margin: 18px auto 26px; max-width: 46ch; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-load-more-height, 38px); padding: 0 24px; font-size: 16px; font-weight: 500; border-radius: var(--radius-full, 9999px); border: 1px solid transparent; }
+.btn.primary { background: var(--action-accent, #c6002f); color: var(--text-on-dark, #fff); height: var(--component-search-btn-height, 38px); font-size: 14px; }
+.btn.light { background: var(--background-field-surface, #fff); color: var(--color-brand-ink, #030302); box-shadow: 0 1px 4px rgba(3,3,2,.12); }
+.btn.outline { background: transparent; color: var(--color-brand-ink, #030302); box-shadow: inset 0 0 0 1px var(--border-hairline-dark, #2e2e32); }
+.hero { color: var(--color-brand-ink, #030302); padding: 96px 40px 90px; font: 400 52px/1 var(--sg-serif); text-align: center; background: linear-gradient(180deg, #bfe0ee 0%, #dceef7 60%, var(--background-page, #fff) 100%); }
+.hero small { display: block; font: 400 16px/1.5 var(--sg-sans); color: var(--text-muted-foreground, rgba(3,3,2,.5)); margin: 18px auto 26px; max-width: 46ch; }
 .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
-.tile { border: 1px solid var(--light-color-border-border, rgba(3,3,2,.09)); padding: 18px; font-size: 13px; background: var(--light-color-background-card, #fff); border-radius: var(--radius-2xl, 16px); }
-.tile .img { height: 100px; background: var(--light-color-background-muted, rgba(3,3,2,.04)); margin-bottom: 10px; display: flex; align-items: flex-end; padding: 10px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; border-radius: var(--radius-default, 10px); }
+.tile { border: 1px solid var(--border-hairline-dark, #2e2e32); padding: 18px; font-size: 13px; background: var(--background-field-surface, #fff); border-radius: var(--radius-2xl, 16px); }
+.tile .img { height: 100px; background: var(--background-page, #fff); margin-bottom: 10px; display: flex; align-items: flex-end; padding: 10px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; border-radius: var(--radius-default, 10px); }
 .tile b { display: block; font: 400 20px/1.25 var(--sg-serif); margin-bottom: 4px; }
 .tile .price { font: 400 40px/1.1 var(--sg-serif); margin: 8px 0 2px; }
 .tile .sub { opacity: .65; font-size: 12px; }
 table.cmp { border-collapse: collapse; font-size: 14px; }
-table.cmp td, table.cmp th { border: 1px solid var(--light-color-border-border, rgba(3,3,2,.09)); padding: 6px 14px; text-align: left; }
+table.cmp td, table.cmp th { border: 1px solid var(--border-hairline-dark, #2e2e32); padding: 6px 14px; text-align: left; }
 .tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--color-neutral-border, #e0e0e0); }
 .tr .ts { font-family: var(--sg-serif); }
 .tr .tv { font-size: 12px; color: var(--color-neutral-ink, #171717); opacity: .65; font-family: var(--sg-mono); }
-.toggle { display: inline-flex; background: var(--light-color-background-muted, rgba(3,3,2,.04)); border-radius: var(--radius-full, 9999px); padding: 4px; gap: 0; font-size: 16px; }
+.toggle { display: inline-flex; background: var(--background-page, #fff); border-radius: var(--radius-full, 9999px); padding: 4px; gap: 0; font-size: 16px; }
 .toggle span { padding: 10px 28px; border-radius: var(--radius-full, 9999px); font-weight: 500; color: var(--color-brand-ink, #030302); }
-.toggle .on { background: var(--light-color-background-card, #fff); box-shadow: 0 1px 3px rgba(3,3,2,.12); }
+.toggle .on { background: var(--background-field-surface, #fff); box-shadow: 0 1px 3px rgba(3,3,2,.12); }
 </style>
 </head>
 <body>
@@ -77,14 +77,14 @@ table.cmp td, table.cmp th { border: 1px solid var(--light-color-border-border, 
   <h2 class="sh">The chrome</h2>
   <p class="lead">A 65px fixed #19191c bar carries the wordmark, 14px/600 white Basier links (Stories, Shop, Courses), a hamburger that drops a 1440x633 white Art-Movements mega-menu (rgba(0,0,0,.25) 0 16px 48px), and an 87x38 Search ghost button — transparent with a 1px #c6002f border that fills crimson on hover.</p>
   <div class="mock" style="background:#fff">
-    <div class="navbar" style="height:65px;border-radius:0;margin:0;box-shadow:none;background:var(--light-color-background-dark-band,#19191c);color:#fff"><span class="wm" style="font-family:var(--sg-serif);font-weight:500">DailyArt Magazine</span><span class="link" style="color:#fff">Stories</span><span class="link" style="color:#fff">Shop</span><span class="link" style="color:#fff">Courses</span><span class="sp"></span><span class="link" style="color:#fff">&#9776;</span><span class="btn" style="height:38px;font-size:14px;font-weight:600;border-radius:3px;border:1px solid var(--light-color-action-accent,#c6002f);color:#fff;background:transparent">Search</span></div>
+    <div class="navbar" style="height:65px;border-radius:0;margin:0;box-shadow:none;background:var(--background-dark-band,#19191c);color:#fff"><span class="wm" style="font-family:var(--sg-serif);font-weight:500">DailyArt Magazine</span><span class="link" style="color:#fff">Stories</span><span class="link" style="color:#fff">Shop</span><span class="link" style="color:#fff">Courses</span><span class="sp"></span><span class="link" style="color:#fff">&#9776;</span><span class="btn" style="height:38px;font-size:14px;font-weight:600;border-radius:3px;border:1px solid var(--action-accent,#c6002f);color:#fff;background:transparent">Search</span></div>
     <div style="background:#fff;box-shadow:0 16px 48px rgba(0,0,0,.25);padding:14px 18px;display:flex;gap:18px;flex-wrap:wrap;font:600 16px var(--sg-serif);color:#000"><span style="width:240px;border-bottom:1px solid #2e2e32;padding-bottom:8px">Renaissance</span><span style="width:240px;border-bottom:1px solid #2e2e32;padding-bottom:8px">Impressionism</span><span style="width:240px;border-bottom:1px solid #2e2e32;padding-bottom:8px">Baroque</span></div>
   </div>
 
   <h2 class="sh">The dark hero</h2>
   <p class="lead">The home opens on a ~799px #19191c band: a 56px/500 RoslindaleCondensed headline in white under a 10px/700 crimson category chip flanked by 41x1 #2e2e32 rules, beside a 275x293 featured card. The same dark ink returns mid-page as the donation and long-reads bands.</p>
-  <div class="mock" style="padding:56px 40px;background:var(--light-color-background-dark-band,#19191c);text-align:center">
-    <span style="display:inline-block;background:var(--light-color-action-accent,#c6002f);color:#fff;font:700 10px/1.4 var(--sg-sans);letter-spacing:.08em;padding:4px 10px;border-radius:3px">ART HISTORY</span>
+  <div class="mock" style="padding:56px 40px;background:var(--background-dark-band,#19191c);text-align:center">
+    <span style="display:inline-block;background:var(--action-accent,#c6002f);color:#fff;font:700 10px/1.4 var(--sg-sans);letter-spacing:.08em;padding:4px 10px;border-radius:3px">ART HISTORY</span>
     <div style="color:#fff;font:500 44px/1.1 var(--sg-serif);margin:18px 0 0">Ten Japanese Woodblock Prints You Need to See</div>
   </div>
 
@@ -92,12 +92,12 @@ table.cmp td, table.cmp th { border: 1px solid var(--light-color-border-border, 
   <p class="lead">Below the hero the page goes white: 28px RoslindaleCondensed feed tabs, 760x194 horizontal cards (260x177 thumbnail, 20px/700 RoslindaleNarrow title, crimson category chip, 14px meta), then 275x293 vertical cards, the donation band and a 760x38 Load more ghost button.</p>
   <div class="mock" style="padding:20px">
     <div style="display:flex;gap:14px;align-items:flex-start">
-      <div class="img" style="width:260px;height:177px;background:var(--light-color-background-dark-band,#19191c);flex:0 0 auto"></div>
-      <div><span style="display:inline-block;background:var(--light-color-action-accent,#c6002f);color:#fff;font:700 10px/1.4 var(--sg-sans);padding:4px 10px;border-radius:3px">PAINTING</span>
+      <div class="img" style="width:260px;height:177px;background:var(--background-dark-band,#19191c);flex:0 0 auto"></div>
+      <div><span style="display:inline-block;background:var(--action-accent,#c6002f);color:#fff;font:700 10px/1.4 var(--sg-sans);padding:4px 10px;border-radius:3px">PAINTING</span>
       <b style="display:block;font:700 20px/1.2 var(--sg-serif);margin:10px 0 6px">A Sunday Afternoon on the Island of La Grande Jatte</b>
-      <span class="sub" style="font:400 14px var(--sg-sans);color:var(--light-color-text-muted,#4d5761)">by the DailyArt editors &middot; 14 November 2026</span></div>
+      <span class="sub" style="font:400 14px var(--sg-sans);color:var(--text-muted,#4d5761)">by the DailyArt editors &middot; 14 November 2026</span></div>
     </div>
-    <div style="margin-top:18px;text-align:center"><span class="btn" style="height:38px;font-size:14px;font-weight:600;border-radius:3px;border:1px solid var(--light-color-action-accent,#c6002f);color:var(--light-color-text-ink,#000);width:320px">Load more</span></div>
+    <div style="margin-top:18px;text-align:center"><span class="btn" style="height:38px;font-size:14px;font-weight:600;border-radius:3px;border:1px solid var(--action-accent,#c6002f);color:var(--text-ink,#000);width:320px">Load more</span></div>
   </div>
 
   <h2 class="sh">Palette</h2>
@@ -167,7 +167,7 @@ const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) 
 (function meas() {
   let m = '';
   for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
-  for (const [n, t] of flat((TOK.light.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.light.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
   $('#meas-out').innerHTML = m;
 })();
 

@@ -471,6 +471,12 @@
     "type": "color",
     "source": "computed backgroundColor of nl-email default (raw/components-computed.json)",
     "description": "White input fill (newsletter email, contact fields)."
+   },
+   "scrim": {
+    "value": "rgba(0, 0, 0, 0.9)",
+    "type": "color",
+    "source": "computed backgroundColor of the .modal-r overlay ancestor of nl-modal default (raw/components-computed.json)",
+    "description": "The rgba(0,0,0,.9) overlay the newsletter modal's ancestor paints behind the panel."
    }
   },
   "text": {
@@ -626,11 +632,11 @@
    "source": "computed h of nl-email default (raw/components-computed.json)",
    "description": "The 40px email input."
   },
-  "nl-checkbox-size": {
+  "nl-checkbox-input": {
    "value": 13,
    "type": "dimension",
    "source": "computed w of nl-checkbox default (raw/components-computed.json)",
-   "description": "The 13px checkbox box (input opacity:0, box painted by the label)."
+   "description": "The 13px invisible input box (opacity:0); the painted checkbox is the label's ::after."
   },
   "nl-modal-width": {
    "value": 720,
@@ -686,6 +692,12 @@
    "source": "computed h of ad-slot default (raw/components-computed.json)",
    "description": "The 98px leaderboard ad slot."
   },
+  "nl-checkbox-box": {
+   "value": "16px",
+   "type": "dimension",
+   "source": "computed ::after of the .checkbox-style label (16x16 #fff, 1px solid #989da7, 2px radius — idvetmp-child style.css; probed on the live home page)",
+   "description": "The 16px painted checkbox box (white, 1px #989da7 border, 2px radius) — the 13px input is opacity:0."
+  },
   "chip-flanking-rule": {
    "value": "41px x 1px",
    "type": "other",
@@ -693,7 +705,7 @@
    "description": "The 41x1 #2e2e32 rules the hero tag paints on both sides."
   },
   "state-track": {
-   "ghost-state-track": {
+   "ghost-dark-track": {
     "type": "other",
     "value": {
      "default": {
@@ -722,7 +734,38 @@
      }
     },
     "source": "computed styles of search-btn across states (raw/components-computed.json)",
-    "description": "Ghost button (Search/Send/Load more): transparent + 1px #c6002f border at rest, fills #c6002f with white text on hover/pressed."
+    "description": "Ghost button on the dark bar (Search): transparent + 1px #c6002f border with WHITE text at rest, fills #c6002f on hover/pressed."
+   },
+   "ghost-light-track": {
+    "type": "other",
+    "value": {
+     "default": {
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "color": "rgb(0, 0, 0)",
+      "transform": "none",
+      "outlineStyle": "none"
+     },
+     "hover": {
+      "backgroundColor": "rgb(198, 0, 47)",
+      "color": "rgb(255, 255, 255)",
+      "transform": "none",
+      "outlineStyle": "none"
+     },
+     "pressed": {
+      "backgroundColor": "rgb(198, 0, 47)",
+      "color": "rgb(255, 255, 255)",
+      "transform": "none",
+      "outlineStyle": "none"
+     },
+     "focus-visible": {
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "color": "rgb(0, 0, 0)",
+      "transform": "none",
+      "outlineStyle": "none"
+     }
+    },
+    "source": "computed styles of nl-send across states (raw/components-computed.json)",
+    "description": "Ghost button on white (newsletter Send, Load more): transparent + 1px #c6002f border with #000 text at rest, fills #c6002f with white text on hover/pressed."
    },
    "nav-link-state-track": {
     "type": "other",
@@ -754,6 +797,31 @@
     },
     "source": "computed styles of nav-link across states (raw/components-computed.json)",
     "description": "Nav link: white at rest; no background/color change on hover or pressed — focus shows a dotted white outline."
+   },
+   "cat-item-state-track": {
+    "type": "other",
+    "value": {
+     "default": {
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "color": "rgb(0, 0, 0)",
+      "transform": "none",
+      "outlineStyle": "none"
+     },
+     "pressed": {
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "color": "rgb(0, 0, 0)",
+      "transform": "none",
+      "outlineStyle": "none"
+     },
+     "focus-visible": {
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "color": "rgb(0, 0, 0)",
+      "transform": "none",
+      "outlineStyle": "dotted"
+     }
+    },
+    "source": "computed styles of cat-nav-item across states (raw/components-computed.json)",
+    "description": "Category-menu item: #000 RoslindaleNarrow on the white panel with a #2e2e32 1px bottom rule; hover state not captured (item leaves the viewport as the panel opens)."
    }
   },
   "focus-ring": {

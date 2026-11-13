@@ -84,8 +84,9 @@ Newsletter signups appear three ways, all measured, none submitted: the
 inline form ([nl-form](components/crops/nl-form-default.png), 368 x 180)
 with a 368 x 40 white email field
 ([nl-email](components/crops/nl-email-default.png)) — focused and filled
-states recorded — a 13px checkbox whose native input paints at opacity 0
-(the box is drawn by the label;
+states recorded — a painted 16px checkbox box (white, 1px #989da7, 2px
+radius) drawn by the label's ::after over a 13px input at opacity 0
+([nl-checkbox](components/crops/nl-checkbox-default.png)) and the 368 x 38
 [nl-checkbox](components/crops/nl-checkbox-default.png)) and the 368 x 38
 `Send` ghost button
 ([nl-send](components/crops/nl-send-default.png)); a matching form under

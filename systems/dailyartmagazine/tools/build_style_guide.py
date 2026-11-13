@@ -62,7 +62,9 @@ def block(setname):
     """A set's custom properties; a set the product lacks renders as nothing."""
     if setname not in T:
         return ""
-    return "\n".join(f"  {cssname(n)}: {css_val(n, t)};" for n, t in flat(T[setname]))
+    # Object-valued tokens (measured state tracks) are not CSS custom
+    # properties; they render in the token tables instead.
+    return "\n".join(f"  {cssname(n)}: {css_val(n, t)};" for n, t in flat(T[setname]) if not isinstance(t["$value"], dict))
 
 
 # a core name and a themed name must not land on the same custom property

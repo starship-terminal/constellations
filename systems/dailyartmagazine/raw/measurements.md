@@ -1276,27 +1276,27 @@ Crops: `art-caption-default.png`.
 
 #### share-btn
 
-Share button. A share/social icon button on the article; measured, never followed.
+Share button. A share icon button in the article share-links row; measured, never followed.
 
-Page: article. Selector: `.icon-btn`. States: default, hover, focus-visible, pressed.
+Page: article. Selector: `.share-links a`. States: default, hover, focus-visible, pressed.
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 10 x 18 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
+| Size (w x h) | 72 x 32 | = | = | = |
+| Padding | 7px 10px | = | = | = |
+| Border | 1px solid #989da7 | 1px solid #c6002f | = | 1px solid #c6002f |
+| Radius | 3px | = | = | = |
+| Background | #ffffff | #c6002f | = | #c6002f |
 | Box shadow | none | = | = | = |
 | Outline | none | = | 1px dotted #0000ee offset 1px | = |
 | Font | Basier 16px/16px 400 | = | = | = |
 | Letter spacing | -0.288px | = | = | = |
 | Colour | #0000ee | = | = | #ff0000 |
-| Transition | none | = | = | = |
+| Transition | all 0.3s ease-in | = | = | = |
 | Cursor | pointer | = | = | = |
-| Icon | 10 x 16, colour #0000ee | 13 x 20.8, colour #0000ee | = | 13 x 20.8, colour #ff0000 |
+| Icon | 50 x 16, colour #0000ee | = | = | 50 x 16, colour #ff0000 |
+| Painted layers | a.icon-btn 72.0x32.0 bg #ffffff border T:1px solid #989da7 / R:1px solid #989da7 / B:1px solid #989da7 / L:1px solid #989da7 r 3px | a.icon-btn 72.0x32.0 bg #c6002f border T:1px solid #c6002f / R:1px solid #c6002f / B:1px solid #c6002f / L:1px solid #c6002f r 3px | a.icon-btn 72.0x32.0 bg #ffffff border T:1px solid #989da7 / R:1px solid #989da7 / B:1px solid #989da7 / L:1px solid #989da7 r 3px outline 1px dotted #0000ee offset 1px | a.icon-btn 72.0x32.0 bg #c6002f border T:1px solid #c6002f / R:1px solid #c6002f / B:1px solid #c6002f / L:1px solid #c6002f r 3px |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
-| Painted layers | - | = | a 10.0x18.0 outline 1px dotted #0000ee offset 1px | = |
 
 Crops: `share-btn-default.png`, `share-btn-hover.png`, `share-btn-focus-visible.png`, `share-btn-pressed.png`.
 
@@ -1328,24 +1328,25 @@ Crops: `art-tag-default.png`, `art-tag-hover.png`, `art-tag-focus-visible.png`, 
 
 #### author-box
 
-Author box. The author bio box at the end of the article.
+Author box. The author bio box at the end of the article (avatar, name, bio).
 
-Page: article. Selector: `.author-box`. States: default.
+Page: article. Selector: `section.author-footer`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 144.41 x 15 |
+| Size (w x h) | 1440 x 205 |
 | Padding | 0px |
 | Border | none |
 | Radius | 0px |
 | Background | transparent |
 | Box shadow | none |
 | Outline | none |
-| Font | Basier 12px/14px 700 |
-| Letter spacing | -0.24px |
-| Colour | #c6002f |
-| Text node | a: Basier 12px/14px 700, #c6002f, ls -0.24px |
+| Font | Basier 16px/16px 400 |
+| Letter spacing | -0.288px |
+| Colour | #4d5761 |
+| Text node | a: RoslindaleNarrow 20px/24px 700, #000000, ls 0.4px |
 | Transition | none |
+| Painted layers | div.separator 560.0x1.0 bg #000000; div.separator 560.0x1.0 bg #000000 |
 | How | at rest |
 
 Crops: `author-box-default.png`.
@@ -1427,22 +1428,23 @@ Crops: `about-h1-default.png`.
 
 #### about-para
 
-About paragraph. A body paragraph on the About page.
+About paragraph. A body paragraph in the About page content.
 
-Page: about. Selector: `.content p`. States: default.
+Page: about. Selector: `.page-content p`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 72 x 14 |
+| Size (w x h) | 689 x 120 |
 | Padding | 0px |
 | Border | none |
 | Radius | 0px |
 | Background | transparent |
 | Box shadow | none |
 | Outline | none |
-| Font | Basier 12px/14px 700 |
-| Letter spacing | -1.8% |
-| Colour | #000000 |
+| Font | Basier 18px/24px 400 |
+| Letter spacing | -0.27px |
+| Colour | #606a73 |
+| Text node | span: Basier 18px/24px 400, #606a73, ls -0.27px |
 | Transition | none |
 | How | at rest |
 

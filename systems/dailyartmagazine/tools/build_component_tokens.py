@@ -175,6 +175,15 @@ for key, comp, state, prop, group, desc in [
     except KeyError:
         pass
 
+# the modal overlay, recorded on the nl-modal ancestors list
+try:
+    scrim = next(a["bg"] for a in C["nl-modal"]["states"]["default"]["ancestors"] if a.get("bg", "").startswith("rgba(0, 0, 0"))
+    sem.setdefault("background", {})["scrim"] = lit(scrim, "color",
+        "computed backgroundColor of the .modal-r overlay ancestor of nl-modal default (raw/components-computed.json)",
+        "The rgba(0,0,0,.9) overlay the newsletter modal's ancestor paints behind the panel.")
+except (KeyError, StopIteration):
+    pass
+
 # ------------------------------------------------------------- type ramp
 
 ty = SPEC["core"].setdefault("font", {}).setdefault("size", {})
@@ -264,7 +273,7 @@ for name, cname, state, prop, ty_, desc in [
     ("load-more-height", "load-more", "default", "h", "dimension", "The 38px full-width Load more ghost button."),
     ("nl-send-height", "nl-send", "default", "h", "dimension", "The 38px newsletter Send button."),
     ("nl-email-height", "nl-email", "default", "h", "dimension", "The 40px email input."),
-    ("nl-checkbox-size", "nl-checkbox", "default", "w", "dimension", "The 13px checkbox box (input opacity:0, box painted by the label)."),
+    ("nl-checkbox-input", "nl-checkbox", "default", "w", "dimension", "The 13px invisible input box (opacity:0); the painted checkbox is the label's ::after."),
     ("nl-modal-width", "nl-modal", "default", "w", "dimension", "The 720px slide-down newsletter modal."),
     ("article-column", "art-para", "default", "w", "dimension", "The 648px article text column."),
     ("article-header-width", "art-h1", "default", "w", "dimension", "The 1152px article header row."),
@@ -289,6 +298,13 @@ for name, cname, state, prop, ty_, desc in [
     except KeyError:
         pass
 
+# the painted checkbox box: the input sits at opacity 0 (13x13) and the
+# visible box is the label's ::after — 16x16, #fff, 1px #989da7, 2px radius,
+# measured with getComputedStyle(label, '::after') on the home newsletter form.
+comp["nl-checkbox-box"] = lit("16px", "dimension",
+    "computed ::after of the .checkbox-style label (16x16 #fff, 1px solid #989da7, 2px radius — idvetmp-child style.css; probed on the live home page)",
+    "The 16px painted checkbox box (white, 1px #989da7 border, 2px radius) — the 13px input is opacity:0.")
+
 # the hero-tag flanking rules (measured pseudo-elements)
 try:
     pseudo = C["hero-tag"]["states"]["default"]["::before"]
@@ -299,20 +315,25 @@ try:
 except KeyError:
     pass
 
-# measured state moves on the interactive controls
+# measured state moves on the interactive controls; a state that failed to
+# capture (an 'error' entry, no 'style') is skipped, not allowed to drop the rest
 for name, cname, desc in [
-    ("ghost-state-track", "search-btn",
-     "Ghost button (Search/Send/Load more): transparent + 1px #c6002f border at rest, fills #c6002f with white text on hover/pressed."),
+    ("ghost-dark-track", "search-btn",
+     "Ghost button on the dark bar (Search): transparent + 1px #c6002f border with WHITE text at rest, fills #c6002f on hover/pressed."),
+    ("ghost-light-track", "nl-send",
+     "Ghost button on white (newsletter Send, Load more): transparent + 1px #c6002f border with #000 text at rest, fills #c6002f with white text on hover/pressed."),
     ("nav-link-state-track", "nav-link",
      "Nav link: white at rest; no background/color change on hover or pressed — focus shows a dotted white outline."),
     ("cat-item-state-track", "cat-nav-item",
      "Category-menu item: #000 RoslindaleNarrow on the white panel with a #2e2e32 1px bottom rule; hover state not captured (item leaves the viewport as the panel opens)."),
 ]:
     try:
+        states = {s2: {p: C[cname]["states"][s2]["style"][p] for p in ("backgroundColor", "color", "transform", "outlineStyle") if C[cname]["states"][s2]["style"].get(p)}
+                  for s2 in ("default", "hover", "pressed", "focus-visible")
+                  if s2 in C[cname]["states"] and C[cname]["states"][s2].get("style")}
         comp.setdefault("state-track", {})[name] = {
             "type": "other",
-            "value": {s2: {p: st(cname, s2)[p] for p in ("backgroundColor", "color", "transform", "outlineStyle") if st(cname, s2).get(p)}
-                      for s2 in ("default", "hover", "pressed", "focus-visible") if s2 in C[cname]["states"]},
+            "value": states,
             "source": f"computed styles of {cname} across states (raw/components-computed.json)",
             "description": desc}
     except KeyError:

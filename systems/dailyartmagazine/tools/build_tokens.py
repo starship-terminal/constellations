@@ -214,7 +214,7 @@ tokens = {
     # dailyartmagazine.com paints one theme; the dark set stays empty.
     "$themes": [
         {"id": "light", "name": "Light", "selectedTokenSets": {"core": "source", "light": "enabled"},
-         "$description": "The only painted theme: #f5f5f5 page, #fcfcfc surfaces, #1f1f1f ink, #858585 muted, #00a6f4 CTAs darkening to #0085c3 on hover/press, Inter Tight headings. The sheets declare a .dark block the public page never paints."},
+         "$description": "The only painted theme: a white editorial field crossed by #19191c dark bands, #c6002f crimson chips and ghost buttons, #f3003a inline links, #4d5761 slate body text, RoslindaleCondensed display over a Basier UI. There is no theme switch; the dark set stays empty."},
     ],
     "$metadata": {"tokenSetOrder": ["core", "light"]},
 }

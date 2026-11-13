@@ -462,9 +462,9 @@ async function article() {
   await S('art-inline-link', q('.project-module p a, article p a').filter({ visible: true }).first(), B4, { group: g, title: 'Inline link', desc: 'An in-copy link inside the article; measured, never followed.', sel: '.project-module p a' });
   await S('art-figure', q('.project-module-single_image, figure').filter({ visible: true }).first(), ['default'], { group: g, title: 'Article figure', desc: 'A figure block (image + caption) in the article flow; the lightgallery viewer is not opened.', sel: '.project-module-single_image' });
   await S('art-caption', q('figcaption').filter({ visible: true }).first(), ['default'], { group: g, title: 'Figure caption', desc: 'A figure caption under an article image.', sel: 'figcaption' });
-  await S('share-btn', q('.icon-btn, .share a, .social-media a').filter({ visible: true }).first(), B4, { group: g, title: 'Share button', desc: 'A share/social icon button on the article; measured, never followed.', sel: '.icon-btn' });
+  await S('share-btn', q('.share-links a').filter({ visible: true }).first(), B4, { group: g, title: 'Share button', desc: 'A share icon button in the article share-links row; measured, never followed.', sel: '.share-links a' });
   await S('art-tag', q('.tags-menu a, a[rel="tag"]').filter({ visible: true }).first(), B4, { group: g, title: 'Tag link', desc: 'An article tag link in the tags-menu; measured, never followed.', sel: '.tags-menu a' });
-  await S('author-box', q('.author-box, .about-author, [class*="author"]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Author box', desc: 'The author bio box at the end of the article.', sel: '.author-box' });
+  await S('author-box', q('section.author-footer').filter({ visible: true }).first(), ['default'], { group: g, title: 'Author box', desc: 'The author bio box at the end of the article (avatar, name, bio).', sel: 'section.author-footer' });
   await S('related-card', q('.related .single-post, .small-post').filter({ visible: true }).first(), ['default', 'hover'], { group: g, title: 'Related card', desc: 'A related-stories card under the article.', sel: '.small-post' });
   await S('nl-form-article', q('#newsletter-footer, form.newsletter-form').filter({ visible: true }).first(), ['default'], { group: g, title: 'Article newsletter form', desc: 'The newsletter form under the article.', sel: '.newsletter-form' });
 }
@@ -475,7 +475,7 @@ async function about() {
   await chrome('about');
   const g = G.about;
   await S('about-h1', q('h1').filter({ visible: true }).first(), ['default'], { group: g, title: 'About heading', desc: 'The About page heading.', sel: 'h1' }, { noScroll: true });
-  await S('about-para', q('article p, .content p, main p').filter({ visible: true }).first(), ['default'], { group: g, title: 'About paragraph', desc: 'A body paragraph on the About page.', sel: '.content p' });
+  await S('about-para', q('.page-content p').filter({ visible: true }).first(), ['default'], { group: g, title: 'About paragraph', desc: 'A body paragraph in the About page content.', sel: '.page-content p' });
 }
 
 async function contact() {
