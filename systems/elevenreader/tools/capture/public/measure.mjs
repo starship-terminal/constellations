@@ -19,7 +19,7 @@
 // The Cookiebot banner is hidden, never answered.
 import fs from 'node:fs';
 import path from 'node:path';
-import { BASE, M, launch, patch, open, closePromo, domFind, styleOf, crop, centre, RAW, UA, UA_MOBILE } from './lib.mjs';
+import { BASE, M, launch, patch, open, closePromo, domFind, styleOf, crop, centre, RAW, CROPS, REF, UA, UA_MOBILE } from './lib.mjs';
 
 const OUT = process.env.OUT_JSON || path.join(RAW, 'components-computed.json');
 const out = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : {};
@@ -139,7 +139,14 @@ async function measure(key, state, target, opts = {}) {
     if (opts.crop !== false) {
       try {
         file = await crop(page, (opts.cropLoc || loc).filter({ visible: true }).first(), `${key}-${state}`, opts.pad ?? 8);
-      } catch (e) { s.cropError = String(e.message || e).slice(0, 120); }
+      } catch (e) {
+        s.cropError = String(e.message || e).slice(0, 120);
+        // The PNG is saved before post-processing runs: a failed quantize or
+        // convert must not unlink an image that landed on disk. Keep the path
+        // next to the error so the documents still print the crop.
+        const png = path.join(CROPS, `${key}-${state}.png`);
+        if (fs.existsSync(png)) file = path.relative(REF, png);
+      }
     }
     c.states[state] = { ...s, crop: file, via: opts.via };
     if (opts.extra) c.states[state].extra = await opts.extra(loc);
@@ -403,7 +410,10 @@ async function pricing() {
   await S('plan-name', q('h4, h3, p, div').filter({ hasText: /^\s*(Free|Ultra|Premium|Plus)\s*$/ }).filter({ visible: true }).first(), ['default'], { group: g, title: 'Plan name', desc: 'A plan card\'s name.', sel: 'plan name' });
   await S('plan-price', q('span, div, p').filter({ hasText: /^\s*\$\d+/ }).filter({ visible: true }).first(), ['default'], { group: g, title: 'Plan price', desc: 'A plan card\'s price figure.', sel: 'plan price' });
   await S('plan-cta', q('a, button').filter({ hasText: /free trial|Get started|Try free|Start free/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Plan CTA', desc: 'A plan card\'s action (Start-3-day-free-trial pill); measured never followed.', sel: 'plan CTA' });
-  await S('feature-li', q('li').filter({ hasText: /\S{5,}/ }).filter({ visible: true }).first(), ['default'], { group: g, title: 'Feature row', desc: 'A feature row inside a plan card or the "Everything you unlock" list.', sel: 'plan li' });
+  // Scope to a page section: bare `li` and even `main li` land on nav rows —
+  // the header menu lives outside main but a fixed clone of it sits inside —
+  // while the plan feature rows are `section` descendants.
+  await S('feature-li', q('main section li').filter({ hasText: /\S{5,}/ }).filter({ visible: true }).first(), ['default'], { group: g, title: 'Feature row', desc: 'A feature row inside a plan card or the "Everything you unlock" list.', sel: 'main section li' });
   save();
 }
 
@@ -416,7 +426,9 @@ async function audiobook() {
   await S('ab-cover', q('main img[sizes="100vw"], main img').filter({ visible: true }).first(), ['default'], { group: g, title: 'Cover', desc: 'The square audiobook cover (8px radius, blurred-thumb placeholder).', sel: 'audiobook cover img' }, { cropLoc: q('main img[sizes="100vw"], main img').filter({ visible: true }).first() });
   await S('ab-preview', q('button').filter({ hasText: /^\s*Preview\s*$/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Preview button', desc: 'The audio Preview button (speaker icon); measured, never pressed (a press plays audio).', sel: 'button "Preview"' });
   await S('ab-chip', q('div').filter({ hasText: /^\s*Audio only\s*$/i }).filter({ visible: true }).first(), ['default'], { group: g, title: 'Format chip', desc: 'The "Audio only" format chip.', sel: '"Audio only" chip' });
-  await S('ab-crumb', q('a').filter({ hasText: /^\s*(Explore|History)\s*$/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Breadcrumb link', desc: 'A breadcrumb link (Explore / genre) above the title.', sel: 'breadcrumb a' });
+  // The bare `a` first-match landed on the header's Explore pill; scope to the
+  // page body so the link is the audiobook's breadcrumb above the title.
+  await S('ab-crumb', q('main a').filter({ hasText: /^\s*(Explore|History|Audiobooks|Fantasy|Fiction)\s*$/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Breadcrumb link', desc: 'A breadcrumb link (Explore / genre) above the title.', sel: 'main breadcrumb a' });
   await S('ab-author', q('a[href*="/authors/"]').filter({ visible: true }).first(), B4, { group: g, title: 'Author link', desc: 'The By-author link under the title.', sel: 'a[href*="/authors/"]' });
   await S('ab-row', q('a[href*="/audiobooks/"]').filter({ visible: true }).first(), B4, { group: g, title: 'Related title link', desc: 'A related-audiobook link in "More from" / "You may also like".', sel: 'related a' });
   save();

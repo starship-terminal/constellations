@@ -443,55 +443,55 @@ typography:
     fontSize: "32px"
     fontWeight: 700
     lineHeight: 1.1
-    letterSpacing: "0.171875px"
+    letterSpacing: "0.32px"
   heading-05:
     fontFamily: "Waldenburg"
     fontSize: "28px"
     fontWeight: 700
     lineHeight: 1.1
-    letterSpacing: "0.171875px"
+    letterSpacing: "0.28px"
   subhead-01:
     fontFamily: "Inter"
     fontSize: "22px"
     fontWeight: 700
     lineHeight: 1.4
-    letterSpacing: "0.171875px"
+    letterSpacing: "0.22px"
   subhead-02:
     fontFamily: "Inter"
     fontSize: "18px"
     fontWeight: 700
     lineHeight: 1.4
-    letterSpacing: "0.171875px"
+    letterSpacing: "0.18px"
   subhead-03:
     fontFamily: "Inter"
     fontSize: "16px"
     fontWeight: 700
     lineHeight: 1.4
-    letterSpacing: "0.171875px"
+    letterSpacing: "0.16px"
   description-01:
     fontFamily: "Inter"
     fontSize: "22px"
     fontWeight: 400
     lineHeight: 1.4
-    letterSpacing: "0.171875px"
+    letterSpacing: "0.22px"
   description-02:
     fontFamily: "Inter"
     fontSize: "18px"
     fontWeight: 400
     lineHeight: 1.4
-    letterSpacing: "0.171875px"
+    letterSpacing: "0.18px"
   description-03:
     fontFamily: "Inter"
     fontSize: "16px"
     fontWeight: 400
     lineHeight: 1.4
-    letterSpacing: "0.171875px"
+    letterSpacing: "0.16px"
   description-04:
     fontFamily: "Inter"
     fontSize: "14px"
     fontWeight: 400
     lineHeight: 1.4
-    letterSpacing: "0.171875px"
+    letterSpacing: "0.14px"
   body-01:
     fontFamily: "Inter"
     fontSize: "18px"

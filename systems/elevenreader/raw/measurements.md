@@ -32,7 +32,7 @@ Page: home. Selector: `div.bg-[#F5F3F1]`. States: default.
 | Ancestor paint | 1 up body.has-[.payload-admin-bar]:mb-10 bg #fdfcfc |
 | How | at rest |
 
-Crops: none.
+Crops: `promo-banner-default.png`.
 
 #### promo-cta
 
@@ -58,7 +58,7 @@ Page: home. Selector: `a "Get this offer"`. States: default, hover, focus-visibl
 | Ancestor paint | 1 up div.text-default.flex bg #f5f3f1 | = | = | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
-Crops: none.
+Crops: `promo-cta-default.png`, `promo-cta-hover.png`, `promo-cta-focus-visible.png`, `promo-cta-pressed.png`.
 
 #### header
 
@@ -86,7 +86,7 @@ Page: home. Selector: `div:has(> nav[aria-label="Main"])`. States: default.
 | Ancestor paint | 1 up body.has-[.payload-admin-bar]:mb-10 bg #fdfcfc |
 | How | at rest |
 
-Crops: none.
+Crops: `header-default.png`.
 
 #### logo
 
@@ -111,7 +111,7 @@ Page: home. Selector: `header a[href="/"]`. States: default.
 | Painted layers | a.inline-flex.justify-center 164.0x36.0 r 9999px outline 2px solid #000000 @ 0 offset 2px |
 | How | at rest |
 
-Crops: none.
+Crops: `logo-default.png`.
 
 #### nav-link
 
@@ -136,7 +136,7 @@ Page: home. Selector: `nav a "Pricing"`. States: default, hover, focus-visible, 
 | Painted layers | a.inline-flex.justify-center 70.3x36.0 r 9999px outline 2px solid #000000 @ 0 offset 2px | a.inline-flex.justify-center 70.3x36.0 bg #f6f6f6 r 9999px outline 2px solid #000000 @ 0 offset 2px | a.inline-flex.justify-center 70.3x36.0 r 9999px outline 2px solid #000000 offset 2px | a.inline-flex.justify-center 70.3x36.0 bg #f6f6f6 r 9999px outline 2px solid #000000 @ 0 offset 2px |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
-Crops: none.
+Crops: `nav-link-default.png`, `nav-link-hover.png`, `nav-link-focus-visible.png`, `nav-link-pressed.png`.
 
 #### nav-discover
 
@@ -162,7 +162,7 @@ Page: home. Selector: `button[aria-label="Discover"]`. States: default, hover, f
 | Painted layers | button.inline-flex.items-center 40.0x36.0 r 9999px outline 2px solid #000000 @ 0 offset 2px | button.inline-flex.items-center 40.0x36.0 bg #f6f6f6 r 9999px outline 2px solid #000000 @ 0 offset 2px | button.inline-flex.items-center 40.0x36.0 r 9999px outline 2px solid #000000 offset 2px | button.inline-flex.items-center 40.0x36.0 bg #f6f6f6 r 9999px outline 2px solid #000000 @ 0 offset 2px |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
-Crops: none.
+Crops: `nav-discover-default.png`, `nav-discover-hover.png`, `nav-discover-focus-visible.png`, `nav-discover-pressed.png`.
 
 #### nav-signin
 
@@ -187,7 +187,7 @@ Page: home. Selector: `a "Sign in"`. States: default, hover, focus-visible, pres
 | Painted layers | a.items-center.justify-center 78.4x36.0 bg #ffffff border T:1px solid #e5e5e5 / R:1px solid #e5e5e5 / B:1px solid #e5e5e5 / L:1px solid #e5e5e5 r 9999px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #101828 @ 0.05 0px 1px 2px 0px outline 2px solid #000000 @ 0 offset 2px | a.items-center.justify-center 78.4x36.0 bg #f6f6f6 border T:1px solid #e5e5e5 / R:1px solid #e5e5e5 / B:1px solid #e5e5e5 / L:1px solid #e5e5e5 r 9999px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #101828 @ 0.05 0px 1px 2px 0px outline 2px solid #000000 @ 0 offset 2px | a.items-center.justify-center 78.4x36.0 bg #ffffff border T:1px solid #e5e5e5 / R:1px solid #e5e5e5 / B:1px solid #e5e5e5 / L:1px solid #e5e5e5 r 9999px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #101828 @ 0.05 0px 1px 2px 0px outline 2px solid #000000 offset 2px | a.items-center.justify-center 78.4x36.0 bg #f6f6f6 border T:1px solid #e5e5e5 / R:1px solid #e5e5e5 / B:1px solid #e5e5e5 / L:1px solid #e5e5e5 r 9999px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #101828 @ 0.05 0px 1px 2px 0px outline 2px solid #000000 @ 0 offset 2px |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
-Crops: none.
+Crops: `nav-signin-default.png`, `nav-signin-hover.png`, `nav-signin-focus-visible.png`, `nav-signin-pressed.png`.
 
 #### nav-cta
 
@@ -213,7 +213,7 @@ Page: home. Selector: `a "Start listening free"`. States: default, hover, focus-
 | Painted layers | a.inline-flex.items-center 154.3x36.0 bg #000000 r 9999px outline 2px solid #000000 @ 0 offset 0px | a.inline-flex.items-center 154.3x36.0 bg #6e6e6e r 9999px outline 2px solid #000000 @ 0 offset 0px | a.inline-flex.items-center 154.3x36.0 bg #000000 r 9999px outline 2px solid #000000 offset 0px | a.inline-flex.items-center 154.3x36.0 bg #6e6e6e r 9999px outline 2px solid #000000 @ 0 offset 0px |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
-Crops: none.
+Crops: `nav-cta-default.png`, `nav-cta-hover.png`, `nav-cta-focus-visible.png`, `nav-cta-pressed.png`.
 
 #### nav-dropdown
 
@@ -238,7 +238,7 @@ Page: home. Selector: `discover panel`. States: default.
 | Painted layers | div.bg-default.border-lightest 846.0x470.0 bg #ffffff border T:1px solid #f2f2f2 / R:1px solid #f2f2f2 / B:1px solid #f2f2f2 / L:1px solid #f2f2f2 r 24px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #101828 @ 0.03 0px 4px 6px -2px, #101828 @ 0.08 0px 12px 16px -4px; a.inline-flex.cursor-pointer 260.0x40.0 r 6px outline 2px solid #000000 @ 0 offset 2px; a.inline-flex.cursor-pointer 260.0x40.0 r 6px outline 2px solid #000000 @ 0 offset 2px; a.inline-flex.cursor-pointer 260.0x40.0 r 6px outline 2px solid #000000 @ 0 offset 2px; a.inline-flex.cursor-pointer 260.0x40.0 r 6px outline 2px solid #000000 @ 0 offset 2px; a.inline-flex.cursor-pointer 260.0x40.0 r 6px outline 2px solid #000000 @ 0 offset 2px |
 | How | at rest |
 
-Crops: none.
+Crops: `nav-dropdown-default.png`.
 
 #### menu-link
 
@@ -264,7 +264,7 @@ Page: home. Selector: `mega-menu a`. States: default, hover, focus-visible, pres
 | Painted layers | a.inline-flex.cursor-pointer 260.0x40.0 r 6px outline 2px solid #000000 @ 0 offset 2px | a.inline-flex.cursor-pointer 260.0x40.0 bg #f2f2f2 r 6px outline 2px solid #000000 @ 0 offset 2px | a.inline-flex.cursor-pointer 260.0x40.0 bg #f2f2f2 r 6px outline 2px solid #000000 offset 2px | a.inline-flex.cursor-pointer 260.0x40.0 bg #f2f2f2 r 6px outline 2px solid #000000 offset 2px |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
-Crops: none.
+Crops: `menu-link-default.png`, `menu-link-hover.png`, `menu-link-focus-visible.png`, `menu-link-pressed.png`.
 
 #### menu-heading
 
@@ -287,7 +287,7 @@ Page: home. Selector: `mega-menu heading`. States: default.
 | Transition | none |
 | How | at rest |
 
-Crops: none.
+Crops: `menu-heading-default.png`.
 
 ### Home hero
 
@@ -312,7 +312,7 @@ Page: home. Selector: `h1`. States: default.
 | Transition | none |
 | How | at rest |
 
-Crops: none.
+Crops: `hero-h1-default.png`.
 
 #### hero-lede
 
@@ -336,7 +336,7 @@ Page: home. Selector: `hero lede (opacity-60)`. States: default.
 | Opacity | 0.6 |
 | How | at rest |
 
-Crops: none.
+Crops: `hero-lede-default.png`.
 
 #### hero-cta
 
@@ -361,7 +361,7 @@ Page: home. Selector: `main a "Start listening free"`. States: default, hover, f
 | Painted layers | a.inline-flex.items-center 190.9x52.0 bg #000000 r 9999px outline 2px solid #000000 @ 0 offset 2px | a.inline-flex.items-center 190.9x52.0 bg #6e6e6e r 9999px outline 2px solid #000000 @ 0 offset 2px | a.inline-flex.items-center 190.9x52.0 bg #000000 r 9999px outline 2px solid #000000 offset 2px | a.inline-flex.items-center 187.1x51.0 bg #6e6e6e r 9999px outline 2px solid #000000 @ 0 offset 2px |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
-Crops: none.
+Crops: `hero-cta-default.png`, `hero-cta-hover.png`, `hero-cta-focus-visible.png`, `hero-cta-pressed.png`.
 
 #### hero-cta-2
 
@@ -386,7 +386,7 @@ Page: home. Selector: `hero secondary pill`. States: default, hover, focus-visib
 | Painted layers | a.inline-flex.items-center 163.9x52.0 bg #ffffff r 9999px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.06 0px 0px 0px 1px, #000000 @ 0.04 0px 1px 2px 0px, #000000 @ 0.04 0px 2px 4px 0px outline 2px solid #000000 @ 0 offset 2px | a.inline-flex.items-center 163.9x52.0 bg #f2f2f2 r 9999px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.06 0px 0px 0px 1px, #000000 @ 0.04 0px 1px 2px 0px, #000000 @ 0.04 0px 2px 4px 0px outline 2px solid #000000 @ 0 offset 2px | a.inline-flex.items-center 163.9x52.0 bg #ffffff r 9999px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.06 0px 0px 0px 1px, #000000 @ 0.04 0px 1px 2px 0px, #000000 @ 0.04 0px 2px 4px 0px outline 2px solid #000000 offset 2px | a.inline-flex.items-center 160.6x51.0 bg #f2f2f2 r 9999px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.06 0px 0px 0px 1px, #000000 @ 0.04 0px 1px 2px 0px, #000000 @ 0.04 0px 2px 4px 0px outline 2px solid #000000 @ 0 offset 2px |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
-Crops: none.
+Crops: `hero-cta-2-default.png`, `hero-cta-2-hover.png`, `hero-cta-2-focus-visible.png`, `hero-cta-2-pressed.png`.
 
 #### book-cover
 
@@ -411,7 +411,7 @@ Page: home. Selector: `[data-card-index]`. States: default, hover.
 | Cursor | grab | = |
 | How | at rest | mouse hover |
 
-Crops: none.
+Crops: `book-cover-default.png`, `book-cover-hover.png`.
 
 ### Home sections
 
@@ -436,7 +436,7 @@ Page: home. Selector: `h2 eyebrow`. States: default.
 | Transition | none |
 | How | at rest |
 
-Crops: none.
+Crops: `eyebrow-default.png`.
 
 #### section-h3
 
@@ -460,7 +460,7 @@ Page: home. Selector: `h3.font-waldenburg`. States: default.
 | Transition | none |
 | How | at rest |
 
-Crops: none.
+Crops: `section-h3-default.png`.
 
 #### book-link
 
@@ -483,8 +483,9 @@ Page: home. Selector: `a.underline-offset-2`. States: default, hover, focus-visi
 | Transition | none | = | = | = |
 | Cursor | pointer | = | = | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
+| Text decoration | - | underline offset 2px | underline offset 2px | underline offset 2px |
 
-Crops: none.
+Crops: `book-link-default.png`, `book-link-hover.png`, `book-link-focus-visible.png`, `book-link-pressed.png`.
 
 #### genre-chip
 
@@ -509,7 +510,7 @@ Page: home. Selector: `genre chip button`. States: default, hover, focus-visible
 | Painted layers | button.inline-flex.items-center 101.0x44.0 bg #ffffff r 9999px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.06 0px 0px 0px 1px, #000000 @ 0.04 0px 1px 2px 0px, #000000 @ 0.04 0px 2px 4px 0px outline 2px solid #000000 @ 0 offset 2px | = | button.inline-flex.items-center 101.0x44.0 bg #ffffff r 9999px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.06 0px 0px 0px 1px, #000000 @ 0.04 0px 1px 2px 0px, #000000 @ 0.04 0px 2px 4px 0px outline 2px solid #000000 offset 2px | button.inline-flex.items-center 99.0x43.1 bg #ffffff r 9999px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.06 0px 0px 0px 1px, #000000 @ 0.04 0px 1px 2px 0px, #000000 @ 0.04 0px 2px 4px 0px outline 2px solid #000000 @ 0 offset 2px |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
-Crops: none.
+Crops: `genre-chip-default.png`, `genre-chip-hover.png`, `genre-chip-focus-visible.png`, `genre-chip-pressed.png`.
 
 #### view-all
 
@@ -534,7 +535,7 @@ Page: home. Selector: `a "View all"`. States: default, hover, focus-visible, pre
 | Painted layers | a.inline-flex.items-center 99.3x44.0 r 9999px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.04 0px 0px 0px 1px outline 2px solid #000000 @ 0 offset 2px | = | a.inline-flex.items-center 99.3x44.0 r 9999px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.04 0px 0px 0px 1px outline 2px solid #000000 offset 2px | a.inline-flex.items-center 97.3x43.1 r 9999px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.04 0px 0px 0px 1px outline 2px solid #000000 @ 0 offset 2px |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
-Crops: none.
+Crops: `view-all-default.png`, `view-all-hover.png`, `view-all-focus-visible.png`, `view-all-pressed.png`.
 
 #### try-cta
 
@@ -559,7 +560,7 @@ Page: home. Selector: `a "Try it free"`. States: default, hover, focus-visible, 
 | Painted layers | a.inline-flex.items-center 115.0x44.0 bg #ffffff r 9999px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.06 0px 0px 0px 1px, #000000 @ 0.04 0px 1px 2px 0px, #000000 @ 0.04 0px 2px 4px 0px outline 2px solid #000000 @ 0 offset 2px | a.inline-flex.items-center 115.0x44.0 bg #f2f2f2 r 9999px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.06 0px 0px 0px 1px, #000000 @ 0.04 0px 1px 2px 0px, #000000 @ 0.04 0px 2px 4px 0px outline 2px solid #000000 @ 0 offset 2px | a.inline-flex.items-center 115.0x44.0 bg #ffffff r 9999px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.06 0px 0px 0px 1px, #000000 @ 0.04 0px 1px 2px 0px, #000000 @ 0.04 0px 2px 4px 0px outline 2px solid #000000 offset 2px | a.inline-flex.items-center 112.7x43.1 bg #f2f2f2 r 9999px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.06 0px 0px 0px 1px, #000000 @ 0.04 0px 1px 2px 0px, #000000 @ 0.04 0px 2px 4px 0px outline 2px solid #000000 @ 0 offset 2px |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
-Crops: none.
+Crops: `try-cta-default.png`, `try-cta-hover.png`, `try-cta-focus-visible.png`, `try-cta-pressed.png`.
 
 #### faq-item
 
@@ -584,7 +585,7 @@ Page: home. Selector: `details[name=homepage-faq]`. States: default, open.
 | Painted layers | details.faq-accordion-item.group 780.0x67.0 bg #faf8f8 r 20px; summary::before.effect-focus-before.font-waldenburg 788pxx75px border T:2px solid #000000 / R:2px solid #000000 / B:2px solid #000000 / L:2px solid #000000 r 24px; div.absolute.h-0.5 14.0x2.0 bg #646363 r 9999px; div.absolute.h-3.5 2.0x14.0 bg #646363 r 9999px | details.faq-accordion-item.group 796.0x159.0 bg #ffffff r 24px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.4 0px 0px 1px 0px, #000000 @ 0.04 0px 1px 1px 0px, #000000 @ 0.04 0px 2px 4px 0px; summary::before.effect-focus-before.font-waldenburg 804pxx75px border T:2px solid #000000 / R:2px solid #000000 / B:2px solid #000000 / L:2px solid #000000 r 24px; div.absolute.h-0.5 14.0x2.0 bg #646363 r 9999px; div.absolute.h-3.5 14.0x2.0 bg #646363 r 9999px |
 | How | at rest | opened by its own summary |
 
-Crops: none.
+Crops: `faq-item-default.png`, `faq-item-open.png`.
 
 #### faq-summary
 
@@ -613,7 +614,7 @@ Page: home. Selector: `details summary`. States: default, hover, focus-visible, 
 | Ancestor paint | 1 up details.faq-accordion-item.group bg #ffffff shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.4 0px 0px 1px 0px, #000000 @ 0.04 0px 1px 1px 0px, #000000 @ 0.04 0px 2px 4px 0px | = | = | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
-Crops: none.
+Crops: `faq-summary-default.png`, `faq-summary-hover.png`, `faq-summary-focus-visible.png`, `faq-summary-pressed.png`.
 
 ### Footer
 
@@ -642,7 +643,7 @@ Page: home. Selector: `footer`. States: default.
 | Ancestor paint | 1 up body.has-[.payload-admin-bar]:mb-10 bg #fdfcfc |
 | How | at rest |
 
-Crops: none.
+Crops: `footer-default.png`.
 
 #### footer-col
 
@@ -665,7 +666,7 @@ Page: home. Selector: `footer column p`. States: default.
 | Transition | none |
 | How | at rest |
 
-Crops: none.
+Crops: `footer-col-default.png`.
 
 #### footer-link
 
@@ -688,8 +689,9 @@ Page: home. Selector: `footer a`. States: default, hover, focus-visible, pressed
 | Transition | none | = | = | = |
 | Cursor | pointer | = | = | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
+| Text decoration | - | underline offset 2px | underline offset 2px | underline offset 2px |
 
-Crops: none.
+Crops: `footer-link-default.png`, `footer-link-hover.png`, `footer-link-focus-visible.png`, `footer-link-pressed.png`.
 
 #### cookie-btn
 
@@ -712,8 +714,9 @@ Page: home. Selector: `footer button "Cookie Settings"`. States: default, hover,
 | Transition | none | = | = | = |
 | Cursor | pointer | = | = | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
+| Text decoration | - | underline offset 2px | underline offset 2px | underline offset 2px |
 
-Crops: none.
+Crops: `cookie-btn-default.png`, `cookie-btn-hover.png`, `cookie-btn-focus-visible.png`, `cookie-btn-pressed.png`.
 
 ### Explore catalog
 
@@ -738,7 +741,7 @@ Page: explore. Selector: `h1 on /explore`. States: default.
 | Transition | none |
 | How | at rest |
 
-Crops: none.
+Crops: `explore-h1-default.png`.
 
 #### rail-h2
 
@@ -762,7 +765,7 @@ Page: explore. Selector: `rail h2`. States: default.
 | Cursor | pointer |
 | How | at rest |
 
-Crops: none.
+Crops: `rail-h2-default.png`.
 
 #### coverflow-card
 
@@ -789,7 +792,7 @@ Page: explore. Selector: `[data-coverflow-card]`. States: default, hover.
 | Painted layers | div.transition-transform.[transition-duration:300ms] 300.2x450.2 bg #f0f0f0 r 6px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #101828 @ 0.03 0px 4px 6px -2px, #101828 @ 0.08 0px 12px 16px -4px | div.transition-transform.[transition-duration:300ms] 315.2x472.7 bg #f0f0f0 r 6px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #101828 @ 0.03 0px 4px 6px -2px, #101828 @ 0.08 0px 12px 16px -4px |
 | How | at rest | mouse hover |
 
-Crops: none.
+Crops: `coverflow-card-default.png`, `coverflow-card-hover.png`.
 
 #### book-title
 
@@ -815,7 +818,7 @@ Page: explore. Selector: `coverflow title a`. States: default, hover, focus-visi
 | Cursor | pointer | = | = | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
-Crops: none.
+Crops: `book-title-default.png`, `book-title-hover.png`, `book-title-focus-visible.png`, `book-title-pressed.png`.
 
 #### book-meta
 
@@ -839,7 +842,7 @@ Page: explore. Selector: `coverflow span[variant=subtle]`. States: default.
 | Cursor | pointer |
 | How | at rest |
 
-Crops: none.
+Crops: `book-meta-default.png`.
 
 #### genre-link
 
@@ -864,8 +867,9 @@ Page: explore. Selector: `a[href*="/genres/"]`. States: default, hover, focus-vi
 | Cursor | pointer | = | = | = |
 | Icon | 20 x 20, colour #767676 | = | = | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
+| Text decoration | - | underline | underline | underline |
 
-Crops: none.
+Crops: `genre-link-default.png`, `genre-link-hover.png`, `genre-link-focus-visible.png`, `genre-link-pressed.png`.
 
 ### Pricing
 
@@ -891,7 +895,7 @@ Page: pricing. Selector: `pricing display h3`. States: default.
 | Transition | none |
 | How | at rest |
 
-Crops: none.
+Crops: `pricing-h1-default.png`.
 
 #### billing-off
 
@@ -917,7 +921,7 @@ Page: pricing. Selector: `button "Monthly"`. States: default, hover, focus-visib
 | Painted layers | button.ease-out-slow.effect-focus 101.3x48.0 r 9999px outline 2px solid #000000 @ 0 offset 2px | = | button.ease-out-slow.effect-focus 101.3x48.0 r 9999px outline 2px solid #000000 offset 2px | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
-Crops: none.
+Crops: `billing-off-default.png`, `billing-off-hover.png`, `billing-off-focus-visible.png`, `billing-off-pressed.png`.
 
 #### billing-on
 
@@ -943,7 +947,7 @@ Page: pricing. Selector: `button "Annual"`. States: default, hover, focus-visibl
 | Painted layers | button.ease-out-slow.effect-focus 188.8x48.0 bg #ffffff r 9999px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.06 0px 0px 0px 1px, #000000 @ 0.04 0px 1px 2px 0px, #000000 @ 0.04 0px 2px 4px 0px outline 2px solid #000000 @ 0 offset 2px; span.inline-flex.items-center 89.2x28.0 bg #e1f5e0 r 9999px | = | button.ease-out-slow.effect-focus 188.8x48.0 bg #ffffff r 9999px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.06 0px 0px 0px 1px, #000000 @ 0.04 0px 1px 2px 0px, #000000 @ 0.04 0px 2px 4px 0px outline 2px solid #000000 offset 2px; span.inline-flex.items-center 89.2x28.0 bg #e1f5e0 r 9999px | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
-Crops: none.
+Crops: `billing-on-default.png`, `billing-on-hover.png`, `billing-on-focus-visible.png`, `billing-on-pressed.png`.
 
 #### save-badge
 
@@ -970,7 +974,7 @@ Page: pricing. Selector: `span "Save 25%"`. States: default.
 | Ancestor paint | 1 up button.ease-out-slow.effect-focus bg #ffffff shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.06 0px 0px 0px 1px, #000000 @ 0.04 0px 1px 2px 0px, #000000 @ 0.04 0px 2px 4px 0px outline 2px solid #000000 @ 0 |
 | How | at rest |
 
-Crops: none.
+Crops: `save-badge-default.png`.
 
 #### plan-card
 
@@ -996,7 +1000,7 @@ Page: pricing. Selector: `plan card`. States: default.
 | Painted layers | div.flex.flex-col 584.0x721.9 bg #fdfcfc border T:1px solid #eae9e9 / R:1px solid #eae9e9 / B:1px solid #eae9e9 / L:1px solid #eae9e9 r 40px; div.my-7.h-px 470.0x1.0 bg #eae9e9; div.mb-7.h-px 470.0x1.0 bg #eae9e9; a.inline-flex.items-center 470.0x52.0 bg #ffffff r 9999px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.06 0px 0px 0px 1px, #000000 @ 0.04 0px 1px 2px 0px, #000000 @ 0.04 0px 2px 4px 0px outline 2px solid #000000 @ 0 offset 2px |
 | How | at rest |
 
-Crops: none.
+Crops: `plan-card-default.png`.
 
 #### plan-name
 
@@ -1022,7 +1026,7 @@ Page: pricing. Selector: `plan name`. States: default.
 | Ancestor paint | 1 up div.flex.flex-col bg #fdfcfc |
 | How | at rest |
 
-Crops: none.
+Crops: `plan-name-default.png`.
 
 #### plan-price
 
@@ -1048,7 +1052,7 @@ Page: pricing. Selector: `plan price`. States: default.
 | Ancestor paint | 1 up div.flex.flex-col bg #fdfcfc |
 | How | at rest |
 
-Crops: none.
+Crops: `plan-price-default.png`.
 
 #### plan-cta
 
@@ -1073,18 +1077,19 @@ Page: pricing. Selector: `plan CTA`. States: default, hover, focus-visible, pres
 | Painted layers | a.inline-flex.items-center 472.0x52.0 bg #000000 r 9999px outline 2px solid #000000 @ 0 offset 2px | a.inline-flex.items-center 472.0x52.0 bg #6e6e6e r 9999px outline 2px solid #000000 @ 0 offset 2px | a.inline-flex.items-center 472.0x52.0 bg #000000 r 9999px outline 2px solid #000000 offset 2px | a.inline-flex.items-center 462.6x51.0 bg #6e6e6e r 9999px outline 2px solid #000000 @ 0 offset 2px |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
-Crops: none.
+Crops: `plan-cta-default.png`, `plan-cta-hover.png`, `plan-cta-focus-visible.png`, `plan-cta-pressed.png`.
 
 #### feature-li
 
 Feature row. A feature row inside a plan card or the "Everything you unlock" list.
 
-Page: pricing. Selector: `plan li`. States: default.
+Page: pricing. Selector: `main section li`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 74.25 x 40 |
+| Size (w x h) | 470 x 44.98 |
 | Padding | 0px |
+| Gap | 16px |
 | Border | none |
 | Radius | 0px |
 | Background | transparent |
@@ -1093,12 +1098,12 @@ Page: pricing. Selector: `plan li`. States: default.
 | Font | Inter 18px/28.8px 400 |
 | Letter spacing | normal |
 | Colour | #000000 |
-| Text node | a.inline-flex.justify-center: Inter 14px/20px 400, #000000, ls 0.14px |
+| Text node | span.font-waldenburg.text-[18px]: Waldenburg 18px/23.4px 375, #000000 |
 | Transition | none |
-| Painted layers | a.inline-flex.justify-center 74.3x36.0 r 9999px outline 2px solid #000000 @ 0 offset 2px |
+| Icon | 16 x 16, colour #000000 |
 | How | at rest |
 
-Crops: none.
+Crops: `feature-li-default.png`.
 
 ### Audiobook page
 
@@ -1208,24 +1213,25 @@ Crops: `ab-chip-default.png`.
 
 Breadcrumb link. A breadcrumb link (Explore / genre) above the title.
 
-Page: audiobook. Selector: `breadcrumb a`. States: default, hover, focus-visible, pressed.
+Page: audiobook. Selector: `main breadcrumb a`. States: default, hover, focus-visible, pressed.
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 74.25 x 36 | = | = | = |
-| Padding | 0px 12px | = | = | = |
+| Size (w x h) | 50.05 x 20 | = | = | = |
+| Padding | 0px | = | = | = |
 | Border | none | = | = | = |
-| Radius | 9999px | = | = | = |
-| Background | transparent | #f6f6f6 | = | #f6f6f6 |
+| Radius | 2px | = | = | = |
+| Background | transparent | = | = | = |
 | Box shadow | none | = | = | = |
-| Outline | 2px solid #000000 @ 0 offset 2px | = | 2px solid #000000 offset 2px | = |
-| Font | Inter 14px/20px 400 | = | = | = |
-| Letter spacing | 0.14px | = | = | = |
-| Colour | #000000 | = | = | = |
-| Transition | all 0.2s ease | = | = | = |
+| Outline | none | = | = | = |
+| Font | Inter 12px/13.2px 700 | = | = | = |
+| Letter spacing | normal | = | = | = |
+| Colour | #767676 | #6e6e6e | = | #6e6e6e |
+| Text node | span.whitespace-nowrap.text-inherit: Inter 14px/20px 500, #767676 | span.whitespace-nowrap.text-inherit: Inter 14px/20px 500, #6e6e6e | = | span.whitespace-nowrap.text-inherit: Inter 14px/20px 500, #6e6e6e |
+| Transition | none | = | = | = |
 | Cursor | pointer | = | = | = |
-| Painted layers | a.inline-flex.justify-center 74.3x36.0 r 9999px outline 2px solid #000000 @ 0 offset 2px | a.inline-flex.justify-center 74.3x36.0 bg #f6f6f6 r 9999px outline 2px solid #000000 @ 0 offset 2px | a.inline-flex.justify-center 74.3x36.0 r 9999px outline 2px solid #000000 offset 2px | a.inline-flex.justify-center 74.3x36.0 bg #f6f6f6 r 9999px outline 2px solid #000000 @ 0 offset 2px |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
+| Text decoration | - | underline offset 2px | underline offset 2px | underline offset 2px |
 
 Crops: `ab-crumb-default.png`, `ab-crumb-hover.png`, `ab-crumb-focus-visible.png`, `ab-crumb-pressed.png`.
 
@@ -1250,6 +1256,7 @@ Page: audiobook. Selector: `a[href*="/authors/"]`. States: default, hover, focus
 | Transition | none | = | = | = |
 | Cursor | pointer | = | = | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
+| Text decoration | - | underline offset 2px | underline offset 2px | underline offset 2px |
 
 Crops: `ab-author-default.png`, `ab-author-hover.png`, `ab-author-focus-visible.png`, `ab-author-pressed.png`.
 
@@ -1430,7 +1437,7 @@ Page: signin. Selector: `div.max-w-90`. States: default.
 | Painted layers | button.justify-center.whitespace-nowrap 360.0x40.0 bg #f2f2f2 r 9999px outline 2px solid #000000 @ 0 offset 0px; button.justify-center.whitespace-nowrap 360.0x40.0 bg #000000 r 9999px outline 2px solid #000000 @ 0 offset 0px; div.w-full.border-b 0.0x1.0 border B:1px solid #e5e5e5; div.w-full.border-b 0.0x1.0 border B:1px solid #e5e5e5; input.border-gray-alpha-200.placeholder:text-subtle 26.0x40.0 border T:1px solid #e5e5e5 / R:1px solid #e5e5e5 / B:1px solid #e5e5e5 / L:1px solid #e5e5e5 r 9999px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px outline 2px solid #000000 @ 0 offset 2px; button.inline-flex.items-center 122.5x32.0 r 9999px outline 2px solid #000000 @ 0 offset 2px |
 | How | at rest |
 
-Crops: none.
+Crops: `signin-card-default.png`.
 
 #### sso-google
 
@@ -1458,7 +1465,7 @@ Page: signin. Selector: `button "Sign in with Google"`. States: default, hover, 
 | Painted layers | button.justify-center.whitespace-nowrap 360.0x40.0 bg #f2f2f2 r 9999px outline 2px solid #000000 @ 0 offset 0px | button.justify-center.whitespace-nowrap 360.0x40.0 bg #000000 @ 0.1 r 9999px outline 2px solid #000000 @ 0 offset 0px | button.justify-center.whitespace-nowrap 360.0x40.0 bg #f2f2f2 r 9999px outline 2px solid #000000 offset 0px | button.justify-center.whitespace-nowrap 360.0x40.0 bg #000000 @ 0.1 r 9999px outline 2px solid #000000 @ 0 offset 0px |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
-Crops: none.
+Crops: `sso-google-default.png`, `sso-google-hover.png`, `sso-google-focus-visible.png`, `sso-google-pressed.png`.
 
 #### sso-apple
 
@@ -1486,7 +1493,7 @@ Page: signin. Selector: `button "Sign in with Apple"`. States: default, hover, f
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 | Opacity | - | 0.8 | = | 0.8 |
 
-Crops: none.
+Crops: `sso-apple-default.png`, `sso-apple-hover.png`, `sso-apple-focus-visible.png`, `sso-apple-pressed.png`.
 
 #### email-field
 
@@ -1512,7 +1519,7 @@ Page: signin. Selector: `input#email`. States: default, focused, filled.
 | Painted layers | input.border-gray-alpha-200.placeholder:text-subtle 360.0x40.0 border T:1px solid #e5e5e5 / R:1px solid #e5e5e5 / B:1px solid #e5e5e5 / L:1px solid #e5e5e5 r 9999px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px outline 2px solid #000000 @ 0 offset 2px | = | = |
 | How | at rest | clicked into the field | typed "name@example.com", then deleted; nothing sent |
 
-Crops: none.
+Crops: `email-field-default.png`, `email-field-focused.png`, `email-field-filled.png`.
 
 #### password-field
 
@@ -1538,7 +1545,7 @@ Page: signin. Selector: `input#password`. States: default, focused.
 | Painted layers | input.border-gray-alpha-200.placeholder:text-subtle 360.0x40.0 border T:1px solid #e5e5e5 / R:1px solid #e5e5e5 / B:1px solid #e5e5e5 / L:1px solid #e5e5e5 r 9999px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px outline 2px solid #000000 @ 0 offset 2px | = |
 | How | at rest | clicked into the field |
 
-Crops: none.
+Crops: `password-field-default.png`, `password-field-focused.png`.
 
 #### forgot-btn
 
@@ -1563,7 +1570,7 @@ Page: signin. Selector: `button "Forgot password"`. States: default, hover, focu
 | Painted layers | button.inline-flex.items-center 122.5x32.0 r 9999px outline 2px solid #000000 @ 0 offset 2px | = | button.inline-flex.items-center 122.5x32.0 r 9999px outline 2px solid #000000 offset 2px | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
-Crops: none.
+Crops: `forgot-btn-default.png`, `forgot-btn-hover.png`, `forgot-btn-focus-visible.png`, `forgot-btn-pressed.png`.
 
 #### signin-submit
 
@@ -1588,7 +1595,7 @@ Page: signin. Selector: `button[type=submit]`. States: default, hover, focus-vis
 | Painted layers | button.justify-center.whitespace-nowrap 360.0x40.0 bg #000000 r 9999px outline 2px solid #000000 @ 0 offset 0px | button.justify-center.whitespace-nowrap 360.0x40.0 bg #6e6e6e r 9999px outline 2px solid #000000 @ 0 offset 0px | button.justify-center.whitespace-nowrap 360.0x40.0 bg #000000 r 9999px outline 2px solid #000000 offset 0px | button.justify-center.whitespace-nowrap 360.0x40.0 bg #6e6e6e r 9999px outline 2px solid #000000 @ 0 offset 0px |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
-Crops: none.
+Crops: `signin-submit-default.png`, `signin-submit-hover.png`, `signin-submit-focus-visible.png`, `signin-submit-pressed.png`.
 
 #### signin-secondary
 
@@ -1614,7 +1621,7 @@ Page: signin. Selector: `button "Sign in with email"`. States: default, hover, f
 | Painted layers | button.justify-center.whitespace-nowrap 360.0x40.0 bg #ffffff border T:1px solid #e5e5e5 / R:1px solid #e5e5e5 / B:1px solid #e5e5e5 / L:1px solid #e5e5e5 r 9999px outline 2px solid #000000 @ 0 offset 2px | button.justify-center.whitespace-nowrap 360.0x40.0 bg #f6f6f6 border T:1px solid #e5e5e5 / R:1px solid #e5e5e5 / B:1px solid #e5e5e5 / L:1px solid #e5e5e5 r 9999px outline 2px solid #000000 @ 0 offset 2px | button.justify-center.whitespace-nowrap 360.0x40.0 bg #ffffff border T:1px solid #e5e5e5 / R:1px solid #e5e5e5 / B:1px solid #e5e5e5 / L:1px solid #e5e5e5 r 9999px outline 2px solid #000000 offset 2px | button.justify-center.whitespace-nowrap 360.0x40.0 bg #f6f6f6 border T:1px solid #e5e5e5 / R:1px solid #e5e5e5 / B:1px solid #e5e5e5 / L:1px solid #e5e5e5 r 9999px outline 2px solid #000000 @ 0 offset 2px |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
-Crops: none.
+Crops: `signin-secondary-default.png`, `signin-secondary-hover.png`, `signin-secondary-focus-visible.png`, `signin-secondary-pressed.png`.
 
 #### create-link
 
@@ -1637,8 +1644,9 @@ Page: signin. Selector: `a "Create account"`. States: default, hover, focus-visi
 | Transition | none | = | = | = |
 | Cursor | pointer | = | = | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
+| Text decoration | - | underline offset 2px | underline offset 2px | underline offset 2px |
 
-Crops: none.
+Crops: `create-link-default.png`, `create-link-hover.png`, `create-link-focus-visible.png`, `create-link-pressed.png`.
 
 #### signup-card
 
@@ -1664,7 +1672,7 @@ Page: signup. Selector: `div.max-w-90`. States: default.
 | Painted layers | span.border-dark.text-light 60.5x22.0 border T:1px solid #949494 / R:1px solid #949494 / B:1px solid #949494 / L:1px solid #949494 r 9999px; span.border-dark.text-light 47.8x22.0 border T:1px solid #949494 / R:1px solid #949494 / B:1px solid #949494 / L:1px solid #949494 r 9999px; span.border-dark.text-light 70.9x22.0 border T:1px solid #949494 / R:1px solid #949494 / B:1px solid #949494 / L:1px solid #949494 r 9999px; span.border-dark.text-light 54.1x22.0 border T:1px solid #949494 / R:1px solid #949494 / B:1px solid #949494 / L:1px solid #949494 r 9999px; button.justify-center.whitespace-nowrap 360.0x40.0 bg #f2f2f2 r 9999px outline 2px solid #000000 @ 0 offset 0px; button.justify-center.whitespace-nowrap 360.0x40.0 bg #000000 r 9999px outline 2px solid #000000 @ 0 offset 0px |
 | How | at rest |
 
-Crops: none.
+Crops: `signup-card-default.png`.
 
 #### signup-field
 
@@ -1690,7 +1698,7 @@ Page: signup. Selector: `signup input[type=email]`. States: default, focused.
 | Painted layers | input.border-gray-alpha-200.placeholder:text-subtle 360.0x40.0 border T:1px solid #e5e5e5 / R:1px solid #e5e5e5 / B:1px solid #e5e5e5 / L:1px solid #e5e5e5 r 9999px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px outline 2px solid #000000 @ 0 offset 2px | = |
 | How | at rest | clicked into the field |
 
-Crops: none.
+Crops: `signup-field-default.png`, `signup-field-focused.png`.
 
 #### signup-google
 
@@ -1718,7 +1726,7 @@ Page: signup. Selector: `button "Sign up with Google"`. States: default, hover, 
 | Painted layers | button.justify-center.whitespace-nowrap 360.0x40.0 bg #f2f2f2 r 9999px outline 2px solid #000000 @ 0 offset 0px | button.justify-center.whitespace-nowrap 360.0x40.0 bg #000000 @ 0.1 r 9999px outline 2px solid #000000 @ 0 offset 0px | button.justify-center.whitespace-nowrap 360.0x40.0 bg #f2f2f2 r 9999px outline 2px solid #000000 offset 0px | button.justify-center.whitespace-nowrap 360.0x40.0 bg #000000 @ 0.1 r 9999px outline 2px solid #000000 @ 0 offset 0px |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
-Crops: none.
+Crops: `signup-google-default.png`, `signup-google-hover.png`, `signup-google-focus-visible.png`, `signup-google-pressed.png`.
 
 #### signup-legal
 
@@ -1741,7 +1749,7 @@ Page: signup. Selector: `signup legal p`. States: default.
 | Transition | none |
 | How | at rest |
 
-Crops: none.
+Crops: `signup-legal-default.png`.
 
 #### signup-email-btn
 
@@ -1767,7 +1775,7 @@ Page: signup. Selector: `button[data-signup-email-toggle]`. States: default, hov
 | Painted layers | button.justify-center.whitespace-nowrap 360.0x40.0 bg #ffffff border T:1px solid #e5e5e5 / R:1px solid #e5e5e5 / B:1px solid #e5e5e5 / L:1px solid #e5e5e5 r 9999px outline 2px solid #000000 @ 0 offset 2px | button.justify-center.whitespace-nowrap 360.0x40.0 bg #f6f6f6 border T:1px solid #e5e5e5 / R:1px solid #e5e5e5 / B:1px solid #e5e5e5 / L:1px solid #e5e5e5 r 9999px outline 2px solid #000000 @ 0 offset 2px | button.justify-center.whitespace-nowrap 360.0x40.0 bg #ffffff border T:1px solid #e5e5e5 / R:1px solid #e5e5e5 / B:1px solid #e5e5e5 / L:1px solid #e5e5e5 r 9999px outline 2px solid #000000 offset 2px | button.justify-center.whitespace-nowrap 360.0x40.0 bg #f6f6f6 border T:1px solid #e5e5e5 / R:1px solid #e5e5e5 / B:1px solid #e5e5e5 / L:1px solid #e5e5e5 r 9999px outline 2px solid #000000 @ 0 offset 2px |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
-Crops: none.
+Crops: `signup-email-btn-default.png`, `signup-email-btn-hover.png`, `signup-email-btn-focus-visible.png`, `signup-email-btn-pressed.png`.
 
 ### Mobile (390 wide)
 
@@ -1795,7 +1803,7 @@ Page: mobile. Selector: `banner at 390`. States: default.
 | Ancestor paint | 1 up body.has-[.payload-admin-bar]:mb-10 bg #fdfcfc |
 | How | at rest |
 
-Crops: none.
+Crops: `m-promo-default.png`.
 
 #### m-header
 
@@ -1823,7 +1831,7 @@ Page: mobile. Selector: `header bar at 390`. States: default.
 | Ancestor paint | 1 up body.has-[.payload-admin-bar]:mb-10 bg #fdfcfc |
 | How | at rest |
 
-Crops: none.
+Crops: `m-header-default.png`.
 
 #### m-menu-button
 
@@ -1849,7 +1857,7 @@ Page: mobile. Selector: `button[aria-label="Open menu"]`. States: default, hover
 | Painted layers | button.inline-flex.items-center 40.0x40.0 r 9999px outline 2px solid #000000 @ 0 offset 2px | = | = | = |
 | How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
 
-Crops: none.
+Crops: `m-menu-button-default.png`, `m-menu-button-hover.png`, `m-menu-button-focus-visible.png`, `m-menu-button-pressed.png`.
 
 #### m-menu-open
 
@@ -1876,7 +1884,7 @@ Page: mobile. Selector: `mobile menu panel`. States: default.
 | Ancestor paint | 1 up body.has-[.payload-admin-bar]:mb-10 bg #fdfcfc |
 | How | at rest |
 
-Crops: none.
+Crops: `m-menu-open-default.png`.
 
 #### m-nav-item
 
@@ -1903,7 +1911,7 @@ Page: mobile. Selector: `mobile menu item`. States: default, hover, focus-visibl
 | Painted layers | button.effect-focus.effect-color 362.0x24.0 outline 2px solid #000000 @ 0 offset 2px | = | button.effect-focus.effect-color 362.0x24.0 outline 2px solid #000000 offset 2px | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
-Crops: none.
+Crops: `m-nav-item-default.png`, `m-nav-item-hover.png`, `m-nav-item-focus-visible.png`, `m-nav-item-pressed.png`.
 
 #### m-hero
 
@@ -1926,7 +1934,7 @@ Page: mobile. Selector: `h1 at 390`. States: default.
 | Transition | none |
 | How | at rest |
 
-Crops: none.
+Crops: `m-hero-default.png`.
 
 #### m-footer-col
 
@@ -1952,7 +1960,7 @@ Page: mobile. Selector: `footer details at 390`. States: default, open.
 | Painted layers | summary::before.effect-color.effect-focus-before 358pxx32px border T:2px solid #000000 / R:2px solid #000000 / B:2px solid #000000 / L:2px solid #000000 r 24px | = |
 | How | at rest | opened by its own summary |
 
-Crops: none.
+Crops: `m-footer-col-default.png`, `m-footer-col-open.png`.
 
 #### m-footer-summary
 
@@ -1980,7 +1988,7 @@ Page: mobile. Selector: `footer summary at 390`. States: default, hover, focus-v
 | Painted layers | summary::before.effect-color.effect-focus-before 358pxx32px border T:2px solid #000000 / R:2px solid #000000 / B:2px solid #000000 / L:2px solid #000000 r 24px | = | = | = |
 | How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
 
-Crops: none.
+Crops: `m-footer-summary-default.png`, `m-footer-summary-hover.png`, `m-footer-summary-focus-visible.png`, `m-footer-summary-pressed.png`.
 
 ## Transitions declared in the readable stylesheets
 

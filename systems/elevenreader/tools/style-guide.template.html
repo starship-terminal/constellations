@@ -50,7 +50,10 @@ code { font-family: var(--sg-mono); font-size: .9em; }
 .btn.nav { height: var(--component-button-height-nav, 36px); padding: 0 16px; font-size: 14px; }
 .btn.outline { background: var(--surface-page, #fff); border-color: var(--border-default, #e5e5e5); color: var(--text-default, #000); }
 .btn.sso { height: var(--component-button-height-sso, 40px); padding: 0 16px; font-size: 14px; font-weight: 500; background: var(--surface-sunken, #f2f2f2); color: var(--text-default, #000); }
-.btn.sso.dark { background: var(--surface-inverse, #000); color: var(--text-inverse, #fff); }
+/* A dedicated variant class: `.dark` would also scope the dark token block
+   ([data-mode="dark"], .dark {}) and paint the button white instead of the
+   captured black Apple pill. */
+.btn.sso.apple { background: var(--surface-inverse, #000); color: var(--text-inverse, #fff); }
 .btn.field-o { height: var(--component-button-height-sso, 40px); font-size: 14px; font-weight: 500; background: var(--surface-page, #fff); border-color: var(--border-default, #e5e5e5); color: var(--text-default, #000); }
 .hero { color: var(--text-default, #000); padding: 72px 40px; font: 400 60px/1 var(--sg-display); letter-spacing: -1.8px; text-align: left; }
 .hero small { display: block; font: 400 18px/1.6 var(--sg-sans); color: var(--text-default, #000); opacity: .6; letter-spacing: 0; margin: 16px 0 22px; max-width: 46ch; }
@@ -107,7 +110,7 @@ table.cmp td, table.cmp th { border: 1px solid var(--border-default, #e5e5e5); p
   <h2 class="sh">The auth cards</h2>
   <p class="lead">/reader/sign-in and /reader/sign-up are bare centred columns on the page field — a 360px max-w-90 card of OAuth pills (sunken Google, inverse Apple, outlined email) over 40px pill inputs; the credential form is screen-reader-only until the "…with email" toggle expands it.</p>
   <div class="mock" style="padding:28px">
-    <div class="auth"><span class="wm">&#10073;&#10073;ElevenReader</span><span class="btn sso">Sign in with Google</span><span class="btn sso dark">Sign in with Apple</span><span class="btn field-o">Sign in with email</span><span class="field">Enter your email address</span><span class="btn primary" style="height:40px;font-size:14px;font-weight:500">Sign in</span></div>
+    <div class="auth"><span class="wm">&#10073;&#10073;ElevenReader</span><span class="btn sso">Sign in with Google</span><span class="btn sso apple">Sign in with Apple</span><span class="btn field-o">Sign in with email</span><span class="field">Enter your email address</span><span class="btn primary" style="height:40px;font-size:14px;font-weight:500">Sign in</span></div>
   </div>
 
   <h2 class="sh">Palette</h2>
@@ -193,9 +196,11 @@ const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) 
   // fontWeight, lineHeight, letterSpacing} resolved at 1440px.
   for (const [n, t] of flat(TOK.core.typography || {}, 'typography.')) {
     const v = t.v || {};
-    const px = Math.min(parseFloat(v.fontSize) || 14, 60);
+    // Render the token's own metrics: capping the size or substituting a
+    // line-height would make the label's printed values lie about the sample.
+    const px = parseFloat(v.fontSize) || 14;
     const fam = /waldenburg/i.test(String(v.fontFamily)) ? 'var(--sg-display)' : 'var(--sg-sans)';
-    h += `<div class="tspec"><span style="font:${v.fontWeight} ${px}px/1.15 ${fam};letter-spacing:${v.letterSpacing}">${esc(n)} — The quick brown fox</span><span class="tv">${esc(v.fontSize)} / lh ${esc(String(v.lineHeight))} / w ${esc(String(v.fontWeight))}</span></div>`;
+    h += `<div class="tspec"><span style="font:${v.fontWeight} ${px}px/${v.lineHeight} ${fam};letter-spacing:${v.letterSpacing}">${esc(n)} — The quick brown fox</span><span class="tv">${esc(v.fontSize)} / lh ${esc(String(v.lineHeight))} / w ${esc(String(v.fontWeight))}</span></div>`;
   }
   for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — ElevenReader</span><span class="tv">${esc(t.v)}</span></div>`;
   $('#type-out').innerHTML = h;

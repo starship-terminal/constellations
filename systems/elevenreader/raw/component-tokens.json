@@ -2267,7 +2267,7 @@
       "fontSize": "32px",
       "fontWeight": 700,
       "lineHeight": 1.1,
-      "letterSpacing": "0.171875px"
+      "letterSpacing": "0.32px"
      },
      "$type": "typography",
      "$extensions": {
@@ -2281,7 +2281,7 @@
       "fontSize": "28px",
       "fontWeight": 700,
       "lineHeight": 1.1,
-      "letterSpacing": "0.171875px"
+      "letterSpacing": "0.28px"
      },
      "$type": "typography",
      "$extensions": {
@@ -2297,7 +2297,7 @@
       "fontSize": "22px",
       "fontWeight": 700,
       "lineHeight": 1.4,
-      "letterSpacing": "0.171875px"
+      "letterSpacing": "0.22px"
      },
      "$type": "typography",
      "$extensions": {
@@ -2311,7 +2311,7 @@
       "fontSize": "18px",
       "fontWeight": 700,
       "lineHeight": 1.4,
-      "letterSpacing": "0.171875px"
+      "letterSpacing": "0.18px"
      },
      "$type": "typography",
      "$extensions": {
@@ -2325,7 +2325,7 @@
       "fontSize": "16px",
       "fontWeight": 700,
       "lineHeight": 1.4,
-      "letterSpacing": "0.171875px"
+      "letterSpacing": "0.16px"
      },
      "$type": "typography",
      "$extensions": {
@@ -2341,7 +2341,7 @@
       "fontSize": "22px",
       "fontWeight": 400,
       "lineHeight": 1.4,
-      "letterSpacing": "0.171875px"
+      "letterSpacing": "0.22px"
      },
      "$type": "typography",
      "$extensions": {
@@ -2355,7 +2355,7 @@
       "fontSize": "18px",
       "fontWeight": 400,
       "lineHeight": 1.4,
-      "letterSpacing": "0.171875px"
+      "letterSpacing": "0.18px"
      },
      "$type": "typography",
      "$extensions": {
@@ -2369,7 +2369,7 @@
       "fontSize": "16px",
       "fontWeight": 400,
       "lineHeight": 1.4,
-      "letterSpacing": "0.171875px"
+      "letterSpacing": "0.16px"
      },
      "$type": "typography",
      "$extensions": {
@@ -2383,7 +2383,7 @@
       "fontSize": "14px",
       "fontWeight": 400,
       "lineHeight": 1.4,
-      "letterSpacing": "0.171875px"
+      "letterSpacing": "0.14px"
      },
      "$type": "typography",
      "$extensions": {

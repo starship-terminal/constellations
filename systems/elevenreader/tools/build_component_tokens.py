@@ -321,11 +321,21 @@ for role in ["display", "heading", "subhead", "description", "body", "ui"]:
         base = f"--f-{role}-0{i}"
         # the mobile (base) declaration sits in the theme rules before the
         # min-width overrides; the resolved pass holds the 1440px value.
+        # The resolved letter-spacing came from a generic probe element, so an
+        # em value resolved against the probe's font size, not the role's:
+        # heading.04's .01em resolved to 0.171875px where the 32px role makes
+        # it 0.32px. Re-resolve the declared relative value against this
+        # step's own font-size; an already-absolute value passes through.
+        ls = R.get(base + "-letter-spacing", "0px")
+        ls_raw = str((RL.get(base + "-letter-spacing") or {}).get("raw") or "").strip()
+        m = re.fullmatch(r"(-?[\d.]+)em", ls_raw)
+        if m:
+            ls = f"{float(R[base + '-font-size'].rstrip('px')) * float(m.group(1)):g}px"
         val = {"fontFamily": FAMILY[role],
                "fontSize": R[base + "-font-size"],
                "fontWeight": int(float(R.get(base + "-font-weight", "400"))),
                "lineHeight": float(R.get(base + "-line-height", "100%").rstrip("%")) / 100,
-               "letterSpacing": R.get(base + "-letter-spacing", "0px")}
+               "letterSpacing": ls}
         if R.get(base + "-text-transform"):
             val["textTransform"] = R[base + "-text-transform"]
         leaf = {"$value": val, "$type": "typography",

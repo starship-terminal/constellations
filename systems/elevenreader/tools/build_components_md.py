@@ -115,6 +115,13 @@ def props(v):
         o["text"] = f"{font(t['fontSize'], t['lineHeight'], t['fontWeight'], t['fontFamily'])}, {colour(t['color'])}"
     else:
         o["text"] = f"{font(s['fontSize'], s['lineHeight'], s['fontWeight'], s['fontFamily'])}, {colour(s['color'])}"
+    # Text decoration is a real state carrier here: links paint none at rest
+    # and underline on hover/focus/pressed, so it belongs in the diffed value.
+    if s.get("textDecorationLine") not in (None, "", "none"):
+        deco = s["textDecorationLine"]
+        if s.get("textUnderlineOffset") not in (None, "auto"):
+            deco += f" offset {s['textUnderlineOffset']}"
+        o["text"] += f", {deco}"
     if s["transitionDuration"] not in ("0s", ""):
         props_ = [x.strip() for x in s["transitionProperty"].split(",")]
         durs = [x.strip() for x in s["transitionDuration"].split(",")]
@@ -342,17 +349,23 @@ for k, c in C.items():
         for d in ("Top", "Right", "Bottom", "Left")
         for p in ("Color", "Width", "Style")
     )
+    # A link that gains an underline under keyboard focus changes without
+    # painting a ring, shadow or border — count it or it reads as no change.
+    decor = s["textDecorationLine"] != base["textDecorationLine"]
     desc = f"{s['outlineWidth']} {s['outlineStyle']} {colour(s['outlineColor'])}, offset {s['outlineOffset']}" if ring else (f"on a child: {child_ring}" if child_ring else None)
-    foc.append((k, ring or bool(child_ring), shadow, border, desc))
-with_ring = [f"`{k}` ({r})" for k, ring, sh, bd, r in foc if ring]
-with_shadow = [f"`{k}`" for k, ring, sh, bd, r in foc if not ring and sh]
-with_border = [f"`{k}`" for k, ring, sh, bd, r in foc if not ring and not sh and bd]
-without = [f"`{k}`" for k, ring, sh, bd, r in foc if not ring and not sh and not bd]
+    foc.append((k, ring or bool(child_ring), shadow, border, decor, desc))
+with_ring = [f"`{k}` ({r})" for k, ring, sh, bd, de, r in foc if ring]
+with_shadow = [f"`{k}`" for k, ring, sh, bd, de, r in foc if not ring and sh]
+with_border = [f"`{k}`" for k, ring, sh, bd, de, r in foc if not ring and not sh and bd]
+with_decor = [f"`{k}`" for k, ring, sh, bd, de, r in foc if not ring and not sh and not bd and de]
+without = [f"`{k}`" for k, ring, sh, bd, de, r in foc if not ring and not sh and not bd and not de]
 parts = [f"{len(with_ring)} draw an outline ring: {', '.join(with_ring)}."]
 if with_shadow:
     parts.append(f"{len(with_shadow)} draw a focus ring as a shadow instead: {', '.join(with_shadow)}.")
 if with_border:
     parts.append(f"{len(with_border)} change only their border: {', '.join(with_border)}.")
+if with_decor:
+    parts.append(f"{len(with_decor)} change only their text decoration (none \u2192 underline): {', '.join(with_decor)}.")
 if without:
     parts.append(f"The other {len(without)} show no measured change: {', '.join(without)}.")
 W(f"**Focus.** {len(foc)} components were given a real keyboard focus. {' '.join(parts)}")

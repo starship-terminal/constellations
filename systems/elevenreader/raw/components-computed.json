@@ -1120,7 +1120,8 @@
       "textTransform": "none"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "at rest"
+     "via": "at rest",
+     "crop": "components/crops/promo-banner-default.png"
     }
    },
    "page": "home",
@@ -1232,7 +1233,8 @@
       }
      ],
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "at rest"
+     "via": "at rest",
+     "crop": "components/crops/promo-cta-default.png"
     },
     "hover": {
      "tag": "a",
@@ -1333,7 +1335,8 @@
       }
      ],
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "crop": "components/crops/promo-cta-hover.png"
     },
     "focus-visible": {
      "tag": "a",
@@ -1434,7 +1437,8 @@
       }
      ],
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "Shift+Tab, Tab"
+     "via": "Shift+Tab, Tab",
+     "crop": "components/crops/promo-cta-focus-visible.png"
     },
     "pressed": {
      "tag": "a",
@@ -1535,7 +1539,8 @@
       }
      ],
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "CDP forcePseudoState :active:hover"
+     "via": "CDP forcePseudoState :active:hover",
+     "crop": "components/crops/promo-cta-pressed.png"
     }
    },
    "page": "home",
@@ -1723,7 +1728,8 @@
       "color": "rgb(0, 0, 0)"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "at rest"
+     "via": "at rest",
+     "crop": "components/crops/header-default.png"
     }
    },
    "page": "home",
@@ -1825,7 +1831,8 @@
       }
      ],
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "at rest"
+     "via": "at rest",
+     "crop": "components/crops/logo-default.png"
     }
    },
    "page": "home",
@@ -1927,7 +1934,8 @@
       }
      ],
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "at rest"
+     "via": "at rest",
+     "crop": "components/crops/nav-link-default.png"
     },
     "hover": {
      "tag": "a",
@@ -2019,7 +2027,8 @@
       }
      ],
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "crop": "components/crops/nav-link-hover.png"
     },
     "focus-visible": {
      "tag": "a",
@@ -2110,7 +2119,8 @@
       }
      ],
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "Shift+Tab, Tab"
+     "via": "Shift+Tab, Tab",
+     "crop": "components/crops/nav-link-focus-visible.png"
     },
     "pressed": {
      "tag": "a",
@@ -2202,7 +2212,8 @@
       }
      ],
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "CDP forcePseudoState :active:hover"
+     "via": "CDP forcePseudoState :active:hover",
+     "crop": "components/crops/nav-link-pressed.png"
     }
    },
    "page": "home",
@@ -2311,7 +2322,8 @@
       "color": "rgb(0, 0, 0)"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "at rest"
+     "via": "at rest",
+     "crop": "components/crops/nav-discover-default.png"
     },
     "hover": {
      "tag": "button",
@@ -2410,7 +2422,8 @@
       "color": "rgb(0, 0, 0)"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "crop": "components/crops/nav-discover-hover.png"
     },
     "focus-visible": {
      "tag": "button",
@@ -2508,7 +2521,8 @@
       "color": "rgb(0, 0, 0)"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "Shift+Tab, Tab"
+     "via": "Shift+Tab, Tab",
+     "crop": "components/crops/nav-discover-focus-visible.png"
     },
     "pressed": {
      "tag": "button",
@@ -2607,7 +2621,8 @@
       "color": "rgb(0, 0, 0)"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "CDP forcePseudoState :active:hover"
+     "via": "CDP forcePseudoState :active:hover",
+     "crop": "components/crops/nav-discover-pressed.png"
     }
    },
    "page": "home",
@@ -2712,7 +2727,8 @@
       }
      ],
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "at rest"
+     "via": "at rest",
+     "crop": "components/crops/nav-signin-default.png"
     },
     "hover": {
      "tag": "a",
@@ -2806,7 +2822,8 @@
       }
      ],
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "crop": "components/crops/nav-signin-hover.png"
     },
     "focus-visible": {
      "tag": "a",
@@ -2900,7 +2917,8 @@
       }
      ],
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "Shift+Tab, Tab"
+     "via": "Shift+Tab, Tab",
+     "crop": "components/crops/nav-signin-focus-visible.png"
     },
     "pressed": {
      "tag": "a",
@@ -2994,7 +3012,8 @@
       }
      ],
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "CDP forcePseudoState :active:hover"
+     "via": "CDP forcePseudoState :active:hover",
+     "crop": "components/crops/nav-signin-pressed.png"
     }
    },
    "page": "home",
@@ -3109,7 +3128,8 @@
       "textTransform": "none"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "at rest"
+     "via": "at rest",
+     "crop": "components/crops/nav-cta-default.png"
     },
     "hover": {
      "tag": "a",
@@ -3213,7 +3233,8 @@
       "textTransform": "none"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "crop": "components/crops/nav-cta-hover.png"
     },
     "focus-visible": {
      "tag": "a",
@@ -3317,7 +3338,8 @@
       "textTransform": "none"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "Shift+Tab, Tab"
+     "via": "Shift+Tab, Tab",
+     "crop": "components/crops/nav-cta-focus-visible.png"
     },
     "pressed": {
      "tag": "a",
@@ -3421,7 +3443,8 @@
       "textTransform": "none"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "CDP forcePseudoState :active:hover"
+     "via": "CDP forcePseudoState :active:hover",
+     "crop": "components/crops/nav-cta-pressed.png"
     }
    },
    "page": "home",
@@ -3615,7 +3638,8 @@
       "textTransform": "none"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "at rest"
+     "via": "at rest",
+     "crop": "components/crops/nav-dropdown-default.png"
     }
    },
    "page": "home",
@@ -3729,7 +3753,8 @@
       "textTransform": "none"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "at rest"
+     "via": "at rest",
+     "crop": "components/crops/menu-link-default.png"
     },
     "hover": {
      "tag": "a",
@@ -3833,7 +3858,8 @@
       "textTransform": "none"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "crop": "components/crops/menu-link-hover.png"
     },
     "focus-visible": {
      "tag": "a",
@@ -3937,7 +3963,8 @@
       "textTransform": "none"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "Shift+Tab, Tab"
+     "via": "Shift+Tab, Tab",
+     "crop": "components/crops/menu-link-focus-visible.png"
     },
     "pressed": {
      "tag": "a",
@@ -4041,7 +4068,8 @@
       "textTransform": "none"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "CDP forcePseudoState :active:hover"
+     "via": "CDP forcePseudoState :active:hover",
+     "crop": "components/crops/menu-link-pressed.png"
     }
    },
    "page": "home",
@@ -4135,7 +4163,8 @@
       "top": "auto"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "at rest"
+     "via": "at rest",
+     "crop": "components/crops/menu-heading-default.png"
     }
    },
    "page": "home",
@@ -4229,7 +4258,8 @@
       "top": "auto"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "at rest"
+     "via": "at rest",
+     "crop": "components/crops/hero-h1-default.png"
     }
    },
    "page": "home",
@@ -4323,7 +4353,8 @@
       "top": "auto"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "at rest"
+     "via": "at rest",
+     "crop": "components/crops/hero-lede-default.png"
     }
    },
    "page": "home",
@@ -4426,7 +4457,8 @@
       }
      ],
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "at rest"
+     "via": "at rest",
+     "crop": "components/crops/hero-cta-default.png"
     },
     "hover": {
      "tag": "a",
@@ -4518,7 +4550,8 @@
       }
      ],
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "crop": "components/crops/hero-cta-hover.png"
     },
     "focus-visible": {
      "tag": "a",
@@ -4610,7 +4643,8 @@
       }
      ],
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "Shift+Tab, Tab"
+     "via": "Shift+Tab, Tab",
+     "crop": "components/crops/hero-cta-focus-visible.png"
     },
     "pressed": {
      "tag": "a",
@@ -4702,7 +4736,8 @@
       }
      ],
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "CDP forcePseudoState :active:hover"
+     "via": "CDP forcePseudoState :active:hover",
+     "crop": "components/crops/hero-cta-pressed.png"
     }
    },
    "page": "home",
@@ -4806,7 +4841,8 @@
       }
      ],
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "at rest"
+     "via": "at rest",
+     "crop": "components/crops/hero-cta-2-default.png"
     },
     "hover": {
      "tag": "a",
@@ -4899,7 +4935,8 @@
       }
      ],
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "crop": "components/crops/hero-cta-2-hover.png"
     },
     "focus-visible": {
      "tag": "a",
@@ -4992,7 +5029,8 @@
       }
      ],
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "Shift+Tab, Tab"
+     "via": "Shift+Tab, Tab",
+     "crop": "components/crops/hero-cta-2-focus-visible.png"
     },
     "pressed": {
      "tag": "a",
@@ -5085,7 +5123,8 @@
       }
      ],
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "CDP forcePseudoState :active:hover"
+     "via": "CDP forcePseudoState :active:hover",
+     "crop": "components/crops/hero-cta-2-pressed.png"
     }
    },
    "page": "home",
@@ -5179,7 +5218,8 @@
       "top": "131.66px"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "at rest"
+     "via": "at rest",
+     "crop": "components/crops/book-cover-default.png"
     },
     "hover": {
      "tag": "div",
@@ -5262,7 +5302,8 @@
       "top": "131.66px"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "crop": "components/crops/book-cover-hover.png"
     }
    },
    "page": "home",
@@ -5356,7 +5397,8 @@
       "top": "auto"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "at rest"
+     "via": "at rest",
+     "crop": "components/crops/eyebrow-default.png"
     }
    },
    "page": "home",
@@ -5462,7 +5504,8 @@
       "textTransform": "none"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "at rest"
+     "via": "at rest",
+     "crop": "components/crops/section-h3-default.png"
     }
    },
    "page": "home",
@@ -5556,7 +5599,8 @@
       "top": "auto"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "at rest"
+     "via": "at rest",
+     "crop": "components/crops/book-link-default.png"
     },
     "hover": {
      "tag": "a",
@@ -5639,7 +5683,8 @@
       "top": "auto"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "crop": "components/crops/book-link-hover.png"
     },
     "focus-visible": {
      "tag": "a",
@@ -5722,7 +5767,8 @@
       "top": "auto"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "Shift+Tab, Tab"
+     "via": "Shift+Tab, Tab",
+     "crop": "components/crops/book-link-focus-visible.png"
     },
     "pressed": {
      "tag": "a",
@@ -5805,7 +5851,8 @@
       "top": "auto"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "CDP forcePseudoState :active:hover"
+     "via": "CDP forcePseudoState :active:hover",
+     "crop": "components/crops/book-link-pressed.png"
     }
    },
    "page": "home",
@@ -5909,7 +5956,8 @@
       }
      ],
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "at rest"
+     "via": "at rest",
+     "crop": "components/crops/genre-chip-default.png"
     },
     "hover": {
      "tag": "button",
@@ -6002,7 +6050,8 @@
       }
      ],
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "crop": "components/crops/genre-chip-hover.png"
     },
     "focus-visible": {
      "tag": "button",
@@ -6095,7 +6144,8 @@
       }
      ],
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "Shift+Tab, Tab"
+     "via": "Shift+Tab, Tab",
+     "crop": "components/crops/genre-chip-focus-visible.png"
     },
     "pressed": {
      "tag": "button",
@@ -6188,7 +6238,8 @@
       }
      ],
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "CDP forcePseudoState :active:hover"
+     "via": "CDP forcePseudoState :active:hover",
+     "crop": "components/crops/genre-chip-pressed.png"
     }
    },
    "page": "home",
@@ -6291,7 +6342,8 @@
       }
      ],
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "at rest"
+     "via": "at rest",
+     "crop": "components/crops/view-all-default.png"
     },
     "hover": {
      "tag": "a",
@@ -6383,7 +6435,8 @@
       }
      ],
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "crop": "components/crops/view-all-hover.png"
     },
     "focus-visible": {
      "tag": "a",
@@ -6475,7 +6528,8 @@
       }
      ],
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "Shift+Tab, Tab"
+     "via": "Shift+Tab, Tab",
+     "crop": "components/crops/view-all-focus-visible.png"
     },
     "pressed": {
      "tag": "a",
@@ -6567,7 +6621,8 @@
       }
      ],
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "CDP forcePseudoState :active:hover"
+     "via": "CDP forcePseudoState :active:hover",
+     "crop": "components/crops/view-all-pressed.png"
     }
    },
    "page": "home",
@@ -6671,7 +6726,8 @@
       }
      ],
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "at rest"
+     "via": "at rest",
+     "crop": "components/crops/try-cta-default.png"
     },
     "hover": {
      "tag": "a",
@@ -6764,7 +6820,8 @@
       }
      ],
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "crop": "components/crops/try-cta-hover.png"
     },
     "focus-visible": {
      "tag": "a",
@@ -6857,7 +6914,8 @@
       }
      ],
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "Shift+Tab, Tab"
+     "via": "Shift+Tab, Tab",
+     "crop": "components/crops/try-cta-focus-visible.png"
     },
     "pressed": {
      "tag": "a",
@@ -6950,7 +7008,8 @@
       }
      ],
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "CDP forcePseudoState :active:hover"
+     "via": "CDP forcePseudoState :active:hover",
+     "crop": "components/crops/try-cta-pressed.png"
     }
    },
    "page": "home",
@@ -7082,7 +7141,8 @@
       "textTransform": "none"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "at rest"
+     "via": "at rest",
+     "crop": "components/crops/faq-item-default.png"
     },
     "open": {
      "tag": "details",
@@ -7204,7 +7264,8 @@
       "textTransform": "none"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "opened by its own summary"
+     "via": "opened by its own summary",
+     "crop": "components/crops/faq-item-open.png"
     }
    },
    "page": "home",
@@ -7355,7 +7416,8 @@
       "textTransform": "none"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "at rest"
+     "via": "at rest",
+     "crop": "components/crops/faq-summary-default.png"
     },
     "hover": {
      "tag": "summary",
@@ -7495,7 +7557,8 @@
       "textTransform": "none"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "crop": "components/crops/faq-summary-hover.png"
     },
     "focus-visible": {
      "tag": "summary",
@@ -7635,7 +7698,8 @@
       "textTransform": "none"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "Shift+Tab, Tab"
+     "via": "Shift+Tab, Tab",
+     "crop": "components/crops/faq-summary-focus-visible.png"
     },
     "pressed": {
      "tag": "summary",
@@ -7775,7 +7839,8 @@
       "textTransform": "none"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "CDP forcePseudoState :active:hover"
+     "via": "CDP forcePseudoState :active:hover",
+     "crop": "components/crops/faq-summary-pressed.png"
     }
    },
    "page": "home",
@@ -7958,7 +8023,8 @@
       "color": "rgb(0, 0, 0)"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "at rest"
+     "via": "at rest",
+     "crop": "components/crops/footer-default.png"
     }
    },
    "page": "home",
@@ -8052,7 +8118,8 @@
       "top": "auto"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "at rest"
+     "via": "at rest",
+     "crop": "components/crops/footer-col-default.png"
     }
    },
    "page": "home",
@@ -8146,7 +8213,8 @@
       "top": "auto"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "at rest"
+     "via": "at rest",
+     "crop": "components/crops/footer-link-default.png"
     },
     "hover": {
      "tag": "a",
@@ -8229,7 +8297,8 @@
       "top": "auto"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "crop": "components/crops/footer-link-hover.png"
     },
     "focus-visible": {
      "tag": "a",
@@ -8312,7 +8381,8 @@
       "top": "auto"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "Shift+Tab, Tab"
+     "via": "Shift+Tab, Tab",
+     "crop": "components/crops/footer-link-focus-visible.png"
     },
     "pressed": {
      "tag": "a",
@@ -8395,7 +8465,8 @@
       "top": "auto"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "CDP forcePseudoState :active:hover"
+     "via": "CDP forcePseudoState :active:hover",
+     "crop": "components/crops/footer-link-pressed.png"
     }
    },
    "page": "home",
@@ -8489,7 +8560,8 @@
       "top": "auto"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "at rest"
+     "via": "at rest",
+     "crop": "components/crops/explore-h1-default.png"
     }
    },
    "page": "explore",
@@ -8583,7 +8655,8 @@
       "top": "auto"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "at rest"
+     "via": "at rest",
+     "crop": "components/crops/rail-h2-default.png"
     }
    },
    "page": "explore",
@@ -8698,7 +8771,8 @@
       "textTransform": "none"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "at rest"
+     "via": "at rest",
+     "crop": "components/crops/coverflow-card-default.png"
     },
     "hover": {
      "tag": "div",
@@ -8802,7 +8876,8 @@
       "textTransform": "none"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "crop": "components/crops/coverflow-card-hover.png"
     }
    },
    "page": "explore",
@@ -8908,7 +8983,8 @@
       "textTransform": "none"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "at rest"
+     "via": "at rest",
+     "crop": "components/crops/book-title-default.png"
     },
     "hover": {
      "tag": "a",
@@ -9003,7 +9079,8 @@
       "textTransform": "none"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "crop": "components/crops/book-title-hover.png"
     },
     "focus-visible": {
      "tag": "a",
@@ -9098,7 +9175,8 @@
       "textTransform": "none"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "Shift+Tab, Tab"
+     "via": "Shift+Tab, Tab",
+     "crop": "components/crops/book-title-focus-visible.png"
     },
     "pressed": {
      "tag": "a",
@@ -9193,7 +9271,8 @@
       "textTransform": "none"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "CDP forcePseudoState :active:hover"
+     "via": "CDP forcePseudoState :active:hover",
+     "crop": "components/crops/book-title-pressed.png"
     }
    },
    "page": "explore",
@@ -9287,7 +9366,8 @@
       "top": "auto"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "at rest"
+     "via": "at rest",
+     "crop": "components/crops/book-meta-default.png"
     }
    },
    "page": "explore",
@@ -9400,7 +9480,8 @@
       "color": "rgb(118, 118, 118)"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "at rest"
+     "via": "at rest",
+     "crop": "components/crops/genre-link-default.png"
     },
     "hover": {
      "tag": "a",
@@ -9502,7 +9583,8 @@
       "color": "rgb(118, 118, 118)"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "crop": "components/crops/genre-link-hover.png"
     },
     "focus-visible": {
      "tag": "a",
@@ -9604,7 +9686,8 @@
       "color": "rgb(118, 118, 118)"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "Shift+Tab, Tab"
+     "via": "Shift+Tab, Tab",
+     "crop": "components/crops/genre-link-focus-visible.png"
     },
     "pressed": {
      "tag": "a",
@@ -9706,7 +9789,8 @@
       "color": "rgb(118, 118, 118)"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "CDP forcePseudoState :active:hover"
+     "via": "CDP forcePseudoState :active:hover",
+     "crop": "components/crops/genre-link-pressed.png"
     }
    },
    "page": "explore",
@@ -9811,7 +9895,7 @@
       "textDecorationLine": "none",
       "textTransform": "none"
      },
-     "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
+     "crop": "components/crops/pricing-h1-default.png",
      "via": "at rest"
     }
    },
@@ -9913,7 +9997,7 @@
        "radius": "9999px"
       }
      ],
-     "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
+     "crop": "components/crops/billing-off-default.png",
      "via": "at rest"
     },
     "hover": {
@@ -10004,7 +10088,7 @@
        "radius": "9999px"
       }
      ],
-     "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
+     "crop": "components/crops/billing-off-hover.png",
      "via": "mouse hover"
     },
     "focus-visible": {
@@ -10095,7 +10179,7 @@
        "radius": "9999px"
       }
      ],
-     "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
+     "crop": "components/crops/billing-off-focus-visible.png",
      "via": "Shift+Tab, Tab"
     },
     "pressed": {
@@ -10186,7 +10270,7 @@
        "radius": "9999px"
       }
      ],
-     "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
+     "crop": "components/crops/billing-off-pressed.png",
      "via": "CDP forcePseudoState :active:hover"
     }
    },
@@ -10296,7 +10380,7 @@
        "radius": "9999px"
       }
      ],
-     "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
+     "crop": "components/crops/billing-on-default.png",
      "via": "at rest"
     },
     "hover": {
@@ -10395,7 +10479,7 @@
        "radius": "9999px"
       }
      ],
-     "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
+     "crop": "components/crops/billing-on-hover.png",
      "via": "mouse hover"
     },
     "focus-visible": {
@@ -10494,7 +10578,7 @@
        "radius": "9999px"
       }
      ],
-     "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
+     "crop": "components/crops/billing-on-focus-visible.png",
      "via": "Shift+Tab, Tab"
     },
     "pressed": {
@@ -10593,7 +10677,7 @@
        "radius": "9999px"
       }
      ],
-     "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
+     "crop": "components/crops/billing-on-pressed.png",
      "via": "CDP forcePseudoState :active:hover"
     }
    },
@@ -10705,7 +10789,7 @@
        "bg": "rgb(255, 255, 255)"
       }
      ],
-     "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
+     "crop": "components/crops/save-badge-default.png",
      "via": "at rest"
     }
    },
@@ -10845,7 +10929,7 @@
       "stroke": "none",
       "color": "rgb(0, 0, 0)"
      },
-     "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
+     "crop": "components/crops/plan-card-default.png",
      "via": "at rest"
     }
    },
@@ -10959,7 +11043,7 @@
       "textDecorationLine": "none",
       "textTransform": "none"
      },
-     "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
+     "crop": "components/crops/plan-name-default.png",
      "via": "at rest"
     }
    },
@@ -11073,7 +11157,7 @@
       "textDecorationLine": "none",
       "textTransform": "none"
      },
-     "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
+     "crop": "components/crops/plan-price-default.png",
      "via": "at rest"
     }
    },
@@ -11176,7 +11260,7 @@
        "radius": "9999px"
       }
      ],
-     "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
+     "crop": "components/crops/plan-cta-default.png",
      "via": "at rest"
     },
     "hover": {
@@ -11268,7 +11352,7 @@
        "radius": "9999px"
       }
      ],
-     "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
+     "crop": "components/crops/plan-cta-hover.png",
      "via": "mouse hover"
     },
     "focus-visible": {
@@ -11360,7 +11444,7 @@
        "radius": "9999px"
       }
      ],
-     "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
+     "crop": "components/crops/plan-cta-focus-visible.png",
      "via": "Shift+Tab, Tab"
     },
     "pressed": {
@@ -11452,7 +11536,7 @@
        "radius": "9999px"
       }
      ],
-     "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
+     "crop": "components/crops/plan-cta-pressed.png",
      "via": "CDP forcePseudoState :active:hover"
     }
    },
@@ -11468,20 +11552,20 @@
    "states": {
     "default": {
      "tag": "li",
-     "classes": "inline-flex h-10 items-center",
-     "text": "Explore",
+     "classes": "flex items-start gap-4",
+     "text": "Listen with 10 hours of text to audio every month That’s about a 400-page book e",
      "rect": {
-      "x": 304,
-      "y": 61,
-      "w": 74.25,
-      "h": 40
+      "x": 183,
+      "y": 427.4,
+      "w": 470,
+      "h": 44.98
      },
      "style": {
       "display": "flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "74.25px",
-      "height": "40px",
+      "width": "470px",
+      "height": "44.9844px",
       "minWidth": "auto",
       "maxWidth": "none",
       "minHeight": "auto",
@@ -11493,11 +11577,11 @@
       "marginRight": "0px",
       "marginBottom": "0px",
       "marginLeft": "0px",
-      "gap": "normal",
-      "rowGap": "normal",
-      "columnGap": "normal",
+      "gap": "16px",
+      "rowGap": "16px",
+      "columnGap": "16px",
       "flexDirection": "row",
-      "alignItems": "center",
+      "alignItems": "flow-start",
       "justifyContent": "normal",
       "gridTemplateColumns": "none",
       "borderTopWidth": "0px",
@@ -11546,27 +11630,26 @@
       "zIndex": "auto",
       "top": "auto"
      },
-     "paint": [
-      {
-       "node": "a.inline-flex.justify-center",
-       "size": "74.3x36.0",
-       "outline": "2px solid rgba(0, 0, 0, 0) offset 2px",
-       "radius": "9999px"
-      }
-     ],
      "textStyle": {
-      "node": "a.inline-flex.justify-center",
-      "text": "Explore",
-      "fontFamily": "Inter, \"Inter Fallback\"",
-      "fontSize": "14px",
-      "lineHeight": "20px",
-      "fontWeight": "400",
-      "letterSpacing": "0.14px",
+      "node": "span.font-waldenburg.text-[18px]",
+      "text": "Listen with 10 hours of text to audio ev",
+      "fontFamily": "Waldenburg, \"Waldenburg Fallback\", sans-serif",
+      "fontSize": "18px",
+      "lineHeight": "23.4px",
+      "fontWeight": "375",
+      "letterSpacing": "normal",
       "color": "rgb(0, 0, 0)",
       "textDecorationLine": "none",
       "textTransform": "none"
      },
-     "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
+     "icon": {
+      "w": 16,
+      "h": 16,
+      "fill": "none",
+      "stroke": "none",
+      "color": "rgb(0, 0, 0)"
+     },
+     "crop": "components/crops/feature-li-default.png",
      "via": "at rest"
     }
    },
@@ -11576,7 +11659,7 @@
    "title": "Feature row",
    "group": "Pricing",
    "desc": "A feature row inside a plan card or the \"Everything you unlock\" list.",
-   "selector": "plan li"
+   "selector": "main section li"
   },
   "ab-h1": {
    "states": {
@@ -12297,27 +12380,27 @@
    "states": {
     "default": {
      "tag": "a",
-     "classes": "inline-flex justify-center items-center cursor-pointer",
+     "classes": "inline-flex justify-center items-center rounded-sm",
      "text": "Explore",
      "rect": {
-      "x": 196,
-      "y": 14,
-      "w": 74.25,
-      "h": 36
+      "x": 132,
+      "y": 121,
+      "w": 50.05,
+      "h": 20
      },
      "style": {
       "display": "flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "74.25px",
-      "height": "36px",
+      "width": "50.0469px",
+      "height": "20px",
       "minWidth": "auto",
       "maxWidth": "none",
       "minHeight": "auto",
       "paddingTop": "0px",
-      "paddingRight": "12px",
+      "paddingRight": "0px",
       "paddingBottom": "0px",
-      "paddingLeft": "12px",
+      "paddingLeft": "0px",
       "marginTop": "0px",
       "marginRight": "0px",
       "marginBottom": "0px",
@@ -12341,31 +12424,31 @@
       "borderLeftWidth": "0px",
       "borderLeftStyle": "solid",
       "borderLeftColor": "rgb(229, 229, 229)",
-      "borderTopLeftRadius": "9999px",
-      "borderTopRightRadius": "9999px",
-      "borderBottomRightRadius": "9999px",
-      "borderBottomLeftRadius": "9999px",
+      "borderTopLeftRadius": "2px",
+      "borderTopRightRadius": "2px",
+      "borderBottomRightRadius": "2px",
+      "borderBottomLeftRadius": "2px",
       "backgroundColor": "rgba(0, 0, 0, 0)",
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "2px",
-      "outlineStyle": "solid",
-      "outlineColor": "rgba(0, 0, 0, 0)",
-      "outlineOffset": "2px",
+      "outlineWidth": "3px",
+      "outlineStyle": "none",
+      "outlineColor": "rgb(118, 118, 118)",
+      "outlineOffset": "0px",
       "fontFamily": "Inter, \"Inter Fallback\"",
-      "fontSize": "14px",
-      "fontWeight": "400",
-      "lineHeight": "20px",
-      "letterSpacing": "0.14px",
-      "textTransform": "none",
-      "color": "rgb(0, 0, 0)",
+      "fontSize": "12px",
+      "fontWeight": "700",
+      "lineHeight": "13.2px",
+      "letterSpacing": "normal",
+      "textTransform": "uppercase",
+      "color": "rgb(118, 118, 118)",
       "textDecorationLine": "none",
-      "textDecorationColor": "rgb(0, 0, 0)",
+      "textDecorationColor": "rgb(118, 118, 118)",
       "textDecorationThickness": "auto",
-      "textUnderlineOffset": "auto",
+      "textUnderlineOffset": "2px",
       "transitionProperty": "all",
-      "transitionDuration": "0.2s",
+      "transitionDuration": "0s",
       "transitionTimingFunction": "ease",
       "transitionDelay": "0s",
       "cursor": "pointer",
@@ -12375,40 +12458,44 @@
       "zIndex": "auto",
       "top": "auto"
      },
-     "paint": [
-      {
-       "node": "a.inline-flex.justify-center",
-       "size": "74.3x36.0",
-       "outline": "2px solid rgba(0, 0, 0, 0) offset 2px",
-       "radius": "9999px"
-      }
-     ],
+     "textStyle": {
+      "node": "span.whitespace-nowrap.text-inherit",
+      "text": "Explore",
+      "fontFamily": "Inter, \"Inter Fallback\"",
+      "fontSize": "14px",
+      "lineHeight": "20px",
+      "fontWeight": "500",
+      "letterSpacing": "normal",
+      "color": "rgb(118, 118, 118)",
+      "textDecorationLine": "none",
+      "textTransform": "none"
+     },
      "crop": "components/crops/ab-crumb-default.png",
      "via": "at rest"
     },
     "hover": {
      "tag": "a",
-     "classes": "inline-flex justify-center items-center cursor-pointer",
+     "classes": "inline-flex justify-center items-center rounded-sm",
      "text": "Explore",
      "rect": {
-      "x": 196,
-      "y": 14,
-      "w": 74.25,
-      "h": 36
+      "x": 132,
+      "y": 121,
+      "w": 50.05,
+      "h": 20
      },
      "style": {
       "display": "flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "74.25px",
-      "height": "36px",
+      "width": "50.0469px",
+      "height": "20px",
       "minWidth": "auto",
       "maxWidth": "none",
       "minHeight": "auto",
       "paddingTop": "0px",
-      "paddingRight": "12px",
+      "paddingRight": "0px",
       "paddingBottom": "0px",
-      "paddingLeft": "12px",
+      "paddingLeft": "0px",
       "marginTop": "0px",
       "marginRight": "0px",
       "marginBottom": "0px",
@@ -12432,31 +12519,31 @@
       "borderLeftWidth": "0px",
       "borderLeftStyle": "solid",
       "borderLeftColor": "rgb(229, 229, 229)",
-      "borderTopLeftRadius": "9999px",
-      "borderTopRightRadius": "9999px",
-      "borderBottomRightRadius": "9999px",
-      "borderBottomLeftRadius": "9999px",
-      "backgroundColor": "rgb(246, 246, 246)",
+      "borderTopLeftRadius": "2px",
+      "borderTopRightRadius": "2px",
+      "borderBottomRightRadius": "2px",
+      "borderBottomLeftRadius": "2px",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "2px",
-      "outlineStyle": "solid",
-      "outlineColor": "rgba(0, 0, 0, 0)",
-      "outlineOffset": "2px",
+      "outlineWidth": "3px",
+      "outlineStyle": "none",
+      "outlineColor": "rgb(110, 110, 110)",
+      "outlineOffset": "0px",
       "fontFamily": "Inter, \"Inter Fallback\"",
-      "fontSize": "14px",
-      "fontWeight": "400",
-      "lineHeight": "20px",
-      "letterSpacing": "0.14px",
-      "textTransform": "none",
-      "color": "rgb(0, 0, 0)",
-      "textDecorationLine": "none",
-      "textDecorationColor": "rgb(0, 0, 0)",
+      "fontSize": "12px",
+      "fontWeight": "700",
+      "lineHeight": "13.2px",
+      "letterSpacing": "normal",
+      "textTransform": "uppercase",
+      "color": "rgb(110, 110, 110)",
+      "textDecorationLine": "underline",
+      "textDecorationColor": "rgb(110, 110, 110)",
       "textDecorationThickness": "auto",
-      "textUnderlineOffset": "auto",
+      "textUnderlineOffset": "2px",
       "transitionProperty": "all",
-      "transitionDuration": "0.2s",
+      "transitionDuration": "0s",
       "transitionTimingFunction": "ease",
       "transitionDelay": "0s",
       "cursor": "pointer",
@@ -12466,41 +12553,44 @@
       "zIndex": "auto",
       "top": "auto"
      },
-     "paint": [
-      {
-       "node": "a.inline-flex.justify-center",
-       "size": "74.3x36.0",
-       "bg": "rgb(246, 246, 246)",
-       "outline": "2px solid rgba(0, 0, 0, 0) offset 2px",
-       "radius": "9999px"
-      }
-     ],
+     "textStyle": {
+      "node": "span.whitespace-nowrap.text-inherit",
+      "text": "Explore",
+      "fontFamily": "Inter, \"Inter Fallback\"",
+      "fontSize": "14px",
+      "lineHeight": "20px",
+      "fontWeight": "500",
+      "letterSpacing": "normal",
+      "color": "rgb(110, 110, 110)",
+      "textDecorationLine": "none",
+      "textTransform": "none"
+     },
      "crop": "components/crops/ab-crumb-hover.png",
      "via": "mouse hover"
     },
     "focus-visible": {
      "tag": "a",
-     "classes": "inline-flex justify-center items-center cursor-pointer",
+     "classes": "inline-flex justify-center items-center rounded-sm",
      "text": "Explore",
      "rect": {
-      "x": 196,
-      "y": 14,
-      "w": 74.25,
-      "h": 36
+      "x": 132,
+      "y": 121,
+      "w": 50.05,
+      "h": 20
      },
      "style": {
       "display": "flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "74.25px",
-      "height": "36px",
+      "width": "50.0469px",
+      "height": "20px",
       "minWidth": "auto",
       "maxWidth": "none",
       "minHeight": "auto",
       "paddingTop": "0px",
-      "paddingRight": "12px",
+      "paddingRight": "0px",
       "paddingBottom": "0px",
-      "paddingLeft": "12px",
+      "paddingLeft": "0px",
       "marginTop": "0px",
       "marginRight": "0px",
       "marginBottom": "0px",
@@ -12524,31 +12614,31 @@
       "borderLeftWidth": "0px",
       "borderLeftStyle": "solid",
       "borderLeftColor": "rgb(229, 229, 229)",
-      "borderTopLeftRadius": "9999px",
-      "borderTopRightRadius": "9999px",
-      "borderBottomRightRadius": "9999px",
-      "borderBottomLeftRadius": "9999px",
+      "borderTopLeftRadius": "2px",
+      "borderTopRightRadius": "2px",
+      "borderBottomRightRadius": "2px",
+      "borderBottomLeftRadius": "2px",
       "backgroundColor": "rgba(0, 0, 0, 0)",
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
       "outlineWidth": "2px",
-      "outlineStyle": "solid",
+      "outlineStyle": "none",
       "outlineColor": "rgb(0, 0, 0)",
       "outlineOffset": "2px",
       "fontFamily": "Inter, \"Inter Fallback\"",
-      "fontSize": "14px",
-      "fontWeight": "400",
-      "lineHeight": "20px",
-      "letterSpacing": "0.14px",
-      "textTransform": "none",
-      "color": "rgb(0, 0, 0)",
-      "textDecorationLine": "none",
-      "textDecorationColor": "rgb(0, 0, 0)",
+      "fontSize": "12px",
+      "fontWeight": "700",
+      "lineHeight": "13.2px",
+      "letterSpacing": "normal",
+      "textTransform": "uppercase",
+      "color": "rgb(118, 118, 118)",
+      "textDecorationLine": "underline",
+      "textDecorationColor": "rgb(118, 118, 118)",
       "textDecorationThickness": "auto",
-      "textUnderlineOffset": "auto",
+      "textUnderlineOffset": "2px",
       "transitionProperty": "all",
-      "transitionDuration": "0.2s",
+      "transitionDuration": "0s",
       "transitionTimingFunction": "ease",
       "transitionDelay": "0s",
       "cursor": "pointer",
@@ -12558,40 +12648,44 @@
       "zIndex": "auto",
       "top": "auto"
      },
-     "paint": [
-      {
-       "node": "a.inline-flex.justify-center",
-       "size": "74.3x36.0",
-       "outline": "2px solid rgb(0, 0, 0) offset 2px",
-       "radius": "9999px"
-      }
-     ],
+     "textStyle": {
+      "node": "span.whitespace-nowrap.text-inherit",
+      "text": "Explore",
+      "fontFamily": "Inter, \"Inter Fallback\"",
+      "fontSize": "14px",
+      "lineHeight": "20px",
+      "fontWeight": "500",
+      "letterSpacing": "normal",
+      "color": "rgb(118, 118, 118)",
+      "textDecorationLine": "none",
+      "textTransform": "none"
+     },
      "crop": "components/crops/ab-crumb-focus-visible.png",
      "via": "Shift+Tab, Tab"
     },
     "pressed": {
      "tag": "a",
-     "classes": "inline-flex justify-center items-center cursor-pointer",
+     "classes": "inline-flex justify-center items-center rounded-sm",
      "text": "Explore",
      "rect": {
-      "x": 196,
-      "y": 14,
-      "w": 74.25,
-      "h": 36
+      "x": 132,
+      "y": 121,
+      "w": 50.05,
+      "h": 20
      },
      "style": {
       "display": "flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "74.25px",
-      "height": "36px",
+      "width": "50.0469px",
+      "height": "20px",
       "minWidth": "auto",
       "maxWidth": "none",
       "minHeight": "auto",
       "paddingTop": "0px",
-      "paddingRight": "12px",
+      "paddingRight": "0px",
       "paddingBottom": "0px",
-      "paddingLeft": "12px",
+      "paddingLeft": "0px",
       "marginTop": "0px",
       "marginRight": "0px",
       "marginBottom": "0px",
@@ -12615,31 +12709,31 @@
       "borderLeftWidth": "0px",
       "borderLeftStyle": "solid",
       "borderLeftColor": "rgb(229, 229, 229)",
-      "borderTopLeftRadius": "9999px",
-      "borderTopRightRadius": "9999px",
-      "borderBottomRightRadius": "9999px",
-      "borderBottomLeftRadius": "9999px",
-      "backgroundColor": "rgb(246, 246, 246)",
+      "borderTopLeftRadius": "2px",
+      "borderTopRightRadius": "2px",
+      "borderBottomRightRadius": "2px",
+      "borderBottomLeftRadius": "2px",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "2px",
-      "outlineStyle": "solid",
-      "outlineColor": "rgba(0, 0, 0, 0)",
-      "outlineOffset": "2px",
+      "outlineWidth": "3px",
+      "outlineStyle": "none",
+      "outlineColor": "rgb(110, 110, 110)",
+      "outlineOffset": "0px",
       "fontFamily": "Inter, \"Inter Fallback\"",
-      "fontSize": "14px",
-      "fontWeight": "400",
-      "lineHeight": "20px",
-      "letterSpacing": "0.14px",
-      "textTransform": "none",
-      "color": "rgb(0, 0, 0)",
-      "textDecorationLine": "none",
-      "textDecorationColor": "rgb(0, 0, 0)",
+      "fontSize": "12px",
+      "fontWeight": "700",
+      "lineHeight": "13.2px",
+      "letterSpacing": "normal",
+      "textTransform": "uppercase",
+      "color": "rgb(110, 110, 110)",
+      "textDecorationLine": "underline",
+      "textDecorationColor": "rgb(110, 110, 110)",
       "textDecorationThickness": "auto",
-      "textUnderlineOffset": "auto",
+      "textUnderlineOffset": "2px",
       "transitionProperty": "all",
-      "transitionDuration": "0.2s",
+      "transitionDuration": "0s",
       "transitionTimingFunction": "ease",
       "transitionDelay": "0s",
       "cursor": "pointer",
@@ -12649,15 +12743,18 @@
       "zIndex": "auto",
       "top": "auto"
      },
-     "paint": [
-      {
-       "node": "a.inline-flex.justify-center",
-       "size": "74.3x36.0",
-       "bg": "rgb(246, 246, 246)",
-       "outline": "2px solid rgba(0, 0, 0, 0) offset 2px",
-       "radius": "9999px"
-      }
-     ],
+     "textStyle": {
+      "node": "span.whitespace-nowrap.text-inherit",
+      "text": "Explore",
+      "fontFamily": "Inter, \"Inter Fallback\"",
+      "fontSize": "14px",
+      "lineHeight": "20px",
+      "fontWeight": "500",
+      "letterSpacing": "normal",
+      "color": "rgb(110, 110, 110)",
+      "textDecorationLine": "none",
+      "textTransform": "none"
+     },
      "crop": "components/crops/ab-crumb-pressed.png",
      "via": "CDP forcePseudoState :active:hover"
     }
@@ -12668,7 +12765,7 @@
    "title": "Breadcrumb link",
    "group": "Audiobook page",
    "desc": "A breadcrumb link (Explore / genre) above the title.",
-   "selector": "breadcrumb a"
+   "selector": "main breadcrumb a"
   },
   "ab-author": {
    "states": {
@@ -14481,7 +14578,8 @@
       "color": "rgb(0, 0, 0)"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "at rest"
+     "via": "at rest",
+     "crop": "components/crops/signin-card-default.png"
     }
    },
    "page": "signin",
@@ -14603,7 +14701,8 @@
       "color": "rgb(0, 0, 0)"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "at rest"
+     "via": "at rest",
+     "crop": "components/crops/sso-google-default.png"
     },
     "hover": {
      "tag": "button",
@@ -14714,7 +14813,8 @@
       "color": "rgb(0, 0, 0)"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "crop": "components/crops/sso-google-hover.png"
     },
     "focus-visible": {
      "tag": "button",
@@ -14825,7 +14925,8 @@
       "color": "rgb(0, 0, 0)"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "Shift+Tab, Tab"
+     "via": "Shift+Tab, Tab",
+     "crop": "components/crops/sso-google-focus-visible.png"
     },
     "pressed": {
      "tag": "button",
@@ -14936,7 +15037,8 @@
       "color": "rgb(0, 0, 0)"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "CDP forcePseudoState :active:hover"
+     "via": "CDP forcePseudoState :active:hover",
+     "crop": "components/crops/sso-google-pressed.png"
     }
    },
    "page": "signin",
@@ -15046,7 +15148,8 @@
       "color": "rgb(255, 255, 255)"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "at rest"
+     "via": "at rest",
+     "crop": "components/crops/sso-apple-default.png"
     },
     "hover": {
      "tag": "button",
@@ -15145,7 +15248,8 @@
       "color": "rgb(255, 255, 255)"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "crop": "components/crops/sso-apple-hover.png"
     },
     "focus-visible": {
      "tag": "button",
@@ -15244,7 +15348,8 @@
       "color": "rgb(255, 255, 255)"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "Shift+Tab, Tab"
+     "via": "Shift+Tab, Tab",
+     "crop": "components/crops/sso-apple-focus-visible.png"
     },
     "pressed": {
      "tag": "button",
@@ -15343,7 +15448,8 @@
       "color": "rgb(255, 255, 255)"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "CDP forcePseudoState :active:hover"
+     "via": "CDP forcePseudoState :active:hover",
+     "crop": "components/crops/sso-apple-pressed.png"
     }
    },
    "page": "signin",
@@ -15452,7 +15558,8 @@
       "fontSize": "16px"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "at rest"
+     "via": "at rest",
+     "crop": "components/crops/email-field-default.png"
     },
     "focused": {
      "tag": "input",
@@ -15550,7 +15657,8 @@
       "fontSize": "16px"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "clicked into the field"
+     "via": "clicked into the field",
+     "crop": "components/crops/email-field-focused.png"
     },
     "filled": {
      "tag": "input",
@@ -15648,7 +15756,8 @@
       "fontSize": "16px"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "typed \"name@example.com\", then deleted; nothing sent"
+     "via": "typed \"name@example.com\", then deleted; nothing sent",
+     "crop": "components/crops/email-field-filled.png"
     }
    },
    "page": "signin",
@@ -15757,7 +15866,8 @@
       "fontSize": "16px"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "at rest"
+     "via": "at rest",
+     "crop": "components/crops/password-field-default.png"
     },
     "focused": {
      "tag": "input",
@@ -15855,7 +15965,8 @@
       "fontSize": "16px"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "clicked into the field"
+     "via": "clicked into the field",
+     "crop": "components/crops/password-field-focused.png"
     }
    },
    "page": "signin",
@@ -15957,7 +16068,8 @@
       }
      ],
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "at rest"
+     "via": "at rest",
+     "crop": "components/crops/forgot-btn-default.png"
     },
     "hover": {
      "tag": "button",
@@ -16048,7 +16160,8 @@
       }
      ],
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "crop": "components/crops/forgot-btn-hover.png"
     },
     "focus-visible": {
      "tag": "button",
@@ -16139,7 +16252,8 @@
       }
      ],
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "Shift+Tab, Tab"
+     "via": "Shift+Tab, Tab",
+     "crop": "components/crops/forgot-btn-focus-visible.png"
     },
     "pressed": {
      "tag": "button",
@@ -16230,7 +16344,8 @@
       }
      ],
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "CDP forcePseudoState :active:hover"
+     "via": "CDP forcePseudoState :active:hover",
+     "crop": "components/crops/forgot-btn-pressed.png"
     }
    },
    "page": "signin",
@@ -16333,7 +16448,8 @@
       }
      ],
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "at rest"
+     "via": "at rest",
+     "crop": "components/crops/signin-submit-default.png"
     },
     "hover": {
      "tag": "button",
@@ -16425,7 +16541,8 @@
       }
      ],
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "crop": "components/crops/signin-submit-hover.png"
     },
     "focus-visible": {
      "tag": "button",
@@ -16517,7 +16634,8 @@
       }
      ],
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "Shift+Tab, Tab"
+     "via": "Shift+Tab, Tab",
+     "crop": "components/crops/signin-submit-focus-visible.png"
     },
     "pressed": {
      "tag": "button",
@@ -16609,7 +16727,8 @@
       }
      ],
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "CDP forcePseudoState :active:hover"
+     "via": "CDP forcePseudoState :active:hover",
+     "crop": "components/crops/signin-submit-pressed.png"
     }
    },
    "page": "signin",
@@ -16725,7 +16844,8 @@
       "textTransform": "none"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "at rest"
+     "via": "at rest",
+     "crop": "components/crops/signin-secondary-default.png"
     },
     "hover": {
      "tag": "button",
@@ -16830,7 +16950,8 @@
       "textTransform": "none"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "crop": "components/crops/signin-secondary-hover.png"
     },
     "focus-visible": {
      "tag": "button",
@@ -16935,7 +17056,8 @@
       "textTransform": "none"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "Shift+Tab, Tab"
+     "via": "Shift+Tab, Tab",
+     "crop": "components/crops/signin-secondary-focus-visible.png"
     },
     "pressed": {
      "tag": "button",
@@ -17040,7 +17162,8 @@
       "textTransform": "none"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "CDP forcePseudoState :active:hover"
+     "via": "CDP forcePseudoState :active:hover",
+     "crop": "components/crops/signin-secondary-pressed.png"
     }
    },
    "page": "signin",
@@ -17134,7 +17257,8 @@
       "top": "auto"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "at rest"
+     "via": "at rest",
+     "crop": "components/crops/create-link-default.png"
     },
     "hover": {
      "tag": "a",
@@ -17217,7 +17341,8 @@
       "top": "auto"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "crop": "components/crops/create-link-hover.png"
     },
     "focus-visible": {
      "tag": "a",
@@ -17300,7 +17425,8 @@
       "top": "auto"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "Shift+Tab, Tab"
+     "via": "Shift+Tab, Tab",
+     "crop": "components/crops/create-link-focus-visible.png"
     },
     "pressed": {
      "tag": "a",
@@ -17383,7 +17509,8 @@
       "top": "auto"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "CDP forcePseudoState :active:hover"
+     "via": "CDP forcePseudoState :active:hover",
+     "crop": "components/crops/create-link-pressed.png"
     }
    },
    "page": "signin",
@@ -17544,7 +17671,8 @@
       "color": "rgb(118, 118, 118)"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "at rest"
+     "via": "at rest",
+     "crop": "components/crops/signup-card-default.png"
     }
    },
    "page": "signup",
@@ -17653,7 +17781,8 @@
       "fontSize": "16px"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "at rest"
+     "via": "at rest",
+     "crop": "components/crops/signup-field-default.png"
     },
     "focused": {
      "tag": "input",
@@ -17751,7 +17880,8 @@
       "fontSize": "16px"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "clicked into the field"
+     "via": "clicked into the field",
+     "crop": "components/crops/signup-field-focused.png"
     }
    },
    "page": "signup",
@@ -17845,7 +17975,8 @@
       "top": "auto"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "at rest"
+     "via": "at rest",
+     "crop": "components/crops/cookie-btn-default.png"
     },
     "hover": {
      "tag": "button",
@@ -17928,7 +18059,8 @@
       "top": "auto"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "crop": "components/crops/cookie-btn-hover.png"
     },
     "focus-visible": {
      "tag": "button",
@@ -18011,7 +18143,8 @@
       "top": "auto"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "Shift+Tab, Tab"
+     "via": "Shift+Tab, Tab",
+     "crop": "components/crops/cookie-btn-focus-visible.png"
     },
     "pressed": {
      "tag": "button",
@@ -18094,7 +18227,8 @@
       "top": "auto"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "CDP forcePseudoState :active:hover"
+     "via": "CDP forcePseudoState :active:hover",
+     "crop": "components/crops/cookie-btn-pressed.png"
     }
    },
    "page": "home",
@@ -18224,7 +18358,8 @@
       "textTransform": "none"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "at rest"
+     "via": "at rest",
+     "crop": "components/crops/m-promo-default.png"
     }
    },
    "page": "mobile",
@@ -18410,7 +18545,8 @@
       "color": "rgb(0, 0, 0)"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "at rest"
+     "via": "at rest",
+     "crop": "components/crops/m-header-default.png"
     }
    },
    "page": "mobile",
@@ -18518,7 +18654,8 @@
       "color": "rgb(0, 0, 0)"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "at rest"
+     "via": "at rest",
+     "crop": "components/crops/m-menu-button-default.png"
     },
     "hover": {
      "tag": "button",
@@ -18616,7 +18753,8 @@
       "color": "rgb(0, 0, 0)"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "crop": "components/crops/m-menu-button-hover.png"
     },
     "focus-visible": {
      "tag": "button",
@@ -18714,7 +18852,8 @@
       "color": "rgb(0, 0, 0)"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "focus failed"
+     "via": "focus failed",
+     "crop": "components/crops/m-menu-button-focus-visible.png"
     },
     "pressed": {
      "tag": "button",
@@ -18812,7 +18951,8 @@
       "color": "rgb(0, 0, 0)"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "CDP forcePseudoState :active:hover"
+     "via": "CDP forcePseudoState :active:hover",
+     "crop": "components/crops/m-menu-button-pressed.png"
     }
    },
    "page": "mobile",
@@ -19016,7 +19156,8 @@
       "color": "rgb(0, 0, 0)"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "at rest"
+     "via": "at rest",
+     "crop": "components/crops/m-menu-open-default.png"
     }
    },
    "page": "mobile",
@@ -19135,7 +19276,8 @@
       "color": "rgb(0, 0, 0)"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "at rest"
+     "via": "at rest",
+     "crop": "components/crops/m-nav-item-default.png"
     },
     "hover": {
      "tag": "button",
@@ -19244,7 +19386,8 @@
       "color": "rgb(0, 0, 0)"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "crop": "components/crops/m-nav-item-hover.png"
     },
     "focus-visible": {
      "tag": "button",
@@ -19353,7 +19496,8 @@
       "color": "rgb(0, 0, 0)"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "Shift+Tab, Tab"
+     "via": "Shift+Tab, Tab",
+     "crop": "components/crops/m-nav-item-focus-visible.png"
     },
     "pressed": {
      "tag": "button",
@@ -19462,7 +19606,8 @@
       "color": "rgb(0, 0, 0)"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "CDP forcePseudoState :active:hover"
+     "via": "CDP forcePseudoState :active:hover",
+     "crop": "components/crops/m-nav-item-pressed.png"
     }
    },
    "page": "mobile",
@@ -19555,7 +19700,8 @@
       "top": "auto"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "at rest"
+     "via": "at rest",
+     "crop": "components/crops/m-hero-default.png"
     }
    },
    "page": "mobile",
@@ -19674,7 +19820,8 @@
       "color": "rgb(0, 0, 0)"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "at rest"
+     "via": "at rest",
+     "crop": "components/crops/m-footer-col-default.png"
     },
     "open": {
      "tag": "details",
@@ -19784,7 +19931,8 @@
       "color": "rgb(0, 0, 0)"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "opened by its own summary"
+     "via": "opened by its own summary",
+     "crop": "components/crops/m-footer-col-open.png"
     }
    },
    "page": "mobile",
@@ -19908,7 +20056,8 @@
       "color": "rgb(0, 0, 0)"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "at rest"
+     "via": "at rest",
+     "crop": "components/crops/m-footer-summary-default.png"
     },
     "hover": {
      "tag": "summary",
@@ -20022,7 +20171,8 @@
       "color": "rgb(0, 0, 0)"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "crop": "components/crops/m-footer-summary-hover.png"
     },
     "focus-visible": {
      "tag": "summary",
@@ -20136,7 +20286,8 @@
       "color": "rgb(0, 0, 0)"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "focus failed"
+     "via": "focus failed",
+     "crop": "components/crops/m-footer-summary-focus-visible.png"
     },
     "pressed": {
      "tag": "summary",
@@ -20250,7 +20401,8 @@
       "color": "rgb(0, 0, 0)"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "CDP forcePseudoState :active:hover"
+     "via": "CDP forcePseudoState :active:hover",
+     "crop": "components/crops/m-footer-summary-pressed.png"
     }
    },
    "page": "mobile",
@@ -20371,7 +20523,8 @@
       "color": "rgb(0, 0, 0)"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "at rest"
+     "via": "at rest",
+     "crop": "components/crops/signup-google-default.png"
     },
     "hover": {
      "tag": "button",
@@ -20482,7 +20635,8 @@
       "color": "rgb(0, 0, 0)"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "crop": "components/crops/signup-google-hover.png"
     },
     "focus-visible": {
      "tag": "button",
@@ -20593,7 +20747,8 @@
       "color": "rgb(0, 0, 0)"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "Shift+Tab, Tab"
+     "via": "Shift+Tab, Tab",
+     "crop": "components/crops/signup-google-focus-visible.png"
     },
     "pressed": {
      "tag": "button",
@@ -20704,7 +20859,8 @@
       "color": "rgb(0, 0, 0)"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "CDP forcePseudoState :active:hover"
+     "via": "CDP forcePseudoState :active:hover",
+     "crop": "components/crops/signup-google-pressed.png"
     }
    },
    "page": "signup",
@@ -20798,7 +20954,8 @@
       "top": "auto"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "at rest"
+     "via": "at rest",
+     "crop": "components/crops/signup-legal-default.png"
     }
    },
    "page": "signup",
@@ -20914,7 +21071,8 @@
       "textTransform": "none"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "at rest"
+     "via": "at rest",
+     "crop": "components/crops/signup-email-btn-default.png"
     },
     "hover": {
      "tag": "button",
@@ -21019,7 +21177,8 @@
       "textTransform": "none"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "crop": "components/crops/signup-email-btn-hover.png"
     },
     "focus-visible": {
      "tag": "button",
@@ -21124,7 +21283,8 @@
       "textTransform": "none"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "Shift+Tab, Tab"
+     "via": "Shift+Tab, Tab",
+     "crop": "components/crops/signup-email-btn-focus-visible.png"
     },
     "pressed": {
      "tag": "button",
@@ -21229,7 +21389,8 @@
       "textTransform": "none"
      },
      "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "CDP forcePseudoState :active:hover"
+     "via": "CDP forcePseudoState :active:hover",
+     "crop": "components/crops/signup-email-btn-pressed.png"
     }
    },
    "page": "signup",

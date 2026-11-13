@@ -30,6 +30,7 @@ function props(v) {
   o.Font = `${fam(s.fontFamily)} ${s.fontSize}/${s.lineHeight} ${s.fontWeight}`;
   o['Letter spacing'] = s.letterSpacing;
   o.Colour = hex(s.color);
+  if (s.textDecorationLine && s.textDecorationLine !== 'none') o['Text decoration'] = `${s.textDecorationLine}${s.textUnderlineOffset && s.textUnderlineOffset !== 'auto' ? ' offset ' + s.textUnderlineOffset : ''}`;
   if (v.textStyle) o['Text node'] = `${v.textStyle.node}: ${fam(v.textStyle.fontFamily)} ${v.textStyle.fontSize}/${v.textStyle.lineHeight} ${v.textStyle.fontWeight}, ${hex(v.textStyle.color)}${v.textStyle.letterSpacing !== 'normal' ? ', ls ' + v.textStyle.letterSpacing : ''}`;
   o.Transition = s.transitionDuration === '0s' || !s.transitionDuration ? 'none' : `${s.transitionProperty} ${s.transitionDuration} ${s.transitionTimingFunction}${s.transitionDelay !== '0s' ? ' delay ' + s.transitionDelay : ''}`;
   if (s.transform && s.transform !== 'none') o.Transform = s.transform;
