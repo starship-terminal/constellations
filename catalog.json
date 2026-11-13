@@ -4183,7 +4183,8 @@
      "icons: no standalone SVG set lifted this pass"
     ],
     "durationMin": 120,
-    "durationNote": "worktree creation to package-complete, 2026-11-13"
+    "durationNote": "worktree creation to package-complete, 2026-11-13",
+    "pr": "https://github.com/starship-terminal/constellations/pull/507"
    },
    "layoutGaps": {
     "icons/": "the icon extraction pass was not run; the Dock wordmark, the menu glyphs, provider logos and product illustrations are visible in the crops and screenshots"
