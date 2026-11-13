@@ -42,7 +42,7 @@ A leaf is {"var": "--name"} (resolved per theme by build_tokens.py) or
 themes: light everywhere signed out, dark on the docs/help surface through
 its own theme toggle.
 """
-import json, pathlib, re
+import colorsys, json, pathlib, re
 
 HERE = pathlib.Path(__file__).resolve().parent.parent
 RAW = HERE / "raw"
@@ -76,21 +76,36 @@ def descend(root, parts):
     for p in parts[:-1]:
         child = node.setdefault(p, {})
         if "var" in child or "value" in child or "$value" in child:
-            node[p] = {"default": child}
+            # A leaf displaced by children keeps its own name under `base`:
+            # `default` is a real token name in this tree (`--border-default`),
+            # so parking the displaced leaf there silently overwrote the real
+            # `*-default` token or let it erase the leaf.
+            node[p] = {"base": child}
             child = node[p]
         node = child
     last = parts[-1]
     cur = node.get(last)
     if isinstance(cur, dict) and cur and not ("var" in cur or "value" in cur or "$value" in cur):
         node = cur
-        node.setdefault("default", None)
-        last = "default"
+        last = "default" if node.get("default") is None else "base"
     return node, last
 
 
 def emit(root, name, leaf):
     node, last = descend(root, name[2:].split("-"))
+    old = node.get(last)
+    if old is not None:
+        raise ValueError(f"emit {name}: slot already holds {old!r}")
     node[last] = leaf
+
+
+def hsl_triple(spec):
+    """'0 0% 9%' — an H S% L% channel triple — resolved the way the browser
+    paints it: '#171717'."""
+    h, s, l = spec.split()
+    r, g, b = colorsys.hls_to_rgb(float(h) / 360, float(l.rstrip("%")) / 100,
+                                  float(s.rstrip("%")) / 100)
+    return "#%02x%02x%02x" % (round(r * 255), round(g * 255), round(b * 255))
 
 
 def st(comp, state):
@@ -442,6 +457,22 @@ for key, leaf in [
 ]:
     docs_l[key] = leaf
 
+# The marketing sheet's own --primary: the same name the docs inline sheet
+# binds to the Dub blue. The shared probe resolves the name to the docs
+# value, so the marketing value is namespaced under marketing.* — the
+# conflicts list in raw/css-vars.json records the collision.
+mkt_l = light.setdefault("marketing", {})
+mkt_decl = next((r["properties"]["--primary"] for r in V.get("theme", [])
+                 if r.get("selector") == ":root" and "--primary" in r.get("properties", {})),
+                None)
+if mkt_decl:
+    mkt_l["primary"] = {"value": hsl_triple(mkt_decl), "type": "color",
+        "source": f"declared --primary: {mkt_decl} on :root in the marketing stylesheet "
+                  "(raw/css-vars.json theme bin); the docs surface's inline sheet binds "
+                  "the same name to the Dub blue — a real collision, not one value",
+        "description": f"Marketing --primary ({hsl_triple(mkt_decl)}): the near-black the "
+                       "shadcn layer declares on the marketing/auth sheets."}
+
 dark = SPEC["dark"]
 # the same declared names, re-bound by the docs surface's html.dark scope
 for name, desc in [
@@ -531,10 +562,24 @@ for key, leaf in [
                  "description": "The 10% white sidebar divider on dark."}),
     ("search-bg", {"value": "{color.wash.white-3}", "type": "color", "source": ALIAS,
                    "description": "The 3% white wash inside the dark search pill."}),
+    ("search-bg-hover", {"value": "{color.wash.white-10}", "type": "color", "source": ALIAS,
+                         "description": "The 10% white wash the dark pill takes on hover."}),
     ("surface-card", {"value": "{color.brand.canvas-dark}", "type": "color", "source": ALIAS,
                       "description": "The #090b10 raised dark field (the Copy-page button paints it)."}),
 ]:
     docs_d[key] = leaf
+
+mkt_d = dark.setdefault("marketing", {})
+mkt_decl_d = next((r["properties"]["--primary"] for r in V.get("theme", [])
+                   if r.get("selector") == ".dark" and "--primary" in r.get("properties", {})),
+                  None)
+if mkt_decl_d:
+    mkt_d["primary"] = {"value": hsl_triple(mkt_decl_d), "type": "color",
+        "source": f"declared --primary: {mkt_decl_d} on .dark in the marketing stylesheet "
+                  "(raw/css-vars.json theme bin); the docs surface's inline sheet binds "
+                  "the same name to the Dub blue — a real collision, not one value",
+        "description": f"Marketing --primary on the .dark scope ({hsl_triple(mkt_decl_d)}): "
+                       "the near-white the shadcn layer declares on the marketing sheets."}
 
 # ------------------------------------------------------------- type scale
 

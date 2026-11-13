@@ -749,7 +749,7 @@
    "description": "Default body ink (#0a0a0a)."
   },
   "card": {
-   "default": {
+   "base": {
     "var": "--card",
     "type": "color",
     "source": "declared semantic/shadcn var in the site's stylesheets",
@@ -763,7 +763,7 @@
    }
   },
   "muted": {
-   "default": {
+   "base": {
     "var": "--muted",
     "type": "color",
     "source": "declared semantic/shadcn var in the site's stylesheets",
@@ -777,7 +777,7 @@
    }
   },
   "popover": {
-   "default": {
+   "base": {
     "var": "--popover",
     "type": "color",
     "source": "declared semantic/shadcn var in the site's stylesheets",
@@ -791,7 +791,7 @@
    }
   },
   "primary": {
-   "default": {
+   "base": {
     "var": "--primary",
     "type": "color",
     "source": "declared semantic/shadcn var in the site's stylesheets",
@@ -805,7 +805,7 @@
    }
   },
   "secondary": {
-   "default": {
+   "base": {
     "var": "--secondary",
     "type": "color",
     "source": "declared semantic/shadcn var in the site's stylesheets",
@@ -819,7 +819,7 @@
    }
   },
   "accent": {
-   "default": {
+   "base": {
     "var": "--accent",
     "type": "color",
     "source": "declared semantic/shadcn var in the site's stylesheets",
@@ -839,11 +839,11 @@
    "description": "Ring (#a3a3a3)."
   },
   "border": {
-   "default": {
-    "var": "--border-default",
+   "base": {
+    "var": "--border",
     "type": "color",
     "source": "declared semantic/shadcn var in the site's stylesheets",
-    "description": "Default border (#d4d4d4)."
+    "description": "Default border (#e5e5e5)."
    },
    "muted": {
     "var": "--border-muted",
@@ -856,6 +856,12 @@
     "type": "color",
     "source": "declared semantic/shadcn var in the site's stylesheets",
     "description": "Subtle border (#e5e5e5)."
+   },
+   "default": {
+    "var": "--border-default",
+    "type": "color",
+    "source": "declared semantic/shadcn var in the site's stylesheets",
+    "description": "Default border (#d4d4d4)."
    },
    "emphasis": {
     "var": "--border-emphasis",
@@ -1149,7 +1155,7 @@
   "action": {
    "primary": {
     "bg": {
-     "default": {
+     "base": {
       "value": "{color.neutral.black}",
       "type": "color",
       "source": "role alias over the core palette",
@@ -1253,6 +1259,14 @@
     "source": "role alias over the core palette",
     "description": "The 10% ink wash the pill takes on hover."
    }
+  },
+  "marketing": {
+   "primary": {
+    "value": "#171717",
+    "type": "color",
+    "source": "declared --primary: 0 0% 9% on :root in the marketing stylesheet (raw/css-vars.json theme bin); the docs surface's inline sheet binds the same name to the Dub blue — a real collision, not one value",
+    "description": "Marketing --primary (#171717): the near-black the shadcn layer declares on the marketing/auth sheets."
+   }
   }
  },
  "dark": {
@@ -1269,7 +1283,7 @@
    "description": "Dark body ink (#f0f0f0)."
   },
   "card": {
-   "default": {
+   "base": {
     "var": "--card",
     "type": "color",
     "source": "declared var re-bound on the docs surface's .dark scope",
@@ -1283,7 +1297,7 @@
    }
   },
   "muted": {
-   "default": {
+   "base": {
     "var": "--muted",
     "type": "color",
     "source": "declared var re-bound on the docs surface's .dark scope",
@@ -1297,7 +1311,7 @@
    }
   },
   "popover": {
-   "default": {
+   "base": {
     "var": "--popover",
     "type": "color",
     "source": "declared var re-bound on the docs surface's .dark scope",
@@ -1311,7 +1325,7 @@
    }
   },
   "primary": {
-   "default": {
+   "base": {
     "var": "--primary",
     "type": "color",
     "source": "declared var re-bound on the docs surface's .dark scope",
@@ -1325,7 +1339,7 @@
    }
   },
   "secondary": {
-   "default": {
+   "base": {
     "var": "--secondary",
     "type": "color",
     "source": "declared var re-bound on the docs surface's .dark scope",
@@ -1339,7 +1353,7 @@
    }
   },
   "accent": {
-   "default": {
+   "base": {
     "var": "--accent",
     "type": "color",
     "source": "declared var re-bound on the docs surface's .dark scope",
@@ -1359,11 +1373,11 @@
    "description": "Ring on dark (#262626)."
   },
   "border": {
-   "default": {
-    "var": "--border-default",
+   "base": {
+    "var": "--border",
     "type": "color",
     "source": "declared var re-bound on the docs surface's .dark scope",
-    "description": "Default border on dark (#525252)."
+    "description": "Default border on dark (#2e2e2e)."
    },
    "muted": {
     "var": "--border-muted",
@@ -1376,6 +1390,12 @@
     "type": "color",
     "source": "declared var re-bound on the docs surface's .dark scope",
     "description": "Subtle border on dark (#404040)."
+   },
+   "default": {
+    "var": "--border-default",
+    "type": "color",
+    "source": "declared var re-bound on the docs surface's .dark scope",
+    "description": "Default border on dark (#525252)."
    },
    "emphasis": {
     "var": "--border-emphasis",
@@ -1703,11 +1723,25 @@
     "source": "role alias over the core palette",
     "description": "The 3% white wash inside the dark search pill."
    },
+   "search-bg-hover": {
+    "value": "{color.wash.white-10}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The 10% white wash the dark pill takes on hover."
+   },
    "surface-card": {
     "value": "{color.brand.canvas-dark}",
     "type": "color",
     "source": "role alias over the core palette",
     "description": "The #090b10 raised dark field (the Copy-page button paints it)."
+   }
+  },
+  "marketing": {
+   "primary": {
+    "value": "#fafafa",
+    "type": "color",
+    "source": "declared --primary: 0 0% 98% on .dark in the marketing stylesheet (raw/css-vars.json theme bin); the docs surface's inline sheet binds the same name to the Dub blue — a real collision, not one value",
+    "description": "Marketing --primary on the .dark scope (#fafafa): the near-white the shadcn layer declares on the marketing sheets."
    }
   }
  },

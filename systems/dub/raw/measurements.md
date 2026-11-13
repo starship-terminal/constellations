@@ -189,31 +189,30 @@ Crops: `nav-dropdown-default.png`.
 
 #### menu-link
 
-Menu item. A product link inside the opened mega-menu.
+Menu item. A product link inside the opened mega-menu. Only the default reading stands: the menu closed between states during capture, so the hover, focus-visible and pressed readings came from a different element and were removed.
 
-Page: home. Selector: `mega-menu link`. States: default, hover, focus-visible, pressed.
+Page: home. Selector: `mega-menu link inside the open panel`. States: default.
 
-| Property | default | hover | focus-visible | pressed |
-|---|---|---|---|---|
-| Size (w x h) | 307.41 x 304.45 | 195.69 x 24 | 195.69 x 24 | 195.69 x 24 |
-| Padding | 0px | 4px | 4px | 4px |
-| Border | 1px solid #f5f5f5 | none | none | none |
-| Radius | 12px | 8px | 8px | 8px |
-| Background | #fafafa | #000000 @ 0.05 | transparent | #000000 @ 0.1 |
-| Box shadow | none | = | = | = |
-| Outline | none | = | 1px auto #005fcc offset 1px | = |
-| Font | Inter 16px/24px 400 | Inter 12px/16px 500 | Inter 12px/16px 500 | Inter 12px/16px 500 |
-| Letter spacing | normal | = | = | = |
-| Colour | #0a0a0a | #525252 | #525252 | #525252 |
-| Text node | span.mt-3.block: Inter 14px/20px 500, #171717 | span.absolute.inset-0: Inter 12px/16px 500, #525252 | span.absolute.inset-0: Inter 12px/16px 500, #525252 | span.absolute.inset-0: Inter 12px/16px 500, #525252 |
-| Transition | none | color, background-color, border-color, text-decoration-color, fill, stroke 0.1s cubic-bezier(0.4, 0, 0.2, 1) | color, background-color, border-color, text-decoration-color, fill, stroke 0.1s cubic-bezier(0.4, 0, 0.2, 1) | color, background-color, border-color, text-decoration-color, fill, stroke 0.1s cubic-bezier(0.4, 0, 0.2, 1) |
-| Cursor | pointer | = | = | = |
-| Icon | 305.48 x 302.54, colour #000000 @ 0.1, fill #000000 | 10 x 10, colour #4c1d95 | 10 x 10, colour #4c1d95 | 10 x 10, colour #4c1d95 |
-| Painted layers | a.group.relative 307.4x304.5 bg #fafafa border T:1px solid #f5f5f5 / R:1px solid #f5f5f5 / B:1px solid #f5f5f5 / L:1px solid #f5f5f5 r 12px; div.flex.size-4 15.4x15.3 bg #a78bfa r 4px; div.border-border-subtle.bg-bg-default 167.9x51.7 bg #ffffff border T:1px solid #e5e5e5 / R:1px solid #e5e5e5 / B:1px solid #e5e5e5 / L:1px solid #e5e5e5 r 4px; div.bg-bg-emphasis.aspect-square 50.2x49.8 bg #e5e5e5; div.border-border-subtle.flex 105.0x49.8 border L:1px solid #e5e5e5; img.h-2.5.w-3 11.6x9.6 border T:1px solid #000000 @ 0.15 / R:1px solid #000000 @ 0.15 / B:1px solid #000000 @ 0.15 / L:1px solid #000000 @ 0.15 r 2px | a.flex.min-w-0 195.7x24.0 bg #000000 @ 0.05 r 8px; div.flex.size-4 16.0x16.0 bg #a78bfa r 4px | a.flex.min-w-0 195.7x24.0 r 8px outline 1px auto #005fcc offset 1px; div.flex.size-4 16.0x16.0 bg #a78bfa r 4px | a.flex.min-w-0 195.7x24.0 bg #000000 @ 0.1 r 8px; div.flex.size-4 16.0x16.0 bg #a78bfa r 4px |
-| How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
-| Gap | - | 8px | 8px | 8px |
+| Property | default |
+|---|---|
+| Size (w x h) | 307.41 x 304.45 |
+| Padding | 0px |
+| Border | 1px solid #f5f5f5 |
+| Radius | 12px |
+| Background | #fafafa |
+| Box shadow | none |
+| Outline | none |
+| Font | Inter 16px/24px 400 |
+| Letter spacing | normal |
+| Colour | #0a0a0a |
+| Text node | span.mt-3.block: Inter 14px/20px 500, #171717 |
+| Transition | none |
+| Cursor | pointer |
+| Icon | 305.48 x 302.54, colour #000000 @ 0.1, fill #000000 |
+| Painted layers | a.group.relative 307.4x304.5 bg #fafafa border T:1px solid #f5f5f5 / R:1px solid #f5f5f5 / B:1px solid #f5f5f5 / L:1px solid #f5f5f5 r 12px; div.flex.size-4 15.4x15.3 bg #a78bfa r 4px; div.border-border-subtle.bg-bg-default 167.9x51.7 bg #ffffff border T:1px solid #e5e5e5 / R:1px solid #e5e5e5 / B:1px solid #e5e5e5 / L:1px solid #e5e5e5 r 4px; div.bg-bg-emphasis.aspect-square 50.2x49.8 bg #e5e5e5; div.border-border-subtle.flex 105.0x49.8 border L:1px solid #e5e5e5; img.h-2.5.w-3 11.6x9.6 border T:1px solid #000000 @ 0.15 / R:1px solid #000000 @ 0.15 / B:1px solid #000000 @ 0.15 / L:1px solid #000000 @ 0.15 r 2px |
+| How | at rest |
 
-Crops: `menu-link-default.png`, `menu-link-hover.png`, `menu-link-focus-visible.png`, `menu-link-pressed.png`.
+Crops: `menu-link-default.png`.
 
 ### Home hero
 
@@ -1292,11 +1291,11 @@ Page: docs. Selector: `feedback Yes button`. States: default, hover, focus-visib
 
 Crops: `docs-feedback-default.png`, `docs-feedback-hover.png`, `docs-feedback-focus-visible.png`, `docs-feedback-pressed.png`.
 
-#### docs-card
+#### docs-nav-tab
 
-Docs card. A docs landing card link; measured never followed.
+Docs nav tab. The docs surface's top navigation tab (API Reference); measured never followed. A docs landing card was never captured — an earlier global locator read this nav tab under the card name.
 
-Page: docs. Selector: `docs card`. States: default, hover, focus-visible, pressed.
+Page: docs. Selector: `docs top nav tab`. States: default, hover, focus-visible, pressed.
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
@@ -1317,7 +1316,7 @@ Page: docs. Selector: `docs card`. States: default, hover, focus-visible, presse
 | Painted layers | svg.forced-colors:forced-color-adjust-none.forced-colors:bg-[color:CanvasText]! 16.0x16.0 bg #25282d | svg.forced-colors:forced-color-adjust-none.forced-colors:bg-[color:CanvasText]! 16.0x16.0 bg #25282d; div.absolute.bottom-0 118.8x1.0 bg #dfe1e6 | a.link.nav-tabs-item 118.8x40.0 outline 1px auto #155dfc offset 1px; svg.forced-colors:forced-color-adjust-none.forced-colors:bg-[color:CanvasText]! 16.0x16.0 bg #25282d | svg.forced-colors:forced-color-adjust-none.forced-colors:bg-[color:CanvasText]! 16.0x16.0 bg #25282d; div.absolute.bottom-0 118.8x1.0 bg #dfe1e6 |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
-Crops: `docs-card-default.png`, `docs-card-hover.png`, `docs-card-focus-visible.png`, `docs-card-pressed.png`.
+Crops: `docs-nav-tab-default.png`, `docs-nav-tab-hover.png`, `docs-nav-tab-focus-visible.png`, `docs-nav-tab-pressed.png`.
 
 #### dk-docs-h1
 

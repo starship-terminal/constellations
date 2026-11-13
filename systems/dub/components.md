@@ -2,13 +2,13 @@
 
 The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Captured from dub.co on 2026-11-13, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. dub.co is three surfaces signed out: the Next.js marketing site (Tailwind + Satoshi/Inter), the app.dub.co auth shell on /login and /register (measured, never submitted), and the Mintlify docs/help surface on /docs and /help — the only place a real theme toggle exists, so docs was measured in both light and dark. Nothing was signed into, sent or submitted; the login, register and contact-sales forms were never filled past a deleted sample; no time the Send or Log-in buttons were ever pressed.
 
-The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (63 components, 165 states). The page layouts are described in [patterns.md](patterns.md).
+The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (63 components, 162 states). The page layouts are described in [patterns.md](patterns.md).
 
 How to read an entry:
 
 - A colour is its value followed by the palette token in [tokens.json](tokens.json) with the same value, when there is one. Text is written family size/line-height weight, then its colour, for example `Inter 14/20 500, #404040`, and is read from the first text node inside the component.
 - The state table has one row per state that differs. The first row lists every value; later rows list only what changes. A state with the same values as the first is named in its label, for example "default (same: focus-visible)". When the root paints nothing, "Child layers" names the first nodes inside it that do.
-- Crops are images of the component read from the live page, in [components/crops/](components/crops) (165 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
+- Crops are images of the component read from the live page, in [components/crops/](components/crops) (162 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
 
 ## Discovery list
 
@@ -50,7 +50,7 @@ Screenshots are named `{page}-{theme}-{state}.png`: the marketing and auth surfa
 
 Values that apply across entries, from the measurement files.
 
-**Focus.** 30 components were given a real keyboard focus. 30 draw an outline ring: `nav-trigger` (1px auto #005fcc `measured.focus-outline`, offset 0px), `nav-link` (1px auto #005fcc `measured.focus-outline`, offset 1px), `nav-login` (2px solid transparent, offset 2px), `nav-cta` (1px auto #005fcc `measured.focus-outline`, offset 1px), `menu-link` (1px auto #005fcc `measured.focus-outline`, offset 1px), `hero-cta` (1px auto #005fcc `measured.focus-outline`, offset 1px), `hero-demo` (1px auto #005fcc `measured.focus-outline`, offset 1px), `hero-tab` (1px auto #005fcc `measured.focus-outline`, offset 0px), `billing-toggle` (1px auto #005fcc `measured.focus-outline`, offset 0px), `plan-cta` (1px auto #005fcc `measured.focus-outline`, offset 1px), `faq-trigger` (1px auto #005fcc `measured.focus-outline`, offset 0px), `customer-card` (1px auto #005fcc `measured.focus-outline`, offset 1px), `sales-topic` (1px auto #005fcc `measured.focus-outline`, offset 0px), `email-submit` (1px auto #005fcc `measured.focus-outline`, offset 0px), `oauth-google` (2px solid transparent, offset 2px), `oauth-github` (2px solid transparent, offset 2px), `oauth-saml` (2px solid transparent, offset 2px), `auth-link` (1px auto #005fcc `measured.focus-outline`, offset 1px), `docs-nav-item` (1px auto #155dfc `color.brand.primary`, offset -2px), `docs-search` (1px auto #155dfc `color.brand.primary`, offset 0px), `docs-theme` (1px auto #155dfc `color.brand.primary`, offset 0px), `docs-copy` (1px auto #155dfc `color.brand.primary`, offset 0px), `docs-feedback` (2px solid #155dfc `color.brand.primary`, offset -2px), `docs-card` (1px auto #155dfc `color.brand.primary`, offset 1px), `dk-docs-nav-item` (1px auto #155dfc `color.brand.primary`, offset -2px), `dk-docs-copy` (1px auto #155dfc `color.brand.primary`, offset 0px), `dk-docs-search` (1px auto #155dfc `color.brand.primary`, offset 0px), `footer-link` (1px auto #005fcc `measured.focus-outline`, offset 1px), `social-link` (1px auto #005fcc `measured.focus-outline`, offset 1px), `m-nav-item` (1px auto #005fcc `measured.focus-outline`, offset 0px). On dub.co the button ring is the browser-default `auto 1px rgb(0, 95, 204)` outline, the docs surface draws its own 1px `#155dfc` ring, and the email field instead takes a black border plus a 1px black ring shadow.
+**Focus.** 29 components were given a real keyboard focus. 29 draw an outline ring: `nav-trigger` (1px auto #005fcc `measured.focus-outline`, offset 0px), `nav-link` (1px auto #005fcc `measured.focus-outline`, offset 1px), `nav-login` (2px solid transparent, offset 2px), `nav-cta` (1px auto #005fcc `measured.focus-outline`, offset 1px), `hero-cta` (1px auto #005fcc `measured.focus-outline`, offset 1px), `hero-demo` (1px auto #005fcc `measured.focus-outline`, offset 1px), `hero-tab` (1px auto #005fcc `measured.focus-outline`, offset 0px), `billing-toggle` (1px auto #005fcc `measured.focus-outline`, offset 0px), `plan-cta` (1px auto #005fcc `measured.focus-outline`, offset 1px), `faq-trigger` (1px auto #005fcc `measured.focus-outline`, offset 0px), `customer-card` (1px auto #005fcc `measured.focus-outline`, offset 1px), `sales-topic` (1px auto #005fcc `measured.focus-outline`, offset 0px), `email-submit` (1px auto #005fcc `measured.focus-outline`, offset 0px), `oauth-google` (2px solid transparent, offset 2px), `oauth-github` (2px solid transparent, offset 2px), `oauth-saml` (2px solid transparent, offset 2px), `auth-link` (1px auto #005fcc `measured.focus-outline`, offset 1px), `docs-nav-item` (1px auto #155dfc `color.brand.primary`, offset -2px), `docs-search` (1px auto #155dfc `color.brand.primary`, offset 0px), `docs-theme` (1px auto #155dfc `color.brand.primary`, offset 0px), `docs-copy` (1px auto #155dfc `color.brand.primary`, offset 0px), `docs-feedback` (2px solid #155dfc `color.brand.primary`, offset -2px), `docs-nav-tab` (1px auto #155dfc `color.brand.primary`, offset 1px), `dk-docs-nav-item` (1px auto #155dfc `color.brand.primary`, offset -2px), `dk-docs-copy` (1px auto #155dfc `color.brand.primary`, offset 0px), `dk-docs-search` (1px auto #155dfc `color.brand.primary`, offset 0px), `footer-link` (1px auto #005fcc `measured.focus-outline`, offset 1px), `social-link` (1px auto #005fcc `measured.focus-outline`, offset 1px), `m-nav-item` (1px auto #005fcc `measured.focus-outline`, offset 0px). On dub.co the button ring is the browser-default `auto 1px rgb(0, 95, 204)` outline, the docs surface draws its own 1px `#155dfc` ring, and the email field instead takes a black border plus a 1px black ring shadow.
 
 **Pressed.** Forced with DevTools (`CSS.forcePseudoState` :active:hover). Nothing a real press would submit was ever pressed.
 
@@ -59,7 +59,7 @@ Values that apply across entries, from the measurement files.
 | Duration | Easing | Property | Where |
 |---|---|---|---|
 | 0.075s | `cubic-bezier(0.4, 0, 0.2, 1)` | background-color, border-color, color, fill, stroke, text-decoration-color | footer-link, sales-topic |
-| 0.1s | `cubic-bezier(0.4, 0, 0.2, 1)` | background-color, border-color, color, fill, rotate, scale, stroke, text-decoration-color, transform, translate | dk-docs-sidebar, docs-sidebar, menu-link |
+| 0.1s | `cubic-bezier(0.4, 0, 0.2, 1)` | rotate, scale, transform, translate | dk-docs-sidebar, docs-sidebar |
 | 0.15s | `cubic-bezier(0.4, 0, 0.2, 1)` | all, background-color, border-color, color, fill, stroke, text-decoration-color | auth-link, billing-toggle, email-submit, faq-trigger, hero-cta, hero-demo, hero-tab, m-nav and more |
 | 0.2s | `cubic-bezier(0.4, 0, 0.2, 1)` | background-color, border-color, color, fill, stroke, text-decoration-color | m-menu-button |
 | 0.5s | `cubic-bezier(0.215, 0.61, 0.355, 1)` | flex-basis, flex-grow | customer-card |
@@ -155,16 +155,11 @@ The Product mega-menu panel, opened by its own trigger on hover. Read as `nav-dr
 ![Mega-menu panel default](components/crops/nav-dropdown-default.png)
 
 #### Menu item
-A product link inside the opened mega-menu. Read as `menu-link` on the home page.
+A product link inside the opened mega-menu. Only the default reading stands: the menu closed between states during capture, so the hover, focus-visible and pressed readings came from a different element and were removed. Read as `menu-link` on the home page.
 
-| State | Values (later rows list only what changes from the first row) |
-|---|---|
-| default | size 307.41 x 304.45; border 1px solid #f5f5f5 `color.neutral.100`; radius 12px; background #fafafa `color.neutral.50`; text Inter 14/20 500, #171717 `color.neutral.900` |
-| hover | size 195.69 x 24; padding 4px; border none; radius 8px; background rgba(0, 0, 0, 0.05); text Inter 12/16 500, #525252 `color.neutral.600`; transition color 0.1s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), fill 0.1s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.1s cubic-bezier(0.4, 0, 0.2, 1); icon 10 x 10, #4c1d95 |
-| focus-visible | size 195.69 x 24; padding 4px; border none; radius 8px; background transparent; outline 1px auto #005fcc `measured.focus-outline`, offset 1px; text Inter 12/16 500, #525252 `color.neutral.600`; transition color 0.1s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), fill 0.1s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.1s cubic-bezier(0.4, 0, 0.2, 1); icon 10 x 10, #4c1d95; layers a.flex.min-w-0 195.7x24.0 1px auto rgb(0, 95, 204) offset 1px 8px; div.flex.size-4 16.0x16.0 rgb(167, 139, 250) 4px |
-| pressed | size 195.69 x 24; padding 4px; border none; radius 8px; background rgba(0, 0, 0, 0.1); text Inter 12/16 500, #525252 `color.neutral.600`; transition color 0.1s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), fill 0.1s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.1s cubic-bezier(0.4, 0, 0.2, 1); icon 10 x 10, #4c1d95 |
+**Values (default).** size 307.41 x 304.45; border 1px solid #f5f5f5 `color.neutral.100`; radius 12px; background #fafafa `color.neutral.50`; text Inter 14/20 500, #171717 `color.neutral.900`.
 
-![Menu item default](components/crops/menu-link-default.png) ![Menu item hover](components/crops/menu-link-hover.png) ![Menu item focus-visible](components/crops/menu-link-focus-visible.png) ![Menu item pressed](components/crops/menu-link-pressed.png)
+![Menu item default](components/crops/menu-link-default.png)
 
 ### Home hero
 
@@ -600,8 +595,8 @@ A docs "Was this helpful" Yes/No button; measured, never pressed (a press would 
 
 ![Feedback button default](components/crops/docs-feedback-default.png) ![Feedback button hover](components/crops/docs-feedback-hover.png) ![Feedback button focus-visible](components/crops/docs-feedback-focus-visible.png) ![Feedback button pressed](components/crops/docs-feedback-pressed.png)
 
-#### Docs card
-A docs landing card link; measured never followed. Read as `docs-card` on the docs page.
+#### Docs nav tab
+The docs surface's top navigation tab (API Reference); measured never followed. A docs landing card was never captured — an earlier global locator read this nav tab under the card name. Read as `docs-nav-tab` on the docs page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -612,7 +607,7 @@ A docs landing card link; measured never followed. Read as `docs-card` on the do
 
 Child layers that carry the look: svg 16x16 background #25282d `color.gray.800`.
 
-![Docs card default](components/crops/docs-card-default.png) ![Docs card hover](components/crops/docs-card-hover.png) ![Docs card focus-visible](components/crops/docs-card-focus-visible.png) ![Docs card pressed](components/crops/docs-card-pressed.png)
+![Docs nav tab default](components/crops/docs-nav-tab-default.png) ![Docs nav tab hover](components/crops/docs-nav-tab-hover.png) ![Docs nav tab focus-visible](components/crops/docs-nav-tab-focus-visible.png) ![Docs nav tab pressed](components/crops/docs-nav-tab-pressed.png)
 
 #### Docs headline (dark)
 The docs h1 with html.dark painted — the real dark theme. Read as `dk-docs-h1` on the docs (dark) page.

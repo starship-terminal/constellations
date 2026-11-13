@@ -16,22 +16,23 @@ colors:
   outline: "#d4d4d4"
   background: "#fafafa"
   foreground: "#0a0a0a"
-  card-default: "#fefefe"
+  card-base: "#fefefe"
   card-foreground: "#0a0a0a"
-  muted-default: "#f5f5f5"
+  muted-base: "#f5f5f5"
   muted-foreground: "#737373"
-  popover-default: "#ffffff"
+  popover-base: "#ffffff"
   popover-foreground: "#272727"
-  primary-default: "#155dfc"
+  primary-base: "#155dfc"
   primary-foreground: "#fafafa"
-  secondary-default: "#f5f5f5"
+  secondary-base: "#f5f5f5"
   secondary-foreground: "#171717"
-  accent-default: "#f0f0f0"
+  accent-base: "#f0f0f0"
   accent-foreground: "#171717"
   ring: "#a3a3a3"
-  border-default: "#d4d4d4"
+  border-base: "#e5e5e5"
   border-muted: "#f5f5f5"
   border-subtle: "#e5e5e5"
+  border-default: "#d4d4d4"
   border-emphasis: "#a3a3a3"
   tooltip-foreground: "#ffffff"
   bg-default: "#ffffff"
@@ -71,7 +72,7 @@ colors:
   twoslash-unmatched-color: "#888888"
   twoslash-warn-bg: "rgba(195, 125, 13, 0.125)"
   twoslash-warn-color: "#c37d0d"
-  action-primary-bg-default: "#000000"
+  action-primary-bg-base: "#000000"
   action-primary-bg-hover: "#262626"
   action-primary-text: "#ffffff"
   action-hover-halo: "#e5e5e5"
@@ -86,6 +87,7 @@ colors:
   docs-divider: "#eef0f5"
   docs-search-bg: "oklab(0.15767 -0.00243126 -0.00955348 / 0.03)"
   docs-search-bg-hover: "oklab(0.15767 -0.00243126 -0.00955348 / 0.1)"
+  marketing-primary: "#171717"
 rounded:
   xl: "12px"
   button: "8px"
@@ -148,7 +150,7 @@ Dub is worth a capture because the public surface is three different stacks that
 
 The roles below are the catalog's swatches for the `light` theme. The front matter then lists every colour token under `light`, named by its path with dots turned into hyphens.
 
-- **primary (#155dfc):** `light.primary.default`
+- **primary (#155dfc):** `light.primary.base`
 - **neutral (#fafafa):** `light.background`
 - **surface (#ffffff):** `light.bg.default`
 - **on-surface (#0a0a0a):** `light.foreground`
@@ -204,14 +206,15 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - **The docs washes are oklab.** Mintlify paints its translucencies as `color-mix`, which Chrome reports as `oklab()` — `color.wash.*` keeps the measured oklab strings verbatim (10% `#155dfc` active-nav wash, 3%/10% ink and white search-pill washes). They are exact computed values, not approximations.
 - **Focus is two systems.** Buttons draw the browser-default `auto 1px rgb(0, 95, 204)` outline; the docs surface draws its own 1px `#155dfc` ring; the email field instead takes a black border plus a 1px black ring shadow. `hero-badge` and `sales-submit` recorded `via: focus failed` — their focus look is uncaptured, not measured as absent.
 - **Quantised screenshots.** `screenshots/` are 256-colour PNGs; read exact colours from tokens or the raw files.
+- **`--primary` means two different colours.** The marketing shadcn sheet declares it `0 0% 9%` (a near-black `#171717`, `#fafafa` under the `.dark` scope); the docs inline sheet binds the same name to the Dub blue `21 93 252` (`#155dfc`). The tokens keep them apart — `light.marketing.primary`/`dark.marketing.primary` versus `light.primary.base`/`dark.primary.base` (the docs value) — and [raw/css-vars.json](raw/css-vars.json) lists the collision under `conflicts` with each surface's own resolution under `resolved.surfaces`. Never read a `--primary` value without checking which surface declared it.
 - **`--primary-foreground` looks wrong on dark** (`#171717` on the unchanged `#155dfc`) — it is what the `.dark` scope declares, not a misread; the docs surface never paints a primary button there.
 
 ### Do and don't (from README.md)
 
 1. **Do paint the field near-white.** Marketing surfaces sit on `#fafafa` (`--background`) with `#f5f5f5` muted fills; pure white is reserved for cards, fields and bordered buttons. See [home-light-default](screenshots/home-light-default.png).
 2. **Do make the primary action black.** Buttons are `#000` fills with white text at an 8px radius — the brand blue never appears on marketing chrome. See [nav-cta](components/crops/nav-cta-default.png).
-3. **Do paint the halo, not a darker fill.** Black CTAs keep `#000` on hover and pressed and draw a 4px `#e5e5e5` box-shadow halo around themselves instead. See [nav-cta](components/crops/nav-cta-hover.png).
-4. **Do give fields the black focus pair.** A focused input takes a `#000` border plus a 1px black ring shadow over its quiet 5%-black drop — not a coloured ring. See [email-field](components/crops/email-field-focused.png).
+3. **Do paint the halo on marketing and auth CTAs, not a darker fill.** The black buttons signal hover with a 4px `#e5e5e5` box-shadow halo, not a darkened fill — `nav-cta` and `email-submit` keep `#000` outright and `hero-cta` lifts only to a measured `#262626`. The docs surface plays a different game (its hovers are oklab washes). See [nav-cta](components/crops/nav-cta-hover.png).
+4. **Do give fields the quiet focus pair.** A focused input swaps its `#d4d4d4` border for a darker one plus a matching 1px ring shadow over the 5%-black drop — `#000` on the login card, `#737373` on register and contact-sales — never a coloured ring. Docs controls use the `#155dfc` outline instead. See [email-field](components/crops/email-field-focused.png).
 5. **Do run Satoshi tight for display.** Headlines are Satoshi 48/55.2 at weight 500 (36/40 at 390, 36/40 at 600 on docs); body is Inter 14-20px. See [hero-title](components/crops/hero-title-default.png).
 6. **Do keep `#155dfc` inside the docs surface.** The Dub blue, its 10% active-nav wash and the docs focus ring belong to the Mintlify surface — the marketing pages never paint them. See [docs-nav-item](components/crops/docs-nav-item-default.png).
 7. **Do use the gray ramp for docs chrome.** `#eef0f5` hairlines, `#707277` resting sidebar text, `#17191e` headings, `#dfe1e6` on dark — the `--gray-*` steps, not the Tailwind neutrals. See [docs-sidebar](components/crops/docs-sidebar-default.png).
