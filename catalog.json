@@ -4147,7 +4147,7 @@
       "text": "dark.color.text",
       "muted": "dark.color.text",
       "accent": "core.color.measured.pink",
-      "border": "core.color.measured.card-border"
+      "border": "core.color.measured.pill-border"
      }
     },
     "fonts": [

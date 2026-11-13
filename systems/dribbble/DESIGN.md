@@ -269,14 +269,14 @@ colors:
   color-measured-muted-2: "#6e6d7a"
   color-measured-pink: "#ea4c89"
   color-measured-pink-hover: "#ec5e95"
-  color-measured-pink-text: "#0d0c22"
   color-measured-promo-surface: "rgba(244, 215, 243, 0.3)"
   color-measured-chip-surface: "#ffffff"
   color-measured-chip-dark: "#3a3546"
   color-measured-chip-dark-text: "#ffffff"
   color-measured-field-bg: "#ffffff"
   color-measured-field-border: "rgba(219, 218, 222, 0.9)"
-  color-measured-card-border: "#0d0c22"
+  color-measured-pill-border: "#0d0c22"
+  color-measured-pink-text: "#ea4c89"
   color-measured-link: "#060318"
   color-measured-footer-bg: "#ffffff"
   color-measured-footer-text: "#0d0c22"
@@ -298,7 +298,7 @@ rounded:
   large: "8px"
   x-large: "16px"
   pill: "9999px"
-  card: "0px"
+  card: "8px"
   field: "8px"
   search: "12px"
 spacing:
@@ -369,7 +369,7 @@ Shadows, resolved to CSS:
 
 ## Shapes
 
-Corner radii from `core.radius`: `small` 3px, `medium` 4px, `large` 8px, `x-large` 16px, `pill` 9999px, `card` 0px, `field` 8px, `search` 12px.
+Corner radii from `core.radius`: `small` 3px, `medium` 4px, `large` 8px, `x-large` 16px, `pill` 9999px, `card` 8px, `field` 8px, `search` 12px.
 
 ## Components
 

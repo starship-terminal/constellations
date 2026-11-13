@@ -199,14 +199,16 @@
      "description": "Declared --sl-letter-spacing-normal ('normal'): zero extra tracking."
     },
     "loose": {
-     "var": "--sl-letter-spacing-loose",
-     "type": "dimension",
-     "description": "Declared --sl-letter-spacing-loose."
+     "value": 0.075,
+     "type": "number",
+     "source": "css-var --sl-letter-spacing-loose (light); declared value .075em is em",
+     "description": "Declared --sl-letter-spacing-loose as an em multiplier on font size."
     },
     "looser": {
-     "var": "--sl-letter-spacing-looser",
-     "type": "dimension",
-     "description": "Declared --sl-letter-spacing-looser."
+     "value": 0.15,
+     "type": "number",
+     "source": "css-var --sl-letter-spacing-looser (light); declared value .15em is em",
+     "description": "Declared --sl-letter-spacing-looser as an em multiplier on font size."
     }
    },
    "weight": {
@@ -1568,12 +1570,6 @@
      "source": "computed bg of search-go hover (raw/components-computed.json)",
      "description": "The hover tint on the pink action."
     },
-    "pink-text": {
-     "value": "#0d0c22",
-     "type": "color",
-     "source": "computed color of hero-accent default (raw/components-computed.json)",
-     "description": "The pink the rotating hero word paints."
-    },
     "promo-surface": {
      "value": "rgba(244, 215, 243, 0.3)",
      "type": "color",
@@ -1610,11 +1606,17 @@
      "source": "computed borderTopColor of email-field default (raw/components-computed.json)",
      "description": "The auth field border tone."
     },
-    "card-border": {
+    "pill-border": {
      "value": "#0d0c22",
      "type": "color",
-     "source": "computed borderTopColor of shot-card default (raw/components-computed.json)",
-     "description": "The shot-card hairline, if painted."
+     "source": "computed borderTopColor of login-btn default (raw/components-computed.json)",
+     "description": "The dark pill's painted 1px border (same ink as its fill)."
+    },
+    "pink-text": {
+     "value": "#ea4c89",
+     "type": "color",
+     "source": "computed color of the text node inside hero-accent default (raw/components-computed.json)",
+     "description": "The pink the rotating hero word paints."
     },
     "link": {
      "value": "#060318",
@@ -1687,9 +1689,9 @@
     "description": "Declared --sl-border-radius-pill."
    },
    "card": {
-    "value": "0px",
+    "value": "8px",
     "type": "dimension",
-    "source": "computed borderTopLeftRadius of shot-card default (raw/components-computed.json)",
+    "source": "computed borderRadius of div.shot-thumbnail-overlay inside shot-card default (raw/components-computed.json)",
     "description": "The 8px shot-card radius."
    },
    "field": {

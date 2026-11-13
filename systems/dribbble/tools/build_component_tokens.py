@@ -249,25 +249,44 @@ for key, comp, state, prop, desc in [
     ("muted-2", "profile-stat", "default", "color", "The #6e6d7a lighter muted stat tone."),
     ("pink", "search-go", "default", "bg", "The #ea4c89 Dribbble pink: search Go, accents, PRO badges."),
     ("pink-hover", "search-go", "hover", "bg", "The hover tint on the pink action."),
-    ("pink-text", "hero-accent", "default", "color", "The pink the rotating hero word paints."),
     ("promo-surface", "promo-banner", "default", "bg", "The #f8f8fc promo-strip fill."),
     ("chip-surface", "skill-chip", "default", "bg", "The light skill-chip fill."),
     ("chip-dark", "skill-chip-dark", "default", "bg", "The dark certified-chip fill (Webflow Expert)."),
     ("chip-dark-text", "skill-chip-dark", "default", "color", "Text on the dark certified chip."),
     ("field-bg", "email-field", "default", "bg", "The auth field fill."),
     ("field-border", "email-field", "default", "borderTopColor", "The auth field border tone."),
-    ("card-border", "shot-card", "default", "borderTopColor", "The shot-card hairline, if painted."),
+    ("card-border", "shot-card", "default", "borderTopColor", "The shot-card hairline, if painted — the wrapper's border width is 0, so this emits nothing."),
+    ("pill-border", "login-btn", "default", "borderTopColor", "The dark pill's painted 1px border (same ink as its fill)."),
+    ("pink-text", "hero-accent", "default", "text:color", "The pink the rotating hero word paints."),
     ("link", "menu-link", "default", "color", "The header dropdown link ink."),
     ("footer-bg", "footer", "default", "bg", "The footer field, if painted."),
     ("footer-text", "footer-link", "default", "color", "The footer link tone."),
 ]:
     try:
-        v = norm_color(painted(comp, state) if prop == "bg" else st(comp, state)[prop])
+        # "text:<prop>" reads the first text node's computed style (ts), not
+        # the wrapper's — a rotating-word container inherits the page ink
+        # while the word inside paints the pink.
+        if prop == "bg":
+            raw_v = painted(comp, state)
+            src = f"computed bg of {comp} {state} (raw/components-computed.json)"
+        elif prop.startswith("text:"):
+            raw_v = ts(comp, state, prop[5:])
+            src = f"computed {prop[5:]} of the text node inside {comp} {state} (raw/components-computed.json)"
+        else:
+            raw_v = st(comp, state)[prop]
+            src = f"computed {prop} of {comp} {state} (raw/components-computed.json)"
+        # A border colour is only evidence when a border is painted: a 0-width
+        # or 'none' border's colour is an unpainted declaration, not a reading.
+        if prop.startswith("border") and prop.endswith("Color"):
+            side = prop[len("border"):-len("Color")]
+            s = st(comp, state)
+            w = s.get(f"border{side}Width", "0px")
+            if s.get(f"border{side}Style") == "none" or not float((w or "0px").replace("px", "") or 0):
+                continue
+        v = norm_color(raw_v)
         if v and v not in ("transparent", "rgba(0, 0, 0, 0)"):
-            meas_col[key] = {"value": v, "type": "color",
-                             "source": f"computed {prop} of {comp} {state} (raw/components-computed.json)",
-                             "description": desc}
-    except (KeyError, TypeError):
+            meas_col[key] = {"value": v, "type": "color", "source": src, "description": desc}
+    except (KeyError, TypeError, ValueError):
         pass
 
 # ------------------------------------------------------------ light roles
@@ -304,6 +323,13 @@ for key, comp, state, prop, desc in [
         elif prop == "paint":
             v = norm_color(painted(comp, state))
         else:
+            # Only a painted border (width > 0, style not none) yields a colour.
+            if prop.startswith("border") and prop.endswith("Color"):
+                side = prop[len("border"):-len("Color")]
+                s = st(comp, state)
+                w = s.get(f"border{side}Width", "0px")
+                if s.get(f"border{side}Style") == "none" or not float((w or "0px").replace("px", "") or 0):
+                    continue
             v = norm_color(st(comp, state)[prop])
         if v and v not in ("transparent", "rgba(0, 0, 0, 0)"):
             meas_col[key] = {"value": v, "type": "color",
@@ -380,12 +406,15 @@ for n in ["denser", "dense", "normal", "loose", "looser"]:
     if vname in R:
         # Shoelace declares letter-spacing in em — a font-size multiplier, not
         # a fixed length — so it lands as a number token, not a dimension.
-        m = re.fullmatch(r"(-?\d*\.?\d+)em", str(R[vname]).strip())
+        # R prefers the resolved pixel value, which freezes the scale to the
+        # probe's font size; read the raw declaration instead.
+        decl = str(RL[vname].get("raw", R[vname])).strip()
+        m = re.fullmatch(r"(-?\d*\.?\d+)em", decl)
         if m:
             tracking[n] = {"value": float(m.group(1)), "type": "number",
-                           "source": f"css-var {vname} (light); declared value {R[vname]} is em",
+                           "source": f"css-var {vname} (light); declared value {decl} is em",
                            "description": f"Declared {vname} as an em multiplier on font size."}
-        elif str(R[vname]).strip() == "normal":
+        elif decl == "normal":
             tracking[n] = {"value": 0, "type": "number",
                            "source": f"css-var {vname} (light); declared 'normal' — the font's own spacing",
                            "description": f"Declared {vname} ('normal'): zero extra tracking."}
@@ -444,13 +473,23 @@ for key, comp, state, desc in [
 ]:
     if have(comp, state, "borderTopLeftRadius"):
         rv = st(comp, state)["borderTopLeftRadius"]
+        src = f"computed borderTopLeftRadius of {comp} {state} (raw/components-computed.json)"
+        if str(rv).strip() == "0px":
+            # A wrapper can paint square while a layer inside it carries the
+            # visible corner radius (the shot card's thumbnail overlay): read
+            # the first non-percentage layer radius as the card's shape.
+            hit = next((p for p in (C[comp]["states"][state].get("paint") or [])
+                        if p.get("radius") and not str(p["radius"]).endswith("%")), None)
+            if hit:
+                rv = str(hit["radius"]).split()[0]
+                src = f"computed borderRadius of {hit['node']} inside {comp} {state} (raw/components-computed.json)"
         if str(rv).strip().endswith("%"):
             radius[key] = {"value": str(rv).strip(), "type": "other",
-                           "source": f"computed borderTopLeftRadius of {comp} {state} (raw/components-computed.json)",
+                           "source": src,
                            "description": desc + " A percentage radius — relative to the element's own size."}
         else:
             radius[key] = {"value": rv, "type": "dimension",
-                           "source": f"computed borderTopLeftRadius of {comp} {state} (raw/components-computed.json)",
+                           "source": src,
                            "description": desc}
 
 # No --sl-easing-* variables exist on the site; motion easings are measured

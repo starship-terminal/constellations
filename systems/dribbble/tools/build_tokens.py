@@ -38,11 +38,11 @@ V = json.loads((RAW / "css-vars.json").read_text())
 SPEC = json.loads((RAW / "component-tokens.json").read_text())
 
 # Resolved declarations per surface. vars.mjs resolves each custom property on
-# two probe documents: the marketing page once light (:root) and once .dark, and
-# the booking page once light and once .dark (bookingDark is a declared but
-# unpainted scope). DECL[theme][name] is what the browser paints there. A leaf
-# may set "resolve": "<pass>" to look its var up on a different surface than the
-# theme it sits in (booking-declared variables inside the light set).
+# the public pages twice: once light (:root) and once with class="dark" on
+# <body> — the Algolia search dropdown's vendor dark scope, the site's only
+# declared dark binding and never a product theme. DECL[theme][name] is what
+# the browser paints there. A leaf may set "resolve": "<pass>" to look its var
+# up on a different surface than the theme it sits in.
 DECL = {t: {n: v.get("value", v["raw"]) for n, v in V["resolved"][t].items()}
         for t in V["resolved"]}
 
@@ -223,9 +223,9 @@ tokens = {
     "dark": dark,
     "$themes": [
         {"id": "light", "name": "Light", "selectedTokenSets": {"core": "source", "light": "enabled"},
-         "$description": "The marketing surface paints light; the booking roles (light.booking.*) also paint light, from the booking application's own token layer."},
+         "$description": "The whole signed-out surface paints light; dribbble.com declares no product theme toggle."},
         {"id": "dark", "name": "Dark", "selectedTokenSets": {"core": "source", "dark": "enabled"},
-         "$description": "The .dark islands inside the marketing pages (hero card, footer card, dark sections) re-bind the same --color-* roles; not a user toggle."},
+         "$description": "The ink surfaces the light page paints (the dark Log-in / Get-in-touch pills and the dark certified chip); not a user theme. The only declared dark CSS scope re-binds the third-party Algolia vendor vars, kept in raw/css-vars.json."},
     ],
     "$metadata": {"tokenSetOrder": ["core", "light", "dark"]},
 }

@@ -45,7 +45,7 @@ Screenshots are named `{page}-{theme}-state.png`: every captured surface paints 
 
 Values that apply across entries, from the measurement files.
 
-**Focus.** 50 components were given a real keyboard focus. 47 draw an outline ring: `nav-trigger` (2px solid #f3afe4 `focusRing.measured.color`, offset 1px), `nav-link` (2px solid #f3afe4 `focusRing.measured.color`, offset 1px), `signup-link` (2px solid #f3afe4 `focusRing.measured.color`, offset 1px), `login-btn` (2px solid #f3afe4 `focusRing.measured.color`, offset 1px), `menu-link` (2px solid #f3afe4 `focusRing.measured.color`, offset 1px), `hero-cta` (2px solid #f3afe4 `focusRing.measured.color`, offset 1px), `view-tab` (on a child: 2px solid rgb(13, 12, 34) offset 2px), `search-go` (2px solid #f3afe4 `focusRing.measured.color`, offset 0px), `tag-chip` (2px solid #f3afe4 `focusRing.measured.color`, offset 1px), `shot-card` (on a child: 2px solid rgb(243, 175, 228) offset 1px), `shot-title` (2px solid #f3afe4 `focusRing.measured.color`, offset 1px), `pro-badge` (2px solid #f3afe4 `focusRing.measured.color`, offset 1px), `wall-cta` (1px solid #6e6d7a `color.measured.muted-2`, offset 1px), `category-tile` (2px solid #f3afe4 `focusRing.measured.color`, offset 1px), `shot-author` (2px solid #f3afe4 `focusRing.measured.color`, offset 1px), `shot-follow` (1px solid #6e6d7a `color.measured.muted-2`, offset 1px), `shot-cta` (2px solid #f3afe4 `focusRing.measured.color`, offset 1px), `shot-icon-btn` (2px solid #f3afe4 `focusRing.measured.color`, offset 0px), `rail-btn` (2px solid #f3afe4 `focusRing.measured.color`, offset 0px), `profile-cta` (2px solid #f3afe4 `focusRing.measured.color`, offset 1px), `profile-follow` (2px solid #f3afe4 `focusRing.measured.color`, offset 1px), `profile-icon-btn` (2px solid #f3afe4 `focusRing.measured.color`, offset 0px), `profile-tab` (2px solid #f3afe4 `focusRing.measured.color`, offset 1px), `profile-sort` (1px solid #6e6d7a `color.measured.muted-2`, offset 1px), `profile-shot-card` (on a child: 2px solid rgb(243, 175, 228) offset 1px), `topic-chip` (2px solid #f3afe4 `focusRing.measured.color`, offset 1px), `designer-card` (on a child: 2px solid rgb(243, 175, 228) offset 1px), `designer-name` (2px solid #f3afe4 `focusRing.measured.color`, offset 1px), `badge-select` (2px solid #f3afe4 `focusRing.measured.color`, offset 1px), `designer-cta` (2px solid #f3afe4 `focusRing.measured.color`, offset 1px), `bookmark-btn` (2px solid #f3afe4 `focusRing.measured.color`, offset 0px), `skill-chip-dark` (2px solid #f3afe4 `focusRing.measured.color`, offset 1px), `skill-chip` (2px solid #f3afe4 `focusRing.measured.color`, offset 1px), `job-title` (2px solid #f3afe4 `focusRing.measured.color`, offset 1px), `job-tag` (on a child: 2px solid rgb(243, 175, 228) offset 1px), `job-apply` (2px solid #f3afe4 `focusRing.measured.color`, offset 0px), `related-link` (2px solid #f3afe4 `focusRing.measured.color`, offset 1px), `filter-tab` (2px solid #f3afe4 `focusRing.measured.color`, offset 1px), `filter-sort` (1px solid #6e6d7a `color.measured.muted-2`, offset 1px), `filters-btn` (1px solid #6e6d7a `color.measured.muted-2`, offset 1px), `grid-shot-card` (on a child: 2px solid rgb(243, 175, 228) offset 1px), `story-card` (2px solid #f3afe4 `focusRing.measured.color`, offset 1px), `story-tag` (2px solid #f3afe4 `focusRing.measured.color`, offset 1px), `continue-btn` (2px solid #f3afe4 `focusRing.measured.color`, offset 0px), `auth-link` (2px solid #f3afe4 `focusRing.measured.color`, offset 1px), `footer-link` (2px solid #f3afe4 `focusRing.measured.color`, offset 1px), `social-icon` (2px solid #f3afe4 `focusRing.measured.color`, offset 1px). 2 draw a focus ring as a shadow instead: `sort-select`, `filter-select`. The other 1 show no measured change: `scope-select`.
+**Focus.** 48 components were given a real keyboard focus. 45 draw an outline ring: `nav-trigger` (2px solid #f3afe4 `focusRing.measured.color`, offset 1px), `nav-link` (2px solid #f3afe4 `focusRing.measured.color`, offset 1px), `signup-link` (2px solid #f3afe4 `focusRing.measured.color`, offset 1px), `login-btn` (2px solid #f3afe4 `focusRing.measured.color`, offset 1px), `menu-link` (2px solid #f3afe4 `focusRing.measured.color`, offset 1px), `hero-cta` (2px solid #f3afe4 `focusRing.measured.color`, offset 1px), `view-tab` (on a child: 2px solid rgb(13, 12, 34) offset 2px), `search-go` (2px solid #f3afe4 `focusRing.measured.color`, offset 0px), `tag-chip` (2px solid #f3afe4 `focusRing.measured.color`, offset 1px), `shot-card` (on a child: 2px solid rgb(243, 175, 228) offset 1px), `shot-title` (2px solid #f3afe4 `focusRing.measured.color`, offset 1px), `pro-badge` (2px solid #f3afe4 `focusRing.measured.color`, offset 1px), `wall-cta` (1px solid #6e6d7a `color.measured.muted-2`, offset 1px), `category-tile` (2px solid #f3afe4 `focusRing.measured.color`, offset 1px), `shot-author` (2px solid #f3afe4 `focusRing.measured.color`, offset 1px), `shot-follow` (1px solid #6e6d7a `color.measured.muted-2`, offset 1px), `shot-cta` (2px solid #f3afe4 `focusRing.measured.color`, offset 1px), `shot-icon-btn` (2px solid #f3afe4 `focusRing.measured.color`, offset 0px), `rail-btn` (2px solid #f3afe4 `focusRing.measured.color`, offset 0px), `profile-cta` (2px solid #f3afe4 `focusRing.measured.color`, offset 1px), `profile-follow` (2px solid #f3afe4 `focusRing.measured.color`, offset 1px), `profile-icon-btn` (2px solid #f3afe4 `focusRing.measured.color`, offset 0px), `profile-tab` (2px solid #f3afe4 `focusRing.measured.color`, offset 1px), `profile-sort` (1px solid #6e6d7a `color.measured.muted-2`, offset 1px), `profile-shot-card` (on a child: 2px solid rgb(243, 175, 228) offset 1px), `topic-chip` (2px solid #f3afe4 `focusRing.measured.color`, offset 1px), `designer-card` (on a child: 2px solid rgb(243, 175, 228) offset 1px), `designer-name` (2px solid #f3afe4 `focusRing.measured.color`, offset 1px), `badge-select` (2px solid #f3afe4 `focusRing.measured.color`, offset 1px), `designer-cta` (2px solid #f3afe4 `focusRing.measured.color`, offset 1px), `bookmark-btn` (2px solid #f3afe4 `focusRing.measured.color`, offset 0px), `skill-chip-dark` (2px solid #f3afe4 `focusRing.measured.color`, offset 1px), `skill-chip` (2px solid #f3afe4 `focusRing.measured.color`, offset 1px), `job-apply` (2px solid #f3afe4 `focusRing.measured.color`, offset 0px), `related-link` (2px solid #f3afe4 `focusRing.measured.color`, offset 1px), `filter-tab` (2px solid #f3afe4 `focusRing.measured.color`, offset 1px), `filter-sort` (1px solid #6e6d7a `color.measured.muted-2`, offset 1px), `filters-btn` (1px solid #6e6d7a `color.measured.muted-2`, offset 1px), `grid-shot-card` (on a child: 2px solid rgb(243, 175, 228) offset 1px), `story-card` (2px solid #f3afe4 `focusRing.measured.color`, offset 1px), `story-tag` (2px solid #f3afe4 `focusRing.measured.color`, offset 1px), `continue-btn` (2px solid #f3afe4 `focusRing.measured.color`, offset 0px), `auth-link` (2px solid #f3afe4 `focusRing.measured.color`, offset 1px), `footer-link` (2px solid #f3afe4 `focusRing.measured.color`, offset 1px), `social-icon` (2px solid #f3afe4 `focusRing.measured.color`, offset 1px). 2 draw a focus ring as a shadow instead: `sort-select`, `filter-select`. The other 1 show no measured change: `scope-select`.
 
 **Pressed.** Forced with DevTools (`CSS.forcePseudoState` :active:hover). Nothing a real press would submit was ever pressed.
 
@@ -54,7 +54,7 @@ Values that apply across entries, from the measurement files.
 | Duration | Easing | Property | Where |
 |---|---|---|---|
 | 0.05s | `cubic-bezier(0.32, 0, 0.59, 0.03)` | background-color, border, border-radius, color, padding | bookmark-btn, continue-btn, designer-cta, hero-cta, job-apply, login-btn, profile-cta, profile-follow and more |
-| 0.1s | `ease` | color | auth-link, badge-select, category-tile, designer-name, filter-tab, footer-link, job-title, logo and more |
+| 0.1s | `ease` | color | auth-link, badge-select, category-tile, designer-name, filter-tab, footer-link, logo, m-search and more |
 | 0.1s | `ease-in-out` | color | promoted-tag |
 | 0.15s | `ease-in-out` | -webkit-box-shadow, box-shadow | designer-card |
 | 0.2s | `cubic-bezier(0.34, 1.56, 0.64, 1)` | -webkit-box-shadow, background-color, border, box-shadow, color | email-field, filter-select, signup-field, sort-select |
@@ -215,11 +215,11 @@ The rotating accent word inside the headline. Read as `hero-accent` on the home 
 ![Hero accent word default](components/crops/hero-accent-default.png)
 
 #### Hero checklist item
-A pink-check bullet under the hero. Read as `hero-check` on the home page.
+A pink-check bullet under the hero (li.home-header__list-item). Read as `hero-check` on the home page.
 
-**Values (default).** size 118.3 x 30; background transparent; text Mona Sans 14/30 600, #060318 `color.measured.link`; icon 20 x 20, #060318 `color.measured.link`; layers a::after.site-nav-main__link 9pxx8px; ul.site-nav-sub.site-nav-sub--wide-format 585.2x325.0 rgb(255, 255, 255) T:1px solid rgba(231, 231, 233, 0.5) / R:1px solid rgba(231, 231, 233, 0.5) / B:1px solid rgba(231, 231, 233, 0.5) / L:1px solid rgba(231, 231, 233, 0.5) rgba(27, 32, 50, 0.1) 0px 15px 50px 0px 8px; span::after.site-nav-sub__divider 535.203pxx1px rgb(216, 214, 213).
+**Values (default).** size 618 x 22; background transparent; text Mona Sans 16/21 400, #0d0c22 `color.measured.ink`; layers ::before rgba(234, 76, 137, 0.1) 0px none 1; li::before.home-header__list-item 23pxx21px rgba(234, 76, 137, 0.1) 50%.
 
-Child layers that carry the look: a::after 9pxx8px image url(data:…); ul 585.2x325 background #ffffff `color.neutral.0` border 1px solid rgba(231, 231, 233, 0.5) radius 8px shadow rgba(27, 32, 50, 0.1) 0px 15px 50px 0px; span::after 535.203pxx1px background #d8d6d5.
+Child layers that carry the look: li::before 23pxx21px background rgba(234, 76, 137, 0.1) radius 50%.
 
 ![Hero checklist item default](components/crops/hero-check-default.png)
 
@@ -710,29 +710,26 @@ A posting card: logo, role, company, location/type tags. Read as `job-card` on t
 ![Job card default](components/crops/job-card-default.png) ![Job card hover](components/crops/job-card-hover.png) ![Job card pressed](components/crops/job-card-pressed.png)
 
 #### Job title
-A role title on a posting. Read as `job-title` on the jobs board page.
+A role title on a posting (h4.job-board-job-title inside li.job-list-item). Read as `job-title` on the jobs board page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 89 x 25; background transparent; text Mona Sans 16/28 400, #060318 `color.measured.link`; transition color 0.1s ease; icon 89 x 25, #060318 `color.measured.link` |
-| hover | text Mona Sans 16/28 400, #3d3d4e `dribbble.button.bg-hover`; icon 89 x 25, #3d3d4e `dribbble.button.bg-hover` |
-| focus-visible | outline 2px solid #f3afe4 `focusRing.measured.color`, offset 1px; layers a.site-nav__logo 89.0x25.0 2px solid rgb(243, 175, 228) offset 1px |
-| pressed | text Mona Sans 16/28 400, #3d3d4e `dribbble.button.bg-hover`; icon 89 x 25, #3d3d4e `dribbble.button.bg-hover` |
+| default (same: hover, pressed) | size 250.09 x 36; background transparent; text Mona Sans 22/36 500, #0d0c22 `color.measured.ink` |
 
-![Job title default](components/crops/job-title-default.png) ![Job title hover](components/crops/job-title-hover.png) ![Job title focus-visible](components/crops/job-title-focus-visible.png) ![Job title pressed](components/crops/job-title-pressed.png)
+**Focus not capturable.** A real keyboard focus could not be held on this element (`focus-visible` recorded `via: focus failed`), so its focus look is uncaptured — not measured as absent.
+
+![Job title default](components/crops/job-title-default.png) ![Job title hover](components/crops/job-title-hover.png) ![Job title pressed](components/crops/job-title-pressed.png)
 
 #### Job tag
-A remote/contract/location tag on the posting. Read as `job-tag` on the jobs board page.
+A remote/contract/location tag on the posting (span.location inside li.job-list-item). Read as `job-tag` on the jobs board page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: pressed) | size 118.3 x 30; background transparent; text Mona Sans 14/30 600, #060318 `color.measured.link`; icon 20 x 20, #060318 `color.measured.link`; layers a::after.site-nav-main__link 9pxx8px; ul.site-nav-sub.site-nav-sub--wide-format 556.1x325.0 rgb(255, 255, 255) T:1px solid rgba(231, 231, 233, 0.5) / R:1px solid rgba(231, 231, 233, 0.5) / B:1px solid rgba(231, 231, 233, 0.5) / L:1px solid rgba(231, 231, 233, 0.5) rgba(27, 32, 50, 0.1) 0px 15px 50px 0px 8px; span::after.site-nav-sub__divider 506.094pxx1px rgb(216, 214, 213) |
-| hover | text Mona Sans 14/30 600, #7b7194 `dribbble.nav.link-hover` |
-| focus-visible | layers a.site-nav-main__link 118.3x30.0 2px solid rgb(243, 175, 228) offset 1px; a::after.site-nav-main__link 9pxx8px; ul.site-nav-sub.site-nav-sub--wide-format 556.1x325.0 rgb(255, 255, 255) T:1px solid rgba(231, 231, 233, 0.5) / R:1px solid rgba(231, 231, 233, 0.5) / B:1px solid rgba(231, 231, 233, 0.5) / L:1px solid rgba(231, 231, 233, 0.5) rgba(27, 32, 50, 0.1) 0px 15px 50px 0px 8px; span::after.site |
+| default (same: hover, pressed) | size 67.78 x 28; background transparent; text Mona Sans 12/28 700, #3d3d4e `dribbble.button.bg-hover`; icon 14 x 22, #0d0c22 `color.measured.ink` |
 
-Child layers that carry the look: a::after 9pxx8px image url(data:…); ul 556.1x325 background #ffffff `color.neutral.0` border 1px solid rgba(231, 231, 233, 0.5) radius 8px shadow rgba(27, 32, 50, 0.1) 0px 15px 50px 0px; span::after 506.094pxx1px background #d8d6d5.
+**Focus not capturable.** A real keyboard focus could not be held on this element (`focus-visible` recorded `via: focus failed`), so its focus look is uncaptured — not measured as absent.
 
-![Job tag default](components/crops/job-tag-default.png) ![Job tag hover](components/crops/job-tag-hover.png) ![Job tag focus-visible](components/crops/job-tag-focus-visible.png) ![Job tag pressed](components/crops/job-tag-pressed.png)
+![Job tag default](components/crops/job-tag-default.png) ![Job tag hover](components/crops/job-tag-hover.png) ![Job tag pressed](components/crops/job-tag-pressed.png)
 
 #### Apply button
 The apply action; measured never followed. Read as `job-apply` on the jobs board page.
@@ -921,14 +918,14 @@ An article card in the blog index. Read as `story-card` on the stories page.
 ![Story card default](components/crops/story-card-default.png) ![Story card hover](components/crops/story-card-hover.png) ![Story card focus-visible](components/crops/story-card-focus-visible.png) ![Story card pressed](components/crops/story-card-pressed.png)
 
 #### Story tag
-A category label on a story card. Read as `story-tag` on the stories page.
+A category link on the stories index (ul.blog-cat: Interviews, Inspiration, Process, Community). Read as `story-tag` on the stories page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 89 x 25; background transparent; text Mona Sans 16/28 400, #060318 `color.measured.link`; transition color 0.1s ease; icon 89 x 25, #060318 `color.measured.link` |
-| hover | text Mona Sans 16/28 400, #3d3d4e `dribbble.button.bg-hover`; icon 89 x 25, #3d3d4e `dribbble.button.bg-hover` |
-| focus-visible | outline 2px solid #f3afe4 `focusRing.measured.color`, offset 1px; layers a.site-nav__logo 89.0x25.0 2px solid rgb(243, 175, 228) offset 1px |
-| pressed | text Mona Sans 16/28 400, #3d3d4e `dribbble.button.bg-hover`; icon 89 x 25, #3d3d4e `dribbble.button.bg-hover` |
+| default | size 281.81 x 25; padding 2px 0px; background transparent; text Mona Sans 14/21 500, #0d0c22 `color.measured.ink`; transition color 0.1s ease |
+| hover | text Mona Sans 14/21 500, #3d3d4e `dribbble.button.bg-hover` |
+| focus-visible | outline 2px solid #f3afe4 `focusRing.measured.color`, offset 1px; layers a 281.8x25.0 2px solid rgb(243, 175, 228) offset 1px |
+| pressed | text Mona Sans 14/21 500, #3d3d4e `dribbble.button.bg-hover` |
 
 ![Story tag default](components/crops/story-tag-default.png) ![Story tag hover](components/crops/story-tag-hover.png) ![Story tag focus-visible](components/crops/story-tag-focus-visible.png) ![Story tag pressed](components/crops/story-tag-pressed.png)
 

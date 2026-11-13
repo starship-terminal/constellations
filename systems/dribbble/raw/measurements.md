@@ -353,26 +353,26 @@ Crops: `hero-accent-default.png`.
 
 #### hero-check
 
-Hero checklist item. A pink-check bullet under the hero.
+Hero checklist item. A pink-check bullet under the hero (li.home-header__list-item).
 
-Page: home. Selector: `hero checklist li`. States: default.
+Page: home. Selector: `.home-header__list li`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 118.3 x 30 |
+| Size (w x h) | 618 x 22 |
 | Padding | 0px |
+| Gap | 10px |
 | Border | none |
 | Radius | 0px |
 | Background | transparent |
 | Box shadow | none |
 | Outline | none |
-| Font | Mona Sans 16px/16px 400 |
+| Font | Mona Sans 16px/21px 400 |
 | Letter spacing | normal |
-| Colour | #060318 |
-| Text node | a.site-nav-main__link: Mona Sans 14px/30px 600, #060318 |
+| Colour | #0d0c22 |
 | Transition | none |
-| Icon | 20 x 20, colour #060318 |
-| Painted layers | a::after.site-nav-main__link 9pxx8px image url(data:…); ul.site-nav-sub.site-nav-sub--wide-format 585.2x325.0 bg #ffffff border T:1px solid #e7e7e9 @ 0.5 / R:1px solid #e7e7e9 @ 0.5 / B:1px solid #e7e7e9 @ 0.5 / L:1px solid #e7e7e9 @ 0.5 r 8px shadow #1b2032 @ 0.1 0px 15px 50px 0px; span::after.site-nav-sub__divider 535.203pxx1px bg #d8d6d5 |
+| ::before | 23px x 21px, static, bg #ea4c89 @ 0.1, radius 50% |
+| Painted layers | li::before.home-header__list-item 23pxx21px bg #ea4c89 @ 0.1 r 50% |
 | How | at rest |
 
 Crops: `hero-check-default.png`.
@@ -1569,53 +1569,49 @@ Crops: `job-card-default.png`, `job-card-hover.png`, `job-card-focus-visible.png
 
 #### job-title
 
-Job title. A role title on a posting.
+Job title. A role title on a posting (h4.job-board-job-title inside li.job-list-item).
 
-Page: jobs. Selector: `job title`. States: default, hover, focus-visible, pressed.
-
-| Property | default | hover | focus-visible | pressed |
-|---|---|---|---|---|
-| Size (w x h) | 89 x 25 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | 2px solid #f3afe4 offset 1px | = |
-| Font | Mona Sans 16px/28px 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #060318 | #3d3d4e | = | #3d3d4e |
-| Transition | color 0.1s ease | = | = | = |
-| Cursor | pointer | = | = | = |
-| Icon | 89 x 25, colour #060318 | 89 x 25, colour #3d3d4e | = | 89 x 25, colour #3d3d4e |
-| How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
-| Painted layers | - | = | a.site-nav__logo 89.0x25.0 outline 2px solid #f3afe4 offset 1px | = |
-
-Crops: `job-title-default.png`, `job-title-hover.png`, `job-title-focus-visible.png`, `job-title-pressed.png`.
-
-#### job-tag
-
-Job tag. A remote/contract/location tag on the posting.
-
-Page: jobs. Selector: `job tag`. States: default, hover, focus-visible, pressed.
+Page: jobs. Selector: `job title inside a job card`. States: default, hover, focus-visible, pressed.
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 118.3 x 30 | = | = | = |
+| Size (w x h) | 250.09 x 36 | = | = | = |
 | Padding | 0px | = | = | = |
 | Border | none | = | = | = |
 | Radius | 0px | = | = | = |
 | Background | transparent | = | = | = |
 | Box shadow | none | = | = | = |
 | Outline | none | = | = | = |
-| Font | Mona Sans 16px/16px 400 | = | = | = |
+| Font | Mona Sans 22px/36px 500 | = | = | = |
 | Letter spacing | normal | = | = | = |
-| Colour | #060318 | = | = | = |
-| Text node | a.site-nav-main__link: Mona Sans 14px/30px 600, #060318 | a.site-nav-main__link: Mona Sans 14px/30px 600, #7b7194 | = | = |
+| Colour | #0d0c22 | = | = | = |
 | Transition | none | = | = | = |
-| Icon | 20 x 20, colour #060318 | = | = | = |
-| Painted layers | a::after.site-nav-main__link 9pxx8px image url(data:…); ul.site-nav-sub.site-nav-sub--wide-format 556.1x325.0 bg #ffffff border T:1px solid #e7e7e9 @ 0.5 / R:1px solid #e7e7e9 @ 0.5 / B:1px solid #e7e7e9 @ 0.5 / L:1px solid #e7e7e9 @ 0.5 r 8px shadow #1b2032 @ 0.1 0px 15px 50px 0px; span::after.site-nav-sub__divider 506.094pxx1px bg #d8d6d5 | = | a.site-nav-main__link 118.3x30.0 outline 2px solid #f3afe4 offset 1px; a::after.site-nav-main__link 9pxx8px image url(data:…); ul.site-nav-sub.site-nav-sub--wide-format 556.1x325.0 bg #ffffff border T:1px solid #e7e7e9 @ 0.5 / R:1px solid #e7e7e9 @ 0.5 / B:1px solid #e7e7e9 @ 0.5 / L:1px solid #e7e7e9 @ 0.5 r 8px shadow #1b2032 @ 0.1 0px 15px 50px 0px; span::after.site-nav-sub__divider 506.094pxx1px bg #d8d6d5 | = |
-| How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
+| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+
+Crops: `job-title-default.png`, `job-title-hover.png`, `job-title-focus-visible.png`, `job-title-pressed.png`.
+
+#### job-tag
+
+Job tag. A remote/contract/location tag on the posting (span.location inside li.job-list-item).
+
+Page: jobs. Selector: `job tag inside a job card`. States: default, hover, focus-visible, pressed.
+
+| Property | default | hover | focus-visible | pressed |
+|---|---|---|---|---|
+| Size (w x h) | 67.78 x 28 | = | = | = |
+| Padding | 0px | = | = | = |
+| Border | none | = | = | = |
+| Radius | 0px | = | = | = |
+| Background | transparent | = | = | = |
+| Box shadow | none | = | = | = |
+| Outline | none | = | = | = |
+| Font | Mona Sans 14px/28px 400 | = | = | = |
+| Letter spacing | normal | = | = | = |
+| Colour | #3d3d4e | = | = | = |
+| Text node | span.location: Mona Sans 12px/28px 700, #3d3d4e | = | = | = |
+| Transition | none | = | = | = |
+| Icon | 14 x 22, colour #0d0c22 | = | = | = |
+| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
 
 Crops: `job-tag-default.png`, `job-tag-hover.png`, `job-tag-focus-visible.png`, `job-tag-pressed.png`.
 
@@ -1879,27 +1875,26 @@ Crops: `story-card-default.png`, `story-card-hover.png`, `story-card-focus-visib
 
 #### story-tag
 
-Story tag. A category label on a story card.
+Story tag. A category link on the stories index (ul.blog-cat: Interviews, Inspiration, Process, Community).
 
-Page: stories. Selector: `story tag`. States: default, hover, focus-visible, pressed.
+Page: stories. Selector: `ul.blog-cat a`. States: default, hover, focus-visible, pressed.
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 89 x 25 | = | = | = |
-| Padding | 0px | = | = | = |
+| Size (w x h) | 281.81 x 25 | = | = | = |
+| Padding | 2px 0px | = | = | = |
 | Border | none | = | = | = |
 | Radius | 0px | = | = | = |
 | Background | transparent | = | = | = |
 | Box shadow | none | = | = | = |
 | Outline | none | = | 2px solid #f3afe4 offset 1px | = |
-| Font | Mona Sans 16px/28px 400 | = | = | = |
+| Font | Mona Sans 14px/21px 500 | = | = | = |
 | Letter spacing | normal | = | = | = |
-| Colour | #060318 | #3d3d4e | = | #3d3d4e |
+| Colour | #0d0c22 | #3d3d4e | = | #3d3d4e |
 | Transition | color 0.1s ease | = | = | = |
 | Cursor | pointer | = | = | = |
-| Icon | 89 x 25, colour #060318 | 89 x 25, colour #3d3d4e | = | 89 x 25, colour #3d3d4e |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
-| Painted layers | - | = | a.site-nav__logo 89.0x25.0 outline 2px solid #f3afe4 offset 1px | = |
+| Painted layers | - | = | a 281.8x25.0 outline 2px solid #f3afe4 offset 1px | = |
 
 Crops: `story-tag-default.png`, `story-tag-hover.png`, `story-tag-focus-visible.png`, `story-tag-pressed.png`.
 

@@ -353,7 +353,9 @@ async function home() {
   await S('promo-banner', q('div, aside').filter({ hasText: /WELCOME20|% off/i }).filter({ visible: true }).first(), ['default'], { group: h, title: 'Promo banner', desc: 'The WELCOME20 offer strip under the header — page content, measured where it sits; its Get-Started action was never pressed.', sel: 'promo banner' }, { noScroll: true });
   await S('hero-title', q('h1').filter({ visible: true }).first(), ['default'], { group: h, title: 'Hero headline', desc: 'The "Work with the world\'s best" display headline; one word rotates and paints the Dribbble pink.', sel: 'h1' });
   await S('hero-accent', q('h1 span, h1 em, h1 a, h1 strong').filter({ visible: true }).first(), ['default'], { group: h, title: 'Hero accent word', desc: 'The rotating accent word inside the headline.', sel: 'h1 accent span' });
-  await S('hero-check', q('li').filter({ hasText: /generate your brief|browse real design|hire top-rated|proposals/i }).filter({ visible: true }).first(), ['default'], { group: h, title: 'Hero checklist item', desc: 'A pink-check bullet under the hero.', sel: 'hero checklist li' });
+  // Scoped to the hero checklist (ul.home-header__list): a page-wide li match
+  // lands on the Hire Talent nav item instead.
+  await S('hero-check', q('ul[class*="home-header" i] li, [class*="home-header" i] li, main li').filter({ hasText: /generate your brief|browse real design|hire top-rated|proposals/i }).filter({ visible: true }).first(), ['default'], { group: h, title: 'Hero checklist item', desc: 'A pink-check bullet under the hero (li.home-header__list-item).', sel: '.home-header__list li' });
   await S('hero-cta', q('a, button').filter({ hasText: /Start Your Project Brief/i }).filter({ visible: true }).first(), B4, { group: h, title: 'Hero CTA', desc: 'The "Start Your Project Brief" dark pill; measured never followed.', sel: '"Start Your Project Brief"' });
   await S('hero-media', q('.home-header-media, .home-header-right__media-container, [class*="home-header-media" i]').filter({ visible: true }).first(), ['default'], { group: h, title: 'Hero media card', desc: 'The shot media panel beside the hero copy (figure.home-header-media, the animated designer-work card).', sel: '.home-header-media' });
   await S('view-tab', q('label, [role="tab"], drb-toggle-tab').filter({ hasText: /^\s*(Shots|Designers|Services)\s*$/ }).filter({ visible: true }).first(), B4, { group: h, title: 'View tab', desc: 'A Shots/Designers/Services tab (a segmented-control label) over the search strip.', sel: 'segmented control label' });
@@ -441,8 +443,11 @@ async function jobsPage() {
   const g = G.jobs;
   await S('jobs-h1', q('h1').filter({ visible: true }).first(), ['default'], { group: g, title: 'Jobs title', desc: 'The jobs-board heading.', sel: 'h1 on /jobs' }, { noScroll: true });
   await S('job-card', q('[class*="job" i][class*="card" i], article, li[class*="job" i]').filter({ visible: true }).first(), B4, { group: g, title: 'Job card', desc: 'A posting card: logo, role, company, location/type tags.', sel: 'job card' });
-  await S('job-title', q('h2, h3, a').filter({ hasText: /designer|design/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Job title', desc: 'A role title on a posting.', sel: 'job title' });
-  await S('job-tag', q('span, li').filter({ hasText: /remote|full.?time|contract|freelance/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Job tag', desc: 'A remote/contract/location tag on the posting.', sel: 'job tag' });
+  // Scoped inside the posting cards (li.job-list-item): page-wide h2/h3/a/
+  // span/li matches land on the site-nav logo link and the Hire Talent nav
+  // item, not on the job list. The role title is an h4.job-board-job-title.
+  await S('job-title', q('li[class*="job" i] h4, li[class*="job" i] h3, li[class*="job" i] h2, [class*="job" i][class*="card" i] h4, [class*="job" i][class*="card" i] h2, [class*="job" i][class*="card" i] h3, article h4, article h2, article h3').filter({ hasText: /designer|design/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Job title', desc: 'A role title on a posting (h4.job-board-job-title inside li.job-list-item).', sel: 'job title inside a job card' });
+  await S('job-tag', q('li[class*="job" i] [class*="location" i], li[class*="job" i] [class*="tag" i], [class*="job" i][class*="card" i] [class*="location" i], [class*="job" i][class*="card" i] span, article span, article li').filter({ hasText: /remote|full.?time|contract|freelance|hybrid|onsite|on-site/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Job tag', desc: 'A remote/contract/location tag on the posting (span.location inside li.job-list-item).', sel: 'job tag inside a job card' });
   await S('job-apply', q('a, button').filter({ hasText: /apply/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Apply button', desc: 'The apply action; measured never followed.', sel: '"Apply"' });
   save();
 }
@@ -469,7 +474,9 @@ async function storiesPage() {
   const g = G.stories;
   await S('stories-h1', q('h1, h2').filter({ visible: true }).first(), ['default'], { group: g, title: 'Stories title', desc: 'The blog\'s heading or featured story title.', sel: 'h1/h2 on /stories' }, { noScroll: true });
   await S('story-card', q('article, [class*="story" i][class*="card" i], li a[href*="/stories/"], a[href*="/stories/"]').filter({ visible: true }).first(), B4, { group: g, title: 'Story card', desc: 'An article card in the blog index.', sel: 'story card' });
-  await S('story-tag', q('span, a').filter({ hasText: /interview|process|community|design/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Story tag', desc: 'A category label on a story card.', sel: 'story tag' });
+  // Scoped to the categories rail (ul.blog-cat in the secondary column): a
+  // page-wide span/a match lands on the site-nav logo link.
+  await S('story-tag', q('ul.blog-cat a, .blog-cat a, .secondary ul a, [class*="categor" i] a').filter({ hasText: /interview|inspiration|process|community|playbook|behind the scenes/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Story tag', desc: 'A category link on the stories index (ul.blog-cat: Interviews, Inspiration, Process, Community).', sel: 'ul.blog-cat a' });
   save();
 }
 
@@ -524,28 +531,40 @@ async function mobile() {
 }
 
 run = new Date().toISOString().slice(0, 10);
-out._meta.read = run;
+const pages = process.argv.slice(2);
+const plan = { home, feed, shot, profile, directory, jobsPage, searchPage, storiesPage, login, signup, mobile };
+// The documented page names are the URLS keys (jobs, shots, designer, ...);
+// the plan functions name their passes instead (jobsPage, feed, profile).
+// Translate before filtering or a targeted refresh silently selects nothing.
+const PLAN_FOR = Object.fromEntries(Object.keys(plan).map((k) => [k, k]));
+for (const [pub, pk] of Object.entries({ shots: 'feed', designer: 'profile', designers: 'directory', jobs: 'jobsPage', search: 'searchPage', stories: 'storiesPage' })) PLAN_FOR[pub] = pk;
+const unknown = pages.filter((p) => !PLAN_FOR[p]);
+if (unknown.length) { console.error('unknown page(s):', unknown.join(', '), '— known:', Object.keys(PLAN_FOR).join(' ')); process.exit(2); }
+const wanted = new Set(pages.map((p) => PLAN_FOR[p]));
+const order = Object.keys(plan).filter((k) => !wanted.size || wanted.has(k));
+// A full run re-stamps the capture date; a targeted run leaves it — most
+// components still carry their earlier readings under the original date.
+if (!pages.length) out._meta.read = run;
 out._meta.viewport = '1440 x 900 (mobile group 390 x 844); every captured surface paints light — the only declared dark scope is the Algolia search dropdown\'s vendor vars';
 out._meta.tool = 'tools/capture/public/measure.mjs';
 const { browser, context: ctx0 } = await launch();
 context = ctx0;
-const pages = process.argv.slice(2);
-const plan = { home, feed, shot, profile, directory, jobsPage, searchPage, storiesPage, login, signup, mobile };
-const order = Object.keys(plan).filter((k) => !pages.length || pages.includes(k));
-const KEY = { feed: 'shots', profile: 'designer', directory: 'designers', jobsPage: 'jobs', searchPage: 'search', storiesPage: 'stories' };
+let runDone = false;
 try {
   for (const k of order) { if (k !== 'mobile') await plan[k](); }
-  if (!pages.length || pages.includes('home')) await footer();
-  if (!pages.length || pages.includes('mobile')) await plan.mobile();
+  if (!wanted.size || wanted.has('home')) await footer();
+  if (!wanted.size || wanted.has('mobile')) await plan.mobile();
   // Reduced-motion check on an element that transitions (the header), so the
   // delta is meaningful.
-  if (!pages.length || pages.includes('home')) await reducedMotion('home', 'header');
+  if (!wanted.size || wanted.has('home')) await reducedMotion('home', 'header');
+  runDone = true;
 } finally {
   for (const [key, c] of Object.entries(out.components)) {
-    // An untouched entry is pruned only when its page was not blocked this
-    // run: an edge-blocked route keeps its earlier readings under their
-    // original provenance instead of being erased and republished.
-    if (!touched.has(key) && !pages.length && !failedPages.has(c.page)) { delete out.components[key]; continue; }
+    // An untouched entry is pruned only on a full run that reached every
+    // planned pass: a crashed run never visits the later pages, so their
+    // entries keep earlier readings under their original provenance, the
+    // same as an edge-blocked route's.
+    if (!touched.has(key) && !pages.length && runDone && !failedPages.has(c.page)) { delete out.components[key]; continue; }
     const want = listed.get(key);
     if (want) for (const st of Object.keys(c.states || {})) if (!want.has(st)) delete c.states[st];
   }
