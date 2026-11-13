@@ -683,4 +683,12 @@
     "labels": ["AI Tool"],
     "reason": "catalog.json describes a voice-AI platform: the marketing pages, the public TTS playground, pricing, the docs shell and the auth cards."
   }
+,
+  {
+    "referenceId": "systems:elektron",
+    "groupId": "web-categories",
+    "labels": ["Marketplace"],
+    "reason": "catalog.json describes a music-hardware maker's storefront: product grid, PDP, cart and login drawers."
+  }
 ]
+
