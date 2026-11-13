@@ -779,5 +779,13 @@
       "Productivity"
     ],
     "reason": "catalog.json describes a to-do productivity product: task lists, a quiet marketing site and a signed-out public system."
+  },
+  {
+    "referenceId": "systems:drinkdouze",
+    "groupId": "web-categories",
+    "labels": [
+      "Food & Drink"
+    ],
+    "reason": "catalog.json describes a French DTC beverage storefront: a Shopify marketing site and shop for flavoured drinks with product pages, a subscription pitch and a store locator."
   }
 ]
