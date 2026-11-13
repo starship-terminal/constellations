@@ -41,23 +41,106 @@ for _set in ("core", "light"):
             BY_COLOR.setdefault(t["$value"], n if _set == "core" else f"{_set}.{n}")
 
 
-def norm(r, g, b, a=None):
-    if a is None or float(a) == 1:
-        return "#%02x%02x%02x" % (int(r), int(g), int(b))
-    return "rgba(%d, %d, %d, %g)" % (int(r), int(g), int(b), float(a))
+# ------------------------------------------------- lab / oklab -> sRGB hex
+# Chromium computes Tailwind v4 colours (oklch declarations, color-mix opacity
+# modifiers) as lab()/oklab() strings in raw/components-computed.json — most of
+# the saved readings use them, so colour() must convert them before the token
+# lookup or no reading ever matches a token name. Same conversion as
+# build_component_tokens.py.
+def _gam(x):
+    return 12.92 * x if x <= 0.0031308 else 1.055 * x ** (1 / 2.4) - 0.055
+
+
+def _oklab(L, a, b):
+    l = (L + 0.3963377774 * a + 0.2158037573 * b) ** 3
+    m = (L - 0.1055613458 * a - 0.0638541728 * b) ** 3
+    s = (L - 0.0894841775 * a - 1.291485548 * b) ** 3
+    return [_gam(4.0767416621 * l - 3.3077115913 * m + 0.2309699292 * s),
+            _gam(-1.2684380046 * l + 2.6097574011 * m - 0.3413193965 * s),
+            _gam(-0.0041960863 * l - 0.7034186147 * m + 1.707614701 * s)]
+
+
+def _lab(L, a, b):
+    fy = (L + 16) / 116
+    fx, fz = fy + a / 500, fy - b / 200
+    e, k = 216 / 24389, 24389 / 27
+    finv = lambda t: t ** 3 if t ** 3 > e else (116 * t - 16) / k
+    X = finv(fx) * 0.3457 / 0.3585
+    Y = fy ** 3 if L > k * e else L / k
+    Z = finv(fz) * (1 - 0.3457 - 0.3585) / 0.3585
+    # D50 -> D65 (Bradford), then XYZ -> linear sRGB
+    x = 0.955473421488075 * X - 0.02309845494876471 * Y + 0.06325924320057072 * Z
+    y = -0.0283697093338637 * X + 1.0099953980813041 * Y + 0.021041441191917323 * Z
+    z = 0.012314014864481998 * X - 0.020507649298898964 * Y + 1.330365926242124 * Z
+    return [_gam(3.2409699419 * x - 1.5373831776 * y - 0.4986107603 * z),
+            _gam(-0.9692436363 * x + 1.8759675015 * y + 0.0415550574 * z),
+            _gam(0.0556300797 * x - 0.2039769589 * y + 1.0569715142 * z)]
+
+
+def _tohex(rgb):
+    return "#" + "".join("%02x" % round(min(1, max(0, v)) * 255) for v in rgb)
+
+
+def norm_color(v):
+    v = (v or "").strip()
+    m = re.fullmatch(r"#([0-9a-fA-F]{3,8})", v)
+    if m:
+        h = m.group(1).lower()
+        if len(h) in (3, 4):
+            h = "".join(c * 2 for c in h)
+        return "#" + h[:6]
+    m = re.fullmatch(r"rgba?\(([\d.]+),\s*([\d.]+),\s*([\d.]+)(?:,\s*([\d.]+))?\)", v)
+    if m:
+        r, g, b, a = m.groups()
+        if a is None or float(a) >= 1:
+            return "#%02x%02x%02x" % (int(float(r)), int(float(g)), int(float(b)))
+        return f"rgba({int(float(r))}, {int(float(g))}, {int(float(b))}, {'%g' % float(a)})"
+    m = re.fullmatch(r"color\(srgb ([\d.]+) ([\d.]+) ([\d.]+)(?: / ([\d.]+))?\)", v)
+    if m:
+        r, g, b = (round(float(x) * 255) for x in m.group(1, 2, 3))
+        a = m.group(4)
+        if a is None or float(a) >= 1:
+            return "#%02x%02x%02x" % (r, g, b)
+        return f"rgba({r}, {g}, {b}, {'%g' % float(a)})"
+    m = re.fullmatch(r"(ok)?lab\(([-\d.e]+%?)\s+([-\d.e]+)\s+([-\d.e]+)(?:\s*/\s*([\d.]+))?\)", v)
+    if m:
+        ok, L, A, B, al = m.groups()
+        # lab() carries L in the 0-100 range (the % is notation); oklab() uses 0-1.
+        Lf = (float(L[:-1]) * (0.01 if ok else 1)) if L.endswith("%") else float(L)
+        rgb = _oklab(Lf, float(A), float(B)) if ok else _lab(Lf, float(A), float(B))
+        h = _tohex(rgb)
+        if al is None or float(al) >= 1:
+            return h
+        r, g, b = (int(h[i:i + 2], 16) for i in (1, 3, 5))
+        return f"rgba({r}, {g}, {b}, {'%g' % float(al)})"
+    m = re.fullmatch(r"oklch\(([-\d.e]+)\s+([-\d.e]+)\s+([-\d.e]+|none)(?:\s*/\s*([\d.]+|none))?\)", v)
+    if m:
+        import math
+        L, Cc, H, al = m.groups()
+        H = 0.0 if H == "none" else float(H)
+        A, B = float(Cc) * math.cos(math.radians(H)), float(Cc) * math.sin(math.radians(H))
+        h = _tohex(_oklab(float(L), A, B))
+        if al in (None, "none") or float(al) >= 1:
+            return h
+        r, g, b = (int(h[i:i + 2], 16) for i in (1, 3, 5))
+        return f"rgba({r}, {g}, {b}, {'%g' % float(al)})"
+    return v
+
+
+# Every colour expression the readings carry; each is normalised to #hex or
+# rgba() before the BY_COLOR token lookup.
+COL_EXPR = re.compile(r"color\(srgb [^)]*\)|oklch\([^)]*\)|(?:ok)?lab\([^)]*\)|rgba?\([^)]*\)|#[0-9a-fA-F]{3,8}")
 
 
 def colour(c, tokens=True):
-    """rgb()/rgba()/color(srgb) -> '#hex `token`' or 'rgba(...)'."""
+    """Any colour expression -> '#hex `token`' or 'rgba(...)'."""
     def label(v):
         if v == "rgba(0, 0, 0, 0)":
             return "transparent"
         tok = BY_COLOR.get(v) if tokens else None
         return f"{v} `{tok}`" if tok else v
 
-    c = re.sub(r"color\(srgb ([\d.]+) ([\d.]+) ([\d.]+)(?: / ([\d.]+))?\)",
-               lambda m: label(norm(*(round(float(x) * 255) for x in m.group(1, 2, 3)), m.group(4))), c)
-    return re.sub(r"rgba?\((\d+), (\d+), (\d+)(?:, ([\d.]+))?\)", lambda m: label(norm(*m.group(1, 2, 3), m.group(4))), c)
+    return COL_EXPR.sub(lambda m: label(norm_color(m.group(0))), c)
 
 
 def sides(t, r, b, l):
@@ -151,13 +234,20 @@ def props(v):
     for pe in ("::before", "::after"):
         if v.get(pe):
             p = v[pe]
-            bits.append(" ".join(x for x in (pe, p.get("backgroundColor"), p.get("borderTopWidth"), p.get("boxShadow"), p.get("opacity")) if x))
+            bits.append(" ".join(x for x in (pe, colour(p["backgroundColor"]) if p.get("backgroundColor") else None,
+                                             p.get("borderTopWidth"), colour(p["boxShadow"]) if p.get("boxShadow") else None,
+                                             p.get("opacity")) if x))
     # A root box-shadow (e.g. the 1px focus ring gained on focus-visible) does
     # not remove the painted children: keep reporting their layers, which is
     # where a state-carrying child outline (the 3px cyan CTA ring) shows up.
     if s["backgroundColor"] == "rgba(0, 0, 0, 0)" and s["borderTopWidth"] == "0px" and s["backgroundImage"] == "none":
         for p in v.get("paint", [])[:6]:
-            bits.append(" ".join(x for x in (p["node"], p.get("size"), p.get("bg"), p.get("border"), p.get("shadow"), p.get("outline"), p.get("radius")) if x))
+            bits.append(" ".join(x for x in (p["node"], p.get("size"),
+                                             colour(p["bg"]) if p.get("bg") else None,
+                                             colour(p["border"]) if p.get("border") else None,
+                                             colour(p["shadow"]) if p.get("shadow") else None,
+                                             colour(p["outline"]) if p.get("outline") else None,
+                                             p.get("radius")) if x))
     if bits:
         o["layers"] = "; ".join(bits)[:400]
     return o
@@ -356,7 +446,7 @@ for k, c in C.items():
         for d in ("Top", "Right", "Bottom", "Left")
         for p in ("Color", "Width", "Style")
     )
-    desc = f"{s['outlineWidth']} {s['outlineStyle']} {colour(s['outlineColor'])}, offset {s['outlineOffset']}" if ring else (f"on a child: {child_ring}" if child_ring else None)
+    desc = f"{s['outlineWidth']} {s['outlineStyle']} {colour(s['outlineColor'])}, offset {s['outlineOffset']}" if ring else (f"on a child: {colour(child_ring)}" if child_ring else None)
     foc.append((k, ring or bool(child_ring), shadow, border, desc))
 with_ring = [f"`{k}` ({r})" for k, ring, sh, bd, r in foc if ring]
 with_shadow = [f"`{k}`" for k, ring, sh, bd, r in foc if not ring and sh]

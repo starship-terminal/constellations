@@ -110,7 +110,10 @@ UX_RULES = [
     ("ux-search", r"(?:search|searching)", "Searching"),
     ("ux-filter-sort", r"(?:filters?|sorting|sort)", "Filter & Sorting"),
     ("ux-calendar", r"calendar", "Calendar"),
-    ("ux-chat", r"(?:chat|messages?)", "Chat & Messages"),
+    # A bare "message" token on a form capture is the contact/sales textarea,
+    # not a chat surface: field-message, contact-message, c-message,
+    # cf7-message, sales-message and message-field stay out of Chat & Messages.
+    ("ux-chat", r"(?:chat|(?<!contact-)(?<!cf7-)(?<!field-)(?<!sales-)(?<!form-)(?<!c-)messages?(?!-field))", "Chat & Messages"),
     ("ux-comments", r"comments?", "Comments"),
     ("ux-share", r"share", "Share"),
     ("ux-user-menu", r"(?:user-menu|account-menu)", "User Menu"),

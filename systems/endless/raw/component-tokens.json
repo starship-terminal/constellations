@@ -503,10 +503,9 @@
     "description": "Declared --radius-2xl (20px): the composer, model cards, brand tiles."
    },
    "icon": {
-    "value": 0.225,
-    "type": "number",
-    "source": "css-var --radius-icon (light)",
-    "description": "The app-icon corner radius as a fraction (22.5%, the Apple icon mask)."
+    "var": "--radius-icon",
+    "type": "other",
+    "description": "The app-icon corner radius (22.5%, the Apple icon mask)."
    },
    "pill": {
     "value": "9999px",

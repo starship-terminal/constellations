@@ -291,7 +291,7 @@ async function markPainted(sel, tag, { maxUp = 8, minW = 100, minH = 60, maxW = 
 }
 
 const G = {
-  shell: 'Shell and navigation', hero: 'Home hero', pricing: 'Pricing',
+  shell: 'Shell and navigation', hero: 'Home hero', home: 'Home', pricing: 'Pricing',
   contact: 'Contact form', toolgen: 'AI image generator (free tool)',
   models: 'Model catalog', radar: 'Radar trends', brand: 'Brand kit',
   docs: 'Docs shell', mcp: 'MCP page', blog: 'Blog',
@@ -319,7 +319,7 @@ async function home() {
   await S('hero-lede', q('p.home-intro').filter({ visible: true }).first(), ['default'], { group: h, title: 'Hero copy', desc: 'The lede under the headline.', sel: 'p.home-intro' });
   const comp0 = await markPainted('textarea', 'm-composer', { minW: 200, minH: 40 }).catch(() => null);
   await S('composer', comp0 || q('textarea').filter({ visible: true }).first(), ['default'], { group: h, title: 'Prompt composer', desc: 'The painted Ask-Endless prompt box (the hero\'s chat composer). Its send control is never pressed.', sel: 'painted ancestor of the hero textarea' });
-  await S('composer-input', q('textarea').filter({ visible: true }).first(), ['default', 'focused', 'filled'], { group: h, title: 'Composer input', desc: 'The "Ask Endless…" textarea; sample text was typed and deleted, nothing sent.', sel: 'textarea', fillText: 'A launch post for the winter drop' });
+  await S('composer-input', q('textarea').filter({ visible: true }).first(), ['default', 'focused', 'filled'], { group: h, title: 'Composer input', desc: 'The "Ask Endless…" textarea; sample text was typed and deleted, nothing sent.', sel: 'textarea' }, { fillText: 'A launch post for the winter drop' });
   await S('composer-send', q('button[type="submit"], button[aria-label*="send" i], form button').filter({ visible: true }).first(), B4, { group: h, title: 'Composer send', desc: 'The send/generate control inside the composer; measured, never pressed.', sel: 'composer send button' });
   await S('mode-pill', q('button').filter({ hasText: /Terra|GPT|Claude|Gemini|model/i }).filter({ visible: true }).first(), B4, { group: h, title: 'Model pill', desc: 'The model-picker pill on the composer ("GPT-6.1 Terra" on this pass).', sel: 'model picker button' });
   await S('prompt-chip', q('button, a').filter({ hasText: /Account analysis|Launch post|Product video/i }).filter({ visible: true }).first(), B4, { group: h, title: 'Prompt chip', desc: 'A suggestion chip under the composer; measured, never pressed.', sel: 'prompt suggestion chip' });
@@ -353,7 +353,7 @@ async function contact() {
   // The form is an unpainted 640px column over the page field; the inputs
   // paint their own translucent fills. The <form> element is the boundary.
   await S('contact-form', q('form').filter({ visible: true }).first(), ['default'], { group: g, title: 'Contact form', desc: 'The contact/sales form (an unpainted 640px column; the fields paint their own fills); never submitted.', sel: 'form' });
-  await S('field-name', q('input[type="text"], input').filter({ visible: true }).first(), ['default', 'focused', 'filled'], { group: g, title: 'Name field', desc: 'A text input on the contact form; sample text typed and deleted, nothing sent.', sel: 'input[type=text]', fillText: 'Ada Lovelace' });
+  await S('field-name', q('input[type="text"], input').filter({ visible: true }).first(), ['default', 'focused', 'filled'], { group: g, title: 'Name field', desc: 'A text input on the contact form; sample text typed and deleted, nothing sent.', sel: 'input[type=text]' }, { fillText: 'Ada Lovelace' });
   await S('field-email', q('input[type="email"]').filter({ visible: true }).first(), ['default', 'focused', 'filled'], { group: g, title: 'Email field', desc: 'The email input; sample text typed and deleted, nothing sent.', sel: 'input[type=email]' });
   await S('field-company', q('input[placeholder*="acme" i], input[name*="compan" i], input[name*="domain" i]').filter({ visible: true }).first(), ['default', 'focused'], { group: g, title: 'Company field', desc: 'The company/domain input ("acme.com" placeholder); focused only.', sel: 'input[placeholder*=acme]' });
   await S('field-message', q('textarea').filter({ visible: true }).first(), ['default', 'focused'], { group: g, title: 'Message field', desc: 'The message textarea; focused only, nothing typed.', sel: 'contact textarea' });
@@ -369,7 +369,7 @@ async function toolgen() {
   await S('tool-title', q('h1').filter({ visible: true }).first(), ['default'], { group: g, title: 'Tool title', desc: 'The free-tool page heading (AI image generator).', sel: 'h1' }, { noScroll: true });
   const card = await markPainted('input', 'm-tool', { minW: 250, minH: 60 }).catch(() => null);
   await S('tool-panel', card || q('form, main').filter({ visible: true }).first(), ['default'], { group: g, title: 'Tool panel', desc: 'The prompt panel of the free tool; Generate is never pressed.', sel: 'tool panel' });
-  await S('tool-prompt', q('input').filter({ visible: true }).first(), ['default', 'focused', 'filled'], { group: g, title: 'Prompt field', desc: 'The tool\'s prompt input ("e.g. a fox reading a map…" placeholder); sample text typed and deleted, nothing generated.', sel: 'tool prompt input', fillText: 'a fox reading a map in a snowy forest' });
+  await S('tool-prompt', q('input').filter({ visible: true }).first(), ['default', 'focused', 'filled'], { group: g, title: 'Prompt field', desc: 'The tool\'s prompt input ("e.g. a fox reading a map…" placeholder); sample text typed and deleted, nothing generated.', sel: 'tool prompt input' }, { fillText: 'a fox reading a map in a snowy forest' });
   await S('tool-generate', q('button').filter({ hasText: /Generate the image|Generate/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Generate button', desc: 'The Generate-the-image submit; measured, never pressed.', sel: 'button "Generate the image"' });
   await S('tool-step', q('h2, h3').filter({ hasText: /how|step|describe|generate|download/i }).filter({ visible: true }).first(), ['default'], { group: g, title: 'How-it-works heading', desc: 'A how-it-works heading on the tool page.', sel: 'tool h2' });
   save();
@@ -381,7 +381,7 @@ async function models() {
   await chrome('models');
   const g = G.models;
   await S('models-title', q('h1').filter({ visible: true }).first(), ['default'], { group: g, title: 'Models title', desc: 'The model catalog heading.', sel: 'h1' }, { noScroll: true });
-  await S('models-search', q('input[type="search"], input[placeholder*="search" i]').filter({ visible: true }).first(), ['default', 'focused', 'filled'], { group: g, title: 'Search field', desc: 'The catalog search input; sample text typed and deleted.', sel: 'input[type=search]', fillText: 'image' });
+  await S('models-search', q('input[type="search"], input[placeholder*="search" i]').filter({ visible: true }).first(), ['default', 'focused', 'filled'], { group: g, title: 'Search field', desc: 'The catalog search input; sample text typed and deleted.', sel: 'input[type=search]' }, { fillText: 'image' });
   await S('mode-tab', q('button, a').filter({ hasText: /·\s*\d+/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Modality tab', desc: 'A modality filter pill ("All · 65", "Chat · 21", …); measured, never toggled.', sel: 'modality filter pill' });
   await S('model-card', q('a[href*="/models/"]').filter({ has: page.locator('h2, h3') }).filter({ visible: true }).first(), B4, { group: g, title: 'Model card', desc: 'A model tile in the catalog grid (the anchor is the card; 354x200, rounded 20px); measured, never followed.', sel: 'a[href*=/models/] with a heading' });
   await S('model-link', q('a[href*="/models/"]').filter({ hasText: /\S/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Model link', desc: 'A model name link in the catalog; measured, never followed.', sel: 'a[href*=/models/]' });
@@ -395,7 +395,10 @@ async function radar() {
   const g = G.radar;
   await S('radar-title', q('h1').filter({ visible: true }).first(), ['default'], { group: g, title: 'Radar title', desc: 'The social radar heading.', sel: 'h1' }, { noScroll: true });
   await S('radar-search', q('input[type="search"], input[placeholder*="Search" i], input').filter({ visible: true }).first(), ['default', 'focused'], { group: g, title: 'Radar search', desc: 'No search input exists on /radar — recorded missing.', sel: 'radar search input' });
-  await S('radar-row', q('main a, ol a, ul a, [role="list"] a, tr').filter({ hasText: /#\w+|[A-Za-zÀ-ÿ]{4,}/ }).filter({ visible: true }).nth(2), B4, { group: g, title: 'Trend row', desc: 'A trend row in the live radar list; measured, never followed.', sel: 'trend row' });
+  // Scope to links inside <main> that point at a trend detail — the earlier
+  // page-wide `ul a` matched the header's own nav list and measured the
+  // Industries link as a "trend row".
+  await S('radar-row', q('main a[href*="/radar/trends/"], main a[href*="/radar/tiktok/"], main a[href*="/radar/"]').filter({ hasText: /#\w+|[A-Za-zÀ-ÿ]{4,}/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Trend row', desc: 'A trend row in the live radar list (a link to a trend detail page); measured, never followed.', sel: 'main a[href*=/radar/] trend link' });
   await S('radar-copy', q('button').filter({ hasText: /^\s*Copy\s*$/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Copy button', desc: 'A trend Copy button; measured, never pressed.', sel: 'button "Copy"' });
   await S('radar-why', q('button, a').filter({ hasText: /Find out why/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Why link', desc: 'A trend\'s Find-out-why action; measured, never followed.', sel: '"Find out why"' });
   save();
@@ -487,7 +490,10 @@ async function mobile() {
     if (await menu.count()) { await menu.click({ timeout: 5000 }).catch(() => menu.evaluate((el) => el.click())); await page.waitForTimeout(1500); }
   } catch (e) { log('  ! mobile menu toggle failed', String(e.message).split('\n')[0]); }
   await S('m-menu-open', q('[class*="fixed"][class*="inset-0"], [role="dialog"], header + div').filter({ hasText: /Industries|Pricing|Tools/ }).filter({ visible: true }).first(), ['default'], { group: g, title: 'Mobile menu, open', desc: 'The header menu panel opened by its own toggle.', sel: 'mobile menu panel' }, { noScroll: true });
-  await S('m-nav-item', q('nav a, nav button, [role="dialog"] a, [role="dialog"] button, body button, body a').filter({ hasText: /^\s*(Industries|Pricing|Tools|Models|Blog|Docs)\s*$/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Mobile nav item', desc: 'An item inside the opened header menu.', sel: 'mobile menu item' }, { noScroll: true });
+  // Items must come from the opened menu panel itself — the earlier selector
+  // included `body a` and measured a footer Pricing link at y≈9940, outside
+  // the menu, where hover fails and focus cannot be held.
+  await S('m-nav-item', q('[class*="fixed"][class*="inset-0"] a, [class*="fixed"][class*="inset-0"] button, [role="dialog"] a, [role="dialog"] button').filter({ hasText: /^\s*(Industries|Pricing|Tools|Models|Blog|Docs)\s*$/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Mobile nav item', desc: 'An item inside the opened header menu.', sel: 'mobile menu item' }, { noScroll: true });
   await page.keyboard.press('Escape'); await page.waitForTimeout(500);
   await S('m-hero', q('h1').filter({ visible: true }).first(), ['default'], { group: g, title: 'Mobile headline', sel: 'h1 at 390' });
   await S('m-composer', q('textarea').filter({ visible: true }).first(), ['default'], { group: g, title: 'Mobile composer', sel: 'textarea at 390' });

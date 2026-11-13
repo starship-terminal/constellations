@@ -42,7 +42,7 @@ Ask-Endless prompt composer
 ([composer-input](components/crops/composer-input-default.png), 660 x 72 —
 [captured focused](screenshots/home-light-composer.png) and filled with
 deleted sample text), a model pill
-([model-pill](components/crops/model-pill-default.png), 36px, bordered,
+([mode-pill](components/crops/mode-pill-default.png), 36px, bordered,
 with the model name and a chevron), a row of prompt chips
 ([prompt-chip](components/crops/prompt-chip-default.png), 36px pills on
 `--card` with a 1px border) and the 36px send well

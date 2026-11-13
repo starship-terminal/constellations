@@ -33,7 +33,7 @@ Page: home. Selector: `header.home-marketing-header`. States: default.
 | Ancestor paint | 1 up div.flex.flex-col bg #fcfcfc |
 | How | at rest |
 
-Crops: none.
+Crops: `header-default.png`.
 
 #### logo
 
@@ -61,7 +61,7 @@ Page: home. Selector: `header a:first`. States: default, hover, focus-visible, p
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 | Painted layers | - | = | a.relative.flex 109.4x32.0 r 8px outline 2px solid #01bcff offset 2px | = |
 
-Crops: none.
+Crops: `logo-default.png`, `logo-hover.png`, `logo-focus-visible.png`, `logo-pressed.png`.
 
 #### nav-industries
 
@@ -90,7 +90,7 @@ Page: home. Selector: `header a "Industries"`. States: default, hover, focus-vis
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 | Painted layers | - | a.group/navigation-menu-trigger.w-max 101.8x32.0 bg #f5f5f5 r 8px | a.group/navigation-menu-trigger.w-max 101.8x32.0 r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #01bcff 0px 0px 0px 2px, #000000 @ 0 0px 0px 0px 0px | a.group/navigation-menu-trigger.w-max 101.8x32.0 bg #f5f5f5 r 8px |
 
-Crops: none.
+Crops: `nav-industries-default.png`, `nav-industries-hover.png`, `nav-industries-focus-visible.png`, `nav-industries-pressed.png`.
 
 #### nav-link
 
@@ -118,7 +118,7 @@ Page: home. Selector: `header a "Pricing"`. States: default, hover, focus-visibl
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 | Painted layers | - | a.p-2.duration-hover 65.9x32.0 bg #f5f5f5 r 8px | a.p-2.duration-hover 65.9x32.0 bg #f5f5f5 r 8px | a.p-2.duration-hover 65.9x32.0 bg #f5f5f5 r 8px |
 
-Crops: none.
+Crops: `nav-link-default.png`, `nav-link-hover.png`, `nav-link-focus-visible.png`, `nav-link-pressed.png`.
 
 #### nav-signin
 
@@ -145,7 +145,7 @@ Page: home. Selector: `"Sign in"`. States: default, hover, focus-visible, presse
 | Painted layers | button.group/button.inline-flex 80.1x32.0 border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 8px | = | button.group/button.inline-flex 80.1x32.0 border T:1px #01bcff / R:1px #01bcff / B:1px #01bcff / L:1px #01bcff r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #01bcff @ 0.3 0px 0px 0px 3px, #000000 @ 0 0px 0px 0px 0px | button.group/button.inline-flex 76.9x30.7 border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 8px |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
-Crops: none.
+Crops: `nav-signin-default.png`, `nav-signin-hover.png`, `nav-signin-focus-visible.png`, `nav-signin-pressed.png`.
 
 #### nav-cta
 
@@ -172,7 +172,7 @@ Page: home. Selector: `"Sign up for free"`. States: default, hover, focus-visibl
 | Painted layers | button.group/button.inline-flex 138.9x32.0 bg #0a0a0a border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 8px | button.group/button.inline-flex 138.9x32.0 bg #0a0a0a @ 0.9 border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 8px | button.group/button.inline-flex 138.9x32.0 bg #0a0a0a border T:1px #01bcff / R:1px #01bcff / B:1px #01bcff / L:1px #01bcff r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #01bcff @ 0.3 0px 0px 0px 3px, #000000 @ 0 0px 0px 0px 0px | button.group/button.inline-flex 133.3x30.7 bg #0a0a0a @ 0.9 border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 8px |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
-Crops: none.
+Crops: `nav-cta-default.png`, `nav-cta-hover.png`, `nav-cta-focus-visible.png`, `nav-cta-pressed.png`.
 
 #### nav-dropdown
 
@@ -211,11 +211,11 @@ Page: home. Selector: `h1`. States: default.
 | Letter spacing | -1.8944px |
 | Colour | #0a0a0a |
 | Transition | none |
-| Icon | 52.75 x 52.75, colour #0a0a0a, fill #000000 |
-| Painted layers | div.home-sticker-frame.bg-surface-control 61.5x61.5 bg #f5f5f5 r calc(22.5% + 2.2px) shadow #000000 @ 0.05 0px 1px 2px 0px, #000000 @ 0.15 0px 8px 24px -12px; span.relative.flex 52.8x52.8 r 22.5% shadow #000000 @ 0.06 0px 0px 0px 1px, #000000 @ 0.06 0px 1px 2px -1px, #000000 @ 0.04 0px 2px 4px 0px; span::after.relative.flex 48pxx48px r 22.5% shadow #000000 @ 0.14 0px 0px 0px 0.5px inset, #ffffff @ 0.62 0px 0.75px 0px 0px inset; div.home-sticker-frame.bg-surface-control 56.9x56.9 bg #f5f5f5 r calc(22.5% + 2.2px) shadow #000000 @ 0.05 0px 1px 2px 0px, #000000 @ 0.15 0px 8px 24px -12px; span.relative.flex 47.4x47.4 r 22.5% shadow #000000 @ 0.06 0px 0px 0px 1px, #000000 @ 0.06 0px 1px 2px -1px, #000000 @ 0.04 0px 2px 4px 0px; span::after.relative.flex 40pxx40px r 22.5% shadow #000000 @ 0.14 0px 0px 0px 0.5px inset, #ffffff @ 0.62 0px 0.75px 0px 0px inset |
+| Icon | 35.17 x 35.17, colour #0a0a0a, fill #000000 |
+| Painted layers | div.rounded-xl.bg-surface-control 135.2x88.5 bg #f5f5f5 r 16px shadow #000000 @ 0.05 0px 1px 2px 0px, #000000 @ 0.15 0px 8px 24px -12px; div.overflow-hidden.rounded-lg 126.4x79.7 r 12px shadow #000000 @ 0.06 0px 0px 0px 1px, #000000 @ 0.06 0px 1px 2px -1px, #000000 @ 0.04 0px 2px 4px 0px; div.home-sticker-frame.bg-surface-control 52.7x52.7 bg #f5f5f5 r calc(22.5% + 2.2px) shadow #000000 @ 0.05 0px 1px 2px 0px, #000000 @ 0.15 0px 8px 24px -12px; div.flex.size-10 44.0x44.0 bg #ffffff r 22.5% shadow #000000 @ 0.06 0px 0px 0px 1px, #000000 @ 0.06 0px 1px 2px -1px, #000000 @ 0.04 0px 2px 4px 0px; div.home-sticker-frame.bg-surface-control 52.7x52.7 bg #f5f5f5 r calc(22.5% + 2.2px) shadow #000000 @ 0.05 0px 1px 2px 0px, #000000 @ 0.15 0px 8px 24px -12px; span.relative.flex 44.0x44.0 bg #ffffff r 22.5% shadow #000000 @ 0.06 0px 0px 0px 1px, #000000 @ 0.06 0px 1px 2px -1px, #000000 @ 0.04 0px 2px 4px 0px |
 | How | at rest |
 
-Crops: none.
+Crops: `hero-title-default.png`.
 
 #### hero-lede
 
@@ -238,7 +238,7 @@ Page: home. Selector: `p.home-intro`. States: default.
 | Transition | none |
 | How | at rest |
 
-Crops: none.
+Crops: `hero-lede-default.png`.
 
 #### composer
 
@@ -266,7 +266,7 @@ Page: home. Selector: `painted ancestor of the hero textarea`. States: default.
 | Ancestor paint | 1 up div.rounded-3xl.bg-surface-control bg #f5f5f5 |
 | How | at rest |
 
-Crops: none.
+Crops: `composer-default.png`.
 
 #### composer-input
 
@@ -290,9 +290,9 @@ Page: home. Selector: `textarea`. States: default, focused, filled.
 | Cursor | text | = | = |
 | Placeholder | #6e6e6e, opacity 1 | = | = |
 | Ancestor paint | 2 up form.relative.overflow-hidden bg #ffffff shadow #000000 @ 0.06 0px 0px 0px 1px, #000000 @ 0.06 0px 1px 2px -1px, #000000 @ 0.04 0px 2px 4px 0px | 2 up form.relative.overflow-hidden bg #ffffff shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #01bcff @ 0.4 0px 0px 0px 2px, #000000 @ 0 0px 0px 0px 0px | 2 up form.relative.overflow-hidden bg #ffffff shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #01bcff @ 0.4 0px 0px 0px 2px, #000000 @ 0 0px 0px 0px 0px |
-| How | at rest | clicked into the field | typed "name@example.com", then deleted; nothing sent |
+| How | at rest | clicked into the field | typed "A launch post for the winter drop", then deleted; nothing sent |
 
-Crops: none.
+Crops: `composer-input-default.png`, `composer-input-focused.png`, `composer-input-filled.png`.
 
 #### composer-send
 
@@ -319,7 +319,7 @@ Page: home. Selector: `composer send button`. States: default, hover, focus-visi
 | Ancestor paint | 3 up form.relative.overflow-hidden bg #ffffff shadow #000000 @ 0.06 0px 0px 0px 1px, #000000 @ 0.06 0px 1px 2px -1px, #000000 @ 0.04 0px 2px 4px 0px | = | 3 up form.relative.overflow-hidden bg #ffffff shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #01bcff @ 0.4 0px 0px 0px 2px, #000000 @ 0 0px 0px 0px 0px | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
-Crops: none.
+Crops: `composer-send-default.png`, `composer-send-hover.png`, `composer-send-focus-visible.png`, `composer-send-pressed.png`.
 
 #### mode-pill
 
@@ -349,7 +349,7 @@ Page: home. Selector: `model picker button`. States: default, hover, focus-visib
 | Ancestor paint | 3 up form.relative.overflow-hidden bg #ffffff shadow #000000 @ 0.06 0px 0px 0px 1px, #000000 @ 0.06 0px 1px 2px -1px, #000000 @ 0.04 0px 2px 4px 0px | = | 3 up form.relative.overflow-hidden bg #ffffff shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #01bcff @ 0.4 0px 0px 0px 2px, #000000 @ 0 0px 0px 0px 0px | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
-Crops: none.
+Crops: `mode-pill-default.png`, `mode-pill-hover.png`, `mode-pill-focus-visible.png`, `mode-pill-pressed.png`.
 
 #### prompt-chip
 
@@ -376,9 +376,9 @@ Page: home. Selector: `prompt suggestion chip`. States: default, hover, focus-vi
 | Painted layers | button.group/button.inline-flex 156.0x36.0 bg #ffffff border T:1px #e5e5e5 / R:1px #e5e5e5 / B:1px #e5e5e5 / L:1px #e5e5e5 r 12px | button.group/button.inline-flex 156.0x36.0 bg #f5f5f5 border T:1px #e5e5e5 / R:1px #e5e5e5 / B:1px #e5e5e5 / L:1px #e5e5e5 r 12px | button.group/button.inline-flex 156.0x36.0 bg #ffffff border T:1px #01bcff / R:1px #01bcff / B:1px #01bcff / L:1px #01bcff r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #01bcff @ 0.3 0px 0px 0px 3px, #000000 @ 0 0px 0px 0px 0px | button.group/button.inline-flex 149.8x34.6 bg #f5f5f5 border T:1px #e5e5e5 / R:1px #e5e5e5 / B:1px #e5e5e5 / L:1px #e5e5e5 r 12px |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
-Crops: none.
+Crops: `prompt-chip-default.png`, `prompt-chip-hover.png`, `prompt-chip-focus-visible.png`, `prompt-chip-pressed.png`.
 
-### undefined
+### Home
 
 #### h2-section
 
@@ -401,7 +401,7 @@ Page: home. Selector: `h2`. States: default.
 | Transition | none |
 | How | at rest |
 
-Crops: none.
+Crops: `h2-section-default.png`.
 
 ### Pricing
 
@@ -639,7 +639,7 @@ Page: contact. Selector: `form`. States: default.
 | Painted layers | input.w-full.min-w-0 640.0x40.0 bg #e5e5e5 @ 0.5 border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 8px; input.w-full.min-w-0 640.0x40.0 bg #e5e5e5 @ 0.5 border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 8px; input.w-full.min-w-0 640.0x40.0 bg #e5e5e5 @ 0.5 border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 8px; textarea.flex.field-sizing-content 640.0x64.0 bg #e5e5e5 @ 0.5 border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 8px; button.group/button.inline-flex 640.0x52.0 bg #0a0a0a border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 12px |
 | How | at rest |
 
-Crops: none.
+Crops: `contact-form-default.png`.
 
 #### field-name
 
@@ -663,9 +663,9 @@ Page: contact. Selector: `input[type=text]`. States: default, focused, filled.
 | Cursor | text | = | = |
 | Placeholder | #0a0a0a, opacity 1 | = | = |
 | Painted layers | input.w-full.min-w-0 640.0x40.0 bg #e5e5e5 @ 0.5 border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 8px | input.w-full.min-w-0 640.0x40.0 bg #e5e5e5 @ 0.5 border T:1px #01bcff / R:1px #01bcff / B:1px #01bcff / L:1px #01bcff r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #01bcff @ 0.3 0px 0px 0px 3px, #000000 @ 0 0px 0px 0px 0px | input.w-full.min-w-0 640.0x40.0 bg #e5e5e5 @ 0.5 border T:1px #01bcff / R:1px #01bcff / B:1px #01bcff / L:1px #01bcff r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #01bcff @ 0.3 0px 0px 0px 3px, #000000 @ 0 0px 0px 0px 0px |
-| How | at rest | clicked into the field | typed "name@example.com", then deleted; nothing sent |
+| How | at rest | clicked into the field | typed "Ada Lovelace", then deleted; nothing sent |
 
-Crops: none.
+Crops: `field-name-default.png`, `field-name-focused.png`, `field-name-filled.png`.
 
 #### field-email
 
@@ -691,7 +691,7 @@ Page: contact. Selector: `input[type=email]`. States: default, focused, filled.
 | Painted layers | input.w-full.min-w-0 640.0x40.0 bg #e5e5e5 @ 0.5 border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 8px | input.w-full.min-w-0 640.0x40.0 bg #e5e5e5 @ 0.5 border T:1px #01bcff / R:1px #01bcff / B:1px #01bcff / L:1px #01bcff r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #01bcff @ 0.3 0px 0px 0px 3px, #000000 @ 0 0px 0px 0px 0px | input.w-full.min-w-0 640.0x40.0 bg #e5e5e5 @ 0.5 border T:1px #01bcff / R:1px #01bcff / B:1px #01bcff / L:1px #01bcff r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #01bcff @ 0.3 0px 0px 0px 3px, #000000 @ 0 0px 0px 0px 0px |
 | How | at rest | clicked into the field | typed "name@example.com", then deleted; nothing sent |
 
-Crops: none.
+Crops: `field-email-default.png`, `field-email-focused.png`, `field-email-filled.png`.
 
 #### field-company
 
@@ -717,7 +717,7 @@ Page: contact. Selector: `input[placeholder*=acme]`. States: default, focused.
 | Painted layers | input.w-full.min-w-0 640.0x40.0 bg #e5e5e5 @ 0.5 border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 8px | input.w-full.min-w-0 640.0x40.0 bg #e5e5e5 @ 0.5 border T:1px #01bcff / R:1px #01bcff / B:1px #01bcff / L:1px #01bcff r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #01bcff @ 0.3 0px 0px 0px 3px, #000000 @ 0 0px 0px 0px 0px |
 | How | at rest | clicked into the field |
 
-Crops: none.
+Crops: `field-company-default.png`, `field-company-focused.png`.
 
 #### field-message
 
@@ -743,7 +743,7 @@ Page: contact. Selector: `contact textarea`. States: default, focused.
 | Painted layers | textarea.flex.field-sizing-content 640.0x64.0 bg #e5e5e5 @ 0.5 border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 8px | textarea.flex.field-sizing-content 640.0x64.0 bg #e5e5e5 @ 0.5 border T:1px #01bcff / R:1px #01bcff / B:1px #01bcff / L:1px #01bcff r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #01bcff @ 0.3 0px 0px 0px 3px, #000000 @ 0 0px 0px 0px 0px |
 | How | at rest | clicked into the field |
 
-Crops: none.
+Crops: `field-message-default.png`, `field-message-focused.png`.
 
 #### send-btn
 
@@ -769,7 +769,7 @@ Page: contact. Selector: `button "Send message"`. States: default, hover, focus-
 | Painted layers | button.group/button.inline-flex 640.0x52.0 bg #0a0a0a border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 12px | button.group/button.inline-flex 640.0x52.0 bg #0a0a0a @ 0.9 border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 12px | button.group/button.inline-flex 640.0x52.0 bg #0a0a0a border T:1px #01bcff / R:1px #01bcff / B:1px #01bcff / L:1px #01bcff r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #01bcff @ 0.3 0px 0px 0px 3px, #000000 @ 0 0px 0px 0px 0px | button.group/button.inline-flex 614.4x49.9 bg #0a0a0a @ 0.9 border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 12px |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
-Crops: none.
+Crops: `send-btn-default.png`, `send-btn-hover.png`, `send-btn-focus-visible.png`, `send-btn-pressed.png`.
 
 ### AI image generator (free tool)
 
@@ -794,7 +794,7 @@ Page: toolgen. Selector: `h1`. States: default.
 | Transition | none |
 | How | at rest |
 
-Crops: none.
+Crops: `tool-title-default.png`.
 
 #### tool-panel
 
@@ -821,7 +821,7 @@ Page: toolgen. Selector: `tool panel`. States: default.
 | Ancestor paint | 1 up div.rounded-3xl.bg-surface-control bg #f5f5f5 shadow #000000 @ 0.05 0px 1px 2px 0px, #000000 @ 0.15 0px 8px 24px -12px |
 | How | at rest |
 
-Crops: none.
+Crops: `tool-panel-default.png`.
 
 #### tool-prompt
 
@@ -845,9 +845,9 @@ Page: toolgen. Selector: `tool prompt input`. States: default, focused, filled.
 | Cursor | text | = | = |
 | Placeholder | #6e6e6e, opacity 1 | = | = |
 | Ancestor paint | 1 up form.relative.overflow-hidden bg #ffffff shadow #000000 @ 0.06 0px 0px 0px 1px, #000000 @ 0.06 0px 1px 2px -1px, #000000 @ 0.04 0px 2px 4px 0px; 2 up div.rounded-3xl.bg-surface-control bg #f5f5f5 shadow #000000 @ 0.05 0px 1px 2px 0px, #000000 @ 0.15 0px 8px 24px -12px | 1 up form.relative.overflow-hidden bg #ffffff shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #01bcff @ 0.4 0px 0px 0px 2px, #000000 @ 0 0px 0px 0px 0px; 2 up div.rounded-3xl.bg-surface-control bg #f5f5f5 shadow #000000 @ 0.05 0px 1px 2px 0px, #000000 @ 0.15 0px 8px 24px -12px | 1 up form.relative.overflow-hidden bg #ffffff shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #01bcff @ 0.4 0px 0px 0px 2px, #000000 @ 0 0px 0px 0px 0px; 2 up div.rounded-3xl.bg-surface-control bg #f5f5f5 shadow #000000 @ 0.05 0px 1px 2px 0px, #000000 @ 0.15 0px 8px 24px -12px |
-| How | at rest | clicked into the field | typed "name@example.com", then deleted; nothing sent |
+| How | at rest | clicked into the field | typed "a fox reading a map in a snowy forest", then deleted; nothing sent |
 
-Crops: none.
+Crops: `tool-prompt-default.png`, `tool-prompt-focused.png`, `tool-prompt-filled.png`.
 
 #### tool-generate
 
@@ -875,7 +875,7 @@ Page: toolgen. Selector: `button "Generate the image"`. States: default, hover, 
 | Ancestor paint | 2 up form.relative.overflow-hidden bg #ffffff shadow #000000 @ 0.06 0px 0px 0px 1px, #000000 @ 0.06 0px 1px 2px -1px, #000000 @ 0.04 0px 2px 4px 0px; 3 up div.rounded-3xl.bg-surface-control bg #f5f5f5 shadow #000000 @ 0.05 0px 1px 2px 0px, #000000 @ 0.15 0px 8px 24px -12px | = | 2 up form.relative.overflow-hidden bg #ffffff shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #01bcff @ 0.4 0px 0px 0px 2px, #000000 @ 0 0px 0px 0px 0px; 3 up div.rounded-3xl.bg-surface-control bg #f5f5f5 shadow #000000 @ 0.05 0px 1px 2px 0px, #000000 @ 0.15 0px 8px 24px -12px | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
-Crops: none.
+Crops: `tool-generate-default.png`, `tool-generate-hover.png`, `tool-generate-focus-visible.png`, `tool-generate-pressed.png`.
 
 #### tool-step
 
@@ -898,7 +898,7 @@ Page: toolgen. Selector: `tool h2`. States: default.
 | Transition | none |
 | How | at rest |
 
-Crops: none.
+Crops: `tool-step-default.png`.
 
 ### Model catalog
 
@@ -923,7 +923,7 @@ Page: models. Selector: `h1`. States: default.
 | Transition | none |
 | How | at rest |
 
-Crops: none.
+Crops: `models-title-default.png`.
 
 #### models-search
 
@@ -947,9 +947,9 @@ Page: models. Selector: `input[type=search]`. States: default, focused, filled.
 | Cursor | text | = | = |
 | Placeholder | #6e6e6e, opacity 1 | = | = |
 | Painted layers | input.w-full.min-w-0 256.0x32.0 bg #fcfcfc border T:1px #e5e5e5 / R:1px #e5e5e5 / B:1px #e5e5e5 / L:1px #e5e5e5 r 12px | input.w-full.min-w-0 256.0x32.0 bg #fcfcfc border T:1px #01bcff / R:1px #01bcff / B:1px #01bcff / L:1px #01bcff r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #01bcff @ 0.3 0px 0px 0px 3px, #000000 @ 0 0px 0px 0px 0px | input.w-full.min-w-0 256.0x32.0 bg #fcfcfc border T:1px #01bcff / R:1px #01bcff / B:1px #01bcff / L:1px #01bcff r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #01bcff @ 0.3 0px 0px 0px 3px, #000000 @ 0 0px 0px 0px 0px |
-| How | at rest | clicked into the field | typed "name@example.com", then deleted; nothing sent |
+| How | at rest | clicked into the field | typed "image", then deleted; nothing sent |
 
-Crops: none.
+Crops: `models-search-default.png`, `models-search-focused.png`, `models-search-filled.png`.
 
 #### mode-tab
 
@@ -975,7 +975,7 @@ Page: models. Selector: `modality filter pill`. States: default, hover, focus-vi
 | Painted layers | a.inline-block.relative 74.2x32.0 bg #0a0a0a r 3.35544e+07px | = | a.inline-block.relative 74.2x32.0 bg #0a0a0a r 3.35544e+07px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #01bcff @ 0.3 0px 0px 0px 3px, #000000 @ 0 0px 0px 0px 0px | a.inline-block.relative 71.3x30.7 bg #0a0a0a r 3.35544e+07px |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
-Crops: none.
+Crops: `mode-tab-default.png`, `mode-tab-hover.png`, `mode-tab-focus-visible.png`, `mode-tab-pressed.png`.
 
 #### model-card
 
@@ -1002,7 +1002,7 @@ Page: models. Selector: `a[href*=/models/] with a heading`. States: default, hov
 | Painted layers | a.group.flex 354.7x200.0 r 20px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #e5e5e5 0px 0px 0px 1px, #000000 @ 0 0px 0px 0px 0px | a.group.flex 354.7x200.0 bg #f5f5f5 @ 0.5 r 20px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #e5e5e5 0px 0px 0px 1px, #000000 @ 0 0px 0px 0px 0px | a.group.flex 354.7x200.0 r 20px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #e5e5e5 0px 0px 0px 1px, #000000 @ 0 0px 0px 0px 0px outline 2px solid #01bcff offset 2px | a.group.flex 354.7x200.0 bg #f5f5f5 @ 0.5 r 20px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #e5e5e5 0px 0px 0px 1px, #000000 @ 0 0px 0px 0px 0px |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
-Crops: none.
+Crops: `model-card-default.png`, `model-card-hover.png`, `model-card-focus-visible.png`, `model-card-pressed.png`.
 
 #### model-link
 
@@ -1028,7 +1028,7 @@ Page: models. Selector: `a[href*=/models/]`. States: default, hover, focus-visib
 | Painted layers | a.inline-block.relative 86.8x32.0 bg #f5f5f5 r 3.35544e+07px | = | a.inline-block.relative 86.8x32.0 bg #f5f5f5 r 3.35544e+07px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #01bcff @ 0.3 0px 0px 0px 3px, #000000 @ 0 0px 0px 0px 0px | a.inline-block.relative 83.3x30.7 bg #f5f5f5 r 3.35544e+07px |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
-Crops: none.
+Crops: `model-link-default.png`, `model-link-hover.png`, `model-link-focus-visible.png`, `model-link-pressed.png`.
 
 ### Radar trends
 
@@ -1053,11 +1053,11 @@ Page: radar. Selector: `h1`. States: default.
 | Transition | none |
 | How | at rest |
 
-Crops: none.
+Crops: `radar-title-default.png`.
 
 #### radar-search
 
-Radar search. The trend search input ("Search what's happening across…"); focused only.
+Radar search. No search input exists on /radar — recorded missing.
 
 Page: radar. Selector: `radar search input`. States: .
 
@@ -1065,32 +1065,30 @@ Not found on the page at capture time.
 
 #### radar-row
 
-Trend row. A trend row in the live radar list; measured, never followed.
+Trend row. A trend row in the live radar list (a link to a trend detail page); measured, never followed.
 
-Page: radar. Selector: `trend row`. States: default, hover, focus-visible, pressed.
+Page: radar. Selector: `main a[href*=/radar/] trend link`. States: default, hover, focus-visible, pressed.
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 101.77 x 32 | = | = | = |
-| Padding | 6px 10px | = | = | = |
-| Gap | 0px | = | = | = |
+| Size (w x h) | 184.81 x 44 | = | = | = |
+| Padding | 0px | = | = | = |
+| Gap | 8px | = | = | = |
 | Border | none | = | = | = |
 | Radius | 8px | = | = | = |
-| Background | transparent | #f5f5f5 | = | #f5f5f5 |
-| Box shadow | none | = | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #01bcff 0px 0px 0px 2px, #000000 @ 0 0px 0px 0px 0px | = |
-| Outline | none | = | = | = |
-| Font | TikTok Sans 14px/20px 400 | = | = | = |
+| Background | transparent | = | = | = |
+| Box shadow | none | = | = | = |
+| Outline | none | = | 2px solid #01bcff offset 4px | = |
+| Font | TikTok Sans 14px/20px 500 | = | = | = |
 | Letter spacing | normal | = | = | = |
-| Colour | #6e6e6e | #0a0a0a | = | #0a0a0a |
-| Text node | span.col-start-1.row-start-1: TikTok Sans 14px/20px 400, #6e6e6e | span.col-start-1.row-start-1: TikTok Sans 14px/20px 400, #0a0a0a | = | span.col-start-1.row-start-1: TikTok Sans 14px/20px 400, #0a0a0a |
-| Transition | color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = | = |
+| Colour | #0a0a0a | = | = | = |
+| Transition | none | = | = | = |
 | Cursor | pointer | = | = | = |
-| Icon | 12 x 12, colour #6e6e6e, fill #000000 | 12 x 12, colour #0a0a0a, fill #000000 | = | 12 x 12, colour #0a0a0a, fill #000000 |
-| ::after | 101.766px x 40px, absolute, bg #000000 @ 0, radius 0px | = | = | = |
+| Icon | 16 x 16, colour #0a0a0a, fill #000000 | = | = | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
-| Painted layers | - | a.group/navigation-menu-trigger.w-max 101.8x32.0 bg #f5f5f5 r 8px | a.group/navigation-menu-trigger.w-max 101.8x32.0 r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #01bcff 0px 0px 0px 2px, #000000 @ 0 0px 0px 0px 0px | a.group/navigation-menu-trigger.w-max 101.8x32.0 bg #f5f5f5 r 8px |
+| Painted layers | - | = | a.mt-8.inline-flex 184.8x44.0 r 8px outline 2px solid #01bcff offset 4px | = |
 
-Crops: none.
+Crops: `radar-row-default.png`, `radar-row-hover.png`, `radar-row-focus-visible.png`, `radar-row-pressed.png`.
 
 #### radar-copy
 
@@ -1119,7 +1117,7 @@ Page: radar. Selector: `button "Copy"`. States: default, hover, focus-visible, p
 | Ancestor paint | 1 up div.flex.items-center bg #ffffff shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #e5e5e5 0px 0px 0px 1px inset, #000000 @ 0 0px 0px 0px 0px | = | = | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
-Crops: none.
+Crops: `radar-copy-default.png`, `radar-copy-hover.png`, `radar-copy-focus-visible.png`, `radar-copy-pressed.png`.
 
 #### radar-why
 
@@ -1145,7 +1143,7 @@ Page: radar. Selector: `"Find out why"`. States: default, hover, focus-visible, 
 | Painted layers | button.group/button.inline-flex 87.9x32.0 border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 8px | = | button.group/button.inline-flex 87.9x32.0 border T:1px #01bcff / R:1px #01bcff / B:1px #01bcff / L:1px #01bcff r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #01bcff @ 0.3 0px 0px 0px 3px, #000000 @ 0 0px 0px 0px 0px | button.group/button.inline-flex 84.4x30.7 border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 8px |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
-Crops: none.
+Crops: `radar-why-default.png`, `radar-why-hover.png`, `radar-why-focus-visible.png`, `radar-why-pressed.png`.
 
 ### Brand kit
 
@@ -1539,7 +1537,7 @@ Page: home. Selector: `footer`. States: default.
 | Ancestor paint | 1 up div.flex.flex-col bg #fcfcfc |
 | How | at rest |
 
-Crops: none.
+Crops: `footer-default.png`.
 
 #### footer-link
 
@@ -1565,7 +1563,7 @@ Page: home. Selector: `footer a`. States: default, hover, focus-visible, pressed
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 | Painted layers | - | = | a.inline-flex.items-center 44.5x24.0 r 4px outline 2px solid #01bcff offset 2px | = |
 
-Crops: none.
+Crops: `footer-link-default.png`, `footer-link-hover.png`, `footer-link-focus-visible.png`, `footer-link-pressed.png`.
 
 #### theme-toggle
 
@@ -1592,7 +1590,7 @@ Page: home. Selector: `footer theme icon button`. States: default, hover, focus-
 | Painted layers | button.group/button.inline-flex 32.0x32.0 border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 8px | button.group/button.inline-flex 32.0x32.0 bg #f5f5f5 border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 8px | button.group/button.inline-flex 32.0x32.0 border T:1px #01bcff / R:1px #01bcff / B:1px #01bcff / L:1px #01bcff r 8px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #01bcff @ 0.3 0px 0px 0px 3px, #000000 @ 0 0px 0px 0px 0px | button.group/button.inline-flex 30.7x30.7 bg #f5f5f5 border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 8px |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
-Crops: none.
+Crops: `theme-toggle-default.png`, `theme-toggle-hover.png`, `theme-toggle-focus-visible.png`, `theme-toggle-pressed.png`.
 
 #### cookie-btn
 
@@ -1618,7 +1616,7 @@ Page: home. Selector: `"Cookie settings"`. States: default, hover, focus-visible
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 | Painted layers | - | = | button.inline-flex.items-center 102.6x24.0 r 4px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #01bcff @ 0.3 0px 0px 0px 3px, #000000 @ 0 0px 0px 0px 0px | = |
 
-Crops: none.
+Crops: `cookie-btn-default.png`, `cookie-btn-hover.png`, `cookie-btn-focus-visible.png`, `cookie-btn-pressed.png`.
 
 ### Dark theme (system dark)
 
@@ -1782,7 +1780,7 @@ Page: mobile. Selector: `header at 390`. States: default.
 | Ancestor paint | 1 up div.flex.flex-col bg #fcfcfc |
 | How | at rest |
 
-Crops: none.
+Crops: `m-header-default.png`.
 
 #### m-menu-button
 
@@ -1809,7 +1807,7 @@ Page: mobile. Selector: `header menu button`. States: default.
 | Painted layers | button.group/button.inline-flex 36.0x36.0 border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 12px |
 | How | at rest |
 
-Crops: none.
+Crops: `m-menu-button-default.png`.
 
 #### m-menu-open
 
@@ -1836,7 +1834,7 @@ Page: mobile. Selector: `mobile menu panel`. States: default.
 | Ancestor paint | 1 up body.font-sans bg #fcfcfc |
 | How | at rest |
 
-Crops: none.
+Crops: `m-menu-open-default.png`.
 
 #### m-nav-item
 
@@ -1846,23 +1844,22 @@ Page: mobile. Selector: `mobile menu item`. States: default, hover, focus-visibl
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 44.55 x 24 | - | = | = |
-| Padding | 2px 0px | - | = | = |
-| Gap | 2px | - | = | = |
-| Border | none | - | = | = |
-| Radius | 4px | - | = | = |
-| Background | transparent | - | = | = |
-| Box shadow | none | - | = | = |
-| Outline | none | - | = | = |
-| Font | TikTok Sans 14px/20px 400 | - | = | = |
-| Letter spacing | normal | - | = | = |
-| Colour | #0a0a0a @ 0.8 | - | = | = |
-| Transition | color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1) | - | = | = |
-| Cursor | pointer | - | = | = |
-| How | at rest | - | focus failed | CDP forcePseudoState :active:hover |
-| Error | - | locator.hover: Element is outside of the viewport Call log:   - waiting for locator('nav a, nav button, [role="dialog"] a, [role="dialog"] button, body button, body a').filter({ hasText: /^\s*(Industr | = | = |
+| Size (w x h) | 374 x 44 | = | = | = |
+| Padding | 0px 12px | = | = | = |
+| Border | none | = | = | = |
+| Radius | 8px | = | = | = |
+| Background | transparent | = | = | = |
+| Box shadow | none | = | = | = |
+| Outline | none | = | 2px solid #01bcff offset -2px | = |
+| Font | TikTok Sans 16px/24px 400 | = | = | = |
+| Letter spacing | normal | = | = | = |
+| Colour | #0a0a0a | = | = | = |
+| Transition | color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = | = |
+| Cursor | pointer | = | = | = |
+| How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
+| Painted layers | - | = | a.flex.min-h-11 374.0x44.0 r 8px outline 2px solid #01bcff offset -2px | = |
 
-Crops: none.
+Crops: `m-nav-item-default.png`, `m-nav-item-hover.png`, `m-nav-item-focus-visible.png`, `m-nav-item-pressed.png`.
 
 #### m-hero
 
@@ -1885,7 +1882,7 @@ Page: mobile. Selector: `h1 at 390`. States: default.
 | Transition | none |
 | How | at rest |
 
-Crops: none.
+Crops: `m-hero-default.png`.
 
 #### m-composer
 
@@ -1911,7 +1908,7 @@ Page: mobile. Selector: `textarea at 390`. States: default.
 | Ancestor paint | 2 up form.relative.overflow-hidden bg #ffffff shadow #000000 @ 0.06 0px 0px 0px 1px, #000000 @ 0.06 0px 1px 2px -1px, #000000 @ 0.04 0px 2px 4px 0px |
 | How | at rest |
 
-Crops: none.
+Crops: `m-composer-default.png`.
 
 ## Transitions declared in the readable stylesheets
 

@@ -363,9 +363,12 @@ for key, vname, desc in [
     if vname in R:
         radius[key] = var(vname, "dimension", description=desc)
 if "--radius-icon" in R:
-    radius["icon"] = {"value": 0.225, "type": "number",
-                      "source": "css-var --radius-icon (light)",
-                      "description": "The app-icon corner radius as a fraction (22.5%, the Apple icon mask)."}
+    # The declared value is a percentage ("22.5%"), not a length: type "other"
+    # keeps it out of the length-only export — a bare number under core.radius
+    # would be read as pixels (0.225px) and a "dimension" would fail the
+    # px/rem check.
+    radius["icon"] = var("--radius-icon", "other",
+                         description="The app-icon corner radius (22.5%, the Apple icon mask).")
 # The pill: mode tabs, filter chips and the billing toggle compute a
 # 3.35544e+07px radius (rounded-full); stored as the practical 9999px.
 measure("pill", "mode-tab", "default", "borderTopLeftRadius", "dimension",
