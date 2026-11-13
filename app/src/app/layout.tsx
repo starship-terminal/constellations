@@ -8,8 +8,8 @@ import { AppShell } from "@/components/shell";
 import "./globals.css";
 export const metadata: Metadata = {
   title: {
-    default: "Design Studio · Design research",
-    template: "%s · Design Studio",
+    default: "Constellations · Design research",
+    template: "%s · Constellations",
   },
   description:
     "A personal design research workspace. Explore references, inspect their details, and collect your thinking.",
