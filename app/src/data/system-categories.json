@@ -622,5 +622,11 @@
     "groupId": "web-categories",
     "labels": ["Marketplace"],
     "reason": "catalog.json describes a water-bottle e-commerce storefront: marketing pages plus a Magento shop with PLP filters, PDP configurator, cart and login cards."
+  },
+  {
+    "referenceId": "systems:cosmos",
+    "groupId": "web-categories",
+    "labels": ["Inspiration Board"],
+    "reason": "catalog.json category directory maps to Inspiration Board."
   }
 ]

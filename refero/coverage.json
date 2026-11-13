@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 104,
-    "system_domains": 96,
-    "matched_domains": 71,
-    "missing_domains": 362,
+    "system_packages": 105,
+    "system_domains": 97,
+    "matched_domains": 72,
+    "missing_domains": 361,
     "system_domains_absent_from_catalog": 25
   },
   "matched": {
@@ -842,6 +842,23 @@
         }
       ]
     },
+    "cosmos.so": {
+      "catalog": [
+        {
+          "name": "Cosmos",
+          "domain": "cosmos.so",
+          "id": 384
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "cosmos",
+          "name": "Cosmos",
+          "url": "https://www.cosmos.so",
+          "name_match": true
+        }
+      ]
+    },
     "cursor.com": {
       "catalog": [
         {
@@ -1384,13 +1401,6 @@
         "name": "Copperx",
         "domain": "copperx.io",
         "id": 789
-      }
-    ],
-    "cosmos.so": [
-      {
-        "name": "Cosmos",
-        "domain": "cosmos.so",
-        "id": 384
       }
     ],
     "craft.do": [
@@ -3916,10 +3926,7 @@
         "slug": "luma-ios",
         "name": "Luma",
         "url": "https://luma.com",
-        "ios_guess": [
-          "Luma",
-          "Luma AI"
-        ]
+        "ios_guess": ["Luma", "Luma AI"]
       }
     ],
     "metabase.com": [
@@ -3935,25 +3942,19 @@
         "slug": "notion-calendar-desktop",
         "name": "Notion Calendar (desktop)",
         "url": "https://www.notion.com/product/calendar",
-        "ios_guess": [
-          "Notion"
-        ]
+        "ios_guess": ["Notion"]
       },
       {
         "slug": "notion-desktop",
         "name": "Notion (desktop)",
         "url": "https://www.notion.com/desktop",
-        "ios_guess": [
-          "Notion"
-        ]
+        "ios_guess": ["Notion"]
       },
       {
         "slug": "notion-ios",
         "name": "Notion for iOS",
         "url": "https://www.notion.com/mobile",
-        "ios_guess": [
-          "Notion"
-        ]
+        "ios_guess": ["Notion"]
       }
     ],
     "opencode.ai": [
@@ -4001,9 +4002,7 @@
         "slug": "substack",
         "name": "Substack",
         "url": "https://substack.com",
-        "ios_guess": [
-          "Substack"
-        ]
+        "ios_guess": ["Substack"]
       }
     ],
     "supabase.com": [
