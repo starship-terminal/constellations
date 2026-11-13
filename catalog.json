@@ -4175,7 +4175,8 @@
      "icons: no standalone SVG set lifted this pass; icon.png is the site's published favicon (32 px source, the largest the site ships, upscaled to 128 px)"
     ],
     "durationMin": 240,
-    "durationNote": "worktree creation to package-complete, spread over 2026-11-12 → 2026-11-13"
+    "durationNote": "worktree creation to package-complete, spread over 2026-11-12 → 2026-11-13",
+    "pr": "https://github.com/starship-terminal/constellations/pull/509"
    },
    "layoutGaps": {
     "icons/": "the icon extraction pass was not run; the icons (the DoorDash wordmark, side-nav glyphs, social icons and promo badges) are visible in the crops and screenshots"
