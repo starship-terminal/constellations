@@ -608,7 +608,7 @@
   {
     "referenceId": "systems:descript",
     "groupId": "web-categories",
-    "labels": ["AI Tool"],
+    "labels": ["AI Tool", "Productivity"],
     "reason": "catalog.json describes an AI video/audio editing product's marketing surfaces: workflow tabs, pricing tiers and template galleries — the AI Tool label."
   },
   {
