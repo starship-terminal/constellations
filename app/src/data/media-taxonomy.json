@@ -996,6 +996,11 @@
       "referenceId": "systems:cosmos",
       "media": 114,
       "assignedMedia": 48
+    },
+    {
+      "referenceId": "systems:craft",
+      "media": 90,
+      "assignedMedia": 39
     }
   ],
   "assignments": [
@@ -219924,6 +219929,455 @@
           "termId": "web-ui-elements:icon",
           "rule": "ui-icon",
           "reason": "Capture filename explicitly names icon; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:craft",
+      "mediaId": "systems/craft/screenshots/download-light-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:upload-download",
+          "rule": "ux-upload-download",
+          "reason": "Capture filename explicitly names upload & download; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:craft",
+      "mediaId": "systems/craft/screenshots/download-light-full.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:upload-download",
+          "rule": "ux-upload-download",
+          "reason": "Capture filename explicitly names upload & download; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:craft",
+      "mediaId": "systems/craft/screenshots/home-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:craft",
+      "mediaId": "systems/craft/screenshots/home-light-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:craft",
+      "mediaId": "systems/craft/screenshots/pricing-light-billing.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:billing-plans",
+          "rule": "ux-billing",
+          "reason": "Capture filename explicitly names billing & plans; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:craft",
+      "mediaId": "systems/craft/components/crops/billing-toggle-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:switch-toggle",
+          "rule": "ui-toggle",
+          "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:billing-plans",
+          "rule": "ux-billing",
+          "reason": "Capture filename explicitly names billing & plans; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:craft",
+      "mediaId": "systems/craft/components/crops/billing-toggle-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:switch-toggle",
+          "rule": "ui-toggle",
+          "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:billing-plans",
+          "rule": "ux-billing",
+          "reason": "Capture filename explicitly names billing & plans; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:craft",
+      "mediaId": "systems/craft/components/crops/billing-toggle-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:switch-toggle",
+          "rule": "ui-toggle",
+          "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:billing-plans",
+          "rule": "ux-billing",
+          "reason": "Capture filename explicitly names billing & plans; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:craft",
+      "mediaId": "systems/craft/components/crops/billing-toggle-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:switch-toggle",
+          "rule": "ui-toggle",
+          "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:billing-plans",
+          "rule": "ux-billing",
+          "reason": "Capture filename explicitly names billing & plans; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:craft",
+      "mediaId": "systems/craft/components/crops/faq-row-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:craft",
+      "mediaId": "systems/craft/components/crops/faq-row-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:craft",
+      "mediaId": "systems/craft/components/crops/faq-row-hover.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:craft",
+      "mediaId": "systems/craft/components/crops/faq-row-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:craft",
+      "mediaId": "systems/craft/components/crops/footer-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:craft",
+      "mediaId": "systems/craft/components/crops/footer-link-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:craft",
+      "mediaId": "systems/craft/components/crops/footer-link-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:craft",
+      "mediaId": "systems/craft/components/crops/footer-link-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:craft",
+      "mediaId": "systems/craft/components/crops/footer-link-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:craft",
+      "mediaId": "systems/craft/components/crops/imagine-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:craft",
+      "mediaId": "systems/craft/components/crops/imagine-card-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:craft",
+      "mediaId": "systems/craft/components/crops/imagine-card-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:craft",
+      "mediaId": "systems/craft/components/crops/imagine-card-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:craft",
+      "mediaId": "systems/craft/components/crops/m-download-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:upload-download",
+          "rule": "ux-upload-download",
+          "reason": "Capture filename explicitly names upload & download; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:craft",
+      "mediaId": "systems/craft/components/crops/m-download-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:upload-download",
+          "rule": "ux-upload-download",
+          "reason": "Capture filename explicitly names upload & download; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:craft",
+      "mediaId": "systems/craft/components/crops/m-download-hover.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:upload-download",
+          "rule": "ux-upload-download",
+          "reason": "Capture filename explicitly names upload & download; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:craft",
+      "mediaId": "systems/craft/components/crops/m-download-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:upload-download",
+          "rule": "ux-upload-download",
+          "reason": "Capture filename explicitly names upload & download; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:craft",
+      "mediaId": "systems/craft/components/crops/m-menu-button-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:craft",
+      "mediaId": "systems/craft/components/crops/m-menu-button-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:craft",
+      "mediaId": "systems/craft/components/crops/m-menu-button-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:craft",
+      "mediaId": "systems/craft/components/crops/m-menu-button-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:craft",
+      "mediaId": "systems/craft/components/crops/plan-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:craft",
+      "mediaId": "systems/craft/components/crops/plan-card-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:craft",
+      "mediaId": "systems/craft/components/crops/plan-card-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:craft",
+      "mediaId": "systems/craft/components/crops/plan-card-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:craft",
+      "mediaId": "systems/craft/components/crops/social-icon-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:icon",
+          "rule": "ui-icon",
+          "reason": "Capture filename explicitly names icon; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:craft",
+      "mediaId": "systems/craft/components/crops/social-icon-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:icon",
+          "rule": "ui-icon",
+          "reason": "Capture filename explicitly names icon; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:craft",
+      "mediaId": "systems/craft/components/crops/social-icon-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:icon",
+          "rule": "ui-icon",
+          "reason": "Capture filename explicitly names icon; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:craft",
+      "mediaId": "systems/craft/components/crops/social-icon-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:icon",
+          "rule": "ui-icon",
+          "reason": "Capture filename explicitly names icon; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:craft",
+      "mediaId": "systems/craft/components/crops/team-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
         }
       ]
     }
