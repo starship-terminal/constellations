@@ -697,6 +697,15 @@
     "reason": "catalog.json describes a music-hardware maker's storefront: product grid, PDP, cart and login drawers."
   },
   {
+    "referenceId": "systems:endel",
+    "groupId": "web-categories",
+    "labels": [
+      "Health & Wellness",
+      "Music Streaming"
+    ],
+    "reason": "catalog.json describes a personalized soundscapes product for focus, relaxation and sleep: a dark marketing site and a signed-out web app with a public player."
+  },
+  {
     "referenceId": "systems:endlesstools",
     "groupId": "web-categories",
     "labels": [
