@@ -9003,7 +9003,8 @@
           "icons: no standalone SVG set lifted this pass"
         ],
         "durationMin": null,
-        "durationNote": "Continued a partially completed capture; total active time not recorded."
+        "durationNote": "Continued a partially completed capture; total active time not recorded.",
+        "pr": "https://github.com/starship-terminal/constellations/pull/545"
       },
       "layoutGaps": {
         "icons/": "the icon extraction pass was not run; the icons (the Excalifont wordmark, the tool glyphs, the menu and dialog iconography) are visible in the crops and screenshots"
