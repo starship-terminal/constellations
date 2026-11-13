@@ -428,7 +428,7 @@
    "refero_site_ids": [
     896
    ],
-   "description": "Des vêtements et accessoires fonctionnels et durables pour les professionnels du cinéma et de la musique",
+   "description": "Des v\u00eatements et accessoires fonctionnels et durables pour les professionnels du cin\u00e9ma et de la musique",
    "status": "captured",
    "package": "systems/avnier",
    "notes": "",
@@ -630,9 +630,9 @@
    "batch": 3
   },
   {
-   "name": "BYBORRE®",
+   "name": "BYBORRE\u00ae",
    "catalog_names": [
-    "BYBORRE®"
+    "BYBORRE\u00ae"
    ],
    "domain": "byborre.com",
    "refero_site_ids": [
@@ -729,8 +729,8 @@
     908
    ],
    "description": "When it's not you, it's Care.com",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/care",
    "notes": "",
    "batch": 3
   },
@@ -744,8 +744,8 @@
     756
    ],
    "description": "The fastest, ultra-realistic voice AI platform",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/cartesia",
    "notes": "",
    "batch": 3
   },
@@ -924,8 +924,8 @@
     435
    ],
    "description": "The only AI platform purpose-built for outcomes",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/copy",
    "notes": "",
    "batch": 4
   },
@@ -939,8 +939,8 @@
     384
    ],
    "description": "Curate your universe",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/cosmos",
    "notes": "",
    "batch": 4
   },
@@ -954,8 +954,8 @@
     112
    ],
    "description": "Your space for notes, tasks, and big ideas",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/craft",
    "notes": "",
    "batch": 4
   },
@@ -969,8 +969,8 @@
     188
    ],
    "description": "Interface assets for designers, developers, and startup creatives",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/craftwork",
    "notes": "",
    "batch": 4
   },
@@ -984,8 +984,8 @@
     264
    ],
    "description": "Bring your creative ideas to life",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/creativemarket",
    "notes": "",
    "batch": 4
   },
@@ -999,8 +999,8 @@
     233
    ],
    "description": "Next generation calendar for professionals and teams",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/cron",
    "notes": "",
    "batch": 4
   },
@@ -1029,8 +1029,8 @@
     920
    ],
    "description": "Workplace communication for distributed teams",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/cushion",
    "notes": "",
    "batch": 4
   },
@@ -1074,8 +1074,8 @@
     148
    ],
    "description": "Payroll & Compliance for International Teams",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/deel",
    "notes": "",
    "batch": 4
   },
@@ -1254,8 +1254,8 @@
     31
    ],
    "description": "#1 in Electronic Signature and Intelligent Agreement Management",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/docusign",
    "notes": "",
    "batch": 5
   },
@@ -1314,8 +1314,8 @@
     193
    ],
    "description": "Redefines how engineering teams handle secrets",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/doppler",
    "notes": "",
    "batch": 5
   },
@@ -1344,8 +1344,8 @@
     257
    ],
    "description": "Community for designers",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/dribbble",
    "notes": "",
    "batch": 5
   },
@@ -1359,8 +1359,8 @@
     2
    ],
    "description": "Secure Cloud Storage",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/dropbox",
    "notes": "",
    "batch": 5
   },
@@ -1374,8 +1374,8 @@
     418
    ],
    "description": "Link Management for Modern Marketing Teams",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/dub",
    "notes": "",
    "batch": 5
   },
@@ -1448,7 +1448,7 @@
    "refero_site_ids": [
     917
    ],
-   "description": "AI Music Generator — Create & Stream Music",
+   "description": "AI Music Generator \u2014 Create & Stream Music",
    "status": "pending",
    "package": null,
    "notes": "",
@@ -2708,7 +2708,7 @@
    "refero_site_ids": [
     551
    ],
-   "description": "Personalized AI powered by what you’ve seen, said, and heard",
+   "description": "Personalized AI powered by what you\u2019ve seen, said, and heard",
    "status": "pending",
    "package": null,
    "notes": "",
@@ -2993,7 +2993,7 @@
    "refero_site_ids": [
     752
    ],
-   "description": "It’s the ultimate reading client for the open web",
+   "description": "It\u2019s the ultimate reading client for the open web",
    "status": "pending",
    "package": null,
    "notes": "",
@@ -3190,7 +3190,7 @@
    "refero_site_ids": [
     882
    ],
-   "description": "AI-Powered No‑Code App Builder for Entrepreneurs",
+   "description": "AI-Powered No\u2011Code App Builder for Entrepreneurs",
    "status": "pending",
    "package": null,
    "notes": "",
@@ -4975,7 +4975,7 @@
    "refero_site_ids": [
     356
    ],
-   "description": "You’ve never designed this easy before",
+   "description": "You\u2019ve never designed this easy before",
    "status": "pending",
    "package": null,
    "notes": "",
@@ -5950,7 +5950,7 @@
    "refero_site_ids": [
     88
    ],
-   "description": "The developer-first ‍MLOps platform",
+   "description": "The developer-first \u200dMLOps platform",
    "status": "pending",
    "package": null,
    "notes": "",
@@ -6257,9 +6257,9 @@
    "batch": 21
   },
   {
-   "name": "Сontra",
+   "name": "\u0421ontra",
    "catalog_names": [
-    "Сontra"
+    "\u0421ontra"
    ],
    "domain": "contra.com",
    "refero_site_ids": [
@@ -6272,9 +6272,9 @@
    "batch": 21
   },
   {
-   "name": "ツSupercut",
+   "name": "\u30c4Supercut",
    "catalog_names": [
-    "ツSupercut"
+    "\u30c4Supercut"
    ],
    "domain": "supercut.ai",
    "refero_site_ids": [
