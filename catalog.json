@@ -8975,7 +8975,8 @@
           "icons: no standalone SVG set lifted this pass"
         ],
         "durationMin": null,
-        "durationNote": "wall-clock duration was not recorded for this capture"
+        "durationNote": "wall-clock duration was not recorded for this capture",
+        "pr": "https://github.com/starship-terminal/constellations/pull/542"
       },
       "layoutGaps": {
         "icons/": "the icon extraction pass was not run; the icons (the Esquire wordmark, chevrons and social marks) are visible in the crops and screenshots"
