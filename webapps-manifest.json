@@ -1044,9 +1044,9 @@
     504
    ],
    "description": "Your feedback hub, on autopilot",
-   "status": "pending",
+   "status": "uncapturable",
    "package": null,
-   "notes": "",
+   "notes": "acquired by Atlassian 2025-09-03, standalone product sunset 2025-10-31; cycle.app is an unpublished Webflow site serving the generic 404 on every path; nothing honest to capture",
    "batch": 4
   },
   {
@@ -1059,9 +1059,9 @@
     571
    ],
    "description": "The place full of art where it gains the voice it deserves",
-   "status": "pending",
-   "package": null,
-   "notes": "",
+   "status": "captured",
+   "package": "systems/dailyartmagazine",
+   "notes": "public read-only magazine; Shop and Courses are external stores measured as links, never followed. Newsletter and Contact Form 7 fields were filled with sample text and cleared, never submitted. Third-party ad slots are layout evidence only",
    "batch": 4
   },
   {

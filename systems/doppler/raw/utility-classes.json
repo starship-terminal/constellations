@@ -1,0 +1,2176 @@
+{
+ "readAt": "2026-11-13",
+ "source": "the same harvested stylesheet bodies as css-vars.json: every rule whose selector is a plain class list (.bg-brand-orange, .text-h3, .rounded-16, .shadow-medium-dark, hover/focus/responsive variants) with its colour, type, radius, shadow, border and motion declarations",
+ "classes": [
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".sr-only",
+   "context": [],
+   "properties": {
+    "border-top-width": "0px",
+    "border-right-width": "0px",
+    "border-bottom-width": "0px",
+    "border-left-width": "0px"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".animate-pulse",
+   "context": [],
+   "properties": {
+    "animation-duration": "2s",
+    "animation-timing-function": "cubic-bezier(0.4, 0, 0.6, 1)",
+    "animation-delay": "0s",
+    "animation-iteration-count": "infinite",
+    "animation-direction": "normal",
+    "animation-fill-mode": "none",
+    "animation-play-state": "running",
+    "animation-name": "pulse",
+    "animation-timeline": "auto",
+    "animation-range-start": "normal",
+    "animation-range-end": "normal"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".rounded-12",
+   "context": [],
+   "properties": {
+    "border-top-left-radius": "12px",
+    "border-top-right-radius": "12px",
+    "border-bottom-right-radius": "12px",
+    "border-bottom-left-radius": "12px"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".rounded-15",
+   "context": [],
+   "properties": {
+    "border-top-left-radius": "15px",
+    "border-top-right-radius": "15px",
+    "border-bottom-right-radius": "15px",
+    "border-bottom-left-radius": "15px"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".rounded-16",
+   "context": [],
+   "properties": {
+    "border-top-left-radius": "16px",
+    "border-top-right-radius": "16px",
+    "border-bottom-right-radius": "16px",
+    "border-bottom-left-radius": "16px"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".rounded-20",
+   "context": [],
+   "properties": {
+    "border-top-left-radius": "20px",
+    "border-top-right-radius": "20px",
+    "border-bottom-right-radius": "20px",
+    "border-bottom-left-radius": "20px"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".rounded-56",
+   "context": [],
+   "properties": {
+    "border-top-left-radius": "56px",
+    "border-top-right-radius": "56px",
+    "border-bottom-right-radius": "56px",
+    "border-bottom-left-radius": "56px"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".rounded-6",
+   "context": [],
+   "properties": {
+    "border-top-left-radius": "6px",
+    "border-top-right-radius": "6px",
+    "border-bottom-right-radius": "6px",
+    "border-bottom-left-radius": "6px"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".rounded-8",
+   "context": [],
+   "properties": {
+    "border-top-left-radius": "8px",
+    "border-top-right-radius": "8px",
+    "border-bottom-right-radius": "8px",
+    "border-bottom-left-radius": "8px"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".rounded-\\[120px\\]",
+   "context": [],
+   "properties": {
+    "border-top-left-radius": "120px",
+    "border-top-right-radius": "120px",
+    "border-bottom-right-radius": "120px",
+    "border-bottom-left-radius": "120px"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".rounded-\\[140px\\]",
+   "context": [],
+   "properties": {
+    "border-top-left-radius": "140px",
+    "border-top-right-radius": "140px",
+    "border-bottom-right-radius": "140px",
+    "border-bottom-left-radius": "140px"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".rounded-\\[20\\%\\]",
+   "context": [],
+   "properties": {
+    "border-top-left-radius": "20%",
+    "border-top-right-radius": "20%",
+    "border-bottom-right-radius": "20%",
+    "border-bottom-left-radius": "20%"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".rounded-\\[200px\\]",
+   "context": [],
+   "properties": {
+    "border-top-left-radius": "200px",
+    "border-top-right-radius": "200px",
+    "border-bottom-right-radius": "200px",
+    "border-bottom-left-radius": "200px"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".rounded-\\[25\\%\\]",
+   "context": [],
+   "properties": {
+    "border-top-left-radius": "25%",
+    "border-top-right-radius": "25%",
+    "border-bottom-right-radius": "25%",
+    "border-bottom-left-radius": "25%"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".rounded-\\[80\\%\\]",
+   "context": [],
+   "properties": {
+    "border-top-left-radius": "80%",
+    "border-top-right-radius": "80%",
+    "border-bottom-right-radius": "80%",
+    "border-bottom-left-radius": "80%"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".rounded-\\[80px\\]",
+   "context": [],
+   "properties": {
+    "border-top-left-radius": "80px",
+    "border-top-right-radius": "80px",
+    "border-bottom-right-radius": "80px",
+    "border-bottom-left-radius": "80px"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".rounded-full",
+   "context": [],
+   "properties": {
+    "border-top-left-radius": "9999px",
+    "border-top-right-radius": "9999px",
+    "border-bottom-right-radius": "9999px",
+    "border-bottom-left-radius": "9999px"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".rounded-lg",
+   "context": [],
+   "properties": {
+    "border-top-left-radius": "0.5rem",
+    "border-top-right-radius": "0.5rem",
+    "border-bottom-right-radius": "0.5rem",
+    "border-bottom-left-radius": "0.5rem"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".rounded-b-12",
+   "context": [],
+   "properties": {
+    "border-bottom-right-radius": "12px",
+    "border-bottom-left-radius": "12px"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".rounded-b-16",
+   "context": [],
+   "properties": {
+    "border-bottom-right-radius": "16px",
+    "border-bottom-left-radius": "16px"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".rounded-b-20",
+   "context": [],
+   "properties": {
+    "border-bottom-right-radius": "20px",
+    "border-bottom-left-radius": "20px"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".rounded-t-20",
+   "context": [],
+   "properties": {
+    "border-top-left-radius": "20px",
+    "border-top-right-radius": "20px"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".rounded-tl-none",
+   "context": [],
+   "properties": {
+    "border-top-left-radius": "0px"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".rounded-tr-none",
+   "context": [],
+   "properties": {
+    "border-top-right-radius": "0px"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".border, .border-1",
+   "context": [],
+   "properties": {
+    "border-top-width": "1px",
+    "border-right-width": "1px",
+    "border-bottom-width": "1px",
+    "border-left-width": "1px"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".border-2",
+   "context": [],
+   "properties": {
+    "border-top-width": "2px",
+    "border-right-width": "2px",
+    "border-bottom-width": "2px",
+    "border-left-width": "2px"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".border-b-0",
+   "context": [],
+   "properties": {
+    "border-bottom-width": "0px"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".border-b-1",
+   "context": [],
+   "properties": {
+    "border-bottom-width": "1px"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".border-l-1",
+   "context": [],
+   "properties": {
+    "border-left-width": "1px"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".border-l-8",
+   "context": [],
+   "properties": {
+    "border-left-width": "8px"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".border-r-8",
+   "context": [],
+   "properties": {
+    "border-right-width": "8px"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".border-t-0",
+   "context": [],
+   "properties": {
+    "border-top-width": "0px"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".border-t-1",
+   "context": [],
+   "properties": {
+    "border-top-width": "1px"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".border-t-8",
+   "context": [],
+   "properties": {
+    "border-top-width": "8px"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".border-aluminum",
+   "context": [],
+   "properties": {
+    "border-color": "rgb(139 135 125/var(--tw-border-opacity,1))"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".border-black8",
+   "context": [],
+   "properties": {
+    "border-top-color": "rgba(242, 241, 237, 0.08)",
+    "border-right-color": "rgba(242, 241, 237, 0.08)",
+    "border-bottom-color": "rgba(242, 241, 237, 0.08)",
+    "border-left-color": "rgba(242, 241, 237, 0.08)"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".border-carmine",
+   "context": [],
+   "properties": {
+    "border-color": "rgb(245 92 21/var(--tw-border-opacity,1))"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".border-charcoal",
+   "context": [],
+   "properties": {
+    "border-color": "rgb(69 64 61/var(--tw-border-opacity,1))"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".border-glow-stroke",
+   "context": [],
+   "properties": {
+    "border-top-color": "rgba(255, 255, 255, 0.08)",
+    "border-right-color": "rgba(255, 255, 255, 0.08)",
+    "border-bottom-color": "rgba(255, 255, 255, 0.08)",
+    "border-left-color": "rgba(255, 255, 255, 0.08)"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".border-glow-stroke-light",
+   "context": [],
+   "properties": {
+    "border-color": "rgb(85 80 91/var(--tw-border-opacity,1))"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".border-light-purple",
+   "context": [],
+   "properties": {
+    "border-color": "rgb(185 151 255/var(--tw-border-opacity,1))"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".border-stone-700",
+   "context": [],
+   "properties": {
+    "border-color": "rgb(68 64 60/var(--tw-border-opacity,1))"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".border-warm-white",
+   "context": [],
+   "properties": {
+    "border-color": "rgb(241 240 236/var(--tw-border-opacity,1))"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".border-l-transparent",
+   "context": [],
+   "properties": {
+    "border-left-color": "transparent"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".border-r-transparent",
+   "context": [],
+   "properties": {
+    "border-right-color": "transparent"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".border-t-\\[\\#A4A2A4\\]",
+   "context": [],
+   "properties": {
+    "border-top-color": "rgb(164 162 164/var(--tw-border-opacity,1))"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".bg-\\[\\#000\\]",
+   "context": [],
+   "properties": {
+    "background-color": "rgb(0 0 0/var(--tw-bg-opacity,1))"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".bg-\\[\\#241E2C\\]",
+   "context": [],
+   "properties": {
+    "background-color": "rgb(36 30 44/var(--tw-bg-opacity,1))"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".bg-\\[\\#2D2734\\]",
+   "context": [],
+   "properties": {
+    "background-color": "rgb(45 39 52/var(--tw-bg-opacity,1))"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".bg-\\[\\#302C37\\]",
+   "context": [],
+   "properties": {
+    "background-color": "rgb(48 44 55/var(--tw-bg-opacity,1))"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".bg-\\[\\#A4A2A4\\]",
+   "context": [],
+   "properties": {
+    "background-color": "rgb(164 162 164/var(--tw-bg-opacity,1))"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".bg-\\[green\\]",
+   "context": [],
+   "properties": {
+    "background-color": "rgb(0 128 0/var(--tw-bg-opacity,1))"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".bg-\\[transparent\\]",
+   "context": [],
+   "properties": {
+    "background-color": "transparent"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".bg-basalt",
+   "context": [],
+   "properties": {
+    "background-color": "rgb(36 30 44/var(--tw-bg-opacity,1))"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".bg-black",
+   "context": [],
+   "properties": {
+    "background-color": "rgb(0 0 0/var(--tw-bg-opacity,1))"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".bg-black32",
+   "context": [],
+   "properties": {
+    "background-color": "rgba(242, 241, 237, 0.32)"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".bg-black4",
+   "context": [],
+   "properties": {
+    "background-color": "rgba(242, 241, 237, 0.04)"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".bg-black8",
+   "context": [],
+   "properties": {
+    "background-color": "rgba(242, 241, 237, 0.08)"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".bg-brand-orange",
+   "context": [],
+   "properties": {
+    "background-color": "rgb(245 92 21/var(--tw-bg-opacity,1))"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".bg-charcoal",
+   "context": [],
+   "properties": {
+    "background-color": "rgb(69 64 61/var(--tw-bg-opacity,1))"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".bg-flourescent-green",
+   "context": [],
+   "properties": {
+    "background-color": "rgb(0 245 117/var(--tw-bg-opacity,1))"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".bg-light-purple",
+   "context": [],
+   "properties": {
+    "background-color": "rgb(185 151 255/var(--tw-bg-opacity,1))"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".bg-orange-300",
+   "context": [],
+   "properties": {
+    "background-color": "rgb(253 186 116/var(--tw-bg-opacity,1))"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".bg-purple",
+   "context": [],
+   "properties": {
+    "background-color": "rgb(107 19 245/var(--tw-bg-opacity,1))"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".bg-red-600",
+   "context": [],
+   "properties": {
+    "background-color": "rgb(220 38 38/var(--tw-bg-opacity,1))"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".bg-silver",
+   "context": [],
+   "properties": {
+    "background-color": "rgb(208 201 196/var(--tw-bg-opacity,1))"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".bg-subtle-green",
+   "context": [],
+   "properties": {
+    "background-color": "rgba(105, 252, 81, 0.08)"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".bg-subtle-orange",
+   "context": [],
+   "properties": {
+    "background-color": "rgba(252, 156, 81, 0.08)"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".bg-subtle-red",
+   "context": [],
+   "properties": {
+    "background-color": "rgba(252, 97, 81, 0.08)"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".bg-transparent",
+   "context": [],
+   "properties": {
+    "background-color": "transparent"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".bg-warm-black",
+   "context": [],
+   "properties": {
+    "background-color": "rgb(28 22 36/var(--tw-bg-opacity,1))"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".bg-warm-white",
+   "context": [],
+   "properties": {
+    "background-color": "rgb(241 240 236/var(--tw-bg-opacity,1))"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".bg-white",
+   "context": [],
+   "properties": {
+    "background-color": "rgb(255 255 255/var(--tw-bg-opacity,1))"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".bg-yellow-300",
+   "context": [],
+   "properties": {
+    "background-color": "rgb(253 224 71/var(--tw-bg-opacity,1))"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".from-flourescent-green",
+   "context": [],
+   "properties": {
+    "--tw-gradient-from": "#00f575 var(--tw-gradient-from-position)",
+    "--tw-gradient-to": "rgba(0,245,117,0) var(--tw-gradient-to-position)",
+    "--tw-gradient-stops": "var(--tw-gradient-from),var(--tw-gradient-to)"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".from-purple",
+   "context": [],
+   "properties": {
+    "--tw-gradient-from": "#6b13f5 var(--tw-gradient-from-position)",
+    "--tw-gradient-to": "rgba(107,19,245,0) var(--tw-gradient-to-position)",
+    "--tw-gradient-stops": "var(--tw-gradient-from),var(--tw-gradient-to)"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".from-warm-black",
+   "context": [],
+   "properties": {
+    "--tw-gradient-from": "#1c1624 var(--tw-gradient-from-position)",
+    "--tw-gradient-to": "rgba(28,22,36,0) var(--tw-gradient-to-position)",
+    "--tw-gradient-stops": "var(--tw-gradient-from),var(--tw-gradient-to)"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".from-warm-white",
+   "context": [],
+   "properties": {
+    "--tw-gradient-from": "#f1f0ec var(--tw-gradient-from-position)",
+    "--tw-gradient-to": "hsla(48,15%,94%,0) var(--tw-gradient-to-position)",
+    "--tw-gradient-stops": "var(--tw-gradient-from),var(--tw-gradient-to)"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".via-light-purple",
+   "context": [],
+   "properties": {
+    "--tw-gradient-to": "rgba(185,151,255,0) var(--tw-gradient-to-position)",
+    "--tw-gradient-stops": "var(--tw-gradient-from),#b997ff var(--tw-gradient-via-position),var(--tw-gradient-to)"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".via-lilac",
+   "context": [],
+   "properties": {
+    "--tw-gradient-to": "rgba(255,158,250,0) var(--tw-gradient-to-position)",
+    "--tw-gradient-stops": "var(--tw-gradient-from),#ff9efa var(--tw-gradient-via-position),var(--tw-gradient-to)"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".via-purple",
+   "context": [],
+   "properties": {
+    "--tw-gradient-to": "rgba(107,19,245,0) var(--tw-gradient-to-position)",
+    "--tw-gradient-stops": "var(--tw-gradient-from),#6b13f5 var(--tw-gradient-via-position),var(--tw-gradient-to)"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".to-charcoal",
+   "context": [],
+   "properties": {
+    "--tw-gradient-to": "#45403d var(--tw-gradient-to-position)"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".to-light-purple",
+   "context": [],
+   "properties": {
+    "--tw-gradient-to": "#b997ff var(--tw-gradient-to-position)"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".to-purple",
+   "context": [],
+   "properties": {
+    "--tw-gradient-to": "#6b13f5 var(--tw-gradient-to-position)"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".to-transparent",
+   "context": [],
+   "properties": {
+    "--tw-gradient-to": "transparent var(--tw-gradient-to-position)"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".fill-\\[\\#2D2734\\]",
+   "context": [],
+   "properties": {
+    "fill": "rgb(45, 39, 52)"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".fill-\\[\\#302C37\\]",
+   "context": [],
+   "properties": {
+    "fill": "rgb(48, 44, 55)"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".fill-brand-orange",
+   "context": [],
+   "properties": {
+    "fill": "rgb(245, 92, 21)"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".fill-light-purple",
+   "context": [],
+   "properties": {
+    "fill": "rgb(185, 151, 255)"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".font-inter",
+   "context": [],
+   "properties": {
+    "font-family": "var(--font-inter),sans-serif"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".font-mono",
+   "context": [],
+   "properties": {
+    "font-family": "var(--font-doppler-repro-mono),monospace"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".font-sans",
+   "context": [],
+   "properties": {
+    "font-family": "var(--font-doppler-repro),sans-serif"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".text-8xl",
+   "context": [],
+   "properties": {
+    "font-size": "6.25rem"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".text-\\[14px\\]",
+   "context": [],
+   "properties": {
+    "font-size": "14px"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".text-\\[18px\\]",
+   "context": [],
+   "properties": {
+    "font-size": "18px"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".text-\\[20px\\]",
+   "context": [],
+   "properties": {
+    "font-size": "20px"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".text-\\[24px\\]",
+   "context": [],
+   "properties": {
+    "font-size": "24px"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".text-\\[40vw\\]",
+   "context": [],
+   "properties": {
+    "font-size": "40vw"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".text-\\[8px\\]",
+   "context": [],
+   "properties": {
+    "font-size": "8px"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".text-\\[9px\\]",
+   "context": [],
+   "properties": {
+    "font-size": "9px"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".text-articleCardMobile",
+   "context": [],
+   "properties": {
+    "font-size": "24px",
+    "line-height": "100%",
+    "font-weight": "450"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".text-blog",
+   "context": [],
+   "properties": {
+    "line-height": "150%",
+    "letter-spacing": "-0.16px"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".text-blog, .text-code",
+   "context": [],
+   "properties": {
+    "font-size": "16px",
+    "font-weight": "400"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".text-code",
+   "context": [],
+   "properties": {
+    "line-height": "160%"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".text-h1Mobile",
+   "context": [],
+   "properties": {
+    "font-size": "64px",
+    "line-height": "90%",
+    "letter-spacing": "-1.28px",
+    "font-weight": "450"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".text-h2Mobile",
+   "context": [],
+   "properties": {
+    "font-size": "52px",
+    "line-height": "100%",
+    "letter-spacing": "-1.04px",
+    "font-weight": "450"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".text-h3",
+   "context": [],
+   "properties": {
+    "font-size": "48px",
+    "line-height": "120%",
+    "letter-spacing": "-0.96px",
+    "font-weight": "450"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".text-h3Mobile",
+   "context": [],
+   "properties": {
+    "font-size": "36px",
+    "line-height": "100%",
+    "letter-spacing": "-0.72px",
+    "font-weight": "450"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".text-h4",
+   "context": [],
+   "properties": {
+    "font-size": "32px",
+    "letter-spacing": "-0.64px"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".text-h4, .text-h4Mobile",
+   "context": [],
+   "properties": {
+    "line-height": "120%",
+    "font-weight": "450"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".text-h4Mobile",
+   "context": [],
+   "properties": {
+    "font-size": "24px",
+    "letter-spacing": "-0.48px"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".text-label",
+   "context": [],
+   "properties": {
+    "font-size": "14px",
+    "line-height": "120%",
+    "letter-spacing": "0px",
+    "font-weight": "500"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".text-labelSm",
+   "context": [],
+   "properties": {
+    "font-size": "10px",
+    "letter-spacing": "1px"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".text-labelSm, .text-navLink",
+   "context": [],
+   "properties": {
+    "line-height": "100%",
+    "font-weight": "700"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".text-navLink",
+   "context": [],
+   "properties": {
+    "font-size": "15px",
+    "letter-spacing": "0.15px"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".text-p1",
+   "context": [],
+   "properties": {
+    "font-size": "24px",
+    "letter-spacing": "-0.24px"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".text-p1, .text-p2",
+   "context": [],
+   "properties": {
+    "line-height": "140%",
+    "font-weight": "400"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".text-p2",
+   "context": [],
+   "properties": {
+    "font-size": "18px",
+    "letter-spacing": "-0.18px"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".text-p3",
+   "context": [],
+   "properties": {
+    "font-size": "14px",
+    "letter-spacing": "0.42px"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".text-p3, .text-small",
+   "context": [],
+   "properties": {
+    "line-height": "150%",
+    "font-weight": "400"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".text-small",
+   "context": [],
+   "properties": {
+    "font-size": "12px",
+    "letter-spacing": "0.36px"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".font-bold",
+   "context": [],
+   "properties": {
+    "font-weight": "700"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".font-medium",
+   "context": [],
+   "properties": {
+    "font-weight": "500"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".font-normal",
+   "context": [],
+   "properties": {
+    "font-weight": "400"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".uppercase",
+   "context": [],
+   "properties": {
+    "text-transform": "uppercase"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".leading-0",
+   "context": [],
+   "properties": {
+    "line-height": "0px"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".leading-100",
+   "context": [],
+   "properties": {
+    "line-height": "100%"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".leading-120",
+   "context": [],
+   "properties": {
+    "line-height": "120%"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".leading-170",
+   "context": [],
+   "properties": {
+    "line-height": "170%"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".leading-\\[0\\]",
+   "context": [],
+   "properties": {
+    "line-height": "0"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".leading-\\[100\\%\\]",
+   "context": [],
+   "properties": {
+    "line-height": "100%"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".leading-\\[120\\%\\]",
+   "context": [],
+   "properties": {
+    "line-height": "120%"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".tracking-0",
+   "context": [],
+   "properties": {
+    "letter-spacing": "0px"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".tracking-\\[0\\.5em\\]",
+   "context": [],
+   "properties": {
+    "letter-spacing": "0.5em"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".text-\\[transparent\\]",
+   "context": [],
+   "properties": {
+    "color": "transparent"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".text-aluminum",
+   "context": [],
+   "properties": {
+    "color": "rgb(139 135 125/var(--tw-text-opacity,1))"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".text-black",
+   "context": [],
+   "properties": {
+    "color": "rgb(0 0 0/var(--tw-text-opacity,1))"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".text-black32",
+   "context": [],
+   "properties": {
+    "color": "rgba(242, 241, 237, 0.32)"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".text-black64",
+   "context": [],
+   "properties": {
+    "color": "rgba(242, 241, 237, 0.64)"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".text-brand-orange, .text-carmine",
+   "context": [],
+   "properties": {
+    "color": "rgb(245 92 21/var(--tw-text-opacity,1))"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".text-charcoal",
+   "context": [],
+   "properties": {
+    "color": "rgb(69 64 61/var(--tw-text-opacity,1))"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".text-cloud",
+   "context": [],
+   "properties": {
+    "color": "rgb(229 232 237/var(--tw-text-opacity,1))"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".text-flourescent-green",
+   "context": [],
+   "properties": {
+    "color": "rgb(0 245 117/var(--tw-text-opacity,1))"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".text-flourescent-red",
+   "context": [],
+   "properties": {
+    "color": "rgb(255 84 73/var(--tw-text-opacity,1))"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".text-light-purple",
+   "context": [],
+   "properties": {
+    "color": "rgb(185 151 255/var(--tw-text-opacity,1))"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".text-lilac",
+   "context": [],
+   "properties": {
+    "color": "rgb(255 158 250/var(--tw-text-opacity,1))"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".text-silver",
+   "context": [],
+   "properties": {
+    "color": "rgb(208 201 196/var(--tw-text-opacity,1))"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".text-transparent",
+   "context": [],
+   "properties": {
+    "color": "transparent"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".text-warm-black",
+   "context": [],
+   "properties": {
+    "color": "rgb(28 22 36/var(--tw-text-opacity,1))"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".text-warm-white",
+   "context": [],
+   "properties": {
+    "color": "rgb(241 240 236/var(--tw-text-opacity,1))"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".text-white",
+   "context": [],
+   "properties": {
+    "color": "rgb(255 255 255/var(--tw-text-opacity,1))"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".placeholder-silver::placeholder",
+   "context": [],
+   "properties": {
+    "color": "rgb(208 201 196/var(--tw-placeholder-opacity,1))"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".placeholder-warm-white::placeholder",
+   "context": [],
+   "properties": {
+    "color": "rgb(241 240 236/var(--tw-placeholder-opacity,1))"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".opacity-0",
+   "context": [],
+   "properties": {
+    "opacity": "0"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".opacity-\\[0\\.05\\]",
+   "context": [],
+   "properties": {
+    "opacity": "0.05"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".opacity-\\[0\\.1\\]",
+   "context": [],
+   "properties": {
+    "opacity": "0.1"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".opacity-\\[0\\.25\\]",
+   "context": [],
+   "properties": {
+    "opacity": "0.25"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".opacity-\\[0\\.2\\]",
+   "context": [],
+   "properties": {
+    "opacity": "0.2"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".opacity-\\[0\\.4\\]",
+   "context": [],
+   "properties": {
+    "opacity": "0.4"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".opacity-\\[0\\.55\\]",
+   "context": [],
+   "properties": {
+    "opacity": "0.55"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".opacity-\\[0\\.6\\]",
+   "context": [],
+   "properties": {
+    "opacity": "0.6"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".opacity-\\[0\\.9\\]",
+   "context": [],
+   "properties": {
+    "opacity": "0.9"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".shadow-medium-dark",
+   "context": [],
+   "properties": {
+    "--tw-shadow": "0 8px 30px rgba(0,0,0,.45)"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".shadow-medium-dark, .shadow-people",
+   "context": [],
+   "properties": {
+    "box-shadow": "var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".shadow-people",
+   "context": [],
+   "properties": {
+    "--tw-shadow": "0px 1.133px 3.398px 0px rgba(0,0,0,.1),0px 6.797px 6.797px 0px rgba(0,0,0,.09),0px 14.727px 9.062px 0px rgba(0,0,0,.05),0px 26.055px 10.195px 0px rgba(0,0,0,.01),0px 40.781px 11.328px 0px transparent"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".outline-none",
+   "context": [],
+   "properties": {
+    "outline-color": "transparent"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".transition",
+   "context": [],
+   "properties": {
+    "transition-property": "color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter",
+    "transition-timing-function": "cubic-bezier(0.4, 0, 0.2, 1)",
+    "transition-duration": "0.15s"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".transition-all",
+   "context": [],
+   "properties": {
+    "transition-property": "all",
+    "transition-timing-function": "cubic-bezier(0.4, 0, 0.2, 1)",
+    "transition-duration": "0.15s"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".transition-colors",
+   "context": [],
+   "properties": {
+    "transition-property": "color, background-color, border-color, text-decoration-color, fill, stroke",
+    "transition-timing-function": "cubic-bezier(0.4, 0, 0.2, 1)",
+    "transition-duration": "0.15s"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".transition-opacity",
+   "context": [],
+   "properties": {
+    "transition-property": "opacity",
+    "transition-timing-function": "cubic-bezier(0.4, 0, 0.2, 1)",
+    "transition-duration": "0.15s"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".transition-transform",
+   "context": [],
+   "properties": {
+    "transition-property": "transform",
+    "transition-timing-function": "cubic-bezier(0.4, 0, 0.2, 1)",
+    "transition-duration": "0.15s"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".delay-\\[0ms\\]",
+   "context": [],
+   "properties": {
+    "transition-delay": "0ms"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".duration-150",
+   "context": [],
+   "properties": {
+    "transition-duration": "0.15s"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".duration-200",
+   "context": [],
+   "properties": {
+    "transition-duration": "0.2s"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".duration-300",
+   "context": [],
+   "properties": {
+    "transition-duration": "0.3s"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".duration-500",
+   "context": [],
+   "properties": {
+    "transition-duration": "0.5s"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".duration-\\[350ms\\]",
+   "context": [],
+   "properties": {
+    "transition-duration": "0.35s"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".duration-\\[400ms\\]",
+   "context": [],
+   "properties": {
+    "transition-duration": "0.4s"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".ease-global",
+   "context": [],
+   "properties": {
+    "transition-timing-function": "cubic-bezier(0.8, 0.01, 0.11, 0.98)"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".ease-in-out",
+   "context": [],
+   "properties": {
+    "transition-timing-function": "cubic-bezier(0.4, 0, 0.2, 1)"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".ease-out",
+   "context": [],
+   "properties": {
+    "transition-timing-function": "cubic-bezier(0, 0, 0.2, 1)"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".gradient-text",
+   "context": [],
+   "properties": {
+    "background-color": "initial",
+    "animation-duration": "10s",
+    "animation-timing-function": "ease",
+    "animation-delay": "0s",
+    "animation-iteration-count": "infinite",
+    "animation-direction": "normal",
+    "animation-fill-mode": "none",
+    "animation-play-state": "running",
+    "animation-name": "gradientAnimation",
+    "animation-timeline": "auto",
+    "animation-range-start": "normal",
+    "animation-range-end": "normal"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".gradient-text-simple",
+   "context": [],
+   "properties": {
+    "background-color": "initial",
+    "color": "transparent"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".stat-gradient-text",
+   "context": [],
+   "properties": {
+    "background-color": "initial",
+    "animation-duration": "20s",
+    "animation-timing-function": "ease",
+    "animation-delay": "0s",
+    "animation-iteration-count": "infinite",
+    "animation-direction": "normal",
+    "animation-fill-mode": "none",
+    "animation-play-state": "running",
+    "animation-name": "gradientAnimation",
+    "animation-timeline": "auto",
+    "animation-range-start": "normal",
+    "animation-range-end": "normal"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".interactive-card::before",
+   "context": [],
+   "properties": {
+    "border-top-left-radius": "inherit",
+    "border-top-right-radius": "inherit",
+    "border-bottom-right-radius": "inherit",
+    "border-bottom-left-radius": "inherit",
+    "background-color": "initial"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".orange-border::before",
+   "context": [],
+   "properties": {
+    "background-color": "initial"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".interactive-card.with-link:not(.no-border)::after",
+   "context": [],
+   "properties": {
+    "opacity": "0",
+    "transition-behavior": "normal",
+    "transition-duration": "0.5s",
+    "transition-timing-function": "ease",
+    "transition-delay": "0s",
+    "transition-property": "opacity",
+    "border-top-left-radius": "inherit",
+    "border-top-right-radius": "inherit",
+    "border-bottom-right-radius": "inherit",
+    "border-bottom-left-radius": "inherit",
+    "background-color": "initial"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".interactive-card.with-link:not(.no-border):hover::after",
+   "context": [],
+   "properties": {
+    "opacity": "1",
+    "transition-behavior": "normal",
+    "transition-duration": "0.5s",
+    "transition-timing-function": "ease",
+    "transition-delay": "0s",
+    "transition-property": "opacity"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".gradient-overlay",
+   "context": [],
+   "properties": {
+    "background-color": "initial"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".card-link::after",
+   "context": [],
+   "properties": {
+    "background-color": "transparent"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".after\\:bg-charcoal::after",
+   "context": [],
+   "properties": {
+    "background-color": "rgb(69 64 61/var(--tw-bg-opacity,1))"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".after\\:from-transparent::after",
+   "context": [],
+   "properties": {
+    "--tw-gradient-from": "transparent var(--tw-gradient-from-position)",
+    "--tw-gradient-to": "transparent var(--tw-gradient-to-position)",
+    "--tw-gradient-stops": "var(--tw-gradient-from),var(--tw-gradient-to)"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".after\\:to-charcoal::after",
+   "context": [],
+   "properties": {
+    "--tw-gradient-to": "#45403d var(--tw-gradient-to-position)"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".hover\\:border-light-purple:hover",
+   "context": [],
+   "properties": {
+    "border-color": "rgb(185 151 255/var(--tw-border-opacity,1))"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".hover\\:bg-black4:hover",
+   "context": [],
+   "properties": {
+    "background-color": "rgba(242, 241, 237, 0.04)"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".hover\\:text-flourescent-green-dark:hover",
+   "context": [],
+   "properties": {
+    "color": "rgb(0 191 91/var(--tw-text-opacity,1))"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".hover\\:text-silver:hover",
+   "context": [],
+   "properties": {
+    "color": "rgb(208 201 196/var(--tw-text-opacity,1))"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".hover\\:text-warm-white:hover",
+   "context": [],
+   "properties": {
+    "color": "rgb(241 240 236/var(--tw-text-opacity,1))"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".hover\\:opacity-100:hover",
+   "context": [],
+   "properties": {
+    "opacity": "1"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".focus\\:border-light-purple:focus",
+   "context": [],
+   "properties": {
+    "border-color": "rgb(185 151 255/var(--tw-border-opacity,1))"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".focus\\:bg-black8:focus",
+   "context": [],
+   "properties": {
+    "background-color": "rgba(242, 241, 237, 0.08)"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".focus\\:text-warm-white:focus",
+   "context": [],
+   "properties": {
+    "color": "rgb(241 240 236/var(--tw-text-opacity,1))"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".focus\\:outline-none:focus",
+   "context": [],
+   "properties": {
+    "outline-color": "transparent"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".active\\:bg-black8:active",
+   "context": [],
+   "properties": {
+    "background-color": "rgba(242, 241, 237, 0.08)"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".active\\:bg-flourescent-green-dark:active",
+   "context": [],
+   "properties": {
+    "background-color": "rgb(0 191 91/var(--tw-bg-opacity,1))"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".active\\:text-warm-white:active",
+   "context": [],
+   "properties": {
+    "color": "rgb(241 240 236/var(--tw-text-opacity,1))"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".disabled\\:text-aluminum:disabled",
+   "context": [],
+   "properties": {
+    "color": "rgb(139 135 125/var(--tw-text-opacity,1))"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".disabled\\:hover\\:bg-transparent:hover:disabled",
+   "context": [],
+   "properties": {
+    "background-color": "transparent"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".data-\\[focus\\]\\:bg-gray-300\\/30[data-focus]",
+   "context": [],
+   "properties": {
+    "background-color": "rgba(209, 213, 219, 0.3)"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".data-\\[active\\]\\:text-warm-black[data-active], .data-\\[focus\\]\\:text-warm-black[data-focus]",
+   "context": [],
+   "properties": {
+    "color": "rgb(28 22 36/var(--tw-text-opacity,1))"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".data-\\[closed\\]\\:opacity-0[data-closed]",
+   "context": [],
+   "properties": {
+    "opacity": "0"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".data-\\[focus\\]\\:outline-white[data-focus]",
+   "context": [],
+   "properties": {
+    "outline-color": "rgb(255, 255, 255)"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".md\\:rounded-90",
+   "context": [
+    "@media (min-width: 1023px)"
+   ],
+   "properties": {
+    "border-top-left-radius": "90px",
+    "border-top-right-radius": "90px",
+    "border-bottom-right-radius": "90px",
+    "border-bottom-left-radius": "90px"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".md\\:rounded-\\[28px\\]",
+   "context": [
+    "@media (min-width: 1023px)"
+   ],
+   "properties": {
+    "border-top-left-radius": "28px",
+    "border-top-right-radius": "28px",
+    "border-bottom-right-radius": "28px",
+    "border-bottom-left-radius": "28px"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".md\\:rounded-b-20",
+   "context": [
+    "@media (min-width: 1023px)"
+   ],
+   "properties": {
+    "border-bottom-right-radius": "20px",
+    "border-bottom-left-radius": "20px"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".md\\:rounded-t-20",
+   "context": [
+    "@media (min-width: 1023px)"
+   ],
+   "properties": {
+    "border-top-right-radius": "20px"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".md\\:rounded-t-20, .md\\:rounded-tl-20",
+   "context": [
+    "@media (min-width: 1023px)"
+   ],
+   "properties": {
+    "border-top-left-radius": "20px"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".md\\:rounded-tr-20",
+   "context": [
+    "@media (min-width: 1023px)"
+   ],
+   "properties": {
+    "border-top-right-radius": "20px"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".md\\:text-\\[28vw\\]",
+   "context": [
+    "@media (min-width: 1023px)"
+   ],
+   "properties": {
+    "font-size": "28vw"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".md\\:text-articleCard",
+   "context": [
+    "@media (min-width: 1023px)"
+   ],
+   "properties": {
+    "font-size": "40px",
+    "line-height": "100%",
+    "font-weight": "450"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".md\\:text-h1",
+   "context": [
+    "@media (min-width: 1023px)"
+   ],
+   "properties": {
+    "font-size": "96px",
+    "line-height": "105%",
+    "letter-spacing": "-1.92px",
+    "font-weight": "450"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".md\\:text-h2",
+   "context": [
+    "@media (min-width: 1023px)"
+   ],
+   "properties": {
+    "font-size": "64px",
+    "line-height": "115%",
+    "letter-spacing": "-1.28px",
+    "font-weight": "450"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".md\\:text-h3",
+   "context": [
+    "@media (min-width: 1023px)"
+   ],
+   "properties": {
+    "font-size": "48px",
+    "letter-spacing": "-0.96px"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".md\\:text-h3, .md\\:text-h4",
+   "context": [
+    "@media (min-width: 1023px)"
+   ],
+   "properties": {
+    "line-height": "120%",
+    "font-weight": "450"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".md\\:text-h4",
+   "context": [
+    "@media (min-width: 1023px)"
+   ],
+   "properties": {
+    "font-size": "32px",
+    "letter-spacing": "-0.64px"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".md\\:text-h5",
+   "context": [
+    "@media (min-width: 1023px)"
+   ],
+   "properties": {
+    "font-size": "24px",
+    "line-height": "140%",
+    "letter-spacing": "-0.48px",
+    "font-weight": "450"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".md\\:text-label",
+   "context": [
+    "@media (min-width: 1023px)"
+   ],
+   "properties": {
+    "font-size": "14px",
+    "line-height": "120%",
+    "letter-spacing": "0px",
+    "font-weight": "500"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".md\\:text-p1",
+   "context": [
+    "@media (min-width: 1023px)"
+   ],
+   "properties": {
+    "font-size": "24px",
+    "letter-spacing": "-0.24px"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".md\\:text-p1, .md\\:text-p2",
+   "context": [
+    "@media (min-width: 1023px)"
+   ],
+   "properties": {
+    "line-height": "140%",
+    "font-weight": "400"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".md\\:text-p2",
+   "context": [
+    "@media (min-width: 1023px)"
+   ],
+   "properties": {
+    "font-size": "18px",
+    "letter-spacing": "-0.18px"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".md\\:hover\\:bg-black8:hover",
+   "context": [
+    "@media (min-width: 1023px)"
+   ],
+   "properties": {
+    "background-color": "rgba(242, 241, 237, 0.08)"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".md\\:hover\\:bg-flourescent-green-dark:hover",
+   "context": [
+    "@media (min-width: 1023px)"
+   ],
+   "properties": {
+    "background-color": "rgb(0 191 91/var(--tw-bg-opacity,1))"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".md\\:hover\\:text-warm-white:hover",
+   "context": [
+    "@media (min-width: 1023px)"
+   ],
+   "properties": {
+    "color": "rgb(241 240 236/var(--tw-text-opacity,1))"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".__className_a18e76",
+   "context": [],
+   "properties": {
+    "font-family": "__DopplerRepro_a18e76, __DopplerRepro_Fallback_a18e76"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".__className_e3cbb4",
+   "context": [],
+   "properties": {
+    "font-family": "__DopplerReproMono_e3cbb4, __DopplerReproMono_Fallback_e3cbb4",
+    "font-weight": "400"
+   }
+  },
+  {
+   "file": "https://www.doppler.com/_next/static/css/31109e6670207980.css",
+   "selector": ".__className_516c7b",
+   "context": [],
+   "properties": {
+    "font-family": "__Inter_516c7b, __Inter_Fallback_516c7b"
+   }
+  },
+  {
+   "file": "inline--1",
+   "selector": ".rfm-overlay::before, .rfm-overlay::after",
+   "context": [],
+   "properties": {
+    "background-color": ""
+   }
+  },
+  {
+   "file": "inline--1",
+   "selector": ".rfm-marquee",
+   "context": [],
+   "properties": {
+    "animation-play-state": "var(--play)",
+    "animation-delay": "var(--delay)",
+    "animation-direction": "var(--direction)"
+   }
+  },
+  {
+   "file": "inline--2",
+   "selector": ".calendly-overlay",
+   "context": [],
+   "properties": {
+    "background-color": "rgba(31, 31, 31, 0.4)"
+   }
+  },
+  {
+   "file": "inline--3",
+   "selector": ".style-module_tooltip__tKc3i",
+   "context": [],
+   "properties": {
+    "background-color": "rgb(51, 51, 51)",
+    "border-top-left-radius": "5px",
+    "border-top-right-radius": "5px",
+    "border-bottom-right-radius": "5px",
+    "border-bottom-left-radius": "5px",
+    "color": "rgb(255, 255, 255)"
+   }
+  }
+ ]
+}
