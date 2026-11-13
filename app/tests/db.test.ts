@@ -287,8 +287,7 @@ test("version-five stores gain curated rows added since, without touching their 
     categories.filter((row) => row.referenceId === "systems:linear"),
   ).toHaveLength(1);
   expect(
-    (await migrated.listReferenceCategoryDetails(["systems:linear"]))[0]
-      .label,
+    (await migrated.listReferenceCategoryDetails(["systems:linear"]))[0].label,
   ).toBe("Design & Media Editing");
   expect(
     (await migrated.listReferenceCategoryDetails(["systems:dub"]))[0].label,
