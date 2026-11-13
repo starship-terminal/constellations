@@ -6824,6 +6824,7 @@
     "harness": "Devin",
     "model": "SWE-2 High",
     "route": "public-web",
+    "pr": "https://github.com/starship-terminal/constellations/pull/511",
     "routes": [
      "/",
      "/chat/",
