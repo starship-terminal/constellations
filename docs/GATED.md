@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_64 of 122 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_66 of 124 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -363,6 +363,16 @@ Access: signed out (every captured surface is public: /, /explore, /charts, /tra
 - search is gated: the rail's Search button opens the log-in dialog (captured as evidence), so a real search surface is uncaptured
 - every Create button, prompt submit and Attach control was measured, never pressed — a prompt is a generation request
 - the Get-Pro and Start-free CTAs were measured, never followed past the public card; checkout is uncaptured
+
+## [Deezer](../systems/deezer) — `deezer`
+Access: read-only (the marketing site, the public catalog pages and the account forms are fully public; everything behind account.deezer.com is an authenticated boundary never reached; Try-for-free, Sign-up, Mix, Play, queue and volume actions were measured, never followed; the login and signup forms were never submitted)
+- every post-login surface (library, Flow, playlists, downloads, settings, billing) lives behind account.deezer.com - an authenticated boundary never reached
+- the login and signup forms were measured as forms, never filled or submitted; validation, error and success states are absent rather than measured
+
+## [Enode](../systems/enode) — `enode`
+Access: read-only (the marketing site and the platform login page are fully public signed out; everything behind platform.enode.com - the dashboard, docs portal, API surfaces - is an authenticated boundary never reached; the contact and login forms were measured and typed into then cleared, never submitted; every CTA and link was measured, never followed; the dormant Cookiebot layer shows no banner and was never answered)
+- every post-login platform surface (dashboard, asset management, API keys) and docs.enode.com lives behind an account - an authenticated boundary never reached
+- the /contact, /contact/partnerships and platform login forms were measured at rest and typed into then cleared, never submitted - validation, error, loading and success states are absent rather than measured
 
 ## Gate noted in access text only
 
