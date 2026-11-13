@@ -7106,7 +7106,7 @@
             ],
             "durationMin": 180,
             "durationNote": "a resumed capture: a prior run left its raw evidence (screens, CSS/HTML copies, computed styles and crops) under ~/.design-systems/endlesstools; this pass assessed and reused it, re-quantised the crops, stitched the tiled full-page shots, then ran the token/docs build and the rubric review",
-            "pr": ""
+            "pr": "https://github.com/starship-terminal/constellations/pull/525"
       },
       "layoutGaps": {
             "icons/": "no standalone SVG icon set was lifted; the glyphs (the Endless Tools wordmark, social marks, the carousel arrow) are visible in the crops and screenshots"
