@@ -9004,7 +9004,7 @@
         ],
         "durationMin": 300,
         "durationNote": "wall-clock across the capture sessions including kit adaptation, Cloudflare retries, the EDS stylesheet harvest, screenshot and measurement passes (74 components, 208 states) on a headless Linux server, and the offline build",
-        "pr": ""
+        "pr": "https://github.com/starship-terminal/constellations/pull/540"
       },
       "layoutGaps": {
         "icons/": "the icon extraction pass was not run; the icons (the Epic mark, provider glyphs, social marks, wishlist and pager glyphs) are visible in the crops and screenshots"
