@@ -538,5 +538,11 @@
     "groupId": "web-categories",
     "labels": ["Design & Media Editing", "Productivity"],
     "reason": "catalog.json describes a design tool: template galleries and the marketing pages for the design editor, docs, whiteboards and presentations."
+  },
+  {
+    "referenceId": "systems:elementor",
+    "groupId": "web-categories",
+    "labels": ["Design & Media Editing", "Productivity"],
+    "reason": "catalog.json describes a website builder's marketing surface: home, product, pricing, contact-form and FAQ pages."
   }
 ]
