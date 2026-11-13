@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 123,
-    "system_domains": 115,
-    "matched_domains": 90,
-    "missing_domains": 343,
+    "system_packages": 124,
+    "system_domains": 116,
+    "matched_domains": 91,
+    "missing_domains": 342,
     "system_domains_absent_from_catalog": 25
   },
   "matched": {
@@ -1392,6 +1392,23 @@
         }
       ]
     },
+    "exa.ai": {
+      "catalog": [
+        {
+          "name": "Exa",
+          "domain": "exa.ai",
+          "id": 898
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "exa",
+          "name": "Exa",
+          "url": "https://exa.ai",
+          "name_match": true
+        }
+      ]
+    },
     "github.com": {
       "catalog": [
         {
@@ -1819,13 +1836,6 @@
         "name": "Esquire",
         "domain": "esquire.com",
         "id": 102
-      }
-    ],
-    "exa.ai": [
-      {
-        "name": "Exa",
-        "domain": "exa.ai",
-        "id": 898
       }
     ],
     "exactly.ai": [
