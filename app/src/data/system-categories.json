@@ -640,5 +640,11 @@
     "groupId": "web-categories",
     "labels": ["Inspiration Board"],
     "reason": "catalog.json category directory maps to Inspiration Board."
+  },
+  {
+    "referenceId": "systems:creativemarket",
+    "groupId": "web-categories",
+    "labels": ["Marketplace"],
+    "reason": "catalog.json category e-commerce maps to Marketplace."
   }
 ]

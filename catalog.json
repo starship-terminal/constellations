@@ -7447,6 +7447,84 @@
       "layoutGaps": {
         "icons/": "the icon extraction pass was not run; the glyphs (the craftwork wordmark, the theme toggle, the menu glyph and the social icons) are visible in the crops and screenshots"
       }
+    },
+    {
+      "slug": "creativemarket",
+      "name": "Creative Market",
+      "url": "https://creativemarket.com",
+      "category": "e-commerce",
+      "platform": "web",
+      "goodFor": "Creative-asset marketplace storefronts: 73px header with a 585px All-Categories search pill and category nav, illustrated hero + 337px product cards with teal price pills and hover Add To Cart, filter-pill category grids, a 450px buy box with 24px license radio rows and teal/outlined purchase buttons, shop cards, membership plan cards and a username/password sign-in card",
+      "tags": [
+        "web",
+        "e-commerce",
+        "marketplace",
+        "creative",
+        "fonts",
+        "templates",
+        "storefront",
+        "sass",
+        "light",
+        "signed-out"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-12",
+      "access": "signed out (every captured surface is public; the account dashboard, purchases, downloads, checkout and the sell studio sit behind the /sign-in card and were never reached; no form was submitted, nothing was added to the cart and no consent button was pressed)",
+      "themes": ["light"],
+      "widths": [1440, 390],
+      "entry": "systems/creativemarket/README.md",
+      "tokens": "systems/creativemarket/tokens.json",
+      "styleGuide": "systems/creativemarket/style-guide.html",
+      "preview": {
+        "cover": "systems/creativemarket/screenshots/home-light-default.png",
+        "icon": "systems/creativemarket/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.color.background.paper",
+            "surface": "light.color.background.paper",
+            "text": "light.color.text.ink",
+            "muted": "light.color.text.secondary",
+            "accent": "light.color.action.primary",
+            "border": "light.color.border.hairline"
+          }
+        },
+        "fonts": ["core.font.family.averta"]
+      },
+      "capture": {
+        "method": "public-web",
+        "source": "creativemarket.com (a Rails storefront with a Vue island layer under data-theme=legacy) in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and crops from the live DOM. The custom-property layer is modest (~35 --default-*/--dialog-*/--user-dropdown-* globals + ~130 component-scoped vars: the .ui-button--* skins with --_color/--_color-hover/--_color-soft, .ui-select states) harvested from the cross-origin d3ui957tjb5bqd.cloudfront.net responses; the teal/purple actions, neutrals, radii, type ramp and geometry are measured computed values. The signed-in account, purchases, downloads and the sell studio are a documented boundary. Cloudflare Turnstile greets some routes headless - cleared with fresh contexts and patient waits",
+        "timestamp": "2026-11-12T16:30:00Z",
+        "harness": "Devin",
+        "model": "SWE-2 High",
+        "route": "public-web",
+        "routes": [
+          "/",
+          "/fonts",
+          "/SilverStag/7290900-Silver-Garden-Nostalgic-Font-Duo",
+          "/search?query=font",
+          "/membership",
+          "/sign-in",
+          "mobile / and /fonts"
+        ],
+        "gaps": [
+          "the signed-in product entirely: the dashboard, purchases, downloads, cart checkout and the sell studio sit behind /sign-in and were never reached",
+          "/sign-in captured as a surface; the username field was filled with a placeholder and cleared - Log In and the SSO buttons were never pressed and no form was submitted",
+          "Add to cart, Buy now, license radios, bundle checkboxes, every membership CTA, Save 25% and FOLLOW were measured or screenshotted, never followed",
+          "the CookieYes consent banner and the chat launcher were hidden per capture, never answered",
+          "the nav dropdowns (FONTS, TEMPLATES, MORE, the All Categories search facet) were never opened",
+          "the product page's 'More from this shop' / 'Similar Fonts' rails rendered empty - related-card recorded as a miss",
+          "the home h1 is painted by the hero illustration, not a text node",
+          "Cloudflare Turnstile greets some routes headless; fresh contexts and patient waits cleared it this run",
+          "one theme only: data-theme=legacy paints; no dark layer exists in the sheets",
+          "icons: no standalone SVG set lifted this pass"
+        ],
+        "durationMin": 240,
+        "durationNote": "wall-clock for the capture session including adaptation of the kit, the stylesheet harvest, screenshot and measurement passes, the token/docs build and the rubric review",
+        "pr": "https://github.com/starship-terminal/constellations/pull/501"
+      },
+      "layoutGaps": {
+        "icons/": "the icon extraction pass was not run; the glyphs (the Creative Market wordmark, the cart and hamburger glyphs and the social icons) are visible in the crops and screenshots"
+      }
     }
   ]
 }

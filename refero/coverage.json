@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 107,
-    "system_domains": 99,
-    "matched_domains": 74,
-    "missing_domains": 359,
+    "system_packages": 108,
+    "system_domains": 100,
+    "matched_domains": 75,
+    "missing_domains": 358,
     "system_domains_absent_from_catalog": 25
   },
   "matched": {
@@ -893,6 +893,23 @@
         }
       ]
     },
+    "creativemarket.com": {
+      "catalog": [
+        {
+          "name": "Creative Market",
+          "domain": "creativemarket.com",
+          "id": 264
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "creativemarket",
+          "name": "Creative Market",
+          "url": "https://creativemarket.com",
+          "name_match": false
+        }
+      ]
+    },
     "cursor.com": {
       "catalog": [
         {
@@ -1442,13 +1459,6 @@
         "name": "Play",
         "domain": "createwithplay.com",
         "id": 218
-      }
-    ],
-    "creativemarket.com": [
-      {
-        "name": "Creative Market",
-        "domain": "creativemarket.com",
-        "id": 264
       }
     ],
     "cron.com": [
