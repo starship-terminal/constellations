@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 91,
-    "system_domains": 83,
-    "matched_domains": 58,
-    "missing_domains": 375,
+    "system_packages": 94,
+    "system_domains": 86,
+    "matched_domains": 61,
+    "missing_domains": 372,
     "system_domains_absent_from_catalog": 25
   },
   "matched": {
@@ -814,6 +814,57 @@
         }
       ]
     },
+    "dock.us": {
+      "catalog": [
+        {
+          "name": "Dock",
+          "domain": "dock.us",
+          "id": 465
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "dock",
+          "name": "Dock",
+          "url": "https://dock.us",
+          "name_match": true
+        }
+      ]
+    },
+    "dona.ai": {
+      "catalog": [
+        {
+          "name": "Dona",
+          "domain": "dona.ai",
+          "id": 643
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "dona",
+          "name": "Dona",
+          "url": "https://dona.ai",
+          "name_match": true
+        }
+      ]
+    },
+    "doordash.com": {
+      "catalog": [
+        {
+          "name": "DoorDash",
+          "domain": "doordash.com",
+          "id": 298
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "doordash",
+          "name": "DoorDash",
+          "url": "https://www.doordash.com",
+          "name_match": true
+        }
+      ]
+    },
     "drinkdouze.com": {
       "catalog": [
         {
@@ -1333,13 +1384,6 @@
         "id": 332
       }
     ],
-    "dock.us": [
-      {
-        "name": "Dock",
-        "domain": "dock.us",
-        "id": 465
-      }
-    ],
     "doctronic.ai": [
       {
         "name": "Doctronic AI",
@@ -1352,20 +1396,6 @@
         "name": "DocuSign",
         "domain": "docusign.com",
         "id": 31
-      }
-    ],
-    "dona.ai": [
-      {
-        "name": "Dona",
-        "domain": "dona.ai",
-        "id": 643
-      }
-    ],
-    "doordash.com": [
-      {
-        "name": "DoorDash",
-        "domain": "doordash.com",
-        "id": 298
       }
     ],
     "dopper.com": [
