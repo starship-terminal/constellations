@@ -538,5 +538,11 @@
     "groupId": "web-categories",
     "labels": ["Design & Media Editing", "Productivity"],
     "reason": "catalog.json describes a design tool: template galleries and the marketing pages for the design editor, docs, whiteboards and presentations."
+  },
+  {
+    "referenceId": "systems:editorx",
+    "groupId": "web-categories",
+    "labels": ["Design & Media Editing", "Productivity"],
+    "reason": "catalog.json describes a pro site builder: template and inspiration galleries plus the marketing pages for the Wix Studio editor."
   }
 ]
