@@ -634,5 +634,11 @@
     "groupId": "web-categories",
     "labels": ["Productivity"],
     "reason": "catalog.json category productivity maps to Productivity."
+  },
+  {
+    "referenceId": "systems:craftwork",
+    "groupId": "web-categories",
+    "labels": ["Inspiration Board"],
+    "reason": "catalog.json category directory maps to Inspiration Board."
   }
 ]
