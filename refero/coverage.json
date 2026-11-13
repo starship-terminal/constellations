@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 119,
-    "system_domains": 111,
-    "matched_domains": 86,
-    "missing_domains": 347,
+    "system_packages": 120,
+    "system_domains": 112,
+    "matched_domains": 87,
+    "missing_domains": 346,
     "system_domains_absent_from_catalog": 25
   },
   "matched": {
@@ -1290,6 +1290,23 @@
         }
       ]
     },
+    "elevenreader.io": {
+      "catalog": [
+        {
+          "name": "ElevenReader",
+          "domain": "elevenreader.io",
+          "id": 776
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "elevenreader",
+          "name": "ElevenReader",
+          "url": "https://elevenreader.io",
+          "name_match": true
+        }
+      ]
+    },
     "endel.io": {
       "catalog": [
         {
@@ -1730,13 +1747,6 @@
         "name": "ElevenMusic",
         "domain": "elevenmusic.io",
         "id": 917
-      }
-    ],
-    "elevenreader.io": [
-      {
-        "name": "ElevenReader",
-        "domain": "elevenreader.io",
-        "id": 776
       }
     ],
     "endless.io": [
