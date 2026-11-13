@@ -779,5 +779,13 @@
       "Productivity"
     ],
     "reason": "catalog.json describes a to-do productivity product: task lists, a quiet marketing site and a signed-out public system."
+  },
+  {
+    "referenceId": "systems:elevenreader",
+    "groupId": "web-categories",
+    "labels": [
+      "Music Streaming"
+    ],
+    "reason": "catalog.json describes an audiobook reader/listening product: marketing pages, the explore catalog and the reader sign-in/sign-up boundary cards."
   }
 ]
