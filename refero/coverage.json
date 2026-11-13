@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 115,
-    "system_domains": 107,
-    "matched_domains": 82,
-    "missing_domains": 351,
+    "system_packages": 116,
+    "system_domains": 108,
+    "matched_domains": 83,
+    "missing_domains": 350,
     "system_domains_absent_from_catalog": 25
   },
   "matched": {
@@ -1222,6 +1222,23 @@
         }
       ]
     },
+    "elektron.se": {
+      "catalog": [
+        {
+          "name": "Elektron",
+          "domain": "elektron.se",
+          "id": 56
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "elektron",
+          "name": "Elektron",
+          "url": "https://www.elektron.se",
+          "name_match": true
+        }
+      ]
+    },
     "elementor.com": {
       "catalog": [
         {
@@ -1662,13 +1679,6 @@
         "name": "Editor X",
         "domain": "editorx.com",
         "id": 279
-      }
-    ],
-    "elektron.se": [
-      {
-        "name": "Elektron",
-        "domain": "elektron.se",
-        "id": 56
       }
     ],
     "elevenmusic.io": [

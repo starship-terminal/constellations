@@ -689,4 +689,12 @@
     "labels": ["Design & Media Editing", "Productivity"],
     "reason": "catalog.json describes a website builder's marketing surface: home, product, pricing, contact-form and FAQ pages."
   }
+,
+  {
+    "referenceId": "systems:elektron",
+    "groupId": "web-categories",
+    "labels": ["Marketplace"],
+    "reason": "catalog.json describes a music-hardware maker's storefront: product grid, PDP, cart and login drawers."
+  }
 ]
+
