@@ -779,5 +779,13 @@
       "Productivity"
     ],
     "reason": "catalog.json describes a to-do productivity product: task lists, a quiet marketing site and a signed-out public system."
+  },
+  {
+    "referenceId": "systems:endless",
+    "groupId": "web-categories",
+    "labels": [
+      "AI Tool"
+    ],
+    "reason": "catalog.json describes a multi-model AI creation workspace: a prompt composer, 70+ generation models and free tool pages on a signed-out public system."
   }
 ]
