@@ -7893,7 +7893,7 @@
             "surface": "light.bg.default",
             "text": "light.foreground",
             "muted": "light.content.subtle",
-            "accent": "light.primary.default",
+            "accent": "light.primary.base",
             "border": "light.border.default"
           },
           "dark": {
@@ -7901,7 +7901,7 @@
             "surface": "dark.bg.default",
             "text": "dark.foreground",
             "muted": "dark.content.subtle",
-            "accent": "dark.primary.default",
+            "accent": "dark.primary.base",
             "border": "dark.border.default"
           }
         },

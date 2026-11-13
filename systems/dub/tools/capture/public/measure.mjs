@@ -3,7 +3,9 @@
 //
 //   PLAYWRIGHT=/path/to/playwright/index.mjs node measure.mjs [page ...]
 //
-// Pages: home links partners pricing customers enterprise compare sales login register docs docs-dark help footer mobile.
+// Pages: home links pricing compare customers sales login register docs docs-dark footer mobile
+// (kebab-case page arguments are accepted; an argument naming no page is an
+// error, never a silent skip).
 // Writes raw/components-computed.json (merged) and one crop per component and
 // state into components/crops/; raw/measurements.md is built by
 // build-measurements.mjs.
@@ -290,7 +292,9 @@ async function markPainted(sel, tag, { maxUp = 8, minW = 100, minH = 60, descend
 }
 
 // Sets the docs surface's theme through its own "Change theme preference"
-// dropdown (a local UI toggle; the preference lives in localStorage).
+// dropdown (a local UI toggle; the preference lives in localStorage). Returns
+// true only once <html> carries the class the chosen option paints — a false
+// means the run must not write dark-named evidence over a light page.
 async function docsTheme(theme) {
   const t = q('button[aria-label="Change theme preference"]').filter({ visible: true }).first();
   if (!(await t.count())) return false;
@@ -300,7 +304,8 @@ async function docsTheme(theme) {
   if (!(await opt.count())) return false;
   await opt.click({ timeout: 5000 }).catch(() => opt.evaluate((el) => el.click()));
   await page.waitForTimeout(1200);
-  return true;
+  return page.evaluate((wantDark) => document.documentElement.classList.contains('dark') === wantDark, theme === 'Dark')
+    .catch(() => false);
 }
 
 const G = {
@@ -329,8 +334,15 @@ async function home() {
   } catch (e) { log('  ! dropdown hover failed', String(e.message).split('\n')[0]); }
   const panel = await markPainted('a[href*="partners"], a[href*="links"], a[href*="analytics"], a[href*="api"]', 'm-panel', { minW: 300, minH: 150 }).catch(() => null);
   await S('nav-dropdown', panel || q('[data-radix-popper-content-wrapper], [class*="popover" i]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Mega-menu panel', desc: 'The Product mega-menu panel, opened by its own trigger on hover.', sel: 'product mega-menu panel' }, { noScroll: true, noReset: true });
-  await S('menu-link', q('a').filter({ hasText: /Dub Partners|Dub Links|Dub Analytics|Dub API/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Menu item', desc: 'A product link inside the opened mega-menu.', sel: 'mega-menu link' }, { noScroll: true,
-    open: async () => { const t = q('button').filter({ hasText: /^\s*Product\s*$/ }).filter({ visible: true }).first(); if (await t.count()) { await t.hover({ timeout: 5000 }); await page.waitForTimeout(1200); } } });
+  // The menu closes as soon as the pointer leaves the trigger, so a reset()
+  // between states used to let the global text locator slip to a same-named
+  // link further down the page — every state must read one element inside the
+  // open panel: scope to the marked panel (the popover wrappers as fallback)
+  // and re-hover the trigger before each state instead of resetting.
+  const openMenu = async () => { const t = q('button').filter({ hasText: /^\s*Product\s*$/ }).filter({ visible: true }).first(); if (await t.count()) { await t.hover({ timeout: 5000 }); await page.waitForTimeout(1200); } };
+  await S('menu-link', q('[data-m-mark="m-panel"] a, [data-radix-popper-content-wrapper] a, [class*="popover" i] a').filter({ hasText: /Dub Partners|Dub Links|Dub Analytics|Dub API/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Menu item', desc: 'A product link inside the opened mega-menu; the menu is held open while its states are read.', sel: 'mega-menu link inside the open panel' }, { noScroll: true, noReset: true,
+    open: openMenu,
+    before: { default: openMenu, hover: openMenu, 'focus-visible': openMenu, pressed: openMenu } });
   await page.keyboard.press('Escape'); await page.mouse.move(700, 300); await page.waitForTimeout(500);
   const h = G.hero;
   await S('hero-badge', q('a, div, span').filter({ hasText: /Introducing our Startup Program/i }).filter({ visible: true }).last(), B4, { group: h, title: 'Announcement pill', desc: 'The "Introducing our Startup Program / Learn more" pill above the headline; measured never followed.', sel: 'announcement pill' });
@@ -455,20 +467,28 @@ async function docs() {
   await S('docs-h1', q('h1').filter({ visible: true }).first(), ['default'], { group: g, title: 'Docs headline', desc: 'The docs page h1 (Introduction).', sel: 'docs h1' }, { noScroll: true });
   await S('docs-copy', q('button[aria-label="Copy page"], button').filter({ hasText: /Copy page/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Copy-page button', desc: 'The "Copy page" action; measured, never pressed.', sel: '"Copy page"' });
   await S('docs-feedback', q('button').filter({ hasText: /^\s*(Yes|No)\s*$/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Feedback button', desc: 'A docs "Was this helpful" Yes/No button; measured, never pressed (a press would send feedback).', sel: 'feedback Yes button' });
-  await S('docs-card', q('a').filter({ hasText: /Quickstart|API reference|Concepts/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Docs card', desc: 'A docs landing card link; measured never followed.', sel: 'docs card' });
+  // The docs landing cards were never captured: an earlier global `a` lookup
+  // for them read the "API Reference" top navigation tab. The nav tab is real
+  // evidence, kept under its own name; a docs card entry waits for a capture
+  // that scopes to the page content (main/article), not the nav-tabs chrome.
+  await S('docs-nav-tab', q('[class*="nav-tabs" i] a, header a, nav a').filter({ hasText: /API reference|Quickstart|Concepts/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Docs nav tab', desc: 'The docs surface\'s top navigation tab (API Reference); measured never followed.', sel: 'docs top nav tab' });
   save();
 }
 
 async function docsDark() {
   if (!(await newPage('docs-dark', { wait: 10000 }))) return;
   const g = G.docs;
-  await docsTheme('Dark');
+  if (!(await docsTheme('Dark'))) {
+    log('  ! docs theme toggle did not apply Dark; the dk-docs-* entries keep their earlier readings instead of saving light evidence under dark names');
+    failedPages.add('docs-dark');
+    return;
+  }
   await S('dk-docs-h1', q('h1').filter({ visible: true }).first(), ['default'], { group: g, title: 'Docs headline (dark)', desc: 'The docs h1 with html.dark painted — the real dark theme.', sel: 'docs h1 dark' }, { noScroll: true });
   await S('dk-docs-sidebar', q('nav#sidebar-content, aside').filter({ visible: true }).first(), ['default'], { group: g, title: 'Docs sidebar (dark)', desc: 'The left nav column in dark.', sel: 'docs sidebar dark' }, { noScroll: true });
   await S('dk-docs-nav-item', q('nav#sidebar-content a, nav#sidebar-content button').filter({ hasText: /^\s*(Quickstart|Introduction|Installation|Links API|How attribution works)\s*$/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Docs nav item (dark)', desc: 'A sidebar item in dark.', sel: 'docs nav item dark' }, { noScroll: true });
   await S('dk-docs-copy', q('button[aria-label="Copy page"], button').filter({ hasText: /Copy page/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Copy-page button (dark)', desc: 'The "Copy page" action in dark.', sel: '"Copy page" dark' });
   await S('dk-docs-search', q('button[aria-label="Open search"], button').filter({ hasText: /Search\.\.\./ }).filter({ visible: true }).first(), B4, { group: g, title: 'Search trigger (dark)', desc: 'The "Search…" trigger in dark.', sel: '"Search…" dark' }, { noScroll: true });
-  await docsTheme('Light');
+  if (!(await docsTheme('Light'))) log('  ! docs theme toggle did not return to Light');
   save();
 }
 
@@ -507,10 +527,19 @@ run = new Date().toISOString().slice(0, 10);
 out._meta.read = run;
 out._meta.viewport = '1440 x 900 (mobile group 390 x 844); the marketing pages paint light only; /docs and /help paint light or dark through their own theme toggle';
 out._meta.tool = 'tools/capture/public/measure.mjs';
+// Page arguments may be written kebab-case on the command line (`docs-dark`
+// for the docsDark page); a name that still matches no page fails loudly —
+// silently skipping a misspelt page used to leave stale entries looking
+// freshly measured.
+const plan = { home, links, pricing, compare, customers, sales, login, register, docs, docsDark, footer, mobile };
+const pages = process.argv.slice(2).map((p) => p.replace(/-([a-z])/g, (_, c) => c.toUpperCase()));
+const unknown = pages.filter((p) => !(p in plan));
+if (unknown.length) {
+  console.error(`unknown page argument(s): ${unknown.join(', ')} — known pages: ${Object.keys(plan).join(', ')}`);
+  process.exit(1);
+}
 const { browser, context: ctx0 } = await launch();
 context = ctx0;
-const pages = process.argv.slice(2);
-const plan = { home, links, pricing, compare, customers, sales, login, register, docs, docsDark, footer, mobile };
 const order = Object.keys(plan).filter((k) => !pages.length || pages.includes(k));
 try {
   for (const k of order) { if (k !== 'mobile') await plan[k](); }

@@ -24,7 +24,12 @@
 // Each name is resolved in a probe document that carries the real sheets,
 // once plain (:root/.light) and once with a `dark` class — the same class
 // the docs toggle sets — computed the way the browser computes it: colours
-// come back as sRGB hex, lengths as px at 1440 x 900.
+// come back as sRGB hex, lengths as px at 1440 x 900. A name the surfaces
+// declare differently (the marketing shadcn --primary is a near-black HSL
+// triple while the docs inline sheet binds the same name to the Dub blue)
+// resolves to one winner in the shared probe, so the conflicts list names
+// every collision and resolved.surfaces re-resolves just those names in a
+// probe carrying one surface's sheets at a time.
 //
 // Bins:
 //   theme     design-token-looking names wherever they are declared:
@@ -52,6 +57,14 @@ const { browser } = await launch();
 // surface ships an extra stylesheet.
 const bodies = new Map();
 const inlines = [];
+// Which route served each sheet, so a name the surfaces declare differently
+// can be re-resolved inside one surface's sheets at a time.
+const sheetRoutes = new Map();
+const mark = (name, route) => {
+  let s = sheetRoutes.get(name);
+  if (!s) sheetRoutes.set(name, (s = new Set()));
+  s.add(route);
+};
 for (const route of ['/', '/docs']) {
   let got = false;
   for (let tries = 0; tries < 6 && !got; tries++) {
@@ -60,13 +73,14 @@ for (const route of ['/', '/docs']) {
     const p = await context.newPage();
     p.on('response', async (r) => {
       if (r.request().resourceType() !== 'stylesheet') return;
-      try { bodies.set(r.url().split('?')[0], await r.text()); } catch { /* body gone */ }
+      try { const u = r.url().split('?')[0]; bodies.set(u, await r.text()); mark(u, route); } catch { /* body gone */ }
     });
     await p.goto(BASE + route, { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
     await p.waitForTimeout(6000);
     if (await clearChallenge(p, { tries: 3, step: 1500 })) {
       const inl = await p.evaluate(() => [...document.styleSheets].filter((s) => !s.href).map((s, i) => { try { return ['inline-' + location.pathname.replace(/\//g, '') + '-' + i, [...s.cssRules].map((r) => r.cssText).join('\n')]; } catch { return null; } }).filter(Boolean));
       inlines.push(...inl);
+      for (const [n] of inl) mark(n, route);
       got = true;
       await context.close();
       break;
@@ -79,6 +93,15 @@ for (const route of ['/', '/docs']) {
 if (!bodies.size && !inlines.length) { console.log('no stylesheets harvested; css-vars.json not written'); await browser.close(); process.exit(2); }
 // inline sheets read via CSSOM; link sheets via the captured bodies
 const sheets = [...bodies.entries()].concat(inlines);
+// The surface a sheet belongs to, by which routes served it: docs-only sheets
+// are the Mintlify bundle and its inline blocks; a sheet both routes load
+// joins both surfaces' probes.
+const surfaceOf = (name) => {
+  const rs = sheetRoutes.get(name) || new Set();
+  if (rs.size === 1 && rs.has('/docs')) return 'docs';
+  if (rs.size === 1 && rs.has('/')) return 'marketing';
+  return 'shared';
+};
 
 // ---- harvest: every rule with --* declarations ----
 const probe = await browser.newPage();
@@ -138,9 +161,7 @@ const PASSES = [
   ['dark', 'class="dark"'],
   ['light', ''],
 ];
-for (const [pass, attrs] of PASSES) {
-  await probe.setContent(shell(attrs), { waitUntil: 'load' });
-  resolved[pass] = await probe.evaluate((names) => {
+const resolveNames = (names) => {
     const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v);
     const box = document.createElement('div');
     box.style.cssText = 'position:absolute;left:0;top:0;width:1000px;height:1000px;visibility:hidden';
@@ -215,7 +236,57 @@ for (const [pass, attrs] of PASSES) {
     }
     box.remove();
     return out;
-  }, want);
+};
+for (const [pass, attrs] of PASSES) {
+  await probe.setContent(shell(attrs), { waitUntil: 'load' });
+  resolved[pass] = await probe.evaluate(resolveNames, want);
+}
+
+// ---- per-surface resolution for names the surfaces disagree on ----
+// The probe above holds every sheet at once, so a name declared on both
+// surfaces resolves to whichever sheet wins the shared cascade — the docs
+// value. Collect the names whose top-level declarations differ between the
+// sheets only '/' served and the ones only '/docs' served, then re-resolve
+// just those names in a probe carrying one surface's sheets at a time (a
+// sheet both routes load joins both probes).
+const scopeOf = (sel) => (/\.dark\b/.test(sel || '') ? 'dark' : 'light');
+const decls = {};
+for (const r of result.rules) {
+  const sel = r.selector || '';
+  if (!/(:root|:host|\.light|\.dark)\b/.test(sel)) continue;
+  const key = surfaceOf(r.file) + '.' + scopeOf(sel);
+  for (const [k, v] of Object.entries(r.properties)) {
+    (decls[k] ??= {})[key] ??= new Set();
+    decls[k][key].add(v);
+  }
+}
+const conflicts = {};
+for (const [k, scopes] of Object.entries(decls)) {
+  for (const scope of ['light', 'dark']) {
+    const a = scopes['marketing.' + scope], d = scopes['docs.' + scope];
+    if (a && d && new Set([...a, ...d]).size > 1) {
+      (conflicts[k] ??= {})[scope] = Object.fromEntries(
+        ['marketing', 'docs', 'shared']
+          .filter((s) => scopes[s + '.' + scope])
+          .map((s) => [s, [...scopes[s + '.' + scope]].sort()]));
+    }
+  }
+}
+const conflictNames = Object.keys(conflicts).sort();
+if (conflictNames.length) {
+  resolved.surfaces = {};
+  for (const surf of ['marketing', 'docs']) {
+    const other = surf === 'marketing' ? 'docs' : 'marketing';
+    const sub = sheets.filter(([n]) => surfaceOf(n) !== other);
+    const subShell = (attrs) => '<!doctype html><html ' + attrs + '><head>'
+      + sub.map(([, css]) => '<style>' + css.replace(/<\/style/gi, '<\\/style') + '</style>').join('')
+      + '</head><body><div id="probe-root"></div></body></html>';
+    resolved.surfaces[surf] = {};
+    for (const [pass, attrs] of PASSES) {
+      await probe.setContent(subShell(attrs), { waitUntil: 'load' });
+      resolved.surfaces[surf][pass] = await probe.evaluate(resolveNames, conflictNames);
+    }
+  }
 }
 await browser.close();
 
@@ -250,6 +321,7 @@ const out = {
     bySelector,
   },
   errors: result.errors,
+  conflicts,
   theme: ok.filter((r) => r.bin === 'theme'),
   app: ok.filter((r) => r.bin === 'app'),
   skins: ok.filter((r) => r.bin === 'skins'),
@@ -262,5 +334,6 @@ const out = {
 fs.mkdirSync(path.join(REF, 'raw'), { recursive: true });
 fs.writeFileSync(path.join(REF, 'raw', 'css-vars.json'), JSON.stringify(out, null, 1) + '\n');
 console.log(`css-vars.json: ${ok.length} rules, ${result.fonts.length} font faces; names theme ${out.counts.names.theme}, app ${out.counts.names.app}, skins ${out.counts.names.skins}, vendor ${out.counts.names.vendor}, utility ${out.counts.names.utility}, tailwind ${out.counts.names.tailwind}`);
-console.log(`resolved: light ${Object.keys(resolved.light).length}, dark ${Object.keys(resolved.dark).length}`);
+console.log(`resolved: light ${Object.keys(resolved.light).length}, dark ${Object.keys(resolved.dark).length}` +
+  (conflictNames.length ? `; ${conflictNames.length} name(s) the surfaces declare differently: ${conflictNames.join(', ')}` : ''));
 for (const [k, v] of Object.entries(bySelector).sort((a, b) => b[1] - a[1]).slice(0, 25)) console.log(`  ${v}\t${k.slice(0, 150)}`);

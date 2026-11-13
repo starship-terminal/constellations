@@ -45,7 +45,23 @@ class Shooter {
     const hCap = Math.min(H, MAXH);
     if (H > MAXH) log(`  ! ${name}: page is ${H}px tall, capturing first ${hCap}px only (infinite/growing page boundary)`);
     if (hCap <= chunk) await screenshotWithMetadata(p, { path: f + '.png', fullPage: true }, this.requested);
-    else for (let i = 0, y = 0; y < hCap; i++, y += chunk) await screenshotWithMetadata(p, { path: `${f}.part${i}.png`, fullPage: true, clip: { x: 0, y, width: this.vw, height: Math.min(chunk, hCap - y) } }, this.requested);
+    else {
+      const tiles = [];
+      for (let i = 0, y = 0; y < hCap; i++, y += chunk) {
+        const tile = `${f}.part${i}.png`;
+        await screenshotWithMetadata(p, { path: tile, fullPage: true, clip: { x: 0, y, width: this.vw, height: Math.min(chunk, hCap - y) } }, this.requested);
+        tiles.push(tile);
+      }
+      // Completion record, written only after the last tile lands: a run killed
+      // mid-loop used to leave a partial tile set that quantize.py stitched
+      // into a silently truncated page. The record is how the stitcher knows
+      // the set on disk is the whole page.
+      fs.writeFileSync(`${f}.parts.json`, JSON.stringify({
+        tiles: tiles.map((t) => t.split('/').pop()),
+        height: hCap, pageHeight: H, truncated: H > MAXH,
+        captured: new Date().toISOString(),
+      }, null, 2) + '\n');
+    }
     this.count++; log('  shot', name, 'H=' + H);
     await p.evaluate(() => scrollTo(0, 0)); await wait(p, 500);
   }
@@ -62,7 +78,10 @@ async function docsTheme(p, theme) {
   const opt = p.locator('[role="menu"] *, [role="menuitem"], [role="option"], [class*="popover" i] *').filter({ hasText: new RegExp(`^\\s*${theme}\\s*$`) }).first();
   if (!(await opt.count())) return false;
   await clickEl(opt); await wait(p, 1200);
-  return true;
+  // Report success only once <html> carries the class the choice paints —
+  // clicking through a menu that never applied used to save light evidence
+  // under dark names.
+  return p.evaluate((wantDark) => document.documentElement.classList.contains('dark') === wantDark, theme === 'Dark').catch(() => false);
 }
 
 const desktop = {
@@ -117,10 +136,10 @@ const desktop = {
     await S.full();
   } },
   'docs-dark': { path: '/docs', wait: 10000, theme: 'dark', run: async (p, S) => {
-    await docsTheme(p, 'Dark');
+    if (!(await docsTheme(p, 'Dark'))) { log('  ! theme toggle did not apply Dark — skipping the dark shots rather than saving light evidence under dark names'); return; }
     await S.view('default');
     await S.full();
-    await docsTheme(p, 'Light');
+    if (!(await docsTheme(p, 'Light'))) log('  ! theme toggle did not return to Light');
   } },
   help: { path: '/help', wait: 10000, run: async (p, S) => {
     await S.view('default');

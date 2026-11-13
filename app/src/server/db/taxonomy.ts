@@ -72,6 +72,103 @@ export async function seedMediaTaxonomy(tx: Transaction) {
   }
 }
 
+/**
+ * Migration v6 tops up curated seed rows the guarded seeds missed: a database
+ * already at v4/v5 never re-runs seedTaxonomy/seedMediaTaxonomy, so curated
+ * rows added to the seed JSON since (the Dub package's, in this change) would
+ * never arrive. A reference the database already classifies in that group is
+ * left alone entirely — topping up never reapplies a curated label over a
+ * user's manual choice, nor restores one a user removed.
+ */
+export async function seedNewCuratedCategories(tx: Transaction) {
+  const { taxonomySnapshots } = await import("@/contracts/taxonomy");
+  const { default: assignments } =
+    await import("@/data/system-categories.json");
+  const classified = new Set(
+    (
+      await tx.execute(
+        "SELECT c.reference_id,t.group_id FROM reference_categories c JOIN taxonomy_terms t ON t.id=c.term_id",
+      )
+    ).rows.map((row) => `${row.reference_id}${row.group_id}`),
+  );
+  const existingTerms = new Set(
+    (await tx.execute("SELECT id FROM taxonomy_terms")).rows.map((row) =>
+      String(row.id),
+    ),
+  );
+  for (const assignment of assignments) {
+    const group = taxonomySnapshots
+      .flatMap((snapshot) => snapshot.groups)
+      .find((candidate) => candidate.id === assignment.groupId);
+    if (!group || !isCategoryGroup(group.id))
+      throw new Error(`Invalid curated category group: ${assignment.groupId}`);
+    if (classified.has(`${assignment.referenceId}${assignment.groupId}`))
+      continue;
+    for (const label of new Set(assignment.labels)) {
+      const term = group.terms.find((candidate) => candidate.label === label);
+      if (!term)
+        throw new Error(
+          `Unknown curated category: ${assignment.groupId}/${label}`,
+        );
+      // As in seedMediaTaxonomy, a user may have removed vocabulary terms —
+      // seed only still-existing ones instead of restoring them.
+      if (!existingTerms.has(term.id)) continue;
+      await tx.execute({
+        sql: "INSERT INTO reference_categories(reference_id,term_id,reason,origin) VALUES(?,?,?,'curated')",
+        args: [assignment.referenceId, term.id, assignment.reason],
+      });
+    }
+  }
+}
+
+/** The media side of v6; a labelled media pair is never touched again. */
+export async function seedNewCuratedMediaTerms(tx: Transaction) {
+  const { default: seed } = await import("@/data/media-taxonomy.json");
+  const known = new Set(
+    (await tx.execute("SELECT id FROM taxonomy_terms")).rows.map((row) =>
+      String(row.id),
+    ),
+  );
+  const labeled = new Set(
+    (
+      await tx.execute(
+        "SELECT DISTINCT reference_id,media_id FROM media_term_assignments",
+      )
+    ).rows.map((row) => `${row.reference_id}${row.media_id}`),
+  );
+  const entries = seed.assignments.flatMap((assignment) => {
+    if (labeled.has(`${assignment.referenceId}${assignment.media_id}`))
+      return [];
+    return assignment.terms
+      .filter((term) => known.has(term.termId))
+      .map((term) => {
+        if (!Object.hasOwn(seed.rules, term.rule))
+          throw new Error(`Unknown media taxonomy seed rule: ${term.rule}`);
+        if (
+          !assignment.referenceId.startsWith("systems:") ||
+          !assignment.mediaId.startsWith(
+            `systems/${assignment.referenceId.slice("systems:".length)}/`,
+          )
+        )
+          throw new Error("Invalid media taxonomy seed identity");
+        return [
+          assignment.referenceId,
+          assignment.mediaId,
+          term.termId,
+          `${term.reason} Rule: ${term.rule}. Source: ${assignment.mediaId}`,
+          "curated",
+        ];
+      });
+  });
+  for (let offset = 0; offset < entries.length; offset += 150) {
+    const batch = entries.slice(offset, offset + 150);
+    await tx.execute({
+      sql: `INSERT INTO media_term_assignments(reference_id,media_id,term_id,reason,origin) VALUES ${batch.map(() => "(?,?,?,?,?)").join(",")}`,
+      args: batch.flat(),
+    });
+  }
+}
+
 /** Called only inside migration v4's transaction. JSON is seed evidence. */
 export async function seedTaxonomy(tx: Transaction) {
   const { taxonomySnapshots } = await import("@/contracts/taxonomy");

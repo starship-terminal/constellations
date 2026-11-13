@@ -186,7 +186,7 @@ const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) 
 
 (function elev() {
   let e = '';
-  for (const [n, t] of flat(TOK.core.shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => [x.offsetX, x.offsetY, x.blur, x.spread, x.color].filter(Boolean).join(' ')).join(', ') : t.v)}</span></div>`;
   $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
 })();
 
@@ -204,6 +204,7 @@ const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) 
     h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
   }
   for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).tracking || {}, 'font.tracking.')) h += `<div class="tr"><span class="ts" style="letter-spacing:${esc(t.v)}">${esc(n)} — Dub links</span><span class="tv">${esc(t.v)}</span></div>`;
   for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Dub</span><span class="tv">${esc(t.v)}</span></div>`;
   $('#type-out').innerHTML = h;
   let f = '';
