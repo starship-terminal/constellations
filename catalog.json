@@ -6925,6 +6925,190 @@
       }
     },
     {
+      "slug": "cartesia",
+      "name": "Cartesia",
+      "url": "https://www.cartesia.ai",
+      "category": "ai-agent",
+      "platform": "web",
+      "goodFor": "Voice-AI product marketing with a disciplined warm-neutral system: a declared --cartesia-* palette (verdant #309d4b actions, growth #abd49e tints, forest #004e23) under a shadcn-style semantic layer, PP Kyoto display over ABC Diatype body, a 245px Talk-to-Skylar voice orb ringed by 59px chooser buttons, pill chips, 36px/8px controls, .dark islands that re-bind the roles, a Clerk sign-in boundary and a separate Mintlify docs app kept out of the export",
+      "tags": [
+        "web",
+        "voice",
+        "ai",
+        "tts",
+        "agents",
+        "saas",
+        "marketing",
+        "astro",
+        "tailwind",
+        "shadcn",
+        "light",
+        "dark-islands",
+        "signed-out"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-12",
+      "access": "signed out (the marketing pages, the Clerk sign-in/sign-up cards and the Mintlify docs are public; the voice playground, console, cloning, agents, API keys and billing sit behind sign-in on play.cartesia.ai and were never reached; the live-agent calls were never started)",
+      "themes": ["light", "dark"],
+      "widths": [1440, 390],
+      "entry": "systems/cartesia/README.md",
+      "tokens": "systems/cartesia/tokens.json",
+      "styleGuide": "systems/cartesia/style-guide.html",
+      "preview": {
+        "cover": "systems/cartesia/screenshots/home-light-default.png",
+        "icon": "systems/cartesia/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.color.background",
+            "surface": "light.color.card",
+            "text": "light.color.foreground",
+            "muted": "light.color.muted-foreground",
+            "accent": "core.color.brand.verdant",
+            "border": "light.color.border"
+          },
+          "dark": {
+            "page": "dark.color.background",
+            "surface": "dark.color.card",
+            "text": "dark.color.foreground",
+            "muted": "dark.color.muted-foreground",
+            "accent": "core.color.brand.growth",
+            "border": "dark.color.border"
+          }
+        },
+        "fonts": [
+          "core.font.family.display",
+          "core.font.family.sans",
+          "core.font.family.mono"
+        ]
+      },
+      "capture": {
+        "method": "public-web",
+        "source": "cartesia.ai (an Astro/Tailwind marketing site in ABC Diatype and PP Kyoto declaring a --cartesia-* palette under a shadcn-style semantic layer), the Clerk sign-in/sign-up cards on play.cartesia.ai and the Mintlify docs app on docs.cartesia.ai, in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and crops from the live DOM. The marketing sheets are resolved light and inside a .dark wrapper (the declared island scope); the sign-in card shares the token layer; the docs app is a separate system kept as raw evidence. The playground behind sign-in is a documented boundary",
+        "timestamp": "2026-11-12T10:00:00Z",
+        "harness": "Devin",
+        "model": "SWE-2 Max",
+        "route": "public-web",
+        "routes": [
+          "/",
+          "/sonic",
+          "/ink",
+          "/agents",
+          "/product/voice-cloning",
+          "/voices",
+          "/pricing",
+          "/tools",
+          "/mcp",
+          "/research",
+          "/blog",
+          "/contact",
+          "/customers",
+          "play.cartesia.ai/sign-in",
+          "play.cartesia.ai/sign-in/create",
+          "docs.cartesia.ai",
+          "mobile /, /sonic and play.cartesia.ai/sign-in"
+        ],
+        "gaps": [
+          "the signed-in playground entirely: the voice console, cloning, agents, files, API keys and billing live behind sign-in on play.cartesia.ai and were never reached",
+          "the sign-in/sign-up cards were measured as forms, never filled or submitted",
+          "the Talk to Skylar / Talk to Cartesia live-agent calls were never started; the voice demos were pressed only as far as their own play/select controls",
+          "checkout and onboarding were never followed; every Try Cartesia, Talk to Sales and plan CTA was measured only",
+          "plan-tab recorded missing: the pricing plan tabs rendered zero-size/lazy-mounted at capture",
+          "discovered but unshot routes: /company, /integrations, /startups, the /product/* SEO pages, /speech-to-text-api, /voice-changer",
+          "icons: no standalone SVG set lifted this pass"
+        ],
+        "durationMin": null,
+        "durationNote": "wall-clock duration was not recorded for this capture"
+      },
+      "layoutGaps": {
+        "icons/": "the icon extraction pass was not run; the icons (the Cartesia wordmark, the SSO glyphs, product illustrations and the docs app's glyphs) are visible in the crops and screenshots"
+      }
+    },
+    {
+      "slug": "copy",
+      "name": "Copy.ai",
+      "url": "https://www.copy.ai",
+      "category": "ai-agent",
+      "platform": "web",
+      "goodFor": "AI-SaaS marketing pages and pricing cards: ABC Normal 88px display over a white/#171717 two-tone, one #693ee0 action purple with the signature black-button -> purple hover lift, hairline-divided cards (#e0e0e0/#e4edf1/#ccd9e0), mixed radii (4px nav, 8px CTAs, 5px fields, 40/48px pills), a 389px mega-menu and a full-height mobile menu, a Self-Serve/Enterprise segmented toggle over a #e0e0e0 plan card with a SAVING badge, plus ink banner and #29007a deep-purple bands painted inside the light page",
+      "tags": [
+        "web",
+        "ai",
+        "gtm",
+        "saas",
+        "marketing",
+        "pricing",
+        "webflow",
+        "light",
+        "two-tone",
+        "signed-out"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-12",
+      "access": "signed out (every captured surface is public; the workflows builder, GTM dashboards, chat, tables, teams, billing and account sit behind the login.copy.ai card and were never reached; the contact form's fields were focused and filled then cleared, no form was submitted and no account created)",
+      "themes": ["light", "dark"],
+      "widths": [1440, 390],
+      "entry": "systems/copy/README.md",
+      "tokens": "systems/copy/tokens.json",
+      "styleGuide": "systems/copy/style-guide.html",
+      "preview": {
+        "cover": "systems/copy/screenshots/home-light-default.png",
+        "icon": "systems/copy/icon.png",
+        "swatches": {
+          "light": {
+            "page": "core.color.neutral.white",
+            "surface": "core.color.neutral.white",
+            "text": "core.color.neutral.ink",
+            "muted": "core.color.neutral.lede",
+            "accent": "core.color.brand.purple",
+            "border": "core.color.neutral.border"
+          },
+          "dark": {
+            "page": "dark.surface.page",
+            "surface": "dark.surface.page",
+            "text": "dark.text.primary",
+            "muted": "dark.text.primary",
+            "accent": "core.color.brand.purple",
+            "border": "core.color.neutral.border-dark"
+          }
+        },
+        "fonts": ["core.font.family.display", "core.font.family.sans"]
+      },
+      "capture": {
+        "method": "public-web",
+        "source": "copy.ai (a Webflow marketing site) plus the public login.copy.ai auth card, in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and crops from the live DOM. The Webflow sheets declare a small named --colors--* palette plus a legacy --old-swatches--* set, harvested from cross-origin cdn.prod.website-files.com responses; the ink/white/slate neutrals, the #693ee0 ramp, the black-button hover-to-purple state move, radii, type ramp and motion are measured computed values. The product behind login.copy.ai is a documented boundary",
+        "timestamp": "2026-11-12T19:30:00Z",
+        "harness": "Devin",
+        "model": "SWE-2 High",
+        "route": "public-web",
+        "routes": [
+          "/",
+          "/prices",
+          "/platform/how-it-works",
+          "/use-cases/prospecting-cockpit",
+          "/enterprise",
+          "/blog",
+          "/contact-us",
+          "/changelog",
+          "https://login.copy.ai/ (reached through app.copy.ai/login; measured, never used)",
+          "mobile / and /prices"
+        ],
+        "gaps": [
+          "the signed-in product entirely: the workflows builder, GTM dashboards, chat, tables, teams, billing and account sit behind the login.copy.ai card and were never reached",
+          "the login.copy.ai card captured as a surface; its email field was measured, never sent; both OAuth providers measured, never followed",
+          "the hero email capture and the contact form were focused and filled then cleared, never submitted; Get a Demo, Try for free, Get started, Sign up and Contact Sales never followed",
+          "the Enterprise half of the Self-Serve/Enterprise plan toggle was never switched; the plan card was measured on Self-Serve",
+          "help.copy.ai, the academy and social profiles were never opened; the HubSpot cookie banner and chat widget were hidden, never answered",
+          "icons: no standalone SVG set lifted this pass"
+        ],
+        "durationMin": 70,
+        "durationNote": "worktree creation to package-complete commit, 2026-11-12",
+        "pr": "https://github.com/starship-terminal/constellations/pull/497"
+      },
+      "layoutGaps": {
+        "icons/": "the icon extraction pass was not run; the icons (the copy.ai wordmark, the Google/Microsoft provider glyphs, the social icons and the playbook/blog artwork) are visible in the crops and screenshots"
+      }
+    },
+    {
       "slug": "dopper",
       "name": "Dopper",
       "url": "https://dopper.com",

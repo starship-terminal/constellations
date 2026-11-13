@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 102,
-    "system_domains": 94,
-    "matched_domains": 69,
-    "missing_domains": 364,
+    "system_packages": 104,
+    "system_domains": 96,
+    "matched_domains": 71,
+    "missing_domains": 362,
     "system_domains_absent_from_catalog": 25
   },
   "matched": {
@@ -768,6 +768,23 @@
         }
       ]
     },
+    "cartesia.ai": {
+      "catalog": [
+        {
+          "name": "Cartesia",
+          "domain": "cartesia.ai",
+          "id": 756
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "cartesia",
+          "name": "Cartesia",
+          "url": "https://www.cartesia.ai",
+          "name_match": true
+        }
+      ]
+    },
     "chatgpt.com": {
       "catalog": [
         {
@@ -804,6 +821,23 @@
           "slug": "claude-ios",
           "name": "Claude for iOS",
           "url": "https://claude.ai/download",
+          "name_match": true
+        }
+      ]
+    },
+    "copy.ai": {
+      "catalog": [
+        {
+          "name": "Copy.ai",
+          "domain": "copy.ai",
+          "id": 435
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "copy",
+          "name": "Copy.ai",
+          "url": "https://www.copy.ai",
           "name_match": true
         }
       ]
@@ -1268,13 +1302,6 @@
         "id": 227
       }
     ],
-    "cartesia.ai": [
-      {
-        "name": "Cartesia",
-        "domain": "cartesia.ai",
-        "id": 756
-      }
-    ],
     "chargetrip.com": [
       {
         "name": "Chargetrip",
@@ -1357,13 +1384,6 @@
         "name": "Copperx",
         "domain": "copperx.io",
         "id": 789
-      }
-    ],
-    "copy.ai": [
-      {
-        "name": "Copy.ai",
-        "domain": "copy.ai",
-        "id": 435
       }
     ],
     "cosmos.so": [
