@@ -363,7 +363,7 @@ async function story() {
   if (!(await newPage('story', { wait: 8000 }))) return;
   const g = G.content;
   await S('story-h1', q('h1, .heading').filter({ visible: true }).first(), ['default'], { group: g, title: 'Story title', desc: 'The Notre-histoire page heading.', sel: 'story .heading' });
-  await S('story-lede', q('.rte p, main p, p').filter({ hasText: /\S+\s+\S+\s+\S+\s+\S+/ }).filter({ visible: true }).first(), ['default'], { group: g, title: 'Story paragraph', desc: 'A body paragraph in the story page, Robin Regular.', sel: 'story p' });
+  await S('story-lede', q('.rte p, main p:not(announcement-bar p):not(header p):not(footer p)').filter({ hasText: /\S+\s+\S+\s+\S+\s+\S+/ }).filter({ visible: true }).first(), ['default'], { group: g, title: 'Story paragraph', desc: 'A body paragraph in the story page, Robin Regular.', sel: 'story .rte p' });
   save();
 }
 
@@ -425,7 +425,7 @@ async function mobile() {
   await S('m-menu-open', q('mobile-navigation, [id="mobile-menu-drawer"], .drawer--from-left').filter({ visible: true }).first(), ['default'], { group: g, title: 'Mobile menu, open', desc: 'The from-left navigation drawer opened by its own toggle.', sel: 'mobile-navigation' }, { noScroll: true });
   await S('m-nav-item', q('mobile-navigation a, mobile-navigation button, [id="mobile-menu-drawer"] a').filter({ hasText: /\S/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Mobile nav item', desc: 'A link inside the opened navigation drawer.', sel: 'mobile-navigation a' }, { noScroll: true });
   await page.keyboard.press('Escape'); await page.waitForTimeout(500);
-  await S('m-hero-title', q('[class*="image-hero__heading" i], [class*="hero" i] .heading, [class*="hero" i] [class*="heading" i]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Mobile hero title', desc: 'The Boogy hero heading at 390 (the hidden-tablet-and-up variant).', sel: '.image-hero__heading at 390' });
+  await S('m-hero-title', q('.image-hero__heading.heading, [class*="image-hero" i] h1, [class*="image-hero" i] h2').filter({ visible: true }).first(), ['default'], { group: g, title: 'Mobile hero title', desc: 'The Boogy hero heading at 390 (the hidden-tablet-and-up variant).', sel: '.image-hero__heading at 390' });
   await S('m-hero-cta', q('.image-hero__button .button, [class*="hero" i] a.button').filter({ visible: true }).first(), ['default'], { group: g, title: 'Mobile hero CTA', desc: 'The SHOP button at 390.', sel: '.image-hero__button at 390' });
   await S('m-product-card', q('product-item').filter({ visible: true }).first(), ['default'], { group: g, title: 'Mobile product card', desc: 'A product-item in the featured row at 390.', sel: 'product-item at 390' });
   save();
@@ -444,9 +444,10 @@ try {
   for (const k of order) { if (k !== 'mobile') await plan[k](); }
   if (!pages.length || pages.includes('home')) await footer();
   if (!pages.length || pages.includes('mobile')) await plan.mobile();
-  // Reduced-motion check on an element that transitions (the moving banner's
-  // animation), so the delta is meaningful.
-  if (!pages.length || pages.includes('home')) await reducedMotion('home', '.moving-banner');
+  // Reduced-motion check on the element that animates (the scrolling banner's
+  // inner track — the wrapper .moving-banner itself never animates, so reading
+  // it cannot show a reduced-motion delta).
+  if (!pages.length || pages.includes('home')) await reducedMotion('home', '.moving-banner__inner');
 } finally {
   for (const [key, c] of Object.entries(out.components)) {
     // An untouched entry is pruned only when its page was not blocked this

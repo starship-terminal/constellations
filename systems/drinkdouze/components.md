@@ -2,7 +2,7 @@
 
 The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Captured from drinkdouze.com on 2026-11-13, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. drinkdouze.com is a Shopify storefront in French (the Impact-family theme plus douze-custom.css, Boogy / Robin) painting light only, as boxed sections on a sable field. Nothing was bought, sent or signed into; the login fields were filled once and emptied, a pack-size swatch was toggled (a radio, never an add-to-cart), and no consent or newsletter overlay was ever answered.
 
-The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (64 components, 138 states). The page layouts are described in [patterns.md](patterns.md).
+The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (64 components, 136 states). The page layouts are described in [patterns.md](patterns.md).
 
 How to read an entry:
 
@@ -454,9 +454,7 @@ The Notre-histoire page heading. Read as `story-h1` on the story page.
 #### Story paragraph
 A body paragraph in the story page, Robin Regular. Read as `story-lede` on the story page.
 
-**Values (default).** size 529 x 18.45; background transparent; text Robin Semibold 12/18.46 500, #301816 `color.brand.dusk`.
-
-![Story paragraph default](components/crops/story-lede-default.png)
+mismeasured on the first pass and withdrawn: the selector caught the announcement-strip paragraph ("LIVRAISON GRATUITE EN FRANCE METROPOLITAINE A PARTIR DE 50EUR"), not a story body paragraph — no story paragraph was measured. The selector was tightened in tools/capture/public/measure.mjs; a live re-measure is queued.
 
 #### Search title
 The search results heading for ?q=douze. Read as `search-title` on the search page.
@@ -668,11 +666,7 @@ A link inside the opened navigation drawer. Read as `m-nav-item` on the home pag
 #### Mobile hero title
 The Boogy hero heading at 390 (the hidden-tablet-and-up variant). Read as `m-hero-title` on the home page at 390 wide.
 
-**Values (default).** size 312 x 38; background transparent; text Robin Semibold 12/14.4 500, #ffffff `color.brand.white`; layers a.button.button--primary 77.7x38.0 rgb(48, 24, 22); a::before.button.button--primary 20pxx38px rgb(48, 24, 22); a::after.button.button--primary 20pxx38px rgb(48, 24, 22).
-
-Child layers that carry the look: a 77.7x38 background #301816 `color.brand.dusk`; a::before 20pxx38px background #301816 `color.brand.dusk`; a::after 20pxx38px background #301816 `color.brand.dusk`.
-
-![Mobile hero title default](components/crops/m-hero-title-default.png)
+mismeasured on the first pass and withdrawn: the selector caught the hero SHOP button container, not the mobile Boogy heading — the 390px hero heading was not measured. The selector was tightened in tools/capture/public/measure.mjs; a live re-measure is queued.
 
 #### Mobile hero CTA
 The SHOP button at 390. Read as `m-hero-cta` on the home page at 390 wide.

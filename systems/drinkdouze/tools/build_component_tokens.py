@@ -31,9 +31,11 @@ raw/components-computed.json:
   type         Boogy 300 display (52-128px, 8vw hero) over Robin Regular
                500 body; the --text-* utility ramp 10-128px
   shape        boxed sections and media 45px, reduced blocks 16px; buttons
-               and swatches square 0px
-  states       buttons paint a 1px dusk outline on hover/focus; the pack-
-               size swatch checks with a dusk fill + sable label
+               and colour swatches square 0px, pack-size swatches 999px pills
+  states       buttons paint a small hover/pressed shadow (rgba(0,0,0,.15)
+               0 4px 8px); fields draw an inset 1px dusk ring on focus; the
+               pack-size swatch checks with the flavour-accent fill + dusk
+               label
 
 A leaf is {"var": "--name"} (resolved on the light pass) or
 {"value": ..., "source": "..."} for a measured value. The site paints one
@@ -146,16 +148,19 @@ def painted(comp, state):
 
 
 def shadow_layers(spec):
-    """Parse 'rgba(...) x y blur sp, ...' into DTCG shadow layers, dropping fully transparent no-ops."""
+    """Parse 'rgba(...) x y blur sp [inset], ...' into DTCG shadow layers, dropping fully transparent no-ops."""
     out = []
     for m in re.finditer(
-            r"(rgba?\(\s*[\d.]+,?\s*[\d.]+,?\s*[\d.]+(?:,?\s*[\d.]+)?\)|#[0-9a-fA-F]{3,8})\s+"
-            r"(-?[\d.]+)px\s+(-?[\d.]+)px\s+(-?[\d.]+)px(?:\s+(-?[\d.]+)px)?", spec):
-        col, x, y, bl, sp = m.groups()
+            r"(inset\s+)?(rgba?\(\s*[\d.]+,?\s*[\d.]+,?\s*[\d.]+(?:,?\s*[\d.]+)?\)|#[0-9a-fA-F]{3,8})\s+"
+            r"(-?[\d.]+)px\s+(-?[\d.]+)px\s+(-?[\d.]+)px(?:\s+(-?[\d.]+)px)?(\s+inset)?", spec):
+        ins1, col, x, y, bl, sp, ins2 = m.groups()
         if col.startswith("rgba") and col.rstrip(")").endswith(", 0"):
             continue
-        out.append({"color": norm_color(col), "offsetX": f"{x}px", "offsetY": f"{y}px",
-                    "blur": f"{bl}px", "spread": f"{sp or 0}px"})
+        layer = {"color": norm_color(col), "offsetX": f"{x}px", "offsetY": f"{y}px",
+                 "blur": f"{bl}px", "spread": f"{sp or 0}px"}
+        if ins1 or ins2:  # the fields' focus ring paints inward; keep the keyword
+            layer["inset"] = True
+        out.append(layer)
     return out
 
 
@@ -274,7 +279,7 @@ for key, vname, desc in [
     ("h4", "--heading-h4-font-size", "Boogy h4 35px."),
     ("h5", "--heading-h5-font-size", "Boogy h5 12px (the small caps-like step)."),
     ("h6", "--heading-h6-font-size", "Boogy h6 18px."),
-    ("large", "--heading-large-font-size", "The display 'large' step — 8vw, resolved 102.4px at 1440."),
+    ("large", "--heading-large-font-size", "The display 'large' step — 8vw, resolved 115.2px at 1440."),
     ("small", "--heading-small-font-size", "Heading small 12px."),
     ("xsmall", "--heading-xsmall-font-size", "Heading x-small 12px."),
     ("xxsmall", "--heading-xxsmall-font-size", "Heading xx-small 11px."),
@@ -307,7 +312,6 @@ for key, vname, desc in [
     ("container-max", "--container-max-width", "Max content width 1600px."),
     ("gutter", "--container-gutter", "Container gutter — 73px at desktop, 24px small."),
     ("grid-gap", "--grid-gap", "The 24px grid gap."),
-    ("grid-columns", "--grid-column-count", "The 20-column grid (10 at small widths)."),
     ("boxed-margin", "--boxed-sections-margin", "The 25px air around each boxed section."),
     ("breather", "--vertical-breather", "Section vertical padding 64px."),
     ("breather-tight", "--vertical-breather-tight", "Tight section padding 48px."),
@@ -319,6 +323,11 @@ for key, vname, desc in [
 ]:
     if vname in R:
         layout[key] = var(vname, "dimension", description=desc)
+# The column count is a count, not a length — as a "dimension" it exports
+# "20px", which repeat() cannot read.
+if "--grid-column-count" in R:
+    layout["grid-columns"] = var("--grid-column-count", "number",
+                                 description="The 20-column grid (10 at small widths).")
 
 # -------------------------------------------------------------- light roles
 
@@ -386,10 +395,17 @@ for key, c, state, desc in [
         if have(c, stt):
             ss = st(c, stt)
             grp[leaf] = {}
-            for prop, ty, d in [("backgroundColor", "color", "fill"), ("color", "color", "ink"),
-                                ("borderTopColor", "color", "border"), ("borderTopWidth", "dimension", "border width"),
-                                ("outlineColor", "color", "outline"), ("outlineWidth", "dimension", "outline width")]:
-                m = meas(c, stt, prop, ty, f"{desc} {d}, {stt}.")
+            # Outline readings only export when an outline really paints —
+            # computed outlineColor/Width keep their non-none defaults under
+            # outlineStyle:none, so gating on the colour alone invents rings.
+            props = [("backgroundColor", "color", "fill"), ("color", "color", "ink"),
+                     ("borderTopColor", "color", "border"), ("borderTopWidth", "dimension", "border width")]
+            if (ss.get("outlineStyle") or "none") != "none":
+                props += [("outlineColor", "color", "outline"), ("outlineWidth", "dimension", "outline width")]
+            props += [("boxShadow", "shadow", "shadow")]
+            for prop, ty, d in props:
+                m = meas(c, stt, prop, ty, f"{desc} {d}, {stt}.",
+                         shadow_layers if ty == "shadow" else None)
                 if m:
                     grp[leaf][prop.replace("Color", "").replace("Width", "-width").lower() or prop] = m
             if not grp[leaf]:
@@ -432,9 +448,12 @@ for key, c, desc in [
             grp[prop.replace("Color", "").replace("Width", "-width").lower() or prop] = m
     if have(c, "focused"):
         grp["focus"] = {}
-        for prop, ty, d in [("borderTopColor", "color", "border"), ("outlineColor", "color", "outline"),
-                            ("outlineWidth", "dimension", "outline width"), ("outlineOffset", "dimension", "outline offset"),
-                            ("boxShadow", "shadow", "ring")]:
+        props = [("borderTopColor", "color", "border")]
+        if (st(c, "focused").get("outlineStyle") or "none") != "none":
+            props += [("outlineColor", "color", "outline"),
+                      ("outlineWidth", "dimension", "outline width"), ("outlineOffset", "dimension", "outline offset")]
+        props += [("boxShadow", "shadow", "ring")]
+        for prop, ty, d in props:
             m = meas(c, "focused", prop, ty, f"{desc} Focus {d}.", shadow_layers if ty == "shadow" else None)
             if m:
                 grp["focus"][prop.replace("Color", "").replace("Width", "-width").replace("Offset", "-offset").lower() or prop] = m
@@ -455,8 +474,8 @@ if have("variant-swatch-2", "default") or have("variant-swatch", "default"):
     comp["swatch"] = grp
 if have("variant-swatch", "default"):
     sel = comp.setdefault("swatch", {}).setdefault("selected", {})
-    sel["background"] = meas("variant-swatch", "default", "backgroundColor", "color", "Checked swatch fill (dusk).")
-    sel["text"] = meas_text("variant-swatch", "default", "color", "color", "Checked swatch label ink.")
+    sel["background"] = meas("variant-swatch", "default", "backgroundColor", "color", "Checked swatch fill — the flavour accent (#f26554 on Orange Sanguine).")
+    sel["text"] = meas_text("variant-swatch", "default", "color", "color", "Checked swatch label ink — dusk.")
     sel["border"] = meas("variant-swatch", "default", "borderTopColor", "color", "Checked swatch border.")
     comp["swatch"]["selected"] = {k: v for k, v in sel.items() if v}
 

@@ -3767,8 +3767,8 @@
    "--container-inner-width": {
     "raw": "calc(100vw - max(calc((100vw - calc(1600px - (73px) * 2)) / 2), 73px) * 2)",
     "kind": "dimension",
-    "value": "1134px",
-    "note": "viewport-relative, resolved at 1440 x 900"
+    "value": "1294px",
+    "note": "viewport-relative; resolved at 1440 x 900 (the first probe pass ran on the 1280px default and wrote 1134px; this is the 1440px resolution)"
    },
    "--container-max-width": {
     "raw": "1600px",
@@ -3872,8 +3872,8 @@
    "--grid-column-width": {
     "raw": "calc((100vw - max(calc((100vw - calc(1600px - (73px) * 2)) / 2), 73px) * 2 - 24px * (20 - 1)) / 20)",
     "kind": "dimension",
-    "value": "33.8906px",
-    "note": "viewport-relative, resolved at 1440 x 900"
+    "value": "41.9px",
+    "note": "viewport-relative; resolved at 1440 x 900 (the first probe pass ran on the 1280px default and wrote 33.8906px; this is the 1440px resolution)"
    },
    "--grid-gap": {
     "raw": "24px",
@@ -3939,8 +3939,8 @@
    "--heading-large-font-size": {
     "raw": "8vw",
     "kind": "dimension",
-    "value": "102.391px",
-    "note": "viewport-relative, resolved at 1440 x 900"
+    "value": "115.2px",
+    "note": "viewport-relative; resolved at 1440 x 900 (the first probe pass ran on the 1280px default and wrote 102.391px; this is the 1440px resolution)"
    },
    "--heading-small-font-size": {
     "raw": "12px",

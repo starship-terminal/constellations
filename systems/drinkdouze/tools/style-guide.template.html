@@ -57,8 +57,8 @@ table.cmp td, table.cmp th { border: 1px solid var(--color-brand-border-darker, 
 .tr .tv { font-size: 12px; color: var(--color-brand-dusk, #301816); opacity: .65; font-family: var(--sg-mono); }
 /* ---- swatch mock ---- */
 .swrow { display: flex; gap: 8px; flex-wrap: wrap; }
-.swb { height: 36px; padding: 0 14px; display: inline-flex; align-items: center; border: 1px solid var(--color-brand-border, #321a18); border-radius: var(--radius-swatch, 0px); font-size: 12px; font-weight: 600; text-transform: uppercase; background: var(--color-brand-white, #fff); color: var(--color-brand-dusk, #301816); }
-.swb.on { background: var(--color-brand-dusk, #301816); color: var(--color-brand-sable, #f6f2e9); }
+.swb { height: 36px; padding: 0 14px; display: inline-flex; align-items: center; border: var(--component-swatch-border-width, 1px) solid var(--component-swatch-border, #301816); border-radius: var(--component-swatch-radius, 999px); font-size: 12px; font-weight: 600; text-transform: uppercase; background: var(--component-swatch-background, #fff); color: var(--component-swatch-text, #301816); }
+.swb.on { background: var(--component-swatch-selected-background, #f26554); color: var(--component-swatch-selected-text, #301816); }
 .marq { overflow: hidden; white-space: nowrap; padding: 14px 0; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; color: var(--color-brand-dusk, #301816); }
 </style>
 </head>
@@ -68,7 +68,7 @@ table.cmp td, table.cmp th { border: 1px solid var(--color-brand-border-darker, 
   <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
 
   <h2 class="sh">Douze, measured</h2>
-  <p class="lead">drinkdouze.com is a Shopify storefront in French (the Impact-family theme plus a douze-custom.css layer): "Pétillants sans alcool" — non-alcoholic sparkling cocktails sold by the canette. It paints light only, as boxed rounded sections (45px radius) floating on a sable field #f6f2e9, with dusk-brown ink #301816. Type is Boogy 300 display over Robin Regular 500 body; per-product flavour accents — orange-piment #f26554, abricot-zaatar #f4a765, poire-anis #f3eea7 — re-bind the product card's button fill. Buttons and swatches are square. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="lead">drinkdouze.com is a Shopify storefront in French (the Impact-family theme plus a douze-custom.css layer): "Pétillants sans alcool" — non-alcoholic sparkling cocktails sold by the canette. It paints light only, as boxed rounded sections (45px radius) floating on a sable field #f6f2e9, with dusk-brown ink #301816. Type is Boogy 300 display over Robin Regular 500 body; per-product flavour accents — orange-piment #f26554, abricot-zaatar #f4a765, poire-anis #f3eea7 — re-bind the product card's button fill. Buttons and colour swatches are square; the pack-size swatches are 999px pills. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
   <p class="note">Read from drinkdouze.com, signed out, in headless Chromium at 1440 x 900 (mobile at 390 x 844). Checkout, account, payment and every submit control are boundaries; the login fields were filled once and emptied, never sent. Boogy and Robin are served faces and are not loaded here: samples fall back to system serif and sans.</p>
 
   <h2 class="sh">The chrome</h2>
@@ -81,7 +81,7 @@ table.cmp td, table.cmp th { border: 1px solid var(--color-brand-border-darker, 
   </div>
 
   <h2 class="sh">The shop</h2>
-  <p class="lead">/collections/all grids product-items: a packshot, the flavour's wordmark image, a pack line ("6 canettes 25cl") and a quick-add button that reveals on hover with the price inside it — its fill re-bound to the flavour accent. The buy box pairs square pack-size swatches (dusk fill when checked) with a full-width dusk submit.</p>
+  <p class="lead">/collections/all grids product-items: a packshot, the flavour's wordmark image, a pack line ("6 canettes 25cl") and a quick-add button that reveals on hover with the price inside it — its fill re-bound to the flavour accent. The buy box pairs pill pack-size swatches (999px; the flavour accent with dusk text when checked) with a full-width dusk submit.</p>
   <div class="mock">
     <div class="grid">
       <div class="tile"><b>Orange Sanguine <i>&amp; Piment</i></b><span class="sub">6 canettes 25cl</span><span class="btn flavor" style="height:44px;margin-top:10px;font-size:12px">Ajouter au panier — 36€</span></div>
@@ -99,7 +99,7 @@ table.cmp td, table.cmp th { border: 1px solid var(--color-brand-border-darker, 
   <div id="roles-out"></div>
 
   <h2 class="sh">Spacing and radius</h2>
-  <p class="lead">Boxed sections and media round at 45px, reduced blocks at 16px; buttons and swatches stay square at 0px. The grid is 20 columns on a 1600px container with a 24px gap and 73px gutters; sections breathe 64px, tighten to 48px, and float on a 25px sable margin.</p>
+  <p class="lead">Boxed sections and media round at 45px, reduced blocks at 16px; buttons and colour swatches stay square at 0px, pack-size swatches run a 999px pill radius. The grid is 20 columns on a 1600px container with a 24px gap and 73px gutters; sections breathe 64px, tighten to 48px, and float on a 25px sable margin.</p>
   <div id="spacing-out" class="kv"></div>
 
   <h2 class="sh">Shadows</h2>

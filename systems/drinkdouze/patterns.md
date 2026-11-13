@@ -37,7 +37,7 @@ The product page splits the boxed section in two ([product-light-default](screen
 1. Boogy product title ~60px ("Orange Sanguine & Piment", 403 x 80) with the sub-line "Canette 25cl",
 2. the Klaviyo star rating row (★★★★★ dusk stars, "13 avis"),
 3. a Robin paragraph of tasting notes,
-4. `Quantité` pack-size `block-swatch` radios — square 106–114 x 36 chips, 1px dusk border; the checked one fills with the flavour accent `#f26554` and white text ([product-light-variant](screenshots/product-light-variant.png)),
+4. `Quantité` pack-size `block-swatch` radios — 106–114 x 36 pill chips (999px radius), 1px dusk border; the checked one fills with the flavour accent `#f26554` under dusk text ([product-light-variant](screenshots/product-light-variant.png)),
 5. purchase-option radios (`Achat unique` / `Abonnement −10%` with struck prices) that render once a pack size is settled — a vendor widget never toggled,
 6. the 380 x 44 dusk submit "Ajouter au panier — 21€" and the "Acheter en 1-clic" button below it — both measured, never pressed,
 7. a `.product-info__reassurance` column — "Livraison à J+2 et gratuite à partir de 50€", "−10% en s'inscrivant à la newsletter" — dusk text with a flavour-coloured divider,

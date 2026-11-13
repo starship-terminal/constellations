@@ -11643,7 +11643,7 @@
     },
     "F12": {
      "grade": "missing",
-     "evidence": "No shadow levels paint anywhere on the surface — depth is radius+margin+fill; every measured boxShadow is none except the UA focus ring."
+     "evidence": "No declared elevation scale and no layered shadow system — depth is radius+margin+fill. Painted shadows do exist: a small rgba(0,0,0,0.15) 0 4px 8px lift on the dusk buttons in hover/pressed, and the text/search fields' 1px inset #301816 focus ring; both are tokenised under light.component."
     },
     "F13": {
      "grade": "partly",

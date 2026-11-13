@@ -283,7 +283,7 @@ def links(prefix):
 
 
 n_crops = len(list(Path("components/crops").glob("*.png")))
-n_states = sum(len(c["states"]) for c in C.values())
+n_states = sum(len(c["states"]) for c in C.values() if "states" in c)
 icons = []
 
 W("# Douze components")
@@ -330,7 +330,7 @@ W("Values that apply across entries, from the measurement files.")
 W()
 foc = []
 for k, c in C.items():
-    st = c["states"].get("focus-visible")
+    st = (c.get("states") or {}).get("focus-visible")
     if not st or "style" not in st or st.get("via") == "focus failed":
         continue
     s = st["style"]
@@ -369,7 +369,7 @@ W("| Duration | Easing | Property | Where |")
 W("|---|---|---|---|")
 mot = {}
 for k, c in C.items():
-    for st in c["states"].values():
+    for st in (c.get("states") or {}).values():
         if "style" not in st:
             continue
         s = st["style"]
@@ -436,7 +436,7 @@ for g in groups:
         W(f"{desc + ' ' if desc else ''}Read as `{k}` on the {where} page{' at 390 wide' if g.startswith('Mobile') else ''}.")
         W()
         if c.get("missing"):
-            W("Not on the page when it was captured.")
+            W(c.get("note") or "Not on the page when it was captured.")
             continue
         failed = [s for s, v in c["states"].items() if "style" in v and v.get("via") == "focus failed"]
         rows, states = state_rows(c)

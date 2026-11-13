@@ -147,7 +147,7 @@
         "large": {
           "var": "--heading-large-font-size",
           "type": "dimension",
-          "description": "The display 'large' step — 8vw, resolved 102.4px at 1440."
+          "description": "The display 'large' step — 8vw, resolved 115.2px at 1440."
         },
         "small": {
           "var": "--heading-small-font-size",
@@ -319,11 +319,6 @@
         "type": "dimension",
         "description": "The 24px grid gap."
       },
-      "grid-columns": {
-        "var": "--grid-column-count",
-        "type": "dimension",
-        "description": "The 20-column grid (10 at small widths)."
-      },
       "boxed-margin": {
         "var": "--boxed-sections-margin",
         "type": "dimension",
@@ -363,6 +358,11 @@
         "var": "--form-input-gap",
         "type": "dimension",
         "description": "Form row gap 16px."
+      },
+      "grid-columns": {
+        "var": "--grid-column-count",
+        "type": "number",
+        "description": "The 20-column grid (10 at small widths)."
       }
     }
   },
@@ -552,17 +552,19 @@
             "source": "computed borderTopColor of add-to-cart hover (raw/components-computed.json)",
             "description": "The buy-box submit 'Ajouter au panier' — the primary action. border, hover."
           },
-          "outline": {
-            "value": "rgb(255, 255, 255)",
-            "type": "color",
-            "source": "computed outlineColor of add-to-cart hover (raw/components-computed.json)",
-            "description": "The buy-box submit 'Ajouter au panier' — the primary action. outline, hover."
-          },
-          "outline-width": {
-            "value": "3px",
-            "type": "dimension",
-            "source": "computed outlineWidth of add-to-cart hover (raw/components-computed.json)",
-            "description": "The buy-box submit 'Ajouter au panier' — the primary action. outline width, hover."
+          "boxshadow": {
+            "value": [
+              {
+                "color": "rgba(0, 0, 0, 0.15)",
+                "offsetX": "0px",
+                "offsetY": "4px",
+                "blur": "8px",
+                "spread": "0px"
+              }
+            ],
+            "type": "shadow",
+            "source": "computed boxShadow of add-to-cart hover (raw/components-computed.json)",
+            "description": "The buy-box submit 'Ajouter au panier' — the primary action. shadow, hover."
           }
         }
       },
@@ -616,17 +618,19 @@
             "source": "computed borderTopColor of hero-cta hover (raw/components-computed.json)",
             "description": "The hero SHOP button. border, hover."
           },
-          "outline": {
-            "value": "rgb(255, 255, 255)",
-            "type": "color",
-            "source": "computed outlineColor of hero-cta hover (raw/components-computed.json)",
-            "description": "The hero SHOP button. outline, hover."
-          },
-          "outline-width": {
-            "value": "3px",
-            "type": "dimension",
-            "source": "computed outlineWidth of hero-cta hover (raw/components-computed.json)",
-            "description": "The hero SHOP button. outline width, hover."
+          "boxshadow": {
+            "value": [
+              {
+                "color": "rgba(0, 0, 0, 0.15)",
+                "offsetX": "0px",
+                "offsetY": "4px",
+                "blur": "8px",
+                "spread": "0px"
+              }
+            ],
+            "type": "shadow",
+            "source": "computed boxShadow of hero-cta hover (raw/components-computed.json)",
+            "description": "The hero SHOP button. shadow, hover."
           }
         }
       },
@@ -680,17 +684,19 @@
             "source": "computed borderTopColor of quick-add hover (raw/components-computed.json)",
             "description": "The product-card button — its fill re-binds to the flavour accent (#f26554 on Orange Sanguine). border, hover."
           },
-          "outline": {
-            "value": "rgb(255, 255, 255)",
-            "type": "color",
-            "source": "computed outlineColor of quick-add hover (raw/components-computed.json)",
-            "description": "The product-card button — its fill re-binds to the flavour accent (#f26554 on Orange Sanguine). outline, hover."
-          },
-          "outline-width": {
-            "value": "3px",
-            "type": "dimension",
-            "source": "computed outlineWidth of quick-add hover (raw/components-computed.json)",
-            "description": "The product-card button — its fill re-binds to the flavour accent (#f26554 on Orange Sanguine). outline width, hover."
+          "boxshadow": {
+            "value": [
+              {
+                "color": "rgba(0, 0, 0, 0.15)",
+                "offsetX": "0px",
+                "offsetY": "4px",
+                "blur": "8px",
+                "spread": "0px"
+              }
+            ],
+            "type": "shadow",
+            "source": "computed boxShadow of quick-add hover (raw/components-computed.json)",
+            "description": "The product-card button — its fill re-binds to the flavour accent (#f26554 on Orange Sanguine). shadow, hover."
           }
         }
       }
@@ -894,18 +900,6 @@
             "source": "computed borderTopColor of email-field focused (raw/components-computed.json)",
             "description": "The login email field. Focus border."
           },
-          "outline": {
-            "value": "rgb(48, 24, 22)",
-            "type": "color",
-            "source": "computed outlineColor of email-field focused (raw/components-computed.json)",
-            "description": "The login email field. Focus outline."
-          },
-          "outline-width": {
-            "value": "3px",
-            "type": "dimension",
-            "source": "computed outlineWidth of email-field focused (raw/components-computed.json)",
-            "description": "The login email field. Focus outline width."
-          },
           "boxshadow": {
             "value": [
               {
@@ -913,7 +907,8 @@
                 "offsetX": "0px",
                 "offsetY": "0px",
                 "blur": "0px",
-                "spread": "1px"
+                "spread": "1px",
+                "inset": true
               }
             ],
             "type": "shadow",
@@ -966,18 +961,6 @@
             "source": "computed borderTopColor of search-field focused (raw/components-computed.json)",
             "description": "The search input. Focus border."
           },
-          "outline": {
-            "value": "rgb(48, 24, 22)",
-            "type": "color",
-            "source": "computed outlineColor of search-field focused (raw/components-computed.json)",
-            "description": "The search input. Focus outline."
-          },
-          "outline-width": {
-            "value": "3px",
-            "type": "dimension",
-            "source": "computed outlineWidth of search-field focused (raw/components-computed.json)",
-            "description": "The search input. Focus outline width."
-          },
           "boxshadow": {
             "value": [
               {
@@ -985,7 +968,8 @@
                 "offsetX": "0px",
                 "offsetY": "0px",
                 "blur": "0px",
-                "spread": "1px"
+                "spread": "1px",
+                "inset": true
               }
             ],
             "type": "shadow",
@@ -1089,13 +1073,13 @@
           "value": "rgb(242, 101, 84)",
           "type": "color",
           "source": "computed backgroundColor of variant-swatch default (raw/components-computed.json)",
-          "description": "Checked swatch fill (dusk)."
+          "description": "Checked swatch fill — the flavour accent (#f26554 on Orange Sanguine)."
         },
         "text": {
           "value": "rgb(48, 24, 22)",
           "type": "color",
           "source": "computed color of variant-swatch default text node (raw/components-computed.json)",
-          "description": "Checked swatch label ink."
+          "description": "Checked swatch label ink — dusk."
         },
         "border": {
           "value": "rgb(48, 24, 22)",
@@ -1338,50 +1322,6 @@
           "type": "color",
           "source": "computed color of pdp-title default text node (raw/components-computed.json)",
           "description": "The 60px Boogy product title. ink."
-        }
-      },
-      "body": {
-        "family": {
-          "value": "\"Robin Semibold\", sans-serif",
-          "type": "fontFamily",
-          "source": "computed fontFamily of story-lede default text node (raw/components-computed.json)",
-          "description": "Robin body text. family."
-        },
-        "size": {
-          "value": "12px",
-          "type": "dimension",
-          "source": "computed fontSize of story-lede default text node (raw/components-computed.json)",
-          "description": "Robin body text. size."
-        },
-        "weight": {
-          "value": "500",
-          "type": "fontWeight",
-          "source": "computed fontWeight of story-lede default text node (raw/components-computed.json)",
-          "description": "Robin body text. weight."
-        },
-        "leading": {
-          "value": "18.4615px",
-          "type": "dimension",
-          "source": "computed lineHeight of story-lede default text node (raw/components-computed.json)",
-          "description": "Robin body text. leading."
-        },
-        "tracking": {
-          "value": "0.96px",
-          "type": "dimension",
-          "source": "computed letterSpacing of story-lede default text node (raw/components-computed.json)",
-          "description": "Robin body text. tracking."
-        },
-        "transform": {
-          "value": "uppercase",
-          "type": "other",
-          "source": "computed textTransform of story-lede default text node (raw/components-computed.json)",
-          "description": "Robin body text. transform."
-        },
-        "ink": {
-          "value": "rgb(48, 24, 22)",
-          "type": "color",
-          "source": "computed color of story-lede default text node (raw/components-computed.json)",
-          "description": "Robin body text. ink."
         }
       },
       "nav": {
