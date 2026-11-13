@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 95,
-    "system_domains": 87,
-    "matched_domains": 62,
-    "missing_domains": 371,
+    "system_packages": 96,
+    "system_domains": 88,
+    "matched_domains": 63,
+    "missing_domains": 370,
     "system_domains_absent_from_catalog": 25
   },
   "matched": {
@@ -814,6 +814,23 @@
         }
       ]
     },
+    "deel.com": {
+      "catalog": [
+        {
+          "name": "Deel",
+          "domain": "deel.com",
+          "id": 148
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "deel",
+          "name": "Deel",
+          "url": "https://www.deel.com",
+          "name_match": true
+        }
+      ]
+    },
     "dock.us": {
       "catalog": [
         {
@@ -1322,13 +1339,6 @@
         "name": "DailyArt Magazine",
         "domain": "dailyartmagazine.com",
         "id": 571
-      }
-    ],
-    "deel.com": [
-      {
-        "name": "Deel",
-        "domain": "deel.com",
-        "id": 148
       }
     ],
     "deezer.com": [

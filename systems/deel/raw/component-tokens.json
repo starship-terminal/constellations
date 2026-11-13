@@ -1,0 +1,533 @@
+{
+ "_about": "The token tree build_tokens.py turns into tokens.json. deel.com is a single-theme Next.js + MUI marketing site: a white field, a #1b1b1b promo strip, a #201547 purple hero and a sky-blue accent chip. It declares only font-family vars on :root, so every design value is a measured computed style.",
+ "core": {
+  "font": {
+   "family": {
+    "sans": {
+     "value": "\"Inter\", sans-serif",
+     "type": "fontFamily",
+     "source": "computed fontFamily of promo-banner, hero-demo, price-card, footer-link (raw/components-computed.json); --font-inter on :root (raw/css-vars.json)",
+     "description": "Inter — body copy, CTAs, tiles, footer links and every form control."
+    },
+    "brand": {
+     "value": "\"BagossStandardVF\", sans-serif",
+     "type": "fontFamily",
+     "source": "computed fontFamily of nav-link, nav-demo, price-cta, promo-cta (raw/components-computed.json); --font-bagoss-standard on :root (raw/css-vars.json)",
+     "description": "Bagoss Standard VF — the nav items and small pill buttons."
+    },
+    "display": {
+     "value": "\"BagossCondensedFont\", sans-serif",
+     "type": "fontFamily",
+     "source": "computed fontFamily of hero-h1, section-heading, price-h1, about-h1, footer-heading (raw/components-computed.json); --font-bagoss-condensed on :root (raw/css-vars.json)",
+     "description": "Bagoss Condensed — every display heading, hero 60px to about 160px."
+    }
+   },
+   "weight": {
+    "normal": {
+     "value": "400",
+     "type": "fontWeight",
+     "source": "computed fontWeight of footer-link default (raw/components-computed.json)",
+     "description": "400 — body copy and footer links (Inter)."
+    },
+    "medium": {
+     "value": "500",
+     "type": "fontWeight",
+     "source": "computed fontWeight of nav-link default (raw/components-computed.json)",
+     "description": "500 — nav items, pill buttons, every display heading."
+    },
+    "semibold": {
+     "value": "600",
+     "type": "fontWeight",
+     "source": "computed fontWeight of hero-demo default (raw/components-computed.json)",
+     "description": "600 — CTAs, hero tiles, the about display heading."
+    }
+   },
+   "size": {
+    "chip": {
+     "value": "12px",
+     "type": "fontSize",
+     "source": "computed fontSize of promo-cta default (raw/components-computed.json)",
+     "description": "The 12px promo chip button."
+    },
+    "button": {
+     "value": "14px",
+     "type": "fontSize",
+     "source": "computed fontSize of nav-demo default (raw/components-computed.json)",
+     "description": "The 14px pill-button/nav-demo size."
+    },
+    "nav": {
+     "value": "15px",
+     "type": "fontSize",
+     "source": "computed fontSize of nav-link default (raw/components-computed.json)",
+     "description": "The 15px nav item."
+    },
+    "body": {
+     "value": "16px",
+     "type": "fontSize",
+     "source": "computed fontSize of price-card default (raw/components-computed.json)",
+     "description": "The 16px body/footer-link size."
+    },
+    "cta": {
+     "value": "18px",
+     "type": "fontSize",
+     "source": "computed fontSize of hero-demo default (raw/components-computed.json)",
+     "description": "The 18px hero/section CTA."
+    },
+    "section": {
+     "value": "44px",
+     "type": "fontSize",
+     "source": "computed fontSize of section-heading default (raw/components-computed.json)",
+     "description": "The 44px Bagoss section heading."
+    },
+    "hero": {
+     "value": "60px",
+     "type": "fontSize",
+     "source": "computed fontSize of hero-h1 default (raw/components-computed.json)",
+     "description": "The 60px BagossCondensed hero display."
+    },
+    "about-display": {
+     "value": "160px",
+     "type": "fontSize",
+     "source": "computed fontSize of about-h1 default (raw/components-computed.json)",
+     "description": "The 160px about-page display numeral."
+    }
+   },
+   "lineHeight": {
+    "body": {
+     "value": "24px",
+     "type": "other",
+     "source": "computed lineHeight of price-card default (raw/components-computed.json)",
+     "description": "The 24px body line-height."
+    },
+    "hero": {
+     "value": "63px",
+     "type": "other",
+     "source": "computed lineHeight of hero-h1 default (raw/components-computed.json)",
+     "description": "The 63px hero display line-height (1.05x)."
+    }
+   }
+  },
+  "radius": {
+   "chip": {
+    "value": "2px",
+    "type": "dimension",
+    "source": "painted radius of the SPECIAL OFFER chip inside promo-banner default (raw/components-computed.json)",
+    "description": "The 2px SPECIAL OFFER chip radius."
+   },
+   "card": {
+    "value": "12px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of price-card default (raw/components-computed.json)",
+    "description": "The 12px card/tile radius."
+   },
+   "pill": {
+    "value": "200px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of nav-demo default (raw/components-computed.json)",
+    "description": "The 200px small-pill radius (nav CTAs, promo button)."
+   },
+   "full": {
+    "value": "3.35544e+07px",
+    "type": "other",
+    "source": "computed borderTopLeftRadius of hero-demo default (raw/components-computed.json)",
+    "description": "The rounded-full on hero CTAs — computed as a huge px value (Tailwind !rounded-full)."
+   },
+   "circle": {
+    "value": "50%",
+    "type": "other",
+    "source": "computed borderTopLeftRadius of m-hamburger default (raw/components-computed.json)",
+    "description": "The 50% icon-button circle."
+   }
+  },
+  "shadow": {
+   "card": {
+    "value": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(27, 27, 27, 0.04) 0px 8px 16px 0px, rgba(27, 27, 27, 0.04) 0px 2px 8px 0px",
+    "type": "other",
+    "source": "computed boxShadow of price-card default (raw/components-computed.json)",
+    "description": "The MUI elevation-2dp shadow the pricing tier cards carry."
+   }
+  },
+  "motion": {
+   "hover": {
+    "value": "all 0.1s ease-in-out",
+    "type": "other",
+    "source": "computed transition of promo-cta default (raw/components-computed.json)",
+    "description": "The 0.1s ease-in-out all-transition the pill buttons run on hover/press."
+   }
+  }
+ },
+ "light": {
+  "background": {
+   "page": {
+    "value": "#ffffff",
+    "type": "color",
+    "source": "computed backgroundColor of header-nav default (raw/components-computed.json)",
+    "description": "The #fff field the nav, price cards and page paint."
+   },
+   "promo-strip": {
+    "value": "rgba(0, 0, 0, 0.87)",
+    "type": "color",
+    "source": "computed color of promo-banner default (raw/components-computed.json)",
+    "description": "The #1b1b1b promo strip (painted on the banner's child — see component.promo-strip-paint)."
+   },
+   "hero-panel": {
+    "value": "#201547",
+    "type": "color",
+    "source": "painted background of the hero panel inside hero-block default (raw/components-computed.json)",
+    "description": "The #201547 deep-purple panel behind the home h1 and action tiles."
+   },
+   "video-card": {
+    "value": "#141414",
+    "type": "color",
+    "source": "painted background of the video card inside review-band default (raw/components-computed.json)",
+    "description": "The #141414 near-black review video card."
+   },
+   "tile-glass": {
+    "value": "oklab(0.999994 0.0000455678 0.0000200868 / 0.04)",
+    "type": "color",
+    "source": "painted oklab background of hero-tile default (raw/components-computed.json)",
+    "description": "The 4% white glass fill on the hero action tiles over the purple panel."
+   }
+  },
+  "text": {
+   "ink": {
+    "value": "#1b1b1b",
+    "type": "color",
+    "source": "computed color of nav-link default (raw/components-computed.json)",
+    "description": "The #1b1b1b ink — nav text, pill-button fills, footer links."
+   },
+   "body": {
+    "value": "rgba(0, 0, 0, 0.87)",
+    "type": "color",
+    "source": "computed color of price-card default (raw/components-computed.json)",
+    "description": "MUI's rgba(0,0,0,.87) body text on white."
+   },
+   "on-dark": {
+    "value": "#ffffff",
+    "type": "color",
+    "source": "computed color of hero-h1 default (raw/components-computed.json)",
+    "description": "White text on the #201547 hero panel and dark surfaces."
+   },
+   "cream": {
+    "value": "#faf4ee",
+    "type": "color",
+    "source": "computed color of footer-heading default (raw/components-computed.json)",
+    "description": "The #faf4ee latte/cream — footer column headings and icon fills."
+   }
+  },
+  "border": {
+   "focus": {
+    "value": "#101010",
+    "type": "color",
+    "source": "computed outlineColor of promo-cta focus-visible (raw/components-computed.json)",
+    "description": "The #101010 1px auto focus outline on light controls."
+   },
+   "tile-glass": {
+    "value": "oklab(0.999994 0.0000455678 0.0000200868 / 0.1)",
+    "type": "color",
+    "source": "computed borderTopColor of hero-tile default (raw/components-computed.json)",
+    "description": "The 10% white hairline on the hero action tiles."
+   },
+   "hairline": {
+    "value": "rgba(250, 244, 238, 0.16)",
+    "type": "color",
+    "source": "computed borderTopColor of faq-item default (raw/components-computed.json)",
+    "description": "The 1px latte-at-16% hairline the FAQ accordion items separate with."
+   }
+  },
+  "action": {
+   "accent-chip": {
+    "value": "#b1d8fc",
+    "type": "color",
+    "source": "painted background of the SPECIAL OFFER chip inside promo-banner default (raw/components-computed.json)",
+    "description": "The #b1d8fc sky-blue accent — the promo chip and the price-card top strip."
+   },
+   "pressed-fill": {
+    "value": "#3f3f3f",
+    "type": "color",
+    "source": "computed backgroundColor of promo-cta pressed (raw/components-computed.json)",
+    "description": "The #3f3f3f grey the light pill buttons take on hover/pressed."
+   },
+   "hover-fill": {
+    "value": "#4e4e4e",
+    "type": "color",
+    "source": "computed backgroundColor of nav-demo/price-cta hover (raw/components-computed.json)",
+    "description": "The #4e4e4e grey the dark #1b1b1b pill buttons lift to on hover/pressed."
+   }
+  }
+ },
+ "dark": {},
+ "component": {
+  "promo-banner-height": {
+   "value": 64,
+   "type": "dimension",
+   "source": "computed h of promo-banner default (raw/components-computed.json)",
+   "description": "The 64px promo strip."
+  },
+  "nav-height": {
+   "value": 80,
+   "type": "dimension",
+   "source": "computed h of header-nav default (raw/components-computed.json)",
+   "description": "The 80px sticky nav."
+  },
+  "logo-width": {
+   "value": 78,
+   "type": "dimension",
+   "source": "computed w of nav-logo default (raw/components-computed.json)",
+   "description": "The 78px Deel wordmark."
+  },
+  "nav-item-height": {
+   "value": 40,
+   "type": "dimension",
+   "source": "computed h of nav-link default (raw/components-computed.json)",
+   "description": "The 40px nav-item hit area."
+  },
+  "nav-demo-height": {
+   "value": 40,
+   "type": "dimension",
+   "source": "computed h of nav-demo default (raw/components-computed.json)",
+   "description": "The 40px nav Book-a-demo pill."
+  },
+  "promo-cta-height": {
+   "value": 32,
+   "type": "dimension",
+   "source": "computed h of promo-cta default (raw/components-computed.json)",
+   "description": "The 32px Claim-offer button."
+  },
+  "hero-panel-height": {
+   "value": 732,
+   "type": "dimension",
+   "source": "computed h of hero-block default (raw/components-computed.json)",
+   "description": "The 732px purple hero block."
+  },
+  "hero-h1-width": {
+   "value": 574.59,
+   "type": "dimension",
+   "source": "computed w of hero-h1 default (raw/components-computed.json)",
+   "description": "The ~575px hero heading column."
+  },
+  "hero-tile-size": {
+   "value": 80,
+   "type": "dimension",
+   "source": "computed h of hero-tile default (raw/components-computed.json)",
+   "description": "The 80px hero action tile (181px wide)."
+  },
+  "hero-demo-width": {
+   "value": 375,
+   "type": "dimension",
+   "source": "computed w of hero-demo default (raw/components-computed.json)",
+   "description": "The 375px hero Book-a-demo pill."
+  },
+  "product-card-size": {
+   "value": 438,
+   "type": "dimension",
+   "source": "computed h of product-card default (raw/components-computed.json)",
+   "description": "The 438px-tall product card (419px wide)."
+  },
+  "price-card-size": {
+   "value": 928.31,
+   "type": "dimension",
+   "source": "computed h of price-card default (raw/components-computed.json)",
+   "description": "The 928px pricing tier card (459px wide)."
+  },
+  "faq-item-height": {
+   "value": 80.2,
+   "type": "dimension",
+   "source": "computed h of faq-item default (raw/components-computed.json)",
+   "description": "The 80px FAQ accordion summary row."
+  },
+  "review-band-height": {
+   "value": 1205.88,
+   "type": "dimension",
+   "source": "computed h of review-band default (raw/components-computed.json)",
+   "description": "The 1206px review video-carousel band."
+  },
+  "footer-height": {
+   "value": 1015.38,
+   "type": "dimension",
+   "source": "computed h of footer default (raw/components-computed.json)",
+   "description": "The 1015px footer block."
+  },
+  "m-nav-height": {
+   "value": 64,
+   "type": "dimension",
+   "source": "computed h of m-nav-bar default (raw/components-computed.json)",
+   "description": "The 64px mobile nav."
+  },
+  "m-hamburger-size": {
+   "value": 40,
+   "type": "dimension",
+   "source": "computed w of m-hamburger default (raw/components-computed.json)",
+   "description": "The 40px mobile hamburger circle."
+  },
+  "m-hero-h1": {
+   "value": 119.67,
+   "type": "dimension",
+   "source": "computed h of m-h1 default (raw/components-computed.json)",
+   "description": "The mobile hero heading at 38px."
+  },
+  "promo-strip-paint": {
+   "value": "#1b1b1b",
+   "type": "color",
+   "source": "painted background of the promo-banner MuiBox child (raw/components-computed.json)",
+   "description": "The #1b1b1b fill the 64px promo strip paints."
+  },
+  "state-track": {
+   "pill-light-track": {
+    "type": "other",
+    "value": {
+     "default": {
+      "backgroundColor": "rgb(255, 255, 255)",
+      "color": "rgb(27, 27, 27)",
+      "transform": "none",
+      "outlineStyle": "none"
+     },
+     "hover": {
+      "backgroundColor": "rgb(63, 63, 63)",
+      "color": "rgb(255, 255, 255)",
+      "transform": "none",
+      "outlineStyle": "none"
+     },
+     "pressed": {
+      "backgroundColor": "rgb(63, 63, 63)",
+      "color": "rgb(255, 255, 255)",
+      "transform": "none",
+      "outlineStyle": "none"
+     },
+     "focus-visible": {
+      "backgroundColor": "rgb(255, 255, 255)",
+      "color": "rgb(27, 27, 27)",
+      "transform": "none",
+      "outlineStyle": "auto"
+     }
+    },
+    "source": "computed styles of promo-cta across states (raw/components-computed.json)",
+    "description": "Light pill (Claim offer): #fff fill/#1b1b1b text at rest; hover+pressed invert to #3f3f3f fill/#fff text; focus shows the 1px auto outline."
+   },
+   "pill-dark-track": {
+    "type": "other",
+    "value": {
+     "default": {
+      "backgroundColor": "rgb(27, 27, 27)",
+      "color": "rgb(255, 255, 255)",
+      "transform": "none",
+      "outlineStyle": "none"
+     },
+     "hover": {
+      "backgroundColor": "rgb(78, 78, 78)",
+      "color": "rgb(255, 255, 255)",
+      "transform": "none",
+      "outlineStyle": "none"
+     },
+     "pressed": {
+      "backgroundColor": "rgb(78, 78, 78)",
+      "color": "rgb(255, 255, 255)",
+      "transform": "none",
+      "outlineStyle": "none"
+     },
+     "focus-visible": {
+      "backgroundColor": "rgb(27, 27, 27)",
+      "color": "rgb(255, 255, 255)",
+      "transform": "none",
+      "outlineStyle": "auto"
+     }
+    },
+    "source": "computed styles of nav-demo across states (raw/components-computed.json)",
+    "description": "Dark pill (nav Book a demo): #1b1b1b fill/#fff text at rest; tracks across hover/pressed."
+   },
+   "nav-link-state-track": {
+    "type": "other",
+    "value": {
+     "default": {
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "color": "rgb(27, 27, 27)",
+      "transform": "none",
+      "outlineStyle": "none"
+     },
+     "hover": {
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "color": "rgb(27, 27, 27)",
+      "transform": "none",
+      "outlineStyle": "none"
+     },
+     "pressed": {
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "color": "rgb(27, 27, 27)",
+      "transform": "none",
+      "outlineStyle": "none"
+     },
+     "focus-visible": {
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "color": "rgb(27, 27, 27)",
+      "transform": "none",
+      "outlineStyle": "auto"
+     },
+     "opened": {
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "color": "rgb(27, 27, 27)",
+      "transform": "none",
+      "outlineStyle": "none"
+     }
+    },
+    "source": "computed styles of nav-link across states (raw/components-computed.json)",
+    "description": "Nav item: #1b1b1b Bagoss text at rest; tracks across hover/pressed/focus."
+   },
+   "tile-state-track": {
+    "type": "other",
+    "value": {
+     "default": {
+      "backgroundColor": "oklab(0.999994 0.0000455678 0.0000200868 / 0.04)",
+      "color": "rgb(255, 255, 255)",
+      "transform": "none",
+      "outlineStyle": "none"
+     },
+     "hover": {
+      "backgroundColor": "oklab(0.999994 0.0000455678 0.0000200868 / 0.04)",
+      "color": "rgb(255, 255, 255)",
+      "transform": "none",
+      "outlineStyle": "none"
+     },
+     "pressed": {
+      "backgroundColor": "oklab(0.999994 0.0000455678 0.0000200868 / 0.08)",
+      "color": "rgb(255, 255, 255)",
+      "transform": "none",
+      "outlineStyle": "none"
+     },
+     "focus-visible": {
+      "backgroundColor": "oklab(0.999994 0.0000455678 0.0000200868 / 0.04)",
+      "color": "rgb(255, 255, 255)",
+      "transform": "none",
+      "outlineStyle": "none"
+     }
+    },
+    "source": "computed styles of hero-tile across states (raw/components-computed.json)",
+    "description": "Hero tile: 4%-white glass at rest on the purple panel; tracks across hover/pressed/focus."
+   },
+   "faq-state-track": {
+    "type": "other",
+    "value": {
+     "default": {
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "color": "rgba(0, 0, 0, 0.87)",
+      "transform": "none",
+      "outlineStyle": "none"
+     },
+     "opened": {
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "color": "rgba(0, 0, 0, 0.87)",
+      "transform": "none",
+      "outlineStyle": "none"
+     }
+    },
+    "source": "computed styles of faq-item across states (raw/components-computed.json)",
+    "description": "FAQ accordion summary: MUI MuiAccordionSummary at rest and opened via its own click toggle."
+   }
+  },
+  "focus-ring": {
+   "value": "auto rgb(16, 16, 16)",
+   "type": "other",
+   "source": "computed outline of promo-cta/nav controls focus-visible (raw/components-computed.json)",
+   "description": "The browser's 1px auto outline in #101010/own colour — no custom focus ring is painted."
+  }
+ }
+}
