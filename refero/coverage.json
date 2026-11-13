@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 123,
-    "system_domains": 115,
-    "matched_domains": 90,
-    "missing_domains": 343,
+    "system_packages": 124,
+    "system_domains": 116,
+    "matched_domains": 91,
+    "missing_domains": 342,
     "system_domains_absent_from_catalog": 25
   },
   "matched": {
@@ -1392,6 +1392,23 @@
         }
       ]
     },
+    "excalidraw.com": {
+      "catalog": [
+        {
+          "name": "Excalidraw",
+          "domain": "excalidraw.com",
+          "id": 477
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "excalidraw",
+          "name": "Excalidraw",
+          "url": "https://excalidraw.com",
+          "name_match": true
+        }
+      ]
+    },
     "github.com": {
       "catalog": [
         {
@@ -1833,13 +1850,6 @@
         "name": "Exactly.ai",
         "domain": "exactly.ai",
         "id": 645
-      }
-    ],
-    "excalidraw.com": [
-      {
-        "name": "Excalidraw",
-        "domain": "excalidraw.com",
-        "id": 477
       }
     ],
     "expedia.com": [

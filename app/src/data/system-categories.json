@@ -736,5 +736,11 @@
     "groupId": "web-categories",
     "labels": ["AI Tool"],
     "reason": "catalog.json describes a multi-model AI creation workspace: a prompt composer, 70+ generation models and free tool pages on a signed-out public system."
+  },
+  {
+    "referenceId": "systems:excalidraw",
+    "groupId": "web-categories",
+    "labels": ["Design & Media Editing"],
+    "reason": "catalog.json describes a whiteboard/drawing editor: tool islands, a properties sidebar, a shape library and image export on a signed-out public canvas."
   }
 ]
