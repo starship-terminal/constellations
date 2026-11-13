@@ -1,7 +1,7 @@
 {
  "date": "2026-11-13",
  "rubric": "4",
- "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): Re-applying the curater review after merging main into the capture branch (audit snapshot index collision; grades unchanged)",
+ "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): re-applied from snapshot 2026-11-13-12 after stale-base carry-forward dropped the review",
  "systems": [
   {
    "slug": "brilliant",
@@ -13652,87 +13652,95 @@
    "reviewedPlatform": "web"
   },
   {
-   "slug": "curater",
+   "slug": "docusign",
    "grades": {
     "F1": {
      "grade": "partly",
-     "evidence": "Declared ramps, sparse per hue: the Tailwind subset (orange/purple/green ~4 steps each, gray/neutral 2-5 steps, single-step amber/blue/emerald/red/yellow), the 6-step --Curater-gray-* ramp and the 9 single-hue --Curater-selection-* tag palette — all css-var evidence in tokens.json (core.color.*). No hue reaches a ~10-step ramp."
+     "evidence": "Ramps exist per hue family but are short measured state ramps: cobalt #4c00ff/#4000cc/#330099, auth-deep violet #260559/#2b047f/#37039e, a 7-step ink alpha ramp, plus the declared --ds-* palette (mist, ecru, poppy). The only 10-step ramp is the sierra.chat assistant's accentBlue layer, a vendor surface kept at vendor provenance."
     },
     "F2": {
-     "grade": "partly",
-     "evidence": "light.color.background.* holds page #fff, app-field #f2f2f2, card #fff, muted/accent fills #f4f4f5, sidebar #fafafa and popover #fff — real page/surface/fill roles. No raised, overlay or scrim role paints on the public surface."
+     "grade": "meets",
+     "evidence": "light.color has page (white), surface.card/raised white, surface.band deep violet, surface.wash, surface.ecru, surface.violet, surface.mist and overlay.scrim (90% ink, from the video dialog)."
     },
     "F3": {
      "grade": "partly",
-     "evidence": "text #09090b, text-strong #18181b, muted #71717b, secondary-text #7c7c7c (the login label), label #afafaf ('Curated by'), on-primary #fafafa and white teaser text on the globe — measured or declared. No disabled or link-specific role on the public surface."
+     "evidence": "text.primary/secondary/tertiary/on-dark/on-violet-quiet are measured; the link colour sits under action.link. No disabled text or error message text was observable on the signed-out surface."
     },
     "F4": {
-     "grade": "partly",
-     "evidence": "border #eeeef1, input #e4e4e7, sidebar-border #e4e4e7 and the #d4d4d8 focus ring (--ring, measured 2px solid offset 2px on every control). Default + focus roles exist; no strong/hover border scale."
+     "grade": "meets",
+     "evidence": "border.default (15% ink hairline), border.strong (50% ink, plan cards), border.ecom, border.auth, border.mist and border.focus (cobalt) are all captured."
     },
     "F5": {
      "grade": "meets",
-     "evidence": "All three states measured on every control: white pill buttons fill #f2f2f2 on hover and sink 2px (translateY) on press; nav icons fill #f4f4f5 and ink on hover/pressed; the active page keeps the #f2f2f2 fill; focus-visible draws the same 2px #d4d4d8 ring everywhere."
+     "evidence": "action.primary-bg/#4000cc hover/#330099 pressed, action.ink-bg with hover and pressed triples, action.link + link-pressed — all measured with CDP-forced pressed."
     },
     "F6": {
      "grade": "missing",
-     "evidence": "--Curater-green/-green-background/-green-dark and --Curater-red/-red-light/-red-dark are declared in the var layer, but no success/warning/danger/info set with fill+text+border roles paints anywhere on the public surface."
+     "evidence": "Only color.error (#ff0000, the generator canvas default) and the assistant's green focus ring were observable; success/warning/info palettes live on authenticated and transactional surfaces."
     },
     "F7": {
      "grade": "meets",
-     "evidence": "The product paints a single theme; every semantic colour role exists in that theme and no second theme is offered or painted (the TasteScope globe is a canvas asset, not a theme). Parity holds by construction."
+     "evidence": "The product ships one public theme; every semantic role in the package exists in it (catalog themes: light only)."
     },
     "F8": {
      "grade": "meets",
-     "evidence": "ABCDiatype with an 11-entry fallback stack (measured) + the declared --font-sans Tailwind stack; the --text-xs..5xl ramp (8 sizes with line-heights), measured weights 400/500 (declared 600/700 too). 24px titles, 20px teaser, 16px base, 14px field, 12px labels."
+     "evidence": "Four families with fallback stacks (sans, sans-app, mono, signature scripts), an 11-step named scale (display 80 through tiny), weights 300-700, line heights and tracking all measured."
     },
     "F9": {
      "grade": "meets",
-     "evidence": "Declared --spacing = 4px unit with --space-1..12 steps (4-48px) plus --spacing-curation-detail 56px, --header-height/--mobile-bar-height 56px, --sidebar-width 80px and --centered-content-width 480px — a real declared scale (core.spacing.*)."
+     "evidence": "A 12-step spacing scale on a 4px base, tokenised from measured padding and gaps."
     },
     "F10": {
-     "grade": "meets",
-     "evidence": "Declared --radius-sm 6px, --radius-md 8px, --radius(base) 10px, --radius-lg 12px, --radius-xl 16px, --radius-2xl 20px and --radius-full 9999px — plus the measured 24px trend-card radius. Pills on every button/chip/nav icon, square media."
+     "grade": "partly",
+     "evidence": "Radius scale 2-16 + pill is tokenised; border widths exist only inside component specs (1px hairlines, 2px rings), not as a width scale."
     },
     "F11": {
-     "grade": "meets",
-     "evidence": "Measured control geometry: 48px nav buttons, 58px sign-in/SSO pills, 42px TasteScope, 40px tabs/mobile buttons, 36px back, 32px options, 28px chips/menu, 20px search toggle; the shared 2px + 2px-offset focus ring (light.component.*)."
+     "grade": "partly",
+     "evidence": "Control heights are recorded per component (61px fields, 45px CTA, 28px toggle); the focus ring's 2px width at 2px offset is in focus.ring's value. No icon-size scale: glyphs come from the 7_Docusign icon font, and no icon extraction ran."
     },
     "F12": {
-     "grade": "partly",
-     "evidence": "Three declared levels (--shadow-sm/md/xl; core.shadow.*) plus the measured trend-card lift (rgba(0,0,0,.02) 0 14px 54px). The public surface is mostly flat — the levels exist but carry little differentiated use."
+     "grade": "meets",
+     "evidence": "Six shadow tokens each tied to a use: soft (tabs/cards), launcher (chat pill), field-focus, ring-double (ecom focus), mist-ring, hairline-inset."
     },
     "F13": {
      "grade": "partly",
-     "evidence": "Declared --transition-fast .15s / normal .2s / slow .3s / slower .5s on --ease-out-expo, plus the Tailwind default duration/easing (core.motion.*). Reduced-motion behaviour never observed on the public surface."
+     "evidence": "Four durations (fast, colour, field, panel) measured from transitions; no distinct easing tokens (all easings were cubic-bezier on the same curve) and prefers-reduced-motion behaviour was not observable."
     },
     "F14": {
      "grade": "partly",
-     "evidence": "Declared layers --z-base..tooltip (0-80), widths 480px centred content / 80px sidebar / 56px bars and --container-* sizes; measured inner-scroll feed and mobile 390 collapse. No breakpoint ramp painted beyond the mobile pass."
+     "evidence": "Breakpoints (1440/390 with restacked mobile), content widths (1360px menu, 1280px FAQ) and z-layers (sticky header, 9999px-pill launcher, modal scrim) are documented in patterns.md and component entries, not as layout tokens."
     },
     "C1": {
      "grade": "partly",
-     "evidence": "47 components measured: buttons (pill CTAs, SSO, Save chip), icon buttons (nav/settings/back/options/menu), links (title/album/login), text field (search), tabs, cards (theme/trend/profile item), media items and labels. No textarea, select, checkbox, dialog, toast or table exists on the public surface."
+     "evidence": "13-14 of the 19 checklist items: button, icon button, link, text field, select, checkbox, tabs, menu, dialog, card, list row (FAQ/feature rows) — plus the billing toggle read as segmented radios and story-logo tiles. Text area, switch, tooltip, toast, table, avatar and badge do not appear on the signed-out surface."
     },
     "C2": {
-     "grade": "partly",
-     "evidence": "default/hover/focus-visible/pressed measured on every interactive control; search-field also 'focused' (clicked in). Disabled, error and loading states never appear on the public surface — documented gaps."
+     "grade": "meets",
+     "evidence": "209 states across 73 components: hover, focus-visible (real keyboard focus), pressed (CDP-forced), focused and filled on fields, selected on swatches/faces, open on menus/dialogs/accordions. Disabled, loading and error states are not reachable without submitting."
     },
     "C3": {
      "grade": "meets",
-     "evidence": "A real keyboard focus was held on 8+ controls; every one draws the same visible ring — 2px solid #d4d4d8 (--ring), 2px offset — recorded in components-computed.json and the light.component.focus-ring token."
+     "evidence": "A visible focus state is captured for every interactive component — cobalt 2px+2px rings on marketing, mist on violet bands, the white+cobalt double ring on ecom, inkwell on the account card."
     },
     "C4": {
+     "grade": "meets",
+     "evidence": "Every components.md entry annotates values with the palette token that carries them ('#ffffff color.white'), and component specs in raw/component-tokens.json are written against the token names."
+    },
+    "P1": {
      "grade": "partly",
-     "evidence": "components.md writes each entry's computed value followed by the matching palette token (`#f2f2f2 'core.color.curater.background'`); spec details like state tracks and the focus ring are emitted as component tokens. Not every value resolves to a named token."
+     "evidence": "patterns.md covers the app shell (two-bar chrome, mega-menu, footer), forms (hero capture, trial, sign-in), filtering (stories filters, billing toggle), data display (cards, accordion, plan tables) and the generator workflow. Empty/loading/error, destructive confirmation and onboarding exist only behind auth or form submission."
+    },
+    "A1": {
+     "grade": "partly",
+     "evidence": "Fonts are named with fallbacks (DSIndigo/'DS Indigo', Noto Sans Mono, six script faces, 7_Docusign icon font) — all proprietary, no licence file. No icon set was extracted (catalog layoutGaps); glyphs appear in crops only."
+    },
+    "K1": {
+     "grade": "meets",
+     "evidence": "README covers the three-surface capture, the vars/measure/screenshot pipeline, the regional ecom redirect caveat, vendor-variable provenance, Emotion-hash fragility and the signed-out boundary."
     },
     "C5": {
      "grade": "na",
      "evidence": "Optional for a capture, and this product does not publish it."
-    },
-    "P1": {
-     "grade": "partly",
-     "evidence": "patterns.md documents the shell (rail/header/mobile bar), home, feed (inner-scroll bound), taste, curation, profile and terms layouts. No forms/validation, empty/loading/error or destructive-confirmation patterns exist on the public surface."
     },
     "V1": {
      "grade": "na",
@@ -13742,44 +13750,36 @@
      "grade": "na",
      "evidence": "Optional for a capture, and this product does not publish it."
     },
-    "A1": {
-     "grade": "partly",
-     "evidence": "icon.png (128px, the Curater grape-cluster mark) captured in LFS and registered in the catalog preview; ABCDiatype named with its fallback stack (files not shipped). No standalone SVG icon set lifted — declared under layoutGaps."
-    },
-    "K1": {
-     "grade": "meets",
-     "evidence": "README documents what was captured, how (routes, widths, signed-out), the boundaries (inner-scroll feed bound, signed-in app, one curation/profile as representatives, /taste redirect) and the layoutGap for icons/."
-    },
     "F15": {
-     "grade": "partly",
-     "evidence": "Script: primary text passes; secondary fails 1 pair, worst 4.31:1 light muted (light.color.text.muted) on surface (light.color.background.app-field)"
+     "grade": "meets",
+     "evidence": "Script: all 4 pairs pass 4.5:1 across 1 themes; lowest 9.37:1 light muted (light.color.text.secondary) on page (light.color.page)"
     },
     "F16": {
      "grade": "meets",
-     "evidence": "Script: 176 of 176 tokens name their source"
+     "evidence": "Script: 181 of 181 tokens name their source"
     },
     "K2": {
-     "grade": "missing",
-     "evidence": "Script: no \"Do and don't\" section in the README"
+     "grade": "meets",
+     "evidence": "Script: 7 rules, each linking a screenshot or crop"
     },
     "K3": {
      "grade": "meets",
      "evidence": "Script: DESIGN.md matches a fresh generation"
     }
    },
-   "name": "Curater",
-   "goodFor": "Visual-curation community surfaces: ABCDiatype over a #fff/#f2f2f2 field, a 48px icon rail whose active page fills #f2f2f2, white 9999px pill buttons that fill #f2f2f2 and sink 2px on press, the 9-hue --Curater-selection-* tag palette, 24px-radius media cards, a collapsible 170px search field, the TasteScope WebGL globe teaser and public /feed /curation/<id> /profile grids",
-   "url": "https://curater.org",
-   "captured": "2026-11-12",
+   "name": "DocuSign",
+   "goodFor": "Agreement-platform marketing plus a live signature tool: inkwell #130032 on white with deep-violet #26065d bands and cobalt #4c00ff actions (#4000cc hover, #330099 pressed), declared --ds-* tokens on the signature generator, DS Indigo weight-300 display type, squared 4-8px radii, 2px cobalt focus rings and a white+cobalt double ring on the ecom storefront",
+   "url": "https://www.docusign.com",
+   "captured": "2026-11-13",
    "themes": [
     "light"
    ],
    "platform": "web",
-   "category": "Media",
+   "category": "Productivity",
    "reviewed": "2026-11-13",
    "reviewedPlatform": "web"
   }
  ],
  "base": "2026-10-16",
- "reviewMethod": "Re-applying the curater review after merging main into the capture branch (audit snapshot index collision; grades unchanged)"
+ "reviewMethod": "re-applied from snapshot 2026-11-13-12 after stale-base carry-forward dropped the review"
 }
