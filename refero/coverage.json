@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 96,
-    "system_domains": 88,
-    "matched_domains": 63,
-    "missing_domains": 370,
+    "system_packages": 97,
+    "system_domains": 89,
+    "matched_domains": 64,
+    "missing_domains": 369,
     "system_domains_absent_from_catalog": 25
   },
   "matched": {
@@ -899,6 +899,23 @@
         }
       ]
     },
+    "doppler.com": {
+      "catalog": [
+        {
+          "name": "Doppler",
+          "domain": "doppler.com",
+          "id": 193
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "doppler",
+          "name": "Doppler",
+          "url": "https://www.doppler.com",
+          "name_match": true
+        }
+      ]
+    },
     "drinkdouze.com": {
       "catalog": [
         {
@@ -1423,13 +1440,6 @@
         "name": "Dopper",
         "domain": "dopper.com",
         "id": 723
-      }
-    ],
-    "doppler.com": [
-      {
-        "name": "Doppler",
-        "domain": "doppler.com",
-        "id": 193
       }
     ],
     "dribbble.com": [
