@@ -1046,6 +1046,11 @@
       "referenceId": "systems:elektron",
       "media": 136,
       "assignedMedia": 54
+    },
+    {
+      "referenceId": "systems:elementor",
+      "media": 126,
+      "assignedMedia": 126
     }
   ],
   "assignments": [
@@ -231499,6 +231504,1647 @@
           "termId": "web-ui-elements:text-field",
           "rule": "ui-text-field",
           "reason": "Capture filename explicitly names text field; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/screenshots/about-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:about",
+          "rule": "page-about",
+          "reason": "Capture filename explicitly names about; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/screenshots/about-light-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:about",
+          "rule": "page-about",
+          "reason": "Capture filename explicitly names about; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/screenshots/builder-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/screenshots/builder-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/screenshots/contact-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:contacts",
+          "rule": "page-contacts",
+          "reason": "Capture filename explicitly names contacts; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/screenshots/contact-light-form.png",
+      "terms": [
+        {
+          "termId": "web-page-types:contacts",
+          "rule": "page-contacts",
+          "reason": "Capture filename explicitly names contacts; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/screenshots/contact-light-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:contacts",
+          "rule": "page-contacts",
+          "reason": "Capture filename explicitly names contacts; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/screenshots/enterprise-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/screenshots/enterprise-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/screenshots/faq-light-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/screenshots/faq-light-full.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/screenshots/faq-light-open.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/screenshots/home-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/screenshots/home-light-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/screenshots/home-light-menu.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/screenshots/mobile-home-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/screenshots/mobile-home-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/screenshots/mobile-home-light-menu.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/screenshots/mobile-pricing-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/screenshots/mobile-pricing-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/screenshots/pricing-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/screenshots/pricing-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/screenshots/pricing-light-plans.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/carousel-arrow-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:carousel",
+          "rule": "ui-carousel",
+          "reason": "Capture filename explicitly names carousel; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/carousel-arrow-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:carousel",
+          "rule": "ui-carousel",
+          "reason": "Capture filename explicitly names carousel; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/carousel-arrow-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:carousel",
+          "rule": "ui-carousel",
+          "reason": "Capture filename explicitly names carousel; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/carousel-arrow-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:carousel",
+          "rule": "ui-carousel",
+          "reason": "Capture filename explicitly names carousel; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/checkbox-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:checkbox-radio",
+          "rule": "ui-checkbox-radio",
+          "reason": "Capture filename explicitly names checkbox & radio; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/checkbox-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:checkbox-radio",
+          "rule": "ui-checkbox-radio",
+          "reason": "Capture filename explicitly names checkbox & radio; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/checkbox-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:checkbox-radio",
+          "rule": "ui-checkbox-radio",
+          "reason": "Capture filename explicitly names checkbox & radio; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/checkbox-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:checkbox-radio",
+          "rule": "ui-checkbox-radio",
+          "reason": "Capture filename explicitly names checkbox & radio; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/checkbox-selected.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:checkbox-radio",
+          "rule": "ui-checkbox-radio",
+          "reason": "Capture filename explicitly names checkbox & radio; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/contact-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/contact-card-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/contact-card-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/contact-card-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/contact-h1-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/cta-dark-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/cta-dark-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/cta-dark-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/cta-dark-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/faq-answer-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/faq-h1-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/faq-item-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/faq-item-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/faq-item-hover.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/faq-item-open-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/faq-item-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/feature-row-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/field-email-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/field-email-focused.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/field-message-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:chat-messages",
+          "rule": "ux-chat",
+          "reason": "Capture filename explicitly names chat & messages; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/field-message-focused.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:chat-messages",
+          "rule": "ux-chat",
+          "reason": "Capture filename explicitly names chat & messages; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/field-name-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/field-name-filled.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/field-name-focused.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/footer-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/footer-link-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/footer-link-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/footer-link-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/footer-link-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/form-popup-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/h2-section-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/header-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/hero-cta-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/hero-cta-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/hero-cta-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/hero-cta-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/hero-lede-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/hero-title-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/icon-item-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:icon",
+          "rule": "ui-icon",
+          "reason": "Capture filename explicitly names icon; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/logo-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/m-header-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/m-hero-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/m-menu-button-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/m-menu-open-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/m-nav-item-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/m-nav-item-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/m-nav-item-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/m-nav-item-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/menu-feature-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/menu-feature-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/menu-feature-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/menu-feature-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/menu-link-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/menu-link-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/menu-link-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/menu-link-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/nav-cta-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/nav-cta-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/nav-cta-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/nav-cta-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/nav-dropdown-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dropdown",
+          "rule": "ui-dropdown",
+          "reason": "Capture filename explicitly names dropdown; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/nav-link-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/nav-link-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/nav-link-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/nav-link-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/nav-login-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/nav-login-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/nav-login-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/nav-login-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/nav-trigger-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/nav-trigger-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/nav-trigger-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/nav-trigger-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/plan-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/plan-cta-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/plan-cta-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/plan-cta-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/plan-cta-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/plan-name-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/plan-price-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/plan-toggle-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:switch-toggle",
+          "rule": "ui-toggle",
+          "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/plan-toggle-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:switch-toggle",
+          "rule": "ui-toggle",
+          "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/plan-toggle-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:switch-toggle",
+          "rule": "ui-toggle",
+          "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/plan-toggle-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:switch-toggle",
+          "rule": "ui-toggle",
+          "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/pricing-h1-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/social-icon-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:icon",
+          "rule": "ui-icon",
+          "reason": "Capture filename explicitly names icon; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/social-icon-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:icon",
+          "rule": "ui-icon",
+          "reason": "Capture filename explicitly names icon; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/social-icon-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:icon",
+          "rule": "ui-icon",
+          "reason": "Capture filename explicitly names icon; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/social-icon-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:icon",
+          "rule": "ui-icon",
+          "reason": "Capture filename explicitly names icon; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/submit-btn-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/submit-btn-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/submit-btn-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:elementor",
+      "mediaId": "systems/elementor/components/crops/submit-btn-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:roobert",
+          "rule": "font-primary",
+          "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
         }
       ]
     }
