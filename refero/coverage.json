@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 91,
-    "system_domains": 83,
-    "matched_domains": 58,
-    "missing_domains": 375,
+    "system_packages": 99,
+    "system_domains": 91,
+    "matched_domains": 66,
+    "missing_domains": 367,
     "system_domains_absent_from_catalog": 25
   },
   "matched": {
@@ -814,6 +814,91 @@
         }
       ]
     },
+    "dock.us": {
+      "catalog": [
+        {
+          "name": "Dock",
+          "domain": "dock.us",
+          "id": 465
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "dock",
+          "name": "Dock",
+          "url": "https://dock.us",
+          "name_match": true
+        }
+      ]
+    },
+    "doctronic.ai": {
+      "catalog": [
+        {
+          "name": "Doctronic AI",
+          "domain": "doctronic.ai",
+          "id": 940
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "doctronic",
+          "name": "Doctronic",
+          "url": "https://www.doctronic.ai",
+          "name_match": true
+        }
+      ]
+    },
+    "docusign.com": {
+      "catalog": [
+        {
+          "name": "DocuSign",
+          "domain": "docusign.com",
+          "id": 31
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "docusign",
+          "name": "DocuSign",
+          "url": "https://www.docusign.com",
+          "name_match": true
+        }
+      ]
+    },
+    "dona.ai": {
+      "catalog": [
+        {
+          "name": "Dona",
+          "domain": "dona.ai",
+          "id": 643
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "dona",
+          "name": "Dona",
+          "url": "https://dona.ai",
+          "name_match": true
+        }
+      ]
+    },
+    "doordash.com": {
+      "catalog": [
+        {
+          "name": "DoorDash",
+          "domain": "doordash.com",
+          "id": 298
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "doordash",
+          "name": "DoorDash",
+          "url": "https://www.doordash.com",
+          "name_match": true
+        }
+      ]
+    },
     "dopper.com": {
       "catalog": [
         {
@@ -827,6 +912,57 @@
           "slug": "dopper",
           "name": "Dopper",
           "url": "https://dopper.com",
+          "name_match": true
+        }
+      ]
+    },
+    "doppler.com": {
+      "catalog": [
+        {
+          "name": "Doppler",
+          "domain": "doppler.com",
+          "id": 193
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "doppler",
+          "name": "Doppler",
+          "url": "https://www.doppler.com",
+          "name_match": true
+        }
+      ]
+    },
+    "drinkdouze.com": {
+      "catalog": [
+        {
+          "name": "Douze",
+          "domain": "drinkdouze.com",
+          "id": 688
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "drinkdouze",
+          "name": "Douze",
+          "url": "https://drinkdouze.com",
+          "name_match": false
+        }
+      ]
+    },
+    "dropbox.com": {
+      "catalog": [
+        {
+          "name": "Dropbox",
+          "domain": "dropbox.com",
+          "id": 2
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "dropbox",
+          "name": "Dropbox",
+          "url": "https://www.dropbox.com",
           "name_match": true
         }
       ]
@@ -1333,67 +1469,11 @@
         "id": 332
       }
     ],
-    "dock.us": [
-      {
-        "name": "Dock",
-        "domain": "dock.us",
-        "id": 465
-      }
-    ],
-    "doctronic.ai": [
-      {
-        "name": "Doctronic AI",
-        "domain": "doctronic.ai",
-        "id": 940
-      }
-    ],
-    "docusign.com": [
-      {
-        "name": "DocuSign",
-        "domain": "docusign.com",
-        "id": 31
-      }
-    ],
-    "dona.ai": [
-      {
-        "name": "Dona",
-        "domain": "dona.ai",
-        "id": 643
-      }
-    ],
-    "doordash.com": [
-      {
-        "name": "DoorDash",
-        "domain": "doordash.com",
-        "id": 298
-      }
-    ],
-    "doppler.com": [
-      {
-        "name": "Doppler",
-        "domain": "doppler.com",
-        "id": 193
-      }
-    ],
     "dribbble.com": [
       {
         "name": "Dribbble",
         "domain": "dribbble.com",
         "id": 257
-      }
-    ],
-    "drinkdouze.com": [
-      {
-        "name": "Douze",
-        "domain": "drinkdouze.com",
-        "id": 688
-      }
-    ],
-    "dropbox.com": [
-      {
-        "name": "Dropbox",
-        "domain": "dropbox.com",
-        "id": 2
       }
     ],
     "dub.co": [
