@@ -598,5 +598,11 @@
     "groupId": "web-categories",
     "labels": ["Productivity"],
     "reason": "catalog.json describes a global payroll/HR SaaS marketing site: product pages, pricing tiers and demo CTAs for workforce management."
+  },
+  {
+    "referenceId": "systems:cartesia",
+    "groupId": "web-categories",
+    "labels": ["AI Tool"],
+    "reason": "catalog.json describes a real-time AI voice and audio product (text-to-speech, voice agents) \u2014 the AI Tool label."
   }
 ]
