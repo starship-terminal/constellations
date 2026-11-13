@@ -7124,7 +7124,7 @@
         ],
         "durationMin": 0,
         "durationNote": "resumed capture: screenshots and recon predated this pass; measurement, tokens, docs and the rubric review completed in this session",
-        "pr": ""
+        "pr": "https://github.com/starship-terminal/constellations/pull/530"
       },
       "layoutGaps": {
         "icons/": "no standalone SVG icon set was lifted; the wordmark, SSO glyphs, chevrons and footer arrows are visible in the crops and screenshots"
