@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 101,
-    "system_domains": 93,
-    "matched_domains": 68,
-    "missing_domains": 365,
+    "system_packages": 102,
+    "system_domains": 94,
+    "matched_domains": 69,
+    "missing_domains": 364,
     "system_domains_absent_from_catalog": 25
   },
   "matched": {
@@ -751,6 +751,23 @@
         }
       ]
     },
+    "care.com": {
+      "catalog": [
+        {
+          "name": "Care",
+          "domain": "care.com",
+          "id": 908
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "care",
+          "name": "Care.com",
+          "url": "https://www.care.com",
+          "name_match": true
+        }
+      ]
+    },
     "cartesia.ai": {
       "catalog": [
         {
@@ -1249,13 +1266,6 @@
         "name": "Calm",
         "domain": "calm.com",
         "id": 227
-      }
-    ],
-    "care.com": [
-      {
-        "name": "Care",
-        "domain": "care.com",
-        "id": 908
       }
     ],
     "chargetrip.com": [

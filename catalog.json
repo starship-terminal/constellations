@@ -6830,6 +6830,101 @@
       }
     },
     {
+      "slug": "care",
+      "name": "Care.com",
+      "url": "https://www.care.com",
+      "category": "e-commerce",
+      "platform": "web",
+      "goodFor": "Marketplace and category landing pages with a warm high-trust system: a strict deep-green #025747 / lime #d0f5a3 brand pair (the pills go #e4ffb8 on hover and #8ae718 on press), capsule CTAs, 27-32px cards, NaN Druid Sans 64px display over Oceanic Grotesk UI text, the public /babysitters caregiver listing, and the deep-green footer panel",
+      "tags": [
+        "web",
+        "marketplace",
+        "care",
+        "saas",
+        "marketing",
+        "nextjs",
+        "mui",
+        "light",
+        "listing",
+        "signed-out"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-12",
+      "access": "signed out (every captured surface is public; the member dashboard, messaging, bookings, payments, applications and plan checkout sit behind /vis/auth/login and were never reached; the login and get-started shells were measured as boundary cards, never filled)",
+      "themes": ["light", "dark"],
+      "widths": [1440, 390],
+      "entry": "systems/care/README.md",
+      "tokens": "systems/care/tokens.json",
+      "styleGuide": "systems/care/style-guide.html",
+      "preview": {
+        "cover": "systems/care/screenshots/home-light-default.png",
+        "icon": "systems/care/icon.png",
+        "swatches": {
+          "light": {
+            "page": "core.color.neutral.white",
+            "surface": "core.color.neutral.grey-hover",
+            "text": "core.color.neutral.ink",
+            "muted": "core.color.neutral.muted",
+            "accent": "core.color.brand.lime",
+            "border": "core.color.brand.green"
+          },
+          "dark": {
+            "page": "core.color.brand.green",
+            "surface": "core.color.brand.green-link",
+            "text": "core.color.neutral.white",
+            "muted": "core.color.brand.lime-hover",
+            "accent": "core.color.brand.lime",
+            "border": "core.color.brand.green-link"
+          }
+        },
+        "fonts": [
+          "core.font.family.sans",
+          "core.font.family.display",
+          "core.font.family.accent"
+        ]
+      },
+      "capture": {
+        "method": "public-web",
+        "source": "care.com (a Next.js app over an MUI component layer \u2014 CareHeaderContainer/MegaMenu/CareMobileDrawer/CareTag \u2014 plus a legacy Proxima Nova login surface at /vis/auth) in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and crops from the live DOM. The site declares almost no custom properties, so tokens are measured computed values plus the @font-face list; /babysitters is a real public marketplace listing (first name + initial, photos, rates, tags \u2014 no contact details). The member product behind the login/join shells is a documented boundary",
+        "timestamp": "2026-11-12T06:00:00Z",
+        "harness": "Devin",
+        "model": "SWE-2 High",
+        "route": "public-web",
+        "routes": [
+          "/",
+          "/child-care",
+          "/senior-care",
+          "/pet-care",
+          "/housekeeping",
+          "/tutoring",
+          "/babysitters",
+          "/about/safety/",
+          "/c/",
+          "/about/",
+          "/app/vhp/plans-and-pricing",
+          "/vis/auth/login",
+          "/app/vhp/get-started",
+          "/caregiver-rates",
+          "/about/terms-of-use",
+          "mobile /, /child-care, /senior-care, /pet-care, /housekeeping, /tutoring, /babysitters, /about/safety/, /app/vhp/plans-and-pricing, /vis/auth/login, /app/vhp/get-started"
+        ],
+        "gaps": [
+          "the signed-in member product entirely: dashboard, messaging, bookings, payments, job applications and full caregiver profiles live behind auth and were never reached",
+          "the login email step and the get-started chooser were captured as boundary cards, never filled or submitted; the password step and two-factor screens were never reached",
+          "search, booking and checkout were never followed; every ZIP Search, City/State, Filter, provider link, Join-now and Get-started action was measured only",
+          "the Join Care.com signup gate mounts over the listing on scroll and is frequency-capped; it was recorded missing on the final pass",
+          "DataDome rate-limits the edge: mid-capture the client hit a reCAPTCHA interstitial and the run paused until the flag cleared; a route that stays challenged is logged BLOCKED, never fought",
+          "icons: no standalone SVG set lifted this pass"
+        ],
+        "durationMin": 300,
+        "durationNote": "wall-clock across the two capture sessions: public.mjs screenshot pass (50 shots over ~25 min at 20 s pacing) plus six measure.mjs runs around a DataDome challenge pause, the harness adaptation and the offline build",
+        "pr": "https://github.com/starship-terminal/constellations/pull/495"
+      },
+      "layoutGaps": {
+        "icons/": "no standalone icon extraction pass this capture; the Care.com wordmark, chevrons, rating stars and social glyphs are visible in the crops and screenshots"
+      }
+    },
+    {
       "slug": "cartesia",
       "name": "Cartesia",
       "url": "https://www.cartesia.ai",

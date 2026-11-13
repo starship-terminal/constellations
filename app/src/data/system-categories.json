@@ -600,6 +600,12 @@
     "reason": "catalog.json describes a global payroll/HR SaaS marketing site: product pages, pricing tiers and demo CTAs for workforce management."
   },
   {
+    "referenceId": "systems:care",
+    "groupId": "web-categories",
+    "labels": ["Marketplace"],
+    "reason": "catalog.json describes a caregiving-services marketplace: public caregiver listings, category landing pages and membership pricing."
+  },
+  {
     "referenceId": "systems:cartesia",
     "groupId": "web-categories",
     "labels": ["AI Tool"],
