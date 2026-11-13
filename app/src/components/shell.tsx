@@ -23,13 +23,22 @@ import {
 import { api, Modal } from "./shared";
 export function Mark() {
   return (
-    <img
-      className="brand-mark"
-      src="/brand/flat/favicon.svg"
-      width="26"
-      height="26"
-      alt=""
-    />
+    <>
+      <img
+        className="brand-mark"
+        src="/brand/flat/favicon.svg"
+        width="26"
+        height="26"
+        alt=""
+      />
+      <img
+        className="brand-mark-glass"
+        src="/brand/glass/icon-192.png"
+        width="26"
+        height="26"
+        alt=""
+      />
+    </>
   );
 }
 export function CatalogNavigation({ onNavigate }: { onNavigate: () => void }) {
