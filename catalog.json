@@ -7124,7 +7124,8 @@
                       "checkout, plan purchase and localized routes were never reached"
                 ],
                 "durationMin": 150,
-                "durationNote": "resumed a dead mid-capture agent: existing raw-shots kept, missing mobile passes re-shot, then vars, measurement, tokens, docs and rubric review across 2026-11-13"
+                "durationNote": "resumed a dead mid-capture agent: existing raw-shots kept, missing mobile passes re-shot, then vars, measurement, tokens, docs and rubric review across 2026-11-13",
+        "pr": "https://github.com/starship-terminal/constellations/pull/529"
           },
           "layoutGaps": {
                 "icons/": "no standalone SVG icon set was lifted; the glyphs (the Endless mark, the model-pill chevron, the send arrow, modality and social icons) are visible in the crops and screenshots"
