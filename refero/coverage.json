@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 101,
-    "system_domains": 93,
-    "matched_domains": 68,
-    "missing_domains": 365,
+    "system_packages": 102,
+    "system_domains": 94,
+    "matched_domains": 69,
+    "missing_domains": 364,
     "system_domains_absent_from_catalog": 25
   },
   "matched": {
@@ -768,6 +768,23 @@
         }
       ]
     },
+    "cartesia.ai": {
+      "catalog": [
+        {
+          "name": "Cartesia",
+          "domain": "cartesia.ai",
+          "id": 756
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "cartesia",
+          "name": "Cartesia",
+          "url": "https://www.cartesia.ai",
+          "name_match": true
+        }
+      ]
+    },
     "chatgpt.com": {
       "catalog": [
         {
@@ -1249,13 +1266,6 @@
         "name": "Calm",
         "domain": "calm.com",
         "id": 227
-      }
-    ],
-    "cartesia.ai": [
-      {
-        "name": "Cartesia",
-        "domain": "cartesia.ai",
-        "id": 756
       }
     ],
     "chargetrip.com": [
