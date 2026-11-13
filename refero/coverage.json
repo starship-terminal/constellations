@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 117,
-    "system_domains": 109,
-    "matched_domains": 84,
-    "missing_domains": 349,
+    "system_packages": 119,
+    "system_domains": 111,
+    "matched_domains": 86,
+    "missing_domains": 347,
     "system_domains_absent_from_catalog": 25
   },
   "matched": {
@@ -1222,6 +1222,23 @@
         }
       ]
     },
+    "editorx.com": {
+      "catalog": [
+        {
+          "name": "Editor X",
+          "domain": "editorx.com",
+          "id": 279
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "editorx",
+          "name": "Editor X (Wix Studio)",
+          "url": "https://www.editorx.com",
+          "name_match": false
+        }
+      ]
+    },
     "elektron.se": {
       "catalog": [
         {
@@ -1269,6 +1286,23 @@
           "slug": "elevenlabs",
           "name": "ElevenLabs",
           "url": "https://elevenlabs.io",
+          "name_match": true
+        }
+      ]
+    },
+    "endel.io": {
+      "catalog": [
+        {
+          "name": "Endel",
+          "domain": "endel.io",
+          "id": 105
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "endel",
+          "name": "Endel",
+          "url": "https://endel.io",
           "name_match": true
         }
       ]
@@ -1691,13 +1725,6 @@
         "id": 332
       }
     ],
-    "editorx.com": [
-      {
-        "name": "Editor X",
-        "domain": "editorx.com",
-        "id": 279
-      }
-    ],
     "elevenmusic.io": [
       {
         "name": "ElevenMusic",
@@ -1710,13 +1737,6 @@
         "name": "ElevenReader",
         "domain": "elevenreader.io",
         "id": 776
-      }
-    ],
-    "endel.io": [
-      {
-        "name": "Endel",
-        "domain": "endel.io",
-        "id": 105
       }
     ],
     "endlesstools.io": [
