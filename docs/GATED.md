@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_64 of 122 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_66 of 124 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -363,6 +363,16 @@ Access: signed out (every captured surface is public: /, /explore, /charts, /tra
 - search is gated: the rail's Search button opens the log-in dialog (captured as evidence), so a real search surface is uncaptured
 - every Create button, prompt submit and Attach control was measured, never pressed — a prompt is a generation request
 - the Get-Pro and Start-free CTAs were measured, never followed past the public card; checkout is uncaptured
+
+## [Deezer](../systems/deezer) — `deezer`
+Access: read-only (the marketing site, the public catalog pages and the account forms are fully public; everything behind account.deezer.com is an authenticated boundary never reached; Try-for-free, Sign-up, Mix, Play, queue and volume actions were measured, never followed; the login and signup forms were never submitted)
+- every post-login surface (library, Flow, playlists, downloads, settings, billing) lives behind account.deezer.com - an authenticated boundary never reached
+- the login and signup forms were measured as forms, never filled or submitted; validation, error and success states are absent rather than measured
+
+## [Delphi](../systems/delphi) — `delphi`
+Access: read-only (the home page, /discover/<topic> galleries, /search/<question> results, /<expert> profiles and /<expert>/chat are fully public signed out; creating a clone, saving perspectives and every post-login surface is an authenticated boundary never reached; Sign In, Continue with Google/Email, Share, Save, Expand, Personalize, suggested-question chips, the microphone and the chat send were measured, never followed or submitted)
+- creating a clone, saving perspectives, personalising results and every post-login surface need an account - an authenticated boundary never reached
+- the Sign-In/onboarding dialogs were measured as dialogs; Continue with Google/Email were never pressed, so the auth flow past the dialog is unmeasured
 
 ## Gate noted in access text only
 
