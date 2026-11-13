@@ -33,6 +33,10 @@ class KitQuantizeTest(unittest.TestCase):
             Image.new("RGB", (4, 3), (10, 20, 30)).save(raw / "page.part0.png")
             Image.new("RGB", (4, 5), (40, 50, 60)).save(raw / "page.part1.png")
             Image.new("RGB", (4, 4), (70, 80, 90)).save(raw / "x.partial.png")
+            # Copies whose public.mjs writes a completion manifest only stitch a
+            # marked set; give this complete two-tile set its manifest.
+            if "parts.json" in source.read_text():
+                (raw / "page.parts.json").write_text('{"tiles": ["page.part0.png", "page.part1.png"]}')
             done = subprocess.run([sys.executable, str(script), str(raw)], capture_output=True, text=True)
             self.assertEqual(done.returncode, 0, done.stderr[-500:])
             with Image.open(raw / "page.png") as im:

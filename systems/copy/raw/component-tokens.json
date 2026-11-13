@@ -1,0 +1,803 @@
+{
+ "_about": "The token tree build_tokens.py turns into tokens.json. copy.ai's public surface is a Webflow site whose small --colors--* declaration (raw/css-vars.json — the brand palette plus the legacy --old-swatches--* set) is var-referenced where it names the brand and neutral values, and measured computed values (raw/components-computed.json) cover the ink/white neutrals, the #693ee0 action purple and its auth-host ramp, the black-button hover-to-purple state move, the hairline borders, the inset shadows, ABC Normal and Inter type, the 4/4.5/5/8/40/48px radii and the 0.1-0.4s control motion. The 'dark' set is the ink banner and the deep-purple card bands the light pages paint, not a user toggle.",
+ "core": {
+  "font": {
+   "family": {
+    "display": {
+     "value": "\"ABC Normal\", sans-serif",
+     "type": "fontFamily",
+     "source": "computed fontFamily of hero-title default (raw/components-computed.json); the @font-face blocks are served from cdn.prod.website-files.com (raw/css-vars.json fonts)",
+     "description": "The display family: ABC Normal (licensed, not distributed), falling back to sans."
+    },
+    "sans": {
+     "value": "Inter, sans-serif",
+     "type": "fontFamily",
+     "source": "computed fontFamily of btn-nav default (raw/components-computed.json)",
+     "description": "The UI family: Inter, falling back to sans."
+    },
+    "auth": {
+     "value": "interFont, \"interFont Fallback\", -apple-system, \"system-ui\", \"Segoe UI (Custom)\", Roboto, \"Helvetica Neue\", \"Open Sans (Custom)\", system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\"",
+     "type": "fontFamily",
+     "source": "computed fontFamily of auth-continue default (raw/components-computed.json)",
+     "description": "The auth host's stack (login.copy.ai): its own interFont bundle then system sans."
+    }
+   },
+   "weight": {
+    "regular": {
+     "value": 400,
+     "type": "fontWeight",
+     "source": "computed fontWeight of hero-sub default (raw/components-computed.json)",
+     "description": "Body and small weight (400)."
+    },
+    "medium": {
+     "value": 500,
+     "type": "fontWeight",
+     "source": "computed fontWeight of dd-link default (raw/components-computed.json)",
+     "description": "The 500 weight on nav items, controls and prices."
+    },
+    "semibold": {
+     "value": 600,
+     "type": "fontWeight",
+     "source": "computed fontWeight of hero-title default (raw/components-computed.json)",
+     "description": "The 600 weight on display headings."
+    },
+    "bold": {
+     "value": 700,
+     "type": "fontWeight",
+     "source": "computed fontWeight of plan-cta default (raw/components-computed.json)",
+     "description": "The 700 weight on button labels and the contact display."
+    }
+   },
+   "size": {
+    "display-hero": {
+     "type": "dimension",
+     "value": "88px",
+     "source": "computed fontSize of hero-title default (raw/components-computed.json)",
+     "description": "The 88px hero display (home)."
+    },
+    "display": {
+     "type": "dimension",
+     "value": "72px",
+     "source": "computed fontSize of contact-h1 default (raw/components-computed.json)",
+     "description": "The 72px 'Got Questions?' display."
+    },
+    "display-page": {
+     "type": "dimension",
+     "value": "64px",
+     "source": "computed fontSize of pricing-h1 default (raw/components-computed.json)",
+     "description": "The 64px page-title display (pricing)."
+    },
+    "h2": {
+     "type": "dimension",
+     "value": "56px",
+     "source": "computed fontSize of section-h2 default (raw/components-computed.json)",
+     "description": "The 56px section heading."
+    },
+    "display-mobile": {
+     "type": "dimension",
+     "value": "42.9px",
+     "source": "computed fontSize of m-hero default (raw/components-computed.json)",
+     "description": "The ~43px display at 390 wide."
+    },
+    "card-title": {
+     "type": "dimension",
+     "value": "32px",
+     "source": "computed fontSize of plan-card default (raw/components-computed.json)",
+     "description": "The 32px card title (plan card)."
+    },
+    "card-title-2": {
+     "type": "dimension",
+     "value": "28px",
+     "source": "computed fontSize of platform-card default (raw/components-computed.json)",
+     "description": "The 28px feature-card title."
+    },
+    "h4": {
+     "type": "dimension",
+     "value": "24px",
+     "source": "computed fontSize of blog-card default (raw/components-computed.json)",
+     "description": "The 24px heading (FAQ questions, blog cards)."
+    },
+    "body": {
+     "type": "dimension",
+     "value": "16px",
+     "source": "computed fontSize of dd-link default (raw/components-computed.json)",
+     "description": "The 16px body/control size."
+    },
+    "control": {
+     "type": "dimension",
+     "value": "14px",
+     "source": "computed fontSize of hero-sub default (raw/components-computed.json)",
+     "description": "The 14px small text."
+    },
+    "badge": {
+     "type": "dimension",
+     "value": "12px",
+     "source": "computed fontSize of saving-badge default (raw/components-computed.json)",
+     "description": "The 12px badge/meta size."
+    }
+   },
+   "lineHeight": {
+    "display-hero": {
+     "type": "dimension",
+     "value": "88px",
+     "source": "computed lineHeight of hero-title default (raw/components-computed.json)",
+     "description": "Hero display leading (88px on 88px)."
+    },
+    "display": {
+     "type": "dimension",
+     "value": "82px",
+     "source": "computed lineHeight of contact-h1 default (raw/components-computed.json)",
+     "description": "Display leading (82px on 72px)."
+    },
+    "h2": {
+     "type": "dimension",
+     "value": "66px",
+     "source": "computed lineHeight of section-h2 default (raw/components-computed.json)",
+     "description": "Heading leading (66px on 56px)."
+    },
+    "card-title": {
+     "type": "dimension",
+     "value": "42px",
+     "source": "computed lineHeight of plan-card default (raw/components-computed.json)",
+     "description": "Card-title leading (42px on 32px)."
+    },
+    "h4": {
+     "type": "dimension",
+     "value": "33.6px",
+     "source": "computed lineHeight of blog-card default (raw/components-computed.json)",
+     "description": "Heading-4 leading (33.6px on 24px)."
+    },
+    "body": {
+     "type": "dimension",
+     "value": "24px",
+     "source": "computed lineHeight of dd-link default (raw/components-computed.json)",
+     "description": "Body leading (24px on 16px)."
+    },
+    "lede": {
+     "type": "dimension",
+     "value": "22px",
+     "source": "computed lineHeight of hero-sub default (raw/components-computed.json)",
+     "description": "Lede leading (22px on 14px)."
+    },
+    "badge": {
+     "type": "dimension",
+     "value": "22px",
+     "source": "computed lineHeight of saving-badge default (raw/components-computed.json)",
+     "description": "Badge leading (22px on 12px)."
+    }
+   }
+  },
+  "color": {
+   "brand": {
+    "purple": {
+     "var": "--colors--primary-purple",
+     "type": "color",
+     "source": "css-var --colors--primary-purple resolved light (raw/css-vars.json)",
+     "description": "The Copy.ai purple #693ee0 — declared as --colors--primary-purple, painted by the nav CTA, plan prices, the SAVING badge and the auth Continue."
+    },
+    "purple-light": {
+     "var": "--colors--light-purple",
+     "type": "color",
+     "source": "css-var --colors--light-purple resolved light (raw/css-vars.json)",
+     "description": "The declared light purple #a284ff (--colors--light-purple)."
+    },
+    "purple-hover": {
+     "value": "#5b36c3",
+     "type": "color",
+     "source": "computed backgroundColor of auth-continue hover (raw/components-computed.json)",
+     "description": "The auth host's #5b36c3 hover step on Continue with email."
+    },
+    "purple-pressed": {
+     "value": "#4e22b1",
+     "type": "color",
+     "source": "computed backgroundColor of auth-continue pressed (raw/components-computed.json)",
+     "description": "The auth host's #4e22b1 pressed step."
+    },
+    "purple-deep": {
+     "value": "#29007a",
+     "type": "color",
+     "source": "computed backgroundColor of platform-card default (raw/components-computed.json)",
+     "description": "The #29007a deep purple the platform-feature band paints."
+    },
+    "link": {
+     "value": "#5753c6",
+     "type": "color",
+     "source": "computed color of auth-signup default (raw/components-computed.json)",
+     "description": "The auth host's #5753c6 link purple (Sign up, Terms)."
+    }
+   },
+   "neutral": {
+    "ink": {
+     "var": "--colors--primary-black",
+     "type": "color",
+     "source": "css-var --colors--primary-black resolved light (raw/css-vars.json)",
+     "description": "The #171717 ink: display text, the black buttons, the top-banner fill — also declared as --colors--primary-black."
+    },
+    "white": {
+     "var": "--colors--white",
+     "type": "color",
+     "source": "css-var --colors--white resolved light (raw/css-vars.json)",
+     "description": "The #ffffff surface: page, cards, the mega-menu panel, inverted CTA fills."
+    },
+    "off-white": {
+     "var": "--colors--off-white",
+     "type": "color",
+     "source": "css-var --colors--off-white resolved light (raw/css-vars.json)",
+     "description": "The declared off-white #fbfbfc (--colors--off-white / --colors--primary-gray-white)."
+    },
+    "muted": {
+     "var": "--colors--grey",
+     "type": "color",
+     "source": "css-var --colors--grey resolved light (raw/css-vars.json)",
+     "description": "The declared muted gray #5d5d5d (--colors--grey / --text-gray)."
+    },
+    "border": {
+     "var": "--colors--borders-lite-grey",
+     "type": "color",
+     "source": "css-var --colors--borders-lite-grey resolved light (raw/css-vars.json)",
+     "description": "The declared #e0e0e0 hairline (--colors--borders-lite-grey): cards, the mobile menu rows, the mega-menu's top edge."
+    },
+    "border-dark": {
+     "var": "--colors--borders-dark-grey",
+     "type": "color",
+     "source": "css-var --colors--borders-dark-grey resolved light (raw/css-vars.json)",
+     "description": "The declared dark border #4a4b52 (--colors--borders-dark-grey)."
+    },
+    "nav-ink": {
+     "value": "#171717",
+     "type": "color",
+     "source": "computed color of dd-link default (raw/components-computed.json)",
+     "description": "The #222222 nav/menu ink (mega-menu links are #171717; the nav triggers read #222222)."
+    },
+    "lede": {
+     "value": "#566b76",
+     "type": "color",
+     "source": "computed color of hero-sub default (raw/components-computed.json)",
+     "description": "The #566b76 slate the hero lede paints."
+    },
+    "faq-text": {
+     "value": "#3a4554",
+     "type": "color",
+     "source": "computed color of faq-item default (raw/components-computed.json)",
+     "description": "The #3a4554 blue-gray of FAQ answers and fine print."
+    },
+    "field": {
+     "value": "#f6fafb",
+     "type": "color",
+     "source": "computed backgroundColor of hero-email default (raw/components-computed.json)",
+     "description": "The #f6fafb field fill."
+    },
+    "border-field": {
+     "value": "#e4edf1",
+     "type": "color",
+     "source": "computed borderTopColor of hero-email default (raw/components-computed.json)",
+     "description": "The #e4edf1 field border."
+    },
+    "border-card": {
+     "value": "#ccd9e0",
+     "type": "color",
+     "source": "computed borderTopColor of playbook-card default (raw/components-computed.json)",
+     "description": "The #ccd9e0 border on the playbook chip."
+    },
+    "auth-ink": {
+     "value": "#202020",
+     "type": "color",
+     "source": "computed color of auth-card default (raw/components-computed.json)",
+     "description": "The auth host's #202020 ink (login.copy.ai — a different system from the marketing site)."
+    },
+    "auth-border": {
+     "value": "#e5e7eb",
+     "type": "color",
+     "source": "computed borderTopColor of auth-card default (raw/components-computed.json)",
+     "description": "The auth card's #e5e7eb border."
+    }
+   },
+   "legacy": {
+    "navy": {
+     "var": "--old-swatches--black",
+     "type": "color",
+     "source": "css-var --old-swatches--black resolved light (raw/css-vars.json)",
+     "description": "The legacy #160647 dark navy. Declared under --old-swatches--* on :root but not measured anywhere on the captured surface — kept as provenance, not a design value."
+    },
+    "accent": {
+     "var": "--old-swatches--accent",
+     "type": "color",
+     "source": "css-var --old-swatches--accent resolved light (raw/css-vars.json)",
+     "description": "The legacy #47beb9 teal accent. Declared under --old-swatches--* on :root but not measured anywhere on the captured surface — kept as provenance, not a design value."
+    },
+    "purple": {
+     "var": "--old-swatches--color-2",
+     "type": "color",
+     "source": "css-var --old-swatches--color-2 resolved light (raw/css-vars.json)",
+     "description": "The legacy #6122e8 purple. Declared under --old-swatches--* on :root but not measured anywhere on the captured surface — kept as provenance, not a design value."
+    },
+    "slate": {
+     "var": "--old-swatches--dark-slate-blue",
+     "type": "color",
+     "source": "css-var --old-swatches--dark-slate-blue resolved light (raw/css-vars.json)",
+     "description": "The legacy #30187b slate purple. Declared under --old-swatches--* on :root but not measured anywhere on the captured surface — kept as provenance, not a design value."
+    }
+   }
+  },
+  "radius": {
+   "nav": {
+    "value": "4px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of btn-nav default (raw/components-computed.json)",
+    "description": "The 4px radius on the nav CTA and the mobile sales action."
+   },
+   "field-auth": {
+    "value": "3.5px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of auth-email default (raw/components-computed.json)",
+    "description": "The 3.5px radius on the auth field."
+   },
+   "button-auth": {
+    "value": "4.5px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of auth-continue default (raw/components-computed.json)",
+    "description": "The 4.5px radius on the auth buttons."
+   },
+   "field": {
+    "value": "5px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of name-input default (raw/components-computed.json)",
+    "description": "The 5px radius on the contact fields."
+   },
+   "button": {
+    "value": "8px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of plan-cta default (raw/components-computed.json)",
+    "description": "The 8px radius on the big CTAs (plan, inverted, Send, mobile Login)."
+   },
+   "badge": {
+    "value": "40px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of saving-badge default (raw/components-computed.json)",
+    "description": "The 40px badge pill."
+   },
+   "toggle": {
+    "value": "48px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of plan-toggle default (raw/components-computed.json)",
+    "description": "The 48px segmented-control pill."
+   }
+  },
+  "measured": {
+   "focus-ring-light": {
+    "value": "#005fcc",
+    "type": "color",
+    "source": "computed outlineColor of btn-nav focus-visible (raw/components-computed.json)",
+    "description": "The #005fcc blue keyboard ring on buttons and links (1px auto)."
+   },
+   "focus-ring-blue": {
+    "value": "#4d65ff",
+    "type": "color",
+    "source": "computed outlineColor of dd-link focus-visible (raw/components-computed.json)",
+    "description": "The #4d65ff blue ring on dropdown and accordion rows (2px solid)."
+   },
+   "focus-ring-auth": {
+    "value": "#a396ff",
+    "type": "color",
+    "source": "computed outlineColor of auth-continue focus-visible (raw/components-computed.json)",
+    "description": "The #a396ff violet ring on the auth host (2px solid)."
+   },
+   "nav-underline": {
+    "value": [
+     {
+      "color": "#171717",
+      "offsetX": "0px",
+      "offsetY": "-1px",
+      "blur": "0px",
+      "spread": "0px",
+      "inset": true
+     }
+    ],
+    "type": "shadow",
+    "source": "computed boxShadow of nav-dd-toggle hover (raw/components-computed.json)",
+    "description": "The 0 -1px ink inset the nav triggers paint as their hover underline."
+   },
+   "toggle-shadow": {
+    "value": [
+     {
+      "color": "rgba(0, 0, 0, 0.06)",
+      "offsetX": "0px",
+      "offsetY": "28px",
+      "blur": "64px",
+      "spread": "0px",
+      "inset": false
+     }
+    ],
+    "type": "shadow",
+    "source": "computed boxShadow of plan-toggle default (raw/components-computed.json)",
+    "description": "The rgba(0,0,0,0.06) 0 28 64 float under the segmented control."
+   },
+   "flyout-shadow": {
+    "value": [
+     {
+      "color": "rgba(0, 0, 0, 0.03)",
+      "offsetX": "0px",
+      "offsetY": "40px",
+      "blur": "34px",
+      "spread": "0px",
+      "inset": false
+     }
+    ],
+    "type": "shadow",
+    "source": "computed boxShadow of nav-dd-panel default (raw/components-computed.json)",
+    "description": "The rgba(0,0,0,0.03) 0 40 34 drop under the mega-menu."
+   },
+   "chip-inset": {
+    "value": [
+     {
+      "color": "rgba(204, 217, 224, 0.2)",
+      "offsetX": "0px",
+      "offsetY": "-3px",
+      "blur": "0px",
+      "spread": "0px",
+      "inset": true
+     }
+    ],
+    "type": "shadow",
+    "source": "computed boxShadow of playbook-card default (raw/components-computed.json)",
+    "description": "The inset rgba(204,217,224,0.2) 0 -3 0 the playbook chip paints."
+   },
+   "oauth-ring": {
+    "value": [
+     {
+      "color": "rgba(0, 0, 0, 0.192)",
+      "offsetX": "0px",
+      "offsetY": "0px",
+      "blur": "0px",
+      "spread": "1px",
+      "inset": true
+     }
+    ],
+    "type": "shadow",
+    "source": "computed boxShadow of auth-oauth default (raw/components-computed.json)",
+    "description": "The 1px 19%-black inset ring the auth OAuth buttons draw instead of a border."
+   },
+   "oauth-ring-hover": {
+    "value": [
+     {
+      "color": "rgba(0, 0, 0, 0.267)",
+      "offsetX": "0px",
+      "offsetY": "0px",
+      "blur": "0px",
+      "spread": "1px",
+      "inset": true
+     }
+    ],
+    "type": "shadow",
+    "source": "computed boxShadow of auth-oauth hover (raw/components-computed.json)",
+    "description": "The ring darkens to 27% black on hover."
+   },
+   "nav-transition": {
+    "value": "0.4s",
+    "type": "duration",
+    "source": "computed transition of nav-dd-toggle default (raw/components-computed.json)",
+    "description": "The 0.4s box-shadow transition behind the nav underline. (box-shadow)"
+   },
+   "button-transition": {
+    "value": "0.3s",
+    "type": "duration",
+    "source": "computed transition of hero-submit default (raw/components-computed.json)",
+    "description": "The 0.3s border-color + background-color transition on the black buttons. (border-color, background-color)"
+   },
+   "field-transition": {
+    "value": "0.2s",
+    "type": "duration",
+    "source": "computed transition of hero-email default (raw/components-computed.json)",
+    "description": "The 0.2s border-color + box-shadow transition on fields. (border-color, box-shadow)"
+   }
+  }
+ },
+ "light": {
+  "text": {
+   "primary": {
+    "value": "{color.neutral.ink}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "Display and body ink on light."
+   },
+   "nav": {
+    "value": "{color.neutral.nav-ink}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The #222222 nav/menu ink."
+   },
+   "muted": {
+    "value": "{color.neutral.muted}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "Declared muted gray."
+   },
+   "lede": {
+    "value": "{color.neutral.lede}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The slate lede under the hero."
+   },
+   "fine": {
+    "value": "{color.neutral.faq-text}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "FAQ answers and fine print."
+   },
+   "on": {
+    "action": {
+     "value": "#ffffff",
+     "type": "color",
+     "source": "computed color of button/menu labels (raw/components-computed.json)",
+     "description": "White labels on purple and black fills."
+    }
+   }
+  },
+  "surface": {
+   "page": {
+    "value": "{color.neutral.white}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The white page field."
+   },
+   "card": {
+    "value": "{color.neutral.white}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "Plan cards, the mega-menu panel, blog cards."
+   },
+   "field": {
+    "value": "{color.neutral.field}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The #f6fafb field fill."
+   },
+   "banner": {
+    "value": "{color.neutral.ink}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The #171717 top-banner fill."
+   }
+  },
+  "action": {
+   "primary": {
+    "value": "{color.brand.purple}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The #693ee0 action fill."
+   },
+   "dark": {
+    "value": "{color.neutral.ink}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The black button fill (hero submit, plan CTA, Send message)."
+   }
+  },
+  "border": {
+   "default": {
+    "value": "{color.neutral.border}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The #e0e0e0 hairline."
+   },
+   "field": {
+    "value": "{color.neutral.border-field}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The #e4edf1 field border."
+   },
+   "card": {
+    "value": "{color.neutral.border-card}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The #ccd9e0 chip border."
+   }
+  },
+  "state": {
+   "dark-hover": {
+    "value": "#683ee0",
+    "type": "color",
+    "source": "computed backgroundColor of plan-cta hover (raw/components-computed.json); hero-submit and invert-cta hover to #693ee0/#683ee4 the same way",
+    "description": "The signature state move: a black button's fill lifts to purple on hover."
+   },
+   "pressed-oauth": {
+    "value": "rgba(0, 0, 0, 0.06)",
+    "type": "color",
+    "source": "computed backgroundColor of auth-oauth pressed (raw/components-computed.json)",
+    "description": "The 6% black wash an OAuth button takes pressed."
+   }
+  }
+ },
+ "dark": {
+  "text": {
+   "primary": {
+    "value": "#ffffff",
+    "type": "color",
+    "source": "computed colors of top-banner / platform-card / invert-cta (raw/components-computed.json)",
+    "description": "White text on the ink banner and the deep-purple band."
+   },
+   "on": {
+    "action": {
+     "value": "{color.neutral.ink}",
+     "type": "color",
+     "source": "role alias over the core palette",
+     "description": "Ink labels on the white inverted fills."
+    }
+   }
+  },
+  "surface": {
+   "page": {
+    "value": "{color.neutral.ink}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The #171717 top-banner fill."
+   },
+   "band": {
+    "value": "{color.brand.purple-deep}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The #29007a deep-purple feature band."
+   }
+  },
+  "action": {
+   "secondary": {
+    "value": "#ffffff",
+    "type": "color",
+    "source": "computed colors of top-banner / platform-card / invert-cta (raw/components-computed.json)",
+    "description": "The white fill the inverted CTA carries on the dark band."
+   }
+  }
+ },
+ "component": {
+  "header": {
+   "height": {
+    "type": "dimension",
+    "value": "88px",
+    "source": "computed height of header default (raw/components-computed.json)",
+    "description": "The 88px desktop sticky nav."
+   },
+   "height-mobile": {
+    "type": "dimension",
+    "value": "80px",
+    "source": "computed height of m-header default (raw/components-computed.json)",
+    "description": "The 80px mobile header."
+   }
+  },
+  "banner": {
+   "height": {
+    "type": "dimension",
+    "value": "48px",
+    "source": "computed height of top-banner default (raw/components-computed.json)",
+    "description": "The 48px promo strip."
+   }
+  },
+  "navcta": {
+   "height": {
+    "type": "dimension",
+    "value": "47px",
+    "source": "computed height of btn-nav default (raw/components-computed.json)",
+    "description": "The 47px nav CTA."
+   }
+  },
+  "button": {
+   "height": {
+    "type": "dimension",
+    "value": "47px",
+    "source": "computed height of plan-cta default (raw/components-computed.json)",
+    "description": "The 47px standard dark button (plan CTA)."
+   }
+  },
+  "button-cta": {
+   "height": {
+    "type": "dimension",
+    "value": "63px",
+    "source": "computed height of invert-cta default (raw/components-computed.json)",
+    "description": "The 63px big inverted CTA (Send message matches)."
+   }
+  },
+  "button-submit": {
+   "height": {
+    "type": "dimension",
+    "value": "40px",
+    "source": "computed height of hero-submit default (raw/components-computed.json)",
+    "description": "The 40px hero submit."
+   }
+  },
+  "field": {
+   "height": {
+    "type": "dimension",
+    "value": "48px",
+    "source": "computed height of name-input default (raw/components-computed.json)",
+    "description": "The 48px contact field."
+   }
+  },
+  "field-hero": {
+   "height": {
+    "type": "dimension",
+    "value": "42px",
+    "source": "computed height of hero-email default (raw/components-computed.json)",
+    "description": "The 42px hero email field."
+   }
+  },
+  "field-auth": {
+   "height": {
+    "type": "dimension",
+    "value": "38px",
+    "source": "computed height of auth-email default (raw/components-computed.json)",
+    "description": "The 38px auth field."
+   }
+  },
+  "toggle": {
+   "height": {
+    "type": "dimension",
+    "value": "56px",
+    "source": "computed height of plan-toggle default (raw/components-computed.json)",
+    "description": "The 56px segmented control."
+   }
+  },
+  "badge": {
+   "height": {
+    "type": "dimension",
+    "value": "24px",
+    "source": "computed height of saving-badge default (raw/components-computed.json)",
+    "description": "The 24px SAVING badge."
+   }
+  },
+  "burger": {
+   "height": {
+    "type": "dimension",
+    "value": "46px",
+    "source": "computed height of m-menu-button default (raw/components-computed.json)",
+    "description": "The 46px circled burger."
+   }
+  },
+  "menurow": {
+   "height": {
+    "type": "dimension",
+    "value": "89px",
+    "source": "computed height of m-nav-item default (raw/components-computed.json)",
+    "description": "The 89px mobile-menu accordion row."
+   }
+  },
+  "menuoverlay": {
+   "height": {
+    "type": "dimension",
+    "value": "844px",
+    "source": "computed height of m-menu-open default (raw/components-computed.json)",
+    "description": "The mobile menu overlay — full 844px viewport height."
+   }
+  },
+  "megapanel": {
+   "height": {
+    "type": "dimension",
+    "value": "389px",
+    "source": "computed height of nav-dd-panel default (raw/components-computed.json)",
+    "description": "The 389px mega-menu panel."
+   }
+  },
+  "plancard": {
+   "height": {
+    "type": "dimension",
+    "value": "594.594px",
+    "source": "computed height of plan-card default (raw/components-computed.json)",
+    "description": "The ~595px plan card."
+   }
+  },
+  "faqrow": {
+   "height": {
+    "type": "dimension",
+    "value": "82px",
+    "source": "computed height of faq-item default (raw/components-computed.json)",
+    "description": "The 82px FAQ accordion row."
+   }
+  },
+  "authcard": {
+   "height": {
+    "type": "dimension",
+    "value": "283.891px",
+    "source": "computed height of auth-card default (raw/components-computed.json)",
+    "description": "The ~284px auth card."
+   }
+  }
+ }
+}
