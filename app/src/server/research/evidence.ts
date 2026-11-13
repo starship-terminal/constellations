@@ -173,7 +173,7 @@ export async function handoffPrompt(
   const sourcePath = `${reference.source}/${reference.slug}`;
   const measured = reference.source === "systems";
   const prompt =
-    `Use the ${reference.name} reference from my private design-systems library${appDescription ? ` for ${appDescription}` : ""}.\n\n` +
+    `Use the ${reference.name} reference from my private Constellations library${appDescription ? ` for ${appDescription}` : ""}.\n\n` +
     (measured
       ? `Read ${sourcePath}/README.md in full first, including capture limits and Health. Take values from ${sourcePath}/tokens.json and preserve their per-value evidence labels. Resolve aliases and use the recorded theme groups. Read components.md and patterns.md when available. Use screenshots and component crops for layout and proportion only. ${sourcePath}/style-guide.html renders the recorded tokens.\n\n`
       : `Read ${sourcePath}/DESIGN.md and design-system.json. This Refero reference contains third-party interpreted values, not measurements. Treat it as inspiration and verify every value against a measured package or the target app's own design system.\n\n`) +
