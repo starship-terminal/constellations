@@ -9954,7 +9954,8 @@
      "no dark theme: the site paints light only; the single prefers-color-scheme media rule repaints nothing"
     ],
     "durationMin": 300,
-    "durationNote": "wall-clock across the capture sessions including kit adaptation, DOM probing, the stylesheet harvest, screenshot and measurement passes on a headless Linux server, and the offline build"
+    "durationNote": "wall-clock across the capture sessions including kit adaptation, DOM probing, the stylesheet harvest, screenshot and measurement passes on a headless Linux server, and the offline build",
+    "pr": "https://github.com/starship-terminal/constellations/pull/546"
    }
   }
  ]
