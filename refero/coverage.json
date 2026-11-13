@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 99,
-    "system_domains": 91,
-    "matched_domains": 66,
-    "missing_domains": 367,
+    "system_packages": 100,
+    "system_domains": 92,
+    "matched_domains": 67,
+    "missing_domains": 366,
     "system_domains_absent_from_catalog": 25
   },
   "matched": {
@@ -831,6 +831,23 @@
         }
       ]
     },
+    "deel.com": {
+      "catalog": [
+        {
+          "name": "Deel",
+          "domain": "deel.com",
+          "id": 148
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "deel",
+          "name": "Deel",
+          "url": "https://www.deel.com",
+          "name_match": true
+        }
+      ]
+    },
     "dock.us": {
       "catalog": [
         {
@@ -1383,13 +1400,6 @@
         "name": "Cycle",
         "domain": "cycle.app",
         "id": 504
-      }
-    ],
-    "deel.com": [
-      {
-        "name": "Deel",
-        "domain": "deel.com",
-        "id": 148
       }
     ],
     "deezer.com": [

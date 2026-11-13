@@ -592,5 +592,11 @@
     "groupId": "web-categories",
     "labels": ["Magazines & Newspapers"],
     "reason": "catalog.json describes an art-history online magazine's editorial surfaces: the feed, category and article pages, and the newsletter and contact forms."
+  },
+  {
+    "referenceId": "systems:deel",
+    "groupId": "web-categories",
+    "labels": ["Productivity"],
+    "reason": "catalog.json describes a global payroll/HR SaaS marketing site: product pages, pricing tiers and demo CTAs for workforce management."
   }
 ]
