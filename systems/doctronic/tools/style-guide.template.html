@@ -16,6 +16,13 @@
 [data-theme="dark"], .dark {
 /*DARK*/
 }
+/* The light palette panel re-declares the light roles on itself so its
+   swatches still paint the light values after the page toggles to dark. */
+.light-scope {
+/*LIGHT*/
+  color: var(--color-fg-default, #1b1b18);
+  background: var(--color-surface-canvas, #fdfdf7);
+}
 * { box-sizing: border-box; }
 body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--color-fg-default, #1b1b18); background: var(--color-surface-canvas, #fdfdf7); }
 main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
@@ -28,6 +35,7 @@ code { font-family: var(--sg-mono); font-size: .9em; }
 .pal { display: flex; flex-wrap: wrap; gap: 8px; }
 .pal.dark { background: #0d0e0b; padding: 12px; border-radius: 12px; }
 .pal.dark .nm, .pal.dark .vl { color: #fdfdf7; }
+.pal.light-scope { padding: 12px; border-radius: 12px; }
 .sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
 .sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--color-border-default, rgba(27,27,24,.08)); display: inline-flex; flex: 0 0 auto; background-image: linear-gradient(45deg, #80808022 25%, transparent 25%, transparent 75%, #80808022 75%), linear-gradient(45deg, #80808022 25%, transparent 25%, transparent 75%, #80808022 75%); background-size: 8px 8px; background-position: 0 0, 4px 4px; }
 .sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
@@ -41,7 +49,11 @@ code { font-family: var(--sg-mono); font-size: .9em; }
 .navbar { display: flex; align-items: center; gap: 8px; height: 72px; padding: 0 12px 0 20px; font-size: 14px; color: var(--color-fg-default, #1b1b18); background: var(--color-surface-canvas, #fdfdf7); }
 .navbar .wm { font-family: var(--sg-serif); font-weight: 600; font-size: 20px; }
 .navbar .sp { flex: 1; }
+/* The content pages' bar is a different, shorter bar on a sage wash (a
+   literal Tailwind hex, not a token — the content pages carry utilities). */
+.navbar.mkt { height: 56px; background: #e2f0e4; color: #0c0e12; }
 .npill { padding: 4px 10px; border-radius: 999px; font-size: 14px; font-weight: 600; }
+.menubtn { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; color: inherit; }
 .btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-button-height, 36px); padding: 0 16px; font-size: 14px; font-weight: 500; border-radius: 999px; border: 1px solid transparent; font-family: var(--sg-sans); }
 .btn.primary { background: var(--color-accent-bg, #2463eb); color: var(--color-accent-fg, #fff); box-shadow: var(--shadow-brand-glow, none); }
 .btn.solid { background: var(--color-solid-bg, #0b0b0a); color: var(--color-solid-fg, #fdfdf7); }
@@ -49,7 +61,10 @@ code { font-family: var(--sg-mono); font-size: .9em; }
 .btn.dark-accent { background: #61a6fa; color: #172554; }
 .chatcard { display: flex; align-items: center; gap: 12px; background: var(--color-surface-raised, #fff); border-radius: var(--component-inputcard-radius, 28px); box-shadow: var(--shadow-md, 0 2px 12px rgba(0,0,0,.06)); padding: 10px 10px 10px 20px; border: 1px solid var(--color-border-default, rgba(27,27,24,.08)); }
 .chatcard .ph { flex: 1; color: var(--color-fg-subtle, rgba(27,27,24,.6)); font-size: 16px; }
-.chip { display: inline-flex; align-items: center; gap: 6px; height: var(--component-starter-height, 36px); padding: 0 14px; border-radius: 999px; border: 1px solid var(--color-border-default, rgba(27,27,24,.08)); background: var(--color-surface-raised, #fff); color: var(--color-fg-default, #1b1b18); font-size: 14px; }
+/* The chip's measured height is its content-box height (the page measures
+   20.59px + 8px/16px padding = ~36.6px total); content-box keeps the token
+   meaning the same thing it did in the capture. */
+.chip { display: inline-flex; align-items: center; gap: 6px; box-sizing: content-box; height: var(--component-starter-height, 20px); padding: 8px 16px; border-radius: var(--component-starter-radius, 8px); border: 0; background: var(--color-neutral-100, #f5f5f0); color: var(--color-fg-default, #1b1b18); font-size: 14px; }
 .accentband { height: 4px; border-radius: 4px; background: var(--gradient-chat-sheet-accent, linear-gradient(90deg, #2463eb, #0ea5e9, #22c55e, #84cc16, #0ea5e9, #2463eb)); }
 .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
 .tile { border: 1px solid var(--color-border-default, rgba(27,27,24,.08)); padding: 14px; font-size: 13px; background: var(--color-surface-raised, #fff); border-radius: 12px; }
@@ -77,9 +92,12 @@ html[data-theme="dark"] body, body.dark { color-scheme: dark; }
   <p class="note">Read from www.doctronic.ai, signed out, in headless Chromium. The chat product itself, health records, prescriptions and every signed-in surface behind Log in / Sign up are a documented boundary — the public pages, the chat's signed-out composer and the sign-in dialog were measured, never used.</p>
 
   <h2 class="sh">The chrome</h2>
-  <p class="lead">The 72px marketing bar carries the wordmark, rounded-full pill links, the dark "Try Doctronic For Free" CTA and the solid Sign up pill. Buttons are 999px pills: the accent action paints blue-600 (light) / blue-400 (dark) with the brand-glow shadow; the dark solid button is the inverted <code>solid-bg</code>/<code>solid-fg</code> pair.</p>
+  <p class="lead">Two different top bars were measured. The 72px home bar carries the wordmark, the quiet Log in, the solid dark Sign up pill and the round menu button that opens the site-menu drawer. The 56px bar on the content pages sits on a sage wash and carries the wordmark, the rounded-full pill links (About, FAQ, Blog, Online Treatment, Wall of Love, LegitScript) and the dark "Try Doctronic For Free" CTA. Buttons are 999px pills: the accent action paints blue-600 (light) / blue-400 (dark) with the brand-glow shadow; the dark solid button is the inverted <code>solid-bg</code>/<code>solid-fg</code> pair.</p>
   <div class="mock">
-    <div class="navbar"><span class="wm">Doctronic</span><span class="npill">About</span><span class="npill">FAQ</span><span class="npill">Blog</span><span class="npill">Online Treatment</span><span class="sp"></span><span class="btn solid">Try Doctronic For Free</span><span class="btn ghost">Log in</span><span class="btn primary">Sign up</span></div>
+    <div class="navbar"><span class="wm">Doctronic</span><span class="sp"></span><span class="btn ghost">Log in</span><span class="btn solid">Sign up</span><span class="menubtn" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M2.5 5.5h13M2.5 9h13M2.5 12.5h13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span></div>
+  </div>
+  <div class="mock" style="margin-top:12px">
+    <div class="navbar mkt"><span class="wm">Doctronic</span><span class="npill">About</span><span class="npill">FAQ</span><span class="npill">Blog</span><span class="npill">Online Treatment</span><span class="npill">Wall of Love</span><span class="npill">LegitScript</span><span class="sp"></span><span class="btn solid">Try Doctronic For Free</span></div>
   </div>
 
   <h2 class="sh">The chat composer</h2>
@@ -130,9 +148,11 @@ const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) 
   for (const [setname, label] of [['light', 'light roles'], ['dark', 'dark roles (inside .dark / [data-theme="dark"])']]) {
     const roles = flat((TOK[setname] || {}).color || {}, 'color.').filter(([, t]) => t.t === 'color');
     if (!roles.length) continue;
-    // The dark set's custom properties only resolve inside a .dark scope:
-    // swatch dots must live under it or they paint the light values/unset.
-    h += `<div class="pal-h">${label}</div><div class="pal${setname === 'dark' ? ' dark' : ''}">`;
+    // The themed sets' custom properties only resolve inside their own scope:
+    // swatch dots must live under .dark / .light-scope or they paint the page
+    // theme's values — after the toggle sets dark, an unscoped light swatch
+    // shows the dark value under a light label.
+    h += `<div class="pal-h">${label}</div><div class="pal${setname === 'dark' ? ' dark' : ' light-scope'}">`;
     for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
     h += '</div>';
   }
@@ -173,7 +193,10 @@ const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) 
     for (const [n, t] of items) {
       const v = t.v || {};
       const px = parseFloat(v.fontSize);
-      h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px;font-style:${v.fontStyle || 'normal'};font-weight:${v.fontWeight || 400}">${esc(n)} — The quick brown fox</span><span class="tv">${esc(v.fontSize || '')} / ${esc(v.lineHeight || '')} ${esc(v.fontWeight || '')}</span></div>`;
+      // The sample sets the token's own shorthand var, so family, line-height,
+      // style and weight all come from the token; font-size only caps display
+      // sizes so the 72px samples still fit the row.
+      h += `<div class="tr"><span class="ts" style="font:var(${cssname(n)});font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(v.fontSize || '')} / ${esc(v.lineHeight || '')} ${esc(v.fontWeight || '')}${v.fontStyle === 'italic' ? ' italic' : ''}</span></div>`;
     }
   }
   $('#type-out').innerHTML = h;

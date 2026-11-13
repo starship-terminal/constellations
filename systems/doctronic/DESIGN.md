@@ -29,7 +29,8 @@ colors:
   color-border-light: "rgba(27, 27, 24, 0.04)"
   color-border-strong: "rgba(27, 27, 24, 0.2)"
   color-border-subtle: "#f5f5f0"
-  color-divider: "#e4e4dc"
+  color-divider-default: "#e4e4dc"
+  color-divider-strong: "#cecec5"
   color-error-bg: "#fdedee"
   color-error-border: "#f5a8b1"
   color-error-fg: "#610f1d"
@@ -145,6 +146,51 @@ typography:
     fontSize: "72px"
     fontWeight: 400
     lineHeight: "84.24px"
+  heading-10:
+    fontFamily: "geist"
+    fontSize: "10px"
+    fontWeight: 600
+    lineHeight: "14px"
+  heading-12:
+    fontFamily: "geist"
+    fontSize: "12px"
+    fontWeight: 600
+    lineHeight: "16.8px"
+  heading-14:
+    fontFamily: "geist"
+    fontSize: "14px"
+    fontWeight: 600
+    lineHeight: "19.6px"
+  heading-16:
+    fontFamily: "geist"
+    fontSize: "16px"
+    fontWeight: 600
+    lineHeight: "22.4px"
+  heading-18:
+    fontFamily: "geist"
+    fontSize: "18px"
+    fontWeight: 600
+    lineHeight: "25.2px"
+  heading-20:
+    fontFamily: "geist"
+    fontSize: "20px"
+    fontWeight: 600
+    lineHeight: "28px"
+  heading-24:
+    fontFamily: "geist"
+    fontSize: "24px"
+    fontWeight: 600
+    lineHeight: "33.6px"
+  heading-28:
+    fontFamily: "geist"
+    fontSize: "28px"
+    fontWeight: 600
+    lineHeight: "39.2px"
+  heading-32:
+    fontFamily: "geist"
+    fontSize: "32px"
+    fontWeight: 600
+    lineHeight: "44.8px"
   heading-italic-10:
     fontFamily: "geist"
     fontSize: "10px"
@@ -379,8 +425,8 @@ components:
   send:
     height: "32px"
   inputcard:
-    rounded: "0px"
-    height: "148px"
+    rounded: "16px"
+    height: "126px"
   starter:
     height: "20.5938px"
     rounded: "8px"
@@ -389,7 +435,7 @@ components:
   sidebar-collapsed:
     width: "74px"
   dialog:
-    rounded: "0px"
+    rounded: "24px"
     width: "393px"
   header:
     height: "72px"
@@ -424,7 +470,7 @@ The roles below are the catalog's swatches for the `light` theme. The front matt
 
 ## Typography
 
-61 styles from `core.typography`. `fontFamily` is the first family of each stack; the full stacks, and properties DESIGN.md has no field for (text case, decoration), are in tokens.json. Families: fraunces, geist, geistMono.
+70 styles from `core.typography`. `fontFamily` is the first family of each stack; the full stacks, and properties DESIGN.md has no field for (text case, decoration), are in tokens.json. Families: fraunces, geist, geistMono.
 
 ## Layout
 

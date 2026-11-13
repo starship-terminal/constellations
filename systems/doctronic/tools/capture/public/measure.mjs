@@ -293,12 +293,16 @@ async function chat() {
   await S('sidebar-login', q(M('sidebar')).getByRole('button', { name: /log in/i }).first().or(page.getByRole('button', { name: /^log in$/i }).first()), B4, { group: g, title: 'Sidebar log in button', desc: 'The secondary button beside Sign up for free. Measured, never pressed.', sel: 'button "Log in"' }, { noScroll: true });
   await S('anon-badge', q(M('badgeButton')).first().or(page.getByRole('button', { name: /anonymous/i })), ['default', 'hover'], { group: g, title: 'Anonymous badge', desc: 'The "Anonymous" session chip. Pressing it is a sign-in path, so it was hovered and measured only.', sel: M('badgeButton') }, { noScroll: true });
   await S('support-link', q('a[href^="mailto:"]').first(), ['default', 'hover', 'focus-visible'], { group: g, title: 'Support mail link', sel: 'a[href^="mailto:"]' }, { noScroll: true });
-  await S('legal-link', q(M('footer')).locator('a').first().or(await domFind(page, /terms of service/i, { tag: 'm-tos' })), B4, { group: g, title: 'Legal link', sel: 'footer a' }, { noScroll: true });
+  // The legal row's anchors are picked by destination, never by position:
+  // the footer's first <a> is the support@ mailto (already support-link).
+  await S('legal-link', q(M('footer')).locator('a[href*="privacy" i], a[href*="terms" i]').first().or(await domFind(page, /terms of service|privacy policy/i, { sel: 'footer a, [class*="_footer"] a', tag: 'm-tos' })), B4, { group: g, title: 'Legal link', desc: 'The Terms of Service / Privacy Policy link in the chat footer. Measured, never followed.', sel: 'footer a[href*="privacy"|"terms"]' }, { noScroll: true });
   await S('recent-chats', await domFind(page, /view recent chats/i, { tag: 'm-recent' }), ['default', 'hover'], { group: g, title: 'View recent chats', desc: 'Link to the (signed-in) chat list; measured only.', sel: '"View recent chats"' }, { noScroll: true });
 
   await S('chat-hero', q('h1').filter({ hasText: /chat for free/i }).first().locator('xpath=ancestor::*[.//textarea][1]').or(q('main').first()), ['default'], { group: g, title: 'Chat hero', desc: 'The centered empty-state: the Fraunces greeting and the large input card.', sel: 'h1 ancestor holding textarea' });
   await S('chat-greeting', q('main h1').first().or(q('h1').first()).or(q(M('display40')).first()), ['default'], { group: g, title: 'Chat greeting', sel: 'h1' });
-  await S('input-card', q(M('inputCard')).first().or(q(M('chatInput'))), ['default', 'hover'], { group: g, title: 'Chat input card', desc: 'The large raised card holding the textarea and the round Send button; expands when focused.', sel: M('inputCard') });
+  // The painted card is the <form> itself; the _inputCard match higher up is
+  // the transparent .wrapper.chatInput that also carries the disclaimer line.
+  await S('input-card', q('form[class*="_inputCard"]').first().or(q(M('inputCard'))), ['default', 'hover'], { group: g, title: 'Chat input card', desc: 'The large raised card holding the textarea and the round Send button; expands when focused.', sel: 'form[class*="_inputCard"]' });
   await S('chat-textarea', q('textarea[placeholder]').first(), ['default', 'focused', 'filled'], { group: g, title: 'Chat textarea', desc: '"Ask a question about your health…" — text was typed and deleted, Enter never pressed.', sel: 'textarea' }, { fillText: 'I have a headache since this morning' });
   await S('send-button', page.getByRole('button', { name: /send message/i }).first().or(q(M('submitButton'))), B4, { group: g, title: 'Send message button', desc: 'The condensed dark submit control inside the card. Measured, never pressed — pressing would send a message.', sel: M('submitButton') });
   await S('starter', q(M('starter')).first(), B4, { group: g, title: 'Starter chip', desc: '"Check my symptoms" — a conversation starter under the card. Measured, never pressed.', sel: M('starter') });
@@ -311,8 +315,10 @@ async function chat() {
 async function signin() {
   await newPage('signin', { wait: 8000 });
   const g = G.overlay;
-  const dlg = q('[role="dialog"]').first().or(q(M('dialog')).first());
-  await S('signin-dialog', dlg, ['default'], { group: g, title: 'Sign-in dialog', desc: 'Reached by the public ?modal=signin URL: a centered raised card over a dimmed page. Nothing inside it was pressed.', sel: '[role="dialog"]' }, { noScroll: true });
+  // [role="dialog"] is the transparent inner section; the card that paints the
+  // surface (24px radius, raised canvas, the lg shadow) is its div.modal parent.
+  const dlg = q('div[class*="_modal"]').first().or(q('[role="dialog"]').first().or(q(M('dialog')).first()));
+  await S('signin-dialog', dlg, ['default'], { group: g, title: 'Sign-in dialog', desc: 'Reached by the public ?modal=signin URL: a centered raised card over a dimmed page. Nothing inside it was pressed.', sel: 'div[class*="_modal"] (the [role="dialog"] card\'s painted parent)' }, { noScroll: true });
   await S('signin-title', dlg.locator('h1, h2, [class*="display"], [class*="heading"]').first(), ['default'], { group: g, title: 'Sign-in title', sel: 'dialog heading' }, { noScroll: true });
   await S('email-login-button', dlg.getByRole('button', { name: /log in with email|email/i }).first().or(dlg.locator(M('primary')).first()), B4, { group: g, title: 'Log in with email button', desc: 'The primary action inside the dialog. Measured, never pressed.', sel: 'dialog button "Log in with email"' }, { noScroll: true });
   await S('oauth-button', dlg.getByRole('button', { name: /continue with|google|apple/i }).first().or(dlg.locator(M('secondary')).first()), B4, { group: g, title: 'OAuth button', desc: 'A Continue-with provider button. Measured, never pressed.', sel: 'dialog OAuth button' }, { noScroll: true });
@@ -455,7 +461,7 @@ async function mobile() {
   await page.close();
   await newPage('chat', { mobile: true, wait: 8000 });
   await S('m-chat-header', q(M('mobileHeader')).first().or(q(M('header')).first().or(q('header').first())), ['default'], { group: g, title: 'Chat top bar (mobile)', sel: M('mobileHeader') }, { noScroll: true });
-  await S('m-input-card-chat', q(M('inputCard')).first().or(q(M('chatInput'))), ['default'], { group: g, title: 'Chat input card (mobile)', sel: M('inputCard') });
+  await S('m-input-card-chat', q('form[class*="_inputCard"]').first().or(q(M('inputCard'))), ['default'], { group: g, title: 'Chat input card (mobile)', sel: 'form[class*="_inputCard"]' });
   await S('m-starter', q(M('starter')).first(), ['default'], { group: g, title: 'Starter chip (mobile)', sel: M('starter') });
   await page.close();
 }

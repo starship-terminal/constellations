@@ -229,7 +229,7 @@ PAGE_NAME = {"home": "home", "chat": "/chat/", "signin": "home (the ?modal=signi
              "wall": "Wall of Love", "dark": "home in dark theme", "mobile": "home"}
 
 GROUP_INTRO = {
-    "Shell and navigation": "The marketing top bar over the home page: the Fraunces wordmark, the rounded-full pill links, the dark Try Doctronic For Free CTA, the solid Sign up pill and Log in, and the button that opens the site-menu drawer.",
+    "Shell and navigation": "The 72px marketing top bar over the home page: the wordmark, Log in, the solid Sign up pill and the button that opens the site-menu drawer, plus the drawer itself. (The content pages carry a different, shorter sage bar with pill links and the dark Try Doctronic For Free CTA — see the Marketing and content pages group.)",
     "Home: hero and marketing": "The home hero with the Fraunces display greeting, the raised chat input card with its animated accent border and the accent Start chat button, the suggestion chips, then the marketing sections — feature cards, pricing, testimonials, the Hippocratic oath band and the footer.",
     "Chat surface": "The signed-out /chat/ surface: the collapsible left rail (New chat highlighted, Sign up for free and Log in pinned at the bottom), the centered empty-state greeting, the large input card with the Send control and the starter chips. Nothing was sent.",
     "Symptom checker": "The /symptom-checker/ entry point: the Fraunces headline, the symptoms textarea card and the Check My Symptoms action. Measured, never submitted.",

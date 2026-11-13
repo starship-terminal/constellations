@@ -1058,28 +1058,11 @@ Crops: `support-link-default.png`, `support-link-hover.png`, `support-link-focus
 
 #### legal-link
 
-Legal link.
+Legal link. The Terms of Service / Privacy Policy link in the chat footer. The first-capture selector read the footer's first anchor — the support@doctronic.ai mailto, already measured as support-link — so those states were dropped and the fixed selector's re-measure is queued.
 
-Page: chat. Selector: `footer a`. States: default, hover, focus-visible, pressed.
+Page: chat. Selector: `footer a[href*="privacy"/"terms"]`. States: .
 
-| Property | default | hover | focus-visible | pressed |
-|---|---|---|---|---|
-| Size (w x h) | 93.52 x 13 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | 1px auto #2463eb offset 1px | = |
-| Font | geist 10px/14px 400 | = | = | = |
-| Letter spacing | -0.2px | = | = | = |
-| Colour | #2463eb | #1d4fd7 | = | #1d4fd7 |
-| Transition | color 0.2s ease-in-out | = | = | = |
-| Cursor | pointer | = | = | = |
-| How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
-| Painted layers | - | = | a.link 93.5x13.0 outline 1px auto #2463eb offset 1px | = |
-
-Crops: `legal-link-default.png`, `legal-link-hover.png`, `legal-link-focus-visible.png`, `legal-link-pressed.png`.
+Not found on the page at capture time.
 
 #### recent-chats
 

@@ -2,13 +2,13 @@
 
 The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Captured from www.doctronic.ai on 2026-11-13, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844, the Dark group on the site's real data-theme="dark" theme), with computed styles read from the running page. Nothing was signed into, created, submitted or sent: the chat composer was given sample text that was deleted again, Send/Start chat and every sign-in action were never pressed.
 
-The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (100 components, 201 states). The page layouts are described in [patterns.md](patterns.md).
+The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (100 components, 197 states). The page layouts are described in [patterns.md](patterns.md).
 
 How to read an entry:
 
 - A colour is its value followed by the palette token in [tokens.json](tokens.json) with the same value, when there is one. Text is written family size/line-height weight, then its colour, for example `SF Pro 14/21 500, #21252e`, and is read from the first text node inside the component.
 - The state table has one row per state that differs. The first row lists every value; later rows list only what changes. A state with the same values as the first is named in its label, for example "default (same: focus-visible)". When the root paints nothing, "Child layers" names the first nodes inside it that do.
-- Crops are images of the component read from the live page, in [components/crops/](components/crops) (197 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
+- Crops are images of the component read from the live page, in [components/crops/](components/crops) (193 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
 
 ## Discovery list
 
@@ -54,7 +54,7 @@ Screenshots are named `{page}-{theme}-state.png`: the app surfaces (home, /chat/
 
 Values that apply across entries, from the measurement files.
 
-**Focus.** 28 components were given a real keyboard focus. 22 draw an outline ring: `signup-button` (2px solid #3c83f6 `color.blue.500`, offset 0px), `login-button` (2px solid #3c83f6 `color.blue.500`, offset 0px), `menu-item` (2px solid #1d4fd7 `color.blue.700`, offset 2px), `nav-link` (2px solid #3c83f6 `color.blue.500`, offset 2px), `signup-free` (2px solid #3c83f6 `color.blue.500`, offset 0px), `sidebar-login` (2px solid #3c83f6 `color.blue.500`, offset 0px), `support-link` (1px auto #2463eb `color.blue.600`, offset 1px), `legal-link` (1px auto #2463eb `color.blue.600`, offset 1px), `starter` (2px solid #1b1b18 `color.neutral.900`, offset 2px), `oauth-button` (2px solid #3c83f6 `color.blue.500`, offset 0px), `create-account-link` (1px auto #005fcc, offset 1px), `check-button` (1px auto #005fcc, offset 0px), `mkt-nav-pill` (1px auto #005fcc, offset 1px), `try-button` (1px auto #005fcc, offset 1px), `mkt-footer-link` (1px auto #005fcc, offset 1px), `article-card` (on a child: 1px auto rgb(0, 95, 204) offset 1px), `telehealth-cta` (1px auto #005fcc, offset 1px), `d-signup-button` (2px solid #61a6fa `color.blue.400`, offset 0px), `pause-control` (2px solid #3c83f6 `color.blue.500`, offset 2px), `category-chip` (1px auto #005fcc, offset 1px), `footer-social-icon` (1px auto #005fcc, offset 1px), `footer-legal-link` (1px auto #005fcc, offset 1px). 6 draw a focus ring as a shadow instead: `menu-button`, `start-chat-button`, `sidebar-toggle`, `send-button`, `email-login-button`, `dialog-close`.
+**Focus.** 27 components were given a real keyboard focus. 21 draw an outline ring: `signup-button` (2px solid #3c83f6 `color.blue.500`, offset 0px), `login-button` (2px solid #3c83f6 `color.blue.500`, offset 0px), `menu-item` (2px solid #1d4fd7 `color.blue.700`, offset 2px), `nav-link` (2px solid #3c83f6 `color.blue.500`, offset 2px), `signup-free` (2px solid #3c83f6 `color.blue.500`, offset 0px), `sidebar-login` (2px solid #3c83f6 `color.blue.500`, offset 0px), `support-link` (1px auto #2463eb `color.blue.600`, offset 1px), `starter` (2px solid #1b1b18 `color.neutral.900`, offset 2px), `oauth-button` (2px solid #3c83f6 `color.blue.500`, offset 0px), `create-account-link` (1px auto #005fcc, offset 1px), `check-button` (1px auto #005fcc, offset 0px), `mkt-nav-pill` (1px auto #005fcc, offset 1px), `try-button` (1px auto #005fcc, offset 1px), `mkt-footer-link` (1px auto #005fcc, offset 1px), `article-card` (on a child: 1px auto rgb(0, 95, 204) offset 1px), `telehealth-cta` (1px auto #005fcc, offset 1px), `d-signup-button` (2px solid #61a6fa `color.blue.400`, offset 0px), `pause-control` (2px solid #3c83f6 `color.blue.500`, offset 2px), `category-chip` (1px auto #005fcc, offset 1px), `footer-social-icon` (1px auto #005fcc, offset 1px), `footer-legal-link` (1px auto #005fcc, offset 1px). 6 draw a focus ring as a shadow instead: `menu-button`, `start-chat-button`, `sidebar-toggle`, `send-button`, `email-login-button`, `dialog-close`.
 
 **Pressed.** Forced with DevTools (`CSS.forcePseudoState` :active:hover). Nothing a real press would submit was ever pressed.
 
@@ -65,7 +65,7 @@ Values that apply across entries, from the measurement files.
 | 0.15s | `cubic-bezier(0.4, 0, 0.2, 1)` | --tw-gradient-from, --tw-gradient-to, --tw-gradient-via, background-color, border-color, color, fill, opacity, outline-color, stroke, text-decoration-color | category-chip, check-button, mkt-footer-link, mkt-nav-pill, telehealth-cta, try-button |
 | 0.15s | `ease` | background-color, color | footer-legal-link, footer-social-icon, pause-control |
 | 0.15s | `ease-in` | background-color | m-starter, starter |
-| 0.2s | `ease-in-out` | color | legal-link, support-link |
+| 0.2s | `ease-in-out` | color | support-link |
 | 0.2s | `ease-out` | border-radius | condensed-form |
 | 0.25s | `ease` | transform | d-header, header, m-header |
 | 0.3s | `ease` | background-color | mkt-header |
@@ -86,7 +86,7 @@ Values that apply across entries, from the measurement files.
 
 ### Shell and navigation
 
-The marketing top bar over the home page: the Fraunces wordmark, the rounded-full pill links, the dark Try Doctronic For Free CTA, the solid Sign up pill and Log in, and the button that opens the site-menu drawer.
+The 72px marketing top bar over the home page: the wordmark, Log in, the solid Sign up pill and the button that opens the site-menu drawer, plus the drawer itself. (The content pages carry a different, shorter sage bar with pill links and the dark Try Doctronic For Free CTA — see the Marketing and content pages group.)
 
 #### Marketing top bar
 The bar over the home page: wordmark, Log in, Sign up and the menu button that opens the site-menu drawer. Read as `header` on the home page.
@@ -484,16 +484,9 @@ Read as `support-link` on the /chat/ page.
 ![Support mail link default](components/crops/support-link-default.png) ![Support mail link hover](components/crops/support-link-hover.png) ![Support mail link focus-visible](components/crops/support-link-focus-visible.png)
 
 #### Legal link
-Read as `legal-link` on the /chat/ page.
+The Terms of Service / Privacy Policy link in the chat footer. The first-capture selector read the footer's first anchor — the support@doctronic.ai mailto, already measured as support-link — so those states were dropped and the fixed selector's re-measure is queued. Read as `legal-link` on the /chat/ page.
 
-| State | Values (later rows list only what changes from the first row) |
-|---|---|
-| default | size 93.52 x 13; background transparent; text geist 10/14 400, #2463eb `color.blue.600`; transition color 0.2s ease-in-out |
-| hover | text geist 10/14 400, #1d4fd7 `color.blue.700` |
-| focus-visible | outline 1px auto #2463eb `color.blue.600`, offset 1px; layers a.link 93.5x13.0 1px auto rgb(36, 99, 235) offset 1px |
-| pressed | text geist 10/14 400, #1d4fd7 `color.blue.700` |
-
-![Legal link default](components/crops/legal-link-default.png) ![Legal link hover](components/crops/legal-link-hover.png) ![Legal link focus-visible](components/crops/legal-link-focus-visible.png) ![Legal link pressed](components/crops/legal-link-pressed.png)
+Not on the page when it was captured.
 
 #### View recent chats
 Link to the (signed-in) chat list; measured only. Read as `recent-chats` on the /chat/ page.

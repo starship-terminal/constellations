@@ -794,6 +794,107 @@
      "description": "Display (Fraunces) at 72px."
     }
    },
+   "heading": {
+    "10": {
+     "type": "typography",
+     "value": {
+      "fontFamily": "{font.family.sans}",
+      "fontSize": "10px",
+      "lineHeight": "14px",
+      "fontWeight": 600
+     },
+     "source": "css-var --text-heading-10 (:root @layer tokens): \"600 .625rem/1.4 var(--font-sans)\"",
+     "description": "Heading (Geist 600) at 10px."
+    },
+    "12": {
+     "type": "typography",
+     "value": {
+      "fontFamily": "{font.family.sans}",
+      "fontSize": "12px",
+      "lineHeight": "16.8px",
+      "fontWeight": 600
+     },
+     "source": "css-var --text-heading-12 (:root @layer tokens): \"600 .75rem/1.4 var(--font-sans)\"",
+     "description": "Heading (Geist 600) at 12px."
+    },
+    "14": {
+     "type": "typography",
+     "value": {
+      "fontFamily": "{font.family.sans}",
+      "fontSize": "14px",
+      "lineHeight": "19.6px",
+      "fontWeight": 600
+     },
+     "source": "css-var --text-heading-14 (:root @layer tokens): \"600 .875rem/1.4 var(--font-sans)\"",
+     "description": "Heading (Geist 600) at 14px."
+    },
+    "16": {
+     "type": "typography",
+     "value": {
+      "fontFamily": "{font.family.sans}",
+      "fontSize": "16px",
+      "lineHeight": "22.4px",
+      "fontWeight": 600
+     },
+     "source": "css-var --text-heading-16 (:root @layer tokens): \"600 1rem/1.4 var(--font-sans)\"",
+     "description": "Heading (Geist 600) at 16px."
+    },
+    "18": {
+     "type": "typography",
+     "value": {
+      "fontFamily": "{font.family.sans}",
+      "fontSize": "18px",
+      "lineHeight": "25.2px",
+      "fontWeight": 600
+     },
+     "source": "css-var --text-heading-18 (:root @layer tokens): \"600 1.125rem/1.4 var(--font-sans)\"",
+     "description": "Heading (Geist 600) at 18px."
+    },
+    "20": {
+     "type": "typography",
+     "value": {
+      "fontFamily": "{font.family.sans}",
+      "fontSize": "20px",
+      "lineHeight": "28px",
+      "fontWeight": 600
+     },
+     "source": "css-var --text-heading-20 (:root @layer tokens): \"600 1.25rem/1.4 var(--font-sans)\"",
+     "description": "Heading (Geist 600) at 20px."
+    },
+    "24": {
+     "type": "typography",
+     "value": {
+      "fontFamily": "{font.family.sans}",
+      "fontSize": "24px",
+      "lineHeight": "33.6px",
+      "fontWeight": 600
+     },
+     "source": "css-var --text-heading-24 (:root @layer tokens): \"600 1.5rem/1.4 var(--font-sans)\"",
+     "description": "Heading (Geist 600) at 24px."
+    },
+    "28": {
+     "type": "typography",
+     "value": {
+      "fontFamily": "{font.family.sans}",
+      "fontSize": "28px",
+      "lineHeight": "39.2px",
+      "fontWeight": 600
+     },
+     "source": "css-var --text-heading-28 (:root @layer tokens): \"600 1.75rem/1.4 var(--font-sans)\"",
+     "description": "Heading (Geist 600) at 28px."
+    },
+    "32": {
+     "type": "typography",
+     "value": {
+      "fontFamily": "{font.family.sans}",
+      "fontSize": "32px",
+      "lineHeight": "44.8px",
+      "fontWeight": 600
+     },
+     "source": "css-var --text-heading-32 (:root @layer tokens): \"600 2rem/1.4 var(--font-sans)\"",
+     "description": "Heading (Geist 600) at 32px."
+    }
+   },
    "heading-italic": {
     "10": {
      "type": "typography",
@@ -1547,10 +1648,12 @@
     }
    },
    "divider": {
-    "value": "{color.neutral.200}",
-    "type": "color",
-    "source": "css-var --color-divider = var(--color-neutral-200) (light)",
-    "description": "The divider role, declared over --color-neutral-200.",
+    "default": {
+     "value": "{color.neutral.200}",
+     "type": "color",
+     "source": "css-var --color-divider = var(--color-neutral-200) (light)",
+     "description": "The divider role, declared over --color-neutral-200."
+    },
     "strong": {
      "value": "{color.neutral.300}",
      "type": "color",
@@ -1906,10 +2009,12 @@
     }
    },
    "divider": {
-    "value": "{color.neutral.700}",
-    "type": "color",
-    "source": "css-var --color-divider = var(--color-neutral-700) (dark)",
-    "description": "The divider role, declared over --color-neutral-700.",
+    "default": {
+     "value": "{color.neutral.700}",
+     "type": "color",
+     "source": "css-var --color-divider = var(--color-neutral-700) (dark)",
+     "description": "The divider role, declared over --color-neutral-700."
+    },
     "strong": {
      "value": "{color.neutral.600}",
      "type": "color",
@@ -2214,14 +2319,14 @@
   "inputcard": {
    "radius": {
     "type": "dimension",
-    "value": "0px",
-    "source": "computed borderTopLeftRadius of input-card default (raw/components-computed.json)",
+    "value": "16px",
+    "source": "computed borderTopLeftRadius of form.inputCard.inputCardExpanded (paint layer of input-card default) (raw/components-computed.json)",
     "description": "The chat input card's radius."
    },
    "height": {
     "type": "dimension",
-    "value": "148px",
-    "source": "computed height of input-card default (raw/components-computed.json)",
+    "value": "126px",
+    "source": "computed height of form.inputCard.inputCardExpanded (paint layer of input-card default) (raw/components-computed.json)",
     "description": "The chat input card's resting height."
    }
   },
@@ -2258,8 +2363,8 @@
   "dialog": {
    "radius": {
     "type": "dimension",
-    "value": "0px",
-    "source": "computed borderTopLeftRadius of signin-dialog default (raw/components-computed.json)",
+    "value": "24px",
+    "source": "computed borderTopLeftRadius of div.modal (ancestor layer of signin-dialog default) (raw/components-computed.json)",
     "description": "The sign-in dialog's radius."
    },
    "width": {

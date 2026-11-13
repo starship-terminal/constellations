@@ -47,11 +47,11 @@ Each rule links the screenshot or crop that shows it, under [Do and don't](#do-a
 | accent | #2463eb `light.color.accent.bg` | #61a6fa `dark.color.accent.bg` |
 | border | rgba(27, 27, 24, 0.08) `light.color.border.default` | rgba(253, 253, 247, 0.08) `dark.color.border.default` |
 
-Fonts: `core.font.family.display` is fraunces, then 3 fallbacks; `core.font.family.sans` is geist, then 3 fallbacks; `core.font.family.mono` is geistMono, then 3 fallbacks. Scales, counted as [DESIGN.md](DESIGN.md) holds them: 61 type styles (`core.typography`), no radius steps under `core.radius`, no spacing steps under `core.spacing`.
+Fonts: `core.font.family.display` is fraunces, then 3 fallbacks; `core.font.family.sans` is geist, then 3 fallbacks; `core.font.family.mono` is geistMono, then 3 fallbacks. Scales, counted as [DESIGN.md](DESIGN.md) holds them: 70 type styles (`core.typography`), no radius steps under `core.radius`, no spacing steps under `core.spacing`.
 
 ### Using components
 
-Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 197 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
+Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 193 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
 
 ### Accessibility
 

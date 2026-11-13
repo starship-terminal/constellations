@@ -90,7 +90,7 @@ repeats condensed near the footer
 ([condensed-form](components/crops/condensed-form-default.png)) with the
 48 × 48 round accent submit
 ([condensed-button](components/crops/condensed-button-default.png)), and
-on `/chat/` at 652 × 148
+on `/chat/` at 652 × 126
 ([input-card](components/crops/input-card-default.png)) with the 32 × 32
 round Send
 ([send-button](components/crops/send-button-default.png)) — every accent

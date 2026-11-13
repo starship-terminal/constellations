@@ -153,7 +153,27 @@ def path_of(name):
         return "color.wash." + s[len("wash-"):]
     # semantic: first segment is the group, the rest joined with '-'
     parts = s.split("-", 1)
-    return f"color.{parts[0]}.{parts[1]}" if len(parts) == 2 else f"color.{parts[0]}"
+    if len(parts) == 2:
+        return f"color.{parts[0]}.{parts[1]}"
+    # A bare group name that also carries sub-roles (--color-divider vs
+    # --color-divider-strong) cannot be both the leaf and the group: nesting
+    # the sub-roles under it would hide them inside the leaf dict, which
+    # build_tokens.py then reads as a token and drops. The bare role lands
+    # on ".default", the same leaf name the --color-*-default vars use.
+    return f"color.{parts[0]}.default" if parts[0] in BARE_GROUPS else f"color.{parts[0]}"
+
+
+# Semantic colour group names that appear both bare (--color-<g>) and with
+# sub-roles (--color-<g>-x), in either theme's declarations.
+BARE_GROUPS = set()
+for _decls in (DECL_ROOT, DECL_DARK):
+    for _n in _decls:
+        if not _n.startswith("--color-") or RAMP.match(_n) or _n == "--color-white" \
+                or _n.startswith(("--color-graphic-", "--color-wash-")):
+            continue
+        _s = _n[len("--color-"):]
+        if "-" in _s:
+            BARE_GROUPS.add(_s.split("-", 1)[0])
 
 
 GROUPS = ("surface", "fg", "border", "divider", "solid", "link", "accent",
@@ -240,7 +260,7 @@ GROUP_LABEL = {"display": "Display (Fraunces)", "italic": "Italic display (Fraun
                "body": "Body (Geist 400)", "label": "Label (Geist 500)",
                "mono": "Mono (Geist Mono 400)", "mono-bold": "Mono bold (Geist Mono 600)"}
 for name, decl in sorted(DECL_ROOT.items()):
-    m = re.fullmatch(r"--text-((?:heading-)?(?:italic|display|body|label|mono|mono-bold))-(\d+)", name)
+    m = re.fullmatch(r"--text-((?:heading-)?(?:italic|display|heading|body|label|mono|mono-bold))-(\d+)", name)
     if not m:
         continue
     g = SHORT.match(decl.strip())
@@ -377,23 +397,70 @@ for key, comp, state, prop, ty, desc in [
 
 # ------------------------------------------------------------ component sizes
 
+
+def paint_node(comp, state, match):
+    """The first painted layer inside a component whose recorded node name
+    contains match — the node that actually draws the surface, when the
+    selected element is a transparent wrapper."""
+    for p in C.get(comp, {}).get("states", {}).get(state, {}).get("paint", []):
+        if match in p["node"]:
+            return p
+    return None
+
+
+def ancestor_node(comp, state, match):
+    """A recorded ancestor layer (bg/shadow/radius) whose node name contains
+    match — the parent that paints the card the selected inner node sits in."""
+    for a in C.get(comp, {}).get("states", {}).get(state, {}).get("ancestors", []):
+        if match in a["node"]:
+            return a
+    return None
+
+
+def layer_prop(layer, prop):
+    """A component prop read off a paint/ancestor record: width/height come
+    from its "WxH" size, a border-radius prop from its radius."""
+    if prop in ("width", "height"):
+        m = re.fullmatch(r"([\d.]+)x([\d.]+)", layer.get("size", ""))
+        return "%gpx" % float(m.group(1 if prop == "width" else 2)) if m else None
+    return layer.get("radius" if "Radius" in prop else prop)
+
+
 comp = SPEC["component"]
-for key, cname, state, prop, desc in [
-    ("button.height", "signup-button", "default", "height", "The header Sign up button height."),
-    ("button-cta.height", "start-chat-button", "default", "height", "The hero Start chat button height."),
-    ("button-cta.radius", "start-chat-button", "default", "borderTopLeftRadius", "The Start chat button radius."),
-    ("send.height", "send-button", "default", "height", "The chat composer Send control height."),
-    ("inputcard.radius", "input-card", "default", "borderTopLeftRadius", "The chat input card's radius."),
-    ("inputcard.height", "input-card", "default", "height", "The chat input card's resting height."),
-    ("starter.height", "starter", "default", "height", "A suggestion chip's height."),
-    ("starter.radius", "starter", "default", "borderTopLeftRadius", "The suggestion chip's pill radius."),
-    ("navpill.radius", "nav-pill", "default", "borderTopLeftRadius", "The top-bar pill link's radius."),
-    ("sidebar.width", "chat-sidebar-open", "default", "width", "The expanded chat rail's width."),
-    ("sidebar-collapsed.width", "chat-sidebar", "default", "width", "The collapsed rail's width."),
-    ("dialog.radius", "signin-dialog", "default", "borderTopLeftRadius", "The sign-in dialog's radius."),
-    ("dialog.width", "signin-dialog", "default", "width", "The sign-in dialog's width."),
-    ("header.height", "header", "default", "height", "The measured top-bar height (the declared --header-height is 72px)."),
+# Each entry is (path, component, state, prop, description, layer): layer is
+# None to read prop off the component's own computed style, or
+# ("paint", match)/("ancestor", match) to read the node that draws the
+# surface — a transparent wrapper's own radius reads 0px while the card it
+# wraps is the painted layer inside or beside it.
+for key, cname, state, prop, desc, layer in [
+    ("button.height", "signup-button", "default", "height", "The header Sign up button height.", None),
+    ("button-cta.height", "start-chat-button", "default", "height", "The hero Start chat button height.", None),
+    ("button-cta.radius", "start-chat-button", "default", "borderTopLeftRadius", "The Start chat button radius.", None),
+    ("send.height", "send-button", "default", "height", "The chat composer Send control height.", None),
+    ("inputcard.radius", "input-card", "default", "borderTopLeftRadius", "The chat input card's radius.", ("paint", "form.inputCard")),
+    ("inputcard.height", "input-card", "default", "height", "The chat input card's resting height.", ("paint", "form.inputCard")),
+    ("starter.height", "starter", "default", "height", "A suggestion chip's height.", None),
+    ("starter.radius", "starter", "default", "borderTopLeftRadius", "The suggestion chip's pill radius.", None),
+    ("navpill.radius", "nav-pill", "default", "borderTopLeftRadius", "The top-bar pill link's radius.", None),
+    ("sidebar.width", "chat-sidebar-open", "default", "width", "The expanded chat rail's width.", None),
+    ("sidebar-collapsed.width", "chat-sidebar", "default", "width", "The collapsed rail's width.", None),
+    ("dialog.radius", "signin-dialog", "default", "borderTopLeftRadius", "The sign-in dialog's radius.", ("ancestor", "div.modal")),
+    ("dialog.width", "signin-dialog", "default", "width", "The sign-in dialog's width.", None),
+    ("header.height", "header", "default", "height", "The measured top-bar height (the declared --header-height is 72px).", None),
 ]:
+    if layer:
+        kind, match = layer
+        lay = paint_node(cname, state, match) if kind == "paint" else ancestor_node(cname, state, match)
+        val = layer_prop(lay, prop) if lay else None
+        if val:
+            node = comp
+            parts = key.split(".")
+            for p in parts[:-1]:
+                node = node.setdefault(p, {})
+            node[parts[-1]] = {"type": "dimension", "value": val,
+                               "source": f"computed {prop} of {lay['node']} ({kind} layer of {cname} {state}) (raw/components-computed.json)",
+                               "description": desc}
+        continue
     if have(cname, state, prop):
         node = comp
         parts = key.split(".")
