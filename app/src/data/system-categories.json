@@ -612,6 +612,12 @@
     "reason": "catalog.json describes a global payroll/HR SaaS marketing site: product pages, pricing tiers and demo CTAs for workforce management."
   },
   {
+    "referenceId": "systems:delphi",
+    "groupId": "web-categories",
+    "labels": ["AI Tool"],
+    "reason": "catalog.json describes an AI-clone Q&A product: ask fields, discover galleries, public search results, expert profiles and a chat composer."
+  },
+  {
     "referenceId": "systems:care",
     "groupId": "web-categories",
     "labels": ["Marketplace"],
