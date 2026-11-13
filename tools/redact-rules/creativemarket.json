@@ -1,0 +1,7 @@
+{
+ "_note": "Rules for systems/creativemarket. A fully public signed-out capture: no owner data on any surface. The sign-in card's username field was focused and filled once with a placeholder, then cleared; nothing was submitted and no account exists. Shop names, product names, prices and copy in the screenshots are Creative Market's published public-page content.",
+ "ocr": {
+  "emails": true
+ },
+ "families": []
+}

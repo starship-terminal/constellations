@@ -1,7 +1,7 @@
 {
  "date": "2026-11-13",
  "rubric": "4",
- "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): read tokens.json, components.md, patterns.md, raw/measurements.md and the screenshots; checked state tracks, focus readings and the declared-vs-painted var layer",
+ "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): read the package (tokens.json, components.md, patterns.md, README), the raw readings and the 31 screenshots; graded against scorecard/criteria.json web wording",
  "systems": [
   {
    "slug": "brilliant",
@@ -11593,136 +11593,8 @@
    "category": "Productivity",
    "reviewed": "2026-11-12",
    "reviewedPlatform": "web"
-  },
-  {
-   "slug": "cushion",
-   "grades": {
-    "F1": {
-     "grade": "partly",
-     "evidence": "The 12-step --color-gray-1..-12 neutral ramp is complete (#fafafa..#1f1f1f) and the Tailwind palettes declare 7-10 steps per hue (cyan 10, blue/green/orange ~7-8), but the hues the product actually uses are thin: the accent is two steps (#00a6f4 + #0085c3) and each --color-feature-* hue is single-step. core.color.* in tokens.json."
-    },
-    "F2": {
-     "grade": "partly",
-     "evidence": "light.color.background.* holds page #f5f5f5, surface #fcfcfc, panel #fafafa and the opened-FAQ #ebebeb — real page/surface/fill roles, all css-var or measured. No raised, overlay or scrim role paints on the public surface."
-    },
-    "F3": {
-     "grade": "partly",
-     "evidence": "text #1f1f1f, muted #858585 (hero sub), on-accent #fff on the CTAs, and the declared #000 --color-foreground. No disabled, secondary or link-specific role paints on the public surface."
-    },
-    "F4": {
-     "grade": "partly",
-     "evidence": "border rgba(33,33,33,.1) (--border) on panels, CTAs, nav links and mock controls, plus the measured #c2c2c2 focus ring. Default + focus roles; no strong or hover border scale."
-    },
-    "F5": {
-     "grade": "meets",
-     "evidence": "Measured: cta-start/signup-btn paint #00a6f4 at rest and color(srgb 0 .52 .77) = #0085c3 (--color-accent-dark) on both hover and pressed; pressed also shrinks ~2%. Captured as component.state-track.cta-state-track."
-    },
-    "F6": {
-     "grade": "missing",
-     "evidence": "Tailwind green/red/amber/yellow palettes are declared, and --color-feature-* carries product hues, but no success/warning/danger/info set with fill+text+border roles paints anywhere on the public surface."
-    },
-    "F7": {
-     "grade": "meets",
-     "evidence": "The public product paints exactly one theme; every semantic role exists in it. The sheets' .dark block is declared on no painted element — documented as an unpainted layer, not a shipped theme."
-    },
-    "F8": {
-     "grade": "partly",
-     "evidence": "Two families with stacks (Inter Tight display, ui-sans-serif body, declared mono), an 11-step --text-* ramp with per-step line-heights, 4 --font-weight-* steps and --leading-*/--tracking-*. No named display/heading/body/label/caption roles beyond the family tokens."
-    },
-    "F9": {
-     "grade": "meets",
-     "evidence": "Declared --spacing 4px base unit plus --page-max-width 1280px, --page-padding-inline 16px and the --container-* width scale (core.spacing.*)."
-    },
-    "F10": {
-     "grade": "meets",
-     "evidence": "Declared --radius-sm..-3xl (4/6/8/12/16/24px) with measured uses: 8px nav buttons, 12px CTAs/blog-card/mock-frame, 16px plan panel/pricing CTA; the 1px rgba(33,33,33,.1) hairline is the border-width story."
-    },
-    "F11": {
-     "grade": "partly",
-     "evidence": "Control heights measured across sizes: nav 72px, CTAs 40/44/56px, FAQ rows 72px, mock controls 32px; the focus ring's width and offset measured (2px white + 4px #c2c2c2). Icon sizes are not documented — the mock's markers are text emoji and no icon set was lifted."
-    },
-    "F12": {
-     "grade": "meets",
-     "evidence": "Four declared levels tied to uses: --shadow-button (controls), --shadow-raised (inset edges), --shadow-popover (overlays), --shadow-floating (floating panels) — core.shadow.*, all css-var evidence."
-    },
-    "F13": {
-     "grade": "partly",
-     "evidence": "Declared --default-transition-duration 150ms + cubic-bezier(.4,0,.2,1), --ease-out and the --animate-pulse/spin/blink bindings; the measured 0.15s transition on CTAs/links matches. Reduced-motion behaviour never observed on the public surface."
-    },
-    "F14": {
-     "grade": "partly",
-     "evidence": "--page-max-width 1280px + 16px gutters, the --container-* scale, the sticky 72px nav and the measured mobile collapse (48px hero, full-width CTA at 390). No z-index layer vars and no breakpoint ramp painted beyond the mobile pass."
-    },
-    "C1": {
-     "grade": "partly",
-     "evidence": "35 components measured: links (nav, footer), buttons (sign-up, CTAs, pricing CTA, mock sidebar controls), an accordion (FAQ rows, opened + closed), cards (plan panel, blog card/featured, mock post), the mock window frame, headings and legal text. No text field, select, checkbox, dialog, toast or table exists on the public surface."
-    },
-    "C2": {
-     "grade": "partly",
-     "evidence": "default/hover/focus-visible/pressed measured on every interactive control, plus 'opened' on the FAQ accordion. Disabled, error and loading states never appear on the public surface — documented gaps."
-    },
-    "C3": {
-     "grade": "meets",
-     "evidence": "Real keyboard focus captured on 10 controls: 8 draw the 2px-white + 4px-#c2c2c2 shadow ring with a rgb(0,95,204) outline; 2 (mock-channel, footer-link) draw a 1px #005fcc outline. Documented in components.md 'Shared values'."
-    },
-    "C4": {
-     "grade": "partly",
-     "evidence": "components.md writes each entry's computed value followed by the matching palette token; state tracks and the focus ring are emitted as component tokens. Not every value resolves to a named token."
-    },
-    "P1": {
-     "grade": "partly",
-     "evidence": "patterns.md documents the shell (nav/footer/column), home with the app mock, pricing with the FAQ accordion, updates, blog, slack-alternative, terms and the mobile pass. No forms/validation, empty/loading/error, destructive-confirmation or search patterns exist on the public surface."
-    },
-    "A1": {
-     "grade": "partly",
-     "evidence": "icon.png (128px, the Cushion mark) captured in LFS and registered in the catalog preview; Inter Tight and the system-ui stack named (files not shipped, loaded from Google Fonts). No standalone SVG icon set lifted — declared under layoutGaps."
-    },
-    "K1": {
-     "grade": "meets",
-     "evidence": "The README lists what was captured and how (signed-out headless Chromium, routes, viewports), what was never followed, and the boundaries: the signed-in app, the mock-vs-product distinction, the unpainted .dark layer, unmeasured pages and absent states."
-    },
-    "F15": {
-     "grade": "partly",
-     "evidence": "Script: primary text passes; secondary fails 2 pairs, worst 3.38:1 light muted (light.color.text.muted) on page (light.color.background.page)"
-    },
-    "F16": {
-     "grade": "meets",
-     "evidence": "Script: 195 of 195 tokens name their source"
-    },
-    "K2": {
-     "grade": "missing",
-     "evidence": "Script: no \"Do and don't\" section in the README"
-    },
-    "K3": {
-     "grade": "meets",
-     "evidence": "Script: DESIGN.md matches a fresh generation"
-    },
-    "C5": {
-     "grade": "na",
-     "evidence": "Optional for a capture, and this product does not publish it."
-    },
-    "V1": {
-     "grade": "na",
-     "evidence": "Optional for a capture, and this product does not publish it."
-    },
-    "V2": {
-     "grade": "na",
-     "evidence": "Optional for a capture, and this product does not publish it."
-    }
-   },
-   "name": "Cushion",
-   "goodFor": "Async-messaging marketing sites: a #f5f5f5 page under a 72px sticky nav, #00a6f4 -> #0085c3 accent CTAs with a 2% press shrink, Inter Tight display (60px hero, 600) over a system-ui body, the --color-gray-1..-12 ramp (#fafafa panel / #fcfcfc surface / #858585 muted / #1f1f1f ink), rgba(33,33,33,.1) hairlines, 12px CTA and 16px panel radii, a rendered 'Acme Inc' inbox mock, $8/mo/user plan panel and a 72px FAQ accordion",
-   "url": "https://cushion.so",
-   "captured": "2026-11-12",
-   "themes": [
-    "light"
-   ],
-   "platform": "web",
-   "category": "Messaging",
-   "reviewed": "2026-11-13",
-   "reviewedPlatform": "web"
   }
  ],
  "base": "2026-10-16",
- "reviewMethod": "read tokens.json, components.md, patterns.md, raw/measurements.md and the screenshots; checked state tracks, focus readings and the declared-vs-painted var layer"
+ "reviewMethod": "read the package (tokens.json, components.md, patterns.md, README), the raw readings and the 31 screenshots; graded against scorecard/criteria.json web wording"
 }
