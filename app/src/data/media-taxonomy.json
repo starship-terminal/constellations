@@ -1016,6 +1016,11 @@
       "referenceId": "systems:cron",
       "media": 73,
       "assignedMedia": 73
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "media": 271,
+      "assignedMedia": 128
     }
   ],
   "assignments": [
@@ -223726,6 +223731,1449 @@
           "termId": "web-fonts:helvetica-neue",
           "rule": "font-primary",
           "reason": "Exact primary family Helvetica Neue from systems/cron/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/screenshots/home-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/screenshots/home-light-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/screenshots/home-light-menu.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/screenshots/login-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:log-in",
+          "rule": "page-login",
+          "reason": "Capture filename explicitly names log in; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/screenshots/search-light-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/screenshots/search-light-full.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/screenshots/signup-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:sign-up",
+          "rule": "page-signup",
+          "reason": "Capture filename explicitly names sign up; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/badge-select-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:badge",
+          "rule": "ui-badge",
+          "reason": "Capture filename explicitly names badge; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/badge-select-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:badge",
+          "rule": "ui-badge",
+          "reason": "Capture filename explicitly names badge; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/badge-select-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:badge",
+          "rule": "ui-badge",
+          "reason": "Capture filename explicitly names badge; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/badge-select-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:badge",
+          "rule": "ui-badge",
+          "reason": "Capture filename explicitly names badge; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/bookmark-btn-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:wish-list-bookmark",
+          "rule": "ux-bookmark",
+          "reason": "Capture filename explicitly names wish list & bookmark; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/bookmark-btn-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:wish-list-bookmark",
+          "rule": "ux-bookmark",
+          "reason": "Capture filename explicitly names wish list & bookmark; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/bookmark-btn-hover.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:wish-list-bookmark",
+          "rule": "ux-bookmark",
+          "reason": "Capture filename explicitly names wish list & bookmark; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/bookmark-btn-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:wish-list-bookmark",
+          "rule": "ux-bookmark",
+          "reason": "Capture filename explicitly names wish list & bookmark; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/category-tile-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/category-tile-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/category-tile-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/category-tile-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/designer-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/designer-card-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/designer-card-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/designer-card-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/filter-select-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/filter-select-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/filter-select-hover.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/filter-select-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/filter-sort-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/filter-sort-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/filter-sort-hover.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/filter-sort-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/filter-tab-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/filter-tab-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/filter-tab-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/filter-tab-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/filters-btn-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/filters-btn-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/filters-btn-hover.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/filters-btn-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/footer-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/footer-link-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/footer-link-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/footer-link-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/footer-link-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/grid-shot-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/grid-shot-card-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/grid-shot-card-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/grid-shot-card-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/home-search-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/home-search-focused.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:search-field",
+          "rule": "ui-search-field",
+          "reason": "Capture filename explicitly names search field; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/job-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/job-card-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/job-card-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/job-card-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/login-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/m-menu-button-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/m-search-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/nav-dropdown-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dropdown",
+          "rule": "ui-dropdown",
+          "reason": "Capture filename explicitly names dropdown; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/pro-badge-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:badge",
+          "rule": "ui-badge",
+          "reason": "Capture filename explicitly names badge; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/pro-badge-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:badge",
+          "rule": "ui-badge",
+          "reason": "Capture filename explicitly names badge; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/pro-badge-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:badge",
+          "rule": "ui-badge",
+          "reason": "Capture filename explicitly names badge; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/pro-badge-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:badge",
+          "rule": "ui-badge",
+          "reason": "Capture filename explicitly names badge; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/profile-avatar-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:avatar",
+          "rule": "ui-avatar",
+          "reason": "Capture filename explicitly names avatar; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/profile-icon-btn-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:icon",
+          "rule": "ui-icon",
+          "reason": "Capture filename explicitly names icon; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/profile-icon-btn-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:icon",
+          "rule": "ui-icon",
+          "reason": "Capture filename explicitly names icon; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/profile-icon-btn-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:icon",
+          "rule": "ui-icon",
+          "reason": "Capture filename explicitly names icon; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/profile-icon-btn-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:icon",
+          "rule": "ui-icon",
+          "reason": "Capture filename explicitly names icon; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/profile-shot-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/profile-shot-card-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/profile-shot-card-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/profile-shot-card-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/profile-sort-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/profile-sort-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/profile-sort-hover.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/profile-sort-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/profile-tab-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/profile-tab-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/profile-tab-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/profile-tab-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/search-desc-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/search-go-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/search-go-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/search-go-hover.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/search-go-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/search-h1-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/search-input-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:search-field",
+          "rule": "ui-search-field",
+          "reason": "Capture filename explicitly names search field; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/search-input-focused.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:search-field",
+          "rule": "ui-search-field",
+          "reason": "Capture filename explicitly names search field; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/shot-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/shot-card-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/shot-card-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/shot-card-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/shot-icon-btn-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:icon",
+          "rule": "ui-icon",
+          "reason": "Capture filename explicitly names icon; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/shot-icon-btn-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:icon",
+          "rule": "ui-icon",
+          "reason": "Capture filename explicitly names icon; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/shot-icon-btn-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:icon",
+          "rule": "ui-icon",
+          "reason": "Capture filename explicitly names icon; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/shot-icon-btn-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:icon",
+          "rule": "ui-icon",
+          "reason": "Capture filename explicitly names icon; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/signup-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/skill-chip-dark-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/skill-chip-dark-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/skill-chip-dark-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/skill-chip-dark-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/skill-chip-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/skill-chip-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/skill-chip-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/skill-chip-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/social-icon-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:icon",
+          "rule": "ui-icon",
+          "reason": "Capture filename explicitly names icon; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/social-icon-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:icon",
+          "rule": "ui-icon",
+          "reason": "Capture filename explicitly names icon; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/social-icon-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:icon",
+          "rule": "ui-icon",
+          "reason": "Capture filename explicitly names icon; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/social-icon-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:icon",
+          "rule": "ui-icon",
+          "reason": "Capture filename explicitly names icon; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/sort-select-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/sort-select-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/sort-select-hover.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/sort-select-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/story-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/story-card-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/story-card-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/story-card-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/tag-chip-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/tag-chip-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/tag-chip-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/tag-chip-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/topic-chip-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/topic-chip-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/topic-chip-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/topic-chip-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/view-tab-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/view-tab-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/view-tab-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dribbble",
+      "mediaId": "systems/dribbble/components/crops/view-tab-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
         }
       ]
     }

@@ -652,5 +652,11 @@
     "groupId": "web-categories",
     "labels": ["Productivity"],
     "reason": "catalog.json category productivity maps to Productivity."
+  },
+  {
+    "referenceId": "systems:dribbble",
+    "groupId": "web-categories",
+    "labels": ["Inspiration Board", "Marketplace"],
+    "reason": "catalog.json describes a design-community and portfolio directory: shot grids, designer profiles, a jobs board and hiring surfaces. Inspiration Board covers visual discovery and Marketplace the designer-for-hire/jobs side."
   }
 ]

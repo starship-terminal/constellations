@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 109,
-    "system_domains": 101,
-    "matched_domains": 76,
-    "missing_domains": 357,
+    "system_packages": 110,
+    "system_domains": 102,
+    "matched_domains": 77,
+    "missing_domains": 356,
     "system_domains_absent_from_catalog": 25
   },
   "matched": {
@@ -1103,6 +1103,23 @@
         }
       ]
     },
+    "dribbble.com": {
+      "catalog": [
+        {
+          "name": "Dribbble",
+          "domain": "dribbble.com",
+          "id": 257
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "dribbble",
+          "name": "Dribbble",
+          "url": "https://dribbble.com",
+          "name_match": true
+        }
+      ]
+    },
     "drinkdouze.com": {
       "catalog": [
         {
@@ -1567,13 +1584,6 @@
         "name": "DJI",
         "domain": "dji.com",
         "id": 332
-      }
-    ],
-    "dribbble.com": [
-      {
-        "name": "Dribbble",
-        "domain": "dribbble.com",
-        "id": 257
       }
     ],
     "dub.co": [
@@ -3966,7 +3976,10 @@
         "slug": "luma-ios",
         "name": "Luma",
         "url": "https://luma.com",
-        "ios_guess": ["Luma", "Luma AI"]
+        "ios_guess": [
+          "Luma",
+          "Luma AI"
+        ]
       }
     ],
     "metabase.com": [
@@ -3982,19 +3995,25 @@
         "slug": "notion-calendar-desktop",
         "name": "Notion Calendar (desktop)",
         "url": "https://www.notion.com/product/calendar",
-        "ios_guess": ["Notion"]
+        "ios_guess": [
+          "Notion"
+        ]
       },
       {
         "slug": "notion-desktop",
         "name": "Notion (desktop)",
         "url": "https://www.notion.com/desktop",
-        "ios_guess": ["Notion"]
+        "ios_guess": [
+          "Notion"
+        ]
       },
       {
         "slug": "notion-ios",
         "name": "Notion for iOS",
         "url": "https://www.notion.com/mobile",
-        "ios_guess": ["Notion"]
+        "ios_guess": [
+          "Notion"
+        ]
       }
     ],
     "opencode.ai": [
@@ -4042,7 +4061,9 @@
         "slug": "substack",
         "name": "Substack",
         "url": "https://substack.com",
-        "ios_guess": ["Substack"]
+        "ios_guess": [
+          "Substack"
+        ]
       }
     ],
     "supabase.com": [
