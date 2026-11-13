@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Build tokens.json (W3C DTCG, Tokens Studio multi-set layout) from the raw captures.
 
-Sources, read from descript.com on 2026-11-16:
+Sources, read from descript.com on 2026-11-14:
   raw/css-vars.json          the custom properties resolved on a probe —
                              the named palette layer on :root: --Red-*,
                              --Maroon-*, --Lilac-*, --Neutral-*, --Green-*,

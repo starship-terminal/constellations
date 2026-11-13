@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 123,
-    "system_domains": 115,
-    "matched_domains": 90,
-    "missing_domains": 343,
+    "system_packages": 124,
+    "system_domains": 116,
+    "matched_domains": 91,
+    "missing_domains": 342,
     "system_domains_absent_from_catalog": 25
   },
   "matched": {
@@ -1035,6 +1035,23 @@
         }
       ]
     },
+    "descript.com": {
+      "catalog": [
+        {
+          "name": "Descript",
+          "domain": "descript.com",
+          "id": 29
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "descript",
+          "name": "Descript",
+          "url": "https://www.descript.com",
+          "name_match": true
+        }
+      ]
+    },
     "dock.us": {
       "catalog": [
         {
@@ -1728,13 +1745,6 @@
         "name": "Delphi",
         "domain": "delphi.ai",
         "id": 670
-      }
-    ],
-    "descript.com": [
-      {
-        "name": "Descript",
-        "domain": "descript.com",
-        "id": 29
       }
     ],
     "designmodo.com": [
