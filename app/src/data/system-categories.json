@@ -695,6 +695,21 @@
     "groupId": "web-categories",
     "labels": ["Marketplace"],
     "reason": "catalog.json describes a music-hardware maker's storefront: product grid, PDP, cart and login drawers."
+  },
+  {
+    "referenceId": "systems:endel",
+    "groupId": "web-categories",
+    "labels": [
+      "Health & Wellness",
+      "Music Streaming"
+    ],
+    "reason": "catalog.json describes a personalized soundscapes product for focus, relaxation and sleep: a dark marketing site and a signed-out web app with a public player."
+  },
+  {
+    "referenceId": "systems:editorx",
+    "groupId": "web-categories",
+    "labels": ["Design & Media Editing", "Productivity"],
+    "reason": "catalog.json describes a pro site builder: template and inspiration galleries plus the marketing pages for the Wix Studio editor."
   }
 ,
   {
@@ -706,4 +721,3 @@
     "reason": "catalog.json describes an audiobook reader/listening product: marketing pages, the explore catalog and the reader sign-in/sign-up boundary cards."
   }
 ]
-
