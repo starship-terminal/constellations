@@ -26,24 +26,12 @@
       "category": "productivity",
       "platform": "web",
       "goodFor": "Password/security product marketing: announcement strip + white nav chrome, navy gradient hero, segment-selector plan pill, pricing columns, FAQ accordions",
-      "tags": [
-        "web",
-        "security",
-        "saas",
-        "marketing",
-        "pill",
-        "knox"
-      ],
+      "tags": ["web", "security", "saas", "marketing", "pill", "knox"],
       "shape": "reference",
       "captured": "2026-11-08",
       "access": "signed out (the vault is credential-gated and was never reached)",
-      "themes": [
-        "light"
-      ],
-      "widths": [
-        1440,
-        390
-      ],
+      "themes": ["light"],
+      "widths": [1440, 390],
       "entry": "systems/1password/README.md",
       "tokens": "systems/1password/tokens.json",
       "styleGuide": "systems/1password/style-guide.html",
@@ -60,10 +48,7 @@
             "border": "light.border.stroke"
           }
         },
-        "fonts": [
-          "core.font.family.agile-sans",
-          "core.font.family.agile-mono"
-        ]
+        "fonts": ["core.font.family.agile-sans", "core.font.family.agile-mono"]
       },
       "capture": {
         "harness": "Devin",
@@ -84,24 +69,12 @@
       "category": "productivity",
       "platform": "web",
       "goodFor": "Playful product-marketing pages: floating pill nav, Poppins display with inline emoji atoms, lime/black CTA pairs, chat-annotation bubbles, pricing rail with lime plan card, black footer band",
-      "tags": [
-        "web",
-        "design-tool",
-        "playful",
-        "lime",
-        "pill",
-        "tilda"
-      ],
+      "tags": ["web", "design-tool", "playful", "lime", "pill", "tilda"],
       "shape": "reference",
       "captured": "2026-11-08",
       "access": "signed out (every surface captured is public; the app host go.aaply.app returned \"Not found\" on every route and was not captured)",
-      "themes": [
-        "light"
-      ],
-      "widths": [
-        1440,
-        390
-      ],
+      "themes": ["light"],
+      "widths": [1440, 390],
       "entry": "systems/aaply/README.md",
       "tokens": "systems/aaply/tokens.json",
       "styleGuide": "systems/aaply/style-guide.html",
@@ -118,10 +91,7 @@
             "border": "light.border"
           }
         },
-        "fonts": [
-          "core.font.family.display",
-          "core.font.family.ui"
-        ]
+        "fonts": ["core.font.family.display", "core.font.family.ui"]
       },
       "capture": {
         "harness": "Devin",
@@ -130,7 +100,7 @@
         "durationMin": null,
         "gaps": [
           "go.aaply.app returned \"Not found\" on /login, /sign, /signup and /workspace/demo: the authenticated product is unreachable to this client, so only the marketing site is measured",
-          "the billing segment's held lime fill paints on a sibling shape, not the text atom — segments measure transparent in both positions",
+          "the billing segment's held lime fill paints on a sibling shape, not the text atom \u2014 segments measure transparent in both positions",
           "reviews carousel measured on its first slide only"
         ],
         "pr": "https://github.com/c-wenlong/designs/pull/441",
@@ -158,13 +128,8 @@
       "shape": "reference",
       "captured": "2026-11-08",
       "access": "signed out (every captured surface is public); consent card measured but never answered",
-      "themes": [
-        "light"
-      ],
-      "widths": [
-        1440,
-        390
-      ],
+      "themes": ["light"],
+      "widths": [1440, 390],
       "entry": "systems/ableton/README.md",
       "tokens": "systems/ableton/tokens.json",
       "styleGuide": "systems/ableton/style-guide.html",
@@ -181,9 +146,7 @@
             "border": "light.border"
           }
         },
-        "fonts": [
-          "core.font.family.futura"
-        ]
+        "fonts": ["core.font.family.futura"]
       },
       "capture": {
         "harness": "Devin",
@@ -213,13 +176,8 @@
       "shape": "reference",
       "captured": "2026-11-09",
       "access": "signed out (every captured surface is public); newsletter signup measured at rest and focus only, never submitted; the CookieYes consent strip never rendered headless",
-      "themes": [
-        "light"
-      ],
-      "widths": [
-        1440,
-        390
-      ],
+      "themes": ["light"],
+      "widths": [1440, 390],
       "entry": "systems/aboard/README.md",
       "tokens": "systems/aboard/tokens.json",
       "styleGuide": "systems/aboard/style-guide.html",
@@ -236,10 +194,7 @@
             "border": "light.border"
           }
         },
-        "fonts": [
-          "core.font.family.tobias",
-          "core.font.family.work-sans"
-        ]
+        "fonts": ["core.font.family.tobias", "core.font.family.work-sans"]
       },
       "capture": {
         "harness": "Devin",
@@ -270,13 +225,8 @@
       "shape": "reference",
       "captured": "2026-11-10",
       "access": "signed out (every captured surface is public); the book-a-demo form measured at rest and focus only, never submitted; app.aboardhr.com sign-in never opened",
-      "themes": [
-        "light"
-      ],
-      "widths": [
-        1440,
-        390
-      ],
+      "themes": ["light"],
+      "widths": [1440, 390],
       "entry": "systems/aboardhr/README.md",
       "tokens": "systems/aboardhr/tokens.json",
       "styleGuide": "systems/aboardhr/style-guide.html",
@@ -293,10 +243,7 @@
             "border": "light.border"
           }
         },
-        "fonts": [
-          "core.font.family.system",
-          "core.font.family.inter"
-        ]
+        "fonts": ["core.font.family.system", "core.font.family.inter"]
       },
       "capture": {
         "harness": "Devin",
@@ -328,13 +275,8 @@
       "shape": "reference",
       "captured": "2026-11-10",
       "access": "signed out (every captured surface is public); app.acctual.com sign-in never opened",
-      "themes": [
-        "light"
-      ],
-      "widths": [
-        1440,
-        390
-      ],
+      "themes": ["light"],
+      "widths": [1440, 390],
       "entry": "systems/acctual/README.md",
       "tokens": "systems/acctual/tokens.json",
       "styleGuide": "systems/acctual/style-guide.html",
@@ -400,13 +342,8 @@
       "shape": "reference",
       "captured": "2026-11-09",
       "access": "signed out (every captured surface is public); Singapore storefront /sg/en, OneTrust consent SDK network-blocked",
-      "themes": [
-        "light"
-      ],
-      "widths": [
-        1440,
-        390
-      ],
+      "themes": ["light"],
+      "widths": [1440, 390],
       "entry": "systems/acnestudios/README.md",
       "tokens": "systems/acnestudios/tokens.json",
       "styleGuide": "systems/acnestudios/style-guide.html",
@@ -423,10 +360,7 @@
             "border": "light.border.default"
           }
         },
-        "fonts": [
-          "core.font.family.sans",
-          "core.font.family.mono"
-        ]
+        "fonts": ["core.font.family.sans", "core.font.family.mono"]
       },
       "capture": {
         "method": "public-web",
@@ -448,8 +382,8 @@
           "/sg/en/cart"
         ],
         "gaps": [
-          "Fit Predictor widget (Fits.me) never mounted in headless Chromium on this product/geo — recorded as an honest miss",
-          "Bag drawer, checkout, account area, store stock check, size-guide drawer and search results need a cart item, account, purchase or form submit — not captured",
+          "Fit Predictor widget (Fits.me) never mounted in headless Chromium on this product/geo \u2014 recorded as an honest miss",
+          "Bag drawer, checkout, account area, store stock check, size-guide drawer and search results need a cart item, account, purchase or form submit \u2014 not captured",
           "OneTrust consent banner never mounted (SDK network-blocked); its selectors are known, its styling unmeasured",
           "Cart route renders the home page when the bag is empty",
           "Geo/region variant is the served Singapore storefront; other regions not captured"
@@ -481,13 +415,8 @@
       "shape": "reference",
       "captured": "2026-11-10",
       "access": "signed out (every captured surface is public); the Squarespace account gate was measured and state-forced, never submitted",
-      "themes": [
-        "light"
-      ],
-      "widths": [
-        1440,
-        390
-      ],
+      "themes": ["light"],
+      "widths": [1440, 390],
       "entry": "systems/acuityscheduling/README.md",
       "tokens": "systems/acuityscheduling/tokens.json",
       "styleGuide": "systems/acuityscheduling/style-guide.html",
@@ -535,24 +464,12 @@
       "category": "e-commerce",
       "platform": "web",
       "goodFor": "Sportswear storefront in strict monochrome: black on white, grey steps, bold 14/20 button labels, Adihaus DIN, square corners, 48px controls",
-      "tags": [
-        "web",
-        "ecommerce",
-        "sportswear",
-        "monochrome",
-        "bold",
-        "china"
-      ],
+      "tags": ["web", "ecommerce", "sportswear", "monochrome", "bold", "china"],
       "shape": "reference",
       "captured": "2026-11-10",
       "access": "signed out (every captured surface is public); China flagship storefront adidas.com.cn",
-      "themes": [
-        "light"
-      ],
-      "widths": [
-        1440,
-        390
-      ],
+      "themes": ["light"],
+      "widths": [1440, 390],
       "entry": "systems/adidas/README.md",
       "tokens": "systems/adidas/tokens.json",
       "styleGuide": "systems/adidas/style-guide.html",
@@ -569,14 +486,11 @@
             "border": "light.border.default"
           }
         },
-        "fonts": [
-          "core.font.family.din",
-          "core.font.family.neue"
-        ]
+        "fonts": ["core.font.family.din", "core.font.family.neue"]
       },
       "capture": {
         "method": "public-web",
-        "source": "adidas.com.cn China flagship in headless Chromium, 1440x900 + 390x844; computed styles and crops from the live DOM. BOUNDARY: the global adidas.com storefront is Akamai-blocked from the capture environment — every regional domain answers HTTP 403 Reference Error (headless, headed Chrome, curl, IPv6, Wayback), so this package covers adidas.com.cn, a related but different zh-CN front end",
+        "source": "adidas.com.cn China flagship in headless Chromium, 1440x900 + 390x844; computed styles and crops from the live DOM. BOUNDARY: the global adidas.com storefront is Akamai-blocked from the capture environment \u2014 every regional domain answers HTTP 403 Reference Error (headless, headed Chrome, curl, IPv6, Wayback), so this package covers adidas.com.cn, a related but different zh-CN front end",
         "timestamp": "2026-11-10T17:30:00Z",
         "harness": "Devin",
         "model": "SWE-2 Max",
@@ -588,7 +502,7 @@
           "/cart"
         ],
         "gaps": [
-          "adidas.com global storefront unreachable (Akamai 403 on every regional domain) — package covers adidas.com.cn only",
+          "adidas.com global storefront unreachable (Akamai 403 on every regional domain) \u2014 package covers adidas.com.cn only",
           "pages are fixed-height app shells with inner scroll containers: -full screenshots capture the viewport shell, not a tall page",
           "add-to-cart captured in its disabled state (grey text/border); enabled purchase bar not captured",
           "plp-title, product-card-price, size-cell, accordion, m-header recorded misses; WeChat tooltip surfaces not measured",
@@ -621,13 +535,8 @@
       "shape": "reference",
       "captured": "2026-11-10",
       "access": "signed out (every captured surface is public); US storefront Sites-aesop-us-Site, OneTrust consent SDK network-blocked",
-      "themes": [
-        "light"
-      ],
-      "widths": [
-        1440,
-        390
-      ],
+      "themes": ["light"],
+      "widths": [1440, 390],
       "entry": "systems/aesop/README.md",
       "tokens": "systems/aesop/tokens.json",
       "styleGuide": "systems/aesop/style-guide.html",
@@ -644,10 +553,7 @@
             "border": "light.border.default"
           }
         },
-        "fonts": [
-          "core.font.family.sans",
-          "core.font.family.medium"
-        ]
+        "fonts": ["core.font.family.sans", "core.font.family.medium"]
       },
       "capture": {
         "method": "public-web",
@@ -668,7 +574,7 @@
         ],
         "gaps": [
           "Email sign up modal mounts empty: its remote Demandware fragment did not render headless, so its fields are unmeasured",
-          "Add to cart captured mid-hydration as 'Loading …'; resting label state not captured",
+          "Add to cart captured mid-hydration as 'Loading \u2026'; resting label state not captured",
           "sign-in beyond the form, account area, checkout and purchases deliberately uncaptured (nothing submitted)",
           "search-panel container and cart-close button eluded marking; qty-select absent on a one-variant PDP",
           "OneTrust consent banner never mounted (SDK network-blocked); selectors known, styling unmeasured"
@@ -701,14 +607,8 @@
       "shape": "reference",
       "captured": "2026-11-09",
       "access": "signed out; www.airbnb.com geo-redirected to www.airbnb.com.sg from this network (same system on the regional mirror)",
-      "themes": [
-        "light",
-        "dark"
-      ],
-      "widths": [
-        1440,
-        390
-      ],
+      "themes": ["light", "dark"],
+      "widths": [1440, 390],
       "entry": "systems/airbnb/README.md",
       "tokens": "systems/airbnb/tokens.json",
       "styleGuide": "systems/airbnb/style-guide.html",
@@ -733,9 +633,7 @@
             "border": "dark.color.border.secondary.default"
           }
         },
-        "fonts": [
-          "core.typography.family"
-        ]
+        "fonts": ["core.typography.family"]
       },
       "source": {
         "path": "~/.design-systems/airbnb/raw-shots (full-colour captures, outside the repo)"
@@ -791,13 +689,8 @@
       "shape": "reference",
       "captured": "2026-11-10",
       "access": "signed out (every captured surface is public); the contact-sales form measured and focused but never submitted; the Qualified chat widget and Google One Tap swept out of every shot",
-      "themes": [
-        "light"
-      ],
-      "widths": [
-        1440,
-        390
-      ],
+      "themes": ["light"],
+      "widths": [1440, 390],
       "entry": "systems/airtable/README.md",
       "tokens": "systems/airtable/tokens.json",
       "styleGuide": "systems/airtable/style-guide.html",
@@ -814,9 +707,7 @@
             "border": "light.border"
           }
         },
-        "fonts": [
-          "core.font.family.haas"
-        ]
+        "fonts": ["core.font.family.haas"]
       },
       "capture": {
         "harness": "Devin",
@@ -836,24 +727,12 @@
       "category": "e-commerce",
       "platform": "web",
       "goodFor": "Sustainable-footwear retail: storefront chrome, collection grid with filter sheet, product page with size grid, cart drawer",
-      "tags": [
-        "web",
-        "shopify",
-        "retail",
-        "warm",
-        "pill",
-        "serif-display"
-      ],
+      "tags": ["web", "shopify", "retail", "warm", "pill", "serif-display"],
       "shape": "reference",
       "captured": "2026-11-08",
       "access": "signed out (every surface captured is public)",
-      "themes": [
-        "light"
-      ],
-      "widths": [
-        1440,
-        390
-      ],
+      "themes": ["light"],
+      "widths": [1440, 390],
       "entry": "systems/allbirds/README.md",
       "tokens": "systems/allbirds/tokens.json",
       "styleGuide": "systems/allbirds/style-guide.html",
@@ -870,10 +749,7 @@
             "border": "light.border.stroke"
           }
         },
-        "fonts": [
-          "core.fontFamily.serif",
-          "core.fontFamily.sans"
-        ]
+        "fonts": ["core.fontFamily.serif", "core.fontFamily.sans"]
       },
       "capture": {
         "harness": "Devin",
@@ -907,13 +783,8 @@
       "shape": "reference",
       "captured": "2026-11-11",
       "access": "signed out (every captured surface is public; checkout, the bag drawer and account behind sign-in were never reached)",
-      "themes": [
-        "light"
-      ],
-      "widths": [
-        1440,
-        390
-      ],
+      "themes": ["light"],
+      "widths": [1440, 390],
       "entry": "systems/aloyoga/README.md",
       "tokens": "systems/aloyoga/tokens.json",
       "styleGuide": "systems/aloyoga/style-guide.html",
@@ -930,9 +801,7 @@
             "border": "core.color.neutral.mercury"
           }
         },
-        "fonts": [
-          "core.font.family.primary"
-        ]
+        "fonts": ["core.font.family.primary"]
       },
       "capture": {
         "method": "public-web",
@@ -990,13 +859,8 @@
       "shape": "reference",
       "captured": "2026-11-11",
       "access": "signed out (every captured surface is public; the app behind login and the download were never reached)",
-      "themes": [
-        "light"
-      ],
-      "widths": [
-        1440,
-        390
-      ],
+      "themes": ["light"],
+      "widths": [1440, 390],
       "entry": "systems/amie/README.md",
       "tokens": "systems/amie/tokens.json",
       "styleGuide": "systems/amie/style-guide.html",
@@ -1071,14 +935,8 @@
       "shape": "reference",
       "captured": "2026-11-09",
       "access": "signed out (every surface is public)",
-      "themes": [
-        "light",
-        "dark"
-      ],
-      "widths": [
-        1440,
-        390
-      ],
+      "themes": ["light", "dark"],
+      "widths": [1440, 390],
       "entry": "systems/anam/README.md",
       "tokens": "systems/anam/tokens.json",
       "styleGuide": "systems/anam/style-guide.html",
@@ -1127,25 +985,12 @@
       "category": "ai-research",
       "platform": "web",
       "goodFor": "AI-product marketing pages, pricing pages, sales forms and developer docs; ivory editorial surfaces with serif headlines, pill nav chrome and a restrained clay accent",
-      "tags": [
-        "web",
-        "marketing",
-        "editorial",
-        "serif",
-        "light",
-        "docs"
-      ],
+      "tags": ["web", "marketing", "editorial", "serif", "light", "docs"],
       "shape": "reference",
       "captured": "2026-11-09",
       "access": "public marketing surface only; signed out; nothing submitted or signed into",
-      "themes": [
-        "light",
-        "dark"
-      ],
-      "widths": [
-        1440,
-        390
-      ],
+      "themes": ["light", "dark"],
+      "widths": [1440, 390],
       "entry": "systems/anthropic/README.md",
       "tokens": "systems/anthropic/tokens.json",
       "styleGuide": "systems/anthropic/style-guide.html",
@@ -1170,10 +1015,7 @@
             "border": "dark.border.DEFAULT"
           }
         },
-        "fonts": [
-          "core.font.family.sans",
-          "core.font.family.serif"
-        ]
+        "fonts": ["core.font.family.sans", "core.font.family.serif"]
       },
       "capture": {
         "harness": "Devin",
@@ -1204,14 +1046,8 @@
       "shape": "reference",
       "captured": "2026-11-10",
       "access": "signed out (every captured surface is public); the OneTrust card was captured but never answered; studio.apollographql.com login/signup captured at rest, never submitted",
-      "themes": [
-        "light",
-        "dark"
-      ],
-      "widths": [
-        1440,
-        390
-      ],
+      "themes": ["light", "dark"],
+      "widths": [1440, 390],
       "entry": "systems/apollographql/README.md",
       "tokens": "systems/apollographql/tokens.json",
       "styleGuide": "systems/apollographql/style-guide.html",
@@ -1236,10 +1072,7 @@
             "border": "dark.border"
           }
         },
-        "fonts": [
-          "core.font.family.display",
-          "core.font.family.ui"
-        ]
+        "fonts": ["core.font.family.display", "core.font.family.ui"]
       },
       "capture": {
         "harness": "Devin",
@@ -1273,14 +1106,8 @@
       "shape": "reference",
       "captured": "2026-11-10",
       "access": "signed out (every captured surface is public; the console behind sign-in was never reached)",
-      "themes": [
-        "dark",
-        "light"
-      ],
-      "widths": [
-        1440,
-        390
-      ],
+      "themes": ["dark", "light"],
+      "widths": [1440, 390],
       "entry": "systems/appwrite/README.md",
       "tokens": "systems/appwrite/tokens.json",
       "styleGuide": "systems/appwrite/style-guide.html",
@@ -1305,10 +1132,7 @@
             "border": "dark.border"
           }
         },
-        "fonts": [
-          "core.font.family.aeonik",
-          "core.font.family.mono"
-        ]
+        "fonts": ["core.font.family.aeonik", "core.font.family.mono"]
       },
       "capture": {
         "method": "public-web",
@@ -1370,13 +1194,8 @@
       "shape": "reference",
       "captured": "2026-11-10",
       "access": "signed out (every captured surface is public; the app behind sign-in was never reached; the Finsweet consent banner and Intercom launcher were hidden, never answered)",
-      "themes": [
-        "light"
-      ],
-      "widths": [
-        1440,
-        390
-      ],
+      "themes": ["light"],
+      "widths": [1440, 390],
       "entry": "systems/arcade/README.md",
       "tokens": "systems/arcade/tokens.json",
       "styleGuide": "systems/arcade/style-guide.html",
@@ -1393,10 +1212,7 @@
             "border": "light.border"
           }
         },
-        "fonts": [
-          "core.font.family.display",
-          "core.font.family.ui"
-        ]
+        "fonts": ["core.font.family.display", "core.font.family.ui"]
       },
       "capture": {
         "method": "public-web",
@@ -1457,13 +1273,8 @@
       "shape": "reference",
       "captured": "2026-10-24",
       "access": "not signed in, iPhone Mirroring",
-      "themes": [
-        "light",
-        "dark"
-      ],
-      "widths": [
-        390
-      ],
+      "themes": ["light", "dark"],
+      "widths": [390],
       "entry": "systems/arcsearch/README.md",
       "tokens": "systems/arcsearch/tokens.json",
       "styleGuide": "systems/arcsearch/style-guide.html",
@@ -1488,9 +1299,7 @@
             "border": "dark.color.border.separator"
           }
         },
-        "fonts": [
-          "core.fontFamily.base"
-        ]
+        "fonts": ["core.fontFamily.base"]
       },
       "source": {
         "path": "~/.design-systems/arcsearch/raw-shots (full-colour captures, outside the repo)"
@@ -1527,13 +1336,8 @@
       "shape": "reference",
       "captured": "2026-11-11",
       "access": "signed out (every captured surface is public; the cookie-consent card and the 'Please confirm your location' dialog were measured as they arrive, then hidden, never answered; Akamai blocks headless Chromium and every /en-ww/product/* URL, so the capture ran in headed real Chrome and no PDP was reached)",
-      "themes": [
-        "light"
-      ],
-      "widths": [
-        1440,
-        390
-      ],
+      "themes": ["light"],
+      "widths": [1440, 390],
       "entry": "systems/arket/README.md",
       "tokens": "systems/arket/tokens.json",
       "styleGuide": "systems/arket/style-guide.html",
@@ -1550,10 +1354,7 @@
             "border": "light.border"
           }
         },
-        "fonts": [
-          "core.font.family.ui",
-          "core.font.family.small-caps"
-        ]
+        "fonts": ["core.font.family.ui", "core.font.family.small-caps"]
       },
       "capture": {
         "method": "public-web",
@@ -1610,13 +1411,8 @@
       "shape": "reference",
       "captured": "2026-11-11",
       "access": "signed out (every captured surface is public; the editor on app.artboard.studio sits behind sign-in and was never reached; no consent overlay appeared)",
-      "themes": [
-        "light"
-      ],
-      "widths": [
-        1440,
-        390
-      ],
+      "themes": ["light"],
+      "widths": [1440, 390],
       "entry": "systems/artboardstudio/README.md",
       "tokens": "systems/artboardstudio/tokens.json",
       "styleGuide": "systems/artboardstudio/style-guide.html",
@@ -1633,10 +1429,7 @@
             "border": "light.border"
           }
         },
-        "fonts": [
-          "core.font.family.heading",
-          "core.font.family.ui"
-        ]
+        "fonts": ["core.font.family.heading", "core.font.family.ui"]
       },
       "capture": {
         "method": "public-web",
@@ -1687,14 +1480,8 @@
       "shape": "reference",
       "captured": "2026-11-11",
       "access": "signed out (every captured surface is public; the app on app.asana.com sits behind sign-in and was never reached; OneTrust consent banner was dismissed; the dark token set is declared in the shipped CSS but unbound on the captured routes)",
-      "themes": [
-        "light",
-        "dark"
-      ],
-      "widths": [
-        1440,
-        390
-      ],
+      "themes": ["light", "dark"],
+      "widths": [1440, 390],
       "entry": "systems/asana/README.md",
       "tokens": "systems/asana/tokens.json",
       "styleGuide": "systems/asana/style-guide.html",
@@ -1711,9 +1498,7 @@
             "border": "light.border.default"
           }
         },
-        "fonts": [
-          "core.fontFamily.ui"
-        ]
+        "fonts": ["core.fontFamily.ui"]
       },
       "capture": {
         "method": "public-web",
@@ -1766,13 +1551,8 @@
       "shape": "reference",
       "captured": "2026-11-10",
       "access": "signed out (every captured surface is public; checkout and account behind sign-in were never reached)",
-      "themes": [
-        "light"
-      ],
-      "widths": [
-        1440,
-        390
-      ],
+      "themes": ["light"],
+      "widths": [1440, 390],
       "entry": "systems/asos/README.md",
       "tokens": "systems/asos/tokens.json",
       "styleGuide": "systems/asos/style-guide.html",
@@ -1789,13 +1569,11 @@
             "border": "light.border.default"
           }
         },
-        "fonts": [
-          "core.font.family.primary"
-        ]
+        "fonts": ["core.font.family.primary"]
       },
       "capture": {
         "method": "public-web",
-        "source": "asos.com in headed Chrome (Playwright channel 'chrome' — Akamai 403s headless), desktop 1440x900 and mobile 390x844 at 2x; computed styles and crops from the live DOM via data-testid selectors; CSS vars from stylesheet response bodies + inline styles resolved in a probe; geo-served Singapore (SGD)",
+        "source": "asos.com in headed Chrome (Playwright channel 'chrome' \u2014 Akamai 403s headless), desktop 1440x900 and mobile 390x844 at 2x; computed styles and crops from the live DOM via data-testid selectors; CSS vars from stylesheet response bodies + inline styles resolved in a probe; geo-served Singapore (SGD)",
         "timestamp": "2026-11-10T19:30:00Z",
         "harness": "Devin",
         "model": "SWE-2 Max",
@@ -1851,15 +1629,8 @@
       "shape": "reference",
       "captured": "2026-10-31",
       "access": "Signed-in basic setup; Attio automatically provisioned a 14-day Pro trial. Public marketing captured separately.",
-      "themes": [
-        "light",
-        "dark"
-      ],
-      "widths": [
-        1386,
-        1440,
-        390
-      ],
+      "themes": ["light", "dark"],
+      "widths": [1386, 1440, 390],
       "entry": "systems/attio/README.md",
       "tokens": "systems/attio/tokens.json",
       "styleGuide": "systems/attio/style-guide.html",
@@ -1884,9 +1655,7 @@
             "border": "dark.role.border.default"
           }
         },
-        "fonts": [
-          "core.fontFamily.body"
-        ]
+        "fonts": ["core.fontFamily.body"]
       },
       "capture": {
         "harness": "Codex",
@@ -1920,13 +1689,8 @@
       "shape": "reference",
       "captured": "2026-11-11",
       "access": "signed out (every captured surface is public; checkout and account behind sign-in were never reached)",
-      "themes": [
-        "light"
-      ],
-      "widths": [
-        1440,
-        390
-      ],
+      "themes": ["light"],
+      "widths": [1440, 390],
       "entry": "systems/avnier/README.md",
       "tokens": "systems/avnier/tokens.json",
       "styleGuide": "systems/avnier/style-guide.html",
@@ -1943,10 +1707,7 @@
             "border": "core.measured.border-field"
           }
         },
-        "fonts": [
-          "core.font.family.primary",
-          "core.font.family.display"
-        ]
+        "fonts": ["core.font.family.primary", "core.font.family.display"]
       },
       "capture": {
         "method": "public-web",
@@ -1965,7 +1726,7 @@
           "mobile /collections/tous-les-produits"
         ],
         "gaps": [
-          "/cart is a 404 for everyone — the cart is the side-cart drawer opened by PANIER (measured as cart-drawer/cart-empty); the 404 page is recorded as cart-page/cart-title",
+          "/cart is a 404 for everyone \u2014 the cart is the side-cart drawer opened by PANIER (measured as cart-drawer/cart-empty); the 404 page is recorded as cart-page/cart-title",
           "checkout and everything behind sign-in (nothing was added to the cart)",
           "the PDP is a sample: the shop grid's first product at run time",
           "the Axeptio consent layer and the shipping-country popup are hidden in captures, never answered",
@@ -2001,13 +1762,8 @@
       "shape": "reference",
       "captured": "2026-11-11",
       "access": "signed out (every captured surface is public; voting, submission and account areas were never performed or reached)",
-      "themes": [
-        "light"
-      ],
-      "widths": [
-        1440,
-        390
-      ],
+      "themes": ["light"],
+      "widths": [1440, 390],
       "entry": "systems/awwwards/README.md",
       "tokens": "systems/awwwards/tokens.json",
       "styleGuide": "systems/awwwards/style-guide.html",
@@ -2024,9 +1780,7 @@
             "border": "light.border.default"
           }
         },
-        "fonts": [
-          "core.font.family.primary"
-        ]
+        "fonts": ["core.font.family.primary"]
       },
       "capture": {
         "method": "public-web",
@@ -2046,7 +1800,7 @@
         ],
         "gaps": [
           "the site detail is a sample: the first /websites/ card whose page still has a Vote button (SOTD winners have closed voting); recorded as site_url",
-          "the card hover layer (Vote Now) stayed display:none under headless hover — card-cta/card-action are recorded misses; home-light-card-hover shows it",
+          "the card hover layer (Vote Now) stayed display:none under headless hover \u2014 card-cta/card-action are recorded misses; home-light-card-hover shows it",
           "Log in / Sign Up did not render on the captured headless loads; no public login page exists signed-out (/session/login 404s)",
           "voting and /submit/ were never performed (a vote records a score); account, jury and Pro areas are behind sign-in",
           "submit-cta-2 is a recorded miss: no measurable CTA rendered on /submit/ headless",
@@ -2080,13 +1834,8 @@
       "shape": "reference",
       "captured": "2026-11-11",
       "access": "signed out (every captured surface is public; app.b150.ai login/signup rate-limits non-browser clients with HTTP 429 and was never reached)",
-      "themes": [
-        "light"
-      ],
-      "widths": [
-        1440,
-        390
-      ],
+      "themes": ["light"],
+      "widths": [1440, 390],
       "entry": "systems/b150/README.md",
       "tokens": "systems/b150/tokens.json",
       "styleGuide": "systems/b150/style-guide.html",
@@ -2103,14 +1852,11 @@
             "border": "light.border.default"
           }
         },
-        "fonts": [
-          "core.font.family.sans",
-          "core.font.family.mono"
-        ]
+        "fonts": ["core.font.family.sans", "core.font.family.mono"]
       },
       "capture": {
         "method": "public-web",
-        "source": "b150.ai in headless Chrome (Playwright), desktop 1440x900 and mobile 390x844 at 2x; computed styles and crops from the live DOM; CSS vars from stylesheet response bodies + inline styles — the declared @layer theme block lands in the app bin",
+        "source": "b150.ai in headless Chrome (Playwright), desktop 1440x900 and mobile 390x844 at 2x; computed styles and crops from the live DOM; CSS vars from stylesheet response bodies + inline styles \u2014 the declared @layer theme block lands in the app bin",
         "timestamp": "2026-11-11T05:30:00Z",
         "harness": "Devin",
         "model": "SWE-2 Max",
@@ -2160,13 +1906,8 @@
       "shape": "reference",
       "captured": "2026-11-11",
       "access": "signed out (every captured surface is public; the app behind /sign-in was never reached and no form was submitted)",
-      "themes": [
-        "light"
-      ],
-      "widths": [
-        1440,
-        390
-      ],
+      "themes": ["light"],
+      "widths": [1440, 390],
       "entry": "systems/ballpark/README.md",
       "tokens": "systems/ballpark/tokens.json",
       "styleGuide": "systems/ballpark/style-guide.html",
@@ -2242,14 +1983,8 @@
       "shape": "reference",
       "captured": "2026-11-11",
       "access": "signed out (every captured surface is public; the app behind app.base44.com was never signed into and no form was submitted)",
-      "themes": [
-        "light",
-        "dark (declared)"
-      ],
-      "widths": [
-        1440,
-        390
-      ],
+      "themes": ["light", "dark (declared)"],
+      "widths": [1440, 390],
       "entry": "systems/base44/README.md",
       "tokens": "systems/base44/tokens.json",
       "styleGuide": "systems/base44/style-guide.html",
@@ -2266,10 +2001,7 @@
             "border": "light.border"
           }
         },
-        "fonts": [
-          "core.fontFamily.display",
-          "core.fontFamily.body"
-        ]
+        "fonts": ["core.fontFamily.display", "core.fontFamily.body"]
       },
       "capture": {
         "method": "public-web",
@@ -2326,13 +2058,8 @@
       "shape": "reference",
       "captured": "2026-11-11",
       "access": "signed out (every captured surface is public; the product is a desktop download and no sign-in surface, form or checkout was reached)",
-      "themes": [
-        "dark"
-      ],
-      "widths": [
-        1440,
-        390
-      ],
+      "themes": ["dark"],
+      "widths": [1440, 390],
       "entry": "systems/bezi/README.md",
       "tokens": "systems/bezi/tokens.json",
       "styleGuide": "systems/bezi/style-guide.html",
@@ -2358,13 +2085,7 @@
         "harness": "Devin",
         "model": "SWE-2 Max",
         "route": "public-web",
-        "routes": [
-          "/",
-          "/pricing",
-          "/about",
-          "mobile /",
-          "mobile /pricing"
-        ],
+        "routes": ["/", "/pricing", "/about", "mobile /", "mobile /pricing"],
         "gaps": [
           "the product itself: Bezi is a desktop app download and no sign-in, account or app surface was reached",
           "no link was followed, download started or form submitted; TRY FOR FREE, the plan CTAs, the billing toggle and outbound links (Docs, Discord, socials) were measured only",
@@ -2402,13 +2123,8 @@
       "shape": "reference",
       "captured": "2026-11-11",
       "access": "signed out (every captured surface is public; the editor redirects to a claim screen that was measured but never submitted, and no account was created)",
-      "themes": [
-        "light"
-      ],
-      "widths": [
-        1440,
-        390
-      ],
+      "themes": ["light"],
+      "widths": [1440, 390],
       "entry": "systems/biosites/README.md",
       "tokens": "systems/biosites/tokens.json",
       "styleGuide": "systems/biosites/style-guide.html",
@@ -2479,13 +2195,8 @@
       "shape": "reference",
       "captured": "2026-11-10",
       "access": "signed out (every captured surface is public; the article paywall, sign-in, checkout and the gated live stream were never crossed)",
-      "themes": [
-        "light"
-      ],
-      "widths": [
-        1440,
-        390
-      ],
+      "themes": ["light"],
+      "widths": [1440, 390],
       "entry": "systems/bloomberg/README.md",
       "tokens": "systems/bloomberg/tokens.json",
       "styleGuide": "systems/bloomberg/style-guide.html",
@@ -2502,10 +2213,7 @@
             "border": "core.color.neutral.line"
           }
         },
-        "fonts": [
-          "core.font.family.headline",
-          "core.font.family.ui"
-        ]
+        "fonts": ["core.font.family.headline", "core.font.family.ui"]
       },
       "capture": {
         "method": "public-web",
@@ -2561,13 +2269,8 @@
       "shape": "reference",
       "captured": "2026-11-11",
       "access": "signed out (every captured surface is public; the shop, sign-in and checkout on www.blueapron.com are edge-blocked for this client and were never reached)",
-      "themes": [
-        "light"
-      ],
-      "widths": [
-        1440,
-        390
-      ],
+      "themes": ["light"],
+      "widths": [1440, 390],
       "entry": "systems/blueapron/README.md",
       "tokens": "systems/blueapron/tokens.json",
       "styleGuide": "systems/blueapron/style-guide.html",
@@ -2584,10 +2287,7 @@
             "border": "core.color.neutral.line"
           }
         },
-        "fonts": [
-          "core.font.family.display",
-          "core.font.family.body"
-        ]
+        "fonts": ["core.font.family.display", "core.font.family.body"]
       },
       "capture": {
         "method": "public-web",
@@ -2640,13 +2340,8 @@
       "shape": "reference",
       "captured": "2026-11-11",
       "access": "signed out (every captured surface is public; the product on app.boords.com sits behind login and was never reached)",
-      "themes": [
-        "light"
-      ],
-      "widths": [
-        1440,
-        390
-      ],
+      "themes": ["light"],
+      "widths": [1440, 390],
       "entry": "systems/boords/README.md",
       "tokens": "systems/boords/tokens.json",
       "styleGuide": "systems/boords/style-guide.html",
@@ -2663,10 +2358,7 @@
             "border": "core.color.neutral.line"
           }
         },
-        "fonts": [
-          "core.font.family.display",
-          "core.font.family.body"
-        ]
+        "fonts": ["core.font.family.display", "core.font.family.body"]
       },
       "capture": {
         "method": "public-web",
@@ -2712,24 +2404,12 @@
       "category": "learning",
       "platform": "web",
       "goodFor": "Interactive problem-solving lessons, course paths, a calm editorial learning UI (Panda CSS tokens)",
-      "tags": [
-        "web",
-        "calm",
-        "editorial",
-        "lesson-player",
-        "course-path"
-      ],
+      "tags": ["web", "calm", "editorial", "lesson-player", "course-path"],
       "shape": "reference",
       "captured": "2026-10-17",
       "access": "signed in, free account",
-      "themes": [
-        "light",
-        "dark"
-      ],
-      "widths": [
-        1440,
-        390
-      ],
+      "themes": ["light", "dark"],
+      "widths": [1440, 390],
       "entry": "systems/brilliant/README.md",
       "tokens": "systems/brilliant/tokens.json",
       "styleGuide": "systems/brilliant/style-guide.html",
@@ -2754,9 +2434,7 @@
             "border": "dark.border.primary"
           }
         },
-        "fonts": [
-          "core.fontFamily.brilliant"
-        ]
+        "fonts": ["core.fontFamily.brilliant"]
       },
       "source": {
         "repo": "https://github.com/c-wenlong/self-learn",
@@ -2791,13 +2469,8 @@
       "shape": "reference",
       "captured": "2026-11-11",
       "access": "signed out (every captured surface is public; the product on app.busuu.com, register step 2+ and checkout sit behind login and were never reached)",
-      "themes": [
-        "light"
-      ],
-      "widths": [
-        1440,
-        390
-      ],
+      "themes": ["light"],
+      "widths": [1440, 390],
       "entry": "systems/busuu/README.md",
       "tokens": "systems/busuu/tokens.json",
       "styleGuide": "systems/busuu/style-guide.html",
@@ -2814,10 +2487,7 @@
             "border": "core.color.neutral.line"
           }
         },
-        "fonts": [
-          "core.font.family.marketing",
-          "core.font.family.app"
-        ]
+        "fonts": ["core.font.family.marketing", "core.font.family.app"]
       },
       "capture": {
         "method": "public-web",
@@ -2876,14 +2546,8 @@
       "shape": "reference",
       "captured": "2026-11-11",
       "access": "signed out (every captured surface is public; the editor workspace, projects, exports, billing and checkout sit behind /login and were never reached)",
-      "themes": [
-        "light",
-        "dark"
-      ],
-      "widths": [
-        1440,
-        390
-      ],
+      "themes": ["light", "dark"],
+      "widths": [1440, 390],
       "entry": "systems/butter/README.md",
       "tokens": "systems/butter/tokens.json",
       "styleGuide": "systems/butter/style-guide.html",
@@ -2973,14 +2637,8 @@
       "shape": "reference",
       "captured": "2026-11-11",
       "access": "signed out (every captured surface is public; the equity-management workspace, cap table, grants, documents, billing and checkout sit behind app.cakeequity.com and were never reached)",
-      "themes": [
-        "light",
-        "dark"
-      ],
-      "widths": [
-        1440,
-        390
-      ],
+      "themes": ["light", "dark"],
+      "widths": [1440, 390],
       "entry": "systems/cakeequity/README.md",
       "tokens": "systems/cakeequity/tokens.json",
       "styleGuide": "systems/cakeequity/style-guide.html",
@@ -3064,15 +2722,9 @@
       ],
       "shape": "reference",
       "captured": "2026-11-11",
-      "access": "signed out (every captured surface is public; the product — scheduler, event types, availability, bookings, workflows, insights, settings — sits behind app.cal.com login and was never reached; no booking was created)",
-      "themes": [
-        "light",
-        "dark"
-      ],
-      "widths": [
-        1440,
-        390
-      ],
+      "access": "signed out (every captured surface is public; the product \u2014 scheduler, event types, availability, bookings, workflows, insights, settings \u2014 sits behind app.cal.com login and was never reached; no booking was created)",
+      "themes": ["light", "dark"],
+      "widths": [1440, 390],
       "entry": "systems/cal/README.md",
       "tokens": "systems/cal/tokens.json",
       "styleGuide": "systems/cal/style-guide.html",
@@ -3170,13 +2822,8 @@
       "shape": "reference",
       "captured": "2026-10-25",
       "access": "the owner's signed-in account (personal workspace, no plan); read live from the running app over its remote-debugging port, plus Capy's component gallery at capy://app/design on fixture data, and a real agent run (Capy 0.5.0, Claude Code) in a project made for the capture on a scratch folder, run on the paired Mac",
-      "themes": [
-        "light",
-        "dark"
-      ],
-      "widths": [
-        1280
-      ],
+      "themes": ["light", "dark"],
+      "widths": [1280],
       "entry": "systems/capy-desktop/README.md",
       "tokens": "systems/capy-desktop/tokens.json",
       "styleGuide": "systems/capy-desktop/style-guide.html",
@@ -3201,10 +2848,7 @@
             "border": "dark.role.border.default"
           }
         },
-        "fonts": [
-          "core.fontFamily.sans",
-          "core.fontFamily.mono"
-        ]
+        "fonts": ["core.fontFamily.sans", "core.fontFamily.mono"]
       },
       "source": {
         "path": "~/.design-systems/capy-desktop/raw-shots (full-colour captures and run frames, outside the repo)"
@@ -3228,25 +2872,12 @@
       "category": "ai-chat",
       "platform": "web",
       "goodFor": "The baseline chat UI: thread, composer, sidebar history, menus, dialogs, search, settings pages",
-      "tags": [
-        "web",
-        "ai",
-        "chat",
-        "composer",
-        "minimal",
-        "sidebar"
-      ],
+      "tags": ["web", "ai", "chat", "composer", "minimal", "sidebar"],
       "shape": "reference",
       "captured": "2026-10-17",
       "access": "signed in, Free plan",
-      "themes": [
-        "light",
-        "dark"
-      ],
-      "widths": [
-        1440,
-        390
-      ],
+      "themes": ["light", "dark"],
+      "widths": [1440, 390],
       "entry": "systems/chatgpt/README.md",
       "tokens": "systems/chatgpt/tokens.json",
       "styleGuide": "systems/chatgpt/style-guide.html",
@@ -3271,9 +2902,7 @@
             "border": "dark.role.border.default"
           }
         },
-        "fonts": [
-          "core.fontFamily.sans"
-        ]
+        "fonts": ["core.fontFamily.sans"]
       },
       "source": {
         "repo": "https://github.com/c-wenlong/self-learn",
@@ -3309,13 +2938,8 @@
       "shape": "reference",
       "captured": "2026-10-24",
       "access": "signed in, workspace seat, iPhone Mirroring",
-      "themes": [
-        "light",
-        "dark"
-      ],
-      "widths": [
-        390
-      ],
+      "themes": ["light", "dark"],
+      "widths": [390],
       "entry": "systems/chatgpt-ios/README.md",
       "tokens": "systems/chatgpt-ios/tokens.json",
       "styleGuide": "systems/chatgpt-ios/style-guide.html",
@@ -3340,9 +2964,7 @@
             "border": "dark.color.border.divider"
           }
         },
-        "fonts": [
-          "core.fontFamily.base"
-        ]
+        "fonts": ["core.fontFamily.base"]
       },
       "source": {
         "path": "~/.design-systems/chatgpt-ios/raw-shots (full-colour captures, outside the repo)"
@@ -3376,14 +2998,8 @@
       "shape": "reference",
       "captured": "2026-10-17",
       "access": "signed in, Max plan (2026-10-04; refreshed 2026-10-17 for forms, feedback and states)",
-      "themes": [
-        "light",
-        "dark"
-      ],
-      "widths": [
-        1440,
-        390
-      ],
+      "themes": ["light", "dark"],
+      "widths": [1440, 390],
       "entry": "systems/claude/README.md",
       "tokens": "systems/claude/tokens.json",
       "styleGuide": "systems/claude/style-guide.html",
@@ -3408,10 +3024,7 @@
             "border": "dark.border.default"
           }
         },
-        "fonts": [
-          "core.fontFamily.sans",
-          "core.fontFamily.serif"
-        ]
+        "fonts": ["core.fontFamily.sans", "core.fontFamily.serif"]
       },
       "source": {
         "repo": "https://github.com/c-wenlong/self-learn",
@@ -3426,10 +3039,7 @@
         "durationMin": null
       },
       "designMd": {
-        "spacing": [
-          "core.density.pad-",
-          "core.density.gap-"
-        ]
+        "spacing": ["core.density.pad-", "core.density.gap-"]
       }
     },
     {
@@ -3454,13 +3064,8 @@
       "shape": "reference",
       "captured": "2026-10-24",
       "access": "signed in, Max plan, iPhone Mirroring (dark 2026-10-23, light 2026-10-24)",
-      "themes": [
-        "light",
-        "dark"
-      ],
-      "widths": [
-        390
-      ],
+      "themes": ["light", "dark"],
+      "widths": [390],
       "entry": "systems/claude-ios/README.md",
       "tokens": "systems/claude-ios/tokens.json",
       "styleGuide": "systems/claude-ios/style-guide.html",
@@ -3485,10 +3090,7 @@
             "border": "dark.color.border.divider"
           }
         },
-        "fonts": [
-          "core.fontFamily.sans",
-          "core.fontFamily.serif"
-        ]
+        "fonts": ["core.fontFamily.sans", "core.fontFamily.serif"]
       },
       "source": {
         "path": "~/.design-systems/claude-ios/raw-shots (full-colour captures, outside the repo)"
@@ -3524,16 +3126,8 @@
       "shape": "reference",
       "captured": "2026-10-30",
       "access": "signed-in Hobby workspace, development instance; public marketing landing page",
-      "themes": [
-        "dark",
-        "light"
-      ],
-      "widths": [
-        390,
-        884,
-        1440,
-        1600
-      ],
+      "themes": ["dark", "light"],
+      "widths": [390, 884, 1440, 1600],
       "entry": "systems/clerk/README.md",
       "tokens": "systems/clerk/tokens.json",
       "styleGuide": "systems/clerk/style-guide.html",
@@ -3558,10 +3152,7 @@
             "border": "light.border.default"
           }
         },
-        "fonts": [
-          "core.fontFamily.sans",
-          "core.fontFamily.mono"
-        ]
+        "fonts": ["core.fontFamily.sans", "core.fontFamily.mono"]
       },
       "capture": {
         "harness": "Codex",
@@ -3596,14 +3187,8 @@
       "shape": "reference",
       "captured": "2026-10-31",
       "access": "Signed-in owner free-plan dashboard; public landing page separately labelled",
-      "themes": [
-        "light",
-        "dark"
-      ],
-      "widths": [
-        1440,
-        390
-      ],
+      "themes": ["light", "dark"],
+      "widths": [1440, 390],
       "entry": "systems/cloudflare/README.md",
       "tokens": "systems/cloudflare/tokens.json",
       "styleGuide": "systems/cloudflare/style-guide.html",
@@ -3628,9 +3213,7 @@
             "border": "dark.preview.border"
           }
         },
-        "fonts": [
-          "core.font.sans"
-        ]
+        "fonts": ["core.font.sans"]
       },
       "capture": {
         "harness": "Codex",
@@ -3674,13 +3257,8 @@
       "shape": "reference",
       "captured": "2026-10-25",
       "access": "signed in (the owner's second Codex account, Codex 2.app); read live from the running app over its remote-debugging port",
-      "themes": [
-        "light",
-        "dark"
-      ],
-      "widths": [
-        1512
-      ],
+      "themes": ["light", "dark"],
+      "widths": [1512],
       "entry": "systems/codex-desktop/README.md",
       "tokens": "systems/codex-desktop/tokens.json",
       "styleGuide": "systems/codex-desktop/style-guide.html",
@@ -3705,10 +3283,7 @@
             "border": "dark.role.border.default"
           }
         },
-        "fonts": [
-          "core.fontFamily.sans-default",
-          "core.fontFamily.mono"
-        ]
+        "fonts": ["core.fontFamily.sans-default", "core.fontFamily.mono"]
       },
       "source": {
         "path": "~/.design-systems/codex-desktop/raw-shots (full-colour captures and run frames, outside the repo)"
@@ -3753,13 +3328,8 @@
       "shape": "reference",
       "captured": "2026-10-25",
       "access": "the owner's signed-in account on the Free plan; read live from the app's WKWebView through Safari's Web Inspector, on a scratch repository the capture added",
-      "themes": [
-        "light",
-        "dark"
-      ],
-      "widths": [
-        1400
-      ],
+      "themes": ["light", "dark"],
+      "widths": [1400],
       "entry": "systems/conductor-desktop/README.md",
       "tokens": "systems/conductor-desktop/tokens.json",
       "styleGuide": "systems/conductor-desktop/style-guide.html",
@@ -3784,10 +3354,7 @@
             "border": "dark.role.border.default"
           }
         },
-        "fonts": [
-          "core.fontFamily.sans",
-          "core.fontFamily.mono"
-        ]
+        "fonts": ["core.fontFamily.sans", "core.fontFamily.mono"]
       },
       "source": {
         "path": "~/.design-systems/conductor-desktop/raw-shots (full-colour captures, the P3 originals and run frames, outside the repo)"
@@ -3811,24 +3378,12 @@
       "category": "learning",
       "platform": "web",
       "goodFor": "Course catalogue, course and module pages, course cards, a mature enterprise design system (386 --cds-* variables)",
-      "tags": [
-        "web",
-        "catalogue",
-        "cards",
-        "course-page",
-        "corporate"
-      ],
+      "tags": ["web", "catalogue", "cards", "course-page", "corporate"],
       "shape": "reference",
       "captured": "2026-10-17",
       "access": "public pages signed out, learner pages signed in",
-      "themes": [
-        "light",
-        "dark"
-      ],
-      "widths": [
-        1440,
-        390
-      ],
+      "themes": ["light", "dark"],
+      "widths": [1440, 390],
       "entry": "systems/coursera/README.md",
       "tokens": "systems/coursera/tokens.json",
       "styleGuide": "systems/coursera/style-guide.html",
@@ -3853,9 +3408,7 @@
             "border": "dark.neutral.stroke-primary-weak"
           }
         },
-        "fonts": [
-          "core.fontFamily.source-sans-pro"
-        ]
+        "fonts": ["core.fontFamily.source-sans-pro"]
       },
       "source": {
         "repo": "https://github.com/c-wenlong/self-learn",
@@ -3895,13 +3448,8 @@
       "shape": "reference",
       "captured": "2026-10-25",
       "access": "signed in (the owner's Team plan); read live from the running app over its remote-debugging port",
-      "themes": [
-        "light",
-        "dark"
-      ],
-      "widths": [
-        1280
-      ],
+      "themes": ["light", "dark"],
+      "widths": [1280],
       "entry": "systems/cursor-desktop/README.md",
       "tokens": "systems/cursor-desktop/tokens.json",
       "styleGuide": "systems/cursor-desktop/style-guide.html",
@@ -3926,10 +3474,7 @@
             "border": "dark.role.border.default"
           }
         },
-        "fonts": [
-          "core.fontFamily.sans",
-          "core.fontFamily.mono"
-        ]
+        "fonts": ["core.fontFamily.sans", "core.fontFamily.mono"]
       },
       "source": {
         "path": "~/.design-systems/cursor-desktop/raw-shots (full-colour captures and run frames, outside the repo)"
@@ -3967,13 +3512,8 @@
       "shape": "reference",
       "captured": "2026-10-24",
       "access": "signed in, iPhone Mirroring",
-      "themes": [
-        "light",
-        "dark"
-      ],
-      "widths": [
-        390
-      ],
+      "themes": ["light", "dark"],
+      "widths": [390],
       "entry": "systems/cursor-ios/README.md",
       "tokens": "systems/cursor-ios/tokens.json",
       "styleGuide": "systems/cursor-ios/style-guide.html",
@@ -3998,10 +3538,7 @@
             "border": "dark.color.border.divider"
           }
         },
-        "fonts": [
-          "core.fontFamily.base",
-          "core.fontFamily.mono"
-        ]
+        "fonts": ["core.fontFamily.base", "core.fontFamily.mono"]
       },
       "source": {
         "path": "~/.design-systems/cursor-ios/raw-shots (full-colour captures, outside the repo)"
@@ -4043,13 +3580,8 @@
       "shape": "reference",
       "captured": "2026-10-25",
       "access": "signed in (the owner's cortexairobot organisation); read live from the running app over its remote-debugging port",
-      "themes": [
-        "light",
-        "dark"
-      ],
-      "widths": [
-        1440
-      ],
+      "themes": ["light", "dark"],
+      "widths": [1440],
       "entry": "systems/devin-desktop/README.md",
       "tokens": "systems/devin-desktop/tokens.json",
       "styleGuide": "systems/devin-desktop/style-guide.html",
@@ -4074,10 +3606,7 @@
             "border": "dark.role.border.default"
           }
         },
-        "fonts": [
-          "core.fontFamily.sans",
-          "core.fontFamily.mono"
-        ]
+        "fonts": ["core.fontFamily.sans", "core.fontFamily.mono"]
       },
       "source": {
         "path": "~/.design-systems/devin-desktop/raw-shots (full-colour captures and run frames, outside the repo)"
@@ -4115,14 +3644,8 @@
       "shape": "reference",
       "captured": "2026-11-13",
       "access": "signed out (every captured surface is public; the Dock workspace sits behind auth.dock.us and was never reached; the HubSpot demo form and the auth cards were measured, never filled or submitted)",
-      "themes": [
-        "light",
-        "dark"
-      ],
-      "widths": [
-        1440,
-        390
-      ],
+      "themes": ["light", "dark"],
+      "widths": [1440, 390],
       "entry": "systems/dock/README.md",
       "tokens": "systems/dock/tokens.json",
       "styleGuide": "systems/dock/style-guide.html",
@@ -4208,16 +3731,8 @@
       "shape": "reference",
       "captured": "2026-10-17",
       "access": "signed in, free account",
-      "themes": [
-        "light",
-        "dark"
-      ],
-      "widths": [
-        1440,
-        1000,
-        570,
-        390
-      ],
+      "themes": ["light", "dark"],
+      "widths": [1440, 1000, 570, 390],
       "entry": "systems/duolingo/README.md",
       "tokens": "systems/duolingo/tokens.json",
       "styleGuide": "systems/duolingo/style-guide.html",
@@ -4242,10 +3757,7 @@
             "border": "dark.border.default"
           }
         },
-        "fonts": [
-          "core.fontFamily.display",
-          "core.fontFamily.body"
-        ]
+        "fonts": ["core.fontFamily.display", "core.fontFamily.body"]
       },
       "source": {
         "repo": "https://github.com/c-wenlong/self-learn",
@@ -4267,23 +3779,12 @@
       "category": "learning",
       "platform": "web",
       "goodFor": "AI tutor learning app: course catalogue, unit pages, lesson players with an Ask Tutor panel",
-      "tags": [
-        "web",
-        "ai-tutor",
-        "lesson-player",
-        "warm",
-        "serif-display"
-      ],
+      "tags": ["web", "ai-tutor", "lesson-player", "warm", "serif-display"],
       "shape": "reference",
       "captured": "2026-10-17",
       "access": "signed out (every surface is public)",
-      "themes": [
-        "light"
-      ],
-      "widths": [
-        1440,
-        390
-      ],
+      "themes": ["light"],
+      "widths": [1440, 390],
       "entry": "systems/gauth/README.md",
       "tokens": "systems/gauth/tokens.json",
       "styleGuide": "systems/gauth/style-guide.html",
@@ -4300,10 +3801,7 @@
             "border": "light.border.card"
           }
         },
-        "fonts": [
-          "core.fontFamily.libre-baskerville",
-          "core.fontFamily.inter"
-        ]
+        "fonts": ["core.fontFamily.libre-baskerville", "core.fontFamily.inter"]
       },
       "source": {
         "repo": "https://github.com/c-wenlong/self-learn",
@@ -4340,13 +3838,8 @@
       "shape": "reference",
       "captured": "2026-10-24",
       "access": "signed in, Google AI Pro, iPhone Mirroring",
-      "themes": [
-        "light",
-        "dark"
-      ],
-      "widths": [
-        390
-      ],
+      "themes": ["light", "dark"],
+      "widths": [390],
       "entry": "systems/gemini/README.md",
       "tokens": "systems/gemini/tokens.json",
       "styleGuide": "systems/gemini/style-guide.html",
@@ -4371,9 +3864,7 @@
             "border": "dark.color.border.divider"
           }
         },
-        "fonts": [
-          "core.fontFamily.base"
-        ]
+        "fonts": ["core.fontFamily.base"]
       },
       "source": {
         "path": "~/.design-systems/gemini/raw-shots (full-colour captures, outside the repo)"
@@ -4409,13 +3900,8 @@
       "shape": "reference",
       "captured": "2026-10-24",
       "access": "signed in, Copilot Pro, iPhone Mirroring",
-      "themes": [
-        "light",
-        "dark"
-      ],
-      "widths": [
-        390
-      ],
+      "themes": ["light", "dark"],
+      "widths": [390],
       "entry": "systems/github-ios/README.md",
       "tokens": "systems/github-ios/tokens.json",
       "styleGuide": "systems/github-ios/style-guide.html",
@@ -4440,10 +3926,7 @@
             "border": "dark.color.border.divider"
           }
         },
-        "fonts": [
-          "core.fontFamily.base",
-          "core.fontFamily.mono"
-        ]
+        "fonts": ["core.fontFamily.base", "core.fontFamily.mono"]
       },
       "source": {
         "path": "~/.design-systems/github-ios/raw-shots (full-colour captures, outside the repo)"
@@ -4482,12 +3965,8 @@
       "shape": "reference",
       "captured": "2026-10-23",
       "access": "signed in, iPhone Mirroring",
-      "themes": [
-        "light"
-      ],
-      "widths": [
-        390
-      ],
+      "themes": ["light"],
+      "widths": [390],
       "entry": "systems/grab/README.md",
       "tokens": "systems/grab/tokens.json",
       "styleGuide": "systems/grab/style-guide.html",
@@ -4504,10 +3983,7 @@
             "border": "light.color.border.divider"
           }
         },
-        "fonts": [
-          "core.fontFamily.base",
-          "core.fontFamily.display"
-        ]
+        "fonts": ["core.fontFamily.base", "core.fontFamily.display"]
       },
       "source": {
         "path": "~/.design-systems/grab/raw-shots (full-colour captures, outside the repo)"
@@ -4543,13 +4019,8 @@
       "shape": "reference",
       "captured": "2026-10-23",
       "access": "signed in, paid plan, iPhone Mirroring",
-      "themes": [
-        "light",
-        "dark"
-      ],
-      "widths": [
-        390
-      ],
+      "themes": ["light", "dark"],
+      "widths": [390],
       "entry": "systems/grokbot/README.md",
       "tokens": "systems/grokbot/tokens.json",
       "styleGuide": "systems/grokbot/style-guide.html",
@@ -4574,9 +4045,7 @@
             "border": "dark.color.border.divider"
           }
         },
-        "fonts": [
-          "core.fontFamily.base"
-        ]
+        "fonts": ["core.fontFamily.base"]
       },
       "source": {
         "path": "~/.design-systems/grokbot/raw-shots (full-colour captures, outside the repo)"
@@ -4617,13 +4086,8 @@
       "shape": "reference",
       "captured": "2026-10-25",
       "access": "signed in (the owner's account); read live from the running app over its remote-debugging port",
-      "themes": [
-        "light",
-        "dark"
-      ],
-      "widths": [
-        1120
-      ],
+      "themes": ["light", "dark"],
+      "widths": [1120],
       "entry": "systems/grokbot-desktop/README.md",
       "tokens": "systems/grokbot-desktop/tokens.json",
       "styleGuide": "systems/grokbot-desktop/style-guide.html",
@@ -4648,10 +4112,7 @@
             "border": "dark.role.border.default"
           }
         },
-        "fonts": [
-          "core.fontFamily.sans",
-          "core.fontFamily.mono"
-        ]
+        "fonts": ["core.fontFamily.sans", "core.fontFamily.mono"]
       },
       "source": {
         "path": "~/.design-systems/grokbot-desktop/raw-shots (full-colour captures and run frames, outside the repo)"
@@ -4686,13 +4147,8 @@
       "shape": "reference",
       "captured": "2026-10-10",
       "access": "signed in, free account, iPhone Mirroring",
-      "themes": [
-        "light",
-        "dark"
-      ],
-      "widths": [
-        390
-      ],
+      "themes": ["light", "dark"],
+      "widths": [390],
       "entry": "systems/hevy/README.md",
       "tokens": "systems/hevy/tokens.json",
       "styleGuide": "systems/hevy/style-guide.html",
@@ -4717,9 +4173,7 @@
             "border": "dark.color.border.input"
           }
         },
-        "fonts": [
-          "core.fontFamily.base"
-        ]
+        "fonts": ["core.fontFamily.base"]
       },
       "source": {
         "path": "~/Desktop/Personal/Internal/Indie Hacking/alke-fitness/references"
@@ -4756,14 +4210,8 @@
       "shape": "audit",
       "captured": "2026-10-17",
       "access": "public site measured signed out (2026-09-23); signed-in app measured from redacted page copies on the free plan (2026-10-17), owner signed in",
-      "themes": [
-        "dark",
-        "light"
-      ],
-      "widths": [
-        1440,
-        390
-      ],
+      "themes": ["dark", "light"],
+      "widths": [1440, 390],
       "entry": "systems/linear/README.md",
       "tokens": "systems/linear/tokens.json",
       "styleGuide": "systems/linear/style-guide.html",
@@ -4793,17 +4241,12 @@
           "core.font.family.mono",
           "core.font.family.editorial"
         ],
-        "exclude": [
-          "app"
-        ]
+        "exclude": ["app"]
       },
       "notes": "App colours, type, radii, shadows, motion, breakpoints and z-index are measured from the app's CSS in dark and light (2026-10-17). The spacing scale and the SVG redraws are reconstructions. App screenshots are renders of redacted copies.",
       "source": {
         "path": "a private work project (path not recorded)",
-        "excluded": [
-          "linear-complete-audit.zip",
-          "linear-design-library.zip"
-        ]
+        "excluded": ["linear-complete-audit.zip", "linear-design-library.zip"]
       },
       "capture": {
         "harness": "Claude Code",
@@ -4812,9 +4255,7 @@
         "durationMin": null
       },
       "designMd": {
-        "colors": [
-          "light.color."
-        ],
+        "colors": ["light.color."],
         "rounded": "core.radius.",
         "spacing": "core.space."
       },
@@ -4845,13 +4286,8 @@
       "shape": "reference",
       "captured": "2026-10-24",
       "access": "signed in, iPhone Mirroring",
-      "themes": [
-        "light",
-        "dark"
-      ],
-      "widths": [
-        390
-      ],
+      "themes": ["light", "dark"],
+      "widths": [390],
       "entry": "systems/luma-ios/README.md",
       "tokens": "systems/luma-ios/tokens.json",
       "styleGuide": "systems/luma-ios/style-guide.html",
@@ -4876,9 +4312,7 @@
             "border": "dark.color.border.divider"
           }
         },
-        "fonts": [
-          "core.fontFamily.base"
-        ]
+        "fonts": ["core.fontFamily.base"]
       },
       "source": {
         "path": "~/.design-systems/luma-ios/raw-shots (full-colour captures, outside the repo)"
@@ -4912,14 +4346,8 @@
       "shape": "reference",
       "captured": "2026-10-17",
       "access": "signed in",
-      "themes": [
-        "light",
-        "dark"
-      ],
-      "widths": [
-        1440,
-        390
-      ],
+      "themes": ["light", "dark"],
+      "widths": [1440, 390],
       "entry": "systems/manus/README.md",
       "tokens": "systems/manus/tokens.json",
       "styleGuide": "systems/manus/style-guide.html",
@@ -4944,10 +4372,7 @@
             "border": "dark.border.primary"
           }
         },
-        "fonts": [
-          "core.fontFamily.sans",
-          "core.fontFamily.serif"
-        ]
+        "fonts": ["core.fontFamily.sans", "core.fontFamily.serif"]
       },
       "source": {
         "repo": "https://github.com/c-wenlong/self-learn",
@@ -4984,13 +4409,8 @@
       "shape": "reference",
       "captured": "2026-10-31",
       "access": "Official public interactive Edumation demo; automatically supplied persona; unsaved navigation/form inspection; authorized Dark appearance restored to Light",
-      "themes": [
-        "light"
-      ],
-      "widths": [
-        1440,
-        390
-      ],
+      "themes": ["light"],
+      "widths": [1440, 390],
       "entry": "systems/metabase/README.md",
       "tokens": "systems/metabase/tokens.json",
       "styleGuide": "systems/metabase/style-guide.html",
@@ -5007,9 +4427,7 @@
             "border": "light.border.default"
           }
         },
-        "fonts": [
-          "core.fontFamily.sans"
-        ]
+        "fonts": ["core.fontFamily.sans"]
       },
       "capture": {
         "harness": "Codex",
@@ -5030,25 +4448,12 @@
       "category": "ai-research",
       "platform": "web",
       "goodFor": "Source-grounded AI workspace: sources panel, chat, studio outputs; near-monochrome surfaces with pill buttons (luminous UI)",
-      "tags": [
-        "web",
-        "ai",
-        "material",
-        "three-panel",
-        "chat",
-        "sources"
-      ],
+      "tags": ["web", "ai", "material", "three-panel", "chat", "sources"],
       "shape": "reference",
       "captured": "2026-10-17",
       "access": "signed in",
-      "themes": [
-        "light",
-        "dark"
-      ],
-      "widths": [
-        1440,
-        390
-      ],
+      "themes": ["light", "dark"],
+      "widths": [1440, 390],
       "entry": "systems/notebooklm/README.md",
       "tokens": "systems/notebooklm/tokens.json",
       "styleGuide": "systems/notebooklm/style-guide.html",
@@ -5073,10 +4478,7 @@
             "border": "dark.border.default"
           }
         },
-        "fonts": [
-          "core.fontFamily.display",
-          "core.fontFamily.text"
-        ]
+        "fonts": ["core.fontFamily.display", "core.fontFamily.text"]
       },
       "source": {
         "repo": "https://github.com/c-wenlong/self-learn",
@@ -5117,13 +4519,8 @@
       "shape": "reference",
       "captured": "2026-10-25",
       "access": "signed in (the owner's account, two Google calendar accounts and four Notion workspaces); read live from the running app over its remote-debugging port",
-      "themes": [
-        "light",
-        "dark"
-      ],
-      "widths": [
-        1063
-      ],
+      "themes": ["light", "dark"],
+      "widths": [1063],
       "entry": "systems/notion-calendar-desktop/README.md",
       "tokens": "systems/notion-calendar-desktop/tokens.json",
       "styleGuide": "systems/notion-calendar-desktop/style-guide.html",
@@ -5148,10 +4545,7 @@
             "border": "dark.role.border.default"
           }
         },
-        "fonts": [
-          "core.fontFamily.sans",
-          "core.fontFamily.compact"
-        ]
+        "fonts": ["core.fontFamily.sans", "core.fontFamily.compact"]
       },
       "source": {
         "path": "~/.design-systems/notion-calendar-desktop/raw-shots (full-colour captures, outside the repo)"
@@ -5198,13 +4592,8 @@
       "shape": "reference",
       "captured": "2026-10-25",
       "access": "signed in (the owner's account and workspace); read live from the running app over its remote-debugging port, editing only a scratch page the capture created",
-      "themes": [
-        "light",
-        "dark"
-      ],
-      "widths": [
-        1466
-      ],
+      "themes": ["light", "dark"],
+      "widths": [1466],
       "entry": "systems/notion-desktop/README.md",
       "tokens": "systems/notion-desktop/tokens.json",
       "styleGuide": "systems/notion-desktop/style-guide.html",
@@ -5229,10 +4618,7 @@
             "border": "dark.role.border.default"
           }
         },
-        "fonts": [
-          "core.fontFamily.sans",
-          "core.fontFamily.mono"
-        ]
+        "fonts": ["core.fontFamily.sans", "core.fontFamily.mono"]
       },
       "source": {
         "path": "~/.design-systems/notion-desktop/raw-shots (full-colour captures, outside the repo)"
@@ -5273,13 +4659,8 @@
       "shape": "reference",
       "captured": "2026-10-24",
       "access": "signed in, iPhone Mirroring",
-      "themes": [
-        "light",
-        "dark"
-      ],
-      "widths": [
-        390
-      ],
+      "themes": ["light", "dark"],
+      "widths": [390],
       "entry": "systems/notion-ios/README.md",
       "tokens": "systems/notion-ios/tokens.json",
       "styleGuide": "systems/notion-ios/style-guide.html",
@@ -5304,9 +4685,7 @@
             "border": "dark.color.border.separator"
           }
         },
-        "fonts": [
-          "core.fontFamily.base"
-        ]
+        "fonts": ["core.fontFamily.base"]
       },
       "source": {
         "path": "~/.design-systems/notion-ios/raw-shots (full-colour captures, outside the repo)"
@@ -5346,13 +4725,8 @@
       "shape": "reference",
       "captured": "2026-10-25",
       "access": "signed in (the owner's providers already connected); read live from the running app over its remote-debugging port",
-      "themes": [
-        "light",
-        "dark"
-      ],
-      "widths": [
-        1280
-      ],
+      "themes": ["light", "dark"],
+      "widths": [1280],
       "entry": "systems/opencode-desktop/README.md",
       "tokens": "systems/opencode-desktop/tokens.json",
       "styleGuide": "systems/opencode-desktop/style-guide.html",
@@ -5377,10 +4751,7 @@
             "border": "dark.role.border.default"
           }
         },
-        "fonts": [
-          "core.fontFamily.sans",
-          "core.fontFamily.mono"
-        ]
+        "fonts": ["core.fontFamily.sans", "core.fontFamily.mono"]
       },
       "source": {
         "path": "~/.design-systems/opencode-desktop/raw-shots (full-colour captures and run frames, outside the repo)"
@@ -5424,13 +4795,8 @@
       "shape": "reference",
       "captured": "2026-10-25",
       "access": "not signed in to an Orca account (not needed); read live from the running app over its remote-debugging port, on a scratch project the capture added and removed",
-      "themes": [
-        "light",
-        "dark"
-      ],
-      "widths": [
-        1512
-      ],
+      "themes": ["light", "dark"],
+      "widths": [1512],
       "entry": "systems/orca-desktop/README.md",
       "tokens": "systems/orca-desktop/tokens.json",
       "styleGuide": "systems/orca-desktop/style-guide.html",
@@ -5455,10 +4821,7 @@
             "border": "dark.role.border.default"
           }
         },
-        "fonts": [
-          "core.fontFamily.sans",
-          "core.fontFamily.mono"
-        ]
+        "fonts": ["core.fontFamily.sans", "core.fontFamily.mono"]
       },
       "source": {
         "path": "~/.design-systems/orca-desktop/raw-shots (full-colour captures and run frames, outside the repo)"
@@ -5499,10 +4862,7 @@
         "light-high-contrast-experimental",
         "dark-experimental"
       ],
-      "widths": [
-        1440,
-        390
-      ],
+      "widths": [1440, 390],
       "entry": "systems/polaris/README.md",
       "tokens": "systems/polaris/tokens.json",
       "styleGuide": "systems/polaris/style-guide.html",
@@ -5527,17 +4887,12 @@
             "border": "dark-experimental.color.color-border"
           }
         },
-        "fonts": [
-          "light.font.font-family-sans"
-        ]
+        "fonts": ["light.font.font-family-sans"]
       },
       "notes": "style-guide.html fetches its data, so open it through `make dev`, not from disk. Tokens match the archive with zero differences (raw/token-parity.json).",
       "source": {
         "path": "a private work project (path not recorded)",
-        "excluded": [
-          "node_modules/",
-          "polaris-design-library.zip"
-        ]
+        "excluded": ["node_modules/", "polaris-design-library.zip"]
       },
       "capture": {
         "harness": "Claude Code",
@@ -5578,13 +4933,8 @@
       "shape": "reference",
       "captured": "2026-10-25",
       "access": "the owner's signed-in Raycast 2.9.0 (free plan, AI trial ended); colours, sizes and type from the stylesheets and theme definitions shipped in the app bundle, window fills and the pixel check from 2x window captures",
-      "themes": [
-        "light",
-        "dark"
-      ],
-      "widths": [
-        750
-      ],
+      "themes": ["light", "dark"],
+      "widths": [750],
       "entry": "systems/raycast-desktop/README.md",
       "tokens": "systems/raycast-desktop/tokens.json",
       "styleGuide": "systems/raycast-desktop/style-guide.html",
@@ -5609,10 +4959,7 @@
             "border": "dark.border.secondary"
           }
         },
-        "fonts": [
-          "core.fontFamily.ui",
-          "core.fontFamily.mono"
-        ]
+        "fonts": ["core.fontFamily.ui", "core.fontFamily.mono"]
       },
       "source": {
         "path": "~/.design-systems/raycast-desktop/raw-shots (full-colour captures and the Display P3 originals, outside the repo)"
@@ -5647,14 +4994,8 @@
       "shape": "reference",
       "captured": "2026-11-02",
       "access": "signed out (every surface is public)",
-      "themes": [
-        "light",
-        "dark"
-      ],
-      "widths": [
-        1440,
-        390
-      ],
+      "themes": ["light", "dark"],
+      "widths": [1440, 390],
       "entry": "systems/refero-design/README.md",
       "tokens": "systems/refero-design/tokens.json",
       "styleGuide": "systems/refero-design/style-guide.html",
@@ -5701,23 +5042,12 @@
       "category": "ai-research",
       "platform": "web",
       "goodFor": "Interactive citation graph beside a list: node and edge styling, canvas interaction (see graph.md)",
-      "tags": [
-        "web",
-        "graph",
-        "list-detail",
-        "soft-gradient",
-        "research"
-      ],
+      "tags": ["web", "graph", "list-detail", "soft-gradient", "research"],
       "shape": "reference",
       "captured": "2026-10-17",
       "access": "signed in",
-      "themes": [
-        "light"
-      ],
-      "widths": [
-        1440,
-        390
-      ],
+      "themes": ["light"],
+      "widths": [1440, 390],
       "entry": "systems/researchrabbit/README.md",
       "tokens": "systems/researchrabbit/tokens.json",
       "styleGuide": "systems/researchrabbit/style-guide.html",
@@ -5734,9 +5064,7 @@
             "border": "light.border.rule"
           }
         },
-        "fonts": [
-          "core.fontFamily.ui"
-        ]
+        "fonts": ["core.fontFamily.ui"]
       },
       "extras": [
         "systems/researchrabbit/graph.md",
@@ -5774,16 +5102,8 @@
       "shape": "reference",
       "captured": "2026-10-31",
       "access": "signed-in owner account; Developer plan observed; no trial activated",
-      "themes": [
-        "light",
-        "dark"
-      ],
-      "widths": [
-        390,
-        679,
-        1065,
-        1440
-      ],
+      "themes": ["light", "dark"],
+      "widths": [390, 679, 1065, 1440],
       "entry": "systems/sentry/README.md",
       "tokens": "systems/sentry/tokens.json",
       "styleGuide": "systems/sentry/style-guide.html",
@@ -5808,9 +5128,7 @@
             "border": "dark.border.default"
           }
         },
-        "fonts": [
-          "core.font.sans"
-        ]
+        "fonts": ["core.font.sans"]
       },
       "capture": {
         "harness": "Codex",
@@ -5847,12 +5165,8 @@
       "shape": "reference",
       "captured": "2026-10-23",
       "access": "signed in, Premium Family plan, iPhone Mirroring",
-      "themes": [
-        "dark"
-      ],
-      "widths": [
-        390
-      ],
+      "themes": ["dark"],
+      "widths": [390],
       "entry": "systems/spotify/README.md",
       "tokens": "systems/spotify/tokens.json",
       "styleGuide": "systems/spotify/style-guide.html",
@@ -5869,9 +5183,7 @@
             "border": "dark.color.border.divider"
           }
         },
-        "fonts": [
-          "core.fontFamily.base"
-        ]
+        "fonts": ["core.fontFamily.base"]
       },
       "source": {
         "path": "~/.design-systems/spotify/raw-shots (full-colour captures, outside the repo)"
@@ -5909,13 +5221,8 @@
       "shape": "reference",
       "captured": "2026-10-24",
       "access": "signed in, iPhone Mirroring",
-      "themes": [
-        "light",
-        "dark"
-      ],
-      "widths": [
-        390
-      ],
+      "themes": ["light", "dark"],
+      "widths": [390],
       "entry": "systems/substack/README.md",
       "tokens": "systems/substack/tokens.json",
       "styleGuide": "systems/substack/style-guide.html",
@@ -5940,10 +5247,7 @@
             "border": "dark.color.border.divider"
           }
         },
-        "fonts": [
-          "core.fontFamily.base",
-          "core.fontFamily.reader"
-        ]
+        "fonts": ["core.fontFamily.base", "core.fontFamily.reader"]
       },
       "source": {
         "path": "~/.design-systems/substack/raw-shots (full-colour captures, outside the repo)"
@@ -5977,14 +5281,8 @@
       "shape": "reference",
       "captured": "2026-10-31",
       "access": "signed in, free account; both projects paused; public landing",
-      "themes": [
-        "dark",
-        "light"
-      ],
-      "widths": [
-        1280,
-        390
-      ],
+      "themes": ["dark", "light"],
+      "widths": [1280, 390],
       "entry": "systems/supabase/README.md",
       "tokens": "systems/supabase/tokens.json",
       "styleGuide": "systems/supabase/style-guide.html",
@@ -6009,9 +5307,7 @@
             "border": "light.border.default"
           }
         },
-        "fonts": [
-          "core.fontFamily.body"
-        ]
+        "fonts": ["core.fontFamily.body"]
       },
       "layoutGaps": {
         "icons/": "No reusable icon extraction; official identification icon and screenshot references only."
@@ -6053,13 +5349,8 @@
       "shape": "reference",
       "captured": "2026-10-25",
       "access": "signed in (the owner's organisation on the free plan); read live from the running app over its remote-debugging port",
-      "themes": [
-        "light",
-        "dark"
-      ],
-      "widths": [
-        1512
-      ],
+      "themes": ["light", "dark"],
+      "widths": [1512],
       "entry": "systems/superset-desktop/README.md",
       "tokens": "systems/superset-desktop/tokens.json",
       "styleGuide": "systems/superset-desktop/style-guide.html",
@@ -6084,10 +5375,7 @@
             "border": "dark.role.border.default"
           }
         },
-        "fonts": [
-          "core.fontFamily.sans",
-          "core.fontFamily.mono"
-        ]
+        "fonts": ["core.fontFamily.sans", "core.fontFamily.mono"]
       },
       "source": {
         "path": "~/.design-systems/superset-desktop/raw-shots (full-colour captures and run frames, outside the repo)"
@@ -6124,13 +5412,8 @@
       "shape": "reference",
       "captured": "2026-10-23",
       "access": "signed in, iPhone Mirroring",
-      "themes": [
-        "light",
-        "dark"
-      ],
-      "widths": [
-        390
-      ],
+      "themes": ["light", "dark"],
+      "widths": [390],
       "entry": "systems/telegram/README.md",
       "tokens": "systems/telegram/tokens.json",
       "styleGuide": "systems/telegram/style-guide.html",
@@ -6155,9 +5438,7 @@
             "border": "dark.color.border.divider"
           }
         },
-        "fonts": [
-          "core.fontFamily.base"
-        ]
+        "fonts": ["core.fontFamily.base"]
       },
       "source": {
         "path": "~/.design-systems/telegram/raw-shots (full-colour captures, outside the repo)"
@@ -6193,14 +5474,8 @@
       "shape": "reference",
       "captured": "2026-10-17",
       "access": "local dashboard served by the TokenTracker CLI (v1.4.3), no account, headless Chromium",
-      "themes": [
-        "light",
-        "dark"
-      ],
-      "widths": [
-        1440,
-        390
-      ],
+      "themes": ["light", "dark"],
+      "widths": [1440, 390],
       "entry": "systems/tokentracker/README.md",
       "tokens": "systems/tokentracker/tokens.json",
       "styleGuide": "systems/tokentracker/style-guide.html",
@@ -6225,9 +5500,7 @@
             "border": "dark.border.default"
           }
         },
-        "fonts": [
-          "core.font.family.sans"
-        ]
+        "fonts": ["core.font.family.sans"]
       },
       "capture": {
         "harness": "Claude Code",
@@ -6244,25 +5517,12 @@
       "category": "media",
       "platform": "web",
       "goodFor": "Music-collaboration product marketing: bracketed chrome, black-gradient pill CTAs, iridescent disc artwork, frosted bottom pill bar, pricing rail with plan cards",
-      "tags": [
-        "web",
-        "music",
-        "creator-tool",
-        "minimal",
-        "pill",
-        "grayscale"
-      ],
+      "tags": ["web", "music", "creator-tool", "minimal", "pill", "grayscale"],
       "shape": "reference",
       "captured": "2026-11-08",
       "access": "signed out (every surface captured is public; the app behind login was not captured)",
-      "themes": [
-        "light",
-        "dark"
-      ],
-      "widths": [
-        1440,
-        390
-      ],
+      "themes": ["light", "dark"],
+      "widths": [1440, 390],
       "entry": "systems/untitled-stream/README.md",
       "tokens": "systems/untitled-stream/tokens.json",
       "styleGuide": "systems/untitled-stream/style-guide.html",
@@ -6325,13 +5585,8 @@
       "shape": "reference",
       "captured": "2026-10-24",
       "access": "signed in, free plan, iPhone Mirroring",
-      "themes": [
-        "light",
-        "dark"
-      ],
-      "widths": [
-        390
-      ],
+      "themes": ["light", "dark"],
+      "widths": [390],
       "entry": "systems/youtube/README.md",
       "tokens": "systems/youtube/tokens.json",
       "styleGuide": "systems/youtube/style-guide.html",
@@ -6356,9 +5611,7 @@
             "border": "dark.color.border.outline"
           }
         },
-        "fonts": [
-          "core.fontFamily.base"
-        ]
+        "fonts": ["core.fontFamily.base"]
       },
       "source": {
         "path": "~/.design-systems/youtube/raw-shots (full-colour captures, outside the repo)"
@@ -6403,13 +5656,8 @@
       "shape": "reference",
       "captured": "2026-10-25",
       "access": "the owner's signed-in Zed (Free plan) on a scratch folder; colours from Zed's published theme file at the v1.25.2 commit, sizes and type from 2x window pixels",
-      "themes": [
-        "light",
-        "dark"
-      ],
-      "widths": [
-        1512
-      ],
+      "themes": ["light", "dark"],
+      "widths": [1512],
       "entry": "systems/zed-desktop/README.md",
       "tokens": "systems/zed-desktop/tokens.json",
       "styleGuide": "systems/zed-desktop/style-guide.html",
@@ -6434,10 +5682,7 @@
             "border": "dark.role.border.default"
           }
         },
-        "fonts": [
-          "core.fontFamily.ui",
-          "core.fontFamily.buffer"
-        ]
+        "fonts": ["core.fontFamily.ui", "core.fontFamily.buffer"]
       },
       "source": {
         "path": "~/.design-systems/zed-desktop/raw-shots (full-colour captures and the Display P3 originals, outside the repo)"
@@ -6478,13 +5723,8 @@
       "shape": "reference",
       "captured": "2026-11-11",
       "access": "signed out (every captured surface is public; the creator dashboard, shop/membership/extras managers, payouts, analytics and settings sit behind /login, the Stripe checkout behind Support was never opened, and the password step behind Continue-with-email was never submitted)",
-      "themes": [
-        "light"
-      ],
-      "widths": [
-        1440,
-        390
-      ],
+      "themes": ["light"],
+      "widths": [1440, 390],
       "entry": "systems/buymeacoffee/README.md",
       "tokens": "systems/buymeacoffee/tokens.json",
       "styleGuide": "systems/buymeacoffee/style-guide.html",
@@ -6568,14 +5808,8 @@
       "shape": "reference",
       "captured": "2026-11-11",
       "access": "signed out (every captured surface is public; the Design Studio, dashboard, saved designs, ordering, checkout and account sit behind the /login panel and were never reached)",
-      "themes": [
-        "light",
-        "dark"
-      ],
-      "widths": [
-        1440,
-        390
-      ],
+      "themes": ["light", "dark"],
+      "widths": [1440, 390],
       "entry": "systems/byborre/README.md",
       "tokens": "systems/byborre/tokens.json",
       "styleGuide": "systems/byborre/style-guide.html",
@@ -6600,9 +5834,7 @@
             "border": "core.color.neutral.divider-dark"
           }
         },
-        "fonts": [
-          "core.font.family.sans"
-        ]
+        "fonts": ["core.font.family.sans"]
       },
       "capture": {
         "method": "public-web",
@@ -6672,14 +5904,8 @@
       "shape": "reference",
       "captured": "2026-11-12",
       "access": "signed out (every captured surface is public; the workspace, event-type editor, integrations and billing sit behind /app/login and were never reached; the invitee confirmation past a time slot was never opened)",
-      "themes": [
-        "light",
-        "dark"
-      ],
-      "widths": [
-        1440,
-        390
-      ],
+      "themes": ["light", "dark"],
+      "widths": [1440, 390],
       "entry": "systems/calendly/README.md",
       "tokens": "systems/calendly/tokens.json",
       "styleGuide": "systems/calendly/style-guide.html",
@@ -6713,7 +5939,7 @@
       },
       "capture": {
         "method": "public-web",
-        "source": "calendly.com (an Astro/Tailwind marketing site declaring a --color-*/--text-ui-*/--radius-ui-* token layer with .dark islands, plus the public invitee booking pages on /calendly-demo — a separate booking-kit application with its own --coreColor*/--primary-color* layer in Proxima Nova) in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and crops from the live DOM. Both token layers are declared and used directly; the booking calendar's painted blues (#006bff, #004eba, #f4f8ff) are atomic classes measured on the elements. The workspace behind /app/login is a documented boundary",
+        "source": "calendly.com (an Astro/Tailwind marketing site declaring a --color-*/--text-ui-*/--radius-ui-* token layer with .dark islands, plus the public invitee booking pages on /calendly-demo \u2014 a separate booking-kit application with its own --coreColor*/--primary-color* layer in Proxima Nova) in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and crops from the live DOM. Both token layers are declared and used directly; the booking calendar's painted blues (#006bff, #004eba, #f4f8ff) are atomic classes measured on the elements. The workspace behind /app/login is a documented boundary",
         "timestamp": "2026-11-12T10:00:00Z",
         "harness": "Devin",
         "model": "SWE-2 High",
@@ -6770,14 +5996,8 @@
       "shape": "reference",
       "captured": "2026-11-12",
       "access": "signed out (every captured surface is public; the editor, Brand Kit, dashboards, teams, billing and account sit behind the /login and /signup cards and were never reached; no form was submitted and no account created). Served the Singapore region: prices render S$",
-      "themes": [
-        "light",
-        "dark"
-      ],
-      "widths": [
-        1440,
-        390
-      ],
+      "themes": ["light", "dark"],
+      "widths": [1440, 390],
       "entry": "systems/canva/README.md",
       "tokens": "systems/canva/tokens.json",
       "styleGuide": "systems/canva/style-guide.html",
@@ -6802,9 +6022,7 @@
             "border": "dark.border.ghost"
           }
         },
-        "fonts": [
-          "core.font.family.sans"
-        ]
+        "fonts": ["core.font.family.sans"]
       },
       "capture": {
         "method": "public-web",
@@ -6874,13 +6092,8 @@
       "shape": "reference",
       "captured": "2026-11-13",
       "access": "signed out (every captured surface is public; the address gate, sign-in, ordering, cart, checkout, DashPass and merchant/Dasher onboarding were never crossed; catalog bodies that hydrate from live APIs render as the product's own loading spinner)",
-      "themes": [
-        "light"
-      ],
-      "widths": [
-        1440,
-        390
-      ],
+      "themes": ["light"],
+      "widths": [1440, 390],
       "entry": "systems/doordash/README.md",
       "tokens": "systems/doordash/tokens.json",
       "styleGuide": "systems/doordash/style-guide.html",
@@ -6905,7 +6118,7 @@
       },
       "capture": {
         "method": "public-web",
-        "source": "doordash.com's signed-out surface captured from Internet Archive Wayback Machine snapshots of the product's own SSR pages (live *.doordash.com Cloudflare-403s this client on every route tried — headless and headed): the consumer-web-next Next.js/styled-components stack declaring the prism --base-*/--usage-*/--comp-* token layers, plus careersatdoordash.com (WordPress/Tailwind). Computed styles, crops and full-page shots in headless Chromium (Playwright) at 1440x900 1x and 390x844 2x; every token and measurement is per-snapshot archival evidence, not a current live read",
+        "source": "doordash.com's signed-out surface captured from Internet Archive Wayback Machine snapshots of the product's own SSR pages (live *.doordash.com Cloudflare-403s this client on every route tried \u2014 headless and headed): the consumer-web-next Next.js/styled-components stack declaring the prism --base-*/--usage-*/--comp-* token layers, plus careersatdoordash.com (WordPress/Tailwind). Computed styles, crops and full-page shots in headless Chromium (Playwright) at 1440x900 1x and 390x844 2x; every token and measurement is per-snapshot archival evidence, not a current live read",
         "timestamp": "2026-11-13T09:00:00Z",
         "harness": "Devin",
         "model": "SWE-2 High",
@@ -6921,10 +6134,10 @@
           "/en-US/p/seasonal-holidays/ (20261025153234)",
           "/en-US/promos/ (20261008212700)",
           "careersatdoordash.com/ (20261009000533)",
-          "mobile /, /en-US/store/… and /food-delivery/"
+          "mobile /, /en-US/store/\u2026 and /food-delivery/"
         ],
         "gaps": [
-          "live *.doordash.com is Cloudflare-blocked for this client; every route is a Wayback snapshot of the product's own SSR output, labelled per route in raw/archive-urls.json — archival evidence, not a current live capture",
+          "live *.doordash.com is Cloudflare-blocked for this client; every route is a Wayback snapshot of the product's own SSR output, labelled per route in raw/archive-urls.json \u2014 archival evidence, not a current live capture",
           "hydration-dependent content is absent: the HSA/FSA and seasonal catalog bodies and the DashPass page sit on the product's loading spinner; lazy directory rows and some imagery never hydrated under the archive",
           "the signed-in product entirely: the address gate, sign-in, ordering, cart, checkout, DashPass purchase, merchant and Dasher onboarding were never crossed; the identity.doordash.com OAuth anchors were measured, never followed",
           "the address-search field was focused once for measurement, never filled or submitted; the cookie banner and dormant Turnstile nodes were hidden and never answered",
@@ -6933,7 +6146,7 @@
           "icons: no standalone SVG set lifted this pass; icon.png is the site's published favicon (32 px source, the largest the site ships, upscaled to 128 px)"
         ],
         "durationMin": 240,
-        "durationNote": "worktree creation to package-complete, spread over 2026-11-12 → 2026-11-13",
+        "durationNote": "worktree creation to package-complete, spread over 2026-11-12 \u2192 2026-11-13",
         "pr": "https://github.com/starship-terminal/constellations/pull/509"
       },
       "layoutGaps": {
@@ -6961,13 +6174,8 @@
       "shape": "reference",
       "captured": "2026-11-12",
       "access": "signed out (every captured surface is public: /, /about, /privacy-policy, /terms-of-service; the product on app.dona.ai sits behind sign-in and was never reached; the newsletter was never submitted and the cookie banner never answered)",
-      "themes": [
-        "light"
-      ],
-      "widths": [
-        1440,
-        390
-      ],
+      "themes": ["light"],
+      "widths": [1440, 390],
       "entry": "systems/dona/README.md",
       "tokens": "systems/dona/tokens.json",
       "styleGuide": "systems/dona/style-guide.html",
@@ -6984,15 +6192,10 @@
             "border": "light.border.hairline"
           }
         },
-        "fonts": [
-          "core.font.family.sans"
-        ]
+        "fonts": ["core.font.family.sans"]
       },
       "designMd": {
-        "colors": [
-          "core.",
-          "light."
-        ]
+        "colors": ["core.", "light."]
       },
       "capture": {
         "method": "public-web",
@@ -7009,13 +6212,13 @@
           "mobile / and /about"
         ],
         "gaps": [
-          "app.dona.ai entirely: the to-do product — lists, the advertised light/dark/black UI themes, sync, accounts — lives behind sign-in and was never reached; Login and Try for free open that host and were never followed",
+          "app.dona.ai entirely: the to-do product \u2014 lists, the advertised light/dark/black UI themes, sync, accounts \u2014 lives behind sign-in and was never reached; Login and Try for free open that host and were never followed",
           "the newsletter form was measured, focused and sample-filled (cleared after); Join our newsletter was never pressed, so the 'Thank you! You're in.' success state and any error state are uncaptured",
           "external links (twitter.com/getdona, the Discord invite) were never followed",
           "no disabled, error or loading states exist on the public surface",
           "the video modal was opened, captured and hidden again; the YouTube embed was never played",
           "the cookie banner was captured as its own state then hidden; Accept was never clicked",
-          "the unstyled logo/social anchors paint UA link colours (#0000ee, #ff0000 on :active) — recorded as browser defaults, not Dona values",
+          "the unstyled logo/social anchors paint UA link colours (#0000ee, #ff0000 on :active) \u2014 recorded as browser defaults, not Dona values",
           "icons: no standalone SVG set lifted this pass"
         ],
         "durationMin": 105,
@@ -7047,14 +6250,9 @@
       ],
       "shape": "reference",
       "captured": "2026-11-13",
-      "access": "signed out (every captured surface is public; checkout, a filled cart, /account past the login/register forms and subscription management were never reached — nothing was added to the cart, no form was ever submitted, and no consent or newsletter overlay was ever answered)",
-      "themes": [
-        "light"
-      ],
-      "widths": [
-        1440,
-        390
-      ],
+      "access": "signed out (every captured surface is public; checkout, a filled cart, /account past the login/register forms and subscription management were never reached \u2014 nothing was added to the cart, no form was ever submitted, and no consent or newsletter overlay was ever answered)",
+      "themes": ["light"],
+      "widths": [1440, 390],
       "entry": "systems/drinkdouze/README.md",
       "tokens": "systems/drinkdouze/tokens.json",
       "styleGuide": "systems/drinkdouze/style-guide.html",
@@ -7104,10 +6302,10 @@
           "mobile / and /collections/all and /products/orange-sanguine-piment"
         ],
         "gaps": [
-          "checkout, a filled cart, payment, /account past the login and register forms, and subscription management were never reached — nothing was added to the cart and no submit was ever pressed",
+          "checkout, a filled cart, payment, /account past the login and register forms, and subscription management were never reached \u2014 nothing was added to the cart and no submit was ever pressed",
           "the newsletter drawer is unmeasured: its header toggle is display:none at both captured widths, and the Klaviyo popup never mounted during the pass",
           "the Shop nav dropdown is marked has-dropdown but its panel is not in the signed-out DOM",
-          "the subscription (Appstle) purchase-option radios did not render on load signed out — they appear in the variant screenshot after a pack-size is picked, never toggled",
+          "the subscription (Appstle) purchase-option radios did not render on load signed out \u2014 they appear in the variant screenshot after a pack-size is picked, never toggled",
           "sold-out/disabled/error states, pagination and footer social links do not paint on the public surface",
           "the /en locale duplicates the French surface and was not captured separately",
           "icons: no standalone SVG set lifted this pass"
@@ -7143,14 +6341,8 @@
       "shape": "reference",
       "captured": "2026-11-13",
       "access": "signed out (every captured surface is public; the chat product's threads, health record, prescriptions, appointments, account and billing sit behind the sign-in card and were never reached)",
-      "themes": [
-        "light",
-        "dark"
-      ],
-      "widths": [
-        1440,
-        390
-      ],
+      "themes": ["light", "dark"],
+      "widths": [1440, 390],
       "entry": "systems/doctronic/README.md",
       "tokens": "systems/doctronic/tokens.json",
       "styleGuide": "systems/doctronic/style-guide.html",
@@ -7212,11 +6404,11 @@
         "gaps": [
           "the signed-in product entirely: chat threads, health record, prescriptions, appointments, account and billing sit behind the sign-in card and were never reached",
           "the ?modal=signin card was rendered from its public URL and measured; Log in with email, the OAuth buttons and Create an account were never pressed",
-          "Start chat, Send message, Check My Symptoms, the starter chips and the Anonymous badge were measured, never pressed — each would start a session or submit text",
+          "Start chat, Send message, Check My Symptoms, the starter chips and the Anonymous badge were measured, never pressed \u2014 each would start a session or submit text",
           "site-menu drawer and footer links to account surfaces were measured, never followed",
           "the cookie/consent layers and the reCAPTCHA badge were hidden, never answered",
           "the Tailwind content pages keep literal utility colours under data-theme=dark, so the dark capture set is scoped to the token-driven app surfaces",
-          "full-page shots are capped at eight chunks; Wall of Love (~8841px) and mobile home (~8469px) hit the cap — a documented truncation",
+          "full-page shots are capped at eight chunks; Wall of Love (~8841px) and mobile home (~8469px) hit the cap \u2014 a documented truncation",
           "condensed-button hover was unreachable (element outside the viewport); recorded as an error state, not a value",
           "icons: no standalone SVG set lifted this pass"
         ],
@@ -7225,6 +6417,341 @@
       },
       "layoutGaps": {
         "icons/": "the icon extraction pass was not run; the icons (the doctronic asterisk mark, the chat/sidebar glyphs, the social glyphs, Trustpilot and LegitScript marks and the testimonial photography) are visible in the crops and screenshots"
+      }
+    },
+    {
+      "slug": "docusign",
+      "name": "DocuSign",
+      "url": "https://www.docusign.com",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "Agreement-platform marketing plus a live signature tool: inkwell #130032 on white with deep-violet #26065d bands and cobalt #4c00ff actions (#4000cc hover, #330099 pressed), declared --ds-* tokens on the signature generator, DS Indigo weight-300 display type, squared 4-8px radii, 2px cobalt focus rings and a white+cobalt double ring on the ecom storefront",
+      "tags": [
+        "web",
+        "esignature",
+        "agreements",
+        "saas",
+        "marketing",
+        "nextjs",
+        "emotion",
+        "pricing",
+        "generator",
+        "light",
+        "signed-out"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-13",
+      "access": "signed out (every captured surface is public; the apps.docusign.com workspace, envelopes, templates and billing sit behind account.docusign.com and were never reached; no form was submitted, no plan purchased, no consent control answered)",
+      "themes": ["light"],
+      "widths": [1440, 390],
+      "entry": "systems/docusign/README.md",
+      "tokens": "systems/docusign/tokens.json",
+      "styleGuide": "systems/docusign/style-guide.html",
+      "preview": {
+        "cover": "systems/docusign/screenshots/home-light-default.png",
+        "icon": "systems/docusign/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.color.page",
+            "surface": "light.color.surface.card",
+            "text": "light.color.text.primary",
+            "muted": "light.color.text.secondary",
+            "accent": "light.color.action.primary-bg",
+            "border": "light.color.border.default"
+          }
+        },
+        "fonts": [
+          "core.font.family.sans",
+          "core.font.family.sans-app",
+          "core.font.family.mono",
+          "core.font.family.signature"
+        ]
+      },
+      "layoutGaps": {
+        "icons/": "the icon extraction pass was not run; the icons (the Docusign wordmark, 7_Docusign icon-font glyphs, product illustrations and customer logos) are visible in the crops and screenshots"
+      },
+      "capture": {
+        "method": "public-web",
+        "source": "docusign.com (a Next.js/Emotion marketing site with atomic css-* classes, the /signature-generator app declaring a --ds-* token layer, the ecom.docusign.com storefront geo-redirected to /en-SG/ declaring --dxp-primary, and the account.docusign.com sign-in card) in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and crops from the live DOM. Most values are measurements; the declared layers are used directly and the sierra.chat assistant's ramp is kept with vendor provenance. The workspace behind account.docusign.com is a documented boundary",
+        "timestamp": "2026-11-13T10:00:00Z",
+        "harness": "Devin",
+        "model": "SWE-2 High",
+        "route": "public-web",
+        "routes": [
+          "/",
+          "/products/electronic-signature",
+          "/free-trial",
+          "/signature-generator",
+          "/customer-stories",
+          "/company",
+          "/pricing -> ecom.docusign.com/en-SG/plans-and-pricing/esignature",
+          "/login -> account.docusign.com (public card)",
+          "mobile /, /signature-generator and ecom pricing"
+        ],
+        "gaps": [
+          "the signed-in product entirely: envelopes, templates, CLM, workflows, billing and admin live behind account.docusign.com and were never reached",
+          "the trial, hero and sign-in forms were measured with sample text typed and deleted, never submitted",
+          "no plan was purchased and no Buy-now/Contact-sales/ Try-for-free CTA was followed past its public landing",
+          "the storefront geo-redirects to /en-SG/: prices and copy are as served for Singapore",
+          "signature PNG/JPEG exports were never downloaded",
+          "the Solutions/Resources mega-menu panels, the search overlay and the footer locale menu were not opened",
+          "assistant pressed recorded a failed state (stale node on the forced press)",
+          "icons: no standalone SVG set lifted this pass"
+        ],
+        "durationMin": 120,
+        "durationNote": "worktree creation to package-complete commit, 2026-11-12/13",
+        "pr": "https://github.com/starship-terminal/constellations/pull/508"
+      }
+    },
+    {
+      "slug": "doppler",
+      "name": "Doppler",
+      "url": "https://www.doppler.com",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "Secrets-management developer-tools marketing: a warm-black #1c1624 field, the #00f575 fluorescent-green pill CTA recipe, lilac-to-carmine gradient headlines, .interactive-card tiles on a 4% warm-white veil with a diagonal sheen, 22px uppercase labelSm chips that flip to #b997ff light-purple when selected, and Doppler Repro type, all declared in Tailwind named utilities",
+      "tags": [
+        "web",
+        "dev-tools",
+        "secrets",
+        "security",
+        "marketing",
+        "dark",
+        "nextjs",
+        "tailwind",
+        "signed-out",
+        "design-tokens"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-13",
+      "access": "signed out (every captured surface is public; the product \u2014 the secrets dashboard, projects, configs, service tokens, logs and billing \u2014 sits behind sign-in on dashboard.doppler.com and was never reached; the demo request form was never submitted)",
+      "themes": ["dark"],
+      "widths": [1440, 390],
+      "entry": "systems/doppler/README.md",
+      "tokens": "systems/doppler/tokens.json",
+      "styleGuide": "systems/doppler/style-guide.html",
+      "preview": {
+        "cover": "systems/doppler/screenshots/home-dark-default.png",
+        "icon": "systems/doppler/icon.png",
+        "swatches": {
+          "dark": {
+            "page": "dark.page",
+            "surface": "dark.surface",
+            "text": "dark.text",
+            "muted": "dark.muted",
+            "accent": "dark.accent",
+            "border": "dark.border"
+          }
+        },
+        "fonts": [
+          "core.font.family.sans",
+          "core.font.family.mono",
+          "core.font.family.inter"
+        ]
+      },
+      "capture": {
+        "method": "public-web",
+        "source": "doppler.com (a Next.js/Tailwind marketing site painting one dark theme; the palette and type scale live in named utilities \u2014 .bg-warm-black, .text-silver, .text-h3, .text-labelSm \u2014 with only --global-ease/--global-transition left as custom properties) in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles, painted layers and crops from the live DOM across nine routes plus the footer and the opened Platform mega-menu and mobile menu. The workspace behind dashboard.doppler.com is a documented boundary",
+        "timestamp": "2026-11-13T09:40:00Z",
+        "harness": "Devin",
+        "model": "SWE-2 Max",
+        "route": "public-web",
+        "routes": [
+          "/",
+          "/platform/secrets-manager",
+          "/pricing",
+          "/demo",
+          "/agents",
+          "/integrations",
+          "/customers",
+          "/blog",
+          "/about",
+          "mobile /",
+          "mobile /pricing"
+        ],
+        "gaps": [
+          "the signed-in product entirely: the secrets dashboard, projects, configs, service tokens, logs, integrations management and billing live behind sign-in on dashboard.doppler.com and were never reached; Start for Free and Sign In point off-site and were measured, never followed",
+          "the demo flow past the form: fields were focused and sample-filled then deleted, but Choose a Time was never pressed, so the scheduling step is uncaptured",
+          "the site's other public routes (platform sub-pages, use-case pages, case studies, comparisons, legal) share the same components and were not screenshotted individually",
+          "no light variant is declared; the surface paints dark only",
+          "disabled, error and loading states are absent on the public surface",
+          "icons: no standalone SVG set lifted this pass"
+        ],
+        "durationMin": null,
+        "durationNote": "wall-clock duration was not recorded for this capture",
+        "pr": "https://github.com/starship-terminal/constellations/pull/513"
+      },
+      "layoutGaps": {
+        "icons/": "the icon extraction pass was not run; the site's icons (the asterisk wordmark, the menu-link glyphs, the integration logos and the footer badges) are visible in the crops and screenshots"
+      }
+    },
+    {
+      "slug": "dropbox",
+      "name": "Dropbox",
+      "url": "https://www.dropbox.com",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "Cloud-storage/productivity marketing and product landings: a shipped DIG token layer (--dig-color__* roles, --dig-type__* Sharp Grotesk/Atlas Grotesk ramp, 8px spacing, 4-24px radii, --dig-motion__*) over the --DWG__TEMP__color__* brand palette rebound per section by dwg-theme--coconut/graphite/navy: coconut #f7f5f2 fields, #0061fe painted CTAs (#0057e5/#0050d0 states) despite a declared black primary-cta role, 3px #428bff focus-shadow rings, a hover-driven Products mega-menu, and a mixed lucida-grande/Atlas auth sheet on /login and /register",
+      "tags": [
+        "web",
+        "cloud-storage",
+        "productivity",
+        "saas",
+        "marketing",
+        "dig",
+        "coconut",
+        "light",
+        "graphite-islands",
+        "signed-out"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-13",
+      "access": "signed out (every captured surface is public; the file dashboard, Paper/Dash/Replay/Sign workspaces, account and billing sit behind the auth cards and were never reached; dash.dropbox.com and the sign-in-embed hosts were never opened; the login/register fields were focused and sample-filled then deleted, never submitted)",
+      "themes": ["light", "dark"],
+      "widths": [1440, 390],
+      "entry": "systems/dropbox/README.md",
+      "tokens": "systems/dropbox/tokens.json",
+      "styleGuide": "systems/dropbox/style-guide.html",
+      "preview": {
+        "cover": "systems/dropbox/screenshots/home-light-default.png",
+        "icon": "systems/dropbox/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.page",
+            "surface": "light.surface.default",
+            "text": "light.text",
+            "muted": "light.muted",
+            "accent": "light.accent.default",
+            "border": "light.border.default"
+          },
+          "dark": {
+            "page": "dark.page",
+            "surface": "dark.surface.default",
+            "text": "dark.text",
+            "muted": "dark.muted",
+            "accent": "dark.accent.default",
+            "border": "dark.border.default"
+          }
+        },
+        "fonts": ["core.font.family.title", "core.font.family.body"]
+      },
+      "capture": {
+        "method": "public-web",
+        "source": "dropbox.com (marketing pages, the /dropbox, /replay, /sign and /docsend product pages, /business, /enterprise, /plans, /features, and the /login and /register auth cards) in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass. The site ships the real DIG token layer: linked cfl.dropboxstatic.com bundles (dig-components/tokens.css, the dwg-components index, warp page CSS) read from network responses because they are cross-origin to the CSSOM, resolved on five probe scopes (painted bright, declared dark, dwg coconut/graphite/navy). Computed styles and crops from the live DOM; painted CTA blues (#0061fe->#0057e5->#0050d0) measured on the elements. The product behind the auth cards is a documented boundary",
+        "timestamp": "2026-11-13T00:00:00Z",
+        "harness": "Devin",
+        "model": "SWE-2 High",
+        "route": "public-web",
+        "routes": [
+          "/",
+          "/dropbox",
+          "/replay",
+          "/sign",
+          "/docsend",
+          "/business",
+          "/enterprise",
+          "/plans",
+          "/features",
+          "/login",
+          "/register",
+          "mobile / and /plans",
+          "/dash redirects externally to dash.dropbox.com (recorded boundary)",
+          "/paper resolves to /paper/start (public start surface)"
+        ],
+        "gaps": [
+          "the signed-in product entirely: the file dashboard, Paper/Dash/Replay/Sign workspaces, account, billing and checkout sit behind the auth cards and were never reached",
+          "/login and /register captured as surfaces: the email fields were focused and given sample text that was deleted; Continue, the SSO buttons and every Try-for-free/Buy-now/Get-started action were measured, never followed",
+          "the privacy consent banner, the intermittent CCPA consent iframe (which scroll-locks the document) and Google One Tap were hidden or their requests aborted - no consent was ever answered",
+          "the Products mega-menu opens on pointer hover and closes on keyboard focus, so menu-link focus-visible/pressed are a documented gap",
+          "the dark set is the declared dig-Theme-vis2023--dark scope - shipped in the token layer, never painted signed-out; the painted dark sections are dwg-theme--graphite bands tokenised under light.dwg.graphite.*",
+          "the DIG layer declares primary-cta black (#050505) but marketing CTAs paint #0061fe - the discrepancy is recorded, both values kept",
+          "the auth cards run an older susi sheet (lucida grande stack, 4px radii) distinct from the DIG marketing system",
+          "the home hero rotates A/B variants; captures show the painted state",
+          "icons: no standalone SVG set lifted this pass"
+        ],
+        "durationMin": 240,
+        "durationNote": "wall-clock for the capture session including adapting the kit from the canva lineage, the stylesheet harvest, two mobile re-captures for the consent-iframe scroll-lock, the plans billing toggle fix, measurement, the token/docs build and the rubric review",
+        "pr": "https://github.com/starship-terminal/constellations/pull/514"
+      },
+      "layoutGaps": {
+        "icons/": "the icon extraction pass was not run; the glyphs (the box mark, the product marks in the mega-menu, the SSO provider marks and the social icons) are visible in the crops and screenshots"
+      }
+    },
+    {
+      "slug": "dailyartmagazine",
+      "name": "DailyArt Magazine",
+      "url": "https://www.dailyartmagazine.com",
+      "category": "media",
+      "platform": "web",
+      "goodFor": "Editorial/magazine design: a white field crossed by #19191c dark bands (65px fixed nav, ~799px home hero, donation sections), #c6002f crimson chips/tags/footer links and ghost buttons (transparent + 1px accent border, filling on hover), #f3003a inline links, RoslindaleCondensed 56px display over RoslindaleNarrow card titles and a Basier UI, a white mega-menu under a drop shadow, and article/newsletter/contact surfaces on WordPress",
+      "tags": [
+        "web",
+        "editorial",
+        "magazine",
+        "wordpress",
+        "dark-bands",
+        "crimson",
+        "serif-display",
+        "ghost-button",
+        "mega-menu",
+        "light",
+        "signed-out"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-13",
+      "access": "read-only (the magazine is fully public; Shop and Courses lead off-domain and were measured as links, never followed)",
+      "themes": ["light"],
+      "widths": [1440, 390],
+      "entry": "systems/dailyartmagazine/README.md",
+      "tokens": "systems/dailyartmagazine/tokens.json",
+      "styleGuide": "systems/dailyartmagazine/style-guide.html",
+      "preview": {
+        "cover": "systems/dailyartmagazine/screenshots/home-light-default.png",
+        "icon": "systems/dailyartmagazine/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.background.menu-panel",
+            "text": "light.text.ink",
+            "muted": "light.text.muted",
+            "accent": "light.action.accent",
+            "border": "light.border.hairline-dark"
+          }
+        },
+        "fonts": ["core.font.family.display", "core.font.family.sans"]
+      },
+      "capture": {
+        "method": "public-web",
+        "source": "dailyartmagazine.com (a WordPress 7.1.4 magazine on the idvetmp theme) in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and crops from the live DOM. The theme declares only stock WordPress --wp--preset--* variables, so the #19191c bands, #c6002f/#f3003a accents, radii, type ramp and component geometry are measured computed values. Shop/Courses external destinations are a documented boundary",
+        "timestamp": "2026-11-13T16:00:00Z",
+        "harness": "Devin",
+        "model": "SWE-2 High",
+        "route": "public-web",
+        "routes": [
+          "/",
+          "/latest/",
+          "/category/art-movements/impressionism/",
+          "/10-japanese-woodblock-prints-you-need-to-see/",
+          "/about-dailyart-magazine/",
+          "/contact/",
+          "/?s=van+gogh",
+          "mobile / and the article"
+        ],
+        "gaps": [
+          "no signed-in surface exists on the domain; Shop (shop.dailyartmagazine.com) and Courses (dailyartcourses.com) are external stores measured as outbound links, never followed",
+          "the newsletter and Contact Form 7 fields were focused and filled with sample text then cleared - never submitted; the acceptance/checkbox native inputs are visibility:hidden/opacity:0 and the boxes are painted by their labels",
+          "the category mega-menu and the newsletter modal were opened with the site's own classes; the category-item hover state is recorded missing (the item leaves the viewport as the panel opens)",
+          "the feed tab's active marker is not a computed-style difference - feed-tab-active measures identically to feed-tab",
+          "third-party ad slots were measured as layout only; their injected content (including a video-ad overlay visible in some shots) is not part of the design evidence",
+          "breadcrumbs exist only in JSON-LD - no breadcrumb UI paints on the article; author archives and tag indexes reuse the feed layout and were not individually captured",
+          "icons: no standalone SVG set lifted this pass"
+        ],
+        "durationMin": 180,
+        "durationNote": "wall-clock for the capture session including adaptation of the kit, the stylesheet harvest, screenshot and measurement passes, and the offline build",
+        "pr": "https://github.com/starship-terminal/constellations/pull/512"
+      },
+      "layoutGaps": {
+        "icons/": "the icon extraction pass was not run; the icons (the DailyArt wordmark, the social and share glyphs) are visible in the crops and screenshots"
       }
     },
     {
@@ -7250,13 +6777,8 @@
       "shape": "reference",
       "captured": "2026-11-13",
       "access": "read-only (the marketing site is fully public; the product lives behind app.deel.com - an authenticated boundary never reached; Book a demo, Claim offer and Log in were measured as destinations, never followed)",
-      "themes": [
-        "light"
-      ],
-      "widths": [
-        1440,
-        390
-      ],
+      "themes": ["light"],
+      "widths": [1440, 390],
       "entry": "systems/deel/README.md",
       "tokens": "systems/deel/tokens.json",
       "styleGuide": "systems/deel/style-guide.html",
@@ -7273,10 +6795,7 @@
             "border": "light.border.hairline"
           }
         },
-        "fonts": [
-          "core.font.family.display",
-          "core.font.family.sans"
-        ]
+        "fonts": ["core.font.family.display", "core.font.family.sans"]
       },
       "capture": {
         "method": "public-web",

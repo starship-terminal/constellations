@@ -570,6 +570,30 @@
     "reason": "catalog.json describes an AI health product: the personal-AI-doctor marketing pages and the signed-out chat-adjacent surfaces."
   },
   {
+    "referenceId": "systems:docusign",
+    "groupId": "web-categories",
+    "labels": ["Productivity"],
+    "reason": "catalog.json describes an agreement and e-signature platform: marketing pages, pricing and a signed-out public signature generator."
+  },
+  {
+    "referenceId": "systems:doppler",
+    "groupId": "web-categories",
+    "labels": ["Development Tools"],
+    "reason": "catalog.json describes a secrets-management developer platform: marketing pages, pricing and developer-docs surfaces, all signed out."
+  },
+  {
+    "referenceId": "systems:dropbox",
+    "groupId": "web-categories",
+    "labels": ["Productivity"],
+    "reason": "catalog.json describes a cloud-storage and file-sharing productivity product: marketing pages, pricing and signed-out auth surfaces."
+  },
+  {
+    "referenceId": "systems:dailyartmagazine",
+    "groupId": "web-categories",
+    "labels": ["Magazines & Newspapers"],
+    "reason": "catalog.json describes an art-history online magazine's editorial surfaces: the feed, category and article pages, and the newsletter and contact forms."
+  },
+  {
     "referenceId": "systems:deel",
     "groupId": "web-categories",
     "labels": ["Productivity"],

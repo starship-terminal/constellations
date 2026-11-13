@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 96,
-    "system_domains": 88,
-    "matched_domains": 63,
-    "missing_domains": 370,
+    "system_packages": 100,
+    "system_domains": 92,
+    "matched_domains": 67,
+    "missing_domains": 366,
     "system_domains_absent_from_catalog": 25
   },
   "matched": {
@@ -814,6 +814,23 @@
         }
       ]
     },
+    "dailyartmagazine.com": {
+      "catalog": [
+        {
+          "name": "DailyArt Magazine",
+          "domain": "dailyartmagazine.com",
+          "id": 571
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "dailyartmagazine",
+          "name": "DailyArt Magazine",
+          "url": "https://www.dailyartmagazine.com",
+          "name_match": false
+        }
+      ]
+    },
     "deel.com": {
       "catalog": [
         {
@@ -865,6 +882,23 @@
         }
       ]
     },
+    "docusign.com": {
+      "catalog": [
+        {
+          "name": "DocuSign",
+          "domain": "docusign.com",
+          "id": 31
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "docusign",
+          "name": "DocuSign",
+          "url": "https://www.docusign.com",
+          "name_match": true
+        }
+      ]
+    },
     "dona.ai": {
       "catalog": [
         {
@@ -899,6 +933,23 @@
         }
       ]
     },
+    "doppler.com": {
+      "catalog": [
+        {
+          "name": "Doppler",
+          "domain": "doppler.com",
+          "id": 193
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "doppler",
+          "name": "Doppler",
+          "url": "https://www.doppler.com",
+          "name_match": true
+        }
+      ]
+    },
     "drinkdouze.com": {
       "catalog": [
         {
@@ -913,6 +964,23 @@
           "name": "Douze",
           "url": "https://drinkdouze.com",
           "name_match": false
+        }
+      ]
+    },
+    "dropbox.com": {
+      "catalog": [
+        {
+          "name": "Dropbox",
+          "domain": "dropbox.com",
+          "id": 2
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "dropbox",
+          "name": "Dropbox",
+          "url": "https://www.dropbox.com",
+          "name_match": true
         }
       ]
     },
@@ -1334,13 +1402,6 @@
         "id": 504
       }
     ],
-    "dailyartmagazine.com": [
-      {
-        "name": "DailyArt Magazine",
-        "domain": "dailyartmagazine.com",
-        "id": 571
-      }
-    ],
     "deezer.com": [
       {
         "name": "Deezer",
@@ -1411,13 +1472,6 @@
         "id": 332
       }
     ],
-    "docusign.com": [
-      {
-        "name": "DocuSign",
-        "domain": "docusign.com",
-        "id": 31
-      }
-    ],
     "dopper.com": [
       {
         "name": "Dopper",
@@ -1425,25 +1479,11 @@
         "id": 723
       }
     ],
-    "doppler.com": [
-      {
-        "name": "Doppler",
-        "domain": "doppler.com",
-        "id": 193
-      }
-    ],
     "dribbble.com": [
       {
         "name": "Dribbble",
         "domain": "dribbble.com",
         "id": 257
-      }
-    ],
-    "dropbox.com": [
-      {
-        "name": "Dropbox",
-        "domain": "dropbox.com",
-        "id": 2
       }
     ],
     "dub.co": [
@@ -3836,10 +3876,7 @@
         "slug": "luma-ios",
         "name": "Luma",
         "url": "https://luma.com",
-        "ios_guess": [
-          "Luma",
-          "Luma AI"
-        ]
+        "ios_guess": ["Luma", "Luma AI"]
       }
     ],
     "metabase.com": [
@@ -3855,25 +3892,19 @@
         "slug": "notion-calendar-desktop",
         "name": "Notion Calendar (desktop)",
         "url": "https://www.notion.com/product/calendar",
-        "ios_guess": [
-          "Notion"
-        ]
+        "ios_guess": ["Notion"]
       },
       {
         "slug": "notion-desktop",
         "name": "Notion (desktop)",
         "url": "https://www.notion.com/desktop",
-        "ios_guess": [
-          "Notion"
-        ]
+        "ios_guess": ["Notion"]
       },
       {
         "slug": "notion-ios",
         "name": "Notion for iOS",
         "url": "https://www.notion.com/mobile",
-        "ios_guess": [
-          "Notion"
-        ]
+        "ios_guess": ["Notion"]
       }
     ],
     "opencode.ai": [
@@ -3921,9 +3952,7 @@
         "slug": "substack",
         "name": "Substack",
         "url": "https://substack.com",
-        "ios_guess": [
-          "Substack"
-        ]
+        "ios_guess": ["Substack"]
       }
     ],
     "supabase.com": [
