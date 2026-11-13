@@ -5825,8 +5825,8 @@
         "description": "The declared `--tempo-sizes-lg`."
       },
       "max": {
-        "value": "0px",
-        "type": "dimension",
+        "value": "max-content",
+        "type": "other",
         "source": "declared Tempo design-system variable in the site stylesheet (raw/css-vars.json): --tempo-sizes-max",
         "description": "The declared `--tempo-sizes-max`."
       },
@@ -5837,8 +5837,8 @@
         "description": "The declared `--tempo-sizes-md`."
       },
       "min": {
-        "value": "0px",
-        "type": "dimension",
+        "value": "min-content",
+        "type": "other",
         "source": "declared Tempo design-system variable in the site stylesheet (raw/css-vars.json): --tempo-sizes-min",
         "description": "The declared `--tempo-sizes-min`."
       },
@@ -7135,7 +7135,7 @@
         }
       },
       "black": {
-        "var": "--color-black",
+        "var": "--tempo-colors-black",
         "type": "color"
       },
       "border": {
@@ -7255,8 +7255,30 @@
         },
         "neutral": {
           "primary": {
-            "var": "--color-border-neutral-primary",
-            "type": "color"
+            "default": {
+              "var": "--tempo-colors-border-neutral-primary-default",
+              "type": "color"
+            },
+            "disabled": {
+              "var": "--tempo-colors-border-neutral-primary-disabled",
+              "type": "color"
+            },
+            "focused": {
+              "var": "--tempo-colors-border-neutral-primary-focused",
+              "type": "color"
+            },
+            "hovered": {
+              "var": "--tempo-colors-border-neutral-primary-hovered",
+              "type": "color"
+            },
+            "pressed": {
+              "var": "--tempo-colors-border-neutral-primary-pressed",
+              "type": "color"
+            },
+            "base": {
+              "var": "--color-border-neutral-primary",
+              "type": "color"
+            }
           },
           "secondary": {
             "var": "--color-border-neutral-secondary",
@@ -7857,12 +7879,14 @@
         "type": "color"
       },
       "white": {
-        "var": "--color-white",
+        "var": "--tempo-colors-white",
         "type": "color"
       },
       "accent": {
-        "var": "--color-accent",
-        "type": "color",
+        "default": {
+          "var": "--color-accent",
+          "type": "color"
+        },
         "light": {
           "var": "--color-accent-light",
           "type": "color"
@@ -7889,16 +7913,20 @@
         },
         "brand": {
           "duo": {
-            "var": "--color-bg-brand-duo",
-            "type": "color",
+            "default": {
+              "var": "--color-bg-brand-duo",
+              "type": "color"
+            },
             "selected": {
               "var": "--color-bg-brand-duo-selected",
               "type": "color"
             }
           },
           "family": {
-            "var": "--color-bg-brand-family",
-            "type": "color",
+            "default": {
+              "var": "--color-bg-brand-family",
+              "type": "color"
+            },
             "selected": {
               "var": "--color-bg-brand-family-selected",
               "type": "color"
@@ -7917,8 +7945,10 @@
             "type": "color"
           },
           "premium": {
-            "var": "--color-bg-brand-premium",
-            "type": "color",
+            "default": {
+              "var": "--color-bg-brand-premium",
+              "type": "color"
+            },
             "selected": {
               "var": "--color-bg-brand-premium-selected",
               "type": "color"
@@ -7946,8 +7976,10 @@
           "type": "color"
         },
         "secondary": {
-          "var": "--color-bg-secondary",
-          "type": "color",
+          "default": {
+            "var": "--color-bg-secondary",
+            "type": "color"
+          },
           "brand": {
             "family": {
               "var": "--color-bg-secondary-brand-family",
@@ -7960,8 +7992,10 @@
           }
         },
         "tertiary": {
-          "var": "--color-bg-tertiary",
-          "type": "color",
+          "default": {
+            "var": "--color-bg-tertiary",
+            "type": "color"
+          },
           "hover": {
             "var": "--color-bg-tertiary-hover",
             "type": "color"
@@ -8287,9 +8321,9 @@
         "description": "The #fdfcfe plan-card field on the offers band."
       },
       "chip": {
-        "value": "{color.bg.tertiary}",
+        "value": "{color.bg.tertiary.default}",
         "type": "color",
-        "source": "painted chip fill inside plan-card default (raw/components-computed.json); matches declared color.bg.tertiary",
+        "source": "painted chip fill inside plan-card default (raw/components-computed.json); matches declared color.bg.tertiary.default",
         "description": "The #ebe7ee chip inside the plan cards."
       }
     },
@@ -8969,7 +9003,7 @@
         }
       },
       "black": {
-        "var": "--color-black",
+        "var": "--tempo-colors-black",
         "type": "color"
       },
       "border": {
@@ -9089,8 +9123,30 @@
         },
         "neutral": {
           "primary": {
-            "var": "--color-border-neutral-primary",
-            "type": "color"
+            "default": {
+              "var": "--tempo-colors-border-neutral-primary-default",
+              "type": "color"
+            },
+            "disabled": {
+              "var": "--tempo-colors-border-neutral-primary-disabled",
+              "type": "color"
+            },
+            "focused": {
+              "var": "--tempo-colors-border-neutral-primary-focused",
+              "type": "color"
+            },
+            "hovered": {
+              "var": "--tempo-colors-border-neutral-primary-hovered",
+              "type": "color"
+            },
+            "pressed": {
+              "var": "--tempo-colors-border-neutral-primary-pressed",
+              "type": "color"
+            },
+            "base": {
+              "var": "--color-border-neutral-primary",
+              "type": "color"
+            }
           },
           "secondary": {
             "var": "--color-border-neutral-secondary",
@@ -9691,12 +9747,14 @@
         "type": "color"
       },
       "white": {
-        "var": "--color-white",
+        "var": "--tempo-colors-white",
         "type": "color"
       },
       "accent": {
-        "var": "--color-accent",
-        "type": "color",
+        "default": {
+          "var": "--color-accent",
+          "type": "color"
+        },
         "light": {
           "var": "--color-accent-light",
           "type": "color"
@@ -9723,16 +9781,20 @@
         },
         "brand": {
           "duo": {
-            "var": "--color-bg-brand-duo",
-            "type": "color",
+            "default": {
+              "var": "--color-bg-brand-duo",
+              "type": "color"
+            },
             "selected": {
               "var": "--color-bg-brand-duo-selected",
               "type": "color"
             }
           },
           "family": {
-            "var": "--color-bg-brand-family",
-            "type": "color",
+            "default": {
+              "var": "--color-bg-brand-family",
+              "type": "color"
+            },
             "selected": {
               "var": "--color-bg-brand-family-selected",
               "type": "color"
@@ -9751,8 +9813,10 @@
             "type": "color"
           },
           "premium": {
-            "var": "--color-bg-brand-premium",
-            "type": "color",
+            "default": {
+              "var": "--color-bg-brand-premium",
+              "type": "color"
+            },
             "selected": {
               "var": "--color-bg-brand-premium-selected",
               "type": "color"
@@ -9780,8 +9844,10 @@
           "type": "color"
         },
         "secondary": {
-          "var": "--color-bg-secondary",
-          "type": "color",
+          "default": {
+            "var": "--color-bg-secondary",
+            "type": "color"
+          },
           "brand": {
             "family": {
               "var": "--color-bg-secondary-brand-family",
@@ -9794,8 +9860,10 @@
           }
         },
         "tertiary": {
-          "var": "--color-bg-tertiary",
-          "type": "color",
+          "default": {
+            "var": "--color-bg-tertiary",
+            "type": "color"
+          },
           "hover": {
             "var": "--color-bg-tertiary-hover",
             "type": "color"
@@ -10139,9 +10207,9 @@
         "description": "The #ead1ff 'Live the music with Deezer' signup banner."
       },
       "toggle": {
-        "value": "{color.bg.tertiary}",
+        "value": "{color.bg.tertiary.default}",
         "type": "color",
-        "source": "computed backgroundColor of billing-toggle default (raw/components-computed.json); matches declared color.bg.tertiary",
+        "source": "computed backgroundColor of billing-toggle default (raw/components-computed.json); matches declared color.bg.tertiary.default",
         "description": "The #29282d billing-toggle track on the offers band."
       }
     },

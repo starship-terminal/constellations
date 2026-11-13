@@ -3,19 +3,19 @@
  "source": "the stylesheet bodies read during a live signed-out load of /en/artist/27 on deezer.com (linked CSS bundles from network responses plus inline <style> blocks, re-parsed with CSSStyleSheet); resolved in a probe carrying the real sheets, plain (:root) and with a .dark class, at 1440 x 900",
  "sheets": [
   "https://cdn-files.dzcdn.net/cache/css/sass_c/app-web.366960c71a63bf4adf9c.css (194380 bytes)",
+  "https://www.deezer.com/hjHOFYDi0599/Fn/DITIyE4Sd2/6Sif/Yh0DP2YC/Uzhi/czMSJTVX (2712 bytes)",
+  "https://cdn-assets.dzcdn.net/common/css/inter.css (1714 bytes)",
   "https://cdn-assets.dzcdn.net/common/css/deezer-headline-vf.css (536 bytes)",
   "https://cdn-assets.dzcdn.net/common/css/deezer-product.css (2035 bytes)",
-  "https://cdn-assets.dzcdn.net/common/css/inter.css (1714 bytes)",
-  "https://www.deezer.com/hjHOFYDi0599/Fn/DITIyE4Sd2/6Sif/Yh0DP2YC/Uzhi/czMSJTVX (2712 bytes)",
   "https://cdn-files.dzcdn.net/cache/css/sass_c/route-naboo.3edc177f7d248710212e.css (109813 bytes)",
+  "https://surveys-static-prd.survicate-cdn.com/fonts/fonts.css (10482 bytes)",
   "https://cdn-files.dzcdn.net/cache/css/sass_c/sidebar-Unlogged.7c5139fd28405921d2b2.css (4662 bytes)",
   "https://cdn-files.dzcdn.net/cache/css/sass_c/route-artist.89f1b306d2feb5284f84.css (8070 bytes)",
-  "https://surveys-static-prd.survicate-cdn.com/fonts/fonts.css (10482 bytes)",
   "inline-0 (82187 bytes)",
   "inline-1 (3190 bytes)",
   "inline-2 (515 bytes)",
-  "inline-3 (114822 bytes)",
-  "inline-4 (158212 bytes)",
+  "inline-3 (158212 bytes)",
+  "inline-4 (114822 bytes)",
   "inline-5 (50 bytes)",
   "inline-6 (14478 bytes)"
  ],
@@ -2104,7 +2104,7 @@
    "bin": "theme"
   },
   {
-   "file": "inline-3",
+   "file": "inline-4",
    "selector": ".css-65gwdi",
    "context": [],
    "properties": {
@@ -2115,7 +2115,7 @@
    "bin": "theme"
   },
   {
-   "file": "inline-3",
+   "file": "inline-4",
    "selector": ".chakra-ui-dark .css-65gwdi:not([data-theme]), [data-theme=\"dark\"] .css-65gwdi:not([data-theme]), .css-65gwdi[data-theme=\"dark\"]",
    "context": [],
    "properties": {
@@ -2125,7 +2125,7 @@
    "bin": "theme"
   },
   {
-   "file": "inline-3",
+   "file": "inline-4",
    "selector": ".css-7qej4d",
    "context": [],
    "properties": {
@@ -2136,7 +2136,7 @@
    "bin": "theme"
   },
   {
-   "file": "inline-3",
+   "file": "inline-4",
    "selector": ".chakra-ui-dark .css-7qej4d:not([data-theme]), [data-theme=\"dark\"] .css-7qej4d:not([data-theme]), .css-7qej4d[data-theme=\"dark\"]",
    "context": [],
    "properties": {
@@ -2146,7 +2146,7 @@
    "bin": "theme"
   },
   {
-   "file": "inline-3",
+   "file": "inline-4",
    "selector": ".css-j4bnyy",
    "context": [],
    "properties": {
@@ -2157,7 +2157,7 @@
    "bin": "theme"
   },
   {
-   "file": "inline-3",
+   "file": "inline-4",
    "selector": ".chakra-ui-dark .css-j4bnyy:not([data-theme]), [data-theme=\"dark\"] .css-j4bnyy:not([data-theme]), .css-j4bnyy[data-theme=\"dark\"]",
    "context": [],
    "properties": {
@@ -2167,7 +2167,7 @@
    "bin": "theme"
   },
   {
-   "file": "inline-3",
+   "file": "inline-4",
    "selector": ".css-j0r7v1",
    "context": [],
    "properties": {
@@ -2178,7 +2178,7 @@
    "bin": "theme"
   },
   {
-   "file": "inline-3",
+   "file": "inline-4",
    "selector": ".chakra-ui-dark .css-j0r7v1:not([data-theme]), [data-theme=\"dark\"] .css-j0r7v1:not([data-theme]), .css-j0r7v1[data-theme=\"dark\"]",
    "context": [],
    "properties": {
@@ -2188,7 +2188,7 @@
    "bin": "theme"
   },
   {
-   "file": "inline-3",
+   "file": "inline-4",
    "selector": ".css-1peqmwi",
    "context": [],
    "properties": {
@@ -2199,7 +2199,7 @@
    "bin": "theme"
   },
   {
-   "file": "inline-3",
+   "file": "inline-4",
    "selector": ".chakra-ui-dark .css-1peqmwi:not([data-theme]), [data-theme=\"dark\"] .css-1peqmwi:not([data-theme]), .css-1peqmwi[data-theme=\"dark\"]",
    "context": [],
    "properties": {
@@ -2209,7 +2209,7 @@
    "bin": "theme"
   },
   {
-   "file": "inline-3",
+   "file": "inline-4",
    "selector": ".css-zylffk",
    "context": [],
    "properties": {
@@ -2218,7 +2218,7 @@
    "bin": "theme"
   },
   {
-   "file": "inline-3",
+   "file": "inline-4",
    "selector": ".css-zylffk [data-tempocontainer]",
    "context": [
     "@container (min-width: 0px) and (max-width: 879px)"
@@ -2229,7 +2229,7 @@
    "bin": "theme"
   },
   {
-   "file": "inline-3",
+   "file": "inline-4",
    "selector": ".css-zylffk [data-tempocontainer]",
    "context": [
     "@container (min-width: 880px) and (max-width: 1109px)"
@@ -2240,7 +2240,7 @@
    "bin": "theme"
   },
   {
-   "file": "inline-3",
+   "file": "inline-4",
    "selector": ".css-zylffk [data-tempocontainer]",
    "context": [
     "@container (min-width: 1110px) and (max-width: 1290px)"
@@ -2251,7 +2251,7 @@
    "bin": "theme"
   },
   {
-   "file": "inline-3",
+   "file": "inline-4",
    "selector": ".css-zylffk [data-tempocontainer]",
    "context": [
     "@container (min-width: 1291px) and (max-width: 1409px)"
@@ -2262,7 +2262,7 @@
    "bin": "theme"
   },
   {
-   "file": "inline-3",
+   "file": "inline-4",
    "selector": ".css-zylffk [data-tempocontainer]",
    "context": [
     "@container (min-width: 1410px)"
@@ -2688,7 +2688,7 @@
    "bin": "vendor"
   },
   {
-   "file": "inline-3",
+   "file": "inline-4",
    "selector": ".css-1625w3j",
    "context": [],
    "properties": {
@@ -2697,7 +2697,7 @@
    "bin": "vendor"
   },
   {
-   "file": "inline-3",
+   "file": "inline-4",
    "selector": ".css-y95vsz",
    "context": [],
    "properties": {
@@ -2706,7 +2706,7 @@
    "bin": "vendor"
   },
   {
-   "file": "inline-3",
+   "file": "inline-4",
    "selector": ".css-34rv3v",
    "context": [],
    "properties": {
@@ -2715,7 +2715,7 @@
    "bin": "vendor"
   },
   {
-   "file": "inline-3",
+   "file": "inline-4",
    "selector": ".css-1q69ywm",
    "context": [],
    "properties": {
@@ -2724,7 +2724,7 @@
    "bin": "vendor"
   },
   {
-   "file": "inline-3",
+   "file": "inline-4",
    "selector": ".css-1psa41m",
    "context": [],
    "properties": {
@@ -2733,7 +2733,7 @@
    "bin": "vendor"
   },
   {
-   "file": "inline-3",
+   "file": "inline-4",
    "selector": ".css-57brx6",
    "context": [],
    "properties": {
@@ -2742,7 +2742,7 @@
    "bin": "vendor"
   },
   {
-   "file": "inline-3",
+   "file": "inline-4",
    "selector": ".css-n7hdlu",
    "context": [],
    "properties": {
@@ -2751,7 +2751,7 @@
    "bin": "vendor"
   },
   {
-   "file": "inline-3",
+   "file": "inline-4",
    "selector": ".css-7nqgni",
    "context": [],
    "properties": {
@@ -2857,6 +2857,46 @@
    "src": "url(\"/cache/slash/fonts/deezer-icons/deezer-icons.e38ec3a7d0df01d80b0e.woff2\") format(\"woff2\"), url(\"/cache/slash/fonts/deezer-icons/deezer-icons.ddb646563c001602eb31.woff\") format(\"woff\")"
   },
   {
+   "file": "https://cdn-assets.dzcdn.net/common/css/inter.css",
+   "font-display": "swap",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(\"../fonts/inter/inter-regular.5a6fdf7acc89c02b23bac897744556c612eb0576.woff2\") format(\"woff2\"), url(\"../fonts/inter/inter-regular.0890ce1b90d4ff0ed966266da092146c302da2cc.woff\") format(\"woff\")"
+  },
+  {
+   "file": "https://cdn-assets.dzcdn.net/common/css/inter.css",
+   "font-display": "swap",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(\"../fonts/inter/inter-medium.20aefd2d6df4c2b84473e7372d016ad4638ed3e7.woff2\") format(\"woff2\"), url(\"../fonts/inter/inter-medium.00b9484e50765550e2028680bb2c762d81385e40.woff\") format(\"woff\")"
+  },
+  {
+   "file": "https://cdn-assets.dzcdn.net/common/css/inter.css",
+   "font-display": "swap",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "600",
+   "src": "url(\"../fonts/inter/inter-semibold.ab2de210c4b06f71ca98c4782c87ac9913db2ffe.woff2\") format(\"woff2\"), url(\"../fonts/inter/inter-semibold.30459d2ff803a1f60b25f15e9ffd41c16434b4f4.woff\") format(\"woff\")"
+  },
+  {
+   "file": "https://cdn-assets.dzcdn.net/common/css/inter.css",
+   "font-display": "swap",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(\"../fonts/inter/inter-bold.5c4ac79345d957c3b7ecbbd26ca0c850a9b97f50.woff2\") format(\"woff2\"), url(\"../fonts/inter/inter-bold.c3e782e1d5d8e129b0276a7cb28983e565476360.woff\") format(\"woff\")"
+  },
+  {
+   "file": "https://cdn-assets.dzcdn.net/common/css/inter.css",
+   "font-display": "swap",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "900",
+   "src": "url(\"../fonts/inter/inter-black.5ebd2a3a07c5dfedb0f2763699f80a98d662f853.woff2\") format(\"woff2\"), url(\"../fonts/inter/inter-black.64d350860d050b29ed4b86f1429d1c7057275389.woff\") format(\"woff\")"
+  },
+  {
    "file": "https://cdn-assets.dzcdn.net/common/css/deezer-headline-vf.css",
    "font-display": "swap",
    "font-family": "\"Deezer Headline VF\"",
@@ -2904,46 +2944,6 @@
    "font-style": "normal",
    "font-weight": "800",
    "src": "url(\"../fonts/deezer-product/DeezerProduct-Extrabold.ff5d8428e4fe802f91d53a06857feb145b0a435d.woff2\") format(\"woff2\"), url(\"../fonts/deezer-product/DeezerProduct-Extrabold.a1c06d3aa3a0d709767a0e592c1bac25af1f6944.woff\") format(\"woff\")"
-  },
-  {
-   "file": "https://cdn-assets.dzcdn.net/common/css/inter.css",
-   "font-display": "swap",
-   "font-family": "Inter",
-   "font-style": "normal",
-   "font-weight": "400",
-   "src": "url(\"../fonts/inter/inter-regular.5a6fdf7acc89c02b23bac897744556c612eb0576.woff2\") format(\"woff2\"), url(\"../fonts/inter/inter-regular.0890ce1b90d4ff0ed966266da092146c302da2cc.woff\") format(\"woff\")"
-  },
-  {
-   "file": "https://cdn-assets.dzcdn.net/common/css/inter.css",
-   "font-display": "swap",
-   "font-family": "Inter",
-   "font-style": "normal",
-   "font-weight": "500",
-   "src": "url(\"../fonts/inter/inter-medium.20aefd2d6df4c2b84473e7372d016ad4638ed3e7.woff2\") format(\"woff2\"), url(\"../fonts/inter/inter-medium.00b9484e50765550e2028680bb2c762d81385e40.woff\") format(\"woff\")"
-  },
-  {
-   "file": "https://cdn-assets.dzcdn.net/common/css/inter.css",
-   "font-display": "swap",
-   "font-family": "Inter",
-   "font-style": "normal",
-   "font-weight": "600",
-   "src": "url(\"../fonts/inter/inter-semibold.ab2de210c4b06f71ca98c4782c87ac9913db2ffe.woff2\") format(\"woff2\"), url(\"../fonts/inter/inter-semibold.30459d2ff803a1f60b25f15e9ffd41c16434b4f4.woff\") format(\"woff\")"
-  },
-  {
-   "file": "https://cdn-assets.dzcdn.net/common/css/inter.css",
-   "font-display": "swap",
-   "font-family": "Inter",
-   "font-style": "normal",
-   "font-weight": "700",
-   "src": "url(\"../fonts/inter/inter-bold.5c4ac79345d957c3b7ecbbd26ca0c850a9b97f50.woff2\") format(\"woff2\"), url(\"../fonts/inter/inter-bold.c3e782e1d5d8e129b0276a7cb28983e565476360.woff\") format(\"woff\")"
-  },
-  {
-   "file": "https://cdn-assets.dzcdn.net/common/css/inter.css",
-   "font-display": "swap",
-   "font-family": "Inter",
-   "font-style": "normal",
-   "font-weight": "900",
-   "src": "url(\"../fonts/inter/inter-black.5ebd2a3a07c5dfedb0f2763699f80a98d662f853.woff2\") format(\"woff2\"), url(\"../fonts/inter/inter-black.64d350860d050b29ed4b86f1429d1c7057275389.woff\") format(\"woff\")"
   },
   {
    "file": "https://cdn-files.dzcdn.net/cache/css/sass_c/route-naboo.3edc177f7d248710212e.css",
@@ -10288,7 +10288,8 @@
    "--tempo-sizes-max": {
     "raw": "max-content",
     "kind": "dimension",
-    "value": "0px"
+    "value": "max-content",
+    "note": "sizing keyword, not a fixed length"
    },
    "--tempo-sizes-md": {
     "raw": "28rem",
@@ -10298,7 +10299,8 @@
    "--tempo-sizes-min": {
     "raw": "min-content",
     "kind": "dimension",
-    "value": "0px"
+    "value": "min-content",
+    "note": "sizing keyword, not a fixed length"
    },
    "--tempo-sizes-null": {
     "raw": "0rem",
@@ -18055,7 +18057,8 @@
    "--tempo-sizes-max": {
     "raw": "max-content",
     "kind": "dimension",
-    "value": "0px"
+    "value": "max-content",
+    "note": "sizing keyword, not a fixed length"
    },
    "--tempo-sizes-md": {
     "raw": "28rem",
@@ -18065,7 +18068,8 @@
    "--tempo-sizes-min": {
     "raw": "min-content",
     "kind": "dimension",
-    "value": "0px"
+    "value": "min-content",
+    "note": "sizing keyword, not a fixed length"
    },
    "--tempo-sizes-null": {
     "raw": "0rem",

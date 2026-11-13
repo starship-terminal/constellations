@@ -110,9 +110,12 @@ const mobile = {
   artist: { url: BASE + '/en/artist/27', wait: 8000, theme: 'dark', run: async (p, S) => {
     await S.view('default');
     await step('drawer', async () => {
-      const ham = p.locator('header button, [class*="header" i] button, nav button').filter({ visible: true }).last();
+      // The hamburger is a div.burger-menu, not a button; it toggles a
+      // full-viewport ul.burger-menu-content.
+      const ham = p.locator('.burger-menu').filter({ visible: true }).first();
       if (!(await ham.count())) return;
       await clickEl(ham);
+      await p.waitForSelector('ul.burger-menu-content', { state: 'visible', timeout: 4000 }).catch(() => {});
       await wait(p, 1400);
       await S.view('drawer');
       await p.keyboard.press('Escape');

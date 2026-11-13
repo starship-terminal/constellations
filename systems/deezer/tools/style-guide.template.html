@@ -37,15 +37,15 @@ code { font-family: var(--sg-mono); font-size: .9em; }
 .kv span { color: var(--color-neutral-ink, #000); opacity: .65; }
 /* ---- mocks ---- */
 .mock { border: 1px solid var(--color-neutral-hairline, #ddd); overflow: hidden; background: var(--color-neutral-paper, #fff); }
-.navbar { display: flex; align-items: center; gap: 22px; height: var(--component-topbar-height, 80px); padding: 0 12px 0 22px; font-size: 15px; color: var(--color-text-main, #0f0d13); }
+.navbar { display: flex; align-items: center; gap: 22px; height: var(--component-topbar-height, 80px); padding: 0 12px 0 22px; font-size: 15px; color: var(--text-on-dark, #fdfcfe); background: var(--color-bg-main, #0f0d13); }
 .navbar .wm { font-weight: 800; font-size: 24px; letter-spacing: -0.02em; }
 .navbar .sp { flex: 1; }
 .btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-search-height, 48px); padding: 0 24px; font-size: 16px; font-weight: 700; border-radius: var(--radius-control, 16px); border: 1px solid transparent; }
-.btn.primary { background: var(--color-accent, #a238ff); color: var(--color-accent-content, #fff); }
-.btn.dark { background: var(--color-bg-inverse, #121216); color: var(--color-text-inverse, #fdfcfe); }
+.btn.primary { background: var(--action-accent, #a238ff); color: #fff; }
+.btn.dark { background: var(--action-dark-button, #121216); color: var(--text-on-dark, #fdfcfe); }
 .btn.small { height: 34px; border-radius: var(--radius-pill-s, 12px); font-size: 13px; font-weight: 600; }
-.hero { color: var(--color-text-main, #0f0d13); padding: 72px 40px; font: 800 60px/1 var(--sg-serif); letter-spacing: .01em; text-align: center; background: var(--color-bg-main, #fdfcfe); }
-.hero small { display: block; font: 400 18px/1.5 var(--sg-sans); color: var(--color-text-main, #0f0d13); margin: 16px auto 22px; max-width: 46ch; }
+.hero { color: var(--text-ink, #0f0d13); padding: 72px 40px; font: 800 60px/1 var(--sg-serif); letter-spacing: .01em; text-align: center; background: var(--background-page, #fff); }
+.hero small { display: block; font: 400 18px/1.5 var(--sg-sans); color: var(--text-ink, #0f0d13); margin: 16px auto 22px; max-width: 46ch; }
 .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
 .tile { border: 1px solid var(--color-neutral-hairline, #ddd); padding: 14px; font-size: 13px; background: #fff; }
 .tile .img { height: 140px; background: #ddd; margin-bottom: 10px; display: flex; align-items: flex-end; padding: 10px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }
@@ -56,9 +56,9 @@ table.cmp td, table.cmp th { border: 1px solid var(--color-neutral-hairline, #dd
 .tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--color-neutral-hairline, #ddd); }
 .tr .ts { font-family: var(--sg-serif); }
 .tr .tv { font-size: 12px; color: var(--color-neutral-ink, #000); opacity: .65; font-family: var(--sg-mono); }
-.toggle { display: inline-flex; background: var(--color-bg-tertiary, #29282d); border-radius: 999px; padding: 4px; gap: 4px; font-size: 15px; color: var(--color-text-main, #fdfcfe); }
+.toggle { display: inline-flex; background: var(--background-toggle, #29282d); border-radius: 999px; padding: 4px; gap: 4px; font-size: 15px; color: var(--text-text, #fdfcfe); }
 .toggle span { padding: 8px 22px; border-radius: 999px; }
-.toggle .on { background: var(--color-accent, #ad47ff); color: var(--color-accent-content, #fdfcfe); }
+.toggle .on { background: var(--action-accent, #ad47ff); color: #fdfcfe; }
 </style>
 </head>
 <body>
@@ -79,23 +79,23 @@ table.cmp td, table.cmp th { border: 1px solid var(--color-neutral-hairline, #dd
 
   <h2 class="sh">Offers</h2>
   <p class="lead">/en/offers paints the dark theme: a Monthly/Annual pill toggle in a #29282d track above #fdfcfe plan cards; each card's name chip paints the purple accent and its Try-for-free action is the dark #121216 pill.</p>
-  <div class="mock dark" style="padding:20px;background:var(--color-bg-main,#0f0d13)">
+  <div class="mock dark" style="padding:20px;background:var(--background-canvas,#0f0d13)">
     <div style="text-align:center;margin-bottom:18px"><span class="toggle"><span>Monthly</span><span class="on">Annual</span></span></div>
     <div class="grid">
-      <div class="tile" style="border-radius:var(--radius-card,4px);background:var(--color-bg-inverse,#fdfcfe);border:none;color:var(--color-text-inverse,#0f0d13)"><b>Deezer Premium</b><span class="sub">1 month free, then EUR 11.99/month</span></div>
-      <div class="tile" style="border-radius:var(--radius-card,4px);background:var(--color-bg-inverse,#fdfcfe);border:none;color:var(--color-text-inverse,#0f0d13)"><b>Deezer Duo</b><span class="sub">2 accounts, 1 price</span></div>
+      <div class="tile" style="border-radius:var(--radius-card,4px);background:var(--background-card,#fdfcfe);border:none;color:var(--text-ink,#0f0d13)"><b>Deezer Premium</b><span class="sub" style="color:var(--text-ink,#0f0d13);opacity:.7">1 month free, then EUR 11.99/month</span></div>
+      <div class="tile" style="border-radius:var(--radius-card,4px);background:var(--background-card,#fdfcfe);border:none;color:var(--text-ink,#0f0d13)"><b>Deezer Duo</b><span class="sub" style="color:var(--text-ink,#0f0d13);opacity:.7">2 accounts, 1 price</span></div>
     </div>
     <div style="margin-top:18px"><span class="btn dark" style="height:40px;border-radius:var(--radius-control,16px);padding:0 18px;font-size:14px">Try for free</span></div>
   </div>
 
   <h2 class="sh">The app shell</h2>
   <p class="lead">The public catalog pages paint a dark-only Chakra shell signed out: a #0f0d13 canvas, a #141216 sidebar and popovers, #242326 raised fields, the #ad47ff accent on Sign-up/Mix/play actions and #bb73ff hover, #38373b dividers, and a 2px #ad47ff border on focused fields.</p>
-  <div class="mock dark" style="padding:20px;background:var(--color-bg-main,#0f0d13);color:var(--color-text-main,#fdfcfe)">
+  <div class="mock dark" style="padding:20px;background:var(--background-canvas,#0f0d13);color:var(--text-text,#fdfcfe)">
     <div class="grid">
-      <div class="tile" style="border-radius:var(--radius-promo,8px);background:var(--color-bg-secondary,#141216);border:1px solid var(--divider-primary,#38373b);color:var(--color-text-main,#fdfcfe)"><b style="color:var(--color-text-main,#fdfcfe)">Charts</b><span class="sub" style="color:var(--color-text-secondary,#a19fa4)">Top tracks around the world</span></div>
-      <div class="tile" style="border-radius:var(--radius-popover,24px);background:var(--color-bg-secondary,#141216);border:none;color:var(--color-text-main,#fdfcfe)"><b style="color:var(--color-text-main,#fdfcfe)">Add to playlist</b><span class="sub" style="color:var(--color-text-secondary,#a19fa4)">overflow popover</span></div>
+      <div class="tile" style="border-radius:var(--radius-promo,8px);background:var(--background-surface,#141216);border:1px solid var(--border-divider,#38373b);color:var(--text-text,#fdfcfe)"><b style="color:var(--text-text,#fdfcfe)">Charts</b><span class="sub" style="color:var(--text-muted,#a19fa4)">Top tracks around the world</span></div>
+      <div class="tile" style="border-radius:var(--radius-popover,24px);background:var(--background-surface,#141216);border:none;color:var(--text-text,#fdfcfe)"><b style="color:var(--text-text,#fdfcfe)">Add to playlist</b><span class="sub" style="color:var(--text-muted,#a19fa4)">overflow popover</span></div>
     </div>
-    <div style="margin-top:18px"><span class="btn" style="height:36px;border-radius:var(--radius-pill-s,12px);background:var(--color-accent,#ad47ff);color:var(--color-accent-content,#fdfcfe);padding:0 18px;font-size:13px">Sign up</span> <span class="btn" style="height:36px;border-radius:var(--radius-pill-s,12px);background:var(--color-bg-tertiary,#29282d);color:var(--color-text-main,#fdfcfe);padding:0 18px;font-size:13px">Log in</span> <span class="btn" style="height:40px;border-radius:var(--radius-control,16px);background:var(--color-accent,#ad47ff);color:var(--color-accent-content,#fdfcfe);padding:0 18px;font-size:15px">Mix</span></div>
+    <div style="margin-top:18px"><span class="btn" style="height:36px;border-radius:var(--radius-pill-s,12px);background:var(--action-accent,#ad47ff);color:#fdfcfe;padding:0 18px;font-size:13px">Sign up</span> <span class="btn" style="height:36px;border-radius:var(--radius-pill-s,12px);background:var(--background-raised,#242326);color:var(--text-text,#fdfcfe);padding:0 18px;font-size:13px">Log in</span> <span class="btn" style="height:40px;border-radius:var(--radius-control,16px);background:var(--action-accent,#ad47ff);color:#fdfcfe;padding:0 18px;font-size:15px">Mix</span></div>
   </div>
 
   <h2 class="sh">Palette</h2>
@@ -165,14 +165,23 @@ const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) 
 (function meas() {
   let m = '';
   for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
-  for (const [n, t] of flat((TOK.light.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
   $('#meas-out').innerHTML = m;
 })();
+
+const resolveVal = (v, depth) => {
+  if (depth > 6 || typeof v !== 'string') return v;
+  const m = v.match(/^\{(.+)\}$/);
+  if (!m) return v;
+  let node = TOK, seen = [];
+  for (const k of m[1].split('.')) { node = node && node[k]; seen.push(k); }
+  return node && node.v !== undefined ? resolveVal(node.v, (depth || 0) + 1) : v;
+};
 
 (function type() {
   let h = '';
   for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
-    const px = parseFloat(t.v);
+    const px = parseFloat(resolveVal(t.v));
     h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
   }
   for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;

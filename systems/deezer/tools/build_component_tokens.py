@@ -112,12 +112,58 @@ def lit(value, ty, src, desc):
     return {"value": norm_color(value) if ty == "color" else value, "type": ty, "source": src, "description": desc}
 
 
+EMITTED = {}   # variable name -> dotted token path it was actually written to
+_OWNER = {}    # dotted token path -> variable name holding it
+
+
+def _leaf(d):
+    return isinstance(d, dict) and ("var" in d or "value" in d)
+
+
 def emit(root, name, leaf):
+    """Write `leaf` at name's dotted path.
+
+    A declared name can be both a leaf and the parent of other names
+    (`--color-accent` vs `--color-accent-light`; `--color-border-neutral-primary`
+    vs the Tempo `--tempo-colors-border-neutral-primary-default` that maps onto
+    the same path). When a leaf and a group must share a node, the leaf moves
+    inside the group under the first free of `default`, `base`, `self` — never
+    silently overwriting tokens that resolve to different states.
+    """
     node = root
     parts = name[2:].split("-")
-    for p in parts[:-1]:
-        node = node.setdefault(p, {})
-    node[parts[-1]] = leaf
+    for i, p in enumerate(parts[:-1]):
+        nxt = node.get(p)
+        prefix = ".".join(parts[:i + 1])
+        if nxt is None:
+            nxt = node[p] = {}
+        elif _leaf(nxt):
+            owner = _OWNER.pop(prefix, None)
+            nxt = node[p] = {"default": nxt}
+            if owner:
+                EMITTED[owner] = prefix + ".default"
+                _OWNER[prefix + ".default"] = owner
+        node = nxt
+    last = parts[-1]
+    path = ".".join(parts)
+    if last in node and not _leaf(node[last]):
+        for key in ("default", "base", "self"):
+            if key not in node[last]:
+                node[last][key] = leaf
+                path += "." + key
+                break
+        else:
+            raise ValueError(f"{name}: no free key to hold the leaf beside its group")
+    else:
+        if last in node:
+            raise ValueError(f"{name}: duplicate token path {path}")
+        node[last] = leaf
+    EMITTED[name] = path
+    _OWNER[path] = name
+
+
+def emitted_path(name):
+    return EMITTED[name]
 
 
 def painted(comp, state, want=None):
@@ -291,10 +337,26 @@ for name in sorted(k for k in R if k.startswith("--ease-")):
 # so each theme resolves its own value.
 
 SEMANTIC = re.compile(r"^--(color-|background-|text-|divider-|layout-|popper-|thumbnail-|control-bar-|transparent)")
+
+# A renamed Tempo semantic can share its path with a real --color-* variable
+# (--tempo-colors-black and --color-black are the same #000). When the twin
+# resolves identically in both themes the second emit is skipped as one token
+# under two names; a real value difference is left for emit() to reject.
+TWINS = {}
+for n in semantic_names:
+    rn = n.replace("--tempo-colors-", "--color-")
+    if rn in R and rn != n:
+        same = (norm_color(R.get(rn)) == norm_color(R.get(n)) and
+                norm_color(D.get(rn)) == norm_color(D.get(n)))
+        if same:
+            TWINS[rn] = n
+
 for root in (SPEC["light"], SPEC["dark"]):
     for name in sorted(semantic_names):
         emit(root, name.replace("--tempo-colors-", "--color-"), var(name, "color" if decl_color(name)["type"] == "color" else "other"))
     for name in sorted(k for k in R if SEMANTIC.match(k)):
+        if name in TWINS:
+            continue
         ty = "color" if COLOR_V.fullmatch(str(R[name]).strip()) else "other"
         emit(root, name, var(name, ty))
 
@@ -311,11 +373,11 @@ dsem = SPEC["dark"]
 # the theme-invariant palette scales.
 role_alias = {"light": dict(color_alias), "dark": dict(color_alias)}
 for name in sorted(semantic_names):
-    p = "color." + name[len("--tempo-colors-"):].replace("-", ".")
+    p = EMITTED[name.replace("--tempo-colors-", "--color-")]
     role_alias["light"].setdefault(norm_color(R[name]), p)
     role_alias["dark"].setdefault(norm_color(D[name]), p)
 for name in sorted(k for k in R if SEMANTIC.match(k)):
-    p = name[2:].replace("-", ".")
+    p = EMITTED[name]
     role_alias["light"].setdefault(norm_color(R[name]), p)
     role_alias["dark"].setdefault(norm_color(D[name]), p)
 

@@ -142,7 +142,11 @@ async function measure(key, state, target, opts = {}) {
     if (opts.extra) c.states[state].extra = await opts.extra(loc);
     log('  ', key, state, s.rect.w + 'x' + s.rect.h);
   } catch (e) {
-    c.states[state] = { error: String(e.message || e).slice(0, 200) };
+    // A failed re-read must not erase an earlier successful one: keep the
+    // saved style and record the failed attempt beside it.
+    const prev = c.states[state];
+    if (prev && prev.style) prev.rerunError = String(e.message || e).slice(0, 200);
+    else c.states[state] = { error: String(e.message || e).slice(0, 200) };
     log('  !', key, state, String(e.message).slice(0, 120));
   }
 }
@@ -199,7 +203,9 @@ async function S(key, target, list, meta = {}, opts = {}) {
       } else via = via || 'at rest';
       await measure(key, st, loc, { ...opts, via });
     } catch (e) {
-      out.components[key].states[st] = { error: String(e.message || e).slice(0, 200) };
+      const prev = out.components[key].states[st];
+      if (prev && prev.style) prev.rerunError = String(e.message || e).slice(0, 200);
+      else out.components[key].states[st] = { error: String(e.message || e).slice(0, 200) };
       log('  !', key, st, String(e.message).slice(0, 120));
     }
     if (undo) await undo().catch(() => {});
@@ -278,7 +284,7 @@ async function openTrackMenu() {
   // zero-height panel reads as not-visible to the measurer.
   const populated = (ms) => page.waitForFunction(
     () => [...document.querySelectorAll('.chakra-popover__content')].some((el) => el.getBoundingClientRect().height > 10 && /\S/.test(el.textContent || '') && getComputedStyle(el).visibility !== 'hidden'),
-    { timeout: ms }).then(() => true).catch(() => false);
+    undefined, { timeout: ms }).then(() => true).catch(() => false);
   if (await populated(400)) return 'the overflow popover was already open';
   const item = page.locator('button[aria-label="View menu"]').filter({ visible: true }).first();
   if (!(await item.count())) return 'no View-menu trigger';
@@ -293,7 +299,7 @@ async function openTrackMenu() {
 // Opens the mobile nav overlay: the .burger-menu div toggles a full-viewport
 // ul.burger-menu-content. A local UI toggle; its links are never followed.
 async function openBurgerMenu() {
-  const ok = () => page.waitForFunction(() => { const el = document.querySelector('ul.burger-menu-content'); return el && el.getBoundingClientRect().height > 100; }, { timeout: 4000 }).then(() => true).catch(() => false);
+  const ok = () => page.waitForFunction(() => { const el = document.querySelector('ul.burger-menu-content'); return el && el.getBoundingClientRect().height > 100; }, undefined, { timeout: 4000 }).then(() => true).catch(() => false);
   if (await ok()) return 'the nav overlay was already open';
   const b = page.locator('.burger-menu').filter({ visible: true }).first();
   if (!(await b.count())) return 'no burger toggle';
@@ -467,18 +473,20 @@ context = ctx0;
 const pages = process.argv.slice(2);
 const plan = { home, offers, artist, album, login, signup, mobile };
 const order = Object.keys(plan).filter((k) => !pages.length || pages.includes(k));
+const finishedPages = new Set();
 try {
-  for (const k of order) { if (k !== 'mobile') await plan[k](); }
-  if (!pages.length || pages.includes('mobile')) await plan.mobile();
+  for (const k of order) { if (k !== 'mobile') { await plan[k](); finishedPages.add(k); } }
+  if (!pages.length || pages.includes('mobile')) { await plan.mobile(); finishedPages.add('mobile'); }
   // Reduced-motion check on an element that transitions (the Mix button's
   // hover), so the delta is meaningful.
   if (!pages.length || pages.includes('artist')) await reducedMotion('artist', 'button[aria-label="Mix"]');
 } finally {
   for (const [key, c] of Object.entries(out.components)) {
-    // An untouched entry is pruned only when its page was not blocked this
-    // run: an edge-blocked route keeps its earlier readings under their
-    // original provenance instead of being erased and republished.
-    if (!touched.has(key) && !pages.length && !failedPages.has(c.page)) { delete out.components[key]; continue; }
+    // An untouched entry is pruned only when its page finished this run: a
+    // page the run never reached, and an edge-blocked route, keeps its earlier
+    // readings under their original provenance instead of being erased and
+    // republished.
+    if (!touched.has(key) && !pages.length && finishedPages.has(c.page) && !failedPages.has(c.page)) { delete out.components[key]; continue; }
     const want = listed.get(key);
     if (want) for (const st of Object.keys(c.states || {})) if (!want.has(st)) delete c.states[st];
   }

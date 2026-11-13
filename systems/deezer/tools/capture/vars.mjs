@@ -160,7 +160,13 @@ for (const pass of ['dark', 'light']) {
       else if (CSS.supports('color', raw) && !/^(inherit|initial|unset|revert)$/.test(raw)) {
         p.style.color = raw; r.kind = 'color'; r.value = norm(getComputedStyle(p).color);
         if (typeof r.value === 'object') { r.kind = 'other'; r.note = 'colour space not converted: ' + r.value.unparsed; delete r.value; }
-      } else if (!raw.includes('%') && CSS.supports('width', raw)) { p.style.width = raw; r.kind = 'dimension'; r.value = getComputedStyle(p).width; if (/vw|vh|dvh/.test(raw)) r.note = 'viewport-relative, resolved at 1440 x 900'; }
+      } else if (!raw.includes('%') && CSS.supports('width', raw)) {
+        p.style.width = raw; r.kind = 'dimension'; r.value = getComputedStyle(p).width;
+        if (/vw|vh|dvh/.test(raw)) r.note = 'viewport-relative, resolved at 1440 x 900';
+        // max-content/min-content/fit-content/auto resolve to 0px on an empty
+        // probe: keep the keyword instead of publishing a bogus length.
+        if (r.value === '0px' && !/^[.\d]/.test(raw)) { r.value = raw; r.note = 'sizing keyword, not a fixed length'; }
+      }
       else if (CSS.supports('box-shadow', raw)) { p.style.boxShadow = raw; r.kind = 'shadow'; r.value = getComputedStyle(p).boxShadow; }
       else if (CSS.supports('transition-duration', raw)) { p.style.transitionDuration = raw; r.kind = 'duration'; r.value = getComputedStyle(p).transitionDuration; }
       else if (CSS.supports('transition-timing-function', raw) && !/^[a-z-]+$/.test(raw) || /^(ease|ease-in|ease-out|ease-in-out|linear)$/.test(raw)) { r.kind = 'easing'; r.value = raw; }

@@ -166,9 +166,10 @@ def build(node, theme, path=""):
 core = build(SPEC["core"], "light")  # scales are theme-independent
 light = build(SPEC["light"], "light")
 dark = build(SPEC["dark"], "dark")
-# The component tokens live in their own top-level spec tree but belong to the
-# exported themes the components were measured on: light.component.*
-light["component"] = build(SPEC["component"], "light")
+# The component tokens live in their own top-level spec tree but are
+# theme-independent measured geometry (sidebar width, player-bar height,
+# field heights), so they hang off core and reach both themes.
+core["component"] = build(SPEC["component"], "light")
 
 
 # every alias must point at a token that exists
@@ -214,9 +215,9 @@ tokens = {
     "dark": dark,
     "$themes": [
         {"id": "light", "name": "Light", "selectedTokenSets": {"core": "source", "light": "enabled"},
-         "$description": "The marketing surface: home, product, pricing, blog, mcp, contact and terms paint light."},
+         "$description": "The light surface: the home hero on /en/ paints light; it is the only captured light page."},
         {"id": "dark", "name": "Dark", "selectedTokenSets": {"core": "source", "dark": "enabled"},
-         "$description": "The signed-out app shell on /explore, /blocks and /templates paints dark-only; not a user toggle."},
+         "$description": "The dark surface: the offers/features/download marketing pages, the signed-out catalog app on /en/artist|album|playlist and the account.deezer.com forms paint dark; not a user toggle."},
     ],
     "$metadata": {"tokenSetOrder": ["core", "light", "dark"]},
 }
