@@ -1030,6 +1030,14 @@
   "reason": "catalog.json describes a multi-model AI creation workspace: a prompt composer, 70+ generation models and free tool pages on a signed-out public system."
  },
  {
+  "referenceId": "systems:epidemicsound",
+  "groupId": "web-categories",
+  "labels": [
+   "Music Streaming"
+  ],
+  "reason": "catalog.json describes a music-and-SFX licensing product: a public track/artist/genre catalog with 56px track rows, subscription plans and an account wall past login.epidemicsound.com."
+ },
+ {
   "referenceId": "systems:enode",
   "groupId": "web-categories",
   "labels": [
