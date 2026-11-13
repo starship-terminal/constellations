@@ -12,6 +12,15 @@
     "reason": "catalog.json describes interactive problem-solving lessons and course paths."
   },
   {
+    "referenceId": "systems:elevenmusic",
+    "groupId": "web-categories",
+    "labels": [
+      "Music Streaming",
+      "AI Tool"
+    ],
+    "reason": "catalog.json describes an AI music product: a song-generation composer, public charts and genre shelves, artist and playlist pages and a paid Pro tier."
+  },
+  {
     "referenceId": "systems:notebooklm",
     "groupId": "web-categories",
     "labels": ["AI Tool", "Productivity"],

@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 121,
-    "system_domains": 113,
-    "matched_domains": 88,
-    "missing_domains": 345,
+    "system_packages": 122,
+    "system_domains": 114,
+    "matched_domains": 89,
+    "missing_domains": 344,
     "system_domains_absent_from_catalog": 25
   },
   "matched": {
@@ -1290,6 +1290,23 @@
         }
       ]
     },
+    "elevenmusic.io": {
+      "catalog": [
+        {
+          "name": "ElevenMusic",
+          "domain": "elevenmusic.io",
+          "id": 917
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "elevenmusic",
+          "name": "ElevenMusic",
+          "url": "https://elevenmusic.io",
+          "name_match": true
+        }
+      ]
+    },
     "elevenreader.io": {
       "catalog": [
         {
@@ -1757,13 +1774,6 @@
         "name": "DJI",
         "domain": "dji.com",
         "id": 332
-      }
-    ],
-    "elevenmusic.io": [
-      {
-        "name": "ElevenMusic",
-        "domain": "elevenmusic.io",
-        "id": 917
       }
     ],
     "enode.com": [

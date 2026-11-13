@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en" data-mode="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ElevenMusic style guide</title>
+<meta name="description" content="ElevenMusic design tokens and the public signed-out surface's components, rendered from tokens.json with the declared and measured values.">
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  --sg-sans: Inter, ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-display: waldenburg, Inter, ui-sans-serif, system-ui, sans-serif;
+  --sg-mono: GeistMono, ui-monospace, "SF Mono", Menlo, monospace;
+}
+[data-mode="dark"], .dark {
+/*DARK*/
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--color-ink-foreground, #fafafa); background: var(--color-surface-background, #000); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 400 40px/1.1 var(--sg-display); margin: 0 0 4px; letter-spacing: -0.01em; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--color-ink-foreground, #fafafa); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--color-border-border, rgba(255,255,255,.1)); }
+.lead { max-width: 62ch; color: var(--color-ink-foreground, #fafafa); opacity: .8; }
+.note { font-size: 13px; color: var(--color-ink-foreground, #fafafa); opacity: .65; max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--color-ink-foreground, #fafafa); opacity: .6; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+/* The light palette re-binds the token names to their light values inside
+   its own scope: the page paints dark, so :root's light bindings are
+   overridden everywhere else and the dots would read the dark set. */
+.pal.light {
+/*LIGHTSCOPE*/
+  background: var(--color-surface-background, #fdfcfb); padding: 12px; border-radius: 8px; }
+.pal.light .nm, .pal.light .vl { color: var(--color-ink-foreground, #000); }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--color-border-border, rgba(255,255,255,.1)); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--color-ink-foreground, #fafafa); opacity: .65; }
+.pal.light .sw .vl { opacity: .65; }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--color-border-border, rgba(255,255,255,.1)); background: var(--color-surface-card, #000); font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--color-ink-foreground, #fafafa); opacity: .65; }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--color-border-border, rgba(255,255,255,.1)); overflow: hidden; background: var(--color-surface-background, #000); border-radius: var(--radius-lg, 8px); }
+.shell { display: grid; grid-template-columns: var(--component-geometry-sidebar-width, 248px) 1fr; }
+.rail { background: var(--color-surface-sidebar, #000); border-right: 1px solid var(--color-border-sidebar-border, rgba(255,255,255,.08)); padding: 14px 12px; font-size: 13px; }
+.rail .brand { font: 600 15px/1 var(--sg-sans); letter-spacing: -.01em; margin: 4px 0 14px; display: flex; align-items: center; gap: 8px; }
+.rail .brand i { width: 20px; height: 20px; border-radius: 6px; background: var(--color-action-primary, #fafafa); display: inline-block; }
+.rail .row { display: flex; align-items: center; gap: 10px; height: var(--component-geometry-nav-row-height, 36px); border-radius: var(--radius-md, 6px); padding: 0 10px; color: var(--color-ink-sidebar-foreground, #a1a1a1); font-weight: 500; }
+.rail .row.on { background: var(--color-surface-surface-1, #131313); color: var(--color-ink-foreground, #fafafa); }
+.hdr { display: flex; align-items: center; gap: 8px; height: var(--component-geometry-header-height, 52px); padding: 0 16px; border-bottom: 1px solid var(--color-border-border, rgba(255,255,255,.1)); }
+.hdr .pill { height: var(--component-geometry-nav-pill-height, 28px); padding: 0 12px; display: inline-flex; align-items: center; border-radius: var(--radius-lg, 8px); font-size: 13px; font-weight: 500; color: var(--color-ink-foreground, #fafafa); }
+.hdr .sp { flex: 1; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-geometry-button-height, 32px); padding: 0 14px; font-size: 13px; font-weight: 500; border-radius: var(--component-radius-button, 999px); border: 1px solid transparent; }
+.btn.primary { background: var(--color-action-primary, #fafafa); color: var(--color-ink-primary-foreground, #0a0a0a); }
+.btn.ghost { background: var(--color-surface-surface-2, #1c1c1c); color: var(--color-ink-foreground, #fafafa); }
+.hero { padding: 56px 40px 40px; font: 300 44px/1.05 var(--sg-display); letter-spacing: -.01em; color: var(--color-ink-foreground, #fafafa); }
+.hero small { display: block; font: 400 14px/1.5 var(--sg-sans); color: var(--color-ink-muted-foreground, #868686); letter-spacing: 0; margin: 12px 0 20px; max-width: 46ch; }
+.composer { display: flex; align-items: center; gap: 8px; background: var(--color-surface-composer-panel, #1c1c1c); border: 1px solid var(--color-border-composer-hairline, #2b2b2b); border-radius: var(--component-radius-field, 999px); padding: 4px; max-width: 660px; }
+.composer .plus, .composer .send { width: var(--component-geometry-auth-button-height, 36px); height: 36px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; flex: 0 0 auto; }
+.composer .plus { background: var(--color-surface-composer-button, #333); color: var(--color-ink-foreground, #fafafa); }
+.composer .send { background: var(--color-action-primary, #fafafa); color: var(--color-ink-primary-foreground, #0a0a0a); }
+.composer .fld { flex: 1; height: var(--component-geometry-field-height, 36px); padding: 0 8px; font-size: 14px; color: var(--color-ink-composer-fg-muted, #a3a5a8); }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.chip { height: var(--component-geometry-chip-height, 28px); padding: 0 12px; border-radius: var(--component-radius-chip, 999px); background: var(--color-surface-composer-chip, #1c1c1c); font-size: 12px; color: var(--color-ink-foreground, #fafafa); display: inline-flex; align-items: center; }
+.shelf { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; padding: 4px 0; }
+.tcard { border-radius: var(--component-radius-track-card, 12px); background: var(--color-surface-surface-1, #131313); padding: 10px; }
+.tcard .art { aspect-ratio: 1; border-radius: var(--radius-md, 6px); background: var(--color-surface-surface-2, #1c1c1c); margin-bottom: 8px; position: relative; }
+.tcard .art i { position: absolute; right: 6px; bottom: 6px; width: 32px; height: 32px; border-radius: 50%; background: var(--color-action-primary, #fafafa); display: block; }
+.tcard b { display: block; font-size: 13px; font-weight: 500; }
+.tcard .sub { font-size: 12px; color: var(--color-ink-muted-foreground, #868686); }
+.plans { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.plan { border-radius: var(--component-radius-plan-card, 16px); border: 1px solid var(--color-border-border, rgba(255,255,255,.1)); padding: 22px; background: var(--color-surface-surface-1, #131313); }
+.plan.inv { background: var(--color-action-primary, #fafafa); color: var(--color-ink-primary-foreground, #0a0a0a); border: none; }
+.plan b { font: 400 22px/1.2 var(--sg-display); display: block; }
+.plan .pr { font-size: 30px; font-weight: 500; margin: 10px 0; }
+.plan li { font-size: 13px; margin: 6px 0; list-style: none; }
+.plan li::before { content: "✓ "; }
+.auth { max-width: 400px; margin: 0 auto; background: var(--color-surface-card, #0a0a0a); border: 1px solid var(--color-border-border, rgba(255,255,255,.1)); border-radius: var(--component-radius-auth-card, 16px); padding: 26px; text-align: center; }
+.auth h3 { font: 400 20px/1.2 var(--sg-display); margin: 0 0 16px; }
+.auth .sso { display: flex; align-items: center; justify-content: center; gap: 8px; height: 40px; border-radius: var(--radius-lg, 8px); background: var(--color-surface-surface-1, #131313); border: 1px solid var(--color-border-border, rgba(255,255,255,.1)); font-size: 14px; margin-bottom: 10px; }
+.pbar { display: flex; align-items: center; gap: 12px; height: 72px; padding: 0 16px; background: var(--color-surface-surface-1, #131313); border-top: 1px solid var(--color-border-border, rgba(255,255,255,.1)); }
+.pbar .art { width: 40px; height: 40px; border-radius: var(--radius-sm, 4px); background: var(--color-surface-surface-2, #1c1c1c); }
+.pbar .play { width: 36px; height: 36px; border-radius: 50%; background: var(--color-action-primary, #fafafa); }
+.pbar .rail-ck { flex: 1; height: 4px; border-radius: 2px; background: var(--color-border-slider-track, #404040); }
+.pbar .rail-ck i { display: block; width: 34%; height: 100%; border-radius: 2px; background: var(--color-action-primary, #fafafa); }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
+.tile { border: 1px solid var(--color-border-border, rgba(255,255,255,.1)); padding: 14px; font-size: 13px; background: var(--color-surface-surface-1, #131313); border-radius: var(--radius-md, 6px); }
+.tile b { display: block; font: 500 18px/1.25 var(--sg-sans); margin-bottom: 4px; }
+.tile .sub { opacity: .65; font-size: 12px; }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--color-border-border, rgba(255,255,255,.1)); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--color-border-border, rgba(255,255,255,.1)); }
+.tr .ts { font-family: var(--sg-sans); }
+.tr .ts.dsp { font-family: var(--sg-display); }
+.tr .tv { font-size: 12px; color: var(--color-ink-foreground, #fafafa); opacity: .65; font-family: var(--sg-mono); }
+</style>
+</head>
+<body>
+<main>
+  <h1>ElevenMusic style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">ElevenMusic, measured</h2>
+  <p class="lead">elevenmusic.io is one Next.js app shell over Tailwind v4, painting <b>dark by default</b> (<code>html.dark</code>) on a true-black field with white-alpha ramps — and a real warm-paper light theme flipped by the footer's own System/Light/Dark control. It declares a shadcn-style semantic layer (<code>--background/--foreground/--card/--primary/--muted/--border/--sidebar-*</code>) plus its own <code>--surface-*</code>, <code>--lighten-*</code>, <code>--lift-*</code>, <code>--composer-*</code> and <code>--gray-alpha-*</code> extensions. Type is Inter variable for the UI and waldenburg light for display. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from elevenmusic.io, signed out, in headless Chromium. Everything behind sign-in — Create, Composer, Library, Chat, publishing, Likes, Remixes and Shares — is a documented boundary; the email field was filled and cleared without submitting, and no OAuth or Create button was ever pressed. Inter, waldenburg and GeistMono are served faces and are not loaded here: samples fall back to system sans.</p>
+
+  <h2 class="sh">The shell</h2>
+  <p class="lead">Every page carries the same chrome: a fixed 248px rail (logo, Search, nav rows, the Publish promo, playlists) and a 52px header with nav pills and the Sign-in / Start-free pair — the inverted primary, white on black.</p>
+  <div class="mock">
+    <div class="shell">
+      <div class="rail">
+        <div class="brand"><i></i>ElevenMusic</div>
+        <div class="row on">Explore</div><div class="row">Create</div><div class="row">Library</div><div class="row">Tools</div><div class="row">Sounds</div>
+      </div>
+      <div>
+        <div class="hdr"><span class="pill">Explore</span><span class="pill">Resources &#9662;</span><span class="pill">Pricing</span><span class="sp"></span><span class="btn ghost">Sign in</span><span class="btn primary">Start free</span></div>
+        <div class="hero">Make music yours.<small>Describe a sound, remix a track or start from a loop.</small>
+          <div class="composer"><span class="plus">+</span><span class="fld">Describe your song…</span><span class="send">&#8593;</span></div>
+          <div class="chips"><span class="chip">Trap beat</span><span class="chip">Loop to chop</span><span class="chip">Topline</span><span class="chip">Amapiano</span><span class="chip">Trailer cue</span><span class="chip">Techno</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="sh">Shelves and cards</h2>
+  <p class="lead">Track shelves on the surface-1 field: artwork squares, a title line over a muted artist line, and the white play circle raised on hover. The version badge and the Remix chip ride the cards.</p>
+  <div class="mock" style="padding:20px">
+    <div class="shelf">
+      <div class="tcard"><div class="art"><i></i></div><b>Track title</b><span class="sub">Artist — v2.5</span></div>
+      <div class="tcard"><div class="art"><i></i></div><b>Track title</b><span class="sub">Artist</span></div>
+      <div class="tcard"><div class="art"><i></i></div><b>Track title</b><span class="sub">Artist</span></div>
+    </div>
+  </div>
+
+  <h2 class="sh">Pricing</h2>
+  <p class="lead">/pricing pairs a dark Free card with an inverted white Pro island — the product's one large light surface inside the dark theme.</p>
+  <div class="mock" style="padding:20px">
+    <div class="plans">
+      <div class="plan"><b>Free</b><div class="pr">$0</div><li>25 songs a day</li><li>Personal use</li><span class="btn primary" style="margin-top:12px">Start free</span></div>
+      <div class="plan inv"><b>Pro</b><div class="pr">$9.99<span style="font-size:13px;font-weight:400">/mo</span></div><li>1,000 songs a month</li><li>Commercial use</li><span class="btn" style="margin-top:12px;background:#0a0a0a;color:#fafafa">Get Pro</span></div>
+    </div>
+  </div>
+
+  <h2 class="sh">The auth boundary</h2>
+  <p class="lead">The centred card on the black field: SSO buttons on surface-1 with a hairline, the muted legal line, and the options toggle that reveals the email form — measured, never submitted.</p>
+  <div class="mock" style="padding:24px">
+    <div class="auth"><h3>Log in or sign up</h3><div class="sso">Continue with Google</div><div class="sso">Continue with Apple</div><div class="sso" style="height:36px">Show other options</div></div>
+  </div>
+
+  <h2 class="sh">The player</h2>
+  <p class="lead">A card's own Play mounts the 72px bottom transport — art, title, the white pause circle, prev/next, repeat, volume and the queue — over the page field.</p>
+  <div class="mock">
+    <div class="pbar"><span class="art"></span><div style="font-size:13px"><b>Track title</b><div class="sub" style="opacity:.65;font-size:12px">Artist</div></div><span style="flex:0 0 auto;width:32px"></span><span class="play"></span><span style="flex:0 0 auto;width:32px"></span><span class="rail-ck"><i></i></span></div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The Tailwind <code>--color-*</code> palette and the shared <code>--darken-*</code> overlay ramp are identical in both themes and live in core; the semantic roles re-bind per theme — the dark set is the app's default paint, the light set the warm-paper remap (its <code>--lighten-*</code> steps resolve in dark only).</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing and radius</h2>
+  <p class="lead">A 4px spacing base, the <code>--radius-*</code> scale from 2px to 24px, and the components painting inside it — pills and full circles on controls, 6-16px on cards. Borders are quiet: white at 8-12% on the dark field.</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <p class="lead">Shadows re-bind per theme: the dark set pairs near-invisible drops with white hairline insets, the light set uses soft warm drops.</p>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">Two served faces plus a mono: <code>waldenburg</code> light on display headlines, <code>Inter</code> variable on the UI, <code>GeistMono</code> for code and IDs. Sizes are the declared Tailwind <code>--text-*</code> steps 12-72px.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared semantic variables from the live stylesheets and computed styles on the elements of both painted themes</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed and open states measured per component, plus the mounted player bar and the expanded auth form</td></tr><tr><td>No provenance</td><td>Every token names its variable (and the theme it was resolved in) or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = /*TOKENS*/null;
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  // The dark set is the app's default paint: its roles resolve under .dark.
+  const darkRoles = flat(TOK.dark || {}, '').filter(([n, t]) => t.t === 'color');
+  if (darkRoles.length) {
+    h += `<div class="pal-h">dark roles (the default paint)</div><div class="pal">`;
+    for (const [n, t] of darkRoles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  // The light set's custom properties resolve on :root: the swatch dots for
+  // them read the :root bindings, shown on the warm-paper field.
+  const lightRoles = flat(TOK.light || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+  if (lightRoles.length) {
+    h += `<div class="pal-h">light roles (the footer toggled theme)</div><div class="pal light">`;
+    for (const [n, t] of lightRoles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.border || {}, 'border.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.motion || {}, 'motion.')) m += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? 'cubic-bezier(' + t.v.join(', ') + ')' : t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.blur || {}, 'blur.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.container || {}, 'container.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  for (const [n, t] of flat(TOK.dark.shadow || {}, 'shadow.')) e += `<div><b>dark ${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.light.shadow || {}, 'shadow.')) e += `<div><b>light ${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.light.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(t.v);
+    h += `<div class="tr"><span class="ts ${parseFloat(t.v) >= 30 ? 'dsp' : ''}" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).tracking || {}, 'font.tracking.')) h += `<div class="tr"><span class="ts" style="letter-spacing:${esc(t.v)}">${esc(n)} — ElevenMusic</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — ElevenMusic</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>
