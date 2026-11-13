@@ -30,7 +30,8 @@ function props(v) {
   o.Font = `${fam(s.fontFamily)} ${s.fontSize}/${s.lineHeight} ${s.fontWeight}`;
   o['Letter spacing'] = s.letterSpacing;
   o.Colour = hex(s.color);
-  if (v.textStyle) o['Text node'] = `${v.textStyle.node}: ${fam(v.textStyle.fontFamily)} ${v.textStyle.fontSize}/${v.textStyle.lineHeight} ${v.textStyle.fontWeight}, ${hex(v.textStyle.color)}${v.textStyle.letterSpacing !== 'normal' ? ', ls ' + v.textStyle.letterSpacing : ''}`;
+  if (s.textDecorationLine && s.textDecorationLine !== 'none') o['Text decoration'] = s.textDecorationLine;
+  if (v.textStyle) o['Text node'] = `${v.textStyle.node}: ${fam(v.textStyle.fontFamily)} ${v.textStyle.fontSize}/${v.textStyle.lineHeight} ${v.textStyle.fontWeight}, ${hex(v.textStyle.color)}${v.textStyle.letterSpacing !== 'normal' ? ', ls ' + v.textStyle.letterSpacing : ''}${v.textStyle.textDecorationLine && v.textStyle.textDecorationLine !== 'none' ? ', ' + v.textStyle.textDecorationLine : ''}`;
   o.Transition = s.transitionDuration === '0s' || !s.transitionDuration ? 'none' : `${s.transitionProperty} ${s.transitionDuration} ${s.transitionTimingFunction}${s.transitionDelay !== '0s' ? ' delay ' + s.transitionDelay : ''}`;
   if (s.transform && s.transform !== 'none') o.Transform = s.transform;
   if (s.opacity !== '1') o.Opacity = s.opacity;
@@ -66,6 +67,10 @@ for (const g of groups) {
     W('');
     const states = Object.keys(c.states);
     W(`Page: ${c.page}. Selector: \`${esc(c.selector)}\`. States: ${states.join(', ')}.`);
+    // A partial re-read keeps untouched components under their own date:
+    // name it, or an old reading passes as freshly captured.
+    if (c.run && c.run !== J._meta.read) W(` Readings kept from the ${c.run} run; the ${J._meta.read} pass did not refresh this entry.`);
+    if (c.recaptureMissed) W(` Not found on the ${c.recaptureMissed} re-read — the states below are kept from ${c.run || 'the earlier run'}.`);
     W('');
     if (c.missing) { W('Not found on the page at capture time.'); continue; }
     const rows = {};
@@ -77,6 +82,15 @@ for (const g of groups) {
         continue;
       }
       for (const [p, val] of Object.entries(props(v))) (rows[p] ||= {})[st] = val;
+      // A failed re-measure keeps the previous style reading; the error must
+      // stay visible next to it.
+      if (v.recaptureError) (rows['Recapture error'] ||= {})[st] = v.recaptureError;
+    }
+    // States carry their own run date; show it when a partial re-read left
+    // this component behind the global read date.
+    if (states.some((st) => c.states[st].run && c.states[st].run !== J._meta.read)) {
+      rows.Read = {};
+      for (const st of states) rows.Read[st] = c.states[st].run || '-';
     }
     W(`| Property | ${states.join(' | ')} |`);
     W(`|---|${states.map(() => '---').join('|')}|`);

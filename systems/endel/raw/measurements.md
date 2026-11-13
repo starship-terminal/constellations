@@ -80,7 +80,7 @@ Page: home. Selector: `header a:has-text("Focus")`. States: default, hover, focu
 | Font | apercuPro 16px/normal 400 | = | = | = |
 | Letter spacing | normal | = | = | = |
 | Colour | #ffffff | = | = | = |
-| Text node | span.Link-module__QL15TW__text.Text-module__0TXbEW__p: apercuPro 22px/28px 400, #ffffff | = | = | = |
+| Text node | span.Link-module__QL15TW__text.Text-module__0TXbEW__p: apercuPro 22px/28px 400, #ffffff | span.Link-module__QL15TW__text.Text-module__0TXbEW__p: apercuPro 22px/28px 400, #ffffff, underline | = | span.Link-module__QL15TW__text.Text-module__0TXbEW__p: apercuPro 22px/28px 400, #ffffff, underline |
 | Transition | none | = | = | = |
 | Cursor | pointer | = | = | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
@@ -303,7 +303,7 @@ Page: home. Selector: `first visible marketing paragraph`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 70.61 x 28 |
+| Size (w x h) | 564 x 56 |
 | Padding | 0px |
 | Border | none |
 | Radius | 0px |
@@ -312,9 +312,8 @@ Page: home. Selector: `first visible marketing paragraph`. States: default.
 | Outline | none |
 | Font | apercuPro 22px/28px 400 |
 | Letter spacing | normal |
-| Colour | #ffffff |
+| Colour | #bfbfbf |
 | Transition | none |
-| Cursor | pointer |
 | How | at rest |
 
 Crops: `body-text-default.png`.
@@ -337,7 +336,7 @@ Page: home. Selector: `main a:has-text("Learn More")`. States: default, hover, f
 | Font | apercuPro 16px/normal 400 | = | = | = |
 | Letter spacing | normal | = | = | = |
 | Colour | #ffffff | = | = | = |
-| Text node | span.Link-module__QL15TW__text.Text-module__0TXbEW__p: apercuPro 18px/24px 400, #ffffff | = | = | = |
+| Text node | span.Link-module__QL15TW__text.Text-module__0TXbEW__p: apercuPro 18px/24px 400, #ffffff | span.Link-module__QL15TW__text.Text-module__0TXbEW__p: apercuPro 18px/24px 400, #ffffff, underline | = | span.Link-module__QL15TW__text.Text-module__0TXbEW__p: apercuPro 18px/24px 400, #ffffff, underline |
 | Transition | none | = | = | = |
 | Cursor | pointer | = | = | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
@@ -363,7 +362,7 @@ Page: home. Selector: `main a:has-text("Try Now")`. States: default, hover, focu
 | Font | apercuPro 16px/normal 400 | = | = | = |
 | Letter spacing | normal | = | = | = |
 | Colour | #ffffff | = | = | = |
-| Text node | span.Link-module__QL15TW__text.Text-module__0TXbEW__p: apercuPro 22px/28px 400, #ffffff | = | = | = |
+| Text node | span.Link-module__QL15TW__text.Text-module__0TXbEW__p: apercuPro 22px/28px 400, #ffffff | span.Link-module__QL15TW__text.Text-module__0TXbEW__p: apercuPro 22px/28px 400, #ffffff, underline | = | span.Link-module__QL15TW__text.Text-module__0TXbEW__p: apercuPro 22px/28px 400, #ffffff, underline |
 | Transition | none | = | = | = |
 | Cursor | pointer | = | = | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
@@ -1004,7 +1003,7 @@ Page: app-player. Selector: `input[class*="InputRange-module"], input[type="rang
 | Border | none | = |
 | Radius | 20px | = |
 | Background | transparent | = |
-| Background image | linear-gradient(to right, #ffffff 100%, #808080 100%) | linear-gradient(to right, #ffffff 50%, #808080 50%) |
+| Background image | linear-gradient(to right, #ffffff 100%, #808080 100%) | = |
 | Box shadow | none | = |
 | Outline | none | = |
 | Font | Arial 13.3333px/normal 400 | = |
@@ -1013,8 +1012,8 @@ Page: app-player. Selector: `input[class*="InputRange-module"], input[type="rang
 | Transition | none | = |
 | Cursor | pointer | = |
 | Placeholder | #101010, opacity 1 | = |
-| Painted layers | input.InputRange-module__pr8DUW__range 129.0x5.0 image linear-gradient(to right, #ffffff 100%, #808080 100%) r 20px | input.InputRange-module__pr8DUW__range 129.0x5.0 image linear-gradient(to right, #ffffff 50%, #808080 50%) r 20px |
-| How | at rest | clicked into the field |
+| Painted layers | input.InputRange-module__pr8DUW__range 129.0x5.0 image linear-gradient(to right, #ffffff 100%, #808080 100%) r 20px | = |
+| How | at rest | DOM focus (no click: it would set the slider value) |
 
 Crops: `volume-default.png`, `volume-focused.png`.
 
@@ -1109,8 +1108,8 @@ Page: app-login. Selector: `card ancestor of the sign-in heading (marked in-page
 
 | Property | default |
 |---|---|
-| Size (w x h) | 1440 x 900 |
-| Padding | 0px |
+| Size (w x h) | 564 x 665 |
+| Padding | 88px 0px |
 | Border | none |
 | Radius | 0px |
 | Background | transparent |
@@ -1123,7 +1122,6 @@ Page: app-login. Selector: `card ancestor of the sign-in heading (marked in-page
 | Transition | none |
 | Icon | 24 x 24, colour #ffffff |
 | Painted layers | input.Input-module__iEWt7a__input 564.0x62.0 border T:2px solid #808080 / R:2px solid #808080 / B:2px solid #808080 / L:2px solid #808080 r 12px; button.Button-module__LFCFwa__button.Button-module__LFCFwa__border-radius-basic 564.0x56.0 bg #262626 border T:2px solid #ffffff / R:2px solid #ffffff / B:2px solid #ffffff / L:2px solid #ffffff r 12px; div::before.Divider-module__QZkn-a__divider.Divider-module__QZkn-a__with-text 258.156pxx2px image linear-gradient(90deg, #000000 @ 0 0%, #262626 100%) r 2px; div::after.Divider-module__QZkn-a__divider.Divider-module__QZkn-a__with-text 258.141pxx2px image linear-gradient(270deg, #000000 @ 0 0%, #262626 100%) r 2px; button.Button-module__LFCFwa__button.Button-module__LFCFwa__border-radius-basic 180.0x56.0 bg #262626 border T:2px solid #262626 / R:2px solid #262626 / B:2px solid #262626 / L:2px solid #262626 r 12px; button.Button-module__LFCFwa__button.Button-module__LFCFwa__border-radius-basic 180.0x56.0 bg #262626 border T:2px solid #262626 / R:2px solid #262626 / B:2px solid #262626 / L:2px solid #262626 r 12px |
-| Ancestor paint | 1 up body.apercuproregular_a9416797-module__JzVbua__variable.apercupromedium_9a23281c-module__Ocel-G__variable bg #000000 |
 | How | at rest |
 
 Crops: `login-card-default.png`.
@@ -1254,7 +1252,7 @@ Page: home. Selector: `footer a`. States: default, hover, focus-visible, pressed
 | Font | apercuPro 16px/normal 400 | = | = | = |
 | Letter spacing | normal | = | = | = |
 | Colour | #ffffff | = | = | = |
-| Text node | span.Link-module__QL15TW__text.Text-module__0TXbEW__p: apercuPro 18px/24px 400, #ffffff | = | = | = |
+| Text node | span.Link-module__QL15TW__text.Text-module__0TXbEW__p: apercuPro 18px/24px 400, #ffffff | span.Link-module__QL15TW__text.Text-module__0TXbEW__p: apercuPro 18px/24px 400, #ffffff, underline | = | span.Link-module__QL15TW__text.Text-module__0TXbEW__p: apercuPro 18px/24px 400, #ffffff, underline |
 | Transition | none | = | = | = |
 | Cursor | pointer | = | = | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
@@ -1306,7 +1304,7 @@ Page: home. Selector: `footer a:has-text("Privacy")`. States: default, hover, fo
 | Font | apercuPro 16px/normal 400 | = | = | = |
 | Letter spacing | normal | = | = | = |
 | Colour | #ffffff | = | = | = |
-| Text node | span.Link-module__QL15TW__text.Text-module__0TXbEW__p: apercuPro 18px/24px 400, #bfbfbf | span.Link-module__QL15TW__text.Text-module__0TXbEW__p: apercuPro 18px/24px 400, #ffffff | = | span.Link-module__QL15TW__text.Text-module__0TXbEW__p: apercuPro 18px/24px 400, #ffffff |
+| Text node | span.Link-module__QL15TW__text.Text-module__0TXbEW__p: apercuPro 18px/24px 400, #bfbfbf | span.Link-module__QL15TW__text.Text-module__0TXbEW__p: apercuPro 18px/24px 400, #ffffff, underline | = | span.Link-module__QL15TW__text.Text-module__0TXbEW__p: apercuPro 18px/24px 400, #ffffff, underline |
 | Transition | none | = | = | = |
 | Cursor | pointer | = | = | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |

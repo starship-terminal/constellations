@@ -162,7 +162,19 @@
      "value": "apercuPro, \"apercuPro Fallback\"",
      "type": "fontFamily",
      "source": "computed fontFamily of page-ground default (raw/components-computed.json); the apercuPro faces are @font-face declarations in the site and app bundles (fonts in raw/css-vars.json)",
-     "description": "apercuPro plus the metric-matched 'apercuPro Fallback' (a local Arial face with override descriptors), the stack every captured node uses."
+     "description": "apercuPro plus the metric-matched 'apercuPro Fallback' (a local Arial face with override descriptors), the stack every captured marketing node uses."
+    },
+    "appSans": {
+     "value": "apercuProRegular, \"apercuProRegular Fallback\"",
+     "type": "fontFamily",
+     "source": "computed fontFamily of login-card default (raw/components-computed.json); the apercuPro faces are @font-face declarations in the site and app bundles (fonts in raw/css-vars.json)",
+     "description": "apercuProRegular plus its metric-matched fallback — the web app's own body face (the app bundle declares a separate apercuProRegular @font-face at weight 400)."
+    },
+    "appMedium": {
+     "value": "apercuProMedium, \"apercuProMedium Fallback\"",
+     "type": "fontFamily",
+     "source": "computed textStyle.fontFamily of banner default (raw/components-computed.json); the apercuPro faces are @font-face declarations in the site and app bundles (fonts in raw/css-vars.json)",
+     "description": "apercuProMedium plus its fallback — the app's second declared face (weight 500); the banner's promo text is set in it even though its computed fontWeight reads 400."
     }
    }
   },
@@ -261,7 +273,7 @@
     "value": "#ffffff",
     "type": "color",
     "source": "computed color of footer-link default (raw/components-computed.json)",
-    "description": "Links do not repaint on hover; the colour stays white."
+    "description": "Links keep their colour on hover — only an underline paints (the footer's legal line additionally steps #bfbfbf to white)."
    },
    "glowColour": {
     "value": "#ffffff",

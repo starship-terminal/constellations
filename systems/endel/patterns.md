@@ -13,7 +13,7 @@ a black-to-65%-to-transparent gradient — the scrim that keeps the bar
 readable over scrolled content
 ([header](components/crops/header-default.png)). Inside it: the 40x40 Endel
 mark linking home ([logo](components/crops/logo-default.png)), text nav
-links at 22px/28 (ADHD, Sleep, Focus, Relax, Activity) that never repaint on
+links at 22px/28 (ADHD, Sleep, Focus, Relax, Activity) that only underline on
 hover ([nav-link](components/crops/nav-link-hover.png)), the **More**
 MenuButton whose press opens a flyout of grouped links inside the header
 itself ([home-dark-menu-open](screenshots/home-dark-menu-open.png),
@@ -50,7 +50,8 @@ Product pages end in an FAQ of full-grid rows: each a 76px `#191919`
 ([accordion-title](components/crops/accordion-title-opened.png)). The open
 row's answer panel is the same `#191919` fill with 22px/28 `#bfbfbf` muted
 text ([accordion-content](components/crops/accordion-content-opened.png)).
-Rows take the same `#262626`-to-`#808080` hover step as buttons.
+Rows take a quieter hover step than buttons — `#191919` to `#262626`, where
+plain buttons climb the full ladder to `#808080`.
 
 ## The footer
 
@@ -62,8 +63,8 @@ whose 466x56 field — exactly `--cols-5` — rests on a `#808080` 2px border
 next to a matching `#262626` Subscribe button, store badges, 24px social
 icons ([footer-social](components/crops/footer-social-default.png)), and a
 1px `#191919` hairline over the legal line — Privacy Policy and Impressum
-at 18px/24 `#bfbfbf`
-([footer-legal](components/crops/footer-legal-default.png)).
+at 18px/24 `#bfbfbf` that brighten to white on hover
+([footer-legal](components/crops/footer-legal-hover.png)).
 
 ## The signed-out explore page
 

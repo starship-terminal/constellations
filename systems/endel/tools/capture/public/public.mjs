@@ -48,13 +48,16 @@ class Shooter {
     const staged = [];
     try {
       if (hCap <= chunk) {
-        await screenshotWithMetadata(p, { path: f + '.new.png', fullPage: true }, this.requested);
+        // Register the temp path BEFORE capture: a rejected shot (dimension
+        // check) still leaves `.new.png` on disk, and it must join the
+        // cleanup list or quantize.py would publish it as a normal PNG.
         staged.push([f + '.new.png', f + '.png']);
+        await screenshotWithMetadata(p, { path: f + '.new.png', fullPage: true }, this.requested);
       } else {
         for (let i = 0, y = 0; y < hCap; i++, y += chunk) {
           const tmp = `${f}.part${i}.new.png`;
-          await screenshotWithMetadata(p, { path: tmp, fullPage: true, clip: { x: 0, y, width: this.vw, height: Math.min(chunk, hCap - y) } }, this.requested);
           staged.push([tmp, `${f}.part${i}.png`]);
+          await screenshotWithMetadata(p, { path: tmp, fullPage: true, clip: { x: 0, y, width: this.vw, height: Math.min(chunk, hCap - y) } }, this.requested);
         }
       }
     } catch (e) {

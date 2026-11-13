@@ -114,8 +114,12 @@ def props(v):
     t = v.get("textStyle")
     if t:
         o["text"] = f"{font(t['fontSize'], t['lineHeight'], t['fontWeight'], t['fontFamily'])}, {colour(t['color'])}"
+        deco = t.get("textDecorationLine")
     else:
         o["text"] = f"{font(s['fontSize'], s['lineHeight'], s['fontWeight'], s['fontFamily'])}, {colour(s['color'])}"
+        deco = s.get("textDecorationLine")
+    if deco and deco != "none":
+        o["text"] += f", {deco}"
     if s["transitionDuration"] not in ("0s", ""):
         props_ = [x.strip() for x in s["transitionProperty"].split(",")]
         durs = [x.strip() for x in s["transitionDuration"].split(",")]
@@ -139,7 +143,16 @@ def props(v):
     if s["opacity"] != "1":
         o["opacity"] = s["opacity"]
     if v.get("icon") and v["icon"]["w"] > 0 and v["icon"]["w"] < 120:
-        o["icon"] = f"{num(v['icon']['w'])} x {num(v['icon']['h'])}, {colour(v['icon']['color'])}"
+        ic = v["icon"]
+        # The inherited `color` is not the glyph's paint: an icon can set an
+        # explicit fill/stroke (the play button's black triangle on a white
+        # disc). Name them when they differ from `color`.
+        bits = f"{num(ic['w'])} x {num(ic['h'])}, {colour(ic['color'])}"
+        if ic.get("fill") and ic["fill"] != "none" and colour(ic["fill"]) != colour(ic["color"]):
+            bits += f", fill {colour(ic['fill'])}"
+        if ic.get("stroke") and ic["stroke"] != "none" and colour(ic["stroke"]) != colour(ic["color"]):
+            bits += f", stroke {colour(ic['stroke'])}"
+        o["icon"] = bits
     if v.get("placeholder"):
         o["placeholder"] = colour(v["placeholder"]["color"])
     # A focus ring or fill can be painted by an ancestor (Framer draws the

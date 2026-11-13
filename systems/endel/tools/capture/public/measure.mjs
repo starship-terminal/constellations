@@ -174,9 +174,19 @@ async function S(key, target, list, meta = {}, opts = {}) {
         via = 'CDP forcePseudoState :active:hover';
       } else if (st === 'focused') {
         const fld = (opts.fieldLoc || loc).filter({ visible: true }).first();
-        await fld.click({ timeout: 4000 }).catch(() => fld.evaluate((el) => el.focus()));
-        await page.waitForTimeout(400);
-        via = 'clicked into the field';
+        // A click at the centre of a range input sets its value (the volume
+        // slider would jump to 50%): sliders take DOM focus only, text fields
+        // still get the real click that puts a caret in them.
+        const isRange = await fld.evaluate((el) => el.matches('input[type="range"], [role="slider"], [role="spinbutton"]')).catch(() => false);
+        if (isRange) {
+          await fld.evaluate((el) => el.focus());
+          await page.waitForTimeout(400);
+          via = 'DOM focus (no click: it would set the slider value)';
+        } else {
+          await fld.click({ timeout: 4000 }).catch(() => fld.evaluate((el) => el.focus()));
+          await page.waitForTimeout(400);
+          via = 'clicked into the field';
+        }
       } else if (st === 'filled') {
         const f = (opts.fieldLoc || loc).filter({ visible: true }).first();
         await f.click({ timeout: 4000 });
@@ -294,7 +304,10 @@ async function home() {
     return true;
   });
   await S('section-title', h2ok ? q('[data-m-h2="1"]') : q('[data-m-h2="__none__"]'), ['default'], { group: m, title: 'Section title', sel: 'first visible h2, marked where it mounts' });
-  await S('body-text', await domFind(page, /\S/, { sel: 'main p, [class*="Text-module"]', tag: 'btxt', minW: 60, minH: 14 }), ['default'], { group: m, title: 'Body text', sel: 'first visible marketing paragraph' });
+  // Both alternatives must be scoped to `main`: an unscoped Text-module
+  // fallback matches the header's nav links (they share the module) and the
+  // "paragraph" reading lands on navigation instead of body copy.
+  await S('body-text', await domFind(page, /\S/, { sel: 'main p, main [class*="Text-module"]', tag: 'btxt', minW: 60, minH: 14 }), ['default'], { group: m, title: 'Body text', sel: 'first visible marketing paragraph' });
   await S('learn-more', q('main a').filter({ hasText: /Learn More/ }).first(), B4, { group: m, title: 'Learn More link', sel: 'main a:has-text("Learn More")' });
   await S('try-now', q('main a').filter({ hasText: /Try Now/ }).first(), B4, { group: m, title: 'Try Now link', sel: 'main a:has-text("Try Now")' });
   // The 72px round button in the device sections is a media play control:
@@ -374,18 +387,28 @@ async function appLogin() {
   await page.waitForURL('**/login**', { timeout: 15000 }).catch(() => {});
   await page.waitForTimeout(2200);
   // The sign-in card: climb from the heading to the first ancestor that paints
-  // a fill or border at card size.
+  // a fill or border at card size. `innerText` matches containers too (a div
+  // whose descendants hold the heading text), so the match pool is reduced to
+  // leaves — an element that contains another match is a wrapper, not the
+  // heading; without it the climb starts at `main` and the "card" reading is
+  // the whole page.
   const marked = await page.evaluate(() => {
-    const h = [...document.querySelectorAll('h1,h2,h3,div,p')].find((n) => /sign in or register/i.test((n.innerText || '').trim()));
+    const els = [...document.querySelectorAll('h1,h2,h3,div,p')].filter((n) => /sign in or register/i.test((n.innerText || '').trim()));
+    const h = els.find((n) => !els.some((o) => o !== n && n.contains(o)));
     if (!h) return false;
     let card = null;
+    let fit = null;
     for (let n = h, i = 0; n && i < 10; i++, n = n.parentElement) {
       const r = n.getBoundingClientRect();
       if (r.width > 1000 || r.height > 820) break;
+      fit = n;
       const c = getComputedStyle(n);
       if (r.width >= 280 && r.height >= 200 && (c.backgroundColor !== 'rgba(0, 0, 0, 0)' || c.boxShadow !== 'none' || parseFloat(c.borderTopWidth) > 0)) card = n;
     }
-    (card || h.parentElement || h).setAttribute('data-m-card', '1');
+    // The card paints nothing itself (a transparent column on the black
+    // page), so the fallback is the widest ancestor still at card size, not
+    // the heading's own wrapper.
+    (card || fit || h.parentElement || h).setAttribute('data-m-card', '1');
     return true;
   });
   await S('login-card', marked ? q('[data-m-card="1"]') : q('[data-m-card="__none__"]'), ['default'], { group: g, title: 'Sign-in card', desc: 'The "Sign In or Register" panel: email field, Continue and the OAuth buttons. Nothing was submitted.', sel: 'card ancestor of the sign-in heading (marked in-page)' });

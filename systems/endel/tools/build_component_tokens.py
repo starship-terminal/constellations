@@ -233,9 +233,11 @@ for i in range(1, 13):
 
 meas = SPEC["core"].setdefault("measured", {})
 for comp, state, key, prop, desc in [
-    ("page-ground", "default", "fontStack", "fontFamily", "apercuPro plus the metric-matched 'apercuPro Fallback' (a local Arial face with override descriptors), the stack every captured node uses."),
+    ("page-ground", "default", "fontStack", "fontFamily", "apercuPro plus the metric-matched 'apercuPro Fallback' (a local Arial face with override descriptors), the stack every captured marketing node uses."),
+    ("login-card", "default", "appStack", "fontFamily", "apercuProRegular plus its metric-matched fallback — the web app's own body face (the app bundle declares a separate apercuProRegular @font-face at weight 400)."),
+    ("banner", "default", "appMediumStack", "textStyle.fontFamily", "apercuProMedium plus its fallback — the app's second declared face (weight 500); the banner's promo text is set in it even though its computed fontWeight reads 400."),
     ("hero-title", "default", "titleTracking", "letterSpacing", "The 0.35px tracking on the display sizes (h1-h3 share it)."),
-    ("footer-link", "default", "linkHover", "color", "Links do not repaint on hover; the colour stays white."),
+    ("footer-link", "default", "linkHover", "color", "Links keep their colour on hover — only an underline paints (the footer's legal line additionally steps #bfbfbf to white)."),
     ("btn-try", "hover", "glowColour", "boxShadow", "The Try Today button keeps its white 15px glow through hover."),
     ("volume", "default", "sliderBase", "color", "The volume slider's own colour #101010 (the track paints a white/gray-3 gradient over it)."),
     ("m-menu-button", "default", "mobileMenuLabel", "fontSize", "The 12px label on the mobile Menu button."),
@@ -245,7 +247,7 @@ for comp, state, key, prop, desc in [
         if key == "glowColour":
             m = re.search(r"rgba?\([^)]*\)", v or "")
             v = m.group(0) if m else ""
-        if key == "fontStack":
+        if key in ("fontStack", "appStack", "appMediumStack"):
             meas[key] = {"value": v, "type": "fontFamily",
                          "source": f"computed {prop} of {comp} {state} (raw/components-computed.json); the apercuPro faces are @font-face declarations in the site and app bundles (fonts in raw/css-vars.json)",
                          "description": desc}
@@ -259,11 +261,17 @@ for comp, state, key, prop, desc in [
     except KeyError:
         pass
 
-# font.family.sans as a first-class token (the stack measured on the hero)
+# font.family.* as first-class tokens (the stacks measured on the page and
+# the app): the marketing face, and the app's own apercuProRegular /
+# apercuProMedium faces — the app bundle's Medium declares weight 500.
 SPEC["core"].setdefault("font", {})
 ff = SPEC["core"]["font"]
 ff.setdefault("family", {})
 ff["family"]["sans"] = meas.pop("fontStack")
+if "appStack" in meas:
+    ff["family"]["appSans"] = meas.pop("appStack")
+if "appMediumStack" in meas:
+    ff["family"]["appMedium"] = meas.pop("appMediumStack")
 
 # shadows: measured boxShadow strings parsed into DTCG layers
 def shadow_layers(comp, state):

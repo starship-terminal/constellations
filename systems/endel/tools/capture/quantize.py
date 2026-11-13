@@ -10,7 +10,7 @@ committed. Flat UI colours are exact, gradients and photographs band a little, s
 from raw/css-vars.json and raw/components-computed.json. Adapted from the Coursera kit.
 """
 from PIL import Image
-import pathlib, re, sys
+import pathlib, re, shutil, sys
 
 REF = pathlib.Path(__file__).resolve().parent.parent.parent
 RAW = pathlib.Path(sys.argv[1])
@@ -33,10 +33,30 @@ for name, ps in parts.items():
     print('stitched', name, sheet.size)
 
 n = 0
+sides = 0
 for f in sorted(RAW.glob('*.png')):
-    if '.part' in f.name:
+    # '*.partN.png' tiles are stitched above, '*.new.png' are staging files
+    # public.mjs renames only on success — a leftover means a rejected shot
+    # and must never be published.
+    if '.part' in f.name or f.name.endswith('.new.png'):
         continue
     im = Image.open(f).convert('RGB')
     im.quantize(colors=256, method=Image.Quantize.MEDIANCUT, dither=Image.Dither.NONE).save(OUT / f.name, optimize=True)
+    # The capture record travels with its image: a recapture refreshes the
+    # sidecar in RAW and this copies the fresh record, not a stale one.
+    side = RAW / (f.name + '.capture.json')
+    if side.exists():
+        shutil.copy2(side, OUT / side.name)
+        sides += 1
     n += 1
-print(n, 'screenshots ->', OUT)
+# Tile records (name.partN.png.capture.json) document the chunks a tall page
+# was stitched from; they are committed next to the stitched image.
+for f in sorted(RAW.glob('*.part*.png.capture.json')):
+    if '.new.' in f.name:
+        continue
+    m = re.match(r'(.+)\.part(\d+)\.png\.capture\.json$', f.name)
+    if not m or not (OUT / f'{m.group(1)}.png').exists():
+        continue
+    shutil.copy2(f, OUT / f.name)
+    sides += 1
+print(n, 'screenshots +', sides, 'sidecars ->', OUT)

@@ -100,8 +100,10 @@ Read as `nav-link` on the home page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 56.77 x 28; background transparent; text apercuPro 22/28 400, #ffffff `color.neutral.white` |
+| default | size 56.77 x 28; background transparent; text apercuPro 22/28 400, #ffffff `color.neutral.white` |
+| hover | text apercuPro 22/28 400, #ffffff `color.neutral.white`, underline |
 | focus-visible | shadow #666666 0px 0px 0px 6px; child paint a.Link-module__QL15TW__link.Link-module__QL15TW__color-white: size 56.8x28.0; shadow rgb(102, 102, 102) 0px 0px 0px 6px |
+| pressed | text apercuPro 22/28 400, #ffffff `color.neutral.white`, underline |
 
 ![Nav link default](components/crops/nav-link-default.png) ![Nav link hover](components/crops/nav-link-hover.png) ![Nav link focus-visible](components/crops/nav-link-focus-visible.png) ![Nav link pressed](components/crops/nav-link-pressed.png)
 
@@ -183,7 +185,7 @@ Read as `section-title` on the home page.
 #### Body text
 Read as `body-text` on the home page.
 
-**Values (default).** size 70.61 x 28; background transparent; text apercuPro 22/28 400, #ffffff `color.neutral.white`.
+**Values (default).** size 564 x 56; background transparent; text apercuPro 22/28 400, #bfbfbf `color.neutral.300`.
 
 ![Body text default](components/crops/body-text-default.png)
 
@@ -192,8 +194,10 @@ Read as `learn-more` on the home page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 238 x 24; background transparent; text apercuPro 18/24 400, #ffffff `color.neutral.white` |
+| default | size 238 x 24; background transparent; text apercuPro 18/24 400, #ffffff `color.neutral.white` |
+| hover | text apercuPro 18/24 400, #ffffff `color.neutral.white`, underline |
 | focus-visible | shadow #666666 0px 0px 0px 6px; child paint a.Link-module__QL15TW__link.Link-module__QL15TW__color-white: size 238.0x24.0; shadow rgb(102, 102, 102) 0px 0px 0px 6px |
+| pressed | text apercuPro 18/24 400, #ffffff `color.neutral.white`, underline |
 
 ![Learn More link default](components/crops/learn-more-default.png) ![Learn More link hover](components/crops/learn-more-hover.png) ![Learn More link focus-visible](components/crops/learn-more-focus-visible.png) ![Learn More link pressed](components/crops/learn-more-pressed.png)
 
@@ -202,8 +206,10 @@ Read as `try-now` on the home page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 516 x 28; background transparent; text apercuPro 22/28 400, #ffffff `color.neutral.white` |
+| default | size 516 x 28; background transparent; text apercuPro 22/28 400, #ffffff `color.neutral.white` |
+| hover | text apercuPro 22/28 400, #ffffff `color.neutral.white`, underline |
 | focus-visible | shadow #666666 0px 0px 0px 6px; child paint a.Link-module__QL15TW__link.Link-module__QL15TW__color-white: size 516.0x28.0; shadow rgb(102, 102, 102) 0px 0px 0px 6px |
+| pressed | text apercuPro 22/28 400, #ffffff `color.neutral.white`, underline |
 
 ![Try Now link default](components/crops/try-now-default.png) ![Try Now link hover](components/crops/try-now-hover.png) ![Try Now link focus-visible](components/crops/try-now-focus-visible.png) ![Try Now link pressed](components/crops/try-now-pressed.png)
 
@@ -212,7 +218,7 @@ The 72x72 circular play control over the product imagery. Measured, never presse
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 72 x 72; border 2px solid #ffffff `color.neutral.white`; radius 100px; background #ffffff `color.neutral.white`; text apercuPro 22/22 400, #ffffff `color.neutral.white`; transition background-color 0.2s ease, border-color 0.2s ease; icon 36 x 36, #ffffff `color.neutral.white` |
+| default | size 72 x 72; border 2px solid #ffffff `color.neutral.white`; radius 100px; background #ffffff `color.neutral.white`; text apercuPro 22/22 400, #ffffff `color.neutral.white`; transition background-color 0.2s ease, border-color 0.2s ease; icon 36 x 36, #ffffff `color.neutral.white`, fill #000000 `color.neutral.black` |
 | hover | border 2px solid #808080 `color.neutral.500`; background #808080 `color.neutral.500`; child paint button.Button-module__zg_LDG__button.Button-module__zg_LDG__border-radius-full: background #808080 `color.neutral.500`; border 2px solid #808080 `color.neutral.500` |
 | focus-visible | shadow #666666 0px 0px 0px 6px; child paint button.Button-module__zg_LDG__button.Button-module__zg_LDG__border-radius-full: shadow rgb(102, 102, 102) 0px 0px 0px 6px |
 | pressed | border 2px solid #808080 `color.neutral.500`; background #808080 `color.neutral.500`; child paint button.Button-module__zg_LDG__button.Button-module__zg_LDG__border-radius-full: background #808080 `color.neutral.500`; border 2px solid #808080 `color.neutral.500` |
@@ -456,8 +462,7 @@ The range control at the transport row's right end. Never dragged. Read as `volu
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 129 x 5; radius 20px; background transparent; image linear-gradient(to right, #ffffff `color.neutral.white` 100%, #808080 `color.neutral.500` 100%); text Arial 13.33/normal 400, #101010 `measured.sliderBase`; placeholder #101010 `measured.sliderBase` |
-| focused | image linear-gradient(to right, #ffffff `color.neutral.white` 50%, #808080 `color.neutral.500` 50%); child paint input.InputRange-module__pr8DUW__range: bgImage linear-gradient(to right, rgb(255, 255, 255) 50%, rgb(128, 128, 128) 50%) |
+| default (same: focused) | size 129 x 5; radius 20px; background transparent; image linear-gradient(to right, #ffffff `color.neutral.white` 100%, #808080 `color.neutral.500` 100%); text Arial 13.33/normal 400, #101010 `measured.sliderBase`; placeholder #101010 `measured.sliderBase` |
 
 ![Volume slider default](components/crops/volume-default.png) ![Volume slider focused](components/crops/volume-focused.png)
 
@@ -492,7 +497,7 @@ The sign-in/register panel the app's own Sign In button navigates to.
 #### Sign-in card
 The "Sign In or Register" panel: email field, Continue and the OAuth buttons. Nothing was submitted. Read as `login-card` on the web app's sign-in page.
 
-**Values (default).** size 1440 x 900; background transparent; text apercuProRegular 44/normal 400, #ffffff `color.neutral.white`; icon 24 x 24, #ffffff `color.neutral.white`.
+**Values (default).** size 564 x 665; padding 88px 0px; background transparent; text apercuProRegular 44/normal 400, #ffffff `color.neutral.white`; icon 24 x 24, #ffffff `color.neutral.white`.
 
 Child layers that carry the look: input 564x62 border 2px solid #808080 `color.neutral.500` radius 12px; button 564x56 background #262626 `color.neutral.700` border 2px solid #ffffff `color.neutral.white` radius 12px; div::before 258.156pxx2px image linear-gradient(90deg, transparent 0%, #262626 `color.neutral.700` 100%) radius 2px.
 
@@ -550,8 +555,10 @@ Read as `footer-link` on the home page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 103.69 x 24; background transparent; text apercuPro 18/24 400, #ffffff `color.neutral.white` |
+| default | size 103.69 x 24; background transparent; text apercuPro 18/24 400, #ffffff `color.neutral.white` |
+| hover | text apercuPro 18/24 400, #ffffff `color.neutral.white`, underline |
 | focus-visible | shadow #666666 0px 0px 0px 6px; child paint a.Link-module__QL15TW__link.Link-module__QL15TW__color-white: size 103.7x24.0; shadow rgb(102, 102, 102) 0px 0px 0px 6px |
+| pressed | text apercuPro 18/24 400, #ffffff `color.neutral.white`, underline |
 
 ![Footer link default](components/crops/footer-link-default.png) ![Footer link hover](components/crops/footer-link-hover.png) ![Footer link focus-visible](components/crops/footer-link-focus-visible.png) ![Footer link pressed](components/crops/footer-link-pressed.png)
 
@@ -573,9 +580,9 @@ Read as `footer-legal` on the home page.
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 106.92 x 24; background transparent; text apercuPro 18/24 400, #bfbfbf `color.neutral.300` |
-| hover | text apercuPro 18/24 400, #ffffff `color.neutral.white` |
+| hover | text apercuPro 18/24 400, #ffffff `color.neutral.white`, underline |
 | focus-visible | shadow #666666 0px 0px 0px 6px; child paint a.Link-module__QL15TW__link.Link-module__QL15TW__color-gray-4: size 106.9x24.0; shadow rgb(102, 102, 102) 0px 0px 0px 6px |
-| pressed | text apercuPro 18/24 400, #ffffff `color.neutral.white` |
+| pressed | text apercuPro 18/24 400, #ffffff `color.neutral.white`, underline |
 
 ![Legal link default](components/crops/footer-legal-default.png) ![Legal link hover](components/crops/footer-legal-hover.png) ![Legal link focus-visible](components/crops/footer-legal-focus-visible.png) ![Legal link pressed](components/crops/footer-legal-pressed.png)
 
