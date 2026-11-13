@@ -331,7 +331,10 @@ async function home() {
   const g = G.shell;
   await S('mkt-header', q('header').filter({ visible: true }).first(), ['default'], { group: g, title: 'Marketing header', desc: 'The top bar: wordmark, Home / Use cases / Pricing / About, "Get a demo" capture and the "Sign in" link.', sel: 'header' }, { noScroll: true });
   await S('mkt-logo', q('header a.header__nav-home, header .svg-embed').filter({ visible: true }).first(), ['default'], { group: g, title: 'Logo', desc: 'The Equals wordmark at the left of the header.', sel: 'header logo' }, { noScroll: true });
-  await S('mkt-nav-link', q('header a.header__nav-link, header a.header__nav-item').filter({ hasText: /^\s*(Home|Pricing|About)\s*$/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Nav link', desc: 'A marketing header link (Home/Pricing/About); measured, never followed.', sel: 'header .header__nav-link' }, { noScroll: true });
+  // "Home" and the mobile-only "Use cases" anchors are real nodes but 0x0
+  // (Playwright's visible = checkVisibility, which passes a zero-size node);
+  // the hasText below keeps only the painted Pricing/About links.
+  await S('mkt-nav-link', q('header a.header__nav-link').filter({ hasText: /^\s*(Pricing|About)\s*$/ }).first(), B4, { group: g, title: 'Nav link', desc: 'A marketing header link (Pricing/About); measured, never followed.', sel: 'header .header__nav-link' }, { noScroll: true });
   await S('mkt-menu-trigger', q('button.header__menu-trigger').filter({ visible: true }).first(), [...B4, 'opened'], { group: g, title: 'Use-cases menu trigger', desc: 'The header "Use cases" button; opened to reveal the mega-menu of use-case links (a local toggle, its links never followed).', sel: 'button.header__menu-trigger' }, { noScroll: true });
   await S('mkt-menu', q('.header__menu--use-cases, .header__menu').filter({ visible: true }).first(), ['default'], { group: g, title: 'Use-cases mega-menu', desc: 'The dropdown the "Use cases" trigger opens: category labels and use-case links.', sel: '.header__menu--use-cases' }, { open: openUseCasesMenu, noScroll: true, noReset: true });
   await S('mkt-menu-item', q('.header__menu a.header__use-case-link, .header__use-case-link').filter({ visible: true }).first(), B4, { group: g, title: 'Mega-menu link', desc: 'One use-case link inside the open mega-menu; measured, never followed.', sel: '.header__use-case-link' }, { open: openUseCasesMenu, noScroll: true, noReset: true });
@@ -340,15 +343,19 @@ async function home() {
   const h = G.home;
   await S('hero-h1', q('h1').filter({ visible: true }).first(), ['default'], { group: h, title: 'Hero headline', desc: '"What’s after Excel?" — the Serrif Condensed display on the hero.', sel: 'h1.home__hero-h1' }, { noScroll: true });
   await S('hero-sub', q('p, [class*="sub" i]').filter({ hasText: /first new spreadsheet/i }).filter({ visible: true }).first(), ['default'], { group: h, title: 'Hero sub', desc: 'The lede under the headline.', sel: 'hero sub' }, { noScroll: true });
-  await S('hero-email', q('input.email-capture-group__input').filter({ visible: true }).first(), FIELD, { group: h, title: 'Demo email field', desc: 'The "Enter your work email" capture under the hero copy; focused and typed into then cleared — never submitted.', sel: '.email-capture-group__input' }, { fillText: 'name@example.com' });
-  await S('hero-cta', q('button.email-capture-group__button').filter({ visible: true }).first(), B4, { group: h, title: 'Get-a-demo button', desc: 'The black "Get a demo" pill on the email capture; measured never pressed (it submits the capture).', sel: '.email-capture-group__button' });
-  await S('section-label', q('h4.section__label').filter({ visible: true }).first(), ['default'], { group: h, title: 'Section label', desc: 'The numbered eyebrow label over a marketing section ("1. TRUST"), coloured by the page’s label-- theme.', sel: 'h4.section__label' });
+  // The first input/button in the page is a 0x0 mobile-only header clone;
+  // the hero capture is the one inside .home__hero-cta.
+  await S('hero-email', q('.home__hero-cta input.email-capture-group__input').first(), FIELD, { group: h, title: 'Demo email field', desc: 'The "Enter your work email" capture under the hero copy; focused and typed into then cleared — never submitted.', sel: '.home__hero-cta .email-capture-group__input' }, { fillText: 'name@example.com' });
+  await S('hero-cta', q('.home__hero-cta button.email-capture-group__button').first(), B4, { group: h, title: 'Get-a-demo button', desc: 'The black "Get a demo" pill on the email capture; measured never pressed (it submits the capture).', sel: '.home__hero-cta .email-capture-group__button' });
+  await S('section-label', q('p.section__label').filter({ visible: true }).first(), ['default'], { group: h, title: 'Section label', desc: 'The numbered eyebrow label over a marketing section ("1. TRUST"), coloured by the page’s label-- theme.', sel: 'p.section__label' });
   await S('section-h2', q('h2.section__h2').filter({ visible: true }).first(), ['default'], { group: h, title: 'Section heading', desc: 'A marketing section heading ("A single source of truth…").', sel: 'h2.section__h2' });
   const w = G.workbook;
   await S('wb-mockup', q('[class*="mockup-workbook" i]').filter({ visible: true }).first(), ['default'], { group: w, title: 'Workbook mockup', desc: 'The in-page spreadsheet demo: toolbar, formula bar, sheet tabs and cells — a public demo, not the app.', sel: '.mockup-workbook' });
   await S('wb-toolbar-button', q('.mockup-workbook__toolbar-button').filter({ visible: true }).first(), B4, { group: w, title: 'Mock toolbar button', desc: 'A toolbar icon button inside the workbook mockup; measured, never pressed.', sel: '.mockup-workbook__toolbar-button' });
   await S('wb-sheet-tab', q('.mockup-workbook__sheet-tab--active, .mockup-workbook__sheet-tab').filter({ visible: true }).first(), B4, { group: w, title: 'Sheet tab', desc: 'A workbook sheet tab inside the mockup; measured, never pressed.', sel: '.mockup-workbook__sheet-tab' });
-  await S('wb-cell', q('.mockup-workbook__cell--value, .mockup-workbook__cell').filter({ visible: true }).first(), ['default'], { group: w, title: 'Workbook cell', desc: 'A grid cell in the workbook mockup.', sel: '.mockup-workbook__cell' });
+  // The mockup's demo cycles slides and its cells periodically collapse to
+  // 0x0; domFind with a min size picks whichever label cell is painted now.
+  await S('wb-cell', await domFind(page, /.*/, { sel: '.mockup-workbook__cell--label', tag: 'wbcell', minW: 5, minH: 5 }), ['default'], { group: w, title: 'Workbook cell', desc: 'A label cell in the workbook mockup ("Build Summary"); the mockup cycles demo slides, so the reading is whichever cell is painted — its value cells animate as the demo types.', sel: '.mockup-workbook__cell--label' });
   await S('build-tab', q('.build-tab--active, .build-tab').filter({ visible: true }).first(), B4, { group: h, title: 'Persona tab', desc: 'A "Build …" persona tab in the AI-demo section (the active one carries build-tab--active); measured, never pressed.', sel: '.build-tab' });
   save();
 }
@@ -376,7 +383,9 @@ async function usecase() {
   const g = G.home;
   await S('uc-h1', q('h1').filter({ visible: true }).first(), ['default'], { group: g, title: 'Use-case headline', desc: '"ARR Dashboard" — the use-case page’s display heading.', sel: 'use-case h1' }, { noScroll: true });
   await S('uc-lede', q('main p, article p, .use-case p').filter({ visible: true }).first(), ['default'], { group: g, title: 'Use-case lede', desc: 'The first paragraph under the use-case hero.', sel: 'use-case first paragraph' });
-  await S('uc-email', q('input.email-capture-group__input').filter({ visible: true }).first(), FIELD, { group: g, title: 'Demo email field (use-case)', desc: 'The same email capture on a use-case page; focused and typed into then cleared — never submitted.', sel: '.email-capture-group__input' }, { fillText: 'name@example.com' });
+  // Scoped to main: the header also carries a 0x0 mobile-only clone of the
+  // capture that checkVisibility counts as visible.
+  await S('uc-email', q('main input.email-capture-group__input').first(), FIELD, { group: g, title: 'Demo email field (use-case)', desc: 'The same email capture on a use-case page; focused and typed into then cleared — never submitted.', sel: 'main .email-capture-group__input' }, { fillText: 'name@example.com' });
   save();
 }
 
