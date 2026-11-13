@@ -40,7 +40,12 @@ for name, ps in parts.items():
     have = {i for i, _ in ps}
     if manifest.exists():
         want = json.loads(manifest.read_text())
-        if not want.get('complete') or have != set(range(want.get('parts', -1))):
+        tiles = want.get('tiles')
+        if tiles is not None:
+            if {f.name for _, f in ps} != set(tiles):
+                print('skip', name, '- incomplete tile set (a part timed out or failed); rerun the page')
+                continue
+        elif not want.get('complete') or have != set(range(want.get('parts', -1))):
             print('skip', name, '- incomplete tile set (a part timed out or failed); rerun the page')
             continue
     elif have != set(range(max(have) + 1)):
