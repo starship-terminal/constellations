@@ -47,6 +47,55 @@ last merge train (one manifest PR per batch is fine).
    **clean up**: `git worktree remove`, delete `~/.design-systems/<slug>`,
    delete the merged branch.
 
+## Running on the Linux homeserver
+
+The whole public pipeline runs headless on `ssh home` (Ubuntu 24.04,
+`~/designs` clone). Deel was captured, built, OCR-scanned, committed
+and PR'd there end-to-end — the Mac only needs to be involved when you
+want to eyeball an image locally.
+
+- **Worktree:** `GIT_LFS_SKIP_SMUDGE=1 git -C ~/designs worktree add
+  ~/ds-<slug> -b capture-<slug> origin/main`. The skip matters: a
+  plain checkout tries to fetch every package's LFS images and stalls.
+  New captures produce their own LFS objects, nothing else is needed.
+- **Toolchain (all verified):**
+  - Node 22, git, git-lfs, authed `gh` — on PATH.
+  - `PLAYWRIGHT=~/.design-systems/pw/node_modules/playwright/index.mjs`;
+    browsers in `~/.cache/ms-playwright` (validated).
+  - `PYTHON=/usr/bin/python3 make …` — the committed `.venv` is a
+    symlink to a Mac path, dead on Linux; leave it alone.
+  - Pillow is in system python; numpy/anything else via `uv run
+    --with pillow --with numpy python3 …` (`uv` lives at
+    `~/.nix-profile/bin/uv`).
+  - Tesseract 5.5.3 via nix: `/nix/var/nix/profiles/default/bin/nix
+    profile install nixpkgs#tesseract --profile ~/.nix-profile`.
+    **Every non-interactive `ssh home` needs `export
+    PATH=~/.nix-profile/bin:$PATH`** — nix is installed but not on the
+    default PATH.
+- **Redaction on-server:** `uv run --with pillow --with numpy python3
+  tools/redact_images.py check systems/<slug> --patterns
+  ~/.design-systems/<slug>-redact.json`. Verified identical to the Mac
+  (deel: 96 package images + 20 raw originals, 0 matches both sides).
+- **Fonts:** Liberation (metric-compatible Arial/Helvetica clones) and
+  Noto Color Emoji installed via nix, symlinked into
+  `~/.local/share/fonts`, `fc-cache` refreshed. `fc-match Arial` →
+  Liberation Sans, `fc-match Helvetica` → Nimbus Sans. Residual:
+  `-apple-system`/SF stacks and Apple-emoji artwork still differ from
+  the Mac — if recon (`document.fonts`, computed stacks) shows the
+  site leaning on Apple system fonts, capture that one on Mac instead.
+- **Render parity (measured):** same page shot on both OSes — identical
+  dimensions, ~1–3% of pixels differ in thin text-AA bands only,
+  invisible after quantization; computed styles are identical. The one
+  large diff ever seen was a video carousel's poster frame — media
+  timing, not OS. Expect run-to-run noise in animated/lazy regions
+  anywhere.
+- **Async pattern:** long captures run fine detached (`ssh home '…'`
+  backgrounded); rsync `systems/<slug>` back to a Mac worktree only if
+  you need local tools. Scratch dirs (`~/.design-systems/<slug>/`)
+  live on whichever machine ran the capture — clean up there.
+- Same egress network as the Mac, so geo-IP content matched; still
+  smoke-test each site once (Cookiebot variants, CDN, bot challenges).
+
 ## Batch-1 lessons (verified)
 
 - ~200 Greptile comments across 19 packages clustered into a dozen
