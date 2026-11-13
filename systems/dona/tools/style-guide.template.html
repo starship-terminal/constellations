@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dona style guide</title>
+<meta name="description" content="Dona design tokens and the public signed-out marketing surface's components, rendered from tokens.json with the measured values.">
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  --sg-sans: Inter, ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-serif: Inter, ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--color-neutral-ink, #000); background: var(--color-neutral-paper, #fff); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 700 40px/1.15 var(--sg-sans); margin: 0 0 4px; letter-spacing: -0.02em; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--color-neutral-ink, #000); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--color-fill-control, #aaa); }
+.lead { max-width: 62ch; color: var(--color-neutral-ink, #000); opacity: .8; }
+.note { font-size: 13px; color: var(--color-neutral-ink, #000); opacity: .65; max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--color-neutral-ink, #000); opacity: .6; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--color-fill-control, #aaa); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--color-neutral-ink, #000); opacity: .65; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--color-neutral-ink, #000); opacity: .65; }
+/* ---- dona mock ---- */
+.mock { border: 1px solid var(--color-fill-control, #aaa); overflow: hidden; background: var(--color-neutral-paper, #fff); }
+.navbar { display: flex; align-items: center; gap: 22px; height: 68px; padding: 0 24px; font-size: 15px; }
+.navbar .wm { font-weight: 700; font-size: 20px; letter-spacing: -0.02em; color: var(--color-neutral-ink, #19191b); }
+.navbar .sp { flex: 1; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: 52px; padding: 0 26px; font-size: 16px; font-weight: 500; border-radius: var(--radius-pill, 32px); border: 0; }
+.btn.sm { height: 36px; padding: 0 20px; font-size: 14px; }
+.btn.secondary { background: var(--action-secondary-default, #eceff2); color: var(--color-neutral-ink, #19191b); box-shadow: var(--shadow-button, none); }
+.btn.primary { background: var(--action-primary-default, #008ffd); color: #fff; box-shadow: var(--shadow-action, none); }
+.btn.ink { background: var(--color-brand-ink, #19191b); color: #fff; box-shadow: var(--shadow-join, none); }
+.btn.ghosty { background: transparent; color: var(--color-neutral-ink, #19191b); box-shadow: none; }
+.hero { color: var(--color-neutral-ink, #19191b); padding: 72px 40px; font: var(--font-weight-display, 700) var(--font-size-display, 84px)/var(--font-lineHeight-display, 1.1) var(--sg-sans); letter-spacing: -0.02em; text-align: center; }
+.hero small { display: block; font: var(--font-weight-lede, 500) var(--font-size-lede, 24px)/var(--font-lineHeight-lede, 1.45) var(--sg-sans); color: var(--color-neutral-ink, #19191b); margin: 16px auto 22px; max-width: 46ch; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px; padding: 0 0 4px; }
+.tile { padding: 20px; font-size: 13px; background: var(--color-fill-tile, #f4f4f5); border-radius: var(--radius-card, 20px); min-height: 140px; }
+.tile b { display: block; font: 600 20px/1.35 var(--sg-sans); color: var(--color-neutral-ink, #19191b); margin-bottom: 6px; }
+.tile .sub { color: var(--color-neutral-muted, #616870); font-size: 15px; }
+.nl { padding: 28px 24px; border-top: 1px solid var(--color-fill-control, #aaa); }
+.nl .fld { font: 400 var(--font-size-field-display, 40px)/var(--font-lineHeight-field-display, 1.5) var(--sg-sans); color: var(--color-neutral-placeholder, #bfc3c8); border: 0; padding: 4px 0; margin-bottom: 18px; }
+.chip { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: var(--radius-chip, 14px); background: var(--color-fill-chip, #e0e3e7); color: var(--color-neutral-ink, #19191b); font-size: 13px; }
+.bnr { display: flex; align-items: center; gap: 14px; padding: 18px; border-radius: var(--radius-banner, 40px); background: #fff; box-shadow: var(--shadow-banner, none); font-size: 14px; }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--color-fill-control, #aaa); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--color-fill-control, #aaa); }
+.tr .ts { font-family: var(--sg-sans); }
+.tr .tv { font-size: 12px; color: var(--color-neutral-ink, #000); opacity: .65; font-family: var(--sg-mono); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Dona style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">Dona, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the ink #19191b on white, the #008ffd Dona blue (the Try for free CTA and the elliptical swooshes), the #eceff2 pill greys and #f4f4f5 tiles, Inter at 84px display down to 14px small, the 32px button pills and 20px cards, and the low-alpha #0c1442 lift shadows. The public marketing surface paints one light theme — the light/dark/black UI themes in the copy live inside the app. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from dona.ai on 2026-11-12, signed out, in headless Chromium. app.dona.ai (the product, with its advertised themes) sits behind sign-in and is a documented boundary; the newsletter was never submitted. Inter is a served face and is not loaded here: samples render in a system sans fallback.</p>
+
+  <h2 class="sh">The chrome</h2>
+  <p class="lead">A 68px header bar over a white page: a borderless About button that only picks up a grey wash on hover, the centred dona wordmark, and a #eceff2 Login pill. Every button is a 32px-radius pill with a hairline drop shadow and an inset top-light bevel.</p>
+  <div class="mock">
+    <div class="navbar"><span class="btn sm ghosty">About</span><span class="sp"></span><span class="wm">dona</span><span class="sp"></span><span class="btn sm secondary">Login</span></div>
+    <div class="hero">A more humane<br>to-do list<small>Dona is a back to basic to-do list focused on fast and delightful user experience.</small><span class="btn secondary">Watch video</span> <span class="btn primary">Try for free</span></div>
+  </div>
+
+  <h2 class="sh">Tiles and the newsletter</h2>
+  <p class="lead">Feature tiles are #f4f4f5 20px cards with a blue swoosh behind them; the newsletter is a 40px text field over its own swoosh and an ink Join button with a blue glow.</p>
+  <div class="mock" style="padding:24px">
+    <div class="grid">
+      <div class="tile"><b>Fast &amp; delightful</b><span class="sub">Light, dark &amp; black UI theme.</span></div>
+      <div class="tile"><b>A note about speed</b><span class="sub">Quick add, natural language, keyboard-first.</span></div>
+    </div>
+    <div class="nl" style="margin-top:24px">
+      <div class="fld">Enter your email</div>
+      <span class="btn ink">Join our newsletter</span>
+    </div>
+  </div>
+
+  <h2 class="sh">Consent and overlays</h2>
+  <p class="lead">The cookie notice floats as a 40px-radius white card on three stacked #0c1442 shadow layers; the video modal dims the page with a translucent grey scrim and a 56px round close.</p>
+  <div class="mock" style="padding:24px;background:var(--color-fill-tile,#f4f4f5)">
+    <div class="bnr"><span class="chip" style="border-radius:50%">✓</span><span>This website uses cookies. <u>Learn more</u></span><span class="sp" style="flex:1"></span><span class="btn sm secondary">Accept</span></div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">Ink #19191b on white is the base; the blue #008ffd is the only brand colour on the surface (with its #0087fd hover step and the #6fabff glow), and a ladder of greys — #eceff2 pills, #f4f4f5/#eff2f5 tiles, #e0e3e7 chips — carries every secondary control.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing and radius</h2>
+  <p class="lead">Buttons are 32px pills, cards 20px, the banner 40px, chips 14px and the close a 50% circle; the swoosh decorations are 75%-radius ellipses. The container is 1140px with 20px gutters and a 32px grid gap.</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">One served face, <code>Inter</code>, does everything: 700 at the 84px display, 600 at the heads and the mission lede, 500 on every button label and the hero lede, 400 for body — with a 40px display-sized email field. Samples fall back to system sans.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read CSS variables from the live stylesheets and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, focused and open states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = /*TOKENS*/null;
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  const roles = flat(TOK.light || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+  if (roles.length) {
+    h += `<div class="pal-h">light roles</div><div class="pal">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.layout || {}, 'layout.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.border || {}, 'border.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  for (const [n, t] of flat(TOK.core.shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => (x.inset ? 'inset ' : '') + x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + (x.spread ?? '0px') + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function motion() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.duration || {}, 'duration.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.easing || {}, 'easing.')) m += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? 'cubic-bezier(' + t.v.join(', ') + ')' : t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.light.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(t.v);
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — A more humane to-do list</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Dona</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>

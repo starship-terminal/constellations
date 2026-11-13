@@ -130,7 +130,7 @@
         "durationMin": null,
         "gaps": [
           "go.aaply.app returned \"Not found\" on /login, /sign, /signup and /workspace/demo: the authenticated product is unreachable to this client, so only the marketing site is measured",
-          "the billing segment's held lime fill paints on a sibling shape, not the text atom — segments measure transparent in both positions",
+          "the billing segment's held lime fill paints on a sibling shape, not the text atom \u2014 segments measure transparent in both positions",
           "reviews carousel measured on its first slide only"
         ],
         "pr": "https://github.com/c-wenlong/designs/pull/441",
@@ -448,8 +448,8 @@
           "/sg/en/cart"
         ],
         "gaps": [
-          "Fit Predictor widget (Fits.me) never mounted in headless Chromium on this product/geo — recorded as an honest miss",
-          "Bag drawer, checkout, account area, store stock check, size-guide drawer and search results need a cart item, account, purchase or form submit — not captured",
+          "Fit Predictor widget (Fits.me) never mounted in headless Chromium on this product/geo \u2014 recorded as an honest miss",
+          "Bag drawer, checkout, account area, store stock check, size-guide drawer and search results need a cart item, account, purchase or form submit \u2014 not captured",
           "OneTrust consent banner never mounted (SDK network-blocked); its selectors are known, its styling unmeasured",
           "Cart route renders the home page when the bag is empty",
           "Geo/region variant is the served Singapore storefront; other regions not captured"
@@ -576,7 +576,7 @@
       },
       "capture": {
         "method": "public-web",
-        "source": "adidas.com.cn China flagship in headless Chromium, 1440x900 + 390x844; computed styles and crops from the live DOM. BOUNDARY: the global adidas.com storefront is Akamai-blocked from the capture environment — every regional domain answers HTTP 403 Reference Error (headless, headed Chrome, curl, IPv6, Wayback), so this package covers adidas.com.cn, a related but different zh-CN front end",
+        "source": "adidas.com.cn China flagship in headless Chromium, 1440x900 + 390x844; computed styles and crops from the live DOM. BOUNDARY: the global adidas.com storefront is Akamai-blocked from the capture environment \u2014 every regional domain answers HTTP 403 Reference Error (headless, headed Chrome, curl, IPv6, Wayback), so this package covers adidas.com.cn, a related but different zh-CN front end",
         "timestamp": "2026-11-10T17:30:00Z",
         "harness": "Devin",
         "model": "SWE-2 Max",
@@ -588,7 +588,7 @@
           "/cart"
         ],
         "gaps": [
-          "adidas.com global storefront unreachable (Akamai 403 on every regional domain) — package covers adidas.com.cn only",
+          "adidas.com global storefront unreachable (Akamai 403 on every regional domain) \u2014 package covers adidas.com.cn only",
           "pages are fixed-height app shells with inner scroll containers: -full screenshots capture the viewport shell, not a tall page",
           "add-to-cart captured in its disabled state (grey text/border); enabled purchase bar not captured",
           "plp-title, product-card-price, size-cell, accordion, m-header recorded misses; WeChat tooltip surfaces not measured",
@@ -668,7 +668,7 @@
         ],
         "gaps": [
           "Email sign up modal mounts empty: its remote Demandware fragment did not render headless, so its fields are unmeasured",
-          "Add to cart captured mid-hydration as 'Loading …'; resting label state not captured",
+          "Add to cart captured mid-hydration as 'Loading \u2026'; resting label state not captured",
           "sign-in beyond the form, account area, checkout and purchases deliberately uncaptured (nothing submitted)",
           "search-panel container and cart-close button eluded marking; qty-select absent on a one-variant PDP",
           "OneTrust consent banner never mounted (SDK network-blocked); selectors known, styling unmeasured"
@@ -1795,7 +1795,7 @@
       },
       "capture": {
         "method": "public-web",
-        "source": "asos.com in headed Chrome (Playwright channel 'chrome' — Akamai 403s headless), desktop 1440x900 and mobile 390x844 at 2x; computed styles and crops from the live DOM via data-testid selectors; CSS vars from stylesheet response bodies + inline styles resolved in a probe; geo-served Singapore (SGD)",
+        "source": "asos.com in headed Chrome (Playwright channel 'chrome' \u2014 Akamai 403s headless), desktop 1440x900 and mobile 390x844 at 2x; computed styles and crops from the live DOM via data-testid selectors; CSS vars from stylesheet response bodies + inline styles resolved in a probe; geo-served Singapore (SGD)",
         "timestamp": "2026-11-10T19:30:00Z",
         "harness": "Devin",
         "model": "SWE-2 Max",
@@ -1965,7 +1965,7 @@
           "mobile /collections/tous-les-produits"
         ],
         "gaps": [
-          "/cart is a 404 for everyone — the cart is the side-cart drawer opened by PANIER (measured as cart-drawer/cart-empty); the 404 page is recorded as cart-page/cart-title",
+          "/cart is a 404 for everyone \u2014 the cart is the side-cart drawer opened by PANIER (measured as cart-drawer/cart-empty); the 404 page is recorded as cart-page/cart-title",
           "checkout and everything behind sign-in (nothing was added to the cart)",
           "the PDP is a sample: the shop grid's first product at run time",
           "the Axeptio consent layer and the shipping-country popup are hidden in captures, never answered",
@@ -2046,7 +2046,7 @@
         ],
         "gaps": [
           "the site detail is a sample: the first /websites/ card whose page still has a Vote button (SOTD winners have closed voting); recorded as site_url",
-          "the card hover layer (Vote Now) stayed display:none under headless hover — card-cta/card-action are recorded misses; home-light-card-hover shows it",
+          "the card hover layer (Vote Now) stayed display:none under headless hover \u2014 card-cta/card-action are recorded misses; home-light-card-hover shows it",
           "Log in / Sign Up did not render on the captured headless loads; no public login page exists signed-out (/session/login 404s)",
           "voting and /submit/ were never performed (a vote records a score); account, jury and Pro areas are behind sign-in",
           "submit-cta-2 is a recorded miss: no measurable CTA rendered on /submit/ headless",
@@ -2110,7 +2110,7 @@
       },
       "capture": {
         "method": "public-web",
-        "source": "b150.ai in headless Chrome (Playwright), desktop 1440x900 and mobile 390x844 at 2x; computed styles and crops from the live DOM; CSS vars from stylesheet response bodies + inline styles — the declared @layer theme block lands in the app bin",
+        "source": "b150.ai in headless Chrome (Playwright), desktop 1440x900 and mobile 390x844 at 2x; computed styles and crops from the live DOM; CSS vars from stylesheet response bodies + inline styles \u2014 the declared @layer theme block lands in the app bin",
         "timestamp": "2026-11-11T05:30:00Z",
         "harness": "Devin",
         "model": "SWE-2 Max",
@@ -3064,7 +3064,7 @@
       ],
       "shape": "reference",
       "captured": "2026-11-11",
-      "access": "signed out (every captured surface is public; the product — scheduler, event types, availability, bookings, workflows, insights, settings — sits behind app.cal.com login and was never reached; no booking was created)",
+      "access": "signed out (every captured surface is public; the product \u2014 scheduler, event types, availability, bookings, workflows, insights, settings \u2014 sits behind app.cal.com login and was never reached; no booking was created)",
       "themes": [
         "light",
         "dark"
@@ -6713,7 +6713,7 @@
       },
       "capture": {
         "method": "public-web",
-        "source": "calendly.com (an Astro/Tailwind marketing site declaring a --color-*/--text-ui-*/--radius-ui-* token layer with .dark islands, plus the public invitee booking pages on /calendly-demo — a separate booking-kit application with its own --coreColor*/--primary-color* layer in Proxima Nova) in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and crops from the live DOM. Both token layers are declared and used directly; the booking calendar's painted blues (#006bff, #004eba, #f4f8ff) are atomic classes measured on the elements. The workspace behind /app/login is a documented boundary",
+        "source": "calendly.com (an Astro/Tailwind marketing site declaring a --color-*/--text-ui-*/--radius-ui-* token layer with .dark islands, plus the public invitee booking pages on /calendly-demo \u2014 a separate booking-kit application with its own --coreColor*/--primary-color* layer in Proxima Nova) in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and crops from the live DOM. Both token layers are declared and used directly; the booking calendar's painted blues (#006bff, #004eba, #f4f8ff) are atomic classes measured on the elements. The workspace behind /app/login is a documented boundary",
         "timestamp": "2026-11-12T10:00:00Z",
         "harness": "Devin",
         "model": "SWE-2 High",
@@ -6905,7 +6905,7 @@
       },
       "capture": {
         "method": "public-web",
-        "source": "doordash.com's signed-out surface captured from Internet Archive Wayback Machine snapshots of the product's own SSR pages (live *.doordash.com Cloudflare-403s this client on every route tried — headless and headed): the consumer-web-next Next.js/styled-components stack declaring the prism --base-*/--usage-*/--comp-* token layers, plus careersatdoordash.com (WordPress/Tailwind). Computed styles, crops and full-page shots in headless Chromium (Playwright) at 1440x900 1x and 390x844 2x; every token and measurement is per-snapshot archival evidence, not a current live read",
+        "source": "doordash.com's signed-out surface captured from Internet Archive Wayback Machine snapshots of the product's own SSR pages (live *.doordash.com Cloudflare-403s this client on every route tried \u2014 headless and headed): the consumer-web-next Next.js/styled-components stack declaring the prism --base-*/--usage-*/--comp-* token layers, plus careersatdoordash.com (WordPress/Tailwind). Computed styles, crops and full-page shots in headless Chromium (Playwright) at 1440x900 1x and 390x844 2x; every token and measurement is per-snapshot archival evidence, not a current live read",
         "timestamp": "2026-11-13T09:00:00Z",
         "harness": "Devin",
         "model": "SWE-2 High",
@@ -6921,10 +6921,10 @@
           "/en-US/p/seasonal-holidays/ (20261025153234)",
           "/en-US/promos/ (20261008212700)",
           "careersatdoordash.com/ (20261009000533)",
-          "mobile /, /en-US/store/… and /food-delivery/"
+          "mobile /, /en-US/store/\u2026 and /food-delivery/"
         ],
         "gaps": [
-          "live *.doordash.com is Cloudflare-blocked for this client; every route is a Wayback snapshot of the product's own SSR output, labelled per route in raw/archive-urls.json — archival evidence, not a current live capture",
+          "live *.doordash.com is Cloudflare-blocked for this client; every route is a Wayback snapshot of the product's own SSR output, labelled per route in raw/archive-urls.json \u2014 archival evidence, not a current live capture",
           "hydration-dependent content is absent: the HSA/FSA and seasonal catalog bodies and the DashPass page sit on the product's loading spinner; lazy directory rows and some imagery never hydrated under the archive",
           "the signed-in product entirely: the address gate, sign-in, ordering, cart, checkout, DashPass purchase, merchant and Dasher onboarding were never crossed; the identity.doordash.com OAuth anchors were measured, never followed",
           "the address-search field was focused once for measurement, never filled or submitted; the cookie banner and dormant Turnstile nodes were hidden and never answered",
@@ -6933,11 +6933,97 @@
           "icons: no standalone SVG set lifted this pass; icon.png is the site's published favicon (32 px source, the largest the site ships, upscaled to 128 px)"
         ],
         "durationMin": 240,
-        "durationNote": "worktree creation to package-complete, spread over 2026-11-12 → 2026-11-13",
+        "durationNote": "worktree creation to package-complete, spread over 2026-11-12 \u2192 2026-11-13",
         "pr": "https://github.com/starship-terminal/constellations/pull/509"
       },
       "layoutGaps": {
         "icons/": "the icon extraction pass was not run; the icons (the DoorDash wordmark, side-nav glyphs, social icons and promo badges) are visible in the crops and screenshots"
+      }
+    },
+    {
+      "slug": "dona",
+      "name": "Dona",
+      "url": "https://dona.ai",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "Quiet, friendly to-do marketing pages: ink #19191b on white, a single #008ffd blue carrying the CTA and the 75%-radius swoosh decorations, #eceff2 pill greys and #f4f4f5 tiles, Inter 700 at an 84px display down to 400 at 14px legal, 32px button pills, 20px cards, low-alpha #0c1442 lift shadows and a 40px-radius floating consent card",
+      "tags": [
+        "web",
+        "productivity",
+        "todo",
+        "marketing",
+        "gatsby",
+        "styled-components",
+        "inter",
+        "light",
+        "signed-out"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-12",
+      "access": "signed out (every captured surface is public: /, /about, /privacy-policy, /terms-of-service; the product on app.dona.ai sits behind sign-in and was never reached; the newsletter was never submitted and the cookie banner never answered)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/dona/README.md",
+      "tokens": "systems/dona/tokens.json",
+      "styleGuide": "systems/dona/style-guide.html",
+      "preview": {
+        "cover": "systems/dona/screenshots/home-light-default.png",
+        "icon": "systems/dona/icon.png",
+        "swatches": {
+          "light": {
+            "page": "core.color.neutral.paper",
+            "surface": "core.color.fill.tile",
+            "text": "core.color.neutral.ink",
+            "muted": "core.color.neutral.muted",
+            "accent": "core.color.brand.blue",
+            "border": "light.border.hairline"
+          }
+        },
+        "fonts": [
+          "core.font.family.sans"
+        ]
+      },
+      "designMd": {
+        "colors": [
+          "core.",
+          "light."
+        ]
+      },
+      "capture": {
+        "method": "public-web",
+        "source": "dona.ai (a Gatsby 4 + styled-components marketing site) in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and crops from the live DOM. The stylesheets declare only component-scoped vars (--button-color, --icon-*, --blur-opacity) and the Inter @font-face faces, so tokens are measured computed values cross-checked against the declared vars. app.dona.ai (the product, with the advertised light/dark/black themes) sits behind sign-in and is a documented boundary",
+        "timestamp": "2026-11-12T19:30:00Z",
+        "harness": "Devin",
+        "model": "SWE-2 High",
+        "route": "public-web",
+        "routes": [
+          "/",
+          "/about",
+          "/privacy-policy",
+          "/terms-of-service",
+          "mobile / and /about"
+        ],
+        "gaps": [
+          "app.dona.ai entirely: the to-do product \u2014 lists, the advertised light/dark/black UI themes, sync, accounts \u2014 lives behind sign-in and was never reached; Login and Try for free open that host and were never followed",
+          "the newsletter form was measured, focused and sample-filled (cleared after); Join our newsletter was never pressed, so the 'Thank you! You're in.' success state and any error state are uncaptured",
+          "external links (twitter.com/getdona, the Discord invite) were never followed",
+          "no disabled, error or loading states exist on the public surface",
+          "the video modal was opened, captured and hidden again; the YouTube embed was never played",
+          "the cookie banner was captured as its own state then hidden; Accept was never clicked",
+          "the unstyled logo/social anchors paint UA link colours (#0000ee, #ff0000 on :active) \u2014 recorded as browser defaults, not Dona values",
+          "icons: no standalone SVG set lifted this pass"
+        ],
+        "durationMin": 105,
+        "durationNote": "worktree creation to package-complete commit, 2026-11-12/13 UTC: docs, recon, shots and measurement in one pass, then the token/docs build and the rubric review",
+        "pr": "https://github.com/starship-terminal/constellations/pull/506"
+      },
+      "layoutGaps": {
+        "icons/": "no standalone SVG icon set was lifted; the declared --icon-size vars (14/16/30/40px) are tokenised under light.component.icon.* and the glyphs (the dona ring-and-wordmark logo, social marks, play/close) are visible in the crops and screenshots"
       }
     }
   ]

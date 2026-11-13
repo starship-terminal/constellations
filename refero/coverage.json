@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 92,
-    "system_domains": 84,
-    "matched_domains": 59,
-    "missing_domains": 374,
+    "system_packages": 93,
+    "system_domains": 85,
+    "matched_domains": 60,
+    "missing_domains": 373,
     "system_domains_absent_from_catalog": 25
   },
   "matched": {
@@ -831,6 +831,23 @@
         }
       ]
     },
+    "dona.ai": {
+      "catalog": [
+        {
+          "name": "Dona",
+          "domain": "dona.ai",
+          "id": 643
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "dona",
+          "name": "Dona",
+          "url": "https://dona.ai",
+          "name_match": true
+        }
+      ]
+    },
     "doordash.com": {
       "catalog": [
         {
@@ -1362,13 +1379,6 @@
         "name": "DocuSign",
         "domain": "docusign.com",
         "id": 31
-      }
-    ],
-    "dona.ai": [
-      {
-        "name": "Dona",
-        "domain": "dona.ai",
-        "id": 643
       }
     ],
     "dopper.com": [
