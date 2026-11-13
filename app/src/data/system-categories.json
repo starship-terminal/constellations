@@ -664,5 +664,11 @@
     "groupId": "web-categories",
     "labels": ["Entertainment"],
     "reason": "catalog.json category media maps to Entertainment."
+  },
+  {
+    "referenceId": "systems:cushion",
+    "groupId": "web-categories",
+    "labels": ["Communication Tools"],
+    "reason": "catalog.json category messaging maps to Communication Tools."
   }
 ]

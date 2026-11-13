@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 111,
-    "system_domains": 103,
-    "matched_domains": 78,
-    "missing_domains": 355,
+    "system_packages": 112,
+    "system_domains": 104,
+    "matched_domains": 79,
+    "missing_domains": 354,
     "system_domains_absent_from_catalog": 25
   },
   "matched": {
@@ -967,6 +967,23 @@
         }
       ]
     },
+    "cushion.so": {
+      "catalog": [
+        {
+          "name": "Cushion",
+          "domain": "cushion.so",
+          "id": 920
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "cushion",
+          "name": "Cushion",
+          "url": "https://cushion.so",
+          "name_match": true
+        }
+      ]
+    },
     "dailyartmagazine.com": {
       "catalog": [
         {
@@ -1510,13 +1527,6 @@
         "name": "Play",
         "domain": "createwithplay.com",
         "id": 218
-      }
-    ],
-    "cushion.so": [
-      {
-        "name": "Cushion",
-        "domain": "cushion.so",
-        "id": 920
       }
     ],
     "cycle.app": [
