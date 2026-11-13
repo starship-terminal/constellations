@@ -11,7 +11,7 @@ Every marketing page opens under a sticky 80px bar
 ([header](components/crops/header-default.png)): a transparent-to-dark band
 that paints a gradient scrim `linear-gradient(rgb(0, 0, 0) 14.73%, rgba(0, 10,
 10, 0))` over the content scrolling beneath
-(`core.color.gradient.header-scrim`). Inside the 1440px canvas the logo
+(`core.gradient.nav`, also exposed as `dark.surface.header-veil`). Inside the 1440px canvas the logo
 ([logo](components/crops/logo-default.png)) anchors the left, a plain **Log
 in** link ([nav-login](components/crops/nav-login-default.png)) sits beside a
 white 35px pill **Start for free** CTA
@@ -47,10 +47,11 @@ the same card language the pricing block reuses at a bigger radius.
 Between the strips, single-column statements alternate with product stills:
 "The hard part isn't making it.", "One workspace. Endless combinations.",
 "From idea to production.", "Create once. Reuse everywhere.", "Teach ideas,
-not software." — 42px title type ([section-title]) over dark `#121212`
-editor screenshots ([editor-shot]) that preview the canvas without
-exposing it. The pattern is restraint: one line of headline, one image,
-near-black everywhere.
+not software." — 42px title type ([section-title]) over editor video
+stills ([editor-shot], the 1300x700 workspace stage in the "One
+workspace" band) that preview the canvas without exposing it. The
+pattern is restraint: one line of headline, one image, near-black
+everywhere.
 
 ## The pricing block
 
@@ -68,9 +69,10 @@ columns at 33px radius under a `#222` ring, each carrying a tier chip
 
 ## The testimonial carousel
 
-Social proof is a horizontal carousel of `#121212` cards
+Social proof is a horizontal carousel of `#080808` cards
 ([social-card](components/crops/social-card-default.png)) — a quote, a
-handle, an avatar — with a single round arrow control
+handle, an avatar on the 12px `rounded-fill` radius under a `#373737`
+inset ring — with a single round arrow control
 ([carousel-prev](components/crops/carousel-prev-default.png)) and a fixed
 promo card ([promo-card](components/crops/promo-card-default.png)) floating
 over the fold. The carousel auto-advances, so two captures differ.
@@ -115,7 +117,9 @@ single GPU texture, so they were captured as part tiles and stitched into
 
 At 390 wide the page keeps the same order — header
 ([m-header]), hero ([m-hero]), asset cards
-([m-asset-card]), plans ([m-plan-card]) — single-columned with the same
-tokens; the shots are at 2x device scale
+([m-asset-card]), plans ([m-plan-card]) — mostly single-columned with the
+same tokens. The exception is pricing: the plan cards keep their wide
+desktop columns inside a horizontally scrolling row rather than stacking,
+so a phone swipes sideways through the tiers. The shots are at 2x device scale
 ([mobile-home-dark-default](screenshots/mobile-home-dark-default.png),
 [mobile-login-dark-default](screenshots/mobile-login-dark-default.png)).

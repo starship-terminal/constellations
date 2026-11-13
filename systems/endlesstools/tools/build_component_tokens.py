@@ -266,7 +266,7 @@ for key, val, src, desc in [
     ("page", "#000000", "the body.bg-[#000] literal on the marketing page + computed fills of header/nav gradient", "#000 marketing page field (Tailwind black, not the --color-black #0a0a0a)."),
     ("card", "#121212", "computed backgroundColor of plan-card default (raw/components-computed.json)", "#121212 plan/testimonial card fill."),
     ("card-hover", "#1d1d1d", "computed backgroundColor of plan-card hover; declared literal in hover:bg-[#1D1D1D]", "#1d1d1d card hover fill."),
-    ("inset", "#080808", "computed paint bg of social-card inner tile (raw/components-computed.json)", "#080808 inset tile inside the testimonial card."),
+    ("inset", "#080808", "computed backgroundColor of social-card default (raw/components-computed.json)", "#080808 testimonial card fill."),
     ("ring", "#222222", "computed boxShadow ring of plan-card default; declared literal in .ring-[#222222]", "#222 card hairline ring."),
     ("thumb-border", "#343434", "computed borderTopColor of asset-thumb default (raw/components-computed.json)", "#343434 asset thumbnail border."),
     ("ink", "#efefef", "computed color of login-field default and textStyle of login-card (raw/components-computed.json)", "#efefef app-shell text white (bg-white utility, not --color-white #fff)."),
@@ -362,6 +362,28 @@ if "--ease-in-out" in R:
 mot.setdefault("press", {})["scale"] = {"value": "scale(0.95)", "type": "other",
     "source": "declared .active:scale-95 in the readable sheets (raw/css-vars.json tailwind)",
     "description": "Buttons scale to 95% while pressed."}
+# The keyframe animations recorded by measure.mjs's sheet walk
+# (raw/components-computed.json _meta.sheets): the marketing page's own two,
+# the app shell's Tailwind three.
+for key, val, src, desc in [
+    ("gradient-flow", "move-gradient 1.5s ease-in-out infinite alternate",
+     "recorded .animate-gradient-flow rule (raw/components-computed.json _meta.sheets.home)",
+     "The gradient drift on the hero title's marks."),
+    ("orbit", "et-orbit var(--orbit-duration, 28s) linear infinite",
+     "recorded .animate-orbit rule (raw/components-computed.json _meta.sheets.home)",
+     "The hero's orbiting asset marks."),
+    ("skeleton", "SkeletonLoading 1s linear infinite alternate",
+     "recorded .ui-skeleton__field/.ui-skeleton__unit rule (raw/components-computed.json _meta.sheets.login)",
+     "The app shell's skeleton shimmer (the Flow Rounded placeholder face)."),
+    ("pulse", "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+     "recorded .animate-pulse rule (raw/components-computed.json _meta.sheets.login)",
+     "Tailwind's pulse on the app shell."),
+    ("spin", "spin 1s linear infinite",
+     "recorded .animate-spin rule (raw/components-computed.json _meta.sheets.login)",
+     "Tailwind's spin on the app shell."),
+]:
+    mot.setdefault("animation", {})[key] = {"value": val, "type": "other",
+        "source": src, "description": desc}
 
 # ---------------------------------------------------------------- gradients
 # (kept in core.color.gradient above)
@@ -385,7 +407,7 @@ surf["card"] = {"value": "{color.neutral.card}", "type": "color", "source": "rol
 surf["card-hover"] = {"value": "{color.neutral.card-hover}", "type": "color", "source": "role alias",
                       "description": "#1d1d1d card hover fill."}
 surf["inset"] = {"value": "{color.neutral.inset}", "type": "color", "source": "role alias",
-                 "description": "#080808 inset tile."}
+                 "description": "#080808 testimonial card fill."}
 surf["field"] = {"value": "{color.neutral.secondary}", "type": "color", "source": "role alias",
                  "description": "#1e1e1e field fill."}
 surf["raised"] = {"value": "{color.neutral.grey-2}", "type": "color", "source": "role alias",
@@ -444,6 +466,10 @@ act["app-bg"] = {"value": "{color.neutral.ink}", "type": "color", "source": "rol
                  "description": "#efefef app-shell buttons (bg-white utility)."}
 act["app-bg-hover"] = {"value": "{color.neutral.alpha.ink-90}", "type": "color", "source": "role alias",
                        "description": "90% app-ink button hover."}
+act["nav-bg-hover"] = {"value": "{color.neutral.grey-1}", "type": "color", "source": "role alias",
+                       "description": "#373737 nav-action hover fill: the header's white pill flips dark."}
+act["nav-fg-hover"] = {"value": "{color.neutral.white}", "type": "color", "source": "role alias",
+                       "description": "#fff nav-action hover text."}
 
 acc = D.setdefault("accent", {})
 for k, desc in [
@@ -549,12 +575,29 @@ for key, cname, state, prop, desc in [
 def comp_leaf(group, key, ty, val, src, desc):
     comp.setdefault(group, {})[key] = {"type": ty, "value": val, "source": src, "description": desc}
 
-if have("nav-cta", "default"):
-    comp_leaf("button", "bg", "color", "{action.bg}", "role alias", "White primary pill (nav CTA, plan CTA, newsletter submit).")
+# The white marketing pills split on hover: the plan/team card CTAs grey to
+# #c4c4c4 keeping dark text, the newsletter submit softens to white/85, and the
+# header's Start-for-free pill inverts to #373737 with white text. One generic
+# `button` group would publish the plan behaviour for the other two.
+if have("plan-cta", "hover"):
+    comp_leaf("button", "bg", "color", "{action.bg}", "role alias", "White plan/team card pill (plan-cta, team-cta).")
     comp_leaf("button", "text", "color", "{action.fg}", "role alias", "Dark ink on the white pills.")
-    comp_leaf("button", "bg-hover", "color", "{action.bg-hover}", "role alias", "#c4c4c4 hover on the white pills.")
+    comp_leaf("button", "bg-hover", "color", "{action.bg-hover}", "role alias", "#c4c4c4 hover on the white card pills.")
     comp_leaf("button", "radius", "dimension", "{radius.pill}", "role alias", "Fully rounded.")
     comp_leaf("button", "padding", "dimension", "{spacing.control-x}", "role alias", "20px inline padding.")
+if have("nav-cta", "hover"):
+    comp_leaf("button-nav", "bg", "color", "{action.bg}", "role alias", "The header's white Start-for-free pill.")
+    comp_leaf("button-nav", "text", "color", "{action.fg}", "role alias", "Dark ink at rest.")
+    comp_leaf("button-nav", "bg-hover", "color", "{action.nav-bg-hover}", "role alias", "#373737 hover: the nav pill inverts dark, unlike the card pills.")
+    comp_leaf("button-nav", "text-hover", "color", "{action.nav-fg-hover}", "role alias", "#fff hover text on the nav pill.")
+    comp_leaf("button-nav", "radius", "dimension", "{radius.pill}", "role alias", "Fully rounded.")
+    comp_leaf("button-nav", "padding", "dimension", "{spacing.control-x}", "role alias", "20px inline padding.")
+if have("news-submit", "hover"):
+    comp_leaf("button-news", "bg", "color", "{action.bg}", "role alias", "White newsletter submit pill.")
+    comp_leaf("button-news", "text", "color", "{action.fg}", "role alias", "Dark ink on the submit.")
+    comp_leaf("button-news", "bg-hover", "color", "{action.bg-hover-soft}", "role alias", "85% white hover on the submit.")
+    comp_leaf("button-news", "radius", "dimension", "{radius.pill}", "role alias", "Fully rounded.")
+    comp_leaf("button-news", "padding", "dimension", "{spacing.control-x}", "role alias", "20px inline padding.")
 if have("hero-cta", "default"):
     comp_leaf("button-accent", "bg", "color", "{accent.pink}", "role alias", "Pink hero CTA.")
     comp_leaf("button-accent", "bg-hover", "color", "{accent.pink-hover}", "role alias", "#ff4bc4 hover.")
@@ -583,11 +626,15 @@ if have("news-field", "default"):
     comp_leaf("field-pill", "radius", "dimension", "{radius.pill}", "role alias", "Fully rounded pill field.")
     comp_leaf("field-pill", "padding", "dimension", "{spacing.control-x}", "role alias", "20px inline padding.")
 if have("plan-card", "default"):
-    comp_leaf("card", "bg", "color", "{surface.card}", "role alias", "#121212 plan/testimonial card.")
+    comp_leaf("card", "bg", "color", "{surface.card}", "role alias", "#121212 plan card.")
     comp_leaf("card", "bg-hover", "color", "{surface.card-hover}", "role alias", "#1d1d1d card hover.")
     comp_leaf("card", "border", "color", "{border.card}", "role alias", "#222 hairline ring.")
     comp_leaf("card", "radius", "dimension", "{radius.card}", "role alias", "33px card radius.")
     comp_leaf("card", "padding", "dimension", "{spacing.card}", "role alias", "15px card padding.")
+if have("social-card", "default"):
+    comp_leaf("card-social", "bg", "color", "{surface.inset}", "role alias", "#080808 testimonial card.")
+    comp_leaf("card-social", "border", "color", "{color.neutral.grey-1}", "role alias", "#373737 inset ring (a box-shadow ring, not a border).")
+    comp_leaf("card-social", "radius", "dimension", "{radius.fill}", "role alias", "12px fill radius on the testimonial card.")
 if have("login-card", "default"):
     comp_leaf("card-app", "bg", "color", "{surface.veil}", "role alias", "5% ink veil login card.")
     comp_leaf("card-app", "radius", "dimension", "{radius.login}", "role alias", "20px login card radius.")

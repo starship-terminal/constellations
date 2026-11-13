@@ -203,7 +203,7 @@ def child_layers(c):
 # --------------------------------------------------------------------------- page and group text
 
 PAGE_NAME = {"home": "marketing home", "login": "app /login", "privacy": "app /legal/privacy_policy",
-             "terms": "app /legal/terms", "mobile": "marketing home at 390"}
+             "terms": "app /legal/terms_of_use", "mobile": "marketing home at 390"}
 
 GROUP_INTRO = {
     "Shell and navigation": "The 80px sticky header over the marketing one-pager: the Endless Tools wordmark, a translucent Log-in pill and a solid white Start-for-free pill, on the black veil gradient.",
@@ -224,7 +224,7 @@ SHOTS = [
     ("home", "Marketing one-pager. Header, hero, asset strip, statement sections, pricing, testimonials, newsletter, footer. Default, the Monthly billing toggle and the full page.", "https://endlesstools.io/"),
     ("login", "App-host login card. OTP email form default and the password form behind 'Log in with password'.", "https://app.endlesstools.io/login"),
     ("privacy", "Privacy policy document page. Header and the full page.", "https://app.endlesstools.io/legal/privacy_policy"),
-    ("terms", "Terms & conditions document page. Header and the full page.", "https://app.endlesstools.io/legal/terms"),
+    ("terms", "Terms & conditions document page. Header and the full page.", "https://app.endlesstools.io/legal/terms_of_use"),
 ]
 MOBILE = [
     ("mobile-home", "Marketing page at 390: hero, asset cards, plan cards, the full page.", "https://endlesstools.io/"),

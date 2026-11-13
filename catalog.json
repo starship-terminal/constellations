@@ -7032,7 +7032,7 @@
       "url": "https://endlesstools.io",
       "category": "productivity",
       "platform": "web",
-      "goodFor": "Dark, confident designer-tool marketing pages: #000 and #0a0a0a fields under white/#efefef ink with #959595 muted text, fully-rounded 35-38px pills on every control, #121212 33px cards under a #222 hairline ring, a single #ff13b1 pink reserved for the hero CTA and #ff3dae save pill, #2c5cff blue for education, inverted white-pill primary actions and a declared Inter type ramp from 42/46 down to 12/14",
+      "goodFor": "Dark, confident designer-tool marketing pages: #000 and #0a0a0a fields under white/#efefef ink with #959595 muted text, fully-rounded 35-38px pills on the marketing controls (the app shell takes a 10px radius), #121212 33px cards under a #222 hairline ring, a single #ff13b1 pink reserved for the hero CTA and #ff3dae save pill, #2c5cff blue for education, inverted white-pill primary actions and a declared Inter type ramp from 42/46 down to 12/14",
       "tags": [
             "web",
             "design",
@@ -7046,7 +7046,7 @@
       ],
       "shape": "reference",
       "captured": "2026-11-13",
-      "access": "signed out (every captured surface is public: / on endlesstools.io plus /login, /legal/privacy_policy and /legal/terms_of_service on app.endlesstools.io; the product editor behind sign-in was never reached; no form was submitted and the only presses were local UI toggles)",
+      "access": "signed out (every captured surface is public: / on endlesstools.io plus /login, /legal/privacy_policy and /legal/terms_of_use on app.endlesstools.io; the product editor behind sign-in was never reached; no form was submitted and the only presses were local UI toggles)",
       "themes": [
             "dark"
       ],
@@ -7091,7 +7091,7 @@
                   "https://endlesstools.io/",
                   "https://app.endlesstools.io/login",
                   "https://app.endlesstools.io/legal/privacy_policy",
-                  "https://app.endlesstools.io/legal/terms_of_service",
+                  "https://app.endlesstools.io/legal/terms_of_use",
                   "mobile / and /login"
             ],
             "gaps": [

@@ -299,10 +299,10 @@ Page: home. Selector: `workspace section media`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 142 x 142 |
+| Size (w x h) | 1300 x 700 |
 | Padding | 0px |
 | Border | none |
-| Radius | 0px |
+| Radius | 10px |
 | Background | transparent |
 | Box shadow | none |
 | Outline | none |
@@ -313,7 +313,7 @@ Page: home. Selector: `workspace section media`. States: default.
 | Cursor | default |
 | How | at rest |
 
-Crops: none.
+Crops: `editor-shot-default.png`.
 
 ### Pricing
 
@@ -635,23 +635,23 @@ Page: home. Selector: `testimonial card`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 1440 x 778 |
-| Padding | 0px |
+| Size (w x h) | 390 x 355.38 |
+| Padding | 15px |
 | Border | none |
-| Radius | 0px |
-| Background | transparent |
-| Box shadow | none |
+| Radius | 12px |
+| Background | #080808 |
+| Box shadow | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #373737 0px 0px 0px 1px inset, #000000 @ 0 0px 0px 0px 0px |
 | Outline | none |
-| Font | Inter 16px/24px 400 |
+| Font | Inter 16px/24px 500 |
 | Letter spacing | normal |
 | Colour | #ffffff |
-| Text node | h2.text-title-secondary.md:text-title-primary: Inter 42px/46px 500, #ffffff, ls -1.26px |
+| Text node | div.flex.items-center: Inter 12px/14px 500, #ffffff |
 | Transition | none |
 | Cursor | default |
-| Painted layers | span.block.bg-current 0.0x0.0 bg #ffffff; span.block.bg-current 80.0x71.4 bg #ffffff; div.w-full.p-[15px] 390.0x355.4 bg #080808 r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #373737 0px 0px 0px 1px inset, #000000 @ 0 0px 0px 0px 0px; div.w-[54px].h-[54px] 54.0x54.0 bg #373737 r 3.35544e+07px; div.relative.ring-1 360.0x210.4 r 7px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #373737 0px 0px 0px 1px, #000000 @ 0 0px 0px 0px 0px; div.w-full.p-[15px] 390.0x473.5 bg #080808 r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #373737 0px 0px 0px 1px inset, #000000 @ 0 0px 0px 0px 0px |
+| Painted layers | div.w-full.p-[15px] 390.0x355.4 bg #080808 r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #373737 0px 0px 0px 1px inset, #000000 @ 0 0px 0px 0px 0px; div.w-[54px].h-[54px] 54.0x54.0 bg #373737 r 3.35544e+07px; div.relative.ring-1 360.0x210.4 r 7px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #373737 0px 0px 0px 1px, #000000 @ 0 0px 0px 0px 0px |
 | How | at rest |
 
-Crops: none.
+Crops: `social-card-default.png`.
 
 #### carousel-prev
 
@@ -1124,25 +1124,21 @@ Page: login. Selector: `login legal line`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 1440 x 900 |
+| Size (w x h) | 350 x 26 |
 | Padding | 0px |
 | Border | none |
 | Radius | 0px |
 | Background | transparent |
 | Box shadow | none |
 | Outline | none |
-| Font | ui-sans-serif 16px/24px 400 |
+| Font | Inter 12px/13px 400 |
 | Letter spacing | normal |
-| Colour | #000000 |
-| Text node | h1.text-white.text-center: Inter 23px/25px 500, #efefef |
+| Colour | #959595 |
 | Transition | none |
 | Cursor | default |
-| Icon | 50 x 50, colour #efefef |
-| Painted layers | div.__className_d8ebd1.__variable_86b611 1440.0x900.0 bg #000000; div.w-full.sm:max-w-[450px] 450.0x586.0 bg #efefef @ 0.05 r 20px; input.h-[35px].px-[15px] 350.0x35.0 bg #1e1e1e border T:1px solid #2a2a2a / R:1px solid #2a2a2a / B:1px solid #2a2a2a / L:1px solid #2a2a2a r 10px; input.h-[35px].px-[15px] 350.0x35.0 bg #1e1e1e border T:1px solid #2a2a2a / R:1px solid #2a2a2a / B:1px solid #2a2a2a / L:1px solid #2a2a2a r 10px; button.bg-white.w-full 350.0x35.0 bg #efefef r 10px |
-| Ancestor paint | 1 up body.antialiased.cursor-default bg #0a0a0a |
 | How | at rest |
 
-Crops: none.
+Crops: `login-legal-default.png`.
 
 ### Legal documents (app host)
 

@@ -2067,23 +2067,23 @@
   "editor-shot": {
    "states": {
     "default": {
-     "tag": "video",
-     "classes": "absolute inset-0 h-full w-full",
+     "tag": "div",
+     "classes": "relative z-[3] mx-auto max-w-[1300px]",
      "text": "",
      "rect": {
-      "x": 213,
-      "y": 247.6,
-      "w": 142,
-      "h": 142
+      "x": 70,
+      "y": 100,
+      "w": 1300,
+      "h": 700
      },
      "style": {
       "display": "block",
-      "position": "absolute",
+      "position": "relative",
       "boxSizing": "border-box",
-      "width": "142px",
-      "height": "142px",
+      "width": "1300px",
+      "height": "700px",
       "minWidth": "0px",
-      "maxWidth": "100%",
+      "maxWidth": "1300px",
       "minHeight": "0px",
       "paddingTop": "0px",
       "paddingRight": "0px",
@@ -2112,10 +2112,10 @@
       "borderLeftWidth": "0px",
       "borderLeftStyle": "solid",
       "borderLeftColor": "rgb(255, 255, 255)",
-      "borderTopLeftRadius": "0px",
-      "borderTopRightRadius": "0px",
-      "borderBottomRightRadius": "0px",
-      "borderBottomLeftRadius": "0px",
+      "borderTopLeftRadius": "10px",
+      "borderTopRightRadius": "10px",
+      "borderBottomRightRadius": "10px",
+      "borderBottomLeftRadius": "10px",
       "backgroundColor": "rgba(0, 0, 0, 0)",
       "backgroundImage": "none",
       "boxShadow": "none",
@@ -2142,11 +2142,11 @@
       "cursor": "default",
       "opacity": "1",
       "transform": "none",
-      "overflow": "clip",
-      "zIndex": "auto",
+      "overflow": "visible",
+      "zIndex": "3",
       "top": "0px"
      },
-     "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
+     "crop": "components/crops/editor-shot-default.png",
      "via": "at rest"
     }
    },
@@ -4982,27 +4982,27 @@
    "states": {
     "default": {
      "tag": "div",
-     "classes": "",
-     "text": "Created with Endless Tools See how designers use Endless Tools for campaigns, we",
+     "classes": "w-full p-[15px] bg-[#080808] rounded-fill",
+     "text": "Sang @createwithsang Thank you page, build with @framer and @endlesstools",
      "rect": {
-      "x": 0,
-      "y": 60.8,
-      "w": 1440,
-      "h": 778
+      "x": 125,
+      "y": 272.4,
+      "w": 390,
+      "h": 355.38
      },
      "style": {
       "display": "block",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "1440px",
-      "height": "778px",
-      "minWidth": "0px",
+      "width": "390px",
+      "height": "355.375px",
+      "minWidth": "auto",
       "maxWidth": "none",
-      "minHeight": "0px",
-      "paddingTop": "0px",
-      "paddingRight": "0px",
-      "paddingBottom": "0px",
-      "paddingLeft": "0px",
+      "minHeight": "auto",
+      "paddingTop": "15px",
+      "paddingRight": "15px",
+      "paddingBottom": "15px",
+      "paddingLeft": "15px",
       "marginTop": "0px",
       "marginRight": "0px",
       "marginBottom": "0px",
@@ -5026,13 +5026,13 @@
       "borderLeftWidth": "0px",
       "borderLeftStyle": "solid",
       "borderLeftColor": "rgb(255, 255, 255)",
-      "borderTopLeftRadius": "0px",
-      "borderTopRightRadius": "0px",
-      "borderBottomRightRadius": "0px",
-      "borderBottomLeftRadius": "0px",
-      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "borderTopLeftRadius": "12px",
+      "borderTopRightRadius": "12px",
+      "borderBottomRightRadius": "12px",
+      "borderBottomLeftRadius": "12px",
+      "backgroundColor": "rgb(8, 8, 8)",
       "backgroundImage": "none",
-      "boxShadow": "none",
+      "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgb(55, 55, 55) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
       "backdropFilter": "none",
       "outlineWidth": "3px",
       "outlineStyle": "none",
@@ -5040,7 +5040,7 @@
       "outlineOffset": "0px",
       "fontFamily": "Inter, \"Inter Fallback\"",
       "fontSize": "16px",
-      "fontWeight": "400",
+      "fontWeight": "500",
       "lineHeight": "24px",
       "letterSpacing": "normal",
       "textTransform": "none",
@@ -5062,16 +5062,6 @@
      },
      "paint": [
       {
-       "node": "span.block.bg-current",
-       "size": "0.0x0.0",
-       "bg": "rgb(255, 255, 255)"
-      },
-      {
-       "node": "span.block.bg-current",
-       "size": "80.0x71.4",
-       "bg": "rgb(255, 255, 255)"
-      },
-      {
        "node": "div.w-full.p-[15px]",
        "size": "390.0x355.4",
        "bg": "rgb(8, 8, 8)",
@@ -5089,78 +5079,21 @@
        "size": "360.0x210.4",
        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgb(55, 55, 55) 0px 0px 0px 1px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
        "radius": "7px"
-      },
-      {
-       "node": "div.w-full.p-[15px]",
-       "size": "390.0x473.5",
-       "bg": "rgb(8, 8, 8)",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgb(55, 55, 55) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
-       "radius": "12px"
-      },
-      {
-       "node": "div.w-[54px].h-[54px]",
-       "size": "54.0x54.0",
-       "bg": "rgb(55, 55, 55)",
-       "radius": "3.35544e+07px"
-      },
-      {
-       "node": "div.relative.ring-1",
-       "size": "360.0x202.5",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgb(55, 55, 55) 0px 0px 0px 1px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
-       "radius": "7px"
-      },
-      {
-       "node": "div.w-full.p-[15px]",
-       "size": "390.0x410.2",
-       "bg": "rgb(8, 8, 8)",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgb(55, 55, 55) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
-       "radius": "12px"
-      },
-      {
-       "node": "div.w-[54px].h-[54px]",
-       "size": "54.0x54.0",
-       "bg": "rgb(55, 55, 55)",
-       "radius": "3.35544e+07px"
-      },
-      {
-       "node": "div.relative.ring-1",
-       "size": "360.0x265.2",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgb(55, 55, 55) 0px 0px 0px 1px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
-       "radius": "7px"
-      },
-      {
-       "node": "div.w-full.p-[15px]",
-       "size": "390.0x364.8",
-       "bg": "rgb(8, 8, 8)",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgb(55, 55, 55) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
-       "radius": "12px"
-      },
-      {
-       "node": "div.w-[54px].h-[54px]",
-       "size": "54.0x54.0",
-       "bg": "rgb(55, 55, 55)",
-       "radius": "3.35544e+07px"
-      },
-      {
-       "node": "div.relative.ring-1",
-       "size": "360.0x201.8",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgb(55, 55, 55) 0px 0px 0px 1px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
-       "radius": "7px"
       }
      ],
      "textStyle": {
-      "node": "h2.text-title-secondary.md:text-title-primary",
-      "text": "Created with",
+      "node": "div.flex.items-center",
+      "text": "Sang",
       "fontFamily": "Inter, \"Inter Fallback\"",
-      "fontSize": "42px",
-      "lineHeight": "46px",
+      "fontSize": "12px",
+      "lineHeight": "14px",
       "fontWeight": "500",
-      "letterSpacing": "-1.26px",
+      "letterSpacing": "normal",
       "color": "rgb(255, 255, 255)",
       "textDecorationLine": "none",
       "textTransform": "none"
      },
-     "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
+     "crop": "components/crops/social-card-default.png",
      "via": "at rest"
     }
    },
@@ -9860,28 +9793,28 @@
    "states": {
     "default": {
      "tag": "div",
-     "classes": "",
-     "text": "Welcome to Endless Tools! Sign in or create an account with your email Log in Fo",
+     "classes": "text-[16px] leading-[20px] sm:text-body text-grey-4",
+     "text": "By creating an account you agree to our Terms & Conditions and our Privacy Polic",
      "rect": {
-      "x": 0,
-      "y": 0,
-      "w": 1440,
-      "h": 900
+      "x": 545,
+      "y": 622.5,
+      "w": 350,
+      "h": 26
      },
      "style": {
       "display": "block",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "1440px",
-      "height": "900px",
+      "width": "350px",
+      "height": "26px",
       "minWidth": "0px",
-      "maxWidth": "none",
+      "maxWidth": "350px",
       "minHeight": "0px",
       "paddingTop": "0px",
       "paddingRight": "0px",
       "paddingBottom": "0px",
       "paddingLeft": "0px",
-      "marginTop": "0px",
+      "marginTop": "35px",
       "marginRight": "0px",
       "marginBottom": "0px",
       "marginLeft": "0px",
@@ -9894,16 +9827,16 @@
       "gridTemplateColumns": "none",
       "borderTopWidth": "0px",
       "borderTopStyle": "solid",
-      "borderTopColor": "rgb(0, 0, 0)",
+      "borderTopColor": "rgb(149, 149, 149)",
       "borderRightWidth": "0px",
       "borderRightStyle": "solid",
-      "borderRightColor": "rgb(0, 0, 0)",
+      "borderRightColor": "rgb(149, 149, 149)",
       "borderBottomWidth": "0px",
       "borderBottomStyle": "solid",
-      "borderBottomColor": "rgb(0, 0, 0)",
+      "borderBottomColor": "rgb(149, 149, 149)",
       "borderLeftWidth": "0px",
       "borderLeftStyle": "solid",
-      "borderLeftColor": "rgb(0, 0, 0)",
+      "borderLeftColor": "rgb(149, 149, 149)",
       "borderTopLeftRadius": "0px",
       "borderTopRightRadius": "0px",
       "borderBottomRightRadius": "0px",
@@ -9914,17 +9847,17 @@
       "backdropFilter": "none",
       "outlineWidth": "3px",
       "outlineStyle": "none",
-      "outlineColor": "rgb(0, 0, 0)",
+      "outlineColor": "rgb(149, 149, 149)",
       "outlineOffset": "0px",
-      "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
-      "fontSize": "16px",
+      "fontFamily": "Inter, \"Inter Fallback\"",
+      "fontSize": "12px",
       "fontWeight": "400",
-      "lineHeight": "24px",
+      "lineHeight": "13px",
       "letterSpacing": "normal",
       "textTransform": "none",
-      "color": "rgb(0, 0, 0)",
+      "color": "rgb(149, 149, 149)",
       "textDecorationLine": "none",
-      "textDecorationColor": "rgb(0, 0, 0)",
+      "textDecorationColor": "rgb(149, 149, 149)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
       "transitionProperty": "all",
@@ -9938,67 +9871,7 @@
       "zIndex": "auto",
       "top": "auto"
      },
-     "paint": [
-      {
-       "node": "div.__className_d8ebd1.__variable_86b611",
-       "size": "1440.0x900.0",
-       "bg": "rgb(0, 0, 0)"
-      },
-      {
-       "node": "div.w-full.sm:max-w-[450px]",
-       "size": "450.0x586.0",
-       "bg": "rgba(239, 239, 239, 0.05)",
-       "radius": "20px"
-      },
-      {
-       "node": "input.h-[35px].px-[15px]",
-       "size": "350.0x35.0",
-       "border": "T:1px solid rgb(42, 42, 42) | R:1px solid rgb(42, 42, 42) | B:1px solid rgb(42, 42, 42) | L:1px solid rgb(42, 42, 42)",
-       "bg": "rgb(30, 30, 30)",
-       "radius": "10px"
-      },
-      {
-       "node": "input.h-[35px].px-[15px]",
-       "size": "350.0x35.0",
-       "border": "T:1px solid rgb(42, 42, 42) | R:1px solid rgb(42, 42, 42) | B:1px solid rgb(42, 42, 42) | L:1px solid rgb(42, 42, 42)",
-       "bg": "rgb(30, 30, 30)",
-       "radius": "10px"
-      },
-      {
-       "node": "button.bg-white.w-full",
-       "size": "350.0x35.0",
-       "bg": "rgb(239, 239, 239)",
-       "radius": "10px"
-      }
-     ],
-     "ancestors": [
-      {
-       "up": 1,
-       "node": "body.antialiased.cursor-default",
-       "radius": "0px",
-       "bg": "rgb(10, 10, 10)"
-      }
-     ],
-     "textStyle": {
-      "node": "h1.text-white.text-center",
-      "text": "Welcome to Endless Tools!",
-      "fontFamily": "Inter, \"Inter Fallback\"",
-      "fontSize": "23px",
-      "lineHeight": "25px",
-      "fontWeight": "500",
-      "letterSpacing": "normal",
-      "color": "rgb(239, 239, 239)",
-      "textDecorationLine": "none",
-      "textTransform": "none"
-     },
-     "icon": {
-      "w": 50,
-      "h": 50,
-      "fill": "none",
-      "stroke": "none",
-      "color": "rgb(239, 239, 239)"
-     },
-     "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
+     "crop": "components/crops/login-legal-default.png",
      "via": "at rest"
     }
    },

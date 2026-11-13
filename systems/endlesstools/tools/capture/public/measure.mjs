@@ -317,7 +317,9 @@ async function home() {
   await S('asset-thumb', q(`${SEC}="hero_inputs"] div.rounded-\\[16px\\], ${SEC}="hero_inputs"] video`).filter({ visible: true }).first(), ['default'], { group: a, title: 'Asset thumbnail', desc: 'A floating asset tile: a looping muted video in a 16px-radius rounded box.', sel: 'hero_inputs video tile' });
   const s = G.sections;
   await S('section-title', q('h1, h2').filter({ hasText: /The hard part/i }).filter({ visible: true }).first(), ['default'], { group: s, title: 'Section heading', desc: 'A statement heading ("The hard part isn\'t making it.") — title-primary inside an underline mark.', sel: '"The hard part" heading' });
-  await S('editor-shot', q('section img, section video, section [class*="rounded"]').filter({ visible: true }).nth(2), ['default'], { group: s, title: 'Product shot', desc: 'The embedded product-workspace image/video in the "One workspace" band (marketing content, not the app).', sel: 'workspace section media' });
+  // The workspace stage is the rounded wrapper holding the section's one big
+  // video; a bare section-media selector drifts onto the floating orbit tiles.
+  await S('editor-shot', q(`${SEC}="hero_workspace"] div:has(> video), ${SEC}="hero_workspace"] video`).filter({ visible: true }).first(), ['default'], { group: s, title: 'Product shot', desc: 'The embedded product-workspace image/video in the "One workspace" band (marketing content, not the app).', sel: 'workspace section media' });
   const pr = G.pricing;
   await S('billing-yearly', q('button').filter({ hasText: /Yearly/i }).filter({ visible: true }).first(), B4, { group: pr, title: 'Billing toggle, yearly', desc: 'The Yearly option of the billing toggle (selected by default — the chosen option renders disabled).', sel: 'button "Yearly"' });
   await S('billing-monthly', q('button').filter({ hasText: /^\s*Monthly\s*$/i }).filter({ visible: true }).first(), B4, { group: pr, title: 'Billing toggle, monthly', desc: 'The Monthly option; toggled for the monthly screenshot state, never checked out.', sel: 'button "Monthly"' });
@@ -333,7 +335,9 @@ async function home() {
   await S('team-cta', q('a, button').filter({ hasText: /Create team/i }).filter({ visible: true }).first(), B4, { group: t, title: 'Team CTA', desc: 'The Create-team action under the shared-workspace section; measured never followed.', sel: '"Create team"' });
   await S('edu-cta', q('a').filter({ hasText: /Request Education access/i }).filter({ visible: true }).first(), B4, { group: t, title: 'Education CTA', desc: 'The Request-Education-access mailto link; measured never followed.', sel: '"Request Education access"' });
   const so = G.social;
-  await S('social-card', q('div').filter({ hasText: /@endlesstools|@\w+/ }).filter({ hasText: /Thank you|template|cool|playing/i }).filter({ visible: true }).first(), ['default'], { group: so, title: 'Testimonial card', desc: 'A "Created with Endless Tools" social post card in the carousel.', sel: 'testimonial card' });
+  // The card is the painted wrapper that holds the .et-tweet-content text; a
+  // hasText filter on bare divs climbs to the whole tweets section.
+  await S('social-card', q(`${SEC}="tweets"] div:has(> div.et-tweet-content)`).filter({ visible: true }).first(), ['default'], { group: so, title: 'Testimonial card', desc: 'A "Created with Endless Tools" social post card in the carousel.', sel: 'testimonial card' });
   await S('carousel-prev', q('button[aria-label="Previous"]').filter({ visible: true }).first(), B4, { group: so, title: 'Carousel prev', desc: 'The round 40px Previous arrow of the testimonial carousel.', sel: 'button[aria-label=Previous]' });
   await S('promo-card', q('div.fixed').filter({ hasText: /Endless Tools|Art Director|designer/i }).filter({ visible: true }).first(), ['default'], { group: so, title: 'Floating promo card', desc: 'The fixed bottom-centre testimonial pill ("Endless Tools great tool for designers by designers.").', sel: 'fixed bottom card' }, { noScroll: true });
   const n = G.news;
@@ -367,7 +371,9 @@ async function login() {
   await S('login-password-field', q('input[type="password"]').filter({ visible: true }).first(), ['default', 'focused'], { group: g, title: 'Password field', desc: 'The password input on the password form (after the local switch); focused only, never filled or submitted.', sel: 'input[type=password]' });
   await S('login-submit', q('button').filter({ hasText: /^\s*Log in\s*$/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Log in button', desc: 'The password form\'s Log-in submit; measured, never pressed.', sel: '"Log in" submit' });
   await S('login-forgot', q('a, button').filter({ hasText: /Forgot your password/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Forgot password link', desc: 'The "Forgot your password?" link; measured never followed.', sel: '"Forgot your password?"' });
-  await S('login-legal', q('div').filter({ hasText: /By creating an account you agree/i }).filter({ visible: true }).first(), ['default'], { group: g, title: 'Legal line', desc: 'The agree-to-terms line with its underlined Terms and Privacy links.', sel: 'login legal line' });
+  // domFind's leaf match lands on the line itself; a hasText filter on bare
+  // divs climbs to the page root.
+  await S('login-legal', await domFind(page, /By creating an account you agree/i, { sel: 'p, div, span, small' }), ['default'], { group: g, title: 'Legal line', desc: 'The agree-to-terms line with its underlined Terms and Privacy links.', sel: 'login legal line' });
   save();
 }
 

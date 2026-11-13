@@ -295,8 +295,8 @@
     "inset": {
      "value": "#080808",
      "type": "color",
-     "source": "computed paint bg of social-card inner tile (raw/components-computed.json)",
-     "description": "#080808 inset tile inside the testimonial card."
+     "source": "computed backgroundColor of social-card default (raw/components-computed.json)",
+     "description": "#080808 testimonial card fill."
     },
     "ring": {
      "value": "#222222",
@@ -563,6 +563,38 @@
      "source": "declared .active:scale-95 in the readable sheets (raw/css-vars.json tailwind)",
      "description": "Buttons scale to 95% while pressed."
     }
+   },
+   "animation": {
+    "gradient-flow": {
+     "value": "move-gradient 1.5s ease-in-out infinite alternate",
+     "type": "other",
+     "source": "recorded .animate-gradient-flow rule (raw/components-computed.json _meta.sheets.home)",
+     "description": "The gradient drift on the hero title's marks."
+    },
+    "orbit": {
+     "value": "et-orbit var(--orbit-duration, 28s) linear infinite",
+     "type": "other",
+     "source": "recorded .animate-orbit rule (raw/components-computed.json _meta.sheets.home)",
+     "description": "The hero's orbiting asset marks."
+    },
+    "skeleton": {
+     "value": "SkeletonLoading 1s linear infinite alternate",
+     "type": "other",
+     "source": "recorded .ui-skeleton__field/.ui-skeleton__unit rule (raw/components-computed.json _meta.sheets.login)",
+     "description": "The app shell's skeleton shimmer (the Flow Rounded placeholder face)."
+    },
+    "pulse": {
+     "value": "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+     "type": "other",
+     "source": "recorded .animate-pulse rule (raw/components-computed.json _meta.sheets.login)",
+     "description": "Tailwind's pulse on the app shell."
+    },
+    "spin": {
+     "value": "spin 1s linear infinite",
+     "type": "other",
+     "source": "recorded .animate-spin rule (raw/components-computed.json _meta.sheets.login)",
+     "description": "Tailwind's spin on the app shell."
+    }
    }
   },
   "typography": {
@@ -773,7 +805,7 @@
     "value": "{color.neutral.inset}",
     "type": "color",
     "source": "role alias",
-    "description": "#080808 inset tile."
+    "description": "#080808 testimonial card fill."
    },
    "field": {
     "value": "{color.neutral.secondary}",
@@ -936,6 +968,18 @@
     "type": "color",
     "source": "role alias",
     "description": "90% app-ink button hover."
+   },
+   "nav-bg-hover": {
+    "value": "{color.neutral.grey-1}",
+    "type": "color",
+    "source": "role alias",
+    "description": "#373737 nav-action hover fill: the header's white pill flips dark."
+   },
+   "nav-fg-hover": {
+    "value": "{color.neutral.white}",
+    "type": "color",
+    "source": "role alias",
+    "description": "#fff nav-action hover text."
    }
   },
   "accent": {
@@ -991,7 +1035,7 @@
     "type": "color",
     "value": "{action.bg}",
     "source": "role alias",
-    "description": "White primary pill (nav CTA, plan CTA, newsletter submit)."
+    "description": "White plan/team card pill (plan-cta, team-cta)."
    },
    "text": {
     "type": "color",
@@ -1003,7 +1047,7 @@
     "type": "color",
     "value": "{action.bg-hover}",
     "source": "role alias",
-    "description": "#c4c4c4 hover on the white pills."
+    "description": "#c4c4c4 hover on the white card pills."
    },
    "radius": {
     "type": "dimension",
@@ -1198,6 +1242,76 @@
     "description": "450px login card."
    }
   },
+  "button-nav": {
+   "bg": {
+    "type": "color",
+    "value": "{action.bg}",
+    "source": "role alias",
+    "description": "The header's white Start-for-free pill."
+   },
+   "text": {
+    "type": "color",
+    "value": "{action.fg}",
+    "source": "role alias",
+    "description": "Dark ink at rest."
+   },
+   "bg-hover": {
+    "type": "color",
+    "value": "{action.nav-bg-hover}",
+    "source": "role alias",
+    "description": "#373737 hover: the nav pill inverts dark, unlike the card pills."
+   },
+   "text-hover": {
+    "type": "color",
+    "value": "{action.nav-fg-hover}",
+    "source": "role alias",
+    "description": "#fff hover text on the nav pill."
+   },
+   "radius": {
+    "type": "dimension",
+    "value": "{radius.pill}",
+    "source": "role alias",
+    "description": "Fully rounded."
+   },
+   "padding": {
+    "type": "dimension",
+    "value": "{spacing.control-x}",
+    "source": "role alias",
+    "description": "20px inline padding."
+   }
+  },
+  "button-news": {
+   "bg": {
+    "type": "color",
+    "value": "{action.bg}",
+    "source": "role alias",
+    "description": "White newsletter submit pill."
+   },
+   "text": {
+    "type": "color",
+    "value": "{action.fg}",
+    "source": "role alias",
+    "description": "Dark ink on the submit."
+   },
+   "bg-hover": {
+    "type": "color",
+    "value": "{action.bg-hover-soft}",
+    "source": "role alias",
+    "description": "85% white hover on the submit."
+   },
+   "radius": {
+    "type": "dimension",
+    "value": "{radius.pill}",
+    "source": "role alias",
+    "description": "Fully rounded."
+   },
+   "padding": {
+    "type": "dimension",
+    "value": "{spacing.control-x}",
+    "source": "role alias",
+    "description": "20px inline padding."
+   }
+  },
   "button-accent": {
    "bg": {
     "type": "color",
@@ -1281,7 +1395,7 @@
     "type": "color",
     "value": "{surface.card}",
     "source": "role alias",
-    "description": "#121212 plan/testimonial card."
+    "description": "#121212 plan card."
    },
    "bg-hover": {
     "type": "color",
@@ -1306,6 +1420,26 @@
     "value": "{spacing.card}",
     "source": "role alias",
     "description": "15px card padding."
+   }
+  },
+  "card-social": {
+   "bg": {
+    "type": "color",
+    "value": "{surface.inset}",
+    "source": "role alias",
+    "description": "#080808 testimonial card."
+   },
+   "border": {
+    "type": "color",
+    "value": "{color.neutral.grey-1}",
+    "source": "role alias",
+    "description": "#373737 inset ring (a box-shadow ring, not a border)."
+   },
+   "radius": {
+    "type": "dimension",
+    "value": "{radius.fill}",
+    "source": "role alias",
+    "description": "12px fill radius on the testimonial card."
    }
   },
   "card-app": {

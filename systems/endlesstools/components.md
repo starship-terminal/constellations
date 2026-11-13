@@ -19,7 +19,7 @@ Screenshots are named `{page}-dark-{state}.png` (every surface paints one dark t
 | Marketing one-pager. Header, hero, asset strip, statement sections, pricing, testimonials, newsletter, footer. Default, the Monthly billing toggle and the full page. | `https://endlesstools.io/` | [default](screenshots/home-dark-default.png), [full](screenshots/home-dark-full.png), [monthly](screenshots/home-dark-monthly.png) |
 | App-host login card. OTP email form default and the password form behind 'Log in with password'. | `https://app.endlesstools.io/login` | [default](screenshots/login-dark-default.png), [password](screenshots/login-dark-password.png) |
 | Privacy policy document page. Header and the full page. | `https://app.endlesstools.io/legal/privacy_policy` | [default](screenshots/privacy-dark-default.png), [full](screenshots/privacy-dark-full.png) |
-| Terms & conditions document page. Header and the full page. | `https://app.endlesstools.io/legal/terms` | [default](screenshots/terms-dark-default.png), [full](screenshots/terms-dark-full.png) |
+| Terms & conditions document page. Header and the full page. | `https://app.endlesstools.io/legal/terms_of_use` | [default](screenshots/terms-dark-default.png), [full](screenshots/terms-dark-full.png) |
 | Marketing page at 390: hero, asset cards, plan cards, the full page. | `https://endlesstools.io/` | [default](screenshots/mobile-home-dark-default.png), [full](screenshots/mobile-home-dark-full.png) |
 | Login card at 390. | `https://app.endlesstools.io/login` | [default](screenshots/mobile-login-dark-default.png) |
 
@@ -52,7 +52,7 @@ Values that apply across entries, from the measurement files.
 | [Plan card](#plan-card) | 356.66 x 562 | - | 33px | #121212 `neutral.card` | #222222 0px 0px 0px 1px inset | 15px |
 | [Login card](#login-card) | 450 x 497 | - | 20px | rgba(239, 239, 239, 0.05) `neutral.alpha.veil-5` | none | 50px |
 | [Floating promo card](#floating-promo-card) | 365.58 x 54 | - | 3.35544e+07px | - | transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, oklab(0.999994 0.0000455678 0.0000200868 / 0.1) 0px 0px 0px 1px, transparent 0px 0px 0px 0px | 0 |
-| [Testimonial card](#testimonial-card) | 1440 x 778 | - | 12px | #080808 `neutral.inset` | transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, #373737 0px 0px 0px 1px inset, transparent 0px 0px 0px 0px | 0 |
+| [Testimonial card](#testimonial-card) | 390 x 355.38 | - | 12px | #080808 `neutral.inset` | #373737 0px 0px 0px 1px inset | 15px |
 | [Asset thumbnail](#asset-thumbnail) | 144 x 144 | 1px solid #343434 `neutral.thumb-border` | 16px | - | none | 0 |
 | [Mobile plan card](#mobile-plan-card) | 331.5 x 576 | - | 33px | #121212 `neutral.card` | #222222 0px 0px 0px 1px inset | 15px |
 | [Mobile asset title](#mobile-asset-title) | 135.05 x 26 | - | - | transparent | none | 0 |
@@ -174,7 +174,7 @@ Child layers that carry the look: span 0x0 background #ffffff `neutral.white`; s
 #### Product shot
 The embedded product-workspace image/video in the "One workspace" band (marketing content, not the app). Read as `editor-shot` on the marketing home page.
 
-**Values (default).** size 142 x 142; background transparent; text Inter 16/24 400, #ffffff `neutral.white`.
+**Values (default).** size 1300 x 700; radius 10px; background transparent; text Inter 16/24 400, #ffffff `neutral.white`.
 
 ![Product shot default](components/crops/editor-shot-default.png)
 
@@ -304,9 +304,7 @@ The quote carousel: white serif quotes over the black field, round black/50 arro
 #### Testimonial card
 A "Created with Endless Tools" social post card in the carousel. Read as `social-card` on the marketing home page.
 
-**Values (default).** size 1440 x 778; background transparent; text Inter 42/46 500, #ffffff `neutral.white`.
-
-Child layers that carry the look: span 0x0 background #ffffff `neutral.white`; span 80x71.4 background #ffffff `neutral.white`; div 390x355.4 background #080808 `neutral.inset` radius 12px shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, #373737 `neutral.grey-1` 0px 0px 0px 1px inset, transparent 0px 0px 0px 0px.
+**Values (default).** size 390 x 355.38; padding 15px; radius 12px; background #080808 `neutral.inset`; shadow #373737 0px 0px 0px 1px inset; text Inter 12/14 500, #ffffff `neutral.white`.
 
 ![Testimonial card default](components/crops/social-card-default.png)
 
@@ -504,9 +502,7 @@ The "Forgot your password?" link; measured never followed. Read as `login-forgot
 #### Legal line
 The agree-to-terms line with its underlined Terms and Privacy links. Read as `login-legal` on the app /login page.
 
-**Values (default).** size 1440 x 900; background transparent; text Inter 23/25 500, #efefef `neutral.ink`; icon 50 x 50, #efefef `neutral.ink`.
-
-Child layers that carry the look: div 1440x900 background #000000 `neutral.page`; div 450x586 background rgba(239, 239, 239, 0.05) `neutral.alpha.veil-5` radius 20px; input 350x35 background #1e1e1e `neutral.secondary` border 1px solid #2a2a2a `neutral.grey-2` radius 10px.
+**Values (default).** size 350 x 26; background transparent; text Inter 12/13 400, #959595 `neutral.grey-4`.
 
 ![Legal line default](components/crops/login-legal-default.png)
 

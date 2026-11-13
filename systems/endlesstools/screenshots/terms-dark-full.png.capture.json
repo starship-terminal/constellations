@@ -48,7 +48,7 @@
    "x": 0,
    "y": 0,
    "width": 1440,
-   "height": 14000
+   "height": 16366
   }
  },
  "png": {
@@ -59,9 +59,9 @@
   "status": "pass",
   "expected": {
    "width": 1440,
-   "height": 14000
+   "height": 16366
   },
-  "basis": "clip"
+  "basis": "stitchedParts"
  },
  "visualReview": {
   "status": "pending",
