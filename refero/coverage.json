@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 94,
-    "system_domains": 86,
-    "matched_domains": 61,
-    "missing_domains": 372,
+    "system_packages": 95,
+    "system_domains": 87,
+    "matched_domains": 62,
+    "missing_domains": 371,
     "system_domains_absent_from_catalog": 25
   },
   "matched": {
@@ -814,6 +814,23 @@
         }
       ]
     },
+    "dailyartmagazine.com": {
+      "catalog": [
+        {
+          "name": "DailyArt Magazine",
+          "domain": "dailyartmagazine.com",
+          "id": 571
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "dailyartmagazine",
+          "name": "DailyArt Magazine",
+          "url": "https://www.dailyartmagazine.com",
+          "name_match": false
+        }
+      ]
+    },
     "dock.us": {
       "catalog": [
         {
@@ -1298,13 +1315,6 @@
         "name": "Cycle",
         "domain": "cycle.app",
         "id": 504
-      }
-    ],
-    "dailyartmagazine.com": [
-      {
-        "name": "DailyArt Magazine",
-        "domain": "dailyartmagazine.com",
-        "id": 571
       }
     ],
     "deel.com": [
