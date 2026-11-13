@@ -43,6 +43,7 @@ check: ## Validate catalog.json and the refero stores; fail on a stale Brief, DE
 	@$(PYTHON) tools/refero/check.py
 	@$(PYTHON) tools/brief.py --check
 	@$(PYTHON) tools/grade.py --check
+	@$(PYTHON) tools/gated.py --check
 
 brief: ## Rewrite every package README's Brief from its catalog entry, tokens and README
 	@$(PYTHON) tools/brief.py
