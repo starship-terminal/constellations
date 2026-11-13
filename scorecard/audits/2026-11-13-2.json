@@ -1,7 +1,7 @@
 {
  "date": "2026-11-13",
  "rubric": "4",
- "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): read the package (tokens.json, components.md, patterns.md, README, catalog entry) against scorecard/criteria.json web wording",
+ "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): reviewed against scorecard/criteria.json web wording from the capture evidence: tokens.json roles and sources, raw/components-computed.json states, components.md/patterns.md coverage, and the declared layoutGaps",
  "systems": [
   {
    "slug": "brilliant",
@@ -11595,99 +11595,103 @@
    "reviewedPlatform": "web"
   },
   {
-   "slug": "dub",
+   "slug": "dock",
    "grades": {
     "F1": {
      "grade": "partly",
-     "evidence": "Two full neutral ramps tokenised (Tailwind neutral 50-950, 11 steps; Mintlify gray 50-950, 11 steps). The accent hues are not ramped: docs blue only blue-600, greens only emerald-500 + green-400/green-600; the marketing site simply does not paint a hue ramp beyond neutrals."
+     "evidence": "The blue the actions paint has real steps — blue/blue-hover/blue-pressed measured off the controls plus blue-deep (band), blue-light/-soft/-tint/sky declared hues — and the shared shell declares an _anchor colour ramp (captured in raw/css-vars.json). Neutrals have ink, muted, white, two wash steps, hairline and border. The illustration accent hues (green, pink, purple, sky, warm, yellow) are single declared values, not ramps — a marketing palette, not a 10-step ramp set."
     },
     "F2": {
-     "grade": "meets",
-     "evidence": "Page (background/#fafafa + bg.muted/subtle), surface (bg.default, card.default, popover.default), raised (bg.emphasis), inverted/overlay (bg.inverted) in both light and dark; the marketing surface legitimately ships no scrim role."
+     "grade": "partly",
+     "evidence": "light carries surface.page (white) and surface.subtle (#f7f7f8 wash); dark (the painted islands) adds surface.band (#002fa6 hero) and surface.pane (#242d7d signup testimonial). No overlay or scrim role paints on the public surface — the mega-menu paints an opaque 19px panel, not a scrimmed overlay."
     },
     "F3": {
      "grade": "partly",
-     "evidence": "Primary (foreground/content.default), secondary (content.muted + content.subtle), on-accent (primary.foreground, accent.foreground) and link/accent text (docs.nav-active #155dfc, content.info) in both themes. No disabled text role was observed or declared on the signed-out surfaces."
+     "evidence": "light carries text.primary (#121722), text.muted and text.on-action (white on blue); dark carries white roles. No disabled text role exists on the public surface and links paint the default ink — no link role."
     },
     "F4": {
-     "grade": "meets",
-     "evidence": "border.default/muted/subtle/emphasis plus field.border, field.focus.border (black) and focus.outline (#005fcc marketing, #155dfc docs) with measured width and offset."
+     "grade": "partly",
+     "evidence": "light carries border.hairline (#dedfe3 bars/dividers) and border.default, plus the measured 0.5px/1px inset ring values; focus.ring.default is the measured 2px rgba(18,23,34,0.6) outline. No named 'strong' border role — the hairline is the only painted border weight."
     },
     "F5": {
-     "grade": "partly",
-     "evidence": "action.primary.bg.default + action.primary.bg.hover and the 4px #e5e5e5 hover halo measured on the real hover; pressed states were forced and cropped but no distinct pressed colour is declared (pressed = hover paint)."
+     "grade": "meets",
+     "evidence": "action.primary.default #0068f9, .hover #0060eb and .pressed #005fe4, each measured off the real controls (nav-cta, hero-cta, plan-cta) across forced CDP states; the blue-band ghost states (transparent -> rgba(255,255,255,0.06) -> 0.1) sit in dark.action.ghost."
     },
     "F6": {
-     "grade": "partly",
-     "evidence": "info/success/attention/warning/error exist as bg.* (fill) and content.* (text) pairs in both themes, from the Mintlify docs variable layer; no status border roles are declared, and the marketing surface never paints status colours."
+     "grade": "missing",
+     "evidence": "No success/warning/danger/info roles are declared or painted on the signed-out marketing and auth surfaces — the only accent hues are single-value illustration colours (brand.green/pink/purple/...). Nothing to capture."
     },
     "F7": {
-     "grade": "meets",
-     "evidence": "Every semantic role in light exists in dark (background, foreground, card, muted, popover, primary, secondary, accent, ring, border.*, bg.*, content.*). The dark theme is real but docs-only: marketing and auth ship light only, which the README and catalog state."
+     "grade": "partly",
+     "evidence": "The marketing light/dark resolutions are identical apart from one menu value: Dock ships no dark theme. The dark set tokenises the painted deep-blue islands (band text/ghost/ring roles, 10 tokens) — parity is partial by construction, not by omission."
     },
     "F8": {
      "grade": "meets",
-     "evidence": "Seven named family roles with real stacks (display Satoshi, body Inter, docs-body Inter, auth ui-sans-serif, docs-display, mono Paper Mono, mono-marketing), an 11-step size scale, six weights, eight line-heights and tracking tokens."
+     "evidence": "Three families with fallbacks (DockWebflowHome, DockWebflowNavigation, Roobert — Roobert-derived faces, licensed, not shipped), a measured ramp ~81/84 demo display down to 12.5/15 badges, weights 400-700 and line-heights captured per step; roles named in components."
     },
     "F9": {
-     "grade": "partly",
-     "evidence": "spacing.base (4px) is tokenised and the layout containers are measured, but no spacing ramp was captured; the marketing site pads with Tailwind defaults that were not enumerated."
+     "grade": "meets",
+     "evidence": "The declared --space-* scale (4-56px steps) is captured in core.space.* with css-var sources."
     },
     "F10": {
-     "grade": "partly",
-     "evidence": "Eight radius roles tokenised (button 8, field 6, card, nav-item 12, search-pill 9999, toggle, icon, xl); border widths exist only as measured.focus-outline-width, no border-width role set."
+     "grade": "meets",
+     "evidence": "core.radius.* carries the painted radii — 100px pills, 19px menu viewport, 18.9px artwork, 12px popular column, 8px menu items, 60px filter pill, 6px HubSpot fields, 4-6px Chakra controls — plus the 0.5px/1px ring and #dedfe3 hairline widths."
     },
     "F11": {
-     "grade": "meets",
-     "evidence": "Control heights at three sizes (button 32/40/lg, field 38, search pill, theme toggle, social icons), nav heights desktop+mobile, auth/register card widths, and focus ring width + offset in measured.focus-outline*."
+     "grade": "partly",
+     "evidence": "Control heights measured across components (nav 38px, CTAs 40-44px, fields, header 70/76px, panels 258/386px) in light.component.*; focus ring width/offset captured. No icon-size scale — icons were not extracted (declared layoutGaps)."
     },
     "F12": {
      "grade": "partly",
-     "evidence": "Three shadows tied to uses (shadow.field, shadow.field-focus ring, shadow.cta-hover halo) but no elevation level set; Dub's public surfaces are intentionally flat."
+     "evidence": "Dock paints elevation rarely — the pattern is the inset hairline ring, and the measured rings plus the plan-cta layered shadow are tokenised in core.measured.*. There is no 3-5 level shadow scale on the public surface; the declared --shadow-* vars were captured in raw/css-vars.json."
     },
     "F13": {
      "grade": "partly",
-     "evidence": "Four easings and five durations measured on real components (sidebar, menu-button, customer-card, topic-fast); prefers-reduced-motion behaviour was not recorded."
+     "evidence": "Declared motion captured: --duration-fast .14s, --duration-menu .24s and --ease-menu cubic-bezier(.22,1,.36,1) plus measured transitions per component. No reduced-motion behaviour was observable on the public surface."
     },
     "F14": {
      "grade": "partly",
-     "evidence": "Eight container widths, docs-sidebar 288px, search width, banner height, scroll-mt and assistant-sheet width measured; breakpoints and z-index layers were not tokenised."
+     "evidence": "Component boxes, header/container widths and the 1440/390 mobile reflow are measured (component.*), and the mobile panel/measures captured. No named breakpoint/grid/z tokens published by the Webflow layer."
     },
     "C1": {
      "grade": "partly",
-     "evidence": "63 components / 165 states. Checklist coverage: button, icon button, link, text field, text area, select (sales-topic), switch (billing-toggle), tabs (hero-tab), menu (nav-dropdown, m-menu-open), card, list row (docs-nav-item), table (cmp-table), badge (hero-badge) = 13 of 19. checkbox, radio, tooltip, dialog, toast, avatar are absent on the signed-out surfaces; the workspace checklist items live behind login."
+     "evidence": "A signed-out marketing surface: button (nav-cta, hero-cta, plan-cta, auth buttons), link, menu (mega-menu + mobile accordion), card (plan/customer/template/auth), badge (filter pill, trust badge), radio (filter-radio), text field (subdomain/signup/demo iframe) and FAQ list rows — ~9 of the 19 checklist components paint publicly; select lives inside the HubSpot iframe, the Turnstile checkbox stayed 1px, the rest never paint."
     },
     "C2": {
      "grade": "meets",
-     "evidence": "Every interactive component carries hover + focus-visible + pressed, fields carry focused + filled; disabled/loading/error do not apply on a marketing/auth surface that was never submitted and are listed as gaps."
+     "evidence": "Every interactive component carries default + hover + focus-visible + CDP-forced pressed; opened states for the mega-menu, mobile menu and FAQ rows; selected for the active filter pill. Disabled/error/loading honestly recorded as absent."
     },
     "C3": {
      "grade": "meets",
-     "evidence": "30 components given real keyboard focus; every one draws a measurable ring (browser #005fcc auto outline on marketing/auth, #155dfc on docs, black border + 1px ring on the email field). Two failed focus recordings documented in gaps."
+     "evidence": "Keyboard focus rings captured per component: 2px rgba(18,23,34,0.6) on marketing controls, 2px #0068f9 on pricing buttons, the ink ring on the blue band, Chakra focus on auth fields — tokenised as focus.ring.*."
     },
     "C4": {
      "grade": "partly",
-     "evidence": "Component entries write measured values and cross-reference the palette token where the value matches (e.g. '#155dfc color.brand.primary'); entries are not expressed purely as token specs."
+     "evidence": "components.md annotates colours with the matching palette token and the shared-values section names them; spec values in raw/component-tokens.json resolve to tokens. Some entries still quote measured values alongside (intentional, as evidence), so not every spec is tokens-only."
     },
     "P1": {
      "grade": "partly",
-     "evidence": "patterns.md covers app shell (nav/footer/docs chrome), forms (auth + sales fields and focus), feedback (docs feedback widget, FAQ accordion), search (docs pill), data display (cmp-table, pricing cards, demo panel) and onboarding-adjacent auth cards. Destructive confirmation, loading and error patterns do not exist signed out."
+     "evidence": "patterns.md covers the app shell (header/mega-menu/footer), the hero, pricing, index grids, the demo form and auth cards. Validation, empty/loading/error, destructive confirmation and toasts do not paint on the public surface — recorded as gaps, not patterns."
     },
     "A1": {
      "grade": "partly",
-     "evidence": "Six font families named with their real stacks and measured usage; no licence notes beyond the README's commercial-font caveat, and the icon set was not extracted (icons remain in crops/screenshots only, recorded as a layout gap)."
+     "evidence": "Fonts named with licence handling (Roobert/DockWebflow faces are licensed served fonts, not shipped; fallbacks declared). Icons were not extracted — declared in catalog layoutGaps and visible in crops/screenshots."
     },
     "K1": {
      "grade": "meets",
-     "evidence": "README lists every captured route, the measurement method, what to distrust (screenshots are 256-colour PNGs, dark is docs-only, workspace is a boundary), fonts and rebuild commands."
+     "evidence": "The README states what was captured (routes, widths, surfaces), how (headless Chromium, shadow-DOM piercing, iframe reads, CDP states, the two token layers), and a What-to-distrust section (the non-theme dark set, the two font/ink systems, hidden prompt fields, the 1px Turnstile, 256-colour screenshots)."
+    },
+    "V1": {
+     "grade": "partly",
+     "evidence": "The README's Do-and-don't section carries 10 evidence-linked principles (blue pill actions, band ghost states, inset rings, family-per-surface, measured washes) — beyond the 3-5 rubric ask, each with a crop/screenshot link."
     },
     "F15": {
      "grade": "meets",
-     "evidence": "Script: all 8 pairs pass 4.5:1 across 2 themes; lowest 4.54:1 light muted (light.content.subtle) on page (light.background)"
+     "evidence": "Script: all 8 pairs pass 4.5:1 across 2 themes; lowest 7.51:1 dark muted (core.color.brand.blue-light) on page (core.color.brand.blue-deep)"
     },
     "F16": {
      "grade": "meets",
-     "evidence": "Script: 276 of 276 tokens name their source"
+     "evidence": "Script: 138 of 138 tokens name their source"
     },
     "K2": {
      "grade": "meets",
@@ -11701,18 +11705,14 @@
      "grade": "na",
      "evidence": "Optional for a capture, and this product does not publish it."
     },
-    "V1": {
-     "grade": "na",
-     "evidence": "Optional for a capture, and this product does not publish it."
-    },
     "V2": {
      "grade": "na",
      "evidence": "Optional for a capture, and this product does not publish it."
     }
    },
-   "name": "Dub",
-   "goodFor": "Link-attribution marketing pages plus a real docs surface: a declared --bg-*/--content-*/--border-* + shadcn token layer on a #fafafa field with #000 pill buttons that paint a 4px #e5e5e5 hover halo, Satoshi 48/55.2 w500 display over Inter, 38px fields at 6px radius that take a black border plus 1px black ring on focus, and a Mintlify docs surface on a --gray-50..950 ramp with #155dfc accents, oklab color-mix washes and the site's only real dark theme",
-   "url": "https://dub.co",
+   "name": "Dock",
+   "goodFor": "Sales-collateral / enablement marketing plus a public demo form: a declared --ds-*/--color-* token layer on a white Webflow surface with #0068f9 blue 100px-pill actions (#0060eb hover, #005fe4 pressed), a #002fa6 deep-blue hero band with white-alpha ghost buttons, DockWebflow/Roobert type, 0.5px inset hairline rings, a shadow-DOM mega-menu, and a separate Chakra auth face (#4058ff, 4px radii, #1a202c)",
+   "url": "https://dock.us",
    "captured": "2026-11-13",
    "themes": [
     "light",
@@ -11725,5 +11725,5 @@
   }
  ],
  "base": "2026-10-16",
- "reviewMethod": "read the package (tokens.json, components.md, patterns.md, README, catalog entry) against scorecard/criteria.json web wording"
+ "reviewMethod": "reviewed against scorecard/criteria.json web wording from the capture evidence: tokens.json roles and sources, raw/components-computed.json states, components.md/patterns.md coverage, and the declared layoutGaps"
 }
