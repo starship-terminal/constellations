@@ -2028,37 +2028,117 @@
     }
    },
    "tracking": {
-    "": {
+    "0": {
      "var": "--base-letter-spacing-0",
      "type": "string",
      "source": "css-var --base-letter-spacing-0 declared on `:where(.prism-theme)`"
     },
-    "0": {
+    "10": {
+     "var": "--base-letter-spacing-10",
+     "type": "string",
+     "source": "css-var --base-letter-spacing-10 declared on `:where(.prism-theme)`"
+    },
+    "20": {
+     "var": "--base-letter-spacing-20",
+     "type": "string",
+     "source": "css-var --base-letter-spacing-20 declared on `:where(.prism-theme)`"
+    },
+    "30": {
+     "var": "--base-letter-spacing-30",
+     "type": "string",
+     "source": "css-var --base-letter-spacing-30 declared on `:where(.prism-theme)`"
+    },
+    "40": {
+     "var": "--base-letter-spacing-40",
+     "type": "string",
+     "source": "css-var --base-letter-spacing-40 declared on `:where(.prism-theme)`"
+    },
+    "50": {
+     "var": "--base-letter-spacing-50",
+     "type": "string",
+     "source": "css-var --base-letter-spacing-50 declared on `:where(.prism-theme)`"
+    },
+    "70": {
      "var": "--base-letter-spacing-70",
      "type": "string",
      "source": "css-var --base-letter-spacing-70 declared on `:where(.prism-theme)`"
     }
    },
    "lineHeight": {
-    "": {
-     "var": "--base-line-height-5",
-     "type": "dimension",
-     "source": "css-var --base-line-height-5 declared on `:where(.prism-theme)`"
-    },
     "0": {
-     "var": "--base-line-height-90",
+     "var": "--base-line-height-0",
      "type": "dimension",
-     "source": "css-var --base-line-height-90 declared on `:where(.prism-theme)`"
+     "source": "css-var --base-line-height-0 declared on `:where(.prism-theme)`"
     },
-    "30": {
+    "10": {
+     "var": "--base-line-height-10",
+     "type": "dimension",
+     "source": "css-var --base-line-height-10 declared on `:where(.prism-theme)`"
+    },
+    "130": {
      "var": "--base-line-height-130",
      "type": "dimension",
      "source": "css-var --base-line-height-130 declared on `:where(.prism-theme)`"
     },
+    "15": {
+     "var": "--base-line-height-15",
+     "type": "dimension",
+     "source": "css-var --base-line-height-15 declared on `:where(.prism-theme)`"
+    },
+    "20": {
+     "var": "--base-line-height-20",
+     "type": "dimension",
+     "source": "css-var --base-line-height-20 declared on `:where(.prism-theme)`"
+    },
+    "25": {
+     "var": "--base-line-height-25",
+     "type": "dimension",
+     "source": "css-var --base-line-height-25 declared on `:where(.prism-theme)`"
+    },
+    "30": {
+     "var": "--base-line-height-30",
+     "type": "dimension",
+     "source": "css-var --base-line-height-30 declared on `:where(.prism-theme)`"
+    },
+    "35": {
+     "var": "--base-line-height-35",
+     "type": "dimension",
+     "source": "css-var --base-line-height-35 declared on `:where(.prism-theme)`"
+    },
+    "40": {
+     "var": "--base-line-height-40",
+     "type": "dimension",
+     "source": "css-var --base-line-height-40 declared on `:where(.prism-theme)`"
+    },
     "5": {
+     "var": "--base-line-height-5",
+     "type": "dimension",
+     "source": "css-var --base-line-height-5 declared on `:where(.prism-theme)`"
+    },
+    "50": {
+     "var": "--base-line-height-50",
+     "type": "dimension",
+     "source": "css-var --base-line-height-50 declared on `:where(.prism-theme)`"
+    },
+    "55": {
      "var": "--base-line-height-55",
      "type": "dimension",
      "source": "css-var --base-line-height-55 declared on `:where(.prism-theme)`"
+    },
+    "60": {
+     "var": "--base-line-height-60",
+     "type": "dimension",
+     "source": "css-var --base-line-height-60 declared on `:where(.prism-theme)`"
+    },
+    "70": {
+     "var": "--base-line-height-70",
+     "type": "dimension",
+     "source": "css-var --base-line-height-70 declared on `:where(.prism-theme)`"
+    },
+    "90": {
+     "var": "--base-line-height-90",
+     "type": "dimension",
+     "source": "css-var --base-line-height-90 declared on `:where(.prism-theme)`"
     }
    },
    "$description": "DD Norms (proprietary, served from web-assets.cdn4dd.com) over the system stack: --base-font-* families (default = brand = DD Norms, condensed for campaign display), the --base-font-size-* 28-step scale in px, weights 300-800, leading and tracking."
@@ -2272,77 +2352,77 @@
     }
    },
    "easing": {
-    "ebug-abrupt": {
+    "debug-abrupt": {
      "var": "--base-motion-easing-debug-abrupt",
      "type": "cubicBezier",
      "source": "css-var --base-motion-easing-debug-abrupt declared on `:where(.prism-theme)`"
     },
-    "uto-default": {
+    "auto-default": {
      "var": "--usage-motion-easing-auto-default",
      "type": "cubicBezier",
      "source": "css-var --usage-motion-easing-auto-default declared on `:where(.prism-theme)`"
     },
-    "uto-exit": {
+    "auto-exit": {
      "var": "--usage-motion-easing-auto-exit",
      "type": "cubicBezier",
      "source": "css-var --usage-motion-easing-auto-exit declared on `:where(.prism-theme)`"
     },
-    "unctional-default": {
+    "functional-default": {
      "var": "--usage-motion-easing-functional-default",
      "type": "cubicBezier",
      "source": "css-var --usage-motion-easing-functional-default declared on `:where(.prism-theme)`"
     },
-    "unctional-exit": {
+    "functional-exit": {
      "var": "--usage-motion-easing-functional-exit",
      "type": "cubicBezier",
      "source": "css-var --usage-motion-easing-functional-exit declared on `:where(.prism-theme)`"
     },
-    "unctional-smooth-finish": {
+    "functional-smooth-finish": {
      "var": "--usage-motion-easing-functional-smooth-finish",
      "type": "cubicBezier",
      "source": "css-var --usage-motion-easing-functional-smooth-finish declared on `:where(.prism-theme)`"
     },
-    "unctional-subtle-default": {
+    "functional-subtle-default": {
      "var": "--usage-motion-easing-functional-subtle-default",
      "type": "cubicBezier",
      "source": "css-var --usage-motion-easing-functional-subtle-default declared on `:where(.prism-theme)`"
     },
-    "unctional-subtle-enter": {
+    "functional-subtle-enter": {
      "var": "--usage-motion-easing-functional-subtle-enter",
      "type": "cubicBezier",
      "source": "css-var --usage-motion-easing-functional-subtle-enter declared on `:where(.prism-theme)`"
     },
-    "unctional-subtle-exit": {
+    "functional-subtle-exit": {
      "var": "--usage-motion-easing-functional-subtle-exit",
      "type": "cubicBezier",
      "source": "css-var --usage-motion-easing-functional-subtle-exit declared on `:where(.prism-theme)`"
     },
-    "inear": {
+    "linear": {
      "var": "--usage-motion-easing-linear",
      "type": "cubicBezier",
      "source": "css-var --usage-motion-easing-linear declared on `:where(.prism-theme)`"
     },
-    "pring-in-default": {
+    "spring-in-default": {
      "var": "--usage-motion-easing-spring-in-default",
      "type": "cubicBezier",
      "source": "css-var --usage-motion-easing-spring-in-default declared on `:where(.prism-theme)`"
     },
-    "pring-out-default": {
+    "spring-out-default": {
      "var": "--usage-motion-easing-spring-out-default",
      "type": "cubicBezier",
      "source": "css-var --usage-motion-easing-spring-out-default declared on `:where(.prism-theme)`"
     },
-    "ubtle-default": {
+    "subtle-default": {
      "var": "--usage-motion-easing-subtle-default",
      "type": "cubicBezier",
      "source": "css-var --usage-motion-easing-subtle-default declared on `:where(.prism-theme)`"
     },
-    "ubtle-enter": {
+    "subtle-enter": {
      "var": "--usage-motion-easing-subtle-enter",
      "type": "cubicBezier",
      "source": "css-var --usage-motion-easing-subtle-enter declared on `:where(.prism-theme)`"
     },
-    "ubtle-exit": {
+    "subtle-exit": {
      "var": "--usage-motion-easing-subtle-exit",
      "type": "cubicBezier",
      "source": "css-var --usage-motion-easing-subtle-exit declared on `:where(.prism-theme)`"
@@ -2714,9 +2794,9 @@
     "$value": {
      "fontFamily": "{font.family.default}",
      "fontSize": "{font.size.25}",
-     "lineHeight": "{font.lineHeight.0}",
+     "lineHeight": "{font.lineHeight.20}",
      "fontWeight": 500,
-     "letterSpacing": "{font.tracking.0}"
+     "letterSpacing": "{font.tracking.70}"
     },
     "$type": "typography",
     "$extensions": {
@@ -2727,9 +2807,9 @@
     "$value": {
      "fontFamily": "{font.family.default}",
      "fontSize": "{font.size.25}",
-     "lineHeight": "{font.lineHeight.0}",
+     "lineHeight": "{font.lineHeight.20}",
      "fontWeight": 700,
-     "letterSpacing": "{font.tracking.0}"
+     "letterSpacing": "{font.tracking.70}"
     },
     "$type": "typography",
     "$extensions": {
@@ -2740,9 +2820,9 @@
     "$value": {
      "fontFamily": "{font.family.default}",
      "fontSize": "{font.size.20}",
-     "lineHeight": "{font.lineHeight.5}",
+     "lineHeight": "{font.lineHeight.15}",
      "fontWeight": 500,
-     "letterSpacing": "{font.tracking.0}"
+     "letterSpacing": "{font.tracking.70}"
     },
     "$type": "typography",
     "$extensions": {
@@ -2753,9 +2833,9 @@
     "$value": {
      "fontFamily": "{font.family.default}",
      "fontSize": "{font.size.20}",
-     "lineHeight": "{font.lineHeight.5}",
+     "lineHeight": "{font.lineHeight.15}",
      "fontWeight": 700,
-     "letterSpacing": "{font.tracking.0}"
+     "letterSpacing": "{font.tracking.70}"
     },
     "$type": "typography",
     "$extensions": {
@@ -2766,9 +2846,9 @@
     "$value": {
      "fontFamily": "{font.family.default}",
      "fontSize": "{font.size.15}",
-     "lineHeight": "{font.lineHeight.0}",
+     "lineHeight": "{font.lineHeight.10}",
      "fontWeight": 500,
-     "letterSpacing": "{font.tracking.0}"
+     "letterSpacing": "{font.tracking.70}"
     },
     "$type": "typography",
     "$extensions": {
@@ -2779,9 +2859,9 @@
     "$value": {
      "fontFamily": "{font.family.default}",
      "fontSize": "{font.size.15}",
-     "lineHeight": "{font.lineHeight.0}",
+     "lineHeight": "{font.lineHeight.10}",
      "fontWeight": 700,
-     "letterSpacing": "{font.tracking.0}"
+     "letterSpacing": "{font.tracking.70}"
     },
     "$type": "typography",
     "$extensions": {
@@ -2792,9 +2872,9 @@
     "$value": {
      "fontFamily": "{font.family.brand}",
      "fontSize": "{font.size.60}",
-     "lineHeight": "{font.lineHeight.0}",
+     "lineHeight": "{font.lineHeight.60}",
      "fontWeight": 700,
-     "letterSpacing": "{font.tracking.0}"
+     "letterSpacing": "{font.tracking.70}"
     },
     "$type": "typography",
     "$extensions": {
@@ -2805,9 +2885,9 @@
     "$value": {
      "fontFamily": "{font.family.brand}",
      "fontSize": "{font.size.40}",
-     "lineHeight": "{font.lineHeight.0}",
+     "lineHeight": "{font.lineHeight.30}",
      "fontWeight": 700,
-     "letterSpacing": "{font.tracking.0}"
+     "letterSpacing": "{font.tracking.70}"
     },
     "$type": "typography",
     "$extensions": {
@@ -2818,9 +2898,9 @@
     "$value": {
      "fontFamily": "{font.family.brand}",
      "fontSize": "{font.size.60}",
-     "lineHeight": "{font.lineHeight.0}",
+     "lineHeight": "{font.lineHeight.60}",
      "fontWeight": 700,
-     "letterSpacing": "{font.tracking.0}"
+     "letterSpacing": "{font.tracking.70}"
     },
     "$type": "typography",
     "$extensions": {
@@ -2831,9 +2911,9 @@
     "$value": {
      "fontFamily": "{font.family.brand}",
      "fontSize": "{font.size.40}",
-     "lineHeight": "{font.lineHeight.0}",
+     "lineHeight": "{font.lineHeight.30}",
      "fontWeight": 700,
-     "letterSpacing": "{font.tracking.0}"
+     "letterSpacing": "{font.tracking.70}"
     },
     "$type": "typography",
     "$extensions": {
@@ -2844,9 +2924,9 @@
     "$value": {
      "fontFamily": "{font.family.brand}",
      "fontSize": "{font.size.60}",
-     "lineHeight": "{font.lineHeight.0}",
+     "lineHeight": "{font.lineHeight.60}",
      "fontWeight": 700,
-     "letterSpacing": "{font.tracking.0}"
+     "letterSpacing": "{font.tracking.70}"
     },
     "$type": "typography",
     "$extensions": {
@@ -2857,9 +2937,9 @@
     "$value": {
      "fontFamily": "{font.family.default}",
      "fontSize": "{font.size.25}",
-     "lineHeight": "{font.lineHeight.0}",
+     "lineHeight": "{font.lineHeight.20}",
      "fontWeight": 500,
-     "letterSpacing": "{font.tracking.0}"
+     "letterSpacing": "{font.tracking.70}"
     },
     "$type": "typography",
     "$extensions": {
@@ -2870,9 +2950,9 @@
     "$value": {
      "fontFamily": "{font.family.default}",
      "fontSize": "{font.size.25}",
-     "lineHeight": "{font.lineHeight.0}",
+     "lineHeight": "{font.lineHeight.20}",
      "fontWeight": 700,
-     "letterSpacing": "{font.tracking.0}"
+     "letterSpacing": "{font.tracking.70}"
     },
     "$type": "typography",
     "$extensions": {
@@ -2883,9 +2963,9 @@
     "$value": {
      "fontFamily": "{font.family.default}",
      "fontSize": "{font.size.20}",
-     "lineHeight": "{font.lineHeight.5}",
+     "lineHeight": "{font.lineHeight.15}",
      "fontWeight": 500,
-     "letterSpacing": "{font.tracking.0}"
+     "letterSpacing": "{font.tracking.70}"
     },
     "$type": "typography",
     "$extensions": {
@@ -2896,9 +2976,9 @@
     "$value": {
      "fontFamily": "{font.family.default}",
      "fontSize": "{font.size.20}",
-     "lineHeight": "{font.lineHeight.5}",
+     "lineHeight": "{font.lineHeight.15}",
      "fontWeight": 700,
-     "letterSpacing": "{font.tracking.0}"
+     "letterSpacing": "{font.tracking.70}"
     },
     "$type": "typography",
     "$extensions": {
@@ -2909,9 +2989,9 @@
     "$value": {
      "fontFamily": "{font.family.default}",
      "fontSize": "{font.size.15}",
-     "lineHeight": "{font.lineHeight.0}",
+     "lineHeight": "{font.lineHeight.10}",
      "fontWeight": 500,
-     "letterSpacing": "{font.tracking.0}"
+     "letterSpacing": "{font.tracking.70}"
     },
     "$type": "typography",
     "$extensions": {
@@ -2922,9 +3002,9 @@
     "$value": {
      "fontFamily": "{font.family.default}",
      "fontSize": "{font.size.15}",
-     "lineHeight": "{font.lineHeight.0}",
+     "lineHeight": "{font.lineHeight.10}",
      "fontWeight": 700,
-     "letterSpacing": "{font.tracking.0}"
+     "letterSpacing": "{font.tracking.70}"
     },
     "$type": "typography",
     "$extensions": {
@@ -2935,9 +3015,9 @@
     "$value": {
      "fontFamily": "{font.family.default}",
      "fontSize": "{font.size.10}",
-     "lineHeight": "{font.lineHeight.}",
+     "lineHeight": "{font.lineHeight.5}",
      "fontWeight": 500,
-     "letterSpacing": "{font.tracking.0}"
+     "letterSpacing": "{font.tracking.70}"
     },
     "$type": "typography",
     "$extensions": {
@@ -2948,9 +3028,9 @@
     "$value": {
      "fontFamily": "{font.family.default}",
      "fontSize": "{font.size.10}",
-     "lineHeight": "{font.lineHeight.}",
+     "lineHeight": "{font.lineHeight.5}",
      "fontWeight": 700,
-     "letterSpacing": "{font.tracking.0}"
+     "letterSpacing": "{font.tracking.70}"
     },
     "$type": "typography",
     "$extensions": {
@@ -2961,9 +3041,9 @@
     "$value": {
      "fontFamily": "{font.family.default}",
      "fontSize": "{font.size.25}",
-     "lineHeight": "{font.lineHeight.0}",
+     "lineHeight": "{font.lineHeight.20}",
      "fontWeight": 700,
-     "letterSpacing": "{font.tracking.0}"
+     "letterSpacing": "{font.tracking.70}"
     },
     "$type": "typography",
     "$extensions": {
@@ -2974,9 +3054,9 @@
     "$value": {
      "fontFamily": "{font.family.default}",
      "fontSize": "{font.size.20}",
-     "lineHeight": "{font.lineHeight.5}",
+     "lineHeight": "{font.lineHeight.15}",
      "fontWeight": 700,
-     "letterSpacing": "{font.tracking.0}"
+     "letterSpacing": "{font.tracking.70}"
     },
     "$type": "typography",
     "$extensions": {
@@ -2987,9 +3067,9 @@
     "$value": {
      "fontFamily": "{font.family.default}",
      "fontSize": "{font.size.15}",
-     "lineHeight": "{font.lineHeight.0}",
+     "lineHeight": "{font.lineHeight.10}",
      "fontWeight": 700,
-     "letterSpacing": "{font.tracking.0}"
+     "letterSpacing": "{font.tracking.70}"
     },
     "$type": "typography",
     "$extensions": {
@@ -3000,9 +3080,9 @@
     "$value": {
      "fontFamily": "{font.family.brand}",
      "fontSize": "{font.size.30}",
-     "lineHeight": "{font.lineHeight.0}",
+     "lineHeight": "{font.lineHeight.20}",
      "fontWeight": 700,
-     "letterSpacing": "{font.tracking.0}"
+     "letterSpacing": "{font.tracking.70}"
     },
     "$type": "typography",
     "$extensions": {
@@ -3013,9 +3093,9 @@
     "$value": {
      "fontFamily": "{font.family.brand}",
      "fontSize": "{font.size.30}",
-     "lineHeight": "{font.lineHeight.0}",
+     "lineHeight": "{font.lineHeight.20}",
      "fontWeight": 700,
-     "letterSpacing": "{font.tracking.0}"
+     "letterSpacing": "{font.tracking.70}"
     },
     "$type": "typography",
     "$extensions": {
@@ -3026,9 +3106,9 @@
     "$value": {
      "fontFamily": "{font.family.brand}",
      "fontSize": "{font.size.25}",
-     "lineHeight": "{font.lineHeight.5}",
+     "lineHeight": "{font.lineHeight.15}",
      "fontWeight": 700,
-     "letterSpacing": "{font.tracking.0}"
+     "letterSpacing": "{font.tracking.70}"
     },
     "$type": "typography",
     "$extensions": {
@@ -3041,94 +3121,94 @@
  "light": {
   "comp": {
    "radius": {
-    "anner": {
+    "banner": {
      "value": "{radius.medium}",
      "type": "dimension",
      "source": "css-var --comp-border-radius-banner declared on `:where(.prism-theme)` → `var(--usage-border-radius-medium)` (prism alias)"
     },
-    "utton": {
+    "button": {
      "value": "{radius.full}",
      "type": "dimension",
      "source": "css-var --comp-border-radius-button declared on `:where(.prism-theme)` → `var(--usage-border-radius-full)` (prism alias)"
     },
-    "hat": {
+    "chat": {
      "value": "{size.5}",
      "type": "dimension",
      "source": "css-var --comp-border-radius-chat declared on `:where(.prism-theme)` → `var(--base-size-5)` (prism alias)"
     },
-    "ield-large": {
+    "field-large": {
      "value": "{radius.medium}",
      "type": "dimension",
      "source": "css-var --comp-border-radius-field-large declared on `:where(.prism-theme)` → `var(--usage-border-radius-medium)` (prism alias)"
     },
-    "ield-medium": {
+    "field-medium": {
      "value": "{radius.medium}",
      "type": "dimension",
      "source": "css-var --comp-border-radius-field-medium declared on `:where(.prism-theme)` → `var(--usage-border-radius-medium)` (prism alias)"
     },
-    "ield-small": {
+    "field-small": {
      "value": "{radius.medium}",
      "type": "dimension",
      "source": "css-var --comp-border-radius-field-small declared on `:where(.prism-theme)` → `var(--usage-border-radius-medium)` (prism alias)"
     },
-    "con-button": {
+    "icon-button": {
      "value": "{radius.full}",
      "type": "dimension",
      "source": "css-var --comp-border-radius-icon-button declared on `:where(.prism-theme)` → `var(--usage-border-radius-full)` (prism alias)"
     },
-    "ist-cell-container": {
+    "list-cell-container": {
      "value": "{radius.large}",
      "type": "dimension",
      "source": "css-var --comp-border-radius-list-cell-container declared on `:where(.prism-theme)` → `var(--usage-border-radius-large)` (prism alias)"
     },
-    "ist-cell-single": {
+    "list-cell-single": {
      "value": "{radius.none}",
      "type": "dimension",
      "source": "css-var --comp-border-radius-list-cell-single declared on `:where(.prism-theme)` → `var(--usage-border-radius-none)` (prism alias)"
     },
-    "agination-button": {
+    "pagination-button": {
      "value": "{radius.full}",
      "type": "dimension",
      "source": "css-var --comp-border-radius-pagination-button declared on `:where(.prism-theme)` → `var(--usage-border-radius-full)` (prism alias)"
     },
-    "ag": {
+    "tag": {
      "value": "{radius.small}",
      "type": "dimension",
      "source": "css-var --comp-border-radius-tag declared on `:where(.prism-theme)` → `var(--usage-border-radius-small)` (prism alias)"
     },
-    "oast": {
+    "toast": {
      "value": "{radius.medium}",
      "type": "dimension",
      "source": "css-var --comp-border-radius-toast declared on `:where(.prism-theme)` → `var(--usage-border-radius-medium)` (prism alias)"
     },
-    "ooltip": {
+    "tooltip": {
      "value": "{radius.medium}",
      "type": "dimension",
      "source": "css-var --comp-border-radius-tooltip declared on `:where(.prism-theme)` → `var(--usage-border-radius-medium)` (prism alias)"
     }
    },
    "borderWidth": {
-    "utton-outline-default": {
+    "button-outline-default": {
      "value": "{borderWidth.default}",
      "type": "dimension",
      "source": "css-var --comp-border-width-button-outline-default declared on `:where(.prism-theme)` → `var(--usage-border-width-default)` (prism alias)"
     },
-    "utton-toggle-contained-selected": {
+    "button-toggle-contained-selected": {
      "value": "{borderWidth.strong}",
      "type": "dimension",
      "source": "css-var --comp-border-width-button-toggle-contained-selected declared on `:where(.prism-theme)` → `var(--usage-border-width-strong)` (prism alias)"
     },
-    "utton-toggle-group-selected": {
+    "button-toggle-group-selected": {
      "value": "{borderWidth.strong}",
      "type": "dimension",
      "source": "css-var --comp-border-width-button-toggle-group-selected declared on `:where(.prism-theme)` → `var(--usage-border-width-strong)` (prism alias)"
     },
-    "ield-default": {
+    "field-default": {
      "value": "{borderWidth.default}",
      "type": "dimension",
      "source": "css-var --comp-border-width-field-default declared on `:where(.prism-theme)` → `var(--usage-border-width-default)` (prism alias)"
     },
-    "ag-default": {
+    "tag-default": {
      "var": "--comp-border-width-tag-default",
      "type": "dimension",
      "source": "css-var --comp-border-width-tag-default declared on `:where(.prism-theme)`"
@@ -7063,19 +7143,19 @@
    },
    "motion": {
     "duration": {
-     "rogress-bar-default-max": {
+     "progress-bar-default-max": {
       "var": "--comp-motion-duration-progress-bar-default-max",
       "type": "duration",
       "source": "css-var --comp-motion-duration-progress-bar-default-max declared on `:where(.prism-theme)`"
      },
-     "rogress-bar-default-min": {
+     "progress-bar-default-min": {
       "var": "--comp-motion-duration-progress-bar-default-min",
       "type": "duration",
       "source": "css-var --comp-motion-duration-progress-bar-default-min declared on `:where(.prism-theme)`"
      }
     },
     "easing": {
-     "ogress-bar-default": {
+     "progress-bar-default": {
       "var": "--comp-motion-easing-progress-bar-default",
       "type": "cubicBezier",
       "source": "css-var --comp-motion-easing-progress-bar-default declared on `:where(.prism-theme)`"
@@ -7592,14 +7672,14 @@
        },
        "letter": {
         "spacing": {
-         "value": "{font.tracking.0}",
+         "value": "{font.tracking.70}",
          "type": "string",
          "source": "css-var --comp-type-button-label-large-letter-spacing declared on `:where(.prism-theme)` → `var(--base-letter-spacing-70)` (prism alias)"
         }
        },
        "line": {
         "height": {
-         "value": "{font.lineHeight.0}",
+         "value": "{font.lineHeight.20}",
          "type": "dimension",
          "source": "css-var --comp-type-button-label-large-line-height declared on `:where(.prism-theme)` → `var(--base-line-height-20)` (prism alias)"
         }
@@ -7637,14 +7717,14 @@
        },
        "letter": {
         "spacing": {
-         "value": "{font.tracking.0}",
+         "value": "{font.tracking.70}",
          "type": "string",
          "source": "css-var --comp-type-button-label-medium-letter-spacing declared on `:where(.prism-theme)` → `var(--base-letter-spacing-70)` (prism alias)"
         }
        },
        "line": {
         "height": {
-         "value": "{font.lineHeight.5}",
+         "value": "{font.lineHeight.15}",
          "type": "dimension",
          "source": "css-var --comp-type-button-label-medium-line-height declared on `:where(.prism-theme)` → `var(--base-line-height-15)` (prism alias)"
         }
@@ -7682,14 +7762,14 @@
        },
        "letter": {
         "spacing": {
-         "value": "{font.tracking.0}",
+         "value": "{font.tracking.70}",
          "type": "string",
          "source": "css-var --comp-type-button-label-small-letter-spacing declared on `:where(.prism-theme)` → `var(--base-letter-spacing-70)` (prism alias)"
         }
        },
        "line": {
         "height": {
-         "value": "{font.lineHeight.0}",
+         "value": "{font.lineHeight.10}",
          "type": "dimension",
          "source": "css-var --comp-type-button-label-small-line-height declared on `:where(.prism-theme)` → `var(--base-line-height-10)` (prism alias)"
         }
@@ -8149,14 +8229,14 @@
           },
           "letter": {
            "spacing": {
-            "value": "{font.tracking.0}",
+            "value": "{font.tracking.70}",
             "type": "string",
             "source": "css-var --comp-type-button-toggle-uncontained-label-selected-large-letter-spacing declared on `:where(.prism-theme)` → `var(--base-letter-spacing-70)` (prism alias)"
            }
           },
           "line": {
            "height": {
-            "value": "{font.lineHeight.0}",
+            "value": "{font.lineHeight.20}",
             "type": "dimension",
             "source": "css-var --comp-type-button-toggle-uncontained-label-selected-large-line-height declared on `:where(.prism-theme)` → `var(--base-line-height-20)` (prism alias)"
            }
@@ -8194,14 +8274,14 @@
           },
           "letter": {
            "spacing": {
-            "value": "{font.tracking.0}",
+            "value": "{font.tracking.70}",
             "type": "string",
             "source": "css-var --comp-type-button-toggle-uncontained-label-selected-medium-letter-spacing declared on `:where(.prism-theme)` → `var(--base-letter-spacing-70)` (prism alias)"
            }
           },
           "line": {
            "height": {
-            "value": "{font.lineHeight.5}",
+            "value": "{font.lineHeight.15}",
             "type": "dimension",
             "source": "css-var --comp-type-button-toggle-uncontained-label-selected-medium-line-height declared on `:where(.prism-theme)` → `var(--base-line-height-15)` (prism alias)"
            }
@@ -8239,14 +8319,14 @@
           },
           "letter": {
            "spacing": {
-            "value": "{font.tracking.0}",
+            "value": "{font.tracking.70}",
             "type": "string",
             "source": "css-var --comp-type-button-toggle-uncontained-label-selected-small-letter-spacing declared on `:where(.prism-theme)` → `var(--base-letter-spacing-70)` (prism alias)"
            }
           },
           "line": {
            "height": {
-            "value": "{font.lineHeight.0}",
+            "value": "{font.lineHeight.10}",
             "type": "dimension",
             "source": "css-var --comp-type-button-toggle-uncontained-label-selected-small-line-height declared on `:where(.prism-theme)` → `var(--base-line-height-10)` (prism alias)"
            }
@@ -8286,14 +8366,14 @@
           },
           "letter": {
            "spacing": {
-            "value": "{font.tracking.0}",
+            "value": "{font.tracking.70}",
             "type": "string",
             "source": "css-var --comp-type-button-toggle-uncontained-label-unselected-large-letter-spacing declared on `:where(.prism-theme)` → `var(--base-letter-spacing-70)` (prism alias)"
            }
           },
           "line": {
            "height": {
-            "value": "{font.lineHeight.0}",
+            "value": "{font.lineHeight.20}",
             "type": "dimension",
             "source": "css-var --comp-type-button-toggle-uncontained-label-unselected-large-line-height declared on `:where(.prism-theme)` → `var(--base-line-height-20)` (prism alias)"
            }
@@ -8331,14 +8411,14 @@
           },
           "letter": {
            "spacing": {
-            "value": "{font.tracking.0}",
+            "value": "{font.tracking.70}",
             "type": "string",
             "source": "css-var --comp-type-button-toggle-uncontained-label-unselected-medium-letter-spacing declared on `:where(.prism-theme)` → `var(--base-letter-spacing-70)` (prism alias)"
            }
           },
           "line": {
            "height": {
-            "value": "{font.lineHeight.5}",
+            "value": "{font.lineHeight.15}",
             "type": "dimension",
             "source": "css-var --comp-type-button-toggle-uncontained-label-unselected-medium-line-height declared on `:where(.prism-theme)` → `var(--base-line-height-15)` (prism alias)"
            }
@@ -8376,14 +8456,14 @@
           },
           "letter": {
            "spacing": {
-            "value": "{font.tracking.0}",
+            "value": "{font.tracking.70}",
             "type": "string",
             "source": "css-var --comp-type-button-toggle-uncontained-label-unselected-small-letter-spacing declared on `:where(.prism-theme)` → `var(--base-letter-spacing-70)` (prism alias)"
            }
           },
           "line": {
            "height": {
-            "value": "{font.lineHeight.0}",
+            "value": "{font.lineHeight.10}",
             "type": "dimension",
             "source": "css-var --comp-type-button-toggle-uncontained-label-unselected-small-line-height declared on `:where(.prism-theme)` → `var(--base-line-height-10)` (prism alias)"
            }
@@ -8803,14 +8883,14 @@
         },
         "letter": {
          "spacing": {
-          "value": "{font.tracking.0}",
+          "value": "{font.tracking.70}",
           "type": "string",
           "source": "css-var --comp-type-tag-label-ghost-large-letter-spacing declared on `:where(.prism-theme)` → `var(--base-letter-spacing-70)` (prism alias)"
          }
         },
         "line": {
          "height": {
-          "value": "{font.lineHeight.0}",
+          "value": "{font.lineHeight.10}",
           "type": "dimension",
           "source": "css-var --comp-type-tag-label-ghost-large-line-height declared on `:where(.prism-theme)` → `var(--base-line-height-10)` (prism alias)"
          }
@@ -8848,14 +8928,14 @@
         },
         "letter": {
          "spacing": {
-          "value": "{font.tracking.0}",
+          "value": "{font.tracking.70}",
           "type": "string",
           "source": "css-var --comp-type-tag-label-ghost-medium-letter-spacing declared on `:where(.prism-theme)` → `var(--base-letter-spacing-70)` (prism alias)"
          }
         },
         "line": {
          "height": {
-          "value": "{font.lineHeight.0}",
+          "value": "{font.lineHeight.10}",
           "type": "dimension",
           "source": "css-var --comp-type-tag-label-ghost-medium-line-height declared on `:where(.prism-theme)` → `var(--base-line-height-10)` (prism alias)"
          }
@@ -8893,14 +8973,14 @@
         },
         "letter": {
          "spacing": {
-          "value": "{font.tracking.0}",
+          "value": "{font.tracking.70}",
           "type": "string",
           "source": "css-var --comp-type-tag-label-ghost-small-letter-spacing declared on `:where(.prism-theme)` → `var(--base-letter-spacing-70)` (prism alias)"
          }
         },
         "line": {
          "height": {
-          "value": "{font.lineHeight.}",
+          "value": "{font.lineHeight.5}",
           "type": "dimension",
           "source": "css-var --comp-type-tag-label-ghost-small-line-height declared on `:where(.prism-theme)` → `var(--base-line-height-5)` (prism alias)"
          }
@@ -8939,14 +9019,14 @@
        },
        "letter": {
         "spacing": {
-         "value": "{font.tracking.0}",
+         "value": "{font.tracking.70}",
          "type": "string",
          "source": "css-var --comp-type-tag-label-large-letter-spacing declared on `:where(.prism-theme)` → `var(--base-letter-spacing-70)` (prism alias)"
         }
        },
        "line": {
         "height": {
-         "value": "{font.lineHeight.0}",
+         "value": "{font.lineHeight.10}",
          "type": "dimension",
          "source": "css-var --comp-type-tag-label-large-line-height declared on `:where(.prism-theme)` → `var(--base-line-height-10)` (prism alias)"
         }
@@ -8984,14 +9064,14 @@
        },
        "letter": {
         "spacing": {
-         "value": "{font.tracking.0}",
+         "value": "{font.tracking.70}",
          "type": "string",
          "source": "css-var --comp-type-tag-label-medium-letter-spacing declared on `:where(.prism-theme)` → `var(--base-letter-spacing-70)` (prism alias)"
         }
        },
        "line": {
         "height": {
-         "value": "{font.lineHeight.0}",
+         "value": "{font.lineHeight.10}",
          "type": "dimension",
          "source": "css-var --comp-type-tag-label-medium-line-height declared on `:where(.prism-theme)` → `var(--base-line-height-10)` (prism alias)"
         }
@@ -9029,14 +9109,14 @@
        },
        "letter": {
         "spacing": {
-         "value": "{font.tracking.0}",
+         "value": "{font.tracking.70}",
          "type": "string",
          "source": "css-var --comp-type-tag-label-small-letter-spacing declared on `:where(.prism-theme)` → `var(--base-letter-spacing-70)` (prism alias)"
         }
        },
        "line": {
         "height": {
-         "value": "{font.lineHeight.}",
+         "value": "{font.lineHeight.5}",
          "type": "dimension",
          "source": "css-var --comp-type-tag-label-small-line-height declared on `:where(.prism-theme)` → `var(--base-line-height-5)` (prism alias)"
         }
@@ -9075,14 +9155,14 @@
         },
         "letter": {
          "spacing": {
-          "value": "{font.tracking.0}",
+          "value": "{font.tracking.70}",
           "type": "string",
           "source": "css-var --comp-type-tag-label-x-small-letter-spacing declared on `:where(.prism-theme)` → `var(--base-letter-spacing-70)` (prism alias)"
          }
         },
         "line": {
          "height": {
-          "value": "{font.lineHeight.}",
+          "value": "{font.lineHeight.0}",
           "type": "dimension",
           "source": "css-var --comp-type-tag-label-x-small-line-height declared on `:where(.prism-theme)` → `var(--base-line-height-0)` (prism alias)"
          }
@@ -10844,59 +10924,59 @@
    },
    "tracking": {
     "large": {
-     "value": "{font.tracking.0}",
+     "value": "{font.tracking.70}",
      "type": "string",
      "source": "css-var --usage-letter-spacing-large declared on `:where(.prism-theme)` → `var(--base-letter-spacing-70)` (prism alias)"
     },
     "medium": {
-     "value": "{font.tracking.0}",
+     "value": "{font.tracking.70}",
      "type": "string",
      "source": "css-var --usage-letter-spacing-medium declared on `:where(.prism-theme)` → `var(--base-letter-spacing-70)` (prism alias)"
     },
     "small": {
-     "value": "{font.tracking.0}",
+     "value": "{font.tracking.70}",
      "type": "string",
      "source": "css-var --usage-letter-spacing-small declared on `:where(.prism-theme)` → `var(--base-letter-spacing-70)` (prism alias)"
     }
    },
    "lineHeight": {
     "large": {
-     "value": "{font.lineHeight.5}",
+     "value": "{font.lineHeight.15}",
      "type": "dimension",
      "source": "css-var --usage-line-height-large declared on `:where(.prism-theme)` → `var(--base-line-height-15)` (prism alias)"
     },
     "medium": {
-     "value": "{font.lineHeight.0}",
+     "value": "{font.lineHeight.20}",
      "type": "dimension",
      "source": "css-var --usage-line-height-medium declared on `:where(.prism-theme)` → `var(--base-line-height-20)` (prism alias)"
     },
     "small": {
-     "value": "{font.lineHeight.5}",
+     "value": "{font.lineHeight.15}",
      "type": "dimension",
      "source": "css-var --usage-line-height-small declared on `:where(.prism-theme)` → `var(--base-line-height-15)` (prism alias)"
     },
     "x-large": {
-     "value": "{font.lineHeight.0}",
+     "value": "{font.lineHeight.20}",
      "type": "dimension",
      "source": "css-var --usage-line-height-x-large declared on `:where(.prism-theme)` → `var(--base-line-height-20)` (prism alias)"
     },
     "x-small": {
-     "value": "{font.lineHeight.0}",
+     "value": "{font.lineHeight.10}",
      "type": "dimension",
      "source": "css-var --usage-line-height-x-small declared on `:where(.prism-theme)` → `var(--base-line-height-10)` (prism alias)"
     },
     "xx-large": {
-     "value": "{font.lineHeight.0}",
+     "value": "{font.lineHeight.30}",
      "type": "dimension",
      "source": "css-var --usage-line-height-xx-large declared on `:where(.prism-theme)` → `var(--base-line-height-30)` (prism alias)"
     },
     "xx-small": {
-     "value": "{font.lineHeight.}",
+     "value": "{font.lineHeight.5}",
      "type": "dimension",
      "source": "css-var --usage-line-height-xx-small declared on `:where(.prism-theme)` → `var(--base-line-height-5)` (prism alias)"
     },
     "xxx-large": {
-     "value": "{font.lineHeight.0}",
+     "value": "{font.lineHeight.60}",
      "type": "dimension",
      "source": "css-var --usage-line-height-xxx-large declared on `:where(.prism-theme)` → `var(--base-line-height-60)` (prism alias)"
     }
@@ -10918,14 +10998,14 @@
       },
       "letter": {
        "spacing": {
-        "value": "{font.tracking.0}",
+        "value": "{font.tracking.70}",
         "type": "string",
         "source": "css-var --usage-type-body-large-default-letter-spacing declared on `:where(.prism-theme)` → `var(--base-letter-spacing-70)` (prism alias)"
        }
       },
       "line": {
        "height": {
-        "value": "{font.lineHeight.0}",
+        "value": "{font.lineHeight.20}",
         "type": "dimension",
         "source": "css-var --usage-type-body-large-default-line-height declared on `:where(.prism-theme)` → `var(--base-line-height-20)` (prism alias)"
        }
@@ -10963,14 +11043,14 @@
       },
       "letter": {
        "spacing": {
-        "value": "{font.tracking.0}",
+        "value": "{font.tracking.70}",
         "type": "string",
         "source": "css-var --usage-type-body-large-strong-letter-spacing declared on `:where(.prism-theme)` → `var(--base-letter-spacing-70)` (prism alias)"
        }
       },
       "line": {
        "height": {
-        "value": "{font.lineHeight.0}",
+        "value": "{font.lineHeight.20}",
         "type": "dimension",
         "source": "css-var --usage-type-body-large-strong-line-height declared on `:where(.prism-theme)` → `var(--base-line-height-20)` (prism alias)"
        }
@@ -11010,14 +11090,14 @@
       },
       "letter": {
        "spacing": {
-        "value": "{font.tracking.0}",
+        "value": "{font.tracking.70}",
         "type": "string",
         "source": "css-var --usage-type-body-medium-default-letter-spacing declared on `:where(.prism-theme)` → `var(--base-letter-spacing-70)` (prism alias)"
        }
       },
       "line": {
        "height": {
-        "value": "{font.lineHeight.5}",
+        "value": "{font.lineHeight.15}",
         "type": "dimension",
         "source": "css-var --usage-type-body-medium-default-line-height declared on `:where(.prism-theme)` → `var(--base-line-height-15)` (prism alias)"
        }
@@ -11055,14 +11135,14 @@
       },
       "letter": {
        "spacing": {
-        "value": "{font.tracking.0}",
+        "value": "{font.tracking.70}",
         "type": "string",
         "source": "css-var --usage-type-body-medium-strong-letter-spacing declared on `:where(.prism-theme)` → `var(--base-letter-spacing-70)` (prism alias)"
        }
       },
       "line": {
        "height": {
-        "value": "{font.lineHeight.5}",
+        "value": "{font.lineHeight.15}",
         "type": "dimension",
         "source": "css-var --usage-type-body-medium-strong-line-height declared on `:where(.prism-theme)` → `var(--base-line-height-15)` (prism alias)"
        }
@@ -11102,14 +11182,14 @@
       },
       "letter": {
        "spacing": {
-        "value": "{font.tracking.0}",
+        "value": "{font.tracking.70}",
         "type": "string",
         "source": "css-var --usage-type-body-small-default-letter-spacing declared on `:where(.prism-theme)` → `var(--base-letter-spacing-70)` (prism alias)"
        }
       },
       "line": {
        "height": {
-        "value": "{font.lineHeight.0}",
+        "value": "{font.lineHeight.10}",
         "type": "dimension",
         "source": "css-var --usage-type-body-small-default-line-height declared on `:where(.prism-theme)` → `var(--base-line-height-10)` (prism alias)"
        }
@@ -11147,14 +11227,14 @@
       },
       "letter": {
        "spacing": {
-        "value": "{font.tracking.0}",
+        "value": "{font.tracking.70}",
         "type": "string",
         "source": "css-var --usage-type-body-small-strong-letter-spacing declared on `:where(.prism-theme)` → `var(--base-letter-spacing-70)` (prism alias)"
        }
       },
       "line": {
        "height": {
-        "value": "{font.lineHeight.0}",
+        "value": "{font.lineHeight.10}",
         "type": "dimension",
         "source": "css-var --usage-type-body-small-strong-line-height declared on `:where(.prism-theme)` → `var(--base-line-height-10)` (prism alias)"
        }
@@ -11196,14 +11276,14 @@
       },
       "letter": {
        "spacing": {
-        "value": "{font.tracking.0}",
+        "value": "{font.tracking.70}",
         "type": "string",
         "source": "css-var --usage-type-display-condensed-large-letter-spacing declared on `:where(.prism-theme)` → `var(--base-letter-spacing-70)` (prism alias)"
        }
       },
       "line": {
        "height": {
-        "value": "{font.lineHeight.0}",
+        "value": "{font.lineHeight.60}",
         "type": "dimension",
         "source": "css-var --usage-type-display-condensed-large-line-height declared on `:where(.prism-theme)` → `var(--base-line-height-60)` (prism alias)"
        }
@@ -11241,14 +11321,14 @@
       },
       "letter": {
        "spacing": {
-        "value": "{font.tracking.0}",
+        "value": "{font.tracking.70}",
         "type": "string",
         "source": "css-var --usage-type-display-condensed-medium-letter-spacing declared on `:where(.prism-theme)` → `var(--base-letter-spacing-70)` (prism alias)"
        }
       },
       "line": {
        "height": {
-        "value": "{font.lineHeight.0}",
+        "value": "{font.lineHeight.30}",
         "type": "dimension",
         "source": "css-var --usage-type-display-condensed-medium-line-height declared on `:where(.prism-theme)` → `var(--base-line-height-30)` (prism alias)"
        }
@@ -11287,14 +11367,14 @@
      },
      "letter": {
       "spacing": {
-       "value": "{font.tracking.0}",
+       "value": "{font.tracking.70}",
        "type": "string",
        "source": "css-var --usage-type-display-large-letter-spacing declared on `:where(.prism-theme)` → `var(--base-letter-spacing-70)` (prism alias)"
       }
      },
      "line": {
       "height": {
-       "value": "{font.lineHeight.0}",
+       "value": "{font.lineHeight.60}",
        "type": "dimension",
        "source": "css-var --usage-type-display-large-line-height declared on `:where(.prism-theme)` → `var(--base-line-height-60)` (prism alias)"
       }
@@ -11332,14 +11412,14 @@
      },
      "letter": {
       "spacing": {
-       "value": "{font.tracking.0}",
+       "value": "{font.tracking.70}",
        "type": "string",
        "source": "css-var --usage-type-display-medium-letter-spacing declared on `:where(.prism-theme)` → `var(--base-letter-spacing-70)` (prism alias)"
       }
      },
      "line": {
       "height": {
-       "value": "{font.lineHeight.0}",
+       "value": "{font.lineHeight.30}",
        "type": "dimension",
        "source": "css-var --usage-type-display-medium-line-height declared on `:where(.prism-theme)` → `var(--base-line-height-30)` (prism alias)"
       }
@@ -11378,14 +11458,14 @@
       },
       "letter": {
        "spacing": {
-        "value": "{font.tracking.0}",
+        "value": "{font.tracking.70}",
         "type": "string",
         "source": "css-var --usage-type-display-x-large-letter-spacing declared on `:where(.prism-theme)` → `var(--base-letter-spacing-70)` (prism alias)"
        }
       },
       "line": {
        "height": {
-        "value": "{font.lineHeight.0}",
+        "value": "{font.lineHeight.60}",
         "type": "dimension",
         "source": "css-var --usage-type-display-x-large-line-height declared on `:where(.prism-theme)` → `var(--base-line-height-60)` (prism alias)"
        }
@@ -11427,14 +11507,14 @@
       },
       "letter": {
        "spacing": {
-        "value": "{font.tracking.0}",
+        "value": "{font.tracking.70}",
         "type": "string",
         "source": "css-var --usage-type-label-large-default-letter-spacing declared on `:where(.prism-theme)` → `var(--base-letter-spacing-70)` (prism alias)"
        }
       },
       "line": {
        "height": {
-        "value": "{font.lineHeight.0}",
+        "value": "{font.lineHeight.20}",
         "type": "dimension",
         "source": "css-var --usage-type-label-large-default-line-height declared on `:where(.prism-theme)` → `var(--base-line-height-20)` (prism alias)"
        }
@@ -11472,14 +11552,14 @@
       },
       "letter": {
        "spacing": {
-        "value": "{font.tracking.0}",
+        "value": "{font.tracking.70}",
         "type": "string",
         "source": "css-var --usage-type-label-large-strong-letter-spacing declared on `:where(.prism-theme)` → `var(--base-letter-spacing-70)` (prism alias)"
        }
       },
       "line": {
        "height": {
-        "value": "{font.lineHeight.0}",
+        "value": "{font.lineHeight.20}",
         "type": "dimension",
         "source": "css-var --usage-type-label-large-strong-line-height declared on `:where(.prism-theme)` → `var(--base-line-height-20)` (prism alias)"
        }
@@ -11519,14 +11599,14 @@
       },
       "letter": {
        "spacing": {
-        "value": "{font.tracking.0}",
+        "value": "{font.tracking.70}",
         "type": "string",
         "source": "css-var --usage-type-label-medium-default-letter-spacing declared on `:where(.prism-theme)` → `var(--base-letter-spacing-70)` (prism alias)"
        }
       },
       "line": {
        "height": {
-        "value": "{font.lineHeight.5}",
+        "value": "{font.lineHeight.15}",
         "type": "dimension",
         "source": "css-var --usage-type-label-medium-default-line-height declared on `:where(.prism-theme)` → `var(--base-line-height-15)` (prism alias)"
        }
@@ -11564,14 +11644,14 @@
       },
       "letter": {
        "spacing": {
-        "value": "{font.tracking.0}",
+        "value": "{font.tracking.70}",
         "type": "string",
         "source": "css-var --usage-type-label-medium-strong-letter-spacing declared on `:where(.prism-theme)` → `var(--base-letter-spacing-70)` (prism alias)"
        }
       },
       "line": {
        "height": {
-        "value": "{font.lineHeight.5}",
+        "value": "{font.lineHeight.15}",
         "type": "dimension",
         "source": "css-var --usage-type-label-medium-strong-line-height declared on `:where(.prism-theme)` → `var(--base-line-height-15)` (prism alias)"
        }
@@ -11611,14 +11691,14 @@
       },
       "letter": {
        "spacing": {
-        "value": "{font.tracking.0}",
+        "value": "{font.tracking.70}",
         "type": "string",
         "source": "css-var --usage-type-label-small-default-letter-spacing declared on `:where(.prism-theme)` → `var(--base-letter-spacing-70)` (prism alias)"
        }
       },
       "line": {
        "height": {
-        "value": "{font.lineHeight.0}",
+        "value": "{font.lineHeight.10}",
         "type": "dimension",
         "source": "css-var --usage-type-label-small-default-line-height declared on `:where(.prism-theme)` → `var(--base-line-height-10)` (prism alias)"
        }
@@ -11656,14 +11736,14 @@
       },
       "letter": {
        "spacing": {
-        "value": "{font.tracking.0}",
+        "value": "{font.tracking.70}",
         "type": "string",
         "source": "css-var --usage-type-label-small-strong-letter-spacing declared on `:where(.prism-theme)` → `var(--base-letter-spacing-70)` (prism alias)"
        }
       },
       "line": {
        "height": {
-        "value": "{font.lineHeight.0}",
+        "value": "{font.lineHeight.10}",
         "type": "dimension",
         "source": "css-var --usage-type-label-small-strong-line-height declared on `:where(.prism-theme)` → `var(--base-line-height-10)` (prism alias)"
        }
@@ -11704,14 +11784,14 @@
        },
        "letter": {
         "spacing": {
-         "value": "{font.tracking.0}",
+         "value": "{font.tracking.70}",
          "type": "string",
          "source": "css-var --usage-type-label-x-small-default-letter-spacing declared on `:where(.prism-theme)` → `var(--base-letter-spacing-70)` (prism alias)"
         }
        },
        "line": {
         "height": {
-         "value": "{font.lineHeight.}",
+         "value": "{font.lineHeight.5}",
          "type": "dimension",
          "source": "css-var --usage-type-label-x-small-default-line-height declared on `:where(.prism-theme)` → `var(--base-line-height-5)` (prism alias)"
         }
@@ -11749,14 +11829,14 @@
        },
        "letter": {
         "spacing": {
-         "value": "{font.tracking.0}",
+         "value": "{font.tracking.70}",
          "type": "string",
          "source": "css-var --usage-type-label-x-small-strong-letter-spacing declared on `:where(.prism-theme)` → `var(--base-letter-spacing-70)` (prism alias)"
         }
        },
        "line": {
         "height": {
-         "value": "{font.lineHeight.}",
+         "value": "{font.lineHeight.5}",
          "type": "dimension",
          "source": "css-var --usage-type-label-x-small-strong-line-height declared on `:where(.prism-theme)` → `var(--base-line-height-5)` (prism alias)"
         }
@@ -11798,14 +11878,14 @@
      },
      "letter": {
       "spacing": {
-       "value": "{font.tracking.0}",
+       "value": "{font.tracking.70}",
        "type": "string",
        "source": "css-var --usage-type-link-large-letter-spacing declared on `:where(.prism-theme)` → `var(--base-letter-spacing-70)` (prism alias)"
       }
      },
      "line": {
       "height": {
-       "value": "{font.lineHeight.0}",
+       "value": "{font.lineHeight.20}",
        "type": "dimension",
        "source": "css-var --usage-type-link-large-line-height declared on `:where(.prism-theme)` → `var(--base-line-height-20)` (prism alias)"
       }
@@ -11843,14 +11923,14 @@
      },
      "letter": {
       "spacing": {
-       "value": "{font.tracking.0}",
+       "value": "{font.tracking.70}",
        "type": "string",
        "source": "css-var --usage-type-link-medium-letter-spacing declared on `:where(.prism-theme)` → `var(--base-letter-spacing-70)` (prism alias)"
       }
      },
      "line": {
       "height": {
-       "value": "{font.lineHeight.5}",
+       "value": "{font.lineHeight.15}",
        "type": "dimension",
        "source": "css-var --usage-type-link-medium-line-height declared on `:where(.prism-theme)` → `var(--base-line-height-15)` (prism alias)"
       }
@@ -11888,14 +11968,14 @@
      },
      "letter": {
       "spacing": {
-       "value": "{font.tracking.0}",
+       "value": "{font.tracking.70}",
        "type": "string",
        "source": "css-var --usage-type-link-small-letter-spacing declared on `:where(.prism-theme)` → `var(--base-letter-spacing-70)` (prism alias)"
       }
      },
      "line": {
       "height": {
-       "value": "{font.lineHeight.0}",
+       "value": "{font.lineHeight.10}",
        "type": "dimension",
        "source": "css-var --usage-type-link-small-line-height declared on `:where(.prism-theme)` → `var(--base-line-height-10)` (prism alias)"
       }
@@ -11936,14 +12016,14 @@
       },
       "letter": {
        "spacing": {
-        "value": "{font.tracking.0}",
+        "value": "{font.tracking.70}",
         "type": "string",
         "source": "css-var --usage-type-title-condensed-large-letter-spacing declared on `:where(.prism-theme)` → `var(--base-letter-spacing-70)` (prism alias)"
        }
       },
       "line": {
        "height": {
-        "value": "{font.lineHeight.0}",
+        "value": "{font.lineHeight.20}",
         "type": "dimension",
         "source": "css-var --usage-type-title-condensed-large-line-height declared on `:where(.prism-theme)` → `var(--base-line-height-20)` (prism alias)"
        }
@@ -11982,14 +12062,14 @@
      },
      "letter": {
       "spacing": {
-       "value": "{font.tracking.0}",
+       "value": "{font.tracking.70}",
        "type": "string",
        "source": "css-var --usage-type-title-large-letter-spacing declared on `:where(.prism-theme)` → `var(--base-letter-spacing-70)` (prism alias)"
       }
      },
      "line": {
       "height": {
-       "value": "{font.lineHeight.0}",
+       "value": "{font.lineHeight.20}",
        "type": "dimension",
        "source": "css-var --usage-type-title-large-line-height declared on `:where(.prism-theme)` → `var(--base-line-height-20)` (prism alias)"
       }
@@ -12027,14 +12107,14 @@
      },
      "letter": {
       "spacing": {
-       "value": "{font.tracking.0}",
+       "value": "{font.tracking.70}",
        "type": "string",
        "source": "css-var --usage-type-title-medium-letter-spacing declared on `:where(.prism-theme)` → `var(--base-letter-spacing-70)` (prism alias)"
       }
      },
      "line": {
       "height": {
-       "value": "{font.lineHeight.5}",
+       "value": "{font.lineHeight.15}",
        "type": "dimension",
        "source": "css-var --usage-type-title-medium-line-height declared on `:where(.prism-theme)` → `var(--base-line-height-15)` (prism alias)"
       }

@@ -10,12 +10,30 @@ committed. Flat UI colours are exact, gradients and photographs band a little, s
 from raw/css-vars.json and raw/components-computed.json. Adapted from the Coursera kit.
 """
 from PIL import Image
-import pathlib, re, sys
+import json, pathlib, re, sys
 
 REF = pathlib.Path(__file__).resolve().parent.parent.parent
 RAW = pathlib.Path(sys.argv[1])
 OUT = REF / 'screenshots'
 OUT.mkdir(exist_ok=True)
+
+
+def captured_ok(f):
+    """False when the PNG's .capture.json sidecar records a rejected capture.
+
+    screenshotWithMetadata writes the image before the dimension check runs,
+    so a failed shot still sits in RAW next to a failing sidecar — never
+    publish it. A sidecar-less file (a stitched sheet, foreign input) passes.
+    """
+    side = f.with_name(f.name + '.capture.json')
+    if not side.exists():
+        return True
+    try:
+        meta = json.loads(side.read_text())
+    except (OSError, ValueError):
+        return False
+    return meta.get('dimensionCheck', {}).get('status') == 'pass'
+
 
 parts = {}
 for f in RAW.glob('*.part*.png'):
@@ -24,7 +42,16 @@ for f in RAW.glob('*.part*.png'):
         continue
     parts.setdefault(m.group(1), []).append((int(m.group(2)), f))
 for name, ps in parts.items():
-    ims = [Image.open(f).convert('RGB') for _, f in sorted(ps)]
+    ps = sorted(ps)
+    idx = [i for i, _ in ps]
+    if idx != list(range(len(idx))):   # a capture that died mid-page leaves gaps
+        print('  SKIP', name, '- part set is not contiguous:', idx)
+        continue
+    bad = [f.name for _, f in ps if not captured_ok(f)]
+    if bad:
+        print('  SKIP', name, '- rejected capture tiles:', ', '.join(bad))
+        continue
+    ims = [Image.open(f).convert('RGB') for _, f in ps]
     sheet = Image.new('RGB', (ims[0].width, sum(i.height for i in ims)))
     y = 0
     for i in ims:
@@ -35,6 +62,9 @@ for name, ps in parts.items():
 n = 0
 for f in sorted(RAW.glob('*.png')):
     if '.part' in f.name:
+        continue
+    if not captured_ok(f):
+        print('  SKIP', f.name, '- .capture.json records a rejected capture')
         continue
     im = Image.open(f).convert('RGB')
     im.quantize(colors=256, method=Image.Quantize.MEDIANCUT, dither=Image.Dither.NONE).save(OUT / f.name, optimize=True)

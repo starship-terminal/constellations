@@ -41,7 +41,7 @@ code { font-family: var(--sg-mono); font-size: .9em; }
 .navbar .sp { flex: 1; }
 .btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-signupButton-height, 40px); padding: 0 var(--component-signupButton-padding, 20px); font-size: 14px; font-weight: 700; border-radius: var(--component-signupButton-radius, 20px); border: 0; }
 .btn.primary { background: var(--color-action-primary-default, #eb1700); color: var(--color-text-inverse-default, #fff); }
-.btn.primary:hover { background: var(--color-action-primary-hovered, #c81200); }
+.btn.primary:hover { background: var(--color-action-primary-hovered, #d91400); }
 .btn.plain { background: var(--color-transparent-default, transparent); color: var(--color-text-default, #191919); }
 .btn.pill { background: var(--color-background-default, #fff); color: var(--color-text-default, #191919); box-shadow: var(--elevation-2, 0 2px 8px #19191933); border-radius: var(--component-addressPill-radius, 22px); height: var(--component-addressPill-height, 40px); padding: 0 var(--component-addressPill-padding, 16px); font-weight: 700; }
 .hero { color: var(--color-text-inverse-default, #fff); padding: 60px 40px 56px; text-align: center; background: var(--color-action-primary-default, #eb1700); }
@@ -132,6 +132,10 @@ table.cmp td, table.cmp th { border: 1px solid var(--color-border-default, #e7e7
   <h2 class="sh">Measured extras</h2>
   <div id="meas-out" class="kv"></div>
 
+  <h2 class="sh">The declared component and type layers</h2>
+  <p class="lead">The <code>--comp-*</code> component tokens (button, field, tag, toggle, banner, …) and the <code>light.type.*</code> slots — every leaf a <code>var()</code> alias down the prism comp → usage → base chain — shown with its resolved value. This is the product's declared layer; the measured paint is under Measured extras above.</p>
+  <div id="layers-out"></div>
+
   <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared --base-*/--usage-*/--comp-* prism variables from the archived stylesheets and computed styles on the rendered components</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed and focused states measured per component; pressed forced via CDP so nothing was ever submitted</td></tr><tr><td>No provenance</td><td>Every token names its variable (and the prism selector block) or the measurement it came from; archival routes in raw/archive-urls.json</td></tr></table>
 </main>
 <script>
@@ -140,6 +144,21 @@ const $ = (s) => document.querySelector(s);
 const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
 const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
 const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+// Every token by dotted path, for resolving {alias} values (core and light
+// share the alias namespace — build_style_guide.py refuses a clash).
+const ALLTOK = {};
+for (const s of ['core', 'light', 'dark']) for (const [n, t] of flat(TOK[s] || {}, '')) ALLTOK[n] = t;
+const resAlias = (v, d = 0) => (typeof v === 'string' && v.startsWith('{') && d < 8 && ALLTOK[v.slice(1, -1)])
+  ? resAlias(ALLTOK[v.slice(1, -1)].v, d + 1) : v;
+const showTok = (t) => {
+  const v = t.v;
+  if (typeof v === 'string' && v.startsWith('{')) {
+    const r = resAlias(v);
+    return r === v ? esc(v) : esc(v) + ' → ' + esc(typeof r === 'object' ? JSON.stringify(r) : r);
+  }
+  return esc(typeof v === 'object' ? JSON.stringify(v) : v);
+};
 
 (function palette() {
   let h = '';
@@ -156,6 +175,12 @@ const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) 
     for (const [n, t] of lightRoles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
     h += '</div>';
   }
+  const surfaces = flat(TOK.light.surface || {}, 'surface.').filter(([, t]) => t.t === 'color');
+  if (surfaces.length) {
+    h += `<div class="pal-h">light surface (surface-color-*)</div><div class="pal">`;
+    for (const [n, t] of surfaces) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${showTok(t)}</div></div></div>`;
+    h += '</div>';
+  }
   $('#roles-out').innerHTML = h;
 })();
 
@@ -166,6 +191,7 @@ const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) 
   for (const [n, t] of flat(TOK.core.borderWidth || {}, 'borderWidth.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
   for (const [n, t] of flat(TOK.core.size || {}, 'size.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
   for (const [n, t] of flat(TOK.core.motion || {}, 'motion.')) m += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? 'cubic-bezier(' + t.v.join(', ') + ')' : t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.light.size || {}, 'light.size.')) m += `<div><b>${esc(n)}</b> <span>${showTok(t)}</span></div>`;
   $('#spacing-out').innerHTML = m;
 })();
 
@@ -182,6 +208,24 @@ const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) 
   $('#meas-out').innerHTML = m;
 })();
 
+(function layers() {
+  // The declared prism layers the sections above do not cover: light.type
+  // (the --usage-type-* slots and generic type aliases) and light.comp (the
+  // --comp-* component tokens). One pal-h per group so the list stays
+  // browsable.
+  let h = '';
+  for (const [set, root] of [['type', TOK.light.type || {}], ['comp', TOK.light.comp || {}]]) {
+    for (const [g, grp] of Object.entries(root)) {
+      const items = grp && grp.t ? [[set + '.' + g, grp]] : flat(grp, set + '.' + g + '.');
+      if (!items.length) continue;
+      h += `<div class="pal-h">light.${esc(set)}.${esc(g)}</div><div class="kv">`;
+      for (const [n, t] of items) h += `<div><b>${esc(n)}</b> <span>${showTok(t)}</span></div>`;
+      h += '</div>';
+    }
+  }
+  $('#layers-out').innerHTML = h;
+})();
+
 (function type() {
   let h = '';
   for (const [n, t] of flat((TOK.core.typography || {}), 'typography.')) {
@@ -192,13 +236,15 @@ const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) 
     h += `<div class="tr"><span class="ts" style="${style}">${esc(n)} — The quick brown fox</span><span class="tv">${esc(typeof st.fontSize === 'string' ? st.fontSize : '')}</span></div>`;
   }
   for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
-    const px = parseFloat(t.v);
-    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+    // Named steps are {alias} leaves — draw them through the generated
+    // custom property so they paint at the resolved size, not a fallback.
+    h += `<div class="tr"><span class="ts" style="font-size:min(var(${cssname(n)}), 44px)">${esc(n)} — The quick brown fox</span><span class="tv">${showTok(t)}</span></div>`;
   }
   for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — DoorDash</span><span class="tv">${esc(t.v)}</span></div>`;
   $('#type-out').innerHTML = h;
   let f = '';
   for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
   for (const [n, t] of flat((TOK.core.font || {}).tracking || {}, 'font.tracking.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
   $('#fam-out').innerHTML = f;
 })();

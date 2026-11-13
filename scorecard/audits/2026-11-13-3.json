@@ -11615,7 +11615,7 @@
     },
     "F5": {
      "grade": "meets",
-     "evidence": "light.color.action.primary has default #eb1700, hovered #c81200 and pressed #ad1000 (plus disabled/selected), and every accent-consuming --comp-* control carries the same stateful chain as aliases; measured hover/pressed paints match (address-pill hover #242424 ink, cta-btn states)."
+     "evidence": "light.color.action.primary has default #eb1700, hovered #d91400 and pressed #b71000 (plus disabled/selected), and every accent-consuming --comp-* control carries the same stateful chain as aliases; measured hover/pressed paints match (address-pill hover #242424 ink, cta-btn states)."
     },
     "F6": {
      "grade": "partly",
@@ -11659,11 +11659,11 @@
     },
     "C2": {
      "grade": "partly",
-     "evidence": "171 states over 74 components: default/hover/focus-visible/pressed on every interactive entry plus toggled (cuisines tab, pickup pill) and focused (address/search/language fields). Disabled, loading and error exist richly in the --comp-* layer (tokenised, e.g. *-disabled, *-progressing) but are not painted by any signed-out component."
+     "evidence": "171 states over 74 components: default/hover/pressed on every interactive entry plus toggled (cuisines tab, pickup pill) and focused (address/search/language fields). focus-visible was captured on 27 of the 33 attempted components — six (tab-selected, tab-idle, city-link, bell-btn, group-order, m-identity-btn) recorded via: \"focus failed\" and are marked uncaptured in components.md. Disabled, loading and error exist richly in the --comp-* layer (tokenised, e.g. *-disabled, *-progressing) but are not painted by any signed-out component."
     },
     "C3": {
-     "grade": "meets",
-     "evidence": "focus-visible was captured via real keyboard focus on every interactive component (signup-btn, pills, links, toggles, fields): a 1px #005fcc auto outline at 0px offset, tokenised as light.component.focusRing and border.focused."
+     "grade": "partly",
+     "evidence": "focus-visible was captured via real keyboard focus on 27 of 33 attempted components: a 1px #005fcc auto outline at 0-1px offset on 25, no measured change on 2 (value-prop-card, card-cta), tokenised as light.component.focusRing and border.focused. Six elements could not hold a keyboard focus (via: \"focus failed\": tab-selected, tab-idle, city-link, bell-btn, group-order, m-identity-btn) — components.md records their focus look as uncaptured, not absent."
     },
     "C4": {
      "grade": "partly",

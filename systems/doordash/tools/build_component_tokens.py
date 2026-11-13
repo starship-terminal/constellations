@@ -105,24 +105,29 @@ def path_of(name):
     n = name[2:]
     def parts(pre, root):
         return root + n[len(pre):].split("-")
+    def tail(pre, root):
+        # single-suffix prefixes: the rest of the name is the last path part.
+        # len(pre), never a magic offset — a hardcoded slice here dropped the
+        # first suffix character once before (font.lineHeight.10 -> .0).
+        return root + [n[len(pre):]]
     if n.startswith("base-color-"):
         return "core", parts("base-color-", ["color"])
     if n.startswith("base-font-family-"):
-        return "core", ["font", "family", n[17:]]
+        return "core", tail("base-font-family-", ["font", "family"])
     if n.startswith("base-font-size-"):
-        return "core", ["font", "size", n[15:]]
+        return "core", tail("base-font-size-", ["font", "size"])
     if n.startswith("base-font-weight-"):
-        return "core", ["font", "weight", n[17:]]
+        return "core", tail("base-font-weight-", ["font", "weight"])
     if n.startswith("base-line-height-"):
-        return "core", ["font", "lineHeight", n[18:]]
+        return "core", tail("base-line-height-", ["font", "lineHeight"])
     if n.startswith("base-letter-spacing-"):
-        return "core", ["font", "tracking", n[21:]]
+        return "core", tail("base-letter-spacing-", ["font", "tracking"])
     if n.startswith("base-size-"):
-        return "core", ["size", n[10:]]
+        return "core", tail("base-size-", ["size"])
     if n.startswith("base-motion-duration-"):
-        return "core", ["motion", "duration", n[21:]]
+        return "core", tail("base-motion-duration-", ["motion", "duration"])
     if n.startswith("base-motion-easing-"):
-        return "core", ["motion", "easing", n[20:]]
+        return "core", tail("base-motion-easing-", ["motion", "easing"])
     if n.startswith("usage-color-"):
         return "light", parts("usage-color-", ["color"])
     if n.startswith("usage-type-"):
@@ -130,33 +135,33 @@ def path_of(name):
     # The generic usage type aliases nest under light.type.* with the
     # per-role slots (a light.font.* would land on core.font.*'s CSS names).
     if n.startswith("usage-font-family-"):
-        return "light", ["type", "font", "family", n[18:]]
+        return "light", tail("usage-font-family-", ["type", "font", "family"])
     if n.startswith("usage-font-size-"):
-        return "light", ["type", "font", "size", n[16:]]
+        return "light", tail("usage-font-size-", ["type", "font", "size"])
     if n.startswith("usage-font-weight-"):
-        return "light", ["type", "font", "weight", n[18:]]
+        return "light", tail("usage-font-weight-", ["type", "font", "weight"])
     if n.startswith("usage-line-height-"):
-        return "light", ["type", "lineHeight", n[18:]]
+        return "light", tail("usage-line-height-", ["type", "lineHeight"])
     if n.startswith("usage-letter-spacing-"):
-        return "light", ["type", "tracking", n[21:]]
+        return "light", tail("usage-letter-spacing-", ["type", "tracking"])
     if n.startswith("usage-space-"):
-        return "core", ["spacing", n[12:]]
+        return "core", tail("usage-space-", ["spacing"])
     if n.startswith("usage-size-"):
-        return "light", ["size", n[11:]]
+        return "light", tail("usage-size-", ["size"])
     if n.startswith("usage-border-radius-"):
-        return "core", ["radius", n[20:]]
+        return "core", tail("usage-border-radius-", ["radius"])
     if n.startswith("usage-border-width-"):
-        return "core", ["borderWidth", n[19:]]
+        return "core", tail("usage-border-width-", ["borderWidth"])
     if n.startswith("usage-elevation-"):
-        return "core", ["elevation", n[16:]]
+        return "core", tail("usage-elevation-", ["elevation"])
     if n.startswith("usage-motion-duration-"):
-        return "core", ["motion", "duration", n[22:]]
+        return "core", tail("usage-motion-duration-", ["motion", "duration"])
     if n.startswith("usage-motion-easing-"):
-        return "core", ["motion", "easing", n[21:]]
+        return "core", tail("usage-motion-easing-", ["motion", "easing"])
     if n.startswith("usage-motion-delay-"):
-        return "core", ["motion", "delay", n[19:]]
+        return "core", tail("usage-motion-delay-", ["motion", "delay"])
     if n.startswith("usage-motion-scale-"):
-        return "core", ["motion", "scale", n[19:]]
+        return "core", tail("usage-motion-scale-", ["motion", "scale"])
     if n.startswith("comp-color-"):
         return "light", parts("comp-color-", ["comp", "color"])
     if n.startswith("comp-type-"):
@@ -166,15 +171,15 @@ def path_of(name):
     if n.startswith("comp-size-"):
         return "light", parts("comp-size-", ["comp", "size"])
     if n.startswith("comp-border-radius-"):
-        return "light", ["comp", "radius", n[20:]]
+        return "light", tail("comp-border-radius-", ["comp", "radius"])
     if n.startswith("comp-border-width-"):
-        return "light", ["comp", "borderWidth", n[19:]]
+        return "light", tail("comp-border-width-", ["comp", "borderWidth"])
     if n.startswith("comp-elevation-"):
-        return "light", ["comp", "elevation", n[15:]]
+        return "light", tail("comp-elevation-", ["comp", "elevation"])
     if n.startswith("comp-motion-duration-"):
-        return "light", ["comp", "motion", "duration", n[22:]]
+        return "light", tail("comp-motion-duration-", ["comp", "motion", "duration"])
     if n.startswith("comp-motion-easing-"):
-        return "light", ["comp", "motion", "easing", n[21:]]
+        return "light", tail("comp-motion-easing-", ["comp", "motion", "easing"])
     if n.startswith("surface-color-"):
         return "light", parts("surface-color-", ["surface"])
     if n.startswith("prism-"):
@@ -239,10 +244,15 @@ def leaf_for(name):
     return {"var": name, "type": ty_of(name), "source": src_of(name)}
 
 
+EMITTED = {}   # (set, dotpath) -> css name; a repeat means path_of collapsed two names
 for name in sorted(R):
     st, parts = path_of(name)
     if not st or name in SKIP:
         continue
+    key = (st, ".".join(parts))
+    if key in EMITTED:
+        raise SystemExit("path_of maps %s and %s onto the same %s.%s token — fix the prefix slicing" % (EMITTED[key], name, st, key[1]))
+    EMITTED[key] = name
     emit(SPEC[st], parts, leaf_for(name))
 
 # ------------------------------------------------------------ typography

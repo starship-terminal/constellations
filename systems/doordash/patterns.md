@@ -17,9 +17,10 @@ opens on the campaign field — a 1440 x 650 band in the DoorDash red
 `color.action.primary.default` (#eb1700) with the Sign In / Sign Up pair
 floating top-right, no separate top bar
 ([hero-band](components/crops/hero-band-default.png)). Sign In is the
-inverted pill — white fill, red text
+solid red pill — #eb1700 fill, white text
 ([signin-btn](components/crops/signin-btn-default.png)); Sign Up is the
-plain white-ghost pill ([signup-btn](components/crops/signup-btn-default.png)).
+inverted pill — white fill, ink text
+([signup-btn](components/crops/signup-btn-default.png)).
 Centred on the field: the DOORDASH wordmark
 ([logo](components/crops/logo-default.png)), the uppercase condensed
 campaign headline `$0 DELIVERY FEE ON FIRST ORDER` in TTNormsProCond-Blk
