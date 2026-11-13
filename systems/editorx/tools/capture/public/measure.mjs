@@ -407,34 +407,92 @@ async function markMobileMenu() {
   });
 }
 
-// Marks the nearest ancestor of the element matching sel that paints a fill
-// or a background image (thunderbolt paints sections through sibling bg
-// layers, so descend finds the biggest painted descendant instead), or falls
-// back to marking a painted descendant.
-async function markPainted(sel, tag, { maxUp = 8, minW = 100, minH = 60, descend = false } = {}) {
-  const ok = await page.evaluate(([s, t, up, w, h, desc]) => {
-    document.querySelectorAll(`[data-m-mark="${t}"]`).forEach((n) => n.removeAttribute('data-m-mark'));
-    const el = [...document.querySelectorAll(s)].find((n) => { const r = n.getBoundingClientRect(); return r.width > 0 && r.height > 0; });
-    if (!el) return false;
-    const paints = (cs) => cs.backgroundColor !== 'rgba(0, 0, 0, 0)' || cs.backgroundImage !== 'none';
-    if (!desc) for (let n = el, i = 0; n && i < up; n = n.parentElement, i++) {
+// Marks one feature card on the features index: the smallest box that holds a
+// feature heading and its blurb. Picking "the biggest painted element under
+// the section" once marked the empty full-bleed background layer instead
+// (1440x942 of fallback type) — a card is anchored on its content.
+async function markFeatureCard() {
+  await page.evaluate(() => {
+    document.querySelectorAll('[data-m-mark="featcard"]').forEach((n) => n.removeAttribute('data-m-mark'));
+    // A card holds its heading plus a short blurb in a column's width: a
+    // full-bleed band or an empty painted layer is not the component.
+    const cardAround = (h) => {
+      const ht = (h.innerText || '').trim().length;
+      for (let n = h, i = 0; n.parentElement && i < 12; i++) {
+        n = n.parentElement;
+        const r = n.getBoundingClientRect();
+        const t = (n.innerText || '').trim();
+        if (r.width > 200 && r.width < 720 && r.height > 90 && r.height < 700
+          && t.length > ht + 15 && t.length < 600) return n;
+      }
+      return null;
+    };
+    const heads = [...document.querySelectorAll('h2, h3, h4, h5')].filter((el) => {
+      const r = el.getBoundingClientRect();
+      const t = (el.innerText || '').trim();
+      return r.width > 0 && t.length >= 4 && t.length <= 60;
+    });
+    for (const h of heads) { const n = cardAround(h); if (n) { n.setAttribute('data-m-mark', 'featcard'); return; } }
+    // Fallback when the titles are not headings: leaf text that names a
+    // feature (the card box around it is found the same way).
+    const leaves = [...document.querySelectorAll('p, span, div, a')].filter((el) => {
+      const r = el.getBoundingClientRect();
+      const t = (el.innerText || '').trim();
+      return r.width > 0 && !el.children.length && t.length >= 4 && t.length <= 60
+        && /breakpoint|pixel|figma|wireframe|sitemap|responsive|grid|seo|cms/i.test(t);
+    });
+    for (const h of leaves) { const n = cardAround(h); if (n) { n.setAttribute('data-m-mark', 'featcard'); return; } }
+  });
+}
+
+// Marks the pinned showcase scene: the sticky viewport box carrying the
+// "Site of the week" copy. The section's full-height scroll track once
+// passed for it — an empty painted layer 1440x2320 with fallback type.
+async function markShowcase() {
+  await page.evaluate(() => {
+    document.querySelectorAll('[data-m-mark="showcase"]').forEach((n) => n.removeAttribute('data-m-mark'));
+    const has = (el) => /site of the week/i.test(el.innerText || '');
+    const stick = [...document.querySelectorAll('body *')].filter((el) => {
+      const cs = getComputedStyle(el);
+      const r = el.getBoundingClientRect();
+      return cs.position === 'sticky' && r.width > 800 && r.height > 300 && r.height <= innerHeight + 80 && has(el);
+    }).sort((a, b) => a.getBoundingClientRect().height - b.getBoundingClientRect().height);
+    const el = stick[0] || [...document.querySelectorAll('section, div')].filter((n) => {
+      const r = n.getBoundingClientRect();
+      return r.width > 800 && r.height > 300 && r.height < 1200 && has(n) && n.querySelector('img, video, canvas');
+    }).sort((a, b) => a.getBoundingClientRect().height - b.getBoundingClientRect().height)[0];
+    if (el) el.setAttribute('data-m-mark', 'showcase');
+  });
+}
+
+// Marks the real mobile header: the smallest fixed/sticky bar pinned to the
+// top that holds the burger/menu button. The page's header is not a <nav> at
+// phone width — the footer's <nav> matched a bare nav selector first and was
+// recorded as the header (footer copy, dark fill, 390x861 at y 14287).
+async function markMobileHeader() {
+  await page.evaluate(() => {
+    document.querySelectorAll('[data-m-mark="mheader"]').forEach((n) => n.removeAttribute('data-m-mark'));
+    const btn = [...document.querySelectorAll('button, [role="button"], a')].find((el) => {
+      const r = el.getBoundingClientRect();
+      return r.width > 0 && r.top < 100 && /navigation|menu/i.test(el.getAttribute('aria-label') || '');
+    });
+    if (btn) for (let n = btn.parentElement; n; n = n.parentElement) {
       const cs = getComputedStyle(n);
       const r = n.getBoundingClientRect();
-      if (r.width >= w && r.height >= h && paints(cs)) { n.setAttribute('data-m-mark', t); return true; }
+      if ((cs.position === 'fixed' || cs.position === 'sticky') && r.top <= 4 && r.height > 20 && r.height < 120 && r.width >= innerWidth * 0.8) {
+        n.setAttribute('data-m-mark', 'mheader');
+        return;
+      }
     }
-    if (desc) {
-      // The painted layer sits beside the content, not above it: find the
-      // biggest painted element under the element's own section.
-      const sec = el.closest('section') || el.parentElement;
-      const cands = [...(sec || el).querySelectorAll('*')].filter((n) => {
-        const r = n.getBoundingClientRect(); const cs = getComputedStyle(n);
-        return r.width >= w && r.height >= h && paints(cs);
-      }).sort((a, b) => b.getBoundingClientRect().width * b.getBoundingClientRect().height - a.getBoundingClientRect().width * a.getBoundingClientRect().height);
-      if (cands[0]) { cands[0].setAttribute('data-m-mark', t); return true; }
-    }
-    return false;
-  }, [sel, tag, maxUp, minW, minH, descend]);
-  return ok ? page.locator(`[data-m-mark="${tag}"]`) : page.locator('[data-m-mark="__none__"]');
+    // Fallback: any fixed top bar carrying the Start Creating action.
+    const cand = [...document.querySelectorAll('body *')].filter((el) => {
+      const cs = getComputedStyle(el);
+      const r = el.getBoundingClientRect();
+      return (cs.position === 'fixed' || cs.position === 'sticky') && r.top <= 4 && r.height > 20 && r.height < 120
+        && r.width >= innerWidth * 0.8 && /Start Creating/i.test(el.innerText || '');
+    }).sort((a, b) => a.getBoundingClientRect().height - b.getBoundingClientRect().height);
+    if (cand[0]) cand[0].setAttribute('data-m-mark', 'mheader');
+  });
 }
 
 const G = {
@@ -472,7 +530,8 @@ async function home() {
   await S('section-h2', q('h2, h3').filter({ hasText: /Focus on design|Set your vision in motion|Develop and sell|Code on your terms/i }).filter({ visible: true }).first(), ['default'], { group: h, title: 'Section heading', desc: 'A feature-section heading below the hero.', sel: 'section h2' });
   await S('section-link', q('a').filter({ hasText: /Advanced design features|Explore all AI tools|Learn more|See all solutions/i }).filter({ visible: true }).first(), B4, { group: h, title: 'Section link', desc: 'An inline "learn more" link inside a feature section; measured, never followed.', sel: 'section link' });
   // The "Site of the week" showcase card is a scroll-jacked sticky section.
-  await S('showcase-card', await markPainted('h1, h2', 'm-showcase', { minW: 500, minH: 300, descend: true }).then((l) => l.count().then((c) => c ? l : q('section').filter({ hasText: /Site of the week/i }).filter({ visible: true }).first())).catch(() => q('section').filter({ hasText: /Site of the week/i }).filter({ visible: true }).first()), ['default'], { group: h, title: 'Showcase section', desc: 'The "Site of the week" scroll-jacked showcase (a pinned media scene); measured mid-scroll state may sit between animation frames.', sel: 'showcase section' });
+  await markShowcase();
+  await S('showcase-card', q('[data-m-mark="showcase"]').filter({ visible: true }).first(), ['default'], { group: h, title: 'Showcase section', desc: 'The "Site of the week" scroll-jacked showcase (a pinned media scene); measured mid-scroll state may sit between animation frames.', sel: 'sticky showcase scene' });
   await S('faq-question', q('[role="listitem"], button, [role="button"], h2, h3, h4').filter({ hasText: /What is Wix Studio|difference between Wix and Wix Studio|How much does Wix Studio/i }).filter({ visible: true }).first(), [...B4, 'opened'], { group: h, title: 'FAQ question', desc: 'A Wix Studio FAQ repeater item (question row); toggled open once for the opened state (local UI).', sel: 'FAQ listitem' });
   await markCtaBand();
   await S('cta-band', q('[data-m-mark="ctaband"]').filter({ visible: true }).first(), ['default'], { group: h, title: 'CTA band', desc: 'The closing "Unleash your creations. Rein in the chaos. / Start creating" band.', sel: 'closing CTA band' }, { noScroll: true });
@@ -485,7 +544,8 @@ async function features() {
   await chrome('features');
   const g = G.features;
   await S('feat-h1', q('h1').filter({ visible: true }).first(), ['default'], { group: g, title: 'Features title', desc: 'The features page display heading.', sel: 'h1 on /studio/features' }, { noScroll: true });
-  await S('feat-card', await markPainted('h2, h3', 'm-feat', { minW: 280, minH: 180, descend: true }).then((l) => l.count().then((c) => c ? l : q('section h2').filter({ visible: true }).first())).catch(() => q('section h2').filter({ visible: true }).first()), B4, { group: g, title: 'Feature card', desc: 'A feature card or tile on the features index.', sel: 'feature card' });
+  await markFeatureCard();
+  await S('feat-card', q('[data-m-mark="featcard"]').filter({ visible: true }).first(), B4, { group: g, title: 'Feature card', desc: 'A feature card on the features index (a title over its blurb).', sel: 'feature card box' });
   await S('feat-link', q('a').filter({ hasText: /Learn more|Explore|See all/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Feature link', desc: 'A "learn more" link on the features page; measured, never followed.', sel: 'features link' });
   save();
 }
@@ -529,7 +589,15 @@ async function pricing() {
   const head = q('h1, h2, h3, h4, p, span').filter({ hasText: /Couldn't load Premium plans|technical issue/i }).filter({ visible: true }).first();
   await S('pricing-h1', head, ['default'], { group: g, title: 'Pricing title (editorx.com)', desc: 'The heading editorx.com/pricing serves — on this run, the "Couldn\'t load Premium plans due to a technical issue" error title.', sel: 'error title on editorx.com/pricing' }, { noScroll: true });
   await S('pricing-pane', q('div, section').filter({ hasText: /Couldn't load Premium plans|technical issue/i }).filter({ visible: true }).last(), ['default'], { group: g, title: 'Error pane (editorx.com)', desc: 'The pane the premium-plans widget paints when it fails headless; honest evidence of what the domain serves.', sel: 'pricing error pane' });
-  await S('pricing-refresh', q('a, button').filter({ hasText: /^\s*Refresh\s*$|Customer Care/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Refresh link (editorx.com)', desc: 'The Refresh action inside the error pane; measured, never followed.', sel: 'error Refresh' }, { noScroll: true });
+  // The pane carries two links — 'contact Customer Care.' inside the copy and
+  // a standalone 'Refresh' action below it. An alternation matched whichever
+  // came first in the DOM (Customer Care), so Refresh is matched exactly and
+  // the support link is a separate entry when it exists.
+  const refresh = q('a, button').filter({ hasText: /^\s*Refresh\s*$/i }).filter({ visible: true });
+  const refreshLoc = (await refresh.count()) ? refresh.first()
+    : q('[role="button"], [role="link"], span').filter({ hasText: /^\s*Refresh\s*$/i }).filter({ visible: true }).first();
+  await S('pricing-refresh', refreshLoc, B4, { group: g, title: 'Refresh link (editorx.com)', desc: 'The Refresh action inside the error pane; measured, never followed.', sel: 'error Refresh' }, { noScroll: true });
+  await S('pricing-support', q('a, button, [role="link"]').filter({ hasText: /Customer Care/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Support link (editorx.com)', desc: "The 'contact Customer Care.' support link inside the error pane's copy; measured, never followed.", sel: 'error pane support link' }, { noScroll: true });
   save();
 }
 
@@ -593,7 +661,8 @@ async function mobile() {
   if (!(await newPage('mobile', { mobile: true, url: BASE + '/', wait: 12000 }))) return;
   await chrome('mobile');
   const g = G.mobile;
-  await S('m-header', q('nav').filter({ visible: true }).first(), ['default'], { group: g, title: 'Mobile nav', sel: 'nav at 390' }, { noScroll: true });
+  await markMobileHeader();
+  await S('m-header', q('[data-m-mark="mheader"]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Mobile nav', desc: 'The fixed mobile top bar (the wordmark, the square Start Creating and the burger menu button) — the page header is not a <nav> at phone width.', sel: 'fixed top bar at 390' }, { noScroll: true });
   const menu = q('button[aria-label*="navigation" i], button[aria-label*="menu" i]').filter({ visible: true }).first();
   await S('m-menu-button', menu, ['default'], { group: g, title: 'Menu button', desc: 'The burger/menu toggle in the mobile nav.', sel: 'nav menu button' }, { noScroll: true });
   try {

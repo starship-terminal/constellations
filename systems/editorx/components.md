@@ -2,17 +2,17 @@
 
 The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Captured from editorx.com on 2026-11-13, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. editorx.com is now a redirect shell: every path 301s to wix.com/studio except /pricing, which still serves a Wix page on the domain itself — it answered with the 'Couldn't load Premium plans' error pane at capture time, so the plan components come from wix.com/studio/plans. Nothing was signed into, created, submitted or paid for; the Log In / Start Creating actions were measured, never followed, and no editor surface was reached.
 
-The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (48 components, 111 states). The page layouts are described in [patterns.md](patterns.md).
+The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (49 components, 115 states). The page layouts are described in [patterns.md](patterns.md).
 
 How to read an entry:
 
 - A colour is its value followed by the palette token in [tokens.json](tokens.json) with the same value, when there is one. Text is written family size/line-height weight, then its colour, for example `SF Pro 14/21 500, #21252e`, and is read from the first text node inside the component.
 - The state table has one row per state that differs. The first row lists every value; later rows list only what changes. A state with the same values as the first is named in its label, for example "default (same: focus-visible)". When the root paints nothing, "Child layers" names the first nodes inside it that do.
-- Crops are images of the component read from the live page, in [components/crops/](components/crops) (111 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
+- Crops are images of the component read from the live page, in [components/crops/](components/crops) (115 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
 
 ## Discovery list
 
-Screenshots are named `{page}-{theme}-state.png`: every captured surface paints `light`. Desktop shots are 1440 x 900 at 1x; `-full` shots are whole pages at 1x; mobile shots are `mobile-{page}-{theme}-{state}.png`, 780 wide (390 at 2x).
+Screenshots are named `{page}-{theme}-state.png`: every captured surface paints `light`. Desktop shots are 1440 x 900 at 1x; desktop `-full` shots are whole pages at 1x; mobile shots are `mobile-{page}-{theme}-{state}.png`, 780 wide — mobile viewport and `-full` shots alike are 390 CSS px at 2x. Each shot's `.capture.json` sidecar in screenshots/ records its real scale.
 
 | Surface | URL | Screenshots |
 |---|---|---|
@@ -42,7 +42,7 @@ Screenshots are named `{page}-{theme}-state.png`: every captured surface paints 
 
 Values that apply across entries, from the measurement files.
 
-**Focus.** 19 components were given a real keyboard focus. 2 draw an outline ring: `academy-card` (on a child: 2px solid rgb(17, 109, 255) offset 1px), `pricing-refresh` (1px auto #005fcc `measured.focus-ring-auto`, offset 1px). 13 draw a focus ring as a shadow instead: `nav-trigger`, `nav-link`, `nav-lang`, `nav-login`, `menu-link`, `hero-cta`, `section-link`, `feat-link`, `inspo-filter`, `ent-cta`, `footer-link`, `social-icon`, `m-nav-item`. The other 4 show no measured change: `nav-cta`, `faq-question`, `design-cta`, `inspo-card`.
+**Focus.** 20 components were given a real keyboard focus. 3 draw an outline ring: `academy-card` (on a child: 2px solid rgb(17, 109, 255) offset 1px), `pricing-refresh` (3px solid #116dff `color.brand.link`, offset 1px), `pricing-support` (1px auto #005fcc `measured.focus-ring-auto`, offset 1px). 15 draw a focus ring as a shadow instead: `nav-trigger`, `nav-link`, `nav-lang`, `nav-login`, `menu-link`, `hero-cta`, `section-link`, `faq-question`, `feat-link`, `inspo-card`, `inspo-filter`, `ent-cta`, `footer-link`, `social-icon`, `m-nav-item`. The other 2 show no measured change: `nav-cta`, `design-cta`.
 
 **Pressed.** Forced with DevTools (`CSS.forcePseudoState` :active:hover). Nothing a real press would submit was ever pressed.
 
@@ -50,7 +50,9 @@ Values that apply across entries, from the measurement files.
 
 | Duration | Easing | Property | Where |
 |---|---|---|---|
+| 0.1s | `linear` | background-color, border-color, color | pricing-refresh |
 | 0.2s | `ease` | all | ent-cta, feat-link, inspo-filter, section-link |
+| 0.3s | `linear` | transform | m-header |
 | 0.4s | `ease` | background-color, border-color, color | design-cta, hero-cta, nav-cta, nav-lang |
 
 **Card shapes.** Default-state values; the entries hold the states.
@@ -59,7 +61,7 @@ Values that apply across entries, from the measurement files.
 |---|---|---|---|---|---|---|
 | [Plan card](#plan-card) | 202.02 x 574 | T: 3px solid #0e106a `color.neutral.navy`; R: 1px solid #dfe5eb `color.neutral.card-line`; B: 1px solid #dfe5eb `color.neutral.card-line`; L: 1px solid #dfe5eb `color.neutral.card-line` | - | #ffffff `color.neutral.white` | none | 0 |
 | [Template card](#template-card) | 297.75 x 394.8 | - | 2px | #ffffff `color.neutral.white` | none | 12px 12px 26px 12px |
-| [Feature card](#feature-card) | 1440 x 941.75 | - | - | #ffffff `color.neutral.white` | none | 0 |
+| [Feature card](#feature-card) | 312 x 116.75 | - | - | transparent | none | 0 |
 | [Inspiration card](#inspiration-card) | 633.77 x 432.34 | - | - | rgba(255, 255, 255, 0) | none | 0 |
 | [Academy card](#academy-card) | 673.13 x 631.38 | - | - | transparent | none | 0 |
 
@@ -76,14 +78,14 @@ The fixed top bar (57px): the Wix Studio wordmark, the Product / Resources / Ent
 
 Child layers that carry the look: span 62.5x56 border 4px solid transparent; div 1440x0 background #ffffff `color.neutral.white`; div 1440x588 image linear-gradient(rgba(245, 245, 245, 0.74), #e2efff).
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Nav bar default](components/crops/nav-bar-default.png)
 
 #### Logo
 The Wix Studio wordmark anchor. Read as `logo` on the home page.
 
 **Values (default).** size 83.95 x 56; padding 0px 15px; background transparent; text Madefor-Display 16/normal 400, #000000 `color.neutral.ink`; layers ::after rgba(0, 0, 0, 0) 0px none 1.
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Logo default](components/crops/logo-default.png)
 
 #### Nav trigger
 The Product button that opens the nav dropdown; toggled, never followed. Read as `nav-trigger` on the home page.
@@ -97,7 +99,7 @@ The Product button that opens the nav dropdown; toggled, never followed. Read as
 
 Child layers that carry the look: span 62.5x56 border 4px solid transparent.
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Nav trigger default](components/crops/nav-trigger-default.png) ![Nav trigger hover](components/crops/nav-trigger-hover.png) ![Nav trigger focus-visible](components/crops/nav-trigger-focus-visible.png) ![Nav trigger pressed](components/crops/nav-trigger-pressed.png)
 
 #### Nav link
 The plain Pricing nav link; measured, never followed. Read as `nav-link` on the home page.
@@ -109,7 +111,7 @@ The plain Pricing nav link; measured, never followed. Read as `nav-link` on the 
 | focus-visible | shadow #000000 0px 0px 0px 1px, #000000 0px 0px 0px 3px; layers ::after rgba(0, 0, 0, 0) 0px none 1; a.twLEiD 84.0x56.0 rgb(0, 0, 0) 0px 0px 0px 1px, rgb(0, 0, 0) 0px 0px 0px 3px |
 | pressed | text Madefor-Display-Bold 16/normal 700, #000000 `color.neutral.ink` |
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Nav link default](components/crops/nav-link-default.png) ![Nav link hover](components/crops/nav-link-hover.png) ![Nav link focus-visible](components/crops/nav-link-focus-visible.png) ![Nav link pressed](components/crops/nav-link-pressed.png)
 
 #### Language selector
 The globe language control ("language selector, english selected"); never opened. Read as `nav-lang` on the home page.
@@ -121,7 +123,7 @@ The globe language control ("language selector, english selected"); never opened
 | focus-visible | shadow #000000 0px 0px 0px 1px, #000000 0px 0px 0px 3px; layers button.pGUFRX 24.0x24.0 rgb(0, 0, 0) 0px 0px 0px 1px, rgb(0, 0, 0) 0px 0px 0px 3px |
 | pressed | text Madefor-Display-Bold 16/normal 700, #000000 `color.neutral.ink` |
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Language selector default](components/crops/nav-lang-default.png) ![Language selector hover](components/crops/nav-lang-hover.png) ![Language selector focus-visible](components/crops/nav-lang-focus-visible.png) ![Language selector pressed](components/crops/nav-lang-pressed.png)
 
 #### Log-in link
 The Log In header action; measured, never followed (it leaves for users.wix.com). Read as `nav-login` on the home page.
@@ -133,7 +135,7 @@ The Log In header action; measured, never followed (it leaves for users.wix.com)
 | focus-visible | shadow #000000 0px 0px 0px 1px, #000000 0px 0px 0px 3px; layers ::after rgba(0, 0, 0, 0) 0px none 1; a.oQY31L 46.7x20.0 rgb(0, 0, 0) 0px 0px 0px 1px, rgb(0, 0, 0) 0px 0px 0px 3px |
 | pressed | text Madefor-Display-Bold 16/normal 700, #000000 `color.neutral.ink` |
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Log-in link default](components/crops/nav-login-default.png) ![Log-in link hover](components/crops/nav-login-hover.png) ![Log-in link focus-visible](components/crops/nav-login-focus-visible.png) ![Log-in link pressed](components/crops/nav-login-pressed.png)
 
 #### Nav CTA
 The black Start Creating action in the header; measured, never followed. Read as `nav-cta` on the home page.
@@ -142,7 +144,7 @@ The black Start Creating action in the header; measured, never followed. Read as
 |---|---|
 | default (same: hover, focus-visible, pressed) | size 175.28 x 57; padding 0px 35px; background #3910ed `color.brand.studio-purple`; text Madefor-Text 16/57 400, #ffffff `color.neutral.white`; transition color 0.4s ease, background-color 0.4s ease |
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Nav CTA default](components/crops/nav-cta-default.png) ![Nav CTA hover](components/crops/nav-cta-hover.png) ![Nav CTA focus-visible](components/crops/nav-cta-focus-visible.png) ![Nav CTA pressed](components/crops/nav-cta-pressed.png)
 
 #### Nav dropdown
 The Product dropdown panel, opened by its own trigger. Read as `nav-dropdown` on the home page.
@@ -151,7 +153,7 @@ The Product dropdown panel, opened by its own trigger. Read as `nav-dropdown` on
 
 Child layers that carry the look: ul 1267.2x357 border 1px solid #d8e2ec `color.neutral.hairline`.
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Nav dropdown default](components/crops/nav-dropdown-default.png)
 
 #### Menu link
 A link inside the opened Product mega-menu. Read as `menu-link` on the home page.
@@ -162,7 +164,7 @@ A link inside the opened Product mega-menu. Read as `menu-link` on the home page
 | hover | text Madefor-Display-Bold 18/normal 700, #3910ed `color.brand.studio-purple` |
 | focus-visible, pressed | shadow #000000 0px 0px 0px 1px, #000000 0px 0px 0px 3px; text Madefor-Display-Bold 18/normal 700, #3910ed `color.brand.studio-purple`; layers a.eXGFEo 81.0x23.0 rgb(0, 0, 0) 0px 0px 0px 1px, rgb(0, 0, 0) 0px 0px 0px 3px |
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Menu link default](components/crops/menu-link-default.png) ![Menu link hover](components/crops/menu-link-hover.png) ![Menu link focus-visible](components/crops/menu-link-focus-visible.png) ![Menu link pressed](components/crops/menu-link-pressed.png)
 
 ### Home
 
@@ -173,14 +175,14 @@ The "Design with impact / Deliver at scale" display headline, madefor-display. R
 
 **Values (default).** size 869.25 x 176.53; background transparent; text wix-madefor-display-v2 80.24/88.27 400, #000000 `color.neutral.ink`.
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Hero headline default](components/crops/hero-title-default.png)
 
 #### Hero copy
 The lede under the display headline. Read as `hero-sub` on the home page.
 
 **Values (default).** size 586.13 x 23; background transparent; text wix-madefor-text-v2 18/28.8 400, #000000 `color.neutral.ink`.
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Hero copy default](components/crops/hero-sub-default.png)
 
 #### Hero CTA
 The purple "Start creating" pill under the hero copy (the header CTA shares the label, so the header is excluded); measured, never followed. Read as `hero-cta` on the home page.
@@ -191,14 +193,14 @@ The purple "Start creating" pill under the hero copy (the header CTA shares the 
 | hover | background rgba(57, 16, 237, 0) |
 | focus-visible | shadow #ffffff 0px 0px 0px 2px, #116dff 0px 0px 0px 4px |
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Hero CTA default](components/crops/hero-cta-default.png) ![Hero CTA hover](components/crops/hero-cta-hover.png) ![Hero CTA focus-visible](components/crops/hero-cta-focus-visible.png) ![Hero CTA pressed](components/crops/hero-cta-pressed.png)
 
 #### Section heading
 A feature-section heading below the hero. Read as `section-h2` on the home page.
 
 **Values (default).** size 751.11 x 108; background transparent; text wix-madefor-display-v2 54/54 400, #000000 `color.neutral.ink`.
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Section heading default](components/crops/section-h2-default.png)
 
 #### Section link
 An inline "learn more" link inside a feature section; measured, never followed. Read as `section-link` on the home page.
@@ -208,14 +210,16 @@ An inline "learn more" link inside a feature section; measured, never followed. 
 | default (same: hover, pressed) | size 218.47 x 32; padding 0px 22px 0px 0px; radius 50px; background transparent; text madefor-text-mediumbold 16/normal 400, #000000 `color.neutral.ink`; transition all 0.2s ease |
 | focus-visible | shadow #ffffff 0px 0px 0px 2px, #116dff 0px 0px 0px 4px; layers a.StylableButton2545352419__root.StylableButton2545352419__forcedColorsBackground 218.5x32.0 rgb(255, 255, 255) 0px 0px 0px 2px, rgb(17, 109, 255) 0px 0px 0px 4px 50px |
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Section link default](components/crops/section-link-default.png) ![Section link hover](components/crops/section-link-hover.png) ![Section link focus-visible](components/crops/section-link-focus-visible.png) ![Section link pressed](components/crops/section-link-pressed.png)
 
 #### Showcase section
 The "Site of the week" scroll-jacked showcase (a pinned media scene); measured mid-scroll state may sit between animation frames. Read as `showcase-card` on the home page.
 
-**Values (default).** size 1440 x 2319.58; background #ffffff `color.neutral.white`; text Arial 10/normal 400, #000000 `color.neutral.ink`.
+**Values (default).** size 1440 x 900; background transparent; text wix-madefor-display-v2 18/normal 400, #000000 `color.neutral.ink`; icon 17 x 17, #000000 `color.neutral.ink`; layers div.jdJeEr.NYfD3h 1440.0x900.0 rgba(69, 84, 102, 0); div.jdJeEr.NYfD3h 648.3x314.7 rgba(238, 238, 238, 0); div.jdJeEr.NYfD3h 341.3x52.0 rgba(255, 255, 255, 0); div.jdJeEr.NYfD3h 181.0x52.0 rgba(255, 255, 255, 0); a.StylableButton2545352419__root.StylableButton2545352419__forcedColorsBackground 181.0x52.0 rgb(0, 0, 0) 50px; div.jdJeEr.NYfD3h 137.8x30.0 rgba(255, 255, 255, 0).
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+Child layers that carry the look: div 1440x900 background rgba(69, 84, 102, 0); div 648.3x314.7 background rgba(238, 238, 238, 0); div 341.3x52 background rgba(255, 255, 255, 0).
+
+![Showcase section default](components/crops/showcase-card-default.png)
 
 #### FAQ question
 A Wix Studio FAQ repeater item (question row); toggled open once for the opened state (local UI). Read as `faq-question` on the home page.
@@ -228,14 +232,14 @@ A Wix Studio FAQ repeater item (question row); toggled open once for the opened 
 
 Child layers that carry the look: div 1327.7x131.2 background rgba(220, 232, 255, 0); div 1327.7x1 background #000000 `color.neutral.ink`; div 0x0 background rgba(238, 238, 238, 0).
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![FAQ question default](components/crops/faq-question-default.png) ![FAQ question hover](components/crops/faq-question-hover.png) ![FAQ question focus-visible](components/crops/faq-question-focus-visible.png) ![FAQ question pressed](components/crops/faq-question-pressed.png) ![FAQ question opened](components/crops/faq-question-opened.png)
 
 #### CTA band
 The closing "Unleash your creations. Rein in the chaos. / Start creating" band. Read as `cta-band` on the home page.
 
 **Values (default).** size 1269 x 171; background #deff00 `color.brand.lime`; text Arial 10/normal 400, #000000 `color.neutral.ink`.
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![CTA band default](components/crops/cta-band-default.png)
 
 ### Features and design
 
@@ -249,13 +253,15 @@ The features page display heading. Read as `feat-h1` on the features page.
 ![Features title default](components/crops/feat-h1-default.png)
 
 #### Feature card
-A feature card or tile on the features index. Read as `feat-card` on the features page.
+A feature card on the features index (a title over its blurb). Read as `feat-card` on the features page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 1440 x 941.75; background #ffffff `color.neutral.white`; text Arial 10/normal 400, #000000 `color.neutral.ink` |
+| default (same: hover, pressed) | size 312 x 116.75; background transparent; text madefor-text-bold 18/25.2 400, #000000 `color.neutral.ink`; layers div.jdJeEr.NYfD3h 312.0x116.8 rgba(238, 238, 238, 0) |
 
 **Focus not capturable.** A real keyboard focus could not be held on this element (`focus-visible` recorded `via: focus failed`), so its focus look is uncaptured — not measured as absent.
+
+Child layers that carry the look: div 312x116.8 background rgba(238, 238, 238, 0).
 
 ![Feature card default](components/crops/feat-card-default.png) ![Feature card hover](components/crops/feat-card-hover.png) ![Feature card pressed](components/crops/feat-card-pressed.png)
 
@@ -350,12 +356,24 @@ The Refresh action inside the error pane; measured, never followed. Read as `pri
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
+| default | size 57.25 x 24; radius 2px; background transparent; text Madefor 16/24 400, #116dff `color.brand.link`; transition background-color 0.1s linear, color 0.1s linear, border-color 0.1s linear |
+| hover | text Madefor 16/24 400, #0f62e6 `color.brand.link-hover` |
+| focus-visible | outline 3px solid #116dff `color.brand.link`, offset 1px; layers ::before rgba(0, 0, 0, 0) 0px none 1; button.wds-button-core.wds_1_348_0-button-core 57.3x24.0 3px solid rgb(17, 109, 255) offset 1px 2px; button::before.wds-button-core.wds_1_348_0-button-core 57.25pxx24px 1px solid rgb(255, 255, 255) offset 0px 2px |
+| pressed | text Madefor 16/24 400, #084ebd |
+
+![Refresh link (editorx.com) default](components/crops/pricing-refresh-default.png) ![Refresh link (editorx.com) hover](components/crops/pricing-refresh-hover.png) ![Refresh link (editorx.com) focus-visible](components/crops/pricing-refresh-focus-visible.png) ![Refresh link (editorx.com) pressed](components/crops/pricing-refresh-pressed.png)
+
+#### Support link (editorx.com)
+The 'contact Customer Care.' support link inside the error pane's copy; measured, never followed. Read as `pricing-support` on the pricing page.
+
+| State | Values (later rows list only what changes from the first row) |
+|---|---|
 | default | size 154.31 x 18; background transparent; text Madefor 14/18 400, #116dff `color.brand.link` |
 | hover | text Madefor 14/18 400, #0f62e6 `color.brand.link-hover` |
 | focus-visible | outline 1px auto #005fcc `measured.focus-ring-auto`, offset 1px; layers a 154.3x18.0 1px auto rgb(0, 95, 204) offset 1px |
 | pressed | text Madefor 14/18 400, #0f62e6 `color.brand.link-hover` |
 
-![Refresh link (editorx.com) default](components/crops/pricing-refresh-default.png) ![Refresh link (editorx.com) hover](components/crops/pricing-refresh-hover.png) ![Refresh link (editorx.com) focus-visible](components/crops/pricing-refresh-focus-visible.png) ![Refresh link (editorx.com) pressed](components/crops/pricing-refresh-pressed.png)
+![Support link (editorx.com) default](components/crops/pricing-support-default.png) ![Support link (editorx.com) hover](components/crops/pricing-support-hover.png) ![Support link (editorx.com) focus-visible](components/crops/pricing-support-focus-visible.png) ![Support link (editorx.com) pressed](components/crops/pricing-support-pressed.png)
 
 ### Galleries
 
@@ -459,7 +477,7 @@ The Wix Studio footer: the blurb, link columns, social icons, language and legal
 
 Child layers that carry the look: nav 1440x793 background #0e0e0e `color.neutral.surface-dark`; div 0x0 background #848280 `color.neutral.footer-divider`; div 1296x56 shadow #848280 `color.neutral.footer-divider` 0px -1px 0px 0px.
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Footer default](components/crops/footer-default.png)
 
 #### Footer link
 Read as `footer-link` on the home page.
@@ -471,7 +489,7 @@ Read as `footer-link` on the home page.
 | focus-visible | shadow #828282 0px 0px 0px 1px, #828282 0px 0px 0px 3px; text Madefor-Text 16/34 400, #828282 `color.neutral.footer-muted`; layers a.Pllco1 52.2x34.0 rgb(130, 130, 130) 0px 0px 0px 1px, rgb(130, 130, 130) 0px 0px 0px 3px |
 | pressed | text Madefor-Text 16/34 400, #828282 `color.neutral.footer-muted` |
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Footer link default](components/crops/footer-link-default.png) ![Footer link hover](components/crops/footer-link-hover.png) ![Footer link focus-visible](components/crops/footer-link-focus-visible.png) ![Footer link pressed](components/crops/footer-link-pressed.png)
 
 #### Social link
 A social link in the footer. Read as `social-icon` on the home page.
@@ -483,16 +501,16 @@ A social link in the footer. Read as `social-icon` on the home page.
 | focus-visible | shadow #828282 0px 0px 0px 1px, #828282 0px 0px 0px 3px; text Arial 10/normal 400, #828282 `color.neutral.footer-muted`; icon 24 x 24, #828282 `color.neutral.footer-muted`; layers a.Rv9f2H 24.0x24.0 rgb(130, 130, 130) 0px 0px 0px 1px, rgb(130, 130, 130) 0px 0px 0px 3px |
 | pressed | text Arial 10/normal 400, #828282 `color.neutral.footer-muted`; icon 24 x 24, #828282 `color.neutral.footer-muted` |
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Social link default](components/crops/social-icon-default.png) ![Social link hover](components/crops/social-icon-hover.png) ![Social link focus-visible](components/crops/social-icon-focus-visible.png) ![Social link pressed](components/crops/social-icon-pressed.png)
 
 ### Mobile (390 wide)
 
 The same surface at phone width: the header shrinks to wordmark + Start Creating + burger, and the menu opens as a white full panel with 50px rows.
 
 #### Mobile nav
-Read as `m-header` on the home page at 390 wide.
+The fixed mobile top bar (the wordmark, the square Start Creating and the burger menu button) — the page header is not a <nav> at phone width. Read as `m-header` on the home page at 390 wide.
 
-**Values (default).** size 390 x 861; padding 61px 27.2969px 30px 27.2969px; background #0e0e0e `color.neutral.surface-dark`; text Madefor-Text 14/20 400, #f6f6f6 `color.neutral.footer-ink`.
+**Values (default).** size 390 x 47; padding 0px 0px 0px 20px; border B: 1px solid #d8e2ec `color.neutral.hairline`; background #ffffff `color.neutral.white`; text Madefor-Display 14/normal 400, #ffffff `color.neutral.white`; transition transform 0.3s linear.
 
 ![Mobile nav default](components/crops/m-header-default.png)
 
@@ -556,7 +574,7 @@ Everything behind Log In / Start Creating — the Studio editor, workspaces, das
 
 ### Themes
 
-The surface paints one light theme; there is no user-facing dark mode or theme toggle. The export's "dark" set is the near-black #0e0e0e chrome (the footer and the mobile header) with its #f6f6f6 text and #828282 muted — painted surfaces on the light page, not a selectable theme. The --wst-* layer declares no dark redeclarations.
+The surface paints one light theme; there is no user-facing dark mode or theme toggle. The export's "dark" set is the near-black #0e0e0e chrome (the footer) with its #f6f6f6 text and #828282 muted — a painted surface on the light page, not a selectable theme. The --wst-* layer declares no dark redeclarations.
 
 ### Fonts
 

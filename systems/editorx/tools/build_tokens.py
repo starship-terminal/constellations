@@ -17,8 +17,8 @@ Every token carries $extensions.source: "css-var <name>" or "measured <where>".
 The surface paints one light theme; there is no user-facing dark mode. The
 export holds core, light and dark: light roles are aliases over the measured
 ink/white neutrals and the Wix Studio purple #3910ed / lime #deff00 actions,
-and "dark" is the near-black #0e0e0e chrome set the footer and mobile header
-paint — not a user-selectable theme.
+and "dark" is the near-black #0e0e0e chrome set the footer paints — not a
+user-selectable theme.
 
 Deterministic: same inputs, byte-identical output. Edit the raw inputs, never tokens.json.
 """
@@ -208,7 +208,7 @@ tokens = {
         {"id": "light", "name": "Light", "selectedTokenSets": {"core": "source", "light": "enabled"},
          "$description": "The public surface: the Wix Studio marketing pages paint black on white with the #3910ed purple actions and a #deff00 lime band."},
         {"id": "dark", "name": "Dark", "selectedTokenSets": {"core": "source", "dark": "enabled"},
-         "$description": "The near-black chrome the light page paints — the #0e0e0e footer and mobile header with #f6f6f6 text — not a user toggle."},
+         "$description": "The near-black chrome the light page paints — the #0e0e0e footer with #f6f6f6 text — not a user toggle."},
     ],
     "$metadata": {"tokenSetOrder": ["core", "light", "dark"]},
 }

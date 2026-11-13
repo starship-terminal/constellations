@@ -11,7 +11,10 @@
 //
 // Names are {page}-{theme}-{state}.png; mobile ones get a `mobile-` prefix. The
 // surface paints one light theme. Desktop shots are 1440x900 at 1x, mobile
-// 390x844 at 2x, `*-full` shots 1x. A page taller than one GPU texture is saved
+// 390x844 at 2x — and `*-full` shots keep the context's device scale too:
+// desktop `*-full` is 1x, mobile `*-full` is 2x (a 390-wide page lands at
+// 780px). Each shot's .capture.json sidecar records its real scale; mobile
+// full-page images are not 1x. A page taller than one GPU texture is saved
 // as name.partN.png tiles, which quantize.py stitches back together; an
 // unbounded page truncates at 8 chunks and the log records the boundary.
 // Nothing is sent, bought or signed into: the only presses are local UI

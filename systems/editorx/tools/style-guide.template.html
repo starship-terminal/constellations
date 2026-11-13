@@ -51,7 +51,7 @@ code { font-family: var(--sg-mono); font-size: .9em; }
 .btn.square { background: var(--action-primary, var(--color-brand-studio-purple, #3910ed)); color: var(--text-on-action, #fff); border-radius: 0; height: var(--component-button-cta-height, 57px); padding: 0 35px; }
 .hero { color: var(--color-neutral-ink, #000); padding: 64px 40px 80px; font: 400 56px/1.1 var(--sg-serif); letter-spacing: -.03em; text-align: center; }
 .hero small { display: block; font: 400 18px/1.6 var(--sg-sans); color: var(--color-neutral-ink, #000); margin: 16px auto 22px; max-width: 46ch; }
-.hero .big-cta { height: var(--component-button-pill-height, 56px); padding: 0 34px; border-radius: var(--radius-stadium, 999px); font-size: 20px; background: var(--action-primary, var(--color-brand-studio-purple, #3910ed)); color: var(--text-on-action, #fff); }
+.hero .big-cta { display: inline-flex; align-items: center; justify-content: center; height: var(--component-button-pill-height, 56px); padding: 0 34px; border-radius: var(--radius-stadium, 999px); font-size: 20px; background: var(--action-primary, var(--color-brand-studio-purple, #3910ed)); color: var(--text-on-action, #fff); }
 .limeband { background: var(--surface-accent, var(--color-brand-lime, #deff00)); color: var(--color-neutral-ink, #000); padding: 34px 30px; font: 400 30px/1.15 var(--sg-serif); letter-spacing: -.02em; }
 .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
 .tile { border: 1px solid var(--border-card, var(--color-neutral-card-line, #dfe5eb)); padding: 14px; font-size: 13px; background: #fff; border-radius: var(--radius-card, 2px); }
@@ -99,7 +99,7 @@ table.cmp td, table.cmp th { border: 1px solid var(--border-hairline, var(--colo
   </div>
 
   <h2 class="sh">The dark chrome</h2>
-  <p class="lead">The #0e0e0e footer (and the mobile header) is the only dark surface: #f6f6f6 links at 16/34 dimming to #828282 on hover, circled 36px social buttons on a 1px ring, the #848280 hairline. Not a user theme — the export's dark set is this painted chrome.</p>
+  <p class="lead">The #0e0e0e footer is the only dark surface: #f6f6f6 links at 16/34 dimming to #828282 on hover, circled 36px social buttons on a 1px ring, the #848280 hairline. Not a user theme — the export's dark set is this painted chrome.</p>
   <div class="mock band" style="padding:22px">
     <div style="margin-bottom:14px"><span class="footlink">Product</span><span class="footlink">Features</span><span class="footlink">Enterprise</span><span class="footlink">Resources</span><span class="footlink">Pricing</span></div>
     <div><span class="soc">ig</span><span class="soc">fb</span><span class="soc">yt</span><span class="soc">in</span><span class="soc">x</span></div>
@@ -166,7 +166,15 @@ const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) 
 
 (function elev() {
   let e = '';
-  for (const [n, t] of flat(TOK.core.shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  // Shadows live under core.shadow in most packs; this one stores them under
+  // core.measured (the plan card's elevation and the double focus rings), so
+  // every $type=shadow token under core is listed.
+  const seen = new Set();
+  for (const [n, t] of flat(TOK.core, '')) {
+    if (t.t !== 'shadow' || seen.has(n)) continue;
+    seen.add(n);
+    e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => [x.offsetX, x.offsetY, x.blur, x.spread, x.color].filter(Boolean).join(' ')).join(', ') : t.v)}</span></div>`;
+  }
   $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
 })();
 

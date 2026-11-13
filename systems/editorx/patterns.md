@@ -3,8 +3,8 @@
 How the measured components combine on the surface editorx.com now serves
 (the editorx.com → wix.com/studio redirect shell), read from the screenshots
 and the component entries in [components.md](components.md). The surface
-paints one light theme; the only dark paint is the `#0e0e0e` chrome (footer
-and mobile header) — a section treatment, not a user toggle. Every display
+paints one light theme; the only dark paint is the `#0e0e0e` chrome (the
+footer) — a section treatment, not a user toggle. Every display
 size is spx-scaled to the viewport, so the px values below are the 1440px
 readings unless marked mobile (390px).
 
@@ -121,13 +121,14 @@ Text links at 16/34 in `#f6f6f6`
 `#828282` on hover and pressed, an `#848280` hairline separating the
 columns, and 36px social buttons as 50% circles on a 1px `#f6f6f6` ring
 ([social-icon](components/crops/social-icon-default.png)). Focus on dark
-draws the `#828282` double ring. The same near-black chrome owns the
-mobile header at 390.
+draws the `#828282` double ring.
 
 ## Mobile (390 wide)
 
-The header collapses to wordmark + `Start Creating` + the 50 x 46 burger
-([m-menu-button](components/crops/m-menu-button-default.png)); the purple
+The header collapses to a white 390 x 47 bar over a `#d8e2ec` hairline —
+wordmark + `Start Creating` + the 50 x 46 burger
+([m-header](components/crops/m-header-default.png),
+[m-menu-button](components/crops/m-menu-button-default.png)); the purple
 CTA keeps its fill at phone width. The menu opens as a white full panel
 ([m-menu-open](components/crops/m-menu-open-default.png), 390 x 797 —
 see [mobile-home-light-menu](screenshots/mobile-home-light-menu.png)) of
@@ -145,8 +146,9 @@ tracking) — the spx scale in action.
   lifts.
 - **Focus-visible** is a double box-shadow ring everywhere, tinted per
   surface: white 2px + `#116dff` 4px on content controls, `#000` 1px +
-  3px in the header, `#828282` 1px + 3px on the dark chrome, and a bare
-  1px auto `#005fcc` outline only on the link-blue control.
+  3px in the header, `#828282` 1px + 3px on the dark chrome, a bare 1px
+  auto `#005fcc` outline on the inline link-blue control, and a 3px
+  `#116dff` outline on the standalone Refresh link.
 - **Pressed** is DevTools-forced `:active:hover`; the mega-menu links
   hold the `#3910ed` colour and the footer links hold `#828282` — no
   distinct pressed paint.

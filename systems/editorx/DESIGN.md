@@ -3,7 +3,7 @@
 # Source of truth: tokens.json. DESIGN.md spec version alpha.
 version: "alpha"
 name: "Editor X (Wix Studio)"
-description: "Pro-site-builder marketing pages and galleries: Madefor display 60-157px at 1.0 line-height with -0.03em tracking over pure #000 ink on white, sharp 0px corners with stadium pills where a control is meant to be pushed, one #3910ed purple reserved for the Start Creating actions, a #deff00 lime closing band, #0e0e0e near-black chrome (footer, mobile header) with #f6f6f6 links dimming to #828282, double box-shadow focus rings per surface, a plans card grid with navy accent edges and mint RECOMMENDED badges, and inspiration/templates galleries"
+description: "Pro-site-builder marketing pages and galleries: Madefor display 60-157px at 1.0 line-height with -0.03em tracking over pure #000 ink on white, sharp 0px corners with stadium pills where a control is meant to be pushed, one #3910ed purple reserved for the Start Creating actions, a #deff00 lime closing band, #0e0e0e near-black chrome (the footer) with #f6f6f6 links dimming to #828282, double box-shadow focus rings per surface, a plans card grid with navy accent edges and mint RECOMMENDED badges, and inspiration/templates galleries"
 omitted:
   - section: "typography"
     reason: "tokens.json has no typography tokens under `core.typography`"
@@ -60,6 +60,7 @@ colors:
   color-neutral-shade-3: "#8d8d8d"
   color-neutral-grey-600: "#727272"
   measured-focus-ring-auto: "#005fcc"
+  measured-focus-ring-link: "#116dff"
 rounded:
   stadium: "1123.88px"
   pill: "50px"
@@ -86,13 +87,13 @@ It follows the DESIGN.md spec, version alpha. That format has no themes, no per-
 
 ## Overview
 
-Good for: Pro-site-builder marketing pages and galleries: Madefor display 60-157px at 1.0 line-height with -0.03em tracking over pure #000 ink on white, sharp 0px corners with stadium pills where a control is meant to be pushed, one #3910ed purple reserved for the Start Creating actions, a #deff00 lime closing band, #0e0e0e near-black chrome (footer, mobile header) with #f6f6f6 links dimming to #828282, double box-shadow focus rings per surface, a plans card grid with navy accent edges and mint RECOMMENDED badges, and inspiration/templates galleries.
+Good for: Pro-site-builder marketing pages and galleries: Madefor display 60-157px at 1.0 line-height with -0.03em tracking over pure #000 ink on white, sharp 0px corners with stadium pills where a control is meant to be pushed, one #3910ed purple reserved for the Start Creating actions, a #deff00 lime closing band, #0e0e0e near-black chrome (the footer) with #f6f6f6 links dimming to #828282, double box-shadow focus rings per surface, a plans card grid with navy accent edges and mint RECOMMENDED badges, and inspiration/templates galleries.
 
 Captured 2026-11-13, signed out (every captured surface is public; editorx.com 301s to wix.com/studio for every path except /pricing, which served its Premium-plans error pane at capture time; the Studio editor, workspaces and checkout sit behind Log In / Start Creating and were never reached; no form was submitted and no account created). Themes: light, dark.
 
 A token set and component reference for the public signed-out surface editorx.com now serves — for building marketing pages and galleries in the style of the real thing. It was read from **editorx.com** on **2026-11-13**, signed out, in headless Chromium at 1440 x 900 and 390 x 844. editorx.com is now a redirect shell for **Wix Studio**: every path 301s to `wix.com/studio` (deep paths keep their tail) except `/pricing`, which still serves a Wix plans page on the domain itself — it answered with the *Couldn't load Premium plans* error pane at capture time, recorded as a boundary. Captured: home, features, design, plans, pricing, inspiration, templates, academy and enterprise, plus a 390px pass on home and plans.
 
-The surface is worth a capture because Wix's pro builder paints a deliberately stark public system: **Madefor** at mostly one weight over pure `#000` ink and white surfaces, sharp 0px corners as the default with stadium pills where a control is meant to be pushed, a single `#3910ed` purple reserved for the Start Creating actions, a `#deff00` lime reserved for the closing band, and a `#0e0e0e` near-black chrome (footer, mobile header) whose `#f6f6f6` links dim to `#828282`. Underneath the marketing chrome the page is a thunderbolt build that declares its theme in custom properties — the `--color_0..65` palette, `--font_0..10` site fonts and the `--wst-*` semantic layer (action `#1a6aff`, text/fill/disabled roles) — harvested here from the inline styles and linked parastorage bundles. Display type is **spx-scaled**: font sizes track the viewport (`--theme-spx-ratio`), so the measured px values are the 1440 and 390 readings, not fixed sizes. **Boundary:** the Studio editor and everything behind Log In / Start Creating were never reached and are never inferred.
+The surface is worth a capture because Wix's pro builder paints a deliberately stark public system: **Madefor** at mostly one weight over pure `#000` ink and white surfaces, sharp 0px corners as the default with stadium pills where a control is meant to be pushed, a single `#3910ed` purple reserved for the Start Creating actions, a `#deff00` lime reserved for the closing band, and a `#0e0e0e` near-black chrome (the footer) whose `#f6f6f6` links dim to `#828282`. Underneath the marketing chrome the page is a thunderbolt build that declares its theme in custom properties — the `--color_0..65` palette, `--font_0..10` site fonts and the `--wst-*` semantic layer (action `#1a6aff`, text/fill/disabled roles) — harvested here from the inline styles and linked parastorage bundles. Display type is **spx-scaled**: font sizes track the viewport (`--theme-spx-ratio`), so the measured px values are the 1440 and 390 readings, not fixed sizes. **Boundary:** the Studio editor and everything behind Log In / Start Creating were never reached and are never inferred.
 
 ## Colors
 
@@ -147,7 +148,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 - **This is the marketing surface, not the editor.** The Studio editor, workspaces, dashboards and checkout sit behind Log In / Start Creating and are uncaptured. Marketing pages describe the product; nothing here verifies how it behaves.
 - **This is Wix Studio, not 2021-era Editor X.** editorx.com 301s to wix.com/studio; the package documents the surface it serves today, not the defunct Editor X brand it once served. Only /pricing still answers on the editorx.com domain — and it served its error pane at capture time.
-- **"Dark" is a painted surface, not a toggle.** The `#0e0e0e` footer and mobile header are dark sections of a light page — nothing toggles them. The `dark` token set is their painted role set, not a user-selectable mode.
+- **"Dark" is a painted surface, not a toggle.** The `#0e0e0e` footer is a dark section of a light page — nothing toggles it (the mobile header stays white). The `dark` token set is its painted role set, not a user-selectable mode.
 - **Display sizes are spx-scaled, not fixed.** font-size tracks the viewport through `--theme-spx-ratio`: 80.25px hero and 157.5px design display are the 1440px readings (34.5px hero at 390). Treat the numbers as proportional.
 - **The hero pill's anchor reads unstyled-link colours.** Its own `color` computes rgb(0,0,238) default / rgb(255,0,0) pressed — browser link-state quirks of the anchor; the label inside paints white, and the purple fill lives on a child layer whose hover reading caught mid-transition at alpha 0.
 - **Unstyled containers read fallback fonts.** Thunderbolt leaves wrappers at Arial/Times; the text nodes inside carry Madefor. Type tokens cite the text-node readings (`textStyle`), not the wrapper's.
@@ -159,7 +160,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 2. **Do go stadium or go square.** The default corner is 0px — header CTA, plan cards, bands, galleries. Where a control pills it goes all the way: the hero stadium, the 50px link pill, 50% social circles. See [hero-cta](components/crops/hero-cta-default.png) and [social-icon](components/crops/social-icon-default.png).
 3. **Do set display huge, tight and quiet.** Displays run 60-157px at 1.0 line-height with ~-0.03em tracking, all in the regular 400 weight — size and space do the work, not weight or style. See [hero-title](components/crops/hero-title-default.png) and [design-h1](components/crops/design-h1-default.png).
 4. **Do let Madefor carry the whole voice.** Display face for headlines, Text face for body; the only weight shifts are 500/530 on quiet labels and 700 on plan text — no italics, no second family. See [faq-question](components/crops/faq-question-default.png).
-5. **Do paint the chrome near-black.** Footer and mobile header are `#0e0e0e` with `#f6f6f6` links that dim to `#828282` on hover — a painted section treatment, not a dark mode. See [footer](components/crops/footer-default.png) and [m-menu-open](components/crops/m-menu-open-default.png).
+5. **Do paint the footer near-black.** The footer is `#0e0e0e` with `#f6f6f6` links that dim to `#828282` on hover — a painted section treatment, not a dark mode (the mobile header stays white). See [footer](components/crops/footer-default.png).
 6. **Do keep the lime in reserve.** `#deff00` appears once, as the closing CTA band — an accent of last resort, never on controls or text. See [cta-band](components/crops/cta-band-default.png).
 7. **Do ring focus twice.** Content controls take a 2px white + 4px `#116dff` box-shadow pair; the header takes 1px + 3px ink; the dark chrome takes `#828282`. Never a bare outline. See [hero-cta focus-visible](components/crops/hero-cta-focus-visible.png) and [nav-link focus-visible](components/crops/nav-link-focus-visible.png).
 8. **Don't style the Studio editor from this package.** Every value is the public surface's; the product behind Log In / Start Creating is uncaptured — [pricing-light-default](screenshots/pricing-light-default.png) is as deep as the capture goes.

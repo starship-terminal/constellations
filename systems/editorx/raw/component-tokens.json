@@ -1,5 +1,5 @@
 {
- "_about": "The token tree build_tokens.py turns into tokens.json. editorx.com redirects to wix.com/studio: a thunderbolt build whose inline theme layer (--color_*, --wst-*, --font_*; raw/css-vars.json) is var-referenced where it declares the studio palette and site fonts, and measured computed values (raw/components-computed.json) cover the Wix Studio purple #3910ed and lime #deff00 actions, the ink/white neutrals and #0e0e0e chrome, the double focus rings, Madefor under its five face names, the stadium pills and the spx-scaled display ramp. The 'dark' set is the near-black footer/mobile-header chrome the light page paints — not a user toggle.",
+ "_about": "The token tree build_tokens.py turns into tokens.json. editorx.com redirects to wix.com/studio: a thunderbolt build whose inline theme layer (--color_*, --wst-*, --font_*; raw/css-vars.json) is var-referenced where it declares the studio palette and site fonts, and measured computed values (raw/components-computed.json) cover the Wix Studio purple #3910ed and lime #deff00 actions, the ink/white neutrals and #0e0e0e chrome, the double focus rings, Madefor under its five face names, the stadium pills and the spx-scaled display ramp. The 'dark' set is the near-black footer chrome the light page paints — not a user toggle.",
  "core": {
   "font": {
    "family": {
@@ -178,8 +178,8 @@
     "link": {
      "type": "dimension",
      "value": "14px",
-     "source": "computed fontSize of pricing-refresh default (raw/components-computed.json)",
-     "description": "The 14px link text."
+     "source": "computed fontSize of pricing-support default (raw/components-computed.json)",
+     "description": "The 14px inline link text."
     },
     "meta": {
      "type": "dimension",
@@ -270,7 +270,7 @@
     "link": {
      "type": "dimension",
      "value": "18px",
-     "source": "computed lineHeight of pricing-refresh default (raw/components-computed.json)",
+     "source": "computed lineHeight of pricing-support default (raw/components-computed.json)",
      "description": "Link leading (18px on 14px)."
     },
     "meta": {
@@ -539,7 +539,7 @@
      "value": "#0e0e0e",
      "type": "color",
      "source": "computed paint-bg of footer default (raw/components-computed.json)",
-     "description": "The #0e0e0e near-black chrome: the footer and the mobile header."
+     "description": "The #0e0e0e near-black chrome: the footer."
     },
     "footer-divider": {
      "value": "#848280",
@@ -734,8 +734,14 @@
    "focus-ring-auto": {
     "value": "#005fcc",
     "type": "color",
-    "source": "computed outlineColor of pricing-refresh focus-visible (raw/components-computed.json)",
+    "source": "computed outlineColor of pricing-support focus-visible (raw/components-computed.json)",
     "description": "The #005fcc auto outline the link-blue controls take (1px)."
+   },
+   "focus-ring-link": {
+    "value": "#116dff",
+    "type": "color",
+    "source": "computed outlineColor of pricing-refresh focus-visible (raw/components-computed.json)",
+    "description": "The 3px solid #116dff outline the standalone Refresh link takes on focus."
    },
    "card-elevation": {
     "value": [
@@ -828,7 +834,7 @@
     "value": "{color.neutral.surface-dark}",
     "type": "color",
     "source": "role alias over the core palette",
-    "description": "The #0e0e0e footer/mobile-header chrome on the light page."
+    "description": "The #0e0e0e footer chrome on the light page."
    },
    "accent": {
     "value": "{color.brand.lime}",
@@ -910,7 +916,7 @@
     "action": {
      "value": "#ffffff",
      "type": "color",
-     "source": "computed colors of footer-link / social-icon / m-nav-item over the dark chrome (raw/components-computed.json)",
+     "source": "computed colors of footer-link / social-icon over the dark chrome (raw/components-computed.json)",
      "description": "White labels on the action fill."
     }
    }
@@ -942,7 +948,7 @@
     "value": "{color.brand.studio-purple}",
     "type": "color",
     "source": "role alias over the core palette",
-    "description": "The #3910ed fill the mobile header's Start Creating keeps."
+    "description": "The #3910ed action fill; the dark footer carries no action of its own, the role is kept for completeness."
    }
   }
  },
@@ -993,6 +999,14 @@
     "value": "56px",
     "source": "computed height of nav-bar default (raw/components-computed.json)",
     "description": "The 56px desktop header."
+   }
+  },
+  "header-mobile": {
+   "height": {
+    "type": "dimension",
+    "value": "47px",
+    "source": "computed height of m-header default (raw/components-computed.json)",
+    "description": "The 47px mobile header."
    }
   },
   "menurow": {

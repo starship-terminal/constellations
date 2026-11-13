@@ -33,7 +33,7 @@ Page: home. Selector: `nav`. States: default.
 | Ancestor paint | 1 up div.dsyWYg.oqZt9m bg #ffffff |
 | How | at rest |
 
-Crops: none.
+Crops: `nav-bar-default.png`.
 
 #### logo
 
@@ -58,7 +58,7 @@ Page: home. Selector: `nav a /studio`. States: default.
 | ::after | 53.9531px x 0px, static, bg #000000 @ 0, radius 0px |
 | How | at rest |
 
-Crops: none.
+Crops: `logo-default.png`.
 
 #### nav-trigger
 
@@ -86,7 +86,7 @@ Page: home. Selector: `nav button "Product"`. States: default, hover, focus-visi
 | Painted layers | span.ErVudj 62.5x56.0 border B:4px solid #000000 @ 0 | span.ErVudj 62.5x56.0 border B:4px solid #000000 | button.Q3cjxA 117.5x56.0 shadow #000000 0px 0px 0px 1px, #000000 0px 0px 0px 3px; span.ErVudj 62.5x56.0 border B:4px solid #000000 @ 0 | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
-Crops: none.
+Crops: `nav-trigger-default.png`, `nav-trigger-hover.png`, `nav-trigger-focus-visible.png`, `nav-trigger-pressed.png`.
 
 #### nav-link
 
@@ -112,7 +112,7 @@ Page: home. Selector: `nav a "Pricing"`. States: default, hover, focus-visible, 
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 | Painted layers | - | = | a.twLEiD 84.0x56.0 shadow #000000 0px 0px 0px 1px, #000000 0px 0px 0px 3px | = |
 
-Crops: none.
+Crops: `nav-link-default.png`, `nav-link-hover.png`, `nav-link-focus-visible.png`, `nav-link-pressed.png`.
 
 #### nav-lang
 
@@ -138,7 +138,7 @@ Page: home. Selector: `button[aria-label*=language]`. States: default, hover, fo
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 | Painted layers | - | = | button.pGUFRX 24.0x24.0 shadow #000000 0px 0px 0px 1px, #000000 0px 0px 0px 3px | = |
 
-Crops: none.
+Crops: `nav-lang-default.png`, `nav-lang-hover.png`, `nav-lang-focus-visible.png`, `nav-lang-pressed.png`.
 
 #### nav-login
 
@@ -164,7 +164,7 @@ Page: home. Selector: `#WIX_STUDIO_HEADER a "Log In"`. States: default, hover, f
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 | Painted layers | - | = | a.oQY31L 46.7x20.0 shadow #000000 0px 0px 0px 1px, #000000 0px 0px 0px 3px | = |
 
-Crops: none.
+Crops: `nav-login-default.png`, `nav-login-hover.png`, `nav-login-focus-visible.png`, `nav-login-pressed.png`.
 
 #### nav-cta
 
@@ -189,7 +189,7 @@ Page: home. Selector: `#WIX_STUDIO_HEADER a "Start Creating"`. States: default, 
 | Painted layers | a.Xu2OUa 175.3x57.0 bg #3910ed | = | = | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
-Crops: none.
+Crops: `nav-cta-default.png`, `nav-cta-hover.png`, `nav-cta-focus-visible.png`, `nav-cta-pressed.png`.
 
 #### nav-dropdown
 
@@ -214,7 +214,7 @@ Page: home. Selector: `opened Product dropdown`. States: default.
 | Painted layers | ul.D_XV1R 1267.2x357.0 border T:1px solid #d8e2ec |
 | How | at rest |
 
-Crops: none.
+Crops: `nav-dropdown-default.png`.
 
 #### menu-link
 
@@ -239,7 +239,7 @@ Page: home. Selector: `mega-menu link`. States: default, hover, focus-visible, p
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 | Painted layers | - | = | a.eXGFEo 81.0x23.0 shadow #000000 0px 0px 0px 1px, #000000 0px 0px 0px 3px | a.eXGFEo 81.0x23.0 shadow #000000 0px 0px 0px 1px, #000000 0px 0px 0px 3px |
 
-Crops: none.
+Crops: `menu-link-default.png`, `menu-link-hover.png`, `menu-link-focus-visible.png`, `menu-link-pressed.png`.
 
 ### Home
 
@@ -265,7 +265,7 @@ Page: home. Selector: `h1`. States: default.
 | Transition | none |
 | How | at rest |
 
-Crops: none.
+Crops: `hero-title-default.png`.
 
 #### hero-sub
 
@@ -288,7 +288,7 @@ Page: home. Selector: `hero lede`. States: default.
 | Transition | none |
 | How | at rest |
 
-Crops: none.
+Crops: `hero-sub-default.png`.
 
 #### hero-cta
 
@@ -316,7 +316,7 @@ Page: home. Selector: `"Start creating" pill`. States: default, hover, focus-vis
 | Painted layers | a.PoVCDy.wixui-button 221.3x56.2 bg #ffffff @ 0 r 1123.88px | a.PoVCDy.wixui-button 221.3x56.2 bg #3910ed @ 0 r 1123.88px | a.PoVCDy.wixui-button 221.3x56.2 bg #ffffff @ 0 r 1123.88px shadow #ffffff 0px 0px 0px 2px, #116dff 0px 0px 0px 4px | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
-Crops: none.
+Crops: `hero-cta-default.png`, `hero-cta-hover.png`, `hero-cta-focus-visible.png`, `hero-cta-pressed.png`.
 
 #### section-h2
 
@@ -340,7 +340,7 @@ Page: home. Selector: `section h2`. States: default.
 | Transition | none |
 | How | at rest |
 
-Crops: none.
+Crops: `section-h2-default.png`.
 
 #### section-link
 
@@ -367,31 +367,33 @@ Page: home. Selector: `section link`. States: default, hover, focus-visible, pre
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 | Painted layers | - | = | a.StylableButton2545352419__root.StylableButton2545352419__forcedColorsBackground 218.5x32.0 r 50px shadow #ffffff 0px 0px 0px 2px, #116dff 0px 0px 0px 4px | = |
 
-Crops: none.
+Crops: `section-link-default.png`, `section-link-hover.png`, `section-link-focus-visible.png`, `section-link-pressed.png`.
 
 #### showcase-card
 
 Showcase section. The "Site of the week" scroll-jacked showcase (a pinned media scene); measured mid-scroll state may sit between animation frames.
 
-Page: home. Selector: `showcase section`. States: default.
+Page: home. Selector: `sticky showcase scene`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 1440 x 2319.58 |
+| Size (w x h) | 1440 x 900 |
 | Padding | 0px |
 | Border | none |
 | Radius | 0px |
-| Background | #ffffff |
+| Background | transparent |
 | Box shadow | none |
 | Outline | none |
 | Font | Arial 10px/normal 400 |
 | Letter spacing | normal |
 | Colour | #000000 |
+| Text node | span.wixui-rich-text__text: wix-madefor-display-v2 18px/normal 400, #000000 |
 | Transition | none |
-| Painted layers | div.LNYVZi.ayCf9D 1440.0x2319.6 bg #ffffff |
+| Icon | 17 x 17, colour #000000 |
+| Painted layers | div.jdJeEr.NYfD3h 1440.0x900.0 bg #455466 @ 0; div.jdJeEr.NYfD3h 648.3x314.7 bg #eeeeee @ 0; div.jdJeEr.NYfD3h 341.3x52.0 bg #ffffff @ 0; div.jdJeEr.NYfD3h 181.0x52.0 bg #ffffff @ 0; a.StylableButton2545352419__root.StylableButton2545352419__forcedColorsBackground 181.0x52.0 bg #000000 r 50px; div.jdJeEr.NYfD3h 137.8x30.0 bg #ffffff @ 0 |
 | How | at rest |
 
-Crops: none.
+Crops: `showcase-card-default.png`.
 
 #### faq-question
 
@@ -417,7 +419,7 @@ Page: home. Selector: `FAQ listitem`. States: default, hover, focus-visible, pre
 | Painted layers | div.jdJeEr.NYfD3h 1327.7x131.2 bg #dce8ff @ 0; div.jdJeEr.NYfD3h 1327.7x1.0 bg #000000; div.jdJeEr.NYfD3h 0.0x0.0 bg #eeeeee @ 0 | = | div.jdJeEr.NYfD3h 1327.7x131.2 bg #dce8ff @ 0; button.StylableButton2545352419__root.StylableButton2545352419__forcedColorsBackground 1327.6x131.2 r 3px shadow #ffffff 0px 0px 0px 2px, #116dff 0px 0px 0px 4px; div.jdJeEr.NYfD3h 1327.7x1.0 bg #000000; div.jdJeEr.NYfD3h 0.0x0.0 bg #eeeeee @ 0 | = | div.jdJeEr.NYfD3h 1327.7x442.3 bg #dce8ff @ 0; button.StylableButton2545352419__root.StylableButton2545352419__forcedColorsBackground 1327.6x131.2 r 3px shadow #ffffff 0px 0px 0px 2px, #116dff 0px 0px 0px 4px; div.jdJeEr.NYfD3h 1327.7x1.0 bg #000000; div.jdJeEr.NYfD3h 1327.7x311.1 bg #eeeeee @ 0 |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover | own toggle |
 
-Crops: none.
+Crops: `faq-question-default.png`, `faq-question-hover.png`, `faq-question-focus-visible.png`, `faq-question-pressed.png`, `faq-question-opened.png`.
 
 #### cta-band
 
@@ -442,7 +444,7 @@ Page: home. Selector: `closing CTA band`. States: default.
 | Painted layers | div.jdJeEr.NYfD3h 1269.0x171.0 bg #deff00 |
 | How | at rest |
 
-Crops: none.
+Crops: `cta-band-default.png`.
 
 ### Features and design
 
@@ -472,24 +474,26 @@ Crops: `feat-h1-default.png`.
 
 #### feat-card
 
-Feature card. A feature card or tile on the features index.
+Feature card. A feature card on the features index (a title over its blurb).
 
-Page: features. Selector: `feature card`. States: default, hover, focus-visible, pressed.
+Page: features. Selector: `feature card box`. States: default, hover, focus-visible, pressed.
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 1440 x 941.75 | = | = | = |
+| Size (w x h) | 312 x 116.75 | = | = | = |
 | Padding | 0px | = | = | = |
+| Gap | 16px normal | = | = | = |
 | Border | none | = | = | = |
 | Radius | 0px | = | = | = |
-| Background | #ffffff | = | = | = |
+| Background | transparent | = | = | = |
 | Box shadow | none | = | = | = |
 | Outline | none | = | = | = |
 | Font | Arial 10px/normal 400 | = | = | = |
 | Letter spacing | normal | = | = | = |
 | Colour | #000000 | = | = | = |
+| Text node | span.wixui-rich-text__text: madefor-text-bold 18px/25.2px 400, #000000 | = | = | = |
 | Transition | none | = | = | = |
-| Painted layers | div.LNYVZi.ayCf9D 1440.0x941.8 bg #ffffff | = | = | = |
+| Painted layers | div.jdJeEr.NYfD3h 312.0x116.8 bg #eeeeee @ 0 | = | = | = |
 | How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
 
 Crops: `feat-card-default.png`, `feat-card-hover.png`, `feat-card-focus-visible.png`, `feat-card-pressed.png`.
@@ -761,6 +765,33 @@ Page: pricing. Selector: `error Refresh`. States: default, hover, focus-visible,
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
+| Size (w x h) | 57.25 x 24 | = | = | = |
+| Padding | 0px | = | = | = |
+| Border | none | = | = | = |
+| Radius | 2px | = | = | = |
+| Background | transparent | = | = | = |
+| Box shadow | none | = | = | = |
+| Outline | none | = | 3px solid #116dff offset 1px | = |
+| Font | Madefor 16px/24px 400 | = | = | = |
+| Letter spacing | normal | = | = | = |
+| Colour | #116dff | #0f62e6 | = | #084ebd |
+| Text node | span.wds-button-core__content.wds_1_348_0-button-core__content: Madefor 16px/24px 400, #116dff | span.wds-button-core__content.wds_1_348_0-button-core__content: Madefor 16px/24px 400, #0f62e6 | = | span.wds-button-core__content.wds_1_348_0-button-core__content: Madefor 16px/24px 400, #084ebd |
+| Transition | background-color, color, border-color 0.1s linear | = | = | = |
+| Cursor | pointer | = | = | = |
+| How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
+| ::before | - | = | 57.25px x 24px, absolute, bg #000000 @ 0, radius 2px | = |
+| Painted layers | - | = | button.wds-button-core.wds_1_348_0-button-core 57.3x24.0 r 2px outline 3px solid #116dff offset 1px; button::before.wds-button-core.wds_1_348_0-button-core 57.25pxx24px r 2px outline 1px solid #ffffff offset 0px | = |
+
+Crops: `pricing-refresh-default.png`, `pricing-refresh-hover.png`, `pricing-refresh-focus-visible.png`, `pricing-refresh-pressed.png`.
+
+#### pricing-support
+
+Support link (editorx.com). The 'contact Customer Care.' support link inside the error pane's copy; measured, never followed.
+
+Page: pricing. Selector: `error pane support link`. States: default, hover, focus-visible, pressed.
+
+| Property | default | hover | focus-visible | pressed |
+|---|---|---|---|---|
 | Size (w x h) | 154.31 x 18 | = | = | = |
 | Padding | 0px | = | = | = |
 | Border | none | = | = | = |
@@ -776,7 +807,7 @@ Page: pricing. Selector: `error Refresh`. States: default, hover, focus-visible,
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 | Painted layers | - | = | a 154.3x18.0 outline 1px auto #005fcc offset 1px | = |
 
-Crops: `pricing-refresh-default.png`, `pricing-refresh-hover.png`, `pricing-refresh-focus-visible.png`, `pricing-refresh-pressed.png`.
+Crops: `pricing-support-default.png`, `pricing-support-hover.png`, `pricing-support-focus-visible.png`, `pricing-support-pressed.png`.
 
 ### Galleries
 
@@ -1034,7 +1065,7 @@ Page: home. Selector: `footer#WIX_STUDIO_FOOTER`. States: default.
 | Painted layers | nav.tuyyeT 1440.0x793.0 bg #0e0e0e; div.VK8FJF 0.0x0.0 bg #848280; div.fbTMfh 1296.0x56.0 shadow #848280 0px -1px 0px 0px; button.ZXBKx_ 36.0x36.0 border T:1px solid #f6f6f6 / R:1px solid #f6f6f6 / B:1px solid #f6f6f6 / L:1px solid #f6f6f6 r 50% |
 | How | at rest |
 
-Crops: none.
+Crops: `footer-default.png`.
 
 #### footer-link
 
@@ -1059,7 +1090,7 @@ Page: home. Selector: `footer a`. States: default, hover, focus-visible, pressed
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 | Painted layers | - | = | a.Pllco1 52.2x34.0 shadow #828282 0px 0px 0px 1px, #828282 0px 0px 0px 3px | = |
 
-Crops: none.
+Crops: `footer-link-default.png`, `footer-link-hover.png`, `footer-link-focus-visible.png`, `footer-link-pressed.png`.
 
 #### social-icon
 
@@ -1085,33 +1116,32 @@ Page: home. Selector: `footer social a`. States: default, hover, focus-visible, 
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 | Painted layers | - | = | a.Rv9f2H 24.0x24.0 shadow #828282 0px 0px 0px 1px, #828282 0px 0px 0px 3px | = |
 
-Crops: none.
+Crops: `social-icon-default.png`, `social-icon-hover.png`, `social-icon-focus-visible.png`, `social-icon-pressed.png`.
 
 ### Mobile (390 wide)
 
 #### m-header
 
-Mobile nav.
+Mobile nav. The fixed mobile top bar (the wordmark, the square Start Creating and the burger menu button) — the page header is not a <nav> at phone width.
 
-Page: mobile. Selector: `nav at 390`. States: default.
+Page: mobile. Selector: `fixed top bar at 390`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 390 x 861 |
-| Padding | 61px 27.2969px 30px 27.2969px |
-| Gap | 50px |
-| Border | none |
+| Size (w x h) | 390 x 47 |
+| Padding | 0px 0px 0px 20px |
+| Border | T: none; R: none; B: 1px solid #d8e2ec; L: none |
 | Radius | 0px |
-| Background | #0e0e0e |
+| Background | #ffffff |
 | Box shadow | none |
 | Outline | none |
 | Font | Arial 10px/normal 400 |
 | Letter spacing | normal |
 | Colour | #000000 |
-| Text node | p.DeaxD1: Madefor-Text 14px/20px 400, #f6f6f6 |
-| Transition | none |
-| Icon | 188 x 31, colour #f6f6f6 |
-| Painted layers | nav.tuyyeT 390.0x861.0 bg #0e0e0e; button.gtoXVa 335.4x60.0 border B:1px solid #e7e7e7; ul.e0blKe 335.4x579.0 border B:1px solid #e7e7e7; button.gtoXVa 335.4x60.0 border B:1px solid #e7e7e7; ul.e0blKe 335.4x375.0 border B:1px solid #e7e7e7; div.VK8FJF 0.0x0.0 bg #848280 |
+| Text node | a.cnoYcn: Madefor-Display 14px/normal 400, #ffffff |
+| Transition | transform 0.3s linear |
+| Icon | 145 x 24, colour #000000 |
+| Painted layers | div.dsyWYg.oqZt9m 390.0x47.0 bg #ffffff border B:1px solid #d8e2ec; a.cnoYcn 124.5x46.0 bg #3910ed; nav.BrYaz7 0.0x0.0 bg #ffffff; div.U79u0Z.zEDyqc 0.0x0.0 image linear-gradient(#f5f5f5 @ 0.74, #e2efff); ul.D_XV1R 0.0x0.0 border T:1px solid #d8e2ec; div.CGPrIB 0.0x0.0 image linear-gradient(#f5f5f5 @ 0.74, #e2efff) |
 | How | at rest |
 
 Crops: `m-header-default.png`.

@@ -290,7 +290,7 @@ W(f"- Crops are images of the component read from the live page, in [components/
 W()
 W("## Discovery list")
 W()
-W("Screenshots are named `{page}-{theme}-state.png`: every captured surface paints `light`. Desktop shots are 1440 x 900 at 1x; `-full` shots are whole pages at 1x; mobile shots are `mobile-{page}-{theme}-{state}.png`, 780 wide (390 at 2x).")
+W("Screenshots are named `{page}-{theme}-state.png`: every captured surface paints `light`. Desktop shots are 1440 x 900 at 1x; desktop `-full` shots are whole pages at 1x; mobile shots are `mobile-{page}-{theme}-{state}.png`, 780 wide — mobile viewport and `-full` shots alike are 390 CSS px at 2x. Each shot's `.capture.json` sidecar in screenshots/ records its real scale.")
 W()
 W("| Surface | URL | Screenshots |")
 W("|---|---|---|")
@@ -323,14 +323,21 @@ for k, c in C.items():
     if not st or "style" not in st or st.get("via") == "focus failed":
         continue
     s = st["style"]
-    base = next((v["style"] for v in c["states"].values() if "style" in v), s)
+    base_state = next((v for v in c["states"].values() if "style" in v), st)
+    base = base_state["style"]
     # A fully transparent outline paints nothing: a transparent outline must
     # not count as a painted ring.
     ring = s["outlineStyle"] != "none" and float(s["outlineWidth"].replace("px", "")) > 0 and s["outlineColor"] != "rgba(0, 0, 0, 0)"
     # A ring painted on a child layer instead of the wrapper counts as ringed
     # too — unless that outline is also transparent.
     child_ring = next((n["outline"] for n in st.get("paint", []) if n.get("outline") and "rgba(0, 0, 0, 0)" not in n["outline"]), None)
-    shadow = s["boxShadow"] != base["boxShadow"] and s["boxShadow"] != "none"
+    # A ring can also draw as a box-shadow on a child (the FAQ row's inner
+    # button takes the white+blue pair on focus while the row's own shadow
+    # stays none): compare each painted child's shadow against the same node
+    # in the base state, so a shadow the child always had is not misread.
+    base_shadows = {n["node"]: n.get("shadow") for n in base_state.get("paint", [])}
+    child_shadow = next((n["shadow"] for n in st.get("paint", []) if n.get("shadow") and base_shadows.get(n["node"]) != n["shadow"]), None)
+    shadow = (s["boxShadow"] != base["boxShadow"] and s["boxShadow"] != "none") or bool(child_shadow)
     border = any(
         s[f"border{d}{p}"] != base[f"border{d}{p}"]
         for d in ("Top", "Right", "Bottom", "Left")
@@ -485,7 +492,7 @@ W("- **The hero pill's anchor colour reads rgb(0, 0, 238)** (the browser's unsty
 W()
 W("### Themes")
 W()
-W("The surface paints one light theme; there is no user-facing dark mode or theme toggle. The export's \"dark\" set is the near-black #0e0e0e chrome (the footer and the mobile header) with its #f6f6f6 text and #828282 muted — painted surfaces on the light page, not a selectable theme. The --wst-* layer declares no dark redeclarations.")
+W("The surface paints one light theme; there is no user-facing dark mode or theme toggle. The export's \"dark\" set is the near-black #0e0e0e chrome (the footer) with its #f6f6f6 text and #828282 muted — a painted surface on the light page, not a selectable theme. The --wst-* layer declares no dark redeclarations.")
 W()
 W("### Fonts")
 W()

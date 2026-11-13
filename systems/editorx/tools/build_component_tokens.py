@@ -12,7 +12,7 @@ values** from raw/components-computed.json:
 
   neutrals    #000 ink (all text on the marketing surface), #000624 plan ink,
               white surfaces, the #eeeeee/#c7c7c7/#8d8d8d shade ramp, the
-              #0e0e0e near-black chrome (footer, mobile header) with #f6f6f6
+              #0e0e0e near-black chrome (the footer) with #f6f6f6
               text and #828282 muted, hairlines #d8e2ec / #dfe5eb
   brand       the Wix Studio purple #3910ed measured off the real actions
               (header Start Creating, hero "Start creating" pill), the lime
@@ -38,7 +38,7 @@ values** from raw/components-computed.json:
 
 A leaf is {"var": ...} (resolved light) or {"value": ..., "source": ...} for a
 measured value. Only the signed-out public surface was read; the "dark" set is
-the near-black chrome (footer, mobile header) the light page paints — not a
+the near-black chrome (the footer) the light page paints — not a
 user-selectable theme.
 """
 import json, pathlib, re
@@ -66,7 +66,7 @@ SPEC = {"_about": (
     "Wix Studio purple #3910ed and lime #deff00 actions, the ink/white "
     "neutrals and #0e0e0e chrome, the double focus rings, Madefor under "
     "its five face names, the stadium pills and the spx-scaled display "
-    "ramp. The 'dark' set is the near-black footer/mobile-header chrome "
+    "ramp. The 'dark' set is the near-black footer chrome "
     "the light page paints — not a user toggle."),
     "core": {}, "light": {}, "dark": {}, "component": {}}
 
@@ -263,7 +263,7 @@ for key, comp, state, prop, desc in [
     ("card-line", "plan-card", "default", "paint-border-side", "The #dfe5eb 1px border the plan cards carry on three sides."),
     ("navy", "plan-card", "default", "borderTopColor", "The #0e106a 3px accent border on the recommended plan card's top edge."),
     ("badge-mint", "plan-badge", "default", "paint-bg", "The #a6ffd8 mint the RECOMMENDED badge paints."),
-    ("surface-dark", "footer", "default", "paint-bg", "The #0e0e0e near-black chrome: the footer and the mobile header."),
+    ("surface-dark", "footer", "default", "paint-bg", "The #0e0e0e near-black chrome: the footer."),
     ("footer-divider", "footer", "default", "paint-shadow", "The #848280 1px rule inside the dark footer."),
 ]:
     try:
@@ -311,7 +311,7 @@ for name, target, desc in [
     ("--text-on-dark", "color.neutral.footer-ink", "The #f6f6f6 text on the #0e0e0e chrome."),
     ("--surface-page", "color.neutral.white", "The white page field."),
     ("--surface-tint", "color.neutral.shade-1", "The declared #eeeeee secondary fill."),
-    ("--surface-dark", "color.neutral.surface-dark", "The #0e0e0e footer/mobile-header chrome on the light page."),
+    ("--surface-dark", "color.neutral.surface-dark", "The #0e0e0e footer chrome on the light page."),
     ("--surface-accent", "color.brand.lime", "The lime closing band."),
     ("--surface-badge", "color.neutral.badge-mint", "The mint RECOMMENDED badge."),
     ("--action-primary", "color.brand.studio-purple", "The #3910ed action fill."),
@@ -336,18 +336,18 @@ for name, target, desc in [
                            "description": desc})
 
 dark = SPEC["dark"]
-# The near-black chrome (footer, mobile header) the light page paints.
+# The near-black chrome (the footer) the light page paints.
 for name, target, desc in [
     ("--text-primary", "{color.neutral.footer-ink}", "The #f6f6f6 text on the dark chrome."),
     ("--text-muted", "{color.neutral.footer-muted}", "The #828282 muted/hover text on dark."),
     ("--surface-page", "{color.neutral.surface-dark}", "The #0e0e0e chrome surface."),
     ("--border", "{color.neutral.footer-ink}", "The 1px #f6f6f6 ring the footer's 50%-radius social buttons carry."),
     ("--border-divider", "{color.neutral.footer-divider}", "The #848280 hairline inside the footer."),
-    ("--action-primary", "{color.brand.studio-purple}", "The #3910ed fill the mobile header's Start Creating keeps."),
+    ("--action-primary", "{color.brand.studio-purple}", "The #3910ed action fill; the dark footer carries no action of its own, the role is kept for completeness."),
     ("--text-on-action", "#ffffff", "White labels on the action fill."),
 ]:
     emit(dark, name, {"value": target, "type": "color",
-                      "source": ALIAS if target.startswith("{") else "computed colors of footer-link / social-icon / m-nav-item over the dark chrome (raw/components-computed.json)",
+                      "source": ALIAS if target.startswith("{") else "computed colors of footer-link / social-icon over the dark chrome (raw/components-computed.json)",
                       "description": desc})
 
 # ------------------------------------------------------------- type scale
@@ -373,7 +373,7 @@ for key, comp, state, desc in [
     ("body", "nav-link", "default", "The 16px nav/body/control size."),
     ("card-action", "template-card", "default", "The 16px card action (530)."),
     ("footer-meta", "footer", "default", "The 14px footer meta text."),
-    ("link", "pricing-refresh", "default", "The 14px link text."),
+    ("link", "pricing-support", "default", "The 14px inline link text."),
     ("meta", "inspo-card", "default", "The 12px card meta text."),
     ("badge", "plan-badge", "default", "The 10px plan badge label (700)."),
 ]:
@@ -397,7 +397,7 @@ for key, comp, state, desc in [
     ("card-action", "template-card", "default", "Card action leading (24px on 16px)."),
     ("footer-link", "footer-link", "default", "Footer link leading (34px on 16px)."),
     ("footer-meta", "footer", "default", "Footer meta leading (20px on 14px)."),
-    ("link", "pricing-refresh", "default", "Link leading (18px on 14px)."),
+    ("link", "pricing-support", "default", "Link leading (18px on 14px)."),
     ("meta", "inspo-card", "default", "Card meta leading (19.2px on 12px)."),
     ("badge", "plan-badge", "default", "Badge leading (24px on 10px)."),
 ]:
@@ -466,7 +466,8 @@ for key, comp, state, prop, ty, desc in [
     ("focus-ring-content", "hero-cta", "focus-visible", "boxShadow", "shadow", "The double keyboard ring on content controls: 2px white + 4px #116dff."),
     ("focus-ring-chrome", "nav-link", "focus-visible", "boxShadow", "shadow", "The double keyboard ring in the header: 1px + 3px black."),
     ("focus-ring-footer", "footer-link", "focus-visible", "boxShadow", "shadow", "The double keyboard ring on the dark chrome: 1px + 3px #828282."),
-    ("focus-ring-auto", "pricing-refresh", "focus-visible", "outlineColor", "color", "The #005fcc auto outline the link-blue controls take (1px)."),
+    ("focus-ring-auto", "pricing-support", "focus-visible", "outlineColor", "color", "The #005fcc auto outline the link-blue controls take (1px)."),
+    ("focus-ring-link", "pricing-refresh", "focus-visible", "outlineColor", "color", "The 3px solid #116dff outline the standalone Refresh link takes on focus."),
 ]:
     try:
         if prop == "boxShadow":
@@ -521,6 +522,7 @@ for key, cname, state, prop, desc in [
     ("link-pill.height", "section-link", "default", "height", "The 32px section-link pill."),
     ("filter.height", "inspo-filter", "default", "height", "The 32px gallery filter chip."),
     ("header.height", "nav-bar", "default", "height", "The 56px desktop header."),
+    ("header-mobile.height", "m-header", "default", "height", "The 47px mobile header."),
     ("menurow.height", "m-nav-item", "default", "height", "The 50px mobile-menu row."),
     ("menubutton.height", "m-menu-button", "default", "height", "The 46px mobile menu button (50px wide)."),
     ("footer.height", "footer", "default", "height", "The 793px dark footer."),
