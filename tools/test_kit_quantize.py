@@ -41,7 +41,10 @@ class KitQuantizeTest(unittest.TestCase):
             self.assertEqual(done.returncode, 0, done.stderr[-500:])
             with Image.open(raw / "page.png") as im:
                 self.assertEqual(im.size, (4, 8))
-            self.assertEqual(sorted(p.name for p in (tmp / "pkg" / "screenshots").iterdir()), ["page.png"])
+            # Newer copies carry the capture sidecars through to screenshots/ and
+            # write a stitched sidecar for tiled images; older copies quantize only.
+            expected = ["page.png"] + (["page.png.capture.json"] if "stitchedParts" in source.read_text() else [])
+            self.assertEqual(sorted(p.name for p in (tmp / "pkg" / "screenshots").iterdir()), expected)
 
     def test_a_partial_name_is_not_a_tile(self):
         self.run_copy(KIT)

@@ -710,6 +710,15 @@
     "groupId": "web-categories",
     "labels": ["Design & Media Editing", "Productivity"],
     "reason": "catalog.json describes a pro site builder: template and inspiration galleries plus the marketing pages for the Wix Studio editor."
+  },
+  {
+    "referenceId": "systems:endlesstools",
+    "groupId": "web-categories",
+    "labels": [
+      "Design & Media Editing",
+      "Productivity"
+    ],
+    "reason": "catalog.json describes a visual exploration tool for graphic designers: a dark marketing one-pager with pricing and a signed-out app login shell."
   }
 ,
   {
