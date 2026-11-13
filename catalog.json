@@ -7304,7 +7304,7 @@
         ],
         "durationMin": 120,
         "durationNote": "wall-clock for the capture session including adaptation of the kit, the stylesheet harvest, screenshot and measurement passes on a headless Linux server, and the offline build",
-        "pr": ""
+        "pr": "https://github.com/starship-terminal/constellations/pull/517"
       },
       "layoutGaps": {
         "icons/": "the icon extraction pass was not run; the icons (the Deel wordmark, the social and hero tile glyphs) are visible in the crops and screenshots"
