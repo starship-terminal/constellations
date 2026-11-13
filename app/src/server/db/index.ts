@@ -15,6 +15,8 @@ import {
   taxonomyStore,
   mediaTaxonomyMigration,
   seedMediaTaxonomy,
+  seedNewCuratedCategories,
+  seedNewCuratedMediaTerms,
 } from "./taxonomy";
 
 // Versioned migrations apply atomically, and never touch the canonical library.
@@ -76,7 +78,7 @@ export async function createResearchStore(directory: string) {
     const version = Number(
       (await tx.execute("PRAGMA user_version")).rows[0].user_version,
     );
-    if (version > 5)
+    if (version > 6)
       throw new Error("Research database was created by a newer application.");
     if (version === 0) {
       for (const sql of migrations) await tx.execute(sql);
@@ -104,6 +106,14 @@ export async function createResearchStore(directory: string) {
         await tx.execute(statement);
       await seedMediaTaxonomy(tx);
       await tx.execute("PRAGMA user_version = 5");
+    }
+    if (version < 6) {
+      // The v4/v5 seeds run once, guarded, so a store already at v5 never saw
+      // curated rows added to the seed JSON since. Top up only references and
+      // media the user has not labelled; manual choices are never overwritten.
+      await seedNewCuratedCategories(tx);
+      await seedNewCuratedMediaTerms(tx);
+      await tx.execute("PRAGMA user_version = 6");
     }
     await tx.commit();
   } catch (error) {
