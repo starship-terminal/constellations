@@ -9973,7 +9973,8 @@
      "the marketing site and sign-in card paint light only - the dark set covers the docs alone"
     ],
     "durationMin": 300,
-    "durationNote": "wall-clock across the capture sessions including kit adaptation, route reconnaissance, the per-surface stylesheet harvest, screenshot and measurement passes on a headless Linux server, selector debugging, the icon pass and the offline build"
+    "durationNote": "wall-clock across the capture sessions including kit adaptation, route reconnaissance, the per-surface stylesheet harvest, screenshot and measurement passes on a headless Linux server, selector debugging, the icon pass and the offline build",
+    "pr": "https://github.com/starship-terminal/constellations/pull/544"
    }
   }
  ]
