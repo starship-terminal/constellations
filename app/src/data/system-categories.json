@@ -779,5 +779,14 @@
       "Productivity"
     ],
     "reason": "catalog.json describes a to-do productivity product: task lists, a quiet marketing site and a signed-out public system."
+  },
+  {
+    "referenceId": "systems:endlesstools",
+    "groupId": "web-categories",
+    "labels": [
+      "Design Tool",
+      "Productivity"
+    ],
+    "reason": "catalog.json describes a visual exploration tool for graphic designers: a dark marketing one-pager with pricing and a signed-out app login shell."
   }
 ]
