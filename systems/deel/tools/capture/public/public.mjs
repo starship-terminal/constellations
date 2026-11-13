@@ -90,7 +90,13 @@ class Shooter {
     if (H > MAXH) log(`  ! ${name}: page is ${H}px tall, capturing first ${hCap}px only (infinite/growing page boundary)`);
     const opts = (extra) => ({ path: extra, scale: 'css' });
     if (hCap <= chunk) await screenshotWithMetadata(p, { ...opts(f + '.png'), fullPage: true }, this.requested);
-    else for (let i = 0, y = 0; y < hCap; i++, y += chunk) await screenshotWithMetadata(p, { ...opts(`${f}.part${i}.png`), fullPage: true, clip: { x: 0, y, width: this.vw, height: Math.min(chunk, hCap - y) } }, this.requested);
+    else {
+      // Declare the tile count up front; quantize refuses to stitch a partial set.
+      const n = Math.ceil(hCap / chunk);
+      fs.writeFileSync(`${f}.parts.json`, JSON.stringify({ parts: n, height: hCap, complete: false }) + '\n');
+      for (let i = 0, y = 0; y < hCap; i++, y += chunk) await screenshotWithMetadata(p, { ...opts(`${f}.part${i}.png`), fullPage: true, clip: { x: 0, y, width: this.vw, height: Math.min(chunk, hCap - y) } }, this.requested);
+      fs.writeFileSync(`${f}.parts.json`, JSON.stringify({ parts: n, height: hCap, complete: true }) + '\n');
+    }
     this.count++; log('  shot', name, 'H=' + H);
     await p.evaluate(() => scrollTo(0, 0)); await wait(p, 500);
   }
@@ -121,10 +127,33 @@ async function drawerShot(p, S) {
   });
 }
 
+// Closes any overlay the menu/drawer shots left open before the full-page
+// pass — an open dropdown or drawer would otherwise cover the reference.
+// Escape first (MUI closes panels and drawers on it), then verify; the
+// trigger is only re-clicked when the overlay is still painted.
+async function closeOverlays(p) {
+  const open = () => p.evaluate(() => {
+    const menu = [...document.querySelectorAll('a')].some((a) => /deel payroll overview/i.test(a.textContent) && a.getBoundingClientRect().width > 0);
+    const drawer = [...document.querySelectorAll('[role="dialog"], [class*="MuiDrawer"], [class*="drawer" i]')].some((el) => el.getBoundingClientRect().width > 100 && getComputedStyle(el).visibility !== 'hidden');
+    return menu || drawer;
+  });
+  if (!(await open())) return;
+  await p.keyboard.press('Escape');
+  await wait(p, 900);
+  if (await open()) {
+    // Fall back to toggling the same trigger that opened the overlay.
+    const trig = p.locator('nav button, nav a, header button').filter({ hasText: /^Solutions|menu|navigation/i }).first();
+    if (await trig.count()) await clickEl(trig);
+    await wait(p, 900);
+  }
+  if (await open()) log('  ! overlay still open before full() — reference may be partially covered');
+}
+
 const desktop = {
   home: { path: '/', wait: 8000, run: async (p, S) => {
     await S.view('default');
     await menuShot(p, S);
+    await closeOverlays(p);
     await S.full();
   } },
   pricing: { path: '/pricing/', wait: 8000, run: async (p, S) => {
@@ -149,6 +178,7 @@ const mobile = {
   home: { path: '/', wait: 8000, run: async (p, S) => {
     await S.view('default');
     await drawerShot(p, S);
+    await closeOverlays(p);
     await S.full();
   } },
   pricing: { path: '/pricing/', wait: 7000, run: async (p, S) => {

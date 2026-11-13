@@ -16,7 +16,7 @@ Below the hero the page returns to white: the global-people-platform grid holds 
 
 ## The footer
 
-A ~1015px footer (`component.footer-height`): `#faf4ee` cream column headings (`light.text.cream`, 16px BagossCondensed) over link lists in 16px Inter (`light.text.ink`), with 32px social icon buttons.
+A ~1015px footer (`component.footer-height`) on `#1b1b1b` (`light.text.ink`/`color.surface.dark`): `#faf4ee` cream column headings (`light.text.cream`, 16px BagossCondensed 500) over link lists painted as 14px/23.8px Inter 560 in `#faf4ee` (the link's text child, not the wrap's inherited ink), with 32px social icon buttons.
 
 ## Mobile
 

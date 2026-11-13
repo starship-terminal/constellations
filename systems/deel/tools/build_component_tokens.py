@@ -2,11 +2,12 @@
 """Write raw/component-tokens.json, the token spec build_tokens.py reads.
 
 deel.com is a Next.js + MUI + Tailwind marketing site (the app lives
-behind app.deel.com and was never reached). Its stylesheets resolve only
-six :root vars (--font-inter, --font-bagoss-condensed/standard/extended,
---swiper-theme-color) — the design itself is Tailwind utilities plus MUI
-emotion classes, so every leaf below is a measured computed style from
-raw/components-computed.json.
+behind app.deel.com and was never reached). The site's stylesheets carry
+a full Tailwind @theme layer — declared palettes, a 15-step spacing
+scale, a 7-step radius scale, a 12-step text ramp and a 9-step Bagoss
+heading ramp (raw/css-vars.json resolved.light) — so declared scales are
+exported under core.* and measured computed styles from
+raw/components-computed.json alias to them where the values match.
 
 What was measured (desktop 1440x900 unless noted):
 
@@ -50,8 +51,10 @@ SPEC = {"_about": (
     "The token tree build_tokens.py turns into tokens.json. "
     "deel.com is a single-theme Next.js + MUI marketing site: a white "
     "field, a #1b1b1b promo strip, a #201547 purple hero and a sky-blue "
-    "accent chip. It declares only font-family vars on :root, so every "
-    "design value is a measured computed style."),
+    "accent chip. Its Tailwind @theme layer declares the palette, "
+    "spacing, radius and type scales (exported under core.*); the "
+    "measured roles under light.* alias to the declared values where "
+    "they match."),
     "core": {}, "light": {}, "dark": {}, "component": {}}
 
 
@@ -127,14 +130,96 @@ for key, val, src_c, desc in [
     except KeyError:
         pass
 
+# -------------------------------------------------- declared scales (@theme)
+#
+# The site's Tailwind @theme layer declares the design system outright:
+# palettes, spacing, radius, text and heading ramps, weights, leadings,
+# trackings and breakpoints (raw/css-vars.json resolved.light). Export
+# them under core.*; the measured roles below alias into them where a
+# computed style resolves to an identical value.
+
+DECL_SRC = "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light)"
+
+
+def decl(name):
+    return lit(R[name], "dimension", f"{DECL_SRC}: {name}", f"The declared `{name}`.")
+
+
+def decl_color(name):
+    v = R[name]
+    ty = "color" if re.match(r"(#|rgba?\(|hsla?\(|(ok)?lab\(|(ok)?lch\(|color-mix\()", str(v).strip()) else "other"
+    return lit(v, ty, f"{DECL_SRC}: {name}", f"The declared `{name}`.")
+
+
+color_alias = {}   # normalized colour -> 'color.<path>' for aliasing
+colors = SPEC["core"].setdefault("color", {})
+for name in sorted(k for k in R if k.startswith("--color-")):
+    rest = name[len("--color-"):]
+    parts = rest.split("-", 1)
+    group = colors.setdefault(parts[0], {}) if len(parts) > 1 else colors
+    key = parts[1] if len(parts) > 1 else parts[0]
+    group[key] = decl_color(name)
+    if group[key]["type"] == "color":
+        path = f"color.{parts[0]}.{key}" if len(parts) > 1 else f"color.{key}"
+        color_alias.setdefault(norm_color(R[name]), path)
+
+spacing = SPEC["core"].setdefault("spacing", {})
+for name in sorted(k for k in R if k.startswith("--spacing")):
+    key = name[len("--spacing-"):] if name.startswith("--spacing-") else "unit"
+    spacing[key] = decl(name)
+
+for name in sorted(k for k in R if k.startswith("--radius-")):
+    SPEC["core"].setdefault("radius", {})[name[len("--radius-"):]] = decl(name)
+
+size_alias = {}   # 'NNpx' -> ('font.size.<path>', '--var') for aliasing + evidence
+sizes = SPEC["core"].setdefault("font", {}).setdefault("size", {})
+for name in sorted(k for k in R if k.startswith("--text-") and not k.endswith("--line-height")):
+    key = name[len("--text-"):]
+    sizes.setdefault("text", {})[key] = decl(name)
+    size_alias.setdefault(R[name], (f"font.size.text.{key}", name))
+for name in sorted(k for k in R if re.match(r"--font-heading-.+-size$", k)):
+    key = re.match(r"--font-heading-(h\d\d?)-\w+(-\w+)?-size$", name).group(1)
+    sizes.setdefault("heading", {})[key] = decl(name)
+    size_alias.setdefault(R[name], (f"font.size.heading.{key}", name))
+for name in sorted(k for k in R if re.match(r"--font-heading-.+-size-mobile$", k)):
+    key = re.match(r"--font-heading-(h\d\d?)-\w+(-\w+)?-size-mobile$", name).group(1)
+    sizes.setdefault("heading-mobile", {})[key] = decl(name)
+for name in sorted(k for k in R if re.match(r"--font-heading-.+-letter-spacing$", k)):
+    key = re.match(r"--font-heading-(h\d\d?)-\w+(-\w+)?-letter-spacing$", name).group(1)
+    SPEC["core"].setdefault("font", {}).setdefault("tracking", {}).setdefault("heading", {})[key] = lit(
+        R[name], "other", f"{DECL_SRC}: {name}", f"The declared `{name}`.")
+
+for name in sorted(k for k in R if k.startswith("--font-weight-")):
+    key = name[len("--font-weight-"):]
+    SPEC["core"].setdefault("font", {}).setdefault("weight", {}).setdefault(key, lit(
+        int(R[name]), "fontWeight", f"{DECL_SRC}: {name}", f"The declared `{name}`."))
+
+for name in sorted(k for k in R if k.startswith("--leading-")):
+    SPEC["core"].setdefault("font", {}).setdefault("leading", {})[name[len("--leading-"):]] = lit(
+        float(R[name]), "number", f"{DECL_SRC}: {name}", f"The declared `{name}`.")
+
+for name in sorted(k for k in R if k.startswith("--tracking-")):
+    SPEC["core"].setdefault("font", {}).setdefault("tracking", {})[name[len("--tracking-"):]] = lit(
+        R[name], "other", f"{DECL_SRC}: {name}", f"The declared `{name}`.")
+
+for name in sorted(k for k in R if k.startswith("--breakpoint-")):
+    SPEC["core"].setdefault("breakpoint", {})[name[len("--breakpoint-"):]] = decl(name)
+
 # -------------------------------------------------- measured semantic roles
 
 sem = SPEC["light"]
+
+
+def semcolor(group, key, raw, src, desc):
+    """A measured colour role; aliases to the declared palette on an exact match."""
+    alias = color_alias.get(norm_color(raw))
+    value = f"{{{alias}}}" if alias else norm_color(raw)
+    return lit(value, "color", src + (f"; matches declared --color-{alias[6:].replace('.', '-')}" if alias else ""), desc)
+
+
 for key, comp, state, prop, group, desc in [
     ("page", "header-nav", "default", "backgroundColor", "background",
      "The #fff field the nav, price cards and page paint."),
-    ("promo-strip", "promo-banner", "default", "color", "background",
-     "The #1b1b1b promo strip (painted on the banner's child — see component.promo-strip-paint)."),
     ("ink", "nav-link", "default", "color", "text",
      "The #1b1b1b ink — nav text, pill-button fills, footer links."),
     ("body", "price-card", "default", "color", "text",
@@ -147,62 +232,72 @@ for key, comp, state, prop, group, desc in [
      "The #101010 1px auto focus outline on light controls."),
 ]:
     try:
-        sem.setdefault(group, {})[key] = lit(st(comp, state)[prop], "color",
+        sem.setdefault(group, {})[key] = semcolor(group, key, st(comp, state)[prop],
             f"computed {prop} of {comp} {state} (raw/components-computed.json)", desc)
     except KeyError:
         pass
+
+# the promo strip's fill is painted on a child, not the measured wrapper —
+# read the painted layer, not the wrapper's text colour.
+try:
+    strip = next(pl["bg"] for pl in C["promo-banner"]["states"]["default"]["paint"] if pl.get("bg") == "rgb(27, 27, 27)")
+    sem.setdefault("background", {})["promo-strip"] = semcolor("background", "promo-strip", strip,
+        "painted background of the promo-banner MuiBox child (raw/components-computed.json)",
+        "The #1b1b1b promo strip.")
+except (KeyError, StopIteration):
+    pass
 
 # purple hero panel + dark video card + promo strip + sky chip are painted
 # on children, not the measured roots — read them off the paint lists.
 try:
     purple = next(pl["bg"] for pl in C["hero-block"]["states"]["default"]["paint"] if pl.get("bg") == "rgb(32, 21, 71)")
-    sem.setdefault("background", {})["hero-panel"] = lit(purple, "color",
+    sem.setdefault("background", {})["hero-panel"] = semcolor("background", "hero-panel", purple,
         "painted background of the hero panel inside hero-block default (raw/components-computed.json)",
         "The #201547 deep-purple panel behind the home h1 and action tiles.")
 except (KeyError, StopIteration):
     pass
 try:
     dark = next(pl["bg"] for pl in C["review-band"]["states"]["default"]["paint"] if pl.get("bg") == "rgb(20, 20, 20)")
-    sem.setdefault("background", {})["video-card"] = lit(dark, "color",
+    sem.setdefault("background", {})["video-card"] = semcolor("background", "video-card", dark,
         "painted background of the video card inside review-band default (raw/components-computed.json)",
         "The #141414 near-black review video card.")
 except (KeyError, StopIteration):
     pass
 try:
     chip = next(pl["bg"] for pl in C["promo-banner"]["states"]["default"]["paint"] if pl.get("bg") == "rgb(177, 216, 252)")
-    sem.setdefault("action", {})["accent-chip"] = lit(chip, "color",
+    sem.setdefault("action", {})["accent-chip"] = semcolor("action", "accent-chip", chip,
         "painted background of the SPECIAL OFFER chip inside promo-banner default (raw/components-computed.json)",
         "The #b1d8fc sky-blue accent — the promo chip and the price-card top strip.")
 except (KeyError, StopIteration):
     pass
 try:
     tile_bg = next(pl["bg"] for pl in C["hero-tile"]["states"]["default"]["paint"] if pl.get("bg", "").startswith("oklab"))
-    sem.setdefault("background", {})["tile-glass"] = lit(tile_bg, "color",
+    sem.setdefault("background", {})["tile-glass"] = semcolor("background", "tile-glass", tile_bg,
         "painted oklab background of hero-tile default (raw/components-computed.json)",
         "The 4% white glass fill on the hero action tiles over the purple panel.")
     tile_bd = st("hero-tile", "default")["borderTopColor"]
-    sem.setdefault("border", {})["tile-glass"] = lit(tile_bd, "color",
+    sem.setdefault("border", {})["tile-glass"] = semcolor("border", "tile-glass", tile_bd,
         "computed borderTopColor of hero-tile default (raw/components-computed.json)",
         "The 10% white hairline on the hero action tiles.")
 except (KeyError, StopIteration):
     pass
 try:
     hairline = st("faq-item", "default")["borderTopColor"]
-    sem.setdefault("border", {})["hairline"] = lit(hairline, "color",
+    sem.setdefault("border", {})["hairline"] = semcolor("border", "hairline", hairline,
         "computed borderTopColor of faq-item default (raw/components-computed.json)",
         "The 1px latte-at-16% hairline the FAQ accordion items separate with.")
 except KeyError:
     pass
 try:
     pressed = st("promo-cta", "pressed")["backgroundColor"]
-    sem.setdefault("action", {})["pressed-fill"] = lit(pressed, "color",
+    sem.setdefault("action", {})["pressed-fill"] = semcolor("action", "pressed-fill", pressed,
         "computed backgroundColor of promo-cta pressed (raw/components-computed.json)",
         "The #3f3f3f grey the light pill buttons take on hover/pressed.")
 except KeyError:
     pass
 try:
     hov = st("nav-demo", "hover")["backgroundColor"]
-    sem.setdefault("action", {})["hover-fill"] = lit(hov, "color",
+    sem.setdefault("action", {})["hover-fill"] = semcolor("action", "hover-fill", hov,
         "computed backgroundColor of nav-demo/price-cta hover (raw/components-computed.json)",
         "The #4e4e4e grey the dark #1b1b1b pill buttons lift to on hover/pressed.")
 except KeyError:
@@ -222,8 +317,11 @@ for key, comp, state, desc in [
     ("about-display", "about-h1", "default", "The 160px about-page display numeral."),
 ]:
     try:
-        ty[key] = lit(st(comp, state)["fontSize"], "fontSize",
-            f"computed fontSize of {comp} {state} (raw/components-computed.json)", desc)
+        raw = st(comp, state)["fontSize"]
+        src = f"computed fontSize of {comp} {state} (raw/components-computed.json)"
+        alias = size_alias.get(raw)
+        ty[key] = lit(f"{{{alias[0]}}}" if alias else raw, "fontSize",
+            src + (f"; matches declared {alias[1]}" if alias else ""), desc)
     except KeyError:
         pass
 
@@ -243,6 +341,7 @@ for key, comp, state, desc in [
 # ------------------------------------------------------------------ shape
 
 radii = SPEC["core"].setdefault("radius", {})
+radius_alias = {v: k for k, v in ((n, R[n]) for n in R if n.startswith("--radius-"))}
 for key, comp, state, prop, desc in [
     ("chip", "promo-banner", "default", "_chip", "The 2px SPECIAL OFFER chip radius."),
     ("card", "price-card", "default", "borderTopLeftRadius", "The 12px card/tile radius."),
@@ -257,9 +356,13 @@ for key, comp, state, prop, desc in [
                 f"painted radius of the SPECIAL OFFER chip inside {comp} {state} (raw/components-computed.json)", desc)
         else:
             v = st(comp, state)[prop]
-            ty_ = "dimension" if re.fullmatch(r"[0-9.]+(px|rem)", v or "") else "other"
-            radii[key] = lit(v, ty_,
-                f"computed {prop} of {comp} {state} (raw/components-computed.json)", desc)
+            src = f"computed {prop} of {comp} {state} (raw/components-computed.json)"
+            dkey = radius_alias.get(v)
+            if dkey:
+                radii[key] = lit(f"{{radius.{dkey[len('--radius-'):]}}}", "dimension", src + f"; matches declared {dkey}", desc)
+            else:
+                ty_ = "dimension" if re.fullmatch(r"[0-9.]+(px|rem)", v or "") else "other"
+                radii[key] = lit(v, ty_, src, desc)
     except (KeyError, StopIteration):
         pass
 
@@ -321,7 +424,7 @@ for name, cname, state, prop, ty_, desc in [
 # the promo strip's own fill (the banner root reports colour, not bg)
 try:
     strip = next(pl["bg"] for pl in C["promo-banner"]["states"]["default"]["paint"] if pl.get("bg") == "rgb(27, 27, 27)")
-    comp["promo-strip-paint"] = lit(strip, "color",
+    comp["promo-strip-paint"] = semcolor("component", "promo-strip-paint", strip,
         "painted background of the promo-banner MuiBox child (raw/components-computed.json)",
         "The #1b1b1b fill the 64px promo strip paints.")
 except (KeyError, StopIteration):
@@ -342,7 +445,7 @@ for name, cname, desc in [
      "FAQ accordion summary: MUI MuiAccordionSummary at rest and opened via its own click toggle."),
 ]:
     try:
-        states = {s2: {p: C[cname]["states"][s2]["style"][p] for p in ("backgroundColor", "color", "transform", "outlineStyle") if C[cname]["states"][s2]["style"].get(p)}
+        states = {s2: {p: C[cname]["states"][s2]["style"][p] for p in ("backgroundColor", "color", "opacity", "transform", "boxShadow", "borderTopColor", "borderRightColor", "borderBottomColor", "borderLeftColor", "outlineColor", "outlineStyle", "outlineWidth", "outlineOffset") if C[cname]["states"][s2]["style"].get(p)}
                   for s2 in ("default", "hover", "pressed", "focus-visible", "opened")
                   if s2 in C[cname]["states"] and C[cname]["states"][s2].get("style")}
         comp.setdefault("state-track", {})[name] = {

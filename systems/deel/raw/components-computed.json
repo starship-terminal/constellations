@@ -2065,7 +2065,7 @@
     "selector": "nav a",
     "reduce": {
      "transition": "color 0.1s ease-in-out",
-     "animation": "none 0s ease 0s 1 normal none running",
+     "animation": "none",
      "scrollBehavior": "auto"
     }
    }
@@ -2128,7 +2128,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "rgba(0, 0, 0, 0.87)",
       "outlineOffset": "0px",
@@ -2162,13 +2162,13 @@
       },
       {
        "node": "div.MuiBox-root.mui-1wjc8ik",
-       "size": "112.1x28.0",
+       "size": "111.1x28.0",
        "bg": "rgb(177, 216, 252)",
        "radius": "2px"
       },
       {
        "node": "button.mui-1rh4x73",
-       "size": "87.0x32.0",
+       "size": "85.4x32.0",
        "bg": "rgb(255, 255, 255)",
        "radius": "200px"
       }
@@ -2211,16 +2211,16 @@
      "classes": "mui-1rh4x73",
      "text": "Claim offer",
      "rect": {
-      "x": 823.1,
+      "x": 818.8,
       "y": 16,
-      "w": 86.98,
+      "w": 85.36,
       "h": 32
      },
      "style": {
       "display": "flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "86.9844px",
+      "width": "85.3594px",
       "height": "32px",
       "minWidth": "0px",
       "maxWidth": "none",
@@ -2260,7 +2260,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "rgb(27, 27, 27)",
       "outlineOffset": "0px",
@@ -2289,7 +2289,7 @@
      "paint": [
       {
        "node": "button.mui-1rh4x73",
-       "size": "87.0x32.0",
+       "size": "85.4x32.0",
        "bg": "rgb(255, 255, 255)",
        "radius": "200px"
       }
@@ -2302,16 +2302,16 @@
      "classes": "mui-1rh4x73",
      "text": "Claim offer",
      "rect": {
-      "x": 823.1,
+      "x": 818.8,
       "y": 16,
-      "w": 86.98,
+      "w": 85.36,
       "h": 32
      },
      "style": {
       "display": "flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "86.9844px",
+      "width": "85.3594px",
       "height": "32px",
       "minWidth": "0px",
       "maxWidth": "none",
@@ -2351,7 +2351,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -2380,7 +2380,7 @@
      "paint": [
       {
        "node": "button.mui-1rh4x73",
-       "size": "87.0x32.0",
+       "size": "85.4x32.0",
        "bg": "rgb(63, 63, 63)",
        "radius": "200px"
       }
@@ -2393,16 +2393,16 @@
      "classes": "mui-1rh4x73",
      "text": "Claim offer",
      "rect": {
-      "x": 823.1,
+      "x": 818.8,
       "y": 16,
-      "w": 86.98,
+      "w": 85.36,
       "h": 32
      },
      "style": {
       "display": "flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "86.9844px",
+      "width": "85.3594px",
       "height": "32px",
       "minWidth": "0px",
       "maxWidth": "none",
@@ -2444,7 +2444,7 @@
       "backdropFilter": "none",
       "outlineWidth": "1px",
       "outlineStyle": "auto",
-      "outlineColor": "rgb(16, 16, 16)",
+      "outlineColor": "rgb(0, 95, 204)",
       "outlineOffset": "0px",
       "fontFamily": "BagossStandardVF, \"BagossStandardVF Fallback\", Arial, Helvetica, sans-serif",
       "fontSize": "12px",
@@ -2471,9 +2471,9 @@
      "paint": [
       {
        "node": "button.mui-1rh4x73",
-       "size": "87.0x32.0",
+       "size": "85.4x32.0",
        "bg": "rgb(255, 255, 255)",
-       "outline": "1px auto rgb(16, 16, 16) offset 0px",
+       "outline": "1px auto rgb(0, 95, 204) offset 0px",
        "radius": "200px"
       }
      ],
@@ -2485,16 +2485,16 @@
      "classes": "mui-1rh4x73",
      "text": "Claim offer",
      "rect": {
-      "x": 823.1,
+      "x": 818.8,
       "y": 16,
-      "w": 86.98,
+      "w": 85.36,
       "h": 32
      },
      "style": {
       "display": "flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "86.9844px",
+      "width": "85.3594px",
       "height": "32px",
       "minWidth": "0px",
       "maxWidth": "none",
@@ -2534,7 +2534,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -2563,7 +2563,7 @@
      "paint": [
       {
        "node": "button.mui-1rh4x73",
-       "size": "87.0x32.0",
+       "size": "85.4x32.0",
        "bg": "rgb(63, 63, 63)",
        "radius": "200px"
       }
@@ -2636,7 +2636,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "rgba(0, 0, 0, 0.87)",
       "outlineOffset": "0px",
@@ -2676,13 +2676,13 @@
       },
       {
        "node": "button.hidden-phone.mui-ti8o1k",
-       "size": "75.3x40.0",
+       "size": "75.1x40.0",
        "border": "T:2px solid rgba(27, 27, 27, 0.16) | R:2px solid rgba(27, 27, 27, 0.16) | B:2px solid rgba(27, 27, 27, 0.16) | L:2px solid rgba(27, 27, 27, 0.16)",
        "radius": "200px"
       },
       {
        "node": "button.mui-1wshw4o",
-       "size": "118.3x40.0",
+       "size": "117.2x40.0",
        "bg": "rgb(27, 27, 27)",
        "radius": "200px"
       }
@@ -2774,7 +2774,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "rgb(27, 27, 27)",
       "outlineOffset": "0px",
@@ -2821,14 +2821,14 @@
      "rect": {
       "x": 194,
       "y": 84,
-      "w": 94.38,
+      "w": 95.31,
       "h": 40
      },
      "style": {
       "display": "flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "94.375px",
+      "width": "95.3125px",
       "height": "40px",
       "minWidth": "0px",
       "maxWidth": "none",
@@ -2868,7 +2868,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "rgb(27, 27, 27)",
       "outlineOffset": "0px",
@@ -2911,14 +2911,14 @@
      "rect": {
       "x": 194,
       "y": 84,
-      "w": 94.38,
+      "w": 95.31,
       "h": 40
      },
      "style": {
       "display": "flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "94.375px",
+      "width": "95.3125px",
       "height": "40px",
       "minWidth": "0px",
       "maxWidth": "none",
@@ -2958,7 +2958,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "rgb(27, 27, 27)",
       "outlineOffset": "0px",
@@ -3001,14 +3001,14 @@
      "rect": {
       "x": 194,
       "y": 84,
-      "w": 94.38,
+      "w": 95.31,
       "h": 40
      },
      "style": {
       "display": "flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "94.375px",
+      "width": "95.3125px",
       "height": "40px",
       "minWidth": "0px",
       "maxWidth": "none",
@@ -3050,7 +3050,7 @@
       "backdropFilter": "none",
       "outlineWidth": "1px",
       "outlineStyle": "auto",
-      "outlineColor": "rgb(16, 16, 16)",
+      "outlineColor": "rgb(0, 95, 204)",
       "outlineOffset": "0px",
       "fontFamily": "BagossStandardVF, \"BagossStandardVF Fallback\", Arial, Helvetica, sans-serif",
       "fontSize": "15px",
@@ -3077,8 +3077,8 @@
      "paint": [
       {
        "node": "button.mui-1fo3fxi",
-       "size": "94.4x40.0",
-       "outline": "1px auto rgb(16, 16, 16) offset 0px"
+       "size": "95.3x40.0",
+       "outline": "1px auto rgb(0, 95, 204) offset 0px"
       }
      ],
      "icon": {
@@ -3098,14 +3098,14 @@
      "rect": {
       "x": 194,
       "y": 84,
-      "w": 94.38,
+      "w": 95.31,
       "h": 40
      },
      "style": {
       "display": "flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "94.375px",
+      "width": "95.3125px",
       "height": "40px",
       "minWidth": "0px",
       "maxWidth": "none",
@@ -3145,7 +3145,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "rgb(27, 27, 27)",
       "outlineOffset": "0px",
@@ -3188,14 +3188,14 @@
      "rect": {
       "x": 194,
       "y": 84,
-      "w": 94.38,
+      "w": 95.31,
       "h": 40
      },
      "style": {
       "display": "flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "94.375px",
+      "width": "95.3125px",
       "height": "40px",
       "minWidth": "0px",
       "maxWidth": "none",
@@ -3235,7 +3235,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "rgb(27, 27, 27)",
       "outlineOffset": "0px",
@@ -3287,16 +3287,16 @@
      "classes": "mui-1moi9ht",
      "text": "Pricing",
      "rect": {
-      "x": 728.6,
+      "x": 732.7,
       "y": 84,
-      "w": 49.63,
+      "w": 50.2,
       "h": 40
      },
      "style": {
       "display": "inline-flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "49.625px",
+      "width": "50.2031px",
       "height": "40px",
       "minWidth": "0px",
       "maxWidth": "none",
@@ -3336,7 +3336,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "rgb(27, 27, 27)",
       "outlineOffset": "0px",
@@ -3370,16 +3370,16 @@
      "classes": "mui-1moi9ht",
      "text": "Pricing",
      "rect": {
-      "x": 728.6,
+      "x": 732.7,
       "y": 84,
-      "w": 49.63,
+      "w": 50.2,
       "h": 40
      },
      "style": {
       "display": "inline-flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "49.625px",
+      "width": "50.2031px",
       "height": "40px",
       "minWidth": "0px",
       "maxWidth": "none",
@@ -3419,7 +3419,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "rgb(78, 78, 78)",
       "outlineOffset": "0px",
@@ -3453,16 +3453,16 @@
      "classes": "mui-1moi9ht",
      "text": "Pricing",
      "rect": {
-      "x": 728.6,
+      "x": 732.7,
       "y": 84,
-      "w": 49.63,
+      "w": 50.2,
       "h": 40
      },
      "style": {
       "display": "inline-flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "49.625px",
+      "width": "50.2031px",
       "height": "40px",
       "minWidth": "0px",
       "maxWidth": "none",
@@ -3504,7 +3504,7 @@
       "backdropFilter": "none",
       "outlineWidth": "1px",
       "outlineStyle": "auto",
-      "outlineColor": "rgb(16, 16, 16)",
+      "outlineColor": "rgb(0, 95, 204)",
       "outlineOffset": "1px",
       "fontFamily": "BagossStandardVF, \"BagossStandardVF Fallback\", Arial, Helvetica, sans-serif",
       "fontSize": "15px",
@@ -3531,8 +3531,8 @@
      "paint": [
       {
        "node": "a.mui-1moi9ht",
-       "size": "49.6x40.0",
-       "outline": "1px auto rgb(16, 16, 16) offset 1px"
+       "size": "50.2x40.0",
+       "outline": "1px auto rgb(0, 95, 204) offset 1px"
       }
      ],
      "crop": "components/crops/nav-plain-link-focus-visible.png",
@@ -3543,16 +3543,16 @@
      "classes": "mui-1moi9ht",
      "text": "Pricing",
      "rect": {
-      "x": 728.6,
+      "x": 732.7,
       "y": 84,
-      "w": 49.63,
+      "w": 50.2,
       "h": 40
      },
      "style": {
       "display": "inline-flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "49.625px",
+      "width": "50.2031px",
       "height": "40px",
       "minWidth": "0px",
       "maxWidth": "none",
@@ -3592,7 +3592,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "rgb(78, 78, 78)",
       "outlineOffset": "0px",
@@ -3637,16 +3637,16 @@
      "classes": "flex items-center gap-2 px-3",
      "text": "EN",
      "rect": {
-      "x": 1090.4,
+      "x": 1091.5,
       "y": 86,
-      "w": 68,
+      "w": 68.11,
       "h": 36
      },
      "style": {
       "display": "flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "68px",
+      "width": "68.1094px",
       "height": "36px",
       "minWidth": "0px",
       "maxWidth": "none",
@@ -3686,7 +3686,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "rgb(0, 0, 0)",
       "outlineOffset": "0px",
@@ -3740,16 +3740,16 @@
      "classes": "flex items-center gap-2 px-3",
      "text": "EN",
      "rect": {
-      "x": 1090.4,
+      "x": 1091.5,
       "y": 86,
-      "w": 68,
+      "w": 68.11,
       "h": 36
      },
      "style": {
       "display": "flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "68px",
+      "width": "68.1094px",
       "height": "36px",
       "minWidth": "0px",
       "maxWidth": "none",
@@ -3789,7 +3789,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "rgb(0, 0, 0)",
       "outlineOffset": "0px",
@@ -3818,7 +3818,7 @@
      "paint": [
       {
        "node": "button.flex.items-center",
-       "size": "68.0x36.0",
+       "size": "68.1x36.0",
        "bg": "oklab(0.98 0.00449496 0.0153556 / 0.8)",
        "radius": "3.35544e+07px"
       },
@@ -3849,16 +3849,16 @@
      "classes": "flex items-center gap-2 px-3",
      "text": "EN",
      "rect": {
-      "x": 1090.4,
+      "x": 1091.5,
       "y": 86,
-      "w": 68,
+      "w": 68.11,
       "h": 36
      },
      "style": {
       "display": "flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "68px",
+      "width": "68.1094px",
       "height": "36px",
       "minWidth": "0px",
       "maxWidth": "none",
@@ -3900,7 +3900,7 @@
       "backdropFilter": "none",
       "outlineWidth": "1px",
       "outlineStyle": "auto",
-      "outlineColor": "rgb(16, 16, 16)",
+      "outlineColor": "rgb(0, 95, 204)",
       "outlineOffset": "0px",
       "fontFamily": "Inter, \"Inter Fallback\", Arial, Helvetica, sans-serif",
       "fontSize": "13.3333px",
@@ -3927,8 +3927,8 @@
      "paint": [
       {
        "node": "button.flex.items-center",
-       "size": "68.0x36.0",
-       "outline": "1px auto rgb(16, 16, 16) offset 0px",
+       "size": "68.1x36.0",
+       "outline": "1px auto rgb(0, 95, 204) offset 0px",
        "radius": "3.35544e+07px"
       },
       {
@@ -3958,16 +3958,16 @@
      "classes": "flex items-center gap-2 px-3",
      "text": "EN",
      "rect": {
-      "x": 1090.4,
+      "x": 1091.5,
       "y": 86,
-      "w": 68,
+      "w": 68.11,
       "h": 36
      },
      "style": {
       "display": "flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "68px",
+      "width": "68.1094px",
       "height": "36px",
       "minWidth": "0px",
       "maxWidth": "none",
@@ -4007,7 +4007,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "rgb(0, 0, 0)",
       "outlineOffset": "0px",
@@ -4036,7 +4036,7 @@
      "paint": [
       {
        "node": "button.flex.items-center",
-       "size": "68.0x36.0",
+       "size": "68.1x36.0",
        "bg": "oklab(0.98 0.00449496 0.0153556 / 0.8)",
        "radius": "3.35544e+07px"
       },
@@ -4078,16 +4078,16 @@
      "classes": "mui-15k05j0",
      "text": "Log in",
      "rect": {
-      "x": 1166.4,
+      "x": 1167.6,
       "y": 84,
-      "w": 75.27,
+      "w": 75.14,
       "h": 40
      },
      "style": {
       "display": "block",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "75.2656px",
+      "width": "75.1406px",
       "height": "40px",
       "minWidth": "auto",
       "maxWidth": "none",
@@ -4127,7 +4127,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "rgb(27, 27, 27)",
       "outlineOffset": "0px",
@@ -4156,7 +4156,7 @@
      "paint": [
       {
        "node": "button.hidden-phone.mui-ti8o1k",
-       "size": "75.3x40.0",
+       "size": "75.1x40.0",
        "border": "T:2px solid rgba(27, 27, 27, 0.16) | R:2px solid rgba(27, 27, 27, 0.16) | B:2px solid rgba(27, 27, 27, 0.16) | L:2px solid rgba(27, 27, 27, 0.16)",
        "radius": "200px"
       }
@@ -4181,16 +4181,16 @@
      "classes": "mui-15k05j0",
      "text": "Log in",
      "rect": {
-      "x": 1166.4,
+      "x": 1167.6,
       "y": 84,
-      "w": 75.27,
+      "w": 75.14,
       "h": 40
      },
      "style": {
       "display": "block",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "75.2656px",
+      "width": "75.1406px",
       "height": "40px",
       "minWidth": "auto",
       "maxWidth": "none",
@@ -4230,7 +4230,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "rgb(78, 78, 78)",
       "outlineOffset": "0px",
@@ -4259,7 +4259,7 @@
      "paint": [
       {
        "node": "button.hidden-phone.mui-ti8o1k",
-       "size": "75.3x40.0",
+       "size": "75.1x40.0",
        "border": "T:2px solid rgba(27, 27, 27, 0.4) | R:2px solid rgba(27, 27, 27, 0.4) | B:2px solid rgba(27, 27, 27, 0.4) | L:2px solid rgba(27, 27, 27, 0.4)",
        "radius": "200px"
       }
@@ -4284,16 +4284,16 @@
      "classes": "mui-15k05j0",
      "text": "Log in",
      "rect": {
-      "x": 1166.4,
+      "x": 1167.6,
       "y": 84,
-      "w": 75.27,
+      "w": 75.14,
       "h": 40
      },
      "style": {
       "display": "block",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "75.2656px",
+      "width": "75.1406px",
       "height": "40px",
       "minWidth": "auto",
       "maxWidth": "none",
@@ -4335,7 +4335,7 @@
       "backdropFilter": "none",
       "outlineWidth": "1px",
       "outlineStyle": "auto",
-      "outlineColor": "rgb(16, 16, 16)",
+      "outlineColor": "rgb(0, 95, 204)",
       "outlineOffset": "1px",
       "fontFamily": "Inter, \"Inter Fallback\", Arial, Helvetica, sans-serif",
       "fontSize": "16px",
@@ -4362,12 +4362,12 @@
      "paint": [
       {
        "node": "a.mui-15k05j0",
-       "size": "75.3x40.0",
-       "outline": "1px auto rgb(16, 16, 16) offset 1px"
+       "size": "75.1x40.0",
+       "outline": "1px auto rgb(0, 95, 204) offset 1px"
       },
       {
        "node": "button.hidden-phone.mui-ti8o1k",
-       "size": "75.3x40.0",
+       "size": "75.1x40.0",
        "border": "T:2px solid rgba(27, 27, 27, 0.16) | R:2px solid rgba(27, 27, 27, 0.16) | B:2px solid rgba(27, 27, 27, 0.16) | L:2px solid rgba(27, 27, 27, 0.16)",
        "radius": "200px"
       }
@@ -4392,16 +4392,16 @@
      "classes": "mui-15k05j0",
      "text": "Log in",
      "rect": {
-      "x": 1166.4,
+      "x": 1167.6,
       "y": 84,
-      "w": 75.27,
+      "w": 75.14,
       "h": 40
      },
      "style": {
       "display": "block",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "75.2656px",
+      "width": "75.1406px",
       "height": "40px",
       "minWidth": "auto",
       "maxWidth": "none",
@@ -4441,7 +4441,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "rgb(78, 78, 78)",
       "outlineOffset": "0px",
@@ -4470,7 +4470,7 @@
      "paint": [
       {
        "node": "button.hidden-phone.mui-ti8o1k",
-       "size": "75.3x40.0",
+       "size": "75.1x40.0",
        "border": "T:2px solid rgba(27, 27, 27, 0.16) | R:2px solid rgba(27, 27, 27, 0.16) | B:2px solid rgba(27, 27, 27, 0.16) | L:2px solid rgba(27, 27, 27, 0.16)",
        "radius": "200px"
       }
@@ -4506,16 +4506,16 @@
      "classes": "mui-1wshw4o",
      "text": "Book a demo",
      "rect": {
-      "x": 1257.7,
+      "x": 1258.8,
       "y": 84,
-      "w": 118.31,
+      "w": 117.22,
       "h": 40
      },
      "style": {
       "display": "flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "118.312px",
+      "width": "117.219px",
       "height": "40px",
       "minWidth": "auto",
       "maxWidth": "none",
@@ -4555,7 +4555,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -4584,7 +4584,7 @@
      "paint": [
       {
        "node": "button.mui-1wshw4o",
-       "size": "118.3x40.0",
+       "size": "117.2x40.0",
        "bg": "rgb(27, 27, 27)",
        "radius": "200px"
       }
@@ -4597,16 +4597,16 @@
      "classes": "mui-1wshw4o",
      "text": "Book a demo",
      "rect": {
-      "x": 1257.7,
+      "x": 1258.8,
       "y": 84,
-      "w": 118.31,
+      "w": 117.22,
       "h": 40
      },
      "style": {
       "display": "flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "118.312px",
+      "width": "117.219px",
       "height": "40px",
       "minWidth": "auto",
       "maxWidth": "none",
@@ -4646,7 +4646,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -4675,7 +4675,7 @@
      "paint": [
       {
        "node": "button.mui-1wshw4o",
-       "size": "118.3x40.0",
+       "size": "117.2x40.0",
        "bg": "rgb(78, 78, 78)",
        "radius": "200px"
       }
@@ -4688,16 +4688,16 @@
      "classes": "mui-1wshw4o",
      "text": "Book a demo",
      "rect": {
-      "x": 1257.7,
+      "x": 1258.8,
       "y": 84,
-      "w": 118.31,
+      "w": 117.22,
       "h": 40
      },
      "style": {
       "display": "flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "118.312px",
+      "width": "117.219px",
       "height": "40px",
       "minWidth": "auto",
       "maxWidth": "none",
@@ -4739,7 +4739,7 @@
       "backdropFilter": "none",
       "outlineWidth": "1px",
       "outlineStyle": "auto",
-      "outlineColor": "rgb(16, 16, 16)",
+      "outlineColor": "rgb(0, 95, 204)",
       "outlineOffset": "0px",
       "fontFamily": "BagossStandardVF, \"BagossStandardVF Fallback\", Arial, Helvetica, sans-serif",
       "fontSize": "14px",
@@ -4766,9 +4766,9 @@
      "paint": [
       {
        "node": "button.mui-1wshw4o",
-       "size": "118.3x40.0",
+       "size": "117.2x40.0",
        "bg": "rgb(27, 27, 27)",
-       "outline": "1px auto rgb(16, 16, 16) offset 0px",
+       "outline": "1px auto rgb(0, 95, 204) offset 0px",
        "radius": "200px"
       }
      ],
@@ -4780,16 +4780,16 @@
      "classes": "mui-1wshw4o",
      "text": "Book a demo",
      "rect": {
-      "x": 1257.7,
+      "x": 1258.8,
       "y": 84,
-      "w": 118.31,
+      "w": 117.22,
       "h": 40
      },
      "style": {
       "display": "flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "118.312px",
+      "width": "117.219px",
       "height": "40px",
       "minWidth": "auto",
       "maxWidth": "none",
@@ -4829,7 +4829,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -4858,7 +4858,7 @@
      "paint": [
       {
        "node": "button.mui-1wshw4o",
-       "size": "118.3x40.0",
+       "size": "117.2x40.0",
        "bg": "rgb(78, 78, 78)",
        "radius": "200px"
       }
@@ -4931,7 +4931,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "rgba(0, 0, 0, 0.87)",
       "outlineOffset": "0px",
@@ -5044,7 +5044,7 @@
       },
       {
        "node": "div.relative.z-10",
-       "size": "120.0x35.0",
+       "size": "119.0x35.0",
        "bg": "rgb(255, 255, 255)",
        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(27, 27, 27, 0.05) 0px 1.2px 19.2px 0px, rgba(27, 27, 27, 0.16) 0px 9.6px 19.2px 0px",
        "radius": "12px"
@@ -5138,7 +5138,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -5210,7 +5210,7 @@
       "columnGap": "12px",
       "flexDirection": "column",
       "alignItems": "center",
-      "justifyContent": "flex-start",
+      "justifyContent": "flow-start",
       "gridTemplateColumns": "none",
       "borderTopWidth": "1px",
       "borderTopStyle": "solid",
@@ -5232,7 +5232,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -5320,7 +5320,7 @@
       "columnGap": "12px",
       "flexDirection": "column",
       "alignItems": "center",
-      "justifyContent": "flex-start",
+      "justifyContent": "flow-start",
       "gridTemplateColumns": "none",
       "borderTopWidth": "1px",
       "borderTopStyle": "solid",
@@ -5342,7 +5342,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -5430,7 +5430,7 @@
       "columnGap": "12px",
       "flexDirection": "column",
       "alignItems": "center",
-      "justifyContent": "flex-start",
+      "justifyContent": "flow-start",
       "gridTemplateColumns": "none",
       "borderTopWidth": "1px",
       "borderTopStyle": "solid",
@@ -5452,9 +5452,9 @@
       "backgroundImage": "none",
       "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.999994 0.0000455677 0.0000200868 / 0.7) 0px 0px 0px 2px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "1px",
       "outlineStyle": "none",
-      "outlineColor": "rgb(16, 16, 16)",
+      "outlineColor": "rgb(0, 95, 204)",
       "outlineOffset": "0px",
       "fontFamily": "Inter, \"Inter Fallback\", Arial, Helvetica, sans-serif",
       "fontSize": "14px",
@@ -5541,7 +5541,7 @@
       "columnGap": "12px",
       "flexDirection": "column",
       "alignItems": "center",
-      "justifyContent": "flex-start",
+      "justifyContent": "flow-start",
       "gridTemplateColumns": "none",
       "borderTopWidth": "1px",
       "borderTopStyle": "solid",
@@ -5563,7 +5563,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -5685,7 +5685,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "rgb(27, 27, 27)",
       "outlineOffset": "0px",
@@ -5776,7 +5776,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "rgb(27, 27, 27)",
       "outlineOffset": "0px",
@@ -5869,7 +5869,7 @@
       "backdropFilter": "none",
       "outlineWidth": "1px",
       "outlineStyle": "auto",
-      "outlineColor": "rgb(16, 16, 16)",
+      "outlineColor": "rgb(0, 95, 204)",
       "outlineOffset": "0px",
       "fontFamily": "Inter, \"Inter Fallback\", Arial, Helvetica, sans-serif",
       "fontSize": "18px",
@@ -5898,7 +5898,7 @@
        "node": "button.!rounded-full.!w-full",
        "size": "375.0x51.0",
        "bg": "rgb(255, 255, 255)",
-       "outline": "1px auto rgb(16, 16, 16) offset 0px",
+       "outline": "1px auto rgb(0, 95, 204) offset 0px",
        "radius": "3.35544e+07px"
       }
      ],
@@ -5959,7 +5959,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "rgb(27, 27, 27)",
       "outlineOffset": "0px",
@@ -6013,15 +6013,15 @@
      "text": "The global people platform",
      "rect": {
       "x": 64,
-      "y": 427.5,
-      "w": 506.28,
+      "y": 426.5,
+      "w": 506.84,
       "h": 46.19
      },
      "style": {
       "display": "block",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "506.281px",
+      "width": "506.844px",
       "height": "46.1875px",
       "minWidth": "auto",
       "maxWidth": "none",
@@ -6061,7 +6061,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "rgba(0, 0, 0, 0.87)",
       "outlineOffset": "0px",
@@ -6107,7 +6107,7 @@
      "text": "Deel Payroll Local and global payroll, your way.",
      "rect": {
       "x": 64,
-      "y": 231.7,
+      "y": 230.7,
       "w": 418.66,
       "h": 438
      },
@@ -6155,7 +6155,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "rgb(0, 0, 238)",
       "outlineOffset": "0px",
@@ -6210,7 +6210,7 @@
      "text": "Deel Payroll Local and global payroll, your way.",
      "rect": {
       "x": 64,
-      "y": 231.7,
+      "y": 230.7,
       "w": 418.66,
       "h": 438
      },
@@ -6258,7 +6258,7 @@
       "backgroundImage": "none",
       "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.1) 0px 4px 6px -4px",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "rgb(0, 0, 238)",
       "outlineOffset": "0px",
@@ -6307,6 +6307,110 @@
      },
      "crop": "components/crops/product-card-hover.png",
      "via": "mouse hover"
+    },
+    "focus-visible": {
+     "tag": "a",
+     "classes": "group relative flex flex-col",
+     "text": "Deel Payroll Local and global payroll, your way.",
+     "rect": {
+      "x": 64,
+      "y": 461.7,
+      "w": 418.66,
+      "h": 438
+     },
+     "style": {
+      "display": "flex",
+      "position": "relative",
+      "boxSizing": "border-box",
+      "width": "418.656px",
+      "height": "438px",
+      "minWidth": "auto",
+      "maxWidth": "none",
+      "minHeight": "auto",
+      "paddingTop": "24px",
+      "paddingRight": "24px",
+      "paddingBottom": "24px",
+      "paddingLeft": "24px",
+      "marginTop": "0px",
+      "marginRight": "0px",
+      "marginBottom": "0px",
+      "marginLeft": "0px",
+      "gap": "normal",
+      "rowGap": "normal",
+      "columnGap": "normal",
+      "flexDirection": "column",
+      "alignItems": "normal",
+      "justifyContent": "normal",
+      "gridTemplateColumns": "none",
+      "borderTopWidth": "0px",
+      "borderTopStyle": "none",
+      "borderTopColor": "rgb(0, 0, 238)",
+      "borderRightWidth": "0px",
+      "borderRightStyle": "none",
+      "borderRightColor": "rgb(0, 0, 238)",
+      "borderBottomWidth": "0px",
+      "borderBottomStyle": "none",
+      "borderBottomColor": "rgb(0, 0, 238)",
+      "borderLeftWidth": "0px",
+      "borderLeftStyle": "none",
+      "borderLeftColor": "rgb(0, 0, 238)",
+      "borderTopLeftRadius": "16px",
+      "borderTopRightRadius": "16px",
+      "borderBottomRightRadius": "16px",
+      "borderBottomLeftRadius": "16px",
+      "backgroundColor": "rgb(247, 245, 242)",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "backdropFilter": "none",
+      "outlineWidth": "1px",
+      "outlineStyle": "auto",
+      "outlineColor": "rgb(0, 95, 204)",
+      "outlineOffset": "1px",
+      "fontFamily": "Inter, \"Inter Fallback\", Arial, Helvetica, sans-serif",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "lineHeight": "24px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(0, 0, 238)",
+      "textDecorationLine": "none",
+      "textDecorationColor": "rgb(0, 0, 238)",
+      "textDecorationThickness": "auto",
+      "textUnderlineOffset": "auto",
+      "transitionProperty": "all",
+      "transitionDuration": "0.3s",
+      "transitionTimingFunction": "cubic-bezier(0, 0, 0.2, 1)",
+      "transitionDelay": "0s",
+      "cursor": "pointer",
+      "opacity": "1",
+      "transform": "none",
+      "overflow": "visible",
+      "zIndex": "auto",
+      "top": "0px"
+     },
+     "paint": [
+      {
+       "node": "a.group.relative",
+       "size": "418.7x438.0",
+       "bg": "rgb(247, 245, 242)",
+       "outline": "1px auto rgb(0, 95, 204) offset 1px",
+       "radius": "16px"
+      }
+     ],
+     "textStyle": {
+      "node": "h3.text-balance.m-0",
+      "text": "Deel Payroll",
+      "fontFamily": "BagossCondensedFont, \"BagossCondensedFont Fallback\", Arial, Helvetica, sans-serif",
+      "fontSize": "24px",
+      "lineHeight": "27.6px",
+      "fontWeight": "500",
+      "letterSpacing": "normal",
+      "color": "rgb(27, 27, 27)",
+      "textDecorationLine": "none",
+      "textTransform": "none"
+     },
+     "crop": "components/crops/product-card-focus-visible.png",
+     "via": "Shift+Tab, Tab"
     }
    },
    "page": "home",
@@ -6321,20 +6425,20 @@
    "states": {
     "default": {
      "tag": "div",
-     "classes": "revamp-carousel w-full h-full flex",
+     "classes": "w-full flex flex-col gap-md",
      "text": "See how the Revolut team has hired 150+ workers and relocated 10+ people through",
      "rect": {
-      "x": 0,
-      "y": 24,
-      "w": 1440,
-      "h": 854
+      "x": 300,
+      "y": 131,
+      "w": 840,
+      "h": 638
      },
      "style": {
       "display": "flex",
-      "position": "relative",
+      "position": "static",
       "boxSizing": "border-box",
-      "width": "1440px",
-      "height": "854px",
+      "width": "840px",
+      "height": "638px",
       "minWidth": "0px",
       "maxWidth": "none",
       "minHeight": "0px",
@@ -6373,7 +6477,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "rgba(0, 0, 0, 0.87)",
       "outlineOffset": "0px",
@@ -6392,12 +6496,12 @@
       "transitionDuration": "0s",
       "transitionTimingFunction": "ease",
       "transitionDelay": "0s",
-      "cursor": "auto",
+      "cursor": "pointer",
       "opacity": "1",
       "transform": "none",
       "overflow": "visible",
       "zIndex": "auto",
-      "top": "0px"
+      "top": "auto"
      },
      "paint": [
       {
@@ -6408,79 +6512,7 @@
       },
       {
        "node": "span.mui-mv42ai",
-       "size": "184.6x51.0",
-       "border": "T:2px solid rgba(27, 27, 27, 0.16) | R:2px solid rgba(27, 27, 27, 0.16) | B:2px solid rgba(27, 27, 27, 0.16) | L:2px solid rgba(27, 27, 27, 0.16)",
-       "radius": "200px"
-      },
-      {
-       "node": "div.relative.w-full",
-       "size": "798.0x475.0",
-       "bg": "rgb(20, 20, 20)",
-       "radius": "24px"
-      },
-      {
-       "node": "span.mui-mv42ai",
-       "size": "175.4x48.4",
-       "border": "T:2px solid rgba(27, 27, 27, 0.16) | R:2px solid rgba(27, 27, 27, 0.16) | B:2px solid rgba(27, 27, 27, 0.16) | L:2px solid rgba(27, 27, 27, 0.16)",
-       "radius": "200px"
-      },
-      {
-       "node": "div.relative.w-full",
-       "size": "798.0x475.0",
-       "bg": "rgb(20, 20, 20)",
-       "radius": "24px"
-      },
-      {
-       "node": "span.mui-mv42ai",
-       "size": "175.4x48.5",
-       "border": "T:2px solid rgba(27, 27, 27, 0.16) | R:2px solid rgba(27, 27, 27, 0.16) | B:2px solid rgba(27, 27, 27, 0.16) | L:2px solid rgba(27, 27, 27, 0.16)",
-       "radius": "200px"
-      },
-      {
-       "node": "div.relative.w-full",
-       "size": "798.0x475.0",
-       "bg": "rgb(20, 20, 20)",
-       "radius": "24px"
-      },
-      {
-       "node": "span.mui-mv42ai",
-       "size": "175.4x48.4",
-       "border": "T:2px solid rgba(27, 27, 27, 0.16) | R:2px solid rgba(27, 27, 27, 0.16) | B:2px solid rgba(27, 27, 27, 0.16) | L:2px solid rgba(27, 27, 27, 0.16)",
-       "radius": "200px"
-      },
-      {
-       "node": "div.relative.w-full",
-       "size": "798.0x475.0",
-       "bg": "rgb(20, 20, 20)",
-       "radius": "24px"
-      },
-      {
-       "node": "span.mui-mv42ai",
-       "size": "175.4x48.4",
-       "border": "T:2px solid rgba(27, 27, 27, 0.16) | R:2px solid rgba(27, 27, 27, 0.16) | B:2px solid rgba(27, 27, 27, 0.16) | L:2px solid rgba(27, 27, 27, 0.16)",
-       "radius": "200px"
-      },
-      {
-       "node": "div.relative.w-full",
-       "size": "798.0x475.0",
-       "bg": "rgb(20, 20, 20)",
-       "radius": "24px"
-      },
-      {
-       "node": "span.mui-mv42ai",
-       "size": "175.4x48.4",
-       "border": "T:2px solid rgba(27, 27, 27, 0.16) | R:2px solid rgba(27, 27, 27, 0.16) | B:2px solid rgba(27, 27, 27, 0.16) | L:2px solid rgba(27, 27, 27, 0.16)",
-       "radius": "200px"
-      },
-      {
-       "node": "div.relative.w-full",
-       "size": "798.0x475.0",
-       "bg": "rgb(20, 20, 20)",
-       "radius": "24px"
-      },
-      {
-       "node": "span.mui-mv42ai",
-       "size": "175.4x48.4",
+       "size": "183.4x51.0",
        "border": "T:2px solid rgba(27, 27, 27, 0.16) | R:2px solid rgba(27, 27, 27, 0.16) | B:2px solid rgba(27, 27, 27, 0.16) | L:2px solid rgba(27, 27, 27, 0.16)",
        "radius": "200px"
       }
@@ -6513,8 +6545,8 @@
    "url": "https://www.deel.com/",
    "title": "Review card",
    "group": "Home",
-   "desc": "A customer-review card in the reviews band.",
-   "selector": "reviews section"
+   "desc": "A customer-review slide inside the video-carousel band (the ~840x638 video card plus caption and case-study link); its link measured, never followed.",
+   "selector": "video-carousel slide"
   },
   "footer": {
    "states": {
@@ -6524,7 +6556,7 @@
      "text": "About us Leadership team Careers Pricing Solutions AI at Deel Deel Payroll Deel ",
      "rect": {
       "x": 0,
-      "y": -57,
+      "y": -58,
       "w": 1440,
       "h": 1015.38
      },
@@ -6572,7 +6604,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "rgba(0, 0, 0, 0.87)",
       "outlineOffset": "0px",
@@ -6734,7 +6766,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "rgb(250, 244, 238)",
       "outlineOffset": "0px",
@@ -6780,15 +6812,15 @@
      "text": "About us",
      "rect": {
       "x": 64,
-      "y": 439,
-      "w": 62,
+      "y": 438,
+      "w": 60.42,
       "h": 23.8
      },
      "style": {
       "display": "flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "62px",
+      "width": "60.4219px",
       "height": "23.7969px",
       "minWidth": "auto",
       "maxWidth": "none",
@@ -6828,7 +6860,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "rgb(27, 27, 27)",
       "outlineOffset": "0px",
@@ -6875,15 +6907,15 @@
      "text": "About us",
      "rect": {
       "x": 64,
-      "y": 439,
-      "w": 62,
+      "y": 438,
+      "w": 60.42,
       "h": 23.8
      },
      "style": {
       "display": "flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "62px",
+      "width": "60.4219px",
       "height": "23.7969px",
       "minWidth": "auto",
       "maxWidth": "none",
@@ -6923,7 +6955,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "rgb(78, 78, 78)",
       "outlineOffset": "0px",
@@ -6970,15 +7002,15 @@
      "text": "About us",
      "rect": {
       "x": 64,
-      "y": 439,
-      "w": 62,
+      "y": 438,
+      "w": 60.42,
       "h": 23.8
      },
      "style": {
       "display": "flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "62px",
+      "width": "60.4219px",
       "height": "23.7969px",
       "minWidth": "auto",
       "maxWidth": "none",
@@ -7020,7 +7052,7 @@
       "backdropFilter": "none",
       "outlineWidth": "1px",
       "outlineStyle": "auto",
-      "outlineColor": "rgb(16, 16, 16)",
+      "outlineColor": "rgb(0, 95, 204)",
       "outlineOffset": "1px",
       "fontFamily": "Inter, \"Inter Fallback\", Arial, Helvetica, sans-serif",
       "fontSize": "16px",
@@ -7047,8 +7079,8 @@
      "paint": [
       {
        "node": "a.mui-i1l04d",
-       "size": "62.0x23.8",
-       "outline": "1px auto rgb(16, 16, 16) offset 1px"
+       "size": "60.4x23.8",
+       "outline": "1px auto rgb(0, 95, 204) offset 1px"
       }
      ],
      "textStyle": {
@@ -7072,15 +7104,15 @@
      "text": "About us",
      "rect": {
       "x": 64,
-      "y": 439,
-      "w": 62,
+      "y": 438,
+      "w": 60.42,
       "h": 23.8
      },
      "style": {
       "display": "flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "62px",
+      "width": "60.4219px",
       "height": "23.7969px",
       "minWidth": "auto",
       "maxWidth": "none",
@@ -7120,7 +7152,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "rgb(78, 78, 78)",
       "outlineOffset": "0px",
@@ -7226,7 +7258,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "rgb(0, 0, 238)",
       "outlineOffset": "0px",
@@ -7309,7 +7341,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "rgb(0, 0, 238)",
       "outlineOffset": "0px",
@@ -7394,7 +7426,7 @@
       "backdropFilter": "none",
       "outlineWidth": "1px",
       "outlineStyle": "auto",
-      "outlineColor": "rgb(16, 16, 16)",
+      "outlineColor": "rgb(0, 95, 204)",
       "outlineOffset": "1px",
       "fontFamily": "Inter, \"Inter Fallback\", Arial, Helvetica, sans-serif",
       "fontSize": "16px",
@@ -7422,7 +7454,7 @@
       {
        "node": "a.mui-j04pfz",
        "size": "32.0x32.0",
-       "outline": "1px auto rgb(16, 16, 16) offset 1px"
+       "outline": "1px auto rgb(0, 95, 204) offset 1px"
       }
      ],
      "crop": "components/crops/social-link-focus-visible.png",
@@ -7482,7 +7514,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 0, 0)",
       "outlineOffset": "0px",
@@ -7576,7 +7608,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
@@ -7670,7 +7702,7 @@
       "backgroundImage": "none",
       "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(27, 27, 27, 0.04) 0px 8px 16px 0px, rgba(27, 27, 27, 0.04) 0px 2px 8px 0px",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "rgba(0, 0, 0, 0.87)",
       "outlineOffset": "0px",
@@ -7745,26 +7777,26 @@
    "states": {
     "default": {
      "tag": "button",
-     "classes": "mui-1wshw4o",
+     "classes": "w-full mui-1cqp2we",
      "text": "Book a demo",
      "rect": {
-      "x": 1257.7,
-      "y": 83,
-      "w": 118.31,
-      "h": 40
+      "x": 44,
+      "y": 424.2,
+      "w": 394.66,
+      "h": 51
      },
      "style": {
       "display": "flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "118.312px",
-      "height": "40px",
+      "width": "394.656px",
+      "height": "51px",
       "minWidth": "auto",
       "maxWidth": "none",
       "minHeight": "auto",
-      "paddingTop": "8px",
+      "paddingTop": "12px",
       "paddingRight": "16px",
-      "paddingBottom": "8px",
+      "paddingBottom": "12px",
       "paddingLeft": "16px",
       "marginTop": "0px",
       "marginRight": "0px",
@@ -7775,7 +7807,7 @@
       "columnGap": "4px",
       "flexDirection": "row",
       "alignItems": "center",
-      "justifyContent": "normal",
+      "justifyContent": "center",
       "gridTemplateColumns": "none",
       "borderTopWidth": "0px",
       "borderTopStyle": "none",
@@ -7797,15 +7829,15 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
       "fontFamily": "BagossStandardVF, \"BagossStandardVF Fallback\", Arial, Helvetica, sans-serif",
-      "fontSize": "14px",
+      "fontSize": "16px",
       "fontWeight": "500",
-      "lineHeight": "23.8px",
-      "letterSpacing": "0.21px",
+      "lineHeight": "27.2px",
+      "letterSpacing": "0.24px",
       "textTransform": "none",
       "color": "rgb(255, 255, 255)",
       "textDecorationLine": "none",
@@ -7825,10 +7857,19 @@
      },
      "paint": [
       {
-       "node": "button.mui-1wshw4o",
-       "size": "118.3x40.0",
+       "node": "button.w-full.mui-1cqp2we",
+       "size": "394.7x51.0",
        "bg": "rgb(27, 27, 27)",
        "radius": "200px"
+      }
+     ],
+     "ancestors": [
+      {
+       "up": 2,
+       "node": "div.relative.flex",
+       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(27, 27, 27, 0.04) 0px 8px 16px 0px, rgba(27, 27, 27, 0.04) 0px 2px 8px 0px",
+       "radius": "12px",
+       "bg": "rgb(255, 255, 255)"
       }
      ],
      "crop": "components/crops/price-cta-default.png",
@@ -7836,26 +7877,26 @@
     },
     "hover": {
      "tag": "button",
-     "classes": "mui-1wshw4o",
+     "classes": "w-full mui-1cqp2we",
      "text": "Book a demo",
      "rect": {
-      "x": 1257.7,
-      "y": 83,
-      "w": 118.31,
-      "h": 40
+      "x": 44,
+      "y": 424.2,
+      "w": 394.66,
+      "h": 51
      },
      "style": {
       "display": "flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "118.312px",
-      "height": "40px",
+      "width": "394.656px",
+      "height": "51px",
       "minWidth": "auto",
       "maxWidth": "none",
       "minHeight": "auto",
-      "paddingTop": "8px",
+      "paddingTop": "12px",
       "paddingRight": "16px",
-      "paddingBottom": "8px",
+      "paddingBottom": "12px",
       "paddingLeft": "16px",
       "marginTop": "0px",
       "marginRight": "0px",
@@ -7866,7 +7907,7 @@
       "columnGap": "4px",
       "flexDirection": "row",
       "alignItems": "center",
-      "justifyContent": "normal",
+      "justifyContent": "center",
       "gridTemplateColumns": "none",
       "borderTopWidth": "0px",
       "borderTopStyle": "none",
@@ -7888,15 +7929,15 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
       "fontFamily": "BagossStandardVF, \"BagossStandardVF Fallback\", Arial, Helvetica, sans-serif",
-      "fontSize": "14px",
+      "fontSize": "16px",
       "fontWeight": "500",
-      "lineHeight": "23.8px",
-      "letterSpacing": "0.21px",
+      "lineHeight": "27.2px",
+      "letterSpacing": "0.24px",
       "textTransform": "none",
       "color": "rgb(255, 255, 255)",
       "textDecorationLine": "none",
@@ -7916,10 +7957,19 @@
      },
      "paint": [
       {
-       "node": "button.mui-1wshw4o",
-       "size": "118.3x40.0",
+       "node": "button.w-full.mui-1cqp2we",
+       "size": "394.7x51.0",
        "bg": "rgb(78, 78, 78)",
        "radius": "200px"
+      }
+     ],
+     "ancestors": [
+      {
+       "up": 2,
+       "node": "div.relative.flex",
+       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(27, 27, 27, 0.04) 0px 8px 16px 0px, rgba(27, 27, 27, 0.04) 0px 2px 8px 0px",
+       "radius": "12px",
+       "bg": "rgb(255, 255, 255)"
       }
      ],
      "crop": "components/crops/price-cta-hover.png",
@@ -7927,26 +7977,26 @@
     },
     "focus-visible": {
      "tag": "button",
-     "classes": "mui-1wshw4o",
+     "classes": "w-full mui-1cqp2we",
      "text": "Book a demo",
      "rect": {
-      "x": 1257.7,
-      "y": 84,
-      "w": 118.31,
-      "h": 40
+      "x": 44,
+      "y": 424.2,
+      "w": 394.66,
+      "h": 51
      },
      "style": {
       "display": "flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "118.312px",
-      "height": "40px",
+      "width": "394.656px",
+      "height": "51px",
       "minWidth": "auto",
       "maxWidth": "none",
       "minHeight": "auto",
-      "paddingTop": "8px",
+      "paddingTop": "12px",
       "paddingRight": "16px",
-      "paddingBottom": "8px",
+      "paddingBottom": "12px",
       "paddingLeft": "16px",
       "marginTop": "0px",
       "marginRight": "0px",
@@ -7957,7 +8007,7 @@
       "columnGap": "4px",
       "flexDirection": "row",
       "alignItems": "center",
-      "justifyContent": "normal",
+      "justifyContent": "center",
       "gridTemplateColumns": "none",
       "borderTopWidth": "0px",
       "borderTopStyle": "none",
@@ -7981,13 +8031,13 @@
       "backdropFilter": "none",
       "outlineWidth": "1px",
       "outlineStyle": "auto",
-      "outlineColor": "rgb(16, 16, 16)",
+      "outlineColor": "rgb(0, 95, 204)",
       "outlineOffset": "0px",
       "fontFamily": "BagossStandardVF, \"BagossStandardVF Fallback\", Arial, Helvetica, sans-serif",
-      "fontSize": "14px",
+      "fontSize": "16px",
       "fontWeight": "500",
-      "lineHeight": "23.8px",
-      "letterSpacing": "0.21px",
+      "lineHeight": "27.2px",
+      "letterSpacing": "0.24px",
       "textTransform": "none",
       "color": "rgb(255, 255, 255)",
       "textDecorationLine": "none",
@@ -8007,11 +8057,20 @@
      },
      "paint": [
       {
-       "node": "button.mui-1wshw4o",
-       "size": "118.3x40.0",
+       "node": "button.w-full.mui-1cqp2we",
+       "size": "394.7x51.0",
        "bg": "rgb(27, 27, 27)",
-       "outline": "1px auto rgb(16, 16, 16) offset 0px",
+       "outline": "1px auto rgb(0, 95, 204) offset 0px",
        "radius": "200px"
+      }
+     ],
+     "ancestors": [
+      {
+       "up": 2,
+       "node": "div.relative.flex",
+       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(27, 27, 27, 0.04) 0px 8px 16px 0px, rgba(27, 27, 27, 0.04) 0px 2px 8px 0px",
+       "radius": "12px",
+       "bg": "rgb(255, 255, 255)"
       }
      ],
      "crop": "components/crops/price-cta-focus-visible.png",
@@ -8019,26 +8078,26 @@
     },
     "pressed": {
      "tag": "button",
-     "classes": "mui-1wshw4o",
+     "classes": "w-full mui-1cqp2we",
      "text": "Book a demo",
      "rect": {
-      "x": 1257.7,
-      "y": 84,
-      "w": 118.31,
-      "h": 40
+      "x": 44,
+      "y": 424.2,
+      "w": 394.66,
+      "h": 51
      },
      "style": {
       "display": "flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "118.312px",
-      "height": "40px",
+      "width": "394.656px",
+      "height": "51px",
       "minWidth": "auto",
       "maxWidth": "none",
       "minHeight": "auto",
-      "paddingTop": "8px",
+      "paddingTop": "12px",
       "paddingRight": "16px",
-      "paddingBottom": "8px",
+      "paddingBottom": "12px",
       "paddingLeft": "16px",
       "marginTop": "0px",
       "marginRight": "0px",
@@ -8049,7 +8108,7 @@
       "columnGap": "4px",
       "flexDirection": "row",
       "alignItems": "center",
-      "justifyContent": "normal",
+      "justifyContent": "center",
       "gridTemplateColumns": "none",
       "borderTopWidth": "0px",
       "borderTopStyle": "none",
@@ -8071,15 +8130,15 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
       "fontFamily": "BagossStandardVF, \"BagossStandardVF Fallback\", Arial, Helvetica, sans-serif",
-      "fontSize": "14px",
+      "fontSize": "16px",
       "fontWeight": "500",
-      "lineHeight": "23.8px",
-      "letterSpacing": "0.21px",
+      "lineHeight": "27.2px",
+      "letterSpacing": "0.24px",
       "textTransform": "none",
       "color": "rgb(255, 255, 255)",
       "textDecorationLine": "none",
@@ -8099,10 +8158,19 @@
      },
      "paint": [
       {
-       "node": "button.mui-1wshw4o",
-       "size": "118.3x40.0",
+       "node": "button.w-full.mui-1cqp2we",
+       "size": "394.7x51.0",
        "bg": "rgb(78, 78, 78)",
        "radius": "200px"
+      }
+     ],
+     "ancestors": [
+      {
+       "up": 2,
+       "node": "div.relative.flex",
+       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(27, 27, 27, 0.04) 0px 8px 16px 0px, rgba(27, 27, 27, 0.04) 0px 2px 8px 0px",
+       "radius": "12px",
+       "bg": "rgb(255, 255, 255)"
       }
      ],
      "crop": "components/crops/price-cta-pressed.png",
@@ -8114,8 +8182,8 @@
    "url": "https://www.deel.com/pricing/",
    "title": "Price CTA",
    "group": "Pricing",
-   "desc": "A \"Book a demo\"/\"Get started\" button on a tier; measured, never followed.",
-   "selector": "main a, main button"
+   "desc": "The \"Book a demo\"/\"Get started\" button inside a pricing tier card (395x51); measured, never followed.",
+   "selector": "tier card a, tier card button"
   },
   "faq-item": {
    "states": {
@@ -8376,6 +8444,136 @@
      },
      "crop": "components/crops/faq-item-opened.png",
      "via": "own toggle"
+    },
+    "focus-visible": {
+     "tag": "div",
+     "classes": "MuiButtonBase-root Mui-focusVisible MuiAccordionSummary-root Mui-expanded",
+     "text": "How does Deel’s pricing work?",
+     "rect": {
+      "x": 412,
+      "y": 410.2,
+      "w": 952,
+      "h": 80.2
+     },
+     "style": {
+      "display": "flex",
+      "position": "relative",
+      "boxSizing": "border-box",
+      "width": "952px",
+      "height": "80.2031px",
+      "minWidth": "0px",
+      "maxWidth": "none",
+      "minHeight": "48px",
+      "paddingTop": "0px",
+      "paddingRight": "0px",
+      "paddingBottom": "0px",
+      "paddingLeft": "0px",
+      "marginTop": "0px",
+      "marginRight": "0px",
+      "marginBottom": "0px",
+      "marginLeft": "0px",
+      "gap": "normal",
+      "rowGap": "normal",
+      "columnGap": "normal",
+      "flexDirection": "row",
+      "alignItems": "center",
+      "justifyContent": "center",
+      "gridTemplateColumns": "none",
+      "borderTopWidth": "1px",
+      "borderTopStyle": "solid",
+      "borderTopColor": "rgba(250, 244, 238, 0.16)",
+      "borderRightWidth": "0px",
+      "borderRightStyle": "none",
+      "borderRightColor": "rgba(0, 0, 0, 0.87)",
+      "borderBottomWidth": "0px",
+      "borderBottomStyle": "none",
+      "borderBottomColor": "rgba(0, 0, 0, 0.87)",
+      "borderLeftWidth": "0px",
+      "borderLeftStyle": "none",
+      "borderLeftColor": "rgba(0, 0, 0, 0.87)",
+      "borderTopLeftRadius": "0px",
+      "borderTopRightRadius": "0px",
+      "borderBottomRightRadius": "0px",
+      "borderBottomLeftRadius": "0px",
+      "backgroundColor": "rgba(0, 0, 0, 0.12)",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "backdropFilter": "none",
+      "outlineWidth": "0px",
+      "outlineStyle": "none",
+      "outlineColor": "rgba(0, 0, 0, 0.87)",
+      "outlineOffset": "0px",
+      "fontFamily": "Inter, \"Inter Fallback\", Arial, Helvetica, sans-serif",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "lineHeight": "24px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgba(0, 0, 0, 0.87)",
+      "textDecorationLine": "none",
+      "textDecorationColor": "rgba(0, 0, 0, 0.87)",
+      "textDecorationThickness": "auto",
+      "textUnderlineOffset": "auto",
+      "transitionProperty": "opacity",
+      "transitionDuration": "0.1s",
+      "transitionTimingFunction": "ease-in-out",
+      "transitionDelay": "0s",
+      "cursor": "pointer",
+      "opacity": "1",
+      "transform": "none",
+      "overflow": "visible",
+      "zIndex": "auto",
+      "top": "0px"
+     },
+     "paint": [
+      {
+       "node": "div.MuiButtonBase-root.Mui-focusVisible",
+       "size": "952.0x80.2",
+       "border": "T:1px solid rgba(250, 244, 238, 0.16)",
+       "bg": "rgba(0, 0, 0, 0.12)"
+      },
+      {
+       "node": "div.expandIconWrapper.MuiBox-root",
+       "size": "32.0x32.0",
+       "bg": "rgba(250, 244, 238, 0.4)",
+       "radius": "100%"
+      },
+      {
+       "node": "div.collapseIconWrapper.MuiBox-root",
+       "size": "0.0x0.0",
+       "bg": "rgba(250, 244, 238, 0.4)",
+       "radius": "100%"
+      }
+     ],
+     "ancestors": [
+      {
+       "up": 1,
+       "node": "div.MuiPaper-root.MuiPaper-elevation",
+       "radius": "0px",
+       "bg": "rgb(32, 21, 71)"
+      }
+     ],
+     "textStyle": {
+      "node": "h3.MuiTypography-root.MuiTypography-h3",
+      "text": "How does Deel’s pricing work?",
+      "fontFamily": "BagossStandardVF, \"BagossStandardVF Fallback\", Arial, Helvetica, sans-serif",
+      "fontSize": "24px",
+      "lineHeight": "31.2px",
+      "fontWeight": "440",
+      "letterSpacing": "normal",
+      "color": "rgb(255, 255, 255)",
+      "textDecorationLine": "none",
+      "textTransform": "none"
+     },
+     "icon": {
+      "w": 30,
+      "h": 30,
+      "fill": "rgb(255, 255, 255)",
+      "stroke": "none",
+      "color": "rgb(255, 255, 255)"
+     },
+     "crop": "components/crops/faq-item-focus-visible.png",
+     "via": "Shift+Tab, Tab"
     }
    },
    "page": "pricing",
@@ -10011,7 +10209,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "rgba(0, 0, 0, 0.87)",
       "outlineOffset": "0px",
@@ -10051,7 +10249,7 @@
       },
       {
        "node": "span.mui-mv42ai",
-       "size": "184.6x51.0",
+       "size": "183.4x51.0",
        "border": "T:2px solid rgba(27, 27, 27, 0.16) | R:2px solid rgba(27, 27, 27, 0.16) | B:2px solid rgba(27, 27, 27, 0.16) | L:2px solid rgba(27, 27, 27, 0.16)",
        "radius": "200px"
       },
@@ -10063,7 +10261,7 @@
       },
       {
        "node": "span.mui-mv42ai",
-       "size": "175.4x48.4",
+       "size": "174.3x48.4",
        "border": "T:2px solid rgba(27, 27, 27, 0.16) | R:2px solid rgba(27, 27, 27, 0.16) | B:2px solid rgba(27, 27, 27, 0.16) | L:2px solid rgba(27, 27, 27, 0.16)",
        "radius": "200px"
       },
@@ -10075,7 +10273,7 @@
       },
       {
        "node": "span.mui-mv42ai",
-       "size": "175.4x48.5",
+       "size": "174.3x48.5",
        "border": "T:2px solid rgba(27, 27, 27, 0.16) | R:2px solid rgba(27, 27, 27, 0.16) | B:2px solid rgba(27, 27, 27, 0.16) | L:2px solid rgba(27, 27, 27, 0.16)",
        "radius": "200px"
       },
@@ -10087,7 +10285,7 @@
       },
       {
        "node": "span.mui-mv42ai",
-       "size": "175.4x48.4",
+       "size": "174.3x48.4",
        "border": "T:2px solid rgba(27, 27, 27, 0.16) | R:2px solid rgba(27, 27, 27, 0.16) | B:2px solid rgba(27, 27, 27, 0.16) | L:2px solid rgba(27, 27, 27, 0.16)",
        "radius": "200px"
       },
@@ -10099,7 +10297,7 @@
       },
       {
        "node": "span.mui-mv42ai",
-       "size": "175.4x48.4",
+       "size": "174.3x48.4",
        "border": "T:2px solid rgba(27, 27, 27, 0.16) | R:2px solid rgba(27, 27, 27, 0.16) | B:2px solid rgba(27, 27, 27, 0.16) | L:2px solid rgba(27, 27, 27, 0.16)",
        "radius": "200px"
       },
@@ -10111,7 +10309,7 @@
       },
       {
        "node": "span.mui-mv42ai",
-       "size": "175.4x48.4",
+       "size": "174.3x48.4",
        "border": "T:2px solid rgba(27, 27, 27, 0.16) | R:2px solid rgba(27, 27, 27, 0.16) | B:2px solid rgba(27, 27, 27, 0.16) | L:2px solid rgba(27, 27, 27, 0.16)",
        "radius": "200px"
       },
@@ -10209,7 +10407,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "rgb(27, 27, 27)",
       "outlineOffset": "0px",
@@ -10256,7 +10454,116 @@
       "textTransform": "none"
      },
      "crop": "components/crops/menu-item-default.png",
-     "via": "clicked Solutions to open the mega dropdown"
+     "via": "at rest"
+    },
+    "focus-visible": {
+     "tag": "a",
+     "classes": "mui-egns2o",
+     "text": "Deel Payroll Pay teams locally or globally",
+     "rect": {
+      "x": 163.5,
+      "y": 248,
+      "w": 334,
+      "h": 66
+     },
+     "style": {
+      "display": "flex",
+      "position": "static",
+      "boxSizing": "border-box",
+      "width": "334px",
+      "height": "66px",
+      "minWidth": "auto",
+      "maxWidth": "none",
+      "minHeight": "auto",
+      "paddingTop": "8px",
+      "paddingRight": "8px",
+      "paddingBottom": "8px",
+      "paddingLeft": "8px",
+      "marginTop": "0px",
+      "marginRight": "0px",
+      "marginBottom": "0px",
+      "marginLeft": "0px",
+      "gap": "16px",
+      "rowGap": "16px",
+      "columnGap": "16px",
+      "flexDirection": "row",
+      "alignItems": "center",
+      "justifyContent": "normal",
+      "gridTemplateColumns": "none",
+      "borderTopWidth": "0px",
+      "borderTopStyle": "none",
+      "borderTopColor": "rgb(27, 27, 27)",
+      "borderRightWidth": "0px",
+      "borderRightStyle": "none",
+      "borderRightColor": "rgb(27, 27, 27)",
+      "borderBottomWidth": "0px",
+      "borderBottomStyle": "none",
+      "borderBottomColor": "rgb(27, 27, 27)",
+      "borderLeftWidth": "0px",
+      "borderLeftStyle": "none",
+      "borderLeftColor": "rgb(27, 27, 27)",
+      "borderTopLeftRadius": "14px",
+      "borderTopRightRadius": "14px",
+      "borderBottomRightRadius": "14px",
+      "borderBottomLeftRadius": "14px",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "backdropFilter": "none",
+      "outlineWidth": "1px",
+      "outlineStyle": "auto",
+      "outlineColor": "rgb(0, 95, 204)",
+      "outlineOffset": "1px",
+      "fontFamily": "Inter, \"Inter Fallback\", Arial, Helvetica, sans-serif",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "lineHeight": "24px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(27, 27, 27)",
+      "textDecorationLine": "none",
+      "textDecorationColor": "rgb(27, 27, 27)",
+      "textDecorationThickness": "auto",
+      "textUnderlineOffset": "auto",
+      "transitionProperty": "background",
+      "transitionDuration": "0.1s",
+      "transitionTimingFunction": "ease-in-out",
+      "transitionDelay": "0s",
+      "cursor": "pointer",
+      "opacity": "1",
+      "transform": "none",
+      "overflow": "visible",
+      "zIndex": "auto",
+      "top": "auto"
+     },
+     "paint": [
+      {
+       "node": "a.mui-egns2o",
+       "size": "334.0x66.0",
+       "outline": "1px auto rgb(0, 95, 204) offset 1px",
+       "radius": "14px"
+      },
+      {
+       "node": "div.link-icon.MuiBox-root",
+       "size": "48.0x48.0",
+       "bg": "rgb(246, 240, 254)",
+       "radius": "12px"
+      }
+     ],
+     "textStyle": {
+      "node": "p.mui-ic7icj",
+      "text": "Deel Payroll",
+      "fontFamily": "BagossStandardVF, \"BagossStandardVF Fallback\", Arial, Helvetica, sans-serif",
+      "fontSize": "16px",
+      "lineHeight": "25.6px",
+      "fontWeight": "540",
+      "letterSpacing": "0.4px",
+      "color": "rgb(27, 27, 27)",
+      "textDecorationLine": "none",
+      "textTransform": "none"
+     },
+     "crop": "components/crops/menu-item-focus-visible.png",
+     "via": "Shift+Tab, Tab"
     }
    },
    "page": "home",
@@ -10323,7 +10630,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "rgba(0, 0, 0, 0.87)",
       "outlineOffset": "0px",

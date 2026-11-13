@@ -7,8 +7,6 @@ description: "SaaS marketing design: a white field with a 64px #1b1b1b promo str
 omitted:
   - section: "typography"
     reason: "tokens.json has no typography tokens under `core.typography`"
-  - section: "spacing"
-    reason: "tokens.json has no spacing tokens under `core.spacing`"
 colors:
   primary: "#b1d8fc"
   neutral: "#ffffff"
@@ -17,7 +15,7 @@ colors:
   on-surface-variant: "rgba(0, 0, 0, 0.87)"
   outline: "rgba(250, 244, 238, 0.16)"
   background-page: "#ffffff"
-  background-promo-strip: "rgba(0, 0, 0, 0.87)"
+  background-promo-strip: "#1b1b1b"
   background-hero-panel: "#201547"
   background-video-card: "#141414"
   background-tile-glass: "oklab(0.999994 0.0000455678 0.0000200868 / 0.04)"
@@ -25,7 +23,7 @@ colors:
   text-body: "rgba(0, 0, 0, 0.87)"
   text-on-dark: "#ffffff"
   text-cream: "#faf4ee"
-  border-focus: "#101010"
+  border-focus: "#005fcc"
   border-tile-glass: "oklab(0.999994 0.0000455678 0.0000200868 / 0.1)"
   border-hairline: "rgba(250, 244, 238, 0.16)"
   action-accent-chip: "#b1d8fc"
@@ -33,9 +31,35 @@ colors:
   action-hover-fill: "#4e4e4e"
   component-promo-strip-paint: "#1b1b1b"
 rounded:
+  "2xl": "16px"
+  circular: "200px"
+  lg: "16px"
+  md: "12px"
+  none: "0px"
+  quark: "4px"
+  sm: "8px"
+  xl: "24px"
   chip: "2px"
   card: "12px"
   pill: "200px"
+spacing:
+  unit: "4px"
+  big: "96px"
+  container: "1312px"
+  giant: "200px"
+  huge: "128px"
+  lg: "40px"
+  md: "32px"
+  nano: "8px"
+  quark: "4px"
+  sm: "24px"
+  tiny: "2px"
+  xl: "48px"
+  xs: "20px"
+  xxl: "64px"
+  xxs: "16px"
+  xxxl: "80px"
+  xxxs: "12px"
 components:
   promo-banner:
     height: "64px"
@@ -106,7 +130,7 @@ No composite type styles in tokens.json; the README text below names the faces a
 
 ## Layout
 
-No spacing scale in tokens.json.
+Spacing from `core.spacing`: `unit` 4px, `big` 96px, `container` 1312px, `giant` 200px, `huge` 128px, `lg` 40px, `md` 32px, `nano` 8px, `quark` 4px, `sm` 24px, `tiny` 2px, `xl` 48px, `xs` 20px, `xxl` 64px, `xxs` 16px, `xxxl` 80px, `xxxs` 12px.
 
 ## Elevation & Depth
 
@@ -118,7 +142,7 @@ Shadows, resolved to CSS:
 
 ## Shapes
 
-Corner radii from `core.radius`: `chip` 2px, `card` 12px, `pill` 200px.
+Corner radii from `core.radius`: `2xl` 16px, `circular` 200px, `lg` 16px, `md` 12px, `none` 0px, `quark` 4px, `sm` 8px, `xl` 24px, `chip` 2px, `card` 12px, `pill` 200px.
 
 ## Components
 
