@@ -676,5 +676,11 @@
     "groupId": "web-categories",
     "labels": ["Productivity"],
     "reason": "catalog.json describes a link-attribution product's marketing, auth and docs surfaces."
+  },
+  {
+    "referenceId": "systems:elevenlabs",
+    "groupId": "web-categories",
+    "labels": ["AI Tool"],
+    "reason": "catalog.json describes a voice-AI platform: the marketing pages, the public TTS playground, pricing, the docs shell and the auth cards."
   }
 ]
