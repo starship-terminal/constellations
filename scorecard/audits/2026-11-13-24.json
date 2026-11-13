@@ -1,7 +1,7 @@
 {
  "date": "2026-11-13",
  "rubric": "4",
- "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): Re-applying the curater review after merging main into the capture branch (audit snapshot index collision; grades unchanged)",
+ "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): public-web capture review (re-applied after main merge)",
  "systems": [
   {
    "slug": "brilliant",
@@ -13523,87 +13523,111 @@
    "reviewedPlatform": "web"
   },
   {
-   "slug": "curater",
+   "slug": "dribbble",
    "grades": {
     "F1": {
-     "grade": "partly",
-     "evidence": "Declared ramps, sparse per hue: the Tailwind subset (orange/purple/green ~4 steps each, gray/neutral 2-5 steps, single-step amber/blue/emerald/red/yellow), the 6-step --Curater-gray-* ramp and the 9 single-hue --Curater-selection-* tag palette — all css-var evidence in tokens.json (core.color.*). No hue reaches a ~10-step ramp."
+     "grade": "meets",
+     "evidence": "Real declared ramps: --sl-color-primary-50..950 re-bound to the Dribbble pink (core.color.pink, 11 steps), --sl-color-neutral-0..1000 (13 steps), --sl-color-gray-50..950 (11 steps), 17 hue ramps of 8 steps each under core.color.hue, and the declared --sl-color-danger/-success/-warning ramps under core.color.status (8 steps each). Measured ink/pink/surface values sit beside them in core.color.measured."
     },
     "F2": {
      "grade": "partly",
-     "evidence": "light.color.background.* holds page #fff, app-field #f2f2f2, card #fff, muted/accent fills #f4f4f5, sidebar #fafafa and popover #fff — real page/surface/fill roles. No raised, overlay or scrim role paints on the public surface."
+     "evidence": "light.color.page, .surface and .surface-alt (the promo/chip tint) exist as roles; there is no raised/overlay/scrim role — the public surface paints flat white cards and one absolutely-positioned dropdown, and no scrim or overlay surface is declared or painted signed out."
     },
     "F3": {
      "grade": "partly",
-     "evidence": "text #09090b, text-strong #18181b, muted #71717b, secondary-text #7c7c7c (the login label), label #afafaf ('Curated by'), on-primary #fafafa and white teaser text on the globe — measured or declared. No disabled or link-specific role on the public surface."
+     "evidence": "light.color.text (#0d0c22), .muted (#3a3546 + measured.muted-2 #6e6d7a), .on-accent (white on the dark pills) and .link (#060318) exist; no disabled text role exists on the public surface — nothing disabled paints signed out."
     },
     "F4": {
-     "grade": "partly",
-     "evidence": "border #eeeef1, input #e4e4e7, sidebar-border #e4e4e7 and the #d4d4d8 focus ring (--ring, measured 2px solid offset 2px on every control). Default + focus roles exist; no strong/hover border scale."
+     "grade": "meets",
+     "evidence": "Default border: measured.field-border rgba(219,218,222,.9) and the #e7e7e9/#f3f3f4 hairlines; strong: measured.card-border #0d0c22; focus: core.focusRing.* (declared --sl-focus-ring-*, 3px #e44a85) plus the measured 2px #f3afe4 focus outlines. Declared border.width.input/panel (1px) back them."
     },
     "F5": {
-     "grade": "meets",
-     "evidence": "All three states measured on every control: white pill buttons fill #f2f2f2 on hover and sink 2px (translateY) on press; nav icons fill #f4f4f5 and ink on hover/pressed; the active page keeps the #f2f2f2 fill; focus-visible draws the same 2px #d4d4d8 ring everywhere."
+     "grade": "partly",
+     "evidence": "light.color.accent (#ea4c89) and .accent-hover (#ec5e95 measured on the pink hover) exist; no pressed accent role — the pink controls were never pressed and no pressed pink paints on the surface."
     },
     "F6": {
-     "grade": "missing",
-     "evidence": "--Curater-green/-green-background/-green-dark and --Curater-red/-red-light/-red-dark are declared in the var layer, but no success/warning/danger/info set with fill+text+border roles paints anywhere on the public surface."
+     "grade": "partly",
+     "evidence": "Declared --sl-color-danger/-success/-warning ramps (8 steps each) are tokenised under core.color.status, but they are raw hues with no semantic fill/text/border roles, no info family exists on the site, and nothing status-coloured paints signed out."
     },
     "F7": {
-     "grade": "meets",
-     "evidence": "The product paints a single theme; every semantic colour role exists in that theme and no second theme is offered or painted (the TasteScope globe is a canvas asset, not a theme). Parity holds by construction."
+     "grade": "partly",
+     "evidence": "The product ships one light theme — every semantic role exists in it. The package's dark set deliberately holds only the 3 ink-island values the light page paints (dark pills/chip), not a parallel theme, so parity is partial by construction; the only declared dark CSS scope re-binds the third-party Algolia dropdown and never paints as a product theme."
     },
     "F8": {
-     "grade": "meets",
-     "evidence": "ABCDiatype with an 11-entry fallback stack (measured) + the declared --font-sans Tailwind stack; the --text-xs..5xl ramp (8 sizes with line-heights), measured weights 400/500 (declared 600/700 too). 24px titles, 20px teaser, 16px base, 14px field, 12px labels."
+     "grade": "partly",
+     "evidence": "Mona Sans stack with fallbacks (core.font.family.sans) plus the served faces tokenised (font.face.source-serif-4, ibm-plex-mono, walsheim, inter, wf-visual-sans); 14 size steps (10 declared --sl-font-size-* plus measured hero 52/h1 32/body/meta/mobile-hero), weights 300-700, declared line-height + tracking scales. Named text roles exist only as size names (hero/h1-page/body/meta) — no display/label/caption/code role set."
     },
     "F9": {
      "grade": "meets",
-     "evidence": "Declared --spacing = 4px unit with --space-1..12 steps (4-48px) plus --spacing-curation-detail 56px, --header-height/--mobile-bar-height 56px, --sidebar-width 80px and --centered-content-width 480px — a real declared scale (core.spacing.*)."
+     "evidence": "The declared --sl-spacing-3x-small..4x-large scale (10 steps, rem-based) is tokenised under core.spacing; measured paddings (24px buttons, 28px cards, 48px auth card sides) land on or near it."
     },
     "F10": {
-     "grade": "meets",
-     "evidence": "Declared --radius-sm 6px, --radius-md 8px, --radius(base) 10px, --radius-lg 12px, --radius-xl 16px, --radius-2xl 20px and --radius-full 9999px — plus the measured 24px trend-card radius. Pills on every button/chip/nav icon, square media."
+     "grade": "partly",
+     "evidence": "Radii are complete: declared --sl-border-radius small..x-large + circle (50%, kept under a non-standard 'other' type) + pill (9999px), plus measured card 8px/field 8px/search 12px/pill 1e+07px/chip/search-go. Border widths exist only as the declared input/panel 1px and measured hairlines — no width scale."
     },
     "F11": {
      "grade": "meets",
-     "evidence": "Measured control geometry: 48px nav buttons, 58px sign-in/SSO pills, 42px TasteScope, 40px tabs/mobile buttons, 36px back, 32px options, 28px chips/menu, 20px search toggle; the shared 2px + 2px-offset focus ring (light.component.*)."
+     "evidence": "Control heights measured per size: 48px dark pills (login-btn/profile-cta/continue), 40px buttons and icon circles (shot-cta/designer-cta/bookmark-btn/search-go), 47px fields, 54px search, 31px chips, header 92px desktop/58px mobile; --btn-height 40px and --btn-icon-size 16px declared; focus ring 3px width/1px offset declared plus measured 2px rings."
     },
     "F12": {
-     "grade": "partly",
-     "evidence": "Three declared levels (--shadow-sm/md/xl; core.shadow.*) plus the measured trend-card lift (rgba(0,0,0,.02) 0 14px 54px). The public surface is mostly flat — the levels exist but carry little differentiated use."
+     "grade": "meets",
+     "evidence": "The declared --sl-shadow-x-small..x-large scale (5 levels) is tokenised, plus two measured use-shadows: the designer-card's faint 0 1px 10px rgba(18,22,25,.02) and the nav dropdown's 0 15px 50px rgba(27,32,50,.1) popover elevation."
     },
     "F13": {
      "grade": "partly",
-     "evidence": "Declared --transition-fast .15s / normal .2s / slow .3s / slower .5s on --ease-out-expo, plus the Tailwind default duration/easing (core.motion.*). Reduced-motion behaviour never observed on the public surface."
+     "evidence": "The declared --sl-transition-x-slow..x-fast duration scale (5 steps) is tokenised and per-component transitions were measured on real elements (0.05-0.4s: button colour flips, dropdown opacity/transform, menu open). No --sl-easing-* variables exist on the site (easing curves are measured, not declared) and the reduced-motion probe on the header recorded only the ambient delta the page paints."
     },
     "F14": {
      "grade": "partly",
-     "evidence": "Declared layers --z-base..tooltip (0-80), widths 480px centred content / 80px sidebar / 56px bars and --container-* sizes; measured inner-scroll feed and mobile 390 collapse. No breakpoint ramp painted beyond the mobile pass."
+     "evidence": "Scoped container widths declared and tokenised (layout.container-max-home 1650px, container-max-designers 1622px, container-gutter 72px), the --site-nav-* geometry and 9 z-index layers (--zi-* + --sl-z-index-* incl. resolved calc expressions). Breakpoints and grid column templates are not declared as variables and were not tokenised."
     },
     "C1": {
      "grade": "partly",
-     "evidence": "47 components measured: buttons (pill CTAs, SSO, Save chip), icon buttons (nav/settings/back/options/menu), links (title/album/login), text field (search), tabs, cards (theme/trend/profile item), media items and labels. No textarea, select, checkbox, dialog, toast or table exists on the public surface."
+     "evidence": "About 13 of 19 checklist components paint signed out: button (login-btn/hero-cta/profile-cta/designer-cta/job-apply/continue/wall-cta), icon button (shot-icon-btn/bookmark-btn/rail-btn/profile-icon-btn/m-menu-button), link (nav/footer/menu/auth), text field (email-field/home-search/search-input), select (sort-select/scope-select/filter-select/profile-sort/filter-sort), tabs (view-tab/profile-tab/filter-tab), menu (nav-dropdown, m-menu-open), card (shot/designer/job/story/auth/hero-media), list row (menu-link/job-card/story-card), avatar (profile-avatar/shot-author), badge (pro-badge/badge-select/promoted-tag). No textarea, checkbox, radio, switch, tooltip, dialog, toast or table paints on the public surface."
     },
     "C2": {
      "grade": "partly",
-     "evidence": "default/hover/focus-visible/pressed measured on every interactive control; search-field also 'focused' (clicked in). Disabled, error and loading states never appear on the public surface — documented gaps."
+     "evidence": "default/hover/focus-visible/pressed on every interactive entry (245 states over 87 components), focused and filled on the email field (sample text typed and deleted), opened on the Explore dropdown and mobile menu via their own controls. Disabled, loading and error states do not paint on the public surface — the product's state depth sits behind sign-in."
     },
     "C3": {
      "grade": "meets",
-     "evidence": "A real keyboard focus was held on 8+ controls; every one draws the same visible ring — 2px solid #d4d4d8 (--ring), 2px offset — recorded in components-computed.json and the light.component.focus-ring token."
+     "evidence": "A real keyboard focus (Shift+Tab, Tab) was captured for 50 components; 47 draw the 2px #f3afe4 outline and 2 a shadow ring — components.md's Shared values lists each with its offset."
     },
     "C4": {
+     "grade": "meets",
+     "evidence": "Component entries name the palette token beside every value that has one (e.g. '#ea4c89 color.measured.pink', '#ffffff color.neutral.0'); the component.* set in tokens.json carries the measured heights and widths as tokens."
+    },
+    "P1": {
      "grade": "partly",
-     "evidence": "components.md writes each entry's computed value followed by the matching palette token (`#f2f2f2 'core.color.curater.background'`); spec details like state tracks and the focus ring are emitted as component tokens. Not every value resolves to a named token."
+     "evidence": "Eight written patterns cover what exists: the site header/dropdown, the home hero and search strip, the shots feed and its sign-up wall, the shot detail, the profile and directory, jobs/search/stories, the auth split layout, and the footer/mobile shell — app shell, search+filtering and data display are covered; forms-and-validation, empty/loading/error, destructive confirmation, feedback and onboarding do not exist on the public surface."
+    },
+    "A1": {
+     "grade": "partly",
+     "evidence": "Fonts are named with provenance and fallbacks (Mona Sans — Dribbble's licensed brand face, never ship it; Source Serif Pro on the jobs board, IBM Plex Mono served). No icon index — the extraction pass was not run; declared under layoutGaps."
+    },
+    "K1": {
+     "grade": "meets",
+     "evidence": "The README states what was captured (routes, widths, signed-out boundary), how (stylesheet harvest, computed-style measurement, bounded full-page shots) and a full What-to-distrust list (one light surface, two coexisting style systems, the animated hero, percentage/1e+07px radii, the zero-sized pink nav link, third-party feed content)."
+    },
+    "F15": {
+     "grade": "meets",
+     "evidence": "Script: all 8 pairs pass 4.5:1 across 2 themes; lowest 11.81:1 light muted (core.color.measured.muted) on page (core.color.measured.page)"
+    },
+    "F16": {
+     "grade": "meets",
+     "evidence": "Script: 422 of 422 tokens name their source"
+    },
+    "K2": {
+     "grade": "meets",
+     "evidence": "Script: 8 rules, each linking a screenshot or crop"
+    },
+    "K3": {
+     "grade": "meets",
+     "evidence": "Script: DESIGN.md matches a fresh generation"
     },
     "C5": {
      "grade": "na",
      "evidence": "Optional for a capture, and this product does not publish it."
-    },
-    "P1": {
-     "grade": "partly",
-     "evidence": "patterns.md documents the shell (rail/header/mobile bar), home, feed (inner-scroll bound), taste, curation, profile and terms layouts. No forms/validation, empty/loading/error or destructive-confirmation patterns exist on the public surface."
     },
     "V1": {
      "grade": "na",
@@ -13612,45 +13636,22 @@
     "V2": {
      "grade": "na",
      "evidence": "Optional for a capture, and this product does not publish it."
-    },
-    "A1": {
-     "grade": "partly",
-     "evidence": "icon.png (128px, the Curater grape-cluster mark) captured in LFS and registered in the catalog preview; ABCDiatype named with its fallback stack (files not shipped). No standalone SVG icon set lifted — declared under layoutGaps."
-    },
-    "K1": {
-     "grade": "meets",
-     "evidence": "README documents what was captured, how (routes, widths, signed-out), the boundaries (inner-scroll feed bound, signed-in app, one curation/profile as representatives, /taste redirect) and the layoutGap for icons/."
-    },
-    "F15": {
-     "grade": "partly",
-     "evidence": "Script: primary text passes; secondary fails 1 pair, worst 4.31:1 light muted (light.color.text.muted) on surface (light.color.background.app-field)"
-    },
-    "F16": {
-     "grade": "meets",
-     "evidence": "Script: 176 of 176 tokens name their source"
-    },
-    "K2": {
-     "grade": "missing",
-     "evidence": "Script: no \"Do and don't\" section in the README"
-    },
-    "K3": {
-     "grade": "meets",
-     "evidence": "Script: DESIGN.md matches a fresh generation"
     }
    },
-   "name": "Curater",
-   "goodFor": "Visual-curation community surfaces: ABCDiatype over a #fff/#f2f2f2 field, a 48px icon rail whose active page fills #f2f2f2, white 9999px pill buttons that fill #f2f2f2 and sink 2px on press, the 9-hue --Curater-selection-* tag palette, 24px-radius media cards, a collapsible 170px search field, the TasteScope WebGL globe teaser and public /feed /curation/<id> /profile grids",
-   "url": "https://curater.org",
-   "captured": "2026-11-12",
+   "name": "Dribbble",
+   "goodFor": "Design-community and portfolio pages: Mona Sans in three CSS eras (Rails mini-master, Vite/Shoelace, Algolia vendor), #0d0c22 ink on white with #6e6d7a muted text, the #ea4c89 Dribbble pink reserved for the search circle, hero accent word and PRO badges, 2px #f3afe4 pink focus rings, full-pill dark #0d0c22 action buttons, quiet 8px cards on 1px #f3f3f4 borders, shot grids capped by a sign-up wall, a serif-led jobs board, split-layout auth cards and a horizontally-scrolling category footer",
+   "url": "https://dribbble.com",
+   "captured": "2026-11-13",
    "themes": [
-    "light"
+    "light",
+    "dark"
    ],
    "platform": "web",
-   "category": "Media",
+   "category": "Directories",
    "reviewed": "2026-11-13",
    "reviewedPlatform": "web"
   }
  ],
  "base": "2026-10-16",
- "reviewMethod": "Re-applying the curater review after merging main into the capture branch (audit snapshot index collision; grades unchanged)"
+ "reviewMethod": "public-web capture review (re-applied after main merge)"
 }
