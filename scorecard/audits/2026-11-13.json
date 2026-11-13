@@ -1,7 +1,7 @@
 {
  "date": "2026-11-13",
  "rubric": "4",
- "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): read the archived-capture package end to end: README, tokens.json role/state sets, components.md entries and crops, patterns.md, style-guide.html, raw/measurements.md and raw/css-vars.json; checked every grade against the exported token tree",
+ "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): read the package (tokens.json, components.md, patterns.md, README), the raw readings and the 31 screenshots; graded against scorecard/criteria.json web wording",
  "systems": [
   {
    "slug": "brilliant",
@@ -11593,136 +11593,8 @@
    "category": "Productivity",
    "reviewed": "2026-11-12",
    "reviewedPlatform": "web"
-  },
-  {
-   "slug": "doordash",
-   "grades": {
-    "F1": {
-     "grade": "meets",
-     "evidence": "core.color holds the declared --base-color-* ramps: 13 hues (red, orange, yellow, amber, green, teal, cyan, blue, indigo, purple, magenta, pink, plus warm/cool groups) at 12 steps each, neutral/cyan/mauve at 21 steps (0-100 with half steps), and six brand palettes (doordash, caviar, dashpass, internal, sevenrooms, wolt) — 354 colour leaves total, each a css-var declaration."
-    },
-    "F2": {
-     "grade": "meets",
-     "evidence": "light.color.background carries default, subdued, strong, elevated, inverse, transparent, hovered, pressed, selected and disabled; a single overlay scrim token and translucent/transparent groups cover the scrim role; the storefront renders the elevated card surfaces."
-    },
-    "F3": {
-     "grade": "meets",
-     "evidence": "light.color.text carries default (primary), subdued.default (secondary), disabled, inverse (on-accent), link (an action-link alias), hovered, pressed, selected and opacity — 23 leaves, all aliases into the neutral ramp."
-    },
-    "F4": {
-     "grade": "meets",
-     "evidence": "light.color.border carries default (#e4e4e4), strong, focused (rgba(25,25,25,0.66)), hovered, inverse, selected, disabled and opacity; the measured focus ring is tokenised as light.component.focusRing (color #005fcc, width 1px)."
-    },
-    "F5": {
-     "grade": "meets",
-     "evidence": "light.color.action.primary has default #eb1700, hovered #c81200 and pressed #ad1000 (plus disabled/selected), and every accent-consuming --comp-* control carries the same stateful chain as aliases; measured hover/pressed paints match (address-pill hover #242424 ink, cta-btn states)."
-    },
-    "F6": {
-     "grade": "partly",
-     "evidence": "positive, negative and warning each ship default/hovered/pressed/strong/subdued colour sets (fill + text), but there is no info set — notification is a single alias to the brand red — and no status border roles exist on the captured surface."
-    },
-    "F7": {
-     "grade": "meets",
-     "evidence": "The doordash prism scope publishes exactly one theme — light — and every one of the 1,610 light tokens exists in it (no doordash dark scope is declared or painted). The sheet's [data-dt-theme] deliveroo/plus light/dark scopes are sibling-brand themes on the shared prism bundle, harvested but binned apart, not doordash themes."
-    },
-    "F8": {
-     "grade": "partly",
-     "evidence": "Three families (default/brand DD Norms, condensed) — but with no published fallback stacks (proprietary faces); a 28-step px size scale (beyond 6-8), weights 300-800 and leading/tracking; 25 named composites cover display/title/body/label/link but there are no caption or code roles."
-    },
-    "F9": {
-     "grade": "meets",
-     "evidence": "core.spacing is an 11-step usage scale (none, xxx-small through xxx-large) on the 8px base (medium = 16px), aliased to the 32-step --base-size-* px scale; measured paddings match the declared steps."
-    },
-    "F10": {
-     "grade": "meets",
-     "evidence": "core.radius is a 9-step declared scale (none, x-small through xxx-large, full = pills measured at 9999px); core.borderWidth carries default and strong; painted radii (16px menu tiles, 9999px pills/toggles) match the scale."
-    },
-    "F11": {
-     "grade": "partly",
-     "evidence": "light.size has action-small/medium/large control heights plus the full scale, and measured control heights are component.* tokens (40px cta-btn, 32px pills/quick-add, 56px address-field); focusRing has color+width but no offset token (measured offset is 0px), and no icon-size set exists — icon geometry is measured per component only."
-    },
-    "F12": {
-     "grade": "partly",
-     "evidence": "core.elevation is a declared 7-level ladder (none, 1-6, e.g. elevation-2 the inset+drop pair on the hero pills) but the levels are numbered, not tied to named uses (card/popover/dialog); usage is measured on components."
-    },
-    "F13": {
-     "grade": "partly",
-     "evidence": "core.motion declares durations, easings, delays and a scale (63 tokens), and per-component transitions were measured (0.2s cubic-bezier(0.4,0.4,0,1) default, 0.05s linear on hover/pressed); nothing on the surface publishes or was observed for reduced-motion behaviour."
-    },
-    "F14": {
-     "grade": "partly",
-     "evidence": "No breakpoint, content-width, grid or z-index tokens exist in the prism var layer to declare; measured widths are recorded (1440px shell, 1160px footer, 448px cards, 360px value props, desktop+mobile passes) but the layout system itself is untokenised."
-    },
-    "C1": {
-     "grade": "partly",
-     "evidence": "About 10 of 19: button (cta-btn, signin/signup, popular-btn, nearby-cta, car-btn), icon button (cart-btn, bell-btn, social-btn), link (nav/dir/internal/footer/car links), text field (address-field, hsa-search — focused, never filled), select (language-select), tabs (tab-selected/idle), card (value-prop, rest-card, store-head, cta-band), list row (menu-item, rest-card), badge (offer/leaderboard/appstore/notification dot), segmented toggle (fulfil-toggle). No text area, checkbox, radio, switch, menu (the mobile hamburger resolves to nothing on this shell), tooltip, dialog, toast or table paints on the signed-out surface."
-    },
-    "C2": {
-     "grade": "partly",
-     "evidence": "171 states over 74 components: default/hover/focus-visible/pressed on every interactive entry plus toggled (cuisines tab, pickup pill) and focused (address/search/language fields). Disabled, loading and error exist richly in the --comp-* layer (tokenised, e.g. *-disabled, *-progressing) but are not painted by any signed-out component."
-    },
-    "C3": {
-     "grade": "meets",
-     "evidence": "focus-visible was captured via real keyboard focus on every interactive component (signup-btn, pills, links, toggles, fields): a 1px #005fcc auto outline at 0px offset, tokenised as light.component.focusRing and border.focused."
-    },
-    "C4": {
-     "grade": "partly",
-     "evidence": "Component entries annotate every colour with its matching token path (e.g. #191919 `color.neutral.100`, #ffffff `color.white`) and reference the radius/elevation scales where they apply, but geometry, typography and shadow values are written as the measured px/rgba values they are — measurement is the package's evidence convention."
-    },
-    "P1": {
-     "grade": "partly",
-     "evidence": "patterns.md covers the app shell (hero band, app-header + side-nav storefront), data display (restaurant cards, menu tiles, directory tables of links), search and filtering (directory tabs, fulfilment toggle, the address-search gate), the careers site and the mobile composition. Forms with validation, destructive confirmation, feedback and onboarding never paint signed out; the loading state is documented as the catalog pages' spinner boundary rather than as a pattern."
-    },
-    "A1": {
-     "grade": "partly",
-     "evidence": "Fonts are named with provenance and fallback expectations (DD Norms default/brand/condensed 300-800, TTNormsProCond-Blk display 900 — proprietary, not distributed, 100 @font-face rules harvested); icon.png ships the site's published favicon. No icon index exists — the extraction pass was not run and is a declared layoutGaps entry."
-    },
-    "K1": {
-     "grade": "meets",
-     "evidence": "The README states what was captured (archived SSR surfaces, listed with snapshot ids), how (Wayback renders in headless Chromium after the live site was verified Cloudflare-blocked), and a What-to-distrust section covering the archival boundary, hydration gaps, the signed-in boundary, ghost DOM nodes, quantised screenshots and sibling-brand scopes."
-    },
-    "F15": {
-     "grade": "meets",
-     "evidence": "Script: all 4 pairs pass 4.5:1 across 1 themes; lowest 6.28:1 light muted (core.color.neutral.70) on page (core.color.white)"
-    },
-    "F16": {
-     "grade": "meets",
-     "evidence": "Script: 2155 of 2155 tokens name their source"
-    },
-    "K2": {
-     "grade": "partly",
-     "evidence": "Script: 10 rules, 9 linking an image (needs 3+, all linked)"
-    },
-    "K3": {
-     "grade": "meets",
-     "evidence": "Script: DESIGN.md matches a fresh generation"
-    },
-    "C5": {
-     "grade": "na",
-     "evidence": "Optional for a capture, and this product does not publish it."
-    },
-    "V1": {
-     "grade": "na",
-     "evidence": "Optional for a capture, and this product does not publish it."
-    },
-    "V2": {
-     "grade": "na",
-     "evidence": "Optional for a capture, and this product does not publish it."
-    }
-   },
-   "name": "DoorDash",
-   "goodFor": "Delivery-marketplace marketing and storefronts: a fully declared prism token layer (base/usage/comp var() chains kept as aliases) on a white field with a #eb1700 DoorDash-red hero, TTNormsProCond campaign headlines, radius-full pills and toggles, 16px menu tiles with round red quick-adds, and an SEO directory of tabbed link columns — plus the careers site as a separate WordPress/Tailwind stack",
-   "url": "https://www.doordash.com",
-   "captured": "2026-11-13",
-   "themes": [
-    "light"
-   ],
-   "platform": "web",
-   "category": "E-commerce",
-   "reviewed": "2026-11-13",
-   "reviewedPlatform": "web"
   }
  ],
  "base": "2026-10-16",
- "reviewMethod": "read the archived-capture package end to end: README, tokens.json role/state sets, components.md entries and crops, patterns.md, style-guide.html, raw/measurements.md and raw/css-vars.json; checked every grade against the exported token tree"
+ "reviewMethod": "read the package (tokens.json, components.md, patterns.md, README), the raw readings and the 31 screenshots; graded against scorecard/criteria.json web wording"
 }
