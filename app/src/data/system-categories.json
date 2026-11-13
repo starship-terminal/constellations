@@ -600,6 +600,12 @@
     "reason": "catalog.json describes an art-history online magazine's editorial surfaces: the feed, category and article pages, and the newsletter and contact forms."
   },
   {
+    "referenceId": "systems:deezer",
+    "groupId": "web-categories",
+    "labels": ["Music Streaming"],
+    "reason": "catalog.json describes a music-streaming catalog: marketing, public charts and album pages, a signed-out player, and account forms."
+  },
+  {
     "referenceId": "systems:deel",
     "groupId": "web-categories",
     "labels": ["Productivity"],
@@ -686,8 +692,8 @@
   {
     "referenceId": "systems:elevenlabs",
     "groupId": "web-categories",
-    "labels": ["AI Tool"],
-    "reason": "catalog.json describes a voice-AI platform: the marketing pages, the public TTS playground, pricing, the docs shell and the auth cards."
+    "labels": ["AI Tool", "Design & Media Editing"],
+    "reason": "catalog.json describes a voice-AI platform: the marketing pages, the public TTS playground, pricing, the docs shell and the auth cards. Design & Media Editing keeps the former media link reachable."
   },
   {
     "referenceId": "systems:elementor",
@@ -722,7 +728,7 @@
   {
     "referenceId": "systems:elevenreader",
     "groupId": "web-categories",
-    "labels": ["Books"],
+    "labels": ["Books", "Entertainment"],
     "reason": "catalog.json describes an audiobook reader/listening product: marketing pages, the explore catalog and the reader sign-in/sign-up boundary cards."
   },
   {
