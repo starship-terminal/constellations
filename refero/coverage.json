@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 118,
-    "system_domains": 110,
-    "matched_domains": 85,
-    "missing_domains": 348,
+    "system_packages": 119,
+    "system_domains": 111,
+    "matched_domains": 86,
+    "missing_domains": 347,
     "system_domains_absent_from_catalog": 25
   },
   "matched": {
@@ -1307,6 +1307,23 @@
         }
       ]
     },
+    "endlesstools.io": {
+      "catalog": [
+        {
+          "name": "Endless Tools",
+          "domain": "endlesstools.io",
+          "id": 527
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "endlesstools",
+          "name": "Endless Tools",
+          "url": "https://endlesstools.io",
+          "name_match": false
+        }
+      ]
+    },
     "github.com": {
       "catalog": [
         {
@@ -1727,13 +1744,6 @@
         "name": "Endless",
         "domain": "endless.io",
         "id": 569
-      }
-    ],
-    "endlesstools.io": [
-      {
-        "name": "Endless Tools",
-        "domain": "endlesstools.io",
-        "id": 527
       }
     ],
     "enode.com": [
