@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dopper style guide</title>
+<meta name="description" content="Dopper design tokens and the public signed-out surfaces' components, rendered from tokens.json with the declared marketing CSS variables and the measured computed styles.">
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  --sg-sans: "Gilroy", ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-serif: "Dopper", "Gilroy", ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+[data-mode="dark"], .dark {
+/*DARK*/
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text-primary, var(--color-neutral-ink, #0f1015)); background: var(--surface-page, #fff); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 400 40px/1.2 var(--sg-serif); margin: 0 0 4px; letter-spacing: -0.02em; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--color-neutral-ink, #0f1015); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--color-neutral-hairline, rgba(53, 65, 90, 0.2)); }
+.lead { max-width: 62ch; color: var(--color-neutral-ink, #0f1015); opacity: .8; }
+.note { font-size: 13px; color: var(--color-neutral-ink, #0f1015); opacity: .65; max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--color-neutral-ink, #0f1015); opacity: .6; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.pal.dark { background: #1a1630; padding: 12px; border-radius: 12px; }
+.pal.dark .nm, .pal.dark .vl { color: rgba(255, 255, 255, 0.898); }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--color-neutral-hairline, rgba(53, 65, 90, 0.2)); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--color-neutral-ink, #0f1015); opacity: .65; }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--color-neutral-hairline, rgba(53, 65, 90, 0.2)); background: #fff; font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--color-neutral-ink, #0f1015); opacity: .65; }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--color-neutral-hairline, rgba(53, 65, 90, 0.2)); overflow: hidden; background: var(--surface-page, #fff); }
+.navbar { display: flex; align-items: center; gap: 18px; height: 64px; padding: 0 12px 0 22px; font-size: 14px; color: rgba(255, 255, 255, 0.898); }
+.navbar .wm { font-weight: 700; font-size: 20px; letter-spacing: -0.02em; }
+.navbar .sp { flex: 1; }
+.band { background: linear-gradient(160deg, #0067e5 0%, #116973 60%, #000f2e 130%); color: rgba(255, 255, 255, 0.95); }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-button-height, 54px); padding: 0 var(--component-button-padding-x, 25px); font-size: var(--font-size-control, 18px); font-weight: 600; border-radius: var(--component-button-radius, 20px); border: 1px solid transparent; }
+.btn.primary { background: var(--action-primary, var(--color-brand-darkblue, #0067e5)); color: var(--text-on-action, #fff); }
+.btn.ghost { background: transparent; color: #fff; box-shadow: inset 0 0 0 1px var(--border-ghost, rgba(255, 255, 255, 0.2)); border-radius: var(--component-button-radius, 20px); height: 32px; }
+.btn.secondary { background: var(--action-secondary, rgba(255, 255, 255, 0.898)); color: var(--text-on-action, #0f1015); border-radius: var(--component-button-radius, 20px); height: 32px; }
+.btn.outline { background: transparent; color: var(--color-neutral-ink, #0f1015); box-shadow: inset 0 0 0 1px var(--border-hairline, rgba(53, 65, 90, 0.2)); }
+.hero { color: rgba(255, 255, 255, 0.898); padding: 64px 40px 80px; font: 400 56px/1.1 var(--sg-serif); letter-spacing: .01em; text-align: center; }
+.hero small { display: block; font: 400 18px/1.5 var(--sg-sans); color: rgba(255, 255, 255, 0.898); margin: 16px auto 22px; max-width: 46ch; }
+.hero .big-cta { height: var(--component-button-height, 54px); padding: 0 var(--component-button-padding-x, 25px); border-radius: var(--component-button-radius, 20px); font-size: var(--font-size-control, 18px); }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
+.tile { border: 1px solid var(--color-neutral-hairline, rgba(53, 65, 90, 0.2)); padding: 14px; font-size: 13px; background: #fff; border-radius: var(--radius-card, 16px); }
+.tile .img { height: 120px; background: #eee; margin-bottom: 10px; display: flex; align-items: flex-end; padding: 10px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; border-radius: 8px; }
+.tile b { display: block; font: 400 18px/1.25 var(--sg-serif); margin-bottom: 4px; }
+.tile .sub { opacity: .65; font-size: 12px; }
+.tile .price { font: 500 26px/1.2 var(--sg-sans); margin: 10px 0 2px; }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--color-neutral-hairline, rgba(53, 65, 90, 0.2)); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--color-neutral-hairline, rgba(53, 65, 90, 0.2)); }
+.tr .ts { font-family: var(--sg-serif); }
+.tr .tv { font-size: 12px; color: var(--color-neutral-ink, #0f1015); opacity: .65; font-family: var(--sg-mono); }
+.toggle { display: inline-flex; background: #fff; border-radius: 999px; padding: 4px; gap: 4px; font-size: 15px; box-shadow: inset 0 0 0 1px var(--border-hairline, rgba(53, 65, 90, 0.2)); }
+.toggle span { padding: 8px 22px; border-radius: 999px; }
+.toggle .on { background: var(--action-primary, var(--color-brand-darkblue, #0067e5)); color: #fff; }
+.switch { display: inline-block; width: 40px; height: 24px; border-radius: 999px; background: var(--action-primary, var(--color-brand-darkblue, #0067e5)); position: relative; vertical-align: middle; }
+.switch i { position: absolute; top: 2px; left: 2px; width: 20px; height: 20px; border-radius: 50%; background: #fff; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Dopper style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">Dopper, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the declared brand ramps (<code>--darkBlue #0067e5</code> with its tints, <code>--deep-sea #000f2e</code>, <code>--sand #f6ecc8</code>, <code>--yellow #fed200</code>, <code>--carribean #0abeaa</code>, <code>--glowing-coral #d0254a</code>) from the marketing stylesheet's :root layer, plus the Magento shop's compiled colours measured off real elements, and the 4–20px radius scale. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from www.dopper.com and shop.dopper.com, signed out, in headless Chromium — prices render in EUR, English locale only. The customer account, checkout and the filled cart behind the login and cart cards are a documented boundary. Dopper and Gilroy are licensed served faces and are not loaded here: samples fall back to system sans.</p>
+
+  <h2 class="sh">The chrome</h2>
+  <p class="lead">On home the header is a white 110px bar: the dopper. wordmark, the Bottle / Travel Mug / Tap / Mission / Get Involved flyout triggers, right links and the bag button. The hero is a full-bleed video with the "Whatever the season" display and Watch now / Shop our collection pills — deep-sea and outlined controls at the measured 20px pill radius.</p>
+  <div class="mock band">
+    <div class="navbar"><span class="wm">dopper.</span><span>Bottle</span><span>Travel Mug</span><span>Tap</span><span>Mission</span><span>Get Involved</span><span class="sp"></span><span class="btn ghost">EN</span><span class="btn secondary">Bag</span></div>
+    <div class="hero">Whatever the season<small>Just Refill. Reusable water bottles, designed in the Netherlands.</small><span class="btn secondary big-cta">Shop our collection</span></div>
+  </div>
+
+  <h2 class="sh">The product list</h2>
+  <p class="lead">shop.dopper.com/bottles (Magento 2) centres the "Bottles" display above a teal "+ Filters" pill and a light-blue filter sheet — custom radio/checkbox rows and colour swatches — over a grid of white product cards with badge chips and EUR prices.</p>
+  <div class="mock" style="padding:20px">
+    <div style="text-align:center;margin-bottom:18px"><span class="toggle"><span class="on">+ Filters</span><span>Colour</span><span>Bundle</span></span></div>
+    <div class="grid">
+      <div class="tile"><b>Dopper Original</b><span class="sub">Pacific Blue</span><div class="price">&euro;24.95</div><span class="sub">450 ml</span></div>
+      <div class="tile"><b>Dopper Insulated</b><span class="sub">Breaker Blue</span><div class="price">&euro;34.95</div><span class="sub">350 ml</span></div>
+      <div class="tile"><b>Dopper Steel</b><span class="sub">Stainless</span><div class="price">&euro;34.95</div><span class="sub">490 ml</span></div>
+    </div>
+    <div style="margin-top:18px"><span class="btn primary">Add to cart</span> <span class="btn outline">Continue shopping</span></div>
+  </div>
+
+  <h2 class="sh">The auth card</h2>
+  <p class="lead">/customer/account/login pairs a darkBlue "Registered Customers" card — Email + Password fields, a 56px Sign in, Show password, Remember Me and the Forgot link — with a light-blue "New Customers" card whose Create an Account is its match. Measured and typed into, never sent.</p>
+  <div class="mock" style="padding:24px;display:flex;justify-content:center;gap:16px;background:#f6ecc8">
+    <div style="background:#0067e5;border-radius:var(--radius-card, 20px);padding:24px;width:320px;color:#fff">
+      <b style="font:600 20px/1.3 var(--sg-sans)">Registered Customers</b>
+      <p class="note" style="margin:6px 0 14px;color:#fff">If you have an account, sign in with your email address.</p>
+      <div style="display:grid;gap:8px"><span class="btn secondary">Email</span><span class="btn secondary">Password</span><span class="btn primary" style="background:#000f2e">Sign in</span></div>
+    </div>
+    <div style="background:#cce2ff;border-radius:var(--radius-card, 20px);padding:24px;width:320px">
+      <b style="font:600 20px/1.3 var(--sg-sans)">New Customers</b>
+      <p class="note" style="margin:6px 0 14px">Creating an account is easy.</p>
+      <div style="display:grid;gap:8px"><span class="btn primary">Create an Account</span></div>
+    </div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The core set carries the declared brand ramps — darkBlue, deep-sea, sand, yellow, darkTeal, carribean and glowing-coral, each with three tints — resolved from the marketing stylesheet's :root layer, plus the Magento shop's compiled colours measured off real elements. Light roles alias the palette; there is no dark set — the darkBlue menu and deep-sea bands are painted surfaces of the one light theme.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing and radius</h2>
+  <p class="lead">The declared scale runs --border-radius-xs 4px to --border-radius-l 20px; pills, CTAs, cards and fields all measure the 20px step round. Fields sit at 54–56px high (a declared --touch-target-min of 44px); the colour swatches are the only circles (a 100% radius).</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">Two served families: <code>Dopper</code> for the display faces and wordmark, <code>Gilroy</code> (400 body, Medium/500 links, Bold/600–700 controls and headings) for everything else — nav labels, buttons, prices and body copy. The ramp runs the ~90px hero display down to 14px control text. Samples fall back to system sans.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Resolved the marketing stylesheet's :root custom properties and read computed styles on the elements of both hosts</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed and open states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = /*TOKENS*/null;
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  for (const [setname, label] of [['light', 'light roles'], ['dark', 'dark roles']]) {
+    const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+    if (!roles.length) continue;
+    // The dark set's custom properties only resolve inside a .dark scope:
+    // swatch dots must live under it or they paint the light values/unset.
+    h += `<div class="pal-h">${label}</div><div class="pal${setname === 'dark' ? ' dark' : ''}">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.border || {}, 'border.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.motion || {}).easing || {}, 'motion.easing.')) m += `<div><b>${esc(n)}</b> <span>cubic-bezier(${esc(t.v.join ? t.v.join(', ') : t.v)})</span></div>`;
+  for (const [n, t] of flat((TOK.core.motion || {}).duration || {}, 'motion.duration.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.layout || {}, 'layout.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  for (const [n, t] of flat(TOK.core.shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.light.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(t.v);
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Dopper</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>

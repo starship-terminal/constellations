@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 104,
-    "system_domains": 96,
-    "matched_domains": 71,
-    "missing_domains": 362,
+    "system_packages": 105,
+    "system_domains": 97,
+    "matched_domains": 72,
+    "missing_domains": 361,
     "system_domains_absent_from_catalog": 25
   },
   "matched": {
@@ -1001,6 +1001,23 @@
         }
       ]
     },
+    "dopper.com": {
+      "catalog": [
+        {
+          "name": "Dopper",
+          "domain": "dopper.com",
+          "id": 723
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "dopper",
+          "name": "Dopper",
+          "url": "https://dopper.com",
+          "name_match": true
+        }
+      ]
+    },
     "doppler.com": {
       "catalog": [
         {
@@ -1510,13 +1527,6 @@
         "name": "DJI",
         "domain": "dji.com",
         "id": 332
-      }
-    ],
-    "dopper.com": [
-      {
-        "name": "Dopper",
-        "domain": "dopper.com",
-        "id": 723
       }
     ],
     "dribbble.com": [

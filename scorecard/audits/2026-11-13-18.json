@@ -1,7 +1,7 @@
 {
  "date": "2026-11-13",
  "rubric": "4",
- "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): Re-applying the cosmos review after merging main into the capture branch (audit snapshot index collision; grades unchanged)",
+ "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): merge-train re-run: interactive review of tokens.json, components.md, screenshots and README against rubric, grades carried from capture review",
  "systems": [
   {
    "slug": "brilliant",
@@ -12752,91 +12752,91 @@
    "reviewedPlatform": "web"
   },
   {
-   "slug": "cosmos",
+   "slug": "dopper",
    "grades": {
     "F1": {
-     "grade": "partly",
-     "evidence": "Declared --color-gray-0..1000 is a 15-step neutral ramp, but each hue (blue/green/amber/orange/red) has only 2-4 steps, not ~10 (tokens.json core.color.palette)."
+     "grade": "meets",
+     "evidence": "core.color carries the declared ramps: darkBlue/deep-sea/sand/yellow/carribean/glowing-coral each with base + 3 tints (-1/-2/-3) resolved from the marketing :root layer, plus a neutral set and shop-measured hues; each leaf cites css-var or measured source."
     },
     "F2": {
-     "grade": "meets",
-     "evidence": "Declared roles cover page (background-primary), surface (card/paper), raised (elevation, light-elevation, floating), overlay (onmedia, image-overlay) and scrim, light + dark (tokens.json light/dark color.background)."
+     "grade": "partly",
+     "evidence": "light.surface holds page #fcfaf2, card #f9f3df, band #cce2ff, menu default/mobile, deep #000f2e — measured roles. No distinct raised or scrim role was seen on the public surface (Cookiebot scrim hidden)."
     },
     "F3": {
-     "grade": "meets",
-     "evidence": "primary/secondary/tertiary/quaternary, disabled, inverted (on-accent), link, plus critical/warning/success/onmedia — declared both themes (tokens.json light.color.text)."
+     "grade": "partly",
+     "evidence": "light.text primary #000f2e, muted #515a8a, on-dark #fcfaf2 measured on real text. No disabled or link-specific roles exist on the public surface."
     },
     "F4": {
-     "grade": "meets",
-     "evidence": "border primary (12% ink hairline), secondary (10%), active (solid ink = strong), floating, critical, warning + ring-color-active/primary/critical for focus — declared (tokens.json light.color.border, alias.ring)."
+     "grade": "partly",
+     "evidence": "light.border.ink #000f2e plus measured focus rings: focus.ring.default #005fcc (marketing controls) and focus.ring.shop #000f2e (shop controls); outlines measured per control in components.md Shared values. No default/strong hairline scale — borders are rare on this surface."
     },
     "F5": {
-     "grade": "partly",
-     "evidence": "Default/hover are declared roles (hover-primary/secondary/tertiary/accent) and pressed was measured via CDP forcePseudoState on controls, but pressed is not a declared ramp step."
+     "grade": "meets",
+     "evidence": "action.primary #0067e5 with hover/pressed states measured on hero-button, filters-button, add-to-cart, cart-cta, filter-close; component.* tokens record the per-state fills."
     },
     "F6": {
-     "grade": "partly",
-     "evidence": "critical (red) and warning (amber) have background+text+border roles in both themes; success has text-success plus a green ramp but no bg/border role; no info role declared."
+     "grade": "missing",
+     "evidence": "No status hues paint on the public surface — glowing-coral #d0254a is a brand/badge hue, not a declared success/warning/danger/info set. Not measurable without reaching checkout/account."
     },
     "F7": {
-     "grade": "meets",
-     "evidence": "Every --light-* role has a --dark-* twin declared (210 theme vars harvested); dark is declared-not-painted on the public surface, but the parity itself is complete."
+     "grade": "na",
+     "evidence": "Light-only: neither host ships a dark theme (vars.mjs records theme:light; no theme class or media-query retheme found). The darkBlue menu and deep-sea bands are painted surfaces of the one theme — no second set exists to parity-check."
     },
     "F8": {
-     "grade": "meets",
-     "evidence": "cosmosOracle + sans fallback; declared ramp display-xxlarge 4.5rem through body-numerical .625rem with per-size line-height and letter-spacing, weights 300-900, named roles display/heading/body/button/caption/numerical (tokens.json core.font)."
+     "grade": "partly",
+     "evidence": "core.font: family.display (Dopper) and family.sans (Gilroy) as the served single names — no fallback stacks are declared; measured 16px-90px size ramp, weights 400/500/600 (display 400), line-heights; display/body/label roles named. Faces licensed, not shipped — provenance in css-vars.json."
     },
     "F9": {
      "grade": "partly",
-     "evidence": "Declared --spacing 0.25rem base plus measured chrome readings (92/68px headers, paddings); no multi-step spacing scale was declared or measured."
+     "evidence": "No spacing scale is declared as vars and Magento compiles utilities to literals; per-component paddings are measured in components.md (m-menu-open rows, filter sheet, cards, fields)."
     },
     "F10": {
      "grade": "meets",
-     "evidence": "Declared --radius-xs..4xl + --radius-element 3px; measured radius-full (CSS max) on pills, 25% QR card, 1px hairline borders (tokens.json core.radius, components)."
+     "evidence": "Declared scale core.radius xs4/s8/m16/l20 (css-var --border-radius-*) and every pill, CTA, card, field and chip measures the 20px step; 9999px/50% appear only on painted sub-layers (range-slider track, decorative bubbles, swatch and radio circles). Border widths measured per component."
     },
     "F11": {
-     "grade": "partly",
-     "evidence": "Control heights measured (48px CTA, 56px auth/search, 40px tab, 82px hero search, 44px menu button, 32px mark); focus ring colour is declared but ring width/offset were not measured (several focus-visible readings recorded 'focus failed')."
+     "grade": "meets",
+     "evidence": "component.* heights measured: buttons 51-56, fields 54, header 110/125 mobile, burger 45, filter-close 54, nav rows; declared --touch-target-min 44px; focus outlines measured per control."
     },
     "F12": {
-     "grade": "partly",
-     "evidence": "Only the --shadow-dynamic-island pair plus three declared shadow colours; no 3-5 level elevation ramp tied to uses was declared or seen."
+     "grade": "missing",
+     "evidence": "Almost no shadows on the surface — fills and the yellow/deep-sea bands do the layering; only small card shadows measured. No 3-5 level scale exists to tokenise."
     },
     "F13": {
      "grade": "partly",
-     "evidence": "Declared --animate-* names carry durations and cubic-bezier easings (tokens.json core.motion); prefers-reduced-motion was never probed."
+     "evidence": "Declared easings harvested (--bounce-in/out, --ease-in/out-expo/quint as cubicBezier tokens) plus measured per-component transitions (0.2-0.3s moves, 0.1s fills). No prefers-reduced-motion probe this pass — recorded gap."
     },
     "F14": {
      "grade": "partly",
-     "evidence": "Content widths measured (1376px explore column, 640px hero search, 344px auth card) at 1440 and 390 breakpoints; intermediate breakpoints and z-index layers were not recorded."
+     "evidence": "Declared --z-section-background/-higher/-overlay and measured chrome geometry at 1440/390 (header 110/125, menu 390x844, filter sheet 326x1064); breakpoints are not declared tokens."
     },
     "C1": {
-     "grade": "missing",
-     "evidence": "The public signed-out surface exposes ~9 of the 19 checklist components (button, icon button, link, text field, tabs, menu, card, list row, avatar-adjacent tiles); textarea, select, checkbox, radio, switch, tooltip, dialog, toast, table and badge never appear publicly - boundary documented."
+     "grade": "partly",
+     "evidence": "~12 of 19: button (btn-dark/btn-outline/hero-button/add-to-cart/cart-cta/login buttons/create-account), icon button (m-burger, filter-close, bag-button), link (nav-link, breadcrumb, forgot-link, footer links), text field (newsletter-input, login-email/password), checkbox (filter-checkbox, login-checkbox), radio (filter-radio), tabs (collection-tab; flyout-tab misidentified), menu (m-menu-open, shop-nav; desktop flyout measured missing — misidentified reading, re-measure queued), dialog (login-card pair, filter-sheet), card (product/content/flyout/login/new), list row (m-nav-item, pdp-option, pdp-feature), badge (product-card chip region — product-badge itself missing). No textarea/select/switch/tooltip/toast/table/avatar on the public surface."
     },
     "C2": {
-     "grade": "meets",
-     "evidence": "Per-component default/hover/focus-visible/pressed plus field focused/filled and the auth Next's measured disabled->enabled inversion (raw/components-computed.json, 31 components, 87 state crops)."
+     "grade": "partly",
+     "evidence": "default/hover/focus-visible/pressed across interactive entries (59 components); opened/toggled states captured (mobile menu, filter sheet, collection tab). Pressed unreadable inside the shadow root — recorded. No disabled/loading/error states exist on the surface."
     },
     "C3": {
-     "grade": "partly",
-     "evidence": "Keyboard focus was attempted on every control and captured where it held; several elements recorded 'via: focus failed' so their focus look is uncaptured, not absent."
+     "grade": "meets",
+     "evidence": "focus-visible measured on nearly every interactive component; Shared values in components.md counts rings vs no-change."
     },
     "C4": {
      "grade": "partly",
-     "evidence": "components.md entries name the matching palette token per value where one exists; many values are raw computed readings without a declared token twin."
+     "evidence": "components.md resolves every colour to its palette token where one matches and component.* tokens now carry button/field/nav heights, padding and radius aliased to the declared scale; the other component entries still quote raw measured px for sizes, padding and radii that have no token yet."
     },
     "P1": {
      "grade": "partly",
-     "evidence": "patterns.md covers the app shell, hero+search, tab-filtered masonry discovery, the auth card and mobile; forms/validation, empty/loading/error, destructive and feedback patterns were never seen publicly."
+     "evidence": "Written patterns cover app shell (header+flyout, catalog nav), filtering (PLP sheet), data display (product grid/cards), empty state (empty cart), forms (newsletter, login pair), mobile adaptation, state signature, boundaries. Validation/error/destructive/onboarding do not exist on the signed-out surface."
     },
     "A1": {
      "grade": "partly",
-     "evidence": "cosmosOracle named with its licensing note and fallback; no standalone icon set was lifted (declared in layoutGaps)."
+     "evidence": "Dopper + Gilroy faces and weights named with served-from/licensed-not-shipped provenance; @font-face blocks and the shop's Dopper-Icons icon font harvested in css-vars.json. No icon index — extraction pass not run (layoutGaps)."
     },
     "K1": {
      "grade": "meets",
-     "evidence": "README lists what was captured, the method and viewports, and the distrust list (signed-in boundary, declared-not-painted dark, infinite-feed truncation, missed tab shot, icon gap)."
+     "evidence": "README states scope, method, hosts, boundaries, distrust list and font licensing; catalog carries provenance, routes and gaps."
     },
     "C5": {
      "grade": "na",
@@ -12852,11 +12852,11 @@
     },
     "F15": {
      "grade": "meets",
-     "evidence": "Script: all 8 pairs pass 4.5:1 across 2 themes; lowest 5.34:1 light muted (light.color.text.secondary) on page (light.color.background.primary)"
+     "evidence": "Script: all 4 pairs pass 4.5:1 across 1 themes; lowest 5.94:1 light muted (light.text.muted) on surface (light.surface.card)"
     },
     "F16": {
      "grade": "meets",
-     "evidence": "Script: 232 of 232 tokens name their source"
+     "evidence": "Script: 121 of 121 tokens name their source"
     },
     "K2": {
      "grade": "missing",
@@ -12867,20 +12867,19 @@
      "evidence": "Script: DESIGN.md matches a fresh generation"
     }
    },
-   "name": "Cosmos",
-   "goodFor": "Visual-bookmarking discovery surfaces: cosmosOracle display (72-88px, 700, -3% tracking) on white with a near-black lab(3.6%) ink, a full declared --light-*/--dark-* semantic layer (dark declared, never painted publicly), rounded-full pills on every control (48px CTAs, 56px search/auth, 40px tabs, an 82px hero search), paper-gray element tiles with a 3px --radius-element, 12%/10% ink color-mix hairlines, a masonry explore feed and the disabled->enabled ink inversion on the auth Next",
-   "url": "https://www.cosmos.so",
-   "captured": "2026-11-12",
+   "name": "Dopper",
+   "goodFor": "Mission-brand marketing + storefront pages: Dopper display face over Gilroy on cream #fcfaf2 fields, deep-sea #000f2e ink, darkBlue #0067e5 CTAs and bands, a #fed200 yellow mega-menu, sand #f6ecc8 footer, carribean #0abeaa filter accents, a declared 4/8/16/20px radius scale measured on every pill, CTA and card, expo/quint easings, one palette across a Next.js marketing site and a Magento 2 shop with PLP filters, PDP configurator, empty cart and login cards",
+   "url": "https://dopper.com",
+   "captured": "2026-11-13",
    "themes": [
-    "light",
-    "dark"
+    "light"
    ],
    "platform": "web",
-   "category": "Directories",
+   "category": "E-commerce",
    "reviewed": "2026-11-13",
    "reviewedPlatform": "web"
   }
  ],
  "base": "2026-10-16",
- "reviewMethod": "Re-applying the cosmos review after merging main into the capture branch (audit snapshot index collision; grades unchanged)"
+ "reviewMethod": "merge-train re-run: interactive review of tokens.json, components.md, screenshots and README against rubric, grades carried from capture review"
 }
