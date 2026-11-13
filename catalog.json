@@ -6841,7 +6841,8 @@
           "icons: no standalone SVG set lifted this pass"
         ],
         "durationMin": 120,
-        "durationNote": "worktree creation to package-complete commit, 2026-11-12/13"
+        "durationNote": "worktree creation to package-complete commit, 2026-11-12/13",
+        "pr": "https://github.com/starship-terminal/constellations/pull/508"
       }
     }
   ]
