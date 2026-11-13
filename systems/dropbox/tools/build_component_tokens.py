@@ -85,7 +85,9 @@ def descend(root, parts):
 
 
 def emit(root, name, leaf):
-    node, last = descend(root, name[2:].split("-"))
+    # A suffix such as "border--faint" must not split into an empty-named
+    # group (the exported path would carry a double dot); drop empty parts.
+    node, last = descend(root, [p for p in name[2:].split("-") if p])
     node[last] = leaf
 
 
@@ -175,7 +177,7 @@ for key, n, desc in [
                        source=f"css-var {n} resolved light (raw/css-vars.json)",
                        description=desc)
 for n in ALL:
-    m = re.fullmatch(r"--dig-type__family__(\w+)", n)
+    m = re.fullmatch(r"--dig-type__family__([\w-]+)", n)
     if m and n in LIT and m.group(1) not in fam:
         fam["role-" + m.group(1)] = var(n, "fontFamily",
                                         source=f"css-var {n} resolved light (raw/css-vars.json)",
@@ -183,7 +185,7 @@ for n in ALL:
 
 sizes = SPEC["core"].setdefault("font", {}).setdefault("size", {})
 for n in ALL:
-    m = re.fullmatch(r"--dig-type__size__(\w+)__(\w+)", n)
+    m = re.fullmatch(r"--dig-type__size__([\w-]+)__([\w-]+)", n)
     if m and n in LIT:
         sizes[f"{m.group(1)}-{m.group(2)}"] = var(n, "dimension",
                                                  source=f"css-var {n} resolved light (raw/css-vars.json)",
@@ -204,7 +206,7 @@ for key, comp, state, desc in [
 
 leading = SPEC["core"].setdefault("font", {}).setdefault("lineHeight", {})
 for n in ALL:
-    m = re.fullmatch(r"--dig-type__lineheight__(\w+)__(\w+)", n)
+    m = re.fullmatch(r"--dig-type__lineheight__([\w-]+)__([\w-]+)", n)
     if m and n in LIT:
         leading[f"{m.group(1)}-{m.group(2)}"] = var(n, "dimension",
                                                    source=f"css-var {n} resolved light (raw/css-vars.json)",
@@ -212,7 +214,7 @@ for n in ALL:
 
 weights = SPEC["core"].setdefault("font", {}).setdefault("weight", {})
 for n in ALL:
-    m = re.fullmatch(r"--dig-type__weight__(\w+)", n)
+    m = re.fullmatch(r"--dig-type__weight__([\w-]+)", n)
     if m and n in LIT:
         weights[m.group(1)] = var(n, "fontWeight",
                                   source=f"css-var {n} resolved light (raw/css-vars.json)",
@@ -220,7 +222,7 @@ for n in ALL:
 
 spacing_l = SPEC["core"].setdefault("font", {}).setdefault("letterSpacing", {})
 for n in ALL:
-    m = re.fullmatch(r"--dig-type__letterspacing__(\w+)", n)
+    m = re.fullmatch(r"--dig-type__letterspacing__([\w-]+)", n)
     if m and n in LIT:
         spacing_l[m.group(1)] = var(n, "other",
                                     source=f"css-var {n} resolved light (raw/css-vars.json)",
@@ -269,7 +271,7 @@ BUCKETS = {
     "identity": "color-brand-identity", "opacity": "color-brand-opacity",
 }
 for n in ALL:
-    m = re.fullmatch(r"--DWG__TEMP__color__(\w+?)__(.+)", n)
+    m = re.fullmatch(r"--DWG__TEMP__color__([\w-]+?)__(.+)", n)
     if not m or n not in LIT:
         continue
     bucket, rest = m.group(1), m.group(2).replace("__", "-").replace("_", "-")
@@ -359,7 +361,7 @@ def parse_shadow(s):
 for root, pass_ in ((SPEC["light"], "light"), (SPEC["dark"], "dark")):
     bag = root.setdefault("shadow", {})
     for n in ALL:
-        m = re.fullmatch(r"--dig-utilities__boxshadow__(\w+)", n)
+        m = re.fullmatch(r"--dig-utilities__boxshadow__([\w-]+)", n)
         if not m:
             continue
         v = resolved(pass_, n)
@@ -379,7 +381,7 @@ for root, pass_ in ((SPEC["light"], "light"), (SPEC["dark"], "dark")):
 # ------------------------------------------------------- scales and motion
 spacing = SPEC["core"].setdefault("spacing", {})
 for n in ALL:
-    m = re.fullmatch(r"--dig-spacing__(\w+)__(\w+)", n)
+    m = re.fullmatch(r"--dig-spacing__([\w-]+)__([\w-]+)", n)
     if m and n in LIT:
         spacing[f"{m.group(1)}-{m.group(2)}"] = var(n, "dimension",
                                                    source=f"css-var {n} resolved light (raw/css-vars.json)",
@@ -387,7 +389,7 @@ for n in ALL:
 
 radius = SPEC["core"].setdefault("radius", {})
 for n in ALL:
-    m = re.fullmatch(r"--dig-radius__(\w+)", n)
+    m = re.fullmatch(r"--dig-radius__([\w-]+)", n)
     if m and n in LIT:
         radius[m.group(1)] = var(n, "dimension",
                                  source=f"css-var {n} resolved light (raw/css-vars.json)",
@@ -395,14 +397,14 @@ for n in ALL:
 
 dur = SPEC["core"].setdefault("duration", {})
 for n in ALL:
-    m = re.fullmatch(r"--dig-motion__duration__(\w+)", n)
+    m = re.fullmatch(r"--dig-motion__duration__([\w-]+)", n)
     if m and n in LIT:
         dur[m.group(1)] = var(n, "duration",
                               source=f"css-var {n} resolved light (raw/css-vars.json)",
                               description=f"The declared {m.group(1)} duration.")
 ease = SPEC["core"].setdefault("easing", {})
 for n in ALL:
-    m = re.fullmatch(r"--dig-motion__easing__(\w+)", n)
+    m = re.fullmatch(r"--dig-motion__easing__([\w-]+)", n)
     if m and n in LIT:
         ease[m.group(1).replace("_", "-")] = var(n, "cubicBezier",
                                                  source=f"css-var {n} resolved light (raw/css-vars.json)",
@@ -410,7 +412,7 @@ for n in ALL:
 
 layout = SPEC["core"].setdefault("layout", {})
 for n in ALL:
-    m = re.fullmatch(r"--dig-breakpoint__(\w+)", n)
+    m = re.fullmatch(r"--dig-breakpoint__([\w-]+)", n)
     if m and n in LIT:
         v = LIT[n]
         layout["breakpoint-" + m.group(1)] = var(n, "dimension" if isinstance(v, str) and v.endswith("px") else "number",
@@ -468,6 +470,7 @@ for key, comp, state, prop, ty, desc in [
 # measured painted radii (vis2023 declares 4-24px; what the components paint)
 for key, comp, state, desc in [
     ("radius-button", "hero-cta", "default", "The radius a primary CTA paints."),
+    ("radius-nav-cta", "nav-cta", "default", "The radius the header Get-started pill paints."),
     ("radius-card", "plan-card", "default", "The radius a plan card paints."),
     ("radius-pill", "billing-radio", "default", "The radius the billing radio paints."),
     ("radius-field", "email-field", "default", "The radius a text field paints."),

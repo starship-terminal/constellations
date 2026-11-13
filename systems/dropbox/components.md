@@ -35,8 +35,8 @@ Screenshots are named `{page}-{theme}-state.png`: every captured surface paints 
 | State | Where | How it was reached | Captured |
 |---|---|---|---|
 | Mobile menu overlay | home, phone width | the hamburger button's own toggle | [mobile-home-light-menu](screenshots/mobile-home-light-menu.png), [m-menu-open](#mobile-menu-open), [m-nav-item](#mobile-nav-item), [m-signup](#mobile-sign-up) |
-| Products mega-menu | every desktop page | the Products trigger's own click | [home-light-menu](screenshots/home-light-menu.png), [nav-dropdown](#nav-mega-menu), [menu-link](#mega-menu-link) |
-| Billing radio | /plans | the Monthly/Yearly radio label's own click | [plans-light-yearly](screenshots/plans-light-yearly.png), [billing-radio](#billing-radio) |
+| Products mega-menu | every desktop page | the Products trigger's own hover — a click toggles it closed again | [home-light-menu](screenshots/home-light-menu.png), [nav-dropdown](#nav-mega-menu), [menu-link](#mega-menu-link) |
+| Billing radio | /plans | the Billed-monthly radio label's own click (the page defaults to yearly) | [plans-light-monthly](screenshots/plans-light-monthly.png), [billing-radio](#billing-radio) |
 | Privacy consent banner / Google One Tap | every page | hidden, never answered (no consent button was ever clicked) | hidden before every shot and reading |
 | Auth email field | /login and /register | focused and given sample text that was deleted again — never sent | [email-field](#email-field), [register-email](#register-email-field), [continue-button](#continue-button) |
 | The product and every signed-in surface | the Dropbox file dashboard, Paper, account and checkout flows | behind sign-in; the auth cards were measured, never used | boundary; see Gaps |
@@ -149,7 +149,7 @@ The header Log in link; measured, never followed. Read as `nav-login` on the hom
 ![Log-in link default](components/crops/nav-login-default.png) ![Log-in link hover](components/crops/nav-login-hover.png) ![Log-in link focus-visible](components/crops/nav-login-focus-visible.png) ![Log-in link pressed](components/crops/nav-login-pressed.png)
 
 #### Get-started action
-The header Get started action (the dark pill); measured, never followed. Read as `nav-cta` on the home page.
+The header Get started action (the blue pill); measured, never followed. Read as `nav-cta` on the home page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|

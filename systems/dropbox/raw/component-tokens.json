@@ -243,6 +243,12 @@
      "source": "css-var --dig-type__weight__monospace resolved light (raw/css-vars.json)",
      "description": "The declared monospace weight."
     },
+    "monospace-strong": {
+     "var": "--dig-type__weight__monospace-strong",
+     "type": "fontWeight",
+     "source": "css-var --dig-type__weight__monospace-strong resolved light (raw/css-vars.json)",
+     "description": "The declared monospace-strong weight."
+    },
     "strong": {
      "var": "--dig-type__weight__strong",
      "type": "fontWeight",
@@ -508,13 +514,11 @@
         "source": "css-var --DWG__TEMP__color__alert__border resolved light (raw/css-vars.json); a TEMP name the dwg layer still carries",
         "description": "The declared alert palette value border."
        },
-       "": {
-        "faint": {
-         "var": "--DWG__TEMP__color__alert__border--faint",
-         "type": "color",
-         "source": "css-var --DWG__TEMP__color__alert__border--faint resolved light (raw/css-vars.json); a TEMP name the dwg layer still carries",
-         "description": "The declared alert palette value border--faint."
-        }
+       "faint": {
+        "var": "--DWG__TEMP__color__alert__border--faint",
+        "type": "color",
+        "source": "css-var --DWG__TEMP__color__alert__border--faint resolved light (raw/css-vars.json); a TEMP name the dwg layer still carries",
+        "description": "The declared alert palette value border--faint."
        }
       },
       "text": {
@@ -532,13 +536,11 @@
         "source": "css-var --DWG__TEMP__color__attention__background resolved light (raw/css-vars.json); a TEMP name the dwg layer still carries",
         "description": "The declared attention palette value background."
        },
-       "": {
-        "faint": {
-         "var": "--DWG__TEMP__color__attention__background--faint",
-         "type": "color",
-         "source": "css-var --DWG__TEMP__color__attention__background--faint resolved light (raw/css-vars.json); a TEMP name the dwg layer still carries",
-         "description": "The declared attention palette value background--faint."
-        }
+       "faint": {
+        "var": "--DWG__TEMP__color__attention__background--faint",
+        "type": "color",
+        "source": "css-var --DWG__TEMP__color__attention__background--faint resolved light (raw/css-vars.json); a TEMP name the dwg layer still carries",
+        "description": "The declared attention palette value background--faint."
        }
       },
       "border": {
@@ -548,13 +550,11 @@
         "source": "css-var --DWG__TEMP__color__attention__border resolved light (raw/css-vars.json); a TEMP name the dwg layer still carries",
         "description": "The declared attention palette value border."
        },
-       "": {
-        "faint": {
-         "var": "--DWG__TEMP__color__attention__border--faint",
-         "type": "color",
-         "source": "css-var --DWG__TEMP__color__attention__border--faint resolved light (raw/css-vars.json); a TEMP name the dwg layer still carries",
-         "description": "The declared attention palette value border--faint."
-        }
+       "faint": {
+        "var": "--DWG__TEMP__color__attention__border--faint",
+        "type": "color",
+        "source": "css-var --DWG__TEMP__color__attention__border--faint resolved light (raw/css-vars.json); a TEMP name the dwg layer still carries",
+        "description": "The declared attention palette value border--faint."
        }
       },
       "text": {
@@ -619,13 +619,11 @@
          "source": "css-var --DWG__TEMP__color__inverse__alert__border resolved light (raw/css-vars.json); a TEMP name the dwg layer still carries",
          "description": "The declared inverse palette value alert-border."
         },
-        "": {
-         "faint": {
-          "var": "--DWG__TEMP__color__inverse__alert__border--faint",
-          "type": "color",
-          "source": "css-var --DWG__TEMP__color__inverse__alert__border--faint resolved light (raw/css-vars.json); a TEMP name the dwg layer still carries",
-          "description": "The declared inverse palette value alert-border--faint."
-         }
+        "faint": {
+         "var": "--DWG__TEMP__color__inverse__alert__border--faint",
+         "type": "color",
+         "source": "css-var --DWG__TEMP__color__inverse__alert__border--faint resolved light (raw/css-vars.json); a TEMP name the dwg layer still carries",
+         "description": "The declared inverse palette value alert-border--faint."
         }
        },
        "text": {
@@ -643,13 +641,11 @@
          "source": "css-var --DWG__TEMP__color__inverse__attention__background resolved light (raw/css-vars.json); a TEMP name the dwg layer still carries",
          "description": "The declared inverse palette value attention-background."
         },
-        "": {
-         "faint": {
-          "var": "--DWG__TEMP__color__inverse__attention__background--faint",
-          "type": "color",
-          "source": "css-var --DWG__TEMP__color__inverse__attention__background--faint resolved light (raw/css-vars.json); a TEMP name the dwg layer still carries",
-          "description": "The declared inverse palette value attention-background--faint."
-         }
+        "faint": {
+         "var": "--DWG__TEMP__color__inverse__attention__background--faint",
+         "type": "color",
+         "source": "css-var --DWG__TEMP__color__inverse__attention__background--faint resolved light (raw/css-vars.json); a TEMP name the dwg layer still carries",
+         "description": "The declared inverse palette value attention-background--faint."
         }
        },
        "border": {
@@ -659,13 +655,11 @@
          "source": "css-var --DWG__TEMP__color__inverse__attention__border resolved light (raw/css-vars.json); a TEMP name the dwg layer still carries",
          "description": "The declared inverse palette value attention-border."
         },
-        "": {
-         "faint": {
-          "var": "--DWG__TEMP__color__inverse__attention__border--faint",
-          "type": "color",
-          "source": "css-var --DWG__TEMP__color__inverse__attention__border--faint resolved light (raw/css-vars.json); a TEMP name the dwg layer still carries",
-          "description": "The declared inverse palette value attention-border--faint."
-         }
+        "faint": {
+         "var": "--DWG__TEMP__color__inverse__attention__border--faint",
+         "type": "color",
+         "source": "css-var --DWG__TEMP__color__inverse__attention__border--faint resolved light (raw/css-vars.json); a TEMP name the dwg layer still carries",
+         "description": "The declared inverse palette value attention-border--faint."
         }
        },
        "text": {
@@ -779,13 +773,11 @@
          "source": "css-var --DWG__TEMP__color__inverse__success__border resolved light (raw/css-vars.json); a TEMP name the dwg layer still carries",
          "description": "The declared inverse palette value success-border."
         },
-        "": {
-         "faint": {
-          "var": "--DWG__TEMP__color__inverse__success__border--faint",
-          "type": "color",
-          "source": "css-var --DWG__TEMP__color__inverse__success__border--faint resolved light (raw/css-vars.json); a TEMP name the dwg layer still carries",
-          "description": "The declared inverse palette value success-border--faint."
-         }
+        "faint": {
+         "var": "--DWG__TEMP__color__inverse__success__border--faint",
+         "type": "color",
+         "source": "css-var --DWG__TEMP__color__inverse__success__border--faint resolved light (raw/css-vars.json); a TEMP name the dwg layer still carries",
+         "description": "The declared inverse palette value success-border--faint."
         }
        },
        "text": {
@@ -809,13 +801,11 @@
          "source": "css-var --DWG__TEMP__color__inverse__warning__border resolved light (raw/css-vars.json); a TEMP name the dwg layer still carries",
          "description": "The declared inverse palette value warning-border."
         },
-        "": {
-         "faint": {
-          "var": "--DWG__TEMP__color__inverse__warning__border--faint",
-          "type": "color",
-          "source": "css-var --DWG__TEMP__color__inverse__warning__border--faint resolved light (raw/css-vars.json); a TEMP name the dwg layer still carries",
-          "description": "The declared inverse palette value warning-border--faint."
-         }
+        "faint": {
+         "var": "--DWG__TEMP__color__inverse__warning__border--faint",
+         "type": "color",
+         "source": "css-var --DWG__TEMP__color__inverse__warning__border--faint resolved light (raw/css-vars.json); a TEMP name the dwg layer still carries",
+         "description": "The declared inverse palette value warning-border--faint."
         }
        },
        "text": {
@@ -840,13 +830,11 @@
         "source": "css-var --DWG__TEMP__color__success__border resolved light (raw/css-vars.json); a TEMP name the dwg layer still carries",
         "description": "The declared success palette value border."
        },
-       "": {
-        "faint": {
-         "var": "--DWG__TEMP__color__success__border--faint",
-         "type": "color",
-         "source": "css-var --DWG__TEMP__color__success__border--faint resolved light (raw/css-vars.json); a TEMP name the dwg layer still carries",
-         "description": "The declared success palette value border--faint."
-        }
+       "faint": {
+        "var": "--DWG__TEMP__color__success__border--faint",
+        "type": "color",
+        "source": "css-var --DWG__TEMP__color__success__border--faint resolved light (raw/css-vars.json); a TEMP name the dwg layer still carries",
+        "description": "The declared success palette value border--faint."
        }
       },
       "text": {
@@ -870,13 +858,11 @@
         "source": "css-var --DWG__TEMP__color__warning__border resolved light (raw/css-vars.json); a TEMP name the dwg layer still carries",
         "description": "The declared warning palette value border."
        },
-       "": {
-        "faint": {
-         "var": "--DWG__TEMP__color__warning__border--faint",
-         "type": "color",
-         "source": "css-var --DWG__TEMP__color__warning__border--faint resolved light (raw/css-vars.json); a TEMP name the dwg layer still carries",
-         "description": "The declared warning palette value border--faint."
-        }
+       "faint": {
+        "var": "--DWG__TEMP__color__warning__border--faint",
+        "type": "color",
+        "source": "css-var --DWG__TEMP__color__warning__border--faint resolved light (raw/css-vars.json); a TEMP name the dwg layer still carries",
+        "description": "The declared warning palette value border--faint."
        }
       },
       "text": {
@@ -1330,17 +1316,35 @@
     "source": "css-var --dig-motion__easing__balanced resolved light (raw/css-vars.json)",
     "description": "The declared balanced easing."
    },
+   "balanced-emphasized": {
+    "var": "--dig-motion__easing__balanced-emphasized",
+    "type": "cubicBezier",
+    "source": "css-var --dig-motion__easing__balanced-emphasized resolved light (raw/css-vars.json)",
+    "description": "The declared balanced-emphasized easing."
+   },
    "enter": {
     "var": "--dig-motion__easing__enter",
     "type": "cubicBezier",
     "source": "css-var --dig-motion__easing__enter resolved light (raw/css-vars.json)",
     "description": "The declared enter easing."
    },
+   "enter-emphasized": {
+    "var": "--dig-motion__easing__enter-emphasized",
+    "type": "cubicBezier",
+    "source": "css-var --dig-motion__easing__enter-emphasized resolved light (raw/css-vars.json)",
+    "description": "The declared enter-emphasized easing."
+   },
    "exit": {
     "var": "--dig-motion__easing__exit",
     "type": "cubicBezier",
     "source": "css-var --dig-motion__easing__exit resolved light (raw/css-vars.json)",
     "description": "The declared exit easing."
+   },
+   "exit-emphasized": {
+    "var": "--dig-motion__easing__exit-emphasized",
+    "type": "cubicBezier",
+    "source": "css-var --dig-motion__easing__exit-emphasized resolved light (raw/css-vars.json)",
+    "description": "The declared exit-emphasized easing."
    },
    "linear": {
     "var": "--dig-motion__easing__linear",
@@ -1489,6 +1493,12 @@
     "type": "dimension",
     "source": "computed borderTopLeftRadius of hero-cta default (raw/components-computed.json)",
     "description": "The radius a primary CTA paints."
+   },
+   "radius-nav-cta": {
+    "value": "12px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of nav-cta default (raw/components-computed.json)",
+    "description": "The radius the header Get-started pill paints."
    },
    "radius-card": {
     "value": "12px",
@@ -3849,6 +3859,36 @@
     "source": "css-var --dig-utilities__boxshadow__floating resolved light (raw/css-vars.json)",
     "description": "The declared floating elevation."
    },
+   "focus-ring": {
+    "value": [
+     {
+      "color": "#3080ff",
+      "offsetX": "0px",
+      "offsetY": "0px",
+      "blur": "0px",
+      "spread": "3px",
+      "inset": false
+     }
+    ],
+    "type": "shadow",
+    "source": "css-var --dig-utilities__boxshadow__focus-ring resolved light (raw/css-vars.json)",
+    "description": "The declared focus-ring elevation."
+   },
+   "inset-focus-ring": {
+    "value": [
+     {
+      "color": "#3080ff",
+      "offsetX": "0px",
+      "offsetY": "0px",
+      "blur": "0px",
+      "spread": "3px",
+      "inset": true
+     }
+    ],
+    "type": "shadow",
+    "source": "css-var --dig-utilities__boxshadow__inset-focus-ring resolved light (raw/css-vars.json)",
+    "description": "The declared inset-focus-ring elevation."
+   },
    "raised": {
     "value": [
      {
@@ -5222,6 +5262,36 @@
     "type": "shadow",
     "source": "css-var --dig-utilities__boxshadow__floating resolved dark (raw/css-vars.json)",
     "description": "The declared floating elevation."
+   },
+   "focus-ring": {
+    "value": [
+     {
+      "color": "#5f9dff",
+      "offsetX": "0px",
+      "offsetY": "0px",
+      "blur": "0px",
+      "spread": "3px",
+      "inset": false
+     }
+    ],
+    "type": "shadow",
+    "source": "css-var --dig-utilities__boxshadow__focus-ring resolved dark (raw/css-vars.json)",
+    "description": "The declared focus-ring elevation."
+   },
+   "inset-focus-ring": {
+    "value": [
+     {
+      "color": "#5f9dff",
+      "offsetX": "0px",
+      "offsetY": "0px",
+      "blur": "0px",
+      "spread": "3px",
+      "inset": true
+     }
+    ],
+    "type": "shadow",
+    "source": "css-var --dig-utilities__boxshadow__inset-focus-ring resolved dark (raw/css-vars.json)",
+    "description": "The declared inset-focus-ring elevation."
    },
    "raised": {
     "value": [

@@ -5772,7 +5772,7 @@
    "url": "https://www.dropbox.com/",
    "title": "Get-started action",
    "group": "Shell and navigation",
-   "desc": "The header Get started action (the dark pill); measured, never followed.",
+   "desc": "The header Get started action (the blue pill); measured, never followed.",
    "selector": "nav a Get started"
   },
   "nav-dropdown": {

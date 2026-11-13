@@ -44,17 +44,17 @@ code { font-family: var(--sg-mono); font-size: .9em; }
 .navbar .sp { flex: 1; }
 .band { background: #f7f5f2; color: #1e1919; }
 .band.dark { background: #1e1919; color: #f2eee8; }
-.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-button-height, 40px); padding: 0 16px; font-size: 14px; font-weight: 500; border-radius: var(--radius-button, 16px); border: 1px solid transparent; }
-.btn.primary { background: var(--cta, var(--color-primary-cta-base, #050505)); color: var(--cta-text, var(--color-primary-cta-on-base, #fff)); }
-.btn.accent { background: var(--accent, var(--color-primary-base, #0061fe)); color: #fff; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-button-height, 40px); padding: 0 16px; font-size: 14px; font-weight: 500; border-radius: var(--measured-radius-button, 16px); border: 1px solid transparent; }
+.btn.primary { background: var(--measured-cta-fill, #0061fe); color: var(--measured-cta-text, #f7f5f2); }
+.btn.accent { background: var(--accent-default, var(--color-primary-base-default, #0061fe)); color: #fff; }
 .btn.ghost { background: transparent; color: #1e1919; box-shadow: inset 0 0 0 1px rgba(30, 25, 25, 0.25); border-radius: 999px; height: 32px; }
-.btn.secondary { background: #1e1919; color: #f2eee8; border-radius: 999px; height: 32px; }
+.btn.secondary { background: var(--measured-cta-fill, #0061fe); color: var(--measured-cta-text, #f7f5f2); border-radius: var(--measured-radius-nav-cta, 12px); height: var(--component-button-nav-height, 40px); }
 .btn.outline { background: transparent; color: var(--color-text-base, #1e1919); box-shadow: inset 0 0 0 1px var(--color-border-bold, #1e1919); }
 .hero { color: #1e1919; padding: 72px 40px 96px; font: 400 64px/1.05 var(--sg-serif); letter-spacing: -0.015em; }
 .hero small { display: block; font: 400 20px/1.5 var(--sg-sans); color: #1e1919; margin: 20px 0 26px; max-width: 52ch; }
-.hero .big-cta { height: var(--component-button-cta-height, 56px); padding: 0 24px; border-radius: var(--radius-cta, 16px); font-size: 16px; }
+.hero .big-cta { height: var(--component-button-cta-height, 56px); padding: 0 24px; border-radius: var(--measured-radius-button, 16px); font-size: 16px; }
 .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
-.tile { border: 1px solid var(--color-border-base, #e8e5e1); padding: 14px; font-size: 13px; background: #fff; border-radius: var(--radius-card, 24px); }
+.tile { border: 1px solid var(--color-border-base, #e8e5e1); padding: 14px; font-size: 13px; background: #fff; border-radius: var(--measured-radius-card, 12px); }
 .tile .img { height: 120px; background: #f7f5f2; margin-bottom: 10px; display: flex; align-items: flex-end; padding: 10px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; border-radius: 8px; }
 .tile b { display: block; font: 400 18px/1.25 var(--sg-serif); margin-bottom: 4px; }
 .tile .sub { opacity: .65; font-size: 12px; }
@@ -80,14 +80,14 @@ table.cmp td, table.cmp th { border: 1px solid var(--color-border-base, #e8e5e1)
   <p class="note">Read from dropbox.com, signed out, in headless Chromium; prices render in US dollars in the region the capture was served. The file dashboard, Paper, Dash, account and checkout flows behind the auth cards are a documented boundary. Sharp Grotesk and Atlas Grotesk Web are licensed served faces and are not loaded here: samples fall back to system sans.</p>
 
   <h2 class="sh">The chrome</h2>
-  <p class="lead">The sticky 72px <code>dwg-nav</code> sits on the coconut theme: the box mark, the Products / Solutions flyout triggers, Business / Pricing / Contact sales links, then Sign up / Log in and a near-black Get started pill. Sections paint the <code>dwg-theme--*</code> palettes — cream coconut fields, graphite dark bands, navy and accent hues.</p>
+  <p class="lead">The sticky 72px <code>dwg-nav</code> sits on the coconut theme: the box mark, the Products / Solutions flyout triggers, Business / Pricing / Contact sales links, then Sign up / Log in and a blue Get started pill. Sections paint the <code>dwg-theme--*</code> palettes — cream coconut fields, graphite dark bands, navy and accent hues.</p>
   <div class="mock band">
     <div class="navbar"><span class="wm">Dropbox</span><span>Products</span><span>Solutions</span><span>Business</span><span>Pricing</span><span class="sp"></span><span class="btn ghost">Sign up</span><span>Log in</span><span class="btn secondary">Get started</span></div>
     <div class="hero">One place to store, share, and collaborate.<small>Dropbox keeps your workflow moving. Store files securely, share them easily, and get work done faster — from anywhere.</small><span class="btn primary big-cta">Try Dropbox free</span></div>
   </div>
 
   <h2 class="sh">Pricing</h2>
-  <p class="lead">/plans puts Monthly/Yearly radio pills (real radio inputs, 18px) above bordered 24px-radius plan cards; each card's action is the 48px black primary button with a transparent "or buy now" beneath, and the comparison table carries a Show only differences toggle and a Help me choose trigger.</p>
+  <p class="lead">/plans puts Monthly/Yearly radio pills (real radio inputs, 18px) above bordered 12px-radius plan cards; each card's action is the ~55px blue primary button with a transparent "or buy now" beneath, and the comparison table carries a Show only differences toggle and a Help me choose trigger.</p>
   <div class="mock" style="padding:20px">
     <div style="margin-bottom:18px"><span class="radio"><span class="on"><i></i>Monthly</span><span><i></i>Yearly <em class="note" style="font-style:normal">(save 20%)</em></span></span></div>
     <div class="grid">
@@ -99,7 +99,7 @@ table.cmp td, table.cmp th { border: 1px solid var(--color-border-base, #e8e5e1)
   </div>
 
   <h2 class="sh">The auth card</h2>
-  <p class="lead">/login and /register centre the provider card on the coconut field: Continue with Apple / Google / Microsoft outline actions, the email field with a 3px #3080ff focus ring and the black Continue / Get started — measured, never used.</p>
+  <p class="lead">/login and /register centre the provider card on the coconut field: Continue with Apple / Google / Microsoft outline actions, the email field with a 3px #428bff focus ring and the blue Continue / Get started — measured, never used.</p>
   <div class="mock" style="padding:24px;display:flex;justify-content:center;background:#f7f5f2">
     <div style="background:#fff;border-radius:16px;padding:24px;width:340px;box-shadow:0 4px 12px rgba(30,25,25,.08)">
       <b style="font:500 20px/1.3 var(--sg-sans)">Log in or sign up</b>
@@ -113,7 +113,7 @@ table.cmp td, table.cmp th { border: 1px solid var(--color-border-base, #e8e5e1)
   <div id="roles-out"></div>
 
   <h2 class="sh">Spacing, radius and layout</h2>
-  <p class="lead">The declared scale is an 8px grid (<code>--dig-spacing__dimension__0</code> through <code>128</code>); vis2023 radii run 4px to 24px plus the 999px pill (the old dig-Theme declared all-zero radii). Measured: the 72px nav, 16px button radii, 24px plan cards, and the 3px <code>--dig-utilities__focus-ring__thickness</code> ring.</p>
+  <p class="lead">The declared scale is an 8px grid (<code>--dig-spacing__dimension__0</code> through <code>128</code>); vis2023 radii run 4px to 24px plus the 999px pill (the old dig-Theme declared all-zero radii). Measured: the 72px nav, 16px button radii, 12px plan cards, and the 3px <code>--dig-utilities__focus-ring__thickness</code> ring.</p>
   <div id="spacing-out" class="kv"></div>
 
   <h2 class="sh">Shadows</h2>

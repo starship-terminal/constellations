@@ -104,8 +104,10 @@ focused, it takes the 3px `#428bff` shadow ring;
 blue 55px `Continue`
 ([continue-button](components/crops/continue-button-default.png),
 [register-cta](components/crops/register-cta-default.png)). This "susi"
-surface runs `lucida grande`, 13px labels and small radii — the older
-sheet, not the DIG marketing system. Captured and measured, never used.
+surface mixes sheets — the wrappers and the email field run an older
+`lucida grande` system stack at 13-16px while the painted labels stay
+Atlas Grotesk Web (SSO 14/16, Continue 16/19.2 500) — with small radii,
+not the DIG marketing system's shapes. Captured and measured, never used.
 
 ## The footer
 
@@ -113,7 +115,7 @@ The footer ([footer](components/crops/footer-default.png), 619px) closes
 every page with the dwg-text-link columns — Product / Plans / Support /
 Community / Company — app links and social icons
 ([footer-link](components/crops/footer-link-default.png),
-[social-icon](components/crops/social-icon-default.png)) on the light
+[social-icon](components/crops/social-icon-default.png)) on the black
 field.
 
 ## Mobile
