@@ -208,7 +208,16 @@ async function S(key, target, list, meta = {}, opts = {}) {
         if (opts.noToggle) via = 'held selected by an earlier toggle';
         else { await toggle(loc, { allowLink: opts.allowLink }); await page.waitForTimeout(900); via = 'own toggle'; }
       } else via = via || 'at rest';
-      await measure(key, st, loc, { ...opts, via });
+      if (via === 'focus failed') {
+        // A keyboard focus that never landed is not a measurement: record the
+        // failure as the state instead of publishing at-rest styles under a
+        // focus label (the generated docs must not count it as a captured
+        // focus-visible).
+        out.components[key].states[st] = { via, error: 'keyboard focus could not be landed on the target' };
+        log('  !', key, st, 'focus failed');
+      } else {
+        await measure(key, st, loc, { ...opts, via });
+      }
     } catch (e) {
       out.components[key].states[st] = { error: String(e.message || e).slice(0, 200) };
       log('  !', key, st, String(e.message).slice(0, 120));
@@ -231,6 +240,36 @@ async function toggle(loc, { allowLink = false } = {}) {
 
 const q = (sel) => page.locator(sel);
 const B4 = ['default', 'hover', 'focus-visible', 'pressed'];
+
+// The native checkbox input is measured as the toggle target, but on
+// elementor.com it paints at opacity 0 — the box a user sees is the sibling
+// label's ::before. Record that visible box (and the real checked flag, so a
+// published `selected` spec is verified) into each state's `extra`.
+async function checkboxExtra(input) {
+  return input.evaluate((el) => {
+    // url() values can be signed URLs: record them as url(…), keeping data:
+    // and #fragment references (the same noUrl styleOf uses; each browser
+    // callback needs its own copy — it runs in the page, not this module).
+    const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\(\s*(?!['"]?(?:data:|#))(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|[^)]*)\s*\)/g, 'url(…)') : v);
+    const lab = (el.id && document.querySelector(`label[for="${el.id}"]`)) || (el.parentElement && el.parentElement.querySelector('label')) || el.nextElementSibling;
+    const out = { checked: el.checked };
+    if (!lab) return out;
+    const b = getComputedStyle(lab, '::before');
+    const bw = ['Top', 'Right', 'Bottom', 'Left'].map((sd) => parseFloat(b[`border${sd}Width`]) > 0 && b[`border${sd}Style`] !== 'none' ? `${b[`border${sd}Width`]} ${b[`border${sd}Style`]} ${b[`border${sd}Color`]}` : '').filter(Boolean);
+    const bgi = noUrl(b.backgroundImage);
+    out.box = {
+      node: 'label::before',
+      size: `${b.width} x ${b.height}`,
+      backgroundColor: b.backgroundColor,
+      backgroundImage: bgi === 'none' ? 'none' : (bgi.includes('svg') ? 'check glyph (data-URI svg)' : bgi.slice(0, 120)),
+      border: bw.join(' | ') || 'none',
+      radius: b.borderRadius,
+      position: `${b.position} ${b.top} ${b.left}`,
+      color: b.color,
+    };
+    return out;
+  }).catch(() => null);
+}
 
 async function sheetsFor(key) {
   const res = await page.evaluate(() => {
@@ -398,7 +437,9 @@ async function contact() {
   await S('field-email', q('input#form-field-email, input[type="email"]').filter({ visible: true }).first(), ['default', 'focused'], { group: g, title: 'Email field', desc: 'The email input; focused only, never filled or sent.', sel: 'input#form-field-email' });
   await S('field-message', q('textarea.elementor-field, textarea').filter({ visible: true }).first(), ['default', 'focused'], { group: g, title: 'Message area', desc: 'The message textarea; focused only.', sel: 'textarea.elementor-field' });
   await S('field-select', q('select.elementor-field, select').filter({ visible: true }).first(), B4, { group: g, title: 'Department select', desc: 'The department select; measured, never changed.', sel: 'select.elementor-field' });
-  await S('checkbox', q('input[type="checkbox"].elementor-field, input#form-field-acceptance').filter({ visible: true }).first(), B4.concat(['selected']), { group: g, title: 'Acceptance checkbox', desc: 'The acceptance checkbox; checked and unchecked as local UI state — the form was never submitted.', sel: 'input#form-field-acceptance' });
+  // The input is the toggle target but paints at opacity 0: checkboxExtra
+  // also reads the visible box (the label's ::before) and the checked flag.
+  await S('checkbox', q('input[type="checkbox"].elementor-field, input#form-field-acceptance').filter({ visible: true }).first(), B4.concat(['selected']), { group: g, title: 'Acceptance checkbox', desc: 'The acceptance checkbox; checked and unchecked as local UI state — the form was never submitted.', sel: 'input#form-field-acceptance' }, { extra: checkboxExtra });
   await S('submit-btn', q('button[type="submit"], button.elementor-button').filter({ visible: true }).first(), B4, { group: g, title: 'Submit button', desc: 'The form submit; measured, never pressed (a real press would send the form).', sel: 'button[type=submit]' });
   save();
 }
@@ -456,14 +497,19 @@ async function mobile() {
 }
 
 run = new Date().toISOString().slice(0, 10);
-out._meta.read = run;
+const pages = process.argv.slice(2);
+// The read stamp is the date the whole set was measured: a partial re-run
+// re-dates only the components it touched (each carries `run`), recorded
+// under _meta.recaptured so earlier pages keep their original provenance.
+if (pages.length) (out._meta.recaptured ??= {})[pages.join(',')] = run;
+else out._meta.read = run;
 out._meta.viewport = '1440 x 900 (mobile group 390 x 844); the page paints light with .dark-mode islands (photo hero, dark sections, footer) re-binding the same named vars';
 out._meta.tool = 'tools/capture/public/measure.mjs';
 const { browser, context: ctx0 } = await launch();
 context = ctx0;
-const pages = process.argv.slice(2);
 const plan = { home, pricing, contact, faq, mobile };
 const order = Object.keys(plan).filter((k) => !pages.length || pages.includes(k));
+let finished = false;
 try {
   for (const k of order) { if (k !== 'mobile') await plan[k](); }
   if (!pages.length || pages.includes('home')) await footer();
@@ -471,11 +517,13 @@ try {
   // Reduced-motion check on an element that transitions (the dsm button
   // background transition), so the delta is meaningful.
   if (!pages.length || pages.includes('home')) await reducedMotion('home', '.dsm-btn-wrapper');
+  finished = true;
 } finally {
-  for (const [key, c] of Object.entries(out.components)) {
-    // An untouched entry is pruned only when its page was not blocked this
-    // run: an edge-blocked route keeps its earlier readings under their
-    // original provenance instead of being erased and republished.
+  // Prune only a completed run: when the loop aborts on a page error, the
+  // pages never reached are absent from `touched` and pruning here would
+  // delete their earlier readings. An edge-blocked route likewise keeps its
+  // earlier readings under their original provenance.
+  if (finished) for (const [key, c] of Object.entries(out.components)) {
     if (!touched.has(key) && !pages.length && !failedPages.has(c.page)) { delete out.components[key]; continue; }
     const want = listed.get(key);
     if (want) for (const st of Object.keys(c.states || {})) if (!want.has(st)) delete c.states[st];

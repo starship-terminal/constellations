@@ -68,25 +68,26 @@ Page: home. Selector: `.e-n-menu-title.e-click "Products"`. States: default, hov
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 97.97 x 40.3 | = | = | = |
-| Padding | 8.96px 16px | = | = | = |
-| Gap | 1.92px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 8px | = | = | = |
-| Background | transparent | #fae4fa | = | #fae4fa |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Roobert 16px/normal 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #212121 | #1f2124 | = | #1f2124 |
-| Text node | span.e-n-menu-title-text: Roobert 16px/22.4px 400, #212121 | span.e-n-menu-title-text: Roobert 16px/22.4px 400, #1f2124 | = | span.e-n-menu-title-text: Roobert 16px/22.4px 400, #1f2124 |
-| Transition | none | = | = | = |
-| Cursor | pointer | = | = | = |
-| Icon | 0 x 0, colour #212121, fill #000000 @ 0 | 0 x 0, colour #1f2124, fill #000000 @ 0 | = | 0 x 0, colour #1f2124, fill #000000 @ 0 |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 97.97 x 40.3 | = | - | = |
+| Padding | 8.96px 16px | = | - | = |
+| Gap | 1.92px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 8px | = | - | = |
+| Background | transparent | #fae4fa | - | #fae4fa |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Roobert 16px/normal 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #212121 | #1f2124 | - | #1f2124 |
+| Text node | span.e-n-menu-title-text: Roobert 16px/22.4px 400, #212121 | span.e-n-menu-title-text: Roobert 16px/22.4px 400, #1f2124 | - | span.e-n-menu-title-text: Roobert 16px/22.4px 400, #1f2124 |
+| Transition | none | = | - | = |
+| Cursor | pointer | = | - | = |
+| Icon | 0 x 0, colour #212121, fill #000000 @ 0 | 0 x 0, colour #1f2124, fill #000000 @ 0 | - | 0 x 0, colour #1f2124, fill #000000 @ 0 |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Painted layers | - | div.e-n-menu-title.e-click 98.0x40.3 bg #fae4fa r 8px | = | div.e-n-menu-title.e-click 98.0x40.3 bg #fae4fa r 8px |
+| Error | - | = | keyboard focus could not be landed on the target | = |
 
-Crops: `nav-trigger-default.png`, `nav-trigger-hover.png`, `nav-trigger-focus-visible.png`, `nav-trigger-pressed.png`.
+Crops: `nav-trigger-default.png`, `nav-trigger-hover.png`, `nav-trigger-pressed.png`.
 
 #### nav-link
 

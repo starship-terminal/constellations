@@ -83,6 +83,19 @@ textarea.field { height: 107.6px; }
 .tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--border, #d1d1d1); }
 .tr .tv { font-size: 12px; color: var(--text, #000); opacity: .65; font-family: var(--sg-mono); }
 .focus-demo { outline: 2px auto var(--focusRing, #005fcc); outline-offset: 2px; }
+/* Phone layout: the mocks are reconstructions, so on a narrow screen they
+   stack and wrap rather than clip inside .mock's hidden overflow. */
+@media (max-width: 720px) {
+  main { padding: 24px 14px 72px; }
+  .hdr { flex-wrap: wrap; height: auto; padding: 12px 16px; row-gap: 8px; }
+  .mega { grid-template-columns: 1fr; padding: 16px; margin: 12px; }
+  .form-mock { grid-template-columns: 1fr !important; }
+  .ftr { padding: 32px 24px; gap: 24px; }
+  .faq-row { padding-right: 16px; }
+  .dark-isl { padding: 48px 20px 56px; }
+  .dark-isl .hero { font-size: 36px; }
+  .twrap { font-size: 14px; }
+}
 </style>
 </head>
 <body>
@@ -132,7 +145,7 @@ textarea.field { height: 107.6px; }
 
   <h2 class="sh">The contact form</h2>
   <p class="lead">A contact-option card (Grey-200 fill that lifts to a 1px black ring on hover) opens an Elementor popup: 4px-radius fields on a 1px Grey-500 border that tightens to black with a soft grey glow on focus, a 16px acceptance checkbox, and the black 48px submit. Measured, never submitted.</p>
-  <div class="mock" style="padding:24px;display:grid;grid-template-columns:1fr 1fr;gap:24px">
+  <div class="mock form-mock" style="padding:24px;display:grid;grid-template-columns:1fr 1fr;gap:24px">
     <div style="background:var(--surface,#f6f6f6);border-radius:var(--radius-card,16px);padding:32px 24px;font:600 24px/31.2px var(--sg-sans)">Legal department inquiries</div>
     <div>
       <input class="field" placeholder="Full name">

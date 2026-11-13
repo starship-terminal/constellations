@@ -148,13 +148,18 @@ cards full-width
 
 Two moves carry every interaction: **fills rebound to Neon-Loop**
 (every primary action — nav CTA, hero CTA, dark CTA, plan CTA, submit —
-goes `#ed01ee` on hover, focus-visible and pressed alike), and **rows
-tint Syntax-Glow** (`#fae4fa` under hovered menu links, nav triggers and
-mobile items). Focus draws a 2px auto `#005fcc` outline offset 2px on
-almost every control (15 of 17 measured; the nav trigger and mobile nav
-item draw none). Motion is short: 0.2s ease on button fills, 0.3s on
-links and toggles, 0.4s transforms on the accordion marker, 0.5s on the
-answer's height.
+goes `#ed01ee` on hover and pressed; on keyboard focus they all do the
+same except the submit, which keeps its black fill under the focus
+ring), and **rows tint Syntax-Glow** (`#fae4fa` under hovered menu links
+and nav triggers — a desktop pattern; the measured mobile menu item
+stays white on hover, only its chevron glyph darkening). Focus draws a
+2px auto `#005fcc` outline offset 2px on every control focus could be
+landed on (16 of 17 attempted; `faq-item` and the checkbox ring at 1px;
+the mobile nav item's ring lands on its child dropdown button, not the
+row). The nav trigger never took keyboard focus in headless Chromium —
+recorded as a failed state, not a no-ring reading. Motion is short: 0.2s
+ease on button fills, 0.3s on links and toggles, 0.4s transforms on the
+accordion marker, 0.5s on the answer's height.
 
 ## Boundaries
 

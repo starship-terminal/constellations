@@ -3095,6 +3095,9 @@
     "body": "rgba(0, 0, 0, 0)",
     "bodyColor": "rgb(0, 0, 0)"
    }
+  },
+  "recaptured": {
+   "contact": "2026-11-13"
   }
  },
  "components": {
@@ -3617,106 +3620,8 @@
      "via": "mouse hover"
     },
     "focus-visible": {
-     "tag": "div",
-     "classes": "e-n-menu-title e-click",
-     "text": "Products",
-     "rect": {
-      "x": 433.5,
-      "y": -56.2,
-      "w": 97.97,
-      "h": 40.3
-     },
-     "style": {
-      "display": "flex",
-      "position": "relative",
-      "boxSizing": "border-box",
-      "width": "97.9688px",
-      "height": "40.2969px",
-      "minWidth": "auto",
-      "maxWidth": "none",
-      "minHeight": "auto",
-      "paddingTop": "8.96px",
-      "paddingRight": "16px",
-      "paddingBottom": "8.96px",
-      "paddingLeft": "16px",
-      "marginTop": "0px",
-      "marginRight": "0px",
-      "marginBottom": "0px",
-      "marginLeft": "0px",
-      "gap": "1.92px",
-      "rowGap": "1.92px",
-      "columnGap": "1.92px",
-      "flexDirection": "row",
-      "alignItems": "center",
-      "justifyContent": "normal",
-      "gridTemplateColumns": "none",
-      "borderTopWidth": "0px",
-      "borderTopStyle": "solid",
-      "borderTopColor": "rgb(209, 209, 209)",
-      "borderRightWidth": "0px",
-      "borderRightStyle": "solid",
-      "borderRightColor": "rgb(209, 209, 209)",
-      "borderBottomWidth": "0px",
-      "borderBottomStyle": "solid",
-      "borderBottomColor": "rgb(209, 209, 209)",
-      "borderLeftWidth": "0px",
-      "borderLeftStyle": "solid",
-      "borderLeftColor": "rgb(209, 209, 209)",
-      "borderTopLeftRadius": "8px",
-      "borderTopRightRadius": "8px",
-      "borderBottomRightRadius": "8px",
-      "borderBottomLeftRadius": "8px",
-      "backgroundColor": "rgba(0, 0, 0, 0)",
-      "backgroundImage": "none",
-      "boxShadow": "none",
-      "backdropFilter": "none",
-      "outlineWidth": "3px",
-      "outlineStyle": "none",
-      "outlineColor": "rgb(33, 33, 33)",
-      "outlineOffset": "0px",
-      "fontFamily": "Roobert, sans-serif",
-      "fontSize": "16px",
-      "fontWeight": "400",
-      "lineHeight": "normal",
-      "letterSpacing": "normal",
-      "textTransform": "none",
-      "color": "rgb(33, 33, 33)",
-      "textDecorationLine": "none",
-      "textDecorationColor": "rgb(33, 33, 33)",
-      "textDecorationThickness": "auto",
-      "textUnderlineOffset": "auto",
-      "transitionProperty": "all",
-      "transitionDuration": "0s",
-      "transitionTimingFunction": "ease",
-      "transitionDelay": "0s",
-      "cursor": "pointer",
-      "opacity": "1",
-      "transform": "none",
-      "overflow": "visible",
-      "zIndex": "2147483647",
-      "top": "0px"
-     },
-     "textStyle": {
-      "node": "span.e-n-menu-title-text",
-      "text": "Products",
-      "fontFamily": "Roobert, sans-serif",
-      "fontSize": "16px",
-      "lineHeight": "22.4px",
-      "fontWeight": "400",
-      "letterSpacing": "normal",
-      "color": "rgb(33, 33, 33)",
-      "textDecorationLine": "none",
-      "textTransform": "none"
-     },
-     "icon": {
-      "w": 0,
-      "h": 0,
-      "fill": "rgba(0, 0, 0, 0)",
-      "stroke": "none",
-      "color": "rgb(33, 33, 33)"
-     },
-     "crop": "components/crops/nav-trigger-focus-visible.png",
-     "via": "focus failed"
+     "via": "focus failed",
+     "error": "keyboard focus could not be landed on the target"
     },
     "pressed": {
      "tag": "div",
@@ -9681,7 +9586,20 @@
       "fontSize": "16px"
      },
      "crop": "components/crops/checkbox-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "extra": {
+      "checked": false,
+      "box": {
+       "node": "label::before",
+       "size": "16px x 16px",
+       "backgroundColor": "rgb(255, 255, 255)",
+       "backgroundImage": "none",
+       "border": "1px solid rgb(181, 181, 181) | 1px solid rgb(181, 181, 181) | 1px solid rgb(181, 181, 181) | 1px solid rgb(181, 181, 181)",
+       "radius": "2.08px",
+       "position": "absolute 2.88px 0px",
+       "color": "rgb(0, 0, 0)"
+      }
+     }
     },
     "hover": {
      "tag": "input",
@@ -9776,7 +9694,20 @@
       "fontSize": "16px"
      },
      "crop": "components/crops/checkbox-hover.png",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "extra": {
+      "checked": false,
+      "box": {
+       "node": "label::before",
+       "size": "16px x 16px",
+       "backgroundColor": "rgb(255, 255, 255)",
+       "backgroundImage": "none",
+       "border": "1px solid rgb(0, 0, 0) | 1px solid rgb(0, 0, 0) | 1px solid rgb(0, 0, 0) | 1px solid rgb(0, 0, 0)",
+       "radius": "2.08px",
+       "position": "absolute 2.88px 0px",
+       "color": "rgb(0, 0, 0)"
+      }
+     }
     },
     "focus-visible": {
      "tag": "input",
@@ -9872,7 +9803,20 @@
       "fontSize": "16px"
      },
      "crop": "components/crops/checkbox-focus-visible.png",
-     "via": "Shift+Tab, Tab"
+     "via": "Shift+Tab, Tab",
+     "extra": {
+      "checked": false,
+      "box": {
+       "node": "label::before",
+       "size": "16px x 16px",
+       "backgroundColor": "rgb(255, 255, 255)",
+       "backgroundImage": "none",
+       "border": "1px solid rgb(0, 0, 0) | 1px solid rgb(0, 0, 0) | 1px solid rgb(0, 0, 0) | 1px solid rgb(0, 0, 0)",
+       "radius": "2.08px",
+       "position": "absolute 2.88px 0px",
+       "color": "rgb(0, 0, 0)"
+      }
+     }
     },
     "pressed": {
      "tag": "input",
@@ -9967,7 +9911,20 @@
       "fontSize": "16px"
      },
      "crop": "components/crops/checkbox-pressed.png",
-     "via": "CDP forcePseudoState :active:hover"
+     "via": "CDP forcePseudoState :active:hover",
+     "extra": {
+      "checked": false,
+      "box": {
+       "node": "label::before",
+       "size": "16px x 16px",
+       "backgroundColor": "rgb(255, 255, 255)",
+       "backgroundImage": "none",
+       "border": "1px solid rgb(181, 181, 181) | 1px solid rgb(181, 181, 181) | 1px solid rgb(181, 181, 181) | 1px solid rgb(181, 181, 181)",
+       "radius": "2.08px",
+       "position": "absolute 2.88px 0px",
+       "color": "rgb(0, 0, 0)"
+      }
+     }
     },
     "selected": {
      "tag": "input",
@@ -10062,7 +10019,20 @@
       "fontSize": "16px"
      },
      "crop": "components/crops/checkbox-selected.png",
-     "via": "own toggle"
+     "via": "own toggle",
+     "extra": {
+      "checked": true,
+      "box": {
+       "node": "label::before",
+       "size": "16px x 16px",
+       "backgroundColor": "rgb(0, 0, 0)",
+       "backgroundImage": "check glyph (data-URI svg)",
+       "border": "1px solid rgb(0, 0, 0) | 1px solid rgb(0, 0, 0) | 1px solid rgb(0, 0, 0) | 1px solid rgb(0, 0, 0)",
+       "radius": "2.08px",
+       "position": "absolute 2.88px 0px",
+       "color": "rgb(0, 0, 0)"
+      }
+     }
     }
    },
    "page": "contact",

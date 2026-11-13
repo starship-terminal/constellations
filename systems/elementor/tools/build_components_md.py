@@ -75,6 +75,20 @@ def num(x):
     return re.sub(r"(\d+\.\d\d)\d+", r"\1", x)
 
 
+def zero_size(p):
+    """A painted-layer entry that is not on screen (display contents / a
+    hidden node): it cannot supply the surface a reader sees."""
+    sz = str(p.get("size", ""))
+    return sz.startswith("0.0x0.0") or sz in ("0x0", "0pxx0px")
+
+
+def child_ring(v):
+    """A focus ring painted by a visible descendant — keyboard focus can land
+    on a child (the mobile item's dropdown button) instead of the wrapper."""
+    ring = next((p for p in (v.get("paint") or []) if p.get("outline") and not zero_size(p)), None)
+    return f"{colour(ring['outline'])} (on {ring['node']})" if ring else None
+
+
 def font(fz, lh, fw, f):
     lh = lh.replace("px", "") if lh != "normal" else "normal"
     return f"{fam(f)} {num(fz.replace('px', ''))}/{num(lh)} {fw}"
@@ -110,6 +124,10 @@ def props(v):
             o["shadow"] = ", ".join(layers)
     if s["outlineStyle"] != "none" and float(s["outlineWidth"].replace("px", "")) > 0:
         o["outline"] = f"{s['outlineWidth']} {s['outlineStyle']} {colour(s['outlineColor'])}, offset {s['outlineOffset']}"
+    else:
+        ring = child_ring(v)
+        if ring:
+            o["outline"] = ring
     t = v.get("textStyle")
     if t:
         o["text"] = f"{font(t['fontSize'], t['lineHeight'], t['fontWeight'], t['fontFamily'])}, {colour(t['color'])}"
@@ -141,10 +159,28 @@ def props(v):
         o["icon"] = f"{num(v['icon']['w'])} x {num(v['icon']['h'])}, {colour(v['icon']['color'])}"
     if v.get("placeholder"):
         o["placeholder"] = colour(v["placeholder"]["color"])
+    # A control's visible box can live on a sibling/pseudo element while the
+    # measured node stays invisible (the acceptance checkbox's input paints at
+    # opacity 0; the label's ::before is the box a user sees).
+    ex = v.get("extra") or {}
+    bx = ex.get("box")
+    if bx:
+        parts = [bx["size"]]
+        if bx.get("backgroundColor") and bx["backgroundColor"] != "rgba(0, 0, 0, 0)":
+            parts.append("background " + colour(bx["backgroundColor"]))
+        if bx.get("backgroundImage") and bx["backgroundImage"] != "none":
+            parts.append("image " + bx["backgroundImage"])
+        if bx.get("border") and bx["border"] != "none":
+            parts.append("border " + colour(bx["border"].split(" | ")[0]))
+        if bx.get("radius") and bx["radius"] != "0px":
+            parts.append("radius " + bx["radius"])
+        o["visible box"] = "; ".join(parts)
+    if ex.get("checked") is True:
+        o["checked"] = "true on the input"
     return o
 
 
-ORDER = ["size", "padding", "border", "radius", "background", "image", "shadow", "outline", "text", "transition", "transform", "opacity", "icon", "placeholder"]
+ORDER = ["size", "padding", "border", "radius", "background", "image", "shadow", "outline", "visible box", "checked", "text", "transition", "transform", "opacity", "icon", "placeholder"]
 
 
 def state_rows(c):
@@ -261,11 +297,11 @@ W("How to read an entry:")
 W()
 W("- A colour is its value followed by the palette token in [tokens.json](tokens.json) with the same value, when there is one. Text is written family size/line-height weight, then its colour, for example `Roobert 88/96.8 700, #ffffff`, and is read from the first text node inside the component.")
 W("- The state table has one row per state that differs. The first row lists every value; later rows list only what changes. A state with the same values as the first is named in its label, for example \"default (same: focus-visible)\". When the root paints nothing, \"Child layers\" names the first nodes inside it that do.")
-W(f"- Crops are images of the component read from the live page, in [components/crops/](components/crops) ({n_crops} files, named `{{component}}-{{state}}.png`, at 2x). Screenshots are in [screenshots/](screenshots).")
+W(f"- Crops are images of the component read from the live page, in [components/crops/](components/crops) ({n_crops} files, named `{{component}}-{{state}}.png`). Crop scale: the capture context runs at a device scale of 2, and a crop larger than ~1.2 megapixels is saved halved (effectively 1x) to keep the folder small — the wide panels (`nav-dropdown`, `footer`, `form-popup`, `plan-card`, `m-menu-open`) are the 1x ones. Screenshots are in [screenshots/](screenshots).")
 W()
 W("## Discovery list")
 W()
-W("Screenshots are named `{page}-light-{state}.png` (the site paints light with `.dark-mode` islands on the same vars). Desktop shots are 1440 x 900 at 1x; `-full` shots are whole pages at 1x, capped at eight 900px chunks; mobile shots are `mobile-{page}-light-{state}.png`, 780 wide (390 at 2x).")
+W("Screenshots are named `{page}-light-{state}.png` (the site paints light with `.dark-mode` islands on the same vars). Desktop shots are 1440 x 900 at 1x; `-full` shots are whole pages at the context's device scale — 1x on desktop, 2x on mobile — capped at eight chunks of 14000 device px each; mobile shots are `mobile-{page}-light-{state}.png`, 780 wide (390 at 2x).")
 W()
 W("| Surface | URL | Screenshots |")
 W("|---|---|---|")
@@ -292,17 +328,28 @@ W("## Shared values")
 W()
 W("Values that apply across entries, from the measurement files.")
 W()
-foc = []
+foc, failed_focus = [], []
 for k, c in C.items():
     st = c["states"].get("focus-visible")
-    if not st or "style" not in st:
+    if not st:
+        continue
+    if "style" not in st:
+        # A failed focus attempt is its own record — never a no-ring reading.
+        failed_focus.append(k)
         continue
     s = st["style"]
     ring = s["outlineStyle"] != "none" and float(s["outlineWidth"].replace("px", "")) > 0
-    foc.append((k, f"{s['outlineWidth']} {s['outlineStyle']} {colour(s['outlineColor'])}, offset {s['outlineOffset']}" if ring else None))
+    if ring:
+        foc.append((k, f"{s['outlineWidth']} {s['outlineStyle']} {colour(s['outlineColor'])}, offset {s['outlineOffset']}"))
+    else:
+        # The ring may be painted by the focused child, not the wrapper.
+        foc.append((k, child_ring(st)))
 with_ring = [f"`{k}` ({r})" for k, r in foc if r]
 without = [f"`{k}`" for k, r in foc if not r]
-W(f"**Focus.** {len(foc)} components were given a real keyboard focus. {len(with_ring)} draw a ring: {', '.join(with_ring) or 'none'}. The other {len(without)} draw none, so a keyboard user sees no change: {', '.join(without) or 'none'}.")
+line = f"**Focus.** {len(foc)} components were given a real keyboard focus. {len(with_ring)} draw a ring: {', '.join(with_ring) or 'none'}. The other {len(without)} draw none, so a keyboard user sees no change: {', '.join(without) or 'none'}."
+if failed_focus:
+    line += f" On {len(failed_focus)} more, keyboard focus could not be landed at all ({', '.join('`' + k + '`' for k in failed_focus)}) — recorded as a failed state, not as a no-ring reading."
+W(line)
 W()
 W("**Pressed.** Read with DevTools `forcePseudoState` (`:active` + `:hover`), so no control was really pressed; a state a script adds on mousedown (if any) is missing.")
 W()
@@ -352,8 +399,20 @@ for k in ["nav-dropdown", "card", "plan-card", "faq-item", "faq-answer", "field-
         continue
     p = props(st)
     if ("radius" not in p or p["background"] == "transparent") and st.get("paint"):
-        p0 = next((x for x in st["paint"] if x.get("bg") and x.get("radius")), st["paint"][0])
-        p = dict(p, border=colour(p0["border"].split(" | ")[0][2:]) if p0.get("border") else "-", radius=p0.get("radius", "-"), background=colour(p0.get("bg", "")) or "-", shadow=colour(p0.get("shadow", ""), tokens=False) or "none")
+        # Borrow only values the root lacks, and only from a descendant that is
+        # on screen: a hidden (0x0) layer's colours are not the surface a
+        # reader sees (the mobile menu's hidden button must not recolour it).
+        vis = [x for x in st["paint"] if not zero_size(x)]
+        p0 = next((x for x in vis if x.get("bg") and x.get("radius")), next((x for x in vis if x.get("bg") or x.get("bgImage")), None))
+        if p0:
+            if "border" not in p and p0.get("border"):
+                p["border"] = colour(p0["border"].split(" | ")[0][2:])
+            if "radius" not in p and p0.get("radius"):
+                p["radius"] = p0["radius"]
+            if p["background"] == "transparent" and p0.get("bg"):
+                p["background"] = colour(p0["bg"])
+            if "shadow" not in p and p0.get("shadow"):
+                p["shadow"] = colour(p0["shadow"], tokens=False)
     W(f"| [{c['title']}](#{re.sub(r'[^a-z0-9 -]', '', c['title'].lower()).replace(' ', '-')}) | {p['size']} | {p.get('border', '-')} | {p.get('radius', '-')} | {p.get('background', '-')} | {p.get('shadow', 'none')} | {p.get('padding', '0')} |")
 W()
 

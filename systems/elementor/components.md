@@ -8,11 +8,11 @@ How to read an entry:
 
 - A colour is its value followed by the palette token in [tokens.json](tokens.json) with the same value, when there is one. Text is written family size/line-height weight, then its colour, for example `Roobert 88/96.8 700, #ffffff`, and is read from the first text node inside the component.
 - The state table has one row per state that differs. The first row lists every value; later rows list only what changes. A state with the same values as the first is named in its label, for example "default (same: focus-visible)". When the root paints nothing, "Child layers" names the first nodes inside it that do.
-- Crops are images of the component read from the live page, in [components/crops/](components/crops) (103 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
+- Crops are images of the component read from the live page, in [components/crops/](components/crops) (102 files, named `{component}-{state}.png`). Crop scale: the capture context runs at a device scale of 2, and a crop larger than ~1.2 megapixels is saved halved (effectively 1x) to keep the folder small — the wide panels (`nav-dropdown`, `footer`, `form-popup`, `plan-card`, `m-menu-open`) are the 1x ones. Screenshots are in [screenshots/](screenshots).
 
 ## Discovery list
 
-Screenshots are named `{page}-light-{state}.png` (the site paints light with `.dark-mode` islands on the same vars). Desktop shots are 1440 x 900 at 1x; `-full` shots are whole pages at 1x, capped at eight 900px chunks; mobile shots are `mobile-{page}-light-{state}.png`, 780 wide (390 at 2x).
+Screenshots are named `{page}-light-{state}.png` (the site paints light with `.dark-mode` islands on the same vars). Desktop shots are 1440 x 900 at 1x; `-full` shots are whole pages at the context's device scale — 1x on desktop, 2x on mobile — capped at eight chunks of 14000 device px each; mobile shots are `mobile-{page}-light-{state}.png`, 780 wide (390 at 2x).
 
 | Surface | URL | Screenshots |
 |---|---|---|
@@ -40,7 +40,7 @@ Screenshots are named `{page}-light-{state}.png` (the site paints light with `.d
 
 Values that apply across entries, from the measurement files.
 
-**Focus.** 17 components were given a real keyboard focus. 15 draw a ring: `nav-link` (2px auto #005fcc, offset 2px), `nav-login` (2px auto #005fcc, offset 2px), `nav-cta` (2px auto #005fcc, offset 2px), `menu-link` (2px auto #005fcc, offset 2px), `hero-cta` (2px auto #005fcc, offset 2px), `plan-cta` (2px auto #005fcc, offset 2px), `plan-toggle` (2px auto #005fcc, offset 2px), `contact-card` (2px auto #005fcc, offset 2px), `checkbox` (1px auto #005fcc, offset 2px), `submit-btn` (2px auto #005fcc, offset 2px), `faq-item` (1px auto #005fcc, offset 0px), `footer-link` (2px auto #005fcc, offset 2px), `social-icon` (2px auto #005fcc, offset 2px), `menu-feature` (2px auto #005fcc, offset 2px), `cta-dark` (2px auto #005fcc, offset 2px). The other 2 draw none, so a keyboard user sees no change: `nav-trigger`, `m-nav-item`.
+**Focus.** 16 components were given a real keyboard focus. 16 draw a ring: `nav-link` (2px auto #005fcc, offset 2px), `nav-login` (2px auto #005fcc, offset 2px), `nav-cta` (2px auto #005fcc, offset 2px), `menu-link` (2px auto #005fcc, offset 2px), `hero-cta` (2px auto #005fcc, offset 2px), `plan-cta` (2px auto #005fcc, offset 2px), `plan-toggle` (2px auto #005fcc, offset 2px), `contact-card` (2px auto #005fcc, offset 2px), `checkbox` (1px auto #005fcc, offset 2px), `submit-btn` (2px auto #005fcc, offset 2px), `faq-item` (1px auto #005fcc, offset 0px), `footer-link` (2px auto #005fcc, offset 2px), `social-icon` (2px auto #005fcc, offset 2px), `m-nav-item` (2px auto #005fcc offset 2px (on button.e-n-menu-dropdown-icon.e-focus)), `menu-feature` (2px auto #005fcc, offset 2px), `cta-dark` (2px auto #005fcc, offset 2px). The other 0 draw none, so a keyboard user sees no change: none. On 1 more, keyboard focus could not be landed at all (`nav-trigger`) — recorded as a failed state, not as a no-ring reading.
 
 **Pressed.** Read with DevTools `forcePseudoState` (`:active` + `:hover`), so no control was really pressed; a state a script adds on mousedown (if any) is missing.
 
@@ -61,11 +61,11 @@ Values that apply across entries, from the measurement files.
 | [Nav dropdown](#nav-dropdown) | 1440 x 693.2 | - | 24px | #ffffff `blank-canvas-white` | rgba(0, 0, 0, 0.05) 0px 0px 15.008px 3.008px | 0 |
 | [Card](#card) | 400 x 183.67 | - | 16px | #000000 `kernel-black` | none | 24px |
 | [Plan card](#plan-card) | 297 x 1024.33 | - | 8px | #ffffff `blank-canvas-white` | none | 0 |
-| [FAQ item (closed)](#faq-item-closed) | 1024 x 28 | - | - | - | none | 0px 80px 0px 0px |
+| [FAQ item (closed)](#faq-item-closed) | 1024 x 28 | - | - | transparent | none | 0px 80px 0px 0px |
 | [FAQ answer](#faq-answer) | 1024 x 160.03 | - | - | transparent | none | 0 |
 | [Name field](#name-field) | 249 x 40.41 | 1px solid #d1d1d1 `grey-500` | 4px | #ffffff `blank-canvas-white` | none | 8px |
 | [Message area](#message-area) | 522 x 107.63 | 1px solid #d1d1d1 `grey-500` | 4px | #ffffff `blank-canvas-white` | none | 8px |
-| [Mobile menu, open](#mobile-menu-open) | 390 x 844 | - | 8px | #000000 `kernel-black` | none | 88px 0px 128px 0px |
+| [Mobile menu, open](#mobile-menu-open) | 390 x 844 | - | - | #ffffff `blank-canvas-white` | none | 88px 0px 128px 0px |
 
 ## Components
 
@@ -92,10 +92,10 @@ The Products menu trigger that opens the mega-menu; toggled, never followed. Rea
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 97.97 x 40.3; padding 8.96px 16px; radius 8px; background transparent; text Roobert 16/22.4 400, #212121 `grey-800` |
+| default | size 97.97 x 40.3; padding 8.96px 16px; radius 8px; background transparent; text Roobert 16/22.4 400, #212121 `grey-800` |
 | hover, pressed | background #fae4fa `syntax-glow`; text Roobert 16/22.4 400, #1f2124 |
 
-![Nav trigger default](components/crops/nav-trigger-default.png) ![Nav trigger hover](components/crops/nav-trigger-hover.png) ![Nav trigger focus-visible](components/crops/nav-trigger-focus-visible.png) ![Nav trigger pressed](components/crops/nav-trigger-pressed.png)
+![Nav trigger default](components/crops/nav-trigger-default.png) ![Nav trigger hover](components/crops/nav-trigger-hover.png) ![Nav trigger pressed](components/crops/nav-trigger-pressed.png)
 
 #### Nav link
 The plain Pricing header link. Read as `nav-link` on the Home page.
@@ -370,8 +370,10 @@ The acceptance checkbox; checked and unchecked as local UI state — the form wa
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed, selected) | size 16 x 16; background #ffffff `blank-canvas-white`; text Roobert 16/22.4 400, #000000 `kernel-black`; opacity 0; placeholder #000000 `kernel-black` |
-| focus-visible | outline 1px auto #005fcc, offset 2px |
+| default (same: pressed) | size 16 x 16; background #ffffff `blank-canvas-white`; visible box 16px x 16px; background #ffffff `blank-canvas-white`; border 1px solid #b5b5b5 `grey-600`; radius 2.08px; text Roobert 16/22.4 400, #000000 `kernel-black`; opacity 0; placeholder #000000 `kernel-black` |
+| hover | visible box 16px x 16px; background #ffffff `blank-canvas-white`; border 1px solid #000000 `kernel-black`; radius 2.08px |
+| focus-visible | outline 1px auto #005fcc, offset 2px; visible box 16px x 16px; background #ffffff `blank-canvas-white`; border 1px solid #000000 `kernel-black`; radius 2.08px |
+| selected | visible box 16px x 16px; background #000000 `kernel-black`; image check glyph (data-URI svg); border 1px solid #000000 `kernel-black`; radius 2.08px; checked true on the input |
 
 ![Acceptance checkbox default](components/crops/checkbox-default.png) ![Acceptance checkbox hover](components/crops/checkbox-hover.png) ![Acceptance checkbox focus-visible](components/crops/checkbox-focus-visible.png) ![Acceptance checkbox pressed](components/crops/checkbox-pressed.png) ![Acceptance checkbox selected](components/crops/checkbox-selected.png)
 
@@ -491,8 +493,10 @@ An item inside the opened header menu. Read as `m-nav-item` on the Home page at 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 390 x 52.59; padding 16px 32px 16px 36px; border B: 1px solid #d1d1d1 `grey-500`; background #ffffff `blank-canvas-white`; text Roobert 14/19.6 400, #212121 `grey-800`; icon 20 x 20, #212121 `grey-800` |
-| hover, pressed | icon 20 x 20, #1f2124 |
+| default | size 390 x 52.59; padding 16px 32px 16px 36px; border B: 1px solid #d1d1d1 `grey-500`; background #ffffff `blank-canvas-white`; text Roobert 14/19.6 400, #212121 `grey-800`; icon 20 x 20, #212121 `grey-800` |
+| hover | icon 20 x 20, #1f2124 |
+| focus-visible | outline 2px auto #005fcc offset 2px (on button.e-n-menu-dropdown-icon.e-focus) |
+| pressed | icon 20 x 20, #1f2124 |
 
 ![Mobile nav item default](components/crops/m-nav-item-default.png) ![Mobile nav item hover](components/crops/m-nav-item-hover.png) ![Mobile nav item focus-visible](components/crops/m-nav-item-focus-visible.png) ![Mobile nav item pressed](components/crops/m-nav-item-pressed.png)
 

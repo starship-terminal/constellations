@@ -99,14 +99,21 @@ CMP["buttonPrimary"] = {"radius": tok(style("nav-cta")["borderTopLeftRadius"], "
 CMP["buttonHero"] = {"radius": tok(style("hero-cta")["borderTopLeftRadius"], "dimension", "computed borderRadius on the hero Get-started pill"),
                      "height": tok(style("hero-cta")["height"], "dimension", "computed height on the hero Get-started pill"),
                      "font": tok(style("hero-cta")["fontSize"] + " " + style("hero-cta")["fontWeight"], "other", "computed font on the hero Get-started pill")}
-CMP["planCta"] = {"border": tok(style("plan-cta")["borderTopWidth"] + " " + col(style("plan-cta")["borderTopColor"]), "other", "computed border on the outline Buy-now button")}
+def border(k, state="default"):
+    """width + style + colour: a border token without the style word paints
+    nothing where it is dropped into `border:` (the style defaults to none)."""
+    s = style(k, state)
+    return s["borderTopWidth"] + " " + s["borderTopStyle"] + " " + col(s["borderTopColor"])
+
+
+CMP["planCta"] = {"border": tok(border("plan-cta"), "other", "computed border on the outline Buy-now button")}
 CMP["field"] = {"radius": tok(style("field-name")["borderTopLeftRadius"], "dimension", "computed borderRadius on the contact form inputs"),
                 "height": tok(style("field-name")["height"], "dimension", "computed height on the name input"),
-                "border": tok(style("field-name")["borderTopWidth"] + " " + col(style("field-name")["borderTopColor"]), "other", "computed border on the contact form inputs")}
+                "border": tok(border("field-name"), "other", "computed border on the contact form inputs")}
 CMP["card"] = {"radius": tok(style("card")["borderTopLeftRadius"], "dimension", "computed borderRadius on the dsm card tiles (stat tile, contact card, menu feature tile)")}
 CMP["planCard"] = {"radius": tok(style("plan-card")["borderTopLeftRadius"], "dimension", "computed borderRadius on the pricing plan card")}
 CMP["checkbox"] = {"size": tok(style("checkbox")["width"], "dimension", "computed size of the acceptance checkbox"),
-                   "border": tok(style("checkbox")["borderTopWidth"] + " " + col(style("checkbox")["borderTopColor"]), "other", "computed border on the acceptance checkbox")}
+                   "border": tok(border("checkbox"), "other", "computed border on the acceptance checkbox")}
 CMP["type"] = {
     "display": tok(first_text("hero-title").get("fontSize") or style("hero-title")["fontSize"], "dimension", "computed fontSize on the hero h1 (Roobert 600)", weight=style("hero-title")["fontWeight"], lineHeight=style("hero-title")["lineHeight"]),
     "section": tok(first_text("h2-section").get("fontSize") or style("h2-section")["fontSize"], "dimension", "computed fontSize on the section h2", weight=style("h2-section")["fontWeight"]),
