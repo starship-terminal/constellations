@@ -648,6 +648,12 @@
     "reason": "catalog.json category e-commerce maps to Marketplace."
   },
   {
+    "referenceId": "systems:cron",
+    "groupId": "web-categories",
+    "labels": ["Productivity"],
+    "reason": "catalog.json category productivity maps to Productivity."
+  },
+  {
     "referenceId": "systems:dribbble",
     "groupId": "web-categories",
     "labels": ["Inspiration Board", "Marketplace"],

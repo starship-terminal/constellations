@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 109,
-    "system_domains": 101,
-    "matched_domains": 76,
-    "missing_domains": 357,
+    "system_packages": 110,
+    "system_domains": 102,
+    "matched_domains": 77,
+    "missing_domains": 356,
     "system_domains_absent_from_catalog": 25
   },
   "matched": {
@@ -910,6 +910,23 @@
         }
       ]
     },
+    "cron.com": {
+      "catalog": [
+        {
+          "name": "Cron",
+          "domain": "cron.com",
+          "id": 233
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "cron",
+          "name": "Cron",
+          "url": "https://cron.com",
+          "name_match": true
+        }
+      ]
+    },
     "cursor.com": {
       "catalog": [
         {
@@ -1476,13 +1493,6 @@
         "name": "Play",
         "domain": "createwithplay.com",
         "id": 218
-      }
-    ],
-    "cron.com": [
-      {
-        "name": "Cron",
-        "domain": "cron.com",
-        "id": 233
       }
     ],
     "curater.org": [

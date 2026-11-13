@@ -1013,6 +1013,11 @@
       "assignedMedia": 140
     },
     {
+      "referenceId": "systems:cron",
+      "media": 73,
+      "assignedMedia": 73
+    },
+    {
       "referenceId": "systems:dribbble",
       "media": 271,
       "assignedMedia": 128
@@ -222868,6 +222873,864 @@
           "termId": "web-fonts:averta",
           "rule": "font-primary",
           "reason": "Exact primary family Averta from systems/creativemarket/tokens.json#core.font.family.averta. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cron",
+      "mediaId": "systems/cron/screenshots/blog-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/cron/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cron",
+      "mediaId": "systems/cron/screenshots/blog-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/cron/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cron",
+      "mediaId": "systems/cron/screenshots/changelog-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/cron/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cron",
+      "mediaId": "systems/cron/screenshots/changelog-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/cron/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cron",
+      "mediaId": "systems/cron/screenshots/home-dark-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/cron/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cron",
+      "mediaId": "systems/cron/screenshots/home-dark-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/cron/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cron",
+      "mediaId": "systems/cron/screenshots/mobile-blog-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/cron/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cron",
+      "mediaId": "systems/cron/screenshots/mobile-blog-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/cron/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cron",
+      "mediaId": "systems/cron/screenshots/mobile-home-dark-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/cron/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cron",
+      "mediaId": "systems/cron/screenshots/mobile-home-dark-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/cron/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cron",
+      "mediaId": "systems/cron/screenshots/mobile-home-dark-menu.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/cron/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cron",
+      "mediaId": "systems/cron/screenshots/post-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/cron/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cron",
+      "mediaId": "systems/cron/screenshots/post-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/cron/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cron",
+      "mediaId": "systems/cron/components/crops/banner-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/cron/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cron",
+      "mediaId": "systems/cron/components/crops/banner-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/cron/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cron",
+      "mediaId": "systems/cron/components/crops/banner-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/cron/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cron",
+      "mediaId": "systems/cron/components/crops/banner-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/cron/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cron",
+      "mediaId": "systems/cron/components/crops/blog-h1-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/cron/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cron",
+      "mediaId": "systems/cron/components/crops/changelog-entry-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/cron/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cron",
+      "mediaId": "systems/cron/components/crops/changelog-h1-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/cron/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cron",
+      "mediaId": "systems/cron/components/crops/demo-link-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/cron/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cron",
+      "mediaId": "systems/cron/components/crops/demo-link-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/cron/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cron",
+      "mediaId": "systems/cron/components/crops/demo-link-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/cron/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cron",
+      "mediaId": "systems/cron/components/crops/demo-link-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/cron/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cron",
+      "mediaId": "systems/cron/components/crops/feature-h2-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/cron/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cron",
+      "mediaId": "systems/cron/components/crops/footer-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/cron/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cron",
+      "mediaId": "systems/cron/components/crops/footer-link-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/cron/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cron",
+      "mediaId": "systems/cron/components/crops/footer-link-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/cron/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cron",
+      "mediaId": "systems/cron/components/crops/footer-link-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/cron/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cron",
+      "mediaId": "systems/cron/components/crops/footer-link-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/cron/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cron",
+      "mediaId": "systems/cron/components/crops/hero-h1-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/cron/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cron",
+      "mediaId": "systems/cron/components/crops/hero-sub-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/cron/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cron",
+      "mediaId": "systems/cron/components/crops/login-link-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/cron/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cron",
+      "mediaId": "systems/cron/components/crops/login-link-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/cron/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cron",
+      "mediaId": "systems/cron/components/crops/login-link-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/cron/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cron",
+      "mediaId": "systems/cron/components/crops/login-link-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/cron/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cron",
+      "mediaId": "systems/cron/components/crops/logotype-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/cron/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cron",
+      "mediaId": "systems/cron/components/crops/m-header-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/cron/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cron",
+      "mediaId": "systems/cron/components/crops/m-heading-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/cron/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cron",
+      "mediaId": "systems/cron/components/crops/m-menu-button-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/cron/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cron",
+      "mediaId": "systems/cron/components/crops/m-menu-button-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/cron/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cron",
+      "mediaId": "systems/cron/components/crops/m-menu-button-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/cron/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cron",
+      "mediaId": "systems/cron/components/crops/m-menu-button-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/cron/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cron",
+      "mediaId": "systems/cron/components/crops/m-menu-open-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/cron/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cron",
+      "mediaId": "systems/cron/components/crops/m-nav-item-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/cron/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cron",
+      "mediaId": "systems/cron/components/crops/m-nav-item-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/cron/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cron",
+      "mediaId": "systems/cron/components/crops/m-nav-item-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/cron/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cron",
+      "mediaId": "systems/cron/components/crops/m-nav-item-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/cron/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cron",
+      "mediaId": "systems/cron/components/crops/m-signup-btn-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/cron/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cron",
+      "mediaId": "systems/cron/components/crops/m-signup-btn-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/cron/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cron",
+      "mediaId": "systems/cron/components/crops/m-signup-btn-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/cron/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cron",
+      "mediaId": "systems/cron/components/crops/m-signup-btn-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/cron/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cron",
+      "mediaId": "systems/cron/components/crops/nav-link-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/cron/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cron",
+      "mediaId": "systems/cron/components/crops/nav-link-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/cron/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cron",
+      "mediaId": "systems/cron/components/crops/nav-link-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/cron/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cron",
+      "mediaId": "systems/cron/components/crops/nav-link-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/cron/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cron",
+      "mediaId": "systems/cron/components/crops/post-back-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/cron/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cron",
+      "mediaId": "systems/cron/components/crops/post-back-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/cron/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cron",
+      "mediaId": "systems/cron/components/crops/post-back-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/cron/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cron",
+      "mediaId": "systems/cron/components/crops/post-back-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/cron/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cron",
+      "mediaId": "systems/cron/components/crops/post-body-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/cron/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cron",
+      "mediaId": "systems/cron/components/crops/post-entry-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/cron/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cron",
+      "mediaId": "systems/cron/components/crops/post-entry-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/cron/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cron",
+      "mediaId": "systems/cron/components/crops/post-entry-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/cron/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cron",
+      "mediaId": "systems/cron/components/crops/post-entry-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/cron/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cron",
+      "mediaId": "systems/cron/components/crops/post-h1-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/cron/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cron",
+      "mediaId": "systems/cron/components/crops/post-media-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/cron/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cron",
+      "mediaId": "systems/cron/components/crops/post-meta-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/cron/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cron",
+      "mediaId": "systems/cron/components/crops/signup-btn-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/cron/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cron",
+      "mediaId": "systems/cron/components/crops/signup-btn-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/cron/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cron",
+      "mediaId": "systems/cron/components/crops/signup-btn-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/cron/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cron",
+      "mediaId": "systems/cron/components/crops/signup-btn-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/cron/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cron",
+      "mediaId": "systems/cron/components/crops/site-header-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:helvetica-neue",
+          "rule": "font-primary",
+          "reason": "Exact primary family Helvetica Neue from systems/cron/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
         }
       ]
     },
