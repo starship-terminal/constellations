@@ -1,7 +1,7 @@
 {
  "date": "2026-11-13",
  "rubric": "4",
- "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): re-reviewed after the Greptile pass: selectors corrected and remeasured, modal scrim tokenized, ghost state tracks split by surface, docs rebuilt",
+ "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): public-web capture review (re-applied after main merge)",
  "systems": [
   {
    "slug": "brilliant",
@@ -12108,91 +12108,91 @@
    "reviewedPlatform": "web"
   },
   {
-   "slug": "dailyartmagazine",
+   "slug": "doctronic",
    "grades": {
     "F1": {
-     "grade": "missing",
-     "evidence": "No ramps: the site paints one crimson hue (#c6002f, plus the brighter #f3003a link red) and a handful of ad-hoc neutrals (#19191c, #2e2e32, #4d5761, #989da7) — no hue carries a ~10-step ramp. The only declared vars are stock WordPress --wp--preset--* values, tokenised under core.wp-preset, which are Gutenberg's generic palettes, not the product's ramps."
+     "grade": "meets",
+     "evidence": "Seven real eleven-step ramps declared in @layer tokens and harvested: neutral, blue, sage, lime, success, warning, error 50-950 plus white and the lavender/graphic-blue washes (core.color.* in tokens.json, every leaf resolved from raw/css-vars.json)."
     },
     "F2": {
-     "grade": "partly",
-     "evidence": "background.page (#fff field), background.menu-panel (#fff mega-menu), background.field-surface (#fff inputs), background.dark-band (#19191c bands) and background.scrim (rgba(0,0,0,.9) newsletter-modal overlay, measured on the .modal-r ancestor) are all tokens. The flat editorial design paints no raised/elevated surface role."
+     "grade": "meets",
+     "evidence": "light/dark: surface.canvas (#fdfdf7 / #0d0e0b), surface.raised (the white / neutral-900 input card, 16px radius + 0 2 24 shadow), surface.sunken, the muted-blue/rose/sage/warm washes, and the dialog scrim recorded under _meta.signinBackdrop in raw/components-computed.json."
     },
     "F3": {
-     "grade": "partly",
-     "evidence": "text.ink (#000 headings/labels), text.muted (#4d5761 body/meta), text.on-dark (#fff on bands) and action.link-bright (#f3003a inline links) are measured. No secondary or disabled role paints."
+     "grade": "meets",
+     "evidence": "fg.default / muted / subtle / disabled per theme, accent.fg + fg-disabled (white on blue-600; blue-950 on blue-400 dark), solid.fg on the near-black pills, and link.default/hover/visited/disabled."
     },
     "F4": {
-     "grade": "partly",
-     "evidence": "border.accent-ghost-border (#c6002f on ghost buttons), border.hairline-dark (#2e2e32 menu rules), border.submit-border (#989da7 on contact Send) are measured; focus is the UA dotted outline in the element's own colour (component.focus-ring), not a designed ring token."
+     "grade": "meets",
+     "evidence": "border.default (8% ink), border.light/subtle/strong (20% ink, the secondary ring), border.disabled, divider, plus the dashed-ink variant measured on the drawer dividers and hero underline; focus is accent.focus-ring and shadow.focus-ring per theme."
     },
     "F5": {
      "grade": "meets",
-     "evidence": "Ghost-button accent states measured across default/hover/focus-visible/pressed on search-btn, nl-send and load-more: transparent + 1px #c6002f at rest, #c6002f fill with white text on hover and pressed (component.state-track.ghost-state-track)."
+     "evidence": "accent.bg -> bg-hover -> bg-pressed -> bg-disabled with matching fg states, all declared in the token layer and re-measured on start-chat-button/check-button/send-button (hover #1d4fd7, pressed #1e3fae)."
     },
     "F6": {
-     "grade": "missing",
-     "evidence": "No success/warning/danger/info roles paint on the public magazine surface."
+     "grade": "meets",
+     "evidence": "success/warning/error/info each carry bg, border and fg roles in both themes (color.{success,warning,error,info}.{bg,border,fg}), resolved from the site token layer."
     },
     "F7": {
      "grade": "meets",
-     "evidence": "The product ships one theme — a white field with #19191c dark bands — and every measured semantic role lives in the single light set; the dark set is empty because there is no toggle or dark class anywhere on the public pages."
+     "evidence": "data-theme=dark is a real user theme; all 50 light semantic roles redeclare under it with full parity (build_tokens.py parity check passes; dark set = 50 roles)."
     },
     "F8": {
-     "grade": "partly",
-     "evidence": "Three families tokenised with 1-fallback stacks (Basier, RoslindaleCondensed, RoslindaleNarrow), an 8-step measured ramp (10/14/16/18/20/28/32/56), 4 weights and 3 line-heights. Roles beyond display/narrow/sans (label, caption, code) are not named."
+     "grade": "meets",
+     "evidence": "fraunces/geist/geistMono families (self-hosted woff2, @font-face in the chunks) plus the system body stack, and 61 named --text-* composites (display/heading/label/mono styles with size, leading, weight and negative tracking) in core.typography."
     },
     "F9": {
-     "grade": "missing",
-     "evidence": "No spacing scale is declared or measurable as tokens — the theme's CSS is literal and irregular; per-component paddings and gaps live in components.md."
+     "grade": "partly",
+     "evidence": "No declared spacing scale exists in the token layer; per-component paddings and gaps are measured in raw/measurements.md (input card 16, nav rows 8/8, chips 6/10, header 19/20)."
     },
     "F10": {
      "grade": "partly",
-     "evidence": "radius.sm 2px (contact Send) and radius.md 3px (chips/buttons/inputs) measured; everything else paints 0. Border widths (1px ghost border, hairlines) are measured in the component specs."
+     "evidence": "No core.radius scale is declared; the measured radius set is real and consistent (52px accent pills, 32px bar/sidebar pills, 40px OAuth, 8px chips/rows, 14-24px cards) and is tokenised under light.component.* but not as a named scale."
     },
     "F11": {
-     "grade": "partly",
-     "evidence": "Control heights measured: 38px ghost buttons, 40px inputs, 46px contact Send, 65px nav, 20.25px chips; icon sizes measured (20x15 hamburger, 10x18 social/share glyphs). No custom focus-ring width/offset — the UA dotted outline is recorded instead."
+     "grade": "meets",
+     "evidence": "light.component.*: button.height 34.8, button-cta 43.59, send 32, condensed 48, inputcard 147/16r, starter 36.6/8r, sidebar 256 + collapsed 74, dialog 393w, header 72, mobile header 66.8; focus ring measured 2px solid blue-500 (offset 0-2) and the shadow.focus-ring token."
     },
     "F12": {
-     "grade": "partly",
-     "evidence": "One shadow level measured: shadow.menu rgba(0,0,0,.25) 0 16px 48px under the mega-menu. Cards and modals paint no shadow; there is no 3-5 level scale."
+     "grade": "meets",
+     "evidence": "shadow.xs..xl five levels plus shadow.brand-glow/brand-glow-hover (the rgba(36,99,235,.39) glow under every accent pill) and shadow.focus-ring; card lift 0 2 24 rgba(0,0,0,.06) measured on the input card."
     },
     "F13": {
      "grade": "partly",
-     "evidence": "The shared 0.3s ease hover-fill transition is tokenised (core.motion.hover) and per-component transitions/animations are recorded in the measurements (e.g. the ticker marquee 20s linear). Durations/easing beyond the hover transition and reduced-motion behaviour are not enumerated."
+     "evidence": "No declared duration/easing tokens; 349 (home) and 415 (chat) transition rules harvested and listed per page in raw/measurements.md, with per-state transition values per component; reduced-motion behaviour not observable signed out."
     },
     "F14": {
      "grade": "partly",
-     "evidence": "Measured content widths: 1440 page, 1152 article header, 760 feed row, 648 article column, 366-390 mobile. Breakpoints and z-index layers are not tokenised (the theme's media queries live in literal CSS)."
+     "evidence": "Declared layout vars: header-height 72px, tap-target-min, chat-sheet vars. Measured: 1440 desktop vs 390 phone (Log in drops out, rail becomes a mobile header), content widths 1240-1280 (blog/wall), 690 (resource sheet), 548-652 (input cards); no breakpoint tokens."
     },
     "C1": {
-     "grade": "missing",
-     "evidence": "About 12 of the 19 checklist components exist on a read-only magazine: button (ghost buttons, cf7-send), icon button (hamburger, share/social glyphs), link (nav/footer/inline), text field (nl-email, cf7-name), textarea (cf7-message), checkbox (nl-checkbox, cf7-accept), tabs (feed tabs), menu (mega-menu), dialog (newsletter modal), card (post cards), badge (category chips), list row (cat-nav items). No select/radio/switch/tooltip/toast/table/avatar paints publicly."
+     "grade": "partly",
+     "evidence": "12 of 19: button, icon button (menu/send/pause/close), link, text field (blog search), text area (three composers), menu (site drawer), dialog (sign-in + drawer), card (article/love/author/feature/pricing), list row (menu-item/nav-link/author li), avatar (author/wall portraits), badge (Anonymous/HIPAA/prompt pill), table-adjacent none. Select, checkbox, radio, switch, tabs, tooltip, toast and table do not exist on the signed-out surface."
     },
     "C2": {
      "grade": "meets",
-     "evidence": "71 components across 151 states: default/hover/focus-visible/pressed on interactive controls, focused/filled on fields (sample text entered then cleared), opened on the mega-menu and the newsletter modal. Disabled/error/loading states do not exist on the public surface — documented in Gaps."
+     "evidence": "201 states across 100 components: real hover and keyboard focus, CDP-forced pressed, focused/filled text fields (typed and deleted), expanded states via the components' own toggles (drawer, rail). Disabled/error/loading only exist as declared tokens, noted in Gaps."
     },
     "C3": {
-     "grade": "partly",
-     "evidence": "focus-visible is captured on every focusable component, but it is visibly distinct only where the site paints one: nav links get a dotted white outline (component.focus-ring) and inputs a browser ring. The ghost buttons (Search/Send/Load more), chips and card links show no computed-style difference on focus-visible, so a visible focus state is not confirmed there."
+     "grade": "meets",
+     "evidence": "28 components keyboard-focused: 22 draw a blue-500 2px outline (blue-400 dark), 6 a shadow ring (menu-button, start-chat-button, sidebar-toggle, send-button, email-login-button, dialog-close); all enumerated in components.md Shared values."
     },
     "C4": {
-     "grade": "partly",
-     "evidence": "components.md names the palette token wherever a measured colour matches (light.action.accent, light.text.muted, light.background.dark-band, core.wp-preset.color.*); sizes, fonts and the many ad-hoc literals the theme paints stay as evidence-labelled raw measurements, so entries are only partly token-based."
+     "grade": "meets",
+     "evidence": "components.md annotates every measured colour with its palette token ({color.blue.600} etc.) and light.component.* holds the measured geometry as tokens; raw/components-computed.json keeps the raw styles alongside."
     },
     "P1": {
      "grade": "meets",
-     "evidence": "patterns.md documents the app shell (dark nav + mega-menu + footer), forms (newsletter inline/modal + Contact Form 7), data display (feed/category/article cards), search results and the mobile collapse — the patterns this surface actually has."
+     "evidence": "patterns.md covers app shell (two top bars, rail, drawer), the chat-field form pattern, the empty state (Chat for free), search and filtering (blog chips + field), data display (article/author/wall cards, resource sheet), overlays (sign-in card, drawer), feedback (focus/hover/pressed signature) and responsive behaviour; destructive confirmation, toasts and onboarding do not exist publicly and are recorded as boundaries."
     },
     "A1": {
      "grade": "partly",
-     "evidence": "No icons/ set (layoutGaps documented: wordmark, social and share glyphs visible in crops). Fonts named with fallbacks (Basier, RoslindaleCondensed, RoslindaleNarrow — self-hosted, not shipped)."
+     "evidence": "icon.png fetched (the asterisk mark); fonts named with licence/fallback notes (fraunces/geist/geistMono self-hosted woff2, style guide falls back). No standalone SVG icon set was lifted — layoutGaps records it."
     },
     "K1": {
      "grade": "meets",
-     "evidence": "README names the date, harness, viewports, routes, the read-only boundary (external Shop/Courses, unsubmitted forms, third-party ad slots) and what to distrust (ad content, the active-tab marker, the hidden-input checkboxes)."
+     "evidence": "README states what was captured, how each value was read, the signed-in boundary and what to distrust (content-page dark paint, quantized screenshots); Gaps in components.md lists every unreached state."
     },
     "C5": {
      "grade": "na",
@@ -12208,34 +12208,163 @@
     },
     "F15": {
      "grade": "meets",
-     "evidence": "Script: all 4 pairs pass 4.5:1 across 1 themes; lowest 7.36:1 light muted (light.text.muted) on page (light.background.page)"
+     "evidence": "Script: all 8 pairs pass 4.5:1 across 2 themes; lowest 6.99:1 light muted (light.color.fg.muted) on page (light.color.surface.canvas)"
     },
     "F16": {
      "grade": "meets",
-     "evidence": "Script: 115 of 115 tokens name their source"
+     "evidence": "Script: 290 of 290 tokens name their source"
     },
     "K2": {
-     "grade": "partly",
-     "evidence": "Script: 8 rules, 5 linking an image (needs 3+, all linked)"
+     "grade": "meets",
+     "evidence": "Script: 8 rules, each linking a screenshot or crop"
     },
     "K3": {
      "grade": "meets",
      "evidence": "Script: DESIGN.md matches a fresh generation"
     }
    },
-   "name": "DailyArt Magazine",
-   "goodFor": "Editorial/magazine design: a white field crossed by #19191c dark bands (65px fixed nav, ~799px home hero, donation sections), #c6002f crimson chips/tags/footer links and ghost buttons (transparent + 1px accent border, filling on hover), #f3003a inline links, RoslindaleCondensed 56px display over RoslindaleNarrow card titles and a Basier UI, a white mega-menu under a drop shadow, and article/newsletter/contact surfaces on WordPress",
-   "url": "https://www.dailyartmagazine.com",
+   "name": "Doctronic",
+   "goodFor": "AI health-product marketing and chat-adjacent UI with a warm paper-and-ink system: a #fdfdf7 canvas under #1b1b18 ink, Fraunces display headings with dashed underlines, seven eleven-step colour ramps, a single #2463eb blue spent on actions with a signature rgba(36,99,235,.39) brand-glow, a lime #beec4b reserved for prompt tabs and tag pills, 32px and 52px radius pill buttons, dashed-ink dividers, and a real user-selectable dark theme",
+   "url": "https://www.doctronic.ai",
+   "captured": "2026-11-13",
+   "themes": [
+    "light",
+    "dark"
+   ],
+   "platform": "web",
+   "category": "AI chat",
+   "reviewed": "2026-11-13",
+   "reviewedPlatform": "web"
+  },
+  {
+   "slug": "docusign",
+   "grades": {
+    "F1": {
+     "grade": "partly",
+     "evidence": "Ramps exist per hue family but are short measured state ramps: cobalt #4c00ff/#4000cc/#330099, auth-deep violet #260559/#2b047f/#37039e, a 7-step ink alpha ramp, plus the declared --ds-* palette (mist, ecru, poppy). The only 10-step ramp is the sierra.chat assistant's accentBlue layer, a vendor surface kept at vendor provenance."
+    },
+    "F2": {
+     "grade": "meets",
+     "evidence": "light.color has page (white), surface.card/raised white, surface.band deep violet, surface.wash, surface.ecru, surface.violet, surface.mist and overlay.scrim (90% ink, from the video dialog)."
+    },
+    "F3": {
+     "grade": "partly",
+     "evidence": "text.primary/secondary/tertiary/on-dark/on-violet-quiet are measured; the link colour sits under action.link. No disabled text or error message text was observable on the signed-out surface."
+    },
+    "F4": {
+     "grade": "meets",
+     "evidence": "border.default (15% ink hairline), border.strong (50% ink, plan cards), border.ecom, border.auth, border.mist and border.focus (cobalt) are all captured."
+    },
+    "F5": {
+     "grade": "meets",
+     "evidence": "action.primary-bg/#4000cc hover/#330099 pressed, action.ink-bg with hover and pressed triples, action.link + link-pressed — all measured with CDP-forced pressed."
+    },
+    "F6": {
+     "grade": "missing",
+     "evidence": "Only color.error (#ff0000, the generator canvas default) and the assistant's green focus ring were observable; success/warning/info palettes live on authenticated and transactional surfaces."
+    },
+    "F7": {
+     "grade": "meets",
+     "evidence": "The product ships one public theme; every semantic role in the package exists in it (catalog themes: light only)."
+    },
+    "F8": {
+     "grade": "meets",
+     "evidence": "Four families with fallback stacks (sans, sans-app, mono, signature scripts), an 11-step named scale (display 80 through tiny), weights 300-700, line heights and tracking all measured."
+    },
+    "F9": {
+     "grade": "meets",
+     "evidence": "A 12-step spacing scale on a 4px base, tokenised from measured padding and gaps."
+    },
+    "F10": {
+     "grade": "partly",
+     "evidence": "Radius scale 2-16 + pill is tokenised; border widths exist only inside component specs (1px hairlines, 2px rings), not as a width scale."
+    },
+    "F11": {
+     "grade": "partly",
+     "evidence": "Control heights are recorded per component (61px fields, 45px CTA, 28px toggle); the focus ring's 2px width at 2px offset is in focus.ring's value. No icon-size scale: glyphs come from the 7_Docusign icon font, and no icon extraction ran."
+    },
+    "F12": {
+     "grade": "meets",
+     "evidence": "Six shadow tokens each tied to a use: soft (tabs/cards), launcher (chat pill), field-focus, ring-double (ecom focus), mist-ring, hairline-inset."
+    },
+    "F13": {
+     "grade": "partly",
+     "evidence": "Four durations (fast, colour, field, panel) measured from transitions; no distinct easing tokens (all easings were cubic-bezier on the same curve) and prefers-reduced-motion behaviour was not observable."
+    },
+    "F14": {
+     "grade": "partly",
+     "evidence": "Breakpoints (1440/390 with restacked mobile), content widths (1360px menu, 1280px FAQ) and z-layers (sticky header, 9999px-pill launcher, modal scrim) are documented in patterns.md and component entries, not as layout tokens."
+    },
+    "C1": {
+     "grade": "partly",
+     "evidence": "13-14 of the 19 checklist items: button, icon button, link, text field, select, checkbox, tabs, menu, dialog, card, list row (FAQ/feature rows) — plus the billing toggle read as segmented radios and story-logo tiles. Text area, switch, tooltip, toast, table, avatar and badge do not appear on the signed-out surface."
+    },
+    "C2": {
+     "grade": "meets",
+     "evidence": "209 states across 73 components: hover, focus-visible (real keyboard focus), pressed (CDP-forced), focused and filled on fields, selected on swatches/faces, open on menus/dialogs/accordions. Disabled, loading and error states are not reachable without submitting."
+    },
+    "C3": {
+     "grade": "meets",
+     "evidence": "A visible focus state is captured for every interactive component — cobalt 2px+2px rings on marketing, mist on violet bands, the white+cobalt double ring on ecom, inkwell on the account card."
+    },
+    "C4": {
+     "grade": "meets",
+     "evidence": "Every components.md entry annotates values with the palette token that carries them ('#ffffff color.white'), and component specs in raw/component-tokens.json are written against the token names."
+    },
+    "P1": {
+     "grade": "partly",
+     "evidence": "patterns.md covers the app shell (two-bar chrome, mega-menu, footer), forms (hero capture, trial, sign-in), filtering (stories filters, billing toggle), data display (cards, accordion, plan tables) and the generator workflow. Empty/loading/error, destructive confirmation and onboarding exist only behind auth or form submission."
+    },
+    "A1": {
+     "grade": "partly",
+     "evidence": "Fonts are named with fallbacks (DSIndigo/'DS Indigo', Noto Sans Mono, six script faces, 7_Docusign icon font) — all proprietary, no licence file. No icon set was extracted (catalog layoutGaps); glyphs appear in crops only."
+    },
+    "K1": {
+     "grade": "meets",
+     "evidence": "README covers the three-surface capture, the vars/measure/screenshot pipeline, the regional ecom redirect caveat, vendor-variable provenance, Emotion-hash fragility and the signed-out boundary."
+    },
+    "C5": {
+     "grade": "na",
+     "evidence": "Optional for a capture, and this product does not publish it."
+    },
+    "V1": {
+     "grade": "na",
+     "evidence": "Optional for a capture, and this product does not publish it."
+    },
+    "V2": {
+     "grade": "na",
+     "evidence": "Optional for a capture, and this product does not publish it."
+    },
+    "F15": {
+     "grade": "meets",
+     "evidence": "Script: all 4 pairs pass 4.5:1 across 1 themes; lowest 9.37:1 light muted (light.color.text.secondary) on page (light.color.page)"
+    },
+    "F16": {
+     "grade": "meets",
+     "evidence": "Script: 181 of 181 tokens name their source"
+    },
+    "K2": {
+     "grade": "meets",
+     "evidence": "Script: 7 rules, each linking a screenshot or crop"
+    },
+    "K3": {
+     "grade": "meets",
+     "evidence": "Script: DESIGN.md matches a fresh generation"
+    }
+   },
+   "name": "DocuSign",
+   "goodFor": "Agreement-platform marketing plus a live signature tool: inkwell #130032 on white with deep-violet #26065d bands and cobalt #4c00ff actions (#4000cc hover, #330099 pressed), declared --ds-* tokens on the signature generator, DS Indigo weight-300 display type, squared 4-8px radii, 2px cobalt focus rings and a white+cobalt double ring on the ecom storefront",
+   "url": "https://www.docusign.com",
    "captured": "2026-11-13",
    "themes": [
     "light"
    ],
    "platform": "web",
-   "category": "Media",
+   "category": "Productivity",
    "reviewed": "2026-11-13",
    "reviewedPlatform": "web"
   }
  ],
  "base": "2026-10-16",
- "reviewMethod": "re-reviewed after the Greptile pass: selectors corrected and remeasured, modal scrim tokenized, ghost state tracks split by surface, docs rebuilt"
+ "reviewMethod": "public-web capture review (re-applied after main merge)"
 }

@@ -1044,9 +1044,9 @@
     504
    ],
    "description": "Your feedback hub, on autopilot",
-   "status": "pending",
+   "status": "uncapturable",
    "package": null,
-   "notes": "",
+   "notes": "acquired by Atlassian 2025-09-03, standalone product sunset 2025-10-31; cycle.app is an unpublished Webflow site serving the generic 404 on every path; nothing honest to capture",
    "batch": 4
   },
   {
