@@ -9023,6 +9023,106 @@
       "layoutGaps": {
         "icons/": "the icon extraction pass was not run; the marks (the ES glyph, transport icons, social sign-in marks) are visible in the crops and screenshots"
       }
+    },
+    {
+      "slug": "enode",
+      "name": "Enode",
+      "url": "https://enode.com",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "energy-tech marketing design: a declared token layer (--color-brand-*/--color-gray-*/--color-enode-green-* palette scales, per-mode --color-background-*/--color-foreground-*/--color-card-*/--color-border-*/--color-line-*/--color-diagram-* semantic roles, --text-*/--leading-*/--tracking-* type ramp, --radius-* 2-10px plus full pills, grid/gutter/breakpoint/blur/ease tokens) under per-page data-mode themes - pale-green #f0fde8 light marketing with a 58px glass header and dark-glass mega-menus, whole-dark /platform pages (#151413 canvas, translucent tiles), scoped dark showcase sections with #b0f87c live-metric green, and a dark-framed platform login with a light panel",
+      "tags": [
+        "web",
+        "energy",
+        "saas",
+        "design-tokens",
+        "light",
+        "dark",
+        "per-page-theme",
+        "green-accent",
+        "variable-font",
+        "signed-out"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-13",
+      "access": "read-only (the marketing site and the platform login page are fully public signed out; everything behind platform.enode.com - the dashboard, docs portal, API surfaces - is an authenticated boundary never reached; the contact and login forms were measured and typed into then cleared, never submitted; every CTA and link was measured, never followed; the dormant Cookiebot layer shows no banner and was never answered)",
+      "themes": ["light", "dark"],
+      "widths": [1440, 390],
+      "entry": "systems/enode/README.md",
+      "tokens": "systems/enode/tokens.json",
+      "styleGuide": "systems/enode/style-guide.html",
+      "preview": {
+        "cover": "systems/enode/screenshots/home-light-default.png",
+        "icon": "systems/enode/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.color.background.primary",
+            "surface": "light.color.background.secondary",
+            "text": "light.color.foreground.primary",
+            "muted": "light.color.foreground.secondary",
+            "accent": "light.color.visual.diagram.accent",
+            "border": "light.color.border.primary.default"
+          },
+          "dark": {
+            "page": "dark.color.background.primary",
+            "surface": "dark.color.background.secondary",
+            "text": "dark.color.foreground.primary",
+            "muted": "dark.color.foreground.secondary",
+            "accent": "dark.color.visual.diagram.accent",
+            "border": "dark.color.border.primary.default"
+          }
+        },
+        "fonts": [
+          "core.font.family.sans",
+          "core.font.family.mono"
+        ]
+      },
+      "capture": {
+        "method": "public-web",
+        "source": "enode.com in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and crops from the live DOM. The site declares its token layer in ~160KB of inline CSS (283 resolved custom properties per mode probe), so the scales are declared values and the surface roles are measured computed values aliased to the declarations they match. The mode is per-page (data-mode on <html>), not a user toggle: most marketing pages paint light, /platform/overview and /platform/flexibility paint dark, and light pages carry scoped [data-mode=\"dark\"] showcase sections. Everything behind platform.enode.com is a documented authenticated boundary; the login app does not share this token layer",
+        "timestamp": "2026-11-13T20:00:00Z",
+        "harness": "Devin",
+        "model": "SWE-2 High",
+        "route": "public-web",
+        "routes": [
+          "/",
+          "/platform/overview",
+          "/platform/homes",
+          "/platform/flexibility",
+          "/platform/assets",
+          "/enterprise",
+          "/customers",
+          "/customers/vattenfall",
+          "/company",
+          "/careers",
+          "/partnerships",
+          "/newsroom",
+          "/newsroom/vattenfall-and-enode-bring-smart-charging-to-ev-owners-in-sweden",
+          "/updates",
+          "/updates/introducing-asset-overview-find-the-right-assets-in-seconds-not-days",
+          "/contact",
+          "/contact/partnerships",
+          "/privacy-policy",
+          "platform.enode.com/login",
+          "mobile /, /platform/overview, /contact and /updates"
+        ],
+        "gaps": [
+          "every post-login platform surface (dashboard, asset management, API keys) and docs.enode.com lives behind an account - an authenticated boundary never reached",
+          "the /contact, /contact/partnerships and platform login forms were measured at rest and typed into then cleared, never submitted - validation, error, loading and success states are absent rather than measured",
+          "the careers 'View open positions' link leaves enode.com for the ATS; the positions board was not captured",
+          "newsroom/updates articles and customer stories are covered by one captured example each; other article routes are the same templates, unmeasured",
+          "the hero showcase and mega-menu demo tiles hold live canvas/video content; a screenshot freezes one frame, so sparse-looking panels are a capture artifact",
+          "pressed states are forced with DevTools (CSS.forcePseudoState), so any script-applied mousedown state is missing",
+          "mega-menu items' focus/hover is partially covered - the panel closes on blur before a keyboard focus can always be held",
+          "icons: no standalone SVG set lifted this pass"
+        ],
+        "durationMin": 420,
+        "durationNote": "wall-clock across the capture sessions including kit adaptation (shooter, measurement and docs builders rewritten to the Enode DOM), the stylesheet harvest, screenshot and measurement passes on a headless Linux server, and the offline build",
+        "pr": "https://github.com/starship-terminal/constellations/pull/539"
+      },
+      "layoutGaps": {
+        "icons/": "the icon extraction pass was not run; the icons (the Enode mark, the mono product-area glyphs in the mega-menu, social glyphs, the node/diagram marks) are visible in the crops and screenshots"
+      }
     }
   ]
 }
