@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 102,
-    "system_domains": 94,
-    "matched_domains": 69,
-    "missing_domains": 364,
+    "system_packages": 103,
+    "system_domains": 95,
+    "matched_domains": 70,
+    "missing_domains": 363,
     "system_domains_absent_from_catalog": 25
   },
   "matched": {
@@ -825,6 +825,23 @@
         }
       ]
     },
+    "copy.ai": {
+      "catalog": [
+        {
+          "name": "Copy.ai",
+          "domain": "copy.ai",
+          "id": 435
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "copy",
+          "name": "Copy.ai",
+          "url": "https://www.copy.ai",
+          "name_match": true
+        }
+      ]
+    },
     "cursor.com": {
       "catalog": [
         {
@@ -1350,13 +1367,6 @@
         "name": "Copperx",
         "domain": "copperx.io",
         "id": 789
-      }
-    ],
-    "copy.ai": [
-      {
-        "name": "Copy.ai",
-        "domain": "copy.ai",
-        "id": 435
       }
     ],
     "cosmos.so": [

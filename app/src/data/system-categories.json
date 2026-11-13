@@ -610,5 +610,11 @@
     "groupId": "web-categories",
     "labels": ["AI Tool"],
     "reason": "catalog.json describes a real-time AI voice and audio product (text-to-speech, voice agents) \u2014 the AI Tool label."
+  },
+  {
+    "referenceId": "systems:copy",
+    "groupId": "web-categories",
+    "labels": ["AI Tool"],
+    "reason": "catalog.json category ai-agent maps to AI Tool."
   }
 ]
