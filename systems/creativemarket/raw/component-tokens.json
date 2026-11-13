@@ -1,0 +1,625 @@
+{
+ "_about": "The token tree build_tokens.py turns into tokens.json. creativemarket.com's public surface is a Rails/Vue storefront under data-theme=\"legacy\" whose declared --default-*/ui-button var layer (raw/css-vars.json, resolved under the one painted theme) is var-referenced wherever it names a value, and measured computed values (raw/components-computed.json) cover the rest: the Averta ramp (72/48/36/24px 600 headings, 13-16px UI), the #088178 teal button fills and #4e42a1 accents on white text, the 8px control and 16px card radii, the 20-32px pills, the white page and #fafdff fields.",
+ "core": {
+  "font": {
+   "family": {
+    "averta": {
+     "var": "--default-font-family",
+     "type": "fontFamily",
+     "source": "css-var --default-font-family resolved (raw/css-vars.json); every measured component computes fontFamily Averta (raw/components-computed.json)",
+     "description": "Averta (self-hosted webfont, raw/css-vars.json fonts) — every heading and all UI text."
+    }
+   },
+   "weight": {
+    "regular": {
+     "value": "400",
+     "type": "fontWeight",
+     "source": "computed fontWeight of nav-link default (raw/components-computed.json)",
+     "description": "Measured 400 — body and nav text."
+    },
+    "semibold": {
+     "value": "600",
+     "type": "fontWeight",
+     "source": "computed fontWeight of join-link default (raw/components-computed.json)",
+     "description": "Measured 600 — buttons, links, headings, the wordmark."
+    },
+    "bold": {
+     "value": "700",
+     "type": "fontWeight",
+     "source": "computed fontWeight of plan-card default (raw/components-computed.json)",
+     "description": "Measured 700 — the membership plan card's price figure."
+    }
+   },
+   "size": {
+    "display": {
+     "value": "72px",
+     "type": "fontSize",
+     "source": "computed fontSize of membership-h1 default (raw/components-computed.json)",
+     "description": "The membership hero's measured 72px Averta 600."
+    },
+    "h1": {
+     "value": "48px",
+     "type": "fontSize",
+     "source": "computed fontSize of category-h1 default (raw/components-computed.json)",
+     "description": "The 48px page heading (category/search)."
+    },
+    "signin": {
+     "value": "36px",
+     "type": "fontSize",
+     "source": "computed fontSize of signin-h1 default (raw/components-computed.json)",
+     "description": "The 36px sign-in heading."
+    },
+    "h2": {
+     "value": "24px",
+     "type": "fontSize",
+     "source": "computed fontSize of product-h1 default (raw/components-computed.json)",
+     "description": "The 24px product/section heading."
+    },
+    "m-heading": {
+     "value": "20px",
+     "type": "fontSize",
+     "source": "computed fontSize of m-heading default (raw/components-computed.json)",
+     "description": "The mobile 20px section heading."
+    },
+    "body": {
+     "value": "14px",
+     "type": "fontSize",
+     "source": "computed fontSize of site-header default (raw/components-computed.json)",
+     "description": "The 16px UI/body size."
+    },
+    "input": {
+     "value": "14px",
+     "type": "fontSize",
+     "source": "computed fontSize of nav-search default (raw/components-computed.json)",
+     "description": "The 15px field text."
+    },
+    "button": {
+     "value": "14px",
+     "type": "fontSize",
+     "source": "computed fontSize of join-link default (raw/components-computed.json)",
+     "description": "The 14px button/link size."
+    },
+    "nav": {
+     "value": "13px",
+     "type": "fontSize",
+     "source": "computed fontSize of nav-link default (raw/components-computed.json)",
+     "description": "The 13px nav link size."
+    }
+   }
+  },
+  "color": {
+   "brand": {
+    "teal": {
+     "value": "#088178",
+     "type": "color",
+     "source": "css-var --_color declared on .ui-button--primary[data-v-69931b70] in extracted_global_refresh.css (raw/css-vars.json)",
+     "description": "The #088178 signature teal — the primary action fill (Add to cart, Log In)."
+    },
+    "teal-hover": {
+     "value": "#003a37",
+     "type": "color",
+     "source": "css-var --_color-hover declared on .ui-button--primary[data-v-69931b70] in extracted_global_refresh.css (raw/css-vars.json)",
+     "description": "The declared #003a37 teal hover (link-hover colour too)."
+    },
+    "teal-soft": {
+     "value": "#dff8f6",
+     "type": "color",
+     "source": "css-var --_color-soft declared on .ui-button--primary[data-v-69931b70] in extracted_global_refresh.css (raw/css-vars.json)",
+     "description": "The #dff8f6 teal wash (enterprise CTA, earnings chip, site banner)."
+    },
+    "accent": {
+     "value": "#4e42a1",
+     "type": "color",
+     "source": "css-var --_color declared on .ui-button--accent[data-v-69931b70] in extracted_global_refresh.css (raw/css-vars.json)",
+     "description": "The #4e42a1 purple — the accent action (Save 25%, membership hero)."
+    },
+    "accent-hover": {
+     "value": "#281f6b",
+     "type": "color",
+     "source": "css-var --_color-hover declared on .ui-button--accent[data-v-69931b70] in extracted_global_refresh.css (raw/css-vars.json)",
+     "description": "The declared #281f6b purple hover."
+    },
+    "accent-soft": {
+     "value": "#edeeff",
+     "type": "color",
+     "source": "css-var --_color-soft declared on .ui-button--accent[data-v-69931b70] in extracted_global_refresh.css (raw/css-vars.json)",
+     "description": "The #edeeff purple wash."
+    },
+    "sale": {
+     "value": "#d53a9d",
+     "type": "color",
+     "source": "css-var --default-color declared on html[data-theme=\"legacy\"] .fonts-dropdown__browse-all--sale[data-v-7a7a27c8] in extracted_global_refresh.css (raw/css-vars.json)",
+     "description": "The #d53a9d sale pink painted on SALE nav items."
+    },
+    "gold": {
+     "value": "#fcc875",
+     "type": "color",
+     "source": "literal Sass colour observed across the harvested sheets (raw/css-vars.json sheets)",
+     "description": "The #fcc875 gold painted on rating stars and the Save 25% corner badge."
+    }
+   }
+  },
+  "radius": {
+   "control": {
+    "value": "8px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of add-cart default (raw/components-computed.json)",
+    "description": "The 8px button radius (declared --btn-border-radius)."
+   },
+   "card": {
+    "value": "16px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of plan-card default (raw/components-computed.json)",
+    "description": "The 16px card radius (plan card, shop card, user dropdown)."
+   },
+   "chip": {
+    "value": "20px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of search-chip default (raw/components-computed.json)",
+    "description": "The 20px suggested-search pill."
+   },
+   "round": {
+    "value": "32px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of filter-btn default (raw/components-computed.json)",
+    "description": "The 32px filter pill."
+   },
+   "follow": {
+    "value": "24px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of follow-btn default (raw/components-computed.json)",
+    "description": "The 24px shop FOLLOW pill."
+   },
+   "button": {
+    "value": "3px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of login-btn default (raw/components-computed.json)",
+    "description": "The 3px legacy sign-in button radius."
+   },
+   "field": {
+    "var": "--default-input-border-radius",
+    "type": "dimension",
+    "source": "css-var --default-input-border-radius resolved (raw/css-vars.json); 3px on :root, 12px under data-theme=legacy",
+    "description": "The declared field radius."
+   },
+   "dropdown": {
+    "var": "--user-dropdown-border-radius",
+    "type": "dimension",
+    "source": "css-var --user-dropdown-border-radius resolved (raw/css-vars.json)",
+    "description": "The declared 4px dropdown/menu radius."
+   }
+  },
+  "border": {
+   "field": {
+    "width": {
+     "var": "--default-input-border-width",
+     "type": "dimension",
+     "source": "css-var --default-input-border-width resolved (raw/css-vars.json); 1px on :root, 2px under data-theme=legacy",
+     "description": "The declared field border width."
+    }
+   }
+  },
+  "shadow": {
+   "dropdown": {
+    "value": "rgba(0, 0, 0, 0.1) 0px 4px 8px 0px",
+    "type": "other",
+    "source": "css-var --user-dropdown-box-shadow resolved (raw/css-vars.json)",
+    "description": "The declared dropdown/menu elevation: 0 4px 8px 10% ink."
+   }
+  },
+  "spacing": {
+   "container": {
+    "var": "--container-content-width",
+    "type": "dimension",
+    "source": "css-var --container-content-width resolved (raw/css-vars.json)",
+    "description": "The 1450px max content width."
+   },
+   "header-h": {
+    "value": "73px",
+    "type": "dimension",
+    "source": "computed height of site-header default (raw/components-computed.json)",
+    "description": "The 73px site header height."
+   },
+   "m-header-h": {
+    "value": "119px",
+    "type": "dimension",
+    "source": "computed height of m-header default (raw/components-computed.json)",
+    "description": "The 119px mobile header."
+   },
+   "btn-h": {
+    "var": "--btn-height",
+    "type": "dimension",
+    "source": "css-var --btn-height resolved (raw/css-vars.json)",
+    "description": "The declared 50px button height."
+   }
+  },
+  "motion": {
+   "field": {
+    "var": "--default-input-transition",
+    "type": "other",
+    "source": "css-var --default-input-transition resolved (raw/css-vars.json)",
+    "description": "The field's declared 0.4s cubic-bezier(0.25, 1, 0.5, 1) transition."
+   }
+  }
+ },
+ "light": {
+  "color": {
+   "action": {
+    "primary": {
+     "value": "#088178",
+     "type": "color",
+     "source": "css-var --_color declared on .ui-button--primary[data-v-69931b70] in extracted_global_refresh.css (raw/css-vars.json)",
+     "description": "The #088178 primary action fill."
+    },
+    "primary-hover": {
+     "value": "#003a37",
+     "type": "color",
+     "source": "css-var --_color-hover declared on .ui-button--primary[data-v-69931b70] in extracted_global_refresh.css (raw/css-vars.json)",
+     "description": "The #003a37 action hover."
+    },
+    "primary-soft": {
+     "value": "#dff8f6",
+     "type": "color",
+     "source": "css-var --_color-soft declared on .ui-button--primary[data-v-69931b70] in extracted_global_refresh.css (raw/css-vars.json)",
+     "description": "The #dff8f6 action wash."
+    },
+    "accent": {
+     "value": "#4e42a1",
+     "type": "color",
+     "source": "css-var --_color declared on .ui-button--accent[data-v-69931b70] in extracted_global_refresh.css (raw/css-vars.json)",
+     "description": "The #4e42a1 accent fill."
+    },
+    "accent-hover": {
+     "value": "#281f6b",
+     "type": "color",
+     "source": "css-var --_color-hover declared on .ui-button--accent[data-v-69931b70] in extracted_global_refresh.css (raw/css-vars.json)",
+     "description": "The #281f6b accent hover."
+    },
+    "accent-soft": {
+     "value": "#edeeff",
+     "type": "color",
+     "source": "css-var --_color-soft declared on .ui-button--accent[data-v-69931b70] in extracted_global_refresh.css (raw/css-vars.json)",
+     "description": "The #edeeff accent wash."
+    }
+   },
+   "background": {
+    "paper": {
+     "var": "--header-bg-color",
+     "type": "color",
+     "source": "css-var --header-bg-color resolved (raw/css-vars.json)",
+     "description": "The #ffffff page/header fill."
+    },
+    "field": {
+     "var": "--default-input-bg-color",
+     "type": "color",
+     "source": "css-var --default-input-bg-color resolved (raw/css-vars.json)",
+     "description": "The #fafdff input fill."
+    },
+    "field-active": {
+     "var": "--default-input-active-bg-color",
+     "type": "color",
+     "source": "css-var --default-input-active-bg-color resolved (raw/css-vars.json)",
+     "description": "The field fill while editing (legacy: same #fafdff)."
+    },
+    "site-banner": {
+     "var": "--site-banner-bg-color",
+     "type": "color",
+     "source": "css-var --site-banner-bg-color resolved (raw/css-vars.json)",
+     "description": "The declared banner fill — #f9d1e7 on :root, #dff8f6 under data-theme=legacy."
+    },
+    "earnings": {
+     "var": "--user-dropdown-earnings-bg-color",
+     "type": "color",
+     "source": "css-var --user-dropdown-earnings-bg-color resolved (raw/css-vars.json)",
+     "description": "The #dff8f6 earnings chip in the user dropdown."
+    },
+    "chip": {
+     "value": "#fee4c3",
+     "type": "color",
+     "source": "computed backgroundColor of search-chip default (raw/components-computed.json)",
+     "description": "The #fee4c3 suggested-search chip fill."
+    }
+   },
+   "text": {
+    "ink": {
+     "var": "--default-color",
+     "type": "color",
+     "source": "css-var --default-color resolved (raw/css-vars.json)",
+     "description": "The #303538 default ink."
+    },
+    "muted": {
+     "var": "--default-input-placeholder-color",
+     "type": "color",
+     "source": "css-var --default-input-placeholder-color resolved (raw/css-vars.json)",
+     "description": "The #899298 placeholder/muted ink."
+    },
+    "link-hover": {
+     "var": "--default-link-hover-color",
+     "type": "color",
+     "source": "css-var --default-link-hover-color resolved (raw/css-vars.json)",
+     "description": "The #003a37 link hover (teal-hover)."
+    },
+    "on-primary": {
+     "value": "#ffffff",
+     "type": "color",
+     "source": "computed color of add-cart default (raw/components-computed.json)",
+     "description": "White text on the teal/purple fills."
+    },
+    "secondary": {
+     "value": "#4b5258",
+     "type": "color",
+     "source": "literal Sass colour observed across the harvested sheets (raw/css-vars.json sheets)",
+     "description": "The #4b5258 secondary ink painted on bylines and meta text."
+    },
+    "tertiary": {
+     "value": "#6e777d",
+     "type": "color",
+     "source": "literal Sass colour observed across the harvested sheets (raw/css-vars.json sheets)",
+     "description": "The #6e777d tertiary ink on small print."
+    },
+    "danger": {
+     "value": "#a02828",
+     "type": "color",
+     "source": "literal Sass colour observed across the harvested sheets (raw/css-vars.json sheets)",
+     "description": "The #a02828 danger ink."
+    },
+    "error": {
+     "value": "#e06868",
+     "type": "color",
+     "source": "literal Sass colour observed across the harvested sheets (raw/css-vars.json sheets)",
+     "description": "The #e06868 error red (same value as --accessible-outline-color)."
+    }
+   },
+   "border": {
+    "hairline": {
+     "var": "--user-dropdown-divider-color",
+     "type": "color",
+     "source": "css-var --user-dropdown-divider-color resolved (raw/css-vars.json)",
+     "description": "The #e2e9ee dropdown divider hairline."
+    },
+    "input": {
+     "var": "--default-input-border-color",
+     "type": "color",
+     "source": "css-var --default-input-border-color resolved (raw/css-vars.json)",
+     "description": "The input border — #fafdff on :root, #899298 under data-theme=legacy."
+    },
+    "input-active": {
+     "var": "--default-input-active-border-color",
+     "type": "color",
+     "source": "css-var --default-input-active-border-color resolved (raw/css-vars.json)",
+     "description": "The active input border (#303538 :root / #899298 legacy)."
+    },
+    "focus": {
+     "var": "--accessible-outline-color",
+     "type": "color",
+     "source": "css-var --accessible-outline-color resolved (raw/css-vars.json)",
+     "description": "The #e06868 accessible outline."
+    }
+   }
+  }
+ },
+ "dark": {},
+ "component": {
+  "header-height": {
+   "value": "73px",
+   "type": "dimension",
+   "source": "computed height of site-header default (raw/components-computed.json)",
+   "description": "The 73px site header."
+  },
+  "search-width": {
+   "value": "585px",
+   "type": "dimension",
+   "source": "computed width of nav-search default (raw/components-computed.json)",
+   "description": "The 585px header search field."
+  },
+  "search-height": {
+   "value": "44px",
+   "type": "dimension",
+   "source": "computed height of nav-search default (raw/components-computed.json)",
+   "description": "The 44px header search height."
+  },
+  "save25-height": {
+   "value": "32px",
+   "type": "dimension",
+   "source": "computed height of save25-button default (raw/components-computed.json)",
+   "description": "The 32px purple Save 25% button."
+  },
+  "product-card-width": {
+   "value": "337px",
+   "type": "dimension",
+   "source": "computed width of product-card default (raw/components-computed.json)",
+   "description": "The 337px home product card."
+  },
+  "add-to-cart-height": {
+   "value": "44px",
+   "type": "dimension",
+   "source": "computed height of add-to-cart-btn default (raw/components-computed.json)",
+   "description": "The 44px card Add To Cart button."
+  },
+  "category-card-width": {
+   "value": "320px",
+   "type": "dimension",
+   "source": "computed width of category-card default (raw/components-computed.json)",
+   "description": "The 320px category result card."
+  },
+  "filter-btn-height": {
+   "value": "44px",
+   "type": "dimension",
+   "source": "computed height of filter-btn default (raw/components-computed.json)",
+   "description": "The 44px filter pill."
+  },
+  "buy-box-width": {
+   "value": "450px",
+   "type": "dimension",
+   "source": "computed width of license-row default (raw/components-computed.json)",
+   "description": "The 450px buy-box column."
+  },
+  "license-row-height": {
+   "value": "24px",
+   "type": "dimension",
+   "source": "computed height of license-row default (raw/components-computed.json)",
+   "description": "The 24px license option row."
+  },
+  "add-cart-height": {
+   "value": "45px",
+   "type": "dimension",
+   "source": "computed height of add-cart default (raw/components-computed.json)",
+   "description": "The 45px teal Add to cart."
+  },
+  "buy-now-height": {
+   "value": "40px",
+   "type": "dimension",
+   "source": "computed height of buy-now default (raw/components-computed.json)",
+   "description": "The 40px outlined Buy now."
+  },
+  "enterprise-cta-height": {
+   "value": "52px",
+   "type": "dimension",
+   "source": "computed height of enterprise-cta default (raw/components-computed.json)",
+   "description": "The 52px enterprise CTA."
+  },
+  "follow-btn-width": {
+   "value": "232px",
+   "type": "dimension",
+   "source": "computed width of follow-btn default (raw/components-computed.json)",
+   "description": "The 232px shop FOLLOW pill."
+  },
+  "chip-height": {
+   "value": "44px",
+   "type": "dimension",
+   "source": "computed height of search-chip default (raw/components-computed.json)",
+   "description": "The 44px suggested-search chip."
+  },
+  "accordion-row-height": {
+   "value": "88px",
+   "type": "dimension",
+   "source": "computed height of accordion-row default (raw/components-computed.json)",
+   "description": "The 88px details/summary row."
+  },
+  "specs-width": {
+   "value": "450px",
+   "type": "dimension",
+   "source": "computed width of specs default (raw/components-computed.json)",
+   "description": "The 450px Product Specs block."
+  },
+  "plan-card-width": {
+   "value": "274px",
+   "type": "dimension",
+   "source": "computed width of plan-card default (raw/components-computed.json)",
+   "description": "The 274px membership plan card."
+  },
+  "signin-field-height": {
+   "value": "43px",
+   "type": "dimension",
+   "source": "computed height of username-field default (raw/components-computed.json)",
+   "description": "The 43px sign-in fields."
+  },
+  "login-btn-height": {
+   "value": "51px",
+   "type": "dimension",
+   "source": "computed height of login-btn default (raw/components-computed.json)",
+   "description": "The 51px Log In / SSO buttons."
+  },
+  "footer-height": {
+   "value": "488.5px",
+   "type": "dimension",
+   "source": "computed height of footer default (raw/components-computed.json)",
+   "description": "The ~488px footer."
+  },
+  "m-header-height": {
+   "value": "119px",
+   "type": "dimension",
+   "source": "computed height of m-header default (raw/components-computed.json)",
+   "description": "The 119px mobile header."
+  },
+  "m-menu-button": {
+   "value": "45px",
+   "type": "dimension",
+   "source": "computed width of m-menu-button default (raw/components-computed.json)",
+   "description": "The 45px hamburger trigger."
+  },
+  "m-drawer-width": {
+   "value": "295.5px",
+   "type": "dimension",
+   "source": "computed width of m-menu-open default (raw/components-computed.json)",
+   "description": "The 295px mobile menu drawer."
+  },
+  "m-search-height": {
+   "value": "46px",
+   "type": "dimension",
+   "source": "computed height of m-search default (raw/components-computed.json)",
+   "description": "The 46px mobile search."
+  },
+  "nav-link-size": {
+   "value": "13px",
+   "type": "fontSize",
+   "source": "computed fontSize of nav-link default (raw/components-computed.json)",
+   "description": "Nav link 13px."
+  },
+  "sale-color": {
+   "value": "#4e42a1",
+   "type": "color",
+   "source": "computed backgroundColor of save25-button default (raw/components-computed.json)",
+   "description": "The #4e42a1 Save 25% fill."
+  },
+  "button": {
+   "add-cart-states": {
+    "type": "other",
+    "value": {
+     "default": {
+      "backgroundColor": "#088178",
+      "color": "#ffffff"
+     },
+     "hover": {
+      "backgroundColor": "#003a37",
+      "color": "#ffffff"
+     },
+     "pressed": {
+      "backgroundColor": "#003a37",
+      "color": "#ffffff"
+     }
+    },
+    "source": "computed styles of add-cart default/hover/pressed (raw/components-computed.json)",
+    "description": "The add-cart button's measured state track."
+   },
+   "buy-now-states": {
+    "type": "other",
+    "value": {
+     "default": {
+      "backgroundColor": "#ffffff",
+      "color": "#088178"
+     },
+     "hover": {
+      "backgroundColor": "#dff8f6",
+      "color": "#003a37"
+     },
+     "pressed": {
+      "backgroundColor": "#dff8f6",
+      "color": "#003a37"
+     }
+    },
+    "source": "computed styles of buy-now default/hover/pressed (raw/components-computed.json)",
+    "description": "The buy-now button's measured state track."
+   },
+   "save25-states": {
+    "type": "other",
+    "value": {
+     "default": {
+      "backgroundColor": "#4e42a1",
+      "color": "#ffffff"
+     },
+     "hover": {
+      "backgroundColor": "#281f6b",
+      "color": "#ffffff"
+     },
+     "pressed": {
+      "backgroundColor": "#281f6b",
+      "color": "#ffffff"
+     }
+    },
+    "source": "computed styles of save25-button default/hover/pressed (raw/components-computed.json)",
+    "description": "The save25 button's measured state track."
+   }
+  }
+ }
+}
