@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 105,
-    "system_domains": 97,
-    "matched_domains": 72,
-    "missing_domains": 361,
+    "system_packages": 106,
+    "system_domains": 98,
+    "matched_domains": 73,
+    "missing_domains": 360,
     "system_domains_absent_from_catalog": 25
   },
   "matched": {
@@ -842,6 +842,23 @@
         }
       ]
     },
+    "cosmos.so": {
+      "catalog": [
+        {
+          "name": "Cosmos",
+          "domain": "cosmos.so",
+          "id": 384
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "cosmos",
+          "name": "Cosmos",
+          "url": "https://www.cosmos.so",
+          "name_match": true
+        }
+      ]
+    },
     "cursor.com": {
       "catalog": [
         {
@@ -1401,13 +1418,6 @@
         "name": "Copperx",
         "domain": "copperx.io",
         "id": 789
-      }
-    ],
-    "cosmos.so": [
-      {
-        "name": "Cosmos",
-        "domain": "cosmos.so",
-        "id": 384
       }
     ],
     "craft.do": [
