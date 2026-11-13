@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Docusign style guide</title>
+<meta name="description" content="Docusign design tokens and the public signed-out surfaces' components, rendered from tokens.json with the declared and measured values.">
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  --sg-sans: DSIndigo, "DS Indigo", Helvetica, Arial, ui-sans-serif, system-ui, sans-serif;
+  --sg-serif: "DS Indigo", Georgia, "Times New Roman", serif;
+  --sg-mono: "Noto Sans Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--color-text-primary, #130032); background: var(--color-page, #fff); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 300 48px/1.1 var(--sg-sans); margin: 0 0 4px; letter-spacing: -0.02em; }
+h2.sh { font: 600 12px/1 var(--sg-sans); letter-spacing: .8px; text-transform: uppercase; color: var(--color-text-primary, #130032); opacity: .75; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--color-border-default, rgba(19,0,50,.15)); }
+.lead { max-width: 62ch; color: var(--color-text-primary, #130032); opacity: .8; }
+.note { font-size: 13px; color: var(--color-text-primary, #130032); opacity: .65; max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--color-text-primary, #130032); opacity: .6; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.pal.band { background: var(--color-surface-band, #26065d); padding: 12px; border-radius: 8px; }
+.pal.band .nm, .pal.band .vl { color: #fff; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--color-border-default, rgba(19,0,50,.15)); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--color-text-primary, #130032); opacity: .65; }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--color-border-default, rgba(19,0,50,.15)); background: var(--color-white, #fff); font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--color-text-primary, #130032); opacity: .65; }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--color-border-default, rgba(19,0,50,.15)); overflow: hidden; background: var(--color-page, #fff); }
+.ubar { display: flex; align-items: center; gap: 18px; height: 30px; padding: 0 16px; font-size: 12px; font-weight: 500; letter-spacing: .2px; background: var(--color-surface-band, #26065d); color: #fff; }
+.navbar { display: flex; align-items: center; gap: 22px; height: var(--component-nav-header-height, 69px); padding: 0 12px 0 22px; font-size: 14px; font-weight: 500; letter-spacing: .2px; color: var(--color-text-secondary, rgba(19,0,50,.75)); border-bottom: 1px solid var(--color-border-default, rgba(19,0,50,.15)); }
+.navbar .wm { font-weight: 600; font-size: 20px; letter-spacing: -0.02em; color: var(--color-text-primary, #130032); }
+.navbar .sp { flex: 1; }
+.navbar .u { text-transform: uppercase; font-weight: 600; font-size: 14px; letter-spacing: .2px; color: var(--color-action-outline-border, #4c00ff); }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-button-height, 45px); padding: 0 16px; font-size: 14px; font-weight: 600; letter-spacing: .2px; border-radius: var(--radius-8, 8px); border: 1px solid transparent; text-transform: uppercase; }
+.btn.primary { background: var(--color-action-primary-bg, #4c00ff); color: var(--color-action-primary-text, #fff); }
+.btn.outline { border-color: var(--color-action-outline-border, #4c00ff); color: var(--color-action-outline-border, #4c00ff); text-transform: none; font-weight: 400; font-size: 16px; }
+.btn.ink { background: var(--color-action-ink-bg, #130032); color: #fff; text-transform: none; font-weight: 500; font-size: 16px; }
+.btn.mist { background: var(--color-surface-mist, #cbc2ff); color: var(--color-violet-30, rgba(38,6,93,.5)); text-transform: none; font-weight: 500; font-size: 16px; }
+.hero { color: #fff; background: var(--color-surface-band, #26065d); padding: 72px 40px; font: 300 56px/1.08 var(--sg-sans); letter-spacing: -1.25px; text-align: center; }
+.hero small { display: block; font: 400 18px/1.5 var(--sg-sans); color: #fff; letter-spacing: 0; margin: 16px auto 22px; max-width: 46ch; }
+.hero .row { display: inline-flex; margin-top: 10px; }
+.hero .fld { height: var(--component-field-height, 61px); width: 340px; background: #fff; color: var(--color-text-primary, #130032); border-radius: var(--component-field-radius, 8px) 0 0 var(--component-field-radius, 8px); display: flex; align-items: center; padding: 0 16px; font: 400 18px/1 var(--sg-sans); opacity: .95; }
+.hero .go { height: var(--component-field-height, 61px); border-radius: 0 var(--component-field-radius, 8px) var(--component-field-radius, 8px) 0; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; padding: 0 0 4px; }
+.tile { border: 1px solid var(--color-border-strong, rgba(19,0,50,.5)); padding: 18px; font-size: 13px; background: var(--color-white, #fff); border-radius: var(--component-card-radius, 16px); }
+.tile b { display: block; font: 400 30px/1.24 var(--sg-sans); margin-bottom: 4px; }
+.tile .sub { opacity: .65; font-size: 12px; }
+.sgw { background: var(--color-surface-ecru, #f8f3f0); padding: 28px; }
+.sgcard { background: #fff; border: 1px solid var(--color-border-mist, #cbc2ff); border-radius: var(--radius-8, 8px); padding: 18px; }
+.swatches { display: flex; gap: 8px; margin: 12px 0; }
+.swatches i { width: 32px; height: 32px; border-radius: var(--radius-8, 8px); display: block; border: 1px solid rgba(19,0,50,.15); }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--color-border-default, rgba(19,0,50,.15)); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--color-border-default, rgba(19,0,50,.15)); }
+.tr .ts { font-family: var(--sg-sans); }
+.tr .tv { font-size: 12px; color: var(--color-text-primary, #130032); opacity: .65; font-family: var(--sg-mono); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Docusign style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">Docusign, measured</h2>
+  <p class="lead">docusign.com signed out is three surfaces: the Next.js + Emotion marketing site (inkwell #130032 text on white, deep-violet #26065d bands, cobalt #4c00ff actions), the signature generator on an ecru #f8f3f0 ground (the only surface that declares a real token layer — the --ds-* brand set and shadcn roles), and the /en-SG/ ecom pricing storefront plus the account.docusign.com sign-in card (Tailwind + Emotion, DXP layer). Buttons run squared at 4-8px radius, fields float labels in 61px-tall boxes with 15% ink hairlines, and keyboard focus draws a 2px cobalt ring at 2px offset — a white + cobalt double ring on the storefront.</p>
+  <p class="note">Read from docusign.com on 2026-11-15, signed out, in headless Chromium. Everything behind account.docusign.com/oauth is a documented boundary; no form was ever submitted, no consent control answered, and the pricing page geo-redirected to /en-SG/ and is captured as served. DSIndigo and the script faces are served fonts and are not loaded here: samples fall back to system sans.</p>
+
+  <h2 class="sh">The chrome</h2>
+  <p class="lead">A 30px deep-violet utility strip sits over the 69px white header: wordmark, Products/Solutions/Resources mega-menu triggers, Enterprise and Plans &amp; Pricing links, then uppercase text actions (Contact sales, Buy now) and the filled cobalt Try-for-free pill at 8px radius, 14/21 weight 600.</p>
+  <div class="mock">
+    <div class="ubar">Docusign unveils IAM 2.0 — a new era of agreement management <span style="flex:1"></span> Search &nbsp; Support &nbsp; Access Documents &nbsp; Log In</div>
+    <div class="navbar"><span class="wm">Docusign</span><span>Products &#9662;</span><span>Solutions &#9662;</span><span>Resources &#9662;</span><span>Enterprise</span><span>Plans &amp; Pricing</span><span class="sp"></span><span class="u">Contact sales</span><span class="u">Buy now</span><span class="btn primary" style="height:45px">Try for free</span></div>
+  </div>
+
+  <h2 class="sh">The hero band</h2>
+  <p class="lead">The home hero paints deep violet (#26065d): an 80/86.4 weight-300 headline at -1.5px tracking, an 18/27 lede, then the capture row — a 61px floating-label field against an inkwell #130032 Get-Started button.</p>
+  <div class="mock">
+    <div class="hero">Agree better<small>Send, sign, and manage agreements with the #1 e-signature and Intelligent Agreement Management platform.</small><span class="row"><span class="fld">Work email</span><span class="btn ink go">Get started</span></span></div>
+  </div>
+
+  <h2 class="sh">Pricing storefront</h2>
+  <p class="lead">The ecom page (served /en-SG/) cards paint white at 16px radius with a 50% ink border; plan names set 30/37.2, Buy now fills cobalt at 8px, and Contact sales fills inkwell — focus draws the 2px-white + 4px-cobalt double ring.</p>
+  <div class="mock" style="padding:20px">
+    <div class="grid">
+      <div class="tile"><b>Personal</b><span class="sub">S$13/mo billed annually</span><div style="margin-top:14px"><span class="btn primary" style="height:40px;text-transform:none;font-weight:500">Buy now</span></div></div>
+      <div class="tile"><b>Enterprise</b><span class="sub">Custom plans</span><div style="margin-top:14px"><span class="btn ink" style="height:40px">Contact sales</span></div></div>
+    </div>
+  </div>
+
+  <h2 class="sh">Signature generator</h2>
+  <p class="lead">The generator is the only declaring surface: ecru ground, mist #cbc2ff field borders and download fills, cobalt accents, 8px radii, and a Black/Cobalt/Coral swatch row whose Cobalt is --ds-cobalt itself.</p>
+  <div class="mock sgw">
+    <div class="sgcard">
+      <div style="font:400 24px/1.2 var(--sg-serif);font-style:italic">Alex Sample</div>
+      <div class="swatches"><i style="background:#000"></i><i style="background:var(--color-cobalt,#4c00ff)"></i><i style="background:var(--color-poppy,#ff5252)"></i></div>
+      <span class="btn mist" style="width:200px;height:48px">Download as PNG</span>
+    </div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The declared --ds-* brand set (cobalt, inkwell, deep-violet, mist, poppy, ecru) anchors the palette; the measured ramp holds the painted hover/pressed steps, ink alphas, the account-page deep-violet button and the sierra.chat assistant's own violet. The assistant-ramp group is the only 10-step ramp in evidence — declared in the embedded assistant agent's stylesheet, kept with vendor provenance.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing and radius</h2>
+  <p class="lead">Corners stay tight: 4px on links/toggles/submits, 8px on buttons and fields, 6px on generator tabs, 10px as the generator's declared --radius, 16px on ecom plan cards, 9999px only on the floating assistant launcher. Spacing runs a 2-96px grid with 80-96px section padding.</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <p class="lead">Shadows are restraint: a 1px ink-15 inset hairline for ghost hovers, a 1px cobalt inset for focused fields, the storefront's white + cobalt double focus ring, and only the floating launcher lifts.</p>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">DS Indigo everywhere, weight 300 for display sizes (80/86.4 h1 down through 48/51.84), 400-600 for UI. Sizes are measured; samples fall back to system sans.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared --ds-*/--dxp-*/assistant variables from the live stylesheets and computed styles on real components across all three surfaces</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, focused, filled and open states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable (and the sheet that declared it) or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = /*TOKENS*/null;
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    const band = /on-dark|band|scrim/.test(g) ? ' band' : '';
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal${band}">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  const lightRoles = flat(TOK.light || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+  if (lightRoles.length) {
+    h += `<div class="pal-h">light roles</div><div class="pal">`;
+    for (const [n, t] of lightRoles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.duration || {}, 'duration.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  for (const [n, t] of flat(TOK.core.shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => (x.inset ? 'inset ' : '') + x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.spread + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat((TOK.light.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(t.v);
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).tracking || {}, 'font.tracking.')) h += `<div class="tr"><span class="ts" style="letter-spacing:${esc(t.v)}">${esc(n)} — Docusign</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Docusign</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>

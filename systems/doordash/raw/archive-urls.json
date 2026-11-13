@@ -1,0 +1,56 @@
+{
+ "note": "DoorDash capture provenance. Live *.doordash.com answered Cloudflare 403 to every client tried on 2026-11-13; the product evidence in this package is the product’s own SSR HTML/CSS rendered from these Internet Archive snapshots. Timestamps are the wayback capture id.",
+ "boundary": "https://www.doordash.com/ and related hosts returned 403 \"Performing security verification\" (curl, headless Chromium, headed Chrome, 2026-11-13).",
+ "routes": {
+  "home": {
+   "snapshot": "https://web.archive.org/web/20261112001404/https://www.doordash.com/",
+   "archived": "https://www.doordash.com/",
+   "captured": "2026-11-12 00:14:04 UTC"
+  },
+  "food-delivery": {
+   "snapshot": "https://web.archive.org/web/20261004033917/https://www.doordash.com/food-delivery/",
+   "archived": "https://www.doordash.com/food-delivery/",
+   "captured": "2026-10-04 03:39:17 UTC"
+  },
+  "business": {
+   "snapshot": "https://web.archive.org/web/20261012092322/https://www.doordash.com/en-US/business/",
+   "archived": "https://www.doordash.com/en-US/business/",
+   "captured": "2026-10-12 09:23:22 UTC"
+  },
+  "dashpass": {
+   "snapshot": "https://web.archive.org/web/20261012183135/https://www.doordash.com/en-US/dashpass/student",
+   "archived": "https://www.doordash.com/en-US/dashpass/student",
+   "captured": "2026-10-12 18:31:35 UTC"
+  },
+  "restaurants": {
+   "snapshot": "https://web.archive.org/web/20261005002021/https://www.doordash.com/en-US/restaurants-near-me/",
+   "archived": "https://www.doordash.com/en-US/restaurants-near-me/",
+   "captured": "2026-10-05 00:20:21 UTC"
+  },
+  "store": {
+   "snapshot": "https://web.archive.org/web/20261024031734/https://www.doordash.com/en-US/store/the-sweet-tooth-north-miami-beach-33434247/",
+   "archived": "https://www.doordash.com/en-US/store/the-sweet-tooth-north-miami-beach-33434247/",
+   "captured": "2026-10-24 03:17:34 UTC"
+  },
+  "hsa": {
+   "snapshot": "https://web.archive.org/web/20260930222321/https://www.doordash.com/en-US/p/hsa-fsa-store",
+   "archived": "https://www.doordash.com/en-US/p/hsa-fsa-store",
+   "captured": "2026-09-30 22:23:21 UTC"
+  },
+  "seasonal": {
+   "snapshot": "https://web.archive.org/web/20261025153234/https://www.doordash.com/en-US/p/seasonal-holidays/",
+   "archived": "https://www.doordash.com/en-US/p/seasonal-holidays/",
+   "captured": "2026-10-25 15:32:34 UTC"
+  },
+  "promos": {
+   "snapshot": "https://web.archive.org/web/20261008212700/https://www.doordash.com/en-US/promos/",
+   "archived": "https://www.doordash.com/en-US/promos/",
+   "captured": "2026-10-08 21:27:00 UTC"
+  },
+  "careers": {
+   "snapshot": "https://web.archive.org/web/20261009000533/https://careersatdoordash.com/",
+   "archived": "https://careersatdoordash.com/",
+   "captured": "2026-10-09 00:05:33 UTC"
+  }
+ }
+}
