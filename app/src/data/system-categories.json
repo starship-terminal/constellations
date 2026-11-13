@@ -560,7 +560,7 @@
   {
     "referenceId": "systems:drinkdouze",
     "groupId": "web-categories",
-    "labels": ["Food & Drink"],
+    "labels": ["Marketplace", "Food & Drink"],
     "reason": "catalog.json describes a French DTC beverage storefront: a Shopify marketing site and shop for flavoured drinks with product pages, a subscription pitch and a store locator."
   },
   {
