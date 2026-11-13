@@ -4,7 +4,6 @@ import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import {
   Suspense,
   useEffect,
-  useId,
   useRef,
   useState,
   type ReactNode,
@@ -29,72 +28,14 @@ import {
 } from "lucide-react";
 import { api, Modal } from "./shared";
 export function Mark() {
-  // The mark renders more than once (sidebar, boot screen); each needs its own clip id.
-  const clip = `ds-mark-clip-${useId().replace(/[^\w-]/g, "")}`;
   return (
-    <>
-      <svg
-        className="brand-mark"
-        width="26"
-        height="26"
-        aria-hidden="true"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 64 64"
-      >
-        <defs>
-          <clipPath id={clip}>
-            <rect width="64" height="64" rx="14" />
-          </clipPath>
-        </defs>
-        <rect width="64" height="64" rx="14" fill="#08090a" />
-        <g clipPath={`url(#${clip})`}>
-          <polygon
-            points="-6.00,28.00 21.31,28.00 16.69,36.00 -6.00,36.00"
-            fill="#FFFFFF"
-          />
-          <polygon
-            className="mark-stripe"
-            points="33.80,22.99 70.00,8.00 70.00,17.60 35.88,26.60"
-            fill="#FF3B30"
-          />
-          <polygon
-            className="mark-stripe"
-            points="35.88,26.60 70.00,17.60 70.00,27.20 37.96,30.20"
-            fill="#FF9500"
-          />
-          <polygon
-            className="mark-stripe"
-            points="37.96,30.20 70.00,27.20 70.00,36.80 40.04,33.80"
-            fill="#FFD60A"
-          />
-          <polygon
-            className="mark-stripe"
-            points="40.04,33.80 70.00,36.80 70.00,46.40 42.12,37.40"
-            fill="#34C759"
-          />
-          <polygon
-            className="mark-stripe"
-            points="42.12,37.40 70.00,46.40 70.00,56.00 44.20,41.01"
-            fill="#0A84FF"
-          />
-          <polygon
-            points="29.00,14.68 49.00,49.32 9.00,49.32"
-            fill="#FFFFFF"
-            stroke="#08090a"
-            strokeWidth="3"
-            strokeLinejoin="round"
-          />
-        </g>
-      </svg>
-      <img
-        className="brand-mark-glass"
-        src="/brand/glass/favicon-48.png"
-        width="26"
-        height="26"
-        alt=""
-        aria-hidden="true"
-      />
-    </>
+    <img
+      className="brand-mark"
+      src="/brand/flat/favicon.svg"
+      width="26"
+      height="26"
+      alt=""
+    />
   );
 }
 export function CatalogNavigation({ onNavigate }: { onNavigate: () => void }) {
@@ -312,7 +253,7 @@ export function AppShell({ children }: { children: ReactNode }) {
       >
         <Link href="/" className="brand">
           <Mark />
-          <span>Design Studio</span>
+          <span>Constellations</span>
         </Link>
         <Link href="/" className="new-research">
           <Plus size={22} />
