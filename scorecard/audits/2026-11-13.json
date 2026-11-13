@@ -1,7 +1,7 @@
 {
  "date": "2026-11-13",
  "rubric": "4",
- "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): read the package (tokens.json, components.md, patterns.md, README), the raw readings (css-vars.json, components-computed.json), and the 13 screenshots; graded against scorecard/criteria.json web wording",
+ "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): read the package (tokens.json, components.md, patterns.md, README), the raw readings and the 31 screenshots; graded against scorecard/criteria.json web wording",
  "systems": [
   {
    "slug": "brilliant",
@@ -11593,137 +11593,8 @@
    "category": "Productivity",
    "reviewed": "2026-11-12",
    "reviewedPlatform": "web"
-  },
-  {
-   "slug": "cron",
-   "grades": {
-    "F1": {
-     "grade": "partly",
-     "evidence": "A real 14-step neutral ramp is declared on the content pages (:root --gray10..--gray900, resolved in raw/css-vars.json -> core.color.gray.*) plus a 2-step brand orange (chronos #ff4700, primary100 #ffcdb3 / primary700 #ca3800) and a 2-step semantic red (--semantic-red100/500). One full ramp (the grays); the brand and status hues are 2-step, not ~10-step ramps per hue."
-    },
-    "F2": {
-     "grade": "partly",
-     "evidence": "light: background.page/material white (#fff), background.object-highlight #ededed; dark: background.page #161412, background.footer #0f0d0a (the darkest band). Declared --material-*/--object-* surface roles exist in the var layer. No distinct raised/overlay role on the flat public surface beyond the mobile menu's #161412 overlay fill."
-    },
-    "F3": {
-     "grade": "partly",
-     "evidence": "light: text.text #1a1a1a (--text-default), text.meta #616161 (--ratio), text.object #999; dark: text.text #ccc (rgba(255,255,255,.85)), text.strong #fff, on-accent white on the orange. No disabled-text role painted on the public surface (--disabled-opacity declared but unused here)."
-    },
-    "F4": {
-     "grade": "partly",
-     "evidence": "light.color.border.border = #e5e5e5 (--object-border); the banner carries an inset 0.5px rgba(255,71,0,.5) orange ring (core.shadow.banner) and --material-border-contr-inside rgba(255,255,255,.12) is declared. No default-vs-strong border scale on the public surface."
-    },
-    "F5": {
-     "grade": "partly",
-     "evidence": "Accent (#ff4700) state moves measured on every control: the Sign up pill's only state change is the glow shadow (0 0 100px 20% -> 0 0 25px 40% on hover/pressed, declared --glow/--glow-hover); demo-link shifts border color on hover/pressed. The accent FILL itself stays constant -- the move is glow/border, not a fill ramp."
-    },
-    "F6": {
-     "grade": "missing",
-     "evidence": "Only a declared 2-step red (--semantic-red100 #f8c4c7 / --semantic-red500 #ed4556) exists in the var layer; no success/warning/info status set with fill+text+border roles paints anywhere on the public surface."
-    },
-    "F7": {
-     "grade": "partly",
-     "evidence": "Two genuinely painted surfaces (dark marketing home, light Next.js content pages) are tokenised as dark and light sets -- but they are different routes, not a runtime theme switch; no shared var layer repaints between them, so parity is partial by construction."
-    },
-    "F8": {
-     "grade": "partly",
-     "evidence": "One declared family (--sans-serif-font = Helvetica Neue, Helvetica, Arial, sans-serif) with a measured 140/80/40/32/24/22/16/13px ramp and 400/500/700 weights (core.font.size/weight); hero has -3px tracking + 90% leading. No named display/body typography roles (core.typography empty) and no second/mono face."
-    },
-    "F9": {
-     "grade": "partly",
-     "evidence": "Measured structural spacing: header 120px, content-max 1000px (800px under 1000px viewport), entry column 676px, footer 180px, page padding 0 140px (core.spacing.*). No declared 4/8px-based spacing scale."
-    },
-    "F10": {
-     "grade": "partly",
-     "evidence": "A two-value radius language measured: 9999px pill (Sign up, integration chips) and 4px banner; post media and cards are square (0px). No broader shape scale."
-    },
-    "F11": {
-     "grade": "partly",
-     "evidence": "Control geometry measured across the surface: header 120px, Sign up 125x46, banner 269x45, article column 676px, footer 180px, mobile header 96px, mobile menu 390x768, mobile Sign up 342x54 (light.component.*). No focus-ring width/offset scale beyond the outlined state."
-    },
-    "F12": {
-     "grade": "partly",
-     "evidence": "Two declared elevation levels resolve (--elevation-low, --elevation-high; core.shadow.low/high) plus the Sign up glow pair and the banner's ring+glow. The captured surfaces are flat -- the declared levels paint few applied shadows on this surface."
-    },
-    "F13": {
-     "grade": "partly",
-     "evidence": "The declared --animation-duration-default = 0.175s (core.motion.duration) governs the Sign up glow and banner shadow transitions, which are measured (default->hover boxShadow). No durations ramp or reduced-motion behaviour on the public surface."
-    },
-    "F14": {
-     "grade": "partly",
-     "evidence": "A simple centred-column layout measured: 1000px content max-width, 676px article column, 140px page padding, 120px header / 180px footer bands; mobile collapses to a 96px header, hamburger overlay and full-width CTA. Real layout tokens, but a single-column marketing layout."
-    },
-    "C1": {
-     "grade": "meets",
-     "evidence": "28 components measured across every captured surface (header, logotype, nav, banner, hero, footer, blog/changelog article entries, post title/meta/body/media/back-link, demo-link, mobile header/menu/nav/signup/heading) -- well over the coverage floor; 60 state crops; post-video recorded as a documented miss (no matching element)."
-    },
-    "C2": {
-     "grade": "partly",
-     "evidence": "default/hover/pressed/focus-visible measured on every interactive control (signup-btn, m-signup-btn, banner, demo-link, nav/footer/back links, m-nav-item): real hover/pressed moves (glow shadow, border color). Disabled, error and loading states never appear on the public surface -- documented as gaps."
-    },
-    "C3": {
-     "grade": "meets",
-     "evidence": "A genuine focus-visible outline (outlineWidth/outlineStyle/outlineColor changing from none) is measured on 8 controls: nav-link, login-link, signup-btn, footer-link, m-nav-item, m-signup-btn, post-back and demo-link."
-    },
-    "C4": {
-     "grade": "meets",
-     "evidence": "light.component.* holds token-based component specs (header/logotype/signup/banner/hero/entry/footer/mobile dimensions, nav size, meta color, the signup-glow state map) all evidence-labelled to their measurements."
-    },
-    "P1": {
-     "grade": "meets",
-     "evidence": "patterns.md documents the shell (120px dark header + rebrand banner + 180px footer), the dark hero home, the light blog/changelog/post layouts with the 676px article column, and the mobile overlay menu -- with painted scrollHeight per route."
-    },
-    "A1": {
-     "grade": "partly",
-     "evidence": "icon.png (128px, the Cron/Notion Calendar favicon) is captured in LFS and registered in the catalog preview; no standalone SVG icon set was lifted this pass -- declared under layoutGaps with the reason."
-    },
-    "K1": {
-     "grade": "meets",
-     "evidence": "catalog.json entry complete: slug/name/url/platform/category/goodFor/tags, preview cover+icon+swatches+fonts, capture method/source/timestamp/harness/route/routes/gaps/duration, and layoutGaps."
-    },
-    "F15": {
-     "grade": "meets",
-     "evidence": "Script: all 8 pairs pass 4.5:1 across 2 themes; lowest 6.19:1 light muted (light.color.text.meta) on page (light.color.background.page)"
-    },
-    "F16": {
-     "grade": "meets",
-     "evidence": "Script: 85 of 85 tokens name their source"
-    },
-    "K2": {
-     "grade": "missing",
-     "evidence": "Script: no \"Do and don't\" section in the README"
-    },
-    "K3": {
-     "grade": "meets",
-     "evidence": "Script: DESIGN.md matches a fresh generation"
-    },
-    "C5": {
-     "grade": "na",
-     "evidence": "Optional for a capture, and this product does not publish it."
-    },
-    "V1": {
-     "grade": "na",
-     "evidence": "Optional for a capture, and this product does not publish it."
-    },
-    "V2": {
-     "grade": "na",
-     "evidence": "Optional for a capture, and this product does not publish it."
-    }
-   },
-   "name": "Cron",
-   "goodFor": "Calendar-product marketing and changelog pages: a dark #161412 home over a #0f0d0a footer with #ccc text and the #ff4700 chronos Sign up pill glowing under --glow, 140px Helvetica Neue -3px-tracked hero (80px mobile), light Next.js blog/changelog/post pages with the declared 14-step --gray10..--gray900 ramp, --eclipse/--snow/--dieter/--urushi/--ratio named set, --elevation-* levels and a 676px article column",
-   "url": "https://cron.com",
-   "captured": "2026-11-12",
-   "themes": [
-    "light",
-    "dark"
-   ],
-   "platform": "web",
-   "category": "Productivity",
-   "reviewed": "2026-11-13",
-   "reviewedPlatform": "web"
   }
  ],
  "base": "2026-10-16",
- "reviewMethod": "read the package (tokens.json, components.md, patterns.md, README), the raw readings (css-vars.json, components-computed.json), and the 13 screenshots; graded against scorecard/criteria.json web wording"
+ "reviewMethod": "read the package (tokens.json, components.md, patterns.md, README), the raw readings and the 31 screenshots; graded against scorecard/criteria.json web wording"
 }
