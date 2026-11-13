@@ -2,6 +2,14 @@
 
 What is not finished in this library. Newest first.
 
+## 2026-11-14
+
+- [ ] **Authenticated capture pass** — 64 packages name sign-in/account/
+  checkout/submission surfaces they never reached, 51 more mark a gate in
+  their access text; the queue is generated into [GATED.md](GATED.md)
+  (`python3 tools/gated.py`). Needs the owner's accounts and a capture
+  contract for authenticated regions before it can start.
+
 ## 2026-11-11
 
 - [ ] **Batch-1 scorecard flags** — follow-ups the rubric reviews (#463) surfaced,
