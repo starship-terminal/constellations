@@ -34,10 +34,35 @@ def flat(node, prefix=""):
             yield from flat(v, prefix + k + ".")
 
 
-BY_COLOR = {}
-for n, t in flat(T["core"]):
-    if t["$type"] == "color":
-        BY_COLOR.setdefault(t["$value"], n)
+def colours_for(*sets):
+    """value -> token name over the named sets, with {alias} $values resolved
+    to the literal they point at inside the same sets."""
+    vals = {n: t["$value"] for s in sets for n, t in flat(T[s]) if t["$type"] == "color"}
+    lut = {}
+    for n, v in vals.items():
+        seen = set()
+        while isinstance(v, str) and re.fullmatch(r"\{[^{}]+\}", v) and v[1:-1] in vals and v[1:-1] not in seen:
+            seen.add(v[1:-1])
+            v = vals[v[1:-1]]
+        if isinstance(v, str):
+            lut.setdefault(v, n)
+    return lut
+
+
+# Semantic colours live in the light/dark sets, not core (which holds only
+# black and white): each component's values match against the theme its page
+# paints, with the core tokens always in scope.
+PAGE_THEME = {"home": "light", "pricing": "light", "how": "light",
+              "genre": "dark", "sfx": "dark", "login": "dark",
+              "signup": "dark", "mobile": "dark"}
+BY_COLOR = {"light": colours_for("core", "light"),
+            "dark": colours_for("core", "dark")}
+_CUR = BY_COLOR["light"]
+
+
+def use_theme(c):
+    global _CUR
+    _CUR = BY_COLOR[PAGE_THEME.get(c.get("page"), "light")]
 
 
 def norm(r, g, b, a=None):
@@ -51,7 +76,7 @@ def colour(c, tokens=True):
     def label(v):
         if v == "rgba(0, 0, 0, 0)":
             return "transparent"
-        tok = BY_COLOR.get(v) if tokens else None
+        tok = _CUR.get(v) if tokens else None
         return f"{v} `{tok}`" if tok else v
 
     c = re.sub(r"color\(srgb ([\d.]+) ([\d.]+) ([\d.]+)(?: / ([\d.]+))?\)",
@@ -170,6 +195,7 @@ def state_rows(c):
     # not hold a real keyboard focus) is not a captured state: it is reported
     # separately so a failed attempt can never read as a measured absence of a
     # focus ring.
+    use_theme(c)
     states = [s for s in c["states"] if "style" in c["states"][s] and c["states"][s].get("via") != "focus failed"]
     if not states:
         return [], states
@@ -199,6 +225,7 @@ def fmt(d):
 
 
 def child_layers(c):
+    use_theme(c)
     st = next((s for s in c["states"].values() if "style" in s), None)
     if not st or not st.get("paint"):
         return None
@@ -232,7 +259,7 @@ GROUP_INTRO = {
     "Pricing (alternative-light)": "The ecru pricing surface: 'Our subscriptions', the Monthly/Yearly switch, the Creator/Pro/Pro-Plus plan columns with Get-30-days-free actions, Compare plans and the FAQ.",
     "Genre page (dark catalog)": "The dark catalog genre page: breadcrumbs, the pink genre banner with the 40px heading, the 56px track rows with their album-cover play buttons and row actions, the FAQ accordion.",
     "Sound-effects category (dark catalog)": "The dark SFX category page: heading, category links and SFX track rows.",
-    "Signup upsell": "The ecru 'Want more music?' upsell card inside the dark catalog — an inverted-theme island.",
+    "Signup upsell": "The #ff82c2 pink 'Want more music?' upsell card inside the dark catalog — an accent-coloured island.",
     "Login and signup (Keycloak, dark)": "The dark login.epidemicsound.com Keycloak cards: social buttons, email/password fields, show-password, submit, forgot-password and create-account links — measured, never submitted.",
     "Mobile (390 wide)": "The phone surface at 390 wide: the 100px top bar, the hamburger nav overlay, the genre banner and track rows.",
     "Footer": "The page footers: link columns and the social icon buttons.",
@@ -323,6 +350,7 @@ W("Values that apply across entries, from the measurement files.")
 W()
 foc = []
 for k, c in C.items():
+    use_theme(c)
     st = c["states"].get("focus-visible")
     if not st or "style" not in st or st.get("via") == "focus failed":
         continue
@@ -399,6 +427,7 @@ for k in ["genre-banner", "wantmore", "kc-card", "nav-menu", "header", "m-header
     # A card the capture could not find is saved with missing: true and no states.
     if not c or c.get("missing"):
         continue
+    use_theme(c)
     st = next((s for s in c["states"].values() if "style" in s), None)
     if st is None:
         continue

@@ -227,7 +227,9 @@ for key, comp, desc in [
             weights[key] = decl("--font-weight-bold", "fontWeight")
         continue
     try:
-        w = int(float(ts(comp, "default", "fontWeight")))
+        # The element's own fontWeight, not ts(): a row's textStyle is its
+        # semibold title span, which would mislabel the 400 row as 600.
+        w = int(float(st(comp, "default")["fontWeight"]))
         weights[key] = lit(w, "fontWeight",
                            f"computed fontWeight of {comp} default (raw/components-computed.json)", desc)
     except (KeyError, TypeError, ValueError):
@@ -396,9 +398,10 @@ for root, theme, key, comp, state, prop, group, desc in [
     (dsem, "dark", "liked", None, "default", "#ff82c2", "action",
      "The #ff82c2 liked state — icon-liked and the pink accent."),
     (dsem, "dark", "upsell", "wantmore", "default", "_paint-upsell", "background",
-     "The ecru 'Want more music?' card inside the dark catalog."),
+     "The #ff82c2 pink 'Want more music?' card inside the dark catalog."),
 ]:
     try:
+        prefer = None
         if prop.startswith("_paint"):
             raw = None
         elif prop.startswith("#") or prop.startswith("rgba"):
@@ -415,8 +418,12 @@ for root, theme, key, comp, state, prop, group, desc in [
             raw = next(pl["color"] for pl in C["track-row"]["states"]["default"]["paint"] if pl.get("color") == "rgb(255, 255, 255)")
             src = "painted track-row text colour (raw/components-computed.json)"
         elif prop == "_paint-secondary":
-            raw = st("track-like", "default").get("backgroundColor")
-            src = "computed backgroundColor of track-like default (raw/components-computed.json)"
+            # No dark secondary button was measured (every dark icon button is
+            # a transparent ghost), so the role resolves to its declaration —
+            # measuring track-like would alias the ghost's zero-opacity fill.
+            raw = D.get("--es-color-action-secondary")
+            prefer = EMITTED.get("--color-action-secondary")
+            src = "declared --es-color-action-secondary (raw/css-vars.json)"
         elif prop == "_paint-focus":
             # track-like's focus-visible draws the real 2px solid #20afff azur
             # ring; track-play's own focus-visible only reports the album-cover
@@ -424,13 +431,23 @@ for root, theme, key, comp, state, prop, group, desc in [
             raw = st("track-like", "focus-visible").get("outlineColor") or st("track-like", "focus-visible").get("borderTopColor")
             src = "computed focus outline of a dark-surface icon button (raw/components-computed.json)"
         elif prop == "_paint-upsell":
-            raw = next(pl["bg"] for pl in C[comp]["states"][state]["ancestors"] + C[comp]["states"][state]["paint"] if pl.get("bg") and pl["bg"].startswith("rgb(2"))
+            layers = (C[comp]["states"][state].get("ancestors") or []) + C[comp]["states"][state].get("paint", [])
+            raw = next(pl["bg"] for pl in layers if pl.get("bg") and pl["bg"].startswith("rgb(2"))
             src = f"painted banner fill inside {comp} {state} (raw/components-computed.json)"
         else:
             raw = st(comp, state)[prop]
             src = f"computed {prop} of {comp} {state} (raw/components-computed.json)"
         if raw:
-            root.setdefault(group, {})[key] = semcolor(raw, src, desc, theme)
+            # A declared role of the same name and value wins over a
+            # coincidental value match: action.secondary aliases
+            # color.action.secondary.default, not the ghost that shares it.
+            if prefer is None:
+                declvar = f"--es-color-{group}-{key}"
+                bag = {"light": R, "dark": D}[theme]
+                if declvar in bag and norm_color(bag[declvar]) == norm_color(raw):
+                    prefer = EMITTED.get(declvar.replace("--es-color-", "--color-"))
+            root.setdefault(group, {})[key] = (lit(f"{{{prefer}}}", "color", f"{src}; declared as {prefer}", desc)
+                                             if prefer else semcolor(raw, src, desc, theme))
     except (KeyError, StopIteration):
         pass
 

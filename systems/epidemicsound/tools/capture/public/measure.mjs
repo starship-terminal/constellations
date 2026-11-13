@@ -142,7 +142,10 @@ async function measure(key, state, target, opts = {}) {
         file = await crop(page, (opts.cropLoc || loc).filter({ visible: true }).first(), `${key}-${state}`, opts.pad ?? 8);
       } catch (e) { s.cropError = String(e.message || e).slice(0, 120); }
     }
-    c.states[state] = { ...s, crop: file, via: opts.via };
+    // Each state carries its own provenance: if a later re-run updates the
+    // component's page/run/url but fails before re-reading this state, the
+    // kept reading still names the run it actually came from.
+    c.states[state] = { ...s, crop: file, via: opts.via, run, page: current, url: c.url };
     if (opts.extra) c.states[state].extra = await opts.extra(loc);
     log('  ', key, state, s.rect.w + 'x' + s.rect.h);
   } catch (e) {
@@ -254,23 +257,28 @@ async function sheetsFor(key) {
 // the same component re-read in a context with reduce on.
 async function reducedMotion(key, sel) {
   out._meta.reducedMotion ??= {};
+  const read = {};
   try {
     const b = context.browser();
-    const ctx = await b.newContext({ viewport: { width: 1440, height: 900 }, deviceScaleFactor: 1, userAgent: UA, locale: 'en-US', reducedMotion: 'reduce' });
-    await patch(ctx);
-    const p = await ctx.newPage();
-    await p.goto(URLS[key].startsWith('http') ? URLS[key] : BASE + URLS[key], { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
-    await p.waitForTimeout(7000);
-    await closePromo(p);
-    const v = await p.evaluate((s) => {
-      const el = document.querySelector(s);
-      if (!el) return null;
-      const cs = getComputedStyle(el);
-      return { transition: cs.transition, animation: cs.animation, scrollBehavior: getComputedStyle(document.documentElement).scrollBehavior };
-    }, sel).catch(() => null);
-    out._meta.reducedMotion[key] = { selector: sel, reduce: v };
-    await ctx.close();
-  } catch (e) { out._meta.reducedMotion[key] = { selector: sel, error: String(e).slice(0, 120) }; }
+    // Both settings in fresh contexts, on a control whose transition is
+    // nonzero under no-preference — a reduce-only reading proves nothing.
+    for (const mode of ['no-preference', 'reduce']) {
+      const ctx = await b.newContext({ viewport: { width: 1440, height: 900 }, deviceScaleFactor: 1, userAgent: UA, locale: 'en-US', reducedMotion: mode });
+      await patch(ctx);
+      const p = await ctx.newPage();
+      await p.goto(URLS[key].startsWith('http') ? URLS[key] : BASE + URLS[key], { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
+      await p.waitForTimeout(7000);
+      await closePromo(p);
+      read[mode] = await p.evaluate((s) => {
+        const el = document.querySelector(s);
+        if (!el) return null;
+        const cs = getComputedStyle(el);
+        return { transition: cs.transition, animation: cs.animation, scrollBehavior: getComputedStyle(document.documentElement).scrollBehavior };
+      }, sel).catch(() => null);
+      await ctx.close();
+    }
+    out._meta.reducedMotion[key] = { selector: sel, noPreference: read['no-preference'], reduce: read['reduce'] };
+  } catch (e) { out._meta.reducedMotion[key] = { selector: sel, ...read, error: String(e).slice(0, 120) }; }
 }
 
 const FIELD = ['default', 'focused', 'filled'];
@@ -370,7 +378,7 @@ async function genre() {
   await S('track-add', q('button[aria-label="Add to playlist"]').filter({ visible: true }).first(), B4, { group: c, title: 'Add to playlist button', desc: "A row's Add-to-playlist icon button; measured, never toggled (needs an account).", sel: 'button[aria-label="Add to playlist"]' });
   await S('track-download', q('button[aria-label="Download"]').filter({ visible: true }).first(), B4, { group: c, title: 'Download button', desc: "A row's Download icon button; measured, never pressed (licensed download).", sel: 'button[aria-label=Download]' });
   const u = G.upsell;
-  await S('wantmore', q('h2').filter({ hasText: /want more music/i }).filter({ visible: true }).first().locator('xpath=ancestor::div[3]'), ['default'], { group: u, title: 'Want-more banner', desc: 'The ecru "Want more music?" upsell card between the list and the FAQ.', sel: 'WantMoreBanner container' });
+  await S('wantmore', q('h2').filter({ hasText: /want more music/i }).filter({ visible: true }).first().locator('xpath=ancestor::div[3]'), ['default'], { group: u, title: 'Want-more banner', desc: 'The #ff82c2 pink "Want more music?" upsell card between the list and the FAQ — an accent-coloured island on the dark page.', sel: 'WantMoreBanner container' });
   await S('wantmore-cta', q('h2').filter({ hasText: /want more music/i }).filter({ visible: true }).first().locator('xpath=ancestor::div[3]').locator('a, button').filter({ visible: true }).first(), B4, { group: u, title: 'Upsell CTA', desc: "The banner's Create-free-account button; measured never followed.", sel: 'WantMoreBanner CTA' });
   await S('faq-row', q('h2[class*="_heading_1l58k"], h2[class*="_heading_"]').filter({ hasText: /\?\s*$/ }).filter({ visible: true }).first(), [...B4, 'opened'], { group: c, title: 'FAQ accordion row', desc: 'An FAQ accordion heading at the bottom of the catalog page — a local disclosure; the opened state was measured after clicking it.', sel: 'faq heading' }, { allowLink: true });
   const f = G.footer;
@@ -446,9 +454,11 @@ const finishedPages = new Set();
 try {
   for (const k of order) { if (k !== 'mobile') { await plan[k](); finishedPages.add(k); } }
   if (!pages.length || pages.includes('mobile')) { await plan.mobile(); finishedPages.add('mobile'); }
-  // Reduced-motion check on an element that transitions (a track-row play
-  // button's hover), so the delta is meaningful.
-  if (!pages.length || pages.includes('genre')) await reducedMotion('genre', 'button[aria-label="Play"]');
+  // Reduced-motion check on an element that really transitions: the pricing
+  // billing switch paints a 0.125s background-colour transition, so the
+  // no-preference vs reduce delta is meaningful (the track play button's
+  // transition is already 0s under both settings).
+  if (!pages.length || pages.includes('pricing')) await reducedMotion('pricing', 'input[role="switch"]');
 } finally {
   for (const [key, c] of Object.entries(out.components)) {
     // An untouched entry is pruned only when its page finished this run: a

@@ -10,7 +10,7 @@ The home hero is the voice of the brand: "You bring the idea. We bring the sound
 
 ## Pricing (ecru)
 
-/pricing keeps the same chrome: a 68px page heading, a 40 x 24 Monthly/Yearly `input[role=switch]` (`billing-switch`, black track, `rgba(61,77,116,.12)` when toggled), plan columns headed Creator/Pro/Pro Plus (`plan-name`, Sebenta 24px), black 56px Get-30-days-free pills (`plan-cta`), then the "Compare plans" matrix heading (`compare-h2`, Sebenta ~31px) and an FAQ block. Every trial action was measured, never followed.
+/pricing keeps the same chrome: a 68px page heading, a 40 x 24 Monthly/Yearly `input[role=switch]` (`billing-switch`, black track, `rgba(61,77,116,.12)` when toggled), plan columns headed Creator/Pro/Pro Plus (`plan-name`, Inter 20px/24 — the es-subheading-l step), black 56px Get-30-days-free pills (`plan-cta`), then the "Compare plans" matrix heading (`compare-h2`, Sebenta 40px/48) and an FAQ block. Every trial action was measured, never followed.
 
 ## The dark catalog shell
 

@@ -45,7 +45,7 @@ Screenshots are named `{page}-{theme}-state.png`: the marketing pages paint `lig
 
 Values that apply across entries, from the measurement files.
 
-**Focus.** 25 components were given a real keyboard focus. 25 draw an outline ring: `nav-trigger` (2px solid #000000 `color.brand.black`, offset 2px), `nav-pricing` (2px solid #000000 `color.brand.black`, offset 2px), `btn-login` (2px solid #000000 `color.brand.black`, offset 2px), `btn-signup` (2px solid #000000 `color.brand.black`, offset 2px), `hero-cta` (2px solid #000000 `color.brand.black`, offset 2px), `billing-switch` (2px solid #000000 `color.brand.black`, offset 2px), `plan-cta` (2px solid #000000 `color.brand.black`, offset 2px), `c-signup` (2px solid #20afff, offset 2px), `track-play` (1px auto #101010, offset 0px), `track-like` (2px solid #20afff, offset 2px), `track-similar` (2px solid #20afff, offset 2px), `track-add` (2px solid #20afff, offset 2px), `track-download` (2px solid #20afff, offset 2px), `wantmore-cta` (2px solid #20afff, offset 2px), `social-icon` (2px solid #20afff, offset 2px), `sfx-play` (1px auto #101010, offset 0px), `sfx-category-card` (1px auto #101010, offset 1px), `kc-social-google` (2px solid #ffffff `color.brand.white`, offset 2px), `kc-show-pass` (1px auto #101010, offset 0px), `kc-submit` (2px solid #ffffff `color.brand.white`, offset 2px), `kc-signup-link` (1px auto #101010, offset 1px), `kc-forgot` (1px auto #101010, offset 1px), `su-submit` (2px solid #ffffff `color.brand.white`, offset 2px), `m-hamburger` (2px solid #20afff, offset 2px), `m-cta` (2px solid #20afff, offset 2px).
+**Focus.** 25 components were given a real keyboard focus. 25 draw an outline ring: `nav-trigger` (2px solid #000000 `color.brand.black`, offset 2px), `nav-pricing` (2px solid #000000 `color.brand.black`, offset 2px), `btn-login` (2px solid #000000 `color.brand.black`, offset 2px), `btn-signup` (2px solid #000000 `color.brand.black`, offset 2px), `hero-cta` (2px solid #000000 `color.brand.black`, offset 2px), `billing-switch` (2px solid #000000 `color.brand.black`, offset 2px), `plan-cta` (2px solid #000000 `color.brand.black`, offset 2px), `c-signup` (2px solid #20afff `color.background.beta`, offset 2px), `track-play` (1px auto #101010, offset 0px), `track-like` (2px solid #20afff `color.background.beta`, offset 2px), `track-similar` (2px solid #20afff `color.background.beta`, offset 2px), `track-add` (2px solid #20afff `color.background.beta`, offset 2px), `track-download` (2px solid #20afff `color.background.beta`, offset 2px), `wantmore-cta` (2px solid #20afff `color.background.beta`, offset 2px), `social-icon` (2px solid #20afff `color.background.beta`, offset 2px), `sfx-play` (1px auto #101010, offset 0px), `sfx-category-card` (1px auto #101010, offset 1px), `kc-social-google` (2px solid #ffffff `color.brand.white`, offset 2px), `kc-show-pass` (1px auto #101010, offset 0px), `kc-submit` (2px solid #ffffff `color.brand.white`, offset 2px), `kc-signup-link` (1px auto #101010, offset 1px), `kc-forgot` (1px auto #101010, offset 1px), `su-submit` (2px solid #ffffff `color.brand.white`, offset 2px), `m-hamburger` (2px solid #20afff `color.background.beta`, offset 2px), `m-cta` (2px solid #20afff `color.background.beta`, offset 2px).
 
 **Pressed.** Forced with DevTools (`CSS.forcePseudoState` :active:hover). Nothing a real press would submit was ever pressed.
 
@@ -61,7 +61,7 @@ Values that apply across entries, from the measurement files.
 
 | Card | Size | Border | Radius | Background | Shadow | Padding |
 |---|---|---|---|---|---|---|
-| [Genre banner](#genre-banner) | 1328 x 204 | - | 16px 16px 0px 0px | #ff82c2 | none | 0 |
+| [Genre banner](#genre-banner) | 1328 x 204 | - | 16px 16px 0px 0px | #ff82c2 `color.action.accent.default` | none | 0 |
 | [Want-more banner](#want-more-banner) | 1328 x 244 | - | - | transparent | none | 0 |
 | [Login card](#login-card) | 416 x 882.81 | - | - | transparent | none | 0 |
 | [Mega menu](#mega-menu) | 1359 x 331 | - | 16px | #ffffff `color.brand.white` | rgba(0, 0, 0, 0.16) 0px 4px 24px 0px | 24px 24px 40px 24px |
@@ -79,7 +79,7 @@ The sticky top bar: ES logotype, mega-menu triggers (Music / Sound effects / Too
 
 **Values (default).** size 1440 x 100; background transparent; text Inter 14/24 600, #000000 `color.brand.black`; icon 20 x 24, #0000ee; layers div.relative.mx-auto 1359.0x68.0 rgb(255, 255, 255) 10000px; button.no-default-focus.focus-visible 76.0x44.0 rgba(61, 77, 116, 0) 10000px; div.flex.w-full 0.0x0.0 rgb(255, 255, 255) rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.16) 0px 4px 24px 0px 16px; span.flex.size-10 0.0x0.0 rgba(61, 77, .
 
-Child layers that carry the look: div 1359x68 background #ffffff `color.brand.white` radius 10000px; button 76x44 background rgba(61, 77, 116, 0) radius 10000px; div 0x0 background #ffffff `color.brand.white` radius 16px shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(0, 0, 0, 0.16) 0px 4px 24px 0px.
+Child layers that carry the look: div 1359x68 background #ffffff `color.brand.white` radius 10000px; button 76x44 background rgba(61, 77, 116, 0) `color.action.ghost.default` radius 10000px; div 0x0 background #ffffff `color.brand.white` radius 16px shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(0, 0, 0, 0.16) 0px 4px 24px 0px.
 
 ![Site header default](components/crops/header-default.png)
 
@@ -95,18 +95,18 @@ The "Music" ghost button that opens the mega menu — a local disclosure; the op
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 76 x 44; padding 4px 16px; radius 10000px; background rgba(61, 77, 116, 0); text Inter 14/24 600, #000000 `color.brand.black`; transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
-| hover | background rgba(61, 77, 116, 0.06) |
+| default | size 76 x 44; padding 4px 16px; radius 10000px; background rgba(61, 77, 116, 0) `color.action.ghost.default`; text Inter 14/24 600, #000000 `color.brand.black`; transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
+| hover | background rgba(61, 77, 116, 0.06) `color.action.accent.disabled` |
 | focus-visible | outline 2px solid #000000 `color.brand.black`, offset 2px |
-| pressed | background rgba(61, 77, 116, 0.12) |
-| opened | background rgba(61, 77, 116, 0.06) |
+| pressed | background rgba(61, 77, 116, 0.12) `color.action.ghost.pressed` |
+| opened | background rgba(61, 77, 116, 0.06) `color.action.accent.disabled` |
 
 ![Nav menu trigger default](components/crops/nav-trigger-default.png) ![Nav menu trigger hover](components/crops/nav-trigger-hover.png) ![Nav menu trigger focus-visible](components/crops/nav-trigger-focus-visible.png) ![Nav menu trigger pressed](components/crops/nav-trigger-pressed.png) ![Nav menu trigger opened](components/crops/nav-trigger-opened.png)
 
 #### Mega menu
 The dropdown opened by the "Music" trigger; its links were never followed. Read as `nav-menu` on the home page.
 
-**Values (default).** size 1359 x 331; padding 24px 24px 40px 24px; radius 16px; background #ffffff `color.brand.white`; shadow rgba(0, 0, 0, 0.16) 0px 4px 24px 0px; text Inter 10/11 600, rgba(0, 0, 0, 0.6); icon 16 x 16, #000000 `color.brand.black`.
+**Values (default).** size 1359 x 331; padding 24px 24px 40px 24px; radius 16px; background #ffffff `color.brand.white`; shadow rgba(0, 0, 0, 0.16) 0px 4px 24px 0px; text Inter 10/11 600, rgba(0, 0, 0, 0.6) `color.icon.secondary`; icon 16 x 16, #000000 `color.brand.black`.
 
 ![Mega menu default](components/crops/nav-menu-default.png)
 
@@ -116,9 +116,9 @@ A genre link inside the opened mega menu; measured, never followed. Read as `nav
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 356 x 56; padding 8px; radius 4px; background transparent; text Inter 14/24 600, #000000 `color.brand.black`; transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, #000000 `color.brand.black`; layers span.flex.size-10 40.0x40.0 rgba(61, 77, 116, 0.12) 4px |
-| hover | background rgba(61, 77, 116, 0.06); layers none |
+| hover | background rgba(61, 77, 116, 0.06) `color.action.accent.disabled`; layers none |
 
-Child layers that carry the look: span 40x40 background rgba(61, 77, 116, 0.12) radius 4px.
+Child layers that carry the look: span 40x40 background rgba(61, 77, 116, 0.12) `color.action.ghost.pressed` radius 4px.
 
 ![Mega menu item default](components/crops/nav-menu-item-default.png) ![Mega menu item hover](components/crops/nav-menu-item-hover.png)
 
@@ -129,7 +129,7 @@ The header Pricing link; measured, never followed. Read as `nav-pricing` on the 
 |---|---|
 | default (same: hover) | size 109 x 44; padding 0px 16px; radius 10000px; background transparent; text Inter 14/24 600, #000000 `color.brand.black`; transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 20 x 20, #000000 `color.brand.black` |
 | focus-visible | outline 2px solid #000000 `color.brand.black`, offset 2px; layers a.group/pricing.flex 109.0x44.0 2px solid rgb(0, 0, 0) offset 2px 10000px |
-| pressed | background rgba(61, 77, 116, 0.06) |
+| pressed | background rgba(61, 77, 116, 0.06) `color.action.accent.disabled` |
 
 ![Pricing link default](components/crops/nav-pricing-default.png) ![Pricing link hover](components/crops/nav-pricing-hover.png) ![Pricing link focus-visible](components/crops/nav-pricing-focus-visible.png) ![Pricing link pressed](components/crops/nav-pricing-pressed.png)
 
@@ -138,10 +138,10 @@ The secondary "Log in" button; links to login.epidemicsound.com, measured never 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 76 x 44; padding 4px 16px; radius 10000px; background rgba(61, 77, 116, 0.12); text Inter 14/24 600, #000000 `color.brand.black` |
-| hover | background rgba(61, 77, 116, 0.18) |
+| default | size 76 x 44; padding 4px 16px; radius 10000px; background rgba(61, 77, 116, 0.12) `color.action.ghost.pressed`; text Inter 14/24 600, #000000 `color.brand.black` |
+| hover | background rgba(61, 77, 116, 0.18) `color.action.secondary.hovered` |
 | focus-visible | outline 2px solid #000000 `color.brand.black`, offset 2px |
-| pressed | background rgba(61, 77, 116, 0.24) |
+| pressed | background rgba(61, 77, 116, 0.24) `color.action.secondary.pressed` |
 
 ![Log in button default](components/crops/btn-login-default.png) ![Log in button hover](components/crops/btn-login-hover.png) ![Log in button focus-visible](components/crops/btn-login-focus-visible.png) ![Log in button pressed](components/crops/btn-login-pressed.png)
 
@@ -151,9 +151,9 @@ The primary "Create free account" button — black fill on the light marketing t
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 173 x 44; padding 4px 16px; radius 10000px; background #000000 `color.brand.black`; text Inter 14/24 600, #ffffff `color.brand.white` |
-| hover | background #272727 |
+| hover | background #272727 `color.action.primary.hovered` |
 | focus-visible | outline 2px solid #000000 `color.brand.black`, offset 2px |
-| pressed | background #333333 |
+| pressed | background #333333 `color.action.primary.pressed` |
 
 ![Create account button default](components/crops/btn-signup-default.png) ![Create account button hover](components/crops/btn-signup-hover.png) ![Create account button focus-visible](components/crops/btn-signup-focus-visible.png) ![Create account button pressed](components/crops/btn-signup-pressed.png)
 
@@ -162,7 +162,7 @@ The sticky header on the dark catalog theme (header.sticky.top-0); primary butto
 
 **Values (default).** size 1440 x 100; background transparent; text Inter 14/24 600, #ffffff `color.brand.white`; icon 20 x 24, #9e9eff; layers div.relative.mx-auto 1359.0x68.0 rgb(41, 44, 51) 10000px; button.no-default-focus.focus-visible 76.0x44.0 rgba(207, 214, 229, 0) 10000px; div.flex.w-full 0.0x0.0 rgb(41, 44, 51) rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.16) 0px 4px 24px 0px 16px; span.flex.size-10 0.0x0.0 rgba(207, 214, 22.
 
-Child layers that carry the look: div 1359x68 background #292c33 radius 10000px; button 76x44 background rgba(207, 214, 229, 0) radius 10000px; div 0x0 background #292c33 radius 16px shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(0, 0, 0, 0.16) 0px 4px 24px 0px.
+Child layers that carry the look: div 1359x68 background #292c33 `color.background.brand.off.black` radius 10000px; button 76x44 background rgba(207, 214, 229, 0) `color.action.ghost.default` radius 10000px; div 0x0 background #292c33 `color.background.brand.off.black` radius 16px shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(0, 0, 0, 0.16) 0px 4px 24px 0px.
 
 No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
 
@@ -172,9 +172,9 @@ The primary button on the dark theme — white fill, black text; measured never 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 173 x 44; padding 4px 16px; radius 10000px; background #ffffff `color.brand.white`; text Inter 14/24 600, #000000 `color.brand.black` |
-| hover | background #e7e7e7 |
-| focus-visible | outline 2px solid #20afff, offset 2px |
-| pressed | background #cfcfcf |
+| hover | background #e7e7e7 `color.action.primary.hovered` |
+| focus-visible | outline 2px solid #20afff `color.background.beta`, offset 2px |
+| pressed | background #cfcfcf `color.action.primary.pressed` |
 
 ![Create account button (dark) default](components/crops/c-signup-default.png) ![Create account button (dark) hover](components/crops/c-signup-hover.png) ![Create account button (dark) focus-visible](components/crops/c-signup-focus-visible.png) ![Create account button (dark) pressed](components/crops/c-signup-pressed.png)
 
@@ -195,9 +195,9 @@ The primary call-to-action inside the hero; measured never followed. Read as `he
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 213 x 56; padding 9.6px 24px; radius 10000px; background #000000 `color.brand.black`; text Inter 16/24 600, #ffffff `color.brand.white` |
-| hover | background #272727 |
+| hover | background #272727 `color.action.primary.hovered` |
 | focus-visible | outline 2px solid #000000 `color.brand.black`, offset 2px |
-| pressed | background #333333 |
+| pressed | background #333333 `color.action.primary.pressed` |
 
 ![Hero CTA default](components/crops/hero-cta-default.png) ![Hero CTA hover](components/crops/hero-cta-hover.png) ![Hero CTA focus-visible](components/crops/hero-cta-focus-visible.png) ![Hero CTA pressed](components/crops/hero-cta-pressed.png)
 
@@ -225,10 +225,10 @@ The Monthly/Yearly billing switch above the plans — a local toggle; the opened
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 40 x 24; radius 1000px; background #000000 `color.brand.black`; text Inter 16/18.4 400, #000000 `color.brand.black`; transition background-color 0.125s ease-in-out; placeholder #000000 `color.brand.black`; layers ::after rgb(255, 255, 255) 0px none 1 |
-| hover | background #272727 |
+| hover | background #272727 `color.action.primary.hovered` |
 | focus-visible | outline 2px solid #000000 `color.brand.black`, offset 2px |
-| pressed | background #333333 |
-| opened | background rgba(61, 77, 116, 0.12) |
+| pressed | background #333333 `color.action.primary.pressed` |
+| opened | background rgba(61, 77, 116, 0.12) `color.action.ghost.pressed` |
 
 ![Billing switch default](components/crops/billing-switch-default.png) ![Billing switch hover](components/crops/billing-switch-hover.png) ![Billing switch focus-visible](components/crops/billing-switch-focus-visible.png) ![Billing switch pressed](components/crops/billing-switch-pressed.png) ![Billing switch opened](components/crops/billing-switch-opened.png)
 
@@ -242,7 +242,7 @@ The "Creator" plan heading (es-subheading-l) over a plan column. Read as `plan-n
 #### Plan price line
 The price line inside a plan column. Read as `plan-price` on the pricing page.
 
-**Values (default).** size 688 x 384; padding 24px; background transparent; text Inter 16/24 500, rgba(0, 0, 0, 0.6).
+**Values (default).** size 688 x 384; padding 24px; background transparent; text Inter 16/24 500, rgba(0, 0, 0, 0.6) `color.icon.secondary`.
 
 No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
 
@@ -252,9 +252,9 @@ The primary "Get 30 days free" button inside a plan column — starts a trial; m
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 368 x 56; padding 9.6px 24px; radius 10000px; background #000000 `color.brand.black`; text Inter 16/24 600, #ffffff `color.brand.white` |
-| hover | background #272727 |
+| hover | background #272727 `color.action.primary.hovered` |
 | focus-visible | outline 2px solid #000000 `color.brand.black`, offset 2px |
-| pressed | background #333333 |
+| pressed | background #333333 `color.action.primary.pressed` |
 
 ![Plan CTA default](components/crops/plan-cta-default.png) ![Plan CTA hover](components/crops/plan-cta-hover.png) ![Plan CTA focus-visible](components/crops/plan-cta-focus-visible.png) ![Plan CTA pressed](components/crops/plan-cta-pressed.png)
 
@@ -272,14 +272,14 @@ The dark catalog genre page: breadcrumbs, the pink genre banner with the 40px he
 #### Breadcrumbs
 The MUSIC / GENRES / POP breadcrumb row over the genre banner. Read as `breadcrumbs` on the genre page.
 
-**Values (default).** size 46 x 16; background transparent; text Inter 12/16 500, rgba(255, 255, 255, 0.72).
+**Values (default).** size 46 x 16; background transparent; text Inter 12/16 500, rgba(255, 255, 255, 0.72) `color.icon.secondary`.
 
 ![Breadcrumbs default](components/crops/breadcrumbs-default.png)
 
 #### Genre banner
 The coloured genre header card (#ff82c2 pink for pop) holding the GENRE kicker and the h1; the _genre_ module class is what paints the colour. Read as `genre-banner` on the genre page.
 
-**Values (default).** size 1328 x 204; radius 16px 16px 0px 0px; background #ff82c2; text Inter 12/16 500, #000000 `color.brand.black`.
+**Values (default).** size 1328 x 204; radius 16px 16px 0px 0px; background #ff82c2 `color.action.accent.default`; text Inter 12/16 500, #000000 `color.brand.black`.
 
 ![Genre banner default](components/crops/genre-banner-default.png)
 
@@ -295,7 +295,7 @@ The genre page track list (ul.TrackList); rows virtualise as it scrolls. Read as
 
 **Values (default).** size 1328 x 704; background transparent; text Inter 14/24 600, #ffffff `color.brand.white`; layers button.TrackRowPlayButton_albumCover__Pv48J.overflow-hidden 56.0x56.0 rgb(107, 107, 107) 4px; button.TrackRowPlayButton_albumCover__Pv48J.rounded-(--es-radius-detail) 0.0x0.0 rgba(207, 214, 229, 0.16) 4px; button.focus-visible._iconButton_wmtv6_1 44.0x44.0 rgba(207, 214, 229, 0) 10000px; button.focus-visible._iconButton_wmtv6_1 44.0x44.0 rgba(207, 214, 229, 0) 10000px; button.focus-visible._iconBu.
 
-Child layers that carry the look: button 56x56 background #6b6b6b radius 4px; button 0x0 background rgba(207, 214, 229, 0.16) radius 4px; button 44x44 background rgba(207, 214, 229, 0) radius 10000px.
+Child layers that carry the look: button 56x56 background #6b6b6b radius 4px; button 0x0 background rgba(207, 214, 229, 0.16) `color.action.accent.disabled` radius 4px; button 44x44 background rgba(207, 214, 229, 0) `color.action.ghost.default` radius 10000px.
 
 ![Track list default](components/crops/track-list-default.png)
 
@@ -305,9 +305,9 @@ A 56px track row: album-cover play button, title, artist, duration, BPM, genre/m
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 1328 x 56; padding 0px 8px 0px 0px; radius 8px; background transparent; text Inter 14/24 600, #ffffff `color.brand.white`; layers button.TrackRowPlayButton_albumCover__Pv48J.overflow-hidden 56.0x56.0 rgb(107, 107, 107) 4px; button.TrackRowPlayButton_albumCover__Pv48J.rounded-(--es-radius-detail) 0.0x0.0 rgba(207, 214, 229, 0.16) 4px; button.focus-visible._iconButton_wmtv6_1 44.0x44.0 rgba(207, 214, 229, 0) 10000px; button.focus-visible._iconButton_wmtv6_1 44.0x44.0 rgba(207, 214, 229, 0) 10000px; button.focus-visible._iconBu |
-| hover | background rgba(207, 214, 229, 0.08); icon 24 x 24, #ffffff `color.brand.white`; layers none |
+| hover | background rgba(207, 214, 229, 0.08) `color.action.ghost.hovered`; icon 24 x 24, #ffffff `color.brand.white`; layers none |
 
-Child layers that carry the look: button 56x56 background #6b6b6b radius 4px; button 0x0 background rgba(207, 214, 229, 0.16) radius 4px; button 44x44 background rgba(207, 214, 229, 0) radius 10000px.
+Child layers that carry the look: button 56x56 background #6b6b6b radius 4px; button 0x0 background rgba(207, 214, 229, 0.16) `color.action.accent.disabled` radius 4px; button 44x44 background rgba(207, 214, 229, 0) `color.action.ghost.default` radius 10000px.
 
 ![Track row default](components/crops/track-row-default.png) ![Track row hover](components/crops/track-row-hover.png)
 
@@ -327,10 +327,10 @@ A row's heart icon button; measured, never toggled (needs an account). Read as `
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 44 x 44; radius 10000px; background rgba(207, 214, 229, 0); text Inter 16/18.4 400, rgba(255, 255, 255, 0.72); icon 20 x 20, rgba(255, 255, 255, 0.72) |
-| hover | background rgba(207, 214, 229, 0.08); text Inter 16/18.4 400, #ffffff `color.brand.white`; icon 20 x 20, #ffffff `color.brand.white` |
-| focus-visible | background rgba(207, 214, 229, 0.08); outline 2px solid #20afff, offset 2px |
-| pressed | background rgba(207, 214, 229, 0.16); text Inter 16/18.4 400, #ffffff `color.brand.white`; icon 20 x 20, #ffffff `color.brand.white` |
+| default | size 44 x 44; radius 10000px; background rgba(207, 214, 229, 0) `color.action.ghost.default`; text Inter 16/18.4 400, rgba(255, 255, 255, 0.72) `color.icon.secondary`; icon 20 x 20, rgba(255, 255, 255, 0.72) `color.icon.secondary` |
+| hover | background rgba(207, 214, 229, 0.08) `color.action.ghost.hovered`; text Inter 16/18.4 400, #ffffff `color.brand.white`; icon 20 x 20, #ffffff `color.brand.white` |
+| focus-visible | background rgba(207, 214, 229, 0.08) `color.action.ghost.hovered`; outline 2px solid #20afff `color.background.beta`, offset 2px |
+| pressed | background rgba(207, 214, 229, 0.16) `color.action.accent.disabled`; text Inter 16/18.4 400, #ffffff `color.brand.white`; icon 20 x 20, #ffffff `color.brand.white` |
 
 ![Like button default](components/crops/track-like-default.png) ![Like button hover](components/crops/track-like-hover.png) ![Like button focus-visible](components/crops/track-like-focus-visible.png) ![Like button pressed](components/crops/track-like-pressed.png)
 
@@ -339,10 +339,10 @@ A row's Find-similar icon button; measured, never followed. Read as `track-simil
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 44 x 44; radius 10000px; background rgba(207, 214, 229, 0); text Inter 16/18.4 400, rgba(255, 255, 255, 0.72); icon 20 x 20, rgba(255, 255, 255, 0.72) |
-| hover | background rgba(207, 214, 229, 0.08); text Inter 16/18.4 400, #ffffff `color.brand.white`; icon 20 x 20, #ffffff `color.brand.white` |
-| focus-visible | background rgba(207, 214, 229, 0.08); outline 2px solid #20afff, offset 2px |
-| pressed | background rgba(207, 214, 229, 0.16); text Inter 16/18.4 400, #ffffff `color.brand.white`; icon 20 x 20, #ffffff `color.brand.white` |
+| default | size 44 x 44; radius 10000px; background rgba(207, 214, 229, 0) `color.action.ghost.default`; text Inter 16/18.4 400, rgba(255, 255, 255, 0.72) `color.icon.secondary`; icon 20 x 20, rgba(255, 255, 255, 0.72) `color.icon.secondary` |
+| hover | background rgba(207, 214, 229, 0.08) `color.action.ghost.hovered`; text Inter 16/18.4 400, #ffffff `color.brand.white`; icon 20 x 20, #ffffff `color.brand.white` |
+| focus-visible | background rgba(207, 214, 229, 0.08) `color.action.ghost.hovered`; outline 2px solid #20afff `color.background.beta`, offset 2px |
+| pressed | background rgba(207, 214, 229, 0.16) `color.action.accent.disabled`; text Inter 16/18.4 400, #ffffff `color.brand.white`; icon 20 x 20, #ffffff `color.brand.white` |
 
 ![Find similar button default](components/crops/track-similar-default.png) ![Find similar button hover](components/crops/track-similar-hover.png) ![Find similar button focus-visible](components/crops/track-similar-focus-visible.png) ![Find similar button pressed](components/crops/track-similar-pressed.png)
 
@@ -351,10 +351,10 @@ A row's Add-to-playlist icon button; measured, never toggled (needs an account).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 44 x 44; radius 10000px; background rgba(207, 214, 229, 0); text Inter 16/18.4 400, rgba(255, 255, 255, 0.72); icon 20 x 20, rgba(255, 255, 255, 0.72) |
-| hover | background rgba(207, 214, 229, 0.08); text Inter 16/18.4 400, #ffffff `color.brand.white`; icon 20 x 20, #ffffff `color.brand.white` |
-| focus-visible | background rgba(207, 214, 229, 0.08); outline 2px solid #20afff, offset 2px |
-| pressed | background rgba(207, 214, 229, 0.16); text Inter 16/18.4 400, #ffffff `color.brand.white`; icon 20 x 20, #ffffff `color.brand.white` |
+| default | size 44 x 44; radius 10000px; background rgba(207, 214, 229, 0) `color.action.ghost.default`; text Inter 16/18.4 400, rgba(255, 255, 255, 0.72) `color.icon.secondary`; icon 20 x 20, rgba(255, 255, 255, 0.72) `color.icon.secondary` |
+| hover | background rgba(207, 214, 229, 0.08) `color.action.ghost.hovered`; text Inter 16/18.4 400, #ffffff `color.brand.white`; icon 20 x 20, #ffffff `color.brand.white` |
+| focus-visible | background rgba(207, 214, 229, 0.08) `color.action.ghost.hovered`; outline 2px solid #20afff `color.background.beta`, offset 2px |
+| pressed | background rgba(207, 214, 229, 0.16) `color.action.accent.disabled`; text Inter 16/18.4 400, #ffffff `color.brand.white`; icon 20 x 20, #ffffff `color.brand.white` |
 
 ![Add to playlist button default](components/crops/track-add-default.png) ![Add to playlist button hover](components/crops/track-add-hover.png) ![Add to playlist button focus-visible](components/crops/track-add-focus-visible.png) ![Add to playlist button pressed](components/crops/track-add-pressed.png)
 
@@ -363,10 +363,10 @@ A row's Download icon button; measured, never pressed (licensed download). Read 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 44 x 44; radius 10000px; background rgba(207, 214, 229, 0); text Inter 16/18.4 400, rgba(255, 255, 255, 0.72); icon 20 x 20, rgba(255, 255, 255, 0.72) |
-| hover | background rgba(207, 214, 229, 0.08); text Inter 16/18.4 400, #ffffff `color.brand.white`; icon 20 x 20, #ffffff `color.brand.white` |
-| focus-visible | background rgba(207, 214, 229, 0.08); outline 2px solid #20afff, offset 2px |
-| pressed | background rgba(207, 214, 229, 0.16); text Inter 16/18.4 400, #ffffff `color.brand.white`; icon 20 x 20, #ffffff `color.brand.white` |
+| default | size 44 x 44; radius 10000px; background rgba(207, 214, 229, 0) `color.action.ghost.default`; text Inter 16/18.4 400, rgba(255, 255, 255, 0.72) `color.icon.secondary`; icon 20 x 20, rgba(255, 255, 255, 0.72) `color.icon.secondary` |
+| hover | background rgba(207, 214, 229, 0.08) `color.action.ghost.hovered`; text Inter 16/18.4 400, #ffffff `color.brand.white`; icon 20 x 20, #ffffff `color.brand.white` |
+| focus-visible | background rgba(207, 214, 229, 0.08) `color.action.ghost.hovered`; outline 2px solid #20afff `color.background.beta`, offset 2px |
+| pressed | background rgba(207, 214, 229, 0.16) `color.action.accent.disabled`; text Inter 16/18.4 400, #ffffff `color.brand.white`; icon 20 x 20, #ffffff `color.brand.white` |
 
 ![Download button default](components/crops/track-download-default.png) ![Download button hover](components/crops/track-download-hover.png) ![Download button focus-visible](components/crops/track-download-focus-visible.png) ![Download button pressed](components/crops/track-download-pressed.png)
 
@@ -398,9 +398,9 @@ An SFX track row (name, category tags, duration). Read as `sfx-row` on the sound
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 1328 x 56; padding 0px 8px 0px 0px; radius 8px; background transparent; text Inter 14/24 600, #ffffff `color.brand.white`; layers button.TrackRowPlayButton_albumCover__Pv48J.overflow-hidden 56.0x56.0 rgb(107, 107, 107) 4px; button.TrackRowPlayButton_albumCover__Pv48J.rounded-(--es-radius-detail) 0.0x0.0 rgba(207, 214, 229, 0.16) 4px; button.focus-visible._iconButton_wmtv6_1 44.0x44.0 rgba(207, 214, 229, 0) 10000px; button.focus-visible._iconButton_wmtv6_1 44.0x44.0 rgba(207, 214, 229, 0) 10000px; button.focus-visible._iconBu |
-| hover | background rgba(207, 214, 229, 0.08); icon 24 x 24, #ffffff `color.brand.white`; layers none |
+| hover | background rgba(207, 214, 229, 0.08) `color.action.ghost.hovered`; icon 24 x 24, #ffffff `color.brand.white`; layers none |
 
-Child layers that carry the look: button 56x56 background #6b6b6b radius 4px; button 0x0 background rgba(207, 214, 229, 0.16) radius 4px; button 44x44 background rgba(207, 214, 229, 0) radius 10000px.
+Child layers that carry the look: button 56x56 background #6b6b6b radius 4px; button 0x0 background rgba(207, 214, 229, 0.16) `color.action.accent.disabled` radius 4px; button 44x44 background rgba(207, 214, 229, 0) `color.action.ghost.default` radius 10000px.
 
 ![SFX track row default](components/crops/sfx-row-default.png) ![SFX track row hover](components/crops/sfx-row-hover.png)
 
@@ -420,21 +420,21 @@ A subcategory link inside a row's categories column (e.g. "Suburban" under Ambie
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 39 x 20; background transparent; text Inter 12/16 400, rgba(255, 255, 255, 0.72) |
+| default (same: hover, pressed) | size 39 x 20; background transparent; text Inter 12/16 400, rgba(255, 255, 255, 0.72) `color.icon.secondary` |
 | focus-visible | outline 1px auto #101010, offset 1px; layers a.TrackRow_scrollingText__fQwVK.TrackRow_trackRowScrollableLink__n7oIr 39.0x20.0 1px auto rgb(16, 16, 16) offset 1px |
 
 ![SFX subcategory link default](components/crops/sfx-category-card-default.png) ![SFX subcategory link hover](components/crops/sfx-category-card-hover.png) ![SFX subcategory link focus-visible](components/crops/sfx-category-card-focus-visible.png) ![SFX subcategory link pressed](components/crops/sfx-category-card-pressed.png)
 
 ### Signup upsell
 
-The ecru 'Want more music?' upsell card inside the dark catalog — an inverted-theme island.
+The #ff82c2 pink 'Want more music?' upsell card inside the dark catalog — an accent-coloured island.
 
 #### Want-more banner
-The ecru "Want more music?" upsell card between the list and the FAQ. Read as `wantmore` on the genre page.
+The #ff82c2 pink "Want more music?" upsell card between the list and the FAQ — an accent-coloured island on the dark page. Read as `wantmore` on the genre page.
 
 **Values (default).** size 1328 x 244; background transparent; text Sebenta 40/48 500, #000000 `color.brand.black`; layers div.WantMoreBanner_wrapper__XCHly.dark-theme-override 1328.0x244.0 rgb(255, 130, 194); a.no-default-focus.focus-visible 173.0x44.0 rgb(255, 255, 255) 10000px.
 
-Child layers that carry the look: div 1328x244 background #ff82c2; a 173x44 background #ffffff `color.brand.white` radius 10000px.
+Child layers that carry the look: div 1328x244 background #ff82c2 `color.action.accent.default`; a 173x44 background #ffffff `color.brand.white` radius 10000px.
 
 ![Want-more banner default](components/crops/wantmore-default.png)
 
@@ -444,9 +444,9 @@ The banner's Create-free-account button; measured never followed. Read as `wantm
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 173 x 44; padding 4px 16px; radius 10000px; background #ffffff `color.brand.white`; text Inter 14/24 600, #000000 `color.brand.black` |
-| hover | background #e7e7e7 |
-| focus-visible | outline 2px solid #20afff, offset 2px |
-| pressed | background #cfcfcf |
+| hover | background #e7e7e7 `color.action.primary.hovered` |
+| focus-visible | outline 2px solid #20afff `color.background.beta`, offset 2px |
+| pressed | background #cfcfcf `color.action.primary.pressed` |
 
 ![Upsell CTA default](components/crops/wantmore-cta-default.png) ![Upsell CTA hover](components/crops/wantmore-cta-hover.png) ![Upsell CTA focus-visible](components/crops/wantmore-cta-focus-visible.png) ![Upsell CTA pressed](components/crops/wantmore-cta-pressed.png)
 
@@ -459,7 +459,7 @@ The dark Keycloak form-card on login.epidemicsound.com: logo, social buttons, em
 
 **Values (default).** size 416 x 882.81; background transparent; text Sebenta 48/56 500, #ffffff `color.brand.white`; layers a.button.primary 416.0x56.0 rgb(255, 255, 255) T:1px solid rgb(116, 119, 117) / R:1px solid rgb(116, 119, 117) / B:1px solid rgb(116, 119, 117) / L:1px solid rgb(116, 119, 117) 10000px; a.button.primary 416.0x56.0 rgb(255, 255, 255) T:1px solid rgb(116, 119, 117) / R:1px solid rgb(116, 119, 117) / B:1px solid rgb(116, 119, 117) / L:1px solid rgb(116, 119, 117) 10000px; div.socialLine 188.5x1.0 rgb.
 
-Child layers that carry the look: a 416x56 background #ffffff `color.brand.white` border 1px solid #747775 radius 10000px; a 416x56 background #ffffff `color.brand.white` border 1px solid #747775 radius 10000px; div 188.5x1 background rgba(207, 214, 229, 0.16).
+Child layers that carry the look: a 416x56 background #ffffff `color.brand.white` border 1px solid #747775 radius 10000px; a 416x56 background #ffffff `color.brand.white` border 1px solid #747775 radius 10000px; div 188.5x1 background rgba(207, 214, 229, 0.16) `color.action.accent.disabled`.
 
 ![Login card default](components/crops/kc-card-default.png)
 
@@ -476,9 +476,9 @@ The "Continue with Google" social button; measured, never followed. Read as `kc-
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 416 x 56; border 1px solid #747775; radius 10000px; background #ffffff `color.brand.white`; text Inter 16/18 600, #0f0f0f |
-| hover | background #e7e7e7 |
+| hover | background #e7e7e7 `color.action.primary.hovered` |
 | focus-visible | outline 2px solid #ffffff `color.brand.white`, offset 2px |
-| pressed | background #cfcfcf |
+| pressed | background #cfcfcf `color.action.primary.pressed` |
 
 ![Social button default](components/crops/kc-social-google-default.png) ![Social button hover](components/crops/kc-social-google-hover.png) ![Social button focus-visible](components/crops/kc-social-google-focus-visible.png) ![Social button pressed](components/crops/kc-social-google-pressed.png)
 
@@ -520,9 +520,9 @@ The white primary submit button; its states were measured but it was never click
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 416 x 56; padding 1px 6px; radius 10000px; background #ffffff `color.brand.white`; text Inter 16/18 600, #0f0f0f |
-| hover | background #e7e7e7 |
+| hover | background #e7e7e7 `color.action.primary.hovered` |
 | focus-visible | outline 2px solid #ffffff `color.brand.white`, offset 2px |
-| pressed | background #cfcfcf |
+| pressed | background #cfcfcf `color.action.primary.pressed` |
 
 ![Log in submit default](components/crops/kc-submit-default.png) ![Log in submit hover](components/crops/kc-submit-hover.png) ![Log in submit focus-visible](components/crops/kc-submit-focus-visible.png) ![Log in submit pressed](components/crops/kc-submit-pressed.png)
 
@@ -549,9 +549,9 @@ The "Forgot password?" link; measured, never followed. Read as `kc-forgot` on th
 #### Signup card
 The Keycloak registration card; measured at rest only. Read as `su-card` on the signup page.
 
-**Values (default).** size 416 x 864.88; background transparent; text Sebenta 48/56 500, #ffffff `color.brand.white`; icon 16.45 x 12.8, rgba(255, 255, 255, 0.72); layers a.button.primary 416.0x56.0 rgb(255, 255, 255) T:1px solid rgb(116, 119, 117) / R:1px solid rgb(116, 119, 117) / B:1px solid rgb(116, 119, 117) / L:1px solid rgb(116, 119, 117) 10000px; a.button.primary 416.0x56.0 rgb(255, 255, 255) T:1px solid rgb(116, 119, 117) / R:1px solid rgb(116, 119, 117) / B:1px solid rgb(116, 119, 117) / L:1px solid rgb(116, 119, 117) 10000px; div.socialLine 188.5x1.0 rgb.
+**Values (default).** size 416 x 864.88; background transparent; text Sebenta 48/56 500, #ffffff `color.brand.white`; icon 16.45 x 12.8, rgba(255, 255, 255, 0.72) `color.icon.secondary`; layers a.button.primary 416.0x56.0 rgb(255, 255, 255) T:1px solid rgb(116, 119, 117) / R:1px solid rgb(116, 119, 117) / B:1px solid rgb(116, 119, 117) / L:1px solid rgb(116, 119, 117) 10000px; a.button.primary 416.0x56.0 rgb(255, 255, 255) T:1px solid rgb(116, 119, 117) / R:1px solid rgb(116, 119, 117) / B:1px solid rgb(116, 119, 117) / L:1px solid rgb(116, 119, 117) 10000px; div.socialLine 188.5x1.0 rgb.
 
-Child layers that carry the look: a 416x56 background #ffffff `color.brand.white` border 1px solid #747775 radius 10000px; a 416x56 background #ffffff `color.brand.white` border 1px solid #747775 radius 10000px; div 188.5x1 background rgba(207, 214, 229, 0.16).
+Child layers that carry the look: a 416x56 background #ffffff `color.brand.white` border 1px solid #747775 radius 10000px; a 416x56 background #ffffff `color.brand.white` border 1px solid #747775 radius 10000px; div 188.5x1 background rgba(207, 214, 229, 0.16) `color.action.accent.disabled`.
 
 ![Signup card default](components/crops/su-card-default.png)
 
@@ -571,9 +571,9 @@ The registration form's submit action; its states were measured but it was never
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 416 x 56; border 1px solid #747775; radius 10000px; background #ffffff `color.brand.white`; text Inter 16/18 600, #0f0f0f |
-| hover | background #e7e7e7 |
+| hover | background #e7e7e7 `color.action.primary.hovered` |
 | focus-visible | outline 2px solid #ffffff `color.brand.white`, offset 2px |
-| pressed | background #cfcfcf |
+| pressed | background #cfcfcf `color.action.primary.pressed` |
 
 ![Signup submit default](components/crops/su-submit-default.png) ![Signup submit hover](components/crops/su-submit-hover.png) ![Signup submit focus-visible](components/crops/su-submit-focus-visible.png) ![Signup submit pressed](components/crops/su-submit-pressed.png)
 
@@ -586,7 +586,7 @@ The phone top bar: ES glyph, Create free account, hamburger. Read as `m-header` 
 
 **Values (default).** size 390 x 100; background transparent; text Inter 14/24 600, #000000 `color.brand.black`; icon 20 x 24, #9e9eff; layers div.relative.mx-auto 358.0x68.0 rgb(41, 44, 51) 10000px; ul.my-0.list-none 0.0x0.0 rgb(41, 44, 51) 16px; span.flex.size-10 0.0x0.0 rgba(207, 214, 229, 0.16) 4px; span.flex.size-10 0.0x0.0 rgba(207, 214, 229, 0.16) 4px; span.flex.size-10 0.0x0.0 rgba(207, 214, 229, 0.16) 4px; span.flex.size-10 0.0x0.0 rgba(207, 214, 229, 0.16) 4px.
 
-Child layers that carry the look: div 358x68 background #292c33 radius 10000px; ul 0x0 background #292c33 radius 16px; span 0x0 background rgba(207, 214, 229, 0.16) radius 4px.
+Child layers that carry the look: div 358x68 background #292c33 `color.background.brand.off.black` radius 10000px; ul 0x0 background #292c33 `color.background.brand.off.black` radius 16px; span 0x0 background rgba(207, 214, 229, 0.16) `color.action.accent.disabled` radius 4px.
 
 ![Mobile header default](components/crops/m-header-default.png)
 
@@ -596,7 +596,7 @@ The "Show navigation menu" icon button — a local disclosure; the opened state 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default (same: hover, pressed) | size 44 x 44; radius 10000px; background transparent; text Inter 16/18.4 400, #ffffff `color.brand.white`; icon 20 x 20, #ffffff `color.brand.white` |
-| focus-visible, opened | outline 2px solid #20afff, offset 2px; layers button.focus-visible._iconButton_wmtv6_1 44.0x44.0 2px solid rgb(32, 175, 255) offset 2px 10000px |
+| focus-visible, opened | outline 2px solid #20afff `color.background.beta`, offset 2px; layers button.focus-visible._iconButton_wmtv6_1 44.0x44.0 2px solid rgb(32, 175, 255) offset 2px 10000px |
 
 ![Mobile hamburger default](components/crops/m-hamburger-default.png) ![Mobile hamburger hover](components/crops/m-hamburger-hover.png) ![Mobile hamburger focus-visible](components/crops/m-hamburger-focus-visible.png) ![Mobile hamburger pressed](components/crops/m-hamburger-pressed.png) ![Mobile hamburger opened](components/crops/m-hamburger-opened.png)
 
@@ -613,7 +613,7 @@ The Create-free-account button in the phone header; measured never followed. Rea
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default (same: hover, pressed) | size 173 x 44; padding 4px 16px; radius 10000px; background #ffffff `color.brand.white`; text Inter 14/24 600, #000000 `color.brand.black` |
-| focus-visible | outline 2px solid #20afff, offset 2px |
+| focus-visible | outline 2px solid #20afff `color.background.beta`, offset 2px |
 
 ![Mobile CTA default](components/crops/m-cta-default.png) ![Mobile CTA hover](components/crops/m-cta-hover.png) ![Mobile CTA focus-visible](components/crops/m-cta-focus-visible.png) ![Mobile CTA pressed](components/crops/m-cta-pressed.png)
 
@@ -629,7 +629,7 @@ A 56px track row in the phone list (cover, title, artist). Read as `m-track-row`
 
 **Values (default).** size 358 x 56; padding 0px 8px 0px 0px; radius 8px; background transparent; text Inter 14/24 600, #ffffff `color.brand.white`; layers button.TrackRowPlayButton_albumCover__Pv48J.overflow-hidden 56.0x56.0 rgb(107, 107, 107) 4px; button.TrackRowPlayButton_albumCover__Pv48J.rounded-(--es-radius-detail) 0.0x0.0 rgba(207, 214, 229, 0.16) 4px; button.focus-visible._iconButton_wmtv6_1 0.0x0.0 rgba(207, 214, 229, 0) 10000px; button.focus-visible._iconButton_wmtv6_1 44.0x44.0 rgba(207, 214, 229, 0) 10000px; button.focus-visible._iconButt.
 
-Child layers that carry the look: button 56x56 background #6b6b6b radius 4px; button 0x0 background rgba(207, 214, 229, 0.16) radius 4px; button 0x0 background rgba(207, 214, 229, 0) radius 10000px.
+Child layers that carry the look: button 56x56 background #6b6b6b radius 4px; button 0x0 background rgba(207, 214, 229, 0.16) `color.action.accent.disabled` radius 4px; button 0x0 background rgba(207, 214, 229, 0) `color.action.ghost.default` radius 10000px.
 
 ![Mobile track row default](components/crops/m-track-row-default.png)
 
@@ -640,9 +640,9 @@ The page footers: link columns and the social icon buttons.
 #### Footer
 The catalog page footer: link columns, social icon buttons, locale line. Read as `footer` on the genre page.
 
-**Values (default).** size 1440 x 681; padding 80px 0px 0px 0px; background transparent; text Inter 12/16 500, rgba(255, 255, 255, 0.72); layers div.m-0.border-b-1 0.0x0.0 B:1px solid rgba(207, 214, 229, 0.16); summary.no-default-focus.focus-visible 0.0x0.0 rgb(18, 20, 24) 8px; div.m-0.border-b-1 0.0x0.0 B:1px solid rgba(207, 214, 229, 0.16); summary.no-default-focus.focus-visible 0.0x0.0 rgb(18, 20, 24) 8px; div.m-0.border-b-1 0.0x0.0 B:1px solid rgba(207, 214, 229, 0.16); summary.no-default-focus.focus-visible 0.0x0.0 rgb(18, 20, 24) 8px.
+**Values (default).** size 1440 x 681; padding 80px 0px 0px 0px; background transparent; text Inter 12/16 500, rgba(255, 255, 255, 0.72) `color.icon.secondary`; layers div.m-0.border-b-1 0.0x0.0 B:1px solid rgba(207, 214, 229, 0.16); summary.no-default-focus.focus-visible 0.0x0.0 rgb(18, 20, 24) 8px; div.m-0.border-b-1 0.0x0.0 B:1px solid rgba(207, 214, 229, 0.16); summary.no-default-focus.focus-visible 0.0x0.0 rgb(18, 20, 24) 8px; div.m-0.border-b-1 0.0x0.0 B:1px solid rgba(207, 214, 229, 0.16); summary.no-default-focus.focus-visible 0.0x0.0 rgb(18, 20, 24) 8px.
 
-Child layers that carry the look: div 0x0 border 1px solid rgba(207, 214, 229, 0.16); summary 0x0 background #121418 radius 8px; div 0x0 border 1px solid rgba(207, 214, 229, 0.16).
+Child layers that carry the look: div 0x0 border 1px solid rgba(207, 214, 229, 0.16) `color.action.accent.disabled`; summary 0x0 background #121418 `color.background.base` radius 8px; div 0x0 border 1px solid rgba(207, 214, 229, 0.16) `color.action.accent.disabled`.
 
 ![Footer default](components/crops/footer-default.png)
 
@@ -651,10 +651,10 @@ A footer social icon button (ghost, _m_ size); measured never followed. Read as 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 56 x 56; radius 10000px; background rgba(207, 214, 229, 0); text Inter 16/16 400, rgba(255, 255, 255, 0.72); icon 24 x 24, rgba(255, 255, 255, 0.72) |
-| hover | background rgba(207, 214, 229, 0.08) |
-| focus-visible | background rgba(207, 214, 229, 0.08); outline 2px solid #20afff, offset 2px |
-| pressed | background rgba(207, 214, 229, 0.16) |
+| default | size 56 x 56; radius 10000px; background rgba(207, 214, 229, 0) `color.action.ghost.default`; text Inter 16/16 400, rgba(255, 255, 255, 0.72) `color.icon.secondary`; icon 24 x 24, rgba(255, 255, 255, 0.72) `color.icon.secondary` |
+| hover | background rgba(207, 214, 229, 0.08) `color.action.ghost.hovered` |
+| focus-visible | background rgba(207, 214, 229, 0.08) `color.action.ghost.hovered`; outline 2px solid #20afff `color.background.beta`, offset 2px |
+| pressed | background rgba(207, 214, 229, 0.16) `color.action.accent.disabled` |
 
 ![Social icon button default](components/crops/social-icon-default.png) ![Social icon button focus-visible](components/crops/social-icon-focus-visible.png) ![Social icon button pressed](components/crops/social-icon-pressed.png)
 

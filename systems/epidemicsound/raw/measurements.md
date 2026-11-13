@@ -786,7 +786,7 @@ Crops: `faq-row-default.png`, `faq-row-hover.png`, `faq-row-focus-visible.png`, 
 
 #### wantmore
 
-Want-more banner. The ecru "Want more music?" upsell card between the list and the FAQ.
+Want-more banner. The #ff82c2 pink "Want more music?" upsell card between the list and the FAQ — an accent-coloured island on the dark page.
 
 Page: genre. Selector: `WantMoreBanner container`. States: default.
 

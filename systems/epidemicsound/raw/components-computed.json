@@ -1243,10 +1243,15 @@
    ]
   },
   "reducedMotion": {
-   "genre": {
-    "selector": "button[aria-label=\"Play\"]",
+   "pricing": {
+    "selector": "input[role=\"switch\"]",
+    "noPreference": {
+     "transition": "background-color 0.125s ease-in-out",
+     "animation": "none 0s ease 0s 1 normal none running",
+     "scrollBehavior": "auto"
+    },
     "reduce": {
-     "transition": "all",
+     "transition": "background-color 0.125s ease-in-out",
      "animation": "none 0s ease 0s 1 normal none running",
      "scrollBehavior": "auto"
     }
@@ -9238,7 +9243,7 @@
    "url": "https://www.epidemicsound.com/music/genres/pop/",
    "title": "Want-more banner",
    "group": "Signup upsell",
-   "desc": "The ecru \"Want more music?\" upsell card between the list and the FAQ.",
+   "desc": "The #ff82c2 pink \"Want more music?\" upsell card between the list and the FAQ — an accent-coloured island on the dark page.",
    "selector": "WantMoreBanner container"
   },
   "wantmore-cta": {

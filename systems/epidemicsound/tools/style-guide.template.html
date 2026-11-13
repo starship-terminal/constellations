@@ -12,53 +12,61 @@
   --sg-sans: Inter, "Inter Fallback: Arial", ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
   --sg-serif: Sebenta, "Sebenta Fallback: Georgia", Georgia, "Times New Roman", "Noto Serif", serif;
   --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+  /* Guide chrome: deliberately not token vars, so the page's own text and
+     hairlines stay readable whatever a token scope resolves to. */
+  --sg-ink: #101012;
+  --sg-muted: rgba(16, 16, 18, .65);
+  --sg-hairline: rgba(16, 16, 18, .14);
+  --sg-paper: #fff;
 }
 [data-mode="dark"], .dark {
 /*DARK*/
 }
 * { box-sizing: border-box; }
-body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--color-neutral-ink, #000); background: var(--color-neutral-paper, #fff); }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--sg-ink); background: var(--sg-paper); }
 main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
 h1 { font: 400 40px/1.2 var(--sg-serif); margin: 0 0 4px; letter-spacing: -0.02em; }
-h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--color-neutral-ink, #000); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--color-neutral-hairline, #ddd); }
-.lead { max-width: 62ch; color: var(--color-neutral-ink, #000); opacity: .8; }
-.note { font-size: 13px; color: var(--color-neutral-ink, #000); opacity: .65; max-width: 62ch; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--sg-muted); margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--sg-hairline); }
+.lead { max-width: 62ch; color: var(--sg-ink); opacity: .8; }
+.note { font-size: 13px; color: var(--sg-muted); max-width: 62ch; }
 code { font-family: var(--sg-mono); font-size: .9em; }
-.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--color-neutral-ink, #000); opacity: .6; margin: 18px 0 6px; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--sg-muted); margin: 18px 0 6px; }
 .pal { display: flex; flex-wrap: wrap; gap: 8px; }
 .sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
-.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--color-neutral-hairline, #ddd); display: inline-flex; flex: 0 0 auto; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--sg-hairline); display: inline-flex; flex: 0 0 auto; }
 .sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
 .sw .nm { font: 500 11px/1.3 var(--sg-mono); }
-.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--color-neutral-ink, #000); opacity: .65; }
-.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--color-neutral-hairline, #ddd); background: #fff; font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--sg-muted); }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--sg-hairline); background: var(--sg-paper); font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
 .kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
 .kv b { font-weight: 500; }
-.kv span { color: var(--color-neutral-ink, #000); opacity: .65; }
-/* ---- mocks ---- */
-.mock { border: 1px solid var(--color-neutral-hairline, #ddd); overflow: hidden; background: var(--color-neutral-paper, #fff); }
-.navbar { display: flex; align-items: center; gap: 22px; height: var(--component-topbar-height, 80px); padding: 0 12px 0 22px; font-size: 15px; color: var(--text-on-dark, #fdfcfe); background: var(--color-bg-main, #0f0d13); }
+.kv span { color: var(--sg-muted); }
+/* ---- mocks: the boxed reconstructions style themselves with the real
+   tokens (--background-page, --action-primary, --radius-button, …) so the
+   shapes and colours the guide shows are the measured ones. ---- */
+.mock { border: 1px solid var(--sg-hairline); overflow: hidden; background: var(--sg-paper); }
+.navbar { display: flex; align-items: center; gap: 22px; height: var(--component-header-height, 100px); padding: 0 12px 0 22px; font-size: 15px; color: var(--color-text-primary, #000); background: var(--background-page, #f1f0eb); }
 .navbar .wm { font-weight: 800; font-size: 24px; letter-spacing: -0.02em; }
 .navbar .sp { flex: 1; }
-.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-search-height, 48px); padding: 0 24px; font-size: 16px; font-weight: 700; border-radius: var(--radius-control, 16px); border: 1px solid transparent; }
-.btn.primary { background: var(--action-accent, #a238ff); color: #fff; }
-.btn.dark { background: var(--action-dark-button, #121216); color: var(--text-on-dark, #fdfcfe); }
-.btn.small { height: 34px; border-radius: var(--radius-pill-s, 12px); font-size: 13px; font-weight: 600; }
-.hero { color: var(--text-ink, #0f0d13); padding: 72px 40px; font: 800 60px/1 var(--sg-serif); letter-spacing: .01em; text-align: center; background: var(--background-page, #fff); }
-.hero small { display: block; font: 400 18px/1.5 var(--sg-sans); color: var(--text-ink, #0f0d13); margin: 16px auto 22px; max-width: 46ch; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-nav-button-height, 44px); padding: 0 24px; font-size: 16px; font-weight: 600; border-radius: var(--radius-button, 10000px); border: 1px solid transparent; }
+.btn.primary { background: var(--action-primary, #000); color: var(--color-text-inverse-default, #fff); }
+.btn.dark { background: var(--action-primary, #000); color: var(--color-text-inverse-default, #fff); }
+.btn.small { height: 34px; border-radius: var(--radius-button, 10000px); font-size: 13px; font-weight: 600; }
+.hero { color: var(--color-text-primary, #000); padding: 72px 40px; font: 500 60px/1 var(--sg-serif); letter-spacing: .01em; text-align: center; background: var(--background-page, #f1f0eb); }
+.hero small { display: block; font: 400 18px/1.5 var(--sg-sans); color: var(--color-text-secondary, rgba(0, 0, 0, .6)); margin: 16px auto 22px; max-width: 46ch; }
 .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
-.tile { border: 1px solid var(--color-neutral-hairline, #ddd); padding: 14px; font-size: 13px; background: #fff; }
-.tile .img { height: 140px; background: #ddd; margin-bottom: 10px; display: flex; align-items: flex-end; padding: 10px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }
-.tile b { display: block; font: 400 18px/1.25 var(--sg-serif); margin-bottom: 4px; }
-.tile .sub { opacity: .65; font-size: 12px; }
+.tile { border: 1px solid var(--color-border-tertiary, rgba(0, 0, 0, .08)); padding: 14px; font-size: 13px; background: var(--color-background-elevation, #fff); }
+.tile .img { height: 140px; background: var(--color-background-surface, rgba(61, 77, 116, .06)); margin-bottom: 10px; display: flex; align-items: flex-end; padding: 10px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }
+.tile b { display: block; font: 500 18px/1.25 var(--sg-serif); margin-bottom: 4px; }
+.tile .sub { color: var(--color-text-secondary, rgba(0, 0, 0, .6)); font-size: 12px; }
 table.cmp { border-collapse: collapse; font-size: 14px; }
-table.cmp td, table.cmp th { border: 1px solid var(--color-neutral-hairline, #ddd); padding: 6px 14px; text-align: left; }
-.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--color-neutral-hairline, #ddd); }
+table.cmp td, table.cmp th { border: 1px solid var(--sg-hairline); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--sg-hairline); }
 .tr .ts { font-family: var(--sg-serif); }
-.tr .tv { font-size: 12px; color: var(--color-neutral-ink, #000); opacity: .65; font-family: var(--sg-mono); }
-.toggle { display: inline-flex; background: var(--background-toggle, #29282d); border-radius: 999px; padding: 4px; gap: 4px; font-size: 15px; color: var(--text-text, #fdfcfe); }
+.tr .tv { font-size: 12px; color: var(--sg-muted); font-family: var(--sg-mono); }
+.toggle { display: inline-flex; background: var(--color-background-surface, rgba(61, 77, 116, .06)); border-radius: 999px; padding: 4px; gap: 4px; font-size: 15px; color: var(--color-text-primary, #000); }
 .toggle span { padding: 8px 22px; border-radius: 999px; }
-.toggle .on { background: var(--action-primary, #000); color: #fff; }
+.toggle .on { background: var(--action-switch, #000); color: var(--color-text-inverse-default, #fff); }
 </style>
 </head>
 <body>
@@ -90,12 +98,12 @@ table.cmp td, table.cmp th { border: 1px solid var(--color-neutral-hairline, #dd
 
   <h2 class="sh">The catalog shell</h2>
   <p class="lead">The catalog pages paint the dark theme signed out: a #121418 canvas, rgba(207,214,229,.08) surfaces, #fff text and primary fills, the #ff82c2 brand pink on the genre banner and liked states, #20afff on focus/active inputs, and rgba(207,214,229,.16) dividers. Track rows are 56px with an album-cover play button and hover actions.</p>
-  <div class="mock dark" style="padding:20px;background:var(--background-canvas,#121418);color:var(--text-text,#fff)">
+  <div class="mock dark" style="padding:20px;background:var(--background-canvas,#121418);color:var(--color-text-primary,#fff)">
     <div class="grid">
       <div class="tile" style="border-radius:var(--radius-surface,16px);background:var(--action-accent,#ff82c2);border:none;color:#000"><b style="color:#000">GENRE</b><span class="sub" style="color:#000;opacity:.75">Pop music — 40px heading on the pink banner</span></div>
-      <div class="tile" style="border-radius:var(--radius-element,8px);background:var(--background-surface,rgba(207,214,229,.08));border:none;color:var(--text-text,#fff)"><b style="color:var(--text-text,#fff)">Almost Love</b><span class="sub" style="color:var(--text-muted,rgba(255,255,255,.72))">Adelyn Paik · 2:28 · 160 BPM</span></div>
+      <div class="tile" style="border-radius:var(--radius-element,8px);background:var(--background-surface,rgba(207,214,229,.08));border:none;color:var(--color-text-primary,#fff)"><b style="color:var(--color-text-primary,#fff)">Almost Love</b><span class="sub" style="color:var(--color-text-secondary,rgba(255,255,255,.72))">Adelyn Paik · 2:28 · 160 BPM</span></div>
     </div>
-    <div style="margin-top:18px"><span class="btn" style="height:44px;border-radius:999px;background:#fff;color:#000;padding:0 20px;font-size:14px">Create free account</span> <span class="btn" style="height:44px;border-radius:999px;background:rgba(207,214,229,.16);color:var(--text-text,#fff);padding:0 20px;font-size:14px">Log in</span></div>
+    <div style="margin-top:18px"><span class="btn" style="height:44px;border-radius:var(--radius-button,10000px);background:var(--action-primary,#fff);color:var(--color-text-inverse-default,#000);padding:0 20px;font-size:14px">Create free account</span> <span class="btn" style="height:44px;border-radius:var(--radius-button,10000px);background:var(--action-secondary,rgba(207,214,229,.16));color:var(--color-text-primary,#fff);padding:0 20px;font-size:14px">Log in</span></div>
   </div>
 
   <h2 class="sh">Palette</h2>
@@ -173,9 +181,14 @@ const resolveVal = (v, depth) => {
   if (depth > 6 || typeof v !== 'string') return v;
   const m = v.match(/^\{(.+)\}$/);
   if (!m) return v;
-  let node = TOK, seen = [];
-  for (const k of m[1].split('.')) { node = node && node[k]; seen.push(k); }
-  return node && node.v !== undefined ? resolveVal(node.v, (depth || 0) + 1) : v;
+  // Token aliases are paths inside their own set: {font.size.heading.2xl}
+  // lives under TOK.core, a theme alias under TOK.light/TOK.dark. Try each.
+  for (const root of [TOK.core, TOK, TOK.light, TOK.dark]) {
+    let node = root;
+    for (const k of m[1].split('.')) node = node && node[k];
+    if (node && node.v !== undefined) return resolveVal(node.v, (depth || 0) + 1);
+  }
+  return v;
 };
 
 (function type() {

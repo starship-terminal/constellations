@@ -37,3 +37,26 @@ def parity_gap(light, dark):
     """The roles only light names and the ones only dark names."""
     lt, dk = {n for n, _ in tokens_of(light)}, {n for n, _ in tokens_of(dark)}
     return sorted(lt - dk), sorted(dk - lt)
+
+
+if __name__ == "__main__":
+    # Structural checks on the finished tokens.json: every {alias} must resolve
+    # inside its own set plus core (the $themes pairing), and the light/dark
+    # role gap is reported. Exits 1 while any alias points at nothing.
+    import json, pathlib, sys
+
+    T = json.loads((pathlib.Path(__file__).resolve().parent.parent / "tokens.json").read_text())
+    core, light, dark = (T.get(s, {}) for s in ("core", "light", "dark"))
+    errors = alias_errors(core, light, dark)
+    for e in errors:
+        print("alias error:", e)
+    only_light, only_dark = parity_gap(light, dark)
+    print(f"{sum(1 for _ in tokens_of(core))} core / "
+          f"{sum(1 for _ in tokens_of(light))} light / "
+          f"{sum(1 for _ in tokens_of(dark))} dark tokens; "
+          f"{len(errors)} alias errors")
+    if only_light:
+        print("roles only light names:", ", ".join(only_light))
+    if only_dark:
+        print("roles only dark names:", ", ".join(only_dark))
+    sys.exit(1 if errors else 0)
