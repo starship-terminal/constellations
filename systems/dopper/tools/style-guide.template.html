@@ -43,14 +43,14 @@ code { font-family: var(--sg-mono); font-size: .9em; }
 .navbar .wm { font-weight: 700; font-size: 20px; letter-spacing: -0.02em; }
 .navbar .sp { flex: 1; }
 .band { background: linear-gradient(160deg, #0067e5 0%, #116973 60%, #000f2e 130%); color: rgba(255, 255, 255, 0.95); }
-.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-button-height, 40px); padding: 0 16px; font-size: 14px; font-weight: 600; border-radius: var(--radius-button, 12px); border: 1px solid transparent; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-button-height, 54px); padding: 0 var(--component-button-padding-x, 25px); font-size: var(--font-size-control, 18px); font-weight: 600; border-radius: var(--component-button-radius, 20px); border: 1px solid transparent; }
 .btn.primary { background: var(--action-primary, var(--color-brand-darkblue, #0067e5)); color: var(--text-on-action, #fff); }
-.btn.ghost { background: transparent; color: #fff; box-shadow: inset 0 0 0 1px var(--border-ghost, rgba(255, 255, 255, 0.2)); border-radius: var(--radius-header-control, 10px); height: 32px; }
-.btn.secondary { background: var(--action-secondary, rgba(255, 255, 255, 0.898)); color: var(--text-on-action, #0f1015); border-radius: var(--radius-header-control, 10px); height: 32px; }
+.btn.ghost { background: transparent; color: #fff; box-shadow: inset 0 0 0 1px var(--border-ghost, rgba(255, 255, 255, 0.2)); border-radius: var(--component-button-radius, 20px); height: 32px; }
+.btn.secondary { background: var(--action-secondary, rgba(255, 255, 255, 0.898)); color: var(--text-on-action, #0f1015); border-radius: var(--component-button-radius, 20px); height: 32px; }
 .btn.outline { background: transparent; color: var(--color-neutral-ink, #0f1015); box-shadow: inset 0 0 0 1px var(--border-hairline, rgba(53, 65, 90, 0.2)); }
 .hero { color: rgba(255, 255, 255, 0.898); padding: 64px 40px 80px; font: 400 56px/1.1 var(--sg-serif); letter-spacing: .01em; text-align: center; }
 .hero small { display: block; font: 400 18px/1.5 var(--sg-sans); color: rgba(255, 255, 255, 0.898); margin: 16px auto 22px; max-width: 46ch; }
-.hero .big-cta { height: var(--component-button-cta-height, 56px); padding: 0 20px; border-radius: var(--radius-cta, 20px); font-size: 16px; }
+.hero .big-cta { height: var(--component-button-height, 54px); padding: 0 var(--component-button-padding-x, 25px); border-radius: var(--component-button-radius, 20px); font-size: var(--font-size-control, 18px); }
 .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
 .tile { border: 1px solid var(--color-neutral-hairline, rgba(53, 65, 90, 0.2)); padding: 14px; font-size: 13px; background: #fff; border-radius: var(--radius-card, 16px); }
 .tile .img { height: 120px; background: #eee; margin-bottom: 10px; display: flex; align-items: flex-end; padding: 10px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; border-radius: 8px; }
@@ -79,7 +79,7 @@ table.cmp td, table.cmp th { border: 1px solid var(--color-neutral-hairline, rgb
   <p class="note">Read from www.dopper.com and shop.dopper.com, signed out, in headless Chromium — prices render in EUR, English locale only. The customer account, checkout and the filled cart behind the login and cart cards are a documented boundary. Dopper and Gilroy are licensed served faces and are not loaded here: samples fall back to system sans.</p>
 
   <h2 class="sh">The chrome</h2>
-  <p class="lead">On home the header is a white 110px bar: the dopper. wordmark, the Bottle / Travel Mug / Tap / Mission / Get Involved flyout triggers, right links and the bag button. The hero is a full-bleed video with the "Whatever the season" display and Watch now / Shop our collection pills — deep-sea and outlined controls at a 9999px radius.</p>
+  <p class="lead">On home the header is a white 110px bar: the dopper. wordmark, the Bottle / Travel Mug / Tap / Mission / Get Involved flyout triggers, right links and the bag button. The hero is a full-bleed video with the "Whatever the season" display and Watch now / Shop our collection pills — deep-sea and outlined controls at the measured 20px pill radius.</p>
   <div class="mock band">
     <div class="navbar"><span class="wm">dopper.</span><span>Bottle</span><span>Travel Mug</span><span>Tap</span><span>Mission</span><span>Get Involved</span><span class="sp"></span><span class="btn ghost">EN</span><span class="btn secondary">Bag</span></div>
     <div class="hero">Whatever the season<small>Just Refill. Reusable water bottles, designed in the Netherlands.</small><span class="btn secondary big-cta">Shop our collection</span></div>
@@ -100,12 +100,12 @@ table.cmp td, table.cmp th { border: 1px solid var(--color-neutral-hairline, rgb
   <h2 class="sh">The auth card</h2>
   <p class="lead">/customer/account/login pairs a darkBlue "Registered Customers" card — Email + Password fields, a 56px Sign in, Show password, Remember Me and the Forgot link — with a light-blue "New Customers" card whose Create an Account is its match. Measured and typed into, never sent.</p>
   <div class="mock" style="padding:24px;display:flex;justify-content:center;gap:16px;background:#f6ecc8">
-    <div style="background:#0067e5;border-radius:16px;padding:24px;width:320px;color:#fff">
+    <div style="background:#0067e5;border-radius:var(--radius-card, 20px);padding:24px;width:320px;color:#fff">
       <b style="font:600 20px/1.3 var(--sg-sans)">Registered Customers</b>
       <p class="note" style="margin:6px 0 14px;color:#fff">If you have an account, sign in with your email address.</p>
       <div style="display:grid;gap:8px"><span class="btn secondary">Email</span><span class="btn secondary">Password</span><span class="btn primary" style="background:#000f2e">Sign in</span></div>
     </div>
-    <div style="background:#cce2ff;border-radius:16px;padding:24px;width:320px">
+    <div style="background:#cce2ff;border-radius:var(--radius-card, 20px);padding:24px;width:320px">
       <b style="font:600 20px/1.3 var(--sg-sans)">New Customers</b>
       <p class="note" style="margin:6px 0 14px">Creating an account is easy.</p>
       <div style="display:grid;gap:8px"><span class="btn primary">Create an Account</span></div>
@@ -117,14 +117,14 @@ table.cmp td, table.cmp th { border: 1px solid var(--color-neutral-hairline, rgb
   <div id="roles-out"></div>
 
   <h2 class="sh">Spacing and radius</h2>
-  <p class="lead">The declared scale runs --border-radius-xs 4px to --border-radius-l 20px; pills and CTAs measure 9999px round. Fields sit at 54–56px high (a declared --touch-target-min of 44px); the filter sheet and cards take the 16px radius.</p>
+  <p class="lead">The declared scale runs --border-radius-xs 4px to --border-radius-l 20px; pills, CTAs, cards and fields all measure the 20px step round. Fields sit at 54–56px high (a declared --touch-target-min of 44px); the colour swatches are the only circles (a 100% radius).</p>
   <div id="spacing-out" class="kv"></div>
 
   <h2 class="sh">Shadows</h2>
   <div id="elev-out" class="kv"></div>
 
   <h2 class="sh">Type</h2>
-  <p class="lead">Two served families: <code>Dopper</code> for the display faces and wordmark, <code>Gilroy</code> (Medium/400, Bold/600–800) for everything else — nav labels, buttons, prices and body copy. The ramp runs the ~90px hero display down to 14px control text. Samples fall back to system sans.</p>
+  <p class="lead">Two served families: <code>Dopper</code> for the display faces and wordmark, <code>Gilroy</code> (400 body, Medium/500 links, Bold/600–700 controls and headings) for everything else — nav labels, buttons, prices and body copy. The ramp runs the ~90px hero display down to 14px control text. Samples fall back to system sans.</p>
   <div id="type-out"></div>
   <div id="fam-out" class="kv"></div>
 
@@ -166,7 +166,9 @@ const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) 
   for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
   for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
   for (const [n, t] of flat(TOK.core.border || {}, 'border.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat(TOK.core.easing || {}, 'easing.')) m += `<div><b>${esc(n)}</b> <span>cubic-bezier(${esc(t.v.join ? t.v.join(', ') : t.v)})</span></div>`;
+  for (const [n, t] of flat((TOK.core.motion || {}).easing || {}, 'motion.easing.')) m += `<div><b>${esc(n)}</b> <span>cubic-bezier(${esc(t.v.join ? t.v.join(', ') : t.v)})</span></div>`;
+  for (const [n, t] of flat((TOK.core.motion || {}).duration || {}, 'motion.duration.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.layout || {}, 'layout.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
   $('#spacing-out').innerHTML = m;
 })();
 

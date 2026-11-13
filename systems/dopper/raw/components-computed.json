@@ -3544,7 +3544,7 @@
       "textTransform": "none"
      },
      "crop": "components/crops/nav-link-focus-visible.png",
-     "via": "focus failed"
+     "via": "el.focus() — a real ring painted; document.activeElement read the shadow host (check fixed in kbFocus)"
     },
     "pressed": {
      "error": "cdpSession.send: Protocol error (CSS.forcePseudoState): Could not find node with given id"
@@ -6151,7 +6151,9 @@
    "title": "Mega-menu",
    "group": "Shell and navigation",
    "desc": "The yellow Bottle flyout (tab pills across the top, feature columns, CTAs and a product photo).",
-   "selector": "opened Bottle menu"
+   "selector": "opened Bottle menu",
+   "missing": true,
+   "note": "Misidentified: the stored states are the static 'Explore our solutions' section (the tabsVariation cards carry the same copy as the menu). The opened Bottle mega-menu was screenshotted (screenshots/home-light-menu.png) but not measured; the selector is now scoped to the opened panel and a re-measure is queued."
   },
   "flyout-tab": {
    "states": {
@@ -6494,7 +6496,9 @@
    "title": "Flyout tab",
    "group": "Shell and navigation",
    "desc": "A pill tab across the top of the opened menu (Bottle active on yellow).",
-   "selector": "flyout tab pill"
+   "selector": "flyout tab pill",
+   "missing": true,
+   "note": "Misidentified: the stored states are the static 'Explore our solutions' section (the tabsVariation cards carry the same copy as the menu). The opened Bottle mega-menu was screenshotted (screenshots/home-light-menu.png) but not measured; the selector is now scoped to the opened panel and a re-measure is queued."
   },
   "flyout-card": {
    "states": {
@@ -6929,7 +6933,9 @@
    "title": "Flyout card",
    "group": "Shell and navigation",
    "desc": "An option card inside the flyout carousel (\"Bottle — A range of reusable bottles…\").",
-   "selector": "flyout option card"
+   "selector": "flyout option card",
+   "missing": true,
+   "note": "Misidentified: the stored states are the static 'Explore our solutions' section (the tabsVariation cards carry the same copy as the menu). The opened Bottle mega-menu was screenshotted (screenshots/home-light-menu.png) but not measured; the selector is now scoped to the opened panel and a re-measure is queued."
   },
   "shop-header": {
    "states": {
@@ -15056,7 +15062,7 @@
       "color": "rgb(0, 0, 0)"
      },
      "crop": "components/crops/m-burger-focus-visible.png",
-     "via": "focus failed"
+     "via": "el.focus() — a real ring painted; document.activeElement read the shadow host (check fixed in kbFocus)"
     },
     "pressed": {
      "error": "cdpSession.send: Protocol error (CSS.forcePseudoState): Could not find node with given id"
@@ -15920,7 +15926,7 @@
       }
      ],
      "crop": "components/crops/m-menu-pill-focus-visible.png",
-     "via": "focus failed"
+     "via": "el.focus() — a real ring painted; document.activeElement read the shadow host (check fixed in kbFocus)"
     },
     "pressed": {
      "error": "cdpSession.send: Protocol error (CSS.forcePseudoState): Could not find node with given id"
@@ -16210,7 +16216,9 @@
    "title": "Mobile filter row",
    "group": "Mobile (390 wide)",
    "desc": "A radio row in the mobile filter sheet.",
-   "selector": "mobile filter radio"
+   "selector": "mobile filter radio",
+   "missing": true,
+   "note": "Misidentified: the stored state is the product link 'Insulated (350 ml) - Pine Green', not a filter option row. The row search is now scoped to the marked sheet and a re-measure is queued."
   }
  }
 }

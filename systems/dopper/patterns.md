@@ -20,12 +20,14 @@ the custom element's box is 0x0 while its children carry the layout; on
 shop.dopper.com the same chrome repaints above a catalog nav row
 ([shop-nav](components/crops/shop-nav-default.png), 1360 x 27).
 
-The `Bottle` trigger opens a 1440 x 887 `#fed200` yellow mega-menu
-([flyout](components/crops/flyout-default.png)) — see
-[home-light-menu](screenshots/home-light-menu.png): Map / Community tabs
-([flyout-tab](components/crops/flyout-tab-default.png), 210 x 32) over
-250 x 445 cards ([flyout-card](components/crops/flyout-card-default.png)).
-The menu closes on blur; each flyout reading re-opened it first.
+The `Bottle` trigger opens a full-viewport `#fed200` yellow mega-menu — see
+[home-light-menu](screenshots/home-light-menu.png): Travel Mug / Bottle /
+Tap / Map / Community tabs over feature columns, "Buy a bottle" and
+"Customise 60+ bottles" CTAs and a product photo. The `flyout`,
+`flyout-tab` and `flyout-card` measurements are misidentified — they read
+the static "Explore our solutions" section, which carries the same card
+copy (their entries are marked missing in [components.md](components.md);
+a re-measure is queued). The menu closes on blur.
 
 ## The hero and the home story
 
@@ -46,7 +48,7 @@ and the sand footer with the newsletter band
 
 shop.dopper.com (Magento 2, `Dopper/dopper_b2c`) adds a 27px catalog nav
 row and hero tiles with 173 x 54 darkBlue CTAs
-([hero-button](components/crops/hero-button-default.png)). On /bottles a
+([shop-hero-button](components/crops/shop-hero-button-default.png)). On /bottles a
 259 x 80 centred "Bottles" title ([plp-h1](components/crops/plp-h1-default.png))
 sits above the teal `+ Filters` pill
 ([filters-button](components/crops/filters-button-default.png), 156 x 52)
@@ -84,7 +86,7 @@ a darkBlue "Registered Customers" card
 [email](components/crops/login-email-default.png) and
 [password](components/crops/login-password-default.png) fields at 54px,
 a 56px Sign in, Remember Me,
-[Forgot link](components/crops/login-forgot-default.png)) beside a
+[Forgot link](components/crops/login-link-default.png)) beside a
 light-blue "New Customers" card ([new-card](components/crops/new-card-default.png))
 with a 257 x 56 `Create an Account`. Fields were typed into and cleared —
 nothing sent.
@@ -110,5 +112,6 @@ and [mobile-category-light-filter](screenshots/mobile-category-light-filter.png)
   are in [components.md](components.md)'s Shared values.
 - **Hovers** shift fills along the declared tints (darkBlue →
   darkBlue-1, etc.) rather than inventing new hues.
-- **Radius** language: 9999px pills for nav pills/CTAs, the declared
-  4/8/16/20px scale for chips, cards, fields and sheets.
+- **Radius** language: the declared 4/8/16/20px scale — pills, CTAs,
+  cards, fields and chips all measure the 20px step; only the colour
+  swatches (100%) and icon circles go rounder.

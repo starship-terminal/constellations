@@ -40,7 +40,11 @@ class Shooter {
     for (const old of fs.readdirSync(RAW).filter((n) => n.startsWith(`${this.prefix}-${name}.part`))) fs.unlinkSync(`${RAW}/${old}`);
     const MAXH = 8 * chunk;
     const hCap = Math.min(H, MAXH);
-    if (H > MAXH) log(`  ! ${name}: page is ${H}px tall, capturing first ${hCap}px only (infinite/growing page boundary)`);
+    if (H > MAXH) {
+      log(`  ! ${name}: page is ${H}px tall, capturing first ${hCap}px only (infinite/growing page boundary)`);
+      // quantize.py folds this marker into the stitched shot's .capture.json.
+      fs.writeFileSync(`${f}.truncated.json`, JSON.stringify({ truncated: true, documentHeight: H, capturedHeight: hCap, chunkCap: 8, note: 'page exceeded the 8-chunk cap; the tail below it was never captured' }, null, 1) + '\n');
+    }
     if (hCap <= chunk) await screenshotWithMetadata(p, { path: f + '.png', fullPage: true }, this.requested);
     else for (let i = 0, y = 0; y < hCap; i++, y += chunk) await screenshotWithMetadata(p, { path: `${f}.part${i}.png`, fullPage: true, clip: { x: 0, y, width: this.vw, height: Math.min(chunk, hCap - y) } }, this.requested);
     this.count++; log('  shot', name, 'H=' + H);
@@ -51,22 +55,33 @@ const step = async (label, fn) => { try { await fn(); } catch (e) { log('  FAILE
 const clickEl = async (loc, ms = 8000) => { await loc.click({ timeout: ms }).catch(() => loc.evaluate((el) => el.click())); };
 
 // The "Bottle" nav item may open a flyout (a click or hover toggles it). Local
-// UI only, never a link. The mark is the topmost element whose trimmed text is
-// just "Bottle" (the home showcase also carries a "Bottle …" tab lower down).
+// UI only, never a link. The trigger lives inside DOPPER-NAVIGATION's shadow
+// root, which document.querySelectorAll cannot reach — a Playwright locator
+// pierces shadow DOM. The menu only counts as open when its own copy paints
+// inside the shadow root or a fixed/absolute overlay: the static "Explore our
+// solutions" section carries the same words.
+const flyoutOpen = (p) => p.evaluate(() => {
+  const nav = document.querySelector('dopper-navigation');
+  const inOverlay = (e) => {
+    for (let n = e; n; n = n.parentElement || (n.getRootNode && n.getRootNode().host)) {
+      if (n === document.body) break;
+      const cs = getComputedStyle(n);
+      if (cs.position === 'fixed' || cs.position === 'absolute') return true;
+    }
+    return false;
+  };
+  const roots = [nav && nav.shadowRoot, document].filter(Boolean);
+  return roots.some((r) => [...r.querySelectorAll('h1,h2,h3,h4,p,div,span')]
+    .some((e) => /range of reusable|everyone can just refill/i.test(e.innerText || '') && e.getBoundingClientRect().height > 0 && (r !== document || inOverlay(e))));
+});
 async function openFlyout(p, S) {
-  const t = await p.evaluateHandle(() => {
-    const els = [...document.querySelectorAll('a, button, [role="button"]')]
-      .filter((e) => /^\s*bottle\b/i.test(e.innerText || '') && e.getBoundingClientRect().width > 0)
-      .sort((a, b) => a.getBoundingClientRect().top - b.getBoundingClientRect().top);
-    return els[0] || null;
-  });
-  const el = t.asElement();
-  if (!el) return;
+  const el = p.locator('dopper-navigation button').filter({ hasText: /^\s*Bottle\s*$/ }).filter({ visible: true }).first();
+  if (!(await el.count())) throw new Error('flyout trigger not found in dopper-navigation');
   await el.hover().catch(() => {});
   await wait(p, 900);
-  const opened = await p.evaluate(() => !!document.querySelector('[class*="flyout" i], [class*="dropdown" i], [class*="submenu" i], [class*="menu" i][class*="open" i]'));
-  if (!opened) await el.click().catch(() => el.evaluate((e) => e.click()));
+  if (!(await flyoutOpen(p))) await el.click().catch(() => el.evaluate((e) => e.click()));
   await wait(p, 1400);
+  if (!(await flyoutOpen(p))) throw new Error('flyout did not open — no menu shot saved');
   await S.view('menu');
   await p.keyboard.press('Escape');
   await wait(p, 600);

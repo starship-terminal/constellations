@@ -133,9 +133,13 @@ if have("nav-link", "default", "fontFamily"):
                    "source": "computed fontFamily of nav-link default (raw/components-computed.json); Gilroy-Medium/Gilroy-Bold webfonts from www.dopper.com (raw/css-vars.json fonts)",
                    "description": "The Gilroy stack on nav links, buttons and body text."}
 weights = SPEC["core"].setdefault("font", {}).setdefault("weight", {})
+# Each named weight comes from a reading whose family matches the name:
+# Gilroy 400 body text, Gilroy-Medium 500 nav, Gilroy-Bold 600 CTA labels,
+# Dopper 400 display. (The section headings are Dopper at 400, not a bold.)
 for key, comp, state, desc in [
-    ("regular", "nav-link", "default", "The 400/medium reading on nav and body copy (Gilroy-Medium is styled as 400)."),
-    ("bold", "collections-heading", "default", "The heavy reading on section headings and buttons (Gilroy-Bold, styled 600-700)."),
+    ("regular", "breadcrumb", "default", "The 400 reading on body copy and secondary text (Gilroy)."),
+    ("medium", "nav-link", "default", "The 500 reading on header links and card titles (Gilroy-Medium)."),
+    ("bold", "add-to-cart", "default", "The 600 reading on CTA labels, prices and shop headings (Gilroy-Bold)."),
     ("display", "hero-display", "default", "The Dopper display weight on h1s."),
 ]:
     v = ts(comp, state, "fontWeight")
@@ -207,19 +211,20 @@ def role(name, target, desc, source=None):
 
 role("--surface-page", "#fcfaf2", "The #fcfaf2 cream page field (sand-3/--white).", "computed body/page background on both hosts")
 role("--surface-card", "#f9f3df", "The sand-2 card field.", "computed card surfaces (raw/components-computed.json)")
-role("--surface-band", "#cce2ff", "The darkBlue-3 light-blue band: the PLP filter sheet, the cart strip, the New Customers card.", "computed filter-panel/new-card/cart-strip background (raw/components-computed.json)")
-role("--surface-menu", "#fed200", "The yellow mega-menu panel.", "computed flyout background (raw/components-computed.json)")
-role("--surface-menu-mobile", "#0067e5", "The darkBlue full-screen mobile menu.", "computed m-menu-open background (raw/components-computed.json)")
-role("--surface-deep", "#000f2e", "The deep-sea surface (filled pills, the × close button).", "computed btn-dark fill (raw/components-computed.json)")
+role("--surface-band", "#cce2ff", "The darkBlue-3 light-blue band: the PLP filter sheet, the cart strip, the New Customers card.", "computed new-card and cart-strip background (raw/components-computed.json); the filter sheet's own fill was not captured — its wrapper records transparent")
+role("--surface-menu", "#fed200", "The yellow mega-menu panel.", "the opened Bottle menu paints the declared --yellow (screenshots/home-light-menu.png); the stored flyout reading is a misidentified static section")
+role("--surface-menu-mobile", "#0067e5", "The darkBlue full-screen mobile menu.", "computed dialog__background layer inside m-menu-open (raw/components-computed.json)")
+role("--surface-deep", "#000f2e", "The deep-sea surface (filled pills, the × close button).", "computed painted fill layer inside btn-dark (raw/components-computed.json)")
 role("--text-primary", "#000f2e", "The deep-sea ink on headings and primary copy.", "computed color of plp-h1 / headings (raw/components-computed.json)")
 role("--text-muted", "#515a8a", "The deep-sea-1 secondary text (item counts, meta).", "computed muted text inside filter rows (raw/components-computed.json)")
 role("--text-on-dark", "#fcfaf2", "Cream text on darkBlue/deep-sea surfaces.", "computed color of m-menu rows / btn-dark label (raw/components-computed.json)")
 role("--action-primary", "#0067e5", "The darkBlue fill on Add to cart / Sign in / shop CTAs.", "computed backgroundColor of add-to-cart / shop-hero-button (raw/components-computed.json)")
-role("--action-dark", "#000f2e", "The deep-sea fill on 'Watch now', Sign in, × close.", "computed backgroundColor of btn-dark / filter-close (raw/components-computed.json)")
-role("--action-accent", "#0abeaa", "The carribean '+ Filters' pill.", "computed backgroundColor of filters-button (raw/components-computed.json)")
+role("--action-dark", "#000f2e", "The deep-sea fill on 'Watch now', Sign in, × close.", "computed painted fill layers of btn-dark and the login-button ::before (raw/components-computed.json)")
+role("--action-accent", "#0abeaa", "The carribean '+ Filters' pill.", "computed ::before fill of filters-button (raw/components-computed.json)")
 role("--action-warm", "#fed200", "The yellow active tab / burger fill.", "computed flyout-tab active state and m-burger fill (raw/components-computed.json)")
 role("--border-ink", "#000f2e", "The deep-sea outline on ghost pills and filter rings.", "computed borders of btn-outline / filter rows (raw/components-computed.json)")
-role("--focus-ring", "#0067e5", "Keyboard focus ring colour where the page paints one.", "computed outlineColor of focus-visible states (raw/components-computed.json)")
+role("--focus-ring", "#005fcc", "The keyboard focus ring on the marketing chrome (nav links, menu pills, burger).", "computed outlineColor of nav-link / m-burger / m-menu-pill focus-visible (raw/components-computed.json)")
+role("--focus-ring-shop", "#000f2e", "The keyboard focus ring on shop controls.", "computed outlineColor of shop-nav-link focus-visible (raw/components-computed.json)")
 
 # ------------------------------------------------------------- type scale
 
@@ -342,6 +347,37 @@ for key, comp, state, prop, ty, desc in [
 
 # ------------------------------------------------------------------ component
 
+TRANSPARENT = "rgba(0, 0, 0, 0)"
+
+
+def cover(st_):
+    """The colour that paints the component's surface when the wrapper's own
+    backgroundColor is transparent: the largest painted layer inside the box
+    (a child div or the element's own ::before — Dopper's pills and overlays
+    paint there), then the immediate ancestor's fill. None when nothing
+    covers — a missing fill is never published as transparent."""
+    r = st_.get("rect") or {}
+    area = (r.get("w") or 0) * (r.get("h") or 0)
+    best = None
+    for p in st_.get("paint") or []:
+        if not p.get("bg"):
+            continue
+        m = re.match(r"([\d.]+)(?:px)?x([\d.]+)(?:px)?", p.get("size") or "")
+        if not m:
+            continue
+        pa = float(m.group(1)) * float(m.group(2))
+        if area and pa < 0.5 * area:
+            continue
+        if best is None or pa > best[0]:
+            best = (pa, p)
+    if best:
+        return best[1]["bg"], f"computed backgroundColor of the {best[1]['node']} layer inside"
+    for a in st_.get("ancestors") or []:
+        if a.get("bg") and a["bg"] != TRANSPARENT:
+            return a["bg"], f"computed backgroundColor of the {a['node']} ancestor"
+    return None, None
+
+
 comp = SPEC["component"]
 for key, cname, state, prop, desc in [
     ("button-dark-fill", "btn-dark", "default", "backgroundColor", "Deep-sea fill of the dark pill CTAs."),
@@ -377,15 +413,26 @@ for key, cname, state, prop, desc in [
     ("cart-strip-bg", "cart-strip", "default", "backgroundColor", "The darkBlue-3 cart strip."),
 ]:
     try:
+        if C[cname].get("missing"):
+            continue  # a misidentified entry is a gap, not a value
         c = C[cname]["states"][state]
         if prop == "placeholder":
             v = (c.get("placeholder") or {}).get("color")
+            src = f"computed {prop} of {cname} {state} (raw/components-computed.json)"
+        elif prop == "backgroundColor" and (c["style"].get(prop) or TRANSPARENT) == TRANSPARENT:
+            v, how = cover(c)
+            src = f"{how} {cname} {state} (raw/components-computed.json)" if how else None
         else:
             v = c["style"].get(prop)
+            src = f"computed {prop} of {cname} {state} (raw/components-computed.json)"
         if v:
-            comp[key] = {"value": norm_color(v), "type": "color",
-                         "source": f"computed {prop} of {cname} {state} (raw/components-computed.json)",
-                         "description": desc}
+            vn = find_var(norm_color(v))
+            leaf = ({"var": vn, "type": "color",
+                     "source": f"{src}; matches css-var {vn} resolved light", "description": desc}
+                    if vn else
+                    {"value": norm_color(v), "type": "color",
+                     "source": src, "description": desc})
+            comp[key] = leaf
     except KeyError:
         pass
 
@@ -397,11 +444,18 @@ for key, cname, state, prop, desc in [
     ("nav-height", "header", "default", "height", "The ~110px marketing header (content row is slimmer)."),
 ]:
     try:
+        if C[cname].get("missing"):
+            continue
         v = C[cname]["states"][state]["style"].get(prop)
         if v:
-            comp[key] = {"value": v, "type": "dimension",
-                         "source": f"computed {prop} of {cname} {state} (raw/components-computed.json)",
-                         "description": desc}
+            vn = find_var(v)
+            comp[key] = ({"var": vn, "type": "dimension",
+                          "source": f"computed {prop} of {cname} {state}; matches css-var {vn} resolved light (raw/components-computed.json, raw/css-vars.json)",
+                          "description": desc}
+                         if vn else
+                         {"value": v, "type": "dimension",
+                          "source": f"computed {prop} of {cname} {state} (raw/components-computed.json)",
+                          "description": desc})
     except KeyError:
         pass
 

@@ -3,7 +3,7 @@
 # Source of truth: tokens.json. DESIGN.md spec version alpha.
 version: "alpha"
 name: "Dopper"
-description: "Mission-brand marketing + storefront pages: Dopper display face over Gilroy on cream #fcfaf2 fields, deep-sea #000f2e ink, darkBlue #0067e5 CTAs and bands, a #fed200 yellow mega-menu, sand #f6ecc8 footer, carribean #0abeaa filter accents, declared 4/8/16/20px radii and 9999px pills, expo/quint easings, one palette across a Next.js marketing site and a Magento 2 shop with PLP filters, PDP configurator, empty cart and login cards"
+description: "Mission-brand marketing + storefront pages: Dopper display face over Gilroy on cream #fcfaf2 fields, deep-sea #000f2e ink, darkBlue #0067e5 CTAs and bands, a #fed200 yellow mega-menu, sand #f6ecc8 footer, carribean #0abeaa filter accents, a declared 4/8/16/20px radius scale measured on every pill, CTA and card, expo/quint easings, one palette across a Next.js marketing site and a Magento 2 shop with PLP filters, PDP configurator, empty cart and login cards"
 omitted:
   - section: "typography"
     reason: "tokens.json has no typography tokens under `core.typography`"
@@ -30,34 +30,30 @@ colors:
   action-accent: "#0abeaa"
   action-warm: "#fed200"
   border-ink: "#000f2e"
-  focus-ring: "#0067e5"
-  component-button-dark-fill: "rgba(0, 0, 0, 0)"
-  component-button-dark-fill-hover: "rgba(0, 0, 0, 0)"
-  component-button-dark-fill-pressed: "rgba(0, 0, 0, 0)"
+  focus-ring-default: "#005fcc"
+  focus-ring-shop: "#000f2e"
+  component-button-dark-fill: "#000f2e"
+  component-button-dark-fill-hover: "#000f2e"
+  component-button-dark-fill-pressed: "#000f2e"
   component-button-dark-ink: "#f6ecc8"
   component-button-primary-fill: "#0067e5"
   component-button-primary-fill-hover: "#0067e5"
   component-button-primary-ink: "#f9f3df"
   component-button-outline-border: "#f6ecc8"
   component-button-outline-ink: "#f6ecc8"
-  component-button-teal-fill: "rgba(0, 0, 0, 0)"
-  component-nav-trigger-fill-hover: "rgba(0, 0, 0, 0)"
+  component-button-teal-fill: "#0abeaa"
   component-link-color: "#000f2e"
   component-link-color-hover: "#0067e5"
-  component-header-bg: "rgba(0, 0, 0, 0)"
-  component-menu-bg: "rgba(0, 0, 0, 0)"
-  component-flyout-bg: "rgba(0, 0, 0, 0)"
-  component-filter-panel-bg: "rgba(0, 0, 0, 0)"
-  component-filter-close-fill: "rgba(0, 0, 0, 0)"
-  component-card-bg: "rgba(0, 0, 0, 0)"
+  component-header-bg: "rgba(252, 250, 242, 0.95)"
+  component-menu-bg: "#0067e5"
   component-login-card-bg: "#0067e5"
   component-new-card-bg: "#cce2ff"
   component-field-bg: "#fcfaf2"
   component-field-ink: "#000f2e"
   component-field-placeholder: "#000f2e"
-  component-signin-fill: "rgba(0, 0, 0, 0)"
+  component-signin-fill: "#000f2e"
   component-checkbox-ink: "#fcfaf2"
-  component-footer-bg: "rgba(0, 0, 0, 0)"
+  component-footer-bg: "#f6ecc8"
   component-price-ink: "#000f2e"
   component-cart-strip-bg: "#cce2ff"
 rounded:
@@ -74,12 +70,6 @@ components:
     backgroundColor: "{colors.component-header-bg}"
   menu:
     backgroundColor: "{colors.component-menu-bg}"
-  flyout:
-    backgroundColor: "{colors.component-flyout-bg}"
-  filter-panel:
-    backgroundColor: "{colors.component-filter-panel-bg}"
-  card:
-    backgroundColor: "{colors.component-card-bg}"
   login-card:
     backgroundColor: "{colors.component-login-card-bg}"
   new-card:
@@ -106,7 +96,7 @@ It follows the DESIGN.md spec, version alpha. That format has no themes, no per-
 
 ## Overview
 
-Good for: Mission-brand marketing + storefront pages: Dopper display face over Gilroy on cream #fcfaf2 fields, deep-sea #000f2e ink, darkBlue #0067e5 CTAs and bands, a #fed200 yellow mega-menu, sand #f6ecc8 footer, carribean #0abeaa filter accents, declared 4/8/16/20px radii and 9999px pills, expo/quint easings, one palette across a Next.js marketing site and a Magento 2 shop with PLP filters, PDP configurator, empty cart and login cards.
+Good for: Mission-brand marketing + storefront pages: Dopper display face over Gilroy on cream #fcfaf2 fields, deep-sea #000f2e ink, darkBlue #0067e5 CTAs and bands, a #fed200 yellow mega-menu, sand #f6ecc8 footer, carribean #0abeaa filter accents, a declared 4/8/16/20px radius scale measured on every pill, CTA and card, expo/quint easings, one palette across a Next.js marketing site and a Magento 2 shop with PLP filters, PDP configurator, empty cart and login cards.
 
 Captured 2026-11-13, signed out (every captured surface is public; the customer account, checkout and filled cart behind the login and cart cards were never reached; no form was submitted, no account created, and the Cookiebot dialog was hidden, never answered). English locale, EUR prices. Themes: light.
 
@@ -147,7 +137,7 @@ Corner radii from `core.radius`: `l` 20px, `m` 16px, `s` 8px, `xs` 4px, `pill` 2
 
 ## Components
 
-12 components from the `component` tokens of the `light` set, keeping only the properties DESIGN.md defines.
+9 components from the `component` tokens of the `light` set, keeping only the properties DESIGN.md defines.
 
 Measured states, crops and the full inventory: [components.md](components.md), [components](components), [style-guide.html](style-guide.html).
 

@@ -31,7 +31,7 @@ const save = () => fs.writeFileSync(OUT, JSON.stringify(out, null, 1) + '\n');
 const URLS = {
   home: BASE + '/', mission: BASE + '/en/mission/story', 'product-insulated': BASE + '/en/products/insulated', blog: BASE + '/en/blog/just-refill',
   shop: SHOP + '/', category: SHOP + '/bottles', pdp: SHOP + '/dopper-original-pacific-blue',
-  cart: SHOP + '/checkout/cart/', login: SHOP + '/customer/account/login/', mobile: BASE + '/',
+  cart: SHOP + '/checkout/cart/', login: SHOP + '/customer/account/login/', mobile: BASE + '/', 'mobile-category': SHOP + '/bottles',
 };
 let page, cdp, current, context, run, liveCtx;
 const touched = new Set();
@@ -91,7 +91,14 @@ async function chrome(key) {
 }
 
 async function reset() {
-  await page.evaluate(() => document.activeElement && document.activeElement.blur && document.activeElement.blur()).catch(() => {});
+  // Blur whatever holds focus wherever it actually lives: for a control inside
+  // DOPPER-NAVIGATION's shadow root, document.activeElement is the host, so the
+  // focused node is the root's own activeElement.
+  await page.evaluate(() => {
+    let active = document.activeElement;
+    while (active && active.shadowRoot && active.shadowRoot.activeElement) active = active.shadowRoot.activeElement;
+    if (active && active.blur) active.blur();
+  }).catch(() => {});
   const vw = page.viewportSize()?.width ?? 1440;
   await page.mouse.move(vw - 2, 2);
   await page.waitForTimeout(250);
@@ -101,12 +108,18 @@ async function kbFocus(loc) {
   await loc.evaluate((el) => el.focus());
   await page.keyboard.press('Shift+Tab');
   await page.keyboard.press('Tab');
-  let ok = await loc.evaluate((el) => document.activeElement === el || el.contains(document.activeElement));
+  // A control inside a shadow root (DOPPER-NAVIGATION's nav links and buttons)
+  // never lands on document.activeElement — that reads the shadow host. :focus
+  // and :focus-within are evaluated on the element in its own root, so they see
+  // focus wherever it actually landed.
+  const hasFocus = (el) => el.matches(':focus') || el.matches(':focus-within')
+    || el === document.activeElement || el.contains(document.activeElement);
+  let ok = await loc.evaluate(hasFocus);
   let how = 'Shift+Tab, Tab';
   if (!ok) {
     await page.keyboard.press('Shift');
     await loc.evaluate((el) => el.focus());
-    ok = await loc.evaluate((el) => document.activeElement === el);
+    ok = await loc.evaluate(hasFocus);
     how = 'keydown then focus()';
   }
   await page.waitForTimeout(350);
@@ -284,18 +297,41 @@ const NAV = 'dopper-navigation, .page-header, header';
 // The header's Bottle button opens the yellow mega-menu (a hover or click
 // toggles it). The triggers sit in DOPPER-NAVIGATION's shadow root, so the
 // click uses a Playwright locator (locators pierce shadow DOM).
+// The mega-menu's copy ("A range of reusable bottles", "so everyone can just
+// refill") is also the static "Explore our solutions" section's copy, so a
+// document-wide text match lands on ordinary page content. The flyout only
+// counts when the match lives inside DOPPER-NAVIGATION's shadow root or a
+// fixed/absolute overlay — the shapes an opened menu actually takes.
+const menuScope = `(() => {
+  const nav = document.querySelector('dopper-navigation');
+  const inOverlay = (e) => {
+    for (let n = e; n; n = n.parentElement || (n.getRootNode && n.getRootNode().host)) {
+      if (n === document.body) break;
+      const cs = getComputedStyle(n);
+      if (cs.position === 'fixed' || cs.position === 'absolute') return true;
+    }
+    return false;
+  };
+  const roots = [nav && nav.shadowRoot, document].filter(Boolean);
+  const heads = [];
+  for (const root of roots) {
+    for (const e of root.querySelectorAll('h1,h2,h3,h4,p,div,span')) {
+      const t = e.innerText || '';
+      if (!/range of reusable|everyone can just refill/i.test(t) || !e.getBoundingClientRect().height) continue;
+      if (root === nav.shadowRoot || inOverlay(e)) heads.push(e);
+    }
+  }
+  return heads;
+})()`;
+
 async function openFlyout() {
   const t = q('dopper-navigation button').filter({ hasText: /^\s*Bottle\s*$/ }).filter({ visible: true }).first();
   if (!(await t.count())) { log('  ! flyout trigger not found'); return false; }
   await t.hover().catch(() => {});
   await page.waitForTimeout(900);
   // Class names are build hashes — the open signal is the flyout's own copy
-  // ("so everyone can just refill") being painted.
-  const flyoutOpen = () => page.evaluate(() => {
-    const nav = document.querySelector('dopper-navigation');
-    const roots = [nav && nav.shadowRoot, document].filter(Boolean);
-    return roots.some((r) => [...r.querySelectorAll('h1,h2,h3,h4,p,div,span')].some((e) => /everyone can just refill|range of reusable/i.test(e.innerText || '') && e.getBoundingClientRect().height > 0));
-  });
+  // ("so everyone can just refill") being painted inside the opened panel.
+  const flyoutOpen = () => page.evaluate(`${menuScope}.length > 0`);
   if (!(await flyoutOpen())) await t.click({ timeout: 5000 }).catch(() => t.evaluate((el) => el.click()));
   await page.waitForTimeout(900);
   if (!(await flyoutOpen())) { log('  ! flyout did not open'); return false; }
@@ -304,25 +340,22 @@ async function openFlyout() {
 }
 
 // Marks the opened mega-menu panel: the first visible ancestor of the
-// flyout's "A range of reusable bottles" heading wide enough to be the panel.
+// flyout's "A range of reusable bottles" heading wide enough to be the panel —
+// scoped to the opened menu, never the static section with the same copy.
 async function markFlyout() {
-  await page.evaluate(() => {
-    const nav = document.querySelector('dopper-navigation');
-    const roots = [nav && nav.shadowRoot, document].filter(Boolean);
-    let h = null;
-    for (const root of roots) {
-      h = [...root.querySelectorAll('h1,h2,h3,h4,p,div,span')].find((e) => /A range of reusable|everyone can just refill/i.test(e.innerText || '') && e.getBoundingClientRect().height > 0);
-      if (h) break;
-    }
+  await page.evaluate(`{
+    const heads = ${menuScope};
+    const h = heads[0];
     if (!h) return;
     let n = h;
-    for (let i = 0; i < 9 && n.parentElement; i++) {
-      n = n.parentElement;
+    for (let i = 0; i < 9 && n; i++) {
+      n = n.parentElement || (n.getRootNode && n.getRootNode().host);
+      if (!n || n === document.body) break;
       const r = n.getBoundingClientRect();
       if (r.width > 500 && r.height > 300) { n.setAttribute('data-m-mark', 'flyout'); return; }
     }
     h.setAttribute('data-m-mark', 'flyout');
-  });
+  }`);
 }
 
 // Marks a home content card: the smallest ancestor of a card heading that
@@ -345,11 +378,14 @@ async function markCard(loc, tag) {
 }
 
 // Marks the leaf row inside the marked filter sheet holding one option's
-// text (under 120px tall).
+// text (under 120px tall). Scoped to the opened sheet: without a panel mark
+// nothing is marked (the spec records missing), and product cards/links are
+// never filter rows.
 const markRow = (re, tag) => page.evaluate(([src, flags, tg]) => {
   const rx = new RegExp(src, flags);
-  const panel = document.querySelector('[data-m-mark="fpanel"]') || document;
-  const cand = [...panel.querySelectorAll('li, a, label, div, span')].filter((e) => rx.test(e.innerText || '') && e.getBoundingClientRect().height > 0 && e.getBoundingClientRect().height < 120);
+  const panel = document.querySelector('[data-m-mark="fpanel"]');
+  if (!panel) return;
+  const cand = [...panel.querySelectorAll('li, a, label, div, span')].filter((e) => rx.test(e.innerText || '') && e.getBoundingClientRect().height > 0 && e.getBoundingClientRect().height < 120 && !e.closest('.product-item, .products, [class*="product-item"]'));
   const leaf = cand.filter((e) => !cand.some((o) => o !== e && e.contains(o)))[0] || cand[0];
   leaf && leaf.setAttribute('data-m-mark', tg);
 }, [re.source, re.flags, tag]);
@@ -638,9 +674,10 @@ async function mobile() {
   await S('m-menu-pill', q('[data-m-mark="mmenu"] a, [data-m-mark="mmenu"] button').filter({ hasText: /^\s*(Impact report|Find a Store)\s*$/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Mobile menu pill', desc: 'An outline pill inside the menu (Impact report / Find a Store).', sel: 'menu outline pill' }, { noScroll: true });
   await page.keyboard.press('Escape'); await page.waitForTimeout(500);
   // The PLP filter sheet on mobile is a full-screen overlay (closed by
-  // default): open it once with its own toggle.
-  await newPage('category', { mobile: true, wait: 8000 });
-  current = 'mobile-category';
+  // default): open it once with its own toggle. The page key is the same one
+  // the saved components carry, so a blocked load is recorded against them
+  // and a temporary block can never erase earlier readings.
+  if (!(await newPage('mobile-category', { mobile: true, wait: 8000 }))) return;
   const fb = q('button, a, [role="button"]').filter({ hasText: /^\s*Filters\s*$/i }).filter({ visible: true }).first();
   if (await fb.count()) {
     await fb.click({ timeout: 5000 }).catch(() => fb.evaluate((el) => el.click()));

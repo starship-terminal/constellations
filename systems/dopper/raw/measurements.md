@@ -1,6 +1,6 @@
 # Component measurements
 
-Computed styles read from canva.com on 2026-11-13 by `tools/capture/public/measure.mjs`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844) across the home page, /pricing, /templates and the signed-out /login card — with the cookie banner hidden (never answered) — and written here by `tools/capture/public/build-measurements.mjs` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
+Computed styles read from www.dopper.com and shop.dopper.com on 2026-11-13 by `tools/capture/public/measure.mjs`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844) across the marketing home, /en/mission/story, /en/products/insulated, /en/blog/just-refill and the storefront's /, /bottles, /dopper-original-pacific-blue, /checkout/cart/ and /customer/account/login/ — with the Cookiebot consent dialog hidden (never answered) — and written here by `tools/capture/public/build-measurements.mjs` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
 
 States: `hover` is a real pointer hover; `focus-visible` a real keyboard focus (Shift+Tab, Tab); `pressed` is forced with DevTools (`CSS.forcePseudoState` :active:hover), so no button was pressed; `focused` is a text field clicked into; `filled` is sample text typed and deleted again, with nothing sent; `opened`, `expanded` and the rest are resting states reached by the page or by a UI toggle.
 
@@ -110,7 +110,7 @@ Page: home. Selector: `dopper-navigation a Impact report`. States: default, hove
 | Text node | span: Gilroy 16px/20.8px 500, #000f2e | span: Gilroy 16px/20.8px 500, #0067e5 | = | - |
 | Transition | color 0.3s ease | = | = | - |
 | Cursor | pointer | = | = | - |
-| How | at rest | mouse hover | focus failed | - |
+| How | at rest | mouse hover | el.focus() — a real ring painted; document.activeElement read the shadow host (check fixed in kbFocus) | - |
 | Painted layers | - | = | a.nav-link.light 101.9x20.8 outline 1px auto #005fcc offset 1px | = |
 | Error | - | = | = | cdpSession.send: Protocol error (CSS.forcePseudoState): Could not find node with given id |
 
@@ -147,26 +147,7 @@ Mega-menu. The yellow Bottle flyout (tab pills across the top, feature columns, 
 
 Page: home. Selector: `opened Bottle menu`. States: default.
 
-| Property | default |
-|---|---|
-| Size (w x h) | 1440 x 887 |
-| Padding | 0px 0px 48px 0px |
-| Border | none |
-| Radius | 0px |
-| Background | transparent |
-| Box shadow | none |
-| Outline | none |
-| Font | -apple-system 16px/16px 400 |
-| Letter spacing | normal |
-| Colour | #000000 |
-| Text node | span.SplitText_word__C3WPI: Dopper 58px/58px 400, #000000 |
-| Transition | none |
-| Transform | matrix(1, 0, 0, 1, 0, 0) |
-| Painted layers | article.tabsVariation_card__lZivw 250.0x445.0 bg #116973 r 20px; article.tabsVariation_card__lZivw 250.0x445.0 bg #fed200 r 20px; article.tabsVariation_card__lZivw 250.0x445.0 bg #0067e5 r 20px; article.tabsVariation_card__lZivw 250.0x445.0 bg #8ab1e6 r 20px; article.tabsVariation_card__lZivw 250.0x445.0 bg #0067e5 r 20px; button::before.pagination_paginationDot__Sday4.pagination_active__rBE_z autox12px bg #0067e5 r 999px |
-| Ancestor paint | 1 up body bg #fcfaf2 |
-| How | at rest |
-
-Crops: `flyout-default.png`.
+Not found on the page at capture time.
 
 #### flyout-tab
 
@@ -174,23 +155,7 @@ Flyout tab. A pill tab across the top of the opened menu (Bottle active on yello
 
 Page: home. Selector: `flyout tab pill`. States: default, hover, focus-visible, pressed.
 
-| Property | default | hover | focus-visible | pressed |
-|---|---|---|---|---|
-| Size (w x h) | 210 x 32.39 | 223.67 x 34.5 | 224.7 x 34.66 | 224.7 x 34.66 |
-| Padding | 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Gilroy 27px/32.4px 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #000f2e | = | = | = |
-| Transition | none | = | = | = |
-| Cursor | pointer | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
-
-Crops: `flyout-tab-default.png`, `flyout-tab-hover.png`, `flyout-tab-focus-visible.png`, `flyout-tab-pressed.png`.
+Not found on the page at capture time.
 
 #### flyout-card
 
@@ -198,26 +163,7 @@ Flyout card. An option card inside the flyout carousel ("Bottle — A range of r
 
 Page: home. Selector: `flyout option card`. States: default, hover, focus-visible, pressed.
 
-| Property | default | hover | focus-visible | pressed |
-|---|---|---|---|---|
-| Size (w x h) | 250 x 445 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 20px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | 1px auto #005fcc offset 0px | 1px auto #005fcc offset 0px |
-| Font | -apple-system 16px/16px 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #000000 | = | = | = |
-| Text node | h3.intro.tabsVariation_cardItemHeading__ClkPi: Gilroy 27px/32.4px 400, #f6ecc8 | = | = | = |
-| Transition | opacity 0.4s cubic-bezier(0.83, 0, 0.17, 1) | = | = | = |
-| Transform | matrix(1, 0, 0, 1, 0, 0) | = | = | = |
-| Cursor | pointer | = | = | = |
-| Painted layers | article.tabsVariation_card__lZivw 250.0x445.0 bg #116973 r 20px | article.tabsVariation_card__lZivw 266.3x474.1 bg #116973 r 20px | button.keen-slider__slide.tabsVariation_cardItem__G2SQa 250.0x445.0 r 20px outline 1px auto #005fcc offset 0px; article.tabsVariation_card__lZivw 267.5x476.2 bg #116973 r 20px | button.keen-slider__slide.tabsVariation_cardItem__G2SQa 250.0x445.0 r 20px outline 1px auto #005fcc offset 0px; article.tabsVariation_card__lZivw 267.5x476.2 bg #116973 r 20px |
-| How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
-
-Crops: `flyout-card-default.png`, `flyout-card-hover.png`, `flyout-card-focus-visible.png`, `flyout-card-pressed.png`.
+Not found on the page at capture time.
 
 ### Home (www)
 
@@ -1328,7 +1274,7 @@ Page: mobile. Selector: `burger`. States: default, hover, focus-visible, pressed
 | Transition | none | = | = | - |
 | Cursor | default | = | = | - |
 | Icon | 51 x 51, colour #000000 | = | = | - |
-| How | at rest | mouse hover | focus failed | - |
+| How | at rest | mouse hover | el.focus() — a real ring painted; document.activeElement read the shadow host (check fixed in kbFocus) | - |
 | Painted layers | - | = | button.menuToggle 45.0x45.0 outline 1px auto #005fcc offset 0px | = |
 | Error | - | = | = | cdpSession.send: Protocol error (CSS.forcePseudoState): Could not find node with given id |
 
@@ -1435,7 +1381,7 @@ Page: mobile. Selector: `menu outline pill`. States: default, hover, focus-visib
 | Transform | matrix(1, 0, 0, 1, 0, 0) | = | = | - |
 | Cursor | pointer | = | = | - |
 | Painted layers | a.nav-link-mobile.secondary 194.6x54.0 border T:2px solid #f6ecc8 / R:2px solid #f6ecc8 / B:2px solid #f6ecc8 / L:2px solid #f6ecc8 r 20px | = | a.nav-link-mobile.secondary 194.6x54.0 border T:2px solid #f6ecc8 / R:2px solid #f6ecc8 / B:2px solid #f6ecc8 / L:2px solid #f6ecc8 r 20px outline 1px auto #005fcc offset 1px | - |
-| How | at rest | mouse hover | focus failed | - |
+| How | at rest | mouse hover | el.focus() — a real ring painted; document.activeElement read the shadow host (check fixed in kbFocus) | - |
 | Error | - | = | = | cdpSession.send: Protocol error (CSS.forcePseudoState): Could not find node with given id |
 
 Crops: `m-menu-pill-default.png`, `m-menu-pill-hover.png`, `m-menu-pill-focus-visible.png`.
@@ -1471,27 +1417,11 @@ Mobile filter row. A radio row in the mobile filter sheet.
 
 Page: mobile-category. Selector: `mobile filter radio`. States: default.
 
-| Property | default |
-|---|---|
-| Size (w x h) | 179 x 52 |
-| Padding | 0px |
-| Border | none |
-| Radius | 0px |
-| Background | transparent |
-| Box shadow | none |
-| Outline | none |
-| Font | Gilroy 20px/26px 400 |
-| Letter spacing | normal |
-| Colour | #000f2e |
-| Transition | all 0.1s ease-in-out |
-| Cursor | pointer |
-| How | at rest |
-
-Crops: `m-filter-radio-default.png`.
+Not found on the page at capture time.
 
 ## Transitions declared in the readable stylesheets
 
-canva.com serves its StyleX bundles cross-origin from static.canva.com, so the readable CSSOM holds only the inline styles; this list covers the transition rules the page itself exposes, and the per-state Transition rows above are the computed values the page paints.
+www.dopper.com's Next.js bundles compile every class to a build hash (the names in the Selector rows are the spec's own description, not class names), and shop.dopper.com serves Magento's compiled stylesheets; this list covers the transition rules the readable stylesheets on each host expose, and the per-state Transition rows above are the computed values the page paints.
 
 - category: `visibility 0.3s, opacity 0.3s`, `opacity 0.3s`, `transform 0.3s ease-in-out`, `transform 0.2s`, `background 0.3s`, `background-color 0.3s`, `background-color 0.3s, border 0.3s`, `background-color 0.3s ease-out`, `opacity 0.3s ease-out`, `background-color 0.3s ease-in`, `none`, `0.3s ease-in-out`
 

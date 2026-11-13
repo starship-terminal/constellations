@@ -18,16 +18,22 @@
    },
    "weight": {
     "regular": {
+     "value": 400,
+     "type": "fontWeight",
+     "source": "computed fontWeight of breadcrumb default (raw/components-computed.json)",
+     "description": "The 400 reading on body copy and secondary text (Gilroy)."
+    },
+    "medium": {
      "value": 500,
      "type": "fontWeight",
      "source": "computed fontWeight of nav-link default (raw/components-computed.json)",
-     "description": "The 400/medium reading on nav and body copy (Gilroy-Medium is styled as 400)."
+     "description": "The 500 reading on header links and card titles (Gilroy-Medium)."
     },
     "bold": {
-     "value": 400,
+     "value": 600,
      "type": "fontWeight",
-     "source": "computed fontWeight of collections-heading default (raw/components-computed.json)",
-     "description": "The heavy reading on section headings and buttons (Gilroy-Bold, styled 600-700)."
+     "source": "computed fontWeight of add-to-cart default (raw/components-computed.json)",
+     "description": "The 600 reading on CTA labels, prices and shop headings (Gilroy-Bold)."
     },
     "display": {
      "value": 400,
@@ -511,27 +517,27 @@
    "band": {
     "var": "--darkBlue-3",
     "type": "color",
-    "source": "computed filter-panel/new-card/cart-strip background (raw/components-computed.json); css-var --darkBlue-3 resolved light (raw/css-vars.json)",
+    "source": "computed new-card and cart-strip background (raw/components-computed.json); the filter sheet's own fill was not captured \u2014 its wrapper records transparent; css-var --darkBlue-3 resolved light (raw/css-vars.json)",
     "description": "The darkBlue-3 light-blue band: the PLP filter sheet, the cart strip, the New Customers card."
    },
    "menu": {
     "default": {
      "var": "--yellow",
      "type": "color",
-     "source": "computed flyout background (raw/components-computed.json); css-var --yellow resolved light (raw/css-vars.json)",
+     "source": "the opened Bottle menu paints the declared --yellow (screenshots/home-light-menu.png); the stored flyout reading is a misidentified static section; css-var --yellow resolved light (raw/css-vars.json)",
      "description": "The yellow mega-menu panel."
     },
     "mobile": {
      "var": "--darkBlue",
      "type": "color",
-     "source": "computed m-menu-open background (raw/components-computed.json); css-var --darkBlue resolved light (raw/css-vars.json)",
+     "source": "computed dialog__background layer inside m-menu-open (raw/components-computed.json); css-var --darkBlue resolved light (raw/css-vars.json)",
      "description": "The darkBlue full-screen mobile menu."
     }
    },
    "deep": {
     "var": "--deep-sea",
     "type": "color",
-    "source": "computed btn-dark fill (raw/components-computed.json); css-var --deep-sea resolved light (raw/css-vars.json)",
+    "source": "computed painted fill layer inside btn-dark (raw/components-computed.json); css-var --deep-sea resolved light (raw/css-vars.json)",
     "description": "The deep-sea surface (filled pills, the \u00d7 close button)."
    }
   },
@@ -567,13 +573,13 @@
    "dark": {
     "var": "--deep-sea",
     "type": "color",
-    "source": "computed backgroundColor of btn-dark / filter-close (raw/components-computed.json); css-var --deep-sea resolved light (raw/css-vars.json)",
+    "source": "computed painted fill layers of btn-dark and the login-button ::before (raw/components-computed.json); css-var --deep-sea resolved light (raw/css-vars.json)",
     "description": "The deep-sea fill on 'Watch now', Sign in, \u00d7 close."
    },
    "accent": {
     "var": "--carribean",
     "type": "color",
-    "source": "computed backgroundColor of filters-button (raw/components-computed.json); css-var --carribean resolved light (raw/css-vars.json)",
+    "source": "computed ::before fill of filters-button (raw/components-computed.json); css-var --carribean resolved light (raw/css-vars.json)",
     "description": "The carribean '+ Filters' pill."
    },
    "warm": {
@@ -593,187 +599,165 @@
   },
   "focus": {
    "ring": {
-    "var": "--darkBlue",
-    "type": "color",
-    "source": "computed outlineColor of focus-visible states (raw/components-computed.json); css-var --darkBlue resolved light (raw/css-vars.json)",
-    "description": "Keyboard focus ring colour where the page paints one."
+    "default": {
+     "value": "#005fcc",
+     "type": "color",
+     "source": "computed outlineColor of nav-link / m-burger / m-menu-pill focus-visible (raw/components-computed.json)",
+     "description": "The keyboard focus ring on the marketing chrome (nav links, menu pills, burger)."
+    },
+    "shop": {
+     "var": "--deep-sea",
+     "type": "color",
+     "source": "computed outlineColor of shop-nav-link focus-visible (raw/components-computed.json); css-var --deep-sea resolved light (raw/css-vars.json)",
+     "description": "The keyboard focus ring on shop controls."
+    }
    }
   }
  },
  "dark": {},
  "component": {
   "button-dark-fill": {
-   "value": "rgba(0, 0, 0, 0)",
+   "var": "--deep-sea",
    "type": "color",
-   "source": "computed backgroundColor of btn-dark default (raw/components-computed.json)",
+   "source": "computed backgroundColor of the div.link_link__JtDHX.link_background__vwwg3 layer inside btn-dark default (raw/components-computed.json); matches css-var --deep-sea resolved light",
    "description": "Deep-sea fill of the dark pill CTAs."
   },
   "button-dark-fill-hover": {
-   "value": "rgba(0, 0, 0, 0)",
+   "var": "--deep-sea",
    "type": "color",
-   "source": "computed backgroundColor of btn-dark hover (raw/components-computed.json)",
+   "source": "computed backgroundColor of the div.link_link__JtDHX.link_background__vwwg3 layer inside btn-dark hover (raw/components-computed.json); matches css-var --deep-sea resolved light",
    "description": "Hover step of the dark pill."
   },
   "button-dark-fill-pressed": {
-   "value": "rgba(0, 0, 0, 0)",
+   "var": "--deep-sea",
    "type": "color",
-   "source": "computed backgroundColor of btn-dark pressed (raw/components-computed.json)",
+   "source": "computed backgroundColor of the div.link_link__JtDHX.link_background__vwwg3 layer inside btn-dark pressed (raw/components-computed.json); matches css-var --deep-sea resolved light",
    "description": "Pressed step of the dark pill."
   },
   "button-dark-ink": {
-   "value": "#f6ecc8",
+   "var": "--sand",
    "type": "color",
-   "source": "computed color of btn-dark default (raw/components-computed.json)",
+   "source": "computed color of btn-dark default (raw/components-computed.json); matches css-var --sand resolved light",
    "description": "Cream label on the dark pill."
   },
   "button-primary-fill": {
-   "value": "#0067e5",
+   "var": "--darkBlue",
    "type": "color",
-   "source": "computed backgroundColor of add-to-cart default (raw/components-computed.json)",
+   "source": "computed backgroundColor of add-to-cart default (raw/components-computed.json); matches css-var --darkBlue resolved light",
    "description": "darkBlue fill of Add to cart / Sign in / Create an Account."
   },
   "button-primary-fill-hover": {
-   "value": "#0067e5",
+   "var": "--darkBlue",
    "type": "color",
-   "source": "computed backgroundColor of add-to-cart hover (raw/components-computed.json)",
+   "source": "computed backgroundColor of add-to-cart hover (raw/components-computed.json); matches css-var --darkBlue resolved light",
    "description": "Hover step of the blue CTA."
   },
   "button-primary-ink": {
-   "value": "#f9f3df",
+   "var": "--sand-2",
    "type": "color",
-   "source": "computed color of add-to-cart default (raw/components-computed.json)",
+   "source": "computed color of add-to-cart default (raw/components-computed.json); matches css-var --sand-2 resolved light",
    "description": "Cream label on the blue CTA."
   },
   "button-outline-border": {
-   "value": "#f6ecc8",
+   "var": "--sand",
    "type": "color",
-   "source": "computed borderTopColor of btn-outline default (raw/components-computed.json)",
+   "source": "computed borderTopColor of btn-outline default (raw/components-computed.json); matches css-var --sand resolved light",
    "description": "The deep-sea outline ring on ghost pills."
   },
   "button-outline-ink": {
-   "value": "#f6ecc8",
+   "var": "--sand",
    "type": "color",
-   "source": "computed color of btn-outline default (raw/components-computed.json)",
+   "source": "computed color of btn-outline default (raw/components-computed.json); matches css-var --sand resolved light",
    "description": "Ink on the ghost pill."
   },
   "button-teal-fill": {
-   "value": "rgba(0, 0, 0, 0)",
+   "var": "--carribean",
    "type": "color",
-   "source": "computed backgroundColor of filters-button default (raw/components-computed.json)",
+   "source": "computed backgroundColor of the button::before.action.cta layer inside filters-button default (raw/components-computed.json); matches css-var --carribean resolved light",
    "description": "The carribean filter pill fill."
   },
-  "nav-trigger-fill-hover": {
-   "value": "rgba(0, 0, 0, 0)",
-   "type": "color",
-   "source": "computed backgroundColor of nav-trigger hover (raw/components-computed.json)",
-   "description": "Hover fill the nav triggers take."
-  },
   "link-color": {
-   "value": "#000f2e",
+   "var": "--deep-sea",
    "type": "color",
-   "source": "computed color of nav-link default (raw/components-computed.json)",
+   "source": "computed color of nav-link default (raw/components-computed.json); matches css-var --deep-sea resolved light",
    "description": "Header link ink."
   },
   "link-color-hover": {
-   "value": "#0067e5",
+   "var": "--darkBlue",
    "type": "color",
-   "source": "computed color of nav-link hover (raw/components-computed.json)",
+   "source": "computed color of nav-link hover (raw/components-computed.json); matches css-var --darkBlue resolved light",
    "description": "Header link hover ink."
   },
   "header-bg": {
-   "value": "rgba(0, 0, 0, 0)",
+   "value": "rgba(252, 250, 242, 0.95)",
    "type": "color",
-   "source": "computed backgroundColor of header default (raw/components-computed.json)",
+   "source": "computed backgroundColor of the nav.dopper-nav ancestor header default (raw/components-computed.json)",
    "description": "The header bar background (transparent over media)."
   },
   "menu-bg": {
-   "value": "rgba(0, 0, 0, 0)",
+   "var": "--darkBlue",
    "type": "color",
-   "source": "computed backgroundColor of m-menu-open default (raw/components-computed.json)",
+   "source": "computed backgroundColor of the div.dialog__background layer inside m-menu-open default (raw/components-computed.json); matches css-var --darkBlue resolved light",
    "description": "The darkBlue mobile menu fill."
   },
-  "flyout-bg": {
-   "value": "rgba(0, 0, 0, 0)",
-   "type": "color",
-   "source": "computed backgroundColor of flyout default (raw/components-computed.json)",
-   "description": "The yellow mega-menu panel field."
-  },
-  "filter-panel-bg": {
-   "value": "rgba(0, 0, 0, 0)",
-   "type": "color",
-   "source": "computed backgroundColor of filter-panel default (raw/components-computed.json)",
-   "description": "The darkBlue-3 filter sheet fill."
-  },
-  "filter-close-fill": {
-   "value": "rgba(0, 0, 0, 0)",
-   "type": "color",
-   "source": "computed backgroundColor of filter-close default (raw/components-computed.json)",
-   "description": "The deep-sea \u00d7 close circle."
-  },
-  "card-bg": {
-   "value": "rgba(0, 0, 0, 0)",
-   "type": "color",
-   "source": "computed backgroundColor of content-card default (raw/components-computed.json)",
-   "description": "Content card field."
-  },
   "login-card-bg": {
-   "value": "#0067e5",
+   "var": "--darkBlue",
    "type": "color",
-   "source": "computed backgroundColor of login-card default (raw/components-computed.json)",
+   "source": "computed backgroundColor of login-card default (raw/components-computed.json); matches css-var --darkBlue resolved light",
    "description": "The darkBlue 'Registered Customers' card."
   },
   "new-card-bg": {
-   "value": "#cce2ff",
+   "var": "--darkBlue-3",
    "type": "color",
-   "source": "computed backgroundColor of new-card default (raw/components-computed.json)",
+   "source": "computed backgroundColor of new-card default (raw/components-computed.json); matches css-var --darkBlue-3 resolved light",
    "description": "The darkBlue-3 'New Customers' card."
   },
   "field-bg": {
-   "value": "#fcfaf2",
+   "var": "--sand-3",
    "type": "color",
-   "source": "computed backgroundColor of login-email default (raw/components-computed.json)",
+   "source": "computed backgroundColor of login-email default (raw/components-computed.json); matches css-var --sand-3 resolved light",
    "description": "The white input fill on the blue card."
   },
   "field-ink": {
-   "value": "#000f2e",
+   "var": "--deep-sea",
    "type": "color",
-   "source": "computed color of login-email default (raw/components-computed.json)",
+   "source": "computed color of login-email default (raw/components-computed.json); matches css-var --deep-sea resolved light",
    "description": "Input text ink."
   },
   "field-placeholder": {
-   "value": "#000f2e",
+   "var": "--deep-sea",
    "type": "color",
-   "source": "computed placeholder of login-email default (raw/components-computed.json)",
+   "source": "computed placeholder of login-email default (raw/components-computed.json); matches css-var --deep-sea resolved light",
    "description": "Placeholder ink."
   },
   "signin-fill": {
-   "value": "rgba(0, 0, 0, 0)",
+   "var": "--deep-sea",
    "type": "color",
-   "source": "computed backgroundColor of login-button default (raw/components-computed.json)",
+   "source": "computed backgroundColor of the button::before.action.js-button-animate layer inside login-button default (raw/components-computed.json); matches css-var --deep-sea resolved light",
    "description": "The deep-sea Sign in pill on the blue card."
   },
   "checkbox-ink": {
-   "value": "#fcfaf2",
+   "var": "--sand-3",
    "type": "color",
-   "source": "computed color of login-checkbox default (raw/components-computed.json)",
+   "source": "computed color of login-checkbox default (raw/components-computed.json); matches css-var --sand-3 resolved light",
    "description": "Checkbox row ink on the blue card."
   },
   "footer-bg": {
-   "value": "rgba(0, 0, 0, 0)",
+   "var": "--sand",
    "type": "color",
-   "source": "computed backgroundColor of footer default (raw/components-computed.json)",
+   "source": "computed backgroundColor of the div.main-section layer inside footer default (raw/components-computed.json); matches css-var --sand resolved light",
    "description": "The sand footer field."
   },
   "price-ink": {
-   "value": "#000f2e",
+   "var": "--deep-sea",
    "type": "color",
-   "source": "computed color of product-price default (raw/components-computed.json)",
+   "source": "computed color of product-price default (raw/components-computed.json); matches css-var --deep-sea resolved light",
    "description": "PLP price ink."
   },
   "cart-strip-bg": {
-   "value": "#cce2ff",
+   "var": "--darkBlue-3",
    "type": "color",
-   "source": "computed backgroundColor of cart-strip default (raw/components-computed.json)",
+   "source": "computed backgroundColor of cart-strip default (raw/components-computed.json); matches css-var --darkBlue-3 resolved light",
    "description": "The darkBlue-3 cart strip."
   },
   "button-height": {
@@ -789,9 +773,9 @@
    "description": "Pill horizontal padding."
   },
   "button-radius": {
-   "value": "20px",
+   "var": "--border-radius-l",
    "type": "dimension",
-   "source": "computed borderTopLeftRadius of add-to-cart default (raw/components-computed.json)",
+   "source": "computed borderTopLeftRadius of add-to-cart default; matches css-var --border-radius-l resolved light (raw/components-computed.json, raw/css-vars.json)",
    "description": "The pill radius on the blue CTA."
   },
   "field-height": {

@@ -428,6 +428,10 @@ for g in groups:
             desc += "."
         where = PAGE_NAME.get(c["page"], c["page"])
         W(f"{desc + ' ' if desc else ''}Read as `{k}` on the {where} page{' at 390 wide' if g.startswith('Mobile') else ''}.")
+        if c.get("note"):
+            # A recorded caveat on the entry itself — e.g. a selector that
+            # measured a neighbouring section until it was scoped.
+            W(f"**Note:** {c['note']}")
         W()
         if c.get("missing"):
             W("Not on the page when it was captured.")
