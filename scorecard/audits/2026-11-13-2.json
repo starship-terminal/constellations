@@ -1,7 +1,7 @@
 {
  "date": "2026-11-13",
  "rubric": "4",
- "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): Read systems/creativemarket/tokens.json, raw/css-vars.json, raw/measurements.md, raw/components-computed.json and components.md against scorecard/criteria.json web wording; inspected screenshots and crops",
+ "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): reviewed against scorecard/criteria.json web wording from the capture evidence: tokens.json roles and sources, raw/components-computed.json states, components.md/patterns.md coverage, and the declared layoutGaps",
  "systems": [
   {
    "slug": "brilliant",
@@ -11595,134 +11595,135 @@
    "reviewedPlatform": "web"
   },
   {
-   "slug": "creativemarket",
+   "slug": "dock",
    "grades": {
     "F1": {
      "grade": "partly",
-     "evidence": "The brand set is skin triples — teal #088178/--_color-hover #003a37/--_color-soft #dff8f6 and accent #4e42a1/#281f6b/#edeeff (tokens.json core.color.brand, declared on .ui-button--* in raw/css-vars.json) — plus neutrals ink/muted/hairline; no ~10-step ramp per hue."
+     "evidence": "The blue the actions paint has real steps — blue/blue-hover/blue-pressed measured off the controls plus blue-deep (band), blue-light/-soft/-tint/sky declared hues — and the shared shell declares an _anchor colour ramp (captured in raw/css-vars.json). Neutrals have ink, muted, white, two wash steps, hairline and border. The illustration accent hues (green, pink, purple, sky, warm, yellow) are single declared values, not ramps — a marketing palette, not a 10-step ramp set."
     },
     "F2": {
      "grade": "partly",
-     "evidence": "paper, field/field-active, site-banner, earnings and chip backgrounds resolve (tokens.json light.color.background); the flat storefront shows no raised/overlay/scrim roles — the mobile drawer's scrim was not measured."
+     "evidence": "light carries surface.page (white) and surface.subtle (#f7f7f8 wash); dark (the painted islands) adds surface.band (#002fa6 hero) and surface.pane (#242d7d signup testimonial). No overlay or scrim role paints on the public surface — the mega-menu paints an opaque 19px panel, not a scrimmed overlay."
     },
     "F3": {
      "grade": "partly",
-     "evidence": "ink primary, #4b5258 secondary, #6e777d/#899298 tertiary/muted, white on-primary and link-hover #003a37 all present (tokens.json light.color.text); no disabled text role was observed on the public surface."
+     "evidence": "light carries text.primary (#121722), text.muted and text.on-action (white on blue); dark carries white roles. No disabled text role exists on the public surface and links paint the default ink — no link role."
     },
     "F4": {
      "grade": "partly",
-     "evidence": "hairline #e2e9ee, input #899298, input-active and the #e06868 accessible-outline focus role are declared (tokens.json light.color.border); no explicit default-vs-strong pair."
+     "evidence": "light carries border.hairline (#dedfe3 bars/dividers) and border.default, plus the measured 0.5px/1px inset ring values; focus.ring.default is the measured 2px rgba(18,23,34,0.6) outline. No named 'strong' border role — the hairline is the only painted border weight."
     },
     "F5": {
      "grade": "meets",
-     "evidence": "Each .ui-button skin declares --_color/--_color-hover/--_color-soft; the add-cart, buy-now and save25 buttons carry measured default/hover/pressed tracks (light.component.button.*-states)."
+     "evidence": "action.primary.default #0068f9, .hover #0060eb and .pressed #005fe4, each measured off the real controls (nav-cta, hero-cta, plan-cta) across forced CDP states; the blue-band ghost states (transparent -> rgba(255,255,255,0.06) -> 0.1) sit in dark.action.ghost."
     },
     "F6": {
-     "grade": "partly",
-     "evidence": "error #e06868 (the accessible outline), danger #a02828, sale #d53a9d and gold #fcc875 appear, but no success/warning/info set with fill+text+border each."
+     "grade": "missing",
+     "evidence": "No success/warning/danger/info roles are declared or painted on the signed-out marketing and auth surfaces — the only accent hues are single-value illustration colours (brand.green/pink/purple/...). Nothing to capture."
     },
     "F7": {
-     "grade": "meets",
-     "evidence": "One theme ships: the storefront paints data-theme=legacy only, the sheets carry no second theme layer, and every captured role exists in the light set (tokens.json dark intentionally empty)."
+     "grade": "partly",
+     "evidence": "The marketing light/dark resolutions are identical apart from one menu value: Dock ships no dark theme. The dark set tokenises the painted deep-blue islands (band text/ghost/ring roles, 10 tokens) — parity is partial by construction, not by omission."
     },
     "F8": {
-     "grade": "partly",
-     "evidence": "One family (Averta, licensed CloudFront webfont) with a measured 72/48/36/24/20/16/15/14/13px ramp and 400/600/700 weights (tokens.json core.font); no named display/body roles, no second or mono face."
+     "grade": "meets",
+     "evidence": "Three families with fallbacks (DockWebflowHome, DockWebflowNavigation, Roobert — Roobert-derived faces, licensed, not shipped), a measured ramp ~81/84 demo display down to 12.5/15 badges, weights 400-700 and line-heights captured per step; roles named in components."
     },
     "F9": {
-     "grade": "partly",
-     "evidence": "The 1450px container and control heights (44/45/51/73/119px...) are declared/measured (core.spacing, light.component), but no 4/8px-based spacing scale is declared."
+     "grade": "meets",
+     "evidence": "The declared --space-* scale (4-56px steps) is captured in core.space.* with css-var sources."
     },
     "F10": {
      "grade": "meets",
-     "evidence": "Measured radii 3px legacy buttons, 4px dropdowns, 8px controls, 16px cards, 20/24/32px pills plus declared 1px/2px field border widths (tokens.json core.radius/border)."
+     "evidence": "core.radius.* carries the painted radii — 100px pills, 19px menu viewport, 18.9px artwork, 12px popular column, 8px menu items, 60px filter pill, 6px HubSpot fields, 4-6px Chakra controls — plus the 0.5px/1px ring and #dedfe3 hairline widths."
     },
     "F11": {
      "grade": "partly",
-     "evidence": "Heights and widths measured across the controls (search 585x44, CTAs 40-52px, buy box 450px, drawer 295px, hamburger 45px); icon sizes via crops; focus-ring width/offset not separately recorded beyond the declared outline colour."
+     "evidence": "Control heights measured across components (nav 38px, CTAs 40-44px, fields, header 70/76px, panels 258/386px) in light.component.*; focus ring width/offset captured. No icon-size scale — icons were not extracted (declared layoutGaps)."
     },
     "F12": {
      "grade": "partly",
-     "evidence": "Only the declared --user-dropdown-box-shadow (0 4px 8px 10% ink, tokens.json core.shadow.dropdown); no multi-level elevation ramp is declared on the flat storefront."
+     "evidence": "Dock paints elevation rarely — the pattern is the inset hairline ring, and the measured rings plus the plan-cta layered shadow are tokenised in core.measured.*. There is no 3-5 level shadow scale on the public surface; the declared --shadow-* vars were captured in raw/css-vars.json."
     },
     "F13": {
      "grade": "partly",
-     "evidence": "The field's declared 0.4s cubic-bezier(0.25,1,0.5,1) transition (tokens.json core.motion.field); no durations ramp and reduced-motion behaviour undocumented."
+     "evidence": "Declared motion captured: --duration-fast .14s, --duration-menu .24s and --ease-menu cubic-bezier(.22,1,.36,1) plus measured transitions per component. No reduced-motion behaviour was observable on the public surface."
     },
     "F14": {
      "grade": "partly",
-     "evidence": "Two viewports measured (1440/390), the 1450px container declared, header/drawer geometry recorded; breakpoints and grid-column numbers not captured."
+     "evidence": "Component boxes, header/container widths and the 1440/390 mobile reflow are measured (component.*), and the mobile panel/measures captured. No named breakpoint/grid/z tokens published by the Webflow layer."
     },
     "C1": {
      "grade": "partly",
-     "evidence": "~14 of the 19 checklist components on the public surface (button, icon button, link, text field, checkbox/radio license rows, menu/drawer, card, accordion, nav, chip, text display, plan card, shop card, search field); select, textarea, tooltip, dialog, table, avatar and badge never appear publicly — boundary documented."
+     "evidence": "A signed-out marketing surface: button (nav-cta, hero-cta, plan-cta, auth buttons), link, menu (mega-menu + mobile accordion), card (plan/customer/template/auth), badge (filter pill, trust badge), radio (filter-radio), text field (subdomain/signup/demo iframe) and FAQ list rows — ~9 of the 19 checklist components paint publicly; select lives inside the HubSpot iframe, the Turnstile checkbox stayed 1px, the rest never paint."
     },
     "C2": {
      "grade": "meets",
-     "evidence": "default/hover/focus-visible/pressed measured per control; opened on the accordion row and the mobile drawer; filled on the sign-in field; license radios and bundle checkboxes measured at rest (states table in raw/components-computed.json)."
+     "evidence": "Every interactive component carries default + hover + focus-visible + CDP-forced pressed; opened states for the mega-menu, mobile menu and FAQ rows; selected for the active filter pill. Disabled/error/loading honestly recorded as absent."
     },
     "C3": {
      "grade": "meets",
-     "evidence": "focus-visible measured on every interactive component via keyboard focus (components-computed.json states)."
+     "evidence": "Keyboard focus rings captured per component: 2px rgba(18,23,34,0.6) on marketing controls, 2px #0068f9 on pricing buttons, the ink ring on the blue band, Chakra focus on auth fields — tokenised as focus.ring.*."
     },
     "C4": {
-     "grade": "meets",
-     "evidence": "component entries in components.md read their values from tokens.json names; every token leaf names its var or measurement source."
-    },
-    "C5": {
-     "grade": "na",
-     "evidence": "Optional for a capture, and this product does not publish it."
+     "grade": "partly",
+     "evidence": "components.md annotates colours with the matching palette token and the shared-values section names them; spec values in raw/component-tokens.json resolve to tokens. Some entries still quote measured values alongside (intentional, as evidence), so not every spec is tokens-only."
     },
     "P1": {
      "grade": "partly",
-     "evidence": "patterns.md documents the shell/header+drawer, hero + product rail, category filter grid, the product buy box + accordions + shop card, plan cards and the sign-in form; no empty/loading/error, destructive-confirmation or onboarding patterns are reachable signed out."
+     "evidence": "patterns.md covers the app shell (header/mega-menu/footer), the hero, pricing, index grids, the demo form and auth cards. Validation, empty/loading/error, destructive confirmation and toasts do not paint on the public surface — recorded as gaps, not patterns."
+    },
+    "A1": {
+     "grade": "partly",
+     "evidence": "Fonts named with licence handling (Roobert/DockWebflow faces are licensed served fonts, not shipped; fallbacks declared). Icons were not extracted — declared in catalog layoutGaps and visible in crops/screenshots."
+    },
+    "K1": {
+     "grade": "meets",
+     "evidence": "The README states what was captured (routes, widths, surfaces), how (headless Chromium, shadow-DOM piercing, iframe reads, CDP states, the two token layers), and a What-to-distrust section (the non-theme dark set, the two font/ink systems, hidden prompt fields, the 1px Turnstile, 256-colour screenshots)."
     },
     "V1": {
+     "grade": "partly",
+     "evidence": "The README's Do-and-don't section carries 10 evidence-linked principles (blue pill actions, band ghost states, inset rings, family-per-surface, measured washes) — beyond the 3-5 rubric ask, each with a crop/screenshot link."
+    },
+    "F15": {
+     "grade": "meets",
+     "evidence": "Script: all 8 pairs pass 4.5:1 across 2 themes; lowest 7.51:1 dark muted (core.color.brand.blue-light) on page (core.color.brand.blue-deep)"
+    },
+    "F16": {
+     "grade": "meets",
+     "evidence": "Script: 138 of 138 tokens name their source"
+    },
+    "K2": {
+     "grade": "meets",
+     "evidence": "Script: 10 rules, each linking a screenshot or crop"
+    },
+    "K3": {
+     "grade": "meets",
+     "evidence": "Script: DESIGN.md matches a fresh generation"
+    },
+    "C5": {
      "grade": "na",
      "evidence": "Optional for a capture, and this product does not publish it."
     },
     "V2": {
      "grade": "na",
      "evidence": "Optional for a capture, and this product does not publish it."
-    },
-    "A1": {
-     "grade": "partly",
-     "evidence": "Averta named and evidenced (licensed CloudFront webfont, fallback documented); no standalone icon set was lifted — layoutGaps.icons records it."
-    },
-    "K1": {
-     "grade": "meets",
-     "evidence": "README names the capture date, routes, method and every boundary (sign-in card, unpressed CTAs, hidden consent/chat overlays, Cloudflare challenges, the empty related rails)."
-    },
-    "F15": {
-     "grade": "meets",
-     "evidence": "Script: all 4 pairs pass 4.5:1 across 1 themes; lowest 7.93:1 light muted (light.color.text.secondary) on page (light.color.background.paper)"
-    },
-    "F16": {
-     "grade": "meets",
-     "evidence": "Script: 90 of 90 tokens name their source"
-    },
-    "K2": {
-     "grade": "missing",
-     "evidence": "Script: no \"Do and don't\" section in the README"
-    },
-    "K3": {
-     "grade": "meets",
-     "evidence": "Script: DESIGN.md matches a fresh generation"
     }
    },
-   "name": "Creative Market",
-   "goodFor": "Creative-asset marketplace storefronts: 73px header with a 585px All-Categories search pill and category nav, illustrated hero + 337px product cards with teal price pills and hover Add To Cart, filter-pill category grids, a 450px buy box with 24px license radio rows and teal/outlined purchase buttons, shop cards, membership plan cards and a username/password sign-in card",
-   "url": "https://creativemarket.com",
-   "captured": "2026-11-12",
+   "name": "Dock",
+   "goodFor": "Sales-collateral / enablement marketing plus a public demo form: a declared --ds-*/--color-* token layer on a white Webflow surface with #0068f9 blue 100px-pill actions (#0060eb hover, #005fe4 pressed), a #002fa6 deep-blue hero band with white-alpha ghost buttons, DockWebflow/Roobert type, 0.5px inset hairline rings, a shadow-DOM mega-menu, and a separate Chakra auth face (#4058ff, 4px radii, #1a202c)",
+   "url": "https://dock.us",
+   "captured": "2026-11-13",
    "themes": [
-    "light"
+    "light",
+    "dark"
    ],
    "platform": "web",
-   "category": "E-commerce",
+   "category": "Productivity",
    "reviewed": "2026-11-13",
    "reviewedPlatform": "web"
   }
  ],
  "base": "2026-10-16",
- "reviewMethod": "Read systems/creativemarket/tokens.json, raw/css-vars.json, raw/measurements.md, raw/components-computed.json and components.md against scorecard/criteria.json web wording; inspected screenshots and crops"
+ "reviewMethod": "reviewed against scorecard/criteria.json web wording from the capture evidence: tokens.json roles and sources, raw/components-computed.json states, components.md/patterns.md coverage, and the declared layoutGaps"
 }

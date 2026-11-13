@@ -538,5 +538,113 @@
     "groupId": "web-categories",
     "labels": ["Design & Media Editing", "Productivity"],
     "reason": "catalog.json describes a design tool: template galleries and the marketing pages for the design editor, docs, whiteboards and presentations."
+  },
+  {
+    "referenceId": "systems:dock",
+    "groupId": "web-categories",
+    "labels": ["Productivity"],
+    "reason": "catalog.json describes a sales-collateral and enablement product: asset workspaces, customer-facing deal rooms and a public demo form."
+  },
+  {
+    "referenceId": "systems:doordash",
+    "groupId": "web-categories",
+    "labels": ["Food Delivery", "Marketplace"],
+    "reason": "catalog.json describes a delivery marketplace: restaurant storefronts, menu tiles with quick-adds and an SEO directory of cuisines and cities."
+  },
+  {
+    "referenceId": "systems:dona",
+    "groupId": "web-categories",
+    "labels": ["Productivity"],
+    "reason": "catalog.json describes a to-do productivity product: task lists, a quiet marketing site and a signed-out public system."
+  },
+  {
+    "referenceId": "systems:drinkdouze",
+    "groupId": "web-categories",
+    "labels": ["Food & Drink", "Marketplace"],
+    "reason": "catalog.json describes a French DTC beverage storefront: a Shopify marketing site and shop for flavoured drinks with product pages, a subscription pitch and a store locator."
+  },
+  {
+    "referenceId": "systems:doctronic",
+    "groupId": "web-categories",
+    "labels": ["AI Tool"],
+    "reason": "catalog.json describes an AI health product: the personal-AI-doctor marketing pages and the signed-out chat-adjacent surfaces."
+  },
+  {
+    "referenceId": "systems:docusign",
+    "groupId": "web-categories",
+    "labels": ["Productivity"],
+    "reason": "catalog.json describes an agreement and e-signature platform: marketing pages, pricing and a signed-out public signature generator."
+  },
+  {
+    "referenceId": "systems:doppler",
+    "groupId": "web-categories",
+    "labels": ["Development Tools"],
+    "reason": "catalog.json describes a secrets-management developer platform: marketing pages, pricing and developer-docs surfaces, all signed out."
+  },
+  {
+    "referenceId": "systems:dropbox",
+    "groupId": "web-categories",
+    "labels": ["Productivity"],
+    "reason": "catalog.json describes a cloud-storage and file-sharing productivity product: marketing pages, pricing and signed-out auth surfaces."
+  },
+  {
+    "referenceId": "systems:dailyartmagazine",
+    "groupId": "web-categories",
+    "labels": ["Magazines & Newspapers"],
+    "reason": "catalog.json describes an art-history online magazine's editorial surfaces: the feed, category and article pages, and the newsletter and contact forms."
+  },
+  {
+    "referenceId": "systems:deel",
+    "groupId": "web-categories",
+    "labels": ["Productivity"],
+    "reason": "catalog.json describes a global payroll/HR SaaS marketing site: product pages, pricing tiers and demo CTAs for workforce management."
+  },
+  {
+    "referenceId": "systems:care",
+    "groupId": "web-categories",
+    "labels": ["Marketplace"],
+    "reason": "catalog.json describes a caregiving-services marketplace: public caregiver listings, category landing pages and membership pricing."
+  },
+  {
+    "referenceId": "systems:cartesia",
+    "groupId": "web-categories",
+    "labels": ["AI Tool"],
+    "reason": "catalog.json describes a real-time AI voice and audio product (text-to-speech, voice agents) \u2014 the AI Tool label."
+  },
+  {
+    "referenceId": "systems:copy",
+    "groupId": "web-categories",
+    "labels": ["AI Tool"],
+    "reason": "catalog.json category ai-agent maps to AI Tool."
+  },
+  {
+    "referenceId": "systems:dopper",
+    "groupId": "web-categories",
+    "labels": ["Marketplace"],
+    "reason": "catalog.json describes a water-bottle e-commerce storefront: marketing pages plus a Magento shop with PLP filters, PDP configurator, cart and login cards."
+  },
+  {
+    "referenceId": "systems:cosmos",
+    "groupId": "web-categories",
+    "labels": ["Inspiration Board"],
+    "reason": "catalog.json category directory maps to Inspiration Board."
+  },
+  {
+    "referenceId": "systems:craft",
+    "groupId": "web-categories",
+    "labels": ["Productivity"],
+    "reason": "catalog.json category productivity maps to Productivity."
+  },
+  {
+    "referenceId": "systems:craftwork",
+    "groupId": "web-categories",
+    "labels": ["Inspiration Board"],
+    "reason": "catalog.json category directory maps to Inspiration Board."
+  },
+  {
+    "referenceId": "systems:creativemarket",
+    "groupId": "web-categories",
+    "labels": ["Marketplace"],
+    "reason": "catalog.json category e-commerce maps to Marketplace."
   }
 ]
