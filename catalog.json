@@ -7129,7 +7129,8 @@
           "icons: no standalone SVG set lifted this pass"
         ],
         "durationMin": 150,
-        "durationNote": "worktree creation to package-complete commit, 2026-11-13 UTC: recon, CSS-var harvest and shots, then a stalled pass recovered (measure.mjs rewritten to the real DOM), the token/docs build and the rubric review"
+        "durationNote": "worktree creation to package-complete commit, 2026-11-13 UTC: recon, CSS-var harvest and shots, then a stalled pass recovered (measure.mjs rewritten to the real DOM), the token/docs build and the rubric review",
+        "pr": "https://github.com/starship-terminal/constellations/pull/531"
       },
       "layoutGaps": {
         "icons/": "no standalone SVG icon set was lifted; the icons (the ElevenMusic mark, the Google and Apple SSO glyphs, the control glyphs, album/artist artwork) are visible in the crops and screenshots"
