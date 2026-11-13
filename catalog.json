@@ -8130,7 +8130,7 @@
         ],
         "durationMin": 240,
         "durationNote": "wall-clock across two sessions: the first ran the stylesheet harvest, screenshot and measurement passes; the second (this one) adapted the builders, wrote the token spec, README and patterns, and did the rubric review",
-        "pr": "pending"
+        "pr": "https://github.com/starship-terminal/constellations/pull/526"
       },
       "layoutGaps": {
         "icons/": "the icon extraction pass was not run; the glyphs (the Elektron wordmark, the 28px header icons, the 35px menu icons and the social glyphs) are visible in the crops and screenshots"
