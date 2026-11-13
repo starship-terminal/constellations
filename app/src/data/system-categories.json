@@ -606,6 +606,12 @@
     "reason": "catalog.json describes a music-streaming catalog: marketing, public charts and album pages, a signed-out player, and account forms."
   },
   {
+    "referenceId": "systems:descript",
+    "groupId": "web-categories",
+    "labels": ["AI Tool"],
+    "reason": "catalog.json describes an AI video/audio editing product's marketing surfaces: workflow tabs, pricing tiers and template galleries — the AI Tool label."
+  },
+  {
     "referenceId": "systems:deel",
     "groupId": "web-categories",
     "labels": ["Productivity"],
