@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 90,
-    "system_domains": 82,
-    "matched_domains": 57,
-    "missing_domains": 376,
+    "system_packages": 91,
+    "system_domains": 83,
+    "matched_domains": 58,
+    "missing_domains": 375,
     "system_domains_absent_from_catalog": 25
   },
   "matched": {
@@ -814,6 +814,23 @@
         }
       ]
     },
+    "docusign.com": {
+      "catalog": [
+        {
+          "name": "DocuSign",
+          "domain": "docusign.com",
+          "id": 31
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "docusign",
+          "name": "DocuSign",
+          "url": "https://www.docusign.com",
+          "name_match": true
+        }
+      ]
+    },
     "duolingo.com": {
       "catalog": [
         {
@@ -1328,13 +1345,6 @@
         "name": "Doctronic AI",
         "domain": "doctronic.ai",
         "id": 940
-      }
-    ],
-    "docusign.com": [
-      {
-        "name": "DocuSign",
-        "domain": "docusign.com",
-        "id": 31
       }
     ],
     "dona.ai": [
