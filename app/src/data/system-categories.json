@@ -722,6 +722,14 @@
   }
 ,
   {
+    "referenceId": "systems:elevenreader",
+    "groupId": "web-categories",
+    "labels": [
+      "Books"
+    ],
+    "reason": "catalog.json describes an audiobook reader/listening product: marketing pages, the explore catalog and the reader sign-in/sign-up boundary cards."
+  },
+  {
     "referenceId": "systems:endless",
     "groupId": "web-categories",
     "labels": [
