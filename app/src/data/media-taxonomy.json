@@ -368,7 +368,7 @@
       "reason": "Capture filename explicitly names calendar; local classification from recorded capture metadata."
     },
     "ux-chat": {
-      "pattern": "(?:chat|messages?)",
+      "pattern": "(?:chat|(?<!contact-)(?<!cf7-)(?<!field-)(?<!sales-)(?<!form-)(?<!c-)messages?(?!-field))",
       "label": "Chat & Messages",
       "reason": "Capture filename explicitly names chat & messages; local classification from recorded capture metadata."
     },
@@ -620,7 +620,7 @@
     {
       "referenceId": "systems:ballpark",
       "media": 135,
-      "assignedMedia": 39
+      "assignedMedia": 37
     },
     {
       "referenceId": "systems:base44",
@@ -910,7 +910,7 @@
     {
       "referenceId": "systems:buymeacoffee",
       "media": 177,
-      "assignedMedia": 41
+      "assignedMedia": 39
     },
     {
       "referenceId": "systems:byborre",
@@ -965,7 +965,7 @@
     {
       "referenceId": "systems:dailyartmagazine",
       "media": 168,
-      "assignedMedia": 64
+      "assignedMedia": 61
     },
     {
       "referenceId": "systems:deel",
@@ -1071,6 +1071,11 @@
       "referenceId": "systems:elevenreader",
       "media": 222,
       "assignedMedia": 222
+    },
+    {
+      "referenceId": "systems:endless",
+      "media": 239,
+      "assignedMedia": 67
     }
   ],
   "assignments": [
@@ -27706,28 +27711,6 @@
           "termId": "web-ui-elements:carousel",
           "rule": "ui-carousel",
           "reason": "Capture filename explicitly names carousel; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:ballpark",
-      "mediaId": "systems/ballpark/components/crops/contact-message-default.png",
-      "terms": [
-        {
-          "termId": "web-ux-patterns:chat-messages",
-          "rule": "ux-chat",
-          "reason": "Capture filename explicitly names chat & messages; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:ballpark",
-      "mediaId": "systems/ballpark/components/crops/contact-message-focused.png",
-      "terms": [
-        {
-          "termId": "web-ux-patterns:chat-messages",
-          "rule": "ux-chat",
-          "reason": "Capture filename explicitly names chat & messages; local classification from recorded capture metadata."
         }
       ]
     },
@@ -199248,28 +199231,6 @@
     },
     {
       "referenceId": "systems:buymeacoffee",
-      "mediaId": "systems/buymeacoffee/components/crops/c-message-default.png",
-      "terms": [
-        {
-          "termId": "web-ux-patterns:chat-messages",
-          "rule": "ux-chat",
-          "reason": "Capture filename explicitly names chat & messages; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:buymeacoffee",
-      "mediaId": "systems/buymeacoffee/components/crops/c-message-focused.png",
-      "terms": [
-        {
-          "termId": "web-ux-patterns:chat-messages",
-          "rule": "ux-chat",
-          "reason": "Capture filename explicitly names chat & messages; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:buymeacoffee",
       "mediaId": "systems/buymeacoffee/components/crops/c-share-default.png",
       "terms": [
         {
@@ -213802,39 +213763,6 @@
     },
     {
       "referenceId": "systems:dailyartmagazine",
-      "mediaId": "systems/dailyartmagazine/components/crops/cf7-message-default.png",
-      "terms": [
-        {
-          "termId": "web-ux-patterns:chat-messages",
-          "rule": "ux-chat",
-          "reason": "Capture filename explicitly names chat & messages; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:dailyartmagazine",
-      "mediaId": "systems/dailyartmagazine/components/crops/cf7-message-filled.png",
-      "terms": [
-        {
-          "termId": "web-ux-patterns:chat-messages",
-          "rule": "ux-chat",
-          "reason": "Capture filename explicitly names chat & messages; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:dailyartmagazine",
-      "mediaId": "systems/dailyartmagazine/components/crops/cf7-message-focused.png",
-      "terms": [
-        {
-          "termId": "web-ux-patterns:chat-messages",
-          "rule": "ux-chat",
-          "reason": "Capture filename explicitly names chat & messages; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:dailyartmagazine",
       "mediaId": "systems/dailyartmagazine/components/crops/feed-tab-active-default.png",
       "terms": [
         {
@@ -218150,11 +218078,6 @@
       "referenceId": "systems:copy",
       "mediaId": "systems/copy/components/crops/message-field-default.png",
       "terms": [
-        {
-          "termId": "web-ux-patterns:chat-messages",
-          "rule": "ux-chat",
-          "reason": "Capture filename explicitly names chat & messages; local classification from recorded capture metadata."
-        },
         {
           "termId": "web-fonts:inter",
           "rule": "font-primary",
@@ -228210,11 +228133,6 @@
       "mediaId": "systems/dub/components/crops/sales-message-default.png",
       "terms": [
         {
-          "termId": "web-ux-patterns:chat-messages",
-          "rule": "ux-chat",
-          "reason": "Capture filename explicitly names chat & messages; local classification from recorded capture metadata."
-        },
-        {
           "termId": "web-fonts:inter",
           "rule": "font-primary",
           "reason": "Exact primary family Inter from systems/dub/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
@@ -228225,11 +228143,6 @@
       "referenceId": "systems:dub",
       "mediaId": "systems/dub/components/crops/sales-message-focused.png",
       "terms": [
-        {
-          "termId": "web-ux-patterns:chat-messages",
-          "rule": "ux-chat",
-          "reason": "Capture filename explicitly names chat & messages; local classification from recorded capture metadata."
-        },
         {
           "termId": "web-fonts:inter",
           "rule": "font-primary",
@@ -232264,11 +232177,6 @@
       "mediaId": "systems/elementor/components/crops/field-message-default.png",
       "terms": [
         {
-          "termId": "web-ux-patterns:chat-messages",
-          "rule": "ux-chat",
-          "reason": "Capture filename explicitly names chat & messages; local classification from recorded capture metadata."
-        },
-        {
           "termId": "web-fonts:roobert",
           "rule": "font-primary",
           "reason": "Exact primary family Roobert from systems/elementor/tokens.json#core.fontFamily.roobert. Inherited package evidence; fallback families excluded."
@@ -232279,11 +232187,6 @@
       "referenceId": "systems:elementor",
       "mediaId": "systems/elementor/components/crops/field-message-focused.png",
       "terms": [
-        {
-          "termId": "web-ux-patterns:chat-messages",
-          "rule": "ux-chat",
-          "reason": "Capture filename explicitly names chat & messages; local classification from recorded capture metadata."
-        },
         {
           "termId": "web-fonts:roobert",
           "rule": "font-primary",
@@ -238631,6 +238534,768 @@
           "termId": "web-fonts:inter",
           "rule": "font-primary",
           "reason": "Exact primary family Inter from systems/elevenreader/tokens.json#core.font.family.inter. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:endless",
+      "mediaId": "systems/endless/screenshots/about-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:about",
+          "rule": "page-about",
+          "reason": "Capture filename explicitly names about; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:endless",
+      "mediaId": "systems/endless/screenshots/about-light-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:about",
+          "rule": "page-about",
+          "reason": "Capture filename explicitly names about; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:endless",
+      "mediaId": "systems/endless/screenshots/contact-dark-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:contacts",
+          "rule": "page-contacts",
+          "reason": "Capture filename explicitly names contacts; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:endless",
+      "mediaId": "systems/endless/screenshots/contact-dark-field.png",
+      "terms": [
+        {
+          "termId": "web-page-types:contacts",
+          "rule": "page-contacts",
+          "reason": "Capture filename explicitly names contacts; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:endless",
+      "mediaId": "systems/endless/screenshots/contact-dark-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:contacts",
+          "rule": "page-contacts",
+          "reason": "Capture filename explicitly names contacts; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:endless",
+      "mediaId": "systems/endless/screenshots/contact-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:contacts",
+          "rule": "page-contacts",
+          "reason": "Capture filename explicitly names contacts; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:endless",
+      "mediaId": "systems/endless/screenshots/contact-light-field.png",
+      "terms": [
+        {
+          "termId": "web-page-types:contacts",
+          "rule": "page-contacts",
+          "reason": "Capture filename explicitly names contacts; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:endless",
+      "mediaId": "systems/endless/screenshots/contact-light-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:contacts",
+          "rule": "page-contacts",
+          "reason": "Capture filename explicitly names contacts; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:endless",
+      "mediaId": "systems/endless/screenshots/home-dark-composer.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:endless",
+      "mediaId": "systems/endless/screenshots/home-dark-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:endless",
+      "mediaId": "systems/endless/screenshots/home-dark-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:endless",
+      "mediaId": "systems/endless/screenshots/home-light-composer.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:endless",
+      "mediaId": "systems/endless/screenshots/home-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:endless",
+      "mediaId": "systems/endless/screenshots/home-light-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:endless",
+      "mediaId": "systems/endless/components/crops/billing-toggle-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:switch-toggle",
+          "rule": "ui-toggle",
+          "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:billing-plans",
+          "rule": "ux-billing",
+          "reason": "Capture filename explicitly names billing & plans; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:endless",
+      "mediaId": "systems/endless/components/crops/billing-toggle-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:switch-toggle",
+          "rule": "ui-toggle",
+          "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:billing-plans",
+          "rule": "ux-billing",
+          "reason": "Capture filename explicitly names billing & plans; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:endless",
+      "mediaId": "systems/endless/components/crops/billing-toggle-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:switch-toggle",
+          "rule": "ui-toggle",
+          "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:billing-plans",
+          "rule": "ux-billing",
+          "reason": "Capture filename explicitly names billing & plans; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:endless",
+      "mediaId": "systems/endless/components/crops/billing-toggle-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:switch-toggle",
+          "rule": "ui-toggle",
+          "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:billing-plans",
+          "rule": "ux-billing",
+          "reason": "Capture filename explicitly names billing & plans; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:endless",
+      "mediaId": "systems/endless/components/crops/blog-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:endless",
+      "mediaId": "systems/endless/components/crops/blog-card-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:endless",
+      "mediaId": "systems/endless/components/crops/blog-card-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:endless",
+      "mediaId": "systems/endless/components/crops/blog-card-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:endless",
+      "mediaId": "systems/endless/components/crops/blog-pill-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:endless",
+      "mediaId": "systems/endless/components/crops/blog-pill-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:endless",
+      "mediaId": "systems/endless/components/crops/blog-pill-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:endless",
+      "mediaId": "systems/endless/components/crops/blog-pill-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:endless",
+      "mediaId": "systems/endless/components/crops/credits-slider-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:slider",
+          "rule": "ui-slider",
+          "reason": "Capture filename explicitly names slider; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:endless",
+      "mediaId": "systems/endless/components/crops/credits-slider-focused.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:slider",
+          "rule": "ui-slider",
+          "reason": "Capture filename explicitly names slider; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:endless",
+      "mediaId": "systems/endless/components/crops/docs-search-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:endless",
+      "mediaId": "systems/endless/components/crops/docs-search-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:endless",
+      "mediaId": "systems/endless/components/crops/docs-search-hover.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:endless",
+      "mediaId": "systems/endless/components/crops/docs-search-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:endless",
+      "mediaId": "systems/endless/components/crops/docs-sidebar-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:sidebar-drawer",
+          "rule": "ui-sidebar",
+          "reason": "Capture filename explicitly names sidebar & drawer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:endless",
+      "mediaId": "systems/endless/components/crops/faq-item-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:endless",
+      "mediaId": "systems/endless/components/crops/faq-item-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:endless",
+      "mediaId": "systems/endless/components/crops/faq-item-hover.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:endless",
+      "mediaId": "systems/endless/components/crops/faq-item-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:endless",
+      "mediaId": "systems/endless/components/crops/footer-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:endless",
+      "mediaId": "systems/endless/components/crops/footer-link-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:endless",
+      "mediaId": "systems/endless/components/crops/footer-link-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:endless",
+      "mediaId": "systems/endless/components/crops/footer-link-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:endless",
+      "mediaId": "systems/endless/components/crops/footer-link-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:endless",
+      "mediaId": "systems/endless/components/crops/m-menu-button-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:endless",
+      "mediaId": "systems/endless/components/crops/mode-pill-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:endless",
+      "mediaId": "systems/endless/components/crops/mode-pill-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:endless",
+      "mediaId": "systems/endless/components/crops/mode-pill-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:endless",
+      "mediaId": "systems/endless/components/crops/mode-pill-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:endless",
+      "mediaId": "systems/endless/components/crops/mode-tab-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:endless",
+      "mediaId": "systems/endless/components/crops/mode-tab-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:endless",
+      "mediaId": "systems/endless/components/crops/mode-tab-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:endless",
+      "mediaId": "systems/endless/components/crops/mode-tab-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:endless",
+      "mediaId": "systems/endless/components/crops/model-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:endless",
+      "mediaId": "systems/endless/components/crops/model-card-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:endless",
+      "mediaId": "systems/endless/components/crops/model-card-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:endless",
+      "mediaId": "systems/endless/components/crops/model-card-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:endless",
+      "mediaId": "systems/endless/components/crops/models-search-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:endless",
+      "mediaId": "systems/endless/components/crops/models-search-filled.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:endless",
+      "mediaId": "systems/endless/components/crops/models-search-focused.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:search-field",
+          "rule": "ui-search-field",
+          "reason": "Capture filename explicitly names search field; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:endless",
+      "mediaId": "systems/endless/components/crops/plan-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:endless",
+      "mediaId": "systems/endless/components/crops/prompt-chip-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:endless",
+      "mediaId": "systems/endless/components/crops/prompt-chip-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:endless",
+      "mediaId": "systems/endless/components/crops/prompt-chip-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:endless",
+      "mediaId": "systems/endless/components/crops/prompt-chip-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:endless",
+      "mediaId": "systems/endless/components/crops/theme-toggle-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:switch-toggle",
+          "rule": "ui-toggle",
+          "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:endless",
+      "mediaId": "systems/endless/components/crops/theme-toggle-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:switch-toggle",
+          "rule": "ui-toggle",
+          "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:endless",
+      "mediaId": "systems/endless/components/crops/theme-toggle-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:switch-toggle",
+          "rule": "ui-toggle",
+          "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:endless",
+      "mediaId": "systems/endless/components/crops/theme-toggle-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:switch-toggle",
+          "rule": "ui-toggle",
+          "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
         }
       ]
     }
