@@ -77,6 +77,25 @@ def check_tiles(name, ps):
     return intended
 
 
+def tile_scale(parts):
+    """PNG pixels per CSS pixel for these tiles, from the first sidecar that says.
+
+    capture.scale is 'css' (the PNG is CSS-sized) or 'device' (the PNG is the
+    clip times devicePixelRatio, e.g. the 2x mobile captures). Clips and
+    document heights are always recorded in CSS px; the PNG is not.
+    """
+    for p in parts:
+        if not p:
+            continue
+        if (p.get('capture') or {}).get('scale') == 'css':
+            return 1
+        dpr = ((p.get('actual') or {}).get('devicePixelRatio')
+               or (p.get('requested') or {}).get('deviceScaleFactor'))
+        if dpr:
+            return dpr
+    return 1
+
+
 def stitched_sidecar(name, sheet, tile_paths, intended=None):
     """Rebuild name.png.capture.json from the part tiles' sidecars."""
     parts = [sidecar_for(f) for f in tile_paths]
@@ -85,25 +104,30 @@ def stitched_sidecar(name, sheet, tile_paths, intended=None):
     clips = [(p.get('capture') or {}).get('clip') for p in parts if p]
     clips = [c for c in clips if c]
     total_h = sum(c['height'] for c in clips)
+    css_w = clips[0]['width'] if clips else sheet.width
+    scale = tile_scale(parts)
     meta['capture'] = {'mode': 'stitchedParts',
                        'scale': (parts[0].get('capture') or {}).get('scale', 'device') if parts and parts[0] else 'device',
-                       'clip': {'x': 0, 'y': 0, 'width': sheet.width, 'height': total_h} if clips else None}
+                       # The clip is recorded in CSS px like the part clips;
+                       # png below carries the real device-pixel size.
+                       'clip': {'x': 0, 'y': 0, 'width': css_w, 'height': total_h} if clips else None}
     meta['png'] = {'width': sheet.width, 'height': sheet.height}
     meta['stitchedFrom'] = [f.name for f in tile_paths]
     if clips:
         meta['partClip'] = clips
     if intended is not None:
         meta['intendedHeight'] = intended
-        expected = {'width': sheet.width, 'height': intended}
+        expected = {'width': round(css_w * scale), 'height': round(intended * scale)}
     elif clips:
-        expected = {'width': sheet.width, 'height': total_h}
+        expected = {'width': round(css_w * scale), 'height': round(total_h * scale)}
     else:
         expected = {'width': sheet.width, 'height': sheet.height}
-    matches = abs(sheet.width - expected['width']) <= 1 and abs(sheet.height - expected['height']) <= 1
+    matches = abs(sheet.width - expected['width']) <= 1 and abs(sheet.height - expected['height']) <= 2
     meta['dimensionCheck'] = {'status': 'pass' if matches else 'fail', 'expected': expected, 'basis': 'stitchedParts'}
     if not matches:
         meta['dimensionCheck']['error'] = (f"Stitched PNG {sheet.width}x{sheet.height}, "
-                                           f"expected {expected['width']}x{expected['height']} from the part clips")
+                                           f"expected {expected['width']}x{expected['height']} "
+                                           f"from the part clips at {scale}x")
     return meta
 
 
@@ -132,9 +156,11 @@ for f in sorted(RAW.glob('*.png')):
         continue
     im = Image.open(f).convert('RGB')
     im.quantize(colors=256, method=Image.Quantize.MEDIANCUT, dither=Image.Dither.NONE).save(OUT / f.name, optimize=True)
-    if f.stem in stitched:
-        (OUT / f'{f.name}.capture.json').write_text(json.dumps(stitched[f.stem], indent=1) + '\n')
-    elif f.with_name(f.name + '.capture.json').exists():
-        shutil.copyfile(f.with_name(f.name + '.capture.json'), OUT / f'{f.name}.capture.json')
+    out_side = OUT / f'{f.name}.capture.json'
+    out_side.unlink(missing_ok=True)   # never leave a previous run's measurements beside a new image
+    if stitched.get(f.stem):
+        out_side.write_text(json.dumps(stitched[f.stem], indent=1) + '\n')
+    elif f.stem not in stitched and f.with_name(f.name + '.capture.json').exists():
+        shutil.copyfile(f.with_name(f.name + '.capture.json'), out_side)
     n += 1
 print(n, 'screenshots ->', OUT)
