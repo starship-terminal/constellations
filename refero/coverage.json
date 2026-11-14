@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 124,
-    "system_domains": 116,
-    "matched_domains": 91,
-    "missing_domains": 342,
+    "system_packages": 125,
+    "system_domains": 117,
+    "matched_domains": 92,
+    "missing_domains": 341,
     "system_domains_absent_from_catalog": 25
   },
   "matched": {
@@ -1409,6 +1409,23 @@
         }
       ]
     },
+    "fal.ai": {
+      "catalog": [
+        {
+          "name": "fal",
+          "domain": "fal.ai",
+          "id": 935
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "fal",
+          "name": "fal.ai",
+          "url": "https://fal.ai",
+          "name_match": true
+        }
+      ]
+    },
     "github.com": {
       "catalog": [
         {
@@ -1885,13 +1902,6 @@
         "name": "Faire",
         "domain": "faire.com",
         "id": 155
-      }
-    ],
-    "fal.ai": [
-      {
-        "name": "fal",
-        "domain": "fal.ai",
-        "id": 935
       }
     ],
     "family.co": [

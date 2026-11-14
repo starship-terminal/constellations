@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_66 of 124 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_67 of 125 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -160,6 +160,12 @@ Access: signed out (every captured surface is public; the product — scheduler,
 Access: signed out (every captured surface is public; the Dock workspace sits behind auth.dock.us and was never reached; the HubSpot demo form and the auth cards were measured, never filled or submitted)
 - the signed-in workspace entirely: rooms, deal portals, content library, learning paths, settings and billing live behind auth.dock.us and were never reached
 - the login/signup cards and the HubSpot demo form were measured as surfaces, never filled or submitted; their Continue/submit actions were never pressed
+
+## [fal.ai](../systems/fal) — `fal`
+Access: read-only (the marketing pages, the explore catalog, the model and API pages, the docs and the login card are fully public; everything past login - dashboard, API keys, billing, deployments, sandbox, inference - is an authenticated boundary never reached; OAuth, Sign-in-to-run, Open-in-Sandbox, Download, Contact-Sales and Get-Started were measured, never followed; the prompt field was filled and cleared without running a model; the consent card was hidden, never answered)
+- every post-login surface (dashboard, API keys, billing, deployments) lives behind fal's account - an authenticated boundary never reached
+- inference was never run: the prompt field was filled and cleared, Sign-in-to-run links to login signed out, Open-in-Sandbox and Download were measured, never followed
+- the OAuth buttons and Use-SSO were measured at rest, never followed; validation, error and success states are absent rather than measured
 
 ## [Buy Me a Coffee](../systems/buymeacoffee) — `buymeacoffee`
 Access: signed out (every captured surface is public; the creator dashboard, shop/membership/extras managers, payouts, analytics and settings sit behind /login, the Stripe checkout behind Support was never opened, and the password step behind Continue-with-email was never submitted)
