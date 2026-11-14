@@ -9364,7 +9364,7 @@
       ],
       "durationMin": 280,
       "durationNote": "wall-clock across the capture sessions including kit adaptation from the Delphi lineage, the stylesheet harvest with HSL-triplet normalisation, screenshot and measurement passes on a headless Linux server, selector retries against scroll-driven reveals and re-mounted nav DOM, and the offline build",
-      "pr": "TBD"
+      "pr": "https://github.com/starship-terminal/constellations/pull/553"
     },
     "layoutGaps": {
       "icons/": "the icon extraction pass was not run; the icons (the Visual mark, tile badges, tool previews and avatar art) are visible in the crops and screenshots"
