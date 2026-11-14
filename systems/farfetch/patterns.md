@@ -59,7 +59,7 @@ The Dolce & Gabbana slides PDP:
 
 `[screenshots/mobile-home-light-*, mobile-plp-women-light-*, mobile-pdp-light-*]`
 
-The same pages at phone width: the TopBar collapses the department links into a dropdown trigger and keeps the icon row; the NavBar links scroll horizontally; the grid goes 2-up on cards; the PDP buy box stacks under the gallery and Add To Bag takes the full row. The hamburger menu itself is hydration-owned — the archived SSR paints the desktop chrome responsively.
+The same pages at phone width: the TopBar collapses the department links into a dropdown trigger and keeps the icon row; the NavBar links scroll horizontally; the grid goes 2-up on cards; the PDP keeps its two columns side by side in the archived markup: a 199.5px gallery and a 142.5px sticky buy column with a 16px gap (`raw/layout.json`, `pdp@390`), so Add To Bag is an 84.5px-wide button inside that narrow column, not a full-width row. Whether the live site reflows the buy box under the gallery at 390 is not shown by this evidence and would need a live recapture. The hamburger menu itself is hydration-owned — the archived SSR paints the desktop chrome responsively.
 
 ## Shared conventions
 

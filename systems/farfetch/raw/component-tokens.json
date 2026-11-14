@@ -5154,13 +5154,13 @@
    "description": "The 32px search submit icon button."
   },
   "hero-height": {
-   "value": "573.81px",
+   "value": "1007.64px",
    "type": "dimension",
    "source": "computed h of hero-module default (raw/components-computed.json)",
    "description": "The listing hero module (~1008px with the 3:4 campaign image)."
   },
   "hero-cta-height": {
-   "value": "32px",
+   "value": "44px",
    "type": "dimension",
    "source": "computed h of hero-cta default (raw/components-computed.json)",
    "description": "The 44px 'Shop Now' secondary button."
@@ -5261,6 +5261,12 @@
    "source": "computed w of m-dept-menu default (raw/components-computed.json)",
    "description": "The mobile departments dropdown trigger."
   },
+  "m-product-card-width": {
+   "value": "173px",
+   "type": "dimension",
+   "source": "computed w of m-product-card default (raw/components-computed.json)",
+   "description": "The product card at 390 wide."
+  },
   "m-add-to-bag-height": {
    "value": "61.97px",
    "type": "dimension",
@@ -5339,7 +5345,7 @@
       "color": "rgb(34, 34, 34)",
       "transform": "none",
       "outlineStyle": "solid",
-      "outlineColor": "rgb(16, 16, 16)",
+      "outlineColor": "rgb(0, 95, 204)",
       "borderTopColor": "rgb(34, 34, 34)"
      }
     },

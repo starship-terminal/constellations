@@ -129,11 +129,13 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (FARFETCH's icon 
 
 ```sh
 # captures (scratch dir holds the local pages, assets and shots)
+PLAYWRIGHT=<playwright>/index.mjs node tools/capture/public/prepare-pages.mjs   # rebuilds the local page copies from Wayback
 PLAYWRIGHT=<playwright>/index.mjs node tools/capture/public/public.mjs
 PLAYWRIGHT=<playwright>/index.mjs node tools/capture/vars.mjs
 PLAYWRIGHT=<playwright>/index.mjs node tools/capture/public/measure.mjs
 PLAYWRIGHT=<playwright>/index.mjs node tools/capture/layout.mjs
 node tools/capture/public/build-measurements.mjs
+# KEYS=hero-module,type-title measure.mjs plp-men,types re-reads only those components
 
 # generated outputs (deterministic)
 python3 tools/build_component_tokens.py   # -> raw/component-tokens.json

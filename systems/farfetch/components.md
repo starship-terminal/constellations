@@ -2,13 +2,13 @@
 
 The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Captured from farfetch.com on 2026-11-14, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. www.farfetch.com answers Akamai 403 to automation and its CDNs 429, so the DOM is Wayback Machine SSR snapshots served locally and painted by their archived Emotion CSS with scripts removed — nothing was signed into, submitted or bought; hover/focus/pressed states were forced, and the controls hydration owns (size listbox, menus, filter panels, accordions) stay closed rather than faked. Department, product, category and footer links and the account/wishlist/bag icons were measured, never followed; the search and newsletter fields were typed into and cleared, never submitted.
 
-The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (69 components, 151 states). The page layouts are described in [patterns.md](patterns.md).
+The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (71 components, 152 states). The page layouts are described in [patterns.md](patterns.md).
 
 How to read an entry:
 
 - A colour is its value followed by the palette token in [tokens.json](tokens.json) with the same value, when there is one. Text is written family size/line-height weight, then its colour, for example `SF Pro 14/21 500, #21252e`, and is read from the first text node inside the component.
 - The state table has one row per state that differs. The first row lists every value; later rows list only what changes. A state with the same values as the first is named in its label, for example "default (same: focus-visible)". When the root paints nothing, "Child layers" names the first nodes inside it that do.
-- Crops are images of the component read from the live page, in [components/crops/](components/crops) (149 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
+- Crops are images of the component read from the live page, in [components/crops/](components/crops) (150 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
 
 ## Discovery list
 
@@ -39,7 +39,7 @@ Screenshots are named `{page}-{theme}-state.png`: every page paints `light`. Des
 
 Values that apply across entries, from the measurement files.
 
-**Focus.** 20 components were given a real keyboard focus. 20 draw an outline ring: `topbar-dept` (2px solid #101010, offset -2px), `topbar-locale` (2px solid #101010, offset -2px), `topbar-account` (2px solid #101010, offset -2px), `topbar-wishlist` (2px solid #101010, offset -2px), `topbar-bag` (2px solid #101010, offset -2px), `nav-link` (2px solid #101010, offset -2px), `nav-sale` (2px solid #101010, offset -2px), `search-submit` (2px solid #101010, offset -2px), `hero-cta` (2px solid #101010, offset -2px), `filter-button` (2px solid #101010, offset -2px), `card-wishlist` (2px solid #101010, offset -2px), `pagination-next` (2px solid #101010, offset -2px), `footer-link` (2px solid #101010, offset -2px), `news-submit` (2px solid #101010, offset 1px), `footer-social` (2px solid #101010, offset -2px), `pdp-brand` (2px solid #101010, offset -2px), `add-to-bag` (2px solid #101010, offset -2px), `pdp-wishlist` (2px solid #101010, offset -2px), `accordion-button` (2px solid #101010, offset -2px), `dept-kicker` (2px solid #101010, offset -2px).
+**Focus.** 20 components were given a real keyboard focus. 20 draw an outline ring: `topbar-dept` (2px solid #101010, offset -2px), `topbar-locale` (2px solid #101010, offset -2px), `topbar-account` (2px solid #101010, offset -2px), `topbar-wishlist` (2px solid #101010, offset -2px), `topbar-bag` (2px solid #101010, offset -2px), `nav-link` (2px solid #101010, offset -2px), `nav-sale` (2px solid #101010, offset -2px), `search-submit` (2px solid #101010, offset -2px), `filter-button` (2px solid #101010, offset -2px), `card-wishlist` (2px solid #101010, offset -2px), `pagination-next` (2px solid #101010, offset -2px), `footer-link` (2px solid #101010, offset -2px), `news-submit` (2px solid #101010, offset 1px), `footer-social` (2px solid #101010, offset -2px), `pdp-brand` (2px solid #101010, offset -2px), `add-to-bag` (2px solid #101010, offset -2px), `pdp-wishlist` (2px solid #101010, offset -2px), `accordion-button` (2px solid #101010, offset -2px), `dept-kicker` (2px solid #101010, offset -2px), `hero-cta` (2px solid #005fcc, offset -2px).
 
 **Pressed.** Forced with DevTools (`CSS.forcePseudoState` :active:hover). Nothing a real press would submit was ever pressed.
 
@@ -62,6 +62,7 @@ Values that apply across entries, from the measurement files.
 | [Brands module](#brands-module) | 1392 x 722.64 | - | - | transparent | none | 48px 0px 24px 0px |
 | [Card skeleton](#card-skeleton) | 288.88 x 501.16 | - | - | transparent | none | 0 |
 | [Department tile](#department-tile) | 447.98 x 251.92 | - | - | transparent | none | 0 |
+| [Mobile product card](#mobile-product-card) | 173 x 339.64 | - | - | transparent | none | 0 |
 
 ## Components
 
@@ -187,6 +188,31 @@ The search-icon submit inside the header field; measured, never pressed. Read as
 
 ![Search icon button default](components/crops/search-submit-default.png) ![Search icon button hover](components/crops/search-submit-hover.png) ![Search icon button focus-visible](components/crops/search-submit-focus-visible.png) ![Search icon button pressed](components/crops/search-submit-pressed.png)
 
+### Product listing page
+
+The modular women's/men's listing front (/shopping/{women,men}/items.aspx): the 1392px campaign hero modules (DisplayLarge + Editorial dek + Shop Now), the 'Brands of the moment' tile module, the 4-up product-card grid (brand kicker, description, price, wishlist heart) and the editorial-card rail. Breadcrumbs, filters and pagination render after hydration on these pages, so they are gaps here and measured on the edit page instead.
+
+#### Hero module
+The content-module hero on the listing front: campaign image, Display title, dek and a "Shop Now" secondary button. Read as `hero-module` on the men's listing page.
+
+**Values (default).** size 1392 x 1007.64; padding 48px 0px; background transparent; text Farfetch Basis 38/48.00 400, #222222 `core.palette.named.preto`; layers a.ltr-i5fx28 106.4x44.0 rgb(255, 255, 255) T:1px solid rgb(34, 34, 34) / R:1px solid rgb(34, 34, 34) / B:1px solid rgb(34, 34, 34) / L:1px solid rgb(34, 34, 34); ancestors div.ltr-wn2fdi bg #ffffff `core.palette.named.branco`.
+
+Child layers that carry the look: a 106.4x44 background #ffffff `core.palette.named.branco` border 1px solid #222222 `core.palette.named.preto`.
+
+![Hero module default](components/crops/hero-module-default.png)
+
+#### Hero CTA
+The "Shop Now" secondary button inside the hero module (white surface, dark stroke); measured, never followed. Read as `hero-cta` on the men's listing page.
+
+| State | Values (later rows list only what changes from the first row) |
+|---|---|
+| default | size 106.44 x 44; padding 10px 16px; border 1px solid #222222 `core.palette.named.preto`; background #ffffff `core.palette.named.branco`; text Farfetch Basis 15/19.99 700, #222222 `core.palette.named.preto`; transition background-color 0.3s cubic-bezier(0, 0, 0, 1), border-color 0.3s cubic-bezier(0, 0, 0, 1), opacity 0.3s cubic-bezier(0, 0, 0, 1), color 0.3s cubic-bezier(0, 0, 0, 1) |
+| hover | background #f5f5f5 `core.palette.named.whiteSmoke` |
+| focus-visible | outline 2px solid #005fcc, offset -2px |
+| pressed | border 1px solid #727272 `core.palette.legacy.darker.grey`; background #f5f5f5 `core.palette.named.whiteSmoke`; text Farfetch Basis 15/19.99 700, #727272 `core.palette.legacy.darker.grey` |
+
+![Hero CTA default](components/crops/hero-cta-default.png) ![Hero CTA hover](components/crops/hero-cta-hover.png) ![Hero CTA focus-visible](components/crops/hero-cta-focus-visible.png) ![Hero CTA pressed](components/crops/hero-cta-pressed.png)
+
 ### New-in edit page
 
 The 'New In' edit (/sets/women/new-in-this-week-eu-women.aspx) — the classic listing: Breadcrumbs, the PageTitleHeading + collapsible description, the All Filters button, the quick-filter scroller (skeleton until hydration), product cards with size hints and sale pricing, showcase carousels with CarouselArrowSmall controls, and the Pagination row.
@@ -211,27 +237,6 @@ The collapsible SEO body copy under the page heading. Read as `page-desc` on the
 **Values (default).** size 928 x 39.97; background transparent; text Farfetch Basis 15/19.99 400, #222222 `core.palette.named.preto`.
 
 ![Page description default](components/crops/page-desc-default.png)
-
-#### Hero module
-The content-module hero on the listing front: campaign image, Display title, dek and a "Shop Now" secondary button. Read as `hero-module` on the new-in edit page.
-
-**Values (default).** size 1392 x 573.81; background transparent; text Farfetch Basis 22/27.99 400, #222222 `core.palette.named.preto`; icon 24 x 24, #222222 `core.palette.named.preto`; layers div.ltr-mhoyab 296.9x504.8 rgb(255, 255, 255); div::before.ltr-s0aamk 256.875pxx343.828px rgb(245, 245, 245); button.ltr-o7d7sz 44.0x44.0 T:1px solid rgba(255, 255, 255, 0) / R:1px solid rgba(255, 255, 255, 0) / B:1px solid rgba(255, 255, 255, 0) / L:1px solid rgba(255, 255, 255, 0); div.ltr-mhoyab 296.9x504.8 rgb(255, 255, 255); div::before.ltr-s0aamk 256.875pxx343.828px rgb(245, 245, 245); butto.
-
-Child layers that carry the look: div 296.9x504.8 background #ffffff `core.palette.named.branco`; div::before 256.875pxx343.828px background #f5f5f5 `core.palette.named.whiteSmoke`; button 44x44 border 1px solid rgba(255, 255, 255, 0) `light.action.ghost-dark.active.stroke`.
-
-![Hero module default](components/crops/hero-module-default.png)
-
-#### Hero CTA
-The "Shop Now" secondary button inside the hero module (white surface, dark stroke); measured, never followed. Read as `hero-cta` on the new-in edit page.
-
-| State | Values (later rows list only what changes from the first row) |
-|---|---|
-| default | size 113 x 32; padding 4px 16px; border 1px solid #222222 `core.palette.named.preto`; background #ffffff `core.palette.named.branco`; text Farfetch Basis 15/19.99 700, #222222 `core.palette.named.preto`; transition background-color 0.3s cubic-bezier(0, 0, 0, 1), border-color 0.3s cubic-bezier(0, 0, 0, 1), opacity 0.3s cubic-bezier(0, 0, 0, 1), color 0.3s cubic-bezier(0, 0, 0, 1); layers ::before rgba(0, 0, 0, 0) 0px none 1 |
-| hover | background #f5f5f5 `core.palette.named.whiteSmoke` |
-| focus-visible | outline 2px solid #101010, offset -2px |
-| pressed | border 1px solid #727272 `core.palette.legacy.darker.grey`; background #f5f5f5 `core.palette.named.whiteSmoke`; text Farfetch Basis 15/19.99 700, #727272 `core.palette.legacy.darker.grey` |
-
-![Hero CTA default](components/crops/hero-cta-default.png) ![Hero CTA hover](components/crops/hero-cta-hover.png) ![Hero CTA focus-visible](components/crops/hero-cta-focus-visible.png) ![Hero CTA pressed](components/crops/hero-cta-pressed.png)
 
 #### All Filters button
 The "All Filters" button in the listing toolbar; measured, never toggled (its panel needs hydration). Read as `filter-button` on the new-in edit page.
@@ -559,26 +564,12 @@ A --typography-display / display-large specimen. Read as `type-display` on the w
 
 ![Display default](components/crops/type-display-default.png)
 
-#### Title
-A --typography-title specimen. Read as `type-title` on the women's listing page.
-
-**Values (default).** size 588 x 48; background transparent; text Farfetch Basis 38/48.00 400, #222222 `core.palette.named.preto`.
-
-![Title default](components/crops/type-title-default.png)
-
 #### Kicker
 The uppercase --typography-kicker over a heading. Read as `type-kicker` on the women's listing page.
 
 **Values (default).** size 329.98 x 19.98; background transparent; text Farfetch Basis 15/19.99 400, #222222 `core.palette.named.preto`.
 
 ![Kicker default](components/crops/type-kicker-default.png)
-
-#### Body
-A --typography-body specimen. Read as `type-body` on the women's listing page.
-
-**Values (default).** size 588 x 48; background transparent; text Nimbus Roman D 20/24 400, #222222 `core.palette.named.preto`.
-
-![Body default](components/crops/type-body-default.png)
 
 #### Footnote
 The --typography-footnote micro-label. Read as `type-footnote` on the women's listing page.
@@ -600,6 +591,20 @@ The Nimbus Roman D --typography-editorial serif. Read as `type-editorial` on the
 **Values (default).** size 588 x 48; background transparent; text Nimbus Roman D 20/24 400, #222222 `core.palette.named.preto`.
 
 ![Editorial default](components/crops/type-editorial-default.png)
+
+#### Title
+A --typography-title specimen. Read as `type-title` on the women's listing page.
+
+**Values (default).** size 928 x 27.98; background transparent; text Farfetch Basis 22/27.99 400, #222222 `core.palette.named.preto`.
+
+![Title default](components/crops/type-title-default.png)
+
+#### Body
+A --typography-body specimen. Read as `type-body` on the women's listing page.
+
+**Values (default).** size 684 x 19.98; background transparent; text Farfetch Basis 15/19.99 400, #222222 `core.palette.named.preto`.
+
+![Body default](components/crops/type-body-default.png)
 
 ### Footer
 
@@ -724,6 +729,20 @@ A department chooser tile at phone width. Read as `m-dept-tile` on the home page
 Child layers that carry the look: div::before 260pxx146.25px image linear-gradient(rgba(34, 34, 34, 0), rgba(34, 34, 34, 0.82)).
 
 ![Mobile department tile default](components/crops/m-dept-tile-default.png)
+
+#### Mobile product card
+A listing product card at phone width. Read as `m-product-card` on the women's listing page at 390 wide.
+
+**Values (default).** size 173 x 339.64; background transparent; text Farfetch Basis 13/17.00 400, #727272 `core.palette.legacy.darker.grey`; icon 24 x 24, #222222 `core.palette.named.preto`; layers div.ltr-mhoyab 173.0x339.6 rgb(255, 255, 255); div::before.ltr-1d9p1fi 133pxx178.656px rgb(245, 245, 245); button.ltr-o7d7sz 44.0x44.0 T:1px solid rgba(255, 255, 255, 0) / R:1px solid rgba(255, 255, 255, 0) / B:1px solid rgba(255, 255, 255, 0) / L:1px solid rgba(255, 255, 255, 0).
+
+Child layers that carry the look: div 173x339.6 background #ffffff `core.palette.named.branco`; div::before 133pxx178.656px background #f5f5f5 `core.palette.named.whiteSmoke`; button 44x44 border 1px solid rgba(255, 255, 255, 0) `light.action.ghost-dark.active.stroke`.
+
+![Mobile product card default](components/crops/m-product-card-default.png)
+
+#### Mobile filter button
+The All Filters control at phone width (plp modular page renders it post-hydration). Read as `m-filter` on the women's listing page at 390 wide.
+
+Not on the page when it was captured.
 
 ## Icons
 

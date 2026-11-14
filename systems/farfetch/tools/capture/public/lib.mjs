@@ -56,8 +56,15 @@ export function servePages(pagesDir, assetsDir) {
     '.avif': 'image/avif', '.gif': 'image/gif',
   };
   const inflight = new Map();
+  // Resolve against the cache root and refuse anything that leaves it, so an
+  // encoded ../ in a request can neither read nor write outside assetsDir.
+  const inside = (root, file) => {
+    const rel = path.relative(path.resolve(root), path.resolve(file));
+    return rel !== '' && !rel.startsWith('..') && !path.isAbsolute(rel);
+  };
   const mirror = (host, rel) => {
-    const dest = path.join(assetsDir, host, rel);
+    const dest = path.resolve(assetsDir, host, rel);
+    if (!inside(path.join(assetsDir, host), dest)) return Promise.resolve(null);
     if (fs.existsSync(dest)) return Promise.resolve(dest);
     if (inflight.has(dest)) return inflight.get(dest);
     const orig = `https://${host === 'cdn-static' ? 'cdn-static.farfetch-contents.com' : 'cdn-images.farfetch-contents.com'}/${rel}`;
@@ -79,7 +86,9 @@ export function servePages(pagesDir, assetsDir) {
     return job;
   };
   const srv = http.createServer((req, res) => {
-    const u = decodeURIComponent(req.url.split('?')[0]);
+    let u;
+    try { u = decodeURIComponent(req.url.split('?')[0]); } catch { res.writeHead(400); res.end('bad'); return; }
+    if (u.includes('\0')) { res.writeHead(400); res.end('bad'); return; }
     const send = (file) => {
       fs.readFile(file, (e, data) => {
         if (e) { res.writeHead(404); res.end('nope'); return; }
@@ -93,7 +102,8 @@ export function servePages(pagesDir, assetsDir) {
       return;
     }
     const rel = u.replace(/^\/+/, '').replace(/^pages\//, '') || 'home.html';
-    const file = path.join(pagesDir, path.normalize(rel).replace(/^(\.\.[/\\])+/, ''));
+    const file = path.resolve(pagesDir, rel);
+    if (!inside(pagesDir, file)) { res.writeHead(404); res.end('nope'); return; }
     send(file);
   });
   return new Promise((resolve) => srv.listen(0, '127.0.0.1', () => resolve({ srv, port: srv.address().port })));

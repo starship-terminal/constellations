@@ -1,6 +1,6 @@
 # Component measurements — farfetch.com
 
-Computed styles read on undefined by `tools/capture/measure.mjs`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), and written here by `tools/capture/build-measurements.mjs` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
+Computed styles read on 2026-11-14 by `tools/capture/measure.mjs`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), and written here by `tools/capture/build-measurements.mjs` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
 
 farfetch.com refuses every automated request (Akamai 403 on www.farfetch.com, 429 on both farfetch-contents.com CDNs, headless and headed alike), so the DOM is Wayback Machine SSR snapshots served locally — the real markup painted by the real archived Emotion CSS, with every script removed. Elements hydrate normally would own — dropdown panels, menus, accordion animation — cannot open, so those states are absent rather than faked.
 
@@ -369,59 +369,6 @@ Page: set-women. Selector: `PageTitleDescription`. States: default.
 | How | at rest |
 
 Crops: `page-desc-default.png`.
-
-#### hero-module
-
-Hero module. The content-module hero on the listing front: campaign image, Display title, dek and a "Shop Now" secondary button.
-
-Page: set-women. Selector: `hero-container`. States: default.
-
-| Property | default |
-|---|---|
-| Size (w x h) | 1392 x 573.81 |
-| Padding | 0px |
-| Gap | 12px |
-| Border | none |
-| Radius | 0px |
-| Background | transparent |
-| Box shadow | none |
-| Outline | none |
-| Font | Farfetch Basis 15px/19.9995px 400 |
-| Letter spacing | normal |
-| Colour | #222222 |
-| Text node | p.ltr-3msk9d-Heading: Farfetch Basis 22px/27.9994px 400, #222222 |
-| Transition | none |
-| Icon | 24 x 24, colour #222222 |
-| Painted layers | div.ltr-mhoyab 296.9x504.8 bg #ffffff; div::before.ltr-s0aamk 256.875pxx343.828px bg #f5f5f5; button.ltr-o7d7sz 44.0x44.0 border T:1px solid #ffffff @ 0 / R:1px solid #ffffff @ 0 / B:1px solid #ffffff @ 0 / L:1px solid #ffffff @ 0; div.ltr-mhoyab 296.9x504.8 bg #ffffff; div::before.ltr-s0aamk 256.875pxx343.828px bg #f5f5f5; button.ltr-o7d7sz 44.0x44.0 border T:1px solid #ffffff @ 0 / R:1px solid #ffffff @ 0 / B:1px solid #ffffff @ 0 / L:1px solid #ffffff @ 0 |
-| How | at rest |
-
-Crops: `hero-module-default.png`.
-
-#### hero-cta
-
-Hero CTA. The "Shop Now" secondary button inside the hero module (white surface, dark stroke); measured, never followed.
-
-Page: set-women. Selector: `Shop Now`. States: default, hover, focus-visible, pressed.
-
-| Property | default | hover | focus-visible | pressed |
-|---|---|---|---|---|
-| Size (w x h) | 113 x 32 | = | = | = |
-| Padding | 4px 16px | = | = | = |
-| Border | 1px solid #222222 | = | = | 1px solid #727272 |
-| Radius | 0px | = | = | = |
-| Background | #ffffff | #f5f5f5 | = | #f5f5f5 |
-| Box shadow | none | = | = | = |
-| Outline | none | = | 2px solid #101010 offset -2px | = |
-| Font | Farfetch Basis 15px/19.9995px 700 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #222222 | = | = | #727272 |
-| Transition | background-color, border-color, opacity, color 0.3s cubic-bezier(0, 0, 0, 1) | = | = | = |
-| Cursor | pointer | = | = | = |
-| ::before | 111px x 44px, absolute, bg #000000 @ 0, radius 0px | = | 100% x auto, absolute, bg #000000 @ 0, radius 0px | = |
-| Painted layers | a.ltr-11hjfcp 113.0x32.0 bg #ffffff border T:1px solid #222222 / R:1px solid #222222 / B:1px solid #222222 / L:1px solid #222222 | a.ltr-11hjfcp 113.0x32.0 bg #f5f5f5 border T:1px solid #222222 / R:1px solid #222222 / B:1px solid #222222 / L:1px solid #222222 | a.ltr-11hjfcp 113.0x32.0 bg #ffffff border T:1px solid #222222 / R:1px solid #222222 / B:1px solid #222222 / L:1px solid #222222 outline 2px solid #101010 offset -2px | a.ltr-11hjfcp 113.0x32.0 bg #f5f5f5 border T:1px solid #727272 / R:1px solid #727272 / B:1px solid #727272 / L:1px solid #727272 |
-| How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
-
-Crops: `hero-cta-default.png`, `hero-cta-hover.png`, `hero-cta-focus-visible.png`, `hero-cta-pressed.png`.
 
 #### filter-button
 
@@ -1451,29 +1398,6 @@ Page: plp-women. Selector: `Display/DisplayLarge`. States: default.
 
 Crops: `type-display-default.png`.
 
-#### type-title
-
-Title. A --typography-title specimen.
-
-Page: plp-women. Selector: `Title`. States: default.
-
-| Property | default |
-|---|---|
-| Size (w x h) | 588 x 48 |
-| Padding | 0px |
-| Border | none |
-| Radius | 0px |
-| Background | transparent |
-| Box shadow | none |
-| Outline | none |
-| Font | Farfetch Basis 38px/48.0016px 400 |
-| Letter spacing | normal |
-| Colour | #222222 |
-| Transition | none |
-| How | at rest |
-
-Crops: `type-title-default.png`.
-
 #### type-kicker
 
 Kicker. The uppercase --typography-kicker over a heading.
@@ -1497,29 +1421,6 @@ Page: plp-women. Selector: `Kicker`. States: default.
 | How | at rest |
 
 Crops: `type-kicker-default.png`.
-
-#### type-body
-
-Body. A --typography-body specimen.
-
-Page: plp-women. Selector: `Body`. States: default.
-
-| Property | default |
-|---|---|
-| Size (w x h) | 588 x 48 |
-| Padding | 0px |
-| Border | none |
-| Radius | 0px |
-| Background | transparent |
-| Box shadow | none |
-| Outline | none |
-| Font | Nimbus Roman D 20px/24px 400 |
-| Letter spacing | normal |
-| Colour | #222222 |
-| Transition | none |
-| How | at rest |
-
-Crops: `type-body-default.png`.
 
 #### type-footnote
 
@@ -1590,6 +1491,52 @@ Page: plp-women. Selector: `Editorial`. States: default.
 | How | at rest |
 
 Crops: `type-editorial-default.png`.
+
+#### type-title
+
+Title. A --typography-title specimen.
+
+Page: plp-women. Selector: `Title`. States: default.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 928 x 27.98 |
+| Padding | 0px |
+| Border | none |
+| Radius | 0px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | Farfetch Basis 22px/27.9994px 400 |
+| Letter spacing | normal |
+| Colour | #222222 |
+| Transition | none |
+| How | at rest |
+
+Crops: `type-title-default.png`.
+
+#### type-body
+
+Body. A --typography-body specimen.
+
+Page: plp-women. Selector: `Body`. States: default.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 684 x 19.98 |
+| Padding | 0px |
+| Border | none |
+| Radius | 0px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | Farfetch Basis 15px/19.9995px 400 |
+| Letter spacing | normal |
+| Colour | #222222 |
+| Transition | none |
+| How | at rest |
+
+Crops: `type-body-default.png`.
 
 ### Mobile (390 wide)
 
@@ -1775,6 +1722,93 @@ Page: home. Selector: `a:has(Display WOMENSWEAR)`. States: default.
 | How | at rest |
 
 Crops: `m-dept-tile-default.png`.
+
+#### m-product-card
+
+Mobile product card. A listing product card at phone width.
+
+Page: plp-women. Selector: `product-card`. States: default.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 173 x 339.64 |
+| Padding | 0px |
+| Border | none |
+| Radius | 0px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | Farfetch Basis 15px/19.9995px 400 |
+| Letter spacing | normal |
+| Colour | #222222 |
+| Text node | p.ltr-1qgaspf-Caption.ey751pk0: Farfetch Basis 13px/17.0001px 400, #727272 |
+| Transition | none |
+| Icon | 24 x 24, colour #222222 |
+| Painted layers | div.ltr-mhoyab 173.0x339.6 bg #ffffff; div::before.ltr-1d9p1fi 133pxx178.656px bg #f5f5f5; button.ltr-o7d7sz 44.0x44.0 border T:1px solid #ffffff @ 0 / R:1px solid #ffffff @ 0 / B:1px solid #ffffff @ 0 / L:1px solid #ffffff @ 0 |
+| How | at rest |
+
+Crops: `m-product-card-default.png`.
+
+#### m-filter
+
+Mobile filter button. The All Filters control at phone width (plp modular page renders it post-hydration).
+
+Page: plp-women. Selector: `filter-button`. States: .
+
+Not found on the page at capture time.
+
+### Product listing page
+
+#### hero-module
+
+Hero module. The content-module hero on the listing front: campaign image, Display title, dek and a "Shop Now" secondary button.
+
+Page: plp-men. Selector: `hero-container`. States: default.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 1392 x 1007.64 |
+| Padding | 48px 0px |
+| Border | none |
+| Radius | 0px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | Farfetch Basis 15px/19.9995px 400 |
+| Letter spacing | normal |
+| Colour | #222222 |
+| Text node | h2._d699d4._b6b946: Farfetch Basis 38px/48.0016px 400, #222222 |
+| Transition | none |
+| Painted layers | a.ltr-i5fx28 106.4x44.0 bg #ffffff border T:1px solid #222222 / R:1px solid #222222 / B:1px solid #222222 / L:1px solid #222222 |
+| Ancestor paint | 1 up div.ltr-wn2fdi bg #ffffff |
+| How | at rest |
+
+Crops: `hero-module-default.png`.
+
+#### hero-cta
+
+Hero CTA. The "Shop Now" secondary button inside the hero module (white surface, dark stroke); measured, never followed.
+
+Page: plp-men. Selector: `hero-container a "Shop Now"`. States: default, hover, focus-visible, pressed.
+
+| Property | default | hover | focus-visible | pressed |
+|---|---|---|---|---|
+| Size (w x h) | 106.44 x 44 | = | = | = |
+| Padding | 10px 16px | = | = | = |
+| Border | 1px solid #222222 | = | = | 1px solid #727272 |
+| Radius | 0px | = | = | = |
+| Background | #ffffff | #f5f5f5 | = | #f5f5f5 |
+| Box shadow | none | = | = | = |
+| Outline | none | = | 2px solid #005fcc offset -2px | = |
+| Font | Farfetch Basis 15px/19.9995px 700 | = | = | = |
+| Letter spacing | normal | = | = | = |
+| Colour | #222222 | = | = | #727272 |
+| Transition | background-color, border-color, opacity, color 0.3s cubic-bezier(0, 0, 0, 1) | = | = | = |
+| Cursor | pointer | = | = | = |
+| Painted layers | a.ltr-i5fx28 106.4x44.0 bg #ffffff border T:1px solid #222222 / R:1px solid #222222 / B:1px solid #222222 / L:1px solid #222222 | a.ltr-i5fx28 106.4x44.0 bg #f5f5f5 border T:1px solid #222222 / R:1px solid #222222 / B:1px solid #222222 / L:1px solid #222222 | a.ltr-i5fx28 106.4x44.0 bg #ffffff border T:1px solid #222222 / R:1px solid #222222 / B:1px solid #222222 / L:1px solid #222222 outline 2px solid #005fcc offset -2px | a.ltr-i5fx28 106.4x44.0 bg #f5f5f5 border T:1px solid #727272 / R:1px solid #727272 / B:1px solid #727272 / L:1px solid #727272 |
+| How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
+
+Crops: `hero-cta-default.png`, `hero-cta-hover.png`, `hero-cta-focus-visible.png`, `hero-cta-pressed.png`.
 
 ## Transitions declared in the readable stylesheets
 

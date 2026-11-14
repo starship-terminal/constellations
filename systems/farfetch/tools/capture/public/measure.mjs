@@ -35,8 +35,13 @@ const listed = new Map();
 const failedPages = new Set();
 const URLS = Object.fromEntries(Object.entries(PAGES).map(([k, v]) => [k, v.url]));
 
+// Mobile passes reuse a desktop page file; name the map instead of stripping an
+// "m" (that turned mplp into "plp", which has no page file).
+const PAGE_OF = { mplp: 'plp-women', mpdp: 'pdp', mhome: 'home' };
+
 async function newPage(key, { mobile = false, wait = 7000 } = {}) {
-  current = key.replace(/^m/, '');
+  current = PAGE_OF[key] || key;
+  if (!PAGES[current]) throw new Error(`no page file for ${key}`);
   if (liveCtx) { await liveCtx.close().catch(() => {}); liveCtx = null; }
   const b = browser;
   const ctx = liveCtx = await b.newContext(mobile
@@ -61,6 +66,7 @@ async function newPage(key, { mobile = false, wait = 7000 } = {}) {
 
 // Fixed/sticky chrome with paint order: the z-index map of the page's bars.
 async function chrome(key) {
+  if (KEYS) return; // a targeted run leaves the recorded chrome map as it was
   const z = await page.evaluate(() => {
     const els = [...document.querySelectorAll('body *')];
     const seen = [];
@@ -140,7 +146,12 @@ async function measure(key, state, target, opts = {}) {
   }
 }
 
+// KEYS=hero-module,type-title limits a run to those components, so a targeted
+// re-measure leaves every other reading and crop untouched.
+const KEYS = process.env.KEYS ? new Set(process.env.KEYS.split(',')) : null;
+
 async function S(key, target, list, meta = {}, opts = {}) {
+  if (KEYS && !KEYS.has(key)) return;
   const prev = out.components[key];
   const keep = prev && Object.keys(prev.states || {}).length ? { page: prev.page, run: prev.run, url: prev.url } : null;
   comp(key, { title: meta.title, group: meta.group, desc: meta.desc, selector: meta.sel });
@@ -252,8 +263,14 @@ async function listing(key) {
   await S('breadcrumb', q('nav[aria-label*="breadcrumb" i], [data-component="BreadcrumbsNavigation"], [data-component="Breadcrumbs"]').filter({ visible: true }).first(), ['default'], { group: g1, title: 'Breadcrumbs', desc: 'The category breadcrumb trail (Home > Women > …).', sel: 'BreadcrumbsNavigation' });
   await S('page-title', q('h1, [data-component="DisplayLarge"], [data-component="Display"]').filter({ visible: true }).first(), ['default'], { group: g1, title: 'Page heading', desc: 'The listing h1 (PageTitleHeading on the classic listing) or the hero module DisplayLarge title on the modular pages.', sel: 'first h1/DisplayLarge' });
   await S('page-desc', q('[data-component="PageTitleDescription"]').filter({ visible: true }).first(), ['default'], { group: g1, title: 'Page description', desc: 'The collapsible SEO body copy under the page heading.', sel: 'PageTitleDescription' });
-  await S('hero-module', q('[data-testid="hero-container"], [data-component="ProductShowcase"]').filter({ visible: true }).first(), ['default'], { group: g1, title: 'Hero module', desc: 'The content-module hero on the listing front: campaign image, Display title, dek and a "Shop Now" secondary button.', sel: 'hero-container' });
-  await S('hero-cta', q('a[aria-label="Shop Now"], button[aria-label="Shop Now"], [data-component="ProductShowcaseButton"]').filter({ visible: true }).first(), B4, { group: g1, title: 'Hero CTA', desc: 'The "Shop Now" secondary button inside the hero module (white surface, dark stroke); measured, never followed.', sel: 'Shop Now' });
+  // The campaign hero only exists on the modular PLPs. The edit page has no
+  // hero-container; its ProductShowcase blocks are recommendation rails, so
+  // those must never fill the hero keys.
+  const hero = q('[data-testid="hero-container"]');
+  if (key !== 'set-women') {
+    await S('hero-module', hero.filter({ visible: true }).first(), ['default'], { group: g1, title: 'Hero module', desc: 'The content-module hero on the listing front: campaign image, Display title, dek and a "Shop Now" secondary button.', sel: 'hero-container' });
+    await S('hero-cta', hero.locator('a, button').filter({ hasText: /^\s*Shop Now\s*$/i }).filter({ visible: true }).first(), B4, { group: g1, title: 'Hero CTA', desc: 'The "Shop Now" secondary button inside the hero module (white surface, dark stroke); measured, never followed.', sel: 'hero-container a "Shop Now"' });
+  }
   await S('filter-button', q('[data-testid="filter-button"]').filter({ visible: true }).first(), B4, { group: g1, title: 'All Filters button', desc: 'The "All Filters" button in the listing toolbar; measured, never toggled (its panel needs hydration).', sel: 'filter-button' });
   await S('quick-filter', q('[data-testid="quick-filters-scroller"] button, [data-testid="quick-filters-scroller"] a, [data-selector="catalog-quick-filters-skeleton"]').filter({ visible: true }).first(), ['default'], { group: g1, title: 'Quick filter scroller', desc: 'The quick-filter chip scroller under the toolbar — the chips are lazy-rendered, so the SSR copy only paints their skeleton bar.', sel: 'quick-filters-scroller > *' });
   const card = q('[data-testid="product-card"], [data-testid="productCard"], [data-component="ProductCard"]').filter({ visible: true }).first();
@@ -314,10 +331,10 @@ async function home() {
 
 async function types() {
   const g = G.type;
-  await S('type-display', q('[data-component="Display"], [data-component="DisplayLarge"], h1').filter({ visible: true }).first(), ['default'], { group: g, title: 'Display', desc: 'A --typography-display / display-large specimen.', sel: 'Display/DisplayLarge' });
-  await S('type-title', q('[data-component="Title"], h2').filter({ visible: true }).first(), ['default'], { group: g, title: 'Title', desc: 'A --typography-title specimen.', sel: 'Title' });
+  await S('type-display', q('[data-component="DisplayLarge"], [data-component="Display"]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Display', desc: 'A --typography-display / display-large specimen.', sel: 'Display/DisplayLarge' });
+  await S('type-title', q('[data-component="Title"]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Title', desc: 'A --typography-title specimen.', sel: 'Title' });
   await S('type-kicker', q('[data-component="Kicker"]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Kicker', desc: 'The uppercase --typography-kicker over a heading.', sel: 'Kicker' });
-  await S('type-body', q('[data-component="Body"], [data-component="BodyBold"], p').filter({ visible: true }).first(), ['default'], { group: g, title: 'Body', desc: 'A --typography-body specimen.', sel: 'Body' });
+  await S('type-body', q('[data-component="Body"]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Body', desc: 'A --typography-body specimen.', sel: 'Body' });
   await S('type-footnote', q('[data-component="Footnote"]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Footnote', desc: 'The --typography-footnote micro-label.', sel: 'Footnote' });
   await S('type-label', q('[data-component="LabelPrimarySmall"], [data-component="LabelPrimary"], [data-component="FieldLabel"]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Label', desc: 'A small label style (LabelPrimarySmall).', sel: 'LabelPrimarySmall' });
   await S('type-editorial', q('[data-component="Editorial"]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Editorial', desc: 'The Nimbus Roman D --typography-editorial serif.', sel: 'Editorial' });
@@ -350,6 +367,7 @@ async function mobile(key) {
 // ---------------------------------------------------------------------------
 
 run = new Date().toISOString().slice(0, 10);
+out._meta.read = run;
 ({ srv, port } = await servePages(`${SCRATCH}/pages`, `${SCRATCH}/assets`));
 browser = await chromium.launch();
 const only = (process.argv[2] || '').split(',').filter(Boolean);
