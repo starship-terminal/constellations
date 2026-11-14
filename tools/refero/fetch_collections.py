@@ -34,6 +34,9 @@ import time
 import urllib.request
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import dump as refero_dump  # noqa: E402  (refreshes refero/.dump/ after a write)
+
 ROOT = Path(__file__).resolve().parents[2]
 REFERO = ROOT / "refero"
 DB = REFERO / "refero.db"
@@ -307,6 +310,7 @@ def main():
         print(f"failed {len(failures)} pages: "
               + ", ".join(s for s, _, _ in failures))
     db.close()
+    refero_dump.refresh(DB)
 
 
 if __name__ == "__main__":

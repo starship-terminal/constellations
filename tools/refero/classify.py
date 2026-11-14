@@ -24,6 +24,7 @@ import urllib.request
 from pathlib import Path
 
 import fetch  # write_atomic, and cmd_catalog to refresh refero/catalog.json
+import dump as refero_dump  # refreshes refero/.dump/ after a write
 import refero_media
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -268,7 +269,11 @@ def main():
         # catalog.json carries the labels too; refresh it however the run ends
         # (done, nothing to do, interrupted after some batches committed), or
         # check.py fails on every relabelled style until fetch.py --catalog-only.
-        fetch.cmd_catalog()
+        # The text dump of the db follows for the same reason.
+        try:
+            fetch.cmd_catalog()
+        finally:
+            refero_dump.refresh(DB)
 
 
 def label(db, args):

@@ -357,6 +357,11 @@ class MainDispatchTest(unittest.TestCase):
         calls = []
         patches = [mock.patch.object(fetch, n, side_effect=lambda *a, n=n: calls.append(n))
                    for n in names]
+        # The text dump refresh runs last however main ends; record it rather
+        # than dump the repo's real refero.db from a unit test.
+        patches.append(mock.patch.object(
+            fetch.refero_dump, "refresh",
+            side_effect=lambda path: calls.append(("refresh", path))))
         for p in patches:
             p.start()
         try:
@@ -365,7 +370,8 @@ class MainDispatchTest(unittest.TestCase):
         finally:
             for p in patches:
                 p.stop()
-        return calls
+        self.assertEqual(calls[-1], ("refresh", fetch.DB))
+        return calls[:-1]
 
     def test_the_default_run_fetches_exports_then_catalogs(self):
         self.assertEqual(self.run_main(), ["cmd_fetch", "cmd_export", "cmd_catalog"])

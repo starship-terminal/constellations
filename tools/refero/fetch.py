@@ -32,6 +32,9 @@ import time
 import urllib.request
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import dump as refero_dump  # noqa: E402  (refreshes refero/.dump/ after a write)
+
 ROOT = Path(__file__).resolve().parents[2]
 REFERO = ROOT / "refero"
 WORK = REFERO / ".work"
@@ -651,20 +654,25 @@ def main():
     if args.enrich_media and (args.export_only or args.catalog_only):
         ap.error("--enrich-media is mutually exclusive with "
                  "--export-only/--catalog-only")
-    if args.enrich_media:
-        cmd_enrich_media(args)
-        cmd_catalog()
-        return
-    if args.catalog_only:
-        cmd_catalog()
-        return
-    if args.export_only:
+    try:
+        if args.enrich_media:
+            cmd_enrich_media(args)
+            cmd_catalog()
+            return
+        if args.catalog_only:
+            cmd_catalog()
+            return
+        if args.export_only:
+            cmd_export()
+            cmd_catalog()
+            return
+        cmd_fetch(args)
         cmd_export()
         cmd_catalog()
-        return
-    cmd_fetch(args)
-    cmd_export()
-    cmd_catalog()
+    finally:
+        # However the run ends, the committed text dump follows the db
+        # (refero/README.md, "Merging").
+        refero_dump.refresh(DB)
 
 
 if __name__ == "__main__":
