@@ -479,12 +479,21 @@ function roles() {
 
 (function motion() {
   let h = '';
-  for (const [n, t] of flat(TOK.core.duration, 'duration.')) {
+  for (const [n, t] of flat(TOK.core.duration || {}, 'duration.')) {
     const key = n.replace('duration.', '');
     const ease = TOK.core.easing[key] ? `var(--easing-${key})` : key.startsWith('frame') ? 'var(--easing-frame-out)' : 'var(--easing-out)';
     h += `<div><div class="track" style="--d:${esc(t.v)};--e:${ease}"><div class="dot" style="transition:left var(--d) var(--e)"></div></div><div class="cap" style="margin-top:6px">${esc(n)} · ${esc(t.v)}</div></div>`;
   }
-  for (const [n, t] of flat(TOK.core.easing, 'easing.')) h += `<div><div class="track" style="--e:var(${cssname(n)})"><div class="dot" style="transition:left 600ms var(--e)"></div></div><div class="cap" style="margin-top:6px">${esc(n)} · cubic-bezier(${esc(t.v.join(', '))}) over 600 ms</div></div>`;
+  for (const [n, t] of flat(TOK.core.easing || {}, 'easing.')) h += `<div><div class="track" style="--e:var(${cssname(n)})"><div class="dot" style="transition:left 600ms var(--e)"></div></div><div class="cap" style="margin-top:6px">${esc(n)} · cubic-bezier(${esc(t.v.join(', '))}) over 600 ms</div></div>`;
+  // The measured motion group (tools/capture/motion-probe.mjs), when the package has one: each duration
+  // and easing as read from the page's own elements.
+  const M = TOK.core.motion;
+  if (M) {
+    const eases = Object.keys(M.easing || {});
+    const ease = eases.includes('ease-out') ? `var(${cssname('motion.easing.ease-out')})` : eases.length ? `var(${cssname('motion.easing.' + eases[0])})` : 'ease';
+    for (const [n, t] of flat(M.duration || {}, 'duration.')) h += `<div><div class="track" style="--d:${esc(t.v)};--e:${ease}"><div class="dot" style="transition:left var(--d) var(--e)"></div></div><div class="cap" style="margin-top:6px">motion.${esc(n)} · ${esc(t.v)}</div></div>`;
+    for (const [n, t] of flat(M.easing || {}, 'easing.')) h += `<div><div class="track" style="--e:var(${esc(cssname('motion.' + n))})"><div class="dot" style="transition:left 600ms var(--e)"></div></div><div class="cap" style="margin-top:6px">motion.${esc(n)} · cubic-bezier(${esc(t.v.join(', '))}) over 600 ms</div></div>`;
+  }
   $('#motion-out').innerHTML = h;
   document.querySelectorAll('.track').forEach((tr) => tr.addEventListener('click', () => tr.classList.toggle('go')));
 })();

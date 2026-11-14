@@ -23,8 +23,13 @@ What is not finished in this library. Newest first.
   name tokens disagree with; anam README cites `core.size`/`core.layout` keys
   that don't exist; apollographql components.md lacks the checklist-coverage
   table). Missing `icons/` dirs on amie, appwrite, untitled-stream. Kit fixes:
-  capture never probes `prefers-reduced-motion` (F13 capped at partly ×20) and
-  never records z-index layers (F14 capped at partly ×20).
+  ~~capture never probes `prefers-reduced-motion` (F13 capped at partly ×20)~~
+  done 2026-11-14: `tools/kit/capture/motion-probe.mjs` runs the reduced-motion
+  pass and `motion.py` writes `core.motion` ([decision](decisions/0001-motion-tokens.md),
+  [CAPTURE.md](CAPTURE.md#motion)); packages gain it when next recaptured, and
+  F13's wording could later require it (a rubric version bump and a re-review of
+  every package). Still open: capture never records z-index layers (F14 capped at
+  partly ×20).
 - [ ] **Capture batches 2–21** — 398 apps remain in
   [webapps-manifest.json](../webapps-manifest.json); procedure is
   [HANDOVER.md](HANDOVER.md).

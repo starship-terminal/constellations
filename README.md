@@ -520,6 +520,7 @@ flowchart LR
 | [docs/EVIDENCE.md](docs/EVIDENCE.md) | How every value says where it came from |
 | [docs/CAPTURE.md](docs/CAPTURE.md) | How to capture a new product, and the traps that cost time before |
 | [docs/RIGHTS.md](docs/RIGHTS.md) | Why this repo stays private, and what is not ours |
+| [docs/decisions/](docs/decisions) | Decision records: why the library does what it does (0001: motion as tokens plus a reduced-motion probe) |
 | [AGENTS.md](AGENTS.md) | Instructions for coding agents working here |
 
 ## Where the packages came from
@@ -571,6 +572,7 @@ including the pre-commit checks.
 | [docs/EVIDENCE.md](docs/EVIDENCE.md) | How every value says where it came from |
 | [docs/CAPTURE.md](docs/CAPTURE.md) | How to capture a new product, and the traps that cost time before |
 | [docs/RIGHTS.md](docs/RIGHTS.md) | Why this repo stays private, and what is not ours |
+| [docs/decisions/](docs/decisions) | Decision records: why the library does what it does (0001: motion as tokens plus a reduced-motion probe) |
 | [docs/TODO.md](docs/TODO.md) | Open work, newest first |
 | [refero/README.md](refero/README.md) | The refero snapshot: layout, provenance, refresh and the media mirror |
 | [example/README.md](example/README.md) | The public reference clones and the rules for using them |

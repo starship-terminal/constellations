@@ -71,7 +71,7 @@ audit packages (linear, polaris) name their sets differently; see
 | Shape | Corner radii, border widths |
 | Sizing | Control heights per size (sm, md, lg), icon sizes, the focus ring's width and offset |
 | Elevation | 3 to 5 shadow levels, each tied to a use (card, popover, dialog) |
-| Motion | Durations, easing curves, and what changes under reduced motion |
+| Motion | Durations, easing curves, which properties transition, animations and their keyframes, and what changes under reduced motion ([how the library records it](decisions/0001-motion-tokens.md)) |
 | Layout | Breakpoints, content widths, grid columns, z-index layers |
 
 On mobile and desktop, five groups read differently:

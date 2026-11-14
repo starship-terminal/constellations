@@ -377,6 +377,18 @@ for name in sorted(RES["light"]):
 tw["$description"] = "The Tailwind v4 theme the utility classes read: a 4px spacing unit, the container widths (max-w-2xl is the 672 home composer, the transcript is 48rem) and the radius scale."
 core["tailwind"] = tw
 
+# motion, as measured on the page: durations, easing curves, which properties transition, animations and
+# @keyframes, and what prefers-reduced-motion: reduce changes (raw/motion.json, written by
+# tools/capture/motion-probe.mjs; motion.py is the product-free mapping). A package that has not run the
+# probe has no motion group. The product's own named scales above (`duration`, `easing`) stay as they are:
+# those are semantic names read from its variables, while `motion` is what its elements actually run.
+if (RAW / "motion.json").exists():
+    import sys
+    sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+    import motion
+    core["motion"], motion_not_core = motion.build(json.loads((RAW / "motion.json").read_text()))
+    not_core += motion_not_core
+
 # ---------------------------------------------------------------- themed sets
 
 GROUPS = [
