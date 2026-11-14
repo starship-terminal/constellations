@@ -13,6 +13,7 @@ import type {
 import { promises as fs } from "node:fs";
 import path from "node:path";
 import { readStyleExport, type ExportVariant } from "./style-exports";
+import { parseJson, pyJsonStringify } from "./pyjson";
 import { hasUnresolved, tokenHex, tokenLeaves, tokenResolver } from "./tokens";
 import {
   contained,
@@ -318,7 +319,7 @@ function displayValue(value: unknown): string {
   if (hex) return hex;
   // A list is a font stack or an easing, shown the way catalog.py looks it up.
   if (Array.isArray(value)) return value.map(String).join(", ");
-  return JSON.stringify(value);
+  return pyJsonStringify(value);
 }
 // Aliases resolve inside the token's own set, then `core`, then the root, and
 // legacy `value` leaves read like `$value` ones, matching tools/catalog.py.
@@ -677,7 +678,12 @@ export async function getReference(id: string): Promise<LibraryDetail | null> {
     item = items.find((i) => i.id === id);
   if (!item) return null;
   const { source, slug } = parsed;
-  const tokens = (await readJson<Raw>(`${source}/${slug}/tokens.json`)) || {};
+  // Parsed so a float written `1.0` prints as Python prints it.
+  const tokenText = await readText(`${source}/${slug}/tokens.json`);
+  let tokens: Raw = {};
+  try {
+    tokens = (tokenText && (parseJson(tokenText) as Raw)) || {};
+  } catch {}
   const values = resolvedTokens(tokens);
   let media: ReferenceMedia[] = [],
     descriptionLong = item.description,
