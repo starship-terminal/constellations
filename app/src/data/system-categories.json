@@ -820,5 +820,11 @@
     "groupId": "web-categories",
     "labels": ["Inspiration Board", "Social Networking"],
     "reason": "catalog.json describes an ad-free creative-community platform: a public discover feed and member portfolios on a signed-out site, replayed from the 2023-02-23 archive because the product is closed."
+  },
+  {
+    "referenceId": "systems:factory",
+    "groupId": "web-categories",
+    "labels": ["AI Tool", "Development Tools"],
+    "reason": "catalog.json describes an AI software-engineering agents product: enterprise marketing pages, product tours, docs with a theme toggle, pricing and a gated agent console."
   }
 ]
