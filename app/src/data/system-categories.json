@@ -754,5 +754,11 @@
     "groupId": "web-categories",
     "labels": ["AI Tool", "Productivity"],
     "reason": "catalog.json describes an AI-clone Q&A product: ask fields, discover galleries, public search results, expert profiles and a chat composer."
+  },
+  {
+    "referenceId": "systems:fable",
+    "groupId": "web-categories",
+    "labels": ["Books", "Social Networking"],
+    "reason": "catalog.json describes a book-club and reading product: club directories and detail pages, a book catalog with an ebook store, a /discover cover wall, sign-in, support and a blog. Post-login reader and club surfaces are gated."
   }
 ]
