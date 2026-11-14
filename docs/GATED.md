@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_74 of 132 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_75 of 133 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -415,6 +415,10 @@ Access: read-only (the marketing site, the go.equals.com sign-in card and the do
 Access: read-only (every captured surface is public: the storefront, the sign-in dialog, the support centre and the marketing home); the sign-in form and both search fields were measured, never submitted; Get, Add to Cart, Wishlist, Download, sort options and filter checkboxes were measured, never activated
 - every post-login surface (library, account, billing, cart, checkout) is an authenticated boundary never reached
 - the sign-in form was measured default/focused/filled, never submitted; validation, error and success states are absent rather than measured
+
+## [Excalidraw](../systems/excalidraw) — `excalidraw`
+Access: read-only (the whole editor is public signed out; nothing was drawn, opened, saved, shared, exported or generated; Open, Save, Export actions, Live collaboration, Share, the AI tools, Reset the canvas and every Sign up were measured, never pressed; Excalidraw+ needs an account and was never reached)
+- Excalidraw+ (saved workspaces, cloud library, collaboration management, billing) needs an account and was never reached; no signup or login path was followed
 
 ## Gate noted in access text only
 

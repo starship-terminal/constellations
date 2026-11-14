@@ -790,5 +790,11 @@
     "groupId": "web-categories",
     "labels": ["Marketplace", "Entertainment"],
     "reason": "catalog.json describes a games storefront and launcher: store home, product pages, free-games promos and gated library/checkout surfaces."
+  },
+  {
+    "referenceId": "systems:excalidraw",
+    "groupId": "web-categories",
+    "labels": ["Design & Media Editing", "Productivity"],
+    "reason": "catalog.json describes a whiteboard/drawing editor: tool islands, a properties sidebar, a shape library and image export on a signed-out public canvas."
   }
 ]
