@@ -355,7 +355,10 @@ for key, comp, desc in [
         s = st(comp, "default")
         dur, ease = s.get("transitionDuration"), s.get("transitionTimingFunction")
         if dur and dur != "0s":
-            mo[key] = lit(f"{s.get('transitionProperty', 'all')} {dur} {ease or ''}".strip(), "other",
+            props = s.get('transitionProperty', 'all')
+            durs = [d.strip() for d in (dur or '').split(',')]
+            timed = ", ".join(f"{prop.strip()} {durs[i] if i < len(durs) else durs[-1]} {ease or ''}".strip() for i, prop in enumerate(props.split(',')))
+            mo[key] = lit(timed, "other",
                 f"computed transition of {comp} default (raw/components-computed.json)", desc)
     except KeyError:
         pass

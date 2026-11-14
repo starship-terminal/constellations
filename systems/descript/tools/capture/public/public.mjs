@@ -65,7 +65,13 @@ class Shooter {
       for (let i = 0, y = 0; y < hReal; i++, y += chunk) {
         await scroller.evaluate((e, y) => e.scrollTo(0, y), y);
         await wait(p, 350);
-        try { await screenshotWithMetadata(p, { path: `${f}.part${i}.png`, scale: 'css' }, this.requested); }
+        // scrollTo clamps at the bottom: read the real offset and clip the
+        // tile to the unshown remainder so stitching never repeats content.
+        const top = await scroller.evaluate((e) => e.scrollTop).catch(() => y);
+        const off = y - top;              // where the wanted region starts inside the viewport
+        const vis = Math.min(chunk, Math.max(0, hReal - y));
+        if (off < 0 || vis <= 0) break;
+        try { await screenshotWithMetadata(p, { path: `${f}.part${i}.png`, scale: 'css', clip: { x: 0, y: off, width: this.vw, height: vis } }, this.requested); }
         catch (e) { log('  ! part' + i, String(e.message).split('\n')[0]); }
       }
       await scroller.evaluate((e) => e.scrollTo(0, 0));

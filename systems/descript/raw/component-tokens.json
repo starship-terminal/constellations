@@ -50,7 +50,7 @@
      "description": "The 15.75px auth-card control size (Booton VF)."
     },
     "body": {
-     "value": "16px",
+     "value": "18px",
      "type": "fontSize",
      "source": "computed fontSize of st-prose default (raw/components-computed.json)",
      "description": "The 16px body/nav/CTA size."
@@ -88,7 +88,7 @@
    },
    "lineHeight": {
     "body": {
-     "value": "24px",
+     "value": "27px",
      "type": "other",
      "source": "computed lineHeight of st-prose default (raw/components-computed.json)",
      "description": "The 24px body line-height."
@@ -688,7 +688,7 @@
   "shadow": {},
   "motion": {
    "tab": {
-    "value": "color, background-color, border-color, text-decoration-color, fill, stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1)",
+    "value": "color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1)",
     "type": "other",
     "source": "computed transition of flow-tab default (raw/components-computed.json)",
     "description": "The workflow-tab state transition."

@@ -1,6 +1,6 @@
-# Delphi component measurements
+# Descript component measurements
 
-Computed styles read from www.delphi.co on 2026-11-13 by `tools/capture/public/measure.mjs`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844) across the site's painted surfaces — home, /discover/<topic>, public /search/<question> results, public /<expert> profiles and /<expert>/chat, and the Sign-In/onboarding dialogs, and written here by `tools/capture/public/build-measurements.mjs` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
+Computed styles read from www.descript.com on 2026-11-13 by `tools/capture/public/measure.mjs`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844) across the site's painted surfaces — home, /pricing, /video-editing, /templates, /customers/saastr, /underlord and the web.descript.com sign-in card, and written here by `tools/capture/public/build-measurements.mjs` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
 
 States: `hover` is a real pointer hover; `focus-visible` a real keyboard focus (Shift+Tab, Tab); `pressed` is forced with DevTools (`CSS.forcePseudoState` :active:hover), so no button was pressed; `focused` is a text field clicked into; `filled` is sample text typed and deleted again, with nothing sent; `opened`, `expanded` and the rest are resting states reached by the page or by a UI toggle.
 
@@ -723,20 +723,17 @@ Page: story. Selector: `story p`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 109 x 32 |
-| Padding | 4px 8px |
-| Gap | 8px |
+| Size (w x h) | 600 x 216 |
+| Padding | 0px |
 | Border | none |
-| Radius | 4px |
+| Radius | 0px |
 | Background | transparent |
 | Box shadow | none |
 | Outline | none |
-| Font | booton 16px/24px 600 |
+| Font | booton 18px/27px 400 |
 | Letter spacing | normal |
-| Colour | #26171d |
-| Text node | span: booton 16px/24px 600, #26171d |
+| Colour | #fff7fa |
 | Transition | none |
-| Cursor | pointer |
 | How | at rest |
 
 Crops: `st-prose-default.png`.
@@ -1162,7 +1159,7 @@ Crops: `au-terms-default.png`, `au-terms-hover.png`, `au-terms-focus-visible.png
 
 ## Transitions declared in the readable stylesheets
 
-delphi.co serves its CSS bundles same-origin, so this list holds the transitions the readable sheets declare on each page; the per-state Transition rows above are computed values and cover every rule the page paints.
+descript.com serves its CSS bundles same-origin, so this list holds the transitions the readable sheets declare on each page; the per-state Transition rows above are computed values and cover every rule the page paints.
 
 - auth: `opacity var(--duration-fast) var(--ease-productive)`, `transform var(--duration-fast) var(--ease-productive)`, `transform 0.15s ease-in-out`, `opacity 0.4s ease-out`, `color 1s var(--ease-productive)`, `transform 1s var(--ease-productive)`, `d 1s var(--ease-productive)`, `none`, `opacity var(--duration-faster) var(--ease-productive)`, `opacity 0.15s ease-in-out`, `background var(--duration-faster) var(--ease-productive)`, `background-color var(--duration-faster) var(--ease-productive)`
 

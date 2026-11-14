@@ -135,7 +135,7 @@ async function measure(key, state, target, opts = {}) {
         file = await crop(page, (opts.cropLoc || loc).and(page.locator(':visible')).first(), `${key}-${state}`, opts.pad ?? 8);
       } catch (e) { s.cropError = String(e.message || e).slice(0, 120); }
     }
-    c.states[state] = { ...s, crop: file, via: opts.via };
+    c.states[state] = { ...s, crop: file, via: opts.via, run };
     if (opts.extra) c.states[state].extra = await opts.extra(loc);
     log('  ', key, state, s.rect.w + 'x' + s.rect.h);
   } catch (e) {
@@ -307,7 +307,7 @@ async function pricing() {
   await S('pr-display', q('h2').filter({ hasText: /plan for whatever/ }).and(page.locator(':visible')).first(), ['default'], { group: g, title: 'Pricing headline', desc: 'The display heading "A plan for whatever you create".', sel: 'pricing h2' }, { noScroll: true });
   await S('pr-toggle', q('button').filter({ hasText: /^\s*Monthly\s*$/ }).and(page.locator(':visible')).first().locator('xpath=..'), ['default'], { group: g, title: 'Billing toggle', desc: 'The Monthly / Annual billing switch above the plan cards.', sel: 'billing toggle' }, { noScroll: true });
   await S('pr-toggle-month', q('button').filter({ hasText: /^\s*Monthly\s*$/ }).and(page.locator(':visible')).first(), B4, { group: g, title: 'Monthly option', desc: 'The "Monthly" toggle option; measured, the Annual side is toggled below.', sel: 'Monthly' }, { noScroll: true });
-  await S('pr-toggle-annual', q('button').filter({ hasText: /^\s*Annual\s*$/ }).and(page.locator(':visible')).first(), [...B4, 'opened'], { group: g, title: 'Annual option', desc: 'The "Annual" toggle option — a local billing switch; its opened state is the selected-annual style, never a purchase.', sel: 'Annual' }, { noScroll: true });
+  await S('pr-toggle-annual', q('button').filter({ hasText: /^\s*Annual\s*$/ }).and(page.locator(':visible')).first(), [...B4, 'opened'], { group: g, title: 'Annual option', desc: 'The "Annual" toggle option — a local billing switch; its opened state is the selected-annual style, never a purchase.', sel: 'Annual' }, { noScroll: true, before: { opened: async () => { const m = q('button').filter({ hasText: /^\s*Monthly\s*$/ }).and(page.locator(':visible')).first(); await m.click({ timeout: 4000 }).catch(() => m.evaluate((el) => el.click())); await page.waitForTimeout(600); return 'Monthly selected first'; } } });
   await S('pr-card', q('a, button').filter({ hasText: /Get started|Try free|Choose/i }).and(page.locator(':visible')).first().locator('xpath=ancestor::*[contains(@class,"card") or contains(@class,"plan") or self::li or self::div][1]'), ['default'], { group: g, title: 'Plan card', desc: 'A pricing plan card (name, price, feature list, CTA).', sel: 'plan card' });
   await S('pr-cta', q('a, button').filter({ hasText: /^\s*(Get started|Try free|Choose)/i }).and(page.locator(':visible')).first(), B4, { group: g, title: 'Plan CTA', desc: 'A plan card\u2019s CTA; measured, never followed (it starts signup/checkout).', sel: 'plan CTA' });
   await S('pr-compare-h2', q('h2').filter({ hasText: /difference/ }).and(page.locator(':visible')).first(), ['default'], { group: g, title: 'Comparison heading', desc: 'The "What\u2019s the difference?" heading over the plan comparison table.', sel: 'compare h2' });
@@ -343,7 +343,7 @@ async function story() {
   await chrome('story');
   const g = G.story;
   await S('st-h1', q('h1, h2').and(page.locator(':visible')).first(), ['default'], { group: g, title: 'Story headline', desc: 'The SaaStr customer story headline.', sel: 'story h1' }, { noScroll: true });
-  await S('st-prose', q('main p, article p, p').and(page.locator(':visible')).first(), ['default'], { group: g, title: 'Story prose', desc: 'Body copy in the customer story.', sel: 'story p' });
+  await S('st-prose', q('main p, article p').filter({ hasText: /[\s\S]{60}/ }).and(page.locator(':visible')).first(), ['default'], { group: g, title: 'Story prose', desc: 'Body copy in the customer story.', sel: 'story p' });
   await S('st-cta', q('a, button').filter({ hasText: /Request a demo|Get started|Try free/i }).and(page.locator(':visible')).first(), B4, { group: g, title: 'Story CTA', desc: 'The "Request a demo" CTA in the customer story; measured, never followed.', sel: 'Request a demo' });
   save();
 }

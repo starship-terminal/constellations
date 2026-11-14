@@ -4230,7 +4230,8 @@
       "top": "auto"
      },
      "crop": "components/crops/pr-eyebrow-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-13"
     }
    },
    "page": "pricing",
@@ -4324,7 +4325,8 @@
       "top": "auto"
      },
      "crop": "components/crops/pr-display-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-13"
     }
    },
    "page": "pricing",
@@ -4444,7 +4446,8 @@
       "textTransform": "none"
      },
      "crop": "components/crops/pr-toggle-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-13"
     }
    },
    "page": "pricing",
@@ -4558,7 +4561,8 @@
       "textTransform": "none"
      },
      "crop": "components/crops/pr-toggle-month-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-13"
     },
     "hover": {
      "tag": "button",
@@ -4661,7 +4665,8 @@
       "textTransform": "none"
      },
      "crop": "components/crops/pr-toggle-month-hover.png",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "run": "2026-11-13"
     },
     "focus-visible": {
      "tag": "button",
@@ -4771,7 +4776,8 @@
       "textTransform": "none"
      },
      "crop": "components/crops/pr-toggle-month-focus-visible.png",
-     "via": "Shift+Tab, Tab"
+     "via": "Shift+Tab, Tab",
+     "run": "2026-11-13"
     },
     "pressed": {
      "tag": "button",
@@ -4874,7 +4880,8 @@
       "textTransform": "none"
      },
      "crop": "components/crops/pr-toggle-month-pressed.png",
-     "via": "CDP forcePseudoState :active:hover"
+     "via": "CDP forcePseudoState :active:hover",
+     "run": "2026-11-13"
     }
    },
    "page": "pricing",
@@ -4988,7 +4995,8 @@
       "textTransform": "none"
      },
      "crop": "components/crops/pr-toggle-annual-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-13"
     },
     "hover": {
      "tag": "button",
@@ -5091,7 +5099,8 @@
       "textTransform": "none"
      },
      "crop": "components/crops/pr-toggle-annual-hover.png",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "run": "2026-11-13"
     },
     "focus-visible": {
      "tag": "button",
@@ -5201,7 +5210,8 @@
       "textTransform": "none"
      },
      "crop": "components/crops/pr-toggle-annual-focus-visible.png",
-     "via": "Shift+Tab, Tab"
+     "via": "Shift+Tab, Tab",
+     "run": "2026-11-13"
     },
     "pressed": {
      "tag": "button",
@@ -5304,7 +5314,8 @@
       "textTransform": "none"
      },
      "crop": "components/crops/pr-toggle-annual-pressed.png",
-     "via": "CDP forcePseudoState :active:hover"
+     "via": "CDP forcePseudoState :active:hover",
+     "run": "2026-11-13"
     },
     "opened": {
      "tag": "button",
@@ -5407,7 +5418,8 @@
       "textTransform": "none"
      },
      "crop": "components/crops/pr-toggle-annual-opened.png",
-     "via": "own toggle"
+     "via": "own toggle",
+     "run": "2026-11-13"
     }
    },
    "page": "pricing",
@@ -5529,7 +5541,8 @@
       "textTransform": "none"
      },
      "crop": "components/crops/pr-card-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-13"
     }
    },
    "page": "pricing",
@@ -5631,7 +5644,8 @@
       }
      ],
      "crop": "components/crops/pr-cta-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-13"
     },
     "hover": {
      "tag": "a",
@@ -5722,7 +5736,8 @@
       }
      ],
      "crop": "components/crops/pr-cta-hover.png",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "run": "2026-11-13"
     },
     "focus-visible": {
      "tag": "a",
@@ -5814,7 +5829,8 @@
       }
      ],
      "crop": "components/crops/pr-cta-focus-visible.png",
-     "via": "Shift+Tab, Tab"
+     "via": "Shift+Tab, Tab",
+     "run": "2026-11-13"
     },
     "pressed": {
      "tag": "a",
@@ -5905,7 +5921,8 @@
       }
      ],
      "crop": "components/crops/pr-cta-pressed.png",
-     "via": "CDP forcePseudoState :active:hover"
+     "via": "CDP forcePseudoState :active:hover",
+     "run": "2026-11-13"
     }
    },
    "page": "pricing",
@@ -5999,7 +6016,8 @@
       "top": "auto"
      },
      "crop": "components/crops/pr-compare-h2-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-13"
     }
    },
    "page": "pricing",
@@ -6093,7 +6111,8 @@
       "top": "auto"
      },
      "crop": "components/crops/pr-faq-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-13"
     }
    },
    "page": "pricing",
@@ -7414,7 +7433,8 @@
       "top": "auto"
      },
      "crop": "components/crops/st-h1-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-13"
     }
    },
    "page": "story",
@@ -7429,34 +7449,34 @@
    "states": {
     "default": {
      "tag": "p",
-     "classes": "flex gap-2 hover:bg-[var(--Neutral-50)] group-hover:bg-[var(--Neutral-50)]",
-     "text": "Solutions",
+     "classes": "mb-5 font-booton text-[18px] leading-[1.5]",
+     "text": "SaaStr is the world’s largest SaaS community. It puts on networking events and c",
      "rect": {
-      "x": 403,
-      "y": 45,
-      "w": 109,
-      "h": 32
+      "x": 72,
+      "y": 372,
+      "w": 600,
+      "h": 216
      },
      "style": {
-      "display": "flex",
+      "display": "block",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "109px",
-      "height": "32px",
+      "width": "600px",
+      "height": "216px",
       "minWidth": "0px",
       "maxWidth": "none",
       "minHeight": "0px",
-      "paddingTop": "4px",
-      "paddingRight": "8px",
-      "paddingBottom": "4px",
-      "paddingLeft": "8px",
+      "paddingTop": "0px",
+      "paddingRight": "0px",
+      "paddingBottom": "0px",
+      "paddingLeft": "0px",
       "marginTop": "0px",
       "marginRight": "0px",
-      "marginBottom": "0px",
+      "marginBottom": "20px",
       "marginLeft": "0px",
-      "gap": "8px",
-      "rowGap": "8px",
-      "columnGap": "8px",
+      "gap": "normal",
+      "rowGap": "normal",
+      "columnGap": "normal",
       "flexDirection": "row",
       "alignItems": "normal",
       "justifyContent": "normal",
@@ -7473,54 +7493,43 @@
       "borderLeftWidth": "0px",
       "borderLeftStyle": "solid",
       "borderLeftColor": "rgb(229, 231, 235)",
-      "borderTopLeftRadius": "4px",
-      "borderTopRightRadius": "4px",
-      "borderBottomRightRadius": "4px",
-      "borderBottomLeftRadius": "4px",
+      "borderTopLeftRadius": "0px",
+      "borderTopRightRadius": "0px",
+      "borderBottomRightRadius": "0px",
+      "borderBottomLeftRadius": "0px",
       "backgroundColor": "rgba(0, 0, 0, 0)",
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
       "outlineWidth": "0px",
       "outlineStyle": "none",
-      "outlineColor": "rgb(38, 23, 29)",
+      "outlineColor": "rgb(255, 247, 250)",
       "outlineOffset": "0px",
-      "fontFamily": "booton, \"booton Fallback\", system-ui, Roboto, Arial, sans-serif",
-      "fontSize": "16px",
-      "fontWeight": "600",
-      "lineHeight": "24px",
+      "fontFamily": "booton, \"booton Fallback\", system-ui, Roboto, Arial, sans-serif, system-ui, Roboto, Arial, sans-serif",
+      "fontSize": "18px",
+      "fontWeight": "400",
+      "lineHeight": "27px",
       "letterSpacing": "normal",
       "textTransform": "none",
-      "color": "rgb(38, 23, 29)",
+      "color": "rgb(255, 247, 250)",
       "textDecorationLine": "none",
-      "textDecorationColor": "rgb(38, 23, 29)",
+      "textDecorationColor": "rgb(255, 247, 250)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
       "transitionProperty": "all",
       "transitionDuration": "0s",
       "transitionTimingFunction": "ease",
       "transitionDelay": "0s",
-      "cursor": "pointer",
+      "cursor": "auto",
       "opacity": "1",
       "transform": "none",
       "overflow": "visible",
       "zIndex": "auto",
       "top": "auto"
      },
-     "textStyle": {
-      "node": "span",
-      "text": "Solutions",
-      "fontFamily": "booton, \"booton Fallback\", system-ui, Roboto, Arial, sans-serif",
-      "fontSize": "16px",
-      "lineHeight": "24px",
-      "fontWeight": "600",
-      "letterSpacing": "normal",
-      "color": "rgb(38, 23, 29)",
-      "textDecorationLine": "none",
-      "textTransform": "none"
-     },
      "crop": "components/crops/st-prose-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-13"
     }
    },
    "page": "story",
@@ -7634,7 +7643,8 @@
       "textTransform": "none"
      },
      "crop": "components/crops/st-cta-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-13"
     },
     "hover": {
      "tag": "a",
@@ -7737,7 +7747,8 @@
       "textTransform": "none"
      },
      "crop": "components/crops/st-cta-hover.png",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "run": "2026-11-13"
     },
     "focus-visible": {
      "tag": "a",
@@ -7745,7 +7756,7 @@
      "text": "Request a demo",
      "rect": {
       "x": 110.4,
-      "y": 1472.5,
+      "y": 1548.5,
       "w": 191,
       "h": 56
      },
@@ -7841,7 +7852,8 @@
       "textTransform": "none"
      },
      "crop": "components/crops/st-cta-focus-visible.png",
-     "via": "Shift+Tab, Tab"
+     "via": "Shift+Tab, Tab",
+     "run": "2026-11-13"
     },
     "pressed": {
      "tag": "a",
@@ -7944,7 +7956,8 @@
       "textTransform": "none"
      },
      "crop": "components/crops/st-cta-pressed.png",
-     "via": "CDP forcePseudoState :active:hover"
+     "via": "CDP forcePseudoState :active:hover",
+     "run": "2026-11-13"
     }
    },
    "page": "story",

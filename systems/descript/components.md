@@ -327,7 +327,7 @@ The SaaStr customer story headline. Read as `st-h1` on the customers/saastr page
 #### Story prose
 Body copy in the customer story. Read as `st-prose` on the customers/saastr page.
 
-**Values (default).** size 109 x 32; padding 4px 8px; radius 4px; background transparent; text booton 16/24 600, #26171d `core.color.neutral.900`.
+**Values (default).** size 600 x 216; background transparent; text booton 18/27 400, #fff7fa `core.color.neutral.0`.
 
 ![Story prose default](components/crops/st-prose-default.png)
 
@@ -536,16 +536,16 @@ Descript's product lives behind web.descript.com — its public sign-in card was
 
 - **Pressed** was forced with DevTools on every control, so a state a script adds on mousedown (if any) is missing.
 - **The nav dropdowns, hero action tiles and FAQ accordions** were toggled locally (the site's own triggers); nothing was typed into or submitted anywhere.
-- **No forms exist on the captured surface** — every demo/contact flow sits behind a CTA; fields, validation, disabled and error states are therefore absent rather than measured.
-- **Hero tiles switch a preview panel** (they are tab-like buttons); the panels behind the other four tiles were not individually measured.
+- **The only form is the auth card's email field** — it was typed into and cleared, never submitted; validation, disabled and error states are absent rather than measured.
+- **The workflow tab strip switches the hero's preview panel** — the selected tab was measured open; the panels behind the other tabs were not individually measured.
 
 ### Themes
 
-One painted theme, no toggle: a white field, a #1b1b1b promo strip and primary buttons, a #201547 purple hero and dark video cards, with #b1d8fc sky accents and #faf4ee cream details. The dark regions are recorded as surfaces inside the single theme; tokens.json emits light only (the only resolved :root vars are the --font-* families and --swiper-theme-color).
+One painted theme, no toggle: a #fff7fa blush field, a deep-maroon hero band and #110a0d footer, maroon CTAs ramping #772a4d to #390a1a, and #f73b3b red accents on eyebrows and secondary CTAs. The dark regions are recorded as surfaces inside the single theme; tokens.json emits light only.
 
 ### Fonts
 
-- **Inter** (UI/body), **BagossStandardVF** (nav, pill buttons) and **BagossCondensedFont** (every display heading) are served by the site; Bagoss Extended exists as a font var but no measured element used it. Font files are not shipped in this package.
+- **gamuthDisplay** (every display heading), **booton** (UI/body, incl. the auth card's 'Booton VF' reading) and **brett** (the 18px uppercase eyebrows) are served by the site. Font files are not shipped in this package.
 
 ### Screenshots
 

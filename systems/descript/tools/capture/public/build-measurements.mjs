@@ -46,9 +46,9 @@ function props(v) {
 
 const L = [];
 const W = (s = '') => L.push(s);
-W('# Delphi component measurements');
+W('# Descript component measurements');
 W('');
-W(`Computed styles read from www.delphi.co on ${J._meta.read} by \`tools/capture/public/measure.mjs\`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844) across the site's painted surfaces — home, /discover/<topic>, public /search/<question> results, public /<expert> profiles and /<expert>/chat, and the Sign-In/onboarding dialogs, and written here by \`tools/capture/public/build-measurements.mjs\` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads \`=\`. Colours are hex, with \`@ alpha\` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.`);
+W(`Computed styles read from www.descript.com on ${J._meta.read} by \`tools/capture/public/measure.mjs\`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844) across the site's painted surfaces — home, /pricing, /video-editing, /templates, /customers/saastr, /underlord and the web.descript.com sign-in card, and written here by \`tools/capture/public/build-measurements.mjs\` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads \`=\`. Colours are hex, with \`@ alpha\` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.`);
 W('');
 W('States: `hover` is a real pointer hover; `focus-visible` a real keyboard focus (Shift+Tab, Tab); `pressed` is forced with DevTools (`CSS.forcePseudoState` :active:hover), so no button was pressed; `focused` is a text field clicked into; `filled` is sample text typed and deleted again, with nothing sent; `opened`, `expanded` and the rest are resting states reached by the page or by a UI toggle.');
 W('');
@@ -100,7 +100,7 @@ if (J._meta.backdrop) {
 W('');
 W('## Transitions declared in the readable stylesheets');
 W('');
-W('delphi.co serves its CSS bundles same-origin, so this list holds the transitions the readable sheets declare on each page; the per-state Transition rows above are computed values and cover every rule the page paints.');
+W('descript.com serves its CSS bundles same-origin, so this list holds the transitions the readable sheets declare on each page; the per-state Transition rows above are computed values and cover every rule the page paints.');
 for (const [pg, list] of Object.entries(J._meta.sheets || {}).sort()) {
   const uniq = [...new Map(list.filter((t) => t.transition).map((t) => [t.transition, t])).values()].slice(0, 12);
   W('');

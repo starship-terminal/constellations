@@ -213,7 +213,7 @@ tokens = {
     # descript.com paints one theme; the dark set stays empty.
     "$themes": [
         {"id": "light", "name": "Light", "selectedTokenSets": {"core": "source", "light": "enabled"},
-         "$description": "The only painted theme: a white field, a #1b1b1b promo strip and primary buttons, a #201547 purple hero panel, #faf4ee cream accents, #b1d8fc sky chips, BagossCondensed display over an Inter/BagossStandardVF UI. There is no theme switch; the dark set stays empty."},
+         "$description": "The only painted theme: a #fff7fa blush field, a deep-maroon hero band and #110a0d footer, maroon CTAs ramping #772a4d to #390a1a with #f73b3b red accents, gamuthDisplay headlines over a booton UI with brett eyebrows. There is no theme switch; the dark set stays empty."},
     ],
     "$metadata": {"tokenSetOrder": ["core", "light"]},
 }
