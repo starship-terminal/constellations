@@ -1,6 +1,6 @@
 # Designmodo components
 
-The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Captured from designmodo.com on 2026-11-13, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. The site runs two distinct systems: the InterVariable marketing surface and the Fira Sans Postcards app shell. Nothing was signed into, bought or submitted; no form was ever sent; the Login, Sign Up Free, Create Account, + Create, Download and Purchase actions were measured, never followed.
+The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Captured from designmodo.com on 2026-11-14, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. The site runs two distinct systems: the InterVariable marketing surface and the Fira Sans Postcards app shell. Nothing was signed into, bought or submitted; no form was ever sent; the Login, Sign Up Free, Create Account, + Create, Download and Purchase actions were measured, never followed.
 
 The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (48 components, 132 states). The page layouts are described in [patterns.md](patterns.md).
 
@@ -18,10 +18,10 @@ Screenshots are named `{page}-light-{state}.png`: every public surface paints `l
 |---|---|---|
 | Home | `/` | [default](screenshots/home-light-default.png), [full](screenshots/home-light-full.png) |
 | Postcards app | `/postcards/app/folder/templates` | [default](screenshots/app-light-default.png), [full](screenshots/app-light-full.png) |
-| Pricing | `/pricing/` | [default](screenshots/pricing-light-default.png), [full](screenshots/pricing-light-full.png) |
+| Pricing | `/postcards/pricing/` | [default](screenshots/pricing-light-default.png), [full](screenshots/pricing-light-full.png) |
 | Email templates | `/email-templates/` | [default](screenshots/templates-light-default.png), [full](screenshots/templates-light-full.png) |
 | Slides | `/slides/` | [default](screenshots/slides-light-default.png), [full](screenshots/slides-light-full.png) |
-| Sign in | `/postcards/app/login` | [default](screenshots/login-light-default.png), [full](screenshots/login-light-full.png) |
+| Sign in | `/my-account/sign-in/` | [default](screenshots/login-light-default.png), [full](screenshots/login-light-full.png) |
 | Postcards product | `/postcards/` | [default](screenshots/postcards-light-default.png), [full](screenshots/postcards-light-full.png) |
 | Home, phone | `/` | [default](screenshots/mobile-home-light-default.png), [full](screenshots/mobile-home-light-full.png) |
 | App, phone | `/postcards/app/folder/templates` | [default](screenshots/mobile-app-light-default.png), [full](screenshots/mobile-app-light-full.png) |
@@ -32,14 +32,14 @@ Screenshots are named `{page}-light-{state}.png`: every public surface paints `l
 |---|---|---|---|
 | Welcome-back modal | /postcards/app/folder/templates | the signed-out app route mounts the modal over the dimmed gallery; Escape dismisses it and reveals the gallery, which is real DOM, not a paywall stub | [app-light-default](screenshots/app-light-default.png), [welcome-modal](#welcome-back), [modal-google](#continue-with-google), [modal-login](#log-in) |
 | Mobile app scroller | phone /postcards/app | the gallery scrolls inside a nested container 14521px tall; the capture kept the first 8 viewport tiles (6752px) and stops there on purpose | [mobile-app-light-full](screenshots/mobile-app-light-full.png) |
-| Auth form | /postcards/app/login | the public sign-in card; the fields were never filled and Login never pressed | [login-light-default](screenshots/login-light-default.png), [login-submit](#log-in) |
+| Auth form | /my-account/sign-in/ | the public sign-in card; the fields were typed into and cleared and Login was never pressed | [login-light-default](screenshots/login-light-default.png), [login-submit](#log-in) |
 | Signed-in product | a Designmodo account | the builder canvas, saving and every post-login surface needs an account | boundary; see Gaps |
 
 ## Shared values
 
 Values that apply across entries, from the measurement files.
 
-**Focus.** 20 components were given a real keyboard focus. 14 draw an outline ring: `nav-apps` (2px solid #ffffff `background.page`, offset 2px), `nav-login` (2px solid #ffffff `background.page`, offset 2px), `nav-signup` (2px solid #ffffff `background.page`, offset 2px), `openapp-cta` (2px solid #ffffff `background.page`, offset 2px), `seemore-link` (2px solid #c3cecb `text.muted-mkt`, offset 2px), `article-card` (2px solid #ffffff `background.page`, offset 2px), `plan-cta` (2px solid #101d24 `text.ink`, offset 2px), `tpl-filter` (on a child: 1px auto rgb(16, 16, 16) offset 1px), `tpl-card-m` (1px auto #101010, offset 1px), `login-google` (2px solid #313942 `text.ink-body`, offset 2px), `login-submit` (2px solid #ffffff `background.page`, offset 2px), `login-create` (2px solid #ffffff `background.page`, offset 2px), `pc-cta` (2px solid #101d24 `text.ink`, offset 2px), `m-cta` (2px solid #ffffff `background.page`, offset 2px). The other 6 show no measured change: `modal-google`, `modal-sso`, `modal-login`, `modal-create`, `app-login`, `app-signup`.
+**Focus.** 20 components were given a real keyboard focus. 14 draw an outline ring: `nav-apps` (2px solid #ffffff `background.page`, offset 2px), `nav-login` (2px solid #ffffff `background.page`, offset 2px), `nav-signup` (2px solid #ffffff `background.page`, offset 2px), `openapp-cta` (2px solid #ffffff `background.page`, offset 2px), `seemore-link` (2px solid #c3cecb `text.muted-mkt`, offset 2px), `article-card` (2px solid #ffffff `background.page`, offset 2px), `plan-cta` (2px solid #101d24 `text.ink`, offset 2px), `tpl-filter` (on a child: 1px auto rgb(16, 16, 16) offset 2px), `tpl-card-m` (on a child: 1px auto rgb(16, 16, 16) offset 1px), `login-google` (2px solid #313942 `text.ink-body`, offset 2px), `login-submit` (2px solid #ffffff `background.page`, offset 2px), `login-create` (2px solid #ffffff `background.page`, offset 2px), `pc-cta` (2px solid #101d24 `text.ink`, offset 2px), `m-cta` (2px solid #ffffff `background.page`, offset 2px). The other 6 show no measured change: `modal-google`, `modal-sso`, `modal-login`, `modal-create`, `app-login`, `app-signup`.
 
 **Pressed.** Forced with DevTools (`CSS.forcePseudoState` :active:hover). Nothing a real press would submit was ever pressed.
 
@@ -48,19 +48,28 @@ Values that apply across entries, from the measurement files.
 | Duration | Easing | Property | Where |
 |---|---|---|---|
 | 0.1s | `ease` | all | modal-email |
-| 0.15s | `ease` | all | create-split, login-email, login-pass |
+| 0.15s | `ease` | all, color | create-split, login-email, login-pass, tpl-card-m |
 | 0.15s | `ease-in-out` | all | app-login, app-signup |
 | 0.2s | `ease` | all | create-blank, genai-card, seemore-link |
 | 0.2s | `ease-in-out` | all | modal-create, modal-login |
+| 0.28s | `cubic-bezier(0.22, 1, 0.36, 1)` | box-shadow, transform | tpl-card-m |
 | 0.3s | `ease` | all | article-card, login-create, login-google, login-submit, m-cta, nav-signup, openapp-cta, pc-cta and more |
 | 0.3s | `ease-in-out` | all | modal-google, modal-sso |
 | 0.35s | `cubic-bezier(0.5, 0, 0.35, 1)` | opacity, transform | m-header, mkt-header |
-| 0.35s | `ease` | all, background, box-shadow, opacity, transform | m-header, mkt-header, nav-apps, nav-login, tpl-card-m, tpl-filter |
+| 0.35s | `ease` | all, background, box-shadow | m-header, mkt-header, nav-apps, nav-login |
 
 **Card shapes.** Default-state values; the entries hold the states.
 
 | Card | Size | Border | Radius | Background | Shadow | Padding |
 |---|---|---|---|---|---|---|
+| [Plan card](#plan-card) | 313.33 x 299.89 | - | 16px | rgba(247, 249, 252, 0.9) `background.card` | rgba(58, 76, 102, 0.07) 0px 4px 57px 0px, rgba(191, 197, 202, 0.65) 0px -1.5px 4.5px 0px inset | 40px 40px 30px 40px |
+| [Template card](#template-card) | 266 x 592 | - | - | transparent | none | 0 |
+| [Generate AI card](#generate-ai-card) | 266 x 592 | - | - | transparent | none | 0 |
+| [Article card](#article-card) | 340 x 24 | - | - | transparent | none | 0 |
+| [Create Blank card](#create-blank-card) | 266 x 592 | - | - | transparent | none | 0 |
+| [Sign-in form](#sign-in-form) | 380 x 562.5 | - | - | transparent | none | 0 |
+| [Welcome modal](#welcome-modal) | 423 x 621.2 | - | 10px | #ffffff `background.page` | rgba(169, 179, 187, 0.5) 0px 0px 2px 0px, rgba(169, 179, 187, 0.25) 0px 10px 12px 0px | 0 |
+| [Mobile CTA](#mobile-cta) | 134 x 50 | - | 999px | #27ae60 `action.accent` | rgba(39, 174, 96, 0.15) 0px 4px 9px 0px | 13px 28px |
 
 ## Components
 
@@ -83,9 +92,9 @@ The "Apps" product menu in the header; measured, never opened beyond hover. Read
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 84 x 70; padding 0px 15px; background transparent; text InterVariable 15/70 500, #ffffff `background.page`; transition all 0.35s ease; icon 11 x 10, #ffffff `background.page` |
-| hover | text InterVariable 15/70 500, #2f80ed; transition all 0.15s ease; icon 11 x 10, #2f80ed |
+| hover | text InterVariable 15/70 500, #2f80ed `action.auth-blue`; transition all 0.15s ease; icon 11 x 10, #2f80ed `action.auth-blue` |
 | focus-visible | outline 2px solid #ffffff `background.page`, offset 2px; transition all 0.15s ease; layers a.menu-link.dropdownTrigger 84.0x70.0 2px solid rgb(255, 255, 255) offset 2px |
-| pressed | text InterVariable 15/70 500, #2f80ed; transition all 0.15s ease; icon 11 x 10, #2f80ed |
+| pressed | text InterVariable 15/70 500, #2f80ed `action.auth-blue`; transition all 0.15s ease; icon 11 x 10, #2f80ed `action.auth-blue` |
 
 ![Apps menu default](components/crops/nav-apps-default.png) ![Apps menu hover](components/crops/nav-apps-hover.png) ![Apps menu focus-visible](components/crops/nav-apps-focus-visible.png) ![Apps menu pressed](components/crops/nav-apps-pressed.png)
 
@@ -95,9 +104,9 @@ The header Log-In action; measured, never followed. Read as `nav-login` on the h
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 69 x 70; padding 0px 10px 0px 15px; background transparent; text InterVariable 15/70 500, #ffffff `background.page`; transition all 0.35s ease |
-| hover | text InterVariable 15/70 500, #2f80ed; transition all 0.15s ease |
+| hover | text InterVariable 15/70 500, #2f80ed `action.auth-blue`; transition all 0.15s ease |
 | focus-visible | outline 2px solid #ffffff `background.page`, offset 2px; transition all 0.15s ease; layers a.menu-link.middle 69.0x70.0 2px solid rgb(255, 255, 255) offset 2px |
-| pressed | text InterVariable 15/70 500, #2f80ed; transition all 0.15s ease |
+| pressed | text InterVariable 15/70 500, #2f80ed `action.auth-blue`; transition all 0.15s ease |
 
 ![Log In default](components/crops/nav-login-default.png) ![Log In hover](components/crops/nav-login-hover.png) ![Log In focus-visible](components/crops/nav-login-focus-visible.png) ![Log In pressed](components/crops/nav-login-pressed.png)
 
@@ -163,9 +172,9 @@ A "Read more →" article card in the home articles strip. Read as `article-card
 #### Product headline
 The Postcards product page heading. Read as `pc-h1` on the postcards page.
 
-**Values (default).** size 880 x 204.97; background transparent; text InterVariable 91.5/102.48 900, #101d24 `text.ink`; layers ::before rgba(0, 0, 0, 0) 0px none 1; span.word-animation.nobr 387.8x111.0 #101d24 `text.ink`; span.type-caret 7.3x75.2 #fb754b rgba(251, 117, 75, 0.35) 0px 0px 6px 0px 1px.
+**Values (default).** size 880 x 204.97; background transparent; text InterVariable 91.5/102.48 900, #101d24 `text.ink`; layers ::before rgba(0, 0, 0, 0) 0px none 1; span.word-animation.nobr 387.8x111.0 #101d24 `text.ink`; span.type-caret 7.3x75.2 #fb754b `action.dark-hover` rgba(251, 117, 75, 0.35) 0px 0px 6px 0px 1px.
 
-Child layers that carry the look: span 387.8x111 background #101d24 `text.ink` image url(data:…); span 7.3x75.2 background #fb754b radius 1px shadow rgba(251, 117, 75, 0.35) 0px 0px 6px 0px.
+Child layers that carry the look: span 387.8x111 background #101d24 `text.ink` image url(data:…); span 7.3x75.2 background #fb754b `action.dark-hover` radius 1px shadow rgba(251, 117, 75, 0.35) 0px 0px 6px 0px.
 
 ![Product headline default](components/crops/pc-h1-default.png)
 
@@ -175,9 +184,9 @@ The product page primary CTA; measured, never followed. Read as `pc-cta` on the 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 227.69 x 62; padding 16px 26px; radius 12px; background #0d1d24 `action.dark`; text InterVariable 20/30 750, #ffffff `background.page`; transition all 0.3s ease |
-| hover | background #fb754b; transition all 0.35s ease |
+| hover | background #fb754b `action.dark-hover`; transition all 0.35s ease |
 | focus-visible | outline 2px solid #101d24 `text.ink`, offset 2px |
-| pressed | background #fb754b; transition all 0.35s ease; transform translate(0px, 2px) |
+| pressed | background #fb754b `action.dark-hover`; transition all 0.35s ease; transform translate(0px, 2px) |
 
 ![Product CTA default](components/crops/pc-cta-default.png) ![Product CTA hover](components/crops/pc-cta-hover.png) ![Product CTA focus-visible](components/crops/pc-cta-focus-visible.png) ![Product CTA pressed](components/crops/pc-cta-pressed.png)
 
@@ -259,7 +268,7 @@ The blue Login pill in the app header; measured, never pressed. Read as `app-log
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default (same: focus-visible) | size 94 x 40.05; padding 9px 15px; radius 6px; background #2198ed `action.blue`; text Fira Sans 15/22.05 500, #ffffff `background.page`; transition all 0.15s ease-in-out; icon 16 x 16, #ffffff `background.page` |
-| hover, pressed | background #344a56 `action.dark-hover` |
+| hover, pressed | background #344a56 `action.blue-hover` |
 
 ![App Login default](components/crops/app-login-default.png) ![App Login hover](components/crops/app-login-hover.png) ![App Login focus-visible](components/crops/app-login-focus-visible.png) ![App Login pressed](components/crops/app-login-pressed.png)
 
@@ -268,8 +277,8 @@ The dark Signup pill in the app header; measured, never pressed. Read as `app-si
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 78 x 40.05; padding 9px 15px; radius 6px; background #485f6b; text Fira Sans 15/22.05 500, #ffffff `background.page`; transition all 0.15s ease-in-out |
-| hover, pressed | background #344a56 `action.dark-hover` |
+| default (same: focus-visible) | size 78 x 40.05; padding 9px 15px; radius 6px; background #485f6b `action.slate`; text Fira Sans 15/22.05 500, #ffffff `background.page`; transition all 0.15s ease-in-out |
+| hover, pressed | background #344a56 `action.blue-hover` |
 
 ![App Signup default](components/crops/app-signup-default.png) ![App Signup hover](components/crops/app-signup-hover.png) ![App Signup focus-visible](components/crops/app-signup-focus-visible.png) ![App Signup pressed](components/crops/app-signup-pressed.png)
 
@@ -431,29 +440,32 @@ The email-templates gallery heading. Read as `tpl-h1` on the templates page.
 ![Gallery headline default](components/crops/tpl-h1-default.png)
 
 #### Gallery filter
-A gallery filter/category control; measured, never activated. Read as `tpl-filter` on the templates page.
+The Industry / Usage / Season / Brand / Free-only filter bar over the email-template grid (714x43); measured, never activated. Read as `tpl-filter` on the templates page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 432 x 385.2; padding 10px; radius 12px; background #ffffff `background.page`; shadow rgba(153, 173, 204, 0.2) 0px 13px 20px 0px, rgba(191, 197, 202, 0.5) 0px -1px 3px 0px inset, rgba(211, 218, 223, 0.15) 0px -5px 9px 3px inset; text InterVariable 14/21 600, #101d24 `text.ink`; transition transform 0.35s ease, opacity 0.35s ease, box-shadow 0.35s ease; transform scale(0.9); opacity 0; layers ::before rgba(0, 0, 0, 0) 0px none 1; ::after rgba(0, 0, 0, 0) 0px none 1 |
+| default (same: hover, pressed) | size 714 x 43.19; background transparent; text InterVariable 16/38.4 400, #ffffff `background.page`; icon 11 x 11, #ffffff `background.page`; layers span.white.text-deepPurple 0.0x20.0 #ffffff `background.page`; span.white.text-deepPurple 0.0x20.0 #ffffff `background.page`; span.white.text-deepPurple 0.0x20.0 #ffffff `background.page`; span.white.text-deepPurple 0.0x20.0 #ffffff `background.page`; span.free-filter-box 14.0x14.0 T:1px solid rgba(255, 255, 255, 0.55) / R:1px solid rgba(255, 255, 255, 0.55) / B:1px solid rgba(255, 255, 255, 0.55) |
+| focus-visible | layers span.white.text-deepPurple 0.0x20.0 #ffffff `background.page`; span.white.text-deepPurple 0.0x20.0 #ffffff `background.page`; span.white.text-deepPurple 0.0x20.0 #ffffff `background.page`; span.white.text-deepPurple 0.0x20.0 #ffffff `background.page`; input.free-filter-checkbox 1.0x1.0 1px auto rgb(16, 16, 16) offset 2px; span.free-filter-box 14.0x14.0 T:1px solid rgba(255, 255, 255, 0.55) / R:1px |
+
+Child layers that carry the look: span 0x20 background #ffffff `background.page`; span 0x20 background #ffffff `background.page`; span 0x20 background #ffffff `background.page`.
 
 ![Gallery filter default](components/crops/tpl-filter-default.png) ![Gallery filter hover](components/crops/tpl-filter-hover.png) ![Gallery filter focus-visible](components/crops/tpl-filter-focus-visible.png) ![Gallery filter pressed](components/crops/tpl-filter-pressed.png)
 
 #### Template tile
-An email-template tile in the gallery grid; measured, never followed. Read as `tpl-card-m` on the templates page.
+An email-template tile in the marketing gallery grid (210x420, thumbnail + name + tags); measured, never followed. Read as `tpl-card-m` on the templates page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 139 x 15; padding 0px 5px; background transparent; text InterVariable 12/18 700, #2d3a41 `text.app-ink`; transition all 0.35s ease |
-| hover | text InterVariable 12/18 700, #fb754b; transition all 0.15s ease |
-| focus-visible | outline 1px auto #101010, offset 1px; layers a 139.0x15.0 1px auto rgb(16, 16, 16) offset 1px |
-| pressed | text InterVariable 12/18 700, #fb754b; transition all 0.15s ease |
+| default | size 210 x 420; radius 8px; background transparent; shadow rgba(10, 33, 65, 0.05) 0px 10px 20px 0px, rgba(0, 0, 0, 0.13) 0px 0px 2px 0px; text InterVariable 9/9 600, #ffffff `background.page`; transition transform 0.28s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.28s cubic-bezier(0.22, 1, 0.36, 1), color 0.15s ease; icon 10 x 10, #ffffff `background.page`; layers div.template-box.margin-bottom-2 210.0x420.0 rgba(10, 33, 65, 0.05) 0px 10px 20px 0px, rgba(0, 0, 0, 0.13) 0px 0px 2px 0px 8px; span.template-license-label.is-free 46.0x16.0 #2198ed `action.blue` rgba(0, 0, 0, 0.06) 0px -1px 0px 0px inset 4px; div.template-hover-overlay 210.0x420.0 rgba(255, 255, 255, 0.96); a.button.crop 178.0x42.5 #101d24 `text.ink` 8px; a.button.crop 178.0x42.5 #fb754b `action. |
+| hover | shadow rgba(10, 33, 65, 0.05) 0px 18.296px 36.592px 0px, rgba(0, 0, 0, 0.13) 0px 0px 2px 0px; transform translate(0px, -3.31841px); layers div.template-box.margin-bottom-2 210.0x420.0 rgba(10, 33, 65, 0.05) 0px 18.296px 36.592px 0px, rgba(0, 0, 0, 0.13) 0px 0px 2px 0px 8px; span.template-license-label.is-free 46.0x16.0 #2198ed `action.blue` rgba(0, 0, 0, 0.06) 0px -1px 0px 0px inset 4px; div.template-hover-overlay 210.0x420.0 rgba(255, 255, 255, 0.96); a.button.crop 178.0x42.5 #101d24 `text.ink` 8px; a.button.crop 178.0x42.5 #fb754b  |
+| focus-visible | layers div.template-box.margin-bottom-2 210.0x420.0 rgba(10, 33, 65, 0.05) 0px 10px 20px 0px, rgba(0, 0, 0, 0.13) 0px 0px 2px 0px 8px; span.template-license-label.is-free 46.0x16.0 #2198ed `action.blue` rgba(0, 0, 0, 0.06) 0px -1px 0px 0px inset 4px; div.template-hover-overlay 210.0x420.0 rgba(255, 255, 255, 0.96); a 148.5x125.8 1px auto rgb(16, 16, 16) offset 1px; a.button.crop 178.0x42.5 #101d24 `text. |
+| pressed | shadow rgba(10, 33, 65, 0.05) 0px 16.2721px 32.5442px 0px, rgba(0, 0, 0, 0.13) 0px 0px 2px 0px; transform translate(0px, -2.50884px); layers div.template-box.margin-bottom-2 210.0x420.0 rgba(10, 33, 65, 0.05) 0px 16.2721px 32.5442px 0px, rgba(0, 0, 0, 0.13) 0px 0px 2px 0px 8px; span.template-license-label.is-free 46.0x16.0 #2198ed `action.blue` rgba(0, 0, 0, 0.06) 0px -1px 0px 0px inset 4px; div.template-hover-overlay 210.0x420.0 rgba(255, 255, 255, 0.96); a.button.crop 178.0x42.5 #101d24 `text.ink` 8px; a.button.crop 178.0x42.5 #fb754 |
 
-![Template tile default](components/crops/tpl-card-m-default.png) ![Template tile hover](components/crops/tpl-card-m-hover.png) ![Template tile focus-visible](components/crops/tpl-card-m-focus-visible.png) ![Template tile pressed](components/crops/tpl-card-m-pressed.png)
+![Template tile hover](components/crops/tpl-card-m-hover.png) ![Template tile focus-visible](components/crops/tpl-card-m-focus-visible.png) ![Template tile pressed](components/crops/tpl-card-m-pressed.png)
 
 ### Sign-in form
 
-The /postcards/app/login public auth form: the 380x562 card with email/password fields, the Login button and sign-up link (measured, never submitted).
+The /my-account/sign-in/ public auth form: the 380x562 card with email/password fields, the Login button and sign-up link (measured, never submitted).
 
 #### Sign-in form
 The my-account sign-in card (380px, Google/SSO buttons over email+password). Read as `login-form` on the login page.
@@ -508,10 +520,10 @@ The blue Login submit (186x38.5, #2f80ed); measured, never pressed. Read as `log
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 186 x 38.5; padding 8px 17px; radius 5px; background #2f80ed; shadow rgba(47, 128, 237, 0.15) 0px 4px 9px 0px; text InterVariable 15/22.5 500, #ffffff `background.page`; transition all 0.3s ease |
-| hover | background #1366d6 `action.blue-hover`; shadow rgba(47, 128, 237, 0.2) 0px 6px 12px 0px |
-| focus-visible | background #1366d6 `action.blue-hover`; outline 2px solid #ffffff `background.page`, offset 2px |
-| pressed | background #1366d6 `action.blue-hover`; shadow rgba(47, 128, 237, 0.2) 0px 6px 12px 0px; transition all 0.35s ease; transform translate(0px, 2px) |
+| default | size 186 x 38.5; padding 8px 17px; radius 5px; background #2f80ed `action.auth-blue`; shadow rgba(47, 128, 237, 0.15) 0px 4px 9px 0px; text InterVariable 15/22.5 500, #ffffff `background.page`; transition all 0.3s ease |
+| hover | background #1366d6 `action.auth-blue-hover`; shadow rgba(47, 128, 237, 0.2) 0px 6px 12px 0px |
+| focus-visible | background #1366d6 `action.auth-blue-hover`; outline 2px solid #ffffff `background.page`, offset 2px |
+| pressed | background #1366d6 `action.auth-blue-hover`; shadow rgba(47, 128, 237, 0.2) 0px 6px 12px 0px; transition all 0.35s ease; transform translate(0px, 2px) |
 
 ![Login button default](components/crops/login-submit-default.png) ![Login button hover](components/crops/login-submit-hover.png) ![Login button focus-visible](components/crops/login-submit-focus-visible.png) ![Login button pressed](components/crops/login-submit-pressed.png)
 
@@ -588,7 +600,7 @@ No standalone SVG icon set was lifted on this pass; the icons in the crops and s
 
 ### The signed-in product
 
-The Postcards builder canvas, saving work and every post-login surface need an account and were never reached. What is genuinely public signed out: the marketing pages, /pricing, /email-templates, /postcards, /slides, the sign-in form and the Postcards app shell behind the Welcome-back modal - which is real product UI (header, sidebar, filters, gallery cards), not a stub; Escape dismissed the modal and the whole gallery was measured through it. No account was created and no form was ever submitted.
+The Postcards builder canvas, saving work and every post-login surface need an account and were never reached. What is genuinely public signed out: the marketing pages, /postcards/pricing, /email-templates, /postcards, /slides, the sign-in form and the Postcards app shell behind the Welcome-back modal - which is real product UI (header, sidebar, filters, gallery cards), not a stub; Escape dismissed the modal and the whole gallery was measured through it. No account was created and no form was ever submitted.
 
 ### Pages
 

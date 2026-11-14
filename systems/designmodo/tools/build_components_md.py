@@ -273,7 +273,7 @@ GROUP_INTRO = {
     "Postcards app (signed out)": "The Postcards email-builder shell behind the welcome modal: the #071c26 navy app header, the 241px workspace sidebar, + Create, the filter labels and 266x592 template cards with FREE/NEW badges.",
     "Pricing": "The /pricing marketing page: the 91.5px display heading, plan cards on the tinted field and the plan CTAs.",
     "Email-template gallery": "The public /email-templates/ gallery: the 63px page display, the NEW/FREE badges and template cards.",
-    "Sign-in form": "The /postcards/app/login public auth form: the 380x562 card with email/password fields, the Login button and sign-up link (measured, never submitted).",
+    "Sign-in form": "The /my-account/sign-in/ public auth form: the 380x562 card with email/password fields, the Login button and sign-up link (measured, never submitted).",
     "Mobile (390 wide)": "The phone surface at 390 wide: the mobile top bar, the 44px hero, the m-cta pill and the app surface at phone width.",
     "Footer": "The sitemap footer on the long-scroll marketing surfaces.",
 }
@@ -281,10 +281,10 @@ GROUP_INTRO = {
 SHOTS = [
     ("home", "Home", "/"),
     ("app", "Postcards app", "/postcards/app/folder/templates"),
-    ("pricing", "Pricing", "/pricing/"),
+    ("pricing", "Pricing", "/postcards/pricing/"),
     ("templates", "Email templates", "/email-templates/"),
     ("slides", "Slides", "/slides/"),
-    ("login", "Sign in", "/postcards/app/login"),
+    ("login", "Sign in", "/my-account/sign-in/"),
     ("postcards", "Postcards product", "/postcards/"),
 ]
 MOBILE = [
@@ -343,7 +343,7 @@ W("|---|---|---|---|")
 OVER = [
     ("Welcome-back modal", "/postcards/app/folder/templates", "the signed-out app route mounts the modal over the dimmed gallery; Escape dismisses it and reveals the gallery, which is real DOM, not a paywall stub", "[app-light-default](screenshots/app-light-default.png), [welcome-modal](#welcome-back), [modal-google](#continue-with-google), [modal-login](#log-in)"),
     ("Mobile app scroller", "phone /postcards/app", "the gallery scrolls inside a nested container 14521px tall; the capture kept the first 8 viewport tiles (6752px) and stops there on purpose", "[mobile-app-light-full](screenshots/mobile-app-light-full.png)"),
-    ("Auth form", "/postcards/app/login", "the public sign-in card; the fields were never filled and Login never pressed", "[login-light-default](screenshots/login-light-default.png), [login-submit](#log-in)"),
+    ("Auth form", "/my-account/sign-in/", "the public sign-in card; the fields were typed into and cleared and Login was never pressed", "[login-light-default](screenshots/login-light-default.png), [login-submit](#log-in)"),
     ("Signed-in product", "a Designmodo account", "the builder canvas, saving and every post-login surface needs an account", "boundary; see Gaps"),
 ]
 for r in OVER:
@@ -428,7 +428,7 @@ W()
 W("| Card | Size | Border | Radius | Background | Shadow | Padding |")
 W("|---|---|---|---|---|---|---|")
 # PRODUCT (adapt): the card-like components to compare in one table.
-for k in ["topic-card", "persp-flip", "disc-card", "disc-ask", "srch-expert-card", "suggested-chip", "signin-dialog", "m-topic-card"]:
+for k in ["plan-card", "tpl-card", "genai-card", "article-card", "create-blank", "login-form", "welcome-modal", "m-cta"]:
     c = C.get(k)
     # A card the capture could not find is saved with missing: true and no states.
     if not c or c.get("missing"):
@@ -504,7 +504,7 @@ W("## Gaps")
 W()
 W("### The signed-in product")
 W()
-W("The Postcards builder canvas, saving work and every post-login surface need an account and were never reached. What is genuinely public signed out: the marketing pages, /pricing, /email-templates, /postcards, /slides, the sign-in form and the Postcards app shell behind the Welcome-back modal - which is real product UI (header, sidebar, filters, gallery cards), not a stub; Escape dismissed the modal and the whole gallery was measured through it. No account was created and no form was ever submitted.")
+W("The Postcards builder canvas, saving work and every post-login surface need an account and were never reached. What is genuinely public signed out: the marketing pages, /postcards/pricing, /email-templates, /postcards, /slides, the sign-in form and the Postcards app shell behind the Welcome-back modal - which is real product UI (header, sidebar, filters, gallery cards), not a stub; Escape dismissed the modal and the whole gallery was measured through it. No account was created and no form was ever submitted.")
 W()
 W("### Pages")
 W()

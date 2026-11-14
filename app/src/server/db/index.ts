@@ -78,7 +78,7 @@ export async function createResearchStore(directory: string) {
     const version = Number(
       (await tx.execute("PRAGMA user_version")).rows[0].user_version,
     );
-    if (version > 6)
+    if (version > 7)
       throw new Error("Research database was created by a newer application.");
     if (version === 0) {
       for (const sql of migrations) await tx.execute(sql);
@@ -114,6 +114,14 @@ export async function createResearchStore(directory: string) {
       await seedNewCuratedCategories(tx);
       await seedNewCuratedMediaTerms(tx);
       await tx.execute("PRAGMA user_version = 6");
+    }
+    if (version < 7) {
+      // The same guarded top-up again: a store already at v6 imports only the
+      // curated labels added to the seed JSON since (Designmodo's), while
+      // manual choices are never overwritten.
+      await seedNewCuratedCategories(tx);
+      await seedNewCuratedMediaTerms(tx);
+      await tx.execute("PRAGMA user_version = 7");
     }
     await tx.commit();
   } catch (error) {

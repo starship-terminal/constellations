@@ -54,29 +54,43 @@ class Shooter {
     const f = `${RAW}/${this.prefix}-${name}`;
     for (const old of fs.readdirSync(RAW).filter((n) => n.startsWith(`${this.prefix}-${name}.part`))) fs.unlinkSync(`${RAW}/${old}`);
     if (inner) {
-      const chunk = this.vh;
+      const scroller = p.locator('[data-capture-scroller="1"]').first();
+      // The scroller may sit below fixed chrome (the app gallery lives under a
+      // header), so step by its own visible height and clip every tile to its
+      // bounding box — never the page's left edge or the whole viewport.
+      const box = await scroller.boundingBox();
+      const chunk = Math.max(200, Math.floor((box && box.height) || this.vh));
       const MAXH = 8 * chunk;
       const hCap = Math.min(inner.h, MAXH);
       if (inner.h > MAXH) log(`  ! ${name}: inner scroller is ${inner.h}px tall, capturing first ${hCap}px only (inner-scroller boundary)`);
-      const scroller = p.locator('[data-capture-scroller="1"]').first();
       // wheel-scroll to lazy-load, then re-read the height and tile by scrollTop
       for (let y = 0; y < hCap; y += chunk) { await scroller.evaluate((e, y) => e.scrollTo(0, y), y).catch(() => {}); await wait(p, 200); }
       const H = await scroller.evaluate((e) => e.scrollHeight).catch(() => inner.h);
       const hReal = Math.min(H, MAXH);
+      const missing = [];
       for (let i = 0, y = 0; y < hReal; i++, y += chunk) {
         await scroller.evaluate((e, y) => e.scrollTo(0, y), y);
         await wait(p, 350);
         // scrollTo clamps at the bottom: read the real offset and clip the
-        // tile to the unshown remainder so stitching never repeats content.
+        // tile to the unshown remainder inside the scroller's box so
+        // stitching never repeats content.
         const top = await scroller.evaluate((e) => e.scrollTop).catch(() => y);
-        const off = y - top;              // where the wanted region starts inside the viewport
+        const off = y - top;              // where the wanted region starts inside the scroller's visible box
         const vis = Math.min(chunk, Math.max(0, hReal - y));
         if (off < 0 || vis <= 0) break;
-        try { await screenshotWithMetadata(p, { path: `${f}.part${i}.png`, scale: 'css', clip: { x: 0, y: off, width: this.vw, height: vis } }, this.requested); }
-        catch (e) { log('  ! part' + i, String(e.message).split('\n')[0]); }
+        const clip = box
+          ? { x: box.x, y: box.y + off, width: box.width, height: Math.min(vis, Math.max(1, box.height - off)) }
+          : { x: 0, y: off, width: this.vw, height: vis };
+        try { await screenshotWithMetadata(p, { path: `${f}.part${i}.png`, scale: 'css', clip }, this.requested); }
+        catch (e) { missing.push(i); log('  ! part' + i, String(e.message).split('\n')[0]); }
       }
       await scroller.evaluate((e) => e.scrollTo(0, 0));
-      this.count++; log('  shot', name, 'inner H=' + H);
+      // A missing tile makes the stitched image incomplete; quantize.py
+      // refuses to export a gapped sequence, and the log carries the indices
+      // so the shot can be re-run rather than silently shortened.
+      if (missing.length) log(`  ! ${name}: tile(s) ${missing.join(', ')} failed - ${name}.png is INCOMPLETE, re-run this shot`);
+      else this.count++;
+      log('  shot', name, 'inner H=' + H);
       await wait(p, 400);
       return;
     }

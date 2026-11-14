@@ -51,7 +51,7 @@
             "description": "The 13px app filter label."
           },
           "micro": {
-            "value": "12px",
+            "value": "18px",
             "type": "fontSize",
             "source": "computed fontSize of tpl-card-m default (raw/components-computed.json)",
             "description": "The 12px gallery/meta label."
@@ -164,6 +164,36 @@
         "type": "other",
         "source": "computed boxShadow of welcome-modal default (raw/components-computed.json)",
         "description": "The shadow the welcome modal casts over the dimmed gallery."
+      },
+      "cta": {
+        "value": "rgba(39, 174, 96, 0.15) 0px 4px 9px 0px",
+        "type": "other",
+        "source": "computed boxShadow of openapp-cta default (raw/components-computed.json)",
+        "description": "The tinted lift the green CTAs carry (a deeper 0 6px 12px on hover/pressed)."
+      },
+      "cta-hover": {
+        "value": "rgba(39, 174, 96, 0.2) 0px 6px 12px 0px",
+        "type": "other",
+        "source": "computed boxShadow of openapp-cta hover (raw/components-computed.json)",
+        "description": "The raised hover/pressed shadow on the green CTAs."
+      },
+      "card": {
+        "value": "rgba(58, 76, 102, 0.07) 0px 4px 57px 0px, rgba(191, 197, 202, 0.65) 0px -1.5px 4.5px 0px inset",
+        "type": "other",
+        "source": "computed boxShadow of plan-card default (raw/components-computed.json)",
+        "description": "The plan-card elevation on the pricing strip."
+      },
+      "badge-inset": {
+        "value": "rgba(0, 0, 0, 0.06) 0px -1px 0px 0px inset",
+        "type": "other",
+        "source": "computed boxShadow of free-badge default (raw/components-computed.json)",
+        "description": "The 1px inset line under the FREE/NEW badges."
+      },
+      "field-focus": {
+        "value": "rgba(99, 142, 216, 0.3) 0px 0px 10px 0px",
+        "type": "other",
+        "source": "computed boxShadow of login-email focused (raw/components-computed.json)",
+        "description": "The blue glow a focused auth field paints."
       }
     },
     "motion": {
@@ -180,7 +210,7 @@
       "page": {
         "value": "#ffffff",
         "type": "color",
-        "source": "the public surfaces paint a white field (screenshots/*-light-*.png; --background resolves #ffffff)",
+        "source": "the marketing surface paints white — site-footer default measures rgb(255,255,255) (raw/components-computed.json)",
         "description": "The white field the marketing surface paints (footer/section paint; #fff on the pricing tint)."
       },
       "paper": {
@@ -255,13 +285,37 @@
         "value": "#2198ed",
         "type": "color",
         "source": "computed backgroundColor of app-login default (raw/components-computed.json)",
-        "description": "The #2198ed blue — app Login pill and FREE badges."
+        "description": "The #2198ed blue — the app Login pill and FREE badges."
       },
       "blue-hover": {
+        "value": "#344a56",
+        "type": "color",
+        "source": "computed backgroundColor of app-login hover (raw/components-computed.json)",
+        "description": "The #344a56 slate the app Login pill takes on hover/pressed."
+      },
+      "auth-blue": {
+        "value": "#2f80ed",
+        "type": "color",
+        "source": "computed backgroundColor of login-submit default (raw/components-computed.json)",
+        "description": "The #2f80ed blue on the /my-account/sign-in/ form's Login button."
+      },
+      "auth-blue-hover": {
         "value": "#1366d6",
         "type": "color",
         "source": "computed backgroundColor of login-submit hover (raw/components-computed.json)",
         "description": "The #1366d6 deeper blue on the auth Login's hover/pressed."
+      },
+      "slate": {
+        "value": "#485f6b",
+        "type": "color",
+        "source": "computed backgroundColor of app-signup default (raw/components-computed.json)",
+        "description": "The #485f6b slate on the app Sign Up button."
+      },
+      "slate-hover": {
+        "value": "#344a56",
+        "type": "color",
+        "source": "computed backgroundColor of app-signup hover (raw/components-computed.json)",
+        "description": "The #344a56 deeper slate on the app Sign Up's hover/pressed."
       },
       "dark": {
         "value": "#0d1d24",
@@ -270,10 +324,10 @@
         "description": "The #0d1d24 near-black CTA on product pages (Sign-in with SSO shares it)."
       },
       "dark-hover": {
-        "value": "#344a56",
+        "value": "#fb754b",
         "type": "color",
-        "source": "computed backgroundColor of app-login hover (raw/components-computed.json)",
-        "description": "The #344a56 slate hover on the app Login pill; product CTA flips to #fb754b coral."
+        "source": "computed backgroundColor of pc-cta hover (raw/components-computed.json)",
+        "description": "The #fb754b coral the product CTA flips to on hover/pressed."
       }
     },
     "text": {

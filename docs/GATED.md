@@ -383,7 +383,7 @@ Access: read-only (the marketing site and the platform login page are fully publ
 Access: read-only (the marketing site, /pricing, /email-templates, /postcards, /slides, the /postcards/app/login form and the signed-out app shell behind the Welcome-back modal are public; the builder canvas and every post-login surface need an account - the modal was dismissed locally with Escape and every auth action measured, never submitted)
 - the Postcards builder canvas, saving work and every post-login surface need an account - never reached
 - the Welcome-back modal's actions (Continue with Google, email field, Login, Create Account) were measured, never submitted
-- the sign-in form's fields were never filled and Login never pressed; validation, error and success states are absent rather than measured
+- the sign-in form's fields were typed into and cleared and Login was never pressed; validation, error and success states are absent rather than measured
 
 ## Gate noted in access text only
 

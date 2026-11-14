@@ -8,14 +8,50 @@ stitched top to bottom into name.png first (the stitched full-colour copy stays 
 full-colour originals are kept in RAW_DIR only; screenshots/ gets the 256-colour versions that are
 committed. Flat UI colours are exact, gradients and photographs band a little, so read exact colours
 from raw/css-vars.json and raw/components-computed.json. Adapted from the Coursera kit.
+
+Every image's .capture.json sidecar travels with it: a plain capture's sidecar is copied next to the
+quantized PNG, and a stitched image's sidecar is rebuilt from its part tiles' sidecars — the parts'
+clips recorded under partClip, the union under capture.clip, and a fresh dimensionCheck against the
+stitched PNG's real pixel size (a part's own check can never vouch for the sheet).
 """
 from PIL import Image
-import pathlib, re, sys
+import json, pathlib, re, shutil, sys
 
 REF = pathlib.Path(__file__).resolve().parent.parent.parent
 RAW = pathlib.Path(sys.argv[1])
 OUT = REF / 'screenshots'
 OUT.mkdir(exist_ok=True)
+
+
+def sidecar_for(png):
+    """The .capture.json that belongs to a PNG, wherever it lives."""
+    f = png.parent / (png.name + '.capture.json')
+    return json.loads(f.read_text()) if f.exists() else None
+
+
+def stitched_sidecar(name, sheet, tile_paths):
+    """Rebuild name.png.capture.json from the part tiles' sidecars."""
+    parts = [sidecar_for(f) for f in tile_paths]
+    meta = dict(parts[0]) if parts and parts[0] else {'schemaVersion': 1}
+    meta['screenshot'] = f'{name}.png'
+    clips = [(p.get('capture') or {}).get('clip') for p in parts if p]
+    clips = [c for c in clips if c]
+    total_h = sum(c['height'] for c in clips)
+    meta['capture'] = {'mode': 'stitchedParts',
+                       'scale': (parts[0].get('capture') or {}).get('scale', 'device') if parts and parts[0] else 'device',
+                       'clip': {'x': 0, 'y': 0, 'width': sheet.width, 'height': total_h} if clips else None}
+    meta['png'] = {'width': sheet.width, 'height': sheet.height}
+    meta['stitchedFrom'] = [f.name for f in tile_paths]
+    if clips:
+        meta['partClip'] = clips
+    expected = {'width': sheet.width, 'height': total_h} if clips else {'width': sheet.width, 'height': sheet.height}
+    matches = abs(sheet.width - expected['width']) <= 1 and abs(sheet.height - expected['height']) <= 1
+    meta['dimensionCheck'] = {'status': 'pass' if matches else 'fail', 'expected': expected, 'basis': 'stitchedParts'}
+    if not matches:
+        meta['dimensionCheck']['error'] = (f"Stitched PNG {sheet.width}x{sheet.height}, "
+                                           f"expected {expected['width']}x{expected['height']} from the part clips")
+    return meta
+
 
 parts = {}
 for f in RAW.glob('*.part*.png'):
@@ -23,13 +59,23 @@ for f in RAW.glob('*.part*.png'):
     if not m:   # a name such as x.partial.png is not a tile
         continue
     parts.setdefault(m.group(1), []).append((int(m.group(2)), f))
+stitched = {}
 for name, ps in parts.items():
-    ims = [Image.open(f).convert('RGB') for _, f in sorted(ps)]
+    ps = sorted(ps)
+    idx = [i for i, _ in ps]
+    if idx != list(range(len(idx))):
+        # A failed tile was logged at capture time; stitching whichever parts
+        # remain would publish a shortened image as the full page. Refuse and
+        # leave the parts in RAW_DIR for the re-run.
+        print('SKIP', name, ': missing tile(s) in', idx, '- re-run the capture')
+        continue
+    ims = [Image.open(f).convert('RGB') for _, f in ps]
     sheet = Image.new('RGB', (ims[0].width, sum(i.height for i in ims)))
     y = 0
     for i in ims:
         sheet.paste(i, (0, y)); y += i.height
     sheet.save(RAW / f'{name}.png')
+    stitched[name] = stitched_sidecar(name, sheet, [f for _, f in ps])
     print('stitched', name, sheet.size)
 
 n = 0
@@ -38,5 +84,9 @@ for f in sorted(RAW.glob('*.png')):
         continue
     im = Image.open(f).convert('RGB')
     im.quantize(colors=256, method=Image.Quantize.MEDIANCUT, dither=Image.Dither.NONE).save(OUT / f.name, optimize=True)
+    if f.stem in stitched:
+        (OUT / f'{f.name}.capture.json').write_text(json.dumps(stitched[f.stem], indent=1) + '\n')
+    elif f.with_name(f.name + '.capture.json').exists():
+        shutil.copyfile(f.with_name(f.name + '.capture.json'), OUT / f'{f.name}.capture.json')
     n += 1
 print(n, 'screenshots ->', OUT)

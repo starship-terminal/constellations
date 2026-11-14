@@ -522,13 +522,21 @@ for key, comp, state, prop, group, prefer, desc in [
     ("orange-hover", "nav-signup", "hover", "backgroundColor", "action", (),
      "The #f18110 deeper orange on hover/pressed."),
     ("blue", "app-login", "default", "backgroundColor", "action", (),
-     "The #2198ed blue — app Login pill and FREE badges."),
-    ("blue-hover", "login-submit", "hover", "backgroundColor", "action", (),
+     "The #2198ed blue — the app Login pill and FREE badges."),
+    ("blue-hover", "app-login", "hover", "backgroundColor", "action", (),
+     "The #344a56 slate the app Login pill takes on hover/pressed."),
+    ("auth-blue", "login-submit", "default", "backgroundColor", "action", (),
+     "The #2f80ed blue on the /my-account/sign-in/ form's Login button."),
+    ("auth-blue-hover", "login-submit", "hover", "backgroundColor", "action", (),
      "The #1366d6 deeper blue on the auth Login's hover/pressed."),
+    ("slate", "app-signup", "default", "backgroundColor", "action", (),
+     "The #485f6b slate on the app Sign Up button."),
+    ("slate-hover", "app-signup", "hover", "backgroundColor", "action", (),
+     "The #344a56 deeper slate on the app Sign Up's hover/pressed."),
     ("dark", "pc-cta", "default", "backgroundColor", "action", (),
      "The #0d1d24 near-black CTA on product pages (Sign-in with SSO shares it)."),
-    ("dark-hover", "app-login", "hover", "backgroundColor", "action", (),
-     "The #344a56 slate hover on the app Login pill; product CTA flips to #fb754b coral."),
+    ("dark-hover", "pc-cta", "hover", "backgroundColor", "action", (),
+     "The #fb754b coral the product CTA flips to on hover/pressed."),
     ("link", "side-templates", "default", "color", "text", (),
      "The #2198ed link blue on the selected sidebar item."),
     ("hairline", "login-email", "default", "borderTopColor", "border", (),
@@ -539,7 +547,7 @@ for key, comp, state, prop, group, prefer, desc in [
     try:
         if prop == "_body-bg":
             raw = "#ffffff"
-            src = "the marketing surface paints white (screenshots/*-light-*.png)"
+            src = "the marketing surface paints white — site-footer default measures rgb(255,255,255) (raw/components-computed.json)"
         elif prop == "_bg-app":
             raw = "#f4f4f4"
             src = "the app gallery canvas paints #f4f4f4 (screenshots/app-*.png; body bg measured rgb(244,244,244) at recon)"
@@ -553,16 +561,6 @@ for key, comp, state, prop, group, prefer, desc in [
     except KeyError:
         pass
 
-    try:
-        if prop == "_body-bg":
-            raw = "#ffffff"
-            src = "the public surfaces paint a white field (screenshots/*-light-*.png; --background resolves #ffffff)"
-        else:
-            raw = st(comp, state)[prop]
-            src = f"computed {prop} of {comp} {state} (raw/components-computed.json)"
-        put_sem(sem, group, key, semcolor(raw, src, desc, prefer=prefer))
-    except KeyError:
-        pass
 
 # ------------------------------------------------------------- type ramp
 
@@ -619,12 +617,25 @@ for key, comp, state, prop, desc in [
 # ------------------------------------------------------------- elevation
 
 sh = SPEC["core"].setdefault("shadow", {})
-try:
-    sh["modal"] = lit(st("welcome-modal", "default")["boxShadow"], "other",
-        "computed boxShadow of welcome-modal default (raw/components-computed.json)",
-        "The shadow the welcome modal casts over the dimmed gallery.")
-except KeyError:
-    pass
+for name, comp, state, desc in [
+    ("modal", "welcome-modal", "default",
+     "The shadow the welcome modal casts over the dimmed gallery."),
+    ("cta", "openapp-cta", "default",
+     "The tinted lift the green CTAs carry (a deeper 0 6px 12px on hover/pressed)."),
+    ("cta-hover", "openapp-cta", "hover",
+     "The raised hover/pressed shadow on the green CTAs."),
+    ("card", "plan-card", "default",
+     "The plan-card elevation on the pricing strip."),
+    ("badge-inset", "free-badge", "default",
+     "The 1px inset line under the FREE/NEW badges."),
+    ("field-focus", "login-email", "focused",
+     "The blue glow a focused auth field paints."),
+]:
+    try:
+        sh[name] = lit(st(comp, state)["boxShadow"], "other",
+            f"computed boxShadow of {comp} {state} (raw/components-computed.json)", desc)
+    except KeyError:
+        pass
 
 # ------------------------------------------------------------------ motion
 

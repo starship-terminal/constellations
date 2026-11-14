@@ -1,6 +1,6 @@
 # Designmodo component measurements
 
-Computed styles read from designmodo.com on 2026-11-13 by `tools/capture/public/measure.mjs`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844) across the site's painted surfaces — the marketing pages and the Postcards app shell behind the Welcome-back modal, and written here by `tools/capture/public/build-measurements.mjs` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
+Computed styles read from designmodo.com on 2026-11-14 by `tools/capture/public/measure.mjs`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844) across the site's painted surfaces — the marketing pages and the Postcards app shell behind the Welcome-back modal, and written here by `tools/capture/public/build-measurements.mjs` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
 
 States: `hover` is a real pointer hover; `focus-visible` a real keyboard focus (Shift+Tab, Tab); `pressed` is forced with DevTools (`CSS.forcePseudoState` :active:hover), so no button was pressed; `focused` is a text field clicked into; `filled` is sample text typed and deleted again, with nothing sent; `opened`, `expanded` and the rest are resting states reached by the page or by a UI toggle.
 
@@ -936,58 +936,58 @@ Crops: `tpl-h1-default.png`.
 
 #### tpl-filter
 
-Gallery filter. A gallery filter/category control; measured, never activated.
+Gallery filter. The Industry / Usage / Season / Brand / Free-only filter bar over the email-template grid (714x43); measured, never activated.
 
-Page: templates. Selector: `gallery filter`. States: default, hover, focus-visible, pressed.
+Page: templates. Selector: `li.fill`. States: default, hover, focus-visible, pressed.
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 432 x 385.2 | = | = | = |
-| Padding | 10px | = | = | = |
+| Size (w x h) | 714 x 43.19 | = | = | = |
+| Padding | 0px | = | = | = |
 | Border | none | = | = | = |
-| Radius | 12px | = | = | = |
-| Background | #ffffff | = | = | = |
-| Box shadow | #99adcc @ 0.2 0px 13px 20px 0px, #bfc5ca @ 0.5 0px -1px 3px 0px inset, #d3dadf @ 0.15 0px -5px 9px 3px inset | = | = | = |
+| Radius | 0px | = | = | = |
+| Background | transparent | = | = | = |
+| Box shadow | none | = | = | = |
 | Outline | none | = | = | = |
-| Font | InterVariable 18px/27px 400 | = | = | = |
+| Font | InterVariable 18px/43.2px 400 | = | = | = |
 | Letter spacing | normal | = | = | = |
-| Colour | #101d24 | = | = | = |
-| Text node | a: InterVariable 14px/21px 600, #101d24, ls -0.154px | = | = | = |
-| Transition | transform, opacity, box-shadow 0.35s, 0.35s, 0.35s ease, ease, ease delay 0s, 0s, 0s | = | = | = |
-| Transform | matrix(0.9, 0, 0, 0.9, 0, 0) | = | = | = |
-| Opacity | 0 | = | = | = |
+| Colour | #ffffff | = | = | = |
+| Text node | div.inlineBlock.dropdownTrigger: InterVariable 16px/38.4px 400, #ffffff, ls -0.176px | = | = | = |
+| Transition | none | = | = | = |
 | Cursor | default | = | = | = |
-| ::before | 0px x 0px, absolute, bg #000000 @ 0, radius 0px | = | = | = |
-| ::after | 0px x 0px, absolute, bg #000000 @ 0, radius 0px | = | = | = |
-| Painted layers | div.dropdown.center 432.0x385.2 bg #ffffff r 12px shadow #99adcc @ 0.2 0px 13px 20px 0px, #bfc5ca @ 0.5 0px -1px 3px 0px inset, #d3dadf @ 0.15 0px -5px 9px 3px inset | = | div.dropdown.center 432.0x385.2 bg #ffffff r 12px shadow #99adcc @ 0.2 0px 13px 20px 0px, #bfc5ca @ 0.5 0px -1px 3px 0px inset, #d3dadf @ 0.15 0px -5px 9px 3px inset; a 207.0x45.9 r 10px outline 1px auto #101010 offset 1px | = |
+| Icon | 11 x 11, colour #ffffff | = | = | = |
+| Painted layers | span.white.text-deepPurple 0.0x20.0 bg #ffffff; span.white.text-deepPurple 0.0x20.0 bg #ffffff; span.white.text-deepPurple 0.0x20.0 bg #ffffff; span.white.text-deepPurple 0.0x20.0 bg #ffffff; span.free-filter-box 14.0x14.0 border T:1px solid #ffffff @ 0.55 / R:1px solid #ffffff @ 0.55 / B:1px solid #ffffff @ 0.55 / L:1px solid #ffffff @ 0.55 r 3px; span::after.free-filter-box 4pxx8px border R:1px solid #ffffff / B:1px solid #ffffff | = | span.white.text-deepPurple 0.0x20.0 bg #ffffff; span.white.text-deepPurple 0.0x20.0 bg #ffffff; span.white.text-deepPurple 0.0x20.0 bg #ffffff; span.white.text-deepPurple 0.0x20.0 bg #ffffff; input.free-filter-checkbox 1.0x1.0 outline 1px auto #101010 offset 2px; span.free-filter-box 14.0x14.0 border T:1px solid #ffffff @ 0.55 / R:1px solid #ffffff @ 0.55 / B:1px solid #ffffff @ 0.55 / L:1px solid #ffffff @ 0.55 r 3px | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
 Crops: `tpl-filter-default.png`, `tpl-filter-hover.png`, `tpl-filter-focus-visible.png`, `tpl-filter-pressed.png`.
 
 #### tpl-card-m
 
-Template tile. An email-template tile in the gallery grid; measured, never followed.
+Template tile. An email-template tile in the marketing gallery grid (210x420, thumbnail + name + tags); measured, never followed.
 
-Page: templates. Selector: `template tile`. States: default, hover, focus-visible, pressed.
+Page: templates. Selector: `.template-box`. States: default, hover, focus-visible, pressed.
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 139 x 15 | = | = | = |
-| Padding | 0px 5px | = | = | = |
+| Size (w x h) | 210 x 420 | = | = | = |
+| Padding | 0px | = | = | = |
 | Border | none | = | = | = |
-| Radius | 0px | = | = | = |
+| Radius | 8px | = | = | = |
 | Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | 1px auto #101010 offset 1px | = |
-| Font | InterVariable 12px/18px 700 | = | = | = |
-| Letter spacing | 0.6px | = | = | = |
-| Colour | #2d3a41 | #fb754b | = | #fb754b |
-| Transition | all 0.35s ease | all 0.15s ease | = | all 0.15s ease |
-| Cursor | pointer | = | = | = |
+| Box shadow | #0a2141 @ 0.05 0px 10px 20px 0px, #000000 @ 0.13 0px 0px 2px 0px | #0a2141 @ 0.05 0px 18.296px 36.592px 0px, #000000 @ 0.13 0px 0px 2px 0px | = | #0a2141 @ 0.05 0px 16.2721px 32.5442px 0px, #000000 @ 0.13 0px 0px 2px 0px |
+| Outline | none | = | = | = |
+| Font | InterVariable 18px/27px 400 | = | = | = |
+| Letter spacing | normal | = | = | = |
+| Colour | #101d24 | #26ab55 | = | #1f7d45 |
+| Text node | span.template-license-label.is-free: InterVariable 9px/9px 600, #ffffff, ls 0.5px | = | = | = |
+| Transition | transform, box-shadow, color 0.28s, 0.28s, 0.15s cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1), ease delay 0s, 0s, 0s | = | = | = |
+| Cursor | default | = | = | = |
+| Icon | 10 x 10, colour #ffffff | = | = | = |
+| Painted layers | div.template-box.margin-bottom-2 210.0x420.0 r 8px shadow #0a2141 @ 0.05 0px 10px 20px 0px, #000000 @ 0.13 0px 0px 2px 0px; span.template-license-label.is-free 46.0x16.0 bg #2198ed r 4px shadow #000000 @ 0.06 0px -1px 0px 0px inset; div.template-hover-overlay 210.0x420.0 bg #ffffff @ 0.96; a.button.crop 178.0x42.5 bg #101d24 r 8px; a.button.crop 178.0x42.5 bg #fb754b r 8px | div.template-box.margin-bottom-2 210.0x420.0 r 8px shadow #0a2141 @ 0.05 0px 18.296px 36.592px 0px, #000000 @ 0.13 0px 0px 2px 0px; span.template-license-label.is-free 46.0x16.0 bg #2198ed r 4px shadow #000000 @ 0.06 0px -1px 0px 0px inset; div.template-hover-overlay 210.0x420.0 bg #ffffff @ 0.96; a.button.crop 178.0x42.5 bg #101d24 r 8px; a.button.crop 178.0x42.5 bg #fb754b r 8px | div.template-box.margin-bottom-2 210.0x420.0 r 8px shadow #0a2141 @ 0.05 0px 10px 20px 0px, #000000 @ 0.13 0px 0px 2px 0px; span.template-license-label.is-free 46.0x16.0 bg #2198ed r 4px shadow #000000 @ 0.06 0px -1px 0px 0px inset; div.template-hover-overlay 210.0x420.0 bg #ffffff @ 0.96; a 148.5x125.8 outline 1px auto #101010 offset 1px; a.button.crop 178.0x42.5 bg #101d24 r 8px; a.button.crop 178.0x42.5 bg #fb754b r 8px | div.template-box.margin-bottom-2 210.0x420.0 r 8px shadow #0a2141 @ 0.05 0px 16.2721px 32.5442px 0px, #000000 @ 0.13 0px 0px 2px 0px; span.template-license-label.is-free 46.0x16.0 bg #2198ed r 4px shadow #000000 @ 0.06 0px -1px 0px 0px inset; div.template-hover-overlay 210.0x420.0 bg #ffffff @ 0.96; a.button.crop 178.0x42.5 bg #101d24 r 8px; a.button.crop 178.0x42.5 bg #fb754b r 8px |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
-| Painted layers | - | = | a 139.0x15.0 outline 1px auto #101010 offset 1px | = |
+| Transform | - | matrix(1, 0, 0, 1, 0, -3.31841) | = | matrix(1, 0, 0, 1, 0, -2.50884) |
 
-Crops: `tpl-card-m-default.png`, `tpl-card-m-hover.png`, `tpl-card-m-focus-visible.png`, `tpl-card-m-pressed.png`.
+Crops: `tpl-card-m-hover.png`, `tpl-card-m-focus-visible.png`, `tpl-card-m-pressed.png`.
 
 ### Sign-in form
 

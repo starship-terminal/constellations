@@ -173,6 +173,12 @@ async function S(key, target, list, meta = {}, opts = {}) {
         await page.waitForTimeout(450);
         via = 'mouse hover';
       } else if (st === 'focus-visible') {
+        // Modal calls skip reset() so the dialog stays open; the pointer then
+        // still rests on the control and the reading picks up hover paint.
+        // Move it away before the keyboard focus so this state stays
+        // keyboard-only.
+        await page.mouse.move((page.viewportSize()?.width ?? 1440) - 2, 2);
+        await page.waitForTimeout(150);
         via = await kbFocus((opts.focusLoc || loc).and(page.locator(':visible')).first());
       } else if (st === 'pressed') {
         undo = await forcePseudo((opts.pressLoc || loc).and(page.locator(':visible')).first(), ['active', 'hover']);
@@ -196,7 +202,13 @@ async function S(key, target, list, meta = {}, opts = {}) {
       await measure(key, st, loc, { ...opts, via });
     } catch (e) {
       const prev = out.components[key].states[st];
-      if (prev && prev.style) prev.rerunError = String(e.message || e).slice(0, 200);
+      if (prev && prev.style) {
+        prev.rerunError = String(e.message || e).slice(0, 200);
+        // comp() already stamped this run's date on the component; pin the
+        // retained reading to the run that actually captured it so an old
+        // measurement is never republished as a new one.
+        if (keep) { prev.read = keep.run; prev.rerunOn = run; }
+      }
       else out.components[key].states[st] = { error: String(e.message || e).slice(0, 200) };
       log('  !', key, st, String(e.message).slice(0, 120));
     }
@@ -358,8 +370,8 @@ async function templates() {
   await chrome('templates');
   const g = G.templates;
   await S('tpl-h1', q('h1').and(page.locator(':visible')).first(), ['default'], { group: g, title: 'Gallery headline', desc: 'The email-templates gallery heading.', sel: 'h1' }, { noScroll: true });
-  await S('tpl-filter', q('a, button, [class*="filter" i], select').filter({ hasText: /All|Categor|Industry|Filter/i }).and(page.locator(':visible')).first(), B4, { group: g, title: 'Gallery filter', desc: 'A gallery filter/category control; measured, never activated.', sel: 'gallery filter' }, { noScroll: true });
-  await S('tpl-card-m', q('a[href*="template"]').and(page.locator(':visible')).first(), B4, { group: g, title: 'Template tile', desc: 'An email-template tile in the gallery grid; measured, never followed.', sel: 'template tile' });
+  await S('tpl-filter', q('li.fill').and(page.locator(':visible')).first(), B4, { group: g, title: 'Gallery filter', desc: 'The Industry / Usage / Season / Brand / Free-only filter bar over the email-template grid (714x43); measured, never activated.', sel: 'li.fill' });
+  await S('tpl-card-m', q('.template-box').and(page.locator(':visible')).first(), B4, { group: g, title: 'Template tile', desc: 'An email-template tile in the marketing gallery grid (210x420, thumbnail + name + tags); measured, never followed.', sel: '.template-box' });
   save();
 }
 

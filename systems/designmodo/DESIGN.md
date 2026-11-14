@@ -31,9 +31,13 @@ colors:
   action-orange: "#f49a40"
   action-orange-hover: "#f18110"
   action-blue: "#2198ed"
-  action-blue-hover: "#1366d6"
+  action-blue-hover: "#344a56"
+  action-auth-blue: "#2f80ed"
+  action-auth-blue-hover: "#1366d6"
+  action-slate: "#485f6b"
+  action-slate-hover: "#344a56"
   action-dark: "#0d1d24"
-  action-dark-hover: "#344a56"
+  action-dark-hover: "#fb754b"
   text-ink: "#101d24"
   text-ink-body: "#313942"
   text-app-ink: "#2d3a41"
@@ -63,9 +67,9 @@ Good for: design-tool SaaS marketing and email-builder app design: two systems o
 
 Captured 2026-11-13, read-only (the marketing site, /pricing, /email-templates, /postcards, /slides, the /postcards/app/login form and the signed-out app shell behind the Welcome-back modal are public; the builder canvas and every post-login surface need an account - the modal was dismissed locally with Escape and every auth action measured, never submitted). Themes: light.
 
-A token set and component reference for Designmodo's public marketing surface and the signed-out Postcards app shell — for building SaaS marketing pages, pricing pages, email-builder dashboards and auth modals in the style of the real thing. It was read from **designmodo.com** on **2026-11-13**, signed out, in headless Chromium at 1440 x 900 and 390 x 844. Captured: the home page, /pricing, /email-templates, /postcards, /slides, the public sign-in form at /postcards/app/login, the Postcards app route /postcards/app/folder/templates behind its Welcome-back modal, plus a 390px mobile pass on home and the app.
+A token set and component reference for Designmodo's public marketing surface and the signed-out Postcards app shell — for building SaaS marketing pages, pricing pages, email-builder dashboards and auth modals in the style of the real thing. It was read from **designmodo.com** on **2026-11-13**, signed out, in headless Chromium at 1440 x 900 and 390 x 844. Captured: the home page, /postcards/pricing, /email-templates, /postcards, /slides, the public sign-in form at /my-account/sign-in/, the Postcards app route /postcards/app/folder/templates behind its Welcome-back modal, plus a 390px mobile pass on home and the app.
 
-Designmodo is worth a capture because it runs two different design systems on one domain, and both are readable signed out. The **marketing surface** is InterVariable over a dark `#071c26`/`#17242b` hero band: a 56px display heading (91.5px on /pricing and /postcards, 63px on /email-templates), the `#f49a40` orange Sign Up Free pill that deepens to `#f18110` on hover, the `#27ae60` green Open App CTA, near-black `#0d1d24` product CTAs that flip to `#fb754b` coral on hover, and a white footer carrying `#313942` ink. The **Postcards app** is a Fira Sans styled-components product: the same `#071c26` navy on a 60px app header, `#2198ed` blue on the Log in pill and the selected sidebar item, `#485f6b` slate on Sign Up, `#e8ecf0` secondary fills, the green `#27ae60` + Create action, a 241px workspace sidebar, filter labels, and 266x592 template cards carrying 9px `#2198ed` FREE and `#27ae60` NEW badges. The Welcome-back modal that gates the gallery is real UI — Escape dismisses it and the whole gallery sits in the DOM behind it; every modal action was measured, none submitted. **Boundary:** the builder canvas, saving and every post-login surface need an account; the sign-in form was measured, never submitted.
+Designmodo is worth a capture because it runs two different design systems on one domain, and both are readable signed out. The **marketing surface** is InterVariable over a dark `#071c26`/`#17242b` hero band: a 56px display heading (91.5px on /postcards/pricing and /postcards, 63px on /email-templates), the `#f49a40` orange Sign Up Free pill that deepens to `#f18110` on hover, the `#27ae60` green Open App CTA, near-black `#0d1d24` product CTAs that flip to `#fb754b` coral on hover, and a white footer carrying `#313942` ink. The **Postcards app** is a Fira Sans styled-components product: the same `#071c26` navy on a 60px app header, `#2198ed` blue on the Log in pill and the selected sidebar item, `#485f6b` slate on Sign Up, `#e8ecf0` secondary fills, the green `#27ae60` + Create action, a 241px workspace sidebar, filter labels, and 266x592 template cards carrying 9px `#2198ed` FREE and `#27ae60` NEW badges. The Welcome-back modal that gates the gallery is real UI — Escape dismisses it and the whole gallery sits in the DOM behind it; every modal action was measured, none submitted. **Boundary:** the builder canvas, saving and every post-login surface need an account; the sign-in form was measured, never submitted.
 
 ## Colors
 
@@ -93,6 +97,11 @@ Shadows, resolved to CSS:
 | Token | box-shadow |
 |---|---|
 | `core.shadow.modal` | `rgba(169, 179, 187, 0.5) 0px 0px 2px 0px, rgba(169, 179, 187, 0.25) 0px 10px 12px 0px` |
+| `core.shadow.cta` | `rgba(39, 174, 96, 0.15) 0px 4px 9px 0px` |
+| `core.shadow.cta-hover` | `rgba(39, 174, 96, 0.2) 0px 6px 12px 0px` |
+| `core.shadow.card` | `rgba(58, 76, 102, 0.07) 0px 4px 57px 0px, rgba(191, 197, 202, 0.65) 0px -1.5px 4.5px 0px inset` |
+| `core.shadow.badge-inset` | `rgba(0, 0, 0, 0.06) 0px -1px 0px 0px inset` |
+| `core.shadow.field-focus` | `rgba(99, 142, 216, 0.3) 0px 0px 10px 0px` |
 
 ## Shapes
 

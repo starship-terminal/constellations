@@ -9185,17 +9185,17 @@
    "routes": [
     "/",
     "/postcards/app/folder/templates",
-    "/pricing/",
+    "/postcards/pricing/",
     "/email-templates/",
     "/postcards/",
     "/slides/",
-    "/postcards/app/login",
+    "/my-account/sign-in/",
     "mobile / and /postcards/app/folder/templates"
    ],
    "gaps": [
     "the Postcards builder canvas, saving work and every post-login surface need an account - never reached",
     "the Welcome-back modal's actions (Continue with Google, email field, Login, Create Account) were measured, never submitted",
-    "the sign-in form's fields were never filled and Login never pressed; validation, error and success states are absent rather than measured",
+    "the sign-in form's fields were typed into and cleared and Login was never pressed; validation, error and success states are absent rather than measured",
     "the home 'Add to cart' plan links render in an off-viewport slide panel that never mounts visibly signed out - left out rather than fabricated; /pricing covers the plan actions",
     "the mobile app gallery scrolls inside a nested container 14521px tall; the capture kept the first 8 viewport tiles (6752px) - a recorded inner-scroller boundary",
     "pressed was forced with DevTools - a mousedown-only style (if any) is missing",

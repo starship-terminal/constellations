@@ -20,11 +20,11 @@ Behind the modal the Postcards app is a rectilinear Fira Sans surface on a `#f4f
 
 ## Pricing
 
-/pricing runs the 91.5px InterVariable display (`component` 1180x102 heading) over a tinted field: 313px near-white plan cards (`component.plan-card-width`, `light.background.card`, `rgba(247,249,252,.9)` over the tint) listing plan features in `#101d24` ink (`light.text.ink`), each closing on the 233px plan action (`component.plan-cta-width`). The same near-black `#0d1d24` CTA treatment as the product pages applies.
+/postcards/pricing runs the 91.5px InterVariable display (`component` 1180x102 heading) over a tinted field: 313px near-white plan cards (`component.plan-card-width`, `light.background.card`, `rgba(247,249,252,.9)` over the tint) listing plan features in `#101d24` ink (`light.text.ink`), each closing on the 233px plan action (`component.plan-cta-width`). The same near-black `#0d1d24` CTA treatment as the product pages applies.
 
 ## The sign-in form
 
-/postcards/app/login is the auth boundary: a centered 380x562 card on white holding 380x50 fields (`component.field-width`, `light.background.field`) at 5px radius (`core.radius.form`), a 24px heading (`core.font.size.measured.section`), the `#2f80ed` Login button paired with a sign-up link (two 186px actions, `component.auth-submit-width`) that deepens to `#1366d6` on hover (`light.action.blue-hover`), and the terms links. Every control was measured; the fields were never filled and Login never pressed.
+/my-account/sign-in/ is the auth boundary: a centered 380x562 card on white holding 380x50 fields (`component.field-width`, `light.background.field`) at 5px radius (`core.radius.form`), a 24px heading (`core.font.size.measured.section`), the `#2f80ed` Login button paired with a sign-up link (two 186px actions, `component.auth-submit-width`) that deepens to `#1366d6` on hover (`light.action.auth-blue-hover`), and the terms links. Every control was measured; the fields were typed into and cleared and Login was never pressed.
 
 ## Email-template gallery
 

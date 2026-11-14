@@ -1,6 +1,6 @@
 {
  "_meta": {
-  "read": "2026-11-13",
+  "read": "2026-11-14",
   "viewport": "1440 x 900 (mobile group 390 x 844); designmodo.com paints a single light theme signed out",
   "tool": "tools/capture/public/measure.mjs",
   "sheets": {
@@ -4319,7 +4319,7 @@
      "z": "10000",
      "pos": "fixed",
      "rect": "320x900@1440,0",
-     "text": "OPEN EDITOR \u2192|Home|Why Postcards?|Soluti"
+     "text": "OPEN EDITOR →|Home|Why Postcards?|Soluti"
     },
     {
      "node": "div.dm-cookie-consent",
@@ -4347,14 +4347,14 @@
      "z": "1000",
      "pos": "fixed",
      "rect": "60x60@1350,810",
-     "text": "Hey there \ud83d\udc4b Friends from designmodo are"
+     "text": "Hey there 👋 Friends from designmodo are"
     },
     {
      "node": "div.dm-short-menu-window",
      "z": "auto",
      "pos": "fixed",
      "rect": "196x243@1212,557",
-     "text": "Hey there \ud83d\udc4b Friends from designmodo are"
+     "text": "Hey there 👋 Friends from designmodo are"
     }
    ],
    "templates": [
@@ -4384,7 +4384,7 @@
      "z": "10000",
      "pos": "fixed",
      "rect": "320x900@1440,0",
-     "text": "OPEN EDITOR \u2192|Home|Why Postcards?|Soluti"
+     "text": "OPEN EDITOR →|Home|Why Postcards?|Soluti"
     },
     {
      "node": "div.dm-cookie-consent",
@@ -4412,14 +4412,14 @@
      "z": "1000",
      "pos": "fixed",
      "rect": "60x60@1350,810",
-     "text": "Hey there \ud83d\udc4b Friends from designmodo are"
+     "text": "Hey there 👋 Friends from designmodo are"
     },
     {
      "node": "div.dm-short-menu-window",
      "z": "auto",
      "pos": "fixed",
      "rect": "196x243@1212,557",
-     "text": "Hey there \ud83d\udc4b Friends from designmodo are"
+     "text": "Hey there 👋 Friends from designmodo are"
     }
    ],
    "login": [
@@ -4493,7 +4493,7 @@
      "z": "10000",
      "pos": "fixed",
      "rect": "320x900@1440,0",
-     "text": "OPEN EDITOR \u2192|Home|Why Postcards?|Soluti"
+     "text": "OPEN EDITOR →|Home|Why Postcards?|Soluti"
     },
     {
      "node": "div.dm-cookie-consent",
@@ -4521,14 +4521,14 @@
      "z": "1000",
      "pos": "fixed",
      "rect": "60x60@1350,810",
-     "text": "Hey there \ud83d\udc4b Friends from designmodo are"
+     "text": "Hey there 👋 Friends from designmodo are"
     },
     {
      "node": "div.dm-short-menu-window",
      "z": "auto",
      "pos": "fixed",
      "rect": "196x243@1212,557",
-     "text": "Hey there \ud83d\udc4b Friends from designmodo are"
+     "text": "Hey there 👋 Friends from designmodo are"
     }
    ],
    "mobile": [
@@ -5919,7 +5919,7 @@
    "url": "https://designmodo.com/",
    "title": "Hero headline",
    "group": "Home marketing",
-   "desc": "\"Level up email & web designs faster\" \u2014 the 56px display heading over the dark hero.",
+   "desc": "\"Level up email & web designs faster\" — the 56px display heading over the dark hero.",
    "selector": "h1"
   },
   "openapp-cta": {
@@ -5927,7 +5927,7 @@
     "default": {
      "tag": "a",
      "classes": "p button -custom-big-size margin-0",
-     "text": "Open App \u2192",
+     "text": "Open App →",
      "rect": {
       "x": 117,
       "y": 566.2,
@@ -6019,7 +6019,7 @@
     "hover": {
      "tag": "a",
      "classes": "p button -custom-big-size margin-0",
-     "text": "Open App \u2192",
+     "text": "Open App →",
      "rect": {
       "x": 117,
       "y": 566.2,
@@ -6111,7 +6111,7 @@
     "focus-visible": {
      "tag": "a",
      "classes": "p button -custom-big-size margin-0",
-     "text": "Open App \u2192",
+     "text": "Open App →",
      "rect": {
       "x": 117,
       "y": 566.2,
@@ -6204,7 +6204,7 @@
     "pressed": {
      "tag": "a",
      "classes": "p button -custom-big-size margin-0",
-     "text": "Open App \u2192",
+     "text": "Open App →",
      "rect": {
       "x": 117,
       "y": 568.2,
@@ -6299,7 +6299,7 @@
    "url": "https://designmodo.com/",
    "title": "Open App CTA",
    "group": "Home marketing",
-   "desc": "The green \"Open App \u2192\" product CTA (164x53, #27ae60); measured, never followed.",
+   "desc": "The green \"Open App →\" product CTA (164x53, #27ae60); measured, never followed.",
    "selector": "Open App"
   },
   "seemore-link": {
@@ -6307,7 +6307,7 @@
     "default": {
      "tag": "a",
      "classes": "p weight-6 see_more",
-     "text": "See more \u2192",
+     "text": "See more →",
      "rect": {
       "x": 313,
       "y": 437.2,
@@ -6390,7 +6390,7 @@
     "hover": {
      "tag": "a",
      "classes": "p weight-6 see_more",
-     "text": "See more \u2192",
+     "text": "See more →",
      "rect": {
       "x": 313,
       "y": 437.2,
@@ -6473,7 +6473,7 @@
     "focus-visible": {
      "tag": "a",
      "classes": "p weight-6 see_more",
-     "text": "See more \u2192",
+     "text": "See more →",
      "rect": {
       "x": 313,
       "y": 437.2,
@@ -6563,7 +6563,7 @@
     "pressed": {
      "tag": "a",
      "classes": "p weight-6 see_more",
-     "text": "See more \u2192",
+     "text": "See more →",
      "rect": {
       "x": 313,
       "y": 437.2,
@@ -6649,7 +6649,7 @@
    "url": "https://designmodo.com/",
    "title": "See more link",
    "group": "Home marketing",
-   "desc": "A \"See more \u2192\" link on a product strip.",
+   "desc": "A \"See more →\" link on a product strip.",
    "selector": "a.see_more"
   },
   "article-card": {
@@ -6657,7 +6657,7 @@
     "default": {
      "tag": "a",
      "classes": "margin-top-2 read_more p small",
-     "text": "Read more \u2192",
+     "text": "Read more →",
      "rect": {
       "x": 87,
       "y": 438.7,
@@ -6740,7 +6740,7 @@
     "hover": {
      "tag": "a",
      "classes": "margin-top-2 read_more p small",
-     "text": "Read more \u2192",
+     "text": "Read more →",
      "rect": {
       "x": 87,
       "y": 438.7,
@@ -6823,7 +6823,7 @@
     "focus-visible": {
      "tag": "a",
      "classes": "margin-top-2 read_more p small",
-     "text": "Read more \u2192",
+     "text": "Read more →",
      "rect": {
       "x": 87,
       "y": 438.7,
@@ -6913,7 +6913,7 @@
     "pressed": {
      "tag": "a",
      "classes": "margin-top-2 read_more p small",
-     "text": "Read more \u2192",
+     "text": "Read more →",
      "rect": {
       "x": 87,
       "y": 438.7,
@@ -6999,7 +6999,7 @@
    "url": "https://designmodo.com/",
    "title": "Article card",
    "group": "Home marketing",
-   "desc": "A \"Read more \u2192\" article card in the home articles strip.",
+   "desc": "A \"Read more →\" article card in the home articles strip.",
    "selector": "Read more"
   },
   "site-footer": {
@@ -12669,7 +12669,7 @@
     "default": {
      "tag": "div",
      "classes": "sc-jSfgDm jwMqHc",
-     "text": "FREE NEW Kindred Education\u2022Newsletter\u2022Promotional\u2022Update\u2022ActiveCampaign\u2022Amazon S",
+     "text": "FREE NEW Kindred Education•Newsletter•Promotional•Update•ActiveCampaign•Amazon S",
      "rect": {
       "x": 843,
       "y": 201,
@@ -13049,7 +13049,7 @@
     "default": {
      "tag": "label",
      "classes": "",
-     "text": "Yearly\ud83d\udcb0Monthly",
+     "text": "Yearly💰Monthly",
      "rect": {
       "x": 623.5,
       "y": 362.5,
@@ -13136,7 +13136,7 @@
       {
        "node": "span::after.qmark.description",
        "size": "26pxx7px",
-       "bgImage": "url(data:\u2026)'%3E%3Cpath d='M0 0L-8.74228e-08 1C2.97731 1 5.81883 2.27754 7.8 4.5C10.4659 7.83233 15.5341 7.83234 18.2 4.50001C20.1812 2.27754 23.0227 1 26 1L26 2.27299e-06L0 0Z' fill='%23111111'/%3E%3C"
+       "bgImage": "url(data:…)'%3E%3Cpath d='M0 0L-8.74228e-08 1C2.97731 1 5.81883 2.27754 7.8 4.5C10.4659 7.83233 15.5341 7.83234 18.2 4.50001C20.1812 2.27754 23.0227 1 26 1L26 2.27299e-06L0 0Z' fill='%23111111'/%3E%3C"
       },
       {
        "node": "span.element",
@@ -13157,7 +13157,7 @@
     "hover": {
      "tag": "label",
      "classes": "",
-     "text": "Yearly\ud83d\udcb0Monthly",
+     "text": "Yearly💰Monthly",
      "rect": {
       "x": 623.5,
       "y": 362.5,
@@ -13244,7 +13244,7 @@
       {
        "node": "span::after.qmark.description",
        "size": "26pxx7px",
-       "bgImage": "url(data:\u2026)'%3E%3Cpath d='M0 0L-8.74228e-08 1C2.97731 1 5.81883 2.27754 7.8 4.5C10.4659 7.83233 15.5341 7.83234 18.2 4.50001C20.1812 2.27754 23.0227 1 26 1L26 2.27299e-06L0 0Z' fill='%23111111'/%3E%3C"
+       "bgImage": "url(data:…)'%3E%3Cpath d='M0 0L-8.74228e-08 1C2.97731 1 5.81883 2.27754 7.8 4.5C10.4659 7.83233 15.5341 7.83234 18.2 4.50001C20.1812 2.27754 23.0227 1 26 1L26 2.27299e-06L0 0Z' fill='%23111111'/%3E%3C"
       },
       {
        "node": "span.element",
@@ -13265,7 +13265,7 @@
     "focus-visible": {
      "tag": "label",
      "classes": "",
-     "text": "Yearly\ud83d\udcb0Monthly",
+     "text": "Yearly💰Monthly",
      "rect": {
       "x": 623.5,
       "y": 362.5,
@@ -13352,7 +13352,7 @@
       {
        "node": "span::after.qmark.description",
        "size": "26pxx7px",
-       "bgImage": "url(data:\u2026)'%3E%3Cpath d='M0 0L-8.74228e-08 1C2.97731 1 5.81883 2.27754 7.8 4.5C10.4659 7.83233 15.5341 7.83234 18.2 4.50001C20.1812 2.27754 23.0227 1 26 1L26 2.27299e-06L0 0Z' fill='%23111111'/%3E%3C"
+       "bgImage": "url(data:…)'%3E%3Cpath d='M0 0L-8.74228e-08 1C2.97731 1 5.81883 2.27754 7.8 4.5C10.4659 7.83233 15.5341 7.83234 18.2 4.50001C20.1812 2.27754 23.0227 1 26 1L26 2.27299e-06L0 0Z' fill='%23111111'/%3E%3C"
       },
       {
        "node": "span.element",
@@ -13373,7 +13373,7 @@
     "pressed": {
      "tag": "label",
      "classes": "",
-     "text": "Yearly\ud83d\udcb0Monthly",
+     "text": "Yearly💰Monthly",
      "rect": {
       "x": 623.5,
       "y": 362.5,
@@ -13460,7 +13460,7 @@
       {
        "node": "span::after.qmark.description",
        "size": "26pxx7px",
-       "bgImage": "url(data:\u2026)'%3E%3Cpath d='M0 0L-8.74228e-08 1C2.97731 1 5.81883 2.27754 7.8 4.5C10.4659 7.83233 15.5341 7.83234 18.2 4.50001C20.1812 2.27754 23.0227 1 26 1L26 2.27299e-06L0 0Z' fill='%23111111'/%3E%3C"
+       "bgImage": "url(data:…)'%3E%3Cpath d='M0 0L-8.74228e-08 1C2.97731 1 5.81883 2.27754 7.8 4.5C10.4659 7.83233 15.5341 7.83234 18.2 4.50001C20.1812 2.27754 23.0227 1 26 1L26 2.27299e-06L0 0Z' fill='%23111111'/%3E%3C"
       },
       {
        "node": "span.element",
@@ -13492,7 +13492,7 @@
     "default": {
      "tag": "div",
      "classes": "margin-bottom-2 equalElement PriceBlock white-box",
-     "text": "Start \ud83e\udd73 FREE FOREVER $0 /month Get Started",
+     "text": "Start 🥳 FREE FOREVER $0 /month Get Started",
      "rect": {
       "x": 230,
       "y": 300.5,
@@ -13592,7 +13592,7 @@
      ],
      "textStyle": {
       "node": "h2.font-size-22.padding-bottom-3",
-      "text": "Start \ud83e\udd73",
+      "text": "Start 🥳",
       "fontFamily": "InterVariable, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen-Sans, Ubuntu, Cantarell, \"Helvetica Neue\", sans-serif",
       "fontSize": "22px",
       "lineHeight": "26.4px",
@@ -13611,7 +13611,7 @@
    "url": "https://designmodo.com/postcards/pricing/",
    "title": "Plan card",
    "group": "Pricing",
-   "desc": "A pricing plan card (Start FREE FOREVER / Plus / Pro) \u2014 white-box 313px wide.",
+   "desc": "A pricing plan card (Start FREE FOREVER / Plus / Pro) — white-box 313px wide.",
    "selector": ".PriceBlock"
   },
   "plan-cta": {
@@ -14023,7 +14023,7 @@
    "url": "https://designmodo.com/postcards/pricing/",
    "title": "Plan CTA",
    "group": "Pricing",
-   "desc": "A plan action (Get Started / $19/month) \u2014 it adds to the cart; measured, never pressed.",
+   "desc": "A plan action (Get Started / $19/month) — it adds to the cart; measured, never pressed.",
    "selector": "plan CTA"
   },
   "plan-feature": {
@@ -14124,7 +14124,7 @@
       {
        "node": "span::after.qmark.description",
        "size": "26pxx7px",
-       "bgImage": "url(data:\u2026)'%3E%3Cpath d='M0 0L-8.74228e-08 1C2.97731 1 5.81883 2.27754 7.8 4.5C10.4659 7.83233 15.5341 7.83234 18.2 4.50001C20.1812 2.27754 23.0227 1 26 1L26 2.27299e-06L0 0Z' fill='%23111111'/%3E%3C"
+       "bgImage": "url(data:…)'%3E%3Cpath d='M0 0L-8.74228e-08 1C2.97731 1 5.81883 2.27754 7.8 4.5C10.4659 7.83233 15.5341 7.83234 18.2 4.50001C20.1812 2.27754 23.0227 1 26 1L26 2.27299e-06L0 0Z' fill='%23111111'/%3E%3C"
       },
       {
        "node": "span.qmark.description",
@@ -14141,7 +14141,7 @@
       {
        "node": "span::after.qmark.description",
        "size": "26pxx7px",
-       "bgImage": "url(data:\u2026)'%3E%3Cpath d='M0 0L-8.74228e-08 1C2.97731 1 5.81883 2.27754 7.8 4.5C10.4659 7.83233 15.5341 7.83234 18.2 4.50001C20.1812 2.27754 23.0227 1 26 1L26 2.27299e-06L0 0Z' fill='%23111111'/%3E%3C"
+       "bgImage": "url(data:…)'%3E%3Cpath d='M0 0L-8.74228e-08 1C2.97731 1 5.81883 2.27754 7.8 4.5C10.4659 7.83233 15.5341 7.83234 18.2 4.50001C20.1812 2.27754 23.0227 1 26 1L26 2.27299e-06L0 0Z' fill='%23111111'/%3E%3C"
       },
       {
        "node": "span.qmark.description",
@@ -14158,7 +14158,7 @@
       {
        "node": "span::after.qmark.description",
        "size": "26pxx7px",
-       "bgImage": "url(data:\u2026)'%3E%3Cpath d='M0 0L-8.74228e-08 1C2.97731 1 5.81883 2.27754 7.8 4.5C10.4659 7.83233 15.5341 7.83234 18.2 4.50001C20.1812 2.27754 23.0227 1 26 1L26 2.27299e-06L0 0Z' fill='%23111111'/%3E%3C"
+       "bgImage": "url(data:…)'%3E%3Cpath d='M0 0L-8.74228e-08 1C2.97731 1 5.81883 2.27754 7.8 4.5C10.4659 7.83233 15.5341 7.83234 18.2 4.50001C20.1812 2.27754 23.0227 1 26 1L26 2.27299e-06L0 0Z' fill='%23111111'/%3E%3C"
       },
       {
        "node": "span.qmark.description",
@@ -14175,7 +14175,7 @@
       {
        "node": "span::after.qmark.description",
        "size": "26pxx7px",
-       "bgImage": "url(data:\u2026)'%3E%3Cpath d='M0 0L-8.74228e-08 1C2.97731 1 5.81883 2.27754 7.8 4.5C10.4659 7.83233 15.5341 7.83234 18.2 4.50001C20.1812 2.27754 23.0227 1 26 1L26 2.27299e-06L0 0Z' fill='%23111111'/%3E%3C"
+       "bgImage": "url(data:…)'%3E%3Cpath d='M0 0L-8.74228e-08 1C2.97731 1 5.81883 2.27754 7.8 4.5C10.4659 7.83233 15.5341 7.83234 18.2 4.50001C20.1812 2.27754 23.0227 1 26 1L26 2.27299e-06L0 0Z' fill='%23111111'/%3E%3C"
       },
       {
        "node": "span.qmark.description",
@@ -14192,7 +14192,7 @@
       {
        "node": "span::after.qmark.description",
        "size": "26pxx7px",
-       "bgImage": "url(data:\u2026)'%3E%3Cpath d='M0 0L-8.74228e-08 1C2.97731 1 5.81883 2.27754 7.8 4.5C10.4659 7.83233 15.5341 7.83234 18.2 4.50001C20.1812 2.27754 23.0227 1 26 1L26 2.27299e-06L0 0Z' fill='%23111111'/%3E%3C"
+       "bgImage": "url(data:…)'%3E%3Cpath d='M0 0L-8.74228e-08 1C2.97731 1 5.81883 2.27754 7.8 4.5C10.4659 7.83233 15.5341 7.83234 18.2 4.50001C20.1812 2.27754 23.0227 1 26 1L26 2.27299e-06L0 0Z' fill='%23111111'/%3E%3C"
       }
      ],
      "textStyle": {
@@ -14306,7 +14306,7 @@
     }
    },
    "page": "templates",
-   "run": "2026-11-13",
+   "run": "2026-11-14",
    "url": "https://designmodo.com/email-templates/",
    "title": "Gallery headline",
    "group": "Email-template gallery",
@@ -14316,31 +14316,31 @@
   "tpl-filter": {
    "states": {
     "default": {
-     "tag": "div",
-     "classes": "dropdown center filter long-list",
-     "text": "Back To School Black Friday Christmas Cyber Monday Easter Fall Father's Day Hall",
+     "tag": "li",
+     "classes": "fill align-left",
+     "text": "Industry Usage Season Brand Free only",
      "rect": {
-      "x": 64,
-      "y": 50,
-      "w": 432,
-      "h": 385.2
+      "x": 357,
+      "y": 429.1,
+      "w": 714,
+      "h": 43.19
      },
      "style": {
-      "display": "block",
-      "position": "absolute",
+      "display": "list-item",
+      "position": "static",
       "boxSizing": "border-box",
-      "width": "480px",
-      "height": "428px",
-      "minWidth": "0px",
-      "maxWidth": "480px",
-      "minHeight": "0px",
-      "paddingTop": "10px",
-      "paddingRight": "10px",
-      "paddingBottom": "10px",
-      "paddingLeft": "10px",
-      "marginTop": "10px",
+      "width": "714px",
+      "height": "43.1875px",
+      "minWidth": "auto",
+      "maxWidth": "none",
+      "minHeight": "auto",
+      "paddingTop": "0px",
+      "paddingRight": "0px",
+      "paddingBottom": "0px",
+      "paddingLeft": "0px",
+      "marginTop": "0px",
       "marginRight": "0px",
-      "marginBottom": "50px",
+      "marginBottom": "0px",
       "marginLeft": "0px",
       "gap": "normal",
       "rowGap": "normal",
@@ -14351,132 +14351,131 @@
       "gridTemplateColumns": "none",
       "borderTopWidth": "0px",
       "borderTopStyle": "none",
-      "borderTopColor": "rgb(16, 29, 36)",
+      "borderTopColor": "rgb(255, 255, 255)",
       "borderRightWidth": "0px",
       "borderRightStyle": "none",
-      "borderRightColor": "rgb(16, 29, 36)",
+      "borderRightColor": "rgb(255, 255, 255)",
       "borderBottomWidth": "0px",
       "borderBottomStyle": "none",
-      "borderBottomColor": "rgb(16, 29, 36)",
+      "borderBottomColor": "rgb(255, 255, 255)",
       "borderLeftWidth": "0px",
       "borderLeftStyle": "none",
-      "borderLeftColor": "rgb(16, 29, 36)",
-      "borderTopLeftRadius": "12px",
-      "borderTopRightRadius": "12px",
-      "borderBottomRightRadius": "12px",
-      "borderBottomLeftRadius": "12px",
-      "backgroundColor": "rgb(255, 255, 255)",
+      "borderLeftColor": "rgb(255, 255, 255)",
+      "borderTopLeftRadius": "0px",
+      "borderTopRightRadius": "0px",
+      "borderBottomRightRadius": "0px",
+      "borderBottomLeftRadius": "0px",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
       "backgroundImage": "none",
-      "boxShadow": "rgba(153, 173, 204, 0.2) 0px 13px 20px 0px, rgba(191, 197, 202, 0.5) 0px -1px 3px 0px inset, rgba(211, 218, 223, 0.15) 0px -5px 9px 3px inset",
+      "boxShadow": "none",
       "backdropFilter": "none",
       "outlineWidth": "0px",
       "outlineStyle": "none",
-      "outlineColor": "rgb(16, 29, 36)",
+      "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
       "fontFamily": "InterVariable, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, Arial, sans-serif",
       "fontSize": "18px",
       "fontWeight": "400",
-      "lineHeight": "27px",
+      "lineHeight": "43.2px",
       "letterSpacing": "normal",
       "textTransform": "none",
-      "color": "rgb(16, 29, 36)",
+      "color": "rgb(255, 255, 255)",
       "textDecorationLine": "none",
-      "textDecorationColor": "rgb(16, 29, 36)",
+      "textDecorationColor": "rgb(255, 255, 255)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
-      "transitionProperty": "transform, opacity, box-shadow",
-      "transitionDuration": "0.35s, 0.35s, 0.35s",
-      "transitionTimingFunction": "ease, ease, ease",
-      "transitionDelay": "0s, 0s, 0s",
+      "transitionProperty": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "transitionDelay": "0s",
       "cursor": "default",
-      "opacity": "0",
-      "transform": "matrix(0.9, 0, 0, 0.9, 0, 0)",
+      "opacity": "1",
+      "transform": "none",
       "overflow": "visible",
-      "zIndex": "300",
-      "top": "0px"
-     },
-     "::before": {
-      "content": "\"\"",
-      "width": "0px",
-      "height": "0px",
-      "position": "absolute",
-      "backgroundColor": "rgba(0, 0, 0, 0)",
-      "backgroundImage": "none",
-      "boxShadow": "none",
-      "borderTopWidth": "0px",
-      "borderTopStyle": "none",
-      "borderTopColor": "rgb(16, 29, 36)",
-      "borderRadius": "0px",
-      "inset": "0px 248px 428px 240px",
-      "opacity": "1",
-      "transition": "all"
-     },
-     "::after": {
-      "content": "\"\"",
-      "width": "0px",
-      "height": "0px",
-      "position": "absolute",
-      "backgroundColor": "rgba(0, 0, 0, 0)",
-      "backgroundImage": "none",
-      "boxShadow": "none",
-      "borderTopWidth": "0px",
-      "borderTopStyle": "none",
-      "borderTopColor": "rgb(16, 29, 36)",
-      "borderRadius": "0px",
-      "inset": "0px 247px 428px 240px",
-      "opacity": "1",
-      "transition": "all"
+      "zIndex": "auto",
+      "top": "auto"
      },
      "paint": [
       {
-       "node": "div.dropdown.center",
-       "size": "432.0x385.2",
-       "bg": "rgb(255, 255, 255)",
-       "shadow": "rgba(153, 173, 204, 0.2) 0px 13px 20px 0px, rgba(191, 197, 202, 0.5) 0px -1px 3px 0px inset, rgba(211, 218, 223, 0.15) 0px -5px 9px 3px inset",
-       "radius": "12px"
+       "node": "span.white.text-deepPurple",
+       "size": "0.0x20.0",
+       "bg": "rgb(255, 255, 255)"
+      },
+      {
+       "node": "span.white.text-deepPurple",
+       "size": "0.0x20.0",
+       "bg": "rgb(255, 255, 255)"
+      },
+      {
+       "node": "span.white.text-deepPurple",
+       "size": "0.0x20.0",
+       "bg": "rgb(255, 255, 255)"
+      },
+      {
+       "node": "span.white.text-deepPurple",
+       "size": "0.0x20.0",
+       "bg": "rgb(255, 255, 255)"
+      },
+      {
+       "node": "span.free-filter-box",
+       "size": "14.0x14.0",
+       "border": "T:1px solid rgba(255, 255, 255, 0.55) | R:1px solid rgba(255, 255, 255, 0.55) | B:1px solid rgba(255, 255, 255, 0.55) | L:1px solid rgba(255, 255, 255, 0.55)",
+       "radius": "3px"
+      },
+      {
+       "node": "span::after.free-filter-box",
+       "size": "4pxx8px",
+       "border": "R:1px solid rgb(255, 255, 255) | B:1px solid rgb(255, 255, 255)"
       }
      ],
      "textStyle": {
-      "node": "a",
-      "text": "Back To School",
+      "node": "div.inlineBlock.dropdownTrigger",
+      "text": "Industry",
       "fontFamily": "InterVariable, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, Arial, sans-serif",
-      "fontSize": "14px",
-      "lineHeight": "21px",
-      "fontWeight": "600",
-      "letterSpacing": "-0.154px",
-      "color": "rgb(16, 29, 36)",
+      "fontSize": "16px",
+      "lineHeight": "38.4px",
+      "fontWeight": "400",
+      "letterSpacing": "-0.176px",
+      "color": "rgb(255, 255, 255)",
       "textDecorationLine": "none",
       "textTransform": "none"
+     },
+     "icon": {
+      "w": 11,
+      "h": 11,
+      "fill": "rgb(255, 255, 255)",
+      "stroke": "none",
+      "color": "rgb(255, 255, 255)"
      },
      "crop": "components/crops/tpl-filter-default.png",
      "via": "at rest"
     },
     "hover": {
-     "tag": "div",
-     "classes": "dropdown center filter long-list",
-     "text": "Back To School Black Friday Christmas Cyber Monday Easter Fall Father's Day Hall",
+     "tag": "li",
+     "classes": "fill align-left",
+     "text": "Industry Usage Season Brand Free only",
      "rect": {
-      "x": 64,
-      "y": 0,
-      "w": 432,
-      "h": 385.2
+      "x": 357,
+      "y": 429.1,
+      "w": 714,
+      "h": 43.19
      },
      "style": {
-      "display": "block",
-      "position": "absolute",
+      "display": "list-item",
+      "position": "static",
       "boxSizing": "border-box",
-      "width": "480px",
-      "height": "428px",
-      "minWidth": "0px",
-      "maxWidth": "480px",
-      "minHeight": "0px",
-      "paddingTop": "10px",
-      "paddingRight": "10px",
-      "paddingBottom": "10px",
-      "paddingLeft": "10px",
-      "marginTop": "10px",
+      "width": "714px",
+      "height": "43.1875px",
+      "minWidth": "auto",
+      "maxWidth": "none",
+      "minHeight": "auto",
+      "paddingTop": "0px",
+      "paddingRight": "0px",
+      "paddingBottom": "0px",
+      "paddingLeft": "0px",
+      "marginTop": "0px",
       "marginRight": "0px",
-      "marginBottom": "50px",
+      "marginBottom": "0px",
       "marginLeft": "0px",
       "gap": "normal",
       "rowGap": "normal",
@@ -14487,132 +14486,131 @@
       "gridTemplateColumns": "none",
       "borderTopWidth": "0px",
       "borderTopStyle": "none",
-      "borderTopColor": "rgb(16, 29, 36)",
+      "borderTopColor": "rgb(255, 255, 255)",
       "borderRightWidth": "0px",
       "borderRightStyle": "none",
-      "borderRightColor": "rgb(16, 29, 36)",
+      "borderRightColor": "rgb(255, 255, 255)",
       "borderBottomWidth": "0px",
       "borderBottomStyle": "none",
-      "borderBottomColor": "rgb(16, 29, 36)",
+      "borderBottomColor": "rgb(255, 255, 255)",
       "borderLeftWidth": "0px",
       "borderLeftStyle": "none",
-      "borderLeftColor": "rgb(16, 29, 36)",
-      "borderTopLeftRadius": "12px",
-      "borderTopRightRadius": "12px",
-      "borderBottomRightRadius": "12px",
-      "borderBottomLeftRadius": "12px",
-      "backgroundColor": "rgb(255, 255, 255)",
+      "borderLeftColor": "rgb(255, 255, 255)",
+      "borderTopLeftRadius": "0px",
+      "borderTopRightRadius": "0px",
+      "borderBottomRightRadius": "0px",
+      "borderBottomLeftRadius": "0px",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
       "backgroundImage": "none",
-      "boxShadow": "rgba(153, 173, 204, 0.2) 0px 13px 20px 0px, rgba(191, 197, 202, 0.5) 0px -1px 3px 0px inset, rgba(211, 218, 223, 0.15) 0px -5px 9px 3px inset",
+      "boxShadow": "none",
       "backdropFilter": "none",
       "outlineWidth": "0px",
       "outlineStyle": "none",
-      "outlineColor": "rgb(16, 29, 36)",
+      "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
       "fontFamily": "InterVariable, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, Arial, sans-serif",
       "fontSize": "18px",
       "fontWeight": "400",
-      "lineHeight": "27px",
+      "lineHeight": "43.2px",
       "letterSpacing": "normal",
       "textTransform": "none",
-      "color": "rgb(16, 29, 36)",
+      "color": "rgb(255, 255, 255)",
       "textDecorationLine": "none",
-      "textDecorationColor": "rgb(16, 29, 36)",
+      "textDecorationColor": "rgb(255, 255, 255)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
-      "transitionProperty": "transform, opacity, box-shadow",
-      "transitionDuration": "0.35s, 0.35s, 0.35s",
-      "transitionTimingFunction": "ease, ease, ease",
-      "transitionDelay": "0s, 0s, 0s",
+      "transitionProperty": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "transitionDelay": "0s",
       "cursor": "default",
-      "opacity": "0",
-      "transform": "matrix(0.9, 0, 0, 0.9, 0, 0)",
+      "opacity": "1",
+      "transform": "none",
       "overflow": "visible",
-      "zIndex": "300",
-      "top": "0px"
-     },
-     "::before": {
-      "content": "\"\"",
-      "width": "0px",
-      "height": "0px",
-      "position": "absolute",
-      "backgroundColor": "rgba(0, 0, 0, 0)",
-      "backgroundImage": "none",
-      "boxShadow": "none",
-      "borderTopWidth": "0px",
-      "borderTopStyle": "none",
-      "borderTopColor": "rgb(16, 29, 36)",
-      "borderRadius": "0px",
-      "inset": "0px 248px 428px 240px",
-      "opacity": "1",
-      "transition": "all"
-     },
-     "::after": {
-      "content": "\"\"",
-      "width": "0px",
-      "height": "0px",
-      "position": "absolute",
-      "backgroundColor": "rgba(0, 0, 0, 0)",
-      "backgroundImage": "none",
-      "boxShadow": "none",
-      "borderTopWidth": "0px",
-      "borderTopStyle": "none",
-      "borderTopColor": "rgb(16, 29, 36)",
-      "borderRadius": "0px",
-      "inset": "0px 247px 428px 240px",
-      "opacity": "1",
-      "transition": "all"
+      "zIndex": "auto",
+      "top": "auto"
      },
      "paint": [
       {
-       "node": "div.dropdown.center",
-       "size": "432.0x385.2",
-       "bg": "rgb(255, 255, 255)",
-       "shadow": "rgba(153, 173, 204, 0.2) 0px 13px 20px 0px, rgba(191, 197, 202, 0.5) 0px -1px 3px 0px inset, rgba(211, 218, 223, 0.15) 0px -5px 9px 3px inset",
-       "radius": "12px"
+       "node": "span.white.text-deepPurple",
+       "size": "0.0x20.0",
+       "bg": "rgb(255, 255, 255)"
+      },
+      {
+       "node": "span.white.text-deepPurple",
+       "size": "0.0x20.0",
+       "bg": "rgb(255, 255, 255)"
+      },
+      {
+       "node": "span.white.text-deepPurple",
+       "size": "0.0x20.0",
+       "bg": "rgb(255, 255, 255)"
+      },
+      {
+       "node": "span.white.text-deepPurple",
+       "size": "0.0x20.0",
+       "bg": "rgb(255, 255, 255)"
+      },
+      {
+       "node": "span.free-filter-box",
+       "size": "14.0x14.0",
+       "border": "T:1px solid rgba(255, 255, 255, 0.55) | R:1px solid rgba(255, 255, 255, 0.55) | B:1px solid rgba(255, 255, 255, 0.55) | L:1px solid rgba(255, 255, 255, 0.55)",
+       "radius": "3px"
+      },
+      {
+       "node": "span::after.free-filter-box",
+       "size": "4pxx8px",
+       "border": "R:1px solid rgb(255, 255, 255) | B:1px solid rgb(255, 255, 255)"
       }
      ],
      "textStyle": {
-      "node": "a",
-      "text": "Back To School",
+      "node": "div.inlineBlock.dropdownTrigger",
+      "text": "Industry",
       "fontFamily": "InterVariable, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, Arial, sans-serif",
-      "fontSize": "14px",
-      "lineHeight": "21px",
-      "fontWeight": "600",
-      "letterSpacing": "-0.154px",
-      "color": "rgb(16, 29, 36)",
+      "fontSize": "16px",
+      "lineHeight": "38.4px",
+      "fontWeight": "400",
+      "letterSpacing": "-0.176px",
+      "color": "rgb(255, 255, 255)",
       "textDecorationLine": "none",
       "textTransform": "none"
+     },
+     "icon": {
+      "w": 11,
+      "h": 11,
+      "fill": "rgb(255, 255, 255)",
+      "stroke": "none",
+      "color": "rgb(255, 255, 255)"
      },
      "crop": "components/crops/tpl-filter-hover.png",
      "via": "mouse hover"
     },
     "focus-visible": {
-     "tag": "div",
-     "classes": "dropdown center filter long-list",
-     "text": "Back To School Black Friday Christmas Cyber Monday Easter Fall Father's Day Hall",
+     "tag": "li",
+     "classes": "fill align-left",
+     "text": "Industry Usage Season Brand Free only",
      "rect": {
-      "x": 64,
-      "y": 0,
-      "w": 432,
-      "h": 385.2
+      "x": 357,
+      "y": 429.1,
+      "w": 714,
+      "h": 43.19
      },
      "style": {
-      "display": "block",
-      "position": "absolute",
+      "display": "list-item",
+      "position": "static",
       "boxSizing": "border-box",
-      "width": "480px",
-      "height": "428px",
-      "minWidth": "0px",
-      "maxWidth": "480px",
-      "minHeight": "0px",
-      "paddingTop": "10px",
-      "paddingRight": "10px",
-      "paddingBottom": "10px",
-      "paddingLeft": "10px",
-      "marginTop": "10px",
+      "width": "714px",
+      "height": "43.1875px",
+      "minWidth": "auto",
+      "maxWidth": "none",
+      "minHeight": "auto",
+      "paddingTop": "0px",
+      "paddingRight": "0px",
+      "paddingBottom": "0px",
+      "paddingLeft": "0px",
+      "marginTop": "0px",
       "marginRight": "0px",
-      "marginBottom": "50px",
+      "marginBottom": "0px",
       "marginLeft": "0px",
       "gap": "normal",
       "rowGap": "normal",
@@ -14623,138 +14621,136 @@
       "gridTemplateColumns": "none",
       "borderTopWidth": "0px",
       "borderTopStyle": "none",
-      "borderTopColor": "rgb(16, 29, 36)",
+      "borderTopColor": "rgb(255, 255, 255)",
       "borderRightWidth": "0px",
       "borderRightStyle": "none",
-      "borderRightColor": "rgb(16, 29, 36)",
+      "borderRightColor": "rgb(255, 255, 255)",
       "borderBottomWidth": "0px",
       "borderBottomStyle": "none",
-      "borderBottomColor": "rgb(16, 29, 36)",
+      "borderBottomColor": "rgb(255, 255, 255)",
       "borderLeftWidth": "0px",
       "borderLeftStyle": "none",
-      "borderLeftColor": "rgb(16, 29, 36)",
-      "borderTopLeftRadius": "12px",
-      "borderTopRightRadius": "12px",
-      "borderBottomRightRadius": "12px",
-      "borderBottomLeftRadius": "12px",
-      "backgroundColor": "rgb(255, 255, 255)",
+      "borderLeftColor": "rgb(255, 255, 255)",
+      "borderTopLeftRadius": "0px",
+      "borderTopRightRadius": "0px",
+      "borderBottomRightRadius": "0px",
+      "borderBottomLeftRadius": "0px",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
       "backgroundImage": "none",
-      "boxShadow": "rgba(153, 173, 204, 0.2) 0px 13px 20px 0px, rgba(191, 197, 202, 0.5) 0px -1px 3px 0px inset, rgba(211, 218, 223, 0.15) 0px -5px 9px 3px inset",
+      "boxShadow": "none",
       "backdropFilter": "none",
       "outlineWidth": "0px",
       "outlineStyle": "none",
-      "outlineColor": "rgb(16, 29, 36)",
+      "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
       "fontFamily": "InterVariable, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, Arial, sans-serif",
       "fontSize": "18px",
       "fontWeight": "400",
-      "lineHeight": "27px",
+      "lineHeight": "43.2px",
       "letterSpacing": "normal",
       "textTransform": "none",
-      "color": "rgb(16, 29, 36)",
+      "color": "rgb(255, 255, 255)",
       "textDecorationLine": "none",
-      "textDecorationColor": "rgb(16, 29, 36)",
+      "textDecorationColor": "rgb(255, 255, 255)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
-      "transitionProperty": "transform, opacity, box-shadow",
-      "transitionDuration": "0.35s, 0.35s, 0.35s",
-      "transitionTimingFunction": "ease, ease, ease",
-      "transitionDelay": "0s, 0s, 0s",
+      "transitionProperty": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "transitionDelay": "0s",
       "cursor": "default",
-      "opacity": "0",
-      "transform": "matrix(0.9, 0, 0, 0.9, 0, 0)",
+      "opacity": "1",
+      "transform": "none",
       "overflow": "visible",
-      "zIndex": "300",
-      "top": "0px"
-     },
-     "::before": {
-      "content": "\"\"",
-      "width": "0px",
-      "height": "0px",
-      "position": "absolute",
-      "backgroundColor": "rgba(0, 0, 0, 0)",
-      "backgroundImage": "none",
-      "boxShadow": "none",
-      "borderTopWidth": "0px",
-      "borderTopStyle": "none",
-      "borderTopColor": "rgb(16, 29, 36)",
-      "borderRadius": "0px",
-      "inset": "0px 248px 428px 240px",
-      "opacity": "1",
-      "transition": "all"
-     },
-     "::after": {
-      "content": "\"\"",
-      "width": "0px",
-      "height": "0px",
-      "position": "absolute",
-      "backgroundColor": "rgba(0, 0, 0, 0)",
-      "backgroundImage": "none",
-      "boxShadow": "none",
-      "borderTopWidth": "0px",
-      "borderTopStyle": "none",
-      "borderTopColor": "rgb(16, 29, 36)",
-      "borderRadius": "0px",
-      "inset": "0px 247px 428px 240px",
-      "opacity": "1",
-      "transition": "all"
+      "zIndex": "auto",
+      "top": "auto"
      },
      "paint": [
       {
-       "node": "div.dropdown.center",
-       "size": "432.0x385.2",
-       "bg": "rgb(255, 255, 255)",
-       "shadow": "rgba(153, 173, 204, 0.2) 0px 13px 20px 0px, rgba(191, 197, 202, 0.5) 0px -1px 3px 0px inset, rgba(211, 218, 223, 0.15) 0px -5px 9px 3px inset",
-       "radius": "12px"
+       "node": "span.white.text-deepPurple",
+       "size": "0.0x20.0",
+       "bg": "rgb(255, 255, 255)"
       },
       {
-       "node": "a",
-       "size": "207.0x45.9",
-       "outline": "1px auto rgb(16, 16, 16) offset 1px",
-       "radius": "10px"
+       "node": "span.white.text-deepPurple",
+       "size": "0.0x20.0",
+       "bg": "rgb(255, 255, 255)"
+      },
+      {
+       "node": "span.white.text-deepPurple",
+       "size": "0.0x20.0",
+       "bg": "rgb(255, 255, 255)"
+      },
+      {
+       "node": "span.white.text-deepPurple",
+       "size": "0.0x20.0",
+       "bg": "rgb(255, 255, 255)"
+      },
+      {
+       "node": "input.free-filter-checkbox",
+       "size": "1.0x1.0",
+       "outline": "1px auto rgb(16, 16, 16) offset 2px"
+      },
+      {
+       "node": "span.free-filter-box",
+       "size": "14.0x14.0",
+       "border": "T:1px solid rgba(255, 255, 255, 0.55) | R:1px solid rgba(255, 255, 255, 0.55) | B:1px solid rgba(255, 255, 255, 0.55) | L:1px solid rgba(255, 255, 255, 0.55)",
+       "radius": "3px"
+      },
+      {
+       "node": "span::after.free-filter-box",
+       "size": "4pxx8px",
+       "border": "R:1px solid rgb(255, 255, 255) | B:1px solid rgb(255, 255, 255)"
       }
      ],
      "textStyle": {
-      "node": "a",
-      "text": "Back To School",
+      "node": "div.inlineBlock.dropdownTrigger",
+      "text": "Industry",
       "fontFamily": "InterVariable, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, Arial, sans-serif",
-      "fontSize": "14px",
-      "lineHeight": "21px",
-      "fontWeight": "600",
-      "letterSpacing": "-0.154px",
-      "color": "rgb(16, 29, 36)",
+      "fontSize": "16px",
+      "lineHeight": "38.4px",
+      "fontWeight": "400",
+      "letterSpacing": "-0.176px",
+      "color": "rgb(255, 255, 255)",
       "textDecorationLine": "none",
       "textTransform": "none"
+     },
+     "icon": {
+      "w": 11,
+      "h": 11,
+      "fill": "rgb(255, 255, 255)",
+      "stroke": "none",
+      "color": "rgb(255, 255, 255)"
      },
      "crop": "components/crops/tpl-filter-focus-visible.png",
      "via": "Shift+Tab, Tab"
     },
     "pressed": {
-     "tag": "div",
-     "classes": "dropdown center filter long-list",
-     "text": "Back To School Black Friday Christmas Cyber Monday Easter Fall Father's Day Hall",
+     "tag": "li",
+     "classes": "fill align-left",
+     "text": "Industry Usage Season Brand Free only",
      "rect": {
-      "x": 64,
-      "y": 0,
-      "w": 432,
-      "h": 385.2
+      "x": 357,
+      "y": 429.1,
+      "w": 714,
+      "h": 43.19
      },
      "style": {
-      "display": "block",
-      "position": "absolute",
+      "display": "list-item",
+      "position": "static",
       "boxSizing": "border-box",
-      "width": "480px",
-      "height": "428px",
-      "minWidth": "0px",
-      "maxWidth": "480px",
-      "minHeight": "0px",
-      "paddingTop": "10px",
-      "paddingRight": "10px",
-      "paddingBottom": "10px",
-      "paddingLeft": "10px",
-      "marginTop": "10px",
+      "width": "714px",
+      "height": "43.1875px",
+      "minWidth": "auto",
+      "maxWidth": "none",
+      "minHeight": "auto",
+      "paddingTop": "0px",
+      "paddingRight": "0px",
+      "paddingBottom": "0px",
+      "paddingLeft": "0px",
+      "marginTop": "0px",
       "marginRight": "0px",
-      "marginBottom": "50px",
+      "marginBottom": "0px",
       "marginLeft": "0px",
       "gap": "normal",
       "rowGap": "normal",
@@ -14765,143 +14761,142 @@
       "gridTemplateColumns": "none",
       "borderTopWidth": "0px",
       "borderTopStyle": "none",
-      "borderTopColor": "rgb(16, 29, 36)",
+      "borderTopColor": "rgb(255, 255, 255)",
       "borderRightWidth": "0px",
       "borderRightStyle": "none",
-      "borderRightColor": "rgb(16, 29, 36)",
+      "borderRightColor": "rgb(255, 255, 255)",
       "borderBottomWidth": "0px",
       "borderBottomStyle": "none",
-      "borderBottomColor": "rgb(16, 29, 36)",
+      "borderBottomColor": "rgb(255, 255, 255)",
       "borderLeftWidth": "0px",
       "borderLeftStyle": "none",
-      "borderLeftColor": "rgb(16, 29, 36)",
-      "borderTopLeftRadius": "12px",
-      "borderTopRightRadius": "12px",
-      "borderBottomRightRadius": "12px",
-      "borderBottomLeftRadius": "12px",
-      "backgroundColor": "rgb(255, 255, 255)",
+      "borderLeftColor": "rgb(255, 255, 255)",
+      "borderTopLeftRadius": "0px",
+      "borderTopRightRadius": "0px",
+      "borderBottomRightRadius": "0px",
+      "borderBottomLeftRadius": "0px",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
       "backgroundImage": "none",
-      "boxShadow": "rgba(153, 173, 204, 0.2) 0px 13px 20px 0px, rgba(191, 197, 202, 0.5) 0px -1px 3px 0px inset, rgba(211, 218, 223, 0.15) 0px -5px 9px 3px inset",
+      "boxShadow": "none",
       "backdropFilter": "none",
       "outlineWidth": "0px",
       "outlineStyle": "none",
-      "outlineColor": "rgb(16, 29, 36)",
+      "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
       "fontFamily": "InterVariable, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, Arial, sans-serif",
       "fontSize": "18px",
       "fontWeight": "400",
-      "lineHeight": "27px",
+      "lineHeight": "43.2px",
       "letterSpacing": "normal",
       "textTransform": "none",
-      "color": "rgb(16, 29, 36)",
+      "color": "rgb(255, 255, 255)",
       "textDecorationLine": "none",
-      "textDecorationColor": "rgb(16, 29, 36)",
+      "textDecorationColor": "rgb(255, 255, 255)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
-      "transitionProperty": "transform, opacity, box-shadow",
-      "transitionDuration": "0.35s, 0.35s, 0.35s",
-      "transitionTimingFunction": "ease, ease, ease",
-      "transitionDelay": "0s, 0s, 0s",
+      "transitionProperty": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "transitionDelay": "0s",
       "cursor": "default",
-      "opacity": "0",
-      "transform": "matrix(0.9, 0, 0, 0.9, 0, 0)",
+      "opacity": "1",
+      "transform": "none",
       "overflow": "visible",
-      "zIndex": "300",
-      "top": "0px"
-     },
-     "::before": {
-      "content": "\"\"",
-      "width": "0px",
-      "height": "0px",
-      "position": "absolute",
-      "backgroundColor": "rgba(0, 0, 0, 0)",
-      "backgroundImage": "none",
-      "boxShadow": "none",
-      "borderTopWidth": "0px",
-      "borderTopStyle": "none",
-      "borderTopColor": "rgb(16, 29, 36)",
-      "borderRadius": "0px",
-      "inset": "0px 248px 428px 240px",
-      "opacity": "1",
-      "transition": "all"
-     },
-     "::after": {
-      "content": "\"\"",
-      "width": "0px",
-      "height": "0px",
-      "position": "absolute",
-      "backgroundColor": "rgba(0, 0, 0, 0)",
-      "backgroundImage": "none",
-      "boxShadow": "none",
-      "borderTopWidth": "0px",
-      "borderTopStyle": "none",
-      "borderTopColor": "rgb(16, 29, 36)",
-      "borderRadius": "0px",
-      "inset": "0px 247px 428px 240px",
-      "opacity": "1",
-      "transition": "all"
+      "zIndex": "auto",
+      "top": "auto"
      },
      "paint": [
       {
-       "node": "div.dropdown.center",
-       "size": "432.0x385.2",
-       "bg": "rgb(255, 255, 255)",
-       "shadow": "rgba(153, 173, 204, 0.2) 0px 13px 20px 0px, rgba(191, 197, 202, 0.5) 0px -1px 3px 0px inset, rgba(211, 218, 223, 0.15) 0px -5px 9px 3px inset",
-       "radius": "12px"
+       "node": "span.white.text-deepPurple",
+       "size": "0.0x20.0",
+       "bg": "rgb(255, 255, 255)"
+      },
+      {
+       "node": "span.white.text-deepPurple",
+       "size": "0.0x20.0",
+       "bg": "rgb(255, 255, 255)"
+      },
+      {
+       "node": "span.white.text-deepPurple",
+       "size": "0.0x20.0",
+       "bg": "rgb(255, 255, 255)"
+      },
+      {
+       "node": "span.white.text-deepPurple",
+       "size": "0.0x20.0",
+       "bg": "rgb(255, 255, 255)"
+      },
+      {
+       "node": "span.free-filter-box",
+       "size": "14.0x14.0",
+       "border": "T:1px solid rgba(255, 255, 255, 0.55) | R:1px solid rgba(255, 255, 255, 0.55) | B:1px solid rgba(255, 255, 255, 0.55) | L:1px solid rgba(255, 255, 255, 0.55)",
+       "radius": "3px"
+      },
+      {
+       "node": "span::after.free-filter-box",
+       "size": "4pxx8px",
+       "border": "R:1px solid rgb(255, 255, 255) | B:1px solid rgb(255, 255, 255)"
       }
      ],
      "textStyle": {
-      "node": "a",
-      "text": "Back To School",
+      "node": "div.inlineBlock.dropdownTrigger",
+      "text": "Industry",
       "fontFamily": "InterVariable, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, Arial, sans-serif",
-      "fontSize": "14px",
-      "lineHeight": "21px",
-      "fontWeight": "600",
-      "letterSpacing": "-0.154px",
-      "color": "rgb(16, 29, 36)",
+      "fontSize": "16px",
+      "lineHeight": "38.4px",
+      "fontWeight": "400",
+      "letterSpacing": "-0.176px",
+      "color": "rgb(255, 255, 255)",
       "textDecorationLine": "none",
       "textTransform": "none"
+     },
+     "icon": {
+      "w": 11,
+      "h": 11,
+      "fill": "rgb(255, 255, 255)",
+      "stroke": "none",
+      "color": "rgb(255, 255, 255)"
      },
      "crop": "components/crops/tpl-filter-pressed.png",
      "via": "CDP forcePseudoState :active:hover"
     }
    },
    "page": "templates",
-   "run": "2026-11-13",
+   "run": "2026-11-14",
    "url": "https://designmodo.com/email-templates/",
    "title": "Gallery filter",
    "group": "Email-template gallery",
-   "desc": "A gallery filter/category control; measured, never activated.",
-   "selector": "gallery filter"
+   "desc": "The Industry / Usage / Season / Brand / Free-only filter bar over the email-template grid (714x43); measured, never activated.",
+   "selector": "li.fill"
   },
   "tpl-card-m": {
    "states": {
     "default": {
-     "tag": "a",
-     "classes": "",
-     "text": "EMAIL TEMPLATES",
+     "tag": "div",
+     "classes": "template-box margin-bottom-2",
+     "text": "FREE Kindred – Nonprofit Email Template for Environmental Fundraising Preview Ed",
      "rect": {
-      "x": 777.2,
-      "y": 68,
-      "w": 139,
-      "h": 15
+      "x": 40,
+      "y": 240.7,
+      "w": 210,
+      "h": 420
      },
      "style": {
-      "display": "inline",
+      "display": "block",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "auto",
-      "height": "auto",
+      "width": "210px",
+      "height": "420px",
       "minWidth": "0px",
       "maxWidth": "none",
       "minHeight": "0px",
       "paddingTop": "0px",
-      "paddingRight": "5px",
+      "paddingRight": "0px",
       "paddingBottom": "0px",
-      "paddingLeft": "5px",
+      "paddingLeft": "0px",
       "marginTop": "0px",
       "marginRight": "0px",
-      "marginBottom": "0px",
+      "marginBottom": "20px",
       "marginLeft": "0px",
       "gap": "normal",
       "rowGap": "normal",
@@ -14912,252 +14907,130 @@
       "gridTemplateColumns": "none",
       "borderTopWidth": "0px",
       "borderTopStyle": "none",
-      "borderTopColor": "rgb(45, 58, 65)",
+      "borderTopColor": "rgb(16, 29, 36)",
       "borderRightWidth": "0px",
       "borderRightStyle": "none",
-      "borderRightColor": "rgb(45, 58, 65)",
+      "borderRightColor": "rgb(16, 29, 36)",
       "borderBottomWidth": "0px",
       "borderBottomStyle": "none",
-      "borderBottomColor": "rgb(45, 58, 65)",
+      "borderBottomColor": "rgb(16, 29, 36)",
       "borderLeftWidth": "0px",
       "borderLeftStyle": "none",
-      "borderLeftColor": "rgb(45, 58, 65)",
-      "borderTopLeftRadius": "0px",
-      "borderTopRightRadius": "0px",
-      "borderBottomRightRadius": "0px",
-      "borderBottomLeftRadius": "0px",
+      "borderLeftColor": "rgb(16, 29, 36)",
+      "borderTopLeftRadius": "8px",
+      "borderTopRightRadius": "8px",
+      "borderBottomRightRadius": "8px",
+      "borderBottomLeftRadius": "8px",
       "backgroundColor": "rgba(0, 0, 0, 0)",
       "backgroundImage": "none",
-      "boxShadow": "none",
+      "boxShadow": "rgba(10, 33, 65, 0.05) 0px 10px 20px 0px, rgba(0, 0, 0, 0.13) 0px 0px 2px 0px",
       "backdropFilter": "none",
       "outlineWidth": "0px",
       "outlineStyle": "none",
-      "outlineColor": "rgb(45, 58, 65)",
+      "outlineColor": "rgb(16, 29, 36)",
       "outlineOffset": "0px",
       "fontFamily": "InterVariable, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, Arial, sans-serif",
-      "fontSize": "12px",
-      "fontWeight": "700",
-      "lineHeight": "18px",
-      "letterSpacing": "0.6px",
-      "textTransform": "uppercase",
-      "color": "rgb(45, 58, 65)",
+      "fontSize": "18px",
+      "fontWeight": "400",
+      "lineHeight": "27px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(16, 29, 36)",
       "textDecorationLine": "none",
-      "textDecorationColor": "rgb(45, 58, 65)",
+      "textDecorationColor": "rgb(16, 29, 36)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
-      "transitionProperty": "all",
-      "transitionDuration": "0.35s",
-      "transitionTimingFunction": "ease",
-      "transitionDelay": "0s",
-      "cursor": "pointer",
+      "transitionProperty": "transform, box-shadow, color",
+      "transitionDuration": "0.28s, 0.28s, 0.15s",
+      "transitionTimingFunction": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1), ease",
+      "transitionDelay": "0s, 0s, 0s",
+      "cursor": "default",
       "opacity": "1",
       "transform": "none",
-      "overflow": "visible",
-      "zIndex": "auto",
-      "top": "auto"
-     },
-     "crop": "components/crops/tpl-card-m-default.png",
-     "via": "at rest"
-    },
-    "hover": {
-     "tag": "a",
-     "classes": "",
-     "text": "EMAIL TEMPLATES",
-     "rect": {
-      "x": 777.2,
-      "y": 68,
-      "w": 139,
-      "h": 15
-     },
-     "style": {
-      "display": "inline",
-      "position": "static",
-      "boxSizing": "border-box",
-      "width": "auto",
-      "height": "auto",
-      "minWidth": "0px",
-      "maxWidth": "none",
-      "minHeight": "0px",
-      "paddingTop": "0px",
-      "paddingRight": "5px",
-      "paddingBottom": "0px",
-      "paddingLeft": "5px",
-      "marginTop": "0px",
-      "marginRight": "0px",
-      "marginBottom": "0px",
-      "marginLeft": "0px",
-      "gap": "normal",
-      "rowGap": "normal",
-      "columnGap": "normal",
-      "flexDirection": "row",
-      "alignItems": "normal",
-      "justifyContent": "normal",
-      "gridTemplateColumns": "none",
-      "borderTopWidth": "0px",
-      "borderTopStyle": "none",
-      "borderTopColor": "rgb(251, 117, 75)",
-      "borderRightWidth": "0px",
-      "borderRightStyle": "none",
-      "borderRightColor": "rgb(251, 117, 75)",
-      "borderBottomWidth": "0px",
-      "borderBottomStyle": "none",
-      "borderBottomColor": "rgb(251, 117, 75)",
-      "borderLeftWidth": "0px",
-      "borderLeftStyle": "none",
-      "borderLeftColor": "rgb(251, 117, 75)",
-      "borderTopLeftRadius": "0px",
-      "borderTopRightRadius": "0px",
-      "borderBottomRightRadius": "0px",
-      "borderBottomLeftRadius": "0px",
-      "backgroundColor": "rgba(0, 0, 0, 0)",
-      "backgroundImage": "none",
-      "boxShadow": "none",
-      "backdropFilter": "none",
-      "outlineWidth": "0px",
-      "outlineStyle": "none",
-      "outlineColor": "rgb(251, 117, 75)",
-      "outlineOffset": "0px",
-      "fontFamily": "InterVariable, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, Arial, sans-serif",
-      "fontSize": "12px",
-      "fontWeight": "700",
-      "lineHeight": "18px",
-      "letterSpacing": "0.6px",
-      "textTransform": "uppercase",
-      "color": "rgb(251, 117, 75)",
-      "textDecorationLine": "none",
-      "textDecorationColor": "rgb(251, 117, 75)",
-      "textDecorationThickness": "auto",
-      "textUnderlineOffset": "auto",
-      "transitionProperty": "all",
-      "transitionDuration": "0.15s",
-      "transitionTimingFunction": "ease",
-      "transitionDelay": "0s",
-      "cursor": "pointer",
-      "opacity": "1",
-      "transform": "none",
-      "overflow": "visible",
-      "zIndex": "auto",
-      "top": "auto"
-     },
-     "crop": "components/crops/tpl-card-m-hover.png",
-     "via": "mouse hover"
-    },
-    "focus-visible": {
-     "tag": "a",
-     "classes": "",
-     "text": "EMAIL TEMPLATES",
-     "rect": {
-      "x": 777.2,
-      "y": 68,
-      "w": 139,
-      "h": 15
-     },
-     "style": {
-      "display": "inline",
-      "position": "static",
-      "boxSizing": "border-box",
-      "width": "auto",
-      "height": "auto",
-      "minWidth": "0px",
-      "maxWidth": "none",
-      "minHeight": "0px",
-      "paddingTop": "0px",
-      "paddingRight": "5px",
-      "paddingBottom": "0px",
-      "paddingLeft": "5px",
-      "marginTop": "0px",
-      "marginRight": "0px",
-      "marginBottom": "0px",
-      "marginLeft": "0px",
-      "gap": "normal",
-      "rowGap": "normal",
-      "columnGap": "normal",
-      "flexDirection": "row",
-      "alignItems": "normal",
-      "justifyContent": "normal",
-      "gridTemplateColumns": "none",
-      "borderTopWidth": "0px",
-      "borderTopStyle": "none",
-      "borderTopColor": "rgb(45, 58, 65)",
-      "borderRightWidth": "0px",
-      "borderRightStyle": "none",
-      "borderRightColor": "rgb(45, 58, 65)",
-      "borderBottomWidth": "0px",
-      "borderBottomStyle": "none",
-      "borderBottomColor": "rgb(45, 58, 65)",
-      "borderLeftWidth": "0px",
-      "borderLeftStyle": "none",
-      "borderLeftColor": "rgb(45, 58, 65)",
-      "borderTopLeftRadius": "0px",
-      "borderTopRightRadius": "0px",
-      "borderBottomRightRadius": "0px",
-      "borderBottomLeftRadius": "0px",
-      "backgroundColor": "rgba(0, 0, 0, 0)",
-      "backgroundImage": "none",
-      "boxShadow": "none",
-      "backdropFilter": "none",
-      "outlineWidth": "1px",
-      "outlineStyle": "auto",
-      "outlineColor": "rgb(16, 16, 16)",
-      "outlineOffset": "1px",
-      "fontFamily": "InterVariable, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, Arial, sans-serif",
-      "fontSize": "12px",
-      "fontWeight": "700",
-      "lineHeight": "18px",
-      "letterSpacing": "0.6px",
-      "textTransform": "uppercase",
-      "color": "rgb(45, 58, 65)",
-      "textDecorationLine": "none",
-      "textDecorationColor": "rgb(45, 58, 65)",
-      "textDecorationThickness": "auto",
-      "textUnderlineOffset": "auto",
-      "transitionProperty": "all",
-      "transitionDuration": "0.35s",
-      "transitionTimingFunction": "ease",
-      "transitionDelay": "0s",
-      "cursor": "pointer",
-      "opacity": "1",
-      "transform": "none",
-      "overflow": "visible",
+      "overflow": "hidden",
       "zIndex": "auto",
       "top": "auto"
      },
      "paint": [
       {
-       "node": "a",
-       "size": "139.0x15.0",
-       "outline": "1px auto rgb(16, 16, 16) offset 1px"
+       "node": "div.template-box.margin-bottom-2",
+       "size": "210.0x420.0",
+       "shadow": "rgba(10, 33, 65, 0.05) 0px 10px 20px 0px, rgba(0, 0, 0, 0.13) 0px 0px 2px 0px",
+       "radius": "8px"
+      },
+      {
+       "node": "span.template-license-label.is-free",
+       "size": "46.0x16.0",
+       "bg": "rgb(33, 152, 237)",
+       "shadow": "rgba(0, 0, 0, 0.06) 0px -1px 0px 0px inset",
+       "radius": "4px"
+      },
+      {
+       "node": "div.template-hover-overlay",
+       "size": "210.0x420.0",
+       "bg": "rgba(255, 255, 255, 0.96)"
+      },
+      {
+       "node": "a.button.crop",
+       "size": "178.0x42.5",
+       "bg": "rgb(16, 29, 36)",
+       "radius": "8px"
+      },
+      {
+       "node": "a.button.crop",
+       "size": "178.0x42.5",
+       "bg": "rgb(251, 117, 75)",
+       "radius": "8px"
       }
      ],
-     "crop": "components/crops/tpl-card-m-focus-visible.png",
-     "via": "Shift+Tab, Tab"
+     "textStyle": {
+      "node": "span.template-license-label.is-free",
+      "text": "Free",
+      "fontFamily": "InterVariable, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, Arial, sans-serif",
+      "fontSize": "9px",
+      "lineHeight": "9px",
+      "fontWeight": "600",
+      "letterSpacing": "0.5px",
+      "color": "rgb(255, 255, 255)",
+      "textDecorationLine": "none",
+      "textTransform": "uppercase"
+     },
+     "icon": {
+      "w": 10,
+      "h": 10,
+      "fill": "none",
+      "stroke": "none",
+      "color": "rgb(255, 255, 255)"
+     },
+     "cropError": "page.screenshot: Timeout 8000ms exceeded.\nCall log:\n  - taking page screenshot\n  - waiting for fonts to load...\n  - font",
+     "via": "at rest"
     },
-    "pressed": {
-     "tag": "a",
-     "classes": "",
-     "text": "EMAIL TEMPLATES",
+    "hover": {
+     "tag": "div",
+     "classes": "template-box margin-bottom-2",
+     "text": "FREE Kindred – Nonprofit Email Template for Environmental Fundraising Preview Ed",
      "rect": {
-      "x": 777.2,
-      "y": 68,
-      "w": 139,
-      "h": 15
+      "x": 40,
+      "y": 237.4,
+      "w": 210,
+      "h": 420
      },
      "style": {
-      "display": "inline",
+      "display": "block",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "auto",
-      "height": "auto",
+      "width": "210px",
+      "height": "420px",
       "minWidth": "0px",
       "maxWidth": "none",
       "minHeight": "0px",
       "paddingTop": "0px",
-      "paddingRight": "5px",
+      "paddingRight": "0px",
       "paddingBottom": "0px",
-      "paddingLeft": "5px",
+      "paddingLeft": "0px",
       "marginTop": "0px",
       "marginRight": "0px",
-      "marginBottom": "0px",
+      "marginBottom": "20px",
       "marginLeft": "0px",
       "gap": "normal",
       "rowGap": "normal",
@@ -15168,61 +15041,385 @@
       "gridTemplateColumns": "none",
       "borderTopWidth": "0px",
       "borderTopStyle": "none",
-      "borderTopColor": "rgb(251, 117, 75)",
+      "borderTopColor": "rgb(38, 171, 85)",
       "borderRightWidth": "0px",
       "borderRightStyle": "none",
-      "borderRightColor": "rgb(251, 117, 75)",
+      "borderRightColor": "rgb(38, 171, 85)",
       "borderBottomWidth": "0px",
       "borderBottomStyle": "none",
-      "borderBottomColor": "rgb(251, 117, 75)",
+      "borderBottomColor": "rgb(38, 171, 85)",
       "borderLeftWidth": "0px",
       "borderLeftStyle": "none",
-      "borderLeftColor": "rgb(251, 117, 75)",
-      "borderTopLeftRadius": "0px",
-      "borderTopRightRadius": "0px",
-      "borderBottomRightRadius": "0px",
-      "borderBottomLeftRadius": "0px",
+      "borderLeftColor": "rgb(38, 171, 85)",
+      "borderTopLeftRadius": "8px",
+      "borderTopRightRadius": "8px",
+      "borderBottomRightRadius": "8px",
+      "borderBottomLeftRadius": "8px",
       "backgroundColor": "rgba(0, 0, 0, 0)",
       "backgroundImage": "none",
-      "boxShadow": "none",
+      "boxShadow": "rgba(10, 33, 65, 0.05) 0px 18.296px 36.592px 0px, rgba(0, 0, 0, 0.13) 0px 0px 2px 0px",
       "backdropFilter": "none",
       "outlineWidth": "0px",
       "outlineStyle": "none",
-      "outlineColor": "rgb(251, 117, 75)",
+      "outlineColor": "rgb(38, 171, 85)",
       "outlineOffset": "0px",
       "fontFamily": "InterVariable, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, Arial, sans-serif",
-      "fontSize": "12px",
-      "fontWeight": "700",
-      "lineHeight": "18px",
-      "letterSpacing": "0.6px",
-      "textTransform": "uppercase",
-      "color": "rgb(251, 117, 75)",
+      "fontSize": "18px",
+      "fontWeight": "400",
+      "lineHeight": "27px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(38, 171, 85)",
       "textDecorationLine": "none",
-      "textDecorationColor": "rgb(251, 117, 75)",
+      "textDecorationColor": "rgb(38, 171, 85)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
-      "transitionProperty": "all",
-      "transitionDuration": "0.15s",
-      "transitionTimingFunction": "ease",
-      "transitionDelay": "0s",
-      "cursor": "pointer",
+      "transitionProperty": "transform, box-shadow, color",
+      "transitionDuration": "0.28s, 0.28s, 0.15s",
+      "transitionTimingFunction": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1), ease",
+      "transitionDelay": "0s, 0s, 0s",
+      "cursor": "default",
       "opacity": "1",
-      "transform": "none",
-      "overflow": "visible",
+      "transform": "matrix(1, 0, 0, 1, 0, -3.31841)",
+      "overflow": "hidden",
       "zIndex": "auto",
       "top": "auto"
+     },
+     "paint": [
+      {
+       "node": "div.template-box.margin-bottom-2",
+       "size": "210.0x420.0",
+       "shadow": "rgba(10, 33, 65, 0.05) 0px 18.296px 36.592px 0px, rgba(0, 0, 0, 0.13) 0px 0px 2px 0px",
+       "radius": "8px"
+      },
+      {
+       "node": "span.template-license-label.is-free",
+       "size": "46.0x16.0",
+       "bg": "rgb(33, 152, 237)",
+       "shadow": "rgba(0, 0, 0, 0.06) 0px -1px 0px 0px inset",
+       "radius": "4px"
+      },
+      {
+       "node": "div.template-hover-overlay",
+       "size": "210.0x420.0",
+       "bg": "rgba(255, 255, 255, 0.96)"
+      },
+      {
+       "node": "a.button.crop",
+       "size": "178.0x42.5",
+       "bg": "rgb(16, 29, 36)",
+       "radius": "8px"
+      },
+      {
+       "node": "a.button.crop",
+       "size": "178.0x42.5",
+       "bg": "rgb(251, 117, 75)",
+       "radius": "8px"
+      }
+     ],
+     "textStyle": {
+      "node": "span.template-license-label.is-free",
+      "text": "Free",
+      "fontFamily": "InterVariable, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, Arial, sans-serif",
+      "fontSize": "9px",
+      "lineHeight": "9px",
+      "fontWeight": "600",
+      "letterSpacing": "0.5px",
+      "color": "rgb(255, 255, 255)",
+      "textDecorationLine": "none",
+      "textTransform": "uppercase"
+     },
+     "icon": {
+      "w": 10,
+      "h": 10,
+      "fill": "none",
+      "stroke": "none",
+      "color": "rgb(255, 255, 255)"
+     },
+     "crop": "components/crops/tpl-card-m-hover.png",
+     "via": "mouse hover"
+    },
+    "focus-visible": {
+     "tag": "div",
+     "classes": "template-box margin-bottom-2",
+     "text": "FREE Kindred – Nonprofit Email Template for Environmental Fundraising Preview Ed",
+     "rect": {
+      "x": 40,
+      "y": 244.7,
+      "w": 210,
+      "h": 420
+     },
+     "style": {
+      "display": "block",
+      "position": "static",
+      "boxSizing": "border-box",
+      "width": "210px",
+      "height": "420px",
+      "minWidth": "0px",
+      "maxWidth": "none",
+      "minHeight": "0px",
+      "paddingTop": "0px",
+      "paddingRight": "0px",
+      "paddingBottom": "0px",
+      "paddingLeft": "0px",
+      "marginTop": "0px",
+      "marginRight": "0px",
+      "marginBottom": "20px",
+      "marginLeft": "0px",
+      "gap": "normal",
+      "rowGap": "normal",
+      "columnGap": "normal",
+      "flexDirection": "row",
+      "alignItems": "normal",
+      "justifyContent": "normal",
+      "gridTemplateColumns": "none",
+      "borderTopWidth": "0px",
+      "borderTopStyle": "none",
+      "borderTopColor": "rgb(16, 29, 36)",
+      "borderRightWidth": "0px",
+      "borderRightStyle": "none",
+      "borderRightColor": "rgb(16, 29, 36)",
+      "borderBottomWidth": "0px",
+      "borderBottomStyle": "none",
+      "borderBottomColor": "rgb(16, 29, 36)",
+      "borderLeftWidth": "0px",
+      "borderLeftStyle": "none",
+      "borderLeftColor": "rgb(16, 29, 36)",
+      "borderTopLeftRadius": "8px",
+      "borderTopRightRadius": "8px",
+      "borderBottomRightRadius": "8px",
+      "borderBottomLeftRadius": "8px",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "backgroundImage": "none",
+      "boxShadow": "rgba(10, 33, 65, 0.05) 0px 10px 20px 0px, rgba(0, 0, 0, 0.13) 0px 0px 2px 0px",
+      "backdropFilter": "none",
+      "outlineWidth": "0px",
+      "outlineStyle": "none",
+      "outlineColor": "rgb(16, 29, 36)",
+      "outlineOffset": "0px",
+      "fontFamily": "InterVariable, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, Arial, sans-serif",
+      "fontSize": "18px",
+      "fontWeight": "400",
+      "lineHeight": "27px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(16, 29, 36)",
+      "textDecorationLine": "none",
+      "textDecorationColor": "rgb(16, 29, 36)",
+      "textDecorationThickness": "auto",
+      "textUnderlineOffset": "auto",
+      "transitionProperty": "transform, box-shadow, color",
+      "transitionDuration": "0.28s, 0.28s, 0.15s",
+      "transitionTimingFunction": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1), ease",
+      "transitionDelay": "0s, 0s, 0s",
+      "cursor": "default",
+      "opacity": "1",
+      "transform": "none",
+      "overflow": "hidden",
+      "zIndex": "auto",
+      "top": "auto"
+     },
+     "paint": [
+      {
+       "node": "div.template-box.margin-bottom-2",
+       "size": "210.0x420.0",
+       "shadow": "rgba(10, 33, 65, 0.05) 0px 10px 20px 0px, rgba(0, 0, 0, 0.13) 0px 0px 2px 0px",
+       "radius": "8px"
+      },
+      {
+       "node": "span.template-license-label.is-free",
+       "size": "46.0x16.0",
+       "bg": "rgb(33, 152, 237)",
+       "shadow": "rgba(0, 0, 0, 0.06) 0px -1px 0px 0px inset",
+       "radius": "4px"
+      },
+      {
+       "node": "div.template-hover-overlay",
+       "size": "210.0x420.0",
+       "bg": "rgba(255, 255, 255, 0.96)"
+      },
+      {
+       "node": "a",
+       "size": "148.5x125.8",
+       "outline": "1px auto rgb(16, 16, 16) offset 1px"
+      },
+      {
+       "node": "a.button.crop",
+       "size": "178.0x42.5",
+       "bg": "rgb(16, 29, 36)",
+       "radius": "8px"
+      },
+      {
+       "node": "a.button.crop",
+       "size": "178.0x42.5",
+       "bg": "rgb(251, 117, 75)",
+       "radius": "8px"
+      }
+     ],
+     "textStyle": {
+      "node": "span.template-license-label.is-free",
+      "text": "Free",
+      "fontFamily": "InterVariable, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, Arial, sans-serif",
+      "fontSize": "9px",
+      "lineHeight": "9px",
+      "fontWeight": "600",
+      "letterSpacing": "0.5px",
+      "color": "rgb(255, 255, 255)",
+      "textDecorationLine": "none",
+      "textTransform": "uppercase"
+     },
+     "icon": {
+      "w": 10,
+      "h": 10,
+      "fill": "none",
+      "stroke": "none",
+      "color": "rgb(255, 255, 255)"
+     },
+     "crop": "components/crops/tpl-card-m-focus-visible.png",
+     "via": "Shift+Tab, Tab"
+    },
+    "pressed": {
+     "tag": "div",
+     "classes": "template-box margin-bottom-2",
+     "text": "FREE Kindred – Nonprofit Email Template for Environmental Fundraising Preview Ed",
+     "rect": {
+      "x": 40,
+      "y": 238.2,
+      "w": 210,
+      "h": 420
+     },
+     "style": {
+      "display": "block",
+      "position": "static",
+      "boxSizing": "border-box",
+      "width": "210px",
+      "height": "420px",
+      "minWidth": "0px",
+      "maxWidth": "none",
+      "minHeight": "0px",
+      "paddingTop": "0px",
+      "paddingRight": "0px",
+      "paddingBottom": "0px",
+      "paddingLeft": "0px",
+      "marginTop": "0px",
+      "marginRight": "0px",
+      "marginBottom": "20px",
+      "marginLeft": "0px",
+      "gap": "normal",
+      "rowGap": "normal",
+      "columnGap": "normal",
+      "flexDirection": "row",
+      "alignItems": "normal",
+      "justifyContent": "normal",
+      "gridTemplateColumns": "none",
+      "borderTopWidth": "0px",
+      "borderTopStyle": "none",
+      "borderTopColor": "rgb(31, 125, 69)",
+      "borderRightWidth": "0px",
+      "borderRightStyle": "none",
+      "borderRightColor": "rgb(31, 125, 69)",
+      "borderBottomWidth": "0px",
+      "borderBottomStyle": "none",
+      "borderBottomColor": "rgb(31, 125, 69)",
+      "borderLeftWidth": "0px",
+      "borderLeftStyle": "none",
+      "borderLeftColor": "rgb(31, 125, 69)",
+      "borderTopLeftRadius": "8px",
+      "borderTopRightRadius": "8px",
+      "borderBottomRightRadius": "8px",
+      "borderBottomLeftRadius": "8px",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "backgroundImage": "none",
+      "boxShadow": "rgba(10, 33, 65, 0.05) 0px 16.2721px 32.5442px 0px, rgba(0, 0, 0, 0.13) 0px 0px 2px 0px",
+      "backdropFilter": "none",
+      "outlineWidth": "0px",
+      "outlineStyle": "none",
+      "outlineColor": "rgb(31, 125, 69)",
+      "outlineOffset": "0px",
+      "fontFamily": "InterVariable, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, Arial, sans-serif",
+      "fontSize": "18px",
+      "fontWeight": "400",
+      "lineHeight": "27px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(31, 125, 69)",
+      "textDecorationLine": "none",
+      "textDecorationColor": "rgb(31, 125, 69)",
+      "textDecorationThickness": "auto",
+      "textUnderlineOffset": "auto",
+      "transitionProperty": "transform, box-shadow, color",
+      "transitionDuration": "0.28s, 0.28s, 0.15s",
+      "transitionTimingFunction": "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1), ease",
+      "transitionDelay": "0s, 0s, 0s",
+      "cursor": "default",
+      "opacity": "1",
+      "transform": "matrix(1, 0, 0, 1, 0, -2.50884)",
+      "overflow": "hidden",
+      "zIndex": "auto",
+      "top": "auto"
+     },
+     "paint": [
+      {
+       "node": "div.template-box.margin-bottom-2",
+       "size": "210.0x420.0",
+       "shadow": "rgba(10, 33, 65, 0.05) 0px 16.2721px 32.5442px 0px, rgba(0, 0, 0, 0.13) 0px 0px 2px 0px",
+       "radius": "8px"
+      },
+      {
+       "node": "span.template-license-label.is-free",
+       "size": "46.0x16.0",
+       "bg": "rgb(33, 152, 237)",
+       "shadow": "rgba(0, 0, 0, 0.06) 0px -1px 0px 0px inset",
+       "radius": "4px"
+      },
+      {
+       "node": "div.template-hover-overlay",
+       "size": "210.0x420.0",
+       "bg": "rgba(255, 255, 255, 0.96)"
+      },
+      {
+       "node": "a.button.crop",
+       "size": "178.0x42.5",
+       "bg": "rgb(16, 29, 36)",
+       "radius": "8px"
+      },
+      {
+       "node": "a.button.crop",
+       "size": "178.0x42.5",
+       "bg": "rgb(251, 117, 75)",
+       "radius": "8px"
+      }
+     ],
+     "textStyle": {
+      "node": "span.template-license-label.is-free",
+      "text": "Free",
+      "fontFamily": "InterVariable, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, Arial, sans-serif",
+      "fontSize": "9px",
+      "lineHeight": "9px",
+      "fontWeight": "600",
+      "letterSpacing": "0.5px",
+      "color": "rgb(255, 255, 255)",
+      "textDecorationLine": "none",
+      "textTransform": "uppercase"
+     },
+     "icon": {
+      "w": 10,
+      "h": 10,
+      "fill": "none",
+      "stroke": "none",
+      "color": "rgb(255, 255, 255)"
      },
      "crop": "components/crops/tpl-card-m-pressed.png",
      "via": "CDP forcePseudoState :active:hover"
     }
    },
    "page": "templates",
-   "run": "2026-11-13",
+   "run": "2026-11-14",
    "url": "https://designmodo.com/email-templates/",
    "title": "Template tile",
    "group": "Email-template gallery",
-   "desc": "An email-template tile in the gallery grid; measured, never followed.",
-   "selector": "template tile"
+   "desc": "An email-template tile in the marketing gallery grid (210x420, thumbnail + name + tags); measured, never followed.",
+   "selector": ".template-box"
   },
   "login-form": {
    "states": {
@@ -15354,7 +15551,7 @@
       {
        "node": "span::after.element",
        "size": "16pxx16px",
-       "bgImage": "url(data:\u2026)\\\"/></svg>\")"
+       "bgImage": "url(data:…)\\\"/></svg>\")"
       },
       {
        "node": "span.element",
@@ -15366,7 +15563,7 @@
       {
        "node": "span::after.element",
        "size": "16pxx16px",
-       "bgImage": "url(data:\u2026)\\\"/></svg>\")"
+       "bgImage": "url(data:…)\\\"/></svg>\")"
       },
       {
        "node": "button.button.small",
@@ -15523,7 +15720,7 @@
    "url": "https://designmodo.com/my-account/sign-in/",
    "title": "Sign-in heading",
    "group": "Sign-in form",
-   "desc": "\"Login to Designmodo\" \u2014 the 24px form heading.",
+   "desc": "\"Login to Designmodo\" — the 24px form heading.",
    "selector": "login h1"
   },
   "login-google": {
@@ -15931,7 +16128,7 @@
    "url": "https://designmodo.com/my-account/sign-in/",
    "title": "Google login",
    "group": "Sign-in form",
-   "desc": "\"Login with Google\" \u2014 measured, never pressed.",
+   "desc": "\"Login with Google\" — measured, never pressed.",
    "selector": "Login with Google"
   },
   "login-email": {
@@ -17409,7 +17606,7 @@
        "node": "span.word-animation.nobr",
        "size": "387.8x111.0",
        "bg": "rgb(16, 29, 36)",
-       "bgImage": "url(data:\u2026)"
+       "bgImage": "url(data:…)"
       },
       {
        "node": "span.type-caret",
