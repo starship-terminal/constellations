@@ -37,6 +37,16 @@ class KitQuantizeTest(unittest.TestCase):
             # marked set; give this complete two-tile set its manifest.
             if "parts.json" in source.read_text():
                 (raw / "page.parts.json").write_text('{"tiles": ["page.part0.png", "page.part1.png"]}')
+            # Stricter copies also require each tile's .capture.json sidecar:
+            # a passed dimension check and a butt-joined clip.
+            if "sidecar_for" in source.read_text():
+                import json as _json
+                (raw / "page.part0.png.capture.json").write_text(_json.dumps(
+                    {"dimensionCheck": {"status": "pass"},
+                     "capture": {"clip": {"x": 0, "y": 0, "width": 4, "height": 3}}}))
+                (raw / "page.part1.png.capture.json").write_text(_json.dumps(
+                    {"dimensionCheck": {"status": "pass"},
+                     "capture": {"clip": {"x": 0, "y": 3, "width": 4, "height": 5}}}))
             done = subprocess.run([sys.executable, str(script), str(raw)], capture_output=True, text=True)
             self.assertEqual(done.returncode, 0, done.stderr[-500:])
             with Image.open(raw / "page.png") as im:

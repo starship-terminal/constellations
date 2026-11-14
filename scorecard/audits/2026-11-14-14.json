@@ -1,7 +1,7 @@
 {
  "date": "2026-11-14",
  "rubric": "4",
- "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): post-review rebuild",
+ "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): public-web capture of epidemicsound.com on 2026-11-14 in headless Chromium at 1440x900 and 390x844; graded from the declared --es-* layer (raw/css-vars.json), the measured computed styles (raw/components-computed.json), the crops in components/crops/ and the screenshots/, against the web wording of scorecard/criteria.json",
  "systems": [
   {
    "slug": "brilliant",
@@ -15836,91 +15836,107 @@
    "reviewedPlatform": "web"
   },
   {
-   "slug": "expedia",
+   "slug": "epidemicsound",
    "grades": {
     "F1": {
      "grade": "partly",
-     "evidence": "EGDS declares literal role palettes, not hue ramps: 57 named colours per theme across 10 themes (light1, dark1/2, marketing1-3, bright1, romie, ai-local-1, eight loyalty tiers) in core.color.palette. They cover the brand blues, neutrals, status and tier hues but as role bindings, not ~10-step ramps per hue."
+     "evidence": "No ~10-step ramps: the --es-* layer is semantic roles plus named brand hues (azur, ecru, fog, moss, pink, red, stone, yellow under color.brand, 12 color.brand.extended variants, 9 color.data.visualization hues, black/white in core.color). A ramp per hue does not exist on this site."
     },
     "F2": {
      "grade": "meets",
-     "evidence": "egds.surface (page), surfaceContainer/Variant (raised greys #DFE0E4/#EFF3F7), surface{Low,Medium,High}Elevation, overlay + overlayScrimOpacity, scrim and buttonScrim in every themed set."
+     "evidence": "background.base (page: #f1f0eb ecru light, #121418 dark), surface, elevation (raised), floating, overlay.* (5) and backdrop (scrim) are declared and resolve in both theme sets; measured aliases background.page/canvas and dark.background.surface sit on top."
     },
     "F3": {
      "grade": "partly",
-     "evidence": "onSurface (primary) + onSurfaceVariant (secondary), on{Primary,Secondary,Tertiary} and per-container on- colours cover text and on-accent; link styling lives in component.link.* vars. No named disabled text role: EGDS expresses disabled through opacity layers (opacityDefault, *Opacity* tokens)."
+     "evidence": "text.primary, text.secondary, text.disabled, text.inverse/light/dark and on-accent (black text on the #ff82c2 banner, dark.action.accent measured from the genre banner) exist in both themes; no dedicated link role -- links share text.primary or the #9e9eff subcategory colour with no text.link token."
     },
     "F4": {
      "grade": "meets",
-     "evidence": "outline (default), outlineVariant (hairline), outlineFocus (#1668E3 light / #FFFFFF dark2); border colours also exist as component.borderColor vars."
+     "evidence": "border.primary/secondary/tertiary (default to strong progression) plus border.negative are declared in both themes; the focus role is measured: border.focus = #000 2px on light, #20afff azur 2px on dark (dark.border.focus, taken from an icon button's real focus-visible, not the cover button's 1px auto fallback)."
     },
     "F5": {
      "grade": "meets",
-     "evidence": "Accent states are explicit opacity steps: buttonOpacityOverlay{Default,Hover,Active} 64/72/92% scrims over egds.primary, primaryButtonHoverOpacity, buttonOpacityTertiaryInverse*; primaryVariant holds the pressed-variant colour."
+     "evidence": "color.action.accent.default/hovered/pressed/disabled are declared and resolved in both sets; the measured primary-fill states corroborate (black pill: #000 -> #272727 hover -> #333 pressed; white pill: #fff -> #e7e7e7 -> #cfcfcf)."
     },
     "F6": {
-     "grade": "meets",
-     "evidence": "positive, critical, featured and info each declare {role, roleContainer, onRole, onRoleContainer} — fill, container and text in every themed set."
+     "grade": "partly",
+     "evidence": "Danger and success are complete: action.negative and action.positive (4 states each) plus border.negative, text.negative and background.negative/positive in both themes. Warning is partial (background.caution, icon.caution only; no text/border caution) and no info role exists at all."
     },
     "F7": {
      "grade": "meets",
-     "evidence": "All five themed sets (light, dark, dark2, marketing3, bright1) carry the same 96 egds role names; the builder's parity check prints no gap, and every literal palette theme declares the same 57 colours."
+     "evidence": "Every declared --es-color-* role resolves under both the alternative-light and dark sets (159 vs 160 paths); the only divergence is the measured alias layer -- light-only action.secondary-hover, action.switch, background.page, text.ink vs dark-only action.accent, action.liked, background.canvas, background.surface, border.divider -- surface-specific names, not missing roles."
     },
     "F8": {
      "grade": "meets",
-     "evidence": "Centra No2 (text) and Reckless XPD (display) with full fallback stacks in core.type; per-style small/medium/large/extraLarge/overline size/line-height/tracking pieces and 10 composed typography.* styles covering display/headline/overline/text roles."
+     "evidence": "Two served families with the site's own fallback stacks (Sebenta display -> Georgia/Times/Noto, Inter UI -> Arial/Helvetica Neue); an 8-step heading scale (128px 3xl to 20px 2xs) plus subheading l/m/s, text xl/l/m/s/xs, button m/s/xs and overline m/s, each with weight, line-height and tracking tokens; named roles cover display, heading, subheading/label, body and caption (overline)."
     },
     "F9": {
-     "grade": "meets",
-     "evidence": "core.spacing: the declared --spacing__* step scale (33 steps on a rem base) plus semantic egds.spacing{Small..ExtraLarge} aliases and layout margins (spacingLayoutMinPageMargin*)."
+     "grade": "partly",
+     "evidence": "The site declares only Tailwind's --spacing base (0.25rem = 4px, tokenised core.spacing.unit) -- utilities compute steps from it. Measured spacing is real (grid padding 56/40/24, gutter 16, track-row gaps 16, 8/16 control padding) but there is no declared multi-step spacing scale."
     },
     "F10": {
      "grade": "meets",
-     "evidence": "core.radius: the --corner_radius__* scale, 11 steps 0x-10000x (fields and popovers 8px measured, cards 16px, pills/buttons full-round); border widths come through component field/input vars and measured borders."
+     "evidence": "core.radius carries the radii-override scale as shipped (button 10000px pill, surface 16, element 8, detail 4, tiny 2, circle) plus the zeroed base small/medium/large and tailwind sm/lg; border.width.input and border.width.select-input are declared."
     },
     "F11": {
      "grade": "meets",
-     "evidence": "core.sizing: 58 --sizing__* steps plus component-level control heights (button.smallSizingHeight, icon sizes) and the measured focus ring (measured.focus.*: 1px #101010 outline, offset 0-2px)."
+     "evidence": "Measured control heights: 44px pills, 56px CTAs/submit/social, 40x24 switch, 44px icon buttons, 56px social rounds, 54-56px fields, 56px track rows; icon sizes from the --es-i-* internals; focus ring measured 2px solid with the declared --es-i-focus-ring-offset 4px."
     },
     "F12": {
      "grade": "meets",
-     "evidence": "core.elevation: the --elevation__* shadow scale plus component elevations (button.paging-elevation); the measured overlays — calendar popover, sign-in card, menus — take the menu.container/sheet.standard elevation (0 2px 12px at 8% ink), cards sit on hairlines."
+     "evidence": "Three declared levels tied to uses: core.elevation.top and .bottom (rgba(0,0,0,.25) +/-8px 16px bars) and .floating (same shadow for floating layers) -- within the 3-5 range."
     },
     "F13": {
-     "grade": "partly",
-     "evidence": "7 duration steps + enter/exit/standard easing curves and egds.movement/appearance presets are all declared tokens. What changes under prefers-reduced-motion is not recorded."
+     "grade": "meets",
+     "evidence": "Declared motion.default.transition.duration 0.15s and timing function, motion.animation.duration 0.6s, easing.in-out/.out and named keyframes (lavalamp, marquee, pulse, slide-in). Reduced-motion is measured, not assumed: the pricing billing switch was read under both reducedMotion settings and its background-color 0.125s transition is identical under reduce and no-preference -- no reduced-motion restyle was observed on the measured control (raw/components-computed.json _meta.reducedMotion)."
     },
     "F14": {
      "grade": "partly",
-     "evidence": "raw/layout.json holds measured page geometry at 1440/1920/1024/390 (72px header, 1248px content column, 236px rail + 756px cards) and egds.spacingLayout* margins exist; breakpoints live in component.breakpoint vars but no z-index scale is tokenised."
+     "evidence": "breakpoint.md/nav, container.3xs/2xl/3xl/md, the full --es-grid-* scale (padding small/medium/large, gutter small/medium/large, page.maxWidth) are tokenised; z-index layers are not declared tokens -- the consent band at 2147483646/2147483647 and header z-10 were only observed, so the layers side is missing."
     },
     "C1": {
      "grade": "partly",
-     "evidence": "~15 of 19: button, icon button (heart, carousel arrow, bell), link, text field (destination, travelers, property-name), checkbox (bundle, filter), radio (guest-rating, stay-type), switch (compare), tabs (product, stay-type), menu (shop-travel, travelers, sort), dialog (calendar), card (property, deal, sign-in, map), badge (VIP, rating pill); list row partial (filter/menu items). No text area, select box, tooltip, toast, table or avatar painted on the signed-out surfaces, though EGDS declares vars for emptyState/errorSummary/avatar."
+     "evidence": "8 of 19 checklist components paint publicly: button (black/white pills, CTAs, plan/kc submits), icon button (track actions, social rounds, hamburger, show-password), link (nav, breadcrumbs, subcategory, footer), text field (kc-email, kc-password, su-field), switch (billing input[role=switch]), menu (mega menu, mobile drawer), card (genre banner, wantmore, Keycloak card, plan columns), list row (56px track/SFX rows). No text area, select, checkbox, radio, tabs, tooltip, dialog, toast, table, avatar or badge exists on the signed-out surface."
     },
     "C2": {
-     "grade": "partly",
-     "evidence": "hover (real pointer), focus-visible (real keyboard), pressed (CDP-forced :active:hover), selected (tab/day), focused/filled (destination field), open/opened (panels) all captured per components.md's state semantics; the stay-type radios even paint selected-and-disabled. Loading and error states never surface on the archived pages."
+     "grade": "meets",
+     "evidence": "Real hover and keyboard focus-visible plus DevTools-forced pressed on every interactive component, opened on the mega menu/billing switch/FAQ/hamburger, focused and filled on the auth fields (sample text typed and deleted, nothing sent). Disabled, loading and error states genuinely do not appear on the public surface -- a documented gap, not a missing capture."
     },
     "C3": {
      "grade": "meets",
-     "evidence": "Keyboard focus captured on header buttons, pills, fields and the Search button: 1px #101010 outline, heavier offset ring on primaries, and on children where the wrapper reads none — a blue border + inset ring inside the fields' input and a 1px outline on the hearts' inner button (measured.focus.* tokens; sign-in-button-focus-visible, search-submit-focus-visible crops)."
+     "evidence": "Visible focus captured for every interactive component: a 2px solid #000 ring on the light surface and 2px #20afff azur on dark, plus the form-group well lifting rgba(207,214,229,.16) -> .24 on field focus."
     },
     "C4": {
      "grade": "meets",
-     "evidence": "Every components.md entry is written as measurements with token labels — colours named against the matching palette token, sizes against the declared scales; component vars themselves are tokens under core.component.*."
+     "evidence": "components.md writes every colour as its hex value followed by the matching palette token in tokens.json, and sizes/roles as measured values aliased to the declared scale (font.size.measured.* -> font.size.heading.*)."
     },
     "P1": {
      "grade": "partly",
-     "evidence": "patterns.md covers the app shell (global header), search and filtering (multi-product search card, results rail), feedback (hover/focus/pressed + scrim model), data display (deal carousels, property card) and the mobile shell, plus a written empty/loading/error section. Destructive confirmation, onboarding and applied validation have no public signed-out surface; the sort-open state is screenshot-only."
+     "evidence": "patterns.md covers the ecru marketing chrome with mega menu, pricing (billing switch + plan columns + compare/FAQ), the dark catalog shell (banner + track rows + wantmore + FAQ + footer), the Keycloak auth forms, mobile and radii/focus/motion. Empty/loading/error, destructive confirmation, onboarding, feedback/toast and search patterns do not exist on the signed-out surface -- a documented boundary."
     },
     "A1": {
      "grade": "partly",
-     "evidence": "Fonts are named with their commercial status and free fallbacks (Centra No2 -> Inter, Reckless XPD -> Source Serif 4). Icon artwork is Expedia's proprietary artwork and is deliberately not kept (layoutGaps declares icons/ absent; role naming survives in component vars like icon.__spotlight__ sizing)."
+     "evidence": "No standalone SVG icon set lifted (declared layoutGap in catalog.json): the ES glyph, transport and social marks are visible in crops/screenshots. Fonts fully named with stacks and origin (Sebenta and Inter woff2 from cdn.epidemicsound.com, proprietary, not redistributed; the guide falls back to system fonts)."
     },
     "K1": {
      "grade": "meets",
-     "evidence": "The README states exactly what was captured (home + hotel results, signed out, 1440/390), how (Wayback SSR + live travel-assets.com CSS, static vs hydrated modes), and a full What to distrust list (archived markup vs live styles, foreign query content, unmeasured currency focus, unresolvable scrim/composite values)."
+     "evidence": "The README states what was captured (12 page targets, both surfaces, both widths), how (Playwright, computed styles, the four body-theme-class probes), and what to distrust (zeroed base radii, the real 0x0 play-button hover, quantisation banding, hidden-twin selectors, the missing SFX category card, auth/playback boundaries)."
+    },
+    "F15": {
+     "grade": "meets",
+     "evidence": "Script: all 8 pairs pass 4.5:1 across 2 themes; lowest 5.35:1 light muted (light.color.text.secondary) on surface (light.color.background.surface)"
+    },
+    "F16": {
+     "grade": "meets",
+     "evidence": "Script: 570 of 570 tokens name their source"
+    },
+    "K2": {
+     "grade": "partly",
+     "evidence": "Script: 9 rules, 6 linking an image (needs 3+, all linked)"
+    },
+    "K3": {
+     "grade": "meets",
+     "evidence": "Script: DESIGN.md matches a fresh generation"
     },
     "C5": {
      "grade": "na",
@@ -15933,41 +15949,22 @@
     "V2": {
      "grade": "na",
      "evidence": "Optional for a capture, and this product does not publish it."
-    },
-    "F15": {
-     "grade": "meets",
-     "evidence": "Script: all 20 pairs pass 4.5:1 across 5 themes; lowest 4.78:1 light muted (light.egds.onSurfaceVariant) on surface (light.egds.surfaceContainerVariant)"
-    },
-    "F16": {
-     "grade": "meets",
-     "evidence": "Script: 3478 of 3478 tokens name their source"
-    },
-    "K2": {
-     "grade": "meets",
-     "evidence": "Script: 10 rules, each linking a screenshot or crop"
-    },
-    "K3": {
-     "grade": "meets",
-     "evidence": "Script: DESIGN.md matches a fresh generation"
     }
    },
-   "name": "Expedia",
-   "goodFor": "Travel OTA in EGDS/UITK: the multi-product tabbed search card with 48px outlined fields and a pill-radius primary, 16px-radius cards and dialogs, a 57-role colour layer re-bound per data-theme attribute (light-1, marketing-3, dark, bright, loyalty tiers), Centra No2 with Reckless XPD display serif",
-   "url": "https://www.expedia.com",
+   "name": "Epidemic Sound",
+   "goodFor": "music-and-SFX-licensing design: a declared --es-* token layer (151 semantic colour roles, es-heading/subheading/text type scales, radii/elevation/grid/trackrow scales, Inter + Sebenta stacks) across two signed-out surfaces - an ecru alternative-light marketing site (pill header, serif display hero, #ff82c2 accent, black pill CTAs) and a dark catalog app (pink #ff82c2 genre banner, 56px track rows with cover-play buttons and icon actions, sticky pill nav) plus dark login.epidemicsound.com Keycloak forms",
+   "url": "https://www.epidemicsound.com",
    "captured": "2026-11-14",
    "themes": [
     "light",
-    "dark",
-    "dark2",
-    "marketing3",
-    "bright1"
+    "dark"
    ],
    "platform": "web",
-   "category": "Travel",
+   "category": "Media",
    "reviewed": "2026-11-14",
    "reviewedPlatform": "web"
   }
  ],
  "base": "2026-10-16",
- "reviewMethod": "post-review rebuild"
+ "reviewMethod": "public-web capture of epidemicsound.com on 2026-11-14 in headless Chromium at 1440x900 and 390x844; graded from the declared --es-* layer (raw/css-vars.json), the measured computed styles (raw/components-computed.json), the crops in components/crops/ and the screenshots/, against the web wording of scorecard/criteria.json"
 }

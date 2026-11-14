@@ -3,11 +3,11 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 124,
-    "system_domains": 116,
-    "matched_domains": 91,
-    "missing_domains": 342,
-    "system_domains_absent_from_catalog": 25
+    "system_packages": 134,
+    "system_domains": 126,
+    "matched_domains": 99,
+    "missing_domains": 334,
+    "system_domains_absent_from_catalog": 27
   },
   "matched": {
     "1password.com": {
@@ -1035,6 +1035,23 @@
         }
       ]
     },
+    "descript.com": {
+      "catalog": [
+        {
+          "name": "Descript",
+          "domain": "descript.com",
+          "id": 29
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "descript",
+          "name": "Descript",
+          "url": "https://www.descript.com",
+          "name_match": true
+        }
+      ]
+    },
     "dock.us": {
       "catalog": [
         {
@@ -1389,6 +1406,125 @@
           "name": "Endless Tools",
           "url": "https://endlesstools.io",
           "name_match": false
+        }
+      ]
+    },
+    "enode.com": {
+      "catalog": [
+        {
+          "name": "Enode",
+          "domain": "enode.com",
+          "id": 599
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "enode",
+          "name": "Enode",
+          "url": "https://enode.com",
+          "name_match": true
+        }
+      ]
+    },
+    "epicgames.com": {
+      "catalog": [
+        {
+          "name": "Epic Games",
+          "domain": "epicgames.com",
+          "id": 84
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "epicgames",
+          "name": "Epic Games Store",
+          "url": "https://store.epicgames.com",
+          "name_match": false
+        }
+      ]
+    },
+    "epidemicsound.com": {
+      "catalog": [
+        {
+          "name": "Epidemic Sound",
+          "domain": "epidemicsound.com",
+          "id": 75
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "epidemicsound",
+          "name": "Epidemic Sound",
+          "url": "https://www.epidemicsound.com",
+          "name_match": false
+        }
+      ]
+    },
+    "esquire.com": {
+      "catalog": [
+        {
+          "name": "Esquire",
+          "domain": "esquire.com",
+          "id": 102
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "esquire",
+          "name": "Esquire",
+          "url": "https://www.esquire.com",
+          "name_match": true
+        }
+      ]
+    },
+    "exa.ai": {
+      "catalog": [
+        {
+          "name": "Exa",
+          "domain": "exa.ai",
+          "id": 898
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "exa",
+          "name": "Exa",
+          "url": "https://exa.ai",
+          "name_match": true
+        }
+      ]
+    },
+    "exactly.ai": {
+      "catalog": [
+        {
+          "name": "Exactly.ai",
+          "domain": "exactly.ai",
+          "id": 645
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "exactly",
+          "name": "Exactly.ai",
+          "url": "https://exactly.ai",
+          "name_match": true
+        }
+      ]
+    },
+    "excalidraw.com": {
+      "catalog": [
+        {
+          "name": "Excalidraw",
+          "domain": "excalidraw.com",
+          "id": 477
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "excalidraw",
+          "name": "Excalidraw",
+          "url": "https://excalidraw.com",
+          "name_match": true
         }
       ]
     },
@@ -1747,13 +1883,6 @@
         "id": 670
       }
     ],
-    "descript.com": [
-      {
-        "name": "Descript",
-        "domain": "descript.com",
-        "id": 29
-      }
-    ],
     "designmodo.com": [
       {
         "name": "Designmodo",
@@ -1803,60 +1932,11 @@
         "id": 332
       }
     ],
-    "enode.com": [
-      {
-        "name": "Enode",
-        "domain": "enode.com",
-        "id": 599
-      }
-    ],
-    "epicgames.com": [
-      {
-        "name": "Epic Games",
-        "domain": "epicgames.com",
-        "id": 84
-      }
-    ],
-    "epidemicsound.com": [
-      {
-        "name": "Epidemic Sound",
-        "domain": "epidemicsound.com",
-        "id": 75
-      }
-    ],
     "equals.app": [
       {
         "name": "Equals",
         "domain": "equals.app",
         "id": 289
-      }
-    ],
-    "esquire.com": [
-      {
-        "name": "Esquire",
-        "domain": "esquire.com",
-        "id": 102
-      }
-    ],
-    "exa.ai": [
-      {
-        "name": "Exa",
-        "domain": "exa.ai",
-        "id": 898
-      }
-    ],
-    "exactly.ai": [
-      {
-        "name": "Exactly.ai",
-        "domain": "exactly.ai",
-        "id": 645
-      }
-    ],
-    "excalidraw.com": [
-      {
-        "name": "Excalidraw",
-        "domain": "excalidraw.com",
-        "id": 477
       }
     ],
     "explore.family": [
@@ -4079,11 +4159,27 @@
         "ios_guess": []
       }
     ],
+    "delphi.co": [
+      {
+        "slug": "delphi",
+        "name": "Delphi",
+        "url": "https://www.delphi.co",
+        "ios_guess": []
+      }
+    ],
     "devin.ai": [
       {
         "slug": "devin-desktop",
         "name": "Devin (desktop)",
         "url": "https://devin.ai",
+        "ios_guess": []
+      }
+    ],
+    "equals.com": [
+      {
+        "slug": "equals",
+        "name": "Equals",
+        "url": "https://equals.com",
         "ios_guess": []
       }
     ],
