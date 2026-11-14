@@ -26,7 +26,7 @@ systems/duolingo/tools/capture/css-stats.md
 /site/
 /web/data/
 docs/scorecard/
-/.venv/
+/.venv
 # Local secrets (API keys, R2 credentials); see .env.example.
 .env
 __pycache__/

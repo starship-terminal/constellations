@@ -30,7 +30,7 @@ What is not finished in this library. Newest first.
   F13's wording could later require it (a rubric version bump and a re-review of
   every package). Still open: capture never records z-index layers (F14 capped at
   partly ×20).
-- [ ] **Capture batches 2–21** — 398 apps remain in
+- [ ] **Capture batches 2–21** — 318 apps remain (pending) in
   [webapps-manifest.json](../webapps-manifest.json); procedure is
   [HANDOVER.md](HANDOVER.md).
 
