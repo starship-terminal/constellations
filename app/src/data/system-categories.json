@@ -606,6 +606,12 @@
     "reason": "catalog.json describes a music-streaming catalog: marketing, public charts and album pages, a signed-out player, and account forms."
   },
   {
+    "referenceId": "systems:descript",
+    "groupId": "web-categories",
+    "labels": ["AI Tool", "Productivity"],
+    "reason": "catalog.json describes an AI video/audio editing product's marketing surfaces: workflow tabs, pricing tiers and template galleries — the AI Tool label."
+  },
+  {
     "referenceId": "systems:deel",
     "groupId": "web-categories",
     "labels": ["Productivity"],
@@ -750,12 +756,66 @@
     "reason": "catalog.json describes an energy-device integration API platform: a per-page light/dark data-mode marketing site with gated platform and docs surfaces."
   },
   {
+    "referenceId": "systems:faire",
+    "groupId": "web-categories",
+    "labels": ["Marketplace"],
+    "reason": "catalog.json describes a wholesale marketplace: category teasers, a brand storefront, supplier listings and auth dialogs, with the signed-in marketplace a documented boundary."
+  },
+  {
     "referenceId": "systems:delphi",
     "groupId": "web-categories",
     "labels": ["AI Tool", "Productivity"],
     "reason": "catalog.json describes an AI-clone Q&A product: ask fields, discover galleries, public search results, expert profiles and a chat composer."
   },
   {
+    "referenceId": "systems:esquire",
+    "groupId": "web-categories",
+    "labels": ["Magazines & Newspapers", "Lifestyle"],
+    "reason": "catalog.json describes a men's magazine site: editorial chrome, story cards, plan/subscribe cards, FAQ and newsletter surfaces."
+  },
+  {
+    "referenceId": "systems:exa",
+    "groupId": "web-categories",
+    "labels": ["AI Tool", "Development Tools"],
+    "reason": "catalog.json describes an AI-search developer API: marketing site, model/pricing pages, docs and a gated console."
+  },
+  {
+    "referenceId": "systems:exactly",
+    "groupId": "web-categories",
+    "labels": ["AI Tool", "Design & Media Editing"],
+    "reason": "catalog.json describes an AI design-generation tool: marketing site with case studies, pricing tiers and gated product surfaces."
+  },
+  {
+    "referenceId": "systems:equals",
+    "groupId": "web-categories",
+    "labels": ["Productivity", "Business"],
+    "reason": "catalog.json describes an AI spreadsheet and analytics product: marketing site, workbook product tour and gated app surfaces."
+  },
+  {
+    "referenceId": "systems:epicgames",
+    "groupId": "web-categories",
+    "labels": ["Marketplace", "Entertainment"],
+    "reason": "catalog.json describes a games storefront and launcher: store home, product pages, free-games promos and gated library/checkout surfaces."
+  },
+  {
+    "referenceId": "systems:excalidraw",
+    "groupId": "web-categories",
+    "labels": ["Design & Media Editing", "Productivity"],
+    "reason": "catalog.json describes a whiteboard/drawing editor: tool islands, a properties sidebar, a shape library and image export on a signed-out public canvas."
+  },
+  {
+    "referenceId": "systems:expedia",
+    "groupId": "web-categories",
+    "labels": ["Travel & Booking"],
+    "reason": "catalog.json describes a travel OTA: multi-product stay/flight/car search, deal carousels, hotel results and filter rail."
+  },
+  {
+    "referenceId": "systems:fable",
+    "groupId": "web-categories",
+    "labels": ["Books", "Social Networking"],
+    "reason": "catalog.json describes a book-club and reading product: club directories and detail pages, a book catalog with an ebook store, a /discover cover wall, sign-in, support and a blog. Post-login reader and club surfaces are gated."
+  },
+{
     "referenceId": "systems:factory",
     "groupId": "web-categories",
     "labels": ["AI Tool", "Development Tools"],

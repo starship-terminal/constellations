@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exa style guide</title>
+<meta name="description" content="Exa design tokens and the public marketing, sign-in and docs surfaces' components, rendered from tokens.json with the declared and measured values.">
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  --sg-sans: "ABCDiatype", "ABC Diatype Unlicensed Trial", "Trebuchet MS", ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-serif: Arizona, "ABC Arizona Flare", Georgia, "Times New Roman", serif;
+  --sg-mono: SuisseIntlMono, "Paper Mono", "Geist Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+[data-mode="dark"], .dark {
+/*DARK*/
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--color-neutral-charcoal, #111); background: var(--color-neutral-cream, #faf9f7); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 400 48px/1 var(--sg-serif); margin: 0 0 4px; letter-spacing: -0.01em; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--color-neutral-charcoal, #111); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--color-gray-200, rgba(0,0,0,.08)); }
+.lead { max-width: 62ch; color: var(--color-neutral-charcoal, #111); opacity: .8; }
+.note { font-size: 13px; color: var(--color-neutral-charcoal, #111); opacity: .65; max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--color-neutral-charcoal, #111); opacity: .6; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.pal.dark { background: var(--docs-surface, #0b0b10); padding: 10px; border-radius: 8px; }
+.pal.dark .nm, .pal.dark .vl { color: #e5e5ea; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--color-gray-200, rgba(0,0,0,.08)); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--color-neutral-charcoal, #111); opacity: .65; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--color-neutral-charcoal, #111); opacity: .65; }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--color-gray-200, rgba(0,0,0,.08)); overflow: hidden; background: var(--marketing-surface, #faf9f7); }
+.ann { display: flex; align-items: center; justify-content: center; height: var(--component-banner-height, 48px); font-size: 13px; color: var(--color-brand-default, #1f40ed); background: var(--marketing-announce-surface, var(--color-brand-fainter, #e7ebfd)); }
+.mnav { display: flex; align-items: center; gap: 22px; height: var(--size-nav, 55px); padding: 0 12px 0 22px; font-size: 14px; color: var(--marketing-text, #111); background: var(--marketing-surface, #faf9f7); border-bottom: 1px solid var(--marketing-header-line, rgba(0,0,0,.07)); }
+.mnav .wm { font-weight: 700; font-size: 20px; letter-spacing: -0.02em; }
+.mnav .sp { flex: 1; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-signup-height, 34px); padding: 0 18px; font-size: 13px; font-weight: 500; border-radius: var(--radius-pill, 1000px); border: 1px solid transparent; }
+.btn.black { background: var(--marketing-action, #111); color: var(--marketing-on-action, #fff); }
+.btn.sales { border-color: var(--marketing-sales-border, rgba(0,0,0,.12)); color: var(--marketing-text, #111); }
+.btn.blue { background: var(--marketing-run-fill, var(--color-brand-default, #1f40ed)); color: #fff; }
+.hero { color: var(--marketing-text, #111); padding: 72px 40px; font: 400 64px/1 var(--sg-serif); letter-spacing: -0.01em; text-align: center; background: var(--marketing-surface, #faf9f7); }
+.hero small { display: block; font: 400 18px/1.5 var(--sg-sans); color: var(--marketing-muted, rgba(0,0,0,.6)); margin: 16px auto 22px; max-width: 46ch; }
+.caprow { display: flex; gap: 8px; justify-content: center; margin-top: 8px; }
+/* demo widget mock */
+.demo { max-width: 640px; margin: 26px auto 56px; border: 1px solid var(--color-gray-200, rgba(0,0,0,.08)); border-radius: var(--radius-10, 10px); background: var(--marketing-demo-surface, #fff); padding: 14px; font-size: 13px; text-align: left; }
+.demo .q { height: var(--component-demo-field-height, 56px); display: flex; align-items: center; padding: 0 14px; border: 1px solid var(--color-gray-200, rgba(0,0,0,.08)); border-radius: var(--radius-8, 8px); color: var(--marketing-placeholder, rgba(0,0,0,.55)); margin-bottom: 10px; }
+.demo .modes { display: inline-flex; gap: 4px; padding: 3px; background: var(--color-gray-100, #f5f5f5); border-radius: var(--radius-8, 8px); margin-bottom: 12px; }
+.demo .modes span { padding: 4px 12px; border-radius: 6px; font-weight: 500; }
+.demo .modes .on { background: #fff; box-shadow: 0 1px 2px rgba(0,0,0,.08); }
+.demo .lbl { font: 500 10px/1.6 var(--sg-sans); letter-spacing: .08em; color: var(--marketing-muted, rgba(0,0,0,.5)); }
+.demo .pills { display: flex; gap: 6px; margin: 2px 0 10px; }
+.demo .pill { height: var(--component-demo-pill-height, 30px); display: inline-flex; align-items: center; padding: 0 12px; border-radius: var(--radius-pill, 1000px); border: 1px solid var(--color-gray-200, rgba(0,0,0,.1)); font-weight: 500; color: var(--marketing-muted, rgba(0,0,0,.6)); }
+.demo .pill.on { background: var(--color-neutral-charcoal, #111); color: #fff; border-color: transparent; }
+.demo .run { float: right; width: 30px; height: 30px; border-radius: var(--radius-8, 8px); }
+.eyebrow { font: 500 12px/1.8 var(--sg-mono); letter-spacing: .02em; color: var(--color-brand-default, #1f40ed); text-transform: uppercase; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
+.tile { border: 1px solid var(--color-gray-200, rgba(0,0,0,.08)); padding: 24px; font-size: 13px; background: var(--color-neutral-white, #fff); border-radius: var(--radius-10, 10px); }
+.tile b { display: block; font: 400 30px/1.1 var(--sg-serif); margin-bottom: 4px; }
+.tile .sub { opacity: .65; font-size: 12px; }
+/* pricing table mock — one row-divided grid, not three cards */
+.usecases { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin: 0 0 14px; }
+.usecases .cap { font: 500 10px/1.6 var(--sg-sans); letter-spacing: .08em; color: var(--marketing-muted, rgba(0,0,0,.5)); margin-right: 4px; }
+.usecases .pill { height: 28px; display: inline-flex; align-items: center; padding: 0 12px; border-radius: var(--radius-docs, 6px); border: 1px solid rgba(17,17,17,.12); font-size: 12px; font-weight: 500; color: rgb(75,85,99); }
+.plans { display: grid; grid-template-columns: repeat(3, 1fr); font-size: 13px; color: var(--marketing-text, #111); background: var(--color-neutral-white, #fff); }
+.plans .pcol { display: flex; flex-direction: column; padding: 0 18px 18px; border-left: 1px solid var(--color-gray-200, rgba(0,0,0,.08)); }
+.plans .pcol:first-child { border-left: 0; padding-left: 0; }
+.plans .pcol:last-child { padding-right: 0; }
+.phead { border-radius: var(--radius-10, 10px); padding: 16px 18px; background: rgb(245,244,241); margin-bottom: 14px; }
+.phead.blue { background: var(--color-brand-default, #1f40ed); color: #fff; }
+.phead .tier { display: block; font: 500 11px/1 var(--sg-sans); letter-spacing: .1em; opacity: .75; margin-bottom: 10px; }
+.phead .price { display: block; font: 400 32px/1.1 var(--sg-serif); margin-bottom: 10px; }
+.phead .pdesc { display: block; font-size: 12px; line-height: 1.45; opacity: .8; }
+.pact { display: flex; gap: 8px; padding: 0 0 14px; border-bottom: 1px solid var(--color-gray-200, rgba(0,0,0,.08)); }
+.pact .btn { flex: 1; }
+.pfeat { padding-top: 12px; }
+.pfeat .fl { font: 500 10px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; opacity: .5; margin-bottom: 4px; }
+.pfeat span { display: block; padding: 6px 0; border-bottom: 1px solid var(--color-gray-200, rgba(0,0,0,.07)); }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--color-gray-200, rgba(0,0,0,.08)); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--color-gray-200, rgba(0,0,0,.08)); }
+.tr .ts { font-family: var(--sg-serif); }
+.tr .tv { font-size: 12px; color: var(--color-neutral-charcoal, #111); opacity: .65; font-family: var(--sg-mono); }
+/* sign-in mock */
+.sgw { background: var(--signin-card, #fff); border: 1px solid var(--color-gray-200, rgba(0,0,0,.08)); padding: 28px; display: flex; justify-content: center; }
+.sgcard { width: var(--component-auth-card-width, 340px); font-family: var(--sg-sans); color: var(--signin-text, #1a1a1a); }
+.sgcard h3 { font-size: 22px; font-weight: 500; margin: 0 0 4px; color: var(--signin-heading, #1a1a1a); font-family: var(--sg-serif); }
+.sgcard p { font-size: 12px; color: var(--signin-text, #6b7280); margin: 0 0 14px; opacity: .8; }
+.sgbtn { height: var(--component-auth-button-height, 36px); border-radius: var(--radius-8, 8px); display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 500; margin-bottom: 8px; }
+.sgbtn.google { border: 1px solid var(--signin-google-border, rgba(0,0,0,.12)); color: var(--signin-text, #1a1a1a); background: #fff; }
+.sgbtn.mail { background: var(--signin-action, var(--color-brand-default, #1f40ed)); color: var(--signin-on-action, #fff); }
+.sgfield { height: var(--component-auth-field-height, 36px); border-radius: var(--radius-auth-field, 8px); border: 1px solid var(--signin-field-border, rgba(0,0,0,.12)); background: var(--signin-field, #fff); display: flex; align-items: center; padding: 0 10px; font-size: 13px; color: var(--signin-placeholder, #9ca3af); margin-bottom: 8px; }
+/* docs mock */
+.dgw { display: flex; border: 1px solid var(--docs-border, #eeeff5); border-radius: var(--radius-10, 10px); overflow: hidden; background: var(--docs-surface, #fff); font-family: Inter, var(--sg-sans); }
+.dgw .dsb { width: var(--component-docs-sidebar-width, 270px); border-right: 1px solid var(--docs-rail-line, var(--docs-border, #eeeff5)); padding: 12px; font-size: 13px; }
+.dgw .dni { height: var(--component-docs-nav-item-height, 30px); display: flex; align-items: center; padding: 0 10px; border-radius: var(--radius-4, 4px); color: var(--docs-nav-text, #5c5c66); }
+.dgw .dni.on { background: var(--docs-nav-active, rgba(24,64,237,.08)); color: var(--docs-primary, #1840ed); }
+.dgw .dse { height: var(--component-docs-search-height, 32px); border-radius: var(--radius-pill, 1000px); background: var(--docs-field, rgba(0,0,0,.03)); display: flex; align-items: center; padding: 0 14px; font-size: 13px; color: var(--docs-nav-text, #5c5c66); margin-bottom: 10px; }
+.dgw .dco { flex: 1; padding: 20px 28px; }
+.dgw .dco h3 { font-size: 24px; font-weight: 600; margin: 0 0 8px; color: var(--docs-text, #1a1a1d); }
+.dgw .dco p { font-size: 14px; color: var(--docs-body-text, #3c3c42); margin: 0 0 10px; }
+.dgw .dco code.ic { background: var(--docs-code-bg, rgba(0,0,0,.04)); color: var(--docs-link, var(--docs-primary, #1840ed)); border-radius: var(--radius-4, 4px); padding: 1px 5px; font-family: var(--sg-mono); }
+.dgw.dark { background: var(--docs-surface, #0b0b10); border-color: var(--docs-border, #26272c); }
+.dgw.dark .dsb { border-right-color: var(--docs-border, #26272c); }
+.dgw.dark .dni { color: var(--docs-nav-text, #a1a1aa); }
+.dgw.dark .dni.on { background: var(--docs-nav-active, rgba(24,64,237,.16)); }
+.dgw.dark .dse { color: var(--docs-nav-text, #a1a1aa); background: var(--docs-field, rgba(255,255,255,.05)); }
+.dgw.dark .dco h3 { color: var(--docs-text, #e4e4e7); }
+.dgw.dark .dco p { color: var(--docs-body-text, #a1a1aa); }
+.dgw.dark .dco code.ic { background: var(--docs-code-bg, rgba(255,255,255,.06)); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Exa style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">Exa, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the declared <code>--brand-*</code>/<code>--gray-*</code>/<code>--secondary-*</code>/<code>--cream</code> marketing layer, the auth.exa.ai sign-in card's <code>--text-light-*</code>/<code>--secondary-*</code> layer, and the docs' Mintlify <code>--primary</code>/<code>--gray-*</code>/<code>--color-*</code>/<code>--docs-*</code>/<code>--twoslash-*</code> layer — ABCDiatype and Arizona on marketing, ABC Diatype Unlicensed Trial and Geist Mono on the auth card, Inter and Paper Mono on the docs — plus the measured control heights, radii and component geometry. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from exa.ai, auth.exa.ai and exa.ai/docs on 2026-11-14, signed out, in headless Chromium. Everything behind the sign-in — dashboard, API keys, playground, websets — is a documented boundary; the fields were measured and filled then cleared, never submitted; the demo's Run-preview arrow was never pressed. The named faces are served trial fonts and are not loaded here: samples fall back to system sans, Georgia and ui-monospace.</p>
+
+  <h2 class="sh">Marketing chrome and the search demo</h2>
+  <p class="lead">The exa.ai header is a 55px bar under the 48px Exa 3.0 announcement strip; the hero sets 'The world's data for AI agents' in Arizona, above the black 'Try API for free' pill and the live demo widget — query field, Search/Agent toggle, LATENCY and CATEGORY pills, OUTPUT tabs and the blue Run-preview arrow.</p>
+  <div class="mock">
+    <div class="ann">Introducing Exa 3.0: Our largest ever improvement to search quality · Learn more</div>
+    <div class="mnav"><span class="wm">exa</span><span>Products</span><span>Solutions</span><span>Resources</span><span>Docs</span><span>Pricing</span><span class="sp"></span><span>Sign in</span><span class="btn sales">Contact sales</span><span class="btn black">Sign up</span></div>
+    <div class="hero">The world's data for AI agents<small>Search the largest index of public web and private information.</small>
+      <div class="caprow"><span class="btn black">Try API for free</span></div>
+      <div class="demo">
+        <div class="q">Find anything…</div>
+        <div class="modes"><span class="on">Search</span><span>Agent</span></div>
+        <div class="lbl">LATENCY</div>
+        <div class="pills"><span class="pill">Lite 300ms</span><span class="pill on">Auto 1s</span><span class="pill">Deep ~10s</span><span class="btn blue run">&#8593;</span></div>
+        <div class="lbl">CATEGORY</div>
+        <div class="pills"><span class="pill on">Full Web</span><span class="pill">News</span><span class="pill">Companies</span><span class="pill">Research</span></div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="sh">Pricing</h2>
+  <p class="lead">/pricing keeps the cream field; the use-case pills switch the scenario locally, and the plans paint as one row-divided table rather than three cards — a tinted header tile per tier (the Starter tile in the brand blue, the others on the greige field), the price set in Arizona, a black action row and checkmarked Includes rows.</p>
+  <div class="mock" style="padding:20px">
+    <div class="usecases"><span class="cap">USE CASES</span><span class="pill">Coding agents</span><span class="pill">Chatbots</span><span class="pill">News monitoring</span><span class="pill">Enrichments</span><span class="pill">Voice agents</span><span class="pill">People search</span><span class="pill">Company search</span></div>
+    <div class="plans">
+      <div class="pcol">
+        <div class="phead blue"><span class="tier">STARTER</span><span class="price">Free</span><span class="pdesc">$10 credits every month plus a $10 onboarding bonus. No payment method required.</span></div>
+        <div class="pact"><span class="btn black" style="height:38px">Start building for free</span></div>
+        <div class="pfeat"><div class="fl">Includes:</div><span>&#10003; Free $10 credits per month</span><span>&#10003; MCP server access</span><span>&#10003; Claude Connector</span><span>&#10003; 10 Search Queries Per Second (QPS)</span></div>
+      </div>
+      <div class="pcol">
+        <div class="phead"><span class="tier">DEVELOPER</span><span class="price">Pay as you go</span><span class="pdesc">Use the Search API with no commitment with our flexible per-request pricing</span></div>
+        <div class="pact"><span class="btn black" style="height:38px">Get an API key</span></div>
+        <div class="pfeat"><div class="fl">Includes:</div><span>&#10003; Everything in Starter</span><span>&#10003; PAYGO usage-based billing</span><span>&#10003; Standard email support</span><span>&#10003; Up to 25 Search QPS</span></div>
+      </div>
+      <div class="pcol">
+        <div class="phead"><span class="tier">ENTERPRISE</span><span class="price">Custom</span><span class="pdesc">Tailored for your organization to solve for large scale requirements and enterprise needs</span></div>
+        <div class="pact"><span class="btn black" style="height:38px">Upgrade now</span><span class="btn sales" style="height:38px">Talk to sales</span></div>
+        <div class="pfeat"><div class="fl">Includes:</div><span>&#10003; Everything in Developer</span><span>&#10003; Zero data retention</span><span>&#10003; 25 Search QPS</span></div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="sh">Sign in</h2>
+  <p class="lead">dashboard.exa.ai redirects to a single signed-out card on auth.exa.ai: 'Start building with Exa' in Arizona Flare, a bordered Continue-with-Google button, a black Continue-with-email action and the e-mail field — measured, never submitted.</p>
+  <div class="mock sgw">
+    <div class="sgcard"><h3>Start building with Exa</h3><p>Sign in to get your API key.</p><span class="sgbtn google">Continue with Google</span><span class="sgbtn mail">Continue with email</span><div class="sgfield">Email</div><p style="margin-top:10px">Single sign-on for teams →</p></div>
+  </div>
+
+  <h2 class="sh">Docs shell</h2>
+  <p class="lead">exa.ai/docs is the one surface with a real theme switch: the light shell paints a rail on white with Inter text and the #1840ed primary; html.dark flips to the #0b0b10 canvas, #26272c borders and washed code surfaces, keeping the same primary.</p>
+  <div class="dgw"><div class="dsb"><div class="dse">Search…</div><div class="dni on">Quickstart</div><div class="dni">Search</div><div class="dni">Agent</div></div><div class="dco"><h3>Start building with Exa</h3><p>Exa is a search engine built for AI. Call <code class="ic">exa.search()</code> to get clean web content.</p><p>Read the <a style="color:var(--docs-link,var(--docs-primary,#1840ed))">quickstart</a> first.</p></div></div>
+  <div class="dgw dark" style="margin-top:14px"><div class="dsb"><div class="dse">Search…</div><div class="dni on">Quickstart</div><div class="dni">Search</div><div class="dni">Agent</div></div><div class="dco"><h3>Start building with Exa</h3><p>Exa is a search engine built for AI. Call <code class="ic">exa.search()</code> to get clean web content.</p><p>Read the <a style="color:var(--docs-link,#96b0eb)">quickstart</a> first.</p></div></div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead"><code>core.color.brand</code> is the marketing #1f40ed scale, <code>core.color.neutral</code> the cream/greige/gold/charcoal field colours, <code>core.color.gray</code>/<code>core.color.secondary</code>/<code>core.color.accent</code>/<code>core.color.darkAccent</code>/<code>core.color.text</code>/<code>core.color.named</code> the rest of the declared marketing layer, <code>core.color.auth</code> the sign-in card's own values, and <code>core.color.docs</code> the Mintlify layer — its own cool <code>gray.*</code> ramp, the <code>primary</code> triplet and the <code>mintlify.*</code> design roles. The light set carries the measured <code>marketing.*</code>/<code>signin.*</code>/<code>docs.*</code> roles — each aliases the declared token it matches — and the dark set the docs' dark roles.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Metrics and radius</h2>
+  <p class="lead">The header is 55px under a 48px announcement strip; pills use the declared 1000px radius, cards 10px, fields 8px and the docs' chip radius is 6px. Containers are the declared page widths; breakpoints are the declared @media widths of the public sheets.</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Motion</h2>
+  <div id="motion-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">Marketing runs ABCDiatype for UI and Arizona for display; the sign-in card sets ABC Diatype Unlicensed Trial with ABC Arizona Flare and Geist Mono; the docs set Inter with Paper Mono code and the marketing face for headings. Sizes are the measured steps; samples fall back to system faces.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared --brand-*/--gray-*/--primary/--color-* layer from the live stylesheets and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, filled and open states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = /*TOKENS*/null;
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  for (const [setname, label] of [['light', 'light roles (marketing / sign-in / docs)'], ['dark', 'dark roles (docs only)']]) {
+    const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+    if (!roles.length) continue;
+    // The dark set's custom properties only resolve inside a .dark scope:
+    // swatch dots must live under it or they paint the light values/unset.
+    h += `<div class="pal-h">${label}</div><div class="pal${setname === 'dark' ? ' dark' : ''}">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.size || {}, 'size.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.breakpoint || {}, 'breakpoint.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  for (const [n, t] of flat(TOK.core.shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function motion() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.motion || {}, 'motion.')) m += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? 'cubic-bezier(' + t.v.join(', ') + ')' : t.v)}</span></div>`;
+  $('#motion-out').innerHTML = m || '<div><b>none measured</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+const resolveVal = (v, depth) => {
+  if (depth > 6 || typeof v !== 'string') return v;
+  const m = v.match(/^\{(.+)\}$/);
+  if (!m) return v;
+  let node = TOK, seen = [];
+  for (const k of m[1].split('.')) { node = node && node[k]; seen.push(k); }
+  return node && node.v !== undefined ? resolveVal(node.v, (depth || 0) + 1) : v;
+};
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(resolveVal(t.v));
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Exa</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).tracking || {}, 'font.tracking.')) h += `<div class="tr"><span class="ts" style="letter-spacing:${esc(t.v)}">${esc(n)} — Tracked</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) h += `<div class="tr"><span class="ts" style="font-family:${esc(resolveVal(t.v))}">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+})();
+</script>
+</body>
+</html>
