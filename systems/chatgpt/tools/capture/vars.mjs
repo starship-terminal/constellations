@@ -78,7 +78,7 @@ const result = await p.evaluate((list) => {
       if (r.type === CSSRule.FONT_FACE_RULE) {
         const o = { file };
         for (let i = 0; i < r.style.length; i++) {
-          let v = r.style.getPropertyValue(r.style[i]).trim();
+          let v = noUrl(r.style.getPropertyValue(r.style[i]).trim());
           v = v.replace(/url\("?data:([^;,]+)[^)]*\)/g, 'url(data:$1,…)');
           o[r.style[i]] = v;
         }

@@ -160,25 +160,19 @@ def capture_scripts_recording_raw_urls(root):
 
 # vars.mjs reads every custom property a stylesheet declares and the value each resolves to. A custom
 # property can hold a url() with a signed or per-account query, so each read of one (any
-# getPropertyValue(name) with a computed name) goes through noUrl. A @font-face descriptor is the one
-# read left alone: its src names the font files.
-PROP_READ = re.compile(r"getPropertyValue\((?!['\"])")
-PROP_READ_SAFE = re.compile(r"noUrl\((?:[\w.]+(?:\([\w.]*\))?\.)*getPropertyValue\((?!['\"])")
+# getPropertyValue(name) with a computed name) goes through noUrl. So does an @font-face rule's src
+# (and the descriptors copied in a loop), which names the font files and can carry the same query.
+# A literal name other than 'src' (font-family, font-weight...) holds no URL and is left alone.
+PROP_READ = re.compile(r"getPropertyValue\((?!['\"](?!src['\"]))")
+SRC_ID = re.compile(r"srcId\((?:[\w.]+\.)*getPropertyValue\('src'\)\)")
+PROP_READ_SAFE = re.compile(r"noUrl\((?:[\w.]+(?:\([\w.]*\))?\.)*getPropertyValue\((?!['\"](?!src['\"]))")
 
 
 def vars_reads_without_no_url(src):
-    """Line numbers in a vars.mjs source where a custom property's value is read without noUrl."""
-    bad, font = [], None   # font: the indent of the @font-face branch the line is inside, if any
-    for n, line in enumerate(src.splitlines(), 1):
-        ind = len(line) - len(line.lstrip())
-        if font is not None and line.strip() and (ind <= font or line.strip().startswith("continue")):
-            font = None
-        if "FONT_FACE_RULE" in line and line.rstrip().endswith("{"):
-            font = ind
-            continue
-        if font is None and len(PROP_READ.findall(line)) != len(PROP_READ_SAFE.findall(line)):
-            bad.append(n)
-    return bad
+    """Line numbers in a vars.mjs source where a custom property's or font-face src's value is read without noUrl."""
+    # srcId(...) only hashes a src (queries cut) to tell two faces apart; the hash is never recorded as a value.
+    lines = [SRC_ID.sub("", line) for line in src.splitlines()]
+    return [n for n, line in enumerate(lines, 1) if len(PROP_READ.findall(line)) != len(PROP_READ_SAFE.findall(line))]
 
 
 def vars_scripts_recording_raw_values(root):
@@ -238,15 +232,40 @@ class PackageCaptureScripts(unittest.TestCase):
             self.assertEqual(vars_reads_without_no_url(raw), [1], raw)
         for ok in ("props[k] = noUrl(r.style.getPropertyValue(k).trim());", "const raw = noUrl(getComputedStyle(el).getPropertyValue(name).trim());",
                    "return Object.fromEntries(ns.map((n) => [n, noUrl(cs.getPropertyValue(n).trim())]));",
-                   "ff.push({ family: r.style.getPropertyValue('font-family'), src: r.style.getPropertyValue('src') });"):
+                   "ff.push({ family: r.style.getPropertyValue('font-family'), src: noUrl(r.style.getPropertyValue('src')) });",
+                   "for (let i = 0; i < r.style.length; i++) o[r.style[i]] = noUrl(r.style.getPropertyValue(r.style[i]).trim());"):
             self.assertEqual(vars_reads_without_no_url(ok), [], ok)
-        font = "if (r.type === CSSRule.FONT_FACE_RULE) {\n  const o = { file };\n  for (const k of r.style) o[k] = r.style.getPropertyValue(k).trim();\n}"
-        self.assertEqual(vars_reads_without_no_url(font), [])
-        # a read just after the font branch runs on every other rule, so it is not exempt
-        after = "if (r.type === CSSRule.FONT_FACE_RULE) {\n  fonts.push(1);\n  continue;\n}\nprops[k] = r.style.getPropertyValue(k);"
-        self.assertEqual(vars_reads_without_no_url(after), [5])
-        after = "if (r.type === CSSRule.FONT_FACE_RULE) {\n  fonts.push(1);\n  continue;\n  props[k] = r.style.getPropertyValue(k);\n}"
-        self.assertEqual(vars_reads_without_no_url(after), [4])
+        # a font-face src is read through noUrl like any other value: raw, by literal name or in a loop, is flagged
+        for raw in ("ff.push({ family: r.style.getPropertyValue('font-family'), src: r.style.getPropertyValue('src') });",
+                    "if (r.type === CSSRule.FONT_FACE_RULE) {\n  const o = { file };\n  for (const k of r.style) o[k] = r.style.getPropertyValue(k).trim();\n}"):
+            self.assertNotEqual(vars_reads_without_no_url(raw), [], raw)
+        self.assertEqual(vars_reads_without_no_url("const o = { family: r.style.getPropertyValue('font-family') };"), [])
+        self.assertEqual(vars_reads_without_no_url("ff.push({ src: noUrl(r.style.getPropertyValue('src')), sid: srcId(r.style.getPropertyValue('src')) });"), [])
+        self.assertEqual(vars_reads_without_no_url("ff.push({ src: noUrl(r.style.getPropertyValue('src')), sid: r.style.getPropertyValue('src') });"), [1])
+
+    def test_vars_scripts_record_no_raw_font_urls(self):
+        # A font response URL, a font-face cssText and a link href can carry a signed query: font URL lists
+        # keep the path only (bare()), cssText goes through noUrl, an href keeps origin and path.
+        root = HERE.parent
+        raw = re.compile(r"fonts\.(?:push|add)\((?!bare\(|o\))|fontfaces\.push\((?!noUrl\()|(?<!hrefPath\()\bm\.getAttribute\('href'\)")
+        bad = []
+        for path in sorted([*root.glob("systems/*/tools/capture/**/vars.mjs"), root / "tools/kit/capture/vars.mjs"]):
+            for n, line in enumerate(path.read_text().splitlines(), 1):
+                if raw.search(line):
+                    bad.append(f"{path.relative_to(root)}:{n}")
+        self.assertEqual(bad, [])
+        for slug in ("brilliant", "coursera"):
+            self.assertIn("bare(", (root / f"systems/{slug}/tools/capture/vars.mjs").read_text())
+
+    def test_placeholder_fallback_goes_through_no_url(self):
+        # The composer placeholder falls back to the ::before content, a computed value that can be a url().
+        root = HERE.parent
+        bad = []
+        for path in sorted([*root.glob("systems/*/tools/capture/**/measure.mjs"), SIGNED_IN / "measure.mjs"]):
+            for n, line in enumerate(path.read_text().splitlines(), 1):
+                if re.search(r"data-placeholder'\) \|\| b\.content", line):
+                    bad.append(f"{path.relative_to(root)}:{n}")
+        self.assertEqual(bad, [])
 
     def test_each_callback_needs_its_own_no_url(self):
         two = ("const HELPERS = () => {\n  const noUrl = (v) => v;\n  const box = (el) => noUrl(el);\n};\n"
@@ -265,7 +284,7 @@ class JavaScriptHalves(unittest.TestCase):
         return json.loads(res.stdout)
 
     def test_snapshot_cuts_every_signed_query_and_keeps_plain_ones(self):
-        src = js_block(SIGNED_IN / "snapshot.js", "const SIGNED_PARAMS", "const cutSigned")
+        src = js_block(SIGNED_IN / "snapshot.js", "const SIGNED_PARAMS", "const cutSignedUrl")
         got = self.node(src + f"\nconsole.log(JSON.stringify({json.dumps(SIGNED + PLAIN)}.map((u) => [SIGNED.test(u), cutSigned(u)])))")
         for u, (flag, cut) in zip(SIGNED + PLAIN, got):
             self.assertEqual(flag, bool(catalog.SIGNED_URL.search(u)), u)   # the same regex as the python side
@@ -291,6 +310,42 @@ class JavaScriptHalves(unittest.TestCase):
         got = self.node(src + f"\nconsole.log(JSON.stringify({json.dumps(list(cases))}.map(cutSigned)))")
         self.assertEqual(got, list(cases.values()))
 
+    def test_cut_signed_url_reads_a_semicolon_inside_a_url_query(self):
+        # cutSigned stops a query at ";name:" because that starts the next CSS declaration, which is right
+        # for a style attribute and a stylesheet. In any other attribute the ; and : are part of the URL,
+        # so the signed parameter after them was left in (unsnap.py then refused the copy). cutSignedUrl
+        # has no declaration rule, and the attribute pass uses it for every attribute except style.
+        src = js_block(SIGNED_IN / "snapshot.js", "const SIGNED_PARAMS", "const cutSignedUrl")
+        url_cases = {
+            '<img data-src="https://x/p?options=a;b:c&token=abc">': '<img data-src="https://x/p">',
+            'https://x/p?a=1;b:2&X-Amz-Signature=abc': 'https://x/p',
+            'https://x/p?crop=(0,0)&token=abc': 'https://x/p',
+            'https://x/p?a=1&amp;token=abc': 'https://x/p',
+            'https://x/p?unit=7;b:2': 'https://x/p?unit=7;b:2',
+            'https://x/p?page=2#top': 'https://x/p?page=2#top',
+            # a ) or , before a ; is still inside the query: only whitespace, a quote, < > or { } end it
+            '<img data-src="https://x/p?crop=(0,0);b:c&token=abc">': '<img data-src="https://x/p">',
+            'https://x/p?crop=(0,0),b:c&token=abc': 'https://x/p',
+            'https://x/a.png?sig=1 1x, https://x/b.png 2x': 'https://x/a.png 1x, https://x/b.png 2x',
+        }
+        got = self.node(src + f"\nconsole.log(JSON.stringify({json.dumps(list(url_cases))}.map(cutSignedUrl)))")
+        self.assertEqual(got, list(url_cases.values()))
+        # the style-attribute rule is unchanged: it still stops at ;name: so a colour's # never runs into a later url()
+        style = {
+            'color:#fff;background:url(https://x/p.png?sig=1)': 'color:#fff;background:url(https://x/p.png)',
+            'https://x/p?a=1;b:2&token=abc': 'https://x/p?a=1;b:2&token=abc',   # the case cutSignedUrl exists for
+        }
+        got = self.node(src + f"\nconsole.log(JSON.stringify({json.dumps(list(style))}.map(cutSigned)))")
+        self.assertEqual(got, list(style.values()))
+        # on CSS text it can cut more than cutSigned (it runs from a colour's # through the url() and on), never less
+        for css in ('color:#fff;background:url(https://x/p.png?sig=1);margin:0', 'background:url(https://x/p.png?sig=1);color:red', 'background:url(https://x/p.png?sig=1), url(https://x/q.png?token=a)'):
+            got = self.node(src + f"\nconsole.log(JSON.stringify([cutSignedUrl({json.dumps(css)})]))")
+            self.assertFalse(catalog.SIGNED_URL.search(got[0]), got)
+
+    def test_snapshot_attribute_pass_uses_the_url_only_cut_for_non_style_attributes(self):
+        src = (SIGNED_IN / "snapshot.js").read_text()
+        self.assertIn("(a.name === 'style' ? cutSigned : cutSignedUrl)(a.value)", src)
+
     def test_measured_styles_record_no_url(self):
         for path in (SIGNED_IN / "measure.mjs", HERE / "kit/capture/public/lib.mjs"):
             src = js_block(path, "const noUrl", "const noUrl")
@@ -301,6 +356,20 @@ class JavaScriptHalves(unittest.TestCase):
                             "noUrl(\"url('https://x/a\\\\'b(2).png?sig=1')\"), noUrl('url(https://x/p.png?sig=1), none')]))")
             self.assertEqual(got, ['url(…), linear-gradient(red, blue)', 'url("data:image/svg+xml,abc")', 'url(#clip)', 'auto', 3,
                                    'url(…) no-repeat', 'url(…)', 'url(…), none'], path)
+
+    def test_font_face_ids_tell_apart_files_the_masked_src_cannot(self):
+        # noUrl turns every font file URL into url(…), so two faces of one family, weight and style that
+        # differ only in the file would share a key and one would be dropped. srcId hashes the src with
+        # its queries cut, and goes in the key only.
+        root = HERE.parent
+        lines = {line.strip() for slug in ("airbnb", "airtable", "anam", "anthropic", "expedia", "gauth", "refero-design")
+                 for line in (root / f"systems/{slug}/tools/capture/vars.mjs").read_text().splitlines() if line.lstrip().startswith("const srcId = ")}
+        self.assertEqual(len(lines), 1, "every copy carries the same srcId")
+        a, b, c = ('url("https://x.test/a.woff2?X-Amz-Signature=1") format("woff2")', 'url("https://x.test/b.woff2") format("woff2")',
+                   'url("https://x.test/a.woff2?X-Amz-Signature=2") format("woff2")')
+        got = self.node(next(iter(lines)) + f"\nconsole.log(JSON.stringify([{json.dumps(a)}, {json.dumps(b)}, {json.dumps(c)}].map(srcId)))")
+        self.assertNotEqual(got[0], got[1])
+        self.assertEqual(got[0], got[2])
 
     def test_vars_no_url_reads_authored_tokens(self):
         # A declared custom property keeps its authored tokens (unlike a computed value, which the
@@ -317,6 +386,10 @@ class JavaScriptHalves(unittest.TestCase):
             'URL(#clip)': 'URL(#clip)',
             'url("data:image/svg+xml,abc")': 'url("data:image/svg+xml,abc")',
             '4px': '4px',
+            # an @font-face src: the file URLs go, the format hints and local() names stay
+            'url("https://x.test/f.woff2?X-Amz-Signature=1") format("woff2"), url(https://x.test/f.woff?token=a) format("woff")':
+                'url(…) format("woff2"), url(…) format("woff")',
+            'local("Inter"), url(data:font/woff2;base64,AAAA) format("woff2")': 'local("Inter"), url(data:font/woff2;base64,AAAA) format("woff2")',
         }
         got = self.node(src + f"\nconsole.log(JSON.stringify({json.dumps(list(cases))}.map(noUrl)))")
         self.assertEqual(got, list(cases.values()))

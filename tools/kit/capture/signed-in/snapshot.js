@@ -77,6 +77,9 @@ const SIGNED = new RegExp('(?:[?&#]|%3F|%26|%23)(?:amp;)?(' + [
 // &amp; entity, a ;-separated query) stays inside, as do commas and parentheses, except a ")" that
 // closes an unquoted url( ... ) before ; , } or the end.
 const cutSigned = (s) => s.replace(/[?#](?:[^\s"'<>);{}]|;(?![\w-]+\s*:)|\)(?![\s;,"'}]|$))*/g, (q) => (SIGNED.test(q) ? '' : q));
+// cutSignedUrl is the same cut for an attribute that is not style: a URL's ; and : belong to the query, so
+// a ;name: no longer ends it (it would leave a later &token= in the copy). On CSS text it can cut more, never less.
+const cutSignedUrl = (s) => s.replace(/[?#](?:[^\s"'<>);{}]|;|\)(?![\s"'}]|$))*/g, (q) => (SIGNED.test(q) ? '' : q));
 window.__snap = function (label, REDACT) {
   if (!REDACT || !Array.isArray(REDACT.replace)) throw new Error('pass the redaction file as the second argument');
   // A presigned URL (S3, CloudFront) carries a credential that works until it expires, so
@@ -181,7 +184,7 @@ window.__snap = function (label, REDACT) {
     ? '<link rel="stylesheet" href="' + p.href + '">'
     : '<style' + (p.media ? ' media="' + p.media + '"' : '') + '>' + p.css.replace(/<\/style/gi, '<\\/style') + '</style>')).join('\n'));
   // Last, every attribute of every element: data-src, style="background:url(...)", anything.
-  clone.querySelectorAll('*').forEach((n) => { for (const a of [...n.attributes]) { const v = cutSigned(a.value); if (v !== a.value) n.setAttribute(a.name, v); } });
+  clone.querySelectorAll('*').forEach((n) => { for (const a of [...n.attributes]) { const v = (a.name === 'style' ? cutSigned : cutSignedUrl)(a.value); if (v !== a.value) n.setAttribute(a.name, v); } });
   // Each pattern runs over every text node and attribute value first, where entities are already
   // decoded (a &nbsp; is a character \s matches), then over the serialised copy. A name split across
   // elements survives both; unsnap.py reads the copy as text with the tags out and refuses it.
