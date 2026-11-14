@@ -798,6 +798,12 @@
     "reason": "catalog.json describes a whiteboard/drawing editor: tool islands, a properties sidebar, a shape library and image export on a signed-out public canvas."
   },
   {
+    "referenceId": "systems:expedia",
+    "groupId": "web-categories",
+    "labels": ["Travel & Booking"],
+    "reason": "catalog.json describes a travel OTA: multi-product stay/flight/car search, deal carousels, hotel results and filter rail."
+  },
+  {
     "referenceId": "systems:fable",
     "groupId": "web-categories",
     "labels": ["Books", "Social Networking"],

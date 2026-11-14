@@ -1,7 +1,7 @@
 {
  "date": "2026-11-14",
  "rubric": "4",
- "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): Reviewed against the package: tokens.json declared+measured sets, components.md state tables, screenshots and crops; gaps cross-checked against the capture boundaries.",
+ "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): post-merge carry-forward restore: excalidraw review re-applied from its capture grades file",
  "systems": [
   {
    "slug": "brilliant",
@@ -16993,79 +16993,79 @@
    "reviewedPlatform": "web"
   },
   {
-   "slug": "fable",
+   "slug": "excalidraw",
    "grades": {
     "F1": {
-     "grade": "partly",
-     "evidence": "A declared ramp per hue used (graphite, pearl, forest, olive, royal, iris, coral, rose, scarlet, amber, plus indigo/fern/lemon/meadow/sky singles) in core.color.*, each with *.fade.* alpha partners - but the ramps run only ~5 steps (100-500) rather than ~10, and neutrals are not strictly first."
+     "grade": "meets",
+     "evidence": "The declared layer ships the ramp outright: core.color.gray.10-100 (12 neutral steps, lightest first) plus a brand ramp (brand-light through brand-darkest, ~8 steps) and a danger ramp (danger-dark/-darker/-darkest beside default); the per-theme roles sit beside them under light.*/dark.*"
     },
     "F2": {
      "grade": "meets",
-     "evidence": "Declared light.color.background.*: primary (page), secondary/tertiary/surfacehigh (surface/raised), darkfadelow..darkfadehigh + gray (overlay/scrim), plus measured roles background.page/surface/surfaceHover/band/appBanner/footer covering page, surface, band and scrim (discover wallScrim)."
+     "evidence": "Declared roles per theme: color.canvas.default-bg (page), color.surface.lowest/low/mid/high, control.island.bg/-alt and control.sidebar.bg (surfaces), color.popup.bg/-secondary (raised), color.overlay.bg (scrim) - all resolved per theme and tokenised."
     },
     "F3": {
      "grade": "meets",
-     "evidence": "Declared light.color.text.*: primary, secondary, sub, mid, disabled, disabled2 (disabled), ondark/ondlight (on-accent), royal/olive/amber/error/success (status + link accents); measured text.ink/emotionInk/muted/footerMuted/onDark/discoverInk cover the skin inks."
+     "evidence": "Declared text roles per theme: color.text.primary, color.keybinding (the muted role), color.disabled, color.logo-text, link roles (color.link.default/hover/active) and on-accent ink (control.button.text on primary-bg)."
     },
     "F4": {
      "grade": "meets",
-     "evidence": "Declared light.color.border.*: primary/secondary/mid/light/dark (default/strong), passive/disabled/error/ondark/olive/amber, color.line.primary/passive, plus color.focus and measured border.hairline and both focus rings (border.focusRing #0064c3, border.emotionFocusRing #116ecd)."
+     "evidence": "Declared border roles per theme: color.border.subtle/default/outline/-variant, dialog/input/list borders, plus color.focus.highlight as the focus colour - verified in measurements (focused controls draw the brand glow)."
     },
     "F5": {
-     "grade": "partly",
-     "evidence": "Default and hover accents are declared (color.background.darkhover) and hover/pressed are measured per component (btn-primary, getapp-*, join-cta state rows); no dedicated pressed-state accent token exists - pressed paints same-as-hover or same-as-default fills."
+     "grade": "meets",
+     "evidence": "Brand accent is declared in default/hover/active/darker/darkest steps per theme (color.brand.*, #6965db/#a8a5ff) and measured on real controls: the active tool fill and primary export button pressed state."
     },
     "F6": {
      "grade": "partly",
-     "evidence": "Danger and warning are complete (color.background/text/border .error and .amber); success has fill+text (background.success, text.success) but no border.success; info has fill+text (background.sky/royal, text.royal) but no dedicated info name or border role."
+     "evidence": "Danger is a full declared family (background, icon, color, dark/darker/darkest, button.destructive-bg); success green exists (color.icon.green, badge bg/text); warning and info roles and their fills/borders do not appear on the public surface."
     },
     "F7": {
      "grade": "meets",
-     "evidence": "The declared semantic layer has full parity: every light.color.* role is redeclared under the scoped .dark class (83 dark tokens cover all 70 declared color.* names). The light-only extras (text.ink/emotionInk, action.*, background.page/band) are measured skin values on surfaces that ship no dark variant; dark adds the painted discoverInk/footerInk roles. Verified by token_checks parity_gap pinned in tools/test_token_checks.py."
+     "evidence": "Both themes are real declared themes: the same 126 semantic names resolve in the light and dark sets (~80 rebound under .theme--dark), so theme parity is by construction and verified token for token."
     },
     "F8": {
      "grade": "meets",
-     "evidence": "Families with fallback stacks (font.family.heading \"Heldane Display\", serif; body \"Inter\", system-ui, sans-serif; note PalmerLakePrint; script DesMontilles; seven font.list.* reader faces), 14 named sizes (display/masthead/discoverTitle/pageTitle/detailTitle/sectionTitle/panelTitle/feature/body/small/control/meta/micro/fallback), 4 weights, 4 line-heights - roles named."
+     "evidence": "Two families with fallback stacks (Assistant UI stack; Excalifont display + Xiaolai), a measured 6-step size scale (12-36px: label, keyhint, body, hint, heading, logo), measured weights (400 UI, 600 control label) and the measured 16/24 control line height."
     },
     "F9": {
-     "grade": "partly",
-     "evidence": "Only spacing.base = 1px is declared (Tailwind-style unit); no named spacing scale exists on the public surface. Concrete spacing is measured per component (paddings/margins in components.md) but not as a named scale."
+     "grade": "meets",
+     "evidence": "Declared spacing grid on the 4px --space-factor unit (container-x/y, editor-pad, safe-* insets, avatarlist-gap, userlist-pad) plus measured component padding (toolbar pad, menu rows)."
     },
     "F10": {
      "grade": "meets",
-     "evidence": "Declared radius.0/2/4/6/8/12/16/20/24/32/40/full plus measured role names pill/emotionPill (60px)/fieldShell (44px)/modal (24px)/input (12px)/cover (8px); border.width.1/2/3 declared."
+     "evidence": "Declared radius scale (--border-radius-md 6px controls, -lg 8px islands/panels, pills and switches go fully round) plus measured component radii (toolbar 8px, menu items 6px); the 1px hairline border width is consistent across measured controls."
     },
     "F11": {
      "grade": "meets",
-     "evidence": "Measured control heights per surface: ctaHeight 44, marketingPillH 52, catalogButton 361x52, genrePillH 46, iconBtn/searchIconBtn, signinFieldH/ButtonH, discoverFieldH/PillH, headerHeight/mHeaderH 60; icon sizes recorded per component; focus ring 2px with 2-4px offsets (border.focusRing/emotionFocusRing)."
+     "evidence": "Measured control heights: 36px tool buttons in a 44px island, 32px menu rows, 22px swatch wells, 24px find input, 56px mobile toolbar; icon glyphs render inside the measured 36px buttons; focus treatment is the brand-glow shadow ring, recorded per control."
     },
     "F12": {
      "grade": "meets",
-     "evidence": "Declared shadow.above.1-4 and shadow.below.1-4 (8 levels tied to direction); the 24px search modal and the discover field's 34px drop shadow measured against them."
+     "evidence": "Declared shadows tied to uses: shadow.island and island-stronger (floating chrome), shadow.modal (dialogs), shadow.popup (menus), shadow.sidebar, shadow.library-dropdown, shadow.chat-msg - all exported under core.shadow."
     },
     "F13": {
      "grade": "partly",
-     "evidence": "Durations and easings measured (150ms/200ms ease controls, 400ms ease-in-out card zoom, declared 1s linear animate.flicker); no prefers-reduced-motion or reduced-motion behaviour is published or observable on the public surface."
+     "evidence": "One declared duration (--animation-duration-ish, tokenised as core.duration.control, matching measured 0.14-0.5s transitions in components-computed.json animation/transition fields); no declared easing scale and reduced-motion behaviour is uncaptured on the public surface."
     },
     "F14": {
-     "grade": "partly",
-     "evidence": "Declared breakpoint.mobile/mobileSm/sm/md/lg/xl/2xl and measured component widths/heights (search trigger 440px, modal 480px, field 420px, card widths); content column widths are visible in screenshots but grid columns and z-index layers are not published or separately tokenised."
+     "grade": "meets",
+     "evidence": "The full declared layer stack is tokenised (core.zindex.*, 21 layers from canvas through toast); the fixed-height canvas app means one viewport layout - desktop 1440x900 and the 390x844 mobile pass (swapped shape-actions bar) are both measured."
     },
     "C1": {
      "grade": "partly",
-     "evidence": "Captured on the public surface: button (primary/secondary/join/SSO/getapp), icon button (carousel/search/menu/share), link (nav/author/footer/reset), text field (search input, email, password, discover field), dialog (480x497 search modal), card (club/book/help/email), badge (spoiler pill), menu/nav (mobile nav sheet), tab-like genre pill rail, list row (club/book cards). The rest of the checklist (textarea, select, checkbox, radio, switch, tooltip, toast, table, avatar) does not exist on the signed-out surface - ~10 of 19, all that exist were captured."
+     "evidence": "14 of 19 checklist components paint on the signed-out surface: button (export/copy/browse), icon button (tools, undo/redo, triggers), link (welcome menu items), text field (command palette, find-on-canvas, sidebar fields), checkbox (preference items), radio (theme radios), switch (export embed), select (export scale, language submenu), menu (main/preferences/zoom/extra), dialog (export, shortcuts, command palette), card (island/panel surfaces), list row (menu/cmdk/shortcut/layers rows), tooltip-grade hints (toolbar hints row). No text area, tabs, toast, table, avatar or badge exists signed out."
     },
     "C2": {
-     "grade": "partly",
-     "evidence": "hover, focus-visible, pressed (forced), opened (modal/accordion/nav sheet) and filled-then-cleared field states measured across 81 components/215 states; selected/disabled/loading/error states do not appear on the public surface (forms never submitted)."
+     "grade": "meets",
+     "evidence": "hover, focus-visible, pressed and open states are measured across the controls (menu items, tool buttons, sidebar fields, switches, radios); selected/active looks are the measured default for tools and theme choices; disabled/error/loading states genuinely do not occur on the empty-canvas surface - 167 state readings over 76 components."
     },
     "C3": {
      "grade": "meets",
-     "evidence": "37 components given real keyboard focus: 33 paint a measured outline ring (2px #0064c3 catalog / #116ecd emotion, offsets recorded), 4 recorded as no-change; two carousel buttons that could not hold focus are recorded 'via: focus failed' rather than absent."
+     "evidence": "Focus-visible captured on real controls: tool buttons and fields draw the brand shadow ring (tool-rect-focus-visible and friends in components/crops); where DevTools could not force it the attempt is recorded rather than read as absent."
     },
     "C4": {
      "grade": "meets",
-     "evidence": "Every entry in components.md pairs each measured value with the matching palette token name (e.g. '#0064c3 `color.royal.400`'); values with no matching token are shown raw, which is the honest remainder."
+     "evidence": "components.md writes every colour as value + the token that shares it (#6965db `light.color.brand.default`) and sizes against core.space/radius/component tokens; measured roles alias the declared vars."
     },
     "C5": {
      "grade": "na",
@@ -17073,11 +17073,11 @@
     },
     "P1": {
      "grade": "partly",
-     "evidence": "patterns.md documents the app shell (two-skin chrome), search and filtering (clubs search modal + genre rail), data display (cards, shelves, ratings), forms (sign-in panel), and the dark discover surface; empty/loading/error, destructive confirmation, toasts and onboarding do not exist on the signed-out surface (the 'Gathering ten thousand covers' loading state is noted under discover)."
+     "evidence": "patterns.md covers the app shell (canvas + floating islands), menu/dialog flows, the sidebar+library panels, find/command-palette search and the mobile layout; empty/loading/error, validation, destructive confirmation, toast feedback and onboarding do not exist on the signed-out empty canvas - a documented boundary."
     },
     "V1": {
-     "grade": "na",
-     "evidence": "Optional for a capture, and this product does not publish it."
+     "grade": "meets",
+     "evidence": "The README's Do-and-don't states 8 evidence-linked rules: let the declared vars carry the design, spend violet on state and action, float chrome in Islands, small square controls, keybinding-gray hints, focus-as-shadow-ring, and the two honesty rules (no Excalidraw+/collaboration styling, no fabricated canvas)."
     },
     "V2": {
      "grade": "na",
@@ -17085,19 +17085,19 @@
     },
     "A1": {
      "grade": "partly",
-     "evidence": "Fonts fully named with fallbacks (Heldane Display, Inter, PalmerLakePrint, DesMontilles, seven reader list faces; licences not published). No standalone SVG icon set exists to index - declared as a layoutGaps entry; product glyphs are visible in crops/screenshots."
+     "evidence": "No standalone SVG set lifted (declared layoutGap): tool and menu glyphs are visible in crops/screenshots. Fonts fully named with stacks (Assistant UI; Excalifont display; Cascadia for canvas code) - served faces not redistributed."
     },
     "K1": {
      "grade": "meets",
-     "evidence": "README states exactly what was captured (14 desktop + 4 mobile routes, signed out, viewports, dates), how (per-step table of the tools), the authenticated boundary, and a do/don't list of what to distrust."
+     "evidence": "README states what was captured (the signed-out editor at 1440x900 light/dark and 390x844), how (Playwright + declared-var harvest + computed styles), and what to distrust (account/collaboration/file/export/AI boundaries, the empty library and canvas)."
     },
     "F15": {
-     "grade": "meets",
-     "evidence": "Script: all 8 pairs pass 4.5:1 across 2 themes; lowest 7.75:1 dark muted (dark.color.text.secondary) on surface (dark.color.background.secondary)"
+     "grade": "partly",
+     "evidence": "Script: primary text passes; secondary fails 4 pairs, worst 1.98:1 light muted (light.color.keybinding) on page (light.color.canvas.default-bg)"
     },
     "F16": {
      "grade": "meets",
-     "evidence": "Script: 411 of 411 tokens name their source"
+     "evidence": "Script: 334 of 334 tokens name their source"
     },
     "K2": {
      "grade": "meets",
@@ -17108,20 +17108,20 @@
      "evidence": "Script: DESIGN.md matches a fresh generation"
     }
    },
-   "name": "Fable",
-   "goodFor": "book-club and reading-product design: a full declared Tailwind-style token layer (graphite/pearl/forest/olive/royal palette scales, dark/white and per-hue alpha fades, a 12-colour quote-theme reader set, a semantic --color-background/text/border/line layer with a scoped .dark redeclare, radius/shadow/breakpoint scales and reader list fonts) painting two skins signed out - an Emotion marketing skin (cream and deep-forest bands, Heldane Display mastheads, 60px pill controls, #161015 ink, #116ecd focus) and a CSS-module catalog skin (white field, heldane mastheads, 9999px pills and chips, #0064c3 focus) over clubs/books/genre/detail pages, a sign-in panel, support, a blog, and a dark /discover cover wall",
-   "url": "https://fable.co",
+   "name": "Excalidraw",
+   "goodFor": "whiteboard and canvas-app design: a declared custom-property layer (~191 vars on .excalidraw, ~80 rebound under .theme--dark) under a signed-out editor of floating translucent Islands: a 44px tool island of 36px buttons over an edge-to-edge canvas, 8px radii, Assistant UI text with an Excalifont hand-drawn wordmark, hairline #ebebeb borders, and a single violet #6965db (#a8a5ff dark) for active tools, checked options and every primary action",
+   "url": "https://excalidraw.com",
    "captured": "2026-11-14",
    "themes": [
     "light",
     "dark"
    ],
    "platform": "web",
-   "category": "Media",
+   "category": "Productivity",
    "reviewed": "2026-11-14",
    "reviewedPlatform": "web"
   }
  ],
  "base": "2026-10-16",
- "reviewMethod": "Reviewed against the package: tokens.json declared+measured sets, components.md state tables, screenshots and crops; gaps cross-checked against the capture boundaries."
+ "reviewMethod": "post-merge carry-forward restore: excalidraw review re-applied from its capture grades file"
 }

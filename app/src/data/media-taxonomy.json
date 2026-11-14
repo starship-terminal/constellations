@@ -1133,14 +1133,14 @@
       "assignedMedia": 221
     },
     {
-      "referenceId": "systems:enode",
-      "media": 153,
-      "assignedMedia": 22
+      "referenceId": "systems:excalidraw",
+      "media": 189,
+      "assignedMedia": 13
     },
     {
-      "referenceId": "systems:delphi",
-      "media": 132,
-      "assignedMedia": 57
+      "referenceId": "systems:expedia",
+      "media": 131,
+      "assignedMedia": 84
     },
     {
       "referenceId": "systems:fable",
@@ -258323,107 +258323,8 @@
       ]
     },
     {
-      "referenceId": "systems:enode",
-      "mediaId": "systems/enode/screenshots/contact-light-default.png",
-      "terms": [
-        {
-          "termId": "web-page-types:contacts",
-          "rule": "page-contacts",
-          "reason": "Capture filename explicitly names contacts; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:enode",
-      "mediaId": "systems/enode/screenshots/contact-light-full.png",
-      "terms": [
-        {
-          "termId": "web-page-types:contacts",
-          "rule": "page-contacts",
-          "reason": "Capture filename explicitly names contacts; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:enode",
-      "mediaId": "systems/enode/screenshots/contact-partnerships-light-default.png",
-      "terms": [
-        {
-          "termId": "web-page-types:contacts",
-          "rule": "page-contacts",
-          "reason": "Capture filename explicitly names contacts; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:enode",
-      "mediaId": "systems/enode/screenshots/contact-partnerships-light-full.png",
-      "terms": [
-        {
-          "termId": "web-page-types:contacts",
-          "rule": "page-contacts",
-          "reason": "Capture filename explicitly names contacts; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:enode",
-      "mediaId": "systems/enode/screenshots/home-light-default.png",
-      "terms": [
-        {
-          "termId": "web-page-types:home-page",
-          "rule": "page-home",
-          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:enode",
-      "mediaId": "systems/enode/screenshots/home-light-full.png",
-      "terms": [
-        {
-          "termId": "web-page-types:home-page",
-          "rule": "page-home",
-          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:enode",
-      "mediaId": "systems/enode/screenshots/home-light-menu-platform.png",
-      "terms": [
-        {
-          "termId": "web-page-types:home-page",
-          "rule": "page-home",
-          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:enode",
-      "mediaId": "systems/enode/screenshots/home-light-menu-resources.png",
-      "terms": [
-        {
-          "termId": "web-page-types:home-page",
-          "rule": "page-home",
-          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:enode",
-      "mediaId": "systems/enode/screenshots/login-dark-default.png",
-      "terms": [
-        {
-          "termId": "web-page-types:log-in",
-          "rule": "page-login",
-          "reason": "Capture filename explicitly names log in; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:enode",
-      "mediaId": "systems/enode/screenshots/mobile-home-light-drawer.png",
+      "referenceId": "systems:excalidraw",
+      "mediaId": "systems/excalidraw/screenshots/editor-dark-sidebar.png",
       "terms": [
         {
           "termId": "web-ui-elements:sidebar-drawer",
@@ -258433,74 +258334,8 @@
       ]
     },
     {
-      "referenceId": "systems:enode",
-      "mediaId": "systems/enode/components/crops/demo-card-default.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:cards-tiles",
-          "rule": "ui-cards",
-          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:enode",
-      "mediaId": "systems/enode/components/crops/footer-default.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:footer",
-          "rule": "ui-footer",
-          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:enode",
-      "mediaId": "systems/enode/components/crops/footer-link-default.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:footer",
-          "rule": "ui-footer",
-          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:enode",
-      "mediaId": "systems/enode/components/crops/footer-link-focus-visible.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:footer",
-          "rule": "ui-footer",
-          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:enode",
-      "mediaId": "systems/enode/components/crops/footer-link-hover.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:footer",
-          "rule": "ui-footer",
-          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:enode",
-      "mediaId": "systems/enode/components/crops/footer-link-pressed.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:footer",
-          "rule": "ui-footer",
-          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:enode",
-      "mediaId": "systems/enode/components/crops/m-drawer-default.png",
+      "referenceId": "systems:excalidraw",
+      "mediaId": "systems/excalidraw/screenshots/editor-light-sidebar.png",
       "terms": [
         {
           "termId": "web-ui-elements:sidebar-drawer",
@@ -258510,19 +258345,298 @@
       ]
     },
     {
-      "referenceId": "systems:enode",
-      "mediaId": "systems/enode/components/crops/quote-card-default.png",
+      "referenceId": "systems:excalidraw",
+      "mediaId": "systems/excalidraw/components/crops/cmdk-dialog-default.png",
       "terms": [
         {
-          "termId": "web-ui-elements:cards-tiles",
-          "rule": "ui-cards",
-          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+          "termId": "web-ui-elements:dialog-modal-window",
+          "rule": "ui-dialog",
+          "reason": "Capture filename explicitly names dialog & modal window; local classification from recorded capture metadata."
         }
       ]
     },
     {
-      "referenceId": "systems:enode",
-      "mediaId": "systems/enode/components/crops/radio-inquiry-default.png",
+      "referenceId": "systems:excalidraw",
+      "mediaId": "systems/excalidraw/components/crops/export-dialog-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dialog-modal-window",
+          "rule": "ui-dialog",
+          "reason": "Capture filename explicitly names dialog & modal window; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:excalidraw",
+      "mediaId": "systems/excalidraw/components/crops/export-switch-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:switch-toggle",
+          "rule": "ui-toggle",
+          "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:excalidraw",
+      "mediaId": "systems/excalidraw/components/crops/export-switch-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:switch-toggle",
+          "rule": "ui-toggle",
+          "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:excalidraw",
+      "mediaId": "systems/excalidraw/components/crops/export-switch-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:switch-toggle",
+          "rule": "ui-toggle",
+          "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:excalidraw",
+      "mediaId": "systems/excalidraw/components/crops/lib-search-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:excalidraw",
+      "mediaId": "systems/excalidraw/components/crops/lib-search-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:excalidraw",
+      "mediaId": "systems/excalidraw/components/crops/m-toolbar-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:toolbar",
+          "rule": "ui-toolbar",
+          "reason": "Capture filename explicitly names toolbar; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:excalidraw",
+      "mediaId": "systems/excalidraw/components/crops/opacity-slider-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:slider",
+          "rule": "ui-slider",
+          "reason": "Capture filename explicitly names slider; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:excalidraw",
+      "mediaId": "systems/excalidraw/components/crops/opacity-slider-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:slider",
+          "rule": "ui-slider",
+          "reason": "Capture filename explicitly names slider; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:excalidraw",
+      "mediaId": "systems/excalidraw/components/crops/shortcuts-dialog-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dialog-modal-window",
+          "rule": "ui-dialog",
+          "reason": "Capture filename explicitly names dialog & modal window; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:expedia",
+      "mediaId": "systems/expedia/screenshots/home-i-light-calendar-open.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:calendar",
+          "rule": "ux-calendar",
+          "reason": "Capture filename explicitly names calendar; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:expedia",
+      "mediaId": "systems/expedia/screenshots/home-i-light-flights-tab.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:expedia",
+      "mediaId": "systems/expedia/screenshots/home-i-light-travelers-open.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:expedia",
+      "mediaId": "systems/expedia/screenshots/home-i-light-whereto-open.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:expedia",
+      "mediaId": "systems/expedia/screenshots/home-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:expedia",
+      "mediaId": "systems/expedia/screenshots/home-light-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:expedia",
+      "mediaId": "systems/expedia/screenshots/home-light-shoptravel-open.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:expedia",
+      "mediaId": "systems/expedia/screenshots/home-light-signin-open.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:expedia",
+      "mediaId": "systems/expedia/screenshots/mobile-home-i-light-calendar-open.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:calendar",
+          "rule": "ux-calendar",
+          "reason": "Capture filename explicitly names calendar; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:expedia",
+      "mediaId": "systems/expedia/screenshots/mobile-search-light-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:expedia",
+      "mediaId": "systems/expedia/screenshots/mobile-search-light-full.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:expedia",
+      "mediaId": "systems/expedia/screenshots/search-light-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:expedia",
+      "mediaId": "systems/expedia/screenshots/search-light-full.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:expedia",
+      "mediaId": "systems/expedia/screenshots/search-light-sort-open.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:expedia",
+      "mediaId": "systems/expedia/components/crops/bundle-checkbox-default.png",
       "terms": [
         {
           "termId": "web-ui-elements:checkbox-radio",
@@ -258532,8 +258646,51 @@
       ]
     },
     {
-      "referenceId": "systems:enode",
-      "mediaId": "systems/enode/components/crops/stat-card-default.png",
+      "referenceId": "systems:expedia",
+      "mediaId": "systems/expedia/components/crops/calendar-chip-open.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:calendar",
+          "rule": "ux-calendar",
+          "reason": "Capture filename explicitly names calendar; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:expedia",
+      "mediaId": "systems/expedia/components/crops/calendar-day-selected-open.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:calendar",
+          "rule": "ux-calendar",
+          "reason": "Capture filename explicitly names calendar; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:expedia",
+      "mediaId": "systems/expedia/components/crops/calendar-dialog-open.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dialog-modal-window",
+          "rule": "ui-dialog",
+          "reason": "Capture filename explicitly names dialog & modal window; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:calendar",
+          "rule": "ux-calendar",
+          "reason": "Capture filename explicitly names calendar; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:expedia",
+      "mediaId": "systems/expedia/components/crops/card-gallery-default.png",
       "terms": [
         {
           "termId": "web-ui-elements:cards-tiles",
@@ -258543,8 +258700,8 @@
       ]
     },
     {
-      "referenceId": "systems:enode",
-      "mediaId": "systems/enode/components/crops/upd-card-default.png",
+      "referenceId": "systems:expedia",
+      "mediaId": "systems/expedia/components/crops/card-heart-default.png",
       "terms": [
         {
           "termId": "web-ui-elements:cards-tiles",
@@ -258554,8 +258711,8 @@
       ]
     },
     {
-      "referenceId": "systems:enode",
-      "mediaId": "systems/enode/components/crops/upd-card-hover.png",
+      "referenceId": "systems:expedia",
+      "mediaId": "systems/expedia/components/crops/card-heart-focus-visible.png",
       "terms": [
         {
           "termId": "web-ui-elements:cards-tiles",
@@ -258565,316 +258722,8 @@
       ]
     },
     {
-      "referenceId": "systems:delphi",
-      "mediaId": "systems/delphi/screenshots/chat-light-default.png",
-      "terms": [
-        {
-          "termId": "web-ux-patterns:chat-messages",
-          "rule": "ux-chat",
-          "reason": "Capture filename explicitly names chat & messages; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:delphi",
-      "mediaId": "systems/delphi/screenshots/chat-light-full.png",
-      "terms": [
-        {
-          "termId": "web-ux-patterns:chat-messages",
-          "rule": "ux-chat",
-          "reason": "Capture filename explicitly names chat & messages; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:delphi",
-      "mediaId": "systems/delphi/screenshots/home-light-default.png",
-      "terms": [
-        {
-          "termId": "web-page-types:home-page",
-          "rule": "page-home",
-          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:delphi",
-      "mediaId": "systems/delphi/screenshots/home-light-full.png",
-      "terms": [
-        {
-          "termId": "web-page-types:home-page",
-          "rule": "page-home",
-          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:delphi",
-      "mediaId": "systems/delphi/screenshots/home-light-signin.png",
-      "terms": [
-        {
-          "termId": "web-page-types:home-page",
-          "rule": "page-home",
-          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:delphi",
-      "mediaId": "systems/delphi/screenshots/mobile-chat-light-default.png",
-      "terms": [
-        {
-          "termId": "web-ux-patterns:chat-messages",
-          "rule": "ux-chat",
-          "reason": "Capture filename explicitly names chat & messages; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:delphi",
-      "mediaId": "systems/delphi/screenshots/mobile-chat-light-full.png",
-      "terms": [
-        {
-          "termId": "web-ux-patterns:chat-messages",
-          "rule": "ux-chat",
-          "reason": "Capture filename explicitly names chat & messages; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:delphi",
-      "mediaId": "systems/delphi/screenshots/onboarding-light-dialog.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:dialog-modal-window",
-          "rule": "ui-dialog",
-          "reason": "Capture filename explicitly names dialog & modal window; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:delphi",
-      "mediaId": "systems/delphi/screenshots/search-light-default.png",
-      "terms": [
-        {
-          "termId": "web-ux-patterns:searching",
-          "rule": "ux-search",
-          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:delphi",
-      "mediaId": "systems/delphi/screenshots/search-light-full.png",
-      "terms": [
-        {
-          "termId": "web-ux-patterns:searching",
-          "rule": "ux-search",
-          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:delphi",
-      "mediaId": "systems/delphi/components/crops/chat-greeting-default.png",
-      "terms": [
-        {
-          "termId": "web-ux-patterns:chat-messages",
-          "rule": "ux-chat",
-          "reason": "Capture filename explicitly names chat & messages; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:delphi",
-      "mediaId": "systems/delphi/components/crops/chat-input-default.png",
-      "terms": [
-        {
-          "termId": "web-ux-patterns:chat-messages",
-          "rule": "ux-chat",
-          "reason": "Capture filename explicitly names chat & messages; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:delphi",
-      "mediaId": "systems/delphi/components/crops/chat-input-filled.png",
-      "terms": [
-        {
-          "termId": "web-ux-patterns:chat-messages",
-          "rule": "ux-chat",
-          "reason": "Capture filename explicitly names chat & messages; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:delphi",
-      "mediaId": "systems/delphi/components/crops/chat-input-focused.png",
-      "terms": [
-        {
-          "termId": "web-ux-patterns:chat-messages",
-          "rule": "ux-chat",
-          "reason": "Capture filename explicitly names chat & messages; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:delphi",
-      "mediaId": "systems/delphi/components/crops/chat-name-default.png",
-      "terms": [
-        {
-          "termId": "web-ux-patterns:chat-messages",
-          "rule": "ux-chat",
-          "reason": "Capture filename explicitly names chat & messages; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:delphi",
-      "mediaId": "systems/delphi/components/crops/chat-send-default.png",
-      "terms": [
-        {
-          "termId": "web-ux-patterns:chat-messages",
-          "rule": "ux-chat",
-          "reason": "Capture filename explicitly names chat & messages; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:delphi",
-      "mediaId": "systems/delphi/components/crops/chat-send-focus-visible.png",
-      "terms": [
-        {
-          "termId": "web-ux-patterns:chat-messages",
-          "rule": "ux-chat",
-          "reason": "Capture filename explicitly names chat & messages; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:delphi",
-      "mediaId": "systems/delphi/components/crops/chat-send-hover.png",
-      "terms": [
-        {
-          "termId": "web-ux-patterns:chat-messages",
-          "rule": "ux-chat",
-          "reason": "Capture filename explicitly names chat & messages; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:delphi",
-      "mediaId": "systems/delphi/components/crops/chat-send-pressed.png",
-      "terms": [
-        {
-          "termId": "web-ux-patterns:chat-messages",
-          "rule": "ux-chat",
-          "reason": "Capture filename explicitly names chat & messages; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:delphi",
-      "mediaId": "systems/delphi/components/crops/chat-terms-default.png",
-      "terms": [
-        {
-          "termId": "web-ux-patterns:chat-messages",
-          "rule": "ux-chat",
-          "reason": "Capture filename explicitly names chat & messages; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:delphi",
-      "mediaId": "systems/delphi/components/crops/dialog-email-default.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:dialog-modal-window",
-          "rule": "ui-dialog",
-          "reason": "Capture filename explicitly names dialog & modal window; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:delphi",
-      "mediaId": "systems/delphi/components/crops/dialog-email-focus-visible.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:dialog-modal-window",
-          "rule": "ui-dialog",
-          "reason": "Capture filename explicitly names dialog & modal window; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:delphi",
-      "mediaId": "systems/delphi/components/crops/dialog-email-hover.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:dialog-modal-window",
-          "rule": "ui-dialog",
-          "reason": "Capture filename explicitly names dialog & modal window; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:delphi",
-      "mediaId": "systems/delphi/components/crops/dialog-email-pressed.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:dialog-modal-window",
-          "rule": "ui-dialog",
-          "reason": "Capture filename explicitly names dialog & modal window; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:delphi",
-      "mediaId": "systems/delphi/components/crops/dialog-google-default.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:dialog-modal-window",
-          "rule": "ui-dialog",
-          "reason": "Capture filename explicitly names dialog & modal window; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:delphi",
-      "mediaId": "systems/delphi/components/crops/dialog-google-focus-visible.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:dialog-modal-window",
-          "rule": "ui-dialog",
-          "reason": "Capture filename explicitly names dialog & modal window; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:delphi",
-      "mediaId": "systems/delphi/components/crops/dialog-google-hover.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:dialog-modal-window",
-          "rule": "ui-dialog",
-          "reason": "Capture filename explicitly names dialog & modal window; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:delphi",
-      "mediaId": "systems/delphi/components/crops/dialog-google-pressed.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:dialog-modal-window",
-          "rule": "ui-dialog",
-          "reason": "Capture filename explicitly names dialog & modal window; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:delphi",
-      "mediaId": "systems/delphi/components/crops/disc-card-default.png",
+      "referenceId": "systems:expedia",
+      "mediaId": "systems/expedia/components/crops/card-heart-hover.png",
       "terms": [
         {
           "termId": "web-ui-elements:cards-tiles",
@@ -258884,35 +258733,24 @@
       ]
     },
     {
-      "referenceId": "systems:delphi",
-      "mediaId": "systems/delphi/components/crops/hero-search-default.png",
+      "referenceId": "systems:expedia",
+      "mediaId": "systems/expedia/components/crops/card-heart-pressed.png",
       "terms": [
         {
-          "termId": "web-ux-patterns:searching",
-          "rule": "ux-search",
-          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
         }
       ]
     },
     {
-      "referenceId": "systems:delphi",
-      "mediaId": "systems/delphi/components/crops/hero-search-filled.png",
+      "referenceId": "systems:expedia",
+      "mediaId": "systems/expedia/components/crops/card-heart-search-default.png",
       "terms": [
         {
-          "termId": "web-ux-patterns:searching",
-          "rule": "ux-search",
-          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:delphi",
-      "mediaId": "systems/delphi/components/crops/hero-search-focused.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:search-field",
-          "rule": "ui-search-field",
-          "reason": "Capture filename explicitly names search field; local classification from recorded capture metadata."
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
         },
         {
           "termId": "web-ux-patterns:searching",
@@ -258922,46 +258760,13 @@
       ]
     },
     {
-      "referenceId": "systems:delphi",
-      "mediaId": "systems/delphi/components/crops/m-footer-default.png",
+      "referenceId": "systems:expedia",
+      "mediaId": "systems/expedia/components/crops/card-heart-search-focus-visible.png",
       "terms": [
         {
-          "termId": "web-ui-elements:footer",
-          "rule": "ui-footer",
-          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:delphi",
-      "mediaId": "systems/delphi/components/crops/m-search-default.png",
-      "terms": [
-        {
-          "termId": "web-ux-patterns:searching",
-          "rule": "ux-search",
-          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:delphi",
-      "mediaId": "systems/delphi/components/crops/m-search-filled.png",
-      "terms": [
-        {
-          "termId": "web-ux-patterns:searching",
-          "rule": "ux-search",
-          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:delphi",
-      "mediaId": "systems/delphi/components/crops/m-search-focused.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:search-field",
-          "rule": "ui-search-field",
-          "reason": "Capture filename explicitly names search field; local classification from recorded capture metadata."
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
         },
         {
           "termId": "web-ux-patterns:searching",
@@ -258971,8 +258776,95 @@
       ]
     },
     {
-      "referenceId": "systems:delphi",
-      "mediaId": "systems/delphi/components/crops/m-topic-card-default.png",
+      "referenceId": "systems:expedia",
+      "mediaId": "systems/expedia/components/crops/card-heart-search-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:expedia",
+      "mediaId": "systems/expedia/components/crops/card-heart-search-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:expedia",
+      "mediaId": "systems/expedia/components/crops/carousel-nav-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:carousel",
+          "rule": "ui-carousel",
+          "reason": "Capture filename explicitly names carousel; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:expedia",
+      "mediaId": "systems/expedia/components/crops/carousel-nav-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:carousel",
+          "rule": "ui-carousel",
+          "reason": "Capture filename explicitly names carousel; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:expedia",
+      "mediaId": "systems/expedia/components/crops/carousel-nav-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:carousel",
+          "rule": "ui-carousel",
+          "reason": "Capture filename explicitly names carousel; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:expedia",
+      "mediaId": "systems/expedia/components/crops/compare-switch-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:switch-toggle",
+          "rule": "ui-toggle",
+          "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:expedia",
+      "mediaId": "systems/expedia/components/crops/compare-switch-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:switch-toggle",
+          "rule": "ui-toggle",
+          "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:expedia",
+      "mediaId": "systems/expedia/components/crops/deal-card-default.png",
       "terms": [
         {
           "termId": "web-ui-elements:cards-tiles",
@@ -258982,8 +258874,8 @@
       ]
     },
     {
-      "referenceId": "systems:delphi",
-      "mediaId": "systems/delphi/components/crops/m-topic-card-focus-visible.png",
+      "referenceId": "systems:expedia",
+      "mediaId": "systems/expedia/components/crops/deal-card-hover.png",
       "terms": [
         {
           "termId": "web-ui-elements:cards-tiles",
@@ -258993,85 +258885,8 @@
       ]
     },
     {
-      "referenceId": "systems:delphi",
-      "mediaId": "systems/delphi/components/crops/m-topic-card-hover.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:cards-tiles",
-          "rule": "ui-cards",
-          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:delphi",
-      "mediaId": "systems/delphi/components/crops/m-topic-card-pressed.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:cards-tiles",
-          "rule": "ui-cards",
-          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:delphi",
-      "mediaId": "systems/delphi/components/crops/persp-card-default.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:cards-tiles",
-          "rule": "ui-cards",
-          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:delphi",
-      "mediaId": "systems/delphi/components/crops/share-btn-default.png",
-      "terms": [
-        {
-          "termId": "web-ux-patterns:share",
-          "rule": "ux-share",
-          "reason": "Capture filename explicitly names share; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:delphi",
-      "mediaId": "systems/delphi/components/crops/share-btn-focus-visible.png",
-      "terms": [
-        {
-          "termId": "web-ux-patterns:share",
-          "rule": "ux-share",
-          "reason": "Capture filename explicitly names share; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:delphi",
-      "mediaId": "systems/delphi/components/crops/share-btn-hover.png",
-      "terms": [
-        {
-          "termId": "web-ux-patterns:share",
-          "rule": "ux-share",
-          "reason": "Capture filename explicitly names share; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:delphi",
-      "mediaId": "systems/delphi/components/crops/share-btn-pressed.png",
-      "terms": [
-        {
-          "termId": "web-ux-patterns:share",
-          "rule": "ux-share",
-          "reason": "Capture filename explicitly names share; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:delphi",
-      "mediaId": "systems/delphi/components/crops/signin-dialog-default.png",
+      "referenceId": "systems:expedia",
+      "mediaId": "systems/expedia/components/crops/dialog-done-hover.png",
       "terms": [
         {
           "termId": "web-ui-elements:dialog-modal-window",
@@ -259081,8 +258896,62 @@
       ]
     },
     {
-      "referenceId": "systems:delphi",
-      "mediaId": "systems/delphi/components/crops/site-footer-default.png",
+      "referenceId": "systems:expedia",
+      "mediaId": "systems/expedia/components/crops/dialog-done-open.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dialog-modal-window",
+          "rule": "ui-dialog",
+          "reason": "Capture filename explicitly names dialog & modal window; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:expedia",
+      "mediaId": "systems/expedia/components/crops/filter-checkbox-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:checkbox-radio",
+          "rule": "ui-checkbox-radio",
+          "reason": "Capture filename explicitly names checkbox & radio; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:expedia",
+      "mediaId": "systems/expedia/components/crops/filter-checkbox-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:checkbox-radio",
+          "rule": "ui-checkbox-radio",
+          "reason": "Capture filename explicitly names checkbox & radio; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:expedia",
+      "mediaId": "systems/expedia/components/crops/filters-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:expedia",
+      "mediaId": "systems/expedia/components/crops/footer-link-default.png",
       "terms": [
         {
           "termId": "web-ui-elements:footer",
@@ -259092,112 +258961,526 @@
       ]
     },
     {
-      "referenceId": "systems:delphi",
-      "mediaId": "systems/delphi/components/crops/srch-badge-default.png",
+      "referenceId": "systems:expedia",
+      "mediaId": "systems/expedia/components/crops/footer-link-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:expedia",
+      "mediaId": "systems/expedia/components/crops/header-signin-search-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:expedia",
+      "mediaId": "systems/expedia/components/crops/header-signin-search-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:expedia",
+      "mediaId": "systems/expedia/components/crops/header-signin-search-hover.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:expedia",
+      "mediaId": "systems/expedia/components/crops/m-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:expedia",
+      "mediaId": "systems/expedia/components/crops/m-search-button-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:expedia",
+      "mediaId": "systems/expedia/components/crops/m-search-button-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:expedia",
+      "mediaId": "systems/expedia/components/crops/m-search-button-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:expedia",
+      "mediaId": "systems/expedia/components/crops/m-search-button-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:expedia",
+      "mediaId": "systems/expedia/components/crops/m-search-shell-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:expedia",
+      "mediaId": "systems/expedia/components/crops/map-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ui-elements:map",
+          "rule": "ui-map",
+          "reason": "Capture filename explicitly names map; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:expedia",
+      "mediaId": "systems/expedia/components/crops/property-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:expedia",
+      "mediaId": "systems/expedia/components/crops/property-card-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:expedia",
+      "mediaId": "systems/expedia/components/crops/rating-pill-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:expedia",
+      "mediaId": "systems/expedia/components/crops/savings-pill-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:expedia",
+      "mediaId": "systems/expedia/components/crops/savings-pill-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:expedia",
+      "mediaId": "systems/expedia/components/crops/savings-pill-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:expedia",
+      "mediaId": "systems/expedia/components/crops/search-form-sticky-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:expedia",
+      "mediaId": "systems/expedia/components/crops/search-shell-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:expedia",
+      "mediaId": "systems/expedia/components/crops/search-submit-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:expedia",
+      "mediaId": "systems/expedia/components/crops/search-submit-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:expedia",
+      "mediaId": "systems/expedia/components/crops/search-submit-hover.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:expedia",
+      "mediaId": "systems/expedia/components/crops/search-submit-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:expedia",
+      "mediaId": "systems/expedia/components/crops/search-tabs-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:expedia",
+      "mediaId": "systems/expedia/components/crops/signin-card-button-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:expedia",
+      "mediaId": "systems/expedia/components/crops/signin-card-button-open.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:expedia",
+      "mediaId": "systems/expedia/components/crops/signin-card-open.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:expedia",
+      "mediaId": "systems/expedia/components/crops/sort-control-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:expedia",
+      "mediaId": "systems/expedia/components/crops/sort-control-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:expedia",
+      "mediaId": "systems/expedia/components/crops/sort-control-hover.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:expedia",
+      "mediaId": "systems/expedia/components/crops/stay-type-tabs-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:expedia",
+      "mediaId": "systems/expedia/components/crops/tab-active-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:expedia",
+      "mediaId": "systems/expedia/components/crops/tab-active-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:expedia",
+      "mediaId": "systems/expedia/components/crops/tab-active-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:expedia",
+      "mediaId": "systems/expedia/components/crops/tab-active-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:expedia",
+      "mediaId": "systems/expedia/components/crops/tab-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:expedia",
+      "mediaId": "systems/expedia/components/crops/tab-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:expedia",
+      "mediaId": "systems/expedia/components/crops/tab-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:expedia",
+      "mediaId": "systems/expedia/components/crops/tab-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:expedia",
+      "mediaId": "systems/expedia/components/crops/tertiary-button-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:expedia",
+      "mediaId": "systems/expedia/components/crops/tertiary-button-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:expedia",
+      "mediaId": "systems/expedia/components/crops/tertiary-button-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:expedia",
+      "mediaId": "systems/expedia/components/crops/tertiary-button-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:expedia",
+      "mediaId": "systems/expedia/components/crops/vip-badge-default.png",
       "terms": [
         {
           "termId": "web-ui-elements:badge",
           "rule": "ui-badge",
           "reason": "Capture filename explicitly names badge; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:delphi",
-      "mediaId": "systems/delphi/components/crops/srch-expert-card-default.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:cards-tiles",
-          "rule": "ui-cards",
-          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:delphi",
-      "mediaId": "systems/delphi/components/crops/suggested-chip-default.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:tags-chips",
-          "rule": "ui-chips",
-          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:delphi",
-      "mediaId": "systems/delphi/components/crops/suggested-chip-focus-visible.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:tags-chips",
-          "rule": "ui-chips",
-          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:delphi",
-      "mediaId": "systems/delphi/components/crops/suggested-chip-hover.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:tags-chips",
-          "rule": "ui-chips",
-          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:delphi",
-      "mediaId": "systems/delphi/components/crops/suggested-chip-pressed.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:tags-chips",
-          "rule": "ui-chips",
-          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:delphi",
-      "mediaId": "systems/delphi/components/crops/topic-card-default.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:cards-tiles",
-          "rule": "ui-cards",
-          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:delphi",
-      "mediaId": "systems/delphi/components/crops/topic-card-focus-visible.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:cards-tiles",
-          "rule": "ui-cards",
-          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:delphi",
-      "mediaId": "systems/delphi/components/crops/topic-card-hover.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:cards-tiles",
-          "rule": "ui-cards",
-          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:delphi",
-      "mediaId": "systems/delphi/components/crops/topic-card-pressed.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:cards-tiles",
-          "rule": "ui-cards",
-          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
         }
       ]
     },

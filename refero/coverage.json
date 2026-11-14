@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 133,
-    "system_domains": 125,
-    "matched_domains": 98,
-    "missing_domains": 335,
+    "system_packages": 135,
+    "system_domains": 127,
+    "matched_domains": 100,
+    "missing_domains": 333,
     "system_domains_absent_from_catalog": 27
   },
   "matched": {
@@ -1511,6 +1511,40 @@
         }
       ]
     },
+    "excalidraw.com": {
+      "catalog": [
+        {
+          "name": "Excalidraw",
+          "domain": "excalidraw.com",
+          "id": 477
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "excalidraw",
+          "name": "Excalidraw",
+          "url": "https://excalidraw.com",
+          "name_match": true
+        }
+      ]
+    },
+    "expedia.com": {
+      "catalog": [
+        {
+          "name": "Expedia",
+          "domain": "expedia.com",
+          "id": 172
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "expedia",
+          "name": "Expedia",
+          "url": "https://www.expedia.com",
+          "name_match": true
+        }
+      ]
+    },
     "fable.co": {
       "catalog": [
         {
@@ -1920,20 +1954,6 @@
         "name": "Equals",
         "domain": "equals.app",
         "id": 289
-      }
-    ],
-    "excalidraw.com": [
-      {
-        "name": "Excalidraw",
-        "domain": "excalidraw.com",
-        "id": 477
-      }
-    ],
-    "expedia.com": [
-      {
-        "name": "Expedia",
-        "domain": "expedia.com",
-        "id": 172
       }
     ],
     "explore.family": [

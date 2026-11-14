@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_75 of 133 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_77 of 135 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -415,6 +415,15 @@ Access: read-only (the marketing site, the go.equals.com sign-in card and the do
 Access: read-only (every captured surface is public: the storefront, the sign-in dialog, the support centre and the marketing home); the sign-in form and both search fields were measured, never submitted; Get, Add to Cart, Wishlist, Download, sort options and filter checkboxes were measured, never activated
 - every post-login surface (library, account, billing, cart, checkout) is an authenticated boundary never reached
 - the sign-in form was measured default/focused/filled, never submitted; validation, error and success states are absent rather than measured
+
+## [Excalidraw](../systems/excalidraw) — `excalidraw`
+Access: read-only (the whole editor is public signed out; nothing was drawn, opened, saved, shared, exported or generated; Open, Save, Export actions, Live collaboration, Share, the AI tools, Reset the canvas and every Sign up were measured, never pressed; Excalidraw+ needs an account and was never reached)
+- Excalidraw+ (saved workspaces, cloud library, collaboration management, billing) needs an account and was never reached; no signup or login path was followed
+
+## [Expedia](../systems/expedia) — `expedia`
+Access: signed out (every captured surface is public); expedia.com answers automation with a 429 "Bot or Not?" challenge, so the DOM evidence is a Wayback snapshot served locally and painted with live travel-assets.com CSS/fonts
+- anything behind sign-in: trips, account, member pricing, checkout, booking, saved items
+- submitted states: search was never submitted; sort/filters never applied; only screenshot evidence for the opened sort menu
 
 ## [Fable](../systems/fable) — `fable`
 Access: read-only (the marketing pages, /clubs, /books, genre/club/book detail pages, /discover, /signin, /signup, /support, /blog and /community-guidelines are fully public signed out; joined clubs, discussions, the reader, lists, streaks, cart and checkout need an account - an authenticated boundary never reached; the sign-in form and SSO buttons, Join, Want to read, store badges and every CTA were measured, never submitted, pressed or followed; the Osano consent layer was hidden, never answered)
