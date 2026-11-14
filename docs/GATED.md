@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_69 of 127 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_70 of 128 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -388,6 +388,10 @@ Access: read-only (the home page, /discover/<topic> galleries, /search/<question
 Access: signed out (every surface captured is public; account.esquire.com sign-in and the shop.esquire.com subscription checkout are off-domain boundaries that were measured, never followed; the newsletter and search fields were typed into and cleared, never submitted)
 - every signed-in surface (bookmarks, comment counts, the premium archive) lives behind Sign In on account.esquire.com - an authenticated boundary never reached
 - the Join/Subscribe buttons lead to shop.esquire.com checkout - measured, never followed; purchase, payment and confirmation states are absent rather than measured
+
+## [Visual (designstripe)](../systems/designstripe) — `designstripe`
+Access: read-only (the home page, /assets library and /assets/<kind>/<set> galleries, /tools, /about, /contact and /blog articles are fully public signed out; the design agents, account asset downloads and every post-waitlist surface are an authenticated boundary never reached; the WAITLIST buttons, nav links, category tiles, tool cards and article links were measured, never followed or submitted)
+- the design agents, account asset downloads and every post-waitlist surface need an account - an authenticated boundary never reached
 
 ## Gate noted in access text only
 

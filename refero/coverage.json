@@ -3,11 +3,11 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 127,
-    "system_domains": 119,
+    "system_packages": 128,
+    "system_domains": 120,
     "matched_domains": 93,
     "missing_domains": 340,
-    "system_domains_absent_from_catalog": 26
+    "system_domains_absent_from_catalog": 27
   },
   "matched": {
     "1password.com": {
@@ -4247,6 +4247,14 @@
         "slug": "superset-desktop",
         "name": "Superset (desktop)",
         "url": "https://superset.sh",
+        "ios_guess": []
+      }
+    ],
+    "visual.app": [
+      {
+        "slug": "designstripe",
+        "name": "Visual (designstripe)",
+        "url": "https://visual.app",
         "ios_guess": []
       }
     ],
