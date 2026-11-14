@@ -121,6 +121,8 @@ export async function packageTokens(
         ).length,
       })),
       note: "Choose any group or nested dotted token path. Values preserve their recorded evidence.",
+      text: undefined,
+      tokens: undefined,
     };
   if (
     !all.some(
@@ -153,7 +155,7 @@ export async function packageTokens(
     page.push(resolved);
     characters += size;
   }
-  return {
+  const result = {
     kind: "package-tokens",
     referenceId,
     group,
@@ -164,6 +166,10 @@ export async function packageTokens(
     nextOffset:
       offset + page.length < selected.length ? offset + page.length : null,
   };
+  // Saved conversations and the stream are plain JSON, where 1.0 is 1. The
+  // page's Python-style text travels with it so a replay still shows the
+  // model 1.0.
+  return { ...result, text: pyJsonStringify(result) };
 }
 export async function handoffPrompt(
   referenceId: string,

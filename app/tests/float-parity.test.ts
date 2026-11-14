@@ -98,10 +98,14 @@ test("the research tool hands the model the same text Python would print", async
     { referenceId: "systems:test", group: "core.opacity", offset: 0 },
     { toolCallId: "test", messages: [], context: {} },
   );
+  // Saved conversations and the stream are plain JSON; replay must still
+  // show the model 1.0.
+  const replayed = JSON.parse(JSON.stringify(output));
+  expect(JSON.stringify(replayed.tokens[0].value)).toBe("1");
   const model = await tools.getPackageTokens.toModelOutput!({
     toolCallId: "test",
     input: { referenceId: "systems:test", group: "core.opacity", offset: 0 },
-    output: output as never,
+    output: replayed,
   });
   expect(model).toMatchObject({ type: "text" });
   expect((model as { value: string }).value).toContain('"value":1.0');
