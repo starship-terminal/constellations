@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_79 of 137 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_78 of 136 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -378,12 +378,6 @@ Access: read-only (the marketing site, the public catalog, SFX and artist pages 
 Access: read-only (the marketing site and the platform login page are fully public signed out; everything behind platform.enode.com - the dashboard, docs portal, API surfaces - is an authenticated boundary never reached; the contact and login forms were measured and typed into then cleared, never submitted; every CTA and link was measured, never followed; the dormant Cookiebot layer shows no banner and was never answered)
 - every post-login platform surface (dashboard, asset management, API keys) and docs.enode.com lives behind an account - an authenticated boundary never reached
 - the /contact, /contact/partnerships and platform login forms were measured at rest and typed into then cleared, never submitted - validation, error, loading and success states are absent rather than measured
-
-## [Faire](../systems/faire) — `faire`
-Access: signed out (every captured surface is public; search results, product detail, cart, checkout, account and the brand portal are behind the sign-up/sign-in dialogs - a documented authenticated boundary never crossed)
-- every post-auth surface - search results, product detail, cart, checkout, account and the brand portal - sits behind the sign-up/sign-in dialogs; every product tile links ?signUp=product, an authenticated boundary never crossed
-- the /apply stepper's steps past 1 need a submitted first step; step 1 was filled and cleared, never sent
-- the observed sign-up dialog mounts no Apple SSO button; signup-apple is recorded missing
 
 ## [Delphi](../systems/delphi) — `delphi`
 Access: read-only (the home page, /discover/<topic> galleries, /search/<question> results, /<expert> profiles and /<expert>/chat are fully public signed out; creating a clone, saving perspectives and every post-login surface is an authenticated boundary never reached; Sign In, Continue with Google/Email, Share, Save, Expand, Personalize, suggested-question chips, the microphone and the chat send were measured, never followed or submitted)
