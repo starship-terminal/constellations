@@ -838,5 +838,11 @@
     "groupId": "web-categories",
     "labels": ["Web3 & Crypto", "Finance"],
     "reason": "catalog.json describes a crypto wallet product: an iOS Ethereum self-custody wallet's marketing site and the signed-out Aave Account login."
+  },
+  {
+    "referenceId": "systems:fibery",
+    "groupId": "web-categories",
+    "labels": ["Productivity", "Project Management"],
+    "reason": "catalog.json describes a modular work-management platform: a warm-palette marketing site with template gallery, pricing plans and gated workspace surfaces past fibery.io sign-up/login."
   }
 ]

@@ -3,11 +3,11 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 140,
-    "system_domains": 132,
+    "system_packages": 141,
+    "system_domains": 133,
     "matched_domains": 104,
     "missing_domains": 329,
-    "system_domains_absent_from_catalog": 28
+    "system_domains_absent_from_catalog": 29
   },
   "matched": {
     "1password.com": {
@@ -4230,6 +4230,14 @@
         "slug": "equals",
         "name": "Equals",
         "url": "https://equals.com",
+        "ios_guess": []
+      }
+    ],
+    "fibery.com": [
+      {
+        "slug": "fibery",
+        "name": "Fibery",
+        "url": "https://fibery.com",
         "ios_guess": []
       }
     ],
