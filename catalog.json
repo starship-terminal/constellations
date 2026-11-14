@@ -16,7 +16,8 @@
     "events": "Events",
     "e-commerce": "E-commerce",
     "travel": "Travel",
-    "directory": "Directories"
+    "directory": "Directories",
+    "finance": "Finance"
   },
   "systems": [
     {
@@ -11399,6 +11400,105 @@
       },
       "layoutGaps": {
         "icons/": "the icon extraction pass was not run; the icons (the Visual mark, tile badges, tool previews and avatar art) are visible in the crops and screenshots"
+      }
+    },
+    {
+      "slug": "family",
+      "name": "Family",
+      "url": "https://family.co",
+      "category": "finance",
+      "platform": "web",
+      "goodFor": "crypto-wallet marketing and product chrome: the marketing role layer (--body/--body-muted/--heading text, --blue/--orange/--beige/--gray-light, a full --graphic-* illustration palette) plus the app's declared product layer (a --family-*/--primary-* violet scale #9896ff, 9-step --danger-*/--valid-*/--warning-* status ramps, 21 named --wallet-* colours, --overlay-*/--input-*/--duration-*/--ease-* values), a white field with #343433 Family-face headings, #f2f0ed hairlines and near-black #171717 CTA pills, blog/support/docs/legal surfaces and the signed-out Aave Account login",
+      "tags": [
+        "web",
+        "crypto",
+        "wallet",
+        "finance",
+        "light",
+        "dark-declared",
+        "display-font",
+        "pill-buttons",
+        "hairlines",
+        "signed-out"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-14",
+      "access": "read-only (family.co marketing pages, /docs, /support and the app.family.co login are fully public signed out; the signed-in Aave Account product and the iOS wallet are authenticated/native boundaries never reached; Log In, Get Started, Download on iOS and every Watch link were measured, never followed, and the login field and support search were typed into and cleared, never submitted)",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/family/README.md",
+      "tokens": "systems/family/tokens.json",
+      "styleGuide": "systems/family/style-guide.html",
+      "preview": {
+        "cover": "systems/family/screenshots/home-light-default.png",
+        "icon": "systems/family/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.color.body.bg.secondary",
+            "text": "light.text.ink",
+            "muted": "light.text.low",
+            "accent": "core.color.app.primary",
+            "border": "light.border.hairline"
+          },
+          "dark": {
+            "page": "dark.color.body.bg.default",
+            "surface": "dark.color.body.bg.secondary",
+            "text": "dark.color.body.color.default",
+            "muted": "dark.color.body.color.muted",
+            "accent": "core.color.app.primary",
+            "border": "dark.color.hr.color"
+          }
+        },
+        "fonts": [
+          "core.font.family.display",
+          "core.font.family.ui"
+        ]
+      },
+      "capture": {
+        "method": "public-web",
+        "source": "family.co and app.family.co in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and crops from the live DOM. Both surfaces declare token layers in their stylesheets (49 marketing names, 122/125 app names per theme), so the scales are declared values and the surface roles are measured computed values aliased to the declarations they match. Only the light theme paints signed out; the app's [data-theme=\"dark\"] layer (20 switching names, 3 dark-only) is declared evidence. The signed-in Aave Account product and the iOS wallet are documented boundaries",
+        "timestamp": "2026-11-14T14:00:00Z",
+        "harness": "Devin",
+        "model": "SWE-2 High",
+        "route": "public-web",
+        "routes": [
+          "/",
+          "/blog",
+          "/blog/why-family-accounts",
+          "/changelog",
+          "/support",
+          "/support/import-a-wallet-from-metamask",
+          "/faqs",
+          "/legal",
+          "/docs",
+          "/docs/connectkit",
+          "/docs/family-account",
+          "app.family.co/ (Aave Account login)",
+          "mobile /, /support and app.family.co/"
+        ],
+        "gaps": [
+          "the signed-in Aave Account product and every post-login surface need an account - an authenticated boundary never reached",
+          "Family the wallet is a native iOS app - the site only links to the App Store; nothing on-device was captured",
+          "Log In, Get Started, Download on iOS and every Watch link were measured, never followed; the login field and support search were typed into and cleared, never submitted",
+          "the app's dark theme is declared (20 switching names + 3 dark-only) but only light ever paints signed out - dark tokens are declared evidence, unverified on a painted surface",
+          "full-page captures are stitched viewport-tall tiles capped at 8 chunks - a recorded boundary (the changelog is ~24497px tall)",
+          "disabled, error and loading states were not observed; pressed states are DevTools-forced :active and may not match real mousedown",
+          "transient edge/security challenges interrupted several passes mid-capture; they were retried clean, no route stayed blocked",
+          "icons: no standalone SVG set lifted this pass"
+        ],
+        "durationMin": 320,
+        "pr": "https://github.com/starship-terminal/constellations/pull/555",
+        "durationNote": "wall-clock across the capture sessions including kit adaptation, the two-surface stylesheet harvest, screenshot and measurement passes on a headless Linux server, selector retries against styled-components DOM and CSP limits, and the offline build"
+      },
+      "layoutGaps": {
+        "icons/": "the icon extraction pass was not run; the icons (the Family wordmark, the dropdown chevrons, feature illustrations, phone mockups) are visible in the crops and screenshots"
       }
     }
   ]

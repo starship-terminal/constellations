@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_81 of 139 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_82 of 140 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -453,6 +453,11 @@ Access: read-only (factory.com, docs.factory.com and the auth.factory.ai sign-in
 ## [Visual (designstripe)](../systems/designstripe) — `designstripe`
 Access: read-only (the home page, /assets library and /assets/<kind>/<set> galleries, /tools, /about, /contact and /blog articles are fully public signed out; the design agents, account asset downloads and every post-waitlist surface are an authenticated boundary never reached; the WAITLIST buttons, nav links, category tiles, tool cards and article links were measured, never followed or submitted)
 - the design agents, account asset downloads and every post-waitlist surface need an account - an authenticated boundary never reached
+
+## [Family](../systems/family) — `family`
+Access: read-only (family.co marketing pages, /docs, /support and the app.family.co login are fully public signed out; the signed-in Aave Account product and the iOS wallet are authenticated/native boundaries never reached; Log In, Get Started, Download on iOS and every Watch link were measured, never followed, and the login field and support search were typed into and cleared, never submitted)
+- the signed-in Aave Account product and every post-login surface need an account - an authenticated boundary never reached
+- Log In, Get Started, Download on iOS and every Watch link were measured, never followed; the login field and support search were typed into and cleared, never submitted
 
 ## Gate noted in access text only
 
