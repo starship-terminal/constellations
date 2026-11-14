@@ -2,8 +2,10 @@
 // against a local fixture page. Run with `node --test tools/kit/capture/test_motion.mjs`; make test runs it
 // through tools/test_kit_motion.py.
 import assert from 'node:assert/strict';
-import { execFileSync } from 'node:child_process';
+import { execFile, execFileSync } from 'node:child_process';
+import { promisify } from 'node:util';
 import fs from 'node:fs';
+import http from 'node:http';
 import os from 'node:os';
 import path from 'node:path';
 import test from 'node:test';
@@ -148,18 +150,54 @@ test('summarise and mergeSummaries name the page behaviour', () => {
   assert.equal(mergeSummaries([]).behaviour, 'no-motion');
 });
 
-test('declaredOf normalises a rule and flags var()', () => {
+test('declaredOf records only what the rule authors', () => {
   const d = declaredOf({ selector: '.btn:hover', context: ['@media (hover: hover)'], transitionProperty: 'color', transitionDuration: '0.3s', transitionTimingFunction: 'ease-in' });
-  assert.deepEqual(d.transitions, [{ property: 'color', durationMs: 300, delayMs: 0, easing: 'ease-in' }]);
+  assert.deepEqual(d.transitions, [{ property: 'color', durationMs: 300, easing: 'ease-in' }]);
   assert.equal(d.viaVar, undefined);
   assert.equal(declaredOf({ selector: '.x', context: [], transitionProperty: 'opacity', transitionDuration: 'var(--d)' }).viaVar, true);
 });
 
-test('declaredOf names a state rule that sets only a duration (base)', () => {
-  const d = declaredOf({ selector: '.btn:hover', context: [], transitionDuration: '.4s' });
-  assert.deepEqual(d.transitions, [{ property: '(base)', durationMs: 400, delayMs: 0, easing: 'ease' }]);
-  assert.equal(declaredOf({ selector: '.x', context: [], animationDelay: '1s' }).animations[0].name, '(base)');
+test('declaredOf keeps every entry of a state rule that sets only durations, and invents no easing', () => {
+  const d = declaredOf({ selector: '.btn:hover', context: [], transitionDuration: '.4s, .6s' });
+  assert.deepEqual(d.transitions, [{ property: '(base #0)', durationMs: 400 }, { property: '(base #1)', durationMs: 600 }]);
+  assert.equal(declaredOf({ selector: '.x', context: [], animationDelay: '1s' }).animations[0].name, '(base #0)');
   assert.deepEqual(declaredOf({ selector: '.x', context: [], color: 'red' }).transitions, []);
+});
+
+test('declaredOf keeps a state-only scroll-behavior: smooth', () => {
+  assert.equal(declaredOf({ selector: 'html:focus-within', context: [], scrollBehavior: 'smooth' }).scrollBehavior, 'smooth');
+  assert.equal(declaredOf({ selector: 'html', context: [], scrollBehavior: 'auto' }).scrollBehavior, undefined);
+});
+
+test('more motion under reduce is never a reduction', () => {
+  const slow = motionOf({ transitionProperty: 'opacity', transitionDuration: '200ms' });
+  const slower = motionOf({ transitionProperty: 'opacity', transitionDuration: '2000ms' });
+  const d = diffMotion(slow, slower);
+  assert.equal(d.items[0].outcome, 'increased');
+  assert.equal(d.outcome, 'increased');
+  assert.equal(summarise(groupRecords([{ node: 'a', base: slow, reduced: slower }])).behaviour, 'partial');
+  // a replacement infinite animation: the old one is gone, the new one loops
+  const spin = motionOf({ animationName: 'spin', animationDuration: '1s', animationIterationCount: 'infinite' });
+  const pulse = motionOf({ animationName: 'pulse', animationDuration: '1s', animationIterationCount: 'infinite' });
+  const swap = diffMotion(spin, pulse);
+  assert.deepEqual(swap.items.map((i) => [i.key, i.outcome, !!i.loops]), [['spin', 'removed', false], ['pulse', 'added', true]]);
+  assert.equal(swap.outcome, 'partial');
+  assert.deepEqual(summarise(groupRecords([{ node: 'a', base: spin, reduced: pulse }])).loops, ['pulse']);
+  // smooth scrolling that only appears under reduce
+  const smooth = diffMotion(slow, { ...slow, scrollBehavior: 'smooth' });
+  assert.ok(smooth.items.some((i) => i.kind === 'scroll' && i.outcome === 'added'));
+  assert.equal(smooth.outcome, 'increased');
+});
+
+test('an animation paused under reduce is stopped, not kept or looping', () => {
+  const run = motionOf({ animationName: 'spin', animationDuration: '1s', animationIterationCount: 'infinite', animationPlayState: 'running' });
+  const paused = motionOf({ animationName: 'spin', animationDuration: '1s', animationIterationCount: 'infinite', animationPlayState: 'paused' });
+  assert.equal(animationsOf({ animationName: 'spin', animationPlayState: 'paused' })[0].playState, 'paused');
+  const d = diffMotion(run, paused);
+  assert.equal(d.outcome, 'removed');
+  assert.equal(d.items[0].loops, undefined);
+  assert.equal(summarise(groupRecords([{ node: 'a', base: run, reduced: paused }])).behaviour, 'honours');
+  assert.notEqual(diffMotion(run, run).outcome, 'removed');
 });
 
 test('noUrl keeps authored tokens and cuts a url()', () => {
@@ -210,4 +248,83 @@ test('motion-probe reads a fixture page in both passes', { skip: !fs.existsSync(
   assert.deepEqual(vars, { '--dur-fast': '120ms', '--ease-out': 'cubic-bezier(0.2, 0, 0, 1)' });
   assert.ok(!JSON.stringify(raw).includes('SECRET'));
   assert.equal(raw.summary.behaviour, 'partial');
+});
+
+// ---- the probe over http: imports, sheet media, SVG, signed selectors, page keys, failure, paths
+const PAGE2 = `<!doctype html><meta charset=utf-8><title>f2</title>
+<style>@import url("/imp.css");</style>
+<style media="(prefers-reduced-motion: reduce)">.on-reduce { animation: none; }</style>
+<style>
+.dot { animation: blink 1s ease infinite; }
+@keyframes blink { 50% { opacity: .2 } }
+@media (prefers-reduced-motion: no-preference) { .btn:hover { transition: transform 700ms ease-out; } }
+@media (prefers-reduced-motion: reduce) { img[src="https://cdn.test/a.png?sig=SECRET2"], .dot { animation: none; } }
+</style>
+<svg width=20 height=20><circle class=dot cx=10 cy=10 r=5 /></svg><div class=imp></div>`;
+const IMP = '@keyframes imp { from { opacity: 0 } to { opacity: 1 } } .imp { animation: imp 1s linear infinite; } @media (prefers-reduced-motion: reduce) { .imp { animation: none; } }';
+
+function serve(routes) {
+  return new Promise((resolve) => {
+    const srv = http.createServer((req, res) => {
+      const r = routes[req.url.split('?')[0]];
+      if (!r) { res.writeHead(404); return res.end(); }
+      res.writeHead(200, { 'content-type': r[0] }); res.end(r[1]);
+    });
+    srv.listen(0, '127.0.0.1', () => resolve(srv));
+  });
+}
+const probe = (args, env = {}) => execFileSync(process.execPath, [path.join(here, 'motion-probe.mjs'), ...args], { env: { ...process.env, PLAYWRIGHT: PW, ...env }, timeout: 120000, stdio: 'pipe' });
+const skipPw = !fs.existsSync(PW) && 'the capture Playwright is not installed';
+
+test('motion-probe follows @import, reads sheet media and SVG, keeps pages apart and strips signed selectors', { skip: skipPw }, async () => {
+  const srv = await serve({ '/p.html': ['text/html', PAGE2], '/imp.css': ['text/css', IMP] });
+  try {
+    const base = `http://127.0.0.1:${srv.address().port}/p.html`;
+    const out = path.join(fs.mkdtempSync(path.join(os.tmpdir(), 'motion-')), 'motion.json');
+    // two URLs that sanitise to the same form must stay two pages
+    // (async: the server lives in this process, so a blocking spawn would never be answered)
+    await promisify(execFile)(process.execPath, [path.join(here, 'motion-probe.mjs'), '--urls', `${base}?tab=one,${base}?tab=two`], { env: { ...process.env, PLAYWRIGHT: PW, OUT_JSON: out }, timeout: 120000 });
+    const raw = JSON.parse(fs.readFileSync(out, 'utf8'));
+    assert.deepEqual(Object.keys(raw.pages), ['page-1', 'page-2']);
+    const p = raw.pages['page-1'];
+    assert.ok(p.keyframes.some((k) => k.name === 'imp'), 'an @import is walked');
+    assert.ok(p.reducedMotionRules.some((r) => r.selector === '.imp'), 'a rule inside an imported sheet is read');
+    assert.ok(p.reducedMotionRules.some((r) => r.selector === '.on-reduce' && /prefers-reduced-motion/.test(r.media)), "a sheet's own media condition is kept");
+    assert.ok(p.reducedMotionRules.some((r) => /no-preference/.test(r.media)), 'no-preference rules are kept');
+    assert.ok(p.declared.some((d) => d.context.some((c) => /no-preference/.test(c)) && d.transitions[0].durationMs === 700));
+    const nodes = p.groups.flatMap((g) => g.nodes);
+    assert.ok(nodes.some((n) => n.startsWith('circle')), 'an svg descendant is read');
+    assert.equal(p.summary.behaviour, 'honours');
+    assert.ok(!JSON.stringify(raw).includes('SECRET2'), 'a signed URL in a selector is cut');
+    assert.ok(p.reducedMotionRules.some((r) => r.selector.includes('<url>') && r.selector.includes('.dot')));
+    assert.equal(p.sheetsTruncated.reducedRules, false);
+  } finally { srv.close(); }
+});
+
+test('motion-probe flags a cap and a cut list, and reads no stopped element out of them', { skip: skipPw }, () => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'motion-'));
+  fs.writeFileSync(path.join(dir, 'page.html'), FIXTURE);
+  const out = path.join(dir, 'motion.json');
+  probe(['--urls', 'file://' + path.join(dir, 'page.html')], { OUT_JSON: out, MOTION_CAP: '3' });
+  const [p] = Object.values(JSON.parse(fs.readFileSync(out, 'utf8')).pages);
+  assert.ok(p.capped.droppedNormal > 0, 'moving elements past the cap are counted');
+  assert.equal(p.summary.moving, 3, 'only the kept three are compared');
+  assert.equal(p.summary.kept, 0, '.polite was dropped, not read as stopped');
+});
+
+test('motion-probe fails, and keeps the earlier file, when no page was captured', { skip: skipPw }, () => {
+  const out = path.join(fs.mkdtempSync(path.join(os.tmpdir(), 'motion-')), 'motion.json');
+  fs.writeFileSync(out, '{"earlier":true}');
+  assert.throws(() => probe(['--urls', 'http://127.0.0.1:1/'], { OUT_JSON: out }), (e) => e.status === 1 && /no page was captured/.test(String(e.stderr)));
+  assert.equal(fs.readFileSync(out, 'utf8'), '{"earlier":true}');
+});
+
+test('motion-probe finds its package folder when the path has a space', { skip: skipPw }, () => {
+  const pkg = path.join(fs.mkdtempSync(path.join(os.tmpdir(), 'motion-')), 'my pkg');
+  const cap = path.join(pkg, 'tools', 'capture');
+  fs.mkdirSync(cap, { recursive: true });
+  for (const f of ['motion-probe.mjs', 'motion.mjs', 'safe-url.mjs']) fs.copyFileSync(path.join(here, f), path.join(cap, f));
+  fs.writeFileSync(path.join(pkg, 'page.html'), FIXTURE);
+  execFileSync(process.execPath, [path.join(cap, 'motion-probe.mjs'), '--urls', 'file://' + path.join(pkg, 'page.html').replace(/ /g, '%20')], { env: { ...process.env, PLAYWRIGHT: PW }, timeout: 120000, stdio: 'pipe' });
+  assert.ok(fs.existsSync(path.join(pkg, 'raw', 'motion.json')));
 });

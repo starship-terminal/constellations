@@ -490,9 +490,9 @@ function roles() {
   const M = TOK.core.motion;
   if (M) {
     const eases = Object.keys(M.easing || {});
-    const ease = eases.includes('ease-out') ? 'var(--motion-easing-ease-out)' : eases.length ? `var(--motion-easing-${eases[0]})` : 'ease';
+    const ease = eases.includes('ease-out') ? `var(${cssname('motion.easing.ease-out')})` : eases.length ? `var(${cssname('motion.easing.' + eases[0])})` : 'ease';
     for (const [n, t] of flat(M.duration || {}, 'duration.')) h += `<div><div class="track" style="--d:${esc(t.v)};--e:${ease}"><div class="dot" style="transition:left var(--d) var(--e)"></div></div><div class="cap" style="margin-top:6px">motion.${esc(n)} · ${esc(t.v)}</div></div>`;
-    for (const [n, t] of flat(M.easing || {}, 'easing.')) h += `<div><div class="track" style="--e:var(--motion-${esc(n.replace(/\./g, '-'))})"><div class="dot" style="transition:left 600ms var(--e)"></div></div><div class="cap" style="margin-top:6px">motion.${esc(n)} · cubic-bezier(${esc(t.v.join(', '))}) over 600 ms</div></div>`;
+    for (const [n, t] of flat(M.easing || {}, 'easing.')) h += `<div><div class="track" style="--e:var(${esc(cssname('motion.' + n))})"><div class="dot" style="transition:left 600ms var(--e)"></div></div><div class="cap" style="margin-top:6px">motion.${esc(n)} · cubic-bezier(${esc(t.v.join(', '))}) over 600 ms</div></div>`;
   }
   $('#motion-out').innerHTML = h;
   document.querySelectorAll('.track').forEach((tr) => tr.addEventListener('click', () => tr.classList.toggle('go')));

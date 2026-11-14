@@ -16,19 +16,20 @@
 // (tools/kit/build/motion.py). Elements with the same motion share one group, so the file stays small.
 import fs from 'node:fs';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { MOTION_PROPS, MOTION_VAR_NAME, MOTION_VAR_VALUE, motionOf, groupRecords, summarise, mergeSummaries, declaredOf, readMotionInPage, readSheetsInPage } from './motion.mjs';
 import { safeUrl } from './safe-url.mjs';
 
 const pw = await import(process.env.PLAYWRIGHT || 'playwright');
 const { chromium } = pw.default ?? pw;
-const here = path.dirname(new URL(import.meta.url).pathname);
+const here = path.dirname(fileURLToPath(import.meta.url));
 const REF = path.resolve(here, '..', '..');              // systems/<slug>, from tools/capture
 const OUT = process.env.OUT_JSON || path.join(REF, 'raw', 'motion.json');
 const SNAPS = process.env.SNAPS ? path.resolve(process.env.SNAPS) : null;
 const urlsArg = process.argv.indexOf('--urls');
 const URLS = urlsArg > 0 ? (process.argv[urlsArg + 1] || '').split(',').filter(Boolean) : [];
 if (!SNAPS && !URLS.length) { console.error('SNAPS=<dir of page copies>, or --urls <url>[,<url>...], is required'); process.exit(2); }
-const CAP = 6000;
+const CAP = Number(process.env.MOTION_CAP) || 6000;   // moving elements kept per pass
 const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
 
 // PRODUCT (adapt): anything a public page needs before it shows its real UI (a promo dialog, a cookie
@@ -60,8 +61,10 @@ async function readPage(page, label, url) {
     url: url && safeUrl(url),
     matchMedia: { normal: normal.matches, reduce: reduced.matches },
     scanned: normal.scanned,
-    capped: normal.records.length >= CAP || reduced.records.length >= CAP,
+    // moving elements left out because the cap was reached; they are in neither pass, so none is read as stopped
+    capped: normal.dropped + reduced.dropped > 0 ? { cap: CAP, droppedNormal: normal.dropped, droppedReduced: reduced.dropped } : false,
     unreadableSheets: sheets.unreadable,
+    sheetsTruncated: sheets.truncated,
     summary: summarise(groups),
     groups,
     keyframes: sheets.keyframes,
@@ -69,6 +72,8 @@ async function readPage(page, label, url) {
     declared: sheets.declared.map(declaredOf).filter((d) => d.transitions.length || d.animations.length || d.scrollBehavior || d.viaVar),
     customProperties: sheets.customProperties,
   };
+  if (page_.capped) log('  ! more than', CAP, 'moving elements on', label, '; the rest were not read');
+  if (Object.values(sheets.truncated).some(Boolean)) log('  ! a stylesheet list was cut at 400 entries on', label, JSON.stringify(sheets.truncated));
   if (!page_.matchMedia.reduce || page_.matchMedia.normal) log('  ! the emulation did not take on', label, JSON.stringify(page_.matchMedia));
   log(label, `${normal.records.length} moving, ${groups.length} groups, reduce: ${page_.summary.behaviour}`);
   return page_;
@@ -86,18 +91,19 @@ try {
       const ctx = await lib.newContext(browser, meta);
       try {
         const page = await lib.openSnap(ctx, label);
-        pages[`${label}@${meta.w}`] = await readPage(page, label, meta.url);
+        pages[`${label}@${meta.w}`] = await readPage(page, label, meta.url);   // a copy's label is unique in SNAPS
       } catch (e) { log('failed', label, String(e.message).split('\n')[0]); }
       await ctx.close();
     }
   } else {
-    for (const url of URLS) {
+    for (const [i, url] of URLS.entries()) {
       const ctx = await browser.newContext({ viewport: { width: 1440, height: 900 }, locale: 'en-US' });
       const page = await ctx.newPage();
       try {
         await page.goto(url, { waitUntil: 'load', timeout: 90000 });
         await prepare(page);
-        pages[safeUrl(url)] = await readPage(page, safeUrl(url), url);
+        // keyed by run position: two URLs can share one sanitised form (/view?tab=one and ?tab=two); the record keeps it
+        pages[`page-${i + 1}`] = await readPage(page, `page-${i + 1}`, url);
       } catch (e) { log('failed', safeUrl(url), String(e.message).split('\n')[0]); }
       await ctx.close();
     }
@@ -105,6 +111,9 @@ try {
 } finally {
   await browser.close();
 }
+
+// Nothing captured is a failed run, not a finding that nothing moves: keep the earlier raw/motion.json.
+if (!Object.keys(pages).length) { console.error('no page was captured; raw/motion.json was not written'); process.exit(1); }
 
 const out = {
   _meta: {

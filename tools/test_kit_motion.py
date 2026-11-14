@@ -101,8 +101,9 @@ RAW = {
         ],
         "keyframes": [{"name": "spin", "steps": [{"offset": "from", "properties": ["transform"]}, {"offset": "to", "properties": ["transform"]}], "properties": ["transform"]},
                       {"name": "orphan", "steps": [{"offset": "from", "properties": ["opacity"]}], "properties": ["opacity"]}],
-        "declared": [{"selector": ".btn:hover", "context": [], "transitions": [tr("(base)", 400)], "animations": []},
-                     {"selector": ".btn", "context": ["@media (prefers-reduced-motion: reduce)"], "transitions": [tr("(base)", 0.01)], "animations": []}],
+        "declared": [{"selector": ".btn:hover", "context": [], "transitions": [{"property": "(base #0)", "durationMs": 400}], "animations": []},
+                     {"selector": ".btn", "context": ["@media (prefers-reduced-motion: reduce)"], "transitions": [{"property": "(base #0)", "durationMs": 0.01}], "animations": []},
+                     {"selector": ".menu:hover", "context": ["@media (prefers-reduced-motion: no-preference)"], "transitions": [{"property": "transform", "durationMs": 700, "easing": "ease-out"}], "animations": []}],
         "reducedMotionRules": [{"media": "@media (prefers-reduced-motion: reduce)", "selector": ".btn", "declarations": {"transition": "none"}}],
         "customProperties": [{"name": "--dur-fast", "declared": "120ms", "resolved": "0.12s", "selector": ":root"},
                              {"name": "--ease-out", "declared": "cubic-bezier(0.2,0,0,1)", "resolved": "cubic-bezier(0.2, 0, 0, 1)", "selector": ":root"},
@@ -117,7 +118,7 @@ class Build(unittest.TestCase):
 
     def test_durations_are_named_by_a_custom_property_when_the_product_has_one(self):
         d = self.group["duration"]
-        self.assertEqual(list(d), ["dur-fast", "200ms", "400ms", "1000ms"])  # by value; the reduce rule's 0.01ms is not motion
+        self.assertEqual(list(d), ["dur-fast", "200ms", "400ms", "700ms", "1000ms"])  # by value; the reduce rule's 0.01ms is not motion, a no-preference rule's 700ms is
         self.assertEqual(d["dur-fast"]["$value"], "120ms")
         self.assertEqual(d["dur-fast"]["$type"], "duration")
         self.assertEqual(d["400ms"]["$extensions"]["source"], {"evidence": "Measured", "capture": "raw/motion.json#declared"})
@@ -148,6 +149,46 @@ class Build(unittest.TestCase):
         self.assertEqual(a["$extensions"]["keyframes"], {"properties": ["transform"], "steps": ["from", "to"]})
         self.assertEqual(a["$extensions"]["reducedMotion"], {"kept": 2})
         self.assertEqual(self.group["$extensions"]["unusedKeyframes"], ["orphan"])
+
+    def test_a_normal_motion_rule_is_kept_and_a_reduce_rule_is_not(self):
+        self.assertTrue(motion._is_reduce("@media (prefers-reduced-motion: reduce)"))
+        self.assertFalse(motion._is_reduce("@media (prefers-reduced-motion: no-preference)"))
+        self.assertFalse(motion._is_reduce("@media not (prefers-reduced-motion: reduce)"))
+        self.assertIn("700ms", self.group["duration"])
+        self.assertNotIn("0_01ms", self.group["duration"])
+
+    def test_a_keyword_in_a_custom_property_is_derived(self):
+        raw = json.loads(json.dumps(RAW))
+        raw["pages"]["home"]["customProperties"].append({"name": "--ease-default", "declared": "ease", "resolved": "ease", "selector": ":root"})
+        g, _ = motion.build(raw)
+        self.assertEqual(g["easing"]["ease-default"]["$extensions"]["source"]["evidence"], "Derived")
+        self.assertEqual(g["easing"]["ease-out"]["$extensions"]["source"]["evidence"], "Measured")  # a real cubic-bezier
+
+    def test_names_that_would_collide_get_their_own_tokens_and_aliases_follow(self):
+        raw = json.loads(json.dumps(RAW))
+        pg = raw["pages"]["home"]
+        # the custom --ease-out curve and the keyword ease-out, on two different transitions
+        pg["groups"] = [group(1, [tr("opacity", 150, "cubic-bezier(0.2, 0, 0, 1)")]), group(1, [tr("color", 150, "ease-out")]),
+                        group(1, [], [an("spin-x", 500)]), group(1, [], [an("spin_x", 700)])]
+        g, _ = motion.build(raw)
+        e = g["easing"]
+        self.assertEqual(e["ease-out"]["$value"], [0.2, 0, 0, 1])
+        self.assertEqual(e["ease-out-2"]["$value"], [0, 0, 0.58, 1])
+        self.assertEqual(e["ease-out-2"]["$extensions"]["source"]["evidence"], "Derived")
+        t = g["transition"]
+        self.assertEqual(t["opacity-150ms-ease-out"]["$value"]["timingFunction"], "{motion.easing.ease-out}")
+        self.assertEqual(t["color-150ms-ease-out-2"]["$value"]["timingFunction"], "{motion.easing.ease-out-2}")
+        self.assertEqual(sorted(g["animation"]), ["spin-x", "spin-x-2"])
+        self.assertEqual({v["$value"]["name"] for v in g["animation"].values()}, {"spin-x", "spin_x"})
+        self.assertEqual(motion.uniq({"a", "a-2"}, "a"), "a-3")
+
+    def test_a_cut_list_or_capped_page_is_recorded(self):
+        raw = json.loads(json.dumps(RAW))
+        raw["pages"]["home"]["sheetsTruncated"] = {"declared": True, "reducedRules": False, "customProperties": False}
+        raw["pages"]["home"]["capped"] = {"cap": 3, "droppedNormal": 2, "droppedReduced": 0}
+        g, _ = motion.build(raw)
+        self.assertEqual(g["$extensions"]["incomplete"], {"truncatedLists": ["declared"], "cappedPages": ["home"]})
+        self.assertNotIn("incomplete", self.group["$extensions"])
 
     def test_the_probe_verdict_and_which_properties_transition(self):
         x = self.group["$extensions"]
@@ -203,6 +244,13 @@ class Wiring(unittest.TestCase):
         src = (KIT / "build/build_tokens.py").read_text()
         self.assertIn('if (RAW / "motion.json").exists():', src)
         self.assertIn('core["motion"], motion_not_core = motion.build(', src)
+
+    def test_the_style_guide_motion_previews_name_variables_through_cssname(self):
+        # easing keys hold "_" (bezier-0_4-0-0_2-1); the builder writes "-", so a hand-built name points at nothing
+        tpl = (KIT / "build/style-guide.template.html").read_text()
+        self.assertNotIn("var(--motion-", tpl)
+        self.assertIn("cssname('motion.easing.", tpl)
+        self.assertIn("cssname('motion.' + n)", tpl)
 
     def test_the_style_guide_builder_leaves_composites_out_of_css(self):
         tree = ast.parse((KIT / "build/build_style_guide.py").read_text())

@@ -134,6 +134,22 @@ def _plural(n, word):
     return "%d %s%s" % (n, word, "" if n == 1 else "s")
 
 
+def _is_reduce(condition):
+    """True for a media condition that applies under `prefers-reduced-motion: reduce`. A
+    `no-preference` rule is the product's normal motion and is kept."""
+    return bool(re.search(r"prefers-reduced-motion\s*:\s*reduce", condition)) and not re.search(r"\bnot\b", condition)
+
+
+def uniq(used, name):
+    """An unused token name: `name`, else `name-2`, `name-3`... and it is recorded as used."""
+    n, i = name, 1
+    while n in used:
+        i += 1
+        n = "%s-%d" % (name, i)
+    used.add(n)
+    return n
+
+
 def tally(raw):
     """Counts over every page's groups: what moved, how long, how, and what reduce did to it."""
     t = {"duration": {}, "easing": {}, "transition": {}, "animation": {}, "props": {}, "outcomes": {}, "declared_duration": {},
@@ -168,16 +184,13 @@ def tally(raw):
         for k in page.get("keyframes", []):
             t["keyframes"].setdefault(k["name"], k)
         for d in page.get("declared", []):
-            if any("prefers-reduced-motion" in c for c in d.get("context", [])):
+            if any(_is_reduce(c) for c in d.get("context", [])):
                 continue          # the product's own reduce values are not its motion
-            for tr in d.get("transitions", []):
-                if "durationRaw" not in tr:
-                    bump(t["declared_duration"], tr["durationMs"])
-                    bump(t["declared_easing"], tr["easing"])
-            for an in d.get("animations", []):
-                if "durationRaw" not in an:
-                    bump(t["declared_duration"], an["durationMs"])
-                    bump(t["declared_easing"], an["easing"])
+            for item in d.get("transitions", []) + d.get("animations", []):
+                if "durationRaw" not in item and "durationMs" in item:
+                    bump(t["declared_duration"], item["durationMs"])
+                if item.get("easing"):
+                    bump(t["declared_easing"], item["easing"])
         for r in page.get("reducedMotionRules", []):
             if r not in t["rules"]:
                 t["rules"].append(r)
@@ -185,32 +198,31 @@ def tally(raw):
 
 
 def build(raw):
-    """(motion group, notTokenised entries) for build_tokens.py to put at core["motion"]."""
+    """(motion group, notTokenised entries) for build_tokens.py to put at core["motion"]. Token names
+    are unique within their group: two readings that would share a name (a `--ease-out` curve and the
+    keyword `ease-out`, `spin-x` and `spin_x`) get separate tokens, and each alias points at the name
+    its own value was given."""
     t = tally(raw)
     not_tokenised = []
 
     # ---- named values: motion custom properties the product declares
-    var_tokens = {"duration": {}, "easing": {}}
     seen_vars = {}
     for page in raw.get("pages", {}).values():
         for v in page.get("customProperties", []):
             seen_vars.setdefault(v["name"], v)
+    var_dur, var_ease = [], []
     for name, v in sorted(seen_vars.items()):
         value = v.get("resolved") or v.get("declared") or ""
         kind = classify_value(value)
-        key = slug(name.lstrip("-"))
         if kind == "duration":
-            ms = parse_time(value)
-            if key not in var_tokens["duration"]:
-                var_tokens["duration"][key] = (ms, name, v)
+            var_dur.append((parse_time(value), name, v))
         elif kind == "easing":
-            e = norm_easing(value)
-            if key not in var_tokens["easing"]:
-                var_tokens["easing"][key] = (e, name, v)
+            var_ease.append((norm_easing(value), name, v))
 
     # ---- duration
-    rows, dkey = [], {}
-    for key, (ms, name, v) in var_tokens["duration"].items():
+    rows, dkey, used = [], {}, set()
+    for ms, name, v in var_dur:
+        key = uniq(used, slug(name.lstrip("-")))
         rows.append((ms, key, _tok(ms_str(ms), "duration", "Measured", "customProperties/" + name,
                                    "Custom property %s, declared on %s." % (name, v.get("selector", ":root")), uses=t["duration"].get(ms, 0))))
         dkey.setdefault(ms, key)
@@ -219,16 +231,20 @@ def build(raw):
             continue
         uses = t["duration"].get(ms, 0)
         seen = ("Read at rest on %s." % _plural(uses, "element")) if uses else "Declared in a state rule, not seen running at rest."
-        rows.append((ms, ms_key(ms), _tok(ms_str(ms), "duration", "Measured", "pages" if uses else "declared", seen, uses=uses)))
-        dkey[ms] = ms_key(ms)
+        key = uniq(used, ms_key(ms))
+        rows.append((ms, key, _tok(ms_str(ms), "duration", "Measured", "pages" if uses else "declared", seen, uses=uses)))
+        dkey[ms] = key
     duration = {key: tok for _, key, tok in sorted(rows, key=lambda r: (r[0], r[1]))}
 
     # ---- easing
-    easing, ekey = {}, {}
-    for key, (e, name, v) in var_tokens["easing"].items():
+    easing, ekey, eused = {}, {}, set()
+    for e, name, v in var_ease:
         b = easing_bezier(e)
         if b:
-            easing[key] = _tok(b, "cubicBezier", "Measured", "customProperties/" + name, "Custom property %s, declared on %s." % (name, v.get("selector", ":root")))
+            key = uniq(eused, slug(name.lstrip("-")))
+            # a keyword held in a variable is still expanded here, so it is Derived, not Measured
+            easing[key] = _tok(b, "cubicBezier", "Derived" if e in KEYWORDS else "Measured", "customProperties/" + name,
+                               "Custom property %s, declared on %s." % (name, v.get("selector", ":root")))
             ekey.setdefault(e, key)
         else:
             not_tokenised.append({"name": name, "value": e, "why": "an easing DTCG's cubicBezier cannot carry (steps() or a linear() curve)"})
@@ -241,20 +257,18 @@ def build(raw):
             not_tokenised.append({"name": "motion easing " + e, "value": e, "why": "an easing DTCG's cubicBezier cannot carry (steps() or a linear() curve)", "uses": uses})
             continue
         derived = e in KEYWORDS
-        easing[easing_key(e)] = _tok(b, "cubicBezier", "Derived" if derived else "Measured", "pages" if uses else "declared",
-                                     ("The keyword `%s`, expanded to its control points." % e) if derived else None, uses=uses)
-        ekey[e] = easing_key(e)
+        key = uniq(eused, easing_key(e))
+        easing[key] = _tok(b, "cubicBezier", "Derived" if derived else "Measured", "pages" if uses else "declared",
+                           ("The keyword `%s`, expanded to its control points." % e) if derived else None, uses=uses)
+        ekey[e] = key
     easing = dict(sorted(easing.items()))
 
     # ---- transition
     tkeys = sorted(t["transition"], key=lambda k: (-t["transition"][k], k))
-    transition, used_keys = {}, set()
+    transition, tused = {}, set()
     for k in tkeys[:MAX_TRANSITIONS]:
         prop, ms, delay, e = k
-        name = "-".join(x for x in (slug(prop), ms_key(ms), ekey.get(e) or slug(e)) + (("delay" + ms_key(delay),) if delay else ()) if x)
-        while name in used_keys:
-            name += "-x"
-        used_keys.add(name)
+        name = uniq(tused, "-".join(x for x in (slug(prop), ms_key(ms), ekey.get(e) or slug(e)) + (("delay" + ms_key(delay),) if delay else ()) if x))
         value = {"duration": "{motion.duration.%s}" % dkey[ms], "delay": ms_str(delay),
                  "timingFunction": ("{motion.easing.%s}" % ekey[e]) if e in ekey else e}
         transition[name] = _tok(value, "transition", "Measured", "pages", "Read at rest on %s." % _plural(t["transition"][k], "element"),
@@ -267,19 +281,19 @@ def build(raw):
     by_name = {}
     for k, c in t["animation"].items():
         by_name.setdefault(k[0], []).append((c, k))
-    animation = {}
-    for name, rows in sorted(by_name.items()):
-        c, k = sorted(rows, key=lambda r: (-r[0], r[1]))[0]
+    animation, aused = {}, set()
+    for name, rows_ in sorted(by_name.items()):
+        c, k = sorted(rows_, key=lambda r: (-r[0], r[1]))[0]
         _, ms, delay, e, iters, direction, fill = k
         kf = t["keyframes"].get(name)
-        ext = {"elements": sum(r[0] for r in rows)}
+        ext = {"elements": sum(r[0] for r in rows_)}
         if kf:
             ext["keyframes"] = {"properties": kf["properties"], "steps": [s["offset"] for s in kf["steps"]]}
         ext["reducedMotion"] = dict(sorted(t["outcomes"].get(("animation", name), {}).items()))
         value = {"name": name, "duration": "{motion.duration.%s}" % dkey[ms], "delay": ms_str(delay),
                  "timingFunction": ("{motion.easing.%s}" % ekey[e]) if e in ekey else e,
                  "iterationCount": iters, "direction": direction, "fillMode": fill}
-        animation[slug(name)] = _tok(value, "animation", "Measured", "pages", "Animation `%s`." % name, **ext)
+        animation[uniq(aused, slug(name))] = _tok(value, "animation", "Measured", "pages", "Animation `%s`." % name, **ext)
     unused = sorted(n for n in t["keyframes"] if n not in t["used_names"])
 
     group = {"$description": ("Motion as measured: the durations and easing curves the product's elements run, which properties transition, "
@@ -293,11 +307,16 @@ def build(raw):
             "probe": raw.get("_meta", {}).get("probe", "page.emulateMedia({ reducedMotion })"),
             "verified": bool(pages) and all(p["matchMedia"]["reduce"] and not p["matchMedia"]["normal"] for p in pages.values()),
             "pages": len(pages),
-            **{k: raw["summary"][k] for k in ("behaviour", "moving", "removed", "reduced", "kept", "partial", "added", "loops")},
+            **{k: raw["summary"].get(k, 0) for k in ("behaviour", "moving", "removed", "reduced", "kept", "partial", "increased", "added")},
+            "loops": raw["summary"].get("loops", []),
             "authoredRules": t["rules"][:20],
         },
         "propertyUsage": dict(sorted(t["props"].items(), key=lambda kv: (-kv[1], kv[0]))),
         "smoothScrollElements": t["scroll"],
         "unusedKeyframes": unused,
     }
+    cut = sorted({k for p in pages.values() for k, v in (p.get("sheetsTruncated") or {}).items() if v})
+    capped = [n for n, p in pages.items() if p.get("capped")]
+    if cut or capped:
+        group["$extensions"]["incomplete"] = {"truncatedLists": cut, "cappedPages": capped}
     return group, not_tokenised

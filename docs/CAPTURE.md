@@ -162,7 +162,7 @@ It writes `raw/motion.json`. Per page it records:
 | Reduced-motion pass | The same elements read again after `page.emulateMedia({ reducedMotion: 'reduce' })`. Each transition and animation is `removed` (at or under 1 ms, the usual `0.01ms` reset), `shortened`, `kept` or `changed`; each element is `removed`, `reduced`, `kept` or `partial`. The page verdict is `honours`, `partial`, `ignores` or `no-motion`, and `loops` names the animations that still run forever under reduce. The page's own `matchMedia('(prefers-reduced-motion: reduce)')` answer is stored for both passes: a `false` under reduce means the emulation did not take, so discard the reading |
 | Declared motion | The transitions and animations the stylesheets declare, by selector and `@media`/`@supports` context. This is where a `:hover` or state rule shows, which a computed read at rest cannot see; a value still holding `var()` is flagged |
 | `@keyframes` | Each name, its steps, and the properties each step sets |
-| Authored reduce rules | Every rule under a `prefers-reduced-motion` media query, with its declarations |
+| Authored reduce rules | Every rule under a `prefers-reduced-motion` media query (`reduce` and `no-preference` alike; the media text says which), with its declarations. `@import`ed sheets and a sheet's own `media` attribute are followed. Selectors and conditions are cleaned of URLs and query strings |
 | Motion custom properties | Each custom property whose name says duration, easing, motion, transition, animation, delay and so on, or whose value is a time or an easing, with its declared and resolved value on the root |
 
 Then `build_tokens.py` calls `motion.py`, which writes the `core.motion` group
@@ -188,6 +188,13 @@ Rules for the reading:
 - JavaScript-driven motion (a spring library, `element.animate`, canvas) leaves no
   computed transition. Say so in the README's coverage table as Not captured, with
   the reason; do not infer a duration from a video or a screenshot.
+- A page's reading says when it is incomplete: `capped` (more moving elements than the cap, 6000; the
+  rest were read in neither pass, so none is taken for stopped) and `sheetsTruncated` (a rule or custom
+  property list cut at 400). Both reach `core.motion.$extensions.incomplete`. Only a real reduction
+  counts as honouring: a longer duration, a replacement animation or smooth scrolling that appears under
+  reduce is `increased`, and an animation set to `paused` counts as stopped. Pages are keyed `page-1`,
+  `page-2`... in `--urls` order (the sanitised URL is inside each record); a run that captures no page
+  exits 1 and leaves the earlier `raw/motion.json` alone.
 - A reduce verdict of `ignores` is a finding, not a failed capture: the product does
   not honour the setting. Record it; do not tidy it away.
 - Raw values pass through `noUrl` before they are written, like every other

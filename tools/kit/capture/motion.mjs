@@ -134,7 +134,7 @@ export function animationsOf(style) {
     const d = parseTime(at(dur, i, '0s'));
     const rec = {
       name, durationMs: d ?? 0, delayMs: parseTime(at(delay, i, '0s')) ?? 0, easing: normEasing(at(ease, i, 'ease')),
-      iterationCount: at(iter, i, '1'), direction: at(dir, i, 'normal'), fillMode: at(fill, i, 'none'),
+      iterationCount: at(iter, i, '1'), direction: at(dir, i, 'normal'), fillMode: at(fill, i, 'none'), playState: at(play, i, 'running'),
     };
     if (d === null) rec.durationRaw = at(dur, i, '');
     out.push(rec);
@@ -157,14 +157,19 @@ const classify = (baseMs, reducedMs) => {
   if (reducedMs === null || reducedMs <= NEGLIGIBLE_MS) return 'removed';
   if (reducedMs < baseMs) return 'shortened';
   if (reducedMs === baseMs) return 'kept';
-  return 'changed';
+  return 'increased';
 };
 
+// An animation paused under reduce is stopped, whatever its duration says.
+const stopped = (a) => a.playState === 'paused';
+
 // What prefers-reduced-motion: reduce did to one element's motion. Items are matched by property
-// (transitions) or name (animations). Each gets removed, shortened, kept or changed (an easing, delay
-// or length change that is not a plain shortening); an animation that still loops after reduce is
-// flagged `loops`. The element's outcome is none (no motion either way), removed, reduced (some
-// removed or shortened, none kept), kept, or partial (some kept, some not).
+// (transitions) or name (animations). Each is removed, shortened (both are reductions), kept, changed (the
+// same length with another easing or delay), increased (longer) or added (not there before). An animation
+// that still runs forever after reduce, replacements included, is flagged `loops`. The element's outcome:
+// none (no motion either way); removed or reduced (every item is a reduction); kept (nothing was
+// reduced, nothing got worse); increased (nothing was reduced and something grew or was added); partial
+// (some reduced, some not). Only a real reduction counts: more motion is never "reduced".
 export function diffMotion(base, reduced) {
   const items = [];
   const reducedT = new Map((reduced?.transitions || []).map((t) => [t.property, t]));
@@ -178,25 +183,30 @@ export function diffMotion(base, reduced) {
   }
   for (const a of base?.animations || []) {
     const r = reducedA.get(a.name);
-    let outcome = r ? classify(a.durationMs, r.durationMs) : 'removed';
+    let outcome = !r || stopped(r) ? 'removed' : classify(a.durationMs, r.durationMs);
     if (outcome === 'kept' && (r.easing !== a.easing || r.delayMs !== a.delayMs || r.iterationCount !== a.iterationCount)) outcome = 'changed';
-    const item = { kind: 'animation', key: a.name, outcome, from: a.durationMs, to: r ? r.durationMs : 0 };
-    if (r && r.iterationCount === 'infinite' && outcome !== 'removed') item.loops = true;
+    const item = { kind: 'animation', key: a.name, outcome, from: a.durationMs, to: r && !stopped(r) ? r.durationMs : 0 };
+    if (r && !stopped(r) && r.iterationCount === 'infinite' && outcome !== 'removed') item.loops = true;
     items.push(item);
     reducedA.delete(a.name);
   }
   if (base?.scrollBehavior) items.push({ kind: 'scroll', key: 'scroll-behavior', outcome: reduced?.scrollBehavior ? 'kept' : 'removed' });
-  const added = [...reducedT.values()].map((t) => ({ kind: 'transition', key: t.property, outcome: 'added', from: 0, to: t.durationMs }))
-    .concat([...reducedA.values()].map((a) => ({ kind: 'animation', key: a.name, outcome: 'added', from: 0, to: a.durationMs })));
-  items.push(...added);
-  const kinds = new Set(items.filter((i) => i.outcome !== 'added').map((i) => i.outcome));
+  else if (reduced?.scrollBehavior) items.push({ kind: 'scroll', key: 'scroll-behavior', outcome: 'added' });
+  for (const t of reducedT.values()) items.push({ kind: 'transition', key: t.property, outcome: 'added', from: 0, to: t.durationMs });
+  for (const a of reducedA.values()) {
+    const item = { kind: 'animation', key: a.name, outcome: 'added', from: 0, to: a.durationMs };
+    if (!stopped(a) && a.iterationCount === 'infinite') item.loops = true;
+    items.push(item);
+  }
+  const REDUCING = new Set(['removed', 'shortened']);
+  const hadMotion = hasMotion(base);
+  const reducing = items.filter((i) => REDUCING.has(i.outcome)).length;
   let outcome;
   if (!items.length) outcome = 'none';
-  else if (!kinds.size) outcome = 'added';
-  else if (kinds.size === 1 && kinds.has('removed')) outcome = 'removed';
-  else if (kinds.size === 1 && kinds.has('kept')) outcome = 'kept';
-  else if (kinds.has('kept')) outcome = 'partial';
-  else outcome = 'reduced';
+  else if (!hadMotion) outcome = 'added';
+  else if (reducing === items.length) outcome = items.every((i) => i.outcome === 'removed') ? 'removed' : 'reduced';
+  else if (reducing) outcome = 'partial';
+  else outcome = items.some((i) => i.outcome === 'increased' || i.outcome === 'added') ? 'increased' : 'kept';
   return { outcome, items };
 }
 
@@ -220,10 +230,10 @@ export function groupRecords(records, examples = 3) {
 }
 
 // Counts per outcome and the page's overall behaviour under reduce: no-motion, honours (every moving
-// element is removed or reduced), ignores (every one is kept) or partial. `loops` names the animations
+// element is removed or reduced; more motion never counts), ignores (every one is kept) or partial. `loops` names the animations
 // that keep looping, the case reduced motion exists for.
 export function summarise(groups) {
-  const counts = { removed: 0, reduced: 0, kept: 0, partial: 0, added: 0 };
+  const counts = { removed: 0, reduced: 0, kept: 0, partial: 0, increased: 0, added: 0 };
   const loops = new Set();
   let moving = 0;
   for (const g of groups) {
@@ -233,7 +243,7 @@ export function summarise(groups) {
   }
   let behaviour;
   if (!moving) behaviour = 'no-motion';
-  else if (!counts.kept && !counts.partial) behaviour = 'honours';
+  else if (!counts.kept && !counts.partial && !counts.increased) behaviour = 'honours';
   else if (counts.kept === moving) behaviour = 'ignores';
   else behaviour = 'partial';
   return { moving, ...counts, behaviour, loops: [...loops].sort() };
@@ -241,34 +251,54 @@ export function summarise(groups) {
 
 // Several pages' summaries into one. Behaviour follows the combined counts.
 export function mergeSummaries(list) {
-  const total = { moving: 0, removed: 0, reduced: 0, kept: 0, partial: 0, added: 0 };
+  const total = { moving: 0, removed: 0, reduced: 0, kept: 0, partial: 0, increased: 0, added: 0 };
   const loops = new Set();
   for (const s of list) {
     for (const k of Object.keys(total)) total[k] += s[k] || 0;
     for (const l of s.loops || []) loops.add(l);
   }
-  const behaviour = !total.moving ? 'no-motion' : !total.kept && !total.partial ? 'honours' : total.kept === total.moving ? 'ignores' : 'partial';
+  const behaviour = !total.moving ? 'no-motion' : !total.kept && !total.partial && !total.increased ? 'honours' : total.kept === total.moving ? 'ignores' : 'partial';
   return { ...total, behaviour, loops: [...loops].sort() };
 }
 
-// A rule's longhand strings (read from a stylesheet, not computed) as one record: the declared motion,
-// including :hover and state rules a computed read at rest does not see. A value still holding var()
-// cannot be normalised and is flagged viaVar.
+// A rule's longhand strings (read from a stylesheet, not computed) as records: the declared motion,
+// including :hover and state rules a computed read at rest does not see. Only what the rule authors is
+// recorded: no `ease` or `0s` is filled in, and a rule that sets only a duration list
+// (`.btn:hover { transition-duration: .4s, .6s }`) gives one record per entry, its property written
+// `(base #n)` because the base rule names it. A value still holding var() cannot be normalised and is
+// flagged viaVar.
 export function declaredOf(rule) {
-  const style = {
-    transitionProperty: rule.transitionProperty, transitionDuration: rule.transitionDuration,
-    transitionTimingFunction: rule.transitionTimingFunction, transitionDelay: rule.transitionDelay,
-    animationName: rule.animationName, animationDuration: rule.animationDuration,
-    animationTimingFunction: rule.animationTimingFunction, animationDelay: rule.animationDelay,
-    animationIterationCount: rule.animationIterationCount, animationDirection: rule.animationDirection,
-    animationFillMode: rule.animationFillMode, animationPlayState: rule.animationPlayState,
-  };
-  // A state rule often sets only a duration (`.btn:hover { transition-duration: .4s }`): the property or
-  // name comes from the base rule, so it is recorded as (base).
-  if (!style.transitionProperty && (style.transitionDuration || style.transitionDelay)) style.transitionProperty = '(base)';
-  if (!style.animationName && (style.animationDuration || style.animationDelay)) style.animationName = '(base)';
-  const out = { selector: rule.selector, context: rule.context, ...motionOf(style) };
-  if (Object.values(style).some((v) => /var\(/.test(String(v ?? '')))) out.viaVar = true;
+  const list = (v) => splitList(v);
+  const out = { selector: rule.selector, context: rule.context, transitions: [], animations: [] };
+  const authored = [rule.transitionProperty, rule.transitionDuration, rule.transitionTimingFunction, rule.transitionDelay,
+    rule.animationName, rule.animationDuration, rule.animationTimingFunction, rule.animationDelay, rule.animationIterationCount,
+    rule.animationDirection, rule.animationFillMode, rule.animationPlayState];
+  const fields = (src, keys) => Object.fromEntries(Object.entries(keys).map(([k, v]) => [k, list(src[v])]).filter(([, l]) => l.length));
+  const t = fields(rule, { property: 'transitionProperty', duration: 'transitionDuration', easing: 'transitionTimingFunction', delay: 'transitionDelay' });
+  const tn = Math.max(0, ...Object.values(t).map((l) => l.length));
+  for (let i = 0; i < tn; i++) {
+    const property = t.property ? at(t.property, i, '') : `(base #${i})`;
+    if (property.toLowerCase() === 'none') continue;
+    const rec = { property };
+    if (t.duration) { const d = parseTime(at(t.duration, i, '')); if (d === null) rec.durationRaw = at(t.duration, i, ''); else rec.durationMs = d; }
+    if (t.delay) { const d = parseTime(at(t.delay, i, '')); if (d !== null) rec.delayMs = d; }
+    if (t.easing) rec.easing = normEasing(at(t.easing, i, ''));
+    out.transitions.push(rec);
+  }
+  const a = fields(rule, { name: 'animationName', duration: 'animationDuration', easing: 'animationTimingFunction', delay: 'animationDelay', iterationCount: 'animationIterationCount', direction: 'animationDirection', fillMode: 'animationFillMode', playState: 'animationPlayState' });
+  const an = Math.max(0, ...Object.values(a).map((l) => l.length));
+  for (let i = 0; i < an; i++) {
+    const name = a.name ? at(a.name, i, '') : `(base #${i})`;
+    if (name.toLowerCase() === 'none') continue;
+    const rec = { name };
+    if (a.duration) { const d = parseTime(at(a.duration, i, '')); if (d === null) rec.durationRaw = at(a.duration, i, ''); else rec.durationMs = d; }
+    if (a.delay) { const d = parseTime(at(a.delay, i, '')); if (d !== null) rec.delayMs = d; }
+    if (a.easing) rec.easing = normEasing(at(a.easing, i, ''));
+    for (const k of ['iterationCount', 'direction', 'fillMode', 'playState']) if (a[k]) rec[k] = at(a[k], i, '');
+    out.animations.push(rec);
+  }
+  if (String(rule.scrollBehavior || '').trim() === 'smooth') out.scrollBehavior = 'smooth';
+  if (authored.some((v) => /var\(/.test(String(v ?? '')))) out.viaVar = true;
   return out;
 }
 
@@ -277,7 +307,9 @@ export function declaredOf(rule) {
 // Runs in the page. Reads every element's motion properties, keeping those with motion in this pass or
 // recorded in an earlier one (window.__motion remembers each element's id), so the reduced pass reads
 // the same elements as the normal one. Returns { matches, scanned, records }; `matches` is
-// matchMedia('(prefers-reduced-motion: reduce)').matches, which proves the emulation took.
+// matchMedia('(prefers-reduced-motion: reduce)').matches, which proves the emulation took. SVG
+// descendants are read too: a spinner's circle can animate while its svg does not. `dropped` counts moving
+// elements left out because the cap was reached.
 export function readMotionInPage({ props, cap, pseudos }) {
   // A url() in a computed value can be a signed URL: recorded as url(…), only data: and #fragment kept.
   const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v);
@@ -296,24 +328,26 @@ export function readMotionInPage({ props, cap, pseudos }) {
   const moving = (cs) => (cs.transitionProperty !== 'none' && /[1-9]/.test(cs.transitionDuration + cs.transitionDelay)) || cs.animationName !== 'none' || cs.scrollBehavior === 'smooth';
   const memo = (window.__motion ||= { ids: new Map(), next: 0 });
   const records = [];
-  let scanned = 0;
+  let scanned = 0, dropped = 0;
   for (const el of document.querySelectorAll('*')) {
-    if (el.closest('svg') && el.tagName.toLowerCase() !== 'svg') continue;
     scanned++;
     for (const pe of [null, ...pseudos]) {
       const cs = getComputedStyle(el, pe);
       if (pe && (cs.content === 'none' || cs.content === 'normal')) continue;
       const known = memo.ids.get(el);
       let id = known ? known[pe || ''] : undefined;
+      // An element the normal pass recorded is always read again, so a cap cannot make the reduced pass
+      // compare it with nothing; a new one only while there is room.
       if (id === undefined) {
         if (!moving(cs)) continue;
+        if (records.length >= cap) { dropped++; continue; }
         id = memo.next++;
         memo.ids.set(el, { ...(known || {}), [pe || '']: id });
       }
-      if (records.length < cap) records.push({ id, node: describe(el) + (pe || ''), style: pick(cs) });
+      records.push({ id, node: describe(el) + (pe || ''), style: pick(cs) });
     }
   }
-  return { matches: matchMedia('(prefers-reduced-motion: reduce)').matches, scanned, records };
+  return { matches: matchMedia('(prefers-reduced-motion: reduce)').matches, scanned, dropped, records };
 }
 
 // Runs in the page. Reads what the stylesheets declare: every @keyframes (its name and the properties
@@ -324,16 +358,32 @@ export function readMotionInPage({ props, cap, pseudos }) {
 export function readSheetsInPage({ varName, varValue, cap }) {
   const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v);
   const nameRe = new RegExp(varName, 'i'), valueRe = new RegExp(varValue, 'i');
-  const strip = (s) => String(s || '').replace(/__[A-Za-z0-9_-]{5,6}/g, '').slice(0, 200);
+  // A selector or a condition can hold a signed URL too (img[src="https://…?sig=…"]).
+  // (no url() in that form, so a quoted value holding a URL or a query string is replaced whole)
+  const clean = (s) => noUrl(String(s || '').replace(/__[A-Za-z0-9_-]{5,6}/g, ''))
+    .replace(/(["'])(?:(?!\1).)*(?:\/\/|[?&][^=\s"']+=)(?:(?!\1).)*\1/g, '"<url>"')
+    .replace(/=\s*(?:https?:)?\/\/[^\]\s]+/g, '=<url>')
+    .slice(0, 200);
   const keyframes = [], reducedRules = [], declared = [], vars = new Map();
+  const truncated = { declared: false, reducedRules: false, customProperties: false };
   let unreadable = 0;
+  const seen = new Set();
   const LONG = ['transition-property', 'transition-duration', 'transition-timing-function', 'transition-delay', 'animation-name', 'animation-duration', 'animation-timing-function', 'animation-delay', 'animation-iteration-count', 'animation-direction', 'animation-fill-mode', 'animation-play-state'];
   const camel = (p) => p.replace(/-([a-z])/g, (_, c) => c.toUpperCase());
+  const REDUCE = /prefers-reduced-motion/;
   const walk = (rules, ctx) => {
     for (const r of rules) {
       if (r instanceof CSSKeyframesRule) {
         const steps = [...r.cssRules].map((k) => ({ offset: k.keyText, properties: [...k.style].filter((p) => !p.startsWith('--')).sort() }));
         keyframes.push({ name: noUrl(r.name), steps, properties: [...new Set(steps.flatMap((s) => s.properties))].sort() });
+        continue;
+      }
+      if (r instanceof CSSImportRule) {
+        // an @import is its own sheet, under the import's media condition
+        const sheet = r.styleSheet, m = r.media && r.media.mediaText;
+        if (!sheet || seen.has(sheet)) continue;
+        seen.add(sheet);
+        try { walk(sheet.cssRules, m && m !== 'all' ? [...ctx, '@media ' + m] : ctx); } catch { unreadable++; }
         continue;
       }
       if (r.cssRules && !r.style) {
@@ -342,32 +392,41 @@ export function readSheetsInPage({ varName, varValue, cap }) {
         continue;
       }
       if (!r.style) continue;
-      const selector = strip(r.selectorText);
-      const inReduce = ctx.some((c) => /prefers-reduced-motion/.test(c));
-      const rule = { selector, context: ctx.map(strip) };
+      const selector = clean(r.selectorText);
+      const context = ctx.map(clean);
+      const rule = { selector, context };
       let any = false;
       for (const p of LONG) { const v = r.style.getPropertyValue(p).trim(); if (v) { rule[camel(p)] = noUrl(v); any = true; } }
       const sb = r.style.getPropertyValue('scroll-behavior').trim();
       if (sb) { rule.scrollBehavior = noUrl(sb); any = true; }
-      if (any && declared.length < cap) declared.push(rule);
-      if (inReduce && reducedRules.length < cap) {
-        const decls = {};
-        for (let i = 0; i < r.style.length; i++) { const k = r.style[i]; decls[k] = noUrl(r.style.getPropertyValue(k).trim()) + (r.style.getPropertyPriority(k) ? ' !important' : ''); }
-        reducedRules.push({ media: ctx.filter((c) => /prefers-reduced-motion/.test(c)).join(' '), selector, declarations: decls });
+      if (any) { if (declared.length < cap) declared.push(rule); else truncated.declared = true; }
+      // every rule under a prefers-reduced-motion query, `reduce` and `no-preference` alike (the media text says which)
+      if (context.some((c) => REDUCE.test(c))) {
+        if (reducedRules.length < cap) {
+          const decls = {};
+          for (let i = 0; i < r.style.length; i++) { const k = r.style[i]; decls[k] = noUrl(r.style.getPropertyValue(k).trim()) + (r.style.getPropertyPriority(k) ? ' !important' : ''); }
+          reducedRules.push({ media: context.filter((c) => REDUCE.test(c)).join(' '), selector, declarations: decls });
+        } else truncated.reducedRules = true;
       }
       for (let i = 0; i < r.style.length; i++) {
         const k = r.style[i];
         if (!k || !k.startsWith('--')) continue;
         const v = noUrl(r.style.getPropertyValue(k).trim());
-        if (nameRe.test(k.slice(2)) || valueRe.test(v)) { if (!vars.has(k)) vars.set(k, { name: k, declared: v, selector }); }
+        if ((nameRe.test(k.slice(2)) || valueRe.test(v)) && !vars.has(k)) vars.set(k, { name: k, declared: v, selector });
       }
-      if (r.cssRules && r.cssRules.length) walk(r.cssRules, [...ctx, selector]);
+      if (r.cssRules && r.cssRules.length) walk(r.cssRules, [...ctx, r.selectorText]);
     }
   };
   for (const ss of document.styleSheets) {
-    try { walk(ss.cssRules, []); } catch { unreadable++; }
+    if (seen.has(ss)) continue;
+    seen.add(ss);
+    // the sheet's own media condition (<style media="(prefers-reduced-motion: reduce)">) starts the context
+    const m = ss.media && ss.media.mediaText;
+    try { walk(ss.cssRules, m && m !== 'all' ? ['@media ' + m] : []); } catch { unreadable++; }
   }
   const rootStyle = getComputedStyle(document.documentElement);
-  const customProperties = [...vars.values()].sort((a, b) => (a.name < b.name ? -1 : 1)).slice(0, cap).map((v) => ({ ...v, resolved: noUrl(rootStyle.getPropertyValue(v.name).trim()) }));
-  return { keyframes, reducedRules, declared, customProperties, unreadable };
+  const all = [...vars.values()].sort((a, b) => (a.name < b.name ? -1 : 1));
+  truncated.customProperties = all.length > cap;
+  const customProperties = all.slice(0, cap).map((v) => ({ ...v, resolved: noUrl(rootStyle.getPropertyValue(v.name).trim()) }));
+  return { keyframes, reducedRules, declared, customProperties, unreadable, truncated };
 }
