@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 136,
-    "system_domains": 128,
-    "matched_domains": 101,
-    "missing_domains": 332,
+    "system_packages": 137,
+    "system_domains": 129,
+    "matched_domains": 102,
+    "missing_domains": 331,
     "system_domains_absent_from_catalog": 27
   },
   "matched": {
@@ -1545,6 +1545,23 @@
         }
       ]
     },
+    "explore.family": {
+      "catalog": [
+        {
+          "name": "Explore",
+          "domain": "explore.family",
+          "id": 292
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "explore",
+          "name": "Explore",
+          "url": "https://explore.family",
+          "name_match": true
+        }
+      ]
+    },
     "fable.co": {
       "catalog": [
         {
@@ -1971,13 +1988,6 @@
         "name": "Equals",
         "domain": "equals.app",
         "id": 289
-      }
-    ],
-    "explore.family": [
-      {
-        "name": "Explore",
-        "domain": "explore.family",
-        "id": 292
       }
     ],
     "factory.ai": [
