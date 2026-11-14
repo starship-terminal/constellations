@@ -788,7 +788,7 @@
   {
     "referenceId": "systems:epicgames",
     "groupId": "web-categories",
-    "labels": ["Entertainment"],
+    "labels": ["Marketplace", "Entertainment"],
     "reason": "catalog.json describes a games storefront and launcher: store home, product pages, free-games promos and gated library/checkout surfaces."
   }
 ]
