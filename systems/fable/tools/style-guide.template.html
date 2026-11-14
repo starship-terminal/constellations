@@ -42,7 +42,7 @@ code { font-family: var(--sg-mono); font-size: .9em; }
 .navbar .wm { font-family: var(--sg-serif); font-weight: 700; font-size: 20px; }
 .navbar .sp { flex: 1; }
 .btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-marketingPillH, 52px); padding: 0 22px; font-size: 14px; font-weight: 600; border-radius: var(--component-marketingPillRadius, 60px); border: 2px solid transparent; font-family: var(--sg-sans); }
-.btn.darkpill { background: var(--color-graphite, #292229); border-color: var(--color-graphite, #292229); color: var(--color-white-100, #fff); }
+.btn.darkpill { background: var(--component-skin-marketing-marketingPillFill, #292229); border-color: var(--component-skin-marketing-marketingPillFill, #292229); color: var(--color-white-100, #fff); }
 .btn.whitepill { background: var(--color-white-100, #fff); border-color: var(--color-white-100, #fff); color: var(--color-quote-theme-6, #161015); }
 .btn.cat { height: var(--component-catalogButtonH, 52px); border-radius: var(--radius-full, 9999px); border-width: 1px; background: var(--color-graphite-600, #1b1a1b); border-color: var(--color-graphite-600, #1b1a1b); color: var(--color-white-100, #fff); }
 .btn.cat.ghost { background: transparent; color: var(--color-graphite-600, #1b1a1b); }
@@ -54,11 +54,11 @@ code { font-family: var(--sg-mono); font-size: .9em; }
 .tile .sub { opacity: .65; font-size: 12px; }
 .chip { display: inline-flex; align-items: center; height: var(--component-genrePillH, 46px); padding: 0 18px; border-radius: var(--radius-full, 9999px); border: 1px solid var(--color-graphite-300, #b1acaf); background: var(--color-white-100, #fff); font-size: 14px; color: var(--color-graphite-600, #1b1a1b); }
 .disc { position: relative; padding: 64px 40px; color: var(--color-pearl-extra-light, #f7f4ee); background: var(--color-forest-500, #06120e); }
-.disc::before { content: ""; position: absolute; inset: 0; background: radial-gradient(120% 95% at 50% 32%, rgba(12, 92, 66, 0.85), rgba(0, 0, 0, 0) 64%); }
+.disc::before { content: ""; position: absolute; inset: 0; background: var(--component-skin-discover-wallScrim, radial-gradient(120% 95% at 50% 32%, rgba(12, 92, 66, 0.85), rgba(0, 0, 0, 0) 64%)); }
 .disc h3 { position: relative; font: 500 var(--font-size-discoverTitle, 64px)/1.08 var(--sg-serif); margin: 0 0 26px; }
-.disc .field { position: relative; display: flex; align-items: center; width: var(--component-discoverFieldW, 420px); max-width: 100%; height: var(--component-discoverFieldH, 60px); border-radius: var(--component-marketingPillRadius, 60px); background: var(--color-white-100, #fff); color: var(--color-quote-theme-6, #161015); padding: 0 24px; font-size: 14px; box-shadow: rgba(12, 12, 12, 0.45) 0px 10px 34px 0px; }
+.disc .field { position: relative; display: flex; align-items: center; width: var(--component-discoverFieldW, 420px); max-width: 100%; height: var(--component-discoverFieldH, 60px); border-radius: var(--component-marketingPillRadius, 60px); background: var(--color-white-100, #fff); color: var(--color-quote-theme-6, #161015); padding: 0 24px; font-size: 14px; box-shadow: var(--component-skin-discover-fieldShadow, rgba(12, 12, 12, 0.45) 0px 10px 34px 0px); }
 .disc .pills { position: relative; margin-top: 16px; display: flex; gap: 10px; }
-.disc .fpill { display: inline-flex; align-items: center; height: var(--component-discoverPillH, 50px); padding: 0 18px; border-radius: 999px; background: var(--color-forest-400, #042119); color: #c5c1c5; font-size: 14px; font-weight: 500; }
+.disc .fpill { display: inline-flex; align-items: center; height: var(--component-discoverPillH, 50px); padding: 0 18px; border-radius: 999px; background: var(--component-skin-discover-discoverPillFill, #042119); color: var(--component-skin-discover-discoverPillInk, #c5c1c5); font-size: 14px; font-weight: 500; }
 table.cmp { border-collapse: collapse; font-size: 14px; }
 table.cmp td, table.cmp th { border: 1px solid var(--color-graphite-300, #b1acaf); padding: 6px 14px; text-align: left; }
 .tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--color-graphite-300, #b1acaf); }

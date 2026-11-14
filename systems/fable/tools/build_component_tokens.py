@@ -296,39 +296,41 @@ MEASURED_SIZES = [
     ("sectionTitle", "club-h2", "default", "The 36px in-page section title.", None),
     ("panelTitle", "signin-h1", "default", "The 26px sign-in panel title.", None),
     ("feature", "feature-h", "default", "The 24px marketing feature heading.", None),
-    ("body", "mkt-header", "default", "The 16px body/nav text size.", None),
-    ("small", "footer-link", "default", "The 15px footer link size.", None),
+    ("body", "faq-q", "default", "The 16px body/support copy size.", None),
+    ("small", "search-input", "default", "The 15px search-field text.", None),
     ("control", "btn-primary", "default", "The 14px control label.", None),
+    ("footerText", "footer-link", "default", "The 14px footer-link text.", None),
+    ("trigger", "search-trigger", "default", "The 14px Inter label inside the unstyled 13.333px search-trigger shell.", None),
     ("meta", "author-link", "default", "The 12px byline/meta size.", None),
     ("micro", "spoiler-pill", "default", "The 10px badge/pill label.", None),
-    ("fallback", "search-trigger", "default", "The 13.333px browser-default Arial on unstyled control text.", None),
+    ("fallback", "icon-btn", "default", "The 13.333px browser-default Arial left on icon-only controls — no font styles reach them.", None),
 ]
 for key, comp, state, desc, resp in MEASURED_SIZES:
-    try:
-        raw = st(comp, state)["fontSize"]
-        sizes[key] = lit(raw, "dimension",
-                         f"computed fontSize of {comp} {state} (raw/components-computed.json)", desc)
-        if resp:
-            sizes[key]["responsive"] = resp
-    except KeyError:
-        pass
+    # Prefer the kit's first-text-node reading (textStyle): a wrapper's own
+    # fontSize is what children inherit, not what the visible text paints —
+    # footer-link's shell is 15px over 14px text, search-trigger's is the
+    # 13.333px browser default under a 14px Inter label.
+    raw = ts(comp, state, "fontSize")
+    if not raw:
+        continue
+    sizes[key] = lit(raw, "dimension",
+                     f"computed fontSize of {comp} {state} — the first text node's reading where the kit recorded one (raw/components-computed.json)", desc)
+    if resp:
+        sizes[key]["responsive"] = resp
 
 MEASURED_LH = [
     ("masthead", "hero-h1", "default", "The 62px hero masthead line (~0.86x)."),
     ("sectionTitle", "club-h2", "default", "The 36px section-title line (1x)."),
     ("detailTitle", "book-h1", "default", "The 48px detail-title line."),
-    ("body", "mkt-header", "default", "The 24px body line (1.5x)."),
+    ("body", "faq-q", "default", "The 20px body line (1.25x)."),
     ("control", "btn-primary", "default", "The 21px control-label line on the emotion skin."),
 ]
 for key, comp, state, desc in MEASURED_LH:
-    try:
-        raw = st(comp, state)["lineHeight"]
-        if raw in ("normal", ""):
-            continue
-        lineheights[key] = lit(raw, "dimension",
-                               f"computed lineHeight of {comp} {state} (raw/components-computed.json)", desc)
-    except KeyError:
-        pass
+    raw = ts(comp, state, "lineHeight")
+    if raw in (None, "normal", ""):
+        continue
+    lineheights[key] = lit(raw, "dimension",
+                           f"computed lineHeight of {comp} {state} — the first text node's reading where the kit recorded one (raw/components-computed.json)", desc)
 
 for key, w, comp, state, desc in [
     ("regular", 400, "mkt-header", "default", "Body/regular weight."),
