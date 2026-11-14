@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_82 of 140 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_83 of 141 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -458,6 +458,14 @@ Access: read-only (the home page, /assets library and /assets/<kind>/<set> galle
 Access: read-only (family.co marketing pages, /docs, /support and the app.family.co login are fully public signed out; the signed-in Aave Account product and the iOS wallet are authenticated/native boundaries never reached; Log In, Get Started, Download on iOS and every Watch link were measured, never followed, and the login field and support search were typed into and cleared, never submitted)
 - the signed-in Aave Account product and every post-login surface need an account - an authenticated boundary never reached
 - Log In, Get Started, Download on iOS and every Watch link were measured, never followed; the login field and support search were typed into and cleared, never submitted
+
+## [Fibery](../systems/fibery) — `fibery`
+Access: read-only (the marketing site, fibery.io/sign-up and fibery.io/login/ are fully public signed out; everything past login - workspaces, views, the app's dark/system theme - is an authenticated boundary never reached; the sign-up prompt and login e-mail field were typed into then cleared, never submitted; the OAuth POST forms were never pressed; the wizard never advanced; every link and CTA was measured, never followed; the consent layer and Intercom widget were hidden, never answered)
+- every post-login app surface - workspaces, entity views, whiteboards, automations, AI, admin - lives behind an account, an authenticated boundary never reached
+- the app's dark/system theme (advertised on the login page) is behind sign-in and was not captured; the token file deliberately ships core + light only
+- the sign-up wizard was never advanced past step one - 'Create workspace' and 'Start without AI' were never pressed - so steps 2+ and workspace creation are uncaptured
+- the sign-up prompt and login e-mail field were typed into then cleared and never submitted, and the OAuth POST forms were never pressed - validation, error, loading and success states are absent rather than measured
+- 'Book a demo' links to a scheduler that was never opened; 'Workspace SSO' was never followed
 
 ## Gate noted in access text only
 
