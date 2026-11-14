@@ -26,7 +26,7 @@ build: ## Write the app's data and screenshot thumbnails into web/data/
 web: build ## Run the Next.js app (web/) in dev mode on 127.0.0.1 (PORT, default 8800)
 	@pnpm --dir web exec next dev -H 127.0.0.1 -p $(PORT)
 
-web-build: ## Build the Next.js app for production (web/.next)
+web-build: ## Build the Next.js app for production (web/.next, or $$NEXT_DIST_DIR under web/)
 	@pnpm --dir web build
 
 docs: ## Generate the scorecard pages and build the docs site into site/
