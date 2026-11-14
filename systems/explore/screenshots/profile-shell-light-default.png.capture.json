@@ -1,8 +1,17 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-13T23:31:36.637Z",
+  "capturedAt": "2026-11-14T07:46:43.546Z",
   "screenshot": "profile-shell-light-default.png",
-  "sanitizedSourceUrl": null,
+  "sanitizedSourceUrl": "https://explore.family/sawdust",
+  "provenance": {
+    "archive": {
+      "era": "feb",
+      "snapshot": "2023-02-23",
+      "route": "/sawdust",
+      "ssr": null
+    },
+    "mirrorMisses": []
+  },
   "requested": {
     "viewport": {
       "width": 1440,

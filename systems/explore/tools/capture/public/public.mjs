@@ -45,8 +45,16 @@ async function lazyScroll(p) {
 }
 
 class Shooter {
-  constructor(p, prefix, vw, vh, dpr) { this.p = p; this.prefix = prefix; this.vw = vw; this.dpr = dpr; this.requested = { viewport: { width: vw, height: vh }, deviceScaleFactor: dpr }; this.count = 0; }
-  async view(name) { await screenshotWithMetadata(this.p, { path: `${RAW}/${this.prefix}-${name}.png` }, this.requested); this.count++; log('  shot', name); }
+  constructor(p, prefix, vw, vh, dpr, url, era, ssr) {
+    this.p = p; this.prefix = prefix; this.vw = vw; this.dpr = dpr; this.count = 0;
+    // The misses this run hit before this page opened, so each sidecar can
+    // record only the archive gaps its own page walked into.
+    this.missBase = mirrorMisses.length;
+    this.archive = { era, snapshot: era === 'jun' ? '2023-06-08' : '2023-02-23', route: new URL(url).pathname + new URL(url).search, ssr: ssr || null };
+    this.requested = { viewport: { width: vw, height: vh }, deviceScaleFactor: dpr, sanitizedSourceUrl: url };
+  }
+  req() { return { ...this.requested, provenance: { archive: this.archive, mirrorMisses: [...new Set(mirrorMisses.slice(this.missBase))] } }; }
+  async view(name) { await screenshotWithMetadata(this.p, { path: `${RAW}/${this.prefix}-${name}.png` }, this.req()); this.count++; log('  shot', name); }
   async full(name = 'full') {
     const p = this.p;
     await lazyScroll(p);
@@ -57,8 +65,8 @@ class Shooter {
     const MAXH = 8 * chunk;
     const hCap = Math.min(H, MAXH);
     if (H > MAXH) log(`  ! ${name}: page is ${H}px tall, capturing first ${hCap}px only (infinite/growing page boundary)`);
-    if (hCap <= chunk) await screenshotWithMetadata(p, { path: f + '.png', fullPage: true }, this.requested);
-    else for (let i = 0, y = 0; y < hCap; i++, y += chunk) await screenshotWithMetadata(p, { path: `${f}.part${i}.png`, fullPage: true, clip: { x: 0, y, width: this.vw, height: Math.min(chunk, hCap - y) } }, this.requested);
+    if (hCap <= chunk) await screenshotWithMetadata(p, { path: f + '.png', fullPage: true }, this.req());
+    else for (let i = 0, y = 0; y < hCap; i++, y += chunk) await screenshotWithMetadata(p, { path: `${f}.part${i}.png`, fullPage: true, clip: { x: 0, y, width: this.vw, height: Math.min(chunk, hCap - y) } }, this.req());
     this.count++; log('  shot', name, 'H=' + H);
     await p.evaluate(() => scrollTo(0, 0)); await wait(p, 500);
   }
@@ -116,8 +124,11 @@ for (const { k, mob, era, ssr, spec } of runs) {
   await patch(ctx);
   await wireMirror(ctx, { era, ssr });
   const p = await ctx.newPage();
+  // Tiled full-page shots on a 23k-px page can need longer than the 30s
+  // default while the renderer walks the tiles.
+  p.setDefaultTimeout(120000);
   log(k);
-  const S = new Shooter(p, `${k}-light`, vw, vh, dpr);
+  const S = new Shooter(p, `${k}-light`, vw, vh, dpr, BASE + spec.path, era, ssr);
   try {
     await p.goto(BASE + spec.path, { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
     await wait(p, spec.wait || 6000);
@@ -126,6 +137,6 @@ for (const { k, mob, era, ssr, spec } of runs) {
   total += S.count;
   await ctx.close();
 }
-log('mirror misses (archive gaps):', JSON.stringify([...new Set(mirrorMisses)].slice(0, 40), null, 1));
+log('mirror misses (archive gaps):', JSON.stringify([...new Set(mirrorMisses)], null, 1));
 log('done', total, 'screenshots ->', RAW);
 await b.close();

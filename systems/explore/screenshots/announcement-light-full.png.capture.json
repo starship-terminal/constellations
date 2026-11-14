@@ -1,8 +1,21 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-13T23:32:33.661Z",
+  "capturedAt": "2026-11-14T07:47:29.817Z",
   "screenshot": "announcement-light-full.png",
-  "sanitizedSourceUrl": null,
+  "sanitizedSourceUrl": "https://explore.family/",
+  "provenance": {
+    "archive": {
+      "era": "jun",
+      "snapshot": "2023-06-08",
+      "route": "/",
+      "ssr": null
+    },
+    "mirrorMisses": [
+      "https://explore.family/videos/activity-1.mp4%60",
+      "https://explore.family/videos/activity-2.mp4%60",
+      "https://explore.family/videos/activity-3.mp4%60"
+    ]
+  },
   "requested": {
     "viewport": {
       "width": 1440,

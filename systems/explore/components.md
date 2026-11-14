@@ -1,6 +1,6 @@
 # Explore components
 
-The discovery list of every page and view captured, then one entry per component with crops of the real product and the Gaps. Captured on 2026-11-13 by replaying the archived 2023-02-23 explore.family build from a local Internet Archive mirror (the product closed 2023-04-19 and the domain later lapsed), signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was signed into, created, sent or uploaded.
+The discovery list of every page and view captured, then one entry per component with crops of the real product and the Gaps. Captured on 2026-11-14 by replaying the archived 2023-02-23 explore.family build from a local Internet Archive mirror (the product closed 2023-04-19 and the domain later lapsed), signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was signed into, created, sent or uploaded.
 
 The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (57 components, 104 states). The mined stylesheet is [raw/css-declarations.json](raw/css-declarations.json).
 
@@ -18,8 +18,8 @@ Screenshots are named `{page}-light-{state}.png` (Explore shows one fixed light 
 |---|---|---|
 | Home. Grey header and hero with the positioning sentence and feature tags, then the feed preview. | `/` | [default](screenshots/home-light-default.png), [full](screenshots/home-light-full.png) |
 | Discover. Intro line, category pills and the 3-up post grid from the archived feed API. | `/discover` | [default](screenshots/discover-light-default.png), [full](screenshots/discover-light-full.png) |
-| Login. The split auth screen: welcome panel left, email/password + "Log in" pill right. | `/login` | [default](screenshots/login-light-default.png), [full](screenshots/login-light-full.png) |
-| Register. Same split with the newsletter checkbox, the terms/privacy line and the yellow "Sign up". | `/register` | [default](screenshots/register-light-default.png), [full](screenshots/register-light-full.png) |
+| Login. The split auth screen: welcome panel left, email/password + "Log in" submit right. | `/login` | [default](screenshots/login-light-default.png), [full](screenshots/login-light-full.png) |
+| Register. Same split with the newsletter checkbox, the terms/privacy line and the dark "Sign up" submit. | `/register` | [default](screenshots/register-light-default.png), [full](screenshots/register-light-full.png) |
 | Forgot password. Intro copy, the email field and the reset submit. | `/forgot-password` | [default](screenshots/forgot-password-light-default.png), [full](screenshots/forgot-password-light-full.png) |
 | About. The marketing pitch: features, "no numbers", "no algorithms", portfolio and domain CTAs. | `/about` | [default](screenshots/about-light-default.png), [full](screenshots/about-light-full.png) |
 | Terms of Service, effective 2022-09-27. | `/terms` | [default](screenshots/terms-light-default.png), [full](screenshots/terms-light-full.png) |
@@ -49,7 +49,7 @@ Screenshots are named `{page}-light-{state}.png` (Explore shows one fixed light 
 
 Values that apply across entries, from the measurement files.
 
-**Focus.** 12 components were given a real keyboard focus. 3 draw a ring: `hero-tag-cta` (1px auto #101010, offset 1px), `forgot-link` (1px auto #101010, offset 1px), `signup-link` (1px auto #101010, offset 1px). The other 9 draw none, so a keyboard user sees no change: `nav-signin`, `nav-signup`, `pill`, `pill-idle`, `login-submit`, `reg-submit`, `forgot-submit`, `about-cta`, `m-signup`.
+**Focus.** 10 components were given a real keyboard focus. 4 draw a ring: `nav-signin` (1px auto #101010, offset 1px), `hero-tag-cta` (1px auto #101010, offset 1px), `forgot-link` (1px auto #101010, offset 1px), `signup-link` (1px auto #101010, offset 1px). The other 6 draw none, so a keyboard user sees no change: `nav-signup`, `login-submit`, `reg-submit`, `forgot-submit`, `about-cta`, `m-signup`. Focus could not be moved onto 2 controls — `pill`, `pill-idle` — so their focus appearance is a capture gap, not a measurement.
 
 **Pressed.** Explore's controls do not redraw on press; the measured `pressed` states match their defaults, so the entries read "same". Hovers recolour text and borders over the shared 0.2s transition rather than repainting backgrounds.
 
@@ -65,58 +65,57 @@ Values that apply across entries, from the measurement files.
 
 | Card | Size | Border | Radius | Background | Shadow | Padding |
 |---|---|---|---|---|---|---|
-| [Post card](#post-card) | 476 x 488.5 | - | 30px | #262626 `color.grey.950` | none | 0px 15px 50px 15px |
-| [Auth layout](#auth-layout) | 1440 x 900 | - | 7px | #262626 `color.grey.950` | none | 0 |
+| [Post card](#post-card) | 476 x 488.5 | - | - | #5a5958 (div.media.media--image) | none | 0px 15px 50px 15px |
+| [Auth layout](#auth-layout) | 1440 x 900 | - | - | #717171 `color.grey.700` (div.auth__left) | none | 0 |
 | [Feature card](#feature-card) | 511 x 371 | - | 7px | #f4f4f4 | none | 24px 40px 38px 40px |
 | [Email field](#email-field) | 388 x 20 | - | - | #ffffff `color.white` | none | 0 |
 | [Log in button](#log-in-button) | 424 x 47 | - | 7px | #262626 `color.grey.950` | none | 14px 25px |
 | [Sign up button](#sign-up-button) | 424 x 47 | - | 7px | #262626 `color.grey.950` | none | 14px 25px |
-| [Category pill (active)](#category-pill-active) | 47 x 36 | 2px solid | 20px | - | none | 5px 12px 6px 12px |
-| [Hero tag CTA](#hero-tag-cta) | 137 x 46 | 1px solid | 7px | - | none | 11px 23px |
-| [SSR post tile](#ssr-post-tile) | 58.16 x 264.08 | - | 34px | #9d9d9d `color.grey.500` | none | 0px 15px 50px 15px |
-| [Mobile post card](#mobile-post-card) | 390 x 448.5 | - | 30px | #262626 `color.grey.950` | none | 0px 0px 40px 0px |
+| [Category pill (active)](#category-pill-active) | 47 x 36 | 2px solid #262626 `color.grey.950` | 20px | transparent | none | 5px 12px 6px 12px |
+| [Hero tag CTA](#hero-tag-cta) | 137 x 46 | 1px solid #b7b7b7 `color.grey.450` | 7px | transparent | none | 11px 23px |
+| [SSR post tile](#ssr-post-tile) | 58.16 x 264.08 | - | 34px (div.post__author-image) | #9d9d9d `color.grey.500` (div.post__author-image) | none | 0px 15px 50px 15px |
+| [Mobile post card](#mobile-post-card) | 390 x 448.5 | - | - | #5a5958 (div.media.media--image) | none | 0px 0px 40px 0px |
 | [Footer](#footer) | 990 x 585 | - | - | transparent | none | 130px 0px 175px 0px |
 
 ## Components
 
 ### Auth forms
 
-The marketing chrome (fixed 60px grey header, E wordmark, Sign in + yellow "Sign up free") and the split auth screen: a community welcome over the `#9d9d9d` grey field at the left, a ~424px form column at the right. Email/password fields are 8px-radius hairline inputs; submits are 50px-radius pills, dark on Log in, yellow on Sign up and grey otherwise. Fields were focused and filled for measurement, then cleared; nothing was submitted.
+The marketing chrome (fixed 60px grey header, E wordmark, Sign in + yellow "Sign up free") and the split auth screen: a community welcome over a darker `#717171` grey panel at the left, a ~424px form column at the right. Email/password fields are 8px-radius hairline inputs; all three submits ("Log in", "Sign up", "Reset Password") are the same full-width dark `#262626` button with 7px corners. Fields were focused and filled for measurement, then cleared; nothing was submitted.
 
 #### Site header
-The fixed grey top bar: logo left, "Sign in" link and yellow "Sign up free" pill right. Read as `mkt-header` on the register page.
+The fixed grey top bar: logo left, "Sign in" link and yellow "Sign up free" pill right. Read as `mkt-header` on the forgot password page.
 
-**Values (default).** size 0 x 0; background #9d9d9d `color.grey.500`; text UntitledSans 16/22 400, #262626 `color.grey.950`.
+**Values (default).** size 1440 x 60; background #9d9d9d `color.grey.500`; text UntitledSans 16/22 400, #ffffff `color.white`.
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Site header default](components/crops/mkt-header-default.png)
 
 #### Logo
-The Explore wordmark (inline svg) in the header, linking home. Read as `mkt-logo` on the register page.
+The Explore wordmark (inline svg) in the header, linking home. Read as `mkt-logo` on the forgot password page.
 
-**Values (default).** size 0 x 0; background transparent; text UntitledSans 16/0 400, #262626 `color.grey.950`; transition color 0.2s ease.
+**Values (default).** size 27 x 31; background transparent; text UntitledSans 16/0 400, #262626 `color.grey.950`; transition color 0.2s ease; transform translate(-13.5px, -15.5px); icon 27 x 31, #ffffff `color.white`.
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Logo default](components/crops/mkt-logo-default.png)
 
 #### Sign in link
-The "Sign in" header link; measured, never followed. Read as `nav-signin` on the register page.
+The "Sign in" header link; measured, never followed. Read as `nav-signin` on the forgot password page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible, pressed) | size 0 x 0; background transparent; text UntitledSans 16/22 400, #ffffff `color.white`; transition color 0.2s ease |
-| hover | size 52 x 22 |
+| default (same: hover, pressed) | size 52 x 22; background transparent; text UntitledSans 16/22 400, #ffffff `color.white`; transition color 0.2s ease |
+| focus-visible | outline 1px auto #101010, offset 1px |
 
-![Sign in link hover](components/crops/nav-signin-hover.png)
+![Sign in link default](components/crops/nav-signin-default.png) ![Sign in link hover](components/crops/nav-signin-hover.png) ![Sign in link focus-visible](components/crops/nav-signin-focus-visible.png) ![Sign in link pressed](components/crops/nav-signin-pressed.png)
 
 #### Sign up pill
-The yellow "Sign up free" pill (btn--yellow btn--rounded btn--small); measured, never followed. Read as `nav-signup` on the register page.
+The yellow "Sign up free" pill (btn--yellow btn--rounded btn--small); measured, never followed. Read as `nav-signup` on the forgot password page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 0 x 0; padding 9px 16px 10px 16px; radius 50px; background #ffc60a `color.accent.DEFAULT`; text UntitledSans 16/19 400, #262626 `color.grey.950`; transition all 0.2s ease |
-| hover | size 121 x 38; background #ffcc24 `color.accent.hover` |
-| pressed | background #ffcc24 `color.accent.hover` |
+| default | size 121 x 38; padding 9px 16px 10px 16px; radius 50px; background #ffc60a `color.accent.DEFAULT`; text UntitledSans 16/19 400, #262626 `color.grey.950`; transition all 0.2s ease |
+| hover, focus-visible, pressed | background #ffcc24 `color.accent.hover` |
 
-![Sign up pill hover](components/crops/nav-signup-hover.png)
+![Sign up pill default](components/crops/nav-signup-default.png) ![Sign up pill hover](components/crops/nav-signup-hover.png) ![Sign up pill focus-visible](components/crops/nav-signup-focus-visible.png) ![Sign up pill pressed](components/crops/nav-signup-pressed.png)
 
 #### Auth layout
 The split auth screen: community welcome on the left, the form panel on the right. Read as `auth-panel` on the login page.

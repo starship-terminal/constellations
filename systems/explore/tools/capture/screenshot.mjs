@@ -24,6 +24,9 @@ export async function screenshotWithMetadata(page, options, requested = {}) {
     screenshot: path.basename(options.path),
     // Never read page.url(): it can contain a signed URL or an account ID.
     sanitizedSourceUrl: requested.sanitizedSourceUrl ?? null,
+    // Capture provenance the caller wants on record (for the archive replay:
+    // era, snapshot date, route and the mirror misses this page hit).
+    provenance: requested.provenance ?? null,
     requested: { viewport: requested.viewport ?? null, deviceScaleFactor: requested.deviceScaleFactor ?? null },
     configuredViewport: null,
     actual: null,

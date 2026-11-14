@@ -207,7 +207,7 @@ PAGE_NAME = {"home": "home", "discover": "Discover", "login": "login", "register
              "profile": "server-rendered profile", "mobile": "mobile"}
 
 GROUP_INTRO = {
-    "Auth forms": "The marketing chrome (fixed 60px grey header, E wordmark, Sign in + yellow \"Sign up free\") and the split auth screen: a community welcome over the `#9d9d9d` grey field at the left, a ~424px form column at the right. Email/password fields are 8px-radius hairline inputs; submits are 50px-radius pills, dark on Log in, yellow on Sign up and grey otherwise. Fields were focused and filled for measurement, then cleared; nothing was submitted.",
+    "Auth forms": "The marketing chrome (fixed 60px grey header, E wordmark, Sign in + yellow \"Sign up free\") and the split auth screen: a community welcome over a darker `#717171` grey panel at the left, a ~424px form column at the right. Email/password fields are 8px-radius hairline inputs; all three submits (\"Log in\", \"Sign up\", \"Reset Password\") are the same full-width dark `#262626` button with 7px corners. Fields were focused and filled for measurement, then cleared; nothing was submitted.",
     "Home (marketing + feed)": "The signed-out home page: the LabilGrotesk-Medium positioning sentence over the grey hero with hairline feature tags, then a feed preview.",
     "Discover feed": "`/discover`: an intro line, a row of category pills (hairline idle, ink-bordered active) and the 3-up post grid, fed by the archived `/discover` API records. Some post media was not archived and renders as the grey placeholder.",
     "About / legal": "The /about marketing page (features, no-numbers, no-algorithms, portfolio/domain pitches, CTAs) and the Terms, Privacy and Conduct legal pages, plus the shared footer.",
@@ -218,8 +218,8 @@ GROUP_INTRO = {
 SHOTS = [
     ("home", "Home. Grey header and hero with the positioning sentence and feature tags, then the feed preview.", "/"),
     ("discover", "Discover. Intro line, category pills and the 3-up post grid from the archived feed API.", "/discover"),
-    ("login", "Login. The split auth screen: welcome panel left, email/password + \"Log in\" pill right.", "/login"),
-    ("register", "Register. Same split with the newsletter checkbox, the terms/privacy line and the yellow \"Sign up\".", "/register"),
+    ("login", "Login. The split auth screen: welcome panel left, email/password + \"Log in\" submit right.", "/login"),
+    ("register", "Register. Same split with the newsletter checkbox, the terms/privacy line and the dark \"Sign up\" submit.", "/register"),
     ("forgot-password", "Forgot password. Intro copy, the email field and the reset submit.", "/forgot-password"),
     ("about", "About. The marketing pitch: features, \"no numbers\", \"no algorithms\", portfolio and domain CTAs.", "/about"),
     ("terms", "Terms of Service, effective 2022-09-27.", "/terms"),
@@ -301,17 +301,23 @@ W("## Shared values")
 W()
 W("Values that apply across entries, from the measurement files.")
 W()
-foc = []
+foc, failed = [], []
 for k, c in C.items():
     st = c["states"].get("focus-visible")
     if not st or "style" not in st:
+        continue
+    if st.get("via") == "focus failed":
+        # Keyboard focus never landed on the element, so this record is the
+        # unfocused style, not an observed focus look: a capture gap.
+        failed.append(k)
         continue
     s = st["style"]
     ring = s["outlineStyle"] != "none" and float(s["outlineWidth"].replace("px", "")) > 0
     foc.append((k, f"{s['outlineWidth']} {s['outlineStyle']} {colour(s['outlineColor'])}, offset {s['outlineOffset']}" if ring else None))
 with_ring = [f"`{k}` ({r})" for k, r in foc if r]
 without = [f"`{k}`" for k, r in foc if not r]
-W(f"**Focus.** {len(foc)} components were given a real keyboard focus. {len(with_ring)} draw a ring: {', '.join(with_ring) if with_ring else 'none'}. The other {len(without)} draw none, so a keyboard user sees no change: {', '.join(without) if without else 'none'}.")
+W(f"**Focus.** {len(foc)} components were given a real keyboard focus. {len(with_ring)} draw a ring: {', '.join(with_ring) if with_ring else 'none'}. The other {len(without)} draw none, so a keyboard user sees no change: {', '.join(without) if without else 'none'}."
+  + (f" Focus could not be moved onto {len(failed)} controls — {', '.join(f'`{k}`' for k in failed)} — so their focus appearance is a capture gap, not a measurement." if failed else ""))
 W()
 W("**Pressed.** Explore's controls do not redraw on press; the measured `pressed` states match their defaults, so the entries read \"same\". Hovers recolour text and borders over the shared 0.2s transition rather than repainting backgrounds.")
 W()
@@ -365,8 +371,25 @@ for k in ["post-card", "auth-panel", "feature", "field-email", "login-submit", "
         continue
     p = props(st)
     if ("radius" not in p or p["background"] == "transparent") and st.get("paint"):
-        p0 = next((x for x in st["paint"] if x.get("bg") and x.get("radius")), st["paint"][0])
-        p = dict(p, border=colour(p0["border"].split(" | ")[0][2:]) if p0.get("border") else "-", radius=p0.get("radius", "-"), background=colour(p0.get("bg", "")) or "-", shadow=colour(p0.get("shadow", ""), tokens=False) or "none")
+        # The root paints nothing: describe the largest painted descendant,
+        # naming the node, instead of letting the first filled child pose as
+        # the component (the post card's PRO badge is not the card).
+        def area(x):
+            dims = [float(n) for n in re.findall(r"[\d.]+", x.get("size", ""))[:2]]
+            return dims[0] * dims[1] if len(dims) == 2 else 0
+        cands = [x for x in st["paint"]
+                 if (x.get("bg") and x["bg"] != "rgba(0, 0, 0, 0)") or x.get("bgImage") or x.get("border")]
+        p0 = max(cands, key=area) if cands else None
+        if p0:
+            p = dict(p)
+            if p.get("background") in (None, "transparent") and p0.get("bg"):
+                p["background"] = f"{colour(p0['bg'])} ({p0['node']})"
+            if "radius" not in p and p0.get("radius"):
+                p["radius"] = f"{p0['radius']} ({p0['node']})"
+            if "border" not in p and p0.get("border"):
+                p["border"] = f"{colour(p0['border'].split(' | ')[0][2:])} ({p0['node']})"
+            if p.get("shadow", "none") == "none" and p0.get("shadow"):
+                p["shadow"] = f"{colour(p0['shadow'], tokens=False)} ({p0['node']})"
     W(f"| [{c['title']}](#{re.sub(r'[^a-z0-9 -]', '', c['title'].lower()).replace(' ', '-')}) | {p['size']} | {p.get('border', '-')} | {p.get('radius', '-')} | {p.get('background', '-')} | {p.get('shadow', 'none')} | {p.get('padding', '0')} |")
 W()
 

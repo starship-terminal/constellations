@@ -1,8 +1,33 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-13T23:32:09.796Z",
+  "capturedAt": "2026-11-14T07:47:12.370Z",
   "screenshot": "ssr-profile-sawdust-light-default.png",
-  "sanitizedSourceUrl": null,
+  "sanitizedSourceUrl": "https://explore.family/sawdust",
+  "provenance": {
+    "archive": {
+      "era": "feb",
+      "snapshot": "2023-02-23",
+      "route": "/sawdust",
+      "ssr": "/sawdust"
+    },
+    "mirrorMisses": [
+      "https://back.explore.family/uploads/users/sawdust-aepbg6ilne2022101495341.jpg",
+      "https://back.explore.family/uploads/users/online-avatar-2-ffc59uvo2l20221013195100.jpg",
+      "https://back.explore.family/uploads/posts/67/sawdust-x-fall-and-rise-3000px-ttra4_gallery.webp",
+      "https://back.explore.family/uploads/posts/67/five-2160p-oeafc_cover_gallery.webp",
+      "https://back.explore.family/uploads/posts/67/four-2160p-wp1xh_cover_gallery.webp",
+      "https://back.explore.family/uploads/posts/67/three-release-longer-loop-cuemh_cover_gallery.webp",
+      "https://back.explore.family/uploads",
+      "https://back.explore.family/uploads/posts/67/five-2160p-oeafc.mp4",
+      "https://back.explore.family/uploads/posts/67/four-2160p-wp1xh.mp4",
+      "https://back.explore.family/uploads/posts/67/three-release-longer-loop-cuemh.mp4",
+      "https://back.explore.family/uploads/posts/67/two-2160p-3da2a.mp4",
+      "https://back.explore.family/uploads/posts/67/one-2160p-zna4d.mp4",
+      "https://back.explore.family/uploads/posts/67/continuum-portrait-i44iz.mp4",
+      "https://back.explore.family/uploads/posts/67/momentum-from-vimeo-imzvq.mp4",
+      "https://back.explore.family/uploads/posts/67/013-untitled-final-sound-ymf2z.mp4"
+    ]
+  },
   "requested": {
     "viewport": {
       "width": 1440,

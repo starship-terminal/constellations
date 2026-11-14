@@ -1,8 +1,17 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-13T23:31:06.814Z",
+  "capturedAt": "2026-11-14T07:46:20.409Z",
   "screenshot": "privacy-light-full.png",
-  "sanitizedSourceUrl": null,
+  "sanitizedSourceUrl": "https://explore.family/privacy",
+  "provenance": {
+    "archive": {
+      "era": "feb",
+      "snapshot": "2023-02-23",
+      "route": "/privacy",
+      "ssr": null
+    },
+    "mirrorMisses": []
+  },
   "requested": {
     "viewport": {
       "width": 1440,

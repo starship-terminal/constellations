@@ -10,14 +10,15 @@ raw/components-computed.json — each leaf names its evidence in `source`.
 
 Palette roles, read from the sheet and the rendered pages:
   field      #9d9d9d — the grey field: fixed .header bar, hero section,
-             avatar/media placeholders, the auth left panel
+             avatar/media placeholders (the auth welcome panel is darker,
+             #717171)
   paper      #fff    — feed and form surfaces, page background (body{})
   ink        #262626 — primary text, active pill border, dark button
   muted      #717171 / #868686 / #9d9d9d — secondary copy (discover title,
              post age, footer links)
   hairline   #ebebeb — input borders, feature separators
   surface    #efefef — grey button bg, section--grey, pill border
-  accent     #ffc60a — the yellow: Sign up pill, btn-submit, PRO badge
+  accent     #ffc60a — the yellow: Sign up free pill, about CTA, PRO badge
   danger     #f13939 — error/red button
   success    #2bd170 — form success icons
   info       #3198ff — link/notice blue
@@ -29,7 +30,7 @@ avatars (28/64/142px boxes at 34–150px radii).
 
 Deterministic: re-running writes the same file.
 """
-import json, pathlib
+import json, pathlib, re
 
 HERE = pathlib.Path(__file__).resolve().parent.parent
 RAW = HERE / "raw"
@@ -125,7 +126,7 @@ core["color"] = {
 light["color"] = {
     "background": {
         "page": v("{color.white}", "color", "body{background:#fff}; measured page field", description="The page surface under feed and forms."),
-        "field": v("{color.grey.500}", "color", css(".header{background:#9d9d9d}, .section--hero{background:#9d9d9d}"), description="The signature mid-grey field: fixed header bar, hero, auth left panel, media placeholders."),
+        "field": v("{color.grey.500}", "color", css(".header{background:#9d9d9d}, .section--hero{background:#9d9d9d}"), description="The signature mid-grey field: fixed header bar, hero, media placeholders (the auth welcome panel is the darker #717171)."),
         "surface": v("{color.grey.100}", "color", css(".section--grey{background:#efefef}, .btn--grey"), description="Recessed grey surfaces (footer band, grey buttons)."),
         "hairline": v("{color.grey.150}", "color", css(".input, .pill{border-color:#ebebeb/#efefef}"), description="The 1px hairline on inputs, pills and separators."),
     },
@@ -138,10 +139,10 @@ light["color"] = {
         "inverse-soft": v("{color.grey.50}", "color", css(".hero__tag/.pill{color:#f8f8f8}"), description="Soft white on grey (hero tags, dark-mode text)."),
     },
     "action": {
-        "accent": v("{color.accent.DEFAULT}", "color", css(".btn--yellow, .btn-submit{background:#ffc60a}"), description="The yellow CTA field (Sign up free, Sign up, PRO badge)."),
+        "accent": v("{color.accent.DEFAULT}", "color", css(".btn--yellow, .btn-submit{background:#ffc60a}"), description="The yellow CTA field (the Sign up free pill, the about-page Sign up CTA, PRO badge — auth submits are the dark .btn, not this)."),
         "accent-hover": v("{color.accent.hover}", "color", css(".btn--yellow:hover/#ffcc24"), description="Yellow hover."),
         "on-accent": v("{color.grey.950}", "color", css(".btn--yellow{color:#262626}"), description="Ink on the yellow CTA."),
-        "primary": v("{color.grey.950}", "color", css(".btn-submit--dark, .btn--dark{background:#262626}"), description="The dark submit (Log in, Sign up)."),
+        "primary": v("{color.grey.950}", "color", css(".btn-submit--dark, .btn--dark{background:#262626}"), description="The dark submit (Log in, Sign up, Reset password — all three auth submits measured #262626 with 7px corners)."),
         "primary-hover": v("{color.grey.800}", "color", css(".btn--dark:hover{background:#333}"), description="Dark submit hover."),
         "on-primary": v("{color.white}", "color", css(".btn--dark{color:#fff}"), description="Text on the dark submit."),
         "neutral": v("{color.grey.100}", "color", css(".btn--grey{background:#efefef}"), description="Grey button field."),
@@ -235,12 +236,12 @@ core["container"] = {
     "legal": v("760px", "dimension", "measured legal-body width 760px", description="Legal/statement copy column."),
 }
 core["breakpoint"] = {
-    "sm": v("650px", "dimension", css("@media (max-width:650px) — mobile cutover")),
-    "md": v("1024px", "dimension", css("@media breakpoints in the sheet")),
-    "lg": v("1440px", "dimension", css("@media breakpoints in the sheet")),
+    "sm": v("650px", "dimension", css("@media (max-width:650px) — the mobile cutover, 169 rules in the sheet")),
+    "md": v("980px", "dimension", css("@media (max-width:980px) and @media (max-width:980px) and (min-width:650px) — the tablet cutover (.text-center--tablet, .activity, .subscribe)")),
+    "lg": v("1280px", "dimension", css("@media (max-width:1280px) — the tablet-big cutover (.hide-tablet-big/.show-tablet-big)")),
 }
 core["duration"] = {
-    "fast": v("150ms", "duration", css("transition .15s on links/buttons")),
+    "fast": v("200ms", "duration", css(".btn,.btn-icon,.btn-submit{transition-duration:0.2s} and a{transition:color 0.2s} — links and buttons")),
     "base": v("300ms", "duration", css(".default-transition / transition .3s")),
     "slow": v("500ms", "duration", css("transition .5s on hero/reveal")),
 }
@@ -258,7 +259,21 @@ core["shadow"] = {
 
 # --------------------------------------------------------------------- component geometry (measured)
 def dim(comp_, state, key, unit="px"):
-    val = C[comp_]["states"][state]["rect"][key]
+    st_ = C[comp_]["states"][state]
+    val = st_["rect"][key]
+    if not val:
+        # A hidden element measures a 0 rect (the marketing header is
+        # display:none in the auth pages' DOM): never export 0px geometry.
+        # Fall back to the element's declared CSS size when it has one.
+        prop = {"w": "width", "h": "height"}[key]
+        cssv = (st_.get("style") or {}).get(prop, "")
+        if re.fullmatch(r"\d+(\.\d+)?px", cssv):
+            return v(cssv, "dimension",
+                     measured(comp_, state, f"style.{prop}") +
+                     " (element display:none at capture; declared size, not a rect)")
+        raise SystemExit(
+            f"{comp_} {state} rect.{key} is 0 — a hidden reading slipped in; "
+            "re-measure the component on a page where it is visible")
     return v(f"{val:g}px", "dimension", measured(comp_, state, f"rect.{key}"))
 
 

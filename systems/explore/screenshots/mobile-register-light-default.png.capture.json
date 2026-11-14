@@ -1,8 +1,17 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-13T23:33:35.392Z",
+  "capturedAt": "2026-11-14T07:50:29.039Z",
   "screenshot": "mobile-register-light-default.png",
-  "sanitizedSourceUrl": null,
+  "sanitizedSourceUrl": "https://explore.family/register",
+  "provenance": {
+    "archive": {
+      "era": "feb",
+      "snapshot": "2023-02-23",
+      "route": "/register",
+      "ssr": null
+    },
+    "mirrorMisses": []
+  },
   "requested": {
     "viewport": {
       "width": 390,

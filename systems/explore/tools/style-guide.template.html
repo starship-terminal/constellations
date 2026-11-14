@@ -36,11 +36,11 @@ code { font-family: var(--sg-mono); font-size: .9em; }
 .navbar { display: flex; align-items: center; gap: 22px; height: var(--component-header-height, 60px); padding: 0 22px; font-size: 14px; color: #fff; background: var(--color-grey-500, #9d9d9d); }
 .navbar .wm { font: 500 18px/1 var(--sg-serif); letter-spacing: .02em; }
 .navbar .sp { flex: 1; }
-.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-button-submit-height, 47px); padding: 0 22px; font-size: 14px; font-weight: 500; border-radius: var(--radius-button, 50px); border: 1px solid transparent; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-button-submit-height, 47px); padding: 0 22px; font-size: 14px; font-weight: 500; border-radius: var(--radius-card, 7px); border: 1px solid transparent; }
 .btn.yellow { background: var(--color-accent-DEFAULT, #ffc60a); color: var(--color-grey-950, #262626); }
 .btn.dark { background: var(--color-grey-950, #262626); color: #fff; }
 .btn.grey { background: var(--color-grey-100, #efefef); color: var(--color-grey-950, #262626); }
-.btn.small { height: var(--component-button-signupPill-height, 38px); font-size: 14px; }
+.btn.small { height: var(--component-button-signupPill-height, 38px); font-size: 14px; border-radius: var(--radius-button, 50px); }
 .hero { background: var(--color-grey-500, #9d9d9d); color: #fff; padding: 48px 40px; }
 .hero .hi { font: 400 16px/1.5 var(--sg-sans); color: #e0e0e0; }
 .hero h3 { font: 500 var(--font-size-40, 40px)/var(--font-lineHeight-tight, 1.02) var(--sg-serif); margin: 12px 0 20px; max-width: 20ch; }
@@ -68,7 +68,7 @@ table.cmp td, table.cmp th { border: 1px solid var(--color-grey-150, #ebebeb); p
   <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and size below is a token, not a restated number. The boxed mocks are reconstructions drawn with those tokens, not captured pixels.</p>
 
   <h2 class="sh">Explore, measured</h2>
-  <p class="lead">explore.family was an ad-free social platform for creatives — a white feed under a signature mid-grey field (<code>#9d9d9d</code>: fixed header, hero, auth panel, media placeholders), one yellow accent (<code>#ffc60a</code>: Sign up free, submits, the PRO badge), dark pill submits (<code>#262626</code>), UntitledSans for UI with UntitledSansMedium post titles and LabilGrotesk-Medium display. Every value is a hardcoded literal mined from the compiled stylesheet or a computed-style measurement — the site declared no design-token layer.</p>
+  <p class="lead">explore.family was an ad-free social platform for creatives — a white feed under a signature mid-grey field (<code>#9d9d9d</code>: fixed header, hero, media placeholders; the auth welcome panel is the darker <code>#717171</code>), one yellow accent (<code>#ffc60a</code>: Sign up free, the about-page CTA, the PRO badge), dark 7px-cornered submits (<code>#262626</code>), UntitledSans for UI with UntitledSansMedium post titles and LabilGrotesk-Medium display. Every value is a hardcoded literal mined from the compiled stylesheet or a computed-style measurement — the site declared no design-token layer.</p>
   <p class="note">Read on 2026-11-14 from the archived 2023-02-23 build (the product closed 2023-04-19 and the domain later lapsed); every page was replayed locally from an Internet Archive mirror, signed out, in headless Chromium. Auth forms were measured, never submitted. UntitledSans/LabilGrotesk are proprietary served faces: samples fall back to system sans.</p>
 
   <h2 class="sh">The chrome</h2>
@@ -90,12 +90,13 @@ table.cmp td, table.cmp th { border: 1px solid var(--color-grey-150, #ebebeb); p
   </div>
 
   <h2 class="sh">Auth</h2>
-  <p class="lead">The split auth screen: community welcome over the grey field left, a 424px form column right — 8px-radius hairline inputs and the dark full-width "Log in" pill (the register screen swaps in the yellow "Sign up").</p>
+  <p class="lead">The split auth screen: community welcome over a darker #717171 panel left (hidden under 650px, leaving only the form), a 424px form column right — 8px-radius hairline inputs and full-width dark submits with 7px corners; "Log in", "Sign up" and "Reset Password" share the one style.</p>
   <div class="mock" style="padding:24px;max-width:480px">
     <div class="field">Email</div><div class="field">Password</div>
     <span class="btn dark" style="width:100%">Log in</span>
-    <div style="margin-top:14px"><span class="btn yellow" style="width:100%">Sign up</span></div>
-    <div style="margin-top:14px"><span class="btn grey" style="width:100%">Grey button</span></div>
+    <div style="margin-top:14px"><span class="btn dark" style="width:100%">Sign up</span></div>
+    <div style="margin-top:14px"><span class="btn dark" style="width:100%">Reset Password</span></div>
+    <div style="margin-top:14px"><span class="btn grey" style="width:100%">Grey button (.btn--grey)</span></div>
   </div>
 
   <h2 class="sh">Palette</h2>
@@ -103,7 +104,7 @@ table.cmp td, table.cmp th { border: 1px solid var(--color-grey-150, #ebebeb); p
   <div id="roles-out"></div>
 
   <h2 class="sh">Spacing, radius and motion</h2>
-  <p class="lead">Small radii (7–8px) on cards/inputs/tags against full pills (20px categories, 50px buttons) and round avatars; the feed is a 1640px-max 3-column grid with 15px gutters and a 50px row pitch. Controls ease over ~150–300ms.</p>
+  <p class="lead">Small radii (7–8px) on cards/inputs/tags/submits against full pills (20px categories, 50px CTA pills) and round avatars; the feed is a 1640px-max 3-column grid with 15px gutters and a 50px row pitch. Controls ease over 0.2s (alerts 0.35s, media fades 0.5s).</p>
   <div id="spacing-out" class="kv"></div>
 
   <h2 class="sh">Type</h2>

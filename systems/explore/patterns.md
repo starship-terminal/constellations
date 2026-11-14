@@ -16,7 +16,7 @@ The hero is a full-bleed grey field (`light.color.background.field`): a small "W
 
 ## Auth screens
 
-`/login`, `/register` and `/forgot-password` share one split layout: the left half is the grey field with the community welcome quote and a small logo mark; the right half is a white ~424px form column (`component.auth.formWidth`) with the auth heading. Fields are `radius.input` 8px boxes — a `color.grey.150` 1px hairline, 13/17 padding, 16/20 text, `#c1c1c1` placeholders — with a password-visibility eye on the password field. Submits are full-width `radius.button` pills, 47px tall: dark (#262626) "Log in" on login, yellow "Sign up" on register, grey "Reset password" on forgot. Secondary actions ("Forgot your password?", "Sign up free", the terms/privacy line and the newsletter checkbox on register) sit under the submit as small muted links. Fields were focused and filled for measurement, then cleared; nothing was submitted.
+`/login`, `/register` and `/forgot-password` share one split layout: the left half is a darker `#717171` grey panel (`color.grey.700`, not the `#9d9d9d` field) carrying the community welcome quote and a small logo mark; the right half is a white ~424px form column (`component.auth.formWidth`) with the auth heading. Fields are `radius.input` 8px boxes — a `color.grey.150` 1px hairline, 13/17 padding, 16/20 text, `#c1c1c1` placeholders — with a password-visibility eye on the password field. All three submits are the same full-width dark `#262626` button (`color.grey.950`, `radius.card` 7px corners, 47px tall): "Log in" on login, "Sign up" on register, "Reset Password" on forgot. Secondary actions ("Forgot your password?", "Sign up free", the terms/privacy line and the newsletter checkbox on register) sit under the submit as small muted links. Fields were focused and filled for measurement, then cleared; nothing was submitted.
 
 ## Server-rendered profiles
 
@@ -28,7 +28,7 @@ Public profiles were server-rendered by the archive era's SSR variant: a profile
 
 ## Mobile
 
-At 390 the chrome drops to 56px and keeps only the wordmark and "Sign up free". The hero sentence shrinks a step, feature tags wrap, the pill row scrolls, and post cards go full width with the same author/title/action anatomy. The split auth screen stacks: welcome panel on top, form below.
+At 390 the chrome drops to 56px and keeps only the wordmark and "Sign up free". The hero sentence shrinks a step, feature tags wrap, the pill row scrolls, and post cards go full width with the same author/title/action anatomy. On the split auth screen the welcome panel does not stack above the form — `@media (max-width:650px)` sets `.auth__left{display:none}`, so only the form column remains.
 
 ## Closure announcement
 

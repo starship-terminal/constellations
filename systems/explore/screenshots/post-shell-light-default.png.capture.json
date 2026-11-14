@@ -1,8 +1,19 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-13T23:31:47.133Z",
+  "capturedAt": "2026-11-14T07:46:54.538Z",
   "screenshot": "post-shell-light-default.png",
-  "sanitizedSourceUrl": null,
+  "sanitizedSourceUrl": "https://explore.family/p/2193",
+  "provenance": {
+    "archive": {
+      "era": "feb",
+      "snapshot": "2023-02-23",
+      "route": "/p/2193",
+      "ssr": null
+    },
+    "mirrorMisses": [
+      "https://back.explore.family/post/single/2193?"
+    ]
+  },
   "requested": {
     "viewport": {
       "width": 1440,

@@ -1,8 +1,17 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-13T23:29:28.867Z",
+  "capturedAt": "2026-11-14T07:45:05.030Z",
   "screenshot": "login-light-default.png",
-  "sanitizedSourceUrl": null,
+  "sanitizedSourceUrl": "https://explore.family/login",
+  "provenance": {
+    "archive": {
+      "era": "feb",
+      "snapshot": "2023-02-23",
+      "route": "/login",
+      "ssr": null
+    },
+    "mirrorMisses": []
+  },
   "requested": {
     "viewport": {
       "width": 1440,

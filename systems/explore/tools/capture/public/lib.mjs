@@ -47,6 +47,13 @@ const MIME = {
 };
 const exists = (p) => (p && fs.existsSync(p) && fs.statSync(p).isFile()) ? p : null;
 
+// Resolve a decoded request path under root, or null when it escapes: an
+// encoded ../ in restored markup must not read files outside the mirror.
+const under = (root, p) => {
+  const f = path.resolve(root, '.' + p);
+  return f.startsWith(root + path.sep) ? f : null;
+};
+
 // Which archived <html> the SPA routes replay: 'feb' (default, the product)
 // or 'jun' (the announcement). SSR profile pages set ssr: their archived
 // routes/<slug>.html is served verbatim instead.
@@ -61,7 +68,7 @@ export const mirrorMisses = [];
 function serveFront(route, url, era) {
   const u = new URL(url);
   let p = decodeURIComponent(u.pathname);
-  let f = exists(path.join(MIRROR, p));
+  let f = exists(under(MIRROR, p));
   if (!f && !path.extname(p)) f = exists(indexHtml(era));
   if (f) return route.fulfill({ status: 200, contentType: MIME[path.extname(f)] || 'application/octet-stream', body: fs.readFileSync(f) });
   mirrorMisses.push(url);
@@ -74,7 +81,7 @@ function serveBack(route, url) {
   const key = (p + q).replace(/^\/|\/$/g, '').replace(/[?=&/]/g, '_');
   const f = exists(path.join(MIRROR, 'api', key + '.json'));
   if (f) return route.fulfill({ status: 200, contentType: 'application/json', body: fs.readFileSync(f) });
-  const up = exists(path.join(MIRROR, 'uploads', p.replace(/^\/uploads/, '')));
+  const up = exists(under(path.join(MIRROR, 'uploads'), p.replace(/^\/uploads/, '')));
   if (up) return route.fulfill({ status: 200, contentType: MIME[path.extname(up)] || 'application/octet-stream', body: fs.readFileSync(up) });
   if (p.startsWith('/uploads/')) { mirrorMisses.push(url); return route.fulfill({ status: 404, contentType: 'text/plain', body: 'upload not archived' }); }
   // Boot endpoints the app expects: the real shapes so the signed-out flow
@@ -98,7 +105,13 @@ export async function wireMirror(context, { era = 'feb', ssr = null } = {}) {
     if (ssr && route.request().resourceType() === 'script') return route.abort();
     if (ssr && u.pathname === ssr && !path.extname(u.pathname)) {
       const f = exists(path.join(MIRROR, 'routes', ssr.replace(/^\//, '') + '.html'));
-      if (f) return route.fulfill({ status: 200, contentType: 'text/html', body: fs.readFileSync(f) });
+      // The archived SSR HTML carries inline <script> blocks as well as the
+      // bundle tags: strip every one at the boundary so the measured page is
+      // exactly the server-rendered document — script-resource requests are
+      // aborted above, and inline code never reaches the page (the measure
+      // context keeps JavaScript enabled for its own locators/evaluates, so
+      // the no-script guarantee has to live in the served document).
+      if (f) return route.fulfill({ status: 200, contentType: 'text/html', body: fs.readFileSync(f, 'utf8').replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '') });
     }
     return serveFront(route, route.request().url(), era);
   });

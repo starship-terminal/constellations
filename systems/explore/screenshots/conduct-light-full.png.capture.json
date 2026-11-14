@@ -1,8 +1,19 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-13T23:31:25.038Z",
+  "capturedAt": "2026-11-14T07:46:31.977Z",
   "screenshot": "conduct-light-full.png",
-  "sanitizedSourceUrl": null,
+  "sanitizedSourceUrl": "https://explore.family/conduct",
+  "provenance": {
+    "archive": {
+      "era": "feb",
+      "snapshot": "2023-02-23",
+      "route": "/conduct",
+      "ssr": null
+    },
+    "mirrorMisses": [
+      "https://explore.family/img/code-of-conduct.ddc79720.png"
+    ]
+  },
   "requested": {
     "viewport": {
       "width": 1440,

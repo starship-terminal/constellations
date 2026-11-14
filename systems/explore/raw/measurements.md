@@ -1,6 +1,6 @@
 # Component measurements
 
-Computed styles read from the archived explore.family build on 2026-11-13 by `tools/capture/public/measure.mjs`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), and written here by `tools/capture/public/build-measurements.mjs` from [components-computed.json](components-computed.json). explore.family closed on 2023-04-19 and the domain lapsed, so every page was replayed from the local Internet Archive mirror (the 2023-02-23 product build plus archived API JSON and uploads; the `ssr` group is the server-rendered profile HTML the site sent crawlers, replayed with its scripts aborted). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
+Computed styles read from the archived explore.family build on 2026-11-14 by `tools/capture/public/measure.mjs`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), and written here by `tools/capture/public/build-measurements.mjs` from [components-computed.json](components-computed.json). explore.family closed on 2023-04-19 and the domain lapsed, so every page was replayed from the local Internet Archive mirror (the 2023-02-23 product build plus archived API JSON and uploads; the `ssr` group is the server-rendered profile HTML the site sent crawlers, replayed with its scripts aborted). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
 
 States: `hover` is a real pointer hover; `focus-visible` a real keyboard focus (Shift+Tab, Tab); `pressed` is forced with DevTools (`CSS.forcePseudoState` :active:hover), so no button was pressed; `focused` is a text field clicked into; `filled` is sample text typed and deleted again, with nothing sent; `opened`, `expanded` and the rest are resting states reached by the page or by a UI toggle.
 
@@ -12,11 +12,11 @@ States: `hover` is a real pointer hover; `focus-visible` a real keyboard focus (
 
 Site header. The fixed grey top bar: logo left, "Sign in" link and yellow "Sign up free" pill right.
 
-Page: register. Selector: `header.header`. States: default.
+Page: forgot. Selector: `header.header`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 0 x 0 |
+| Size (w x h) | 1440 x 60 |
 | Padding | 0px |
 | Border | none |
 | Radius | 0px |
@@ -26,22 +26,23 @@ Page: register. Selector: `header.header`. States: default.
 | Font | UntitledSans 16px/22px 400 |
 | Letter spacing | normal |
 | Colour | #262626 |
+| Text node | a: UntitledSans 16px/22px 400, #ffffff |
 | Transition | none |
 | Icon | 0 x 0, colour #ffffff, fill #000000 |
-| Painted layers | header.header 0.0x0.0 bg #9d9d9d; a.btn.btn--auto 0.0x0.0 bg #ffc60a r 50px |
+| Painted layers | header.header 1440.0x60.0 bg #9d9d9d; a.btn.btn--auto 121.0x38.0 bg #ffc60a r 50px |
 | How | at rest |
 
-Crops: none.
+Crops: `mkt-header-default.png`.
 
 #### mkt-logo
 
 Logo. The Explore wordmark (inline svg) in the header, linking home.
 
-Page: register. Selector: `.header__logo`. States: default.
+Page: forgot. Selector: `.header__logo`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 0 x 0 |
+| Size (w x h) | 27 x 31 |
 | Padding | 0px |
 | Border | none |
 | Radius | 0px |
@@ -52,49 +53,51 @@ Page: register. Selector: `.header__logo`. States: default.
 | Letter spacing | normal |
 | Colour | #262626 |
 | Transition | color 0.2s ease |
+| Transform | matrix(1, 0, 0, 1, -13.5, -15.5) |
 | Cursor | pointer |
-| Icon | 0 x 0, colour #ffffff, fill #000000 |
+| Icon | 27 x 31, colour #ffffff, fill #000000 |
 | How | at rest |
 
-Crops: none.
+Crops: `mkt-logo-default.png`.
 
 #### nav-signin
 
 Sign in link. The "Sign in" header link; measured, never followed.
 
-Page: register. Selector: `.header__auth-links a "Sign in"`. States: default, hover, focus-visible, pressed.
+Page: forgot. Selector: `.header__auth-links a "Sign in"`. States: default, hover, focus-visible, pressed.
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 0 x 0 | 52 x 22 | = | = |
+| Size (w x h) | 52 x 22 | = | = | = |
 | Padding | 0px | = | = | = |
 | Border | none | = | = | = |
 | Radius | 0px | = | = | = |
 | Background | transparent | = | = | = |
 | Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
+| Outline | none | = | 1px auto #101010 offset 1px | = |
 | Font | UntitledSans 16px/22px 400 | = | = | = |
 | Letter spacing | normal | = | = | = |
 | Colour | #ffffff | = | = | = |
 | Transition | color 0.2s ease | = | = | = |
 | Cursor | pointer | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
+| Painted layers | - | = | a 52.0x22.0 outline 1px auto #101010 offset 1px | = |
 
-Crops: `nav-signin-hover.png`.
+Crops: `nav-signin-default.png`, `nav-signin-hover.png`, `nav-signin-focus-visible.png`, `nav-signin-pressed.png`.
 
 #### nav-signup
 
 Sign up pill. The yellow "Sign up free" pill (btn--yellow btn--rounded btn--small); measured, never followed.
 
-Page: register. Selector: `.header__auth-links a.btn--yellow`. States: default, hover, focus-visible, pressed.
+Page: forgot. Selector: `.header__auth-links a.btn--yellow`. States: default, hover, focus-visible, pressed.
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 0 x 0 | 121 x 38 | = | = |
+| Size (w x h) | 121 x 38 | = | = | = |
 | Padding | 9px 16px 10px 16px | = | = | = |
 | Border | none | = | = | = |
 | Radius | 50px | = | = | = |
-| Background | #ffc60a | #ffcc24 | = | #ffcc24 |
+| Background | #ffc60a | #ffcc24 | #ffcc24 | #ffcc24 |
 | Box shadow | none | = | = | = |
 | Outline | none | = | = | = |
 | Font | UntitledSans 16px/19px 400 | = | = | = |
@@ -102,10 +105,10 @@ Page: register. Selector: `.header__auth-links a.btn--yellow`. States: default, 
 | Colour | #262626 | = | = | = |
 | Transition | all 0.2s ease | = | = | = |
 | Cursor | pointer | = | = | = |
-| Painted layers | a.btn.btn--auto 0.0x0.0 bg #ffc60a r 50px | a.btn.btn--auto 121.0x38.0 bg #ffcc24 r 50px | = | a.btn.btn--auto 0.0x0.0 bg #ffcc24 r 50px |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Painted layers | a.btn.btn--auto 121.0x38.0 bg #ffc60a r 50px | a.btn.btn--auto 121.0x38.0 bg #ffcc24 r 50px | a.btn.btn--auto 121.0x38.0 bg #ffcc24 r 50px | a.btn.btn--auto 121.0x38.0 bg #ffcc24 r 50px |
+| How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
-Crops: `nav-signup-hover.png`.
+Crops: `nav-signup-default.png`, `nav-signup-hover.png`, `nav-signup-focus-visible.png`, `nav-signup-pressed.png`.
 
 #### auth-panel
 

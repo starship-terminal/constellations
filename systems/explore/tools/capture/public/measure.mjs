@@ -33,6 +33,7 @@ const URLS = { home: '/', discover: '/discover', login: '/login', register: '/re
 let page, cdp, current, context, run, liveCtx;
 const touched = new Set();
 const listed = new Map();
+const keepMeta = new Map();
 const failedPages = new Set();
 
 async function newPage(key, { mobile = false, wait = 9000, url = null, ssr = null } = {}) {
@@ -118,6 +119,22 @@ async function measure(key, state, target, opts = {}) {
   const c = out.components[key];
   try {
     const s = await styleOf(loc);
+    // A reading of a hidden element (the marketing chrome sits display:none
+    // in the DOM of the auth pages) is not a measurement of the component —
+    // keep the earlier visible state and mark the recapture as missed.
+    const hidden = s.style.display === 'none' || s.style.visibility === 'hidden' || (!s.rect.w && !s.rect.h);
+    if (hidden) {
+      const prev = c.states[state];
+      if (prev && prev.style) {
+        // Restore the earlier page's page/run/url alongside its readings.
+        const keep = keepMeta.get(key);
+        if (keep) Object.assign(c, keep);
+        c.recaptureMissed = run;
+        log('  ! hidden', key, state, '(earlier visible state kept)');
+        return;
+      }
+      s.hidden = true;
+    }
     let file;
     if (opts.crop !== false) {
       try {
@@ -138,6 +155,7 @@ async function measure(key, state, target, opts = {}) {
 async function S(key, target, list, meta = {}, opts = {}) {
   const prev = out.components[key];
   const keep = prev && Object.keys(prev.states || {}).length ? { page: prev.page, run: prev.run, url: prev.url } : null;
+  keepMeta.set(key, keep);
   comp(key, { title: meta.title, group: meta.group, desc: meta.desc, selector: meta.sel });
   if (!listed.has(key)) listed.set(key, new Set());
   for (const st of list) listed.get(key).add(st);

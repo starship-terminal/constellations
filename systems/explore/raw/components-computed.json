@@ -1,6 +1,6 @@
 {
  "_meta": {
-  "read": "2026-11-13",
+  "read": "2026-11-14",
   "viewport": "1440 x 900 (mobile group 390 x 844); every page replays the 2023-02-23 explore.family build from the Internet Archive mirror — the live domain lapsed after the 2023-04-19 shutdown; one fixed light theme",
   "tool": "tools/capture/public/measure.mjs",
   "sheets": {
@@ -863,18 +863,18 @@
     "default": {
      "tag": "header",
      "classes": "header",
-     "text": "Sign inSign up free",
+     "text": "Sign in Sign up free",
      "rect": {
       "x": 0,
       "y": 0,
-      "w": 0,
-      "h": 0
+      "w": 1440,
+      "h": 60
      },
      "style": {
-      "display": "none",
+      "display": "flex",
       "position": "fixed",
       "boxSizing": "border-box",
-      "width": "100%",
+      "width": "1440px",
       "height": "60px",
       "minWidth": "0px",
       "maxWidth": "none",
@@ -943,16 +943,28 @@
      "paint": [
       {
        "node": "header.header",
-       "size": "0.0x0.0",
+       "size": "1440.0x60.0",
        "bg": "rgb(157, 157, 157)"
       },
       {
        "node": "a.btn.btn--auto",
-       "size": "0.0x0.0",
+       "size": "121.0x38.0",
        "bg": "rgb(255, 198, 10)",
        "radius": "50px"
       }
      ],
+     "textStyle": {
+      "node": "a",
+      "text": "Sign in",
+      "fontFamily": "UntitledSans",
+      "fontSize": "16px",
+      "lineHeight": "22px",
+      "fontWeight": "400",
+      "letterSpacing": "normal",
+      "color": "rgb(255, 255, 255)",
+      "textDecorationLine": "none",
+      "textTransform": "none"
+     },
      "icon": {
       "w": 0,
       "h": 0,
@@ -960,17 +972,18 @@
       "stroke": "none",
       "color": "rgb(255, 255, 255)"
      },
-     "cropError": "no box for mkt-header-default",
+     "crop": "components/crops/mkt-header-default.png",
      "via": "at rest"
     }
    },
-   "page": "register",
-   "run": "2026-11-13",
-   "url": "https://explore.family/register",
+   "page": "forgot",
+   "run": "2026-11-14",
+   "url": "https://explore.family/forgot-password",
    "title": "Site header",
    "group": "Auth forms",
    "desc": "The fixed grey top bar: logo left, \"Sign in\" link and yellow \"Sign up free\" pill right.",
-   "selector": "header.header"
+   "selector": "header.header",
+   "recaptureMissed": "2026-11-14"
   },
   "mkt-logo": {
    "states": {
@@ -979,17 +992,17 @@
      "classes": "header__logo router-link-active",
      "text": "",
      "rect": {
-      "x": 0,
-      "y": 0,
-      "w": 0,
-      "h": 0
+      "x": 706.5,
+      "y": 14.5,
+      "w": 27,
+      "h": 31
      },
      "style": {
       "display": "block",
       "position": "absolute",
       "boxSizing": "border-box",
-      "width": "auto",
-      "height": "auto",
+      "width": "27px",
+      "height": "31px",
       "minWidth": "0px",
       "maxWidth": "none",
       "minHeight": "0px",
@@ -1049,29 +1062,30 @@
       "transitionDelay": "0s",
       "cursor": "pointer",
       "opacity": "1",
-      "transform": "none",
+      "transform": "matrix(1, 0, 0, 1, -13.5, -15.5)",
       "overflow": "visible",
       "zIndex": "auto",
-      "top": "50%"
+      "top": "19px"
      },
      "icon": {
-      "w": 0,
-      "h": 0,
+      "w": 27,
+      "h": 31,
       "fill": "rgb(0, 0, 0)",
       "stroke": "none",
       "color": "rgb(255, 255, 255)"
      },
-     "cropError": "no box for mkt-logo-default",
+     "crop": "components/crops/mkt-logo-default.png",
      "via": "at rest"
     }
    },
-   "page": "register",
-   "run": "2026-11-13",
-   "url": "https://explore.family/register",
+   "page": "forgot",
+   "run": "2026-11-14",
+   "url": "https://explore.family/forgot-password",
    "title": "Logo",
    "group": "Auth forms",
    "desc": "The Explore wordmark (inline svg) in the header, linking home.",
-   "selector": ".header__logo"
+   "selector": ".header__logo",
+   "recaptureMissed": "2026-11-14"
   },
   "nav-signin": {
    "states": {
@@ -1080,20 +1094,20 @@
      "classes": "",
      "text": "Sign in",
      "rect": {
-      "x": 0,
-      "y": 0,
-      "w": 0,
-      "h": 0
+      "x": 1227,
+      "y": 19,
+      "w": 52,
+      "h": 22
      },
      "style": {
       "display": "block",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "auto",
-      "height": "auto",
-      "minWidth": "0px",
+      "width": "52px",
+      "height": "22px",
+      "minWidth": "auto",
       "maxWidth": "none",
-      "minHeight": "0px",
+      "minHeight": "auto",
       "paddingTop": "0px",
       "paddingRight": "0px",
       "paddingBottom": "0px",
@@ -1155,7 +1169,7 @@
       "zIndex": "auto",
       "top": "auto"
      },
-     "cropError": "no box for nav-signin-default",
+     "crop": "components/crops/nav-signin-default.png",
      "via": "at rest"
     },
     "hover": {
@@ -1247,20 +1261,20 @@
      "classes": "",
      "text": "Sign in",
      "rect": {
-      "x": 0,
-      "y": 0,
-      "w": 0,
-      "h": 0
+      "x": 1227,
+      "y": 19,
+      "w": 52,
+      "h": 22
      },
      "style": {
       "display": "block",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "auto",
-      "height": "auto",
-      "minWidth": "0px",
+      "width": "52px",
+      "height": "22px",
+      "minWidth": "auto",
       "maxWidth": "none",
-      "minHeight": "0px",
+      "minHeight": "auto",
       "paddingTop": "0px",
       "paddingRight": "0px",
       "paddingBottom": "0px",
@@ -1296,10 +1310,10 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
-      "outlineStyle": "none",
-      "outlineColor": "rgb(255, 255, 255)",
-      "outlineOffset": "0px",
+      "outlineWidth": "1px",
+      "outlineStyle": "auto",
+      "outlineColor": "rgb(16, 16, 16)",
+      "outlineOffset": "1px",
       "fontFamily": "UntitledSans",
       "fontSize": "16px",
       "fontWeight": "400",
@@ -1322,28 +1336,35 @@
       "zIndex": "auto",
       "top": "auto"
      },
-     "cropError": "no box for nav-signin-focus-visible",
-     "via": "focus failed"
+     "paint": [
+      {
+       "node": "a",
+       "size": "52.0x22.0",
+       "outline": "1px auto rgb(16, 16, 16) offset 1px"
+      }
+     ],
+     "crop": "components/crops/nav-signin-focus-visible.png",
+     "via": "Shift+Tab, Tab"
     },
     "pressed": {
      "tag": "a",
      "classes": "",
      "text": "Sign in",
      "rect": {
-      "x": 0,
-      "y": 0,
-      "w": 0,
-      "h": 0
+      "x": 1227,
+      "y": 19,
+      "w": 52,
+      "h": 22
      },
      "style": {
       "display": "block",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "auto",
-      "height": "auto",
-      "minWidth": "0px",
+      "width": "52px",
+      "height": "22px",
+      "minWidth": "auto",
       "maxWidth": "none",
-      "minHeight": "0px",
+      "minHeight": "auto",
       "paddingTop": "0px",
       "paddingRight": "0px",
       "paddingBottom": "0px",
@@ -1405,17 +1426,18 @@
       "zIndex": "auto",
       "top": "auto"
      },
-     "cropError": "no box for nav-signin-pressed",
+     "crop": "components/crops/nav-signin-pressed.png",
      "via": "CDP forcePseudoState :active:hover"
     }
    },
-   "page": "register",
-   "run": "2026-11-13",
-   "url": "https://explore.family/register",
+   "page": "forgot",
+   "run": "2026-11-14",
+   "url": "https://explore.family/forgot-password",
    "title": "Sign in link",
    "group": "Auth forms",
    "desc": "The \"Sign in\" header link; measured, never followed.",
-   "selector": ".header__auth-links a \"Sign in\""
+   "selector": ".header__auth-links a \"Sign in\"",
+   "recaptureMissed": "2026-11-14"
   },
   "nav-signup": {
    "states": {
@@ -1424,20 +1446,20 @@
      "classes": "btn btn--auto btn--rounded btn--small",
      "text": "Sign up free",
      "rect": {
-      "x": 0,
-      "y": 0,
-      "w": 0,
-      "h": 0
+      "x": 1299,
+      "y": 11,
+      "w": 121,
+      "h": 38
      },
      "style": {
       "display": "flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "auto",
-      "height": "auto",
+      "width": "121px",
+      "height": "38px",
       "minWidth": "0px",
       "maxWidth": "none",
-      "minHeight": "0px",
+      "minHeight": "auto",
       "paddingTop": "9px",
       "paddingRight": "16px",
       "paddingBottom": "10px",
@@ -1502,12 +1524,12 @@
      "paint": [
       {
        "node": "a.btn.btn--auto",
-       "size": "0.0x0.0",
+       "size": "121.0x38.0",
        "bg": "rgb(255, 198, 10)",
        "radius": "50px"
       }
      ],
-     "cropError": "no box for nav-signup-default",
+     "crop": "components/crops/nav-signup-default.png",
      "via": "at rest"
     },
     "hover": {
@@ -1607,20 +1629,20 @@
      "classes": "btn btn--auto btn--rounded btn--small",
      "text": "Sign up free",
      "rect": {
-      "x": 0,
-      "y": 0,
-      "w": 0,
-      "h": 0
+      "x": 1299,
+      "y": 11,
+      "w": 121,
+      "h": 38
      },
      "style": {
       "display": "flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "auto",
-      "height": "auto",
+      "width": "121px",
+      "height": "38px",
       "minWidth": "0px",
       "maxWidth": "none",
-      "minHeight": "0px",
+      "minHeight": "auto",
       "paddingTop": "9px",
       "paddingRight": "16px",
       "paddingBottom": "10px",
@@ -1652,14 +1674,14 @@
       "borderTopRightRadius": "50px",
       "borderBottomRightRadius": "50px",
       "borderBottomLeftRadius": "50px",
-      "backgroundColor": "rgb(255, 198, 10)",
+      "backgroundColor": "rgb(255, 204, 36)",
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
       "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(38, 38, 38)",
-      "outlineOffset": "0px",
+      "outlineOffset": "1px",
       "fontFamily": "UntitledSans",
       "fontSize": "16px",
       "fontWeight": "400",
@@ -1685,33 +1707,33 @@
      "paint": [
       {
        "node": "a.btn.btn--auto",
-       "size": "0.0x0.0",
-       "bg": "rgb(255, 198, 10)",
+       "size": "121.0x38.0",
+       "bg": "rgb(255, 204, 36)",
        "radius": "50px"
       }
      ],
-     "cropError": "no box for nav-signup-focus-visible",
-     "via": "focus failed"
+     "crop": "components/crops/nav-signup-focus-visible.png",
+     "via": "Shift+Tab, Tab"
     },
     "pressed": {
      "tag": "a",
      "classes": "btn btn--auto btn--rounded btn--small",
      "text": "Sign up free",
      "rect": {
-      "x": 0,
-      "y": 0,
-      "w": 0,
-      "h": 0
+      "x": 1299,
+      "y": 11,
+      "w": 121,
+      "h": 38
      },
      "style": {
       "display": "flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "auto",
-      "height": "auto",
+      "width": "121px",
+      "height": "38px",
       "minWidth": "0px",
       "maxWidth": "none",
-      "minHeight": "0px",
+      "minHeight": "auto",
       "paddingTop": "9px",
       "paddingRight": "16px",
       "paddingBottom": "10px",
@@ -1776,22 +1798,23 @@
      "paint": [
       {
        "node": "a.btn.btn--auto",
-       "size": "0.0x0.0",
+       "size": "121.0x38.0",
        "bg": "rgb(255, 204, 36)",
        "radius": "50px"
       }
      ],
-     "cropError": "no box for nav-signup-pressed",
+     "crop": "components/crops/nav-signup-pressed.png",
      "via": "CDP forcePseudoState :active:hover"
     }
    },
-   "page": "register",
-   "run": "2026-11-13",
-   "url": "https://explore.family/register",
+   "page": "forgot",
+   "run": "2026-11-14",
+   "url": "https://explore.family/forgot-password",
    "title": "Sign up pill",
    "group": "Auth forms",
    "desc": "The yellow \"Sign up free\" pill (btn--yellow btn--rounded btn--small); measured, never followed.",
-   "selector": ".header__auth-links a.btn--yellow"
+   "selector": ".header__auth-links a.btn--yellow",
+   "recaptureMissed": "2026-11-14"
   },
   "hero": {
    "states": {
@@ -1978,7 +2001,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-13",
+   "run": "2026-11-14",
    "url": "https://explore.family/",
    "title": "Hero section",
    "group": "Home (marketing + feed)",
@@ -2072,7 +2095,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-13",
+   "run": "2026-11-14",
    "url": "https://explore.family/",
    "title": "Hero greeting",
    "group": "Home (marketing + feed)",
@@ -2166,7 +2189,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-13",
+   "run": "2026-11-14",
    "url": "https://explore.family/",
    "title": "Hero headline",
    "group": "Home (marketing + feed)",
@@ -2268,7 +2291,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-13",
+   "run": "2026-11-14",
    "url": "https://explore.family/",
    "title": "Hero tag",
    "group": "Home (marketing + feed)",
@@ -2644,7 +2667,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-13",
+   "run": "2026-11-14",
    "url": "https://explore.family/",
    "title": "Hero tag CTA",
    "group": "Home (marketing + feed)",
@@ -2844,7 +2867,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-13",
+   "run": "2026-11-14",
    "url": "https://explore.family/",
    "title": "Feed section",
    "group": "Home (marketing + feed)",
@@ -2938,7 +2961,7 @@
     }
    },
    "page": "discover",
-   "run": "2026-11-13",
+   "run": "2026-11-14",
    "url": "https://explore.family/discover",
    "title": "Discover heading",
    "group": "Discover feed",
@@ -3130,7 +3153,7 @@
     }
    },
    "page": "discover",
-   "run": "2026-11-13",
+   "run": "2026-11-14",
    "url": "https://explore.family/discover",
    "title": "Category pill row",
    "group": "Discover feed",
@@ -3505,7 +3528,7 @@
     }
    },
    "page": "discover",
-   "run": "2026-11-13",
+   "run": "2026-11-14",
    "url": "https://explore.family/discover",
    "title": "Category pill (active)",
    "group": "Discover feed",
@@ -3880,7 +3903,7 @@
     }
    },
    "page": "discover",
-   "run": "2026-11-13",
+   "run": "2026-11-14",
    "url": "https://explore.family/discover",
    "title": "Category pill",
    "group": "Discover feed",
@@ -4011,7 +4034,7 @@
     }
    },
    "page": "discover",
-   "run": "2026-11-13",
+   "run": "2026-11-14",
    "url": "https://explore.family/discover",
    "title": "Post card",
    "group": "Discover feed",
@@ -4117,7 +4140,7 @@
     }
    },
    "page": "discover",
-   "run": "2026-11-13",
+   "run": "2026-11-14",
    "url": "https://explore.family/discover",
    "title": "Post gallery",
    "group": "Discover feed",
@@ -4238,7 +4261,7 @@
     }
    },
    "page": "discover",
-   "run": "2026-11-13",
+   "run": "2026-11-14",
    "url": "https://explore.family/discover",
    "title": "Post author row",
    "group": "Discover feed",
@@ -4332,7 +4355,7 @@
     }
    },
    "page": "discover",
-   "run": "2026-11-13",
+   "run": "2026-11-14",
    "url": "https://explore.family/discover",
    "title": "Author avatar",
    "group": "Discover feed",
@@ -4426,7 +4449,7 @@
     }
    },
    "page": "discover",
-   "run": "2026-11-13",
+   "run": "2026-11-14",
    "url": "https://explore.family/discover",
    "title": "Post title",
    "group": "Discover feed",
@@ -4527,7 +4550,7 @@
     }
    },
    "page": "discover",
-   "run": "2026-11-13",
+   "run": "2026-11-14",
    "url": "https://explore.family/discover",
    "title": "Post actions",
    "group": "Discover feed",
@@ -4734,7 +4757,7 @@
     }
    },
    "page": "discover",
-   "run": "2026-11-13",
+   "run": "2026-11-14",
    "url": "https://explore.family/discover",
    "title": "Carousel next arrow",
    "group": "Discover feed",
@@ -4882,7 +4905,7 @@
     }
    },
    "page": "login",
-   "run": "2026-11-13",
+   "run": "2026-11-14",
    "url": "https://explore.family/login",
    "title": "Auth layout",
    "group": "Auth forms",
@@ -4995,7 +5018,7 @@
     }
    },
    "page": "login",
-   "run": "2026-11-13",
+   "run": "2026-11-14",
    "url": "https://explore.family/login",
    "title": "Welcome quote",
    "group": "Auth forms",
@@ -5096,7 +5119,7 @@
     }
    },
    "page": "login",
-   "run": "2026-11-13",
+   "run": "2026-11-14",
    "url": "https://explore.family/login",
    "title": "Auth logo",
    "group": "Auth forms",
@@ -5190,7 +5213,7 @@
     }
    },
    "page": "login",
-   "run": "2026-11-13",
+   "run": "2026-11-14",
    "url": "https://explore.family/login",
    "title": "Auth heading",
    "group": "Auth forms",
@@ -5486,7 +5509,7 @@
     }
    },
    "page": "login",
-   "run": "2026-11-13",
+   "run": "2026-11-14",
    "url": "https://explore.family/login",
    "title": "Email field",
    "group": "Auth forms",
@@ -5782,7 +5805,7 @@
     }
    },
    "page": "login",
-   "run": "2026-11-13",
+   "run": "2026-11-14",
    "url": "https://explore.family/login",
    "title": "Password field",
    "group": "Auth forms",
@@ -5883,7 +5906,7 @@
     }
    },
    "page": "login",
-   "run": "2026-11-13",
+   "run": "2026-11-14",
    "url": "https://explore.family/login",
    "title": "Password visibility eye",
    "group": "Auth forms",
@@ -6258,7 +6281,7 @@
     }
    },
    "page": "login",
-   "run": "2026-11-13",
+   "run": "2026-11-14",
    "url": "https://explore.family/login",
    "title": "Log in button",
    "group": "Auth forms",
@@ -6608,7 +6631,7 @@
     }
    },
    "page": "login",
-   "run": "2026-11-13",
+   "run": "2026-11-14",
    "url": "https://explore.family/login",
    "title": "Forgot password link",
    "group": "Auth forms",
@@ -6958,7 +6981,7 @@
     }
    },
    "page": "login",
-   "run": "2026-11-13",
+   "run": "2026-11-14",
    "url": "https://explore.family/login",
    "title": "Sign up link",
    "group": "Auth forms",
@@ -7107,7 +7130,7 @@
     }
    },
    "page": "register",
-   "run": "2026-11-13",
+   "run": "2026-11-14",
    "url": "https://explore.family/register",
    "title": "Register heading",
    "group": "Auth forms",
@@ -7403,7 +7426,7 @@
     }
    },
    "page": "register",
-   "run": "2026-11-13",
+   "run": "2026-11-14",
    "url": "https://explore.family/register",
    "title": "Email field (register)",
    "group": "Auth forms",
@@ -7699,7 +7722,7 @@
     }
    },
    "page": "register",
-   "run": "2026-11-13",
+   "run": "2026-11-14",
    "url": "https://explore.family/register",
    "title": "Password field (register)",
    "group": "Auth forms",
@@ -7813,7 +7836,7 @@
     }
    },
    "page": "register",
-   "run": "2026-11-13",
+   "run": "2026-11-14",
    "url": "https://explore.family/register",
    "title": "Newsletter checkbox",
    "group": "Auth forms",
@@ -7927,7 +7950,7 @@
     }
    },
    "page": "register",
-   "run": "2026-11-13",
+   "run": "2026-11-14",
    "url": "https://explore.family/register",
    "title": "Terms agreement line",
    "group": "Auth forms",
@@ -8302,7 +8325,7 @@
     }
    },
    "page": "register",
-   "run": "2026-11-13",
+   "run": "2026-11-14",
    "url": "https://explore.family/register",
    "title": "Sign up button",
    "group": "Auth forms",
@@ -8434,7 +8457,7 @@
     }
    },
    "page": "forgot",
-   "run": "2026-11-13",
+   "run": "2026-11-14",
    "url": "https://explore.family/forgot-password",
    "title": "Reset intro",
    "group": "Auth forms",
@@ -8730,7 +8753,7 @@
     }
    },
    "page": "forgot",
-   "run": "2026-11-13",
+   "run": "2026-11-14",
    "url": "https://explore.family/forgot-password",
    "title": "Email field (reset)",
    "group": "Auth forms",
@@ -9105,7 +9128,7 @@
     }
    },
    "page": "forgot",
-   "run": "2026-11-13",
+   "run": "2026-11-14",
    "url": "https://explore.family/forgot-password",
    "title": "Reset button",
    "group": "Auth forms",
@@ -9199,7 +9222,7 @@
     }
    },
    "page": "about",
-   "run": "2026-11-13",
+   "run": "2026-11-14",
    "url": "https://explore.family/about",
    "title": "About headline",
    "group": "About / legal",
@@ -9313,7 +9336,7 @@
     }
    },
    "page": "about",
-   "run": "2026-11-13",
+   "run": "2026-11-14",
    "url": "https://explore.family/about",
    "title": "Feature card",
    "group": "About / legal",
@@ -9419,7 +9442,7 @@
     }
    },
    "page": "about",
-   "run": "2026-11-13",
+   "run": "2026-11-14",
    "url": "https://explore.family/about",
    "title": "About statement",
    "group": "About / legal",
@@ -9794,7 +9817,7 @@
     }
    },
    "page": "about",
-   "run": "2026-11-13",
+   "run": "2026-11-14",
    "url": "https://explore.family/about",
    "title": "About CTA",
    "group": "About / legal",
@@ -9900,7 +9923,7 @@
     }
    },
    "page": "about",
-   "run": "2026-11-13",
+   "run": "2026-11-14",
    "url": "https://explore.family/about",
    "title": "Footer",
    "group": "About / legal",
@@ -9994,7 +10017,7 @@
     }
    },
    "page": "about",
-   "run": "2026-11-13",
+   "run": "2026-11-14",
    "url": "https://explore.family/about",
    "title": "Footer column",
    "group": "About / legal",
@@ -10088,7 +10111,7 @@
     }
    },
    "page": "legal",
-   "run": "2026-11-13",
+   "run": "2026-11-14",
    "url": "https://explore.family/conduct",
    "title": "Legal heading",
    "group": "About / legal",
@@ -10182,7 +10205,7 @@
     }
    },
    "page": "legal",
-   "run": "2026-11-13",
+   "run": "2026-11-14",
    "url": "https://explore.family/conduct",
    "title": "Legal body",
    "group": "About / legal",
@@ -10367,7 +10390,7 @@
     }
    },
    "page": "ssr",
-   "run": "2026-11-13",
+   "run": "2026-11-14",
    "title": "SSR profile",
    "group": "Server-rendered profile",
    "desc": "The server-rendered profile page (Malika Favre): name, avatar placeholder and the post grid the crawler received.",
@@ -10476,7 +10499,7 @@
     }
    },
    "page": "ssr",
-   "run": "2026-11-13",
+   "run": "2026-11-14",
    "title": "SSR profile avatar",
    "group": "Server-rendered profile",
    "desc": "The profile image slot; the avatar file itself was never archived, so it reads as its placeholder.",
@@ -10569,7 +10592,7 @@
     }
    },
    "page": "ssr",
-   "run": "2026-11-13",
+   "run": "2026-11-14",
    "title": "SSR profile name",
    "group": "Server-rendered profile",
    "desc": "The display name on the server-rendered profile.",
@@ -10687,7 +10710,7 @@
     }
    },
    "page": "ssr",
-   "run": "2026-11-13",
+   "run": "2026-11-14",
    "title": "SSR post tile",
    "group": "Server-rendered profile",
    "desc": "A post tile in the server-rendered feed; its video/poster media was never archived, so it paints the empty placeholder.",
@@ -10787,7 +10810,7 @@
     }
    },
    "page": "ssr",
-   "run": "2026-11-13",
+   "run": "2026-11-14",
    "title": "SSR post gallery",
    "group": "Server-rendered profile",
    "desc": "The media tile of a server-rendered post.",
@@ -10912,7 +10935,7 @@
     }
    },
    "page": "mobile",
-   "run": "2026-11-13",
+   "run": "2026-11-14",
    "url": "https://explore.family/discover",
    "title": "Mobile header",
    "group": "Mobile (390 wide)",
@@ -11287,7 +11310,7 @@
     }
    },
    "page": "mobile",
-   "run": "2026-11-13",
+   "run": "2026-11-14",
    "url": "https://explore.family/discover",
    "title": "Mobile sign up pill",
    "group": "Mobile (390 wide)",
@@ -11389,7 +11412,7 @@
     }
    },
    "page": "mobile",
-   "run": "2026-11-13",
+   "run": "2026-11-14",
    "url": "https://explore.family/discover",
    "title": "Mobile category pill",
    "group": "Mobile (390 wide)",
@@ -11520,7 +11543,7 @@
     }
    },
    "page": "mobile",
-   "run": "2026-11-13",
+   "run": "2026-11-14",
    "url": "https://explore.family/discover",
    "title": "Mobile post card",
    "group": "Mobile (390 wide)",

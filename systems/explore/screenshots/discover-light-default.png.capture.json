@@ -1,8 +1,22 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-13T23:28:21.122Z",
+  "capturedAt": "2026-11-14T07:50:57.284Z",
   "screenshot": "discover-light-default.png",
-  "sanitizedSourceUrl": null,
+  "sanitizedSourceUrl": "https://explore.family/discover",
+  "provenance": {
+    "archive": {
+      "era": "feb",
+      "snapshot": "2023-02-23",
+      "route": "/discover",
+      "ssr": null
+    },
+    "mirrorMisses": [
+      "https://back.explore.family/uploads/posts/500/inferno-galore-8vnch.mp4",
+      "https://back.explore.family/uploads/posts/901/tiger-3-nm0xh.mp4",
+      "https://back.explore.family/uploads/posts/1413/candle-posts-ihvbk.mp4",
+      "https://back.explore.family/uploads/posts/329/120-s1hi6.mp4"
+    ]
+  },
   "requested": {
     "viewport": {
       "width": 1440,
