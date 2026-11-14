@@ -130,11 +130,23 @@ n = 0
 for f in sorted(RAW.glob('*.png')):
     if '.part' in f.name:
         continue
+    if f.stem not in stitched:
+        # A failed rerun can leave an older PNG behind; its sidecar says so. Publish only a capture
+        # whose own sidecar exists and passed (a stitched sheet is vouched for by its tiles above).
+        sc = sidecar_for(f)
+        if sc is None:
+            die(f'{f.name}: no .capture.json sidecar — not publishing an unmeasured image')
+        chk = (sc.get('dimensionCheck') or {})
+        if chk.get('status') != 'pass':
+            die(f'{f.name}: dimension check is {chk.get("status")!r}'
+                + (f" ({chk['error']})" if chk.get('error') else '') + ' — not publishing a failed capture')
     im = Image.open(f).convert('RGB')
     im.quantize(colors=256, method=Image.Quantize.MEDIANCUT, dither=Image.Dither.NONE).save(OUT / f.name, optimize=True)
+    out_side = OUT / f'{f.name}.capture.json'
+    out_side.unlink(missing_ok=True)   # never leave a previous run's measurements beside a new image
     if f.stem in stitched:
-        (OUT / f'{f.name}.capture.json').write_text(json.dumps(stitched[f.stem], indent=1) + '\n')
-    elif f.with_name(f.name + '.capture.json').exists():
-        shutil.copyfile(f.with_name(f.name + '.capture.json'), OUT / f'{f.name}.capture.json')
+        out_side.write_text(json.dumps(stitched[f.stem], indent=1) + '\n')
+    else:
+        shutil.copyfile(f.with_name(f.name + '.capture.json'), out_side)
     n += 1
 print(n, 'screenshots ->', OUT)

@@ -2,7 +2,7 @@
 
 The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Captured from farfetch.com on 2026-11-14, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. www.farfetch.com answers Akamai 403 to automation and its CDNs 429, so the DOM is Wayback Machine SSR snapshots served locally and painted by their archived Emotion CSS with scripts removed — nothing was signed into, submitted or bought; hover/focus/pressed states were forced, and the controls hydration owns (size listbox, menus, filter panels, accordions) stay closed rather than faked. Department, product, category and footer links and the account/wishlist/bag icons were measured, never followed; the search and newsletter fields were typed into and cleared, never submitted.
 
-The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (71 components, 152 states). The page layouts are described in [patterns.md](patterns.md).
+The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (72 components, 152 states). The page layouts are described in [patterns.md](patterns.md).
 
 How to read an entry:
 
@@ -312,13 +312,6 @@ The size-availability hint under a card ("XS S M L" style). Read as `card-sizes`
 
 ![Card size hint default](components/crops/card-sizes-default.png)
 
-#### Sale price mark
-The "-40%" discount footnote on a sale card — content-primary-enabled-sale red (its sibling PriceOriginal strikes through). Read as `sale-price` on the new-in edit page.
-
-**Values (default).** size 29 x 17; background transparent; text Farfetch Basis 13/17.00 400, #727272 `core.palette.legacy.darker.grey`.
-
-![Sale price mark default](components/crops/sale-price-default.png)
-
 #### Pagination
 The pagination control under the grid ("1 of 3" + next arrow). Read as `pagination` on the new-in edit page.
 
@@ -366,9 +359,23 @@ A fashion-feed editorial card on the listing tail. Read as `editorial-card` on t
 
 ![Editorial card default](components/crops/editorial-card-default.png)
 
+#### Sale price mark
+The "-40%" discount footnote on a sale card — content-primary-enabled-sale red (its sibling PriceOriginal strikes through). Read as `sale-price` on the new-in edit page.
+
+**Values (default).** size 33.63 x 17; background transparent; text Farfetch Basis 13/17.00 400, #e71d34 `light.content.primary.disabled.sale`.
+
+![Sale price mark default](components/crops/sale-price-default.png)
+
+#### Original price
+The struck-through pre-sale price beside the discount mark on a sale card (grey, line-through). Read as `sale-original` on the new-in edit page.
+
+**Values (default).** size 28.42 x 17; background transparent; text Farfetch Basis 13/17.00 400, #727272 `core.palette.legacy.darker.grey`; decoration line-through #727272 `core.palette.legacy.darker.grey`.
+
+![Original price default](components/crops/sale-original-default.png)
+
 ### Product detail page
 
-A D&G slides PDP: breadcrumbs, the image carousel with ghost arrows, the ghost-dark brand link, product title, the $345 PriceCallout, variant tabs, the 44px 'Select size' combobox, the square #222 Add To Bag and the Wishlist toggle, then the information accordion and skeletonised related showcases.
+A D&G slides PDP: breadcrumbs, the image carousel with ghost arrows, the ghost-dark brand link, product title, the $345 PriceCallout, the 44px 'Select size' combobox, the square #222 Add To Bag and the Wishlist toggle, then the information accordion and skeletonised related showcases.
 
 #### Breadcrumbs
 The PDP breadcrumb trail (Women > Dolce & Gabbana > Shoes > …). Read as `pdp-breadcrumb` on the product detail page.
@@ -376,15 +383,6 @@ The PDP breadcrumb trail (Women > Dolce & Gabbana > Shoes > …). Read as `pdp-b
 **Values (default).** size 1392 x 17; background transparent; text Farfetch Basis 13/17.00 400, #222222 `core.palette.named.preto`; icon 12 x 12, #222222 `core.palette.named.preto`.
 
 ![Breadcrumbs default](components/crops/pdp-breadcrumb-default.png)
-
-#### Image gallery
-The PDP image carousel column (product shots + arrow controls). Read as `pdp-gallery` on the product detail page.
-
-**Values (default).** size 1392 x 509.16; background transparent; text Farfetch Basis 15/19.99 400, #222222 `core.palette.named.preto`; icon 24 x 24, #222222 `core.palette.named.preto`; layers div.ltr-q6lfkw 288.9x385.2 rgb(245, 245, 245); div.ltr-7yf7ta 202.2x22.0 rgb(245, 245, 245); div.ltr-7yf7ta 260.0x22.0 rgb(245, 245, 245); div.ltr-7yf7ta 144.4x22.0 rgb(245, 245, 245); div.ltr-q6lfkw 288.9x385.2 rgb(245, 245, 245); div.ltr-7yf7ta 202.2x22.0 rgb(245, 245, 245).
-
-Child layers that carry the look: div 288.9x385.2 background #f5f5f5 `core.palette.named.whiteSmoke`; div 202.2x22 background #f5f5f5 `core.palette.named.whiteSmoke`; div 260x22 background #f5f5f5 `core.palette.named.whiteSmoke`.
-
-![Image gallery default](components/crops/pdp-gallery-default.png)
 
 #### Gallery arrow
 A gallery next/previous arrow; measured, never pressed. Read as `pdp-arrow` on the product detail page.
@@ -403,8 +401,10 @@ The "Dolce & Gabbana" ghost-dark brand link over the PDP title; measured, never 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 175 x 27.98; background transparent; text Farfetch Basis 22/27.99 400, #222222 `core.palette.named.preto`; transition color 0.15s cubic-bezier(0.66, 0, 0.2, 1), text-decoration 0.15s cubic-bezier(0.66, 0, 0.2, 1) |
+| default | size 175 x 27.98; background transparent; text Farfetch Basis 22/27.99 400, #222222 `core.palette.named.preto`; transition color 0.15s cubic-bezier(0.66, 0, 0.2, 1), text-decoration 0.15s cubic-bezier(0.66, 0, 0.2, 1) |
+| hover | decoration underline #222222 `core.palette.named.preto` |
 | focus-visible | outline 2px solid #101010, offset -2px; transition color 0.15s cubic-bezier(0.66, 0, 0.2, 1); layers a.ltr-1rkeqir-Body-Heading.e1h8dali1 175.0x28.0 2px solid rgb(16, 16, 16) offset -2px |
+| pressed | decoration underline #222222 `core.palette.named.preto` |
 
 ![Brand link default](components/crops/pdp-brand-default.png) ![Brand link hover](components/crops/pdp-brand-hover.png) ![Brand link focus-visible](components/crops/pdp-brand-focus-visible.png) ![Brand link pressed](components/crops/pdp-brand-pressed.png)
 
@@ -421,15 +421,6 @@ The "$345" price callout above the size selector. Read as `pdp-price` on the pro
 **Values (default).** size 452 x 19.98; background transparent; text Farfetch Basis 15/19.99 400, #222222 `core.palette.named.preto`.
 
 ![Price callout default](components/crops/pdp-price-default.png)
-
-#### Variant tabs
-The colour/variant tabs inside the variant selector. Read as `variant-tabs` on the product detail page.
-
-**Values (default).** size 452 x 44; background transparent; text Farfetch Basis 15/19.99 400, #727272 `core.palette.legacy.darker.grey`; icon 24 x 24, #222222 `core.palette.named.preto`; layers div.ltr-cubnbt 452.0x44.0 rgb(255, 255, 255) T:1px solid rgb(114, 114, 114) / R:1px solid rgb(114, 114, 114) / B:1px solid rgb(114, 114, 114) / L:1px solid rgb(114, 114, 114).
-
-Child layers that carry the look: div 452x44 background #ffffff `core.palette.named.branco` border 1px solid #727272 `core.palette.legacy.darker.grey`.
-
-![Variant tabs default](components/crops/variant-tabs-default.png)
 
 #### Size selector
 The "Select size" combobox (44px outlined field, chevron). Its listbox is hydration-rendered, so no opened state exists in the static copy. Read as `size-selector` on the product detail page.
@@ -511,6 +502,18 @@ A related-products showcase in its SSR loading state. Read as `skeleton-showcase
 Child layers that carry the look: div 487.2x28 background #f5f5f5 `core.palette.named.whiteSmoke` border 2px solid #ffffff `core.palette.named.branco`; div 288.9x385.2 background #f5f5f5 `core.palette.named.whiteSmoke`; div 202.2x22 background #f5f5f5 `core.palette.named.whiteSmoke`.
 
 ![Showcase skeleton default](components/crops/skeleton-showcase-default.png)
+
+#### Image gallery
+The PDP product-photo column (the stacked product shots left of the buy box; its arrow controls need hydration). Read as `pdp-gallery` on the product detail page.
+
+**Values (default).** size 904 x 1201.31; background transparent; text Farfetch Basis 15/19.99 400, #222222 `core.palette.named.preto`.
+
+![Image gallery default](components/crops/pdp-gallery-default.png)
+
+#### Variant tabs
+Colour/variant tabs in the variant selector. The archived PDP renders only the size combobox there, so none exist to measure. Read as `variant-tabs` on the product detail page.
+
+Not on the page when it was captured.
 
 ### Home (department chooser)
 
@@ -622,8 +625,10 @@ A footer column link; measured, never followed. Read as `footer-link` on the new
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 330 x 34; padding 6px 0px; background transparent; text Farfetch Basis 15/19.99 400, #222222 `core.palette.named.preto`; transition text-decoration-color 0.15s cubic-bezier(0.66, 0, 0.2, 1) |
-| focus-visible | outline 2px solid #101010, offset -2px; layers a.ltr-o5fwqn 330.0x34.0 2px solid rgb(16, 16, 16) offset -2px |
+| default | size 330 x 34; padding 6px 0px; background transparent; text Farfetch Basis 15/19.99 400, #222222 `core.palette.named.preto`; decoration underline transparent; transition text-decoration-color 0.15s cubic-bezier(0.66, 0, 0.2, 1) |
+| hover | decoration underline #222222 `core.palette.named.preto` |
+| focus-visible | outline 2px solid #101010, offset -2px; decoration underline #222222 `core.palette.named.preto`; layers a.ltr-o5fwqn 330.0x34.0 2px solid rgb(16, 16, 16) offset -2px |
+| pressed | decoration underline #222222 `core.palette.named.preto` |
 
 ![Footer link default](components/crops/footer-link-default.png) ![Footer link hover](components/crops/footer-link-hover.png) ![Footer link focus-visible](components/crops/footer-link-focus-visible.png) ![Footer link pressed](components/crops/footer-link-pressed.png)
 

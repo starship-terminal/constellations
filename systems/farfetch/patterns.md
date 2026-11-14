@@ -51,7 +51,7 @@ The Dolce & Gabbana slides PDP:
 
 1. **Breadcrumbs** — Women · Dolce & Gabbana · Shoes · item.
 2. **Gallery column** — the image carousel, ghost-dark arrows on the photography, thumbnail rail.
-3. **Buy column** — the underlined uppercase brand link (LinkGhostDark), the 22px product title, the `$345` PriceCallout, variant tabs, the 44px `Select size` combobox (hydration-owned listbox, closed here), then the square `#222` **Add To Bag** (hover lifts the fill to `#727272`) beside the outlined **Wishlist** secondary with the heart.
+3. **Buy column** — the underlined uppercase brand link (LinkGhostDark), the 22px product title, the `$345` PriceCallout, the 44px `Select size` combobox (hydration-owned listbox, closed here), then the square `#222` **Add To Bag** (hover lifts the fill to `#727272`) beside the outlined **Wishlist** secondary with the heart.
 4. **Information accordion** — "The Details", "Size & Fit", delivery/returns AccordionButton rows; the SSR ships them collapsed.
 5. **Related showcases** — skeletonised ProductShowcase rails (the loading states the SSR ships).
 

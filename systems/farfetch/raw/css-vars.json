@@ -46,7 +46,7 @@
   "home/inline-ltr dsns64 (419 bytes)",
   "home/inline-ltr 1qiir2k (100 bytes)",
   "home/inline-ltr 9lue42 (257 bytes)",
-  "home/inline-ltr 12yxz4q (6542 bytes)",
+  "home/inline-ltr 12yxz4q (6917 bytes)",
   "home/inline-ltr qfqbf (1949 bytes)",
   "home/inline-ltr 3pul7l (155 bytes)",
   "home/inline-ltr 1s8ja8e (2278 bytes)",
@@ -154,7 +154,7 @@
   "plp-women/inline-ltr k0ippd (54 bytes)",
   "plp-women/inline-ltr 1qiir2k (100 bytes)",
   "plp-women/inline-ltr 9lue42 (257 bytes)",
-  "plp-women/inline-ltr 12yxz4q (6542 bytes)",
+  "plp-women/inline-ltr 12yxz4q (6917 bytes)",
   "plp-women/inline-ltr qfqbf (1949 bytes)",
   "plp-women/inline-ltr 3pul7l (155 bytes)",
   "plp-women/inline-ltr 1s8ja8e (2278 bytes)",
@@ -203,7 +203,7 @@
   "plp-women/inline-ltr 1lzcm24 (1820 bytes)",
   "plp-women/inline-ltr caie7k (552 bytes)",
   "plp-women/inline-ltr 166v3s4 (168 bytes)",
-  "plp-women/inline-ltr 1ajkiyd (6168 bytes)",
+  "plp-women/inline-ltr 1ajkiyd (6543 bytes)",
   "plp-women/inline-ltr 1hlkdz8-Display (176 bytes)",
   "plp-women/inline-ltr g0jkpx (174 bytes)",
   "plp-women/inline-ltr 1lq1oqk (210 bytes)",
@@ -285,7 +285,7 @@
   "plp-men/inline-ltr k0ippd (54 bytes)",
   "plp-men/inline-ltr 1qiir2k (100 bytes)",
   "plp-men/inline-ltr 9lue42 (257 bytes)",
-  "plp-men/inline-ltr 12yxz4q (6542 bytes)",
+  "plp-men/inline-ltr 12yxz4q (6917 bytes)",
   "plp-men/inline-ltr qfqbf (1949 bytes)",
   "plp-men/inline-ltr 3pul7l (155 bytes)",
   "plp-men/inline-ltr 1s8ja8e (2278 bytes)",
@@ -339,7 +339,7 @@
   "plp-men/inline-ltr 1lzcm24 (1820 bytes)",
   "plp-men/inline-ltr caie7k (552 bytes)",
   "plp-men/inline-ltr 166v3s4 (168 bytes)",
-  "plp-men/inline-ltr 1ajkiyd (6168 bytes)",
+  "plp-men/inline-ltr 1ajkiyd (6543 bytes)",
   "plp-men/inline-ltr 1hlkdz8-Display (176 bytes)",
   "plp-men/inline-ltr g0jkpx (174 bytes)",
   "plp-men/inline-ltr 1lq1oqk (210 bytes)",
@@ -417,7 +417,7 @@
   "set-women/inline-ltr k0ippd (54 bytes)",
   "set-women/inline-ltr 1qiir2k (100 bytes)",
   "set-women/inline-ltr 9lue42 (257 bytes)",
-  "set-women/inline-ltr 12yxz4q (6542 bytes)",
+  "set-women/inline-ltr 12yxz4q (6917 bytes)",
   "set-women/inline-ltr qfqbf (1949 bytes)",
   "set-women/inline-ltr 3pul7l (155 bytes)",
   "set-women/inline-ltr 1s8ja8e (2278 bytes)",
@@ -583,7 +583,7 @@
   "pdp/inline-ltr k0ippd (54 bytes)",
   "pdp/inline-ltr 1qiir2k (100 bytes)",
   "pdp/inline-ltr 9lue42 (257 bytes)",
-  "pdp/inline-ltr 12yxz4q (6542 bytes)",
+  "pdp/inline-ltr 12yxz4q (6917 bytes)",
   "pdp/inline-ltr qfqbf (1949 bytes)",
   "pdp/inline-ltr 1s1s12 (34 bytes)",
   "pdp/inline-ltr 1l8tlab (2156 bytes)",
@@ -638,7 +638,7 @@
   "pdp/inline-ltr o2xu7v-Kicker (417 bytes)",
   "pdp/inline-ltr j4fr47 (260 bytes)",
   "pdp/inline-ltr 5ca5z8 (80 bytes)",
-  "pdp/inline-ltr cq35i5 (411 bytes)",
+  "pdp/inline-ltr cq35i5 (465 bytes)",
   "pdp/inline-ltr 182wjbq (34 bytes)",
   "pdp/inline-ltr 13pqkh2 (366 bytes)",
   "pdp/inline-ltr 194u1uv-Heading (176 bytes)",
@@ -5494,14 +5494,14 @@
   {
    "file": "home/inline-0",
    "font-family": "\"Nimbus Roman D\"",
-   "src": "url(\"/cdn-static/assets/portal-core-appportal/desktop/public/fonts/v3.00/NimbusRomanD-Regular.woff2\") format(\"woff2\"), url(\"/cdn-static/assets/portal-core-appportal/desktop/public/fonts/v3.00/NimbusRomanD-Regular.woff\") format(\"woff\")",
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")",
    "font-display": "swap",
    "font-style": "normal"
   },
   {
    "file": "home/inline-0",
    "font-family": "\"Farfetch Basis\"",
-   "src": "url(\"/cdn-static/assets/portal-core-appportal/desktop/public/fonts/v3.00/FarfetchBasis-Regular.woff2\") format(\"woff2\"), url(\"/cdn-static/assets/portal-core-appportal/desktop/public/fonts/v3.00/FarfetchBasis-Regular.woff\") format(\"woff\")",
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")",
    "font-display": "swap",
    "font-weight": "400",
    "font-style": "normal"
@@ -5509,7 +5509,7 @@
   {
    "file": "home/inline-0",
    "font-family": "\"Farfetch Basis\"",
-   "src": "url(\"/cdn-static/assets/portal-core-appportal/desktop/public/fonts/v3.00/FarfetchBasis-Bold.woff2\") format(\"woff2\"), url(\"/cdn-static/assets/portal-core-appportal/desktop/public/fonts/v3.00/FarfetchBasis-Bold.woff\") format(\"woff\")",
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")",
    "font-display": "swap",
    "font-weight": "700",
    "font-style": "normal"
@@ -5517,14 +5517,14 @@
   {
    "file": "plp-women/inline-0",
    "font-family": "\"Nimbus Roman D\"",
-   "src": "url(\"/cdn-static/assets/portal-core-appportal/desktop/public/fonts/v3.00/NimbusRomanD-Regular.woff2\") format(\"woff2\"), url(\"/cdn-static/assets/portal-core-appportal/desktop/public/fonts/v3.00/NimbusRomanD-Regular.woff\") format(\"woff\")",
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")",
    "font-display": "swap",
    "font-style": "normal"
   },
   {
    "file": "plp-women/inline-0",
    "font-family": "\"Farfetch Basis\"",
-   "src": "url(\"/cdn-static/assets/portal-core-appportal/desktop/public/fonts/v3.00/FarfetchBasis-Regular.woff2\") format(\"woff2\"), url(\"/cdn-static/assets/portal-core-appportal/desktop/public/fonts/v3.00/FarfetchBasis-Regular.woff\") format(\"woff\")",
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")",
    "font-display": "swap",
    "font-weight": "400",
    "font-style": "normal"
@@ -5532,7 +5532,7 @@
   {
    "file": "plp-women/inline-0",
    "font-family": "\"Farfetch Basis\"",
-   "src": "url(\"/cdn-static/assets/portal-core-appportal/desktop/public/fonts/v3.00/FarfetchBasis-Bold.woff2\") format(\"woff2\"), url(\"/cdn-static/assets/portal-core-appportal/desktop/public/fonts/v3.00/FarfetchBasis-Bold.woff\") format(\"woff\")",
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")",
    "font-display": "swap",
    "font-weight": "700",
    "font-style": "normal"
@@ -5540,14 +5540,14 @@
   {
    "file": "plp-men/inline-0",
    "font-family": "\"Nimbus Roman D\"",
-   "src": "url(\"/cdn-static/assets/portal-core-appportal/desktop/public/fonts/v3.00/NimbusRomanD-Regular.woff2\") format(\"woff2\"), url(\"/cdn-static/assets/portal-core-appportal/desktop/public/fonts/v3.00/NimbusRomanD-Regular.woff\") format(\"woff\")",
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")",
    "font-display": "swap",
    "font-style": "normal"
   },
   {
    "file": "plp-men/inline-0",
    "font-family": "\"Farfetch Basis\"",
-   "src": "url(\"/cdn-static/assets/portal-core-appportal/desktop/public/fonts/v3.00/FarfetchBasis-Regular.woff2\") format(\"woff2\"), url(\"/cdn-static/assets/portal-core-appportal/desktop/public/fonts/v3.00/FarfetchBasis-Regular.woff\") format(\"woff\")",
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")",
    "font-display": "swap",
    "font-weight": "400",
    "font-style": "normal"
@@ -5555,7 +5555,7 @@
   {
    "file": "plp-men/inline-0",
    "font-family": "\"Farfetch Basis\"",
-   "src": "url(\"/cdn-static/assets/portal-core-appportal/desktop/public/fonts/v3.00/FarfetchBasis-Bold.woff2\") format(\"woff2\"), url(\"/cdn-static/assets/portal-core-appportal/desktop/public/fonts/v3.00/FarfetchBasis-Bold.woff\") format(\"woff\")",
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")",
    "font-display": "swap",
    "font-weight": "700",
    "font-style": "normal"
@@ -5563,14 +5563,14 @@
   {
    "file": "set-women/inline-0",
    "font-family": "\"Nimbus Roman D\"",
-   "src": "url(\"/cdn-static/assets/portal-core-appportal/desktop/public/fonts/v3.00/NimbusRomanD-Regular.woff2\") format(\"woff2\"), url(\"/cdn-static/assets/portal-core-appportal/desktop/public/fonts/v3.00/NimbusRomanD-Regular.woff\") format(\"woff\")",
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")",
    "font-display": "swap",
    "font-style": "normal"
   },
   {
    "file": "set-women/inline-0",
    "font-family": "\"Farfetch Basis\"",
-   "src": "url(\"/cdn-static/assets/portal-core-appportal/desktop/public/fonts/v3.00/FarfetchBasis-Regular.woff2\") format(\"woff2\"), url(\"/cdn-static/assets/portal-core-appportal/desktop/public/fonts/v3.00/FarfetchBasis-Regular.woff\") format(\"woff\")",
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")",
    "font-display": "swap",
    "font-weight": "400",
    "font-style": "normal"
@@ -5578,7 +5578,7 @@
   {
    "file": "set-women/inline-0",
    "font-family": "\"Farfetch Basis\"",
-   "src": "url(\"/cdn-static/assets/portal-core-appportal/desktop/public/fonts/v3.00/FarfetchBasis-Bold.woff2\") format(\"woff2\"), url(\"/cdn-static/assets/portal-core-appportal/desktop/public/fonts/v3.00/FarfetchBasis-Bold.woff\") format(\"woff\")",
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")",
    "font-display": "swap",
    "font-weight": "700",
    "font-style": "normal"
@@ -5588,19 +5588,19 @@
    "font-family": "FarfetchVideoIcons",
    "font-style": "normal",
    "font-weight": "400",
-   "src": "url(\"data:application/font-woff2;charset=utf-8;base64,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\") format(\"woff2\"), url(\"data:application/font-woff;charset=utf-8;base64,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\") format(\"woff\")"
+   "src": "url(\"data:application/font-woff2;…\") format(\"woff2\"), url(\"data:application/font-woff;…\") format(\"woff\")"
   },
   {
    "file": "pdp/inline-0",
    "font-family": "\"Nimbus Roman D\"",
-   "src": "url(\"/cdn-static/assets/portal-core-appportal/desktop/public/fonts/v3.00/NimbusRomanD-Regular.woff2\") format(\"woff2\"), url(\"/cdn-static/assets/portal-core-appportal/desktop/public/fonts/v3.00/NimbusRomanD-Regular.woff\") format(\"woff\")",
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")",
    "font-display": "swap",
    "font-style": "normal"
   },
   {
    "file": "pdp/inline-0",
    "font-family": "\"Farfetch Basis\"",
-   "src": "url(\"/cdn-static/assets/portal-core-appportal/desktop/public/fonts/v3.00/FarfetchBasis-Regular.woff2\") format(\"woff2\"), url(\"/cdn-static/assets/portal-core-appportal/desktop/public/fonts/v3.00/FarfetchBasis-Regular.woff\") format(\"woff\")",
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")",
    "font-display": "swap",
    "font-weight": "400",
    "font-style": "normal"
@@ -5608,7 +5608,7 @@
   {
    "file": "pdp/inline-0",
    "font-family": "\"Farfetch Basis\"",
-   "src": "url(\"/cdn-static/assets/portal-core-appportal/desktop/public/fonts/v3.00/FarfetchBasis-Bold.woff2\") format(\"woff2\"), url(\"/cdn-static/assets/portal-core-appportal/desktop/public/fonts/v3.00/FarfetchBasis-Bold.woff\") format(\"woff\")",
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")",
    "font-display": "swap",
    "font-weight": "700",
    "font-style": "normal"
@@ -5618,7 +5618,7 @@
    "font-family": "FarfetchVideoIcons",
    "font-style": "normal",
    "font-weight": "400",
-   "src": "url(\"data:application/font-woff2;charset=utf-8;base64,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\") format(\"woff2\"), url(\"data:application/font-woff;charset=utf-8;base64,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\") format(\"woff\")"
+   "src": "url(\"data:application/font-woff2;…\") format(\"woff2\"), url(\"data:application/font-woff;…\") format(\"woff\")"
   }
  ],
  "resolved": {

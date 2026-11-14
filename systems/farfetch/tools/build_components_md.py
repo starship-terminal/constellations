@@ -117,6 +117,9 @@ def props(v):
         o["text"] = f"{font(t['fontSize'], t['lineHeight'], t['fontWeight'], t['fontFamily'])}, {colour(t['color'])}"
     else:
         o["text"] = f"{font(s['fontSize'], s['lineHeight'], s['fontWeight'], s['fontFamily'])}, {colour(s['color'])}"
+    if s.get("textDecorationLine", "none") != "none":
+        thick = s.get("textDecorationThickness", "auto")
+        o["decoration"] = f"{s['textDecorationLine']} {colour(s['textDecorationColor'])}" + ("" if thick in ("auto", "") else f" {thick}")
     if s["transitionDuration"] not in ("0s", ""):
         props_ = [x.strip() for x in s["transitionProperty"].split(",")]
         durs = [x.strip() for x in s["transitionDuration"].split(",")]
@@ -166,7 +169,7 @@ def props(v):
     return o
 
 
-ORDER = ["size", "padding", "border", "radius", "background", "image", "shadow", "outline", "text", "transition", "transform", "opacity", "icon", "placeholder", "layers", "ancestors"]
+ORDER = ["size", "padding", "border", "radius", "background", "image", "shadow", "outline", "text", "decoration", "transition", "transform", "opacity", "icon", "placeholder", "layers", "ancestors"]
 
 
 def state_rows(c):
@@ -234,7 +237,7 @@ GROUP_INTRO = {
     "Header and site chrome": "The ~124px top chrome shared by every page: the 44px TopBar row (department links, the 201px FARFETCH wordmark, Language-and-region flag, account, wishlist and bag icons) over the NavBar row (category links, the red Sale link, the 270x44 search field). The TopBar is position:sticky with a 1px #e6e6e6 hairline.",
     "Product listing page": "The modular women's/men's listing front (/shopping/{women,men}/items.aspx): the 1392px campaign hero modules (DisplayLarge + Editorial dek + Shop Now), the 'Brands of the moment' tile module, the 4-up product-card grid (brand kicker, description, price, wishlist heart) and the editorial-card rail. Breadcrumbs, filters and pagination render after hydration on these pages, so they are gaps here and measured on the edit page instead.",
     "New-in edit page": "The 'New In' edit (/sets/women/new-in-this-week-eu-women.aspx) — the classic listing: Breadcrumbs, the PageTitleHeading + collapsible description, the All Filters button, the quick-filter scroller (skeleton until hydration), product cards with size hints and sale pricing, showcase carousels with CarouselArrowSmall controls, and the Pagination row.",
-    "Product detail page": "A D&G slides PDP: breadcrumbs, the image carousel with ghost arrows, the ghost-dark brand link, product title, the $345 PriceCallout, variant tabs, the 44px 'Select size' combobox, the square #222 Add To Bag and the Wishlist toggle, then the information accordion and skeletonised related showcases.",
+    "Product detail page": "A D&G slides PDP: breadcrumbs, the image carousel with ghost arrows, the ghost-dark brand link, product title, the $345 PriceCallout, the 44px 'Select size' combobox, the square #222 Add To Bag and the Wishlist toggle, then the information accordion and skeletonised related showcases.",
     "Home (department chooser)": "The country landing: 'Choose a department' over three full-bleed tiles (WOMENSWEAR/MENSWEAR/KIDSWEAR with Display overlays), per-department Kicker link columns and the editorial-card feed.",
     "Type specimens": "The pulse type roles measured where they paint on the pages (DisplayLarge, Display, Title, Kicker, Body, Footnote, Label, Editorial).",
     "Footer": "The site footer: section-title columns of links, the 'Get updates by Email' field + 90px Sign Up button, the social IconButtonGhostDark row and the legal line.",

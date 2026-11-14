@@ -74,6 +74,7 @@ const sheets = [...bodies.entries()];
 const probe = await browser.newPage();
 const result = await probe.evaluate((sheets) => {
   const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v);
+  const noPayload = (v) => (typeof v === 'string' ? v.replace(/url\(\s*(["']?)data:([^;,"')]*)[^)]*\)/gi, 'url($1data:$2;…$1)') : v);
   const rules = [];
   const fonts = [];
   const errors = [];
@@ -81,7 +82,8 @@ const result = await probe.evaluate((sheets) => {
     for (const r of list) {
       if (r.type === CSSRule.FONT_FACE_RULE) {
         const o = { file };
-        for (let i = 0; i < r.style.length; i++) o[r.style[i]] = r.style.getPropertyValue(r.style[i]).trim();
+        // Keep family/weight/style/display; point urls at url(…) and never carry an embedded font payload.
+        for (let i = 0; i < r.style.length; i++) o[r.style[i]] = noPayload(noUrl(r.style.getPropertyValue(r.style[i]).trim()));
         fonts.push(o);
         continue;
       }

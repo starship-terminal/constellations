@@ -577,30 +577,6 @@ Page: set-women. Selector: `ProductCardSizes`. States: default.
 
 Crops: `card-sizes-default.png`.
 
-#### sale-price
-
-Sale price mark. The "-40%" discount footnote on a sale card — content-primary-enabled-sale red (its sibling PriceOriginal strikes through).
-
-Page: set-women. Selector: `PriceSaleDiscount`. States: default.
-
-| Property | default |
-|---|---|
-| Size (w x h) | 29 x 17 |
-| Padding | 0px |
-| Border | none |
-| Radius | 0px |
-| Background | transparent |
-| Box shadow | none |
-| Outline | none |
-| Font | Farfetch Basis 13px/17.0001px 400 |
-| Letter spacing | normal |
-| Colour | #727272 |
-| Transition | none |
-| Cursor | pointer |
-| How | at rest |
-
-Crops: `sale-price-default.png`.
-
 #### pagination
 
 Pagination. The pagination control under the grid ("1 of 3" + next arrow).
@@ -729,6 +705,54 @@ Page: plp-men. Selector: `editorial-post`. States: default.
 | How | at rest |
 
 Crops: `editorial-card-default.png`.
+
+#### sale-price
+
+Sale price mark. The "-40%" discount footnote on a sale card — content-primary-enabled-sale red (its sibling PriceOriginal strikes through).
+
+Page: set-women. Selector: `PriceSaleDiscount`. States: default.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 33.63 x 17 |
+| Padding | 0px |
+| Border | none |
+| Radius | 0px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | Farfetch Basis 13px/17.0001px 400 |
+| Letter spacing | normal |
+| Colour | #e71d34 |
+| Transition | none |
+| Cursor | pointer |
+| How | at rest |
+
+Crops: `sale-price-default.png`.
+
+#### sale-original
+
+Original price. The struck-through pre-sale price beside the discount mark on a sale card (grey, line-through).
+
+Page: set-women. Selector: `PriceOriginal`. States: default.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 28.42 x 17 |
+| Padding | 0px |
+| Border | none |
+| Radius | 0px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | Farfetch Basis 13px/17.0001px 400 |
+| Letter spacing | normal |
+| Colour | #727272 |
+| Transition | none |
+| Cursor | pointer |
+| How | at rest |
+
+Crops: `sale-original-default.png`.
 
 ### Footer
 
@@ -912,31 +936,6 @@ Page: pdp. Selector: `BreadcrumbsNavigation`. States: default.
 
 Crops: `pdp-breadcrumb-default.png`.
 
-#### pdp-gallery
-
-Image gallery. The PDP image carousel column (product shots + arrow controls).
-
-Page: pdp. Selector: `CarouselStandard`. States: default.
-
-| Property | default |
-|---|---|
-| Size (w x h) | 1392 x 509.16 |
-| Padding | 0px |
-| Border | none |
-| Radius | 0px |
-| Background | transparent |
-| Box shadow | none |
-| Outline | none |
-| Font | Farfetch Basis 15px/19.9995px 400 |
-| Letter spacing | normal |
-| Colour | #222222 |
-| Transition | none |
-| Icon | 24 x 24, colour #222222 |
-| Painted layers | div.ltr-q6lfkw 288.9x385.2 bg #f5f5f5; div.ltr-7yf7ta 202.2x22.0 bg #f5f5f5; div.ltr-7yf7ta 260.0x22.0 bg #f5f5f5; div.ltr-7yf7ta 144.4x22.0 bg #f5f5f5; div.ltr-q6lfkw 288.9x385.2 bg #f5f5f5; div.ltr-7yf7ta 202.2x22.0 bg #f5f5f5 |
-| How | at rest |
-
-Crops: `pdp-gallery-default.png`.
-
 #### pdp-arrow
 
 Gallery arrow. A gallery next/previous arrow; measured, never pressed.
@@ -1036,32 +1035,6 @@ Page: pdp. Selector: `PriceCallout`. States: default.
 | How | at rest |
 
 Crops: `pdp-price-default.png`.
-
-#### variant-tabs
-
-Variant tabs. The colour/variant tabs inside the variant selector.
-
-Page: pdp. Selector: `TabsContainer`. States: default.
-
-| Property | default |
-|---|---|
-| Size (w x h) | 452 x 44 |
-| Padding | 0px |
-| Border | none |
-| Radius | 0px |
-| Background | transparent |
-| Box shadow | none |
-| Outline | none |
-| Font | Farfetch Basis 15px/19.9995px 400 |
-| Letter spacing | normal |
-| Colour | #222222 |
-| Text node | span.ltr-1mhgg20: Farfetch Basis 15px/19.9995px 400, #727272 |
-| Transition | none |
-| Icon | 24 x 24, colour #222222, fill #000000 |
-| Painted layers | div.ltr-cubnbt 452.0x44.0 bg #ffffff border T:1px solid #727272 / R:1px solid #727272 / B:1px solid #727272 / L:1px solid #727272 |
-| How | at rest |
-
-Crops: `variant-tabs-default.png`.
 
 #### size-selector
 
@@ -1270,6 +1243,38 @@ Page: pdp. Selector: `showcase-skeleton`. States: default.
 | How | at rest |
 
 Crops: `skeleton-showcase-default.png`.
+
+#### pdp-gallery
+
+Image gallery. The PDP product-photo column (the stacked product shots left of the buy box; its arrow controls need hydration).
+
+Page: pdp. Selector: `innermost multi-image block left of the buy box`. States: default.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 904 x 1201.31 |
+| Padding | 0px |
+| Gap | 12px |
+| Border | none |
+| Radius | 0px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | Farfetch Basis 15px/19.9995px 400 |
+| Letter spacing | normal |
+| Colour | #222222 |
+| Transition | none |
+| How | at rest |
+
+Crops: `pdp-gallery-default.png`.
+
+#### variant-tabs
+
+Variant tabs. Colour/variant tabs in the variant selector. The archived PDP renders only the size combobox there, so none exist to measure.
+
+Page: pdp. Selector: `variant-selector [role=tab]`. States: .
+
+Not found on the page at capture time.
 
 ### Home (department chooser)
 

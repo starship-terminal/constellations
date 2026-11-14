@@ -280,7 +280,8 @@ async function listing(key) {
   await S('card-price', card.locator('[data-testid="product-card-price"], [data-component="PriceBrief"], [data-component="PriceFinal"]').filter({ visible: true }).first(), ['default'], { group: g1, title: 'Card price', desc: 'The price block on a product card.', sel: 'product-card-price' });
   await S('card-wishlist', card.locator('[data-testid="addToWishlist"], [data-component="WishlistButtonControlled"], button[aria-label*="wishlist" i]').filter({ visible: true }).first(), B4, { group: g1, title: 'Card wishlist heart', desc: 'The heart icon button floating on the card image (aria-pressed toggle); measured, never toggled — adding to a wishlist needs an account.', sel: 'addToWishlist' });
   await S('card-sizes', card.locator('[data-component="ProductCardSizes"], [data-component="ProductCardSizesAvailable"]').filter({ visible: true }).first(), ['default'], { group: g1, title: 'Card size hint', desc: 'The size-availability hint under a card ("XS S M L" style).', sel: 'ProductCardSizes' });
-  await S('sale-price', q('[data-component="PriceSaleDiscount"], [data-component="PriceOriginal"], [data-component="PriceDiscountWrapper"]').filter({ visible: true }).first(), ['default'], { group: g1, title: 'Sale price mark', desc: 'The "-40%" discount footnote on a sale card — content-primary-enabled-sale red (its sibling PriceOriginal strikes through).', sel: 'PriceSaleDiscount' });
+  await S('sale-price', q('[data-component="PriceSaleDiscount"]').filter({ visible: true }).first(), ['default'], { group: g1, title: 'Sale price mark', desc: 'The "-40%" discount footnote on a sale card — content-primary-enabled-sale red (its sibling PriceOriginal strikes through).', sel: 'PriceSaleDiscount' });
+  await S('sale-original', q('[data-component="PriceOriginal"]').filter({ visible: true }).first(), ['default'], { group: g1, title: 'Original price', desc: 'The struck-through pre-sale price beside the discount mark on a sale card (grey, line-through).', sel: 'PriceOriginal' });
   await S('pagination', q('[data-component="Pagination"]').filter({ visible: true }).last(), ['default'], { group: g1, title: 'Pagination', desc: 'The pagination control under the grid ("1 of 3" + next arrow).', sel: 'Pagination' });
   await S('pagination-next', q('[data-component="PaginationNextActionButton"], [data-component="Pagination"] a').filter({ visible: true }).last(), B4, { group: g1, title: 'Pagination next', desc: 'The next-page arrow in the pagination control; measured, never followed.', sel: 'PaginationNextActionButton' });
   await S('carousel-arrow', q('[data-testid="showcase-carousel-arrow-next"], [data-component="CarouselArrowSmall"]').filter({ visible: true }).first(), B4, { group: g1, title: 'Carousel arrow', desc: 'A showcase carousel next-arrow (small ghost-dark icon button); measured, never pressed.', sel: 'CarouselArrowSmall' });
@@ -296,12 +297,29 @@ async function pdp() {
   await header();
   const g = G.pdp;
   await S('pdp-breadcrumb', q('nav[aria-label*="breadcrumb" i], [data-component="BreadcrumbsNavigation"], [data-component="Breadcrumbs"]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Breadcrumbs', desc: 'The PDP breadcrumb trail (Women > Dolce & Gabbana > Shoes > …).', sel: 'BreadcrumbsNavigation' }, { noScroll: true });
-  await S('pdp-gallery', q('[data-component="CarouselStandard"], [data-component="SnapSliderWrapper"], [data-component="CarouselContainer"]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Image gallery', desc: 'The PDP image carousel column (product shots + arrow controls).', sel: 'CarouselStandard' }, { noScroll: true });
+  // The product photo column has no stable hook, and the CarouselStandard/SnapSliderWrapper hooks
+  // belong to the related-products loading rail below it. Mark the innermost wide block that holds
+  // several images, sits left of the buy box and starts near the top of the page.
+  await page.evaluate(() => {
+    document.querySelectorAll('[data-m-mark="pdp-gallery"]').forEach((n) => n.removeAttribute('data-m-mark'));
+    const buy = document.querySelector('[data-testid="variant-selector"]');
+    const left = buy ? buy.getBoundingClientRect().left : Infinity;
+    const hits = [...document.querySelectorAll('div')].filter((el) => {
+      const r = el.getBoundingClientRect();
+      return r.width >= 400 && r.right <= left + 1 && r.top + scrollY < 400 && el.querySelectorAll('img').length >= 2
+        && !el.closest('[data-testid*="skeleton" i]');
+    });
+    const inner = hits.filter((el) => !hits.some((o) => o !== el && el.contains(o)))[0];
+    if (inner) inner.setAttribute('data-m-mark', 'pdp-gallery');
+  });
+  await S('pdp-gallery', q('[data-m-mark="pdp-gallery"]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Image gallery', desc: 'The PDP product-photo column (the stacked product shots left of the buy box; its arrow controls need hydration).', sel: 'innermost multi-image block left of the buy box' }, { noScroll: true, dropPrior: true });
   await S('pdp-arrow', q('[data-component="CarouselArrowSmall"], button[aria-label*="next" i], button[aria-label*="previous" i]').filter({ visible: true }).first(), B4, { group: g, title: 'Gallery arrow', desc: 'A gallery next/previous arrow; measured, never pressed.', sel: 'CarouselArrowSmall' }, { noScroll: true });
   await S('pdp-brand', q('[data-component="LinkGhostDark"], [data-component="Kicker"]').filter({ visible: true }).first(), B4, { group: g, title: 'Brand link', desc: 'The "Dolce & Gabbana" ghost-dark brand link over the PDP title; measured, never followed.', sel: 'LinkGhostDark' }, { noScroll: true });
   await S('pdp-title', q('[data-testid="product-short-description"], h1').filter({ visible: true }).first(), ['default'], { group: g, title: 'Product title', desc: 'The product description heading ("logo-embossed cut-out slides").', sel: 'product-short-description' }, { noScroll: true });
   await S('pdp-price', q('[data-component="PriceCallout"]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Price callout', desc: 'The "$345" price callout above the size selector.', sel: 'PriceCallout' }, { noScroll: true });
-  await S('variant-tabs', q('[data-testid="variant-selector"] [data-component="TabsContainer"], [data-component="TabsContainer"]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Variant tabs', desc: 'The colour/variant tabs inside the variant selector.', sel: 'TabsContainer' }, { noScroll: true });
+  // The variant selector in the archived copy holds only the size combobox: no colour/variant tabs are
+  // SSR-rendered, so this records a gap (an unrestricted TabsContainer match read the size selector).
+  await S('variant-tabs', q('[data-testid="variant-selector"] [role="tablist"], [data-testid="variant-selector"] [role="tab"]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Variant tabs', desc: 'Colour/variant tabs in the variant selector. The archived PDP renders only the size combobox there, so none exist to measure.', sel: 'variant-selector [role=tab]' }, { noScroll: true, dropPrior: true });
   await S('size-selector', q('[data-testid="ScaledSizeSelector"], [data-component="SizeSelectorControlled"], [role="combobox"]').filter({ visible: true }).first(), B4, { group: g, title: 'Size selector', desc: 'The "Select size" combobox (44px outlined field, chevron). Its listbox is hydration-rendered, so no opened state exists in the static copy.', sel: 'ScaledSizeSelector' }, { noScroll: true });
   await S('add-to-bag', q('[data-testid="addToBag"], [data-component="AddToBag"], button[aria-label="Add To Bag"]').filter({ visible: true }).first(), B4, { group: g, title: 'Add To Bag', desc: 'The primary "Add To Bag" button — actions-primary dark surface; measured, never pressed.', sel: 'addToBag' }, { noScroll: true });
   await S('pdp-wishlist', q('[data-component="WishlistIconsContainer"], button[aria-pressed]').filter({ visible: true }).first(), B4, { group: g, title: 'PDP wishlist', desc: 'The "Wishlist" secondary action beside Add To Bag (aria-pressed toggle); measured, never toggled.', sel: 'WishlistIconsContainer' }, { noScroll: true });

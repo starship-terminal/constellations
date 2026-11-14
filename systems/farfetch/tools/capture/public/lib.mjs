@@ -292,8 +292,8 @@ export async function styleOf(locator) {
 }
 
 // Element screenshot into components/crops/<name>.png, padded so a focus ring
-// or shadow is not clipped, then quantized to 256 colours. Sticky bars that do
-// not hold the element are hidden for the shot.
+// or shadow is not clipped, then quantized to 256 colours. Sticky bars that sit over the
+// element (and do not hold it) are hidden for the shot, so the crop shows the component, not the chrome.
 const STICKY = ['header', 'nav', '[class*="sticky" i]', '[data-testid*="sticky" i]'].join(', ');
 export async function crop(page, locator, name, pad = 8) {
   fs.mkdirSync(CROPS, { recursive: true });
@@ -301,13 +301,17 @@ export async function crop(page, locator, name, pad = 8) {
   const hidden = await locator.evaluate((el, { sel, pad }) => {
     let n = 0;
     const er = el.getBoundingClientRect();
+    const scrolls = er.top - pad < 0 || er.bottom + pad > innerHeight || er.left < 0 || er.right > innerWidth + 1;
     document.querySelectorAll(sel).forEach((s) => {
       if (s.contains(el) || el.contains(s)) return;
       const sr = s.getBoundingClientRect();
       const overlap = !(sr.right < er.left - pad || sr.left > er.right + pad || sr.bottom < er.top - pad || sr.top > er.bottom + pad);
-      if (overlap) return;
+      // A bar clear of an in-view crop never shows. When the shot scrolls (the element is not fully
+      // in view), sticky bars ride along over it, so every bar not holding the element goes.
+      if (!overlap && !scrolls) return;
       s.setAttribute('data-m-hidden', '1');
       s.style.setProperty('visibility', 'hidden', 'important');
+      s.style.setProperty('opacity', '0', 'important'); // children can re-declare visibility; opacity cannot be undone below
       n++;
     });
     return n;
@@ -329,7 +333,7 @@ export async function crop(page, locator, name, pad = 8) {
       await locator.screenshot({ path: file, animations: 'allow' });
     }
   } finally {
-    if (hidden) await page.evaluate(() => document.querySelectorAll('[data-m-hidden]').forEach((n) => { n.style.removeProperty('visibility'); n.removeAttribute('data-m-hidden'); }));
+    if (hidden) await page.evaluate(() => document.querySelectorAll('[data-m-hidden]').forEach((n) => { n.style.removeProperty('visibility'); n.style.removeProperty('opacity'); n.removeAttribute('data-m-hidden'); }));
   }
   quantize(file);
   return path.relative(REF, file);
