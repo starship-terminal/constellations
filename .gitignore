@@ -27,7 +27,7 @@ systems/duolingo/tools/capture/css-stats.md
 /web/data/
 docs/scorecard/
 /.venv/
-# Local secrets. StatiCrypt reads STATICRYPT_PASSWORD from here.
+# Local secrets (API keys, R2 credentials); see .env.example.
 .env
 __pycache__/
 systems/*/raw/*.partial.json

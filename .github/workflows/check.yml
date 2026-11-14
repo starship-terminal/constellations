@@ -1,7 +1,6 @@
 # Run the repo's freshness gates and tests on every push to main and every pull
-# request. pages.yml only watches the site's inputs, so without this a commit that
-# forgot `make brief`/`make grade` (a systems/**, catalog.json or tools change,
-# say) ran no CI at all. `make check` covers catalog.json, Brief sections,
+# request, so a commit that forgot `make brief`/`make grade` (a systems/**,
+# catalog.json or tools change, say) fails here. `make check` covers catalog.json, Brief sections,
 # scorecard data and scripted grades, and every README's Health section.
 # `make test` runs the tools' tests and every package's own tests; the checkout
 # has no Git LFS content, so tests that read a real screenshot or refero.db skip.
