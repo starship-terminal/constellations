@@ -4,11 +4,11 @@ How the measured components combine on each captured surface. Every value cited 
 
 ## Public chrome (light)
 
-A 94px top bar (`core.component.topbar-height`, 96px wordmark `core.component.logo-width`) sits over a white page (`light.background.page` → `color.white`): Developers and Resources dropdown triggers (119px/113px pill labels), an X (Twitter) link, a ghost **Log In** (`light.action.ghost` — transparent fill, ink text) and the near-black **Get Started** pill (`light.action.accent` → `color.overlay.background` `#171717`, white text `light.text.on-dark`, 32px radius `core.radius.button`). The dropdowns open small white cards (`nav-dropdown`, ~316 x 135, 8px radius, `0px 3px 16px rgba(0,0,0,.1)`) listing ConnectKit/Family under Developers and Blog/Changelog/Help & Support/FAQs under Resources — measured open, never followed.
+A 94px top bar (`core.component.topbar-height`, 96px wordmark `core.component.logo-width`) sits over a white page (`light.background.page` → `color.white`): Developers and Resources dropdown triggers (119px/113px pill labels), an X (Twitter) link, a beige **Log In** pill (`light.action.beige` `#f6f4ef`, ink text) and the near-black **Get Started** pill (`light.action.accent` → `color.overlay.background` `#171717`, white text `light.text.on-dark`, 32px radius `core.radius.button`). The dropdowns open small white cards (`nav-dropdown`, ~316 x 135, 8px radius, `0px 3px 16px rgba(0,0,0,.1)`) listing ConnectKit/Family under Developers and Blog/Changelog/Help & Support/FAQs under Resources — measured open, never followed.
 
 ## The hero
 
-Home opens with the "Family" display face at 68px (`core.font.size.measured.display`, 44px at 390px `core.font.size.measured.mobile-display`) — "Your favorite crypto wallet." in `#343433` ink (`light.text.ink` → `color.heading`) — over a 15px Inter subline and two 48px pills: the black **Download on iOS** (a 209.7px pill, measured never followed — it goes to the App Store) and the ghost **Watch the Video** beside it. Product videos (`/videos/*.mp4`: send, receive, swap, nft, watch, activity, onboarding, missioncontrol, dragdropdone, promo-collectibles) play inside the feature mockups further down.
+Home opens with the "Family" display face at 68px (`core.font.size.measured.display`, 44px at 390px `core.font.size.measured.mobile-display`) — "Your favorite crypto wallet." in `#343433` ink (`light.text.ink` → `color.heading`) — over a 15px Inter subline and two 48px pills: the black **Download on iOS** (a 209.7px pill, measured never followed — it goes to the App Store) and the beige **Watch the Video** pill beside it. Product videos (`/videos/*.mp4`: send, receive, swap, nft, watch, activity, onboarding, missioncontrol, dragdropdone, promo-collectibles) play inside the feature mockups further down.
 
 ## Feature sections and the demo overlay
 
@@ -24,7 +24,7 @@ The FAQ is a stack of collapsible rows (`faq-item`, 512 x 56) on `#f2f0ed` hairl
 
 ## Content surfaces
 
-- **/blog**: an 88px "Blog" Family-face title, topic filter pills (`blog-filter`, 43 x 33 "All"/"News"/"Wallet" — the opened state is a local toggle), then 1024 x 280 post cards (`blog-card`, `core.component.post-card-width`) on bottom hairlines, each with a date/tags meta line (`blog-date`, `light.text.low` → `color.body.muted` `#848281`).
+- **/blog**: a 44px "Blog" Family-face title, topic filter pills (`blog-filter`, 43 x 33 "All"/"News"/"Wallet" — the opened state is a local toggle), then 1024 x 280 post cards (`blog-card`, `core.component.post-card-width`) on bottom hairlines, each with a date/tags meta line (`blog-date`, `light.text.low` → `color.body.muted` `#848281`).
 - **/blog/\<post\>**: 44px article title (`core.font.size.measured.article`), `h2` subheads, Inter body, a back link (`post-back`).
 - **/changelog**: the same filter/card rhythm with dated release entries.
 - **/support**: a search field (`sup-search`, `core.component.search-field-width` ~269px — typed and cleared, never submitted) over category buttons and article links.
@@ -32,7 +32,7 @@ The FAQ is a stack of collapsible rows (`faq-item`, 512 x 56) on `#f2f0ed` hairl
 
 ## The Aave Account login
 
-app.family.co/ paints the app layer on light: a 380px login card (`core.component.login-card-width`, 14px radius) on a white field — an "Aave Account" heading and subtitle in variable Inter (`core.font.family.app`), a 380px borderless transparent field (`light.background.field`; its fill is the declared `light.color.input.background.default` `#f6f7f9` on the wrapper) that was typed into and cleared, a **Learn More** link in the declared violet (`--primary`/`--hyperlink-color` `#9896ff` → `color.app.primary`) and a footer link. The app draws its own focus ring — a blue `rgba(0,122,255,.5)` (`--focus-color` → `color.focus.color`) vs the marketing `#848281` ring (`light.border.focus` → `color.focus.default`). Past this card is the authenticated product — a documented boundary.
+app.family.co/ paints the app layer on light: a 380px login card (`core.component.login-card-width`, 14px radius) on a white field — an "Aave Account" heading and subtitle in variable Inter (`core.font.family.app`), a 380px borderless transparent field (`light.background.field`; its fill is the declared `light.color.input.background.default` `#f6f7f9` on the wrapper) that was typed into and cleared, a **Learn More** pill — near-black `#121212` text on a warm `#f9f7f5` fill, 18px radius (the app's declared `--hyperlink-color` violet `#9896ff` → `color.app.primary` is the link default nothing here paints) — and a footer link. The app draws its own focus ring — a blue `rgba(0,122,255,.5)` (`--focus-color` → `color.focus.color`) vs the marketing `#848281` ring (`light.border.focus` → `color.focus.default`). Past this card is the authenticated product — a documented boundary.
 
 ## Mobile (390px)
 

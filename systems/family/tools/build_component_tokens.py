@@ -101,6 +101,33 @@ def ts(comp, state, prop):
         return None
 
 
+def painted(comp, state, key):
+    """A reading from the kit's paint list — the layers actually painted
+    (rounded children, pseudo-elements, shadows) rather than the wrapper's
+    computed style, which is often an unpainted positioning box. An entry
+    whose recorded size matches the element's own rect wins."""
+    c = C[comp]["states"][state]
+    entries = [p for p in c.get("paint") or [] if p.get(key)]
+    if not entries:
+        raise KeyError(key)
+    rect = c.get("rect") or {}
+    for p in entries:
+        m = re.fullmatch(r"([\d.]+)x([\d.]+)", str(p.get("size") or ""))
+        if m and abs(float(m.group(1)) - rect.get("w", -9)) <= 1.5 and abs(float(m.group(2)) - rect.get("h", -9)) <= 1.5:
+            return p[key]
+    return entries[0][key]
+
+
+def ancestor(comp, state, key):
+    """A reading from the kit's ancestor list (a painted wrapper above the
+    element — a field's rounded shell)."""
+    c = C[comp]["states"][state]
+    for a in c.get("ancestors") or []:
+        if a.get(key) not in (None, ""):
+            return a[key]
+    raise KeyError(key)
+
+
 def _gam(v):
     v = max(0.0, min(1.0, v))
     return 12.92 * v if v <= 0.0031308 else 1.055 * v ** (1 / 2.4) - 0.055
@@ -287,11 +314,13 @@ for name in sorted(k for k in R if re.fullmatch(r"--font-(primary|secondary|code
     EMITTED[name] = f"font.family.{key}"
 
 weights = SPEC["core"].setdefault("font", {}).setdefault("weight", {})
+# Only the weights actually painted signed out are exported: the Family
+# display face and the controls all paint 500, the kickers/entry headings
+# 600 — nothing paints 700.
 for key, comp, desc in [
     ("regular", "feature-body", "400 — body and feature copy."),
-    ("medium", "nav-developers", "500 — nav labels and control text."),
-    ("semibold", "download-cta", "600 — pill buttons and emphasis."),
-    ("bold", "hero-h1", "700 — the display/heading weight if painted."),
+    ("medium", "nav-developers", "500 — nav labels, control text and the Family display headings."),
+    ("semibold", "feature-label", "600 — feature labels/kickers and entry headings; the heaviest weight painted signed out."),
 ]:
     try:
         w = int(float(ts(comp, "default", "fontWeight")))
@@ -410,7 +439,10 @@ def leaf_type(name):
     if kind == "fontFamily":
         return "fontFamily"
     if kind == "shadow":
-        return "shadow"
+        # A resolved box-shadow is a raw CSS string; the DTCG "shadow" type
+        # wants parsed layer objects, so declared shadows ride as "other"
+        # (they still group under core.shadow.* via target()).
+        return "other"
     if kind == "dimension":
         return "dimension"
     return "other"
@@ -504,8 +536,8 @@ for key, comp, state, prop, group, prefer, desc in [
      "White text on the dark/blue buttons."),
     ("accent", "download-cta", "default", "backgroundColor", "action", ("--overlay-background", "--heading"),
      "The near-black pill fill on the primary CTAs (Download on iOS, Get Started) — matches the app's declared --overlay-background #171717."),
-    ("ghost", "login-btn", "default", "backgroundColor", "action", (),
-     "The ghost Log In / Watch the Video actions — transparent fill, ink text."),
+    ("beige", "login-btn", "default", "paint:bg", "action", (),
+     "The warm beige pill fill on the secondary actions (the header Log In, the hero's Watch the Video) — #f6f4ef; the declared --beige #e7e1d5 is a deeper cream nothing sampled paints."),
     ("hairline", "blog-card", "default", "borderBottomColor", "border", ("--gray-light",),
      "The bottom hairline under cards and list items (matches --gray-light)."),
     ("field-border", "login-field", "default", "borderTopColor", "border", ("--input-color", "--border-light"),
@@ -517,6 +549,16 @@ for key, comp, state, prop, group, prefer, desc in [
         if prop == "_body-bg":
             raw = "#ffffff"
             src = "the public surfaces paint a white field (screenshots/*-light-*.png; --color-background resolves #fff)"
+        elif prop == "paint:bg":
+            raw = painted(comp, state, "bg")
+            src = f"the painted background of {comp}'s layer {state} (raw/components-computed.json paint list)"
+        elif prop == "color":
+            # The first text node's reading: a wrapper's own colour is what
+            # children inherit, not what the visible text paints.
+            raw = ts(comp, state, "color")
+            if not raw:
+                raise KeyError(prop)
+            src = f"computed color of {comp} {state} — the first text node's reading where the kit recorded one (raw/components-computed.json)"
         else:
             raw = st(comp, state)[prop]
             src = f"computed {prop} of {comp} {state} (raw/components-computed.json)"
@@ -539,27 +581,33 @@ for key, comp, state, desc in [
     ("mobile-display", "m-h1", "default", "The mobile display size at 390px."),
     ("display", "hero-h1", "default", "The hero display size."),
 ]:
-    try:
-        raw = st(comp, state)["fontSize"]
-        src = f"computed fontSize of {comp} {state} (raw/components-computed.json)"
-        alias = size_alias.get(raw)
-        ty.setdefault("measured", {})[key] = lit(f"{{{alias[0]}}}" if alias else raw, "fontSize",
-                      src + (f"; matches declared {alias[1]}" if alias else ""), desc)
-    except KeyError:
-        pass
+    # Prefer the kit's first-text-node reading (textStyle): a wrapper's own
+    # fontSize is what children inherit, not what the visible text paints —
+    # the FAQ item's shell is 16px over 19px copy.
+    raw = ts(comp, state, "fontSize")
+    if not raw:
+        continue
+    src = f"computed fontSize of {comp} {state} — the first text node's reading where the kit recorded one (raw/components-computed.json)"
+    alias = size_alias.get(raw)
+    ty.setdefault("measured", {})[key] = lit(f"{{{alias[0]}}}" if alias else raw, "fontSize",
+                  src + (f"; matches declared {alias[1]}" if alias else ""), desc)
 
 # ------------------------------------------------------------------ shape
 
 radii = SPEC["core"].setdefault("radius", {})
 for key, comp, state, prop, desc in [
-    ("field", "login-field", "default", "borderTopLeftRadius", "The app input radius."),
-    ("card", "blog-card", "default", "borderTopLeftRadius", "The post/testimonial card radius."),
-    ("item", "faq-item", "default", "borderTopLeftRadius", "The FAQ item radius."),
+    ("field", "login-field", "default", "ancestor:radius", "The app input's painted shell radius — the input itself is borderless; its wrapper draws the rounded fill."),
+    ("card", "tweet-card", "default", "borderTopLeftRadius", "The testimonial card radius (post cards sit flat on hairlines)."),
+    ("item", "faq-item", "default", "borderTopLeftRadius", "The FAQ item radius — flat rows on hairlines."),
     ("button", "getstarted-btn", "default", "borderTopLeftRadius", "The pill button radius — Get Started, Download on iOS, Log In."),
 ]:
     try:
-        v = st(comp, state)[prop]
-        src = f"computed {prop} of {comp} {state} (raw/components-computed.json)"
+        if prop == "ancestor:radius":
+            v = ancestor(comp, state, "radius")
+            src = f"the painted radius of {comp}'s wrapper ancestor {state} (raw/components-computed.json)"
+        else:
+            v = st(comp, state)[prop]
+            src = f"computed {prop} of {comp} {state} (raw/components-computed.json)"
         mnum = re.match(r"[\d.eE+-]+", v)
         if mnum and float(mnum.group(0)) > 9999 and "px" in v:
             v = "calc(infinity * 1px)"
@@ -571,9 +619,11 @@ for key, comp, state, prop, desc in [
 
 sh = SPEC["core"].setdefault("shadow", {})
 try:
-    sh["overlay"] = lit(st("demo-overlay", "default")["boxShadow"], "other",
+    # Named demo-overlay, not overlay: the declared --overlay-*-shadow
+    # variables already landed under core.shadow.overlay.*.
+    sh["demo-overlay"] = lit(st("demo-overlay", "default")["boxShadow"], "other",
         "computed boxShadow of demo-overlay default (raw/components-computed.json)",
-        "The shadow/scrim the video overlay carries.")
+        "The video overlay's own boxShadow — none; it dims the page with an 80% scrim layer instead.")
 except KeyError:
     pass
 
@@ -598,7 +648,9 @@ for name, cname, state, prop, ty_, desc in [
     ("logo-width", "mkt-logo", "default", "w", "dimension", "The header wordmark width."),
     ("faq-toggle", "faq-toggle", "default", "w", "dimension", "The 14px FAQ collapse toggle."),
     ("search-field-width", "sup-search", "default", "w", "dimension", "The support search field width."),
+    ("control-height", "download-cta", "default", "h", "dimension", "The 48px CTA pill height — Download on iOS, Get Started."),
     ("login-field-width", "login-field", "default", "w", "dimension", "The app login field width."),
+    ("login-field-height", "login-field", "default", "h", "dimension", "The app login field height."),
     ("login-card-width", "login-card", "default", "w", "dimension", "The Aave Account login card."),
     ("post-card-width", "blog-card", "default", "w", "dimension", "A post card on /blog."),
     ("mobile-topbar-height", "m-header", "default", "h", "dimension", "The phone top bar height."),

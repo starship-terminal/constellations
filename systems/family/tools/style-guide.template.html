@@ -57,7 +57,7 @@ table.cmp td, table.cmp th { border: 1px solid var(--border-hairline, #eee); pad
 .tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--border-hairline, #eee); }
 .tr .ts { font-family: var(--sg-sans); }
 .tr .tv { font-size: 12px; color: var(--text-ink, #171717); opacity: .65; font-family: var(--sg-mono); }
-.field { display: block; height: var(--component-login-field-width, 52px); border-radius: var(--radius-field, 10px); background: var(--background-field, #f6f7f9); border: 1px solid var(--border-field-border, #e8e8ea); color: var(--text-low, #94979e); padding: 14px 16px; font-size: 16px; }
+.field { display: block; width: var(--component-login-field-width, 380px); height: var(--component-login-field-height, 48px); border-radius: var(--radius-field, 14px); background: var(--background-field, #f6f7f9); border: 1px solid var(--border-field-border, #e8e8ea); color: var(--text-low, #94979e); padding: 14px 16px; font-size: 16px; }
 .faq { border: 1px solid var(--border-hairline, #eee); border-radius: var(--radius-item, 12px); padding: 16px 18px; font-size: 15px; font-weight: 500; color: var(--text-ink, #171717); display: flex; align-items: center; }
 .faq .x { margin-left: auto; color: var(--text-low, #94979e); }
 </style>
@@ -69,7 +69,7 @@ table.cmp td, table.cmp th { border: 1px solid var(--border-hairline, #eee); pad
 
   <h2 class="sh">Family, measured</h2>
   <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the marketing layer declared on family.co (the <code>--body*</code>/<code>--heading</code> inks, the <code>--blue</code>/<code>--orange</code>/<code>--beige</code> brand fills, the <code>--color-*</code> surface roles, all in Display-P3), and the product token layer the app.family.co login declares (the <code>--family-*</code>/<code>--primary-*</code>/<code>--danger-*</code>/<code>--valid-*</code>/<code>--warning-*</code> scales, the <code>--wallet-*</code> palette, the <code>--overlay-*</code>/<code>--input-*</code> roles and the <code>--duration-*</code>/<code>--ease-*</code> motion tokens). The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
-  <p class="note">Read from family.co and app.family.co, signed out, in headless Chromium. The login ("Family Accounts is now Aave Account"), every post-login surface and the iOS app itself are a documented boundary; the login and support-search fields were typed into and cleared, never submitted, and no Watch/demo press ever downloaded or submitted anything. Both surfaces paint a single light theme — no dark theme is declared. The product's faces (the system-sans marketing stack and Inter on the app) are not loaded here: samples fall back to system fonts.</p>
+  <p class="note">Read from family.co and app.family.co, signed out, in headless Chromium. The login ("Family Accounts is now Aave Account"), every post-login surface and the iOS app itself are a documented boundary; the login and support-search fields were typed into and cleared, never submitted, and no Watch/demo press ever downloaded or submitted anything. Both surfaces paint a single light theme signed out; the app's chunks also declare a real <code>[data-theme="dark"]</code> layer that never paints on the public surface — declared evidence, not a verified surface. The product's faces (the system-sans marketing stack and Inter on the app) are not loaded here: samples fall back to system fonts.</p>
 
   <h2 class="sh">The chrome</h2>
   <p class="lead">The public top bar carries the Family wordmark, the Developers/Resources hover dropdowns, X (Twitter), the beige Log In pill and the near-black Get Started pill over a white field. The hero is the display headline over the blue Download on iOS pill.</p>
@@ -97,7 +97,7 @@ table.cmp td, table.cmp th { border: 1px solid var(--border-hairline, #eee); pad
   </div>
 
   <h2 class="sh">Palette</h2>
-  <p class="lead">The declared layer carries the marketing <code>--color-*</code>/<code>--graphic-*</code> roles and the app's <code>--family-*</code>/<code>--wallet-*</code>/<code>--overlay-*</code> scales under <code>color.*</code>; measured roles live in the light set and alias the declared values they match. No dark theme is declared or painted on either surface.</p>
+  <p class="lead">The declared layer carries the marketing <code>--color-*</code>/<code>--graphic-*</code> roles and the app's <code>--family-*</code>/<code>--wallet-*</code>/<code>--overlay-*</code> scales under <code>color.*</code>; measured roles live in the light set and alias the declared values they match. The dark set holds the app's declared <code>[data-theme="dark"]</code> layer — declared, never painted signed out.</p>
   <div id="roles-out"></div>
 
   <h2 class="sh">Spacing and radius</h2>

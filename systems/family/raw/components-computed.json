@@ -3096,8 +3096,9 @@
       "stroke": "none",
       "color": "rgb(38, 38, 38)"
      },
-     "cropError": "locator.screenshot: Timeout 7933.240000000002ms exceeded.\nCall log:\n  - taking element screenshot\n  - waiting for fonts ",
-     "via": "at rest"
+     "crop": "components/crops/mkt-header-default.png",
+     "via": "at rest",
+     "run": "2026-11-14"
     }
    },
    "page": "home",
@@ -3198,7 +3199,8 @@
       "color": "rgb(38, 38, 38)"
      },
      "crop": "components/crops/mkt-logo-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-14"
     }
    },
    "page": "home",
@@ -3307,7 +3309,8 @@
       "color": "rgb(40, 38, 36)"
      },
      "crop": "components/crops/nav-developers-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-14"
     },
     "hover": {
      "tag": "a",
@@ -3405,7 +3408,8 @@
       "color": "color(display-p3 0.203922 0.203922 0.2)"
      },
      "crop": "components/crops/nav-developers-hover.png",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "run": "2026-11-14"
     },
     "focus-visible": {
      "tag": "a",
@@ -3504,7 +3508,8 @@
       "color": "rgb(40, 38, 36)"
      },
      "crop": "components/crops/nav-developers-focus-visible.png",
-     "via": "Shift+Tab, Tab"
+     "via": "Shift+Tab, Tab",
+     "run": "2026-11-14"
     },
     "pressed": {
      "tag": "a",
@@ -3602,7 +3607,8 @@
       "color": "rgb(40, 38, 36)"
      },
      "crop": "components/crops/nav-developers-pressed.png",
-     "via": "CDP forcePseudoState :active:hover"
+     "via": "CDP forcePseudoState :active:hover",
+     "run": "2026-11-14"
     }
    },
    "page": "home",
@@ -3754,7 +3760,8 @@
       "color": "color(display-p3 0.203922 0.203922 0.2)"
      },
      "crop": "components/crops/nav-dropdown-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-14"
     }
    },
    "page": "home",
@@ -3863,7 +3870,8 @@
       "color": "rgb(40, 38, 36)"
      },
      "crop": "components/crops/nav-resources-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-14"
     },
     "hover": {
      "tag": "a",
@@ -3961,7 +3969,8 @@
       "color": "color(display-p3 0.203922 0.203922 0.2)"
      },
      "crop": "components/crops/nav-resources-hover.png",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "run": "2026-11-14"
     },
     "focus-visible": {
      "tag": "a",
@@ -4060,7 +4069,8 @@
       "color": "rgb(40, 38, 36)"
      },
      "crop": "components/crops/nav-resources-focus-visible.png",
-     "via": "Shift+Tab, Tab"
+     "via": "Shift+Tab, Tab",
+     "run": "2026-11-14"
     },
     "pressed": {
      "tag": "a",
@@ -4158,7 +4168,8 @@
       "color": "rgb(40, 38, 36)"
      },
      "crop": "components/crops/nav-resources-pressed.png",
-     "via": "CDP forcePseudoState :active:hover"
+     "via": "CDP forcePseudoState :active:hover",
+     "run": "2026-11-14"
     }
    },
    "page": "home",
@@ -4260,7 +4271,8 @@
       }
      ],
      "crop": "components/crops/nav-twitter-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-14"
     },
     "hover": {
      "tag": "a",
@@ -4352,7 +4364,7 @@
      ],
      "crop": "components/crops/nav-twitter-hover.png",
      "via": "mouse hover",
-     "rerunError": "locator.hover: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator('header a').filter({ hasText: /X \\(Twitter\\)/ }).and(locator(':visible')).first().and(locator(':visible')).first().and(locator"
+     "run": "2026-11-14"
     },
     "focus-visible": {
      "tag": "a",
@@ -4444,7 +4456,8 @@
       }
      ],
      "crop": "components/crops/nav-twitter-focus-visible.png",
-     "via": "Shift+Tab, Tab"
+     "via": "Shift+Tab, Tab",
+     "run": "2026-11-14"
     },
     "pressed": {
      "tag": "a",
@@ -4535,7 +4548,8 @@
       }
      ],
      "crop": "components/crops/nav-twitter-pressed.png",
-     "via": "CDP forcePseudoState :active:hover"
+     "via": "CDP forcePseudoState :active:hover",
+     "run": "2026-11-14"
     }
    },
    "page": "home",
@@ -4649,7 +4663,8 @@
       "textTransform": "none"
      },
      "crop": "components/crops/login-btn-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-14"
     },
     "hover": {
      "tag": "a",
@@ -4752,7 +4767,8 @@
       "textTransform": "none"
      },
      "crop": "components/crops/login-btn-hover.png",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "run": "2026-11-14"
     },
     "focus-visible": {
      "tag": "a",
@@ -4855,7 +4871,8 @@
       "textTransform": "none"
      },
      "crop": "components/crops/login-btn-focus-visible.png",
-     "via": "Shift+Tab, Tab"
+     "via": "Shift+Tab, Tab",
+     "run": "2026-11-14"
     },
     "pressed": {
      "tag": "a",
@@ -4958,7 +4975,8 @@
       "textTransform": "none"
      },
      "crop": "components/crops/login-btn-pressed.png",
-     "via": "CDP forcePseudoState :active:hover"
+     "via": "CDP forcePseudoState :active:hover",
+     "run": "2026-11-14"
     }
    },
    "page": "home",
@@ -5060,7 +5078,8 @@
       }
      ],
      "crop": "components/crops/getstarted-btn-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-14"
     },
     "hover": {
      "tag": "button",
@@ -5151,7 +5170,8 @@
       }
      ],
      "crop": "components/crops/getstarted-btn-hover.png",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "run": "2026-11-14"
     },
     "focus-visible": {
      "tag": "button",
@@ -5242,7 +5262,8 @@
       }
      ],
      "crop": "components/crops/getstarted-btn-focus-visible.png",
-     "via": "Shift+Tab, Tab"
+     "via": "Shift+Tab, Tab",
+     "run": "2026-11-14"
     },
     "pressed": {
      "tag": "button",
@@ -5333,7 +5354,8 @@
       }
      ],
      "crop": "components/crops/getstarted-btn-pressed.png",
-     "via": "CDP forcePseudoState :active:hover"
+     "via": "CDP forcePseudoState :active:hover",
+     "run": "2026-11-14"
     }
    },
    "page": "home",
@@ -5438,8 +5460,9 @@
       "textDecorationLine": "none",
       "textTransform": "none"
      },
-     "cropError": "page.screenshot: Timeout 8000ms exceeded.\nCall log:\n  - taking page screenshot\n  - waiting for fonts to load...\n  - font",
-     "via": "at rest"
+     "crop": "components/crops/hero-h1-default.png",
+     "via": "at rest",
+     "run": "2026-11-14"
     }
    },
    "page": "home",
@@ -5533,7 +5556,8 @@
       "top": "auto"
      },
      "crop": "components/crops/hero-sub-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-14"
     }
    },
    "page": "home",
@@ -5642,7 +5666,8 @@
       "color": "rgb(255, 255, 255)"
      },
      "crop": "components/crops/download-cta-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-14"
     },
     "hover": {
      "tag": "a",
@@ -5740,7 +5765,8 @@
       "color": "rgb(255, 255, 255)"
      },
      "crop": "components/crops/download-cta-hover.png",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "run": "2026-11-14"
     },
     "focus-visible": {
      "tag": "a",
@@ -5838,7 +5864,8 @@
       "color": "rgb(255, 255, 255)"
      },
      "crop": "components/crops/download-cta-focus-visible.png",
-     "via": "Shift+Tab, Tab"
+     "via": "Shift+Tab, Tab",
+     "run": "2026-11-14"
     },
     "pressed": {
      "tag": "a",
@@ -5936,7 +5963,8 @@
       "color": "rgb(255, 255, 255)"
      },
      "crop": "components/crops/download-cta-pressed.png",
-     "via": "CDP forcePseudoState :active:hover"
+     "via": "CDP forcePseudoState :active:hover",
+     "run": "2026-11-14"
     }
    },
    "page": "home",
@@ -6045,7 +6073,8 @@
       "color": "rgb(18, 18, 18)"
      },
      "crop": "components/crops/watch-video-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-14"
     },
     "hover": {
      "tag": "a",
@@ -6143,7 +6172,8 @@
       "color": "rgb(18, 18, 18)"
      },
      "crop": "components/crops/watch-video-hover.png",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "run": "2026-11-14"
     },
     "focus-visible": {
      "tag": "a",
@@ -6241,7 +6271,8 @@
       "color": "rgb(18, 18, 18)"
      },
      "crop": "components/crops/watch-video-focus-visible.png",
-     "via": "focus failed"
+     "via": "focus failed",
+     "run": "2026-11-14"
     },
     "pressed": {
      "tag": "a",
@@ -6339,7 +6370,8 @@
       "color": "rgb(18, 18, 18)"
      },
      "crop": "components/crops/watch-video-pressed.png",
-     "via": "CDP forcePseudoState :active:hover"
+     "via": "CDP forcePseudoState :active:hover",
+     "run": "2026-11-14"
     }
    },
    "page": "home",
@@ -6432,8 +6464,9 @@
       "zIndex": "auto",
       "top": "auto"
      },
-     "cropError": "page.screenshot: Timeout 8000ms exceeded.\nCall log:\n  - taking page screenshot\n  - waiting for fonts to load...\n  - font",
-     "via": "at rest"
+     "crop": "components/crops/feature-h2-default.png",
+     "via": "at rest",
+     "run": "2026-11-14"
     }
    },
    "page": "home",
@@ -6527,7 +6560,8 @@
       "top": "auto"
      },
      "crop": "components/crops/feature-label-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-14"
     }
    },
    "page": "home",
@@ -6621,7 +6655,8 @@
       "top": "auto"
      },
      "crop": "components/crops/feature-body-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-14"
     }
    },
    "page": "home",
@@ -6755,7 +6790,8 @@
       "color": "color(display-p3 0.286275 0.266667 0.25098)"
      },
      "crop": "components/crops/demo-btn-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-14"
     },
     "hover": {
      "tag": "button",
@@ -6878,7 +6914,8 @@
       "color": "color(display-p3 0.286275 0.266667 0.25098)"
      },
      "crop": "components/crops/demo-btn-hover.png",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "run": "2026-11-14"
     },
     "focus-visible": {
      "tag": "button",
@@ -7001,7 +7038,8 @@
       "color": "color(display-p3 0.286275 0.266667 0.25098)"
      },
      "crop": "components/crops/demo-btn-focus-visible.png",
-     "via": "Shift+Tab, Tab"
+     "via": "Shift+Tab, Tab",
+     "run": "2026-11-14"
     },
     "pressed": {
      "tag": "button",
@@ -7123,8 +7161,9 @@
       "stroke": "none",
       "color": "color(display-p3 0.286275 0.266667 0.25098)"
      },
-     "cropError": "page.screenshot: Timeout 8000ms exceeded.\nCall log:\n  - taking page screenshot\n  - waiting for fonts to load...\n  - font",
-     "via": "CDP forcePseudoState :active:hover"
+     "crop": "components/crops/demo-btn-pressed.png",
+     "via": "CDP forcePseudoState :active:hover",
+     "run": "2026-11-14"
     }
    },
    "page": "home",
@@ -7225,13 +7264,13 @@
       },
       {
        "node": "div.WatchDemo__VideoContainer-sc-1kj9jjo-5.cgVGwv",
-       "size": "845.9x475.8",
+       "size": "860.0x483.8",
        "bg": "rgb(204, 204, 204)",
        "radius": "12px"
       },
       {
        "node": "div.WatchDemo__IconContainer-sc-1kj9jjo-8.fnJard",
-       "size": "845.9x475.8",
+       "size": "860.0x483.8",
        "bg": "rgba(0, 0, 0, 0.1)"
       }
      ],
@@ -7248,14 +7287,15 @@
       "textTransform": "none"
      },
      "icon": {
-      "w": 13.77,
-      "h": 13.77,
+      "w": 14,
+      "h": 14,
       "fill": "none",
       "stroke": "none",
       "color": "rgb(0, 0, 0)"
      },
-     "cropError": "locator.screenshot: Timeout 7917.825000000012ms exceeded.\nCall log:\n  - taking element screenshot\n  - waiting for fonts ",
-     "via": "at rest"
+     "crop": "components/crops/demo-overlay-default.png",
+     "via": "at rest",
+     "run": "2026-11-14"
     }
    },
    "page": "home",
@@ -7349,7 +7389,8 @@
       "top": "auto"
      },
      "crop": "components/crops/feature-h3-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-14"
     }
    },
    "page": "home",
@@ -7454,8 +7495,9 @@
       "textDecorationLine": "none",
       "textTransform": "none"
      },
-     "cropError": "page.screenshot: Timeout 8000ms exceeded.\nCall log:\n  - taking page screenshot\n  - waiting for fonts to load...\n  - font",
-     "via": "at rest"
+     "crop": "components/crops/section-h3-default.png",
+     "via": "at rest",
+     "run": "2026-11-14"
     }
    },
    "page": "home",
@@ -7586,7 +7628,8 @@
       "textTransform": "none"
      },
      "crop": "components/crops/faq-item-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-14"
     }
    },
    "page": "home",
@@ -7694,7 +7737,8 @@
       }
      ],
      "crop": "components/crops/faq-toggle-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-14"
     },
     "hover": {
      "tag": "button",
@@ -7791,7 +7835,8 @@
       }
      ],
      "crop": "components/crops/faq-toggle-hover.png",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "run": "2026-11-14"
     },
     "focus-visible": {
      "tag": "button",
@@ -7894,7 +7939,8 @@
       }
      ],
      "crop": "components/crops/faq-toggle-focus-visible.png",
-     "via": "Shift+Tab, Tab"
+     "via": "Shift+Tab, Tab",
+     "run": "2026-11-14"
     },
     "pressed": {
      "tag": "button",
@@ -7991,7 +8037,8 @@
       }
      ],
      "crop": "components/crops/faq-toggle-pressed.png",
-     "via": "CDP forcePseudoState :active:hover"
+     "via": "CDP forcePseudoState :active:hover",
+     "run": "2026-11-14"
     }
    },
    "page": "home",
@@ -8009,7 +8056,7 @@
      "classes": "Testimonials__Panel-sc-1rcs3hw-3 gqyXuo",
      "text": "floguo @floguo One of the best mobile apps *ever* is going to drop soon, and it'",
      "rect": {
-      "x": -335.9,
+      "x": -3270.4,
       "y": 412.5,
       "w": 540,
       "h": 204
@@ -8120,7 +8167,8 @@
       "color": "color(display-p3 0.203922 0.203922 0.2)"
      },
      "crop": "components/crops/tweet-card-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-14"
     },
     "hover": {
      "tag": "div",
@@ -8238,14 +8286,15 @@
       "color": "color(display-p3 0.203922 0.203922 0.2)"
      },
      "crop": "components/crops/tweet-card-hover.png",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "rerunError": "locator.hover: Element is outside of the viewport\nCall log:\n  - waiting for locator('div[class*=\"Testimonials__Panel\"]').and(locator(':visible')).first().and(locator(':visible')).first().and(locator('"
     },
     "focus-visible": {
      "tag": "div",
      "classes": "Testimonials__Panel-sc-1rcs3hw-3 gqyXuo",
      "text": "floguo @floguo One of the best mobile apps *ever* is going to drop soon, and it'",
      "rect": {
-      "x": -335.9,
+      "x": -3270.4,
       "y": -201.5,
       "w": 540,
       "h": 204
@@ -8356,14 +8405,15 @@
       "color": "color(display-p3 0.203922 0.203922 0.2)"
      },
      "crop": "components/crops/tweet-card-focus-visible.png",
-     "via": "focus failed"
+     "via": "focus failed",
+     "run": "2026-11-14"
     },
     "pressed": {
      "tag": "div",
      "classes": "Testimonials__Panel-sc-1rcs3hw-3 gqyXuo",
      "text": "floguo @floguo One of the best mobile apps *ever* is going to drop soon, and it'",
      "rect": {
-      "x": -335.9,
+      "x": -3270.4,
       "y": 412.5,
       "w": 540,
       "h": 204
@@ -8474,7 +8524,8 @@
       "color": "color(display-p3 0.203922 0.203922 0.2)"
      },
      "crop": "components/crops/tweet-card-pressed.png",
-     "via": "CDP forcePseudoState :active:hover"
+     "via": "CDP forcePseudoState :active:hover",
+     "run": "2026-11-14"
     }
    },
    "page": "home",
@@ -8483,7 +8534,8 @@
    "title": "Tweet card",
    "group": "Home",
    "desc": "A \"Friends of Family\" testimonial card linking to a tweet; measured, never followed.",
-   "selector": "Testimonials__Panel"
+   "selector": "Testimonials__Panel",
+   "recaptureMissed": "2026-11-14"
   },
   "blog-card": {
    "states": {
@@ -8593,7 +8645,8 @@
       "textTransform": "none"
      },
      "crop": "components/crops/blog-card-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-14"
     },
     "hover": {
      "tag": "a",
@@ -8701,7 +8754,8 @@
       "textTransform": "none"
      },
      "crop": "components/crops/blog-card-hover.png",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "run": "2026-11-14"
     },
     "focus-visible": {
      "tag": "a",
@@ -8811,7 +8865,8 @@
       "textTransform": "none"
      },
      "crop": "components/crops/blog-card-focus-visible.png",
-     "via": "Shift+Tab, Tab"
+     "via": "Shift+Tab, Tab",
+     "run": "2026-11-14"
     },
     "pressed": {
      "tag": "a",
@@ -8919,7 +8974,8 @@
       "textTransform": "none"
      },
      "crop": "components/crops/blog-card-pressed.png",
-     "via": "CDP forcePseudoState :active:hover"
+     "via": "CDP forcePseudoState :active:hover",
+     "run": "2026-11-14"
     }
    },
    "page": "blog",
@@ -9032,7 +9088,8 @@
       "color": "color(display-p3 0.517647 0.509804 0.505882)"
      },
      "crop": "components/crops/site-footer-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-14"
     }
    },
    "page": "home",
@@ -9138,7 +9195,8 @@
       "textTransform": "none"
      },
      "crop": "components/crops/blog-h1-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-14"
     }
    },
    "page": "blog",
@@ -9240,7 +9298,8 @@
       }
      ],
      "crop": "components/crops/blog-filter-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-14"
     },
     "hover": {
      "tag": "button",
@@ -9331,7 +9390,8 @@
       }
      ],
      "crop": "components/crops/blog-filter-hover.png",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "run": "2026-11-14"
     },
     "focus-visible": {
      "tag": "button",
@@ -9423,7 +9483,8 @@
       }
      ],
      "crop": "components/crops/blog-filter-focus-visible.png",
-     "via": "Shift+Tab, Tab"
+     "via": "Shift+Tab, Tab",
+     "run": "2026-11-14"
     },
     "pressed": {
      "tag": "button",
@@ -9514,7 +9575,8 @@
       }
      ],
      "crop": "components/crops/blog-filter-pressed.png",
-     "via": "CDP forcePseudoState :active:hover"
+     "via": "CDP forcePseudoState :active:hover",
+     "run": "2026-11-14"
     },
     "opened": {
      "tag": "button",
@@ -9605,7 +9667,8 @@
       }
      ],
      "crop": "components/crops/blog-filter-opened.png",
-     "via": "own toggle"
+     "via": "own toggle",
+     "run": "2026-11-14"
     }
    },
    "page": "blog",
@@ -9707,7 +9770,8 @@
       }
      ],
      "crop": "components/crops/blog-date-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-14"
     }
    },
    "page": "blog",
@@ -10495,7 +10559,8 @@
       "textTransform": "none"
      },
      "crop": "components/crops/cl-h1-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-14"
     }
    },
    "page": "changelog",
@@ -10597,7 +10662,8 @@
       }
      ],
      "crop": "components/crops/cl-filter-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-14"
     },
     "hover": {
      "tag": "button",
@@ -10605,7 +10671,7 @@
      "text": "All",
      "rect": {
       "x": 1077,
-      "y": 128,
+      "y": 183,
       "w": 43,
       "h": 33.38
      },
@@ -10688,7 +10754,8 @@
       }
      ],
      "crop": "components/crops/cl-filter-hover.png",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "run": "2026-11-14"
     },
     "focus-visible": {
      "tag": "button",
@@ -10780,7 +10847,8 @@
       }
      ],
      "crop": "components/crops/cl-filter-focus-visible.png",
-     "via": "Shift+Tab, Tab"
+     "via": "Shift+Tab, Tab",
+     "run": "2026-11-14"
     },
     "pressed": {
      "tag": "button",
@@ -10871,7 +10939,8 @@
       }
      ],
      "crop": "components/crops/cl-filter-pressed.png",
-     "via": "CDP forcePseudoState :active:hover"
+     "via": "CDP forcePseudoState :active:hover",
+     "run": "2026-11-14"
     }
    },
    "page": "changelog",
@@ -10965,7 +11034,8 @@
       "top": "auto"
      },
      "crop": "components/crops/cl-entry-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-14"
     }
    },
    "page": "changelog",
@@ -10979,27 +11049,27 @@
   "cl-entry-body": {
    "states": {
     "default": {
-     "tag": "li",
-     "classes": "",
-     "text": "Family Dedicated self-custody account.",
+     "tag": "p",
+     "classes": "Typography__Paragraph-sc-p3xo6h-7 dwgfHL",
+     "text": "This update includes updates to the peer dependencies and improvements to the Fa",
      "rect": {
-      "x": 322.2,
-      "y": 133.7,
-      "w": 295.68,
-      "h": 60.48
+      "x": 500,
+      "y": 472,
+      "w": 732,
+      "h": 84
      },
      "style": {
       "display": "block",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "308px",
-      "height": "63px",
-      "minWidth": "auto",
+      "width": "732px",
+      "height": "84px",
+      "minWidth": "0px",
       "maxWidth": "none",
-      "minHeight": "auto",
+      "minHeight": "0px",
       "paddingTop": "0px",
       "paddingRight": "0px",
-      "paddingBottom": "0px",
+      "paddingBottom": "32px",
       "paddingLeft": "0px",
       "marginTop": "0px",
       "marginRight": "0px",
@@ -11037,10 +11107,10 @@
       "outlineColor": "rgb(71, 70, 69)",
       "outlineOffset": "0px",
       "fontFamily": "Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, \"Apple Color Emoji\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
-      "fontSize": "16px",
+      "fontSize": "17px",
       "fontWeight": "400",
-      "lineHeight": "normal",
-      "letterSpacing": "normal",
+      "lineHeight": "26px",
+      "letterSpacing": "-0.22px",
       "textTransform": "none",
       "color": "rgb(71, 70, 69)",
       "textDecorationLine": "none",
@@ -11058,45 +11128,9 @@
       "zIndex": "auto",
       "top": "auto"
      },
-     "paint": [
-      {
-       "node": "div.Nav__IconContainer-sc-141m4ur-2.jhkKsN",
-       "size": "34.6x34.6",
-       "bg": "rgb(255, 255, 255)",
-       "shadow": "rgba(0, 0, 0, 0.04) 0px 0px 0px 1px",
-       "radius": "9.6px"
-      }
-     ],
-     "ancestors": [
-      {
-       "up": 3,
-       "node": "div.Nav__DropdownContainer-sc-141m4ur-3.jmGeWm",
-       "shadow": "rgba(0, 0, 0, 0.1) 0px 3px 16px 0px",
-       "radius": "8px",
-       "bg": "rgb(255, 255, 255)"
-      }
-     ],
-     "textStyle": {
-      "node": "h5.Typography__Paragraph-sc-p3xo6h-7.hAxgce",
-      "text": "Family",
-      "fontFamily": "Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, \"Apple Color Emoji\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
-      "fontSize": "15px",
-      "lineHeight": "22px",
-      "fontWeight": "500",
-      "letterSpacing": "-0.13px",
-      "color": "rgb(18, 18, 18)",
-      "textDecorationLine": "none",
-      "textTransform": "none"
-     },
-     "icon": {
-      "w": 23.04,
-      "h": 23.04,
-      "fill": "none",
-      "stroke": "none",
-      "color": "color(display-p3 0.203922 0.203922 0.2)"
-     },
      "crop": "components/crops/cl-entry-body-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-14"
     }
    },
    "page": "changelog",
@@ -11105,7 +11139,7 @@
    "title": "Entry body",
    "group": "Changelog",
    "desc": "Changelog entry copy.",
-   "selector": "changelog body"
+   "selector": "changelog entry paragraph"
   },
   "sup-h1": {
    "states": {
@@ -12368,7 +12402,8 @@
       "top": "auto"
      },
      "crop": "components/crops/art-h1-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-14"
     }
    },
    "page": "supportart",
@@ -12462,7 +12497,8 @@
       "top": "auto"
      },
      "crop": "components/crops/art-h2-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-14"
     }
    },
    "page": "supportart",
@@ -12476,27 +12512,27 @@
   "art-body": {
    "states": {
     "default": {
-     "tag": "li",
-     "classes": "",
-     "text": "Mission Control Mission Control Create a new wallet Create a new wallet group Im",
+     "tag": "p",
+     "classes": "Typography__Paragraph-sc-p3xo6h-7 dwgfHL",
+     "text": "If you have a MetaMask wallet and want to switch to Family, you can easily impor",
      "rect": {
-      "x": 208,
-      "y": 274.8,
-      "w": 240,
-      "h": 478.75
+      "x": 528,
+      "y": 352,
+      "w": 704,
+      "h": 136
      },
      "style": {
       "display": "block",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "240px",
-      "height": "478.75px",
+      "width": "704px",
+      "height": "136px",
       "minWidth": "0px",
       "maxWidth": "none",
       "minHeight": "0px",
       "paddingTop": "0px",
       "paddingRight": "0px",
-      "paddingBottom": "0px",
+      "paddingBottom": "32px",
       "paddingLeft": "0px",
       "marginTop": "0px",
       "marginRight": "0px",
@@ -12534,10 +12570,10 @@
       "outlineColor": "rgb(71, 70, 69)",
       "outlineOffset": "0px",
       "fontFamily": "Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, \"Apple Color Emoji\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
-      "fontSize": "16px",
+      "fontSize": "17px",
       "fontWeight": "400",
-      "lineHeight": "normal",
-      "letterSpacing": "normal",
+      "lineHeight": "26px",
+      "letterSpacing": "-0.22px",
       "textTransform": "none",
       "color": "rgb(71, 70, 69)",
       "textDecorationLine": "none",
@@ -12555,27 +12591,9 @@
       "zIndex": "auto",
       "top": "auto"
      },
-     "textStyle": {
-      "node": "span.sc-aXZVg.gJAfGz",
-      "text": "Mission Control",
-      "fontFamily": "Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, \"Apple Color Emoji\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
-      "fontSize": "14px",
-      "lineHeight": "22px",
-      "fontWeight": "400",
-      "letterSpacing": "-0.09008px",
-      "color": "rgb(132, 130, 129)",
-      "textDecorationLine": "none",
-      "textTransform": "none"
-     },
-     "icon": {
-      "w": 10,
-      "h": 6,
-      "fill": "none",
-      "stroke": "none",
-      "color": "rgb(132, 130, 129)"
-     },
      "crop": "components/crops/art-body-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-14"
     }
    },
    "page": "supportart",
@@ -12681,7 +12699,8 @@
       "textTransform": "none"
      },
      "crop": "components/crops/art-side-link-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-14"
     },
     "hover": {
      "tag": "a",
@@ -12776,7 +12795,8 @@
       "textTransform": "none"
      },
      "crop": "components/crops/art-side-link-hover.png",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "run": "2026-11-14"
     },
     "focus-visible": {
      "tag": "a",
@@ -12871,7 +12891,8 @@
       "textTransform": "none"
      },
      "crop": "components/crops/art-side-link-focus-visible.png",
-     "via": "Shift+Tab, Tab"
+     "via": "Shift+Tab, Tab",
+     "run": "2026-11-14"
     },
     "pressed": {
      "tag": "a",
@@ -12966,7 +12987,8 @@
       "textTransform": "none"
      },
      "crop": "components/crops/art-side-link-pressed.png",
-     "via": "CDP forcePseudoState :active:hover"
+     "via": "CDP forcePseudoState :active:hover",
+     "run": "2026-11-14"
     }
    },
    "page": "supportart",
@@ -14617,23 +14639,23 @@
    "states": {
     "default": {
      "tag": "div",
-     "classes": "styles-module-scss-module__EkH3Mq__inputWrapper",
-     "text": "",
+     "classes": "styles-module-scss-module__849J2a__content",
+     "text": "Welcome to Aave Account Log in or sign up to get started. We’ll create an accoun",
      "rect": {
       "x": 530,
-      "y": 436,
+      "y": 284,
       "w": 380,
-      "h": 48
+      "h": 284
      },
      "style": {
       "display": "flex",
-      "position": "relative",
+      "position": "static",
       "boxSizing": "border-box",
       "width": "380px",
-      "height": "48px",
-      "minWidth": "auto",
+      "height": "284px",
+      "minWidth": "0px",
       "maxWidth": "none",
-      "minHeight": "auto",
+      "minHeight": "0px",
       "paddingTop": "0px",
       "paddingRight": "0px",
       "paddingBottom": "0px",
@@ -14642,36 +14664,36 @@
       "marginRight": "0px",
       "marginBottom": "0px",
       "marginLeft": "0px",
-      "gap": "normal",
-      "rowGap": "normal",
-      "columnGap": "normal",
-      "flexDirection": "row",
+      "gap": "24px",
+      "rowGap": "24px",
+      "columnGap": "24px",
+      "flexDirection": "column",
       "alignItems": "normal",
-      "justifyContent": "normal",
+      "justifyContent": "center",
       "gridTemplateColumns": "none",
       "borderTopWidth": "0px",
       "borderTopStyle": "none",
-      "borderTopColor": "rgb(23, 23, 23)",
+      "borderTopColor": "rgb(34, 34, 34)",
       "borderRightWidth": "0px",
       "borderRightStyle": "none",
-      "borderRightColor": "rgb(23, 23, 23)",
+      "borderRightColor": "rgb(34, 34, 34)",
       "borderBottomWidth": "0px",
       "borderBottomStyle": "none",
-      "borderBottomColor": "rgb(23, 23, 23)",
+      "borderBottomColor": "rgb(34, 34, 34)",
       "borderLeftWidth": "0px",
       "borderLeftStyle": "none",
-      "borderLeftColor": "rgb(23, 23, 23)",
-      "borderTopLeftRadius": "14px",
-      "borderTopRightRadius": "14px",
-      "borderBottomRightRadius": "14px",
-      "borderBottomLeftRadius": "14px",
+      "borderLeftColor": "rgb(34, 34, 34)",
+      "borderTopLeftRadius": "0px",
+      "borderTopRightRadius": "0px",
+      "borderBottomRightRadius": "0px",
+      "borderBottomLeftRadius": "0px",
       "backgroundColor": "rgba(0, 0, 0, 0)",
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
       "outlineWidth": "0px",
       "outlineStyle": "none",
-      "outlineColor": "rgb(23, 23, 23)",
+      "outlineColor": "rgb(34, 34, 34)",
       "outlineOffset": "0px",
       "fontFamily": "inter, \"inter Fallback\"",
       "fontSize": "16px",
@@ -14679,9 +14701,9 @@
       "lineHeight": "normal",
       "letterSpacing": "normal",
       "textTransform": "none",
-      "color": "rgb(23, 23, 23)",
+      "color": "rgb(34, 34, 34)",
       "textDecorationLine": "none",
-      "textDecorationColor": "rgb(23, 23, 23)",
+      "textDecorationColor": "rgb(34, 34, 34)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
       "transitionProperty": "all",
@@ -14693,19 +14715,39 @@
       "transform": "none",
       "overflow": "visible",
       "zIndex": "auto",
-      "top": "0px"
+      "top": "auto"
      },
-     "ancestors": [
+     "paint": [
       {
-       "up": 1,
        "node": "div.styles-module-scss-module__EkH3Mq__inputContainer",
+       "size": "380.0x48.0",
+       "bg": "rgb(246, 247, 249)",
        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 1px inset",
-       "radius": "14px",
-       "bg": "rgb(246, 247, 249)"
+       "radius": "14px"
       }
      ],
+     "textStyle": {
+      "node": "h1",
+      "text": "Welcome to Aave Account",
+      "fontFamily": "inter, \"inter Fallback\"",
+      "fontSize": "18px",
+      "lineHeight": "19px",
+      "fontWeight": "600",
+      "letterSpacing": "-0.13px",
+      "color": "rgb(34, 34, 34)",
+      "textDecorationLine": "none",
+      "textTransform": "none"
+     },
+     "icon": {
+      "w": 58,
+      "h": 30,
+      "fill": "none",
+      "stroke": "none",
+      "color": "rgb(34, 34, 34)"
+     },
      "crop": "components/crops/login-card-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-14"
     }
    },
    "page": "login",
@@ -14713,8 +14755,8 @@
    "url": "https://app.family.co/",
    "title": "Login card",
    "group": "App login (app.family.co)",
-   "desc": "The Aave Account login card on app.family.co; at rest, never submitted.",
-   "selector": "login card"
+   "desc": "The Aave Account login card on app.family.co — the container holding the welcome text and the field; at rest, never submitted.",
+   "selector": "login card container"
   },
   "login-h1": {
    "states": {
@@ -14798,8 +14840,9 @@
       "zIndex": "auto",
       "top": "auto"
      },
-     "cropError": "page.screenshot: Timeout 8000ms exceeded.\nCall log:\n  - taking page screenshot\n  - waiting for fonts to load...\n  - font",
-     "via": "at rest"
+     "crop": "components/crops/login-h1-default.png",
+     "via": "at rest",
+     "run": "2026-11-14"
     }
    },
    "page": "login",
@@ -14893,7 +14936,8 @@
       "top": "auto"
      },
      "crop": "components/crops/login-sub-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-14"
     }
    },
    "page": "login",
@@ -15001,7 +15045,8 @@
       "fontSize": "16px"
      },
      "crop": "components/crops/login-field-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-14"
     },
     "focused": {
      "tag": "input",
@@ -15098,7 +15143,8 @@
       "fontSize": "16px"
      },
      "crop": "components/crops/login-field-focused.png",
-     "via": "clicked into the field"
+     "via": "clicked into the field",
+     "run": "2026-11-14"
     },
     "filled": {
      "tag": "input",
@@ -15195,7 +15241,8 @@
       "fontSize": "16px"
      },
      "crop": "components/crops/login-field-filled.png",
-     "via": "typed \"name@example.com\", then deleted; nothing sent"
+     "via": "typed \"name@example.com\", then deleted; nothing sent",
+     "run": "2026-11-14"
     }
    },
    "page": "login",
@@ -15324,7 +15371,8 @@
       "color": "color(display-p3 0.0706 0.0706 0.0706)"
      },
      "crop": "components/crops/login-learn-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-14"
     },
     "hover": {
      "tag": "a",
@@ -15442,7 +15490,8 @@
       "color": "color(display-p3 0.0706 0.0706 0.0706)"
      },
      "crop": "components/crops/login-learn-hover.png",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "run": "2026-11-14"
     },
     "focus-visible": {
      "tag": "a",
@@ -15561,7 +15610,8 @@
       "color": "color(display-p3 0.0706 0.0706 0.0706)"
      },
      "crop": "components/crops/login-learn-focus-visible.png",
-     "via": "Shift+Tab, Tab"
+     "via": "Shift+Tab, Tab",
+     "run": "2026-11-14"
     },
     "pressed": {
      "tag": "a",
@@ -15679,7 +15729,8 @@
       "color": "color(display-p3 0.0706 0.0706 0.0706)"
      },
      "crop": "components/crops/login-learn-pressed.png",
-     "via": "CDP forcePseudoState :active:hover"
+     "via": "CDP forcePseudoState :active:hover",
+     "run": "2026-11-14"
     }
    },
    "page": "login",
@@ -15773,7 +15824,8 @@
       "top": "auto"
      },
      "crop": "components/crops/login-footer-link-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-14"
     },
     "hover": {
      "tag": "a",
@@ -15856,7 +15908,8 @@
       "top": "auto"
      },
      "crop": "components/crops/login-footer-link-hover.png",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "run": "2026-11-14"
     },
     "focus-visible": {
      "tag": "a",
@@ -15946,7 +15999,8 @@
       }
      ],
      "crop": "components/crops/login-footer-link-focus-visible.png",
-     "via": "Shift+Tab, Tab"
+     "via": "Shift+Tab, Tab",
+     "run": "2026-11-14"
     },
     "pressed": {
      "tag": "a",
@@ -16029,7 +16083,8 @@
       "top": "auto"
      },
      "crop": "components/crops/login-footer-link-pressed.png",
-     "via": "CDP forcePseudoState :active:hover"
+     "via": "CDP forcePseudoState :active:hover",
+     "run": "2026-11-14"
     }
    },
    "page": "login",

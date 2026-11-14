@@ -33,7 +33,7 @@ Page: home. Selector: `header`. States: default.
 | Painted layers | a 119.0x32.9 bg #ffffff r 6px; div.Nav__DropdownContainer-sc-141m4ur-3.jmGeWm 303.4x129.6 bg #ffffff r 8px shadow #000000 @ 0.1 0px 3px 16px 0px; div.Nav__IconContainer-sc-141m4ur-2.jhkKsN 34.6x34.6 bg #ffffff r 9.6px shadow #000000 @ 0.04 0px 0px 0px 1px; div.Nav__IconContainer-sc-141m4ur-2.jhkKsN 34.6x34.6 bg #ffffff r 9.6px shadow #000000 @ 0.04 0px 0px 0px 1px; a 113.0x32.9 bg #ffffff r 6px; div.Nav__DropdownContainer-sc-141m4ur-3.jmGeWm 157.4x161.3 bg #ffffff r 8px shadow #000000 @ 0.1 0px 3px 16px 0px |
 | How | at rest |
 
-Crops: none.
+Crops: `mkt-header-default.png`.
 
 #### mkt-logo
 
@@ -241,7 +241,7 @@ Page: home. Selector: `h1`. States: default.
 | Transition | none |
 | How | at rest |
 
-Crops: none.
+Crops: `hero-h1-default.png`.
 
 #### hero-sub
 
@@ -341,7 +341,7 @@ Page: home. Selector: `h1`. States: default.
 | Transition | none |
 | How | at rest |
 
-Crops: none.
+Crops: `feature-h2-default.png`.
 
 #### feature-label
 
@@ -415,7 +415,7 @@ Page: home. Selector: `Watch the demo`. States: default, hover, focus-visible, p
 | Painted layers | button.WatchDemo__Container-sc-1kj9jjo-0.dIaiHi 314.7x68.0 r 12px shadow color(display-p3 0.94902 0.941176 0.929412) 0px 0px 0px 0px inset; div.WatchDemo__ImageContainer-sc-1kj9jjo-1.dKfigb 78.0x44.0 bg color(display-p3 0.94902 0.941176 0.929412) r 4px; div::before.sc-gsFSXq.kakWLo 78pxx43.875px bg #fbfaf9 image linear-gradient(90deg, #fbfaf9 50%, #e5e4e4, #fbfaf9) r 8px | button.WatchDemo__Container-sc-1kj9jjo-0.dIaiHi 314.7x68.0 r 12px shadow color(display-p3 0.94902 0.941176 0.929412) 0px 0px 0px 1px inset; div.WatchDemo__ImageContainer-sc-1kj9jjo-1.dKfigb 78.0x44.0 bg color(display-p3 0.94902 0.941176 0.929412) r 4px; div::before.sc-gsFSXq.kakWLo 78pxx43.875px bg #fbfaf9 image linear-gradient(90deg, #fbfaf9 50%, #e5e4e4, #fbfaf9) r 8px | button.WatchDemo__Container-sc-1kj9jjo-0.dIaiHi 314.7x68.0 r 12px shadow color(display-p3 0.517647 0.509804 0.505882) 0px 0px 0px 2px inset; div.WatchDemo__ImageContainer-sc-1kj9jjo-1.dKfigb 78.0x44.0 bg color(display-p3 0.94902 0.941176 0.929412) r 4px; div::before.sc-gsFSXq.kakWLo 78pxx43.875px bg #fbfaf9 image linear-gradient(90deg, #fbfaf9 50%, #e5e4e4, #fbfaf9) r 8px | button.WatchDemo__Container-sc-1kj9jjo-0.dIaiHi 314.7x68.0 r 12px shadow color(display-p3 0.94902 0.941176 0.929412) 0px 0px 0px 1px inset; div.WatchDemo__ImageContainer-sc-1kj9jjo-1.dKfigb 78.0x44.0 bg color(display-p3 0.94902 0.941176 0.929412) r 4px; div::before.sc-gsFSXq.kakWLo 78pxx43.875px bg #fbfaf9 image linear-gradient(90deg, #fbfaf9 50%, #e5e4e4, #fbfaf9) r 8px |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
-Crops: `demo-btn-default.png`, `demo-btn-hover.png`, `demo-btn-focus-visible.png`.
+Crops: `demo-btn-default.png`, `demo-btn-hover.png`, `demo-btn-focus-visible.png`, `demo-btn-pressed.png`.
 
 #### demo-overlay
 
@@ -437,11 +437,11 @@ Page: home. Selector: `WatchDemo__OverlayContainer`. States: default.
 | Colour | #474645 |
 | Text node | span.sc-aXZVg.fLBVfX: Inter 16px/22px 500, #ffffff |
 | Transition | none |
-| Icon | 13.77 x 13.77, colour #000000 |
-| Painted layers | div.WatchDemo__OverlayBackground-sc-1kj9jjo-4.kCuicB 1440.0x900.0 bg #f9f7f5 @ 0.8; div.WatchDemo__VideoContainer-sc-1kj9jjo-5.cgVGwv 845.9x475.8 bg #cccccc r 12px; div.WatchDemo__IconContainer-sc-1kj9jjo-8.fnJard 845.9x475.8 bg #000000 @ 0.1 |
+| Icon | 14 x 14, colour #000000 |
+| Painted layers | div.WatchDemo__OverlayBackground-sc-1kj9jjo-4.kCuicB 1440.0x900.0 bg #f9f7f5 @ 0.8; div.WatchDemo__VideoContainer-sc-1kj9jjo-5.cgVGwv 860.0x483.8 bg #cccccc r 12px; div.WatchDemo__IconContainer-sc-1kj9jjo-8.fnJard 860.0x483.8 bg #000000 @ 0.1 |
 | How | at rest |
 
-Crops: none.
+Crops: `demo-overlay-default.png`.
 
 #### feature-h3
 
@@ -488,7 +488,7 @@ Page: home. Selector: `section h1`. States: default.
 | Transition | none |
 | How | at rest |
 
-Crops: none.
+Crops: `section-h3-default.png`.
 
 #### faq-item
 
@@ -871,25 +871,21 @@ Crops: `cl-entry-default.png`.
 
 Entry body. Changelog entry copy.
 
-Page: changelog. Selector: `changelog body`. States: default.
+Page: changelog. Selector: `changelog entry paragraph`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 295.68 x 60.48 |
-| Padding | 0px |
+| Size (w x h) | 732 x 84 |
+| Padding | 0px 0px 32px 0px |
 | Border | none |
 | Radius | 0px |
 | Background | transparent |
 | Box shadow | none |
 | Outline | none |
-| Font | Inter 16px/normal 400 |
-| Letter spacing | normal |
+| Font | Inter 17px/26px 400 |
+| Letter spacing | -0.22px |
 | Colour | #474645 |
-| Text node | h5.Typography__Paragraph-sc-p3xo6h-7.hAxgce: Inter 15px/22px 500, #121212, ls -0.13px |
 | Transition | none |
-| Icon | 23.04 x 23.04, colour color(display-p3 0.203922 0.203922 0.2) |
-| Painted layers | div.Nav__IconContainer-sc-141m4ur-2.jhkKsN 34.6x34.6 bg #ffffff r 9.6px shadow #000000 @ 0.04 0px 0px 0px 1px |
-| Ancestor paint | 3 up div.Nav__DropdownContainer-sc-141m4ur-3.jmGeWm bg #ffffff shadow #000000 @ 0.1 0px 3px 16px 0px |
 | How | at rest |
 
 Crops: `cl-entry-body-default.png`.
@@ -1049,19 +1045,17 @@ Page: supportart. Selector: `article p/li`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 240 x 478.75 |
-| Padding | 0px |
+| Size (w x h) | 704 x 136 |
+| Padding | 0px 0px 32px 0px |
 | Border | none |
 | Radius | 0px |
 | Background | transparent |
 | Box shadow | none |
 | Outline | none |
-| Font | Inter 16px/normal 400 |
-| Letter spacing | normal |
+| Font | Inter 17px/26px 400 |
+| Letter spacing | -0.22px |
 | Colour | #474645 |
-| Text node | span.sc-aXZVg.gJAfGz: Inter 14px/22px 400, #848281, ls -0.09008px |
 | Transition | none |
-| Icon | 10 x 6, colour #848281 |
 | How | at rest |
 
 Crops: `art-body-default.png`.
@@ -1322,24 +1316,27 @@ Crops: `acct-h1-default.png`.
 
 #### login-card
 
-Login card. The Aave Account login card on app.family.co; at rest, never submitted.
+Login card. The Aave Account login card on app.family.co — the container holding the welcome text and the field; at rest, never submitted.
 
-Page: login. Selector: `login card`. States: default.
+Page: login. Selector: `login card container`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 380 x 48 |
+| Size (w x h) | 380 x 284 |
 | Padding | 0px |
+| Gap | 24px |
 | Border | none |
-| Radius | 14px |
+| Radius | 0px |
 | Background | transparent |
 | Box shadow | none |
 | Outline | none |
 | Font | inter 16px/normal 400 |
 | Letter spacing | normal |
-| Colour | #171717 |
+| Colour | #222222 |
+| Text node | h1: inter 18px/19px 600, #222222, ls -0.13px |
 | Transition | none |
-| Ancestor paint | 1 up div.styles-module-scss-module__EkH3Mq__inputContainer bg #f6f7f9 shadow #000000 @ 0 0px 0px 0px 1px inset |
+| Icon | 58 x 30, colour #222222 |
+| Painted layers | div.styles-module-scss-module__EkH3Mq__inputContainer 380.0x48.0 bg #f6f7f9 r 14px shadow #000000 @ 0 0px 0px 0px 1px inset |
 | How | at rest |
 
 Crops: `login-card-default.png`.
@@ -1365,7 +1362,7 @@ Page: login. Selector: `login h1`. States: default.
 | Transition | none |
 | How | at rest |
 
-Crops: none.
+Crops: `login-h1-default.png`.
 
 #### login-sub
 

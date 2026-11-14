@@ -77,10 +77,11 @@ if (!mkt.sheets.length && !app.sheets.length) { console.log('nothing harvested; 
 
 // ---- shared colour/length resolution helpers, injected into the probe ----
 // noUrl is the kit's canonical declaration (kept byte-identical for the
-// privacy test); it is interpolated into probeFns by function source.
+// privacy test); its function source is bound as `const noUrl` inside
+// probeFns so the injected code can call it by name.
 const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v);
 const probeFns = `
-${noUrl}
+const noUrl = ${noUrl};
 const lin = (c) => (c <= 0.0031308 ? 12.92 * c : 1.055 * Math.pow(c, 1 / 2.4) - 0.055);
 const linInv = (c) => (c <= 0.04045 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4));
 const fromOklab = (L, a, b) => {

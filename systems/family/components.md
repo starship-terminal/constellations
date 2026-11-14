@@ -8,7 +8,7 @@ How to read an entry:
 
 - A colour is its value followed by the palette token in [tokens.json](tokens.json) with the same value, when there is one. Text is written family size/line-height weight, then its colour, for example `SF Pro 14/21 500, #21252e`, and is read from the first text node inside the component.
 - The state table has one row per state that differs. The first row lists every value; later rows list only what changes. A state with the same values as the first is named in its label, for example "default (same: focus-visible)". When the root paints nothing, "Child layers" names the first nodes inside it that do.
-- Crops are images of the component read from the live page, in [components/crops/](components/crops) (135 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
+- Crops are images of the component read from the live page, in [components/crops/](components/crops) (137 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
 
 ## Discovery list
 
@@ -72,7 +72,7 @@ Values that apply across entries, from the measurement files.
 | [Nav dropdown](#nav-dropdown) | 316 x 135 | - | 8px | #ffffff `color.overlay.color` | rgba(0, 0, 0, 0.1) 0px 3px 16px 0px | 4px |
 | [FAQ item](#faq-item) | 512 x 56 | B: 1px solid color(display-p3 0.94902 0.941176 0.929412) | - | transparent | none | 0px 0px 28px 0px |
 | [Category button](#category-button) | 240 x 29.92 | - | 8px | transparent | none | 10px 0px |
-| [Login card](#login-card) | 380 x 48 | - | 14px | transparent | none | 0 |
+| [Login card](#login-card) | 380 x 284 | - | - | transparent | none | 0 |
 | [Mobile FAQ item](#mobile-faq-item) | 342 x 56 | B: 1px solid color(display-p3 0.94902 0.941176 0.929412) | - | transparent | none | 0px 0px 28px 0px |
 
 ## Components
@@ -88,7 +88,7 @@ The fixed top bar: the Family wordmark, the Developers/Resources hover dropdowns
 
 Child layers that carry the look: a 119x32.9 background #ffffff `color.overlay.color` radius 6px; div 303.4x129.6 background #ffffff `color.overlay.color` radius 8px shadow rgba(0, 0, 0, 0.1) 0px 3px 16px 0px; div 34.6x34.6 background #ffffff `color.overlay.color` radius 9.6px shadow rgba(0, 0, 0, 0.04) 0px 0px 0px 1px.
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Site header default](components/crops/mkt-header-default.png)
 
 #### Logo
 The Family wordmark at the left of the header. Read as `mkt-logo` on the home page.
@@ -142,10 +142,10 @@ The beige Log In pill in the header, inside a link to app.family.co; measured, n
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible, pressed) | size 70.47 x 32; background transparent; text Inter 15/normal 500, #121212 `color.logo.color`; transition all 0.2s ease-out; layers button.Button__Container-sc-1jjqbrw-0.hACioR 70.5x32.0 #f6f4ef 32px |
+| default (same: focus-visible, pressed) | size 70.47 x 32; background transparent; text Inter 15/normal 500, #121212 `color.logo.color`; transition all 0.2s ease-out; layers button.Button__Container-sc-1jjqbrw-0.hACioR 70.5x32.0 #f6f4ef `action.beige` 32px |
 | hover | layers button.Button__Container-sc-1jjqbrw-0.hACioR 70.5x32.0 #eae6dd 32px |
 
-Child layers that carry the look: button 70.5x32 background #f6f4ef radius 32px.
+Child layers that carry the look: button 70.5x32 background #f6f4ef `action.beige` radius 32px.
 
 ![Log In button default](components/crops/login-btn-default.png) ![Log In button hover](components/crops/login-btn-hover.png) ![Log In button focus-visible](components/crops/login-btn-focus-visible.png) ![Log In button pressed](components/crops/login-btn-pressed.png)
 
@@ -168,7 +168,7 @@ The marketing home: the display hero, the Download on iOS pill, feature sections
 
 **Values (default).** size 1024 x 165.59; padding 0px 0px 16px 0px; background transparent; text Family 68/74.8 500, color(display-p3 0.203922 0.203922 0.2).
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Hero headline default](components/crops/hero-h1-default.png)
 
 #### Hero subline
 The "Explore Ethereum with the best wallet for iOS" subline under the hero. Read as `hero-sub` on the home page.
@@ -192,7 +192,7 @@ The "Watch the Video" action beside the download pill; measured, never pressed. 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 199.7 x 48; padding 0px 20px 0px 19px; radius 32px; background #f6f4ef; text Inter 17/17 500, #121212 `color.logo.color`; transition background-color 0.1s ease; icon 18 x 20, #121212 `color.logo.color` |
+| default | size 199.7 x 48; padding 0px 20px 0px 19px; radius 32px; background #f6f4ef `action.beige`; text Inter 17/17 500, #121212 `color.logo.color`; transition background-color 0.1s ease; icon 18 x 20, #121212 `color.logo.color` |
 | hover, pressed | background #eae6dd |
 
 **Focus not capturable.** A real keyboard focus could not be held on this element (`focus-visible` recorded `via: focus failed`), so its focus look is uncaptured — not measured as absent.
@@ -204,7 +204,7 @@ A marketing section heading ("Explore Ethereum in a whole new way."). Read as `f
 
 **Values (default).** size 1024 x 48; background transparent; text Family 44/48 500, #121212 `color.logo.color`.
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Section heading default](components/crops/feature-h2-default.png)
 
 #### Feature label
 A feature label in the intro grid (Easy / Secure / Fast / Powerful / Fun). Read as `feature-label` on the home page.
@@ -230,16 +230,16 @@ A "Watch the demo" button under a feature; opens the video overlay — measured,
 | focus-visible | shadow color(display-p3 0.517647 0.509804 0.505882) 0px 0px 0px 2px inset; layers button.WatchDemo__Container-sc-1kj9jjo-0.dIaiHi 314.7x68.0 color(display-p3 0.517647 0.509804 0.505882) 0px 0px 0px 2px inset 12px; div.WatchDemo__ImageContainer-sc-1kj9jjo-1.dKfigb 78.0x44.0 color(display-p3 0.94902 0.941176 0.929412) 4px; div::before.sc-gsFSXq.kakWLo 78pxx43.875px #fbfaf9 `color.beige.default` 8px |
 | pressed | shadow color(display-p3 0.94902 0.941176 0.929412) 0px 0px 0px 1px inset; layers button.WatchDemo__Container-sc-1kj9jjo-0.dIaiHi 314.7x68.0 color(display-p3 0.94902 0.941176 0.929412) 0px 0px 0px 1px inset 12px; div.WatchDemo__ImageContainer-sc-1kj9jjo-1.dKfigb 78.0x44.0 color(display-p3 0.94902 0.941176 0.929412) 4px; div::before.sc-gsFSXq.kakWLo 78pxx43.875px #fbfaf9 `color.beige.default` 8px |
 
-![Watch-the-demo button default](components/crops/demo-btn-default.png) ![Watch-the-demo button hover](components/crops/demo-btn-hover.png) ![Watch-the-demo button focus-visible](components/crops/demo-btn-focus-visible.png)
+![Watch-the-demo button default](components/crops/demo-btn-default.png) ![Watch-the-demo button hover](components/crops/demo-btn-hover.png) ![Watch-the-demo button focus-visible](components/crops/demo-btn-focus-visible.png) ![Watch-the-demo button pressed](components/crops/demo-btn-pressed.png)
 
 #### Demo overlay
 The full-viewport video overlay "Watch the demo" mounts; measured open, then closed. Read as `demo-overlay` on the home page.
 
-**Values (default).** size 1440 x 900; padding 16px; background transparent; text Inter 16/22 500, #ffffff `color.overlay.color`; icon 13.77 x 13.77, #000000; layers div.WatchDemo__OverlayBackground-sc-1kj9jjo-4.kCuicB 1440.0x900.0 rgba(249, 247, 245, 0.8); div.WatchDemo__VideoContainer-sc-1kj9jjo-5.cgVGwv 845.9x475.8 #cccccc 12px; div.WatchDemo__IconContainer-sc-1kj9jjo-8.fnJard 845.9x475.8 rgba(0, 0, 0, 0.1).
+**Values (default).** size 1440 x 900; padding 16px; background transparent; text Inter 16/22 500, #ffffff `color.overlay.color`; icon 14 x 14, #000000; layers div.WatchDemo__OverlayBackground-sc-1kj9jjo-4.kCuicB 1440.0x900.0 rgba(249, 247, 245, 0.8); div.WatchDemo__VideoContainer-sc-1kj9jjo-5.cgVGwv 860.0x483.8 #cccccc 12px; div.WatchDemo__IconContainer-sc-1kj9jjo-8.fnJard 860.0x483.8 rgba(0, 0, 0, 0.1).
 
-Child layers that carry the look: div 1440x900 background rgba(249, 247, 245, 0.8); div 845.9x475.8 background #cccccc radius 12px; div 845.9x475.8 background rgba(0, 0, 0, 0.1).
+Child layers that carry the look: div 1440x900 background rgba(249, 247, 245, 0.8); div 860x483.8 background #cccccc radius 12px; div 860x483.8 background rgba(0, 0, 0, 0.1).
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Demo overlay default](components/crops/demo-overlay-default.png)
 
 #### Feature tag
 A feature tag ("Send & Receive", "WalletConnect Enabled") beside a section. Read as `feature-h3` on the home page.
@@ -253,7 +253,7 @@ A feature section heading ("Send, receive, swap. All in one place."). Read as `s
 
 **Values (default).** size 1024 x 96; background transparent; text Family 44/48 500, #121212 `color.logo.color`.
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Feature section heading default](components/crops/section-h3-default.png)
 
 #### FAQ item
 A collapsible question/answer item in the home FAQ ("Is Family safe?"). Read as `faq-item` on the home page.
@@ -293,9 +293,11 @@ A "Friends of Family" testimonial card linking to a tweet; measured, never follo
 The public Aave Account login on app.family.co: the welcome heading, the Email or Phone Number field (typed into and cleared, never submitted) and the footer links.
 
 #### Login card
-The Aave Account login card on app.family.co; at rest, never submitted. Read as `login-card` on the app login page.
+The Aave Account login card on app.family.co — the container holding the welcome text and the field; at rest, never submitted. Read as `login-card` on the app login page.
 
-**Values (default).** size 380 x 48; radius 14px; background transparent; text inter 16/normal 400, #171717 `color.overlay.background`.
+**Values (default).** size 380 x 284; background transparent; text inter 18/19 600, #222222 `color.body.color.default`; icon 58 x 30, #222222 `color.body.color.default`; layers div.styles-module-scss-module__EkH3Mq__inputContainer 380.0x48.0 #f6f7f9 `color.input.background.default` rgba(0, 0, 0, 0) 0px 0px 0px 1px inset 14px.
+
+Child layers that carry the look: div 380x48 background #f6f7f9 `color.input.background.default` radius 14px shadow transparent 0px 0px 0px 1px inset.
 
 ![Login card default](components/crops/login-card-default.png)
 
@@ -304,7 +306,7 @@ The Aave Account login card on app.family.co; at rest, never submitted. Read as 
 
 **Values (default).** size 380 x 19; background transparent; text inter 18/19 600, #222222 `color.body.color.default`.
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Login title default](components/crops/login-h1-default.png)
 
 #### Login subline
 "Log in or sign up to get started. We’ll create an account if you don’t have one yet." Read as `login-sub` on the app login page.
@@ -454,9 +456,7 @@ A changelog entry heading ("Updated"). Read as `cl-entry` on the changelog page.
 #### Entry body
 Changelog entry copy. Read as `cl-entry-body` on the changelog page.
 
-**Values (default).** size 295.68 x 60.48; background transparent; text Inter 15/22 500, #121212 `color.logo.color`; icon 23.04 x 23.04, color(display-p3 0.203922 0.203922 0.2); layers div.Nav__IconContainer-sc-141m4ur-2.jhkKsN 34.6x34.6 #ffffff `color.overlay.color` rgba(0, 0, 0, 0.04) 0px 0px 0px 1px 9.6px.
-
-Child layers that carry the look: div 34.6x34.6 background #ffffff `color.overlay.color` radius 9.6px shadow rgba(0, 0, 0, 0.04) 0px 0px 0px 1px.
+**Values (default).** size 732 x 84; padding 0px 0px 32px 0px; background transparent; text Inter 17/26 400, #474645.
 
 ![Entry body default](components/crops/cl-entry-body-default.png)
 
@@ -518,7 +518,7 @@ A "How to" section heading inside the help article. Read as `art-h2` on the supp
 #### Article body
 Help-article body copy. Read as `art-body` on the support article page.
 
-**Values (default).** size 240 x 478.75; background transparent; text Inter 14/22 400, #848281 `color.body.muted`; icon 10 x 6, #848281 `color.body.muted`.
+**Values (default).** size 704 x 136; padding 0px 0px 32px 0px; background transparent; text Inter 17/26 400, #474645.
 
 ![Article body default](components/crops/art-body-default.png)
 

@@ -140,7 +140,7 @@ async function measure(key, state, target, opts = {}) {
         file = await crop(page, (opts.cropLoc || loc).and(page.locator(':visible')).first(), `${key}-${state}`, opts.pad ?? 8);
       } catch (e) { s.cropError = String(e.message || e).slice(0, 120); }
     }
-    c.states[state] = { ...s, crop: file, via: opts.via };
+    c.states[state] = { ...s, crop: file, via: opts.via, run };
     if (opts.extra) c.states[state].extra = await opts.extra(loc);
     log('  ', key, state, s.rect.w + 'x' + s.rect.h);
   } catch (e) {
@@ -212,6 +212,14 @@ async function S(key, target, list, meta = {}, opts = {}) {
     }
     if (undo) await undo().catch(() => {});
     if (opts.after?.[st]) await opts.after[st](loc).catch(() => {});
+  }
+  // A listed state that failed its re-read kept the earlier evidence under
+  // rerunError (and its own earlier `run`); the entry then republishes under
+  // the earlier run's page/run/url and records the miss, so retained readings
+  // never carry the new run's date.
+  if (keep && list.some((st) => out.components[key].states[st]?.rerunError)) {
+    Object.assign(out.components[key], keep);
+    out.components[key].recaptureMissed = run;
   }
   await reset();
 }
@@ -307,6 +315,7 @@ async function closeDemo() {
   await page.keyboard.press('Escape').catch(() => {});
   const x = page.locator(M('WatchDemo__OverlayContainer') + ' button, ' + M('WatchDemo__OverlayContainer') + ' [class*="Close" i]').and(page.locator(':visible')).first();
   if (await x.count()) await x.evaluate((el) => el.click()).catch(() => {});
+  await page.locator(M('WatchDemo__OverlayContainer')).first().waitFor({ state: 'hidden', timeout: 6000 }).catch(() => {});
   await page.waitForTimeout(600);
 }
 
@@ -335,6 +344,10 @@ async function home() {
   await S('feature-body', q('p, div').filter({ hasText: /Whether you\u2019re a beginner or seasoned pro/ }).and(page.locator(':visible')).last(), ['default'], { group: h, title: 'Feature body', desc: 'Feature body copy ("Whether you\u2019re a beginner or seasoned pro, Family makes it easy.").', sel: 'feature body' });
   await S('demo-btn', q('button').filter({ hasText: /Watch the demo/ }).and(page.locator(':visible')).first(), B4, { group: h, title: 'Watch-the-demo button', desc: 'A "Watch the demo" button under a feature; opens the video overlay — measured, the press opens a local overlay only.', sel: 'Watch the demo' });
   await S('demo-overlay', q(M('WatchDemo__OverlayContainer')).and(page.locator(':visible')).last(), ['default'], { group: h, title: 'Demo overlay', desc: 'The full-viewport video overlay "Watch the demo" mounts; measured open, then closed.', sel: 'WatchDemo__OverlayContainer' }, { open: openDemo, noScroll: true, noReset: true, crop: true });
+  // The overlay is a fixed full-viewport layer with an 80% scrim: close it
+  // right after its own measurement and wait for it to hide, or every later
+  // crop on this page is shot through it.
+  await closeDemo();
   await S('feature-h3', q('h5').filter({ hasText: /^\s*(Send & Receive|Decentralized Swaps|Manage your collectibles|Watching Wallets|Wallet Activity)\s*$/ }).and(page.locator(':visible')).first(), ['default'], { group: h, title: 'Feature tag', desc: 'A feature tag ("Send & Receive", "WalletConnect Enabled") beside a section.', sel: 'h5 feature tag' });
   await S('section-h3', q('h1').filter({ hasText: /Send, receive, swap|The best way to experience NFTs|Relentless protection/ }).and(page.locator(':visible')).first(), ['default'], { group: h, title: 'Feature section heading', desc: 'A feature section heading ("Send, receive, swap. All in one place.").', sel: 'section h1' });
   await S('faq-item', q(M('Item__StyledCollapsableItem')).and(page.locator(':visible')).first(), ['default'], { group: h, title: 'FAQ item', desc: 'A collapsible question/answer item in the home FAQ ("Is Family safe?").', sel: 'Item__StyledCollapsableItem' });
@@ -350,7 +363,6 @@ async function home() {
   await S('blog-card', q('a[href^="/blog/"]').and(page.locator(':visible')).first(), B4, { group: h, title: 'Latest-post card', desc: 'A "The latest from Family" post card on the home rail; measured, never followed.', sel: 'a[href^=/blog/]' });
   const f = G.footer;
   await S('site-footer', q('footer').and(page.locator(':visible')).last(), ['default'], { group: f, title: 'Site footer', desc: 'The sitemap footer (Developers / Resources / Company, \u00a9 2026).', sel: 'footer' });
-  await closeDemo();
   save();
 }
 
@@ -386,7 +398,10 @@ async function changelog() {
   await S('cl-h1', q('h1').and(page.locator(':visible')).first(), ['default'], { group: g, title: 'Changelog title', desc: 'The "Changelog" page title.', sel: 'h1' }, { noScroll: true });
   await S('cl-filter', q('button').filter({ hasText: /^\s*(All|ConnectKit)\s*$/ }).and(page.locator(':visible')).first(), B4, { group: g, title: 'Changelog filter', desc: 'A filter button on /changelog (All / ConnectKit); measured, never pressed.', sel: 'changelog filter button' });
   await S('cl-entry', q('h2').filter({ hasText: /Updated/ }).and(page.locator(':visible')).first(), ['default'], { group: g, title: 'Entry heading', desc: 'A changelog entry heading ("Updated").', sel: 'changelog h2' });
-  await S('cl-entry-body', q('p, li').filter({ hasText: /\w{5,}/ }).and(page.locator(':visible')).nth(3), ['default'], { group: g, title: 'Entry body', desc: 'Changelog entry copy.', sel: 'changelog body' });
+  // Scoped to the entry container: a page-wide text match lands in the
+  // header's nav dropdown ("Family Dedicated self-custody account."), not
+  // the changelog copy.
+  await S('cl-entry-body', q('main [class*="ChangelogPost"] p, main [class*="ChangelogPost"] [class*="ListWrapper"]'), ['default'], { group: g, title: 'Entry body', desc: 'Changelog entry copy.', sel: 'changelog entry paragraph' });
   save();
 }
 
@@ -409,7 +424,9 @@ async function supportart() {
   const g = G.support;
   await S('art-h1', q('h1').and(page.locator(':visible')).first(), ['default'], { group: g, title: 'Article title', desc: 'The help-article title ("Import a wallet from MetaMask").', sel: 'article h1' }, { noScroll: true });
   await S('art-h2', q('h2').filter({ hasText: /How to/ }).and(page.locator(':visible')).first(), ['default'], { group: g, title: 'Article heading', desc: 'A "How to" section heading inside the help article.', sel: 'article h2' });
-  await S('art-body', q('p, li').filter({ hasText: /Secret Recovery Phrase|MetaMask/i }).and(page.locator(':visible')).first(), ['default'], { group: g, title: 'Article body', desc: 'Help-article body copy.', sel: 'article p/li' });
+  // Scoped to <article>: a page-wide text match lands in the side nav
+  // ("Mission Control…"), not the article body.
+  await S('art-body', q('article p, article li').filter({ hasText: /Secret Recovery Phrase|MetaMask/i }), ['default'], { group: g, title: 'Article body', desc: 'Help-article body copy.', sel: 'article p/li' });
   await S('art-side-link', q('a[href^="/support/"]').and(page.locator(':visible')).first(), B4, { group: g, title: 'Side-nav link', desc: 'A related-category/article link beside the article; measured, never followed.', sel: 'a[href^=/support/]' });
   save();
 }
@@ -468,7 +485,10 @@ async function login() {
   await sheetsFor('login');
   await chrome('login');
   const g = G.login;
-  await S('login-card', q('input').and(page.locator(':visible')).first().locator('xpath=ancestor::div[contains(@class,"__")][1]'), ['default'], { group: g, title: 'Login card', desc: 'The Aave Account login card on app.family.co; at rest, never submitted.', sel: 'login card' }, { noScroll: true });
+  // The card is the smallest container holding both the welcome text and
+  // the field: the input's own __inputWrapper ancestor is only the field's
+  // transparent shell, not the card.
+  await S('login-card', q('div:has(input)').filter({ hasText: /Welcome to Aave Account/ }).last(), ['default'], { group: g, title: 'Login card', desc: 'The Aave Account login card on app.family.co — the container holding the welcome text and the field; at rest, never submitted.', sel: 'login card container' }, { noScroll: true });
   await S('login-h1', q('h1, h2, div, p').filter({ hasText: /Welcome to Aave Account/ }).and(page.locator(':visible')).last(), ['default'], { group: g, title: 'Login title', desc: '"Welcome to Aave Account" — the login heading (Family Accounts is now Aave Account).', sel: 'login h1' }, { noScroll: true });
   await S('login-sub', q('p, div, span').filter({ hasText: /Log in or sign up to get started/ }).and(page.locator(':visible')).last(), ['default'], { group: g, title: 'Login subline', desc: '"Log in or sign up to get started. We\u2019ll create an account if you don\u2019t have one yet."', sel: 'login subline' }, { noScroll: true });
   await S('login-field', q('input#email-or-number, input').and(page.locator(':visible')).first(), FIELD, { group: g, title: 'Email/phone field', desc: 'The "Email or Phone Number" login field; typed into then cleared, never submitted.', sel: '#email-or-number' }, { noScroll: true, fillText: 'name@example.com' });

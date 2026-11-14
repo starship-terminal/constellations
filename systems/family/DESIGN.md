@@ -47,13 +47,13 @@ colors:
   text-kicker: "#121212"
   text-on-dark: "#ffffff"
   action-accent: "#171717"
-  action-ghost: "rgba(0, 0, 0, 0)"
+  action-beige: "#f6f4ef"
   border-hairline: "#f2f0ed"
   border-field-border: "#171717"
   border-focus: "#848281"
 rounded:
-  field: "0px"
-  card: "0px"
+  field: "14px"
+  card: "10px"
   item: "0px"
   button: "32px"
 ---
@@ -95,11 +95,17 @@ No spacing scale in tokens.json.
 
 ## Elevation & Depth
 
-No shadow tokens were captured; depth comes from surface colours and borders. See [style-guide.html](style-guide.html).
+Shadows, resolved to CSS:
+
+| Token | box-shadow |
+|---|---|
+| `core.shadow.overlay.secondary.shadow` | `rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgba(0, 0, 0, 0.07) 0px 6px 14px 0px, rgba(255, 255, 255, 0.1) 0px 0px 3px 0px inset` |
+| `core.shadow.overlay.selection.shadow` | `rgba(255, 255, 255, 0.02) 0px 0px 0px 0px inset` |
+| `core.shadow.overlay.shadow` | `rgba(0, 0, 0, 0.2) 0px 2px 14px 0px` |
 
 ## Shapes
 
-Corner radii from `core.radius`: `field` 0px, `card` 0px, `item` 0px, `button` 32px.
+Corner radii from `core.radius`: `field` 14px, `card` 10px, `item` 0px, `button` 32px.
 
 ## Components
 
@@ -118,7 +124,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 ### Do and don't (from README.md)
 
 1. **Do let the declared layers carry the design.** Both surfaces ship their tokens: use the marketing `--body`/`--heading`/role colours, the `--graphic-*` illustration palette and the app's `--family-*`/`--primary-*`/`--wallet-*`/`--danger-*`/`--valid-*`/`--warning-*` scales rather than restating hex. See [tokens.json](tokens.json) and [nav-dropdown](components/crops/nav-dropdown-default.png).
-2. **Do spend near-black on the actions that commit.** `#171717` fills the Download on iOS and Get Started pills; everything else is ghost or text. See [download-cta](components/crops/download-cta-default.png) and [getstarted-btn](components/crops/getstarted-btn-default.png).
+2. **Do spend near-black on the actions that commit.** `#171717` fills the Download on iOS and Get Started pills; the secondary actions are beige `#f6f4ef` pills or plain text. See [download-cta](components/crops/download-cta-default.png) and [getstarted-btn](components/crops/getstarted-btn-default.png).
 3. **Do paint light.** Every public surface paints the light theme; the app's dark layer is declared (20 switching names, 3 dark-only) but never paints signed out — treat dark values as declared evidence, not a verified surface. See [home-light-default](screenshots/home-light-default.png).
 4. **Do pair the voices.** The proprietary "Family" face owns every page title, hero and section heading; Inter owns controls and body copy; the app runs variable Inter. See [hero-h1](components/crops/hero-h1-default.png) and [feature-body](components/crops/feature-body-default.png).
 5. **Do use hairlines, not borders, on cards.** Post cards, FAQ items and list rows sit on 1px `#f2f0ed` bottom hairlines over the white field; raised cards (the testimonial panel) go white with a 10px radius and an inset ring. See [blog-card](components/crops/blog-card-default.png) and [tweet-card](components/crops/tweet-card-default.png).

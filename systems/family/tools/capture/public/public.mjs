@@ -99,7 +99,9 @@ const clickEl = async (loc, ms = 8000) => { await loc.click({ timeout: ms }).cat
 // The header "Developers"/"Resources" links open their dropdown on hover — a
 // local UI toggle, never a navigation.
 async function openMenu(p, S, triggerText, name) {
-  const t = p.locator('header a, header button').filter({ hasText: new RegExp('^\\s*' + triggerText + '\\s*$') }).filter({ visible: true }).first();
+  // `:visible` rather than filter({visible}): on the kit's Playwright 1.49 a
+  // hidden responsive twin would otherwise win .first() (see measure.mjs).
+  const t = p.locator('header a, header button').filter({ hasText: new RegExp('^\\s*' + triggerText + '\\s*$') }).and(p.locator(':visible')).first();
   if (!(await t.count())) { log('  no', triggerText, 'trigger'); return; }
   await t.hover();
   await wait(p, 900);
@@ -118,18 +120,18 @@ const desktop = {
       // "Watch the demo" mounts a full-viewport video overlay — a local UI
       // toggle. The video is left playing for a moment, then the overlay is
       // closed; nothing is downloaded or submitted.
-      const t = p.locator('button').filter({ hasText: /Watch the demo/ }).filter({ visible: true }).first();
+      const t = p.locator('button').filter({ hasText: /Watch the demo/ }).and(p.locator(':visible')).first();
       if (!(await t.count())) { log('  no demo button'); return; }
       await t.scrollIntoViewIfNeeded();
       await wait(p, 400);
       await clickEl(t);
-      await p.locator('[class*="WatchDemo__OverlayContainer"]').filter({ visible: true }).first().waitFor({ state: 'visible', timeout: 6000 }).catch(() => {});
+      await p.locator('[class*="WatchDemo__OverlayContainer"]').and(p.locator(':visible')).first().waitFor({ state: 'visible', timeout: 6000 }).catch(() => {});
       await wait(p, 1800);
       await S.view('demo');
       await p.keyboard.press('Escape');
       await wait(p, 500);
       // Escape may not close it: the overlay's own close control is the fallback.
-      const x = p.locator('[class*="WatchDemo__OverlayContainer"] button, [class*="WatchDemo__OverlayContainer"] [class*="Close" i]').filter({ visible: true }).first();
+      const x = p.locator('[class*="WatchDemo__OverlayContainer"] button, [class*="WatchDemo__OverlayContainer"] [class*="Close" i]').and(p.locator(':visible')).first();
       if (await x.count()) await x.evaluate((el) => el.click()).catch(() => {});
       await wait(p, 600);
     });
@@ -192,7 +194,7 @@ const mobile = {
     await S.full();
     await step('drawer', async () => {
       // The hamburger opens the mobile nav menu — a local UI toggle.
-      const t = p.locator('button[class*="Nav__MenuButton"], header button').filter({ visible: true }).first();
+      const t = p.locator('button[class*="Nav__MenuButton"], header button').and(p.locator(':visible')).first();
       if (!(await t.count())) { log('  no menu button'); return; }
       await clickEl(t);
       await wait(p, 1200);
