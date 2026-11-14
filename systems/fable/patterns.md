@@ -31,7 +31,7 @@ A 58px heldane page title (`font.size.pageTitle`) over a 440x52 white search tri
 
 ## Discover (dark)
 
-/discover is the only public page painted dark: a full-viewport wall of drifting book covers under a layered radial-gradient scrim (`component.skin.discover.wallScrim`, lead stop `rgba(12,92,66,0.85)`), a ~81px wordmark (`component.discoverWordmarkW`), a 64px/69px Heldane cream headline (`font.size.discoverTitle`), a 420x60 white search field with a heavy shadow (`component.discoverFieldW/H`, `component.skin.discover.fieldShadow` rgba(12,12,12,.45) 0 10px 34px) and two ~50px `forest-400` pills with muted `#c5c1c5` ink. The wall was measured after the "Gathering ten thousand covers" state cleared, with its animation loop frozen; the Random and What-is-this buttons show no measured hover/focus change.
+/discover is the only public page painted dark: a full-viewport wall of drifting book covers under a layered radial-gradient scrim (`component.skin.discover.wallScrim`, lead stop `rgba(12,92,66,0.85)`), a ~81px wordmark (`component.discoverWordmarkW`), a 64px/69px Heldane cream headline (`font.size.discoverTitle`), a 420x60 white search field with a heavy shadow (`component.discoverFieldW/H`, `component.skin.discover.fieldShadow` rgba(12,12,12,.45) 0 10px 34px) and two ~50px `forest-400` pills with muted `#c5c1c5` ink. The wall was measured after the "Gathering ten thousand covers" state cleared, with its animation loop frozen; the Random and What-is-this pills brighten their muted ink to cream `#f7f4ee` on hover but show no focus change.
 
 ## Mobile (390px)
 

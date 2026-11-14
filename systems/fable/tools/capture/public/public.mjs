@@ -116,7 +116,12 @@ class Shooter {
       for (let i = 0, y = 0; y < hCap; i++, y += chunk) {
         await p.evaluate((y) => scrollTo(0, y), y);
         await wait(p, 1700);
-        await screenshotWithMetadata(p, { ...opts(`${f}.part${i}.png`), clip: { x: 0, y: 0, width: this.vw, height: Math.min(chunk, hCap - y) } }, this.requested);
+        // scrollTo clamps to H - viewport, so the last tile's requested
+        // start can be unreachable: clip from where the page actually
+        // scrolled (the tile's page offset minus real scrollY), not from
+        // the top of the viewport.
+        const at = await p.evaluate(() => window.scrollY);
+        await screenshotWithMetadata(p, { ...opts(`${f}.part${i}.png`), clip: { x: 0, y: y - at, width: this.vw, height: Math.min(chunk, hCap - y) } }, this.requested);
       }
       await p.evaluate(() => scrollTo(0, 0));
       await p.setViewportSize(v);
