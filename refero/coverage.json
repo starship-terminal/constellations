@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 134,
-    "system_domains": 126,
-    "matched_domains": 99,
-    "missing_domains": 334,
+    "system_packages": 135,
+    "system_domains": 127,
+    "matched_domains": 100,
+    "missing_domains": 333,
     "system_domains_absent_from_catalog": 27
   },
   "matched": {
@@ -1545,6 +1545,23 @@
         }
       ]
     },
+    "fable.co": {
+      "catalog": [
+        {
+          "name": "Fable",
+          "domain": "fable.co",
+          "id": 463
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "fable",
+          "name": "Fable",
+          "url": "https://fable.co",
+          "name_match": true
+        }
+      ]
+    },
     "github.com": {
       "catalog": [
         {
@@ -1944,13 +1961,6 @@
         "name": "Explore",
         "domain": "explore.family",
         "id": 292
-      }
-    ],
-    "fable.co": [
-      {
-        "name": "Fable",
-        "domain": "fable.co",
-        "id": 463
       }
     ],
     "factory.ai": [

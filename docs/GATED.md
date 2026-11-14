@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_76 of 134 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_77 of 135 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -424,6 +424,13 @@ Access: read-only (the whole editor is public signed out; nothing was drawn, ope
 Access: signed out (every captured surface is public); expedia.com answers automation with a 429 "Bot or Not?" challenge, so the DOM evidence is a Wayback snapshot served locally and painted with live travel-assets.com CSS/fonts
 - anything behind sign-in: trips, account, member pricing, checkout, booking, saved items
 - submitted states: search was never submitted; sort/filters never applied; only screenshot evidence for the opened sort menu
+
+## [Fable](../systems/fable) — `fable`
+Access: read-only (the marketing pages, /clubs, /books, genre/club/book detail pages, /discover, /signin, /signup, /support, /blog and /community-guidelines are fully public signed out; joined clubs, discussions, the reader, lists, streaks, cart and checkout need an account - an authenticated boundary never reached; the sign-in form and SSO buttons, Join, Want to read, store badges and every CTA were measured, never submitted, pressed or followed; the Osano consent layer was hidden, never answered)
+- every post-login surface (joined clubs, discussion threads, the book reader, lists, streaks and stats) needs an account - an authenticated boundary never reached
+- cart, checkout and ebook purchase flows were never opened; App Store / Google Play badges and 'Get the app' CTAs were measured, never followed
+- the sign-in and sign-up forms were measured at rest and typed into then cleared, never submitted - validation, error, loading and success states are absent rather than measured; 'Continue with Google/Apple' was never pressed
+- 'Join the club', 'Want to read', the spoiler toggle, 'Read more' and the FAQ accordion are local UI - the disclosure toggles were opened for capture and nothing was submitted or joined
 
 ## Gate noted in access text only
 
