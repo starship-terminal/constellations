@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 135,
-    "system_domains": 127,
-    "matched_domains": 100,
-    "missing_domains": 333,
+    "system_packages": 136,
+    "system_domains": 128,
+    "matched_domains": 101,
+    "missing_domains": 332,
     "system_domains_absent_from_catalog": 27
   },
   "matched": {
@@ -1562,6 +1562,23 @@
         }
       ]
     },
+    "faire.com": {
+      "catalog": [
+        {
+          "name": "Faire",
+          "domain": "faire.com",
+          "id": 155
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "faire",
+          "name": "Faire",
+          "url": "https://www.faire.com",
+          "name_match": true
+        }
+      ]
+    },
     "github.com": {
       "catalog": [
         {
@@ -1968,13 +1985,6 @@
         "name": "Factory",
         "domain": "factory.ai",
         "id": 734
-      }
-    ],
-    "faire.com": [
-      {
-        "name": "Faire",
-        "domain": "faire.com",
-        "id": 155
       }
     ],
     "fal.ai": [
