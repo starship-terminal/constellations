@@ -7,9 +7,9 @@ one markdown file wrapped in the same bar the web app uses — a fixed left rail
 with the mark, the site nav, the section's own links, and the Settings link,
 ds-theme toggle and collapse toggle at its foot — plus the
 Settings page (settings/, its Preferences hold the app icon). site/ is
-gitignored; the Pages workflow builds it and encrypts the rest. The gallery and
-its chat live only in the Next.js app (web/), which the published site never
-ships — it shows the captures.
+gitignored; the home-server deployment serves it. The gallery and its chat live
+only in the Next.js app (web/), which the docs site never ships — it shows the
+captures.
 """
 import argparse
 import html
@@ -127,7 +127,7 @@ SETTINGS_BODY = """<h1>Settings</h1>
       </div>
       <p class="pref-note">The template fills Base URL and the auth style; every field stays editable. Model unlocks once a test against the endpoint succeeds, and the fetched list fills the dropdown. Anthropic keys also work from .env as ANTHROPIC_API_KEY with no setup here.</p>
     </div>
-    <p id="pf-off" hidden>Agent chat runs in the Next.js app (<code>make dev</code>); this section is inactive on the published site.</p>
+    <p id="pf-off" hidden>Agent chat runs in the Next.js app (<code>make dev</code>); this section is inactive on the docs site.</p>
   </fieldset>
 </div>
 <script>
@@ -554,7 +554,7 @@ def build() -> None:
     # A 404 is served at the missing URL, whatever its depth, so the page's
     # relative links would resolve inside the missing directory. The script
     # writes <base> before the stylesheet links: the site sits at / on the
-    # deploy host and under /design-systems/ on GitHub Pages.
+    # deploy host, or under a path prefix when served from a subdirectory.
     not_found = Page(DOCS / "index.md", "", None)
     not_found.title = "Page not found"
     base_fix = ("<script>\n  var __seg = location.pathname.split('/').filter(Boolean);\n"

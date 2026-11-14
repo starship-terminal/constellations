@@ -1671,7 +1671,7 @@ def build_exports(systems: list[dict]) -> None:
 
 # Repository paths the media route answers from the checkout: the gallery's
 # screenshots and package files, and the files docs link to. They are never
-# part of the published site. server/library.py bounds package file reads
+# part of the docs site. server/library.py bounds package file reads
 # through repo_file the same way web/lib/repo.ts does. /example/ holds only
 # gitignored clones, so it is not served.
 REPO_PATHS = ("/systems/", "/tools/", "/catalog.json", "/README.md")
