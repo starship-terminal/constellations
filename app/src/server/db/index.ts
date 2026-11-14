@@ -116,9 +116,11 @@ export async function createResearchStore(directory: string) {
       await tx.execute("PRAGMA user_version = 6");
     }
     if (version < 7) {
-      // The same guarded top-up again: a store already at v6 imports only the
-      // curated labels added to the seed JSON since (Designmodo's), while
-      // manual choices are never overwritten.
+      // The top-up is idempotent: a store already at v6 never re-seeds, so
+      // curated rows added to the seed JSON since (new packages' category
+      // and media assignments) would never arrive. Re-running it seeds only
+      // references the user has not labelled; manual choices are never
+      // overwritten.
       await seedNewCuratedCategories(tx);
       await seedNewCuratedMediaTerms(tx);
       await tx.execute("PRAGMA user_version = 7");
