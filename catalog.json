@@ -9315,7 +9315,8 @@
                   "icons: no standalone SVG set lifted this pass"
             ],
             "durationMin": 300,
-            "durationNote": "wall-clock across the capture sessions including kit adaptation (shooter, measurement and docs builders adapted to the two Fable skins), the stylesheet harvest, screenshot and measurement passes on a headless Linux server, a /discover render-loop settle retry, and the offline build"
+            "durationNote": "wall-clock across the capture sessions including kit adaptation (shooter, measurement and docs builders adapted to the two Fable skins), the stylesheet harvest, screenshot and measurement passes on a headless Linux server, a /discover render-loop settle retry, and the offline build",
+            "pr": "https://github.com/starship-terminal/constellations/pull/551"
       },
       "layoutGaps": {
             "icons/": "the icon extraction pass was not run; the icons (the Fable wordmark and book-spine mark, the sign-in/cart/hamburger/search glyphs, the share mark, the star ratings, the App Store and Google Play badges) are visible in the crops and screenshots"
