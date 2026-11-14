@@ -1134,9 +1134,9 @@
     459
    ],
    "description": "Level up your designs faster",
-   "status": "pending",
-   "package": null,
-   "notes": "",
+   "status": "captured",
+   "package": "systems/designmodo",
+   "notes": "public signed-out pass only: marketing, /postcards/pricing, /email-templates, the /my-account/sign-in form and the signed-out Postcards gallery (Welcome-back modal dismissed locally); the builder canvas and every post-login surface stay account-only",
    "batch": 4
   },
   {

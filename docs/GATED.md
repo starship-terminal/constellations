@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_83 of 141 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_85 of 143 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -466,6 +466,18 @@ Access: read-only (the marketing site, fibery.io/sign-up and fibery.io/login/ ar
 - the sign-up wizard was never advanced past step one - 'Create workspace' and 'Start without AI' were never pressed - so steps 2+ and workspace creation are uncaptured
 - the sign-up prompt and login e-mail field were typed into then cleared and never submitted, and the OAuth POST forms were never pressed - validation, error, loading and success states are absent rather than measured
 - 'Book a demo' links to a scheduler that was never opened; 'Workspace SSO' was never followed
+
+## [fal.ai](../systems/fal) — `fal`
+Access: read-only (the marketing pages, the explore catalog, the model and API pages, the docs and the login card are fully public; everything past login - dashboard, API keys, billing, deployments, sandbox, inference - is an authenticated boundary never reached; OAuth, Sign-in-to-run, Open-in-Sandbox, Download, Contact-Sales and Get-Started were measured, never followed; the prompt field was filled and cleared without running a model; the consent card was hidden, never answered)
+- every post-login surface (dashboard, API keys, billing, deployments) lives behind fal's account - an authenticated boundary never reached
+- inference was never run: the prompt field was filled and cleared, Sign-in-to-run links to login signed out, Open-in-Sandbox and Download were measured, never followed
+- the OAuth buttons and Use-SSO were measured at rest, never followed; validation, error and success states are absent rather than measured
+
+## [Designmodo](../systems/designmodo) — `designmodo`
+Access: read-only (the marketing site, /pricing, /email-templates, /postcards, /slides, the /postcards/app/login form and the signed-out app shell behind the Welcome-back modal are public; the builder canvas and every post-login surface need an account - the modal was dismissed locally with Escape and every auth action measured, never submitted)
+- the Postcards builder canvas, saving work and every post-login surface need an account - never reached
+- the Welcome-back modal's actions (Continue with Google, email field, Login, Create Account) were measured, never submitted
+- the sign-in form's fields were typed into and cleared and Login was never pressed; validation, error and success states are absent rather than measured
 
 ## Gate noted in access text only
 
