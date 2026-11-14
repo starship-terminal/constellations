@@ -534,7 +534,7 @@ const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) 
     h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
   }
   for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat((TOK.core.font || {}).tracking || {}, 'font.tracking.')) h += `<div class="tr"><span class="ts" style="letter-spacing:${esc(t.v)}">${esc(n)} — tracking</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).tracking || {}, 'font.tracking.')) { const ls = typeof t.v === 'number' ? t.v + 'em' : t.v; h += `<div class="tr"><span class="ts" style="letter-spacing:${esc(ls)}">${esc(n)} — tracking</span><span class="tv">${esc(ls)}</span></div>`; }
   for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Cartesia</span><span class="tv">${esc(t.v)}</span></div>`;
   $('#type-out').innerHTML = h;
   let f = '';

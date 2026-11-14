@@ -180,7 +180,7 @@ def props(v):
     return o
 
 
-ORDER = ["size", "padding", "border", "radius", "background", "image", "shadow", "outline", "text", "transition", "transform", "opacity", "icon", "placeholder", "layers"]
+ORDER = ["size", "padding", "border", "radius", "background", "image", "shadow", "outline", "text", "transition", "transform", "opacity", "icon", "placeholder", "layers", "ancestor paint"]
 
 
 def state_rows(c):
@@ -198,7 +198,7 @@ def state_rows(c):
         p = props(c["states"][st])
         diff = {k: p[k] for k in ORDER if k in p and p.get(k) != base.get(k)}
         for k in ORDER:
-            if k in base and k not in p:
+            if k in base and k not in p and k != "ancestor paint":
                 diff[k] = "none"
         if not diff:
             same.append(st)
