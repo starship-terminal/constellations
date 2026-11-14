@@ -1153,9 +1153,19 @@
       "assignedMedia": 70
     },
     {
+      "referenceId": "systems:explore",
+      "media": 137,
+      "assignedMedia": 28
+    },
+    {
+      "referenceId": "systems:factory",
+      "media": 223,
+      "assignedMedia": 34
+    },
+    {
       "referenceId": "systems:farfetch",
-      "media": 165,
-      "assignedMedia": 67
+      "media": 166,
+      "assignedMedia": 68
     }
   ],
   "assignments": [
@@ -263469,6 +263479,688 @@
       ]
     },
     {
+      "referenceId": "systems:explore",
+      "mediaId": "systems/explore/screenshots/about-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:about",
+          "rule": "page-about",
+          "reason": "Capture filename explicitly names about; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:explore",
+      "mediaId": "systems/explore/screenshots/about-light-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:about",
+          "rule": "page-about",
+          "reason": "Capture filename explicitly names about; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:explore",
+      "mediaId": "systems/explore/screenshots/forgot-password-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:reset-password",
+          "rule": "page-reset-password",
+          "reason": "Capture filename explicitly names reset password; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:explore",
+      "mediaId": "systems/explore/screenshots/forgot-password-light-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:reset-password",
+          "rule": "page-reset-password",
+          "reason": "Capture filename explicitly names reset password; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:explore",
+      "mediaId": "systems/explore/screenshots/home-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:explore",
+      "mediaId": "systems/explore/screenshots/home-light-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:explore",
+      "mediaId": "systems/explore/screenshots/login-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:log-in",
+          "rule": "page-login",
+          "reason": "Capture filename explicitly names log in; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:explore",
+      "mediaId": "systems/explore/screenshots/login-light-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:log-in",
+          "rule": "page-login",
+          "reason": "Capture filename explicitly names log in; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:explore",
+      "mediaId": "systems/explore/screenshots/profile-shell-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:profile-account",
+          "rule": "page-profile",
+          "reason": "Capture filename explicitly names profile & account; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:explore",
+      "mediaId": "systems/explore/screenshots/register-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:sign-up",
+          "rule": "page-signup",
+          "reason": "Capture filename explicitly names sign up; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:explore",
+      "mediaId": "systems/explore/screenshots/register-light-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:sign-up",
+          "rule": "page-signup",
+          "reason": "Capture filename explicitly names sign up; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:explore",
+      "mediaId": "systems/explore/components/crops/carousel-next-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:carousel",
+          "rule": "ui-carousel",
+          "reason": "Capture filename explicitly names carousel; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:explore",
+      "mediaId": "systems/explore/components/crops/carousel-next-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:carousel",
+          "rule": "ui-carousel",
+          "reason": "Capture filename explicitly names carousel; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:explore",
+      "mediaId": "systems/explore/components/crops/footer-column-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:explore",
+      "mediaId": "systems/explore/components/crops/footer-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:explore",
+      "mediaId": "systems/explore/components/crops/m-pill-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:explore",
+      "mediaId": "systems/explore/components/crops/pill-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:explore",
+      "mediaId": "systems/explore/components/crops/pill-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:explore",
+      "mediaId": "systems/explore/components/crops/pill-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:explore",
+      "mediaId": "systems/explore/components/crops/pill-idle-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:explore",
+      "mediaId": "systems/explore/components/crops/pill-idle-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:explore",
+      "mediaId": "systems/explore/components/crops/pill-idle-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:explore",
+      "mediaId": "systems/explore/components/crops/pill-idle-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:explore",
+      "mediaId": "systems/explore/components/crops/pill-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:explore",
+      "mediaId": "systems/explore/components/crops/pill-row-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:explore",
+      "mediaId": "systems/explore/components/crops/post-avatar-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:avatar",
+          "rule": "ui-avatar",
+          "reason": "Capture filename explicitly names avatar; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:explore",
+      "mediaId": "systems/explore/components/crops/post-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:explore",
+      "mediaId": "systems/explore/components/crops/ssr-avatar-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:avatar",
+          "rule": "ui-avatar",
+          "reason": "Capture filename explicitly names avatar; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:factory",
+      "mediaId": "systems/factory/screenshots/contact-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:contacts",
+          "rule": "page-contacts",
+          "reason": "Capture filename explicitly names contacts; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:factory",
+      "mediaId": "systems/factory/screenshots/contact-light-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:contacts",
+          "rule": "page-contacts",
+          "reason": "Capture filename explicitly names contacts; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:factory",
+      "mediaId": "systems/factory/screenshots/home-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:factory",
+      "mediaId": "systems/factory/screenshots/home-light-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:factory",
+      "mediaId": "systems/factory/screenshots/home-light-menu-company.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:factory",
+      "mediaId": "systems/factory/screenshots/home-light-menu-product.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:factory",
+      "mediaId": "systems/factory/screenshots/mobile-home-light-drawer.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:sidebar-drawer",
+          "rule": "ui-sidebar",
+          "reason": "Capture filename explicitly names sidebar & drawer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:factory",
+      "mediaId": "systems/factory/screenshots/privacy-policy-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:privacy-policy",
+          "rule": "page-privacy",
+          "reason": "Capture filename explicitly names privacy policy; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:factory",
+      "mediaId": "systems/factory/screenshots/privacy-policy-light-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:privacy-policy",
+          "rule": "page-privacy",
+          "reason": "Capture filename explicitly names privacy policy; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:factory",
+      "mediaId": "systems/factory/screenshots/signin-dark-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:log-in",
+          "rule": "page-login",
+          "reason": "Capture filename explicitly names log in; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:factory",
+      "mediaId": "systems/factory/screenshots/signin-dark-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:log-in",
+          "rule": "page-login",
+          "reason": "Capture filename explicitly names log in; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:factory",
+      "mediaId": "systems/factory/components/crops/docs-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:factory",
+      "mediaId": "systems/factory/components/crops/docs-card-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:factory",
+      "mediaId": "systems/factory/components/crops/docs-sidebar-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:sidebar-drawer",
+          "rule": "ui-sidebar",
+          "reason": "Capture filename explicitly names sidebar & drawer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:factory",
+      "mediaId": "systems/factory/components/crops/docs-sidebar-dk-dark.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:sidebar-drawer",
+          "rule": "ui-sidebar",
+          "reason": "Capture filename explicitly names sidebar & drawer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:factory",
+      "mediaId": "systems/factory/components/crops/ent-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:factory",
+      "mediaId": "systems/factory/components/crops/faq-item-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:factory",
+      "mediaId": "systems/factory/components/crops/faq-item-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:factory",
+      "mediaId": "systems/factory/components/crops/faq-item-hover.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:factory",
+      "mediaId": "systems/factory/components/crops/faq-item-opened.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:factory",
+      "mediaId": "systems/factory/components/crops/faq-item-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:factory",
+      "mediaId": "systems/factory/components/crops/footer-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:factory",
+      "mediaId": "systems/factory/components/crops/footer-link-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:factory",
+      "mediaId": "systems/factory/components/crops/footer-link-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:factory",
+      "mediaId": "systems/factory/components/crops/footer-link-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:factory",
+      "mediaId": "systems/factory/components/crops/footer-link-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:factory",
+      "mediaId": "systems/factory/components/crops/m-drawer-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:sidebar-drawer",
+          "rule": "ui-sidebar",
+          "reason": "Capture filename explicitly names sidebar & drawer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:factory",
+      "mediaId": "systems/factory/components/crops/plan-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:factory",
+      "mediaId": "systems/factory/components/crops/tier-tab-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:factory",
+      "mediaId": "systems/factory/components/crops/tier-tab-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:factory",
+      "mediaId": "systems/factory/components/crops/tier-tab-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:factory",
+      "mediaId": "systems/factory/components/crops/tier-tab-opened.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:factory",
+      "mediaId": "systems/factory/components/crops/tier-tab-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:factory",
+      "mediaId": "systems/factory/components/crops/tier-tab-selected.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
       "referenceId": "systems:farfetch",
       "mediaId": "systems/farfetch/screenshots/home-light-default.png",
       "terms": [
@@ -263938,6 +264630,17 @@
     {
       "referenceId": "systems:farfetch",
       "mediaId": "systems/farfetch/components/crops/m-dept-tile-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:farfetch",
+      "mediaId": "systems/farfetch/components/crops/m-product-card-default.png",
       "terms": [
         {
           "termId": "web-ui-elements:cards-tiles",

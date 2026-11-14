@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_79 of 137 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_81 of 139 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -437,6 +437,18 @@ Access: signed out (every captured surface is public; search results, product de
 - every post-auth surface - search results, product detail, cart, checkout, account and the brand portal - sits behind the sign-up/sign-in dialogs; every product tile links ?signUp=product, an authenticated boundary never crossed
 - the /apply stepper's steps past 1 need a submitted first step; step 1 was filled and cleared, never sent
 - the observed sign-up dialog mounts no Apple SSO button; signup-apple is recorded missing
+
+## [Explore](../systems/explore) — `explore`
+Access: read-only (every public surface signed out; the site itself is offline - the product closed 2023-04-19 and the domain later lapsed - so all pages were replayed from a local Internet Archive mirror of the 2023-02-23 build, with the closure shell from the 2023-06-08 snapshot; auth forms were measured and typed into then cleared, never submitted; no backend was ever reached; member names and works on the SSR profiles are public archive records reproduced as captured)
+- every signed-in member surface (network feed, composer, notifications, saved, subscriptions, settings) plus the dark member-portfolio theme lives behind accounts that closed with the product - an authenticated boundary never reached
+- SPA routes whose API records were never archived (/user/*, /post/*) render signed-out shells; member profiles survive only in the three archived SSR HTML pages
+- the login/register/forgot-password fields were measured at rest and typed into then cleared, never submitted - validation, error, loading and success states are absent rather than measured
+
+## [Factory](../systems/factory) — `factory`
+Access: read-only (factory.com, docs.factory.com and the auth.factory.ai sign-in card are fully public signed out; everything behind app.factory.ai - the Droid console, missions and settings - is an authenticated boundary never reached; the /contact HubSpot form and the sign-in card were measured and typed into then cleared, never submitted; every CTA and link was measured, never followed; overlays were hidden, never answered)
+- every post-login app surface (the Droid console, missions, settings) sits behind app.factory.ai - an authenticated boundary never reached; the auth.factory.ai sign-in card is a different app that does not share the marketing token layer
+- the /contact HubSpot form and the sign-in card were measured at rest and typed into then cleared, never submitted - validation, error, loading and success states are absent rather than measured
+- factory.com/changelog and docs.factory.com/changelog answer a Vercel-login 404 shape; the working changelog at docs.factory.com/docs/changelog/release-notes was captured instead
 
 ## [FARFETCH](../systems/farfetch) — `farfetch`
 Access: signed out (every captured surface is public); www.farfetch.com answers automation with Akamai 403 and the farfetch-contents.com CDNs with 429, so the DOM evidence is Wayback SSR snapshots served locally and painted by Farfetch's own archived CSS, fonts and images with scripts stripped
