@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 133,
-    "system_domains": 125,
-    "matched_domains": 98,
-    "missing_domains": 335,
+    "system_packages": 134,
+    "system_domains": 126,
+    "matched_domains": 99,
+    "missing_domains": 334,
     "system_domains_absent_from_catalog": 27
   },
   "matched": {
@@ -1528,6 +1528,23 @@
         }
       ]
     },
+    "expedia.com": {
+      "catalog": [
+        {
+          "name": "Expedia",
+          "domain": "expedia.com",
+          "id": 172
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "expedia",
+          "name": "Expedia",
+          "url": "https://www.expedia.com",
+          "name_match": true
+        }
+      ]
+    },
     "github.com": {
       "catalog": [
         {
@@ -1920,13 +1937,6 @@
         "name": "Equals",
         "domain": "equals.app",
         "id": 289
-      }
-    ],
-    "expedia.com": [
-      {
-        "name": "Expedia",
-        "domain": "expedia.com",
-        "id": 172
       }
     ],
     "explore.family": [

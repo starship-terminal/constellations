@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_75 of 133 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_76 of 134 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -419,6 +419,11 @@ Access: read-only (every captured surface is public: the storefront, the sign-in
 ## [Excalidraw](../systems/excalidraw) — `excalidraw`
 Access: read-only (the whole editor is public signed out; nothing was drawn, opened, saved, shared, exported or generated; Open, Save, Export actions, Live collaboration, Share, the AI tools, Reset the canvas and every Sign up were measured, never pressed; Excalidraw+ needs an account and was never reached)
 - Excalidraw+ (saved workspaces, cloud library, collaboration management, billing) needs an account and was never reached; no signup or login path was followed
+
+## [Expedia](../systems/expedia) — `expedia`
+Access: signed out (every captured surface is public); expedia.com answers automation with a 429 "Bot or Not?" challenge, so the DOM evidence is a Wayback snapshot served locally and painted with live travel-assets.com CSS/fonts
+- anything behind sign-in: trips, account, member pricing, checkout, booking, saved items
+- submitted states: search was never submitted; sort/filters never applied; only screenshot evidence for the opened sort menu
 
 ## Gate noted in access text only
 
