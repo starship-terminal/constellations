@@ -30,6 +30,12 @@ export interface ScreenQuery {
   sort?: "recent" | "name";
   offset?: number;
   limit?: number;
+  /**
+   * Keep at most this many captures per product and order the rest
+   * round-robin across products (first-seen order), so a page of results
+   * shows many products. `total` still counts every match.
+   */
+  perProduct?: number;
 }
 export interface ScreenFacet {
   value: string;
