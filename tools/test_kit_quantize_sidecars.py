@@ -49,13 +49,23 @@ class QuantizeSidecarTest(unittest.TestCase):
         self.assertEqual(done.returncode, 0, done.stderr[-500:])
         return self.pkg / "screenshots"
 
-    def tiles(self, heights, dpr=1, sidecars=True):
+    def tiles(self, heights, dpr=1, sidecars=True, css_sized=False, doc_h=None, clip=True):
+        """Write the tile PNGs and sidecars. css_sized: the PNG is CSS-sized although dpr is 2 (capture.scale
+        'css'); doc_h records actual.documentSize; clip=False leaves capture.clip out."""
         y = 0
+        px = 1 if css_sized else dpr
         for i, h in enumerate(heights):
-            Image.new("RGB", (8 * dpr, h * dpr), (10 * i, 0, 0)).save(self.raw / f"long.part{i}.png")
+            Image.new("RGB", (8 * px, h * px), (10 * i, 0, 0)).save(self.raw / f"long.part{i}.png")
             if sidecars:
-                (self.raw / f"long.part{i}.png.capture.json").write_text(
-                    json.dumps(sidecar(f"long.part{i}.png", 8, h, y, dpr)))
+                meta = sidecar(f"long.part{i}.png", 8, h, y, dpr)
+                meta["png"] = {"width": 8 * px, "height": h * px}
+                if css_sized:
+                    meta["capture"]["scale"] = "css"
+                if doc_h:
+                    meta["actual"]["documentSize"] = {"width": 8, "height": doc_h}
+                if not clip:
+                    del meta["capture"]["clip"]
+                (self.raw / f"long.part{i}.png.capture.json").write_text(json.dumps(meta))
             y += h
 
     def each(self, body, scripts=SCRIPTS):
@@ -87,6 +97,37 @@ class QuantizeSidecarTest(unittest.TestCase):
             self.assertEqual(meta["dimensionCheck"]["expected"], {"width": 16, "height": 20})
             self.assertEqual(meta["dimensionCheck"]["status"], "pass")
         self.each(body)
+
+    def test_stitched_css_sized_capture_at_dpr_2_passes(self):
+        # capture.scale 'css': the PNG is the clip's CSS size even though devicePixelRatio is 2.
+        def body():
+            self.tiles((6, 4), dpr=2, css_sized=True)
+            meta = json.loads((self.run_quantize() / "long.png.capture.json").read_text())
+            self.assertEqual(meta["png"], {"width": 8, "height": 10})
+            self.assertEqual(meta["dimensionCheck"]["expected"], {"width": 8, "height": 10})
+            self.assertEqual(meta["dimensionCheck"]["status"], "pass")
+        # factory's copy scales by devicePixelRatio alone and never reads capture.scale.
+        self.each(body, [s for s in SCRIPTS if "'css'" in s.read_text()])
+
+    def test_stitched_with_recorded_document_height_scales_the_intended_height(self):
+        # Copies that check coverage against actual.documentSize (check_tiles, epidemicsound) take the
+        # intended height in CSS px and scale it to the PNG, so a complete 2x sheet still passes.
+        def body():
+            self.tiles((6, 4), dpr=2, doc_h=10)
+            meta = json.loads((self.run_quantize() / "long.png.capture.json").read_text())
+            self.assertEqual(meta["dimensionCheck"]["expected"], {"width": 16, "height": 20})
+            self.assertEqual(meta["dimensionCheck"]["status"], "pass")
+            self.assertEqual(meta["capture"]["clip"]["height"], 10)
+        self.each(body)
+
+    def test_stitched_with_a_tile_missing_its_clip_writes_none(self):
+        def body():
+            self.tiles((6, 4))
+            meta = json.loads((self.raw / "long.part1.png.capture.json").read_text())
+            del meta["capture"]["clip"]
+            (self.raw / "long.part1.png.capture.json").write_text(json.dumps(meta))
+            self.assertFalse((self.run_quantize() / "long.png.capture.json").exists())
+        self.each(body, [s for s in SCRIPTS if "def check_tiles" not in s.read_text()])
 
     def test_stitched_dimension_check_fails_when_sheet_disagrees(self):
         def body():
