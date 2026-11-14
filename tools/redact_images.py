@@ -639,7 +639,16 @@ def main(argv=None):
     p = sub.add_parser("lines", help="print OCR text lines with [x0, y0, x1, y1] boxes")
     p.add_argument("files", nargs="+")
     p.set_defaults(fn=cmd_lines)
-    args = ap.parse_args(argv)
+    # argv entries may be Paths (tests build them with pathlib); argparse on
+    # Python >=3.12 indexes args[0], so coerce to str first. parse_known_args
+    # because a nargs="*" positional after an optional (check's trailing file
+    # list) comes back in extras on affected argparse versions.
+    args, extra = ap.parse_known_args(None if argv is None else [str(a) for a in argv])
+    if extra:
+        if getattr(args, "files", None) is not None:
+            args.files.extend(extra)
+        else:
+            ap.error("unrecognized arguments: %s" % " ".join(extra))
     sys.exit(args.fn(args))
 
 

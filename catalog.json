@@ -9903,6 +9903,193 @@
    }
   },
   {
+   "slug": "fable",
+   "name": "Fable",
+   "url": "https://fable.co",
+   "category": "media",
+   "platform": "web",
+   "goodFor": "book-club and reading-product design: a full declared Tailwind-style token layer (graphite/pearl/forest/olive/royal palette scales, dark/white and per-hue alpha fades, a 12-colour quote-theme reader set, a semantic --color-background/text/border/line layer with a scoped .dark redeclare, radius/shadow/breakpoint scales and reader list fonts) painting two skins signed out - an Emotion marketing skin (cream and deep-forest bands, Heldane Display mastheads, 60px pill controls, #161015 ink, #116ecd focus) and a CSS-module catalog skin (white field, heldane mastheads, 9999px pills and chips, #0064c3 focus) over clubs/books/genre/detail pages, a sign-in panel, support, a blog, and a dark /discover cover wall",
+   "tags": [
+      "web",
+      "books",
+      "reading",
+      "book-clubs",
+      "e-commerce",
+      "serif-display",
+      "forest-green",
+      "pills",
+      "tailwind",
+      "signed-out"
+   ],
+   "shape": "reference",
+   "captured": "2026-11-14",
+   "access": "read-only (the marketing pages, /clubs, /books, genre/club/book detail pages, /discover, /signin, /signup, /support, /blog and /community-guidelines are fully public signed out; joined clubs, discussions, the reader, lists, streaks, cart and checkout need an account - an authenticated boundary never reached; the sign-in form and SSO buttons, Join, Want to read, store badges and every CTA were measured, never submitted, pressed or followed; the Osano consent layer was hidden, never answered)",
+   "themes": [
+      "light",
+      "dark"
+   ],
+   "widths": [
+      1440,
+      390
+   ],
+   "entry": "systems/fable/README.md",
+   "tokens": "systems/fable/tokens.json",
+   "styleGuide": "systems/fable/style-guide.html",
+   "preview": {
+      "cover": "systems/fable/screenshots/home-light-default.png",
+      "icon": "systems/fable/icon.png",
+      "swatches": {
+         "light": {
+            "page": "light.background.page",
+            "surface": "light.background.surface",
+            "text": "light.text.ink",
+            "muted": "light.text.muted",
+            "accent": "light.background.band",
+            "border": "light.border.hairline"
+         },
+         "dark": {
+            "page": "dark.color.background.primary",
+            "surface": "dark.color.background.secondary",
+            "text": "dark.color.text.primary",
+            "muted": "dark.color.text.secondary",
+            "accent": "dark.color.background.forest",
+            "border": "dark.color.border.primary"
+         }
+      },
+      "fonts": [
+         "core.font.family.heading",
+         "core.font.family.body"
+      ]
+   },
+   "capture": {
+      "method": "public-web",
+      "source": "fable.co in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and crops from the live DOM. The site declares its token layer in its fablecdn.net app bundle (359 resolved custom properties), so the scales are declared values and the surface roles are measured computed values aliased to the declarations they match. The .dark scope is declared for app reading/detail surfaces and never paints on a captured public page - the dark set resolves the declared .dark var() chains; /discover is the one painted dark surface. Every post-login app surface is a documented authenticated boundary",
+      "timestamp": "2026-11-14T08:00:00Z",
+      "harness": "Devin",
+      "model": "SWE-2 High",
+      "route": "public-web",
+      "routes": [
+         "/",
+         "/clubs",
+         "/books",
+         "/club/fantasy",
+         "/club/the-cozy-chaos-book-club-with-summer-england-372871533779",
+         "/book/heated-rivalry-by-rachel-reid-9780369748898",
+         "/discover",
+         "/signin",
+         "/signup",
+         "/support",
+         "/blog",
+         "/blog/how-to-start-a-book-club",
+         "/community-guidelines",
+         "a 404 route",
+         "mobile /, /clubs, /book/* and /discover"
+      ],
+      "gaps": [
+         "every post-login surface (joined clubs, discussion threads, the book reader, lists, streaks and stats) needs an account - an authenticated boundary never reached",
+         "cart, checkout and ebook purchase flows were never opened; App Store / Google Play badges and 'Get the app' CTAs were measured, never followed",
+         "the sign-in and sign-up forms were measured at rest and typed into then cleared, never submitted - validation, error, loading and success states are absent rather than measured; 'Continue with Google/Apple' was never pressed",
+         "'Join the club', 'Want to read', the spoiler toggle, 'Read more' and the FAQ accordion are local UI - the disclosure toggles were opened for capture and nothing was submitted or joined",
+         "the .dark scope is declared for app reading/detail surfaces but no captured public page paints it - dark tokens are declared evidence resolved through the .dark var() chains; /discover is the only painted dark surface",
+         "the /discover cover wall animates constantly; it was measured after the 'Gathering ten thousand covers' state cleared and the render loop was frozen - cover positions in shots are incidental",
+         "pressed states are forced with DevTools (CSS.forcePseudoState), so any script-applied mousedown state is missing; two carousel icon buttons could not hold a real keyboard focus (recorded via: focus failed, not absent)",
+         "genre, club, book and blog routes are covered by one captured example each; other routes are the same templates, unmeasured; legal pages share the guidelines template",
+         "tall mobile pages are stitched from part tiles capped at 8 chunks - mobile-book-light-full stitched 2 parts; a recorded boundary",
+         "icons: no standalone SVG set lifted this pass"
+      ],
+      "durationMin": 300,
+      "durationNote": "wall-clock across the capture sessions including kit adaptation (shooter, measurement and docs builders adapted to the two Fable skins), the stylesheet harvest, screenshot and measurement passes on a headless Linux server, a /discover render-loop settle retry, and the offline build",
+      "pr": "https://github.com/starship-terminal/constellations/pull/551"
+   },
+   "layoutGaps": {
+      "icons/": "the icon extraction pass was not run; the icons (the Fable wordmark and book-spine mark, the sign-in/cart/hamburger/search glyphs, the share mark, the star ratings, the App Store and Google Play badges) are visible in the crops and screenshots"
+   }
+  },
+  {
+   "slug": "faire",
+   "name": "Faire",
+   "url": "https://www.faire.com",
+   "category": "e-commerce",
+   "platform": "web",
+   "goodFor": "Wholesale marketplace surfaces: a white field with near-black #333333 fs-buttons at 4px radius against 999px filter pills, a 2px #275ec5 focus ring, Graphik 14/20 UI text under Nantes 52/64 and GT Canon 30/38 serif mastheads, and the declared Slate token layer (--slate-* ramps, roles and the .fs-mode-on-surface inverse scope) readable straight off the bundles",
+   "tags": [
+    "web",
+    "e-commerce",
+    "marketplace",
+    "wholesale",
+    "slate",
+    "light",
+    "signed-out"
+   ],
+   "shape": "reference",
+   "captured": "2026-11-14",
+   "access": "signed out (every captured surface is public; search results, product detail, cart, checkout, account and the brand portal are behind the sign-up/sign-in dialogs - a documented authenticated boundary never crossed)",
+   "themes": ["light"],
+   "widths": [1440, 390],
+   "entry": "systems/faire/README.md",
+   "tokens": "systems/faire/tokens.json",
+   "styleGuide": "systems/faire/style-guide.html",
+   "preview": {
+    "cover": "systems/faire/screenshots/home-light-default.png",
+    "icon": "systems/faire/icon.png",
+    "swatches": {
+     "light": {
+      "page": "light.color.surface.primary.default",
+      "surface": "light.color.surface.secondary",
+      "text": "light.color.text.primary.default",
+      "muted": "light.color.text.subdued",
+      "accent": "light.color.action.border.focusRing",
+      "border": "light.color.border.muted"
+     }
+    },
+    "fonts": ["core.font.family.sans", "core.font.family.serif"]
+   },
+   "capture": {
+    "method": "public-web",
+    "source": "faire.com in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and crops from the live DOM. The site declares the Slate design-token layer in its cross-origin cdn.faire.com bundles, so the harvester reads stylesheet bodies from network responses rather than the CSSOM: --slate-color-* ramps and the text/surface/border/icon/action/button/message/tag/toggle/expressive/program roles, the --slate-typography-* Graphik/Nantes ramp beside the legacy --f_t_* ramp, the 4px spacing base, the two --slate-elevation-* shadows and the .fs-mode-on-surface inverse scope are all declared values; component geometry is measured. The Cloudflare edge intermittently challenges category/suppliers/brand routes with a Turnstile interstitial - waited out and retried on fresh contexts, never solved; measurement passes preserve prior readings on blocked routes rather than pruning them",
+    "timestamp": "2026-11-14T06:30:00Z",
+    "harness": "Devin",
+    "model": "SWE-2 High",
+    "route": "public-web",
+    "routes": [
+     "/",
+     "/category/Home Decor",
+     "/category/New Products",
+     "/brand/b_d72c56fe",
+     "/suppliers/Home Decor/subcategory/Candles & Holders/Candles",
+     "/suppliers/All Brands/brand-value/women-owned",
+     "/how-faire-works",
+     "/about",
+     "/news",
+     "/careers",
+     "/large-retailers",
+     "/point-of-sale/about",
+     "/markets",
+     "/support",
+     "/affiliates",
+     "/apply",
+     "/?signIn=1",
+     "/?signUp=1",
+     "/pagenotfound",
+     "/tos",
+     "mobile /, /category/Home Decor, /apply and /?signIn=1"
+    ],
+    "gaps": [
+     "every post-auth surface - search results, product detail, cart, checkout, account and the brand portal - sits behind the sign-up/sign-in dialogs; every product tile links ?signUp=product, an authenticated boundary never crossed",
+     "Cloudflare intermittently serves a Turnstile challenge on the category/suppliers/brand routes; the affected components' missing states are recorded missing or carry earlier-run readings, never estimated",
+     "the /apply stepper's steps past 1 need a submitted first step; step 1 was filled and cleared, never sent",
+     "the observed sign-up dialog mounts no Apple SSO button; signup-apple is recorded missing",
+     "icons: no standalone SVG set lifted this pass",
+     "OneTrust consent UI hidden on every shot, never answered"
+    ],
+    "durationMin": 150,
+    "pr": "https://github.com/starship-terminal/constellations/pull/552"
+   },
+   "layoutGaps": {
+    "icons/": "the icon extraction pass was not run; the icons (the FAIRE wordmark, magnifier, globe, hamburger, social and SSO glyphs) are visible in the crops and screenshots"
+   }
+  },
+  {
    "slug": "explore",
    "name": "Explore",
    "url": "https://explore.family",
