@@ -103,7 +103,12 @@ for (const ord of routeSheets) {
 }
 
 // ---- harvest: every rule with --* declarations ----
-const probe = await browser.newPage();
+// The resolution probe runs in its own context at the desktop capture setup
+// (1440 x 900, dpr 1), so viewport-relative and pixel-snapped values resolve
+// the way the desktop surface paints them; the probe setup is recorded in
+// `source` below.
+const probeCtx = await browser.newContext({ viewport: { width: 1440, height: 900 }, deviceScaleFactor: 1, userAgent: UA, locale: 'en-US' });
+const probe = await probeCtx.newPage();
 const result = await probe.evaluate((sheets) => {
   const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v);
   const rules = [];
@@ -248,7 +253,7 @@ for (const r of ok) {
 const names = (bin) => [...new Set(ok.filter((r) => r.bin === bin).flatMap((r) => Object.keys(r.properties)))].sort();
 const out = {
   readAt: new Date().toLocaleDateString('en-CA'),
-  source: 'the stylesheet bodies read during live loads on ' + ROUTES.join(', ') + ' (linked CSS bundles from network responses plus inline <style> blocks, re-parsed with CSSStyleSheet); resolved in a probe carrying the real sheets, plain (:root) and with a .dark class (the declared dark layer the marketing pages never bind), at 1440 x 900',
+  source: 'the stylesheet bodies read during live loads on ' + ROUTES.join(', ') + ' (linked CSS bundles from network responses plus inline <style> blocks, re-parsed with CSSStyleSheet); resolved in a probe carrying the real sheets, plain (:root) and with a .dark class (the declared dark layer the marketing pages never bind), in its own context at 1440 x 900, dpr 1',
   sheets: sheets.map(([n, t]) => `${n} (${t.length} bytes)`),
   counts: {
     rules: ok.length,
