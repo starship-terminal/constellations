@@ -13,9 +13,10 @@ TOOLS = Path(__file__).resolve().parent
 sys.path.insert(0, str(TOOLS))
 try:
     from PIL import Image
-    import make_icons
 except ImportError:  # Pillow is optional for `make test`
     make_icons = None
+else:
+    import make_icons  # a broken import in the script itself must fail, not skip
 
 EXPECTED = {"favicon-16.png": (16, 16), "favicon-32.png": (32, 32), "favicon-48.png": (48, 48),
             "apple-touch-icon.png": (180, 180), "icon-192.png": (192, 192),
