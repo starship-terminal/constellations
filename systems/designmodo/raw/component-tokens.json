@@ -50,12 +50,6 @@
             "source": "computed fontSize of filter-industry default (raw/components-computed.json)",
             "description": "The 13px app filter label."
           },
-          "micro": {
-            "value": "18px",
-            "type": "fontSize",
-            "source": "computed fontSize of tpl-card-m default (raw/components-computed.json)",
-            "description": "The 12px gallery/meta label."
-          },
           "control": {
             "value": "15px",
             "type": "fontSize",

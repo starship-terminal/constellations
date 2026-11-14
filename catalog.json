@@ -10005,91 +10005,386 @@
       "icons/": "the icon extraction pass was not run; the icons (the Fable wordmark and book-spine mark, the sign-in/cart/hamburger/search glyphs, the share mark, the star ratings, the App Store and Google Play badges) are visible in the crops and screenshots"
    }
   },
- {
-  "slug": "designmodo",
-  "name": "Designmodo",
-  "url": "https://designmodo.com",
-  "category": "productivity",
-  "platform": "web",
-  "goodFor": "design-tool SaaS marketing and email-builder app design: two systems on one domain - an InterVariable marketing surface over dark #071c26 hero bands (56px display, #f49a40 orange Sign Up pill, #27ae60 green Open App CTA, #0d1d24 near-black product CTAs that flip #fb754b coral on hover) and a Fira Sans Postcards app shell (60px navy header, #2198ed blue actions, #485f6b slate, 241px sidebar, 266x592 template cards with 9px FREE/NEW badges) gated by a measured Welcome-back modal",
-  "tags": [
-   "web",
-   "saas",
-   "design-tools",
-   "email-builder",
-   "marketing",
-   "styled-components",
-   "navy",
-   "orange",
-   "green",
-   "light",
-   "signed-out"
-  ],
-  "shape": "reference",
-  "captured": "2026-11-13",
-  "access": "read-only (the marketing site, /pricing, /email-templates, /postcards, /slides, the /postcards/app/login form and the signed-out app shell behind the Welcome-back modal are public; the builder canvas and every post-login surface need an account - the modal was dismissed locally with Escape and every auth action measured, never submitted)",
-  "themes": [
-   "light"
-  ],
-  "widths": [
-   1440,
-   390
-  ],
-  "entry": "systems/designmodo/README.md",
-  "tokens": "systems/designmodo/tokens.json",
-  "styleGuide": "systems/designmodo/style-guide.html",
-  "preview": {
-   "cover": "systems/designmodo/screenshots/home-light-default.png",
-   "icon": "systems/designmodo/icon.png",
-   "swatches": {
-    "light": {
-     "page": "light.background.page",
-     "surface": "light.background.navy",
-     "text": "light.text.ink",
-     "muted": "light.text.muted",
-     "accent": "light.action.accent",
-     "border": "light.border.focus"
-    }
+  {
+   "slug": "faire",
+   "name": "Faire",
+   "url": "https://www.faire.com",
+   "category": "e-commerce",
+   "platform": "web",
+   "goodFor": "Wholesale marketplace surfaces: a white field with near-black #333333 fs-buttons at 4px radius against 999px filter pills, a 2px #275ec5 focus ring, Graphik 14/20 UI text under Nantes 52/64 and GT Canon 30/38 serif mastheads, and the declared Slate token layer (--slate-* ramps, roles and the .fs-mode-on-surface inverse scope) readable straight off the bundles",
+   "tags": [
+    "web",
+    "e-commerce",
+    "marketplace",
+    "wholesale",
+    "slate",
+    "light",
+    "signed-out"
+   ],
+   "shape": "reference",
+   "captured": "2026-11-14",
+   "access": "signed out (every captured surface is public; search results, product detail, cart, checkout, account and the brand portal are behind the sign-up/sign-in dialogs - a documented authenticated boundary never crossed)",
+   "themes": ["light"],
+   "widths": [1440, 390],
+   "entry": "systems/faire/README.md",
+   "tokens": "systems/faire/tokens.json",
+   "styleGuide": "systems/faire/style-guide.html",
+   "preview": {
+    "cover": "systems/faire/screenshots/home-light-default.png",
+    "icon": "systems/faire/icon.png",
+    "swatches": {
+     "light": {
+      "page": "light.color.surface.primary.default",
+      "surface": "light.color.surface.secondary",
+      "text": "light.color.text.primary.default",
+      "muted": "light.color.text.subdued",
+      "accent": "light.color.action.border.focusRing",
+      "border": "light.color.border.muted"
+     }
+    },
+    "fonts": ["core.font.family.sans", "core.font.family.serif"]
    },
-   "fonts": [
-    "core.font.family.ui",
-    "core.font.family.app"
-   ]
+   "capture": {
+    "method": "public-web",
+    "source": "faire.com in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and crops from the live DOM. The site declares the Slate design-token layer in its cross-origin cdn.faire.com bundles, so the harvester reads stylesheet bodies from network responses rather than the CSSOM: --slate-color-* ramps and the text/surface/border/icon/action/button/message/tag/toggle/expressive/program roles, the --slate-typography-* Graphik/Nantes ramp beside the legacy --f_t_* ramp, the 4px spacing base, the two --slate-elevation-* shadows and the .fs-mode-on-surface inverse scope are all declared values; component geometry is measured. The Cloudflare edge intermittently challenges category/suppliers/brand routes with a Turnstile interstitial - waited out and retried on fresh contexts, never solved; measurement passes preserve prior readings on blocked routes rather than pruning them",
+    "timestamp": "2026-11-14T06:30:00Z",
+    "harness": "Devin",
+    "model": "SWE-2 High",
+    "route": "public-web",
+    "routes": [
+     "/",
+     "/category/Home Decor",
+     "/category/New Products",
+     "/brand/b_d72c56fe",
+     "/suppliers/Home Decor/subcategory/Candles & Holders/Candles",
+     "/suppliers/All Brands/brand-value/women-owned",
+     "/how-faire-works",
+     "/about",
+     "/news",
+     "/careers",
+     "/large-retailers",
+     "/point-of-sale/about",
+     "/markets",
+     "/support",
+     "/affiliates",
+     "/apply",
+     "/?signIn=1",
+     "/?signUp=1",
+     "/pagenotfound",
+     "/tos",
+     "mobile /, /category/Home Decor, /apply and /?signIn=1"
+    ],
+    "gaps": [
+     "every post-auth surface - search results, product detail, cart, checkout, account and the brand portal - sits behind the sign-up/sign-in dialogs; every product tile links ?signUp=product, an authenticated boundary never crossed",
+     "Cloudflare intermittently serves a Turnstile challenge on the category/suppliers/brand routes; the affected components' missing states are recorded missing or carry earlier-run readings, never estimated",
+     "the /apply stepper's steps past 1 need a submitted first step; step 1 was filled and cleared, never sent",
+     "the observed sign-up dialog mounts no Apple SSO button; signup-apple is recorded missing",
+     "icons: no standalone SVG set lifted this pass",
+     "OneTrust consent UI hidden on every shot, never answered"
+    ],
+    "durationMin": 150,
+    "pr": "https://github.com/starship-terminal/constellations/pull/552"
+   },
+   "layoutGaps": {
+    "icons/": "the icon extraction pass was not run; the icons (the FAIRE wordmark, magnifier, globe, hamburger, social and SSO glyphs) are visible in the crops and screenshots"
+   }
   },
-  "capture": {
-   "method": "public-web",
-   "source": "designmodo.com in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and crops from the live DOM. The site declares almost no custom properties (the resolved set is Font Awesome widget internals), so the token tree is measured end to end from computed styles. /postcards/app/folder/templates mounts a Welcome-back modal over the gallery for signed-out visitors; Escape dismissed it and the whole gallery - real product UI, not a stub - was measured through it. The builder canvas past the account is a documented authenticated boundary",
-   "timestamp": "2026-11-13T09:00:00Z",
-   "harness": "Devin",
-   "model": "SWE-2 High",
-   "route": "public-web",
-   "routes": [
-    "/",
-    "/postcards/app/folder/templates",
-    "/postcards/pricing/",
-    "/email-templates/",
-    "/postcards/",
-    "/slides/",
-    "/my-account/sign-in/",
-    "mobile / and /postcards/app/folder/templates"
+  {
+   "slug": "explore",
+   "name": "Explore",
+   "url": "https://explore.family",
+   "category": "directory",
+   "platform": "web",
+   "goodFor": "ad-free creative-community design, reconstructed offline from the 2023-02-23 archive build: a signature mid-grey #9d9d9d field (fixed 60px header, hero, auth welcome panel, media placeholders) over white pages, one #ffc60a yellow accent (Sign up free, submits, PRO badge), #262626 dark pill submits, a warm-neutral ramp (#262626 ink to #efefef/#ebebeb hairlines), UntitledSans UI + UntitledSansMedium titles + LabilGrotesk-Medium display, 7-8px card/field radii against 20px category pills and 50px button pills, a 3-up 33.3%-wide post-card feed in a 1640px column, and split-screen auth pages",
+   "tags": [
+    "web",
+    "community",
+    "portfolio",
+    "social",
+    "design",
+    "archive",
+    "dead-product",
+    "light",
+    "yellow-accent",
+    "signed-out"
    ],
-   "gaps": [
-    "the Postcards builder canvas, saving work and every post-login surface need an account - never reached",
-    "the Welcome-back modal's actions (Continue with Google, email field, Login, Create Account) were measured, never submitted",
-    "the sign-in form's fields were typed into and cleared and Login was never pressed; validation, error and success states are absent rather than measured",
-    "the home 'Add to cart' plan links render in an off-viewport slide panel that never mounts visibly signed out - left out rather than fabricated; /pricing covers the plan actions",
-    "the mobile app gallery scrolls inside a nested container 14521px tall; the capture kept the first 8 viewport tiles (6752px) - a recorded inner-scroller boundary",
-    "pressed was forced with DevTools - a mousedown-only style (if any) is missing",
-    "a transient edge challenge appeared once on the app route and cleared on retry; no route stayed blocked",
-    "icons: no standalone SVG set lifted this pass"
+   "shape": "reference",
+   "captured": "2026-11-14",
+   "access": "read-only (every public surface signed out; the site itself is offline - the product closed 2023-04-19 and the domain later lapsed - so all pages were replayed from a local Internet Archive mirror of the 2023-02-23 build, with the closure shell from the 2023-06-08 snapshot; auth forms were measured and typed into then cleared, never submitted; no backend was ever reached; member names and works on the SSR profiles are public archive records reproduced as captured)",
+   "themes": [
+    "light"
    ],
-   "durationMin": 240,
-   "durationNote": "wall-clock across the capture sessions including kit adaptation, the stylesheet harvest, screenshot and measurement passes on a headless Linux server, and the offline build",
-   "pr": "https://github.com/starship-terminal/constellations/pull/548"
+   "widths": [
+    1440,
+    390
+   ],
+   "entry": "systems/explore/README.md",
+   "tokens": "systems/explore/tokens.json",
+   "styleGuide": "systems/explore/style-guide.html",
+   "preview": {
+    "cover": "systems/explore/screenshots/discover-light-default.png",
+    "icon": "systems/explore/icon.png",
+    "swatches": {
+     "light": {
+      "page": "light.color.background.page",
+      "surface": "light.color.background.field",
+      "text": "light.color.text.primary",
+      "muted": "light.color.text.secondary",
+      "accent": "light.color.action.accent",
+      "border": "light.color.border.hairline"
+     }
+    },
+    "fonts": [
+     "core.font.family.sans",
+     "core.font.family.display"
+    ]
+   },
+   "capture": {
+    "method": "archive-replay",
+    "source": "the 2023-02-23 web.archive.org snapshot of explore.family replayed locally in headless Chromium (Playwright): frontend and back.explore.family API requests routed to a file mirror (~/.design-systems/explore/mirror), missing API records answered with controlled 401/404 shapes, SSR profile pages replayed with JavaScript disabled so the SPA could not replace the server markup; desktop 1440x900 and a 390x844 mobile pass; the site declares no token layer, so scales were mined from the compiled app.4ef09b07.css (1850 rules) and roles measured as computed styles. Domain verification: DNS NXDOMAIN, RDAP 404, closure announcement 2023-04-19",
+    "timestamp": "2026-11-14T12:00:00Z",
+    "harness": "Devin",
+    "model": "SWE-2 High",
+    "route": "public-web",
+    "routes": [
+     "/",
+     "/discover",
+     "/login",
+     "/register",
+     "/forgot-password",
+     "/about",
+     "/terms",
+     "/privacy",
+     "/conduct",
+     "/sawdust (SPA shell - member API never archived)",
+     "/p/2193 (SPA shell - post API never archived)",
+     "/malikafavre (SSR HTML)",
+     "/sawdust (SSR HTML)",
+     "2023-06-08 closure announcement",
+     "mobile /, /discover, /login and /register"
+    ],
+    "gaps": [
+     "every signed-in member surface (network feed, composer, notifications, saved, subscriptions, settings) plus the dark member-portfolio theme lives behind accounts that closed with the product - an authenticated boundary never reached",
+     "SPA routes whose API records were never archived (/user/*, /post/*) render signed-out shells; member profiles survive only in the three archived SSR HTML pages",
+     "post media (MP4s, GIFs, WebPs, some avatars/covers) missing from the archive render as #9d9d9d placeholders; per-capture misses are in each screenshot's .capture.json sidecar",
+     "the login/register/forgot-password fields were measured at rest and typed into then cleared, never submitted - validation, error, loading and success states are absent rather than measured",
+     "/reset-password/{id}/{code} needs a live token and was never reachable",
+     "pressed states are forced with DevTools (CSS.forcePseudoState), so any script-applied mousedown state is missing",
+     "icons: the interface icons are inline SVGs in the compiled Vue bundle and were not lifted this pass - visible in crops and screenshots",
+     "the capture is the 2023-02-23 build: later changes up to the 2023-04-19 shutdown are not covered"
+    ],
+    "durationMin": 300,
+    "durationNote": "wall-clock across the archive archaeology (DNS/RDAP probes, snapshot selection, mirror download), the kit adaptation (replay router, SSR passthrough, measure/docs builders rewritten to the Explore DOM), the screenshot and measurement passes on a headless Linux server, and the offline build",
+    "pr": "https://github.com/starship-terminal/constellations/pull/550"
+   },
+   "layoutGaps": {
+    "icons/": "the icon extraction pass was not run; the interface icons (wordmark, appreciate/comment/save glyphs, carousel arrows, password eye) are inline SVGs in the compiled Vue bundle, visible in the crops and screenshots"
+   }
   },
-  "layoutGaps": {
-   "icons/": "the icon extraction pass was not run; the marks (the Designmodo wordmark, product glyphs, the Font Awesome set) are visible in the crops and screenshots"
+  {
+   "slug": "factory",
+   "name": "Factory",
+   "url": "https://factory.ai",
+   "category": "ai-agent",
+   "platform": "web",
+   "goodFor": "AI-dev-tool marketing and docs design: a Tailwind v4-style declared token layer (--font-geist-* stacks, a --color-base-* neutral ramp plus --color-accent-* orange steps and --color-<hue>-* hue scales, a --text-*/--leading-*/--tracking-* type ramp, --radius-* steps, --container-*/--breakpoint-* layout and --blur-*/--ease-*/--animate-* motion) with inverted theme mechanics - :root declares the dark palette and data-theme=\"light\" remaps it, so marketing pages ship light with scoped dark [data-dark-hero]/.invert-color-scheme sections and a dark footer, docs.factory.com carries a real Light/Dark/System toggle, and auth.factory.ai is a separate dark sign-in card outside the shared layer. ~60px uppercase Geist mastheads, paired outline+dark pill CTAs, a mono install-command box, and Geist/Geist Mono self-hosted variable fonts",
+   "tags": [
+    "web",
+    "ai",
+    "developer-tools",
+    "design-tokens",
+    "light",
+    "dark",
+    "scoped-dark-sections",
+    "orange-accent",
+    "variable-font",
+    "signed-out"
+   ],
+   "shape": "reference",
+   "captured": "2026-11-14",
+   "access": "read-only (factory.com, docs.factory.com and the auth.factory.ai sign-in card are fully public signed out; everything behind app.factory.ai - the Droid console, missions and settings - is an authenticated boundary never reached; the /contact HubSpot form and the sign-in card were measured and typed into then cleared, never submitted; every CTA and link was measured, never followed; overlays were hidden, never answered)",
+   "themes": [
+    "light",
+    "dark"
+   ],
+   "widths": [
+    1440,
+    390
+   ],
+   "entry": "systems/factory/README.md",
+   "tokens": "systems/factory/tokens.json",
+   "styleGuide": "systems/factory/style-guide.html",
+   "preview": {
+    "cover": "systems/factory/screenshots/home-light-default.png",
+    "icon": "systems/factory/icon.png",
+    "swatches": {
+     "light": {
+      "page": "light.color.background",
+      "surface": "light.color.surface.raised",
+      "text": "light.color.foreground",
+      "muted": "light.text.subInk",
+      "accent": "core.color.accent.200",
+      "border": "light.border.cta2Border"
+     },
+     "dark": {
+      "page": "dark.color.background",
+      "surface": "dark.color.surface.raised",
+      "text": "dark.color.foreground",
+      "muted": "dark.text.footerInk",
+      "accent": "core.color.accent.200",
+      "border": "dark.color.base.1000"
+     }
+    },
+    "fonts": [
+     "core.font.family.sans",
+     "core.font.family.mono"
+    ]
+   },
+   "capture": {
+    "method": "public-web",
+    "source": "factory.com, docs.factory.com and auth.factory.ai in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and crops from the live DOM. The site declares its token layer in ~300KB of Next.js CSS (161 resolved custom properties per theme probe), so the scales are declared values and the surface roles are measured computed values aliased to the declarations they match. The theme mechanics are inverted: :root declares the dark palette and data-theme=\"light\" remaps it - marketing pages ship light with scoped dark sections and a dark footer, docs.factory.com paints both themes through a real Light/Dark/System selector, and the auth.factory.ai sign-in card is a separately-measured dark app that does not share the layer (component.signin.*). Everything behind app.factory.ai is a documented authenticated boundary",
+    "timestamp": "2026-11-14T09:00:00Z",
+    "harness": "Devin",
+    "model": "SWE-2 High",
+    "route": "public-web",
+    "routes": [
+     "/",
+     "/enterprise",
+     "/pricing",
+     "/product/desktop",
+     "/product/cli",
+     "/product/ide",
+     "/product/automations",
+     "/product/software-factory",
+     "/product/security-factory",
+     "/product/connectors",
+     "/product/cloud-agents",
+     "/product/droid-computers",
+     "/product/agent-effectiveness",
+     "/product/missions",
+     "/product/router",
+     "/agent-readiness",
+     "/product/analytics",
+     "/news",
+     "/company",
+     "/events",
+     "/contact",
+     "/security",
+     "/partners",
+     "/ambassador",
+     "/oss",
+     "/science",
+     "/privacy-policy",
+     "docs.factory.com/docs",
+     "docs.factory.com/docs/changelog/release-notes",
+     "docs.factory.com/docs/factory-app/quickstart",
+     "app.factory.ai -> auth.factory.ai (sign-in card)",
+     "mobile /, /contact, /pricing and docs.factory.com/docs"
+    ],
+    "gaps": [
+     "every post-login app surface (the Droid console, missions, settings) sits behind app.factory.ai - an authenticated boundary never reached; the auth.factory.ai sign-in card is a different app that does not share the marketing token layer",
+     "the /contact HubSpot form and the sign-in card were measured at rest and typed into then cleared, never submitted - validation, error, loading and success states are absent rather than measured",
+     "factory.com/changelog and docs.factory.com/changelog answer a Vercel-login 404 shape; the working changelog at docs.factory.com/docs/changelog/release-notes was captured instead",
+     "individual /news and /events article pages are the same templates as the captured indexes, unmeasured",
+     "hero video panels and product mocks hold live video/canvas content; a screenshot freezes one frame and headless video can paint as a black rectangle - a capture artifact, not the design",
+     "pressed states are forced with DevTools (CSS.forcePseudoState), so any script-applied mousedown state is missing",
+     "mega-menu items' focus/hover is partially covered - the panel closes on blur before a keyboard focus can always be held",
+     "disabled, error and loading states were not observed on the signed-out public surface",
+     "icons: no standalone SVG set lifted this pass"
+    ],
+    "durationMin": 390,
+    "durationNote": "wall-clock across the capture sessions including kit adaptation (the public shooter rewritten for scroll-driven reveals into stitched viewport tiles, the docs theme-toggle pass), the stylesheet harvest, screenshot and measurement passes on a headless server, an interrupted first session resumed from its scratch, and the offline build",
+    "pr": "https://github.com/starship-terminal/constellations/pull/549"
+   },
+   "layoutGaps": {
+    "icons/": "the icon extraction pass was not run; the icons (the Factory asterisk mark, the mono product-area glyphs in the mega-menu, the social marks) are visible in the crops and screenshots"
+   }
+  },
+  {
+   "slug": "designmodo",
+   "name": "Designmodo",
+   "url": "https://designmodo.com",
+   "category": "productivity",
+   "platform": "web",
+   "goodFor": "design-tool SaaS marketing and email-builder app design: two systems on one domain - an InterVariable marketing surface over dark #071c26 hero bands (56px display, #f49a40 orange Sign Up pill, #27ae60 green Open App CTA, #0d1d24 near-black product CTAs that flip #fb754b coral on hover) and a Fira Sans Postcards app shell (60px navy header, #2198ed blue actions, #485f6b slate, 241px sidebar, 266x592 template cards with 9px FREE/NEW badges) gated by a measured Welcome-back modal",
+   "tags": [
+    "web",
+    "saas",
+    "design-tools",
+    "email-builder",
+    "marketing",
+    "styled-components",
+    "navy",
+    "orange",
+    "green",
+    "light",
+    "signed-out"
+   ],
+   "shape": "reference",
+   "captured": "2026-11-13",
+   "access": "read-only (the marketing site, /pricing, /email-templates, /postcards, /slides, the /postcards/app/login form and the signed-out app shell behind the Welcome-back modal are public; the builder canvas and every post-login surface need an account - the modal was dismissed locally with Escape and every auth action measured, never submitted)",
+   "themes": [
+    "light"
+   ],
+   "widths": [
+    1440,
+    390
+   ],
+   "entry": "systems/designmodo/README.md",
+   "tokens": "systems/designmodo/tokens.json",
+   "styleGuide": "systems/designmodo/style-guide.html",
+   "preview": {
+    "cover": "systems/designmodo/screenshots/home-light-default.png",
+    "icon": "systems/designmodo/icon.png",
+    "swatches": {
+     "light": {
+      "page": "light.background.page",
+      "surface": "light.background.navy",
+      "text": "light.text.ink",
+      "muted": "light.text.muted",
+      "accent": "light.action.accent",
+      "border": "light.border.focus"
+     }
+    },
+    "fonts": [
+     "core.font.family.ui",
+     "core.font.family.app"
+    ]
+   },
+   "capture": {
+    "method": "public-web",
+    "source": "designmodo.com in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and crops from the live DOM. The site declares almost no custom properties (the resolved set is Font Awesome widget internals), so the token tree is measured end to end from computed styles. /postcards/app/folder/templates mounts a Welcome-back modal over the gallery for signed-out visitors; Escape dismissed it and the whole gallery - real product UI, not a stub - was measured through it. The builder canvas past the account is a documented authenticated boundary",
+    "timestamp": "2026-11-13T09:00:00Z",
+    "harness": "Devin",
+    "model": "SWE-2 High",
+    "route": "public-web",
+    "routes": [
+     "/",
+     "/postcards/app/folder/templates",
+     "/postcards/pricing/",
+     "/email-templates/",
+     "/postcards/",
+     "/slides/",
+     "/my-account/sign-in/",
+     "mobile / and /postcards/app/folder/templates"
+    ],
+    "gaps": [
+     "the Postcards builder canvas, saving work and every post-login surface need an account - never reached",
+     "the Welcome-back modal's actions (Continue with Google, email field, Login, Create Account) were measured, never submitted",
+     "the sign-in form's fields were typed into and cleared and Login was never pressed; validation, error and success states are absent rather than measured",
+     "the home 'Add to cart' plan links render in an off-viewport slide panel that never mounts visibly signed out - left out rather than fabricated; /pricing covers the plan actions",
+     "the mobile app gallery scrolls inside a nested container 14521px tall; the capture kept the first 8 viewport tiles (6752px) - a recorded inner-scroller boundary",
+     "pressed was forced with DevTools - a mousedown-only style (if any) is missing",
+     "a transient edge challenge appeared once on the app route and cleared on retry; no route stayed blocked",
+     "icons: no standalone SVG set lifted this pass"
+    ],
+    "durationMin": 240,
+    "durationNote": "wall-clock across the capture sessions including kit adaptation, the stylesheet harvest, screenshot and measurement passes on a headless Linux server, and the offline build",
+    "pr": "https://github.com/starship-terminal/constellations/pull/548"
+   },
+   "layoutGaps": {
+    "icons/": "the icon extraction pass was not run; the marks (the Designmodo wordmark, product glyphs, the Font Awesome set) are visible in the crops and screenshots"
+   }
   }
- }
  ]
 }
