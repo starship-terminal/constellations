@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_78 of 136 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_79 of 137 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -437,6 +437,11 @@ Access: signed out (every captured surface is public; search results, product de
 - every post-auth surface - search results, product detail, cart, checkout, account and the brand portal - sits behind the sign-up/sign-in dialogs; every product tile links ?signUp=product, an authenticated boundary never crossed
 - the /apply stepper's steps past 1 need a submitted first step; step 1 was filled and cleared, never sent
 - the observed sign-up dialog mounts no Apple SSO button; signup-apple is recorded missing
+
+## [FARFETCH](../systems/farfetch) — `farfetch`
+Access: signed out (every captured surface is public); www.farfetch.com answers automation with Akamai 403 and the farfetch-contents.com CDNs with 429, so the DOM evidence is Wayback SSR snapshots served locally and painted by Farfetch's own archived CSS, fonts and images with scripts stripped
+- anything behind sign-in: account, wishlist contents, bag, checkout, order tracking, FARFETCH Access loyalty, private client
+- submitted states: search, newsletter and filters were typed/measured but never submitted
 
 ## Gate noted in access text only
 

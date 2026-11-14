@@ -1151,6 +1151,11 @@
       "referenceId": "systems:faire",
       "media": 303,
       "assignedMedia": 70
+    },
+    {
+      "referenceId": "systems:farfetch",
+      "media": 165,
+      "assignedMedia": 67
     }
   ],
   "assignments": [
@@ -263460,6 +263465,823 @@
           "termId": "web-ux-patterns:filter-sorting",
           "rule": "ux-filter-sort",
           "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:farfetch",
+      "mediaId": "systems/farfetch/screenshots/home-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:farfetch",
+      "mediaId": "systems/farfetch/screenshots/home-light-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:farfetch",
+      "mediaId": "systems/farfetch/components/crops/accordion-button-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ui-elements:accordion-collapse",
+          "rule": "ui-accordion",
+          "reason": "Capture filename explicitly names accordion & collapse; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:farfetch",
+      "mediaId": "systems/farfetch/components/crops/accordion-button-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ui-elements:accordion-collapse",
+          "rule": "ui-accordion",
+          "reason": "Capture filename explicitly names accordion & collapse; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:farfetch",
+      "mediaId": "systems/farfetch/components/crops/accordion-button-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ui-elements:accordion-collapse",
+          "rule": "ui-accordion",
+          "reason": "Capture filename explicitly names accordion & collapse; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:farfetch",
+      "mediaId": "systems/farfetch/components/crops/accordion-button-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ui-elements:accordion-collapse",
+          "rule": "ui-accordion",
+          "reason": "Capture filename explicitly names accordion & collapse; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:farfetch",
+      "mediaId": "systems/farfetch/components/crops/accordion-item-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:accordion-collapse",
+          "rule": "ui-accordion",
+          "reason": "Capture filename explicitly names accordion & collapse; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:farfetch",
+      "mediaId": "systems/farfetch/components/crops/breadcrumb-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:breadcrumb",
+          "rule": "ui-breadcrumb",
+          "reason": "Capture filename explicitly names breadcrumb; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:farfetch",
+      "mediaId": "systems/farfetch/components/crops/card-brand-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:farfetch",
+      "mediaId": "systems/farfetch/components/crops/card-brand-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:farfetch",
+      "mediaId": "systems/farfetch/components/crops/card-desc-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:farfetch",
+      "mediaId": "systems/farfetch/components/crops/card-price-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:farfetch",
+      "mediaId": "systems/farfetch/components/crops/card-sizes-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:farfetch",
+      "mediaId": "systems/farfetch/components/crops/card-wishlist-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:wish-list-bookmark",
+          "rule": "ux-bookmark",
+          "reason": "Capture filename explicitly names wish list & bookmark; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:farfetch",
+      "mediaId": "systems/farfetch/components/crops/card-wishlist-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:wish-list-bookmark",
+          "rule": "ux-bookmark",
+          "reason": "Capture filename explicitly names wish list & bookmark; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:farfetch",
+      "mediaId": "systems/farfetch/components/crops/card-wishlist-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:wish-list-bookmark",
+          "rule": "ux-bookmark",
+          "reason": "Capture filename explicitly names wish list & bookmark; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:farfetch",
+      "mediaId": "systems/farfetch/components/crops/card-wishlist-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:wish-list-bookmark",
+          "rule": "ux-bookmark",
+          "reason": "Capture filename explicitly names wish list & bookmark; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:farfetch",
+      "mediaId": "systems/farfetch/components/crops/carousel-arrow-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:carousel",
+          "rule": "ui-carousel",
+          "reason": "Capture filename explicitly names carousel; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:farfetch",
+      "mediaId": "systems/farfetch/components/crops/carousel-arrow-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:carousel",
+          "rule": "ui-carousel",
+          "reason": "Capture filename explicitly names carousel; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:farfetch",
+      "mediaId": "systems/farfetch/components/crops/carousel-arrow-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:carousel",
+          "rule": "ui-carousel",
+          "reason": "Capture filename explicitly names carousel; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:farfetch",
+      "mediaId": "systems/farfetch/components/crops/dept-tile-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:farfetch",
+      "mediaId": "systems/farfetch/components/crops/dept-tile-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:farfetch",
+      "mediaId": "systems/farfetch/components/crops/editorial-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:farfetch",
+      "mediaId": "systems/farfetch/components/crops/filter-button-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:farfetch",
+      "mediaId": "systems/farfetch/components/crops/filter-button-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:farfetch",
+      "mediaId": "systems/farfetch/components/crops/filter-button-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:farfetch",
+      "mediaId": "systems/farfetch/components/crops/filter-button-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:farfetch",
+      "mediaId": "systems/farfetch/components/crops/footer-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:farfetch",
+      "mediaId": "systems/farfetch/components/crops/footer-heading-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:farfetch",
+      "mediaId": "systems/farfetch/components/crops/footer-link-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:farfetch",
+      "mediaId": "systems/farfetch/components/crops/footer-link-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:farfetch",
+      "mediaId": "systems/farfetch/components/crops/footer-link-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:farfetch",
+      "mediaId": "systems/farfetch/components/crops/footer-link-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:farfetch",
+      "mediaId": "systems/farfetch/components/crops/footer-social-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:farfetch",
+      "mediaId": "systems/farfetch/components/crops/footer-social-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:farfetch",
+      "mediaId": "systems/farfetch/components/crops/footer-social-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:farfetch",
+      "mediaId": "systems/farfetch/components/crops/footer-social-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:farfetch",
+      "mediaId": "systems/farfetch/components/crops/m-dept-tile-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:farfetch",
+      "mediaId": "systems/farfetch/components/crops/m-search-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:farfetch",
+      "mediaId": "systems/farfetch/components/crops/pagination-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:page-control-pagination",
+          "rule": "ui-pagination",
+          "reason": "Capture filename explicitly names page control & pagination; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:farfetch",
+      "mediaId": "systems/farfetch/components/crops/pagination-next-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:page-control-pagination",
+          "rule": "ui-pagination",
+          "reason": "Capture filename explicitly names page control & pagination; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:farfetch",
+      "mediaId": "systems/farfetch/components/crops/pagination-next-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:page-control-pagination",
+          "rule": "ui-pagination",
+          "reason": "Capture filename explicitly names page control & pagination; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:farfetch",
+      "mediaId": "systems/farfetch/components/crops/pagination-next-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:page-control-pagination",
+          "rule": "ui-pagination",
+          "reason": "Capture filename explicitly names page control & pagination; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:farfetch",
+      "mediaId": "systems/farfetch/components/crops/pagination-next-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:page-control-pagination",
+          "rule": "ui-pagination",
+          "reason": "Capture filename explicitly names page control & pagination; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:farfetch",
+      "mediaId": "systems/farfetch/components/crops/pdp-accordion-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:accordion-collapse",
+          "rule": "ui-accordion",
+          "reason": "Capture filename explicitly names accordion & collapse; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:farfetch",
+      "mediaId": "systems/farfetch/components/crops/pdp-breadcrumb-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:breadcrumb",
+          "rule": "ui-breadcrumb",
+          "reason": "Capture filename explicitly names breadcrumb; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:farfetch",
+      "mediaId": "systems/farfetch/components/crops/pdp-wishlist-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:wish-list-bookmark",
+          "rule": "ux-bookmark",
+          "reason": "Capture filename explicitly names wish list & bookmark; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:farfetch",
+      "mediaId": "systems/farfetch/components/crops/pdp-wishlist-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:wish-list-bookmark",
+          "rule": "ux-bookmark",
+          "reason": "Capture filename explicitly names wish list & bookmark; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:farfetch",
+      "mediaId": "systems/farfetch/components/crops/pdp-wishlist-hover.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:wish-list-bookmark",
+          "rule": "ux-bookmark",
+          "reason": "Capture filename explicitly names wish list & bookmark; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:farfetch",
+      "mediaId": "systems/farfetch/components/crops/pdp-wishlist-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:wish-list-bookmark",
+          "rule": "ux-bookmark",
+          "reason": "Capture filename explicitly names wish list & bookmark; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:farfetch",
+      "mediaId": "systems/farfetch/components/crops/product-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:farfetch",
+      "mediaId": "systems/farfetch/components/crops/product-card-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:farfetch",
+      "mediaId": "systems/farfetch/components/crops/quick-filter-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:farfetch",
+      "mediaId": "systems/farfetch/components/crops/search-field-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:search-field",
+          "rule": "ui-search-field",
+          "reason": "Capture filename explicitly names search field; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:farfetch",
+      "mediaId": "systems/farfetch/components/crops/search-field-filled.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:search-field",
+          "rule": "ui-search-field",
+          "reason": "Capture filename explicitly names search field; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:farfetch",
+      "mediaId": "systems/farfetch/components/crops/search-field-focused.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:search-field",
+          "rule": "ui-search-field",
+          "reason": "Capture filename explicitly names search field; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:farfetch",
+      "mediaId": "systems/farfetch/components/crops/search-submit-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:farfetch",
+      "mediaId": "systems/farfetch/components/crops/search-submit-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:farfetch",
+      "mediaId": "systems/farfetch/components/crops/search-submit-hover.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:farfetch",
+      "mediaId": "systems/farfetch/components/crops/search-submit-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:farfetch",
+      "mediaId": "systems/farfetch/components/crops/skeleton-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ui-elements:skeleton",
+          "rule": "ui-skeleton",
+          "reason": "Capture filename explicitly names skeleton; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:farfetch",
+      "mediaId": "systems/farfetch/components/crops/skeleton-showcase-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:skeleton",
+          "rule": "ui-skeleton",
+          "reason": "Capture filename explicitly names skeleton; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:farfetch",
+      "mediaId": "systems/farfetch/components/crops/topbar-wishlist-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:wish-list-bookmark",
+          "rule": "ux-bookmark",
+          "reason": "Capture filename explicitly names wish list & bookmark; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:farfetch",
+      "mediaId": "systems/farfetch/components/crops/topbar-wishlist-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:wish-list-bookmark",
+          "rule": "ux-bookmark",
+          "reason": "Capture filename explicitly names wish list & bookmark; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:farfetch",
+      "mediaId": "systems/farfetch/components/crops/topbar-wishlist-hover.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:wish-list-bookmark",
+          "rule": "ux-bookmark",
+          "reason": "Capture filename explicitly names wish list & bookmark; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:farfetch",
+      "mediaId": "systems/farfetch/components/crops/topbar-wishlist-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:wish-list-bookmark",
+          "rule": "ux-bookmark",
+          "reason": "Capture filename explicitly names wish list & bookmark; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:farfetch",
+      "mediaId": "systems/farfetch/components/crops/variant-tabs-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
         }
       ]
     }
