@@ -9645,6 +9645,89 @@
    }
   },
   {
+   "slug": "epicgames",
+   "name": "Epic Games Store",
+   "url": "https://store.epicgames.com",
+   "category": "e-commerce",
+   "platform": "web",
+   "goodFor": "dark game-storefront design: the hashed EDS token layer declared outright (784 resolved custom properties: background/foreground/border/accent roles, size, typography, animation, gradient, navigation, control, input) under a #101014 canvas with #18181c/#202024/#303034 elevation steps, #fffffff2/#ffffffa6 text and a #26bbff/#33bfff accent, a 72px egs-navigation web component + 100px tab bar chrome, a hero carousel with card shelves, a legacy Emotion browse grid with a 240px filters rail, a MUI sign-in dialog, an OpenSans marketing surface and a dark support centre",
+   "tags": [
+    "web",
+    "gaming",
+    "store",
+    "dark",
+    "design-tokens",
+    "react",
+    "web-components",
+    "shadow-dom",
+    "blue-accent",
+    "cards",
+    "signed-out"
+   ],
+   "shape": "reference",
+   "captured": "2026-11-14",
+   "access": "read-only (every captured surface is public: the storefront, the sign-in dialog, the support centre and the marketing home); the sign-in form and both search fields were measured, never submitted; Get, Add to Cart, Wishlist, Download, sort options and filter checkboxes were measured, never activated",
+   "themes": ["dark"],
+   "widths": [1440, 390],
+   "entry": "systems/epicgames/README.md",
+   "tokens": "systems/epicgames/tokens.json",
+   "styleGuide": "systems/epicgames/style-guide.html",
+   "preview": {
+    "cover": "systems/epicgames/screenshots/discover-dark-default.png",
+    "icon": "systems/epicgames/icon.png",
+    "swatches": {
+     "dark": {
+      "page": "dark.color.background.default",
+      "surface": "dark.color.background.elevated.medium",
+      "text": "dark.color.foreground.primary",
+      "muted": "dark.color.foreground.secondary",
+      "accent": "dark.color.background.fill.accent.primary.default",
+      "border": "dark.color.border.subtle"
+     }
+    },
+    "fonts": [
+     "core.font.family.base",
+     "core.font.family.code"
+    ]
+   },
+   "capture": {
+    "method": "public-web",
+    "source": "store.epicgames.com and www.epicgames.com in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and crops from the live DOM, read through the open shadow roots of the egs-navigation/egs-footer web components. The store declares the hashed EDS token layer in its EGS v2 stylesheet (784 resolved custom properties), so the scales are declared values and the component roles are measured computed values. Everything behind sign-in (library, account, billing, cart, checkout) is a documented authenticated boundary",
+    "timestamp": "2026-11-14T04:50:00Z",
+    "harness": "Devin",
+    "model": "SWE-2 High",
+    "route": "public-web",
+    "routes": [
+     "/en-US/ (Discover)",
+     "/en-US/browse",
+     "/en-US/p/fortnite",
+     "/en-US/free-games",
+     "/en-US/news",
+     "/en-US/download",
+     "www.epicgames.com/id/login/epic",
+     "www.epicgames.com/help/en-US/",
+     "www.epicgames.com/site/en-US/home",
+     "mobile /en-US/ and /en-US/p/fortnite"
+    ],
+    "gaps": [
+     "every post-login surface (library, account, billing, cart, checkout) is an authenticated boundary never reached",
+     "the sign-in form was measured default/focused/filled, never submitted; validation, error and success states are absent rather than measured",
+     "the sort dropdown was opened and its options measured, never picked; the Genre filter group was opened and a checkbox row measured, never checked",
+     "dark is the only painted public theme - no light variant exists on these surfaces, so no light set was invented",
+     "Cloudflare challenges fresh headless contexts intermittently ('Just a moment'); captures retry on fresh contexts and a blocked reading is never kept",
+     "the marketing wordmark (w-wordmark) and the mobile search field (m-search) could not be located painted on their pages - recorded missing, not fabricated",
+     "occasional hover failures on off-viewport elements (hero-cta, card-wishlist) are recorded as errors on those states",
+     "icons: no standalone SVG set lifted this pass"
+    ],
+    "durationMin": 300,
+    "durationNote": "wall-clock across the capture sessions including kit adaptation, Cloudflare retries, the EDS stylesheet harvest, screenshot and measurement passes (74 components, 208 states) on a headless Linux server, and the offline build",
+    "pr": "https://github.com/starship-terminal/constellations/pull/540"
+   },
+   "layoutGaps": {
+    "icons/": "the icon extraction pass was not run; the icons (the Epic mark, provider glyphs, social marks, wishlist and pager glyphs) are visible in the crops and screenshots"
+   }
+  },
+  {
    "slug": "explore",
    "name": "Explore",
    "url": "https://explore.family",
