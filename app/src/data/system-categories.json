@@ -766,5 +766,11 @@
     "groupId": "web-categories",
     "labels": ["Magazines & Newspapers", "Lifestyle"],
     "reason": "catalog.json describes a men's magazine site: editorial chrome, story cards, plan/subscribe cards, FAQ and newsletter surfaces."
+  },
+  {
+    "referenceId": "systems:exa",
+    "groupId": "web-categories",
+    "labels": ["AI Tool", "Development Tools"],
+    "reason": "catalog.json describes an AI-search developer API: marketing site, model/pricing pages, docs and a gated console."
   }
 ]

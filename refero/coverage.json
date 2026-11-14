@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 128,
-    "system_domains": 120,
-    "matched_domains": 94,
-    "missing_domains": 339,
+    "system_packages": 129,
+    "system_domains": 121,
+    "matched_domains": 95,
+    "missing_domains": 338,
     "system_domains_absent_from_catalog": 26
   },
   "matched": {
@@ -1460,6 +1460,23 @@
         }
       ]
     },
+    "exa.ai": {
+      "catalog": [
+        {
+          "name": "Exa",
+          "domain": "exa.ai",
+          "id": 898
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "exa",
+          "name": "Exa",
+          "url": "https://exa.ai",
+          "name_match": true
+        }
+      ]
+    },
     "github.com": {
       "catalog": [
         {
@@ -1859,13 +1876,6 @@
         "name": "Equals",
         "domain": "equals.app",
         "id": 289
-      }
-    ],
-    "exa.ai": [
-      {
-        "name": "Exa",
-        "domain": "exa.ai",
-        "id": 898
       }
     ],
     "exactly.ai": [
