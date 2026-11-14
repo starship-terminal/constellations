@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-11-14T07:47:12.370Z",
+  "screenshot": "ssr-profile-sawdust-light-default.png",
+  "sanitizedSourceUrl": "https://explore.family/sawdust",
+  "provenance": {
+    "archive": {
+      "era": "feb",
+      "snapshot": "2023-02-23",
+      "route": "/sawdust",
+      "ssr": "/sawdust"
+    },
+    "mirrorMisses": [
+      "https://back.explore.family/uploads/users/sawdust-aepbg6ilne2022101495341.jpg",
+      "https://back.explore.family/uploads/users/online-avatar-2-ffc59uvo2l20221013195100.jpg",
+      "https://back.explore.family/uploads/posts/67/sawdust-x-fall-and-rise-3000px-ttra4_gallery.webp",
+      "https://back.explore.family/uploads/posts/67/five-2160p-oeafc_cover_gallery.webp",
+      "https://back.explore.family/uploads/posts/67/four-2160p-wp1xh_cover_gallery.webp",
+      "https://back.explore.family/uploads/posts/67/three-release-longer-loop-cuemh_cover_gallery.webp",
+      "https://back.explore.family/uploads",
+      "https://back.explore.family/uploads/posts/67/five-2160p-oeafc.mp4",
+      "https://back.explore.family/uploads/posts/67/four-2160p-wp1xh.mp4",
+      "https://back.explore.family/uploads/posts/67/three-release-longer-loop-cuemh.mp4",
+      "https://back.explore.family/uploads/posts/67/two-2160p-3da2a.mp4",
+      "https://back.explore.family/uploads/posts/67/one-2160p-zna4d.mp4",
+      "https://back.explore.family/uploads/posts/67/continuum-portrait-i44iz.mp4",
+      "https://back.explore.family/uploads/posts/67/momentum-from-vimeo-imzvq.mp4",
+      "https://back.explore.family/uploads/posts/67/013-untitled-final-sound-ymf2z.mp4"
+    ]
+  },
+  "requested": {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "deviceScaleFactor": 1
+  },
+  "configuredViewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "actual": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 1,
+    "theme": {
+      "classes": [],
+      "attributes": {},
+      "colorScheme": "normal"
+    },
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1,
+      "offsetLeft": 0,
+      "offsetTop": 0,
+      "pageLeft": 0,
+      "pageTop": 0
+    },
+    "documentSize": {
+      "width": 1440,
+      "height": 3209
+    },
+    "scroll": {
+      "x": 0,
+      "y": 0
+    }
+  },
+  "capture": {
+    "mode": "viewport",
+    "scale": "device",
+    "clip": null
+  },
+  "png": {
+    "width": 1440,
+    "height": 900
+  },
+  "dimensionCheck": {
+    "status": "pass",
+    "expected": {
+      "width": 1440,
+      "height": 900
+    },
+    "basis": "configuredViewport"
+  },
+  "visualReview": {
+    "status": "pending",
+    "note": "Inspect the final image for complete, settled contents; dimensions alone cannot accept it."
+  },
+  "cropCoordinates": {
+    "status": "unverified",
+    "note": "Do not derive crop or masking boxes from requested size or assume DOM rectangles align with this PNG."
+  }
+}
