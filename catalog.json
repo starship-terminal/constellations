@@ -9204,7 +9204,7 @@
    ],
    "durationMin": 240,
    "durationNote": "wall-clock across the capture sessions including kit adaptation, the stylesheet harvest, screenshot and measurement passes on a headless Linux server, and the offline build",
-   "pr": "https://github.com/starship-terminal/constellations/pull/TBD"
+   "pr": "https://github.com/starship-terminal/constellations/pull/548"
   },
   "layoutGaps": {
    "icons/": "the icon extraction pass was not run; the marks (the Designmodo wordmark, product glyphs, the Font Awesome set) are visible in the crops and screenshots"
