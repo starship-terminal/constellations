@@ -802,5 +802,11 @@
     "groupId": "web-categories",
     "labels": ["Travel & Booking"],
     "reason": "catalog.json describes a travel OTA: multi-product stay/flight/car search, deal carousels, hotel results and filter rail."
+  },
+  {
+    "referenceId": "systems:fibery",
+    "groupId": "web-categories",
+    "labels": ["Productivity", "Project Management"],
+    "reason": "catalog.json describes a modular work-management platform: a warm-palette marketing site with template gallery, pricing plans and gated workspace surfaces past fibery.io sign-up/login."
   }
 ]

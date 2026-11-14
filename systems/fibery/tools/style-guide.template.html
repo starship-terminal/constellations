@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fibery style guide</title>
+<meta name="description" content="Fibery design tokens and the public surfaces' components, rendered from tokens.json with the declared and measured values. Light only: the public site paints one theme.">
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  --sg-sans: "Suisse Intl", ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-serif: "Fraunces Var", Fraunces, Georgia, serif;
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+[data-mode="dark"], .dark {
+/*DARK*/
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--fibery-text-default-color, #251d1a); background: var(--fibery-page-body-color-light, #fdf7ef); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 400 40px/1.2 var(--sg-serif); margin: 0 0 4px; letter-spacing: -0.01em; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--fibery-text-default-color, #251d1a); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--fibery-light-gray-border-color, rgba(37,29,26,.1)); }
+.lead { max-width: 62ch; color: var(--fibery-text-default-color, #251d1a); opacity: .8; }
+.note { font-size: 13px; color: var(--fibery-text-default-color, #251d1a); opacity: .65; max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--fibery-text-default-color, #251d1a); opacity: .6; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--fibery-light-gray-border-color, rgba(37,29,26,.1)); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--fibery-text-default-color, #251d1a); opacity: .65; }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--fibery-light-gray-border-color, rgba(37,29,26,.1)); background: #fff; font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--fibery-text-default-color, #251d1a); opacity: .65; }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--fibery-light-gray-border-color, rgba(37,29,26,.1)); overflow: hidden; background: var(--color-form-white, #fff); }
+.navbar { display: flex; align-items: center; gap: 22px; height: var(--component-header-height, 88px); padding: 0 12px 0 22px; font-size: 15px; color: var(--fibery-text-default-color, #251d1a); background: var(--fibery-page-body-color-light, #fdf7ef); border-bottom: 1px solid var(--fibery-light-gray-border-color, rgba(37,29,26,.1)); }
+.navbar .wm { font-weight: 600; font-size: 17px; letter-spacing: -0.01em; }
+.navbar .sp { flex: 1; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-hero-cta-height, 40px); padding: 0 16px; font-size: 14px; font-weight: 500; border-radius: var(--radius-pill, 999px); border: 1px solid transparent; }
+.btn.primary { background: var(--action-ctaFill, var(--fibery-basic-black, #251d1a)); color: var(--action-ctaInk, var(--fibery-basic-white, #fffdfa)); }
+.btn.ghost { border-color: var(--border-ctaOutline, var(--fibery-basic-black, #251d1a)); color: var(--fibery-text-default-color, #251d1a); }
+.btn.small { height: var(--component-nav-button-height, 40px); font-size: 13px; font-weight: 500; }
+.hero { color: var(--fibery-text-default-color, #251d1a); padding: 72px 40px; font: 400 var(--font-size-display, 64px)/1.05 var(--sg-serif); letter-spacing: -0.01em; text-align: left; background: var(--fibery-page-body-color, #faebd6); }
+.hero small { display: block; font: 400 var(--font-size-lede, 20px)/1.5 var(--sg-sans); color: var(--fibery-text-secondary-color, rgba(37,29,26,.5)); margin: 16px 0 22px; max-width: 46ch; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
+.tile { border: 1px solid var(--fibery-light-gray-border-color, rgba(37,29,26,.1)); padding: 14px; font-size: 13px; background: var(--color-form-white, #fff); border-radius: var(--radius-card, 12px); }
+.tile .img { height: 140px; background: var(--fibery-menu-bg-color, #fff5e8); margin-bottom: 10px; display: flex; align-items: flex-end; padding: 10px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; border-radius: calc(var(--radius-card, 12px) - 4px); }
+.tile b { display: block; font: 400 var(--font-size-h2, 24px)/1.25 var(--sg-serif); margin-bottom: 4px; }
+.tile .sub { opacity: .65; font-size: 12px; }
+.plan { background: var(--color-quaternary-yellow, #fbf0e1); }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--fibery-light-gray-border-color, rgba(37,29,26,.1)); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--fibery-light-gray-border-color, rgba(37,29,26,.1)); }
+.tr .ts { font-family: var(--sg-serif); }
+.tr .tv { font-size: 12px; color: var(--fibery-text-default-color, #251d1a); opacity: .65; font-family: var(--sg-mono); }
+.field { border: 1px solid var(--fibery-light-gray-border-color, rgba(37,29,26,.1)); background: var(--background-field, var(--color-form-white, #fff)); border-radius: var(--radius-field, 12px); padding: 14px 16px; color: var(--fibery-text-secondary-color, rgba(37,29,26,.5)); font-size: 15px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Fibery style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">Fibery, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the site's declared <code>--fibery-*</code> token layer — the milk/cream/soup/peach-soup/tea warm neutrals and the rust family, the four-tier <code>--fibery-basic/secondary/tertiary/quaternary-*</code> hue ramp, the <code>--fibery-page-*</code>/<code>--fibery-text-*</code>/<code>--fibery-gray-*</code> semantic roles and <code>--fibery-shadow-m</code> — plus the measured type steps, radii, control transitions and component sizes the CSS layer does not declare. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from fibery.com and fibery.io, signed out, in headless Chromium. The public site paints one light theme — there is no theme toggle and no dark scope on the marketing pages, the sign-up wizard or the sign-in, so this guide has no dark mode and <code>tokens.json</code> ships core + light only (the signed-in app's dark/system theme is behind sign-in and was not captured). The sign-up and login forms were measured, never submitted. Suisse Intl and Fraunces are served faces and are not loaded here: samples fall back to system fonts.</p>
+
+  <h2 class="sh">The chrome</h2>
+  <p class="lead">The 88px header sits on the cream <code>--fibery-page-body-color-light</code> field: the wordmark, the Solutions/Platform/Support dropdown triggers, Pricing, Log in and the dark <code>--fibery-basic-black</code> "Sign up for free" pill. The hero pairs the dark pill with a hairline-outlined "Book a Demo" under the Fraunces display headline, on the soup <code>--fibery-page-body-color</code> field.</p>
+  <div class="mock" style="padding:0">
+    <div class="navbar"><span class="wm">Fibery</span><span>Solutions</span><span>Platform</span><span>Support</span><span>Pricing</span><span class="sp"></span><span>Log in</span><span class="btn small primary">Sign up for free</span></div>
+    <div class="hero">Operating system<br>for orgs run by nerds<small>A modular work platform that replaces scattered tools.</small><span class="btn primary">Sign up</span> <span class="btn ghost">Book a Demo</span></div>
+  </div>
+
+  <h2 class="sh">Pricing and sign-up</h2>
+  <p class="lead">The pricing plans ride on tinted cards — the Free plan on <code>--fibery-quaternary-yellow</code> — with the same dark pill CTAs. The public wizard at fibery.io/sign-up carries the AI prompt field (rounded, on the form white) with premade-solution chips and the disabled-until-filled "Create workspace" submit; the sign-in at fibery.io/login/ rows the outlined OAuth buttons.</p>
+  <div class="mock" style="padding:20px;background:var(--fibery-page-body-color-light,#fdf7ef)">
+    <div class="grid">
+      <div class="tile plan"><b>Free</b><span class="sub">For personal use and tiny teams.</span><div style="margin-top:10px"><span class="btn small primary">Start for free</span></div></div>
+      <div class="tile"><b>Standard</b><span class="sub">For teams that need structure.</span><div style="margin-top:10px"><span class="btn small ghost">Try for free</span></div></div>
+      <div class="tile"><b>Pro</b><span class="sub">For companies that scale.</span><div style="margin-top:10px"><span class="btn small ghost">Try for free</span></div></div>
+    </div>
+    <div class="field" style="margin-top:18px">Create a workspace for _____ that includes _____</div>
+    <div style="margin-top:12px"><span class="btn primary" style="opacity:.5">Create workspace</span> <span class="btn ghost">Start without AI</span></div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The declared <code>--fibery-*</code> palette: the warm named neutrals and rust family, the four-tier hue ramp (basic saturated, secondary mid, tertiary light, quaternary lightest), and the page/text/gray/menu/form/business semantic roles. Measured roles alias the declared values they match; two declarations ship the literal <code>undefined</code> and resolve to nothing.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing, radius and motion</h2>
+  <p class="lead">The CSS layer declares no spacing or radius scale — corners and control transitions are measured on the real components: full pills on the FiberyButton variants, rounded cards and fields, and the hover transitions on pills and nav items.</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">Served faces: <code>Suisse Intl</code> (100–900 static weights) carries every control, nav item and body line; <code>Fraunces Var</code> draws the serif display headlines and quotes; <code>Casuar</code> and <code>Inter Var</code> are declared for special and embedded surfaces. The ramp is measured, not declared. Samples fall back to system fonts.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared --fibery-* variables from the live stylesheets and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, opened, toggled, focused and filled states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = /*TOKENS*/null;
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  for (const [setname, label] of [['light', 'light roles'], ['dark', 'dark roles']]) {
+    const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+    if (!roles.length) continue;
+    // The dark set's custom properties only resolve inside a .dark scope:
+    // swatch dots must live under it or they paint the light values/unset.
+    h += `<div class="pal-h">${label}</div><div class="pal${setname === 'dark' ? ' dark' : ''}">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.layout || {}, 'layout.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.container || {}, 'container.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.blur || {}, 'blur.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.duration || {}, 'duration.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.easing || {}, 'easing.')) m += `<div><b>${esc(n)}</b> <span>cubic-bezier(${esc(t.v.join ? t.v.join(', ') : t.v)})</span></div>`;
+  $('#spacing-out').innerHTML = m || '<div><b>none declared or measured</b></div>';
+})();
+
+(function elev() {
+  let e = '';
+  for (const [n, t] of flat((TOK.core || {}).shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  for (const setname of ['light', 'dark']) {
+    for (const [n, t] of flat((TOK[setname] || {}).shadow || {}, `${setname}.shadow.`)) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  }
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.breakpoint || {}), 'breakpoint.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.aspect || {}), 'aspect.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.motion || {}), 'motion.')) m += `<div><b>${esc(n)}</b> <span>${esc(String(t.v).slice(0, 90))}…</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+const resolveVal = (v, depth) => {
+  if (depth > 6 || typeof v !== 'string') return v;
+  const m = v.match(/^\{(.+)\}$/);
+  if (!m) return v;
+  // Aliases are set-relative: palette scales live under TOK.core, semantic
+  // roles under TOK.light / TOK.dark. Try each root.
+  for (const root of [TOK.core, TOK.light, TOK.dark, TOK]) {
+    let node = root;
+    for (const k of m[1].split('.')) node = node && node[k];
+    if (node && node.v !== undefined) return resolveVal(node.v, (depth || 0) + 1);
+  }
+  return v;
+};
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(resolveVal(t.v));
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Fibery</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).tracking || {}, 'font.tracking.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>
