@@ -10,6 +10,7 @@ import {
   tokenResolver,
   type TokenLeaf,
 } from "@/server/sources/tokens";
+import { parseJson, pyJsonStringify } from "@/server/sources/pyjson";
 import type { LibraryDetail } from "@/contracts/library";
 
 export async function allowedReference(
@@ -84,7 +85,7 @@ export async function packageTokens(
   const document = await readPackageDocument(referenceId, "tokens.json");
   if (!document)
     throw new Error("No readable tokens.json exists for this package.");
-  const tokens = JSON.parse(document.text) as Raw;
+  const tokens = parseJson(document.text) as Raw;
   const all = tokenLeaves(tokens),
     resolver = tokenResolver(all);
   // Theme sets the catalog names. A `core` token whose alias only resolves
@@ -140,7 +141,7 @@ export async function packageTokens(
       rawValue: token.value,
       ...resolveToken(token),
     };
-    const size = JSON.stringify(resolved).length;
+    const size = pyJsonStringify(resolved).length;
     if (characters + size > 24000) {
       if (!page.length)
         page.push({
