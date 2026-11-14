@@ -26,10 +26,18 @@
 //              faces, --background-light/-dark), themed by a `light`|`dark`
 //              class on <html> (data-theme-preference decides which).
 //
-// Styles arrive as linked CSS bundles plus inline <style> blocks. External
-// bodies are read from the network responses, inline <style> blocks through
-// the CSSOM, then re-parsed in a probe page with a constructed
-// CSSStyleSheet — the same parse the browser does. Every rule declaring a
+// Styles arrive as linked CSS bundles plus inline <style> blocks. Only the
+// sheets a document actually applies are kept: each document's
+// document.styleSheets list, in cascade order, is the source of truth (a
+// bundle the page merely prefetched, or one a neighbouring surface uses, is
+// not applied and never enters the harvest). Linked bodies come from the
+// network responses (or a direct fetch when the response was missed), inline
+// <style> blocks through the CSSOM, then everything is re-parsed in a probe
+// page with a constructed CSSStyleSheet — the same parse the browser does.
+// A surface's variables are resolved from its primary document alone, so one
+// page's styles never leak into another page's resolution; a second document
+// of a surface (marketing /pricing) is harvested for evidence only, under
+// its own file names. Every rule declaring a
 // --* property is kept with its surface, selector and enclosing
 // @media/@layer context, and @font-face rules are kept too. Each surface's
 // variables are then resolved in a probe document carrying that surface's
@@ -56,42 +64,69 @@ const { browser } = await launch();
 // Cloudflare "just a moment") can greet a fresh client: retry the surface on
 // a fresh context until the real document arrives.
 const SURFACES = [
-  { name: 'marketing', url: BASE + '/', colorScheme: 'light', extra: [BASE + '/pricing'] },
+  { name: 'marketing', url: BASE + '/', colorScheme: 'light', extra: [{ key: 'pricing', url: BASE + '/pricing' }] },
   { name: 'app', url: BASE + '/models/krea/v3/text-to-image', colorScheme: 'dark' },
   { name: 'docs', url: BASE + '/docs/documentation', colorScheme: 'light' },
 ];
-const perSurface = new Map(); // name -> Map<sheetName, cssText>
-for (const surface of SURFACES) {
+// The sheets one loaded document applies, in cascade order: linked sheets by
+// href (bodies from the recorded responses, fetched directly when missed),
+// inline sheets through the CSSOM. Disabled sheets and sheets whose media
+// query does not match are not applied and are skipped.
+async function appliedSheets(p, context, seen, prefix) {
+  const list = await p.evaluate(() => [...document.styleSheets].map((s, i) => {
+    const media = s.media && s.media.mediaText;
+    if (s.disabled || (media && media !== 'all' && !matchMedia(media).matches)) return null;
+    if (s.href) return { href: s.href };
+    try { return { name: 'inline-' + i, css: [...s.cssRules].map((r) => r.cssText).join('\n') }; } catch { return null; }
+  }).filter(Boolean));
   const bodies = new Map();
-  let page = null;
-  for (let tries = 0; tries < 6 && !page; tries++) {
+  for (const sheet of list) {
+    if (sheet.css !== undefined) { bodies.set(prefix + sheet.name, sheet.css); continue; }
+    const key = sheet.href.split('?')[0];
+    let text = seen.get(key);
+    if (text === undefined) text = await context.request.get(sheet.href).then((r) => r.text()).catch(() => undefined);
+    if (text !== undefined) bodies.set(key, text);
+  }
+  return bodies;
+}
+// name -> { primary: Map<sheetName, cssText> (the resolution document),
+//           extras: Map<sheetName, cssText> (other documents, evidence only) }
+const perSurface = new Map();
+for (const surface of SURFACES) {
+  let loaded = null;
+  for (let tries = 0; tries < 6 && !loaded; tries++) {
     const context = await browser.newContext({ viewport: { width: 1440, height: 900 }, deviceScaleFactor: 2, userAgent: UA, locale: 'en-US', colorScheme: surface.colorScheme });
     await patch(context);
     const p = await context.newPage();
+    const seen = new Map(); // every stylesheet response this context saw, by URL; used as a body cache only
     p.on('response', async (r) => {
       if (r.request().resourceType() !== 'stylesheet') return;
-      try { bodies.set(r.url().split('?')[0], await r.text()); } catch { /* body gone */ }
+      try { seen.set(r.url().split('?')[0], await r.text()); } catch { /* body gone */ }
     });
     await p.goto(surface.url, { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
     await p.waitForTimeout(6000);
     if (await clearChallenge(p, { tries: 3, step: 1500 })) {
-      // Pricing shares the marketing sheets and adds its own page styles.
+      const primary = await appliedSheets(p, context, seen, '');
+      // Other documents of the surface (pricing shares the marketing bundle and adds its own page styles) are
+      // read on their own load: their applied sheets are kept apart from the primary document's.
+      const extras = new Map();
       for (const extra of surface.extra || []) {
-        await p.goto(extra, { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
+        await p.goto(extra.url, { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
         await p.waitForTimeout(4000);
+        for (const [n, t] of await appliedSheets(p, context, seen, extra.key + ':')) {
+          if (!primary.has(n) && !extras.has(n)) extras.set(n, t);
+        }
       }
-      page = p;
-      const inline = await p.evaluate(() => [...document.styleSheets].filter((s) => !s.href).map((s, i) => { try { return ['inline-' + i, [...s.cssRules].map((r) => r.cssText).join('\n')]; } catch { return null; } }).filter(Boolean));
-      for (const [n, t] of inline) bodies.set(n, t);
+      loaded = { primary, extras };
       await context.close().catch(() => {});
       break;
     }
     console.log(`${surface.name}: challenge page, fresh context (try ${tries + 1})`);
     await context.close();
   }
-  if (!page) { console.log(`${surface.name}: blocked by the edge on every try`); continue; }
-  perSurface.set(surface.name, bodies);
-  console.log(`${surface.name}: ${bodies.size} sheets`);
+  if (!loaded) { console.log(`${surface.name}: blocked by the edge on every try`); continue; }
+  perSurface.set(surface.name, loaded);
+  console.log(`${surface.name}: ${loaded.primary.size} applied sheets` + (loaded.extras.size ? ` + ${loaded.extras.size} from other documents` : ''));
 }
 if (!perSurface.size) { console.log('no surface loaded; css-vars.json not written'); await browser.close(); process.exit(2); }
 
@@ -100,8 +135,8 @@ const probe = await browser.newPage();
 const allRules = [];
 const allFonts = [];
 const allErrors = [];
-for (const [surface, bodies] of perSurface) {
-  const sheets = [...bodies.entries()];
+for (const [surface, { primary, extras }] of perSurface) {
+  const sheets = [...primary.entries(), ...extras.entries()];
   const result = await probe.evaluate((sheets) => {
     const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v);
     const rules = [];
@@ -142,7 +177,7 @@ for (const [surface, bodies] of perSurface) {
     }
     return { rules, fonts, errors };
   }, sheets);
-  for (const r of result.rules) { r.surface = surface; allRules.push(r); }
+  for (const r of result.rules) { r.surface = surface; r.primary = primary.has(r.file); allRules.push(r); }
   for (const f of result.fonts) { f.surface = surface; allFonts.push(f); }
   allErrors.push(...result.errors);
 }
@@ -164,9 +199,11 @@ const PASSES = [
 ];
 const resolved = {};
 for (const { pass, surface, cls } of PASSES) {
-  const bodies = perSurface.get(surface);
-  if (!bodies) continue;
-  const rules = allRules.filter((r) => r.surface === surface);
+  const loaded = perSurface.get(surface);
+  if (!loaded) continue;
+  const bodies = loaded.primary;
+  // Only the primary document's own sheets decide the resolution.
+  const rules = allRules.filter((r) => r.surface === surface && r.primary);
   const want = [...new Set(rules.filter((r) => !r.context.includes('@layer properties') && !/\\\[--/.test(r.selector || '')).flatMap((r) => Object.keys(r.properties)))]
     .filter((n) => !/^--(tw-|_|lightningcss-)/.test(n)).sort();
   await probe.setContent(shell(bodies, cls), { waitUntil: 'load' });
@@ -217,6 +254,11 @@ for (const { pass, surface, cls } of PASSES) {
       else if (CSS.supports('color', raw) && !/^(inherit|initial|unset|revert)$/.test(raw)) {
         p.style.color = raw; r.kind = 'color'; r.value = norm(getComputedStyle(p).color);
         if (typeof r.value === 'object') { r.kind = 'other'; r.note = 'colour space not converted: ' + r.value.unparsed; delete r.value; }
+      } else if (/^-?(\d*\.)?\d+em$/.test(raw)) {
+        // A font-relative length (--tracking-wide: .025em) is kept as declared: resolving it through the probe's
+        // width would freeze it into pixels at the probe's own font size, and the exported letter spacing would
+        // stop following the text it is applied to.
+        r.kind = 'dimension'; r.value = raw; r.note = 'font-relative, kept as declared';
       } else if (!raw.includes('%') && CSS.supports('width', raw)) {
         p.style.width = raw; r.kind = 'dimension'; r.value = getComputedStyle(p).width;
         if (/vw|vh|dvh/.test(raw)) r.note = 'viewport-relative, resolved at 1440 x 900';
@@ -256,10 +298,13 @@ for (const r of ok) {
 }
 const names = (bin) => [...new Set(ok.filter((r) => r.bin === bin).flatMap((r) => Object.keys(r.properties)))].sort();
 const allSheets = [];
-for (const [surface, bodies] of perSurface) for (const [n, t] of bodies) allSheets.push(`${surface}: ${n} (${t.length} bytes)`);
+for (const [surface, { primary, extras }] of perSurface) {
+  for (const [n, t] of primary) allSheets.push(`${surface}: ${n} (${t.length} bytes)`);
+  for (const [n, t] of extras) allSheets.push(`${surface} (other document): ${n} (${t.length} bytes)`);
+}
 const out = {
   readAt: new Date().toLocaleDateString('en-CA'),
-  source: 'the stylesheet bodies read during live signed-out loads of fal.ai (/ and /pricing for the Webflow marketing surface, /models/krea/v3/text-to-image for the Next.js app surface, /docs/documentation for the fumadocs docs surface — linked CSS bundles from network responses plus inline <style> blocks, re-parsed with CSSStyleSheet); resolved in probes carrying each surface\'s real sheets — the app and docs once per theme class on <html> (light/dark), marketing once — at 1440 x 900.',
+  source: 'the stylesheets each document applied (document.styleSheets, in cascade order) during live signed-out loads of fal.ai (/ for the Webflow marketing surface, with /pricing harvested for evidence under its own file names; /models/krea/v3/text-to-image for the Next.js app surface; /docs/documentation for the fumadocs docs surface — linked CSS bundles plus inline <style> blocks, re-parsed with CSSStyleSheet); resolved in probes carrying each surface\'s primary-document sheets — the app and docs once per theme class on <html> (light/dark), marketing once — at 1440 x 900.',
   sheets: allSheets,
   counts: {
     rules: ok.length,

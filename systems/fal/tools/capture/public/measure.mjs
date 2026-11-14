@@ -3,7 +3,8 @@
 //
 //   PLAYWRIGHT=/path/to/playwright/index.mjs node measure.mjs [page ...]
 //
-// Pages: home pricing explore model api login docs mobile.
+// Pages: home pricing explore model api login docs mobile (and `motion`, the
+// reduced-motion check alone).
 // Writes raw/components-computed.json (merged) and one crop per component and
 // state into components/crops/; raw/measurements.md is built by
 // build-measurements.mjs.
@@ -283,15 +284,23 @@ async function sheetsFor(key) {
   out._meta.sheets[key] = res;
 }
 
-// Whether the page paints a different transition under prefers-reduced-motion:
-// the same component re-read in a context with reduce on.
-async function reducedMotion(key, sel) {
+// Whether the page changes its motion under prefers-reduced-motion: each probe
+// is read in fresh contexts with `no-preference` and `reduce`. A probe only
+// counts as evidence when its baseline really moves (a transition duration
+// above 0s, or a running animation): an idle control proves nothing, so the
+// result records `baselineMoves` and the run logs when a probe is idle.
+// Probes: the pixel-decoration cells carry the app's one running animation
+// (pixel-scan-sweep), and the header's Products trigger carries the 0.15s
+// colour transition the controls share.
+const MOTION_PROBES = [
+  { label: 'pixel-decoration-cell (animation)', sel: 'path.pixel-decoration-cell' },
+  { label: 'header Products trigger (transition)', sel: 'header button', text: /^\s*products\s*$/i },
+];
+async function reducedMotion(key) {
   out._meta.reducedMotion ??= {};
-  const read = {};
+  const reads = {};
   try {
     const b = context.browser();
-    // Both settings in fresh contexts, on a control whose transition is
-    // nonzero under no-preference — a reduce-only reading proves nothing.
     for (const mode of ['no-preference', 'reduce']) {
       const ctx = await b.newContext({ viewport: { width: 1440, height: 900 }, deviceScaleFactor: 1, userAgent: UA, locale: 'en-US', reducedMotion: mode, colorScheme: SCHEME[key] });
       await patch(ctx);
@@ -299,16 +308,26 @@ async function reducedMotion(key, sel) {
       await p.goto(URLS[key].startsWith('http') ? URLS[key] : BASE + URLS[key], { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
       await p.waitForTimeout(7000);
       await closePromo(p);
-      read[mode] = await p.evaluate((s) => {
-        const el = document.querySelector(s);
+      reads[mode] = await p.evaluate((probes) => probes.map(({ sel, text }) => {
+        const re = text ? new RegExp(text.source, text.flags) : null;
+        const el = [...document.querySelectorAll(sel)].find((e) => !re || re.test((e.innerText || '').trim()));
         if (!el) return null;
         const cs = getComputedStyle(el);
-        return { transition: cs.transition, animation: cs.animation, scrollBehavior: getComputedStyle(document.documentElement).scrollBehavior };
-      }, sel).catch(() => null);
+        return { transition: cs.transition, animation: cs.animation, animationName: cs.animationName, transitionDuration: cs.transitionDuration, scrollBehavior: getComputedStyle(document.documentElement).scrollBehavior };
+      }), MOTION_PROBES.map((m) => ({ sel: m.sel, text: m.text && { source: m.text.source, flags: m.text.flags } }))).catch(() => null);
       await ctx.close();
     }
-    out._meta.reducedMotion[key] = { selector: sel, noPreference: read['no-preference'], reduce: read['reduce'] };
-  } catch (e) { out._meta.reducedMotion[key] = { selector: sel, ...read, error: String(e).slice(0, 120) }; }
+    const moves = (r) => !!r && (r.animationName !== 'none' || r.transitionDuration.split(',').some((d) => parseFloat(d) > 0));
+    out._meta.reducedMotion[key] = {
+      note: 'Each probe is read with prefers-reduced-motion no-preference and reduce in fresh contexts; baselineMoves says whether the no-preference reading actually animates or transitions.',
+      probes: MOTION_PROBES.map((m, i) => {
+        const np = reads['no-preference']?.[i] ?? null, rd = reads.reduce?.[i] ?? null;
+        const baselineMoves = moves(np);
+        if (!baselineMoves) log(`reduced-motion probe "${m.label}" is idle under no-preference: not evidence`);
+        return { label: m.label, selector: m.sel, baselineMoves, noPreference: np, reduce: rd, changedUnderReduce: !!np && !!rd && (np.animationName !== rd.animationName || np.transitionDuration !== rd.transitionDuration) };
+      }),
+    };
+  } catch (e) { out._meta.reducedMotion[key] = { error: String(e).slice(0, 120) }; }
 }
 
 const FIELD = ['default', 'focused', 'filled'];
@@ -370,7 +389,9 @@ async function home() {
   await S('mkt-btn-sales', q('.nav-right:not(.is-mobile) a.button').filter({ hasText: /contact sales/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Contact Sales button (marketing)', desc: 'The secondary Contact-Sales button in the marketing header; measured, never followed.', sel: '.nav-right Contact Sales' }, { noScroll: true });
   await S('mkt-btn-start', q('.nav-right:not(.is-mobile) a.button').filter({ hasText: /get started/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Get Started button (marketing)', desc: 'The primary Get-Started button in the marketing header; measured, never followed.', sel: '.nav-right Get Started' }, { noScroll: true });
   const h = G.home;
-  await S('mkt-hero-h1', q('h1').filter({ visible: true }).first(), ['default'], { group: h, title: 'Hero headline', desc: 'The home hero display heading — Focal Web 96px, the cyan brand colour on the olive field.', sel: 'h1' }, { noScroll: true });
+  await S('mkt-hero-h1', q('h1').filter({ visible: true }).first(), ['default'], { group: h, title: 'Hero headline', desc: 'The home hero display heading — Focal Web 96px, the cyan brand colour on the dark bronze field.', sel: 'h1' }, { noScroll: true });
+  // The field the hero headline sits on is the h1's section (section.background-color-darkbronze), not the h1's own transparent paint.
+  await S('mkt-hero-field', q('h1').filter({ visible: true }).first().locator('xpath=ancestor::section[1]'), ['default'], { group: h, title: 'Hero field', desc: 'The home hero section: the dark bronze field (background-color-darkbronze) behind the cyan display headline.', sel: 'section ancestor of the hero h1' }, { noScroll: true });
   await S('mkt-hero-cta', q('main a, main button, section a, section button').filter({ hasText: /get started|contact sales|start building|try/i }).filter({ visible: true }).first(), B4, { group: h, title: 'Hero CTA', desc: 'The primary call-to-action inside the hero; measured never followed.', sel: 'hero primary CTA' });
   await S('mkt-section-h2', q('h2').filter({ visible: true }).first(), ['default'], { group: h, title: 'Section heading (marketing)', desc: 'A marketing section heading further down the home page.', sel: 'h2' });
   const f = G.footer;
@@ -462,9 +483,13 @@ async function api() {
   await sheetsFor('api');
   await chrome('api');
   const g = G.apipg;
-  await S('api-tab', q('[role="tab"], a[href*="/models/krea/v3/text-to-image"]').filter({ hasText: /^\s*(Playground|API|Examples)\s*$/ }).filter({ visible: true }).first(), ['default'], { group: g, title: 'API tab (active)', desc: 'The model page tabs with API active; measured, never switched.', sel: 'model tab bar' }, { noScroll: true });
+  await S('api-tab', q('a[href$="/models/krea/v3/text-to-image/api"]').filter({ hasText: /^\s*API\s*$/ }).filter({ visible: true }).first(), ['default'], { group: g, title: 'API tab (active)', desc: 'The "API" tab of the model page tab bar, active (aria-selected true); measured, never switched.', sel: 'a[href$="/api"] "API"' }, { noScroll: true });
   await S('api-code', q('pre, code, [class*="code" i]').filter({ hasText: /import|fal_client|subscribe|endpoint_id|queue/i }).filter({ visible: true }).first(), ['default'], { group: g, title: 'API code block', desc: 'A code sample on the API tab (client subscribe / queue call).', sel: 'code block' });
-  await S('api-copy', q('button[aria-label="Copy"]').filter({ visible: true }).first(), B4, { group: g, title: 'Copy button (API)', desc: 'The code-block Copy button; measured, never pressed.', sel: 'button[aria-label="Copy"]' });
+  // The code block's own Copy button: the first sample <pre> and the absolutely
+  // positioned button inside its `group relative` wrapper (the endpoint-id Copy
+  // measured as mp-copy sits in the page header, outside every code block).
+  const codeWrap = q('pre').filter({ hasText: /import|fal_client|subscribe|endpoint_id|queue/i }).filter({ visible: true }).first().locator('xpath=ancestor::div[contains(@class,"group") and contains(@class,"relative")][1]');
+  await S('api-copy', codeWrap.locator('button[aria-label="Copy"]').first(), B4, { group: g, title: 'Copy button (API)', desc: 'The code-block Copy button (top-right of the first code sample); measured, never pressed.', sel: 'code block button[aria-label="Copy"]' });
   await S('api-lang-tab', q('button').filter({ hasText: /javascript \/ node|python|curl/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Language tab', desc: 'A client-language tab on the API samples ("JavaScript / Node.js") — a local view switch; measured, never switched.', sel: 'language tab' });
   save();
 }
@@ -542,10 +567,8 @@ const finishedPages = new Set();
 try {
   for (const k of order) { if (k !== 'mobile') { await plan[k](); finishedPages.add(k); } }
   if (!pages.length || pages.includes('mobile')) { await plan.mobile(); finishedPages.add('mobile'); }
-  // Reduced-motion check on an element that really transitions: the app
-  // Products menu trigger paints a colour transition, so the
-  // no-preference vs reduce delta is meaningful.
-  if (!pages.length || pages.includes('explore')) await reducedMotion('explore', 'header button');
+  // Reduced-motion check on elements that really move (see MOTION_PROBES).
+  if (!pages.length || pages.includes('explore') || pages.includes('motion')) await reducedMotion('explore');
 } finally {
   for (const [key, c] of Object.entries(out.components)) {
     // An untouched entry is pruned only when its page finished this run: a

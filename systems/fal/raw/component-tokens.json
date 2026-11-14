@@ -59,12 +59,6 @@
           "source": "declared fal.ai design-system variable in the site stylesheet (raw/css-vars.json): --font-weight-bold",
           "description": "The declared `--font-weight-bold`."
         },
-        "extrabold": {
-          "value": 800,
-          "type": "fontWeight",
-          "source": "declared fal.ai design-system variable in the site stylesheet (raw/css-vars.json): --font-weight-extrabold",
-          "description": "The declared `--font-weight-extrabold`."
-        },
         "extralight": {
           "value": 200,
           "type": "fontWeight",
@@ -194,7 +188,7 @@
             "value": "{font.size.text.8xl}",
             "type": "fontSize",
             "source": "computed fontSize of mkt-hero-h1 default (raw/components-computed.json); matches declared --text-8xl",
-            "description": "The marketing hero display size — Focal Web on the cyan field."
+            "description": "The marketing hero display size — Focal Web in cyan on the dark bronze field."
           },
           "docs-h1": {
             "value": "56px",
@@ -306,7 +300,7 @@
       },
       "tracking": {
         "normal": {
-          "value": "0px",
+          "value": "0em",
           "type": "other",
           "source": "declared fal.ai design-system variable in the site stylesheet (raw/css-vars.json): --tracking-normal",
           "description": "The declared `--tracking-normal`."
@@ -324,19 +318,19 @@
           "description": "The declared `--tracking-tighter`."
         },
         "wide": {
-          "value": "0.390625px",
+          "value": ".025em",
           "type": "other",
           "source": "declared fal.ai design-system variable in the site stylesheet (raw/css-vars.json): --tracking-wide",
           "description": "The declared `--tracking-wide`."
         },
         "wider": {
-          "value": "0.796875px",
+          "value": ".05em",
           "type": "other",
           "source": "declared fal.ai design-system variable in the site stylesheet (raw/css-vars.json): --tracking-wider",
           "description": "The declared `--tracking-wider`."
         },
         "widest": {
-          "value": "1.59375px",
+          "value": ".1em",
           "type": "other",
           "source": "declared fal.ai design-system variable in the site stylesheet (raw/css-vars.json): --tracking-widest",
           "description": "The declared `--tracking-widest`."
@@ -455,18 +449,6 @@
         "type": "dimension",
         "source": "declared fal.ai design-system variable in the site stylesheet (raw/css-vars.json): --spacing",
         "description": "The declared `--spacing`."
-      },
-      "16-14": {
-        "value": "18.2812px",
-        "type": "dimension",
-        "source": "declared fal.ai design-system variable in the site stylesheet (raw/css-vars.json): --spacing-16-14",
-        "description": "The declared `--spacing-16-14`."
-      },
-      "8-14": {
-        "value": "9.14062px",
-        "type": "dimension",
-        "source": "declared fal.ai design-system variable in the site stylesheet (raw/css-vars.json): --spacing-8-14",
-        "description": "The declared `--spacing-8-14`."
       }
     },
     "container": {
@@ -665,14 +647,6 @@
         "type": "dimension",
         "source": "declared fal.ai design-system variable in the site stylesheet (raw/css-vars.json): --header-expanded",
         "description": "The declared `--header-expanded`."
-      }
-    },
-    "scroll": {
-      "mt": {
-        "value": "100.797px",
-        "type": "dimension",
-        "source": "declared fal.ai design-system variable in the site stylesheet (raw/css-vars.json): --scroll-mt",
-        "description": "The declared `--scroll-mt`."
       }
     },
     "sticky": {
@@ -958,7 +932,7 @@
           "description": "The declared `--color-blue-500`."
         },
         "600": {
-          "value": "#2563eb",
+          "value": "#155dfc",
           "type": "color",
           "source": "declared fal.ai design-system variable in the site stylesheet (raw/css-vars.json): --color-blue-600",
           "description": "The declared `--color-blue-600`."
@@ -1018,14 +992,6 @@
           "type": "color",
           "source": "declared fal.ai design-system variable in the site stylesheet (raw/css-vars.json): --color-cyan-950",
           "description": "The declared `--color-cyan-950`."
-        }
-      },
-      "emerald": {
-        "500": {
-          "value": "#00bc7d",
-          "type": "color",
-          "source": "declared fal.ai design-system variable in the site stylesheet (raw/css-vars.json): --color-emerald-500",
-          "description": "The declared `--color-emerald-500`."
         }
       },
       "error": {
@@ -1124,7 +1090,7 @@
           "description": "The declared `--color-green-100`."
         },
         "400": {
-          "value": "#4ade80",
+          "value": "#05df72",
           "type": "color",
           "source": "declared fal.ai design-system variable in the site stylesheet (raw/css-vars.json): --color-green-400",
           "description": "The declared `--color-green-400`."
@@ -1136,7 +1102,7 @@
           "description": "The declared `--color-green-500`."
         },
         "600": {
-          "value": "#16a34a",
+          "value": "#00a63e",
           "type": "color",
           "source": "declared fal.ai design-system variable in the site stylesheet (raw/css-vars.json): --color-green-600",
           "description": "The declared `--color-green-600`."
@@ -1417,12 +1383,6 @@
         }
       },
       "primary": {
-        "default": {
-          "value": "#fff59a",
-          "type": "color",
-          "source": "declared fal.ai design-system variable in the site stylesheet (raw/css-vars.json): --color-primary",
-          "description": "The declared `--color-primary`."
-        },
         "200": {
           "value": "#cac4fe",
           "type": "color",
@@ -4271,54 +4231,6 @@
       "light": {
         "var": "--error-light",
         "type": "color"
-      },
-      "page": {
-        "action": {
-          "primary": {
-            "background": {
-              "var": "--error-page-action-primary-background",
-              "type": "color"
-            },
-            "foreground": {
-              "var": "--error-page-action-primary-foreground",
-              "type": "color"
-            },
-            "hover": {
-              "var": "--error-page-action-primary-hover",
-              "type": "color"
-            }
-          },
-          "secondary": {
-            "background": {
-              "var": "--error-page-action-secondary-background",
-              "type": "color"
-            },
-            "foreground": {
-              "var": "--error-page-action-secondary-foreground",
-              "type": "color"
-            },
-            "hover": {
-              "var": "--error-page-action-secondary-hover",
-              "type": "color"
-            }
-          }
-        },
-        "background": {
-          "var": "--error-page-background",
-          "type": "color"
-        },
-        "code": {
-          "var": "--error-page-code",
-          "type": "color"
-        },
-        "copy": {
-          "var": "--error-page-copy",
-          "type": "color"
-        },
-        "title": {
-          "var": "--error-page-title",
-          "type": "color"
-        }
       }
     },
     "generation": {
@@ -4715,124 +4627,6 @@
         "type": "color"
       }
     },
-    "twoslash": {
-      "border": {
-        "color": {
-          "var": "--twoslash-border-color",
-          "type": "color"
-        }
-      },
-      "code": {
-        "font": {
-          "size": {
-            "var": "--twoslash-code-font-size",
-            "type": "dimension"
-          }
-        }
-      },
-      "cursor": {
-        "color": {
-          "var": "--twoslash-cursor-color",
-          "type": "color"
-        }
-      },
-      "docs": {
-        "tag": {
-          "style": {
-            "var": "--twoslash-docs-tag-style",
-            "type": "other"
-          }
-        }
-      },
-      "error": {
-        "bg": {
-          "var": "--twoslash-error-bg",
-          "type": "color"
-        },
-        "color": {
-          "var": "--twoslash-error-color",
-          "type": "color"
-        }
-      },
-      "highlighted": {
-        "bg": {
-          "var": "--twoslash-highlighted-bg",
-          "type": "color"
-        },
-        "border": {
-          "var": "--twoslash-highlighted-border",
-          "type": "color"
-        }
-      },
-      "popup": {
-        "bg": {
-          "var": "--twoslash-popup-bg",
-          "type": "color"
-        },
-        "shadow": {
-          "var": "--twoslash-popup-shadow",
-          "type": "shadow"
-        }
-      },
-      "tag": {
-        "annotate": {
-          "bg": {
-            "var": "--twoslash-tag-annotate-bg",
-            "type": "color"
-          },
-          "color": {
-            "var": "--twoslash-tag-annotate-color",
-            "type": "color"
-          }
-        },
-        "bg": {
-          "var": "--twoslash-tag-bg",
-          "type": "color"
-        },
-        "color": {
-          "var": "--twoslash-tag-color",
-          "type": "color"
-        },
-        "warn": {
-          "bg": {
-            "var": "--twoslash-tag-warn-bg",
-            "type": "color"
-          },
-          "color": {
-            "var": "--twoslash-tag-warn-color",
-            "type": "color"
-          }
-        }
-      },
-      "text": {
-        "size": {
-          "var": "--twoslash-text-size",
-          "type": "dimension"
-        }
-      },
-      "underline": {
-        "color": {
-          "var": "--twoslash-underline-color",
-          "type": "other"
-        }
-      },
-      "unmatched": {
-        "color": {
-          "var": "--twoslash-unmatched-color",
-          "type": "color"
-        }
-      },
-      "warn": {
-        "bg": {
-          "var": "--twoslash-warn-bg",
-          "type": "color"
-        },
-        "color": {
-          "var": "--twoslash-warn-color",
-          "type": "color"
-        }
-      }
-    },
     "docs": {
       "default": {
         "border": {
@@ -4856,7 +4650,7 @@
         "code": {
           "font": {
             "size": {
-              "value": "16px",
+              "value": "1em",
               "type": "other",
               "source": "declared fal.ai design-system variable in the site stylesheet (raw/css-vars.json): --twoslash-code-font-size (docs light pass)",
               "description": "The declared docs `--twoslash-code-font-size` (the docs layer has its own value for this name in each theme)."
@@ -5018,6 +4812,12 @@
         "source": "computed backgroundColor of mkt-btn-start default (raw/components-computed.json); matches declared marketing.brand.black",
         "description": "The primary Get-Started button fill on the marketing header."
       },
+      "primary-foreground": {
+        "value": "{color.surface.default}",
+        "type": "color",
+        "source": "computed color of mkt-btn-start default (raw/components-computed.json); matches declared color.surface.default",
+        "description": "The label colour on the primary Get-Started button."
+      },
       "primary-hover": {
         "value": "{accent.sage.solid.lighter}",
         "type": "color",
@@ -5041,7 +4841,7 @@
       "focus": {
         "value": "#101010",
         "type": "color",
-        "source": "computed outlineColor of mkt-btn-start focus-visible (raw/components-computed.json)",
+        "source": "painted focus ring (outline 1px auto) of mkt-btn-start focus-visible (raw/components-computed.json)",
         "description": "The keyboard focus ring on the marketing surface."
       }
     },
@@ -5051,6 +4851,14 @@
         "type": "color",
         "source": "computed color of mkt-hero-h1 default (raw/components-computed.json); matches declared accent.cyan.solid.default",
         "description": "The display colour the marketing hero paints."
+      }
+    },
+    "marketing-surface": {
+      "hero-field": {
+        "value": "{marketing.brand.dark.bronze}",
+        "type": "color",
+        "source": "computed backgroundColor of mkt-hero-field default (raw/components-computed.json); matches declared marketing.brand.dark.bronze",
+        "description": "The dark bronze field the hero section paints behind the display headline (read on the h1's section, since the h1 itself is transparent)."
       }
     }
   },
@@ -5861,54 +5669,6 @@
       "light": {
         "var": "--error-light",
         "type": "color"
-      },
-      "page": {
-        "action": {
-          "primary": {
-            "background": {
-              "var": "--error-page-action-primary-background",
-              "type": "color"
-            },
-            "foreground": {
-              "var": "--error-page-action-primary-foreground",
-              "type": "color"
-            },
-            "hover": {
-              "var": "--error-page-action-primary-hover",
-              "type": "color"
-            }
-          },
-          "secondary": {
-            "background": {
-              "var": "--error-page-action-secondary-background",
-              "type": "color"
-            },
-            "foreground": {
-              "var": "--error-page-action-secondary-foreground",
-              "type": "color"
-            },
-            "hover": {
-              "var": "--error-page-action-secondary-hover",
-              "type": "color"
-            }
-          }
-        },
-        "background": {
-          "var": "--error-page-background",
-          "type": "color"
-        },
-        "code": {
-          "var": "--error-page-code",
-          "type": "color"
-        },
-        "copy": {
-          "var": "--error-page-copy",
-          "type": "color"
-        },
-        "title": {
-          "var": "--error-page-title",
-          "type": "color"
-        }
       }
     },
     "generation": {
@@ -6305,124 +6065,6 @@
         "type": "color"
       }
     },
-    "twoslash": {
-      "border": {
-        "color": {
-          "var": "--twoslash-border-color",
-          "type": "color"
-        }
-      },
-      "code": {
-        "font": {
-          "size": {
-            "var": "--twoslash-code-font-size",
-            "type": "dimension"
-          }
-        }
-      },
-      "cursor": {
-        "color": {
-          "var": "--twoslash-cursor-color",
-          "type": "color"
-        }
-      },
-      "docs": {
-        "tag": {
-          "style": {
-            "var": "--twoslash-docs-tag-style",
-            "type": "other"
-          }
-        }
-      },
-      "error": {
-        "bg": {
-          "var": "--twoslash-error-bg",
-          "type": "color"
-        },
-        "color": {
-          "var": "--twoslash-error-color",
-          "type": "color"
-        }
-      },
-      "highlighted": {
-        "bg": {
-          "var": "--twoslash-highlighted-bg",
-          "type": "color"
-        },
-        "border": {
-          "var": "--twoslash-highlighted-border",
-          "type": "color"
-        }
-      },
-      "popup": {
-        "bg": {
-          "var": "--twoslash-popup-bg",
-          "type": "color"
-        },
-        "shadow": {
-          "var": "--twoslash-popup-shadow",
-          "type": "shadow"
-        }
-      },
-      "tag": {
-        "annotate": {
-          "bg": {
-            "var": "--twoslash-tag-annotate-bg",
-            "type": "color"
-          },
-          "color": {
-            "var": "--twoslash-tag-annotate-color",
-            "type": "color"
-          }
-        },
-        "bg": {
-          "var": "--twoslash-tag-bg",
-          "type": "color"
-        },
-        "color": {
-          "var": "--twoslash-tag-color",
-          "type": "color"
-        },
-        "warn": {
-          "bg": {
-            "var": "--twoslash-tag-warn-bg",
-            "type": "color"
-          },
-          "color": {
-            "var": "--twoslash-tag-warn-color",
-            "type": "color"
-          }
-        }
-      },
-      "text": {
-        "size": {
-          "var": "--twoslash-text-size",
-          "type": "dimension"
-        }
-      },
-      "underline": {
-        "color": {
-          "var": "--twoslash-underline-color",
-          "type": "other"
-        }
-      },
-      "unmatched": {
-        "color": {
-          "var": "--twoslash-unmatched-color",
-          "type": "color"
-        }
-      },
-      "warn": {
-        "bg": {
-          "var": "--twoslash-warn-bg",
-          "type": "color"
-        },
-        "color": {
-          "var": "--twoslash-warn-color",
-          "type": "color"
-        }
-      }
-    },
     "docs": {
       "default": {
         "border": {
@@ -6446,7 +6088,7 @@
         "code": {
           "font": {
             "size": {
-              "value": "16px",
+              "value": "1em",
               "type": "other",
               "source": "declared fal.ai design-system variable in the site stylesheet (raw/css-vars.json): --twoslash-code-font-size (docs dark pass)",
               "description": "The declared docs `--twoslash-code-font-size` (the docs layer has its own value for this name in each theme)."
@@ -6602,6 +6244,12 @@
         "source": "computed backgroundColor of app-btn-signup default (raw/components-computed.json); matches declared badge.brand.solid.foreground",
         "description": "The primary Sign-up button fill on the dark app surface."
       },
+      "primary-foreground": {
+        "value": "{color.surface.sunken}",
+        "type": "color",
+        "source": "computed color of app-btn-signup default (raw/components-computed.json); matches declared color.surface.sunken",
+        "description": "The label colour on the primary Sign-up button: dark text on the near-white fill."
+      },
       "primary-hover": {
         "value": "{color.stroke.focus.default}",
         "type": "color",
@@ -6635,10 +6283,10 @@
     },
     "border": {
       "focus": {
-        "value": "#101010",
+        "value": "{color.stroke.focus.brand}",
         "type": "color",
-        "source": "computed outlineColor of app-btn-signup focus-visible (raw/components-computed.json)",
-        "description": "The keyboard focus ring on the dark app surface."
+        "source": "painted focus ring (box-shadow 3px spread) of app-btn-signup focus-visible (raw/components-computed.json); matches declared color.stroke.focus.brand",
+        "description": "The keyboard focus ring on the dark app surface: the 3px box-shadow ring the button paints (its outline is none)."
       }
     }
   },

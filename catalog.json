@@ -4266,7 +4266,7 @@
    "url": "https://fal.ai",
    "category": "ai-agent",
    "platform": "web",
-   "goodFor": "generative-media infrastructure design: three declared token layers (a Tailwind v4-style app layer of ~839 names - surface/content/stroke/overlay/badge/accent roles over HSL-triplet ramps - a Webflow marketing palette and a fumadocs docs layer) across three signed-out surfaces - a black+cyan Focal Web marketing site (neon-lime CTA), a dark #121216 model catalog and playground (violet #783afb Sign-in-to-run, ghost washes, model cards), and a light Focal/Public-Sans docs - plus an OAuth-only login card and a 390px phone pass",
+   "goodFor": "generative-media infrastructure design: three declared token layers (a Tailwind v4-style app layer of 763 names - surface/content/stroke/overlay/badge/accent roles over HSL-triplet ramps - a Webflow marketing palette and a fumadocs docs layer) across three signed-out surfaces - a dark-bronze+cyan Focal Web marketing site (neon-lime CTA), a dark #121216 model catalog and playground (violet #783afb Sign-in-to-run, ghost washes, model cards), and a light Focal/Public-Sans docs - plus an OAuth-only login card and a 390px phone pass",
    "tags": [
     "web",
     "ai",
@@ -4325,7 +4325,7 @@
    },
    "capture": {
     "method": "public-web",
-    "source": "fal.ai in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and crops from the live DOM. The site declares three token layers in its stylesheets: the app's Tailwind-style layer resolved per html.light|html.dark (appLight/appDark passes, ~839 names each), the Webflow marketing layer (marketing pass) and the fumadocs docs layer (docsLight/docsDark passes), so the colour roles are declared values and the component values are measured computed values. Everything past login is a documented authenticated boundary",
+    "source": "fal.ai in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and crops from the live DOM. The site declares three token layers in its stylesheets: the app's Tailwind-style layer resolved per html.light|html.dark (appLight/appDark passes, 763 names each), the Webflow marketing layer (marketing pass) and the fumadocs docs layer (docsLight/docsDark passes), so the colour roles are declared values and the component values are measured computed values. Everything past login is a documented authenticated boundary",
     "timestamp": "2026-11-14T07:30:00Z",
     "harness": "Devin",
     "model": "SWE-2 High",

@@ -49,9 +49,9 @@ code { font-family: var(--sg-mono); font-size: .9em; }
 .navbar .wm { font-weight: 800; font-size: 24px; letter-spacing: -0.02em; font-family: var(--sg-serif); }
 .navbar .sp { flex: 1; }
 .btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-mkt-button-height, 34px); padding: 0 18px; font-size: 13px; font-weight: 600; border-radius: var(--radius-md, 6px); border: 1px solid var(--stroke-base, rgba(18,18,22,.1)); }
-.btn.primary { background: var(--action-primary, #8535ff); color: #fff; border-color: transparent; }
+.btn.primary { background: var(--action-primary, #8535ff); color: var(--action-primary-foreground, #fff); border-color: transparent; }
 .btn.app { height: var(--component-button-height, 32px); border-radius: var(--radius-md, 6px); }
-.hero { color: var(--marketing-text-hero-text, #003b44); padding: 72px 40px; font: 500 60px/1 var(--sg-serif); letter-spacing: .01em; text-align: center; background: var(--marketing-brand-cyan, #99edff); }
+.hero { color: var(--marketing-text-hero-text, #99edff); padding: 72px 40px; font: 500 60px/1 var(--sg-serif); letter-spacing: .01em; text-align: center; background: var(--marketing-surface-hero-field, #403700); }
 .hero small { display: block; font: 400 18px/1.5 var(--sg-sans); color: inherit; opacity: .8; margin: 16px auto 22px; max-width: 46ch; }
 .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
 .tile { border: 1px solid var(--stroke-base, rgba(255,255,255,.05)); border-radius: var(--radius-2xl, 16px); padding: 14px; font-size: 13px; background: var(--surface-300, #19191a); color: var(--content-base, #f4f4f5); }
@@ -59,6 +59,14 @@ code { font-family: var(--sg-mono); font-size: .9em; }
 .tile b { display: block; font: 500 15px/1.25 var(--sg-mono); margin-bottom: 4px; }
 .tile .sub { color: var(--content-muted, rgba(255,255,255,.5)); font-size: 12px; }
 .badge { display: inline-flex; align-items: center; height: var(--mp-badge, 14px); padding: 0 6px; border-radius: var(--radius-sm, 4px); font: 500 10px/1 var(--sg-sans); background: var(--badge-brand-alpha, rgba(120,58,251,.2)); color: var(--badge-brand-foreground, #b58dff); }
+details.grp { border-bottom: 1px solid var(--sg-hairline); padding: 6px 0; }
+details.grp > summary { cursor: pointer; font: 500 13px/1.6 var(--sg-mono); }
+details.grp > summary span { color: var(--sg-muted); font-weight: 400; margin-left: 6px; }
+table.idx { border-collapse: collapse; width: 100%; margin: 6px 0 12px; font: 400 11.5px/1.5 var(--sg-mono); }
+table.idx td { border-top: 1px solid var(--sg-hairline); padding: 3px 10px 3px 0; vertical-align: top; overflow-wrap: anywhere; }
+table.idx td.in { width: 38%; }
+table.idx td.it { width: 10%; color: var(--sg-muted); }
+.chip { display: inline-block; width: 14px; height: 14px; border-radius: 3px; border: 1px solid var(--sg-hairline); margin-right: 8px; vertical-align: -3px; }
 table.cmp { border-collapse: collapse; font-size: 14px; }
 table.cmp td, table.cmp th { border: 1px solid var(--sg-hairline); padding: 6px 14px; text-align: left; }
 .tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--sg-hairline); }
@@ -81,10 +89,10 @@ table.cmp td, table.cmp th { border: 1px solid var(--sg-hairline); padding: 6px 
   <p class="note">Read from fal.ai on 2026-11-14, signed out, in headless Chromium. Everything behind /login is a documented boundary; the OAuth buttons and Sign-in-to-run were measured, never followed. Focal, Public Sans Rounded, Chivo Mono, Hal and Paper Mono are served faces and are not loaded here: samples fall back to system sans/serif/mono.</p>
 
   <h2 class="sh">The marketing chrome</h2>
-  <p class="lead">The 88px fixed Webflow bar (div.nav-main) carries the fal wordmark, the Products dropdown, Docs / Pricing / Enterprise / Resources links, Contact Sales and the primary Get-Started button — measured fills below. The hero paints a 96px Focal Web display headline on the cyan brand field.</p>
+  <p class="lead">The 88px fixed Webflow bar (div.nav-main) carries the fal wordmark, the Products dropdown, Docs / Pricing / Enterprise / Resources links, Contact Sales and the primary Get-Started button — measured fills below. The hero paints a 96px Focal Web display headline in cyan on the dark bronze brand field (section.background-color-darkbronze, #403700).</p>
   <div class="mock" style="padding:20px;background:var(--sg-paper)">
     <div class="navbar"><span class="wm">fal</span><span>Products</span><span>Docs</span><span>Pricing</span><span>Enterprise</span><span class="sp"></span><span class="btn" style="background:var(--action-secondary,#fff)">Contact Sales</span><span class="btn primary">Get Started</span></div>
-    <div class="hero">fal, your full stack for generative media<small>The generative media platform powering the world's top AI applications.</small><span class="btn primary" style="height:var(--component-mkt-button-height,34px)">Get Started</span></div>
+    <div class="hero">fal, your full stack for generative media<small>The generative media platform powering the world's top AI applications.</small><span class="btn" style="height:var(--component-mkt-button-height,34px);background:var(--action-hero-cta,#adff00);color:var(--marketing-brand-dark-bronze,#403700);border-color:transparent">Get Started</span></div>
   </div>
 
   <h2 class="sh">The app surface</h2>
@@ -123,6 +131,10 @@ table.cmp td, table.cmp th { border: 1px solid var(--sg-hairline); padding: 6px 
 
   <h2 class="sh">Measured extras</h2>
   <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">Every token</h2>
+  <p class="lead">The complete index of <code>tokens.json</code>: every token in the <code>core</code>, <code>light</code> and <code>dark</code> sets by group, including the chart, motion, tracking and shadow groups the sections above do not draw. Colours show a swatch; the type column is the DTCG type.</p>
+  <div id="all-out"></div>
 
   <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared design-token variables from the live stylesheets of all three surfaces and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed and open states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
 </main>
@@ -171,9 +183,18 @@ const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) 
   $('#spacing-out').innerHTML = m;
 })();
 
+// One readable string for any token value: shadows as their layers, objects as JSON.
+const fmt = (t) => {
+  const v = t.v;
+  if (t.t === 'shadow' && Array.isArray(v)) return v.map((x) => (x.inset ? 'inset ' : '') + [x.offsetX, x.offsetY, x.blur, x.spread, x.color].join(' ')).join(', ');
+  if (t.t === 'cubicBezier' && Array.isArray(v)) return 'cubic-bezier(' + v.join(', ') + ')';
+  return typeof v === 'object' ? JSON.stringify(v) : String(v);
+};
+
 (function elev() {
   let e = '';
-  for (const [n, t] of flat(TOK.light.shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  for (const setname of ['light', 'dark'])
+    for (const [n, t] of flat((TOK[setname] || {}).shadow || {}, 'shadow.')) e += `<div><b>${setname}.${esc(n)}</b> <span>${esc(fmt(t))}</span></div>`;
   $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
 })();
 
@@ -182,6 +203,26 @@ const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) 
   for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
   for (const [n, t] of flat((TOK.core.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
   $('#meas-out').innerHTML = m;
+})();
+
+(function everything() {
+  let h = '';
+  for (const setname of ['core', 'light', 'dark']) {
+    const set = TOK[setname] || {};
+    const all = flat(set, '');
+    h += `<div class="pal-h">${setname} set, ${all.length} tokens</div>`;
+    for (const [group, node] of Object.entries(set)) {
+      const rows = flat(node && node.t ? { [group]: node } : node, group + '.').map(([n, t]) => [node && node.t ? group : n, t]);
+      if (!rows.length) continue;
+      h += `<details class="grp${setname === 'dark' ? ' dark' : ''}"><summary><b>${setname}.${esc(group)}</b> <span>${rows.length}</span></summary><table class="idx">`;
+      for (const [n, t] of rows) {
+        const sw = t.t === 'color' ? `<i class="chip" style="background:var(${cssname(n)})"></i>` : '';
+        h += `<tr><td class="in">${esc(n)}</td><td>${sw}${esc(fmt(t))}</td><td class="it">${esc(t.t)}</td></tr>`;
+      }
+      h += '</table></details>';
+    }
+  }
+  $('#all-out').innerHTML = h;
 })();
 
 const resolveVal = (v, depth) => {

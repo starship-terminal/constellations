@@ -2,13 +2,13 @@
 
 The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Captured from fal.ai on 2026-11-14, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was signed into, bought, downloaded or submitted; the OAuth buttons were never followed, no model was ever run, and no code was copied.
 
-The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (74 components, 200 states). The page layouts are described in [patterns.md](patterns.md).
+The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (75 components, 201 states). The page layouts are described in [patterns.md](patterns.md).
 
 How to read an entry:
 
 - A colour is its value followed by the palette token in [tokens.json](tokens.json) with the same value, when there is one. Text is written family size/line-height weight, then its colour, for example `SF Pro 14/21 500, #21252e`, and is read from the first text node inside the component.
 - The state table has one row per state that differs. The first row lists every value; later rows list only what changes. A state with the same values as the first is named in its label, for example "default (same: focus-visible)". When the root paints nothing, "Child layers" names the first nodes inside it that do.
-- Crops are images of the component read from the live page, in [components/crops/](components/crops) (198 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
+- Crops are images of the component read from the live page, in [components/crops/](components/crops) (199 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
 
 ## Discovery list
 
@@ -49,7 +49,7 @@ Screenshots are named `{page}-{theme}-state.png`: the marketing and docs pages p
 
 Values that apply across entries, from the measurement files.
 
-**Focus.** 37 components were given a real keyboard focus. 14 draw an outline ring: `mkt-nav-products` (2px solid #4d65ff, offset 2px), `mkt-nav-pricing` (1px auto #101010 `border.focus`, offset 1px), `mkt-btn-sales` (1px auto #101010 `border.focus`, offset 1px), `mkt-btn-start` (1px auto #101010 `border.focus`, offset 1px), `mkt-hero-cta` (1px auto #101010 `border.focus`, offset 1px), `pr-plan-cta` (1px auto #101010 `border.focus`, offset 1px), `app-nav-products` (2px solid rgba(255, 255, 255, 0.2) `overlay.primary.stroke`, offset -2px), `app-nav-docs` (2px solid rgba(255, 255, 255, 0.2) `overlay.primary.stroke`, offset -2px), `carousel-dot` (2px solid #ffffff `color.white`, offset 2px), `docs-search` (1px auto #5718c0 `color.primary.700`, offset 0px), `docs-theme-btn` (1px auto #5718c0 `color.primary.700`, offset 0px), `docs-hero-search` (1px auto #5718c0 `color.primary.700`, offset 0px), `docs-code-copy` (1px auto #5718c0 `color.primary.700`, offset 0px), `pager-dot` (1px auto #101010 `border.focus`, offset 0px). 23 draw a focus ring as a shadow instead: `app-announce-x`, `app-btn-login`, `app-btn-signup`, `card-cta`, `pager-next`, `mp-tab`, `mp-endpoint-btn`, `mp-copy`, `mp-agent-btn`, `mp-sandbox-link`, `mp-param`, `mp-param-more`, `mp-run`, `mp-result-tab`, `mp-download`, `api-copy`, `api-lang-tab`, `li-oauth-github`, `li-oauth-google`, `li-sso`, `li-support`, `m-hamburger`, `card-docs-link`.
+**Focus.** 37 components were given a real keyboard focus. 14 draw an outline ring: `mkt-nav-products` (2px solid #4d65ff, offset 2px), `mkt-nav-pricing` (1px auto #101010 `border.focus`, offset 1px), `mkt-btn-sales` (1px auto #101010 `border.focus`, offset 1px), `mkt-btn-start` (1px auto #101010 `border.focus`, offset 1px), `mkt-hero-cta` (1px auto #101010 `border.focus`, offset 1px), `pr-plan-cta` (1px auto #101010 `border.focus`, offset 1px), `app-nav-products` (2px solid rgba(255, 255, 255, 0.2) `overlay.primary.stroke`, offset -2px), `app-nav-docs` (2px solid rgba(255, 255, 255, 0.2) `overlay.primary.stroke`, offset -2px), `carousel-dot` (2px solid #ffffff `color.white`, offset 2px), `docs-search` (1px auto #5718c0 `color.primary.700`, offset 0px), `docs-theme-btn` (1px auto #5718c0 `color.primary.700`, offset 0px), `docs-hero-search` (1px auto #5718c0 `color.primary.700`, offset 0px), `docs-code-copy` (1px auto #5718c0 `color.primary.700`, offset 0px), `pager-dot` (1px auto #101010, offset 0px). 23 draw a focus ring as a shadow instead: `app-announce-x`, `app-btn-login`, `app-btn-signup`, `card-cta`, `pager-next`, `mp-tab`, `mp-endpoint-btn`, `mp-copy`, `mp-agent-btn`, `mp-sandbox-link`, `mp-param`, `mp-param-more`, `mp-run`, `mp-result-tab`, `mp-download`, `api-copy`, `api-lang-tab`, `li-oauth-github`, `li-oauth-google`, `li-sso`, `li-support`, `m-hamburger`, `card-docs-link`.
 
 **Pressed.** Forced with DevTools (`CSS.forcePseudoState` :active:hover). Nothing a real press would submit was ever pressed.
 
@@ -259,6 +259,13 @@ The home hero display heading — Focal Web 96px, the cyan brand colour on the o
 
 ![Hero headline default](components/crops/mkt-hero-h1-default.png)
 
+#### Hero field
+The home hero section: the dark bronze field (background-color-darkbronze) behind the cyan display headline. Read as `mkt-hero-field` on the home page.
+
+**Values (default).** size 1440 x 800; background #403700 `marketing.brand.dark.bronze`; text Focal Web 96/86.4 500, #99edff `color.cyan.300`.
+
+![Hero field default](components/crops/mkt-hero-field-default.png)
+
 #### Hero CTA
 The primary call-to-action inside the hero; measured never followed. Read as `mkt-hero-cta` on the home page.
 
@@ -407,7 +414,7 @@ A "Go to page N" dot paging a catalog section — a local pager; measured, never
 |---|---|
 | default | size 6 x 6; background #a6a6ae `palette.neutral.400`; text publicSansRounded 16/24 400, #ffffff `color.white`; transition all 0.2s cubic-bezier(0.4, 0, 0.2, 1) |
 | hover | background #f4f4f5 `palette.neutral.100` |
-| focus-visible | outline 1px auto #101010 `border.focus`, offset 0px |
+| focus-visible | outline 1px auto #101010, offset 0px |
 | pressed | background #f4f4f5 `palette.neutral.100` |
 
 ![Section pager dot default](components/crops/pager-dot-default.png) ![Section pager dot hover](components/crops/pager-dot-hover.png) ![Section pager dot focus-visible](components/crops/pager-dot-focus-visible.png) ![Section pager dot pressed](components/crops/pager-dot-pressed.png)
@@ -575,9 +582,9 @@ The result Download button — a licensed download; measured, never pressed. Rea
 The model's API tab: the request code sample with the language switch and the copy control — read-only signed out.
 
 #### API tab (active)
-The model page tabs with API active; measured, never switched. Read as `api-tab` on the model-api page.
+The "API" tab of the model page tab bar, active (aria-selected true); measured, never switched. Read as `api-tab` on the model-api page.
 
-**Values (default).** size 95.2 x 40; padding 4px 10px; border 1px solid transparent; radius 8px; background transparent; text publicSansRounded 14/16.8 600, rgba(255, 255, 255, 0.8) `badge.default.foreground`; transition background-color 0.16s cubic-bezier(0, 0, 0.2, 1), border-color 0.16s cubic-bezier(0, 0, 0.2, 1), color 0.16s cubic-bezier(0, 0, 0.2, 1), transform 0.16s cubic-bezier(0, 0, 0.2, 1); layers ::after rgb(250, 250, 250) 0px none 1.
+**Values (default).** size 44.42 x 40; padding 4px 10px; border 1px solid transparent; radius 8px; background transparent; text publicSansRounded 14/16.8 600, #fafafa `color.neutral.50`; transition background-color 0.16s cubic-bezier(0, 0, 0.2, 1), border-color 0.16s cubic-bezier(0, 0, 0.2, 1), color 0.16s cubic-bezier(0, 0, 0.2, 1), transform 0.16s cubic-bezier(0, 0, 0.2, 1); layers ::after rgb(250, 250, 250) 0px none 1.
 
 ![API tab (active) default](components/crops/api-tab-default.png)
 
@@ -589,14 +596,14 @@ A code sample on the API tab (client subscribe / queue call). Read as `api-code`
 ![API code block default](components/crops/api-code-default.png)
 
 #### Copy button (API)
-The code-block Copy button; measured, never pressed. Read as `api-copy` on the model-api page.
+The code-block Copy button (top-right of the first code sample); measured, never pressed. Read as `api-copy` on the model-api page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 32 x 32; border 1px solid transparent; radius 4px; background transparent; text publicSansRounded 20/28 600, #f4f4f5 `palette.neutral.100`; transition background-color 0.16s cubic-bezier(0.25, 0.46, 0.45, 0.94), border-color 0.16s cubic-bezier(0.25, 0.46, 0.45, 0.94), color 0.16s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.16s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.16s cubic-bezier(0.25, 0.46, 0.45, 0.94); icon 16 x 16, rgba(255, 255, 255, 0.5) `content.muted` |
+| default | size 36 x 36; border 1px solid transparent; radius 4px; background transparent; text publicSansRounded 14/20 600, #f4f4f5 `palette.neutral.100`; transition background-color 0.16s cubic-bezier(0.25, 0.46, 0.45, 0.94), border-color 0.16s cubic-bezier(0.25, 0.46, 0.45, 0.94), color 0.16s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.16s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.16s cubic-bezier(0.25, 0.46, 0.45, 0.94); icon 16 x 16, rgba(255, 255, 255, 0.5) `content.muted` |
 | hover | background rgba(255, 255, 255, 0.05) `badge.default.alpha`; icon 16 x 16, #fafafa `color.neutral.50` |
 | focus-visible | shadow #a284ff 0px 0px 0px 3px |
-| pressed | size 31.36 x 31.36; background rgba(255, 255, 255, 0.05) `badge.default.alpha`; icon 15.68 x 15.68, #fafafa `color.neutral.50` |
+| pressed | size 35.28 x 35.28; background rgba(255, 255, 255, 0.05) `badge.default.alpha`; icon 15.68 x 15.68, #fafafa `color.neutral.50` |
 
 ![Copy button (API) default](components/crops/api-copy-default.png) ![Copy button (API) hover](components/crops/api-copy-hover.png) ![Copy button (API) focus-visible](components/crops/api-copy-focus-visible.png) ![Copy button (API) pressed](components/crops/api-copy-pressed.png)
 

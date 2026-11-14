@@ -454,6 +454,34 @@ for name in sorted(M):
             role_alias["light"].setdefault(norm_color(M[name]), "marketing." + EMITTED[emitted])
 
 
+def split_shadow(v):
+    """Top-level comma split of a computed box-shadow list."""
+    return [p.strip() for p in re.split(r",\s*(?![^()]*\))", v) if p.strip()]
+
+
+def painted_ring(sty):
+    """(colour, how) of the focus ring a state really paints, from its computed style dict: a drawn outline
+    (non-none style, width above 0), else the outermost visible box-shadow
+    layer with a spread — fal's app buttons draw a 3px shadow ring and leave
+    `outline` at none, so the outline colour is the inactive default."""
+    if sty.get("outlineStyle", "none") != "none" and float(sty.get("outlineWidth", "0px")[:-2] or 0) > 0 \
+            and sty.get("outlineColor") != "rgba(0, 0, 0, 0)":
+        return sty["outlineColor"], f"outline {sty['outlineWidth']} {sty['outlineStyle']}"
+    ring = None
+    for layer in split_shadow(sty.get("boxShadow", "none")):
+        if layer.startswith("none"):
+            continue
+        m = re.match(r"^(rgba?\([^)]*\))\s+(-?[\d.]+)px\s+(-?[\d.]+)px\s+(-?[\d.]+)px\s+(-?[\d.]+)px(\s+inset)?$", layer)
+        if not m or m.group(6) or float(m.group(5)) <= 0:
+            continue
+        if re.fullmatch(r"rgba\(\s*\d+,\s*\d+,\s*\d+,\s*0\s*\)", m.group(1)):
+            continue
+        ring = (m.group(1), f"box-shadow {m.group(5)}px spread")
+    if ring:
+        return ring
+    raise KeyError("no painted ring")
+
+
 def semcolor(raw, src, desc, theme="light"):
     alias = role_alias[theme].get(norm_color(raw))
     value = f"{{{alias}}}" if alias else norm_color(raw)
@@ -468,18 +496,20 @@ dsem = SPEC["dark"]
 for root, theme, key, comp, state, prop, group, desc in [
     (sem, "light", "primary", "mkt-btn-start", "default", "backgroundColor", "action",
      "The primary Get-Started button fill on the marketing header."),
+    (sem, "light", "primary-foreground", "mkt-btn-start", "default", "color", "action",
+     "The label colour on the primary Get-Started button."),
     (sem, "light", "primary-hover", "mkt-btn-start", "hover", "backgroundColor", "action",
      "The primary marketing button fill on hover."),
     (sem, "light", "secondary", "mkt-btn-sales", "default", "backgroundColor", "action",
      "The secondary Contact-Sales button fill on the marketing header."),
     (sem, "light", "hero-cta", "mkt-hero-cta", "default", "backgroundColor", "action",
      "The hero call-to-action fill on the marketing home page."),
-    (sem, "light", "focus", "mkt-btn-start", "focus-visible", "outlineColor", "border",
+    (sem, "light", "focus", "mkt-btn-start", "focus-visible", "focusRing", "border",
      "The keyboard focus ring on the marketing surface."),
     (sem, "light", "hero-text", "mkt-hero-h1", "default", "color", "marketing-text",
      "The display colour the marketing hero paints."),
-    (sem, "light", "hero-field", "mkt-hero-h1", "default", "backgroundColor", "marketing-surface",
-     "The field the hero paints behind the display headline (read on the h1's own paint)."),
+    (sem, "light", "hero-field", "mkt-hero-field", "default", "backgroundColor", "marketing-surface",
+     "The dark bronze field the hero section paints behind the display headline (read on the h1's section, since the h1 itself is transparent)."),
     (sem, "light", "card", "docs-card", "default", "backgroundColor", "docs",
      "The docs section card fill on the light docs surface."),
     (sem, "light", "card-hover", "docs-card", "hover", "backgroundColor", "docs",
@@ -488,12 +518,14 @@ for root, theme, key, comp, state, prop, group, desc in [
      "The docs search trigger fill."),
     (dsem, "dark", "primary", "app-btn-signup", "default", "backgroundColor", "action",
      "The primary Sign-up button fill on the dark app surface."),
+    (dsem, "dark", "primary-foreground", "app-btn-signup", "default", "color", "action",
+     "The label colour on the primary Sign-up button: dark text on the near-white fill."),
     (dsem, "dark", "primary-hover", "app-btn-signup", "hover", "backgroundColor", "action",
      "The dark primary fill on hover."),
     (dsem, "dark", "secondary", "app-btn-login", "default", "backgroundColor", "action",
      "The Log-in button fill on the dark app surface."),
-    (dsem, "dark", "focus", "app-btn-signup", "focus-visible", "outlineColor", "border",
-     "The keyboard focus ring on the dark app surface."),
+    (dsem, "dark", "focus", "app-btn-signup", "focus-visible", "focusRing", "border",
+     "The keyboard focus ring on the dark app surface: the 3px box-shadow ring the button paints (its outline is none)."),
     (dsem, "dark", "run", "mp-run", "default", "backgroundColor", "action",
      "The Sign-in-to-run action fill on the model playground."),
     (dsem, "dark", "run-hover", "mp-run", "hover", "backgroundColor", "action",
@@ -506,10 +538,14 @@ for root, theme, key, comp, state, prop, group, desc in [
      "The model tile fill on hover."),
 ]:
     try:
-        raw = st(comp, state)[prop]
+        if prop == "focusRing":
+            raw, how = painted_ring(st(comp, state))
+            src = f"painted focus ring ({how}) of {comp} {state} (raw/components-computed.json)"
+        else:
+            raw = st(comp, state)[prop]
+            src = f"computed {prop} of {comp} {state} (raw/components-computed.json)"
         if not raw or raw == "rgba(0, 0, 0, 0)":
             continue
-        src = f"computed {prop} of {comp} {state} (raw/components-computed.json)"
         root.setdefault(group, {})[key] = semcolor(raw, src, desc, theme)
     except KeyError:
         pass
@@ -528,7 +564,7 @@ ty = SPEC["core"].setdefault("font", {}).setdefault("size", {}).setdefault("meas
 for key, comp, state, desc in [
     ("button", "app-btn-signup", "default", "The header button label size on the app surface."),
     ("model-h1", "mp-h1", "default", "The model endpoint heading size (krea/v3/text-to-image)."),
-    ("hero-mkt", "mkt-hero-h1", "default", "The marketing hero display size — Focal Web on the cyan field."),
+    ("hero-mkt", "mkt-hero-h1", "default", "The marketing hero display size — Focal Web in cyan on the dark bronze field."),
     ("docs-h1", "docs-h1", "default", "The docs page heading size — Focal."),
     ("docs-body", "docs-prose", "default", "The docs body text size."),
     ("nav-item", "app-nav-docs", "default", "The app header nav item size."),

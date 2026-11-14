@@ -7,8 +7,8 @@
 // /serverless/, /contact-sales/) labelled `light`, the Next.js app (/explore, /models/*,
 // /login, the 404) which follows prefers-color-scheme — `light` shots run in a light
 // context, `dark` shots in a dark one — and the fumadocs /docs/* surface, whose
-// data-theme-preference is nudged to `system` so the context's colour scheme decides
-// (a local display toggle, its own switcher button). Desktop shots are 1440x900 at
+// theme is set explicitly through its own switcher button (a local display
+// toggle) and verified on <html> before any shot, so `docs-dark` is really dark. Desktop shots are 1440x900 at
 // 1x, mobile 390x844 at 2x, `*-full` shots 1x. A page taller than one GPU texture is
 // saved as name.partN.png tiles, which quantize.py stitches back together; an
 // unbounded page truncates at 8 chunks and the log records the boundary. Nothing is
@@ -57,18 +57,22 @@ class Shooter {
 const step = async (label, fn) => { try { await fn(); } catch (e) { log('  FAILED', label, String(e.message).split('\n')[0]); } };
 const clickEl = async (loc, ms = 8000) => { await loc.click({ timeout: ms }).catch(() => loc.evaluate((el) => el.click())); };
 
-// Moves the docs theme preference from its `light` default to `system`, so
-// the context's prefers-color-scheme decides — the page's own switcher
-// button, a local display toggle, pressed at most twice.
-async function docsSystem(p) {
-  for (let i = 0; i < 2; i++) {
-    const pref = await p.evaluate(() => document.documentElement.getAttribute('data-theme-preference'));
-    if (pref === 'system') return;
-    const btn = p.locator('button[aria-label*="theme" i]').first();
-    if (!(await btn.count())) return;
-    await clickEl(btn);
-    await wait(p, 900);
-  }
+// Puts the docs on an explicit theme with the page's own switcher (a local
+// display toggle): the "Switch to <theme> theme" button, then waits for the
+// <html> class and the painted colour scheme to follow. Throws when the page
+// never reaches the requested theme, so a light capture can no longer be
+// filed as dark.
+async function docsTheme(p, want) {
+  const btn = p.locator(`button[aria-label="Switch to ${want} theme"]`).filter({ visible: true }).first();
+  if (!(await btn.count())) throw new Error(`docs: no "Switch to ${want} theme" control`);
+  await clickEl(btn);
+  const ok = await p.waitForFunction((w) => {
+    const root = document.documentElement;
+    return root.classList.contains(w) && !root.classList.contains(w === 'dark' ? 'light' : 'dark')
+      && getComputedStyle(root).colorScheme === w;
+  }, want, { timeout: 8000 }).then(() => true).catch(() => false);
+  if (!ok) throw new Error(`docs: page did not become ${want} after the theme switch`);
+  await wait(p, 900);
 }
 
 const desktop = {
@@ -121,7 +125,7 @@ const desktop = {
     await S.full();
   } },
   'docs-dark': { url: BASE + '/docs/documentation', wait: 9000, theme: 'dark', scheme: 'dark', run: async (p, S) => {
-    await docsSystem(p);
+    await docsTheme(p, 'dark');
     await S.view('default');
     await S.full();
   } },

@@ -2752,7 +2752,7 @@
      "node": "div.lg:sticky",
      "z": "auto",
      "pos": "sticky",
-     "rect": "256x700@16,297",
+     "rect": "256x700@16,317",
      "text": "JavaScript / Node.js|1. Calling the API|"
     }
    ],
@@ -2762,7 +2762,7 @@
      "z": "auto",
      "pos": "fixed",
      "rect": "696x820@728,64",
-     "text": "Nano Banana 2.1|Nano Banana 2.1||Generat"
+     "text": "Nano Banana 2.1|Nano\u00a0Banana\u00a02.1||Generat"
     }
    ],
    "docs": [
@@ -2814,17 +2814,49 @@
   },
   "reducedMotion": {
    "explore": {
-    "selector": "header button",
-    "noPreference": {
-     "transition": "all",
-     "animation": "none 0s ease 0s 1 normal none running",
-     "scrollBehavior": "auto"
-    },
-    "reduce": {
-     "transition": "all",
-     "animation": "none 0s ease 0s 1 normal none running",
-     "scrollBehavior": "auto"
-    }
+    "note": "Each probe is read with prefers-reduced-motion no-preference and reduce in fresh contexts; baselineMoves says whether the no-preference reading actually animates or transitions.",
+    "probes": [
+     {
+      "label": "pixel-decoration-cell (animation)",
+      "selector": "path.pixel-decoration-cell",
+      "baselineMoves": true,
+      "noPreference": {
+       "transition": "all",
+       "animation": "3.2s linear -1.76s infinite normal none running pixel-scan-sweep",
+       "animationName": "pixel-scan-sweep",
+       "transitionDuration": "0s",
+       "scrollBehavior": "auto"
+      },
+      "reduce": {
+       "transition": "all",
+       "animation": "none 0s ease 0s 1 normal none running",
+       "animationName": "none",
+       "transitionDuration": "0s",
+       "scrollBehavior": "auto"
+      },
+      "changedUnderReduce": true
+     },
+     {
+      "label": "header Products trigger (transition)",
+      "selector": "header button",
+      "baselineMoves": true,
+      "noPreference": {
+       "transition": "color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1)",
+       "animation": "0.15s ease 0s 1 normal none running none",
+       "animationName": "none",
+       "transitionDuration": "0.15s",
+       "scrollBehavior": "auto"
+      },
+      "reduce": {
+       "transition": "color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1)",
+       "animation": "0.15s ease 0s 1 normal none running none",
+       "animationName": "none",
+       "transitionDuration": "0.15s",
+       "scrollBehavior": "auto"
+      },
+      "changedUnderReduce": false
+     }
+    ]
    }
   }
  },
@@ -3667,7 +3699,7 @@
    "url": "https://fal.ai/",
    "title": "Products menu trigger",
    "group": "App shell and navigation",
-   "desc": "The Products dropdown trigger in the marketing nav — a Webflow w-dropdown disclosure; measured, its links never followed.",
+   "desc": "The Products dropdown trigger in the marketing nav \u2014 a Webflow w-dropdown disclosure; measured, its links never followed.",
    "selector": ".w-dropdown-toggle Products"
   },
   "mkt-nav-pricing": {
@@ -5168,8 +5200,160 @@
    "url": "https://fal.ai/",
    "title": "Hero headline",
    "group": "Home (marketing)",
-   "desc": "The home hero display heading — Focal Web 96px, the cyan brand colour on the olive field.",
+   "desc": "The home hero display heading \u2014 Focal Web 96px, the cyan brand colour on the olive field.",
    "selector": "h1"
+  },
+  "mkt-hero-field": {
+   "states": {
+    "default": {
+     "tag": "section",
+     "classes": "section background-color-darkbronze",
+     "text": "Your full stack for generative media Access the world's best generative media mo",
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 800
+     },
+     "style": {
+      "display": "block",
+      "position": "static",
+      "boxSizing": "border-box",
+      "width": "1440px",
+      "height": "800px",
+      "minWidth": "0px",
+      "maxWidth": "none",
+      "minHeight": "0px",
+      "paddingTop": "0px",
+      "paddingRight": "0px",
+      "paddingBottom": "0px",
+      "paddingLeft": "0px",
+      "marginTop": "0px",
+      "marginRight": "0px",
+      "marginBottom": "0px",
+      "marginLeft": "0px",
+      "gap": "normal",
+      "rowGap": "normal",
+      "columnGap": "normal",
+      "flexDirection": "row",
+      "alignItems": "normal",
+      "justifyContent": "normal",
+      "gridTemplateColumns": "none",
+      "borderTopWidth": "0px",
+      "borderTopStyle": "none",
+      "borderTopColor": "rgb(255, 255, 255)",
+      "borderRightWidth": "0px",
+      "borderRightStyle": "none",
+      "borderRightColor": "rgb(255, 255, 255)",
+      "borderBottomWidth": "0px",
+      "borderBottomStyle": "none",
+      "borderBottomColor": "rgb(255, 255, 255)",
+      "borderLeftWidth": "0px",
+      "borderLeftStyle": "none",
+      "borderLeftColor": "rgb(255, 255, 255)",
+      "borderTopLeftRadius": "0px",
+      "borderTopRightRadius": "0px",
+      "borderBottomRightRadius": "0px",
+      "borderBottomLeftRadius": "0px",
+      "backgroundColor": "rgb(64, 55, 0)",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "backdropFilter": "none",
+      "outlineWidth": "0px",
+      "outlineStyle": "none",
+      "outlineColor": "rgb(255, 255, 255)",
+      "outlineOffset": "0px",
+      "fontFamily": "\"Focal Web\", Arial, sans-serif",
+      "fontSize": "13.7143px",
+      "fontWeight": "400",
+      "lineHeight": "20.5714px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(255, 255, 255)",
+      "textDecorationLine": "none",
+      "textDecorationColor": "rgb(255, 255, 255)",
+      "textDecorationThickness": "auto",
+      "textUnderlineOffset": "auto",
+      "transitionProperty": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "transitionDelay": "0s",
+      "cursor": "auto",
+      "opacity": "1",
+      "transform": "none",
+      "overflow": "visible",
+      "zIndex": "auto",
+      "top": "auto"
+     },
+     "paint": [
+      {
+       "node": "section.section.background-color-darkbronze",
+       "size": "1440.0x800.0",
+       "bg": "rgb(64, 55, 0)"
+      },
+      {
+       "node": "div.bar-fill.is-lightblue",
+       "size": "6.8x358.0",
+       "bg": "rgb(245, 126, 195)"
+      },
+      {
+       "node": "div.bar-fill.is-white",
+       "size": "6.8x197.2",
+       "bg": "rgb(255, 255, 255)"
+      },
+      {
+       "node": "div.bar-fill.is-neon",
+       "size": "6.8x134.7",
+       "bg": "rgb(236, 6, 72)"
+      },
+      {
+       "node": "a.button.w-inline-block",
+       "size": "132.8x44.0",
+       "border": "T:1px solid rgb(173, 255, 0) | R:1px solid rgb(173, 255, 0) | B:1px solid rgb(173, 255, 0) | L:1px solid rgb(173, 255, 0)",
+       "bg": "rgb(173, 255, 0)",
+       "radius": "2px"
+      },
+      {
+       "node": "a.button.w-variant-17bbad85-716d-5add-8937-bb0206da92fe",
+       "size": "150.0x44.0",
+       "border": "T:1px solid rgb(255, 255, 255) | R:1px solid rgb(255, 255, 255) | B:1px solid rgb(255, 255, 255) | L:1px solid rgb(255, 255, 255)",
+       "bg": "rgb(255, 255, 255)",
+       "radius": "2px"
+      }
+     ],
+     "textStyle": {
+      "node": "h1.heading",
+      "text": "Your full stack for generative media",
+      "fontFamily": "\"Focal Web\", Arial, sans-serif",
+      "fontSize": "96px",
+      "lineHeight": "86.4px",
+      "fontWeight": "500",
+      "letterSpacing": "-3.84px",
+      "color": "rgb(153, 237, 255)",
+      "textDecorationLine": "none",
+      "textTransform": "none"
+     },
+     "icon": {
+      "w": 394.28,
+      "h": 310.45,
+      "fill": "none",
+      "stroke": "none",
+      "color": "rgb(255, 255, 255)"
+     },
+     "crop": "components/crops/mkt-hero-field-default.png",
+     "via": "at rest",
+     "run": "2026-11-14",
+     "page": "home",
+     "url": "https://fal.ai/"
+    }
+   },
+   "page": "home",
+   "run": "2026-11-14",
+   "url": "https://fal.ai/",
+   "title": "Hero field",
+   "group": "Home (marketing)",
+   "desc": "The home hero section: the dark bronze field (background-color-darkbronze) behind the cyan display headline.",
+   "selector": "section ancestor of the hero h1"
   },
   "mkt-hero-cta": {
    "states": {
@@ -5815,67 +5999,67 @@
       {
        "node": "section::before.section.background-color-pink",
        "size": "1440pxx1px",
-       "bgImage": "url(data:…)"
+       "bgImage": "url(data:\u2026)"
       },
       {
        "node": "a::after.footer-link",
        "size": "42pxx1px",
-       "bgImage": "url(data:…)"
+       "bgImage": "url(data:\u2026)"
       },
       {
        "node": "a::after.footer-link",
        "size": "105pxx1px",
-       "bgImage": "url(data:…)"
+       "bgImage": "url(data:\u2026)"
       },
       {
        "node": "a::after.footer-link",
        "size": "48pxx1px",
-       "bgImage": "url(data:…)"
+       "bgImage": "url(data:\u2026)"
       },
       {
        "node": "a::after.footer-link",
        "size": "71pxx1px",
-       "bgImage": "url(data:…)"
+       "bgImage": "url(data:\u2026)"
       },
       {
        "node": "a::after.footer-link",
        "size": "70pxx1px",
-       "bgImage": "url(data:…)"
+       "bgImage": "url(data:\u2026)"
       },
       {
        "node": "a::after.footer-link",
        "size": "98pxx1px",
-       "bgImage": "url(data:…)"
+       "bgImage": "url(data:\u2026)"
       },
       {
        "node": "a::after.footer-link",
        "size": "45pxx1px",
-       "bgImage": "url(data:…)"
+       "bgImage": "url(data:\u2026)"
       },
       {
        "node": "a::after.footer-link",
        "size": "197pxx1px",
-       "bgImage": "url(data:…)"
+       "bgImage": "url(data:\u2026)"
       },
       {
        "node": "a::after.footer-link",
        "size": "105pxx1px",
-       "bgImage": "url(data:…)"
+       "bgImage": "url(data:\u2026)"
       },
       {
        "node": "a::after.footer-link",
        "size": "168pxx1px",
-       "bgImage": "url(data:…)"
+       "bgImage": "url(data:\u2026)"
       },
       {
        "node": "a::after.footer-link",
        "size": "96pxx1px",
-       "bgImage": "url(data:…)"
+       "bgImage": "url(data:\u2026)"
       },
       {
        "node": "a::after.footer-link",
        "size": "54pxx1px",
-       "bgImage": "url(data:…)"
+       "bgImage": "url(data:\u2026)"
       }
      ],
      "textStyle": {
@@ -7194,7 +7378,7 @@
    "url": "https://fal.ai/explore",
    "title": "Dismiss-announcement button",
    "group": "App shell and navigation",
-   "desc": "The X that closes the announcement strip — a local dismiss; measured, never pressed.",
+   "desc": "The X that closes the announcement strip \u2014 a local dismiss; measured, never pressed.",
    "selector": "button[aria-label=\"Dismiss announcement\"]"
   },
   "app-nav-products": {
@@ -7738,7 +7922,7 @@
    "url": "https://fal.ai/explore",
    "title": "Products menu trigger (app)",
    "group": "App shell and navigation",
-   "desc": "The Products dropdown trigger in the app header — a local disclosure; the opened state was measured after clicking it, its links never followed.",
+   "desc": "The Products dropdown trigger in the app header \u2014 a local disclosure; the opened state was measured after clicking it, its links never followed.",
    "selector": "header Products"
   },
   "app-nav-menu": {
@@ -9774,7 +9958,7 @@
    "url": "https://fal.ai/explore",
    "title": "Model search field",
    "group": "Explore catalog (app, dark)",
-   "desc": "The \"Search models\" input over the catalog; focused and typed into then cleared — the catalog only filters locally.",
+   "desc": "The \"Search models\" input over the catalog; focused and typed into then cleared \u2014 the catalog only filters locally.",
    "selector": "input[aria-label=\"Search models\"]"
   },
   "model-card": {
@@ -9782,7 +9966,7 @@
     "default": {
      "tag": "a",
      "classes": "page-model-card flex h-full",
-     "text": "new blackforestlabs/flux-3-max/text-to-video fal’s FLUX 3 Max is a post-trained ",
+     "text": "new blackforestlabs/flux-3-max/text-to-video fal\u2019s FLUX 3 Max is a post-trained ",
      "rect": {
       "x": 130,
       "y": 275,
@@ -9956,7 +10140,7 @@
     "hover": {
      "tag": "a",
      "classes": "page-model-card flex h-full",
-     "text": "new blackforestlabs/flux-3-max/text-to-video fal’s FLUX 3 Max is a post-trained ",
+     "text": "new blackforestlabs/flux-3-max/text-to-video fal\u2019s FLUX 3 Max is a post-trained ",
      "rect": {
       "x": 130,
       "y": 275,
@@ -10142,7 +10326,7 @@
    "url": "https://fal.ai/explore",
    "title": "Model card endpoint line",
    "group": "Explore catalog (app, dark)",
-   "desc": "The endpoint-id text line inside a card (e.g. blackforestlabs/flux-3-max/text-to-video) — a span.truncate, cards carry no heading elements.",
+   "desc": "The endpoint-id text line inside a card (e.g. blackforestlabs/flux-3-max/text-to-video) \u2014 a span.truncate, cards carry no heading elements.",
    "selector": "a.page-model-card .truncate",
    "states": {
     "default": {
@@ -11075,7 +11259,7 @@
    "url": "https://fal.ai/explore",
    "title": "Carousel dot",
    "group": "Explore catalog (app, dark)",
-   "desc": "A \"Go to slide N\" dot in the hero carousel — a local pager; measured, never clicked.",
+   "desc": "A \"Go to slide N\" dot in the hero carousel \u2014 a local pager; measured, never clicked.",
    "selector": "button[aria-label^=\"Go to slide\"]"
   },
   "pager-next": {
@@ -11084,7 +11268,7 @@
    "url": "https://fal.ai/explore",
    "title": "Section pager arrow",
    "group": "Explore catalog (app, dark)",
-   "desc": "A \"Next page\" arrow button scrolling a catalog section (~48x96); a local scroller — measured, never clicked.",
+   "desc": "A \"Next page\" arrow button scrolling a catalog section (~48x96); a local scroller \u2014 measured, never clicked.",
    "selector": "button[aria-label=\"Next page\"]",
    "states": {
     "default": {
@@ -11966,7 +12150,7 @@
    "url": "https://fal.ai/models/krea/v3/text-to-image",
    "title": "Model heading",
    "group": "Model page (app, dark)",
-   "desc": "\"krea/v3/text-to-image\" — the model endpoint heading.",
+   "desc": "\"krea/v3/text-to-image\" \u2014 the model endpoint heading.",
    "selector": "h1"
   },
   "mp-badge": {
@@ -12551,7 +12735,7 @@
    "url": "https://fal.ai/models/krea/v3/text-to-image",
    "title": "Model page tab",
    "group": "Model page (app, dark)",
-   "desc": "A Playground/API/Examples tab on the model page — an in-page tab link; measured, the active tab was not switched for state capture.",
+   "desc": "A Playground/API/Examples tab on the model page \u2014 an in-page tab link; measured, the active tab was not switched for state capture.",
    "selector": "model tab"
   },
   "mp-endpoint-btn": {
@@ -13950,7 +14134,7 @@
    "url": "https://fal.ai/models/krea/v3/text-to-image",
    "title": "Open in Sandbox link",
    "group": "Model page (app, dark)",
-   "desc": "The Open-in-Sandbox link on the model page (a 120x32 pill, text \"SandboxOpen in Sandbox\" — a hidden twin ships beside it); measured, never followed.",
+   "desc": "The Open-in-Sandbox link on the model page (a 120x32 pill, text \"SandboxOpen in Sandbox\" \u2014 a hidden twin ships beside it); measured, never followed.",
    "selector": "a[href*=\"/sandbox\"] \"Open in Sandbox\"",
    "recaptureMissed": "2026-11-14",
    "states": {
@@ -14692,7 +14876,7 @@
    "url": "https://fal.ai/models/krea/v3/text-to-image",
    "title": "Prompt textarea",
    "group": "Model page (app, dark)",
-   "desc": "The playground prompt field (\"Write your prompt here...\"); focused and typed into then cleared — inference was never run.",
+   "desc": "The playground prompt field (\"Write your prompt here...\"); focused and typed into then cleared \u2014 inference was never run.",
    "selector": "playground textarea"
   },
   "mp-param": {
@@ -15160,7 +15344,7 @@
    "url": "https://fal.ai/models/krea/v3/text-to-image",
    "title": "Parameter option",
    "group": "Model page (app, dark)",
-   "desc": "A playground parameter option pill (an aspect/size choice) — a local option button; measured, never toggled.",
+   "desc": "A playground parameter option pill (an aspect/size choice) \u2014 a local option button; measured, never toggled.",
    "selector": "param option pill"
   },
   "mp-param-more": {
@@ -15628,7 +15812,7 @@
    "url": "https://fal.ai/models/krea/v3/text-to-image",
    "title": "More-params button",
    "group": "Model page (app, dark)",
-   "desc": "The \"More\" disclosure for extra playground parameters — a local disclosure; measured, never opened.",
+   "desc": "The \"More\" disclosure for extra playground parameters \u2014 a local disclosure; measured, never opened.",
    "selector": "More"
   },
   "mp-run": {
@@ -16020,7 +16204,7 @@
    "url": "https://fal.ai/models/krea/v3/text-to-image",
    "title": "Sign-in-to-run button",
    "group": "Model page (app, dark)",
-   "desc": "The playground run button — it links to login signed out; measured, never activated.",
+   "desc": "The playground run button \u2014 it links to login signed out; measured, never activated.",
    "selector": "Sign in to run"
   },
   "mp-result-tab": {
@@ -16520,7 +16704,7 @@
    "url": "https://fal.ai/models/krea/v3/text-to-image",
    "title": "Result view toggle",
    "group": "Model page (app, dark)",
-   "desc": "The Preview/JSON toggle on the Result pane — a local view switch; measured, never switched.",
+   "desc": "The Preview/JSON toggle on the Result pane \u2014 a local view switch; measured, never switched.",
    "selector": "Preview/JSON toggle"
   },
   "mp-download": {
@@ -16940,7 +17124,7 @@
    "url": "https://fal.ai/models/krea/v3/text-to-image",
    "title": "Download button",
    "group": "Model page (app, dark)",
-   "desc": "The result Download button — a licensed download; measured, never pressed.",
+   "desc": "The result Download button \u2014 a licensed download; measured, never pressed.",
    "selector": "Download"
   },
   "app-footer": {
@@ -17086,18 +17270,18 @@
     "default": {
      "tag": "a",
      "classes": "group/tab relative inline-flex items-center",
-     "text": "Playground",
+     "text": "API",
      "rect": {
-      "x": 16,
-      "y": 234,
-      "w": 95.2,
+      "x": 118.9,
+      "y": 254,
+      "w": 44.42,
       "h": 40
      },
      "style": {
       "display": "flex",
       "position": "relative",
       "boxSizing": "border-box",
-      "width": "95.2031px",
+      "width": "44.4219px",
       "height": "40px",
       "minWidth": "auto",
       "maxWidth": "none",
@@ -17139,7 +17323,7 @@
       "backdropFilter": "none",
       "outlineWidth": "0px",
       "outlineStyle": "none",
-      "outlineColor": "rgba(255, 255, 255, 0.8)",
+      "outlineColor": "rgb(250, 250, 250)",
       "outlineOffset": "0px",
       "fontFamily": "publicSansRounded, \"publicSansRounded Fallback\", publicSans, \"publicSans Fallback\", ui-sans-serif, system-ui, sans-serif",
       "fontSize": "14px",
@@ -17147,9 +17331,9 @@
       "lineHeight": "16.8px",
       "letterSpacing": "-0.28px",
       "textTransform": "none",
-      "color": "rgba(255, 255, 255, 0.8)",
+      "color": "rgb(250, 250, 250)",
       "textDecorationLine": "none",
-      "textDecorationColor": "rgba(255, 255, 255, 0.8)",
+      "textDecorationColor": "rgb(250, 250, 250)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
       "transitionProperty": "background-color, border-color, color, transform",
@@ -17182,7 +17366,7 @@
      "paint": [
       {
        "node": "a.group/tab.relative",
-       "size": "95.2x40.0",
+       "size": "44.4x40.0",
        "border": "T:1px solid rgba(0, 0, 0, 0) | R:1px solid rgba(0, 0, 0, 0) | B:1px solid rgba(0, 0, 0, 0) | L:1px solid rgba(0, 0, 0, 0)",
        "radius": "8px"
       },
@@ -17204,8 +17388,8 @@
    "url": "https://fal.ai/models/krea/v3/text-to-image/api",
    "title": "API tab (active)",
    "group": "API tab (app, dark)",
-   "desc": "The model page tabs with API active; measured, never switched.",
-   "selector": "model tab bar"
+   "desc": "The \"API\" tab of the model page tab bar, active (aria-selected true); measured, never switched.",
+   "selector": "a[href$=\"/api\"] \"API\""
   },
   "api-code": {
    "states": {
@@ -17215,7 +17399,7 @@
      "text": "import { fal } from \"@fal-ai/client\"; const result = await fal.subscribe(\"krea/v",
      "rect": {
       "x": 329,
-      "y": 277,
+      "y": 276.2,
       "w": 1070,
       "h": 347
      },
@@ -17331,17 +17515,17 @@
      "classes": "inline-flex items-center justify-center whitespace-nowrap",
      "text": "Copy",
      "rect": {
-      "x": 379.8,
-      "y": 96,
-      "w": 32,
-      "h": 32
+      "x": 1355,
+      "y": 432.2,
+      "w": 36,
+      "h": 36
      },
      "style": {
       "display": "flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "32px",
-      "height": "32px",
+      "width": "36px",
+      "height": "36px",
       "minWidth": "auto",
       "maxWidth": "none",
       "minHeight": "auto",
@@ -17385,9 +17569,9 @@
       "outlineColor": "rgb(244, 244, 245)",
       "outlineOffset": "0px",
       "fontFamily": "publicSansRounded, \"publicSansRounded Fallback\", publicSans, \"publicSans Fallback\", ui-sans-serif, system-ui, sans-serif",
-      "fontSize": "20px",
+      "fontSize": "14px",
       "fontWeight": "600",
-      "lineHeight": "28px",
+      "lineHeight": "20px",
       "letterSpacing": "normal",
       "textTransform": "none",
       "color": "rgb(244, 244, 245)",
@@ -17409,7 +17593,7 @@
      "paint": [
       {
        "node": "button.inline-flex.items-center",
-       "size": "32.0x32.0",
+       "size": "36.0x36.0",
        "border": "T:1px solid rgba(0, 0, 0, 0) | R:1px solid rgba(0, 0, 0, 0) | B:1px solid rgba(0, 0, 0, 0) | L:1px solid rgba(0, 0, 0, 0)",
        "radius": "4px"
       }
@@ -17432,17 +17616,17 @@
      "classes": "inline-flex items-center justify-center whitespace-nowrap",
      "text": "Copy",
      "rect": {
-      "x": 379.8,
-      "y": 96,
-      "w": 32,
-      "h": 32
+      "x": 1355,
+      "y": 432.2,
+      "w": 36,
+      "h": 36
      },
      "style": {
       "display": "flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "32px",
-      "height": "32px",
+      "width": "36px",
+      "height": "36px",
       "minWidth": "auto",
       "maxWidth": "none",
       "minHeight": "auto",
@@ -17486,9 +17670,9 @@
       "outlineColor": "rgb(244, 244, 245)",
       "outlineOffset": "0px",
       "fontFamily": "publicSansRounded, \"publicSansRounded Fallback\", publicSans, \"publicSans Fallback\", ui-sans-serif, system-ui, sans-serif",
-      "fontSize": "20px",
+      "fontSize": "14px",
       "fontWeight": "600",
-      "lineHeight": "28px",
+      "lineHeight": "20px",
       "letterSpacing": "normal",
       "textTransform": "none",
       "color": "rgb(244, 244, 245)",
@@ -17510,7 +17694,7 @@
      "paint": [
       {
        "node": "button.inline-flex.items-center",
-       "size": "32.0x32.0",
+       "size": "36.0x36.0",
        "border": "T:1px solid rgba(0, 0, 0, 0) | R:1px solid rgba(0, 0, 0, 0) | B:1px solid rgba(0, 0, 0, 0) | L:1px solid rgba(0, 0, 0, 0)",
        "bg": "rgba(255, 255, 255, 0.05)",
        "radius": "4px"
@@ -17534,17 +17718,17 @@
      "classes": "inline-flex items-center justify-center whitespace-nowrap",
      "text": "Copy",
      "rect": {
-      "x": 379.8,
-      "y": 96,
-      "w": 32,
-      "h": 32
+      "x": 1355,
+      "y": 432.2,
+      "w": 36,
+      "h": 36
      },
      "style": {
       "display": "flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "32px",
-      "height": "32px",
+      "width": "36px",
+      "height": "36px",
       "minWidth": "auto",
       "maxWidth": "none",
       "minHeight": "auto",
@@ -17585,12 +17769,12 @@
       "backdropFilter": "none",
       "outlineWidth": "0px",
       "outlineStyle": "none",
-      "outlineColor": "rgb(16, 16, 16)",
+      "outlineColor": "rgb(153, 200, 255)",
       "outlineOffset": "0px",
       "fontFamily": "publicSansRounded, \"publicSansRounded Fallback\", publicSans, \"publicSans Fallback\", ui-sans-serif, system-ui, sans-serif",
-      "fontSize": "20px",
+      "fontSize": "14px",
       "fontWeight": "600",
-      "lineHeight": "28px",
+      "lineHeight": "20px",
       "letterSpacing": "normal",
       "textTransform": "none",
       "color": "rgb(244, 244, 245)",
@@ -17612,7 +17796,7 @@
      "paint": [
       {
        "node": "button.inline-flex.items-center",
-       "size": "32.0x32.0",
+       "size": "36.0x36.0",
        "border": "T:1px solid rgba(0, 0, 0, 0) | R:1px solid rgba(0, 0, 0, 0) | B:1px solid rgba(0, 0, 0, 0) | L:1px solid rgba(0, 0, 0, 0)",
        "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 1px, rgb(162, 132, 255) 0px 0px 0px 3px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
        "radius": "4px"
@@ -17636,17 +17820,17 @@
      "classes": "inline-flex items-center justify-center whitespace-nowrap",
      "text": "Copy",
      "rect": {
-      "x": 380.1,
-      "y": 96.3,
-      "w": 31.36,
-      "h": 31.36
+      "x": 1355.4,
+      "y": 432.6,
+      "w": 35.28,
+      "h": 35.28
      },
      "style": {
       "display": "flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "32px",
-      "height": "32px",
+      "width": "36px",
+      "height": "36px",
       "minWidth": "auto",
       "maxWidth": "none",
       "minHeight": "auto",
@@ -17690,9 +17874,9 @@
       "outlineColor": "rgb(244, 244, 245)",
       "outlineOffset": "0px",
       "fontFamily": "publicSansRounded, \"publicSansRounded Fallback\", publicSans, \"publicSans Fallback\", ui-sans-serif, system-ui, sans-serif",
-      "fontSize": "20px",
+      "fontSize": "14px",
       "fontWeight": "600",
-      "lineHeight": "28px",
+      "lineHeight": "20px",
       "letterSpacing": "normal",
       "textTransform": "none",
       "color": "rgb(244, 244, 245)",
@@ -17714,7 +17898,7 @@
      "paint": [
       {
        "node": "button.inline-flex.items-center",
-       "size": "31.4x31.4",
+       "size": "35.3x35.3",
        "border": "T:1px solid rgba(0, 0, 0, 0) | R:1px solid rgba(0, 0, 0, 0) | B:1px solid rgba(0, 0, 0, 0) | L:1px solid rgba(0, 0, 0, 0)",
        "bg": "rgba(255, 255, 255, 0.05)",
        "radius": "4px"
@@ -17739,8 +17923,8 @@
    "url": "https://fal.ai/models/krea/v3/text-to-image/api",
    "title": "Copy button (API)",
    "group": "API tab (app, dark)",
-   "desc": "The code-block Copy button; measured, never pressed.",
-   "selector": "button[aria-label=\"Copy\"]"
+   "desc": "The code-block Copy button (top-right of the first code sample); measured, never pressed.",
+   "selector": "code block button[aria-label=\"Copy\"]"
   },
   "api-lang-tab": {
    "states": {
@@ -18207,7 +18391,7 @@
    "url": "https://fal.ai/models/krea/v3/text-to-image/api",
    "title": "Language tab",
    "group": "API tab (app, dark)",
-   "desc": "A client-language tab on the API samples (\"JavaScript / Node.js\") — a local view switch; measured, never switched.",
+   "desc": "A client-language tab on the API samples (\"JavaScript / Node.js\") \u2014 a local view switch; measured, never switched.",
    "selector": "language tab"
   },
   "li-card": {
@@ -20813,7 +20997,7 @@
    "url": "https://fal.ai/docs/documentation",
    "title": "Docs search trigger",
    "group": "Documentation (docs, light)",
-   "desc": "The \"Search… Ctrl K\" command trigger at the top of the sidebar — a local overlay trigger; measured, never opened.",
+   "desc": "The \"Search\u2026 Ctrl K\" command trigger at the top of the sidebar \u2014 a local overlay trigger; measured, never opened.",
    "selector": "button.group/search"
   },
   "docs-theme-btn": {
@@ -21204,7 +21388,7 @@
    "url": "https://fal.ai/docs/documentation",
    "title": "Theme switcher",
    "group": "Documentation (docs, light)",
-   "desc": "One segment of the light/system/dark theme control — a local display toggle; measured, never cycled (the page was captured at its light default).",
+   "desc": "One segment of the light/system/dark theme control \u2014 a local display toggle; measured, never cycled (the page was captured at its light default).",
    "selector": "button[aria-label*=\"theme\"]"
   },
   "docs-nav-section": {
@@ -21436,7 +21620,7 @@
    "url": "https://fal.ai/docs/documentation",
    "title": "Docs heading",
    "group": "Documentation (docs, light)",
-   "desc": "\"Build with fal\" — the docs hero heading (Focal, h1.fal-hero-title).",
+   "desc": "\"Build with fal\" \u2014 the docs hero heading (Focal, h1.fal-hero-title).",
    "selector": "h1.fal-hero-title",
    "states": {
     "default": {
@@ -21565,7 +21749,7 @@
     "default": {
      "tag": "p",
      "classes": "fal-hero-subtitle",
-     "text": "The generative media platform powering the world’s top AI apps.",
+     "text": "The generative media platform powering the world\u2019s top AI apps.",
      "rect": {
       "x": 414,
       "y": 273,
@@ -23195,7 +23379,7 @@
    "url": "https://fal.ai/explore",
    "title": "Mobile menu trigger",
    "group": "Mobile (390 wide)",
-   "desc": "The \"Open navigation\" icon button — a local disclosure; the opened state was measured after clicking it.",
+   "desc": "The \"Open navigation\" icon button \u2014 a local disclosure; the opened state was measured after clicking it.",
    "selector": "button[aria-label*=navigation]"
   },
   "m-nav-item": {
@@ -23416,7 +23600,7 @@
     "default": {
      "tag": "a",
      "classes": "page-model-card flex h-full",
-     "text": "new blackforestlabs/flux-3-max/text-to-video fal’s FLUX 3 Max is a post-trained ",
+     "text": "new blackforestlabs/flux-3-max/text-to-video fal\u2019s FLUX 3 Max is a post-trained ",
      "rect": {
       "x": 18,
       "y": 269,
@@ -24192,7 +24376,7 @@
     "default": {
      "tag": "button",
      "classes": "fal-hero-search",
-     "text": "Search or ask…",
+     "text": "Search or ask\u2026",
      "rect": {
       "x": 414,
       "y": 430.3,
@@ -24280,7 +24464,7 @@
      ],
      "textStyle": {
       "node": "span.fal-hero-search-text",
-      "text": "Search or ask…",
+      "text": "Search or ask\u2026",
       "fontFamily": "\"Public Sans\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif",
       "fontSize": "13px",
       "lineHeight": "22.75px",
@@ -24306,7 +24490,7 @@
     "hover": {
      "tag": "button",
      "classes": "fal-hero-search",
-     "text": "Search or ask…",
+     "text": "Search or ask\u2026",
      "rect": {
       "x": 414,
       "y": 430.3,
@@ -24394,7 +24578,7 @@
      ],
      "textStyle": {
       "node": "span.fal-hero-search-text",
-      "text": "Search or ask…",
+      "text": "Search or ask\u2026",
       "fontFamily": "\"Public Sans\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif",
       "fontSize": "13px",
       "lineHeight": "22.75px",
@@ -24420,7 +24604,7 @@
     "focus-visible": {
      "tag": "button",
      "classes": "fal-hero-search",
-     "text": "Search or ask…",
+     "text": "Search or ask\u2026",
      "rect": {
       "x": 414,
       "y": 430.3,
@@ -24509,7 +24693,7 @@
      ],
      "textStyle": {
       "node": "span.fal-hero-search-text",
-      "text": "Search or ask…",
+      "text": "Search or ask\u2026",
       "fontFamily": "\"Public Sans\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif",
       "fontSize": "13px",
       "lineHeight": "22.75px",
@@ -24535,7 +24719,7 @@
     "pressed": {
      "tag": "button",
      "classes": "fal-hero-search",
-     "text": "Search or ask…",
+     "text": "Search or ask\u2026",
      "rect": {
       "x": 414,
       "y": 430.3,
@@ -24623,7 +24807,7 @@
      ],
      "textStyle": {
       "node": "span.fal-hero-search-text",
-      "text": "Search or ask…",
+      "text": "Search or ask\u2026",
       "fontFamily": "\"Public Sans\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif",
       "fontSize": "13px",
       "lineHeight": "22.75px",
@@ -24652,7 +24836,7 @@
    "url": "https://fal.ai/docs/documentation",
    "title": "Docs hero search",
    "group": "Documentation (docs, light)",
-   "desc": "The \"Search or ask…\" field in the docs hero — a local overlay trigger; measured, never opened.",
+   "desc": "The \"Search or ask\u2026\" field in the docs hero \u2014 a local overlay trigger; measured, never opened.",
    "selector": ".fal-hero-search"
   },
   "docs-sidebar": {
@@ -25446,7 +25630,7 @@
    "url": "https://fal.ai/pricing",
    "title": "Pricing table",
    "group": "Pricing (marketing)",
-   "desc": "A div.pricing-row-table block under the \"Serverless & Compute Pricing\" heading — fal prices GPU compute and model APIs per usage; there is no plan card or billing toggle.",
+   "desc": "A div.pricing-row-table block under the \"Serverless & Compute Pricing\" heading \u2014 fal prices GPU compute and model APIs per usage; there is no plan card or billing toggle.",
    "selector": ".pricing-row-table"
   },
   "pr-price-row": {
@@ -26119,7 +26303,7 @@
    "url": "https://fal.ai/explore",
    "title": "Section pager dot",
    "group": "Explore catalog (app, dark)",
-   "desc": "A \"Go to page N\" dot paging a catalog section — a local pager; measured, never clicked.",
+   "desc": "A \"Go to page N\" dot paging a catalog section \u2014 a local pager; measured, never clicked.",
    "selector": "button[aria-label^=\"Go to page\"]"
   }
  }

@@ -439,6 +439,32 @@ Page: home. Selector: `h1`. States: default.
 
 Crops: `mkt-hero-h1-default.png`.
 
+#### mkt-hero-field
+
+Hero field. The home hero section: the dark bronze field (background-color-darkbronze) behind the cyan display headline.
+
+Page: home. Selector: `section ancestor of the hero h1`. States: default.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 1440 x 800 |
+| Padding | 0px |
+| Border | none |
+| Radius | 0px |
+| Background | #403700 |
+| Box shadow | none |
+| Outline | none |
+| Font | Focal Web 13.7143px/20.5714px 400 |
+| Letter spacing | normal |
+| Colour | #ffffff |
+| Text node | h1.heading: Focal Web 96px/86.4px 500, #99edff, ls -3.84px |
+| Transition | none |
+| Icon | 394.28 x 310.45, colour #ffffff |
+| Painted layers | section.section.background-color-darkbronze 1440.0x800.0 bg #403700; div.bar-fill.is-lightblue 6.8x358.0 bg #f57ec3; div.bar-fill.is-white 6.8x197.2 bg #ffffff; div.bar-fill.is-neon 6.8x134.7 bg #ec0648; a.button.w-inline-block 132.8x44.0 bg #adff00 border T:1px solid #adff00 / R:1px solid #adff00 / B:1px solid #adff00 / L:1px solid #adff00 r 2px; a.button.w-variant-17bbad85-716d-5add-8937-bb0206da92fe 150.0x44.0 bg #ffffff border T:1px solid #ffffff / R:1px solid #ffffff / B:1px solid #ffffff / L:1px solid #ffffff r 2px |
+| How | at rest |
+
+Crops: `mkt-hero-field-default.png`.
+
 #### mkt-hero-cta
 
 Hero CTA. The primary call-to-action inside the hero; measured never followed.
@@ -1255,13 +1281,13 @@ Crops: `mp-download-default.png`, `mp-download-hover.png`, `mp-download-focus-vi
 
 #### api-tab
 
-API tab (active). The model page tabs with API active; measured, never switched.
+API tab (active). The "API" tab of the model page tab bar, active (aria-selected true); measured, never switched.
 
-Page: api. Selector: `model tab bar`. States: default.
+Page: api. Selector: `a[href$="/api"] "API"`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 95.2 x 40 |
+| Size (w x h) | 44.42 x 40 |
 | Padding | 4px 10px |
 | Gap | 6px |
 | Border | 1px solid #000000 @ 0 |
@@ -1271,11 +1297,11 @@ Page: api. Selector: `model tab bar`. States: default.
 | Outline | none |
 | Font | publicSansRounded 14px/16.8px 600 |
 | Letter spacing | -0.28px |
-| Colour | #ffffff @ 0.8 |
+| Colour | #fafafa |
 | Transition | background-color, border-color, color, transform 0.16s cubic-bezier(0, 0, 0.2, 1) |
 | Cursor | pointer |
 | ::after | auto x 2px, absolute, bg #fafafa, radius 0px |
-| Painted layers | a.group/tab.relative 95.2x40.0 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 8px; a::after.group/tab.relative autox2px bg #fafafa |
+| Painted layers | a.group/tab.relative 44.4x40.0 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 8px; a::after.group/tab.relative autox2px bg #fafafa |
 | How | at rest |
 
 Crops: `api-tab-default.png`.
@@ -1307,13 +1333,13 @@ Crops: `api-code-default.png`.
 
 #### api-copy
 
-Copy button (API). The code-block Copy button; measured, never pressed.
+Copy button (API). The code-block Copy button (top-right of the first code sample); measured, never pressed.
 
-Page: api. Selector: `button[aria-label="Copy"]`. States: default, hover, focus-visible, pressed.
+Page: api. Selector: `code block button[aria-label="Copy"]`. States: default, hover, focus-visible, pressed.
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 32 x 32 | = | = | 31.36 x 31.36 |
+| Size (w x h) | 36 x 36 | = | = | 35.28 x 35.28 |
 | Padding | 0px | = | = | = |
 | Gap | 0px | = | = | = |
 | Border | 1px solid #000000 @ 0 | = | = | = |
@@ -1321,14 +1347,14 @@ Page: api. Selector: `button[aria-label="Copy"]`. States: default, hover, focus-
 | Background | transparent | #ffffff @ 0.05 | = | #ffffff @ 0.05 |
 | Box shadow | none | = | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 1px, #a284ff 0px 0px 0px 3px, #000000 @ 0 0px 0px 0px 0px | = |
 | Outline | none | = | = | = |
-| Font | publicSansRounded 20px/28px 600 | = | = | = |
+| Font | publicSansRounded 14px/20px 600 | = | = | = |
 | Letter spacing | normal | = | = | = |
 | Colour | #f4f4f5 | = | = | = |
 | Transition | background-color, border-color, color, transform, opacity 0.16s cubic-bezier(0.25, 0.46, 0.45, 0.94) | = | = | = |
 | Transform | matrix(1, 0, 0, 1, 0, 0) | = | = | = |
 | Cursor | pointer | = | = | = |
 | Icon | 16 x 16, colour #ffffff @ 0.5 | 16 x 16, colour #fafafa | = | 15.68 x 15.68, colour #fafafa |
-| Painted layers | button.inline-flex.items-center 32.0x32.0 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 4px | button.inline-flex.items-center 32.0x32.0 bg #ffffff @ 0.05 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 4px | button.inline-flex.items-center 32.0x32.0 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 4px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 1px, #a284ff 0px 0px 0px 3px, #000000 @ 0 0px 0px 0px 0px | button.inline-flex.items-center 31.4x31.4 bg #ffffff @ 0.05 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 4px |
+| Painted layers | button.inline-flex.items-center 36.0x36.0 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 4px | button.inline-flex.items-center 36.0x36.0 bg #ffffff @ 0.05 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 4px | button.inline-flex.items-center 36.0x36.0 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 4px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 1px, #a284ff 0px 0px 0px 3px, #000000 @ 0 0px 0px 0px 0px | button.inline-flex.items-center 35.3x35.3 bg #ffffff @ 0.05 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 4px |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
 Crops: `api-copy-default.png`, `api-copy-hover.png`, `api-copy-focus-visible.png`, `api-copy-pressed.png`.
