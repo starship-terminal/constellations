@@ -391,6 +391,9 @@ class Matching(unittest.TestCase):
             (r"owner", "owner@x.test", True),                     # the whole local part
             (r"owner", "a.owner@x.test", False),
             (r"example", "x@example.com", False),                 # a piece of the domain
+            (r"wagmi@[0-9][0-9.x]*", "wagmi@2.15.2", True),       # an npm version string
+            (r"wagmi@[0-9][0-9.x]*", "wagmi.user@private.test", False),
+            (r"viem@[0-9][0-9.x]*", "viem.user@private.test", False),
         ]
         for allow, addr, ok in cases:
             self.assertEqual(R.email_allowed(addr, [allow]), ok, (allow, addr))

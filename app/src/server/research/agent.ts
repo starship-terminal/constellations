@@ -8,6 +8,7 @@ import {
   type LanguageModel,
 } from "ai";
 import { z } from "zod";
+import { pyJsonStringify } from "@/server/sources/pyjson";
 import { readLocalImage } from "@/server/sources/files";
 import {
   allowedReference,
@@ -169,6 +170,12 @@ export function researchTools(
       }),
       execute: async ({ referenceId, group, offset }) =>
         packageTokens(referenceId, group, offset, excluded),
+      // Print the page the way server/library.py does: 1.0 stays 1.0.
+      // The saved output went through JSON.parse; its `text` kept the floats.
+      toModelOutput: ({ output }) => ({
+        type: "text" as const,
+        value: output.text ?? pyJsonStringify(output),
+      }),
     }),
     listReferenceMedia: tool({
       description:

@@ -1149,9 +1149,9 @@
     186
    ],
    "description": "Generate branded designs and endless post ideas",
-   "status": "pending",
-   "package": null,
-   "notes": "",
+   "status": "captured",
+   "package": "systems/designstripe",
+   "notes": "public signed-out pass only (designstripe.com redirects to visual.app): marketing, /assets library and set galleries, /tools, /about, /contact, /blog; the design agents and every post-waitlist surface stay account-only",
    "batch": 4
   },
   {

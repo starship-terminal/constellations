@@ -1,7 +1,7 @@
 {
  "date": "2026-11-14",
  "rubric": "4",
- "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): orchestrated merge-train review; designmodo re-reviewed against criteria.json (web wording) after the Greptile fixes: unmeasured micro size dropped, shadows tokenised, F8 graded partly (no line-height or composite type tokens)",
+ "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): Read tokens.json, raw/css-vars.json (263 rules, 96 resolved per theme incl. the .dark block), components-computed.json, components.md and the 18 screenshots; compared each criterion against the declared layer and the measured evidence",
  "systems": [
   {
    "slug": "1password",
@@ -17768,97 +17768,97 @@
    "reviewedPlatform": "web"
   },
   {
-   "slug": "designmodo",
+   "slug": "designstripe",
    "grades": {
     "F1": {
-     "grade": "missing",
-     "evidence": "The site declares no palette scales - the resolved custom-property set is Font Awesome internals only; the measured palette (navy/green/orange/blue/slate) exists as roles, not ramps."
+     "grade": "meets",
+     "evidence": "Declared hue scales: --neutral-50..950 and --green-50..950 emitted per theme under color.* (light 22 + dark 22 steps), plus the --indigo/--yellow/--white/--black/--infinity singles; the shadcn semantic layer resolves per theme too."
     },
     "F2": {
-     "grade": "partly",
-     "evidence": "Measured roles cover page/paper/navy/card/card-face/field/modal (light.background.*); no raised/scrim distinction was measured."
+     "grade": "meets",
+     "evidence": "Declared --background/--card/--popover/--secondary/--muted/--accent/--primary surfaces per theme plus measured light.background.page/card/cream/hover-fill/ink roles; the ink footer is a real second painted surface."
     },
     "F3": {
-     "grade": "partly",
-     "evidence": "ink/ink-body/app-ink/muted/muted-mkt/on-dark/link measured (light.text.*); no disabled role exists on the public surface."
+     "grade": "meets",
+     "evidence": "Declared --foreground, --muted-foreground and every semantic -foreground twin per theme, plus measured text.ink/black/muted/on-dark/link roles aliased to the declarations they match."
     },
     "F4": {
-     "grade": "partly",
-     "evidence": "hairline (#e0e5eb on fields) and focus (2px #101d24 outline on the product CTA) measured; no default/strong border ramp."
+     "grade": "meets",
+     "evidence": "Declared --border-surface/--border-control(-hover/-focus) and --ring/--ring-a11y/--border-a11y per theme, plus measured light.border.olive/hairline/focus (#aaa674 CTA border, #d0d0c8 card hairline, #101010 waitlist focus)."
     },
     "F5": {
-     "grade": "partly",
-     "evidence": "accent/orange/blue/dark each carry a measured hover sibling; pressed reads identical to hover on every control."
+     "grade": "meets",
+     "evidence": "The waitlist CTA measured across default (#e8e7d9)/hover (#2c2c26)/focus-visible/pressed; the declared --primary/--primary-hover/--primary-disabled and --secondary/--secondary-hover cover the app's own action states."
     },
     "F6": {
-     "grade": "missing",
-     "evidence": "No success/warning/danger/info set is painted on the public surface."
+     "grade": "partly",
+     "evidence": "--destructive/--destructive-foreground declared on both themes; no success/warning/info set and nothing paints a status surface on the signed-out pages."
     },
     "F7": {
-     "grade": "na",
-     "evidence": "The product ships one painted theme signed out; the dark set stays empty rather than invented."
+     "grade": "meets",
+     "evidence": "Both themes are declared: 96 names resolve on :root and a real .dark block; only light ever paints signed out, so dark is carried as declared evidence."
     },
     "F8": {
-     "grade": "partly",
-     "evidence": "InterVariable + Fira Sans families with fallbacks and 13 measured sizes (9px badge to 91.5px mega) with measured weights under core.font.*, but no line-height tokens or named composite type roles were emitted — the ramp covers family/size/weight only."
+     "grade": "meets",
+     "evidence": "Three declared families (fontSerif display, fontMono UI, fontSans for tools) plus system serif/sans fallbacks; measured 7-step ramp (12px crumb to 96px display), declared leading/tracking scales and measured 300/400/500 weights."
     },
     "F9": {
-     "grade": "missing",
-     "evidence": "No spacing scale is declared or derivable from the measured surface."
+     "grade": "partly",
+     "evidence": "Declared --spacing .25rem base and --ui-spacing; no spacing step scale is declared or derivable beyond the base unit, and component paddings are not tokenised."
     },
     "F10": {
-     "grade": "partly",
-     "evidence": "Five measured radii (5/6/8/12px + 999px pill); border widths measured per component but not tokenised."
+     "grade": "meets",
+     "evidence": "Measured radius set: pill (calc(infinity*1px)) on the CTA, 8px tiles, 6px tool cards, 4px logo mark, 3px nav links; declared --radius a11y focus shapes sit beside them."
     },
     "F11": {
-     "grade": "partly",
-     "evidence": "Measured heights for topbar/appbar/sidebar/CTA/field/modal/card/badge under component.*; no size ramp or focus-ring offset tokens."
+     "grade": "meets",
+     "evidence": "Measured control/layout dims under core.component: 1440x32 topbar, 82x32 CTA, 569/280px tiles, 222px avatars, 338x422 tool cards, 320px footer, 40px mobile bar."
     },
     "F12": {
-     "grade": "partly",
-     "evidence": "Measured shadows now tokenised under core.shadow.*: the welcome-modal lift, the tinted CTA shadows (default + hover), the plan-card elevation, the badge inset and the focused-field glow; the rest of the public surface paints no elevation."
+     "grade": "missing",
+     "evidence": "Nothing paints a real elevation on the public surface — cards sit flat on #d0d0c8 hairlines and the only measured shadow is a zero-alpha ring on the focus state; no shadow tokens exist."
     },
     "F13": {
      "grade": "partly",
-     "evidence": "Measured 0.15-0.35s transitions on links and buttons; no easing names or reduced-motion behaviour captured."
+     "evidence": "Declared Tailwind durations/easings and animate-in/out rules plus measured transitions (accordion-down/up, control and link transitions under core.motion); reduced-motion behaviour is not declared or observed."
     },
     "F14": {
-     "grade": "partly",
-     "evidence": "Measured layout dims (70px topbar, 60px appbar, 241px sidebar, card widths); breakpoints observed at 1440/390 but not tokenised."
+     "grade": "meets",
+     "evidence": "Measured layout dims at both widths (1440 desktop, 390 mobile) under core.component; the declared container/breakpoint utility vars sit in the Tailwind layer."
     },
     "C1": {
      "grade": "partly",
-     "evidence": "48 components: buttons, links, text fields, a dialog (welcome modal), cards, badges, list rows (sidebar) and the Yearly/Monthly billing toggle; no checkbox/radio/switch/tabs/tooltip/toast/menu exist on the public surface."
+     "evidence": "34 measured components across 9 groups: nav chrome, waitlist button, accordion (open+closed), asset/avatar tiles, tool cards, breadcrumbs, article typography, footer and the mobile bar. Absent signed out: form fields, checkboxes, menus, dialogs, toasts — the product exposes none."
     },
     "C2": {
      "grade": "partly",
-     "evidence": "hover, focus-visible and DevTools-pressed captured across the controls; disabled/loading/error were never painted."
+     "evidence": "default/hover/focus-visible/DevTools-pressed on the controls plus an opened accordion state; the accordion's hover intermittently failed actionability and is recorded as a miss; no disabled/error/loading states exist publicly (nothing was submitted)."
     },
     "C3": {
-     "grade": "partly",
-     "evidence": "focus-visible captured on the CTAs (the 2px #101d24 outline on pc-cta); app controls read identical to default."
+     "grade": "meets",
+     "evidence": "focus-visible measured across nav links, CTAs, tiles and cards: the waitlist CTA draws a #101010 ring (light.border.focus), controls take the declared --ring-a11y/#aaa674 focus border."
     },
     "C4": {
-     "grade": "partly",
-     "evidence": "Components doc emits token aliases where measured values match emitted roles; with no declared layer, most specs carry the measured value plus its evidence."
+     "grade": "meets",
+     "evidence": "Measured roles alias the declared values they match (text.ink->foreground, action.cream->accent, background.page->background, text.muted->color.neutral.700); unaliased measurements carry their computed source."
     },
     "P1": {
      "grade": "partly",
-     "evidence": "patterns.md covers chrome, hero, the modal gate, app shell, pricing, auth form, gallery, footer, mobile; no validation/destructive/onboarding flows exist publicly."
+     "evidence": "patterns.md covers the fixed chrome, serif hero, feature accordion, asset/avatar tile grids, tool cards, editorial article, ink footer and mobile; no form, validation, empty or destructive flows exist publicly."
     },
     "A1": {
      "grade": "partly",
-     "evidence": "icon.png vendored; InterVariable/Fira Sans named with fallback stacks (no licence audit); no icon set indexed."
+     "evidence": "icon.png vendored at 128px; fontSerif/fontMono/fontSans named with fallback stacks; no standalone SVG icon set lifted (declared layoutGap)."
     },
     "K1": {
      "grade": "meets",
-     "evidence": "README documents what was captured, the two-system split, the modal-dismiss method, every boundary, and what to distrust."
-    },
-    "C5": {
-     "grade": "na",
-     "evidence": "Optional for a capture, and this product does not publish it."
+     "evidence": "README documents the designstripe.com->visual.app redirect, every captured route and width, the declared-but-unpainted dark theme, the never-pressed waitlist, the missing crops and every other boundary."
     },
     "V1": {
+     "grade": "meets",
+     "evidence": "README's Do-and-don't states 7 evidence-linked principles: declared layer, two voices, the cream CTA, hairline tiles, the ink footer, and the signed-in/dark/form gaps."
+    },
+    "C5": {
      "grade": "na",
      "evidence": "Optional for a capture, and this product does not publish it."
     },
@@ -17867,28 +17867,29 @@
      "evidence": "Optional for a capture, and this product does not publish it."
     },
     "F15": {
-     "grade": "missing",
-     "evidence": "Script: primary text fails 1 pair; worst 1.01:1 light text (light.text.ink) on surface (light.background.navy)"
+     "grade": "meets",
+     "evidence": "Script: all 8 pairs pass 4.5:1 across 2 themes; lowest 5.19:1 light muted (light.text.muted) on page (light.background.page)"
     },
     "F16": {
      "grade": "meets",
-     "evidence": "Script: 75 of 75 tokens name their source"
+     "evidence": "Script: 183 of 183 tokens name their source"
     },
     "K2": {
-     "grade": "meets",
-     "evidence": "Script: 7 rules, each linking a screenshot or crop"
+     "grade": "partly",
+     "evidence": "Script: 7 rules, 5 linking an image (needs 3+, all linked)"
     },
     "K3": {
      "grade": "meets",
      "evidence": "Script: DESIGN.md matches a fresh generation"
     }
    },
-   "name": "Designmodo",
-   "goodFor": "design-tool SaaS marketing and email-builder app design: two systems on one domain - an InterVariable marketing surface over dark #071c26 hero bands (56px display, #f49a40 orange Sign Up pill, #27ae60 green Open App CTA, #0d1d24 near-black product CTAs that flip #fb754b coral on hover) and a Fira Sans Postcards app shell (60px navy header, #2198ed blue actions, #485f6b slate, 241px sidebar, 266x592 template cards with 9px FREE/NEW badges) gated by a measured Welcome-back modal",
-   "url": "https://designmodo.com",
-   "captured": "2026-11-13",
+   "name": "Visual (designstripe)",
+   "goodFor": "AI design-agent and asset-library product design: a real declared shadcn-style token layer (--background/--primary*/--muted*/--accent*/--border-*/--ring* semantics, --neutral-50..950 and --green-50..950 scales, Tailwind utility layer, declared .dark block) over a white light surface (#2c2c26 olive ink, #6d6e5e muted mono text, #e8e7d9 cream WAITLIST pill, #aaa674 olive-gold accents, #d0d0c8 hairlines), fontSerif display + fontMono UI, 96px serif heroes, a dark feature-accordion panel, aspect-square asset tiles, bordered tool cards and an ink footer",
+   "url": "https://visual.app",
+   "captured": "2026-11-14",
    "themes": [
-    "light"
+    "light",
+    "dark"
    ],
    "platform": "web",
    "category": "Productivity",
@@ -17897,5 +17898,5 @@
   }
  ],
  "base": "2026-10-16",
- "reviewMethod": "orchestrated merge-train review; designmodo re-reviewed against criteria.json (web wording) after the Greptile fixes: unmeasured micro size dropped, shadows tokenised, F8 graded partly (no line-height or composite type tokens)"
+ "reviewMethod": "Read tokens.json, raw/css-vars.json (263 rules, 96 resolved per theme incl. the .dark block), components-computed.json, components.md and the 18 screenshots; compared each criterion against the declared layer and the measured evidence"
 }

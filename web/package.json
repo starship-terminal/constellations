@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev -H 127.0.0.1 -p 8800",
     "build": "next build",
-    "start": "next start -H 127.0.0.1 -p 8800"
+    "start": "next start -H 127.0.0.1 -p 8800",
+    "test": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --test \"lib/**/*.test.ts\" \"components/**/*.test.ts\""
   },
   "dependencies": {
     "next": "^16.4.4",
