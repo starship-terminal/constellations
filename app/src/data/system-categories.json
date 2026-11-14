@@ -814,11 +814,5 @@
     "groupId": "web-categories",
     "labels": ["Books", "Social Networking"],
     "reason": "catalog.json describes a book-club and reading product: club directories and detail pages, a book catalog with an ebook store, a /discover cover wall, sign-in, support and a blog. Post-login reader and club surfaces are gated."
-  },
-  {
-    "referenceId": "systems:faire",
-    "groupId": "web-categories",
-    "labels": ["Marketplace", "Business"],
-    "reason": "catalog.json describes a wholesale marketplace product: brand and product discovery, category browsing, retailer sign-up and sign-in. Ordering and account surfaces are gated."
   }
 ]
