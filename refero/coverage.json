@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 126,
-    "system_domains": 118,
-    "matched_domains": 92,
-    "missing_domains": 341,
+    "system_packages": 127,
+    "system_domains": 119,
+    "matched_domains": 93,
+    "missing_domains": 340,
     "system_domains_absent_from_catalog": 26
   },
   "matched": {
@@ -1426,6 +1426,23 @@
         }
       ]
     },
+    "factory.ai": {
+      "catalog": [
+        {
+          "name": "Factory",
+          "domain": "factory.ai",
+          "id": 734
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "factory",
+          "name": "Factory",
+          "url": "https://factory.ai",
+          "name_match": true
+        }
+      ]
+    },
     "github.com": {
       "catalog": [
         {
@@ -1881,13 +1898,6 @@
         "name": "Fable",
         "domain": "fable.co",
         "id": 463
-      }
-    ],
-    "factory.ai": [
-      {
-        "name": "Factory",
-        "domain": "factory.ai",
-        "id": 734
       }
     ],
     "faire.com": [

@@ -9218,6 +9218,125 @@
       "layoutGaps": {
         "icons/": "the icon extraction pass was not run; the icons (the Delphi glyph, microphone, send and Share marks) are visible in the crops and screenshots"
       }
+    },
+    {
+      "slug": "factory",
+      "name": "Factory",
+      "url": "https://factory.ai",
+      "category": "ai-agent",
+      "platform": "web",
+      "goodFor": "AI-dev-tool marketing and docs design: a Tailwind v4-style declared token layer (--font-geist-* stacks, a --color-base-* neutral ramp plus --color-accent-* orange steps and --color-<hue>-* hue scales, a --text-*/--leading-*/--tracking-* type ramp, --radius-* steps, --container-*/--breakpoint-* layout and --blur-*/--ease-*/--animate-* motion) with inverted theme mechanics - :root declares the dark palette and data-theme=\"light\" remaps it, so marketing pages ship light with scoped dark [data-dark-hero]/.invert-color-scheme sections and a dark footer, docs.factory.com carries a real Light/Dark/System toggle, and auth.factory.ai is a separate dark sign-in card outside the shared layer. ~60px uppercase Geist mastheads, paired outline+dark pill CTAs, a mono install-command box, and Geist/Geist Mono self-hosted variable fonts",
+      "tags": [
+        "web",
+        "ai",
+        "developer-tools",
+        "design-tokens",
+        "light",
+        "dark",
+        "scoped-dark-sections",
+        "orange-accent",
+        "variable-font",
+        "signed-out"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-14",
+      "access": "read-only (factory.com, docs.factory.com and the auth.factory.ai sign-in card are fully public signed out; everything behind app.factory.ai - the Droid console, missions and settings - is an authenticated boundary never reached; the /contact HubSpot form and the sign-in card were measured and typed into then cleared, never submitted; every CTA and link was measured, never followed; overlays were hidden, never answered)",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/factory/README.md",
+      "tokens": "systems/factory/tokens.json",
+      "styleGuide": "systems/factory/style-guide.html",
+      "preview": {
+        "cover": "systems/factory/screenshots/home-light-default.png",
+        "icon": "systems/factory/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.color.background",
+            "surface": "light.color.surface.raised",
+            "text": "light.color.foreground",
+            "muted": "light.text.subInk",
+            "accent": "core.color.accent.200",
+            "border": "light.border.cta2Border"
+          },
+          "dark": {
+            "page": "dark.color.background",
+            "surface": "dark.color.surface.raised",
+            "text": "dark.color.foreground",
+            "muted": "dark.text.footerInk",
+            "accent": "core.color.accent.200",
+            "border": "dark.color.base.1000"
+          }
+        },
+        "fonts": [
+          "core.font.family.sans",
+          "core.font.family.mono"
+        ]
+      },
+      "capture": {
+        "method": "public-web",
+        "source": "factory.com, docs.factory.com and auth.factory.ai in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and crops from the live DOM. The site declares its token layer in ~300KB of Next.js CSS (161 resolved custom properties per theme probe), so the scales are declared values and the surface roles are measured computed values aliased to the declarations they match. The theme mechanics are inverted: :root declares the dark palette and data-theme=\"light\" remaps it - marketing pages ship light with scoped dark sections and a dark footer, docs.factory.com paints both themes through a real Light/Dark/System selector, and the auth.factory.ai sign-in card is a separately-measured dark app that does not share the layer (component.signin.*). Everything behind app.factory.ai is a documented authenticated boundary",
+        "timestamp": "2026-11-14T09:00:00Z",
+        "harness": "Devin",
+        "model": "SWE-2 High",
+        "route": "public-web",
+        "routes": [
+          "/",
+          "/enterprise",
+          "/pricing",
+          "/product/desktop",
+          "/product/cli",
+          "/product/ide",
+          "/product/automations",
+          "/product/software-factory",
+          "/product/security-factory",
+          "/product/connectors",
+          "/product/cloud-agents",
+          "/product/droid-computers",
+          "/product/agent-effectiveness",
+          "/product/missions",
+          "/product/router",
+          "/agent-readiness",
+          "/product/analytics",
+          "/news",
+          "/company",
+          "/events",
+          "/contact",
+          "/security",
+          "/partners",
+          "/ambassador",
+          "/oss",
+          "/science",
+          "/privacy-policy",
+          "docs.factory.com/docs",
+          "docs.factory.com/docs/changelog/release-notes",
+          "docs.factory.com/docs/factory-app/quickstart",
+          "app.factory.ai -> auth.factory.ai (sign-in card)",
+          "mobile /, /contact, /pricing and docs.factory.com/docs"
+        ],
+        "gaps": [
+          "every post-login app surface (the Droid console, missions, settings) sits behind app.factory.ai - an authenticated boundary never reached; the auth.factory.ai sign-in card is a different app that does not share the marketing token layer",
+          "the /contact HubSpot form and the sign-in card were measured at rest and typed into then cleared, never submitted - validation, error, loading and success states are absent rather than measured",
+          "factory.com/changelog and docs.factory.com/changelog answer a Vercel-login 404 shape; the working changelog at docs.factory.com/docs/changelog/release-notes was captured instead",
+          "individual /news and /events article pages are the same templates as the captured indexes, unmeasured",
+          "hero video panels and product mocks hold live video/canvas content; a screenshot freezes one frame and headless video can paint as a black rectangle - a capture artifact, not the design",
+          "pressed states are forced with DevTools (CSS.forcePseudoState), so any script-applied mousedown state is missing",
+          "mega-menu items' focus/hover is partially covered - the panel closes on blur before a keyboard focus can always be held",
+          "disabled, error and loading states were not observed on the signed-out public surface",
+          "icons: no standalone SVG set lifted this pass"
+        ],
+        "durationMin": 390,
+        "durationNote": "wall-clock across the capture sessions including kit adaptation (the public shooter rewritten for scroll-driven reveals into stitched viewport tiles, the docs theme-toggle pass), the stylesheet harvest, screenshot and measurement passes on a headless server, an interrupted first session resumed from its scratch, and the offline build",
+        "pr": "https://github.com/starship-terminal/constellations/pull/TBD"
+      },
+      "layoutGaps": {
+        "icons/": "the icon extraction pass was not run; the icons (the Factory asterisk mark, the mono product-area glyphs in the mega-menu, the social marks) are visible in the crops and screenshots"
+      }
     }
   ]
 }
