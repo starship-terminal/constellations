@@ -9219,7 +9219,515 @@
         "icons/": "the icon extraction pass was not run; the icons (the Delphi glyph, microphone, send and Share marks) are visible in the crops and screenshots"
       }
     },
-{
+    {
+      "slug": "esquire",
+      "name": "Esquire",
+      "url": "https://www.esquire.com",
+      "category": "media",
+      "platform": "web",
+      "goodFor": "editorial magazine design: a declared Hearst FRE design-token layer (~4,400 resolved custom properties - --_palette/--_size/--_font primitives, --color-*/--type-*/--dim-*/--comp-* scales) under a white editorial surface with a #ff3a30 brand red (the utility strip, a Subscribe pill that inverts to white on hover, Join buttons), Lausanne UI type under PlayFair display headlines and Lora article body text, a ~155px three-band top chrome with a mega-menu and More overflow, story-card section fronts, a ~38,000px article layout with drop cap/pull quote/ad furniture, and a premium membership offers page with plan cards and an FAQ accordion",
+      "tags": ["web", "magazine", "editorial", "media", "design-tokens", "light", "red-accent", "signed-out", "mens-lifestyle", "hearst"],
+      "shape": "reference",
+      "captured": "2026-11-13",
+      "access": "signed out (every surface captured is public; account.esquire.com sign-in and the shop.esquire.com subscription checkout are off-domain boundaries that were measured, never followed; the newsletter and search fields were typed into and cleared, never submitted)",
+      "themes": ["light"],
+      "widths": [1440, 390],
+      "entry": "systems/esquire/README.md",
+      "tokens": "systems/esquire/tokens.json",
+      "styleGuide": "systems/esquire/style-guide.html",
+      "preview": {
+        "cover": "systems/esquire/screenshots/home-light-default.png",
+        "icon": "systems/esquire/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.background.panel",
+            "text": "light.text.ink",
+            "muted": "light.text.muted",
+            "accent": "light.brand.red",
+            "border": "light.border.divider"
+          }
+        },
+        "fonts": ["core.font.family.sans", "core.font.family.display", "core.font.family.content"]
+      },
+      "capture": {
+        "harness": "Devin",
+        "model": "SWE-2 High",
+        "method": "public-web",
+        "route": "public-web",
+        "source": "esquire.com in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and crops from the live DOM. The site declares Hearst's FRE design-token layer in its stylesheets (~4,400 resolved custom properties), so the token scales are declared values and the surface roles are measured computed values aliased to the declarations they match. Sign-in and checkout live on account.esquire.com and shop.esquire.com - documented off-domain boundaries",
+        "timestamp": "2026-11-13T20:15:00Z",
+        "routes": ["/", "/style/", "/entertainment/", "/news-politics/", "/food-drink/", "/entertainment/movies/a71465908/dwayne-johnson-the-rock-interview-2026/", "/lifestyle/sex/a74076291/ai-chatbots-flirting-texts/", "/offers/premium-membership/", "/esq-premium-exclusive/", "/search/?q=suits", "/about/a26377/about-us/", "mobile /, /style/ and the article route"],
+        "gaps": [
+          "every signed-in surface (bookmarks, comment counts, the premium archive) lives behind Sign In on account.esquire.com - an authenticated boundary never reached",
+          "the Join/Subscribe buttons lead to shop.esquire.com checkout - measured, never followed; purchase, payment and confirmation states are absent rather than measured",
+          "the OneTrust consent layer was hidden for clean captures, never answered",
+          "the article route is ~38,000px tall and the mobile article ~56,000px - the full-page captures are bounded at eight viewport chunks and the truncation is recorded in the sidecars",
+          "a handful of selectors stayed unmeasured where a stable unique locator could not be found without inference (some byline/eyebrow variants, footer social icons) - recorded as gaps in components.md",
+          "icons: no standalone SVG set lifted this pass"
+        ],
+        "durationMin": null,
+        "durationNote": "wall-clock duration was not recorded for this capture",
+        "pr": "https://github.com/starship-terminal/constellations/pull/542"
+      },
+      "layoutGaps": {
+        "icons/": "the icon extraction pass was not run; the icons (the Esquire wordmark, chevrons and social marks) are visible in the crops and screenshots"
+      }
+    },
+ {
+  "slug": "descript",
+  "name": "Descript",
+  "url": "https://www.descript.com",
+  "category": "productivity",
+  "platform": "web",
+  "goodFor": "Video/audio-tool SaaS marketing design: a #fff7fa blush field with a 102px floating nav and a #772a4d maroon Sign up button, a deep-maroon hero band carrying an 88px Gamuth display headline and the 610px Record/Edit/Refine/Share/Multiply workflow tab strip (selected tab #5b142e over muted #c4b5bb), a #f73b3b red accent on 18px Brett eyebrows and secondary CTAs, a 228x50 Monthly/Annual billing toggle on a #f1eaed track, 284x708 plan cards with #390a1a CTAs, 336x381 template cards, and a #110a0d footer",
+  "tags": [
+   "web",
+   "saas",
+   "marketing",
+   "video",
+   "ai",
+   "nextjs",
+   "tailwind",
+   "maroon",
+   "blush",
+   "pricing",
+   "light",
+   "signed-out"
+  ],
+  "shape": "reference",
+  "captured": "2026-11-14",
+  "access": "read-only (the marketing site is fully public; the product lives behind web.descript.com - its sign-in card was captured as a boundary, measured and never submitted; Sign in, Sign up, Get started and every plan CTA were measured as destinations, never followed)",
+  "themes": [
+   "light"
+  ],
+  "widths": [
+   1440,
+   390
+  ],
+  "entry": "systems/descript/README.md",
+  "tokens": "systems/descript/tokens.json",
+  "styleGuide": "systems/descript/style-guide.html",
+  "preview": {
+   "cover": "systems/descript/screenshots/home-light-default.png",
+   "icon": "systems/descript/icon.png",
+   "swatches": {
+    "light": {
+     "page": "light.background.page",
+     "surface": "light.surface.tab-selected",
+     "text": "light.text.ink",
+     "muted": "light.text.muted-on-dark",
+     "accent": "light.action.red",
+     "border": "light.border.focus"
+    }
+   },
+   "fonts": [
+    "core.font.family.display",
+    "core.font.family.sans"
+   ]
+  },
+  "capture": {
+   "method": "public-web",
+   "source": "descript.com (a Next.js + Tailwind marketing site) plus its public sign-in card at web.descript.com/authenticate, in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and crops from the live DOM. The stylesheet declares the full named palette layer on :root (--Red-*, --Maroon-*, --Lilac-*, --Neutral-*, --Green-*, --Gray-*, --Core-*, --Tools-Glow-*), exported under core.color.*; measured roles alias the declared values they match. web.descript.com past the sign-in card is a documented authenticated boundary",
+   "timestamp": "2026-11-14T05:30:00Z",
+   "harness": "Devin",
+   "model": "SWE-2 High",
+   "route": "public-web",
+   "routes": [
+    "/",
+    "/pricing",
+    "/video-editing",
+    "/templates",
+    "/customers/saastr",
+    "/underlord",
+    "web.descript.com/authenticate",
+    "mobile / and /pricing"
+   ],
+   "gaps": [
+    "the product lives behind web.descript.com - the sign-in card's buttons and email field were measured and the field typed/cleared, never submitted; no authenticated page was reached",
+    "Sign in, Sign up, Get started, Try free, Request a demo and every plan CTA were measured as outbound/form destinations, never followed",
+    "the Features mega-dropdown was read off the DOM but its inner items were not individually componentized",
+    "dozens of other marketing pages share the captured chrome and hero/card vocabulary but are not individually documented",
+    "pressed was forced with DevTools - a mousedown-only style (if any) is missing",
+    "icons: no standalone SVG set lifted this pass"
+   ],
+   "durationMin": 150,
+   "durationNote": "wall-clock for the capture session including adaptation of the kit, the stylesheet harvest, screenshot and measurement passes on a headless Linux server, and the offline build",
+   "pr": "https://github.com/starship-terminal/constellations/pull/543"
+  },
+  "layoutGaps": {
+   "icons/": "the icon extraction pass was not run; the icons (the Descript wordmark, the workflow-tab glyphs and the auth SSO marks) are visible in the crops and screenshots"
+  }
+ },
+  {
+   "slug": "exa",
+   "name": "Exa",
+   "url": "https://exa.ai",
+   "category": "ai-agent",
+   "platform": "web",
+   "goodFor": "AI-search developer tooling: three distinct public surfaces - a warm paper marketing site (cream #faf9f7 field, greige ink, charcoal CTAs, #1f40ed brand ramp, ABCDiatype + ABC Arizona Flare display, hover mega-menus, a live search-demo widget with latency/category/output pills), a Mintlify docs app with a real light/dark pair (288px sidebar, Ctrl-K search button, #1840ed primary, Inter + Paper Mono, twoslash code themes) and the auth.exa.ai sign-in card (360px, Google/e-mail buttons, brand focus)",
+   "tags": [
+    "web",
+    "ai",
+    "search",
+    "api",
+    "developer-tools",
+    "saas",
+    "marketing",
+    "nextjs",
+    "tailwind",
+    "mintlify",
+    "docs",
+    "light",
+    "dark",
+    "signed-out"
+   ],
+   "shape": "reference",
+   "captured": "2026-11-13",
+   "access": "read-only (every captured surface is public and signed out; the dashboard, API keys and playground behind auth.exa.ai were never reached - login routes rate-limited or redirected during reconnaissance; the login and e-mail fields were focused and filled then cleared, never submitted; the home demo's Run-preview arrow, Get-started and Sign-up actions were measured, never pressed)",
+   "themes": [
+    "light",
+    "dark"
+   ],
+   "widths": [
+    1440,
+    390
+   ],
+   "entry": "systems/exa/README.md",
+   "tokens": "systems/exa/tokens.json",
+   "styleGuide": "systems/exa/style-guide.html",
+   "preview": {
+    "cover": "systems/exa/screenshots/home-light-default.png",
+    "icon": "systems/exa/icon.png",
+    "swatches": {
+     "light": {
+      "page": "core.color.neutral.cream",
+      "surface": "light.docs.surface",
+      "text": "light.marketing.text",
+      "muted": "light.marketing.muted",
+      "accent": "light.signin.action",
+      "border": "light.docs.border"
+     },
+     "dark": {
+      "page": "dark.docs.surface",
+      "surface": "dark.docs.vars.code-surface",
+      "text": "dark.docs.text",
+      "muted": "dark.docs.body-text",
+      "accent": "dark.docs.accent",
+      "border": "dark.docs.border"
+     }
+    },
+    "fonts": [
+     "core.font.family.arizona",
+     "core.font.family.diatype",
+     "core.font.family.inter",
+     "core.font.family.paper-mono"
+    ]
+   },
+   "capture": {
+    "method": "public-web",
+    "source": "exa.ai, websets.exa.ai, exa.ai/docs and the auth.exa.ai card dashboard.exa.ai redirects to, in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and crops from the live DOM. The three surfaces each declare their own CSS custom-property layer (marketing --cream/--greige/--brand-*/--secondary-*, Mintlify docs --primary/--gray-*/--docs-*/--twoslash-* in light and dark, auth --text-light-*/--radius-*), resolved in per-surface probes because the names collide; the surface roles are measured computed values aliased to the declarations they match. Everything behind the sign-in is a documented authenticated boundary",
+    "timestamp": "2026-11-14T06:00:00Z",
+    "harness": "Devin",
+    "model": "Devin",
+    "route": "public-web",
+    "routes": [
+     "/",
+     "/pricing",
+     "/products/search",
+     "/about",
+     "/blog",
+     "/demos",
+     "/evals",
+     "/brand",
+     "/customers",
+     "/versus",
+     "websets.exa.ai/websets",
+     "/docs (light + dark)",
+     "/docs/quickstart",
+     "dashboard.exa.ai/ -> auth.exa.ai",
+     "mobile /, /pricing, sign-in, /docs (dark)"
+    ],
+    "gaps": [
+     "every post-login surface (the dashboard, API keys, the playground, billing) sits behind auth.exa.ai - an authenticated boundary never reached; dashboard.exa.ai/login and /playground/search rate-limited (HTTP 429) during reconnaissance",
+     "the home demo's Run-preview arrow was never pressed - its output panel honestly shows the signed-out verification state",
+     "the sign-in and e-mail fields were focused and filled with test text, then cleared - never submitted; validation, error and success states are absent rather than measured",
+     "the docs assistant slide-over and Ctrl-K search palette were never opened; the assistant input is measured collapsed (offscreen at x=1440)",
+     "the pricing plans are one row-divided grid, not separate card elements - plan-card measures the 1216px table",
+     "exa.ai/ HTTP-308s to /docs; the marketing pages live at their own paths",
+     "the marketing site and sign-in card paint light only - the dark set covers the docs alone"
+    ],
+    "durationMin": 300,
+    "durationNote": "wall-clock across the capture sessions including kit adaptation, route reconnaissance, the per-surface stylesheet harvest, screenshot and measurement passes on a headless Linux server, selector debugging, the icon pass and the offline build",
+    "pr": "https://github.com/starship-terminal/constellations/pull/544"
+   }
+  },
+  {
+   "slug": "exactly",
+   "name": "Exactly.ai",
+   "url": "https://exactly.ai",
+   "category": "ai-agent",
+   "platform": "web",
+   "goodFor": "brand-AI marketing: a Framer light-theme palette (#fb411f accent, #1e1e1e ink, #f7f7f7 canvas, #404040/#7c7c7c washes, on-image translucent whites) with a wght-300 Inter 47px display over a photo hero, inverted white chrome, 1000px pill CTAs (dark #1e1e1e on light, white on image), 40px-radius #f7f7f7 plan cards, a doc-style help rail, an at-rest scheduler embed, and a near-black footer",
+   "tags": [
+    "web",
+    "ai",
+    "image-generation",
+    "framer",
+    "light",
+    "orange-accent",
+    "photo-hero",
+    "pricing",
+    "help-center",
+    "signed-out"
+   ],
+   "shape": "reference",
+   "captured": "2026-11-14",
+   "access": "read-only (the marketing site, pricing, showcase, case studies, industries, help center and book-a-demo are fully public; everything on threads.exactly.ai is an authenticated boundary behind a Cloudflare check never bypassed; Log in, Start for free and Book a demo were measured, never followed; the help search was typed and cleared, never submitted; the scheduler was measured at rest)",
+   "themes": [
+    "light"
+   ],
+   "widths": [
+    1440,
+    390
+   ],
+   "entry": "systems/exactly/README.md",
+   "tokens": "systems/exactly/tokens.json",
+   "styleGuide": "systems/exactly/style-guide.html",
+   "preview": {
+    "cover": "systems/exactly/screenshots/home-light-default.png",
+    "icon": "systems/exactly/icon.png",
+    "swatches": {
+     "light": {
+      "page": "light.canvas",
+      "surface": "light.surface.card",
+      "text": "light.ink",
+      "muted": "light.muted",
+      "accent": "light.accent",
+      "border": "light.focus.ring"
+     }
+    },
+    "fonts": [
+     "core.font.family.display",
+     "core.font.family.ui"
+    ]
+   },
+   "capture": {
+    "method": "public-web",
+    "source": "exactly.ai in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and crops from the live DOM. The Framer site declares a compact --token-* palette in its stylesheets (32 resolved theme variables), so the palette tokens are declared values and the surface roles are measured computed values aliased to the declarations they match. Everything on threads.exactly.ai is a documented authenticated boundary",
+    "timestamp": "2026-11-14T06:30:00Z",
+    "harness": "Devin",
+    "model": "SWE-2 High",
+    "route": "public-web",
+    "routes": [
+     "/",
+     "/pricing",
+     "/showcase",
+     "/showcase/revolut",
+     "/case-studies",
+     "/case-studies/how-indrive-scales-global-brand-assets-at-the-speed-of-mobility-with-exactly-ai",
+     "/industries",
+     "/industries/saas-n-mobile-apps",
+     "/help-center",
+     "/help-center/frequently-asked-questions",
+     "/book-a-demo",
+     "mobile / and /pricing"
+    ],
+    "gaps": [
+     "the product itself - studio, model training, the image generator, credits, billing and every account surface - lives on threads.exactly.ai behind a Cloudflare check that was never bypassed",
+     "the Log in, Start-for-free and Book-a-demo links were measured, never followed; the scheduler was measured at rest - no day, time or contact detail was ever picked or typed",
+     "the help search modal was opened and typed into, but result rows were never clicked",
+     "pressed states were forced with DevTools (CSS.forcePseudoState :active:hover); any script-driven mousedown state is unobserved",
+     "disabled, error and loading states do not exist on the public surface",
+     "no dark theme: the site paints light only; the single prefers-color-scheme media rule repaints nothing"
+    ],
+    "durationMin": 300,
+    "durationNote": "wall-clock across the capture sessions including kit adaptation, DOM probing, the stylesheet harvest, screenshot and measurement passes on a headless Linux server, and the offline build",
+    "pr": "https://github.com/starship-terminal/constellations/pull/546"
+   }
+  },
+  {
+   "slug": "equals",
+   "name": "Equals",
+   "url": "https://equals.com",
+   "category": "productivity",
+   "platform": "web",
+   "goodFor": "AI-spreadsheet and analytics design: a declared --brand-* marketing palette (cream #faf9f5 field, nine accent hues behind .accent--*/.label--* page themes) in Unica77 and Serrif Condensed with Aeonik Fono eyebrows, 60px-pill CTAs and a mega-menu, the go.equals.com sign-in card on the app's own Tailwind-style --color-* layer (#fcfcfc canvas, #7c3aed purple-600, neue-haas-unica), and a Mintlify docs shell with a real html.dark switch (#7839e5 primary, #0b0a0f canvas, Inter and Paper Mono)",
+   "tags": [
+    "web",
+    "spreadsheet",
+    "analytics",
+    "ai",
+    "design-tokens",
+    "light",
+    "dark",
+    "mintlify",
+    "docs",
+    "signin",
+    "signed-out"
+   ],
+   "shape": "reference",
+   "captured": "2026-11-13",
+   "access": "read-only (the marketing site, the go.equals.com sign-in card and the docs are fully public; the spreadsheet workspace and every post-login surface are an authenticated boundary never reached - app.equals.com did not answer; the sign-in and demo e-mail fields were focused and filled for measurement, then cleared, never submitted; Get-a-demo, plan and trial actions were measured, never followed)",
+   "themes": [
+    "light",
+    "dark"
+   ],
+   "widths": [
+    1440,
+    390
+   ],
+   "entry": "systems/equals/README.md",
+   "tokens": "systems/equals/tokens.json",
+   "styleGuide": "systems/equals/style-guide.html",
+   "preview": {
+    "cover": "systems/equals/screenshots/home-light-default.png",
+    "icon": "systems/equals/icon.png",
+    "swatches": {
+     "light": {
+      "page": "light.marketing.surface",
+      "surface": "light.marketing.card",
+      "text": "light.marketing.text",
+      "muted": "light.marketing.muted",
+      "accent": "light.marketing.accent.orchid.background",
+      "border": "light.marketing.line"
+     },
+     "dark": {
+      "page": "dark.docs.surface",
+      "surface": "dark.docs.code-bg",
+      "text": "dark.docs.text",
+      "muted": "dark.docs.muted",
+      "accent": "dark.docs.primary",
+      "border": "dark.docs.border"
+     }
+    },
+    "fonts": [
+     "core.font.family.serif-condensed",
+     "core.font.family.unica",
+     "core.font.family.fono",
+     "core.font.family.app"
+    ]
+   },
+   "capture": {
+    "method": "public-web",
+    "source": "equals.com, go.equals.com and docs.equals.com in headless Chromium (Playwright), desktop 1440x900 and 390x844 mobile passes; computed styles and crops from the live DOM. The marketing site declares a --brand-* palette and .accent--*/.label--* theme classes in its stylesheets, the sign-in card exposes the app's --color-* layer and the docs their Mintlify --primary/--gray-*/--twoslash-* layer (226 resolved custom properties per theme plus resolved accent classes), so the scales are declared values and the surface roles are measured computed values aliased to the declarations they match. The spreadsheet workspace and everything behind the sign-in are a documented authenticated boundary",
+    "timestamp": "2026-11-13T20:00:00Z",
+    "harness": "Devin",
+    "model": "SWE-2 High",
+    "route": "public-web",
+    "routes": [
+     "equals.com/ (equals.app redirects)",
+     "equals.com/pricing/",
+     "equals.com/about/",
+     "equals.com/customers/",
+     "equals.com/launches/",
+     "equals.com/use-cases/",
+     "equals.com/use-cases/arr-dashboard/",
+     "equals.com/guides/arr/",
+     "go.equals.com/",
+     "docs.equals.com/ (light and dark)",
+     "mobile home, pricing, use-case, sign-in and docs dark at 390x844"
+    ],
+    "gaps": [
+     "the authenticated product - workbook, dashboards, datasources, settings and every post-login surface - was never reached; app.equals.com did not answer during the capture",
+     "the sign-in form and the demo e-mail captures were measured as fields, never submitted; validation, error and success states are absent rather than measured",
+     "the workbook components are the marketing page's own animated mockup of the product, not the app",
+     "the mobile capture of /use-cases/arr-dashboard/ hit a security challenge; component readings fall back to the desktop measurement",
+     "docs-dark and docs-charts full-page screenshots timed out mid-capture on the docs' long pages; their -full files are the chunks that completed",
+     "icons: no standalone SVG set lifted this pass"
+    ],
+    "durationMin": 240,
+    "durationNote": "wall-clock across the capture sessions including kit adaptation, the three-surface stylesheet harvest (including the .accent--* class probes and the RGB-triplet resolution fix), screenshot and measurement passes on a headless Linux server, and the offline build",
+    "pr": "https://github.com/starship-terminal/constellations/pull/538"
+   },
+   "layoutGaps": {
+    "icons/": "the icon extraction pass was not run; the icons (the Equals wordmark, the chevrons and hamburger strokes, the mock-toolbar glyphs, social and integration logos) are visible in the crops and screenshots"
+   }
+  },
+  {
+   "slug": "epicgames",
+   "name": "Epic Games Store",
+   "url": "https://store.epicgames.com",
+   "category": "e-commerce",
+   "platform": "web",
+   "goodFor": "dark game-storefront design: the hashed EDS token layer declared outright (784 resolved custom properties: background/foreground/border/accent roles, size, typography, animation, gradient, navigation, control, input) under a #101014 canvas with #18181c/#202024/#303034 elevation steps, #fffffff2/#ffffffa6 text and a #26bbff/#33bfff accent, a 72px egs-navigation web component + 100px tab bar chrome, a hero carousel with card shelves, a legacy Emotion browse grid with a 240px filters rail, a MUI sign-in dialog, an OpenSans marketing surface and a dark support centre",
+   "tags": [
+    "web",
+    "gaming",
+    "store",
+    "dark",
+    "design-tokens",
+    "react",
+    "web-components",
+    "shadow-dom",
+    "blue-accent",
+    "cards",
+    "signed-out"
+   ],
+   "shape": "reference",
+   "captured": "2026-11-14",
+   "access": "read-only (every captured surface is public: the storefront, the sign-in dialog, the support centre and the marketing home); the sign-in form and both search fields were measured, never submitted; Get, Add to Cart, Wishlist, Download, sort options and filter checkboxes were measured, never activated",
+   "themes": ["dark"],
+   "widths": [1440, 390],
+   "entry": "systems/epicgames/README.md",
+   "tokens": "systems/epicgames/tokens.json",
+   "styleGuide": "systems/epicgames/style-guide.html",
+   "preview": {
+    "cover": "systems/epicgames/screenshots/discover-dark-default.png",
+    "icon": "systems/epicgames/icon.png",
+    "swatches": {
+     "dark": {
+      "page": "dark.color.background.default",
+      "surface": "dark.color.background.elevated.medium",
+      "text": "dark.color.foreground.primary",
+      "muted": "dark.color.foreground.secondary",
+      "accent": "dark.color.background.fill.accent.primary.default",
+      "border": "dark.color.border.subtle"
+     }
+    },
+    "fonts": [
+     "core.font.family.base",
+     "core.font.family.code"
+    ]
+   },
+   "capture": {
+    "method": "public-web",
+    "source": "store.epicgames.com and www.epicgames.com in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and crops from the live DOM, read through the open shadow roots of the egs-navigation/egs-footer web components. The store declares the hashed EDS token layer in its EGS v2 stylesheet (784 resolved custom properties), so the scales are declared values and the component roles are measured computed values. Everything behind sign-in (library, account, billing, cart, checkout) is a documented authenticated boundary",
+    "timestamp": "2026-11-14T04:50:00Z",
+    "harness": "Devin",
+    "model": "SWE-2 High",
+    "route": "public-web",
+    "routes": [
+     "/en-US/ (Discover)",
+     "/en-US/browse",
+     "/en-US/p/fortnite",
+     "/en-US/free-games",
+     "/en-US/news",
+     "/en-US/download",
+     "www.epicgames.com/id/login/epic",
+     "www.epicgames.com/help/en-US/",
+     "www.epicgames.com/site/en-US/home",
+     "mobile /en-US/ and /en-US/p/fortnite"
+    ],
+    "gaps": [
+     "every post-login surface (library, account, billing, cart, checkout) is an authenticated boundary never reached",
+     "the sign-in form was measured default/focused/filled, never submitted; validation, error and success states are absent rather than measured",
+     "the sort dropdown was opened and its options measured, never picked; the Genre filter group was opened and a checkbox row measured, never checked",
+     "dark is the only painted public theme - no light variant exists on these surfaces, so no light set was invented",
+     "Cloudflare challenges fresh headless contexts intermittently ('Just a moment'); captures retry on fresh contexts and a blocked reading is never kept",
+     "the marketing wordmark (w-wordmark) and the mobile search field (m-search) could not be located painted on their pages - recorded missing, not fabricated",
+     "occasional hover failures on off-viewport elements (hero-cta, card-wishlist) are recorded as errors on those states",
+     "icons: no standalone SVG set lifted this pass"
+    ],
+    "durationMin": 300,
+    "durationNote": "wall-clock across the capture sessions including kit adaptation, Cloudflare retries, the EDS stylesheet harvest, screenshot and measurement passes (74 components, 208 states) on a headless Linux server, and the offline build",
+    "pr": "https://github.com/starship-terminal/constellations/pull/540"
+   },
+   "layoutGaps": {
+    "icons/": "the icon extraction pass was not run; the icons (the Epic mark, provider glyphs, social marks, wishlist and pager glyphs) are visible in the crops and screenshots"
+   }
+  },
+    {
       "slug": "fable",
       "name": "Fable",
       "url": "https://fable.co",
@@ -9322,5 +9830,5 @@
             "icons/": "the icon extraction pass was not run; the icons (the Fable wordmark and book-spine mark, the sign-in/cart/hamburger/search glyphs, the share mark, the star ratings, the App Store and Google Play badges) are visible in the crops and screenshots"
       }
     }
-  ]
+ ]
 }
