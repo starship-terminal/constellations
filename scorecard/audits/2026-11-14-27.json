@@ -1,7 +1,7 @@
 {
  "date": "2026-11-14",
  "rubric": "4",
- "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): reviewed the package against scorecard/criteria.json's web wording: read tokens.json, components.md, patterns.md, raw/measurements.md and the catalog entry; checked the checklist components, states and roles against the measured evidence",
+ "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): orchestrated merge-train review",
  "systems": [
   {
    "slug": "brilliant",
@@ -17383,79 +17383,79 @@
    "reviewedPlatform": "web"
   },
   {
-   "slug": "family",
+   "slug": "faire",
    "grades": {
     "F1": {
-     "grade": "partly",
-     "evidence": "The app declares real ramps: 9-step --danger-*/--valid-*/--warning-* status scales, a --family-* violet scale (100-800 plus --family #9896ff) and a --primary-* scale, exported under core.color.*. The marketing side and the app's --wallet-*/--graphic-* colours are single values or pairs per hue, and there is no ~10-step neutral ramp (grays are --gray/--gray-light plus the app's 3-step --body-bg-*), so not every hue used has a full ramp."
+     "grade": "meets",
+     "evidence": "The declared Slate layer ships full ramps: color.grey.*/neutral.* ~13 steps each (white #ffffff to near-black), plus blue/green/orange/red/teal/yellow accent ramps at ~10 steps and the seasonal bsr.* ramp - all declared --slate-color-* values, tokenised under core.color.*."
     },
     "F2": {
      "grade": "meets",
-     "evidence": "Page (light.background.page -> color.white; app --body-bg #ffffff), surface (app --body-bg-secondary #f9fafb, --body-bg-tertiary #f0f2f4), raised (white testimonial/login cards, 8-14px radius), overlay (--overlay-background #171717, --overlay-color, dark-only --overlay-backdrop scrim) and the measured demo-overlay scrim all exist."
+     "evidence": "surface.primary.default (page #ffffff) + .inverse, surface.secondary (#f7f7f7), surface.tertiary, surface.overlay and surface.mask (the scrim) plus surface.neutral/transparent and the whole action.surface.* state matrix - declared --slate-color-surface-* roles in the light set."
     },
     "F3": {
-     "grade": "partly",
-     "evidence": "Primary (light.text.ink -> --heading #343433, app --body-color #222222), secondary/muted (light.text.muted rgba(71,70,69,.7), light.text.low -> --body-muted #848281, app --body-color-muted), on-accent (light.text.on-dark -> --white) and link (declared --color-anchor, app --hyperlink-color #9896ff, measured login-learn/login-footer-link) are recorded; no disabled text role is declared or measured on the signed-out surface."
+     "grade": "meets",
+     "evidence": "text.primary.default/.inverse, text.subdued, text.accent and the action.text.* matrix (default/hover/active/inverse, disabled, critical, placeholder) cover primary, secondary, disabled, on-accent and action-link roles - all declared --slate-color-text-* vars."
     },
     "F4": {
-     "grade": "partly",
-     "evidence": "Default (light.border.hairline -> --gray-light #f2f0ed on cards/rows) and focus (light.border.focus -> --focus #848281 marketing ring; --focus-color rgba(0,122,255,.5) app ring) exist, but there is no named strong border pair - the app input is borderless and marketing borders are hairlines only."
+     "grade": "meets",
+     "evidence": "border.muted (#dadada hairline), border.subdued, and the action.border.* matrix (default/hover/active/subdued/disabled/critical/inverse) plus the declared action.border.focusRing #275ec5 - default, strong and focus roles all declared."
     },
     "F5": {
      "grade": "meets",
-     "evidence": "Measured states on every control: the #171717 CTA pills, ghost buttons, nav items, filters, cards and links were captured default + hover + focus-visible + DevTools-forced pressed (138 states across 64 components); the violet --primary is declared for links."
+     "evidence": "action.surface.default/hover/active (#333333 -> #000000), action.border.*, action.text.* and action.icon.* declare the full state matrix, and hover/pressed were measured on the real fs-buttons (cta-primary, nav-signup-buy, signin-submit, next-btn)."
     },
     "F6": {
      "grade": "partly",
-     "evidence": "Declared status ramps: app --danger-*/--valid-*/--warning-* (9 steps each, #ff0c18/#00ca48/#ff8600) plus --background-valid/-invalid/-warning on marketing - fills and text-tier values exist; per-status border roles are not declared, no info role exists, and nothing paints a status surface on the signed-out pages."
+     "evidence": "message.surface/icon/border roles exist for all four statuses (critical/info/success/warning) plus action.*.critical roles; but text roles are declared only for critical and sale - success/warning/info text roles are absent, and no status component paints on the signed-out surface."
     },
     "F7": {
-     "grade": "partly",
-     "evidence": "The app declares a real [data-theme=\"dark\"] layer: 20 names switch (body-bg/body-color/icon/input/selection/overlay/banner/hr/logo) and 3 overlay names are dark-only with no light counterpart, so parity is not exact; the marketing surface has no dark declarations at all. Only light ever paints signed out - dark is declared evidence, unverified on a painted surface."
+     "grade": "meets",
+     "evidence": "The product ships one signed-out theme; every semantic role exists in it (212 light tokens). The .fs-mode-on-surface inverse scope is tokenised under light.color.onSurface.* - a media scope, not a second theme."
     },
     "F8": {
      "grade": "meets",
-     "evidence": "Four families with fallback stacks (proprietary \"Family\" display, Inter UI, variable Inter app, declared SF Pro Rounded/Nunito secondary and SF Mono code); a measured 9-step ramp (xs 15, sm 16, control 15, body 15, lg 16, section 44, article 44, mobile-display 44, display 68px), measured weights 400-700 and line heights in the component entries."
+     "evidence": "Five named family stacks (font.family.sans Graphik_fix, serif Nantes_fix, gtStandard, gtCanon, legacySans/legacySerif) with fallbacks; the declared --slate-typography-* ramp (font.face.*, sizes 100-800, weights, lineHeights, letterSpacings, utilitySizes) plus the legacy --f_t_* ramp (font.legacySize 12-72) and six measured core.typography.* composites (display/heading/body/dialogTitle/heroTitle)."
     },
     "F9": {
-     "grade": "partly",
-     "evidence": "Declared layout vars (--h-pad, --nh-pad, --gap) and measured component paddings (32px card padding, 28px FAQ gaps, 96px post-card top pad) exist, but there is no declared spacing scale on one base unit."
+     "grade": "meets",
+     "evidence": "space.base is the declared 4px --spacing base with the --slate-spacing-element/group/layout/section-* roles under space.*; the --slate-dimensions-* 4-80px ramp sits under dimension.* and the Tailwind --container-* ramp under container.*."
     },
     "F10": {
      "grade": "meets",
-     "evidence": "Measured radii exported: core.radius.button 32px pills, card 10px (testimonial)/14px (login card), item/field 0px; border widths are the measured 1px #f2f0ed hairlines and the nav dropdown's borderless shadow treatment."
+     "evidence": "Declared radius ramp radius.xs-5xl (2-24px) plus radius.full 999px and component.radius.filter (999px pills) / component.button.radius (4px); component.field.borderWidth 1px is tokenised and every crop shows hairline borders."
     },
     "F11": {
-     "grade": "meets",
-     "evidence": "Measured control dimensions under core.component: 94px marketing / 70px mobile top bars, 48px CTA pills, 32px header buttons, 380px login card and field, ~269px support search, 1024px post cards, 540px testimonial panels, 14px FAQ toggle; the focus ring is a measured 2px outline with 0-1px offsets."
+     "grade": "partly",
+     "evidence": "Control heights per size are tokenised (component.button.height.small/medium, field.inputHeight, checkbox.size, dialog widths, header heights desktop/mobile) and the focus ring is fully declared (component.focusRing 2px #275ec5 offset 1px). No dedicated icon-size scale is published - icon boxes are measured per component only."
     },
     "F12": {
-     "grade": "partly",
-     "evidence": "Two elevation levels are recorded - the nav dropdown's 0px 3px 16px rgba(0,0,0,.1) menu shadow and the demo-overlay scrim; cards otherwise sit flat on hairlines, so there are not 3-5 levels on the public surface."
+     "grade": "meets",
+     "evidence": "Four declared --slate-elevation-* levels tokenised as elevation.low/medium/sm/md; measured shadows on the dialogs and categories panel are recorded per component in components.md."
     },
     "F13": {
      "grade": "partly",
-     "evidence": "The app declares a motion vocabulary (--duration-swift-out 0.22s/--duration-snappy-out/--duration-overshoot-out plus matching --ease-* cubic-bezier curves, exported under core.duration/core.easing) and marketing controls run measured 0.08-0.3s ease transitions (core.motion.control); reduced-motion behaviour is not declared or observed."
+     "evidence": "Declared ease.* curves, motion.duration.*, motion.easing.* and motion.animation.* vars plus measured transitions (0.15s cubic-bezier(.4,0,.2,1) controls, 0.252s search, 1s card transform); no reduced-motion variant was observable on the public surface."
     },
     "F14": {
      "grade": "partly",
-     "evidence": "Declared layout vars (--h-pad, --nh-pad, --gap) and a measured 390px mobile pass (70px header, 342px FAQ rows, the full-screen drawer) show two breakpoints in use, but no breakpoint scale, grid-column system or z-index layer list is declared."
+     "evidence": "The Tailwind --container-* ramp (sm-7xl) is tokenised and header/dialog/panel geometry is measured at 1440 and 390; named breakpoints and a z-index scale stay internal to the bundles and are not published as tokens."
     },
     "C1": {
      "grade": "partly",
-     "evidence": "10 of 19 checklist components paint publicly: button (download-cta, getstarted-btn, login-btn, watch-video, demo-btn, blog/cl-filter), icon button (faq-toggle, m-menu), link (nav-twitter, post-back, login-learn, login-footer-link, art-side-link), text field (login-field, sup-search - typed and cleared, never submitted), menu (nav-dropdown), dialog-like overlay (demo-overlay), card (blog-card, tweet-card, login-card, cl-entry), list row (faq-item, sup-article-link, legal-section), avatar (inside tweet-card) and badge/label (feature-label, feature-h3 tags). Absent signed out: text area, select, checkbox, radio, switch, tabs, tooltip, toast, table."
+     "evidence": "12-13 of 19 checklist components paint publicly: button (cta-*/nav-signup-buy/next-btn/signin-submit), icon button (back-btn, signin-close, m-menu-btn, m-search-btn, show-password), link (nav/footer/cat/help/auth links), text field (search/help/apply/auth/wall fields), checkbox (terms/marketing), select (phone-code-btn, locale-btn), menu (categories-panel, m-drawer), tabs (brand-tab, pill-tab), dialog (signin 420px, signup 500px), card (category/subcat/brand/news/product tiles), avatar (brand-avatar), badge (min-order-badge), list row (supplier-row, supall-row). No textarea/radio/switch/tooltip/toast/table exists on the signed-out surface."
     },
     "C2": {
-     "grade": "partly",
-     "evidence": "Beyond default: hover, focus-visible and DevTools-forced pressed across every control, focused/filled on the two fields, and opened on the nav dropdowns, the blog filter, the demo overlay and the mobile drawer. Disabled, loading, error and selected states were not observed - no form was submitted and the signed-in product was never reached."
+     "grade": "meets",
+     "evidence": "default/hover/focus-visible/CDP-forced pressed on every interactive entry, focused/filled on every field, opened on the categories panel, mobile drawer and search overlay, toggled on both show-password controls - 245 states across 95 components."
     },
     "C3": {
      "grade": "meets",
-     "evidence": "21 components were given a real keyboard focus: 10 draw a 2px outline ring (#848281 marketing, rgba(0,122,255,.5) on the app), one draws a shadow ring, two change their border; the rest show a measured absence of a product focus style, which counts as captured."
+     "evidence": "A real keyboard focus-visible was measured on 40 components: 36 draw a ring (2px solid #275ec5 offset 1px on fs-buttons/fields/links, 1-2px #101010 on nav text items, 8px-offset ring on show-password); the other 4 show no painted change and are recorded so."
     },
     "C4": {
      "grade": "meets",
-     "evidence": "Component entries name the token each measured value matches (e.g. #f2f0ed `color.gray.light`, rgba(0,122,255,.5) `color.focus.color`); the measured roles under light.* alias the declared vars they match, and component geometry is exported as component tokens."
+     "evidence": "Every components.md entry reads measured values and names the palette token whose value matches; tokens.json carries the measured component geometry under core.component.* and every token names its $extensions.source."
     },
     "C5": {
      "grade": "na",
@@ -17463,31 +17463,31 @@
     },
     "P1": {
      "grade": "partly",
-     "evidence": "patterns.md covers the public chrome, the hero, feature sections, the testimonial marquee, FAQ, blog/changelog/support/docs surfaces, the login card, mobile and motion/focus; forms and validation, empty/loading/error, destructive confirmation and feedback patterns are absent - they live behind the account boundary never reached."
+     "evidence": "patterns.md covers the header stack and categories menu, the marketing hero recipe, category/supplier listings, the brand storefront, the application form, the auth dialogs, the mobile drawer and the footer; empty/loading/error, destructive confirmation, feedback-after-action and onboarding do not exist on the signed-out surface - a documented boundary, not a missing pattern."
+    },
+    "A1": {
+     "grade": "partly",
+     "evidence": "Fonts fully named (Graphik, Nantes, GT Canon, GT Standard, GT Standard M served from cdn.faire.com; not redistributed - the style guide falls back to system sans/serif). No standalone SVG icon set lifted (declared layoutGap): the wordmark, magnifier, globe, hamburger, social and SSO glyphs are visible in the crops and screenshots."
+    },
+    "K1": {
+     "grade": "meets",
+     "evidence": "README states scope (21 signed-out routes desktop+mobile), the capture method, the sign-up-dialog boundary, the Cloudflare/Turnstile handling (waited out, never solved, prior readings preserved), OneTrust handling (hidden, never answered) and a full What-to-distrust section."
     },
     "V1": {
-     "grade": "meets",
-     "evidence": "The README's Do-and-don't states 8 evidence-linked principles: let the declared layers carry the design, spend near-black on committing actions, paint light, pair the voices, use hairlines not borders, keep pills pill-shaped, don't style the signed-in wallet, don't follow outbound links."
+     "grade": "na",
+     "evidence": "Optional for a capture, and this product does not publish it."
     },
     "V2": {
      "grade": "na",
      "evidence": "Optional for a capture, and this product does not publish it."
     },
-    "A1": {
-     "grade": "partly",
-     "evidence": "No standalone SVG set lifted (declared layoutGap): glyphs are visible in crops/screenshots. Fonts fully named with fallback stacks (Family display, LFE Sans, Inter, variable Inter, declared SF Pro Rounded/Nunito secondary, SF Mono code); proprietary, not redistributed."
-    },
-    "K1": {
-     "grade": "meets",
-     "evidence": "README states what was captured (12 routes plus mobile, both surfaces, the Aave Account rename), how (Playwright computed styles plus the two-surface declared harvest) and what to distrust (the authenticated and iOS boundaries, declared-only dark, DevTools-forced pressed, the 8-chunk stitch cap, edge challenges, never-followed outbound links)."
-    },
     "F15": {
-     "grade": "partly",
-     "evidence": "Script: primary text passes; secondary fails 2 pairs, worst 3.65:1 light muted (light.text.low) on surface (light.color.body.bg.secondary)"
+     "grade": "meets",
+     "evidence": "Script: all 4 pairs pass 4.5:1 across 1 themes; lowest 5.01:1 light muted (light.color.text.subdued) on surface (light.color.surface.secondary)"
     },
     "F16": {
      "grade": "meets",
-     "evidence": "Script: 232 of 232 tokens name their source"
+     "evidence": "Script: 479 of 479 tokens name their source"
     },
     "K2": {
      "grade": "meets",
@@ -17498,20 +17498,19 @@
      "evidence": "Script: DESIGN.md matches a fresh generation"
     }
    },
-   "name": "Family",
-   "goodFor": "crypto-wallet marketing and product chrome: the marketing role layer (--body/--body-muted/--heading text, --blue/--orange/--beige/--gray-light, a full --graphic-* illustration palette) plus the app's declared product layer (a --family-*/--primary-* violet scale #9896ff, 9-step --danger-*/--valid-*/--warning-* status ramps, 21 named --wallet-* colours, --overlay-*/--input-*/--duration-*/--ease-* values), a white field with #343433 Family-face headings, #f2f0ed hairlines and near-black #171717 CTA pills, blog/support/docs/legal surfaces and the signed-out Aave Account login",
-   "url": "https://family.co",
+   "name": "Faire",
+   "goodFor": "Wholesale marketplace surfaces: a white field with near-black #333333 fs-buttons at 4px radius against 999px filter pills, a 2px #275ec5 focus ring, Graphik 14/20 UI text under Nantes 52/64 and GT Canon 30/38 serif mastheads, and the declared Slate token layer (--slate-* ramps, roles and the .fs-mode-on-surface inverse scope) readable straight off the bundles",
+   "url": "https://www.faire.com",
    "captured": "2026-11-14",
    "themes": [
-    "light",
-    "dark"
+    "light"
    ],
    "platform": "web",
-   "category": "Finance",
+   "category": "E-commerce",
    "reviewed": "2026-11-14",
    "reviewedPlatform": "web"
   }
  ],
  "base": "2026-10-16",
- "reviewMethod": "reviewed the package against scorecard/criteria.json's web wording: read tokens.json, components.md, patterns.md, raw/measurements.md and the catalog entry; checked the checklist components, states and roles against the measured evidence"
+ "reviewMethod": "orchestrated merge-train review"
 }

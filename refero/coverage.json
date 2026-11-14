@@ -3,11 +3,11 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 136,
-    "system_domains": 128,
-    "matched_domains": 101,
-    "missing_domains": 332,
-    "system_domains_absent_from_catalog": 27
+    "system_packages": 140,
+    "system_domains": 132,
+    "matched_domains": 104,
+    "missing_domains": 329,
+    "system_domains_absent_from_catalog": 28
   },
   "matched": {
     "1password.com": {
@@ -1545,6 +1545,23 @@
         }
       ]
     },
+    "explore.family": {
+      "catalog": [
+        {
+          "name": "Explore",
+          "domain": "explore.family",
+          "id": 292
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "explore",
+          "name": "Explore",
+          "url": "https://explore.family",
+          "name_match": true
+        }
+      ]
+    },
     "fable.co": {
       "catalog": [
         {
@@ -1558,6 +1575,40 @@
           "slug": "fable",
           "name": "Fable",
           "url": "https://fable.co",
+          "name_match": true
+        }
+      ]
+    },
+    "factory.ai": {
+      "catalog": [
+        {
+          "name": "Factory",
+          "domain": "factory.ai",
+          "id": 734
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "factory",
+          "name": "Factory",
+          "url": "https://factory.ai",
+          "name_match": true
+        }
+      ]
+    },
+    "faire.com": {
+      "catalog": [
+        {
+          "name": "Faire",
+          "domain": "faire.com",
+          "id": 155
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "faire",
+          "name": "Faire",
+          "url": "https://www.faire.com",
           "name_match": true
         }
       ]
@@ -1971,27 +2022,6 @@
         "name": "Equals",
         "domain": "equals.app",
         "id": 289
-      }
-    ],
-    "explore.family": [
-      {
-        "name": "Explore",
-        "domain": "explore.family",
-        "id": 292
-      }
-    ],
-    "factory.ai": [
-      {
-        "name": "Factory",
-        "domain": "factory.ai",
-        "id": 734
-      }
-    ],
-    "faire.com": [
-      {
-        "name": "Faire",
-        "domain": "faire.com",
-        "id": 155
       }
     ],
     "fal.ai": [
@@ -4335,6 +4365,14 @@
         "slug": "superset-desktop",
         "name": "Superset (desktop)",
         "url": "https://superset.sh",
+        "ios_guess": []
+      }
+    ],
+    "visual.app": [
+      {
+        "slug": "designstripe",
+        "name": "Visual (designstripe)",
+        "url": "https://visual.app",
         "ios_guess": []
       }
     ],

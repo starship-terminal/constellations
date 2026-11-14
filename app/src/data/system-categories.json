@@ -756,6 +756,12 @@
     "reason": "catalog.json describes an energy-device integration API platform: a per-page light/dark data-mode marketing site with gated platform and docs surfaces."
   },
   {
+    "referenceId": "systems:faire",
+    "groupId": "web-categories",
+    "labels": ["Marketplace"],
+    "reason": "catalog.json describes a wholesale marketplace: category teasers, a brand storefront, supplier listings and auth dialogs, with the signed-in marketplace a documented boundary."
+  },
+  {
     "referenceId": "systems:delphi",
     "groupId": "web-categories",
     "labels": ["AI Tool", "Productivity"],
@@ -808,6 +814,24 @@
     "groupId": "web-categories",
     "labels": ["Books", "Social Networking"],
     "reason": "catalog.json describes a book-club and reading product: club directories and detail pages, a book catalog with an ebook store, a /discover cover wall, sign-in, support and a blog. Post-login reader and club surfaces are gated."
+  },
+  {
+    "referenceId": "systems:explore",
+    "groupId": "web-categories",
+    "labels": ["Inspiration Board", "Social Networking"],
+    "reason": "catalog.json describes an ad-free creative-community platform: a public discover feed and member portfolios on a signed-out site, replayed from the 2023-02-23 archive because the product is closed."
+  },
+  {
+    "referenceId": "systems:factory",
+    "groupId": "web-categories",
+    "labels": ["AI Tool", "Development Tools"],
+    "reason": "catalog.json describes an AI software-engineering agents product: enterprise marketing pages, product tours, docs with a theme toggle, pricing and a gated agent console."
+  },
+  {
+    "referenceId": "systems:designstripe",
+    "groupId": "web-categories",
+    "labels": ["AI Tool", "Productivity"],
+    "reason": "catalog.json describes an AI design-agent product (Visual, formerly designstripe): a marketing surface, CC0 asset library, free design tools and blog — the AI Tool label."
   },
   {
     "referenceId": "systems:family",
