@@ -9312,6 +9312,7 @@
           "icons: no standalone SVG set lifted this pass"
         ],
         "durationMin": 320,
+        "pr": "https://github.com/starship-terminal/constellations/pull/555",
         "durationNote": "wall-clock across the capture sessions including kit adaptation, the two-surface stylesheet harvest, screenshot and measurement passes on a headless Linux server, selector retries against styled-components DOM and CSP limits, and the offline build"
       },
       "layoutGaps": {
