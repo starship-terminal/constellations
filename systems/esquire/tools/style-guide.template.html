@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Esquire style guide</title>
+<meta name="description" content="Esquire design tokens and the public signed-out magazine surface's components, rendered from tokens.json — Hearst's FRE design-token layer resolved live plus measured computed styles.">
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  --sg-sans: var(--font-family-sans, ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif);
+  --sg-serif: var(--font-family-display, Georgia, "Times New Roman", serif);
+  --sg-body: var(--font-family-content, Georgia, "Times New Roman", serif);
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+[data-mode="dark"], .dark {
+/*DARK*/
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text-ink, #121212); background: var(--background-page, #fff); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 400 40px/1.1 var(--sg-serif); margin: 0 0 4px; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--text-ink, #121212); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--border-divider, #bdbdbd); }
+.lead { max-width: 62ch; color: var(--text-ink, #121212); opacity: .8; }
+.note { font-size: 13px; color: var(--text-ink, #121212); opacity: .65; max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--text-ink, #121212); opacity: .6; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border-divider, #bdbdbd); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--text-ink, #121212); opacity: .65; }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--border-divider, #bdbdbd); background: #fff; font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--text-ink, #121212); opacity: .65; }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--border-divider, #bdbdbd); overflow: hidden; background: var(--background-page, #fff); }
+.util { display: flex; align-items: center; gap: 18px; height: var(--component-nav-utility-height, 32px); padding: 0 14px; font-size: 12px; font-weight: 600; letter-spacing: .02em; color: var(--nav-utility-txt, #121212); background: var(--brand-red, #ff3a30); }
+.util .sp { flex: 1; }
+.navbar { display: flex; align-items: center; gap: 20px; padding: 0 18px; height: 66px; font-size: 15px; color: var(--text-ink, #121212); background: var(--background-page, #fff); border-bottom: 1px solid var(--border-divider, #bdbdbd); }
+.navbar .wm { font: 400 26px/1 var(--sg-serif); letter-spacing: .18em; text-transform: uppercase; }
+.navbar .search { width: var(--component-search-input-width, 211px); height: var(--component-search-input-height, 26px); border: 1px solid var(--border-field, #d6d6d6); border-radius: var(--radius-sm, 4px); font-size: 12px; color: var(--text-disabled, #757575); padding: 0 10px; display: inline-flex; align-items: center; }
+.navbar .sp { flex: 1; }
+.megamenu { display: flex; align-items: center; gap: 18px; height: var(--component-megamenu-height, 53px); padding: 0 18px; font: 500 13px/1 var(--sg-sans); color: var(--nav-header-txt, #121212); background: var(--background-page, #fff); border-bottom: 1px solid var(--border-megamenu, #ffaca8); }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-subscribe-height, 38px); padding: 0 22px; font-size: 14px; font-weight: 600; border-radius: var(--radius-pill, 1024px); border: 1px solid transparent; }
+.btn.primary { background: var(--button-primary-bg, #ff3a30); border-color: var(--button-primary-border, #ff3a30); color: var(--button-primary-txt, #121212); }
+.btn.ghost { background: var(--background-page, #fff); border-color: var(--text-ink, #121212); color: var(--brand-red, #ff3a30); }
+.eyebrow { font: 700 10px/1 var(--sg-sans); letter-spacing: .1em; text-transform: uppercase; color: var(--eyebrow-txt, #121212); }
+.hero { color: var(--text-ink, #121212); padding: 56px 40px 48px; font: 400 48px/1.05 var(--sg-serif); background: var(--background-page, #fff); }
+.hero small { display: block; font: 400 17px/1.5 var(--sg-sans); color: var(--text-subtle, #575757); margin: 18px auto 0; max-width: 52ch; }
+.story { display: flex; gap: 16px; align-items: flex-start; padding: 18px; border-top: 1px solid var(--border-divider, #bdbdbd); }
+.story .img { width: var(--component-story-thumb-width, 150px); height: 100px; background: var(--background-panel, #f5f6f8); flex: 0 0 auto; border-radius: var(--radius-sm, 4px); }
+.story b { display: block; font: 500 18px/1.3 var(--sg-sans); color: var(--text-ink, #121212); margin: 6px 0 6px; }
+.story .meta { font: 400 12px/1.4 var(--sg-sans); color: var(--text-muted, #3b3b3b); }
+.plans { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; padding: 20px; }
+.plan { border: 1px solid var(--border-divider, #bdbdbd); border-radius: var(--radius-component-card-offer-dim-border-radius, 8px); padding: 18px; background: var(--background-page, #fff); }
+.plan .chip { display: inline-block; font: 700 10px/1 var(--sg-sans); letter-spacing: .06em; text-transform: uppercase; color: var(--badge-primary-txt, #121212); background: var(--badge-primary-bg, #ff3a30); padding: 5px 10px; border-radius: var(--radius-pill, 1024px); margin-bottom: 10px; }
+.plan b { display: block; font: 400 20px/1.25 var(--sg-serif); color: var(--text-ink, #121212); }
+.plan .price { font: 400 30px/1.1 var(--sg-sans); color: var(--offer-price, #121212); margin: 8px 0 2px; }
+.plan .was { color: var(--offer-strikethrough, #cc2828); text-decoration: line-through; font-size: 14px; }
+.plan .perk { font: 400 13px/1.8 var(--sg-sans); color: var(--list-included-txt, #121212); }
+.plan .perk.no { color: var(--list-excluded, #575757); }
+.faq { display: flex; justify-content: space-between; align-items: center; width: var(--component-faq-row-width, 100%); max-width: 100%; height: var(--component-faq-row-height, 56px); padding: 0 18px; border-top: 1px solid var(--border-divider, #bdbdbd); font: 500 15px/1 var(--sg-sans); color: var(--accordion-txt, #000); }
+.nwsl { margin: 0 20px 20px; padding: 28px 24px; background: var(--background-panel, #f5f6f8); text-align: center; }
+.nwsl b { display: block; font: 500 24px/1.2 var(--sg-sans); color: var(--text-ink, #121212); margin-bottom: 8px; }
+.nwsl .fld { display: inline-flex; gap: 10px; margin-top: 14px; }
+.nwsl .fld .in { width: var(--component-newsletter-input-width, 280px); height: 44px; border: 1px solid var(--border-field, #d6d6d6); border-radius: var(--radius-sm, 4px); background: #fff; font-size: 14px; color: var(--text-disabled, #757575); padding: 0 14px; display: inline-flex; align-items: center; }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--border-divider, #bdbdbd); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--border-soft, #ededed); }
+.tr .ts { font-family: var(--sg-serif); }
+.tr .tv { font-size: 12px; color: var(--text-ink, #121212); opacity: .65; font-family: var(--sg-mono); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Esquire style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">esquire.com, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the declared Hearst FRE layer (<code>--_palette-*</code> ramps, <code>--_size-*</code>/<code>--_font-*</code> primitives, <code>--type-*</code> styles, <code>--dim-*</code> space/layout, <code>--comp-*</code> components) plus the <code>--color-*</code> semantic roles — the white editorial field, <code>#121212</code> ink, the <code>#ff3a30</code> brand red on the utility strip and the Subscribe/Join pills, Lausanne UI under PlayFair display and Lora body. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from esquire.com on 2026-11-13, signed out, in headless Chromium. The magazine is read-only here — Sign In, Subscribe, Join and every story link were measured but never followed; the search and newsletter fields were typed into and cleared, never submitted; the OneTrust consent layer was hidden, never answered; and ad/tracker requests were aborted, so ad slots read as blank containers. Lausanne, PlayFair, Lora and Charter are proprietary Hearst fonts; samples fall back to system faces.</p>
+
+  <h2 class="sh">The chrome</h2>
+  <p class="lead">A three-band top chrome: the 32px <code>#ff3a30</code> utility strip (edition switcher, Newsletter — dark text on the red), the white main bar (search field, the Esquire wordmark, Sign In and the red Subscribe pill that inverts to white on hover), and the category strip whose underline paints <code>#ffaca8</code>. The "More" overflow drops the hidden-section panel.</p>
+  <div class="mock">
+    <div class="util"><span>US &#9662;</span><span class="sp"></span><span>Newsletter</span></div>
+    <div class="navbar"><span class="search">Search...</span><span class="sp"></span><span class="wm">Esquire</span><span class="sp"></span><span>Sign In</span><span class="btn primary">Subscribe</span></div>
+    <div class="megamenu"><span>Entertainment</span><span>Style</span><span>News &amp; Politics</span><span>Watches</span><span>Food &amp; Drinks</span><span>More &#9662;</span></div>
+  </div>
+
+  <h2 class="sh">The feed</h2>
+  <p class="lead">Below the chrome the page stays white: an uppercase eyebrow, a PlayFair cover headline at display size over a muted dek, then story rows — thumbnail, 18px Lausanne headline, BY-line plus read-time — closed by section bands and the See More ghost button (dark <code>#121212</code> outline, red text, a grey wash on hover).</p>
+  <div class="mock">
+    <div class="hero"><span class="eyebrow">Entertainment</span><br>The Dwayne Johnson Interview<small>The cover-hero headline at PlayFair display size, over its muted standfirst and a BY-line with read-time.</small></div>
+    <div class="story"><span class="img"></span><span><span class="eyebrow">Style</span><b>The Shoes That Sold Men on Esquire</b><span class="meta">BY ESQUIRE EDITORS &middot; 6 MIN READ</span></span></div>
+    <div class="story"><span class="img"></span><span><span class="eyebrow">Watches</span><b>Man at His Best</b><span class="meta">BY THE EDITORS &middot; 4 MIN READ</span></span></div>
+    <div style="text-align:center;padding:18px"><span class="btn ghost">See More</span></div>
+  </div>
+
+  <h2 class="sh">The offers page</h2>
+  <p class="lead"><code>/offers/premium-membership</code> paints "Choose a Plan" over three plan cards — plan name, struck list price in <code>#cc2828</code> over the current price, perk lists with green <code>#088153</code> checks against <code>#575757</code> excluded dashes, a "Best Value" chip on the featured card and a red Join pill each — then the FAQ accordion and the gift-subscription CTA.</p>
+  <div class="mock">
+    <div style="text-align:center;font:400 32px/1.1 var(--sg-serif);padding:28px 0 0">Choose a Plan</div>
+    <div class="plans">
+      <div class="plan"><span class="chip">Best Value</span><b>Premium</b><span class="was">$60</span><div class="price">$50/year</div><div class="perk">&#10003; Access to esquire.com</div><div class="perk no">&ndash; Print magazine</div><div style="margin-top:14px"><span class="btn primary" style="height:32px">Join Premium</span></div></div>
+      <div class="plan"><b>Print + Digital</b><span class="was">$40</span><div class="price">$30/year</div><div class="perk">&#10003; Print magazine</div><div class="perk">&#10003; Access to esquire.com</div><div style="margin-top:14px"><span class="btn primary" style="height:32px">Join</span></div></div>
+    </div>
+    <div class="faq"><span>When will my magazine be delivered?</span><span>&#9662;</span></div>
+  </div>
+
+  <h2 class="sh">The newsletter band</h2>
+  <p class="lead">A <code>#f5f6f8</code> pale panel carries the "Real journalism and real style" pitch, the email field and the red Sign Up pill — typed into and cleared during the capture, never submitted.</p>
+  <div class="mock" style="padding-top:20px">
+    <div class="nwsl"><b>Real journalism and real style, in your inbox.</b><span class="fld"><span class="in">Enter your email address</span><span class="btn primary" style="height:44px">Sign Up</span></span></div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The <code>core.palette</code> groups are FRE's declared <code>--_palette-*</code> ramps (gray, blue, green, orange, red, yellow); the light set carries the <code>--color-*</code> semantic roles — brand red, text tiers, backgrounds, borders, nav, button states, links, badges, chips, meta, offers and list states. The site paints one theme; the dark set is empty.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing, radius and borders</h2>
+  <p class="lead"><code>core.space</code> is the 4px-based <code>--dim-space-*</code> scale and <code>core.size</code> the finer <code>--_size-*</code> primitives; <code>core.radius</code> holds the 1024px pill every button paints plus the 4px field/row radius; <code>core.borderWidth</code> the hairline steps. Motion is one 150ms duration over two easing curves.</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Elevation</h2>
+  <p class="lead">FRE composes each level from declared parts — offsets, blur, spread and colour — exported here as complete <code>box-shadow</code> layers. The stacking ladder sits under <code>core.layout.z</code>.</p>
+  <div id="elev-out" class="kv"></div>
+  <div id="z-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">Three voices: <code>Lausanne</code> for all UI (nav, headings, cards, buttons), <code>PlayFair</code> for serif display (cover and section headlines to 64px), <code>Lora</code> for article body (18px); "SF Pro" is the declared mac default on the offers headings. Below, the declared <code>core.typography</code> styles per breakpoint, then the primitive scales. Samples fall back to system faces.</p>
+  <div id="styles-out"></div>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the resolved FRE custom properties and computed styles off the live DOM on every captured route</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, opened (More panel, FAQ accordion, side panel) and filled states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = /*TOKENS*/null;
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.palette || {})) {
+    const items = (grp && grp.t ? [['palette.' + g, grp]] : flat(grp, 'palette.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">palette.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  for (const [setname, label] of [['light', 'light roles'], ['dark', 'dark roles (none — the site paints one theme)']]) {
+    const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+    if (!roles.length) continue;
+    // The dark set's custom properties only resolve inside a .dark scope:
+    // swatch dots must live under it or they paint the light values/unset.
+    h += `<div class="pal-h">${label}</div><div class="pal${setname === 'dark' ? ' dark' : ''}">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.space || {}, 'space.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.borderWidth || {}, 'borderWidth.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.layout || {}, 'layout.')) {
+    if (typeof t.v === 'object') continue;
+    m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat(TOK.core.motion || {}, 'motion.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v.join ? 'cubic-bezier(' + t.v.join(', ') + ')' : t.v)}</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  for (const [n, t] of flat(TOK.core.shadow || {}, 'shadow.')) {
+    const v = Array.isArray(t.v) ? t.v.map(x => [x.offsetX, x.offsetY, x.blur, x.spread, x.color].filter(Boolean).join(' ')).join(', ') : t.v;
+    e += `<div><b>${esc(n)}</b> <span>${esc(v)}</span></div>`;
+  }
+  $('#elev-out').innerHTML = e || '<div><b>none captured</b></div>';
+})();
+
+(function zladder() {
+  let m = '';
+  for (const [n, t] of flat((TOK.core.layout || {}).z || {}, 'layout.z.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#z-out').innerHTML = m;
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat((TOK.light.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+(function typeStyles() {
+  let h = '';
+  for (const [n, t] of flat(TOK.core.typography || {}, 'typography.')) {
+    const v = t.v || {};
+    const fam = String(v.fontFamily || '').split(',')[0].replace(/"/g, '');
+    const spec = [v.fontSize, v.lineHeight && '/' + v.lineHeight, v.fontWeight && ' ' + v.fontWeight].filter(Boolean).join('');
+    h += `<div class="tr"><span class="ts" style='font-size:${Math.min(parseFloat(v.fontSize) || 14, 40)}px;font-family:${(v.fontFamily || 'inherit')}'>${esc(n)} — Esquire</span><span class="tv">${esc(fam)} ${esc(spec)}</span></div>`;
+  }
+  $('#styles-out').innerHTML = h;
+})();
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(t.v);
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Esquire</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>
