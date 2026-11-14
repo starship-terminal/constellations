@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 143,
-    "system_domains": 135,
-    "matched_domains": 106,
-    "missing_domains": 327,
+    "system_packages": 144,
+    "system_domains": 136,
+    "matched_domains": 107,
+    "missing_domains": 326,
     "system_domains_absent_from_catalog": 29
   },
   "matched": {
@@ -1664,6 +1664,23 @@
         }
       ]
     },
+    "farfetch.com": {
+      "catalog": [
+        {
+          "name": "Farfetch",
+          "domain": "farfetch.com",
+          "id": 99
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "farfetch",
+          "name": "FARFETCH",
+          "url": "https://www.farfetch.com",
+          "name_match": true
+        }
+      ]
+    },
     "github.com": {
       "catalog": [
         {
@@ -2049,13 +2066,6 @@
         "name": "Equals",
         "domain": "equals.app",
         "id": 289
-      }
-    ],
-    "farfetch.com": [
-      {
-        "name": "Farfetch",
-        "domain": "farfetch.com",
-        "id": 99
       }
     ],
     "feedhive.com": [

@@ -11781,6 +11781,89 @@
       "layoutGaps": {
         "icons/": "the icon extraction pass was not run; the marks (the Designmodo wordmark, product glyphs, the Font Awesome set) are visible in the crops and screenshots"
       }
+    },
+    {
+      "slug": "farfetch",
+      "name": "FARFETCH",
+      "url": "https://www.farfetch.com",
+      "category": "e-commerce",
+      "platform": "web",
+      "goodFor": "Luxury-fashion marketplace on the pulse token layer: a two-row sticky chrome (department links, 201px letterspaced wordmark, 44px icon hit areas, red Sale link), a 4-up product-card grid (3:4 image, wishlist heart, brand kicker, price), the PDP buy box with a square #222 Add To Bag, ~590 --colors-<family>-<role>-<state>-<slot> semantics, 'Farfetch Basis' UI type with 'Nimbus Roman D' editorial serif, square corners and a 1000px pill",
+      "tags": [
+        "web",
+        "e-commerce",
+        "fashion",
+        "luxury",
+        "marketplace",
+        "storefront",
+        "product-grid",
+        "pdp",
+        "signed-out",
+        "design-tokens"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-14",
+      "access": "signed out (every captured surface is public); www.farfetch.com answers automation with Akamai 403 and the farfetch-contents.com CDNs with 429, so the DOM evidence is Wayback SSR snapshots served locally and painted by Farfetch's own archived CSS, fonts and images with scripts stripped",
+      "themes": ["light"],
+      "widths": [1440, 390],
+      "entry": "systems/farfetch/README.md",
+      "tokens": "systems/farfetch/tokens.json",
+      "styleGuide": "systems/farfetch/style-guide.html",
+      "preview": {
+        "cover": "systems/farfetch/screenshots/plp-women-light-default.png",
+        "icon": "systems/farfetch/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.page.primary.enabled.surface",
+            "surface": "light.general.brand-ui05",
+            "text": "light.general.brand-ui01",
+            "muted": "light.general.brand-ui02",
+            "accent": "light.general.sale01",
+            "border": "light.general.brand-ui04"
+          }
+        },
+        "fonts": ["core.font.family.sans", "core.font.family.editorial"]
+      },
+      "source": {
+        "path": "~/.design-systems/farfetch/raw-shots (full-colour captures, outside the repo)"
+      },
+      "capture": {
+        "harness": "Devin",
+        "model": "SWE-2 Max",
+        "route": "public-web",
+        "method": "public-web",
+        "source": "Wayback SSR snapshots of www.farfetch.com (home 20261016005744, listings 20260806/20260822, PDP 20251217232301) rewritten to local CDN paths and served locally, painted by the archived stylesheets/Emotion blocks and the site's own fonts and images with scripts stripped; computed styles, crops and ~776 resolved custom properties from that DOM in headless Chromium, 1440x900 + 390x844. BOUNDARY: live farfetch.com returns HTTP 403 (Akamai) and the CDNs 429 to automation, so archived markup is the evidence",
+        "at": "2026-11-14",
+        "routes": [
+          "/ (wayback 20261016005744)",
+          "/shopping/women/items.aspx (wayback 20260822230523)",
+          "/shopping/men/items.aspx (wayback 20260806004745)",
+          "/sets/women/new-in-this-week-eu-women.aspx (wayback 20260806004731)",
+          "/shopping/women/dolce-gabbana-logo-embossed-cut-out-slides-item-22465526.aspx (wayback 20251217232301)",
+          "mobile /",
+          "mobile /shopping/women/items.aspx",
+          "mobile PDP"
+        ],
+        "gaps": [
+          "live farfetch.com is unreachable to automation (Akamai 403, CDN 429) - DOM markup is Wayback SSR from 2025-12/2026-10 snapshots, not current live markup",
+          "anything behind sign-in: account, wishlist contents, bag, checkout, order tracking, FARFETCH Access loyalty, private client",
+          "hydration-owned surfaces stay closed: the Select size listbox, department/menu dropdown panels, the All Filters drawer, sort, accordion animation, carousel scrolling, wishlist aria-pressed",
+          "submitted states: search, newsletter and filters were typed/measured but never submitted",
+          "the modular PLPs render breadcrumb/filter/pagination client-side, so those components were measured on the classic 'New In' edit page instead",
+          "the 390px listing's All Filters button is hydration-rendered and absent from the archived copy, so m-filter is recorded missing rather than inferred",
+          "the mobile PDP is recorded as the archived markup paints it (gallery and sticky buy columns side by side, 199.5px and 142.5px); a stacked buy box, if the live site reflows to one at 390, was not observed",
+          "the archived PDP buy box renders only the size combobox, so no colour/variant tabs exist to measure (variant-tabs is recorded missing, not inferred)",
+          "the edit page's Recommendations showcase rail ('Show More') is not a component of its own; the campaign hero (hero-module, hero-cta) is read from the modular listings, the only pages that carry one",
+          "search results, designers index, sale hub and help surfaces were not captured individually",
+          "opened/selected states that hydration renders are declared in the light.*.selected/* tokens, not painted",
+          "no real dark theme observed; dark set is empty by evidence"
+        ],
+        "durationMin": null,
+        "pr": "https://github.com/starship-terminal/constellations/pull/557"
+      },
+      "layoutGaps": {
+        "icons/": "FARFETCH's icon glyphs are its artwork and are not kept here (docs/RIGHTS.md)"
+      }
     }
   ]
 }
