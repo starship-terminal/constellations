@@ -25,3 +25,9 @@ jobs:
       - name: Install the tools' Python dependencies
         run: pip install -r requirements.txt -r tools/requirements-capture.txt
       - run: make test
+      # The docs site the home server serves: scorecard pages, then site.py.
+      # Nothing else in CI builds it, so a broken page or renderer fails here.
+      - name: Build the docs site
+        run: make docs
+      - name: The docs site never ships the gallery
+        run: test ! -e site/gallery
