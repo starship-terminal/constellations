@@ -31,24 +31,30 @@ def sidecar_for(png):
 
 
 def pixel_scale(meta):
-    """Device pixels per CSS pixel the tile was captured at, or None when its sidecar does not say."""
-    if (meta.get('capture') or {}).get('scale') == 'css':
+    """Device pixels per CSS pixel the tile was captured at: the recorded ratio, else the tile's own
+    PNG width over its clip width, else 1 (a sidecar that records neither is read as a 1x capture)."""
+    cap = meta.get('capture') or {}
+    if cap.get('scale') == 'css':
         return 1
-    return (meta.get('actual') or {}).get('devicePixelRatio') or (meta.get('requested') or {}).get('deviceScaleFactor')
+    dpr = (meta.get('actual') or {}).get('devicePixelRatio') or (meta.get('requested') or {}).get('deviceScaleFactor')
+    if dpr:
+        return dpr
+    clip, png = cap.get('clip'), meta.get('png')
+    return png['width'] / clip['width'] if clip and png and clip.get('width') and png.get('width') else 1
 
 
 def stitched_sidecar(name, sheet, tile_paths):
     """Rebuild name.png.capture.json from the part tiles' sidecars, or None when any tile cannot vouch.
 
     Tile clips are CSS pixels, so the stitched clip stays in CSS pixels and the expected PNG size is
-    each clip times its pixel scale (a 2x capture is twice its clip). A tile with no sidecar, no clip or
-    no scale leaves the image without one: unmeasured shots are never marked as checked."""
+    each clip times its pixel scale (a 2x capture is twice its clip). A tile with no sidecar or no clip
+    leaves the image without one: unmeasured shots are never marked as checked."""
     parts = [sidecar_for(f) for f in tile_paths]
     if not parts or any(not p for p in parts):
         return None
     clips = [(p.get('capture') or {}).get('clip') for p in parts]
     scales = [pixel_scale(p) for p in parts]
-    if any(not c for c in clips) or any(not s for s in scales):
+    if any(not c for c in clips):
         return None
     meta = dict(parts[0])
     meta['screenshot'] = f'{name}.png'
