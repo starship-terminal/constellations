@@ -9201,7 +9201,8 @@
           "icons: no standalone SVG set lifted this pass",
           "OneTrust consent UI hidden on every shot, never answered"
         ],
-        "durationMin": 150
+        "durationMin": 150,
+        "pr": "https://github.com/starship-terminal/constellations/pull/552"
       },
       "layoutGaps": {
         "icons/": "the icon extraction pass was not run; the icons (the FAIRE wordmark, magnifier, globe, hamburger, social and SSO glyphs) are visible in the crops and screenshots"
