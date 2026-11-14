@@ -14,6 +14,16 @@ export async function GET(request: Request) {
   if (!page)
     return Response.json({ error: "Invalid pagination" }, { status: 400 });
   const { limit, offset } = page;
+  const rawPerProduct = params.get("perProduct");
+  const perProduct =
+    rawPerProduct === null
+      ? undefined
+      : rawPerProduct.trim() !== "" &&
+          Number.isSafeInteger(Number(rawPerProduct))
+        ? Math.min(50, Number(rawPerProduct))
+        : NaN;
+  if (perProduct !== undefined && !(perProduct >= 1))
+    return Response.json({ error: "Invalid perProduct" }, { status: 400 });
   const kind = params.get("kind"),
     sort = params.get("sort") || params.get("order"),
     scope = params.get("scope"),
@@ -68,6 +78,7 @@ export async function GET(request: Request) {
     sort: sort === "name" ? "name" : "recent",
     offset,
     limit,
+    perProduct,
   };
   try {
     return Response.json(await listScreens(query));

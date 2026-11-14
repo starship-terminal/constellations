@@ -1,0 +1,200 @@
+{
+ "schemaVersion": 1,
+ "capturedAt": "2026-11-14T07:49:38.470Z",
+ "screenshot": "mobile-discover-light-full.png",
+ "sanitizedSourceUrl": "https://explore.family/discover",
+ "provenance": {
+  "archive": {
+   "era": "feb",
+   "snapshot": "2023-02-23",
+   "route": "/discover",
+   "ssr": null
+  },
+  "mirrorMisses": [
+   "https://back.explore.family/uploads/posts/1993/ttinputimage-682469643797124-or2sk_gallery@2x.webp",
+   "https://back.explore.family/uploads/users/img-0509-lyaqazzrdp202322360536_thumb@2x.jpeg",
+   "https://back.explore.family/uploads/posts/1799/flower-patch-2-1400-rqdhb_gallery@2x.webp",
+   "https://back.explore.family/uploads/users/00112-4190473677-vjrtmcocky2023220232700_thumb@2x.png",
+   "https://back.explore.family/uploads/posts/600/0991d07d-44b4-43b5-a3e9-d9154f8a0dff-bqusa_gallery@2x.webp",
+   "https://back.explore.family/uploads/users/profile-pic-z7oizx11kx202328140549_thumb@2x.jpg",
+   "https://back.explore.family/uploads/posts/1205/riso-collage-2-vinilo-2-hr-zlqsp_gallery@2x.webp",
+   "https://back.explore.family/uploads/users/sks-man-looking-conf-5-4zpb8nsncp2023211185221_thumb@2x.jpg",
+   "https://back.explore.family/uploads/users/au-dela-logo-carre-srf6mcnlrx202321482717_thumb@2x.jpg",
+   "https://back.explore.family/uploads/posts/169/671a9940-b71a-4c7f-bb17-f6ec440e7fcd-8qnsw_gallery@2x.webp",
+   "https://back.explore.family/uploads/users/605dfdd3-d79a-4227-827e-ac7b4f6d09c9-uvnnkzzl8a2022101890616_thumb@2x.jpeg",
+   "https://back.explore.family/uploads/posts/578/img-3897-3-zsfqa_gallery@2x.webp",
+   "https://back.explore.family/uploads/users/queeninga-artboard-1-at-2x-tpt46niqps202328123242_thumb@2x.png",
+   "https://back.explore.family/uploads/posts/406/dribbble-shot-hd-43-5ogbx_gallery@2x.webp",
+   "https://back.explore.family/uploads/users/group-10-6hpqzm7grx2022121684946_thumb@2x.png",
+   "https://back.explore.family/uploads/posts/1680/fly-mg2dd_gallery@2x.webp",
+   "https://back.explore.family/uploads/users/ava2-at-8x-gcefeub2av2023216101857_thumb@2x.png",
+   "https://back.explore.family/uploads/posts/1919/spread-2-8pu3g_gallery@2x.webp",
+   "https://back.explore.family/uploads/users/header-icon-1xagri4oqv2023221160306_thumb@2x.jpg",
+   "https://back.explore.family/uploads/posts/1091/reco-control-detail-7hsug_gallery@2x.webp",
+   "https://back.explore.family/uploads/users/11666d4a-d869-4dc3-ad0e-fe0155efb440-txdryd8h9g2023221155430_thumb@2x.jpeg",
+   "https://back.explore.family/uploads/posts/184/img-4169-979hz_gallery@2x.webp",
+   "https://back.explore.family/uploads/posts/184/img-4172-xrqpn_gallery@2x.webp",
+   "https://back.explore.family/uploads/posts/184/img-4164-geg8y_gallery@2x.webp",
+   "https://back.explore.family/uploads/users/fm20221iba-4-lfdicnui8m2022101893632_thumb@2x.jpg",
+   "https://back.explore.family/uploads/posts/3/1-jxdbd_gallery@2x.webp",
+   "https://back.explore.family/uploads/users/social-prof-04-nlqv5limdo2022101185847_thumb@2x.jpg",
+   "https://back.explore.family/uploads/posts/1880/original-b73a30cb1f5f3d4cfb77d5c0ed06684bpng-dep7x_gallery@2x.webp",
+   "https://back.explore.family/uploads/users/dtpd6hzk-400x400-mdekogaebg2023220205012_thumb@2x.jpg",
+   "https://back.explore.family/uploads/posts/1205/freestyle-coral-balloons-9xpza_gallery@2x.webp",
+   "https://back.explore.family/uploads/users/image-2-cyuekbyuf820232982745_thumb@2x.jpg",
+   "https://back.explore.family/uploads/users/profile-pic-en4b5xywnj2023213141949_thumb@2x.jpg",
+   "https://back.explore.family/uploads/posts/1608/la-ua-to49f_gallery@2x.webp",
+   "https://back.explore.family/uploads/users/img-9702-vx094mwpaq202321593107_thumb@2x.JPG",
+   "https://back.explore.family/uploads/users/carl-johan-hasselrot-small-4-im11ahen9r2022111294753_thumb@2x.png",
+   "https://back.explore.family/uploads/posts/724/kyiv-vzqnt_gallery@2x.webp",
+   "https://back.explore.family/uploads/users/photo-glzyzrvuh4202328172320_thumb@2x.JPG",
+   "https://back.explore.family/uploads/posts/500/inferno-galore-8vnch.mp4",
+   "https://back.explore.family/uploads/posts/901/tiger-3-nm0xh.mp4",
+   "https://back.explore.family/uploads/posts/1413/candle-posts-ihvbk.mp4",
+   "https://back.explore.family/uploads/posts/329/120-s1hi6.mp4",
+   "https://back.explore.family/uploads/posts/29/adept-art-isxjo_gallery@2x.webp",
+   "https://back.explore.family/uploads/posts/29/adept-wokm2_gallery@2x.webp",
+   "https://back.explore.family/uploads/posts/29/blog-03-rox4i_gallery@2x.webp",
+   "https://back.explore.family/uploads/posts/29/blog-02-eoidn_gallery@2x.webp",
+   "https://back.explore.family/uploads/posts/29/blog-01-7tcpj_gallery@2x.webp",
+   "https://back.explore.family/uploads/users/avatar-ucqqjo349s20221013132526_thumb@2x.png",
+   "https://back.explore.family/uploads/posts/1680/tennis-o85tx_gallery@2x.webp",
+   "https://back.explore.family/uploads/posts/500/audela-bonane2023-insta-1080x1350px-ts0m6_gallery@2x.webp",
+   "https://back.explore.family/uploads/posts/1205/freestyle-portrait-colors-web-zhqrx_gallery@2x.webp",
+   "https://back.explore.family/uploads/posts/474/ill-get-my-clubs2-z0wvm_gallery@2x.webp",
+   "https://back.explore.family/uploads/users/under-the-weather-b7tttct3p12023215225630_thumb@2x.png",
+   "https://back.explore.family/uploads/posts/222/datsun-exploration-06-nivzo_gallery@2x.webp",
+   "https://back.explore.family/uploads/posts/222/datsun-exploration-05-ch0cg_gallery@2x.webp",
+   "https://back.explore.family/uploads/posts/222/datsun-exploration-04-tfi6c_gallery@2x.webp",
+   "https://back.explore.family/uploads/posts/222/datsun-exploration-03-lzeyc_gallery@2x.webp",
+   "https://back.explore.family/uploads/posts/222/datsun-exploration-02-7dnpr_gallery@2x.webp",
+   "https://back.explore.family/uploads/posts/222/datsun-exploration-01-bcn8o_gallery@2x.webp",
+   "https://back.explore.family/uploads/posts/222/datsun-exploration-07-pfhxf_gallery@2x.webp",
+   "https://back.explore.family/uploads/users/profile-pic-2022-qscskedn8v20221019144856_thumb@2x.jpg",
+   "https://back.explore.family/uploads/posts/527/image-processing20210201-28586-11nei4j-wx9ck_gallery@2x.webp",
+   "https://back.explore.family/uploads/users/1-h4fcwt3xyyr1bnkg-wofsg-zetgxwjv2g202321475808_thumb@2x.jpeg",
+   "https://back.explore.family/uploads/posts/1753/a8592d20-75f2-4f33-9401-003e3a6e9fd3-oefm0_gallery@2x.webp",
+   "https://back.explore.family/uploads/users/86e1a9f8-36b2-48eb-bdd1-d03c468c0c58-uouqxfjgim202321802208_thumb@2x.jpeg",
+   "https://back.explore.family/uploads/posts/600/image-3-simplified-landscape-oetz7_gallery@2x.webp",
+   "https://back.explore.family/uploads/posts/452/banner-mockup-qx1ir_gallery@2x.webp",
+   "https://back.explore.family/uploads/users/img-6856-83fjzzaixq2023131203731_thumb@2x.png",
+   "https://back.explore.family/uploads/posts/1753/gehry-residence-1hi4j_gallery@2x.webp",
+   "https://back.explore.family/uploads/posts/1563/home-or-the-ir-relevance-of-time-5gsd1_gallery@2x.webp",
+   "https://back.explore.family/uploads/users/flowerhead-iii-jwv4imvyic202321595504_thumb@2x.png",
+   "https://back.explore.family/uploads/posts/1224/v2-onhtr_gallery@2x.webp",
+   "https://back.explore.family/uploads/users/vtxb3njj-400x400-7flqag8xz3202321211113_thumb@2x.jpeg",
+   "https://back.explore.family/uploads/posts/1438/dirk-idiotparadise-3000-2zunv_gallery@2x.webp",
+   "https://back.explore.family/uploads/users/avatar-ww0uzyvddm2023213154310_thumb@2x.png",
+   "https://back.explore.family/uploads/posts/3/explore-dny6o_gallery@2x.webp",
+   "https://back.explore.family/uploads/posts/1726/stachel-blum-belxj_gallery@2x.webp",
+   "https://back.explore.family/uploads/users/20210121-181642-h5svuilxyz202321784055_thumb@2x.jpg",
+   "https://back.explore.family/uploads/posts/600/image-1-website-in-situ-gb439_gallery@2x.webp",
+   "https://back.explore.family/uploads/users/logo-4dz1coycac202321694728_thumb@2x.png",
+   "https://back.explore.family/uploads/posts/1727/eb05dc6b-2092-40ab-9149-6d7c8a804fed-2wvr8_gallery@2x.webp",
+   "https://back.explore.family/uploads/users/e057b2ea-1ffe-435a-a1d4-b398417113a4-ffl51neqkw202321781851_thumb@2x.jpeg",
+   "https://back.explore.family/uploads/posts/901/spring-b-3-cqmu8.mp4",
+   "https://back.explore.family/uploads/posts/1442/00-anticipation-qmyli.mp4"
+  ]
+ },
+ "requested": {
+  "viewport": {
+   "width": 390,
+   "height": 844
+  },
+  "deviceScaleFactor": 2
+ },
+ "configuredViewport": {
+  "width": 390,
+  "height": 844
+ },
+ "actual": {
+  "innerWidth": 390,
+  "innerHeight": 844,
+  "devicePixelRatio": 2,
+  "theme": {
+   "classes": [],
+   "attributes": {},
+   "colorScheme": "normal"
+  },
+  "visualViewport": {
+   "width": 390,
+   "height": 844,
+   "scale": 1,
+   "offsetLeft": 0,
+   "offsetTop": 0,
+   "pageLeft": 0,
+   "pageTop": 0
+  },
+  "documentSize": {
+   "width": 390,
+   "height": 23666
+  },
+  "scroll": {
+   "x": 0,
+   "y": 0
+  }
+ },
+ "capture": {
+  "mode": "stitchedParts",
+  "scale": "device",
+  "clip": {
+   "x": 0,
+   "y": 0,
+   "width": 390,
+   "height": 23666
+  }
+ },
+ "png": {
+  "width": 780,
+  "height": 47332
+ },
+ "dimensionCheck": {
+  "status": "pass",
+  "expected": {
+   "width": 780,
+   "height": 47332
+  },
+  "basis": "stitchedParts"
+ },
+ "visualReview": {
+  "status": "pending",
+  "note": "Inspect the final image for complete, settled contents; dimensions alone cannot accept it."
+ },
+ "cropCoordinates": {
+  "status": "unverified",
+  "note": "Do not derive crop or masking boxes from requested size or assume DOM rectangles align with this PNG."
+ },
+ "stitchedFrom": [
+  "mobile-discover-light-full.part0.png",
+  "mobile-discover-light-full.part1.png",
+  "mobile-discover-light-full.part2.png",
+  "mobile-discover-light-full.part3.png"
+ ],
+ "partClip": [
+  {
+   "x": 0,
+   "y": 0,
+   "width": 390,
+   "height": 7000
+  },
+  {
+   "x": 0,
+   "y": 7000,
+   "width": 390,
+   "height": 7000
+  },
+  {
+   "x": 0,
+   "y": 14000,
+   "width": 390,
+   "height": 7000
+  },
+  {
+   "x": 0,
+   "y": 21000,
+   "width": 390,
+   "height": 2666
+  }
+ ],
+ "intendedHeight": 23666
+}
