@@ -71,8 +71,8 @@ want to eyeball an image locally.
   - Node 22, git, git-lfs, authed `gh` — on PATH.
   - `PLAYWRIGHT=~/.design-systems/pw/node_modules/playwright/index.mjs`;
     browsers in `~/.cache/ms-playwright` (validated).
-  - `PYTHON=/usr/bin/python3 make …` — the committed `.venv` is a
-    symlink to a Mac path, dead on Linux; leave it alone.
+  - `PYTHON=/usr/bin/python3 make …`, or `make setup` for a local
+    `.venv` (gitignored, one per checkout).
   - Pillow is in system python; numpy/anything else via `uv run
     --with pillow --with numpy python3 …` (`uv` lives at
     `~/.nix-profile/bin/uv`).
