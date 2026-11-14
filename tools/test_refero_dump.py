@@ -6,6 +6,8 @@ import sqlite3
 import subprocess
 import sys
 import tempfile
+import threading
+import time
 import unittest
 from pathlib import Path
 from unittest import mock
@@ -152,11 +154,21 @@ class RoundTripTest(Tmp):
     def test_loading_the_same_dump_twice_gives_the_same_bytes(self):
         make_db(self.a)
         dump.write(self.a, quiet=True)
+        root = dump.dump_dir(self.a)
+        dump.build(root, self.tmp / "one.db")
+        dump.build(root, self.tmp / "two.db")
+        self.assertEqual((self.tmp / "one.db").read_bytes(),
+                         (self.tmp / "two.db").read_bytes())
+        # Loaded over a live db, only the header's counters move: the file
+        # change counter (24), the schema cookie (40), version-valid-for (92).
         self.copy_dump(self.a, self.b)
         dump.load(self.b, quiet=True)
-        first = self.b.read_bytes()
+        first = bytearray(self.b.read_bytes())
         dump.load(self.b, quiet=True)
-        self.assertEqual(first, self.b.read_bytes())
+        second = bytearray(self.b.read_bytes())
+        for buf in (first, second):
+            buf[24:28] = buf[40:44] = buf[92:96] = b"\0\0\0\0"
+        self.assertEqual(first, second)
 
     def test_a_loaded_db_dumps_to_the_same_text(self):
         make_db(self.a)
@@ -187,7 +199,8 @@ class LayoutTest(Tmp):
         self.assertEqual(files, [
             "fetch_errors.jsonl", "log.jsonl", "schema.sql", "screens.jsonl",
             "similar.jsonl", "sqlite_sequence.jsonl",
-            "styles/a-1.json", "styles/b-2.json", "styles/c-3.json", "styles/d-4.json"])
+            "styles/_table", "styles/a-1.json", "styles/b-2.json", "styles/c-3.json",
+            "styles/d-4.json"])
 
     def test_rows_are_sorted_one_per_line(self):
         lines = (self.root / "similar.jsonl").read_text().split("\n")[:-1]
@@ -273,6 +286,20 @@ class MergeTest(Tmp):
             dump.load(self.a, quiet=True)
         self.assertEqual(self.a.read_bytes(), before)
 
+    def test_a_lost_table_file_is_refused_not_loaded_empty(self):
+        before = snapshot(self.a)
+        for lost in ("similar.jsonl", "styles"):
+            with self.subTest(lost=lost):
+                saved = self.tmp / "saved"
+                shutil.move(str(self.root / lost), saved)
+                with self.assertRaisesRegex(dump.DumpError, "missing"):
+                    dump.load(self.a, quiet=True)
+                self.assertEqual(snapshot(self.a), before)
+                shutil.move(str(saved), self.root / lost)
+        (self.root / "fetch_errors.jsonl").write_text("")  # empty file, empty table
+        dump.load(self.a, quiet=True)
+        self.assertEqual(snapshot(self.a), before)
+
     def test_a_file_for_no_table_is_refused(self):
         (self.root / "nope.jsonl").write_text("")
         with self.assertRaisesRegex(dump.DumpError, "nope.jsonl"):
@@ -334,6 +361,54 @@ class MergeTest(Tmp):
         self.assertEqual(db.execute("SELECT COUNT(*) FROM similar").fetchone(), (6,))
         db.close()
         self.assertEqual(git("status", "--porcelain"), "")
+
+
+class ConcurrencyTest(Tmp):
+    def setUp(self):
+        super().setUp()
+        make_db(self.a)
+        dump.write(self.a, quiet=True)
+        self.root = dump.dump_dir(self.a)
+
+    def test_load_waits_for_an_open_write_and_open_connections_see_the_rebuild(self):
+        writer = sqlite3.connect(self.a, check_same_thread=False)
+        writer.execute("BEGIN IMMEDIATE")
+        writer.execute("UPDATE styles SET name='mid-write' WHERE uuid='a-1'")
+        (self.root / "styles" / "d-4.json").unlink()  # the rebuild drops a row
+        done = threading.Event()
+        loader = threading.Thread(
+            target=lambda: (dump.load(self.a, quiet=True), done.set()))
+        loader.start()
+        time.sleep(0.5)
+        self.assertFalse(done.is_set(), "load did not wait for the writer")
+        writer.commit()
+        loader.join(30)
+        self.assertTrue(done.is_set())
+        # The writer's connection keeps working, on the rebuilt db.
+        writer.execute("UPDATE styles SET name='after' WHERE uuid='b-2'")
+        writer.commit()
+        self.assertEqual(writer.execute("SELECT COUNT(*) FROM styles").fetchone(), (3,))
+        writer.close()
+        db = sqlite3.connect(self.a)
+        self.assertEqual(db.execute("PRAGMA integrity_check").fetchone(), ("ok",))
+        self.assertEqual(db.execute("SELECT name FROM styles WHERE uuid='b-2'").fetchone(),
+                         ("after",))
+        db.close()
+
+    @unittest.skipIf(dump.fcntl is None, "needs fcntl")
+    def test_a_refresh_waits_for_another_holding_the_lock(self):
+        db = sqlite3.connect(self.a)
+        db.execute("UPDATE styles SET name='newer' WHERE uuid='a-1'")
+        db.commit()
+        db.close()
+        with dump._locked(self.a):
+            t = threading.Thread(target=dump.write, args=(self.a, True))
+            t.start()
+            time.sleep(0.3)
+            self.assertTrue(t.is_alive(), "write did not wait for the lock")
+            self.assertNotIn("newer", (self.root / "styles" / "a-1.json").read_text())
+        t.join(30)
+        self.assertIn("newer", (self.root / "styles" / "a-1.json").read_text())
 
 
 class RefreshTest(Tmp):

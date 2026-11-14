@@ -21,7 +21,9 @@ style folders ever mistakes it for a style):
     styles/<uuid>.json      one file per styles row, one column per line: the
                             rows are tens of KB each, so a file per row keeps
                             two branches that touch different styles from
-                            ever touching the same file
+                            ever touching the same file (styles/_table marks
+                            the folder, so losing it is an error, not an
+                            empty table)
     <table>.jsonl           every other table: one JSON object per row, one
                             row per line
 
@@ -32,10 +34,15 @@ JSON numbers (a REAL always carries a decimal point or exponent), NULL is
 null and a BLOB is {"$blob": "<base64>"}.
 
 `load` replays schema.sql, inserts the rows in that same sorted order into a
-new file next to the db, checks the row counts, then swaps it in (the old db
-is first copied to refero/.work/refero.db.bak with the sqlite backup API).
-Loading the same dump twice with the same sqlite library gives byte-identical
-files; the db it replaces can differ in bytes (page layout follows its
+new file next to the db and checks the row counts. A missing table file is
+refused (an empty table is an empty file), and so is a conflict marker. The
+old db is copied to refero/.work/refero.db.bak, then the new pages are copied
+into the live db with the sqlite backup API, which waits for any writer's
+open transaction and leaves open connections reading the rebuilt db. Dumps
+and loads take refero/.work/dump.lock, so two never interleave.
+Building the same dump twice with the same sqlite library gives byte-identical
+files, and loading it twice over a live db differs only in the header's
+counters (change counter, schema cookie); the db it replaces can differ in bytes (page layout follows its
 history, and the header records the sqlite version that wrote it) while
 holding the same rows. Rowids of tables without an INTEGER PRIMARY KEY are
 not kept: they follow the sorted order. sqlite_stat* (ANALYZE output) is not
@@ -48,6 +55,7 @@ and the db disagree.
 
 import argparse
 import base64
+import contextlib
 import json
 import os
 import re
@@ -55,6 +63,11 @@ import sqlite3
 import sys
 import tempfile
 from pathlib import Path
+
+try:
+    import fcntl
+except ImportError:  # not POSIX: no cross-process lock
+    fcntl = None
 
 ROOT = Path(__file__).resolve().parents[2]
 DB = ROOT / "refero" / "refero.db"
@@ -72,6 +85,10 @@ ORDER_HINTS = {
 PRAGMAS = ("page_size", "auto_vacuum", "encoding", "journal_mode",
            "user_version", "application_id")
 SAFE_NAME = re.compile(r"^[A-Za-z0-9][A-Za-z0-9._-]*$")
+# Written into every file-per-row folder, so the folder exists (git keeps no
+# empty folders) and a merge that lost the whole folder is caught. A row file
+# never starts with "_" (SAFE_NAME), so it cannot collide.
+TABLE_MARK = "_table"
 
 
 class DumpError(Exception):
@@ -193,6 +210,8 @@ def render(db_path: Path) -> dict:
                     raise DumpError(f"{table}: a file per row needs a "
                                     f"single-column primary key")
                 i = columns.index(pk[0])
+                files[f"{table}/{TABLE_MARK}"] = (
+                    f"{table}: one <primary key>.json file per row\n")
                 seen = set()
                 for r in rows:
                     name = str(r[i])
@@ -229,7 +248,7 @@ def _expected_name(rel: str, tables) -> bool:
     parts = rel.split("/")
     if len(parts) == 2:
         return parts[0] in ROW_FILE_TABLES and parts[0] in tables \
-            and parts[1].endswith(".json")
+            and (parts[1].endswith(".json") or parts[1] == TABLE_MARK)
     return len(parts) == 1 and rel.endswith(".jsonl") \
         and rel[:-6] in tables and rel[:-6] not in ROW_FILE_TABLES
 
@@ -250,7 +269,30 @@ def _write_atomic(path: Path, text: str):
         raise
 
 
+@contextlib.contextmanager
+def _locked(db_path: Path):
+    """Hold refero/.work/dump.lock: one dump or load at a time across
+    processes, so a slower refresh can never write an older snapshot over a
+    newer one, and a load never interleaves with a refresh."""
+    if fcntl is None:
+        yield
+        return
+    lock = Path(db_path).parent / ".work" / "dump.lock"
+    lock.parent.mkdir(parents=True, exist_ok=True)
+    with open(lock, "w") as f:
+        fcntl.flock(f, fcntl.LOCK_EX)
+        try:
+            yield
+        finally:
+            fcntl.flock(f, fcntl.LOCK_UN)
+
+
 def write(db_path: Path = DB, quiet: bool = False) -> int:
+    with _locked(db_path):
+        return _write(db_path, quiet)
+
+
+def _write(db_path: Path, quiet: bool) -> int:
     """Bring the dump beside db_path in line with the db. Rewrites only the
     files whose text changed and deletes the ones no row backs any more.
     Returns the number of files written or deleted."""
@@ -325,8 +367,8 @@ def _statements(sql_text: str):
 
 
 def parse(root: Path):
-    """(pragmas, table DDL, other DDL, {table: [row tuples]}, {table: columns})
-    read from a dump folder, rows still in file order."""
+    """schema.sql split into (PRAGMA statements, CREATE TABLE statements,
+    every other statement: indexes, views, triggers), each in file order."""
     schema = (root / "schema.sql").read_text(encoding="utf-8")
     pragmas, tables, others = [], [], []
     for stmt in _statements(schema):
@@ -359,18 +401,26 @@ def _load_rows(root: Path, table: str, columns: list):
     rows = []
     if table in ROW_FILE_TABLES:
         d = root / table
-        for p in sorted(d.glob("*.json")) if d.is_dir() else ():
+        if not (d / TABLE_MARK).is_file():
+            raise DumpError(f"{table}/{TABLE_MARK} is missing: the dump of "
+                            f"{table} is gone (a bad merge?); refusing to load "
+                            "an empty table over the db")
+        for p in sorted(d.glob("*.json")):
             rows.append(row_of(_json(p.read_text(encoding="utf-8"),
                                      f"{table}/{p.name}"), f"{table}/{p.name}"))
     else:
         p = root / f"{table}.jsonl"
-        if p.is_file():
-            # Split on \n only: str.splitlines() would also break at U+2028,
-            # U+0085 and friends, which JSON leaves raw inside strings.
-            for n, line in enumerate(p.read_text(encoding="utf-8").split("\n"), 1):
-                if line.strip():
-                    where = f"{table}.jsonl:{n}"
-                    rows.append(row_of(_json(line, where), where))
+        if not p.is_file():
+            if table == "sqlite_sequence":
+                return rows
+            raise DumpError(f"{table}.jsonl is missing (a bad merge?); an "
+                            "empty table is an empty file, so refusing to load")
+        # Split on \n only: str.splitlines() would also break at U+2028,
+        # U+0085 and friends, which JSON leaves raw inside strings.
+        for n, line in enumerate(p.read_text(encoding="utf-8").split("\n"), 1):
+            if line.strip():
+                where = f"{table}.jsonl:{n}"
+                rows.append(row_of(_json(line, where), where))
     return rows
 
 
@@ -446,6 +496,13 @@ def load(db_path: Path = DB, quiet: bool = False) -> dict:
     root = dump_dir(db_path)
     if not (root / "schema.sql").is_file():
         raise DumpError(f"no dump at {root}")
+    with _locked(db_path):
+        counts = _load(db_path, root, quiet)
+        _write(db_path, quiet)
+    return counts
+
+
+def _load(db_path: Path, root: Path, quiet: bool) -> dict:
     tmp = db_path.with_name(f".{db_path.name}.load.tmp")
     try:
         counts = build(root, tmp)
@@ -454,15 +511,26 @@ def load(db_path: Path = DB, quiet: bool = False) -> dict:
             backup(db_path, bak)
             if not quiet:
                 print(f"previous db kept at {bak}")
-        os.replace(tmp, db_path)
+            # Copy the new pages into the live file through sqlite rather
+            # than swapping the file: the backup takes sqlite's own locks, so
+            # it waits for a writer's open transaction to commit, and every
+            # connection still open on the db sees the rebuilt content
+            # instead of writing on into a replaced file.
+            src = sqlite3.connect(f"file:{tmp}?mode=ro", uri=True)
+            dst = sqlite3.connect(db_path, timeout=60)
+            try:
+                dst.execute("PRAGMA busy_timeout=60000")
+                src.backup(dst)
+            finally:
+                dst.close()
+                src.close()
+        else:
+            os.replace(tmp, db_path)
     finally:
         tmp.unlink(missing_ok=True)
-    for side in ("-journal", "-wal", "-shm"):
-        Path(f"{db_path}{side}").unlink(missing_ok=True)
     if not quiet:
         print("loaded " + ", ".join(f"{t} {n}" for t, n in counts.items())
               + f" into {db_path}")
-    write(db_path, quiet=quiet)
     return counts
 
 

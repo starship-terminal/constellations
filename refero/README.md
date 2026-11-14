@@ -125,15 +125,20 @@ committed in the same commit as the db, and that is what you merge.
 4. Run `make refero-db`. It rebuilds `refero.db` from the merged dump (the
    previous file is kept at `refero/.work/refero.db.bak`), checks the row
    counts, and rewrites `.dump/` in its canonical order. It refuses a dump
-   that still holds conflict markers.
+   that still holds conflict markers or has lost a table's file (an empty
+   table is an empty `.jsonl`; `styles/_table` marks the styles folder).
+   It copies the new pages into the live db through sqlite, so it waits for
+   a writer's open transaction, and it shares `refero/.work/dump.lock` with
+   the writers' dump refresh; still, stop running writers first, because
+   rows they commit later are not in the dump you merged.
 5. Regenerate the files derived from the db that conflicted too:
    `python3 tools/refero/fetch.py --catalog-only` for `catalog.json`,
    `index_similar.py` for `similar.json`. Run `make check`, then commit the
    db, the dump and those files together.
 
 `make refero-db` also builds a working db on a clone without `git lfs pull`.
-Loading the same dump twice gives byte-identical files with the same sqlite
-library; the rebuilt db can still differ in bytes from the committed one
+Building the same dump twice gives byte-identical files with the same
+sqlite library (over a live db only the header counters differ); the rebuilt db can still differ in bytes from the committed one
 (page layout follows the file's history, and the header names the sqlite
 version that wrote it) while every query returns the same rows. No git merge
 driver is configured: git-lfs owns `*.db`'s attributes, and a driver would
