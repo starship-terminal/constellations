@@ -3,7 +3,7 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 137,
+    "system_packages": 136,
     "system_domains": 128,
     "matched_domains": 101,
     "missing_domains": 332,
@@ -1571,12 +1571,6 @@
         }
       ],
       "pkgs": [
-        {
-          "slug": "faire",
-          "name": "Faire",
-          "url": "https://www.faire.com",
-          "name_match": true
-        },
         {
           "slug": "faire",
           "name": "Faire",
