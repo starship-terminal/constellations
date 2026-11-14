@@ -182,7 +182,8 @@ window.__snap = function (label, REDACT) {
   // url(); any other ; (an &amp; entity, a ;-separated query) stays inside, as do commas and
   // parentheses, except a ")" that closes an unquoted url( ... ) before ; , } or the end.
   const cutSigned = (s) => s.replace(/[?#](?:[^\s"'<>);{}]|;(?![\w-]+\s*:)|\)(?![\s;,"'}]|$))*/g, (q) => (SIGNED.test(q) ? '' : q));
-  clone.querySelectorAll('*').forEach((n) => { for (const a of [...n.attributes]) { const v = cutSigned(a.value); if (v !== a.value) n.setAttribute(a.name, v); } });
+  const cutSignedUrl = (s) => s.replace(/[?#](?:[^\s"'<>);{}]|;|\)(?![\s"'}]|$))*/g, (q) => (SIGNED.test(q) ? '' : q));
+  clone.querySelectorAll('*').forEach((n) => { for (const a of [...n.attributes]) { const v = (a.name === 'style' ? cutSigned : cutSignedUrl)(a.value); if (v !== a.value) n.setAttribute(a.name, v); } });
   const rx = REDACT.replace.map(([pattern, flags, rep]) => [new RegExp(pattern, flags.includes('g') ? flags : flags + 'g'), rep]);
   const scrub = (v) => rx.reduce((t, [r, rep]) => t.replace(r, rep), v);
   const tw = document.createTreeWalker(clone, NodeFilter.SHOW_TEXT | NodeFilter.SHOW_COMMENT);

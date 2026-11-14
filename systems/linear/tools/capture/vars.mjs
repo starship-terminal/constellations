@@ -141,7 +141,9 @@ for (const [theme, label] of Object.entries(COPIES)) {
     }
     const provider = (document.querySelector('main') || document.body).closest('[class*=theme-provider]');
     const meta = {};
-    document.querySelectorAll('meta[name=theme-color], link[rel=mask-icon], link[rel=manifest], meta[name=color-scheme]').forEach((m) => { meta[(m.getAttribute('name') || m.getAttribute('rel')) + (m.getAttribute('media') ? ` (${m.getAttribute('media')})` : '')] = m.getAttribute('content') || m.getAttribute('color') || m.getAttribute('href'); });
+    // A link href can carry a signed or per-account query: record origin and path only.
+    const hrefPath = (h) => { try { const u = new URL(h, location.href); return u.origin + u.pathname; } catch { return null; } };
+    document.querySelectorAll('meta[name=theme-color], link[rel=mask-icon], link[rel=manifest], meta[name=color-scheme]').forEach((m) => { meta[(m.getAttribute('name') || m.getAttribute('rel')) + (m.getAttribute('media') ? ` (${m.getAttribute('media')})` : '')] = m.getAttribute('content') || m.getAttribute('color') || hrefPath(m.getAttribute('href')); });
     return { theme, rootDefaults, provider: provider ? 'theme-provider' : null, aliases, media, zIndex, transitions, durations, easings, shadows, fontFaces, meta, htmlClass: document.documentElement.className };
   });
   out.theme[theme] = res.theme;
