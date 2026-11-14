@@ -2,13 +2,13 @@
 
 The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Captured from farfetch.com on 2026-11-14, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. www.farfetch.com answers Akamai 403 to automation and its CDNs 429, so the DOM is Wayback Machine SSR snapshots served locally and painted by their archived Emotion CSS with scripts removed — nothing was signed into, submitted or bought; hover/focus/pressed states were forced, and the controls hydration owns (size listbox, menus, filter panels, accordions) stay closed rather than faked. Department, product, category and footer links and the account/wishlist/bag icons were measured, never followed; the search and newsletter fields were typed into and cleared, never submitted.
 
-The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (72 components, 152 states). The page layouts are described in [patterns.md](patterns.md).
+The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (73 components, 150 states). The page layouts are described in [patterns.md](patterns.md).
 
 How to read an entry:
 
 - A colour is its value followed by the palette token in [tokens.json](tokens.json) with the same value, when there is one. Text is written family size/line-height weight, then its colour, for example `SF Pro 14/21 500, #21252e`, and is read from the first text node inside the component.
 - The state table has one row per state that differs. The first row lists every value; later rows list only what changes. A state with the same values as the first is named in its label, for example "default (same: focus-visible)". When the root paints nothing, "Child layers" names the first nodes inside it that do.
-- Crops are images of the component read from the live page, in [components/crops/](components/crops) (150 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
+- Crops are images of the component read from the live page, in [components/crops/](components/crops) (148 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
 
 ## Discovery list
 
@@ -39,7 +39,7 @@ Screenshots are named `{page}-{theme}-state.png`: every page paints `light`. Des
 
 Values that apply across entries, from the measurement files.
 
-**Focus.** 20 components were given a real keyboard focus. 20 draw an outline ring: `topbar-dept` (2px solid #101010, offset -2px), `topbar-locale` (2px solid #101010, offset -2px), `topbar-account` (2px solid #101010, offset -2px), `topbar-wishlist` (2px solid #101010, offset -2px), `topbar-bag` (2px solid #101010, offset -2px), `nav-link` (2px solid #101010, offset -2px), `nav-sale` (2px solid #101010, offset -2px), `search-submit` (2px solid #101010, offset -2px), `filter-button` (2px solid #101010, offset -2px), `card-wishlist` (2px solid #101010, offset -2px), `pagination-next` (2px solid #101010, offset -2px), `footer-link` (2px solid #101010, offset -2px), `news-submit` (2px solid #101010, offset 1px), `footer-social` (2px solid #101010, offset -2px), `pdp-brand` (2px solid #101010, offset -2px), `add-to-bag` (2px solid #101010, offset -2px), `pdp-wishlist` (2px solid #101010, offset -2px), `accordion-button` (2px solid #101010, offset -2px), `dept-kicker` (2px solid #101010, offset -2px), `hero-cta` (2px solid #005fcc, offset -2px).
+**Focus.** 19 components were given a real keyboard focus. 19 draw an outline ring: `topbar-dept` (2px solid #101010, offset -2px), `topbar-locale` (2px solid #101010, offset -2px), `topbar-account` (2px solid #101010, offset -2px), `topbar-wishlist` (2px solid #101010, offset -2px), `topbar-bag` (2px solid #101010, offset -2px), `nav-link` (2px solid #101010, offset -2px), `nav-sale` (2px solid #101010, offset -2px), `search-submit` (2px solid #101010, offset -2px), `filter-button` (2px solid #101010, offset -2px), `card-wishlist` (2px solid #101010, offset -2px), `pagination-next` (2px solid #101010, offset -2px), `footer-link` (2px solid #101010, offset -2px), `news-submit` (2px solid #101010, offset 1px), `footer-social` (2px solid #101010, offset -2px), `pdp-brand` (2px solid #101010, offset -2px), `add-to-bag` (2px solid #101010, offset -2px), `pdp-wishlist` (2px solid #101010, offset -2px), `accordion-button` (2px solid #101010, offset -2px), `hero-cta` (2px solid #005fcc, offset -2px).
 
 **Pressed.** Forced with DevTools (`CSS.forcePseudoState` :active:hover). Nothing a real press would submit was ever pressed.
 
@@ -183,8 +183,8 @@ The search-icon submit inside the header field; measured, never pressed. Read as
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 32 x 32; border 1px solid rgba(255, 255, 255, 0) `light.action.ghost-dark.active.stroke`; background rgba(255, 255, 255, 0) `light.action.ghost-dark.active.stroke`; text Farfetch Basis 15/normal 700, #b6b6b6 `core.palette.legacy.dark.grey`; transition background-color 0.3s cubic-bezier(0, 0, 0, 1), border-color 0.3s cubic-bezier(0, 0, 0, 1), opacity 0.3s cubic-bezier(0, 0, 0, 1), color 0.3s cubic-bezier(0, 0, 0, 1); icon 24 x 24, #b6b6b6 `core.palette.legacy.dark.grey`; layers ::before rgba(0, 0, 0, 0) 0px none 1; ancestors div.ltr-qfqbf bg #ffffff `core.palette.named.branco` |
-| focus-visible | outline 2px solid #101010, offset -2px |
+| default (same: hover, pressed) | size 32 x 32; border 1px solid rgba(255, 255, 255, 0) `light.action.ghost-dark.active.stroke`; background rgba(255, 255, 255, 0) `light.action.ghost-dark.active.stroke`; text Farfetch Basis 15/normal 700, #b6b6b6 `core.palette.legacy.dark.grey`; transition background-color 0.3s cubic-bezier(0, 0, 0, 1), border-color 0.3s cubic-bezier(0, 0, 0, 1), opacity 0.3s cubic-bezier(0, 0, 0, 1), color 0.3s cubic-bezier(0, 0, 0, 1); icon 24 x 24, #b6b6b6 `core.palette.legacy.dark.grey`; layers ::before rgba(0, 0, 0, 0) 0px none 1; ancestors div.ltr-qfqbf bg #ffffff `core.palette.named.branco` shadow transparent 0px -1px 0px 0px inset |
+| focus-visible | outline 2px solid #101010, offset -2px; ancestors div.ltr-qfqbf bg #ffffff `core.palette.named.branco` shadow #222222 0px -1px 0px 0px inset |
 
 ![Search icon button default](components/crops/search-submit-default.png) ![Search icon button hover](components/crops/search-submit-hover.png) ![Search icon button focus-visible](components/crops/search-submit-focus-visible.png) ![Search icon button pressed](components/crops/search-submit-pressed.png)
 
@@ -517,7 +517,7 @@ Not on the page when it was captured.
 
 ### Home (department chooser)
 
-The country landing: 'Choose a department' over three full-bleed tiles (WOMENSWEAR/MENSWEAR/KIDSWEAR with Display overlays), per-department Kicker link columns and the editorial-card feed.
+The country landing: 'Choose a department' over three full-bleed tiles (WOMENSWEAR/MENSWEAR/KIDSWEAR with Display overlays), per-department rows of Kicker-labelled category cards, then the newsletter and footer (the archived home paints no editorial feed).
 
 #### Chooser heading
 "Choose a department" — the Title heading over the three department tiles. Read as `dept-heading` on the home page.
@@ -537,24 +537,26 @@ Child layers that carry the look: div::before 447.984pxx251.922px image linear-g
 
 ![Department tile default](components/crops/dept-tile-default.png) ![Department tile hover](components/crops/dept-tile-hover.png)
 
-#### Category kicker link
-A Kicker category link under a department column ("Clothing" under Womenswear); measured, never followed. Read as `dept-kicker` on the home page.
+#### Category kicker
+The Kicker heading ("Clothing") over a category card in a department column; the card around it is the link, the heading itself is not interactive. Read as `dept-kicker` on the home page.
+
+**Values (default).** size 329.98 x 19.98; background transparent; text Farfetch Basis 15/19.99 400, #222222 `core.palette.named.preto`.
+
+![Category kicker default](components/crops/dept-kicker-default.png)
+
+#### Category card
+A department-column category card (image with a Kicker label, e.g. NEW IN); measured, never followed. Read as `home-category-card` on the home page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 329.98 x 483.59; background transparent; text Farfetch Basis 15/19.99 400, #222222 `core.palette.named.preto` |
-| focus-visible | outline 2px solid #101010, offset -2px; layers a 330.0x483.6 2px solid rgb(16, 16, 16) offset -2px |
+| default (same: hover) | size 329.98 x 483.59; background transparent; text Farfetch Basis 15/19.99 400, #222222 `core.palette.named.preto` |
 
-![Category kicker link default](components/crops/dept-kicker-default.png) ![Category kicker link hover](components/crops/dept-kicker-hover.png) ![Category kicker link focus-visible](components/crops/dept-kicker-focus-visible.png) ![Category kicker link pressed](components/crops/dept-kicker-pressed.png)
+![Category card default](components/crops/home-category-card-default.png) ![Category card hover](components/crops/home-category-card-hover.png)
 
 #### Editorial card
-A fashion-feed editorial card on the home tail. Read as `home-editorial` on the home page.
+A fashion-feed editorial card on the home tail. The archived home paints only department and category cards, so no feed card exists to measure (the listing pages carry the editorial-card component). Read as `home-editorial` on the home page.
 
-**Values (default).** size 447.98 x 251.92; background transparent; text Farfetch Basis 30/38.00 400, #ffffff `core.palette.named.branco`; layers div::before._eb25ab._f6155d 447.984pxx251.922px.
-
-Child layers that carry the look: div::before 447.984pxx251.922px image linear-gradient(rgba(34, 34, 34, 0), rgba(34, 34, 34, 0.82)).
-
-![Editorial card default](components/crops/home-editorial-default.png)
+Not on the page when it was captured.
 
 ### Type specimens
 
@@ -644,7 +646,8 @@ The footer "Get updates by Email" field; focused and typed into then cleared —
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focused, filled) | size 300 x 42; padding 0px 0px 0px 16px; background #ffffff `core.palette.named.branco`; text Farfetch Basis 15/19.99 400, #222222 `core.palette.named.preto`; placeholder #727272 `core.palette.legacy.darker.grey`; ancestors div.ltr-6xvdur bg #ffffff `core.palette.named.branco` |
+| default | size 300 x 42; padding 0px 0px 0px 16px; background #ffffff `core.palette.named.branco`; text Farfetch Basis 15/19.99 400, #222222 `core.palette.named.preto`; placeholder #727272 `core.palette.legacy.darker.grey`; ancestors div.ltr-6xvdur bg #ffffff `core.palette.named.branco` |
+| focused, filled | ancestors div.ltr-6xvdur bg #ffffff `core.palette.named.branco` outline 2px solid #101010 |
 
 ![Newsletter field default](components/crops/news-field-default.png) ![Newsletter field focused](components/crops/news-field-focused.png) ![Newsletter field filled](components/crops/news-field-filled.png)
 

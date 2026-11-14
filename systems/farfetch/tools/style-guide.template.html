@@ -185,10 +185,12 @@ const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) 
 (function palette() {
   let h = '';
   for (const [g, grp] of Object.entries(TOK.core.palette || {})) {
-    const items = (grp && grp.t ? [['palette.' + g, grp]] : flat(grp, 'palette.' + g + '.')).filter(([, t]) => t.t === 'color');
+    const items = (grp && grp.t ? [['palette.' + g, grp]] : flat(grp, 'palette.' + g + '.')).filter(([, t]) => t.t === 'color' || t.t === 'gradient');
     if (!items.length) continue;
     h += `<div class="pal-h">palette.${esc(g)}</div><div class="pal">`;
-    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    // A gradient token's value is its list of stops; show them as "start 0% → end 100%".
+    const val = (t) => Array.isArray(t.v) ? t.v.map((x) => x.color + ' ' + Math.round(x.position * 100) + '%').join(' → ') : t.v;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(val(t))}</div></div></div>`;
     h += '</div>';
   }
   for (const [setname, label] of [['light', 'light roles'], ['dark', 'dark roles (none — the site paints one theme)']]) {
@@ -243,7 +245,7 @@ const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) 
     const v = t.v || {};
     const fam = String(v.fontFamily || '').split(',')[0].replace(/"/g, '').replace(/'/g, '');
     const spec = [v.fontSize, v.lineHeight && '/' + v.lineHeight, v.fontWeight && ' ' + v.fontWeight, v.textTransform && ' ' + v.textTransform].filter(Boolean).join('');
-    h += `<div class="tr"><span class="ts" style='font-size:${Math.min(parseFloat(v.fontSize) || 14, 40)}px;font-family:${(v.fontFamily || 'inherit')};text-transform:${v.textTransform || 'none'}'>${esc(n)} — FARFETCH</span><span class="tv">${esc(fam)} ${esc(spec)}</span></div>`;
+    h += `<div class="tr"><span class="ts" style='font-size:${Math.min(parseFloat(v.fontSize) || 14, 40)}px;font-family:${(v.fontFamily || 'inherit')};line-height:${v.lineHeight || 'normal'};text-transform:${v.textTransform || 'none'}'>${esc(n)} — FARFETCH</span><span class="tv">${esc(fam)} ${esc(spec)}</span></div>`;
   }
   $('#styles-out').innerHTML = h;
 })();

@@ -1329,39 +1329,13 @@ Crops: `dept-tile-default.png`, `dept-tile-hover.png`.
 
 #### dept-kicker
 
-Category kicker link. A Kicker category link under a department column ("Clothing" under Womenswear); measured, never followed.
+Category kicker. The Kicker heading ("Clothing") over a category card in a department column; the card around it is the link, the heading itself is not interactive.
 
-Page: home. Selector: `a Clothing`. States: default, hover, focus-visible, pressed.
-
-| Property | default | hover | focus-visible | pressed |
-|---|---|---|---|---|
-| Size (w x h) | 329.98 x 483.59 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | 2px solid #101010 offset -2px | = |
-| Font | Farfetch Basis 15px/19.9995px 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #222222 | = | = | = |
-| Text node | h2._d699d4._a937d7: Farfetch Basis 15px/19.9995px 400, #222222 | = | = | = |
-| Transition | none | = | = | = |
-| Cursor | pointer | = | = | = |
-| How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
-| Painted layers | - | = | a 330.0x483.6 outline 2px solid #101010 offset -2px | = |
-
-Crops: `dept-kicker-default.png`, `dept-kicker-hover.png`, `dept-kicker-focus-visible.png`, `dept-kicker-pressed.png`.
-
-#### home-editorial
-
-Editorial card. A fashion-feed editorial card on the home tail.
-
-Page: home. Selector: `editorial-post`. States: default.
+Page: home. Selector: `Kicker Clothing`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 447.98 x 251.92 |
+| Size (w x h) | 329.98 x 19.98 |
 | Padding | 0px |
 | Border | none |
 | Radius | 0px |
@@ -1371,12 +1345,43 @@ Page: home. Selector: `editorial-post`. States: default.
 | Font | Farfetch Basis 15px/19.9995px 400 |
 | Letter spacing | normal |
 | Colour | #222222 |
-| Text node | p._bdc4ef.ltr-r4p3u0-Display: Farfetch Basis 30px/38.001px 400, #ffffff |
 | Transition | none |
-| Painted layers | div::before._eb25ab._f6155d 447.984pxx251.922px image linear-gradient(#222222 @ 0, #222222 @ 0.82) |
+| Cursor | pointer |
 | How | at rest |
 
-Crops: `home-editorial-default.png`.
+Crops: `dept-kicker-default.png`.
+
+#### home-category-card
+
+Category card. A department-column category card (image with a Kicker label, e.g. NEW IN); measured, never followed.
+
+Page: home. Selector: `editorial-post with Kicker`. States: default, hover.
+
+| Property | default | hover |
+|---|---|---|
+| Size (w x h) | 329.98 x 483.59 | = |
+| Padding | 0px | = |
+| Border | none | = |
+| Radius | 0px | = |
+| Background | transparent | = |
+| Box shadow | none | = |
+| Outline | none | = |
+| Font | Farfetch Basis 15px/19.9995px 400 | = |
+| Letter spacing | normal | = |
+| Colour | #222222 | = |
+| Text node | h2._d699d4._a937d7: Farfetch Basis 15px/19.9995px 400, #222222 | = |
+| Transition | none | = |
+| How | at rest | mouse hover |
+
+Crops: `home-category-card-default.png`, `home-category-card-hover.png`.
+
+#### home-editorial
+
+Editorial card. A fashion-feed editorial card on the home tail. The archived home paints only department and category cards, so no feed card exists to measure (the listing pages carry the editorial-card component).
+
+Page: home. Selector: `editorial-post without Kicker or Display`. States: .
+
+Not found on the page at capture time.
 
 ### Type specimens
 

@@ -339,8 +339,11 @@ async function home() {
   const g = G.home;
   await S('dept-heading', q('[data-component="Title"], h2').filter({ hasText: /^Choose a department$/i }).filter({ visible: true }).first(), ['default'], { group: g, title: 'Chooser heading', desc: '"Choose a department" — the Title heading over the three department tiles.', sel: 'Title Choose a department' });
   await S('dept-tile', q('a').filter({ has: q('[data-component="Display"]').filter({ hasText: /^WOMENSWEAR$/ }) }).filter({ visible: true }).first(), ['default', 'hover'], { group: g, title: 'Department tile', desc: 'A department chooser tile — full-bleed image with the department Display name overlaid; measured, never followed.', sel: 'a:has(Display WOMENSWEAR)' });
-  await S('dept-kicker', q('a').filter({ hasText: /^Clothing$/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Category kicker link', desc: 'A Kicker category link under a department column ("Clothing" under Womenswear); measured, never followed.', sel: 'a Clothing' });
-  await S('home-editorial', q('[data-testid="editorial-post"], [data-component="EditorialPost"]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Editorial card', desc: 'A fashion-feed editorial card on the home tail.', sel: 'editorial-post' });
+  // On the archived home every editorial-post article is a department or category card (the three
+  // chooser tiles, then the NEW IN / CLOTHING / ... columns); no fashion-feed card is painted.
+  await S('dept-kicker', q('[data-component="Kicker"]').filter({ hasText: /^Clothing$/i }).filter({ visible: true }).first(), ['default'], { group: g, title: 'Category kicker', desc: 'The Kicker heading ("Clothing") over a category card in a department column; the card around it is the link, the heading itself is not interactive.', sel: 'Kicker Clothing' }, { dropPrior: true });
+  await S('home-category-card', q('article[data-testid="editorial-post"]').filter({ has: q('[data-component="Kicker"]') }).filter({ visible: true }).first(), ['default', 'hover'], { group: g, title: 'Category card', desc: 'A department-column category card (image with a Kicker label, e.g. NEW IN); measured, never followed.', sel: 'editorial-post with Kicker' });
+  await S('home-editorial', q('[data-testid="editorial-post"]').filter({ hasNot: q('[data-component="Kicker"], [data-component="Display"]') }).filter({ visible: true }).first(), ['default'], { group: g, title: 'Editorial card', desc: 'A fashion-feed editorial card on the home tail. The archived home paints only department and category cards, so no feed card exists to measure (the listing pages carry the editorial-card component).', sel: 'editorial-post without Kicker or Display' }, { dropPrior: true });
   await footer();
   save();
 }

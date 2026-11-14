@@ -15,8 +15,8 @@ How the components in [components.md](components.md) combine on each captured su
 The country landing is a chooser, not a feed:
 
 1. **"Choose a department"** — a centered page title over three full-bleed tiles (WOMENSWEAR / MENSWEAR / KIDSWEAR), each a campaign photograph with an uppercase Display overlay label; each tile is a department landing link.
-2. **Department link columns** — under the tiles, a per-department Kicker heading over a short column of links (New in, Clothing, Shoes, Bags, Sale …) in muted label type.
-3. **The editorial feed** — then the page settles into the standard feed: campaign modules and editorial cards (image, uppercase brand/category kicker, dek, ghost link).
+2. **Category cards** — under the tiles, one row of four 330 x 484 cards per department (Womenswear: New in, Clothing, Bags, Shoes; Menswear: New in, Clothing, Accessories, Shoes; Kidswear: Boys, Girls, Baby boys, Baby girls), each an image with a Kicker heading and one link around the whole card.
+3. **Newsletter and footer** — the archived home ends there: it paints no campaign modules or fashion-feed editorial cards (those appear on the listing pages), so none are described here.
 
 ## Product listing (modular PLP)
 

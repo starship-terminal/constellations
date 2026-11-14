@@ -163,7 +163,14 @@ def props(v):
             bits.append(" ".join(x for x in (p["node"], p.get("size"), p.get("bg"), p.get("border"), p.get("shadow"), p.get("outline"), p.get("radius")) if x))
     if bits:
         o["layers"] = "; ".join(bits)[:400]
-    anc = [f"{a['node']} bg {colour(a['bg'])}" for a in v.get("ancestors", []) if a.get("bg")]
+    # A parent can carry the state: the 2px focus ring on a field's wrapper is its outline, not the input's.
+    anc = []
+    for a in v.get("ancestors", []):
+        bits_ = ([f"bg {colour(a['bg'])}"] if a.get("bg") else []) \
+            + ([f"outline {colour(a['outline'])}"] if a.get("outline") else []) \
+            + ([f"shadow {colour(a['shadow'], tokens=False)}"] if a.get("shadow") else [])
+        if bits_:
+            anc.append(f"{a['node']} " + " ".join(bits_))
     if anc:
         o["ancestors"] = "; ".join(anc)[:200]
     return o
@@ -238,7 +245,7 @@ GROUP_INTRO = {
     "Product listing page": "The modular women's/men's listing front (/shopping/{women,men}/items.aspx): the 1392px campaign hero modules (DisplayLarge + Editorial dek + Shop Now), the 'Brands of the moment' tile module, the 4-up product-card grid (brand kicker, description, price, wishlist heart) and the editorial-card rail. Breadcrumbs, filters and pagination render after hydration on these pages, so they are gaps here and measured on the edit page instead.",
     "New-in edit page": "The 'New In' edit (/sets/women/new-in-this-week-eu-women.aspx) — the classic listing: Breadcrumbs, the PageTitleHeading + collapsible description, the All Filters button, the quick-filter scroller (skeleton until hydration), product cards with size hints and sale pricing, showcase carousels with CarouselArrowSmall controls, and the Pagination row.",
     "Product detail page": "A D&G slides PDP: breadcrumbs, the image carousel with ghost arrows, the ghost-dark brand link, product title, the $345 PriceCallout, the 44px 'Select size' combobox, the square #222 Add To Bag and the Wishlist toggle, then the information accordion and skeletonised related showcases.",
-    "Home (department chooser)": "The country landing: 'Choose a department' over three full-bleed tiles (WOMENSWEAR/MENSWEAR/KIDSWEAR with Display overlays), per-department Kicker link columns and the editorial-card feed.",
+    "Home (department chooser)": "The country landing: 'Choose a department' over three full-bleed tiles (WOMENSWEAR/MENSWEAR/KIDSWEAR with Display overlays), per-department rows of Kicker-labelled category cards, then the newsletter and footer (the archived home paints no editorial feed).",
     "Type specimens": "The pulse type roles measured where they paint on the pages (DisplayLarge, Display, Title, Kicker, Body, Footnote, Label, Editorial).",
     "Footer": "The site footer: section-title columns of links, the 'Get updates by Email' field + 90px Sign Up button, the social IconButtonGhostDark row and the legal line.",
     "Mobile (390 wide)": "The pages at phone width: the TopBar collapses the departments into the DropdownMenuSelector trigger; the NavBar row and buy box re-stack (the archived SSR paints the desktop chrome responsively — the hamburger itself needs hydration).",
