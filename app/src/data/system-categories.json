@@ -760,5 +760,11 @@
     "groupId": "web-categories",
     "labels": ["AI Tool", "Productivity"],
     "reason": "catalog.json describes an AI-clone Q&A product: ask fields, discover galleries, public search results, expert profiles and a chat composer."
+  },
+  {
+    "referenceId": "systems:esquire",
+    "groupId": "web-categories",
+    "labels": ["Magazines & Newspapers", "Lifestyle"],
+    "reason": "catalog.json describes a men's magazine site: editorial chrome, story cards, plan/subscribe cards, FAQ and newsletter surfaces."
   }
 ]

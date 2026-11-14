@@ -1,7 +1,7 @@
 {
  "date": "2026-11-14",
  "rubric": "4",
- "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): read every captured component's states and crops, the raw/css-vars.json declared layer, tokens.json, README/patterns/components.md and the scorecard rubric; corrected after Greptile review found flipped/selected states were never captured",
+ "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): read every captured component's states and crops, the raw/css-vars.json declared layer, tokens.json, README/patterns/components.md and the scorecard rubric",
  "systems": [
   {
    "slug": "brilliant",
@@ -15963,8 +15963,136 @@
    "category": "Productivity",
    "reviewed": "2026-11-14",
    "reviewedPlatform": "web"
+  },
+  {
+   "slug": "descript",
+   "grades": {
+    "F1": {
+     "grade": "meets",
+     "evidence": "The stylesheet declares the named palette outright: six step scales exported under core.color.* - red (14), maroon (14), lilac (14), neutral (14), green (12) and gray (8) - plus the Core canvas constants and the Tools-Glow pastel accents; measured roles alias the declared steps they match."
+    },
+    "F2": {
+     "grade": "partly",
+     "evidence": "Measured roles: light.background.page (#fff7fa blush field), .footer (#110a0d), .toggle-track (#f1eaed) and the auth fills (light.action.auth-outline #fdfcfc); no raised/overlay/scrim roles exist on the public surface - no dialog or overlay was ever opened."
+    },
+    "F3": {
+     "grade": "partly",
+     "evidence": "Measured: light.text.ink (#26171d), .body (#1a1a1a), .accent (#f73b3b), .on-dark (#fff8f4) and .muted-on-dark (#c4b5bb tab text). No secondary/disabled/link roles are separately measured - links share ink."
+    },
+    "F4": {
+     "grade": "partly",
+     "evidence": "light.border.focus measures the 1px auto #101010 outline shared by controls; template-card overlays paint a 2px inset ring. No default/strong border roles were measured - cards sit flat, hairlines appear only in the footer."
+    },
+    "F5": {
+     "grade": "meets",
+     "evidence": "Measured end to end: maroon primary #772a4d rest -> #5b142e hover/pressed; red CTA #f73b3b -> #b81b1e hover -> #8f0c10 pressed; auth primary #3f2a32 -> a 90%-alpha oklab shade; nav links take a #f1eaed wash; the workflow tab's selected fill is #5b142e."
+    },
+    "F6": {
+     "grade": "missing",
+     "evidence": "A Green scale is declared but nothing on the public surface paints a status role - no success/warning/danger/info fills, text or borders were measured; all such UI lives behind the authenticated app."
+    },
+    "F7": {
+     "grade": "na",
+     "evidence": "The product paints one theme signed out: no .dark class, media query or toggle exists; the export keeps `dark` empty by design and the dark regions (hero band, footer) are surfaces inside the light theme."
+    },
+    "F8": {
+     "grade": "meets",
+     "evidence": "Three families with fallback stacks (booton UI/body - Booton VF on the auth card, brett labels, gamuthDisplay headings); a 7-step measured ramp (15.75 auth, 16 body, 18 eyebrow, 48 mobile display, 56 section, 72 page, 88 hero); weights 400/500/600 and three measured line-heights; named roles font.family.sans/label/display."
+    },
+    "F9": {
+     "grade": "missing",
+     "evidence": "No spacing scale is declared on :root and none was measured as a scale; component paddings and gaps are recorded per element in the measurements but no base-unit ramp exists in the package."
+    },
+    "F10": {
+     "grade": "meets",
+     "evidence": "Measured radii: nav-item 4px, control 8px (auth buttons/fields), cta 12px (Sign up, plan cards, red CTAs), toggle 42px (the billing-switch track); border treatment is the 1px #101010 focus outline plus the template-card 2px inset ring."
+    },
+    "F11": {
+     "grade": "meets",
+     "evidence": "Measured under component.*: 102px header, 54px Sign up, 44px workflow tabs, 50px toggle track / 34px options, 708px plan cards with 56px CTAs, 381px template cards, 40px auth controls, 84px mobile header, 32.5px mobile toggle, 52.5px mobile CTA; focus ring is the 1px auto outline."
+    },
+    "F12": {
+     "grade": "missing",
+     "evidence": "The public surface paints flat: computed boxShadow is 'none' on the header and the plan card, and no elevation level was measured anywhere; core.shadow is intentionally empty."
+    },
+    "F13": {
+     "grade": "partly",
+     "evidence": "One measured motion: the 0.15s cubic-bezier(0.4,0,0.2,1) color/background transition on the workflow tabs; transitions on other controls report none/0s. The reduced-motion probe's delta is recorded in components-computed.json _meta; no declared motion scale exists."
+    },
+    "F14": {
+     "grade": "partly",
+     "evidence": "Tailwind breakpoints observed (the nav hides below min-[1200px]); measured content widths (1400px nav, 892px hero, 610px tab strip, 284px cards) under component.*; the fixed chrome's z-index map is recorded per page in _meta.chrome; no declared breakpoint tokens."
+    },
+    "C1": {
+     "grade": "partly",
+     "evidence": "7 of 19 checklist components paint publicly: button (signup-cta, vid-cta, pr-cta, the four auth buttons, mp-cta), link (nav-link, signin-link, tpl-link, au-terms), text field (au-email), tabs (the workflow strip, flow-tab), switch (the Monthly/Annual billing toggle), card (pr-card, tpl-card, au-card), and the header/footer landmarks. Absent signed out: icon button, text area, select, checkbox, radio, menu, tooltip, dialog, toast, list row, table, avatar, badge."
+    },
+    "C2": {
+     "grade": "meets",
+     "evidence": "Beyond default on every interactive component: hover, focus-visible and pressed on all controls, opened on the workflow tab and the Annual billing option (real local toggles), focused/filled on the auth email field. Disabled, loading and error states were not observed - no form was submitted."
+    },
+    "C3": {
+     "grade": "meets",
+     "evidence": "Focus-visible is captured per component: controls take the browser's 1px auto outline in #101010 (light.border.focus, component.focus-ring); template-card overlays paint a 2px inset ring."
+    },
+    "C4": {
+     "grade": "meets",
+     "evidence": "Measured roles alias the declared vars they match (e.g. page -> {color.neutral.0}, ink -> {color.neutral.900}, red roles -> {color.red.450/700}); every token carries $extensions.source naming the variable or measurement."
+    },
+    "C5": {
+     "grade": "partly",
+     "evidence": "Component entries record how each state was reached (hover, keyboard Tab focus, CDP-forced :active, own toggle click); the README's Do-and-don't section gives 8 evidence-linked rules. No screen-reader readings were taken."
+    },
+    "P1": {
+     "grade": "partly",
+     "evidence": "patterns.md covers the chrome band, the maroon hero with workflow tabs, the pricing toggle and plan cards, the auth card, the gallery, the footer, focus language and mobile. Forms/validation, empty/loading/error, destructive confirmation, feedback and onboarding patterns are absent - they live behind the sign-in boundary."
+    },
+    "A1": {
+     "grade": "partly",
+     "evidence": "Fonts fully named with fallback stacks (booton, brett, gamuthDisplay - proprietary, not redistributed). No standalone SVG set lifted (declared layoutGap): the wordmark, tab glyphs and SSO marks are visible in crops and screenshots."
+    },
+    "K1": {
+     "grade": "meets",
+     "evidence": "The README states what was captured (8 routes plus mobile), how (computed styles, stylesheet harvest, stitched screenshots, forced/local states), and what to distrust (declared-vs-measured split, the auth boundary, quantized PNGs, missing press scripts)."
+    },
+    "F15": {
+     "grade": "missing",
+     "evidence": "Script: primary text fails 1 pair; worst 1.29:1 light text (light.text.ink) on surface (light.surface.tab-selected)"
+    },
+    "F16": {
+     "grade": "meets",
+     "evidence": "Script: 154 of 154 tokens name their source"
+    },
+    "K2": {
+     "grade": "meets",
+     "evidence": "Script: 8 rules, each linking a screenshot or crop"
+    },
+    "K3": {
+     "grade": "meets",
+     "evidence": "Script: DESIGN.md matches a fresh generation"
+    },
+    "V1": {
+     "grade": "na",
+     "evidence": "Optional for a capture, and this product does not publish it."
+    },
+    "V2": {
+     "grade": "na",
+     "evidence": "Optional for a capture, and this product does not publish it."
+    }
+   },
+   "name": "Descript",
+   "goodFor": "Video/audio-tool SaaS marketing design: a #fff7fa blush field with a 102px floating nav and a #772a4d maroon Sign up button, a deep-maroon hero band carrying an 88px Gamuth display headline and the 610px Record/Edit/Refine/Share/Multiply workflow tab strip (selected tab #5b142e over muted #c4b5bb), a #f73b3b red accent on 18px Brett eyebrows and secondary CTAs, a 228x50 Monthly/Annual billing toggle on a #f1eaed track, 284x708 plan cards with #390a1a CTAs, 336x381 template cards, and a #110a0d footer",
+   "url": "https://www.descript.com",
+   "captured": "2026-11-14",
+   "themes": [
+    "light"
+   ],
+   "platform": "web",
+   "category": "Productivity",
+   "reviewed": "2026-11-14",
+   "reviewedPlatform": "web"
   }
  ],
  "base": "2026-10-16",
- "reviewMethod": "read every captured component's states and crops, the raw/css-vars.json declared layer, tokens.json, README/patterns/components.md and the scorecard rubric; corrected after Greptile review found flipped/selected states were never captured"
+ "reviewMethod": "read every captured component's states and crops, the raw/css-vars.json declared layer, tokens.json, README/patterns/components.md and the scorecard rubric"
 }
