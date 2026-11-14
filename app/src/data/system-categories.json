@@ -784,5 +784,11 @@
     "groupId": "web-categories",
     "labels": ["Productivity", "Business"],
     "reason": "catalog.json describes an AI spreadsheet and analytics product: marketing site, workbook product tour and gated app surfaces."
+  },
+  {
+    "referenceId": "systems:epicgames",
+    "groupId": "web-categories",
+    "labels": ["Marketplace", "Entertainment"],
+    "reason": "catalog.json describes a games storefront and launcher: store home, product pages, free-games promos and gated library/checkout surfaces."
   }
 ]
