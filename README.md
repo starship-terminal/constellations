@@ -12,7 +12,6 @@ design-systems
 
 <p align="center">
   <a href="https://github.com/c-wenlong/designs/actions/workflows/check.yml"><img src="https://github.com/c-wenlong/designs/actions/workflows/check.yml/badge.svg" alt="Check"></a>
-  <a href="https://github.com/c-wenlong/designs/actions/workflows/pages.yml"><img src="https://github.com/c-wenlong/designs/actions/workflows/pages.yml/badge.svg" alt="Pages"></a>
   <img src="https://img.shields.io/badge/tools-stdlib--only-brightgreen.svg" alt="stdlib only">
   <img src="https://img.shields.io/badge/repo-private-red.svg" alt="Private repo">
 </p>
@@ -116,7 +115,6 @@ cp .env.example .env                      # fill in what you use; .env is gitign
 
 | Variable | Used by |
 | --- | --- |
-| `STATICRYPT_PASSWORD` | The Pages workflow, encrypting every page of the built docs site |
 | `ANTHROPIC_API_KEY` | `tools/refero/classify.py`; the gallery chat's fallback provider (stays server-side) |
 | `R2_ACCOUNT_ID`, `R2_ACCESS_KEY_ID`, `R2_SECRET_ACCESS_KEY`, `R2_BUCKET` | `tools/refero/upload_r2.py`, the media mirror upload |
 | `DS_CHAT_MODEL` | Optional: the model the gallery chat calls when the browser has none saved |
@@ -180,14 +178,12 @@ another port and `--no-open` skips the browser. The app has three parts:
   platform (web, mobile or desktop), as a heatmap with the evidence
   behind each grade. The app reads [scorecard/](scorecard) live on each
   request; [tools/scorecard.py](tools/scorecard.py) only writes the
-  published site's copy under `docs/scorecard/`.
+  docs site's copy under `docs/scorecard/`.
 - **Docs**: the files under [docs/](docs), rendered.
 
-The library docs, without the gallery, are also published to GitHub Pages at
-https://c-wenlong.github.io/designs/ by [tools/site.py](tools/site.py),
-with every page encrypted by
-StatiCrypt, so it needs the password in the `STATICRYPT_PASSWORD` repository
-secret. `make help` lists the other targets (`make check` validates
+The library docs, without the gallery, are also built into a static docs
+site by [tools/site.py](tools/site.py) (`make docs`), which the home-server
+deployment serves. `make help` lists the other targets (`make check` validates
 [catalog.json](catalog.json) against the packages).
 
 ## Catalog
@@ -430,19 +426,19 @@ flowchart LR
   GEN["Generated README sections<br/>brief.py, health.py, design-md"]
   DATA["web/data/<br/>catalog.py build"]
   SCP["docs/scorecard/<br/>scorecard.py"]
-  SITE["site/<br/>site.py + StatiCrypt"]
+  SITE["site/<br/>site.py"]
   DOCS["docs/*.md"]
   API["server/<br/>/api routes + MCP, read-only"]
   APP["web/ app<br/>gallery, refero, scorecard, docs, chat"]
   DS["cli/ ds"]
-  PAGES["GitHub Pages<br/>encrypted"]
+  HOME["home server<br/>nginx"]
 
   SYS --> CAT --> DATA --> APP
   REF --> DATA
   CAT --> GEN
   AUD --> GEN
   AUD --> APP
-  AUD --> SCP --> SITE --> PAGES
+  AUD --> SCP --> SITE --> HOME
   DOCS --> SITE
   SYS --> API
   REF --> API
@@ -479,13 +475,7 @@ flowchart LR
   materialised from it, and `tools/refero/check.py` (inside `make check`)
   fails when the three disagree. Screenshots and videos live outside git in
   a host-side media mirror.
-- **Two deployments.** Pushes to `main` run
-  [pages.yml](.github/workflows/pages.yml): `make check`, then
-  `tools/site.py` builds `docs/` into `site/` (it never emits the gallery),
-  StatiCrypt encrypts every HTML page (the build fails if a page lacks
-  StatiCrypt's marker or a search index or sitemap appears; assets are
-  copied unencrypted)
-  and Pages deploys it. The home-server deployment
+- **One deployment.** The home-server deployment
   ([scripts/redeploy.sh](scripts/redeploy.sh),
   [scripts/deploy_trigger.py](scripts/deploy_trigger.py)) serves the app and
   the `/api/` routes behind nginx, with the refero media mirror at
@@ -514,8 +504,8 @@ flowchart LR
 | [cli/](cli) | `ds`, the stdlib-only terminal client for the remote MCP endpoint, and the `install.sh` that `/api/install.sh` serves |
 | [scripts/](scripts) | Ops, not library: `dev.sh` behind `make dev`, and the home-server deployment and media mirror scripts (`deploy_trigger.py`, `redeploy.sh`, `studio-deploy.sh`) |
 | [example/](example) | Shallow clones of public design-system repos, gitignored except [example/README.md](example/README.md). References, never a source of values |
-| [docs/](docs) | The published docs site's source: the library docs below, the home page, and the scorecard pages (generated into `docs/scorecard/`, gitignored) |
-| [site/](site) | The built docs site (`make docs` writes it), gitignored; the Pages workflow encrypts and deploys it |
+| [docs/](docs) | The docs site's source: the library docs below, the home page, and the scorecard pages (generated into `docs/scorecard/`, gitignored) |
+| [site/](site) | The built docs site (`make docs` writes it), gitignored; the home-server deployment serves it |
 | [scorecard/](scorecard) | The scorecard's rubric (`criteria.json`) and one dated file per audit (`audits/<date>.json`, `<date>-2.json` for a second run that day). `make grade` writes a new one with the scripted criteria re-checked ([tools/grade.py](tools/grade.py)) |
 | [tools/make_icons.py](tools/make_icons.py) | The site has two app icons, picked under Settings > Preferences. Flat, the default, is the prism mark in [docs/assets/favicon.svg](docs/assets/favicon.svg) with its renders in [docs/assets/icons/](docs/assets/icons), committed as drawn. This script derives the Glass set ([docs/assets/icons/glass/](docs/assets/icons/glass)) from its master render, [docs/assets/logo/hero-ai.png](docs/assets/logo/hero-ai.png). Every docs page's template head links the Flat favicon, the touch icon, the web app manifest ([docs/site.webmanifest](docs/site.webmanifest)) and [docs/assets/app-icon.js](docs/assets/app-icon.js), which swaps in the chosen set before first paint |
 | [tools/scorecard.py](tools/scorecard.py) | Writes the scorecard pages from [scorecard/](scorecard) |
@@ -553,14 +543,13 @@ interpreter lacks it; `make test PYTHON=<a python3 with Pillow>` covers
 those too. `make lint-design-md` runs Google's pinned DESIGN.md linter
 through `npx` in a temp dir.
 
-CI runs four workflows:
+CI runs three workflows:
 
 | Workflow | What it gates |
 | --- | --- |
 | [check.yml](.github/workflows/check.yml) | `make check` on every push to `main` and every pull request |
 | [app.yml](.github/workflows/app.yml) | Format check, media taxonomy check, typecheck, tests and a production build for `app/` when `app/**`, `systems/**`, `catalog.json`, `refero/catalog.json` or `tools/catalog.py` changes |
 | [web.yml](.github/workflows/web.yml) | Typecheck and a production build for `web/` when `web/**`, `tools/catalog.py` or `catalog.json` changes |
-| [pages.yml](.github/workflows/pages.yml) | `make check`, then the docs site build, StatiCrypt encryption and the Pages deploy; a stale generated section fails the deploy |
 
 Rules that bite: Brief, Health, `DESIGN.md`, `web/data/`,
 `docs/scorecard/` and `site/` are regenerated, never hand-edited; every

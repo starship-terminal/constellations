@@ -1229,14 +1229,14 @@ class EnvTest(unittest.TestCase):
         from unittest import mock
         with tempfile.TemporaryDirectory() as d, mock.patch.dict(os.environ, {}, clear=False):
             env = Path(d) / ".env"
-            env.write_text("STATICRYPT_PASSWORD=hunter2\nexport DS_CHAT_MODEL='m'\n# ANTHROPIC_API_KEY=x\n"
+            env.write_text("UNLISTED_SECRET=hunter2\nexport DS_CHAT_MODEL='m'\n# ANTHROPIC_API_KEY=x\n"
                            "ANTHROPIC_API_KEY=\"sk-test\"\nSOMETHING_ELSE=1\n")
-            for k in ("STATICRYPT_PASSWORD", "DS_CHAT_MODEL", "ANTHROPIC_API_KEY", "SOMETHING_ELSE"):
+            for k in ("UNLISTED_SECRET", "DS_CHAT_MODEL", "ANTHROPIC_API_KEY", "SOMETHING_ELSE"):
                 os.environ.pop(k, None)
             done = catalog.refero_media.load_env(env_file=env)
             self.assertEqual(sorted(done), ["ANTHROPIC_API_KEY", "DS_CHAT_MODEL"])
             self.assertEqual(os.environ["ANTHROPIC_API_KEY"], "sk-test")
-            self.assertNotIn("STATICRYPT_PASSWORD", os.environ)
+            self.assertNotIn("UNLISTED_SECRET", os.environ)
             self.assertNotIn("SOMETHING_ELSE", os.environ)
             os.environ.pop("DS_CHAT_MODEL")
             self.assertEqual(catalog.refero_media.load_env(("DS_CHAT_MODEL",), env_file=env), ["DS_CHAT_MODEL"])
