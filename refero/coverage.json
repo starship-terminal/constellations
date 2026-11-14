@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 136,
-    "system_domains": 128,
-    "matched_domains": 100,
-    "missing_domains": 333,
+    "system_packages": 139,
+    "system_domains": 131,
+    "matched_domains": 103,
+    "missing_domains": 330,
     "system_domains_absent_from_catalog": 28
   },
   "matched": {
@@ -1545,6 +1545,23 @@
         }
       ]
     },
+    "explore.family": {
+      "catalog": [
+        {
+          "name": "Explore",
+          "domain": "explore.family",
+          "id": 292
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "explore",
+          "name": "Explore",
+          "url": "https://explore.family",
+          "name_match": true
+        }
+      ]
+    },
     "fable.co": {
       "catalog": [
         {
@@ -1558,6 +1575,40 @@
           "slug": "fable",
           "name": "Fable",
           "url": "https://fable.co",
+          "name_match": true
+        }
+      ]
+    },
+    "factory.ai": {
+      "catalog": [
+        {
+          "name": "Factory",
+          "domain": "factory.ai",
+          "id": 734
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "factory",
+          "name": "Factory",
+          "url": "https://factory.ai",
+          "name_match": true
+        }
+      ]
+    },
+    "faire.com": {
+      "catalog": [
+        {
+          "name": "Faire",
+          "domain": "faire.com",
+          "id": 155
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "faire",
+          "name": "Faire",
+          "url": "https://www.faire.com",
           "name_match": true
         }
       ]
@@ -1954,27 +2005,6 @@
         "name": "Equals",
         "domain": "equals.app",
         "id": 289
-      }
-    ],
-    "explore.family": [
-      {
-        "name": "Explore",
-        "domain": "explore.family",
-        "id": 292
-      }
-    ],
-    "factory.ai": [
-      {
-        "name": "Factory",
-        "domain": "factory.ai",
-        "id": 734
-      }
-    ],
-    "faire.com": [
-      {
-        "name": "Faire",
-        "domain": "faire.com",
-        "id": 155
       }
     ],
     "fal.ai": [

@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Explore style guide</title>
+<meta name="description" content="Explore (explore.family) design tokens and public signed-out components, rendered from tokens.json — values mined from the archived 2023-02-23 build.">
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  --sg-sans: "UntitledSans", ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-serif: "LabilGrotesk-Medium", "UntitledSansMedium", ui-sans-serif, system-ui, sans-serif;
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--color-grey-950, #262626); background: #fff; }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 500 40px/1.2 var(--sg-serif); margin: 0 0 4px; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--color-grey-700, #717171); margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--color-grey-150, #ebebeb); }
+.lead { max-width: 62ch; color: var(--color-grey-950, #262626); opacity: .85; }
+.note { font-size: 13px; color: var(--color-grey-700, #717171); max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--color-grey-700, #717171); margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--color-grey-150, #ebebeb); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--color-grey-700, #717171); }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--color-grey-700, #717171); }
+/* ---- mocks (reconstructions drawn with the tokens, not captured pixels) ---- */
+.mock { border: 1px solid var(--color-grey-150, #ebebeb); overflow: hidden; background: #fff; }
+.navbar { display: flex; align-items: center; gap: 22px; height: var(--component-header-height, 60px); padding: 0 22px; font-size: 14px; color: #fff; background: var(--color-grey-500, #9d9d9d); }
+.navbar .wm { font: 500 18px/1 var(--sg-serif); letter-spacing: .02em; }
+.navbar .sp { flex: 1; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-button-submit-height, 47px); padding: 0 22px; font-size: 14px; font-weight: 500; border-radius: var(--radius-card, 7px); border: 1px solid transparent; }
+.btn.yellow { background: var(--color-accent-DEFAULT, #ffc60a); color: var(--color-grey-950, #262626); }
+.btn.dark { background: var(--color-grey-950, #262626); color: #fff; }
+.btn.grey { background: var(--color-grey-100, #efefef); color: var(--color-grey-950, #262626); }
+.btn.small { height: var(--component-button-signupPill-height, 38px); font-size: 14px; border-radius: var(--radius-button, 50px); }
+.hero { background: var(--color-grey-500, #9d9d9d); color: #fff; padding: 48px 40px; }
+.hero .hi { font: 400 16px/1.5 var(--sg-sans); color: #e0e0e0; }
+.hero h3 { font: 500 var(--font-size-40, 40px)/var(--font-lineHeight-tight, 1.02) var(--sg-serif); margin: 12px 0 20px; max-width: 20ch; }
+.tag { display: inline-flex; align-items: center; padding: 11px 23px; border: 1px solid var(--color-grey-450, #b7b7b7); border-radius: var(--radius-card, 7px); color: #fff; font: 500 14px/1 var(--sg-sans); margin: 0 8px 8px 0; }
+.feed { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0 30px; padding: 24px; }
+.card .img { aspect-ratio: 4/3; border-radius: var(--radius-card, 7px); background: var(--color-grey-500, #9d9d9d); display: flex; align-items: flex-end; padding: 12px; }
+.card .who { display: flex; align-items: center; gap: 12px; margin: 14px 0 4px; font: 500 14px/1 var(--sg-sans); }
+.card .av { width: var(--component-post-avatarSize, 28px); height: var(--component-post-avatarSize, 28px); border-radius: 50%; background: var(--color-grey-500, #9d9d9d); }
+.card .pro { background: var(--color-accent-DEFAULT, #ffc60a); border-radius: 20px; font: 700 10px/1 var(--sg-sans); padding: 4px 7px; }
+.card .age { color: var(--color-grey-500, #9d9d9d); font-weight: 400; }
+.card .ttl { font: 500 16px/1.4 var(--sg-sans); color: var(--color-grey-950, #262626); }
+.pill { display: inline-flex; padding: 6px 13px 7px; border: 1px solid var(--color-grey-100, #efefef); border-radius: var(--radius-pill, 20px); font-size: 14px; margin: 0 5px 9px; }
+.pill.on { border-color: var(--color-grey-950, #262626); }
+.field { border: 1px solid var(--color-grey-150, #ebebeb); border-radius: var(--radius-input, 8px); padding: 13px 17px; font-size: 16px; color: var(--color-grey-400, #c1c1c1); margin: 0 0 10px; }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--color-grey-150, #ebebeb); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--color-grey-150, #ebebeb); }
+.tr .ts { font-family: var(--sg-serif); }
+.tr .tv { font-size: 12px; color: var(--color-grey-700, #717171); font-family: var(--sg-mono); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Explore style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and size below is a token, not a restated number. The boxed mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">Explore, measured</h2>
+  <p class="lead">explore.family was an ad-free social platform for creatives — a white feed under a signature mid-grey field (<code>#9d9d9d</code>: fixed header, hero, media placeholders; the auth welcome panel is the darker <code>#717171</code>), one yellow accent (<code>#ffc60a</code>: Sign up free, the about-page CTA, the PRO badge), dark 7px-cornered submits (<code>#262626</code>), UntitledSans for UI with UntitledSansMedium post titles and LabilGrotesk-Medium display. Every value is a hardcoded literal mined from the compiled stylesheet or a computed-style measurement — the site declared no design-token layer.</p>
+  <p class="note">Read on 2026-11-14 from the archived 2023-02-23 build (the product closed 2023-04-19 and the domain later lapsed); every page was replayed locally from an Internet Archive mirror, signed out, in headless Chromium. Auth forms were measured, never submitted. UntitledSans/LabilGrotesk are proprietary served faces: samples fall back to system sans.</p>
+
+  <h2 class="sh">The chrome</h2>
+  <p class="lead">The fixed 60px grey header pairs the E wordmark with "Sign in" and the yellow "Sign up free" pill; the hero carries the positioning sentence in LabilGrotesk-Medium over the same grey field with hairline feature tags.</p>
+  <div class="mock" style="padding:0">
+    <div class="navbar"><span class="wm">EXPLORE</span><span class="sp"></span><span>Sign in</span><span class="btn small yellow">Sign up free</span></div>
+    <div class="hero"><span class="hi">Welcome</span><h3>Explore is an emotionally intelligent ad-free social media platform for creatives</h3><span class="tag">Free</span><span class="tag">For creatives</span><span class="tag">No ads</span><span class="tag">All features</span></div>
+  </div>
+
+  <h2 class="sh">The feed</h2>
+  <p class="lead">Discover is a 3-up card grid on white: rounded media tile, author row (28px avatar, name, yellow PRO badge, age), the UntitledSansMedium title and the icon action row. Category filters are 20px pills — hairline when idle, ink-bordered when active.</p>
+  <div class="mock">
+    <div style="padding:18px 24px 4px"><span class="pill on">All</span><span class="pill">3D Design</span><span class="pill">Animation</span><span class="pill">Art</span><span class="pill">Branding</span></div>
+    <div class="feed">
+      <div class="card"><div class="img"></div><div class="who"><span class="av"></span>Fiveshorts <span class="pro">PRO</span> <span class="age">4yr</span></div><div class="ttl">WW1 lifers</div></div>
+      <div class="card"><div class="img" style="background:var(--color-grey-300,#d0d0d0)"></div><div class="who"><span class="av"></span>Nik Brovkin <span class="age">4yr</span></div><div class="ttl">Hello Explore.</div></div>
+      <div class="card"><div class="img" style="background:var(--color-grey-400,#c1c1c1)"></div><div class="who"><span class="av"></span>Malika Favre <span class="age">3yr</span></div><div class="ttl">Terrain Vague</div></div>
+    </div>
+  </div>
+
+  <h2 class="sh">Auth</h2>
+  <p class="lead">The split auth screen: community welcome over a darker #717171 panel left (hidden under 650px, leaving only the form), a 424px form column right — 8px-radius hairline inputs and full-width dark submits with 7px corners; "Log in", "Sign up" and "Reset Password" share the one style.</p>
+  <div class="mock" style="padding:24px;max-width:480px">
+    <div class="field">Email</div><div class="field">Password</div>
+    <span class="btn dark" style="width:100%">Log in</span>
+    <div style="margin-top:14px"><span class="btn dark" style="width:100%">Sign up</span></div>
+    <div style="margin-top:14px"><span class="btn dark" style="width:100%">Reset Password</span></div>
+    <div style="margin-top:14px"><span class="btn grey" style="width:100%">Grey button (.btn--grey)</span></div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">A warm-neutral ramp (<code>#262626</code> ink through <code>#9d9d9d</code> field grey to <code>#fff</code> paper) with one brand yellow, plus small status accents (red, green, blue) used by form alerts and icon states.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing, radius and motion</h2>
+  <p class="lead">Small radii (7–8px) on cards/inputs/tags/submits against full pills (20px categories, 50px CTA pills) and round avatars; the feed is a 1640px-max 3-column grid with 15px gutters and a 50px row pitch. Controls ease over 0.2s (alerts 0.35s, media fades 0.5s).</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead"><code>UntitledSans</code> (Klim) carries UI text at 16px/22px base, <code>UntitledSansMedium</code> the post titles and tags, and <code>LabilGrotesk-Medium</code> (Labil Grotesk / Kometa) the 40–41px display lines and the wordmark. Weights: 300/400/700, medium expressed through the medium families.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Mined every declaration in the archived app.4ef09b07.css and measured computed styles on the replayed pages</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, focused and filled states measured per component</td></tr><tr><td>No provenance</td><td>Every token names the selector or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = /*TOKENS*/null;
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  const roles = flat(TOK.light || {}, '').filter(([n, t]) => t.t === 'color');
+  if (roles.length) {
+    h += `<div class="pal-h">light roles</div><div class="pal">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.container || {}, 'container.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.duration || {}, 'duration.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.easing || {}, 'easing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v.join ? 'cubic-bezier(' + t.v.join(', ') + ')' : t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.zIndex || {}, 'zIndex.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.shadow || {}, 'shadow.')) m += `<div><b>${esc(n)}</b> <span>${esc(JSON.stringify(t.v))}</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat((TOK.core.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.breakpoint || {}), 'breakpoint.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+const resolveVal = (v, depth) => {
+  if (depth > 6 || typeof v !== 'string') return v;
+  const m = v.match(/^\{(.+)\}$/);
+  if (!m) return v;
+  for (const root of [TOK.core, TOK.light, TOK]) {
+    let node = root;
+    for (const k of m[1].split('.')) node = node && node[k];
+    if (node && node.v !== undefined) return resolveVal(node.v, (depth || 0) + 1);
+  }
+  return v;
+};
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(resolveVal(t.v));
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Explore</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>

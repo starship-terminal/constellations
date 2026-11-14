@@ -1,0 +1,11 @@
+{
+  "_note": "Rules for systems/explore. A fully public signed-out capture replayed from the Internet Archive (explore.family closed 2023-04-19): every page is public marketing/auth content or an archived public profile (member names and works like Malika Favre and Sawdust are published portfolio pages, not private data). The one masked value: a member's published collaboration email inside post imagery in screenshots/home-light-full.png, mobile-discover-light-full.png and mobile-home-light-full.png, painted by redact_images.py apply.",
+  "ocr": {
+    "emails": true,
+    "email_allow": [
+      "@explore\\.family$",
+      "@example\\.com$"
+    ]
+  },
+  "families": []
+}
