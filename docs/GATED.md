@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_84 of 142 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_85 of 143 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -472,6 +472,12 @@ Access: read-only (the marketing pages, the explore catalog, the model and API p
 - every post-login surface (dashboard, API keys, billing, deployments) lives behind fal's account - an authenticated boundary never reached
 - inference was never run: the prompt field was filled and cleared, Sign-in-to-run links to login signed out, Open-in-Sandbox and Download were measured, never followed
 - the OAuth buttons and Use-SSO were measured at rest, never followed; validation, error and success states are absent rather than measured
+
+## [Designmodo](../systems/designmodo) — `designmodo`
+Access: read-only (the marketing site, /pricing, /email-templates, /postcards, /slides, the /postcards/app/login form and the signed-out app shell behind the Welcome-back modal are public; the builder canvas and every post-login surface need an account - the modal was dismissed locally with Escape and every auth action measured, never submitted)
+- the Postcards builder canvas, saving work and every post-login surface need an account - never reached
+- the Welcome-back modal's actions (Continue with Google, email field, Login, Create Account) were measured, never submitted
+- the sign-in form's fields were typed into and cleared and Login was never pressed; validation, error and success states are absent rather than measured
 
 ## Gate noted in access text only
 

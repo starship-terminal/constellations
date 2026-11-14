@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 142,
-    "system_domains": 134,
-    "matched_domains": 105,
-    "missing_domains": 328,
+    "system_packages": 143,
+    "system_domains": 135,
+    "matched_domains": 106,
+    "missing_domains": 327,
     "system_domains_absent_from_catalog": 29
   },
   "matched": {
@@ -1052,6 +1052,23 @@
         }
       ]
     },
+    "designmodo.com": {
+      "catalog": [
+        {
+          "name": "Designmodo",
+          "domain": "designmodo.com",
+          "id": 459
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "designmodo",
+          "name": "Designmodo",
+          "url": "https://designmodo.com",
+          "name_match": true
+        }
+      ]
+    },
     "dock.us": {
       "catalog": [
         {
@@ -1983,13 +2000,6 @@
         "name": "Delphi",
         "domain": "delphi.ai",
         "id": 670
-      }
-    ],
-    "designmodo.com": [
-      {
-        "name": "Designmodo",
-        "domain": "designmodo.com",
-        "id": 459
       }
     ],
     "designstripe.com": [
