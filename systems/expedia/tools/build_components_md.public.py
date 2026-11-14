@@ -149,7 +149,32 @@ def props(v):
     return o
 
 
-ORDER = ["size", "padding", "border", "radius", "background", "image", "shadow", "outline", "text", "transition", "transform", "opacity", "icon", "placeholder"]
+ORDER = ["size", "padding", "border", "radius", "background", "image", "shadow", "outline", "text", "transition", "transform", "opacity", "icon", "placeholder", "child paint"]
+
+
+def paint_diff(st, base):
+    """Painted-layer deltas between two states, by node. The wrapper's own
+    computed style is not the whole story: fields repaint their inner input's
+    border and hearts outline their inner button, neither of which reaches the
+    root — those changes live only in the captured paint list."""
+    bp = {p["node"]: p for p in (base or {}).get("paint") or []}
+    out = []
+    for p in (st or {}).get("paint") or []:
+        b = bp.get(p["node"])
+        if b is None:
+            continue
+        changes = []
+        if p.get("outline") != b.get("outline") and p.get("outline"):
+            changes.append("outline " + colour(p["outline"]))
+        if p.get("border") != b.get("border") and p.get("border"):
+            changes.append("border " + colour(p["border"].split(" | ")[0][2:]))
+        if p.get("shadow") != b.get("shadow") and p.get("shadow"):
+            changes.append("ring " + colour(p["shadow"]))
+        if p.get("bg") != b.get("bg") and p.get("bg"):
+            changes.append("background " + colour(p["bg"]))
+        if changes:
+            out.append(re.sub(r"\..*$", "", p["node"]) + ": " + ", ".join(changes))
+    return "; ".join(out)
 
 
 def state_rows(c):
@@ -165,6 +190,12 @@ def state_rows(c):
         for k in ORDER:
             if k in base and k not in p:
                 diff[k] = "none"
+        if not diff:
+            # identical root styles can still hide a state painted on a child
+            # layer (the fields' focus border, the hearts' focus outline)
+            pd = paint_diff(c["states"][st], c["states"][states[0]])
+            if pd:
+                diff["child paint"] = pd
         if not diff:
             same.append(st)
             continue
@@ -299,14 +330,28 @@ W()
 foc = []
 for k, c in C.items():
     st = c["states"].get("focus-visible")
-    if not st or "style" not in st:
+    if not st or "style" not in st or st.get("via") == "focus failed":
         continue
     s = st["style"]
+    rest = next((v for v in c["states"].values() if "style" in v), None)
     ring = s["outlineStyle"] != "none" and float(s["outlineWidth"].replace("px", "")) > 0
-    foc.append((k, f"{s['outlineWidth']} {s['outlineStyle']} {colour(s['outlineColor'])}, offset {s['outlineOffset']}" if ring else None))
-with_ring = [f"`{k}` ({r})" for k, r in foc if r]
-without = [f"`{k}`" for k, r in foc if not r]
-W(f"**Focus.** {len(foc)} components were given a real keyboard focus. {len(with_ring)} draw a ring: {', '.join(with_ring)}. The other {len(without)} draw none, so a keyboard user sees no change: {', '.join(without)}. The header currency control could not be reached by keyboard in the static capture, so its focus state is unmeasured rather than absent.")
+    # A ring painted on a child layer while the wrapper's own outline stays
+    # none: the hearts outline their inner favorite-button, and the fields
+    # trade the inner input's grey border for blue plus an inset ring. The
+    # wrapper's outline alone would call all of those "no change".
+    child_ring = next((n["outline"] for n in st.get("paint", []) if n.get("outline") and not ring), None)
+    desc = (f"{s['outlineWidth']} {s['outlineStyle']} {colour(s['outlineColor'])}, offset {s['outlineOffset']}" if ring
+            else f"on a child layer: {colour(child_ring)}" if child_ring else None)
+    foc.append((k, ring or bool(child_ring), desc, paint_diff(st, rest)))
+with_ring = [f"`{k}` ({r})" for k, ringed, r, pd in foc if ringed]
+with_child = [f"`{k}` ({pd})" for k, ringed, r, pd in foc if not ringed and pd]
+without = [f"`{k}`" for k, ringed, r, pd in foc if not ringed and not pd]
+parts = [f"{len(with_ring)} draw a ring: {', '.join(with_ring)}."]
+if with_child:
+    parts.append(f"{len(with_child)} show the change only on a painted child layer: {', '.join(with_child)}.")
+if without:
+    parts.append(f"The other {len(without)} show no measured change: {', '.join(without)}.")
+W(f"**Focus.** {len(foc)} components were given a real keyboard focus. {' '.join(parts)} The header currency control could not be reached by keyboard in the static capture, so its focus state is unmeasured rather than absent.")
 W()
 W("**Pressed.** Pressed states are forced with DevTools (`:active:hover`), so no button or link ever fired. Expedia's controls react to press mostly through their scrim layers: buttons keep their fill and the overlay opacity token steps up (`--egds-button-opacity-overlay-*`), which computed styles on the root do not always show.")
 W()

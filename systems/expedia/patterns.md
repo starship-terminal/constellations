@@ -20,7 +20,7 @@ How Expedia's components combine to do the recurring jobs on its public pages, w
 
 **Components.** [Header](components.md#header), [Logo link](components.md#logo-link), [Shop travel menu button](components.md#shop-travel-menu-button), [Currency button](components.md#currency-button), [Header link](components.md#header-link), [Sign in button](components.md#sign-in-button), [Sign-in card](components.md#sign-in-card).
 
-**Layout.** Text buttons at 14/18 medium, resting transparent, hovering to `surface-container-variant` #EFF3F7 inside a pill radius; the menu triggers carry a chevron. Sign in opens a 375 x 279 card (`card` 16px radius, elevation 8) anchored under the bar through the header's no-JS checkbox mechanism — a headline, the member-benefits line and a full-width 36px primary `egds.primary` button, with "Create a free account" under it. The Shop travel menu opens the same way. Keyboard focus draws a 1px #101010 outline.
+**Layout.** Text buttons at 14/18 medium, resting transparent and hovering to `primary`-blue text on the same transparent ground inside a pill radius; the menu triggers carry a chevron. Sign in opens a 375 x 279 menu card (8px radius, `0 2px 12px` shadow at 8% ink — the `menu.container` elevation, not `elevation.8`) anchored under the bar through the header's no-JS checkbox mechanism — a headline, the member-benefits line and a full-width 36px primary `egds.primary` button, with "Create a free account" under it. The Shop travel menu opens the same way. Keyboard focus draws a 1px #101010 outline.
 
 **Screens.** [home-light-default](screenshots/home-light-default.png), [home-light-signin-open](screenshots/home-light-signin-open.png), [home-light-shoptravel-open](screenshots/home-light-shoptravel-open.png), [search-light-default](screenshots/search-light-default.png).
 
@@ -72,13 +72,13 @@ How Expedia's components combine to do the recurring jobs on its public pages, w
 
 **Components.** [Property card](components.md#property-card), [Card gallery](components.md#card-gallery), [Carousel arrow](components.md#carousel-arrow), [VIP Access badge](components.md#vip-access-badge), [Amenity line](components.md#amenity-line), [Refund note](components.md#refund-note), [Rating pill](components.md#rating-pill), [Urgency note](components.md#urgency-note), [Price block](components.md#price-block), ["Sign in for extra savings" pill](components.md#sign-in-for-extra-savings-pill), [Save (heart) button](components.md#save-heart-button-1).
 
-**Layout.** 756 x 232 at desktop: a 252-wide 21:9 gallery on the left with prev/next circles and the heart, then name and amenity icons, the green "Fully refundable" / "Reserve now, pay later" lines, a `surface-container-variant` rating pill ("9.2 Wonderful · 1,234 reviews"), the critical-coloured urgency note ("We have 1 left at this price"), and the right-aligned price block — struck list price, the 20px nightly headline, muted total. A dark "VIP Access" chip pins over the photo on partner hotels; "Sign in for extra savings" is an outlined `primary`-text pill pointing guests at member pricing.
+**Layout.** 756 x 232 at desktop: a 252-wide 21:9 gallery on the left with prev/next circles and the heart, then name and amenity icons, the green "Fully refundable" / "Reserve now, pay later" lines, a `surface-container-variant` rating pill ("9.2 Wonderful · 1,234 reviews"), the critical-coloured urgency note ("We have 1 left at this price"), and the right-aligned price block — struck list price, the 20px nightly headline, muted total. A dark "VIP Access" chip pins over the photo on partner hotels; "Sign in for extra savings" is a filled `primary`-blue pill button with white text pointing signed-out guests at member pricing (the fill paints on the button's `::after` layer).
 
 **Screens.** [search-light-full](screenshots/search-light-full.png).
 
 ## Mobile shell
 
-**When.** The same surfaces at 390 x 844. The header compresses to 56px; the search card stacks vertically (tabs scroll, fields go full width at 48px); the calendar opens as a bottom sheet; results cards go full-width.
+**When.** The same surfaces at 390 x 844. The header compresses to 56px; the search card keeps its one-row form squeezed to 390 — three ~58px field columns in a row beside the 83 x 48 Search button rather than stacked full-width fields (the product tabs scroll); the calendar opens as a sheet. On the archived results page the cards turn portrait at ~287px wide, centred in the column.
 
 **Components.** The [Mobile (390 wide)](components.md#mobile-390-wide) group: [Header](components.md#header-1), [Hero title](components.md#hero-title-1), [Search form](components.md#search-form), [Search field](components.md#search-field), [Search button](components.md#search-button-1), [Deal card](components.md#deal-card-1).
 
@@ -88,7 +88,7 @@ How Expedia's components combine to do the recurring jobs on its public pages, w
 
 **When.** What a control does on hover, focus and press.
 
-**Captured.** Hover fills quiet controls with `surface-container-variant` (header buttons, tabs) or `secondary-container-variant` #ECF4FD (pills, the Sign-in-for-savings pill). Keyboard focus draws a 1px #101010 outline on links, tabs and pills and a heavier offset ring on the primary Search and savings buttons (measured `measured.focus.*`). Pressed is forced `:active:hover` — Expedia implements press as a scrim overlay stepping `--egds-button-opacity-overlay-*` (64% → 72% → 92%), which computed styles on the root do not always surface.
+**Captured.** Hover recolours quiet controls more than it fills them: header buttons and links keep their transparent ground and switch label colour from `on-surface` to `primary` blue, and the product tabs read unchanged. The fills that do paint are `secondary-container-variant` #ECF4FD on the outlined "See all deals" button and the sort pill; the filled savings pill reads unchanged on hover. Keyboard focus draws a 1px #101010 outline on links, tabs and pills, a heavier offset ring on the primary Search and savings buttons, a blue border plus inset ring inside the fields, and a 1px outline on the hearts' inner button (measured `measured.focus.*`). Pressed is forced `:active:hover` — Expedia implements press as a scrim overlay stepping `--egds-button-opacity-overlay-*` (64% → 72% → 92%), which computed styles on the root do not always surface.
 
 **Not captured.** Sign-in/save success, saved-heart fill, sort applied, filters applied, calendar range picked — all need actions the kit does not take.
 

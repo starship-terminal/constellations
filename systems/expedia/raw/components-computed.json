@@ -1,6 +1,6 @@
 {
  "_meta": {
-  "read": "2026-11-13"
+  "read": "2026-11-14"
  },
  "components": {
   "header": {
@@ -8116,9 +8116,9 @@
     }
    },
    "page": "search",
-   "run": "2026-11-13T22:43:35.382Z",
+   "run": "2026-11-14T06:13:59.768Z",
    "url": "wayback:expedia.com/Hotel-Search",
-   "read": "2026-11-13",
+   "read": "2026-11-14",
    "title": "Sticky search form",
    "group": "Hotel results",
    "desc": "The compact search bar pinned under the header on the results page: the same three fields plus the round search button.",
@@ -8391,9 +8391,9 @@
     }
    },
    "page": "search",
-   "run": "2026-11-13T22:43:35.382Z",
+   "run": "2026-11-14T06:13:59.768Z",
    "url": "wayback:expedia.com/Hotel-Search",
-   "read": "2026-11-13",
+   "read": "2026-11-14",
    "title": "Sign in button (results)",
    "group": "Hotel results",
    "selector": "header \"Sign in\" button"
@@ -8537,9 +8537,9 @@
     }
    },
    "page": "search",
-   "run": "2026-11-13T22:43:35.382Z",
+   "run": "2026-11-14T06:13:59.768Z",
    "url": "wayback:expedia.com/Hotel-Search",
-   "read": "2026-11-13",
+   "read": "2026-11-14",
    "title": "Stay type tabs",
    "group": "Hotel results",
    "desc": "The segmented \"All stays / Hotels / Homes\" control above the results.",
@@ -8883,9 +8883,9 @@
     }
    },
    "page": "search",
-   "run": "2026-11-13T22:43:35.382Z",
+   "run": "2026-11-14T06:13:59.768Z",
    "url": "wayback:expedia.com/Hotel-Search",
-   "read": "2026-11-13",
+   "read": "2026-11-14",
    "title": "Sort control",
    "group": "Hotel results",
    "desc": "The \"Sort by recommended for you\" uitk-pill over the results list. Hovered and focused only, never opened.",
@@ -8990,9 +8990,9 @@
     }
    },
    "page": "search",
-   "run": "2026-11-13T22:43:35.382Z",
+   "run": "2026-11-14T06:13:59.768Z",
    "url": "wayback:expedia.com/Hotel-Search",
-   "read": "2026-11-13",
+   "read": "2026-11-14",
    "title": "Results count",
    "group": "Hotel results",
    "desc": "The \"N properties\" line over the results list.",
@@ -9422,9 +9422,9 @@
     }
    },
    "page": "search",
-   "run": "2026-11-13T22:43:35.382Z",
+   "run": "2026-11-14T06:13:59.768Z",
    "url": "wayback:expedia.com/Hotel-Search",
-   "read": "2026-11-13",
+   "read": "2026-11-14",
    "title": "Property card",
    "group": "Hotel results",
    "desc": "One result card (uitk-card): the 21:9 photo gallery with carousel arrows and the heart, VIP badge, name, amenity icons, refund line, rating pill, nightly and total prices, and the \"Sign in for extra savings\" pill.",
@@ -9574,9 +9574,9 @@
     }
    },
    "page": "search",
-   "run": "2026-11-13T22:43:35.382Z",
+   "run": "2026-11-14T06:13:59.768Z",
    "url": "wayback:expedia.com/Hotel-Search",
-   "read": "2026-11-13",
+   "read": "2026-11-14",
    "title": "Card gallery",
    "group": "Hotel results",
    "desc": "The 21:9 image carousel in a result card with prev/next circle buttons.",
@@ -9681,9 +9681,9 @@
     }
    },
    "page": "search",
-   "run": "2026-11-13T22:43:35.382Z",
+   "run": "2026-11-14T06:13:59.768Z",
    "url": "wayback:expedia.com/Hotel-Search",
-   "read": "2026-11-13",
+   "read": "2026-11-14",
    "title": "Price block",
    "group": "Hotel results",
    "desc": "The right-aligned price area of a result card: the struck list price, the nightly rate in the headline size, and the total with taxes in muted text.",
@@ -9788,9 +9788,9 @@
     }
    },
    "page": "search",
-   "run": "2026-11-13T22:43:35.382Z",
+   "run": "2026-11-14T06:13:59.768Z",
    "url": "wayback:expedia.com/Hotel-Search",
-   "read": "2026-11-13",
+   "read": "2026-11-14",
    "title": "Rating pill",
    "group": "Hotel results",
    "desc": "The guest rating on a card: the score chip (9.4) in positive green beside the word and the review count.",
@@ -10214,12 +10214,12 @@
     }
    },
    "page": "search",
-   "run": "2026-11-13T22:43:35.382Z",
+   "run": "2026-11-14T06:13:59.768Z",
    "url": "wayback:expedia.com/Hotel-Search",
-   "read": "2026-11-13",
+   "read": "2026-11-14",
    "title": "\"Sign in for extra savings\" pill",
    "group": "Hotel results",
-   "desc": "The blue outlined pill on each card pointing signed-out guests at member prices. Hovered and focused only, never followed.",
+   "desc": "The filled primary-blue pill button with white text on each card pointing signed-out guests at member prices (the fill paints on its ::after layer). Hovered and focused only, never followed.",
    "selector": "the \"Sign in for extra savings\" button"
   },
   "vip-badge": {
@@ -10329,9 +10329,9 @@
     }
    },
    "page": "search",
-   "run": "2026-11-13T22:43:35.382Z",
+   "run": "2026-11-14T06:13:59.768Z",
    "url": "wayback:expedia.com/Hotel-Search",
-   "read": "2026-11-13",
+   "read": "2026-11-14",
    "title": "VIP Access badge",
    "group": "Hotel results",
    "desc": "The dark \"VIP Access\" chip pinned over the card photo.",
@@ -10734,9 +10734,9 @@
     }
    },
    "page": "search",
-   "run": "2026-11-13T22:43:35.382Z",
+   "run": "2026-11-14T06:13:59.768Z",
    "url": "wayback:expedia.com/Hotel-Search",
-   "read": "2026-11-13",
+   "read": "2026-11-14",
    "title": "Save (heart) button",
    "group": "Hotel results",
    "desc": "The heart over the card photo. Pressed is forced; nothing was saved.",
@@ -11107,9 +11107,9 @@
     }
    },
    "page": "search",
-   "run": "2026-11-13T22:43:35.382Z",
+   "run": "2026-11-14T06:13:59.768Z",
    "url": "wayback:expedia.com/Hotel-Search",
-   "read": "2026-11-13",
+   "read": "2026-11-14",
    "title": "Carousel arrow",
    "group": "Hotel results",
    "desc": "A round prev/next button in the card gallery (uitk-button-paging). Hovered and focused only.",
@@ -11221,9 +11221,9 @@
     }
    },
    "page": "search",
-   "run": "2026-11-13T22:43:35.382Z",
+   "run": "2026-11-14T06:13:59.768Z",
    "url": "wayback:expedia.com/Hotel-Search",
-   "read": "2026-11-13",
+   "read": "2026-11-14",
    "title": "Amenity line",
    "group": "Hotel results",
    "desc": "One amenity row on a card: a small icon and a muted label.",
@@ -11416,14 +11416,14 @@
       "stroke": "none",
       "color": "rgb(25, 30, 59)"
      },
-     "crop": "components/crops/filters-default.png",
+     "cropError": "locator.screenshot: Timeout 7986.6479999999865ms exceeded.\nCall log:\n  - taking element screenshot\n  - waiting for fonts",
      "via": "at rest"
     }
    },
    "page": "search",
-   "run": "2026-11-13T22:43:35.382Z",
+   "run": "2026-11-14T06:13:59.768Z",
    "url": "wayback:expedia.com/Hotel-Search",
-   "read": "2026-11-13",
+   "read": "2026-11-14",
    "title": "Filter column",
    "group": "Hotel results",
    "desc": "The left filter rail: \"Search by property name\", \"Filter by\" groups (Property class checkboxes, Guest rating radios), See more links.",
@@ -11539,7 +11539,7 @@
       "stroke": "none",
       "color": "rgb(25, 30, 59)"
      },
-     "crop": "components/crops/name-field-default.png",
+     "cropError": "page.screenshot: Timeout 8000ms exceeded.\nCall log:\n  - taking page screenshot\n  - waiting for fonts to load...\n  - font",
      "via": "at rest"
     },
     "focused": {
@@ -11656,9 +11656,9 @@
     }
    },
    "page": "search",
-   "run": "2026-11-13T22:43:35.382Z",
+   "run": "2026-11-14T06:13:59.768Z",
    "url": "wayback:expedia.com/Hotel-Search",
-   "read": "2026-11-13",
+   "read": "2026-11-14",
    "title": "Property name field",
    "group": "Hotel results",
    "desc": "The \"e.g. Marriott\" text input in the filter rail. Clicked into only.",
@@ -11899,9 +11899,9 @@
     }
    },
    "page": "search",
-   "run": "2026-11-13T22:43:35.382Z",
+   "run": "2026-11-14T06:13:59.768Z",
    "url": "wayback:expedia.com/Hotel-Search",
-   "read": "2026-11-13",
+   "read": "2026-11-14",
    "title": "Filter checkbox",
    "group": "Hotel results",
    "desc": "A \"Property class\" checkbox in the filter rail: an uitk-checkbox box with its count-bearing label. Hovered only, never toggled.",
@@ -12173,9 +12173,9 @@
     }
    },
    "page": "search",
-   "run": "2026-11-13T22:43:35.382Z",
+   "run": "2026-11-14T06:13:59.768Z",
    "url": "wayback:expedia.com/Hotel-Search",
-   "read": "2026-11-13",
+   "read": "2026-11-14",
    "title": "Compare switch",
    "group": "Hotel results",
    "desc": "The \"Compare properties\" toggle over the filter rail. Hovered only, never switched.",
@@ -12280,9 +12280,9 @@
     }
    },
    "page": "search",
-   "run": "2026-11-13T22:43:35.382Z",
+   "run": "2026-11-14T06:13:59.768Z",
    "url": "wayback:expedia.com/Hotel-Search",
-   "read": "2026-11-13",
+   "read": "2026-11-14",
    "title": "Urgency note",
    "group": "Hotel results",
    "desc": "\"We have 1 left at this price\" under a price: the critical-coloured nudge line.",
@@ -12387,9 +12387,9 @@
     }
    },
    "page": "search",
-   "run": "2026-11-13T22:43:35.382Z",
+   "run": "2026-11-14T06:13:59.768Z",
    "url": "wayback:expedia.com/Hotel-Search",
-   "read": "2026-11-13",
+   "read": "2026-11-14",
    "title": "Refund note",
    "group": "Hotel results",
    "desc": "\"Fully refundable\" / \"Reserve now, pay later\" in positive green.",
@@ -12524,9 +12524,9 @@
     }
    },
    "page": "search",
-   "run": "2026-11-13T22:43:35.382Z",
+   "run": "2026-11-14T06:13:59.768Z",
    "url": "wayback:expedia.com/Hotel-Search",
-   "read": "2026-11-13",
+   "read": "2026-11-14",
    "title": "Map card",
    "group": "Hotel results",
    "desc": "The static map tile card at the top of the filter rail (\"View in a map\").",
@@ -12702,9 +12702,9 @@
     }
    },
    "page": "mobile",
-   "run": "2026-11-13T22:43:35.382Z",
+   "run": "2026-11-14T06:13:59.768Z",
    "url": "wayback:expedia.com/",
-   "read": "2026-11-13",
+   "read": "2026-11-14",
    "title": "Header",
    "group": "Mobile (390 wide)",
    "desc": "The mobile top bar.",
@@ -12797,9 +12797,9 @@
     }
    },
    "page": "mobile",
-   "run": "2026-11-13T22:43:35.382Z",
+   "run": "2026-11-14T06:13:59.768Z",
    "url": "wayback:expedia.com/",
-   "read": "2026-11-13",
+   "read": "2026-11-14",
    "title": "Hero title",
    "group": "Mobile (390 wide)",
    "selector": "[data-testid=\"hero-title-campaign\"]"
@@ -13003,9 +13003,9 @@
     }
    },
    "page": "mobile",
-   "run": "2026-11-13T22:43:35.382Z",
+   "run": "2026-11-14T06:13:59.768Z",
    "url": "wayback:expedia.com/",
-   "read": "2026-11-13",
+   "read": "2026-11-14",
    "title": "Search form",
    "group": "Mobile (390 wide)",
    "selector": "[data-testid=\"multi-product-search-form\"]"
@@ -13411,9 +13411,9 @@
     }
    },
    "page": "mobile",
-   "run": "2026-11-13T22:43:35.382Z",
+   "run": "2026-11-14T06:13:59.768Z",
    "url": "wayback:expedia.com/",
-   "read": "2026-11-13",
+   "read": "2026-11-14",
    "title": "Search field",
    "group": "Mobile (390 wide)",
    "desc": "The first search field at 390 wide.",
@@ -13945,9 +13945,9 @@
     }
    },
    "page": "mobile",
-   "run": "2026-11-13T22:43:35.382Z",
+   "run": "2026-11-14T06:13:59.768Z",
    "url": "wayback:expedia.com/",
-   "read": "2026-11-13",
+   "read": "2026-11-14",
    "title": "Search button",
    "group": "Mobile (390 wide)",
    "selector": "the Search button"
@@ -13956,23 +13956,23 @@
    "states": {
     "default": {
      "tag": "div",
-     "classes": "uitk-card uitk-card-roundcorner-all uitk-card-has-border uitk-card-has-overflow",
-     "text": "Stays Flights Cars Packages Things to do Cruises Where to? Dates Travelers Add a",
+     "classes": "uitk-layout-flex uitk-layout-flex-block-size-full-size uitk-layout-flex-flex-direction-column uitk-card",
+     "text": "Gallery Carousel Westgate Historic Williamsburg Resort Williamsburg 8.6 Excellen",
      "rect": {
       "x": 24,
-      "y": 281,
+      "y": 837,
       "w": 342,
-      "h": 252
+      "h": 483.58
      },
      "style": {
-      "display": "block",
+      "display": "flex",
       "position": "relative",
       "boxSizing": "border-box",
       "width": "342px",
-      "height": "252px",
-      "minWidth": "0px",
+      "height": "483.578px",
+      "minWidth": "auto",
       "maxWidth": "none",
-      "minHeight": "0px",
+      "minHeight": "auto",
       "paddingTop": "0px",
       "paddingRight": "0px",
       "paddingBottom": "0px",
@@ -13984,7 +13984,7 @@
       "gap": "normal",
       "rowGap": "normal",
       "columnGap": "normal",
-      "flexDirection": "row",
+      "flexDirection": "column",
       "alignItems": "normal",
       "justifyContent": "normal",
       "gridTemplateColumns": "none",
@@ -14030,149 +14030,120 @@
       "cursor": "default",
       "opacity": "1",
       "transform": "none",
-      "overflow": "visible",
+      "overflow": "hidden",
       "zIndex": "auto",
       "top": "0px"
      },
-     "::before": {
-      "content": "\" \"",
-      "width": "342px",
-      "height": "252px",
-      "position": "absolute",
-      "backgroundColor": "rgba(0, 0, 0, 0)",
-      "backgroundImage": "none",
-      "boxShadow": "none",
-      "borderTopWidth": "1px",
-      "borderTopStyle": "solid",
-      "borderTopColor": "rgb(223, 224, 228)",
-      "borderRadius": "16px",
-      "inset": "0px 0px 0px 0px",
-      "opacity": "1",
-      "transition": "all"
-     },
      "paint": [
       {
-       "node": "div.uitk-card.uitk-card-roundcorner-all",
-       "size": "342.0x252.0",
+       "node": "div.uitk-layout-flex.uitk-layout-flex-block-size-full-size",
+       "size": "342.0x483.6",
        "bg": "rgb(255, 255, 255)",
        "radius": "16px"
       },
       {
-       "node": "div::before.uitk-card.uitk-card-roundcorner-all",
-       "size": "342pxx252px",
-       "border": "T:1px solid rgb(223, 224, 228) | R:1px solid rgb(223, 224, 228) | B:1px solid rgb(223, 224, 228) | L:1px solid rgb(223, 224, 228)",
+       "node": "div.uitk-layout-flex.uitk-layout-flex-block-size-full-size",
+       "size": "342.0x256.5",
+       "bg": "rgb(255, 255, 255)",
        "radius": "16px"
       },
       {
-       "node": "ul.egds-tabs-custom.egds-tabs-custom-natural",
-       "size": "342.0x110.0",
-       "bg": "rgb(255, 255, 255)",
-       "shadow": "rgb(223, 224, 228) 0px 1px 0px 0px",
-       "radius": "16px 16px 0px 0px"
+       "node": "div.uitk-image-placeholder.uitk-image-placeholder-image",
+       "size": "342.0x256.5",
+       "bg": "rgb(200, 223, 249)",
+       "bgImage": "url(data:…)"
       },
       {
-       "node": "a.egds-tab-custom-anchor.egds-tab-custom-anchor-selected",
-       "size": "96.0x110.0",
-       "shadow": "rgb(22, 104, 227) 0px -2px 0px 0px inset"
+       "node": "div.uitk-image-placeholder.uitk-image-placeholder-image",
+       "size": "342.0x256.5",
+       "bg": "rgb(200, 223, 249)",
+       "bgImage": "url(data:…)"
       },
       {
-       "node": "li.egds-tab-custom-highlighter",
-       "size": "0.0x2.0",
-       "bg": "rgb(22, 104, 227)"
+       "node": "div.uitk-image-placeholder.uitk-image-placeholder-image",
+       "size": "342.0x256.5",
+       "bg": "rgb(200, 223, 249)",
+       "bgImage": "url(data:…)"
       },
       {
-       "node": "input.uitk-field-input.empty-placeholder",
-       "size": "58.3x48.0",
-       "border": "T:1px solid rgb(129, 132, 148) | R:1px solid rgb(129, 132, 148) | B:1px solid rgb(129, 132, 148) | L:1px solid rgb(129, 132, 148)",
-       "bg": "rgb(255, 255, 255)",
-       "radius": "8px"
-      },
-      {
-       "node": "input.uitk-field-input",
-       "size": "58.3x48.0",
-       "border": "T:1px solid rgb(129, 132, 148) | R:1px solid rgb(129, 132, 148) | B:1px solid rgb(129, 132, 148) | L:1px solid rgb(129, 132, 148)",
-       "bg": "rgb(255, 255, 255)",
-       "radius": "8px"
-      },
-      {
-       "node": "input.uitk-field-input",
-       "size": "58.3x48.0",
-       "border": "T:1px solid rgb(129, 132, 148) | R:1px solid rgb(129, 132, 148) | B:1px solid rgb(129, 132, 148) | L:1px solid rgb(129, 132, 148)",
-       "bg": "rgb(255, 255, 255)",
-       "radius": "8px"
-      },
-      {
-       "node": "div.uitk-menu-container.animation-disabled",
+       "node": "div.uitk-image-placeholder.uitk-image-placeholder-image",
        "size": "0.0x0.0",
-       "bg": "rgb(255, 255, 255)",
+       "bg": "rgb(200, 223, 249)",
+       "bgImage": "url(data:…)"
+      },
+      {
+       "node": "button.uitk-button.uitk-button-medium",
+       "size": "32.0x32.0",
        "shadow": "rgba(12, 14, 28, 0.08) 0px 2px 12px 0px",
-       "radius": "8px"
-      },
-      {
-       "node": "span.uitk-step-input-button",
-       "size": "0.0x0.0",
-       "border": "T:1px solid rgb(129, 132, 148) | R:1px solid rgb(129, 132, 148) | B:1px solid rgb(129, 132, 148) | L:1px solid rgb(129, 132, 148)",
-       "bg": "rgb(255, 255, 255)",
        "radius": "40000px"
       },
       {
-       "node": "span.uitk-step-input-button",
-       "size": "0.0x0.0",
-       "border": "T:1px solid rgb(129, 132, 148) | R:1px solid rgb(129, 132, 148) | B:1px solid rgb(129, 132, 148) | L:1px solid rgb(129, 132, 148)",
-       "bg": "rgb(255, 255, 255)",
-       "radius": "40000px"
-      },
-      {
-       "node": "span.uitk-step-input-button",
-       "size": "0.0x0.0",
-       "border": "T:1px solid rgb(129, 132, 148) | R:1px solid rgb(129, 132, 148) | B:1px solid rgb(129, 132, 148) | L:1px solid rgb(129, 132, 148)",
-       "bg": "rgb(255, 255, 255)",
-       "radius": "40000px"
-      },
-      {
-       "node": "span.uitk-step-input-button",
-       "size": "0.0x0.0",
-       "border": "T:1px solid rgb(129, 132, 148) | R:1px solid rgb(129, 132, 148) | B:1px solid rgb(129, 132, 148) | L:1px solid rgb(129, 132, 148)",
-       "bg": "rgb(255, 255, 255)",
+       "node": "button::before.uitk-button.uitk-button-medium",
+       "size": "32pxx32px",
+       "bg": "rgb(25, 30, 59)",
        "radius": "40000px"
       },
       {
        "node": "button.uitk-button.uitk-button-medium",
-       "size": "0.0x0.0",
-       "bg": "rgba(255, 255, 255, 0)",
+       "size": "32.0x32.0",
+       "shadow": "rgba(12, 14, 28, 0.08) 0px 2px 12px 0px",
        "radius": "40000px"
+      },
+      {
+       "node": "button::before.uitk-button.uitk-button-medium",
+       "size": "32pxx32px",
+       "bg": "rgb(25, 30, 59)",
+       "radius": "40000px"
+      },
+      {
+       "node": "button.favorite-button.favorite-button-button-no-label",
+       "size": "32.0x32.0",
+       "bg": "rgb(255, 255, 255)",
+       "radius": "40000px"
+      },
+      {
+       "node": "span.uitk-badge.uitk-badge-base-large",
+       "size": "35.0x24.0",
+       "bg": "rgb(34, 121, 80)",
+       "radius": "4px"
+      },
+      {
+       "node": "span.uitk-badge.uitk-badge-large",
+       "size": "71.0x24.0",
+       "bg": "rgb(34, 121, 80)",
+       "radius": "4px"
       }
      ],
      "textStyle": {
-      "node": "span.egds-tab-custom-text",
-      "text": "Stays",
+      "node": "h6.uitk-heading.uitk-heading-6",
+      "text": "Westgate Historic Williamsburg Resort",
       "fontFamily": "\"Centra No2\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
-      "fontSize": "14px",
-      "lineHeight": "18px",
+      "fontSize": "16px",
+      "lineHeight": "20px",
       "fontWeight": "500",
       "letterSpacing": "normal",
-      "color": "rgb(22, 104, 227)",
+      "color": "rgb(25, 30, 59)",
       "textDecorationLine": "none",
       "textTransform": "none"
      },
      "icon": {
       "w": 24,
       "h": 24,
-      "fill": "rgb(25, 30, 59)",
+      "fill": "rgb(255, 255, 255)",
       "stroke": "none",
-      "color": "rgb(25, 30, 59)"
+      "color": "rgb(255, 255, 255)"
      },
      "crop": "components/crops/m-card-default.png",
      "via": "at rest"
     }
    },
    "page": "mobile",
-   "run": "2026-11-13T22:43:35.382Z",
+   "run": "2026-11-14T06:13:59.768Z",
    "url": "wayback:expedia.com/",
-   "read": "2026-11-13",
+   "read": "2026-11-14",
    "title": "Deal card",
    "group": "Mobile (390 wide)",
-   "selector": ".uitk-card"
+   "selector": "a deals .uitk-card"
   }
  }
 }

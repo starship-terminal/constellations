@@ -35,7 +35,12 @@ def cssname(path):
 
 
 def alias(v):
-    return re.sub(r"\{([^{}]+)\}", lambda m: f"var({cssname(m.group(1))})", str(v))
+    s = re.sub(r"\{([^{}]+)\}", lambda m: f"var({cssname(m.group(1))})", str(v))
+    # Resolved values can also carry the stylesheets' own var(--egds-*) refs,
+    # in upstream kebab case; the guide emits the camelCase token names, so
+    # re-point them (--egds-surface-container-variant -> --egds-surfaceContainerVariant).
+    return re.sub(r"var\(--egds-([a-z0-9-]+)\)",
+                  lambda m: "var(--egds-" + re.sub(r"-([a-z0-9])", lambda c: c.group(1).upper(), m.group(1)) + ")", s)
 
 
 def css_val(name, t):

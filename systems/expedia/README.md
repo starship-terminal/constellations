@@ -30,7 +30,7 @@ Read this before designing in this style. Take every value from [tokens.json](to
 1. Do reserve `egds.primary` #1668E3 for the action that ends a flow
 2. Do build search fields as 48px-high, 8px-radius outlined boxes.
 3. Do use full-round pills for buttons and chips.
-4. Do round cards and dialogs at 16px
+4. Do round cards at 16px
 5. Do re-theme sections with the theme attribute, not overrides.
 6. Do pair the Reckless XPD display serif with Centra No2 UI text
 7. Don't add a second accent blue.
@@ -51,7 +51,7 @@ Each rule links the screenshot or crop that shows it, under [Do and don't](#do-a
 | accent | #1668e3 `light.egds.primary` | #649df2 `dark.egds.primary` | #ffffff `dark2.egds.primary` | #191e3b `marketing3.egds.primary` | #0c0e1c `bright1.egds.primary` |
 | border | #818494 `light.egds.outline` | #999ca8 `dark.egds.outline` | #cde4f9 `dark2.egds.outline` | #191e3b `marketing3.egds.outline` | #0c0e1c `bright1.egds.outline` |
 
-Fonts: `core.type.text.fontFamily` is Centra No2, then 7 fallbacks; `core.type.display.fontFamily` is Reckless XPD, then 2 fallbacks. Scales, counted as [DESIGN.md](DESIGN.md) holds them: 9 type styles (`core.typography`), 11 radius steps (`core.radius`), 33 spacing steps (`core.spacing`).
+Fonts: `core.type.text.fontFamily` is Centra No2, then 7 fallbacks; `core.type.display.fontFamily` is Reckless XPD, then 2 fallbacks. Scales, counted as [DESIGN.md](DESIGN.md) holds them: 10 type styles (`core.typography`), 11 radius steps (`core.radius`), 33 spacing steps (`core.spacing`).
 
 ### Using components
 
@@ -125,7 +125,7 @@ Not captured: anything behind sign-in (trips, account, member pricing, checkout,
 1. **Do reserve `egds.primary` #1668E3 for the action that ends a flow** — Search, Done, Sign in — and let it carry the on-primary #FFFFFF text. See [search-submit-default](components/crops/search-submit-default.png).
 2. **Do build search fields as 48px-high, 8px-radius outlined boxes.** All three triggers share `input`/`field` geometry: 344 x 48 with an `outline`-coloured border. See [field-destination-default](components/crops/field-destination-default.png).
 3. **Do use full-round pills for buttons and chips.** `cornerRadius.10000x` is the pill; the sort control and tab track show it. See [sort-control-default](components/crops/sort-control-default.png).
-4. **Do round cards and dialogs at 16px** (`card`/`dialog` corner radius = `radius.4x`), and float overlays with `elevation` 8. See [property-card-default](components/crops/property-card-default.png) and [calendar-dialog-open](components/crops/calendar-dialog-open.png).
+4. **Do round cards at 16px** (`card` corner radius = `radius.4x`) and popovers at 8px. Cards sit flat; menus and the calendar popover float on a soft `0 2px 12px` shadow at 8% ink (the `menu.container`/`sheet.standard` elevation, not `elevation.8`). See [property-card-default](components/crops/property-card-default.png) and [calendar-dialog-open](components/crops/calendar-dialog-open.png).
 5. **Do re-theme sections with the theme attribute, not overrides.** The promo band is the same components under `data-theme-light="marketing-3"` — `surface` and `primary` rebind wholesale. See [marketing-band-default](components/crops/marketing-band-default.png).
 6. **Do pair the Reckless XPD display serif with Centra No2 UI text**, and keep UI text at 400/500. See [hero-title-default](components/crops/hero-title-default.png).
 7. **Don't add a second accent blue.** `primary`, `secondary` and `outline-focus` are all the same #1668E3 family; status comes from `positive`/`critical`/`featured`/`info`. See [refund-note-default](components/crops/refund-note-default.png) and [urgency-note-default](components/crops/urgency-note-default.png).

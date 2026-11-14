@@ -122,7 +122,9 @@ for n in names:
     style, size, part = m.groups()
     key = {"font-name": "fontFamily", "font-weight": "fontWeight", "font-size": "fontSize",
            "line-height": "lineHeight", "line-height-variant": "lineHeightVariant", "font-tracking": "letterSpacing"}[part]
-    node = TYPE.setdefault(style, {}) if not size else TYPE.setdefault(style, {}).setdefault(size, {})
+    # camel the parsed size ("extra-large" -> "extraLarge") so it matches the
+    # size names the composed typography.* block below asks for.
+    node = TYPE.setdefault(style, {}) if not size else TYPE.setdefault(style, {}).setdefault(camel(size), {})
     ty = {"fontFamily": "fontFamily", "fontWeight": "fontWeight"}.get(key, "dimension")
     node[key] = leaf(n, ty)
 TYPE["$description"] = ("The --egds-type-style-* declarations: display is Reckless XPD, headline and text are Centra No2. "

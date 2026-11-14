@@ -1,6 +1,6 @@
 # Component measurements
 
-Computed styles read on 2026-11-13 by `tools/capture/public/measure.mjs`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), and written here by `tools/capture/public/build-measurements.mjs` from [components-computed.json](components-computed.json). expedia.com returns a 429 "Bot or Not?" wall to automation, so the DOM is a Wayback snapshot of the public home and hotel-search pages served locally, painted with Expedia's live travel-assets CDN CSS; the Search interaction group (calendar, room picker, destination panel) was measured on the same page hydrated with the site's own JavaScript. One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
+Computed styles read on 2026-11-14 by `tools/capture/public/measure.mjs`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), and written here by `tools/capture/public/build-measurements.mjs` from [components-computed.json](components-computed.json). expedia.com returns a 429 "Bot or Not?" wall to automation, so the DOM is a Wayback snapshot of the public home and hotel-search pages served locally, painted with Expedia's live travel-assets CDN CSS; the Search interaction group (calendar, room picker, destination panel) was measured on the same page hydrated with the site's own JavaScript. One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
 
 States: `hover` is a real pointer hover; `focus-visible` a real keyboard focus (Shift+Tab, Tab); `pressed` is forced with DevTools (`CSS.forcePseudoState` :active:hover), so no button was pressed; `focused` is a text field clicked into; `filled` is sample text typed and deleted again, with nothing sent; `opened`, `expanded` and the rest are resting states reached by the page or by a UI toggle.
 
@@ -1055,7 +1055,7 @@ Crops: `rating-pill-default.png`.
 
 #### savings-pill
 
-"Sign in for extra savings" pill. The blue outlined pill on each card pointing signed-out guests at member prices. Hovered and focused only, never followed.
+"Sign in for extra savings" pill. The filled primary-blue pill button with white text on each card pointing signed-out guests at member prices (the fill paints on its ::after layer). Hovered and focused only, never followed.
 
 Page: search. Selector: `the "Sign in for extra savings" button`. States: default, hover, focus-visible.
 
@@ -1213,7 +1213,7 @@ Page: search. Selector: `the Filter by sidebar form`. States: default.
 | Painted layers | div.uitk-layout-flex.uitk-card 236.0x78.0 bg #ffffff r 16px; div::before.uitk-layout-flex.uitk-card 236pxx78px border T:1px solid #dfe0e4 / R:1px solid #dfe0e4 / B:1px solid #dfe0e4 / L:1px solid #dfe0e4 r 16px; div.uitk-switch-control 48.0x24.0 bg #676a7d border T:2px solid #676a7d / R:2px solid #676a7d / B:2px solid #676a7d / L:2px solid #676a7d r 12px; div::before.uitk-switch-control 20pxx20px border T:2px solid #000000 @ 0 / R:2px solid #000000 @ 0 / B:2px solid #000000 @ 0 / L:2px solid #000000 @ 0 r 50%; div.uitk-switch-control-handle 20.0x20.0 bg #ffffff r 50%; div.uitk-spacing.uitk-spacing-margin-blockstart-six 236.0x130.0 border T:1px solid #dfe0e4 / B:1px solid #dfe0e4 |
 | How | at rest |
 
-Crops: `filters-default.png`.
+Crops: none.
 
 #### name-field
 
@@ -1240,7 +1240,7 @@ Page: search. Selector: `the Search by property name field`. States: default, fo
 | Painted layers | input.uitk-field-input.empty-placeholder 236.0x48.0 bg #ffffff border T:1px solid #818494 / R:1px solid #818494 / B:1px solid #818494 / L:1px solid #818494 r 8px | input.uitk-field-input.empty-placeholder 236.0x48.0 bg #ffffff border T:1px solid #1668e3 / R:1px solid #1668e3 / B:1px solid #1668e3 / L:1px solid #1668e3 r 8px shadow #1668e3 0px 0px 0px 1px inset |
 | How | at rest | clicked into the field |
 
-Crops: `name-field-default.png`, `name-field-focused.png`.
+Crops: `name-field-focused.png`.
 
 #### filter-checkbox
 
@@ -1513,11 +1513,11 @@ Crops: `m-search-button-default.png`, `m-search-button-hover.png`, `m-search-but
 
 Deal card.
 
-Page: mobile. Selector: `.uitk-card`. States: default.
+Page: mobile. Selector: `a deals .uitk-card`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 342 x 252 |
+| Size (w x h) | 342 x 483.58 |
 | Padding | 0px |
 | Border | none |
 | Radius | 16px |
@@ -1527,12 +1527,11 @@ Page: mobile. Selector: `.uitk-card`. States: default.
 | Font | Centra No2 16px/normal 400 |
 | Letter spacing | normal |
 | Colour | #191e3b |
-| Text node | span.egds-tab-custom-text: Centra No2 14px/18px 500, #1668e3 |
+| Text node | h6.uitk-heading.uitk-heading-6: Centra No2 16px/20px 500, #191e3b |
 | Transition | none |
 | Cursor | default |
-| Icon | 24 x 24, colour #191e3b |
-| ::before | 342px x 252px, absolute, bg #000000 @ 0, radius 16px |
-| Painted layers | div.uitk-card.uitk-card-roundcorner-all 342.0x252.0 bg #ffffff r 16px; div::before.uitk-card.uitk-card-roundcorner-all 342pxx252px border T:1px solid #dfe0e4 / R:1px solid #dfe0e4 / B:1px solid #dfe0e4 / L:1px solid #dfe0e4 r 16px; ul.egds-tabs-custom.egds-tabs-custom-natural 342.0x110.0 bg #ffffff r 16px 16px 0px 0px shadow #dfe0e4 0px 1px 0px 0px; a.egds-tab-custom-anchor.egds-tab-custom-anchor-selected 96.0x110.0 shadow #1668e3 0px -2px 0px 0px inset; li.egds-tab-custom-highlighter 0.0x2.0 bg #1668e3; input.uitk-field-input.empty-placeholder 58.3x48.0 bg #ffffff border T:1px solid #818494 / R:1px solid #818494 / B:1px solid #818494 / L:1px solid #818494 r 8px |
+| Icon | 24 x 24, colour #ffffff |
+| Painted layers | div.uitk-layout-flex.uitk-layout-flex-block-size-full-size 342.0x483.6 bg #ffffff r 16px; div.uitk-layout-flex.uitk-layout-flex-block-size-full-size 342.0x256.5 bg #ffffff r 16px; div.uitk-image-placeholder.uitk-image-placeholder-image 342.0x256.5 bg #c8dff9 image url(data:…); div.uitk-image-placeholder.uitk-image-placeholder-image 342.0x256.5 bg #c8dff9 image url(data:…); div.uitk-image-placeholder.uitk-image-placeholder-image 342.0x256.5 bg #c8dff9 image url(data:…); div.uitk-image-placeholder.uitk-image-placeholder-image 0.0x0.0 bg #c8dff9 image url(data:…) |
 | How | at rest |
 
 Crops: `m-card-default.png`.

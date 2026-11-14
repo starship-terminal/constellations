@@ -1,6 +1,6 @@
 # Expedia components
 
-The discovery list of every page and view captured, then one entry per component with crops of the real product and the Gaps. Captured from www.expedia.com on 2026-11-13, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was signed into, searched for, booked, created, sent or uploaded.
+The discovery list of every page and view captured, then one entry per component with crops of the real product and the Gaps. Captured from www.expedia.com on 2026-11-14, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was signed into, searched for, booked, created, sent or uploaded.
 
 expedia.com answers automation with a 429 "Bot or Not?" challenge, so the DOM is a Wayback snapshot of the public home and hotel-search pages served locally and painted with Expedia's live travel-assets.com CSS and fonts. Entries on the `home-i` page were read on the same snapshot hydrated with the site's own JavaScript, so the field panels (calendar, travellers, destination) open on click; hydration's API refetches fail on the archived page, so only no-submit UI states were read.
 
@@ -41,7 +41,7 @@ Screenshots are named `{page}-light-{state}.png` (`home-i` is the hydrated home)
 
 Values that apply across entries, from the measurement files.
 
-**Focus.** 18 components were given a real keyboard focus. 12 draw a ring: `header-shop-travel` (1px auto #101010, offset 0px), `header-signin` (1px auto #101010, offset 0px), `header-link` (1px auto #101010, offset 1px), `tab-active` (1px auto #101010, offset 1px), `tab` (1px auto #101010, offset 1px), `search-submit` (5px auto #101010, offset 2px), `tertiary-button` (1px auto #101010, offset 1px), `header-signin-search` (1px auto #101010, offset 0px), `sort-control` (1px auto #101010, offset 0px), `savings-pill` (5px auto #101010, offset 2px), `carousel-nav` (1px auto #101010, offset 0px), `m-search-button` (5px auto #e59700, offset 2px). The other 6 draw none, so a keyboard user sees no change: `field-destination`, `field-dates`, `field-travelers`, `card-heart`, `card-heart-search`, `m-field`. The header currency control could not be reached by keyboard in the static capture, so its focus state is unmeasured rather than absent.
+**Focus.** 18 components were given a real keyboard focus. 14 draw a ring: `header-shop-travel` (1px auto #101010, offset 0px), `header-signin` (1px auto #101010, offset 0px), `header-link` (1px auto #101010, offset 1px), `tab-active` (1px auto #101010, offset 1px), `tab` (1px auto #101010, offset 1px), `search-submit` (5px auto #101010, offset 2px), `tertiary-button` (1px auto #101010, offset 1px), `card-heart` (on a child layer: 1px auto #101010 offset 0px), `header-signin-search` (1px auto #101010, offset 0px), `sort-control` (1px auto #101010, offset 0px), `savings-pill` (5px auto #101010, offset 2px), `card-heart-search` (on a child layer: 1px auto #101010 offset 0px), `carousel-nav` (1px auto #101010, offset 0px), `m-search-button` (5px auto #e59700, offset 2px). 4 show the change only on a painted child layer: `field-destination` (input: border 1px solid #1668e3 `color.palette.light1.outlineFocus`, ring #1668e3 `color.palette.light1.outlineFocus` 0px 0px 0px 1px inset), `field-dates` (input: border 1px solid #1668e3 `color.palette.light1.outlineFocus`, ring #1668e3 `color.palette.light1.outlineFocus` 0px 0px 0px 1px inset), `field-travelers` (input: border 1px solid #1668e3 `color.palette.light1.outlineFocus`, ring #1668e3 `color.palette.light1.outlineFocus` 0px 0px 0px 1px inset), `m-field` (input: border 1px solid #1668e3 `color.palette.light1.outlineFocus`, ring #1668e3 `color.palette.light1.outlineFocus` 0px 0px 0px 1px inset). The header currency control could not be reached by keyboard in the static capture, so its focus state is unmeasured rather than absent.
 
 **Pressed.** Pressed states are forced with DevTools (`:active:hover`), so no button or link ever fired. Expedia's controls react to press mostly through their scrim layers: buttons keep their fill and the overlay opacity token steps up (`--egds-button-opacity-overlay-*`), which computed styles on the root do not always show.
 
@@ -72,7 +72,7 @@ Values that apply across entries, from the measurement files.
 | [Calendar dialog](#calendar-dialog) | 652 x 558.69 | - | 8px | #ffffff `color.palette.light1.inverseOnSurface` | rgba(12, 14, 28, 0.08) 0px 2px 12px 0px | 0 |
 | [Destination panel](#destination-panel) | 376 x 510 | - | 8px | #ffffff `color.palette.light1.inverseOnSurface` | rgba(12, 14, 28, 0.08) 0px 2px 12px 0px | 0 |
 | [Travelers menu](#travelers-menu) | 375 x 318 | - | 8px | #ffffff `color.palette.light1.inverseOnSurface` | rgba(12, 14, 28, 0.08) 0px 2px 12px 0px | 12px 0px |
-| [Deal card](#deal-card) | 342 x 252 | - | 16px | #ffffff `color.palette.light1.inverseOnSurface` | none | 0 |
+| [Deal card](#deal-card) | 342 x 483.58 | - | 16px | #ffffff `color.palette.light1.inverseOnSurface` | none | 0 |
 
 ## Components
 
@@ -216,7 +216,8 @@ The "Dates" field with the range value (Fri, Feb 13 - Tue, Feb 17) and a calenda
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 344.33 x 48; background transparent; text Centra No2 12/16 400, #191e3b `color.palette.light1.onFeatured`; icon 24 x 24, #191e3b `color.palette.light1.onFeatured` |
+| default (same: hover, pressed) | size 344.33 x 48; background transparent; text Centra No2 12/16 400, #191e3b `color.palette.light1.onFeatured`; icon 24 x 24, #191e3b `color.palette.light1.onFeatured` |
+| focus-visible | child paint input: border 1px solid #1668e3 `color.palette.light1.outlineFocus`, ring #1668e3 `color.palette.light1.outlineFocus` 0px 0px 0px 1px inset |
 
 Child layers that carry the look: input 344.3x48 background #ffffff `color.palette.light1.inverseOnSurface` border 1px solid #818494 `color.palette.light1.outline` radius 8px.
 
@@ -227,7 +228,8 @@ The "Travelers" field ("2 travelers, 1 room") with a person icon. Pressed is for
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 344.34 x 48; background transparent; text Centra No2 12/16 400, #191e3b `color.palette.light1.onFeatured`; icon 24 x 24, #191e3b `color.palette.light1.onFeatured` |
+| default (same: hover, pressed) | size 344.34 x 48; background transparent; text Centra No2 12/16 400, #191e3b `color.palette.light1.onFeatured`; icon 24 x 24, #191e3b `color.palette.light1.onFeatured` |
+| focus-visible | child paint input: border 1px solid #1668e3 `color.palette.light1.outlineFocus`, ring #1668e3 `color.palette.light1.outlineFocus` 0px 0px 0px 1px inset |
 
 Child layers that carry the look: input 344.3x48 background #ffffff `color.palette.light1.inverseOnSurface` border 1px solid #818494 `color.palette.light1.outline` radius 8px.
 
@@ -361,7 +363,8 @@ The heart save control over a card photo: a round white button, pressed state fo
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 48 x 48; background transparent; text Centra No2 16/normal 400, #191e3b `color.palette.light1.onFeatured`; icon 24 x 24, #000000 |
+| default (same: hover, pressed) | size 48 x 48; background transparent; text Centra No2 16/normal 400, #191e3b `color.palette.light1.onFeatured`; icon 24 x 24, #000000 |
+| focus-visible | child paint button: outline 1px auto #101010 offset 0px |
 
 Child layers that carry the look: button 32x32 background #ffffff `color.palette.light1.inverseOnSurface` radius 40000px.
 
@@ -458,7 +461,7 @@ The guest rating on a card: the score chip (9.4) in positive green beside the wo
 ![Rating pill default](components/crops/rating-pill-default.png)
 
 #### "Sign in for extra savings" pill
-The blue outlined pill on each card pointing signed-out guests at member prices. Hovered and focused only, never followed. Read as `savings-pill` on the hotel results page.
+The filled primary-blue pill button with white text on each card pointing signed-out guests at member prices (the fill paints on its ::after layer). Hovered and focused only, never followed. Read as `savings-pill` on the hotel results page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -481,7 +484,8 @@ The heart over the card photo. Pressed is forced; nothing was saved. Read as `ca
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 48 x 48; background transparent; text Centra No2 14/18 400, #191e3b `color.palette.light1.onFeatured`; icon 24 x 24, #000000 |
+| default (same: hover, pressed) | size 48 x 48; background transparent; text Centra No2 14/18 400, #191e3b `color.palette.light1.onFeatured`; icon 24 x 24, #000000 |
+| focus-visible | child paint button: outline 1px auto #101010 offset 0px |
 
 Child layers that carry the look: button 32x32 background #ffffff `color.palette.light1.inverseOnSurface` radius 40000px.
 
@@ -511,7 +515,7 @@ The left filter rail: "Search by property name", "Filter by" groups (Property cl
 
 Child layers that carry the look: div 236x78 background #ffffff `color.palette.light1.inverseOnSurface` radius 16px; div::before 236pxx78px border 1px solid #dfe0e4 `color.palette.light1.outlineVariant` radius 16px; div 48x24 background #676a7d `color.palette.light1.onSurfaceVariant` border 2px solid #676a7d `color.palette.light1.onSurfaceVariant` radius 12px.
 
-![Filter column default](components/crops/filters-default.png)
+No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
 
 #### Property name field
 The "e.g. Marriott" text input in the filter rail. Clicked into only. Read as `name-field` on the hotel results page.
@@ -523,14 +527,15 @@ The "e.g. Marriott" text input in the filter rail. Clicked into only. Read as `n
 
 Child layers that carry the look: input 236x48 background #ffffff `color.palette.light1.inverseOnSurface` border 1px solid #818494 `color.palette.light1.outline` radius 8px.
 
-![Property name field default](components/crops/name-field-default.png) ![Property name field focused](components/crops/name-field-focused.png)
+![Property name field focused](components/crops/name-field-focused.png)
 
 #### Filter checkbox
 A "Property class" checkbox in the filter rail: an uitk-checkbox box with its count-bearing label. Hovered only, never toggled. Read as `filter-checkbox` on the hotel results page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 240 x 34; padding 8px 4px; background transparent; text Centra No2 14/18 400, #191e3b `color.palette.light1.onFeatured` |
+| default | size 240 x 34; padding 8px 4px; background transparent; text Centra No2 14/18 400, #191e3b `color.palette.light1.onFeatured` |
+| hover | child paint span: border 2px solid #1668e3 `color.palette.light1.outlineFocus`, ring #1668e3 `color.palette.light1.outlineFocus` 0px 0px 0px 0px |
 
 Child layers that carry the look: input 18x18 background #ffffff `color.palette.light1.inverseOnSurface`; span 18x18 background #ffffff `color.palette.light1.inverseOnSurface` border 2px solid #818494 `color.palette.light1.outline` radius 4px; span::before 18pxx18px border 1px solid transparent radius 4px.
 
@@ -600,7 +605,8 @@ The first search field at 390 wide. Read as `m-field` on the home page at 390 wi
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 58.33 x 48; background transparent; text Centra No2 16/normal 400, #191e3b `color.palette.light1.onFeatured`; icon 24 x 24, #191e3b `color.palette.light1.onFeatured` |
+| default (same: hover, pressed) | size 58.33 x 48; background transparent; text Centra No2 16/normal 400, #191e3b `color.palette.light1.onFeatured`; icon 24 x 24, #191e3b `color.palette.light1.onFeatured` |
+| focus-visible | child paint input: border 1px solid #1668e3 `color.palette.light1.outlineFocus`, ring #1668e3 `color.palette.light1.outlineFocus` 0px 0px 0px 1px inset |
 
 Child layers that carry the look: input 58.3x48 background #ffffff `color.palette.light1.inverseOnSurface` border 1px solid #818494 `color.palette.light1.outline` radius 8px.
 
@@ -621,7 +627,7 @@ Child layers that carry the look: button::before 83pxx48px background #0e3672 `c
 #### Deal card
 Read as `m-card` on the home page at 390 wide.
 
-**Values (default).** size 342 x 252; radius 16px; background #ffffff `color.palette.light1.inverseOnSurface`; text Centra No2 14/18 500, #1668e3 `color.palette.light1.outlineFocus`; icon 24 x 24, #191e3b `color.palette.light1.onFeatured`.
+**Values (default).** size 342 x 483.58; radius 16px; background #ffffff `color.palette.light1.inverseOnSurface`; text Centra No2 16/20 500, #191e3b `color.palette.light1.onFeatured`; icon 24 x 24, #ffffff `color.palette.light1.inverseOnSurface`.
 
 ![Deal card default](components/crops/m-card-default.png)
 ## Gaps

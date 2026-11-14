@@ -126,7 +126,11 @@ async function measure(key, state, target, opts = {}) {
     if (opts.extra) c.states[state].extra = await opts.extra(loc);
     log('  ', key, state, s.rect.w + 'x' + s.rect.h);
   } catch (e) {
-    c.states[state] = { error: String(e.message || e).slice(0, 200) };
+    // A failed re-read must not erase an earlier successful one: keep the
+    // saved style and record the failed attempt beside it.
+    const prev = c.states[state];
+    if (prev && prev.style) prev.rerunError = String(e.message || e).slice(0, 200);
+    else c.states[state] = { error: String(e.message || e).slice(0, 200) };
     log('  !', key, state, String(e.message).slice(0, 120));
   }
 }
@@ -167,14 +171,19 @@ async function S(key, target, list, meta = {}, opts = {}) {
       } else via = via || opts.via || 'at rest';
       if (st === 'focus-visible' && via === 'focus failed') {
         const prev = out.components[key].states[st];
-        if (prev && prev.crop) fs.rmSync(path.join(REF, prev.crop), { force: true });
-        out.components[key].states[st] = { error: 'keyboard focus did not reach the element', via };
+        if (prev && prev.style) prev.rerunError = 'keyboard focus did not reach the element';
+        else {
+          if (prev && prev.crop) fs.rmSync(path.join(REF, prev.crop), { force: true });
+          out.components[key].states[st] = { error: 'keyboard focus did not reach the element', via };
+        }
         log('  !', key, st, 'focus failed');
       } else {
         await measure(key, st, loc, { ...opts, via });
       }
     } catch (e) {
-      out.components[key].states[st] = { error: String(e.message || e).slice(0, 200) };
+      const prev = out.components[key].states[st];
+      if (prev && prev.style) prev.rerunError = String(e.message || e).slice(0, 200);
+      else out.components[key].states[st] = { error: String(e.message || e).slice(0, 200) };
       log('  !', key, st, String(e.message).slice(0, 120));
     }
     if (undo) await undo().catch(() => {});
@@ -393,7 +402,7 @@ async function search() {
   }))
     await S('rating-pill', q('[data-m="rating"]'), ['default'], { group: g, title: 'Rating pill', desc: 'The guest rating on a card: the score chip (9.4) in positive green beside the word and the review count.', sel: 'the rating area of a property card' });
   if (await tag('savecta', () => [...document.querySelectorAll('[data-stid="lodging-card-responsive"] button, [data-stid="lodging-card-responsive"] a')].find((b) => /Sign in for extra savings/.test(b.innerText || ''))))
-    await S('savings-pill', q('[data-m="savecta"]'), B3, { group: g, title: '"Sign in for extra savings" pill', desc: 'The blue outlined pill on each card pointing signed-out guests at member prices. Hovered and focused only, never followed.', sel: 'the "Sign in for extra savings" button' });
+    await S('savings-pill', q('[data-m="savecta"]'), B3, { group: g, title: '"Sign in for extra savings" pill', desc: 'The filled primary-blue pill button with white text on each card pointing signed-out guests at member prices (the fill paints on its ::after layer). Hovered and focused only, never followed.', sel: 'the "Sign in for extra savings" button' });
   if (await tag('vip', () => [...document.querySelectorAll('[data-stid="lodging-card-responsive"] *')].find((e) => (e.innerText || '').trim() === 'VIP Access')))
     await S('vip-badge', q('[data-m="vip"]'), ['default'], { group: g, title: 'VIP Access badge', desc: 'The dark "VIP Access" chip pinned over the card photo.', sel: 'the VIP Access badge on a property card' });
   await S('card-heart-search', q('[data-stid="lodging-card-responsive"] [data-stid="outlined-save-button"], [data-stid="outlined-save-button"]').first(), B4, { group: g, title: 'Save (heart) button', desc: 'The heart over the card photo. Pressed is forced; nothing was saved.', sel: '[data-stid="outlined-save-button"] on a property card' });
@@ -431,7 +440,11 @@ async function mobile() {
   await S('m-field', q('[data-stid="search-location"] .uitk-field, .uitk-field').first(), B4, { group: g, title: 'Search field', desc: 'The first search field at 390 wide.', sel: '.uitk-field' }, { noScroll: true });
   if (await tagEl('msearchbtn', '^Search$', '[data-testid="multi-product-search-form"], [data-stid="search-form-sticky"]'))
     await S('m-search-button', q('[data-m="msearchbtn"]'), B4, { group: g, title: 'Search button', sel: 'the Search button' }, { noScroll: true });
-  await S('m-card', q('.uitk-card').first(), ['default'], { group: g, title: 'Deal card', sel: '.uitk-card' });
+  // the first .uitk-card is the search shell; a deal card is a small
+  // carousel-item card holding a save button (same probe as the desktop page)
+  if (await tag('mdealcard', () => [...document.querySelectorAll('[data-stid="carousel-item"] .uitk-card')].find((c) => { const r = c.getBoundingClientRect(); return r.width > 100 && r.width < 500 && c.querySelector('[data-stid="outlined-save-button"], img'); })))
+    await S('m-card', q('[data-m="mdealcard"]'), ['default'], { group: g, title: 'Deal card', sel: 'a deals .uitk-card' });
+  else delete out.components['m-card'];
 }
 
 // ---------- run ----------
@@ -441,16 +454,20 @@ const { browser, context: ctx } = await launch();
 context = ctx;
 const only = process.argv.slice(2);
 run = new Date().toISOString();
+const finishedPages = new Set();
 for (const key of Object.keys(RUNS)) {
   if (only.length && !only.includes(key)) continue;
   try {
     await RUNS[key]();
+    finishedPages.add(key);
     save();
   } catch (e) { log('PAGE FAILED', key, e.message.split('\n')[0]); }
   if (page) await page.close().catch(() => {});
 }
-// drop components no page touched this full run
-for (const k of Object.keys(out.components)) if (!touched.has(k) && !only.length) delete out.components[k];
+// Drop components no page touched this full run — but only ones from a page
+// that finished: a page that failed mid-run keeps its earlier readings under
+// their original provenance instead of losing them to the cleanup.
+for (const k of Object.keys(out.components)) if (!touched.has(k) && !only.length && finishedPages.has(out.components[k].page)) delete out.components[k];
 save();
 await browser.close();
 srv.close();

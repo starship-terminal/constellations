@@ -3959,7 +3959,7 @@
     }
    },
    "headline": {
-    "extra-large": {
+    "extraLarge": {
      "fontSize": {
       "var": "--egds-type-style-headline-extra-large-font-size",
       "type": "dimension"
@@ -4157,6 +4157,17 @@
      "lineHeight": "{type.headline.large.lineHeight}",
      "fontWeight": "{type.headline.fontWeight}",
      "letterSpacing": "{type.headline.large.letterSpacing}"
+    },
+    "source": "composed from the --egds-type-style-headline-* declarations"
+   },
+   "headline-extraLarge": {
+    "type": "typography",
+    "value": {
+     "fontFamily": "{type.headline.fontFamily}",
+     "fontSize": "{type.headline.extraLarge.fontSize}",
+     "lineHeight": "{type.headline.extraLarge.lineHeight}",
+     "fontWeight": "{type.headline.fontWeight}",
+     "letterSpacing": "{type.headline.extraLarge.letterSpacing}"
     },
     "source": "composed from the --egds-type-style-headline-* declarations"
    },
