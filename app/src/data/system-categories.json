@@ -815,7 +815,7 @@
     "labels": ["Books", "Social Networking"],
     "reason": "catalog.json describes a book-club and reading product: club directories and detail pages, a book catalog with an ebook store, a /discover cover wall, sign-in, support and a blog. Post-login reader and club surfaces are gated."
   },
-{
+  {
     "referenceId": "systems:factory",
     "groupId": "web-categories",
     "labels": ["AI Tool", "Development Tools"],
