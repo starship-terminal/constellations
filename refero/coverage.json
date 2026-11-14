@@ -3,11 +3,11 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 130,
-    "system_domains": 122,
+    "system_packages": 131,
+    "system_domains": 123,
     "matched_domains": 96,
     "missing_domains": 337,
-    "system_domains_absent_from_catalog": 26
+    "system_domains_absent_from_catalog": 27
   },
   "matched": {
     "1password.com": {
@@ -4142,6 +4142,14 @@
         "slug": "devin-desktop",
         "name": "Devin (desktop)",
         "url": "https://devin.ai",
+        "ios_guess": []
+      }
+    ],
+    "equals.com": [
+      {
+        "slug": "equals",
+        "name": "Equals",
+        "url": "https://equals.com",
         "ios_guess": []
       }
     ],
