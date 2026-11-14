@@ -29,6 +29,19 @@ def sidecar_for(png):
     return json.loads(f.read_text()) if f.exists() else None
 
 
+def pixel_scale(meta):
+    """Device pixels per CSS pixel the tile was captured at: the recorded ratio, else the tile's own
+    PNG width over its clip width, else 1 (a sidecar that records neither is read as a 1x capture)."""
+    cap = meta.get('capture') or {}
+    if cap.get('scale') == 'css':
+        return 1
+    dpr = (meta.get('actual') or {}).get('devicePixelRatio') or (meta.get('requested') or {}).get('deviceScaleFactor')
+    if dpr:
+        return dpr
+    clip, png = cap.get('clip'), meta.get('png')
+    return png['width'] / clip['width'] if clip and png and clip.get('width') and png.get('width') else 1
+
+
 def stitched_sidecar(name, sheet, tiles):
     """Rebuild name.png.capture.json from the part tiles' sidecars.
 
@@ -40,45 +53,51 @@ def stitched_sidecar(name, sheet, tiles):
     height each part sidecar recorded, capped at the shooter's 8 chunks. A
     tile lost mid-run or a dead final tile fails the check instead of
     publishing a shortened sheet as a complete -full capture.
+
+    Tile clips are CSS pixels, so the stitched clip stays in CSS pixels and the expected PNG size is
+    each clip times its pixel scale (a 2x capture is twice its clip). A tile with no sidecar or no clip
+    leaves the image without one: unmeasured shots are never marked as checked.
     """
     parts = [sidecar_for(f) for _, f in tiles]
-    meta = dict(parts[0]) if parts and parts[0] else {'schemaVersion': 1}
+    if not parts or any(not p for p in parts):
+        return None
+    clips = [(p.get('capture') or {}).get('clip') for p in parts]
+    if any(not c for c in clips):
+        return None
+    scales = [pixel_scale(p) for p in parts]
+    meta = dict(parts[0])
     meta['screenshot'] = f'{name}.png'
-    clips = [(p.get('capture') or {}).get('clip') for p in parts if p]
-    clips = [c for c in clips if c]
     total_h = sum(c['height'] for c in clips)
-    meta['capture'] = {'mode': 'stitchedParts',
-                       'scale': (parts[0].get('capture') or {}).get('scale', 'device') if parts and parts[0] else 'device',
-                       'clip': {'x': 0, 'y': 0, 'width': sheet.width, 'height': total_h} if clips else None}
+    meta['capture'] = {'mode': 'stitchedParts', 'scale': (parts[0].get('capture') or {}).get('scale', 'device'),
+                       'clip': {'x': 0, 'y': 0, 'width': clips[0]['width'], 'height': total_h}}
     meta['png'] = {'width': sheet.width, 'height': sheet.height}
     meta['stitchedFrom'] = [f.name for _, f in tiles]
-    if clips:
-        meta['partClip'] = clips
+    meta['partClip'] = clips
 
     failures = []
     indices = sorted(i for i, _ in tiles)
     if indices != list(range(len(tiles))):
         missing = sorted(set(range(indices[-1] + 1)) - set(indices))
         failures.append(f"tile range {indices[0]}..{indices[-1]} is missing part{missing}")
-    if clips:
-        y = 0
-        for c in sorted(clips, key=lambda c: c['y']):
-            if abs(c['y'] - y) > 1:
-                failures.append(f"part clips are not contiguous (gap before clip y={c['y']})")
-                break
-            y += c['height']
-        doc_hs = [(p.get('actual') or {}).get('documentSize', {}).get('height') for p in parts if p]
-        doc_hs = [h for h in doc_hs if h]
-        if doc_hs:
-            # The shooter bounds every full-page pass at 8 chunks, so the
-            # intended coverage is min(document height, 8 * chunk); the chunk
-            # is the largest clip height recorded (full tiles only).
-            chunk = max(c['height'] for c in clips)
-            expected_cover = min(max(doc_hs), 8 * chunk)
-            if total_h < expected_cover - 1:
-                failures.append(f"clips cover {total_h}px of the {expected_cover}px the capture targeted"
-                                f" (document {max(doc_hs)}px, 8-chunk cap {8 * chunk}px)")
-    expected = {'width': sheet.width, 'height': total_h} if clips else {'width': sheet.width, 'height': sheet.height}
+    y = 0
+    for c in sorted(clips, key=lambda c: c['y']):
+        if abs(c['y'] - y) > 1:
+            failures.append(f"part clips are not contiguous (gap before clip y={c['y']})")
+            break
+        y += c['height']
+    doc_hs = [(p.get('actual') or {}).get('documentSize', {}).get('height') for p in parts if p]
+    doc_hs = [h for h in doc_hs if h]
+    if doc_hs:
+        # The shooter bounds every full-page pass at 8 chunks, so the
+        # intended coverage is min(document height, 8 * chunk); the chunk
+        # is the largest clip height recorded (full tiles only).
+        chunk = max(c['height'] for c in clips)
+        expected_cover = min(max(doc_hs), 8 * chunk)
+        if total_h < expected_cover - 1:
+            failures.append(f"clips cover {total_h}px of the {expected_cover}px the capture targeted"
+                            f" (document {max(doc_hs)}px, 8-chunk cap {8 * chunk}px)")
+    expected = {'width': round(clips[0]['width'] * scales[0]),
+                'height': sum(round(c['height'] * s) for c, s in zip(clips, scales))}
     if abs(sheet.width - expected['width']) > 1 or abs(sheet.height - expected['height']) > 1:
         failures.append(f"Stitched PNG {sheet.width}x{sheet.height}, "
                         f"expected {expected['width']}x{expected['height']} from the part clips")
@@ -112,9 +131,11 @@ for f in sorted(RAW.glob('*.png')):
         continue
     im = Image.open(f).convert('RGB')
     im.quantize(colors=256, method=Image.Quantize.MEDIANCUT, dither=Image.Dither.NONE).save(OUT / f.name, optimize=True)
-    if f.stem in stitched:
-        (OUT / f'{f.name}.capture.json').write_text(json.dumps(stitched[f.stem], indent=1) + '\n')
-    elif f.with_name(f.name + '.capture.json').exists():
-        shutil.copyfile(f.with_name(f.name + '.capture.json'), OUT / f'{f.name}.capture.json')
+    out_side = OUT / f'{f.name}.capture.json'
+    out_side.unlink(missing_ok=True)   # never leave a previous run's measurements beside a new image
+    if stitched.get(f.stem):
+        out_side.write_text(json.dumps(stitched[f.stem], indent=1) + '\n')
+    elif f.stem not in stitched and f.with_name(f.name + '.capture.json').exists():
+        shutil.copyfile(f.with_name(f.name + '.capture.json'), out_side)
     n += 1
 print(n, 'screenshots ->', OUT)
