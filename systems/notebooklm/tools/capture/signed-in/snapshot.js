@@ -39,7 +39,7 @@ window.__snap = function (label, REDACT) {
   // url(); any other ; (an &amp; entity, a ;-separated query) stays inside, as do commas and
   // parentheses, except a ")" that closes an unquoted url( ... ) before ; , } or the end.
   const cutSigned = (s) => s.replace(/[?#](?:[^\s"'<>);{}]|;(?![\w-]+\s*:)|\)(?![\s;,"'}]|$))*/g, (q) => (SIGNED.test(q) ? '' : q));
-  const cutSignedUrl = (s) => s.replace(/[?#](?:[^\s"'<>);{}]|;|\)(?![\s;,"'}]|$))*/g, (q) => (SIGNED.test(q) ? '' : q));
+  const cutSignedUrl = (s) => s.replace(/[?#](?:[^\s"'<>);{}]|;|\)(?![\s"'}]|$))*/g, (q) => (SIGNED.test(q) ? '' : q));
   const abs = (u) => { let h; try { h = new URL(u, location.href).href; } catch { return cutSigned(u); } return SIGNED.test(h) ? h.split(/[?#]/)[0] : h; };
   const parts = [];
   for (const ss of document.styleSheets) {

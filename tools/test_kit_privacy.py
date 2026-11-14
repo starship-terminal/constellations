@@ -164,12 +164,15 @@ def capture_scripts_recording_raw_urls(root):
 # (and the descriptors copied in a loop), which names the font files and can carry the same query.
 # A literal name other than 'src' (font-family, font-weight...) holds no URL and is left alone.
 PROP_READ = re.compile(r"getPropertyValue\((?!['\"](?!src['\"]))")
+SRC_ID = re.compile(r"srcId\((?:[\w.]+\.)*getPropertyValue\('src'\)\)")
 PROP_READ_SAFE = re.compile(r"noUrl\((?:[\w.]+(?:\([\w.]*\))?\.)*getPropertyValue\((?!['\"](?!src['\"]))")
 
 
 def vars_reads_without_no_url(src):
     """Line numbers in a vars.mjs source where a custom property's or font-face src's value is read without noUrl."""
-    return [n for n, line in enumerate(src.splitlines(), 1) if len(PROP_READ.findall(line)) != len(PROP_READ_SAFE.findall(line))]
+    # srcId(...) only hashes a src (queries cut) to tell two faces apart; the hash is never recorded as a value.
+    lines = [SRC_ID.sub("", line) for line in src.splitlines()]
+    return [n for n, line in enumerate(lines, 1) if len(PROP_READ.findall(line)) != len(PROP_READ_SAFE.findall(line))]
 
 
 def vars_scripts_recording_raw_values(root):
@@ -237,6 +240,8 @@ class PackageCaptureScripts(unittest.TestCase):
                     "if (r.type === CSSRule.FONT_FACE_RULE) {\n  const o = { file };\n  for (const k of r.style) o[k] = r.style.getPropertyValue(k).trim();\n}"):
             self.assertNotEqual(vars_reads_without_no_url(raw), [], raw)
         self.assertEqual(vars_reads_without_no_url("const o = { family: r.style.getPropertyValue('font-family') };"), [])
+        self.assertEqual(vars_reads_without_no_url("ff.push({ src: noUrl(r.style.getPropertyValue('src')), sid: srcId(r.style.getPropertyValue('src')) });"), [])
+        self.assertEqual(vars_reads_without_no_url("ff.push({ src: noUrl(r.style.getPropertyValue('src')), sid: r.style.getPropertyValue('src') });"), [1])
 
     def test_vars_scripts_record_no_raw_font_urls(self):
         # A font response URL, a font-face cssText and a link href can carry a signed query: font URL lists
@@ -318,7 +323,9 @@ class JavaScriptHalves(unittest.TestCase):
             'https://x/p?a=1&amp;token=abc': 'https://x/p',
             'https://x/p?unit=7;b:2': 'https://x/p?unit=7;b:2',
             'https://x/p?page=2#top': 'https://x/p?page=2#top',
-            'background:url(https://x/p.png?sig=1);color:red': 'background:url(https://x/p.png);color:red',
+            # a ) or , before a ; is still inside the query: only whitespace, a quote, < > or { } end it
+            '<img data-src="https://x/p?crop=(0,0);b:c&token=abc">': '<img data-src="https://x/p">',
+            'https://x/p?crop=(0,0),b:c&token=abc': 'https://x/p',
             'https://x/a.png?sig=1 1x, https://x/b.png 2x': 'https://x/a.png 1x, https://x/b.png 2x',
         }
         got = self.node(src + f"\nconsole.log(JSON.stringify({json.dumps(list(url_cases))}.map(cutSignedUrl)))")
@@ -330,10 +337,10 @@ class JavaScriptHalves(unittest.TestCase):
         }
         got = self.node(src + f"\nconsole.log(JSON.stringify({json.dumps(list(style))}.map(cutSigned)))")
         self.assertEqual(got, list(style.values()))
-        # on CSS text it can cut more than cutSigned (it runs from a colour's # to the url()), never less
-        css = 'color:#fff;background:url(https://x/p.png?sig=1);margin:0'
-        got = self.node(src + f"\nconsole.log(JSON.stringify([cutSignedUrl({json.dumps(css)})]))")
-        self.assertFalse(catalog.SIGNED_URL.search(got[0]), got)
+        # on CSS text it can cut more than cutSigned (it runs from a colour's # through the url() and on), never less
+        for css in ('color:#fff;background:url(https://x/p.png?sig=1);margin:0', 'background:url(https://x/p.png?sig=1);color:red', 'background:url(https://x/p.png?sig=1), url(https://x/q.png?token=a)'):
+            got = self.node(src + f"\nconsole.log(JSON.stringify([cutSignedUrl({json.dumps(css)})]))")
+            self.assertFalse(catalog.SIGNED_URL.search(got[0]), got)
 
     def test_snapshot_attribute_pass_uses_the_url_only_cut_for_non_style_attributes(self):
         src = (SIGNED_IN / "snapshot.js").read_text()
@@ -349,6 +356,20 @@ class JavaScriptHalves(unittest.TestCase):
                             "noUrl(\"url('https://x/a\\\\'b(2).png?sig=1')\"), noUrl('url(https://x/p.png?sig=1), none')]))")
             self.assertEqual(got, ['url(…), linear-gradient(red, blue)', 'url("data:image/svg+xml,abc")', 'url(#clip)', 'auto', 3,
                                    'url(…) no-repeat', 'url(…)', 'url(…), none'], path)
+
+    def test_font_face_ids_tell_apart_files_the_masked_src_cannot(self):
+        # noUrl turns every font file URL into url(…), so two faces of one family, weight and style that
+        # differ only in the file would share a key and one would be dropped. srcId hashes the src with
+        # its queries cut, and goes in the key only.
+        root = HERE.parent
+        lines = {line.strip() for slug in ("airbnb", "airtable", "anam", "anthropic", "expedia", "gauth", "refero-design")
+                 for line in (root / f"systems/{slug}/tools/capture/vars.mjs").read_text().splitlines() if line.lstrip().startswith("const srcId = ")}
+        self.assertEqual(len(lines), 1, "every copy carries the same srcId")
+        a, b, c = ('url("https://x.test/a.woff2?X-Amz-Signature=1") format("woff2")', 'url("https://x.test/b.woff2") format("woff2")',
+                   'url("https://x.test/a.woff2?X-Amz-Signature=2") format("woff2")')
+        got = self.node(next(iter(lines)) + f"\nconsole.log(JSON.stringify([{json.dumps(a)}, {json.dumps(b)}, {json.dumps(c)}].map(srcId)))")
+        self.assertNotEqual(got[0], got[1])
+        self.assertEqual(got[0], got[2])
 
     def test_vars_no_url_reads_authored_tokens(self):
         # A declared custom property keeps its authored tokens (unlike a computed value, which the

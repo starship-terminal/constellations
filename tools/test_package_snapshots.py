@@ -143,6 +143,7 @@ console.log(JSON.stringify(out));
         url_cases = {
             '<img data-src="https://x/p?options=a;b:c&token=abc">': '<img data-src="https://x/p">',
             'https://x/p?a=1;b:2&X-Amz-Signature=abc': 'https://x/p',
+            '<img data-src="https://x/p?crop=(0,0);b:c&token=abc">': '<img data-src="https://x/p">',
             'https://example.test/page?unit=7;b:2': 'https://example.test/page?unit=7;b:2',
         }
         for path in copies:
