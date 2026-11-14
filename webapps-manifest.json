@@ -624,8 +624,8 @@
     334
    ],
    "description": "For Creators and Artists",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/buymeacoffee",
    "notes": "",
    "batch": 3
   },
@@ -639,8 +639,8 @@
     455
    ],
    "description": "Create a textile from scratch",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/byborre",
    "notes": "",
    "batch": 3
   },
@@ -654,8 +654,8 @@
     661
    ],
    "description": "The intuitive equity platform for fast-growing startups",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/cakeequity",
    "notes": "",
    "batch": 3
   },
@@ -669,8 +669,8 @@
     282
    ],
    "description": "Open Scheduling Infrastructure",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/cal",
    "notes": "",
    "batch": 3
   },
@@ -684,8 +684,8 @@
     97
    ],
    "description": "Meeting Scheduling Software and AI Meeting Tools",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/calendly",
    "notes": "",
    "batch": 3
   },
@@ -714,8 +714,8 @@
     94
    ],
    "description": "Visual Suite for Everyone",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/canva",
    "notes": "",
    "batch": 3
   },
@@ -1014,8 +1014,8 @@
     1131
    ],
    "description": "A platform for curating and discovering taste.",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/curater",
    "notes": "",
    "batch": 4
   },
@@ -1089,8 +1089,8 @@
     853
    ],
    "description": "Listen to music online",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/deezer",
    "notes": "",
    "batch": 4
   },
@@ -1104,8 +1104,8 @@
     670
    ],
    "description": "Scale Your Insight. Stay Focused on What Matters",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/delphi",
    "notes": "",
    "batch": 4
   },
@@ -1119,8 +1119,8 @@
     29
    ],
    "description": "Edit videos & podcasts like a doc ",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/descript",
    "notes": "",
    "batch": 4
   },
@@ -1524,8 +1524,8 @@
     599
    ],
    "description": "One integration, connect to 1000+ energy devices",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/enode",
    "notes": "",
    "batch": 6
   },
@@ -1539,8 +1539,8 @@
     84
    ],
    "description": "A curated digital storefront for PC and Mac",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/epicgames",
    "notes": "",
    "batch": 6
   },
@@ -1554,8 +1554,8 @@
     75
    ],
    "description": "Bring your story to life | Music & SFX for videos",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/epidemicsound",
    "notes": "",
    "batch": 6
   },
@@ -1569,8 +1569,8 @@
     289
    ],
    "description": "The fastest way for startups to do any analysis",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/equals",
    "notes": "",
    "batch": 6
   },
@@ -1584,8 +1584,8 @@
     102
    ],
    "description": "Men's Fashion, Cocktails, Politics, Interviews",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/esquire",
    "notes": "",
    "batch": 6
   },
@@ -1599,8 +1599,8 @@
     898
    ],
    "description": "Web Search API, AI Search Engine, & Website Crawler",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/exa",
    "notes": "",
    "batch": 6
   },
@@ -1629,8 +1629,8 @@
     477
    ],
    "description": "Whiteboarding tool with hand drawn like experience",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/excalidraw",
    "notes": "",
    "batch": 6
   },
@@ -1644,8 +1644,8 @@
     172
    ],
    "description": "Vacation Homes, Hotels, Car Rentals, Flights",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/expedia",
    "notes": "",
    "batch": 6
   },
@@ -1659,8 +1659,8 @@
     292
    ],
    "description": "Brand new platform for creatives",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/explore",
    "notes": "",
    "batch": 6
   },
@@ -1674,8 +1674,8 @@
     463
    ],
    "description": "Share the joy of reading with online book clubs",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/fable",
    "notes": "",
    "batch": 6
   },
@@ -1689,8 +1689,8 @@
     734
    ],
    "description": "Build faster with AI coding agents",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/factory",
    "notes": "",
    "batch": 6
   },
@@ -1704,8 +1704,8 @@
     155
    ],
    "description": "Wholesale Platform",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/faire",
    "notes": "",
    "batch": 6
   },
@@ -1719,8 +1719,8 @@
     935
    ],
    "description": "Easiest & most cost-effective way to use Gen AI",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/fal",
    "notes": "",
    "batch": 6
   },
@@ -1734,8 +1734,8 @@
     373
    ],
    "description": "Your favorite crypto wallet",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/family",
    "notes": "",
    "batch": 6
   },
@@ -1749,8 +1749,8 @@
     99
    ],
    "description": "The Global Destination For Modern Luxury",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/farfetch",
    "notes": "",
    "batch": 6
   },
@@ -1794,8 +1794,8 @@
     415
    ],
    "description": "Build your company workspace with no code",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/fibery",
    "notes": "",
    "batch": 6
   },
