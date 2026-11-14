@@ -568,7 +568,6 @@ ty = SPEC["core"].setdefault("font", {}).setdefault("size", {})
 for key, comp, state, desc in [
     ("badge", "new-badge", "default", "The 9px badge size (NEW / FREE)."),
     ("filter", "filter-industry", "default", "The 13px app filter label."),
-    ("micro", "tpl-card-m", "default", "The 12px gallery/meta label."),
     ("control", "modal-google", "default", "The 15px app control size (modal buttons, sidebar items)."),
     ("ui", "nav-apps", "default", "The 15px marketing nav size."),
     ("body", "site-footer", "default", "The 16px body/footer text."),

@@ -12,7 +12,8 @@ from raw/css-vars.json and raw/components-computed.json. Adapted from the Course
 Every image's .capture.json sidecar travels with it: a plain capture's sidecar is copied next to the
 quantized PNG, and a stitched image's sidecar is rebuilt from its part tiles' sidecars — the parts'
 clips recorded under partClip, the union under capture.clip, and a fresh dimensionCheck against the
-stitched PNG's real pixel size (a part's own check can never vouch for the sheet).
+stitched PNG's real pixel size. A tile whose own check failed (or has no sidecar) fails the sheet, and
+the expected size is the tiles' recorded one, never the sheet's own width.
 """
 from PIL import Image
 import json, pathlib, re, shutil, sys
@@ -44,12 +45,27 @@ def stitched_sidecar(name, sheet, tile_paths):
     meta['stitchedFrom'] = [f.name for f in tile_paths]
     if clips:
         meta['partClip'] = clips
-    expected = {'width': sheet.width, 'height': total_h} if clips else {'width': sheet.width, 'height': sheet.height}
-    matches = abs(sheet.width - expected['width']) <= 1 and abs(sheet.height - expected['height']) <= 1
-    meta['dimensionCheck'] = {'status': 'pass' if matches else 'fail', 'expected': expected, 'basis': 'stitchedParts'}
-    if not matches:
-        meta['dimensionCheck']['error'] = (f"Stitched PNG {sheet.width}x{sheet.height}, "
-                                           f"expected {expected['width']}x{expected['height']} from the part clips")
+    # The expectation comes from the tiles' own recorded checks, never from the sheet being judged:
+    # a tile with a missing sidecar or a failed check cannot be vouched for, and every tile must
+    # have been expected at the same width as the stitched sheet.
+    problems = []
+    tile_checks = [(p or {}).get('dimensionCheck') or {} for p in parts]
+    for f, chk in zip(tile_paths, tile_checks):
+        if chk.get('status') != 'pass':
+            problems.append(f"tile {f.name} dimensionCheck is {chk.get('status', 'missing')}")
+    exp = [c.get('expected') or {} for c in tile_checks]
+    widths = {e.get('width') for e in exp}
+    exp_w = next(iter(widths)) if len(widths) == 1 and None not in widths else None
+    exp_h = sum(e['height'] for e in exp) if all('height' in e for e in exp) else None
+    if exp_w is None:
+        problems.append('tiles disagree on, or do not record, an expected width')
+    expected = {'width': exp_w, 'height': exp_h}
+    if not problems:
+        if abs(sheet.width - exp_w) > 1 or abs(sheet.height - exp_h) > 1:
+            problems.append(f"Stitched PNG {sheet.width}x{sheet.height}, expected {exp_w}x{exp_h} from the tiles' recorded checks")
+    meta['dimensionCheck'] = {'status': 'fail' if problems else 'pass', 'expected': expected, 'basis': 'stitchedParts'}
+    if problems:
+        meta['dimensionCheck']['error'] = '; '.join(problems)
     return meta
 
 
