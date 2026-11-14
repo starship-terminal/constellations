@@ -187,8 +187,16 @@ class Build(unittest.TestCase):
         raw["pages"]["home"]["sheetsTruncated"] = {"declared": True, "reducedRules": False, "customProperties": False}
         raw["pages"]["home"]["capped"] = {"cap": 3, "droppedNormal": 2, "droppedReduced": 0}
         g, _ = motion.build(raw)
-        self.assertEqual(g["$extensions"]["incomplete"], {"truncatedLists": ["declared"], "cappedPages": ["home"]})
+        self.assertEqual(g["$extensions"]["incomplete"],
+                         {"truncatedLists": ["declared"], "cappedPages": ["home"], "unreadableSheets": {}})
         self.assertNotIn("incomplete", self.group["$extensions"])
+
+    def test_unreadable_cross_origin_sheets_are_recorded(self):
+        raw = json.loads(json.dumps(RAW))
+        raw["pages"]["home"]["unreadableSheets"] = 2
+        g, _ = motion.build(raw)
+        self.assertEqual(g["$extensions"]["incomplete"],
+                         {"truncatedLists": [], "cappedPages": [], "unreadableSheets": {"home": 2}})
 
     def test_the_probe_verdict_and_which_properties_transition(self):
         x = self.group["$extensions"]

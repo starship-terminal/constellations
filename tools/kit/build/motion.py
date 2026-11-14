@@ -317,6 +317,10 @@ def build(raw):
     }
     cut = sorted({k for p in pages.values() for k, v in (p.get("sheetsTruncated") or {}).items() if v})
     capped = [n for n, p in pages.items() if p.get("capped")]
-    if cut or capped:
-        group["$extensions"]["incomplete"] = {"truncatedLists": cut, "cappedPages": capped}
+    # Cross-origin sheets the page could not read: their hover declarations,
+    # keyframes, custom properties and reduce rules are missing from the reading.
+    unreadable = {n: p["unreadableSheets"] for n, p in pages.items() if p.get("unreadableSheets")}
+    if cut or capped or unreadable:
+        group["$extensions"]["incomplete"] = {"truncatedLists": cut, "cappedPages": capped,
+                                              "unreadableSheets": unreadable}
     return group, not_tokenised
