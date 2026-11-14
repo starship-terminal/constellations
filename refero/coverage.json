@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 141,
-    "system_domains": 133,
-    "matched_domains": 104,
-    "missing_domains": 329,
+    "system_packages": 142,
+    "system_domains": 134,
+    "matched_domains": 105,
+    "missing_domains": 328,
     "system_domains_absent_from_catalog": 29
   },
   "matched": {
@@ -1613,6 +1613,23 @@
         }
       ]
     },
+    "fal.ai": {
+      "catalog": [
+        {
+          "name": "fal",
+          "domain": "fal.ai",
+          "id": 935
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "fal",
+          "name": "fal.ai",
+          "url": "https://fal.ai",
+          "name_match": true
+        }
+      ]
+    },
     "family.co": {
       "catalog": [
         {
@@ -2022,13 +2039,6 @@
         "name": "Equals",
         "domain": "equals.app",
         "id": 289
-      }
-    ],
-    "fal.ai": [
-      {
-        "name": "fal",
-        "domain": "fal.ai",
-        "id": 935
       }
     ],
     "farfetch.com": [

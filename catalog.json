@@ -11595,6 +11595,106 @@
         "pr": "https://github.com/starship-terminal/constellations/pull/558"
       },
       "layoutGaps": {}
+    },
+    {
+      "slug": "fal",
+      "name": "fal.ai",
+      "url": "https://fal.ai",
+      "category": "ai-agent",
+      "platform": "web",
+      "goodFor": "generative-media infrastructure design: three declared token layers (a Tailwind v4-style app layer of 763 names - surface/content/stroke/overlay/badge/accent roles over HSL-triplet ramps - a Webflow marketing palette and a fumadocs docs layer) across three signed-out surfaces - a dark-bronze+cyan Focal Web marketing site (neon-lime CTA), a dark #121216 model catalog and playground (violet #783afb Sign-in-to-run, ghost washes, model cards), and a light Focal/Public-Sans docs - plus an OAuth-only login card and a 390px phone pass",
+      "tags": [
+        "web",
+        "ai",
+        "generative-media",
+        "inference",
+        "api",
+        "design-tokens",
+        "dark",
+        "light",
+        "violet-accent",
+        "catalog",
+        "playground",
+        "docs",
+        "signed-out"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-14",
+      "access": "read-only (the marketing pages, the explore catalog, the model and API pages, the docs and the login card are fully public; everything past login - dashboard, API keys, billing, deployments, sandbox, inference - is an authenticated boundary never reached; OAuth, Sign-in-to-run, Open-in-Sandbox, Download, Contact-Sales and Get-Started were measured, never followed; the prompt field was filled and cleared without running a model; the consent card was hidden, never answered)",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/fal/README.md",
+      "tokens": "systems/fal/tokens.json",
+      "styleGuide": "systems/fal/style-guide.html",
+      "preview": {
+        "cover": "systems/fal/screenshots/explore-dark-default.png",
+        "icon": "systems/fal/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.surface.page",
+            "surface": "light.surface.default",
+            "text": "light.content.base.default",
+            "muted": "light.content.muted",
+            "accent": "light.accent.violet.solid.default",
+            "border": "light.stroke.base.default"
+          },
+          "dark": {
+            "page": "dark.surface.page",
+            "surface": "dark.surface.default",
+            "text": "dark.content.base.default",
+            "muted": "dark.content.muted",
+            "accent": "dark.accent.violet.solid.default",
+            "border": "dark.stroke.base.default"
+          }
+        },
+        "fonts": [
+          "core.font.family.ui",
+          "core.font.family.marketing-display",
+          "core.font.family.mono"
+        ]
+      },
+      "capture": {
+        "method": "public-web",
+        "source": "fal.ai in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and crops from the live DOM. The site declares three token layers in its stylesheets: the app's Tailwind-style layer resolved per html.light|html.dark (appLight/appDark passes, 763 names each), the Webflow marketing layer (marketing pass) and the fumadocs docs layer (docsLight/docsDark passes), so the colour roles are declared values and the component values are measured computed values. Everything past login is a documented authenticated boundary",
+        "timestamp": "2026-11-14T07:30:00Z",
+        "harness": "Devin",
+        "model": "SWE-2 High",
+        "route": "public-web",
+        "routes": [
+          "/",
+          "/pricing",
+          "/serverless",
+          "/contact-sales",
+          "/explore (dark + light)",
+          "/models/krea/v3/text-to-image (dark; light blocked by the edge check)",
+          "/models/krea/v3/text-to-image/api",
+          "/login (dark + light)",
+          "/docs/documentation (light + dark)",
+          "/this-page-does-not-exist (404)",
+          "mobile / and /explore (incl. the nav drawer)"
+        ],
+        "gaps": [
+          "every post-login surface (dashboard, API keys, billing, deployments) lives behind fal's account - an authenticated boundary never reached",
+          "inference was never run: the prompt field was filled and cleared, Sign-in-to-run links to login signed out, Open-in-Sandbox and Download were measured, never followed",
+          "the OAuth buttons and Use-SSO were measured at rest, never followed; validation, error and success states are absent rather than measured",
+          "the consent card was hidden for clean captures, never answered",
+          "the /models/* light pass hit an edge security-verification interstitial; model-light-default is the only shot and its measurements come from the dark pass",
+          "pager-next's pressed state is a real 0x0 - the carousel arrow collapses mid-press",
+          "icons: no standalone SVG set lifted this pass"
+        ],
+        "durationMin": 300,
+        "durationNote": "wall-clock across the capture sessions including kit adaptation, the stylesheet harvest, screenshot and measurement passes on a headless Linux server, and the offline build",
+        "pr": "https://github.com/starship-terminal/constellations/pull/556"
+      },
+      "layoutGaps": {
+        "icons/": "the icon extraction pass was not run; the marks (the fal wordmark, model publisher marks, badge and nav glyphs, social icons) are visible in the crops and screenshots"
+      }
     }
   ]
 }
