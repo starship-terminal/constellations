@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Equals style guide</title>
+<meta name="description" content="Equals design tokens and the public marketing, sign-in and docs surfaces' components, rendered from tokens.json with the declared and measured values.">
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  --sg-sans: Unica77, "Aeonik Pro", Lato, Inter, ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-serif: "Serrif Condensed", Georgia, "Times New Roman", serif;
+  --sg-mono: "Paper Mono", "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+[data-mode="dark"], .dark {
+/*DARK*/
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--color-brand-black, #000); background: var(--marketing-surface, #faf9f5); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 400 48px/1 var(--sg-serif); margin: 0 0 4px; letter-spacing: -0.02em; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--color-brand-black, #000); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--color-brand-grey-3, rgba(0,0,0,.08)); }
+.lead { max-width: 62ch; color: var(--color-brand-black, #000); opacity: .8; }
+.note { font-size: 13px; color: var(--color-brand-black, #000); opacity: .65; max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--color-brand-black, #000); opacity: .6; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.pal.dark { background: var(--docs-surface, #0b0a0f); padding: 10px; border-radius: 8px; }
+.pal.dark .nm, .pal.dark .vl { color: #e2e0e5; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--color-brand-grey-3, rgba(0,0,0,.08)); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--color-brand-black, #000); opacity: .65; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--color-brand-black, #000); opacity: .65; }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--color-brand-grey-3, rgba(0,0,0,.08)); overflow: hidden; background: var(--marketing-surface, #faf9f5); }
+.mnav { display: flex; align-items: center; gap: 22px; height: var(--component-header-height, 52px); padding: 0 12px 0 22px; font-size: 14px; color: var(--marketing-text, #000); background: var(--marketing-surface, #faf9f5); border-bottom: 1px solid var(--color-brand-grey-3, rgba(0,0,0,.08)); }
+.mnav .wm { font-weight: 700; font-size: 20px; letter-spacing: -0.02em; }
+.mnav .sp { flex: 1; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-cta-height, 44px); padding: 0 18px; font-size: 14px; font-weight: 500; border-radius: var(--radius-cta, 60px); border: 1px solid transparent; }
+.btn.orchid { background: var(--marketing-accent-orchid-background, #b074ce); color: var(--marketing-accent-orchid-on, #000); }
+.btn.green { background: var(--marketing-accent-green-background, #20a277); color: var(--marketing-accent-green-on, #fff); }
+.btn.purple { background: var(--signin-action, #7c3aed); color: var(--signin-on-action, #fff); border-radius: var(--radius-field, 8px); height: var(--component-app-submit-height, 27px); font-size: 12px; }
+.hero { color: var(--marketing-text, #000); padding: 72px 40px; font: 400 88px/0.95 var(--sg-serif); letter-spacing: -0.02em; text-align: center; background: var(--marketing-surface, #faf9f5); }
+.hero small { display: block; font: 400 20px/1.5 var(--sg-sans); color: var(--marketing-text, #000); margin: 16px auto 22px; max-width: 46ch; }
+.caprow { display: flex; gap: 8px; justify-content: center; margin-top: 8px; }
+.capin { width: 300px; height: var(--component-hero-field-height, 56px); border-radius: var(--radius-cta, 60px); border: 1px solid var(--color-brand-grey-4, rgba(0,0,0,.15)); background: var(--color-brand-white, #fff); font-size: 16px; padding: 0 28px; color: var(--marketing-muted, rgba(0,0,0,.6)); display: inline-flex; align-items: center; }
+.eyebrow { font: 500 12px/1.8 var(--sg-mono); letter-spacing: .02em; color: var(--marketing-label-amber, #ff3716); text-transform: uppercase; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
+.tile { border: 1px solid var(--color-brand-grey-3, rgba(0,0,0,.08)); padding: 24px; font-size: 13px; background: var(--color-brand-white, #fff); border-radius: var(--radius-card, 12px); }
+.tile b { display: block; font: 400 30px/1.1 var(--sg-serif); margin-bottom: 4px; }
+.tile .sub { opacity: .65; font-size: 12px; }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--color-brand-grey-3, rgba(0,0,0,.08)); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--color-brand-grey-3, rgba(0,0,0,.08)); }
+.tr .ts { font-family: var(--sg-serif); }
+.tr .tv { font-size: 12px; color: var(--color-brand-black, #000); opacity: .65; font-family: var(--sg-mono); }
+/* sign-in mock */
+.sgw { background: var(--signin-canvas, #fcfcfc); padding: 28px; display: flex; justify-content: center; }
+.sgcard { width: var(--component-signin-card-width, 300px); font-family: "neue-haas-unica", Helvetica, sans-serif; color: var(--signin-text, #262626); }
+.sgcard h3 { font-size: 20px; font-weight: 600; margin: 0 0 4px; color: var(--signin-heading, #000); }
+.sgcard p { font-size: 12px; color: var(--signin-muted, #737373); margin: 0 0 14px; }
+.sgfield { height: var(--component-signin-field-height, 30px); border-radius: var(--radius-field, 8px); background: var(--signin-field, #f5f5f5); display: flex; align-items: center; padding: 0 10px; font-size: 12px; color: var(--signin-placeholder, #a3a3a3); margin-bottom: 8px; }
+/* docs mock */
+.dgw { display: flex; border: 1px solid var(--docs-border, #f1eff5); border-radius: var(--radius-card, 12px); overflow: hidden; background: var(--docs-surface, #fff); font-family: Inter, var(--sg-sans); }
+.dgw .dsb { width: var(--component-docs-sidebar-width, 288px); border-right: 1px solid var(--docs-border, #f1eff5); padding: 12px; font-size: 13px; }
+.dgw .dni { height: var(--component-nav-item-height, 32px); display: flex; align-items: center; padding: 0 10px; border-radius: var(--radius-small, 6px); color: var(--docs-muted, #737176); }
+.dgw .dni.on { background: var(--docs-nav-hover, rgba(120,57,229,.1)); color: var(--docs-primary, #7839e5); }
+.dgw .dse { height: var(--component-search-height, 36px); border-radius: var(--radius-pill, 9999px); background: var(--docs-field, rgba(0,0,0,.03)); display: flex; align-items: center; padding: 0 14px; font-size: 13px; color: var(--docs-muted, #737176); margin-bottom: 10px; }
+.dgw .dco { flex: 1; padding: 20px 28px; }
+.dgw .dco h3 { font-size: 24px; font-weight: 600; margin: 0 0 8px; color: var(--docs-text, #1a181d); }
+.dgw .dco p { font-size: 14px; color: var(--docs-body-text, #424045); margin: 0 0 10px; }
+.dgw .dco code.ic { background: var(--docs-code-bg, rgba(245,244,247,.5)); color: var(--docs-code-text, #38385b); border-radius: var(--radius-small, 6px); padding: 1px 5px; font-family: var(--sg-mono); }
+.dgw.dark { background: var(--docs-surface, #0b0a0f); border-color: var(--docs-border, #29272c); }
+.dgw.dark .dsb { border-right-color: var(--docs-border, #29272c); }
+.dgw.dark .dni { color: var(--docs-muted, #a2a0a5); }
+.dgw.dark .dse { color: var(--docs-muted, #a2a0a5); }
+.dgw.dark .dco h3 { color: var(--docs-text, #e2e0e5); }
+.dgw.dark .dco p { color: var(--docs-body-text, #a2a0a5); }
+.dgw.dark .dco code.ic { color: var(--docs-code-text, #e2e0e5); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Equals style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">Equals, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the declared <code>--brand-*</code> marketing palette and <code>--accent-*</code>/<code>--section-label-color</code> theme classes, the go.equals.com app's Tailwind-style <code>--color-*</code> layer, the docs' Mintlify <code>--primary</code>/<code>--gray-*</code>/<code>--twoslash-*</code> layer, the Unica77/Serrif-Condensed/Aeonik-Fono marketing faces next to the app's neue-haas-unica and JetBrains Mono and the docs' Inter and Paper Mono, plus the measured control heights, radii and component geometry. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from equals.com, go.equals.com and docs.equals.com on 2026-11-13, signed out, in headless Chromium. Everything behind the sign-in is a documented boundary; the sign-in and e-mail fields were measured, never submitted; the 'workbook' components are the marketing page's own mockup, not the app. The named faces are served fonts and are not loaded here: samples fall back to system sans, Georgia and ui-monospace.</p>
+
+  <h2 class="sh">Marketing chrome</h2>
+  <p class="lead">The equals.com header is a 52px cream bar over the cream page; the hero sets 'What's after Excel?' in Serrif Condensed at 110px, above the 56px email pill and the orchid 44px CTA. Eyebrow labels paint the amber <code>--section-label-color</code>.</p>
+  <div class="mock">
+    <div class="mnav"><span class="wm">Equals</span><span>Product</span><span>Use cases</span><span>Pricing</span><span class="sp"></span><span>Sign in</span><span class="btn orchid" style="height:36px">Get a demo</span></div>
+    <div class="hero"><span class="eyebrow">1. Trusted AI analytics</span>What's after Excel?<small>Connect your data, ask questions, and let the agent do the spreadsheet work.</small>
+      <div class="caprow"><span class="capin">Work email</span><span class="btn orchid">Get a demo</span></div>
+    </div>
+  </div>
+
+  <h2 class="sh">Pricing</h2>
+  <p class="lead">/pricing keeps the cream field and sets plan cards 421px wide with 32px padding; the price sets in Serrif Condensed 48px and each card's CTA is a 42px pill, black or orchid.</p>
+  <div class="mock" style="padding:20px">
+    <div class="grid">
+      <div class="tile"><b>Starter</b><span class="sub">For individuals</span><p style="font:400 36px/1.1 var(--sg-serif);margin:14px 0">$0</p><span class="btn" style="height:42px;background:var(--color-brand-black,#000);color:#fff;width:100%">Get started</span></div>
+      <div class="tile"><b>Pro</b><span class="sub">For teams that live in data</span><p style="font:400 36px/1.1 var(--sg-serif);margin:14px 0">$59<span style="font-size:14px">/mo</span></p><span class="btn orchid" style="height:42px;width:100%">Get a demo</span></div>
+    </div>
+  </div>
+
+  <h2 class="sh">Sign in</h2>
+  <p class="lead">go.equals.com serves one signed-out card on the app's #fcfcfc canvas: a #f5f5f5 field with an 8px radius whose border turns purple-600 on focus, and the 27px purple Continue submit. neue-haas-unica is the app face.</p>
+  <div class="mock sgw">
+    <div class="sgcard"><h3>Sign in to Equals</h3><p>Enter your work email to continue.</p><div class="sgfield">you@company.com</div><span class="btn purple" style="width:100%">Continue</span><p style="margin-top:10px">By continuing you agree to the terms.</p></div>
+  </div>
+
+  <h2 class="sh">Docs shell</h2>
+  <p class="lead">docs.equals.com is the one surface with a real theme switch: the light shell paints a 288px rail on white; html.dark flips to the #0b0a0f canvas with grey-200 ink and white-wash chips, keeping the same #7839e5 primary. Search and the assistant are 36px pills, nav items 32px rows with a 10%-primary active wash, and inline code is Paper Mono in a small-radius chip.</p>
+  <div class="dgw"><div class="dsb"><div class="dse">Search…</div><div class="dni on">Getting started</div><div class="dni">How to spreadsheet</div><div class="dni">Dashboards</div></div><div class="dco"><h3>Getting started</h3><p>Equals is a spreadsheet that connects to your data. Write formulas like <code class="ic">=SUM(ARR)</code> or ask the agent.</p><p>Learn the <a style="color:var(--docs-primary,#7839e5)">fundamentals</a> first.</p></div></div>
+  <div class="dgw dark" style="margin-top:14px"><div class="dsb"><div class="dse">Search…</div><div class="dni on">Getting started</div><div class="dni">How to spreadsheet</div><div class="dni">Dashboards</div></div><div class="dco"><h3>Getting started</h3><p>Equals is a spreadsheet that connects to your data. Write formulas like <code class="ic">=SUM(ARR)</code> or ask the agent.</p><p>Learn the <a style="color:var(--docs-primary,#7839e5)">fundamentals</a> first.</p></div></div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead"><code>core.color.brand</code> is the marketing scale (the cream and black neutrals plus the nine accent hues), <code>core.color.app</code> the sign-in app's Tailwind-style ramps, <code>core.color.docs</code> the Mintlify greys and primaries. The light set carries the measured <code>marketing.*</code>/<code>signin.*</code>/<code>docs.*</code> roles — each aliases the declared token it matches — and the dark set the docs' dark roles. Flip the page's dark-mode class to compare the docs roles.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Metrics and radius</h2>
+  <p class="lead">Marketing CTAs and fields are 60px pills (52-56px tall), the plan/menu/mockup radius is 12px, the sign-in controls 8px and the docs search a 9999px pill. The declared <code>--spacing</code> base is 4px; breakpoints are the declared @media widths of the public sheets.</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Motion</h2>
+  <div id="motion-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">Marketing runs Unica77 for UI and Serrif Condensed for display with Aeonik Fono eyebrows; the app card sets neue-haas-unica with JetBrains Mono; the docs set Inter with Paper Mono code. Sizes are the measured steps; samples fall back to system faces.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared --brand-*/--color-*/--primary layer from the live stylesheets and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, filled and open states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = /*TOKENS*/null;
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  for (const [setname, label] of [['light', 'light roles (marketing / sign-in / docs)'], ['dark', 'dark roles (docs only)']]) {
+    const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+    if (!roles.length) continue;
+    // The dark set's custom properties only resolve inside a .dark scope:
+    // swatch dots must live under it or they paint the light values/unset.
+    h += `<div class="pal-h">${label}</div><div class="pal${setname === 'dark' ? ' dark' : ''}">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.size || {}, 'size.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.breakpoint || {}, 'breakpoint.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  for (const [n, t] of flat(TOK.core.shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function motion() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.motion || {}, 'motion.')) m += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? 'cubic-bezier(' + t.v.join(', ') + ')' : t.v)}</span></div>`;
+  $('#motion-out').innerHTML = m || '<div><b>none measured</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+const resolveVal = (v, depth) => {
+  if (depth > 6 || typeof v !== 'string') return v;
+  const m = v.match(/^\{(.+)\}$/);
+  if (!m) return v;
+  let node = TOK, seen = [];
+  for (const k of m[1].split('.')) { node = node && node[k]; seen.push(k); }
+  return node && node.v !== undefined ? resolveVal(node.v, (depth || 0) + 1) : v;
+};
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(resolveVal(t.v));
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Equals</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).tracking || {}, 'font.tracking.')) h += `<div class="tr"><span class="ts" style="letter-spacing:${esc(t.v)}">${esc(n)} — Tracked</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>

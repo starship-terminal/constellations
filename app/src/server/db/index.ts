@@ -78,7 +78,7 @@ export async function createResearchStore(directory: string) {
     const version = Number(
       (await tx.execute("PRAGMA user_version")).rows[0].user_version,
     );
-    if (version > 6)
+    if (version > 7)
       throw new Error("Research database was created by a newer application.");
     if (version === 0) {
       for (const sql of migrations) await tx.execute(sql);
@@ -114,6 +114,16 @@ export async function createResearchStore(directory: string) {
       await seedNewCuratedCategories(tx);
       await seedNewCuratedMediaTerms(tx);
       await tx.execute("PRAGMA user_version = 6");
+    }
+    if (version < 7) {
+      // The top-up is idempotent: a store already at v6 never re-seeds, so
+      // curated rows added to the seed JSON since (new packages' category
+      // and media assignments) would never arrive. Re-running it seeds only
+      // references the user has not labelled; manual choices are never
+      // overwritten.
+      await seedNewCuratedCategories(tx);
+      await seedNewCuratedMediaTerms(tx);
+      await tx.execute("PRAGMA user_version = 7");
     }
     await tx.commit();
   } catch (error) {
