@@ -110,6 +110,16 @@ def meas(comp, prop, state="default", colour=False, cap=None, src=None, **kw):
     return d
 
 
+def measrect(comp, prop="w", state="default", src=None, **kw):
+    """The on-screen size (bounding rect), for elements painted under a
+    transform whose computed style keeps the pre-scale length."""
+    v = C[comp]["states"][state]["rect"][prop]
+    d = {"value": px(f"{v}px"),
+         "source": src or f"bounding-rect {prop} of {comp} {state} (raw/components-computed.json): the displayed size after any transform"}
+    d.update(kw)
+    return d
+
+
 S = {"_about": (
      "The token tree build_tokens.py turns into tokens.json. cartesia.ai's "
      "marketing site declares a shadcn-style semantic layer "
@@ -196,14 +206,22 @@ CORE["font"]["lineHeight"] = {
                  description="The hero headline leading."),
 }
 
+# Tracking is declared in em — a ratio of the running font size — so the
+# leaves hold the declared ratio (type number), not a probe-frozen px length.
 CORE["font"]["tracking"] = {
-    "tight": {"value": "-0.4px", "type": "dimension",
-              "source": "derived: css-var --tracking-tight -.025em at the 16px root size",
-              "description": "The -0.025em tight tracking (-0.4px at 16px)."},
+    "tight": {"value": -0.025, "type": "number",
+              "source": "css-var --tracking-tight -.025em (declared em ratio; multiply by the font size — -0.4px at 16px)",
+              "description": "The -0.025em tight tracking."},
     "normal": var("--tracking-normal", "dimension", description="Zero tracking."),
-    "wide": var("--tracking-wide", "dimension", description="The wide tracking (~0.39px)."),
-    "wider": var("--tracking-wider", "dimension", description="The wider tracking (~0.80px)."),
-    "widest": var("--tracking-widest", "dimension", description="The widest tracking."),
+    "wide": {"value": 0.025, "type": "number",
+             "source": "css-var --tracking-wide .025em (declared em ratio; 0.4px at 16px)",
+             "description": "The +0.025em wide tracking."},
+    "wider": {"value": 0.05, "type": "number",
+              "source": "css-var --tracking-wider .05em (declared em ratio; 0.8px at 16px)",
+              "description": "The +0.05em wider tracking."},
+    "widest": {"value": 0.1, "type": "number",
+               "source": "css-var --tracking-widest .1em (declared em ratio; 1.6px at 16px)",
+               "description": "The +0.1em widest tracking."},
 }
 
 CORE["font"]["weight"] = {
@@ -273,9 +291,7 @@ CORE["radius"] = {
     "4xl": var("--radius-4xl", "dimension", description="Declared --radius-4xl (24px)."),
     "full": meas("usecase-chip", "borderTopLeftRadius", cap=9999, type="dimension",
                  src="computed borderTopLeftRadius of usecase-chip default (raw/components-computed.json): rounded-full resolves to the browser's clamp",
-                 description="rounded-full: chips, the voice orb and chooser buttons, the docs search pill."),
-    "half": meas("globe-dot", "borderTopLeftRadius", type="number",
-                 description="50% rounding on the globe locale dots."),
+                 description="rounded-full: chips, the voice orb and chooser buttons, the docs search pill. The globe dots paint a 50% circle instead (percentage radii are not length-scale entries)."),
 }
 
 CORE["spacing"] = {
@@ -482,11 +498,14 @@ COMP["auth"] = {
     "field-width": meas("email-field", "width", type="dimension",
                         src="measured email-field/continue-btn default",
                         description="The auth form width."),
+    "sso-width": meas("sso-btn", "width", type="dimension",
+                      description="The SSO/passkey button width (the two buttons split the 420px form with a gap)."),
 }
 COMP["orb"] = {
     "size": meas("hero-orb", "width", type="dimension", description="The Talk-to-Skylar orb diameter."),
-    "chooser-size": meas("voice-choose", "width", type="dimension",
-                         description="A voice-chooser button diameter (ring of voices around the orb)."),
+    "chooser-size": measrect("voice-choose", "w", type="dimension",
+                             src="bounding-rect of voice-choose default (raw/components-computed.json): the buttons are scale-transformed, so the computed width is the pre-scale length and the rect is what paints",
+                             description="A voice-chooser button diameter as displayed (ring of voices around the orb)."),
     "arrow-size": meas("voice-nav", "width", type="dimension", description="Voice carousel arrow size."),
 }
 COMP["chip"] = {

@@ -101,7 +101,7 @@ The full-width announcement strip above the header; measured never followed. Rea
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 1440 x 36.8; padding 10px 16px; background transparent; text ABC Diatype-75f05108b2d5df75 14/16.8 500, #1e1c1a `color.neutral.100`; icon 20 x 16, #309d4b `color.brand.verdant` |
+| default (same: hover, pressed) | size 1440 x 36.8; padding 10px 16px; background transparent; text ABC Diatype-75f05108b2d5df75 14/16.8 500, #1e1c1a `color.neutral.100`; icon 20 x 16, #309d4b `color.brand.verdant`; ancestor paint `div.col-[full].border-border`: background #f4faef `color.green.50` |
 | focus-visible | outline 1px auto oklab(0.707999 -0.00000712276 0.0000166297 / 0.5), offset 1px; layers a.group.flex 1440.0x36.8 1px auto oklab(0.707999 -0.00000712276 0.0000166297 / 0.5) offset 1px |
 
 ![Announcement banner default](components/crops/banner-default.png) ![Announcement banner hover](components/crops/banner-hover.png) ![Announcement banner focus-visible](components/crops/banner-focus-visible.png) ![Announcement banner pressed](components/crops/banner-pressed.png)
@@ -167,7 +167,7 @@ The Try-Cartesia solid pill; measured never followed. Read as `nav-cta` on the h
 #### Nav dropdown
 The Products mega-menu panel (navigation-menu-content), opened by its own trigger. Read as `nav-dropdown` on the home page.
 
-**Values (default).** size 624 x 161.75; padding 12px; background transparent; text PP Kyoto-b14c6ebb315b725b 18/24.75 500, #1e1c1a `color.neutral.100`; transition opacity 0.35s cubic-bezier(0.22, 1, 0.36, 1), transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), translate 0.35s cubic-bezier(0.22, 1, 0.36, 1); icon 16 x 16, #525150 `color.neutral.60`; layers a.border.border-transparent 197.3x64.8 T:1px solid rgba(0, 0, 0, 0) / R:1px solid rgba(0, 0, 0, 0) / B:1px solid rgba(0, 0, 0, 0) / L:1px solid rgba(0, 0, 0, 0) 6px; a.border.border-transparent 197.3x64.8 T:1px solid rgba(0, 0, 0, 0) / R:1px solid rgba(0, 0, 0, 0) / B:1px solid rgba(0, 0, 0, 0) / L:1px solid rgba(0, 0, 0, 0) 6px; a.border.border-transparent 197.3x64.8 T:1px solid rgba(0, 0, 0, 0) .
+**Values (default).** size 624 x 161.75; padding 12px; background transparent; text PP Kyoto-b14c6ebb315b725b 18/24.75 500, #1e1c1a `color.neutral.100`; transition opacity 0.35s cubic-bezier(0.22, 1, 0.36, 1), transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), translate 0.35s cubic-bezier(0.22, 1, 0.36, 1); icon 16 x 16, #525150 `color.neutral.60`; layers a.border.border-transparent 197.3x64.8 T:1px solid rgba(0, 0, 0, 0) / R:1px solid rgba(0, 0, 0, 0) / B:1px solid rgba(0, 0, 0, 0) / L:1px solid rgba(0, 0, 0, 0) 6px; a.border.border-transparent 197.3x64.8 T:1px solid rgba(0, 0, 0, 0) / R:1px solid rgba(0, 0, 0, 0) / B:1px solid rgba(0, 0, 0, 0) / L:1px solid rgba(0, 0, 0, 0) 6px; a.border.border-transparent 197.3x64.8 T:1px solid rgba(0, 0, 0, 0) ; ancestor paint `nav.data-[ending-style]:easing-[ease].xs:w-(--popup-width)`: background #fefefe `color.neutral.scale-50`; radius 8px; shadow oklab(0.227917 0.00188442 0.00454755 / 0.1) 0px 0px 0px 1px, rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.1) 0px 1px 2px -1px.
 
 Child layers that carry the look: a 197.3x64.8 border 1px solid transparent radius 6px; a 197.3x64.8 border 1px solid transparent radius 6px; a 197.3x64.8 border 1px solid transparent radius 6px.
 
@@ -464,7 +464,7 @@ A "voice + persona" row in the globe voice list. Read as `globe-voice` on the vo
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 244.09 x 38; padding 6px 10px; radius 4px; background transparent; text ABC Diatype-75f05108b2d5df75 14/19.6 400, #525150 `color.neutral.60`; icon 12 x 12, #1e1c1a `color.neutral.100`; layers span.flex.rounded-full 26.0x26.0 rgb(254, 254, 254) T:1px solid rgb(243, 242, 239) / R:1px solid rgb(243, 242, 239) / B:1px solid rgb(243, 242, 239) / L:1px solid rgb(243, 242, 239) 3.35544e+07px |
+| default | size 244.09 x 38; padding 6px 10px; radius 4px; background transparent; text ABC Diatype-75f05108b2d5df75 14/19.6 400, #525150 `color.neutral.60`; icon 12 x 12, #1e1c1a `color.neutral.100`; layers span.flex.rounded-full 26.0x26.0 rgb(254, 254, 254) T:1px solid rgb(243, 242, 239) / R:1px solid rgb(243, 242, 239) / B:1px solid rgb(243, 242, 239) / L:1px solid rgb(243, 242, 239) 3.35544e+07px; ancestor paint `div.hidden.flex-col`: background #fefefe `color.neutral.scale-50`; radius 8px; shadow rgba(0, 0, 0, 0.1) 0px 2px 8px 0px |
 | hover | background #f3f2ef `color.neutral.scale-200`; text ABC Diatype-75f05108b2d5df75 14/19.6 400, #1e1c1a `color.neutral.100`; layers none |
 | focus-visible | outline 2px solid lab(66.128 -0.0000298023 0.0000119209), offset 2px; layers button.voices-globe-voice.flex 244.1x38.0 2px solid lab(66.128 -0.0000298023 0.0000119209) offset 2px 4px; span.flex.rounded-full 26.0x26.0 rgb(254, 254, 254) T:1px solid rgb(243, 242, 239) / R:1px solid rgb(243, 242, 239) / B:1px solid rgb(243, 242, 239) / L:1px solid rgb(243, 242, 239) 3.35544e+07px |
 | pressed | background #f3f2ef `color.neutral.scale-200`; text ABC Diatype-75f05108b2d5df75 14/19.6 400, #1e1c1a `color.neutral.100`; layers none |
@@ -542,7 +542,7 @@ The "Minutes of generated audio per month" range input in the cost calculator; f
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focused) | size 556.5 x 46; background transparent; text ABC Diatype-75f05108b2d5df75 16/24 400, #1e1c1a `color.neutral.100`; opacity 0; placeholder #1e1c1a `color.neutral.100` |
+| default (same: focused) | size 556.5 x 46; background transparent; text ABC Diatype-75f05108b2d5df75 16/24 400, #1e1c1a `color.neutral.100`; opacity 0; placeholder #1e1c1a `color.neutral.100`; ancestor paint `div.relative.h-12`: background #f3f2ef `color.neutral.scale-200`; radius 4px |
 
 ![Usage slider default](components/crops/plan-slider-default.png) ![Usage slider focused](components/crops/plan-slider-focused.png)
 
@@ -698,7 +698,7 @@ Read as `footer-link` on the home page.
 #### Footer column head
 A footer column heading (17px font-sans medium). Read as `footer-col-head` on the home page.
 
-**Values (default).** size 146.67 x 24; background transparent; text ABC Diatype-75f05108b2d5df75 17/24 465, #1e1c1a `color.neutral.100`.
+**Values (default).** size 146.67 x 24; background transparent; text ABC Diatype-75f05108b2d5df75 17/24 465, #1e1c1a `color.neutral.100`; ancestor paint `div.relative.bg-background`: background #fefefe `color.neutral.scale-50`; shadow #e4e3db 0px 0px 0px 1px.
 
 ![Footer column head default](components/crops/footer-col-head-default.png)
 

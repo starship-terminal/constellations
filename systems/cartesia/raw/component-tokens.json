@@ -241,10 +241,10 @@
    },
    "tracking": {
     "tight": {
-     "value": "-0.4px",
-     "type": "dimension",
-     "source": "derived: css-var --tracking-tight -.025em at the 16px root size",
-     "description": "The -0.025em tight tracking (-0.4px at 16px)."
+     "value": -0.025,
+     "type": "number",
+     "source": "css-var --tracking-tight -.025em (declared em ratio; multiply by the font size \u2014 -0.4px at 16px)",
+     "description": "The -0.025em tight tracking."
     },
     "normal": {
      "var": "--tracking-normal",
@@ -252,19 +252,22 @@
      "description": "Zero tracking."
     },
     "wide": {
-     "var": "--tracking-wide",
-     "type": "dimension",
-     "description": "The wide tracking (~0.39px)."
+     "value": 0.025,
+     "type": "number",
+     "source": "css-var --tracking-wide .025em (declared em ratio; 0.4px at 16px)",
+     "description": "The +0.025em wide tracking."
     },
     "wider": {
-     "var": "--tracking-wider",
-     "type": "dimension",
-     "description": "The wider tracking (~0.80px)."
+     "value": 0.05,
+     "type": "number",
+     "source": "css-var --tracking-wider .05em (declared em ratio; 0.8px at 16px)",
+     "description": "The +0.05em wider tracking."
     },
     "widest": {
-     "var": "--tracking-widest",
-     "type": "dimension",
-     "description": "The widest tracking."
+     "value": 0.1,
+     "type": "number",
+     "source": "css-var --tracking-widest .1em (declared em ratio; 1.6px at 16px)",
+     "description": "The +0.1em widest tracking."
     }
    },
    "weight": {
@@ -646,13 +649,7 @@
     "value": "9999px",
     "source": "computed borderTopLeftRadius of usecase-chip default (raw/components-computed.json): rounded-full resolves to the browser's clamp",
     "type": "dimension",
-    "description": "rounded-full: chips, the voice orb and chooser buttons, the docs search pill."
-   },
-   "half": {
-    "value": 0.5,
-    "source": "computed borderTopLeftRadius of globe-dot default (raw/components-computed.json)",
-    "type": "number",
-    "description": "50% rounding on the globe locale dots."
+    "description": "rounded-full: chips, the voice orb and chooser buttons, the docs search pill. The globe dots paint a 50% circle instead (percentage radii are not length-scale entries)."
    }
   },
   "spacing": {
@@ -1575,6 +1572,12 @@
     "source": "measured email-field/continue-btn default",
     "type": "dimension",
     "description": "The auth form width."
+   },
+   "sso-width": {
+    "value": "206px",
+    "source": "computed width of sso-btn default (raw/components-computed.json)",
+    "type": "dimension",
+    "description": "The SSO/passkey button width (the two buttons split the 420px form with a gap)."
    }
   },
   "orb": {
@@ -1585,10 +1588,10 @@
     "description": "The Talk-to-Skylar orb diameter."
    },
    "chooser-size": {
-    "value": "244.8px",
-    "source": "computed width of voice-choose default (raw/components-computed.json)",
+    "value": "58.75px",
+    "source": "bounding-rect of voice-choose default (raw/components-computed.json): the buttons are scale-transformed, so the computed width is the pre-scale length and the rect is what paints",
     "type": "dimension",
-    "description": "A voice-chooser button diameter (ring of voices around the orb)."
+    "description": "A voice-chooser button diameter as displayed (ring of voices around the orb)."
    },
    "arrow-size": {
     "value": "40px",

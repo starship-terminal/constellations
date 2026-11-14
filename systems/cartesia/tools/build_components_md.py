@@ -111,6 +111,24 @@ def props(v):
             o["shadow"] = ", ".join(layers)
     if s["outlineStyle"] != "none" and float(s["outlineWidth"].replace("px", "")) > 0:
         o["outline"] = f"{s['outlineWidth']} {s['outlineStyle']} {colour(s['outlineColor'])}, offset {s['outlineOffset']}"
+    # A transparent wrapper (the mega-menu content, an overlay) is painted by
+    # an ancestor: surface that fill/radius/shadow so the entry is buildable.
+    if o.get("background") in ("transparent", "none"):
+        anc = next((a for a in v.get("ancestors", []) if a.get("bg") or a.get("radius") or a.get("shadow")), None)
+        if anc:
+            bits = []
+            if anc.get("bg") and anc["bg"] != "rgba(0, 0, 0, 0)":
+                bits.append(f"background {colour(anc['bg'])}")
+            if anc.get("radius") and anc["radius"] != "0px":
+                bits.append(f"radius {anc['radius']}")
+            if anc.get("shadow"):
+                sh = colour(anc["shadow"], tokens=False)
+                layers = [x.strip() for x in re.split(r",(?![^(]*\))", sh)]
+                layers = [x for x in layers if not x.startswith(("transparent", "rgba(0, 0, 0, 0)"))]
+                if layers:
+                    bits.append("shadow " + ", ".join(layers))
+            if bits:
+                o["ancestor paint"] = f"`{anc['node'][:60]}`: " + "; ".join(bits)
     t = v.get("textStyle")
     if t:
         o["text"] = f"{font(t['fontSize'], t['lineHeight'], t['fontWeight'], t['fontFamily'])}, {colour(t['color'])}"
@@ -162,7 +180,7 @@ def props(v):
     return o
 
 
-ORDER = ["size", "padding", "border", "radius", "background", "image", "shadow", "outline", "text", "transition", "transform", "opacity", "icon", "placeholder", "layers"]
+ORDER = ["size", "padding", "border", "radius", "background", "image", "shadow", "outline", "text", "transition", "transform", "opacity", "icon", "placeholder", "layers", "ancestor paint"]
 
 
 def state_rows(c):
@@ -180,7 +198,7 @@ def state_rows(c):
         p = props(c["states"][st])
         diff = {k: p[k] for k in ORDER if k in p and p.get(k) != base.get(k)}
         for k in ORDER:
-            if k in base and k not in p:
+            if k in base and k not in p and k != "ancestor paint":
                 diff[k] = "none"
         if not diff:
             same.append(st)

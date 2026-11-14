@@ -47,7 +47,7 @@ Each rule links the screenshot or crop that shows it, under [Do and don't](#do-a
 | accent | #309d4b `core.color.brand.verdant` | #abd49e `core.color.brand.growth` |
 | border | #e4e3db `light.color.border` | rgba(255, 255, 255, 0.1) `dark.color.border` |
 
-Fonts: `core.font.family.display` is PP Kyoto-b14c6ebb315b725b, then 4 fallbacks; `core.font.family.sans` is ABC Diatype-75f05108b2d5df75, then 5 fallbacks; `core.font.family.mono` is IBM Plex Mono-1f31a4fbe8ce28fa, then 1 fallback. Scales, counted as [DESIGN.md](DESIGN.md) holds them: no type styles under `core.typography`, 10 radius steps (`core.radius`), 2 spacing steps (`core.spacing`).
+Fonts: `core.font.family.display` is PP Kyoto-b14c6ebb315b725b, then 4 fallbacks; `core.font.family.sans` is ABC Diatype-75f05108b2d5df75, then 5 fallbacks; `core.font.family.mono` is IBM Plex Mono-1f31a4fbe8ce28fa, then 1 fallback. Scales, counted as [DESIGN.md](DESIGN.md) holds them: no type styles under `core.typography`, 9 radius steps (`core.radius`), 2 spacing steps (`core.spacing`).
 
 ### Using components
 
