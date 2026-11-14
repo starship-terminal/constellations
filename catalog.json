@@ -9811,6 +9811,98 @@
    }
   },
   {
+   "slug": "expedia",
+   "name": "Expedia",
+   "url": "https://www.expedia.com",
+   "category": "travel",
+   "platform": "web",
+   "goodFor": "Travel OTA in EGDS/UITK: the multi-product tabbed search card with 48px outlined fields and a pill-radius primary, 16px-radius cards and dialogs, a 57-role colour layer re-bound per data-theme attribute (light-1, marketing-3, dark, bright, loyalty tiers), Centra No2 with Reckless XPD display serif",
+   "tags": [
+    "web",
+    "travel",
+    "search",
+    "booking",
+    "cards",
+    "tabs",
+    "theming",
+    "signed-out",
+    "design-tokens"
+   ],
+   "shape": "reference",
+   "captured": "2026-11-14",
+   "access": "signed out (every captured surface is public); expedia.com answers automation with a 429 \"Bot or Not?\" challenge, so the DOM evidence is a Wayback snapshot served locally and painted with live travel-assets.com CSS/fonts",
+   "themes": [
+    "light",
+    "dark",
+    "dark2",
+    "marketing3",
+    "bright1"
+   ],
+   "widths": [
+    1440,
+    390
+   ],
+   "entry": "systems/expedia/README.md",
+   "tokens": "systems/expedia/tokens.json",
+   "styleGuide": "systems/expedia/style-guide.html",
+   "preview": {
+    "cover": "systems/expedia/screenshots/home-light-default.png",
+    "icon": "systems/expedia/icon.png",
+    "swatches": {
+     "light": {
+      "page": "light.egds.surface",
+      "surface": "light.egds.surfaceContainerVariant",
+      "text": "light.egds.onSurface",
+      "muted": "light.egds.onSurfaceVariant",
+      "accent": "light.egds.primary",
+      "border": "light.egds.outline"
+     },
+     "dark": {
+      "page": "dark.egds.surface",
+      "surface": "dark.egds.surfaceContainerVariant",
+      "text": "dark.egds.onSurface",
+      "muted": "dark.egds.onSurfaceVariant",
+      "accent": "dark.egds.primary",
+      "border": "dark.egds.outline"
+     }
+    },
+    "fonts": [
+     "core.type.text.fontFamily",
+     "core.type.display.fontFamily"
+    ]
+   },
+   "source": {
+    "path": "~/.design-systems/expedia/raw-shots (full-colour captures, outside the repo)"
+   },
+   "capture": {
+    "harness": "Devin",
+    "model": "SWE-2 Max",
+    "route": "public-web",
+    "method": "public-web",
+    "source": "Wayback snapshots of www.expedia.com (home 20260207171241, Hotel-Search 20261030191926) served locally and painted with live c.travel-assets.com/a.travel-assets.com CSS and fonts; computed styles and crops from that DOM in headless Chromium, 1440x900 + 390x844. BOUNDARY: live expedia.com returns HTTP 429 \"Bot or Not?\" to automation, so archived markup + live styles are the evidence",
+    "at": "2026-11-14",
+    "routes": [
+     "/ (wayback 20260207171241)",
+     "/Hotel-Search (wayback 20261030191926)",
+     "mobile /",
+     "mobile /Hotel-Search"
+    ],
+    "gaps": [
+     "live expedia.com is unreachable to automation (429 bot challenge) - DOM markup is from a 2026 archive; styles/tokens are live",
+     "anything behind sign-in: trips, account, member pricing, checkout, booking, saved items",
+     "submitted states: search was never submitted; sort/filters never applied; only screenshot evidence for the opened sort menu",
+     "flights/cars/packages/things-to-do/cruises results pages and the map view",
+     "empty, loading and error states (the archived pages ship populated results only)",
+     "hydrated results: refetches fail on the archive, so results-page measurement is static"
+    ],
+    "durationMin": null,
+    "pr": "https://github.com/starship-terminal/constellations/pull/547"
+   },
+   "layoutGaps": {
+    "icons/": "Expedia's icon glyphs are its artwork and are not kept here (docs/RIGHTS.md)"
+   }
+  },
+  {
    "slug": "explore",
    "name": "Explore",
    "url": "https://explore.family",
