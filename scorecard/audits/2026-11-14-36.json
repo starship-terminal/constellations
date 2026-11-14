@@ -1,7 +1,7 @@
 {
  "date": "2026-11-14",
  "rubric": "4",
- "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): Read tokens.json, raw/css-vars.json (263 rules, 96 resolved per theme incl. the .dark block), components-computed.json, components.md and the 18 screenshots; compared each criterion against the declared layer and the measured evidence. fal.ai: read tokens.json, raw/css-vars.json (the applied-sheet harvest with its five resolved passes), components-computed.json, components.md and the screenshots, and graded each criterion against the declared layer and the measured evidence, with F8 and C4 graded partly",
+ "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): reviewed the package against scorecard/criteria.json's web wording: read tokens.json, components.md, patterns.md, raw/measurements.md and the catalog entry; checked the checklist components, states and roles against the measured evidence",
  "systems": [
   {
    "slug": "1password",
@@ -17897,135 +17897,135 @@
    "reviewedPlatform": "web"
   },
   {
-   "slug": "fal",
+   "slug": "family",
    "grades": {
     "F1": {
-     "grade": "meets",
-     "evidence": "Real numeric ramps per hue: palette.{primary,secondary,error,info,success,warning,neutral} run 50-1000 (11-12 steps each, neutral first: 50/100/200/300/400/500/600/700/800/900/950/1000) plus palette.lightblue 50-950 — the declared --*-N scales resolved from HSL triplets under core.palette."
+     "grade": "partly",
+     "evidence": "The app declares real ramps: 9-step --danger-*/--valid-*/--warning-* status scales, a --family-* violet scale (100-800 plus --family #9896ff) and a --primary-* scale, exported under core.color.*. The marketing side and the app's --wallet-*/--graphic-* colours are single values or pairs per hue, and there is no ~10-step neutral ramp (grays are --gray/--gray-light plus the app's 3-step --body-bg-*), so not every hue used has a full ramp."
     },
     "F2": {
      "grade": "meets",
-     "evidence": "surface.page/default/raised/overlay/control/light + surface.alpha{,.light,.strong,.stronger} ghost washes and backdrop.{default,opacity,rgb} resolve in both themes (light #f4f4f5/#ffffff, dark #121216/#19191a)."
+     "evidence": "Page (light.background.page -> color.white; app --body-bg #ffffff), surface (app --body-bg-secondary #f9fafb, --body-bg-tertiary #f0f2f4), raised (white testimonial/login cards, 8-14px radius), overlay (--overlay-background #171717, --overlay-color, dark-only --overlay-backdrop scrim) and the measured demo-overlay scrim all exist."
     },
     "F3": {
      "grade": "partly",
-     "evidence": "content.base/muted/light/lighter/strong, content.disabled, content.control.muted, content.inverse.* and badge.*.foreground (on-accent) resolve in both themes; no dedicated link role exists — links paint content.base or content.light with hover underline."
+     "evidence": "Primary (light.text.ink -> --heading #343433, app --body-color #222222), secondary/muted (light.text.muted rgba(71,70,69,.7), light.text.low -> --body-muted #848281, app --body-color-muted), on-accent (light.text.on-dark -> --white) and link (declared --color-anchor, app --hyperlink-color #9896ff, measured login-learn/login-footer-link) are recorded; no disabled text role is declared or measured on the signed-out surface."
     },
     "F4": {
-     "grade": "meets",
-     "evidence": "stroke.base/strong/light + stroke.focus.default and stroke.focus.brand declare default->strong->focus in both themes; measured rings corroborate (dark.border.focus is the 3px #a284ff shadow ring the app buttons paint with outline none, the dark nav links draw a 2px overlay.primary.stroke outline, marketing 1px #101010, docs 1px #5718c0)."
+     "grade": "partly",
+     "evidence": "Default (light.border.hairline -> --gray-light #f2f0ed on cards/rows) and focus (light.border.focus -> --focus #848281 marketing ring; --focus-color rgba(0,122,255,.5) app ring) exist, but there is no named strong border pair - the app input is borderless and marketing borders are hairlines only."
     },
     "F5": {
      "grade": "meets",
-     "evidence": "Every accent.{hue}.{solid,alpha,foreground} family carries solid.default/.darker/.lighter plus alpha.default/.strong per theme; the measured states corroborate (app-btn-signup hover, mp-run hover, mkt-btn-start hover all recorded)."
+     "evidence": "Measured states on every control: the #171717 CTA pills, ghost buttons, nav items, filters, cards and links were captured default + hover + focus-visible + DevTools-forced pressed (138 states across 64 components); the violet --primary is declared for links."
     },
     "F6": {
      "grade": "partly",
-     "evidence": "Danger declares error.default/dark/light/foreground; the 404 page's error-page.* variables sit in a route stylesheet the model page does not apply, so they are not tokens. Success/warning/info exist only as badge.{success,warning,info}.{alpha,foreground,solid} chips and core.palette ramps — no top-level surface/text/stroke roles for them in either theme."
+     "evidence": "Declared status ramps: app --danger-*/--valid-*/--warning-* (9 steps each, #ff0c18/#00ca48/#ff8600) plus --background-valid/-invalid/-warning on marketing - fills and text-tier values exist; per-status border roles are not declared, no info role exists, and nothing paints a status surface on the signed-out pages."
     },
     "F7": {
-     "grade": "meets",
-     "evidence": "The light set holds 277 tokens and the dark set 276; the only asymmetry is the measured-roles layer (light-only action.hero-cta, docs.search-fill, marketing-surface.hero-field, marketing-text.hero-text vs dark-only action.badge, action.run{,-hover}) — surface-specific measured names, not missing declared roles (vars.mjs found 171 differing values, 592 identical, none exclusive across the appLight and appDark passes)."
+     "grade": "partly",
+     "evidence": "The app declares a real [data-theme=\"dark\"] layer: 20 names switch (body-bg/body-color/icon/input/selection/overlay/banner/hr/logo) and 3 overlay names are dark-only with no light counterpart, so parity is not exact; the marketing surface has no dark declarations at all. Only light ever paints signed out - dark is declared evidence, unverified on a painted surface."
     },
     "F8": {
-     "grade": "partly",
-     "evidence": "Families carry real fallback stacks (8 measured stacks: publicSansRounded ui, focal headings, chivoMono code, Focal Web/Text marketing, Public Sans + Focal Medium docs), and weights (8 steps), leading and tracking scales and measured font.size.measured.* role names exist. The declared --text-* scale is the product's own twelve steps (core.font.size.text xs through 8xl, plus landing-display/landing-title), wider than the web rubric's 6 to 8 sizes: it is kept whole because trimming the product's scale would misstate it, so this criterion is partly met."
+     "grade": "meets",
+     "evidence": "Four families with fallback stacks (proprietary \"Family\" display, Inter UI, variable Inter app, declared SF Pro Rounded/Nunito secondary and SF Mono code); a measured 9-step ramp (xs 15, sm 16, control 15, body 15, lg 16, section 44, article 44, mobile-display 44, display 68px), measured weights 400-700 and line heights in the component entries."
     },
     "F9": {
      "grade": "partly",
-     "evidence": "The app declares Tailwind's --spacing base (0.25rem, core.spacing.unit) and two fractional steps; utilities compute from it, so no declared multi-step scale exists. Measured spacing is real (48px header, 32px announce, 308x65 menu items, 360px card grid)."
+     "evidence": "Declared layout vars (--h-pad, --nh-pad, --gap) and measured component paddings (32px card padding, 28px FAQ gaps, 96px post-card top pad) exist, but there is no declared spacing scale on one base unit."
     },
     "F10": {
      "grade": "meets",
-     "evidence": "radius.xs/sm/md/lg/xl/2xl/3xl declared (7 steps) plus measured radii (button 4px, card, field, badge, marketing 2px); border widths are 1px throughout the semantic stroke layer and measured borders."
+     "evidence": "Measured radii exported: core.radius.button 32px pills, card 10px (testimonial)/14px (login card), item/field 0px; border widths are the measured 1px #f2f0ed hairlines and the nav dropdown's borderless shadow treatment."
     },
     "F11": {
      "grade": "meets",
-     "evidence": "Measured control heights per size: header buttons 32px, card CTAs 36px, run/param actions 40px, tabs 40/36/28px, icon buttons 26/28/32px, fields 24/40/98px, menu items 65.5px; focus ring widths+offsets measured per component (1px auto / 2px solid, offsets -2..2)."
+     "evidence": "Measured control dimensions under core.component: 94px marketing / 70px mobile top bars, 48px CTA pills, 32px header buttons, 380px login card and field, ~269px support search, 1024px post cards, 540px testimonial panels, 14px FAQ toggle; the focus ring is a measured 2px outline with 0-1px offsets."
     },
     "F12": {
-     "grade": "meets",
-     "evidence": "49 shadow tokens: the shadow.{xs,sm,default,md,lg,xl,2,5} level ramp plus use-tied roles — shadow.overlay.control.{primary,secondary,outline.*,ghost.*}, shadow.overlay.{checkbox,chip}, shadow.queue.drawer, composer.prompt.shadow — all DTCG shadow layers resolved per theme."
+     "grade": "partly",
+     "evidence": "Two elevation levels are recorded - the nav dropdown's 0px 3px 16px rgba(0,0,0,.1) menu shadow and the demo-overlay scrim; cards otherwise sit flat on hairlines, so there are not 3-5 levels on the public surface."
     },
     "F13": {
-     "grade": "meets",
-     "evidence": "easing.{in,out,in-out,out-quint}, motion.animate.{ping,pulse,spin}, motion.default.transition.{duration,timing-function} declared; per-component transitionDuration/easing measured (0.15-0.2s cubic-bezier(0.4,0,0.2,1)/(0.25,0.46,0.45,0.94) family); the reduced-motion probes are recorded in raw/components-computed.json (_meta.reducedMotion): the pixel-decoration cells' running pixel-scan-sweep animation stops under reduce, while the header Products trigger keeps its 0.15s colour transition, so the site honours reduced motion for its ambient animation and not for control transitions."
+     "grade": "partly",
+     "evidence": "The app declares a motion vocabulary (--duration-swift-out 0.22s/--duration-snappy-out/--duration-overshoot-out plus matching --ease-* cubic-bezier curves, exported under core.duration/core.easing) and marketing controls run measured 0.08-0.3s ease transitions (core.motion.control); reduced-motion behaviour is not declared or observed."
     },
     "F14": {
      "grade": "partly",
-     "evidence": "breakpoint.{sm,xl,2xl} and the container.{xs..7xl} width scale are declared; grid columns and z-index layers are not declared tokens (the announce strip, header and drawer layers were only observed), so the layers side is missing."
+     "evidence": "Declared layout vars (--h-pad, --nh-pad, --gap) and a measured 390px mobile pass (70px header, 342px FAQ rows, the full-screen drawer) show two breakpoints in use, but no breakpoint scale, grid-column system or z-index layer list is declared."
     },
     "C1": {
      "grade": "partly",
-     "evidence": "75 components cover 12-13 of 19: button (mkt/app/mp/api/li CTAs), icon button (mp-copy, api-copy, docs-code-copy, app-announce-x), link (nav, docs, support), text field (search-models, docs-search, docs-hero-search, m-search), text area (mp-prompt), tabs (mp-tab, api-lang-tab, docs-tab-item, mp-result-tab), menu (app-nav-menu{,-item}, m-nav-item drawer), dialog (the vaul phone sheet), card (model-card, docs-card, li-card), list row (docs-nav-section, m-nav-item), table (pr-price-table/-row), badge (mp-badge). Missing: select, checkbox, radio, switch, tooltip, toast, avatar — none paints signed out."
+     "evidence": "10 of 19 checklist components paint publicly: button (download-cta, getstarted-btn, login-btn, watch-video, demo-btn, blog/cl-filter), icon button (faq-toggle, m-menu), link (nav-twitter, post-back, login-learn, login-footer-link, art-side-link), text field (login-field, sup-search - typed and cleared, never submitted), menu (nav-dropdown), dialog-like overlay (demo-overlay), card (blog-card, tweet-card, login-card, cl-entry), list row (faq-item, sup-article-link, legal-section), avatar (inside tweet-card) and badge/label (feature-label, feature-h3 tags). Absent signed out: text area, select, checkbox, radio, switch, tabs, tooltip, toast, table."
     },
     "C2": {
-     "grade": "meets",
-     "evidence": "201 states across 75 components: real hover, focus-visible, focused and filled (fields), forced pressed via DevTools, and local opened states (Products menu, hamburger sheet, docs/theme controls)."
+     "grade": "partly",
+     "evidence": "Beyond default: hover, focus-visible and DevTools-forced pressed across every control, focused/filled on the two fields, and opened on the nav dropdowns, the blog filter, the demo overlay and the mobile drawer. Disabled, loading, error and selected states were not observed - no form was submitted and the signed-in product was never reached."
     },
     "C3": {
      "grade": "meets",
-     "evidence": "37 components were given a real keyboard focus; 14 draw outline rings (documented per component in components.md) and 23 draw shadow rings."
+     "evidence": "21 components were given a real keyboard focus: 10 draw a 2px outline ring (#848281 marketing, rgba(0,122,255,.5) on the app), one draws a shadow ring, two change their border; the rest show a measured absence of a product focus style, which counts as captured."
     },
     "C4": {
-     "grade": "partly",
-     "evidence": "Colour values in components.md name the matching palette or semantic token, and measured roles in tokens.json alias their declared counterparts ({accent.violet.solid.default} etc.). Geometry, type metrics and transitions are still written as raw measured values, and the API code block entry carries no token reference, so component entries are only partly written in tokens."
-    },
-    "P1": {
-     "grade": "partly",
-     "evidence": "patterns.md writes the real signed-out patterns: marketing chrome, the app shell (announce+header+Products disclosure), catalog grid + search + pager, the model playground form, the API tab, docs chrome, the OAuth login card, phone nav + one-column cards. No validation/empty/error/destructive/feedback patterns paint signed out."
-    },
-    "A1": {
-     "grade": "partly",
-     "evidence": "Fonts named with their real fallback stacks (8 measured families); no standalone SVG icon set was lifted — the fal wordmark, publisher marks and nav glyphs are visible in crops/screenshots, recorded as a layoutGap."
-    },
-    "K1": {
      "grade": "meets",
-     "evidence": "The README states the three surfaces, the five resolved passes, the read method, the boundaries (auth, sandbox, inference, OAuth, consent) and a What-to-distrust list (hidden DOM twins, the 0x0 pager press, the blocked model-light pass, quantized gradients)."
-    },
-    "F15": {
-     "grade": "meets",
-     "evidence": "Script: all 8 pairs pass 4.5:1 across 2 themes; lowest 4.57:1 light muted (light.content.muted) on page (light.surface.page)"
-    },
-    "F16": {
-     "grade": "meets",
-     "evidence": "Script: 1091 of 1091 tokens name their source"
-    },
-    "K2": {
-     "grade": "meets",
-     "evidence": "Script: 9 rules, each linking a screenshot or crop"
-    },
-    "K3": {
-     "grade": "meets",
-     "evidence": "Script: DESIGN.md matches a fresh generation"
+     "evidence": "Component entries name the token each measured value matches (e.g. #f2f0ed `color.gray.light`, rgba(0,122,255,.5) `color.focus.color`); the measured roles under light.* alias the declared vars they match, and component geometry is exported as component tokens."
     },
     "C5": {
      "grade": "na",
      "evidence": "Optional for a capture, and this product does not publish it."
     },
+    "P1": {
+     "grade": "partly",
+     "evidence": "patterns.md covers the public chrome, the hero, feature sections, the testimonial marquee, FAQ, blog/changelog/support/docs surfaces, the login card, mobile and motion/focus; forms and validation, empty/loading/error, destructive confirmation and feedback patterns are absent - they live behind the account boundary never reached."
+    },
     "V1": {
-     "grade": "na",
-     "evidence": "Optional for a capture, and this product does not publish it."
+     "grade": "meets",
+     "evidence": "The README's Do-and-don't states 8 evidence-linked principles: let the declared layers carry the design, spend near-black on committing actions, paint light, pair the voices, use hairlines not borders, keep pills pill-shaped, don't style the signed-in wallet, don't follow outbound links."
     },
     "V2": {
      "grade": "na",
      "evidence": "Optional for a capture, and this product does not publish it."
+    },
+    "A1": {
+     "grade": "partly",
+     "evidence": "No standalone SVG set lifted (declared layoutGap): glyphs are visible in crops/screenshots. Fonts fully named with fallback stacks (Family display, LFE Sans, Inter, variable Inter, declared SF Pro Rounded/Nunito secondary, SF Mono code); proprietary, not redistributed."
+    },
+    "K1": {
+     "grade": "meets",
+     "evidence": "README states what was captured (12 routes plus mobile, both surfaces, the Aave Account rename), how (Playwright computed styles plus the two-surface declared harvest) and what to distrust (the authenticated and iOS boundaries, declared-only dark, DevTools-forced pressed, the 8-chunk stitch cap, edge challenges, never-followed outbound links)."
+    },
+    "F15": {
+     "grade": "partly",
+     "evidence": "Script: primary text passes; secondary fails 2 pairs, worst 3.65:1 light muted (light.text.low) on surface (light.color.body.bg.secondary)"
+    },
+    "F16": {
+     "grade": "meets",
+     "evidence": "Script: 238 of 238 tokens name their source"
+    },
+    "K2": {
+     "grade": "meets",
+     "evidence": "Script: 8 rules, each linking a screenshot or crop"
+    },
+    "K3": {
+     "grade": "meets",
+     "evidence": "Script: DESIGN.md matches a fresh generation"
     }
    },
-   "name": "fal.ai",
-   "goodFor": "generative-media infrastructure design: three declared token layers (a Tailwind v4-style app layer of 763 names - surface/content/stroke/overlay/badge/accent roles over HSL-triplet ramps - a Webflow marketing palette and a fumadocs docs layer) across three signed-out surfaces - a dark-bronze+cyan Focal Web marketing site (neon-lime CTA), a dark #121216 model catalog and playground (violet #783afb Sign-in-to-run, ghost washes, model cards), and a light Focal/Public-Sans docs - plus an OAuth-only login card and a 390px phone pass",
-   "url": "https://fal.ai",
+   "name": "Family",
+   "goodFor": "crypto-wallet marketing and product chrome: the marketing role layer (--body/--body-muted/--heading text, --blue/--orange/--beige/--gray-light, a full --graphic-* illustration palette) plus the app's declared product layer (a --family-*/--primary-* violet scale #9896ff, 9-step --danger-*/--valid-*/--warning-* status ramps, 21 named --wallet-* colours, --overlay-*/--input-*/--duration-*/--ease-* values), a white field with #343433 Family-face headings, #f2f0ed hairlines and near-black #171717 CTA pills, blog/support/docs/legal surfaces and the signed-out Aave Account login",
+   "url": "https://family.co",
    "captured": "2026-11-14",
    "themes": [
     "light",
     "dark"
    ],
    "platform": "web",
-   "category": "AI agents",
+   "category": "Finance",
    "reviewed": "2026-11-14",
    "reviewedPlatform": "web"
   }
  ],
  "base": "2026-10-16",
- "reviewMethod": "Read tokens.json, raw/css-vars.json (263 rules, 96 resolved per theme incl. the .dark block), components-computed.json, components.md and the 18 screenshots; compared each criterion against the declared layer and the measured evidence. fal.ai: read tokens.json, raw/css-vars.json (the applied-sheet harvest with its five resolved passes), components-computed.json, components.md and the screenshots, and graded each criterion against the declared layer and the measured evidence, with F8 and C4 graded partly"
+ "reviewMethod": "reviewed the package against scorecard/criteria.json's web wording: read tokens.json, components.md, patterns.md, raw/measurements.md and the catalog entry; checked the checklist components, states and roles against the measured evidence"
 }

@@ -18,6 +18,7 @@ colors:
   background-moderate: "#dddfea"
   background-strong: "#13151b"
   background-card: "#ffffff"
+  background-popover: "#ffffff"
   background-dialog: "#ffffff"
   background-scrim: "rgba(3, 14, 49, 0.54)"
   background-scrim-light: "rgba(12, 41, 126, 0.07)"
@@ -52,6 +53,8 @@ colors:
   status-warning-text: "#f59e0b"
   status-confirm: "rgba(2, 167, 69, 0.73)"
   status-destructive: "#e40014"
+  component-styles-card-bg: "#ffffff"
+  component-styles-ink: "#13151b"
   component-research-box-bg: "#f7f8fb"
   component-research-chip-bg: "#ffffff"
   component-research-chip-border: "rgba(1, 17, 88, 0.24)"
@@ -123,6 +126,8 @@ rounded:
 spacing:
   base: "0.25rem"
 components:
+  styles-card:
+    backgroundColor: "{colors.component-styles-card-bg}"
   research-box:
     backgroundColor: "{colors.component-research-box-bg}"
   research-chip:
@@ -188,7 +193,7 @@ Corner radii from `core.radius`: `base` 0.5rem, `md` 0.375rem, `xl-var` 0.75rem,
 
 ## Components
 
-6 components from the `component` tokens of the `light` set, keeping only the properties DESIGN.md defines.
+7 components from the `component` tokens of the `light` set, keeping only the properties DESIGN.md defines.
 
 Measured states, crops and the full inventory: [components.md](components.md), [components](components), [style-guide.html](style-guide.html).
 
