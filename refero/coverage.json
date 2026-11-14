@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 126,
-    "system_domains": 118,
-    "matched_domains": 92,
-    "missing_domains": 341,
+    "system_packages": 127,
+    "system_domains": 119,
+    "matched_domains": 93,
+    "missing_domains": 340,
     "system_domains_absent_from_catalog": 26
   },
   "matched": {
@@ -1426,6 +1426,23 @@
         }
       ]
     },
+    "esquire.com": {
+      "catalog": [
+        {
+          "name": "Esquire",
+          "domain": "esquire.com",
+          "id": 102
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "esquire",
+          "name": "Esquire",
+          "url": "https://www.esquire.com",
+          "name_match": true
+        }
+      ]
+    },
     "github.com": {
       "catalog": [
         {
@@ -1832,13 +1849,6 @@
         "name": "Equals",
         "domain": "equals.app",
         "id": 289
-      }
-    ],
-    "esquire.com": [
-      {
-        "name": "Esquire",
-        "domain": "esquire.com",
-        "id": 102
       }
     ],
     "exa.ai": [
