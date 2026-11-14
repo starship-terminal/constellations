@@ -197,6 +197,7 @@
    "moderate": {"var": "--fill-moderate", "owner": "refero", "type": "color"},
    "strong":   {"var": "--fill-strong", "owner": "refero", "type": "color"},
    "card":     {"var": "--card", "owner": "styles", "type": "color", "source": "styles host semantic (--card = --gray-solid-100 dark / #fff light)"},
+   "popover":  {"var": "--popover", "owner": "styles", "type": "color"},
    "dialog":   {"var": "--color-dialog", "owner": "refero", "type": "color"},
    "scrim":    {"var": "--color-dialog-bg", "owner": "refero", "type": "color", "description": "Modal scrim rgba(3,14,49,.54)"},
    "scrim-light": {"var": "--color-dialog-bg-light", "owner": "refero", "type": "color"},
@@ -241,6 +242,8 @@
    "destructive":    {"var": "--destructive", "owner": "styles", "type": "color", "description": "styles host's literal #e40014"}
   },
   "component": {
+   "styles-card-bg":      {"var": "--card", "owner": "styles", "type": "color"},
+   "styles-ink":          {"var": "--gray-solid-900", "owner": "styles", "type": "color", "description": "The styles host's gray-900 ink (#13151b), the light side of the dark role that inverts to #fff"},
    "research-box-bg":     {"value": "#f7f8fb", "type": "color", "source": "measured raw/measurements.md#research-box", "description": "The centred prompt card's ground = palette.gray.solid.100"},
    "research-chip-bg":    {"value": "#ffffff", "type": "color", "source": "measured raw/measurements.md#research-box painted layers", "description": "The white chip pills inside the box"},
    "research-chip-border":{"value": "rgba(1, 17, 88, 0.24)", "type": "color", "source": "measured raw/measurements.md#research-box painted layers"},
@@ -263,15 +266,19 @@
    "elevated": {"var": "--surface-elevated", "owner": "refero", "theme": "dark", "type": "color", "description": "#2a2d37"},
    "subtle":   {"var": "--fill-subtle", "owner": "refero", "theme": "dark", "type": "color"},
    "muted":    {"var": "--fill-muted", "owner": "refero", "theme": "dark", "type": "color"},
+   "moderate": {"var": "--fill-moderate", "owner": "refero", "theme": "dark", "type": "color", "source": "derived: --fill-moderate has no dark declaration (one `body` block); its var() chain resolves through the dark gray scale on body#dark-theme"},
+   "strong":   {"var": "--fill-strong", "owner": "refero", "theme": "dark", "type": "color", "source": "derived: --fill-strong has no dark declaration (one `body` block); its var() chain resolves through the dark gray scale on body#dark-theme"},
    "card":     {"var": "--card", "owner": "styles", "theme": "dark", "type": "color"},
    "popover":  {"var": "--popover", "owner": "styles", "theme": "dark", "type": "color"},
    "dialog":   {"var": "--color-dialog", "owner": "refero", "theme": "dark", "type": "color"},
-   "scrim":    {"var": "--color-dialog-bg", "owner": "refero", "theme": "dark", "type": "color"}
+   "scrim":    {"var": "--color-dialog-bg", "owner": "refero", "theme": "dark", "type": "color"},
+   "scrim-light": {"var": "--color-dialog-bg-light", "owner": "refero", "theme": "dark", "type": "color"}
   },
   "text": {
    "primary":    {"var": "--text-primary", "owner": "refero", "theme": "dark", "type": "color"},
    "secondary":  {"var": "--text-secondary", "owner": "refero", "theme": "dark", "type": "color"},
    "tertiary":   {"var": "--text-tertiary", "owner": "refero", "theme": "dark", "type": "color"},
+   "quaternary": {"var": "--text-quaternary", "owner": "refero", "theme": "dark", "type": "color", "source": "derived: --text-quaternary has no dark declaration (one `body` block); its var() chain resolves through the dark gray scale on body#dark-theme"},
    "on-button":  {"var": "--text-on-button", "owner": "refero", "theme": "dark", "type": "color"},
    "foreground": {"var": "--foreground", "owner": "styles", "theme": "dark", "type": "color"},
    "muted-foreground": {"var": "--muted-foreground", "owner": "styles", "theme": "dark", "type": "color"}
@@ -281,6 +288,7 @@
    "secondary":  {"var": "--stroke-secondary", "owner": "refero", "theme": "dark", "type": "color"},
    "tertiary":   {"var": "--stroke-tertiary", "owner": "refero", "theme": "dark", "type": "color"},
    "quaternary": {"var": "--stroke-quaternary", "owner": "refero", "theme": "dark", "type": "color"},
+   "on-button":  {"var": "--stroke-on-button", "owner": "refero", "theme": "dark", "type": "color", "source": "derived: --stroke-on-button has no dark declaration (one `body` block); its var() chain resolves through the dark gray scale on body#dark-theme"},
    "default":    {"var": "--border", "owner": "styles", "theme": "dark", "type": "color"},
    "input":      {"var": "--input", "owner": "styles", "theme": "dark", "type": "color"},
    "ring":       {"var": "--ring", "owner": "styles", "theme": "dark", "type": "color"}
@@ -300,6 +308,7 @@
    "warning":        {"var": "--status-warning", "owner": "refero", "theme": "dark", "type": "color"},
    "warning-subtle": {"var": "--status-warning-subtle", "owner": "refero", "theme": "dark", "type": "color"},
    "warning-text":   {"var": "--status-warning-text", "owner": "refero", "theme": "dark", "type": "color"},
+   "confirm":        {"var": "--color-confirm-2", "owner": "refero", "theme": "dark", "type": "color"},
    "destructive":    {"var": "--destructive", "owner": "styles", "theme": "dark", "type": "color"}
   },
   "component": {

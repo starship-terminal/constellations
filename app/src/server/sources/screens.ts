@@ -90,6 +90,25 @@ function captureTermIds(item: ScreenItem): string[] {
   ];
 }
 
+/** At most `perProduct` captures per product, interleaved across products in first-seen order. */
+export function samplePerProduct(
+  items: ScreenItem[],
+  perProduct: number,
+): ScreenItem[] {
+  const cap = Math.max(0, Math.floor(perProduct));
+  const groups = new Map<string, ScreenItem[]>();
+  for (const item of items) {
+    const group = groups.get(item.reference.id) || [];
+    if (group.length < cap) group.push(item);
+    groups.set(item.reference.id, group);
+  }
+  const sampled: ScreenItem[] = [];
+  for (let round = 0; round < cap; round++)
+    for (const group of groups.values())
+      if (group[round]) sampled.push(group[round]);
+  return sampled;
+}
+
 /** Search genuine capture names/groups and recorded package metadata. No inferred taxonomy. */
 export function queryScreens(
   items: ScreenItem[],
@@ -168,10 +187,14 @@ export function queryScreens(
   const limit = Number.isFinite(query.limit)
     ? Math.min(200, Math.max(0, Math.floor(query.limit!)))
     : 60;
+  const page =
+    !query.screenId && query.perProduct !== undefined
+      ? samplePerProduct(filtered, query.perProduct)
+      : filtered;
   return {
     items: query.screenId
       ? filtered.slice(0, 1)
-      : filtered.slice(offset, offset + limit),
+      : page.slice(offset, offset + limit),
     total: filtered.length,
     termCounts,
     facets: {

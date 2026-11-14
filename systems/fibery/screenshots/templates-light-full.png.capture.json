@@ -1,0 +1,93 @@
+{
+ "schemaVersion": 1,
+ "capturedAt": "2026-11-14T07:35:29.184Z",
+ "screenshot": "templates-light-full.png",
+ "sanitizedSourceUrl": "https://fibery.com/templates",
+ "requested": {
+  "viewport": {
+   "width": 1440,
+   "height": 900
+  },
+  "deviceScaleFactor": 1
+ },
+ "configuredViewport": {
+  "width": 1440,
+  "height": 900
+ },
+ "actual": {
+  "innerWidth": 1440,
+  "innerHeight": 900,
+  "devicePixelRatio": 1,
+  "theme": {
+   "classes": [],
+   "attributes": {},
+   "colorScheme": "normal"
+  },
+  "visualViewport": {
+   "width": 1440,
+   "height": 900,
+   "scale": 1,
+   "offsetLeft": 0,
+   "offsetTop": 0,
+   "pageLeft": 0,
+   "pageTop": 0
+  },
+  "documentSize": {
+   "width": 1878,
+   "height": 21323
+  },
+  "scroll": {
+   "x": 0,
+   "y": 0
+  }
+ },
+ "capture": {
+  "mode": "stitchedParts",
+  "scale": "css",
+  "clip": {
+   "x": 0,
+   "y": 0,
+   "width": 1440,
+   "height": 21323
+  }
+ },
+ "png": {
+  "width": 1440,
+  "height": 21323
+ },
+ "dimensionCheck": {
+  "status": "pass",
+  "expected": {
+   "width": 1440,
+   "height": 21323
+  },
+  "basis": "stitchedParts"
+ },
+ "visualReview": {
+  "status": "pending",
+  "note": "Inspect the final image for complete, settled contents; dimensions alone cannot accept it."
+ },
+ "cropCoordinates": {
+  "status": "unverified",
+  "note": "Do not derive crop or masking boxes from requested size or assume DOM rectangles align with this PNG."
+ },
+ "stitchedFrom": [
+  "templates-light-full.part0.png",
+  "templates-light-full.part1.png"
+ ],
+ "partClip": [
+  {
+   "x": 0,
+   "y": 0,
+   "width": 1440,
+   "height": 14000
+  },
+  {
+   "x": 0,
+   "y": 14000,
+   "width": 1440,
+   "height": 7323
+  }
+ ],
+ "intendedHeight": 21323
+}
