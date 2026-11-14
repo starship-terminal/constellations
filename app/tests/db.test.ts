@@ -174,7 +174,7 @@ test("version-two stores preserve existing state while adding independent screen
       (await migrated.client.execute("PRAGMA user_version")).rows[0]
         .user_version,
     ),
-  ).toBe(6);
+  ).toBe(7);
   expect((await migrated.getConversation(conversation.id))?.title).toBe(
     "Keep research",
   );
@@ -278,7 +278,7 @@ test("version-five stores gain curated rows added since, without touching their 
       (await migrated.client.execute("PRAGMA user_version")).rows[0]
         .user_version,
     ),
-  ).toBe(6);
+  ).toBe(7);
   const categories = await migrated.listReferenceCategories();
   expect(
     categories.filter((row) => row.referenceId === "systems:dub"),
@@ -287,8 +287,7 @@ test("version-five stores gain curated rows added since, without touching their 
     categories.filter((row) => row.referenceId === "systems:linear"),
   ).toHaveLength(1);
   expect(
-    (await migrated.listReferenceCategoryDetails(["systems:linear"]))[0]
-      .label,
+    (await migrated.listReferenceCategoryDetails(["systems:linear"]))[0].label,
   ).toBe("Design & Media Editing");
   expect(
     (await migrated.listReferenceCategoryDetails(["systems:dub"]))[0].label,
@@ -301,13 +300,13 @@ test("version-five stores gain curated rows added since, without touching their 
 
 test("future database versions are rejected without downgrading their schema", async () => {
   const { dir, store } = await open();
-  await store.client.execute("PRAGMA user_version=7");
+  await store.client.execute("PRAGMA user_version=8");
   await expect(createResearchStore(dir)).rejects.toThrow("newer application");
   expect(
     Number(
       (await store.client.execute("PRAGMA user_version")).rows[0].user_version,
     ),
-  ).toBe(7);
+  ).toBe(8);
 });
 
 test("updateSettings writes JSON on a fresh row and on a conflicting row", async () => {

@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_66 of 124 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_74 of 132 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -368,6 +368,48 @@ Access: signed out (every captured surface is public: /, /explore, /charts, /tra
 Access: read-only (the marketing site, the public catalog pages and the account forms are fully public; everything behind account.deezer.com is an authenticated boundary never reached; Try-for-free, Sign-up, Mix, Play, queue and volume actions were measured, never followed; the login and signup forms were never submitted)
 - every post-login surface (library, Flow, playlists, downloads, settings, billing) lives behind account.deezer.com - an authenticated boundary never reached
 - the login and signup forms were measured as forms, never filled or submitted; validation, error and success states are absent rather than measured
+
+## [Epidemic Sound](../systems/epidemicsound) — `epidemicsound`
+Access: read-only (the marketing site, the public catalog, SFX and artist pages and the account forms are fully public; everything behind login.epidemicsound.com is an authenticated boundary never reached; Play, Download, Subscribe, Create-free-account and Log-in actions were measured, never followed; the login and signup forms were never submitted)
+- every post-login surface (library, playlists, downloads, billing, account settings) lives behind login.epidemicsound.com - an authenticated boundary never reached
+- the login and signup forms were measured at rest, never filled with real credentials or submitted; validation, error and success states are absent rather than measured
+
+## [Enode](../systems/enode) — `enode`
+Access: read-only (the marketing site and the platform login page are fully public signed out; everything behind platform.enode.com - the dashboard, docs portal, API surfaces - is an authenticated boundary never reached; the contact and login forms were measured and typed into then cleared, never submitted; every CTA and link was measured, never followed; the dormant Cookiebot layer shows no banner and was never answered)
+- every post-login platform surface (dashboard, asset management, API keys) and docs.enode.com lives behind an account - an authenticated boundary never reached
+- the /contact, /contact/partnerships and platform login forms were measured at rest and typed into then cleared, never submitted - validation, error, loading and success states are absent rather than measured
+
+## [Delphi](../systems/delphi) — `delphi`
+Access: read-only (the home page, /discover/<topic> galleries, /search/<question> results, /<expert> profiles and /<expert>/chat are fully public signed out; creating a clone, saving perspectives and every post-login surface is an authenticated boundary never reached; Sign In, Continue with Google/Email, Share, Save, Expand, Personalize, suggested-question chips, the microphone and the chat send were measured, never followed or submitted)
+- creating a clone, saving perspectives, personalising results and every post-login surface need an account - an authenticated boundary never reached
+- the Sign-In/onboarding dialogs were measured as dialogs; Continue with Google/Email were never pressed, so the auth flow past the dialog is unmeasured
+
+## [Esquire](../systems/esquire) — `esquire`
+Access: signed out (every surface captured is public; account.esquire.com sign-in and the shop.esquire.com subscription checkout are off-domain boundaries that were measured, never followed; the newsletter and search fields were typed into and cleared, never submitted)
+- every signed-in surface (bookmarks, comment counts, the premium archive) lives behind Sign In on account.esquire.com - an authenticated boundary never reached
+- the Join/Subscribe buttons lead to shop.esquire.com checkout - measured, never followed; purchase, payment and confirmation states are absent rather than measured
+
+## [Descript](../systems/descript) — `descript`
+Access: read-only (the marketing site is fully public; the product lives behind web.descript.com - its sign-in card was captured as a boundary, measured and never submitted; Sign in, Sign up, Get started and every plan CTA were measured as destinations, never followed)
+- the product lives behind web.descript.com - the sign-in card's buttons and email field were measured and the field typed/cleared, never submitted; no authenticated page was reached
+- Sign in, Sign up, Get started, Try free, Request a demo and every plan CTA were measured as outbound/form destinations, never followed
+
+## [Exa](../systems/exa) — `exa`
+Access: read-only (every captured surface is public and signed out; the dashboard, API keys and playground behind auth.exa.ai were never reached - login routes rate-limited or redirected during reconnaissance; the login and e-mail fields were focused and filled then cleared, never submitted; the home demo's Run-preview arrow, Get-started and Sign-up actions were measured, never pressed)
+- every post-login surface (the dashboard, API keys, the playground, billing) sits behind auth.exa.ai - an authenticated boundary never reached; dashboard.exa.ai/login and /playground/search rate-limited (HTTP 429) during reconnaissance
+- the sign-in and e-mail fields were focused and filled with test text, then cleared - never submitted; validation, error and success states are absent rather than measured
+- the marketing site and sign-in card paint light only - the dark set covers the docs alone
+
+## [Exactly.ai](../systems/exactly) — `exactly`
+Access: read-only (the marketing site, pricing, showcase, case studies, industries, help center and book-a-demo are fully public; everything on threads.exactly.ai is an authenticated boundary behind a Cloudflare check never bypassed; Log in, Start for free and Book a demo were measured, never followed; the help search was typed and cleared, never submitted; the scheduler was measured at rest)
+- the product itself - studio, model training, the image generator, credits, billing and every account surface - lives on threads.exactly.ai behind a Cloudflare check that was never bypassed
+- the Log in, Start-for-free and Book-a-demo links were measured, never followed; the scheduler was measured at rest - no day, time or contact detail was ever picked or typed
+
+## [Equals](../systems/equals) — `equals`
+Access: read-only (the marketing site, the go.equals.com sign-in card and the docs are fully public; the spreadsheet workspace and every post-login surface are an authenticated boundary never reached - app.equals.com did not answer; the sign-in and demo e-mail fields were focused and filled for measurement, then cleared, never submitted; Get-a-demo, plan and trial actions were measured, never followed)
+- the authenticated product - workbook, dashboards, datasources, settings and every post-login surface - was never reached; app.equals.com did not answer during the capture
+- the sign-in form and the demo e-mail captures were measured as fields, never submitted; validation, error and success states are absent rather than measured
+- the mobile capture of /use-cases/arr-dashboard/ hit a security challenge; component readings fall back to the desktop measurement
 
 ## [Epic Games Store](../systems/epicgames) — `epicgames`
 Access: read-only (every captured surface is public: the storefront, the sign-in dialog, the support centre and the marketing home); the sign-in form and both search fields were measured, never submitted; Get, Add to Cart, Wishlist, Download, sort options and filter checkboxes were measured, never activated

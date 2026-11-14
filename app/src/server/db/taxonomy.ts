@@ -137,7 +137,7 @@ export async function seedNewCuratedMediaTerms(tx: Transaction) {
     ).rows.map((row) => `${row.reference_id}${row.media_id}`),
   );
   const entries = seed.assignments.flatMap((assignment) => {
-    if (labeled.has(`${assignment.referenceId}${assignment.media_id}`))
+    if (labeled.has(`${assignment.referenceId}${assignment.mediaId}`))
       return [];
     return assignment.terms
       .filter((term) => known.has(term.termId))
