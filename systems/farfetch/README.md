@@ -16,6 +16,7 @@ FARFETCH is worth a capture because its stylesheets ship a real semantic token l
 | [screenshots/](screenshots) | `{page}-{theme}-{state}.png` captures with `.png.capture.json` sidecars. Desktop 1440 x 900 at 1x; `-full` whole pages at CSS scale (`set-women-light-full` needed two parts — 16,602px tall, part boundaries recorded); `mobile-*` shots are 2x captures of the 390 x 844 viewport |
 | [raw/](raw) | The unprocessed readings: [css-vars.json](raw/css-vars.json) (the stylesheet harvest — ~776 resolved custom properties plus 17 @font-face rules), [components-computed.json](raw/components-computed.json) + [measurements.md](raw/measurements.md), [component-tokens.json](raw/component-tokens.json) (the spec build_tokens.py reads), [layout.json](raw/layout.json) |
 | [tools/](tools) | The builders and the capture kit. See [How the values were read](#how-the-values-were-read) |
+| [capture.pr](capture.pr) | The pull request that shipped this capture |
 
 ## Brief
 

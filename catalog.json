@@ -11174,7 +11174,8 @@
      "opened/selected states that hydration renders are declared in the light.*.selected/* tokens, not painted",
      "no real dark theme observed; dark set is empty by evidence"
     ],
-    "durationMin": null
+    "durationMin": null,
+    "pr": "https://github.com/starship-terminal/constellations/pull/557"
    },
    "layoutGaps": {
     "icons/": "FARFETCH's icon glyphs are its artwork and are not kept here (docs/RIGHTS.md)"
