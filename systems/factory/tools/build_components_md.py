@@ -40,6 +40,40 @@ for n, t in flat(T["core"]):
     if t["$type"] == "color":
         BY_COLOR.setdefault(t["$value"], n)
 
+# The declared scales the measured values line up with: a radius, font size,
+# weight or line-height ratio that matches a token names it beside the value,
+# the same way a colour names its palette token.
+BY_RADIUS = {}
+for n, t in flat(T["core"].get("radius", {}), "radius."):
+    if t["$type"] == "dimension" and isinstance(t["$value"], str):
+        BY_RADIUS.setdefault(t["$value"], n)
+BY_SIZE = {}
+for n, t in flat(T["core"].get("font", {}).get("size", {}), "font.size."):
+    if t["$type"] == "dimension" and isinstance(t["$value"], str):
+        BY_SIZE.setdefault(t["$value"], n)
+BY_WEIGHT = {}
+for n, t in flat(T["core"].get("font", {}).get("weight", {}), "font.weight."):
+    BY_WEIGHT.setdefault(str(t["$value"]), n)
+# A size-keyed line-height (font.lineHeight.xs … 8xl) belongs with its size
+# step — a 12/12 text is not "the 5xl line-height" just because both ratios
+# are 1. It names only when the element's font size matched the same step.
+SIZE_STEPS = {n.rsplit(".", 1)[-1] for n in BY_SIZE.values()}
+LH_NAMED = {}
+LH_SIZED = {}  # step -> (ratio, name)
+for n, t in flat(T["core"].get("font", {}).get("lineHeight", {}), "font.lineHeight."):
+    if not isinstance(t["$value"], (int, float)):
+        continue
+    step = n.rsplit(".", 1)[-1]
+    if step in SIZE_STEPS:
+        LH_SIZED.setdefault(step, (round(float(t["$value"]), 4), n))
+    else:
+        LH_NAMED.setdefault(round(float(t["$value"]), 4), n)
+
+
+def tok(v, by):
+    """`token-path` suffix for a measured value that matches a declared token."""
+    return f" `{by[v]}`" if v in by else ""
+
 
 def norm(r, g, b, a=None):
     if a is None or float(a) == 1:
@@ -78,8 +112,26 @@ def num(x):
 
 
 def font(fz, lh, fw, f):
+    refs = []
+    size_tok = BY_SIZE.get(fz)
+    if size_tok:
+        refs.append(size_tok)
+    if lh.endswith("px") and fz.endswith("px") and float(fz[:-2]):
+        r = round(float(lh[:-2]) / float(fz[:-2]), 4)
+        lh_tok = None
+        if size_tok:
+            pair = LH_SIZED.get(size_tok.rsplit(".", 1)[-1])
+            if pair and pair[0] == r:
+                lh_tok = pair[1]
+        if not lh_tok:
+            lh_tok = LH_NAMED.get(r)
+        if lh_tok:
+            refs.append(lh_tok)
+    if fw in BY_WEIGHT:
+        refs.append(BY_WEIGHT[fw])
     lh = lh.replace("px", "") if lh != "normal" else "normal"
-    return f"{fam(f)} {num(fz.replace('px', ''))}/{num(lh)} {fw}"
+    out = f"{fam(f)} {num(fz.replace('px', ''))}/{num(lh)} {fw}"
+    return out + (" (" + ", ".join(f"`{t}`" for t in refs) + ")" if refs else "")
 
 
 def props(v):
@@ -99,7 +151,7 @@ def props(v):
         o["border"] = bds[0] if len(set(bds)) == 1 else "; ".join(f"{'TRBL'[i]}: {b}" for i, b in enumerate(bds) if b != "none")
     rad = sides(s["borderTopLeftRadius"], s["borderTopRightRadius"], s["borderBottomRightRadius"], s["borderBottomLeftRadius"])
     if rad != "0px":
-        o["radius"] = rad
+        o["radius"] = rad + tok(rad, BY_RADIUS)
     o["background"] = colour(s["backgroundColor"])
     if s["backgroundImage"] != "none":
         img = re.sub(r'url\("data:[^)]*\)', "an image (data URI)", s["backgroundImage"])
@@ -216,7 +268,7 @@ def child_layers(c):
         if p.get("border"):
             bits.append("border " + colour(p["border"].split(" | ")[0][2:]))
         if p.get("radius"):
-            bits.append("radius " + p["radius"])
+            bits.append("radius " + p["radius"] + tok(p["radius"], BY_RADIUS))
         if p.get("shadow"):
             bits.append("shadow " + colour(p["shadow"]))
         out.append(" ".join(bits))
@@ -312,7 +364,7 @@ W(f"The full per-state readings are in [raw/measurements.md](raw/measurements.md
 W()
 W("How to read an entry:")
 W()
-W("- A colour is its value followed by the palette token in [tokens.json](tokens.json) with the same value, when there is one. Text is written family size/line-height weight, then its colour, for example `Geist 96/96 700, #020202`, and is read from the first text node inside the component.")
+W("- A colour is its value followed by the palette token in [tokens.json](tokens.json) with the same value, when there is one; a radius, font size, weight or line-height names its declared `radius.*`/`font.*` token the same way. Text is written family size/line-height weight, then its colour, for example `Geist 60.48/60.48 500 (font.size.measured.masthead, font.weight.medium), #020202 color.darkBasePrimary`, and is read from the first text node inside the component.")
 W("- The state table has one row per state that differs. The first row lists every value; later rows list only what changes. A state with the same values as the first is named in its label, for example \"default (same: focus-visible)\". When the root paints nothing, \"Child layers\" names the first nodes inside it that do.")
 W(f"- Crops are images of the component read from the live page, in [components/crops/](components/crops) ({n_crops} files, named `{{component}}-{{state}}.png`, at 2x). Screenshots are in [screenshots/](screenshots).")
 W()

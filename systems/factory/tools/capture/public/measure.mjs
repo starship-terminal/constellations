@@ -166,13 +166,28 @@ async function measure(key, state, target, opts = {}) {
   const c = out.components[key];
   try {
     const s = await styleOf(loc);
+    // A revealed panel (a dropdown's options, an accordion's answer) is a
+    // different element than the trigger: measure it beside the trigger and
+    // let the opened state's crop show it, question/field included when the
+    // panel locator is their shared ancestor.
+    let cropTarget = opts.cropLoc || loc;
+    if (state === 'opened' && opts.panel) {
+      const pl = (await opts.panel()).filter({ visible: true }).first();
+      // The reveal animation can lag the trigger's state flip; give the
+      // panel a moment to mount before declaring the read panel-less.
+      for (let i = 0; i < 8 && !(await pl.count()); i++) await page.waitForTimeout(300);
+      if (await pl.count()) {
+        s.panel = await styleOf(pl).catch(() => undefined);
+        cropTarget = pl;
+      }
+    }
     let file;
     if (opts.crop !== false) {
       try {
-        file = await crop(page, (opts.cropLoc || loc).filter({ visible: true }).first(), `${key}-${state}`, opts.pad ?? 8);
+        file = await crop(page, cropTarget.filter({ visible: true }).first(), `${key}-${state}`, opts.pad ?? 8);
       } catch (e) { s.cropError = String(e.message || e).slice(0, 120); }
     }
-    c.states[state] = { ...s, crop: file, via: opts.via };
+    c.states[state] = { ...s, crop: file, via: opts.via, run };
     if (opts.extra) c.states[state].extra = await opts.extra(loc);
     log('  ', key, state, s.rect.w + 'x' + s.rect.h);
   } catch (e) {
@@ -233,7 +248,27 @@ async function S(key, target, list, meta = {}, opts = {}) {
         via = `typed "${opts.fillText || 'name@example.com'}", then deleted; nothing sent`;
       } else if (st === 'opened') {
         if (opts.noToggle) via = 'held open by an earlier toggle';
-        else { await toggle(loc, { allowLink: opts.allowLink }); await page.waitForTimeout(900); via = 'own toggle'; }
+        else {
+          const lt = loc.filter({ visible: true }).first();
+          const reportsOpen = (el) => el.getAttribute('aria-expanded') === 'true' || el.getAttribute('data-state') === 'open' || el.open === true || (el.closest && el.closest('details') && el.closest('details').open === true);
+          // An already-open control must not be toggled — that would close it
+          // and measure the collapsed state as "opened".
+          const already = await lt.evaluate(reportsOpen).catch(() => false);
+          if (!already) await toggle(loc, { allowLink: opts.allowLink });
+          await page.waitForTimeout(900);
+          // Wait out the reveal animation: a panel read before it finishes
+          // measures a collapsed (or still-closed) container.
+          for (let i = 0; i < 8; i++) {
+            if (await lt.evaluate(reportsOpen).catch(() => false)) break;
+            if (!(await lt.evaluate((el) => el.hasAttribute('aria-expanded') || el.hasAttribute('data-state') || el.tagName === 'DETAILS' || el.closest('details') !== null).catch(() => false))) break;
+            await page.waitForTimeout(350);
+          }
+          via = already ? 'already open; the revealed panel measured without toggling' : 'own toggle';
+        }
+      } else if (st === 'selected') {
+        await toggle(loc, { allowLink: true });
+        await page.waitForTimeout(500);
+        via = 'own toggle, pressed once; a local UI state, never submitted';
       } else via = via || 'at rest';
       await measure(key, st, loc, { ...opts, via });
     } catch (e) {
@@ -244,6 +279,14 @@ async function S(key, target, list, meta = {}, opts = {}) {
     }
     if (undo) await undo().catch(() => {});
     if (opts.after?.[st]) await opts.after[st](loc).catch(() => {});
+  }
+  // A listed state that failed its re-read kept the earlier evidence under
+  // rerunError (and its own earlier `run`); the entry then republishes under
+  // the earlier run's page/run/url and records the miss, so retained readings
+  // never carry the new run's date.
+  if (keep && list.some((st) => out.components[key].states[st]?.rerunError)) {
+    Object.assign(out.components[key], keep);
+    out.components[key].recaptureMissed = run;
   }
   await reset();
 }
@@ -418,10 +461,62 @@ async function pricing() {
   await sheetsFor('pricing');
   const g = G.pricing;
   await S('price-h1', q('h1').filter({ visible: true }).first(), ['default'], { group: g, title: 'Pricing headline', desc: 'The "Pricing Plans" masthead.', sel: 'h1' }, { noScroll: true });
-  await S('tier-tab', page.getByRole('radio', { name: 'PRO' }).first(), [...B4, 'opened'], { group: g, title: 'Plan-tier tab', desc: 'A plan-tier switcher button (PRO/PLUS/MAX, role=radio); the opened state was measured after clicking it — a local UI toggle.', sel: 'plan tier PRO' }, { noScroll: true, allowLink: true });
+  const pro = page.getByRole('radio', { name: 'PRO' }).first();
+  await S('tier-tab', pro, [...B4, 'selected'], { group: g, title: 'Plan-tier tab', desc: 'A plan-tier switcher button (PRO/PLUS/MAX, role=radio). PRO is the page\'s own default, so another tier was selected first and the resting states read PRO unselected; the selected state was measured after clicking PRO — a local UI toggle.', sel: 'plan tier PRO' }, { noScroll: true, allowLink: true,
+    open: async () => {
+      // Pick a different tier first so PRO's unselected style is what the
+      // default/hover/focus/pressed states measure — then wait for PRO to
+      // report unselected, since a click that never landed would silently
+      // re-measure the selected style as "default". The radios' accessible
+      // names carry more than the tier label, so name-regex matching can
+      // still resolve to PRO; walk the radios and click the first that
+      // visibly isn't it.
+      const radios = page.getByRole('radio').filter({ visible: true });
+      let other = null;
+      for (let i = 0, n = await radios.count(); i < n; i++) {
+        const r = radios.nth(i);
+        const t = await r.evaluate((el) => (el.innerText || el.getAttribute('aria-label') || '').trim());
+        if (!/^pro\b/i.test(t)) { other = r; break; }
+      }
+      if (!other) return;
+      await other.click({ timeout: 4000 }).catch(() => other.evaluate((el) => el.click()));
+      for (let i = 0; i < 10; i++) {
+        const off = await pro.evaluate((el) => el.getAttribute('aria-checked') !== 'true').catch(() => false);
+        if (off) return;
+        await page.waitForTimeout(300);
+        if (i === 4) await other.evaluate((el) => el.click()).catch(() => {});
+      }
+      log('  ! tier-tab: PRO still reports selected after switching tier');
+    } });
   await S('plan-card', q('div, section, li').filter({ hasText: /Pro/i }).filter({ hasText: /\$|month|mo\b/i }).filter({ visible: true }).last(), ['default'], { group: g, title: 'Plan card', desc: 'A pricing plan card (name, price, feature list).', sel: 'pricing plan card' });
   await S('plan-cta', q('a, button').filter({ hasText: /get started|choose|select|contact sales|start/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Plan CTA', desc: 'A plan card\'s action; measured never followed.', sel: 'plan card CTA' });
-  await S('faq-item', q('button, [role="button"], summary').filter({ hasText: /\?/ }).filter({ visible: true }).first(), [...B4, 'opened'], { group: g, title: 'FAQ accordion item', desc: 'A question row in the pricing FAQ accordion; the opened state was measured after clicking the question toggle.', sel: 'faq item' }, { allowLink: true });
+  // The first FAQ item ships open (data-state="open", aria-expanded="true"):
+  // measure a closed one so 'opened' really is a closed → opened transition.
+  // The accordion lazy-mounts on approach, so scroll it in before counting —
+  // a closed-item lookup against an unmounted section silently falls back to
+  // the open-by-default first row. Pin the item by index, not by selector:
+  // an aria-expanded="false" locator re-resolves to a different row the
+  // moment the chosen one opens.
+  const allFaq = q('button, [role="button"], summary').filter({ hasText: /\?/ });
+  await allFaq.last().evaluate((el) => el.scrollIntoView({ block: 'center' })).catch(() => {});
+  await page.waitForTimeout(1200);
+  let faqIdx = 0;
+  for (let i = 0, n = await allFaq.count(); i < n; i++) {
+    const st_ = await allFaq.nth(i).evaluate((el) => el.getAttribute('aria-expanded') ?? el.getAttribute('data-state')).catch(() => null);
+    if (st_ !== 'true' && st_ !== 'open') { faqIdx = i; break; }
+  }
+  const faq = allFaq.nth(faqIdx);
+  await S('faq-item', faq, [...B4, 'opened'], { group: g, title: 'FAQ accordion item', desc: 'A question row in the pricing FAQ accordion; the opened state was measured after clicking the question toggle, and the revealed answer region is measured beside the button (the opened crop shows the answer).', sel: 'faq item' }, { allowLink: true,
+    // The trigger's aria-controls names the exact answer region it reveals —
+    // no class guessing (every accordion row keeps its region mounted, so a
+    // bare [role=region] lookup can resolve to a different row's collapsed
+    // panel mid-animation).
+    panel: async () => {
+      const cid = await faq.getAttribute('aria-controls').catch(() => null);
+      if (cid) return page.locator(`[id="${cid}"]`).first();
+      return faq.locator('xpath=ancestor::*[.//*[@role="region"] or .//dd or .//*[contains(@class,"answer")] or .//*[contains(@class,"panel")]][1]')
+        .or(q('[role="region"], dd, [class*="answer" i], [class*="faq" i][class*="panel" i]').filter({ visible: true })).first();
+    } });
   save();
 }
 
@@ -434,7 +529,11 @@ async function contact() {
   await S('contact-h1', q('h1').filter({ visible: true }).first(), ['default'], { group: g, title: 'Contact headline', desc: '"Bring Autonomy to your Engineering Organization" — the /contact masthead beside the form.', sel: 'h1' }, { noScroll: true });
   await S('field-firstname', q('input[name*="firstname" i]').filter({ visible: true }).first(), FIELD, { group: g, title: 'First name field', desc: 'The HubSpot First Name text input; focused and typed into then cleared — never submitted.', sel: 'input[name*=firstname]' }, { noScroll: true, fillText: 'Ada' });
   await S('field-email', q('input[type="email"], input[name*="email" i]').filter({ visible: true }).first(), FIELD, { group: g, title: 'Email field', desc: 'The Work Email input; focused and typed into then cleared — never submitted.', sel: 'input[type=email]' }, { noScroll: true });
-  await S('field-select', q('input[placeholder*="Select one" i]').filter({ visible: true }).first(), [...B4, 'opened'], { group: g, title: 'Topic select', desc: 'The "Select one..." dropdown field (a HubSpot select rendered as a read-only input); the opened state was measured after clicking it — a local UI toggle, no option chosen.', sel: 'contact select' }, { noScroll: true, allowLink: true });
+  const sel = q('input[placeholder*="Select one" i]').filter({ visible: true }).first();
+  await S('field-select', sel, [...B4, 'opened'], { group: g, title: 'Topic select', desc: 'The "Select one..." dropdown field (a HubSpot select rendered as a read-only input); the opened state was measured after clicking it — a local UI toggle, no option chosen — and the revealed options list is measured beside the field (the opened crop shows the list).', sel: 'contact select' }, { noScroll: true, allowLink: true,
+    // HubSpot portals the options list out of the field's own subtree, so the
+    // list itself is the panel locator and the crop.
+    panel: () => q('[role="listbox"], [role="listbox"] *, ul[class*="dropdown" i], [class*="select" i][class*="menu" i], [id*="listbox" i]').filter({ visible: true }).first() });
   await S('field-msg', q('textarea').filter({ visible: true }).first(), FIELD, { group: g, title: 'Message textarea', desc: 'The "how can we help" textarea; focused and typed into then cleared — never submitted.', sel: 'textarea' }, { noScroll: true, fillText: 'A short question about Droid.' });
   await S('send-btn', q('button[type="submit"], button').filter({ hasText: /^SUBMIT$/i }).first(), B4, { group: g, title: 'Submit button', desc: 'The form\'s SUBMIT button; its states were measured but the button was never clicked — nothing was submitted.', sel: 'contact SUBMIT' }, { noScroll: true });
   save();
@@ -495,8 +594,8 @@ async function mobile() {
   save();
 }
 
-run = new Date().toISOString().slice(0, 10);
-out._meta.read = run;
+run = new Date().toISOString();
+out._meta.read = run.slice(0, 10);
 out._meta.viewport = '1440 x 900 (mobile group 390 x 844); every factory.com page ships data-theme="light" with scoped [data-dark-hero]/.invert-color-scheme dark sections and a dark footer; docs.factory.com measured light then switched to dark through its theme-selector-button control; auth.factory.ai sign-in paints dark';
 out._meta.tool = 'tools/capture/public/measure.mjs';
 const { browser, context: ctx0 } = await launch();

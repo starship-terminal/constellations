@@ -308,9 +308,15 @@ const desktop = {
       await D.view('default');
     });
   } },
-  'docs-quickstart': { url: DOCS + '/docs/factory-app/quickstart', wait: 7000, theme: 'light', run: async (p, S) => {
+  'docs-quickstart': { url: DOCS + '/docs/factory-app/quickstart', wait: 7000, theme: 'light', run: async (p, S, mk) => {
     await S.view('default');
     await S.full();
+    await step('docs-dark', async () => {
+      await setDocsTheme(p, 'Dark');
+      const D = mk('dark');
+      await D.view('default');
+      await D.full();
+    });
   } },
   signin: { url: LOGIN_URL, wait: 0, theme: 'dark', run: async (p, S) => {
     // app.factory.ai boots a splash, then redirects to the auth.factory.ai

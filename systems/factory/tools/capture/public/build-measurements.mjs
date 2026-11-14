@@ -37,6 +37,20 @@ function props(v) {
   if (s.cursor && s.cursor !== 'auto') o.Cursor = s.cursor;
   if (v.icon) o.Icon = `${v.icon.w} x ${v.icon.h}, colour ${hex(v.icon.color)}${v.icon.fill && v.icon.fill !== 'none' && hex(v.icon.fill) !== hex(v.icon.color) ? ', fill ' + hex(v.icon.fill) : ''}`;
   if (v.placeholder) o.Placeholder = `${hex(v.placeholder.color)}, opacity ${v.placeholder.opacity}`;
+  // An opened state's revealed panel (a dropdown's options list, an
+  // accordion's answer region) is measured beside the trigger — show it.
+  if (v.panel) {
+    const p = v.panel;
+    const ps = p.style || {};
+    const cls = String(p.classes || '').split(' ').find((t) => /^[a-zA-Z][\w-]*$/.test(t));
+    const bits = [`${p.tag}${cls ? '.' + cls : ''}`, `${p.rect.w} x ${p.rect.h}`];
+    if (ps.backgroundColor && ps.backgroundColor !== 'rgba(0, 0, 0, 0)') bits.push('bg ' + hex(ps.backgroundColor));
+    const pad = sides(ps.paddingTop, ps.paddingRight, ps.paddingBottom, ps.paddingLeft);
+    if (pad && pad !== '0px') bits.push('pad ' + pad);
+    if (ps.fontSize) bits.push(`${fam(ps.fontFamily)} ${ps.fontSize}/${ps.lineHeight} ${ps.fontWeight}`);
+    if (p.text) bits.push('"' + String(p.text).slice(0, 80) + '"');
+    o.Panel = bits.join(', ');
+  }
   for (const pe of ['::before', '::after']) if (v[pe]) o[pe] = `${v[pe].width} x ${v[pe].height}, ${v[pe].position}, bg ${hex(v[pe].backgroundColor)}${v[pe].backgroundImage && v[pe].backgroundImage !== 'none' ? ' ' + hex(v[pe].backgroundImage).slice(0, 120) : ''}, radius ${v[pe].borderRadius}${v[pe].boxShadow !== 'none' ? ', shadow ' + hex(v[pe].boxShadow) : ''}`;
   if (v.paint) o['Painted layers'] = v.paint.slice(0, 6).map((p) => [p.node, p.size, p.bg && 'bg ' + hex(p.bg), p.bgImage && 'image ' + hex(p.bgImage).slice(0, 90), p.border && 'border ' + hex(p.border), p.radius && 'r ' + p.radius, p.shadow && 'shadow ' + hex(p.shadow), p.outline && 'outline ' + hex(p.outline)].filter(Boolean).join(' ')).join('; ');
   if (v.ancestors) o['Ancestor paint'] = v.ancestors.map((a) => `${a.up} up ${a.node}${a.bg !== 'rgba(0, 0, 0, 0)' ? ' bg ' + hex(a.bg) : ''}${a.shadow ? ' shadow ' + hex(a.shadow) : ''}${a.outline ? ' outline ' + hex(a.outline) : ''}`).join('; ');
@@ -68,7 +82,9 @@ for (const g of groups) {
     W(`Page: ${c.page}. Selector: \`${esc(c.selector)}\`. States: ${states.join(', ')}.`);
     W('');
     if (c.missing) { W('Not found on the page at capture time.'); continue; }
+    if (c.recaptureMissed) W(`Earlier readings kept — a ${c.recaptureMissed} re-run did not re-measure this component (retained from the ${c.run} run).`);
     const rows = {};
+    const runs = new Set();
     for (const st of states) {
       const v = c.states[st];
       if (v.error) { rows.Error = rows.Error || {}; rows.Error[st] = v.error; continue; }
@@ -77,7 +93,12 @@ for (const g of groups) {
         continue;
       }
       for (const [p, val] of Object.entries(props(v))) (rows[p] ||= {})[st] = val;
+      // Per-state run stamps make a retained reading visible: a state the
+      // latest run failed to re-read keeps its own stamp plus rerunError.
+      if (v.run) runs.add(v.run);
+      if (v.rerunError) (rows['Recapture'] ||= {})[st] = `re-read failed — retained reading: ${v.rerunError}`;
     }
+    if (runs.size > 1) for (const st of states) (rows['Run'] ||= {})[st] = c.states[st].run || '-';
     W(`| Property | ${states.join(' | ')} |`);
     W(`|---|${states.map(() => '---').join('|')}|`);
     for (const [p, vals] of Object.entries(rows)) {

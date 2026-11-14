@@ -87,9 +87,12 @@ def stitched_sidecar(name, sheet, tile_paths, intended=None):
     clips = [(p.get('capture') or {}).get('clip') for p in parts if p]
     clips = [c for c in clips if c]
     total_h = sum(c['height'] for c in clips)
+    # Part clips are document-relative CSS px, so the stitched clip keeps the
+    # CSS width too — the sheet's own width is device px (dsf 2 at 390 wide
+    # shoots 780-px tiles), and mixing the two records a clip that is neither.
     meta['capture'] = {'mode': 'stitchedParts',
                        'scale': (parts[0].get('capture') or {}).get('scale', 'device') if parts and parts[0] else 'device',
-                       'clip': {'x': 0, 'y': 0, 'width': sheet.width, 'height': total_h} if clips else None}
+                       'clip': {'x': 0, 'y': 0, 'width': clips[0]['width'], 'height': total_h} if clips else None}
     meta['png'] = {'width': sheet.width, 'height': sheet.height}
     meta['stitchedFrom'] = [f.name for f in tile_paths]
     if clips:
@@ -106,7 +109,8 @@ def stitched_sidecar(name, sheet, tile_paths, intended=None):
             meta['truncated'] = {'documentHeight': doc_h, 'capturedHeight': intended,
                                  'note': 'The document is taller than the 16-tile cap; the bottom '
                                          f'{doc_h - intended}px (the end of the page) is not in this sheet.'}
-        expected = {'width': sheet.width, 'height': round(intended * dsf)}
+        expected = {'width': round(clips[0]['width'] * dsf) if clips else sheet.width,
+                    'height': round(intended * dsf)}
     elif clips:
         expected = {'width': round(clips[0]['width'] * dsf), 'height': round(total_h * dsf)}
     else:

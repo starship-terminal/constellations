@@ -187,30 +187,30 @@ Crops: `price-h1-default.png`.
 
 #### tier-tab
 
-Plan-tier tab. A plan-tier switcher button (PRO/PLUS/MAX, role=radio); the opened state was measured after clicking it — a local UI toggle.
+Plan-tier tab. A plan-tier switcher button (PRO/PLUS/MAX, role=radio). PRO is the page's own default, so another tier was selected first and the resting states read PRO unselected; the selected state was measured after clicking PRO — a local UI toggle.
 
-Page: pricing. Selector: `plan tier PRO`. States: default, hover, focus-visible, pressed, opened.
+Page: pricing. Selector: `plan tier PRO`. States: default, hover, focus-visible, pressed, selected.
 
-| Property | default | hover | focus-visible | pressed | opened |
+| Property | default | hover | focus-visible | pressed | selected |
 |---|---|---|---|---|---|
 | Size (w x h) | 116 x 22 | = | = | = | = |
 | Padding | 0px 12px | = | = | = | = |
 | Border | none | = | = | = | = |
 | Radius | 2px | = | = | = | = |
-| Background | #101010 | = | = | = | = |
+| Background | transparent | #d6d3d2 | = | #d6d3d2 @ 0.455 | #101010 @ 0.996 |
 | Box shadow | none | = | = | = | = |
 | Outline | none | = | 1px solid #101010 offset 2px | = | = |
 | Font | Geist 16px/24px 400 | = | = | = | = |
 | Letter spacing | normal | = | = | = | = |
 | Colour | #020202 | = | = | = | = |
-| Text node | p.text-pretty.ds-label-1-mono: Geist Mono 16px/24px 400, #f9f9f9, ls -0.28px | = | = | = | = |
+| Text node | p.text-pretty.ds-label-1-mono: Geist Mono 16px/24px 400, #4d4947, ls -0.28px | = | = | = | p.text-pretty.ds-label-1-mono: Geist Mono 16px/24px 400, #f9f9f9, ls -0.28px |
 | Transition | color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.2s cubic-bezier(0.4, 0, 0.2, 1) | = | = | = | = |
 | Cursor | pointer | = | = | = | = |
-| Painted layers | button.flex.h-full 116.0x22.0 bg #101010 r 2px | = | button.flex.h-full 116.0x22.0 bg #101010 r 2px outline 1px solid #101010 offset 2px | = | = |
 | Ancestor paint | 1 up div.border-base-800.bg-dark-base-secondary bg #ebebeb | = | = | = | = |
-| How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover | own toggle |
+| How | at rest | mouse hover | keydown then focus() | CDP forcePseudoState :active:hover | own toggle, pressed once; a local UI state, never submitted |
+| Painted layers | - | button.flex.h-full 116.0x22.0 bg #d6d3d2 r 2px | button.flex.h-full 116.0x22.0 r 2px outline 1px solid #101010 offset 2px | button.flex.h-full 116.0x22.0 bg #d6d3d2 @ 0.455 r 2px | button.flex.h-full 116.0x22.0 bg #101010 @ 0.996 r 2px |
 
-Crops: `tier-tab-default.png`, `tier-tab-hover.png`, `tier-tab-focus-visible.png`, `tier-tab-pressed.png`, `tier-tab-opened.png`.
+Crops: `tier-tab-default.png`, `tier-tab-hover.png`, `tier-tab-focus-visible.png`, `tier-tab-pressed.png`, `tier-tab-selected.png`.
 
 #### plan-card
 
@@ -267,7 +267,7 @@ Crops: `plan-cta-default.png`, `plan-cta-hover.png`, `plan-cta-focus-visible.png
 
 #### faq-item
 
-FAQ accordion item. A question row in the pricing FAQ accordion; the opened state was measured after clicking the question toggle.
+FAQ accordion item. A question row in the pricing FAQ accordion; the opened state was measured after clicking the question toggle, and the revealed answer region is measured beside the button (the opened crop shows the answer).
 
 Page: pricing. Selector: `faq item`. States: default, hover, focus-visible, pressed, opened.
 
@@ -282,12 +282,13 @@ Page: pricing. Selector: `faq item`. States: default, hover, focus-visible, pres
 | Outline | none | = | 1px solid #101010 offset 2px | = | = |
 | Font | Geist 16px/24px 400 | = | = | = | = |
 | Letter spacing | normal | = | = | = | = |
-| Colour | #5c5855 | #ef6f2e | = | #ef6f2e | #ef6f2e |
+| Colour | #5c5855 | #ef6f2e | = | #ef6f2e | = |
 | Text node | p.text-foreground.text-pretty: Geist Mono 16px/19.2px 400, #020202, ls -0.32px | = | = | = | = |
 | Transition | color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.2s cubic-bezier(0.4, 0, 0.2, 1) | = | = | = | = |
 | Cursor | pointer | = | = | = | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover | own toggle |
 | Painted layers | - | = | button.group/trigger.text-base-500 1368.0x67.2 r 2px outline 1px solid #101010 offset 2px | = | = |
+| Panel | - | = | = | = | div.overflow-hidden, 1368 x 50, Geist 16px/24px 400, "You do. You retain 100% ownership and can use it however you like, including com" |
 
 Crops: `faq-item-default.png`, `faq-item-hover.png`, `faq-item-focus-visible.png`, `faq-item-pressed.png`, `faq-item-opened.png`.
 
@@ -371,7 +372,7 @@ Crops: `field-email-default.png`, `field-email-focused.png`, `field-email-filled
 
 #### field-select
 
-Topic select. The "Select one..." dropdown field (a HubSpot select rendered as a read-only input); the opened state was measured after clicking it — a local UI toggle, no option chosen.
+Topic select. The "Select one..." dropdown field (a HubSpot select rendered as a read-only input); the opened state was measured after clicking it — a local UI toggle, no option chosen — and the revealed options list is measured beside the field (the opened crop shows the list).
 
 Page: contact. Selector: `contact select`. States: default, hover, focus-visible, pressed, opened.
 
@@ -379,7 +380,7 @@ Page: contact. Selector: `contact select`. States: default, hover, focus-visible
 |---|---|---|---|---|---|
 | Size (w x h) | 606 x 36 | = | = | = | = |
 | Padding | 8px 36px 8px 16px | = | = | = | = |
-| Border | 1px solid #a49d9a | 1px solid #ef6f2e | 1px solid #b59382 | 1px solid #ef6f2e | 1px solid #ef6f2e |
+| Border | 1px solid #a49d9a | 1px solid #ef6f2e | 1px solid #ef6f2e | 1px solid #ef6f2e | 1px solid #ef6f2e |
 | Radius | 3px | = | = | = | = |
 | Background | transparent | = | = | = | = |
 | Box shadow | none | = | = | = | = |
@@ -390,8 +391,9 @@ Page: contact. Selector: `contact select`. States: default, hover, focus-visible
 | Transition | border-color 0.2s ease | = | = | = | = |
 | Cursor | pointer | = | = | = | = |
 | Placeholder | #b8b3b0, opacity 1 | = | = | = | = |
-| Painted layers | input.hsfc-TextInput.hsfc-TextInput--button 606.0x36.0 border T:1px solid #a49d9a / R:1px solid #a49d9a / B:1px solid #a49d9a / L:1px solid #a49d9a r 3px | input.hsfc-TextInput.hsfc-TextInput--button 606.0x36.0 border T:1px solid #ef6f2e / R:1px solid #ef6f2e / B:1px solid #ef6f2e / L:1px solid #ef6f2e r 3px | input.hsfc-TextInput.hsfc-TextInput--button 606.0x36.0 border T:1px solid #b59382 / R:1px solid #b59382 / B:1px solid #b59382 / L:1px solid #b59382 r 3px | input.hsfc-TextInput.hsfc-TextInput--button 606.0x36.0 border T:1px solid #ef6f2e / R:1px solid #ef6f2e / B:1px solid #ef6f2e / L:1px solid #ef6f2e r 3px | input.hsfc-TextInput.hsfc-TextInput--button 606.0x36.0 border T:1px solid #ef6f2e / R:1px solid #ef6f2e / B:1px solid #ef6f2e / L:1px solid #ef6f2e r 3px |
+| Painted layers | input.hsfc-TextInput.hsfc-TextInput--button 606.0x36.0 border T:1px solid #a49d9a / R:1px solid #a49d9a / B:1px solid #a49d9a / L:1px solid #a49d9a r 3px | input.hsfc-TextInput.hsfc-TextInput--button 606.0x36.0 border T:1px solid #ef6f2e / R:1px solid #ef6f2e / B:1px solid #ef6f2e / L:1px solid #ef6f2e r 3px | input.hsfc-TextInput.hsfc-TextInput--button 606.0x36.0 border T:1px solid #ef6f2e / R:1px solid #ef6f2e / B:1px solid #ef6f2e / L:1px solid #ef6f2e r 3px | input.hsfc-TextInput.hsfc-TextInput--button 606.0x36.0 border T:1px solid #ef6f2e / R:1px solid #ef6f2e / B:1px solid #ef6f2e / L:1px solid #ef6f2e r 3px | input.hsfc-TextInput.hsfc-TextInput--button 606.0x36.0 border T:1px solid #ef6f2e / R:1px solid #ef6f2e / B:1px solid #ef6f2e / L:1px solid #ef6f2e r 3px |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover | own toggle |
+| Panel | - | = | = | = | ul.hsfc-DropdownOptions__List, 596 x 140, Geist 12px/18px 400, "LINKEDIN X EVENT PODCAST GOOGLE BILLBOARD REFERRAL/WORD OF MOUTH AN EXISTING CUS" |
 
 Crops: `field-select-default.png`, `field-select-hover.png`, `field-select-focus-visible.png`, `field-select-pressed.png`, `field-select-opened.png`.
 
@@ -931,6 +933,7 @@ Mobile drawer CTA. The "DOWNLOAD" row inside the opened nav overlay at 390 wide;
 
 Page: mobile. Selector: `mobile nav overlay DOWNLOAD`. States: default, hover, focus-visible, pressed.
 
+Earlier readings kept — a 2026-11-13 re-run did not re-measure this component (retained from the 2026-11-13 run).
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
 | Size (w x h) | 358 x 31 | = | = | = |

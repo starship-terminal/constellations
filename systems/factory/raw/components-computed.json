@@ -2398,11 +2398,12 @@
       "textTransform": "none"
      },
      "crop": "components/crops/price-h1-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-14T08:06:10.145Z"
     }
    },
    "page": "pricing",
-   "run": "2026-11-13",
+   "run": "2026-11-14T08:06:10.145Z",
    "url": "https://factory.com/pricing",
    "title": "Pricing headline",
    "group": "Pricing",
@@ -2461,7 +2462,7 @@
       "borderTopRightRadius": "2px",
       "borderBottomRightRadius": "2px",
       "borderBottomLeftRadius": "2px",
-      "backgroundColor": "rgb(16, 16, 16)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
@@ -2491,14 +2492,6 @@
       "zIndex": "auto",
       "top": "auto"
      },
-     "paint": [
-      {
-       "node": "button.flex.h-full",
-       "size": "116.0x22.0",
-       "bg": "rgb(16, 16, 16)",
-       "radius": "2px"
-      }
-     ],
      "ancestors": [
       {
        "up": 1,
@@ -2515,12 +2508,13 @@
       "lineHeight": "24px",
       "fontWeight": "400",
       "letterSpacing": "-0.28px",
-      "color": "rgb(249, 249, 249)",
+      "color": "rgb(77, 73, 71)",
       "textDecorationLine": "none",
       "textTransform": "uppercase"
      },
      "crop": "components/crops/tier-tab-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-14T08:06:10.145Z"
     },
     "hover": {
      "tag": "button",
@@ -2572,7 +2566,7 @@
       "borderTopRightRadius": "2px",
       "borderBottomRightRadius": "2px",
       "borderBottomLeftRadius": "2px",
-      "backgroundColor": "rgb(16, 16, 16)",
+      "backgroundColor": "rgb(214, 211, 210)",
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
@@ -2606,7 +2600,7 @@
       {
        "node": "button.flex.h-full",
        "size": "116.0x22.0",
-       "bg": "rgb(16, 16, 16)",
+       "bg": "rgb(214, 211, 210)",
        "radius": "2px"
       }
      ],
@@ -2626,12 +2620,13 @@
       "lineHeight": "24px",
       "fontWeight": "400",
       "letterSpacing": "-0.28px",
-      "color": "rgb(249, 249, 249)",
+      "color": "rgb(77, 73, 71)",
       "textDecorationLine": "none",
       "textTransform": "uppercase"
      },
      "crop": "components/crops/tier-tab-hover.png",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "run": "2026-11-14T08:06:10.145Z"
     },
     "focus-visible": {
      "tag": "button",
@@ -2683,7 +2678,7 @@
       "borderTopRightRadius": "2px",
       "borderBottomRightRadius": "2px",
       "borderBottomLeftRadius": "2px",
-      "backgroundColor": "rgb(16, 16, 16)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
@@ -2717,7 +2712,6 @@
       {
        "node": "button.flex.h-full",
        "size": "116.0x22.0",
-       "bg": "rgb(16, 16, 16)",
        "outline": "1px solid rgb(16, 16, 16) offset 2px",
        "radius": "2px"
       }
@@ -2738,12 +2732,13 @@
       "lineHeight": "24px",
       "fontWeight": "400",
       "letterSpacing": "-0.28px",
-      "color": "rgb(249, 249, 249)",
+      "color": "rgb(77, 73, 71)",
       "textDecorationLine": "none",
       "textTransform": "uppercase"
      },
      "crop": "components/crops/tier-tab-focus-visible.png",
-     "via": "Shift+Tab, Tab"
+     "via": "keydown then focus()",
+     "run": "2026-11-14T08:06:10.145Z"
     },
     "pressed": {
      "tag": "button",
@@ -2795,7 +2790,7 @@
       "borderTopRightRadius": "2px",
       "borderBottomRightRadius": "2px",
       "borderBottomLeftRadius": "2px",
-      "backgroundColor": "rgb(16, 16, 16)",
+      "backgroundColor": "rgba(214, 211, 210, 0.455)",
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
@@ -2829,7 +2824,7 @@
       {
        "node": "button.flex.h-full",
        "size": "116.0x22.0",
-       "bg": "rgb(16, 16, 16)",
+       "bg": "rgba(214, 211, 210, 0.455)",
        "radius": "2px"
       }
      ],
@@ -2849,14 +2844,15 @@
       "lineHeight": "24px",
       "fontWeight": "400",
       "letterSpacing": "-0.28px",
-      "color": "rgb(249, 249, 249)",
+      "color": "rgb(77, 73, 71)",
       "textDecorationLine": "none",
       "textTransform": "uppercase"
      },
      "crop": "components/crops/tier-tab-pressed.png",
-     "via": "CDP forcePseudoState :active:hover"
+     "via": "CDP forcePseudoState :active:hover",
+     "run": "2026-11-14T08:06:10.145Z"
     },
-    "opened": {
+    "selected": {
      "tag": "button",
      "classes": "flex h-full flex-1 cursor-pointer",
      "text": "PRO",
@@ -2906,7 +2902,7 @@
       "borderTopRightRadius": "2px",
       "borderBottomRightRadius": "2px",
       "borderBottomLeftRadius": "2px",
-      "backgroundColor": "rgb(16, 16, 16)",
+      "backgroundColor": "rgba(16, 16, 16, 0.996)",
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
@@ -2940,7 +2936,7 @@
       {
        "node": "button.flex.h-full",
        "size": "116.0x22.0",
-       "bg": "rgb(16, 16, 16)",
+       "bg": "rgba(16, 16, 16, 0.996)",
        "radius": "2px"
       }
      ],
@@ -2964,16 +2960,17 @@
       "textDecorationLine": "none",
       "textTransform": "uppercase"
      },
-     "crop": "components/crops/tier-tab-opened.png",
-     "via": "own toggle"
+     "crop": "components/crops/tier-tab-selected.png",
+     "via": "own toggle, pressed once; a local UI state, never submitted",
+     "run": "2026-11-14T08:06:10.145Z"
     }
    },
    "page": "pricing",
-   "run": "2026-11-13",
+   "run": "2026-11-14T08:06:10.145Z",
    "url": "https://factory.com/pricing",
    "title": "Plan-tier tab",
    "group": "Pricing",
-   "desc": "A plan-tier switcher button (PRO/PLUS/MAX, role=radio); the opened state was measured after clicking it — a local UI toggle.",
+   "desc": "A plan-tier switcher button (PRO/PLUS/MAX, role=radio). PRO is the page's own default, so another tier was selected first and the resting states read PRO unselected; the selected state was measured after clicking PRO — a local UI toggle.",
    "selector": "plan tier PRO"
   },
   "plan-card": {
@@ -3104,11 +3101,12 @@
       "color": "rgb(2, 2, 2)"
      },
      "crop": "components/crops/plan-card-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-14T08:06:10.145Z"
     }
    },
    "page": "pricing",
-   "run": "2026-11-13",
+   "run": "2026-11-14T08:06:10.145Z",
    "url": "https://factory.com/pricing",
    "title": "Plan card",
    "group": "Pricing",
@@ -3224,7 +3222,8 @@
       "textTransform": "uppercase"
      },
      "crop": "components/crops/plan-cta-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-14T08:06:10.145Z"
     },
     "hover": {
      "tag": "a",
@@ -3333,7 +3332,8 @@
       "textTransform": "uppercase"
      },
      "crop": "components/crops/plan-cta-hover.png",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "run": "2026-11-14T08:06:10.145Z"
     },
     "focus-visible": {
      "tag": "a",
@@ -3443,7 +3443,8 @@
       "textTransform": "uppercase"
      },
      "crop": "components/crops/plan-cta-focus-visible.png",
-     "via": "Shift+Tab, Tab"
+     "via": "Shift+Tab, Tab",
+     "run": "2026-11-14T08:06:10.145Z"
     },
     "pressed": {
      "tag": "a",
@@ -3552,11 +3553,12 @@
       "textTransform": "uppercase"
      },
      "crop": "components/crops/plan-cta-pressed.png",
-     "via": "CDP forcePseudoState :active:hover"
+     "via": "CDP forcePseudoState :active:hover",
+     "run": "2026-11-14T08:06:10.145Z"
     }
    },
    "page": "pricing",
-   "run": "2026-11-13",
+   "run": "2026-11-14T08:06:10.145Z",
    "url": "https://factory.com/pricing",
    "title": "Plan CTA",
    "group": "Pricing",
@@ -3568,10 +3570,10 @@
     "default": {
      "tag": "button",
      "classes": "group/trigger text-base-500 hover:text-accent-100 [&[data-state=open]>span]:text-light-base-secondary",
-     "text": "What models do you support? +",
+     "text": "Who owns the code generated by Factory? +",
      "rect": {
       "x": 36,
-      "y": 456.2,
+      "y": 457,
       "w": 1368,
       "h": 67.2
      },
@@ -3647,7 +3649,7 @@
      },
      "textStyle": {
       "node": "p.text-foreground.text-pretty",
-      "text": "What models do you support?",
+      "text": "Who owns the code generated by Factory?",
       "fontFamily": "\"Geist Mono\", \"Geist Mono Fallback\", monospace",
       "fontSize": "16px",
       "lineHeight": "19.2px",
@@ -3658,15 +3660,16 @@
       "textTransform": "none"
      },
      "crop": "components/crops/faq-item-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-14T08:06:10.145Z"
     },
     "hover": {
      "tag": "button",
      "classes": "group/trigger text-base-500 hover:text-accent-100 [&[data-state=open]>span]:text-light-base-secondary",
-     "text": "What models do you support? +",
+     "text": "Who owns the code generated by Factory? +",
      "rect": {
       "x": 36,
-      "y": 456.8,
+      "y": 457,
       "w": 1368,
       "h": 67.2
      },
@@ -3742,7 +3745,7 @@
      },
      "textStyle": {
       "node": "p.text-foreground.text-pretty",
-      "text": "What models do you support?",
+      "text": "Who owns the code generated by Factory?",
       "fontFamily": "\"Geist Mono\", \"Geist Mono Fallback\", monospace",
       "fontSize": "16px",
       "lineHeight": "19.2px",
@@ -3753,15 +3756,16 @@
       "textTransform": "none"
      },
      "crop": "components/crops/faq-item-hover.png",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "run": "2026-11-14T08:06:10.145Z"
     },
     "focus-visible": {
      "tag": "button",
      "classes": "group/trigger text-base-500 hover:text-accent-100 [&[data-state=open]>span]:text-light-base-secondary",
-     "text": "What models do you support? +",
+     "text": "Who owns the code generated by Factory? +",
      "rect": {
       "x": 36,
-      "y": 1135.8,
+      "y": 457,
       "w": 1368,
       "h": 67.2
      },
@@ -3845,7 +3849,7 @@
      ],
      "textStyle": {
       "node": "p.text-foreground.text-pretty",
-      "text": "What models do you support?",
+      "text": "Who owns the code generated by Factory?",
       "fontFamily": "\"Geist Mono\", \"Geist Mono Fallback\", monospace",
       "fontSize": "16px",
       "lineHeight": "19.2px",
@@ -3856,15 +3860,16 @@
       "textTransform": "none"
      },
      "crop": "components/crops/faq-item-focus-visible.png",
-     "via": "Shift+Tab, Tab"
+     "via": "Shift+Tab, Tab",
+     "run": "2026-11-14T08:06:10.145Z"
     },
     "pressed": {
      "tag": "button",
      "classes": "group/trigger text-base-500 hover:text-accent-100 [&[data-state=open]>span]:text-light-base-secondary",
-     "text": "What models do you support? +",
+     "text": "Who owns the code generated by Factory? +",
      "rect": {
       "x": 36,
-      "y": 456.8,
+      "y": 457,
       "w": 1368,
       "h": 67.2
      },
@@ -3940,7 +3945,7 @@
      },
      "textStyle": {
       "node": "p.text-foreground.text-pretty",
-      "text": "What models do you support?",
+      "text": "Who owns the code generated by Factory?",
       "fontFamily": "\"Geist Mono\", \"Geist Mono Fallback\", monospace",
       "fontSize": "16px",
       "lineHeight": "19.2px",
@@ -3951,15 +3956,16 @@
       "textTransform": "none"
      },
      "crop": "components/crops/faq-item-pressed.png",
-     "via": "CDP forcePseudoState :active:hover"
+     "via": "CDP forcePseudoState :active:hover",
+     "run": "2026-11-14T08:06:10.145Z"
     },
     "opened": {
      "tag": "button",
      "classes": "group/trigger text-base-500 hover:text-accent-100 [&[data-state=open]>span]:text-light-base-secondary",
-     "text": "What models do you support? +",
+     "text": "Who owns the code generated by Factory? +",
      "rect": {
       "x": 36,
-      "y": 456.8,
+      "y": 381,
       "w": 1368,
       "h": 67.2
      },
@@ -4017,9 +4023,9 @@
       "lineHeight": "24px",
       "letterSpacing": "normal",
       "textTransform": "none",
-      "color": "rgb(239, 111, 46)",
+      "color": "rgb(92, 88, 85)",
       "textDecorationLine": "none",
-      "textDecorationColor": "rgb(239, 111, 46)",
+      "textDecorationColor": "rgb(92, 88, 85)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
       "transitionProperty": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to",
@@ -4035,7 +4041,7 @@
      },
      "textStyle": {
       "node": "p.text-foreground.text-pretty",
-      "text": "What models do you support?",
+      "text": "Who owns the code generated by Factory?",
       "fontFamily": "\"Geist Mono\", \"Geist Mono Fallback\", monospace",
       "fontSize": "16px",
       "lineHeight": "19.2px",
@@ -4045,16 +4051,110 @@
       "textDecorationLine": "none",
       "textTransform": "none"
      },
+     "panel": {
+      "tag": "div",
+      "classes": "data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down overflow-hidden transition-all",
+      "text": "You do. You retain 100% ownership and can use it however you like, including com",
+      "rect": {
+       "x": 36,
+       "y": 448.3,
+       "w": 1368,
+       "h": 50
+      },
+      "style": {
+       "display": "block",
+       "position": "static",
+       "boxSizing": "border-box",
+       "width": "1368px",
+       "height": "50px",
+       "minWidth": "0px",
+       "maxWidth": "none",
+       "minHeight": "0px",
+       "paddingTop": "0px",
+       "paddingRight": "0px",
+       "paddingBottom": "0px",
+       "paddingLeft": "0px",
+       "marginTop": "0px",
+       "marginRight": "0px",
+       "marginBottom": "0px",
+       "marginLeft": "0px",
+       "gap": "normal",
+       "rowGap": "normal",
+       "columnGap": "normal",
+       "flexDirection": "row",
+       "alignItems": "normal",
+       "justifyContent": "normal",
+       "gridTemplateColumns": "none",
+       "borderTopWidth": "0px",
+       "borderTopStyle": "solid",
+       "borderTopColor": "rgb(184, 179, 176)",
+       "borderRightWidth": "0px",
+       "borderRightStyle": "solid",
+       "borderRightColor": "rgb(184, 179, 176)",
+       "borderBottomWidth": "0px",
+       "borderBottomStyle": "solid",
+       "borderBottomColor": "rgb(184, 179, 176)",
+       "borderLeftWidth": "0px",
+       "borderLeftStyle": "solid",
+       "borderLeftColor": "rgb(184, 179, 176)",
+       "borderTopLeftRadius": "0px",
+       "borderTopRightRadius": "0px",
+       "borderBottomRightRadius": "0px",
+       "borderBottomLeftRadius": "0px",
+       "backgroundColor": "rgba(0, 0, 0, 0)",
+       "backgroundImage": "none",
+       "boxShadow": "none",
+       "backdropFilter": "none",
+       "outlineWidth": "0px",
+       "outlineStyle": "none",
+       "outlineColor": "rgb(184, 179, 176)",
+       "outlineOffset": "0px",
+       "fontFamily": "Geist, \"Geist Fallback\", sans-serif",
+       "fontSize": "16px",
+       "fontWeight": "400",
+       "lineHeight": "24px",
+       "letterSpacing": "normal",
+       "textTransform": "none",
+       "color": "rgb(2, 2, 2)",
+       "textDecorationLine": "none",
+       "textDecorationColor": "rgb(2, 2, 2)",
+       "textDecorationThickness": "auto",
+       "textUnderlineOffset": "auto",
+       "transitionProperty": "all",
+       "transitionDuration": "0.3s",
+       "transitionTimingFunction": "cubic-bezier(0.4, 0, 0.2, 1)",
+       "transitionDelay": "0s",
+       "cursor": "auto",
+       "opacity": "1",
+       "transform": "none",
+       "overflow": "hidden",
+       "zIndex": "auto",
+       "top": "auto"
+      },
+      "textStyle": {
+       "node": "p.text-base-500.font-mono",
+       "text": "You do. You retain 100% ownership and ca",
+       "fontFamily": "\"Geist Mono\", \"Geist Mono Fallback\", monospace",
+       "fontSize": "16px",
+       "lineHeight": "26px",
+       "fontWeight": "400",
+       "letterSpacing": "normal",
+       "color": "rgb(92, 88, 85)",
+       "textDecorationLine": "none",
+       "textTransform": "none"
+      }
+     },
      "crop": "components/crops/faq-item-opened.png",
-     "via": "own toggle"
+     "via": "own toggle",
+     "run": "2026-11-14T08:06:10.145Z"
     }
    },
    "page": "pricing",
-   "run": "2026-11-13",
+   "run": "2026-11-14T08:06:10.145Z",
    "url": "https://factory.com/pricing",
    "title": "FAQ accordion item",
    "group": "Pricing",
-   "desc": "A question row in the pricing FAQ accordion; the opened state was measured after clicking the question toggle.",
+   "desc": "A question row in the pricing FAQ accordion; the opened state was measured after clicking the question toggle, and the revealed answer region is measured beside the button (the opened crop shows the answer).",
    "selector": "faq item"
   },
   "contact-h1": {
@@ -4152,11 +4252,12 @@
       "textTransform": "none"
      },
      "crop": "components/crops/contact-h1-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-14T07:55:35.055Z"
     }
    },
    "page": "contact",
-   "run": "2026-11-13",
+   "run": "2026-11-14T07:55:35.055Z",
    "url": "https://factory.com/contact",
    "title": "Contact headline",
    "group": "Contact form",
@@ -4259,7 +4360,8 @@
       "fontSize": "12px"
      },
      "crop": "components/crops/field-firstname-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-14T07:55:35.055Z"
     },
     "focused": {
      "tag": "input",
@@ -4355,7 +4457,8 @@
       "fontSize": "12px"
      },
      "crop": "components/crops/field-firstname-focused.png",
-     "via": "clicked into the field"
+     "via": "clicked into the field",
+     "run": "2026-11-14T07:55:35.055Z"
     },
     "filled": {
      "tag": "input",
@@ -4451,11 +4554,12 @@
       "fontSize": "12px"
      },
      "crop": "components/crops/field-firstname-filled.png",
-     "via": "typed \"Ada\", then deleted; nothing sent"
+     "via": "typed \"Ada\", then deleted; nothing sent",
+     "run": "2026-11-14T07:55:35.055Z"
     }
    },
    "page": "contact",
-   "run": "2026-11-13",
+   "run": "2026-11-14T07:55:35.055Z",
    "url": "https://factory.com/contact",
    "title": "First name field",
    "group": "Contact form",
@@ -4558,7 +4662,8 @@
       "fontSize": "12px"
      },
      "crop": "components/crops/field-email-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-14T07:55:35.055Z"
     },
     "focused": {
      "tag": "input",
@@ -4654,7 +4759,8 @@
       "fontSize": "12px"
      },
      "crop": "components/crops/field-email-focused.png",
-     "via": "clicked into the field"
+     "via": "clicked into the field",
+     "run": "2026-11-14T07:55:35.055Z"
     },
     "filled": {
      "tag": "input",
@@ -4750,11 +4856,12 @@
       "fontSize": "12px"
      },
      "crop": "components/crops/field-email-filled.png",
-     "via": "typed \"name@example.com\", then deleted; nothing sent"
+     "via": "typed \"name@example.com\", then deleted; nothing sent",
+     "run": "2026-11-14T07:55:35.055Z"
     }
    },
    "page": "contact",
-   "run": "2026-11-13",
+   "run": "2026-11-14T07:55:35.055Z",
    "url": "https://factory.com/contact",
    "title": "Email field",
    "group": "Contact form",
@@ -4857,7 +4964,8 @@
       "fontSize": "12px"
      },
      "crop": "components/crops/field-select-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-14T07:55:35.055Z"
     },
     "hover": {
      "tag": "input",
@@ -4953,7 +5061,8 @@
       "fontSize": "12px"
      },
      "crop": "components/crops/field-select-hover.png",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "run": "2026-11-14T07:55:35.055Z"
     },
     "focus-visible": {
      "tag": "input",
@@ -4991,16 +5100,16 @@
       "gridTemplateColumns": "none",
       "borderTopWidth": "1px",
       "borderTopStyle": "solid",
-      "borderTopColor": "rgb(181, 147, 130)",
+      "borderTopColor": "rgb(239, 111, 46)",
       "borderRightWidth": "1px",
       "borderRightStyle": "solid",
-      "borderRightColor": "rgb(181, 147, 130)",
+      "borderRightColor": "rgb(239, 111, 46)",
       "borderBottomWidth": "1px",
       "borderBottomStyle": "solid",
-      "borderBottomColor": "rgb(181, 147, 130)",
+      "borderBottomColor": "rgb(239, 111, 46)",
       "borderLeftWidth": "1px",
       "borderLeftStyle": "solid",
-      "borderLeftColor": "rgb(181, 147, 130)",
+      "borderLeftColor": "rgb(239, 111, 46)",
       "borderTopLeftRadius": "3px",
       "borderTopRightRadius": "3px",
       "borderBottomRightRadius": "3px",
@@ -5039,7 +5148,7 @@
       {
        "node": "input.hsfc-TextInput.hsfc-TextInput--button",
        "size": "606.0x36.0",
-       "border": "T:1px solid rgb(181, 147, 130) | R:1px solid rgb(181, 147, 130) | B:1px solid rgb(181, 147, 130) | L:1px solid rgb(181, 147, 130)",
+       "border": "T:1px solid rgb(239, 111, 46) | R:1px solid rgb(239, 111, 46) | B:1px solid rgb(239, 111, 46) | L:1px solid rgb(239, 111, 46)",
        "radius": "3px"
       }
      ],
@@ -5049,7 +5158,8 @@
       "fontSize": "12px"
      },
      "crop": "components/crops/field-select-focus-visible.png",
-     "via": "Shift+Tab, Tab"
+     "via": "Shift+Tab, Tab",
+     "run": "2026-11-14T07:55:35.055Z"
     },
     "pressed": {
      "tag": "input",
@@ -5145,7 +5255,8 @@
       "fontSize": "12px"
      },
      "crop": "components/crops/field-select-pressed.png",
-     "via": "CDP forcePseudoState :active:hover"
+     "via": "CDP forcePseudoState :active:hover",
+     "run": "2026-11-14T07:55:35.055Z"
     },
     "opened": {
      "tag": "input",
@@ -5240,16 +5351,119 @@
       "opacity": "1",
       "fontSize": "12px"
      },
+     "panel": {
+      "tag": "ul",
+      "classes": "hsfc-DropdownOptions__List",
+      "text": "LINKEDIN X EVENT PODCAST GOOGLE BILLBOARD REFERRAL/WORD OF MOUTH AN EXISTING CUS",
+      "rect": {
+       "x": 770,
+       "y": 560.6,
+       "w": 596,
+       "h": 140
+      },
+      "style": {
+       "display": "block",
+       "position": "static",
+       "boxSizing": "border-box",
+       "width": "596px",
+       "height": "140px",
+       "minWidth": "auto",
+       "maxWidth": "none",
+       "minHeight": "auto",
+       "paddingTop": "0px",
+       "paddingRight": "0px",
+       "paddingBottom": "0px",
+       "paddingLeft": "0px",
+       "marginTop": "0px",
+       "marginRight": "0px",
+       "marginBottom": "0px",
+       "marginLeft": "0px",
+       "gap": "normal",
+       "rowGap": "normal",
+       "columnGap": "normal",
+       "flexDirection": "row",
+       "alignItems": "normal",
+       "justifyContent": "normal",
+       "gridTemplateColumns": "none",
+       "borderTopWidth": "0px",
+       "borderTopStyle": "solid",
+       "borderTopColor": "rgb(184, 179, 176)",
+       "borderRightWidth": "0px",
+       "borderRightStyle": "solid",
+       "borderRightColor": "rgb(184, 179, 176)",
+       "borderBottomWidth": "0px",
+       "borderBottomStyle": "solid",
+       "borderBottomColor": "rgb(184, 179, 176)",
+       "borderLeftWidth": "0px",
+       "borderLeftStyle": "solid",
+       "borderLeftColor": "rgb(184, 179, 176)",
+       "borderTopLeftRadius": "0px",
+       "borderTopRightRadius": "0px",
+       "borderBottomRightRadius": "0px",
+       "borderBottomLeftRadius": "0px",
+       "backgroundColor": "rgba(0, 0, 0, 0)",
+       "backgroundImage": "none",
+       "boxShadow": "none",
+       "backdropFilter": "none",
+       "outlineWidth": "0px",
+       "outlineStyle": "none",
+       "outlineColor": "rgb(184, 179, 176)",
+       "outlineOffset": "0px",
+       "fontFamily": "Geist, \"Geist Fallback\"",
+       "fontSize": "12px",
+       "fontWeight": "400",
+       "lineHeight": "18px",
+       "letterSpacing": "normal",
+       "textTransform": "none",
+       "color": "rgb(2, 2, 2)",
+       "textDecorationLine": "none",
+       "textDecorationColor": "rgb(2, 2, 2)",
+       "textDecorationThickness": "auto",
+       "textUnderlineOffset": "auto",
+       "transitionProperty": "all",
+       "transitionDuration": "0s",
+       "transitionTimingFunction": "ease",
+       "transitionDelay": "0s",
+       "cursor": "auto",
+       "opacity": "1",
+       "transform": "none",
+       "overflow": "auto",
+       "zIndex": "auto",
+       "top": "auto"
+      },
+      "ancestors": [
+       {
+        "up": 1,
+        "node": "div.hsfc-DropdownOptions",
+        "shadow": "rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.1) 0px 4px 6px -4px",
+        "radius": "3px",
+        "bg": "rgb(214, 211, 210)"
+       }
+      ],
+      "textStyle": {
+       "node": "li.hsfc-DropdownOptions__List__ListItem",
+       "text": "LinkedIn",
+       "fontFamily": "\"Geist Mono\", \"Geist Mono Fallback\"",
+       "fontSize": "12px",
+       "lineHeight": "12px",
+       "fontWeight": "400",
+       "letterSpacing": "-0.24px",
+       "color": "rgb(16, 16, 16)",
+       "textDecorationLine": "none",
+       "textTransform": "uppercase"
+      }
+     },
      "crop": "components/crops/field-select-opened.png",
-     "via": "own toggle"
+     "via": "own toggle",
+     "run": "2026-11-14T07:55:35.055Z"
     }
    },
    "page": "contact",
-   "run": "2026-11-13",
+   "run": "2026-11-14T07:55:35.055Z",
    "url": "https://factory.com/contact",
    "title": "Topic select",
    "group": "Contact form",
-   "desc": "The \"Select one...\" dropdown field (a HubSpot select rendered as a read-only input); the opened state was measured after clicking it — a local UI toggle, no option chosen.",
+   "desc": "The \"Select one...\" dropdown field (a HubSpot select rendered as a read-only input); the opened state was measured after clicking it — a local UI toggle, no option chosen — and the revealed options list is measured beside the field (the opened crop shows the list).",
    "selector": "contact select"
   },
   "field-msg": {
@@ -5348,7 +5562,8 @@
       "fontSize": "12px"
      },
      "crop": "components/crops/field-msg-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-14T07:55:35.055Z"
     },
     "focused": {
      "tag": "textarea",
@@ -5444,7 +5659,8 @@
       "fontSize": "12px"
      },
      "crop": "components/crops/field-msg-focused.png",
-     "via": "clicked into the field"
+     "via": "clicked into the field",
+     "run": "2026-11-14T07:55:35.055Z"
     },
     "filled": {
      "tag": "textarea",
@@ -5540,11 +5756,12 @@
       "fontSize": "12px"
      },
      "crop": "components/crops/field-msg-filled.png",
-     "via": "typed \"A short question about Droid.\", then deleted; nothing sent"
+     "via": "typed \"A short question about Droid.\", then deleted; nothing sent",
+     "run": "2026-11-14T07:55:35.055Z"
     }
    },
    "page": "contact",
-   "run": "2026-11-13",
+   "run": "2026-11-14T07:55:35.055Z",
    "url": "https://factory.com/contact",
    "title": "Message textarea",
    "group": "Contact form",
@@ -5650,7 +5867,8 @@
       }
      ],
      "crop": "components/crops/send-btn-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-14T07:55:35.055Z"
     },
     "hover": {
      "tag": "button",
@@ -5658,7 +5876,7 @@
      "text": "SUBMIT",
      "rect": {
       "x": 765,
-      "y": 80.4,
+      "y": 818.4,
       "w": 100.33,
       "h": 31
      },
@@ -5749,7 +5967,8 @@
       }
      ],
      "crop": "components/crops/send-btn-hover.png",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "run": "2026-11-14T07:55:35.055Z"
     },
     "focus-visible": {
      "tag": "button",
@@ -5757,7 +5976,7 @@
      "text": "SUBMIT",
      "rect": {
       "x": 765,
-      "y": 80.4,
+      "y": 818.4,
       "w": 100.33,
       "h": 31
      },
@@ -5849,7 +6068,8 @@
       }
      ],
      "crop": "components/crops/send-btn-focus-visible.png",
-     "via": "Shift+Tab, Tab"
+     "via": "Shift+Tab, Tab",
+     "run": "2026-11-14T07:55:35.055Z"
     },
     "pressed": {
      "tag": "button",
@@ -5857,7 +6077,7 @@
      "text": "SUBMIT",
      "rect": {
       "x": 765,
-      "y": 81.4,
+      "y": 819.4,
       "w": 100.33,
       "h": 31
      },
@@ -5949,11 +6169,12 @@
       }
      ],
      "crop": "components/crops/send-btn-pressed.png",
-     "via": "CDP forcePseudoState :active:hover"
+     "via": "CDP forcePseudoState :active:hover",
+     "run": "2026-11-14T07:55:35.055Z"
     }
    },
    "page": "contact",
-   "run": "2026-11-13",
+   "run": "2026-11-14T07:55:35.055Z",
    "url": "https://factory.com/contact",
    "title": "Submit button",
    "group": "Contact form",

@@ -276,15 +276,19 @@ for key, name, desc in FONT_MAP:
     if name in R:
         fam[key] = {"var": name, "type": "fontFamily", "description": desc}
 # The Tailwind default families are declared but only resolve inside the real
-# generated body classes; alias them to the resolved Geist families.
+# generated body classes; alias them to the resolved Geist families. The
+# declared tails keep a generic fallback (`var(--font-geist-sans),
+# var(--font-japanese,sans-serif)` / `...,var(--font-japanese,monospace)`):
+# where --font-japanese resolved, the chain ends in its stack; where it did
+# not, the declared generic name is what survives — never drop it.
 if "geistSans" in fam and declared("--font-sans") is None:
-    fam["sans"] = lit("{font.family.geistSans}", "fontFamily",
-        "the declared --font-sans default (Tailwind `--default-font-family: var(--font-geist-sans)`); the alias chain does not resolve outside the generated body classes, so this aliases the resolved --font-geist-sans",
-        "The default sans — Geist via --font-sans.")
+    fam["sans"] = lit("{font.family.geistSans}," + ("{font.family.japanese}" if "japanese" in fam else "sans-serif"), "fontFamily",
+        "the declared --font-sans default (Tailwind `--default-font-family: var(--font-geist-sans),var(--font-japanese,sans-serif)`); the alias chain does not resolve outside the generated body classes, so this aliases the resolved --font-geist-sans plus the declared generic fallback",
+        "The default sans — Geist via --font-sans, ending in sans-serif.")
 if "geistMono" in fam and declared("--font-mono") is None:
-    fam["mono"] = lit("{font.family.geistMono}", "fontFamily",
-        "the declared --font-mono default (Tailwind `--default-mono-font-family: var(--font-geist-mono)`); aliases the resolved --font-geist-mono",
-        "The default mono — Geist Mono via --font-mono.")
+    fam["mono"] = lit("{font.family.geistMono}," + ("{font.family.japanese}" if "japanese" in fam else "monospace"), "fontFamily",
+        "the declared --font-mono default (Tailwind `--default-mono-font-family: var(--font-geist-mono),var(--font-japanese,monospace)`); aliases the resolved --font-geist-mono plus the declared generic fallback",
+        "The default mono — Geist Mono via --font-mono, ending in monospace.")
 
 weights = SPEC["core"].setdefault("font", {}).setdefault("weight", {})
 for name in sorted(k for k in R if re.fullmatch(r"--font-weight-[a-z]+", k)):
@@ -318,7 +322,12 @@ for name in sorted(k for k in R if re.fullmatch(r"--text-[a-z0-9]+--line-height"
 
 tracking = SPEC["core"].setdefault("font", {}).setdefault("tracking", {})
 for name in sorted(k for k in R if k.startswith("--tracking-")):
-    tracking[name[len("--tracking-"):]] = decl(name, "other")
+    # letter-spacing is declared in em; the probe's resolved px is sized by the
+    # probe's own font size, so keep the declared relative value, not the probe
+    # reading (`.1em`, never `1.59375px`).
+    raw = (RL.get(name) or {}).get("raw")
+    v = raw if raw not in (None, "") else R[name]
+    tracking[name[len("--tracking-"):]] = lit(v, "other", f"{DECL_SRC}: {name}", f"The declared `{name}` letter-spacing.")
 
 # ---------------------------------------------------------- core scales
 #
