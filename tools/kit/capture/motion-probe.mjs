@@ -1,0 +1,121 @@
+// Reads the product's motion into raw/motion.json: durations, easing curves, which properties transition,
+// animation and @keyframes names, motion custom properties, and what prefers-reduced-motion: reduce
+// changes. Serves both web routes (docs/decisions/0001-motion-tokens.md, docs/CAPTURE.md#motion).
+//
+//   PLAYWRIGHT=/path/to/playwright/index.mjs SNAPS=<dir of page copies> node tools/capture/motion-probe.mjs
+//   PLAYWRIGHT=/path/to/playwright/index.mjs node tools/capture/motion-probe.mjs --urls <url>[,<url>...]
+//
+// Signed-in route: every copy under SNAPS is opened the way layout.mjs opens it. Public route: each URL is
+// opened in a plain headless context. Each page is read twice in the same session, on the same elements:
+// once with page.emulateMedia({ reducedMotion: 'no-preference' }), once with 'reduce'. The page's own
+// matchMedia answer is recorded for both, so a pass that did not take is visible. Nothing is clicked,
+// typed or submitted; computed transitions are read at rest, and the stylesheets' own rules (hover and
+// state rules included) are read from the CSSOM.
+//
+// The output is raw readings, not tokens: build_tokens.py turns them into the motion group
+// (tools/kit/build/motion.py). Elements with the same motion share one group, so the file stays small.
+import fs from 'node:fs';
+import path from 'node:path';
+import { MOTION_PROPS, MOTION_VAR_NAME, MOTION_VAR_VALUE, motionOf, groupRecords, summarise, mergeSummaries, declaredOf, readMotionInPage, readSheetsInPage } from './motion.mjs';
+import { safeUrl } from './safe-url.mjs';
+
+const pw = await import(process.env.PLAYWRIGHT || 'playwright');
+const { chromium } = pw.default ?? pw;
+const here = path.dirname(new URL(import.meta.url).pathname);
+const REF = path.resolve(here, '..', '..');              // systems/<slug>, from tools/capture
+const OUT = process.env.OUT_JSON || path.join(REF, 'raw', 'motion.json');
+const SNAPS = process.env.SNAPS ? path.resolve(process.env.SNAPS) : null;
+const urlsArg = process.argv.indexOf('--urls');
+const URLS = urlsArg > 0 ? (process.argv[urlsArg + 1] || '').split(',').filter(Boolean) : [];
+if (!SNAPS && !URLS.length) { console.error('SNAPS=<dir of page copies>, or --urls <url>[,<url>...], is required'); process.exit(2); }
+const CAP = 6000;
+const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
+
+// PRODUCT (adapt): anything a public page needs before it shows its real UI (a promo dialog, a cookie
+// banner), pressed the way public.mjs presses it. Never press anything that sends or submits.
+async function prepare(page) {
+  await page.waitForTimeout(3000);
+}
+
+// One page, both passes. Returns the record for raw/motion.json.
+async function readPage(page, label, url) {
+  const arg = { props: MOTION_PROPS, cap: CAP, pseudos: ['::before', '::after'] };
+  await page.evaluate(() => { delete window.__motion; });
+  await page.emulateMedia({ reducedMotion: 'no-preference' });
+  await page.waitForTimeout(400);
+  const normal = await page.evaluate(readMotionInPage, arg);
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await page.waitForTimeout(400);                       // a transition or animation restyles on the next frame
+  const reduced = await page.evaluate(readMotionInPage, arg);
+  await page.emulateMedia({ reducedMotion: 'no-preference' });
+  const sheets = await page.evaluate(readSheetsInPage, { varName: MOTION_VAR_NAME, varValue: MOTION_VAR_VALUE, cap: 400 });
+
+  const after = new Map(reduced.records.map((r) => [r.id, r]));
+  const records = normal.records.map((r) => ({ node: r.node, base: motionOf(r.style), reduced: motionOf(after.get(r.id)?.style || {}) }));
+  // an element that moves only under reduce (it was not moving in the normal pass)
+  const known = new Set(normal.records.map((r) => r.id));
+  for (const r of reduced.records) if (!known.has(r.id)) records.push({ node: r.node, base: motionOf({}), reduced: motionOf(r.style) });
+  const groups = groupRecords(records);
+  const page_ = {
+    url: url && safeUrl(url),
+    matchMedia: { normal: normal.matches, reduce: reduced.matches },
+    scanned: normal.scanned,
+    capped: normal.records.length >= CAP || reduced.records.length >= CAP,
+    unreadableSheets: sheets.unreadable,
+    summary: summarise(groups),
+    groups,
+    keyframes: sheets.keyframes,
+    reducedMotionRules: sheets.reducedRules,
+    declared: sheets.declared.map(declaredOf).filter((d) => d.transitions.length || d.animations.length || d.scrollBehavior || d.viaVar),
+    customProperties: sheets.customProperties,
+  };
+  if (!page_.matchMedia.reduce || page_.matchMedia.normal) log('  ! the emulation did not take on', label, JSON.stringify(page_.matchMedia));
+  log(label, `${normal.records.length} moving, ${groups.length} groups, reduce: ${page_.summary.behaviour}`);
+  return page_;
+}
+
+const browser = await chromium.launch();
+const pages = {};
+try {
+  if (SNAPS) {
+    // The signed-in route's own opener (lib.mjs reads SNAPS when it loads, so import it after the check).
+    const lib = await import('./signed-in/lib.mjs');
+    const labels = fs.readdirSync(SNAPS).filter((f) => f.endsWith('.json')).map((f) => f.slice(0, -5)).filter((l) => fs.existsSync(path.join(SNAPS, `${l}.html`))).sort();
+    for (const label of labels) {
+      const meta = lib.metaOf(label);
+      const ctx = await lib.newContext(browser, meta);
+      try {
+        const page = await lib.openSnap(ctx, label);
+        pages[`${label}@${meta.w}`] = await readPage(page, label, meta.url);
+      } catch (e) { log('failed', label, String(e.message).split('\n')[0]); }
+      await ctx.close();
+    }
+  } else {
+    for (const url of URLS) {
+      const ctx = await browser.newContext({ viewport: { width: 1440, height: 900 }, locale: 'en-US' });
+      const page = await ctx.newPage();
+      try {
+        await page.goto(url, { waitUntil: 'load', timeout: 90000 });
+        await prepare(page);
+        pages[safeUrl(url)] = await readPage(page, safeUrl(url), url);
+      } catch (e) { log('failed', safeUrl(url), String(e.message).split('\n')[0]); }
+      await ctx.close();
+    }
+  }
+} finally {
+  await browser.close();
+}
+
+const out = {
+  _meta: {
+    readAt: new Date().toLocaleDateString('en-CA'),     // the local date of the run
+    probe: "page.emulateMedia({ reducedMotion }): 'no-preference' then 'reduce', same elements, same page",
+    source: SNAPS ? 'static signed-in page copies (stylesheets inlined), rendered headless' : 'public pages, headless Chromium, read at rest',
+    notes: 'Computed transitions and animations are read at rest; rules in :hover and other state selectors appear under `declared`. Outcome per element: removed (every transition and animation ends at or under 1 ms), reduced, kept, partial.',
+  },
+  summary: mergeSummaries(Object.values(pages).map((p) => p.summary)),
+  pages,
+};
+fs.mkdirSync(path.dirname(OUT), { recursive: true });
+fs.writeFileSync(OUT, JSON.stringify(out, null, 1) + '\n');
+log('raw/motion.json', Object.keys(pages).length, 'pages;', 'reduced motion:', out.summary.behaviour);

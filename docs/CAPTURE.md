@@ -34,7 +34,8 @@ how it was captured. The `extract-style` skill in the quiver-hub
    alternate theme or interaction rendered from a copy as a reconstruction;
    its filename does not prove the live app displayed it. Record approval for
    account appearance changes, reuse approval already given, and restore and
-   verify the original theme after capture.
+   verify the original theme after capture. Read the product's motion with
+   `tools/capture/motion-probe.mjs` ([Motion](#motion)).
 5. **Shrink the screenshots.** `quantize.py` converts to sRGB 256-colour
    PNGs (61 MB became 15 MB on Duolingo). Flat UI colours survive exactly.
 6. **Build.** `build_tokens.py`, `build_style_guide.py`,
@@ -140,6 +141,59 @@ Public marketing pages may contain animated dashboard demonstrations.
 Label those as public demos, with their URL and capture time. Use the real
 signed-in dashboard for dashboard component and state coverage; a demo only
 covers the public page and the demo state actually shown.
+
+### Motion
+
+A package records how the product moves as tokens, and whether it honours
+`prefers-reduced-motion` ([decision](decisions/0001-motion-tokens.md)). Screenshots
+cannot show either, so this is a reading, not a shot. Run
+`tools/capture/motion-probe.mjs` on the same pages the other readings use:
+
+```bash
+PLAYWRIGHT=~/.design-systems/pw/node_modules/playwright/index.mjs SNAPS=<dir of page copies> node tools/capture/motion-probe.mjs
+PLAYWRIGHT=~/.design-systems/pw/node_modules/playwright/index.mjs node tools/capture/motion-probe.mjs --urls <url>[,<url>...]
+```
+
+It writes `raw/motion.json`. Per page it records:
+
+| Reading | What it holds |
+|---|---|
+| Motion per element | Every element and `::before`/`::after` that transitions or animates, read from computed `transition-property`, `-duration`, `-timing-function`, `-delay` and `animation-name`, `-duration`, `-timing-function`, `-delay`, `-iteration-count`, `-direction`, `-fill-mode`, plus `scroll-behavior: smooth`. Durations are in ms, easings in one spelling (`cubic-bezier(0.4, 0, 0.2, 1)`), and elements with the same motion share one group with up to three example nodes |
+| Reduced-motion pass | The same elements read again after `page.emulateMedia({ reducedMotion: 'reduce' })`. Each transition and animation is `removed` (at or under 1 ms, the usual `0.01ms` reset), `shortened`, `kept` or `changed`; each element is `removed`, `reduced`, `kept` or `partial`. The page verdict is `honours`, `partial`, `ignores` or `no-motion`, and `loops` names the animations that still run forever under reduce. The page's own `matchMedia('(prefers-reduced-motion: reduce)')` answer is stored for both passes: a `false` under reduce means the emulation did not take, so discard the reading |
+| Declared motion | The transitions and animations the stylesheets declare, by selector and `@media`/`@supports` context. This is where a `:hover` or state rule shows, which a computed read at rest cannot see; a value still holding `var()` is flagged |
+| `@keyframes` | Each name, its steps, and the properties each step sets |
+| Authored reduce rules | Every rule under a `prefers-reduced-motion` media query, with its declarations |
+| Motion custom properties | Each custom property whose name says duration, easing, motion, transition, animation, delay and so on, or whose value is a time or an easing, with its declared and resolved value on the root |
+
+Then `build_tokens.py` calls `motion.py`, which writes the `core.motion` group
+into `tokens.json`: `duration`, `easing`, `transition`, `animation`, and
+`$extensions` for the reduce verdict, which properties transition, and keyframes
+nothing used. Durations and easings are named after the product's own custom
+properties when it has them, else by value (`200ms`, `ease-out`,
+`bezier-0_4-0-0_2-1`). Every token carries an evidence label
+([EVIDENCE.md](EVIDENCE.md)): Measured for a computed value, a rule or a custom
+property; Derived for a keyword expanded to its control points. An easing that
+`cubicBezier` cannot hold (`steps()`, a `linear()` spring) goes to
+`notTokenised`.
+
+Rules for the reading:
+
+- Run it on the pages where the product has its motion (the app shell, a dialog
+  open, a list with rows), not only the landing page. It reads what is in the
+  DOM at that moment; an element that is not rendered is not read. For a state
+  that only exists after a click, take a copy in that state (signed-in route) or
+  run the probe again from a script that opens it.
+- A computed read sees the state at rest. Read the sheets' own rules too (the probe
+  does) before saying a product has no hover motion.
+- JavaScript-driven motion (a spring library, `element.animate`, canvas) leaves no
+  computed transition. Say so in the README's coverage table as Not captured, with
+  the reason; do not infer a duration from a video or a screenshot.
+- A reduce verdict of `ignores` is a finding, not a failed capture: the product does
+  not honour the setting. Record it; do not tidy it away.
+- Raw values pass through `noUrl` before they are written, like every other
+  computed value: an animation name or custom property can hold a `url()`.
+- Native iOS and desktop routes read screenshots and have no computed styles: record
+  motion as Not captured, unless the app is an Electron one the probe can open.
 
 ## Native iOS apps (iPhone Mirroring)
 
