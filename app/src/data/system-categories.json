@@ -852,6 +852,12 @@
     "reason": "catalog.json describes a generative-media inference platform: a public model catalog, model playground and API docs for developers, with an OAuth account wall past login."
   },
   {
+    "referenceId": "systems:designmodo",
+    "groupId": "web-categories",
+    "labels": ["Design & Media Editing", "Productivity"],
+    "reason": "catalog.json describes a design-tool suite (Postcards email builder, Slides, Static.app): an InterVariable marketing surface plus the Fira Sans Postcards app shell, all signed out."
+  },
+  {
     "referenceId": "systems:farfetch",
     "groupId": "web-categories",
     "labels": ["Marketplace"],

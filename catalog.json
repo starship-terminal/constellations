@@ -11697,6 +11697,92 @@
       }
     },
     {
+      "slug": "designmodo",
+      "name": "Designmodo",
+      "url": "https://designmodo.com",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "design-tool SaaS marketing and email-builder app design: two systems on one domain - an InterVariable marketing surface over dark #071c26 hero bands (56px display, #f49a40 orange Sign Up pill, #27ae60 green Open App CTA, #0d1d24 near-black product CTAs that flip #fb754b coral on hover) and a Fira Sans Postcards app shell (60px navy header, #2198ed blue actions, #485f6b slate, 241px sidebar, 266x592 template cards with 9px FREE/NEW badges) gated by a measured Welcome-back modal",
+      "tags": [
+        "web",
+        "saas",
+        "design-tools",
+        "email-builder",
+        "marketing",
+        "styled-components",
+        "navy",
+        "orange",
+        "green",
+        "light",
+        "signed-out"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-13",
+      "access": "read-only (the marketing site, /pricing, /email-templates, /postcards, /slides, the /postcards/app/login form and the signed-out app shell behind the Welcome-back modal are public; the builder canvas and every post-login surface need an account - the modal was dismissed locally with Escape and every auth action measured, never submitted)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/designmodo/README.md",
+      "tokens": "systems/designmodo/tokens.json",
+      "styleGuide": "systems/designmodo/style-guide.html",
+      "preview": {
+        "cover": "systems/designmodo/screenshots/home-light-default.png",
+        "icon": "systems/designmodo/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.background.navy",
+            "text": "light.text.ink",
+            "muted": "light.text.muted",
+            "accent": "light.action.accent",
+            "border": "light.border.focus"
+          }
+        },
+        "fonts": [
+          "core.font.family.ui",
+          "core.font.family.app"
+        ]
+      },
+      "capture": {
+        "method": "public-web",
+        "source": "designmodo.com in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and crops from the live DOM. The site declares almost no custom properties (the resolved set is Font Awesome widget internals), so the token tree is measured end to end from computed styles. /postcards/app/folder/templates mounts a Welcome-back modal over the gallery for signed-out visitors; Escape dismissed it and the whole gallery - real product UI, not a stub - was measured through it. The builder canvas past the account is a documented authenticated boundary",
+        "timestamp": "2026-11-13T09:00:00Z",
+        "harness": "Devin",
+        "model": "SWE-2 High",
+        "route": "public-web",
+        "routes": [
+          "/",
+          "/postcards/app/folder/templates",
+          "/postcards/pricing/",
+          "/email-templates/",
+          "/postcards/",
+          "/slides/",
+          "/my-account/sign-in/",
+          "mobile / and /postcards/app/folder/templates"
+        ],
+        "gaps": [
+          "the Postcards builder canvas, saving work and every post-login surface need an account - never reached",
+          "the Welcome-back modal's actions (Continue with Google, email field, Login, Create Account) were measured, never submitted",
+          "the sign-in form's fields were typed into and cleared and Login was never pressed; validation, error and success states are absent rather than measured",
+          "the home 'Add to cart' plan links render in an off-viewport slide panel that never mounts visibly signed out - left out rather than fabricated; /pricing covers the plan actions",
+          "the mobile app gallery scrolls inside a nested container 14521px tall; the capture kept the first 8 viewport tiles (6752px) - a recorded inner-scroller boundary",
+          "pressed was forced with DevTools - a mousedown-only style (if any) is missing",
+          "a transient edge challenge appeared once on the app route and cleared on retry; no route stayed blocked",
+          "icons: no standalone SVG set lifted this pass"
+        ],
+        "durationMin": 240,
+        "durationNote": "wall-clock across the capture sessions including kit adaptation, the stylesheet harvest, screenshot and measurement passes on a headless Linux server, and the offline build",
+        "pr": "https://github.com/starship-terminal/constellations/pull/548"
+      },
+      "layoutGaps": {
+        "icons/": "the icon extraction pass was not run; the marks (the Designmodo wordmark, product glyphs, the Font Awesome set) are visible in the crops and screenshots"
+      }
+    },
+    {
       "slug": "farfetch",
       "name": "FARFETCH",
       "url": "https://www.farfetch.com",
@@ -11718,13 +11804,8 @@
       "shape": "reference",
       "captured": "2026-11-14",
       "access": "signed out (every captured surface is public); www.farfetch.com answers automation with Akamai 403 and the farfetch-contents.com CDNs with 429, so the DOM evidence is Wayback SSR snapshots served locally and painted by Farfetch's own archived CSS, fonts and images with scripts stripped",
-      "themes": [
-        "light"
-      ],
-      "widths": [
-        1440,
-        390
-      ],
+      "themes": ["light"],
+      "widths": [1440, 390],
       "entry": "systems/farfetch/README.md",
       "tokens": "systems/farfetch/tokens.json",
       "styleGuide": "systems/farfetch/style-guide.html",
@@ -11741,10 +11822,7 @@
             "border": "light.general.brand-ui04"
           }
         },
-        "fonts": [
-          "core.font.family.sans",
-          "core.font.family.editorial"
-        ]
+        "fonts": ["core.font.family.sans", "core.font.family.editorial"]
       },
       "source": {
         "path": "~/.design-systems/farfetch/raw-shots (full-colour captures, outside the repo)"
@@ -11774,6 +11852,7 @@
           "the modular PLPs render breadcrumb/filter/pagination client-side, so those components were measured on the classic 'New In' edit page instead",
           "the 390px listing's All Filters button is hydration-rendered and absent from the archived copy, so m-filter is recorded missing rather than inferred",
           "the mobile PDP is recorded as the archived markup paints it (gallery and sticky buy columns side by side, 199.5px and 142.5px); a stacked buy box, if the live site reflows to one at 390, was not observed",
+          "the archived PDP buy box renders only the size combobox, so no colour/variant tabs exist to measure (variant-tabs is recorded missing, not inferred)",
           "the edit page's Recommendations showcase rail ('Show More') is not a component of its own; the campaign hero (hero-module, hero-cta) is read from the modular listings, the only pages that carry one",
           "search results, designers index, sale hub and help surfaces were not captured individually",
           "opened/selected states that hydration renders are declared in the light.*.selected/* tokens, not painted",

@@ -1,7 +1,7 @@
 {
  "date": "2026-11-14",
  "rubric": "4",
- "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): orchestrated merge-train review; farfetch: reviewed the package's tokens, components, patterns, README, screenshots and raw capture evidence against the web criteria after the Greptile fixes, scripted grades left to the checker",
+ "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): orchestrated merge-train review; designmodo re-reviewed against criteria.json (web wording) after the Greptile fixes: unmeasured micro size dropped, shadows tokenised, F8 graded partly (no line-height or composite type tokens)",
  "systems": [
   {
    "slug": "1password",
@@ -18283,91 +18283,91 @@
    "reviewedPlatform": "web"
   },
   {
-   "slug": "farfetch",
+   "slug": "designmodo",
    "grades": {
     "F1": {
-     "grade": "partly",
-     "evidence": "Ramps exist but are short, not ~10 steps: the pulse brand ramp is ui01-ui06 (6 steps #222222->#ffffff) plus sale01/error01-02/success01-02/warning01-02/highlight01/first, the legacy layer adds 17 named colours and 4-step loyalty ramps (bronze/gold/platinum/private/silver + --colorAccess* bases and 5 --gradientAccess* gradients), all css-var sourced from the site's own sheets."
+     "grade": "missing",
+     "evidence": "The site declares no palette scales - the resolved custom-property set is Font Awesome internals only; the measured palette (navy/green/orange/blue/slate) exists as roles, not ramps."
     },
     "F2": {
-     "grade": "meets",
-     "evidence": "light.page.primary.enabled+loading.surface (page + #f5f5f5 loading), cards.light/dark/highlight surfaces, general.ui-background/ui-skeleton and the scrim pair ui-overlay01 rgba(34,34,34,.4)/ui-overlay02 rgba(255,255,255,.95), plus modality.primary/secondary overlay roles — page/surface/raised/overlay/scrim are all covered."
+     "grade": "partly",
+     "evidence": "Measured roles cover page/paper/navy/card/card-face/field/modal (light.background.*); no raised/scrim distinction was measured."
     },
     "F3": {
-     "grade": "meets",
-     "evidence": "general.text01 #222222 (primary), .text02 #727272 (secondary), .text03 #ffffff (on-accent), content.label/subtext/sale roles, forms disabled label and placeholder, and navigation label roles — primary/secondary/disabled/on-accent/link all exported."
+     "grade": "partly",
+     "evidence": "ink/ink-body/app-ink/muted/muted-mkt/on-dark/link measured (light.text.*); no disabled role exists on the public surface."
     },
     "F4": {
-     "grade": "meets",
-     "evidence": "general.brand-ui04 #e6e6e6 hairlines (default), forms strokes in enabled/hover/focus states and the error variant (#c41429 focus stroke), cards stroke #b6b6b6 (strong), and the measured 2px #101010 focus ring exported as component.focus-ring — default/strong/focus covered."
+     "grade": "partly",
+     "evidence": "hairline (#e0e5eb on fields) and focus (2px #101d24 outline on the product CTA) measured; no default/strong border ramp."
     },
     "F5": {
-     "grade": "meets",
-     "evidence": "light.action.primary carries the #222222 fill through enabled/hover (#727272 lift)/pressed/active/selected/disabled/loading with label+stroke slots, mirrored by the measured add-to-bag state track in component.state-track; secondary/tertiary/ghost-dark/ghost-light/wishlist actions are exported the same way."
+     "grade": "partly",
+     "evidence": "accent/orange/blue/dark each carry a measured hover sibling; pressed reads identical to hover on every control."
     },
     "F6": {
-     "grade": "meets",
-     "evidence": "general.success01 #048273 + success02 #ebf9f7, warning01 #faca21 + warning02 #feedb0, error01 #c41429 + error02 #ffeff1 (fill+text+tint), notification dark/light info/success/error variants across icon/label/stroke/surface, plus forms primary-error stroke/validation-icon — success/warning/danger/info each carry fill, text and border roles."
+     "grade": "missing",
+     "evidence": "No success/warning/danger/info set is painted on the public surface."
     },
     "F7": {
-     "grade": "meets",
-     "evidence": "The product ships exactly one theme: catalog themes=[light], $themes matches, and the light set is the whole ~590-var semantic layer. The dark set is empty by evidence — the dark probe re-resolved the same :root values; there is no dark hook."
+     "grade": "na",
+     "evidence": "The product ships one painted theme signed out; the dark set stays empty rather than invented."
     },
     "F8": {
      "grade": "partly",
-     "evidence": "Families and stacks are complete (Farfetch Basis, Nimbus Roman D, Nimbus Sans Extended D, condensed/non-translated stacks), with 9 composite typography roles (display-large/display/title/heading/kicker/body/editorial/caption/footnote at size+lineHeight+textTransform) and the legacy fontSize*/lineHeight*/letterSpacing*/textTransform scales — but the sheets declare no font-weight axis at all, so the weight rung of the checklist is absent by evidence."
+     "evidence": "InterVariable + Fira Sans families with fallbacks and 13 measured sizes (9px badge to 91.5px mega) with measured weights under core.font.*, but no line-height tokens or named composite type roles were emitted — the ramp covers family/size/weight only."
     },
     "F9": {
-     "grade": "meets",
-     "evidence": "The declared scales are 4px-based: spacers-c4..c48 (9 steps, component inset), spacers-l12..l72 (7 steps, layout), the legacy --spacer-* names (2-48px) and the --gutter-* ladder (2-60px), all css-var sourced."
+     "grade": "missing",
+     "evidence": "No spacing scale is declared or derivable from the measured surface."
     },
     "F10": {
-     "grade": "meets",
-     "evidence": "radius exports the declared corner scale: xs/s/m/l all 0 (the square controls the site paints) plus rounded 1000px for pills; borderWidth exports the declared s 1px / m 2px stroke pair."
+     "grade": "partly",
+     "evidence": "Five measured radii (5/6/8/12px + 999px pill); border widths measured per component but not tokenised."
     },
     "F11": {
-     "grade": "meets",
-     "evidence": "Icon sizes are declared (icons small 12px, medium 24px, big 48px) and measured on glyphs; control heights are measured and exported (44px buttons/fields/selectors, 270x44 search, 129x44 filter, 90x44 sign-up, 32x32 search submit); the focus ring is measured 2px solid #101010 offset -2px and exported as component.focus-ring."
+     "grade": "partly",
+     "evidence": "Measured heights for topbar/appbar/sidebar/CTA/field/modal/card/badge under component.*; no size ramp or focus-ring offset tokens."
     },
     "F12": {
-     "grade": "missing",
-     "evidence": "The design is flat by intent: no --shadow-*/elevation/z variable exists in the 778 resolved vars and every measured component paints boxShadow none (only the search field's inset 1px hairline). Layering is the #e6e6e6 hairline plus the ui-overlay01/02 scrims, which are exported as colours — there is no elevation scale to export."
+     "grade": "partly",
+     "evidence": "Measured shadows now tokenised under core.shadow.*: the welcome-modal lift, the tinted CTA shadows (default + hover), the plan-card elevation, the badge inset and the focused-field glow; the rest of the public surface paints no elevation."
     },
     "F13": {
      "grade": "partly",
-     "evidence": "The declared motion scale is complete — motion-functional duration s/m/l (0.15/0.3/0.6s) and emotional s/m/l (0.2/0.425/0.85s), each with accelerated/decelerated/standard cubic-bezier curves, plus measured 0.15-0.3s component transitions — but the sheets gate nothing on prefers-reduced-motion, so the reduced-motion rung is absent by evidence."
+     "evidence": "Measured 0.15-0.35s transitions on links and buttons; no easing names or reduced-motion behaviour captured."
     },
     "F14": {
-     "grade": "meets",
-     "evidence": "layout.columns 12, page-max-width 1440px, page-lateral-spacer 24px, the 10-step gutter ladder, 4 declared @media breakpoints (20/36/60/80em) and measured sticky chrome layers in _meta.chrome/raw/layout.json at 1440/1920/1024/390."
+     "grade": "partly",
+     "evidence": "Measured layout dims (70px topbar, 60px appbar, 241px sidebar, card widths); breakpoints observed at 1440/390 but not tokenised."
     },
     "C1": {
      "grade": "partly",
-     "evidence": "70 components measured (the 390px All Filters button is recorded missing, not inferred): buttons (primary/secondary/ghost/icon incl. carousel arrows and search submit), links (nav/footer/brand/dept), text fields (search + newsletter, focused+filled), a combobox (Select size), tabs (variant), accordion rows, pagination, breadcrumbs, product/editorial/skeleton cards, the sale badge mark, newsletter form and footer — about 10-12 of the 19 checklist kinds; text area, checkbox, radio, switch, menu, tooltip, dialog, toast, list row, table and avatar do not paint on the signed-out surface (menus/dialogs are hydration-owned and declared as a boundary)."
+     "evidence": "48 components: buttons, links, text fields, a dialog (welcome modal), cards, badges, list rows (sidebar) and the Yearly/Monthly billing toggle; no checkbox/radio/switch/tabs/tooltip/toast/menu exist on the public surface."
     },
     "C2": {
      "grade": "partly",
-     "evidence": "Hover, focus-visible, pressed, focused and filled were forced and measured on every control (20 focus rings), and the skeleton loading states were measured; selected/opened/expanded states are hydration-owned so the archived copy cannot paint them — their values are declared in light.*.selected/pressed/loading tokens but uncaptured, and disabled/error were never painted (declared in tokens)."
+     "evidence": "hover, focus-visible and DevTools-pressed captured across the controls; disabled/loading/error were never painted."
     },
     "C3": {
-     "grade": "meets",
-     "evidence": "20 of 20 focused components paint a real keyboard focus ring: 2px solid #101010 offset -2px (news-submit offset 1px), measured via Shift+Tab/Tab, exported as component.focus-ring."
+     "grade": "partly",
+     "evidence": "focus-visible captured on the CTAs (the 2px #101d24 outline on pc-cta); app controls read identical to default."
     },
     "C4": {
-     "grade": "meets",
-     "evidence": "components.md writes each value beside its palette token name; light.component.* exports 37 measured dimensions and state tracks keyed by token semantics rather than raw hex."
+     "grade": "partly",
+     "evidence": "Components doc emits token aliases where measured values match emitted roles; with no declared layer, most specs carry the measured value plus its evidence."
     },
     "P1": {
      "grade": "partly",
-     "evidence": "patterns.md documents the app shell (sticky TopBar+NavBar), the department chooser, the modular and classic listing layouts (search/filtering, skeleton loading), the PDP buy box, the footer and responsive behaviour; form-validation, empty/error, destructive-confirmation and onboarding patterns do not exist on the signed-out surface."
+     "evidence": "patterns.md covers chrome, hero, the modal gate, app shell, pricing, auth form, gallery, footer, mobile; no validation/destructive/onboarding flows exist publicly."
     },
     "A1": {
      "grade": "partly",
-     "evidence": "Fonts are named with roles and fallbacks (Farfetch Basis, Nimbus Roman D, Nimbus Sans Extended D — proprietary, not shipped; guide falls back to system faces). No standalone icon set was lifted: the #iconLoaded-* sprite glyphs are the product's artwork, declared under layoutGaps and visible in crops."
+     "evidence": "icon.png vendored; InterVariable/Fira Sans named with fallback stacks (no licence audit); no icon set indexed."
     },
     "K1": {
      "grade": "meets",
-     "evidence": "The README names the surfaces, the Wayback-served-local capture method (live 403/429 recorded), the hydration boundary, and what to distrust; the catalog entry carries the same gaps and provenance."
+     "evidence": "README documents what was captured, the two-system split, the modal-dismiss method, every boundary, and what to distrust."
     },
     "C5": {
      "grade": "na",
@@ -18382,35 +18382,35 @@
      "evidence": "Optional for a capture, and this product does not publish it."
     },
     "F15": {
-     "grade": "partly",
-     "evidence": "Script: primary text passes; secondary fails 1 pair, worst 4.41:1 light muted (light.general.brand-ui02) on surface (light.general.brand-ui05)"
+     "grade": "missing",
+     "evidence": "Script: primary text fails 1 pair; worst 1.01:1 light text (light.text.ink) on surface (light.background.navy)"
     },
     "F16": {
      "grade": "meets",
-     "evidence": "Script: 800 of 800 tokens name their source"
+     "evidence": "Script: 75 of 75 tokens name their source"
     },
     "K2": {
      "grade": "meets",
-     "evidence": "Script: 8 rules, each linking a screenshot or crop"
+     "evidence": "Script: 7 rules, each linking a screenshot or crop"
     },
     "K3": {
      "grade": "meets",
      "evidence": "Script: DESIGN.md matches a fresh generation"
     }
    },
-   "name": "FARFETCH",
-   "goodFor": "Luxury-fashion marketplace on the pulse token layer: a two-row sticky chrome (department links, 201px letterspaced wordmark, 44px icon hit areas, red Sale link), a 4-up product-card grid (3:4 image, wishlist heart, brand kicker, price), the PDP buy box with a square #222 Add To Bag, ~590 --colors-<family>-<role>-<state>-<slot> semantics, 'Farfetch Basis' UI type with 'Nimbus Roman D' editorial serif, square corners and a 1000px pill",
-   "url": "https://www.farfetch.com",
-   "captured": "2026-11-14",
+   "name": "Designmodo",
+   "goodFor": "design-tool SaaS marketing and email-builder app design: two systems on one domain - an InterVariable marketing surface over dark #071c26 hero bands (56px display, #f49a40 orange Sign Up pill, #27ae60 green Open App CTA, #0d1d24 near-black product CTAs that flip #fb754b coral on hover) and a Fira Sans Postcards app shell (60px navy header, #2198ed blue actions, #485f6b slate, 241px sidebar, 266x592 template cards with 9px FREE/NEW badges) gated by a measured Welcome-back modal",
+   "url": "https://designmodo.com",
+   "captured": "2026-11-13",
    "themes": [
     "light"
    ],
    "platform": "web",
-   "category": "E-commerce",
+   "category": "Productivity",
    "reviewed": "2026-11-14",
    "reviewedPlatform": "web"
   }
  ],
  "base": "2026-10-16",
- "reviewMethod": "orchestrated merge-train review; farfetch: reviewed the package's tokens, components, patterns, README, screenshots and raw capture evidence against the web criteria after the Greptile fixes, scripted grades left to the checker"
+ "reviewMethod": "orchestrated merge-train review; designmodo re-reviewed against criteria.json (web wording) after the Greptile fixes: unmeasured micro size dropped, shadows tokenised, F8 graded partly (no line-height or composite type tokens)"
 }
