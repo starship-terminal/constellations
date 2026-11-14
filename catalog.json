@@ -9209,7 +9209,8 @@
           "the capture is the 2023-02-23 build: later changes up to the 2023-04-19 shutdown are not covered"
         ],
         "durationMin": 300,
-        "durationNote": "wall-clock across the archive archaeology (DNS/RDAP probes, snapshot selection, mirror download), the kit adaptation (replay router, SSR passthrough, measure/docs builders rewritten to the Explore DOM), the screenshot and measurement passes on a headless Linux server, and the offline build"
+        "durationNote": "wall-clock across the archive archaeology (DNS/RDAP probes, snapshot selection, mirror download), the kit adaptation (replay router, SSR passthrough, measure/docs builders rewritten to the Explore DOM), the screenshot and measurement passes on a headless Linux server, and the offline build",
+        "pr": "https://github.com/starship-terminal/constellations/pull/550"
       },
       "layoutGaps": {
         "icons/": "the icon extraction pass was not run; the interface icons (wordmark, appreciate/comment/save glyphs, carousel arrows, password eye) are inline SVGs in the compiled Vue bundle, visible in the crops and screenshots"
