@@ -58,8 +58,15 @@ class ParityGap(unittest.TestCase):
         # The gap is expected and disclosed, not an error — this pins it.
         doc = json.loads(TOKENS.read_text())
         lt, dk = parity_gap(doc["light"], doc["dark"])
-        self.assertIn("text.emotionInk", lt)
-        self.assertIn("text.discoverInk", dk)
+        # The complete disclosed gap — dropping another dark role or adding
+        # one more unmatched light role must fail here.
+        self.assertEqual(lt, [
+            "action.ctaFill", "action.ctaInk", "action.emotionCtaFill", "action.emotionCtaInk",
+            "background.appBanner", "background.band", "background.page", "background.surface",
+            "background.surfaceHover", "border.emotionFocusRing", "border.focusRing",
+            "border.hairline", "text.emotionInk", "text.footerMuted", "text.ink",
+            "text.muted", "text.onDark"])
+        self.assertEqual(dk, ["text.discoverInk", "text.footerInk"])
 
 
 if __name__ == "__main__":

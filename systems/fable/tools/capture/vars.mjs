@@ -147,8 +147,10 @@ for (const pass of ['dark', 'light']) {
       else if ((m = c.match(/^oklab\(([-\d.e]+%?) ([-\d.e]+) ([-\d.e]+)(?: \/ ([\d.]+%?))?\)$/))) { rgb = fromOklab(num(m[1]), +m[2], +m[3]); a = m[4] === undefined ? 1 : num(m[4]); }
       else if ((m = c.match(/^oklch\(([-\d.e]+%?) ([-\d.e]+) ([-\d.e]+)(?: \/ ([\d.]+%?))?\)$/))) { const h = (+m[3] * Math.PI) / 180; rgb = fromOklab(num(m[1]), +m[2] * Math.cos(h), +m[2] * Math.sin(h)); a = m[4] === undefined ? 1 : num(m[4]); }
       else if ((m = c.match(/^lab\(([-\d.e]+%?) ([-\d.e]+) ([-\d.e]+)(?: \/ ([\d.]+%?))?\)$/))) {
-        // CIELAB D50 -> sRGB
-        const fy = (num(m[1]) + 16) / 116, fx = fy + (+m[2]) / 500, fz = fy - (+m[3]) / 200;
+        // CIELAB D50 -> sRGB. Lab lightness is already on the 0-100 scale in
+        // both its forms (94.3433% === 94.3433), so parseFloat is right — the
+        // /100 that num() applies to % is the OKLab 0-1 convention, not Lab's.
+        const fy = (parseFloat(m[1]) + 16) / 116, fx = fy + (+m[2]) / 500, fz = fy - (+m[3]) / 200;
         const eps = 216 / 24389, kap = 24389 / 27;
         const f = (t) => (t ** 3 > eps ? t ** 3 : (116 * t - 16) / kap);
         const X = 0.96422 * f(fx), Y = f(fy), Z = 0.82521 * f(fz);
