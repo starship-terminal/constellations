@@ -1,0 +1,135 @@
+{
+ "schemaVersion": 1,
+ "capturedAt": "2026-11-13T19:50:23.171Z",
+ "screenshot": "mobile-article-light-full.png",
+ "sanitizedSourceUrl": "https://www.esquire.com/entertainment/movies/a71465908/dwayne-johnson-the-rock-interview-2026/",
+ "requested": {
+  "viewport": {
+   "width": 390,
+   "height": 844
+  },
+  "deviceScaleFactor": 2
+ },
+ "configuredViewport": {
+  "width": 390,
+  "height": 844
+ },
+ "actual": {
+  "innerWidth": 390,
+  "innerHeight": 844,
+  "devicePixelRatio": 2,
+  "reportedDevicePixelRatio": 2,
+  "theme": {
+   "classes": [],
+   "attributes": {},
+   "colorScheme": "normal"
+  },
+  "visualViewport": {
+   "width": 390,
+   "height": 844,
+   "scale": 1,
+   "offsetLeft": 0,
+   "offsetTop": 0,
+   "pageLeft": 0,
+   "pageTop": 0
+  },
+  "documentSize": {
+   "width": 390,
+   "height": 56109
+  },
+  "scroll": {
+   "x": 0,
+   "y": 0
+  }
+ },
+ "capture": {
+  "mode": "stitchedParts",
+  "scale": "css",
+  "clip": {
+   "x": 0,
+   "y": 0,
+   "width": 390,
+   "height": 56000
+  }
+ },
+ "png": {
+  "width": 390,
+  "height": 56000
+ },
+ "dimensionCheck": {
+  "status": "pass",
+  "expected": {
+   "width": 390,
+   "height": 56000
+  },
+  "basis": "stitchedParts"
+ },
+ "visualReview": {
+  "status": "pending",
+  "note": "Inspect the final image for complete, settled contents; dimensions alone cannot accept it."
+ },
+ "cropCoordinates": {
+  "status": "unverified",
+  "note": "Do not derive crop or masking boxes from requested size or assume DOM rectangles align with this PNG."
+ },
+ "stitchedFrom": [
+  "mobile-article-light-full.part0.png",
+  "mobile-article-light-full.part1.png",
+  "mobile-article-light-full.part2.png",
+  "mobile-article-light-full.part3.png",
+  "mobile-article-light-full.part4.png",
+  "mobile-article-light-full.part5.png",
+  "mobile-article-light-full.part6.png",
+  "mobile-article-light-full.part7.png"
+ ],
+ "partClip": [
+  {
+   "x": 0,
+   "y": 0,
+   "width": 390,
+   "height": 7000
+  },
+  {
+   "x": 0,
+   "y": 7000,
+   "width": 390,
+   "height": 7000
+  },
+  {
+   "x": 0,
+   "y": 14000,
+   "width": 390,
+   "height": 7000
+  },
+  {
+   "x": 0,
+   "y": 21000,
+   "width": 390,
+   "height": 7000
+  },
+  {
+   "x": 0,
+   "y": 28000,
+   "width": 390,
+   "height": 7000
+  },
+  {
+   "x": 0,
+   "y": 35000,
+   "width": 390,
+   "height": 7000
+  },
+  {
+   "x": 0,
+   "y": 42000,
+   "width": 390,
+   "height": 7000
+  },
+  {
+   "x": 0,
+   "y": 49000,
+   "width": 390,
+   "height": 7000
+  }
+ ]
+}

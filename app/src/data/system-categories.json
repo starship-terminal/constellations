@@ -606,6 +606,12 @@
     "reason": "catalog.json describes a music-streaming catalog: marketing, public charts and album pages, a signed-out player, and account forms."
   },
   {
+    "referenceId": "systems:descript",
+    "groupId": "web-categories",
+    "labels": ["AI Tool", "Productivity"],
+    "reason": "catalog.json describes an AI video/audio editing product's marketing surfaces: workflow tabs, pricing tiers and template galleries — the AI Tool label."
+  },
+  {
     "referenceId": "systems:deel",
     "groupId": "web-categories",
     "labels": ["Productivity"],
@@ -621,7 +627,7 @@
     "referenceId": "systems:cartesia",
     "groupId": "web-categories",
     "labels": ["AI Tool"],
-    "reason": "catalog.json describes a real-time AI voice and audio product (text-to-speech, voice agents) \u2014 the AI Tool label."
+    "reason": "catalog.json describes a real-time AI voice and audio product (text-to-speech, voice agents) — the AI Tool label."
   },
   {
     "referenceId": "systems:copy",
@@ -736,5 +742,41 @@
     "groupId": "web-categories",
     "labels": ["AI Tool"],
     "reason": "catalog.json describes a multi-model AI creation workspace: a prompt composer, 70+ generation models and free tool pages on a signed-out public system."
+  },
+  {
+    "referenceId": "systems:epidemicsound",
+    "groupId": "web-categories",
+    "labels": ["Music Streaming"],
+    "reason": "catalog.json describes a music-and-SFX licensing product: a public track/artist/genre catalog with 56px track rows, subscription plans and an account wall past login.epidemicsound.com."
+  },
+  {
+    "referenceId": "systems:enode",
+    "groupId": "web-categories",
+    "labels": ["Business", "Development Tools"],
+    "reason": "catalog.json describes an energy-device integration API platform: a per-page light/dark data-mode marketing site with gated platform and docs surfaces."
+  },
+  {
+    "referenceId": "systems:delphi",
+    "groupId": "web-categories",
+    "labels": ["AI Tool", "Productivity"],
+    "reason": "catalog.json describes an AI-clone Q&A product: ask fields, discover galleries, public search results, expert profiles and a chat composer."
+  },
+  {
+    "referenceId": "systems:esquire",
+    "groupId": "web-categories",
+    "labels": ["Magazines & Newspapers", "Lifestyle"],
+    "reason": "catalog.json describes a men's magazine site: editorial chrome, story cards, plan/subscribe cards, FAQ and newsletter surfaces."
+  },
+  {
+    "referenceId": "systems:exa",
+    "groupId": "web-categories",
+    "labels": ["AI Tool", "Development Tools"],
+    "reason": "catalog.json describes an AI-search developer API: marketing site, model/pricing pages, docs and a gated console."
+  },
+  {
+    "referenceId": "systems:exactly",
+    "groupId": "web-categories",
+    "labels": ["AI Tool", "Design & Media Editing"],
+    "reason": "catalog.json describes an AI design-generation tool: marketing site with case studies, pricing tiers and gated product surfaces."
   }
 ]
