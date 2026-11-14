@@ -28,6 +28,8 @@ jobs:
         run: pnpm --dir web install --frozen-lockfile
       - name: Typecheck
         run: npx --prefix web tsc --noEmit -p web
+      - name: Unit tests
+        run: pnpm --dir web test
       - name: Generate web/data
         run: python3 tools/catalog.py build
       - name: Production build
