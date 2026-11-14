@@ -202,11 +202,12 @@ resolved.accents = {};
 await probe.setContent(shell(false), { waitUntil: 'load' });
 for (const cls of ACCENTS) {
   resolved.accents[cls.slice(1)] = await probe.evaluate((cls) => {
+    const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v);
     document.body.className = cls.slice(1);
     const cs = getComputedStyle(document.body);
     const out = {};
     for (const n of ['--accent-background', '--accent-light-background', '--accent-color', '--section-label-color']) {
-      const v = cs.getPropertyValue(n).trim();
+      const v = noUrl(cs.getPropertyValue(n).trim());
       if (v) out[n] = v;
     }
     return out;
