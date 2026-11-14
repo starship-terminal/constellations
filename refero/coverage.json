@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 125,
-    "system_domains": 117,
-    "matched_domains": 92,
-    "missing_domains": 341,
+    "system_packages": 126,
+    "system_domains": 118,
+    "matched_domains": 93,
+    "missing_domains": 340,
     "system_domains_absent_from_catalog": 25
   },
   "matched": {
@@ -1035,6 +1035,23 @@
         }
       ]
     },
+    "designmodo.com": {
+      "catalog": [
+        {
+          "name": "Designmodo",
+          "domain": "designmodo.com",
+          "id": 459
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "designmodo",
+          "name": "Designmodo",
+          "url": "https://designmodo.com",
+          "name_match": true
+        }
+      ]
+    },
     "dock.us": {
       "catalog": [
         {
@@ -1769,13 +1786,6 @@
         "name": "Descript",
         "domain": "descript.com",
         "id": 29
-      }
-    ],
-    "designmodo.com": [
-      {
-        "name": "Designmodo",
-        "domain": "designmodo.com",
-        "id": 459
       }
     ],
     "designstripe.com": [
