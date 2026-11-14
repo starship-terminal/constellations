@@ -82,6 +82,9 @@ agent (the MCP server and `ds`).
 
 ## Features
 
+[FEATURES.md](FEATURES.md) is the full inventory of user-facing features,
+one line each with its status, surface, entry point and tests.
+
 | Area | What you get |
 | --- | --- |
 | **Packages** | 50 products under [systems/](systems), all in one layout: `tokens.json` (W3C DTCG, Tokens Studio multi-set), a generated `DESIGN.md`, a `style-guide.html` rendering every token, `components.md`, `patterns.md`, screenshots, and the tools that rebuild it |
@@ -562,6 +565,7 @@ including the pre-commit checks.
 
 | Document | What it covers |
 | --- | --- |
+| [FEATURES.md](FEATURES.md) | Every user-facing feature by area: status, surface, entry point and tests |
 | [docs/DESIGN-SYSTEM.md](docs/DESIGN-SYSTEM.md) | The five layers a complete design system needs; the rubric the scorecard grades against |
 | [docs/PACKAGE.md](docs/PACKAGE.md) | What a package contains, file by file |
 | [docs/EVIDENCE.md](docs/EVIDENCE.md) | How every value says where it came from |
