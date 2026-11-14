@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 125,
-    "system_domains": 117,
-    "matched_domains": 92,
-    "missing_domains": 341,
+    "system_packages": 126,
+    "system_domains": 118,
+    "matched_domains": 93,
+    "missing_domains": 340,
     "system_domains_absent_from_catalog": 25
   },
   "matched": {
@@ -1426,6 +1426,23 @@
         }
       ]
     },
+    "explore.family": {
+      "catalog": [
+        {
+          "name": "Explore",
+          "domain": "explore.family",
+          "id": 292
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "explore",
+          "name": "Explore",
+          "url": "https://explore.family",
+          "name_match": true
+        }
+      ]
+    },
     "github.com": {
       "catalog": [
         {
@@ -1867,13 +1884,6 @@
         "name": "Expedia",
         "domain": "expedia.com",
         "id": 172
-      }
-    ],
-    "explore.family": [
-      {
-        "name": "Explore",
-        "domain": "explore.family",
-        "id": 292
       }
     ],
     "fable.co": [

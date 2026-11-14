@@ -1045,5 +1045,14 @@
    "Development Tools"
   ],
   "reason": "catalog.json describes an energy-device integration API platform: a per-page light/dark data-mode marketing site with gated platform and docs surfaces."
+ },
+ {
+  "referenceId": "systems:explore",
+  "groupId": "web-categories",
+  "labels": [
+   "Inspiration Board",
+   "Social Networking"
+  ],
+  "reason": "catalog.json describes an ad-free creative-community platform: a public discover feed and member portfolios on a signed-out site, replayed from the 2023-02-23 archive because the product is closed."
  }
 ]
