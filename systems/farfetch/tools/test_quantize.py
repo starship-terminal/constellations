@@ -1,4 +1,4 @@
-"""quantize.py publishes only captures whose sidecar passed."""
+"""quantize.py never publishes a capture whose own sidecar recorded a failed dimension check."""
 import json, pathlib, shutil, subprocess, sys, tempfile, unittest
 
 try:
@@ -39,10 +39,10 @@ class Quantize(unittest.TestCase):
         self.assertNotEqual(r.returncode, 0)
         self.assertIn("not publishing a failed capture", r.stderr)
 
-    def test_capture_without_sidecar_is_refused(self):
-        r, _ = run({"a.png": None})
-        self.assertNotEqual(r.returncode, 0)
-        self.assertIn("no .capture.json sidecar", r.stderr)
+    def test_capture_without_sidecar_is_published_without_one(self):
+        r, out = run({"a.png": None})
+        self.assertEqual(r.returncode, 0, r.stderr)
+        self.assertEqual(out, ["a.png"])
 
 
 if __name__ == "__main__":

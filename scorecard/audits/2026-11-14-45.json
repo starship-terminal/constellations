@@ -8185,7 +8185,7 @@
     },
     "C1": {
      "grade": "meets",
-     "evidence": "Using raw/measurements.md plus components/crops/ as the audit-shape component entries (there is no components.md), 17 of 19 have measured entries; checkbox (opacity 0, geometry only, 'Crops: none', README says not captured) and radio (not present) are missing, and avatar counts on measurement alone with no crop."
+     "evidence": "systems/linear/components.md lists the inventory by family with measured (2026-10-17) and redrawn (2026-09-23) columns, backed by raw/measurements.md and components/crops/. 17 of 19 checklist components have measured entries: button, icon button, link, text field, text area, select, switch, tabs, menu, tooltip, dialog, toast, card (board card), list row (sub-issue row), table (projects and members rows), avatar, badge. Checkbox is geometry only (opacity 0, no crop) and radio does not appear in the product."
     },
     "C2": {
      "grade": "partly",
@@ -8233,7 +8233,7 @@
     }
    },
    "short": "Linear",
-   "reviewed": "2026-11-07",
+   "reviewed": "2026-11-14",
    "platform": "web",
    "reviewedPlatform": "web"
   },
@@ -9479,7 +9479,7 @@
     },
     "C1": {
      "grade": "meets",
-     "evidence": "No components.md exists (audit shape); counting README 'Coverage' rows plus components.md entries backed by screenshots or measured values, 18 of 19 are present and switch is absent (the product has none). Table, avatar, toast, list row, link and text area have only a coverage row plus a screenshot or a measurement, not a written spec; graded on accepting those as entries."
+     "evidence": "systems/polaris/components.md holds written entries for Button (incl. icon-only and plain/link variants), Badge, Tag, TextField (incl. multiline text area), Checkbox and RadioButton, Select, Card, Banner, Tabs, Modal (dialog), Popover (menu/ActionList) and Tooltip, each with source rules, screenshots and redraws. Toast, table, list row and avatar are covered by README Coverage rows plus gallery screenshots rather than written entries. 18 of 19 present; switch is absent because the product has none."
     },
     "C2": {
      "grade": "partly",
@@ -9527,7 +9527,7 @@
     }
    },
    "short": "Polaris",
-   "reviewed": "2026-11-07",
+   "reviewed": "2026-11-14",
    "platform": "web",
    "reviewedPlatform": "web"
   },
