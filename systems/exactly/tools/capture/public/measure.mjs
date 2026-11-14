@@ -147,7 +147,7 @@ async function measure(key, state, target, opts = {}) {
         file = await crop(page, (opts.cropLoc || loc).filter({ visible: true }).first(), `${key}-${state}`, opts.pad ?? 8);
       } catch (e) { s.cropError = String(e.message || e).slice(0, 120); }
     }
-    c.states[state] = { ...s, crop: file, via: opts.via };
+    c.states[state] = { ...s, crop: file, via: opts.via, run };
     if (opts.extra) c.states[state].extra = await opts.extra(loc);
     log('  ', key, state, s.rect.w + 'x' + s.rect.h);
   } catch (e) {
@@ -219,6 +219,14 @@ async function S(key, target, list, meta = {}, opts = {}) {
     }
     if (undo) await undo().catch(() => {});
     if (opts.after?.[st]) await opts.after[st](loc).catch(() => {});
+  }
+  // A listed state that failed its re-read kept the earlier evidence under
+  // rerunError (and its own earlier `run`); the entry then republishes under
+  // the earlier run's page/run/url and records the miss, so retained readings
+  // never carry the new run's date.
+  if (keep && list.some((st) => out.components[key].states[st]?.rerunError)) {
+    Object.assign(out.components[key], keep);
+    out.components[key].recaptureMissed = run;
   }
   await reset();
 }
@@ -401,7 +409,7 @@ async function caseStudies() {
   const g = G.showcase;
   await S('cases-h1', q('h1').filter({ visible: true }).first(), ['default'], { group: g, title: 'Case-studies headline', desc: 'The case-studies index headline.', sel: 'h1 on /case-studies' }, { noScroll: true });
   await S('case-card', q('div').filter({ hasText: /Aspora/ }).filter({ has: page.locator('a, [role="button"], div').filter({ hasText: /^\s*Read study\s*$/ }) }).filter({ visible: true }).last(), ['default'], { group: g, title: 'Case-study row', desc: 'A case-study row on the index: brand name, tagline, description, Read-study pill and image.', sel: 'case row (brand + Read study ancestor)' });
-  await S('case-read', q('a, [role="button"], div').filter({ hasText: /^\s*Read study\s*$/ }).filter({ visible: true }).last(), B4, { group: g, title: 'Read-study pill', desc: 'The "Read study" pill on a case-study row; measured, never followed.', sel: 'Read study pill' }, { allowLink: true });
+  await S('case-read', q('a').filter({ hasText: /^\s*Read study\s*$/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Read-study pill', desc: 'The "Read study" pill on a case-study row — the outer anchor that paints the grey fill, not the text box inside it; measured, never followed.', sel: 'Read study pill (outer a)' }, { allowLink: true });
   save();
 }
 
@@ -458,7 +466,7 @@ async function helpFaq() {
   await S('faq-h1', q('h1').filter({ visible: true }).first(), ['default'], { group: g, title: 'FAQ headline', desc: '"Frequently asked questions" — the FAQ article page.', sel: 'h1 on /help-center/frequently-asked-questions' }, { noScroll: true });
   await S('faq-question', q('h3').filter({ hasText: /What are credits and licenses\?/ }).filter({ visible: true }).first(), ['default'], { group: g, title: 'FAQ question', desc: 'An anchor-linked question heading inside the FAQ article (H3).', sel: 'faq h3' });
   await S('faq-answer', q('p').filter({ hasText: /credits are used to pay/i }).filter({ visible: true }).first(), ['default'], { group: g, title: 'FAQ answer', desc: 'The answer paragraph under a question heading.', sel: 'faq answer p' });
-  await S('article-link', q('a').filter({ hasText: /./ }).filter({ visible: true }).last(), B4, { group: g, title: 'Inline link', desc: 'A text link inside the help article; measured, never followed.', sel: 'article a' });
+  await S('article-link', q('#help-center-rich-text a').filter({ hasText: /./ }).filter({ visible: true }).first(), B4, { group: g, title: 'Inline link', desc: 'The "Data protection & privacy" link inside the FAQ article prose (the #help-center-rich-text body); measured, never followed.', sel: '#help-center-rich-text a' });
   save();
 }
 

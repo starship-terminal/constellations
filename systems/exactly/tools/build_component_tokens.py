@@ -21,8 +21,9 @@ Measured shape of the system, signed out at 1440 x 900 (mobile 390 x 844):
             Book-a-demo pill over the picture
   type      Inter wght 300 display 47px/60 -1.88px (27px/36 on mobile),
             Inter Variable 32/44 article h2, 22/32 leads and article prose,
-            21/32 card titles and footer text, 14/20 UI, 16/32 the modal
-            search field; 600 only for caption links
+            21/32 card titles (Inter on the plan cards, Inter Variable on
+            showcase) and footer text, 14/20 UI, 16/32 the modal search
+            field; 600 only for caption links
   shape     1000px pills (nav links, CTAs), 100px plan CTAs, 40px cards,
             square text
   motion    0.2s colour transitions on links
@@ -147,6 +148,7 @@ SPEC = {
                 "display": val(ff("hero-h1"), "fontFamily", mm("hero-h1", "fontFamily"), description="Inter with its 'Inter Placeholder' fallback — the wght-300 display face (hero, section and page headlines)."),
                 "ui": val(ff("nav-cta"), "fontFamily", mm("nav-cta", "fontFamily"), description="Inter Variable with placeholder fallback — UI text: nav, CTAs, card titles, footer."),
                 "body": val(ff("article-body"), "fontFamily", mm("article-body", "fontFamily"), description="Inter Variable — article and long-form text."),
+                "card": val(ff("plan-name"), "fontFamily", mm("plan-name", "fontFamily"), description="Inter with its 'Inter Placeholder' fallback — the plan-card title face (showcase card titles paint Inter Variable)."),
             },
             "size": {
                 "display": val("47px", "dimension", mm("hero-h1", "fontSize"), description="Display size: every h1 and the 47px section headings.", responsive={"mobile": "27px"},),
@@ -188,7 +190,7 @@ SPEC = {
             "display": {"$type": "typography", "$value": {"fontFamily": "{font.family.display}", "fontSize": "{font.size.display}", "fontWeight": "{font.weight.light}", "lineHeight": "{font.lineHeight.display}", "letterSpacing": "{font.letterSpacing.display}"}, "$extensions": {"source": "composed from the hero-h1 measurements"}},
             "heading-2": {"$type": "typography", "$value": {"fontFamily": "{font.family.ui}", "fontSize": "{font.size.heading-2}", "fontWeight": "{font.weight.regular}", "lineHeight": "{font.lineHeight.heading-2}", "letterSpacing": "{font.letterSpacing.heading-2}"}, "$extensions": {"source": "composed from the article-h2 measurements"}},
             "lead": {"$type": "typography", "$value": {"fontFamily": "{font.family.body}", "fontSize": "{font.size.lead}", "fontWeight": "{font.weight.regular}", "lineHeight": "{font.lineHeight.lead}", "letterSpacing": "{font.letterSpacing.lead}"}, "$extensions": {"source": "composed from the article-body measurements"}},
-            "card": {"$type": "typography", "$value": {"fontFamily": "{font.family.ui}", "fontSize": "{font.size.card}", "fontWeight": "{font.weight.regular}", "lineHeight": "{font.lineHeight.card}", "letterSpacing": "{font.letterSpacing.card}"}, "$extensions": {"source": "composed from the plan-name measurements"}},
+            "card": {"$type": "typography", "$value": {"fontFamily": "{font.family.card}", "fontSize": "{font.size.card}", "fontWeight": "{font.weight.regular}", "lineHeight": "{font.lineHeight.card}", "letterSpacing": "{font.letterSpacing.card}"}, "$extensions": {"source": "composed from the plan-name measurements"}},
             "ui": {"$type": "typography", "$value": {"fontFamily": "{font.family.ui}", "fontSize": "{font.size.ui}", "fontWeight": "{font.weight.regular}", "lineHeight": "{font.lineHeight.ui}", "letterSpacing": "{font.letterSpacing.none}"}, "$extensions": {"source": "composed from the nav-cta measurements"}},
         },
         "radius": {

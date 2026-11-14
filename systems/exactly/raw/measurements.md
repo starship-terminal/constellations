@@ -1,6 +1,6 @@
 # Component measurements
 
-Computed styles read from exactly.ai on 2026-11-13 by `tools/capture/public/measure.mjs`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), and written here by `tools/capture/public/build-measurements.mjs` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
+Computed styles read from exactly.ai on 2026-11-14 by `tools/capture/public/measure.mjs`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), and written here by `tools/capture/public/build-measurements.mjs` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
 
 States: `hover` is a real pointer hover; `focus-visible` a real keyboard focus (Shift+Tab, Tab); `pressed` is forced with DevTools (`CSS.forcePseudoState` :active:hover), so no button was pressed; `focused` is a text field clicked into; `filled` is sample text typed and deleted again, with nothing sent; `opened`, `expanded` and the rest are resting states reached by the page or by a UI toggle.
 
@@ -931,27 +931,30 @@ Not found on the page at capture time.
 
 #### case-read
 
-Read-study pill. The "Read study" pill on a case-study row; measured, never followed.
+Read-study pill. The "Read study" pill on a case-study row — the outer anchor that paints the grey fill, not the text box inside it; measured, never followed.
 
-Page: case-studies. Selector: `Read study pill`. States: default, hover, focus-visible, pressed.
+Page: case-studies. Selector: `Read study pill (outer a)`. States: default, hover, focus-visible, pressed.
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 79 x 20 | 75.05 x 19 | = | = |
-| Padding | 0px | = | = | = |
+| Size (w x h) | 140 x 56 | 133 x 53.2 | = | = |
+| Padding | 18px 24px | = | = | = |
+| Gap | 10px | = | = | = |
 | Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
+| Radius | 1000px | = | = | = |
+| Background | #7c7c7c @ 0.08 | = | = | = |
 | Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
+| Outline | none | = | 1px auto #101010 offset 1px | = |
 | Font | sans-serif 12px/normal 400 | = | = | = |
 | Letter spacing | normal | = | = | = |
-| Colour | #0000ee | = | = | = |
+| Colour | #0000ee | = | = | #ff0000 |
 | Text node | p.framer-text.framer-styles-preset-1s2cdwf: Inter Variable 14px/20px 400, #1e1e1e | = | = | = |
 | Transition | none | = | = | = |
 | Cursor | pointer | = | = | = |
-| Ancestor paint | 1 up a.framer-RjskD.framer-BjxQL bg #7c7c7c @ 0.08 | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Painted layers | a.framer-RjskD.framer-BjxQL 140.0x56.0 bg #7c7c7c @ 0.08 r 1000px | a.framer-RjskD.framer-BjxQL 133.0x53.2 bg #7c7c7c @ 0.08 r 1000px | a.framer-RjskD.framer-BjxQL 140.0x56.0 bg #7c7c7c @ 0.08 r 1000px outline 1px auto #101010 offset 1px | = |
+| How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
+| Transform | - | matrix(0.95, 0, 0, 0.95, 0, 0) | = | = |
+| Opacity | - | 0.8 | = | = |
 
 Crops: `case-read-default.png`, `case-read-hover.png`, `case-read-focus-visible.png`, `case-read-pressed.png`.
 
@@ -1331,26 +1334,27 @@ Crops: `faq-answer-default.png`.
 
 #### article-link
 
-Inline link. A text link inside the help article; measured, never followed.
+Inline link. The "Data protection & privacy" link inside the FAQ article prose (the #help-center-rich-text body); measured, never followed.
 
-Page: help-faq. Selector: `article a`. States: default, hover, focus-visible, pressed.
+Page: help-faq. Selector: `#help-center-rich-text a`. States: default, hover, focus-visible, pressed.
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 58.03 x 17 | = | = | = |
+| Size (w x h) | 292.41 x 26 | = | = | = |
 | Padding | 0px | = | = | = |
 | Border | none | = | = | = |
 | Radius | 0px | = | = | = |
 | Background | transparent | = | = | = |
 | Box shadow | none | = | = | = |
 | Outline | none | = | 1px auto #101010 offset 1px | = |
-| Font | Inter Variable 14px/20px 400 | = | = | = |
-| Letter spacing | -0.14px | = | = | = |
-| Colour | #ffffff | #ffffff @ 0.6 | = | #ffffff @ 0.6 |
-| Transition | color 0.2s cubic-bezier(0.12, 0.23, 0.5, 1) | = | = | = |
+| Font | Inter Variable 22px/32px 400 | = | = | = |
+| Letter spacing | -0.22px | = | = | = |
+| Colour | #1e1e1e | = | = | = |
+| Transition | opacity 0.2s ease-out | = | = | = |
 | Cursor | pointer | = | = | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
-| Painted layers | - | = | a.framer-text.framer-styles-preset-lqmk1b 58.0x17.0 outline 1px auto #101010 offset 1px | = |
+| Opacity | - | 0.7 | = | = |
+| Painted layers | - | = | a 292.4x26.0 outline 1px auto #101010 offset 1px | = |
 
 Crops: `article-link-default.png`, `article-link-hover.png`, `article-link-focus-visible.png`, `article-link-pressed.png`.
 

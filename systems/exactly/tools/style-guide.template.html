@@ -37,14 +37,14 @@ code { font-family: var(--sg-mono); font-size: .9em; }
 .kv span { color: var(--ink, #1e1e1e); opacity: .65; }
 /* ---- mocks ---- */
 .mock { border: 1px solid var(--surface-chip, rgba(124,124,124,.1)); overflow: hidden; background: var(--canvas, #fff); }
-.navbar { display: flex; align-items: center; gap: 22px; height: var(--component-nav-height, 64px); padding: 0 12px 0 22px; font-size: 15px; color: var(--on-image-ink, #fff); background: #333; }
+.navbar { display: flex; align-items: center; gap: 22px; height: var(--component-nav-height, 68px); padding: 0 12px 0 22px; font-size: 15px; color: var(--on-image-ink, #fff); background: #333; }
 .navbar .wm { font-weight: 600; font-size: 20px; letter-spacing: -0.02em; }
 .navbar .sp { flex: 1; }
 .btn.glass { background: var(--on-image-glass, rgba(255,255,255,.1)); color: var(--on-image-ink,#fff); border-color: var(--on-image-line, rgba(255,255,255,.2)); }
-.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-cta-height, 48px); padding: 0 24px; font-size: 16px; font-weight: 500; border-radius: var(--radius-pill, 1000px); border: 1px solid transparent; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-cta-height, 56px); padding: 0 var(--component-cta-padding-x, 24px); font-size: var(--font-size-ui, 14px); font-weight: var(--font-weight-regular, 400); border-radius: var(--radius-pill, 1000px); border: 1px solid transparent; }
 .btn.primary { background: var(--accent, #fb411f); color: var(--on-accent, #fff); }
 .btn.dark { background: var(--pill-dark, #1e1e1e); color: var(--pill-dark-ink, #fff); }
-.btn.small { height: 34px; border-radius: var(--radius-pill, 1000px); font-size: 13px; font-weight: 500; }
+.btn.small { height: var(--component-nav-pill-height, 36px); border-radius: var(--radius-pill, 1000px); font-size: var(--font-size-ui, 14px); font-weight: var(--font-weight-regular, 400); }
 .hero { color: var(--on-image-ink, #fff); padding: 72px 40px; font: 300 47px/60px var(--sg-serif); letter-spacing: -1.88px; text-align: center; background: linear-gradient(160deg,#3a3a3a,#111); }
 .hero small { display: block; font: 400 21px/32px var(--sg-sans); color: var(--on-image-muted, rgba(255,255,255,.6)); margin: 16px auto 22px; max-width: 46ch; }
 .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
@@ -82,9 +82,9 @@ table.cmp td, table.cmp th { border: 1px solid var(--surface-chip, rgba(124,124,
   <p class="lead">/pricing lists Pilot, Team and Enterprise on #f7f7f7 cards at 40px radius; every plan's action is the dark #1e1e1e pill, and the sticky compare bar is white on a 1000px outline.</p>
   <div class="mock" style="padding:20px;background:var(--canvas,#fff)">
     <div class="grid">
-      <div class="tile" style="border-radius:var(--radius-card,40px);background:var(--surface-card,#f7f7f7);border:none;color:var(--ink,#1e1e1e)"><b style="font-family:var(--sg-sans)">Pilot</b><span class="sub" style="color:var(--muted,rgba(64,64,64,.48))">For individuals</span><div style="margin-top:10px"><span class="btn dark" style="height:40px;padding:0 18px;font-size:14px">Start for free</span></div></div>
-      <div class="tile" style="border-radius:var(--radius-card,40px);background:var(--surface-card,#f7f7f7);border:none;color:var(--ink,#1e1e1e)"><b style="font-family:var(--sg-sans)">Team</b><span class="sub" style="color:var(--muted,rgba(64,64,64,.48))">For studios and teams</span><div style="margin-top:10px"><span class="btn dark" style="height:40px;padding:0 18px;font-size:14px">Book a demo</span></div></div>
-      <div class="tile" style="border-radius:var(--radius-card,40px);background:var(--surface-card,#f7f7f7);border:none;color:var(--ink,#1e1e1e)"><b style="font-family:var(--sg-sans)">Enterprise</b><span class="sub" style="color:var(--muted,rgba(64,64,64,.48))">Custom</span><div style="margin-top:10px"><span class="btn dark" style="height:40px;padding:0 18px;font-size:14px">Contact us</span></div></div>
+      <div class="tile" style="border-radius:var(--radius-card,40px);background:var(--surface-card,#f7f7f7);border:none;color:var(--ink,#1e1e1e)"><b style="font-family:var(--sg-sans)">Pilot</b><span class="sub" style="color:var(--muted,rgba(64,64,64,.48))">For individuals</span><div style="margin-top:10px"><span class="btn dark" style="border-radius:var(--radius-cta,100px)">Start for free</span></div></div>
+      <div class="tile" style="border-radius:var(--radius-card,40px);background:var(--surface-card,#f7f7f7);border:none;color:var(--ink,#1e1e1e)"><b style="font-family:var(--sg-sans)">Team</b><span class="sub" style="color:var(--muted,rgba(64,64,64,.48))">For studios and teams</span><div style="margin-top:10px"><span class="btn dark" style="border-radius:var(--radius-cta,100px)">Book a demo</span></div></div>
+      <div class="tile" style="border-radius:var(--radius-card,40px);background:var(--surface-card,#f7f7f7);border:none;color:var(--ink,#1e1e1e)"><b style="font-family:var(--sg-sans)">Enterprise</b><span class="sub" style="color:var(--muted,rgba(64,64,64,.48))">Custom</span><div style="margin-top:10px"><span class="btn dark" style="border-radius:var(--radius-cta,100px)">Contact us</span></div></div>
     </div>
   </div>
 

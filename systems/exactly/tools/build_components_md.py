@@ -283,7 +283,12 @@ def links(prefix):
 n_crops = len(list(Path("components/crops").glob("*.png")))
 n_states = sum(len(c["states"]) for c in C.values())
 try:
-    icons = [r.split("\t") for r in open("icons/INDEX.tsv").read().strip().split("\n")[1:]]
+    # INDEX.tsv is keyed by its header row: icons.mjs names every column it
+    # writes, and this reader looks fields up by those names, never by
+    # position, so the two can never drift a column apart again.
+    _idx = open("icons/INDEX.tsv").read().strip().split("\n")
+    _hdr = _idx[0].split("\t")
+    icons = [dict(zip(_hdr, (r.split("\t") + [""] * len(_hdr))[:len(_hdr)])) for r in _idx[1:] if r.strip()]
 except FileNotFoundError:
     icons = []
 
@@ -468,8 +473,7 @@ W()
 W("| Icon | Rendered sizes | View box | Style | Seen on | Next to |")
 W("|---|---|---|---|---|---|")
 for r in icons:
-    f, name, h, sizes, vb, style, seen, place, label = (r + [""] * 9)[:9]
-    W(f"| [{name}](icons/{f}) | {sizes} | {vb} | {style} | {seen} | {label.replace('|', '/')[:60]} |")
+    W(f"| [{r.get('name', '')}](icons/{r.get('file', '')}) | {r.get('rendered sizes', '')} | {r.get('viewBox', '')} | {r.get('source', '')} | {r.get('seen on', '')} | {r.get('next to', '').replace('|', '/')[:60]} |")
 W()
 
 # ------------------------------------------------ gaps

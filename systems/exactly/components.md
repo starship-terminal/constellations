@@ -1,6 +1,6 @@
 # Exactly.ai components
 
-The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Captured from exactly.ai on 2026-11-13, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was signed into, bought or submitted; Log in, Start for free, Book a demo and every threads.exactly.ai link were measured, never followed; the search was typed into and cleared, never submitted.
+The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Captured from exactly.ai on 2026-11-14, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was signed into, bought or submitted; Log in, Start for free, Book a demo and every threads.exactly.ai link were measured, never followed; the search was typed into and cleared, never submitted.
 
 The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (63 components, 128 states). The layout patterns are described in [patterns.md](patterns.md).
 
@@ -44,7 +44,7 @@ Screenshots are named `{page}-light-{state}.png`: every captured surface paints 
 
 Values that apply across entries, from the measurement files.
 
-**Focus.** 17 components were given a real keyboard focus. 17 draw an outline ring: `nav-link` (1px auto #101010, offset 1px), `nav-login` (1px auto #101010, offset 1px), `nav-cta` (1px auto #101010, offset 1px), `hero-cta` (1px auto #101010, offset 1px), `hero-demo` (1px auto #101010, offset 1px), `footer-link` (1px auto #101010, offset 1px), `plan-cta` (1px auto #101010, offset 1px), `plan-demo-cta` (1px auto #101010, offset 1px), `showcase-card` (1px auto #101010, offset 1px), `industry-card` (1px auto #101010, offset 1px), `help-nav-link` (1px auto #101010, offset 1px), `help-card` (1px auto #101010, offset 1px), `article-link` (1px auto #101010, offset 1px), `m-join` (1px auto #e59700, offset 1px), `m-hamburger` (1px auto #e59700, offset 0px), `m-hero-cta` (1px auto #e59700, offset 1px), `m-hero-demo` (1px auto #e59700, offset 1px).
+**Focus.** 18 components were given a real keyboard focus. 18 draw an outline ring: `nav-link` (1px auto #101010, offset 1px), `nav-login` (1px auto #101010, offset 1px), `nav-cta` (1px auto #101010, offset 1px), `hero-cta` (1px auto #101010, offset 1px), `hero-demo` (1px auto #101010, offset 1px), `footer-link` (1px auto #101010, offset 1px), `plan-cta` (1px auto #101010, offset 1px), `plan-demo-cta` (1px auto #101010, offset 1px), `showcase-card` (1px auto #101010, offset 1px), `industry-card` (1px auto #101010, offset 1px), `help-nav-link` (1px auto #101010, offset 1px), `help-card` (1px auto #101010, offset 1px), `article-link` (1px auto #101010, offset 1px), `m-join` (1px auto #e59700, offset 1px), `m-hamburger` (1px auto #e59700, offset 0px), `m-hero-cta` (1px auto #e59700, offset 1px), `m-hero-demo` (1px auto #e59700, offset 1px), `case-read` (1px auto #101010, offset 1px).
 
 **Pressed.** Forced with DevTools (`CSS.forcePseudoState` :active:hover). Nothing a real press would submit was ever pressed.
 
@@ -52,7 +52,8 @@ Values that apply across entries, from the measurement files.
 
 | Duration | Easing | Property | Where |
 |---|---|---|---|
-| 0.2s | `cubic-bezier(0.12, 0.23, 0.5, 1)` | color | article-link, footer-link |
+| 0.2s | `cubic-bezier(0.12, 0.23, 0.5, 1)` | color | footer-link |
+| 0.2s | `ease-out` | opacity | article-link |
 
 **Card shapes.** Default-state values; the entries hold the states.
 
@@ -371,16 +372,15 @@ A pull quote or stat line inside the article, where the page carries one. Read a
 Not on the page when it was captured.
 
 #### Read-study pill
-The "Read study" pill on a case-study row; measured, never followed. Read as `case-read` on the case studies page.
+The "Read study" pill on a case-study row — the outer anchor that paints the grey fill, not the text box inside it; measured, never followed. Read as `case-read` on the case studies page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: pressed) | size 79 x 20; background transparent; text Inter Variable 14/20 400, #1e1e1e `color.palette.ink` |
-| hover | size 75.05 x 19 |
+| default (same: pressed) | size 140 x 56; padding 18px 24px; radius 1000px; background rgba(124, 124, 124, 0.08) `color.palette.warm-08`; text Inter Variable 14/20 400, #1e1e1e `color.palette.ink` |
+| hover | size 133 x 53.2; transform scale(0.95); opacity 0.8 |
+| focus-visible | outline 1px auto #101010, offset 1px |
 
-**Focus not capturable.** A real keyboard focus could not be held on this element (`focus-visible` recorded `via: focus failed`), so its focus look is uncaptured — not measured as absent.
-
-![Read-study pill default](components/crops/case-read-default.png) ![Read-study pill hover](components/crops/case-read-hover.png) ![Read-study pill pressed](components/crops/case-read-pressed.png)
+![Read-study pill default](components/crops/case-read-default.png) ![Read-study pill hover](components/crops/case-read-hover.png) ![Read-study pill focus-visible](components/crops/case-read-focus-visible.png) ![Read-study pill pressed](components/crops/case-read-pressed.png)
 
 #### Article heading
 A section heading inside the article. Read as `article-h2` on the case-study article page.
@@ -518,14 +518,13 @@ The answer paragraph under a question heading. Read as `faq-answer` on the help 
 ![FAQ answer default](components/crops/faq-answer-default.png)
 
 #### Inline link
-A text link inside the help article; measured, never followed. Read as `article-link` on the help FAQ page.
+The "Data protection & privacy" link inside the FAQ article prose (the #help-center-rich-text body); measured, never followed. Read as `article-link` on the help FAQ page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 58.03 x 17; background transparent; text Inter Variable 14/20 400, #ffffff `color.palette.paper`; transition color 0.2s cubic-bezier(0.12, 0.23, 0.5, 1) |
-| hover | text Inter Variable 14/20 400, rgba(255, 255, 255, 0.6) `color.palette.white-60` |
-| focus-visible | outline 1px auto #101010, offset 1px; layers a.framer-text.framer-styles-preset-lqmk1b 58.0x17.0 1px auto rgb(16, 16, 16) offset 1px |
-| pressed | text Inter Variable 14/20 400, rgba(255, 255, 255, 0.6) `color.palette.white-60` |
+| default (same: pressed) | size 292.41 x 26; background transparent; text Inter Variable 22/32 400, #1e1e1e `color.palette.ink`; transition opacity 0.2s ease-out |
+| hover | opacity 0.7 |
+| focus-visible | outline 1px auto #101010, offset 1px; layers a 292.4x26.0 1px auto rgb(16, 16, 16) offset 1px |
 
 ![Inline link default](components/crops/article-link-default.png) ![Inline link hover](components/crops/article-link-hover.png) ![Inline link focus-visible](components/crops/article-link-focus-visible.png) ![Inline link pressed](components/crops/article-link-pressed.png)
 
@@ -654,21 +653,21 @@ A legal link in the footer; measured, never followed. Read as `footer-link` on t
 
 | Icon | Rendered sizes | View box | Style | Seen on | Next to |
 |---|---|---|---|---|---|
-| [desktop](icons/desktop.svg) | 0 0 90.667 16 | inline | pricing |  |  |
-| [dot](icons/dot.svg) | 0 0 6 6 | inline | home |  |  |
-| [laurel-left](icons/laurel-left.svg) | 0 0 27.98 56 | inline | home, mobile-home, pricing |  |  |
-| [laurel-right](icons/laurel-right.svg) | 0 0 27.98 56 | inline | home, mobile-home, pricing |  |  |
-| [logo-on-image](icons/logo-on-image.svg) | 0 0 24 24 | inline | home |  |  |
-| [logo-on-light](icons/logo-on-light.svg) | 0 0 24 24 | inline | book-a-demo, case-studies, help-center, help-center-frequently-asked-questions, industries, pricing, showcase |  |  |
-| [plan-glyph-1](icons/plan-glyph-1.svg) | 0 0 60 60 | inline | home, mobile-home, pricing |  |  |
-| [plan-glyph-2](icons/plan-glyph-2.svg) | 0 0 64 64 | inline | home, mobile-home, pricing |  |  |
-| [plan-glyph-3](icons/plan-glyph-3.svg) | 0 0 63 63 | inline | home, mobile-home, pricing |  |  |
-| [plus-c1cd28e8](icons/plus-c1cd28e8.svg) | 0 0 22.403 22.4 | inline | pricing |  |  |
-| [plus-d7dee377](icons/plus-d7dee377.svg) | 0 0 19.914 19.911 | inline | industries |  |  |
-| [plus](icons/plus.svg) | 0 0 22.403 22.4 | inline | pricing, showcase |  |  |
-| [search](icons/search.svg) | 0 0 15.068 15.067 | inline | help-center, help-center-frequently-asked-questions |  |  |
-| [wordmark-on-image](icons/wordmark-on-image.svg) | 0 0 85.383 24 | inline | home |  |  |
-| [wordmark-on-light](icons/wordmark-on-light.svg) | 0 0 85.383 24 | inline | book-a-demo, case-studies, help-center, help-center-frequently-asked-questions, industries, mobile-home, pricing, showcase |  |  |
+| [logo-on-image](icons/logo-on-image.svg) | 24x24 | 0 0 24 24 | inline | home | Logo |
+| [wordmark-on-image](icons/wordmark-on-image.svg) | 86x24 | 0 0 85.383 24 | inline | home | LogoText |
+| [laurel-left](icons/laurel-left.svg) | 28x56 | 0 0 27.98 56 | inline | home, mobile-home, pricing | Section Header/Buttons |
+| [laurel-right](icons/laurel-right.svg) | 28x56 | 0 0 27.98 56 | inline | home, mobile-home, pricing | Section Header/Buttons |
+| [plan-glyph-1](icons/plan-glyph-1.svg) | 60x60 | 0 0 60 60 | inline | home, mobile-home, pricing | Icon |
+| [plan-glyph-2](icons/plan-glyph-2.svg) | 64x64 | 0 0 64 64 | inline | home, mobile-home, pricing | Icon |
+| [plan-glyph-3](icons/plan-glyph-3.svg) | 63x63 | 0 0 63 63 | inline | home, mobile-home, pricing | Icon |
+| [dot](icons/dot.svg) | 6x6 | 0 0 6 6 | background data-URI | home | Dot |
+| [logo-on-light](icons/logo-on-light.svg) | 24x24 | 0 0 24 24 | inline | book-a-demo, case-studies, help-center, help-center-frequently-asked-questions, industries, pricing, showcase | Logo |
+| [wordmark-on-light](icons/wordmark-on-light.svg) | 86x24 | 0 0 85.383 24 | inline | book-a-demo, case-studies, help-center, help-center-frequently-asked-questions, industries, mobile-home, pricing, showcase | LogoText; LogoWrap |
+| [plus](icons/plus.svg) | 23x23 | 0 0 22.403 22.4 | inline | pricing, showcase | Plus |
+| [plus-c1cd28e8](icons/plus-c1cd28e8.svg) | 23x23 | 0 0 22.403 22.4 | inline | pricing | Plus |
+| [desktop](icons/desktop.svg) | 91x16 | 0 0 90.667 16 | background data-URI | pricing | Desktop |
+| [plus-d7dee377](icons/plus-d7dee377.svg) | 20x20 | 0 0 19.914 19.911 | inline | industries | Plus |
+| [search](icons/search.svg) | 15x15 | 0 0 15.068 15.067 | background data-URI | help-center, help-center-frequently-asked-questions | Search |
 
 ## Gaps
 

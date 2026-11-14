@@ -58,7 +58,7 @@ typography:
     lineHeight: "32px"
     letterSpacing: "-0.22px"
   card:
-    fontFamily: "Inter Variable"
+    fontFamily: "Inter"
     fontSize: "21px"
     fontWeight: 400
     lineHeight: "32px"
