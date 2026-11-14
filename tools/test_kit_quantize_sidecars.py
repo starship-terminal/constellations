@@ -19,6 +19,10 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 KIT = ROOT / "tools" / "kit" / "capture" / "quantize.py"
 COPIES = sorted(p for p in ROOT.glob("systems/*/tools/capture/quantize.py") if "def stitched_sidecar" in p.read_text())
 SCRIPTS = [KIT] + COPIES
+# designmodo judges a sheet by the tiles' own recorded dimensionCheck and writes a failing sidecar for a
+# tile it cannot vouch for, instead of none; that is deliberate, so its tests expect "fail" where the rest expect no file.
+RECORDED = [s for s in SCRIPTS if "recorded checks" in s.read_text()]
+UNMEASURED_NONE = [s for s in SCRIPTS if "def check_tiles" not in s.read_text() and s not in RECORDED]
 
 
 def sidecar(name, w, h, y=0, dpr=1):
@@ -26,7 +30,7 @@ def sidecar(name, w, h, y=0, dpr=1):
     return {"schemaVersion": 1, "screenshot": name, "requested": {"deviceScaleFactor": dpr},
             "actual": {"devicePixelRatio": dpr}, "capture": {"mode": "clip", "scale": "device",
             "clip": {"x": 0, "y": y, "width": w, "height": h}}, "png": {"width": w * dpr, "height": h * dpr},
-            "dimensionCheck": {"status": "pass"}}
+            "dimensionCheck": {"status": "pass", "expected": {"width": w * dpr, "height": h * dpr}}}
 
 
 @unittest.skipIf(Image is None, "Pillow is not installed")
@@ -59,6 +63,7 @@ class QuantizeSidecarTest(unittest.TestCase):
             if sidecars:
                 meta = sidecar(f"long.part{i}.png", 8, h, y, dpr)
                 meta["png"] = {"width": 8 * px, "height": h * px}
+                meta["dimensionCheck"]["expected"] = {"width": 8 * px, "height": h * px}
                 if css_sized:
                     meta["capture"]["scale"] = "css"
                 if doc_h:
@@ -127,7 +132,7 @@ class QuantizeSidecarTest(unittest.TestCase):
             del meta["capture"]["clip"]
             (self.raw / "long.part1.png.capture.json").write_text(json.dumps(meta))
             self.assertFalse((self.run_quantize() / "long.png.capture.json").exists())
-        self.each(body, [s for s in SCRIPTS if "def check_tiles" not in s.read_text()])
+        self.each(body, UNMEASURED_NONE)
 
     def test_stitched_dimension_check_fails_when_sheet_disagrees(self):
         def body():
@@ -147,14 +152,21 @@ class QuantizeSidecarTest(unittest.TestCase):
             out = self.run_quantize()
             self.assertTrue((out / "long.png").exists())
             self.assertFalse((out / "long.png.capture.json").exists())
-        self.each(body, [s for s in SCRIPTS if "def check_tiles" not in s.read_text()])
+        self.each(body, UNMEASURED_NONE)
 
     def test_stitched_with_one_missing_tile_sidecar_writes_none(self):
         def body():
             self.tiles((6, 4))
             (self.raw / "long.part1.png.capture.json").unlink()
             self.assertFalse((self.run_quantize() / "long.png.capture.json").exists())
-        self.each(body, [s for s in SCRIPTS if "def check_tiles" not in s.read_text()])
+        self.each(body, UNMEASURED_NONE)
+
+    def test_recorded_check_copies_fail_a_sheet_whose_tile_has_no_sidecar(self):
+        def body():
+            self.tiles((6, 4), sidecars=False)
+            check = json.loads((self.run_quantize() / "long.png.capture.json").read_text())["dimensionCheck"]
+            self.assertEqual(check["status"], "fail")
+        self.each(body, RECORDED)
 
     def test_rerun_without_sidecar_drops_the_old_one(self):
         def body():
@@ -176,7 +188,7 @@ class QuantizeSidecarTest(unittest.TestCase):
             for f in self.raw.glob("*.capture.json"):
                 f.unlink()
             self.assertFalse((self.run_quantize() / "long.png.capture.json").exists())
-        self.each(body, [s for s in SCRIPTS if "def check_tiles" not in s.read_text()])
+        self.each(body, UNMEASURED_NONE)
 
 
 if __name__ == "__main__":
