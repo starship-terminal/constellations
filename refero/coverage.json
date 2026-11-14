@@ -3,11 +3,11 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 124,
-    "system_domains": 116,
-    "matched_domains": 91,
-    "missing_domains": 342,
-    "system_domains_absent_from_catalog": 25
+    "system_packages": 128,
+    "system_domains": 120,
+    "matched_domains": 94,
+    "missing_domains": 339,
+    "system_domains_absent_from_catalog": 26
   },
   "matched": {
     "1password.com": {
@@ -1392,6 +1392,57 @@
         }
       ]
     },
+    "enode.com": {
+      "catalog": [
+        {
+          "name": "Enode",
+          "domain": "enode.com",
+          "id": 599
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "enode",
+          "name": "Enode",
+          "url": "https://enode.com",
+          "name_match": true
+        }
+      ]
+    },
+    "epidemicsound.com": {
+      "catalog": [
+        {
+          "name": "Epidemic Sound",
+          "domain": "epidemicsound.com",
+          "id": 75
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "epidemicsound",
+          "name": "Epidemic Sound",
+          "url": "https://www.epidemicsound.com",
+          "name_match": false
+        }
+      ]
+    },
+    "esquire.com": {
+      "catalog": [
+        {
+          "name": "Esquire",
+          "domain": "esquire.com",
+          "id": 102
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "esquire",
+          "name": "Esquire",
+          "url": "https://www.esquire.com",
+          "name_match": true
+        }
+      ]
+    },
     "exa.ai": {
       "catalog": [
         {
@@ -1803,13 +1854,6 @@
         "id": 332
       }
     ],
-    "enode.com": [
-      {
-        "name": "Enode",
-        "domain": "enode.com",
-        "id": 599
-      }
-    ],
     "epicgames.com": [
       {
         "name": "Epic Games",
@@ -1817,25 +1861,11 @@
         "id": 84
       }
     ],
-    "epidemicsound.com": [
-      {
-        "name": "Epidemic Sound",
-        "domain": "epidemicsound.com",
-        "id": 75
-      }
-    ],
     "equals.app": [
       {
         "name": "Equals",
         "domain": "equals.app",
         "id": 289
-      }
-    ],
-    "esquire.com": [
-      {
-        "name": "Esquire",
-        "domain": "esquire.com",
-        "id": 102
       }
     ],
     "exactly.ai": [
@@ -4076,6 +4106,14 @@
         "slug": "coursera",
         "name": "Coursera",
         "url": "https://www.coursera.org",
+        "ios_guess": []
+      }
+    ],
+    "delphi.co": [
+      {
+        "slug": "delphi",
+        "name": "Delphi",
+        "url": "https://www.delphi.co",
         "ios_guess": []
       }
     ],
