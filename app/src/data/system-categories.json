@@ -772,5 +772,11 @@
     "groupId": "web-categories",
     "labels": ["AI Tool", "Development Tools"],
     "reason": "catalog.json describes an AI-search developer API: marketing site, model/pricing pages, docs and a gated console."
+  },
+  {
+    "referenceId": "systems:exactly",
+    "groupId": "web-categories",
+    "labels": ["AI Tool", "Design & Media Editing"],
+    "reason": "catalog.json describes an AI design-generation tool: marketing site with case studies, pricing tiers and gated product surfaces."
   }
 ]
