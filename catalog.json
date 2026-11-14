@@ -9992,7 +9992,8 @@
      "pressed states are forced with DevTools (CSS.forcePseudoState), so any script-applied mousedown state is missing",
      "--fibery-page-secondary-color and --fibery-text-selection-color are declared as the literal string 'undefined' in the served CSS; kept as evidence, unusable as values"
     ],
-    "durationMin": null
+    "durationMin": null,
+    "pr": "https://github.com/starship-terminal/constellations/pull/558"
    },
    "layoutGaps": {}
   }
