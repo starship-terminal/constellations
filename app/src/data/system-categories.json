@@ -844,5 +844,17 @@
     "groupId": "web-categories",
     "labels": ["Productivity", "Project Management"],
     "reason": "catalog.json describes a modular work-management platform: a warm-palette marketing site with template gallery, pricing plans and gated workspace surfaces past fibery.io sign-up/login."
+  },
+  {
+    "referenceId": "systems:fal",
+    "groupId": "web-categories",
+    "labels": ["AI Tool", "Development Tools"],
+    "reason": "catalog.json describes a generative-media inference platform: a public model catalog, model playground and API docs for developers, with an OAuth account wall past login."
+  },
+  {
+    "referenceId": "systems:designmodo",
+    "groupId": "web-categories",
+    "labels": ["Design & Media Editing", "Productivity"],
+    "reason": "catalog.json describes a design-tool suite (Postcards email builder, Slides, Static.app): an InterVariable marketing surface plus the Fira Sans Postcards app shell, all signed out."
   }
 ]
