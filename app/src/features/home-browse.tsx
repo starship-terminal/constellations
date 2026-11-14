@@ -46,7 +46,8 @@ function BrowseSection({
     q: selected,
     kind: section.kind,
     scope: "media",
-    limit: "200",
+    limit: "16",
+    perProduct: "2",
   });
   if (platform) params.set("platform", platform);
   const { data, loading, error } = useResource<ScreenResponse>(
@@ -54,6 +55,7 @@ function BrowseSection({
   );
   const destination = new URLSearchParams(params);
   destination.delete("limit");
+  destination.delete("perProduct");
   destination.set("view", "screens");
   return (
     <section className={styles.gallery} aria-label={section.title}>
