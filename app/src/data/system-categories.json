@@ -826,5 +826,11 @@
     "groupId": "web-categories",
     "labels": ["AI Tool", "Development Tools"],
     "reason": "catalog.json describes an AI software-engineering agents product: enterprise marketing pages, product tours, docs with a theme toggle, pricing and a gated agent console."
+  },
+  {
+    "referenceId": "systems:designstripe",
+    "groupId": "web-categories",
+    "labels": ["AI Tool", "Productivity"],
+    "reason": "catalog.json describes an AI design-agent product (Visual, formerly designstripe): a marketing surface, CC0 asset library, free design tools and blog — the AI Tool label."
   }
 ]
