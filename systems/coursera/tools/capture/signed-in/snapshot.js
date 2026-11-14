@@ -27,6 +27,7 @@ window.__snap = function (label, REDACT) {
   // url(); any other ; (an &amp; entity, a ;-separated query) stays inside, as do commas and
   // parentheses, except a ")" that closes an unquoted url( ... ) before ; , } or the end.
   const cutSigned = (s) => s.replace(/[?#](?:[^\s"'<>);{}]|;(?![\w-]+\s*:)|\)(?![\s;,"'}]|$))*/g, (q) => (SIGNED.test(q) ? '' : q));
+  const cutSignedUrl = (s) => s.replace(/[?#](?:[^\s"'<>);{}]|;|\)(?![\s;,"'}]|$))*/g, (q) => (SIGNED.test(q) ? '' : q));
   const abs = (u) => { let h; try { h = new URL(u, location.href).href; } catch { return cutSigned(u); } return SIGNED.test(h) ? h.split(/[?#]/)[0] : h; };
   const parts = [];
   for (const ss of document.styleSheets) {
@@ -103,7 +104,7 @@ window.__snap = function (label, REDACT) {
     : '<style' + (p.media ? ' media="' + p.media + '"' : '') + '>' + p.css.replace(/<\/style/gi, '<\\/style') + '</style>')).join('\n'));
   // Last, every attribute of every element (data-src, style="background:url(...)", anything) and then
   // the serialised copy, inlined stylesheets and text included, lose any signed query abs() missed.
-  clone.querySelectorAll('*').forEach((n) => { for (const a of [...n.attributes]) { const v = cutSigned(a.value); if (v !== a.value) n.setAttribute(a.name, v); } });
+  clone.querySelectorAll('*').forEach((n) => { for (const a of [...n.attributes]) { const v = (a.name === 'style' ? cutSigned : cutSignedUrl)(a.value); if (v !== a.value) n.setAttribute(a.name, v); } });
   let html = cutSigned('<!doctype html>\n' + clone.outerHTML);
   for (const [pattern, flags, rep] of REDACT.replace) html = html.replace(new RegExp(pattern, flags), rep);
   const meta = { label, url: cutSigned(location.href), title: document.title, scrollY, w: innerWidth, h: innerHeight, docH: document.documentElement.scrollHeight };

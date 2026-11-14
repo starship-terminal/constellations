@@ -87,7 +87,7 @@ const result = await probe.evaluate((sheets) => {
     for (const r of list) {
       if (r.type === CSSRule.FONT_FACE_RULE) {
         const o = { file };
-        for (let i = 0; i < r.style.length; i++) o[r.style[i]] = r.style.getPropertyValue(r.style[i]).trim();
+        for (let i = 0; i < r.style.length; i++) o[r.style[i]] = noUrl(r.style.getPropertyValue(r.style[i]).trim());
         fonts.push(o);
         continue;
       }
@@ -208,6 +208,8 @@ const shopSheets = await harvest(SHOP + '/');
 let shop = null;
 if (shopSheets) {
   const shopResult = await probe.evaluate((sheets) => {
+    // A font-face src can carry a signed or per-account query: record any url() as url(…).
+    const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v);
     const fonts = [];
     const errors = [];
     const names = new Set();
@@ -215,7 +217,7 @@ if (shopSheets) {
       for (const r of list) {
         if (r.type === CSSRule.FONT_FACE_RULE) {
           const o = { file };
-          for (let i = 0; i < r.style.length; i++) o[r.style[i]] = r.style.getPropertyValue(r.style[i]).trim();
+          for (let i = 0; i < r.style.length; i++) o[r.style[i]] = noUrl(r.style.getPropertyValue(r.style[i]).trim());
           fonts.push(o);
           continue;
         }
