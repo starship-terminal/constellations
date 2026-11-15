@@ -456,14 +456,44 @@ def signed_url_pattern(spec: dict) -> re.Pattern:
 SIGNED_URL = signed_url_pattern(json.loads(SIGNED_PARAMS.read_text()))
 
 
+def input_error(message: str):
+    """A bad input file: one `error:` line on stderr and exit 2, argparse's code for bad usage.
+    Exit 1 stays what `scan` returns for found private text, so a caller can tell the two apart."""
+    print(f"error: {message}", file=sys.stderr)
+    raise SystemExit(2)
+
+
+def read_json_object(path, what: str) -> dict:
+    """The JSON object in `path` (`what` names the file's role in the error), or `input_error`
+    when it is missing, unreadable, not valid JSON or not an object."""
+    path = Path(path).expanduser()
+    try:
+        data = json.loads(path.read_text())
+    except FileNotFoundError:
+        input_error(f"{what} {path} not found")
+    except (OSError, UnicodeDecodeError) as e:
+        input_error(f"{what} {path} cannot be read: {getattr(e, 'strerror', None) or e}")
+    except json.JSONDecodeError as e:
+        input_error(f"{what} {path} is not valid JSON: {e.msg} (line {e.lineno}, column {e.colno})")
+    if not isinstance(data, dict):
+        input_error(f"{what} {path} has the wrong shape: expected a JSON object, got {type(data).__name__}")
+    return data
+
+
 def read_redaction(paths) -> dict:
     """One or more redaction files ({"replace": [[pattern, flags, replacement], ...],
-    "email_allow": [...]}) merged, in order. The one reader for scan and redact_images.py."""
+    "email_allow": [...]}) merged, in order. The one reader for scan and redact_images.py.
+    A missing, non-JSON or wrongly shaped file exits 2 with a one-line error naming it."""
     merged = {"replace": [], "email_allow": []}
     for path in ([paths] if isinstance(paths, (str, Path)) else paths or []):
-        data = json.loads(Path(path).expanduser().read_text())
-        merged["replace"] += data.get("replace", [])
-        merged["email_allow"] += data.get("email_allow", [])
+        data = read_json_object(path, "redaction file")
+        replace, allow = data.get("replace", []), data.get("email_allow", [])
+        if not (isinstance(replace, list) and all(isinstance(r, list) and r and isinstance(r[0], str) for r in replace)):
+            input_error(f"redaction file {path} has the wrong shape: \"replace\" must be a list of [pattern, flags, replacement] rows")
+        if not (isinstance(allow, list) and all(isinstance(a, str) for a in allow)):
+            input_error(f"redaction file {path} has the wrong shape: \"email_allow\" must be a list of strings")
+        merged["replace"] += replace
+        merged["email_allow"] += allow
     return merged
 
 
