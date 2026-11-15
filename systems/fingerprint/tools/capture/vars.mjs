@@ -191,11 +191,18 @@ for (const pass of ['dark', 'light']) {
         p.style.color = raw; r.kind = 'color'; r.value = norm(getComputedStyle(p).color);
         if (typeof r.value === 'object') { r.kind = 'other'; r.note = 'colour space not converted: ' + r.value.unparsed; delete r.value; }
       } else if (!raw.includes('%') && CSS.supports('width', raw)) {
-        p.style.width = raw; r.kind = 'dimension'; r.value = getComputedStyle(p).width;
-        if (/vw|vh|dvh/.test(raw)) r.note = 'viewport-relative, resolved at 1440 x 900';
-        // max-content/min-content/fit-content/auto resolve to 0px on an empty
-        // probe: keep the keyword instead of publishing a bogus length.
-        if (r.value === '0px' && !/^[.\d]/.test(raw)) { r.value = raw; r.note = 'sizing keyword, not a fixed length'; }
+        if (/(em|ex|ch|cap|ic|lh|rlh)$/.test(raw)) {
+          // A font-relative length resolves against the element's own font
+          // size; the empty probe's width would report it at this probe's
+          // size, not the text it actually spaces (.005em read 0.078125px).
+          r.kind = 'other'; r.note = 'font-relative length; resolves per element';
+        } else {
+          p.style.width = raw; r.kind = 'dimension'; r.value = getComputedStyle(p).width;
+          if (/vw|vh|dvh/.test(raw)) r.note = 'viewport-relative, resolved at 1440 x 900';
+          // max-content/min-content/fit-content/auto resolve to 0px on an empty
+          // probe: keep the keyword instead of publishing a bogus length.
+          if (r.value === '0px' && !/^[.\d]/.test(raw)) { r.value = raw; r.note = 'sizing keyword, not a fixed length'; }
+        }
       }
       else if (CSS.supports('box-shadow', raw)) { p.style.boxShadow = raw; r.kind = 'shadow'; r.value = getComputedStyle(p).boxShadow; }
       else if (CSS.supports('transition-duration', raw)) { p.style.transitionDuration = raw; r.kind = 'duration'; r.value = getComputedStyle(p).transitionDuration; }

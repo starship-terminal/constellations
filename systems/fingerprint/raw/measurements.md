@@ -195,7 +195,7 @@ Crops: `nav-login-default.png`, `nav-login-hover.png`, `nav-login-focus-visible.
 
 #### nav-cta
 
-Header CTA. The dark "Get Started" header pill; links to dashboard.fingerprint.com/signup, measured never followed.
+Header CTA. The orange "Get Started" header pill (the brand-primary fill); links to dashboard.fingerprint.com/signup, measured never followed.
 
 Page: home. Selector: `header a Get Started`. States: default, hover, focus-visible, pressed.
 
@@ -331,24 +331,23 @@ Crops: `install-btn-default.png`, `install-btn-hover.png`, `install-btn-focus-vi
 
 #### section-h2
 
-Section heading. A marketing section heading further down the home page.
+Section heading. A marketing section heading further down the home page ("Not all bots are bad Not all humans are good") — a display-size h2, so transient microcopy such as a widget's error heading never counts.
 
-Page: home. Selector: `h2`. States: default.
+Page: home. Selector: `h2 (display size)`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 220 x 23.2 |
-| Padding | 0px |
+| Size (w x h) | 559 x 120 |
+| Padding | 16px 0px |
 | Border | none |
 | Radius | 0px |
 | Background | transparent |
 | Box shadow | none |
 | Outline | none |
-| Font | JetBrains Mono-c3e9177549e38394 16px/23.2px 500 |
-| Letter spacing | normal |
-| Colour | #cf323d |
+| Font | Inter-c0aaf1024c6c51d7 36px/44px 500 |
+| Letter spacing | -0.73px |
+| Colour | #000000 |
 | Transition | none |
-| Ancestor paint | 1 up div._errorMessage_1u2rw_242 bg #fef6f6 shadow #d0d0d0 @ 0.15 0px 2px 4px 0px |
 | How | at rest |
 
 Crops: `section-h2-default.png`.
@@ -643,53 +642,54 @@ Crops: `price-tick-default.png`, `price-tick-hover.png`, `price-tick-focus-visib
 
 #### plan-card
 
-Plan card. A plan column on /pricing: name, price, identification allowance and its CTA.
+Plan card. A plan card on /pricing — one bordered column of the three-card grid (Free/Pro/Enterprise): name, price, identification allowance and its CTA.
 
-Page: pricing. Selector: `plan card`. States: default.
+Page: pricing. Selector: `plan card (.rounded-2xl with h3)`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 1440 x 797.84 |
-| Padding | 0px |
-| Border | T: none; R: none; B: 1px dashed #e4e5e1; L: none |
-| Radius | 0px |
-| Background | #fafaf8 |
-| Box shadow | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #181916 @ 0.06 0px 1px 2px 0px inset |
+| Size (w x h) | 329.44 x 461.25 |
+| Padding | 24px |
+| Border | 1px solid #e4e5e1 |
+| Radius | 16px |
+| Background | #f8f8f6 |
+| Box shadow | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff 0px 1px 0px 0px inset, #181916 @ 0.04 0px 1px 3px 0px, #181916 @ 0.08 0px 1px 2px -1px |
 | Outline | none |
 | Font | Inter-c0aaf1024c6c51d7 16px/24px 400 |
 | Letter spacing | normal |
 | Colour | #000000 |
-| Text node | h1.m-0.text-center: Inter-c0aaf1024c6c51d7 50px/52px 500, #000000, ls -1px |
+| Text node | h3.m-0.font-sans: Inter-c0aaf1024c6c51d7 20px/32px 500, #000000, ls -0.38px |
 | Transition | none |
 | Icon | 12 x 10, colour #f35b22 |
-| Painted layers | section.border-b.border-dashed 1440.0x797.8 bg #fafaf8 border B:1px dashed #e4e5e1 shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #181916 @ 0.06 0px 1px 2px 0px inset; div.col-[2/14].flex 1248.0x255.6 border R:1px dashed #e4e5e1 / L:1px dashed #e4e5e1; div.relative.flex 444.0x10.0 bg #e4e5e1 r 16px; div.absolute.top-0 444.0x10.0 bg #e4e5e1 border T:1px solid #e4e5e1 / R:1px solid #e4e5e1 / B:1px solid #e4e5e1 / L:1px solid #e4e5e1 r 16px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.3 0px 1px 0px 0px inset; div.absolute.top-0 222.0x10.0 bg #f35b22 border T:1px solid #fc642d / R:1px solid #fc642d / B:1px solid #fc642d / L:1px solid #fc642d r 16px 0px 0px 16px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #f77c55 0px 1px 0px 0px inset; div.col-[2/14].grid 1248.0x478.3 border T:1px dashed #e4e5e1 / R:1px dashed #e4e5e1 / L:1px dashed #e4e5e1 |
+| Painted layers | div.m-2.flex-1 329.4x461.3 bg #f8f8f6 border T:1px solid #e4e5e1 / R:1px solid #e4e5e1 / B:1px solid #e4e5e1 / L:1px solid #e4e5e1 r 16px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff 0px 1px 0px 0px inset, #181916 @ 0.04 0px 1px 3px 0px, #181916 @ 0.08 0px 1px 2px -1px; span.flex.items-center 34.0x19.0 border T:1px solid #e0e0e0 / R:1px solid #e0e0e0 / B:1px solid #e0e0e0 / L:1px solid #e0e0e0 r 4px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.8 0px 1px 0px 0px inset, #484946 @ 0.1 0px -1px 0px 0px inset; a.inline-flex.box-border 87.0x32.0 bg #f8f8f6 border T:1px solid #dadad7 / R:1px solid #dadad7 / B:1px solid #dadad7 / L:1px solid #dadad7 r 6px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #181916 @ 0.02 0px 2px 1px 0px, #181916 @ 0.1 0px -1px 0px 0px inset; span.ml-2.inline-block 40.7x22.0 bg #ffffff image linear-gradient(301deg, #f35b22 @ 0.01 9.55%, #f35b22 @ 0.1 67.28%) border T:1px solid #ffcab5 / R:1px solid #ffcab5 / B:1px solid #ffcab5 / L:1px solid #ffcab5 r 6px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #be400f @ 0.1 0px -1.5px 0px 0px inset, #ffffff @ 0.1 0px 1.5px 0px 0px inset, #000000 @ 0.03 0px 0.5px 0px 0px |
+| Ancestor paint | 1 up div.flex.bg-[#fcfcfb] bg #fcfcfb |
 | How | at rest |
 
 Crops: `plan-card-default.png`.
 
 #### plan-cta
 
-Plan CTA. A plan card's "Get Started" action; measured, never followed.
+Plan CTA. A plan card's primary action ("Start Free" on the Free/Pro cards, "Contact Sales" on Enterprise); measured, never followed.
 
-Page: pricing. Selector: `plan Get Started`. States: default, hover, focus-visible, pressed.
+Page: pricing. Selector: `plan card CTA`. States: default, hover, focus-visible, pressed.
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 110 x 37.59 | = | = | = |
-| Padding | 8px 16px | = | = | = |
-| Border | 1px solid #bd400f | = | = | = |
+| Size (w x h) | 87 x 32 | = | = | = |
+| Padding | 7.21px 14px | = | = | = |
+| Border | 1px solid #dadad7 | = | = | = |
 | Radius | 6px | = | = | = |
-| Background | #f35820 | #bd400f | = | #bd400f |
-| Box shadow | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.2 0px 1px 0px 0px inset, #181916 @ 0.06 0px 1px 2px 0px, #181916 @ 0.1 0px -1px 0px 0px inset | = | = | = |
+| Background | #f8f8f6 | #f1f1ee | = | #e4e5e1 |
+| Box shadow | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #181916 @ 0.02 0px 2px 1px 0px, #181916 @ 0.1 0px -1px 0px 0px inset | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.4 0px 1px 0px 0px inset, #181916 @ 0.02 0px 2px 1px 0px, #181916 @ 0.1 0px -1px 0px 0px inset | = | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.4 0px 1px 0px 0px inset, #181916 @ 0.02 0px 2px 1px 0px, #181916 @ 0.1 0px -1px 0px 0px inset |
 | Outline | none | = | 2px solid #f35820 offset 2px | = |
-| Font | Inter-c0aaf1024c6c51d7 14px/19.6px 500 | = | = | = |
+| Font | Inter-c0aaf1024c6c51d7 12px/15.6px 500 | = | = | = |
 | Letter spacing | normal | = | = | = |
-| Colour | #ffffff | = | = | = |
-| Text node | span: Inter-c0aaf1024c6c51d7 14px/19.6px 500, #ffffff | = | = | = |
+| Colour | #171816 | = | = | = |
+| Text node | span: Inter-c0aaf1024c6c51d7 12px/15.6px 500, #171816 | = | = | = |
 | Transition | background-color, border-color, box-shadow, color, opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1) | = | = | = |
 | Cursor | pointer | = | = | = |
-| Painted layers | a.inline-flex.box-border 110.0x37.6 bg #f35820 border T:1px solid #bd400f / R:1px solid #bd400f / B:1px solid #bd400f / L:1px solid #bd400f r 6px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.2 0px 1px 0px 0px inset, #181916 @ 0.06 0px 1px 2px 0px, #181916 @ 0.1 0px -1px 0px 0px inset | a.inline-flex.box-border 110.0x37.6 bg #bd400f border T:1px solid #bd400f / R:1px solid #bd400f / B:1px solid #bd400f / L:1px solid #bd400f r 6px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.2 0px 1px 0px 0px inset, #181916 @ 0.06 0px 1px 2px 0px, #181916 @ 0.1 0px -1px 0px 0px inset | a.inline-flex.box-border 110.0x37.6 bg #f35820 border T:1px solid #bd400f / R:1px solid #bd400f / B:1px solid #bd400f / L:1px solid #bd400f r 6px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.2 0px 1px 0px 0px inset, #181916 @ 0.06 0px 1px 2px 0px, #181916 @ 0.1 0px -1px 0px 0px inset outline 2px solid #f35820 offset 2px | a.inline-flex.box-border 110.0x37.6 bg #bd400f border T:1px solid #bd400f / R:1px solid #bd400f / B:1px solid #bd400f / L:1px solid #bd400f r 6px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.2 0px 1px 0px 0px inset, #181916 @ 0.06 0px 1px 2px 0px, #181916 @ 0.1 0px -1px 0px 0px inset |
-| Ancestor paint | 2 up header.relative.col-[1/7] bg #fef4f0 @ 0.57 shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #f77c55 @ 0.1 0px -1px 0px 0px inset, #ffffff 0px 2px 0px 0px inset, #f35b22 @ 0.1 0px 1px 0px 0px | = | = | = |
+| Painted layers | a.inline-flex.box-border 87.0x32.0 bg #f8f8f6 border T:1px solid #dadad7 / R:1px solid #dadad7 / B:1px solid #dadad7 / L:1px solid #dadad7 r 6px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #181916 @ 0.02 0px 2px 1px 0px, #181916 @ 0.1 0px -1px 0px 0px inset | a.inline-flex.box-border 87.0x32.0 bg #f1f1ee border T:1px solid #dadad7 / R:1px solid #dadad7 / B:1px solid #dadad7 / L:1px solid #dadad7 r 6px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.4 0px 1px 0px 0px inset, #181916 @ 0.02 0px 2px 1px 0px, #181916 @ 0.1 0px -1px 0px 0px inset | a.inline-flex.box-border 87.0x32.0 bg #f8f8f6 border T:1px solid #dadad7 / R:1px solid #dadad7 / B:1px solid #dadad7 / L:1px solid #dadad7 r 6px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #181916 @ 0.02 0px 2px 1px 0px, #181916 @ 0.1 0px -1px 0px 0px inset outline 2px solid #f35820 offset 2px | a.inline-flex.box-border 87.0x32.0 bg #e4e5e1 border T:1px solid #dadad7 / R:1px solid #dadad7 / B:1px solid #dadad7 / L:1px solid #dadad7 r 6px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.4 0px 1px 0px 0px inset, #181916 @ 0.02 0px 2px 1px 0px, #181916 @ 0.1 0px -1px 0px 0px inset |
+| Ancestor paint | 1 up div.m-2.flex-1 bg #f8f8f6 shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff 0px 1px 0px 0px inset, #181916 @ 0.04 0px 1px 3px 0px, #181916 @ 0.08 0px 1px 2px -1px | = | = | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
 Crops: `plan-cta-default.png`, `plan-cta-hover.png`, `plan-cta-focus-visible.png`, `plan-cta-pressed.png`.
@@ -1194,28 +1194,27 @@ Crops: `res-h1-default.png`.
 
 #### res-card
 
-Resource card. A resource card on the /resources index; measured, never followed.
+Resource card. A resource card on the /resources index — an anchor holding a thumbnail and a kicker label (ARTICLE/TUTORIAL/..., painted by text-transform); measured, never followed.
 
-Page: resources. Selector: `resources card`. States: default, hover.
+Page: resources. Selector: `resources card link`. States: default, hover.
 
 | Property | default | hover |
 |---|---|---|
-| Size (w x h) | 95.73 x 16 | = |
+| Size (w x h) | 296 x 390.97 | = |
 | Padding | 0px | = |
-| Gap | normal 5px | = |
-| Border | none | = |
-| Radius | 0px | = |
-| Background | transparent | = |
-| Background image | linear-gradient(94.48deg, #f5614b, #f5614b 0.01%, #fa7545) | = |
-| Box shadow | none | = |
+| Gap | 24px | = |
+| Border | 1px solid #e8e8e8 | 1px solid #000000 @ 0 |
+| Radius | 6px | = |
+| Background | #ffffff | = |
+| Box shadow | #d1d1d1 @ 0.15 0px 2px 4px 0px | #141415 @ 0.02 0px 100px 80px 0px, #141415 @ 0.02 0px 42px 33px 0px, #141415 @ 0.03 0px 22px 18px 0px, #141415 @ 0.03 0px 12px 10px 0px, #141415 @ 0.04 0px 7px 6px 0px, #737373 @ 0.15 0px 0px 1px 0px, #141415 @ 0.02 0px 3px 2px 0px |
 | Outline | none | = |
-| Font | JetBrains Mono 16px/16px 500 | = |
-| Letter spacing | -0.16px | = |
+| Font | Inter 16px/24px 400 | = |
+| Letter spacing | normal | = |
 | Colour | #141415 | = |
-| Transition | none | = |
+| Text node | span.RelatedResourcesSection-module--orangeLabel--64ee2: JetBrains Mono 11px/16px 400, #f5614b | = |
+| Transition | box-shadow, border 0.25s ease | = |
 | Cursor | pointer | = |
-| Icon | 12 x 11, colour #141415 | = |
-| Painted layers | a.RelatedResourcesSection-module--viewAll--9b098 95.7x16.0 image linear-gradient(94.48deg, #f5614b, #f5614b 0.01%, #fa7545) | = |
+| Painted layers | a.RelatedResourcesSection-module--card--2d030 296.0x391.0 bg #ffffff border T:1px solid #e8e8e8 / R:1px solid #e8e8e8 / B:1px solid #e8e8e8 / L:1px solid #e8e8e8 r 6px shadow #d1d1d1 @ 0.15 0px 2px 4px 0px; div 294.0x172.8 bg #381808; span.RelatedResourcesSection-module--orangeLabel--64ee2 65.0x24.0 image linear-gradient(94deg, #f5614b @ 0.2, #f5614b @ 0.2 0.01%, #fa7545 @ 0.2) r 4px | a.RelatedResourcesSection-module--card--2d030 296.0x391.0 bg #ffffff border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 6px shadow #141415 @ 0.02 0px 100px 80px 0px, #141415 @ 0.02 0px 42px 33px 0px, #141415 @ 0.03 0px 22px 18px 0px, #141415 @ 0.03 0px 12px 10px 0px, #141415 @ 0.04 0px 7px 6px 0px, #737373 @ 0.15 0px 0px 1px 0px, #141415 @ 0.02 0px 3px 2px 0px; div 294.0x172.8 bg #381808; span.RelatedResourcesSection-module--orangeLabel--64ee2 65.0x24.0 image linear-gradient(94deg, #f5614b @ 0.2, #f5614b @ 0.2 0.01%, #fa7545 @ 0.2) r 4px |
 | How | at rest | mouse hover |
 
 Crops: `res-card-default.png`, `res-card-hover.png`.
@@ -1506,29 +1505,29 @@ Crops: `docs-code-default.png`.
 
 #### login-panel
 
-Login panel. The dashboard-shell sign-in card on dashboard.fingerprint.com/login: "Log In" with Google/GitHub/Microsoft SSO and "Continue with email", over a decorative product mock.
+Login panel. The dashboard-shell sign-in card on dashboard.fingerprint.com/login — the elevated MuiPaper card holding "Log In", the Google/GitHub/Microsoft SSO buttons and "Continue with email" — not the full-page main behind it.
 
-Page: login. Selector: `login card`. States: default.
+Page: login. Selector: `login .MuiPaper-root card`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 1440 x 900 |
-| Padding | 0px |
-| Border | none |
-| Radius | 0px |
-| Background | #fafafa |
-| Box shadow | none |
+| Size (w x h) | 384 x 352 |
+| Padding | 24px |
+| Border | 1px solid #e4e5e1 |
+| Radius | 4px |
+| Background | #ffffff |
+| Box shadow | #000000 @ 0.08 0px 3px 15px 0px |
 | Outline | none |
 | Font | Inter 14px/20px 400 |
 | Letter spacing | -0.084px |
 | Colour | #171816 |
-| Text node | span: Inter 12px/20px 500, #171816, ls -0.084px |
-| Transition | none |
-| Icon | 16 x 16, colour #171816, fill #6b6c6a |
-| Painted layers | main.Yc8g_G_container 1440.0x900.0 bg #fafafa; div.CMHKlW_sidebar 224.0x900.0 bg #f2f2f2 border R:1px solid #000000 @ 0.08; div.CMHKlW_select 199.0x38.0 bg #ffffff border T:1px solid #000000 @ 0.08 / R:1px solid #000000 @ 0.08 / B:1px solid #000000 @ 0.08 / L:1px solid #000000 @ 0.08 r 4px; li.CMHKlW_sidebarItem.CMHKlW_selected 199.0x32.0 bg #ffece5 r 4px; button.CMHKlW_buttonFeedback.CMHKlW_disabled 129.8x36.0 bg #ffffff r 9999px; button.CMHKlW_buttonQuestion.CMHKlW_disabled 32.0x36.0 bg #ffffff r 9999px |
+| Text node | h1.text-gray-1000.font-medium: Inter 20px/28px 500, #171816, ls -0.34px |
+| Transition | box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1) |
+| Icon | 16 x 17, colour #484946, fill #000000 |
+| Painted layers | div.MuiPaper-root.MuiPaper-elevation 384.0x352.0 bg #ffffff border T:1px solid #e4e5e1 / R:1px solid #e4e5e1 / B:1px solid #e4e5e1 / L:1px solid #e4e5e1 r 4px shadow #000000 @ 0.08 0px 3px 15px 0px; button.relative.select-none 334.0x36.0 bg #ffffff border T:1px solid #dadad7 / R:1px solid #dadad7 / B:1px solid #dadad7 / L:1px solid #dadad7 r 6px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.2 0px 1px 0px 0px inset, #000000 @ 0.02 0px -1px 0px 0px inset, #171816 @ 0.03 0px 1px 2px 0px; button.relative.select-none 334.0x36.0 bg #ffffff border T:1px solid #dadad7 / R:1px solid #dadad7 / B:1px solid #dadad7 / L:1px solid #dadad7 r 6px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.2 0px 1px 0px 0px inset, #000000 @ 0.02 0px -1px 0px 0px inset, #171816 @ 0.03 0px 1px 2px 0px; button.relative.select-none 334.0x36.0 bg #ffffff border T:1px solid #dadad7 / R:1px solid #dadad7 / B:1px solid #dadad7 / L:1px solid #dadad7 r 6px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #ffffff @ 0.2 0px 1px 0px 0px inset, #000000 @ 0.02 0px -1px 0px 0px inset, #171816 @ 0.03 0px 1px 2px 0px; div::before.MuiDivider-root.MuiDivider-fullWidth 149.078pxx1px border T:1px solid #f2f2f2; div::after.MuiDivider-root.MuiDivider-fullWidth 149.078pxx1px border T:1px solid #f2f2f2 |
 | How | at rest |
 
-Crops: none.
+Crops: `login-panel-default.png`.
 
 #### login-google
 
@@ -1642,26 +1641,26 @@ Crops: `login-signup-link-default.png`, `login-signup-link-hover.png`, `login-si
 
 #### signup-panel
 
-Signup panel. The dashboard-shell sign-up card on dashboard.fingerprint.com/signup.
+Signup panel. The dashboard-shell sign-up card on dashboard.fingerprint.com/signup — the elevated MuiPaper card holding "Sign up" and the SSO/email controls, not the full-page main behind it.
 
-Page: signup. Selector: `signup card`. States: default.
+Page: signup. Selector: `signup .MuiPaper-root card`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 1440 x 900 |
-| Padding | 0px |
-| Border | none |
-| Radius | 0px |
-| Background | #fafafa |
-| Box shadow | none |
+| Size (w x h) | 384 x 302 |
+| Padding | 24px |
+| Border | 1px solid #e4e5e1 |
+| Radius | 4px |
+| Background | #ffffff |
+| Box shadow | #171816 @ 0.03 0px 1px 2px 0px |
 | Outline | none |
 | Font | Inter 14px/20px 400 |
 | Letter spacing | -0.084px |
 | Colour | #171816 |
-| Text node | span: Inter 12px/20px 500, #171816, ls -0.084px |
-| Transition | none |
-| Icon | 16 x 16, colour #171816, fill #6b6c6a |
-| Painted layers | main.Yc8g_G_container 1440.0x900.0 bg #fafafa; div.CMHKlW_sidebar 224.0x900.0 bg #f2f2f2 border R:1px solid #000000 @ 0.08; div.CMHKlW_select 199.0x38.0 bg #ffffff border T:1px solid #000000 @ 0.08 / R:1px solid #000000 @ 0.08 / B:1px solid #000000 @ 0.08 / L:1px solid #000000 @ 0.08 r 4px; li.CMHKlW_sidebarItem.CMHKlW_selected 199.0x32.0 bg #ffece5 r 4px; button.CMHKlW_buttonFeedback.CMHKlW_disabled 129.8x36.0 bg #ffffff r 9999px; button.CMHKlW_buttonQuestion.CMHKlW_disabled 32.0x36.0 bg #ffffff r 9999px |
+| Text node | h1.text-gray-1000.font-medium: Inter 20px/28px 500, #171816, ls -0.34px |
+| Transition | box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1) |
+| Icon | 16 x 17, colour #484946 |
+| Painted layers | div.MuiPaper-root.MuiPaper-elevation 384.0x302.0 bg #ffffff border T:1px solid #e4e5e1 / R:1px solid #e4e5e1 / B:1px solid #e4e5e1 / L:1px solid #e4e5e1 r 4px shadow #171816 @ 0.03 0px 1px 2px 0px; button.relative.select-none 334.0x36.0 border T:1px solid #dadad7 / R:1px solid #dadad7 / B:1px solid #dadad7 / L:1px solid #dadad7 r 6px; button.relative.select-none 334.0x36.0 border T:1px solid #dadad7 / R:1px solid #dadad7 / B:1px solid #dadad7 / L:1px solid #dadad7 r 6px; hr._0kLbOq_separator 334.0x1.0 bg #f2f2f2; span 35.8x26.0 bg #ffffff; button.relative.select-none 334.0x36.0 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 6px |
 | How | at rest |
 
 Crops: `signup-panel-default.png`.

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-15T18:43:33.888Z",
+  "capturedAt": "2026-11-15T20:37:13.881Z",
   "screenshot": "docs-home-light-theme-dark.png",
   "sanitizedSourceUrl": "https://docs.fingerprint.com/",
   "requested": {
@@ -19,7 +19,9 @@
     "innerHeight": 900,
     "devicePixelRatio": 1,
     "theme": {
-      "classes": [],
+      "classes": [
+        "dark"
+      ],
       "attributes": {},
       "colorScheme": "light"
     },

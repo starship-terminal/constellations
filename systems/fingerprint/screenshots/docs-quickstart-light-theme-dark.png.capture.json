@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-15T18:44:05.325Z",
+  "capturedAt": "2026-11-15T20:35:21.968Z",
   "screenshot": "docs-quickstart-light-theme-dark.png",
   "sanitizedSourceUrl": "https://docs.fingerprint.com/docs/quick-start-guide",
   "requested": {
@@ -20,10 +20,12 @@
     "devicePixelRatio": 1,
     "theme": {
       "classes": [
-        "light"
+        "dark"
       ],
-      "attributes": {},
-      "colorScheme": "light"
+      "attributes": {
+        "data-theme-preference": "dark"
+      },
+      "colorScheme": "dark"
     },
     "visualViewport": {
       "width": 1440,

@@ -8,7 +8,7 @@ How to read an entry:
 
 - A colour is its value followed by the palette token in [tokens.json](tokens.json) with the same value, when there is one. Text is written family size/line-height weight, then its colour, for example `Inter 16/20.8 400, #000000`, and is read from the first text node inside the component.
 - The state table has one row per state that differs. The first row lists every value; later rows list only what changes. A state with the same values as the first is named in its label, for example "default (same: focus-visible)". When the root paints nothing, "Child layers" names the first nodes inside it that do.
-- Crops are images of the component read from the live page, in [components/crops/](components/crops) (186 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
+- Crops are images of the component read from the live page, in [components/crops/](components/crops) (187 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
 
 ## Discovery list
 
@@ -79,17 +79,18 @@ Values that apply across entries, from the measurement files.
 | 0.2s | `ease` | all, border-color, box-shadow, color, opacity | cs-card, demo-analyze, demo-signal, demo-tab |
 | 0.25s | `cubic-bezier(0, 0, 0.2, 1)` | background, outline | nav-menu-item |
 | 0.25s | `cubic-bezier(0.4, 0, 0.2, 1)` | --tw-gradient-from, --tw-gradient-to, --tw-gradient-via, background-color, border-color, box-shadow, color, fill, opacity, outline-color, stroke, text-decoration-color | contact-submit, m-cta, nav-dropdown-btn, nav-pricing, plan-cta |
-| 0.25s | `ease` | background-color, border, color, opacity | blog-subscribe-btn, demo-login, demo-order |
+| 0.25s | `ease` | background-color, border, box-shadow, color, opacity | blog-subscribe-btn, demo-login, demo-order, res-card |
+| 0.3s | `cubic-bezier(0.4, 0, 0.2, 1)` | box-shadow | login-panel, signup-panel |
 
 **Card shapes.** Default-state values; the entries hold the states.
 
 | Card | Size | Border | Radius | Background | Shadow | Padding |
 |---|---|---|---|---|---|---|
 | [Product dropdown panel](#product-dropdown-panel) | 1288 x 262 | - | - | transparent | none | 0 |
-| [Plan card](#plan-card) | 1440 x 797.84 | B: 1px dashed #e4e5e1 `light.theme.border.default` | - | #fafaf8 `light.surface.planCardBg` | rgba(24, 25, 22, 0.06) 0px 1px 2px 0px inset | 0 |
+| [Plan card](#plan-card) | 329.44 x 461.25 | 1px solid #e4e5e1 `light.theme.border.default` | 16px | #f8f8f6 `core.color.gray.100` | #ffffff 0px 1px 0px 0px inset, rgba(24, 25, 22, 0.04) 0px 1px 3px 0px, rgba(24, 25, 22, 0.08) 0px 1px 2px -1px | 24px |
 | [Footer](#footer) | 1440 x 516 | T: 1px solid #e8e8e8 | - | #ffffff `light.theme.ink.inverse` | none | 0 |
-| [Login panel](#login-panel) | 1440 x 900 | - | - | #fafafa | none | 0 |
-| [Signup panel](#signup-panel) | 1440 x 900 | - | - | #fafafa | none | 0 |
+| [Login panel](#login-panel) | 384 x 352 | 1px solid #e4e5e1 `light.theme.border.default` | 4px | #ffffff `light.theme.ink.inverse` | rgba(0, 0, 0, 0.08) 0px 3px 15px 0px | 24px |
+| [Signup panel](#signup-panel) | 384 x 302 | 1px solid #e4e5e1 `light.theme.border.default` | 4px | #ffffff `light.theme.ink.inverse` | rgba(23, 24, 22, 0.03) 0px 1px 2px 0px | 24px |
 | [Mobile nav overlay](#mobile-nav-overlay) | 350 x 812 | - | - | transparent | none | 0 |
 
 ## Components
@@ -129,7 +130,7 @@ The dropdown panel opened by the "Product" trigger (Device Intelligence, Smart S
 
 **Values (default).** size 1288 x 262; background transparent; text Inter-c0aaf1024c6c51d7 12/16 400, #a0a09d `light.form.placeholder`; icon 14 x 14, #000000 `light.theme.ink.default`; layers div.relative.overflow-hidden 854.0x258.0 rgb(250, 250, 248) rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(119, 54, 28, 0.2) 0px 0.5px 0.5px 0px 1px solid rgba(228, 229, 225, 0.8) offset 0px 16px; div.flex.flex-col 846.0x250.4 rgb(255, 255, 255) T:1px solid rgb(217, 217, 214) / R:1px solid rgb(217, 217, 2.
 
-Child layers that carry the look: div 854x258 background #fafaf8 `light.surface.planCardBg` radius 16px shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(119, 54, 28, 0.2) 0px 0.5px 0.5px 0px; div 846x250.4 background #ffffff `light.theme.ink.inverse` border 1px solid #d9d9d6 radius 12px shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(255, 255, 255, 0.4) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.04) 0px -2px 0px 0px inset; a 280x58.8 radius 8px.
+Child layers that carry the look: div 854x258 background #fafaf8 radius 16px shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(119, 54, 28, 0.2) 0px 0.5px 0.5px 0px; div 846x250.4 background #ffffff `light.theme.ink.inverse` border 1px solid #d9d9d6 radius 12px shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(255, 255, 255, 0.4) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.04) 0px -2px 0px 0px inset; a 280x58.8 radius 8px.
 
 ![Product dropdown panel default](components/crops/nav-panel-default.png)
 
@@ -139,7 +140,7 @@ The "Identification" item inside the opened product dropdown; measured, never fo
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 280 x 58.8; padding 8px; radius 8px; background transparent; outline 1px solid transparent, offset 2px; text Inter-c0aaf1024c6c51d7 14/22 500, #181916 `light.form.fieldInk`; transition background 0.25s cubic-bezier(0, 0, 0.2, 1), outline 0.25s cubic-bezier(0, 0, 0.2, 1); icon 14 x 14, #000000 `light.theme.ink.default`; layers a.group/link.flex 280.0x58.8 1px solid rgba(0, 0, 0, 0) offset 2px 8px; span.flex.h-7 28.0x28.0 rgb(255, 255, 255) T:1px solid rgb(240, 240, 237) / R:1px solid rgb(240, 240, 237) / B:1px solid rgb(240, 240, 237) / L:1px solid rgb(240, 240, 237) rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(24, 25, 22, 0. |
-| hover | background #fafaf8 `light.surface.planCardBg`; shadow rgba(24, 25, 22, 0.02) 0px 2px 1px 0px; outline 1px dashed #e8e8e8, offset 0px; layers none |
+| hover | background #fafaf8; shadow rgba(24, 25, 22, 0.02) 0px 2px 1px 0px; outline 1px dashed #e8e8e8, offset 0px; layers none |
 
 Child layers that carry the look: a 280x58.8 radius 8px; span 28x28 background #ffffff `light.theme.ink.inverse` image linear-gradient(301deg, rgba(72, 73, 70, 0.02) 9.55%, rgba(110, 111, 108, 0.02) 67.28%) border 1px solid #f0f0ed radius 8px shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(24, 25, 22, 0.06) 0px 1px 2px 0px.
 
@@ -169,7 +170,7 @@ The "Login" header link to dashboard.fingerprint.com/login; measured, never foll
 ![Login link default](components/crops/nav-login-default.png) ![Login link hover](components/crops/nav-login-hover.png) ![Login link focus-visible](components/crops/nav-login-focus-visible.png) ![Login link pressed](components/crops/nav-login-pressed.png)
 
 #### Header CTA
-The dark "Get Started" header pill; links to dashboard.fingerprint.com/signup, measured never followed. Read as `nav-cta` on the home page.
+The orange "Get Started" header pill (the brand-primary fill); links to dashboard.fingerprint.com/signup, measured never followed. Read as `nav-cta` on the home page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -224,9 +225,9 @@ The "Install Fingerprint with AI" hero button — a local UI toggle that reveals
 ![Install button default](components/crops/install-btn-default.png) ![Install button hover](components/crops/install-btn-hover.png) ![Install button focus-visible](components/crops/install-btn-focus-visible.png) ![Install button pressed](components/crops/install-btn-pressed.png)
 
 #### Section heading
-A marketing section heading further down the home page. Read as `section-h2` on the home page.
+A marketing section heading further down the home page ("Not all bots are bad Not all humans are good") — a display-size h2, so transient microcopy such as a widget's error heading never counts. Read as `section-h2` on the home page.
 
-**Values (default).** size 220 x 23.2; background transparent; text JetBrains Mono-c3e9177549e38394 16/23.2 500, #cf323d.
+**Values (default).** size 559 x 120; padding 16px 0px; background transparent; text Inter-c0aaf1024c6c51d7 36/44 500, #000000 `light.theme.ink.default`.
 
 ![Section heading default](components/crops/section-h2-default.png)
 
@@ -273,21 +274,21 @@ A volume tick under the slider (100K identifications); a local UI control that r
 ![Slider tick default](components/crops/price-tick-default.png) ![Slider tick hover](components/crops/price-tick-hover.png) ![Slider tick focus-visible](components/crops/price-tick-focus-visible.png) ![Slider tick pressed](components/crops/price-tick-pressed.png)
 
 #### Plan card
-A plan column on /pricing: name, price, identification allowance and its CTA. Read as `plan-card` on the pricing page.
+A plan card on /pricing — one bordered column of the three-card grid (Free/Pro/Enterprise): name, price, identification allowance and its CTA. Read as `plan-card` on the pricing page.
 
-**Values (default).** size 1440 x 797.84; border B: 1px dashed #e4e5e1 `light.theme.border.default`; background #fafaf8 `light.surface.planCardBg`; shadow rgba(24, 25, 22, 0.06) 0px 1px 2px 0px inset; text Inter-c0aaf1024c6c51d7 50/52 500, #000000 `light.theme.ink.default`; icon 12 x 10, #f35b22 `light.action.submitFill`.
+**Values (default).** size 329.44 x 461.25; padding 24px; border 1px solid #e4e5e1 `light.theme.border.default`; radius 16px; background #f8f8f6 `core.color.gray.100`; shadow #ffffff 0px 1px 0px 0px inset, rgba(24, 25, 22, 0.04) 0px 1px 3px 0px, rgba(24, 25, 22, 0.08) 0px 1px 2px -1px; text Inter-c0aaf1024c6c51d7 20/32 500, #000000 `light.theme.ink.default`; icon 12 x 10, #f35b22 `light.action.submitFill`.
 
 ![Plan card default](components/crops/plan-card-default.png)
 
 #### Plan CTA
-A plan card's "Get Started" action; measured, never followed. Read as `plan-cta` on the pricing page.
+A plan card's primary action ("Start Free" on the Free/Pro cards, "Contact Sales" on Enterprise); measured, never followed. Read as `plan-cta` on the pricing page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 110 x 37.59; padding 8px 16px; border 1px solid #bd400f `light.theme.action.primaryHover`; radius 6px; background #f35820 `light.theme.action.primary`; shadow rgba(255, 255, 255, 0.2) 0px 1px 0px 0px inset, rgba(24, 25, 22, 0.06) 0px 1px 2px 0px, rgba(24, 25, 22, 0.1) 0px -1px 0px 0px inset; text Inter-c0aaf1024c6c51d7 14/19.6 500, #ffffff `light.theme.ink.inverse`; transition background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1), color 0.25s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1) |
-| hover | background #bd400f `light.theme.action.primaryHover` |
+| default | size 87 x 32; padding 7.21px 14px; border 1px solid #dadad7 `core.color.gray.400`; radius 6px; background #f8f8f6 `core.color.gray.100`; shadow rgba(24, 25, 22, 0.02) 0px 2px 1px 0px, rgba(24, 25, 22, 0.1) 0px -1px 0px 0px inset; text Inter-c0aaf1024c6c51d7 12/15.6 500, #171816 `core.color.gray.1000`; transition background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1), color 0.25s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1) |
+| hover | background #f1f1ee `core.color.gray.200`; shadow rgba(255, 255, 255, 0.4) 0px 1px 0px 0px inset, rgba(24, 25, 22, 0.02) 0px 2px 1px 0px, rgba(24, 25, 22, 0.1) 0px -1px 0px 0px inset |
 | focus-visible | outline 2px solid #f35820 `light.theme.action.primary`, offset 2px |
-| pressed | background #bd400f `light.theme.action.primaryHover` |
+| pressed | background #e4e5e1 `light.theme.border.default`; shadow rgba(255, 255, 255, 0.4) 0px 1px 0px 0px inset, rgba(24, 25, 22, 0.02) 0px 2px 1px 0px, rgba(24, 25, 22, 0.1) 0px -1px 0px 0px inset |
 
 ![Plan CTA default](components/crops/plan-cta-default.png) ![Plan CTA hover](components/crops/plan-cta-hover.png) ![Plan CTA focus-visible](components/crops/plan-cta-focus-visible.png) ![Plan CTA pressed](components/crops/plan-cta-pressed.png)
 
@@ -362,11 +363,11 @@ The sales form's "Submit" button; its states were measured but the button was ne
 dashboard.fingerprint.com /login and /signup — the product shell's auth cards (Continue with Google/GitHub/Microsoft, 'Continue with email', 'Sign up'), a different stack that does not share the marketing token layer. Measured as forms, never opened or submitted.
 
 #### Login panel
-The dashboard-shell sign-in card on dashboard.fingerprint.com/login: "Log In" with Google/GitHub/Microsoft SSO and "Continue with email", over a decorative product mock. Read as `login-panel` on the login page.
+The dashboard-shell sign-in card on dashboard.fingerprint.com/login — the elevated MuiPaper card holding "Log In", the Google/GitHub/Microsoft SSO buttons and "Continue with email" — not the full-page main behind it. Read as `login-panel` on the login page.
 
-**Values (default).** size 1440 x 900; background #fafafa; text Inter 12/20 500, #171816 `core.color.gray.1000`; icon 16 x 16, #171816 `core.color.gray.1000`.
+**Values (default).** size 384 x 352; padding 24px; border 1px solid #e4e5e1 `light.theme.border.default`; radius 4px; background #ffffff `light.theme.ink.inverse`; shadow rgba(0, 0, 0, 0.08) 0px 3px 15px 0px; text Inter 20/28 500, #171816 `core.color.gray.1000`; transition box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 17, #484946 `core.color.gray.900`.
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Login panel default](components/crops/login-panel-default.png)
 
 #### Google SSO button
 The "Continue with Google" button; measured, never pressed. Read as `login-google` on the login page.
@@ -412,9 +413,9 @@ The "Sign up" link beside "New to Fingerprint?"; measured, never followed. Read 
 ![Sign up link default](components/crops/login-signup-link-default.png) ![Sign up link hover](components/crops/login-signup-link-hover.png) ![Sign up link focus-visible](components/crops/login-signup-link-focus-visible.png) ![Sign up link pressed](components/crops/login-signup-link-pressed.png)
 
 #### Signup panel
-The dashboard-shell sign-up card on dashboard.fingerprint.com/signup. Read as `signup-panel` on the signup page.
+The dashboard-shell sign-up card on dashboard.fingerprint.com/signup — the elevated MuiPaper card holding "Sign up" and the SSO/email controls, not the full-page main behind it. Read as `signup-panel` on the signup page.
 
-**Values (default).** size 1440 x 900; background #fafafa; text Inter 12/20 500, #171816 `core.color.gray.1000`; icon 16 x 16, #171816 `core.color.gray.1000`.
+**Values (default).** size 384 x 302; padding 24px; border 1px solid #e4e5e1 `light.theme.border.default`; radius 4px; background #ffffff `light.theme.ink.inverse`; shadow rgba(23, 24, 22, 0.03) 0px 1px 2px 0px; text Inter 20/28 500, #171816 `core.color.gray.1000`; transition box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 17, #484946 `core.color.gray.900`.
 
 ![Signup panel default](components/crops/signup-panel-default.png)
 
@@ -605,11 +606,12 @@ The /resources resource-center masthead. Read as `res-h1` on the resources page.
 ![Resources headline default](components/crops/res-h1-default.png)
 
 #### Resource card
-A resource card on the /resources index; measured, never followed. Read as `res-card` on the resources page.
+A resource card on the /resources index — an anchor holding a thumbnail and a kicker label (ARTICLE/TUTORIAL/..., painted by text-transform); measured, never followed. Read as `res-card` on the resources page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 95.73 x 16; background transparent; image linear-gradient(94.48deg, #f5614b, #f5614b 0.01%, #fa7545); text JetBrains Mono 16/16 500, #141415; icon 12 x 11, #141415 |
+| default | size 296 x 390.97; border 1px solid #e8e8e8; radius 6px; background #ffffff `light.theme.ink.inverse`; shadow rgba(209, 209, 209, 0.15) 0px 2px 4px 0px; text JetBrains Mono 11/16 400, #f5614b; transition box-shadow 0.25s ease, border 0.25s ease |
+| hover | border 1px solid transparent; shadow rgba(20, 20, 21, 0.02) 0px 100px 80px 0px, rgba(20, 20, 21, 0.02) 0px 42px 33px 0px, rgba(20, 20, 21, 0.03) 0px 22px 18px 0px, rgba(20, 20, 21, 0.03) 0px 12px 10px 0px, rgba(20, 20, 21, 0.04) 0px 7px 6px 0px, rgba(115, 115, 115, 0.15) 0px 0px 1px 0px, rgba(20, 20, 21, 0.02) 0px 3px 2px 0px |
 
 ![Resource card default](components/crops/res-card-default.png) ![Resource card hover](components/crops/res-card-hover.png)
 

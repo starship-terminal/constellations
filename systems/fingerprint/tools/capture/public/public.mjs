@@ -96,26 +96,66 @@ async function navMenu(p, S, name) {
   await wait(p, 600);
 }
 
-// The docs site's theme toggle: the Mintlify colour-mode control. Switched once
-// for the dark shots, then switched back — a local UI preference toggle.
+// The docs site's theme toggle. The Mintlify article pages carry a
+// "Change theme preference" menu trigger (aria-haspopup="menu") whose
+// Light/Dark/System items repoint data-theme-preference AND repaint the
+// page (the html class flips light/dark and color-scheme follows); the
+// docs landing page carries a plain "Toggle dark mode" button that adds
+// .dark to <html> and repaints the body instead. Success is the painted
+// theme, not the attribute alone: a dark shot is saved only when the page
+// itself reports dark (dark class, dark color-scheme, or a dark-painted
+// body), so a switch that never repaints can never publish a light page
+// as dark evidence. Switched once for the dark shots, then switched back
+// — a local UI preference toggle.
 async function docsTheme(p, want) {
-  const now = await p.evaluate(() => document.documentElement.getAttribute('data-theme-preference'));
-  if (now === want) return true;
-  const btn = p.locator('button[aria-label*="theme" i], button[aria-label*="dark" i], button[aria-label*="light" i], button[aria-label*="color mode" i], button[aria-label*="Toggle" i]').filter({ visible: true }).first();
-  if (await btn.count()) {
-    for (let i = 0; i < 4; i++) {
-      await btn.click({ timeout: 4000 }).catch(() => {});
+  const painted = () => p.evaluate(() => {
+    const bg = getComputedStyle(document.body).backgroundColor;
+    const m = /rgba?\(([\d.]+),\s*([\d.]+),\s*([\d.]+)(?:,\s*([\d.]+))?\)/.exec(bg || '');
+    const bodyDark = m && !(m[4] !== undefined && +m[4] === 0)
+      ? (0.2126 * +m[1] + 0.7152 * +m[2] + 0.0722 * +m[3]) < 128 : null;
+    return {
+      pref: document.documentElement.getAttribute('data-theme-preference'),
+      dark: document.documentElement.classList.contains('dark'),
+      light: document.documentElement.classList.contains('light'),
+      scheme: getComputedStyle(document.documentElement).colorScheme,
+      bodyDark,
+    };
+  }).catch(() => ({}));
+  const reached = async () => {
+    const s = await painted();
+    return want === 'dark'
+      ? (s.dark || s.scheme === 'dark' || s.bodyDark === true) && s.light !== true
+      : !s.dark && s.scheme !== 'dark' && s.bodyDark !== true;
+  };
+  if (await reached()) return true;
+  const trigger = p.locator('button#theme-preference-menu-trigger, button[aria-label*="theme preference" i], button[aria-label*="dark mode" i], button[aria-label*="theme" i], button[aria-label*="color mode" i]').filter({ visible: true }).first();
+  const item = () => p.locator('[role="menuitem"], [role="option"]').filter({ hasText: new RegExp(`switch to ${want} theme|^${want}$`, 'i') }).filter({ visible: true }).first();
+  if (await trigger.count()) {
+    for (let i = 0; i < 3; i++) {
+      await trigger.click({ timeout: 4000 }).catch(() => {});
       await wait(p, 700);
-      const cur = await p.evaluate(() => document.documentElement.getAttribute('data-theme-preference'));
-      if (cur === want) return true;
+      // A menu trigger opens Light/Dark/System items; a direct toggle has
+      // already flipped the theme by the time no menu appears.
+      if (await item().count()) await item().click({ timeout: 4000 }).catch(() => {});
+      await wait(p, 900);
+      if (await reached()) return true;
+      await p.keyboard.press('Escape').catch(() => {});
+      await wait(p, 300);
     }
   }
-  // Fallback: flip the attribute the way the site's own toggle does
-  // (localStorage-persisted preference; set it and reload) — recorded as a
-  // reconstruction if reached.
-  await p.evaluate((w) => { document.documentElement.setAttribute('data-theme-preference', w); try { localStorage.setItem('theme', w); } catch {} }, want);
-  await wait(p, 800);
-  return (await p.evaluate(() => document.documentElement.getAttribute('data-theme-preference'))) === want;
+  // Fallback: persist the preference the way the site's own control does —
+  // the localStorage choice plus the data-theme-preference attribute — and
+  // reload so the site's own boot script applies it. Verification still
+  // checks the painted state, never the values we just set; a page that
+  // cannot be forced dark returns false and the caller skips the shot
+  // rather than publishing a light page as dark evidence.
+  await p.evaluate((w) => {
+    try { localStorage.setItem('theme', w); localStorage.setItem('isDarkMode', w); } catch {}
+    document.documentElement.setAttribute('data-theme-preference', w);
+  }, want);
+  await p.reload({ waitUntil: 'domcontentloaded' }).catch(() => {});
+  await wait(p, 6000);
+  return await reached();
 }
 
 const BOTH = async (p, S) => { await S.view('default'); await S.full(); };
@@ -152,8 +192,11 @@ const desktop = {
       // The shot keeps the -light page prefix and takes the state name
       // 'theme-dark': the docs' own dark preference paints a real dark
       // surface on the same page, and the name records that it is a state,
-      // not a second page load.
+      // not a second page load. A page that never paints dark takes no
+      // shot: an earlier capture keeps its own date rather than being
+      // republished as fresh evidence.
       if (await docsTheme(p, 'dark')) { await S.view('theme-dark'); await docsTheme(p, 'light'); }
+      else log('  ! docs dark: page never painted a dark theme; theme-dark shot skipped, earlier evidence untouched');
     });
   } },
   'docs-quickstart': { url: DOCS_BASE + '/docs/quick-start-guide', wait: 8000, theme: 'light', run: async (p, S) => {
@@ -161,6 +204,7 @@ const desktop = {
     await S.full();
     await step('docs dark', async () => {
       if (await docsTheme(p, 'dark')) { await S.view('theme-dark'); await docsTheme(p, 'light'); }
+      else log('  ! docs dark: page never painted a dark theme; theme-dark shot skipped, earlier evidence untouched');
     });
   } },
   'docs-signals': { url: DOCS_BASE + '/docs/smart-signals-introduction', wait: 8000, theme: 'light', run: BOTH },

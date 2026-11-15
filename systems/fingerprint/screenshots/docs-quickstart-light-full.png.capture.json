@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-15T18:43:57.574Z",
+  "capturedAt": "2026-11-15T20:35:16.183Z",
   "screenshot": "docs-quickstart-light-full.png",
   "sanitizedSourceUrl": "https://docs.fingerprint.com/docs/quick-start-guide",
   "requested": {
@@ -22,7 +22,9 @@
       "classes": [
         "light"
       ],
-      "attributes": {},
+      "attributes": {
+        "data-theme-preference": "light"
+      },
       "colorScheme": "light"
     },
     "visualViewport": {

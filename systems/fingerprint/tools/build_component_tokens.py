@@ -187,13 +187,24 @@ def norm_len(v):
     return f"{float(m.group(1)):f}".rstrip("0").rstrip(".") + m.group(2)
 
 
+# A font-relative length resolves against the element's own font size; the
+# empty probe that produced raw/css-vars.json read it through a fixed-size
+# box instead (.005em came back 0.078125px — at the declared 11px text-2xs
+# step it is 0.055px). Keep the declared unit rather than publish a fixed px
+# that no longer scales.
+FONT_REL = re.compile(r"-?(?:\d+\.?\d*|\.\d+)(em|ex|ch|cap|ic|lh)")
+
+
 def decl(name, ty="dimension"):
     v = declared(name)
     desc = f"The declared `{name}`."
+    raw = (RL.get(name) or {}).get("raw")
+    if ty == "dimension" and isinstance(raw, str) and FONT_REL.fullmatch(raw.strip()):
+        return lit(raw.strip(), "other", f"{DECL_SRC}: {name}",
+                   f"The declared `{name}` — `{raw.strip()}`; font-relative, so it scales with the text it spaces.")
     if ty == "dimension":
         nv = norm_len(v)
         if nv != v:
-            raw = (RL.get(name) or {}).get("raw")
             desc = f"The declared `{name}` — `{raw}`, which Chromium resolves to {nv}."
             v = nv
         if not re.fullmatch(r"-?\d+(\.\d+)?(px|rem)", str(v).strip()):
@@ -494,9 +505,9 @@ for key, comp, state, prop, group, desc in [
     ("navInk", "nav-pricing", "default", "color", "text",
      "The header link ink."),
     ("ctaFill", "nav-cta", "default", "backgroundColor", "action",
-     "The dark fill of the 'Get Started' header pill."),
+     "The orange fill of the 'Get Started' header pill — the brand primary."),
     ("ctaInk", "nav-cta", "default", "color", "action",
-     "The text on the dark 'Get Started' pill."),
+     "The text on the orange 'Get Started' pill."),
     ("ctaHover", "nav-cta", "hover", "backgroundColor", "action",
      "The CTA pill's hover fill."),
     ("focusRing", "nav-cta", "focus-visible", "outlineColor", "border",

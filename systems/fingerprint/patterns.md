@@ -12,7 +12,7 @@ The home page paints the light `:root` roles on the white `background.page` fiel
 
 ## Pricing
 
-/pricing leads with the identification-volume range slider (`component.slider-width`, 20K to 1M+ ticks) that re-prices the plan grid — measured at rest, never dragged. Plan cards are bordered columns (`component.plan-card-width`, `surface.planCardBg` #fafaf8, dashed `#e4e5e1` separators, `theme.border.default`) with orange plan CTAs; a "Compare all features" control and the feature-group accordions (`feature-acc`) expand the comparison table, and FAQ rows (`faq-acc`) accordion the same way — all local UI toggles.
+/pricing leads with the identification-volume range slider (`component.slider-width`, 20K to 1M+ ticks) that re-prices the plan grid — measured at rest, never dragged. Plan cards are 329px bordered columns (`component.plan-card-width`, `surface.planCardBg` → `color.gray.100` #f8f8f6, a solid `#e4e5e1` `theme.border.default` hairline at `radius.card` 16px, dashed separators between the columns) whose CTAs read "Start Free" (a ghost button on the Free card) and "Contact Sales" (Enterprise); a "Compare all features" control and the feature-group accordions (`feature-acc`) expand the comparison table, and FAQ rows (`faq-acc`) accordion the same way — all local UI toggles.
 
 ## Contact form
 
@@ -28,7 +28,7 @@ docs.fingerprint.com is a different stack — Mintlify — with its own token la
 
 ## The auth shell
 
-dashboard.fingerprint.com /login and /signup are the product shell — a different stack again that does not share the marketing `--fpds-*`/`--color-*` layer. Its measured values live under `component.productShell.*`: a centred auth card (`productShell.login-panel-width`, `component.login-panel` 1440 x 900 centred), the white "Continue with Google/GitHub" buttons (`productShell.google-btn-fill`/`google-btn-ink`), the "Continue with email" / "Sign up" submit (`productShell.email-btn-fill`) and a "Login" link back to the marketing site. The buttons were measured, never pressed; the e-mail form was never opened or submitted.
+dashboard.fingerprint.com /login and /signup are the product shell — a different stack again that does not share the marketing `--fpds-*`/`--color-*` layer. Its measured values live under `component.productShell.*`: a centred elevated auth card (`productShell.login-panel-width` 384px, the MuiPaper card), the white "Continue with Google/GitHub" buttons (`productShell.google-btn-fill`/`google-btn-ink`), the "Continue with email" / "Sign up" submit (`productShell.email-btn-fill`) and a "Login" link back to the marketing site. The buttons were measured, never pressed; the e-mail form was never opened or submitted.
 
 ## Mobile (390px)
 

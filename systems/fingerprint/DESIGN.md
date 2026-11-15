@@ -34,7 +34,7 @@ colors:
   form-fieldBg: "#ffffff"
   form-fieldInk: "#181916"
   form-placeholder: "#a0a09d"
-  surface-planCardBg: "#fafaf8"
+  surface-planCardBg: "#f8f8f6"
   surface-pillBg: "rgba(0, 0, 0, 0)"
   background-page: "#ffffff"
 rounded:
@@ -48,7 +48,7 @@ rounded:
   xs: "2px"
   cta: "6px"
   navLink: "4px"
-  card: "0px"
+  card: "16px"
   field: "6px"
   dropdown: "0px"
 spacing:
@@ -133,7 +133,7 @@ Shadows, resolved to CSS:
 
 ## Shapes
 
-Corner radii from `core.radius`: `default` 8px, `2xl` 16px, `3xl` 24px, `lg` 8px, `md` 6px, `sm` 4px, `xl` 12px, `xs` 2px, `cta` 6px, `navLink` 4px, `card` 0px, `field` 6px, `dropdown` 0px.
+Corner radii from `core.radius`: `default` 8px, `2xl` 16px, `3xl` 24px, `lg` 8px, `md` 6px, `sm` 4px, `xl` 12px, `xs` 2px, `cta` 6px, `navLink` 4px, `card` 16px, `field` 6px, `dropdown` 0px.
 
 ## Components
 
@@ -163,7 +163,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 1. **Do let the declared palette carry the colour.** Fingerprint ships ten-step ramps for nine hues plus its semantic triplets: use `core.color.*` and the `light.theme.*` roles rather than restating hex. See [tokens.json](tokens.json) and [home-light-default](screenshots/home-light-default.png).
 2. **Do spend the accent on the action.** The orange `#f35820` (`light.theme.action.primary`) belongs to primary CTAs, focus rings and active marks — hover deepens to `#bd400f` (`theme.action.primaryHover`), pressed to `#78361c` (`primaryActive`). Secondary actions stay ink-on-white. See [nav-cta](components/crops/nav-cta-default.png) and [plan-cta](components/crops/plan-cta-default.png).
-3. **Do keep surfaces near-white.** The page field is `#ffffff`; raised surfaces and plan cards sit at `#fbfbf9`/`#fafaf8` (`theme.surface.raised`, `surface.planCardBg`) behind a `#e4e5e1` hairline — never grey fills. See [plan-card](components/crops/plan-card-default.png).
+3. **Do keep surfaces near-white.** The page field is `#ffffff`; raised surfaces and plan cards sit at `#fbfbf9`/`#f8f8f6` (`theme.surface.raised`, `surface.planCardBg` → `color.gray.100`) behind a `#e4e5e1` hairline — never grey fills. See [plan-card](components/crops/plan-card-default.png).
 4. **Do pair the four voices on purpose.** Inter carries UI text, Petrona the editorial display, JetBrains Mono code and signal values, Geist Pixel the pixel display. See [hero-h1](components/crops/hero-h1-default.png) and the docs code blocks.
 5. **Don't style the signed-in dashboard from this package.** The post-login product was never reached; `component.productShell.*` marks the auth-shell measurements that do not share the marketing layer. See [login-light-default](screenshots/login-light-default.png).
 6. **Don't treat the dark set as a dark theme.** The eleven `dark.syntax.*` tokens are `.dark`-scoped code-highlighting declarations no public page painted; the docs' dark preference is a different stack captured as screenshots only. See [docs-quickstart-light-theme-dark](screenshots/docs-quickstart-light-theme-dark.png).

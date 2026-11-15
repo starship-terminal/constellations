@@ -13,7 +13,7 @@ Fingerprint is worth a capture because it ships two declared token layers to the
 | [style-guide.html](style-guide.html) | One page that renders every token and drawn mocks of the chrome, plan cards and code blocks, light and dark. |
 | [components.md](components.md) | The discovery list of every page and view, one entry per component (70, 187 states) with crops and values, and the Gaps. |
 | [patterns.md](patterns.md) | How the components combine: the marketing chrome and mega-dropdowns, the hero and prompt controls, the pricing grid, the contact form, the demo surface, docs chrome and theme, the auth shell, mobile, motion and focus. |
-| [components/crops/](components/crops) | 186 element crops at 2x, named `{component}-{state}.png`. |
+| [components/crops/](components/crops) | 187 element crops at 2x, named `{component}-{state}.png`. |
 | [screenshots/](screenshots) | 61 quantised `{page}-{theme}-{state}.png` captures. Desktop 1440 x 900 at 1x; `-full` whole pages at CSS scale bounded at eight chunks; `mobile-*` shots at 390 x 844 @2x; `home-light-menu-*` the three nav dropdowns open; `docs-*-light-theme-dark` the docs' own dark preference; `/demo` live-signal regions masked (see Privacy). |
 | [raw/](raw) | The evidence: `components-computed.json` (every measurement), `measurements.md` (readable tables), `css-vars.json` (the stylesheet harvest — 918 rules, resolved custom properties in light and dark probes plus 24 @font-face rules), `component-tokens.json` (the token-tree spec). |
 | [tools/](tools) | The builders and the capture kit (see Rebuild). |
@@ -53,7 +53,7 @@ Fonts: `core.font.family.sans` is Inter-c0aaf1024c6c51d7, then 16 fallbacks; `co
 
 ### Using components
 
-Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 186 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
+Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 187 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
 
 ### Accessibility
 
@@ -133,7 +133,7 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (no standalone SV
 
 1. **Do let the declared palette carry the colour.** Fingerprint ships ten-step ramps for nine hues plus its semantic triplets: use `core.color.*` and the `light.theme.*` roles rather than restating hex. See [tokens.json](tokens.json) and [home-light-default](screenshots/home-light-default.png).
 2. **Do spend the accent on the action.** The orange `#f35820` (`light.theme.action.primary`) belongs to primary CTAs, focus rings and active marks — hover deepens to `#bd400f` (`theme.action.primaryHover`), pressed to `#78361c` (`primaryActive`). Secondary actions stay ink-on-white. See [nav-cta](components/crops/nav-cta-default.png) and [plan-cta](components/crops/plan-cta-default.png).
-3. **Do keep surfaces near-white.** The page field is `#ffffff`; raised surfaces and plan cards sit at `#fbfbf9`/`#fafaf8` (`theme.surface.raised`, `surface.planCardBg`) behind a `#e4e5e1` hairline — never grey fills. See [plan-card](components/crops/plan-card-default.png).
+3. **Do keep surfaces near-white.** The page field is `#ffffff`; raised surfaces and plan cards sit at `#fbfbf9`/`#f8f8f6` (`theme.surface.raised`, `surface.planCardBg` → `color.gray.100`) behind a `#e4e5e1` hairline — never grey fills. See [plan-card](components/crops/plan-card-default.png).
 4. **Do pair the four voices on purpose.** Inter carries UI text, Petrona the editorial display, JetBrains Mono code and signal values, Geist Pixel the pixel display. See [hero-h1](components/crops/hero-h1-default.png) and the docs code blocks.
 5. **Don't style the signed-in dashboard from this package.** The post-login product was never reached; `component.productShell.*` marks the auth-shell measurements that do not share the marketing layer. See [login-light-default](screenshots/login-light-default.png).
 6. **Don't treat the dark set as a dark theme.** The eleven `dark.syntax.*` tokens are `.dark`-scoped code-highlighting declarations no public page painted; the docs' dark preference is a different stack captured as screenshots only. See [docs-quickstart-light-theme-dark](screenshots/docs-quickstart-light-theme-dark.png).
@@ -142,13 +142,15 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (no standalone SV
 
 ## Rebuild
 
+Run from the package directory (`systems/fingerprint/`); the redact step reaches back to the repo's shared tools:
+
 ```sh
 RAW=~/.design-systems/fingerprint/raw-shots PLAYWRIGHT=<playwright index.mjs> node tools/capture/public/public.mjs   # -> RAW full-colour shots
 python3 tools/capture/quantize.py ~/.design-systems/fingerprint/raw-shots           # stitches + quantises -> screenshots/
 PLAYWRIGHT=<playwright index.mjs> node tools/capture/vars.mjs                       # raw/css-vars.json
 PLAYWRIGHT=<playwright index.mjs> node tools/capture/public/measure.mjs             # raw/components-computed.json
 PLAYWRIGHT=<playwright index.mjs> node tools/capture/public/build-measurements.mjs
-python3 tools/redact_images.py apply systems/fingerprint --rules tools/redact-rules/fingerprint.json
+python3 ../../tools/redact_images.py apply . --rules ../../tools/redact-rules/fingerprint.json
 python3 tools/build_component_tokens.py && python3 tools/build_tokens.py
 python3 tools/build_style_guide.py && python3 tools/build_components_md.py
 ```
