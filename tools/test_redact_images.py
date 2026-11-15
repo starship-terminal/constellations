@@ -361,6 +361,19 @@ class Commands(unittest.TestCase):
                 R.main(["apply", d])
             self.assertEqual(cm.exception.code, 2)
 
+    def test_unknown_option_is_rejected_not_treated_as_a_file(self):
+        with tempfile.TemporaryDirectory() as d, contextlib.redirect_stderr(io.StringIO()):
+            pkg = Path(d) / "pkg"
+            pkg.mkdir()
+            pats = Path(d) / "p.json"
+            pats.write_text(json.dumps({"replace": [["x", "y"]]}))
+            with self.assertRaises(SystemExit) as cm:
+                R.main(["check", str(pkg), "--patterns", str(pats), "--ruels", str(pats)])
+            self.assertEqual(cm.exception.code, 2)
+            with self.assertRaises(SystemExit) as cm:
+                R.main(["lines", "--potterns", str(pats)])
+            self.assertEqual(cm.exception.code, 2)
+
     def test_only_limits_deletions_too(self):
         with tempfile.TemporaryDirectory() as d:
             pkg = Path(d)
