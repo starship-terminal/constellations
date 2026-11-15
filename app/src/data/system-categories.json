@@ -886,5 +886,11 @@
     "groupId": "web-categories",
     "labels": ["Design & Media Editing", "Productivity"],
     "reason": "catalog.json describes a design tool: the marketing pages for the design editor, FigJam, Slides, Dev Mode and Make, a pricing grid, community resource grids and the login/signup app shells."
+  },
+  {
+    "referenceId": "systems:dji",
+    "groupId": "web-categories",
+    "labels": ["Electronic & Devices", "Marketplace"],
+    "reason": "catalog.json describes a consumer-drone and imaging-hardware brand site: product marketing pages, category grids, a store locator and links into the gated DJI store."
   }
 ]

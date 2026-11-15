@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 148,
-    "system_domains": 140,
-    "matched_domains": 111,
-    "missing_domains": 322,
+    "system_packages": 149,
+    "system_domains": 141,
+    "matched_domains": 112,
+    "missing_domains": 321,
     "system_domains_absent_from_catalog": 29
   },
   "matched": {
@@ -1086,6 +1086,23 @@
         }
       ]
     },
+    "dji.com": {
+      "catalog": [
+        {
+          "name": "DJI",
+          "domain": "dji.com",
+          "id": 332
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "dji",
+          "name": "DJI",
+          "url": "https://www.dji.com",
+          "name_match": true
+        }
+      ]
+    },
     "dock.us": {
       "catalog": [
         {
@@ -2113,13 +2130,6 @@
         "name": "District",
         "domain": "district.in",
         "id": 926
-      }
-    ],
-    "dji.com": [
-      {
-        "name": "DJI",
-        "domain": "dji.com",
-        "id": 332
       }
     ],
     "equals.app": [

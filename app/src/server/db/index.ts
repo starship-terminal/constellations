@@ -78,7 +78,7 @@ export async function createResearchStore(directory: string) {
     const version = Number(
       (await tx.execute("PRAGMA user_version")).rows[0].user_version,
     );
-    if (version > 8)
+    if (version > 9)
       throw new Error("Research database was created by a newer application.");
     if (version === 0) {
       for (const sql of migrations) await tx.execute(sql);
@@ -133,6 +133,15 @@ export async function createResearchStore(directory: string) {
       await seedNewCuratedCategories(tx);
       await seedNewCuratedMediaTerms(tx);
       await tx.execute("PRAGMA user_version = 8");
+    }
+    if (version < 9) {
+      // Same one-shot top-up: a store already at v8 never re-seeds, so
+      // curated rows added to the seed JSON since (the DJI package's
+      // category and media assignments) would never arrive. Idempotent;
+      // manual choices are never overwritten.
+      await seedNewCuratedCategories(tx);
+      await seedNewCuratedMediaTerms(tx);
+      await tx.execute("PRAGMA user_version = 9");
     }
     await tx.commit();
   } catch (error) {

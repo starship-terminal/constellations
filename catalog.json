@@ -12271,6 +12271,97 @@
       "layoutGaps": {
         "icons/": "no standalone SVG icon set was lifted; the Figma mark and product glyphs are visible in the crops and screenshots"
       }
+    },
+    {
+      "slug": "dji",
+      "name": "DJI",
+      "url": "https://www.dji.com",
+      "category": "e-commerce",
+      "platform": "web",
+      "goodFor": "product-marketing and hardware-brand design: a declared token layer in the v3 bundles (--grey-0..12, --black-1..8/--white-1..8 + role names, --bg-0..7, --background-0..2, --brand-1..10 with --brand-primary-*/--brand-text-* roles, --green-*/--orange-*/--red-* status scales, --spacing-xs..xl, --radius, --grid-*/--col-width/--column-count, a --zindex-* ladder and --font-*/--line-height-*), section-scoped theming (:root .light-theme / :root .dark-theme re-declare the semantic roles and sections opt in by class - nav/listings/support light, hero/product/footer dark), the #0070d5 DJI blue Store pill with a 1408px radius, atom-design Buy Now/ghost CTA pairs (60px radius, 0.3s transitions), Open Sans + PingFang SC UI text, hero-vertical-card product grids, and two header generations (legacy dui-navbar over the hero, official-site-header on inner pages) plus a separate /sg/mobile site",
+      "tags": [
+        "web",
+        "hardware",
+        "drones",
+        "marketing",
+        "e-commerce",
+        "design-tokens",
+        "section-theming",
+        "light",
+        "dark",
+        "open-sans",
+        "signed-out"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-15",
+      "access": "read-only (the /sg home, /camera-drones, /handheld, /mavic-4-pro, /support, /company, /where-to-buy/* and the /sg/mobile site are fully public signed out; the store (store.dji.com), Login/Register and checkout gate on a DJI account - an authenticated boundary never reached; the Store, Buy Now, Watch Video and search controls were measured at every paintable state, never followed or pressed)",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/dji/README.md",
+      "tokens": "systems/dji/tokens.json",
+      "styleGuide": "systems/dji/style-guide.html",
+      "preview": {
+        "cover": "systems/dji/screenshots/home-default.png",
+        "icon": "systems/dji/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.surface.footer",
+            "text": "light.text.ink",
+            "muted": "light.text.muted",
+            "accent": "light.action.primary",
+            "border": "light.border.hairline"
+          },
+          "dark": {
+            "page": "dark.surface.footer",
+            "surface": "dark.surface.footer",
+            "text": "dark.text.ink",
+            "muted": "dark.text.muted",
+            "accent": "dark.action.cta",
+            "border": "dark.border.ghost-border"
+          }
+        },
+        "fonts": [
+          "core.font.family.ui"
+        ]
+      },
+      "capture": {
+        "method": "public-web",
+        "source": "dji.com's geo-locale /sg site in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass (the phone UA redirects to the separate /sg/mobile site); computed styles and crops from the live DOM. The site declares its token layer in the v3 stylesheets and the product page's reactor bundles (165 resolved custom properties inside a .light-theme/.dark-theme section wrapper, 144 at :root), so scales are declared values and surface roles are measured computed values aliased to the declarations they match. Themes are section-scoped, not page-scoped: :root .light-theme and :root .dark-theme re-declare --primary/--bg/--border/... and sections opt in by class - both paint signed out, so both role sets are measured paint",
+        "timestamp": "2026-11-15T06:30:00Z",
+        "harness": "Devin",
+        "model": "SWE-2 High",
+        "route": "public-web",
+        "routes": [
+          "/sg",
+          "/sg/camera-drones",
+          "/sg/handheld",
+          "/sg/mavic-4-pro",
+          "/sg/support",
+          "/sg/company",
+          "/sg/where-to-buy/online-stores",
+          "mobile /sg/mobile and /sg/mavic-4-pro"
+        ],
+        "gaps": [
+          "the store (store.dji.com), Login/Register (member-service redirects) and checkout gate on a DJI account - an authenticated boundary never reached; the Store and Buy Now CTAs were measured, never followed",
+          "the nav product menus open hover mega-panels that were hovered but not walked item-by-item; panel links' own states are unmeasured",
+          "pressed states are DevTools-forced (CSS.forcePseudoState), so any script-applied mousedown state is missing",
+          "disabled, error and loading states were not observed on the public surface",
+          "the geo redirect pins the /sg (Singapore English) site; other locales' pages are the same templates unmeasured",
+          "icons: no standalone SVG set lifted this pass"
+        ],
+        "durationMin": 180,
+        "durationNote": "wall-clock across the capture session including kit adaptation from the district lineage, the stylesheet harvest (linked bundles plus the product page's reactor chunks and inline styles), screenshot and measurement passes on a headless Linux server, and the offline build"
+      },
+      "layoutGaps": {
+        "icons/": "the icon extraction pass was not run; the icons (the DJI wordmark, menu glyphs, search/account icons and footer marks) are visible in the crops and screenshots"
+      }
     }
   ]
 }

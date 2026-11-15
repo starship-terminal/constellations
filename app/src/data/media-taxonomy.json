@@ -1211,6 +1211,11 @@
       "referenceId": "systems:figma",
       "media": 229,
       "assignedMedia": 44
+    },
+    {
+      "referenceId": "systems:dji",
+      "media": 97,
+      "assignedMedia": 97
     }
   ],
   "assignments": [
@@ -275676,6 +275681,1163 @@
           "termId": "web-ui-elements:switch-toggle",
           "rule": "ui-toggle",
           "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/screenshots/company-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/screenshots/company-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/screenshots/drones-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/screenshots/drones-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/screenshots/handheld-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/screenshots/handheld-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/screenshots/home-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/screenshots/home-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/screenshots/mobile-home-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/screenshots/mobile-home-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/screenshots/mobile-product-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/screenshots/mobile-product-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/screenshots/product-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/screenshots/product-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/screenshots/stores-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/screenshots/stores-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/screenshots/support-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:support-help",
+          "rule": "page-support",
+          "reason": "Capture filename explicitly names support & help; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/screenshots/support-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:support-help",
+          "rule": "page-support",
+          "reason": "Capture filename explicitly names support & help; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/components/crops/co-h1-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/components/crops/co-lede-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/components/crops/ct-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/components/crops/ct-card-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/components/crops/ct-h1-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/components/crops/ct-subnav-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/components/crops/ct-subnav-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/components/crops/ct-subnav-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/components/crops/ct-subnav-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/components/crops/ft-bar-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/components/crops/ft-link-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/components/crops/ft-link-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/components/crops/ft-link-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/components/crops/ft-link-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/components/crops/hh-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/components/crops/hh-card-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/components/crops/hh-h1-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/components/crops/hm-buy-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/components/crops/hm-buy-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/components/crops/hm-buy-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/components/crops/hm-buy-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/components/crops/hm-learn-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/components/crops/hm-learn-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/components/crops/hm-learn-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/components/crops/hm-learn-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/components/crops/hm-slide-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/components/crops/m-bar-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/components/crops/m-cta-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/components/crops/m-cta-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/components/crops/m-cta-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/components/crops/m-cta-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/components/crops/m-menu-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/components/crops/m-menu-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/components/crops/m-menu-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/components/crops/m-menu-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/components/crops/m-tab-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/components/crops/m-tab-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/components/crops/m-tab-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/components/crops/m-tab-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/components/crops/nv-bar-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/components/crops/nv-item-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/components/crops/nv-item-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/components/crops/nv-item-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/components/crops/nv-item-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/components/crops/nv-login-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/components/crops/nv-login-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/components/crops/nv-login-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/components/crops/nv-login-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/components/crops/nv-mark-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/components/crops/nv-mark-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/components/crops/nv-mark-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/components/crops/nv-mark-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/components/crops/nv-store-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/components/crops/nv-store-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/components/crops/nv-store-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/components/crops/nv-store-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/components/crops/pd-buy-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/components/crops/pd-buy-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/components/crops/pd-buy-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/components/crops/pd-buy-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/components/crops/pd-eyebrow-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/components/crops/pd-h-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/components/crops/pd-spec-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/components/crops/pd-subnav-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/components/crops/pd-watch-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/components/crops/pd-watch-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/components/crops/pd-watch-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/components/crops/pd-watch-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/components/crops/sp-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/components/crops/sp-card-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/components/crops/sp-h1-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/components/crops/sp-search-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/components/crops/sp-search-filled.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/components/crops/sp-search-focused.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:search-field",
+          "rule": "ui-search-field",
+          "reason": "Capture filename explicitly names search field; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/components/crops/st-h1-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/components/crops/st-link-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/components/crops/st-link-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/components/crops/st-link-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:dji",
+      "mediaId": "systems/dji/components/crops/st-link-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:open-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Open Sans from systems/dji/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
         }
       ]
     }
