@@ -886,5 +886,11 @@
     "groupId": "web-categories",
     "labels": ["Design & Media Editing", "Productivity"],
     "reason": "catalog.json describes a design tool: the marketing pages for the design editor, FigJam, Slides, Dev Mode and Make, a pricing grid, community resource grids and the login/signup app shells."
+  },
+  {
+    "referenceId": "systems:flowmapp",
+    "groupId": "web-categories",
+    "labels": ["Design & Media Editing", "Productivity"],
+    "reason": "catalog.json describes a UX planning SaaS: a light Webflow marketing site, signed-out app auth forms, and published read-only sitemap/user-flow demo viewers; the editing workspace is gated."
   }
 ]
