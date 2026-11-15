@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_92 of 150 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_93 of 151 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -505,6 +505,11 @@ Access: read-only (the marketing site, the signed-out app.getfernand.com/auth/lo
 Access: signed out (every captured surface is public; the editor and every post-login surface - files, boards, Dev Mode in a file, Make projects, community profiles and publish flows, admin - is an authenticated boundary never reached; the /login, /signup, /contact and /make forms were measured and typed into then cleared, never submitted; every CTA, nav item and community card was measured, never followed; the consent layer was hidden, never answered; Cloudflare challenged the automation on /dev-mode/ and /customers/ in the first pass and retries in fresh sessions succeeded - no challenge was answered by hand; the dark theme is declared only - a complete :root[data-theme="dark"] token layer the stylesheets ship but no public page painted while captured)
 - the editor and every post-login surface (files, the canvas, Dev Mode in a file, Make projects, community profiles and publish flows, account, admin) sits behind an account - an authenticated boundary never reached; /login and /signup were measured as forms, never submitted, and Continue with Google / Use single sign-on were never followed
 - submitted states: the /contact sales form, /make prompt, blog newsletter field, community search and the login/signup fields were typed into then cleared, never sent - validation, error, loading and success states are absent rather than measured
+
+## [Fingerprint](../systems/fingerprint) — `fingerprint`
+Access: signed out (every captured surface is public; the dashboard and every post-login surface - API keys, the events explorer, playground, billing - is an authenticated boundary never reached; the /login, /signup, contact-sales, newsletter and demo fields were measured and typed into then cleared, never submitted; every CTA, SSO button, nav item and link was measured, never followed; the 'Open the chat' launcher was never opened; the docs dark theme is the Mintlify site's own preference, captured as screenshots, while the marketing site ships only a .dark-scoped syntax redeclaration and resolved identically under an emulated dark probe; /demo and the IdentifySection panels paint the capture machine's real visitor ID, IP and geolocation, masked in committed images via tools/redact-rules/fingerprint.json)
+- the dashboard and every post-login surface (API keys, events explorer, playground, billing, admin) sits behind an account - an authenticated boundary never reached; dashboard /login and /signup were measured as forms, never submitted, and Continue with Google/GitHub/Microsoft were never followed
+- submitted states: the /contact-sales form, footer and blog newsletter fields, the demo fake-checkout field and the auth cards were typed into then cleared, never sent - validation, error, loading and success states are absent rather than measured
 
 ## [FlowMapp](../systems/flowmapp) — `flowmapp`
 Access: read-only (the www.flowmapp.com marketing pages, the signed-out app.flowmapp.com/signin, /signup and /restore forms, and the public /share/projects/215285 sitemap and user-flow demo viewers are fully public; every post-login app surface - the sitemap/user-flow editors, wireframes, content, estimation, dashboards, billing - is an authenticated boundary never reached; the auth and contact forms were measured and typed into then cleared, never submitted; every link and CTA was measured, never followed; no consent banner was observed on either host)

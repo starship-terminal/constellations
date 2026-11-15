@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 150,
-    "system_domains": 142,
-    "matched_domains": 113,
-    "missing_domains": 320,
+    "system_packages": 151,
+    "system_domains": 143,
+    "matched_domains": 114,
+    "missing_domains": 319,
     "system_domains_absent_from_catalog": 29
   },
   "matched": {
@@ -1732,6 +1732,23 @@
         }
       ]
     },
+    "fingerprint.com": {
+      "catalog": [
+        {
+          "name": "Fingerprint",
+          "domain": "fingerprint.com",
+          "id": 866
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "fingerprint",
+          "name": "Fingerprint",
+          "url": "https://fingerprint.com",
+          "name_match": true
+        }
+      ]
+    },
     "flask.do": {
       "catalog": [
         {
@@ -2168,13 +2185,6 @@
         "name": "Fibery",
         "domain": "fibery.io",
         "id": 415
-      }
-    ],
-    "fingerprint.com": [
-      {
-        "name": "Fingerprint",
-        "domain": "fingerprint.com",
-        "id": 866
       }
     ],
     "fiverr.com": [
