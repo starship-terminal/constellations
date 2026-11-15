@@ -874,5 +874,11 @@
     "groupId": "web-categories",
     "labels": ["Magazines & Newspapers", "News"],
     "reason": "catalog.json describes a news aggregator and community feed (the 2025 Digg reboot): story cards with vote pills, category feeds, source profiles and ranked rails."
+  },
+{
+    "referenceId": "systems:getfernand",
+    "groupId": "web-categories",
+    "labels": ["Business", "Productivity"],
+    "reason": "catalog.json describes a customer-support helpdesk SaaS: an editorial light marketing site, signed-out app login/signup, and a docs center with a real dark-mode toggle; the product workspace is gated."
   }
 ]
