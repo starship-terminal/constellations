@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 151,
-    "system_domains": 143,
-    "matched_domains": 114,
-    "missing_domains": 319,
+    "system_packages": 153,
+    "system_domains": 145,
+    "matched_domains": 116,
+    "missing_domains": 317,
     "system_domains_absent_from_catalog": 29
   },
   "matched": {
@@ -1732,6 +1732,40 @@
         }
       ]
     },
+    "fingerprint.com": {
+      "catalog": [
+        {
+          "name": "Fingerprint",
+          "domain": "fingerprint.com",
+          "id": 866
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "fingerprint",
+          "name": "Fingerprint",
+          "url": "https://fingerprint.com",
+          "name_match": true
+        }
+      ]
+    },
+    "fiverr.com": {
+      "catalog": [
+        {
+          "name": "Fiverr",
+          "domain": "fiverr.com",
+          "id": 169
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "fiverr",
+          "name": "Fiverr",
+          "url": "https://www.fiverr.com",
+          "name_match": true
+        }
+      ]
+    },
     "flask.do": {
       "catalog": [
         {
@@ -2185,20 +2219,6 @@
         "name": "Fibery",
         "domain": "fibery.io",
         "id": 415
-      }
-    ],
-    "fingerprint.com": [
-      {
-        "name": "Fingerprint",
-        "domain": "fingerprint.com",
-        "id": 866
-      }
-    ],
-    "fiverr.com": [
-      {
-        "name": "Fiverr",
-        "domain": "fiverr.com",
-        "id": 169
       }
     ],
     "foodnoms.com": [

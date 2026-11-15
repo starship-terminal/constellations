@@ -894,6 +894,12 @@
     "reason": "catalog.json describes a design tool: the marketing pages for the design editor, FigJam, Slides, Dev Mode and Make, a pricing grid, community resource grids and the login/signup app shells."
   },
   {
+    "referenceId": "systems:fingerprint",
+    "groupId": "web-categories",
+    "labels": ["Development Tools"],
+    "reason": "catalog.json describes a device-intelligence and fraud-detection developer platform: visitor identification, smart signals, bot detection, docs and a usage-priced API."
+  },
+  {
     "referenceId": "systems:flowmapp",
     "groupId": "web-categories",
     "labels": ["Design & Media Editing", "Productivity"],
@@ -904,5 +910,11 @@
     "groupId": "web-categories",
     "labels": ["Collaboration Tools", "Productivity"],
     "reason": "catalog.json describes a video review and collaboration workspace: marketing pages with an embedded product demo, a pricing page, an MCP documentation page and the signed-out login boundary."
+  },
+  {
+    "referenceId": "systems:fiverr",
+    "groupId": "web-categories",
+    "labels": ["Marketplace"],
+    "reason": "catalog.json describes a freelance services marketplace: the home and /categories directory, /search/gigs gig listings, a gig page with package pricing, seller profiles and the join/login auth edge."
   }
 ]
