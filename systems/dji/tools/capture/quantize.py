@@ -57,21 +57,32 @@ def stitched_sidecar(name, sheet, tile_paths):
     if any(not c for c in clips):
         return None
     # A stitched sheet is only 'pass' if the tiles provably cover the page:
-    # contiguous indices, contiguous clip ranges, and the last tile reaching
-    # the reported document height. A capture that stopped early, or a lost
-    # tile, is a documented gap — never a shortened 'complete' page.
+    # contiguous indices, contiguous ranges, and the last tile reaching the
+    # reported content height. Inner-scroller captures record where each tile
+    # sat inside the scroller (capture.scroller, written by public.mjs):
+    # clip.y is viewport-relative for those, so the tile's document position
+    # is scroller.top + clip.y, and coverage is against the scroller's own
+    # height, not the outer document's (which stays at the viewport height).
+    # A capture that stopped early, or a lost tile, is a documented gap —
+    # never a shortened 'complete' page.
     problems = []
-    y = clips[0]['y']
+    scrollers = [(p.get('capture') or {}).get('scroller') for p in parts]
+    positions = [(sc['top'] + c['y']) if sc else c['y'] for c, sc in zip(clips, scrollers)]
+    y = positions[0]
     if y != 0:
-        problems.append(f"first tile starts at clip.y={y}, not 0")
-    for i, c in enumerate(clips):
-        if abs(c['y'] - y) > 2:
-            problems.append(f"tile {i} clip.y={c['y']} expected {y}")
-        y = c['y'] + c['height']
-    doc_h = next(((((p.get('actual') or {}).get('documentSize') or {}).get('height'))
-                  for p in parts if (p.get('actual') or {}).get('documentSize')), None)
+        problems.append(f"first tile starts at position {y}, not 0")
+    for i, (c, pos) in enumerate(zip(clips, positions)):
+        if abs(pos - y) > 2:
+            problems.append(f"tile {i} at {pos}, expected {y}")
+        y = pos + c['height']
+    doc_h = next((sc['height'] for sc in scrollers if sc and sc.get('height')), None)
+    basis_h = 'scroller'
+    if doc_h is None:
+        basis_h = 'document'
+        doc_h = next(((((p.get('actual') or {}).get('documentSize') or {}).get('height'))
+                      for p in parts if (p.get('actual') or {}).get('documentSize')), None)
     if doc_h and abs(y - doc_h) > 8:
-        problems.append(f"tiles cover {y}px of the reported {doc_h}px document")
+        problems.append(f"tiles cover {y}px of the reported {doc_h}px {basis_h} content")
     meta = dict(parts[0])
     meta['screenshot'] = f'{name}.png'
     meta['capture'] = {'mode': 'stitchedParts', 'scale': (parts[0].get('capture') or {}).get('scale', 'device'),
@@ -79,7 +90,7 @@ def stitched_sidecar(name, sheet, tile_paths):
                                 'height': sum(c['height'] for c in clips)}}
     meta['png'] = {'width': sheet.width, 'height': sheet.height}
     meta['stitchedFrom'] = [f.name for f in tile_paths]
-    meta['partClip'] = clips
+    meta['partClip'] = [dict(c, documentY=pos) for c, pos in zip(clips, positions)]
     expected = {'width': round(clips[0]['width'] * scales[0]),
                 'height': sum(round(c['height'] * s) for c, s in zip(clips, scales))}
     matches = abs(sheet.width - expected['width']) <= 1 and abs(sheet.height - expected['height']) <= 1
@@ -107,6 +118,15 @@ for name, ps in parts.items():
     missing = [i for i in range(ps[-1][0] + 1) if i not in {i for i, _ in ps}]
     if missing:
         print(f'skipped {name}: missing tiles {missing} — a stitched sheet would hide the gap')
+        # A previous run's stitched PNG must not survive a failed recapture:
+        # the export loop below would quietly ship the old image with its old
+        # sidecar. Remove both so the gap shows up as a gap.
+        stale = RAW / f'{name}.png'
+        if stale.exists():
+            stale.unlink()
+            stale_sc = stale.with_name(stale.name + '.capture.json')
+            stale_sc.unlink(missing_ok=True)
+        stitched[name] = None
         continue
     ims = [Image.open(f).convert('RGB') for _, f in ps]
     sheet = Image.new('RGB', (ims[0].width, sum(i.height for i in ims)))
@@ -121,6 +141,9 @@ n = 0
 for f in sorted(RAW.glob('*.png')):
     if '.part' in f.name:
         continue
+    if f.stem in stitched and stitched[f.stem] is None:
+        continue  # failed recapture: no stitched sheet, nothing to export
+
     im = Image.open(f).convert('RGB')
     im.quantize(colors=256, method=Image.Quantize.MEDIANCUT, dither=Image.Dither.NONE).save(OUT / f.name, optimize=True)
     out_side = OUT / f'{f.name}.capture.json'

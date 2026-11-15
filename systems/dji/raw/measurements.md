@@ -345,48 +345,52 @@ Crops: `hh-h1-default.png`.
 
 #### ct-card
 
-Product card. An atom-design hero-vertical-card on the category grid — product art, tagline and name; hover measured, never followed.
+Product card. A 2-up atom-design hero-vertical-card on the category grid — product art, tagline and name (the page's H1 banner and full-width series intro share the class, so the filter anchors on a DJI product name); hover measured, never followed.
 
 Page: drones. Selector: `hero-vertical-card`. States: default, hover.
 
 | Property | default | hover |
 |---|---|---|
-| Size (w x h) | 1200 x 124 | = |
+| Size (w x h) | 696 x 600 | = |
 | Padding | 0px | = |
 | Border | none | = |
 | Radius | 0px | = |
-| Background | transparent | = |
+| Background | #f5f5f5 | = |
+| Background image | url(…) | = |
 | Box shadow | none | = |
 | Outline | none | = |
 | Font | Open Sans 16px/24px 400 | = |
 | Letter spacing | normal | = |
 | Colour | #3b3e40 | = |
-| Text node | h1.style__headline___1ripS.style__headline-text___1tW5r: Open Sans 48px/52px 600, #000000 @ 0.85, ls -1.44px | = |
+| Text node | h2.text-ms-12.style__eyebrow-text___1gRhT: Open Sans 12px/16px 400, #be4e04, ls -0.36px | = |
 | Transition | none | = |
+| Painted layers | div.atom-design-v1.style__hero-vertical-card___2B64y 696.0x600.0 bg #f5f5f5; button.atom-design-v1.style__dji-btn___ILmHs 128.0x40.0 bg #0070d5 r 60px; button.atom-design-v1.style__dji-btn___ILmHs 128.0x40.0 border T:1px solid #000000 @ 0.85 / R:1px solid #000000 @ 0.85 / B:1px solid #000000 @ 0.85 / L:1px solid #000000 @ 0.85 r 60px | = |
 | How | at rest | mouse hover |
 
 Crops: `ct-card-default.png`, `ct-card-hover.png`.
 
 #### hh-card
 
-Handheld card. A handheld product card (atom hero-vertical-card); hover measured, never followed.
+Handheld card. A 2-up handheld product card (atom hero-vertical-card; the full-width Osmo Pocket hero shares the class, so the filter anchors on a grid product name); hover measured, never followed.
 
 Page: handheld. Selector: `hero-vertical-card`. States: default, hover.
 
 | Property | default | hover |
 |---|---|---|
-| Size (w x h) | 1200 x 96 | = |
+| Size (w x h) | 696 x 600 | = |
 | Padding | 0px | = |
 | Border | none | = |
 | Radius | 0px | = |
-| Background | transparent | = |
+| Background | #f5f5f5 | = |
+| Background image | url(…) | = |
 | Box shadow | none | = |
 | Outline | none | = |
 | Font | Open Sans 16px/24px 400 | = |
 | Letter spacing | normal | = |
 | Colour | #3b3e40 | = |
-| Text node | h2.style__headline___1ripS.style__headline-text___1tW5r: Open Sans 40px/48px 600, #000000 @ 0.85, ls -1.2px | = |
+| Text node | h2.text-ms-12.style__eyebrow-text___1gRhT: Open Sans 12px/16px 400, #be4e04, ls -0.36px | = |
 | Transition | none | = |
+| Painted layers | div.atom-design-v1.style__hero-vertical-card___2B64y 696.0x600.0 bg #f5f5f5; button.atom-design-v1.style__dji-btn___ILmHs 128.0x40.0 bg #0070d5 r 60px; button.atom-design-v1.style__dji-btn___ILmHs 128.0x40.0 border T:1px solid #000000 @ 0.85 / R:1px solid #000000 @ 0.85 / B:1px solid #000000 @ 0.85 / L:1px solid #000000 @ 0.85 r 60px | = |
 | How | at rest | mouse hover |
 
 Crops: `hh-card-default.png`, `hh-card-hover.png`.
@@ -575,8 +579,8 @@ Page: support. Selector: `support tile a`. States: default, hover.
 
 | Property | default | hover |
 |---|---|---|
-| Size (w x h) | 61 x 64.72 | = |
-| Padding | 19px 16px 19px 0px | = |
+| Size (w x h) | 325.33 x 120 | = |
+| Padding | 0px | = |
 | Border | none | = |
 | Radius | 0px | = |
 | Background | transparent | = |
@@ -584,9 +588,9 @@ Page: support. Selector: `support tile a`. States: default, hover.
 | Outline | none | = |
 | Font | Open Sans 16px/24px 400 | = |
 | Letter spacing | normal | = |
-| Colour | #0000ee | = |
+| Colour | #3b3e40 | = |
+| Text node | h3.style__headline___1ripS.style__headline-text___1tW5r: Open Sans 20px/24px 600, #000000 @ 0.85, ls -0.6px | = |
 | Transition | none | = |
-| Cursor | pointer | = |
 | How | at rest | mouse hover |
 
 Crops: `sp-card-default.png`, `sp-card-hover.png`.
@@ -620,13 +624,13 @@ Crops: `sp-search-default.png`, `sp-search-focused.png`, `sp-search-filled.png`.
 
 #### co-h1
 
-Company heading. The About/company page heading.
+About DJI nav heading. The "About DJI" section heading in the company sidebar nav — the page paints its hero as image, so this named link is its display text.
 
-Page: company. Selector: `company h1`. States: default.
+Page: company. Selector: `about nav item`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 487.61 x 20 |
+| Size (w x h) | 61 x 19 |
 | Padding | 0px |
 | Border | none |
 | Radius | 0px |
@@ -634,9 +638,9 @@ Page: company. Selector: `company h1`. States: default.
 | Box shadow | none |
 | Outline | none |
 | Font | Open Sans 14px/20px 400 |
-| Letter spacing | -0.28px |
-| Colour | #000000 |
-| Transition | all 0.1s ease |
+| Letter spacing | normal |
+| Colour | #707473 |
+| Transition | none |
 | How | at rest |
 
 Crops: `co-h1-default.png`.
@@ -740,33 +744,6 @@ Page: mobile. Selector: `mobile header`. States: default.
 
 Crops: `m-bar-default.png`.
 
-#### m-menu
-
-Mobile menu control. The mobile menu affordance; measured, never opened.
-
-Page: mobile. Selector: `mobile menu`. States: default, hover, focus-visible, pressed.
-
-| Property | default | hover | focus-visible | pressed |
-|---|---|---|---|---|
-| Size (w x h) | 1 x 1 | 138.53 x 20 | 185 x 32 | = |
-| Padding | 0px | 0px 19px 0px 0px | 0px 15px | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | 100px | = |
-| Background | transparent | = | #f5f5f5 | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | 1px auto #e59700 offset 1px | = |
-| Font | Open Sans 16px/normal 400 | Open Sans 14px/20px 400 | Open Sans 16px/32px 400 | = |
-| Letter spacing | normal | -0.28px | = | = |
-| Colour | #0000ee | #0070d5 | #000000 @ 0.85 | #ff0000 |
-| Transition | all 0.2s ease | all 0.1s ease | = | = |
-| Transform | matrix(1, 0, 0, 1, 16, -9) | - | matrix(1, 0, 0, 1, 16, 16) | = |
-| Cursor | pointer | = | = | = |
-| How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
-| Background image | - | url(data:…) | = | = |
-| Painted layers | - | a.universal-product-tip-link 138.5x20.0 image url(data:…) | a.a11y-button 185.0x32.0 bg #f5f5f5 r 100px outline 1px auto #e59700 offset 1px | = |
-
-Crops: `m-menu-default.png`, `m-menu-hover.png`, `m-menu-focus-visible.png`, `m-menu-pressed.png`.
-
 #### m-cta
 
 Mobile CTA. A hero CTA at 390px; measured, never followed.
@@ -801,6 +778,31 @@ Page: mobile. Selector: `mobile nav tab`. States: default, hover, focus-visible,
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
+| Size (w x h) | 354 x 20 | = | = | = |
+| Padding | 0px 32px 0px 0px | = | = | = |
+| Border | none | = | = | = |
+| Radius | 0px | = | = | = |
+| Background | transparent | = | = | = |
+| Box shadow | none | = | = | = |
+| Outline | none | = | 1px auto #e59700 offset 1px | = |
+| Font | Open Sans 14px/20px 400 | = | = | = |
+| Letter spacing | -0.28px | = | = | = |
+| Colour | #000000 @ 0.85 | = | = | = |
+| Transition | all 0.3s ease | = | = | = |
+| Cursor | pointer | = | = | = |
+| How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
+| Painted layers | - | = | a.ga-data.title 354.0x20.0 outline 1px auto #e59700 offset 1px | = |
+
+Crops: `m-tab-hover.png`, `m-tab-focus-visible.png`, `m-tab-pressed.png`.
+
+#### m-menu
+
+Mobile menu button. The hamburger control in the /sg/mobile navbar; measured, never toggled open.
+
+Page: mobile. Selector: `a.navbar-control`. States: default, hover, focus-visible, pressed.
+
+| Property | default | hover | focus-visible | pressed |
+|---|---|---|---|---|
 | Size (w x h) | 54 x 50 | = | = | = |
 | Padding | 13px 16px | = | = | = |
 | Border | none | = | = | = |
@@ -816,17 +818,17 @@ Page: mobile. Selector: `mobile nav tab`. States: default, hover, focus-visible,
 | Painted layers | span::before.control-icon 22pxx2px bg #ffffff r 0px 2px; span::before.control-icon 22pxx2px bg #ffffff r 0px 2px; span::before.control-icon 22pxx2px bg #ffffff r 0px 2px | = | a.navbar-control 54.0x50.0 outline 1px auto #e59700 offset 1px; span::before.control-icon 22pxx2px bg #ffffff r 0px 2px; span::before.control-icon 22pxx2px bg #ffffff r 0px 2px; span::before.control-icon 22pxx2px bg #ffffff r 0px 2px | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
-Crops: `m-tab-default.png`, `m-tab-hover.png`, `m-tab-focus-visible.png`, `m-tab-pressed.png`.
+Crops: `m-menu-default.png`, `m-menu-hover.png`, `m-menu-focus-visible.png`, `m-menu-pressed.png`.
 
 ## Transitions declared in the readable stylesheets
 
 dji.com serves its CSS bundles cross-origin from www-cdn.djiits.com; the readable sheets are whichever ones the page exposes (inline <style> plus CORS-readable links), so this list holds the transitions those sheets declare on each page; the per-state Transition rows above are computed values and cover every rule the page paints.
 
-- company: `none`, `background-color 0.3s`, `opacity, transform 0.3s`, `0.6s`, `height 0.2s linear`, `width 0.3s linear`, `background-color 0.218s, border-color 0.218s`, `background-color 0.218s`, `top 0.5s`, `0.1s`, `opacity 1s ease-in-out`, `0.5s`
+- company: `background-color 0.3s`, `opacity, transform 0.3s`, `0.6s`, `none`, `height 0.2s linear`, `width 0.3s linear`, `background-color 0.218s, border-color 0.218s`, `background-color 0.218s`, `top 0.5s`, `0.1s`, `opacity 1s ease-in-out`, `0.5s`
 
-- drones: `background-color 0.3s`, `opacity, transform 0.3s`, `0.6s`, `none`, `height 0.2s linear`, `width 0.3s linear`, `background-color 0.218s, border-color 0.218s`, `background-color 0.218s`, `top 0.5s`, `0.1s`, `opacity 1s ease-in-out`, `0.5s`
+- drones: `background-color 0.3s`, `opacity, transform 0.3s`, `0.6s`, `none`, `top 0.5s`, `0.1s`, `opacity 1s ease-in-out`, `0.5s`, `height 0.2s linear`, `width 0.3s linear`, `background-color 0.218s, border-color 0.218s`, `background-color 0.218s`
 
-- handheld: `background-color 0.3s`, `opacity, transform 0.3s`, `0.6s`, `none`, `height 0.2s linear`, `width 0.3s linear`, `background-color 0.218s, border-color 0.218s`, `background-color 0.218s`, `top 0.5s`, `0.1s`, `opacity 1s ease-in-out`, `0.5s`
+- handheld: `none`, `background-color 0.3s`, `opacity, transform 0.3s`, `0.6s`, `height 0.2s linear`, `width 0.3s linear`, `background-color 0.218s, border-color 0.218s`, `background-color 0.218s`, `top 0.5s`, `0.1s`, `opacity 1s ease-in-out`, `0.5s`
 
 - home: `background-color 0.3s`, `opacity, transform 0.3s`, `0.6s`, `none`, `height 0.2s linear`, `width 0.3s linear`, `background-color 0.218s, border-color 0.218s`, `background-color 0.218s`, `top 0.5s`, `0.1s`, `opacity 1s ease-in-out`, `0.5s`
 

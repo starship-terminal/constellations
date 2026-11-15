@@ -271,7 +271,7 @@ const G = {
 
 const FIELD = ['default', 'focused', 'filled'];
 const HEADER = '.official-site-header, [class*="siteHeaderShell"], [class*="siteHeader-module__siteHeader"], nav.dui-navbar, nav.dui-navbar-m, [class*="site-header-m"], header';
-const VCARDS = '[class*="hero-vertical-card"], [class*="vertical-card-col"], [class*="product-card" i]';
+const VCARDS = '[class*="hero-vertical-card"], [class*="product-card" i]';
 const ATOM = 'button[class*="dji-btn"], a[class*="dji-btn"]';
 
 async function home() {
@@ -299,7 +299,7 @@ async function drones() {
   await chrome('drones');
   const g = G.listing;
   await S('ct-h1', q('h1').and(page.locator(':visible')).first(), ['default'], { group: g, title: 'Category heading', desc: 'The "Camera Drones" listing heading.', sel: 'category h1' }, { noScroll: true });
-  await S('ct-card', q(VCARDS).and(page.locator(':visible')).first(), ['default', 'hover'], { group: G.cards, title: 'Product card', desc: 'An atom-design hero-vertical-card on the category grid — product art, tagline and name; hover measured, never followed.', sel: 'hero-vertical-card' });
+  await S('ct-card', q(VCARDS).filter({ hasText: /dji (mavic|mini|avata|neo|flip|air)/i }).and(page.locator(':visible')).first(), ['default', 'hover'], { group: G.cards, title: 'Product card', desc: 'A 2-up atom-design hero-vertical-card on the category grid — product art, tagline and name (the page\'s H1 banner and full-width series intro share the class, so the filter anchors on a DJI product name); hover measured, never followed.', sel: 'hero-vertical-card' });
   await S('ct-subnav', q('a[class*="sub-nav-btn"], a[class*="store-btn"]').and(page.locator(':visible')).first(), B4, { group: g, title: 'Sub-nav Store button', desc: 'The "Store"/"Buy Now" button pinned in the page sub-nav; measured, never followed.', sel: 'sub-nav/store-btn' }, { noScroll: true });
   save();
 }
@@ -310,7 +310,7 @@ async function handheld() {
   await chrome('handheld');
   const g = G.listing;
   await S('hh-h1', q('h1, h2').and(page.locator(':visible')).first(), ['default'], { group: g, title: 'Handheld heading', desc: 'The handheld category heading (Osmo action cameras, gimbals, mics).', sel: 'handheld h1' }, { noScroll: true });
-  await S('hh-card', q(VCARDS).and(page.locator(':visible')).first(), ['default', 'hover'], { group: G.cards, title: 'Handheld card', desc: 'A handheld product card (atom hero-vertical-card); hover measured, never followed.', sel: 'hero-vertical-card' });
+  await S('hh-card', q(VCARDS).filter({ hasText: /osmo (mobile|action)|square up|all angles|own the moment|capture every detail/i }).and(page.locator(':visible')).first(), ['default', 'hover'], { group: G.cards, title: 'Handheld card', desc: 'A 2-up handheld product card (atom hero-vertical-card; the full-width Osmo Pocket hero shares the class, so the filter anchors on a grid product name); hover measured, never followed.', sel: 'hero-vertical-card' });
   save();
 }
 
@@ -334,7 +334,7 @@ async function support() {
   await chrome('support');
   const g = G.support;
   await S('sp-h1', q('h1, h2').and(page.locator(':visible')).first(), ['default'], { group: g, title: 'Support heading', desc: 'The support portal heading.', sel: 'support h1' }, { noScroll: true });
-  await S('sp-card', q('a[href*="/support/"], a[href*="support.dji"], a').filter({ has: page.locator('img, svg') }).and(page.locator(':visible')).first(), ['default', 'hover'], { group: g, title: 'Support tile', desc: 'A support category tile (repairs, service, downloads); hover measured, never followed.', sel: 'support tile a' });
+  await S('sp-card', q('[class*="card-container"][class*="size-s"]').and(page.locator(':visible')).first(), ['default', 'hover'], { group: g, title: 'Support tile', desc: 'A support category tile (repairs, service, downloads); hover measured, never followed.', sel: 'support tile a' });
   await S('sp-search', q('input[type="search"], input[placeholder*="earch"], [class*="search"] input, a[class*="search"]').and(page.locator(':visible')).first(), FIELD, { group: g, title: 'Support search', desc: 'The support search field; focus/fill measured, never submitted.', sel: 'support search' }, { noScroll: true });
   save();
 }
@@ -344,7 +344,7 @@ async function company() {
   await sheetsFor('company');
   await chrome('company');
   const g = G.support;
-  await S('co-h1', await domFind(page, /dji|about|company|we are|since/i, { sel: 'h1, h2, h3, p, div', tag: 'coh', minW: 100, minH: 14 }), ['default'], { group: g, title: 'Company heading', desc: 'The About/company page heading.', sel: 'company h1' }, { noScroll: true });
+  await S('co-h1', await domFind(page, /^about dji$/i, { sel: 'a, span, div', tag: 'coh', minW: 40, minH: 14 }), ['default'], { group: g, title: 'About DJI nav heading', desc: 'The "About DJI" section heading in the company sidebar nav — the page paints its hero as image, so this named link is its display text.', sel: 'about nav item' }, { noScroll: true });
   await S('co-lede', q('p').and(page.locator(':visible')).first(), ['default'], { group: g, title: 'Company lede', desc: 'The first body paragraph on the company page.', sel: 'company p' });
   save();
 }
@@ -364,14 +364,15 @@ async function mobile() {
   await chrome('mobile');
   const g = G.mobile;
   await S('m-bar', q(HEADER).and(page.locator(':visible')).first(), ['default'], { group: g, title: 'Mobile header', desc: 'The phone header at 390px — mark and menu affordance.', sel: 'mobile header' }, { noScroll: true });
-  await S('m-tab', q('.dui-navbar-m a, .site-header-m a, nav a').and(page.locator(':visible')).first(), B4, { group: g, title: 'Mobile nav tab', desc: 'A category tab in the mobile nav row (the phone UA is redirected to the separate /sg/mobile site); measured, never followed.', sel: 'mobile nav tab' }, { noScroll: true });
+  await S('m-menu', q('a.navbar-control').and(page.locator(':visible')).first(), B4, { group: g, title: 'Mobile menu button', desc: 'The hamburger control in the /sg/mobile navbar; measured, never toggled open.', sel: 'a.navbar-control' }, { noScroll: true });
+  await S('m-tab', q('.dui-navbar-m a:not(.navbar-control):not(.navbar-search):not(.navbar-dji-icon), .site-header-m a, nav a').filter({ hasText: /camera drones|handheld|lifestyle|explore/i }).and(page.locator(':visible')).first(), B4, { group: g, title: 'Mobile nav tab', desc: 'A category tab in the mobile nav row (the phone UA is redirected to the separate /sg/mobile site); measured, never followed.', sel: 'mobile nav tab' }, { noScroll: true });
   await S('m-cta', q('a, button').filter({ hasText: /learn more|buy now|shop/i }).and(page.locator(':visible')).first(), B4, { group: g, title: 'Mobile CTA', desc: 'A hero CTA at 390px; measured, never followed.', sel: 'mobile CTA' });
   save();
 }
 
 run = new Date().toISOString().slice(0, 10);
 out._meta.read = run;
-out._meta.viewport = '1440 x 900 (mobile group 390 x 844); dji.com signs one product into its geo-locale brand site (/sg) — mega-nav, hero, category grids, product pages over the declared --grey-*/--font-* token layer (Open Sans/PingFang UI), painted light only; no dark sheet ships in the public bundles';
+out._meta.viewport = '1440 x 900 (mobile group 390 x 844); dji.com signs one product into its geo-locale brand site (/sg) — mega-nav, hero, category grids, product pages over the declared --grey-*/--font-* token layer (Open Sans/PingFang UI), light nav/listings and dark hero/product/footer sections over the shared declared layer';
 out._meta.tool = 'tools/capture/public/measure.mjs';
 const { browser, context: ctx0 } = await launch();
 context = ctx0;

@@ -63,6 +63,13 @@ def norm_color(v):
             a = round(int(h[6:8], 16) / 255, 3)
             return "#%02x%02x%02x" % (r, g, b) if a == 1 else "rgba(%d, %d, %d, %s)" % (r, g, b, ("%g" % a))
         return "#%02x%02x%02x" % (r, g, b)
+    # Bare comma-separated RGB channels ("236,250,239") — DJI's hue ramps
+    # store channels only, consumed as rgb(var(--green-1)).
+    m = re.fullmatch(r"(\d{1,3}),\s*(\d{1,3}),\s*(\d{1,3})", v)
+    if m:
+        r, g, b = (int(c) for c in m.groups())
+        if max(r, g, b) <= 255:
+            return "#%02x%02x%02x" % (r, g, b)
     m = re.fullmatch(r"rgba?\(\s*(\d+)[,\s]+(\d+)[,\s]+(\d+)(?:\s*[,/]\s*([\d.]+%?))?\s*\)", v)
     if m:
         r, g, b, a = m.groups()

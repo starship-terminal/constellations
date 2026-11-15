@@ -393,22 +393,36 @@ for k, c in C.items():
     # outline stays none. Those states must count as ringed too.
     child_ring = next((n["outline"] for n in st.get("paint", []) if n.get("outline")), None)
     shadow = s["boxShadow"] != base["boxShadow"] and s["boxShadow"] != "none"
-    border = any(
+    painted = lambda st_: any(
+        float(st_[f"border{d}Width"].replace("px", "")) > 0 and st_[f"border{d}Style"] != "none"
+        for d in ("Top", "Right", "Bottom", "Left")
+    )
+    # A border "change" counts only when a painted border exists on either
+    # side — a colour move on a 0-width border is invisible.
+    border = (painted(s) or painted(base)) and any(
         s[f"border{d}{p}"] != base[f"border{d}{p}"]
         for d in ("Top", "Right", "Bottom", "Left")
         for p in ("Color", "Width", "Style")
     )
+    fill = s["backgroundColor"] != base["backgroundColor"]
+    text = s["color"] != base["color"]
     desc = f"{s['outlineWidth']} {s['outlineStyle']} {colour(s['outlineColor'])}, offset {s['outlineOffset']}" if ring else (f"on a child: {child_ring}" if child_ring else None)
-    foc.append((k, ring or bool(child_ring), shadow, border, desc))
-with_ring = [f"`{k}` ({r})" for k, ring, sh, bd, r in foc if ring]
-with_shadow = [f"`{k}`" for k, ring, sh, bd, r in foc if not ring and sh]
-with_border = [f"`{k}`" for k, ring, sh, bd, r in foc if not ring and not sh and bd]
-without = [f"`{k}`" for k, ring, sh, bd, r in foc if not ring and not sh and not bd]
+    foc.append((k, ring or bool(child_ring), shadow, fill, border, text, desc))
+with_ring = [f"`{k}` ({r})" for k, ring, sh, fl, bd, tx, r in foc if ring]
+with_shadow = [f"`{k}`" for k, ring, sh, fl, bd, tx, r in foc if not ring and sh]
+with_fill = [f"`{k}`" for k, ring, sh, fl, bd, tx, r in foc if not ring and not sh and fl]
+with_border = [f"`{k}`" for k, ring, sh, fl, bd, tx, r in foc if not ring and not sh and not fl and bd]
+with_text = [f"`{k}`" for k, ring, sh, fl, bd, tx, r in foc if not ring and not sh and not fl and not bd and tx]
+without = [f"`{k}`" for k, ring, sh, fl, bd, tx, r in foc if not ring and not sh and not fl and not bd and not tx]
 parts = [f"{len(with_ring)} draw an outline ring: {', '.join(with_ring)}."]
 if with_shadow:
     parts.append(f"{len(with_shadow)} draw a focus ring as a shadow instead: {', '.join(with_shadow)}.")
+if with_fill:
+    parts.append(f"{len(with_fill)} change their fill: {', '.join(with_fill)}.")
 if with_border:
     parts.append(f"{len(with_border)} change only their border: {', '.join(with_border)}.")
+if with_text:
+    parts.append(f"{len(with_text)} change only their text colour: {', '.join(with_text)}.")
 if without:
     parts.append(f"The other {len(without)} show no measured change: {', '.join(without)}.")
 W(f"**Focus.** {len(foc)} components were given a real keyboard focus. {' '.join(parts)}")
@@ -453,7 +467,7 @@ W()
 W("| Card | Size | Border | Radius | Background | Shadow | Padding |")
 W("|---|---|---|---|---|---|---|")
 # PRODUCT (adapt): the card-like components to compare in one table.
-for k in ["sc-card", "lg-card", "nt-card", "m-card"]:
+for k in ["ct-card", "hh-card", "sp-card"]:
     c = C.get(k)
     # A card the capture could not find is saved with missing: true and no states.
     if not c or c.get("missing"):

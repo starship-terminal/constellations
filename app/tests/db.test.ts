@@ -341,6 +341,15 @@ test("version-eight stores gain curated rows added since, without touching their
   await store.client.execute(
     "DELETE FROM media_term_assignments WHERE reference_id='systems:dji'",
   );
+  // A user who cleared another package's labels: the scoped top-up must not
+  // resurrect them (an empty assignment reads as "never labelled" to the
+  // unscoped seed).
+  await store.client.execute(
+    "DELETE FROM reference_categories WHERE reference_id='systems:digg'",
+  );
+  await store.client.execute(
+    "DELETE FROM media_term_assignments WHERE reference_id='systems:digg'",
+  );
   await store.client.execute("PRAGMA user_version=8");
   store.close();
   stores.splice(stores.indexOf(store), 1);
@@ -364,6 +373,13 @@ test("version-eight stores gain curated rows added since, without touching their
   expect(
     media.filter((row) => row.referenceId === "systems:dji").length,
   ).toBeGreaterThan(0);
+  // The cleared digg rows stay cleared — the top-up seeds only its own batch.
+  expect(
+    categories.filter((row) => row.referenceId === "systems:digg"),
+  ).toHaveLength(0);
+  expect(
+    media.filter((row) => row.referenceId === "systems:digg"),
+  ).toHaveLength(0);
 });
 
 test("future database versions are rejected without downgrading their schema", async () => {

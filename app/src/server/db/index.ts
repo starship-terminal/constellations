@@ -135,12 +135,13 @@ export async function createResearchStore(directory: string) {
       await tx.execute("PRAGMA user_version = 8");
     }
     if (version < 9) {
-      // Same one-shot top-up: a store already at v8 never re-seeds, so
-      // curated rows added to the seed JSON since (the DJI package's
-      // category and media assignments) would never arrive. Idempotent;
-      // manual choices are never overwritten.
-      await seedNewCuratedCategories(tx);
-      await seedNewCuratedMediaTerms(tx);
+      // Same one-shot top-up, scoped to this batch's new reference: a store
+      // already at v8 never re-seeds, so the DJI rows would never arrive.
+      // Scoping keeps cleared labels on older packages cleared — an empty
+      // assignment reads as "never labelled", so an unscoped pass would
+      // restore rows the user deleted.
+      await seedNewCuratedCategories(tx, new Set(["systems:dji"]));
+      await seedNewCuratedMediaTerms(tx, new Set(["systems:dji"]));
       await tx.execute("PRAGMA user_version = 9");
     }
     await tx.commit();

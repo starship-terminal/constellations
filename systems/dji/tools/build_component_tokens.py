@@ -140,6 +140,14 @@ def _rgba_out(rgb, a):
 
 def norm_color(v):
     v = str(v or "").strip()
+    # DJI's hue ramps are declared as bare comma-separated RGB channels
+    # ("49,209,88"), consumed by rgb(var(--green-6)) — normalize to the
+    # colour they mean so the ramps emit as colors, not "other" strings.
+    m = re.fullmatch(r"(\d{1,3}),\s*(\d{1,3}),\s*(\d{1,3})", v)
+    if m:
+        r, g, b = (int(c) for c in m.groups())
+        if max(r, g, b) <= 255:
+            return "#%02x%02x%02x" % (r, g, b)
     m = re.fullmatch(r"#([0-9a-fA-F]{3,8})", v)
     if m:
         h = m.group(1).lower()
@@ -302,7 +310,7 @@ def decl(name, ty="dimension"):
     return lit(v, ty, f"{DECL_SRC}: {name}", f"The declared `{name}`.")
 
 
-COLOR_V = re.compile(r"(#[0-9a-fA-F]{3,8}|rgba?\([^)]*\)|hsla?\([^)]*\)|(ok)?lab\([^)]*\)|(ok)?lch\([^)]*\)|color-mix\([^)]*\)|color\([^)]*\)|\d+(?:\.\d+)?\s+[\d.]+%\s+[\d.]+%(?:\s*/\s*[\d.]+%?)?)")
+COLOR_V = re.compile(r"(\d{1,3},\s*\d{1,3},\s*\d{1,3}|#[0-9a-fA-F]{3,8}|rgba?\([^)]*\)|hsla?\([^)]*\)|(ok)?lab\([^)]*\)|(ok)?lch\([^)]*\)|color-mix\([^)]*\)|color\([^)]*\)|\d+(?:\.\d+)?\s+[\d.]+%\s+[\d.]+%(?:\s*/\s*[\d.]+%?)?)")
 
 
 def decl_color(name):
@@ -693,6 +701,10 @@ for key, comp, state, desc in [
 # ------------------------------------------------------------------ shape
 
 radii = SPEC["core"].setdefault("radius", {})
+if "value" in radii:
+    # The declared --radius leaf sits at the node; demote it under a child so
+    # the measured radii below are not dropped by the leaf/group merge.
+    radii["default"] = {k: radii.pop(k) for k in ("value", "type", "source", "description") if k in radii}
 for key, comp, state, prop, desc in [
     ("pill-store", "nv-store", "default", "borderTopLeftRadius", "The 1408px pill radius on the Store button."),
     ("ghost", "pd-watch", "default", "borderTopLeftRadius", "The 60px ghost-button radius on dark sections."),

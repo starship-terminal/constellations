@@ -37,7 +37,7 @@ Screenshots are named `{page}-{state}.png`; dark paint needs no forcing — the 
 
 Values that apply across entries, from the measurement files.
 
-**Focus.** 14 components were given a real keyboard focus. 11 draw an outline ring: `nv-mark` (1px auto #101010, offset 1px), `nv-item` (1px auto #101010, offset 1px), `nv-store` (2px dotted #ff0000, offset 1px), `nv-login` (1px auto #101010, offset 1px), `hm-learn` (1px auto #101010, offset 0.984375px), `hm-buy` (1px auto #101010, offset 1px), `ft-link` (1px auto #101010, offset 1px), `ct-subnav` (1px auto #101010, offset 1px), `m-menu` (1px auto #e59700, offset 1px), `m-cta` (1px auto #e59700, offset 1px), `m-tab` (1px auto #e59700, offset 1px). 1 change only their border: `st-link`. The other 2 show no measured change: `pd-buy`, `pd-watch`.
+**Focus.** 14 components were given a real keyboard focus. 11 draw an outline ring: `nv-mark` (1px auto #101010, offset 1px), `nv-item` (1px auto #101010, offset 1px), `nv-store` (2px dotted #ff0000, offset 1px), `nv-login` (1px auto #101010, offset 1px), `hm-learn` (1px auto #101010, offset 0.984375px), `hm-buy` (1px auto #101010, offset 1px), `ft-link` (1px auto #101010, offset 1px), `ct-subnav` (1px auto #101010, offset 1px), `m-cta` (1px auto #e59700, offset 1px), `m-tab` (1px auto #e59700, offset 1px), `m-menu` (1px auto #e59700, offset 1px). 2 change their fill: `pd-buy`, `pd-watch`. 1 change only their text colour: `st-link`.
 
 **Pressed.** Forced with DevTools (`CSS.forcePseudoState` :active:hover). Nothing a real press would submit was ever pressed.
 
@@ -45,15 +45,16 @@ Values that apply across entries, from the measurement files.
 
 | Duration | Easing | Property | Where |
 |---|---|---|---|
-| 0.1s | `ease` | all | co-h1 |
-| 0.2s | `ease` | all | m-menu |
-| 0.3s | `ease` | all, background-color | ct-subnav, hm-buy, hm-learn, m-cta, nv-item, nv-store, pd-buy, pd-watch |
+| 0.3s | `ease` | all, background-color | ct-subnav, hm-buy, hm-learn, m-cta, m-tab, nv-item, nv-store, pd-buy and more |
 | 0.6s | `ease-in-out` | all | ct-h1, hh-h1, pd-eyebrow, pd-h |
 
 **Card shapes.** Default-state values; the entries hold the states.
 
 | Card | Size | Border | Radius | Background | Shadow | Padding |
 |---|---|---|---|---|---|---|
+| [Product card](#product-card) | 696 x 600 | - | - | #f5f5f5 `color.background.1` | none | 0 |
+| [Handheld card](#handheld-card) | 696 x 600 | - | - | #f5f5f5 `color.background.1` | none | 0 |
+| [Support tile](#support-tile) | 325.33 x 120 | - | - | transparent | none | 0 |
 
 ## Components
 
@@ -64,9 +65,9 @@ The top nav and footer: the DJI mark, the Camera Drones / Handheld / Lifestyle T
 #### Site header
 The top nav — DJI mark, product menus, ecosystem links, Login/Register, Store (the home page paints the legacy dui-navbar; category and product pages paint the newer siteHeader module). Read as `nv-bar` on the home page.
 
-**Values (default).** size 1440 x 64; background transparent; text Open Sans 14/14 400, #ffffff `white.default`; layers span.navbar-brand-logo 45.0x26.0; div.dui-dropdown-menu 1230.0x0.0 #ffffff `white.default` rgba(0, 0, 0, 0.1) 0px 16px 16px 0px; div.dui-dropdown-menu 1230.0x0.0 #ffffff `white.default` rgba(0, 0, 0, 0.1) 0px 16px 16px 0px; div.dui-dropdown-menu 1230.0x0.0 #ffffff `white.default` rgba(0, 0, 0, 0.1) 0px 16px 16px 0px; ul 132.4x96.0 #ffffff `white.default` rgba(0, 0, 0, 0.1) 0px 8px 16px 0px 4px; di.
+**Values (default).** size 1440 x 64; background transparent; text Open Sans 14/14 400, #ffffff `common.white`; layers span.navbar-brand-logo 45.0x26.0; div.dui-dropdown-menu 1230.0x0.0 #ffffff `common.white` rgba(0, 0, 0, 0.1) 0px 16px 16px 0px; div.dui-dropdown-menu 1230.0x0.0 #ffffff `common.white` rgba(0, 0, 0, 0.1) 0px 16px 16px 0px; div.dui-dropdown-menu 1230.0x0.0 #ffffff `common.white` rgba(0, 0, 0, 0.1) 0px 16px 16px 0px; ul 132.4x96.0 #ffffff `common.white` rgba(0, 0, 0, 0.1) 0px 8px 16px 0px 4px; div.du.
 
-Child layers that carry the look: span 45x26 image url(data:…); div 1230x0 background #ffffff `white.default` shadow rgba(0, 0, 0, 0.1) 0px 16px 16px 0px; div 1230x0 background #ffffff `white.default` shadow rgba(0, 0, 0, 0.1) 0px 16px 16px 0px.
+Child layers that carry the look: span 45x26 image url(data:…); div 1230x0 background #ffffff `common.white` shadow rgba(0, 0, 0, 0.1) 0px 16px 16px 0px; div 1230x0 background #ffffff `common.white` shadow rgba(0, 0, 0, 0.1) 0px 16px 16px 0px.
 
 ![Site header default](components/crops/nv-bar-default.png)
 
@@ -88,7 +89,7 @@ A product menu link (Camera Drones) that opens the mega-menu; hover measured, me
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 100.38 x 64; background transparent; text Open Sans 14/14 400, #ffffff `white.default`; transition all 0.3s ease; layers ::after transparent 0px none 0 |
+| default | size 100.38 x 64; background transparent; text Open Sans 14/14 400, #ffffff `common.white`; transition all 0.3s ease; layers ::after transparent 0px none 0 |
 | hover | text Open Sans 14/14 400, rgba(255, 255, 255, 0.65) `white.secondary`; layers ::after transparent 0px none 1 |
 | focus-visible | outline 1px auto #101010, offset 1px; layers ::after transparent 0px none 0; a.nav-item-title.ga-data 100.4x64.0 1px auto #101010 offset 1px |
 | pressed | text Open Sans 14/14 400, rgba(255, 255, 255, 0.65) `white.secondary` |
@@ -100,7 +101,7 @@ The "Store" nav button linking to store.dji.com; measured, never followed — th
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 83.61 x 32; padding 8px 16px 8px 34px; radius 1408px; background #0070d5 `brand.base`; image an image (data URI); text Open Sans 14/14 400, #ffffff `white.default`; transition background-color 0.3s ease |
+| default | size 83.61 x 32; padding 8px 16px 8px 34px; radius 1408px; background #0070d5 `brand.base`; image an image (data URI); text Open Sans 14/14 400, #ffffff `common.white`; transition background-color 0.3s ease |
 | hover | background #2490e3 `action.primary-hover` |
 | focus-visible | shadow #1890ff 0px 0px 0px 3px; outline 2px dotted #ff0000, offset 1px |
 | pressed | background #0058b0 `action.primary-pressed` |
@@ -120,7 +121,7 @@ The Login link in the header; measured, never followed — it redirects to the D
 #### Site footer
 The DJI sitemap footer — product/support/company columns and locale links. Read as `ft-bar` on the home page.
 
-**Values (default).** size 1440 x 833; padding 32px 0px; background #272727 `surface.footer`; text Open Sans 18/24 600, #ffffff `white.default`.
+**Values (default).** size 1440 x 833; padding 32px 0px; background #272727 `surface.footer`; text Open Sans 18/24 600, #ffffff `common.white`.
 
 ![Site footer default](components/crops/ft-bar-default.png)
 
@@ -131,7 +132,7 @@ A footer column link; hover measured, never followed. Read as `ft-link` on the h
 |---|---|
 | default (same: hover) | size 161 x 17; background transparent; text Open Sans 12/16 400, rgba(255, 255, 255, 0.85) |
 | focus-visible | outline 1px auto #101010, offset 1px; layers a.ga-data 161.0x17.0 1px auto #101010 offset 1px |
-| pressed | text Open Sans 12/16 400, #ffffff `white.default` |
+| pressed | text Open Sans 12/16 400, #ffffff `common.white` |
 
 ![Footer link default](components/crops/ft-link-default.png) ![Footer link hover](components/crops/ft-link-hover.png) ![Footer link focus-visible](components/crops/ft-link-focus-visible.png) ![Footer link pressed](components/crops/ft-link-pressed.png)
 
@@ -151,7 +152,7 @@ The hero "Learn More" link to the product page; measured, never followed. Read a
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 133 x 32; padding 5px 16px; border 1px solid #ffffff `white.default`; radius 64px; background transparent; text Open Sans 14/20 400, #ffffff `white.default`; transition all 0.3s ease |
+| default (same: hover) | size 133 x 32; padding 5px 16px; border 1px solid #ffffff `common.white`; radius 64px; background transparent; text Open Sans 14/20 400, #ffffff `common.white`; transition all 0.3s ease |
 | focus-visible | outline 1px auto #101010, offset 0.984375px |
 | pressed | background rgba(255, 255, 255, 0.09) |
 
@@ -162,7 +163,7 @@ The hero "Buy Now" CTA linking to the store; measured, never followed — checko
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 115 x 32; padding 5px 16px; border 1px solid #ffffff `white.default`; radius 64px; background transparent; text Open Sans 14/20 400, #ffffff `white.default`; transition all 0.3s ease |
+| default (same: hover) | size 115 x 32; padding 5px 16px; border 1px solid #ffffff `common.white`; radius 64px; background transparent; text Open Sans 14/20 400, #ffffff `common.white`; transition all 0.3s ease |
 | focus-visible | outline 1px auto #101010, offset 1px |
 | pressed | background rgba(255, 255, 255, 0.09) |
 
@@ -173,20 +174,20 @@ The hero "Buy Now" CTA linking to the store; measured, never followed — checko
 The atom-design hero-vertical-cards on the category grids: product art, tagline and model name.
 
 #### Product card
-An atom-design hero-vertical-card on the category grid — product art, tagline and name; hover measured, never followed. Read as `ct-card` on the camera drones page.
+A 2-up atom-design hero-vertical-card on the category grid — product art, tagline and name (the page's H1 banner and full-width series intro share the class, so the filter anchors on a DJI product name); hover measured, never followed. Read as `ct-card` on the camera drones page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 1200 x 124; background transparent; text Open Sans 48/52 600, rgba(0, 0, 0, 0.85) `black.primary` |
+| default (same: hover) | size 696 x 600; background #f5f5f5 `color.background.1`; image url(…); text Open Sans 12/16 400, #be4e04 `color.orange.6` |
 
 ![Product card default](components/crops/ct-card-default.png) ![Product card hover](components/crops/ct-card-hover.png)
 
 #### Handheld card
-A handheld product card (atom hero-vertical-card); hover measured, never followed. Read as `hh-card` on the handheld page.
+A 2-up handheld product card (atom hero-vertical-card; the full-width Osmo Pocket hero shares the class, so the filter anchors on a grid product name); hover measured, never followed. Read as `hh-card` on the handheld page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 1200 x 96; background transparent; text Open Sans 40/48 600, rgba(0, 0, 0, 0.85) `black.primary` |
+| default (same: hover) | size 696 x 600; background #f5f5f5 `color.background.1`; image url(…); text Open Sans 12/16 400, #be4e04 `color.orange.6` |
 
 ![Handheld card default](components/crops/hh-card-default.png) ![Handheld card hover](components/crops/hh-card-hover.png)
 
@@ -206,7 +207,7 @@ The "Store"/"Buy Now" button pinned in the page sub-nav; measured, never followe
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 83.61 x 32; padding 8px 16px 8px 34px; radius 1408px; background #0070d5 `brand.base`; image an image (data URI); text Open Sans 14/14 400, #ffffff `white.default`; transition background-color 0.3s ease |
+| default | size 83.61 x 32; padding 8px 16px 8px 34px; radius 1408px; background #0070d5 `brand.base`; image an image (data URI); text Open Sans 14/14 400, #ffffff `common.white`; transition background-color 0.3s ease |
 | hover | background #2490e3 `action.primary-hover` |
 | focus-visible | outline 1px auto #101010, offset 1px |
 | pressed | background #0058b0 `action.primary-pressed` |
@@ -227,9 +228,9 @@ The /mavic-4-pro surface: the sticky sub-nav, atom-design Buy Now and Watch Vide
 #### Product sub-nav
 The product page sticky sub-nav — section links and the Buy Now button. Read as `pd-subnav` on the product page page.
 
-**Values (default).** size 1440 x 64; background transparent; text Open Sans 14/64 400, #ffffff `white.default`; layers nav.style__sub-nav___AjIC_ 1440.0x64.0 rgba(35, 37, 38, 0.9); a.style__sub-nav-btn___fguHS 91.0x30.0 #0070d5 `brand.base` 2px; div.popover__flex-box___14szQ 320.0x88.0 #ffffff `white.default` 4px; div.popover__cover-image___1yWkS 40.0x40.0 #f5f5f5 `color.background.1` 99px; div.popover__close___1jBk4 32.0x32.0 99px; div.popover__arrow___29rRa 22.0x12.0 R:11px solid transparent / B:12px solid #ffff.
+**Values (default).** size 1440 x 64; background transparent; text Open Sans 14/64 400, #ffffff `common.white`; layers nav.style__sub-nav___AjIC_ 1440.0x64.0 rgba(35, 37, 38, 0.9); a.style__sub-nav-btn___fguHS 91.0x30.0 #0070d5 `brand.base` 2px; div.popover__flex-box___14szQ 320.0x88.0 #ffffff `common.white` 4px; div.popover__cover-image___1yWkS 40.0x40.0 #f5f5f5 `color.background.1` 99px; div.popover__close___1jBk4 32.0x32.0 99px; div.popover__arrow___29rRa 22.0x12.0 R:11px solid transparent / B:12px solid #fffff.
 
-Child layers that carry the look: nav 1440x64 background rgba(35, 37, 38, 0.9); a 91x30 background #0070d5 `brand.base` radius 2px; div 320x88 background #ffffff `white.default` radius 4px.
+Child layers that carry the look: nav 1440x64 background rgba(35, 37, 38, 0.9); a 91x30 background #0070d5 `brand.base` radius 2px; div 320x88 background #ffffff `common.white` radius 4px.
 
 ![Product sub-nav default](components/crops/pd-subnav-default.png)
 
@@ -238,7 +239,7 @@ The atom-design-v1 primary "Buy Now" button (dji-btn-lg); states measured, never
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 144 x 40; padding 0px 16px; radius 60px; background #ffffff `white.default`; text Open Sans 16/20 400, rgba(0, 0, 0, 0.85) `black.primary`; transition all 0.3s ease |
+| default | size 144 x 40; padding 0px 16px; radius 60px; background #ffffff `common.white`; text Open Sans 16/20 400, rgba(0, 0, 0, 0.85) `black.primary`; transition all 0.3s ease |
 | hover, focus-visible | background rgba(255, 255, 255, 0.9) |
 | pressed | background rgba(255, 255, 255, 0.8) |
 
@@ -249,7 +250,7 @@ The secondary "Watch Video" atom button; states measured, never pressed. Read as
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 147.48 x 40; padding 0px 15px; border 1px solid #ffffff `white.default`; radius 60px; background transparent; text Open Sans 16/20 400, #ffffff `white.default`; transition all 0.3s ease |
+| default | size 147.48 x 40; padding 0px 15px; border 1px solid #ffffff `common.white`; radius 60px; background transparent; text Open Sans 16/20 400, #ffffff `common.white`; transition all 0.3s ease |
 | hover, focus-visible | background rgba(255, 255, 255, 0.09) |
 | pressed | background rgba(255, 255, 255, 0.15) |
 
@@ -265,7 +266,7 @@ A section eyebrow line (e.g. "Triple-Camera Imaging System") using the text-ms-2
 #### Product heading
 A product page display heading. Read as `pd-h` on the product page page.
 
-**Values (default).** size 693 x 32; background transparent; text Open Sans 24/32 600, #ffffff `white.default`; transition all 0.6s ease-in-out.
+**Values (default).** size 693 x 32; background transparent; text Open Sans 24/32 600, #ffffff `common.white`; transition all 0.6s ease-in-out.
 
 ![Product heading default](components/crops/pd-h-default.png)
 
@@ -283,7 +284,7 @@ The /support portal (search field, category tiles), /company and /where-to-buy/o
 #### Support heading
 The support portal heading. Read as `sp-h1` on the support page.
 
-**Values (default).** size 1200 x 56; background transparent; text Open Sans 48/56 500, #ffffff `white.default`.
+**Values (default).** size 1200 x 56; background transparent; text Open Sans 48/56 500, #ffffff `common.white`.
 
 ![Support heading default](components/crops/sp-h1-default.png)
 
@@ -292,7 +293,7 @@ A support category tile (repairs, service, downloads); hover measured, never fol
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 61 x 64.72; padding 19px 16px 19px 0px; background transparent; text Open Sans 16/24 400, #0000ee |
+| default (same: hover) | size 325.33 x 120; background transparent; text Open Sans 20/24 600, rgba(0, 0, 0, 0.85) `black.primary` |
 
 ![Support tile default](components/crops/sp-card-default.png) ![Support tile hover](components/crops/sp-card-hover.png)
 
@@ -301,16 +302,16 @@ The support search field; focus/fill measured, never submitted. Read as `sp-sear
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focused, filled) | size 640 x 32; padding 4px 8px; background #ffffff `white.default`; text Open Sans 16/normal 400, #303233 `text.nav-ink`; placeholder #757575 |
+| default (same: focused, filled) | size 640 x 32; padding 4px 8px; background #ffffff `common.white`; text Open Sans 16/normal 400, #303233 `text.nav-ink`; placeholder #757575 |
 
 ![Support search default](components/crops/sp-search-default.png) ![Support search focused](components/crops/sp-search-focused.png) ![Support search filled](components/crops/sp-search-filled.png)
 
-#### Company heading
-The About/company page heading. Read as `co-h1` on the company page.
+#### About DJI nav heading
+The "About DJI" section heading in the company sidebar nav — the page paints its hero as image, so this named link is its display text. Read as `co-h1` on the company page.
 
-**Values (default).** size 487.61 x 20; background transparent; text Open Sans 14/20 400, #000000 `black.default`; transition all 0.1s ease.
+**Values (default).** size 61 x 19; background transparent; text Open Sans 14/20 400, #707473.
 
-![Company heading default](components/crops/co-h1-default.png)
+![About DJI nav heading default](components/crops/co-h1-default.png)
 
 #### Company lede
 The first body paragraph on the company page. Read as `co-lede` on the company page.
@@ -345,30 +346,18 @@ The phone surface at 390 wide — the separate /sg/mobile site: dui-navbar-m nav
 #### Mobile header
 The phone header at 390px — mark and menu affordance. Read as `m-bar` on the mobile home page at 390 wide.
 
-**Values (default).** size 390 x 50; background transparent; text Open Sans 14/20 400, rgba(0, 0, 0, 0.85) `black.primary`; layers span::before.control-icon 22pxx2px #ffffff `white.default` 0px 2px; span::before.control-icon 22pxx2px #ffffff `white.default` 0px 2px; span::before.control-icon 22pxx2px #ffffff `white.default` 0px 2px; i.search-trigger 28.0x28.0; a.navbar-shopingbag.ga-data 32.0x32.0 1408px; a.navbar-shopingbag.active 0.0x0.0 1408px.
+**Values (default).** size 390 x 50; background transparent; text Open Sans 14/20 400, rgba(0, 0, 0, 0.85) `black.primary`; layers span::before.control-icon 22pxx2px #ffffff `common.white` 0px 2px; span::before.control-icon 22pxx2px #ffffff `common.white` 0px 2px; span::before.control-icon 22pxx2px #ffffff `common.white` 0px 2px; i.search-trigger 28.0x28.0; a.navbar-shopingbag.ga-data 32.0x32.0 1408px; a.navbar-shopingbag.active 0.0x0.0 1408px.
 
-Child layers that carry the look: span::before 22pxx2px background #ffffff `white.default` radius 0px 2px; span::before 22pxx2px background #ffffff `white.default` radius 0px 2px; span::before 22pxx2px background #ffffff `white.default` radius 0px 2px.
+Child layers that carry the look: span::before 22pxx2px background #ffffff `common.white` radius 0px 2px; span::before 22pxx2px background #ffffff `common.white` radius 0px 2px; span::before 22pxx2px background #ffffff `common.white` radius 0px 2px.
 
 ![Mobile header default](components/crops/m-bar-default.png)
-
-#### Mobile menu control
-The mobile menu affordance; measured, never opened. Read as `m-menu` on the mobile home page at 390 wide.
-
-| State | Values (later rows list only what changes from the first row) |
-|---|---|
-| default | size 1 x 1; background transparent; text Open Sans 16/normal 400, #0000ee; transition all 0.2s ease; transform translate(16px, -9px) |
-| hover | size 138.53 x 20; padding 0px 19px 0px 0px; image an image (data URI); text Open Sans 14/20 400, #0070d5 `brand.base`; transition all 0.1s ease; transform none |
-| focus-visible | size 185 x 32; padding 0px 15px; radius 100px; background #f5f5f5 `color.background.1`; outline 1px auto #e59700, offset 1px; text Open Sans 16/32 400, rgba(0, 0, 0, 0.85) `black.primary`; transform translate(16px, 16px) |
-| pressed | text Open Sans 16/normal 400, #ff0000 |
-
-![Mobile menu control default](components/crops/m-menu-default.png) ![Mobile menu control hover](components/crops/m-menu-hover.png) ![Mobile menu control focus-visible](components/crops/m-menu-focus-visible.png) ![Mobile menu control pressed](components/crops/m-menu-pressed.png)
 
 #### Mobile CTA
 A hero CTA at 390px; measured, never followed. Read as `m-cta` on the mobile home page at 390 wide.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 133 x 32; padding 5px 16px; border 1px solid #ffffff `white.default`; radius 60px; background transparent; text Open Sans 14/20 400, #ffffff `white.default`; transition all 0.3s ease |
+| default (same: hover) | size 133 x 32; padding 5px 16px; border 1px solid #ffffff `common.white`; radius 60px; background transparent; text Open Sans 14/20 400, #ffffff `common.white`; transition all 0.3s ease |
 | focus-visible | outline 1px auto #e59700, offset 1px |
 | pressed | background rgba(255, 255, 255, 0.15) |
 
@@ -379,13 +368,23 @@ A category tab in the mobile nav row (the phone UA is redirected to the separate
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 54 x 50; padding 13px 16px; background transparent; text Open Sans 16/normal 400, #0000ee; layers span::before.control-icon 22pxx2px #ffffff `white.default` 0px 2px; span::before.control-icon 22pxx2px #ffffff `white.default` 0px 2px; span::before.control-icon 22pxx2px #ffffff `white.default` 0px 2px |
-| focus-visible | outline 1px auto #e59700, offset 1px; layers a.navbar-control 54.0x50.0 1px auto #e59700 offset 1px; span::before.control-icon 22pxx2px #ffffff `white.default` 0px 2px; span::before.control-icon 22pxx2px #ffffff `white.default` 0px 2px; span::before.control-icon 22pxx2px #ffffff `white.default` 0px 2px |
+| default (same: hover, pressed) | size 354 x 20; padding 0px 32px 0px 0px; background transparent; text Open Sans 14/20 400, rgba(0, 0, 0, 0.85) `black.primary`; transition all 0.3s ease |
+| focus-visible | outline 1px auto #e59700, offset 1px; layers a.ga-data.title 354.0x20.0 1px auto #e59700 offset 1px |
+
+![Mobile nav tab hover](components/crops/m-tab-hover.png) ![Mobile nav tab focus-visible](components/crops/m-tab-focus-visible.png) ![Mobile nav tab pressed](components/crops/m-tab-pressed.png)
+
+#### Mobile menu button
+The hamburger control in the /sg/mobile navbar; measured, never toggled open. Read as `m-menu` on the mobile home page at 390 wide.
+
+| State | Values (later rows list only what changes from the first row) |
+|---|---|
+| default (same: hover) | size 54 x 50; padding 13px 16px; background transparent; text Open Sans 16/normal 400, #0000ee; layers span::before.control-icon 22pxx2px #ffffff `common.white` 0px 2px; span::before.control-icon 22pxx2px #ffffff `common.white` 0px 2px; span::before.control-icon 22pxx2px #ffffff `common.white` 0px 2px |
+| focus-visible | outline 1px auto #e59700, offset 1px; layers a.navbar-control 54.0x50.0 1px auto #e59700 offset 1px; span::before.control-icon 22pxx2px #ffffff `common.white` 0px 2px; span::before.control-icon 22pxx2px #ffffff `common.white` 0px 2px; span::before.control-icon 22pxx2px #ffffff `common.white` 0px 2px |
 | pressed | text Open Sans 16/normal 400, #ff0000 |
 
-Child layers that carry the look: span::before 22pxx2px background #ffffff `white.default` radius 0px 2px; span::before 22pxx2px background #ffffff `white.default` radius 0px 2px; span::before 22pxx2px background #ffffff `white.default` radius 0px 2px.
+Child layers that carry the look: span::before 22pxx2px background #ffffff `common.white` radius 0px 2px; span::before 22pxx2px background #ffffff `common.white` radius 0px 2px; span::before 22pxx2px background #ffffff `common.white` radius 0px 2px.
 
-![Mobile nav tab default](components/crops/m-tab-default.png) ![Mobile nav tab hover](components/crops/m-tab-hover.png) ![Mobile nav tab focus-visible](components/crops/m-tab-focus-visible.png) ![Mobile nav tab pressed](components/crops/m-tab-pressed.png)
+![Mobile menu button default](components/crops/m-menu-default.png) ![Mobile menu button hover](components/crops/m-menu-hover.png) ![Mobile menu button focus-visible](components/crops/m-menu-focus-visible.png) ![Mobile menu button pressed](components/crops/m-menu-pressed.png)
 
 ## Icons
 

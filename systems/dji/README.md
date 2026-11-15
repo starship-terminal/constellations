@@ -38,7 +38,7 @@ The README has no "Do and don't" section, so this package states no principles.
 | accent | #0070d5 `light.action.primary` | #ffffff `dark.action.cta` |
 | border | rgba(0, 0, 0, 0.06) `light.border.hairline` | #ffffff `dark.border.ghost-border` |
 
-Fonts: `core.font.family.ui` is Open Sans, then 7 fallbacks. Scales, counted as [DESIGN.md](DESIGN.md) holds them: no type styles under `core.typography`, no radius steps under `core.radius`, 5 spacing steps (`core.space`).
+Fonts: `core.font.family.ui` is Open Sans, then 7 fallbacks. Scales, counted as [DESIGN.md](DESIGN.md) holds them: no type styles under `core.typography`, 6 radius steps (`core.radius`), 5 spacing steps (`core.space`).
 
 ### Using components
 

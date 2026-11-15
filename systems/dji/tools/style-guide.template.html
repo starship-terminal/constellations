@@ -59,7 +59,7 @@ code { font-family: var(--sg-mono); font-size: .9em; }
 .dcta .ghost { background: transparent; color: var(--white, #fff); border: 1px solid var(--white, #fff); }
 .dft { padding: 22px 28px; background: var(--surface-footer, #272727); color: var(--dark-muted, rgba(255,255,255,.85)); font: 400 12px/2 var(--sg-sans); }
 .dft b { display: block; color: var(--white, #fff); font-weight: 600; margin-bottom: 4px; }
-.field { display: block; width: 100%; max-width: 420px; height: 32px; padding: 0 12px; border: 1px solid var(--border, rgba(0,0,0,.15)); border-radius: var(--radius, 16px); background: var(--white, #fff); font: 400 14px var(--sg-sans); color: var(--primary, rgba(0,0,0,.85)); }
+.field { display: block; width: 100%; max-width: 420px; height: 32px; padding: 0 12px; border: 1px solid var(--border, rgba(0,0,0,.15)); border-radius: var(--radius, 16px); background: var(--bg, #fff); font: 400 14px var(--sg-sans); color: var(--primary, rgba(0,0,0,.85)); }
 table.cmp { border-collapse: collapse; font-size: 14px; }
 table.cmp td, table.cmp th { border: 1px solid var(--color-neutral-hairline, #ddd); padding: 6px 14px; text-align: left; }
 .tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--color-neutral-hairline, #ddd); }
@@ -176,9 +176,12 @@ const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) 
 
 (function spacing() {
   let m = '';
-  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.space || TOK.core.spacing || {}, 'space.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
   for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
   for (const [n, t] of flat(TOK.core.border || {}, 'border.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.size || {}, 'size.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.zIndex || {}, 'zIndex.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.motion || {}, 'motion.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
   for (const [n, t] of flat(TOK.core.easing || {}, 'easing.')) m += `<div><b>${esc(n)}</b> <span>cubic-bezier(${esc(t.v.join ? t.v.join(', ') : t.v)})</span></div>`;
   $('#spacing-out').innerHTML = m;
 })();
