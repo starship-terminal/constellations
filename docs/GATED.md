@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_87 of 145 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_88 of 146 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -483,6 +483,11 @@ Access: read-only (the marketing site, /pricing, /email-templates, /postcards, /
 Access: signed out (every captured surface is public); www.farfetch.com answers automation with Akamai 403 and the farfetch-contents.com CDNs with 429, so the DOM evidence is Wayback SSR snapshots served locally and painted by Farfetch's own archived CSS, fonts and images with scripts stripped
 - anything behind sign-in: account, wishlist contents, bag, checkout, order tracking, FARFETCH Access loyalty, private client
 - submitted states: search, newsletter and filters were typed/measured but never submitted
+
+## [Digg](../systems/digg) — `digg`
+Access: read-only (the home feed, category feeds, story pages, /u/<source> profiles, /login, /sign-up and /privacy are fully public signed out; voting, commenting, submitting, following and settings are an authenticated boundary never reached; the vote pills, comment and source links were measured, never followed or pressed, and the Clerk fields were focused/filled, never submitted)
+- voting, commenting, submitting, following sources and every account surface need an account - an authenticated boundary never reached; the digg-it pills and comment links gate on sign-in and were never pressed
+- the Clerk auth fields were focused and filled at /login and /sign-up, never submitted - no validation, error, loading or success state exists in this capture
 
 ## [Fernand](../systems/getfernand) — `getfernand`
 Access: read-only (the marketing site, the signed-out app.getfernand.com/auth/login and /create forms, and help.getfernand.com in light and toggled dark are fully public; every post-login app surface - the inbox workspace, settings, API keys - is an authenticated boundary never reached; the login/signup forms were measured and typed into then cleared, never submitted; the 'Book a demo' Cal.com scheduler was measured, never activated; every link and CTA was measured, never followed; no consent banner was observed on any host)

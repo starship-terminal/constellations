@@ -11864,6 +11864,101 @@
       "layoutGaps": {
         "icons/": "FARFETCH's icon glyphs are its artwork and are not kept here (docs/RIGHTS.md)"
       }
+    },
+
+    {
+      "slug": "digg",
+      "name": "Digg",
+      "url": "https://digg.com",
+      "category": "media",
+      "platform": "web",
+      "goodFor": "news-aggregator and community-feed product design: a real declared shadcn-style token layer (--background/--primary*/--muted*/--accent*/--border/--input/--ring semantics, the --sidebar-* rail set, --chart-1..5, --rank-one/--success roles, the full Tailwind hue scales and a Tailwind utility layer) over a #fdfdff field with #161617 ink, ink@70% muted text, white cards on rgba(0,0,0,0.08) hairlines, #f0f0f5 fills, a single #1c66eb primary blue and #e37b4c rank-one orange; roobert UI + vt323 vote-odometer mono; story cards with vote pills and source clusters, right-rail panels, a story detail layout, Clerk auth - and a real painted dark theme cycled through the sidebar pill",
+      "tags": [
+        "web",
+        "news",
+        "feed",
+        "social-voting",
+        "tailwind",
+        "shadcn-tokens",
+        "light",
+        "dark",
+        "cards",
+        "sidebar",
+        "signed-out"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-14",
+      "access": "read-only (the home feed, category feeds, story pages, /u/<source> profiles, /login, /sign-up and /privacy are fully public signed out; voting, commenting, submitting, following and settings are an authenticated boundary never reached; the vote pills, comment and source links were measured, never followed or pressed, and the Clerk fields were focused/filled, never submitted)",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/digg/README.md",
+      "tokens": "systems/digg/tokens.json",
+      "styleGuide": "systems/digg/style-guide.html",
+      "preview": {
+        "cover": "systems/digg/screenshots/home-light-default.png",
+        "icon": "systems/digg/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.background.card",
+            "text": "light.text.ink",
+            "muted": "light.text.muted",
+            "accent": "light.action.primary",
+            "border": "light.border.hairline"
+          },
+          "dark": {
+            "page": "dark.background.default",
+            "surface": "dark.card.default",
+            "text": "dark.text.ink",
+            "muted": "dark.text.muted",
+            "accent": "dark.action.primary",
+            "border": "dark.border.hairline"
+          }
+        },
+        "fonts": [
+          "core.font.family.ui",
+          "core.font.family.mono"
+        ]
+      },
+      "capture": {
+        "method": "public-web",
+        "source": "digg.com (the 2025 reboot) in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and crops from the live DOM. The site declares its token layer in its stylesheets (353 resolved custom properties per theme over :root and a real .dark block), so the scales are declared values - lab/oklab/oklch colours normalised to hex - and the surface roles are measured computed values aliased to the declarations they match. Both themes paint signed out: the sidebar pill cycles System -> Light -> Dark and the dark roles and shots are measured through it. The signed-in product is a documented authenticated boundary",
+        "timestamp": "2026-11-14T12:00:00Z",
+        "harness": "Devin",
+        "model": "SWE-2 High",
+        "route": "public-web",
+        "routes": [
+          "/",
+          "/tech",
+          "/world-business/k7vz2u4u",
+          "/u/wired",
+          "/login",
+          "/sign-up",
+          "/privacy",
+          "mobile / and /world-business/k7vz2u4u"
+        ],
+        "gaps": [
+          "voting, commenting, submitting, following sources and every account surface need an account - an authenticated boundary never reached; the digg-it pills and comment links gate on sign-in and were never pressed",
+          "the Clerk auth fields were focused and filled at /login and /sign-up, never submitted - no validation, error, loading or success state exists in this capture",
+          "the 'N Sources' links and story links point at external publications and were measured, never followed",
+          "a cookie consent banner painted on first load; it was hidden for screenshots only - no consent choice was made",
+          "disabled, error and loading states were not observed; pressed states are DevTools-forced :active and may not match real mousedown",
+          "the phone home feed captures as two clip tiles stitched together (the full 10,339 px page) - a recorded boundary",
+          "icons: no standalone SVG set lifted this pass"
+        ],
+        "durationMin": 240,
+        "durationNote": "wall-clock across the capture sessions including kit adaptation from the designstripe lineage, the stylesheet harvest, screenshot and measurement passes on a headless Linux server (bot-mitigation retries, the theme-pill cycle for real dark readings, selector fixes for the card/rail ancestors), and the offline build",
+        "pr": "https://github.com/starship-terminal/constellations/pull/584"
+      },
+      "layoutGaps": {
+        "icons/": "the icon extraction pass was not run; the icons (the digg wordmark, the vote chevrons, the comment glyph, source favicons and the odometer digits) are visible in the crops and screenshots"
+      }
     }
 ,
     {

@@ -864,6 +864,12 @@
     "reason": "catalog.json describes a luxury-fashion marketplace: department chooser, product listing grids, a PDP buy box and editorial modules."
   },
   {
+    "referenceId": "systems:digg",
+    "groupId": "web-categories",
+    "labels": ["Magazines & Newspapers", "News"],
+    "reason": "catalog.json describes a news aggregator and community feed (the 2025 Digg reboot): story cards with vote pills, category feeds, source profiles and ranked rails."
+  },
+{
     "referenceId": "systems:getfernand",
     "groupId": "web-categories",
     "labels": ["Business", "Productivity"],
