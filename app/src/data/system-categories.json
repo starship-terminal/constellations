@@ -864,6 +864,12 @@
     "reason": "catalog.json describes a luxury-fashion marketplace: department chooser, product listing grids, a PDP buy box and editorial modules."
   },
   {
+    "referenceId": "systems:feedhive",
+    "groupId": "web-categories",
+    "labels": ["AI Tool", "Productivity", "Scheduling Tools"],
+    "reason": "catalog.json describes an AI social-media management product: marketing site, AI and scheduling feature pages, pricing and a gated app sign-in."
+  },
+  {
     "referenceId": "systems:digg",
     "groupId": "web-categories",
     "labels": ["Magazines & Newspapers", "News"],
