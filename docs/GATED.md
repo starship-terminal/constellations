@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_90 of 148 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_91 of 149 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -160,6 +160,13 @@ Access: signed out (every captured surface is public; the product — scheduler,
 Access: signed out (every captured surface is public; the Dock workspace sits behind auth.dock.us and was never reached; the HubSpot demo form and the auth cards were measured, never filled or submitted)
 - the signed-in workspace entirely: rooms, deal portals, content library, learning paths, settings and billing live behind auth.dock.us and were never reached
 - the login/signup cards and the HubSpot demo form were measured as surfaces, never filled or submitted; their Continue/submit actions were never pressed
+
+## [FlutterFlow](../systems/flutterflow) — `flutterflow`
+Access: signed out (every surface captured is public; the app sits at app.flutterflow.io behind login)
+- app.flutterflow.io and everything behind Sign in / Start building / Open Studio was never opened: the dashboard, editor canvas, AI generation flow, billing and account surfaces are signed-in and out of scope
+- the prompt composer was measured, focused and typed in (then cleared) but never submitted, so the generation flow it starts is missing
+- the enterprise Talk-to-sales form and the Studio application form were never submitted, so their success and painted error states are missing (the error slot is recorded as declared DOM, not painted)
+- plan CTAs lead to a signed-in checkout and were not followed
 
 ## [Buy Me a Coffee](../systems/buymeacoffee) — `buymeacoffee`
 Access: signed out (every captured surface is public; the creator dashboard, shop/membership/extras managers, payouts, analytics and settings sit behind /login, the Stripe checkout behind Support was never opened, and the password step behind Continue-with-email was never submitted)

@@ -1884,8 +1884,8 @@
     78
    ],
    "description": "Build applications faster than ever",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/flutterflow",
    "notes": "",
    "batch": 7
   },
