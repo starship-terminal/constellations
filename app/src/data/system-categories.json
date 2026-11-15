@@ -886,5 +886,11 @@
     "groupId": "web-categories",
     "labels": ["Design & Media Editing", "Productivity"],
     "reason": "catalog.json describes a design tool: the marketing pages for the design editor, FigJam, Slides, Dev Mode and Make, a pricing grid, community resource grids and the login/signup app shells."
+  },
+  {
+    "referenceId": "systems:fourthwall",
+    "groupId": "web-categories",
+    "labels": ["Business", "Marketplace"],
+    "reason": "catalog.json describes a creator-commerce platform: a Webflow marketing site with a pricing grid, a styled-components print-on-demand product catalogue with product pages, Mintlify docs and Docusaurus help (each with a real dark toggle), and a Keycloak sign-up shell; the shop dashboard, designer and checkout are gated."
   }
 ]
