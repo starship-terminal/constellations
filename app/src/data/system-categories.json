@@ -868,5 +868,12 @@
     "groupId": "web-categories",
     "labels": ["Magazines & Newspapers", "News"],
     "reason": "catalog.json describes a news aggregator and community feed (the 2025 Digg reboot): story cards with vote pills, category feeds, source profiles and ranked rails."
+  }  ,
+  {
+    "referenceId": "systems:discord",
+    "groupId": "web-categories",
+    "labels": ["Communication Tools", "Social Networking"],
+    "reason": "catalog.json describes a chat-community platform: signed-out server discovery, server detail pages with Join/Share, and the login/register auth surface."
   }
+
 ]
