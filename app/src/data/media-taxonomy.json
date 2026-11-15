@@ -1193,6 +1193,11 @@
       "assignedMedia": 69
     },
     {
+      "referenceId": "systems:feedhive",
+      "media": 165,
+      "assignedMedia": 165
+    },
+    {
       "referenceId": "systems:digg",
       "media": 149,
       "assignedMedia": 29
@@ -269152,6 +269157,2866 @@
           "termId": "web-ux-patterns:wish-list-bookmark",
           "rule": "ux-bookmark",
           "reason": "Capture filename explicitly names wish list & bookmark; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/screenshots/alternatives-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/screenshots/alternatives-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/screenshots/blog-article-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/screenshots/blog-article-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/screenshots/blog-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/screenshots/blog-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/screenshots/features-ai-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/screenshots/features-ai-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/screenshots/features-scheduling-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/screenshots/features-scheduling-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/screenshots/home-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/screenshots/home-light-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/screenshots/home-light-menu-agents-automation.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/screenshots/home-light-menu-product.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/screenshots/integrations-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/screenshots/integrations-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/screenshots/login-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:log-in",
+          "rule": "page-login",
+          "reason": "Capture filename explicitly names log in; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/screenshots/mobile-home-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/screenshots/mobile-home-light-drawer.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:sidebar-drawer",
+          "rule": "ui-sidebar",
+          "reason": "Capture filename explicitly names sidebar & drawer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/screenshots/mobile-home-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/screenshots/mobile-pricing-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/screenshots/mobile-pricing-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/screenshots/mobile-tools-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/screenshots/mobile-tools-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/screenshots/pricing-light-billing-monthly.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:billing-plans",
+          "rule": "ux-billing",
+          "reason": "Capture filename explicitly names billing & plans; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/screenshots/pricing-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/screenshots/pricing-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/screenshots/privacy-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/screenshots/privacy-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/screenshots/signup-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:sign-up",
+          "rule": "page-signup",
+          "reason": "Capture filename explicitly names sign up; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/screenshots/terms-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/screenshots/terms-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/screenshots/tools-bio-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/screenshots/tools-bio-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/screenshots/tools-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/screenshots/tools-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/agent-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/agent-card-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/billing-monthly-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:billing-plans",
+          "rule": "ux-billing",
+          "reason": "Capture filename explicitly names billing & plans; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/billing-monthly-hover.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:billing-plans",
+          "rule": "ux-billing",
+          "reason": "Capture filename explicitly names billing & plans; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/billing-monthly-selected.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:billing-plans",
+          "rule": "ux-billing",
+          "reason": "Capture filename explicitly names billing & plans; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/billing-yearly-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:billing-plans",
+          "rule": "ux-billing",
+          "reason": "Capture filename explicitly names billing & plans; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/billing-yearly-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:billing-plans",
+          "rule": "ux-billing",
+          "reason": "Capture filename explicitly names billing & plans; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/billing-yearly-hover.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:billing-plans",
+          "rule": "ux-billing",
+          "reason": "Capture filename explicitly names billing & plans; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/billing-yearly-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:billing-plans",
+          "rule": "ux-billing",
+          "reason": "Capture filename explicitly names billing & plans; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/bio-h1-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/bio-platform-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/bio-platform-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/bio-platform-selected.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/bio-submit-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/bio-submit-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/bio-submit-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/bio-submit-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/bio-textarea-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/bio-textarea-filled.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/bio-textarea-focused.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/bio-tone-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/bio-tone-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/blog-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/blog-h1-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/blog-row-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/blog-row-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/feat-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/feat-card-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/feat-cta-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/feat-cta-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/feat-cta-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/feat-cta-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/feat-eyebrow-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/feat-h1-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/footer-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/footer-link-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/footer-link-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/footer-link-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/footer-link-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/hero-badge-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:badge",
+          "rule": "ui-badge",
+          "reason": "Capture filename explicitly names badge; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/hero-badge-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:badge",
+          "rule": "ui-badge",
+          "reason": "Capture filename explicitly names badge; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/hero-check-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/hero-cta-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/hero-cta-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/hero-cta-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/hero-cta-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/hero-h1-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/hero-mock-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/hero-sub-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/login-field-email-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/login-field-email-filled.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/login-field-email-focused.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/login-field-pass-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/login-field-pass-filled.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/login-field-pass-focused.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/login-forgot-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/login-forgot-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/login-forgot-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/login-forgot-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/login-google-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/login-google-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/login-google-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/login-google-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/login-panel-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/login-submit-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/login-submit-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/login-submit-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/login-submit-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/m-drawer-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:sidebar-drawer",
+          "rule": "ui-sidebar",
+          "reason": "Capture filename explicitly names sidebar & drawer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/m-header-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/m-hero-cta-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/m-hero-cta-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/m-hero-cta-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/m-hero-cta-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/m-hero-h1-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/m-menu-btn-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/m-menu-btn-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/m-menu-btn-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/m-menu-btn-opened.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/m-menu-btn-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/mkt-header-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/mkt-logo-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/nav-dropdown-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dropdown",
+          "rule": "ui-dropdown",
+          "reason": "Capture filename explicitly names dropdown; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/nav-dropdown-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dropdown",
+          "rule": "ui-dropdown",
+          "reason": "Capture filename explicitly names dropdown; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/nav-dropdown-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dropdown",
+          "rule": "ui-dropdown",
+          "reason": "Capture filename explicitly names dropdown; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/nav-dropdown-opened.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dropdown",
+          "rule": "ui-dropdown",
+          "reason": "Capture filename explicitly names dropdown; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/nav-dropdown-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dropdown",
+          "rule": "ui-dropdown",
+          "reason": "Capture filename explicitly names dropdown; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/nav-link-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/nav-link-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/nav-link-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/nav-link-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/nav-login-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/nav-login-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/nav-login-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/nav-login-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/nav-menu-item-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/nav-menu-item-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/nav-panel-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/nav-signup-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/nav-signup-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/nav-signup-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/nav-signup-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/plan-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/plan-card-plain-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/plan-cta-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/plan-cta-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/plan-cta-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/plan-cta-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/price-h1-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/promo-bar-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/promo-bar-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/section-h2-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/signup-field-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/signup-field-filled.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/signup-field-focused.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/signup-google-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/signup-google-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/signup-google-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/signup-google-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/signup-panel-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/signup-submit-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/signup-submit-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/signup-submit-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/signup-submit-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/tab-pill-active-selected.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/tab-pill-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/tab-pill-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/tab-pill-selected.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:feedhive",
+      "mediaId": "systems/feedhive/components/crops/trial-badge-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:badge",
+          "rule": "ui-badge",
+          "reason": "Capture filename explicitly names badge; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/feedhive/tokens.json#core.font.family.sans. Inherited package evidence; fallback families excluded."
+        },
+        {
+          "termId": "web-fonts:plus-jakarta-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Plus Jakarta Sans from systems/feedhive/tokens.json#core.font.family.display. Inherited package evidence; fallback families excluded."
         }
       ]
     },
