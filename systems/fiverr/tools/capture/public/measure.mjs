@@ -9,8 +9,10 @@
 // state into components/crops/; raw/measurements.md is built by
 // build-measurements.mjs.
 //
-// fiverr.com is a React app on atomic hashed classes with no :root custom
-// properties — every value is a measured computed style. One light theme is
+// fiverr.com is a React app on atomic hashed classes: its served sheets
+// declare ~1,290 custom properties on :root, all named by content hash
+// (--_103bn0w …) — a token-free layer with no semantic names to alias, so
+// every value is a measured computed style. One light theme is
 // painted; the hero search form's `dark` class is a component skin, not a
 // site theme. Specs select by role, aria-label or text (the classes are
 // hashed). Nothing is sent, bought or signed into: the only presses are
@@ -40,6 +42,11 @@ const listed = new Map();
 // their earlier readings instead of being pruned below (a blocked pass must
 // never erase evidence).
 const failedPages = new Set();
+// Pages this run actually reached and measured — only these may prune their
+// untouched entries below. A page function that returns before its newPage
+// (gig/seller with no discovered URL, say) never lands here, so a retry run
+// can never erase earlier gig/seller readings it never visited.
+const finishedPages = new Set();
 
 async function blocked() {
   return page.evaluate(() => {
@@ -73,6 +80,7 @@ async function newPage(key, { mobile = false, wait = 9000, promo = 'close', url 
     log('open', key, mobile ? '(mobile)' : '');
     await open(page, url || (URLS[key].startsWith('http') ? URLS[key] : BASE + URLS[key]), { wait, promo });
     if (!(await blocked())) {
+      finishedPages.add(key);
       await savePx(liveCtx);
       await page.addStyleTag({ content: '*{caret-color:transparent!important}' });
       return true;
@@ -265,6 +273,32 @@ async function toggle(loc, { allowLink = false } = {}) {
 const q = (sel) => page.locator(sel);
 const B4 = ['default', 'hover', 'focus-visible', 'pressed'];
 
+// Index of the first element matching sel whose box/node passes predSrc —
+// for the cases a locator alone cannot scope: an off-screen twin (the closed
+// drawer's own footer sits at x=-480) or an inline link matching a card's
+// text. predSrc is a JS expression over `el` and `r` (its bounding rect).
+async function nthOf(sel, predSrc) {
+  return page.evaluate(([s, src]) => {
+    const keep = new Function('el', 'r', `return (${src});`);
+    return [...document.querySelectorAll(s)].findIndex((el) => keep(el, el.getBoundingClientRect()));
+  }, [sel, predSrc]).catch(() => -1);
+}
+
+// The hero search form on the home page — the `dark`-skinned pill inside the
+// hero band. The header carries a second search form (its 42px field sits in
+// the top bar), so the spec must exclude every form inside the site chrome
+// or hero-search/hero-search-input read the header's field instead.
+const HERO_FORM = 'form[class*="search-form"]:not(.main-header form):not(header form)';
+async function heroForm() {
+  let loc = q(HERO_FORM).filter({ visible: true }).first();
+  if (!(await loc.count())) {
+    // Fallback: any form holding an input, painted below the header band.
+    const i = await nthOf('form', 'el.querySelector("input") && r.width > 200 && r.y > 100');
+    if (i >= 0) loc = q('form').nth(i);
+  }
+  return loc;
+}
+
 async function sheetsFor(key) {
   const res = await page.evaluate(() => {
     const transitions = [];
@@ -329,11 +363,14 @@ async function openSidebar() {
     return !!art;
   }).catch(() => false);
   if (await open()) return 'the categories drawer was already open';
+  // The UserWay accessibility trigger matches the same label query — never
+  // click the widget; the hamburger is the page's own chrome.
   const cand = page.locator('button[aria-label*="idebar" i], button[aria-label*="menu" i], button:has-text("Sidebar menu")').filter({ visible: true });
   const n = await cand.count();
   if (!n) return 'no Sidebar menu toggle';
   for (let i = 0; i < n; i++) {
     const b = cand.nth(i);
+    if (await b.evaluate((el) => !!el.closest('.uw-sl, .uwy, .userway_buttons_wrapper, [id*="userway" i], [class*="userway" i]')).catch(() => false)) continue;
     for (let t = 0; t < 2; t++) {
       await b.click({ timeout: 4000 }).catch(() => b.evaluate((el) => el.click()));
       await page.waitForTimeout(1000);
@@ -359,9 +396,10 @@ async function home() {
   // The hamburger: pick the first visible candidate with a real box — a
   // sr-only twin (skip/menu a11y control) can match the label query at 0x0.
   const hamBox = await page.evaluate(() => {
+    const uw = '.uw-sl, .uwy, .userway_buttons_wrapper, [id*="userway" i], [class*="userway" i]';
     for (const b of document.querySelectorAll('button[aria-label*="idebar" i], button[aria-label*="menu" i], button')) {
       const t = (b.getAttribute('aria-label') || b.innerText || '');
-      if (!/sidebar|menu/i.test(t)) continue;
+      if (!/sidebar|menu/i.test(t) || b.closest(uw)) continue;
       const r = b.getBoundingClientRect();
       if (r.width > 8 && r.height > 8 && r.y < 120) {
         const arr = [...document.querySelectorAll('button')].indexOf(b);
@@ -370,7 +408,15 @@ async function home() {
     }
     return -1;
   }).catch(() => -1);
-  const ham = hamBox >= 0 ? q('button').nth(hamBox) : q('button[aria-label*="idebar" i], button:has-text("Sidebar menu")').filter({ visible: true }).first();
+  let ham = hamBox >= 0 ? q('button').nth(hamBox) : null;
+  if (!ham) {
+    // Same box discipline without the y bound: a label/text match alone can
+    // land on a 0x0 sr-only twin, the drawer's own off-screen control or the
+    // UserWay accessibility trigger (its skip-link button matches the same
+    // label query parked at y=-70).
+    const hi = await nthOf('button', '/sidebar|menu/i.test(el.getAttribute("aria-label") || el.innerText || "") && !el.closest(\'.uw-sl, .uwy, .userway_buttons_wrapper, [id*="userway" i], [class*="userway" i]\') && r.width > 8 && r.height > 8 && r.x > -2 && r.y > -2');
+    ham = hi >= 0 ? q('button').nth(hi) : q('button[aria-label*="idebar" i], button:has-text("Sidebar menu")').filter({ visible: true }).first();
+  }
   await S('sidebar-btn', ham, [...B4, 'opened'], { group: g, title: 'Sidebar menu button', desc: 'The header hamburger that opens the Browse-categories drawer — a local UI toggle; the opened state was measured after its own click.', sel: 'button Sidebar menu' }, { noScroll: true });
   await page.keyboard.press('Escape').catch(() => {});
   await S('nav-ai', q('button').filter({ hasText: /^Connect to your AI$/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Connect to your AI button', desc: 'The header "Connect to your AI" button (the Fiverr AI-assistant entry); measured, never pressed.', sel: 'button Connect to your AI' }, { noScroll: true });
@@ -381,18 +427,53 @@ async function home() {
   await S('cat-nav', q('a').filter({ hasText: /^Graphics & Design$/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Category nav link', desc: 'A category-strip link under the header (Trending, Graphics & Design, Programming & Tech, …); measured, never followed.', sel: 'a Graphics & Design' }, { noScroll: true });
   const h = G.home;
   await S('hero-h1', q('h1').filter({ visible: true }).first(), ['default'], { group: h, title: 'Hero headline', desc: '"Our freelancers will take it from here" — the home hero display heading over the dark hero band.', sel: 'h1' }, { noScroll: true });
-  await S('hero-search', q('form.search-form, form[class*="search-form"]').filter({ visible: true }).first(), ['default'], { group: h, title: 'Hero search form', desc: 'The hero search field — the `dark`-skinned pill inside the light page: an input plus its green submit button.', sel: 'form.search-form' }, { noScroll: true });
-  await S('hero-search-input', q('form[class*="search-form"] input, input[type="search"], input[placeholder*="freelance" i]').filter({ visible: true }).first(), FIELD, { group: h, title: 'Hero search field', desc: 'The "Search for any service" input inside the dark search form; focused and typed into then cleared — never searched.', sel: 'search-form input' }, { noScroll: true, fillText: 'logo design' });
-  await S('hero-search-btn', q('form[class*="search-form"] button[type="submit"], form[class*="search-form"] button').filter({ visible: true }).last(), B4, { group: h, title: 'Search submit', desc: 'The green search submit button inside the hero form; its states were measured but it was never clicked — nothing was searched.', sel: 'search-form submit' }, { noScroll: true });
+  const hf = await heroForm();
+  await S('hero-search', hf, ['default'], { group: h, title: 'Hero search form', desc: 'The hero search field — the `dark`-skinned pill inside the light page: an input plus its submit button.', sel: 'hero form.search-form (the header search excluded)' }, { noScroll: true });
+  await S('hero-search-input', hf.locator('input').filter({ visible: true }).first(), FIELD, { group: h, title: 'Hero search field', desc: 'The "Search for any service" input inside the dark search form; focused and typed into then cleared — never searched.', sel: 'hero search-form input' }, { noScroll: true, fillText: 'logo design' });
+  const heroBtn = (await hf.locator('button[type="submit"]').count())
+    ? hf.locator('button[type="submit"]').filter({ visible: true }).first()
+    : hf.locator('button').filter({ visible: true }).last();
+  await S('hero-search-btn', heroBtn, B4, { group: h, title: 'Search submit', desc: 'The search submit button inside the hero form; its states were measured but it was never clicked — nothing was searched.', sel: 'hero search-form submit' }, { noScroll: true });
   await S('popular-chip', q('button, a').filter({ hasText: /^(Website Development|Logo Design|Video Editing|AI Development|SEO|Software Development|Data Science|Architecture|e-Commerce|Social Media|Voice Over|UGC Videos)/ }).filter({ visible: true }).first(), B4, { group: h, title: 'Popular-service chip', desc: 'A "Popular services" pill under the hero (Website Development, Logo Design, …); measured, never followed.', sel: 'popular service chip' });
-  await S('cat-card', q('a').filter({ hasText: /^(Programming & Tech|Graphics & Design|Digital Marketing|Video & Animation)$/ }).filter({ visible: true }).last(), ['default', 'hover'], { group: h, title: 'Category card', desc: 'A service-category card tile further down the home page; measured, never followed.', sel: 'category card link' });
+  // A category card is a tile (image + label, card-sized), not the inline
+  // category-strip link the text match alone first finds — pick the first
+  // category anchor painted at card size, preferring one carrying media.
+  const cardIdx = await page.evaluate(() => {
+    const re = /^(Programming & Tech|Graphics & Design|Digital Marketing|Video & Animation|Writing & Translation|Music & Audio|Business|AI Services|Photography|Consulting|Finance|Data|Personal Growth)/;
+    const els = [...document.querySelectorAll('a[href]')];
+    const cards = els.filter((a) => {
+      const r = a.getBoundingClientRect();
+      return re.test((a.innerText || '').trim()) && r.width >= 120 && r.height >= 60;
+    });
+    const el = cards.find((a) => a.querySelector('img, picture, video, canvas')) || cards[0];
+    return el ? els.indexOf(el) : -1;
+  }).catch(() => -1);
+  const catCard = cardIdx >= 0
+    ? q('a[href]').nth(cardIdx)
+    : q('a').filter({ hasText: /^(Programming & Tech|Graphics & Design|Digital Marketing|Video & Animation)$/ }).filter({ visible: true }).last();
+  await S('cat-card', catCard, ['default', 'hover'], { group: h, title: 'Category card', desc: 'A service-category card tile further down the home page; measured, never followed.', sel: 'category card tile' });
   await S('section-h2', q('main h2, h2').filter({ hasText: /Make it all happen|success on Fiverr|Popular services/ }).filter({ visible: true }).first(), ['default'], { group: h, title: 'Section heading', desc: 'A marketing section heading ("Make it all happen with freelancers", …).', sel: 'h2' });
   await S('trust-badge', q('[class*="rat" i], [class*="star" i]').filter({ hasText: /4\.|rating|★/ }).filter({ visible: true }).first(), ['default'], { group: h, title: 'Rating badge', desc: 'A star-rating badge on the page (seller ratings, reviews strip); recorded missing when none renders.', sel: 'rating badge' });
   const f = G.footer;
-  await S('footer', q('footer').filter({ visible: true }).first(), ['default'], { group: f, title: 'Footer', desc: 'The page footer: category sitemap columns, company links, social icons and the language/currency buttons.', sel: 'footer' });
-  await S('footer-link', q('footer a').filter({ hasText: /^Careers$/ }).first(), B4, { group: f, title: 'Footer link', desc: 'A footer sitemap link; measured, never followed.', sel: 'footer a Careers' });
-  await S('footer-locale', q('footer button, [role="contentinfo"] button').filter({ hasText: /^English$/ }).filter({ visible: true }).first(), B4, { group: f, title: 'Footer locale button', desc: 'The "English" button in the footer — a local UI toggle for the locale list; measured, never toggled.', sel: 'footer button English' });
-  await S('footer-currency', q('footer button, [role="contentinfo"] button').filter({ hasText: /SGD|USD|\$\s*[A-Z]{3}/ }).filter({ visible: true }).first(), B4, { group: f, title: 'Currency button', desc: 'The currency button in the footer ("S$ SGD" for this client — prices localize); measured, never toggled.', sel: 'footer currency button' });
+  // The page footer, not the off-screen twin: the closed categories drawer
+  // carries its own <footer> (Join Fiverr / Sign in) parked at x=-480, which
+  // a bare `footer` query reads first. The page footer is the widest
+  // on-screen footer lowest in the document; its descendants scope the
+  // footer-link/locale/currency specs below.
+  const footIdx = await page.evaluate(() => {
+    const els = [...document.querySelectorAll('footer')];
+    let best = -1, bestY = -1;
+    els.forEach((el, i) => {
+      const r = el.getBoundingClientRect();
+      if (r.x > -2 && r.width > 600 && r.y > bestY) { best = i; bestY = r.y; }
+    });
+    return best;
+  }).catch(() => -1);
+  const foot = footIdx >= 0 ? q('footer').nth(footIdx) : q('body > footer, footer').filter({ visible: true }).last();
+  await S('footer', foot, ['default'], { group: f, title: 'Footer', desc: 'The page footer: category sitemap columns, company links, social icons and the language/currency buttons.', sel: 'the on-screen page footer (the drawer\'s off-screen footer excluded)' });
+  await S('footer-link', foot.locator('a').filter({ hasText: /^Careers$/ }).filter({ visible: true }).first(), B4, { group: f, title: 'Footer link', desc: 'A footer sitemap link; measured, never followed.', sel: 'footer a Careers' });
+  await S('footer-locale', foot.locator('button').filter({ hasText: /^English$/ }).filter({ visible: true }).first(), B4, { group: f, title: 'Footer locale button', desc: 'The "English" button in the footer — a local UI toggle for the locale list; measured, never toggled.', sel: 'footer button English' });
+  await S('footer-currency', foot.locator('button').filter({ hasText: /SGD|USD|\$\s*[A-Z]{3}/ }).filter({ visible: true }).first(), B4, { group: f, title: 'Currency button', desc: 'The currency button in the footer ("S$ SGD" for this client — prices localize); measured, never toggled.', sel: 'footer currency button' });
   save();
 }
 
@@ -400,9 +481,17 @@ async function drawer() {
   // The open drawer is measured on the home page via the sidebar toggle.
   if (!(await newPage('home'))) return;
   const g = G.shell;
-  await S('drawer', q(DRAWER_SEL).filter({ hasText: /Browse categories/ }).first(), ['default'], { group: g, title: 'Categories drawer', desc: 'The "Browse categories" drawer the Sidebar-menu hamburger slides in from the left: category tree links, English/currency buttons, Join Fiverr and Sign in. Its links were never followed.', sel: 'article Browse categories' }, { open: openSidebar, noReset: true });
-  await S('drawer-item', q(`${DRAWER_SEL} a, ${DRAWER_SEL} button`).filter({ hasText: /^(Graphics & Design|Programming & Tech)$/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Drawer category link', desc: 'A category link inside the open drawer; measured, never followed.', sel: 'drawer category link' }, { open: openSidebar, noReset: true, allowLink: true });
-  await S('drawer-join', q(`${DRAWER_SEL} button, ${DRAWER_SEL} a`).filter({ hasText: /^Join Fiverr$/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Drawer Join button', desc: 'The "Join Fiverr" button at the drawer\'s foot; measured, never pressed.', sel: 'drawer Join Fiverr' }, { open: openSidebar, noReset: true });
+  // The closed drawer stays mounted off the left edge (x < 0), so a bare
+  // hasText match can bind to it — or, when the drawer never opened, to the
+  // page's own article/nav that happens to carry the same words (a 1440x5000
+  // whole-page reading). Open the drawer first, then bind to the panel that
+  // is actually painted at the left edge.
+  await openSidebar();
+  const di = await nthOf(DRAWER_SEL, '/browse categories/i.test(el.innerText || "") && r.x >= -40 && r.width > 250 && r.width < 900 && r.height < 2500');
+  const dl = di >= 0 ? q(DRAWER_SEL).nth(di) : q('.drawer-panel-not-found');
+  await S('drawer', dl, ['default'], { group: g, title: 'Categories drawer', desc: 'The "Browse categories" drawer the Sidebar-menu hamburger slides in from the left: category tree links, English/currency buttons, Join Fiverr and Sign in. Its links were never followed.', sel: 'article Browse categories' }, { noReset: true });
+  await S('drawer-item', dl.locator('a, button').filter({ hasText: /^(Graphics & Design|Programming & Tech)$/ }).first(), B4, { group: g, title: 'Drawer category link', desc: 'A category link inside the open drawer; measured, never followed.', sel: 'drawer category link' }, { open: openSidebar, noReset: true, allowLink: true });
+  await S('drawer-join', dl.locator('button, a').filter({ hasText: /^Join Fiverr$/ }).first(), B4, { group: g, title: 'Drawer Join button', desc: 'The "Join Fiverr" button at the drawer\'s foot; measured, never pressed.', sel: 'drawer Join Fiverr' }, { open: openSidebar, noReset: true });
   await page.keyboard.press('Escape').catch(() => {});
   save();
 }
@@ -569,7 +658,8 @@ async function mobile() {
   await S('m-drawer', q(DRAWER_SEL).filter({ hasText: /Browse categories/ }).first(), ['default'], { group: g, title: 'Mobile drawer', desc: 'The categories drawer open at 390 wide (Browse categories tree plus locale/currency and Join/Sign-in at its foot); its links were never followed.', sel: 'mobile categories drawer' }, { open: openSidebar, noScroll: true, noReset: true });
   await page.keyboard.press('Escape').catch(() => {});
   await S('m-hero-h1', q('h1').filter({ visible: true }).first(), ['default'], { group: g, title: 'Mobile hero headline', desc: 'The masthead at 390 wide.', sel: 'mobile h1' });
-  await S('m-search-input', q('form[class*="search-form"] input, input[type="search"]').filter({ visible: true }).first(), ['default', 'focused'], { group: g, title: 'Mobile search field', desc: 'The hero search input at 390 wide; focused, never searched.', sel: 'mobile search input' });
+  const mhf = await heroForm();
+  await S('m-search-input', mhf.locator('input, input[type="search"]').filter({ visible: true }).first(), ['default', 'focused'], { group: g, title: 'Mobile search field', desc: 'The hero search input at 390 wide (the header search excluded); focused, never searched.', sel: 'mobile hero search input' });
   save();
 }
 
@@ -582,10 +672,9 @@ context = ctx0;
 const pages = process.argv.slice(2);
 const plan = { home, drawer, categories, subcategory, search, gig, seller, join, login, logoMaker, about, selling, howItWorks, mobile };
 const order = Object.keys(plan).filter((k) => !pages.length || pages.includes(k));
-const finishedPages = new Set();
 try {
-  for (const k of order) { if (k !== 'mobile') { await plan[k](); finishedPages.add(k); } }
-  if (!pages.length || pages.includes('mobile')) { await plan.mobile(); finishedPages.add('mobile'); }
+  for (const k of order) { if (k !== 'mobile') await plan[k](); }
+  if (!pages.length || pages.includes('mobile')) await plan.mobile();
   // Reduced-motion check on an element that transitions (the header Join
   // pill's hover), so the delta is meaningful.
   if (!pages.length || pages.includes('home')) await reducedMotion('home', '.main-header a[href^="/join"]');

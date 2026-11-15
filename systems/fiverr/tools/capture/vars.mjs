@@ -4,9 +4,10 @@
 //   PLAYWRIGHT=/path/to/playwright/index.mjs xvfb-run -a node tools/capture/vars.mjs
 //
 // fiverr.com is a React app styled with atomic hashed classes (_1xeo152 …):
-// the served sheets declare almost no design-token layer at all — :root
-// carried zero custom properties on the captured pass, so every design token
-// in this package is a measured computed value, not a var alias. What the
+// the served sheets declare ~1,290 custom properties on :root, all named by
+// content hash — a token-free layer with no semantic names to alias, so every
+// design token in this package is a measured computed value, not a var alias.
+// What the
 // harvest does keep: the @font-face rules for the self-hosted Macan brand
 // faces (woff2 on npm-assets.fiverrcdn.com), plus whatever component-scoped
 // or vendor (UserWay, tracking widgets) custom properties the sheets happen

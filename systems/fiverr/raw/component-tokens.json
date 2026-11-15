@@ -1,5 +1,5 @@
 {
- "_about": "The token tree build_tokens.py turns into tokens.json. fiverr.com declares no :root custom properties; its atomic-class values are inline, so the tree is built from measured computed styles on the running pages (raw/components-computed.json). Semantic roles land in the light set (the only theme the site paints).",
+ "_about": "The token tree build_tokens.py turns into tokens.json. fiverr.com's sheets declare ~1,290 custom properties on :root, all named by content hash — a token-free layer with no semantic names to alias — so the tree is built from measured computed styles on the running pages (raw/components-computed.json). Semantic roles land in the light set (the only theme the site paints).",
  "core": {
   "font": {
    "family": {
@@ -35,6 +35,12 @@
      "source": "computed fontSize of section-h2 default (raw/components-computed.json)",
      "description": "A section heading size."
     },
+    "title": {
+     "type": "dimension",
+     "value": "28px",
+     "source": "computed fontSize of gig-h1 default (raw/components-computed.json)",
+     "description": "The gig title size."
+    },
     "body": {
      "type": "dimension",
      "value": "14px",
@@ -52,6 +58,12 @@
      "value": "16px",
      "source": "computed fontSize of popular-chip default (raw/components-computed.json)",
      "description": "Popular-chip label size."
+    },
+    "price": {
+     "type": "dimension",
+     "value": "20px",
+     "source": "computed fontSize of pkg-price default (raw/components-computed.json)",
+     "description": "The package price size."
     }
    },
    "lineHeight": {
@@ -140,7 +152,7 @@
      "description": "The black dim layer the search bar paints (its dim-background child)."
     },
     "hover-wash": {
-     "value": "#f5f5f5",
+     "value": "rgba(0, 0, 0, 0)",
      "type": "color",
      "source": "computed backgroundColor of nav-seller hover (raw/components-computed.json)",
      "description": "The light-grey nav hover wash."
@@ -160,7 +172,7 @@
      "description": "The dark action fill of the Join pill."
     },
     "fill-hover": {
-     "value": "#404145",
+     "value": "#222325",
      "type": "color",
      "source": "painted fill inside nav-join hover (raw/components-computed.json)",
      "description": "The action fill on hover."
@@ -172,10 +184,16 @@
      "description": "The search submit's dark fill."
     },
     "submit-hover": {
-     "value": "#404145",
+     "value": "#222325",
      "type": "color",
      "source": "painted fill inside hero-search-btn hover (raw/components-computed.json)",
      "description": "The submit fill on hover."
+    },
+    "cta": {
+     "value": "#000000",
+     "type": "color",
+     "source": "painted fill inside gig-continue default (raw/components-computed.json)",
+     "description": "The gig Continue button's fill."
     },
     "accent": {
      "value": "#1dbf73",
@@ -193,7 +211,7 @@
     "description": "The Join pill's corner radius."
    },
    "search-radius": {
-    "value": "4px",
+    "value": "12px",
     "type": "dimension",
     "source": "computed borderTopLeftRadius of hero-search-input default (raw/components-computed.json)",
     "description": "The search field's corner radius."
@@ -205,7 +223,7 @@
     "description": "The chip's corner radius (fallback while gig cards are unmeasured)."
    },
    "field-radius": {
-    "value": "4px",
+    "value": "12px",
     "type": "dimension",
     "source": "computed borderTopLeftRadius of hero-search-input default (raw/components-computed.json)",
     "description": "The search field's corner radius (fallback while auth fields are unmeasured)."
@@ -223,13 +241,13 @@
     "description": "The header CTA height."
    },
    "field-height": {
-    "value": "42px",
+    "value": "60px",
     "type": "dimension",
     "source": "computed height of hero-search-input default (raw/components-computed.json)",
     "description": "The search field height (fallback while auth fields are unmeasured)."
    },
    "search-height": {
-    "value": "42px",
+    "value": "60px",
     "type": "dimension",
     "source": "computed height of hero-search-input default (raw/components-computed.json)",
     "description": "The hero search field height."
@@ -243,14 +261,14 @@
    "focus-outline": {
     "value": "#222325",
     "type": "color",
-    "source": "computed outlineColor of nav-seller focus-visible (raw/components-computed.json)",
-    "description": "The keyboard-focus ring colour."
+    "source": "computed outlineColor of filter-btn focus-visible (raw/components-computed.json)",
+    "description": "The keyboard-focus ring colour (fallback source)."
    },
    "focus-outline-width": {
     "value": "2px",
     "type": "dimension",
-    "source": "computed outlineWidth of nav-seller focus-visible (raw/components-computed.json)",
-    "description": "The focus ring width."
+    "source": "computed outlineWidth of filter-btn focus-visible (raw/components-computed.json)",
+    "description": "The focus ring width (fallback source)."
    },
    "hover-fill": {
     "value": "rgba(255, 255, 255, 0.1)",
@@ -330,10 +348,10 @@
   "action": {
    "primary": {
     "default": {
-     "value": "{color.brand.fill}",
+     "value": "{color.brand.cta}",
      "type": "color",
      "source": "role alias over the measured core palette",
-     "description": "Primary CTAs (Join, Continue, search submit)."
+     "description": "Primary CTAs (Continue, Join, search submit)."
     },
     "hover": {
      "value": "{color.brand.fill-hover}",
@@ -377,13 +395,13 @@
   "search": {
    "height": {
     "type": "dimension",
-    "value": "42px",
+    "value": "60px",
     "source": "computed height of hero-search-input default (raw/components-computed.json)",
     "description": "The hero search field height."
    },
    "width": {
     "type": "dimension",
-    "value": "436.172px",
+    "value": "1159.94px",
     "source": "computed width of hero-search-input default (raw/components-computed.json)",
     "description": "The hero search field width."
    }
@@ -391,9 +409,17 @@
   "field": {
    "height": {
     "type": "dimension",
-    "value": "42px",
+    "value": "60px",
     "source": "computed height of hero-search-input default (raw/components-computed.json)",
     "description": "The search field height (fallback)."
+   }
+  },
+  "mobile-topbar": {
+   "height": {
+    "type": "dimension",
+    "value": "136px",
+    "source": "computed height of m-topbar default (raw/components-computed.json)",
+    "description": "The mobile header height."
    }
   }
  }

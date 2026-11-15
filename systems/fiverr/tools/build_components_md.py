@@ -44,10 +44,27 @@ def flat(node, prefix=""):
 PRIMARY = {"surface.page", "surface.card", "surface.muted", "surface.hero",
            "text.primary", "text.body", "text.muted", "text.onAccent",
            "action.primary", "border.hairline"}
+
+
+def resolved(v, seen=()):
+    """A role value can be an alias ({color.neutral.paper}): chase it through
+    the core set so BY_COLOR keys are always resolved colours a measurement
+    can match."""
+    m = re.fullmatch(r"\{([^{}]+)\}", str(v).strip())
+    if not m or m.group(1) in seen:
+        return v
+    node = T["core"]
+    for part in m.group(1).split("."):
+        node = node.get(part) if isinstance(node, dict) else None
+    if isinstance(node, dict) and "$value" in node:
+        return resolved(node["$value"], seen + (m.group(1),))
+    return v
+
+
 BY_COLOR = {}
 for n, t in sorted(flat(T["light"], "light."), key=lambda it: (it[0].split(".", 1)[1] not in PRIMARY, it[0])):
     if t["$type"] == "color":
-        BY_COLOR.setdefault(t["$value"], n)
+        BY_COLOR.setdefault(resolved(t["$value"]), n)
 for n, t in flat(T["core"], "core."):
     if t["$type"] == "color":
         BY_COLOR.setdefault(t["$value"], n)
@@ -266,16 +283,16 @@ SHOTS = [
     ("seller", "Seller profile", "that gig's seller"),
     ("logo-maker", "Logo Maker", "/logo-maker"),
     ("about", "About", "/about-us"),
-    ("start-selling", "Become a Seller", "/start_selling"),
+    ("selling", "Become a Seller", "/start_selling"),
     ("how-it-works", "How Fiverr works", "/cp/how-fiverr-works"),
+    ("legal", "Legal portal", "/legal-portal"),
     ("login", "Sign in", "/login"),
     ("join", "Join", "/join"),
 ]
 MOBILE = [
     ("mobile-home", "Home, phone", "/"),
-    ("mobile-categories", "Categories, phone", "/categories"),
     ("mobile-search", "Search, phone", "/search/gigs?query=logo%20design"),
-    ("mobile-login", "Sign in, phone", "/login"),
+    ("mobile-gig", "Gig page, phone", "the same gig at 390 wide"),
     ("mobile-join", "Join, phone", "/join"),
 ]
 
@@ -287,6 +304,7 @@ def W(s=""):
 
 
 shots = sorted(p.name for p in Path("screenshots").glob("*.png"))
+shots_set = set(shots)
 
 
 def links(prefix):
@@ -316,7 +334,7 @@ W(f"- Crops are images of the component read from the live page, in [components/
 W()
 W("## Discovery list")
 W()
-W("Screenshots are named `{page}-{theme}-state.png` where `{theme}` is the mode the page painted at capture: `light` for every public page — fiverr.com declares no :root custom properties and ships no theme switch, so light is the only painted theme (the hero search form's `dark` class is a component skin, not a site theme). Desktop shots are 1440 x 900 at 1x; `-full` shots are whole pages bounded at eight chunks — a page that reports an unbounded scrollHeight is truncated with the boundary recorded in the shot's `.capture.json` sidecar; mobile shots are `mobile-{page}-{theme}-{state}.png`, 780 wide (390 at 2x).")
+W("Screenshots are named `{page}-{theme}-state.png` where `{theme}` is the mode the page painted at capture: `light` for every public page — fiverr.com's sheets declare ~1,290 custom properties on `:root`, all named by content hash (a token-free layer with no semantic names to alias), and no page ships a theme switch, so light is the only painted theme (the hero search form's `dark` class is a component skin, not a site theme). Desktop shots are 1440 x 900 at 1x; `-full` shots are whole pages bounded at eight chunks — a page that reports an unbounded scrollHeight is truncated with the boundary recorded in the shot's `.capture.json` sidecar; mobile shots are `mobile-{page}-{theme}-{state}.png`, 780 wide (390 at 2x).")
 W()
 W("| Surface | URL | Screenshots |")
 W("|---|---|---|")
@@ -328,15 +346,36 @@ W("### Overlays and transient states")
 W()
 W("| State | Where | How it was reached | Captured |")
 W("|---|---|---|---|")
+def comp_anchor(key):
+    """The `#### Title` anchor a component's entry gets below — only while the
+    component has an entry at all (a page the pass never reached has none, so
+    the link would be dead)."""
+    c = C.get(key)
+    if not c or not c.get("title"):
+        return None
+    return "#" + re.sub(r"[^a-z0-9 -]", "", c["title"].lower()).replace(" ", "-")
+
+
+def evi(*keys, shots=()):
+    """An evidence cell for the overlays table: component section links where
+    the section exists, the page's own screenshot otherwise; a plain 'deferred'
+    when neither shipped."""
+    bits = [f"[{k}]({comp_anchor(k)})" for k in keys if comp_anchor(k)]
+    for s in shots:
+        if s in shots_set:
+            bits.append(f"[{s.replace('.png', '')}](screenshots/{s})")
+    return ", ".join(bits) if bits else "deferred — the component pass did not reach it"
+
+
 OVER = [
     ("PerimeterX challenge", "entry pages", "the scripted press&hold solver drives the 'PRESS & HOLD' control automatically and the clearance cookie is kept; it was never answered by hand", "solved, not shown"),
     ("UserWay + consent layers", "every page", "the accessibility widget and any consent layer are hidden before every shot and reading — never clicked, never answered", "hidden, never answered"),
-    ("Categories drawer", "every page header", "clicked the 'Sidebar menu' hamburger (a local UI toggle; keyboard Enter is the fallback)", "[home-light-sidebar](screenshots/home-light-sidebar.png), [drawer](#categories-drawer)"),
-    ("Filter dropdowns", "/search/gigs", "clicked a filter trigger (Category, Service Options, Seller Details, Budget, Delivery Time) — a local UI toggle", "[filter-btn](#filter-button)"),
-    ("Package tabs", "a gig page", "measured at rest — switching a tab re-prices the card, so they were never switched", "[pkg-tablist](#package-tabs), [pkg-tab](#package-tab)"),
-    ("FAQ accordions", "a gig page, /cp/how-fiverr-works", "clicked the question row — a local UI toggle", "[faq-acc](#faq-accordion), [hiw-faq](#hiw-faq-accordion)"),
-    ("Hero search", "home", "typed into then cleared — the form was never submitted, nothing was searched", "[hero-search-input](#hero-search-field)"),
-    ("Join/login fields", "/join and /login", "typed into then cleared — nothing sent; Continue-with-* was never pressed", "[login-email](#email-username-field), [login-password](#password-field), [join-field](#join-field)"),
+    ("Categories drawer", "every page header", "clicked the 'Sidebar menu' hamburger (a local UI toggle; keyboard Enter is the fallback)", evi("drawer", shots=["home-light-drawer.png"])),
+    ("Filter dropdowns", "/search/gigs", "clicked a filter trigger (Category, Service Options, Seller Details, Budget, Delivery Time) — a local UI toggle", evi("filter-btn", shots=["search-light-default.png"])),
+    ("Package tabs", "a gig page", "measured at rest — switching a tab re-prices the card, so they were never switched", evi("pkg-tablist", "pkg-tab", shots=["gig-light-default.png"])),
+    ("FAQ accordions", "a gig page, /cp/how-fiverr-works", "clicked the question row — a local UI toggle", evi("faq-acc", "hiw-faq", shots=["gig-light-default.png", "how-it-works-light-default.png"])),
+    ("Hero search", "home", "typed into then cleared — the form was never submitted, nothing was searched", evi("hero-search-input", shots=["home-light-default.png"])),
+    ("Join/login fields", "/join and /login", "typed into then cleared — nothing sent; Continue-with-* was never pressed", evi("login-email", "login-password", "join-field", shots=["join-light-default.png", "login-light-default.png"])),
     ("Signed-in product", "a Fiverr account", "buyer/seller dashboards, inbox, checkout and every post-login surface needs an account", "boundary; see Gaps"),
 ]
 for r in OVER:
@@ -506,7 +545,7 @@ W("- **Package tabs' alternate panels** were not switched (switching re-prices t
 W()
 W("### Themes")
 W()
-W('Every public fiverr.com page paints a single light theme: the site declares no `:root` custom properties and ships no theme switch — no page carried a dark attribute or class while captured. The hero search form\'s own `dark` class is a component skin inside the light page, measured as a component, not a dark theme.')
+W('Every public fiverr.com page paints a single light theme: the site\'s sheets declare ~1,290 custom properties on `:root`, all named by content hash (a token-free layer with no semantic names to alias), and no page carried a dark attribute, class or theme switch while captured. The hero search form\'s own `dark` class is a component skin inside the light page, measured as a component, not a dark theme.')
 W()
 W("### Fonts")
 W()

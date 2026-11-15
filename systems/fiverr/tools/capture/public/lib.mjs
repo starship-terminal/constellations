@@ -31,7 +31,8 @@ const SCRATCH = path.join(os.homedir(), '.design-systems', SLUG);
 const PX_COOKIES = path.join(SCRATCH, 'px-cookies.json');
 
 // fiverr.com is a React app styled with atomic hashed classes (_1xeo152 …) —
-// no CSS custom properties on :root at all, so every value is a measured
+// its :root carries ~1,290 custom properties all named by content hash (a
+// token-free layer, nothing semantic to alias), so every value is a measured
 // computed style. One light theme is painted; the hero search form carries a
 // `dark` class on FORM.search-form (a dark variant inside the light page —
 // a component skin, not a theme toggle). The Macan brand face is

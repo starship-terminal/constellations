@@ -5,10 +5,10 @@ Sources, read from fiverr.com:
   raw/css-vars.json          the custom properties fiverr.com's stylesheets declare,
                              read from the network responses plus inline <style> blocks
                              (tools/capture/vars.mjs) and binned app / vendor / utility /
-                             theme. fiverr.com declares no :root custom properties — the
-                             harvest is a token-free atomic-class sheet plus the Macan
-                             @font-face rules — so every design token below is a measured
-                             computed value, not a var alias.
+                             theme. fiverr.com's :root carries ~1,290 custom properties
+                             all named by content hash — a token-free layer with no
+                             semantic names to alias — so every design token below is a
+                             measured computed value, not a var alias.
   raw/component-tokens.json  the token tree (tools/build_component_tokens.py): each leaf either
                              names a variable ("var") resolved per theme, or carries a measured
                              value and the measurement it came from ("source")
@@ -24,15 +24,6 @@ import json, pathlib, re
 
 HERE = pathlib.Path(__file__).resolve().parent.parent
 RAW = HERE / "raw"
-V = json.loads((RAW / "css-vars.json").read_text())
-SPEC = json.loads((RAW / "component-tokens.json").read_text())
-
-# Resolved declarations per theme. vars.mjs resolves each custom property on a
-# probe document once light (:root) and once dark ([data-theme="dark"], a scope
-# no page carries — the site ships no theme switch), so DECL[theme][name] is what
-# the browser paints in that theme. A name declared only on :root resolves the
-# same in both.
-DECL = {t: {n: v.get("value", v["raw"]) for n, v in V["resolved"][t].items()} for t in ("light", "dark")}
 
 
 def norm_color(v):
@@ -95,13 +86,13 @@ def check(path, ty, val):
                 raise ValueError(f"{path}: gradient position {stop['position']!r}")
 
 
-def leaf(path, spec, theme):
+def leaf(path, spec, theme, decl):
     ty = spec["type"]
     if "var" in spec:
         name = spec["var"]
-        if name not in DECL[theme]:
+        if name not in decl[theme]:
             raise KeyError(f"{path}: {name} is not a resolved variable in raw/css-vars.json ({theme})")
-        val = DECL[theme][name]
+        val = decl[theme][name]
         src = f"css-var {name} ({theme})"
         if spec.get("source"):
             src += "; " + spec["source"]
@@ -143,20 +134,12 @@ def leaf(path, spec, theme):
     return t
 
 
-def build(node, theme, path=""):
+def build(node, theme, decl, path=""):
     if isinstance(node, dict) and "type" in node and ("value" in node or "var" in node):
-        return leaf(path, node, theme)
+        return leaf(path, node, theme, decl)
     if isinstance(node, dict) and "$value" in node:
         return node  # already a DTCG leaf (typography composites)
-    return {k: build(v, theme, f"{path}.{k}" if path else k) for k, v in node.items() if not k.startswith("_")}
-
-
-core = build(SPEC["core"], "light")  # scales are theme-independent
-light = build(SPEC["light"], "light")
-dark = build(SPEC["dark"], "dark")
-# The component tokens live in their own top-level spec tree but belong to the
-# exported light theme (the only one the shop paints): light.component.*
-light["component"] = build(SPEC["component"], "light")
+    return {k: build(v, theme, decl, f"{path}.{k}" if path else k) for k, v in node.items() if not k.startswith("_")}
 
 
 # every alias must point at a token that exists
@@ -166,11 +149,6 @@ def tokens_of(tree, prefix=""):
             yield prefix + k, v
         elif isinstance(v, dict):
             yield from tokens_of(v, prefix + k + ".")
-
-
-NAMES = {n for n, _ in tokens_of(core)}
-NAMES_L = NAMES | {n for n, _ in tokens_of(light)}
-NAMES_D = NAMES | {n for n, _ in tokens_of(dark)}
 
 
 def aliases(v):
@@ -183,33 +161,56 @@ def aliases(v):
     return []
 
 
-for n, t in list(tokens_of(core)):
-    for a in aliases(t["$value"]):
-        if a not in NAMES:
-            raise KeyError(f"core.{n}: alias {{{a}}} points at nothing")
-for n, t in list(tokens_of(light)):
-    for a in aliases(t["$value"]):
-        if a not in NAMES_L:
-            raise KeyError(f"light.{n}: alias {{{a}}} points at nothing")
-for n, t in list(tokens_of(dark)):
-    for a in aliases(t["$value"]):
-        if a not in NAMES_D:
-            raise KeyError(f"dark.{n}: alias {{{a}}} points at nothing")
+def main():
+    v = json.loads((RAW / "css-vars.json").read_text())
+    spec = json.loads((RAW / "component-tokens.json").read_text())
+    # Resolved declarations per theme. vars.mjs resolves each custom property on a
+    # probe document once light (:root) and once dark ([data-theme="dark"], a scope
+    # no page carries — the site ships no theme switch), so decl[theme][name] is what
+    # the browser paints in that theme. A name declared only on :root resolves the
+    # same in both.
+    decl = {t: {n: x.get("value", x["raw"]) for n, x in v["resolved"][t].items()} for t in ("light", "dark")}
 
-tokens = {
-    "core": core,
-    "light": light,
-    "$themes": [
-        {"id": "light", "name": "Light", "selectedTokenSets": {"core": "source", "light": "enabled"},
-         "$description": "The only theme fiverr.com paints; no dark theme is offered on any captured surface."},
-    ],
-    "$metadata": {"tokenSetOrder": ["core", "light"]},
-}
-(HERE / "tokens.json").write_text(json.dumps(tokens, indent=2, ensure_ascii=False) + "\n")
+    core = build(spec["core"], "light", decl)  # scales are theme-independent
+    light = build(spec["light"], "light", decl)
+    dark = build(spec["dark"], "dark", decl)
+    # The component tokens live in their own top-level spec tree but belong to the
+    # exported light theme (the only one the shop paints): light.component.*
+    light["component"] = build(spec["component"], "light", decl)
+
+    NAMES = {n for n, _ in tokens_of(core)}
+    NAMES_L = NAMES | {n for n, _ in tokens_of(light)}
+    NAMES_D = NAMES | {n for n, _ in tokens_of(dark)}
+
+    for n, t in list(tokens_of(core)):
+        for a in aliases(t["$value"]):
+            if a not in NAMES:
+                raise KeyError(f"core.{n}: alias {{{a}}} points at nothing")
+    for n, t in list(tokens_of(light)):
+        for a in aliases(t["$value"]):
+            if a not in NAMES_L:
+                raise KeyError(f"light.{n}: alias {{{a}}} points at nothing")
+    for n, t in list(tokens_of(dark)):
+        for a in aliases(t["$value"]):
+            if a not in NAMES_D:
+                raise KeyError(f"dark.{n}: alias {{{a}}} points at nothing")
+
+    tokens = {
+        "core": core,
+        "light": light,
+        "$themes": [
+            {"id": "light", "name": "Light", "selectedTokenSets": {"core": "source", "light": "enabled"},
+             "$description": "The only theme fiverr.com paints; no dark theme is offered on any captured surface."},
+        ],
+        "$metadata": {"tokenSetOrder": ["core", "light"]},
+    }
+    (HERE / "tokens.json").write_text(json.dumps(tokens, indent=2, ensure_ascii=False) + "\n")
+
+    def count(d):
+        return sum(count(v) for v in d.values()) if isinstance(d, dict) and "$value" not in d else 1
+
+    print({k: count(v) for k, v in tokens.items() if k in ("core", "light", "dark")})
 
 
-def count(d):
-    return sum(count(v) for v in d.values()) if isinstance(d, dict) and "$value" not in d else 1
-
-
-print({k: count(v) for k, v in tokens.items() if k in ("core", "light", "dark")})
+if __name__ == "__main__":
+    main()

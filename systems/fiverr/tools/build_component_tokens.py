@@ -1,15 +1,16 @@
 #!/usr/bin/env python3
 """Write raw/component-tokens.json, the token spec build_tokens.py reads.
 
-fiverr.com is a React app styled with atomic hashed classes (_1xeo152 …): it
-declares no token layer at all — :root carried zero custom properties on the
-captured pass (raw/css-vars.json, read by tools/capture/vars.mjs, holds only
-the Macan @font-face rules and scattered component/vendor vars). Every design
-token here is therefore a measured computed value read off the running pages
+fiverr.com is a React app styled with atomic hashed classes (_1xeo152 …): its
+served sheets declare ~1,290 custom properties on :root, all named by content
+hash (raw/css-vars.json, read by tools/capture/vars.mjs) — a token-free layer
+with no semantic names to alias, plus the Macan @font-face rules and
+scattered component/vendor vars. Every design token here is therefore a
+measured computed value read off the running pages
 (raw/components-computed.json), never a var alias:
 
-  brand greens       the Join pill, the hero search submit and the primary
-                     action colour -> core.color.brand
+  brand colours      the dark action fills (Join, the search submit,
+                     Continue) and the fiverr green accent -> core.color.brand
   dark band          the hero/search-form dark skin -> core.color.dark
   chrome neutrals    text ink, muted ink, hairlines, the white page and the
                      off-white section surface -> core.color.neutral
@@ -42,9 +43,10 @@ def var(name, ty="color", **kw):
 
 
 SPEC = {"_about": (
-    "The token tree build_tokens.py turns into tokens.json. fiverr.com "
-    "declares no :root custom properties; its atomic-class values are "
-    "inline, so the tree is built from measured computed styles on the "
+    "The token tree build_tokens.py turns into tokens.json. fiverr.com's "
+    "sheets declare ~1,290 custom properties on :root, all named by "
+    "content hash — a token-free layer with no semantic names to alias — "
+    "so the tree is built from measured computed styles on the "
     "running pages (raw/components-computed.json). Semantic roles land in "
     "the light set (the only theme the site paints)."),
     "core": {}, "light": {}, "dark": {}, "component": {}}
@@ -110,6 +112,11 @@ def norm_color(v):
 
 def have(comp, state, prop=None):
     try:
+        # A state recorded as failed (via: "focus failed" — the element would
+        # not hold a real keyboard focus) is not a reading of that state: a
+        # focus-ring token must never be sourced from an unfocused style.
+        if C[comp]["states"][state].get("via") == "focus failed":
+            return False
         s = st(comp, state)
         return prop is None or bool((s.get(prop) or "").strip())
     except KeyError:
@@ -309,8 +316,11 @@ for key, comp, state, prop, bag, desc in [
     ("chip", "popular-chip", "default", "fontSize", type_scale, "Popular-chip label size."),
     ("price", "pkg-price", "default", "fontSize", type_scale, "The package price size."),
 ]:
+    # A fallback row (search-h1 for gig-h1, say) fills the slot only while the
+    # preferred measurement is absent — a later reading must never be
+    # overwritten by the fallback listed after it.
     v = ts(comp, state, prop)
-    if v:
+    if v and key not in bag:
         bag[key] = {
             "type": "number" if prop == "fontWeight" else "dimension",
             "value": v,
@@ -334,11 +344,18 @@ for key, comp, state, prop, ty, desc in [
     ("search-height", "hero-search-input", "default", "height", "dimension", "The hero search field height."),
     ("header-padding-x", "mkt-header", "default", "paddingLeft", "dimension", "The header's horizontal padding."),
     ("focus-outline", "nav-seller", "focus-visible", "outlineColor", "color", "The keyboard-focus ring colour."),
+    ("focus-outline", "filter-btn", "focus-visible", "outlineColor", "color", "The keyboard-focus ring colour (fallback source)."),
+    ("focus-outline", "m-menu-btn", "focus-visible", "outlineColor", "color", "The keyboard-focus ring colour (fallback source)."),
     ("focus-outline-width", "nav-seller", "focus-visible", "outlineWidth", "dimension", "The focus ring width."),
+    ("focus-outline-width", "filter-btn", "focus-visible", "outlineWidth", "dimension", "The focus ring width (fallback source)."),
+    ("focus-outline-width", "m-menu-btn", "focus-visible", "outlineWidth", "dimension", "The focus ring width (fallback source)."),
     ("hover-fill", "popular-chip", "hover", "backgroundColor", "color", "The chip's hover fill."),
     ("control-transition", "nav-join", "default", "transitionDuration", "duration", "The control transition duration."),
 ]:
-    if have(comp, state, prop):
+    # Fallback rows fill a missing slot only; they never replace a reading the
+    # preferred row already wrote (popular-chip vs gig-card, the search field
+    # vs the auth field).
+    if have(comp, state, prop) and key not in meas:
         v = st(comp, state)[prop]
         if ty == "color":
             v = norm_color(v)
@@ -370,9 +387,12 @@ for key, cname, state, prop, desc in [
         parts = key.split(".")
         for p in parts[:-1]:
             node = node.setdefault(p, {})
-        node[parts[-1]] = {"type": "dimension", "value": st(cname, state)[prop],
-                           "source": f"computed {prop} of {cname} {state} (raw/components-computed.json)",
-                           "description": desc}
+        # Same fill-only rule: the fallback row (join-panel for login-panel,
+        # the search field for the auth field) never overwrites a set leaf.
+        if parts[-1] not in node:
+            node[parts[-1]] = {"type": "dimension", "value": st(cname, state)[prop],
+                               "source": f"computed {prop} of {cname} {state} (raw/components-computed.json)",
+                               "description": desc}
 
 (RAW / "component-tokens.json").write_text(json.dumps(SPEC, indent=1, ensure_ascii=False) + "\n")
 
