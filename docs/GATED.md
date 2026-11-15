@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_88 of 146 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_91 of 149 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -484,10 +484,27 @@ Access: signed out (every captured surface is public); www.farfetch.com answers 
 - anything behind sign-in: account, wishlist contents, bag, checkout, order tracking, FARFETCH Access loyalty, private client
 - submitted states: search, newsletter and filters were typed/measured but never submitted
 
+## [FeedHive](../systems/feedhive) — `feedhive`
+Access: signed out (every surface captured is public; the app.feedhive.com sign-in and sign-up cards are the only app surfaces a signed-out visitor sees - measured as forms, typed into then cleared, never submitted; everything post-login is an authenticated boundary never reached; docs.feedhive.com is a separate site; every CTA and link was measured, never followed; the dormant vanilla-cookieconsent layer mounts empty and was never answered)
+- every post-login surface (composer, scheduling calendar, AI generation, analytics, account settings) lives behind app.feedhive.com - an authenticated boundary never reached
+- the sign-in, sign-up and bio-generator forms were measured at rest and typed into then cleared, never submitted - validation, error, loading and success states are absent rather than measured; the bio Generate button's desaturated #b9c0f5 is its resting style, not a measured disabled state
+- the app.feedhive.com values are a different design system (Chakra UI) kept as component.login.* literals, never the marketing roles
+
 ## [Digg](../systems/digg) — `digg`
 Access: read-only (the home feed, category feeds, story pages, /u/<source> profiles, /login, /sign-up and /privacy are fully public signed out; voting, commenting, submitting, following and settings are an authenticated boundary never reached; the vote pills, comment and source links were measured, never followed or pressed, and the Clerk fields were focused/filled, never submitted)
 - voting, commenting, submitting, following sources and every account surface need an account - an authenticated boundary never reached; the digg-it pills and comment links gate on sign-in and were never pressed
 - the Clerk auth fields were focused and filled at /login and /sign-up, never submitted - no validation, error, loading or success state exists in this capture
+
+## [Fernand](../systems/getfernand) — `getfernand`
+Access: read-only (the marketing site, the signed-out app.getfernand.com/auth/login and /create forms, and help.getfernand.com in light and toggled dark are fully public; every post-login app surface - the inbox workspace, settings, API keys - is an authenticated boundary never reached; the login/signup forms were measured and typed into then cleared, never submitted; the 'Book a demo' Cal.com scheduler was measured, never activated; every link and CTA was measured, never followed; no consent banner was observed on any host)
+- every post-login app surface (the inbox workspace, conversation views, settings, API keys, team/AI-agent configuration) needs an account - an authenticated boundary never reached
+- the /auth/login and /create forms were measured and typed into then cleared, never submitted - validation, error, loading and success states are absent rather than measured
+- the 'Book a demo' action loads the Cal.com scheduler; starting a real booking flow is a side effect, so it was measured at rest and never activated
+
+## [Figma](../systems/figma) — `figma`
+Access: signed out (every captured surface is public; the editor and every post-login surface - files, boards, Dev Mode in a file, Make projects, community profiles and publish flows, admin - is an authenticated boundary never reached; the /login, /signup, /contact and /make forms were measured and typed into then cleared, never submitted; every CTA, nav item and community card was measured, never followed; the consent layer was hidden, never answered; Cloudflare challenged the automation on /dev-mode/ and /customers/ in the first pass and retries in fresh sessions succeeded - no challenge was answered by hand; the dark theme is declared only - a complete :root[data-theme="dark"] token layer the stylesheets ship but no public page painted while captured)
+- the editor and every post-login surface (files, the canvas, Dev Mode in a file, Make projects, community profiles and publish flows, account, admin) sits behind an account - an authenticated boundary never reached; /login and /signup were measured as forms, never submitted, and Continue with Google / Use single sign-on were never followed
+- submitted states: the /contact sales form, /make prompt, blog newsletter field, community search and the login/signup fields were typed into then cleared, never sent - validation, error, loading and success states are absent rather than measured
 
 ## [Discord](../systems/discord) — `discord`
 Access: read-only (the marketing pages, /servers discovery + categories, /servers/<slug> details, /login and /register are public signed out; the whole client - /channels/*, joining servers, invites, messages, settings - is an authenticated boundary never reached; every button and field was measured, never submitted or followed)

@@ -174,7 +174,7 @@ test("version-two stores preserve existing state while adding independent screen
       (await migrated.client.execute("PRAGMA user_version")).rows[0]
         .user_version,
     ),
-  ).toBe(8);
+  ).toBe(9);
   expect((await migrated.getConversation(conversation.id))?.title).toBe(
     "Keep research",
   );
@@ -278,7 +278,7 @@ test("version-five stores gain curated rows added since, without touching their 
       (await migrated.client.execute("PRAGMA user_version")).rows[0]
         .user_version,
     ),
-  ).toBe(8);
+  ).toBe(9);
   const categories = await migrated.listReferenceCategories();
   expect(
     categories.filter((row) => row.referenceId === "systems:dub"),

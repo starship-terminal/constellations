@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 146,
-    "system_domains": 138,
-    "matched_domains": 109,
-    "missing_domains": 324,
+    "system_packages": 149,
+    "system_domains": 141,
+    "matched_domains": 112,
+    "missing_domains": 321,
     "system_domains_absent_from_catalog": 29
   },
   "matched": {
@@ -1715,6 +1715,57 @@
         }
       ]
     },
+    "feedhive.com": {
+      "catalog": [
+        {
+          "name": "FeedHive",
+          "domain": "feedhive.com",
+          "id": 476
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "feedhive",
+          "name": "FeedHive",
+          "url": "https://www.feedhive.com",
+          "name_match": true
+        }
+      ]
+    },
+    "figma.com": {
+      "catalog": [
+        {
+          "name": "Figma",
+          "domain": "figma.com",
+          "id": 206
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "figma",
+          "name": "Figma",
+          "url": "https://www.figma.com",
+          "name_match": true
+        }
+      ]
+    },
+    "getfernand.com": {
+      "catalog": [
+        {
+          "name": "Fernand",
+          "domain": "getfernand.com",
+          "id": 891
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "getfernand",
+          "name": "Fernand",
+          "url": "https://getfernand.com",
+          "name_match": false
+        }
+      ]
+    },
     "github.com": {
       "catalog": [
         {
@@ -2088,25 +2139,11 @@
         "id": 289
       }
     ],
-    "feedhive.com": [
-      {
-        "name": "FeedHive",
-        "domain": "feedhive.com",
-        "id": 476
-      }
-    ],
     "fibery.io": [
       {
         "name": "Fibery",
         "domain": "fibery.io",
         "id": 415
-      }
-    ],
-    "figma.com": [
-      {
-        "name": "Figma",
-        "domain": "figma.com",
-        "id": 206
       }
     ],
     "fingerprint.com": [
@@ -2212,13 +2249,6 @@
         "name": "Google Gemini",
         "domain": "gemini.google",
         "id": 907
-      }
-    ],
-    "getfernand.com": [
-      {
-        "name": "Fernand",
-        "domain": "getfernand.com",
-        "id": 891
       }
     ],
     "getmatter.com": [
