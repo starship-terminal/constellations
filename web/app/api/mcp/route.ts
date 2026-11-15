@@ -4,7 +4,7 @@
 // notification-only bodies get 202. Stateless: no session header, GET gets a
 // 405 because there is no SSE stream to open. Mirrors server/mcp.py exactly.
 import { call, SPECS } from "@/lib/chat/library";
-import { handleBatch, MCP_BODY_LIMIT, tooLarge } from "@/lib/mcp-batch";
+import { handleBatch, textOverLimit, tooLargeResponse } from "@/lib/mcp-batch";
 
 export const dynamic = "force-dynamic";
 
@@ -90,7 +90,7 @@ export async function POST(req: Request) {
   // web/proxy.ts refuses an oversized Content-Length first; this catches a body
   // that reads larger than it declared.
   const text = await req.text();
-  if (Buffer.byteLength(text) > MCP_BODY_LIMIT) return Response.json(tooLarge(), { status: 413 });
+  if (textOverLimit(text)) return tooLargeResponse();
   let raw: unknown;
   try {
     raw = JSON.parse(text);

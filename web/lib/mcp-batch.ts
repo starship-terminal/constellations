@@ -16,6 +16,15 @@ const invalid = (message: string): RpcReply => ({
 export const tooLarge = (): RpcReply =>
   invalid(`request body exceeds the ${MCP_BODY_LIMIT}-byte limit`);
 
+/** Whether a body of this many bytes is over the cap (the limit itself passes). */
+export const overLimit = (bytes: number): boolean => bytes > MCP_BODY_LIMIT;
+
+/** Whether this text, measured in UTF-8 bytes rather than characters, is over the cap. */
+export const textOverLimit = (text: string): boolean => overLimit(new TextEncoder().encode(text).length);
+
+/** The 413 response the proxy (Content-Length) and the route (actual body) both send. */
+export const tooLargeResponse = (): Response => Response.json(tooLarge(), { status: 413 });
+
 /**
  * The reply body for one parsed payload, or null when there is nothing to send
  * (a lone notification, or a batch of only notifications: HTTP 202). An empty
