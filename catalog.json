@@ -12273,6 +12273,118 @@
    }
   },
   {
+   "slug": "fingerprint",
+   "name": "Fingerprint",
+   "url": "https://fingerprint.com",
+   "category": "productivity",
+   "platform": "web",
+   "goodFor": "developer-security product and marketing design: a declared FPDS palette of --fpds-color-* HSL-triplet ramps (ten steps across gray, blue, green, orange, pink, purple, red, teal and yellow plus black/white and a syntax set) aliased through Tailwind --color-*/--text-*/--radius-*/--spacing/--shadow-*/--ease-* variables and a small semantic layer (--primary, --border, --surface-raised), behind a white marketing surface (orange #f35820 primary CTAs and focus rings, near-white #fafaf8 raised surfaces, hairline borders, Inter/Petrona/JetBrains Mono/Geist Pixel self-hosted faces), header mega-dropdowns, a volume-slider pricing grid, a live /demo surface, a Mintlify docs site with a real light/dark theme preference, dashboard auth shells and a 390px pass",
+   "tags": [
+    "web",
+    "developer",
+    "security",
+    "fraud-detection",
+    "marketing",
+    "docs",
+    "pricing",
+    "tailwind",
+    "light",
+    "signed-out",
+    "design-tokens"
+   ],
+   "shape": "reference",
+   "captured": "2026-11-15",
+   "access": "signed out (every captured surface is public; the dashboard and every post-login surface - API keys, the events explorer, playground, billing - is an authenticated boundary never reached; the /login, /signup, contact-sales, newsletter and demo fields were measured and typed into then cleared, never submitted; every CTA, SSO button, nav item and link was measured, never followed; the 'Open the chat' launcher was never opened; the docs dark theme is the Mintlify site's own preference, captured as screenshots, while the marketing site ships only a .dark-scoped syntax redeclaration and resolved identically under an emulated dark probe; /demo and the IdentifySection panels paint the capture machine's real visitor ID, IP and geolocation, masked in committed images via tools/redact-rules/fingerprint.json)",
+   "themes": [
+    "light",
+    "dark"
+   ],
+   "widths": [
+    1440,
+    390
+   ],
+   "entry": "systems/fingerprint/README.md",
+   "tokens": "systems/fingerprint/tokens.json",
+   "styleGuide": "systems/fingerprint/style-guide.html",
+   "preview": {
+    "cover": "systems/fingerprint/screenshots/home-light-default.png",
+    "icon": "systems/fingerprint/icon.png",
+    "swatches": {
+     "light": {
+      "page": "light.background.page",
+      "surface": "light.theme.surface.raised",
+      "text": "light.theme.ink.default",
+      "muted": "light.form.placeholder",
+      "accent": "light.theme.action.primary",
+      "border": "light.theme.border.default"
+     }
+    },
+    "fonts": [
+     "core.font.family.sans",
+     "core.font.family.mono"
+    ]
+   },
+   "source": {
+    "path": "~/.design-systems/fingerprint/raw-shots (full-colour unmasked captures, outside the repo)"
+   },
+   "capture": {
+    "method": "public-web",
+    "source": "fingerprint.com in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and 186 element crops from the live DOM, plus a stylesheet harvest (918 rules, 322 resolved custom properties per probe in :root and .dark, 24 @font-face rules). The marketing Astro + Tailwind app declares its palette as HSL triplets, so ramps are declared values and semantic surface roles are measured computed values; docs.fingerprint.com is a Mintlify stack with a real light/dark preference (dark captured as screenshots, values kept under component.docs.*); dashboard.fingerprint.com /login and /signup are the product auth shell - a different stack - measured under component.productShell.*. BOUNDARY: forms typed into then cleared never submitted; SSO never followed; the chat launcher never opened; the pricing slider never dragged",
+    "timestamp": "2026-11-15T20:00:00Z",
+    "harness": "Devin",
+    "model": "SWE-2 Max",
+    "route": "public-web",
+    "routes": [
+     "/",
+     "/products/identification/",
+     "/products/smart-signals/",
+     "/products/ai-agent-detection/",
+     "/use-cases/payment-fraud/",
+     "/ai/",
+     "/pricing/",
+     "/demo/",
+     "/contact-sales/",
+     "/blog/",
+     "/case-studies/",
+     "/resources/",
+     "/security/",
+     "/integrations/",
+     "/sdk-libraries/",
+     "/bot-directory/",
+     "/about-us/",
+     "/careers/",
+     "docs.fingerprint.com/",
+     "docs.fingerprint.com/docs/quick-start-guide",
+     "docs.fingerprint.com/docs/smart-signals-overview",
+     "dashboard.fingerprint.com/login",
+     "dashboard.fingerprint.com/signup",
+     "home header Product + Use Cases + Resources dropdowns",
+     "docs theme-dark preference",
+     "mobile /, /pricing/, /demo/, /contact-sales/ and docs quick-start plus the home nav drawer"
+    ],
+    "gaps": [
+     "the dashboard and every post-login surface (API keys, events explorer, playground, billing, admin) sits behind an account - an authenticated boundary never reached; dashboard /login and /signup were measured as forms, never submitted, and Continue with Google/GitHub/Microsoft were never followed",
+     "submitted states: the /contact-sales form, footer and blog newsletter fields, the demo fake-checkout field and the auth cards were typed into then cleared, never sent - validation, error, loading and success states are absent rather than measured",
+     "the /pricing identification-volume slider re-prices the grid when dragged; measured at rest and never moved, so alternate volumes' prices are uncaptured",
+     "the 'Before Pro / After Pro' comparison toggle on /products/identification is IntersectionObserver-gated and never painted during measurement - recorded missing, not inferred",
+     "the docs dark theme was captured as screenshots via the site's own 'Change theme preference' control; the toggle state was never held during measurement, and the Mintlify stack's dark values are not folded into the marketing token sets",
+     "the marketing dark set is declared-not-painted: only the .dark-scoped --fpds-color-syntax-* code colours redeclare; no marketing page carries .dark or a theme control, and a prefers-color-scheme probe resolved :root identically",
+     "Use Cases and Resources dropdown panels were screenshot-captured only; only the Product panel's contents were component-measured",
+     "detail pages: blog posts, case studies, job ads, bot-directory entries, integration pages and most docs articles are index- or exemplar-level captures; careers links out to an external ATS",
+     "the 'Open the chat' launcher was measured, never opened - the chat panel is uncaptured",
+     "pressed states are DevTools-forced (CSS.forcePseudoState), so any script-applied mousedown state is missing",
+     "live-signal privacy: /demo and the IdentifySection panels paint the capture machine's real visitor ID, IP and geolocation; those regions are masked in committed images and the raw unmasked shots live outside the repo",
+     "icons: no standalone SVG set lifted this pass"
+    ],
+    "durationMin": 420,
+    "durationNote": "wall-clock across the capture sessions including kit adaptation, the stylesheet harvest, the screenshot pass, several measurement passes (observer-gated controls needed re-runs), redaction and the offline build",
+    "pr": "https://github.com/starship-terminal/constellations/pull/597"
+   },
+   "layoutGaps": {
+    "icons/": "no standalone SVG icon set was lifted; the Fingerprint mark, dropdown glyphs, partner logos and social glyphs are visible in the crops and screenshots"
+   }
+  },
+  {
    "slug": "flowmapp",
    "name": "FlowMapp",
    "url": "https://www.flowmapp.com",
