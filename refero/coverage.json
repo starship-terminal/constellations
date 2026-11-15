@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 144,
-    "system_domains": 136,
-    "matched_domains": 107,
-    "missing_domains": 326,
+    "system_packages": 145,
+    "system_domains": 137,
+    "matched_domains": 108,
+    "missing_domains": 325,
     "system_domains_absent_from_catalog": 29
   },
   "matched": {
@@ -1681,6 +1681,23 @@
         }
       ]
     },
+    "getfernand.com": {
+      "catalog": [
+        {
+          "name": "Fernand",
+          "domain": "getfernand.com",
+          "id": 891
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "getfernand",
+          "name": "Fernand",
+          "url": "https://getfernand.com",
+          "name_match": false
+        }
+      ]
+    },
     "github.com": {
       "catalog": [
         {
@@ -2192,13 +2209,6 @@
         "name": "Google Gemini",
         "domain": "gemini.google",
         "id": 907
-      }
-    ],
-    "getfernand.com": [
-      {
-        "name": "Fernand",
-        "domain": "getfernand.com",
-        "id": 891
       }
     ],
     "getmatter.com": [

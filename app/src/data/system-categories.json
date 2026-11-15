@@ -862,5 +862,11 @@
     "groupId": "web-categories",
     "labels": ["Marketplace"],
     "reason": "catalog.json describes a luxury-fashion marketplace: department chooser, product listing grids, a PDP buy box and editorial modules."
+  },
+  {
+    "referenceId": "systems:getfernand",
+    "groupId": "web-categories",
+    "labels": ["Business", "Productivity"],
+    "reason": "catalog.json describes a customer-support helpdesk SaaS: an editorial light marketing site, signed-out app login/signup, and a docs center with a real dark-mode toggle; the product workspace is gated."
   }
 ]
