@@ -14,7 +14,7 @@ The home hero is the product pitch as a control: a 720px prompt composer ([compo
 
 ## Pricing: segment, grid, accordion
 
-Monthly/Yearly is a 3px-padded pill segmented control whose selected cell lifts a `color.card` tile over the ring ([billing-seg](components.md#billing-seg); the Yearly state was set through the control itself, [pricing-light-billing-yearly](screenshots/pricing-light-billing-yearly.png)). Below, the plan grid is four 336px cards in the 1344 column, each a `radius.card` sheet with `space.cell` padding, ending in a 44px pill CTA — contrast fill on the featured plan, card fill with the 0.5px ring on the rest ([plan-card](components.md#plan-card), [plan-cta](components.md#plan-cta)). The FAQ is an 840px accordion of hairline-separated items; one was opened through its own summary ([pricing-light-faq-open](screenshots/pricing-light-faq-open.png)).
+Monthly/Yearly is a 3px-padded pill segmented control whose selected cell lifts a `color.card` tile over the ring ([billing-seg](components.md#billing-seg); the Yearly state was set through the control itself, [pricing-light-billing-yearly](screenshots/pricing-light-billing-yearly.png)). Below, the plan grid is four 336px cards in the 1344 column, each a `radius.card` sheet with `space.cell` padding, ending in a 44px pill CTA — contrast fill on the featured plan, card fill with the 0.5px ring on the rest ([plan-card](components.md#plan-card), [plan-cta](components.md#plan-cta)). The FAQ is an 840px accordion of hairline-separated items; the first item ships open, and the saved shot shows the same list toggled shut through its own summary ([pricing-light-faq-closed](screenshots/pricing-light-faq-closed.png), [accordion-item](components.md#accordion-item)).
 
 ## Enterprise contact form
 

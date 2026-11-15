@@ -223,12 +223,12 @@ GROUP_INTRO = {
 SHOTS = [
     ("home", "Home. The AI prompt hero (the earlier skin), product demo modules, customer proof, the closing band and footer; the composer focused and the Product menu open.", "/"),
     ("product", "Product. Feature tabs (the Backend tab selected through its own control), editor walkthrough modules and an FAQ.", "/product"),
-    ("pricing", "Pricing. The Monthly/Yearly segmented control (Yearly selected), plan cards and CTAs, the FAQ accordion (one item opened).", "/pricing"),
+    ("pricing", "Pricing. The Monthly/Yearly segmented control (Yearly selected), plan cards and CTAs, the FAQ accordion (its first item ships open; the saved shot shows the list toggled shut).", "/pricing"),
     ("enterprise", "Enterprise. The Talk-to-sales contact form (a field focused; nothing sent) and the customer cells.", "/enterprise"),
     ("ai", "FlutterFlow AI. The AI product page.", "/ai"),
     ("studio", "FlutterFlow Studio. The agency arm's hero, tags and offering sections.", "/studio"),
     ("studio-showcase", "Studio showcase. The developer work gallery's cards.", "/studio/showcase"),
-    ("studio-faq", "Studio FAQ. The accordion with one item opened.", "/studio/faq"),
+    ("studio-faq", "Studio FAQ. The accordion; its first item ships open, and the saved shot shows it toggled shut.", "/studio/faq"),
     ("studio-apply", "Apply to be a developer. The Studio application page (the form read, never submitted).", "/studio/apply-to-be-a-developer"),
     ("customer-stories", "Customer stories.", "/customer-stories"),
     ("blog", "Blog index.", "/blog"),
@@ -303,7 +303,7 @@ OVER = [
     ("Product dropdown", "the top nav, every page", "the nav's own Product button; closed with Escape", "[home-light-nav-product-open](screenshots/home-light-nav-product-open.png), [nav-panel](#nav-panel)"),
     ("Composer, focused", "home hero", "clicked into the field; sample text typed and deleted, nothing sent", "[home-light-composer-focused](screenshots/home-light-composer-focused.png)"),
     ("Billing: Yearly", "pricing", "the Monthly/Yearly segmented control's own Yearly option", "[pricing-light-billing-yearly](screenshots/pricing-light-billing-yearly.png)"),
-    ("FAQ item open", "pricing and Studio FAQ", "the accordion's own summary", "[pricing-light-faq-open](screenshots/pricing-light-faq-open.png), [studio-faq-light-faq-open](screenshots/studio-faq-light-faq-open.png)"),
+    ("FAQ accordion, open and closed", "pricing and Studio FAQ", "the accordion's own summary; the first item ships open on both pages, so the saved shots show the same list toggled shut", "[pricing-light-faq-closed](screenshots/pricing-light-faq-closed.png), [studio-faq-light-faq-closed](screenshots/studio-faq-light-faq-closed.png), [accordion-item](#accordion-item)"),
     ("Contact form, field focused", "enterprise", "clicked into the first name field; nothing typed or sent", "[enterprise-light-form](screenshots/enterprise-light-form.png), [enterprise-light-field-focused](screenshots/enterprise-light-field-focused.png)"),
     ("Feature tab selected", "product", "the Backend tab's own control", "[product-light-tab-selected](screenshots/product-light-tab-selected.png)"),
     ("Mobile menu sheet", "home at 390", "the Open menu icon button; closed with its own Close menu button", "[mobile-home-light-menu-open](screenshots/mobile-home-light-menu-open.png), [m-menu-dialog](#m-menu-dialog)"),
@@ -325,11 +325,22 @@ for k, c in C.items():
     if not st or "style" not in st:
         continue
     s = st["style"]
-    ring = s["outlineStyle"] != "none" and float(s["outlineWidth"].replace("px", "")) > 0
-    foc.append((k, f"{s['outlineWidth']} {s['outlineStyle']} {colour(s['outlineColor'])}, offset {s['outlineOffset']}" if ring else None))
-with_ring = [f"`{k}` ({r})" for k, r in foc if r]
+    base = (c["states"].get("default") or {}).get("style") or {}
+    if s["outlineStyle"] != "none" and float(s["outlineWidth"].replace("px", "")) > 0:
+        foc.append((k, f"{s['outlineWidth']} {s['outlineStyle']} {colour(s['outlineColor'])}, offset {s['outlineOffset']}"))
+    elif s["boxShadow"] != base.get("boxShadow") or any(
+            s[f"border{d}{p}"] != base.get(f"border{d}{p}")
+            for d in ("Top", "Right", "Bottom", "Left") for p in ("Color", "Width")):
+        # no outline, but the control still paints its focus: a shadow ring or a border change
+        foc.append((k, "painted"))
+    else:
+        foc.append((k, None))
+with_ring = [f"`{k}` ({r})" for k, r in foc if r and r != "painted"]
+painted = [f"`{k}`" for k, r in foc if r == "painted"]
 without = [f"`{k}`" for k, r in foc if not r]
-W(f"**Focus.** {len(foc)} components were given a real keyboard focus. {len(with_ring)} draw a ring: {', '.join(with_ring)}. The other {len(without)} draw none, so a keyboard user sees no change: {', '.join(without)}. The ring is `--ff-focus-width` 2px solid `--ff-color-focus` at `--ff-focus-offset` 2px — near-black on the ff-* layer's controls, the accent blue `#0a68e0` on the home skin's buttons and the composer's send.")
+painted_txt = (f" {len(painted)} paint their focus instead of drawing an outline — a 4px ink-6% box-shadow "
+               f"ring over a darker border on {', '.join(painted)}.") if painted else ""
+W(f"**Focus.** {len(foc)} components were given a real keyboard focus. {len(with_ring)} draw a ring: {', '.join(with_ring)}.{painted_txt} The other {len(without)} show a keyboard user no change: {', '.join(without)}. The ring is `--ff-focus-width` 2px solid `--ff-color-focus` at `--ff-focus-offset` 2px — near-black on the ff-* layer's controls, the accent blue `#0a68e0` on the home skin's buttons and the composer's send.")
 W()
 W("**Pressed.** FlutterFlow's buttons shrink when pressed instead of changing colour: the pill CTAs scale to about 0.94-0.97 (`transform: scale()` at a forced :active). The segmented options and quiet buttons do the same; colour changes on press are minimal.")
 W()
@@ -372,14 +383,22 @@ W("| Page | 1440 | 1920 | 1024 | 390 |")
 W("|---|---|---|---|---|")
 
 
+# The header's dropdown panels (.ff-snav-panel*) and the footer's link columns
+# (.ff-ftr-cols) are grids too, but they are chrome, never the page's own layout
+# grid: they sit before the content grids in document order, so the first grid
+# in the file is usually navigation, not the page.
+CHROME_GRID = re.compile(r"ff-snav|ff-ftr")
+
+
 def grid_of(key):
     v = LAYOUT.get(key)
     if not v:
         return "-"
-    g = v["grids"][0] if v["grids"] else None
+    grids = [g for g in v["grids"] if not CHROME_GRID.search(g["el"])]
+    g = max(grids, key=lambda x: x["w"]) if grids else None   # the widest content grid
     cols = re.sub(r"(\d+\.\d)\d*px", r"\1", g["cols"]).replace("px", "") if g else ""
     main = f"content x {v['main']['x']}, {v['main']['w']} wide" if v["main"]["w"] else "content full width"
-    return f"{main}; grid {cols} gap {g['colGap']}" if g else main
+    return f"{main}; grid {cols} gap {g['colGap']} on {g['el']}" if g else main
 
 
 for page in ["home", "product", "pricing", "studio", "studio-showcase", "studio-faq", "vs-studio"]:
@@ -398,11 +417,12 @@ for k in ["plan-card", "showcase-card", "app-card", "cells-item", "nav-panel", "
     st = next((s for s in c["states"].values() if "style" in s), None)
     if st is None:
         continue
+    # The measured values of the card element itself, never borrowed from a painted
+    # child (the first rounded, filled descendant is a tag dot or a pill button, not
+    # the card). When the outer element paints nothing its entry's "Child layers"
+    # line names the nodes that carry the look.
     p = props(st)
-    if ("radius" not in p or p["background"] == "transparent") and st.get("paint"):
-        p0 = next((x for x in st["paint"] if x.get("bg") and x.get("radius")), st["paint"][0])
-        p = dict(p, border=colour(p0["border"].split(" | ")[0][2:]) if p0.get("border") else "-", radius=p0.get("radius", "-"), background=colour(p0.get("bg", "")) or "-", shadow=colour(p0.get("shadow", ""), tokens=False) or "none")
-    W(f"| [{c['title']}](#{re.sub(r'[^a-z0-9 -]', '', c['title'].lower()).replace(' ', '-')}) | {p['size']} | {p.get('border', '-')} | {p.get('radius', '-')} | {p.get('background', '-')} | {p.get('shadow', 'none')} | {p.get('padding', '0')} |")
+    W(f"| [{c['title']}](#{k}) | {p['size']} | {p.get('border', '-')} | {p.get('radius', '-')} | {p.get('background', '-')} | {p.get('shadow', 'none')} | {p.get('padding', '0')} |")
 W()
 
 # ------------------------------------------------ entries
@@ -420,6 +440,7 @@ for g in groups:
         if c["group"] != g:
             continue
         W()
+        W(f'<a id="{k}"></a>')   # links elsewhere use the component key, not the title's slug
         W(f"#### {c['title']}")
         desc = (c.get("desc") or "").strip()
         if desc and not desc.endswith((".", ")", '"')):

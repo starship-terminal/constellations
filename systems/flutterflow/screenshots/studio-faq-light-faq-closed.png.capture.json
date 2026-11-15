@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-15T18:48:46.757Z",
-  "screenshot": "pricing-light-faq-open.png",
+  "capturedAt": "2026-11-15T18:51:50.721Z",
+  "screenshot": "studio-faq-light-faq-closed.png",
   "sanitizedSourceUrl": null,
   "requested": {
     "viewport": {
@@ -32,15 +32,15 @@
       "offsetLeft": 0,
       "offsetTop": 0,
       "pageLeft": 0,
-      "pageTop": 6478
+      "pageTop": 0
     },
     "documentSize": {
       "width": 1440,
-      "height": 8803
+      "height": 3311
     },
     "scroll": {
       "x": 0,
-      "y": 6478
+      "y": 0
     }
   },
   "capture": {

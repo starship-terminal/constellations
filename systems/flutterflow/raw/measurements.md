@@ -470,7 +470,7 @@ Crops: `plan-cta-primary-default.png`, `plan-cta-primary-hover.png`, `plan-cta-p
 
 #### accordion-item
 
-FAQ accordion item. A details/summary row in the questions list: hairline-separated, a plus/cross marker that turns on open.
+FAQ accordion item. A details/summary row in the questions list: hairline-separated, a plus/cross marker that turns on open. The first item ships open, so this resting reading is the open look.
 
 Page: pricing. Selector: `.ff-acc-item`. States: default.
 
@@ -494,9 +494,9 @@ Page: pricing. Selector: `.ff-acc-item`. States: default.
 
 Crops: `accordion-item-default.png`.
 
-#### accordion-open
+#### accordion-closed
 
-FAQ accordion, open.
+FAQ accordion, closed. The same details element measured closed: the first item ships open, and toggling its own summary shut it — the run's original save named this state "open" before the click was understood.
 
 Page: pricing. Selector: `.ff-acc-item`. States: default.
 
@@ -516,9 +516,9 @@ Page: pricing. Selector: `.ff-acc-item`. States: default.
 | Transition | none |
 | Icon | 15 x 15, colour #1a1a1a |
 | Painted layers | details.ff-acc-item 840.0x72.0 border B:1px #000000 @ 0.08; span.ff-acc-x 28.0x28.0 bg #1a1a1a @ 0.06 r 50% |
-| How | at rest |
+| How | the accordion's own summary (toggled the open item shut) |
 
-Crops: `accordion-open-default.png`.
+Crops: `accordion-closed-default.png`.
 
 #### link-go
 

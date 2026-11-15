@@ -112,20 +112,26 @@ async function toggle(loc, { allowLink = false } = {}) {
 }
 
 function comp(key, meta) {
-  const c = (out.components[key] ??= { states: {} });
+  const c = (out.components[key] ??= {});
+  // A rerun replaces the component's evidence wholesale: old states from a list
+  // the current run no longer measures would otherwise linger, and a `missing`
+  // flag from an earlier failed run would survive a successful recapture.
+  c.states = {};
+  delete c.missing;
   Object.assign(c, { page: current, run, url: URLS[current] && BASE + URLS[current] }, meta);
   touched.add(key);
-  c.states ??= {};
   return c;
 }
 
 async function measure(key, state, target, opts = {}) {
-  const loc = target.filter({ visible: true }).first();
+  // opts.hidden targets an element that is in the DOM but unpainted (display:
+  // none) — filtering it visible again would make its declared slot unreadable.
+  const loc = opts.hidden ? target.first() : target.filter({ visible: true }).first();
   const c = out.components[key];
   try {
     const s = await styleOf(loc);
     let file;
-    if (opts.crop !== false) {
+    if (opts.crop !== false && !opts.hidden) {
       try {
         file = await crop(page, (opts.cropLoc || loc).filter({ visible: true }).first(), `${key}-${state}`, opts.pad ?? 8);
       } catch (e) { s.cropError = String(e.message || e).slice(0, 120); }
@@ -250,8 +256,33 @@ async function pricing() {
   await S('plan-cta', q('.ff-btn-secondary').filter({ hasText: 'Start free' }).first(), B5, { group: pr, title: 'Plan CTA (secondary)', desc: 'The secondary button: --ff-color-card fill with the hairline rule and resting shadow. Measured, never followed.', sel: '.ff-btn.ff-btn-secondary' });
   await S('plan-cta-primary', q('.ff-btn-primary').filter({ hasText: /Start|Apply|Contact/ }).first(), B4, { group: pr, title: 'Plan CTA (primary)', desc: 'A contrast-fill call to action in the plan grid. Measured, never followed.', sel: '.ff-btn.ff-btn-primary' });
   const item = q('.ff-acc-item').first();
-  await S('accordion-item', item, ['default'], { group: pr, title: 'FAQ accordion item', desc: 'A details/summary row in the questions list: hairline-separated, a plus/cross marker that turns on open.', sel: '.ff-acc-item' });
-  await S('accordion-open', item, ['default'], { group: pr, title: 'FAQ accordion, open', sel: '.ff-acc-item' }, { open: async () => { await centre(item); await item.locator('summary, .ff-acc-x, .ff-acc-a').first().click(); await page.waitForTimeout(700); } });
+  await S('accordion-item', item, ['default'], { group: pr, title: 'FAQ accordion item', desc: 'A details/summary row in the questions list: hairline-separated, a plus/cross marker that turns on open. The first item ships open, so this resting reading is the open look.', sel: '.ff-acc-item' });
+  // The first FAQ ships open: toggle the summary only when the item is closed, and
+  // verify it opened — a blind click would close it and save the wrong state.
+  const openDetails = async () => {
+    await centre(item);
+    const isOpen = await item.evaluate((el) => el.open ?? el.hasAttribute('open'));
+    if (!isOpen) {
+      await item.locator('summary, .ff-acc-x, .ff-acc-a').first().click();
+      await page.waitForTimeout(700);
+    }
+    const nowOpen = await item.evaluate((el) => el.open ?? el.hasAttribute('open'));
+    if (!nowOpen) throw new Error('accordion item is not open after its own toggle');
+    return isOpen ? 'already open at rest (verified, not toggled)' : 'opened by the page\'s own summary';
+  };
+  const closeDetails = async () => {
+    await centre(item);
+    const wasOpen = await item.evaluate((el) => el.open ?? el.hasAttribute('open'));
+    if (wasOpen) {
+      await item.locator('summary, .ff-acc-x, .ff-acc-a').first().click();
+      await page.waitForTimeout(700);
+    }
+    const nowOpen = await item.evaluate((el) => el.open ?? el.hasAttribute('open'));
+    if (nowOpen) throw new Error('accordion item is still open after its own toggle');
+    return wasOpen ? 'closed by the page\'s own summary' : 'already closed at rest (verified, not toggled)';
+  };
+  await S('accordion-open', item, ['default'], { group: pr, title: 'FAQ accordion, open', desc: 'The same details element measured open; the summary is clicked only when the item is closed.', sel: '.ff-acc-item' }, { before: { default: openDetails } });
+  await S('accordion-closed', item, ['default'], { group: pr, title: 'FAQ accordion, closed', desc: 'The same details element measured closed; the summary is clicked only when the item is open.', sel: '.ff-acc-item' }, { before: { default: closeDetails } });
   await S('link-go', q('.ff-go').first(), B4, { group: pr, title: 'Arrow link', desc: 'The text link with a trailing arrow ("Contact us", question rows): --ff-lnk. Measured, never followed.', sel: '.ff-go' });
   // the ff-cmp composer on pricing = the new-generation prompt field
   const cp = G.composer;

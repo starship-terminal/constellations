@@ -49,6 +49,8 @@ def css_val(name, t):
         return ", ".join(("inset " if s.get("inset") else "") + f'{s["offsetX"]} {s["offsetY"]} {s["blur"]} {s["spread"]} {alias(s["color"])}' for s in v)
     if ty == "typography":
         return f'{alias(v["fontWeight"])} {alias(v["fontSize"])}/{alias(v["lineHeight"])} {alias(v["fontFamily"])}'
+    if ty == "border":
+        return f'{alias(v["width"])} {v["style"]} {alias(v["color"])}'
     if ty == "gradient":
         angle = t["$extensions"].get("angle", "180deg")
         return f"linear-gradient({angle}, " + ", ".join(f'{alias(s["color"])} {round(s["position"] * 100, 2)}%' for s in v) + ")"
@@ -61,10 +63,19 @@ THEMES = [s for s in SETS if s != "core"]
 
 
 def block(setname):
-    """A set's custom properties; a set the product lacks renders as nothing."""
+    """A set's custom properties; a set the product lacks renders as nothing. A typography token's
+    tracking cannot ride in the font shorthand, so it gets its own --<role>-ls property the page
+    applies as letter-spacing next to every font: var(--typography-*) use."""
     if setname not in T:
         return ""
-    return "\n".join(f"  {cssname(n)}: {css_val(n, t)};" for n, t in flat(T[setname]) if css_val(n, t) is not None)
+    out = []
+    for n, t in flat(T[setname]):
+        v = css_val(n, t)
+        if v is not None:
+            out.append(f"  {cssname(n)}: {v};")
+        if t["$type"] == "typography" and isinstance(t["$value"], dict) and t["$value"].get("letterSpacing"):
+            out.append(f"  {cssname(n)}-ls: {alias(t['$value']['letterSpacing'])};")
+    return "\n".join(out)
 
 
 # a core name and a themed name must not land on the same custom property

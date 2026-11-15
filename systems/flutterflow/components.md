@@ -19,12 +19,12 @@ Screenshots are named `{page}-{theme}-{state}.png`; the dark set is `{page}-dark
 |---|---|---|
 | Home. The AI prompt hero (the earlier skin), product demo modules, customer proof, the closing band and footer; the composer focused and the Product menu open. | `/` | [dark-default](screenshots/home-dark-dark-default.png), [dark-full](screenshots/home-dark-dark-full.png), [dark-nav-product-open](screenshots/home-dark-dark-nav-product-open.png), [composer-focused](screenshots/home-light-composer-focused.png), [default](screenshots/home-light-default.png), [full](screenshots/home-light-full.png), [nav-product-open](screenshots/home-light-nav-product-open.png) |
 | Product. Feature tabs (the Backend tab selected through its own control), editor walkthrough modules and an FAQ. | `/product` | [dark-default](screenshots/product-dark-dark-default.png), [default](screenshots/product-light-default.png), [full](screenshots/product-light-full.png), [tab-selected](screenshots/product-light-tab-selected.png) |
-| Pricing. The Monthly/Yearly segmented control (Yearly selected), plan cards and CTAs, the FAQ accordion (one item opened). | `/pricing` | [dark-default](screenshots/pricing-dark-dark-default.png), [dark-full](screenshots/pricing-dark-dark-full.png), [billing-yearly](screenshots/pricing-light-billing-yearly.png), [default](screenshots/pricing-light-default.png), [faq-open](screenshots/pricing-light-faq-open.png), [full](screenshots/pricing-light-full.png) |
+| Pricing. The Monthly/Yearly segmented control (Yearly selected), plan cards and CTAs, the FAQ accordion (its first item ships open; the saved shot shows the list toggled shut). | `/pricing` | [dark-default](screenshots/pricing-dark-dark-default.png), [dark-full](screenshots/pricing-dark-dark-full.png), [billing-yearly](screenshots/pricing-light-billing-yearly.png), [default](screenshots/pricing-light-default.png), [faq-closed](screenshots/pricing-light-faq-closed.png), [full](screenshots/pricing-light-full.png) |
 | Enterprise. The Talk-to-sales contact form (a field focused; nothing sent) and the customer cells. | `/enterprise` | [dark-default](screenshots/enterprise-dark-dark-default.png), [default](screenshots/enterprise-light-default.png), [field-focused](screenshots/enterprise-light-field-focused.png), [form](screenshots/enterprise-light-form.png), [full](screenshots/enterprise-light-full.png) |
 | FlutterFlow AI. The AI product page. | `/ai` | [default](screenshots/ai-light-default.png), [full](screenshots/ai-light-full.png) |
 | FlutterFlow Studio. The agency arm's hero, tags and offering sections. | `/studio` | [default](screenshots/studio-light-default.png), [full](screenshots/studio-light-full.png) |
 | Studio showcase. The developer work gallery's cards. | `/studio/showcase` | [default](screenshots/studio-showcase-light-default.png), [full](screenshots/studio-showcase-light-full.png) |
-| Studio FAQ. The accordion with one item opened. | `/studio/faq` | [default](screenshots/studio-faq-light-default.png), [faq-open](screenshots/studio-faq-light-faq-open.png), [full](screenshots/studio-faq-light-full.png) |
+| Studio FAQ. The accordion; its first item ships open, and the saved shot shows it toggled shut. | `/studio/faq` | [default](screenshots/studio-faq-light-default.png), [faq-closed](screenshots/studio-faq-light-faq-closed.png), [full](screenshots/studio-faq-light-full.png) |
 | Apply to be a developer. The Studio application page (the form read, never submitted). | `/studio/apply-to-be-a-developer` | [default](screenshots/studio-apply-light-default.png), [full](screenshots/studio-apply-light-full.png) |
 | Customer stories. | `/customer-stories` | [default](screenshots/customer-stories-light-default.png), [full](screenshots/customer-stories-light-full.png) |
 | Blog index. | `/blog` | [default](screenshots/blog-light-default.png), [full](screenshots/blog-light-full.png) |
@@ -48,7 +48,7 @@ Screenshots are named `{page}-{theme}-{state}.png`; the dark set is `{page}-dark
 | Product dropdown | the top nav, every page | the nav's own Product button; closed with Escape | [home-light-nav-product-open](screenshots/home-light-nav-product-open.png), [nav-panel](#nav-panel) |
 | Composer, focused | home hero | clicked into the field; sample text typed and deleted, nothing sent | [home-light-composer-focused](screenshots/home-light-composer-focused.png) |
 | Billing: Yearly | pricing | the Monthly/Yearly segmented control's own Yearly option | [pricing-light-billing-yearly](screenshots/pricing-light-billing-yearly.png) |
-| FAQ item open | pricing and Studio FAQ | the accordion's own summary | [pricing-light-faq-open](screenshots/pricing-light-faq-open.png), [studio-faq-light-faq-open](screenshots/studio-faq-light-faq-open.png) |
+| FAQ accordion, open and closed | pricing and Studio FAQ | the accordion's own summary; the first item ships open on both pages, so the saved shots show the same list toggled shut | [pricing-light-faq-closed](screenshots/pricing-light-faq-closed.png), [studio-faq-light-faq-closed](screenshots/studio-faq-light-faq-closed.png), [accordion-item](#accordion-item) |
 | Contact form, field focused | enterprise | clicked into the first name field; nothing typed or sent | [enterprise-light-form](screenshots/enterprise-light-form.png), [enterprise-light-field-focused](screenshots/enterprise-light-field-focused.png) |
 | Feature tab selected | product | the Backend tab's own control | [product-light-tab-selected](screenshots/product-light-tab-selected.png) |
 | Mobile menu sheet | home at 390 | the Open menu icon button; closed with its own Close menu button | [mobile-home-light-menu-open](screenshots/mobile-home-light-menu-open.png), [m-menu-dialog](#m-menu-dialog) |
@@ -59,7 +59,7 @@ Screenshots are named `{page}-{theme}-{state}.png`; the dark set is `{page}-dark
 
 Values that apply across entries, from the measurement files.
 
-**Focus.** 27 components were given a real keyboard focus. 20 draw a ring: `banner-dismiss` (2px solid #1a1a1a `color.ink`, offset 2px), `nav-menu-button` (2px solid #1a1a1a `color.ink`, offset 2px), `nav-link` (2px solid #1a1a1a `color.ink`, offset 2px), `nav-signin` (2px solid #1a1a1a `color.ink`, offset 2px), `billing-seg-option` (2px solid #1a1a1a `color.ink`, offset 2px), `plan-cta` (2px solid #1a1a1a `color.ink`, offset 2px), `plan-cta-primary` (2px solid #1a1a1a `color.ink`, offset 2px), `ff-composer-go` (2px solid #1a1a1a `color.ink`, offset 2px), `ff-composer-key` (2px solid #1a1a1a `color.ink`, offset 2px), `footer-link` (2px solid #1a1a1a `color.ink`, offset 3px), `theme-switch-pick` (2px solid #1a1a1a `color.ink`, offset 3px), `submit` (2px solid #1a1a1a `color.ink`, offset 2px), `tab-selected` (2px solid #1a1a1a `color.ink`, offset -2px), `tab` (2px solid #1a1a1a `color.ink`, offset -2px), `replay-btn` (2px solid #1a1a1a `color.ink`, offset 2px), `composer-go` (2px solid #0a68e0 `color.accent`, offset 2px), `btn-contrast` (2px solid #0a68e0 `color.accent`, offset 2px), `btn-quiet` (2px solid #0a68e0 `color.accent`, offset 2px), `m-open-menu` (2px solid #1a1a1a `color.ink`, offset 2px), `m-menu-close` (2px solid #1a1a1a `color.ink`, offset 2px). The other 7 draw none, so a keyboard user sees no change: `btn-primary-sm`, `link-go`, `select`, `select-trigger`, `composer-nav`, `composer-key`, `replay-btn-home`. The ring is `--ff-focus-width` 2px solid `--ff-color-focus` at `--ff-focus-offset` 2px — near-black on the ff-* layer's controls, the accent blue `#0a68e0` on the home skin's buttons and the composer's send.
+**Focus.** 27 components were given a real keyboard focus. 20 draw a ring: `banner-dismiss` (2px solid #1a1a1a `color.ink`, offset 2px), `nav-menu-button` (2px solid #1a1a1a `color.ink`, offset 2px), `nav-link` (2px solid #1a1a1a `color.ink`, offset 2px), `nav-signin` (2px solid #1a1a1a `color.ink`, offset 2px), `billing-seg-option` (2px solid #1a1a1a `color.ink`, offset 2px), `plan-cta` (2px solid #1a1a1a `color.ink`, offset 2px), `plan-cta-primary` (2px solid #1a1a1a `color.ink`, offset 2px), `ff-composer-go` (2px solid #1a1a1a `color.ink`, offset 2px), `ff-composer-key` (2px solid #1a1a1a `color.ink`, offset 2px), `footer-link` (2px solid #1a1a1a `color.ink`, offset 3px), `theme-switch-pick` (2px solid #1a1a1a `color.ink`, offset 3px), `submit` (2px solid #1a1a1a `color.ink`, offset 2px), `tab-selected` (2px solid #1a1a1a `color.ink`, offset -2px), `tab` (2px solid #1a1a1a `color.ink`, offset -2px), `replay-btn` (2px solid #1a1a1a `color.ink`, offset 2px), `composer-go` (2px solid #0a68e0 `color.accent`, offset 2px), `btn-contrast` (2px solid #0a68e0 `color.accent`, offset 2px), `btn-quiet` (2px solid #0a68e0 `color.accent`, offset 2px), `m-open-menu` (2px solid #1a1a1a `color.ink`, offset 2px), `m-menu-close` (2px solid #1a1a1a `color.ink`, offset 2px). 2 paint their focus instead of drawing an outline — a 4px ink-6% box-shadow ring over a darker border on `select`, `select-trigger`. The other 5 show a keyboard user no change: `btn-primary-sm`, `link-go`, `composer-nav`, `composer-key`, `replay-btn-home`. The ring is `--ff-focus-width` 2px solid `--ff-color-focus` at `--ff-focus-offset` 2px — near-black on the ff-* layer's controls, the accent blue `#0a68e0` on the home skin's buttons and the composer's send.
 
 **Pressed.** FlutterFlow's buttons shrink when pressed instead of changing colour: the pill CTAs scale to about 0.94-0.97 (`transform: scale()` at a forced :active). The segmented options and quiet buttons do the same; colour changes on press are minimal.
 
@@ -78,26 +78,26 @@ Values that apply across entries, from the measurement files.
 
 | Page | 1440 | 1920 | 1024 | 390 |
 |---|---|---|---|---|
-| home | content x 0, 1440 wide; grid 224 224 224 gap normal | content x 0, 1920 wide; grid 224 224 224 gap normal | content x 0, 1024 wide; grid 224 224 224 gap normal | content x 0, 390 wide; grid 28 88 120 60 gap 10px |
-| product | content x 0, 1440 wide; grid 224 224 224 gap normal | content x 0, 1920 wide; grid 224 224 224 gap normal | content x 0, 1024 wide; grid 224 224 224 gap normal | content x 0, 390 wide; grid 131.2 127.3 127.3 gap normal |
-| pricing | content x 0, 1440 wide; grid 224 224 224 gap normal | content x 0, 1920 wide; grid 224 224 224 gap normal | content x 0, 1024 wide; grid 224 224 224 gap normal | content x 0, 390 wide; grid 159 159 gap 32px |
-| studio | content x 0, 1440 wide; grid 224 224 gap normal | content x 0, 1920 wide; grid 224 224 gap normal | content x 0, 1024 wide; grid 224 224 gap normal | content x 0, 390 wide; grid 181 181 gap 4px |
-| studio-showcase | content x 0, 1440 wide; grid 224 224 gap normal | content x 0, 1920 wide; grid 224 224 gap normal | content x 0, 1024 wide; grid 224 224 gap normal | content x 0, 390 wide; grid 167 167 gap 16px |
-| studio-faq | content x 0, 1440 wide; grid 224 224 gap normal | content x 0, 1920 wide; grid 224 224 gap normal | content x 0, 1024 wide; grid 224 224 gap normal | content x 0, 390 wide; grid 159 159 gap 32px |
-| vs-studio | content x 0, 1440 wide; grid 224 224 224 gap normal | content x 0, 1920 wide; grid 224 224 224 gap normal | content x 0, 1024 wide; grid 224 224 224 gap normal | content x 0, 390 wide; grid 102 145 83 gap 10px |
+| home | content x 0, 1440 wide; grid 448 448 448 gap normal on ol | content x 0, 1920 wide; grid 448 448 448 gap normal on ol | content x 0, 1024 wide; grid 314.0 314.0 314.0 gap normal on ol | content x 0, 390 wide; grid 294 294 294 294 gap 12px on div |
+| product | content x 0, 1440 wide; grid 440 904 gap normal on section.ff-split.ff-block.ff-tbs | content x 0, 1920 wide; grid 440 904 gap normal on section.ff-split.ff-block.ff-tbs | content x 0, 1024 wide; grid 440 502.0 gap normal on section.ff-split.ff-block.ff-tbs | content x 0, 390 wide; grid 28 190 302 40 gap 16px on div.ff-sj-row |
+| pricing | content x 0, 1440 wide; grid 336 336 336 336 gap normal on ul.ff-plg.ff-plg-reg | content x 0, 1920 wide; grid 336 336 336 336 gap normal on ul.ff-plg.ff-plg-reg | content x 0, 1024 wide; grid 235.5 235.5 235.5 235.5 gap normal on ul.ff-plg.ff-plg-reg | content x 0, 390 wide |
+| studio | content x 0, 1440 wide; grid 440 904 gap normal on section.ff-split.ff-block.ff-stg | content x 0, 1920 wide; grid 440 904 gap normal on section.ff-split.ff-block.ff-stg | content x 0, 1024 wide; grid 440 502.0 gap normal on section.ff-split.ff-block.ff-stg | content x 0, 390 wide; grid 294 294 294 gap 12px on div.ff-prf-qw-row |
+| studio-showcase | content x 0, 1440 wide; grid 303.6 303.6 303.6 303.6 gap 43.2px on section.ff-block.ff-lst-aw-wall | content x 0, 1920 wide; grid 300 300 300 300 gap 48px on section.ff-block.ff-lst-aw-wall | content x 0, 1024 wide; grid 212.4 212.4 212.4 212.4 gap 30.72px on section.ff-block.ff-lst-aw-wall | content x 0, 390 wide; grid 167 167 gap 16px on section.ff-block.ff-lst-aw-wall |
+| studio-faq | content x 0, 1440 wide; grid 200 1096 gap 48px on section.ff-rgp-g | content x 0, 1920 wide; grid 200 1096 gap 48px on section.ff-rgp-g | content x 0, 1024 wide; grid 200 694.0 gap 48px on section.ff-rgp-g | content x 0, 390 wide |
+| vs-studio | content x 0, 1440 wide; grid 111 1112 89 gap 16px on div.ff-pch-axis | content x 0, 1920 wide; grid 111 1112 89 gap 16px on div.ff-pch-axis | content x 0, 1024 wide; grid 111 710.0 89 gap 16px on div.ff-pch-axis | content x 0, 390 wide; grid 102 145 83 gap 10px on div.ff-pch-axis |
 
 **Card shapes.** Default-state values; the entries hold the states.
 
 | Card | Size | Border | Radius | Background | Shadow | Padding |
 |---|---|---|---|---|---|---|
-| [Plan card](#plan-card) | 336 x 581.25 | - | 50% | #4b39ef `color.studio-ink` | none | 32px |
-| [Showcase card](#showcase-card) | 303.61 x 624.52 | - | 36px | #111113 | #4a4a4f 0px 0px 0px 0.96px inset, #7c7c82 0px 0px 0px 0.72px, rgba(0, 0, 0, 0.45) 0px 24px 48px -28px | 0 |
-| [Generated app card](#generated-app-card) | 318 x 518 | - | 16px | #f5f5f5 `color.well` | rgba(0, 0, 0, 0.08) 0px 0px 0px 0.5px inset | 0 |
-| [Nav dropdown panel](#nav-dropdown-panel) | 248 x 236 | - | 16px | #ffffff `color.card` | rgba(0, 0, 0, 0.08) 0px 0px 0px 1px, rgba(0, 0, 0, 0.28) 0px 24px 48px -20px | 8px |
-| [Custom select listbox](#custom-select-listbox) | 410 x 308 | - | 20px | #ffffff `color.card` | rgba(0, 0, 0, 0.08) 0px 0px 0px 1px, rgba(0, 0, 0, 0.28) 0px 24px 48px -20px | 0 |
-| [FAQ accordion item](#faq-accordion-item) | 840 x 150 | - | 50% | oklab(0.217772 0.00000990927 0.00000436604 / 0.06) | none | 0 |
-| [Contact form](#contact-form) | 904 x 952 | 1px oklab(0.217772 0.00000990927 0.00000436604 / 0.12) | 999px | #ffffff `color.card` | rgba(0, 0, 0, 0.04) 0px 1px 2px 0px, rgba(0, 0, 0, 0.14) 0px 8px 24px -14px | 64px 0px 64px 64px |
-| [Mobile menu sheet](#mobile-menu-sheet) | 390 x 844 | - | 999px | #1a1a1a `color.ink` | none | 0 |
+| [Plan card](#plan-card) | 336 x 581.25 | - | - | transparent | none | 32px |
+| [Showcase card](#showcase-card) | 303.61 x 624.52 | - | - | transparent | none | 0 |
+| [Generated app card](#app-card) | 318 x 518 | - | - | transparent | none | 0 |
+| [Nav dropdown panel](#nav-panel) | 248 x 236 | - | 16px | #ffffff `color.card` | rgba(0, 0, 0, 0.08) 0px 0px 0px 1px, rgba(0, 0, 0, 0.28) 0px 24px 48px -20px | 8px |
+| [Custom select listbox](#select-popup) | 410 x 308 | - | 20px | #ffffff `color.card` | rgba(0, 0, 0, 0.08) 0px 0px 0px 1px, rgba(0, 0, 0, 0.28) 0px 24px 48px -20px | 0 |
+| [FAQ accordion item](#accordion-item) | 840 x 150 | B: 1px solid rgba(0, 0, 0, 0.08) `color.line` | - | transparent | none | 0 |
+| [Contact form](#contact-form) | 904 x 952 | - | - | transparent | none | 64px 0px 64px 64px |
+| [Mobile menu sheet](#m-menu-dialog) | 390 x 844 | - | - | #fcfcfb `color.page` | none | 0 |
 
 ## Components
 
@@ -105,6 +105,7 @@ Values that apply across entries, from the measurement files.
 
 The chrome every public page carries: the skip link, the 64px announcement + nav bar (56px at 390), the Product dropdown panel and its sign-in row. Sign in and Start building were read, never followed.
 
+<a id="skip-link"></a>
 #### Skip to content link
 The first tab stop on every page: a visually-hidden link that paints when focused. Read as `skip-link` on the pricing page.
 
@@ -112,6 +113,7 @@ The first tab stop on every page: a visually-hidden link that paints when focuse
 
 ![Skip to content link default](components/crops/skip-link-default.png)
 
+<a id="announcement"></a>
 #### Announcement banner
 The slim bar above the header ("FlutterFlow for Web is here"): the accent line colour, a "What's changing" link and a Dismiss icon button. Shown, never dismissed. Read as `announcement` on the pricing page.
 
@@ -122,6 +124,7 @@ The slim bar above the header ("FlutterFlow for Web is here"): the accent line c
 
 ![Announcement banner default](components/crops/announcement-default.png) ![Announcement banner dark](components/crops/announcement-dark.png)
 
+<a id="banner-dismiss"></a>
 #### Banner dismiss button
 The small square icon button that closes the announcement bar. Measured, never pressed. Read as `banner-dismiss` on the pricing page.
 
@@ -134,6 +137,7 @@ The small square icon button that closes the announcement bar. Measured, never p
 
 ![Banner dismiss button default](components/crops/banner-dismiss-default.png) ![Banner dismiss button hover](components/crops/banner-dismiss-hover.png) ![Banner dismiss button focus-visible](components/crops/banner-dismiss-focus-visible.png) ![Banner dismiss button pressed](components/crops/banner-dismiss-pressed.png)
 
+<a id="header"></a>
 #### Top nav
 The floating bar over every page: brand lockup, the Product/Studio/Resources menu buttons, Pricing and Enterprise links, Sign in and the Start building pill. Read as `header` on the pricing page.
 
@@ -144,6 +148,7 @@ The floating bar over every page: brand lockup, the Product/Studio/Resources men
 
 ![Top nav default](components/crops/header-default.png) ![Top nav dark](components/crops/header-dark.png)
 
+<a id="nav-menu-button"></a>
 #### Nav menu button
 A top-level menu trigger (Product): 14px nav text with a chevron; opens the snav panel. Read as `nav-menu-button` on the pricing page.
 
@@ -157,6 +162,7 @@ A top-level menu trigger (Product): 14px nav text with a chevron; opens the snav
 
 ![Nav menu button default](components/crops/nav-menu-button-default.png) ![Nav menu button hover](components/crops/nav-menu-button-hover.png) ![Nav menu button focus-visible](components/crops/nav-menu-button-focus-visible.png) ![Nav menu button pressed](components/crops/nav-menu-button-pressed.png) ![Nav menu button dark](components/crops/nav-menu-button-dark.png)
 
+<a id="nav-panel"></a>
 #### Nav dropdown panel
 The Product flyout: a card-radius floating panel with lead link, column headings and item rows. Read as `nav-panel` on the pricing page.
 
@@ -164,6 +170,7 @@ The Product flyout: a card-radius floating panel with lead link, column headings
 
 ![Nav dropdown panel default](components/crops/nav-panel-default.png)
 
+<a id="nav-panel-item"></a>
 #### Nav dropdown item
 Read as `nav-panel-item` on the pricing page.
 
@@ -173,6 +180,7 @@ Read as `nav-panel-item` on the pricing page.
 
 ![Nav dropdown item default](components/crops/nav-panel-item-default.png) ![Nav dropdown item hover](components/crops/nav-panel-item-hover.png)
 
+<a id="nav-link"></a>
 #### Nav link
 The plain text links in the bar (Pricing, Enterprise). Read as `nav-link` on the pricing page.
 
@@ -186,6 +194,7 @@ The plain text links in the bar (Pricing, Enterprise). Read as `nav-link` on the
 
 ![Nav link default](components/crops/nav-link-default.png) ![Nav link hover](components/crops/nav-link-hover.png) ![Nav link focus-visible](components/crops/nav-link-focus-visible.png) ![Nav link pressed](components/crops/nav-link-pressed.png) ![Nav link dark](components/crops/nav-link-dark.png)
 
+<a id="nav-signin"></a>
 #### Sign in link
 The secondary text link in the nav end. Measured, never followed. Read as `nav-signin` on the pricing page.
 
@@ -198,6 +207,7 @@ The secondary text link in the nav end. Measured, never followed. Read as `nav-s
 
 ![Sign in link default](components/crops/nav-signin-default.png) ![Sign in link hover](components/crops/nav-signin-hover.png) ![Sign in link focus-visible](components/crops/nav-signin-focus-visible.png) ![Sign in link pressed](components/crops/nav-signin-pressed.png)
 
+<a id="btn-primary-sm"></a>
 #### Start building (nav, small)
 The small contrast pill in the nav: --ff-color-contrast fill, --ff-color-contrast-ink text, radius pill. Measured, never followed. Read as `btn-primary-sm` on the pricing page.
 
@@ -209,6 +219,7 @@ The small contrast pill in the nav: --ff-color-contrast fill, --ff-color-contras
 
 ![Start building (nav, small) default](components/crops/btn-primary-sm-default.png) ![Start building (nav, small) hover](components/crops/btn-primary-sm-hover.png) ![Start building (nav, small) focus-visible](components/crops/btn-primary-sm-focus-visible.png) ![Start building (nav, small) pressed](components/crops/btn-primary-sm-pressed.png) ![Start building (nav, small) dark](components/crops/btn-primary-sm-dark.png)
 
+<a id="brand"></a>
 #### Brand lockup
 The FlutterFlow mark + wordmark link; the mark is a filtered image (--ff-theme-logo-filter) so it inverts in dark. Read as `brand` on the pricing page.
 
@@ -220,6 +231,7 @@ The FlutterFlow mark + wordmark link; the mark is a filtered image (--ff-theme-l
 
 The pricing page's plan grid, the Monthly/Yearly segmented control (Yearly selected through the site's own toggle), the plan CTAs and the FAQ accordion.
 
+<a id="plan-grid"></a>
 #### Plan grid
 The plans list: a carded grid of plan columns under the billing toggle. Read as `plan-grid` on the pricing page.
 
@@ -227,6 +239,7 @@ The plans list: a carded grid of plan columns under the billing toggle. Read as 
 
 ![Plan grid default](components/crops/plan-grid-default.png)
 
+<a id="plan-card"></a>
 #### Plan card
 One plan column: name, price, feature rows and its CTA. Read as `plan-card` on the pricing page.
 
@@ -236,6 +249,7 @@ Child layers that carry the look: span 7x7 background #4b39ef `color.studio-ink`
 
 ![Plan card default](components/crops/plan-card-default.png)
 
+<a id="billing-seg"></a>
 #### Billing period segmented control
 A two-option radiogroup (Monthly/Yearly) with a sliding badge: role=radiogroup, each option a role=radio button; the pill slides via --ff-seg-x/width vars. Read as `billing-seg` on the pricing page.
 
@@ -246,6 +260,7 @@ A two-option radiogroup (Monthly/Yearly) with a sliding badge: role=radiogroup, 
 
 ![Billing period segmented control default](components/crops/billing-seg-default.png) ![Billing period segmented control selected](components/crops/billing-seg-selected.png)
 
+<a id="billing-seg-option"></a>
 #### Segmented control option
 Read as `billing-seg-option` on the pricing page.
 
@@ -258,6 +273,7 @@ Read as `billing-seg-option` on the pricing page.
 
 ![Segmented control option default](components/crops/billing-seg-option-default.png) ![Segmented control option hover](components/crops/billing-seg-option-hover.png) ![Segmented control option focus-visible](components/crops/billing-seg-option-focus-visible.png) ![Segmented control option pressed](components/crops/billing-seg-option-pressed.png)
 
+<a id="plan-cta"></a>
 #### Plan CTA (secondary)
 The secondary button: --ff-color-card fill with the hairline rule and resting shadow. Measured, never followed. Read as `plan-cta` on the pricing page.
 
@@ -271,6 +287,7 @@ The secondary button: --ff-color-card fill with the hairline rule and resting sh
 
 ![Plan CTA (secondary) default](components/crops/plan-cta-default.png) ![Plan CTA (secondary) hover](components/crops/plan-cta-hover.png) ![Plan CTA (secondary) focus-visible](components/crops/plan-cta-focus-visible.png) ![Plan CTA (secondary) pressed](components/crops/plan-cta-pressed.png) ![Plan CTA (secondary) dark](components/crops/plan-cta-dark.png)
 
+<a id="plan-cta-primary"></a>
 #### Plan CTA (primary)
 A contrast-fill call to action in the plan grid. Measured, never followed. Read as `plan-cta-primary` on the pricing page.
 
@@ -282,8 +299,9 @@ A contrast-fill call to action in the plan grid. Measured, never followed. Read 
 
 ![Plan CTA (primary) default](components/crops/plan-cta-primary-default.png) ![Plan CTA (primary) hover](components/crops/plan-cta-primary-hover.png) ![Plan CTA (primary) focus-visible](components/crops/plan-cta-primary-focus-visible.png) ![Plan CTA (primary) pressed](components/crops/plan-cta-primary-pressed.png)
 
+<a id="accordion-item"></a>
 #### FAQ accordion item
-A details/summary row in the questions list: hairline-separated, a plus/cross marker that turns on open. Read as `accordion-item` on the pricing page.
+A details/summary row in the questions list: hairline-separated, a plus/cross marker that turns on open. The first item ships open, so this resting reading is the open look. Read as `accordion-item` on the pricing page.
 
 **Values (default).** size 840 x 150; border B: 1px solid rgba(0, 0, 0, 0.08) `color.line`; background transparent; text Inter 17/26 510, #1a1a1a `color.ink`; icon 21.21 x 21.21, #1a1a1a `color.ink`.
 
@@ -291,15 +309,17 @@ Child layers that carry the look: details 840x150 border 1px rgba(0, 0, 0, 0.08)
 
 ![FAQ accordion item default](components/crops/accordion-item-default.png)
 
-#### FAQ accordion, open
-Read as `accordion-open` on the pricing page.
+<a id="accordion-closed"></a>
+#### FAQ accordion, closed
+The same details element measured closed: the first item ships open, and toggling its own summary shut it — the run's original save named this state "open" before the click was understood. Read as `accordion-closed` on the pricing page.
 
 **Values (default).** size 840 x 72; border B: 1px solid rgba(0, 0, 0, 0.08) `color.line`; background transparent; text Inter 17/26 510, #1a1a1a `color.ink`; icon 15 x 15, #1a1a1a `color.ink`.
 
 Child layers that carry the look: details 840x72 border 1px rgba(0, 0, 0, 0.08) `color.line`; span 28x28 background oklab(0.217772 0.00000990927 0.00000436604 / 0.06) radius 50%.
 
-![FAQ accordion, open default](components/crops/accordion-open-default.png)
+![FAQ accordion, closed default](components/crops/accordion-closed-default.png)
 
+<a id="link-go"></a>
 #### Arrow link
 The text link with a trailing arrow ("Contact us", question rows): --ff-lnk. Measured, never followed. Read as `link-go` on the pricing page.
 
@@ -313,6 +333,7 @@ No crop was saved for this entry (a whole page or a hidden element); the values 
 
 FlutterFlow leads with an AI prompt field on the home hero and a slimmer variant on later pages: ghost idea text, idea arrows, a Tab hint chip and the round send button. Sample text was typed and deleted; the composer was never submitted.
 
+<a id="ff-composer"></a>
 #### Prompt composer (new skin)
 The "What should your app do?" field on inner pages: a rounded field (radius-field) with the prompt textarea, idea nav and the send button. Read as `ff-composer` on the pricing page.
 
@@ -325,6 +346,7 @@ Child layers that carry the look: div 640x130 background #ffffff `color.card` bo
 
 ![Prompt composer (new skin) default](components/crops/ff-composer-default.png) ![Prompt composer (new skin) hover](components/crops/ff-composer-hover.png)
 
+<a id="ff-composer-field"></a>
 #### Composer field
 The single-line prompt textarea. Text was typed and deleted; nothing was sent. Read as `ff-composer-field` on the pricing page.
 
@@ -335,6 +357,7 @@ The single-line prompt textarea. Text was typed and deleted; nothing was sent. R
 
 ![Composer field default](components/crops/ff-composer-field-default.png) ![Composer field focused](components/crops/ff-composer-field-focused.png) ![Composer field filled](components/crops/ff-composer-field-filled.png)
 
+<a id="ff-composer-go"></a>
 #### Composer send button
 The round submit arrow (type=submit). Measured, never pressed. Read as `ff-composer-go` on the pricing page.
 
@@ -346,6 +369,7 @@ The round submit arrow (type=submit). Measured, never pressed. Read as `ff-compo
 
 ![Composer send button default](components/crops/ff-composer-go-default.png) ![Composer send button hover](components/crops/ff-composer-go-hover.png) ![Composer send button focus-visible](components/crops/ff-composer-go-focus-visible.png) ![Composer send button pressed](components/crops/ff-composer-go-pressed.png)
 
+<a id="ff-composer-key"></a>
 #### Idea key chip
 The "Use this idea" suggestion chip inside the composer. Read as `ff-composer-key` on the pricing page.
 
@@ -358,6 +382,7 @@ The "Use this idea" suggestion chip inside the composer. Read as `ff-composer-ke
 
 ![Idea key chip default](components/crops/ff-composer-key-default.png) ![Idea key chip hover](components/crops/ff-composer-key-hover.png) ![Idea key chip focus-visible](components/crops/ff-composer-key-focus-visible.png) ![Idea key chip pressed](components/crops/ff-composer-key-pressed.png)
 
+<a id="composer"></a>
 #### Prompt composer (home skin)
 The hero prompt field: a large rounded card with the ghost idea text, the Tab hint and the round send button. Read as `composer` on the home page.
 
@@ -370,6 +395,7 @@ Child layers that carry the look: div 720x130 background #ffffff `color.card` bo
 
 ![Prompt composer (home skin) default](components/crops/composer-default.png) ![Prompt composer (home skin) hover](components/crops/composer-hover.png) ![Prompt composer (home skin) dark](components/crops/composer-dark.png)
 
+<a id="composer-field"></a>
 #### Composer textarea
 The prompt textarea; text was typed and deleted, nothing sent. Read as `composer-field` on the home page.
 
@@ -380,6 +406,7 @@ The prompt textarea; text was typed and deleted, nothing sent. Read as `composer
 
 ![Composer textarea default](components/crops/composer-field-default.png) ![Composer textarea focused](components/crops/composer-field-focused.png) ![Composer textarea filled](components/crops/composer-field-filled.png)
 
+<a id="composer-ghost"></a>
 #### Composer ghost idea
 The suggested prompt painted as placeholder ghost text. Read as `composer-ghost` on the home page.
 
@@ -387,6 +414,7 @@ The suggested prompt painted as placeholder ghost text. Read as `composer-ghost`
 
 ![Composer ghost idea default](components/crops/composer-ghost-default.png)
 
+<a id="composer-nav"></a>
 #### Idea nav button
 The previous/next idea arrows in the composer. Read as `composer-nav` on the home page.
 
@@ -399,6 +427,7 @@ The previous/next idea arrows in the composer. Read as `composer-nav` on the hom
 
 ![Idea nav button default](components/crops/composer-nav-default.png) ![Idea nav button hover](components/crops/composer-nav-hover.png)
 
+<a id="composer-key"></a>
 #### Idea key chip
 The "Use this idea" chip under the ghost text (home skin); only painted in the dock composer on this page. Read as `composer-key` on the home page.
 
@@ -410,6 +439,7 @@ The "Use this idea" chip under the ghost text (home skin); only painted in the d
 
 ![Idea key chip default](components/crops/composer-key-default.png)
 
+<a id="composer-go"></a>
 #### Send button
 The round submit arrow in the composer (type=submit). Measured, never pressed. Read as `composer-go` on the home page.
 
@@ -425,6 +455,7 @@ The round submit arrow in the composer (type=submit). Measured, never pressed. R
 
 The Talk-to-sales form on /enterprise: labels, pill text fields, a tall textarea, radios, a custom select (opened, never submitted) and the declared-but-unpainted error slot.
 
+<a id="contact-form"></a>
 #### Contact form
 The enterprise inquiry form: a carded column of labelled fields, topic radios, two custom selects, a textarea and the submit button. Measured and shot; never submitted. Read as `contact-form` on the enterprise page.
 
@@ -434,6 +465,7 @@ Child layers that carry the look: input 410x44 background #ffffff `color.card` b
 
 ![Contact form default](components/crops/contact-form-default.png)
 
+<a id="field"></a>
 #### Field wrapper
 One form row: label (.ff-fld-l), the control (.ff-fld-i), an optional hint and the alert slot (.ff-fld-e). Read as `field` on the enterprise page.
 
@@ -443,6 +475,7 @@ Child layers that carry the look: input 410x44 background #ffffff `color.card` b
 
 ![Field wrapper default](components/crops/field-default.png)
 
+<a id="field-label"></a>
 #### Field label
 Read as `field-label` on the enterprise page.
 
@@ -450,6 +483,7 @@ Read as `field-label` on the enterprise page.
 
 No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
 
+<a id="text-field"></a>
 #### Text field
 A .ff-fld-i input: --ff-color-card fill, hairline border, radius-field-tall, --ff-shadow-field; focus paints --ff-shadow-field-focus. Text was typed and deleted; the form was never submitted. Read as `text-field` on the enterprise page.
 
@@ -460,6 +494,7 @@ A .ff-fld-i input: --ff-color-card fill, hairline border, radius-field-tall, --f
 
 ![Text field hover](components/crops/text-field-hover.png) ![Text field focused](components/crops/text-field-focused.png) ![Text field filled](components/crops/text-field-filled.png)
 
+<a id="textarea"></a>
 #### Text area
 Read as `textarea` on the enterprise page.
 
@@ -470,6 +505,7 @@ Read as `textarea` on the enterprise page.
 
 ![Text area default](components/crops/textarea-default.png) ![Text area focused](components/crops/textarea-focused.png)
 
+<a id="radio"></a>
 #### Topic radio
 A native radio in the topic list; the checked state is the accent dot. Read as `radio` on the enterprise page.
 
@@ -477,6 +513,7 @@ A native radio in the topic list; the checked state is the accent dot. Read as `
 
 ![Topic radio default](components/crops/radio-default.png)
 
+<a id="radio-checked"></a>
 #### Topic radio, checked
 Read as `radio-checked` on the enterprise page.
 
@@ -484,6 +521,7 @@ Read as `radio-checked` on the enterprise page.
 
 ![Topic radio, checked default](components/crops/radio-checked-default.png)
 
+<a id="select"></a>
 #### Select (custom combobox)
 A role=combobox button styled as a field (.ff-fld-i.ff-sel-t); opens .ff-sel-p listbox of .ff-sel-o options. The native select behind it is kept at 1x1 off screen. Read as `select` on the enterprise page.
 
@@ -494,6 +532,7 @@ A role=combobox button styled as a field (.ff-fld-i.ff-sel-t); opens .ff-sel-p l
 
 ![Select (custom combobox) default](components/crops/select-default.png) ![Select (custom combobox) hover](components/crops/select-hover.png) ![Select (custom combobox) focus-visible](components/crops/select-focus-visible.png)
 
+<a id="select-trigger"></a>
 #### Custom select trigger
 A role=combobox button styled as a field (.ff-fld-i.ff-sel-t); opens .ff-sel-p listbox of .ff-sel-o options. Read as `select-trigger` on the enterprise page.
 
@@ -504,6 +543,7 @@ A role=combobox button styled as a field (.ff-fld-i.ff-sel-t); opens .ff-sel-p l
 
 ![Custom select trigger default](components/crops/select-trigger-default.png) ![Custom select trigger hover](components/crops/select-trigger-hover.png) ![Custom select trigger focus-visible](components/crops/select-trigger-focus-visible.png) ![Custom select trigger pressed](components/crops/select-trigger-pressed.png)
 
+<a id="select-popup"></a>
 #### Custom select listbox
 The option popup: role=listbox card with option rows and the floating shadow. Read as `select-popup` on the enterprise page.
 
@@ -511,6 +551,7 @@ The option popup: role=listbox card with option rows and the floating shadow. Re
 
 ![Custom select listbox default](components/crops/select-popup-default.png)
 
+<a id="select-option"></a>
 #### Custom select option
 Read as `select-option` on the enterprise page.
 
@@ -520,6 +561,7 @@ Read as `select-option` on the enterprise page.
 
 ![Custom select option default](components/crops/select-option-default.png) ![Custom select option hover](components/crops/select-option-hover.png)
 
+<a id="field-error"></a>
 #### Field error text
 The alert slot under a field ("Pick the topic that best fits."): role=alert, --ff-color-danger text. Rendered in the DOM at rest but not painted until validation, so this is the declared style of the slot, not an observed error. Read as `field-error` on the enterprise page.
 
@@ -527,6 +569,7 @@ The alert slot under a field ("Pick the topic that best fits."): role=alert, --f
 
 No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
 
+<a id="submit"></a>
 #### Submit button
 The primary submit ("Submit"). Measured, never pressed — the form was never sent. Read as `submit` on the enterprise page.
 
@@ -542,6 +585,7 @@ The primary submit ("Submit"). Measured, never pressed — the form was never se
 
 The product page's feature tab list (a tab selected through its own control) and the accordions shared by pricing, product and the Studio FAQ.
 
+<a id="tablist"></a>
 #### Tab list
 A vertical tablist ("Parts of the backend"): role=tab rows over tabpanels; the selected tab is filled. Read as `tablist` on the product page.
 
@@ -549,6 +593,7 @@ A vertical tablist ("Parts of the backend"): role=tab rows over tabpanels; the s
 
 ![Tab list default](components/crops/tablist-default.png)
 
+<a id="tab-selected"></a>
 #### Tab, selected
 The aria-selected tab: filled with the tint wash. Read as `tab-selected` on the product page.
 
@@ -559,6 +604,7 @@ The aria-selected tab: filled with the tint wash. Read as `tab-selected` on the 
 
 ![Tab, selected default](components/crops/tab-selected-default.png) ![Tab, selected hover](components/crops/tab-selected-hover.png) ![Tab, selected focus-visible](components/crops/tab-selected-focus-visible.png)
 
+<a id="tab"></a>
 #### Tab
 An unselected tab row. The selected state was reached by clicking it (a UI toggle). Read as `tab` on the product page.
 
@@ -571,6 +617,7 @@ An unselected tab row. The selected state was reached by clicking it (a UI toggl
 
 ![Tab hover](components/crops/tab-hover.png) ![Tab focus-visible](components/crops/tab-focus-visible.png) ![Tab pressed](components/crops/tab-pressed.png)
 
+<a id="tab-after-click"></a>
 #### Tab after selection
 The same tab after the page's own click selected it. Read as `tab-after-click` on the product page.
 
@@ -578,6 +625,7 @@ The same tab after the page's own click selected it. Read as `tab-after-click` o
 
 ![Tab after selection default](components/crops/tab-after-click-default.png)
 
+<a id="accordion-item-product"></a>
 #### FAQ accordion item (product)
 Read as `accordion-item-product` on the product page.
 
@@ -591,6 +639,7 @@ Child layers that carry the look: details 840x176 border 1px rgba(0, 0, 0, 0.08)
 
 Headings, tag chips, link rows and cards from /studio, /studio/showcase and the feature cells on /enterprise.
 
+<a id="cells-grid"></a>
 #### Feature cells grid
 The bordered feature grid on the studio/enterprise pages: hairline cells with an icon, a title and a line each. Read as `cells-grid` on the enterprise page.
 
@@ -598,6 +647,7 @@ The bordered feature grid on the studio/enterprise pages: hairline cells with an
 
 ![Feature cells grid default](components/crops/cells-grid-default.png)
 
+<a id="studio-hero"></a>
 #### Studio page display
 Read as `studio-hero` on the studio page.
 
@@ -605,6 +655,7 @@ Read as `studio-hero` on the studio page.
 
 ![Studio page display default](components/crops/studio-hero-default.png)
 
+<a id="ptag-studio"></a>
 #### Studio product tag
 The tinted product tag (.ff-ptag-studio): --ff-color-studio-tint ground, --ff-color-studio-ink label. Read as `ptag-studio` on the studio page.
 
@@ -612,11 +663,13 @@ The tinted product tag (.ff-ptag-studio): --ff-color-studio-tint ground, --ff-co
 
 ![Studio product tag default](components/crops/ptag-studio-default.png)
 
+<a id="cells-item"></a>
 #### Feature cell
 Read as `cells-item` on the enterprise page.
 
 Not on the page when it was captured.
 
+<a id="showcase-card"></a>
 #### Showcase card
 A published-app card in the Studio showcase grid. Hovered only; never opened. Read as `showcase-card` on the studio showcase page.
 
@@ -632,6 +685,7 @@ Child layers that carry the look: div 240x503.2 background #111113 radius 36px s
 
 The home page still ships the previous generation of the design (the `.composer`/`.pbtn`/`.pg-*` modules and the legacy `--accent`/`--ink` shorthand), measured alongside the ff-* layer the other pages carry.
 
+<a id="replay-btn"></a>
 #### Replay button
 The small outline "Replay" control on the demo panels (.ff-pbtn-outline). Read as `replay-btn` on the product page.
 
@@ -644,6 +698,7 @@ The small outline "Replay" control on the demo panels (.ff-pbtn-outline). Read a
 
 ![Replay button default](components/crops/replay-btn-default.png) ![Replay button hover](components/crops/replay-btn-hover.png) ![Replay button focus-visible](components/crops/replay-btn-focus-visible.png) ![Replay button pressed](components/crops/replay-btn-pressed.png)
 
+<a id="home-hero"></a>
 #### Home hero
 The first band: the two-line display headline, the lede, the prompt composer and the check line, over the page ground with its grain texture. Read as `home-hero` on the home page.
 
@@ -653,6 +708,7 @@ Child layers that carry the look: p 191.1x34 background oklab(0.999994 0.0000455
 
 No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
 
+<a id="home-title"></a>
 #### Hero display
 "Build an app by describing it" in the --ff-text-display size. Read as `home-title` on the home page.
 
@@ -663,6 +719,7 @@ No crop was saved for this entry (a whole page or a hidden element); the values 
 
 ![Hero display default](components/crops/home-title-default.png) ![Hero display dark](components/crops/home-title-dark.png)
 
+<a id="btn-contrast"></a>
 #### Contrast button (footer band)
 The "Talk to sales" pill in the closing band: the old skin's contrast fill. Read as `btn-contrast` on the home page.
 
@@ -674,6 +731,7 @@ The "Talk to sales" pill in the closing band: the old skin's contrast fill. Read
 
 ![Contrast button (footer band) default](components/crops/btn-contrast-default.png) ![Contrast button (footer band) hover](components/crops/btn-contrast-hover.png) ![Contrast button (footer band) focus-visible](components/crops/btn-contrast-focus-visible.png) ![Contrast button (footer band) pressed](components/crops/btn-contrast-pressed.png) ![Contrast button (footer band) dark](components/crops/btn-contrast-dark.png)
 
+<a id="btn-quiet"></a>
 #### Quiet button
 The secondary pill next to it. Read as `btn-quiet` on the home page.
 
@@ -685,6 +743,7 @@ The secondary pill next to it. Read as `btn-quiet` on the home page.
 
 ![Quiet button default](components/crops/btn-quiet-default.png) ![Quiet button hover](components/crops/btn-quiet-hover.png) ![Quiet button focus-visible](components/crops/btn-quiet-focus-visible.png) ![Quiet button pressed](components/crops/btn-quiet-pressed.png)
 
+<a id="replay-btn-home"></a>
 #### Replay button (home skin)
 The small outline Replay on the demo modules; never painted at rest on this page, so this is the hidden DOM slot's declared style, not a painted reading. Read as `replay-btn-home` on the home page.
 
@@ -695,6 +754,7 @@ The small outline Replay on the demo modules; never painted at rest on this page
 
 No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
 
+<a id="app-card"></a>
 #### Generated app card
 A generated-app tile in the demo reel. Read as `app-card` on the home page.
 
@@ -704,6 +764,7 @@ Child layers that carry the look: div 318x430 background #f5f5f5 `color.well` ra
 
 ![Generated app card default](components/crops/app-card-default.png)
 
+<a id="ptag"></a>
 #### Product tag chip
 The small platform/product tag (dot + label). Read as `ptag` on the home page.
 
@@ -713,6 +774,7 @@ Not on the page when it was captured.
 
 The closing band and the real theme switch (the Light/Dark pick the dark set was captured through).
 
+<a id="footer"></a>
 #### Footer
 The site foot: brand lockup, link columns, the legal bar, the theme switch and the privacy-choices button. Read as `footer` on the pricing page.
 
@@ -720,6 +782,7 @@ The site foot: brand lockup, link columns, the legal bar, the theme switch and t
 
 ![Footer default](components/crops/footer-default.png)
 
+<a id="footer-link"></a>
 #### Footer link
 Read as `footer-link` on the pricing page.
 
@@ -730,6 +793,7 @@ Read as `footer-link` on the pricing page.
 
 ![Footer link default](components/crops/footer-link-default.png) ![Footer link hover](components/crops/footer-link-hover.png) ![Footer link focus-visible](components/crops/footer-link-focus-visible.png) ![Footer link pressed](components/crops/footer-link-pressed.png)
 
+<a id="theme-switch"></a>
 #### Theme switch
 The footer Light/Dark/"Match your system" radiogroup (data-ff-tsw; writes ff-theme to localStorage). The dark reading is measured with the switch on Dark. Read as `theme-switch` on the pricing page.
 
@@ -740,6 +804,7 @@ The footer Light/Dark/"Match your system" radiogroup (data-ff-tsw; writes ff-the
 
 ![Theme switch default](components/crops/theme-switch-default.png) ![Theme switch dark](components/crops/theme-switch-dark.png)
 
+<a id="theme-switch-pick"></a>
 #### Theme switch option
 A role=radio button in the switch; the checked one carries aria-checked=true. Read as `theme-switch-pick` on the pricing page.
 
@@ -752,6 +817,7 @@ A role=radio button in the switch; the checked one carries aria-checked=true. Re
 
 ![Theme switch option default](components/crops/theme-switch-pick-default.png) ![Theme switch option hover](components/crops/theme-switch-pick-hover.png) ![Theme switch option focus-visible](components/crops/theme-switch-pick-focus-visible.png) ![Theme switch option pressed](components/crops/theme-switch-pick-pressed.png)
 
+<a id="cookie-button"></a>
 #### Privacy choices button
 The "Your Privacy Choices" footer button (hidden outside banner regions). Measured at rest. Read as `cookie-button` on the pricing page.
 
@@ -759,6 +825,7 @@ The "Your Privacy Choices" footer button (hidden outside banner regions). Measur
 
 No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
 
+<a id="theme-switch-home"></a>
 #### Theme switch (home skin)
 Read as `theme-switch-home` on the home page.
 
@@ -770,6 +837,7 @@ Read as `theme-switch-home` on the home page.
 
 A few components as a phone draws them, at 390 x 844 with a mobile user agent: the collapsed bar and the full-screen menu sheet.
 
+<a id="m-nav"></a>
 #### Top nav (390)
 The 390-wide bar: brand, the Open menu icon button. Read as `m-nav` on the home page at 390 wide.
 
@@ -777,6 +845,7 @@ The 390-wide bar: brand, the Open menu icon button. Read as `m-nav` on the home 
 
 ![Top nav (390) default](components/crops/m-nav-default.png)
 
+<a id="m-open-menu"></a>
 #### Open menu button
 Read as `m-open-menu` on the home page at 390 wide.
 
@@ -787,6 +856,7 @@ Read as `m-open-menu` on the home page at 390 wide.
 
 ![Open menu button default](components/crops/m-open-menu-default.png) ![Open menu button hover](components/crops/m-open-menu-hover.png) ![Open menu button focus-visible](components/crops/m-open-menu-focus-visible.png) ![Open menu button pressed](components/crops/m-open-menu-pressed.png)
 
+<a id="m-menu-close"></a>
 #### Close menu button
 Read as `m-menu-close` on the home page at 390 wide.
 
@@ -797,6 +867,7 @@ Read as `m-menu-close` on the home page at 390 wide.
 
 ![Close menu button default](components/crops/m-menu-close-default.png) ![Close menu button hover](components/crops/m-menu-close-hover.png) ![Close menu button focus-visible](components/crops/m-menu-close-focus-visible.png) ![Close menu button pressed](components/crops/m-menu-close-pressed.png)
 
+<a id="m-composer"></a>
 #### Composer (390)
 Read as `m-composer` on the home page at 390 wide.
 
@@ -806,6 +877,7 @@ Child layers that carry the look: div 350x170 background #ffffff `color.card` bo
 
 ![Composer (390) default](components/crops/m-composer-default.png)
 
+<a id="m-btn-primary"></a>
 #### Primary button (390)
 Read as `m-btn-primary` on the home page at 390 wide.
 
@@ -813,6 +885,7 @@ Read as `m-btn-primary` on the home page at 390 wide.
 
 No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
 
+<a id="m-hero-title"></a>
 #### Hero display (390)
 Read as `m-hero-title` on the home page at 390 wide.
 
@@ -824,6 +897,7 @@ Read as `m-hero-title` on the home page at 390 wide.
 
 Overlays and transient surfaces opened through the pages' own controls.
 
+<a id="m-menu-dialog"></a>
 #### Mobile menu sheet
 The full-screen dialog.ff-snav-ms opened by the menu button: nav links, the lead card and the sign-in row. Read as `m-menu-dialog` on the home page.
 

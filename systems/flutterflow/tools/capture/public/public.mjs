@@ -97,7 +97,7 @@ const desktop = {
   pricing: { path: '/pricing', run: async (p, S) => {
     await S.view('default');
     await step('billing-yearly', async () => { await p.locator('[data-ff-seg] [data-ff-value="yearly"]').first().click(); await wait(p, 700); await S.view('billing-yearly'); });
-    await step('faq-open', async () => { const s = p.locator('.ff-acc-item summary, .ff-acc-item .ff-acc-x').first(); await s.scrollIntoViewIfNeeded(); await s.click(); await wait(p, 700); await S.view('faq-open'); });
+    await step('faq-closed', async () => { const item = p.locator('.ff-acc-item').first(); const s = item.locator('summary, .ff-acc-x').first(); await s.scrollIntoViewIfNeeded(); if (await item.evaluate((el) => el.open ?? el.hasAttribute('open'))) { await s.click(); await wait(p, 700); } await S.view('faq-closed'); });
     await S.full();
   } },
   'pricing-dark': { path: '/pricing', theme: 'dark', run: async (p, S) => { await S.view('default'); await S.full(); } },
@@ -113,7 +113,7 @@ const desktop = {
   'studio-showcase': { path: '/studio/showcase', run: async (p, S) => { await S.view('default'); await S.full(); } },
   'studio-faq': { path: '/studio/faq', run: async (p, S) => {
     await S.view('default');
-    await step('faq-open', async () => { const s = p.locator('.ff-acc-item summary, .ff-acc-item .ff-acc-x').first(); await s.scrollIntoViewIfNeeded(); await s.click(); await wait(p, 700); await S.view('faq-open'); });
+    await step('faq-closed', async () => { const item = p.locator('.ff-acc-item').first(); const s = item.locator('summary, .ff-acc-x').first(); await s.scrollIntoViewIfNeeded(); if (await item.evaluate((el) => el.open ?? el.hasAttribute('open'))) { await s.click(); await wait(p, 700); } await S.view('faq-closed'); });
     await S.full();
   } },
   'studio-apply': { path: '/studio/apply-to-be-a-developer', run: async (p, S) => { await S.view('default'); await S.full(); } },

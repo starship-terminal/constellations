@@ -275,6 +275,10 @@ def px_at(v, vw):
     return one(v)
 
 
+def fam_of(family):
+    return "{fontFamily.mono}" if "mono" in family else "{fontFamily.sans}" if "Inter" in family else family
+
+
 typo = {}
 for name, e in sorted(RES["light"].items()):
     m = re.fullmatch(r"--ff-text-(.+)", name)
@@ -285,7 +289,7 @@ for name, e in sorted(RES["light"].items()):
         continue
     role = m.group(1)
     weight, size, lh, family = mm.groups()
-    fam = "{fontFamily.mono}" if "mono" in family else "{fontFamily.sans}" if "Inter" in family else family
+    fam = fam_of(family)
     tr = RES["light"].get(f"--ff-text-{role}-tracking", {}).get("raw", "normal")
     size1440 = "%gpx" % px_at(size, 1440)
     comp = {"fontFamily": fam, "fontSize": size1440, "lineHeight": lh, "fontWeight": int(weight),
@@ -294,13 +298,38 @@ for name, e in sorted(RES["light"].items()):
     t = {"$value": comp, "$type": "typography", "$extensions": {"source": src}}
     if size != size1440:
         t["$extensions"]["declared"] = e["raw"]
-        t["$extensions"]["responsive"] = {"390px": {"fontSize": "%gpx" % px_at(size, 390)}}
+    # The 390 reading comes from the captured narrow declarations (RES["light390"]),
+    # never the desktop shorthand evaluated at 390: the site rewrites sizes, line
+    # heights, tracking and even weights at the narrow breakpoint, and fixed-px
+    # roles change too (lede 19/30 -> 16/25). A role the narrow pass does not
+    # redeclare keeps its desktop declaration, so only a clamp()/vw size still
+    # needs evaluating at 390.
+    over = {}
+    mm390 = TYPE_RE.match((RES["light390"].get(name) or {}).get("raw") or "")
+    if mm390:
+        w390, s390, lh390, family390 = mm390.groups()
+        c390 = {"fontFamily": fam_of(family390), "fontSize": "%gpx" % px_at(s390, 390),
+                "lineHeight": lh390, "fontWeight": int(w390)}
+        over = {k: v for k, v in c390.items() if comp[k] != v}
+    elif size != size1440:
+        s390 = "%gpx" % px_at(size, 390)
+        if s390 != size1440:
+            over["fontSize"] = s390
+    tr390 = RES["light390"].get(f"--ff-text-{role}-tracking", {})
+    tr390 = tr390.get("raw") or tr390.get("value")
+    if tr390 is not None:
+        ls390 = "0px" if tr390 == "normal" else tr390
+        if ls390 != comp["letterSpacing"]:
+            over["letterSpacing"] = ls390
+    if over:
+        t["$extensions"]["responsive"] = {"390px": over}
     if name in ("--ff-text-display", "--ff-text-heading"):
         t["$extensions"]["measured"] = "raw/measurements.md#home-title (66px at 1440, -2.31px tracking)"
     typo[role] = t
 typo["$description"] = ("The --ff-text-* type roles, parsed out of their font shorthands: display through "
-                        "small, plus prompt. clamp() sizes are resolved at 1440 and the 390 pass rides in "
-                        "$extensions.responsive; tracking is the companion --ff-text-*-tracking var.")
+                        "small, plus prompt. clamp() sizes are resolved at 1440 and the captured 390-px "
+                        "declarations ride in $extensions.responsive; tracking is the companion "
+                        "--ff-text-*-tracking var.")
 core["typography"] = typo
 
 # motion, as measured on the page (raw/motion.json via the probe; motion.py is product-free)

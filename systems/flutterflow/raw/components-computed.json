@@ -6284,10 +6284,10 @@
    "url": "https://flutterflow.io/pricing",
    "title": "FAQ accordion item",
    "group": "Pricing",
-   "desc": "A details/summary row in the questions list: hairline-separated, a plus/cross marker that turns on open.",
+   "desc": "A details/summary row in the questions list: hairline-separated, a plus/cross marker that turns on open. The first item ships open, so this resting reading is the open look.",
    "selector": ".ff-acc-item"
   },
-  "accordion-open": {
+  "accordion-closed": {
    "states": {
     "default": {
      "tag": "details",
@@ -6401,16 +6401,17 @@
       "stroke": "rgb(26, 26, 26)",
       "color": "rgb(26, 26, 26)"
      },
-     "crop": "components/crops/accordion-open-default.png",
-     "via": "at rest"
+     "crop": "components/crops/accordion-closed-default.png",
+     "via": "the accordion's own summary (toggled the open item shut)"
     }
    },
    "page": "pricing",
    "run": "pricing",
    "url": "https://flutterflow.io/pricing",
-   "title": "FAQ accordion, open",
+   "title": "FAQ accordion, closed",
    "group": "Pricing",
-   "selector": ".ff-acc-item"
+   "selector": ".ff-acc-item",
+   "desc": "The same details element measured closed: the first item ships open, and toggling its own summary shut it — the run's original save named this state \"open\" before the click was understood."
   },
   "link-go": {
    "states": {

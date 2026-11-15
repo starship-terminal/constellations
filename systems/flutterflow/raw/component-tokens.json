@@ -151,24 +151,7 @@
         "type": "shadow",
         "description": "the resting field lift; identical light and dark"
       },
-      "field-focus": {
-        "var": "--ff-shadow-field-focus",
-        "type": "shadow",
-        "description": "adds a 4px ink-6% ring on focus; measured on raw/measurements.md#text-field focused"
-      },
-      "floating": {
-        "var": "--ff-shadow-floating",
-        "type": "shadow",
-        "description": "highest chrome: nav panel and select popup measured exactly this"
-      },
-      "resting": {
-        "var": "--ff-shadow-resting",
-        "type": "shadow"
-      },
-      "resting-sm": {
-        "var": "--ff-shadow-resting-sm",
-        "type": "shadow"
-      }
+      "_themed": "The other four shadows are theme-dependent (dark swaps the dark ring for a white one and deepens the drop) so they live in the themed tree, resolved per theme, not here where only the light pass would resolve them."
     },
     "duration": {
       "fast": {
@@ -406,6 +389,28 @@
         "var": "--ff-border-rule",
         "type": "border",
         "description": "hairline rule: 1px solid line"
+      }
+    },
+    "shadow": {
+      "field-focus": {
+        "var": "--ff-shadow-field-focus",
+        "type": "shadow",
+        "description": "adds a 4px ink-6% ring on focus; measured on raw/measurements.md#text-field focused. Dark's ring is ink-6% of its own ink (a white ring)"
+      },
+      "floating": {
+        "var": "--ff-shadow-floating",
+        "type": "shadow",
+        "description": "highest chrome: nav panel and select popup measured exactly this. Dark carries a white 1px ring and a full-black drop"
+      },
+      "resting": {
+        "var": "--ff-shadow-resting",
+        "type": "shadow",
+        "description": "white ring + stronger drop in dark"
+      },
+      "resting-sm": {
+        "var": "--ff-shadow-resting-sm",
+        "type": "shadow",
+        "description": "white ring + stronger drop in dark"
       }
     },
     "drip": {
