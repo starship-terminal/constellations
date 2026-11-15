@@ -15028,8 +15028,8 @@
           "evidence": "Script: 59 of 59 tokens name their source"
         },
         "K2": {
-          "grade": "partly",
-          "evidence": "Script: 7 rules, 6 linking an image (needs 3+, all linked)"
+          "grade": "meets",
+          "evidence": "Script: 7 rules, each linking a screenshot or crop"
         },
         "K3": {
           "grade": "meets",
