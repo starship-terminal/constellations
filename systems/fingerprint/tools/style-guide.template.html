@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fingerprint style guide</title>
+<meta name="description" content="Fingerprint design tokens and the public marketing surfaces' components, rendered from tokens.json with the declared and measured values.">
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  --sg-sans: "Inter", ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-serif: "Petrona", ui-serif, Georgia, "Times New Roman", serif;
+  --sg-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+[data-mode="dark"], .dark {
+/*DARK*/
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--theme-ink-default, #171816); background: var(--color-base-white, #fff); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 400 40px/1.2 var(--sg-serif); margin: 0 0 4px; letter-spacing: -0.02em; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--theme-ink-default, #171816); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--theme-border-default, #e4e5e1); }
+.lead { max-width: 62ch; color: var(--theme-ink-default, #171816); opacity: .8; }
+.note { font-size: 13px; color: var(--theme-ink-default, #171816); opacity: .65; max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--theme-ink-default, #171816); opacity: .6; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--theme-border-default, #e4e5e1); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--theme-ink-default, #171816); opacity: .65; }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--theme-border-default, #e4e5e1); background: #fff; font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--theme-ink-default, #171816); opacity: .65; }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--theme-border-default, #e4e5e1); overflow: hidden; background: var(--color-base-white, #fff); }
+.navbar { display: flex; align-items: center; gap: 22px; height: var(--component-topbar-height, 64px); padding: 0 12px 0 22px; font-size: 14px; color: var(--theme-ink-default, #171816); background: var(--color-base-white, #fff); box-shadow: var(--theme-border-default, #e4e5e1) 0 1px 0 0; }
+.navbar .wm { font-weight: 600; font-size: 17px; letter-spacing: -0.02em; }
+.navbar .sp { flex: 1; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-cta-height, 40px); padding: 0 18px; font-size: 14px; font-weight: 500; border-radius: var(--radius-cta, var(--radius-default, 8px)); border: 1px solid transparent; }
+.btn.primary { background: var(--theme-action-primary, #f35820); color: var(--color-base-white, #fff); }
+.btn.dark { background: var(--theme-ink-default, #171816); color: var(--color-base-white, #fff); }
+.btn.ghost { background: transparent; border-color: var(--theme-border-default, #e4e5e1); color: var(--theme-ink-default, #171816); }
+.btn.small { height: 32px; font-size: 13px; font-weight: 500; }
+.hero { color: var(--theme-ink-default, #171816); padding: 80px 40px; font: 600 var(--font-size-6xl, 48px)/var(--font-lineHeight-6xl, 56px) var(--sg-sans); letter-spacing: var(--font-tracking-6xl, -0.021em); text-align: left; background: var(--color-base-white, #fff); }
+.hero small { display: block; font: 400 var(--font-size-xl, 18px)/var(--font-lineHeight-xl, 28px) var(--sg-sans); letter-spacing: var(--font-tracking-xl, -0.014em); color: var(--theme-ink-default, #484946); margin: 20px 0 26px; max-width: 46ch; }
+.hero .new { display: inline-flex; align-items: center; gap: 8px; font: 500 13px/1 var(--sg-sans); letter-spacing: 0; color: var(--theme-ink-default, #171816); border: 1px solid var(--theme-border-default, #e4e5e1); border-radius: 9999px; padding: 7px 14px; margin-bottom: 24px; }
+.hero .new b { color: var(--theme-action-primary, #f35820); }
+.hero .prompt { display: flex; align-items: center; justify-content: space-between; max-width: 560px; border: 1px solid var(--theme-border-default, #e4e5e1); border-radius: var(--radius-lg, 8px); background: var(--theme-surface-raised, #fbfbf9); font: 400 13px/1.4 var(--sg-mono); padding: 12px 14px; margin: 0 0 26px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
+.tile { border: 1px solid var(--theme-border-default, #e4e5e1); border-radius: var(--radius-card, var(--radius-xl, 12px)); padding: 14px; font-size: 13px; background: var(--theme-surface-raised, #fbfbf9); }
+.tile .img { height: 140px; background: var(--color-gray-200, #f1f1ee); border-radius: var(--radius-md, 6px); margin-bottom: 10px; display: flex; align-items: flex-end; padding: 10px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }
+.tile b { display: block; font: 600 var(--font-size-2xl, 20px)/var(--font-lineHeight-2xl, 28px) var(--sg-sans); letter-spacing: var(--font-tracking-2xl, -0.017em); margin-bottom: 4px; }
+.tile .sub { color: var(--theme-ink-default, #484946); font-size: 12px; }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--theme-border-default, #e4e5e1); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--theme-border-default, #e4e5e1); }
+.tr .ts { font-family: var(--sg-sans); }
+.tr .tv { font-size: 12px; color: var(--theme-ink-default, #171816); opacity: .65; font-family: var(--sg-mono); }
+.slider { display: flex; align-items: center; gap: 14px; font: 500 12px/1 var(--sg-mono); color: var(--theme-ink-default, #484946); }
+.slider .track { flex: 1; height: 6px; border-radius: 9999px; background: var(--color-gray-300, #e4e5e1); position: relative; }
+.slider .track i { position: absolute; left: 0; top: 0; bottom: 0; width: 40%; border-radius: 9999px; background: var(--theme-action-primary, #f35820); display: block; }
+.field { display: inline-block; width: 280px; height: var(--component-field-height, 44px); padding: 0 14px; border: 1px solid var(--theme-border-default, #e4e5e1); border-radius: var(--radius-field, var(--radius-md, 6px)); background: var(--color-base-white, #fff); font-size: 14px; color: var(--theme-ink-default, #171816); }
+.code { background: var(--color-gray-1000, #171816); color: var(--color-gray-300, #e4e5e1); border-radius: var(--radius-md, 6px); font: 400 13px/1.7 var(--sg-mono); padding: 14px 16px; }
+.code .kw { color: var(--syntax-keyword, #9181da); }
+.code .str { color: var(--syntax-string, #f35820); }
+.code .fn { color: var(--syntax-function, #2d93d7); }
+.code .cm { color: var(--syntax-comment, #a0a09c); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Fingerprint style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">Fingerprint, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the declared <code>--fpds-color-*</code> <code>H S% L%</code> channel triplets and their resolved <code>--color-*</code> hex ramp (nine families on a 100-1000 scale plus black/white and the 11 syntax colours), the <code>--fpds-shadow-*</code>/<code>--shadow-*</code> elevation steps, the <code>--text-*</code> type ramp (2xs 11px to 6xl 48px, each with line-height and letter-spacing companions), the <code>--font-*</code> faces (Inter, Petrona, JetBrains Mono, Geist Pixel) and <code>--font-weight-*</code> steps, the <code>--radius-*</code> 2-24px radii, the 4px <code>--spacing</code> base and <code>--container-*</code> widths, the <code>--ease-*</code> curves, and the semantic <code>--color-primary</code>/<code>--color-border</code>/<code>--color-surface-raised</code> roles. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from fingerprint.com, signed out, in headless Chromium. The dashboard and every signed-in product surface is a documented boundary; the contact-sales, newsletter and demo fields were typed into and cleared, never submitted. The marketing site ships no dark theme — the only dark redeclaration is the <code>.dark</code>-scoped syntax set for code blocks, kept as declared values. Inter, Petrona and JetBrains Mono are served faces and are not loaded here: samples fall back to system fonts.</p>
+
+  <h2 class="sh">The chrome</h2>
+  <p class="lead">The marketing header is a white bar on the white page: the Fingerprint wordmark, the Product/Use Cases/Resources dropdown triggers, AI, Docs, Demo and Pricing links, then Login, Contact Sales and the orange "Get Started" pill (the measured <code>nav-cta</code> fill — <code>light.theme.action.ctaFill</code>, the brand primary). Below, the hero pairs a "New — We now detect Claude Duet" announcement pill with the display headline, a "Prompt" install expander and the outlined "Install Fingerprint with AI" control.</p>
+  <div class="mock" style="padding:0">
+    <div class="navbar"><span class="wm">Fingerprint</span><span>Product</span><span>Use Cases</span><span>Resources</span><span>AI</span><span>Docs</span><span>Pricing</span><span class="sp"></span><span>Login</span><span>Contact Sales</span><span class="btn small primary">Get Started</span></div>
+    <div class="hero"><span class="new"><b>New</b> We now detect Claude Duet →</span>Identify every visitor<small>Device intelligence for fraud prevention: identify browsers and devices with industry-leading accuracy.</small><div class="prompt"><span>$ npx fingerprint-ai install</span><span>Prompt ▾</span></div><span class="btn ghost">Install Fingerprint with AI</span>&nbsp;&nbsp;<span class="btn ghost">Read the docs</span></div>
+  </div>
+
+  <h2 class="sh">The .dark scope is code, not a theme</h2>
+  <p class="lead">The stylesheet's only dark redeclaration is the 11 <code>--fpds-color-syntax-*</code> names: inside a <code>.dark</code> scope (code blocks) they re-point at lighter FPDS ramp steps — keyword/number/null to <code>purple-5</code>, string to <code>orange-6</code>, comment to <code>gray-6</code>. No public page paints a dark theme; an emulated <code>prefers-color-scheme: dark</code> probe resolved <code>:root</code> identically. The swatches below are declared values, not a painted surface.</p>
+  <div class="mock dark" style="padding:20px">
+    <div class="code"><span class="kw">const</span> fp <span class="cm">// a code block's .dark scope</span><br><span class="fn">FingerprintJS</span>.load().<span class="fn">then</span>(fp <span class="kw">=&gt;</span> fp.<span class="fn">get</span>(<span class="str">'visitorId'</span>))</div>
+  </div>
+
+  <h2 class="sh">Pricing, docs and the auth shell</h2>
+  <p class="lead">/pricing arranges plan cards beside the identification-volume slider and FAQ accordions. docs.fingerprint.com is a Mintlify stack with its own tokens and a real light/dark preference; dashboard.fingerprint.com /login and /signup are the product auth cards — three stacks, kept as measured component tokens.</p>
+  <div class="mock" style="padding:20px">
+    <div class="slider"><span>20K</span><span class="track"><i></i></span><span>1M+ identifications</span></div>
+    <div class="grid" style="margin-top:16px">
+      <div class="tile"><div class="img">Pro</div><b>$99/mo</b><span class="sub">100K identifications · Get Started</span></div>
+      <div class="tile"><div class="img">Enterprise</div><b>Custom</b><span class="sub">SSO, SLA · Contact Sales</span></div>
+      <div class="tile"><div class="img">Free</div><b>$0</b><span class="sub">20K identifications</span></div>
+    </div>
+    <div style="margin-top:16px"><input class="field" placeholder="Work email">&nbsp;<span class="btn primary">Submit</span></div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">Two honest layers: <code>fpds.*</code> keeps the declared <code>H S% L%</code> channel triplets; <code>color.*</code> is the resolved hex ramp the Tailwind utilities actually paint — orange 700 is the #f35820 brand primary. The semantic roles under <code>light.theme.*</code> alias the ramp; measured roles alias the declared values they match.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing, radius, layout and motion</h2>
+  <p class="lead">The space base is 4px; radii run 2-24px. Content width caps at 1248px (<code>--container-content-lg</code>) inside the 448-1280px <code>--container-*</code> steps. Easing tokens cover the cubic and quart families; the default transition is 150ms ease-in-out.</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">Four served faces: <code>Inter</code> carries every heading, control and body; <code>Petrona</code> is the serif display face on editorial sections; <code>JetBrains Mono</code> draws code, prompts and signal values; <code>Geist Pixel</code> is the pixel display face. The <code>--text-*</code> ramp runs 2xs 11px to 6xl 48px with per-step line-heights and em-tracking. Sizes are the declared steps; samples fall back to system sans.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared --fpds-*/--color-*/--text-* variables from the live stylesheets and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, open, focused and filled states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = /*TOKENS*/null;
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  for (const [setname, label] of [['light', 'light roles'], ['dark', 'dark.syntax — the .dark code-block redeclarations (declared; no public page paints a dark theme)']]) {
+    const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+    if (!roles.length) continue;
+    // The dark set's custom properties only resolve inside a .dark scope:
+    // swatch dots must live under it or they paint the light values/unset.
+    h += `<div class="pal-h">${label}</div><div class="pal${setname === 'dark' ? ' dark' : ''}">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.layout || {}, 'layout.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.misc || {}, 'misc.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.animation || {}, 'animation.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.motion || {}).duration || {}, 'motion.duration.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.motion || {}).easing || {}, 'motion.easing.')) m += `<div><b>${esc(n)}</b> <span>cubic-bezier(${esc(t.v.join ? t.v.join(', ') : t.v)})</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  // This package keeps its shadow steps in core.elevation (the declared
+  // --fpds-shadow-* tokens and their --shadow-* aliases), not per-theme sets.
+  for (const [n, t] of flat((TOK.core || {}).elevation || {}, 'elevation.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => (x.inset ? 'inset ' : '') + x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.fpds || {}), 'fpds.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.motion || {}).control || {}, 'motion.control.')) m += `<div><b>${esc(n)}</b> <span>${esc(String(t.v).slice(0, 90))}…</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+const resolveVal = (v, depth) => {
+  if (depth > 6 || typeof v !== 'string') return v;
+  const m = v.match(/^\{(.+)\}$/);
+  if (!m) return v;
+  // Aliases are set-relative: {font.size.xl} and the palette scales live
+  // under TOK.core, semantic roles under TOK.light / TOK.dark. Try each root.
+  for (const root of [TOK.core, TOK.light, TOK.dark, TOK]) {
+    let node = root;
+    for (const k of m[1].split('.')) node = node && node[k];
+    if (node && node.v !== undefined) return resolveVal(node.v, (depth || 0) + 1);
+  }
+  return v;
+};
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(resolveVal(t.v));
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — Identify every visitor</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Fingerprint</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).tracking || {}, 'font.tracking.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>

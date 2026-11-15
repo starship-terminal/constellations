@@ -12273,6 +12273,118 @@
    }
   },
   {
+   "slug": "fingerprint",
+   "name": "Fingerprint",
+   "url": "https://fingerprint.com",
+   "category": "productivity",
+   "platform": "web",
+   "goodFor": "developer-security product and marketing design: a declared FPDS palette of --fpds-color-* HSL-triplet ramps (ten steps across gray, blue, green, orange, pink, purple, red, teal and yellow plus black/white and a syntax set) aliased through Tailwind --color-*/--text-*/--radius-*/--spacing/--shadow-*/--ease-* variables and a small semantic layer (--primary, --border, --surface-raised), behind a white marketing surface (orange #f35820 primary CTAs and focus rings, near-white #fafaf8 raised surfaces, hairline borders, Inter/Petrona/JetBrains Mono/Geist Pixel self-hosted faces), header mega-dropdowns, a volume-slider pricing grid, a live /demo surface, a Mintlify docs site with a real light/dark theme preference, dashboard auth shells and a 390px pass",
+   "tags": [
+    "web",
+    "developer",
+    "security",
+    "fraud-detection",
+    "marketing",
+    "docs",
+    "pricing",
+    "tailwind",
+    "light",
+    "signed-out",
+    "design-tokens"
+   ],
+   "shape": "reference",
+   "captured": "2026-11-15",
+   "access": "signed out (every captured surface is public; the dashboard and every post-login surface - API keys, the events explorer, playground, billing - is an authenticated boundary never reached; the /login, /signup, contact-sales, newsletter and demo fields were measured and typed into then cleared, never submitted; every CTA, SSO button, nav item and link was measured, never followed; the 'Open the chat' launcher was never opened; the docs dark theme is the Mintlify site's own preference, captured as screenshots, while the marketing site ships only a .dark-scoped syntax redeclaration and resolved identically under an emulated dark probe; /demo and the IdentifySection panels paint the capture machine's real visitor ID, IP and geolocation, masked in committed images via tools/redact-rules/fingerprint.json)",
+   "themes": [
+    "light",
+    "dark"
+   ],
+   "widths": [
+    1440,
+    390
+   ],
+   "entry": "systems/fingerprint/README.md",
+   "tokens": "systems/fingerprint/tokens.json",
+   "styleGuide": "systems/fingerprint/style-guide.html",
+   "preview": {
+    "cover": "systems/fingerprint/screenshots/home-light-default.png",
+    "icon": "systems/fingerprint/icon.png",
+    "swatches": {
+     "light": {
+      "page": "light.background.page",
+      "surface": "light.theme.surface.raised",
+      "text": "light.theme.ink.default",
+      "muted": "light.form.placeholder",
+      "accent": "light.theme.action.primary",
+      "border": "light.theme.border.default"
+     }
+    },
+    "fonts": [
+     "core.font.family.sans",
+     "core.font.family.mono"
+    ]
+   },
+   "source": {
+    "path": "~/.design-systems/fingerprint/raw-shots (full-colour unmasked captures, outside the repo)"
+   },
+   "capture": {
+    "method": "public-web",
+    "source": "fingerprint.com in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and 186 element crops from the live DOM, plus a stylesheet harvest (918 rules, 322 resolved custom properties per probe in :root and .dark, 24 @font-face rules). The marketing Astro + Tailwind app declares its palette as HSL triplets, so ramps are declared values and semantic surface roles are measured computed values; docs.fingerprint.com is a Mintlify stack with a real light/dark preference (dark captured as screenshots, values kept under component.docs.*); dashboard.fingerprint.com /login and /signup are the product auth shell - a different stack - measured under component.productShell.*. BOUNDARY: forms typed into then cleared never submitted; SSO never followed; the chat launcher never opened; the pricing slider never dragged",
+    "timestamp": "2026-11-15T20:00:00Z",
+    "harness": "Devin",
+    "model": "SWE-2 Max",
+    "route": "public-web",
+    "routes": [
+     "/",
+     "/products/identification/",
+     "/products/smart-signals/",
+     "/products/ai-agent-detection/",
+     "/use-cases/payment-fraud/",
+     "/ai/",
+     "/pricing/",
+     "/demo/",
+     "/contact-sales/",
+     "/blog/",
+     "/case-studies/",
+     "/resources/",
+     "/security/",
+     "/integrations/",
+     "/sdk-libraries/",
+     "/bot-directory/",
+     "/about-us/",
+     "/careers/",
+     "docs.fingerprint.com/",
+     "docs.fingerprint.com/docs/quick-start-guide",
+     "docs.fingerprint.com/docs/smart-signals-overview",
+     "dashboard.fingerprint.com/login",
+     "dashboard.fingerprint.com/signup",
+     "home header Product + Use Cases + Resources dropdowns",
+     "docs theme-dark preference",
+     "mobile /, /pricing/, /demo/, /contact-sales/ and docs quick-start plus the home nav drawer"
+    ],
+    "gaps": [
+     "the dashboard and every post-login surface (API keys, events explorer, playground, billing, admin) sits behind an account - an authenticated boundary never reached; dashboard /login and /signup were measured as forms, never submitted, and Continue with Google/GitHub/Microsoft were never followed",
+     "submitted states: the /contact-sales form, footer and blog newsletter fields, the demo fake-checkout field and the auth cards were typed into then cleared, never sent - validation, error, loading and success states are absent rather than measured",
+     "the /pricing identification-volume slider re-prices the grid when dragged; measured at rest and never moved, so alternate volumes' prices are uncaptured",
+     "the 'Before Pro / After Pro' comparison toggle on /products/identification is IntersectionObserver-gated and never painted during measurement - recorded missing, not inferred",
+     "the docs dark theme was captured as screenshots via the site's own 'Change theme preference' control; the toggle state was never held during measurement, and the Mintlify stack's dark values are not folded into the marketing token sets",
+     "the marketing dark set is declared-not-painted: only the .dark-scoped --fpds-color-syntax-* code colours redeclare; no marketing page carries .dark or a theme control, and a prefers-color-scheme probe resolved :root identically",
+     "Use Cases and Resources dropdown panels were screenshot-captured only; only the Product panel's contents were component-measured",
+     "detail pages: blog posts, case studies, job ads, bot-directory entries, integration pages and most docs articles are index- or exemplar-level captures; careers links out to an external ATS",
+     "the 'Open the chat' launcher was measured, never opened - the chat panel is uncaptured",
+     "pressed states are DevTools-forced (CSS.forcePseudoState), so any script-applied mousedown state is missing",
+     "live-signal privacy: /demo and the IdentifySection panels paint the capture machine's real visitor ID, IP and geolocation; those regions are masked in committed images and the raw unmasked shots live outside the repo",
+     "icons: no standalone SVG set lifted this pass"
+    ],
+    "durationMin": 420,
+    "durationNote": "wall-clock across the capture sessions including kit adaptation, the stylesheet harvest, the screenshot pass, several measurement passes (observer-gated controls needed re-runs), redaction and the offline build",
+    "pr": "https://github.com/starship-terminal/constellations/pull/597"
+   },
+   "layoutGaps": {
+    "icons/": "no standalone SVG icon set was lifted; the Fingerprint mark, dropdown glyphs, partner logos and social glyphs are visible in the crops and screenshots"
+   }
+  },
+  {
    "slug": "flowmapp",
    "name": "FlowMapp",
    "url": "https://www.flowmapp.com",
@@ -12458,6 +12570,397 @@
    },
    "layoutGaps": {
     "icons/": "no standalone SVG icon set was lifted on this pass; the Flask mark and demo glyphs are the product's artwork, visible in the crops and screenshots"
+   }
+  },
+  {
+   "slug": "fiverr",
+   "name": "Fiverr",
+   "url": "https://www.fiverr.com",
+   "category": "e-commerce",
+   "platform": "web",
+   "goodFor": "freelance-marketplace design: a white sticky header with a Browse-categories drawer and a green Join pill, the dark photographic hero band with a dark-skinned search form, Macan type, popular-service chips, a /categories directory, gig cards with star ratings and localized 'From S$xx' pricing, the Basic/Standard/Premium package tablist on a gig page's pricing card, and the /join + /login auth edge \u2014 all measured as computed styles (the site's stylesheet is a hashed atomic layer with no named token layer)",
+   "tags": [
+    "web",
+    "marketplace",
+    "freelance",
+    "e-commerce",
+    "directory",
+    "search",
+    "light",
+    "atomic-css",
+    "signed-out",
+    "perimeterx"
+   ],
+   "shape": "reference",
+   "captured": "2026-11-16",
+   "access": "signed out (every captured surface is public; the buyer/seller account, orders, inbox, checkout and every post-login surface is an authenticated boundary never reached; the hero search, join and login fields were measured and typed into then cleared, never submitted)",
+   "themes": [
+    "light"
+   ],
+   "widths": [
+    1440,
+    390
+   ],
+   "entry": "systems/fiverr/README.md",
+   "tokens": "systems/fiverr/tokens.json",
+   "styleGuide": "systems/fiverr/style-guide.html",
+   "preview": {
+    "cover": "systems/fiverr/screenshots/home-light-default.png",
+    "icon": "systems/fiverr/icon.png",
+    "swatches": {
+     "light": {
+      "page": "core.color.neutral.paper",
+      "surface": "core.color.neutral.hover-wash",
+      "text": "core.color.neutral.ink",
+      "muted": "core.color.neutral.muted",
+      "accent": "core.color.brand.accent",
+      "border": "core.color.neutral.line"
+     }
+    },
+    "fonts": [
+     "core.font.family.sans",
+     "core.font.family.ui"
+    ]
+   },
+   "capture": {
+    "method": "public-web",
+    "source": "fiverr.com public signed-out surface in Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and component crops from the live DOM; the gig page and seller profile discovered on the public search grid at run time. PerimeterX gates the edge with a press&hold challenge, driven automatically by the kit and never answered by hand; when the edge throttled this client, routes were retried on fresh contexts",
+    "timestamp": "2026-11-16T19:30:00Z",
+    "harness": "Devin",
+    "model": "SWE-2 Max",
+    "route": "public-web",
+    "routes": [
+     "/",
+     "/categories",
+     "/categories/graphics-design",
+     "/categories/graphics-design/creative-logo-design",
+     "/search/gigs?query=<service>",
+     "/<seller>/<gig> (first result card)",
+     "/<seller> (that gig's seller)",
+     "/logo-maker",
+     "/about-us",
+     "/start_selling",
+     "/cp/how-fiverr-works",
+     "/legal-portal",
+     "/login",
+     "/join"
+    ],
+    "gaps": [
+     "the buyer/seller account, orders, inbox, checkout and every post-login surface was never reached",
+     "the gig card's Continue was measured, never pressed \u2014 the order/checkout flow it leads to is uncaptured",
+     "Contact me was measured, never pressed \u2014 the message flow it fronts needs an account",
+     "the join and login forms were typed into then cleared, never submitted; Continue-with-* was never pressed",
+     "the package tabs were not switched (switching re-prices the card), so Standard/Premium price panels are uncaptured",
+     "filter panels opened but filtered result states were not exercised (applying re-runs the search)",
+     "prices rendered localized to this client's currency (SGD)",
+     "icons: no standalone SVG set lifted this pass"
+    ],
+    "durationMin": null,
+    "durationNote": "capture ran in several passes on 2026-11-16 because PerimeterX throttling forced retries; wall-clock duration not recorded",
+    "pr": "https://github.com/starship-terminal/constellations/pull/596"
+   },
+   "layoutGaps": {
+    "icons/": "no standalone SVG icon set was lifted on this pass; the Fiverr wordmark, collect heart, rating and category-tile glyphs are visible in the crops and screenshots"
+   }
+  },
+  {
+   "slug": "flutterflow",
+   "name": "FlutterFlow",
+   "url": "https://flutterflow.io",
+   "category": "productivity",
+   "platform": "web",
+   "goodFor": "visual app builder marketing site: prompt-composer hero, pricing plans, enterprise contact form, Studio agency pages, light + dark",
+   "tags": [
+    "web",
+    "app-builder",
+    "ai",
+    "inter",
+    "light-dark",
+    "pill-fields",
+    "marketing"
+   ],
+   "shape": "reference",
+   "captured": "2026-03-01",
+   "access": "signed out (every surface captured is public; the app sits at app.flutterflow.io behind login)",
+   "themes": [
+    "light",
+    "dark"
+   ],
+   "widths": [
+    1440,
+    390
+   ],
+   "entry": "systems/flutterflow/README.md",
+   "tokens": "systems/flutterflow/tokens.json",
+   "styleGuide": "systems/flutterflow/style-guide.html",
+   "preview": {
+    "cover": "systems/flutterflow/screenshots/home-light-default.png",
+    "icon": "systems/flutterflow/icon.png",
+    "swatches": {
+     "light": {
+      "page": "light.color.page",
+      "surface": "light.color.card",
+      "text": "light.color.ink",
+      "muted": "light.color.muted",
+      "accent": "light.color.accent",
+      "border": "light.color.line"
+     },
+     "dark": {
+      "page": "dark.color.page",
+      "surface": "dark.color.card",
+      "text": "dark.color.ink",
+      "muted": "dark.color.muted",
+      "accent": "dark.color.accent",
+      "border": "dark.color.line"
+     }
+    },
+    "fonts": [
+     "core.fontFamily.sans",
+     "core.fontFamily.mono"
+    ]
+   },
+   "capture": {
+    "harness": "Devin",
+    "model": "SWE-2 Max",
+    "route": "public-web",
+    "version": "flutterflow.io, 2026-03-01; Astro site, release not exposed",
+    "routes": [
+     "/",
+     "/product",
+     "/pricing",
+     "/enterprise",
+     "/ai",
+     "/studio",
+     "/studio/showcase",
+     "/studio/faq",
+     "/studio/apply-to-be-a-developer",
+     "/customer-stories",
+     "/blog",
+     "/changelog",
+     "/about-us",
+     "/contact-us",
+     "/flutterflow-vs-studio",
+     "/flutterflow-developer-groups",
+     "/student-ambassadors",
+     "/studio/ai",
+     "/studio/desktop",
+     "/studio/changelog",
+     "/studio/work-with-developers",
+     "/privacy",
+     "/tos",
+     "/tos-marketplace"
+    ],
+    "durationMin": null,
+    "durationNote": "the capture ran across several sessions; active wall-clock time was not recorded; per-shot timestamps are in screenshots/*.capture.json",
+    "pr": "https://github.com/starship-terminal/constellations/pull/598",
+    "gaps": [
+     "app.flutterflow.io and everything behind Sign in / Start building / Open Studio was never opened: the dashboard, editor canvas, AI generation flow, billing and account surfaces are signed-in and out of scope",
+     "the prompt composer was measured, focused and typed in (then cleared) but never submitted, so the generation flow it starts is missing",
+     "the enterprise Talk-to-sales form and the Studio application form were never submitted, so their success and painted error states are missing (the error slot is recorded as declared DOM, not painted)",
+     "plan CTAs lead to a signed-in checkout and were not followed",
+     "dark shots were taken on home, product, pricing and enterprise only; the other pages' dark paint is covered by the token set but not screenshot-verified",
+     "blog and changelog article pages were not paged through"
+    ]
+   }
+  },
+  {
+   "slug": "foodnoms",
+   "name": "Foodnoms",
+   "url": "https://foodnoms.com",
+   "category": "fitness",
+   "platform": "web",
+   "goodFor": "nutrition-tracker marketing: a Framer site declaring ~90 --token-* custom properties in display-P3 (the #ff5406 accent ramp, a neutral ramp, #2f2f2f ink alphas and a per-nutrient hue set) with a real authored prefers-color-scheme dark theme, uploaded Aquawax Pro in three weights (56px hero ticker down to 15px nav), 40px/20px pill buttons, 18.8px #f2f2f2 feature cards, a Framer-composed pricing comparison table, help-center accordions with a Framer search modal, a newsletter capsule and an accent-orange footer panel",
+   "tags": [
+    "web",
+    "mobile-app",
+    "nutrition",
+    "framer",
+    "light",
+    "dark",
+    "orange-accent",
+    "p3-palette",
+    "marketing",
+    "pricing",
+    "help-center",
+    "signed-out"
+   ],
+   "shape": "reference",
+   "captured": "2026-11-16",
+   "access": "read-only (the marketing site, pricing, help center, news, press, articles, comparison pages and legal are fully public; the product itself is an iOS/macOS app sold through the App Store - there is no web sign-in; every Download/Get-the-App link, press-kit zip and mailto was measured, never followed; the help search and newsletter field were typed into then cleared, never submitted; /open/settings/* is a static deep-link interstitial)",
+   "themes": [
+    "light",
+    "dark"
+   ],
+   "widths": [
+    1440,
+    390
+   ],
+   "entry": "systems/foodnoms/README.md",
+   "tokens": "systems/foodnoms/tokens.json",
+   "styleGuide": "systems/foodnoms/style-guide.html",
+   "preview": {
+    "cover": "systems/foodnoms/screenshots/home-light-default.png",
+    "icon": "systems/foodnoms/icon.png",
+    "swatches": {
+     "light": {
+      "page": "light.canvas",
+      "surface": "light.surface.card",
+      "text": "light.ink",
+      "muted": "light.muted",
+      "accent": "light.accent",
+      "border": "light.focus.ring"
+     },
+     "dark": {
+      "page": "dark.canvas",
+      "surface": "dark.surface.card",
+      "text": "dark.ink",
+      "muted": "dark.muted",
+      "accent": "dark.accent",
+      "border": "dark.focus.ring"
+     }
+    },
+    "fonts": [
+     "core.font.family.display",
+     "core.font.family.ui",
+     "core.font.family.button"
+    ]
+   },
+   "source": {
+    "path": "~/.design-systems/foodnoms/raw-shots (full-colour captures, outside the repo)"
+   },
+   "capture": {
+    "method": "public-web",
+    "source": "foodnoms.com in headless Chromium (Playwright), desktop 1440x900, a dark pass under emulated prefers-color-scheme and a 390x844 mobile pass; computed styles and 157 element crops from the live DOM, plus a stylesheet harvest (105 rules, 90 resolved theme variables in light and 39 re-declared under prefers-color-scheme: dark, 39 @font-face rules). The Framer site declares its palette as flat --token-* custom properties in color(display-p3 ...) values, so palette tokens are declared values gamut-mapped to sRGB and surface roles are measured computed values aliased to the declarations they match. BOUNDARY: the product is an iOS/macOS app - no web sign-in exists; App Store, press-kit and mailto links were measured, never followed",
+    "timestamp": "2026-11-16T04:30:00Z",
+    "harness": "Devin",
+    "model": "SWE-2 High",
+    "route": "public-web",
+    "routes": [
+     "/",
+     "/plus",
+     "/help",
+     "/news",
+     "/press",
+     "/family-plan",
+     "/vs/myfitnesspal",
+     "/help/barcode-scanning",
+     "/news/foodnoms-2",
+     "/terms",
+     "/privacy",
+     "/open/settings/sign-up",
+     "dark /, /plus, /help, /news, /vs/myfitnesspal and /help/barcode-scanning",
+     "mobile /, /plus and /help plus the home nav drawer"
+    ],
+    "gaps": [
+     "the product itself - food logging, AI scanning, widgets, the community database and subscription purchase - is an iOS/macOS app behind the App Store download, which was never installed or opened; /download is a JS redirect to apps.apple.com that was never followed",
+     "no prices render publicly: /plus says \"Find pricing info for your region in the app\", so pricing amounts are a documented gap",
+     "the dozens of further help/news/press/comparison articles in the sitemap share the captured templates; one representative of each was captured",
+     "the help search modal was opened and typed into, but result rows were never clicked; the newsletter field was typed into then cleared, never submitted",
+     "pressed states are DevTools-forced (CSS.forcePseudoState), so any script-applied mousedown state is missing; disabled, error and loading states do not appear on the public surface",
+     "the mobile drawer could not be re-measured as a component (the toggle's aria-label flips once open and its links share text with the footer); it is evidenced by the mobile-home-light-drawer screenshot",
+     "the site ignores prefers-reduced-motion (125 moving records, none removed in the reduced-motion pass) - recorded as product behavior, not emulated",
+     "app./community./web. subdomains did not answer; api.foodnoms.com 404s"
+    ],
+    "durationMin": 300,
+    "durationNote": "wall-clock across the capture sessions including kit adaptation, DOM probing, the stylesheet harvest, light/dark/mobile screenshot passes, two measurement passes and the offline build",
+    "pr": "https://github.com/starship-terminal/constellations/pull/599"
+   }
+  },
+  {
+   "slug": "fourmula",
+   "name": "Fourmula",
+   "url": "https://fourmula.ai",
+   "category": "ai-agent",
+   "platform": "web",
+   "goodFor": "AI product-photography design across two systems: a Webflow marketing site with two inverted paints (the isDarkMode toggle flips `dark` on <body> - .body.dark paints light, plain .body dark), a fluid --_fonts---* rem ramp, a five-step --fonts-* alpha ink scale and Sf Pro Display; plus a dark-only Next.js/Tailwind v4 app edge with a declared @theme ramp (base-100..900 neutrals, #ff6b02 accent, --text-* 9-52px, --radius-* 4-40px), a 384px/28px-radius sign-in card, accent/20% tint pills and the signed-out PDP generator",
+   "tags": [
+    "web",
+    "ai",
+    "product-photography",
+    "e-commerce",
+    "marketing",
+    "webflow",
+    "tailwind",
+    "two-themes",
+    "dark-app",
+    "design-tokens",
+    "signed-out"
+   ],
+   "shape": "reference",
+   "captured": "2026-11-15",
+   "access": "signed out (every surface captured is public; app.fourmula.ai /start, /auth and /project/create-pdp are the only app surfaces a signed-out visitor sees - measured as forms, typed into then cleared, never submitted; uploads, the Shopify connection, generation and every post-login surface need an account and were never run; consent was never answered; every CTA and link was measured, never followed)",
+   "themes": [
+    "light",
+    "dark"
+   ],
+   "widths": [
+    1440,
+    390
+   ],
+   "entry": "systems/fourmula/README.md",
+   "tokens": "systems/fourmula/tokens.json",
+   "styleGuide": "systems/fourmula/style-guide.html",
+   "preview": {
+    "cover": "systems/fourmula/screenshots/home-light-default.png",
+    "icon": "systems/fourmula/icon.png",
+    "swatches": {
+     "light": {
+      "page": "light.background.page",
+      "surface": "light.background.surface",
+      "text": "light.text.ink",
+      "muted": "light.text.muted",
+      "accent": "light.action.fill",
+      "border": "light.border.rule"
+     },
+     "dark": {
+      "page": "dark.background.page",
+      "surface": "dark.background.surface",
+      "text": "dark.text.ink",
+      "muted": "dark.text.muted",
+      "accent": "dark.action.fill",
+      "border": "dark.border.rule"
+     }
+    },
+    "fonts": [
+     "core.font.family.marketing",
+     "core.font.family.app"
+    ]
+   },
+   "capture": {
+    "harness": "Devin",
+    "model": "SWE-2 High",
+    "route": "public-web",
+    "method": "public-web",
+    "source": "fourmula.ai and app.fourmula.ai in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and crops from the live DOM, custom properties resolved on probe documents in both marketing paints (.body.dark = light, .body = dark) and on the app's own dark-only layer. Two token systems kept apart: the marketing Webflow vars land in the light/dark sets as resolved declarations plus measured roles, and the app's declared Tailwind @theme lands under core.appColor/font.size.app/radius.app with measured values under component.app.*",
+    "timestamp": "2026-11-15T00:00:00Z",
+    "at": "2026-11-15",
+    "routes": [
+     "/",
+     "/privacy-policy",
+     "/terms-of-service",
+     "app.fourmula.ai/start",
+     "app.fourmula.ai/auth",
+     "app.fourmula.ai/project/create-pdp",
+     "mobile /, /start, /auth and /project/create-pdp"
+    ],
+    "gaps": [
+     "every post-login surface (dashboard, asset generation, results, account settings) lives behind app.fourmula.ai's auth wall - an authenticated boundary never reached",
+     "the auth fields, PDP uploads, Shopify Check connection and Start generation were measured at rest and typed into then cleared, never submitted - validation, error, loading and success states are absent rather than measured; the Start generation pill's dim accent/15% fill is its resting style, not a measured disabled state",
+     "no pricing page was found in the site's navigation, footer or menu overlay",
+     "the privacy policy was measured and terms was screenshotted in both paints but left unmeasured",
+     "the theme toggle itself was never physically pressed (it repaints the whole page); both painted themes were reached through the site's own isDarkMode storage key",
+     "disabled/error/loading states are largely unobserved except the disabled Video-content radio (0.5 opacity) and the not-ready Start generation fill",
+     "pressed states are forced with DevTools (CSS.forcePseudoState), so any script-applied mousedown state is missing",
+     "the Finsweet cookie-consent layer was measured and hidden, never answered",
+     "icons: no standalone SVG set lifted this pass",
+     "Sf Pro Display and the app's sfProFont are proprietary faces; the style guide falls back to system fonts"
+    ],
+    "durationMin": 300,
+    "durationNote": "wall-clock across the capture sessions including kit adaptation (selectors and theme handling rewritten to the inverted .body.dark/.body paints and the separate Tailwind app), the stylesheet harvest on both surfaces, screenshot and measurement passes on a headless Linux server, and the offline build",
+    "pr": "https://github.com/starship-terminal/constellations/pull/600"
+   },
+   "layoutGaps": {
+    "icons/": "the icon extraction pass was not run; the marks and glyphs (the Fourmula mark, the header moon/account icons, the FAQ plus, the app menu/eye glyphs) are visible in the crops and screenshots"
    }
   },
   {
