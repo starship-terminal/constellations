@@ -645,7 +645,11 @@ def main(argv=None):
     # list) comes back in extras on affected argparse versions.
     args, extra = ap.parse_known_args(None if argv is None else [str(a) for a in argv])
     if extra:
-        if getattr(args, "files", None) is not None:
+        # Extras argparse could not place are legit trailing files only when
+        # none looks like an option. A dash-prefixed extra is an unknown flag
+        # (a misspelt --rules used to be checked as an image path, silently
+        # skipping the whole-package scan).
+        if getattr(args, "files", None) is not None and not any(a.startswith("-") for a in extra):
             args.files.extend(extra)
         else:
             ap.error("unrecognized arguments: %s" % " ".join(extra))
