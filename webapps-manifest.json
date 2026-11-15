@@ -1164,8 +1164,8 @@
     1431
    ],
    "description": "News, before it trends",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/digg",
    "notes": "",
    "batch": 4
   },
@@ -2079,8 +2079,8 @@
     907
    ],
    "description": "Meet Gemini, Google's AI assistant",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/gemini",
    "notes": "",
    "batch": 7
   },
