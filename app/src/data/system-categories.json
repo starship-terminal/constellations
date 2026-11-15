@@ -808,5 +808,11 @@
     "groupId": "web-categories",
     "labels": ["Books", "Social Networking"],
     "reason": "catalog.json describes a book-club and reading product: club directories and detail pages, a book catalog with an ebook store, a /discover cover wall, sign-in, support and a blog. Post-login reader and club surfaces are gated."
+  },
+  {
+    "referenceId": "systems:digg",
+    "groupId": "web-categories",
+    "labels": ["News", "Social Networking"],
+    "reason": "catalog.json describes a news aggregator and social-voting product: category feeds, story cards with vote pills, right-rail panels, story detail pages and Clerk auth."
   }
 ]

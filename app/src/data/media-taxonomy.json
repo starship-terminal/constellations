@@ -1146,6 +1146,11 @@
       "referenceId": "systems:fable",
       "media": 249,
       "assignedMedia": 249
+    },
+    {
+      "referenceId": "systems:digg",
+      "media": 150,
+      "assignedMedia": 29
     }
   ],
   "assignments": [
@@ -262625,6 +262630,325 @@
           "termId": "web-fonts:inter",
           "rule": "font-primary",
           "reason": "Exact primary family Inter from systems/fable/tokens.json#core.font.family.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:digg",
+      "mediaId": "systems/digg/screenshots/home-dark-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:digg",
+      "mediaId": "systems/digg/screenshots/home-dark-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:digg",
+      "mediaId": "systems/digg/screenshots/home-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:digg",
+      "mediaId": "systems/digg/screenshots/home-light-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:digg",
+      "mediaId": "systems/digg/screenshots/login-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:log-in",
+          "rule": "page-login",
+          "reason": "Capture filename explicitly names log in; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:digg",
+      "mediaId": "systems/digg/screenshots/login-light-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:log-in",
+          "rule": "page-login",
+          "reason": "Capture filename explicitly names log in; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:digg",
+      "mediaId": "systems/digg/screenshots/profile-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:profile-account",
+          "rule": "page-profile",
+          "reason": "Capture filename explicitly names profile & account; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:digg",
+      "mediaId": "systems/digg/screenshots/profile-light-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:profile-account",
+          "rule": "page-profile",
+          "reason": "Capture filename explicitly names profile & account; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:digg",
+      "mediaId": "systems/digg/screenshots/signup-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:sign-up",
+          "rule": "page-signup",
+          "reason": "Capture filename explicitly names sign up; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:digg",
+      "mediaId": "systems/digg/screenshots/signup-light-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:sign-up",
+          "rule": "page-signup",
+          "reason": "Capture filename explicitly names sign up; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:digg",
+      "mediaId": "systems/digg/components/crops/cat-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:digg",
+      "mediaId": "systems/digg/components/crops/d-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:digg",
+      "mediaId": "systems/digg/components/crops/m-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:digg",
+      "mediaId": "systems/digg/components/crops/m-footer-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:digg",
+      "mediaId": "systems/digg/components/crops/pf-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:digg",
+      "mediaId": "systems/digg/components/crops/post-avatars-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:avatar",
+          "rule": "ui-avatar",
+          "reason": "Capture filename explicitly names avatar; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:digg",
+      "mediaId": "systems/digg/components/crops/post-avatars-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:avatar",
+          "rule": "ui-avatar",
+          "reason": "Capture filename explicitly names avatar; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:digg",
+      "mediaId": "systems/digg/components/crops/post-avatars-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:avatar",
+          "rule": "ui-avatar",
+          "reason": "Capture filename explicitly names avatar; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:digg",
+      "mediaId": "systems/digg/components/crops/post-avatars-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:avatar",
+          "rule": "ui-avatar",
+          "reason": "Capture filename explicitly names avatar; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:digg",
+      "mediaId": "systems/digg/components/crops/post-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:digg",
+      "mediaId": "systems/digg/components/crops/post-comment-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:comments",
+          "rule": "ux-comments",
+          "reason": "Capture filename explicitly names comments; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:digg",
+      "mediaId": "systems/digg/components/crops/post-comment-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:comments",
+          "rule": "ux-comments",
+          "reason": "Capture filename explicitly names comments; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:digg",
+      "mediaId": "systems/digg/components/crops/post-comment-hover.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:comments",
+          "rule": "ux-comments",
+          "reason": "Capture filename explicitly names comments; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:digg",
+      "mediaId": "systems/digg/components/crops/post-comment-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:comments",
+          "rule": "ux-comments",
+          "reason": "Capture filename explicitly names comments; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:digg",
+      "mediaId": "systems/digg/components/crops/sb-pill-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:digg",
+      "mediaId": "systems/digg/components/crops/sb-pill-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:digg",
+      "mediaId": "systems/digg/components/crops/sb-pill-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:digg",
+      "mediaId": "systems/digg/components/crops/sb-pill-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:digg",
+      "mediaId": "systems/digg/components/crops/site-footer-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
         }
       ]
     }

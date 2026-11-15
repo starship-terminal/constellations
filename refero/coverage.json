@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 135,
-    "system_domains": 127,
-    "matched_domains": 100,
-    "missing_domains": 333,
+    "system_packages": 136,
+    "system_domains": 128,
+    "matched_domains": 101,
+    "missing_domains": 332,
     "system_domains_absent_from_catalog": 27
   },
   "matched": {
@@ -1052,6 +1052,23 @@
         }
       ]
     },
+    "digg.com": {
+      "catalog": [
+        {
+          "name": "Digg",
+          "domain": "digg.com",
+          "id": 1431
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "digg",
+          "name": "Digg",
+          "url": "https://digg.com",
+          "name_match": true
+        }
+      ]
+    },
     "dock.us": {
       "catalog": [
         {
@@ -1912,13 +1929,6 @@
         "name": "Designstripe",
         "domain": "designstripe.com",
         "id": 186
-      }
-    ],
-    "digg.com": [
-      {
-        "name": "Digg",
-        "domain": "digg.com",
-        "id": 1431
       }
     ],
     "dinnerladies.com.au": [
