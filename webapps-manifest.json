@@ -1614,8 +1614,8 @@
     645
    ],
    "description": "Bespoke AI models, built for your brand",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/exactly",
    "notes": "",
    "batch": 6
   },
@@ -1764,8 +1764,8 @@
     476
    ],
    "description": "Create content at scale",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/feedhive",
    "notes": "",
    "batch": 6
   },
