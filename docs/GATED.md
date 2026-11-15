@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_94 of 152 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_97 of 155 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -521,6 +521,25 @@ Access: read-only (the www.flowmapp.com marketing pages, the signed-out app.flow
 Access: signed out (every captured surface is public; the product workspace behind /home and every post-login surface is an authenticated boundary never reached; /login was measured at rest, the Google and Email buttons never followed; the pricing billing switch was toggled for the monthly shot then toggled back; the FAQ accordions and the home demo's Version chip were opened locally; every link and CTA was measured, never followed; the public site paints dark only and no theme switcher or light theme was observed)
 - the product workspace behind /home and every post-login surface sits behind an account - an authenticated boundary never reached; Sign Up and Open Flask link to /home and were measured, never followed; /login was captured at rest, its Google and Email buttons never followed
 - submitted states: the login form was never submitted - validation, error, loading and success states are absent rather than measured
+
+## [Fiverr](../systems/fiverr) — `fiverr`
+Access: signed out (every captured surface is public; the buyer/seller account, orders, inbox, checkout and every post-login surface is an authenticated boundary never reached; the hero search, join and login fields were measured and typed into then cleared, never submitted)
+- the buyer/seller account, orders, inbox, checkout and every post-login surface was never reached
+- the gig card's Continue was measured, never pressed — the order/checkout flow it leads to is uncaptured
+- Contact me was measured, never pressed — the message flow it fronts needs an account
+- the join and login forms were typed into then cleared, never submitted; Continue-with-* was never pressed
+
+## [FlutterFlow](../systems/flutterflow) — `flutterflow`
+Access: signed out (every surface captured is public; the app sits at app.flutterflow.io behind login)
+- app.flutterflow.io and everything behind Sign in / Start building / Open Studio was never opened: the dashboard, editor canvas, AI generation flow, billing and account surfaces are signed-in and out of scope
+- the prompt composer was measured, focused and typed in (then cleared) but never submitted, so the generation flow it starts is missing
+- the enterprise Talk-to-sales form and the Studio application form were never submitted, so their success and painted error states are missing (the error slot is recorded as declared DOM, not painted)
+- plan CTAs lead to a signed-in checkout and were not followed
+
+## [Foodnoms](../systems/foodnoms) — `foodnoms`
+Access: read-only (the marketing site, pricing, help center, news, press, articles, comparison pages and legal are fully public; the product itself is an iOS/macOS app sold through the App Store - there is no web sign-in; every Download/Get-the-App link, press-kit zip and mailto was measured, never followed; the help search and newsletter field were typed into then cleared, never submitted; /open/settings/* is a static deep-link interstitial)
+- the product itself - food logging, AI scanning, widgets, the community database and subscription purchase - is an iOS/macOS app behind the App Store download, which was never installed or opened; /download is a JS redirect to apps.apple.com that was never followed
+- the help search modal was opened and typed into, but result rows were never clicked; the newsletter field was typed into then cleared, never submitted
 
 ## [Fourmula](../systems/fourmula) — `fourmula`
 Access: signed out (every surface captured is public; app.fourmula.ai /start, /auth and /project/create-pdp are the only app surfaces a signed-out visitor sees - measured as forms, typed into then cleared, never submitted; uploads, the Shopify connection, generation and every post-login surface need an account and were never run; consent was never answered; every CTA and link was measured, never followed)
