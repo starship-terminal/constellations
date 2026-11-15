@@ -892,5 +892,23 @@
     "groupId": "web-categories",
     "labels": ["AI Tool", "Design & Media Editing"],
     "reason": "catalog.json describes an AI product-photography generator for e-commerce brands: a two-theme Webflow marketing site and a signed-out Next.js app edge with sign-in and a PDP generator."
+  },
+  {
+    "referenceId": "systems:fingerprint",
+    "groupId": "web-categories",
+    "labels": ["Development Tools"],
+    "reason": "catalog.json describes a device-intelligence and fraud-detection developer platform: visitor identification, smart signals, bot detection, docs and a usage-priced API."
+  },
+  {
+    "referenceId": "systems:flowmapp",
+    "groupId": "web-categories",
+    "labels": ["Design & Media Editing", "Productivity"],
+    "reason": "catalog.json describes a UX planning SaaS: a light Webflow marketing site, signed-out app auth forms, and published read-only sitemap/user-flow demo viewers; the editing workspace is gated."
+  },
+  {
+    "referenceId": "systems:flask",
+    "groupId": "web-categories",
+    "labels": ["Collaboration Tools", "Productivity"],
+    "reason": "catalog.json describes a video review and collaboration workspace: marketing pages with an embedded product demo, a pricing page, an MCP documentation page and the signed-out login boundary."
   }
 ]

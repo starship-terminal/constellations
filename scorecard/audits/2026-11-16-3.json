@@ -19054,131 +19054,130 @@
    "reviewedPlatform": "desktop"
   },
   {
-   "slug": "fourmula",
+   "slug": "flowmapp",
    "grades": {
     "F1": {
-     "grade": "meets",
-     "evidence": "Two real ramps captured: the app's declared Tailwind @theme base-100..900 neutral ramp (9 steps #fff→#020108) plus accent-50..900 oranges and success/error/warning families under appColor; the marketing site's five-step --fonts-10/20/30/50/64 alpha ink ramp sits under color.alphaInk.* with light and dark resolutions."
+     "grade": "partly",
+     "evidence": "The marketing site ships a flat named palette, not stepped ramps (--dodger-blue, --primary-blue/--basic-blue, --alice-blue, --service-grey, --yellow-green, --pale-violet-red plus the Webflow _apps--- layer); the app set's --neutral-gray-* (40/80/120/160/320/400/560/880) is a partial neutral ramp and each --secondary-* hue carries 8/20/32/56/64 alpha steps, but no hue has a ~10-step ramp."
     },
     "F2": {
-     "grade": "meets",
-     "evidence": "background.page/menu/counter/chip/aiButton/surface resolve in both marketing paints (light #fff/#020108-menu, dark #020108/#272727-menu) and the app's base-800/750 card+dialog fills are declared under component.app.* plus appColor.base-*."
+     "grade": "partly",
+     "evidence": "light.background.page, surface.card, surface.card-featured (the inverted Team card), surface.field and app.surface.field-bg/popup/share-card are named; the share-viewer toolbar and popup overlay were measured but no raised/overlay/scrim roles are tokenised."
     },
     "F3": {
-     "grade": "meets",
-     "evidence": "text.ink/muted/overlayLink + action.ink/inkInverse resolve per theme (#020108 ink and white inverse in light, swapped in dark; muted is the fonts-64 alpha); the app's dim-ink #b0b4ba, muted-ink #686a6e and format-item-ink #ff6b02 are measured under component.app.*."
+     "grade": "partly",
+     "evidence": "light.text.ink/muted, app.text.ink/muted/link/viewer-ink and the on-fill inks (light.action.cta-ink/nav-ink, app.action.primary-ink) exist; no disabled text role paints signed out - forms were never submitted or disabled past the submit's fill change."
     },
     "F4": {
-     "grade": "meets",
-     "evidence": "border.rule (#d7d7d6 / #2a2a30), border.hairline (the fonts-20 alpha per theme), border.toggleRing, border.iconRing and border.menuRing resolve in both paints; the app card's 1px #1a1a1a border is measured."
+     "grade": "partly",
+     "evidence": "light.border.focus-ring (white, measured on the marketing CTAs), app.border.oauth-border and app.border.share-card-border exist; no named default/strong border pair - hairline borders paint via component styles."
     },
     "F5": {
      "grade": "meets",
-     "evidence": "Default+hover+pressed measured on the marketing CTAs (header-cta, step-cta, how-cta), account-link, menu-pill and the app controls (app-create-btn, app-signin-btn, auth-submit, pdp-start-bottom); selected paints measured on pdp-format-static and the opened FAQ/menu states."
+     "evidence": "default/hover/focus-visible/pressed were measured on real CTAs (nav-cta, nav-login, hero-cta, feat-cta, ptab tabs, login/signup/restore submits, share-viewer buttons); pressed is DevTools-forced as recorded."
     },
     "F6": {
      "grade": "partly",
-     "evidence": "The app's @theme declares success #46fea5, error #ff173f and a warning family under appColor, but no error/success state paints on the signed-out surfaces - declarations captured, painted states absent rather than measured."
+     "evidence": "The app declares --primary-red-500 and --secondary-red/green/orange/yellow with alpha steps - the status hues exist as declarations; no error/validation/success state paints signed out (the forms were never submitted)."
     },
     "F7": {
      "grade": "meets",
-     "evidence": "Both marketing paints are complete parallel sets (24 light + 17 dark tokens, same roles, documented inverted class names); the app's dark-only layer is captured under core.appColor/component.app and documented as having no public light theme."
+     "evidence": "The product ships one theme signed out: every semantic role lives in the light set; the app set is a separate host's vocabulary, not a second theme. The declared-but-unpainted _apps---*-dark twins are emitted as declarations under core.apps.*."
     },
     "F8": {
      "grade": "meets",
-     "evidence": "font.size.marketing.* is the declared --_fonts---* fluid ramp, font.size.measured.* the painted px at 1440/390 (73.2px hero, 40.3px mobile), font.size.app.* the declared 12-52px app scale; families and tracking captured for both systems."
+     "evidence": "Self-hosted Inter (400-700, 48 @font-face rules harvested) with a measured family stack (core.font.family.inter), a 10-size measured scale (display 96 / hero 72 / mobileHero 40 / planName 36 / planCta 24 / body+faq+tab 16 / button 16 / eyebrow 12), 4 weights and 3 line-heights under named roles."
     },
     "F9": {
      "grade": "missing",
-     "evidence": "Neither surface declares a spacing scale on one base unit - the Webflow marketing stylesheet has no spacing tokens and the app uses Tailwind utilities directly; spacing exists only as measured component geometry (component.*-pad entries)."
+     "evidence": "No spacing scale is published as tokens: neither host declares spacing custom properties and the measured paddings live in raw/components-computed.json, not in a named scale."
     },
     "F10": {
      "grade": "meets",
-     "evidence": "radius.app.sm..7xl is the app's declared 4-40px ramp; marketing radii are measured (6.65px chips, 26.6px icon rings, 28px app cards/dialogs, 16px format cards, fluid ~1318px pill sentinel values)."
+     "evidence": "Measured radius scale core.radius.*: control 8px (nav links), button 12px (header CTAs), app-button 12px, field 16px + share-card 16px + popup 14px (app surfaces), card 24px (pricing cards), pill 1600px (the signature CTAs), plus the declared 20px apps.sizes.radius; borders are 1-2px hairlines."
     },
     "F11": {
      "grade": "meets",
-     "evidence": "component.marketing.* and component.app.* carry measured heights/widths for 77 components (92.5px header, 40px CTAs, 384px auth card, 280x60 format cards, mobile 104px header)."
+     "evidence": "Measured control heights under component.*: topbar 82, nav-link 44.5, nav-cta 38.5, hero-cta, ptab 25.6, plan-cta 76, app field 374x56 (under component.app), mobile topbar/cta; focus ring recorded via light.border.focus-ring."
     },
     "F12": {
      "grade": "missing",
-     "evidence": "No 3-5 level elevation scale exists: the marketing site is flat hairlines, the app card uses a 1px border + 24px backdrop blur rather than a shadow ramp; only the cookie modal's one-off shadow was measured."
+     "evidence": "No elevation scale is tokenised: the header's floating-bar shadow, the flyout shadow and the CTA halo were measured (component layer dumps) but no shadow levels are named tokens."
     },
     "F13": {
      "grade": "meets",
-     "evidence": "The two-pass motion probe found 337 moving elements; core.motion carries the measured 0.2s ease marketing control, the app's declared 150ms cubic-bezier(.4,0,.2,1) and 0.2s transitions, plus the honest reduced-motion finding (behaviour: ignores - nothing honours prefers-reduced-motion)."
+     "evidence": "motion.control records the measured 0.3s ease on background-color/color/border-color carried by nav links, CTAs and tabs; prefers-reduced-motion results are recorded in raw/components-computed.json _meta.reducedMotion."
     },
     "F14": {
      "grade": "partly",
-     "evidence": "Widths 1440/390 and container.header-width/legal-width are captured and the mobile breakpoints were exercised; grid columns and z-index layers are not declared tokens on either surface - recorded as measured geometry only."
+     "evidence": "1440px and 390px passes were captured with per-width component geometry (component.topbar-height, hero-width, mobile-topbar-height); no breakpoint, column or z-index scale is declared or tokenised."
     },
     "C1": {
      "grade": "partly",
-     "evidence": "77 components cover 12 of 19 checklist items: button (header-cta/step-cta/how-cta, cookie-accept/save, auth-submit, pdp-upload/shopify-cta/start-bottom), icon button (theme-toggle, account-link, app-menu-btn), link (nav-overlay/footer/legal links, pdp-dash-link), text field (auth email/password), checkbox (cookie-check), radio (pdp-format group), switch (theme-toggle), menu (menu-pill + nav-overlay), dialog (cookie-settings, pdp-reco/what dialogs), card (auth-card, format items), list row (faq-item), badge (prc-counter, hero chips, pdp-signedin-chip). Missing: text area, select, tabs, tooltip, toast, table, avatar - none paints signed out."
+     "evidence": "About 13 of 19 checklist components are covered: button (nav-cta/hero-cta/submits), icon button (sh-toolbar buttons), link (nav-link/nav-demo/nav-login), text field (login/signup/contact inputs), select (the share-viewer project dropdown), tabs (ptab + sh structure/estimation), menu (Features flyout + mobile burger), toast (sh-popup), card (home/feat/plan/sh cards), list row (plan-row), avatar (hero-avatars), badge (trusted-mark/uf-tag); checkbox, radio, switch, tooltip, dialog, table, text area are absent or gated."
     },
     "C2": {
      "grade": "meets",
-     "evidence": "175 states across 77 components: real hover, focus-visible, focused and typed-then-cleared filled fields, DevTools-forced pressed, opened states (menu overlay, FAQ, consent manager, both PDP dialogs), selected (format radio) and disabled-look (format-video 0.5 opacity)."
+     "evidence": "Components carry default/hover/focus-visible/pressed plus opened (flyout, FAQ, tabs, dropdown, burger), filled (fields), enabled vs disabled (the sign-in submit's two measured fills) states; each entry records how the state was reached."
     },
     "C3": {
-     "grade": "partly",
-     "evidence": "Keyboard focus was delivered to every interactive component and the state captured; the product paints no visible focus outline anywhere (an honest finding recorded in components.md), so no ring exists to capture - cookie buttons draw a #146ef5 border change on focus-visible as the only visible focus treatment."
+     "grade": "meets",
+     "evidence": "focus-visible was measured on nav links, the nav login/CTA, tabs, FAQ, form fields and share-viewer buttons via CSS.forcePseudoState; where a real focus could not be held (nav-features) the crop is marked 'focus not capturable' rather than fabricated."
     },
     "C4": {
      "grade": "meets",
-     "evidence": "component.marketing.*/component.app.* tokenize the measured geometry, fills, inks, borders and radii per component, each with $extensions.source."
-    },
-    "C5": {
-     "grade": "partly",
-     "evidence": "Local keyboard/UI behaviour is documented per component (Escape dismisses dialogs, accordion opens, switchers swap auth views, Enter-safe guards never submit); screen-reader output and submission behaviour are absent because nothing was submitted and AT was not driven."
+     "evidence": "components.md writes every colour next to its token path (#222222 `text.muted`, #f6f8fa `apps.colors.background.default`), and measured geometry names the component.* tokens."
     },
     "P1": {
-     "grade": "meets",
-     "evidence": "patterns.md covers the marketing chrome and inverted theme, home, legal, app shell, start, auth card, create-PDP, mobile and motion/focus, each tied to tokens.json values and crops."
-    },
-    "V1": {
-     "grade": "meets",
-     "evidence": "The README's Do and don't lists 9 evidenced rules (invert with the theme, spend orange only in the app, keep the two systems apart, name the paint not the class, honest pill radii, no signed-in styling, no fabricated form outcomes, declared-vs-measured type, no brand copying), each linked to a crop."
-    },
-    "V2": {
-     "grade": "na",
-     "evidence": "Optional for a capture, and this product does not publish it."
+     "grade": "partly",
+     "evidence": "patterns.md documents the chrome, hero, pricing table, feature-page anatomy, the signed-out forms and the share viewer plus mobile/motion/focus; empty/loading/error, destructive and onboarding patterns are all post-login and declared as gaps."
     },
     "A1": {
      "grade": "partly",
-     "evidence": "Fonts named with real stacks ('Sf Pro Display', Arial on marketing; the app's local sfProFont next/font build) with the proprietary-face caveat; no standalone SVG icon set was lifted - the layoutGaps entry records it."
+     "evidence": "icon.png is the fetched apple-touch-icon and Inter is named with its system fallback stack; no standalone icon set was lifted - declared under layoutGaps."
     },
     "K1": {
      "grade": "meets",
-     "evidence": "The README states the surfaces, both themes and the inverted class names, the read method, the boundaries (auth wall, uploads, Shopify, generation, consent), the two-token-layer warning and the distrust list."
+     "evidence": "README.md states what was captured (routes, viewports, hosts), how values were read (declared css-var vs measured with $extensions.source), what to distrust (the two blues, unpainted dark declarations, forced presses, zoom-dependent geometry) and the rebuild commands."
     },
     "F15": {
      "grade": "meets",
-     "evidence": "Script: all 8 pairs pass 4.5:1 across 2 themes; lowest 6.43:1 light muted (light.text.muted) on surface (light.background.surface)"
+     "evidence": "Script: all 4 pairs pass 4.5:1 across 1 themes; lowest 14.94:1 light muted (light.text.muted) on page (light.background.page)"
     },
     "F16": {
      "grade": "meets",
-     "evidence": "Script: 310 of 310 tokens name their source"
+     "evidence": "Script: 237 of 237 tokens name their source"
     },
     "K2": {
-     "grade": "meets",
-     "evidence": "Script: 9 rules, each linking a screenshot or crop"
+     "grade": "missing",
+     "evidence": "Script: no \"Do and don't\" section in the README"
     },
     "K3": {
      "grade": "meets",
      "evidence": "Script: DESIGN.md matches a fresh generation"
+    },
+    "C5": {
+     "grade": "na",
+     "evidence": "Optional for a capture, and this product does not publish it."
+    },
+    "V1": {
+     "grade": "na",
+     "evidence": "Optional for a capture, and this product does not publish it."
+    },
+    "V2": {
+     "grade": "na",
+     "evidence": "Optional for a capture, and this product does not publish it."
     }
    },
-   "name": "Fourmula",
-   "goodFor": "AI product-photography design across two systems: a Webflow marketing site with two inverted paints (the isDarkMode toggle flips `dark` on <body> - .body.dark paints light, plain .body dark), a fluid --_fonts---* rem ramp, a five-step --fonts-* alpha ink scale and Sf Pro Display; plus a dark-only Next.js/Tailwind v4 app edge with a declared @theme ramp (base-100..900 neutrals, #ff6b02 accent, --text-* 9-52px, --radius-* 4-40px), a 384px/28px-radius sign-in card, accent/20% tint pills and the signed-out PDP generator",
-   "url": "https://fourmula.ai",
-   "captured": "2026-11-15",
+   "name": "FlowMapp",
+   "goodFor": "blue-pill SaaS marketing and signed-out product design: the Webflow marketing site ships a legacy flat palette (--dodger-blue #0080ff, --primary-blue #0050ff, --bg #f6f8fa, --alice-blue #e8edf2) plus the Webflow _apps--- layer (typography, a 20px radius, chart ramps, declared-but-unpainted -dark twins), 72-96px Inter mastheads, and 1600px-radius dodger-blue CTA pills ringed by a translucent halo over white cards and an inverted black featured pricing card; plus the app's own ramp (--primary-basic-blue, --secondary-*, --neutral-gray-*) on the signed-out signin/signup/restore forms and the published read-only sitemap/user-flow demo viewers",
+   "url": "https://www.flowmapp.com",
+   "captured": "2026-11-16",
    "themes": [
-    "light",
-    "dark"
+    "light"
    ],
    "platform": "web",
-   "category": "AI agents",
+   "category": "Productivity",
    "reviewed": "2026-11-16",
    "reviewedPlatform": "web"
   }
