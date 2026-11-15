@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-15T20:09:20.197Z",
+  "capturedAt": "2026-11-15T22:13:25.726Z",
   "screenshot": "mobile-start-dark-default.png",
   "sanitizedSourceUrl": "https://app.fourmula.ai/start",
   "requested": {
@@ -19,9 +19,16 @@
     "innerHeight": 844,
     "devicePixelRatio": 2,
     "theme": {
-      "classes": [],
-      "attributes": {},
-      "colorScheme": "dark"
+      "root": {
+        "classes": [],
+        "attributes": {},
+        "colorScheme": "dark"
+      },
+      "body": {
+        "classes": [],
+        "attributes": {},
+        "colorScheme": "dark"
+      }
     },
     "visualViewport": {
       "width": 390,

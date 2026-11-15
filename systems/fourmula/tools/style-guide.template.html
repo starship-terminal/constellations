@@ -46,7 +46,10 @@ code { font-family: var(--sg-mono); font-size: .9em; }
 .navbar { display: flex; align-items: center; gap: 18px; height: var(--component-marketing-header-height, 92.48px); padding: 0 var(--component-marketing-header-side-pad, 26.62px); font-size: 14px; font-weight: 500; color: var(--text-ink, #020108); background: var(--background-page, #fff); border-bottom: 1px solid var(--border-rule, #d7d7d6); }
 .navbar .wm { font-weight: 600; font-size: 17px; letter-spacing: -0.02em; color: var(--text-ink, #020108); }
 .navbar .sp { flex: 1; }
-.menu-pill { display: inline-flex; align-items: center; gap: 10px; height: var(--component-marketing-menu-pill-height, 35.23px); padding: 0 14px; border-radius: 9999px; background: var(--background-menu, #020108); color: var(--action-ink, #fff); font-size: 13px; }
+/* The menu fill lifts to #272727 in the dark paint while its label stays a
+   constant white on the real site, so the ink is the inverse fill, not
+   action.ink (which flips to near-black and would be unreadable on #272727). */
+.menu-pill { display: inline-flex; align-items: center; gap: 10px; height: var(--component-marketing-menu-pill-height, 35.23px); padding: 0 14px; border-radius: 9999px; background: var(--background-menu, #020108); color: var(--action-fillInverse, #fff); font-size: 13px; }
 .menu-pill .dot2 { width: 16px; height: 16px; border-radius: 50%; border: 1px solid var(--border-menuLine, rgba(255,255,255,.2)); display: inline-block; }
 .menu-pill .count { font: 400 11px/1 var(--sg-mono); padding: 4px 7px; border-radius: 9999px; background: var(--background-counter, rgba(255,255,255,.2)); }
 .icon-btn { display: inline-flex; align-items: center; justify-content: center; width: var(--component-marketing-icon-btn, 26.61px); height: var(--component-marketing-icon-btn, 26.61px); border-radius: var(--component-marketing-icon-ring, 26.62px); border: 1px solid var(--border-iconRing, rgba(2,1,8,.2)); color: var(--text-ink, #020108); }
@@ -56,25 +59,29 @@ code { font-family: var(--sg-mono); font-size: .9em; }
 .hero { color: var(--text-ink, #020108); padding: 64px 40px 72px; font: 400 var(--font-size-measured-hero, 73.2px)/0.94 var(--sg-sans); letter-spacing: -0.03em; text-align: left; background: var(--background-page, #fff); }
 .hero .dim { color: var(--text-muted, rgba(2,1,8,.64)); }
 .hero small { display: block; font: 400 15px/1.5 var(--sg-sans); color: var(--text-dim, rgba(2,1,8,.5)); margin-top: 20px; max-width: 46ch; }
-.chip { display: inline-flex; align-items: center; gap: 6px; padding: 5px 13px; border-radius: var(--component-marketing-chip-radius, 6.65px); border: 1px solid var(--border-hairline, rgba(2,1,8,.2)); background: var(--background-chip, #fff); font-size: 14px; color: var(--text-ink, #020108); }
+/* The real chip paints --mainbg (background.page) under --fonts-100
+   (text.ink): white-on-ink in the dark paint, ink-on-white in the light
+   paint. The dark set has no background.chip token, so pairing page+ink is
+   what the site does — a light-only chip fill would go white-on-white. */
+.chip { display: inline-flex; align-items: center; gap: 6px; padding: 5px 13px; border-radius: var(--component-marketing-chip-radius, 6.65px); border: 1px solid var(--border-hairline, rgba(2,1,8,.2)); background: var(--background-page, #fff); font-size: 14px; color: var(--text-ink, #020108); }
 .faq-row { display: flex; align-items: center; justify-content: space-between; height: var(--component-marketing-faq-height, 75.02px); padding: 0 var(--component-marketing-faq-side-pad, 26.62px); border-bottom: 1px solid var(--border-rule, #d7d7d6); font-size: 20px; color: var(--text-ink, #020108); background: var(--background-page, #fff); }
 .faq-row .plus { font-size: 20px; color: var(--text-muted, rgba(2,1,8,.64)); }
 .faq-row.open { height: var(--component-marketing-faq-open-height, 118.02px); align-items: flex-start; padding-top: 26px; }
 .faq-row .ans { font-size: 14px; color: var(--text-muted, rgba(2,1,8,.64)); max-width: 40ch; }
 /* ---- the app sign-in (dark-only Next.js/Tailwind app) ---- */
-.auth { display: flex; flex-direction: column; align-items: center; gap: 18px; padding: 44px 20px; background: var(--appcolor-base-900, #020108); }
+.auth { display: flex; flex-direction: column; align-items: center; gap: 18px; padding: 44px 20px; background: var(--appColor-base-900, #020108); }
 .appbar { display: flex; align-items: center; gap: 10px; width: min(560px, 100%); }
-.appbar .mark { width: 28px; height: 28px; border-radius: 50%; background: var(--appcolor-base-100, #fff); color: var(--appcolor-base-900, #020108); display: inline-flex; align-items: center; justify-content: center; font-weight: 700; }
+.appbar .mark { width: 28px; height: 28px; border-radius: 50%; background: var(--appColor-base-100, #fff); color: var(--appColor-base-900, #020108); display: inline-flex; align-items: center; justify-content: center; font-weight: 700; }
 .appbar .sp { flex: 1; }
 .abtn { display: inline-flex; align-items: center; height: 32px; padding: 0 14px; border-radius: 9999px; font-size: 14px; }
 .abtn.solid { background: var(--component-app-accent-fill, #ff6b02); color: var(--component-app-accent-ink, #020108); }
-.abtn.tint { background: var(--component-app-accent-tint, rgba(255,107,2,.2)); color: var(--appcolor-accent-500, #ff6b02); }
-.acard { width: var(--component-app-auth-card-width, 384px); max-width: 100%; background: var(--component-app-auth-card-bg, #111111); border: 1px solid var(--component-app-auth-card-border, #1a1a1a); border-radius: var(--component-app-auth-card-radius, 28px); padding: 24px var(--component-app-auth-card-pad-x, 32px); backdrop-filter: var(--component-app-auth-card-backdrop, blur(24px)); color: var(--appcolor-base-100, #fff); display: flex; flex-direction: column; gap: var(--component-app-auth-card-gap, 24px); font-family: var(--sg-sans); }
-.acard h3 { font: 500 20px/1.3 var(--sg-sans); color: var(--appcolor-base-100, #fff); margin: 0; text-align: center; }
-.acard .gbtn { display: flex; align-items: center; justify-content: center; height: var(--component-app-google-height, 40px); border-radius: 9999px; background: var(--component-app-accent-tint, rgba(255,107,2,.2)); color: var(--appcolor-accent-500, #ff6b02); font-size: 14px; font-weight: 500; }
+.abtn.tint { background: var(--component-app-accent-tint, rgba(255,107,2,.2)); color: var(--appColor-accent-500, #ff6b02); }
+.acard { width: var(--component-app-auth-card-width, 384px); max-width: 100%; background: var(--component-app-auth-card-bg, #111111); border: 1px solid var(--component-app-auth-card-border, #1a1a1a); border-radius: var(--component-app-auth-card-radius, 28px); padding: 24px var(--component-app-auth-card-pad-x, 32px); backdrop-filter: var(--component-app-auth-card-backdrop, blur(24px)); color: var(--appColor-base-100, #fff); display: flex; flex-direction: column; gap: var(--component-app-auth-card-gap, 24px); font-family: var(--sg-sans); }
+.acard h3 { font: 500 20px/1.3 var(--sg-sans); color: var(--appColor-base-100, #fff); margin: 0; text-align: center; }
+.acard .gbtn { display: flex; align-items: center; justify-content: center; height: var(--component-app-google-height, 40px); border-radius: 9999px; background: var(--component-app-accent-tint, rgba(255,107,2,.2)); color: var(--appColor-accent-500, #ff6b02); font-size: 14px; font-weight: 500; }
 .acard .or { display: flex; align-items: center; gap: 14px; font-size: 12px; color: var(--component-app-muted-ink, #686a6e); }
 .acard .or::before, .acard .or::after { content: ""; flex: 1; border-top: 1px solid var(--component-app-auth-card-border, #1a1a1a); }
-.acard .field { height: var(--component-app-field-height, 48px); border-radius: 9999px; border: 1px solid var(--component-app-auth-card-border, #1a1a1a); background: var(--appcolor-base-900, #020108); display: flex; align-items: center; padding: 0 20px; font-size: 14px; color: var(--component-app-muted-ink, #686a6e); }
+.acard .field { height: var(--component-app-field-height, 48px); border-radius: 9999px; border: 1px solid var(--component-app-auth-card-border, #1a1a1a); background: var(--appColor-base-900, #020108); display: flex; align-items: center; padding: 0 20px; font-size: 14px; color: var(--component-app-muted-ink, #686a6e); }
 .acard .forgot { text-align: center; font-size: 12px; color: var(--component-app-muted-ink, #686a6e); text-decoration: underline; }
 .acard .go { height: var(--component-app-submit-height, 40px); border-radius: var(--component-app-submit-radius, 9999px); background: var(--component-app-accent-fill, #ff6b02); color: var(--component-app-accent-ink, #020108); display: flex; align-items: center; justify-content: center; font-weight: 500; font-size: 14px; }
 .acard .foot { text-align: center; font-size: 12px; color: var(--component-app-muted-ink, #686a6e); }

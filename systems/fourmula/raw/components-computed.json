@@ -646,7 +646,7 @@
      "text": "Close cookies modal Cookie settings By clicking \"Accept all cookies\", you agree ",
      "rect": {
       "x": 0,
-      "y": 0,
+      "y": 10,
       "w": 1440,
       "h": 900
      },
@@ -714,8 +714,8 @@
       "transitionTimingFunction": "ease",
       "transitionDelay": "0s",
       "cursor": "auto",
-      "opacity": "1",
-      "transform": "matrix(1, 0, 0, 1, 0, 0)",
+      "opacity": "0",
+      "transform": "matrix(1, 0, 0, 1, 0, 10)",
       "overflow": "visible",
       "zIndex": "999",
       "top": "0px"
@@ -856,7 +856,7 @@
      "text": "Accept all",
      "rect": {
       "x": 1094,
-      "y": 820.2,
+      "y": 829.1,
       "w": 150.39,
       "h": 39.92
      },
@@ -4078,7 +4078,7 @@
       "color": "rgb(2, 1, 8)"
      },
      "crop": "components/crops/nav-overlay-opened.png",
-     "via": "own toggle",
+     "via": "held open by an earlier toggle",
      "run": "2026-11-15"
     }
    },
@@ -4262,7 +4262,7 @@
       "transitionTimingFunction": "ease",
       "transitionDelay": "0s",
       "cursor": "pointer",
-      "opacity": "0.64",
+      "opacity": "1",
       "transform": "none",
       "overflow": "hidden",
       "zIndex": "auto",
@@ -4408,7 +4408,7 @@
      "text": "PDPs",
      "rect": {
       "x": 1354.5,
-      "y": 248,
+      "y": 179.6,
       "w": 58.91,
       "h": 31.94
      },
@@ -5421,7 +5421,7 @@
       "borderTopRightRadius": "1317.53px",
       "borderBottomRightRadius": "1317.53px",
       "borderBottomLeftRadius": "1317.53px",
-      "backgroundColor": "rgb(255, 107, 2)",
+      "backgroundColor": "rgb(236, 99, 2)",
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
@@ -5455,7 +5455,7 @@
       {
        "node": "a.btn-primary.u-btn",
        "size": "101.8x39.9",
-       "bg": "rgb(255, 107, 2)",
+       "bg": "rgb(236, 99, 2)",
        "radius": "1317.53px"
       }
      ],
@@ -5941,27 +5941,27 @@
       "gridTemplateColumns": "none",
       "borderTopWidth": "0px",
       "borderTopStyle": "none",
-      "borderTopColor": "rgb(255, 255, 255)",
+      "borderTopColor": "rgb(251, 251, 251)",
       "borderRightWidth": "0px",
       "borderRightStyle": "none",
-      "borderRightColor": "rgb(255, 255, 255)",
+      "borderRightColor": "rgb(251, 251, 251)",
       "borderBottomWidth": "0px",
       "borderBottomStyle": "none",
-      "borderBottomColor": "rgb(255, 255, 255)",
+      "borderBottomColor": "rgb(251, 251, 251)",
       "borderLeftWidth": "0px",
       "borderLeftStyle": "none",
-      "borderLeftColor": "rgb(255, 255, 255)",
+      "borderLeftColor": "rgb(251, 251, 251)",
       "borderTopLeftRadius": "1317.53px",
       "borderTopRightRadius": "1317.53px",
       "borderBottomRightRadius": "1317.53px",
       "borderBottomLeftRadius": "1317.53px",
-      "backgroundColor": "rgb(2, 1, 8)",
+      "backgroundColor": "rgb(6, 5, 12)",
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
       "outlineWidth": "0px",
       "outlineStyle": "none",
-      "outlineColor": "rgb(255, 255, 255)",
+      "outlineColor": "rgb(251, 251, 251)",
       "outlineOffset": "0px",
       "fontFamily": "\"Sf Pro Display\", Arial, sans-serif",
       "fontSize": "14.1402px",
@@ -5969,9 +5969,9 @@
       "lineHeight": "16.9682px",
       "letterSpacing": "-0.282804px",
       "textTransform": "none",
-      "color": "rgb(255, 255, 255)",
+      "color": "rgb(251, 251, 251)",
       "textDecorationLine": "none",
-      "textDecorationColor": "rgb(255, 255, 255)",
+      "textDecorationColor": "rgb(251, 251, 251)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
       "transitionProperty": "all",
@@ -5989,7 +5989,7 @@
       {
        "node": "a.btn-primary-stb.u-btn",
        "size": "101.8x39.9",
-       "bg": "rgb(2, 1, 8)",
+       "bg": "rgb(6, 5, 12)",
        "radius": "1317.53px"
       }
      ],
@@ -6001,7 +6001,7 @@
       "lineHeight": "16.9682px",
       "fontWeight": "400",
       "letterSpacing": "-0.282804px",
-      "color": "rgb(255, 255, 255)",
+      "color": "rgb(251, 251, 251)",
       "textDecorationLine": "none",
       "textTransform": "none"
      },
@@ -12871,9 +12871,9 @@
    "page": "auth",
    "run": "2026-11-15",
    "url": "https://app.fourmula.ai/auth",
-   "title": "Forgot password switcher",
+   "title": "Forgot password submit",
    "group": "App sign-in",
-   "desc": "The \"Forgot password?\" button that switches the card to the reset view — a local UI switch; measured at rest. The reset view itself is auth-forgot-card.",
+   "desc": "The \"Forgot password?\" button on the sign-in card — a form action, not a view switch: pressing it validates the email field in place (the card shows \"Please enter a valid email address\" and stays on sign-in), and completing it submits. Measured at rest, never pressed.",
    "selector": "auth \"Forgot password?\""
   },
   "auth-switch": {
@@ -13096,169 +13096,19 @@
   "auth-forgot-card": {
    "states": {
     "opened": {
-     "tag": "div",
-     "classes": "p-6 sm:p-8 py-5 sm:py-6",
-     "text": "Sign in Continue with Google or Please enter a valid email address Forgot passwo",
-     "rect": {
-      "x": 528,
-      "y": 207.6,
-      "w": 384,
-      "h": 484.8
-     },
-     "style": {
-      "display": "flex",
-      "position": "static",
-      "boxSizing": "border-box",
-      "width": "384px",
-      "height": "484.797px",
-      "minWidth": "0px",
-      "maxWidth": "none",
-      "minHeight": "fit-content",
-      "paddingTop": "24px",
-      "paddingRight": "32px",
-      "paddingBottom": "24px",
-      "paddingLeft": "32px",
-      "marginTop": "0px",
-      "marginRight": "0px",
-      "marginBottom": "0px",
-      "marginLeft": "0px",
-      "gap": "24px",
-      "rowGap": "24px",
-      "columnGap": "24px",
-      "flexDirection": "column",
-      "alignItems": "center",
-      "justifyContent": "center",
-      "gridTemplateColumns": "none",
-      "borderTopWidth": "1px",
-      "borderTopStyle": "solid",
-      "borderTopColor": "rgb(26, 26, 26)",
-      "borderRightWidth": "1px",
-      "borderRightStyle": "solid",
-      "borderRightColor": "rgb(26, 26, 26)",
-      "borderBottomWidth": "1px",
-      "borderBottomStyle": "solid",
-      "borderBottomColor": "rgb(26, 26, 26)",
-      "borderLeftWidth": "1px",
-      "borderLeftStyle": "solid",
-      "borderLeftColor": "rgb(26, 26, 26)",
-      "borderTopLeftRadius": "28px",
-      "borderTopRightRadius": "28px",
-      "borderBottomRightRadius": "28px",
-      "borderBottomLeftRadius": "28px",
-      "backgroundColor": "rgb(17, 17, 17)",
-      "backgroundImage": "none",
-      "boxShadow": "none",
-      "backdropFilter": "blur(24px)",
-      "outlineWidth": "0px",
-      "outlineStyle": "none",
-      "outlineColor": "rgb(255, 255, 255)",
-      "outlineOffset": "0px",
-      "fontFamily": "sfProFont, \"sfProFont Fallback\"",
-      "fontSize": "12px",
-      "fontWeight": "400",
-      "lineHeight": "16px",
-      "letterSpacing": "normal",
-      "textTransform": "none",
-      "color": "rgb(255, 255, 255)",
-      "textDecorationLine": "none",
-      "textDecorationColor": "rgb(255, 255, 255)",
-      "textDecorationThickness": "auto",
-      "textUnderlineOffset": "auto",
-      "transitionProperty": "all",
-      "transitionDuration": "0s",
-      "transitionTimingFunction": "ease",
-      "transitionDelay": "0s",
-      "cursor": "auto",
-      "opacity": "1",
-      "transform": "none",
-      "overflow": "visible",
-      "zIndex": "auto",
-      "top": "auto"
-     },
-     "paint": [
-      {
-       "node": "div.p-6.sm:p-8",
-       "size": "384.0x484.8",
-       "border": "T:1px solid rgb(26, 26, 26) | R:1px solid rgb(26, 26, 26) | B:1px solid rgb(26, 26, 26) | L:1px solid rgb(26, 26, 26)",
-       "bg": "rgb(17, 17, 17)",
-       "radius": "28px"
-      },
-      {
-       "node": "button.cursor-pointer.transition-colors",
-       "size": "318.0x40.0",
-       "bg": "oklab(0.702262 0.141683 0.141613 / 0.2)",
-       "radius": "3.35544e+07px"
-      },
-      {
-       "node": "div.flex-1.h-px",
-       "size": "141.5x1.0",
-       "bg": "oklab(0.999994 0.0000455678 0.0000200868 / 0.1)"
-      },
-      {
-       "node": "div.flex-1.h-px",
-       "size": "141.5x1.0",
-       "bg": "oklab(0.999994 0.0000455678 0.0000200868 / 0.1)"
-      },
-      {
-       "node": "div.relative.w-full",
-       "size": "318.0x48.0",
-       "bg": "rgb(26, 26, 26)",
-       "radius": "3.35544e+07px"
-      },
-      {
-       "node": "div.relative.w-full",
-       "size": "318.0x48.0",
-       "bg": "rgb(2, 1, 8)",
-       "radius": "3.35544e+07px"
-      },
-      {
-       "node": "button.cursor-pointer.transition-colors",
-       "size": "98.0x17.0",
-       "border": "B:1px solid rgb(104, 106, 110)"
-      },
-      {
-       "node": "button.cursor-pointer.transition-colors",
-       "size": "318.0x40.0",
-       "bg": "rgb(255, 107, 2)",
-       "radius": "3.35544e+07px"
-      },
-      {
-       "node": "button.cursor-pointer.transition-colors",
-       "size": "41.0x17.0",
-       "border": "B:1px solid rgb(255, 107, 2)"
-      }
-     ],
-     "textStyle": {
-      "node": "h2.font-medium.w-full",
-      "text": "Sign in",
-      "fontFamily": "sfProFont, \"sfProFont Fallback\"",
-      "fontSize": "32px",
-      "lineHeight": "44.8px",
-      "fontWeight": "500",
-      "letterSpacing": "normal",
-      "color": "rgb(255, 255, 255)",
-      "textDecorationLine": "none",
-      "textTransform": "none"
-     },
-     "icon": {
-      "w": 16,
-      "h": 16,
-      "fill": "none",
-      "stroke": "none",
-      "color": "rgb(255, 107, 2)"
-     },
-     "crop": "components/crops/auth-forgot-card-opened.png",
-     "via": "own toggle",
-     "run": "2026-11-15"
+     "uncaptured": true,
+     "via": "never pressed — the control submits"
     }
    },
    "page": "auth",
    "run": "2026-11-15",
    "url": "https://app.fourmula.ai/auth",
-   "title": "Forgot-password view",
+   "title": "Forgot-password view (uncaptured)",
    "group": "App sign-in",
-   "desc": "The auth card switched to its reset view by pressing \"Forgot password?\"; the reset submit inside was never pressed. Returned to the sign-in view afterwards.",
-   "selector": "auth card @ forgot view"
+   "desc": "The auth card's reset view. \"Forgot password?\" is a form action, not a local UI switch: pressing it validates the email field in place and the card stays on sign-in, while a valid email would submit — so the reset view is uncaptured.",
+   "selector": "auth card @ forgot view",
+   "sel": "auth card @ forgot view",
+   "uncaptured": "the forgot-password control validates and submits rather than switching views; the reset view needs a submission this kit never runs"
   },
   "auth-signup-card": {
    "states": {
@@ -13369,7 +13219,7 @@
       {
        "node": "div.relative.w-full",
        "size": "318.0x48.0",
-       "bg": "rgb(26, 26, 26)",
+       "bg": "rgb(2, 1, 8)",
        "radius": "3.35544e+07px"
       },
       {
@@ -13410,7 +13260,7 @@
       "color": "rgb(255, 107, 2)"
      },
      "crop": "components/crops/auth-signup-card-opened.png",
-     "via": "own toggle",
+     "via": "held open by an earlier toggle",
      "run": "2026-11-15"
     }
    },
@@ -18887,7 +18737,7 @@
       "transitionTimingFunction": "ease",
       "transitionDelay": "0s",
       "cursor": "pointer",
-      "opacity": "1",
+      "opacity": "0.994036",
       "transform": "none",
       "overflow": "visible",
       "zIndex": "auto",
@@ -19180,14 +19030,14 @@
       "x": 0,
       "y": 0,
       "w": 390,
-      "h": 55.61
+      "h": 499.7
      },
      "style": {
       "display": "flex",
       "position": "fixed",
       "boxSizing": "border-box",
       "width": "390px",
-      "height": "55.6094px",
+      "height": "499.703px",
       "minWidth": "0px",
       "maxWidth": "none",
       "minHeight": "0px",
@@ -19255,18 +19105,18 @@
      "paint": [
       {
        "node": "div.menu__wrap",
-       "size": "249.9x43.5",
+       "size": "258.5x487.6",
        "bg": "rgb(217, 217, 217)",
        "radius": "32.2474px"
       },
       {
        "node": "div.menu__item.is-lined",
-       "size": "249.9x117.3",
+       "size": "234.0x117.3",
        "border": "T:1px solid rgba(2, 1, 8, 0.2)"
       },
       {
        "node": "a.btn-primary.u-btn",
-       "size": "197.5x48.4",
+       "size": "181.6x48.4",
        "bg": "rgb(2, 1, 8)",
        "radius": "1596.25px"
       },
@@ -19298,7 +19148,7 @@
       "color": "rgb(2, 1, 8)"
      },
      "crop": "components/crops/m-nav-overlay-opened.png",
-     "via": "own toggle",
+     "via": "held open by an earlier toggle",
      "run": "2026-11-15"
     }
    },
@@ -19643,7 +19493,7 @@
      "text": "What can AI FOURMULA create for my brand? - Product images, fashion shots, lifes",
      "rect": {
       "x": 16.1,
-      "y": 749.9,
+      "y": 374.9,
       "w": 357.78,
       "h": 125.53
      },
@@ -20527,6 +20377,140 @@
    "group": "Create-PDP generator",
    "desc": "The \"Video content\" radio — painted disabled (data-disabled, 0.5 opacity) for signed-out visitors; measured, never pressed.",
    "selector": "[role=radio] \"Video content\""
+  },
+  "app-header": {
+   "states": {
+    "default": {
+     "tag": "header",
+     "classes": "fixed top-4 sm:top-6 left-4",
+     "text": "Create asset Sign in",
+     "rect": {
+      "x": 24,
+      "y": 24,
+      "w": 1392,
+      "h": 56
+     },
+     "style": {
+      "display": "flex",
+      "position": "fixed",
+      "boxSizing": "border-box",
+      "width": "1392px",
+      "height": "56px",
+      "minWidth": "0px",
+      "maxWidth": "none",
+      "minHeight": "0px",
+      "paddingTop": "0px",
+      "paddingRight": "16px",
+      "paddingBottom": "0px",
+      "paddingLeft": "16px",
+      "marginTop": "0px",
+      "marginRight": "0px",
+      "marginBottom": "0px",
+      "marginLeft": "0px",
+      "gap": "normal",
+      "rowGap": "normal",
+      "columnGap": "normal",
+      "flexDirection": "row",
+      "alignItems": "center",
+      "justifyContent": "space-between",
+      "gridTemplateColumns": "none",
+      "borderTopWidth": "0px",
+      "borderTopStyle": "solid",
+      "borderTopColor": "rgb(255, 255, 255)",
+      "borderRightWidth": "0px",
+      "borderRightStyle": "solid",
+      "borderRightColor": "rgb(255, 255, 255)",
+      "borderBottomWidth": "0px",
+      "borderBottomStyle": "solid",
+      "borderBottomColor": "rgb(255, 255, 255)",
+      "borderLeftWidth": "0px",
+      "borderLeftStyle": "solid",
+      "borderLeftColor": "rgb(255, 255, 255)",
+      "borderTopLeftRadius": "3.35544e+07px",
+      "borderTopRightRadius": "3.35544e+07px",
+      "borderBottomRightRadius": "3.35544e+07px",
+      "borderBottomLeftRadius": "3.35544e+07px",
+      "backgroundColor": "rgb(2, 1, 8)",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "backdropFilter": "blur(24px)",
+      "outlineWidth": "0px",
+      "outlineStyle": "none",
+      "outlineColor": "rgb(255, 255, 255)",
+      "outlineOffset": "0px",
+      "fontFamily": "sfProFont, \"sfProFont Fallback\"",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "lineHeight": "24px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(255, 255, 255)",
+      "textDecorationLine": "none",
+      "textDecorationColor": "rgb(255, 255, 255)",
+      "textDecorationThickness": "auto",
+      "textUnderlineOffset": "auto",
+      "transitionProperty": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "transitionDelay": "0s",
+      "cursor": "auto",
+      "opacity": "1",
+      "transform": "none",
+      "overflow": "visible",
+      "zIndex": "50",
+      "top": "24px"
+     },
+     "paint": [
+      {
+       "node": "header.fixed.top-4",
+       "size": "1392.0x56.0",
+       "bg": "rgb(2, 1, 8)",
+       "radius": "3.35544e+07px"
+      },
+      {
+       "node": "button.cursor-pointer.transition-colors",
+       "size": "123.0x32.0",
+       "bg": "rgb(255, 107, 2)",
+       "radius": "3.35544e+07px"
+      },
+      {
+       "node": "button.cursor-pointer.transition-colors",
+       "size": "66.0x32.0",
+       "bg": "oklab(0.702262 0.141683 0.141613 / 0.2)",
+       "radius": "3.35544e+07px"
+      }
+     ],
+     "textStyle": {
+      "node": "span.flex.items-center",
+      "text": "Create asset",
+      "fontFamily": "sfProFont, \"sfProFont Fallback\"",
+      "fontSize": "14px",
+      "lineHeight": "20px",
+      "fontWeight": "400",
+      "letterSpacing": "normal",
+      "color": "rgb(2, 1, 8)",
+      "textDecorationLine": "none",
+      "textTransform": "none"
+     },
+     "icon": {
+      "w": 32,
+      "h": 32,
+      "fill": "none",
+      "stroke": "none",
+      "color": "rgb(255, 255, 255)"
+     },
+     "crop": "components/crops/app-header-default.png",
+     "via": "at rest",
+     "run": "2026-11-15"
+    }
+   },
+   "page": "auth",
+   "run": "2026-11-15",
+   "url": "https://app.fourmula.ai/auth",
+   "title": "App header",
+   "group": "App chrome",
+   "desc": "The app's floating header — a fixed rounded-full bar (1392x56 at 24,24) holding the menu button, the Create asset submit and the Sign in button.",
+   "selector": "header"
   }
  }
 }

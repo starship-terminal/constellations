@@ -34,10 +34,33 @@ def flat(node, prefix=""):
             yield from flat(v, prefix + k + ".")
 
 
-BY_COLOR = {}
-for n, t in flat(T["core"]):
-    if t["$type"] == "color":
-        BY_COLOR.setdefault(t["$value"], n)
+# Colour labels name a token on the component's own surface and paint — a
+# marketing ink is a light.*/dark.* role, an app colour is a core.appColor or
+# core.component.app token. Indexing all of core would label every marketing
+# #020108 as `appColor.base-900`, naming the other system's palette.
+def theme_colors(setname):
+    out = {}
+    for n, t in flat(T[setname]):
+        if t["$type"] == "color" and not str(t["$value"]).startswith("{"):
+            out.setdefault(t["$value"], f"{setname}.{n}")
+    return out
+
+
+APP_COLORS = {}
+for _grp in ("appColor", "component"):
+    for n, t in flat(T["core"].get(_grp, {})):
+        if t["$type"] == "color" and not str(t["$value"]).startswith("{"):
+            APP_COLORS.setdefault(t["$value"], f"core.{_grp}.{n}")
+
+BY_THEME = {"light": theme_colors("light"), "dark": theme_colors("dark"), "app": APP_COLORS}
+# The paint each capture page ran under (the marketing light/dark sets, or
+# the dark-only app's own palette).
+PAGE_THEME = {"home": "light", "home-dark": "dark", "privacy": "light", "mobile": "light",
+              "start": "app", "auth": "app", "create-pdp": "app"}
+
+
+def by_color_for(page):
+    return BY_THEME[PAGE_THEME.get(page, "light")]
 
 
 def norm(r, g, b, a=None):
@@ -46,12 +69,13 @@ def norm(r, g, b, a=None):
     return "rgba(%d, %d, %d, %g)" % (int(r), int(g), int(b), float(a))
 
 
-def colour(c, tokens=True):
+def colour(c, tokens=True, by=None):
     """rgb()/rgba()/color(srgb) -> '#hex `token`' or 'rgba(...)'."""
+    by = by or {}
     def label(v):
         if v == "rgba(0, 0, 0, 0)":
             return "transparent"
-        tok = BY_COLOR.get(v) if tokens else None
+        tok = by.get(v) if tokens else None
         return f"{v} `{tok}`" if tok else v
 
     c = re.sub(r"color\(srgb ([\d.]+) ([\d.]+) ([\d.]+)(?: / ([\d.]+))?\)",
@@ -81,7 +105,7 @@ def font(fz, lh, fw, f):
     return f"{fam(f)} {num(fz.replace('px', ''))}/{num(lh)} {fw}"
 
 
-def props(v):
+def props(v, by=None):
     s = v["style"]
     o = {}
     o["size"] = f"{num(v['rect']['w'])} x {num(v['rect']['h'])}"
@@ -91,7 +115,7 @@ def props(v):
     bds = []
     for d in ("Top", "Right", "Bottom", "Left"):
         if float(s[f"border{d}Width"].replace("px", "")) > 0 and s[f"border{d}Style"] != "none":
-            bds.append(f"{s[f'border{d}Width']} {s[f'border{d}Style']} {colour(s[f'border{d}Color'])}")
+            bds.append(f"{s[f'border{d}Width']} {s[f'border{d}Style']} {colour(s[f'border{d}Color'], by=by)}")
         else:
             bds.append("none")
     if any(b != "none" for b in bds):
@@ -99,10 +123,10 @@ def props(v):
     rad = sides(s["borderTopLeftRadius"], s["borderTopRightRadius"], s["borderBottomRightRadius"], s["borderBottomLeftRadius"])
     if rad != "0px":
         o["radius"] = rad
-    o["background"] = colour(s["backgroundColor"])
+    o["background"] = colour(s["backgroundColor"], by=by)
     if s["backgroundImage"] != "none":
         img = re.sub(r'url\("data:[^)]*\)', "an image (data URI)", s["backgroundImage"])
-        o["image"] = colour(img)[:200]
+        o["image"] = colour(img, by=by)[:200]
     if s["boxShadow"] != "none":
         sh = colour(s["boxShadow"], tokens=False)
         layers = [x.strip() for x in re.split(r",(?![^(]*\))", sh)]
@@ -110,12 +134,12 @@ def props(v):
         if layers:
             o["shadow"] = ", ".join(layers)
     if s["outlineStyle"] != "none" and float(s["outlineWidth"].replace("px", "")) > 0:
-        o["outline"] = f"{s['outlineWidth']} {s['outlineStyle']} {colour(s['outlineColor'])}, offset {s['outlineOffset']}"
+        o["outline"] = f"{s['outlineWidth']} {s['outlineStyle']} {colour(s['outlineColor'], by=by)}, offset {s['outlineOffset']}"
     t = v.get("textStyle")
     if t:
-        o["text"] = f"{font(t['fontSize'], t['lineHeight'], t['fontWeight'], t['fontFamily'])}, {colour(t['color'])}"
+        o["text"] = f"{font(t['fontSize'], t['lineHeight'], t['fontWeight'], t['fontFamily'])}, {colour(t['color'], by=by)}"
     else:
-        o["text"] = f"{font(s['fontSize'], s['lineHeight'], s['fontWeight'], s['fontFamily'])}, {colour(s['color'])}"
+        o["text"] = f"{font(s['fontSize'], s['lineHeight'], s['fontWeight'], s['fontFamily'])}, {colour(s['color'], by=by)}"
     if s["transitionDuration"] not in ("0s", ""):
         props_ = [x.strip() for x in s["transitionProperty"].split(",")]
         durs = [x.strip() for x in s["transitionDuration"].split(",")]
@@ -139,9 +163,9 @@ def props(v):
     if s["opacity"] != "1":
         o["opacity"] = s["opacity"]
     if v.get("icon") and v["icon"]["w"] > 0 and v["icon"]["w"] < 120:
-        o["icon"] = f"{num(v['icon']['w'])} x {num(v['icon']['h'])}, {colour(v['icon']['color'])}"
+        o["icon"] = f"{num(v['icon']['w'])} x {num(v['icon']['h'])}, {colour(v['icon']['color'], by=by)}"
     if v.get("placeholder"):
-        o["placeholder"] = colour(v["placeholder"]["color"])
+        o["placeholder"] = colour(v["placeholder"]["color"], by=by)
     # Painted layers that carry a state but not the root box: the element's own
     # ::before/::after always, and descendant paint only when the root paints
     # nothing (the case "Child layers" reports). A nav underline that goes
@@ -173,11 +197,12 @@ def state_rows(c):
     states = [s for s in c["states"] if "style" in c["states"][s] and c["states"][s].get("via") != "focus failed"]
     if not states:
         return [], states
-    base = props(c["states"][states[0]])
+    by = by_color_for(c["page"])
+    base = props(c["states"][states[0]], by)
     rows = [(states[0], base)]
     same = []
     for st in states[1:]:
-        p = props(c["states"][st])
+        p = props(c["states"][st], by)
         diff = {k: p[k] for k in ORDER if k in p and p.get(k) != base.get(k)}
         for k in ORDER:
             if k in base and k not in p:
@@ -205,19 +230,20 @@ def child_layers(c):
     s = st["style"]
     if s["backgroundColor"] != "rgba(0, 0, 0, 0)" or s["boxShadow"] != "none" or s["borderTopWidth"] != "0px" or s["backgroundImage"] != "none":
         return None
+    by = by_color_for(c["page"])
     out = []
     for p in st["paint"][:3]:
         bits = [re.sub(r"\..*$", "", p["node"]) if "::" not in p["node"] else p["node"].split(".")[0], re.sub(r"\.0+(?=x|px|$)", "", p["size"])]
         if p.get("bg"):
-            bits.append("background " + colour(p["bg"]))
+            bits.append("background " + colour(p["bg"], by=by))
         if p.get("bgImage"):
-            bits.append("image " + colour(p["bgImage"])[:90])
+            bits.append("image " + colour(p["bgImage"], by=by)[:90])
         if p.get("border"):
-            bits.append("border " + colour(p["border"].split(" | ")[0][2:]))
+            bits.append("border " + colour(p["border"].split(" | ")[0][2:], by=by))
         if p.get("radius"):
             bits.append("radius " + p["radius"])
         if p.get("shadow"):
-            bits.append("shadow " + colour(p["shadow"]))
+            bits.append("shadow " + colour(p["shadow"], by=by))
         out.append(" ".join(bits))
     return "; ".join(out).replace("|", "/")
 
@@ -236,7 +262,7 @@ GROUP_INTRO = {
     "Legal pages": "The /privacy-policy template (shared by /terms-of-service): the .tech section with its big title, last-updated line and long unclassed prose.",
     "App chrome": "The floating rounded-full header every app.fourmula.ai page paints (1392x56, fixed at 24,24): the 32px Open-main-menu icon button, the header Create asset submit and the Sign in button — all measured, never pressed.",
     "App start": "app.fourmula.ai/start — the signed-out start page ('Create studio-quality product photos', page title 'Formula AI | Start') with its large Create asset call-to-action, measured and never pressed.",
-    "App sign-in": "app.fourmula.ai/auth — the sign-in card over the dark field: Back, Continue with Google, Email + Password fields with a visibility eye, the Sign in submit, and the Forgot password? / Sign up switchers that flip the card to its reset and create-account views. The fields were typed into then cleared; nothing was submitted.",
+    "App sign-in": "app.fourmula.ai/auth — the sign-in card over the dark field: Back, Continue with Google, Email + Password fields with a visibility eye, the Sign in submit, the Forgot password? submit (validating, not switching — its reset view is uncaptured) and the Sign up switcher that flips the card to its create-account view. The fields were typed into then cleared; nothing was submitted.",
     "Create-PDP generator": "app.fourmula.ai/project/create-pdp — the signed-out PDP generator: Cancel and close / Start generation in the header, the Dashboard link, the Your visuals rail with Recommendations and the upload buttons, the Connect-your-Shopify-store banner with the accent Check-connection pill, the Adjust-look section with its What's-a-PDP explainer and the Static/Video format radios, the Signed-in chips and the full-width Start generation submit — measured, never pressed or submitted.",
     "Mobile (390 wide)": "The marketing site at 390 wide: the header, the Menu pill and its nav overlay, the hero and the FAQ rows.",
     "Footer": "The 811px page footer: the fourmula.ai mark, the section anchors, the legal links and the social column.",
@@ -310,7 +336,7 @@ OVER = [
     ("Nav overlay", "every marketing page header", "the header Menu pill's own toggle", "[home-light-menu](screenshots/home-light-menu.png), [home-dark-menu](screenshots/home-dark-menu.png), [nav-overlay](#nav-overlay)"),
     ("FAQ accordion", "home page", "a FAQ row's own toggle", "[home-light-faq-opened](screenshots/home-light-faq-opened.png), [faq-item](#faq-row)"),
     ("Theme toggle", "the header pill", "not pressed during measurement (it repaints the whole page); both painted themes were instead reached through the site's own isDarkMode storage key — the same key the toggle writes", "[home-dark-default](screenshots/home-dark-default.png), [mkt-header-dark](#site-header-dark-paint)"),
-    ("Sign-in card switchers", "app.fourmula.ai/auth", "the card's own Sign up / Forgot password? switchers (local UI toggles)", "[auth-dark-signup](screenshots/auth-dark-signup.png), [auth-dark-forgot](screenshots/auth-dark-forgot.png), [auth-signup-card](#create-account-view), [auth-forgot-card](#forgot-password-view)"),
+    ("Sign-in card switcher", "app.fourmula.ai/auth", "the card's own Sign up switcher (a local UI toggle); \"Forgot password?\" is a validating submit, so the reset view is uncaptured", "[auth-dark-signup](screenshots/auth-dark-signup.png), [auth-signup-card](#create-account-view), [auth-forgot-card](#forgot-password-view-uncaptured)"),
     ("Create-PDP dialogs", "app.fourmula.ai/project/create-pdp", "the What's-a-PDP and Recommendations triggers (local UI toggles), dismissed with Escape", "[create-pdp-dark-pdp-dialog](screenshots/create-pdp-dark-pdp-dialog.png), [pdp-what-dialog](#pdp-explainer-dialog), [pdp-reco-dialog](#recommendations-dialog)"),
     ("Sign-in fields", "app.fourmula.ai/auth", "typed into then cleared — nothing sent", "[auth-field-email](#email-field), [auth-field-pass](#password-field)"),
     ("Signed-in product", "a Fourmula account", "the dashboard, generation results and every post-login surface need an account", "boundary; see Gaps"),
@@ -375,7 +401,7 @@ for k, c in C.items():
         for d in ("Top", "Right", "Bottom", "Left")
         for p in ("Color", "Width", "Style")
     )
-    desc = f"{s['outlineWidth']} {s['outlineStyle']} {colour(s['outlineColor'])}, offset {s['outlineOffset']}" if ring else (f"on a child: {child_ring}" if child_ring else None)
+    desc = f"{s['outlineWidth']} {s['outlineStyle']} {colour(s['outlineColor'], by=by_color_for(c['page']))}, offset {s['outlineOffset']}" if ring else (f"on a child: {child_ring}" if child_ring else None)
     foc.append((k, ring or bool(child_ring), shadow, shadow_lost, border, desc))
 with_ring = [f"`{k}` ({r})" for k, ring, sh, sl, bd, r in foc if ring]
 with_shadow = [f"`{k}`" for k, ring, sh, sl, bd, r in foc if not ring and sh]
@@ -441,7 +467,7 @@ for k in ["cookie-modal", "nav-overlay", "auth-card", "auth-forgot-card", "auth-
     st = next((s for s in c["states"].values() if "style" in s), None)
     if st is None:
         continue
-    p = props(st)
+    p = props(st, by_color_for(c["page"]))
     W(f"| [{c['title']}](#{re.sub(r'[^a-z0-9 -]', '', c['title'].lower()).replace(' ', '-')}) | {p['size']} | {p.get('border', '-')} | {p.get('radius', '-')} | {p.get('background', '-')} | {p.get('shadow', 'none')} | {p.get('padding', '0')} |")
 W()
 
@@ -469,6 +495,13 @@ for g in groups:
         W()
         if c.get("missing"):
             W("Not on the page when it was captured.")
+            continue
+        if c.get("uncaptured"):
+            # Recorded as never-captured on purpose (e.g. a control whose
+            # press submits): the entry stays so no later pass republishes a
+            # different view under this name.
+            W(f"Uncaptured: {c['uncaptured']}.")
+            W()
             continue
         failed = [s for s, v in c["states"].items() if "style" in v and v.get("via") == "focus failed"]
         rows, states = state_rows(c)
@@ -526,7 +559,7 @@ W("- **The theme toggle was never pressed during measurement** (a press repaints
 W()
 W("### Themes")
 W()
-W("The marketing site ships a real two-theme switcher with inverted naming: `data-theme-toggle` writes localStorage isDarkMode and flips the `dark` class on `<body>`, but `.body.dark` paints the LIGHT surface (white `--mainbg`) and plain `.body` paints the DARK one (`#020108` `--mainbg`). A first visit stores isDarkMode=true, so visitors open on the light paint; the `light` token set is that default surface and `dark` is the toggled one. app.fourmula.ai is a separate dark-only Tailwind v4 app with its own `--color-base-*`/`--color-accent-*` layer that shares nothing but the `#020108` near-black with the marketing tokens; its declared values sit under `component.app.*` and measured ones under `component.login.*`.")
+W("The marketing site ships a real two-theme switcher with inverted naming: `data-theme-toggle` writes localStorage isDarkMode and flips the `dark` class on `<body>`, but `.body.dark` paints the LIGHT surface (white `--mainbg`) and plain `.body` paints the DARK one (`#020108` `--mainbg`). A first visit stores isDarkMode=true, so visitors open on the light paint; the `light` token set is that default surface and `dark` is the toggled one. app.fourmula.ai is a separate dark-only Tailwind v4 app with its own `--color-base-*`/`--color-accent-*` layer that shares nothing but the `#020108` near-black with the marketing tokens; its declared values sit under `core.appColor`, `core.font.size.app`, `core.radius.app`, `core.spacing.app` and the other app ramps, and the measured ones under `core.component.app.*` — there is no `component.login` group.")
 W()
 W("### Fonts")
 W()

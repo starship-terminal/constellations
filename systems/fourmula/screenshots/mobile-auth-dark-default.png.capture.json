@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-15T20:09:34.574Z",
+  "capturedAt": "2026-11-15T22:13:51.211Z",
   "screenshot": "mobile-auth-dark-default.png",
   "sanitizedSourceUrl": "https://app.fourmula.ai/auth",
   "requested": {
@@ -19,9 +19,16 @@
     "innerHeight": 844,
     "devicePixelRatio": 2,
     "theme": {
-      "classes": [],
-      "attributes": {},
-      "colorScheme": "dark"
+      "root": {
+        "classes": [],
+        "attributes": {},
+        "colorScheme": "dark"
+      },
+      "body": {
+        "classes": [],
+        "attributes": {},
+        "colorScheme": "dark"
+      }
     },
     "visualViewport": {
       "width": 390,

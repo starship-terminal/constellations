@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "capturedAt": "2026-11-15T20:08:52.524Z",
+ "capturedAt": "2026-11-15T22:12:45.005Z",
  "screenshot": "mobile-home-light-full.png",
  "sanitizedSourceUrl": "https://fourmula.ai/",
  "requested": {
@@ -19,9 +19,18 @@
   "innerHeight": 844,
   "devicePixelRatio": 2,
   "theme": {
-   "classes": [],
-   "attributes": {},
-   "colorScheme": "normal"
+   "root": {
+    "classes": [],
+    "attributes": {},
+    "colorScheme": "normal"
+   },
+   "body": {
+    "classes": [
+     "dark"
+    ],
+    "attributes": {},
+    "colorScheme": "normal"
+   }
   },
   "visualViewport": {
    "width": 390,

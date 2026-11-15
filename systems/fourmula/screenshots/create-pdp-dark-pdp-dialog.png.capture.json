@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-15T20:18:59.207Z",
+  "capturedAt": "2026-11-15T22:11:49.883Z",
   "screenshot": "create-pdp-dark-pdp-dialog.png",
   "sanitizedSourceUrl": "https://app.fourmula.ai/project/create-pdp",
   "requested": {
@@ -19,9 +19,16 @@
     "innerHeight": 900,
     "devicePixelRatio": 1,
     "theme": {
-      "classes": [],
-      "attributes": {},
-      "colorScheme": "dark"
+      "root": {
+        "classes": [],
+        "attributes": {},
+        "colorScheme": "dark"
+      },
+      "body": {
+        "classes": [],
+        "attributes": {},
+        "colorScheme": "dark"
+      }
     },
     "visualViewport": {
       "width": 1440,

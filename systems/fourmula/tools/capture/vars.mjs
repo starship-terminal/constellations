@@ -90,7 +90,12 @@ const sheets = [...bodies.entries()].concat(inline);
 await page.close();
 
 // ---- harvest: every rule with --* declarations ----
-const probe = await browser.newPage();
+// The resolution probe must compute at the capture viewport: fourmula.ai's
+// --_fonts---* ramp is fluid rem, so its steps resolve to different px at
+// other widths (at Playwright's default 1280 x 720 --_fonts---h1 reads
+// ~65px where the 1440 x 900 capture paints ~73.2px).
+const probeCtx = await browser.newContext({ viewport: { width: 1440, height: 900 } });
+const probe = await probeCtx.newPage();
 const result = await probe.evaluate((sheets) => {
   const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v);
   const rules = [];

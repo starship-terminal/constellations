@@ -13,7 +13,11 @@ Every image's .capture.json sidecar travels with it: a plain capture's sidecar i
 quantized PNG, and a stitched image's sidecar is rebuilt from its part tiles' sidecars — the parts'
 clips recorded under partClip, the union under capture.clip, and a fresh dimensionCheck against the
 stitched PNG's real pixel size (a part's own check can never vouch for the sheet). A stitched image
-whose tiles lack sidecars gets none.
+whose tiles lack sidecars gets none. Before stitching, check_tiles vets the set: tiles must be
+numbered part0..partN-1 with no gap, each tile's sidecar must exist with a passing dimensionCheck,
+the clips must run contiguously from y=0 at one width, and the union must cover the intended capture
+(the measured document height, capped at the shooter's 8-chunk bound). A failed set is left in
+RAW_DIR unstitched — a shortened image is never published under the full name.
 """
 from PIL import Image
 import json, pathlib, re, shutil, sys
@@ -41,6 +45,52 @@ def pixel_scale(meta):
         return dpr
     clip, png = cap.get('clip'), meta.get('png')
     return png['width'] / clip['width'] if clip and png and clip.get('width') and png.get('width') else 1
+
+
+def check_tiles(name, ps):
+    """Vet a tile set before stitching. Returns (tile_paths, reason); reason is None when the set is
+    safe to stitch. A tile set that fails any check is never stitched: a shortened image published
+    under the full name is worse than none.
+
+    Required: the tiles are numbered part0..partN-1 with no gap (a tile that failed to write leaves a
+    hole, and the survivors must not stitch short), every tile has a sidecar that vouches for it
+    (dimensionCheck pass), every tile's clip runs contiguously from y=0 at one width, and the union
+    covers the whole intended capture — min(the page's measured documentHeight, the shooter's 8-chunk
+    bound, chunk = 14000 device px / the run's pixel scale)."""
+    tile_paths = [f for _, f in ps]
+    idx = [i for i, _ in ps]
+    if idx != list(range(len(ps))):
+        missing = sorted(set(range(idx[-1] + 1)) - set(idx))
+        return None, f'{name}: gaps in the tile run (missing part{missing[0]}); a partial page is never stitched'
+    parts = [sidecar_for(f) for f in tile_paths]
+    if any(not p for p in parts):
+        return None, f'{name}: a part tile lacks its .capture.json sidecar; unmeasured tiles are never stitched'
+    for p, f in zip(parts, tile_paths):
+        chk = (p.get('dimensionCheck') or {}).get('status')
+        if chk != 'pass':
+            return None, f'{name}: {f.name} sidecar dimensionCheck is {chk!r}; a failed tile is never stitched'
+    clips = [(p.get('capture') or {}).get('clip') for p in parts]
+    if any(not c for c in clips):
+        return None, f'{name}: a part tile sidecar records no clip; unmeasured tiles are never stitched'
+    y = 0
+    w = clips[0]['width']
+    for i, c in enumerate(clips):
+        if c['width'] != w:
+            return None, f'{name}: part{i} clip width {c["width"]} != part0 {w}; mismatched tiles are never stitched'
+        if c['x'] != 0 or c['y'] != y:
+            return None, f'{name}: part{i} clip starts at {c["x"]},{c["y"]}, expected 0,{y}; non-contiguous tiles are never stitched'
+        y += c['height']
+    # The intended height: the document the shooter measured, capped at its 8-chunk bound
+    # (chunk = floor(14000 / devicePixelRatio) CSS px — public.mjs Shooter.full).
+    doc = ((parts[0].get('actual') or {}).get('documentSize') or {}).get('height')
+    dpr = (parts[0].get('actual') or {}).get('devicePixelRatio') \
+        or (parts[0].get('requested') or {}).get('deviceScaleFactor') or 1
+    if doc:
+        want = min(doc, 8 * (14000 // int(dpr)))
+        if y < want:
+            return None, (f'{name}: tiles cover {y} of {want} intended px '
+                          f'(document {doc}); a shortened page is never stitched')
+    return tile_paths, None
 
 
 def stitched_sidecar(name, sheet, tile_paths):
@@ -83,13 +133,19 @@ for f in RAW.glob('*.part*.png'):
 stitched = {}
 for name, ps in parts.items():
     ps = sorted(ps)
-    ims = [Image.open(f).convert('RGB') for _, f in ps]
+    tile_paths, reason = check_tiles(name, ps)
+    if tile_paths is None:
+        # A partial tile set must not become a shortened "full" image: leave
+        # the tiles in RAW_DIR as evidence and publish nothing for the name.
+        print('  ! skipped', reason)
+        continue
+    ims = [Image.open(f).convert('RGB') for f in tile_paths]
     sheet = Image.new('RGB', (ims[0].width, sum(i.height for i in ims)))
     y = 0
     for i in ims:
         sheet.paste(i, (0, y)); y += i.height
     sheet.save(RAW / f'{name}.png')
-    stitched[name] = stitched_sidecar(name, sheet, [f for _, f in ps])
+    stitched[name] = stitched_sidecar(name, sheet, tile_paths)
     print('stitched', name, sheet.size)
 
 n = 0

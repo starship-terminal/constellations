@@ -1,7 +1,7 @@
 {
  "F1": {
   "grade": "meets",
-  "evidence": "Two real ramps captured: the app's declared Tailwind @theme base-100..900 neutral ramp (9 steps #fff\u2192#020108) plus accent-50..900 oranges and success/error/warning families under appColor; the marketing site's five-step --fonts-10/20/30/50/64 alpha ink ramp sits under color.alphaInk.* with light and dark resolutions."
+  "evidence": "Two real palettes captured: the app's declared Tailwind @theme ramp under appColor — a neutral base-100..base-900 set with 625/650/750 half-steps, two orange accents (accent-500/-600), success/error/warning families plus blue/red/gray and overlay-black utilities; the marketing site's five-step --fonts-10/20/30/50/64 alpha ink ramp is retained as the per-theme text.muted/dim/faint/hairlineInk and border roles, resolved in both paints."
  },
  "F2": {
   "grade": "meets",
@@ -41,7 +41,7 @@
  },
  "F11": {
   "grade": "meets",
-  "evidence": "component.marketing.* and component.app.* carry measured heights/widths for 77 components (92.5px header, 40px CTAs, 384px auth card, 280x60 format cards, mobile 104px header)."
+  "evidence": "component.marketing.* and component.app.* carry measured heights/widths for 78 components (92.5px header, 40px CTAs, 384px auth card, 280x60 format cards, mobile 104px header)."
  },
  "F12": {
   "grade": "missing",
@@ -57,15 +57,15 @@
  },
  "C1": {
   "grade": "partly",
-  "evidence": "77 components cover 12 of 19 checklist items: button (header-cta/step-cta/how-cta, cookie-accept/save, auth-submit, pdp-upload/shopify-cta/start-bottom), icon button (theme-toggle, account-link, app-menu-btn), link (nav-overlay/footer/legal links, pdp-dash-link), text field (auth email/password), checkbox (cookie-check), radio (pdp-format group), switch (theme-toggle), menu (menu-pill + nav-overlay), dialog (cookie-settings, pdp-reco/what dialogs), card (auth-card, format items), list row (faq-item), badge (prc-counter, hero chips, pdp-signedin-chip). Missing: text area, select, tabs, tooltip, toast, table, avatar - none paints signed out."
+  "evidence": "78 components cover 12 of 19 checklist items: button (header-cta/step-cta/how-cta, cookie-accept/save, auth-submit, pdp-upload/shopify-cta/start-bottom), icon button (theme-toggle, account-link, app-menu-btn), link (nav-overlay/footer/legal links, pdp-dash-link), text field (auth email/password), checkbox (cookie-check), radio (pdp-format group), switch (theme-toggle), menu (menu-pill + nav-overlay), dialog (cookie-settings, pdp-reco/what dialogs), card (auth-card, format items), list row (faq-item), badge (prc-counter, hero chips, pdp-signedin-chip). Missing: text area, select, tabs, tooltip, toast, table, avatar - none paints signed out."
  },
  "C2": {
   "grade": "meets",
-  "evidence": "175 states across 77 components: real hover, focus-visible, focused and typed-then-cleared filled fields, DevTools-forced pressed, opened states (menu overlay, FAQ, consent manager, both PDP dialogs), selected (format radio) and disabled-look (format-video 0.5 opacity)."
+  "evidence": "176 states across 78 components (one — the auth reset view — is recorded as uncaptured rather than measured): real hover, focus-visible, focused and typed-then-cleared filled fields, DevTools-forced pressed, opened states (menu overlay, FAQ, consent manager, both PDP dialogs), selected (format radio) and disabled-look (format-video 0.5 opacity)."
  },
  "C3": {
   "grade": "partly",
-  "evidence": "Keyboard focus was delivered to every interactive component and the state captured; the product paints no visible focus outline anywhere (an honest finding recorded in components.md), so no ring exists to capture - cookie buttons draw a #146ef5 border change on focus-visible as the only visible focus treatment."
+  "evidence": "Keyboard focus was delivered to 19 interactive components and the state captured; none paints a visible focus change - no outline ring, shadow or border delta (an honest absence recorded in components.md). The consent buttons' #146ef5 paint is their hover state; no focus state was captured on them, so no focus treatment is claimed there."
  },
  "C4": {
   "grade": "meets",

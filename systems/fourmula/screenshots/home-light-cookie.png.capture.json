@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-15T20:05:15.581Z",
+  "capturedAt": "2026-11-15T22:08:29.493Z",
   "screenshot": "home-light-cookie.png",
   "sanitizedSourceUrl": "https://fourmula.ai/",
   "requested": {
@@ -19,9 +19,18 @@
     "innerHeight": 900,
     "devicePixelRatio": 1,
     "theme": {
-      "classes": [],
-      "attributes": {},
-      "colorScheme": "normal"
+      "root": {
+        "classes": [],
+        "attributes": {},
+        "colorScheme": "normal"
+      },
+      "body": {
+        "classes": [
+          "dark"
+        ],
+        "attributes": {},
+        "colorScheme": "normal"
+      }
     },
     "visualViewport": {
       "width": 1440,

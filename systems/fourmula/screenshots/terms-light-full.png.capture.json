@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-15T20:06:39.508Z",
+  "capturedAt": "2026-11-15T22:10:32.856Z",
   "screenshot": "terms-light-full.png",
   "sanitizedSourceUrl": "https://fourmula.ai/terms-of-service",
   "requested": {
@@ -19,9 +19,18 @@
     "innerHeight": 900,
     "devicePixelRatio": 1,
     "theme": {
-      "classes": [],
-      "attributes": {},
-      "colorScheme": "normal"
+      "root": {
+        "classes": [],
+        "attributes": {},
+        "colorScheme": "normal"
+      },
+      "body": {
+        "classes": [
+          "dark"
+        ],
+        "attributes": {},
+        "colorScheme": "normal"
+      }
     },
     "visualViewport": {
       "width": 1440,

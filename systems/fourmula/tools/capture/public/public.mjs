@@ -14,8 +14,10 @@
 // stitches back together; an unbounded page truncates at 8 chunks and the log records
 // the boundary. Nothing is sent, bought or signed into: the only presses are local UI
 // toggles — the header Menu button, the FAQ accordion, the app's Open main menu, the
-// What's a PDP and Recommendations dialog triggers and the auth card's Sign up /
-// Forgot password switchers. The finsweet cookie-consent layer is shot once as
+// What's a PDP and Recommendations dialog triggers and the auth card's Sign up
+// switcher. The "Forgot password?" control is deliberately not pressed: it is a
+// form action that validates the email field and submits, not a view switch.
+// The finsweet cookie-consent layer is shot once as
 // evidence, then hidden for every other shot; its Accept/Settings/Save buttons are
 // never pressed. The sign-in, sign-up and forgot-password fields and the create-pdp
 // uploaders are shot at rest, never filled or submitted.
@@ -166,12 +168,8 @@ const desktop = {
       await p.getByRole('button', { name: 'Sign in' }).last().click().catch(() => {});
       await wait(p, 800);
     });
-    await step('forgot', async () => {
-      const fp = p.getByRole('button', { name: 'Forgot password?' }).first();
-      if (!(await fp.count())) return;
-      await fp.click(); await wait(p, 1500);
-      await S.view('forgot');
-    });
+    // No 'forgot' shot: "Forgot password?" is a submit, not a view switch —
+    // pressing it only paints the email validation on the sign-in card.
   } },
   'create-pdp': { url: PDP_URL, wait: 10000, theme: 'dark', run: async (p, S) => {
     await S.view('default');

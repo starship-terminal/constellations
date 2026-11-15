@@ -39,15 +39,23 @@ export async function screenshotWithMetadata(page, options, requested = {}) {
     const configuredViewport = page.viewportSize();
     const actual = await page.evaluate(() => {
       const root = document.documentElement, body = document.body, visual = window.visualViewport;
+      // Some sites hang the theme on <body> instead of <html> (fourmula.ai's
+      // Webflow theme lives on body.dark, inverted against the paint), so the
+      // same restricted markers are recorded for both elements — a sidecar can
+      // then vouch for which paint the shot actually reached.
+      const themeOf = (el) => el ? {
+        classes: [...el.classList].filter(name => name === 'light' || name === 'dark'),
+        attributes: Object.fromEntries(['data-theme', 'data-mode', 'data-color-mode'].flatMap(name => {
+          const value = el.getAttribute(name);
+          return ['light', 'dark', 'system', 'auto'].includes(value) ? [[name, value]] : [];
+        })),
+        colorScheme: getComputedStyle(el).colorScheme,
+      } : null;
       return {
         innerWidth, innerHeight, devicePixelRatio,
         theme: {
-          classes: [...root.classList].filter(name => name === 'light' || name === 'dark'),
-          attributes: Object.fromEntries(['data-theme', 'data-mode', 'data-color-mode'].flatMap(name => {
-            const value = root.getAttribute(name);
-            return ['light', 'dark', 'system', 'auto'].includes(value) ? [[name, value]] : [];
-          })),
-          colorScheme: getComputedStyle(root).colorScheme,
+          root: themeOf(root),
+          body: themeOf(body),
         },
         visualViewport: visual ? { width: visual.width, height: visual.height, scale: visual.scale,
           offsetLeft: visual.offsetLeft, offsetTop: visual.offsetTop, pageLeft: visual.pageLeft, pageTop: visual.pageTop } : null,

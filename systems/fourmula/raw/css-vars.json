@@ -292,82 +292,82 @@
    "--_fonts---body-1": {
     "raw": "1.125rem",
     "kind": "dimension",
-    "value": "13.2812px"
+    "value": "14.9688px"
    },
    "--_fonts---body-2": {
     "raw": "1rem",
     "kind": "dimension",
-    "value": "11.8125px"
+    "value": "13.2969px"
    },
    "--_fonts---body-3": {
     "raw": "1.25rem",
     "kind": "dimension",
-    "value": "14.7656px"
+    "value": "16.625px"
    },
    "--_fonts---btn": {
     "raw": "1.0625rem",
     "kind": "dimension",
-    "value": "12.5469px"
+    "value": "14.125px"
    },
    "--_fonts---h1": {
     "raw": "5.5rem",
     "kind": "dimension",
-    "value": "64.9688px"
+    "value": "73.1875px"
    },
    "--_fonts---h2": {
     "raw": "7.5rem",
     "kind": "dimension",
-    "value": "88.5938px"
+    "value": "99.8125px"
    },
    "--_fonts---h2-5": {
     "raw": "4rem",
     "kind": "dimension",
-    "value": "47.25px"
+    "value": "53.2188px"
    },
    "--_fonts---h3": {
     "raw": "3.25rem",
     "kind": "dimension",
-    "value": "38.3906px"
+    "value": "43.25px"
    },
    "--_fonts---h4": {
     "raw": "2.25rem",
     "kind": "dimension",
-    "value": "26.5781px"
+    "value": "29.9375px"
    },
    "--_fonts---small-text-1": {
     "raw": ".75rem",
     "kind": "dimension",
-    "value": "8.85938px"
+    "value": "9.96875px"
    },
    "--_fonts---small-text-2": {
     "raw": ".625rem",
     "kind": "dimension",
-    "value": "7.375px"
+    "value": "8.3125px"
    },
    "--_fonts---tag": {
     "raw": "1.125rem",
     "kind": "dimension",
-    "value": "13.2812px"
+    "value": "14.9688px"
    },
    "--_fonts---tag-small": {
     "raw": "1.125rem",
     "kind": "dimension",
-    "value": "13.2812px"
+    "value": "14.9688px"
    },
    "--_fonts---title-1": {
     "raw": "1rem",
     "kind": "dimension",
-    "value": "11.8125px"
+    "value": "13.2969px"
    },
    "--_fonts---title-2": {
     "raw": ".875rem",
     "kind": "dimension",
-    "value": "10.3281px"
+    "value": "11.6406px"
    },
    "--_fonts---title-3": {
     "raw": "1.5rem",
     "kind": "dimension",
-    "value": "17.7188px"
+    "value": "19.9531px"
    },
    "--dots-pattern": {
     "raw": "#1a1a1a",
@@ -459,82 +459,82 @@
    "--_fonts---body-1": {
     "raw": "1.125rem",
     "kind": "dimension",
-    "value": "13.2812px"
+    "value": "14.9688px"
    },
    "--_fonts---body-2": {
     "raw": "1rem",
     "kind": "dimension",
-    "value": "11.8125px"
+    "value": "13.2969px"
    },
    "--_fonts---body-3": {
     "raw": "1.25rem",
     "kind": "dimension",
-    "value": "14.7656px"
+    "value": "16.625px"
    },
    "--_fonts---btn": {
     "raw": "1.0625rem",
     "kind": "dimension",
-    "value": "12.5469px"
+    "value": "14.125px"
    },
    "--_fonts---h1": {
     "raw": "5.5rem",
     "kind": "dimension",
-    "value": "64.9688px"
+    "value": "73.1875px"
    },
    "--_fonts---h2": {
     "raw": "7.5rem",
     "kind": "dimension",
-    "value": "88.5938px"
+    "value": "99.8125px"
    },
    "--_fonts---h2-5": {
     "raw": "4rem",
     "kind": "dimension",
-    "value": "47.25px"
+    "value": "53.2188px"
    },
    "--_fonts---h3": {
     "raw": "3.25rem",
     "kind": "dimension",
-    "value": "38.3906px"
+    "value": "43.25px"
    },
    "--_fonts---h4": {
     "raw": "2.25rem",
     "kind": "dimension",
-    "value": "26.5781px"
+    "value": "29.9375px"
    },
    "--_fonts---small-text-1": {
     "raw": ".75rem",
     "kind": "dimension",
-    "value": "8.85938px"
+    "value": "9.96875px"
    },
    "--_fonts---small-text-2": {
     "raw": ".625rem",
     "kind": "dimension",
-    "value": "7.375px"
+    "value": "8.3125px"
    },
    "--_fonts---tag": {
     "raw": "1.125rem",
     "kind": "dimension",
-    "value": "13.2812px"
+    "value": "14.9688px"
    },
    "--_fonts---tag-small": {
     "raw": "1.125rem",
     "kind": "dimension",
-    "value": "13.2812px"
+    "value": "14.9688px"
    },
    "--_fonts---title-1": {
     "raw": "1rem",
     "kind": "dimension",
-    "value": "11.8125px"
+    "value": "13.2969px"
    },
    "--_fonts---title-2": {
     "raw": ".875rem",
     "kind": "dimension",
-    "value": "10.3281px"
+    "value": "11.6406px"
    },
    "--_fonts---title-3": {
     "raw": "1.5rem",
     "kind": "dimension",
-    "value": "17.7188px"
+    "value": "19.9531px"
    },
    "--dots-pattern": {
     "raw": "#d9d9d9",

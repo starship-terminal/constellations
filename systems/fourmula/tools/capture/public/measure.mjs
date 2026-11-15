@@ -24,7 +24,8 @@
 // only presses are local UI toggles — the header "Menu" pill, the FAQ
 // accordion rows, the app's "Open main menu", the "What's a PDP" and
 // "Recommendations" dialog triggers, the password visibility eye and the auth
-// card's Sign up / Forgot password switchers; the sign-in fields are typed
+// card's Sign up switcher. "Forgot password?" is a validating submit, not a
+// switch, so the reset view is recorded as uncaptured; the sign-in fields are typed
 // into and cleared, never submitted; Get started, Create asset, Sign in,
 // Start generation, Upload Main Image, Check connection and every submit
 // button are measured, never followed or pressed. The finsweet
@@ -172,7 +173,20 @@ async function S(key, target, list, meta = {}, opts = {}) {
   if (!listed.has(key)) listed.set(key, new Set());
   for (const st of list) listed.get(key).add(st);
   delete out.components[key].missing;
-  if (opts.open) { await reset(); try { await opts.open(); } catch (e) { log('  ! open failed', key, String(e.message).slice(0, 80)); } }
+  if (opts.open) {
+    await reset();
+    try { await opts.open(); } catch (e) { log('  ! open failed', key, String(e.message).slice(0, 80)); }
+    // The open step must produce the view the states are named for: a
+    // switcher that submits or a target that never appears would otherwise
+    // be measured and published under the wrong view's name.
+    if (opts.openCheck && !(await opts.openCheck())) {
+      const why = opts.openCheckWhy || 'the expected view did not appear after the open step';
+      log('  ! open check failed', key, '-', why);
+      for (const st of list) out.components[key].states[st] = { error: `open check failed: ${why}` };
+      for (const st of list) if (opts.after?.[st]) await opts.after[st](target).catch(() => {});
+      return;
+    }
+  }
   const loc = target.filter({ visible: true }).first();
   if (!(await loc.count())) {
     const has = Object.keys(out.components[key].states || {}).length > 0;
@@ -395,7 +409,7 @@ async function home() {
   await S('account-link', q('a.header_signin.is-header-btn').filter({ visible: true }).first(), B4, { group: g, title: 'App account link', desc: 'The icon-only "Fourmula app account" link to app.fourmula.ai/auth; measured, never followed.', sel: 'a.header_signin.is-header-btn' }, { noScroll: true });
   await S('header-cta', q('a.btn-primary.is-header-btn').filter({ visible: true }).first(), B4, { group: g, title: 'Get started button', desc: 'The primary "Get started" pill in the header linking to app.fourmula.ai/start; measured, never followed.', sel: 'a.btn-primary.is-header-btn' }, { noScroll: true });
   g = G.menu;
-  await S('nav-overlay', q('.menu').filter({ visible: true }).first(), ['opened'], { group: g, title: 'Nav overlay', desc: 'The fixed .menu overlay opened by the Menu pill: PDP\'s / Products / Videos / Our features anchors, Privacy/Terms/Cookie links, Instagram and the app account link. Its links were never followed.', sel: '.menu (opened)' }, { open: openMenu, noScroll: true, noReset: true, after: { opened: closeMenu } });
+  await S('nav-overlay', q('.menu').filter({ visible: true }).first(), ['opened'], { group: g, title: 'Nav overlay', desc: 'The fixed .menu overlay opened by the Menu pill: PDP\'s / Products / Videos / Our features anchors, Privacy/Terms/Cookie links, Instagram and the app account link. Its links were never followed.', sel: '.menu (opened)' }, { open: openMenu, noToggle: true, noScroll: true, noReset: true, after: { opened: closeMenu } });
   await S('nav-overlay-link', q('.menu a[href^="#"], .menu .menu__link').filter({ hasText: /PDP/i }).filter({ visible: true }).first(), ['default', 'hover'], { group: g, title: 'Nav overlay link', desc: 'An anchor link inside the opened .menu overlay ("PDP\'s"); measured, never followed.', sel: '.menu .menu__link "PDP\'s"' }, { open: openMenu, noScroll: true, noReset: true, after: { hover: closeMenu } });
   g = G.home;
   await S('hero-h1', q('.hero__title').filter({ visible: true }).first(), ['default'], { group: g, title: 'Hero headline', desc: '"Your catalog, instantly re-shot." — the display h1; the second line paints --fonts-50 (u-fonts-50).', sel: '.hero__title' }, { noScroll: true });
@@ -470,12 +484,20 @@ async function auth() {
   await S('auth-field-pass', q('input[type="password"]').filter({ visible: true }).first(), FIELD, { group: g, title: 'Password field', desc: 'The "Password" field on the sign-in card; focused and typed into then cleared — never submitted.', sel: 'auth input[type=password]' }, { noScroll: true, fillText: 'not-a-real-password' });
   await S('auth-eye', q('button[aria-label="Toggle password visibility"]').filter({ visible: true }).first(), ['default', 'hover'], { group: g, title: 'Password visibility eye', desc: 'The eye button inside the password field — a local UI toggle; measured at rest, never needed to reveal anything.', sel: 'button[aria-label="Toggle password visibility"]' }, { noScroll: true });
   await S('auth-submit', card.filter({ visible: true }).first().locator('button').filter({ hasText: /^\s*Sign in\s*$/ }).last(), B4, { group: g, title: 'Sign-in submit', desc: 'The card\'s "Sign in" submit; its states were measured but the button was never pressed — nothing was submitted.', sel: 'auth card "Sign in" submit' }, { noScroll: true });
-  await S('auth-forgot', q('button').filter({ hasText: /forgot password\??/i }).filter({ visible: true }).first(), ['default', 'hover'], { group: g, title: 'Forgot password switcher', desc: 'The "Forgot password?" button that switches the card to the reset view — a local UI switch; measured at rest. The reset view itself is auth-forgot-card.', sel: 'auth "Forgot password?"' }, { noScroll: true });
+  await S('auth-forgot', q('button').filter({ hasText: /forgot password\??/i }).filter({ visible: true }).first(), ['default', 'hover'], { group: g, title: 'Forgot password submit', desc: 'The "Forgot password?" button on the sign-in card — a form action, not a view switch: pressing it validates the email field in place (the card shows "Please enter a valid email address" and stays on sign-in), and completing it submits. Measured at rest, never pressed.', sel: 'auth "Forgot password?"' }, { noScroll: true });
   // The card's "Sign up" switcher flips the card in place to the create-
   // account view — a local UI toggle; the submit inside is never pressed.
   await S('auth-switch', q('button').filter({ hasText: /^\s*Sign up\s*$/ }).filter({ visible: true }).first(), ['default', 'hover'], { group: g, title: 'Sign-up switcher', desc: 'The "Sign up" text button at the card\'s foot that switches it to the create-account view — a local UI switch; measured at rest.', sel: 'auth card "Sign up" switcher' }, { noScroll: true });
-  await S('auth-forgot-card', card, ['opened'], { group: g, title: 'Forgot-password view', desc: 'The auth card switched to its reset view by pressing "Forgot password?"; the reset submit inside was never pressed. Returned to the sign-in view afterwards.', sel: 'auth card @ forgot view' }, { noScroll: true, open: async () => { await q('button').filter({ hasText: /forgot password/i }).first().click({ timeout: 4000 }).catch(() => {}); await page.waitForTimeout(900); card = await paintedCard(q('input').filter({ visible: true }).first()); }, after: { opened: async () => { const b = q('button').filter({ hasText: /^Sign in$/ }).last(); if (await b.count()) await b.click({ timeout: 3000 }).catch(() => {}); await page.waitForTimeout(500); } } });
-  await S('auth-signup-card', card, ['opened'], { group: g, title: 'Create-account view', desc: 'The auth card switched to its create-account view by pressing the "Sign up" switcher; fields were measured, the create submit was never pressed. Returned to the sign-in view afterwards.', sel: 'auth card @ signup view' }, { noScroll: true, open: async () => { await q('button').filter({ hasText: /^\s*Sign up\s*$/ }).first().click({ timeout: 4000 }).catch(() => {}); await page.waitForTimeout(900); card = await paintedCard(q('input').filter({ visible: true }).first()); } });
+  // The "Forgot password?" control is a form action, not a view switch:
+  // pressed on the live card it only paints the email validation ("Please
+  // enter a valid email address") and the card stays on sign-in — a valid
+  // email submits the reset, which this kit never runs. The reset view is
+  // uncaptured: it is recorded as such rather than republishing the sign-in
+  // card's validation view under the reset view's name.
+  const fc = comp('auth-forgot-card', { group: g, title: 'Forgot-password view (uncaptured)', desc: 'The auth card\'s reset view. "Forgot password?" is a form action, not a local UI switch: pressing it validates the email field in place and the card stays on sign-in, while a valid email would submit — so the reset view is uncaptured.', sel: 'auth card @ forgot view' });
+  fc.uncaptured = 'the forgot-password control validates and submits rather than switching views; the reset view needs a submission this kit never runs';
+  fc.states = { opened: { uncaptured: true, via: 'never pressed — the control submits' } };
+  await S('auth-signup-card', card, ['opened'], { group: g, title: 'Create-account view', desc: 'The auth card switched to its create-account view by pressing the "Sign up" switcher; fields were measured, the create submit was never pressed. Returned to the sign-in view afterwards.', sel: 'auth card @ signup view' }, { noScroll: true, noToggle: true, open: async () => { await q('button').filter({ hasText: /^\s*Sign up\s*$/ }).first().click({ timeout: 4000 }).catch(() => {}); await page.waitForTimeout(900); card = await paintedCard(q('input').filter({ visible: true }).first()); }, openCheck: async () => { const t = await card.evaluate((el) => (el.innerText || '').split('\n')[0].trim()).catch(() => ''); return t !== '' && !/^sign in$/i.test(t); }, openCheckWhy: 'the card stayed on the sign-in view after the "Sign up" switcher' });
   save();
 }
 
@@ -542,7 +564,7 @@ async function mobile() {
   const g = G.mobile;
   await S('m-header', q('.header').filter({ visible: true }).first(), ['default'], { group: g, title: 'Mobile header', desc: 'The phone header at 390 wide: logo, the Menu pill with the theme toggle and the Get started pill.', sel: 'mobile .header' }, { noScroll: true });
   await S('m-menu-pill', q(MENUBTN).filter({ visible: true }).first(), [...B4, 'opened'], { group: g, title: 'Mobile menu pill', desc: 'The "Menu" pill at 390 wide — a local UI toggle that opens the nav overlay; the opened state was measured after clicking it, then closed.', sel: 'mobile .header__menu' }, { noScroll: true, allowLink: true, after: { opened: closeMenu } });
-  await S('m-nav-overlay', q('.menu').filter({ visible: true }).first(), ['opened'], { group: g, title: 'Mobile nav overlay', desc: 'The nav overlay opened by the menu pill at 390 wide; its links were never followed.', sel: 'mobile .menu (opened)' }, { open: openMenu, noScroll: true, noReset: true, after: { opened: closeMenu } });
+  await S('m-nav-overlay', q('.menu').filter({ visible: true }).first(), ['opened'], { group: g, title: 'Mobile nav overlay', desc: 'The nav overlay opened by the menu pill at 390 wide; its links were never followed.', sel: 'mobile .menu (opened)' }, { open: openMenu, noToggle: true, noScroll: true, noReset: true, after: { opened: closeMenu } });
   await S('m-hero-h1', q('.hero__title').filter({ visible: true }).first(), ['default'], { group: g, title: 'Mobile hero headline', desc: 'The masthead at 390 wide (u-h1 resolves to the mobile size).', sel: 'mobile .hero__title' });
   await S('m-step-cta', q('a.btn-primary-stb').filter({ visible: true }).first(), ['default'], { group: g, title: 'Mobile step CTA', desc: 'A "Get started" button in the steps section at 390 wide; measured, never followed.', sel: 'mobile a.btn-primary-stb' });
   await S('m-faq-item', q('.faq__item').filter({ visible: true }).first(), ['default', 'opened'], { group: g, title: 'Mobile FAQ row', desc: 'A FAQ accordion row at 390 wide; the opened state was measured after clicking, then re-closed.', sel: 'mobile .faq__item' }, { after: { opened: async () => { await q('.faq__item').filter({ visible: true }).first().click({ timeout: 3000 }).catch(() => {}); await page.waitForTimeout(600); } } });

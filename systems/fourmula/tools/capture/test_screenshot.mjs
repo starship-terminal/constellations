@@ -58,21 +58,26 @@ test('mobile layout viewport may differ from configured screenshot viewport', as
   assert.equal(result.configuredViewport.width, 390);
 });
 
-test('browser probe retains safe theme fields and never reads URL or arbitrary root attributes', async t => {
+test('browser probe retains safe theme fields and never reads URL or arbitrary attributes', async t => {
   const root = { scrollWidth: 884, clientWidth: 884, scrollHeight: 1104, clientHeight: 1104,
-    classList: ['hashed-class', 'dark', 'owner@example.test'],
+    classList: ['hashed-class', 'owner@example.test'],
     getAttribute: name => ({ 'data-mode': 'dark', 'data-theme': 'owner@example.test',
       'data-color-mode': 'system' })[name] ?? null };
+  // fourmula.ai carries the theme on <body> (body.dark, inverted against the
+  // paint): the same restricted markers must be read there, not on <html>.
+  const body = { scrollWidth: 884, scrollHeight: 1104,
+    classList: ['body', 'dark'], getAttribute: () => null };
   const page = fakePage(1768, 2208);
   page.url = () => { throw new Error('must not read a live URL'); };
   page.evaluate = async callback => vm.runInNewContext(`(${callback.toString()})()`, {
-    document: { documentElement: root, body: null }, window: { visualViewport: null },
+    document: { documentElement: root, body }, window: { visualViewport: null },
     innerWidth: 884, innerHeight: 1104, devicePixelRatio: 2, scrollX: 0, scrollY: 0,
     getComputedStyle: () => ({ colorScheme: 'dark' }),
   });
   const report = await screenshotWithMetadata(page, { path: temporary(t) });
   assert.deepEqual(JSON.parse(JSON.stringify(report.actual.theme)), {
-    classes: ['dark'], attributes: { 'data-mode': 'dark', 'data-color-mode': 'system' }, colorScheme: 'dark',
+    root: { classes: [], attributes: { 'data-mode': 'dark', 'data-color-mode': 'system' }, colorScheme: 'dark' },
+    body: { classes: ['dark'], attributes: {}, colorScheme: 'dark' },
   });
   assert.equal(JSON.stringify(report).includes('owner@example.test'), false);
 });

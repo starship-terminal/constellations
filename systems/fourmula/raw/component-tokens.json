@@ -183,7 +183,7 @@
             "value": "73.1963px",
             "type": "dimension",
             "source": "computed fontSize of hero-h1 default (raw/components-computed.json)",
-            "description": "The 73.2px painted hero masthead at 1440 — wider than the resolved --_fonts---h1 step because the site's fluid rem scaling reads wider."
+            "description": "The 73.2px painted hero masthead at 1440 — the resolved --_fonts---h1 step at the capture width."
           },
           "section": {
             "value": "99.8131px",
@@ -719,38 +719,74 @@
       "tx": {
         "value": "0%",
         "type": "other",
-        "source": "declared custom property in the marketing site's Webflow css bundle (raw/css-vars.json): --tx on .hero__slider__row <@media (max-width: 991px)>",
-        "description": "The hero logo-strip translate variable."
+        "source": "declared custom property in the marketing site's Webflow css bundle (raw/css-vars.json): --tx on .hero__slider__row <@media (min-width: 992px)>",
+        "description": "The hero logo-strip translate variable (the desktop direction under >=992px)."
       },
       "ty": {
         "value": "0%",
         "type": "other",
-        "source": "declared custom property in the marketing site's Webflow css bundle (raw/css-vars.json): --ty on .hero__slider__row <@media (max-width: 991px)>",
-        "description": "The hero logo-strip translate variable."
+        "source": "declared custom property in the marketing site's Webflow css bundle (raw/css-vars.json): --ty on .hero__slider__row <@media (min-width: 992px)>",
+        "description": "The hero logo-strip translate variable (the desktop direction under >=992px)."
       },
       "txend": {
+        "value": "0%",
+        "type": "other",
+        "source": "declared custom property in the marketing site's Webflow css bundle (raw/css-vars.json): --tx-end on .hero__slider__row <@media (min-width: 992px)>",
+        "description": "The hero logo-strip translate variable (the desktop direction under >=992px)."
+      },
+      "tyend": {
+        "value": "-100%",
+        "type": "other",
+        "source": "declared custom property in the marketing site's Webflow css bundle (raw/css-vars.json): --ty-end on .hero__slider__row <@media (min-width: 992px)>",
+        "description": "The hero logo-strip translate variable (the desktop direction under >=992px)."
+      },
+      "txMobile": {
+        "value": "0%",
+        "type": "other",
+        "source": "declared custom property in the marketing site's Webflow css bundle (raw/css-vars.json): --tx on .hero__slider__row <@media (max-width: 991px)>",
+        "description": "The hero logo-strip translate variable (the phone direction under <=991px)."
+      },
+      "tyMobile": {
+        "value": "0%",
+        "type": "other",
+        "source": "declared custom property in the marketing site's Webflow css bundle (raw/css-vars.json): --ty on .hero__slider__row <@media (max-width: 991px)>",
+        "description": "The hero logo-strip translate variable (the phone direction under <=991px)."
+      },
+      "txendMobile": {
         "value": "-100%",
         "type": "other",
         "source": "declared custom property in the marketing site's Webflow css bundle (raw/css-vars.json): --tx-end on .hero__slider__row <@media (max-width: 991px)>",
-        "description": "The hero logo-strip translate variable."
+        "description": "The hero logo-strip translate variable (the phone direction under <=991px)."
       },
-      "tyend": {
+      "tyendMobile": {
         "value": "0%",
         "type": "other",
         "source": "declared custom property in the marketing site's Webflow css bundle (raw/css-vars.json): --ty-end on .hero__slider__row <@media (max-width: 991px)>",
-        "description": "The hero logo-strip translate variable."
+        "description": "The hero logo-strip translate variable (the phone direction under <=991px)."
       },
       "dotsSize": {
+        "value": "1rem",
+        "type": "other",
+        "source": "declared custom property in the marketing site's Webflow css bundle (raw/css-vars.json): --dot-size on .dots-field <@media (min-width: 768px)>",
+        "description": "The dotted-background field's dot/gap size (the desktop grid at >=768px)."
+      },
+      "dotsGap": {
+        "value": "1rem",
+        "type": "other",
+        "source": "declared custom property in the marketing site's Webflow css bundle (raw/css-vars.json): --dot-gap on .dots-field <@media (min-width: 768px)>",
+        "description": "The dotted-background field's dot/gap size (the desktop grid at >=768px)."
+      },
+      "dotsSizeMobile": {
         "value": "0.5rem",
         "type": "other",
         "source": "declared custom property in the marketing site's Webflow css bundle (raw/css-vars.json): --dot-size on .dots-field <@media (max-width: 767px)>",
-        "description": "The dotted-background field's dot/gap size (a denser half-size under 768px)."
+        "description": "The dotted-background field's dot/gap size (the denser half-size under 768px)."
       },
-      "dotsGap": {
+      "dotsGapMobile": {
         "value": "0.5rem",
         "type": "other",
         "source": "declared custom property in the marketing site's Webflow css bundle (raw/css-vars.json): --dot-gap on .dots-field <@media (max-width: 767px)>",
-        "description": "The dotted-background field's dot/gap size (a denser half-size under 768px)."
+        "description": "The dotted-background field's dot/gap size (the denser half-size under 768px)."
       }
     },
     "fluid": {
@@ -1151,7 +1187,7 @@
         "description": "The ~42.7px phone menu pill."
       },
       "mobile-nav-overlay": {
-        "value": "55.61px",
+        "value": "499.7px",
         "type": "dimension",
         "source": "measured h of m-nav-overlay opened (raw/components-computed.json)",
         "description": "The ~56px phone menu overlay row."

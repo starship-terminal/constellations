@@ -28,7 +28,8 @@ Page: home. Selector: `.cookies`. States: default.
 | Colour | #333333 |
 | Text node | div.cookies__modal__title.u-title-3: Sf Pro Display 19.9626px/29.9439px 500, #020108, ls -0.174739px |
 | Transition | none |
-| Transform | matrix(1, 0, 0, 1, 0, 0) |
+| Transform | matrix(1, 0, 0, 1, 0, 10) |
+| Opacity | 0 |
 | Icon | 19.95 x 19.95, colour #020108 @ 0.3 |
 | Painted layers | div.cookies__modal__main 359.3x186.7 bg #d9d9d9 r 39.9252px; a.cookies__modal__close.w-inline-block 33.3x33.3 bg #f7f7f7 r 39.9252px; div.fs-cc_modal-buttons 359.3x66.5 bg #d9d9d9 r 39.9252px; a.btn-primary.u-btn 150.4x39.9 bg #020108 r 1317.53px; a.btn-outline.u-btn 152.4x39.9 bg #d9d9d9 border T:1px solid #020108 @ 0.2 / R:1px solid #020108 @ 0.2 / B:1px solid #020108 @ 0.2 / L:1px solid #020108 @ 0.2 r 1317.53px; div.fs-cc_modal 0.0x0.0 bg #d9d9d9 r 39.9252px |
 | Ancestor paint | 1 up body.body.dark bg #ffffff |
@@ -442,7 +443,7 @@ Page: home. Selector: `.menu (opened)`. States: opened.
 | Transform | matrix(1, 0, 0, 1, 0, 0) |
 | Icon | 13.3 x 13.3, colour #020108 |
 | Painted layers | div.menu__wrap 239.5x519.0 bg #d9d9d9 r 26.6168px; div.menu__item.is-lined 206.3x102.2 border T:1px solid #020108 @ 0.2; a.btn-primary.u-btn 0.0x0.0 bg #020108 r 1317.53px; a.header_signin.w-inline-block 26.6x26.6 border T:1px solid #ffffff @ 0.2 / R:1px solid #ffffff @ 0.2 / B:1px solid #ffffff @ 0.2 / L:1px solid #ffffff @ 0.2 r 26.6168px |
-| How | own toggle |
+| How | held open by an earlier toggle |
 
 Crops: `nav-overlay-opened.png`.
 
@@ -468,7 +469,6 @@ Page: home. Selector: `.menu .menu__link "PDP's"`. States: default, hover.
 | Transition | opacity 0.2s ease | = |
 | Cursor | pointer | = |
 | How | at rest | mouse hover |
-| Opacity | - | 0.64 |
 
 Crops: `nav-overlay-link-default.png`, `nav-overlay-link-hover.png`.
 
@@ -613,7 +613,7 @@ Page: home. Selector: `a.btn-primary.is-how`. States: default, hover, focus-visi
 | Padding | 11.6449px 19.9626px | = | = | = |
 | Border | none | = | = | = |
 | Radius | 1317.53px | = | = | = |
-| Background | #020108 | #ff6b02 | = | #ff6b02 |
+| Background | #020108 | #ec6302 | = | #ff6b02 |
 | Box shadow | none | = | = | = |
 | Outline | none | = | = | = |
 | Font | Sf Pro Display 14.1402px/16.9682px 400 | = | = | = |
@@ -622,7 +622,7 @@ Page: home. Selector: `a.btn-primary.is-how`. States: default, hover, focus-visi
 | Text node | div.char: Sf Pro Display 14.1402px/16.9682px 400, #ffffff, ls -0.282804px | = | = | = |
 | Transition | all 0.2s ease | = | = | = |
 | Cursor | pointer | = | = | = |
-| Painted layers | a.btn-primary.u-btn 101.8x39.9 bg #020108 r 1317.53px | a.btn-primary.u-btn 101.8x39.9 bg #ff6b02 r 1317.53px | = | a.btn-primary.u-btn 101.8x39.9 bg #ff6b02 r 1317.53px |
+| Painted layers | a.btn-primary.u-btn 101.8x39.9 bg #020108 r 1317.53px | a.btn-primary.u-btn 101.8x39.9 bg #ec6302 r 1317.53px | = | a.btn-primary.u-btn 101.8x39.9 bg #ff6b02 r 1317.53px |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
 Crops: `how-cta-default.png`, `how-cta-hover.png`, `how-cta-focus-visible.png`, `how-cta-pressed.png`.
@@ -663,16 +663,16 @@ Page: home. Selector: `a.btn-primary-stb`. States: default, hover, focus-visible
 | Padding | 11.6449px 19.9626px | = | = | = |
 | Border | none | = | = | = |
 | Radius | 1317.53px | = | = | = |
-| Background | #ffffff | #020108 | = | #020108 |
+| Background | #ffffff | #06050c | = | #020108 |
 | Box shadow | none | = | = | = |
 | Outline | none | = | = | = |
 | Font | Sf Pro Display 14.1402px/16.9682px 400 | = | = | = |
 | Letter spacing | -0.282804px | = | = | = |
-| Colour | #020108 | #ffffff | = | #ffffff |
-| Text node | div.char: Sf Pro Display 14.1402px/16.9682px 400, #020108, ls -0.282804px | div.char: Sf Pro Display 14.1402px/16.9682px 400, #ffffff, ls -0.282804px | = | div.char: Sf Pro Display 14.1402px/16.9682px 400, #ffffff, ls -0.282804px |
+| Colour | #020108 | #fbfbfb | = | #ffffff |
+| Text node | div.char: Sf Pro Display 14.1402px/16.9682px 400, #020108, ls -0.282804px | div.char: Sf Pro Display 14.1402px/16.9682px 400, #fbfbfb, ls -0.282804px | = | div.char: Sf Pro Display 14.1402px/16.9682px 400, #ffffff, ls -0.282804px |
 | Transition | all 0.2s ease | = | = | = |
 | Cursor | pointer | = | = | = |
-| Painted layers | a.btn-primary-stb.u-btn 101.8x39.9 bg #ffffff r 1317.53px | a.btn-primary-stb.u-btn 101.8x39.9 bg #020108 r 1317.53px | = | a.btn-primary-stb.u-btn 101.8x39.9 bg #020108 r 1317.53px |
+| Painted layers | a.btn-primary-stb.u-btn 101.8x39.9 bg #ffffff r 1317.53px | a.btn-primary-stb.u-btn 101.8x39.9 bg #06050c r 1317.53px | = | a.btn-primary-stb.u-btn 101.8x39.9 bg #020108 r 1317.53px |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
 Crops: `step-cta-default.png`, `step-cta-hover.png`, `step-cta-focus-visible.png`, `step-cta-pressed.png`.
@@ -1061,6 +1061,33 @@ Page: create-pdp. Selector: `button[aria-label="Open main menu"]`. States: defau
 
 Crops: `app-menu-btn-pdp-default.png`, `app-menu-btn-pdp-hover.png`, `app-menu-btn-pdp-focus-visible.png`, `app-menu-btn-pdp-pressed.png`, `app-menu-btn-pdp-opened.png`.
 
+#### app-header
+
+App header. The app's floating header — a fixed rounded-full bar (1392x56 at 24,24) holding the menu button, the Create asset submit and the Sign in button.
+
+Page: auth. Selector: `header`. States: default.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 1392 x 56 |
+| Padding | 0px 16px |
+| Border | none |
+| Radius | 3.35544e+07px |
+| Background | #020108 |
+| Box shadow | none |
+| Backdrop filter | blur(24px) |
+| Outline | none |
+| Font | sfProFont 16px/24px 400 |
+| Letter spacing | normal |
+| Colour | #ffffff |
+| Text node | span.flex.items-center: sfProFont 14px/20px 400, #020108 |
+| Transition | none |
+| Icon | 32 x 32, colour #ffffff |
+| Painted layers | header.fixed.top-4 1392.0x56.0 bg #020108 r 3.35544e+07px; button.cursor-pointer.transition-colors 123.0x32.0 bg #ff6b02 r 3.35544e+07px; button.cursor-pointer.transition-colors 66.0x32.0 bg #ff6b02 @ 0.2 r 3.35544e+07px |
+| How | at rest |
+
+Crops: `app-header-default.png`.
+
 ### App start
 
 #### start-h1
@@ -1304,7 +1331,7 @@ Crops: `auth-submit-default.png`, `auth-submit-hover.png`, `auth-submit-focus-vi
 
 #### auth-forgot
 
-Forgot password switcher. The "Forgot password?" button that switches the card to the reset view — a local UI switch; measured at rest. The reset view itself is auth-forgot-card.
+Forgot password submit. The "Forgot password?" button on the sign-in card — a form action, not a view switch: pressing it validates the email field in place (the card shows "Please enter a valid email address" and stays on sign-in), and completing it submits. Measured at rest, never pressed.
 
 Page: auth. Selector: `auth "Forgot password?"`. States: default, hover.
 
@@ -1356,31 +1383,15 @@ Crops: `auth-switch-default.png`, `auth-switch-hover.png`.
 
 #### auth-forgot-card
 
-Forgot-password view. The auth card switched to its reset view by pressing "Forgot password?"; the reset submit inside was never pressed. Returned to the sign-in view afterwards.
+Forgot-password view (uncaptured). The auth card's reset view. "Forgot password?" is a form action, not a local UI switch: pressing it validates the email field in place and the card stays on sign-in, while a valid email would submit — so the reset view is uncaptured.
 
 Page: auth. Selector: `auth card @ forgot view`. States: opened.
 
 | Property | opened |
 |---|---|
-| Size (w x h) | 384 x 484.8 |
-| Padding | 24px 32px |
-| Gap | 24px |
-| Border | 1px solid #1a1a1a |
-| Radius | 28px |
-| Background | #111111 |
-| Box shadow | none |
-| Backdrop filter | blur(24px) |
-| Outline | none |
-| Font | sfProFont 12px/16px 400 |
-| Letter spacing | normal |
-| Colour | #ffffff |
-| Text node | h2.font-medium.w-full: sfProFont 32px/44.8px 500, #ffffff |
-| Transition | none |
-| Icon | 16 x 16, colour #ff6b02 |
-| Painted layers | div.p-6.sm:p-8 384.0x484.8 bg #111111 border T:1px solid #1a1a1a / R:1px solid #1a1a1a / B:1px solid #1a1a1a / L:1px solid #1a1a1a r 28px; button.cursor-pointer.transition-colors 318.0x40.0 bg #ff6b02 @ 0.2 r 3.35544e+07px; div.flex-1.h-px 141.5x1.0 bg #ffffff @ 0.1; div.flex-1.h-px 141.5x1.0 bg #ffffff @ 0.1; div.relative.w-full 318.0x48.0 bg #1a1a1a r 3.35544e+07px; div.relative.w-full 318.0x48.0 bg #020108 r 3.35544e+07px |
-| How | own toggle |
+| Note | never pressed — the control submits |
 
-Crops: `auth-forgot-card-opened.png`.
+Crops: none.
 
 #### auth-signup-card
 
@@ -1405,8 +1416,8 @@ Page: auth. Selector: `auth card @ signup view`. States: opened.
 | Text node | h2.font-medium.w-full: sfProFont 32px/44.8px 500, #ffffff |
 | Transition | none |
 | Icon | 16 x 16, colour #ff6b02 |
-| Painted layers | div.p-6.sm:p-8 384.0x435.8 bg #111111 border T:1px solid #1a1a1a / R:1px solid #1a1a1a / B:1px solid #1a1a1a / L:1px solid #1a1a1a r 28px; button.cursor-pointer.transition-colors 318.0x40.0 bg #ff6b02 @ 0.2 r 3.35544e+07px; div.flex-1.h-px 141.5x1.0 bg #ffffff @ 0.1; div.flex-1.h-px 141.5x1.0 bg #ffffff @ 0.1; div.relative.w-full 318.0x48.0 bg #1a1a1a r 3.35544e+07px; div.relative.w-full 318.0x48.0 bg #020108 r 3.35544e+07px |
-| How | own toggle |
+| Painted layers | div.p-6.sm:p-8 384.0x435.8 bg #111111 border T:1px solid #1a1a1a / R:1px solid #1a1a1a / B:1px solid #1a1a1a / L:1px solid #1a1a1a r 28px; button.cursor-pointer.transition-colors 318.0x40.0 bg #ff6b02 @ 0.2 r 3.35544e+07px; div.flex-1.h-px 141.5x1.0 bg #ffffff @ 0.1; div.flex-1.h-px 141.5x1.0 bg #ffffff @ 0.1; div.relative.w-full 318.0x48.0 bg #020108 r 3.35544e+07px; div.relative.w-full 318.0x48.0 bg #020108 r 3.35544e+07px |
+| How | held open by an earlier toggle |
 
 Crops: `auth-signup-card-opened.png`.
 
@@ -1935,7 +1946,7 @@ Page: mobile. Selector: `mobile .header__menu`. States: default, hover, focus-vi
 | Painted layers | div.header__menu-line.is-top 26.6x1.0 bg #ffffff; div.header__menu-line.is-bottom 26.6x1.0 bg #ffffff | = | = | = | div.header__menu-line.is-top 19.5x19.5 bg #ffffff; div.header__menu-line.is-bottom 19.5x19.5 bg #ffffff |
 | Ancestor paint | 1 up div.header__main bg #020108 | = | = | = | = |
 | How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover | own toggle |
-| Opacity | - | 0.64 | = | 0.64 | 0.64 |
+| Opacity | - | 0.64 | 0.994036 | 0.64 | 0.64 |
 
 Crops: `m-menu-pill-default.png`, `m-menu-pill-hover.png`, `m-menu-pill-focus-visible.png`, `m-menu-pill-pressed.png`, `m-menu-pill-opened.png`.
 
@@ -1947,7 +1958,7 @@ Page: mobile. Selector: `mobile .menu (opened)`. States: opened.
 
 | Property | opened |
 |---|---|
-| Size (w x h) | 390 x 55.61 |
+| Size (w x h) | 390 x 499.7 |
 | Padding | 12.0928px 10.4804px 0px 0px |
 | Border | none |
 | Radius | 0px |
@@ -1961,8 +1972,8 @@ Page: mobile. Selector: `mobile .menu (opened)`. States: opened.
 | Transition | all 0.2s ease |
 | Transform | matrix(1, 0, 0, 1, 0, 0) |
 | Icon | 24.17 x 24.17, colour #020108 |
-| Painted layers | div.menu__wrap 249.9x43.5 bg #d9d9d9 r 32.2474px; div.menu__item.is-lined 249.9x117.3 border T:1px solid #020108 @ 0.2; a.btn-primary.u-btn 197.5x48.4 bg #020108 r 1596.25px; a.header_signin.w-inline-block 48.4x48.4 bg #d9d9d9 border T:1px solid #020108 @ 0.2 / R:1px solid #020108 @ 0.2 / B:1px solid #020108 @ 0.2 / L:1px solid #020108 @ 0.2 r 32.2474px |
-| How | own toggle |
+| Painted layers | div.menu__wrap 258.5x487.6 bg #d9d9d9 r 32.2474px; div.menu__item.is-lined 234.0x117.3 border T:1px solid #020108 @ 0.2; a.btn-primary.u-btn 181.6x48.4 bg #020108 r 1596.25px; a.header_signin.w-inline-block 48.4x48.4 bg #d9d9d9 border T:1px solid #020108 @ 0.2 / R:1px solid #020108 @ 0.2 / B:1px solid #020108 @ 0.2 / L:1px solid #020108 @ 0.2 r 32.2474px |
+| How | held open by an earlier toggle |
 
 Crops: `m-nav-overlay-opened.png`.
 

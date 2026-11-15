@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-15T20:06:15.642Z",
+  "capturedAt": "2026-11-15T22:10:06.960Z",
   "screenshot": "privacy-light-default.png",
   "sanitizedSourceUrl": "https://fourmula.ai/privacy-policy",
   "requested": {
@@ -19,9 +19,18 @@
     "innerHeight": 900,
     "devicePixelRatio": 1,
     "theme": {
-      "classes": [],
-      "attributes": {},
-      "colorScheme": "normal"
+      "root": {
+        "classes": [],
+        "attributes": {},
+        "colorScheme": "normal"
+      },
+      "body": {
+        "classes": [
+          "dark"
+        ],
+        "attributes": {},
+        "colorScheme": "normal"
+      }
     },
     "visualViewport": {
       "width": 1440,

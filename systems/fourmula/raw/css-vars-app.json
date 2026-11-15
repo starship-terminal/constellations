@@ -2,8 +2,8 @@
  "readAt": "2026-11-16",
  "source": "the stylesheet bodies read during a live signed-out load of https://app.fourmula.ai/start (the linked chunks from network responses plus any inline <style> blocks, re-parsed with CSSStyleSheet); resolved on document.body of a probe carrying the real sheets at 1440 x 900 — the app declares a single dark theme, so both passes resolve identically",
  "sheets": [
-  "https://app.fourmula.ai/_next/static/chunks/f0549f55786e9454.css (14841 bytes)",
-  "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css (105832 bytes)"
+  "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css (105832 bytes)",
+  "https://app.fourmula.ai/_next/static/chunks/f0549f55786e9454.css (14841 bytes)"
  ],
  "counts": {
   "rules": 111,
@@ -17,10 +17,6 @@
    "tailwind": 72
   },
   "bySelector": {
-   "[app] .sfprofont_8d378603-module__35IIva__variable": 1,
-   "[app] :root": 4,
-   "[app] .swiper-lazy-preloader-white": 1,
-   "[app] .swiper-lazy-preloader-black": 1,
    "[tailwind] @layer properties @supports (((-webkit-hyphens:none)) and (not (margin-trim:inline))) or ((-moz-orient:inline) and (not (color:rgb(from red r g b)))) *, ::before, ::after": 72,
    "[tailwind] @layer properties @supports (((-webkit-hyphens:none)) and (not (margin-trim:inline))) or ((-moz-orient:inline) and (not (color:rgb(from red r g b)))) ::backdrop": 72,
    "[theme] @layer theme :root, :host": 76,
@@ -120,7 +116,11 @@
    "[tailwind] @layer utilities @media (min-width: 960px) .md\\:leading-none": 1,
    "[tailwind] @layer utilities @media (min-width: 1025px) .\\32 md\\:translate-y-0": 1,
    "[app] @layer utilities .spinner": 2,
-   "[app] body": 2
+   "[app] :root": 4,
+   "[app] body": 2,
+   "[app] .sfprofont_8d378603-module__35IIva__variable": 1,
+   "[app] .swiper-lazy-preloader-white": 1,
+   "[app] .swiper-lazy-preloader-black": 1
   }
  },
  "errors": [],
@@ -244,6 +244,39 @@
  ],
  "app": [
   {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".spinner",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--spinner-animation-duration": ".8s",
+    "--spinner-opacity": ".65"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--overlay-color": "rgba(17,17,17,.5)",
+    "--lightningcss-light": "",
+    "--lightningcss-dark": "initial"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": "body",
+   "context": [],
+   "properties": {
+    "--lightningcss-light": "",
+    "--lightningcss-dark": "initial"
+   },
+   "bin": "app"
+  },
+  {
    "file": "https://app.fourmula.ai/_next/static/chunks/f0549f55786e9454.css",
    "selector": ".sfprofont_8d378603-module__35IIva__variable",
    "context": [],
@@ -276,39 +309,6 @@
    "context": [],
    "properties": {
     "--swiper-preloader-color": "#000"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
-   "selector": ".spinner",
-   "context": [
-    "@layer utilities"
-   ],
-   "properties": {
-    "--spinner-animation-duration": ".8s",
-    "--spinner-opacity": ".65"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
-   "selector": ":root",
-   "context": [],
-   "properties": {
-    "--overlay-color": "rgba(17,17,17,.5)",
-    "--lightningcss-light": "",
-    "--lightningcss-dark": "initial"
-   },
-   "bin": "app"
-  },
-  {
-   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
-   "selector": "body",
-   "context": [],
-   "properties": {
-    "--lightningcss-light": "",
-    "--lightningcss-dark": "initial"
    },
    "bin": "app"
   }

@@ -288,11 +288,13 @@ if declared("--_font-family---medium"):
 # ------------------------------------------------------------- type ramp
 #
 # The marketing --_fonts---* ramp is fluid: the rem declarations resolve
-# through the site's own rem scaling, so the resolved px at 1440 differs
-# from the round declared rem figures, and the page can paint a heading
-# larger than the named step (the 73.2px hero sits between h1's resolved
-# 64.97 and h2's 88.59). Declared steps are var leaves; painted sizes are
-# measured literals under measured.
+# through the site's own rem scaling, so the resolved px at the 1440x900
+# capture viewport differs from the round declared rem figures — the 73.2px
+# hero IS the resolved h1 step at this width. An earlier pass resolved the
+# vars at Playwright's 1280x720 default and tokenized a 64.97px h1 the page
+# never paints at 1440; vars.mjs now probes at the capture viewport.
+# Declared steps are var leaves; painted sizes are measured literals under
+# measured.
 
 sizes = SPEC["core"]["font"].setdefault("size", {})
 mkt = sizes.setdefault("marketing", {})
@@ -327,7 +329,7 @@ for name in sorted(k for k in A if re.fullmatch(r"--text-(2xs|xs|sm|md|m|lg|l|xl
 
 measured_sizes = sizes.setdefault("measured", {})
 for key, comp, state, desc in [
-    ("hero", "hero-h1", "default", "The 73.2px painted hero masthead at 1440 — wider than the resolved --_fonts---h1 step because the site's fluid rem scaling reads wider."),
+    ("hero", "hero-h1", "default", "The 73.2px painted hero masthead at 1440 — the resolved --_fonts---h1 step at the capture width."),
     ("section", "section-h2", "default", "The 99.8px painted section heading at 1440."),
     ("step", "step-h3", "default", "The 53.2px how-it-works step heading."),
     ("legal", "legal-title", "default", "The 73.2px legal page title."),
@@ -436,17 +438,26 @@ for rule in V.get("app", []):
     for k, v in (rule.get("properties") or {}).items():
         mkt_app.setdefault(sel + (" <" + ctx + ">" if ctx else ""), {})[k] = v
 extra = SPEC["core"].setdefault("heroSlider", {})
-for sel, props in mkt_app.items():
+for sel_ctx, props in mkt_app.items():
+    sel = sel_ctx.split(" <")[0]
+    ctx = sel_ctx.split(" <", 1)[1][:-1] if " <" in sel_ctx else ""
+    # The media context is part of the value, not a duplicate: the <=991px
+    # slider rules are the phone direction (horizontal) and the <=767px dots
+    # rules the denser phone grid. They get their own *Mobile keys instead of
+    # overwriting the desktop declarations that precede them in the sheet.
+    suffix = "Mobile" if "max-width" in ctx else ""
     if "hero__slider__row" in sel:
         for k, v in props.items():
-            key = k.replace("--", "").replace("-", "")
-            extra[key] = lit(v, "other", f"{DECL_SRC}: {k} on {sel}",
-                             "The hero logo-strip translate variable.")
+            key = k.replace("--", "").replace("-", "") + suffix
+            extra[key] = lit(v, "other", f"{DECL_SRC}: {k} on {sel_ctx}",
+                             "The hero logo-strip translate variable (the phone direction under <=991px)." if suffix
+                             else "The hero logo-strip translate variable (the desktop direction under >=992px).")
     elif "dots-field" in sel:
         for k, v in props.items():
-            key = ("dots" if "dot-" in k else "field") + ("Size" if "size" in k else "Gap")
-            extra[key] = lit(v, "other", f"{DECL_SRC}: {k} on {sel}",
-                             "The dotted-background field's dot/gap size (a denser half-size under 768px).")
+            key = ("dots" if "dot-" in k else "field") + ("Size" if "size" in k else "Gap") + suffix
+            extra[key] = lit(v, "other", f"{DECL_SRC}: {k} on {sel_ctx}",
+                             "The dotted-background field's dot/gap size (the denser half-size under 768px)." if suffix
+                             else "The dotted-background field's dot/gap size (the desktop grid at >=768px).")
 
 if declared("--user-zoom"):
     SPEC["core"].setdefault("fluid", {})["userZoom"] = decl("--user-zoom", "number")
