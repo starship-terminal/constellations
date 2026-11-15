@@ -51,7 +51,16 @@ class Shooter {
     const H = await p.evaluate(() => Math.max(document.documentElement.scrollHeight, document.body.scrollHeight));
     const chunk = Math.floor(14000 / this.dpr);
     const f = `${RAW}/${this.prefix}-${name}`;
-    for (const old of fs.readdirSync(RAW).filter((n) => n.startsWith(`${this.prefix}-${name}.part`))) fs.unlinkSync(`${RAW}/${old}`);
+    // A fresh full capture invalidates the previous whole-image output first:
+    // the earlier name.png, its .capture.json sidecar and every stale part
+    // tile. If the tiled capture below now fails before writing its first
+    // PNG, quantize.py finds no name.png to republish — an old image can
+    // never ride in on a new run — and a partial tile set dies on the
+    // contiguous-run check in check_tiles instead of stitching short.
+    for (const old of fs.readdirSync(RAW)) {
+      if (old === `${this.prefix}-${name}.png` || old === `${this.prefix}-${name}.png.capture.json`
+          || (old.startsWith(`${this.prefix}-${name}.part`) && /\.part\d+\.png(\.capture\.json)?$/.test(old))) fs.unlinkSync(`${RAW}/${old}`);
+    }
     const MAXH = 8 * chunk;
     const hCap = Math.min(H, MAXH);
     if (H > MAXH) log(`  ! ${name}: page is ${H}px tall, capturing first ${hCap}px only (infinite/growing page boundary)`);

@@ -32,6 +32,7 @@ colors:
   text-gray: "#757b86"
   text-linkInk: "#4f5562"
   text-navHover: "#22252d"
+  text-faint: "#8b9098"
   text-meta: "#6c7280"
   text-monoLabel: "#4457ff"
   action-fill: "#4457ff"
@@ -47,7 +48,7 @@ colors:
   border-iconTile: "#e8e7e4"
   border-rule: "#e7e8ec"
   border-footerRule: "#e6e2dc"
-  border-badgeChip: "#dfdfe4"
+  border-badgeChip: "#cfd1d9"
   focus-ring: "rgba(68, 87, 255, 0.2)"
 rounded:
   lg: "8px"

@@ -330,35 +330,71 @@ W("## Shared values")
 W()
 W("Values that apply across entries, from the measurement files.")
 W()
+# A focus ring counts only when it is visible — a nonzero outline in a
+# non-transparent colour — and it appeared or changed on focus. The Chakra
+# controls paint "2px solid rgba(0, 0, 0, 0)" at rest and at focus alike,
+# which is a spec, not a ring.
+def transparent(c):
+    c = (c or "").strip()
+    m = re.fullmatch(r"rgba\([^,]+,[^,]+,[^,]+,\s*([\d.]+)\)", c) or re.fullmatch(r"color\(srgb [^)]*/\s*([\d.]+)\)", c)
+    return bool(m) and float(m.group(1)) == 0
+
+
+OUTLINE_COLOUR = re.compile(r"rgba?\([^)]*\)|color\(srgb[^)]*\)|#[0-9a-fA-F]{3,8}\b")
+
+
+def visible_ring(ol):
+    """A computed outlineColour or a paint-list spec
+    ('1px auto rgb(16, 16, 16) offset 1px') is a visible ring only when its
+    colour is not transparent."""
+    m = OUTLINE_COLOUR.search(ol or "")
+    return bool(m) and not transparent(m.group(0))
+
+
+def paint_outlines(v):
+    return {n["node"]: n["outline"] for n in (v.get("paint") or []) if n.get("outline")}
+
+
 foc = []
 for k, c in C.items():
     st = c["states"].get("focus-visible")
     if not st or "style" not in st or st.get("via") == "focus failed":
         continue
     s = st["style"]
-    base = next((v["style"] for v in c["states"].values() if "style" in v), s)
-    ring = s["outlineStyle"] != "none" and float(s["outlineWidth"].replace("px", "")) > 0
+    base_st = next((v for v in c["states"].values() if "style" in v), st)
+    base = base_st["style"]
+    ring = (s["outlineStyle"] != "none" and float(s["outlineWidth"].replace("px", "")) > 0
+            and visible_ring(s["outlineColor"])
+            and (s["outlineWidth"], s["outlineStyle"], s["outlineColor"], s["outlineOffset"])
+            != (base["outlineWidth"], base["outlineStyle"], base["outlineColor"], base["outlineOffset"]))
     # A ring painted on a child layer instead of the wrapper: offer buttons
     # draw 1px dotted outlines on their inner anchor while the wrapper's own
-    # outline stays none. Those states must count as ringed too.
-    child_ring = next((n["outline"] for n in st.get("paint", []) if n.get("outline")), None)
+    # outline stays none. Those states must count as ringed too — under the
+    # same visibility and changed-on-focus rules as the root's own outline.
+    base_ol = paint_outlines(base_st)
+    child_ring = next((ol for node, ol in paint_outlines(st).items()
+                       if base_ol.get(node) != ol and visible_ring(ol)), None)
     shadow = s["boxShadow"] != base["boxShadow"] and s["boxShadow"] != "none"
+    shadow_lost = s["boxShadow"] != base["boxShadow"] and s["boxShadow"] == "none"
     border = any(
         s[f"border{d}{p}"] != base[f"border{d}{p}"]
         for d in ("Top", "Right", "Bottom", "Left")
         for p in ("Color", "Width", "Style")
     )
     desc = f"{s['outlineWidth']} {s['outlineStyle']} {colour(s['outlineColor'])}, offset {s['outlineOffset']}" if ring else (f"on a child: {child_ring}" if child_ring else None)
-    foc.append((k, ring or bool(child_ring), shadow, border, desc))
-with_ring = [f"`{k}` ({r})" for k, ring, sh, bd, r in foc if ring]
-with_shadow = [f"`{k}`" for k, ring, sh, bd, r in foc if not ring and sh]
-with_border = [f"`{k}`" for k, ring, sh, bd, r in foc if not ring and not sh and bd]
-without = [f"`{k}`" for k, ring, sh, bd, r in foc if not ring and not sh and not bd]
+    foc.append((k, ring or bool(child_ring), shadow, shadow_lost, border, desc))
+with_ring = [f"`{k}` ({r})" for k, ring, sh, sl, bd, r in foc if ring]
+with_shadow = [f"`{k}`" for k, ring, sh, sl, bd, r in foc if not ring and sh]
+with_border = [f"`{k}`" for k, ring, sh, sl, bd, r in foc if not ring and not sh and bd]
+lost_shadow = [f"`{k}`" for k, ring, sh, sl, bd, r in foc if not ring and not sh and not bd and sl]
+without = [f"`{k}`" for k, ring, sh, sl, bd, r in foc if not ring and not sh and not bd and not sl]
 parts = [f"{len(with_ring)} draw an outline ring: {', '.join(with_ring)}."]
 if with_shadow:
     parts.append(f"{len(with_shadow)} draw a focus ring as a shadow instead: {', '.join(with_shadow)}.")
 if with_border:
     parts.append(f"{len(with_border)} change only their border: {', '.join(with_border)}.")
+if lost_shadow:
+    parts.append(f"{len(lost_shadow)} drop their resting shadow without drawing a ring (the Chakra controls' focus-visible outline is the transparent 2px spec they already paint at rest): {', '.join(lost_shadow)}.")
 if without:
     parts.append(f"The other {len(without)} show no measured change: {', '.join(without)}.")
 W(f"**Focus.** {len(foc)} components were given a real keyboard focus. {' '.join(parts)}")

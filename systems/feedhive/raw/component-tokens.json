@@ -501,6 +501,12 @@
         "source": "the first text node's color on nav-dropdown hover (raw/components-computed.json)",
         "description": "The #22252d nav ink on hover/open."
       },
+      "faint": {
+        "value": "#8b9098",
+        "type": "color",
+        "source": "the first text node's color on nav-panel default (raw/components-computed.json)",
+        "description": "The #8b9098 faint dropdown-group label."
+      },
       "meta": {
         "value": "#6c7280",
         "type": "color",
@@ -596,7 +602,7 @@
         "description": "The #e6e2dc footer top rule (border-[#e6e2dc], visible in footer-light crops)."
       },
       "badgeChip": {
-        "value": "#dfdfe4",
+        "value": "#cfd1d9",
         "type": "color",
         "source": "the painted border layer on hero-badge default (raw/components-computed.json paint list)",
         "description": "The #cfd1d9 border on the inner rounded chip of the gradient-ring badge."
@@ -835,6 +841,24 @@
         "type": "color",
         "source": "computed color of login-forgot default on app.feedhive.com (raw/components-computed.json)",
         "description": "The #5d60ec link violet."
+      },
+      "submit-gradient": {
+        "$value": [
+          {
+            "color": "#4457ff",
+            "position": 0.0
+          },
+          {
+            "color": "#7583fd",
+            "position": 1.0
+          }
+        ],
+        "$type": "gradient",
+        "$extensions": {
+          "source": "computed backgroundImage of login-submit default on app.feedhive.com (raw/components-computed.json)",
+          "angle": "60deg"
+        },
+        "$description": "The opaque linear-gradient(60deg, #4457ff, #7583fd) painted over the sign-in submit's #3b82f6 backgroundColor."
       }
     }
   }

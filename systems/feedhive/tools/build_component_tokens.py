@@ -205,9 +205,15 @@ def ratio(name):
     return decl(name, "other")
 
 
-def painted(comp, state, key):
+def painted(comp, state, key, node=None):
+    """The painted layer's reading for key. node pins the layer (a regex on its
+    tag+classes) when the token names a specific child — without it the
+    size-matched preference returns the component's own box, which is the
+    wrong layer for a value measured on an inner element."""
     c = C[comp]["states"][state]
     entries = [p for p in c.get("paint") or [] if p.get(key)]
+    if node is not None:
+        entries = [p for p in entries if re.search(node, p.get("node") or "")]
     if not entries:
         raise KeyError(key)
     rect = c.get("rect") or {}
@@ -412,7 +418,7 @@ for key, comp, state, prop, group, desc in [
     ("gray", "billing-monthly", "default", "color", "text", "The #757b86 unselected-toggle gray."),
     ("linkInk", "nav-dropdown", "default", "textColor", "text", "The #4f5562 nav-pill ink."),
     ("navHover", "nav-dropdown", "hover", "textColor", "text", "The #22252d nav ink on hover/open."),
-    ("faint", None, None, "text", "text", "The #8b9098 faint dropdown-group label."),
+    ("faint", "nav-panel", "default", "text", "text", "The #8b9098 faint dropdown-group label."),
     ("meta", "blog-row", "default", "text", "text", "The #6c7280 blog-meta gray."),
     ("monoLabel", "agent-card", "default", "text", "text", "The #4457ff mono kicker label inside feature cards (brand indigo on light tint)."),
 ]:
@@ -465,9 +471,13 @@ for key, comp, state, prop, group, desc in [
     ("footerRule", None, None, "value:#e6e2dc", "border", "The #e6e2dc footer top rule (border-[#e6e2dc], visible in footer-light crops)."),
     ("badgeChip", "hero-badge", "default", "paint:border", "border", "The #cfd1d9 border on the inner rounded chip of the gradient-ring badge."),
 ]:
+    # Painted-layer picks that must not fall back to the component's own box:
+    # badgeChip names the inner rounded chip (the span inside the badge pill),
+    # whose #cfd1d9 border is not the outer pill's #dfdfe4 hairline.
+    PAINT_NODE = {"badgeChip": r"^span\."}
     try:
         if prop == "paint:border":
-            raw = painted(comp, state, "border")
+            raw = painted(comp, state, "border", PAINT_NODE.get(key))
             m = re.search(COLOR_V.pattern, raw)
             raw = m.group(1) if m else raw
             src = f"the painted border layer on {comp} {state} (raw/components-computed.json paint list)"
@@ -602,6 +612,27 @@ for name, cname, state, prop, ty_, desc in [
                               f"computed {prop} of {cname} {state} on app.feedhive.com (raw/components-computed.json)", desc)
     except KeyError:
         pass
+
+# The sign-in submit paints an opaque linear-gradient(60deg, #4457ff,
+# #7583fd) over its #3b82f6 backgroundColor — keep the gradient as its own
+# token so the style-guide mock reproduces the captured fill, not just the
+# flat colour underneath.
+try:
+    bgi = st("login-submit", "default")["backgroundImage"]
+    m = re.fullmatch(r"linear-gradient\((-?[\d.]+)deg,\s*(.+)\)", bgi.strip())
+    if m:
+        cols = [c.strip() for c in re.split(r",(?![^(]*\))", m.group(2))]
+        login["submit-gradient"] = {
+            "$value": [{"color": norm_color(col), "position": round(i / (len(cols) - 1), 4)}
+                       for i, col in enumerate(cols)],
+            "$type": "gradient",
+            "$extensions": {
+                "source": "computed backgroundImage of login-submit default on app.feedhive.com (raw/components-computed.json)",
+                "angle": m.group(1) + "deg"},
+            "$description": "The opaque linear-gradient(60deg, #4457ff, #7583fd) painted over the sign-in submit's #3b82f6 backgroundColor.",
+        }
+except KeyError:
+    pass
 
 (RAW / "component-tokens.json").write_text(json.dumps(SPEC, indent=2, ensure_ascii=False) + "\n")
 print("component-tokens.json:", {k: len(v) for k, v in SPEC.items() if k != "_about"})

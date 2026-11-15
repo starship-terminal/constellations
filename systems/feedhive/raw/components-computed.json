@@ -1,6 +1,6 @@
 {
  "_meta": {
-  "read": "2026-11-14",
+  "read": "2026-11-15",
   "viewport": "1440 x 900 (mobile group 390 x 844); every www.feedhive.com page paints light — no user theme toggle, no dark mode; app.feedhive.com sign-in/up is a separate light Chakra-UI app",
   "tool": "tools/capture/public/measure.mjs",
   "sheets": {
@@ -1098,7 +1098,8 @@
       "color": "rgb(79, 95, 215)"
      },
      "crop": "components/crops/promo-bar-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-15"
     },
     "hover": {
      "tag": "div",
@@ -1216,16 +1217,18 @@
       "color": "rgb(79, 95, 215)"
      },
      "crop": "components/crops/promo-bar-hover.png",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "run": "2026-11-15"
     }
    },
    "page": "home",
-   "run": "2026-11-14",
+   "run": "2026-11-15",
    "url": "https://www.feedhive.com/",
    "title": "Launch promo bar",
    "group": "Promo bar",
    "desc": "The top banner (\"Limited launch bonus: Double your AI credits for 3 months when you start today →\"); measured, never followed.",
-   "selector": "launch promo banner"
+   "selector": "launch promo banner",
+   "recaptureMissed": "2026-11-15"
   },
   "mkt-header": {
    "states": {
@@ -1357,11 +1360,12 @@
       "color": "rgb(79, 85, 98)"
      },
      "crop": "components/crops/mkt-header-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-15"
     }
    },
    "page": "home",
-   "run": "2026-11-14",
+   "run": "2026-11-15",
    "url": "https://www.feedhive.com/",
    "title": "Site header",
    "group": "Site chrome",
@@ -1451,11 +1455,12 @@
       "top": "auto"
      },
      "crop": "components/crops/mkt-logo-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-15"
     }
    },
    "page": "home",
-   "run": "2026-11-14",
+   "run": "2026-11-15",
    "url": "https://www.feedhive.com/",
    "title": "Logo",
    "group": "Site chrome",
@@ -1564,7 +1569,8 @@
       "color": "rgb(79, 85, 98)"
      },
      "crop": "components/crops/nav-dropdown-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-15"
     },
     "hover": {
      "tag": "a",
@@ -1666,7 +1672,8 @@
       "color": "rgb(34, 37, 45)"
      },
      "crop": "components/crops/nav-dropdown-hover.png",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "run": "2026-11-15"
     },
     "focus-visible": {
      "tag": "a",
@@ -1775,7 +1782,8 @@
       "color": "rgb(34, 37, 45)"
      },
      "crop": "components/crops/nav-dropdown-focus-visible.png",
-     "via": "Shift+Tab, Tab"
+     "via": "Shift+Tab, Tab",
+     "run": "2026-11-15"
     },
     "pressed": {
      "tag": "a",
@@ -1877,7 +1885,8 @@
       "color": "rgb(34, 37, 45)"
      },
      "crop": "components/crops/nav-dropdown-pressed.png",
-     "via": "CDP forcePseudoState :active:hover"
+     "via": "CDP forcePseudoState :active:hover",
+     "run": "2026-11-15"
     },
     "opened": {
      "tag": "a",
@@ -1979,11 +1988,12 @@
       "color": "rgb(34, 37, 45)"
      },
      "crop": "components/crops/nav-dropdown-opened.png",
-     "via": "own toggle"
+     "via": "own toggle",
+     "run": "2026-11-15"
     }
    },
    "page": "home",
-   "run": "2026-11-14",
+   "run": "2026-11-15",
    "url": "https://www.feedhive.com/",
    "title": "Nav dropdown trigger",
    "group": "Site chrome",
@@ -2164,11 +2174,12 @@
       "color": "rgb(92, 124, 250)"
      },
      "crop": "components/crops/nav-panel-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-15"
     }
    },
    "page": "home",
-   "run": "2026-11-14",
+   "run": "2026-11-15",
    "url": "https://www.feedhive.com/",
    "title": "Nav dropdown panel",
    "group": "Site chrome",
@@ -2286,7 +2297,8 @@
       "color": "rgb(92, 124, 250)"
      },
      "crop": "components/crops/nav-menu-item-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-15"
     },
     "hover": {
      "tag": "a",
@@ -2403,11 +2415,12 @@
       "color": "rgb(92, 124, 250)"
      },
      "crop": "components/crops/nav-menu-item-hover.png",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "run": "2026-11-15"
     }
    },
    "page": "home",
-   "run": "2026-11-14",
+   "run": "2026-11-15",
    "url": "https://www.feedhive.com/",
    "title": "Nav dropdown item",
    "group": "Site chrome",
@@ -2509,7 +2522,8 @@
       "textTransform": "none"
      },
      "crop": "components/crops/nav-link-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-15"
     },
     "hover": {
      "tag": "a",
@@ -2604,7 +2618,8 @@
       "textTransform": "none"
      },
      "crop": "components/crops/nav-link-hover.png",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "run": "2026-11-15"
     },
     "focus-visible": {
      "tag": "a",
@@ -2706,7 +2721,8 @@
       "textTransform": "none"
      },
      "crop": "components/crops/nav-link-focus-visible.png",
-     "via": "keydown then focus()"
+     "via": "keydown then focus()",
+     "run": "2026-11-15"
     },
     "pressed": {
      "tag": "a",
@@ -2801,11 +2817,12 @@
       "textTransform": "none"
      },
      "crop": "components/crops/nav-link-pressed.png",
-     "via": "CDP forcePseudoState :active:hover"
+     "via": "CDP forcePseudoState :active:hover",
+     "run": "2026-11-15"
     }
    },
    "page": "home",
-   "run": "2026-11-14",
+   "run": "2026-11-15",
    "url": "https://www.feedhive.com/",
    "title": "Nav link",
    "group": "Site chrome",
@@ -2903,7 +2920,8 @@
       }
      ],
      "crop": "components/crops/nav-login-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-15"
     },
     "hover": {
      "tag": "a",
@@ -2994,7 +3012,8 @@
       }
      ],
      "crop": "components/crops/nav-login-hover.png",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "run": "2026-11-15"
     },
     "focus-visible": {
      "tag": "a",
@@ -3086,7 +3105,8 @@
       }
      ],
      "crop": "components/crops/nav-login-focus-visible.png",
-     "via": "Shift+Tab, Tab"
+     "via": "Shift+Tab, Tab",
+     "run": "2026-11-15"
     },
     "pressed": {
      "tag": "a",
@@ -3177,11 +3197,12 @@
       }
      ],
      "crop": "components/crops/nav-login-pressed.png",
-     "via": "CDP forcePseudoState :active:hover"
+     "via": "CDP forcePseudoState :active:hover",
+     "run": "2026-11-15"
     }
    },
    "page": "home",
-   "run": "2026-11-14",
+   "run": "2026-11-15",
    "url": "https://www.feedhive.com/",
    "title": "Login button",
    "group": "Site chrome",
@@ -3279,7 +3300,8 @@
       }
      ],
      "crop": "components/crops/nav-signup-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-15"
     },
     "hover": {
      "tag": "a",
@@ -3370,7 +3392,8 @@
       }
      ],
      "crop": "components/crops/nav-signup-hover.png",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "run": "2026-11-15"
     },
     "focus-visible": {
      "tag": "a",
@@ -3462,7 +3485,8 @@
       }
      ],
      "crop": "components/crops/nav-signup-focus-visible.png",
-     "via": "Shift+Tab, Tab"
+     "via": "Shift+Tab, Tab",
+     "run": "2026-11-15"
     },
     "pressed": {
      "tag": "a",
@@ -3553,11 +3577,12 @@
       }
      ],
      "crop": "components/crops/nav-signup-pressed.png",
-     "via": "CDP forcePseudoState :active:hover"
+     "via": "CDP forcePseudoState :active:hover",
+     "run": "2026-11-15"
     }
    },
    "page": "home",
-   "run": "2026-11-14",
+   "run": "2026-11-15",
    "url": "https://www.feedhive.com/",
    "title": "Sign Up button",
    "group": "Site chrome",
@@ -3719,7 +3744,8 @@
       "textTransform": "none"
      },
      "crop": "components/crops/hero-badge-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-15"
     },
     "hover": {
      "tag": "div",
@@ -3807,7 +3833,7 @@
       "height": "41px",
       "position": "absolute",
       "backgroundColor": "rgba(0, 0, 0, 0)",
-      "backgroundImage": "conic-gradient(from 76.3527deg, rgb(79, 125, 255), rgb(113, 101, 255), rgb(214, 80, 255), rgb(255, 127, 89), rgb(79, 125, 255))",
+      "backgroundImage": "conic-gradient(from 68.1778deg, rgb(79, 125, 255), rgb(113, 101, 255), rgb(214, 80, 255), rgb(255, 127, 89), rgb(79, 125, 255))",
       "boxShadow": "none",
       "borderTopWidth": "0px",
       "borderTopStyle": "solid",
@@ -3837,7 +3863,7 @@
       {
        "node": "div::before.cta-gradient-ring.cta-gradient-ring-pill",
        "size": "223.938pxx41px",
-       "bgImage": "conic-gradient(from 76.3527deg, rgb(79, 125, 255), rgb(113, 101, 255), rgb(214, 80, 255), rgb(255, 127, 89), rgb(79, 125, 255))",
+       "bgImage": "conic-gradient(from 68.1778deg, rgb(79, 125, 255), rgb(113, 101, 255), rgb(214, 80, 255), rgb(255, 127, 89), rgb(79, 125, 255))",
        "radius": "9999px"
       },
       {
@@ -3874,11 +3900,12 @@
       "textTransform": "none"
      },
      "crop": "components/crops/hero-badge-hover.png",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "run": "2026-11-15"
     }
    },
    "page": "home",
-   "run": "2026-11-14",
+   "run": "2026-11-15",
    "url": "https://www.feedhive.com/",
    "title": "Release badge",
    "group": "Home",
@@ -3989,11 +4016,12 @@
       "textTransform": "none"
      },
      "crop": "components/crops/hero-h1-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-15"
     }
    },
    "page": "home",
-   "run": "2026-11-14",
+   "run": "2026-11-15",
    "url": "https://www.feedhive.com/",
    "title": "Hero headline",
    "group": "Home",
@@ -4083,11 +4111,12 @@
       "top": "auto"
      },
      "crop": "components/crops/hero-sub-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-15"
     }
    },
    "page": "home",
-   "run": "2026-11-14",
+   "run": "2026-11-15",
    "url": "https://www.feedhive.com/",
    "title": "Hero lede",
    "group": "Home",
@@ -4185,7 +4214,8 @@
       }
      ],
      "crop": "components/crops/hero-cta-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-15"
     },
     "hover": {
      "tag": "a",
@@ -4276,7 +4306,8 @@
       }
      ],
      "crop": "components/crops/hero-cta-hover.png",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "run": "2026-11-15"
     },
     "focus-visible": {
      "tag": "a",
@@ -4368,7 +4399,8 @@
       }
      ],
      "crop": "components/crops/hero-cta-focus-visible.png",
-     "via": "Shift+Tab, Tab"
+     "via": "Shift+Tab, Tab",
+     "run": "2026-11-15"
     },
     "pressed": {
      "tag": "a",
@@ -4459,11 +4491,12 @@
       }
      ],
      "crop": "components/crops/hero-cta-pressed.png",
-     "via": "CDP forcePseudoState :active:hover"
+     "via": "CDP forcePseudoState :active:hover",
+     "run": "2026-11-15"
     }
    },
    "page": "home",
-   "run": "2026-11-14",
+   "run": "2026-11-15",
    "url": "https://www.feedhive.com/",
    "title": "Hero CTA",
    "group": "Home",
@@ -4572,11 +4605,12 @@
       "color": "rgb(68, 87, 255)"
      },
      "crop": "components/crops/hero-check-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-15"
     }
    },
    "page": "home",
-   "run": "2026-11-14",
+   "run": "2026-11-15",
    "url": "https://www.feedhive.com/",
    "title": "Feature check row",
    "group": "Home",
@@ -4678,11 +4712,12 @@
       }
      ],
      "crop": "components/crops/hero-mock-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-15"
     }
    },
    "page": "home",
-   "run": "2026-11-14",
+   "run": "2026-11-15",
    "url": "https://www.feedhive.com/",
    "title": "Product mock panel",
    "group": "Home",
@@ -4781,7 +4816,8 @@
       }
      ],
      "crop": "components/crops/tab-pill-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-15"
     },
     "hover": {
      "tag": "button",
@@ -4873,7 +4909,8 @@
       }
      ],
      "crop": "components/crops/tab-pill-hover.png",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "run": "2026-11-15"
     },
     "selected": {
      "tag": "button",
@@ -4979,11 +5016,12 @@
       "color": "rgb(255, 255, 255)"
      },
      "crop": "components/crops/tab-pill-selected.png",
-     "via": "own toggle, then left selected"
+     "via": "own toggle, then left selected",
+     "run": "2026-11-15"
     }
    },
    "page": "home",
-   "run": "2026-11-14",
+   "run": "2026-11-15",
    "url": "https://www.feedhive.com/",
    "title": "Feature tab pill",
    "group": "Feature tabs",
@@ -4992,29 +5030,29 @@
   },
   "tab-pill-active": {
    "states": {
-    "default": {
+    "selected": {
      "tag": "button",
      "classes": "inline-flex h-[30px] cursor-pointer items-center",
      "text": "AI Assistant",
      "rect": {
-      "x": 195.8,
+      "x": 183.8,
       "y": 435.2,
-      "w": 104.64,
+      "w": 116.64,
       "h": 30
      },
      "style": {
       "display": "flex",
-      "position": "static",
+      "position": "relative",
       "boxSizing": "border-box",
-      "width": "104.641px",
+      "width": "116.641px",
       "height": "30px",
       "minWidth": "auto",
       "maxWidth": "none",
       "minHeight": "auto",
       "paddingTop": "0px",
-      "paddingRight": "12px",
+      "paddingRight": "20px",
       "paddingBottom": "0px",
-      "paddingLeft": "12px",
+      "paddingLeft": "16px",
       "marginTop": "0px",
       "marginRight": "0px",
       "marginBottom": "0px",
@@ -5027,28 +5065,28 @@
       "justifyContent": "center",
       "gridTemplateColumns": "none",
       "borderTopWidth": "1px",
-      "borderTopStyle": "dashed",
-      "borderTopColor": "rgb(216, 219, 226)",
+      "borderTopStyle": "solid",
+      "borderTopColor": "rgb(132, 161, 255)",
       "borderRightWidth": "1px",
-      "borderRightStyle": "dashed",
-      "borderRightColor": "rgb(216, 219, 226)",
+      "borderRightStyle": "solid",
+      "borderRightColor": "rgb(132, 161, 255)",
       "borderBottomWidth": "1px",
-      "borderBottomStyle": "dashed",
-      "borderBottomColor": "rgb(216, 219, 226)",
+      "borderBottomStyle": "solid",
+      "borderBottomColor": "rgb(132, 161, 255)",
       "borderLeftWidth": "1px",
-      "borderLeftStyle": "dashed",
-      "borderLeftColor": "rgb(216, 219, 226)",
+      "borderLeftStyle": "solid",
+      "borderLeftColor": "rgb(132, 161, 255)",
       "borderTopLeftRadius": "3.35544e+07px",
       "borderTopRightRadius": "3.35544e+07px",
       "borderBottomRightRadius": "3.35544e+07px",
       "borderBottomLeftRadius": "3.35544e+07px",
-      "backgroundColor": "rgb(255, 255, 255)",
+      "backgroundColor": "rgb(238, 242, 255)",
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
       "outlineWidth": "0px",
       "outlineStyle": "none",
-      "outlineColor": "rgb(88, 95, 107)",
+      "outlineColor": "rgb(90, 132, 255)",
       "outlineOffset": "0px",
       "fontFamily": "Inter, \"Inter Fallback\"",
       "fontSize": "14px",
@@ -5056,9 +5094,9 @@
       "lineHeight": "21px",
       "letterSpacing": "-0.28px",
       "textTransform": "none",
-      "color": "rgb(88, 95, 107)",
+      "color": "rgb(90, 132, 255)",
       "textDecorationLine": "none",
-      "textDecorationColor": "rgb(88, 95, 107)",
+      "textDecorationColor": "rgb(90, 132, 255)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
       "transitionProperty": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events",
@@ -5070,119 +5108,42 @@
       "transform": "none",
       "overflow": "visible",
       "zIndex": "auto",
-      "top": "auto"
+      "top": "0px"
      },
      "paint": [
       {
        "node": "button.inline-flex.h-[30px]",
-       "size": "104.6x30.0",
-       "border": "T:1px dashed rgb(216, 219, 226) | R:1px dashed rgb(216, 219, 226) | B:1px dashed rgb(216, 219, 226) | L:1px dashed rgb(216, 219, 226)",
-       "bg": "rgb(255, 255, 255)",
+       "size": "116.6x30.0",
+       "border": "T:1px solid rgb(132, 161, 255) | R:1px solid rgb(132, 161, 255) | B:1px solid rgb(132, 161, 255) | L:1px solid rgb(132, 161, 255)",
+       "bg": "rgb(238, 242, 255)",
        "radius": "3.35544e+07px"
-      }
-     ],
-     "crop": "components/crops/tab-pill-active-default.png",
-     "via": "at rest"
-    },
-    "hover": {
-     "tag": "button",
-     "classes": "inline-flex h-[30px] cursor-pointer items-center",
-     "text": "AI Assistant",
-     "rect": {
-      "x": 195.8,
-      "y": 435.2,
-      "w": 104.64,
-      "h": 30
-     },
-     "style": {
-      "display": "flex",
-      "position": "static",
-      "boxSizing": "border-box",
-      "width": "104.641px",
-      "height": "30px",
-      "minWidth": "auto",
-      "maxWidth": "none",
-      "minHeight": "auto",
-      "paddingTop": "0px",
-      "paddingRight": "12px",
-      "paddingBottom": "0px",
-      "paddingLeft": "12px",
-      "marginTop": "0px",
-      "marginRight": "0px",
-      "marginBottom": "0px",
-      "marginLeft": "0px",
-      "gap": "normal",
-      "rowGap": "normal",
-      "columnGap": "normal",
-      "flexDirection": "row",
-      "alignItems": "center",
-      "justifyContent": "center",
-      "gridTemplateColumns": "none",
-      "borderTopWidth": "1px",
-      "borderTopStyle": "dashed",
-      "borderTopColor": "rgb(151, 157, 170)",
-      "borderRightWidth": "1px",
-      "borderRightStyle": "dashed",
-      "borderRightColor": "rgb(151, 157, 170)",
-      "borderBottomWidth": "1px",
-      "borderBottomStyle": "dashed",
-      "borderBottomColor": "rgb(151, 157, 170)",
-      "borderLeftWidth": "1px",
-      "borderLeftStyle": "dashed",
-      "borderLeftColor": "rgb(151, 157, 170)",
-      "borderTopLeftRadius": "3.35544e+07px",
-      "borderTopRightRadius": "3.35544e+07px",
-      "borderBottomRightRadius": "3.35544e+07px",
-      "borderBottomLeftRadius": "3.35544e+07px",
-      "backgroundColor": "rgb(255, 255, 255)",
-      "backgroundImage": "none",
-      "boxShadow": "none",
-      "backdropFilter": "none",
-      "outlineWidth": "0px",
-      "outlineStyle": "none",
-      "outlineColor": "rgb(44, 49, 57)",
-      "outlineOffset": "0px",
-      "fontFamily": "Inter, \"Inter Fallback\"",
-      "fontSize": "14px",
-      "fontWeight": "500",
-      "lineHeight": "21px",
-      "letterSpacing": "-0.28px",
-      "textTransform": "none",
-      "color": "rgb(44, 49, 57)",
-      "textDecorationLine": "none",
-      "textDecorationColor": "rgb(44, 49, 57)",
-      "textDecorationThickness": "auto",
-      "textUnderlineOffset": "auto",
-      "transitionProperty": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events",
-      "transitionDuration": "0.15s",
-      "transitionTimingFunction": "cubic-bezier(0.4, 0, 0.2, 1)",
-      "transitionDelay": "0s",
-      "cursor": "pointer",
-      "opacity": "1",
-      "transform": "none",
-      "overflow": "visible",
-      "zIndex": "auto",
-      "top": "auto"
-     },
-     "paint": [
+      },
       {
-       "node": "button.inline-flex.h-[30px]",
-       "size": "104.6x30.0",
-       "border": "T:1px dashed rgb(151, 157, 170) | R:1px dashed rgb(151, 157, 170) | B:1px dashed rgb(151, 157, 170) | L:1px dashed rgb(151, 157, 170)",
-       "bg": "rgb(255, 255, 255)",
+       "node": "span.tag-check-bounce.absolute",
+       "size": "24.0x24.0",
+       "border": "T:2px solid rgb(255, 255, 255) | R:2px solid rgb(255, 255, 255) | B:2px solid rgb(255, 255, 255) | L:2px solid rgb(255, 255, 255)",
+       "bg": "rgb(90, 132, 255)",
        "radius": "3.35544e+07px"
       }
      ],
-     "crop": "components/crops/tab-pill-active-hover.png",
-     "via": "mouse hover"
+     "icon": {
+      "w": 14,
+      "h": 14,
+      "fill": "none",
+      "stroke": "none",
+      "color": "rgb(255, 255, 255)"
+     },
+     "crop": "components/crops/tab-pill-active-selected.png",
+     "via": "own toggle, then left selected",
+     "run": "2026-11-15"
     }
    },
    "page": "home",
-   "run": "2026-11-14",
+   "run": "2026-11-15",
    "url": "https://www.feedhive.com/",
    "title": "Feature tab pill (active)",
    "group": "Feature tabs",
-   "desc": "The selected tab pill (AI Assistant on load), measured at rest.",
+   "desc": "A feature tab pill in its selected state — the #eef2ff indigo tint, #84a1ff border and #5a84ff ink the pills select into; selected by clicking (the at-load selection auto-rotates).",
    "selector": "main button AI Assistant"
   },
   "agent-card": {
@@ -5289,7 +5250,8 @@
       "textTransform": "uppercase"
      },
      "crop": "components/crops/agent-card-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-15"
     },
     "hover": {
      "tag": "a",
@@ -5393,11 +5355,12 @@
       "textTransform": "uppercase"
      },
      "crop": "components/crops/agent-card-hover.png",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "run": "2026-11-15"
     }
    },
    "page": "home",
-   "run": "2026-11-14",
+   "run": "2026-11-15",
    "url": "https://www.feedhive.com/",
    "title": "Agent card",
    "group": "Home",
@@ -5487,11 +5450,12 @@
       "top": "auto"
      },
      "crop": "components/crops/section-h2-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-15"
     }
    },
    "page": "home",
-   "run": "2026-11-14",
+   "run": "2026-11-15",
    "url": "https://www.feedhive.com/",
    "title": "Section heading",
    "group": "Home",
@@ -5700,11 +5664,12 @@
       "color": "rgb(118, 124, 136)"
      },
      "crop": "components/crops/footer-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-15"
     }
    },
    "page": "home",
-   "run": "2026-11-14",
+   "run": "2026-11-15",
    "url": "https://www.feedhive.com/",
    "title": "Footer",
    "group": "Footer",
@@ -5794,7 +5759,8 @@
       "top": "auto"
      },
      "crop": "components/crops/footer-link-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-15"
     },
     "hover": {
      "tag": "a",
@@ -5877,7 +5843,8 @@
       "top": "auto"
      },
      "crop": "components/crops/footer-link-hover.png",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "run": "2026-11-15"
     },
     "focus-visible": {
      "tag": "a",
@@ -5967,7 +5934,8 @@
       }
      ],
      "crop": "components/crops/footer-link-focus-visible.png",
-     "via": "Shift+Tab, Tab"
+     "via": "Shift+Tab, Tab",
+     "run": "2026-11-15"
     },
     "pressed": {
      "tag": "a",
@@ -6005,16 +5973,16 @@
       "gridTemplateColumns": "none",
       "borderTopWidth": "0px",
       "borderTopStyle": "solid",
-      "borderTopColor": "rgb(34, 37, 45)",
+      "borderTopColor": "rgb(103, 110, 123)",
       "borderRightWidth": "0px",
       "borderRightStyle": "solid",
-      "borderRightColor": "rgb(34, 37, 45)",
+      "borderRightColor": "rgb(103, 110, 123)",
       "borderBottomWidth": "0px",
       "borderBottomStyle": "solid",
-      "borderBottomColor": "rgb(34, 37, 45)",
+      "borderBottomColor": "rgb(103, 110, 123)",
       "borderLeftWidth": "0px",
       "borderLeftStyle": "solid",
-      "borderLeftColor": "rgb(34, 37, 45)",
+      "borderLeftColor": "rgb(103, 110, 123)",
       "borderTopLeftRadius": "0px",
       "borderTopRightRadius": "0px",
       "borderBottomRightRadius": "0px",
@@ -6025,7 +5993,7 @@
       "backdropFilter": "none",
       "outlineWidth": "0px",
       "outlineStyle": "none",
-      "outlineColor": "rgb(34, 37, 45)",
+      "outlineColor": "rgb(103, 110, 123)",
       "outlineOffset": "0px",
       "fontFamily": "Inter, \"Inter Fallback\"",
       "fontSize": "15px",
@@ -6033,9 +6001,9 @@
       "lineHeight": "24px",
       "letterSpacing": "-0.3px",
       "textTransform": "none",
-      "color": "rgb(34, 37, 45)",
+      "color": "rgb(103, 110, 123)",
       "textDecorationLine": "none",
-      "textDecorationColor": "rgb(34, 37, 45)",
+      "textDecorationColor": "rgb(103, 110, 123)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
       "transitionProperty": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events",
@@ -6050,11 +6018,12 @@
       "top": "auto"
      },
      "crop": "components/crops/footer-link-pressed.png",
-     "via": "CDP forcePseudoState :active:hover"
+     "via": "CDP forcePseudoState :active:hover",
+     "run": "2026-11-15"
     }
    },
    "page": "home",
-   "run": "2026-11-14",
+   "run": "2026-11-15",
    "url": "https://www.feedhive.com/",
    "title": "Footer link",
    "group": "Footer",
@@ -6144,11 +6113,12 @@
       "top": "auto"
      },
      "crop": "components/crops/price-h1-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-15"
     }
    },
    "page": "pricing",
-   "run": "2026-11-14",
+   "run": "2026-11-15",
    "url": "https://www.feedhive.com/pricing",
    "title": "Pricing headline",
    "group": "Pricing",
@@ -6246,7 +6216,8 @@
       }
      ],
      "crop": "components/crops/billing-monthly-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-15"
     },
     "hover": {
      "tag": "button",
@@ -6337,7 +6308,8 @@
       }
      ],
      "crop": "components/crops/billing-monthly-hover.png",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "run": "2026-11-15"
     },
     "selected": {
      "tag": "button",
@@ -6436,11 +6408,12 @@
       }
      ],
      "crop": "components/crops/billing-monthly-selected.png",
-     "via": "own toggle, then left selected"
+     "via": "own toggle, then left selected",
+     "run": "2026-11-15"
     }
    },
    "page": "pricing",
-   "run": "2026-11-14",
+   "run": "2026-11-15",
    "url": "https://www.feedhive.com/pricing",
    "title": "Billing toggle (Monthly)",
    "group": "Pricing",
@@ -6485,27 +6458,27 @@
       "gridTemplateColumns": "none",
       "borderTopWidth": "0px",
       "borderTopStyle": "solid",
-      "borderTopColor": "rgb(117, 123, 134)",
+      "borderTopColor": "rgb(255, 255, 255)",
       "borderRightWidth": "0px",
       "borderRightStyle": "solid",
-      "borderRightColor": "rgb(117, 123, 134)",
+      "borderRightColor": "rgb(255, 255, 255)",
       "borderBottomWidth": "0px",
       "borderBottomStyle": "solid",
-      "borderBottomColor": "rgb(117, 123, 134)",
+      "borderBottomColor": "rgb(255, 255, 255)",
       "borderLeftWidth": "0px",
       "borderLeftStyle": "solid",
-      "borderLeftColor": "rgb(117, 123, 134)",
+      "borderLeftColor": "rgb(255, 255, 255)",
       "borderTopLeftRadius": "3.35544e+07px",
       "borderTopRightRadius": "3.35544e+07px",
       "borderBottomRightRadius": "3.35544e+07px",
       "borderBottomLeftRadius": "3.35544e+07px",
-      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "backgroundColor": "rgb(68, 87, 255)",
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
       "outlineWidth": "0px",
       "outlineStyle": "none",
-      "outlineColor": "rgb(117, 123, 134)",
+      "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
       "fontFamily": "Inter, \"Inter Fallback\"",
       "fontSize": "14px",
@@ -6513,9 +6486,9 @@
       "lineHeight": "21px",
       "letterSpacing": "-0.28px",
       "textTransform": "none",
-      "color": "rgb(117, 123, 134)",
+      "color": "rgb(255, 255, 255)",
       "textDecorationLine": "none",
-      "textDecorationColor": "rgb(117, 123, 134)",
+      "textDecorationColor": "rgb(255, 255, 255)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
       "transitionProperty": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events",
@@ -6529,6 +6502,14 @@
       "zIndex": "auto",
       "top": "auto"
      },
+     "paint": [
+      {
+       "node": "button.min-w-[112px].rounded-full",
+       "size": "112.0x41.0",
+       "bg": "rgb(68, 87, 255)",
+       "radius": "3.35544e+07px"
+      }
+     ],
      "ancestors": [
       {
        "up": 1,
@@ -6538,7 +6519,8 @@
       }
      ],
      "crop": "components/crops/billing-yearly-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-15"
     },
     "hover": {
      "tag": "button",
@@ -6576,27 +6558,27 @@
       "gridTemplateColumns": "none",
       "borderTopWidth": "0px",
       "borderTopStyle": "solid",
-      "borderTopColor": "rgb(43, 47, 55)",
+      "borderTopColor": "rgb(255, 255, 255)",
       "borderRightWidth": "0px",
       "borderRightStyle": "solid",
-      "borderRightColor": "rgb(43, 47, 55)",
+      "borderRightColor": "rgb(255, 255, 255)",
       "borderBottomWidth": "0px",
       "borderBottomStyle": "solid",
-      "borderBottomColor": "rgb(43, 47, 55)",
+      "borderBottomColor": "rgb(255, 255, 255)",
       "borderLeftWidth": "0px",
       "borderLeftStyle": "solid",
-      "borderLeftColor": "rgb(43, 47, 55)",
+      "borderLeftColor": "rgb(255, 255, 255)",
       "borderTopLeftRadius": "3.35544e+07px",
       "borderTopRightRadius": "3.35544e+07px",
       "borderBottomRightRadius": "3.35544e+07px",
       "borderBottomLeftRadius": "3.35544e+07px",
-      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "backgroundColor": "rgb(51, 71, 251)",
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
       "outlineWidth": "0px",
       "outlineStyle": "none",
-      "outlineColor": "rgb(43, 47, 55)",
+      "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
       "fontFamily": "Inter, \"Inter Fallback\"",
       "fontSize": "14px",
@@ -6604,9 +6586,9 @@
       "lineHeight": "21px",
       "letterSpacing": "-0.28px",
       "textTransform": "none",
-      "color": "rgb(43, 47, 55)",
+      "color": "rgb(255, 255, 255)",
       "textDecorationLine": "none",
-      "textDecorationColor": "rgb(43, 47, 55)",
+      "textDecorationColor": "rgb(255, 255, 255)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
       "transitionProperty": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events",
@@ -6620,6 +6602,14 @@
       "zIndex": "auto",
       "top": "auto"
      },
+     "paint": [
+      {
+       "node": "button.min-w-[112px].rounded-full",
+       "size": "112.0x41.0",
+       "bg": "rgb(51, 71, 251)",
+       "radius": "3.35544e+07px"
+      }
+     ],
      "ancestors": [
       {
        "up": 1,
@@ -6629,7 +6619,8 @@
       }
      ],
      "crop": "components/crops/billing-yearly-hover.png",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "run": "2026-11-15"
     },
     "focus-visible": {
      "tag": "button",
@@ -6667,21 +6658,21 @@
       "gridTemplateColumns": "none",
       "borderTopWidth": "0px",
       "borderTopStyle": "solid",
-      "borderTopColor": "rgb(117, 123, 134)",
+      "borderTopColor": "rgb(255, 255, 255)",
       "borderRightWidth": "0px",
       "borderRightStyle": "solid",
-      "borderRightColor": "rgb(117, 123, 134)",
+      "borderRightColor": "rgb(255, 255, 255)",
       "borderBottomWidth": "0px",
       "borderBottomStyle": "solid",
-      "borderBottomColor": "rgb(117, 123, 134)",
+      "borderBottomColor": "rgb(255, 255, 255)",
       "borderLeftWidth": "0px",
       "borderLeftStyle": "solid",
-      "borderLeftColor": "rgb(117, 123, 134)",
+      "borderLeftColor": "rgb(255, 255, 255)",
       "borderTopLeftRadius": "3.35544e+07px",
       "borderTopRightRadius": "3.35544e+07px",
       "borderBottomRightRadius": "3.35544e+07px",
       "borderBottomLeftRadius": "3.35544e+07px",
-      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "backgroundColor": "rgb(68, 87, 255)",
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
@@ -6695,9 +6686,9 @@
       "lineHeight": "21px",
       "letterSpacing": "-0.28px",
       "textTransform": "none",
-      "color": "rgb(117, 123, 134)",
+      "color": "rgb(255, 255, 255)",
       "textDecorationLine": "none",
-      "textDecorationColor": "rgb(117, 123, 134)",
+      "textDecorationColor": "rgb(255, 255, 255)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
       "transitionProperty": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events",
@@ -6715,6 +6706,7 @@
       {
        "node": "button.min-w-[112px].rounded-full",
        "size": "112.0x41.0",
+       "bg": "rgb(68, 87, 255)",
        "outline": "1px auto rgb(16, 16, 16) offset 0px",
        "radius": "3.35544e+07px"
       }
@@ -6728,7 +6720,8 @@
       }
      ],
      "crop": "components/crops/billing-yearly-focus-visible.png",
-     "via": "Shift+Tab, Tab"
+     "via": "Shift+Tab, Tab",
+     "run": "2026-11-15"
     },
     "pressed": {
      "tag": "button",
@@ -6766,27 +6759,27 @@
       "gridTemplateColumns": "none",
       "borderTopWidth": "0px",
       "borderTopStyle": "solid",
-      "borderTopColor": "rgb(43, 47, 55)",
+      "borderTopColor": "rgb(255, 255, 255)",
       "borderRightWidth": "0px",
       "borderRightStyle": "solid",
-      "borderRightColor": "rgb(43, 47, 55)",
+      "borderRightColor": "rgb(255, 255, 255)",
       "borderBottomWidth": "0px",
       "borderBottomStyle": "solid",
-      "borderBottomColor": "rgb(43, 47, 55)",
+      "borderBottomColor": "rgb(255, 255, 255)",
       "borderLeftWidth": "0px",
       "borderLeftStyle": "solid",
-      "borderLeftColor": "rgb(43, 47, 55)",
+      "borderLeftColor": "rgb(255, 255, 255)",
       "borderTopLeftRadius": "3.35544e+07px",
       "borderTopRightRadius": "3.35544e+07px",
       "borderBottomRightRadius": "3.35544e+07px",
       "borderBottomLeftRadius": "3.35544e+07px",
-      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "backgroundColor": "rgb(51, 71, 251)",
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
       "outlineWidth": "0px",
       "outlineStyle": "none",
-      "outlineColor": "rgb(43, 47, 55)",
+      "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
       "fontFamily": "Inter, \"Inter Fallback\"",
       "fontSize": "14px",
@@ -6794,9 +6787,9 @@
       "lineHeight": "21px",
       "letterSpacing": "-0.28px",
       "textTransform": "none",
-      "color": "rgb(43, 47, 55)",
+      "color": "rgb(255, 255, 255)",
       "textDecorationLine": "none",
-      "textDecorationColor": "rgb(43, 47, 55)",
+      "textDecorationColor": "rgb(255, 255, 255)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
       "transitionProperty": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events",
@@ -6810,6 +6803,14 @@
       "zIndex": "auto",
       "top": "auto"
      },
+     "paint": [
+      {
+       "node": "button.min-w-[112px].rounded-full",
+       "size": "112.0x41.0",
+       "bg": "rgb(51, 71, 251)",
+       "radius": "3.35544e+07px"
+      }
+     ],
      "ancestors": [
       {
        "up": 1,
@@ -6819,11 +6820,12 @@
       }
      ],
      "crop": "components/crops/billing-yearly-pressed.png",
-     "via": "CDP forcePseudoState :active:hover"
+     "via": "CDP forcePseudoState :active:hover",
+     "run": "2026-11-15"
     }
    },
    "page": "pricing",
-   "run": "2026-11-14",
+   "run": "2026-11-15",
    "url": "https://www.feedhive.com/pricing",
    "title": "Billing toggle (Yearly)",
    "group": "Pricing",
@@ -7015,11 +7017,12 @@
       "color": "rgb(255, 255, 255)"
      },
      "crop": "components/crops/plan-card-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-15"
     }
    },
    "page": "pricing",
-   "run": "2026-11-14",
+   "run": "2026-11-15",
    "url": "https://www.feedhive.com/pricing",
    "title": "Plan card (Business)",
    "group": "Pricing",
@@ -7204,11 +7207,12 @@
       "color": "rgb(44, 49, 56)"
      },
      "crop": "components/crops/plan-card-plain-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-15"
     }
    },
    "page": "pricing",
-   "run": "2026-11-14",
+   "run": "2026-11-15",
    "url": "https://www.feedhive.com/pricing",
    "title": "Plan card (Creator)",
    "group": "Pricing",
@@ -7306,7 +7310,8 @@
       }
      ],
      "crop": "components/crops/plan-cta-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-15"
     },
     "hover": {
      "tag": "a",
@@ -7397,7 +7402,8 @@
       }
      ],
      "crop": "components/crops/plan-cta-hover.png",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "run": "2026-11-15"
     },
     "focus-visible": {
      "tag": "a",
@@ -7489,7 +7495,8 @@
       }
      ],
      "crop": "components/crops/plan-cta-focus-visible.png",
-     "via": "Shift+Tab, Tab"
+     "via": "Shift+Tab, Tab",
+     "run": "2026-11-15"
     },
     "pressed": {
      "tag": "a",
@@ -7580,11 +7587,12 @@
       }
      ],
      "crop": "components/crops/plan-cta-pressed.png",
-     "via": "CDP forcePseudoState :active:hover"
+     "via": "CDP forcePseudoState :active:hover",
+     "run": "2026-11-15"
     }
    },
    "page": "pricing",
-   "run": "2026-11-14",
+   "run": "2026-11-15",
    "url": "https://www.feedhive.com/pricing",
    "title": "Plan CTA",
    "group": "Pricing",
@@ -7746,11 +7754,12 @@
       "color": "rgb(90, 120, 255)"
      },
      "crop": "components/crops/trial-badge-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-15"
     }
    },
    "page": "pricing",
-   "run": "2026-11-14",
+   "run": "2026-11-15",
    "url": "https://www.feedhive.com/pricing",
    "title": "Trial badge",
    "group": "Pricing",

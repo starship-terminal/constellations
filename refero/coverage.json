@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 145,
-    "system_domains": 137,
-    "matched_domains": 108,
-    "missing_domains": 325,
+    "system_packages": 146,
+    "system_domains": 138,
+    "matched_domains": 109,
+    "missing_domains": 324,
     "system_domains_absent_from_catalog": 29
   },
   "matched": {

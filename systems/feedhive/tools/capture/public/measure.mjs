@@ -143,7 +143,7 @@ async function measure(key, state, target, opts = {}) {
         file = await crop(page, (opts.cropLoc || loc).filter({ visible: true }).first(), `${key}-${state}`, opts.pad ?? 8);
       } catch (e) { s.cropError = String(e.message || e).slice(0, 120); }
     }
-    c.states[state] = { ...s, crop: file, via: opts.via };
+    c.states[state] = { ...s, crop: file, via: opts.via, run };
     if (opts.extra) c.states[state].extra = await opts.extra(loc);
     log('  ', key, state, s.rect.w + 'x' + s.rect.h);
   } catch (e) {
@@ -218,6 +218,14 @@ async function S(key, target, list, meta = {}, opts = {}) {
     }
     if (undo) await undo().catch(() => {});
     if (opts.after?.[st]) await opts.after[st](loc).catch(() => {});
+  }
+  // A listed state that failed its re-read kept the earlier evidence under
+  // rerunError (and its own earlier `run`); the entry then republishes under
+  // the earlier run's page/run/url and records the miss, so retained readings
+  // never carry the new run's date.
+  if (keep && list.some((st) => out.components[key].states[st]?.rerunError)) {
+    Object.assign(out.components[key], keep);
+    out.components[key].recaptureMissed = run;
   }
   await reset();
 }
@@ -383,8 +391,15 @@ async function home() {
   // rounded-l-[16px] overflow-hidden div — measure the clip, not the image.
   await S('hero-mock', q('main img[src*="hero"]').filter({ visible: true }).first().locator('xpath=ancestor::div[contains(@class,"overflow-hidden")][1]'), ['default'], { group: g, title: 'Product mock panel', desc: 'The product screenshot beside the hero — a static public image clipped by a rounded container, not the signed-in product.', sel: 'hero product mock (img clip)' });
   g = G.tabs;
+  // The showcase pills auto-rotate their selection: which pill paints the
+  // #eef2ff tint at any instant is transient (AI Assistant on 2026-11-14,
+  // Automation then Post Conditions on 2026-11-15). The active variant is
+  // therefore captured deterministically — tab-pill-active selects AI
+  // Assistant by clicking before it is read, and it runs before tab-pill
+  // selects Composer, so an entry described as selected never holds the
+  // inactive values a later read would otherwise see.
+  await S('tab-pill-active', q('main button').filter({ hasText: /^AI Assistant$/ }).filter({ visible: true }).first(), ['selected'], { group: g, title: 'Feature tab pill (active)', desc: 'A feature tab pill in its selected state — the #eef2ff indigo tint, #84a1ff border and #5a84ff ink the pills select into; selected by clicking (the at-load selection auto-rotates).', sel: 'main button AI Assistant' });
   await S('tab-pill', q('main button').filter({ hasText: /^Composer$/ }).filter({ visible: true }).first(), ['default', 'hover', 'selected'], { group: g, title: 'Feature tab pill', desc: 'One of the feature tab pills (Composer / AI Assistant / Automation / …) that switch the showcase panel — a local UI toggle; selected by clicking.', sel: 'main button Composer' });
-  await S('tab-pill-active', q('main button').filter({ hasText: /^AI Assistant$/ }).filter({ visible: true }).first(), ['default', 'hover'], { group: g, title: 'Feature tab pill (active)', desc: 'The selected tab pill (AI Assistant on load), measured at rest.', sel: 'main button AI Assistant' });
   g = G.home;
   await S('agent-card', q('main a').filter({ hasText: /Hermes Agent|Visual automation|AI Agent/i }).filter({ visible: true }).first(), ['default', 'hover'], { group: g, title: 'Agent card', desc: 'An AI-agent feature card ("Hermes Agent ↗ — Use Herm…") on the home page; measured, never followed.', sel: 'agent feature card' });
   await S('section-h2', q('main h2').filter({ hasText: /\S/ }).filter({ visible: true }).first(), ['default'], { group: g, title: 'Section heading', desc: 'A marketing section heading further down the home page.', sel: 'main h2' });
@@ -400,8 +415,11 @@ async function pricing() {
   await chrome('pricing');
   const g = G.pricing;
   await S('price-h1', q('h1').filter({ visible: true }).first(), ['default'], { group: g, title: 'Pricing headline', desc: '"The best social solution, for the best price." — the /pricing masthead.', sel: 'h1' }, { noScroll: true });
-  await S('billing-monthly', q('button').filter({ hasText: /^Monthly$/ }).filter({ visible: true }).first(), ['default', 'hover', 'selected'], { group: g, title: 'Billing toggle (Monthly)', desc: 'The "Monthly" half of the billing pill — a local UI toggle that re-renders the prices; selected by clicking.', sel: 'pricing Monthly button' });
+  // billing-yearly is the half selected on load: measure it before
+  // billing-monthly's 'selected' step clicks Monthly, or its readings would
+  // be the inactive half described as selected.
   await S('billing-yearly', q('button').filter({ hasText: /^Yearly$/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Billing toggle (Yearly)', desc: 'The "Yearly" half of the billing pill, selected on load.', sel: 'pricing Yearly button' });
+  await S('billing-monthly', q('button').filter({ hasText: /^Monthly$/ }).filter({ visible: true }).first(), ['default', 'hover', 'selected'], { group: g, title: 'Billing toggle (Monthly)', desc: 'The "Monthly" half of the billing pill — a local UI toggle that re-renders the prices; selected by clicking.', sel: 'pricing Monthly button' });
   // Each plan card is an <article> (~297x680, rounded-16); the Business card
   // paints the indigo #4457ff fill, the others are white.
   await S('plan-card', q('h2').filter({ hasText: /^Business$/ }).first().locator('xpath=ancestor::article[1]'), ['default'], { group: g, title: 'Plan card (Business)', desc: 'The highlighted indigo "Business" plan card ("POPULAR" chip).', sel: 'Business plan article' });

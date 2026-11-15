@@ -1,6 +1,6 @@
 # FeedHive component measurements
 
-Computed styles read from feedhive.com on 2026-11-14 by `tools/capture/public/measure.mjs`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844) across the site's painted surfaces — the light www.feedhive.com marketing pages (no user theme toggle, no dark mode) and the separate light sign-in/sign-up cards at app.feedhive.com (a Chakra-UI app that shares no token layer with the marketing site) — with any consent layer hidden (never answered), and written here by `tools/capture/public/build-measurements.mjs` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
+Computed styles read from feedhive.com on 2026-11-15 by `tools/capture/public/measure.mjs`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844) across the site's painted surfaces — the light www.feedhive.com marketing pages (no user theme toggle, no dark mode) and the separate light sign-in/sign-up cards at app.feedhive.com (a Chakra-UI app that shares no token layer with the marketing site) — with any consent layer hidden (never answered), and written here by `tools/capture/public/build-measurements.mjs` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
 
 States: `hover` is a real pointer hover; `focus-visible` a real keyboard focus (Shift+Tab, Tab); `pressed` is forced with DevTools (`CSS.forcePseudoState` :active:hover), so no button was pressed; `focused` is a text field clicked into; `filled` is sample text typed and deleted again, with nothing sent; `opened`, `selected`, `expanded` and the rest are resting states reached by the page or by a local UI toggle.
 
@@ -269,9 +269,9 @@ Page: home. Selector: `main div.cta-gradient-ring`. States: default, hover.
 | Colour | #20232b | = |
 | Text node | span: Inter 14px/21px 700, #31343a, ls -0.42px | = |
 | Transition | none | = |
-| ::before | 223.938px x 41px, absolute, bg #000000 @ 0 conic-gradient(from 0deg, #4f7dff, #7165ff, #d650ff, #ff7f59, #4f7dff), radius 9999px | 223.938px x 41px, absolute, bg #000000 @ 0 conic-gradient(from 76.3527deg, #4f7dff, #7165ff, #d650ff, #ff7f59, #4f7dff), radius 9999px |
+| ::before | 223.938px x 41px, absolute, bg #000000 @ 0 conic-gradient(from 0deg, #4f7dff, #7165ff, #d650ff, #ff7f59, #4f7dff), radius 9999px | 223.938px x 41px, absolute, bg #000000 @ 0 conic-gradient(from 68.1778deg, #4f7dff, #7165ff, #d650ff, #ff7f59, #4f7dff), radius 9999px |
 | ::after | 227.938px x 45px, absolute, bg #000000 @ 0 radial-gradient(circle, #636eff @ 0.42, #000000 @ 0 68%), radius 9999px | = |
-| Painted layers | div::before.cta-gradient-ring.cta-gradient-ring-pill 223.938pxx41px image conic-gradient(from 0deg, #4f7dff, #7165ff, #d650ff, #ff7f59, #4f7dff) r 9999px; div::after.cta-gradient-ring.cta-gradient-ring-pill 227.938pxx45px image radial-gradient(circle, #636eff @ 0.42, #000000 @ 0 68%) r 9999px; div.inline-flex.items-center 217.9x35.0 bg #ffffff border T:1px solid #dfdfe4 / R:1px solid #dfdfe4 / B:1px solid #dfdfe4 / L:1px solid #dfdfe4 r 3.35544e+07px; span.rounded-md.border 35.3x16.0 bg #f7f7f9 border T:1px solid #cfd1d9 / R:1px solid #cfd1d9 / B:1px solid #cfd1d9 / L:1px solid #cfd1d9 r 6px | div::before.cta-gradient-ring.cta-gradient-ring-pill 223.938pxx41px image conic-gradient(from 76.3527deg, #4f7dff, #7165ff, #d650ff, #ff7f59, #4f7dff) r 9999px; div::after.cta-gradient-ring.cta-gradient-ring-pill 227.938pxx45px image radial-gradient(circle, #636eff @ 0.42, #000000 @ 0 68%) r 9999px; div.inline-flex.items-center 217.9x35.0 bg #ffffff border T:1px solid #dfdfe4 / R:1px solid #dfdfe4 / B:1px solid #dfdfe4 / L:1px solid #dfdfe4 r 3.35544e+07px; span.rounded-md.border 35.3x16.0 bg #f7f7f9 border T:1px solid #cfd1d9 / R:1px solid #cfd1d9 / B:1px solid #cfd1d9 / L:1px solid #cfd1d9 r 6px |
+| Painted layers | div::before.cta-gradient-ring.cta-gradient-ring-pill 223.938pxx41px image conic-gradient(from 0deg, #4f7dff, #7165ff, #d650ff, #ff7f59, #4f7dff) r 9999px; div::after.cta-gradient-ring.cta-gradient-ring-pill 227.938pxx45px image radial-gradient(circle, #636eff @ 0.42, #000000 @ 0 68%) r 9999px; div.inline-flex.items-center 217.9x35.0 bg #ffffff border T:1px solid #dfdfe4 / R:1px solid #dfdfe4 / B:1px solid #dfdfe4 / L:1px solid #dfdfe4 r 3.35544e+07px; span.rounded-md.border 35.3x16.0 bg #f7f7f9 border T:1px solid #cfd1d9 / R:1px solid #cfd1d9 / B:1px solid #cfd1d9 / L:1px solid #cfd1d9 r 6px | div::before.cta-gradient-ring.cta-gradient-ring-pill 223.938pxx41px image conic-gradient(from 68.1778deg, #4f7dff, #7165ff, #d650ff, #ff7f59, #4f7dff) r 9999px; div::after.cta-gradient-ring.cta-gradient-ring-pill 227.938pxx45px image radial-gradient(circle, #636eff @ 0.42, #000000 @ 0 68%) r 9999px; div.inline-flex.items-center 217.9x35.0 bg #ffffff border T:1px solid #dfdfe4 / R:1px solid #dfdfe4 / B:1px solid #dfdfe4 / L:1px solid #dfdfe4 r 3.35544e+07px; span.rounded-md.border 35.3x16.0 bg #f7f7f9 border T:1px solid #cfd1d9 / R:1px solid #cfd1d9 / B:1px solid #cfd1d9 / L:1px solid #cfd1d9 r 6px |
 | How | at rest | mouse hover |
 
 Crops: `hero-badge-default.png`, `hero-badge-hover.png`.
@@ -478,28 +478,29 @@ Crops: `tab-pill-default.png`, `tab-pill-hover.png`, `tab-pill-selected.png`.
 
 #### tab-pill-active
 
-Feature tab pill (active). The selected tab pill (AI Assistant on load), measured at rest.
+Feature tab pill (active). A feature tab pill in its selected state — the #eef2ff indigo tint, #84a1ff border and #5a84ff ink the pills select into; selected by clicking (the at-load selection auto-rotates).
 
-Page: home. Selector: `main button AI Assistant`. States: default, hover.
+Page: home. Selector: `main button AI Assistant`. States: selected.
 
-| Property | default | hover |
-|---|---|---|
-| Size (w x h) | 104.64 x 30 | = |
-| Padding | 0px 12px | = |
-| Border | 1px dashed #d8dbe2 | 1px dashed #979daa |
-| Radius | 3.35544e+07px | = |
-| Background | #ffffff | = |
-| Box shadow | none | = |
-| Outline | none | = |
-| Font | Inter 14px/21px 500 | = |
-| Letter spacing | -0.28px | = |
-| Colour | #585f6b | #2c3139 |
-| Transition | color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = |
-| Cursor | pointer | = |
-| Painted layers | button.inline-flex.h-[30px] 104.6x30.0 bg #ffffff border T:1px dashed #d8dbe2 / R:1px dashed #d8dbe2 / B:1px dashed #d8dbe2 / L:1px dashed #d8dbe2 r 3.35544e+07px | button.inline-flex.h-[30px] 104.6x30.0 bg #ffffff border T:1px dashed #979daa / R:1px dashed #979daa / B:1px dashed #979daa / L:1px dashed #979daa r 3.35544e+07px |
-| How | at rest | mouse hover |
+| Property | selected |
+|---|---|
+| Size (w x h) | 116.64 x 30 |
+| Padding | 0px 20px 0px 16px |
+| Border | 1px solid #84a1ff |
+| Radius | 3.35544e+07px |
+| Background | #eef2ff |
+| Box shadow | none |
+| Outline | none |
+| Font | Inter 14px/21px 500 |
+| Letter spacing | -0.28px |
+| Colour | #5a84ff |
+| Transition | color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
+| Cursor | pointer |
+| Icon | 14 x 14, colour #ffffff |
+| Painted layers | button.inline-flex.h-[30px] 116.6x30.0 bg #eef2ff border T:1px solid #84a1ff / R:1px solid #84a1ff / B:1px solid #84a1ff / L:1px solid #84a1ff r 3.35544e+07px; span.tag-check-bounce.absolute 24.0x24.0 bg #5a84ff border T:2px solid #ffffff / R:2px solid #ffffff / B:2px solid #ffffff / L:2px solid #ffffff r 3.35544e+07px |
+| How | own toggle, then left selected |
 
-Crops: `tab-pill-active-default.png`, `tab-pill-active-hover.png`.
+Crops: `tab-pill-active-selected.png`.
 
 ### Footer
 
@@ -547,7 +548,7 @@ Page: home. Selector: `footer a Pricing`. States: default, hover, focus-visible,
 | Outline | none | = | 1px auto #101010 offset 1px | = |
 | Font | Inter 15px/24px 400 | = | = | = |
 | Letter spacing | -0.3px | = | = | = |
-| Colour | #676e7b | #22252d | = | #22252d |
+| Colour | #676e7b | #22252d | = | = |
 | Transition | color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = | = |
 | Cursor | pointer | = | = | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
@@ -618,17 +619,17 @@ Page: pricing. Selector: `pricing Yearly button`. States: default, hover, focus-
 | Padding | 10px 20px | = | = | = |
 | Border | none | = | = | = |
 | Radius | 3.35544e+07px | = | = | = |
-| Background | transparent | = | = | = |
+| Background | #4457ff | #3347fb | = | #3347fb |
 | Box shadow | none | = | = | = |
 | Outline | none | = | 1px auto #101010 offset 0px | = |
 | Font | Inter 14px/21px 600 | = | = | = |
 | Letter spacing | -0.28px | = | = | = |
-| Colour | #757b86 | #2b2f37 | = | #2b2f37 |
+| Colour | #ffffff | = | = | = |
 | Transition | color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = | = |
 | Cursor | default | = | = | = |
+| Painted layers | button.min-w-[112px].rounded-full 112.0x41.0 bg #4457ff r 3.35544e+07px | button.min-w-[112px].rounded-full 112.0x41.0 bg #3347fb r 3.35544e+07px | button.min-w-[112px].rounded-full 112.0x41.0 bg #4457ff r 3.35544e+07px outline 1px auto #101010 offset 0px | button.min-w-[112px].rounded-full 112.0x41.0 bg #3347fb r 3.35544e+07px |
 | Ancestor paint | 1 up div.inline-flex.rounded-full bg #ffffff @ 0.95 | = | = | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
-| Painted layers | - | = | button.min-w-[112px].rounded-full 112.0x41.0 r 3.35544e+07px outline 1px auto #101010 offset 0px | = |
 
 Crops: `billing-yearly-default.png`, `billing-yearly-hover.png`, `billing-yearly-focus-visible.png`, `billing-yearly-pressed.png`.
 
