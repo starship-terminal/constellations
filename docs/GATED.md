@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_95 of 153 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_96 of 154 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -535,6 +535,11 @@ Access: signed out (every surface captured is public; the app sits at app.flutte
 - the prompt composer was measured, focused and typed in (then cleared) but never submitted, so the generation flow it starts is missing
 - the enterprise Talk-to-sales form and the Studio application form were never submitted, so their success and painted error states are missing (the error slot is recorded as declared DOM, not painted)
 - plan CTAs lead to a signed-in checkout and were not followed
+
+## [Foodnoms](../systems/foodnoms) — `foodnoms`
+Access: read-only (the marketing site, pricing, help center, news, press, articles, comparison pages and legal are fully public; the product itself is an iOS/macOS app sold through the App Store - there is no web sign-in; every Download/Get-the-App link, press-kit zip and mailto was measured, never followed; the help search and newsletter field were typed into then cleared, never submitted; /open/settings/* is a static deep-link interstitial)
+- the product itself - food logging, AI scanning, widgets, the community database and subscription purchase - is an iOS/macOS app behind the App Store download, which was never installed or opened; /download is a JS redirect to apps.apple.com that was never followed
+- the help search modal was opened and typed into, but result rows were never clicked; the newsletter field was typed into then cleared, never submitted
 
 ## Gate noted in access text only
 

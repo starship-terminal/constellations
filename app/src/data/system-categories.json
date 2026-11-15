@@ -916,5 +916,11 @@
     "groupId": "web-categories",
     "labels": ["Marketplace"],
     "reason": "catalog.json describes a freelance services marketplace: the home and /categories directory, /search/gigs gig listings, a gig page with package pricing, seller profiles and the join/login auth edge."
+  },
+  {
+    "referenceId": "systems:foodnoms",
+    "groupId": "web-categories",
+    "labels": ["Health & Wellness"],
+    "reason": "catalog.json describes a food-and-nutrition tracker: a marketing site for an iOS/macOS app with feature cards, a Free-vs-Plus comparison, help center, news, press and comparison articles."
   }
 ]

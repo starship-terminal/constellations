@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 153,
-    "system_domains": 145,
-    "matched_domains": 116,
-    "missing_domains": 317,
+    "system_packages": 154,
+    "system_domains": 146,
+    "matched_domains": 117,
+    "missing_domains": 316,
     "system_domains_absent_from_catalog": 29
   },
   "matched": {
@@ -1817,6 +1817,23 @@
         }
       ]
     },
+    "foodnoms.com": {
+      "catalog": [
+        {
+          "name": "FoodNoms",
+          "domain": "foodnoms.com",
+          "id": 374
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "foodnoms",
+          "name": "Foodnoms",
+          "url": "https://foodnoms.com",
+          "name_match": true
+        }
+      ]
+    },
     "getfernand.com": {
       "catalog": [
         {
@@ -2219,13 +2236,6 @@
         "name": "Fibery",
         "domain": "fibery.io",
         "id": 415
-      }
-    ],
-    "foodnoms.com": [
-      {
-        "name": "FoodNoms",
-        "domain": "foodnoms.com",
-        "id": 374
       }
     ],
     "forhers.com": [
