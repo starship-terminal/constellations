@@ -904,5 +904,11 @@
     "groupId": "web-categories",
     "labels": ["Collaboration Tools", "Productivity"],
     "reason": "catalog.json describes a video review and collaboration workspace: marketing pages with an embedded product demo, a pricing page, an MCP documentation page and the signed-out login boundary."
+  },
+  {
+    "referenceId": "systems:foodnoms",
+    "groupId": "web-categories",
+    "labels": ["Health & Wellness"],
+    "reason": "catalog.json describes a food-and-nutrition tracker: a marketing site for an iOS/macOS app with feature cards, a Free-vs-Plus comparison, help center, news, press and comparison articles."
   }
 ]
