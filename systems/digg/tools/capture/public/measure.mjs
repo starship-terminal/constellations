@@ -65,7 +65,12 @@ async function newPage(key, { mobile = false, wait = 8000, promo = 'close', url 
   log('open', key, mobile ? '(mobile)' : '');
   await open(page, url || (URLS[key].startsWith('http') ? URLS[key] : BASE + URLS[key]), { wait, promo });
   if (await blocked()) { log('  BLOCKED', key); failedPages.add(key); await page.close(); await ctx.close(); return false; }
-  if (theme && !(await setTheme(page, theme))) log('  ! theme pill did not reach', theme);
+  if (theme && !(await setTheme(page, theme))) {
+    // Never record light paint under d-* names: abort the page so the dark
+    // group records missing rather than mislabelled evidence.
+    log('  ! theme pill did not reach', theme, '— skipping', key);
+    failedPages.add(key); await page.close(); await ctx.close(); return false;
+  }
   await page.addStyleTag({ content: '*{caret-color:transparent!important}' });
   return true;
 }
@@ -352,8 +357,10 @@ async function story() {
   await S('st-summary', q('p').filter({ hasText: /.{60,}/ }).and(page.locator(':visible')).first(), ['default'], { group: g, title: 'Story summary', desc: 'The one-two line summary under the headline.', sel: 'story summary' }, { noScroll: true });
   await S('st-vote', q('button').filter({ hasText: /digg/i }).and(page.locator(':visible')).first(), B4, { group: g, title: 'digg it button', desc: 'The "digg it" vote pill under the headline (icon + count); pressed is CDP-forced — a real press would cast a vote.', sel: 'digg it button' }, { noScroll: true });
   await S('st-sources', q('a, button').filter({ hasText: /\d+\s+sources/i }).and(page.locator(':visible')).first(), B4, { group: g, title: 'Sources meta', desc: 'The "N Sources, first seen Xh ago" meta cluster; measured, never followed.', sel: 'sources meta' }, { noScroll: true });
-  await S('st-stat', q('[data-slot="card"]').filter({ hasText: /combined views/i }).and(page.locator(':visible')).first(), ['default'], { group: g, title: 'Stat card', desc: 'The right-rail "Combined views" stat card (views, like/comment/save/repost counts).', sel: 'stat card' });
-  await S('st-rank', q('[data-slot="card"]').filter({ hasText: /today.?s rank/i }).and(page.locator(':visible')).first(), ['default'], { group: g, title: 'Rank card', desc: 'The right-rail "Today’s rank" card.', sel: 'rank card' });
+  // One right-rail card holds both TODAY'S RANK and COMBINED VIEWS — a
+  // "rank card" selector lands on this same 376x384 panel, so there is a
+  // single st-stat component, not a second card.
+  await S('st-stat', q('[data-slot="card"]').filter({ hasText: /combined views/i }).and(page.locator(':visible')).first(), ['default'], { group: g, title: 'Stat card', desc: 'The right-rail stat card — TODAY\'S RANK over COMBINED VIEWS and the like/comment/save counts.', sel: 'stat card' });
   await S('st-srclist', q('[data-slot="card"]').filter({ hasText: /sources/i }).and(page.locator(':visible')).last(), ['default'], { group: g, title: 'Sources list', desc: 'The right-rail "N Sources" list of source posts.', sel: 'sources list' });
   await S('st-tldr', q('p, span, div, h2, h3').filter({ hasText: /^\s*tldr\s*$/i }).and(page.locator(':visible')).first(), ['default'], { group: g, title: 'TLDR label', desc: 'The tracked TLDR section label over the summary prose.', sel: 'TLDR label' });
   await S('st-para', q('p').filter({ hasText: /.{150,}/ }).and(page.locator(':visible')).first(), ['default'], { group: g, title: 'TLDR paragraph', desc: 'A body paragraph in the TLDR section.', sel: 'story p' });

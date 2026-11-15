@@ -231,9 +231,9 @@ tokens = {
     "dark": dark,
     "$themes": [
         {"id": "light", "name": "Light", "selectedTokenSets": {"core": "source", "light": "enabled"},
-         "$description": "The light surface: every public page — home, discover, search, expert, chat and the dialogs — paints light signed out."},
+         "$description": "The light surface: every public page — the home feed, category feeds, story pages, /u/<source> profiles, /login, /sign-up and /privacy — paints light signed out."},
         {"id": "dark", "name": "Dark", "selectedTokenSets": {"core": "source", "dark": "enabled"},
-         "$description": "The dark theme: declared in the stylesheet (every themed variable resolves a dark value) but never painted on the public surface — it lives in the app behind an account or preference."},
+         "$description": "The dark theme: painted publicly signed out — the sidebar pill cycles System → Light → Dark, and the dark roles, screenshots and crops here are measured through it on the home feed and a story page."},
     ],
     "$metadata": {"tokenSetOrder": ["core", "light", "dark"]},
 }

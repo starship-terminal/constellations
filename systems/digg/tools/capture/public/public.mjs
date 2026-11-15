@@ -170,7 +170,12 @@ for (const { k, mob } of runs) {
     await p.goto(spec.url, { waitUntil: 'commit', timeout: 90000 }).catch(() => {});
     if (!(await clearChallenge(p))) { log('  BLOCKED challenge', spec.url); await ctx.close(); continue; }
     await wait(p, spec.wait || 7000);
-    if (spec.prep === 'dark' && !(await setTheme(p, 'dark'))) log('  ! theme pill did not reach dark');
+    if (spec.prep === 'dark' && !(await setTheme(p, 'dark'))) {
+      // Never write light paint under dark filenames: the dark evidence would
+      // be a lie. Skip the page's captures instead.
+      log('  ! theme pill did not reach dark — skipping', name);
+      await ctx.close(); continue;
+    }
     await spec.run(p, S);
   } catch (e) { log('  PAGE FAILED', name, e.message.split('\n')[0]); }
   total += S.count;

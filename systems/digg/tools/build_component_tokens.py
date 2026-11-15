@@ -618,6 +618,12 @@ for key, comp, state, prop, group, prefer, desc in [
      "The white label on the primary CTA in dark (matches --primary-foreground)."),
     ("hairline", "d-rail", "default", "borderTopColor", "border", ("--border",),
      "The rgba(255,255,255,0.08) hairline on dark cards (matches --border)."),
+    ("input", "d-trending", "default", "borderTopColor", "border", ("--input",),
+     "The white @15% control border in dark (matches --input)."),
+    ("focus", "d-signup", "focus-visible", "outlineColor", "border", (),
+     "The #1c66eb primary at 50% the focus-visible outline resolves in dark."),
+    ("primary-hover", "d-signup", "hover", "backgroundColor", "action", (),
+     "The primary blue @80% the CTA takes on hover — identical in dark."),
 ]:
     try:
         raw = st(comp, state)[prop]
@@ -625,6 +631,32 @@ for key, comp, state, prop, group, prefer, desc in [
         put_sem(sem2, group, key, semcolor(raw, src, desc, theme="dark", prefer=prefer))
     except KeyError:
         pass
+
+# Dark roles with no d-* reading: the declared .dark values, plus the
+# theme-invariant recipes (border-primary/20) whose computed colour depends
+# only on --primary, which resolves #1c66eb in both themes.
+for key, name, group, prefer, desc in [
+    ("page", "--background", "background", ("--background",),
+     "The #161617 near-black field the dark captures paint."),
+    ("fill", "--sidebar-accent", "background", ("--sidebar-accent", "--muted", "--secondary"),
+     "The #27272c selected-row fill on the dark sidebar (matches --sidebar-accent)."),
+    ("link", "--primary", "text", ("--primary", "--accent"),
+     "The #1c66eb blue on text links, theme-invariant (matches --primary)."),
+    ("oauth-fill", "--background", "action", ("--background",),
+     "The dark field the OAuth outline buttons' bg-background recipe paints (theme-invariant recipe; the auth pages were not re-captured in dark)."),
+    ("rank-one", "--rank-one", "text", ("--rank-one",),
+     "The #e37b4c rank-one orange, theme-invariant (matches --rank-one)."),
+]:
+    put_sem(sem2, group, key, semcolor(
+        D[name],
+        f"declared .dark value of {name} (raw/css-vars.json); painted on the signed-out dark captures (screenshots/home-dark-default.png, story-dark-default.png)",
+        desc, theme="dark", prefer=prefer))
+
+put_sem(sem2, "border", "vote-border", semcolor(
+    "rgba(28, 102, 235, 0.2)",
+    "the border-primary/20 recipe — --primary resolves the identical #1c66eb in dark (raw/css-vars.json); measured on the light story vote pill, not re-measured in dark",
+    "The primary-blue @20% border on the story digg-it pill, theme-invariant.",
+    theme="dark"))
 
 # ------------------------------------------------------------- type ramp
 

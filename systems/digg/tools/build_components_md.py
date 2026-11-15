@@ -75,6 +75,20 @@ def _oklch_to_rgb(L, C, H):
     return _oklab_to_rgb(L, C * math.cos(math.radians(H)), C * math.sin(math.radians(H)))
 
 
+def _lab_to_rgb(L, A, B):
+    # CIELAB D50 -> sRGB (the same matrix build_component_tokens.py applies);
+    # the matrix emits linear sRGB, which _srgb_byte expects.
+    fy = (L + 16) / 116
+    fx, fz = fy + A / 500, fy - B / 200
+    eps, kap = 216 / 24389, 24389 / 27
+    f = lambda t: t ** 3 if t ** 3 > eps else (116 * t - 16) / kap
+    X, Y, Z = 0.96422 * f(fx), f(fy), 0.82521 * f(fz)
+    r = 3.1338561 * X - 1.6168667 * Y - 0.4906146 * Z
+    g = -0.9787684 * X + 1.9161415 * Y + 0.033454 * Z
+    b = 0.0719453 * X - 0.2289914 * Y + 1.4052427 * Z
+    return _srgb_byte(r), _srgb_byte(g), _srgb_byte(b)
+
+
 def norm(r, g, b, a=None):
     if a is None or float(a) == 1:
         return "#%02x%02x%02x" % (int(r), int(g), int(b))
@@ -94,6 +108,9 @@ def colour(c, tokens=True):
                                    (float(m.group(4).rstrip('%')) / (100 if '%' in m.group(4) else 1)) if m.group(4) else None)), c)
     c = re.sub(r"oklab\(([\d.]+) (-?[\d.]+) (-?[\d.]+)(?: / ([\d.]+))?\)",
                lambda m: label(norm(*_oklab_to_rgb(float(m.group(1)), float(m.group(2)), float(m.group(3))), m.group(4))), c)
+    c = re.sub(r"(?<![a-z])lab\(([\d.]+)[ ,]+(-?[\d.]+)[ ,]+(-?[\d.]+)(?: ?/ ?([\d.]+%?))?\)",
+               lambda m: label(norm(*_lab_to_rgb(float(m.group(1)), float(m.group(2)), float(m.group(3))),
+                                   (float(m.group(4).rstrip('%')) / (100 if '%' in m.group(4) else 1)) if m.group(4) else None)), c)
     c = re.sub(r"color\(srgb ([\d.]+) ([\d.]+) ([\d.]+)(?: / ([\d.]+))?\)",
                lambda m: label(norm(*(round(float(x) * 255) for x in m.group(1, 2, 3)), m.group(4))), c)
     return re.sub(r"rgba?\((\d+), (\d+), (\d+)(?:, ([\d.]+))?\)", lambda m: label(norm(*m.group(1, 2, 3), m.group(4))), c)
@@ -190,13 +207,13 @@ def props(v):
     for pe in ("::before", "::after"):
         if v.get(pe):
             p = v[pe]
-            bits.append(" ".join(x for x in (pe, p.get("backgroundColor"), p.get("borderTopWidth"), p.get("boxShadow"), p.get("opacity")) if x))
+            bits.append(" ".join(x for x in (pe, colour(p["backgroundColor"]) if p.get("backgroundColor") else None, p.get("borderTopWidth"), colour(p["boxShadow"]) if p.get("boxShadow") else None, p.get("opacity")) if x))
     # A root box-shadow (e.g. the 1px focus ring gained on focus-visible) does
     # not remove the painted children: keep reporting their layers, which is
     # where a state-carrying child outline (the 3px cyan CTA ring) shows up.
     if s["backgroundColor"] == "rgba(0, 0, 0, 0)" and s["borderTopWidth"] == "0px" and s["backgroundImage"] == "none":
         for p in v.get("paint", [])[:6]:
-            bits.append(" ".join(x for x in (p["node"], p.get("size"), colour(p["bg"]) if p.get("bg") else None, p.get("border"), p.get("shadow"), p.get("outline"), p.get("radius")) if x))
+            bits.append(" ".join(x for x in (p["node"], p.get("size"), colour(p["bg"]) if p.get("bg") else None, colour(p["border"]) if p.get("border") else None, colour(p["shadow"]) if p.get("shadow") else None, colour(p["outline"]) if p.get("outline") else None, p.get("radius")) if x))
     if bits:
         o["layers"] = "; ".join(bits)[:400]
     return o
@@ -273,7 +290,7 @@ GROUP_INTRO = {
     "Right rail": "The two white rail panels beside the feed: Top Contributors (with the #e37b4c rank-one accent) and Top Posts Yesterday.",
     "Footer": "The muted footer links at the bottom of the feed.",
     "Dark theme": "The same feed measured with the theme pill set to dark: #161617 page, #1c1c1f cards, #fdfdff ink — real painted dark, not declared-only.",
-    "Story page": "A story detail page: the REPORT kicker, 36px headline, 20px summary, the 138 x 44 digg-it pill, the stat and rank cards, the sources list and the TLDR prose.",
+    "Story page": "A story detail page: the REPORT kicker, 36px headline, 20px summary, the 138 x 44 digg-it pill, the stat card (TODAY'S RANK over COMBINED VIEWS), the sources list and the TLDR prose.",
     "Source profile": "A /u/<source> profile: the 20px source name over the same story cards as the feed.",
     "Sign-in / sign-up": "The Clerk auth surfaces: OAuth outline buttons, the 8px-rounded fields with their 0 1px 2px shadow, the primary Continue pill and the sign-up link. Measured signed out; never submitted.",
     "Mobile (390 wide)": "The phone surface at 390 wide: the 107px top bar, the story card and the feed footer.",
@@ -428,7 +445,7 @@ W()
 W("| Card | Size | Border | Radius | Background | Shadow | Padding |")
 W("|---|---|---|---|---|---|---|")
 # PRODUCT (adapt): the card-like components to compare in one table.
-for k in ["post-card", "cat-card", "rail-contribs", "rail-posts", "st-stat", "st-rank", "st-srclist", "d-card", "m-card"]:
+for k in ["post-card", "cat-card", "rail-contribs", "rail-posts", "st-stat", "st-srclist", "d-card", "m-card"]:
     c = C.get(k)
     # A card the capture could not find is saved with missing: true and no states.
     if not c or c.get("missing"):

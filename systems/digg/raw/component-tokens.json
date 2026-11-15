@@ -2889,6 +2889,18 @@
         "type": "color",
         "source": "computed backgroundColor of d-trending default (raw/components-computed.json, theme pill set to dark)",
         "description": "The white @4.5% wash on the feed sort controls in dark."
+      },
+      "page": {
+        "value": "{background.default}",
+        "type": "color",
+        "source": "declared .dark value of --background (raw/css-vars.json); painted on the signed-out dark captures (screenshots/home-dark-default.png, story-dark-default.png); matches declared --background",
+        "description": "The #161617 near-black field the dark captures paint."
+      },
+      "fill": {
+        "value": "{sidebar.accent.default}",
+        "type": "color",
+        "source": "declared .dark value of --sidebar-accent (raw/css-vars.json); painted on the signed-out dark captures (screenshots/home-dark-default.png, story-dark-default.png); matches declared --sidebar-accent",
+        "description": "The #27272c selected-row fill on the dark sidebar (matches --sidebar-accent)."
       }
     },
     "border": {
@@ -2901,6 +2913,24 @@
         "type": "color",
         "source": "computed borderTopColor of d-rail default (raw/components-computed.json, theme pill set to dark); matches declared --border",
         "description": "The rgba(255,255,255,0.08) hairline on dark cards (matches --border)."
+      },
+      "input": {
+        "value": "{input}",
+        "type": "color",
+        "source": "computed borderTopColor of d-trending default (raw/components-computed.json, theme pill set to dark); matches declared --input",
+        "description": "The white @15% control border in dark (matches --input)."
+      },
+      "focus": {
+        "value": "rgba(28, 102, 235, 0.5)",
+        "type": "color",
+        "source": "computed outlineColor of d-signup focus-visible (raw/components-computed.json, theme pill set to dark)",
+        "description": "The #1c66eb primary at 50% the focus-visible outline resolves in dark."
+      },
+      "vote-border": {
+        "value": "rgba(28, 102, 235, 0.2)",
+        "type": "color",
+        "source": "the border-primary/20 recipe — --primary resolves the identical #1c66eb in dark (raw/css-vars.json); measured on the light story vote pill, not re-measured in dark",
+        "description": "The primary-blue @20% border on the story digg-it pill, theme-invariant."
       }
     },
     "brand": {
@@ -3025,6 +3055,18 @@
         "type": "color",
         "source": "computed color of d-vote default (raw/components-computed.json, theme pill set to dark); matches declared --muted-foreground",
         "description": "The ink@70% muted text in dark (matches --muted-foreground)."
+      },
+      "link": {
+        "value": "{primary.default}",
+        "type": "color",
+        "source": "declared .dark value of --primary (raw/css-vars.json); painted on the signed-out dark captures (screenshots/home-dark-default.png, story-dark-default.png); matches declared --primary",
+        "description": "The #1c66eb blue on text links, theme-invariant (matches --primary)."
+      },
+      "rank-one": {
+        "value": "{rank.one.default}",
+        "type": "color",
+        "source": "declared .dark value of --rank-one (raw/css-vars.json); painted on the signed-out dark captures (screenshots/home-dark-default.png, story-dark-default.png); matches declared --rank-one",
+        "description": "The #e37b4c rank-one orange, theme-invariant (matches --rank-one)."
       }
     },
     "action": {
@@ -3039,6 +3081,18 @@
         "type": "color",
         "source": "computed color of d-signup default (raw/components-computed.json, theme pill set to dark); matches declared --primary-foreground",
         "description": "The white label on the primary CTA in dark (matches --primary-foreground)."
+      },
+      "primary-hover": {
+        "value": "rgba(28, 102, 235, 0.8)",
+        "type": "color",
+        "source": "computed backgroundColor of d-signup hover (raw/components-computed.json, theme pill set to dark)",
+        "description": "The primary blue @80% the CTA takes on hover — identical in dark."
+      },
+      "oauth-fill": {
+        "value": "{background.default}",
+        "type": "color",
+        "source": "declared .dark value of --background (raw/css-vars.json); painted on the signed-out dark captures (screenshots/home-dark-default.png, story-dark-default.png); matches declared --background",
+        "description": "The dark field the OAuth outline buttons' bg-background recipe paints (theme-invariant recipe; the auth pages were not re-captured in dark)."
       }
     }
   },

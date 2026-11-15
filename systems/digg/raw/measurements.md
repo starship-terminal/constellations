@@ -833,7 +833,7 @@ Page: story. Selector: `digg it button`. States: default, hover, focus-visible, 
 | Size (w x h) | 138.33 x 44 | = | = | 134.18 x 42.68 |
 | Padding | 3px 11px 3px 3px | = | = | = |
 | Gap | 4px | = | = | = |
-| Border | 1px solid oklch(0.549935 0.213311 261.242 / 0.2) | 1px solid oklch(0.549935 0.213311 261.242 / 0.3) | = | 1px solid oklch(0.549935 0.213311 261.242 / 0.3) |
+| Border | 1px solid #1c66eb @ 0.2 | 1px solid #1c66eb @ 0.3 | = | 1px solid #1c66eb @ 0.3 |
 | Radius | 999px | = | = | = |
 | Background | #fdfdff | = | = | = |
 | Box shadow | none | = | = | = |
@@ -845,7 +845,7 @@ Page: story. Selector: `digg it button`. States: default, hover, focus-visible, 
 | Transition | background-color, border-color, color, scale 0.28s, 0.28s, 0.28s, 0.16s cubic-bezier(0.77, 0, 0.175, 1), cubic-bezier(0.77, 0, 0.175, 1), cubic-bezier(0.77, 0, 0.175, 1), cubic-bezier(0.23, 1, 0.32, 1) delay 0s, 0s, 0s, 0s | = | = | = |
 | Cursor | pointer | = | = | = |
 | Icon | 12 x 12, colour #1c66eb | = | = | 11.64 x 11.64, colour #1c66eb |
-| Painted layers | button.group/button.inline-flex 138.3x44.0 bg #fdfdff border T:1px solid oklch(0.549935 0.213311 261.242 / 0.2) / R:1px solid oklch(0.549935 0.213311 261.242 / 0.2) / B:1px solid oklch(0.549935 0.213311 261.242 / 0.2) / L:1px solid oklch(0.549935 0.213311 261.242 / 0.2) r 999px; span.aYZIsW_capsule.flex 86.0x36.0 bg #1c66eb @ 0.05 border T:1px solid #1c66eb @ 0.2 / R:1px solid #1c66eb @ 0.2 / B:1px solid #1c66eb @ 0.2 / L:1px solid #1c66eb @ 0.2 r 3.35544e+07px | button.group/button.inline-flex 138.3x44.0 bg #fdfdff border T:1px solid oklch(0.549935 0.213311 261.242 / 0.3) / R:1px solid oklch(0.549935 0.213311 261.242 / 0.3) / B:1px solid oklch(0.549935 0.213311 261.242 / 0.3) / L:1px solid oklch(0.549935 0.213311 261.242 / 0.3) r 999px; span.aYZIsW_capsule.flex 86.0x36.0 bg oklch(0.549935 0.213311 261.242 / 0.1) border T:1px solid #1c66eb @ 0.2 / R:1px solid #1c66eb @ 0.2 / B:1px solid #1c66eb @ 0.2 / L:1px solid #1c66eb @ 0.2 r 3.35544e+07px | = | button.group/button.inline-flex 134.2x42.7 bg #fdfdff border T:1px solid oklch(0.549935 0.213311 261.242 / 0.3) / R:1px solid oklch(0.549935 0.213311 261.242 / 0.3) / B:1px solid oklch(0.549935 0.213311 261.242 / 0.3) / L:1px solid oklch(0.549935 0.213311 261.242 / 0.3) r 999px; span.aYZIsW_capsule.flex 83.4x34.9 bg oklch(0.549935 0.213311 261.242 / 0.1) border T:1px solid #1c66eb @ 0.2 / R:1px solid #1c66eb @ 0.2 / B:1px solid #1c66eb @ 0.2 / L:1px solid #1c66eb @ 0.2 r 3.35544e+07px |
+| Painted layers | button.group/button.inline-flex 138.3x44.0 bg #fdfdff border T:1px solid #1c66eb @ 0.2 / R:1px solid #1c66eb @ 0.2 / B:1px solid #1c66eb @ 0.2 / L:1px solid #1c66eb @ 0.2 r 999px; span.aYZIsW_capsule.flex 86.0x36.0 bg #1c66eb @ 0.05 border T:1px solid #1c66eb @ 0.2 / R:1px solid #1c66eb @ 0.2 / B:1px solid #1c66eb @ 0.2 / L:1px solid #1c66eb @ 0.2 r 3.35544e+07px | button.group/button.inline-flex 138.3x44.0 bg #fdfdff border T:1px solid #1c66eb @ 0.3 / R:1px solid #1c66eb @ 0.3 / B:1px solid #1c66eb @ 0.3 / L:1px solid #1c66eb @ 0.3 r 999px; span.aYZIsW_capsule.flex 86.0x36.0 bg #1c66eb @ 0.1 border T:1px solid #1c66eb @ 0.2 / R:1px solid #1c66eb @ 0.2 / B:1px solid #1c66eb @ 0.2 / L:1px solid #1c66eb @ 0.2 r 3.35544e+07px | = | button.group/button.inline-flex 134.2x42.7 bg #fdfdff border T:1px solid #1c66eb @ 0.3 / R:1px solid #1c66eb @ 0.3 / B:1px solid #1c66eb @ 0.3 / L:1px solid #1c66eb @ 0.3 r 999px; span.aYZIsW_capsule.flex 83.4x34.9 bg #1c66eb @ 0.1 border T:1px solid #1c66eb @ 0.2 / R:1px solid #1c66eb @ 0.2 / B:1px solid #1c66eb @ 0.2 / L:1px solid #1c66eb @ 0.2 r 3.35544e+07px |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
 Crops: `st-vote-default.png`, `st-vote-hover.png`, `st-vote-focus-visible.png`, `st-vote-pressed.png`.
@@ -877,7 +877,7 @@ Crops: `st-sources-default.png`, `st-sources-hover.png`, `st-sources-focus-visib
 
 #### st-stat
 
-Stat card. The right-rail "Combined views" stat card (views, like/comment/save/repost counts).
+Stat card. The right-rail stat card — TODAY'S RANK over COMBINED VIEWS and the like/comment/save counts.
 
 Page: story. Selector: `stat card`. States: default.
 
@@ -901,33 +901,6 @@ Page: story. Selector: `stat card`. States: default.
 | How | at rest |
 
 Crops: `st-stat-default.png`.
-
-#### st-rank
-
-Rank card. The right-rail "Today’s rank" card.
-
-Page: story. Selector: `rank card`. States: default.
-
-| Property | default |
-|---|---|
-| Size (w x h) | 376 x 384 |
-| Padding | 24px 0px |
-| Gap | 0px |
-| Border | 1px solid #000000 @ 0.08 |
-| Radius | 18px |
-| Background | #ffffff |
-| Box shadow | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #161617 @ 0.1 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px |
-| Outline | none |
-| Font | roobert 14px/20px 400 |
-| Letter spacing | -0.091px |
-| Colour | #161617 |
-| Text node | span: roobert 12px/16px 600, #161617 @ 0.7, ls 1.2px |
-| Transition | none |
-| Icon | 12 x 12, colour #161617 @ 0.7 |
-| Painted layers | div.group/card.flex 376.0x384.0 bg #ffffff border T:1px solid #000000 @ 0.08 / R:1px solid #000000 @ 0.08 / B:1px solid #000000 @ 0.08 / L:1px solid #000000 @ 0.08 r 18px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #161617 @ 0.1 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px; div.px-(--card-spacing).border-t 374.0x210.0 border T:1px solid #000000 @ 0.08; div.mt-5.border-t 326.0x69.0 border T:1px solid #000000 @ 0.08 |
-| How | at rest |
-
-Crops: `st-rank-default.png`.
 
 #### st-srclist
 

@@ -20,7 +20,7 @@ Two white panels ride beside the feed on `rgba(0,0,0,0.08)` hairlines (`light.bo
 
 ## The story page
 
-A story detail page stacks: the tracked-out REPORT kicker (`st-kicker`, 16px), the 36px bold headline (`st-h1`, `core.font.size.measured.display`, 672px column), the 20px muted summary (`st-summary`, `core.font.size.measured.deck`), the 138x44 digg-it pill (`st-vote`, `core.component.digg-it`, `core.radius.vote` 999px — primary-blue @20% border, hover/focus/pressed measured) and the `'N Sources'` meta row. The right column holds the 376x384 stat card (`st-stat`), the rank card (`st-rank`) and the sources list (`st-srclist`, 376x246) — all white cards on the hairline at 18px. Below, the TLDR label (`st-tldr`, 10px tracked-out caps) over 18px medium paragraphs (`st-para`, `core.font.size.measured.lead`, 31.5px leading) in a 605px measure.
+A story detail page stacks: the tracked-out REPORT kicker (`st-kicker`, 16px), the 36px bold headline (`st-h1`, `core.font.size.measured.display`, 672px column), the 20px muted summary (`st-summary`, `core.font.size.measured.deck`), the 138x44 digg-it pill (`st-vote`, `core.component.digg-it`, `core.radius.vote` 999px — primary-blue @20% border, hover/focus/pressed measured) and the `'N Sources'` meta row. The right column holds the 376x384 stat card (`st-stat` — TODAY'S RANK over COMBINED VIEWS in one panel) and the sources list (`st-srclist`, 376x246) — all white cards on the hairline at 18px. Below, the TLDR label (`st-tldr`, 10px tracked-out caps) over 18px medium paragraphs (`st-para`, `core.font.size.measured.lead`, 31.5px leading) in a 605px measure.
 
 ## The auth surface
 
