@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_91 of 149 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_92 of 150 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -505,6 +505,12 @@ Access: read-only (the marketing site, the signed-out app.getfernand.com/auth/lo
 Access: signed out (every captured surface is public; the editor and every post-login surface - files, boards, Dev Mode in a file, Make projects, community profiles and publish flows, admin - is an authenticated boundary never reached; the /login, /signup, /contact and /make forms were measured and typed into then cleared, never submitted; every CTA, nav item and community card was measured, never followed; the consent layer was hidden, never answered; Cloudflare challenged the automation on /dev-mode/ and /customers/ in the first pass and retries in fresh sessions succeeded - no challenge was answered by hand; the dark theme is declared only - a complete :root[data-theme="dark"] token layer the stylesheets ship but no public page painted while captured)
 - the editor and every post-login surface (files, the canvas, Dev Mode in a file, Make projects, community profiles and publish flows, account, admin) sits behind an account - an authenticated boundary never reached; /login and /signup were measured as forms, never submitted, and Continue with Google / Use single sign-on were never followed
 - submitted states: the /contact sales form, /make prompt, blog newsletter field, community search and the login/signup fields were typed into then cleared, never sent - validation, error, loading and success states are absent rather than measured
+
+## [FlowMapp](../systems/flowmapp) — `flowmapp`
+Access: read-only (the www.flowmapp.com marketing pages, the signed-out app.flowmapp.com/signin, /signup and /restore forms, and the public /share/projects/215285 sitemap and user-flow demo viewers are fully public; every post-login app surface - the sitemap/user-flow editors, wireframes, content, estimation, dashboards, billing - is an authenticated boundary never reached; the auth and contact forms were measured and typed into then cleared, never submitted; every link and CTA was measured, never followed; no consent banner was observed on either host)
+- every post-login app surface (the sitemap/user-flow editors, wireframes, content planner, estimation and invoicing, project dashboard, team settings, billing) needs an account - an authenticated boundary never reached
+- the /signin, /signup, /restore and /contact-us forms were measured and typed into then cleared, never submitted - validation, error, loading and success states are absent rather than measured
+- the mobile 390px pass on app.flowmapp.com/signin hit an anti-bot challenge; the desktop pass captured it - recorded as a gap, not bypassed
 
 ## [Flask](../systems/flask) — `flask`
 Access: signed out (every captured surface is public; the product workspace behind /home and every post-login surface is an authenticated boundary never reached; /login was measured at rest, the Google and Email buttons never followed; the pricing billing switch was toggled for the monthly shot then toggled back; the FAQ accordions and the home demo's Version chip were opened locally; every link and CTA was measured, never followed; the public site paints dark only and no theme switcher or light theme was observed)
