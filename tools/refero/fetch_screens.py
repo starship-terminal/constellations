@@ -33,6 +33,7 @@ API = "https://api.refero.design"
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import fetch  # noqa: E402
+import dump as refero_dump  # noqa: E402  (refreshes refero/.dump/ after a write)
 
 SCHEMA = """
 CREATE TABLE IF NOT EXISTS screens (
@@ -149,6 +150,7 @@ def main() -> None:
               json.dumps(s["colors"]) if s["colors"] else None,
               s["shot_created_at"], s["fetched_at"]) for s in screens])
     db.close()
+    refero_dump.refresh(db_path)
 
     directory = {
         "version": 1,

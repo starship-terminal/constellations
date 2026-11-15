@@ -42,6 +42,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import fetch  # noqa: E402
+import dump as refero_dump  # noqa: E402  (refreshes refero/.dump/ after a write)
 
 REFERO = fetch.REFERO
 WORK = fetch.WORK
@@ -304,7 +305,13 @@ def main():
     if not rows:
         db.close()
         return
+    try:
+        refetch(db, rows, args)
+    finally:
+        refero_dump.refresh(fetch.DB)
 
+
+def refetch(db, rows, args):
     done = with_components = still_pending = failed = unresolved_refs = 0
     export_rows = []
     with concurrent.futures.ThreadPoolExecutor(

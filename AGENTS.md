@@ -47,7 +47,8 @@ systems/<slug>/         the packages (144). Standard parts:
 refero/                 third-party style snapshot. refero.db (sqlite, LFS) is
                         the canonical store; <slug>/ holds DESIGN.md, CSS and
                         token exports, meta.json; catalog.json is the flat
-                        index. refero/README.md has layout + refresh commands
+                        index; .dump/ is refero.db as text, the merge surface.
+                        refero/README.md has layout + refresh commands
 docs/                   source of the docs site: the library docs
                         (table below) + TODO.md (open items), the site's theme
                         (assets/, stylesheets/, site.webmanifest), and
@@ -120,6 +121,7 @@ Makefile                `make help` lists targets; `make dev` is the way in
 | Change the site's own app icon (Flat or Glass, picked under Settings > Preferences) | Flat: `docs/assets/favicon.svg` + `docs/assets/icons/`, committed as drawn; Glass: `python3 tools/make_icons.py` from `docs/assets/logo/hero-ai.png`; the swap is `docs/assets/app-icon.js` |
 | Grade packages / read the rubric | `scorecard/criteria.json` via `python3 tools/grade.py --criteria <slug>`; audits in `scorecard/audits/` |
 | Find or refresh a refero style | [refero/README.md](refero/README.md); `tools/refero/fetch.py`, `classify.py`, `check.py` |
+| Resolve a `refero/refero.db` merge conflict | take either side of the db, merge `refero/.dump/` as text, `make refero-db`, commit both ([refero/README.md](refero/README.md#merging)) |
 | Check a screenshot for banned content | `python3 tools/redact_images.py check systems/<slug> --patterns ~/.design-systems/cleanup-redact.json` |
 | Scan a package for private text or check token contrast | `python3 tools/catalog.py scan systems/<slug> --redact <file>` / `contrast systems/<slug>/tokens.json --theme <t> FG:BG...` |
 | Deploy or redeploy the site | the home-server deployment: `scripts/redeploy.sh` / `deploy_trigger.py` |
@@ -287,6 +289,16 @@ illustrations or brand colours into something that ships
   `~/services/design-systems/media/refero/` (outside git; the videos are
   gigabytes). [refero/README.md](refero/README.md) has the detail. Prefer
   `systems/` values wherever both hold one.
+- **refero.db is merged through its text dump.** `refero/.dump/` is the db
+  as sorted, line-oriented text ([tools/refero/dump.py](tools/refero/dump.py)),
+  committed with the db in the same commit. Every script that writes the db
+  rewrites it when it finishes; after any other db change run
+  `make refero-dump`, and `make check` fails while the two disagree. Never
+  hand-edit it outside a merge. On a `refero/refero.db` conflict, take either
+  side of the db, merge the dump files as text, run `make refero-db` (it
+  rebuilds the db from the dump), regenerate any conflicting derived file
+  (`fetch.py --catalog-only`, `index_similar.py`), then commit both.
+  Readers keep opening `refero.db`; nothing reads the dump at run time.
 - **Grade a package against its platform's wording.** Each catalog entry has a
   `platform` (`web`, `mobile` or `desktop`). In `scorecard/criteria.json` a
   criterion's `doneWhen` is the web wording, and `platforms` holds the mobile
@@ -352,8 +364,8 @@ every `preview` path (cover, `icon.png`) and token path resolves, every package'
 fresh generation, every README's Brief matches a fresh write, the scorecard's scripted grades are current, every
 README's Health section matches the scorecard, and the three refero stores
 (`refero/refero.db`, the `refero/<slug>/` folders, `refero/catalog.json`)
-agree (`tools/refero/check.py`; skips the db side on a clone without
-`git lfs pull`).
+agree, and `refero/.dump/` is exactly refero.db's dump (`tools/refero/check.py`;
+skips the db side on a clone without `git lfs pull`).
 
 ```bash
 make test
