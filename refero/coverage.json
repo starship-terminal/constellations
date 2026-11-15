@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 148,
-    "system_domains": 140,
-    "matched_domains": 111,
-    "missing_domains": 322,
+    "system_packages": 149,
+    "system_domains": 141,
+    "matched_domains": 112,
+    "missing_domains": 321,
     "system_domains_absent_from_catalog": 29
   },
   "matched": {
@@ -1086,6 +1086,23 @@
         }
       ]
     },
+    "district.in": {
+      "catalog": [
+        {
+          "name": "District",
+          "domain": "district.in",
+          "id": 926
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "district",
+          "name": "District",
+          "url": "https://www.district.in",
+          "name_match": true
+        }
+      ]
+    },
     "dock.us": {
       "catalog": [
         {
@@ -2106,13 +2123,6 @@
         "name": "Discord",
         "domain": "discord.com",
         "id": 156
-      }
-    ],
-    "district.in": [
-      {
-        "name": "District",
-        "domain": "district.in",
-        "id": 926
       }
     ],
     "dji.com": [
