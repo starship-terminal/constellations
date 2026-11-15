@@ -12362,7 +12362,8 @@
           "Sf Pro Display and the app's sfProFont are proprietary faces; the style guide falls back to system fonts"
         ],
         "durationMin": 300,
-        "durationNote": "wall-clock across the capture sessions including kit adaptation (selectors and theme handling rewritten to the inverted .body.dark/.body paints and the separate Tailwind app), the stylesheet harvest on both surfaces, screenshot and measurement passes on a headless Linux server, and the offline build"
+        "durationNote": "wall-clock across the capture sessions including kit adaptation (selectors and theme handling rewritten to the inverted .body.dark/.body paints and the separate Tailwind app), the stylesheet harvest on both surfaces, screenshot and measurement passes on a headless Linux server, and the offline build",
+        "pr": "https://github.com/starship-terminal/constellations/pull/600"
       },
       "layoutGaps": {
         "icons/": "the icon extraction pass was not run; the marks and glyphs (the Fourmula mark, the header moon/account icons, the FAQ plus, the app menu/eye glyphs) are visible in the crops and screenshots"
