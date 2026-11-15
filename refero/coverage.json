@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 151,
-    "system_domains": 143,
-    "matched_domains": 114,
-    "missing_domains": 319,
+    "system_packages": 152,
+    "system_domains": 144,
+    "matched_domains": 115,
+    "missing_domains": 318,
     "system_domains_absent_from_catalog": 29
   },
   "matched": {
@@ -1783,6 +1783,23 @@
         }
       ]
     },
+    "fourmula.ai": {
+      "catalog": [
+        {
+          "name": "Fourmula.ai",
+          "domain": "fourmula.ai",
+          "id": 889
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "fourmula",
+          "name": "Fourmula",
+          "url": "https://fourmula.ai",
+          "name_match": true
+        }
+      ]
+    },
     "getfernand.com": {
       "catalog": [
         {
@@ -2220,13 +2237,6 @@
         "name": "Hims",
         "domain": "forhims.co.uk",
         "id": 234
-      }
-    ],
-    "fourmula.ai": [
-      {
-        "name": "Fourmula.ai",
-        "domain": "fourmula.ai",
-        "id": 889
       }
     ],
     "fourthwall.com": [
