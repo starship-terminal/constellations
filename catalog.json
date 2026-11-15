@@ -12559,7 +12559,7 @@
     ],
     "durationMin": 300,
     "durationNote": "wall-clock across the interrupted-and-resumed capture sessions including kit adaptation, the stylesheet harvest, screenshot passes, the measurement pass (weak selectors recorded rather than inferred) and the offline build",
-    "pr": ""
+    "pr": "https://github.com/starship-terminal/constellations/pull/601"
    },
    "layoutGaps": {
     "icons/": "no standalone SVG icon set was lifted; the Framer mark and UI glyphs are visible in the crops and screenshots"
