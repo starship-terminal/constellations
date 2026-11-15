@@ -10092,7 +10092,8 @@
       "icons: no standalone SVG set lifted this pass"
     ],
     "durationMin": 240,
-    "durationNote": "wall-clock across the capture sessions including kit adaptation from the designstripe lineage, the stylesheet harvest, screenshot and measurement passes on a headless Linux server (bot-mitigation retries, the theme-pill cycle for real dark readings, selector fixes for the card/rail ancestors), and the offline build"
+    "durationNote": "wall-clock across the capture sessions including kit adaptation from the designstripe lineage, the stylesheet harvest, screenshot and measurement passes on a headless Linux server (bot-mitigation retries, the theme-pill cycle for real dark readings, selector fixes for the card/rail ancestors), and the offline build",
+    "pr": "https://github.com/starship-terminal/constellations/pull/584"
    },
    "layoutGaps": {
     "icons/": "the icon extraction pass was not run; the icons (the digg wordmark, the vote chevrons, the comment glyph, source favicons and the odometer digits) are visible in the crops and screenshots"
