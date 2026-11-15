@@ -166,7 +166,7 @@ async function S(key, target, list, meta = {}, opts = {}) {
   for (const st of list) listed.get(key).add(st);
   delete out.components[key].missing;
   if (opts.open) { await reset(); try { await opts.open(); } catch (e) { log('  ! open failed', key, String(e.message).slice(0, 80)); } }
-  const loc = target.filter({ visible: true }).first();
+  let loc = target.filter({ visible: true }).first();
   if (!(await loc.count())) {
     const has = Object.keys(out.components[key].states || {}).length > 0;
     log('  ! missing', key, has ? '(earlier states kept)' : '');
@@ -176,6 +176,14 @@ async function S(key, target, list, meta = {}, opts = {}) {
     if (!has) out.components[key].missing = true;
     else { Object.assign(out.components[key], keep); out.components[key].recaptureMissed = run; }
     return;
+  }
+  // A broad selector re-resolves against the live DOM on every use, so an
+  // overlay that mounts mid-run (the docs search popover) can swap the node a
+  // state reads. opts.pin marks the resolved element once and every state
+  // below measures that same node.
+  if (opts.pin) {
+    await loc.evaluate((el) => el.setAttribute('data-m-pin', '1')).catch(() => {});
+    loc = page.locator('[data-m-pin="1"]').first();
   }
   for (const st of list) {
     let undo, via;
@@ -205,8 +213,12 @@ async function S(key, target, list, meta = {}, opts = {}) {
         undo = async () => { await f.focus(); await page.keyboard.press('ControlOrMeta+a'); await page.keyboard.press('Backspace'); await page.waitForTimeout(300); };
         via = `typed "${opts.fillText || 'name@example.com'}", then deleted; nothing sent`;
       } else if (st === 'opened') {
+        // A before.opened callback already toggled the control open — a second
+        // generic click would close it again before the reading.
         if (opts.noToggle) via = 'held open by an earlier toggle';
-        else { await toggle(loc, { allowLink: opts.allowLink }); await page.waitForTimeout(900); via = 'own toggle'; }
+        else if (!via) { await toggle(loc, { allowLink: opts.allowLink }); await page.waitForTimeout(900); via = 'own toggle'; }
+        const exp = await loc.evaluate((el) => el.getAttribute('aria-expanded')).catch(() => null);
+        if (exp !== null) via = (via || 'opened') + (exp === 'true' ? ' (aria-expanded=true at save)' : ' (aria-expanded=false at save — the open did not hold)');
       } else via = via || 'at rest';
       await measure(key, st, loc, { ...opts, via });
     } catch (e) {
@@ -218,6 +230,7 @@ async function S(key, target, list, meta = {}, opts = {}) {
     if (undo) await undo().catch(() => {});
     if (opts.after?.[st]) await opts.after[st](loc).catch(() => {});
   }
+  if (opts.pin) await page.evaluate(() => document.querySelectorAll('[data-m-pin]').forEach((n) => n.removeAttribute('data-m-pin'))).catch(() => {});
   await reset();
 }
 
@@ -233,6 +246,19 @@ async function toggle(loc, { allowLink = false } = {}) {
 
 const q = (sel) => page.locator(sel);
 const B4 = ['default', 'hover', 'focus-visible', 'pressed'];
+
+// The first element matching `sel` whose trimmed text is at least `min` chars
+// (hasText cannot express a trimmed length — /\S{20,}/ means twenty
+// *consecutive* non-space characters, which no normal paragraph matches).
+const p20 = async (sel, min = 20) => {
+  const all = q(sel).filter({ visible: true });
+  const n = Math.min(await all.count(), 15);
+  for (let i = 0; i < n; i++) {
+    const t = ((await all.nth(i).innerText().catch(() => '')) || '').trim();
+    if (t.length >= min) return all.nth(i);
+  }
+  return all.first();
+};
 
 async function sheetsFor(key) {
   const res = await page.evaluate(() => {
@@ -327,8 +353,17 @@ async function openLauncher() {
   const el = page.locator('.fernand__launcher').filter({ visible: true }).first();
   if (!(await el.count())) return 'no launcher';
   const open = async () => {
-    const b = await page.locator('.fernand__backdrop').filter({ visible: true }).first().boundingBox().catch(() => null);
-    return b && b.width > 200;
+    const bd = page.locator('.fernand__backdrop').filter({ visible: true }).first();
+    const b = await bd.boundingBox().catch(() => null);
+    if (!b || b.width <= 200) return false;
+    // The backdrop keeps its full-size box while closed: it sits at opacity 0
+    // with no content. Only a painted, populated panel counts as open.
+    return bd.evaluate((el2) => {
+      const cs = getComputedStyle(el2);
+      if (cs.visibility === 'hidden' || parseFloat(cs.opacity) < 0.05) return false;
+      return (el2.innerText || '').trim().length > 0
+        || !!el2.querySelector('iframe, [class*="panel"], [class*="widget"], [class*="conversation"], [class*="message"]');
+    }).catch(() => false);
   };
   if (await open()) return 'the widget panel was already open';
   for (let i = 0; i < 3; i++) {
@@ -522,8 +557,8 @@ async function helparticle() {
   if (!(await newPage('helparticle'))) return;
   const g = G.help;
   await S('help-h1', q('main h1, h1').filter({ visible: true }).first(), ['default'], { group: g, title: 'Article headline', desc: 'The article title on a docs page ("Getting started").', sel: 'help h1' }, { noScroll: true });
-  await S('help-prose', q('main p, .article p, article p').filter({ hasText: /\S{20,}/ }).filter({ visible: true }).first(), ['default'], { group: g, title: 'Article body', desc: 'A body paragraph in a docs article.', sel: 'help article p' });
-  await S('help-content-link', q('main a, article a').filter({ hasText: /\S/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Article link', desc: 'An in-content link inside a docs article; measured, never followed.', sel: 'help article a' });
+  await S('help-prose', await p20('main p, .article p, article p'), ['default'], { group: g, title: 'Article body', desc: 'A body paragraph in a docs article.', sel: 'help article p' });
+  await S('help-content-link', q('main a, article a').filter({ hasText: /\S/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Article link', desc: 'An in-content link inside a docs article; measured, never followed.', sel: 'help article a' }, { pin: true });
   save();
 }
 
@@ -539,6 +574,7 @@ async function helpdark() {
   await S('hd-nav-item', q('header nav a, nav a').filter({ hasText: /Getting started/i }).filter({ visible: true }).first(), ['default'], { group: g, title: 'Docs nav item (dark)', desc: 'A collection link in the docs nav under dark-mode.', sel: 'help nav a (dark)' }, { noScroll: true });
   await S('hd-search', q('#search-field').filter({ visible: true }).first(), ['default'], { group: g, title: 'Search field (dark)', desc: 'The docs search field under dark-mode.', sel: '#search-field (dark)' }, { noScroll: true });
   await S('hd-card', q('a.card').filter({ visible: true }).first(), ['default'], { group: g, title: 'Collection card (dark)', desc: 'A collection card under dark-mode.', sel: 'help a.card (dark)' });
+  await S('hd-prose', await p20('main p, .article p, article p'), ['default'], { group: g, title: 'Article body (dark)', desc: 'A body paragraph in a docs article under dark-mode.', sel: 'help article p (dark)' });
   save();
 }
 
@@ -548,7 +584,7 @@ async function mobile() {
   const g = G.mobile;
   await S('m-topbar', q('header').filter({ visible: true }).first(), ['default'], { group: g, title: 'Mobile top bar', desc: 'The phone header: Fernand mark, nav links and "Start for free" (Book a demo hides at this width).', sel: 'mobile header' }, { noScroll: true });
   await S('m-cta', q('header a').filter({ hasText: /Start for free/ }).first(), B4, { group: g, title: 'Mobile header CTA', desc: 'The header "Start for free" button at 390 wide; measured never followed.', sel: 'mobile Start for free' }, { noScroll: true });
-  await S('m-hero-h1', q('h1').filter({ visible: true }).first(), ['default'], { group: g, title: 'Mobile hero headline', desc: 'The 38px masthead at 390 wide.', sel: 'mobile h1' });
+  await S('m-hero-h1', q('h1').filter({ visible: true }).first(), ['default'], { group: g, title: 'Mobile hero headline', desc: 'The masthead at 390 wide — the 38px display heading drops to 26px.', sel: 'mobile h1' });
   await S('m-hero-cta', q('a.hero__cta--primary').filter({ visible: true }).first(), B4, { group: g, title: 'Mobile hero CTA', desc: 'The hero "Start for free" button at 390 wide; measured never followed.', sel: 'mobile hero CTA' });
   save();
 }

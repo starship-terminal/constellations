@@ -1,14 +1,14 @@
 # Fernand components
 
-The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Captured from getfernand.com, app.getfernand.com and help.getfernand.com on 2026-11-14, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was signed into, bought or submitted; the login and signup forms were never sent; every link and CTA was measured, never followed.
+The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Captured from getfernand.com, app.getfernand.com and help.getfernand.com on 2026-11-15, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was signed into, bought or submitted; the login and signup forms were never sent; every link and CTA was measured, never followed.
 
-The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (86 components, 181 states). The page layouts are described in [patterns.md](patterns.md).
+The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (87 components, 183 states). The page layouts are described in [patterns.md](patterns.md).
 
 How to read an entry:
 
-- A colour is its value followed by the palette token in [tokens.json](tokens.json) with the same value, when there is one. Text is written family size/line-height weight, then its colour, for example `Inter 15/24 500, #131e40`, and is read from the first text node inside the component.
+- A colour is its value followed by the token in [tokens.json](tokens.json) with the same value in the component's own surface set (light / help / app / dark — the hosts remap the shared palette names), when there is one. Text is written family size/line-height weight, then its colour, for example `Inter 15/24 500, #131e40`, and is read from the first text node inside the component.
 - The state table has one row per state that differs. The first row lists every value; later rows list only what changes. A state with the same values as the first is named in its label, for example "default (same: focus-visible)". When the root paints nothing, "Child layers" names the first nodes inside it that do.
-- Crops are images of the component read from the live page, in [components/crops/](components/crops) (179 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
+- Crops are images of the component read from the live page, in [components/crops/](components/crops) (182 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
 
 ## Discovery list
 
@@ -57,7 +57,7 @@ Screenshots are named `{page}-{theme}-state.png` where `{theme}` is the surface 
 
 Values that apply across entries, from the measurement files.
 
-**Focus.** 25 components were given a real keyboard focus. 19 draw an outline ring: `nav-link` (1px auto #111111, offset 0.984375px), `nav-login` (1px auto #121313, offset 0.96875px), `nav-demo` (1px auto #1e2024, offset 0px), `nav-cta` (1px auto #151515 `border.focus-ring`, offset 0.96875px), `hero-cta` (1px auto #101010, offset 0.984375px), `hero-cta2` (1px auto #101011, offset 0px), `ai-setup-toggle` (2px solid #1a2035 `text.ink`, offset 2px), `footer-cta` (1px auto #101010, offset 0.984375px), `footer-link` (1px auto rgba(20, 20, 20, 0.984), offset 0.96875px), `pricing-cta` (1px auto #161616, offset 0.96875px), `ag-switch` (2px solid #1a2035 `text.ink`, offset 2px), `login-link` (1px auto #131414, offset 0.96875px), `create-continue` (1px auto #121212, offset 0px), `help-nav-item` (1px auto #111111, offset 0.984375px), `help-dark-toggle` (1px auto #121212, offset 0.96875px), `help-goto` (1px auto #101011, offset 0.984375px), `help-content-link` (1px auto #101011, offset 0.96875px), `m-cta` (1px auto #e59803, offset 0.984375px), `m-hero-cta` (1px auto #e69905, offset 0.96875px). 1 draw a focus ring as a shadow instead: `login-submit`. The other 5 show no measured change: `hero-demo-btn`, `channels-arrow`, `wpg-color`, `alt-faq-summary`, `ag-replay`.
+**Focus.** 25 components were given a real keyboard focus. 19 draw an outline ring: `nav-link` (1px auto #121213, offset 0.96875px), `nav-login` (1px auto #121213, offset 0.96875px), `nav-demo` (1px auto #1e2024, offset 0px), `nav-cta` (1px auto #161616 `border.focus-ring`, offset 0.96875px), `hero-cta` (1px auto #151515, offset 0.96875px), `hero-cta2` (1px auto #101011, offset 0px), `ai-setup-toggle` (2px solid #1a2035 `text.ink`, offset 2px), `footer-cta` (1px auto #171717, offset 0.96875px), `footer-link` (1px auto rgba(19, 19, 19, 0.99), offset 0.96875px), `pricing-cta` (1px auto #161616 `border.focus-ring`, offset 0.96875px), `ag-switch` (2px solid #1a2035 `text.ink`, offset 2px), `login-link` (1px auto #131414, offset 0.96875px), `create-continue` (1px auto #121212, offset 0px), `help-nav-item` (1px auto #111111, offset 0.984375px), `help-dark-toggle` (1px auto #121212, offset 0.96875px), `help-goto` (1px auto #101011, offset 0.984375px), `help-content-link` (1px auto #101011, offset 0.96875px), `m-cta` (1px auto #e69a06, offset 0.96875px), `m-hero-cta` (1px auto #e69905, offset 0.96875px). 1 draw a focus ring as a shadow instead: `login-submit`. The other 5 show no measured change: `hero-demo-btn`, `channels-arrow`, `wpg-color`, `alt-faq-summary`, `ag-replay`.
 
 **Pressed.** Forced with DevTools (`CSS.forcePseudoState` :active:hover). Nothing a real press would submit was ever pressed.
 
@@ -86,7 +86,7 @@ Values that apply across entries, from the measurement files.
 | [Feature card](#feature-card) | 416.67 x 569.61 | - | 8px | #ffffff `white` | #f0f0f5 0px 0px 0px 1px | 0 |
 | [Essential integration card](#essential-integration-card) | 324.67 x 551.61 | - | 8px | #ffffff `white` | #f0f0f5 0px 0px 0px 1px | 0 |
 | [Collection card](#collection-card) | 310 x 146.78 | 1px solid #eaecf8 `border.default` | 5px | transparent | none | 22px |
-| [Trusted-by card](#trusted-by-card) | 130 x 60.48 | - | - | transparent | none | 0 |
+| [Trusted-by card](#trusted-by-card) | 147 x 60.48 | - | - | transparent | none | 0 |
 | [Login card](#login-card) | 350 x 216.25 | - | - | transparent | none | 0 |
 
 ## Components
@@ -115,9 +115,9 @@ A marketing header nav link (About us); measured, never followed. Read as `nav-l
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 84 x 37; padding 10px; background transparent; text Inter 14/14 500, #6f7b96 `text.link`; transition all 0.75s cubic-bezier(0.19, 1, 0.22, 1) |
-| hover | text Inter 14/14 500, #1f96e2 |
-| focus-visible | outline 1px auto #111111, offset 0.984375px; layers a 84.0x37.0 1px auto rgb(17, 17, 17) offset 0.984375px |
-| pressed | text Inter 14/14 500, #039ffc |
+| hover | text Inter 14/14 500, #00a0ff `blue.default` |
+| focus-visible | outline 1px auto #121213, offset 0.96875px; layers a 84.0x37.0 1px auto rgb(18, 18, 19) offset 0.96875px |
+| pressed | text Inter 14/14 500, #3f8bc4 |
 
 ![Nav link default](components/crops/nav-link-default.png) ![Nav link hover](components/crops/nav-link-hover.png) ![Nav link focus-visible](components/crops/nav-link-focus-visible.png) ![Nav link pressed](components/crops/nav-link-pressed.png)
 
@@ -127,8 +127,8 @@ The "Log in" nav link to app.getfernand.com; measured, never followed. Read as `
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 62 x 37; padding 10px; background transparent; text Inter 14/14 500, #6f7b96 `text.link`; transition all 0.75s cubic-bezier(0.19, 1, 0.22, 1) |
-| hover | text Inter 14/14 500, #01a0fe |
-| focus-visible | outline 1px auto #121313, offset 0.96875px; layers a 62.0x37.0 1px auto rgb(18, 19, 19) offset 0.96875px |
+| hover | text Inter 14/14 500, #01a0ff |
+| focus-visible | outline 1px auto #121213, offset 0.96875px; layers a 62.0x37.0 1px auto rgb(18, 18, 19) offset 0.96875px |
 | pressed | text Inter 14/14 500, #029ffe |
 
 ![Log in link default](components/crops/nav-login-default.png) ![Log in link hover](components/crops/nav-login-hover.png) ![Log in link focus-visible](components/crops/nav-login-focus-visible.png) ![Log in link pressed](components/crops/nav-login-pressed.png)
@@ -139,9 +139,9 @@ The "Book a demo" header action — a Cal.com scheduler link (data-cal-link, rol
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 115 x 30; padding 8px 12px; radius 6px; background #ffffff `white`; shadow rgba(18, 55, 105, 0.08) 0px 2px 4px 0px, rgba(18, 55, 105, 0.04) 0px 1px 1px 0px, rgba(18, 55, 105, 0.08) 0px 0px 0px 1px; text Inter 14/14 500, #6f7b96 `text.link`; transition all 1.5s cubic-bezier(0.19, 1, 0.22, 1) |
-| hover | text Inter 14/14 500, #5b6680 |
+| hover | text Inter 14/14 500, #5a657f |
 | focus-visible | outline 1px auto #1e2024, offset 0px; text Inter 14/14 500, #6e7a95 |
-| pressed | text Inter 14/14 500, #646f8a |
+| pressed | text Inter 14/14 500, #5b6680 |
 
 ![Book a demo action default](components/crops/nav-demo-default.png) ![Book a demo action hover](components/crops/nav-demo-hover.png) ![Book a demo action focus-visible](components/crops/nav-demo-focus-visible.png) ![Book a demo action pressed](components/crops/nav-demo-pressed.png)
 
@@ -151,7 +151,7 @@ The "Start for free" header button linking to the signup; measured, never follow
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default (same: hover, pressed) | size 115 x 30; padding 8px 12px; radius 6px; background #00a0ff `blue.default`; text Inter 14/14 500, #ffffff `white`; transition all 0.75s cubic-bezier(0.19, 1, 0.22, 1) |
-| focus-visible | outline 1px auto #151515 `border.focus-ring`, offset 0.96875px |
+| focus-visible | outline 1px auto #161616 `border.focus-ring`, offset 0.96875px |
 
 ![Header CTA default](components/crops/nav-cta-default.png) ![Header CTA hover](components/crops/nav-cta-hover.png) ![Header CTA focus-visible](components/crops/nav-cta-focus-visible.png) ![Header CTA pressed](components/crops/nav-cta-pressed.png)
 
@@ -166,7 +166,7 @@ The dated changelog pill above the masthead ("Oct. 27 — Dodo Payments integrat
 |---|---|
 | default (same: hover) | size 259 x 30; padding 5px 12px 5px 5px; radius 40px; background #ffffff `white`; shadow rgba(18, 55, 105, 0.08) 0px 2px 4px 0px, rgba(18, 55, 105, 0.04) 0px 1px 1px 0px, rgba(18, 55, 105, 0.08) 0px 0px 0px 1px; text Inter 12/12 600, #00a0ff `blue.default`; transition all 0.75s cubic-bezier(0.19, 1, 0.22, 1) |
 
-![Update eyebrow pill hover](components/crops/hero-eyebrow-hover.png)
+![Update eyebrow pill default](components/crops/hero-eyebrow-default.png) ![Update eyebrow pill hover](components/crops/hero-eyebrow-hover.png)
 
 #### Hero headline
 "The free customer support platform for SaaS teams" — the 38px display heading. Read as `hero-h1` on the home page.
@@ -188,7 +188,7 @@ The dark "Start for free" hero button (8px radius); measured, never followed. Re
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default (same: hover, pressed) | size 170 x 49; padding 13px 20px; border 1px solid #1a2035 `text.ink`; radius 8px; background #1a2035 `text.ink`; text Inter 15/20 500, #ffffff `white`; transition all 0.75s cubic-bezier(0.19, 1, 0.22, 1) |
-| focus-visible | outline 1px auto #101010, offset 0.984375px |
+| focus-visible | outline 1px auto #151515, offset 0.96875px |
 
 ![Hero CTA default](components/crops/hero-cta-default.png) ![Hero CTA hover](components/crops/hero-cta-hover.png) ![Hero CTA focus-visible](components/crops/hero-cta-focus-visible.png) ![Hero CTA pressed](components/crops/hero-cta-pressed.png)
 
@@ -207,8 +207,7 @@ The "Watch a 2 minute demo" play button — a local UI toggle opening the video 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, opened) | size 240 x 50; padding 16px 20px; radius 40px; background #ffffff `white`; shadow rgba(18, 55, 105, 0.08) 0px 2px 4px 0px, rgba(18, 55, 105, 0.04) 0px 1px 1px 0px, rgba(18, 55, 105, 0.08) 0px 0px 0px 1px; text Inter 15/15 500, #3d4259 `grey.strong`; transition transform 0.16s cubic-bezier(0.23, 1, 0.32, 1); icon 18 x 18, #3d4259 `grey.strong` |
-| pressed | size 237.03 x 49.38; transform scale(0.98761); icon 17.78 x 17.78, #3d4259 `grey.strong` |
+| default (same: hover, focus-visible, pressed, opened) | size 240 x 50; padding 16px 20px; radius 40px; background #ffffff `white`; shadow rgba(18, 55, 105, 0.08) 0px 2px 4px 0px, rgba(18, 55, 105, 0.04) 0px 1px 1px 0px, rgba(18, 55, 105, 0.08) 0px 0px 0px 1px; text Inter 15/15 500, #3d4259 `grey.strong`; transition transform 0.16s cubic-bezier(0.23, 1, 0.32, 1); icon 18 x 18, #3d4259 `grey.strong` |
 
 ![Demo button default](components/crops/hero-demo-btn-default.png) ![Demo button hover](components/crops/hero-demo-btn-hover.png) ![Demo button focus-visible](components/crops/hero-demo-btn-focus-visible.png) ![Demo button pressed](components/crops/hero-demo-btn-pressed.png) ![Demo button opened](components/crops/hero-demo-btn-opened.png)
 
@@ -266,7 +265,7 @@ The channels carousel's "Scroll right" arrow button; measured, never used to pag
 | default | size 44 x 44; padding 1px 6px; border 1px solid #e8e8f0; radius 50%; background #ffffff `white`; shadow rgba(0, 0, 0, 0.1) 0px 2px 12px 0px; text Inter 16/18.4 400, #1a2035 `text.ink`; transition opacity 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease; transform translate(0px, -22px); icon 16 x 16, #1a2035 `text.ink` |
 | hover | shadow rgba(0, 0, 0, 0.15) 0px 4px 20px 0px |
 | focus-visible | size 37.4 x 37.4; transform matrix(0.85, 0, 0, 0.85, 0, -22); opacity 0; icon 13.6 x 13.6, #1a2035 `text.ink` |
-| pressed | size 37.4 x 37.4; shadow rgba(0, 0, 0, 0.14) 0px 3.74659px 18.9864px 0px; transform matrix(0.85, 0, 0, 0.85, 0, -22); opacity 0; icon 13.6 x 13.6, #1a2035 `text.ink` |
+| pressed | size 37.4 x 37.4; shadow rgba(0, 0, 0, 0.15) 0px 4px 20px 0px; transform matrix(0.85, 0, 0, 0.85, 0, -22); opacity 0; icon 13.6 x 13.6, #1a2035 `text.ink` |
 
 ![Carousel arrow default](components/crops/channels-arrow-default.png) ![Carousel arrow hover](components/crops/channels-arrow-hover.png) ![Carousel arrow focus-visible](components/crops/channels-arrow-focus-visible.png) ![Carousel arrow pressed](components/crops/channels-arrow-pressed.png)
 
@@ -301,7 +300,7 @@ A "trusted by" customer card in the dark strip (name + company). Read as `truste
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 130 x 60.48; background transparent; text Inter 13/16.9 600, #ffffff `white` |
+| default (same: hover) | size 147 x 60.48; background transparent; text Inter 13/16.9 600, #ffffff `white` |
 
 ![Trusted-by card default](components/crops/trusted-card-default.png) ![Trusted-by card hover](components/crops/trusted-card-hover.png)
 
@@ -384,7 +383,7 @@ The large "Start for free" button on the pricing hero; measured, never followed.
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default (same: hover, pressed) | size 136 x 48; padding 16px; radius 6px; background #00a0ff `blue.default`; text Inter 16/16 500, #ffffff `white`; transition all 0.75s cubic-bezier(0.19, 1, 0.22, 1) |
-| focus-visible | outline 1px auto #161616, offset 0.96875px |
+| focus-visible | outline 1px auto #161616 `border.focus-ring`, offset 0.96875px |
 
 ![Pricing CTA default](components/crops/pricing-cta-default.png) ![Pricing CTA hover](components/crops/pricing-cta-hover.png) ![Pricing CTA focus-visible](components/crops/pricing-cta-focus-visible.png) ![Pricing CTA pressed](components/crops/pricing-cta-pressed.png)
 
@@ -535,7 +534,7 @@ app.getfernand.com/auth/login — the signed-out Vue SPA sign-in card: e-mail an
 #### Login card
 The sign-in card on app.getfernand.com/auth/login — e-mail and password fields, the primary submit and the account links. Read as `login-card` on the app sign-in page.
 
-**Values (default).** size 350 x 216.25; background transparent; text Inter 15/17.25 400, #9fa3b5 `grey.default`; icon 20 x 20, #0000ee; layers input 350.0x46.0 rgb(255, 255, 255) T:1px solid rgb(209, 213, 230) / R:1px solid rgb(209, 213, 230) / B:1px solid rgb(209, 213, 230) / L:1px solid rgb(209, 213, 230) 4px; input 350.0x46.0 rgb(255, 255, 255) T:1px solid rgb(209, 213, 230) / R:1px solid rgb(209, 213, 230) / B:1px solid rgb(209, 213, 230) / L:1px solid rgb(209, 213, 230) 4px; input.button.button--primary 350.0x46.0 rgb(0, 160, 255) T.
+**Values (default).** size 350 x 216.25; background transparent; text Inter 15/17.25 400, #9fa3b5 `grey.strong`; icon 20 x 20, #0000ee; layers input 350.0x46.0 rgb(255, 255, 255) T:1px solid rgb(209, 213, 230) / R:1px solid rgb(209, 213, 230) / B:1px solid rgb(209, 213, 230) / L:1px solid rgb(209, 213, 230) 4px; input 350.0x46.0 rgb(255, 255, 255) T:1px solid rgb(209, 213, 230) / R:1px solid rgb(209, 213, 230) / B:1px solid rgb(209, 213, 230) / L:1px solid rgb(209, 213, 230) 4px; input.button.button--primary 350.0x46.0 rgb(0, 160, 255) T.
 
 Child layers that carry the look: input 350x46 background #ffffff `white` border 1px solid #d1d5e6 radius 4px; input 350x46 background #ffffff `white` border 1px solid #d1d5e6 radius 4px; input 350x46 background #00a0ff `blue.default` border 2px solid #00a0ff `blue.default` radius 4px.
 
@@ -546,7 +545,7 @@ The "Your work email" input; focused and typed into then cleared — never submi
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 350 x 46; padding 0px 14px; border 1px solid #d1d5e6; radius 4px; background #ffffff `white`; text Inter 15/17.25 400, #131e40 `black`; transition all 0.75s cubic-bezier(0.19, 1, 0.22, 1); placeholder #9fa3b5 `grey.default` |
+| default | size 350 x 46; padding 0px 14px; border 1px solid #d1d5e6; radius 4px; background #ffffff `white`; text Inter 15/17.25 400, #131e40 `black`; transition all 0.75s cubic-bezier(0.19, 1, 0.22, 1); placeholder #9fa3b5 `grey.strong` |
 | focused | border 1px solid #01a0ff; shadow rgba(16, 166, 255, 0.416) 0px 0px 4.97644px 0px |
 | filled | border 1px solid #00a0ff `blue.default`; shadow rgba(16, 166, 255, 0.42) 0px 0px 5px 0px |
 
@@ -557,7 +556,7 @@ The "Your password" input; focused and typed into then cleared — never submitt
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 350 x 46; padding 0px 14px; border 1px solid #d1d5e6; radius 4px; background #ffffff `white`; text Inter 15/17.25 400, #131e40 `black`; transition all 0.75s cubic-bezier(0.19, 1, 0.22, 1); placeholder #9fa3b5 `grey.default` |
+| default | size 350 x 46; padding 0px 14px; border 1px solid #d1d5e6; radius 4px; background #ffffff `white`; text Inter 15/17.25 400, #131e40 `black`; transition all 0.75s cubic-bezier(0.19, 1, 0.22, 1); placeholder #9fa3b5 `grey.strong` |
 | focused | border 1px solid #03a1ff; shadow rgba(16, 166, 255, 0.416) 0px 0px 4.93091px 0px |
 | filled | border 1px solid #00a0ff `blue.default`; shadow rgba(16, 166, 255, 0.42) 0px 0px 5px 0px |
 
@@ -580,7 +579,7 @@ The "Create an account" / "Lost password?" link beside the form; measured, never
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 127 x 19; background transparent; text Inter 15/17.25 400, #9fa3b5 `grey.default`; transition all 0.75s cubic-bezier(0.19, 1, 0.22, 1) |
+| default | size 127 x 19; background transparent; text Inter 15/17.25 400, #9fa3b5 `grey.strong`; transition all 0.75s cubic-bezier(0.19, 1, 0.22, 1) |
 | hover | text Inter 15/17.25 400, #01a0fe |
 | focus-visible | outline 1px auto #131414, offset 0.96875px; layers a 127.0x19.0 1px auto rgb(19, 20, 20) offset 0.96875px |
 | pressed | text Inter 15/17.25 400, #03a0fe |
@@ -610,7 +609,7 @@ The "Your work email" signup input; focused and typed into then cleared — neve
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 599 x 46; padding 0px 14px; border 1px solid #d1d5e6; radius 4px; background #ffffff `white`; text Inter 15/17.25 400, #131e40 `black`; transition all 0.75s cubic-bezier(0.19, 1, 0.22, 1); placeholder #9fa3b5 `grey.default` |
+| default | size 599 x 46; padding 0px 14px; border 1px solid #d1d5e6; radius 4px; background #ffffff `white`; text Inter 15/17.25 400, #131e40 `black`; transition all 0.75s cubic-bezier(0.19, 1, 0.22, 1); placeholder #9fa3b5 `grey.strong` |
 | focused | border 1px solid #02a1ff; shadow rgba(16, 166, 255, 0.416) 0px 0px 4.94347px 0px |
 | filled | border 1px solid #00a0ff `blue.default`; shadow rgba(16, 166, 255, 0.42) 0px 0px 5px 0px |
 
@@ -621,7 +620,7 @@ The "Your product's name" input; focused and typed into then cleared — never s
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 599 x 46; padding 0px 14px; border 1px solid #d1d5e6; radius 4px; background #ffffff `white`; text Inter 15/17.25 400, #131e40 `black`; transition all 0.75s cubic-bezier(0.19, 1, 0.22, 1); placeholder #9fa3b5 `grey.default` |
+| default | size 599 x 46; padding 0px 14px; border 1px solid #d1d5e6; radius 4px; background #ffffff `white`; text Inter 15/17.25 400, #131e40 `black`; transition all 0.75s cubic-bezier(0.19, 1, 0.22, 1); placeholder #9fa3b5 `grey.strong` |
 | focused | border 1px solid #02a1ff; shadow rgba(16, 166, 255, 0.416) 0px 0px 4.94347px 0px |
 | filled | border 1px solid #00a0ff `blue.default`; shadow rgba(16, 166, 255, 0.42) 0px 1.20147e-08px 5px 0px, rgba(54, 61, 84, 0) 0px 0px 9.01104e-08px 0px |
 
@@ -660,7 +659,7 @@ help.getfernand.com — the Nuxt docs site on the same palette: header nav, the 
 #### Docs header
 The docs site header: logo, the collection nav, the search and menu toggles and the dark-mode switch. Read as `help-header` on the docs home page.
 
-**Values (default).** size 350 x 900; padding 22px; border R: 1px solid #eaecf8 `border.default`; background #f7fafc `surface.card`; text Inter 14/22.4 400, #00a0ff `blue.default`.
+**Values (default).** size 350 x 900; padding 22px; border R: 1px solid #eaecf8 `border.default`; background #f7fafc; text Inter 14/22.4 400, #00a0ff `blue.default`.
 
 ![Docs header default](components/crops/help-header-default.png)
 
@@ -686,7 +685,7 @@ The docs search field ("Start typing to search an article, collection…", ⌘K 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 480 x 42; padding 1px 2px 1px 40px; border 1px solid #eaecf8 `border.default`; radius 5px; background #ffffff `white`; shadow rgba(26, 28, 33, 0.03) 0px 2px 3px 0px; text Inter 14/16.1 400, #131e40 `black`; transition all 0.75s cubic-bezier(0.19, 1, 0.22, 1); placeholder #5f667d `text.muted` |
+| default | size 480 x 42; padding 1px 2px 1px 40px; border 1px solid #eaecf8 `border.default`; radius 5px; background #ffffff `white`; shadow rgba(26, 28, 33, 0.03) 0px 2px 3px 0px; text Inter 14/16.1 400, #131e40 `black`; transition all 0.75s cubic-bezier(0.19, 1, 0.22, 1); placeholder #5f667d |
 | focused | border 1px solid #01a0ff |
 
 ![Search field default](components/crops/help-search-default.png) ![Search field focused](components/crops/help-search-focused.png)
@@ -703,7 +702,7 @@ The docs site's own "Switch to dark mode" link — the real user-facing toggle t
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 30 x 30; radius 20px; background transparent; text Inter 16/25.6 400, #5f667d `text.muted`; transition all 0.75s cubic-bezier(0.19, 1, 0.22, 1); icon 18 x 24, #9fa3b5 `grey.default` |
+| default | size 30 x 30; radius 20px; background transparent; text Inter 16/25.6 400, #5f667d; transition all 0.75s cubic-bezier(0.19, 1, 0.22, 1); icon 18 x 24, #9fa3b5 `grey.default` |
 | hover | text Inter 16/25.6 400, #01a0fe |
 | focus-visible | outline 1px auto #121212, offset 0.96875px; layers a.switch__dark 30.0x30.0 1px auto rgb(18, 18, 18) offset 0.96875px 20px |
 | pressed | text Inter 16/25.6 400, #029ffd |
@@ -747,7 +746,9 @@ The article title on a docs page ("Getting started"). Read as `help-h1` on the d
 #### Article body
 A body paragraph in a docs article. Read as `help-prose` on the docs article page.
 
-Not on the page when it was captured.
+**Values (default).** size 962 x 25.59; background transparent; text Inter 16/25.6 400, #131e40 `black`.
+
+![Article body default](components/crops/help-prose-default.png)
 
 #### Article link
 An in-content link inside a docs article; measured, never followed. Read as `help-content-link` on the docs article page.
@@ -755,9 +756,9 @@ An in-content link inside a docs article; measured, never followed. Read as `hel
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 58 x 17; background transparent; text Inter 14/22.4 400, #131e40 `black`; transition all 0.75s cubic-bezier(0.19, 1, 0.22, 1) |
-| hover | text Inter 14/22.4 400, #009ffe |
-| focus-visible | size 460 x 54; padding 6px 10px; radius 5px; background rgba(245, 247, 249, 0.992); outline 1px auto #101011, offset 0.96875px; text Inter 14/22.4 400, #9fa3b5 `grey.default` |
-| pressed | size 460 x 54; padding 6px 10px; radius 5px; background #f5f7f9; text Inter 14/22.4 400, #9fa3b5 `grey.default` |
+| hover | text Inter 14/22.4 400, #009ffd |
+| focus-visible | outline 1px auto #101011, offset 0.96875px; layers a.u--fs14 58.0x17.0 1px auto rgb(16, 16, 17) offset 0.96875px |
+| pressed | text Inter 14/22.4 400, #009efc |
 
 ![Article link default](components/crops/help-content-link-default.png) ![Article link hover](components/crops/help-content-link-hover.png) ![Article link focus-visible](components/crops/help-content-link-focus-visible.png) ![Article link pressed](components/crops/help-content-link-pressed.png)
 
@@ -768,16 +769,16 @@ The same docs site under body.dark-mode, painted by its own 'Switch to dark mode
 #### Docs page (dark)
 The docs article surface under body.dark-mode — reached through the site's own "Switch to dark mode" link, not a reconstruction. Read as `hd-page` on the docs article page.
 
-**Values (default).** size 1090 x 1506.81; background transparent; text Inter 12/23 400, #5f667d `text.muted`; icon 20 x 20, #131e40 `black`; layers div::after.wrapper.wrapper__pageheader 1090pxx120px; input.transit 480.0x42.0 rgb(255, 255, 255) T:1px solid rgb(234, 236, 248) / R:1px solid rgb(234, 236, 248) / B:1px solid rgb(234, 236, 248) / L:1px solid rgb(234, 236, 248) rgba(26, 28, 33, 0.03) 0px 2px 3px 0px 5px; kbd.transit.m--hide 30.0x28.0 rgb(247, 250, 252) T:1px solid rgb(234, 236, 248) / R:1px solid rgb(234, 236, 248) / B:1px solid rg.
+**Values (default).** size 1090 x 1506.81; background transparent; text Inter 12/23 400, #8a8f98 `grey.medium`; icon 20 x 20, #a1a1aa `text.muted`; layers div::after.wrapper.wrapper__pageheader 1090pxx120px; input.transit 480.0x42.0 rgb(22, 22, 24) T:1px solid rgba(255, 255, 255, 0.1) / R:1px solid rgba(255, 255, 255, 0.1) / B:1px solid rgba(255, 255, 255, 0.1) / L:1px solid rgba(255, 255, 255, 0.1) rgba(26, 28, 33, 0.03) 0px 2px 3px 0px 5px; kbd.transit.m--hide 30.0x28.0 rgb(24, 24, 27) T:1px solid rgba(255, 255, 255, 0.1) / R:1px solid rgba(255, 2.
 
-Child layers that carry the look: div::after 1090pxx120px image linear-gradient(#161618 `white`, #161618 `white` 60%, rgba(18, 18, 18, 0)); input 480x42 background #ffffff `white` border 1px solid #eaecf8 `border.default` radius 5px shadow rgba(26, 28, 33, 0.03) 0px 2px 3px 0px; kbd 30x28 background #f7fafc `surface.card` border 1px solid #eaecf8 `border.default` radius 4px.
+Child layers that carry the look: div::after 1090pxx120px image linear-gradient(#161618 `white`, #161618 `white` 60%, rgba(18, 18, 18, 0)); input 480x42 background #161618 `white` border 1px solid rgba(255, 255, 255, 0.1) `border.default` radius 5px shadow rgba(26, 28, 33, 0.03) 0px 2px 3px 0px; kbd 30x28 background #18181b `grey.light` border 1px solid rgba(255, 255, 255, 0.1) `border.default` radius 4px.
 
 ![Docs page (dark) default](components/crops/hd-page-default.png)
 
 #### Article headline (dark)
 The article title under dark-mode. Read as `hd-h1` on the docs article page.
 
-**Values (default).** size 962 x 50; background transparent; text Inter 42/50 500, #ffffff `white`.
+**Values (default).** size 962 x 50; background transparent; text Inter 42/50 500, #ffffff `text.ink`.
 
 ![Article headline (dark) default](components/crops/hd-h1-default.png)
 
@@ -802,6 +803,13 @@ A collection card under dark-mode. Read as `hd-card` on the docs article page.
 
 ![Collection card (dark) default](components/crops/hd-card-default.png)
 
+#### Article body (dark)
+A body paragraph in a docs article under dark-mode. Read as `hd-prose` on the docs article page.
+
+**Values (default).** size 962 x 25.59; background transparent; text Inter 16/25.6 400, #a1a1aa `text.muted`.
+
+![Article body (dark) default](components/crops/hd-prose-default.png)
+
 ### Mobile (390 wide)
 
 The phone surface at 390 wide: the header, the masthead and the hero CTA.
@@ -819,12 +827,12 @@ The header "Start for free" button at 390 wide; measured never followed. Read as
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default (same: hover, pressed) | size 115 x 30; padding 8px 12px; radius 6px; background #00a0ff `blue.default`; text Inter 14/14 500, #ffffff `white`; transition all 0.75s cubic-bezier(0.19, 1, 0.22, 1) |
-| focus-visible | outline 1px auto #e59803, offset 0.984375px |
+| focus-visible | outline 1px auto #e69a06, offset 0.96875px |
 
 ![Mobile header CTA default](components/crops/m-cta-default.png) ![Mobile header CTA hover](components/crops/m-cta-hover.png) ![Mobile header CTA focus-visible](components/crops/m-cta-focus-visible.png) ![Mobile header CTA pressed](components/crops/m-cta-pressed.png)
 
 #### Mobile hero headline
-The 38px masthead at 390 wide. Read as `m-hero-h1` on the home page at 390 wide.
+The masthead at 390 wide — the 38px display heading drops to 26px. Read as `m-hero-h1` on the home page at 390 wide.
 
 **Values (default).** size 350 x 66; background transparent; text Inter 26/33 400, #1a2035 `text.ink`; transition all 1.5s cubic-bezier(0.19, 1, 0.22, 1).
 
@@ -850,7 +858,7 @@ The "Start free. Email included." call-to-action button in the closing section; 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default (same: hover, pressed) | size 170 x 49; padding 13px 20px; border 1px solid #1a2035 `text.ink`; radius 8px; background #1a2035 `text.ink`; text Inter 15/20 500, #ffffff `white`; transition all 0.75s cubic-bezier(0.19, 1, 0.22, 1) |
-| focus-visible | outline 1px auto #101010, offset 0.984375px |
+| focus-visible | outline 1px auto #171717, offset 0.96875px |
 
 ![Footer CTA default](components/crops/footer-cta-default.png) ![Footer CTA hover](components/crops/footer-cta-hover.png) ![Footer CTA focus-visible](components/crops/footer-cta-focus-visible.png) ![Footer CTA pressed](components/crops/footer-cta-pressed.png)
 
@@ -859,7 +867,7 @@ The page footer: sitemap columns, legal links, status/social links. Read as `foo
 
 **Values (default).** size 1440 x 417; background #151618; text Inter 15/15 400, #ffffff `white`; layers ::before rgb(21, 22, 24) 0px none 1.
 
-![Footer default](components/crops/footer-default.png)
+No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
 
 #### Footer link
 A footer sitemap link; measured, never followed. Read as `footer-link` on the home page.
@@ -868,7 +876,7 @@ A footer sitemap link; measured, never followed. Read as `footer-link` on the ho
 |---|---|
 | default | size 194 x 25; padding 5px 0px; background transparent; text Inter 15/15 400, rgba(255, 255, 255, 0.5); transition all 0.75s cubic-bezier(0.19, 1, 0.22, 1) |
 | hover | text Inter 15/15 400, rgba(255, 255, 255, 0.996) |
-| focus-visible | outline 1px auto rgba(20, 20, 20, 0.984), offset 0.96875px; layers a 194.0x25.0 1px auto rgba(20, 20, 20, 0.984) offset 0.96875px |
+| focus-visible | outline 1px auto rgba(19, 19, 19, 0.99), offset 0.96875px; layers a 194.0x25.0 1px auto rgba(19, 19, 19, 0.99) offset 0.96875px |
 | pressed | text Inter 15/15 400, rgba(255, 255, 255, 0.992) |
 
 ![Footer link default](components/crops/footer-link-default.png) ![Footer link hover](components/crops/footer-link-hover.png) ![Footer link focus-visible](components/crops/footer-link-focus-visible.png) ![Footer link pressed](components/crops/footer-link-pressed.png)
@@ -880,14 +888,14 @@ The product's own embeddable chat widget on the marketing site — the 48px laun
 #### Widget launcher
 The Fernand chat-widget launcher on the marketing site — the product's own embeddable widget at rest (48px bubble). Read as `launcher` on the home page.
 
-**Values (default).** size 48 x 48; radius 100%; background transparent; shadow rgba(0, 0, 0, 0.1) 0px 5px 18px -5px, rgba(0, 0, 0, 0.1) 0px 8px 8px -6px; text Inter 16/16 400, #131e40 `black`; transition all 0.75s cubic-bezier(0.19, 1, 0.22, 1); icon 24 x 24, #5f667d `text.muted`; layers div.fernand__launcher.transit 48.0x48.0 rgba(0, 0, 0, 0.1) 0px 5px 18px -5px, rgba(0, 0, 0, 0.1) 0px 8px 8px -6px 100%; div.fernand__launcher__icon 48.0x48.0 rgb(255, 255, 255) 100%.
+**Values (default).** size 48 x 48; radius 100%; background transparent; shadow rgba(0, 0, 0, 0.1) 0px 5px 18px -5px, rgba(0, 0, 0, 0.1) 0px 8px 8px -6px; text Inter 16/16 400, #131e40 `black`; transition all 0.75s cubic-bezier(0.19, 1, 0.22, 1); icon 24 x 24, #5f667d; layers div.fernand__launcher.transit 48.0x48.0 rgba(0, 0, 0, 0.1) 0px 5px 18px -5px, rgba(0, 0, 0, 0.1) 0px 8px 8px -6px 100%; div.fernand__launcher__icon 48.0x48.0 rgb(255, 255, 255) 100%.
 
 ![Widget launcher default](components/crops/launcher-default.png)
 
 #### Widget panel
 The chat-widget panel opened by its own launcher click — the product's public widget UI; never typed into. Read as `launcher-panel` on the home page.
 
-**Values (default).** size 400 x 900; background transparent; image radial-gradient(at right bottom, rgba(29, 39, 54, 0.1) 0px, rgba(29, 39, 54, 0) 70%); text Inter 16/16 400, #131e40 `black`; transition all 0.75s cubic-bezier(0.19, 1, 0.22, 1); opacity 0.
+**Values (default).** size 400 x 900; background transparent; image radial-gradient(at right bottom, rgba(29, 39, 54, 0.1) 0px, rgba(29, 39, 54, 0) 70%); text Inter 16/16 400, #131e40 `black`; transition all 0.75s cubic-bezier(0.19, 1, 0.22, 1).
 
 ![Widget panel default](components/crops/launcher-panel-default.png)
 

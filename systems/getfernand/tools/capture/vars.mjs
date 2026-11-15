@@ -88,7 +88,9 @@ if (!sheets.length) { console.log('no sheets harvested; css-vars.json not writte
 if (page) await page.close();
 
 // ---- harvest: every rule with --* declarations, tagged by host ----
-const probe = await browser.newPage();
+// The probe resolves viewport-relative declarations (min(100vh, 100dvh)), so
+// it must carry the same 1440 x 900 viewport the captures label them with.
+const probe = await browser.newPage({ viewport: { width: 1440, height: 900 } });
 const result = await probe.evaluate((sheets) => {
   const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v);
   const rules = [];

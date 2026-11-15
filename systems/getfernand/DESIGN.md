@@ -24,7 +24,7 @@ colors:
   action-cta-fill: "#1a2035"
   action-cta-ink: "#ffffff"
   surface-card: "#f7fafc"
-  border-focus-ring: "#151515"
+  border-focus-ring: "#161616"
   background-page: "#ffffff"
 rounded:
   control: "6px"

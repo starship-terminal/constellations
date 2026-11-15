@@ -241,11 +241,13 @@ except KeyError:
     pass
 
 weights = SPEC["core"].setdefault("font", {}).setdefault("weight", {})
+# Names follow the measured values, not the usual weight names: the public
+# surfaces set nothing heavier than 600, and the display headings are 400.
 for key, comp, state, desc in [
     ("regular", "hero-sub", "default", "The 400 body weight."),
     ("medium", "nav-cta", "default", "The 500 weight on buttons and nav links."),
-    ("semibold", "section-tag", "default", "The 600 weight on the eyebrow pills and labels."),
-    ("bold", "hero-h1", "default", "The 700 weight on display headings."),
+    ("semibold", "pricing-eyebrow", "default", "The 600 weight on plan eyebrows, card titles and table heads — the heaviest weight the public surfaces set."),
+    ("display", "hero-h1", "default", "The display-heading weight: the 38px masthead measures 400, not bold."),
 ]:
     try:
         w = ts(comp, state, "fontWeight") or st(comp, state)["fontWeight"]
@@ -263,7 +265,7 @@ for key, comp, state, desc in [
     ("lede", "hero-sub", "default", "The hero standfirst size."),
     ("quote", "testimonial", "default", "The 22px testimonial display copy."),
     ("body", "channels-card", "default", "The card/body copy size."),
-    ("button", "nav-cta", "default", "The 15px button/nav size."),
+    ("button", "nav-cta", "default", "The 14px button/nav size."),
     ("eyebrow", "section-tag", "default", "The small eyebrow-pill size."),
     ("mobileHero", "m-hero-h1", "default", "The masthead at 390 wide."),
 ]:
@@ -280,13 +282,19 @@ for key, comp, state, desc in [
     ("quote", "testimonial", "default", "The testimonial leading (1.55)."),
 ]:
     try:
-        s = st(comp, state)
-        fs = float(s["fontSize"][:-2])
-        v = s["lineHeight"]
+        # Size and leading come off the same node: the wrapper's own style is
+        # what children inherit, while the visible text can set its own pair —
+        # testimonial's wrapper is 16/16 under the 22/34.1 quote text, so the
+        # textStyle pair (when the kit recorded one) is the honest ratio.
+        c = C[comp]["states"][state]
+        t = c.get("textStyle") or {}
+        fsraw = t.get("fontSize") or c["style"]["fontSize"]
+        v = t.get("lineHeight") or c["style"]["lineHeight"]
+        fs = float(fsraw[:-2])
         if v == "normal":
             lh[key] = lit("normal", "other", f"computed lineHeight of {comp} {state} (raw/components-computed.json)", desc)
         elif v.endswith("px"):
-            lh[key] = lit(round(float(v[:-2]) / fs, 4), "number", f"computed lineHeight/fontSize of {comp} {state} ({v} over {s['fontSize']}, raw/components-computed.json)", desc)
+            lh[key] = lit(round(float(v[:-2]) / fs, 4), "number", f"computed lineHeight/fontSize of {comp} {state} ({v} over {fsraw}, raw/components-computed.json)", desc)
     except (KeyError, ValueError):
         pass
 
@@ -415,7 +423,7 @@ for root, theme, key, comp, state, prop, group, desc in [
      "The docs heading ink under dark-mode."),
     (dsem, "dark", "card", "hd-card", "default", "backgroundColor", "surface",
      "The docs card surface under dark-mode."),
-    (dsem, "dark", "muted", "hd-page", "default", "color", "text",
+    (dsem, "dark", "muted", "hd-prose", "default", "color", "text",
      "The docs body/prose ink under dark-mode."),
     (dsem, "dark", "link", "hd-nav-item", "default", "color", "text",
      "The active docs nav item ink under dark-mode (the blue)."),
@@ -435,6 +443,19 @@ for root, theme, key, comp, state, prop, group, desc in [
         if raw in (None, ""):
             raise KeyError(prop)
         root.setdefault(group, {})[key] = semcolor(raw, src, desc, theme)
+    except KeyError:
+        pass
+
+# The dark muted role's fallback when the dedicated prose paragraph was not
+# captured: the page wrapper's own colour is the inherited body ink (the first
+# text *node* inside it is the ⌘K shortcut, not body copy, so textStyle is not
+# a safe source here).
+if "muted" not in dsem.get("text", {}):
+    try:
+        raw = st("hd-page", "default")["color"]
+        dsem.setdefault("text", {})["muted"] = semcolor(
+            raw, "computed color of hd-page default — the wrapper's own colour, the inherited body-copy ink (raw/components-computed.json)",
+            "The docs body/prose ink under dark-mode.", "dark")
     except KeyError:
         pass
 

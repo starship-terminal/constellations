@@ -24,16 +24,16 @@
           "description": "The 500 weight on buttons and nav links."
         },
         "semibold": {
-          "value": 500,
+          "value": 600,
           "type": "fontWeight",
-          "source": "computed fontWeight of section-tag default (raw/components-computed.json)",
-          "description": "The 600 weight on the eyebrow pills and labels."
+          "source": "computed fontWeight of pricing-eyebrow default (raw/components-computed.json)",
+          "description": "The 600 weight on plan eyebrows, card titles and table heads — the heaviest weight the public surfaces set."
         },
-        "bold": {
+        "display": {
           "value": 400,
           "type": "fontWeight",
           "source": "computed fontWeight of hero-h1 default (raw/components-computed.json)",
-          "description": "The 700 weight on display headings."
+          "description": "The display-heading weight: the 38px masthead measures 400, not bold."
         }
       },
       "size": {
@@ -65,7 +65,7 @@
           "value": "14px",
           "type": "dimension",
           "source": "computed fontSize of nav-cta default (raw/components-computed.json)",
-          "description": "The 15px button/nav size."
+          "description": "The 14px button/nav size."
         },
         "eyebrow": {
           "value": "13px",
@@ -94,9 +94,9 @@
           "description": "The body leading."
         },
         "quote": {
-          "value": 1.0,
+          "value": 1.55,
           "type": "number",
-          "source": "computed lineHeight/fontSize of testimonial default (16px over 16px, raw/components-computed.json)",
+          "source": "computed lineHeight/fontSize of testimonial default (34.1px over 22px, raw/components-computed.json)",
           "description": "The testimonial leading (1.55)."
         }
       }
@@ -279,7 +279,7 @@
     },
     "border": {
       "focus-ring": {
-        "value": "#151515",
+        "value": "#161616",
         "type": "color",
         "source": "computed outlineColor of nav-cta focus-visible (raw/components-computed.json)",
         "description": "The keyboard focus ring on controls, where the browser paints one."
@@ -295,78 +295,6 @@
     }
   },
   "help": {
-    "black": {
-      "var": "--black",
-      "type": "color"
-    },
-    "blue": {
-      "default": {
-        "var": "--blue",
-        "type": "color"
-      },
-      "pale": {
-        "var": "--blue-pale",
-        "type": "color"
-      }
-    },
-    "border": {
-      "default": {
-        "var": "--border",
-        "type": "color"
-      },
-      "strong": {
-        "var": "--border-strong",
-        "type": "color"
-      }
-    },
-    "green": {
-      "default": {
-        "var": "--green",
-        "type": "color"
-      },
-      "pale": {
-        "var": "--green-pale",
-        "type": "color"
-      }
-    },
-    "grey": {
-      "default": {
-        "var": "--grey",
-        "type": "color"
-      },
-      "light": {
-        "var": "--grey-light",
-        "type": "color"
-      },
-      "medium": {
-        "var": "--grey-medium",
-        "type": "color"
-      }
-    },
-    "orange": {
-      "default": {
-        "var": "--orange",
-        "type": "color"
-      },
-      "pale": {
-        "var": "--orange-pale",
-        "type": "color"
-      }
-    },
-    "red": {
-      "default": {
-        "var": "--red",
-        "type": "color"
-      },
-      "pale": {
-        "var": "--red-pale",
-        "type": "color"
-      }
-    },
-    "white": {
-      "var": "--white",
-      "type": "color"
-    },
     "surface": {
       "card": {
         "value": "rgba(0, 0, 0, 0)",
@@ -375,17 +303,17 @@
         "description": "The docs collection-card surface in light."
       },
       "field-bg": {
-        "value": "{white}",
+        "value": "#ffffff",
         "type": "color",
-        "source": "computed backgroundColor of help-search default (raw/components-computed.json); matches declared white",
+        "source": "computed backgroundColor of help-search default (raw/components-computed.json)",
         "description": "The docs search field fill in light."
       }
     },
     "text": {
       "ink": {
-        "value": "{black}",
+        "value": "#131e40",
         "type": "color",
-        "source": "computed color of help-h1 default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared black",
+        "source": "computed color of help-h1 default — the first text node's reading where the kit recorded one (raw/components-computed.json)",
         "description": "The docs article heading ink in light."
       }
     }
@@ -607,9 +535,9 @@
         "description": "The docs heading ink under dark-mode."
       },
       "muted": {
-        "value": "#5f667d",
+        "value": "#a1a1aa",
         "type": "color",
-        "source": "computed color of hd-page default — the first text node's reading where the kit recorded one (raw/components-computed.json)",
+        "source": "computed color of hd-prose default — the first text node's reading where the kit recorded one (raw/components-computed.json)",
         "description": "The docs body/prose ink under dark-mode."
       },
       "link": {

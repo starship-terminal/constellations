@@ -14,7 +14,7 @@ Fernand is worth a capture because three public hosts share one flat `:root` pal
 | [components.md](components.md) | The discovery list of every page and view, one entry per component with crops and values, and the Gaps. |
 | [patterns.md](patterns.md) | How the components combine: the chrome, the hero, the card systems, the widget playground, the forms, the docs surfaces, mobile, motion and focus. |
 | [components/crops/](components/crops) | Element crops at 2x, named `{component}-{state}.png`. |
-| [screenshots/](screenshots) | Quantised `{page}-{theme}-{state}.png` captures with `.capture.json` sidecars. Desktop 1440 x 900 at 1x; `-full` whole pages (tiled past one GPU texture, bounded at 8 chunks — /updates truncates at ~44k px); `mobile-*` shots at 390 x 844 @2x; `help-dark-*` the genuinely-toggled docs dark mode; `*-ai-menu`, `*-demo-modal`, `*-launcher-open`, `*-search`, `*-menu` the local interaction states. |
+| [screenshots/](screenshots) | Quantised `{page}-{theme}-{state}.png` captures with `.capture.json` sidecars. Desktop 1440 x 900 at 1x; `-full` whole pages (tiled past one GPU texture, bounded at 8 chunks — /updates' ~44k px stitched from 4 contiguous parts); `mobile-*` shots at 390 x 844 @2x; `help-dark-*` the genuinely-toggled docs dark mode; `*-ai-menu`, `*-demo-modal`, `*-launcher-open`, `*-search`, `*-menu` the local interaction states. |
 | [raw/](raw) | The evidence: `components-computed.json` (every measurement), `measurements.md` (readable tables), `css-vars.json` (the stylesheet harvest — resolved custom properties in the marketing, app, docs-light, docs-dark and gated app-dark probes plus @font-face), `component-tokens.json` (the token-tree spec). |
 | [tools/](tools) | The builders and the capture kit (see Rebuild). |
 | [capture.pr](capture.pr) | The pull request that shipped this capture |
@@ -44,7 +44,7 @@ Each rule links the screenshot or crop that shows it, under [Do and don't](#do-a
 | page | #ffffff `light.background.page` | #161618 `dark.background.page` |
 | surface | #f7fafc `light.surface.card` | #232326 `dark.surface.raised` |
 | text | #1a2035 `light.text.ink` | #ffffff `dark.text.ink` |
-| muted | #717583 `light.text.muted` | #5f667d `dark.text.muted` |
+| muted | #717583 `light.text.muted` | #a1a1aa `dark.text.muted` |
 | accent | #1a2035 `light.action.cta-fill` | #00a0ff `dark.text.link` |
 | border | #eaecf8 `core.border.default` | rgba(255, 255, 255, 0.1) `dark.border.default` |
 
@@ -52,16 +52,16 @@ Fonts: `core.font.family.inter` is Inter, then 9 fallbacks. Scales, counted as [
 
 ### Using components
 
-Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 179 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
+Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 182 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
 
 ### Accessibility
 
 | Theme | text on page | text on surface | muted on page | muted on surface |
 |---|---|---|---|---|
 | light | 16.12:1 pass | 15.38:1 pass | 4.59:1 pass | 4.37:1 fail |
-| dark | 18.07:1 pass | 15.67:1 pass | 3.16:1 fail | 2.74:1 fail |
+| dark | 18.07:1 pass | 15.67:1 pass | 7.05:1 pass | 6.11:1 pass |
 
-5 of 8 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Focus tokens: `light.border.focus-ring` #151515.
+7 of 8 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Focus tokens: `light.border.focus-ring` #161616.
 
 <!-- brief:end -->
 
@@ -82,7 +82,7 @@ Scorecard: **12 of 25 met, 12 partly, 1 missing**; C5, V1, V2 are optional for a
 | F12 Elevation | Partly | Fernand's elevation is hairline ring shadows (section-tag's layered 1px shadows, the pricing card's ring+blur, the docs search field's soft shadow) rather than a named 3-5 level scale; the dialog backdrop was captured but no popover shadow set is declared. |
 | F13 Motion | Partly | Measured motion.control 'all 0.75s cubic-bezier(0.19,1,0.22,1)' plus per-component transitions (0.15-0.3s on swatches/arrows); the reduced-motion probe on the header CTA is recorded in _meta.reducedMotion (animation:none, scroll-behavior:auto; duration unchanged). |
 | F14 Layout | Partly | A 390px pass exists (m--hide utilities drop chrome items, the docs menu__toggle opens the nav); container widths were measured (~1090px docs column, 300px channel cards, 1290px alt-table); no breakpoint or z-index tokens are declared. |
-| F15 Contrast | Partly | Script: primary text passes; secondary fails 3 pairs, worst 2.74:1 dark muted (dark.text.muted) on surface (dark.surface.raised) |
+| F15 Contrast | Partly | Script: primary text passes; secondary fails 1 pair, worst 4.37:1 light muted (light.text.muted) on surface (light.surface.card) |
 | C1 Component coverage | Partly | 12 of 19 checklist components paint publicly: button (CTA/submit/continue), icon button (channels-arrow, launcher, dark-mode toggle, docs menu), link (nav/footer/goto/login), text field (login, create, docs search), checkbox (create tos), switch (ag-switch), tabs (wpg-tab), menu (ai-setup), dialog (demo-modal), card (channels/feat/pricing/help/trusted), list row (wpg-article, help-article-item, pricing-line, faq), table (alt-table). No text area/select/radio/tooltip/toast/avatar exists on the signed-out surface. |
 | P1 Patterns | Partly | patterns.md covers the chrome, the hero, the section/card grammar, the widget playground, pricing/comparison, the signed-out forms, the docs surfaces with search and dark mode, mobile, motion and focus; empty/loading/error, destructive confirmation and onboarding patterns do not exist on the public surface - a documented boundary. |
 | A1 Assets | Partly | Inter is named with weights and the @font-face harvest (self-hosted woff2, 300-700 + italics); the licence is not redistributed - the style guide falls back to system sans. No standalone SVG icon set was lifted (declared layoutGap): glyphs are visible in crops/screenshots. |

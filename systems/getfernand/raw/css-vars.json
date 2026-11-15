@@ -1,13 +1,13 @@
 {
- "readAt": "2026-11-14",
+ "readAt": "2026-11-15",
  "source": "the stylesheet bodies read during live signed-out loads of getfernand.com / (inline <style> blocks + linked _nuxt chunks), app.getfernand.com /auth/login (the bundled index css) and help.getfernand.com / (the entry css), re-parsed with CSSStyleSheet; resolved in per-host probes carrying each host's real sheets — light (marketing), app (the SPA), help (docs, body.light-mode), dark (docs, body.dark-mode — the help site's own toggle) and appDark (the SPA's declared-but-gated remap), at 1440 x 900",
  "sheets": [
-  "marketing https://getfernand.com/_nuxt/index.14iKVG3q.css (191 bytes)",
   "marketing https://getfernand.com/_nuxt/AiSetup.D779f8EW.css (5559 bytes)",
+  "marketing https://getfernand.com/_nuxt/index.14iKVG3q.css (191 bytes)",
   "marketing https://getfernand.com/_nuxt/IntegrationLogo.B4KgJgJc.css (172 bytes)",
   "marketing https://messenger.getfernand.com/css/onload.min.css (10357 bytes)",
-  "marketing https://messenger.getfernand.com/css/styles.css (43312 bytes)",
   "marketing https://messenger.getfernand.com/css/blocks.css (16016 bytes)",
+  "marketing https://messenger.getfernand.com/css/styles.css (43312 bytes)",
   "marketing https://getfernand.com/_nuxt/index.BYSMdllG.css (438 bytes)",
   "marketing inline-0 (104204 bytes)",
   "marketing inline-1 (16931 bytes)",
@@ -18,14 +18,12 @@
   "app https://app.getfernand.com/assets/index-BHoOg0OQ.css (212765 bytes)",
   "help https://help.getfernand.com/_nuxt/entry.Bnx3DPsJ.css (37693 bytes)",
   "help https://messenger.getfernand.com/css/onload.min.css (10357 bytes)",
-  "help https://messenger.getfernand.com/css/styles.css (43312 bytes)",
-  "help https://messenger.getfernand.com/css/blocks.css (16016 bytes)",
   "help inline-0 (441 bytes)",
   "help inline-1 (81 bytes)"
  ],
  "counts": {
-  "rules": 26,
-  "fonts": 32,
+  "rules": 21,
+  "fonts": 27,
   "names": {
    "theme": 18,
    "app": 19,
@@ -52,11 +50,7 @@
    "[theme] app .dark-mode": 11,
    "[app] help :root": 17,
    "[app] help @media (prefers-color-scheme: dark) :root": 2,
-   "[app] help body.dark-mode": 13,
-   "[theme] help :root": 15,
-   "[theme] help body.dark-mode": 12,
-   "[skins] help @keyframes rotation ": 2,
-   "[theme] help .dark-mode .message__loader": 1
+   "[app] help body.dark-mode": 13
   }
  },
  "errors": [],
@@ -227,58 +221,6 @@
     "--green-pale": "#253023"
    },
    "bin": "theme"
-  },
-  {
-   "file": "help https://messenger.getfernand.com/css/styles.css",
-   "selector": ":root",
-   "context": [],
-   "properties": {
-    "--white": "#fff",
-    "--grey": "#9fa3b5",
-    "--grey-light": "#F7FAFC",
-    "--grey-medium": "#5f667d",
-    "--black": "#131e40",
-    "--blue": "#00a0ff",
-    "--blue-pale": "#e8f5ff",
-    "--orange": "#fb8c3b",
-    "--orange-pale": "#fffaf1",
-    "--red": "#dc2626",
-    "--red-pale": "#fee2e2",
-    "--green": "#2dbd33",
-    "--green-pale": "#edf8eb",
-    "--border": "#eaecf8",
-    "--border-strong": "#d1d5e6"
-   },
-   "bin": "theme"
-  },
-  {
-   "file": "help https://messenger.getfernand.com/css/styles.css",
-   "selector": "body.dark-mode",
-   "context": [],
-   "properties": {
-    "--white": "#161618",
-    "--grey-light": "#18181b",
-    "--grey": "#E6E9EB",
-    "--grey-medium": "#8a8f98",
-    "--grey-strong": "#8a8f98",
-    "--black": "#f7f8f8",
-    "--border": "rgba(255, 255, 255, 0.1)",
-    "--border-strong": "#44474e",
-    "--blue-pale": "#2d2f36",
-    "--orange-pale": "#201a12",
-    "--green-pale": "#253023",
-    "--red-pale": "#260e0e"
-   },
-   "bin": "theme"
-  },
-  {
-   "file": "help https://messenger.getfernand.com/css/styles.css",
-   "selector": ".dark-mode .message__loader",
-   "context": [],
-   "properties": {
-    "--grey": "#4f5052"
-   },
-   "bin": "theme"
   }
  ],
  "app": [
@@ -375,28 +317,6 @@
   },
   {
    "file": "marketing https://messenger.getfernand.com/css/styles.css",
-   "selector": "",
-   "context": [
-    "@keyframes rotation"
-   ],
-   "properties": {
-    "--gradient-angle": "360deg"
-   },
-   "bin": "skins"
-  },
-  {
-   "file": "help https://messenger.getfernand.com/css/styles.css",
-   "selector": "",
-   "context": [
-    "@keyframes rotation"
-   ],
-   "properties": {
-    "--gradient-angle": "0deg"
-   },
-   "bin": "skins"
-  },
-  {
-   "file": "help https://messenger.getfernand.com/css/styles.css",
    "selector": "",
    "context": [
     "@keyframes rotation"
@@ -507,7 +427,7 @@
    "font-style": "normal",
    "font-weight": "400",
    "font-display": "swap",
-   "src": "url(\"/fonts/Inter-Regular.woff2?v=3.19\") format(\"woff2\"), url(\"/fonts/Inter-Regular.woff?v=3.19\") format(\"woff\")"
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")"
   },
   {
    "file": "marketing https://messenger.getfernand.com/css/styles.css",
@@ -515,7 +435,7 @@
    "font-style": "italic",
    "font-weight": "400",
    "font-display": "swap",
-   "src": "url(\"/fonts/Inter-Italic.woff2?v=3.19\") format(\"woff2\"), url(\"/fonts/Inter-Italic.woff?v=3.19\") format(\"woff\")"
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")"
   },
   {
    "file": "marketing https://messenger.getfernand.com/css/styles.css",
@@ -523,7 +443,7 @@
    "font-style": "normal",
    "font-weight": "500",
    "font-display": "swap",
-   "src": "url(\"/fonts/Inter-Medium.woff2?v=3.19\") format(\"woff2\"), url(\"/fonts/Inter-Medium.woff?v=3.19\") format(\"woff\")"
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")"
   },
   {
    "file": "marketing https://messenger.getfernand.com/css/styles.css",
@@ -531,7 +451,7 @@
    "font-style": "normal",
    "font-weight": "600",
    "font-display": "swap",
-   "src": "url(\"/fonts/Inter-SemiBold.woff2?v=3.19\") format(\"woff2\"), url(\"/fonts/Inter-SemiBold.woff?v=3.19\") format(\"woff\")"
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")"
   },
   {
    "file": "marketing https://messenger.getfernand.com/css/styles.css",
@@ -539,63 +459,63 @@
    "font-style": "italic",
    "font-weight": "600",
    "font-display": "swap",
-   "src": "url(\"/fonts/Inter-SemiBoldItalic.woff2?v=3.19\") format(\"woff2\"), url(\"/fonts/Inter-SemiBoldItalic.woff?v=3.19\") format(\"woff\")"
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")"
   },
   {
    "file": "marketing inline-0",
    "font-family": "Inter",
    "font-style": "normal",
    "font-weight": "300",
-   "src": "url(\"/fonts/Inter-Light.woff2?v=3.19\") format(\"woff2\"), url(\"/fonts/Inter-Light.woff?v=3.19\") format(\"woff\")"
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")"
   },
   {
    "file": "marketing inline-0",
    "font-family": "Inter",
    "font-style": "normal",
    "font-weight": "400",
-   "src": "url(\"/fonts/Inter-Regular.woff2?v=3.19\") format(\"woff2\"), url(\"/fonts/Inter-Regular.woff?v=3.19\") format(\"woff\")"
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")"
   },
   {
    "file": "marketing inline-0",
    "font-family": "Inter",
    "font-style": "italic",
    "font-weight": "400",
-   "src": "url(\"/fonts/Inter-Italic.woff2?v=3.19\") format(\"woff2\"), url(\"/fonts/Inter-Italic.woff?v=3.19\") format(\"woff\")"
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")"
   },
   {
    "file": "marketing inline-0",
    "font-family": "Inter",
    "font-style": "normal",
    "font-weight": "500",
-   "src": "url(\"/fonts/Inter-Medium.woff2?v=3.19\") format(\"woff2\"), url(\"/fonts/Inter-Medium.woff?v=3.19\") format(\"woff\")"
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")"
   },
   {
    "file": "marketing inline-0",
    "font-family": "Inter",
    "font-style": "normal",
    "font-weight": "600",
-   "src": "url(\"/fonts/Inter-SemiBold.woff2?v=3.19\") format(\"woff2\"), url(\"/fonts/Inter-SemiBold.woff?v=3.19\") format(\"woff\")"
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")"
   },
   {
    "file": "marketing inline-0",
    "font-family": "Inter",
    "font-style": "italic",
    "font-weight": "600",
-   "src": "url(\"/fonts/Inter-SemiBoldItalic.woff2?v=3.19\") format(\"woff2\"), url(\"/fonts/Inter-SemiBoldItalic.woff?v=3.19\") format(\"woff\")"
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")"
   },
   {
    "file": "marketing inline-0",
    "font-family": "Inter",
    "font-style": "normal",
    "font-weight": "700",
-   "src": "url(\"/fonts/Inter-Bold.woff2?v=3.19\") format(\"woff2\"), url(\"/fonts/Inter-Bold.woff?v=3.19\") format(\"woff\")"
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")"
   },
   {
    "file": "marketing inline-0",
    "font-family": "Inter",
    "font-style": "italic",
    "font-weight": "700",
-   "src": "url(\"/fonts/Inter-BoldItalic.woff2?v=3.19\") format(\"woff2\"), url(\"/fonts/Inter-BoldItalic.woff?v=3.19\") format(\"woff\")"
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")"
   },
   {
    "file": "app https://app.getfernand.com/assets/index-BHoOg0OQ.css",
@@ -603,7 +523,7 @@
    "font-style": "normal",
    "font-weight": "300",
    "font-display": "swap",
-   "src": "url(\"/assets/Inter-Light-CdXm_ABL.woff2?v=3.19\") format(\"woff2\"), url(\"/assets/Inter-Light-CG9upfZ4.woff?v=3.19\") format(\"woff\")"
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")"
   },
   {
    "file": "app https://app.getfernand.com/assets/index-BHoOg0OQ.css",
@@ -611,7 +531,7 @@
    "font-style": "normal",
    "font-weight": "400",
    "font-display": "swap",
-   "src": "url(\"/assets/Inter-Regular-CKDp9E3C.woff2?v=3.19\") format(\"woff2\"), url(\"/assets/Inter-Regular-DJOZHnwz.woff?v=3.19\") format(\"woff\")"
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")"
   },
   {
    "file": "app https://app.getfernand.com/assets/index-BHoOg0OQ.css",
@@ -619,7 +539,7 @@
    "font-style": "italic",
    "font-weight": "400",
    "font-display": "swap",
-   "src": "url(\"/assets/Inter-Italic-_3PMmu0i.woff2?v=3.19\") format(\"woff2\"), url(\"/assets/Inter-Italic-Ci_5KQU1.woff?v=3.19\") format(\"woff\")"
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")"
   },
   {
    "file": "app https://app.getfernand.com/assets/index-BHoOg0OQ.css",
@@ -627,7 +547,7 @@
    "font-style": "normal",
    "font-weight": "500",
    "font-display": "swap",
-   "src": "url(\"/assets/Inter-Medium-P1cOs5ep.woff2?v=3.19\") format(\"woff2\"), url(\"/assets/Inter-Medium-oHczPpWt.woff?v=3.19\") format(\"woff\")"
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")"
   },
   {
    "file": "app https://app.getfernand.com/assets/index-BHoOg0OQ.css",
@@ -635,7 +555,7 @@
    "font-style": "normal",
    "font-weight": "600",
    "font-display": "swap",
-   "src": "url(\"/assets/Inter-SemiBold-Ctx7G98q.woff2?v=3.19\") format(\"woff2\"), url(\"/assets/Inter-SemiBold-BHlX_6qk.woff?v=3.19\") format(\"woff\")"
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")"
   },
   {
    "file": "app https://app.getfernand.com/assets/index-BHoOg0OQ.css",
@@ -643,7 +563,7 @@
    "font-style": "italic",
    "font-weight": "600",
    "font-display": "swap",
-   "src": "url(\"/assets/Inter-SemiBoldItalic-BNz1Al2H.woff2?v=3.19\") format(\"woff2\"), url(\"/assets/Inter-SemiBoldItalic-CxeAX7g8.woff?v=3.19\") format(\"woff\")"
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")"
   },
   {
    "file": "app https://app.getfernand.com/assets/index-BHoOg0OQ.css",
@@ -651,7 +571,7 @@
    "font-style": "normal",
    "font-weight": "700",
    "font-display": "swap",
-   "src": "url(\"/assets/Inter-Bold-CuhepTt8.woff2?v=3.19\") format(\"woff2\"), url(\"/assets/Inter-Bold-2PT7Q-hu.woff?v=3.19\") format(\"woff\")"
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")"
   },
   {
    "file": "app https://app.getfernand.com/assets/index-BHoOg0OQ.css",
@@ -659,7 +579,7 @@
    "font-style": "italic",
    "font-weight": "700",
    "font-display": "swap",
-   "src": "url(\"/assets/Inter-BoldItalic-R15IsAnq.woff2?v=3.19\") format(\"woff2\"), url(\"/assets/Inter-BoldItalic-C906RMVC.woff?v=3.19\") format(\"woff\")"
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")"
   },
   {
    "file": "help https://help.getfernand.com/_nuxt/entry.Bnx3DPsJ.css",
@@ -667,7 +587,7 @@
    "font-style": "normal",
    "font-weight": "300",
    "font-display": "swap",
-   "src": "url(\"../fonts/Inter-Light.woff2?v=3.19\") format(\"woff2\"), url(\"../fonts/Inter-Light.woff?v=3.19\") format(\"woff\")"
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")"
   },
   {
    "file": "help https://help.getfernand.com/_nuxt/entry.Bnx3DPsJ.css",
@@ -675,7 +595,7 @@
    "font-style": "normal",
    "font-weight": "400",
    "font-display": "swap",
-   "src": "url(\"../fonts/Inter-Regular.woff2?v=3.19\") format(\"woff2\"), url(\"../fonts/Inter-Regular.woff?v=3.19\") format(\"woff\")"
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")"
   },
   {
    "file": "help https://help.getfernand.com/_nuxt/entry.Bnx3DPsJ.css",
@@ -683,7 +603,7 @@
    "font-style": "italic",
    "font-weight": "400",
    "font-display": "swap",
-   "src": "url(\"../fonts/Inter-Italic.woff2?v=3.19\") format(\"woff2\"), url(\"../fonts/Inter-Italic.woff?v=3.19\") format(\"woff\")"
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")"
   },
   {
    "file": "help https://help.getfernand.com/_nuxt/entry.Bnx3DPsJ.css",
@@ -691,7 +611,7 @@
    "font-style": "normal",
    "font-weight": "500",
    "font-display": "swap",
-   "src": "url(\"../fonts/Inter-Medium.woff2?v=3.19\") format(\"woff2\"), url(\"../fonts/Inter-Medium.woff?v=3.19\") format(\"woff\")"
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")"
   },
   {
    "file": "help https://help.getfernand.com/_nuxt/entry.Bnx3DPsJ.css",
@@ -699,7 +619,7 @@
    "font-style": "normal",
    "font-weight": "600",
    "font-display": "swap",
-   "src": "url(\"../fonts/Inter-SemiBold.woff2?v=3.19\") format(\"woff2\"), url(\"../fonts/Inter-SemiBold.woff?v=3.19\") format(\"woff\")"
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")"
   },
   {
    "file": "help https://help.getfernand.com/_nuxt/entry.Bnx3DPsJ.css",
@@ -707,47 +627,7 @@
    "font-style": "italic",
    "font-weight": "600",
    "font-display": "swap",
-   "src": "url(\"../fonts/Inter-SemiBoldItalic.woff2?v=3.19\") format(\"woff2\"), url(\"../fonts/Inter-SemiBoldItalic.woff?v=3.19\") format(\"woff\")"
-  },
-  {
-   "file": "help https://messenger.getfernand.com/css/styles.css",
-   "font-family": "Inter",
-   "font-style": "normal",
-   "font-weight": "400",
-   "font-display": "swap",
-   "src": "url(\"/fonts/Inter-Regular.woff2?v=3.19\") format(\"woff2\"), url(\"/fonts/Inter-Regular.woff?v=3.19\") format(\"woff\")"
-  },
-  {
-   "file": "help https://messenger.getfernand.com/css/styles.css",
-   "font-family": "Inter",
-   "font-style": "italic",
-   "font-weight": "400",
-   "font-display": "swap",
-   "src": "url(\"/fonts/Inter-Italic.woff2?v=3.19\") format(\"woff2\"), url(\"/fonts/Inter-Italic.woff?v=3.19\") format(\"woff\")"
-  },
-  {
-   "file": "help https://messenger.getfernand.com/css/styles.css",
-   "font-family": "Inter",
-   "font-style": "normal",
-   "font-weight": "500",
-   "font-display": "swap",
-   "src": "url(\"/fonts/Inter-Medium.woff2?v=3.19\") format(\"woff2\"), url(\"/fonts/Inter-Medium.woff?v=3.19\") format(\"woff\")"
-  },
-  {
-   "file": "help https://messenger.getfernand.com/css/styles.css",
-   "font-family": "Inter",
-   "font-style": "normal",
-   "font-weight": "600",
-   "font-display": "swap",
-   "src": "url(\"/fonts/Inter-SemiBold.woff2?v=3.19\") format(\"woff2\"), url(\"/fonts/Inter-SemiBold.woff?v=3.19\") format(\"woff\")"
-  },
-  {
-   "file": "help https://messenger.getfernand.com/css/styles.css",
-   "font-family": "Inter",
-   "font-style": "italic",
-   "font-weight": "600",
-   "font-display": "swap",
-   "src": "url(\"/fonts/Inter-SemiBoldItalic.woff2?v=3.19\") format(\"woff2\"), url(\"/fonts/Inter-SemiBoldItalic.woff?v=3.19\") format(\"woff\")"
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")"
   }
  ],
  "resolved": {
@@ -926,7 +806,7 @@
    "--viewport-height": {
     "raw": "min(100vh, 100dvh)",
     "kind": "dimension",
-    "value": "720px",
+    "value": "900px",
     "note": "viewport-relative, resolved at 1440 x 900"
    },
    "--white": {
@@ -961,10 +841,6 @@
     "kind": "color",
     "value": "#d1d5e6"
    },
-   "--gradient-angle": {
-    "raw": "0deg",
-    "kind": "other"
-   },
    "--green": {
     "raw": "#2dbd33",
     "kind": "color",
@@ -981,7 +857,7 @@
     "value": "#9fa3b5"
    },
    "--grey-light": {
-    "raw": "#F7FAFC",
+    "raw": "#f7fafc",
     "kind": "color",
     "value": "#f7fafc"
    },
@@ -1033,7 +909,7 @@
     "value": "#2d2f36"
    },
    "--border": {
-    "raw": "rgba(255, 255, 255, 0.1)",
+    "raw": "#ffffff1a",
     "kind": "color",
     "value": "rgba(255, 255, 255, 0.1)"
    },
@@ -1041,10 +917,6 @@
     "raw": "#44474e",
     "kind": "color",
     "value": "#44474e"
-   },
-   "--gradient-angle": {
-    "raw": "0deg",
-    "kind": "other"
    },
    "--green": {
     "raw": "#2dbd33",
@@ -1057,7 +929,7 @@
     "value": "#253023"
    },
    "--grey": {
-    "raw": "#E6E9EB",
+    "raw": "#e6e9eb",
     "kind": "color",
     "value": "#e6e9eb"
    },
@@ -1092,9 +964,9 @@
     "value": "#dc2626"
    },
    "--red-pale": {
-    "raw": "#260e0e",
+    "raw": "#fee2e2",
     "kind": "color",
-    "value": "#260e0e"
+    "value": "#fee2e2"
    },
    "--white": {
     "raw": "#161618",
@@ -1186,7 +1058,7 @@
    "--viewport-height": {
     "raw": "min(100vh, 100dvh)",
     "kind": "dimension",
-    "value": "720px",
+    "value": "900px",
     "note": "viewport-relative, resolved at 1440 x 900"
    },
    "--white": {

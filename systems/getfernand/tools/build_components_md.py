@@ -35,11 +35,42 @@ def flat(node, prefix=""):
             yield from flat(v, prefix + k + ".")
 
 
+# Colour -> token name, built per surface set. The hosts remap the shared
+# palette names (the dark set's `white` is #161618, not #ffffff), so a single
+# merged map would label a dark component's #ffffff `white` and send readers
+# to the wrong value. A component's labels come from its own set's map (core
+# first, then the set's own tokens), and a colour that matches nothing there
+# stays a literal.
+def resolve_alias(v, setname, depth=0):
+    m = re.fullmatch(r"\{([^{}]+)\}", v or "")
+    if not m or depth > 6:
+        return v
+    for root in (T.get(setname, {}), T.get("core", {})):
+        node = root
+        for k in m.group(1).split("."):
+            node = node.get(k) if isinstance(node, dict) else None
+        if isinstance(node, dict) and "$value" in node:
+            return resolve_alias(node["$value"], setname, depth + 1)
+    return v
+
+
 BY_COLOR = {}
-for setname in ("core", "light", "app", "dark"):
-    for n, t in flat(T.get(setname, {})):
-        if t["$type"] == "color" and isinstance(t["$value"], str):
-            BY_COLOR.setdefault(t["$value"], n)
+for setname in ("light", "help", "app", "dark"):
+    # The tokens the theme (core + the set) carries: the set's own declaration
+    # shadows core on a shared path, so the label is always the token a reader
+    # of this set's theme would actually resolve.
+    themed = {}
+    for src in ("core", setname):
+        for n, t in flat(T.get(src, {})):
+            if t["$type"] == "color" and isinstance(t["$value"], str):
+                themed[n] = t
+    m = {}
+    for n, t in themed.items():
+        m.setdefault(resolve_alias(t["$value"], setname), n)
+    BY_COLOR[setname] = m
+
+# The token set a captured page's components belong to.
+PAGE_SET = {"login": "app", "signup": "app", "help": "help", "helparticle": "help", "helpdark": "dark"}
 
 
 def norm(r, g, b, a=None):
@@ -48,12 +79,13 @@ def norm(r, g, b, a=None):
     return "rgba(%d, %d, %d, %g)" % (int(r), int(g), int(b), float(a))
 
 
-def colour(c, tokens=True):
-    """rgb()/rgba()/color(srgb) -> '#hex `token`' or 'rgba(...)'."""
+def colour(c, setname="light", tokens=True):
+    """rgb()/rgba()/color(srgb) -> '#hex `token`' or 'rgba(...)' — the token
+    label is resolved inside the component's own surface set."""
     def label(v):
         if v == "rgba(0, 0, 0, 0)":
             return "transparent"
-        tok = BY_COLOR.get(v) if tokens else None
+        tok = BY_COLOR.get(setname, {}).get(v) if tokens else None
         return f"{v} `{tok}`" if tok else v
 
     c = re.sub(r"color\(srgb ([\d.]+) ([\d.]+) ([\d.]+)(?: / ([\d.]+))?\)",
@@ -83,7 +115,7 @@ def font(fz, lh, fw, f):
     return f"{fam(f)} {num(fz.replace('px', ''))}/{num(lh)} {fw}"
 
 
-def props(v):
+def props(v, setname="light"):
     s = v["style"]
     o = {}
     o["size"] = f"{num(v['rect']['w'])} x {num(v['rect']['h'])}"
@@ -93,7 +125,7 @@ def props(v):
     bds = []
     for d in ("Top", "Right", "Bottom", "Left"):
         if float(s[f"border{d}Width"].replace("px", "")) > 0 and s[f"border{d}Style"] != "none":
-            bds.append(f"{s[f'border{d}Width']} {s[f'border{d}Style']} {colour(s[f'border{d}Color'])}")
+            bds.append(f"{s[f'border{d}Width']} {s[f'border{d}Style']} {colour(s[f'border{d}Color'], setname)}")
         else:
             bds.append("none")
     if any(b != "none" for b in bds):
@@ -101,23 +133,23 @@ def props(v):
     rad = sides(s["borderTopLeftRadius"], s["borderTopRightRadius"], s["borderBottomRightRadius"], s["borderBottomLeftRadius"])
     if rad != "0px":
         o["radius"] = rad
-    o["background"] = colour(s["backgroundColor"])
+    o["background"] = colour(s["backgroundColor"], setname)
     if s["backgroundImage"] != "none":
         img = re.sub(r'url\("data:[^)]*\)', "an image (data URI)", s["backgroundImage"])
-        o["image"] = colour(img)[:200]
+        o["image"] = colour(img, setname)[:200]
     if s["boxShadow"] != "none":
-        sh = colour(s["boxShadow"], tokens=False)
+        sh = colour(s["boxShadow"], setname, tokens=False)
         layers = [x.strip() for x in re.split(r",(?![^(]*\))", sh)]
         layers = [x for x in layers if not x.startswith("transparent")]
         if layers:
             o["shadow"] = ", ".join(layers)
     if s["outlineStyle"] != "none" and float(s["outlineWidth"].replace("px", "")) > 0:
-        o["outline"] = f"{s['outlineWidth']} {s['outlineStyle']} {colour(s['outlineColor'])}, offset {s['outlineOffset']}"
+        o["outline"] = f"{s['outlineWidth']} {s['outlineStyle']} {colour(s['outlineColor'], setname)}, offset {s['outlineOffset']}"
     t = v.get("textStyle")
     if t:
-        o["text"] = f"{font(t['fontSize'], t['lineHeight'], t['fontWeight'], t['fontFamily'])}, {colour(t['color'])}"
+        o["text"] = f"{font(t['fontSize'], t['lineHeight'], t['fontWeight'], t['fontFamily'])}, {colour(t['color'], setname)}"
     else:
-        o["text"] = f"{font(s['fontSize'], s['lineHeight'], s['fontWeight'], s['fontFamily'])}, {colour(s['color'])}"
+        o["text"] = f"{font(s['fontSize'], s['lineHeight'], s['fontWeight'], s['fontFamily'])}, {colour(s['color'], setname)}"
     if s["transitionDuration"] not in ("0s", ""):
         props_ = [x.strip() for x in s["transitionProperty"].split(",")]
         durs = [x.strip() for x in s["transitionDuration"].split(",")]
@@ -141,9 +173,9 @@ def props(v):
     if s["opacity"] != "1":
         o["opacity"] = s["opacity"]
     if v.get("icon") and v["icon"]["w"] > 0 and v["icon"]["w"] < 120:
-        o["icon"] = f"{num(v['icon']['w'])} x {num(v['icon']['h'])}, {colour(v['icon']['color'])}"
+        o["icon"] = f"{num(v['icon']['w'])} x {num(v['icon']['h'])}, {colour(v['icon']['color'], setname)}"
     if v.get("placeholder"):
-        o["placeholder"] = colour(v["placeholder"]["color"])
+        o["placeholder"] = colour(v["placeholder"]["color"], setname)
     # Painted layers that carry a state but not the root box: the element's own
     # ::before/::after always, and descendant paint only when the root paints
     # nothing (the case "Child layers" reports). A nav underline that goes
@@ -175,11 +207,12 @@ def state_rows(c):
     states = [s for s in c["states"] if "style" in c["states"][s] and c["states"][s].get("via") != "focus failed"]
     if not states:
         return [], states
-    base = props(c["states"][states[0]])
+    setname = PAGE_SET.get(c.get("page"), "light")
+    base = props(c["states"][states[0]], setname)
     rows = [(states[0], base)]
     same = []
     for st in states[1:]:
-        p = props(c["states"][st])
+        p = props(c["states"][st], setname)
         diff = {k: p[k] for k in ORDER if k in p and p.get(k) != base.get(k)}
         for k in ORDER:
             if k in base and k not in p:
@@ -201,6 +234,7 @@ def fmt(d):
 
 
 def child_layers(c):
+    setname = PAGE_SET.get(c.get("page"), "light")
     st = next((s for s in c["states"].values() if "style" in s), None)
     if not st or not st.get("paint"):
         return None
@@ -211,15 +245,15 @@ def child_layers(c):
     for p in st["paint"][:3]:
         bits = [re.sub(r"\..*$", "", p["node"]) if "::" not in p["node"] else p["node"].split(".")[0], re.sub(r"\.0+(?=x|px|$)", "", p["size"])]
         if p.get("bg"):
-            bits.append("background " + colour(p["bg"]))
+            bits.append("background " + colour(p["bg"], setname))
         if p.get("bgImage"):
-            bits.append("image " + colour(p["bgImage"])[:90])
+            bits.append("image " + colour(p["bgImage"], setname)[:90])
         if p.get("border"):
-            bits.append("border " + colour(p["border"].split(" | ")[0][2:]))
+            bits.append("border " + colour(p["border"].split(" | ")[0][2:], setname))
         if p.get("radius"):
             bits.append("radius " + p["radius"])
         if p.get("shadow"):
-            bits.append("shadow " + colour(p["shadow"]))
+            bits.append("shadow " + colour(p["shadow"], setname))
         out.append(" ".join(bits))
     return "; ".join(out).replace("|", "/")
 
@@ -305,7 +339,7 @@ W(f"The full per-state readings are in [raw/measurements.md](raw/measurements.md
 W()
 W("How to read an entry:")
 W()
-W("- A colour is its value followed by the palette token in [tokens.json](tokens.json) with the same value, when there is one. Text is written family size/line-height weight, then its colour, for example `Inter 15/24 500, #131e40`, and is read from the first text node inside the component.")
+W("- A colour is its value followed by the token in [tokens.json](tokens.json) with the same value in the component's own surface set (light / help / app / dark — the hosts remap the shared palette names), when there is one. Text is written family size/line-height weight, then its colour, for example `Inter 15/24 500, #131e40`, and is read from the first text node inside the component.")
 W("- The state table has one row per state that differs. The first row lists every value; later rows list only what changes. A state with the same values as the first is named in its label, for example \"default (same: focus-visible)\". When the root paints nothing, \"Child layers\" names the first nodes inside it that do.")
 W(f"- Crops are images of the component read from the live page, in [components/crops/](components/crops) ({n_crops} files, named `{{component}}-{{state}}.png`, at 2x). Screenshots are in [screenshots/](screenshots).")
 W()
@@ -361,7 +395,7 @@ for k, c in C.items():
         for d in ("Top", "Right", "Bottom", "Left")
         for p in ("Color", "Width", "Style")
     )
-    desc = f"{s['outlineWidth']} {s['outlineStyle']} {colour(s['outlineColor'])}, offset {s['outlineOffset']}" if ring else (f"on a child: {child_ring}" if child_ring else None)
+    desc = f"{s['outlineWidth']} {s['outlineStyle']} {colour(s['outlineColor'], PAGE_SET.get(c.get('page'), 'light'))}, offset {s['outlineOffset']}" if ring else (f"on a child: {child_ring}" if child_ring else None)
     foc.append((k, ring or bool(child_ring), shadow, border, desc))
 with_ring = [f"`{k}` ({r})" for k, ring, sh, bd, r in foc if ring]
 with_shadow = [f"`{k}`" for k, ring, sh, bd, r in foc if not ring and sh]
@@ -424,7 +458,7 @@ for k in ["channels-card", "price-free", "price-paid", "feat-card", "int-essenti
     st = next((s for s in c["states"].values() if "style" in s), None)
     if st is None:
         continue
-    p = props(st)
+    p = props(st, PAGE_SET.get(c.get("page"), "light"))
     W(f"| [{c['title']}](#{re.sub(r'[^a-z0-9 -]', '', c['title'].lower()).replace(' ', '-')}) | {p['size']} | {p.get('border', '-')} | {p.get('radius', '-')} | {p.get('background', '-')} | {p.get('shadow', 'none')} | {p.get('padding', '0')} |")
 W()
 
@@ -499,7 +533,7 @@ W()
 W("- **The account.** Every post-login surface was never reached; the sign-in and signup forms were measured and typed into then cleared — 'Login'/'Continue' were never pressed, the terms checkbox was never toggled, and what a submitted form returns is unverified.")
 W("- **Book a demo.** The 'Book a demo' action is a Cal.com scheduling link; opening it starts a real booking flow, so it was measured at rest and never activated.")
 W("- **Alternative pages** beyond /alternative/intercom, the rest of the feature pages, and the other integrations are the same templates, unmeasured; one example of each family was captured.")
-W("- **/updates/ is a ~44k-px changelog** — the full-page shot is bounded at 8 tiles (the boundary is recorded in the capture log); the rest of the history is the same template.")
+W("- **/updates/ is a ~44k-px changelog** — captured in full, stitched from 4 contiguous parts (the part clips are recorded in the `.capture.json` sidecar).")
 W("- **blog articles** — the /blog index was captured; individual posts are the same template, unmeasured.")
 W()
 W("### States")

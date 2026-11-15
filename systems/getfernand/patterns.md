@@ -8,7 +8,7 @@ Every marketing page carries a fixed `header` (~72px tall, white over a 1px `--b
 
 ## The hero
 
-Left-aligned masthead pattern on `home-light-default`: a dated changelog eyebrow pill (`a.hero__eyebrow` — date + label inside a white pill), the 38px/700 masthead "The free customer support platform for SaaS teams", a muted lede, then a pair of actions: the near-black `#1a2035` 8px-radius primary CTA and the Cal.com demo action, with `button.hero-demo__btn` ("Watch a 2 minute demo") mounting `.demo-modal__dialog` (a 1280×720 YouTube-nocookie embed over a backdrop) as a local overlay. Beside the copy sits `button.ai-setup__toggle` — an `aria-haspopup="menu"` "Install with AI" menu whose items copy a setup prompt for each agent (Claude, Cursor, Codex deep links); the toggle flips `aria-expanded` and paints a floating menu of agent items.
+Left-aligned masthead pattern on `home-light-default`: a dated changelog eyebrow pill (`a.hero__eyebrow` — date + label inside a white pill), the 38px/400 masthead "The free customer support platform for SaaS teams", a muted lede, then a pair of actions: the near-black `#1a2035` 8px-radius primary CTA and the Cal.com demo action, with `button.hero-demo__btn` ("Watch a 2 minute demo") mounting `.demo-modal__dialog` (a 1280×720 YouTube-nocookie embed over a backdrop) as a local overlay. Beside the copy sits `button.ai-setup__toggle` — an `aria-haspopup="menu"` "Install with AI" menu whose items copy a setup prompt for each agent (Claude, Cursor, Codex deep links); the toggle flips `aria-expanded` and paints a floating menu of agent items.
 
 ## Section anatomy
 
@@ -32,7 +32,7 @@ The "Live chat and AI, embedded in your product" section is an in-page product d
 
 ## Mobile
 
-At 390px the marketing header keeps logo + `Start for free`, the masthead stays 38px, cards stack to one column and the carousel scrolls. The docs site's `menu__toggle` appears and opens the collection nav as an overlay.
+At 390px the marketing header keeps logo + `Start for free`, the masthead drops to 26px (from 38px), cards stack to one column and the carousel scrolls. The docs site's `menu__toggle` appears and opens the collection nav as an overlay.
 
 ## Motion and focus
 

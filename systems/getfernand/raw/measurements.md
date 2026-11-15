@@ -1,6 +1,6 @@
 # Fernand component measurements
 
-Computed styles read from getfernand.com, app.getfernand.com and help.getfernand.com on 2026-11-14 by `tools/capture/public/measure.mjs`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844) across the public surfaces — the light-only marketing pages, the signed-out /auth/login and /create forms of the app, and the docs site in light plus the dark theme its own "Switch to dark mode" link paints — with any consent layer hidden (never answered), and written here by `tools/capture/public/build-measurements.mjs` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
+Computed styles read from getfernand.com, app.getfernand.com and help.getfernand.com on 2026-11-15 by `tools/capture/public/measure.mjs`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844) across the public surfaces — the light-only marketing pages, the signed-out /auth/login and /create forms of the app, and the docs site in light plus the dark theme its own "Switch to dark mode" link paints — with any consent layer hidden (never answered), and written here by `tools/capture/public/build-measurements.mjs` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
 
 States: `hover` is a real pointer hover; `focus-visible` a real keyboard focus (Shift+Tab, Tab); `pressed` is forced with DevTools (`CSS.forcePseudoState` :active:hover), so no button was pressed; `focused` is a text field clicked into; `filled` is sample text typed and deleted again, with nothing sent; `opened`, `expanded` and the rest are resting states reached by the page or by a UI toggle.
 
@@ -75,14 +75,14 @@ Page: home. Selector: `header nav a About us`. States: default, hover, focus-vis
 | Radius | 0px | = | = | = |
 | Background | transparent | = | = | = |
 | Box shadow | none | = | = | = |
-| Outline | none | = | 1px auto #111111 offset 0.984375px | = |
+| Outline | none | = | 1px auto #121213 offset 0.96875px | = |
 | Font | Inter 14px/14px 500 | = | = | = |
 | Letter spacing | normal | = | = | = |
-| Colour | #6f7b96 | #1f96e2 | = | #039ffc |
+| Colour | #6f7b96 | #00a0ff | = | #3f8bc4 |
 | Transition | all 0.75s cubic-bezier(0.19, 1, 0.22, 1) | = | = | = |
 | Cursor | pointer | = | = | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
-| Painted layers | - | = | a 84.0x37.0 outline 1px auto #111111 offset 0.984375px | = |
+| Painted layers | - | = | a 84.0x37.0 outline 1px auto #121213 offset 0.96875px | = |
 
 Crops: `nav-link-default.png`, `nav-link-hover.png`, `nav-link-focus-visible.png`, `nav-link-pressed.png`.
 
@@ -100,14 +100,14 @@ Page: home. Selector: `header a Log in`. States: default, hover, focus-visible, 
 | Radius | 0px | = | = | = |
 | Background | transparent | = | = | = |
 | Box shadow | none | = | = | = |
-| Outline | none | = | 1px auto #121313 offset 0.96875px | = |
+| Outline | none | = | 1px auto #121213 offset 0.96875px | = |
 | Font | Inter 14px/14px 500 | = | = | = |
 | Letter spacing | normal | = | = | = |
-| Colour | #6f7b96 | #01a0fe | = | #029ffe |
+| Colour | #6f7b96 | #01a0ff | = | #029ffe |
 | Transition | all 0.75s cubic-bezier(0.19, 1, 0.22, 1) | = | = | = |
 | Cursor | pointer | = | = | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
-| Painted layers | - | = | a 62.0x37.0 outline 1px auto #121313 offset 0.96875px | = |
+| Painted layers | - | = | a 62.0x37.0 outline 1px auto #121213 offset 0.96875px | = |
 
 Crops: `nav-login-default.png`, `nav-login-hover.png`, `nav-login-focus-visible.png`, `nav-login-pressed.png`.
 
@@ -128,7 +128,7 @@ Page: home. Selector: `header li.button__demo a`. States: default, hover, focus-
 | Outline | none | = | 1px auto #1e2024 offset 0px | = |
 | Font | Inter 14px/14px 500 | = | = | = |
 | Letter spacing | normal | = | = | = |
-| Colour | #6f7b96 | #5b6680 | #6e7a95 | #646f8a |
+| Colour | #6f7b96 | #5a657f | #6e7a95 | #5b6680 |
 | Transition | all 1.5s cubic-bezier(0.19, 1, 0.22, 1) | = | = | = |
 | Cursor | pointer | = | = | = |
 | Painted layers | a 115.0x30.0 bg #ffffff r 6px shadow #123769 @ 0.08 0px 2px 4px 0px, #123769 @ 0.04 0px 1px 1px 0px, #123769 @ 0.08 0px 0px 0px 1px | = | a 115.0x30.0 bg #ffffff r 6px shadow #123769 @ 0.08 0px 2px 4px 0px, #123769 @ 0.04 0px 1px 1px 0px, #123769 @ 0.08 0px 0px 0px 1px outline 1px auto #1e2024 offset 0px | = |
@@ -150,13 +150,13 @@ Page: home. Selector: `header li.button__header a Start for free`. States: defau
 | Radius | 6px | = | = | = |
 | Background | #00a0ff | = | = | = |
 | Box shadow | none | = | = | = |
-| Outline | none | = | 1px auto #151515 offset 0.96875px | = |
+| Outline | none | = | 1px auto #161616 offset 0.96875px | = |
 | Font | Inter 14px/14px 500 | = | = | = |
 | Letter spacing | normal | = | = | = |
 | Colour | #ffffff | = | = | = |
 | Transition | all 0.75s cubic-bezier(0.19, 1, 0.22, 1) | = | = | = |
 | Cursor | pointer | = | = | = |
-| Painted layers | a 115.0x30.0 bg #00a0ff r 6px | = | a 115.0x30.0 bg #00a0ff r 6px outline 1px auto #151515 offset 0.96875px | = |
+| Painted layers | a 115.0x30.0 bg #00a0ff r 6px | = | a 115.0x30.0 bg #00a0ff r 6px outline 1px auto #161616 offset 0.96875px | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
 Crops: `nav-cta-default.png`, `nav-cta-hover.png`, `nav-cta-focus-visible.png`, `nav-cta-pressed.png`.
@@ -181,14 +181,14 @@ Page: home. Selector: `a.hero__eyebrow`. States: default, hover.
 | Outline | none | = |
 | Font | Inter 13px/13px 500 | = |
 | Letter spacing | normal | = |
-| Colour | #1a2035 | #00a0fe |
+| Colour | #1a2035 | #009ffe |
 | Text node | span.hero__eyebrow-date: Inter 12px/12px 600, #00a0ff | = |
 | Transition | all 0.75s cubic-bezier(0.19, 1, 0.22, 1) | = |
 | Cursor | pointer | = |
 | Painted layers | a.hero__eyebrow 259.0x30.0 bg #ffffff r 40px shadow #123769 @ 0.08 0px 2px 4px 0px, #123769 @ 0.04 0px 1px 1px 0px, #123769 @ 0.08 0px 0px 0px 1px; span.hero__eyebrow-date 61.0x20.0 bg #e7f6ff r 40px | = |
 | How | at rest | mouse hover |
 
-Crops: `hero-eyebrow-hover.png`.
+Crops: `hero-eyebrow-default.png`, `hero-eyebrow-hover.png`.
 
 #### hero-h1
 
@@ -251,13 +251,13 @@ Page: home. Selector: `a.hero__cta--primary`. States: default, hover, focus-visi
 | Radius | 8px | = | = | = |
 | Background | #1a2035 | = | = | = |
 | Box shadow | none | = | = | = |
-| Outline | none | = | 1px auto #101010 offset 0.984375px | = |
+| Outline | none | = | 1px auto #151515 offset 0.96875px | = |
 | Font | Inter 15px/20px 500 | = | = | = |
 | Letter spacing | normal | = | = | = |
 | Colour | #ffffff | = | = | = |
 | Transition | all 0.75s cubic-bezier(0.19, 1, 0.22, 1) | = | = | = |
 | Cursor | pointer | = | = | = |
-| Painted layers | a.hero__cta--primary 170.0x49.0 bg #1a2035 border T:1px solid #1a2035 / R:1px solid #1a2035 / B:1px solid #1a2035 / L:1px solid #1a2035 r 8px; kbd 22.0x21.0 bg #3d4259 r 4px | = | a.hero__cta--primary 170.0x49.0 bg #1a2035 border T:1px solid #1a2035 / R:1px solid #1a2035 / B:1px solid #1a2035 / L:1px solid #1a2035 r 8px outline 1px auto #101010 offset 0.984375px; kbd 22.0x21.0 bg #3d4259 r 4px | = |
+| Painted layers | a.hero__cta--primary 170.0x49.0 bg #1a2035 border T:1px solid #1a2035 / R:1px solid #1a2035 / B:1px solid #1a2035 / L:1px solid #1a2035 r 8px; kbd 22.0x21.0 bg #3d4259 r 4px | = | a.hero__cta--primary 170.0x49.0 bg #1a2035 border T:1px solid #1a2035 / R:1px solid #1a2035 / B:1px solid #1a2035 / L:1px solid #1a2035 r 8px outline 1px auto #151515 offset 0.96875px; kbd 22.0x21.0 bg #3d4259 r 4px | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
 Crops: `hero-cta-default.png`, `hero-cta-hover.png`, `hero-cta-focus-visible.png`, `hero-cta-pressed.png`.
@@ -295,7 +295,7 @@ Page: home. Selector: `button.hero-demo__btn`. States: default, hover, focus-vis
 
 | Property | default | hover | focus-visible | pressed | opened |
 |---|---|---|---|---|---|
-| Size (w x h) | 240 x 50 | = | = | 237.03 x 49.38 | = |
+| Size (w x h) | 240 x 50 | = | = | = | = |
 | Padding | 16px 20px | = | = | = | = |
 | Gap | 8px | = | = | = | = |
 | Border | none | = | = | = | = |
@@ -308,11 +308,11 @@ Page: home. Selector: `button.hero-demo__btn`. States: default, hover, focus-vis
 | Colour | #3d4259 | = | = | = | = |
 | Transition | transform 0.16s cubic-bezier(0.23, 1, 0.32, 1) | = | = | = | = |
 | Cursor | pointer | = | = | = | = |
-| Icon | 18 x 18, colour #3d4259 | = | = | 17.78 x 17.78, colour #3d4259 | = |
-| Painted layers | button.hero-demo__btn 240.0x50.0 bg #ffffff r 40px shadow #123769 @ 0.08 0px 2px 4px 0px, #123769 @ 0.04 0px 1px 1px 0px, #123769 @ 0.08 0px 0px 0px 1px | = | = | button.hero-demo__btn 237.0x49.4 bg #ffffff r 40px shadow #123769 @ 0.08 0px 2px 4px 0px, #123769 @ 0.04 0px 1px 1px 0px, #123769 @ 0.08 0px 0px 0px 1px | = |
+| Icon | 18 x 18, colour #3d4259 | = | = | = | = |
+| Painted layers | button.hero-demo__btn 240.0x50.0 bg #ffffff r 40px shadow #123769 @ 0.08 0px 2px 4px 0px, #123769 @ 0.04 0px 1px 1px 0px, #123769 @ 0.08 0px 0px 0px 1px | = | = | = | = |
 | Ancestor paint | 2 up div.hero-demo__frame shadow #1b3541 @ 0.12 0px 0px 30px 10px, #0e1117 @ 0 0px 0px 2px 2px | = | = | = | = |
-| How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover | own toggle |
-| Transform | - | = | = | matrix(0.98761, 0, 0, 0.98761, 0, 0) | = |
+| How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover | clicked "Watch a 2 minute demo" to open the video dialog |
+| Transform | - | = | = | matrix(1, 0, 0, 1, 0, 0) | = |
 
 Crops: `hero-demo-btn-default.png`, `hero-demo-btn-hover.png`, `hero-demo-btn-focus-visible.png`, `hero-demo-btn-pressed.png`, `hero-demo-btn-opened.png`.
 
@@ -363,8 +363,8 @@ Page: home. Selector: `button.ai-setup__toggle`. States: default, hover, focus-v
 | Transition | color, background, transform 0.15s, 0.15s, 0.16s ease-out, ease-out, cubic-bezier(0.23, 1, 0.32, 1) delay 0s, 0s, 0s | = | = | = | = |
 | Cursor | pointer | = | = | = | = |
 | Icon | 15 x 15, colour #6f7b96 | 15 x 15, colour #1a2035 | = | 14.55 x 14.55, colour #1a2035 | 15 x 15, colour #1a2035 |
-| How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover | own toggle |
-| Painted layers | - | button.ai-setup__toggle 183.0x47.0 bg #000000 @ 0.04 r 8px | button.ai-setup__toggle 183.0x47.0 r 8px outline 2px solid #1a2035 offset 2px | button.ai-setup__toggle 177.5x45.6 bg #000000 @ 0.04 r 8px | button.ai-setup__toggle 183.0x47.0 bg #000000 @ 0.04 r 8px |
+| How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover | clicked the "Install with AI" button to open its menu (aria-expanded=true at save) |
+| Painted layers | - | button.ai-setup__toggle 183.0x47.0 bg #000000 @ 0.04 r 8px | button.ai-setup__toggle 183.0x47.0 r 8px outline 2px solid #1a2035 offset 2px | button.ai-setup__toggle 177.5x45.6 bg #000000 @ 0.04 r 8px | button.ai-setup__toggle.is-open 183.0x47.0 bg #000000 @ 0.04 r 8px |
 | Transform | - | = | = | matrix(0.97, 0, 0, 0.97, 0, 0) | = |
 
 Crops: `ai-setup-toggle-default.png`, `ai-setup-toggle-hover.png`, `ai-setup-toggle-focus-visible.png`, `ai-setup-toggle-pressed.png`, `ai-setup-toggle-opened.png`.
@@ -464,7 +464,7 @@ Page: home. Selector: `button.channels__arrow--right`. States: default, hover, f
 | Border | 1px solid #e8e8f0 | = | = | = |
 | Radius | 50% | = | = | = |
 | Background | #ffffff | = | = | = |
-| Box shadow | #000000 @ 0.1 0px 2px 12px 0px | #000000 @ 0.15 0px 4px 20px 0px | = | #000000 @ 0.14 0px 3.74659px 18.9864px 0px |
+| Box shadow | #000000 @ 0.1 0px 2px 12px 0px | #000000 @ 0.15 0px 4px 20px 0px | = | #000000 @ 0.15 0px 4px 20px 0px |
 | Outline | none | = | = | = |
 | Font | Inter 16px/18.4px 400 | = | = | = |
 | Letter spacing | normal | = | = | = |
@@ -473,7 +473,7 @@ Page: home. Selector: `button.channels__arrow--right`. States: default, hover, f
 | Transform | matrix(1, 0, 0, 1, 0, -22) | = | matrix(0.85, 0, 0, 0.85, 0, -22) | matrix(0.85, 0, 0, 0.85, 0, -22) |
 | Cursor | pointer | = | = | = |
 | Icon | 16 x 16, colour #1a2035 | = | 13.6 x 13.6, colour #1a2035 | 13.6 x 13.6, colour #1a2035 |
-| Painted layers | button.channels__arrow.channels__arrow--right 44.0x44.0 bg #ffffff border T:1px solid #e8e8f0 / R:1px solid #e8e8f0 / B:1px solid #e8e8f0 / L:1px solid #e8e8f0 r 50% shadow #000000 @ 0.1 0px 2px 12px 0px | button.channels__arrow.channels__arrow--right 44.0x44.0 bg #ffffff border T:1px solid #e8e8f0 / R:1px solid #e8e8f0 / B:1px solid #e8e8f0 / L:1px solid #e8e8f0 r 50% shadow #000000 @ 0.15 0px 4px 20px 0px | button.channels__arrow.channels__arrow--right 37.4x37.4 bg #ffffff border T:1px solid #e8e8f0 / R:1px solid #e8e8f0 / B:1px solid #e8e8f0 / L:1px solid #e8e8f0 r 50% shadow #000000 @ 0.1 0px 2px 12px 0px | button.channels__arrow.channels__arrow--right 37.4x37.4 bg #ffffff border T:1px solid #e8e8f0 / R:1px solid #e8e8f0 / B:1px solid #e8e8f0 / L:1px solid #e8e8f0 r 50% shadow #000000 @ 0.14 0px 3.74659px 18.9864px 0px |
+| Painted layers | button.channels__arrow.channels__arrow--right 44.0x44.0 bg #ffffff border T:1px solid #e8e8f0 / R:1px solid #e8e8f0 / B:1px solid #e8e8f0 / L:1px solid #e8e8f0 r 50% shadow #000000 @ 0.1 0px 2px 12px 0px | button.channels__arrow.channels__arrow--right 44.0x44.0 bg #ffffff border T:1px solid #e8e8f0 / R:1px solid #e8e8f0 / B:1px solid #e8e8f0 / L:1px solid #e8e8f0 r 50% shadow #000000 @ 0.15 0px 4px 20px 0px | button.channels__arrow.channels__arrow--right 37.4x37.4 bg #ffffff border T:1px solid #e8e8f0 / R:1px solid #e8e8f0 / B:1px solid #e8e8f0 / L:1px solid #e8e8f0 r 50% shadow #000000 @ 0.1 0px 2px 12px 0px | button.channels__arrow.channels__arrow--right 37.4x37.4 bg #ffffff border T:1px solid #e8e8f0 / R:1px solid #e8e8f0 / B:1px solid #e8e8f0 / L:1px solid #e8e8f0 r 50% shadow #000000 @ 0.15 0px 4px 20px 0px |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 | Opacity | - | = | 0 | 0 |
 
@@ -553,7 +553,7 @@ Page: home. Selector: `.trusted__card`. States: default, hover.
 
 | Property | default | hover |
 |---|---|---|
-| Size (w x h) | 130 x 60.48 | = |
+| Size (w x h) | 147 x 60.48 | = |
 | Padding | 0px | = |
 | Gap | 8px | = |
 | Border | none | = |
@@ -731,7 +731,6 @@ Page: home. Selector: `.fernand__backdrop`. States: default.
 | Letter spacing | normal |
 | Colour | #131e40 |
 | Transition | all 0.75s cubic-bezier(0.19, 1, 0.22, 1) |
-| Opacity | 0 |
 | Painted layers | div.fernand__backdrop 400.0x900.0 image radial-gradient(at right bottom, #1d2736 @ 0.1 0px, #1d2736 @ 0 70%) |
 | How | at rest |
 
@@ -754,13 +753,13 @@ Page: home. Selector: `.footer-cta__section CTA`. States: default, hover, focus-
 | Radius | 8px | = | = | = |
 | Background | #1a2035 | = | = | = |
 | Box shadow | none | = | = | = |
-| Outline | none | = | 1px auto #101010 offset 0.984375px | = |
+| Outline | none | = | 1px auto #171717 offset 0.96875px | = |
 | Font | Inter 15px/20px 500 | = | = | = |
 | Letter spacing | normal | = | = | = |
 | Colour | #ffffff | = | = | = |
 | Transition | all 0.75s cubic-bezier(0.19, 1, 0.22, 1) | = | = | = |
 | Cursor | pointer | = | = | = |
-| Painted layers | a.hero__cta--primary 170.0x49.0 bg #1a2035 border T:1px solid #1a2035 / R:1px solid #1a2035 / B:1px solid #1a2035 / L:1px solid #1a2035 r 8px; kbd 22.0x21.0 bg #3d4259 r 4px | = | a.hero__cta--primary 170.0x49.0 bg #1a2035 border T:1px solid #1a2035 / R:1px solid #1a2035 / B:1px solid #1a2035 / L:1px solid #1a2035 r 8px outline 1px auto #101010 offset 0.984375px; kbd 22.0x21.0 bg #3d4259 r 4px | = |
+| Painted layers | a.hero__cta--primary 170.0x49.0 bg #1a2035 border T:1px solid #1a2035 / R:1px solid #1a2035 / B:1px solid #1a2035 / L:1px solid #1a2035 r 8px; kbd 22.0x21.0 bg #3d4259 r 4px | = | a.hero__cta--primary 170.0x49.0 bg #1a2035 border T:1px solid #1a2035 / R:1px solid #1a2035 / B:1px solid #1a2035 / L:1px solid #1a2035 r 8px outline 1px auto #171717 offset 0.96875px; kbd 22.0x21.0 bg #3d4259 r 4px | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
 Crops: `footer-cta-default.png`, `footer-cta-hover.png`, `footer-cta-focus-visible.png`, `footer-cta-pressed.png`.
@@ -789,7 +788,7 @@ Page: home. Selector: `footer`. States: default.
 | Painted layers | footer 1440.0x417.0 bg #151618; footer::before 1440pxx5px bg #151618 |
 | How | at rest |
 
-Crops: `footer-default.png`.
+Crops: none.
 
 #### footer-link
 
@@ -805,14 +804,14 @@ Page: home. Selector: `footer a Pricing`. States: default, hover, focus-visible,
 | Radius | 0px | = | = | = |
 | Background | transparent | = | = | = |
 | Box shadow | none | = | = | = |
-| Outline | none | = | 1px auto #141414 @ 0.984 offset 0.96875px | = |
+| Outline | none | = | 1px auto #131313 @ 0.99 offset 0.96875px | = |
 | Font | Inter 15px/15px 400 | = | = | = |
 | Letter spacing | normal | = | = | = |
 | Colour | #ffffff @ 0.5 | #ffffff @ 0.996 | = | #ffffff @ 0.992 |
 | Transition | all 0.75s cubic-bezier(0.19, 1, 0.22, 1) | = | = | = |
 | Cursor | pointer | = | = | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
-| Painted layers | - | = | a 194.0x25.0 outline 1px auto #141414 @ 0.984 offset 0.96875px | = |
+| Painted layers | - | = | a 194.0x25.0 outline 1px auto #131313 @ 0.99 offset 0.96875px | = |
 
 Crops: `footer-link-default.png`, `footer-link-hover.png`, `footer-link-focus-visible.png`, `footer-link-pressed.png`.
 
@@ -1249,7 +1248,7 @@ Page: alternative. Selector: `button.alt-faq__summary`. States: default, hover, 
 | Cursor | pointer | = | = | = | = |
 | Icon | 14 x 14, colour #9aa3b8 | = | = | = | = |
 | Ancestor paint | 2 up div.alt-faq bg #ffffff shadow #123769 @ 0.08 0px 2px 4px 0px, #123769 @ 0.04 0px 1px 1px 0px, #123769 @ 0.08 0px 0px 0px 1px | = | = | = | = |
-| How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover | own toggle |
+| How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover | clicked the FAQ summary to expand its answer (aria-expanded=true at save) |
 
 Crops: `alt-faq-summary-default.png`, `alt-faq-summary-hover.png`, `alt-faq-summary-focus-visible.png`, `alt-faq-summary-pressed.png`, `alt-faq-summary-opened.png`.
 
@@ -1883,9 +1882,24 @@ Crops: `help-h1-default.png`.
 
 Article body. A body paragraph in a docs article.
 
-Page: helparticle. Selector: `help article p`. States: .
+Page: helparticle. Selector: `help article p`. States: default.
 
-Not found on the page at capture time.
+| Property | default |
+|---|---|
+| Size (w x h) | 962 x 25.59 |
+| Padding | 0px |
+| Border | none |
+| Radius | 0px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | Inter 16px/25.6px 400 |
+| Letter spacing | normal |
+| Colour | #131e40 |
+| Transition | none |
+| How | at rest |
+
+Crops: `help-prose-default.png`.
 
 #### help-content-link
 
@@ -1895,22 +1909,20 @@ Page: helparticle. Selector: `help article a`. States: default, hover, focus-vis
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 58 x 17 | = | 460 x 54 | 460 x 54 |
-| Padding | 0px | = | 6px 10px | 6px 10px |
+| Size (w x h) | 58 x 17 | = | = | = |
+| Padding | 0px | = | = | = |
 | Border | none | = | = | = |
-| Radius | 0px | = | 5px | 5px |
-| Background | transparent | = | #f5f7f9 @ 0.992 | #f5f7f9 |
+| Radius | 0px | = | = | = |
+| Background | transparent | = | = | = |
 | Box shadow | none | = | = | = |
 | Outline | none | = | 1px auto #101011 offset 0.96875px | = |
 | Font | Inter 14px/22.4px 400 | = | = | = |
 | Letter spacing | normal | = | = | = |
-| Colour | #131e40 | #009ffe | #141f41 | = |
+| Colour | #131e40 | #009ffd | = | #009efc |
 | Transition | all 0.75s cubic-bezier(0.19, 1, 0.22, 1) | = | = | = |
 | Cursor | pointer | = | = | = |
-| How | at rest | mouse hover | keydown then focus() | CDP forcePseudoState :active:hover |
-| Text node | - | = | div.collection__icon: Inter 14px/22.4px 400, #9fa3b5 | div.collection__icon: Inter 14px/22.4px 400, #9fa3b5 |
-| Painted layers | - | = | a.u--flex 460.0x54.0 bg #f5f7f9 @ 0.992 r 5px outline 1px auto #101011 offset 0.96875px; div.collection__icon 42.0x42.0 bg #c0a643 @ 0.1 r 100% | a.u--flex 460.0x54.0 bg #f5f7f9 r 5px; div.collection__icon 42.0x42.0 bg #c0a643 @ 0.1 r 100% |
-| Ancestor paint | - | = | 1 up li.active bg #f5f7f9; 3 up div.search__popover.transit bg #ffffff shadow #535765 @ 0.17 0px 1px 4px 0px, #363d54 @ 0.15 0px 9px 50px 0px | 1 up li.active bg #f5f7f9; 3 up div.search__popover.transit bg #ffffff shadow #535765 @ 0.17 0px 1px 4px 0px, #363d54 @ 0.15 0px 9px 50px 0px |
+| How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
+| Painted layers | - | = | a.u--fs14 58.0x17.0 outline 1px auto #101011 offset 0.96875px | = |
 
 Crops: `help-content-link-default.png`, `help-content-link-hover.png`, `help-content-link-focus-visible.png`, `help-content-link-pressed.png`.
 
@@ -1934,10 +1946,10 @@ Page: helpdark. Selector: `help main (dark)`. States: default.
 | Font | Inter 16px/25.6px 400 |
 | Letter spacing | normal |
 | Colour | #a1a1aa |
-| Text node | kbd.transit.m--hide: Inter 12px/23px 400, #5f667d |
+| Text node | kbd.transit.m--hide: Inter 12px/23px 400, #8a8f98 |
 | Transition | none |
-| Icon | 20 x 20, colour #131e40, fill #8a8f98 |
-| Painted layers | div::after.wrapper.wrapper__pageheader 1090pxx120px image linear-gradient(#161618, #161618 60%, #121212 @ 0); input.transit 480.0x42.0 bg #ffffff border T:1px solid #eaecf8 / R:1px solid #eaecf8 / B:1px solid #eaecf8 / L:1px solid #eaecf8 r 5px shadow #1a1c21 @ 0.03 0px 2px 3px 0px; kbd.transit.m--hide 30.0x28.0 bg #f7fafc border T:1px solid #eaecf8 / R:1px solid #eaecf8 / B:1px solid #eaecf8 / L:1px solid #eaecf8 r 4px; a.transit.m--show 0.0x0.0 bg #18181b border L:1px solid #44474e r 0px 5px 5px 0px; div.search__popover.transit 480.0x20.0 bg #ffffff r 5px shadow #535765 @ 0.17 0px 1px 4px 0px, #363d54 @ 0.15 0px 9px 50px 0px; a.card 310.0x184.8 border T:1px solid #eaecf8 / R:1px solid #eaecf8 / B:1px solid #eaecf8 / L:1px solid #eaecf8 r 5px |
+| Icon | 20 x 20, colour #a1a1aa, fill #8a8f98 |
+| Painted layers | div::after.wrapper.wrapper__pageheader 1090pxx120px image linear-gradient(#161618, #161618 60%, #121212 @ 0); input.transit 480.0x42.0 bg #161618 border T:1px solid #ffffff @ 0.1 / R:1px solid #ffffff @ 0.1 / B:1px solid #ffffff @ 0.1 / L:1px solid #ffffff @ 0.1 r 5px shadow #1a1c21 @ 0.03 0px 2px 3px 0px; kbd.transit.m--hide 30.0x28.0 bg #18181b border T:1px solid #ffffff @ 0.1 / R:1px solid #ffffff @ 0.1 / B:1px solid #ffffff @ 0.1 / L:1px solid #ffffff @ 0.1 r 4px; a.transit.m--show 0.0x0.0 bg #18181b border L:1px solid #44474e r 0px 5px 5px 0px; div.search__popover.transit 480.0x20.0 bg #1f2023 r 5px shadow #000000 @ 0.5 0px 16px 70px 0px; a.card 310.0x184.8 border T:1px solid #ffffff @ 0.1 / R:1px solid #ffffff @ 0.1 / B:1px solid #ffffff @ 0.1 / L:1px solid #ffffff @ 0.1 r 5px |
 | How | at rest |
 
 Crops: `hd-page-default.png`.
@@ -2044,6 +2056,29 @@ Page: helpdark. Selector: `help a.card (dark)`. States: default.
 
 Crops: `hd-card-default.png`.
 
+#### hd-prose
+
+Article body (dark). A body paragraph in a docs article under dark-mode.
+
+Page: helpdark. Selector: `help article p (dark)`. States: default.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 962 x 25.59 |
+| Padding | 0px |
+| Border | none |
+| Radius | 0px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | Inter 16px/25.6px 400 |
+| Letter spacing | normal |
+| Colour | #a1a1aa |
+| Transition | none |
+| How | at rest |
+
+Crops: `hd-prose-default.png`.
+
 ### Mobile (390 wide)
 
 #### m-topbar
@@ -2087,20 +2122,20 @@ Page: mobile. Selector: `mobile Start for free`. States: default, hover, focus-v
 | Radius | 6px | = | = | = |
 | Background | #00a0ff | = | = | = |
 | Box shadow | none | = | = | = |
-| Outline | none | = | 1px auto #e59803 offset 0.984375px | = |
+| Outline | none | = | 1px auto #e69a06 offset 0.96875px | = |
 | Font | Inter 14px/14px 500 | = | = | = |
 | Letter spacing | normal | = | = | = |
 | Colour | #ffffff | = | = | = |
 | Transition | all 0.75s cubic-bezier(0.19, 1, 0.22, 1) | = | = | = |
 | Cursor | pointer | = | = | = |
-| Painted layers | a 115.0x30.0 bg #00a0ff r 6px | = | a 115.0x30.0 bg #00a0ff r 6px outline 1px auto #e59803 offset 0.984375px | = |
+| Painted layers | a 115.0x30.0 bg #00a0ff r 6px | = | a 115.0x30.0 bg #00a0ff r 6px outline 1px auto #e69a06 offset 0.96875px | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
 Crops: `m-cta-default.png`, `m-cta-hover.png`, `m-cta-focus-visible.png`, `m-cta-pressed.png`.
 
 #### m-hero-h1
 
-Mobile hero headline. The 38px masthead at 390 wide.
+Mobile hero headline. The masthead at 390 wide — the 38px display heading drops to 26px.
 
 Page: mobile. Selector: `mobile h1`. States: default.
 
