@@ -1069,6 +1069,23 @@
         }
       ]
     },
+    "digg.com": {
+      "catalog": [
+        {
+          "name": "Digg",
+          "domain": "digg.com",
+          "id": 1431
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "digg",
+          "name": "Digg",
+          "url": "https://digg.com",
+          "name_match": true
+        }
+      ]
+    },
     "dock.us": {
       "catalog": [
         {
@@ -2041,13 +2058,6 @@
         "name": "Designstripe",
         "domain": "designstripe.com",
         "id": 186
-      }
-    ],
-    "digg.com": [
-      {
-        "name": "Digg",
-        "domain": "digg.com",
-        "id": 1431
       }
     ],
     "dinnerladies.com.au": [

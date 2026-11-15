@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_87 of 145 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_88 of 146 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -489,6 +489,11 @@ Access: signed out (every surface captured is public; the app.feedhive.com sign-
 - every post-login surface (composer, scheduling calendar, AI generation, analytics, account settings) lives behind app.feedhive.com - an authenticated boundary never reached
 - the sign-in, sign-up and bio-generator forms were measured at rest and typed into then cleared, never submitted - validation, error, loading and success states are absent rather than measured; the bio Generate button's desaturated #b9c0f5 is its resting style, not a measured disabled state
 - the app.feedhive.com values are a different design system (Chakra UI) kept as component.login.* literals, never the marketing roles
+
+## [Digg](../systems/digg) — `digg`
+Access: read-only (the home feed, category feeds, story pages, /u/<source> profiles, /login, /sign-up and /privacy are fully public signed out; voting, commenting, submitting, following and settings are an authenticated boundary never reached; the vote pills, comment and source links were measured, never followed or pressed, and the Clerk fields were focused/filled, never submitted)
+- voting, commenting, submitting, following sources and every account surface need an account - an authenticated boundary never reached; the digg-it pills and comment links gate on sign-in and were never pressed
+- the Clerk auth fields were focused and filled at /login and /sign-up, never submitted - no validation, error, loading or success state exists in this capture
 
 ## Gate noted in access text only
 
