@@ -4350,6 +4350,7 @@
         ],
         "durationMin": null,
         "durationNote": "the capture ran across several sessions; active wall-clock time was not recorded; per-shot timestamps are in screenshots/*.capture.json",
+      "pr": "https://github.com/starship-terminal/constellations/pull/598",
         "gaps": [
           "app.flutterflow.io and everything behind Sign in / Start building / Open Studio was never opened: the dashboard, editor canvas, AI generation flow, billing and account surfaces are signed-in and out of scope",
           "the prompt composer was measured, focused and typed in (then cleared) but never submitted, so the generation flow it starts is missing",
