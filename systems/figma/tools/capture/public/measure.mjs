@@ -142,7 +142,7 @@ async function measure(key, state, target, opts = {}) {
         file = await crop(page, (opts.cropLoc || loc).filter({ visible: true }).first(), `${key}-${state}`, opts.pad ?? 8);
       } catch (e) { s.cropError = String(e.message || e).slice(0, 120); }
     }
-    c.states[state] = { ...s, crop: file, via: opts.via };
+    c.states[state] = { ...s, crop: file, via: opts.via, run };
     if (opts.extra) c.states[state].extra = await opts.extra(loc);
     log('  ', key, state, s.rect.w + 'x' + s.rect.h);
   } catch (e) {
@@ -203,7 +203,16 @@ async function S(key, target, list, meta = {}, opts = {}) {
         via = `typed "${opts.fillText || 'name@example.com'}", then deleted; nothing sent`;
       } else if (st === 'opened') {
         if (opts.noToggle) via = 'held open by an earlier toggle';
-        else { await toggle(loc, { allowLink: opts.allowLink }); await page.waitForTimeout(900); via = 'own toggle'; }
+        else {
+          await toggle(loc, { allowLink: opts.allowLink });
+          await page.waitForTimeout(900);
+          // A collapsible that reports expansion must still be open when its
+          // "opened" reading is taken; a control without the attribute is
+          // trusted (some toggles expose no state).
+          const expanded = await loc.evaluate((el) => el.getAttribute('aria-expanded')).catch(() => null);
+          if (expanded === 'false') throw new Error('the opened state measured closed (aria-expanded="false" after the toggle)');
+          via = 'own toggle';
+        }
       } else if (st === 'closed') {
         await toggle(loc, { allowLink: opts.allowLink }); await page.waitForTimeout(900); via = 'own toggle';
       } else via = via || 'at rest';
@@ -216,6 +225,14 @@ async function S(key, target, list, meta = {}, opts = {}) {
     }
     if (undo) await undo().catch(() => {});
     if (opts.after?.[st]) await opts.after[st](loc).catch(() => {});
+  }
+  // A listed state that failed its re-read kept the earlier evidence under
+  // rerunError (and its own earlier `run`); the entry then republishes under
+  // the earlier run's page/run/url and records the miss, so retained readings
+  // never carry the new run's date.
+  if (keep && list.some((st) => out.components[key].states[st]?.rerunError)) {
+    Object.assign(out.components[key], keep);
+    out.components[key].recaptureMissed = run;
   }
   await reset();
 }
@@ -280,7 +297,7 @@ const G = {
   shell: 'Site chrome', home: 'Home', pricing: 'Pricing', contact: 'Contact sales form',
   auth: 'Login and signup (product shell)', community: 'Community (product shell)',
   prompt: 'Prompt surfaces', resources: 'Blog, downloads and careers',
-  faq: 'FAQ accordions', mobile: 'Mobile (390 wide)', footer: 'Footer', dark: 'Dark sections',
+  faq: 'FAQ accordions', mobile: 'Mobile (390 wide)', footer: 'Footer',
 };
 
 // Opens the header's "Products" nav-dropdown: a
@@ -336,7 +353,7 @@ async function home() {
   const g = G.shell;
   await S('mkt-header', q('header').filter({ visible: true }).first(), ['default'], { group: g, title: 'Site header', desc: 'The fixed top bar on every marketing page: the Figma mark, Products/Solutions/Community/Resources dropdown triggers, Pricing, Log in, Contact sales and the "Get started for free" CTA.', sel: 'header' }, { noScroll: true });
   await S('mkt-logo', q('header a[href="/"], header a[href="https://www.figma.com/"]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Logo', desc: 'The Figma mark in the header, linking home.', sel: 'header a[href=/]' }, { noScroll: true });
-  await S('nav-dropdown-btn', q('button[data-nav-dropdown-trigger]').filter({ hasText: /^Products$/ }).first(), [...B4, 'opened'], { group: g, title: 'Nav dropdown trigger', desc: 'The "Products" header button — a data-nav-dropdown-trigger that opens the products dropdown. The opened state was measured after clicking it.', sel: 'button[data-nav-dropdown-trigger] Products' }, { noScroll: true, before: { opened: async (loc) => { await loc.click({ timeout: 4000 }).catch(() => {}); await page.waitForTimeout(800); return 'clicked the trigger to open the products dropdown'; } } });
+  await S('nav-dropdown-btn', q('button[data-nav-dropdown-trigger]').filter({ hasText: /^Products$/ }).first(), [...B4, 'opened'], { group: g, title: 'Nav dropdown trigger', desc: 'The "Products" header button — a data-nav-dropdown-trigger that opens the products dropdown. The opened state was measured after its own toggle click; aria-expanded had to stay true.', sel: 'button[data-nav-dropdown-trigger] Products' }, { noScroll: true });
   await S('nav-panel', q('button[data-nav-dropdown-trigger][aria-expanded="true"]').locator('xpath=ancestor::li[1]/following-sibling::li[1]//nav[1]/ancestor::div[2]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Products dropdown panel', desc: 'The dropdown panel opened by the "Products" trigger (Figma Design, Make, Weave, Dev Mode, Motion, Specs, FigJam, Slides, Draw, Sites, Buzz, AI workflows, Release notes, Downloads); its links were never followed.', sel: 'products dropdown panel' }, { open: openProductsMenu, noScroll: true, noReset: true });
   await S('nav-menu-item', q('button[data-nav-dropdown-trigger][aria-expanded="true"]').locator('xpath=ancestor::li[1]/following-sibling::li[1]').locator('a').filter({ hasText: /^Figma Design/ }).filter({ visible: true }).first(), ['default', 'hover'], { group: g, title: 'Dropdown item', desc: 'The "Figma Design" item inside the opened products dropdown; measured, never followed.', sel: 'products dropdown item' }, { open: openProductsMenu, noScroll: true, noReset: true });
   await page.keyboard.press('Escape').catch(() => {});
@@ -344,12 +361,10 @@ async function home() {
   await S('nav-login', q('header a, nav a').filter({ hasText: /^Log in$/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Log in link', desc: 'The "Log in" header link to /login; measured, never followed.', sel: 'header a Log in' }, { noScroll: true });
   await S('nav-cta', q('header a, nav a').filter({ hasText: /^Get started for free$/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Header CTA', desc: 'The dark "Get started for free" header pill; links to /signup, measured never followed.', sel: 'header a Get started for free' }, { noScroll: true });
   const h = G.home;
-  await S('hero-h1', q('h1').filter({ hasText: /\S/ }).filter({ visible: true }).first(), ['default'], { group: h, title: 'Hero headline', desc: '"The full-stack creative canvas" — the figma.com hero display heading.', sel: 'h1' }, { noScroll: true });
+  await S('hero-h1', await domFind(page, /\S/, { sel: 'h1', tag: 'h1', minW: 200, minH: 20 }), ['default'], { group: h, title: 'Hero headline', desc: '"The full-stack creative canvas" — the figma.com hero display heading.', sel: 'h1' }, { noScroll: true });
   await S('hero-cta', q('main a').filter({ hasText: /^Get started/ }).filter({ visible: true }).first(), B4, { group: h, title: 'Hero CTA', desc: 'The dark "Get started" pill in the hero; links to /signup, measured never followed.', sel: 'hero Get started' }, { noScroll: true });
   await S('play-btn', q('main button').filter({ hasText: /^\s*Play\s*$/ }).filter({ visible: true }).first(), B4, { group: h, title: 'Demo play button', desc: 'A "Play" control on a hero/section product demo video; a local media toggle, measured not held.', sel: 'main button Play' });
   await S('section-h2', q('main h2').filter({ hasText: /\S/ }).filter({ visible: true }).first(), ['default'], { group: h, title: 'Section heading', desc: 'A marketing section heading further down the home page.', sel: 'main h2' });
-  const d = G.dark;
-  await S('dark-section', q('main section, main div').filter({ hasText: /Get started|Figma/i }).filter({ visible: true }).last(), ['default'], { group: d, title: 'Dark section', desc: 'A black-painted band inside the light page (the closing call-to-action field); its fill is painted directly, not through a theme scope.', sel: 'main dark section' });
   const f = G.footer;
   await S('footer', q('footer').filter({ visible: true }).first(), ['default'], { group: f, title: 'Footer', desc: 'The page footer: product/use-case/resource columns, social icons and the locale button.', sel: 'footer' });
   await S('footer-link', q('footer a').filter({ hasText: /^Careers$/ }).first(), B4, { group: f, title: 'Footer link', desc: 'A footer sitemap link; measured, never followed.', sel: 'footer a Careers' });
@@ -367,7 +382,7 @@ async function pricing() {
   await S('seat-combo', q('button[role="combobox"], [role="combobox"]').filter({ hasText: /seat/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Seat combobox', desc: 'The "Full seat" role combobox that re-prices the grid; measured at rest, never opened (its options recompute prices).', sel: 'seat combobox' });
   await S('feature-switch', q('[role="switch"], button[aria-checked]').filter({ hasText: /features/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Feature switch', desc: 'The "All features / Key features" switch (role=switch); measured at rest, never toggled.', sel: 'features switch' });
   await S('plan-card', q('button').filter({ hasText: /^Why choose Professional\?/ }).locator('xpath=ancestor::article[1]').first(), ['default'], { group: g, title: 'Plan card', desc: 'The Professional plan column: name, price, seat copy and its CTA.', sel: 'plan card' });
-  await S('plan-cta', q('a, button').filter({ hasText: /^(Get started|Contact sales|Try for free|Upgrade)/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Plan CTA', desc: 'A plan card\'s action (Get started / Contact sales); measured, never followed.', sel: 'plan card CTA' });
+  await S('plan-cta', q('article').locator('a, button').filter({ hasText: /^(Get started|Contact sales|Try for free|Upgrade)/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Plan CTA', desc: 'A plan card\'s action (Get started / Contact sales), scoped to a plan article so the header\'s "Contact sales" link cannot match first; measured, never followed.', sel: 'plan card CTA' });
   await S('feature-acc', q('button').filter({ hasText: /^(Components|Auto layout|Styles|Variables)$/ }).filter({ visible: true }).first(), ['default', 'opened', 'hover'], { group: g, title: 'Feature accordion', desc: 'A feature-list accordion in the comparison grid ("Components", "Auto layout", ...); the opened state was measured after clicking it — a local UI toggle.', sel: 'feature accordion button' });
   save();
 }

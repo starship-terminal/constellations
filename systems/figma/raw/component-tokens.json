@@ -35,6 +35,12 @@
         }
       },
       "variationAxis": {
+        "mono": {
+          "value": 100,
+          "type": "number",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fig-typography-variation-mono",
+          "description": "The declared `--fig-typography-variation-mono`."
+        },
         "slnt-italic": {
           "value": -6,
           "type": "number",
@@ -382,7 +388,7 @@
     "layout": {
       "grid": {
         "col-width": {
-          "value": "85.3281px",
+          "value": "98.6562px",
           "type": "dimension",
           "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fig-grid-col-width",
           "description": "The declared `--fig-grid-col-width`."
@@ -423,7 +429,7 @@
       },
       "frame": {
         "colWidth": {
-          "value": "26.6562px",
+          "value": "30px",
           "type": "dimension",
           "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --f-col-width",
           "description": "One column of that frame — calc(min(100vw,1440px)/48); resolved at 1440.",
@@ -437,7 +443,7 @@
           "responsive": "viewport-conditional: also declared under @media (min-width:560px, min-width:768px, min-width:960px); resolved at 1440 x 900"
         },
         "gutter": {
-          "value": "53.3281px",
+          "value": "60px",
           "type": "dimension",
           "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --f-gutter",
           "description": "The frame gutter — two columns; resolved at 1440.",
@@ -571,7 +577,7 @@
     },
     "motion": {
       "control": {
-        "value": "background 0.18s, 0.18s ease-out, ease-out, box-shadow 0.18s, 0.18s ease-out, ease-out",
+        "value": "background 0.18s ease-out, box-shadow 0.18s ease-out",
         "type": "other",
         "source": "computed transition of nav-cta default (raw/components-computed.json); the --fig-animation-* steps are the declared durations",
         "description": "The control transition on the header CTA."
@@ -701,23 +707,23 @@
     },
     "text": {
       "ink": {
-        "value": "{theme.badge.fg}",
+        "value": "{theme.fg.default}",
         "type": "color",
-        "source": "computed color of hero-h1 default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared theme.badge.fg",
+        "source": "computed color of hero-h1 default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared theme.fg.default",
         "description": "The near-black ink on display copy, headings and body."
       },
       "navInk": {
-        "value": "{theme.badge.fg}",
+        "value": "{theme.fg.default}",
         "type": "color",
-        "source": "computed color of nav-pricing default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared theme.badge.fg",
+        "source": "computed color of nav-pricing default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared theme.fg.default",
         "description": "The header link ink."
       }
     },
     "action": {
       "ctaFill": {
-        "value": "{theme.badge.fg}",
+        "value": "{theme.fg.default}",
         "type": "color",
-        "source": "computed backgroundColor of nav-cta default (raw/components-computed.json); matches declared theme.badge.fg",
+        "source": "computed backgroundColor of nav-cta default (raw/components-computed.json); matches declared theme.fg.default",
         "description": "The black fill of the 'Get started'/'Get started for free' CTA pills."
       },
       "ctaInk": {
@@ -727,15 +733,15 @@
         "description": "The white text on the dark CTA pill."
       },
       "ctaHover": {
-        "value": "oklch(0 0 none / 0.85)",
+        "value": "{theme.btn.primary.bg.hover}",
         "type": "color",
-        "source": "computed backgroundColor of nav-cta hover (raw/components-computed.json)",
+        "source": "computed backgroundColor of nav-cta hover (raw/components-computed.json); matches declared theme.btn.primary.bg.hover",
         "description": "The CTA pill's hover fill — the 15%-lifted black wash."
       },
       "submitFill": {
-        "value": "{theme.badge.fg}",
+        "value": "{theme.fg.default}",
         "type": "color",
-        "source": "computed backgroundColor of next-btn default (raw/components-computed.json); matches declared theme.badge.fg",
+        "source": "computed backgroundColor of next-btn default (raw/components-computed.json); matches declared theme.fg.default",
         "description": "The 'Next step' button fill on the contact form."
       },
       "submitInk": {
@@ -747,44 +753,38 @@
     },
     "border": {
       "focusRing": {
-        "value": "{theme.badge.fg}",
+        "value": "{theme.fg.default}",
         "type": "color",
-        "source": "computed outlineColor of nav-cta focus-visible (raw/components-computed.json); matches declared theme.badge.fg",
+        "source": "computed outlineColor of nav-cta focus-visible (raw/components-computed.json); matches declared theme.fg.default",
         "description": "The keyboard focus ring colour on the header CTA."
       }
     },
     "form": {
       "fieldBg": {
-        "value": "{theme.btn.transparent.bg.hover}",
+        "value": "{theme.form.input.bg}",
         "type": "color",
-        "source": "computed backgroundColor of field-email default (raw/components-computed.json); matches declared theme.btn.transparent.bg.hover",
+        "source": "computed backgroundColor of field-email default (raw/components-computed.json); matches declared theme.form.input.bg",
         "description": "The 8%-black contact field fill (form-input-bg)."
       },
       "fieldInk": {
-        "value": "{theme.badge.fg}",
+        "value": "{theme.fg.default}",
         "type": "color",
-        "source": "computed color of field-email default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared theme.badge.fg",
+        "source": "computed color of field-email default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared theme.fg.default",
         "description": "The field text ink."
       },
       "placeholder": {
-        "value": "{theme.badge.fg}",
+        "value": "{theme.fg.default}",
         "type": "color",
-        "source": "computed ::placeholder color of field-email default (raw/components-computed.json); matches declared theme.badge.fg",
+        "source": "computed ::placeholder color of field-email default (raw/components-computed.json); matches declared theme.fg.default",
         "description": "The placeholder ink (form-placeholder)."
       }
     },
     "surface": {
       "planCardBg": {
-        "value": "{theme.btn.secondary.bg}",
+        "value": "{theme.btn.ghost.bg.default}",
         "type": "color",
-        "source": "computed backgroundColor of plan-card default (raw/components-computed.json); matches declared theme.btn.secondary.bg",
+        "source": "computed backgroundColor of plan-card default (raw/components-computed.json); matches declared theme.btn.ghost.bg.default",
         "description": "The plan card's tinted fill on /pricing."
-      },
-      "darkSectionBg": {
-        "value": "{theme.btn.secondary.bg}",
-        "type": "color",
-        "source": "computed backgroundColor of dark-section default (raw/components-computed.json); matches declared theme.btn.secondary.bg",
-        "description": "A black-painted band inside the light page (the closing CTA field)."
       }
     },
     "background": {

@@ -104,6 +104,16 @@ def norm_color(v):
         if a is None or float(a) >= 1:
             return "#%02x%02x%02x" % (int(float(r)), int(float(g)), int(float(b)))
         return f"rgba({int(float(r))}, {int(float(g))}, {int(float(b))}, {'%g' % float(a)})"
+    # Achromatic oklch()/oklab() — how Chromium serialises the site's
+    # color-mix tint roles on a measured element (oklch(0 0 none / 0.85)):
+    # L 0 is black, L 1 is white, the trailing /a is the alpha. Written as
+    # the rgba() the browser paints so a measured tint aliases its declared
+    # rgba token (the same normalisation build_tokens.py applies).
+    m = re.fullmatch(r"okl(?:ch|ab)\(\s*([\d.]+)\s+(?:0(?:\.0+)?|none)\s+(?:none|[-\d.]+)\s*(?:/\s*([\d.]+))?\s*\)", v)
+    if m:
+        lvl = round(float(m.group(1)) * 255)
+        a = float(m.group(2) or 1)
+        return "#%02x%02x%02x" % (lvl, lvl, lvl) if a == 1 else "rgba(%d, %d, %d, %g)" % (lvl, lvl, lvl, a)
     m = re.fullmatch(r"color-mix\(in (?:oklch|srgb|hsl|lab|oklab|lch|hwb|xyz[^)]*),\s*(#[0-9a-fA-F]{3,8}),\s*transparent\s+([\d.]+)%\)", v)
     if m:
         # figma.com spells its translucent roles as
@@ -296,7 +306,7 @@ for name in sorted(k for k in R if re.fullmatch(r"--fig-typography-variation-wgh
     weights[name[len("--fig-typography-variation-wght-"):]] = num_decl(name)
 
 axes = SPEC["core"].setdefault("font", {}).setdefault("variationAxis", {})
-for name in sorted(k for k in R if re.fullmatch(r"--fig-typography-variation-(wdth|slnt|mono)-[a-z]+", k)):
+for name in sorted(k for k in R if re.fullmatch(r"--fig-typography-variation-(?:(?:wdth|slnt|mono)-[a-z]+|mono)", k)):
     axes[name[len("--fig-typography-variation-"):]] = num_decl(name)
 
 # ------------------------------------------------------------- type ramp
@@ -431,7 +441,16 @@ def res_color(name, theme):
 
 
 role_alias = {"light": {}, "dark": {}}
-for name in mode_names:
+# A colour several roles share must resolve to the same alias every build:
+# set iteration order differs across Python processes, and an alphabetical
+# sort alone would pin theme.badge.fg as the canonical #000000. Rank the
+# roles a label should prefer (the semantic roles before component-specific
+# badge/btn/form leaves), then sort by name so the pick is deterministic.
+ALIAS_FIRST = ["theme.bg", "theme.fg.default", "theme.fg.muted",
+               "theme.border.default", "theme.card.bg", "theme.form.input.bg",
+               "theme.btn.primary.fg"]
+ALIAS_RANK = {p: i for i, p in enumerate(ALIAS_FIRST)}
+for name in sorted(mode_names, key=lambda n: (ALIAS_RANK.get(EMITTED.get(n) or "", len(ALIAS_RANK)), n)):
     p = EMITTED.get(name)
     if not p:
         continue
@@ -474,8 +493,6 @@ for key, comp, state, prop, group, desc in [
      "The 'Next step' button text."),
     ("planCardBg", "plan-card", "default", "backgroundColor", "surface",
      "The plan card's tinted fill on /pricing."),
-    ("darkSectionBg", "dark-section", "default", "backgroundColor", "surface",
-     "A black-painted band inside the light page (the closing CTA field)."),
 ]:
     try:
         if prop == "color":
@@ -557,14 +574,23 @@ try:
     s = st("nav-cta", "default")
     dur, ease = s.get("transitionDuration"), s.get("transitionTimingFunction")
     if dur and dur != "0s":
-        # A CSS transition list pairs every comma entry with its own timing:
-        # appending one duration after the whole property list would leave the
-        # earlier entries at the 0s default.
+        # A CSS transition list pairs every comma entry with its own duration
+        # and easing; dur/ease are themselves comma lists, so each property is
+        # paired index-wise (the components.md builder reads them the same
+        # way), never with the whole list appended per property.
         props = [p.strip() for p in s.get("transitionProperty", "all").split(",") if p.strip()]
-        val = ", ".join(f"{p} {dur} {ease or ''}".strip() for p in props)
-        mo["control"] = lit(val, "other",
-            "computed transition of nav-cta default (raw/components-computed.json); the --fig-animation-* steps are the declared durations",
-            "The control transition on the header CTA.")
+        durs = [d.strip() for d in dur.split(",")]
+        tfs = re.findall(r"cubic-bezier\([^)]*\)|steps\([^)]*\)|[a-z-]+", ease or "")
+        parts = []
+        for i, p in enumerate(props):
+            d = durs[i % len(durs)]
+            if d == "0s":
+                continue
+            parts.append(f"{p} {d} {tfs[i % len(tfs)] if tfs else ''}".strip())
+        if parts:
+            mo["control"] = lit(", ".join(parts), "other",
+                "computed transition of nav-cta default (raw/components-computed.json); the --fig-animation-* steps are the declared durations",
+                "The control transition on the header CTA.")
 except KeyError:
     pass
 

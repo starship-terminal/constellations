@@ -11871,7 +11871,7 @@
       "url": "https://www.figma.com",
       "category": "productivity",
       "platform": "web",
-      "goodFor": "design-tool product and marketing design: a complete declared token layer (--fig-theme-* semantic roles redeclared under :root[data-theme=\"dark\"], a --fig-typography-* variable-font ramp 12-88px with unitless line-heights, negative display tracking and font-variation-settings axes, --fig-space-* on a 4px base, --fig-radius-* 2-28px plus the 9999px pill, --fig-grid-* and the --f-* page frame, --fig-elevation-*, --fig-section-* block padding, --fig-animation-* durations) behind a white marketing surface (black ink, black CTA pills, translucent-ink hairlines, painted black closing bands, figmaSans/figmaMono self-hosted variable faces), header mega-dropdowns, a pricing grid with seat controls, community/resource-card index grids, login/signup app shells and a 390px pass with the nav drawer",
+      "goodFor": "design-tool product and marketing design: a complete declared token layer (--fig-theme-* semantic roles redeclared under :root[data-theme=\"dark\"], a --fig-typography-* variable-font ramp 12-88px with unitless line-heights, negative display tracking and font-variation-settings axes, --fig-space-* on a 4px base, --fig-radius-* 2-28px plus the 9999px pill, --fig-grid-* and the --f-* page frame, --fig-elevation-*, --fig-section-* block padding, --fig-animation-* durations) behind a white marketing surface (black ink, black CTA pills, translucent-ink hairlines, a black footer field, figmaSans/figmaMono self-hosted variable faces), header mega-dropdowns, a pricing grid with seat controls, community/resource-card index grids, login/signup app shells and a 390px pass with the nav drawer",
       "tags": [
         "web",
         "design-tool",
@@ -11887,10 +11887,10 @@
       ],
       "shape": "reference",
       "captured": "2026-11-14",
-      "access": "signed out (every captured surface is public; the editor and every post-login surface - files, boards, Dev Mode in a file, Make projects, community profiles and publish flows, admin - is an authenticated boundary never reached; the /login, /signup, /contact and /make forms were measured and typed into then cleared, never submitted; every CTA, nav item and community card was measured, never followed; the consent layer was hidden, never answered; Cloudflare challenged the automation on /dev-mode/ and /customers/ in the first pass and retries in fresh sessions succeeded - no challenge was answered by hand)",
+      "access": "signed out (every captured surface is public; the editor and every post-login surface - files, boards, Dev Mode in a file, Make projects, community profiles and publish flows, admin - is an authenticated boundary never reached; the /login, /signup, /contact and /make forms were measured and typed into then cleared, never submitted; every CTA, nav item and community card was measured, never followed; the consent layer was hidden, never answered; Cloudflare challenged the automation on /dev-mode/ and /customers/ in the first pass and retries in fresh sessions succeeded - no challenge was answered by hand; the dark theme is declared only - a complete :root[data-theme=\"dark\"] token layer the stylesheets ship but no public page painted while captured)",
       "themes": [
         "light",
-        "dark (declared)"
+        "dark"
       ],
       "widths": [
         1440,
@@ -11957,7 +11957,7 @@
           "submitted states: the /contact sales form, /make prompt, blog newsletter field, community search and the login/signup fields were typed into then cleared, never sent - validation, error, loading and success states are absent rather than measured",
           "the /pricing billing toggle, seat combobox and feature switch re-price the grid when flipped; measured at rest and never switched, so the alternate billing/seat grids are uncaptured",
           "the home play-btn demo control rendered no visible Play button during the runs - recorded missing, not inferred",
-          "the dark --fig-theme-* set is a complete declaration under :root[data-theme=\"dark\"] but no public page carried the attribute while captured - dark tokens resolve declarations the site ships, never a painted dark surface; the black closing bands inside light pages are painted directly, measured as components not a theme",
+          "the dark --fig-theme-* set is a complete declaration under :root[data-theme=\"dark\"] but no public page carried the attribute while captured - dark tokens resolve declarations the site ships, never a painted dark surface; the only black-painted surface on a light page is the footer's field, painted directly not through a theme scope",
           "pressed states are DevTools-forced (CSS.forcePseudoState), so any script-applied mousedown state is missing",
           "nav dropdown panel items' focus/hover is partially covered - the panel closes on blur before a keyboard focus can always be held",
           "icons: no standalone SVG set lifted this pass"

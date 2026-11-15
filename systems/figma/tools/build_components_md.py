@@ -35,8 +35,21 @@ def flat(node, prefix=""):
             yield from flat(v, prefix + k + ".")
 
 
+# A measured colour is labelled by the token whose value matches. The lookup
+# runs set by set — the light theme's resolved roles first (the marketing
+# palette lives there: theme.fg.default black, theme.bg white), then core,
+# whose component.* tree holds the product-shell fallbacks — so a white
+# surface is named theme.bg, not whichever component token happens to share
+# the value. PRIMARY pins the roles a label should prefer when several tokens
+# share one colour (badge.fg and fg.default are both #000000; fg is the role
+# the text is painted in). Names carry their set prefix (light.theme.bg) so a
+# label always names a real path in tokens.json.
+PRIMARY = {"theme.bg", "theme.fg.default", "theme.fg.muted", "theme.border.default", "theme.card.bg"}
 BY_COLOR = {}
-for n, t in flat(T["core"]):
+for n, t in sorted(flat(T["light"], "light."), key=lambda it: (it[0].split(".", 1)[1] not in PRIMARY, it[0])):
+    if t["$type"] == "color":
+        BY_COLOR.setdefault(t["$value"], n)
+for n, t in flat(T["core"], "core."):
     if t["$type"] == "color":
         BY_COLOR.setdefault(t["$value"], n)
 
@@ -240,8 +253,7 @@ GROUP_INTRO = {
     "Blog, downloads and careers": "The /blog index (Topics and Search filter buttons, the newsletter field), the /downloads platform links and the /careers open-positions list.",
     "FAQ accordions": "The /design-systems FAQ rows — the accordions mount open; the closed state was measured after clicking the row, a local UI toggle.",
     "Mobile (390 wide)": "The phone surface at 390 wide: the header with the nav button and 'Get started for free' pill, the full-viewport nav overlay, the hero and CTA.",
-    "Footer": "The page footer: sitemap columns, social icons and the 'English' locale button.",
-    "Dark sections": "The black-painted bands inside the light marketing pages (the closing call-to-action fields) — painted directly, not through a theme scope. They are not the declared :root[data-theme=\"dark\"] layer, which no public page resolved.",
+    "Footer": "The page footer: sitemap columns, social icons and the 'English' locale button. Its field paints black directly, not through a theme scope.",
 }
 
 SHOTS = [
@@ -509,7 +521,7 @@ W("- **Dropdown panel items' focus/hover** is partially covered: the panel close
 W()
 W("### Themes")
 W()
-W('Every public figma.com page paints the `:root` light token layer — the marketing pages, /community, /login and /signup all resolved `--fig-theme-bg: #ffffff` on `<html>` without a `data-theme` attribute. The stylesheet declares a complete `:root[data-theme="dark"]` re-declaration of the `--fig-theme-*` roles (fg/bg invert, the primary button becomes a white pill, the alpha washes switch to white-on-black), but no public page carried the attribute while captured: the `dark` token set resolves declarations the site ships but did not paint. The black-painted bands inside the light pages (the closing call-to-action fields) are painted directly, not through a theme scope — they are measured as components, not a dark theme.')
+W('Every public figma.com page paints the `:root` light token layer — the marketing pages, /community, /login and /signup all resolved `--fig-theme-bg: #ffffff` on `<html>` without a `data-theme` attribute. The stylesheet declares a complete `:root[data-theme="dark"]` re-declaration of the `--fig-theme-*` roles (fg/bg invert, the primary button becomes a white pill, the alpha washes switch to white-on-black), but no public page carried the attribute while captured: the `dark` token set resolves declarations the site ships but did not paint. The one black-painted surface on the light pages is the footer, measured as a component, not a dark theme.')
 W()
 W("### Fonts")
 W()

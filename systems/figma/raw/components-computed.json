@@ -1,6 +1,6 @@
 {
  "_meta": {
-  "read": "2026-11-14",
+  "read": "2026-11-15",
   "viewport": "1440 x 900 (mobile group 390 x 844); every marketing page on www.figma.com paints the :root light token layer (a :root[data-theme=\"dark\"] layer is declared but never painted publicly); /community, /login and /signup are the product app shell, a different stack that also paints light",
   "tool": "tools/capture/public/measure.mjs",
   "sheets": {
@@ -311,6 +311,36 @@
      "animation": ""
     },
     {
+     "selector": ".fig-1r81hmm button",
+     "transition": "background-color var(--fig-animation-180, 180ms) ease-out",
+     "animation": ""
+    },
+    {
+     "selector": ".fig-pqyb4d .btn-inner",
+     "transition": "180ms ease-out",
+     "animation": ""
+    },
+    {
+     "selector": ".fig-pqyb4d .btn-inner > .btn-builtin-icon",
+     "transition": "transform 180ms ease-out",
+     "animation": ""
+    },
+    {
+     "selector": ".fig-10lvvv4 .btn-inner",
+     "transition": "180ms ease-out",
+     "animation": ""
+    },
+    {
+     "selector": ".fig-10lvvv4 .btn-inner > .btn-builtin-icon",
+     "transition": "transform 180ms ease-out",
+     "animation": ""
+    },
+    {
+     "selector": ".fig-1un95uw .nav-highlight::after",
+     "transition": "transform 250ms, opacity 250ms",
+     "animation": ""
+    },
+    {
      "selector": ".fig-1i8rxuj",
      "transition": "background 180ms ease-out, box-shadow 180ms ease-out",
      "animation": ""
@@ -338,11 +368,6 @@
     {
      "selector": ".fig-1xsbq6c .btn-inner .btn-text",
      "transition": "translate 180ms ease-out",
-     "animation": ""
-    },
-    {
-     "selector": ".fig-1r81hmm button",
-     "transition": "background-color var(--fig-animation-180, 180ms) ease-out",
      "animation": ""
     },
     {
@@ -665,6 +690,31 @@
     {
      "selector": ".fig-1wks1wk",
      "transition": "background 180ms ease-out, box-shadow 180ms ease-out",
+     "animation": ""
+    },
+    {
+     "selector": ".fig-pqyb4d .btn-inner",
+     "transition": "180ms ease-out",
+     "animation": ""
+    },
+    {
+     "selector": ".fig-pqyb4d .btn-inner > .btn-builtin-icon",
+     "transition": "transform 180ms ease-out",
+     "animation": ""
+    },
+    {
+     "selector": ".fig-10lvvv4 .btn-inner",
+     "transition": "180ms ease-out",
+     "animation": ""
+    },
+    {
+     "selector": ".fig-10lvvv4 .btn-inner > .btn-builtin-icon",
+     "transition": "transform 180ms ease-out",
+     "animation": ""
+    },
+    {
+     "selector": ".fig-1un95uw .nav-highlight::after",
+     "transition": "transform 250ms, opacity 250ms",
      "animation": ""
     },
     {
@@ -3716,16 +3766,6 @@
        "bg": "rgb(255, 255, 255)"
       },
       {
-       "node": "p::after.nav-highlight.fig-ctjoqe",
-       "size": "autox1px",
-       "bg": "rgb(0, 0, 0)"
-      },
-      {
-       "node": "p::after.nav-highlight.fig-ctjoqe",
-       "size": "autox1px",
-       "bg": "rgb(0, 0, 0)"
-      },
-      {
        "node": "span::after.nav-highlight",
        "size": "autox1px",
        "bg": "rgb(0, 0, 0)"
@@ -3766,6 +3806,16 @@
        "size": "0.0x0.0",
        "bg": "oklch(0 0 none / 0.08)",
        "radius": "4px"
+      },
+      {
+       "node": "span::after.nav-highlight",
+       "size": "autox1px",
+       "bg": "rgb(0, 0, 0)"
+      },
+      {
+       "node": "span::after.nav-highlight",
+       "size": "autox1px",
+       "bg": "rgb(0, 0, 0)"
       }
      ],
      "textStyle": {
@@ -3788,11 +3838,12 @@
       "color": "rgb(0, 0, 0)"
      },
      "crop": "components/crops/mkt-header-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-15"
     }
    },
    "page": "home",
-   "run": "2026-11-14",
+   "run": "2026-11-15",
    "url": "https://www.figma.com/",
    "title": "Site header",
    "group": "Site chrome",
@@ -3898,11 +3949,12 @@
       "color": "rgb(0, 0, 0)"
      },
      "crop": "components/crops/mkt-logo-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-15"
     }
    },
    "page": "home",
-   "run": "2026-11-14",
+   "run": "2026-11-15",
    "url": "https://www.figma.com/",
    "title": "Logo",
    "group": "Site chrome",
@@ -4034,7 +4086,8 @@
       "color": "rgb(0, 0, 0)"
      },
      "crop": "components/crops/nav-dropdown-btn-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-15"
     },
     "hover": {
      "tag": "button",
@@ -4159,7 +4212,8 @@
       "color": "rgb(0, 0, 0)"
      },
      "crop": "components/crops/nav-dropdown-btn-hover.png",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "run": "2026-11-15"
     },
     "focus-visible": {
      "tag": "button",
@@ -4289,7 +4343,8 @@
       "color": "rgb(0, 0, 0)"
      },
      "crop": "components/crops/nav-dropdown-btn-focus-visible.png",
-     "via": "Shift+Tab, Tab"
+     "via": "Shift+Tab, Tab",
+     "run": "2026-11-15"
     },
     "pressed": {
      "tag": "button",
@@ -4414,11 +4469,12 @@
       "color": "rgb(0, 0, 0)"
      },
      "crop": "components/crops/nav-dropdown-btn-pressed.png",
-     "via": "CDP forcePseudoState :active:hover"
+     "via": "CDP forcePseudoState :active:hover",
+     "run": "2026-11-15"
     },
     "opened": {
      "tag": "button",
-     "classes": "dropdown-label fig-7comqs",
+     "classes": "dropdown-label fig-35jflp",
      "text": "Products",
      "rect": {
       "x": 83,
@@ -4539,15 +4595,16 @@
       "color": "rgb(0, 0, 0)"
      },
      "crop": "components/crops/nav-dropdown-btn-opened.png",
-     "via": "own toggle"
+     "via": "own toggle",
+     "run": "2026-11-15"
     }
    },
    "page": "home",
-   "run": "2026-11-14",
+   "run": "2026-11-15",
    "url": "https://www.figma.com/",
    "title": "Nav dropdown trigger",
    "group": "Site chrome",
-   "desc": "The \"Products\" header button — a data-nav-dropdown-trigger that opens the products dropdown. The opened state was measured after clicking it.",
+   "desc": "The \"Products\" header button — a data-nav-dropdown-trigger that opens the products dropdown. The opened state was measured after its own toggle click; aria-expanded had to stay true.",
    "selector": "button[data-nav-dropdown-trigger] Products"
   },
   "nav-panel": {
@@ -4555,7 +4612,7 @@
     "default": {
      "tag": "div",
      "classes": "fig-56zixy",
-     "text": "WHAT YOU CAN DO IN FIGMA Design and explore Build and ship products EXPLORE ALL ",
+     "text": "WHAT YOU CAN DO IN FIGMA Design and explore Build and ship products FIGMA AI AI ",
      "rect": {
       "x": 0,
       "y": 78,
@@ -4639,16 +4696,6 @@
        "bg": "rgb(255, 255, 255)"
       },
       {
-       "node": "p::after.nav-highlight.fig-ctjoqe",
-       "size": "207pxx1px",
-       "bg": "rgb(0, 0, 0)"
-      },
-      {
-       "node": "p::after.nav-highlight.fig-ctjoqe",
-       "size": "256pxx1px",
-       "bg": "rgb(0, 0, 0)"
-      },
-      {
        "node": "span::after.nav-highlight",
        "size": "96pxx1px",
        "bg": "rgb(0, 0, 0)"
@@ -4704,6 +4751,17 @@
        "node": "span::after.nav-highlight",
        "size": "83pxx1px",
        "bg": "rgb(0, 0, 0)"
+      },
+      {
+       "node": "span::after.nav-highlight",
+       "size": "85pxx1px",
+       "bg": "rgb(0, 0, 0)"
+      },
+      {
+       "node": "span.fig-1g4mtsx",
+       "size": "44.0x22.4",
+       "bg": "oklch(0 0 none / 0.08)",
+       "radius": "4px"
       }
      ],
      "textStyle": {
@@ -4726,11 +4784,12 @@
       "color": "rgb(0, 0, 0)"
      },
      "crop": "components/crops/nav-panel-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-15"
     }
    },
    "page": "home",
-   "run": "2026-11-14",
+   "run": "2026-11-15",
    "url": "https://www.figma.com/",
    "title": "Products dropdown panel",
    "group": "Site chrome",
@@ -4846,7 +4905,8 @@
       "color": "rgb(0, 0, 0)"
      },
      "crop": "components/crops/nav-menu-item-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-15"
     },
     "hover": {
      "tag": "a",
@@ -4955,11 +5015,12 @@
       "color": "rgb(0, 0, 0)"
      },
      "crop": "components/crops/nav-menu-item-hover.png",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "run": "2026-11-15"
     }
    },
    "page": "home",
-   "run": "2026-11-14",
+   "run": "2026-11-15",
    "url": "https://www.figma.com/",
    "title": "Dropdown item",
    "group": "Site chrome",
@@ -5068,7 +5129,8 @@
       "textTransform": "none"
      },
      "crop": "components/crops/nav-pricing-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-15"
     },
     "hover": {
      "tag": "a",
@@ -5170,7 +5232,8 @@
       "textTransform": "none"
      },
      "crop": "components/crops/nav-pricing-hover.png",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "run": "2026-11-15"
     },
     "focus-visible": {
      "tag": "a",
@@ -5277,7 +5340,8 @@
       "textTransform": "none"
      },
      "crop": "components/crops/nav-pricing-focus-visible.png",
-     "via": "Shift+Tab, Tab"
+     "via": "Shift+Tab, Tab",
+     "run": "2026-11-15"
     },
     "pressed": {
      "tag": "a",
@@ -5379,11 +5443,12 @@
       "textTransform": "none"
      },
      "crop": "components/crops/nav-pricing-pressed.png",
-     "via": "CDP forcePseudoState :active:hover"
+     "via": "CDP forcePseudoState :active:hover",
+     "run": "2026-11-15"
     }
    },
    "page": "home",
-   "run": "2026-11-14",
+   "run": "2026-11-15",
    "url": "https://www.figma.com/",
    "title": "Nav link",
    "group": "Site chrome",
@@ -5492,7 +5557,8 @@
       "textTransform": "none"
      },
      "crop": "components/crops/nav-login-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-15"
     },
     "hover": {
      "tag": "a",
@@ -5594,7 +5660,8 @@
       "textTransform": "none"
      },
      "crop": "components/crops/nav-login-hover.png",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "run": "2026-11-15"
     },
     "focus-visible": {
      "tag": "a",
@@ -5701,7 +5768,8 @@
       "textTransform": "none"
      },
      "crop": "components/crops/nav-login-focus-visible.png",
-     "via": "Shift+Tab, Tab"
+     "via": "Shift+Tab, Tab",
+     "run": "2026-11-15"
     },
     "pressed": {
      "tag": "a",
@@ -5803,11 +5871,12 @@
       "textTransform": "none"
      },
      "crop": "components/crops/nav-login-pressed.png",
-     "via": "CDP forcePseudoState :active:hover"
+     "via": "CDP forcePseudoState :active:hover",
+     "run": "2026-11-15"
     }
    },
    "page": "home",
-   "run": "2026-11-14",
+   "run": "2026-11-15",
    "url": "https://www.figma.com/",
    "title": "Log in link",
    "group": "Site chrome",
@@ -5924,7 +5993,8 @@
       "color": "rgb(255, 255, 255)"
      },
      "crop": "components/crops/nav-cta-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-15"
     },
     "hover": {
      "tag": "a",
@@ -6034,7 +6104,8 @@
       "color": "rgb(255, 255, 255)"
      },
      "crop": "components/crops/nav-cta-hover.png",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "run": "2026-11-15"
     },
     "focus-visible": {
      "tag": "a",
@@ -6145,7 +6216,8 @@
       "color": "rgb(255, 255, 255)"
      },
      "crop": "components/crops/nav-cta-focus-visible.png",
-     "via": "Shift+Tab, Tab"
+     "via": "Shift+Tab, Tab",
+     "run": "2026-11-15"
     },
     "pressed": {
      "tag": "a",
@@ -6255,11 +6327,12 @@
       "color": "rgb(255, 255, 255)"
      },
      "crop": "components/crops/nav-cta-pressed.png",
-     "via": "CDP forcePseudoState :active:hover"
+     "via": "CDP forcePseudoState :active:hover",
+     "run": "2026-11-15"
     }
    },
    "page": "home",
-   "run": "2026-11-14",
+   "run": "2026-11-15",
    "url": "https://www.figma.com/",
    "title": "Header CTA",
    "group": "Site chrome",
@@ -6349,11 +6422,12 @@
       "top": "auto"
      },
      "crop": "components/crops/hero-h1-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-15"
     }
    },
    "page": "home",
-   "run": "2026-11-14",
+   "run": "2026-11-15",
    "url": "https://www.figma.com/",
    "title": "Hero headline",
    "group": "Home",
@@ -6470,7 +6544,8 @@
       "color": "rgb(255, 255, 255)"
      },
      "crop": "components/crops/hero-cta-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-15"
     },
     "hover": {
      "tag": "a",
@@ -6522,7 +6597,7 @@
       "borderTopRightRadius": "16px",
       "borderBottomRightRadius": "16px",
       "borderBottomLeftRadius": "16px",
-      "backgroundColor": "oklch(0 0 none / 0.85)",
+      "backgroundColor": "oklab(0 0 0)",
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
@@ -6556,7 +6631,7 @@
       {
        "node": "a.fig-1ytmgio",
        "size": "222.8x84.0",
-       "bg": "oklch(0 0 none / 0.85)",
+       "bg": "oklab(0 0 0)",
        "radius": "16px"
       }
      ],
@@ -6580,7 +6655,8 @@
       "color": "rgb(255, 255, 255)"
      },
      "crop": "components/crops/hero-cta-hover.png",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "run": "2026-11-15"
     },
     "focus-visible": {
      "tag": "a",
@@ -6691,7 +6767,8 @@
       "color": "rgb(255, 255, 255)"
      },
      "crop": "components/crops/hero-cta-focus-visible.png",
-     "via": "Shift+Tab, Tab"
+     "via": "Shift+Tab, Tab",
+     "run": "2026-11-15"
     },
     "pressed": {
      "tag": "a",
@@ -6801,11 +6878,12 @@
       "color": "rgb(255, 255, 255)"
      },
      "crop": "components/crops/hero-cta-pressed.png",
-     "via": "CDP forcePseudoState :active:hover"
+     "via": "CDP forcePseudoState :active:hover",
+     "run": "2026-11-15"
     }
    },
    "page": "home",
-   "run": "2026-11-14",
+   "run": "2026-11-15",
    "url": "https://www.figma.com/",
    "title": "Hero CTA",
    "group": "Home",
@@ -6815,7 +6893,7 @@
   "play-btn": {
    "states": {},
    "page": "home",
-   "run": "2026-11-14",
+   "run": "2026-11-15",
    "url": "https://www.figma.com/",
    "title": "Demo play button",
    "group": "Home",
@@ -6831,7 +6909,7 @@
      "text": "Move fast in the right direction on an AI-native canvas.",
      "rect": {
       "x": 40,
-      "y": 444.1,
+      "y": 447.4,
       "w": 901.33,
       "h": 36
      },
@@ -6906,122 +6984,17 @@
       "top": "auto"
      },
      "crop": "components/crops/section-h2-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-15"
     }
    },
    "page": "home",
-   "run": "2026-11-14",
+   "run": "2026-11-15",
    "url": "https://www.figma.com/",
    "title": "Section heading",
    "group": "Home",
    "desc": "A marketing section heading further down the home page.",
    "selector": "main h2"
-  },
-  "dark-section": {
-   "states": {
-    "default": {
-     "tag": "div",
-     "classes": "fig-1u8qly9",
-     "text": "Explore what you can do in Figma. Browse resources made by the community.",
-     "rect": {
-      "x": 40,
-      "y": 401.9,
-      "w": 901.33,
-      "h": 96.78
-     },
-     "style": {
-      "display": "block",
-      "position": "static",
-      "boxSizing": "border-box",
-      "width": "901.328px",
-      "height": "96.7812px",
-      "minWidth": "0px",
-      "maxWidth": "none",
-      "minHeight": "0px",
-      "paddingTop": "0px",
-      "paddingRight": "0px",
-      "paddingBottom": "0px",
-      "paddingLeft": "0px",
-      "marginTop": "0px",
-      "marginRight": "0px",
-      "marginBottom": "0px",
-      "marginLeft": "0px",
-      "gap": "normal",
-      "rowGap": "normal",
-      "columnGap": "normal",
-      "flexDirection": "row",
-      "alignItems": "normal",
-      "justifyContent": "normal",
-      "gridTemplateColumns": "none",
-      "borderTopWidth": "0px",
-      "borderTopStyle": "none",
-      "borderTopColor": "rgb(0, 0, 0)",
-      "borderRightWidth": "0px",
-      "borderRightStyle": "none",
-      "borderRightColor": "rgb(0, 0, 0)",
-      "borderBottomWidth": "0px",
-      "borderBottomStyle": "none",
-      "borderBottomColor": "rgb(0, 0, 0)",
-      "borderLeftWidth": "0px",
-      "borderLeftStyle": "none",
-      "borderLeftColor": "rgb(0, 0, 0)",
-      "borderTopLeftRadius": "0px",
-      "borderTopRightRadius": "0px",
-      "borderBottomRightRadius": "0px",
-      "borderBottomLeftRadius": "0px",
-      "backgroundColor": "rgba(0, 0, 0, 0)",
-      "backgroundImage": "none",
-      "boxShadow": "none",
-      "backdropFilter": "none",
-      "outlineWidth": "0px",
-      "outlineStyle": "none",
-      "outlineColor": "rgb(0, 0, 0)",
-      "outlineOffset": "0px",
-      "fontFamily": "figmaSans, \"figmaSans Fallback\", \"SF Pro Display\", system-ui, helvetica, sans-serif",
-      "fontSize": "16px",
-      "fontWeight": "400",
-      "lineHeight": "23.2px",
-      "letterSpacing": "normal",
-      "textTransform": "none",
-      "color": "rgb(0, 0, 0)",
-      "textDecorationLine": "none",
-      "textDecorationColor": "rgb(0, 0, 0)",
-      "textDecorationThickness": "auto",
-      "textUnderlineOffset": "auto",
-      "transitionProperty": "all",
-      "transitionDuration": "0s",
-      "transitionTimingFunction": "ease",
-      "transitionDelay": "0s",
-      "cursor": "default",
-      "opacity": "1",
-      "transform": "none",
-      "overflow": "visible",
-      "zIndex": "auto",
-      "top": "auto"
-     },
-     "textStyle": {
-      "node": "h2.fig-xakii4",
-      "text": "Explore what you can do in Figma.",
-      "fontFamily": "figmaSans, \"figmaSans Fallback\", \"SF Pro Display\", system-ui, helvetica, sans-serif",
-      "fontSize": "44px",
-      "lineHeight": "48.4px",
-      "fontWeight": "400",
-      "letterSpacing": "-0.66px",
-      "color": "rgb(0, 0, 0)",
-      "textDecorationLine": "none",
-      "textTransform": "none"
-     },
-     "crop": "components/crops/dark-section-default.png",
-     "via": "at rest"
-    }
-   },
-   "page": "home",
-   "run": "2026-11-14",
-   "url": "https://www.figma.com/",
-   "title": "Dark section",
-   "group": "Dark sections",
-   "desc": "A black-painted band inside the light page (the closing call-to-action field); its fill is painted directly, not through a theme scope.",
-   "selector": "main dark section"
   },
   "footer": {
    "states": {
@@ -7200,11 +7173,12 @@
       "color": "rgb(255, 255, 255)"
      },
      "crop": "components/crops/footer-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-15"
     }
    },
    "page": "home",
-   "run": "2026-11-14",
+   "run": "2026-11-15",
    "url": "https://www.figma.com/",
    "title": "Footer",
    "group": "Footer",
@@ -7306,7 +7280,8 @@
       "textTransform": "none"
      },
      "crop": "components/crops/footer-link-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-15"
     },
     "hover": {
      "tag": "a",
@@ -7401,7 +7376,8 @@
       "textTransform": "none"
      },
      "crop": "components/crops/footer-link-hover.png",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "run": "2026-11-15"
     },
     "focus-visible": {
      "tag": "a",
@@ -7503,7 +7479,8 @@
       "textTransform": "none"
      },
      "crop": "components/crops/footer-link-focus-visible.png",
-     "via": "Shift+Tab, Tab"
+     "via": "Shift+Tab, Tab",
+     "run": "2026-11-15"
     },
     "pressed": {
      "tag": "a",
@@ -7598,11 +7575,12 @@
       "textTransform": "none"
      },
      "crop": "components/crops/footer-link-pressed.png",
-     "via": "CDP forcePseudoState :active:hover"
+     "via": "CDP forcePseudoState :active:hover",
+     "run": "2026-11-15"
     }
    },
    "page": "home",
-   "run": "2026-11-14",
+   "run": "2026-11-15",
    "url": "https://www.figma.com/",
    "title": "Footer link",
    "group": "Footer",
@@ -7699,7 +7677,8 @@
       "color": "rgb(255, 255, 255)"
      },
      "crop": "components/crops/locale-btn-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-15"
     },
     "hover": {
      "tag": "button",
@@ -7789,7 +7768,8 @@
       "color": "rgb(255, 255, 255)"
      },
      "crop": "components/crops/locale-btn-hover.png",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "run": "2026-11-15"
     },
     "focus-visible": {
      "tag": "button",
@@ -7886,7 +7866,8 @@
       "color": "rgb(255, 255, 255)"
      },
      "crop": "components/crops/locale-btn-focus-visible.png",
-     "via": "Shift+Tab, Tab"
+     "via": "Shift+Tab, Tab",
+     "run": "2026-11-15"
     },
     "pressed": {
      "tag": "button",
@@ -7976,11 +7957,12 @@
       "color": "rgb(255, 255, 255)"
      },
      "crop": "components/crops/locale-btn-pressed.png",
-     "via": "CDP forcePseudoState :active:hover"
+     "via": "CDP forcePseudoState :active:hover",
+     "run": "2026-11-15"
     }
    },
    "page": "home",
-   "run": "2026-11-14",
+   "run": "2026-11-15",
    "url": "https://www.figma.com/",
    "title": "Locale button",
    "group": "Footer",
@@ -8070,11 +8052,12 @@
       "top": "auto"
      },
      "crop": "components/crops/price-h1-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-15"
     }
    },
    "page": "pricing",
-   "run": "2026-11-14",
+   "run": "2026-11-15",
    "url": "https://www.figma.com/pricing/",
    "title": "Pricing headline",
    "group": "Pricing",
@@ -8190,7 +8173,8 @@
       "textTransform": "none"
      },
      "crop": "components/crops/price-toggle-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-15"
     },
     "hover": {
      "tag": "button",
@@ -8299,7 +8283,8 @@
       "textTransform": "none"
      },
      "crop": "components/crops/price-toggle-hover.png",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "run": "2026-11-15"
     },
     "focus-visible": {
      "tag": "button",
@@ -8409,7 +8394,8 @@
       "textTransform": "none"
      },
      "crop": "components/crops/price-toggle-focus-visible.png",
-     "via": "Shift+Tab, Tab"
+     "via": "Shift+Tab, Tab",
+     "run": "2026-11-15"
     },
     "pressed": {
      "tag": "button",
@@ -8518,11 +8504,12 @@
       "textTransform": "none"
      },
      "crop": "components/crops/price-toggle-pressed.png",
-     "via": "CDP forcePseudoState :active:hover"
+     "via": "CDP forcePseudoState :active:hover",
+     "run": "2026-11-15"
     }
    },
    "page": "pricing",
-   "run": "2026-11-14",
+   "run": "2026-11-15",
    "url": "https://www.figma.com/pricing/",
    "title": "Billing toggle",
    "group": "Pricing",
@@ -8641,7 +8628,8 @@
       }
      ],
      "crop": "components/crops/seat-combo-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-15"
     },
     "hover": {
      "tag": "button",
@@ -8754,7 +8742,8 @@
       }
      ],
      "crop": "components/crops/seat-combo-hover.png",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "run": "2026-11-15"
     },
     "focus-visible": {
      "tag": "button",
@@ -8867,7 +8856,8 @@
       }
      ],
      "crop": "components/crops/seat-combo-focus-visible.png",
-     "via": "Shift+Tab, Tab"
+     "via": "Shift+Tab, Tab",
+     "run": "2026-11-15"
     },
     "pressed": {
      "tag": "button",
@@ -8980,11 +8970,12 @@
       }
      ],
      "crop": "components/crops/seat-combo-pressed.png",
-     "via": "CDP forcePseudoState :active:hover"
+     "via": "CDP forcePseudoState :active:hover",
+     "run": "2026-11-15"
     }
    },
    "page": "pricing",
-   "run": "2026-11-14",
+   "run": "2026-11-15",
    "url": "https://www.figma.com/pricing/",
    "title": "Seat combobox",
    "group": "Pricing",
@@ -9100,7 +9091,8 @@
       "textTransform": "none"
      },
      "crop": "components/crops/feature-switch-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-15"
     },
     "hover": {
      "tag": "button",
@@ -9209,7 +9201,8 @@
       "textTransform": "none"
      },
      "crop": "components/crops/feature-switch-hover.png",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "run": "2026-11-15"
     },
     "focus-visible": {
      "tag": "button",
@@ -9319,7 +9312,8 @@
       "textTransform": "none"
      },
      "crop": "components/crops/feature-switch-focus-visible.png",
-     "via": "Shift+Tab, Tab"
+     "via": "Shift+Tab, Tab",
+     "run": "2026-11-15"
     },
     "pressed": {
      "tag": "button",
@@ -9428,11 +9422,12 @@
       "textTransform": "none"
      },
      "crop": "components/crops/feature-switch-pressed.png",
-     "via": "CDP forcePseudoState :active:hover"
+     "via": "CDP forcePseudoState :active:hover",
+     "run": "2026-11-15"
     }
    },
    "page": "pricing",
-   "run": "2026-11-14",
+   "run": "2026-11-15",
    "url": "https://www.figma.com/pricing/",
    "title": "Feature switch",
    "group": "Pricing",
@@ -9586,11 +9581,12 @@
       "color": "rgb(0, 0, 0)"
      },
      "crop": "components/crops/plan-card-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-15"
     }
    },
    "page": "pricing",
-   "run": "2026-11-14",
+   "run": "2026-11-15",
    "url": "https://www.figma.com/pricing/",
    "title": "Plan card",
    "group": "Pricing",
@@ -9601,30 +9597,30 @@
    "states": {
     "default": {
      "tag": "a",
-     "classes": "fig-42wdr4",
+     "classes": "fig-1d1iijj",
      "text": "Contact sales",
      "rect": {
-      "x": 1042,
-      "y": 16,
-      "w": 152,
-      "h": 46.39
+      "x": 895.5,
+      "y": 437,
+      "w": 84,
+      "h": 26.09
      },
      "style": {
-      "display": "block",
-      "position": "static",
+      "display": "inline-flex",
+      "position": "relative",
       "boxSizing": "border-box",
-      "width": "152px",
-      "height": "46.3906px",
+      "width": "84px",
+      "height": "26.0938px",
       "minWidth": "0px",
       "maxWidth": "none",
       "minHeight": "0px",
-      "paddingTop": "12px",
-      "paddingRight": "22px",
-      "paddingBottom": "12px",
-      "paddingLeft": "22px",
+      "paddingTop": "0px",
+      "paddingRight": "0px",
+      "paddingBottom": "0px",
+      "paddingLeft": "0px",
       "marginTop": "0px",
       "marginRight": "0px",
-      "marginBottom": "0px",
+      "marginBottom": "2px",
       "marginLeft": "0px",
       "gap": "normal",
       "rowGap": "normal",
@@ -9645,97 +9641,82 @@
       "borderLeftWidth": "0px",
       "borderLeftStyle": "none",
       "borderLeftColor": "rgb(0, 0, 0)",
-      "borderTopLeftRadius": "8px",
-      "borderTopRightRadius": "8px",
-      "borderBottomRightRadius": "8px",
-      "borderBottomLeftRadius": "8px",
-      "backgroundColor": "oklch(0 0 none / 0)",
+      "borderTopLeftRadius": "2px",
+      "borderTopRightRadius": "2px",
+      "borderBottomRightRadius": "2px",
+      "borderBottomLeftRadius": "2px",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
       "backgroundImage": "none",
-      "boxShadow": "oklch(0 0 none / 0.16) 0px 0px 0px 1px inset",
+      "boxShadow": "none",
       "backdropFilter": "none",
       "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(0, 0, 0)",
       "outlineOffset": "0px",
       "fontFamily": "figmaSans, \"figmaSans Fallback\", \"SF Pro Display\", system-ui, helvetica, sans-serif",
-      "fontSize": "16px",
-      "fontWeight": "400",
-      "lineHeight": "23.2px",
+      "fontSize": "18px",
+      "fontWeight": "330",
+      "lineHeight": "25.2px",
       "letterSpacing": "normal",
       "textTransform": "none",
       "color": "rgb(0, 0, 0)",
-      "textDecorationLine": "none",
-      "textDecorationColor": "rgb(0, 0, 0)",
-      "textDecorationThickness": "auto",
-      "textUnderlineOffset": "4px",
-      "transitionProperty": "background, box-shadow",
-      "transitionDuration": "0.18s, 0.18s",
-      "transitionTimingFunction": "ease-out, ease-out",
-      "transitionDelay": "0s, 0s",
+      "textDecorationLine": "underline",
+      "textDecorationColor": "rgb(105, 116, 133)",
+      "textDecorationThickness": "1px",
+      "textUnderlineOffset": "4.5px",
+      "transitionProperty": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "transitionDelay": "0s",
       "cursor": "pointer",
       "opacity": "1",
       "transform": "none",
       "overflow": "visible",
       "zIndex": "auto",
-      "top": "auto"
+      "top": "0px"
      },
-     "paint": [
-      {
-       "node": "a.fig-42wdr4",
-       "size": "152.0x46.4",
-       "bg": "oklch(0 0 none / 0)",
-       "shadow": "oklch(0 0 none / 0.16) 0px 0px 0px 1px inset",
-       "radius": "8px"
-      }
-     ],
      "textStyle": {
       "node": "span.btn-text.fig-1v6pe89",
       "text": "Contact sales",
       "fontFamily": "figmaSans, \"figmaSans Fallback\", \"SF Pro Display\", system-ui, helvetica, sans-serif",
-      "fontSize": "16px",
-      "lineHeight": "22.4px",
-      "fontWeight": "400",
+      "fontSize": "14px",
+      "lineHeight": "20.3px",
+      "fontWeight": "340",
       "letterSpacing": "normal",
-      "color": "rgb(0, 0, 0)",
-      "textDecorationLine": "none",
+      "color": "rgb(105, 116, 133)",
+      "textDecorationLine": "underline",
       "textTransform": "none"
      },
-     "icon": {
-      "w": 20,
-      "h": 20,
-      "fill": "none",
-      "stroke": "none",
-      "color": "rgb(0, 0, 0)"
-     },
      "crop": "components/crops/plan-cta-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-15"
     },
     "hover": {
      "tag": "a",
-     "classes": "fig-42wdr4",
+     "classes": "fig-1d1iijj",
      "text": "Contact sales",
      "rect": {
-      "x": 1042,
-      "y": 16,
-      "w": 152,
-      "h": 46.39
+      "x": 895.5,
+      "y": 437,
+      "w": 84,
+      "h": 26.09
      },
      "style": {
-      "display": "block",
-      "position": "static",
+      "display": "inline-flex",
+      "position": "relative",
       "boxSizing": "border-box",
-      "width": "152px",
-      "height": "46.3906px",
+      "width": "84px",
+      "height": "26.0938px",
       "minWidth": "0px",
       "maxWidth": "none",
       "minHeight": "0px",
-      "paddingTop": "12px",
-      "paddingRight": "22px",
-      "paddingBottom": "12px",
-      "paddingLeft": "22px",
+      "paddingTop": "0px",
+      "paddingRight": "0px",
+      "paddingBottom": "0px",
+      "paddingLeft": "0px",
       "marginTop": "0px",
       "marginRight": "0px",
-      "marginBottom": "0px",
+      "marginBottom": "2px",
       "marginLeft": "0px",
       "gap": "normal",
       "rowGap": "normal",
@@ -9756,97 +9737,82 @@
       "borderLeftWidth": "0px",
       "borderLeftStyle": "none",
       "borderLeftColor": "rgb(0, 0, 0)",
-      "borderTopLeftRadius": "8px",
-      "borderTopRightRadius": "8px",
-      "borderBottomRightRadius": "8px",
-      "borderBottomLeftRadius": "8px",
-      "backgroundColor": "oklch(0 0 none / 0)",
+      "borderTopLeftRadius": "2px",
+      "borderTopRightRadius": "2px",
+      "borderBottomRightRadius": "2px",
+      "borderBottomLeftRadius": "2px",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
       "backgroundImage": "none",
-      "boxShadow": "oklch(0 0 none / 0.4) 0px 0px 0px 1px inset",
+      "boxShadow": "none",
       "backdropFilter": "none",
       "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(0, 0, 0)",
       "outlineOffset": "0px",
       "fontFamily": "figmaSans, \"figmaSans Fallback\", \"SF Pro Display\", system-ui, helvetica, sans-serif",
-      "fontSize": "16px",
-      "fontWeight": "400",
-      "lineHeight": "23.2px",
+      "fontSize": "18px",
+      "fontWeight": "330",
+      "lineHeight": "25.2px",
       "letterSpacing": "normal",
       "textTransform": "none",
       "color": "rgb(0, 0, 0)",
-      "textDecorationLine": "none",
-      "textDecorationColor": "rgb(0, 0, 0)",
-      "textDecorationThickness": "auto",
-      "textUnderlineOffset": "4px",
-      "transitionProperty": "background, box-shadow",
-      "transitionDuration": "0.18s, 0.18s",
-      "transitionTimingFunction": "ease-out, ease-out",
-      "transitionDelay": "0s, 0s",
+      "textDecorationLine": "underline",
+      "textDecorationColor": "rgb(105, 116, 133)",
+      "textDecorationThickness": "1px",
+      "textUnderlineOffset": "4.5px",
+      "transitionProperty": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "transitionDelay": "0s",
       "cursor": "pointer",
       "opacity": "1",
       "transform": "none",
       "overflow": "visible",
       "zIndex": "auto",
-      "top": "auto"
+      "top": "0px"
      },
-     "paint": [
-      {
-       "node": "a.fig-42wdr4",
-       "size": "152.0x46.4",
-       "bg": "oklch(0 0 none / 0)",
-       "shadow": "oklch(0 0 none / 0.4) 0px 0px 0px 1px inset",
-       "radius": "8px"
-      }
-     ],
      "textStyle": {
       "node": "span.btn-text.fig-1v6pe89",
       "text": "Contact sales",
       "fontFamily": "figmaSans, \"figmaSans Fallback\", \"SF Pro Display\", system-ui, helvetica, sans-serif",
-      "fontSize": "16px",
-      "lineHeight": "22.4px",
-      "fontWeight": "400",
+      "fontSize": "14px",
+      "lineHeight": "20.3px",
+      "fontWeight": "340",
       "letterSpacing": "normal",
-      "color": "rgb(0, 0, 0)",
-      "textDecorationLine": "none",
+      "color": "rgb(105, 116, 133)",
+      "textDecorationLine": "underline",
       "textTransform": "none"
      },
-     "icon": {
-      "w": 20,
-      "h": 20,
-      "fill": "none",
-      "stroke": "none",
-      "color": "rgb(0, 0, 0)"
-     },
      "crop": "components/crops/plan-cta-hover.png",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "run": "2026-11-15"
     },
     "focus-visible": {
      "tag": "a",
-     "classes": "fig-42wdr4",
+     "classes": "fig-1d1iijj",
      "text": "Contact sales",
      "rect": {
-      "x": 1042,
-      "y": 16,
-      "w": 152,
-      "h": 46.39
+      "x": 895.5,
+      "y": 437,
+      "w": 84,
+      "h": 26.09
      },
      "style": {
-      "display": "block",
-      "position": "static",
+      "display": "inline-flex",
+      "position": "relative",
       "boxSizing": "border-box",
-      "width": "152px",
-      "height": "46.3906px",
+      "width": "84px",
+      "height": "26.0938px",
       "minWidth": "0px",
       "maxWidth": "none",
       "minHeight": "0px",
-      "paddingTop": "12px",
-      "paddingRight": "22px",
-      "paddingBottom": "12px",
-      "paddingLeft": "22px",
+      "paddingTop": "0px",
+      "paddingRight": "0px",
+      "paddingBottom": "0px",
+      "paddingLeft": "0px",
       "marginTop": "0px",
       "marginRight": "0px",
-      "marginBottom": "0px",
+      "marginBottom": "2px",
       "marginLeft": "0px",
       "gap": "normal",
       "rowGap": "normal",
@@ -9867,98 +9833,90 @@
       "borderLeftWidth": "0px",
       "borderLeftStyle": "none",
       "borderLeftColor": "rgb(0, 0, 0)",
-      "borderTopLeftRadius": "8px",
-      "borderTopRightRadius": "8px",
-      "borderBottomRightRadius": "8px",
-      "borderBottomLeftRadius": "8px",
-      "backgroundColor": "oklch(0 0 none / 0)",
+      "borderTopLeftRadius": "2px",
+      "borderTopRightRadius": "2px",
+      "borderBottomRightRadius": "2px",
+      "borderBottomLeftRadius": "2px",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
       "backgroundImage": "none",
-      "boxShadow": "oklch(0 0 none / 0.16) 0px 0px 0px 1px inset",
+      "boxShadow": "none",
       "backdropFilter": "none",
       "outlineWidth": "2px",
       "outlineStyle": "dashed",
       "outlineColor": "rgb(0, 0, 0)",
       "outlineOffset": "4px",
       "fontFamily": "figmaSans, \"figmaSans Fallback\", \"SF Pro Display\", system-ui, helvetica, sans-serif",
-      "fontSize": "16px",
-      "fontWeight": "400",
-      "lineHeight": "23.2px",
+      "fontSize": "18px",
+      "fontWeight": "330",
+      "lineHeight": "25.2px",
       "letterSpacing": "normal",
       "textTransform": "none",
       "color": "rgb(0, 0, 0)",
-      "textDecorationLine": "none",
-      "textDecorationColor": "rgb(0, 0, 0)",
-      "textDecorationThickness": "auto",
-      "textUnderlineOffset": "4px",
-      "transitionProperty": "background, box-shadow",
-      "transitionDuration": "0.18s, 0.18s",
-      "transitionTimingFunction": "ease-out, ease-out",
-      "transitionDelay": "0s, 0s",
+      "textDecorationLine": "underline",
+      "textDecorationColor": "rgb(105, 116, 133)",
+      "textDecorationThickness": "1px",
+      "textUnderlineOffset": "4.5px",
+      "transitionProperty": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "transitionDelay": "0s",
       "cursor": "pointer",
       "opacity": "1",
       "transform": "none",
       "overflow": "visible",
       "zIndex": "auto",
-      "top": "auto"
+      "top": "0px"
      },
      "paint": [
       {
-       "node": "a.fig-42wdr4",
-       "size": "152.0x46.4",
-       "bg": "oklch(0 0 none / 0)",
-       "shadow": "oklch(0 0 none / 0.16) 0px 0px 0px 1px inset",
+       "node": "a.fig-1d1iijj",
+       "size": "84.0x26.1",
        "outline": "2px dashed rgb(0, 0, 0) offset 4px",
-       "radius": "8px"
+       "radius": "2px"
       }
      ],
      "textStyle": {
       "node": "span.btn-text.fig-1v6pe89",
       "text": "Contact sales",
       "fontFamily": "figmaSans, \"figmaSans Fallback\", \"SF Pro Display\", system-ui, helvetica, sans-serif",
-      "fontSize": "16px",
-      "lineHeight": "22.4px",
-      "fontWeight": "400",
+      "fontSize": "14px",
+      "lineHeight": "20.3px",
+      "fontWeight": "340",
       "letterSpacing": "normal",
-      "color": "rgb(0, 0, 0)",
-      "textDecorationLine": "none",
+      "color": "rgb(105, 116, 133)",
+      "textDecorationLine": "underline",
       "textTransform": "none"
      },
-     "icon": {
-      "w": 20,
-      "h": 20,
-      "fill": "none",
-      "stroke": "none",
-      "color": "rgb(0, 0, 0)"
-     },
      "crop": "components/crops/plan-cta-focus-visible.png",
-     "via": "Shift+Tab, Tab"
+     "via": "Shift+Tab, Tab",
+     "run": "2026-11-15"
     },
     "pressed": {
      "tag": "a",
-     "classes": "fig-42wdr4",
+     "classes": "fig-1d1iijj",
      "text": "Contact sales",
      "rect": {
-      "x": 1042,
-      "y": 16,
-      "w": 152,
-      "h": 46.39
+      "x": 895.5,
+      "y": 437,
+      "w": 84,
+      "h": 26.09
      },
      "style": {
-      "display": "block",
-      "position": "static",
+      "display": "inline-flex",
+      "position": "relative",
       "boxSizing": "border-box",
-      "width": "152px",
-      "height": "46.3906px",
+      "width": "84px",
+      "height": "26.0938px",
       "minWidth": "0px",
       "maxWidth": "none",
       "minHeight": "0px",
-      "paddingTop": "12px",
-      "paddingRight": "22px",
-      "paddingBottom": "12px",
-      "paddingLeft": "22px",
+      "paddingTop": "0px",
+      "paddingRight": "0px",
+      "paddingBottom": "0px",
+      "paddingLeft": "0px",
       "marginTop": "0px",
       "marginRight": "0px",
-      "marginBottom": "0px",
+      "marginBottom": "2px",
       "marginLeft": "0px",
       "gap": "normal",
       "rowGap": "normal",
@@ -9979,78 +9937,63 @@
       "borderLeftWidth": "0px",
       "borderLeftStyle": "none",
       "borderLeftColor": "rgb(0, 0, 0)",
-      "borderTopLeftRadius": "8px",
-      "borderTopRightRadius": "8px",
-      "borderBottomRightRadius": "8px",
-      "borderBottomLeftRadius": "8px",
-      "backgroundColor": "oklch(0 0 none / 0)",
+      "borderTopLeftRadius": "2px",
+      "borderTopRightRadius": "2px",
+      "borderBottomRightRadius": "2px",
+      "borderBottomLeftRadius": "2px",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
       "backgroundImage": "none",
-      "boxShadow": "oklch(0 0 none / 0.4) 0px 0px 0px 1px inset",
+      "boxShadow": "none",
       "backdropFilter": "none",
       "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(0, 0, 0)",
       "outlineOffset": "0px",
       "fontFamily": "figmaSans, \"figmaSans Fallback\", \"SF Pro Display\", system-ui, helvetica, sans-serif",
-      "fontSize": "16px",
-      "fontWeight": "400",
-      "lineHeight": "23.2px",
+      "fontSize": "18px",
+      "fontWeight": "330",
+      "lineHeight": "25.2px",
       "letterSpacing": "normal",
       "textTransform": "none",
       "color": "rgb(0, 0, 0)",
-      "textDecorationLine": "none",
-      "textDecorationColor": "rgb(0, 0, 0)",
-      "textDecorationThickness": "auto",
-      "textUnderlineOffset": "4px",
-      "transitionProperty": "background, box-shadow",
-      "transitionDuration": "0.18s, 0.18s",
-      "transitionTimingFunction": "ease-out, ease-out",
-      "transitionDelay": "0s, 0s",
+      "textDecorationLine": "underline",
+      "textDecorationColor": "rgb(105, 116, 133)",
+      "textDecorationThickness": "1px",
+      "textUnderlineOffset": "4.5px",
+      "transitionProperty": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "transitionDelay": "0s",
       "cursor": "pointer",
       "opacity": "1",
       "transform": "none",
       "overflow": "visible",
       "zIndex": "auto",
-      "top": "auto"
+      "top": "0px"
      },
-     "paint": [
-      {
-       "node": "a.fig-42wdr4",
-       "size": "152.0x46.4",
-       "bg": "oklch(0 0 none / 0)",
-       "shadow": "oklch(0 0 none / 0.4) 0px 0px 0px 1px inset",
-       "radius": "8px"
-      }
-     ],
      "textStyle": {
       "node": "span.btn-text.fig-1v6pe89",
       "text": "Contact sales",
       "fontFamily": "figmaSans, \"figmaSans Fallback\", \"SF Pro Display\", system-ui, helvetica, sans-serif",
-      "fontSize": "16px",
-      "lineHeight": "22.4px",
-      "fontWeight": "400",
+      "fontSize": "14px",
+      "lineHeight": "20.3px",
+      "fontWeight": "340",
       "letterSpacing": "normal",
-      "color": "rgb(0, 0, 0)",
-      "textDecorationLine": "none",
+      "color": "rgb(105, 116, 133)",
+      "textDecorationLine": "underline",
       "textTransform": "none"
      },
-     "icon": {
-      "w": 20,
-      "h": 20,
-      "fill": "none",
-      "stroke": "none",
-      "color": "rgb(0, 0, 0)"
-     },
      "crop": "components/crops/plan-cta-pressed.png",
-     "via": "CDP forcePseudoState :active:hover"
+     "via": "CDP forcePseudoState :active:hover",
+     "run": "2026-11-15"
     }
    },
    "page": "pricing",
-   "run": "2026-11-14",
+   "run": "2026-11-15",
    "url": "https://www.figma.com/pricing/",
    "title": "Plan CTA",
    "group": "Pricing",
-   "desc": "A plan card's action (Get started / Contact sales); measured, never followed.",
+   "desc": "A plan card's action (Get started / Contact sales), scoped to a plan article so the header's \"Contact sales\" link cannot match first; measured, never followed.",
    "selector": "plan card CTA"
   },
   "feature-acc": {
@@ -10162,7 +10105,8 @@
       "color": "rgb(0, 0, 0)"
      },
      "crop": "components/crops/feature-acc-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "run": "2026-11-15"
     },
     "opened": {
      "tag": "button",
@@ -10271,7 +10215,8 @@
       "color": "rgb(0, 0, 0)"
      },
      "crop": "components/crops/feature-acc-opened.png",
-     "via": "own toggle"
+     "via": "own toggle",
+     "run": "2026-11-15"
     },
     "hover": {
      "tag": "button",
@@ -10380,11 +10325,12 @@
       "color": "rgb(0, 0, 0)"
      },
      "crop": "components/crops/feature-acc-hover.png",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "run": "2026-11-15"
     }
    },
    "page": "pricing",
-   "run": "2026-11-14",
+   "run": "2026-11-15",
    "url": "https://www.figma.com/pricing/",
    "title": "Feature accordion",
    "group": "Pricing",

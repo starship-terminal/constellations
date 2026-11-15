@@ -17,49 +17,49 @@
 /*DARK*/
 }
 * { box-sizing: border-box; }
-body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--theme-fg, #000); background: var(--theme-bg, #fff); }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--theme-fg-default, #000); background: var(--theme-bg, #fff); }
 main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
 h1 { font: 400 40px/1.2 var(--sg-serif); margin: 0 0 4px; letter-spacing: -0.02em; }
-h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--theme-fg, #000); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--theme-border, #ddd); }
-.lead { max-width: 62ch; color: var(--theme-fg, #000); opacity: .8; }
-.note { font-size: 13px; color: var(--theme-fg, #000); opacity: .65; max-width: 62ch; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--theme-fg-default, #000); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--theme-border-default, #ddd); }
+.lead { max-width: 62ch; color: var(--theme-fg-default, #000); opacity: .8; }
+.note { font-size: 13px; color: var(--theme-fg-default, #000); opacity: .65; max-width: 62ch; }
 code { font-family: var(--sg-mono); font-size: .9em; }
-.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--theme-fg, #000); opacity: .6; margin: 18px 0 6px; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--theme-fg-default, #000); opacity: .6; margin: 18px 0 6px; }
 .pal { display: flex; flex-wrap: wrap; gap: 8px; }
 .sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
-.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--theme-border, #ddd); display: inline-flex; flex: 0 0 auto; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--theme-border-default, #ddd); display: inline-flex; flex: 0 0 auto; }
 .sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
 .sw .nm { font: 500 11px/1.3 var(--sg-mono); }
-.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--theme-fg, #000); opacity: .65; }
-.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--theme-border, #ddd); background: #fff; font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--theme-fg-default, #000); opacity: .65; }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--theme-border-default, #ddd); background: #fff; font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
 .kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
 .kv b { font-weight: 500; }
-.kv span { color: var(--theme-fg, #000); opacity: .65; }
+.kv span { color: var(--theme-fg-default, #000); opacity: .65; }
 /* ---- mocks ---- */
-.mock { border: 1px solid var(--theme-border, #ddd); overflow: hidden; background: var(--theme-bg, #fff); }
-.navbar { display: flex; align-items: center; gap: 22px; height: var(--component-topbar-height, 64px); padding: 0 12px 0 22px; font-size: 15px; color: var(--theme-fg, #000); background: var(--theme-bg, #fff); box-shadow: var(--theme-border, rgba(0,0,0,.16)) 0 1px 0 0; }
+.mock { border: 1px solid var(--theme-border-default, #ddd); overflow: hidden; background: var(--theme-bg, #fff); }
+.navbar { display: flex; align-items: center; gap: 22px; height: var(--component-topbar-height, 64px); padding: 0 12px 0 22px; font-size: 15px; color: var(--theme-fg-default, #000); background: var(--theme-bg, #fff); box-shadow: var(--theme-border-default, rgba(0,0,0,.16)) 0 1px 0 0; }
 .navbar .wm { font-weight: 600; font-size: 17px; letter-spacing: -0.02em; }
 .navbar .sp { flex: 1; }
 .btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-cta-height, 40px); padding: 0 18px; font-size: 15px; font-weight: 500; border-radius: var(--radius-cta, var(--radius-full, 999px)); border: 1px solid transparent; }
-.btn.primary { background: var(--theme-btn-primary-bg, #000); color: var(--theme-btn-primary-fg, #fff); }
-.btn.ghost { background: var(--theme-btn-secondary-bg, transparent); border-color: var(--theme-border, rgba(0,0,0,.16)); color: var(--theme-btn-secondary-fg, #000); }
+.btn.primary { background: var(--theme-btn-primary-bg-default, #000); color: var(--theme-btn-primary-fg, #fff); }
+.btn.ghost { background: var(--theme-btn-secondary-bg, transparent); border-color: var(--theme-border-default, rgba(0,0,0,.16)); color: var(--theme-btn-secondary-fg, #000); }
 .btn.small { height: 32px; font-size: 13px; font-weight: 500; }
-.hero { color: var(--theme-fg, #000); padding: 80px 40px; font: 600 var(--font-size-display1, 88px)/var(--font-lineHeight-tight, 1.1) var(--sg-serif); letter-spacing: var(--font-tracking-tight, -0.078125rem); text-align: left; background: var(--theme-bg, #fff); }
+.hero { color: var(--theme-fg-default, #000); padding: 80px 40px; font: 600 var(--font-size-display1, 88px)/var(--font-lineHeight-tight, 1.1) var(--sg-serif); letter-spacing: var(--font-tracking-tight, -0.078125rem); text-align: left; background: var(--theme-bg, #fff); }
 .hero small { display: block; font: 400 var(--font-size-bodyXL, 24px)/var(--font-lineHeight-normal, 1.3) var(--sg-sans); letter-spacing: var(--font-tracking-standard, -0.04125rem); color: var(--theme-fg-muted, rgba(0,0,0,.54)); margin: 20px 0 26px; max-width: 46ch; }
 .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
-.tile { border: 1px solid var(--theme-border, #ddd); border-radius: var(--radius-card, var(--radius-16, 16px)); padding: 14px; font-size: 13px; background: var(--theme-card-bg, #fff); }
+.tile { border: 1px solid var(--theme-border-default, #ddd); border-radius: var(--radius-card, var(--radius-16, 16px)); padding: 14px; font-size: 13px; background: var(--theme-card-bg, #fff); }
 .tile .img { height: 140px; background: var(--theme-form-input-bg, rgba(0,0,0,.08)); border-radius: var(--radius-8, 8px); margin-bottom: 10px; display: flex; align-items: flex-end; padding: 10px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }
 .tile b { display: block; font: 600 var(--font-size-title4, 24px)/var(--font-lineHeight-snug, 1.2) var(--sg-serif); letter-spacing: var(--font-tracking-standard, -0.04125rem); margin-bottom: 4px; }
 .tile .sub { color: var(--theme-fg-muted, rgba(0,0,0,.54)); font-size: 12px; }
 table.cmp { border-collapse: collapse; font-size: 14px; }
-table.cmp td, table.cmp th { border: 1px solid var(--theme-border, #ddd); padding: 6px 14px; text-align: left; }
-.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--theme-border, #ddd); }
+table.cmp td, table.cmp th { border: 1px solid var(--theme-border-default, #ddd); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--theme-border-default, #ddd); }
 .tr .ts { font-family: var(--sg-serif); }
-.tr .tv { font-size: 12px; color: var(--theme-fg, #000); opacity: .65; font-family: var(--sg-mono); }
+.tr .tv { font-size: 12px; color: var(--theme-fg-default, #000); opacity: .65; font-family: var(--sg-mono); }
 .pill-nav { display: inline-flex; background: var(--theme-card-bg, rgba(0,0,0,.04)); border-radius: var(--radius-full, 9999px); padding: 4px; gap: 4px; font-size: 14px; color: var(--theme-fg-muted, rgba(0,0,0,.54)); }
 .pill-nav span { padding: 6px 14px; border-radius: var(--radius-full, 9999px); }
-.pill-nav .on { background: var(--theme-bg, #fff); color: var(--theme-fg, #000); box-shadow: var(--elevation-1, 0 4px 32px rgba(0,0,0,.1)); }
-.field { display: block; width: 280px; height: var(--component-field-height, 48px); padding: 0 14px; border: 0; border-radius: var(--radius-field, var(--radius-8, 8px)); background: var(--theme-form-input-bg, rgba(0,0,0,.08)); font-size: 15px; color: var(--theme-fg, #000); }
+.pill-nav .on { background: var(--theme-bg, #fff); color: var(--theme-fg-default, #000); box-shadow: var(--elevation-1, 0 4px 32px rgba(0,0,0,.1)); }
+.field { display: block; width: 280px; height: var(--component-field-height, 48px); padding: 0 14px; border: 0; border-radius: var(--radius-field, var(--radius-8, 8px)); background: var(--theme-form-input-bg, rgba(0,0,0,.08)); font-size: 15px; color: var(--theme-fg-default, #000); }
 .badge { display: inline-flex; align-items: center; height: 22px; padding: 0 8px; border-radius: var(--radius-full, 9999px); background: var(--theme-badge-bg, rgba(0,0,0,.08)); color: var(--theme-badge-fg, #000); font-size: 12px; font-weight: 500; }
 </style>
 </head>
@@ -81,7 +81,7 @@ table.cmp td, table.cmp th { border: 1px solid var(--theme-border, #ddd); paddin
 
   <h2 class="sh">The declared dark set</h2>
   <p class="lead">The stylesheet declares a complete <code>:root[data-theme="dark"]</code> re-declaration of the <code>--fig-theme-*</code> roles — fg/bg invert, the primary button becomes a white pill, the alpha roles switch to white-on-black washes — but no public page painted <code>data-theme="dark"</code> while captured. This mock resolves the declared values; the real dark surfaces live behind sign-in.</p>
-  <div class="mock dark" style="padding:20px;background:var(--theme-bg,#000);color:var(--theme-fg,#fff)">
+  <div class="mock dark" style="padding:20px;background:var(--theme-bg,#000);color:var(--theme-fg-default,#fff)">
     <div class="grid">
       <div class="tile"><div class="img"></div><b>Plan card</b><span class="sub">card-bg + border resolve under the dark scope</span></div>
       <div class="tile"><div class="img"></div><b>Community tile</b><span class="sub"><span class="badge">badge</span></span></div>
@@ -164,9 +164,9 @@ const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) 
 
 (function elev() {
   let e = '';
-  for (const setname of ['light', 'dark']) {
-    for (const [n, t] of flat((TOK[setname] || {}).shadow || {}, `${setname}.shadow.`)) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
-  }
+  // This package keeps its shadow steps in core.elevation (the declared
+  // --fig-elevation-* tokens), not per-theme shadow.* sets.
+  for (const [n, t] of flat((TOK.core || {}).elevation || {}, 'elevation.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
   $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
 })();
 

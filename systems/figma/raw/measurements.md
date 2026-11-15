@@ -1,6 +1,6 @@
 # Figma component measurements
 
-Computed styles read from figma.com on 2026-11-14 by `tools/capture/public/measure.mjs`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844) across the site's painted surfaces — the light :root marketing pages (home, design, figjam, slides, dev-mode, make, pricing, blog, customers, enterprise, careers, contact, downloads, design-systems, release-notes), the product app shell at /community, /login and /signup (a different stack that does not share the marketing --fig-* layer), and the mobile drawer — with the cookie consent layer hidden (never answered), and written here by `tools/capture/public/build-measurements.mjs` from [components-computed.json](components-computed.json). The declared :root[data-theme="dark"] token layer resolved no painted surface; no public page carried the attribute. One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
+Computed styles read from figma.com on 2026-11-15 by `tools/capture/public/measure.mjs`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844) across the site's painted surfaces — the light :root marketing pages (home, design, figjam, slides, dev-mode, make, pricing, blog, customers, enterprise, careers, contact, downloads, design-systems, release-notes), the product app shell at /community, /login and /signup (a different stack that does not share the marketing --fig-* layer), and the mobile drawer — with the cookie consent layer hidden (never answered), and written here by `tools/capture/public/build-measurements.mjs` from [components-computed.json](components-computed.json). The declared :root[data-theme="dark"] token layer resolved no painted surface; no public page carried the attribute. One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
 
 States: `hover` is a real pointer hover; `focus-visible` a real keyboard focus (Shift+Tab, Tab); `pressed` is forced with DevTools (`CSS.forcePseudoState` :active:hover), so no button was pressed; `focused` is a text field clicked into; `filled` is sample text typed and deleted again, with nothing sent; `opened`, `expanded` and the rest are resting states reached by the page or by a UI toggle.
 
@@ -30,7 +30,7 @@ Page: home. Selector: `header`. States: default.
 | Transition | background 0.4s cubic-bezier(0.8, 0, 0.2, 1) |
 | Cursor | default |
 | Icon | 19 x 28, colour #000000 |
-| Painted layers | header.fig-suku18 1440.0x78.4 bg #ffffff; div.fig-1rmlagr 1440.0x78.4 bg #ffffff shadow oklch(0 0 none / 0.16) 0px 1px 0px 0px; span::after.nav-highlight.fig-1wty479 67pxx1px bg #000000; div.fig-56zixy 0.0x0.0 bg #ffffff; p::after.nav-highlight.fig-ctjoqe autox1px bg #000000; p::after.nav-highlight.fig-ctjoqe autox1px bg #000000 |
+| Painted layers | header.fig-suku18 1440.0x78.4 bg #ffffff; div.fig-1rmlagr 1440.0x78.4 bg #ffffff shadow oklch(0 0 none / 0.16) 0px 1px 0px 0px; span::after.nav-highlight.fig-1wty479 67pxx1px bg #000000; div.fig-56zixy 0.0x0.0 bg #ffffff; span::after.nav-highlight autox1px bg #000000; span::after.nav-highlight autox1px bg #000000 |
 | How | at rest |
 
 Crops: `mkt-header-default.png`.
@@ -63,7 +63,7 @@ Crops: `mkt-logo-default.png`.
 
 #### nav-dropdown-btn
 
-Nav dropdown trigger. The "Products" header button — a data-nav-dropdown-trigger that opens the products dropdown. The opened state was measured after clicking it.
+Nav dropdown trigger. The "Products" header button — a data-nav-dropdown-trigger that opens the products dropdown. The opened state was measured after its own toggle click; aria-expanded had to stay true.
 
 Page: home. Selector: `button[data-nav-dropdown-trigger] Products`. States: default, hover, focus-visible, pressed, opened.
 
@@ -111,7 +111,7 @@ Page: home. Selector: `products dropdown panel`. States: default.
 | Transition | none |
 | Cursor | default |
 | Icon | 22.39 x 22.39, colour #000000 |
-| Painted layers | div.fig-56zixy 1440.0x522.8 bg #ffffff; p::after.nav-highlight.fig-ctjoqe 207pxx1px bg #000000; p::after.nav-highlight.fig-ctjoqe 256pxx1px bg #000000; span::after.nav-highlight 96pxx1px bg #000000; span::after.nav-highlight 86pxx1px bg #000000; span::after.nav-highlight 94pxx1px bg #000000 |
+| Painted layers | div.fig-56zixy 1440.0x522.8 bg #ffffff; span::after.nav-highlight 96pxx1px bg #000000; span::after.nav-highlight 86pxx1px bg #000000; span::after.nav-highlight 94pxx1px bg #000000; span::after.nav-highlight 74pxx1px bg #000000; span::after.nav-highlight 99pxx1px bg #000000 |
 | How | at rest |
 
 Crops: `nav-panel-default.png`.
@@ -260,7 +260,7 @@ Page: home. Selector: `hero Get started`. States: default, hover, focus-visible,
 | Padding | 24px 32px | = | = | = |
 | Border | none | = | = | = |
 | Radius | 16px | = | = | = |
-| Background | #000000 | oklch(0 0 none / 0.85) | = | oklch(0 0 none / 0.85) |
+| Background | #000000 | = | = | oklch(0 0 none / 0.85) |
 | Box shadow | none | = | = | = |
 | Outline | none | = | 2px dashed #000000 offset 4px | = |
 | Font | figmaSans 16px/23.2px 400 | = | = | = |
@@ -270,7 +270,7 @@ Page: home. Selector: `hero Get started`. States: default, hover, focus-visible,
 | Transition | background, box-shadow 0.18s, 0.18s ease-out, ease-out delay 0s, 0s | = | = | = |
 | Cursor | pointer | = | = | = |
 | Icon | 36 x 36, colour #ffffff | = | = | = |
-| Painted layers | a.fig-1ytmgio 222.8x84.0 bg #000000 r 16px | a.fig-1ytmgio 222.8x84.0 bg oklch(0 0 none / 0.85) r 16px | a.fig-1ytmgio 222.8x84.0 bg #000000 r 16px outline 2px dashed #000000 offset 4px | a.fig-1ytmgio 222.8x84.0 bg oklch(0 0 none / 0.85) r 16px |
+| Painted layers | a.fig-1ytmgio 222.8x84.0 bg #000000 r 16px | = | a.fig-1ytmgio 222.8x84.0 bg #000000 r 16px outline 2px dashed #000000 offset 4px | a.fig-1ytmgio 222.8x84.0 bg oklch(0 0 none / 0.85) r 16px |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
 Crops: `hero-cta-default.png`, `hero-cta-hover.png`, `hero-cta-focus-visible.png`, `hero-cta-pressed.png`.
@@ -306,33 +306,6 @@ Page: home. Selector: `main h2`. States: default.
 | How | at rest |
 
 Crops: `section-h2-default.png`.
-
-### Dark sections
-
-#### dark-section
-
-Dark section. A black-painted band inside the light page (the closing call-to-action field); its fill is painted directly, not through a theme scope.
-
-Page: home. Selector: `main dark section`. States: default.
-
-| Property | default |
-|---|---|
-| Size (w x h) | 901.33 x 96.78 |
-| Padding | 0px |
-| Border | none |
-| Radius | 0px |
-| Background | transparent |
-| Box shadow | none |
-| Outline | none |
-| Font | figmaSans 16px/23.2px 400 |
-| Letter spacing | normal |
-| Colour | #000000 |
-| Text node | h2.fig-xakii4: figmaSans 44px/48.4px 400, #000000, ls -0.66px |
-| Transition | none |
-| Cursor | default |
-| How | at rest |
-
-Crops: `dark-section-default.png`.
 
 ### Footer
 
@@ -552,28 +525,27 @@ Crops: `plan-card-default.png`.
 
 #### plan-cta
 
-Plan CTA. A plan card's action (Get started / Contact sales); measured, never followed.
+Plan CTA. A plan card's action (Get started / Contact sales), scoped to a plan article so the header's "Contact sales" link cannot match first; measured, never followed.
 
 Page: pricing. Selector: `plan card CTA`. States: default, hover, focus-visible, pressed.
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 152 x 46.39 | = | = | = |
-| Padding | 12px 22px | = | = | = |
+| Size (w x h) | 84 x 26.09 | = | = | = |
+| Padding | 0px | = | = | = |
 | Border | none | = | = | = |
-| Radius | 8px | = | = | = |
-| Background | oklch(0 0 none / 0) | = | = | = |
-| Box shadow | oklch(0 0 none / 0.16) 0px 0px 0px 1px inset | oklch(0 0 none / 0.4) 0px 0px 0px 1px inset | = | oklch(0 0 none / 0.4) 0px 0px 0px 1px inset |
+| Radius | 2px | = | = | = |
+| Background | transparent | = | = | = |
+| Box shadow | none | = | = | = |
 | Outline | none | = | 2px dashed #000000 offset 4px | = |
-| Font | figmaSans 16px/23.2px 400 | = | = | = |
+| Font | figmaSans 18px/25.2px 330 | = | = | = |
 | Letter spacing | normal | = | = | = |
 | Colour | #000000 | = | = | = |
-| Text node | span.btn-text.fig-1v6pe89: figmaSans 16px/22.4px 400, #000000 | = | = | = |
-| Transition | background, box-shadow 0.18s, 0.18s ease-out, ease-out delay 0s, 0s | = | = | = |
+| Text node | span.btn-text.fig-1v6pe89: figmaSans 14px/20.3px 340, #697485 | = | = | = |
+| Transition | none | = | = | = |
 | Cursor | pointer | = | = | = |
-| Icon | 20 x 20, colour #000000 | = | = | = |
-| Painted layers | a.fig-42wdr4 152.0x46.4 bg oklch(0 0 none / 0) r 8px shadow oklch(0 0 none / 0.16) 0px 0px 0px 1px inset | a.fig-42wdr4 152.0x46.4 bg oklch(0 0 none / 0) r 8px shadow oklch(0 0 none / 0.4) 0px 0px 0px 1px inset | a.fig-42wdr4 152.0x46.4 bg oklch(0 0 none / 0) r 8px shadow oklch(0 0 none / 0.16) 0px 0px 0px 1px inset outline 2px dashed #000000 offset 4px | a.fig-42wdr4 152.0x46.4 bg oklch(0 0 none / 0) r 8px shadow oklch(0 0 none / 0.4) 0px 0px 0px 1px inset |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
+| Painted layers | - | = | a.fig-1d1iijj 84.0x26.1 r 2px outline 2px dashed #000000 offset 4px | = |
 
 Crops: `plan-cta-default.png`, `plan-cta-hover.png`, `plan-cta-focus-visible.png`, `plan-cta-pressed.png`.
 

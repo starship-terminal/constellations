@@ -4,11 +4,11 @@ How the measured components combine on each captured surface. Every value cited 
 
 ## Marketing chrome (light)
 
-A fixed 78.39px header (`component.topbar-height`) carries the 19 x 28 Figma mark, the Products/Solutions/Community/Resources `data-nav-dropdown-trigger` buttons, the Pricing and Log in nav links (39.19px tall, `radius.navLink` 0px, 16/23.2 figmaSans) and, on the right, Contact sales plus the 198 x 46.39 black "Get started for free" pill (`component.cta-height`, `radius.cta` 8px, `action.ctaFill` → `theme.badge.fg` black with `action.ctaInk` white ink — hover lifts to `action.ctaHover` rgba(0,0,0,0.85)). The Products trigger opens a 1440 x 523 full-width dropdown panel (`component.dropdown-width`, 1360px content nav inside) listing the product family — Figma Design, Make, Weave, Dev Mode, Motion, Specs, FigJam, Slides, Draw, Sites, Buzz — whose 328px items were measured, never followed.
+A fixed 78.39px header (`component.topbar-height`) carries the 19 x 28 Figma mark, the Products/Solutions/Community/Resources `data-nav-dropdown-trigger` buttons, the Pricing and Log in nav links (39.19px tall, `radius.navLink` 0px, 16/23.2 figmaSans) and, on the right, Contact sales plus the 198 x 46.39 black "Get started for free" pill (`component.cta-height`, `radius.cta` 8px, `action.ctaFill` → `theme.fg.default` black with `action.ctaInk` white ink — hover lifts to `action.ctaHover` → `theme.btn.primary.bg.hover` rgba(0,0,0,0.85)). The Products trigger opens a 1440 x 523 full-width dropdown panel (`component.dropdown-width`, 1360px content nav inside) listing the product family — Figma Design, Make, Weave, Dev Mode, Motion, Specs, FigJam, Slides, Draw, Sites, Buzz — whose 328px items were measured, never followed.
 
 ## Home (light)
 
-The home page paints the light `:root` roles on the white `background.page` field (`--fig-theme-bg` #ffffff). A 56px/56 figmaSans masthead ("The full-stack creative canvas", `font.size.display2`-class type at 328 x 168 measured) sits over the dark hero CTA (222.75 x 84 at this run's promo copy — the pill geometry is `radius.cta`). Section headings drop to the 30/36 step (`font.size.measured.body` → `font.size.title3`), marketing sections stack on `layout.sectionBlockPadding` 80px, and the closing call-to-action is a black-painted band inside the light page (`dark-section`, 901 x 96.78 measured wrapper — its fill painted directly on a child layer, not through a theme scope). The `--f-*` frame grid — 48 columns over a 1440px max (`layout.frame.*`, 26.66px column / 53.33px gutter at this viewport) — paces every marketing page.
+The home page paints the light `:root` roles on the white `background.page` field (`--fig-theme-bg` #ffffff). A 56px/56 figmaSans masthead ("The full-stack creative canvas", `font.size.display2`-class type at 328 x 168 measured) sits over the dark hero CTA (222.75 x 84 at this run's promo copy — the pill geometry is `radius.cta`). Section headings drop to the 30/36 step (`font.size.measured.body` → `font.size.title3`) and marketing sections stack on `layout.sectionBlockPadding` 80px, all on the white field — the only black-painted surface on the page is the footer's field, painted directly, not through a theme scope. The `--f-*` frame grid — 48 columns over a 1440px max (`layout.frame.*`, 30px column / 60px gutter at this viewport) — paces every marketing page.
 
 ## Pricing
 
@@ -16,7 +16,7 @@ The home page paints the light `:root` roles on the white `background.page` fiel
 
 ## Contact form
 
-/contact is a light two-column page: the "Contact our sales team" masthead left, the multi-step form right — 600px text fields 58.19px tall (`component.field-height`, `form.fieldBg` → `theme.btn.transparent.bg.hover` 8%-black fill, `radius.field` 8px, generous 27px top padding over floating labels), an email/first-name/last-name row and the unnamed free-text step field (`component.topic-field-width`; its `name=topic` twin is a display:none honeypot). The 480px "Next step" button (`component.next-width`, dark fill, `radius.cta`) was measured in all states, never pressed — the form never advanced.
+/contact is a light two-column page: the "Contact our sales team" masthead left, the multi-step form right — 600px text fields 58.19px tall (`component.field-height`, `form.fieldBg` → `theme.form.input.bg` 8%-black fill, `radius.field` 8px, generous 27px top padding over floating labels), an email/first-name/last-name row and the unnamed free-text step field (`component.topic-field-width`; its `name=topic` twin is a display:none honeypot). The 480px "Next step" button (`component.next-width`, dark fill, `radius.cta`) was measured in all states, never pressed — the form never advanced.
 
 ## The product app shell
 
@@ -32,8 +32,8 @@ The phone surface keeps the same system: a 72px top bar (`component.mobile-topba
 
 ## Motion and focus
 
-Marketing controls transition over the declared `--fig-animation-180` (180ms) step (`duration.180`, with 250ms and 400ms companions in the ramp). Focus is an outline ring: the header CTA and nav links draw their `border.focusRing` (→ `theme.badge.fg`, near-black) as an outline on keyboard focus — measured as `focus-visible` states — rather than swapping borders.
+Marketing controls transition over the declared `--fig-animation-180` (180ms) step (`duration.180`, with 250ms and 400ms companions in the ramp). Focus is an outline ring: the header CTA and nav links draw their `border.focusRing` (→ `theme.fg.default`, near-black) as an outline on keyboard focus — measured as `focus-visible` states — rather than swapping borders.
 
 ## Declared-not-painted dark
 
-Every `--fig-theme-*` role is redeclared under `:root[data-theme="dark"]` — the `dark` token set resolves to an inverted palette (bg #000000, fg #ffffff, the same 4%/8%/16%/54% tints shifted onto white). No public page set the attribute while captured, so the set documents the declaration, not a photographed surface; the only black paint observed publicly was the directly-painted `dark-section` band and the CTA pills.
+Every `--fig-theme-*` role is redeclared under `:root[data-theme="dark"]` — the `dark` token set resolves to an inverted palette (bg #000000, fg #ffffff, the same 4%/8%/16%/54% tints shifted onto white). No public page set the attribute while captured, so the set documents the declaration, not a photographed surface; the only black paint observed publicly was the footer's directly-painted field and the CTA pills.

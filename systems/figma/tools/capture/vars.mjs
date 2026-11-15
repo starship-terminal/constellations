@@ -77,7 +77,13 @@ const sheets = [...bodies.entries()].concat(inline);
 await page.close();
 
 // ---- harvest: every rule with --* declarations ----
-const probe = await browser.newPage();
+// The probe page must carry the same 1440x900 viewport the site loaded at:
+// viewport-relative values (--f-col-width is calc(min(100vw,1440px)/48))
+// resolve against it, and a browser.newPage()'s default context would size
+// them for another screen.
+const probeCtx = await browser.newContext({ viewport: { width: 1440, height: 900 }, deviceScaleFactor: 1, userAgent: UA, locale: 'en-US' });
+await patch(probeCtx);
+const probe = await probeCtx.newPage();
 const result = await probe.evaluate((sheets) => {
   const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v);
   const rules = [];

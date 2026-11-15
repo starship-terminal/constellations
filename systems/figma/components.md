@@ -1,14 +1,14 @@
 # Figma components
 
-The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Captured from figma.com on 2026-11-14, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was signed into, bought or submitted; the contact, login, signup and Make prompt forms were never sent; every link and CTA was measured, never followed.
+The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Captured from figma.com on 2026-11-15, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was signed into, bought or submitted; the contact, login, signup and Make prompt forms were never sent; every link and CTA was measured, never followed.
 
-The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (64 components, 181 states). The page layouts are described in [patterns.md](patterns.md).
+The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (63 components, 180 states). The page layouts are described in [patterns.md](patterns.md).
 
 How to read an entry:
 
 - A colour is its value followed by the palette token in [tokens.json](tokens.json) with the same value, when there is one. Text is written family size/line-height weight, then its colour, for example `figmaSans 16/20.8 400, #000000`, and is read from the first text node inside the component.
 - The state table has one row per state that differs. The first row lists every value; later rows list only what changes. A state with the same values as the first is named in its label, for example "default (same: focus-visible)". When the root paints nothing, "Child layers" names the first nodes inside it that do.
-- Crops are images of the component read from the live page, in [components/crops/](components/crops) (181 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
+- Crops are images of the component read from the live page, in [components/crops/](components/crops) (180 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
 
 ## Discovery list
 
@@ -59,7 +59,7 @@ Screenshots are named `{page}-{theme}-state.png` where `{theme}` is the mode the
 
 Values that apply across entries, from the measurement files.
 
-**Focus.** 30 components were given a real keyboard focus. 27 draw an outline ring: `nav-dropdown-btn` (2px dashed #000000, offset 4px), `nav-pricing` (2px dashed #000000, offset 4px), `nav-login` (2px dashed #000000, offset 4px), `nav-cta` (2px dashed #000000, offset 4px), `hero-cta` (2px dashed #000000, offset 4px), `footer-link` (2px dashed #ffffff `component.productShell.comm-signup-fill`, offset 4px), `locale-btn` (2px dashed #ffffff `component.productShell.comm-signup-fill`, offset 4px), `price-toggle` (2px dashed #000000, offset 4px), `feature-switch` (2px dashed #000000, offset 4px), `plan-cta` (2px dashed #000000, offset 4px), `login-google` (2px dashed #2c2c2c `component.productShell.login-submit-fill`, offset 4px), `login-submit` (2px dashed #2c2c2c `component.productShell.login-submit-fill`, offset 4px), `login-sso` (1px solid #757575, offset 1px), `signup-google` (2px dashed #2c2c2c `component.productShell.login-submit-fill`, offset 4px), `signup-continue` (2px dashed #2c2c2c `component.productShell.login-submit-fill`, offset 4px), `comm-cat` (1px solid #0d99ff, offset 1px), `comm-banner-nav` (2px solid #0d99ff, offset 2px), `comm-like` (1px solid #0d99ff, offset 1px), `prompt-submit` (2px dashed #000000, offset 4px), `dl-btn` (2px dashed #000000, offset 4px), `blog-topics` (1px dashed #ffffff `component.productShell.comm-signup-fill`, offset 4px), `blog-search` (1px dashed #ffffff `component.productShell.comm-signup-fill`, offset 4px), `careers-cta` (2px dashed #000000, offset 4px), `m-cta` (2px dashed #000000, offset 4px), `m-menu-btn` (2px dashed #000000, offset 4px), `m-hero-cta` (2px dashed #000000, offset 4px), `next-btn` (2px dashed #000000, offset 4px). 1 draw a focus ring as a shadow instead: `seat-combo`. 1 change only their border: `comm-signup`. The other 1 show no measured change: `comm-login`.
+**Focus.** 30 components were given a real keyboard focus. 27 draw an outline ring: `nav-dropdown-btn` (2px dashed #000000 `light.theme.fg.default`, offset 4px), `nav-pricing` (2px dashed #000000 `light.theme.fg.default`, offset 4px), `nav-login` (2px dashed #000000 `light.theme.fg.default`, offset 4px), `nav-cta` (2px dashed #000000 `light.theme.fg.default`, offset 4px), `hero-cta` (2px dashed #000000 `light.theme.fg.default`, offset 4px), `footer-link` (2px dashed #ffffff `light.theme.bg`, offset 4px), `locale-btn` (2px dashed #ffffff `light.theme.bg`, offset 4px), `price-toggle` (2px dashed #000000 `light.theme.fg.default`, offset 4px), `feature-switch` (2px dashed #000000 `light.theme.fg.default`, offset 4px), `plan-cta` (2px dashed #000000 `light.theme.fg.default`, offset 4px), `login-google` (2px dashed #2c2c2c `core.component.productShell.login-submit-fill`, offset 4px), `login-submit` (2px dashed #2c2c2c `core.component.productShell.login-submit-fill`, offset 4px), `login-sso` (1px solid #757575, offset 1px), `signup-google` (2px dashed #2c2c2c `core.component.productShell.login-submit-fill`, offset 4px), `signup-continue` (2px dashed #2c2c2c `core.component.productShell.login-submit-fill`, offset 4px), `comm-cat` (1px solid #0d99ff, offset 1px), `comm-banner-nav` (2px solid #0d99ff, offset 2px), `comm-like` (1px solid #0d99ff, offset 1px), `prompt-submit` (2px dashed #000000 `light.theme.fg.default`, offset 4px), `dl-btn` (2px dashed #000000 `light.theme.fg.default`, offset 4px), `blog-topics` (1px dashed #ffffff `light.theme.bg`, offset 4px), `blog-search` (1px dashed #ffffff `light.theme.bg`, offset 4px), `careers-cta` (2px dashed #000000 `light.theme.fg.default`, offset 4px), `m-cta` (2px dashed #000000 `light.theme.fg.default`, offset 4px), `m-menu-btn` (2px dashed #000000 `light.theme.fg.default`, offset 4px), `m-hero-cta` (2px dashed #000000 `light.theme.fg.default`, offset 4px), `next-btn` (2px dashed #000000 `light.theme.fg.default`, offset 4px). 1 draw a focus ring as a shadow instead: `seat-combo`. 1 change only their border: `comm-signup`. The other 1 show no measured change: `comm-login`.
 
 **Pressed.** Forced with DevTools (`CSS.forcePseudoState` :active:hover). Nothing a real press would submit was ever pressed.
 
@@ -69,7 +69,7 @@ Values that apply across entries, from the measurement files.
 |---|---|---|---|
 | 0.16s | `ease-out` | border-radius | login-submit, signup-continue |
 | 0.18s | `ease` | border-color, box-shadow | prompt-textarea |
-| 0.18s | `ease-out` | background, box-shadow | careers-cta, hero-cta, m-cta, m-hero-cta, nav-cta, next-btn, plan-cta, prompt-submit |
+| 0.18s | `ease-out` | background, box-shadow | careers-cta, hero-cta, m-cta, m-hero-cta, nav-cta, next-btn, prompt-submit |
 | 0.25s | `ease` | padding | faq-acc |
 | 0.4s | `cubic-bezier(0.8, 0, 0.2, 1)` | background | mkt-header |
 
@@ -77,8 +77,8 @@ Values that apply across entries, from the measurement files.
 
 | Card | Size | Border | Radius | Background | Shadow | Padding |
 |---|---|---|---|---|---|---|
-| [Products dropdown panel](#products-dropdown-panel) | 1440 x 522.84 | - | - | #ffffff `component.productShell.comm-signup-fill` | none | 40px 0px |
-| [Plan card](#plan-card) | 330 x 802.8 | L: 1px solid rgba(0, 0, 0, 0.16) | - | transparent | none | 0 |
+| [Products dropdown panel](#products-dropdown-panel) | 1440 x 522.84 | - | - | #ffffff `light.theme.bg` | none | 40px 0px |
+| [Plan card](#plan-card) | 330 x 802.8 | L: 1px solid rgba(0, 0, 0, 0.16) `light.theme.border.default` | - | transparent | none | 0 |
 | [Resource card](#resource-card) | 394.66 x 532.81 | - | - | transparent | none | 0 |
 | [Login panel](#login-panel) | 422 x 479.59 | - | - | transparent | none | 0px 32px |
 | [Signup panel](#signup-panel) | 422 x 302.59 | - | - | transparent | none | 0px 32px |
@@ -93,33 +93,33 @@ The header on every marketing page: the Figma mark, the Products/Solutions/Commu
 #### Site header
 The fixed top bar on every marketing page: the Figma mark, Products/Solutions/Community/Resources dropdown triggers, Pricing, Log in, Contact sales and the "Get started for free" CTA. Read as `mkt-header` on the home page.
 
-**Values (default).** size 1440 x 78.39; background #ffffff `component.productShell.comm-signup-fill`; text figmaSans 16/23.2 400, #000000; transition background 0.4s cubic-bezier(0.8, 0, 0.2, 1); icon 19 x 28, #000000.
+**Values (default).** size 1440 x 78.39; background #ffffff `light.theme.bg`; text figmaSans 16/23.2 400, #000000 `light.theme.fg.default`; transition background 0.4s cubic-bezier(0.8, 0, 0.2, 1); icon 19 x 28, #000000 `light.theme.fg.default`.
 
 ![Site header default](components/crops/mkt-header-default.png)
 
 #### Logo
 The Figma mark in the header, linking home. Read as `mkt-logo` on the home page.
 
-**Values (default).** size 19 x 28; background transparent; text figmaSans 16/23.2 400, #000000; icon 19 x 28, #000000.
+**Values (default).** size 19 x 28; background transparent; text figmaSans 16/23.2 400, #000000 `light.theme.fg.default`; icon 19 x 28, #000000 `light.theme.fg.default`.
 
 ![Logo default](components/crops/mkt-logo-default.png)
 
 #### Nav dropdown trigger
-The "Products" header button — a data-nav-dropdown-trigger that opens the products dropdown. The opened state was measured after clicking it. Read as `nav-dropdown-btn` on the home page.
+The "Products" header button — a data-nav-dropdown-trigger that opens the products dropdown. The opened state was measured after its own toggle click; aria-expanded had to stay true. Read as `nav-dropdown-btn` on the home page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed, opened) | size 103 x 39.19; padding 8px; background transparent; text figmaSans 16/23.2 400, #000000; icon 18 x 18, #000000; layers ::after rgba(0, 0, 0, 0) 0px none 0; span::after.nav-highlight.fig-1wty479 67pxx1px rgb(0, 0, 0) |
-| focus-visible | outline 2px dashed #000000, offset 4px; layers ::after rgba(0, 0, 0, 0) 0px none 0; button.dropdown-label.fig-7comqs 103.0x39.2 2px dashed rgb(0, 0, 0) offset 4px; span::after.nav-highlight.fig-1wty479 67pxx1px rgb(0, 0, 0) |
+| default (same: hover, pressed, opened) | size 103 x 39.19; padding 8px; background transparent; text figmaSans 16/23.2 400, #000000 `light.theme.fg.default`; icon 18 x 18, #000000 `light.theme.fg.default`; layers ::after rgba(0, 0, 0, 0) 0px none 0; span::after.nav-highlight.fig-1wty479 67pxx1px rgb(0, 0, 0) |
+| focus-visible | outline 2px dashed #000000 `light.theme.fg.default`, offset 4px; layers ::after rgba(0, 0, 0, 0) 0px none 0; button.dropdown-label.fig-7comqs 103.0x39.2 2px dashed rgb(0, 0, 0) offset 4px; span::after.nav-highlight.fig-1wty479 67pxx1px rgb(0, 0, 0) |
 
-Child layers that carry the look: span::after 67pxx1px background #000000.
+Child layers that carry the look: span::after 67pxx1px background #000000 `light.theme.fg.default`.
 
 ![Nav dropdown trigger default](components/crops/nav-dropdown-btn-default.png) ![Nav dropdown trigger hover](components/crops/nav-dropdown-btn-hover.png) ![Nav dropdown trigger focus-visible](components/crops/nav-dropdown-btn-focus-visible.png) ![Nav dropdown trigger pressed](components/crops/nav-dropdown-btn-pressed.png) ![Nav dropdown trigger opened](components/crops/nav-dropdown-btn-opened.png)
 
 #### Products dropdown panel
 The dropdown panel opened by the "Products" trigger (Figma Design, Make, Weave, Dev Mode, Motion, Specs, FigJam, Slides, Draw, Sites, Buzz, AI workflows, Release notes, Downloads); its links were never followed. Read as `nav-panel` on the home page.
 
-**Values (default).** size 1440 x 522.84; padding 40px 0px; background #ffffff `component.productShell.comm-signup-fill`; text figmaMono 14/18.2 400, oklch(0 0 none / 0.54); icon 22.39 x 22.39, #000000.
+**Values (default).** size 1440 x 522.84; padding 40px 0px; background #ffffff `light.theme.bg`; text figmaMono 14/18.2 400, oklch(0 0 none / 0.54); icon 22.39 x 22.39, #000000 `light.theme.fg.default`.
 
 ![Products dropdown panel default](components/crops/nav-panel-default.png)
 
@@ -128,9 +128,9 @@ The "Figma Design" item inside the opened products dropdown; measured, never fol
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 328 x 49.58; background transparent; text figmaSans 16/22.4 400, #000000; icon 22.39 x 22.39, #000000; layers span::after.nav-highlight 96pxx1px rgb(0, 0, 0) |
+| default (same: hover) | size 328 x 49.58; background transparent; text figmaSans 16/22.4 400, #000000 `light.theme.fg.default`; icon 22.39 x 22.39, #000000 `light.theme.fg.default`; layers span::after.nav-highlight 96pxx1px rgb(0, 0, 0) |
 
-Child layers that carry the look: span::after 96pxx1px background #000000.
+Child layers that carry the look: span::after 96pxx1px background #000000 `light.theme.fg.default`.
 
 ![Dropdown item default](components/crops/nav-menu-item-default.png) ![Dropdown item hover](components/crops/nav-menu-item-hover.png)
 
@@ -139,10 +139,10 @@ The "Pricing" header link; measured, never followed. Read as `nav-pricing` on th
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 67 x 39.19; padding 8px; background transparent; text figmaSans 16/23.2 400, #000000; layers span::after.nav-highlight 51pxx1px rgb(0, 0, 0) |
-| focus-visible | outline 2px dashed #000000, offset 4px; layers a.fig-19xeqcu 67.0x39.2 2px dashed rgb(0, 0, 0) offset 4px; span::after.nav-highlight 51pxx1px rgb(0, 0, 0) |
+| default (same: hover, pressed) | size 67 x 39.19; padding 8px; background transparent; text figmaSans 16/23.2 400, #000000 `light.theme.fg.default`; layers span::after.nav-highlight 51pxx1px rgb(0, 0, 0) |
+| focus-visible | outline 2px dashed #000000 `light.theme.fg.default`, offset 4px; layers a.fig-19xeqcu 67.0x39.2 2px dashed rgb(0, 0, 0) offset 4px; span::after.nav-highlight 51pxx1px rgb(0, 0, 0) |
 
-Child layers that carry the look: span::after 51pxx1px background #000000.
+Child layers that carry the look: span::after 51pxx1px background #000000 `light.theme.fg.default`.
 
 ![Nav link default](components/crops/nav-pricing-default.png) ![Nav link hover](components/crops/nav-pricing-hover.png) ![Nav link focus-visible](components/crops/nav-pricing-focus-visible.png) ![Nav link pressed](components/crops/nav-pricing-pressed.png)
 
@@ -151,10 +151,10 @@ The "Log in" header link to /login; measured, never followed. Read as `nav-login
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 59 x 39.19; padding 8px; background transparent; text figmaSans 16/23.2 400, #000000; layers span::after.nav-highlight 43pxx1px rgb(0, 0, 0) |
-| focus-visible | outline 2px dashed #000000, offset 4px; layers a.fig-12retlt 59.0x39.2 2px dashed rgb(0, 0, 0) offset 4px; span::after.nav-highlight 43pxx1px rgb(0, 0, 0) |
+| default (same: hover, pressed) | size 59 x 39.19; padding 8px; background transparent; text figmaSans 16/23.2 400, #000000 `light.theme.fg.default`; layers span::after.nav-highlight 43pxx1px rgb(0, 0, 0) |
+| focus-visible | outline 2px dashed #000000 `light.theme.fg.default`, offset 4px; layers a.fig-12retlt 59.0x39.2 2px dashed rgb(0, 0, 0) offset 4px; span::after.nav-highlight 43pxx1px rgb(0, 0, 0) |
 
-Child layers that carry the look: span::after 43pxx1px background #000000.
+Child layers that carry the look: span::after 43pxx1px background #000000 `light.theme.fg.default`.
 
 ![Log in link default](components/crops/nav-login-default.png) ![Log in link hover](components/crops/nav-login-hover.png) ![Log in link focus-visible](components/crops/nav-login-focus-visible.png) ![Log in link pressed](components/crops/nav-login-pressed.png)
 
@@ -163,9 +163,9 @@ The dark "Get started for free" header pill; links to /signup, measured never fo
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 198 x 46.39; padding 12px 22px; radius 8px; background #000000; text figmaSans 16/22.4 400, #ffffff `component.productShell.comm-signup-fill`; transition background 0.18s ease-out, box-shadow 0.18s ease-out; icon 20 x 20, #ffffff `component.productShell.comm-signup-fill` |
+| default | size 198 x 46.39; padding 12px 22px; radius 8px; background #000000 `light.theme.fg.default`; text figmaSans 16/22.4 400, #ffffff `light.theme.bg`; transition background 0.18s ease-out, box-shadow 0.18s ease-out; icon 20 x 20, #ffffff `light.theme.bg` |
 | hover | background oklch(0 0 none / 0.85) |
-| focus-visible | outline 2px dashed #000000, offset 4px |
+| focus-visible | outline 2px dashed #000000 `light.theme.fg.default`, offset 4px |
 | pressed | background oklch(0 0 none / 0.85) |
 
 ![Header CTA default](components/crops/nav-cta-default.png) ![Header CTA hover](components/crops/nav-cta-hover.png) ![Header CTA focus-visible](components/crops/nav-cta-focus-visible.png) ![Header CTA pressed](components/crops/nav-cta-pressed.png)
@@ -177,7 +177,7 @@ The home hero: the display-size figmaSans masthead, the paired Get-started / Con
 #### Hero headline
 "The full-stack creative canvas" — the figma.com hero display heading. Read as `hero-h1` on the home page.
 
-**Values (default).** size 328 x 168; background transparent; text figmaSans 56/56 400, #000000.
+**Values (default).** size 328 x 168; background transparent; text figmaSans 56/56 400, #000000 `light.theme.fg.default`.
 
 ![Hero headline default](components/crops/hero-h1-default.png)
 
@@ -186,9 +186,9 @@ The dark "Get started" pill in the hero; links to /signup, measured never follow
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 222.75 x 84; padding 24px 32px; radius 16px; background #000000; text figmaSans 30/36 400, #ffffff `component.productShell.comm-signup-fill`; transition background 0.18s ease-out, box-shadow 0.18s ease-out; icon 36 x 36, #ffffff `component.productShell.comm-signup-fill` |
-| hover | background oklch(0 0 none / 0.85) |
-| focus-visible | outline 2px dashed #000000, offset 4px |
+| default | size 222.75 x 84; padding 24px 32px; radius 16px; background #000000 `light.theme.fg.default`; text figmaSans 30/36 400, #ffffff `light.theme.bg`; transition background 0.18s ease-out, box-shadow 0.18s ease-out; icon 36 x 36, #ffffff `light.theme.bg` |
+| hover | background oklab(0 0 0) |
+| focus-visible | outline 2px dashed #000000 `light.theme.fg.default`, offset 4px |
 | pressed | background oklch(0 0 none / 0.85) |
 
 ![Hero CTA default](components/crops/hero-cta-default.png) ![Hero CTA hover](components/crops/hero-cta-hover.png) ![Hero CTA focus-visible](components/crops/hero-cta-focus-visible.png) ![Hero CTA pressed](components/crops/hero-cta-pressed.png)
@@ -201,7 +201,7 @@ Not on the page when it was captured.
 #### Section heading
 A marketing section heading further down the home page. Read as `section-h2` on the home page.
 
-**Values (default).** size 901.33 x 36; background transparent; text figmaSans 30/36 400, #000000.
+**Values (default).** size 901.33 x 36; background transparent; text figmaSans 30/36 400, #000000 `light.theme.fg.default`.
 
 ![Section heading default](components/crops/section-h2-default.png)
 
@@ -212,7 +212,7 @@ The /pricing grid: the Monthly/Annual pill toggle, the Full-seat combobox and th
 #### Pricing headline
 "Pick your plan, choose your seats" — the /pricing masthead. Read as `price-h1` on the pricing page.
 
-**Values (default).** size 840 x 163.38; background transparent; text figmaSans 86/81.7 400, #000000.
+**Values (default).** size 840 x 163.38; background transparent; text figmaSans 86/81.7 400, #000000 `light.theme.fg.default`.
 
 ![Pricing headline default](components/crops/price-h1-default.png)
 
@@ -221,8 +221,8 @@ The Monthly/Annual segmented control; measured at rest, never toggled (toggling 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 180 x 29; radius 80px; background rgba(0, 0, 0, 0.08); text figmaSans 12/15 360, #000000 |
-| focus-visible | outline 2px dashed #000000, offset 4px |
+| default (same: hover, pressed) | size 180 x 29; radius 80px; background rgba(0, 0, 0, 0.08) `light.theme.badge.bg`; text figmaSans 12/15 360, #000000 `light.theme.fg.default` |
+| focus-visible | outline 2px dashed #000000 `light.theme.fg.default`, offset 4px |
 
 ![Billing toggle default](components/crops/price-toggle-default.png) ![Billing toggle hover](components/crops/price-toggle-hover.png) ![Billing toggle focus-visible](components/crops/price-toggle-focus-visible.png) ![Billing toggle pressed](components/crops/price-toggle-pressed.png)
 
@@ -231,7 +231,7 @@ The "Full seat" role combobox that re-prices the grid; measured at rest, never o
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 180 x 53.19; padding 24px 36px 4px 12px; radius 8px; background rgba(0, 0, 0, 0.08); text figmaSans 18/25.2 330, #000000; layers ::after rgb(0, 0, 0) 0px none 1 |
+| default | size 180 x 53.19; padding 24px 36px 4px 12px; radius 8px; background rgba(0, 0, 0, 0.08) `light.theme.badge.bg`; text figmaSans 18/25.2 330, #000000 `light.theme.fg.default`; layers ::after rgb(0, 0, 0) 0px none 1 |
 | hover | shadow #000000 0px 0px 0px 1px inset |
 | focus-visible | shadow #000000 0px 0px 0px 2px inset |
 | pressed | shadow #000000 0px 0px 0px 1px inset |
@@ -243,29 +243,27 @@ The "All features / Key features" switch (role=switch); measured at rest, never 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 280 x 46.5; radius 80px; background rgba(0, 0, 0, 0.08); text figmaSans 18/22.5 400, #000000 |
-| focus-visible | outline 2px dashed #000000, offset 4px |
+| default (same: hover, pressed) | size 280 x 46.5; radius 80px; background rgba(0, 0, 0, 0.08) `light.theme.badge.bg`; text figmaSans 18/22.5 400, #000000 `light.theme.fg.default` |
+| focus-visible | outline 2px dashed #000000 `light.theme.fg.default`, offset 4px |
 
 ![Feature switch default](components/crops/feature-switch-default.png) ![Feature switch hover](components/crops/feature-switch-hover.png) ![Feature switch focus-visible](components/crops/feature-switch-focus-visible.png) ![Feature switch pressed](components/crops/feature-switch-pressed.png)
 
 #### Plan card
 The Professional plan column: name, price, seat copy and its CTA. Read as `plan-card` on the pricing page.
 
-**Values (default).** size 330 x 802.8; border L: 1px solid rgba(0, 0, 0, 0.16); background transparent; text figmaSans 32/41.6 400, #000000; icon 16 x 16, #000000; layers article.fig-1vpss82 330.0x802.8 L:1px solid rgba(0, 0, 0, 0.16); button.fig-sqbkms 180.0x29.0 rgba(0, 0, 0, 0.08) 80px; div.fig-k5xzwr 84.0x21.0 rgb(255, 255, 255) 80px; div.fig-qq6tkq 329.0x94.5 B:1px solid rgba(0, 0, 0, 0.08); div.fig-qq6tkq 329.0x94.5 B:1px solid rgba(0, 0, 0, 0.08); div.fig-qq6tkq 329.0x94.5 B:1px solid rgba(0, 0, 0, 0.08).
+**Values (default).** size 330 x 802.8; border L: 1px solid rgba(0, 0, 0, 0.16) `light.theme.border.default`; background transparent; text figmaSans 32/41.6 400, #000000 `light.theme.fg.default`; icon 16 x 16, #000000 `light.theme.fg.default`; layers article.fig-1vpss82 330.0x802.8 L:1px solid rgba(0, 0, 0, 0.16); button.fig-sqbkms 180.0x29.0 rgba(0, 0, 0, 0.08) 80px; div.fig-k5xzwr 84.0x21.0 rgb(255, 255, 255) 80px; div.fig-qq6tkq 329.0x94.5 B:1px solid rgba(0, 0, 0, 0.08); div.fig-qq6tkq 329.0x94.5 B:1px solid rgba(0, 0, 0, 0.08); div.fig-qq6tkq 329.0x94.5 B:1px solid rgba(0, 0, 0, 0.08).
 
-Child layers that carry the look: article 330x802.8 border 1px solid rgba(0, 0, 0, 0.16); button 180x29 background rgba(0, 0, 0, 0.08) radius 80px; div 84x21 background #ffffff `component.productShell.comm-signup-fill` radius 80px.
+Child layers that carry the look: article 330x802.8 border 1px solid rgba(0, 0, 0, 0.16) `light.theme.border.default`; button 180x29 background rgba(0, 0, 0, 0.08) `light.theme.badge.bg` radius 80px; div 84x21 background #ffffff `light.theme.bg` radius 80px.
 
 ![Plan card default](components/crops/plan-card-default.png)
 
 #### Plan CTA
-A plan card's action (Get started / Contact sales); measured, never followed. Read as `plan-cta` on the pricing page.
+A plan card's action (Get started / Contact sales), scoped to a plan article so the header's "Contact sales" link cannot match first; measured, never followed. Read as `plan-cta` on the pricing page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 152 x 46.39; padding 12px 22px; radius 8px; background oklch(0 0 none / 0); shadow oklch(0 0 none / 0.16) 0px 0px 0px 1px inset; text figmaSans 16/22.4 400, #000000; transition background 0.18s ease-out, box-shadow 0.18s ease-out; icon 20 x 20, #000000 |
-| hover | shadow oklch(0 0 none / 0.4) 0px 0px 0px 1px inset |
-| focus-visible | outline 2px dashed #000000, offset 4px |
-| pressed | shadow oklch(0 0 none / 0.4) 0px 0px 0px 1px inset |
+| default (same: hover, pressed) | size 84 x 26.09; radius 2px; background transparent; text figmaSans 14/20.3 340, #697485 |
+| focus-visible | outline 2px dashed #000000 `light.theme.fg.default`, offset 4px; layers a.fig-1d1iijj 84.0x26.1 2px dashed rgb(0, 0, 0) offset 4px 2px |
 
 ![Plan CTA default](components/crops/plan-cta-default.png) ![Plan CTA hover](components/crops/plan-cta-hover.png) ![Plan CTA focus-visible](components/crops/plan-cta-focus-visible.png) ![Plan CTA pressed](components/crops/plan-cta-pressed.png)
 
@@ -274,7 +272,7 @@ A feature-list accordion in the comparison grid ("Components", "Auto layout", ..
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: opened, hover) | size 412 x 24; background #ffffff `component.productShell.comm-signup-fill`; text figmaSans 16/23.2 320, #000000; icon 24 x 24, #000000 |
+| default (same: opened, hover) | size 412 x 24; background #ffffff `light.theme.bg`; text figmaSans 16/23.2 320, #000000 `light.theme.fg.default`; icon 24 x 24, #000000 `light.theme.fg.default` |
 
 ![Feature accordion default](components/crops/feature-acc-default.png) ![Feature accordion opened](components/crops/feature-acc-opened.png) ![Feature accordion hover](components/crops/feature-acc-hover.png)
 
@@ -285,7 +283,7 @@ The /contact sales form's first step: work-email, first/last name, a topic input
 #### Contact headline
 The /contact masthead over the sales form. Read as `contact-h1` on the contact page.
 
-**Values (default).** size 510 x 61.59; background transparent; text figmaSans 56/61.6 400, #000000.
+**Values (default).** size 510 x 61.59; background transparent; text figmaSans 56/61.6 400, #000000 `light.theme.fg.default`.
 
 ![Contact headline default](components/crops/contact-h1-default.png)
 
@@ -294,7 +292,7 @@ The work-email input; focused and typed into then cleared — never submitted. R
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 600 x 58.19; padding 27px 12px 6px 12px; radius 8px; background rgba(0, 0, 0, 0.08); text figmaSans 18/25.2 330, #000000; placeholder #000000 |
+| default | size 600 x 58.19; padding 27px 12px 6px 12px; radius 8px; background rgba(0, 0, 0, 0.08) `light.theme.badge.bg`; text figmaSans 18/25.2 330, #000000 `light.theme.fg.default`; placeholder #000000 `light.theme.fg.default` |
 | focused, filled | shadow #000000 0px 0px 0px 2px inset |
 
 ![Email field default](components/crops/field-email-default.png) ![Email field focused](components/crops/field-email-focused.png) ![Email field filled](components/crops/field-email-filled.png)
@@ -304,7 +302,7 @@ The first-name input; focused and typed into then cleared — never submitted. R
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 294 x 58.19; padding 27px 12px 6px 12px; radius 8px; background rgba(0, 0, 0, 0.08); text figmaSans 18/25.2 330, #000000; placeholder #000000 |
+| default | size 294 x 58.19; padding 27px 12px 6px 12px; radius 8px; background rgba(0, 0, 0, 0.08) `light.theme.badge.bg`; text figmaSans 18/25.2 330, #000000 `light.theme.fg.default`; placeholder #000000 `light.theme.fg.default` |
 | focused, filled | shadow #000000 0px 0px 0px 2px inset |
 
 ![First name field default](components/crops/field-firstname-default.png) ![First name field focused](components/crops/field-firstname-focused.png) ![First name field filled](components/crops/field-firstname-filled.png)
@@ -314,7 +312,7 @@ The last-name input; focused and typed into then cleared — never submitted. Re
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 294 x 58.19; padding 27px 12px 6px 12px; radius 8px; background rgba(0, 0, 0, 0.08); text figmaSans 18/25.2 330, #000000; placeholder #000000 |
+| default | size 294 x 58.19; padding 27px 12px 6px 12px; radius 8px; background rgba(0, 0, 0, 0.08) `light.theme.badge.bg`; text figmaSans 18/25.2 330, #000000 `light.theme.fg.default`; placeholder #000000 `light.theme.fg.default` |
 | focused, filled | shadow #000000 0px 0px 0px 2px inset |
 
 ![Last name field default](components/crops/field-lastname-default.png) ![Last name field focused](components/crops/field-lastname-focused.png) ![Last name field filled](components/crops/field-lastname-filled.png)
@@ -324,7 +322,7 @@ The unnamed free-text input on the sales form's first step (the name=topic twin 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 600 x 58.19; padding 27px 40px 6px 12px; radius 8px; background rgba(0, 0, 0, 0.08); text figmaSans 18/25.2 330, #000000; placeholder #000000 |
+| default | size 600 x 58.19; padding 27px 40px 6px 12px; radius 8px; background rgba(0, 0, 0, 0.08) `light.theme.badge.bg`; text figmaSans 18/25.2 330, #000000 `light.theme.fg.default`; placeholder #000000 `light.theme.fg.default` |
 | focused | radius 8px 8px 0px 0px; shadow #000000 0px 0px 0px 2px inset |
 | filled | shadow #000000 0px 0px 0px 2px inset |
 
@@ -335,9 +333,9 @@ The multi-step form's "Next step" button; its states were measured but the butto
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 480 x 46.39; padding 12px 22px; radius 8px; background #000000; text figmaSans 16/22.4 400, #ffffff `component.productShell.comm-signup-fill`; transition background 0.18s ease-out, box-shadow 0.18s ease-out; icon 20 x 20, #ffffff `component.productShell.comm-signup-fill` |
+| default | size 480 x 46.39; padding 12px 22px; radius 8px; background #000000 `light.theme.fg.default`; text figmaSans 16/22.4 400, #ffffff `light.theme.bg`; transition background 0.18s ease-out, box-shadow 0.18s ease-out; icon 20 x 20, #ffffff `light.theme.bg` |
 | hover | background oklch(0 0 none / 0.85) |
-| focus-visible | outline 2px dashed #000000, offset 4px |
+| focus-visible | outline 2px dashed #000000 `light.theme.fg.default`, offset 4px |
 | pressed | background oklch(0 0 none / 0.85) |
 
 ![Next step button default](components/crops/next-btn-default.png) ![Next step button hover](components/crops/next-btn-hover.png) ![Next step button focus-visible](components/crops/next-btn-focus-visible.png) ![Next step button pressed](components/crops/next-btn-pressed.png)
@@ -349,9 +347,9 @@ The multi-step form's "Next step" button; its states were measured but the butto
 #### Login panel
 The product-shell sign-in card on /login: "Sign in to Figma" with Google SSO, e-mail and password. Read as `login-panel` on the login page.
 
-**Values (default).** size 422 x 479.59; padding 0px 32px; background transparent; text Figma Sans 32/41.6 500, rgba(0, 0, 0, 0.898) `component.productShell.comm-signup-ink`; icon 18 x 18, rgba(0, 0, 0, 0.898) `component.productShell.comm-signup-ink`; layers button.brand_buttons--brandButton--Y6xZJ.auth_view--brandButton--dD0L7 358.0x48.0 T:1px solid rgb(44, 44, 44) / R:1px solid rgb(44, 44, 44) / B:1px solid rgb(44, 44, 44) / L:1px solid rgb(44, 44, 44) 8px; input.lazy_input--lazyInput--akTHe 358.0x53.0 rgba(0, 0, 0, 0.05) 6px; input.lazy_input--lazyInput--akTHe 358.0x53.0 rgba(0, 0, 0, 0.05) 6px; button.brand_buttons--brandButton--Y6xZJ.auth_view--b.
+**Values (default).** size 422 x 479.59; padding 0px 32px; background transparent; text Figma Sans 32/41.6 500, rgba(0, 0, 0, 0.898) `core.component.productShell.comm-signup-ink`; icon 18 x 18, rgba(0, 0, 0, 0.898) `core.component.productShell.comm-signup-ink`; layers button.brand_buttons--brandButton--Y6xZJ.auth_view--brandButton--dD0L7 358.0x48.0 T:1px solid rgb(44, 44, 44) / R:1px solid rgb(44, 44, 44) / B:1px solid rgb(44, 44, 44) / L:1px solid rgb(44, 44, 44) 8px; input.lazy_input--lazyInput--akTHe 358.0x53.0 rgba(0, 0, 0, 0.05) 6px; input.lazy_input--lazyInput--akTHe 358.0x53.0 rgba(0, 0, 0, 0.05) 6px; button.brand_buttons--brandButton--Y6xZJ.auth_view--b.
 
-Child layers that carry the look: button 358x48 border 1px solid #2c2c2c `component.productShell.login-submit-fill` radius 8px; input 358x53 background rgba(0, 0, 0, 0.05) radius 6px; input 358x53 background rgba(0, 0, 0, 0.05) radius 6px.
+Child layers that carry the look: button 358x48 border 1px solid #2c2c2c `core.component.productShell.login-submit-fill` radius 8px; input 358x53 background rgba(0, 0, 0, 0.05) radius 6px; input 358x53 background rgba(0, 0, 0, 0.05) radius 6px.
 
 ![Login panel default](components/crops/login-panel-default.png)
 
@@ -360,8 +358,8 @@ The "Continue with Google" button; measured, never pressed. Read as `login-googl
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 358 x 48; padding 0px 20px; border 1px solid #2c2c2c `component.productShell.login-submit-fill`; radius 8px; background transparent; text Figma Sans 18/25.2 480, rgba(0, 0, 0, 0.898) `component.productShell.comm-signup-ink`; icon 18 x 18, rgba(0, 0, 0, 0.898) `component.productShell.comm-signup-ink` |
-| focus-visible | outline 2px dashed #2c2c2c `component.productShell.login-submit-fill`, offset 4px |
+| default (same: hover, pressed) | size 358 x 48; padding 0px 20px; border 1px solid #2c2c2c `core.component.productShell.login-submit-fill`; radius 8px; background transparent; text Figma Sans 18/25.2 480, rgba(0, 0, 0, 0.898) `core.component.productShell.comm-signup-ink`; icon 18 x 18, rgba(0, 0, 0, 0.898) `core.component.productShell.comm-signup-ink` |
+| focus-visible | outline 2px dashed #2c2c2c `core.component.productShell.login-submit-fill`, offset 4px |
 
 ![Google SSO button default](components/crops/login-google-default.png) ![Google SSO button hover](components/crops/login-google-hover.png) ![Google SSO button focus-visible](components/crops/login-google-focus-visible.png) ![Google SSO button pressed](components/crops/login-google-pressed.png)
 
@@ -370,7 +368,7 @@ The e-mail input on the sign-in card; focused and typed into then cleared — ne
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 358 x 53; padding 24px 12px 6px 12px; radius 6px; background rgba(0, 0, 0, 0.05); text Figma Sans 18/25 320, rgba(0, 0, 0, 0.898) `component.productShell.comm-signup-ink`; placeholder rgba(0, 0, 0, 0.898) `component.productShell.comm-signup-ink` |
+| default | size 358 x 53; padding 24px 12px 6px 12px; radius 6px; background rgba(0, 0, 0, 0.05); text Figma Sans 18/25 320, rgba(0, 0, 0, 0.898) `core.component.productShell.comm-signup-ink`; placeholder rgba(0, 0, 0, 0.898) `core.component.productShell.comm-signup-ink` |
 | focused, filled | shadow #444444 0px 0px 0px 2px inset |
 
 ![Email field (login) default](components/crops/login-email-default.png) ![Email field (login) focused](components/crops/login-email-focused.png) ![Email field (login) filled](components/crops/login-email-filled.png)
@@ -380,7 +378,7 @@ The password input on the sign-in card; focused and typed into then cleared — 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 358 x 53; padding 24px 12px 6px 12px; radius 6px; background rgba(0, 0, 0, 0.05); text Figma Sans 18/25 320, rgba(0, 0, 0, 0.898) `component.productShell.comm-signup-ink`; placeholder rgba(0, 0, 0, 0.898) `component.productShell.comm-signup-ink` |
+| default | size 358 x 53; padding 24px 12px 6px 12px; radius 6px; background rgba(0, 0, 0, 0.05); text Figma Sans 18/25 320, rgba(0, 0, 0, 0.898) `core.component.productShell.comm-signup-ink`; placeholder rgba(0, 0, 0, 0.898) `core.component.productShell.comm-signup-ink` |
 | focused, filled | shadow #444444 0px 0px 0px 2px inset |
 
 ![Password field (login) default](components/crops/login-password-default.png) ![Password field (login) focused](components/crops/login-password-focused.png) ![Password field (login) filled](components/crops/login-password-filled.png)
@@ -390,9 +388,9 @@ The "Log in" submit button; its states were measured but the button was never cl
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 358 x 48; padding 0px 20px; radius 8px; background #2c2c2c `component.productShell.login-submit-fill`; text Figma Sans 18/25.2 480, rgba(255, 255, 255, 0.898) `component.productShell.login-submit-ink`; transition border-radius 0.16s ease-out; icon 22 x 21, rgba(255, 255, 255, 0.898) `component.productShell.login-submit-ink` |
+| default | size 358 x 48; padding 0px 20px; radius 8px; background #2c2c2c `core.component.productShell.login-submit-fill`; text Figma Sans 18/25.2 480, rgba(255, 255, 255, 0.898) `core.component.productShell.login-submit-ink`; transition border-radius 0.16s ease-out; icon 22 x 21, rgba(255, 255, 255, 0.898) `core.component.productShell.login-submit-ink` |
 | hover | radius none |
-| focus-visible | outline 2px dashed #2c2c2c `component.productShell.login-submit-fill`, offset 4px |
+| focus-visible | outline 2px dashed #2c2c2c `core.component.productShell.login-submit-fill`, offset 4px |
 | pressed | radius none |
 
 ![Log in submit default](components/crops/login-submit-default.png) ![Log in submit hover](components/crops/login-submit-hover.png) ![Log in submit focus-visible](components/crops/login-submit-focus-visible.png) ![Log in submit pressed](components/crops/login-submit-pressed.png)
@@ -410,9 +408,9 @@ The "Use single sign-on" link; measured, never followed. Read as `login-sso` on 
 #### Signup panel
 The product-shell sign-up card on /signup: "Welcome to Figma" with Google SSO and an e-mail field. Read as `signup-panel` on the signup page.
 
-**Values (default).** size 422 x 302.59; padding 0px 32px; background transparent; text Figma Sans 32/41.6 500, rgba(0, 0, 0, 0.898) `component.productShell.comm-signup-ink`; icon 18 x 18, rgba(0, 0, 0, 0.898) `component.productShell.comm-signup-ink`; layers button.brand_buttons--brandButton--Y6xZJ.auth_view--brandButton--dD0L7 358.0x48.0 T:1px solid rgb(44, 44, 44) / R:1px solid rgb(44, 44, 44) / B:1px solid rgb(44, 44, 44) / L:1px solid rgb(44, 44, 44) 8px; input.lazy_input--lazyInput--akTHe 358.0x53.0 rgba(0, 0, 0, 0.05) 6px; button.brand_buttons--brandButton--Y6xZJ.auth_view--brandButton--dD0L7 358.0x48.0 rgb(44, 44, 44) 8px.
+**Values (default).** size 422 x 302.59; padding 0px 32px; background transparent; text Figma Sans 32/41.6 500, rgba(0, 0, 0, 0.898) `core.component.productShell.comm-signup-ink`; icon 18 x 18, rgba(0, 0, 0, 0.898) `core.component.productShell.comm-signup-ink`; layers button.brand_buttons--brandButton--Y6xZJ.auth_view--brandButton--dD0L7 358.0x48.0 T:1px solid rgb(44, 44, 44) / R:1px solid rgb(44, 44, 44) / B:1px solid rgb(44, 44, 44) / L:1px solid rgb(44, 44, 44) 8px; input.lazy_input--lazyInput--akTHe 358.0x53.0 rgba(0, 0, 0, 0.05) 6px; button.brand_buttons--brandButton--Y6xZJ.auth_view--brandButton--dD0L7 358.0x48.0 rgb(44, 44, 44) 8px.
 
-Child layers that carry the look: button 358x48 border 1px solid #2c2c2c `component.productShell.login-submit-fill` radius 8px; input 358x53 background rgba(0, 0, 0, 0.05) radius 6px; button 358x48 background #2c2c2c `component.productShell.login-submit-fill` radius 8px.
+Child layers that carry the look: button 358x48 border 1px solid #2c2c2c `core.component.productShell.login-submit-fill` radius 8px; input 358x53 background rgba(0, 0, 0, 0.05) radius 6px; button 358x48 background #2c2c2c `core.component.productShell.login-submit-fill` radius 8px.
 
 ![Signup panel default](components/crops/signup-panel-default.png)
 
@@ -421,8 +419,8 @@ The "Continue with Google" button on /signup; measured, never pressed. Read as `
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 358 x 48; padding 0px 20px; border 1px solid #2c2c2c `component.productShell.login-submit-fill`; radius 8px; background transparent; text Figma Sans 18/25.2 480, rgba(0, 0, 0, 0.898) `component.productShell.comm-signup-ink`; icon 18 x 18, rgba(0, 0, 0, 0.898) `component.productShell.comm-signup-ink` |
-| focus-visible | outline 2px dashed #2c2c2c `component.productShell.login-submit-fill`, offset 4px |
+| default (same: hover, pressed) | size 358 x 48; padding 0px 20px; border 1px solid #2c2c2c `core.component.productShell.login-submit-fill`; radius 8px; background transparent; text Figma Sans 18/25.2 480, rgba(0, 0, 0, 0.898) `core.component.productShell.comm-signup-ink`; icon 18 x 18, rgba(0, 0, 0, 0.898) `core.component.productShell.comm-signup-ink` |
+| focus-visible | outline 2px dashed #2c2c2c `core.component.productShell.login-submit-fill`, offset 4px |
 
 ![Google SSO button (signup) default](components/crops/signup-google-default.png) ![Google SSO button (signup) hover](components/crops/signup-google-hover.png) ![Google SSO button (signup) focus-visible](components/crops/signup-google-focus-visible.png) ![Google SSO button (signup) pressed](components/crops/signup-google-pressed.png)
 
@@ -431,7 +429,7 @@ The e-mail input on the sign-up card; focused and typed into then cleared — ne
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 358 x 53; padding 24px 12px 6px 12px; radius 6px; background rgba(0, 0, 0, 0.05); text Figma Sans 18/25 320, rgba(0, 0, 0, 0.898) `component.productShell.comm-signup-ink`; placeholder rgba(0, 0, 0, 0.898) `component.productShell.comm-signup-ink` |
+| default | size 358 x 53; padding 24px 12px 6px 12px; radius 6px; background rgba(0, 0, 0, 0.05); text Figma Sans 18/25 320, rgba(0, 0, 0, 0.898) `core.component.productShell.comm-signup-ink`; placeholder rgba(0, 0, 0, 0.898) `core.component.productShell.comm-signup-ink` |
 | focused, filled | shadow #444444 0px 0px 0px 2px inset |
 
 ![Email field (signup) default](components/crops/signup-email-default.png) ![Email field (signup) focused](components/crops/signup-email-focused.png) ![Email field (signup) filled](components/crops/signup-email-filled.png)
@@ -441,9 +439,9 @@ The "Continue with email" button; its states were measured but the button was ne
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 358 x 48; padding 0px 20px; radius 8px; background #2c2c2c `component.productShell.login-submit-fill`; text Figma Sans 18/25.2 480, rgba(255, 255, 255, 0.898) `component.productShell.login-submit-ink`; transition border-radius 0.16s ease-out; icon 22 x 21, rgba(255, 255, 255, 0.898) `component.productShell.login-submit-ink` |
+| default | size 358 x 48; padding 0px 20px; radius 8px; background #2c2c2c `core.component.productShell.login-submit-fill`; text Figma Sans 18/25.2 480, rgba(255, 255, 255, 0.898) `core.component.productShell.login-submit-ink`; transition border-radius 0.16s ease-out; icon 22 x 21, rgba(255, 255, 255, 0.898) `core.component.productShell.login-submit-ink` |
 | hover | radius none |
-| focus-visible | outline 2px dashed #2c2c2c `component.productShell.login-submit-fill`, offset 4px |
+| focus-visible | outline 2px dashed #2c2c2c `core.component.productShell.login-submit-fill`, offset 4px |
 | pressed | radius none |
 
 ![Continue with email default](components/crops/signup-continue-default.png) ![Continue with email hover](components/crops/signup-continue-hover.png) ![Continue with email focus-visible](components/crops/signup-continue-focus-visible.png) ![Continue with email pressed](components/crops/signup-continue-pressed.png)
@@ -466,7 +464,7 @@ The "Search for resources like …" input; focused and typed into then cleared �
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focused) | size 284 x 40; padding 0px 8px 0px 0px; background transparent; text Inter 11/16 450, rgba(0, 0, 0, 0.898) `component.productShell.comm-signup-ink`; placeholder rgba(0, 0, 0, 0.3) |
+| default (same: focused) | size 284 x 40; padding 0px 8px 0px 0px; background transparent; text Inter 11/16 450, rgba(0, 0, 0, 0.898) `core.component.productShell.comm-signup-ink`; placeholder rgba(0, 0, 0, 0.3) |
 | filled | size 252 x 40 |
 
 ![Community search default](components/crops/comm-search-default.png) ![Community search focused](components/crops/comm-search-focused.png) ![Community search filled](components/crops/comm-search-filled.png)
@@ -476,7 +474,7 @@ A category filter button (Design resources / Websites / Extensions / Whiteboardi
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: pressed) | size 146.95 x 32; padding 0px 12px; radius 5px; background transparent; text Inter 13/24 500, #000000; icon 8 x 8, #000000 |
+| default (same: pressed) | size 146.95 x 32; padding 0px 12px; radius 5px; background transparent; text Inter 13/24 500, #000000 `light.theme.fg.default`; icon 8 x 8, #000000 `light.theme.fg.default` |
 | hover | background #f5f5f5 |
 | focus-visible | outline 1px solid #0d99ff, offset 1px; layers button._19xx72g0.nav_category_selector_2--navCategorySelectorText--V2TK0 147.0x32.0 1px solid rgb(13, 153, 255) offset 1px 5px |
 
@@ -487,7 +485,7 @@ The product-shell "Log in" button; measured, never pressed. Read as `comm-login`
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 34.03 x 32; radius 6px; background #ffffff `component.productShell.comm-signup-fill`; text Inter 11/16 400, rgba(0, 0, 0, 0.898) `component.productShell.comm-signup-ink` |
+| default (same: hover, focus-visible, pressed) | size 34.03 x 32; radius 6px; background #ffffff `light.theme.bg`; text Inter 11/16 400, rgba(0, 0, 0, 0.898) `core.component.productShell.comm-signup-ink` |
 
 ![Community Log in default](components/crops/comm-login-default.png) ![Community Log in hover](components/crops/comm-login-hover.png) ![Community Log in focus-visible](components/crops/comm-login-focus-visible.png) ![Community Log in pressed](components/crops/comm-login-pressed.png)
 
@@ -496,7 +494,7 @@ The product-shell "Sign up" button; measured, never pressed. Read as `comm-signu
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 70.05 x 32; padding 7px 13px; border 1px solid rgba(0, 0, 0, 0.898) `component.productShell.comm-signup-ink`; radius 6px; background #ffffff `component.productShell.comm-signup-fill`; text Inter 11/16 400, rgba(0, 0, 0, 0.898) `component.productShell.comm-signup-ink` |
+| default (same: hover) | size 70.05 x 32; padding 7px 13px; border 1px solid rgba(0, 0, 0, 0.898) `core.component.productShell.comm-signup-ink`; radius 6px; background #ffffff `light.theme.bg`; text Inter 11/16 400, rgba(0, 0, 0, 0.898) `core.component.productShell.comm-signup-ink` |
 | focus-visible | padding 6px 12px; border 2px solid #0d99ff |
 | pressed | background #e6e6e6 |
 
@@ -507,7 +505,7 @@ The hero banner carousel's "Next banner" control — a local UI toggle; measured
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 24 x 24; border 1px solid #e6e6e6; radius 9999px; background #ffffff `component.productShell.comm-signup-fill`; text Inter 16/normal 400, rgba(0, 0, 0, 0.898) `component.productShell.comm-signup-ink`; icon 16 x 16, rgba(0, 0, 0, 0.898) `component.productShell.comm-signup-ink` |
+| default | size 24 x 24; border 1px solid #e6e6e6; radius 9999px; background #ffffff `light.theme.bg`; text Inter 16/normal 400, rgba(0, 0, 0, 0.898) `core.component.productShell.comm-signup-ink`; icon 16 x 16, rgba(0, 0, 0, 0.898) `core.component.productShell.comm-signup-ink` |
 | hover | background #f5f5f5 |
 | focus-visible | outline 2px solid #0d99ff, offset 2px |
 | pressed | background #f5f5f5 |
@@ -519,7 +517,7 @@ A community "Riff" card (thumbnail, title, author, like count); measured, never 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 394.66 x 532.81; background transparent; text Inter 16/normal 400, #000000 |
+| default (same: hover) | size 394.66 x 532.81; background transparent; text Inter 16/normal 400, #000000 `light.theme.fg.default` |
 
 ![Resource card default](components/crops/comm-card-default.png) ![Resource card hover](components/crops/comm-card-hover.png)
 
@@ -528,7 +526,7 @@ A resource card's like button; measured, never pressed (a like would write to an
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 20 x 20; radius 6px; background transparent; text Inter 14/24 600, #000000; icon 16 x 16, #000000; layers ::after rgba(0, 0, 0, 0) 0px none 1 |
+| default (same: hover, pressed) | size 20 x 20; radius 6px; background transparent; text Inter 14/24 600, #000000 `light.theme.fg.default`; icon 16 x 16, #000000 `light.theme.fg.default`; layers ::after rgba(0, 0, 0, 0) 0px none 1 |
 | focus-visible | radius 5px; outline 1px solid #0d99ff, offset 1px; layers ::after rgba(0, 0, 0, 0) 0px none 1; button.base_like_button--buttonContainerPrettyCompact--6qXsV.base_like_button--buttonContainerPretty--KdBsv 20.0x20.0 1px solid rgb(13, 153, 255) offset 1px 5px |
 
 ![Like button default](components/crops/comm-like-default.png) ![Like button hover](components/crops/comm-like-hover.png) ![Like button focus-visible](components/crops/comm-like-focus-visible.png) ![Like button pressed](components/crops/comm-like-pressed.png)
@@ -540,7 +538,7 @@ A resource card's like button; measured, never pressed (a like would write to an
 #### Make headline
 The /make masthead — "Figma Make". Read as `prompt-h1` on the make page.
 
-**Values (default).** size 672 x 48.39; background transparent; text figmaSans 44/48.4 400, #000000; icon 39.59 x 39.59, #000000.
+**Values (default).** size 672 x 48.39; background transparent; text figmaSans 44/48.4 400, #000000 `light.theme.fg.default`; icon 39.59 x 39.59, #000000 `light.theme.fg.default`.
 
 ![Make headline default](components/crops/prompt-h1-default.png)
 
@@ -549,8 +547,8 @@ The "What do you want to make?" prompt box on /make; focused and typed into then
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 672 x 97.19; padding 36px 96px 36px 32px; border 1px solid oklch(0 0 none / 0.16); radius 24px; background #ffffff `component.productShell.comm-signup-fill`; shadow oklch(0 0 none / 0.1) 0px 24px 70px 0px; text figmaSans 16/22.4 400, #000000; transition box-shadow 0.18s ease, border-color 0.18s ease; placeholder oklch(0 0 none / 0.54) |
-| focused, filled | padding 35px 95px 35px 31px; border 2px solid #000000 |
+| default | size 672 x 97.19; padding 36px 96px 36px 32px; border 1px solid oklch(0 0 none / 0.16); radius 24px; background #ffffff `light.theme.bg`; shadow oklch(0 0 none / 0.1) 0px 24px 70px 0px; text figmaSans 16/22.4 400, #000000 `light.theme.fg.default`; transition box-shadow 0.18s ease, border-color 0.18s ease; placeholder oklch(0 0 none / 0.54) |
+| focused, filled | padding 35px 95px 35px 31px; border 2px solid #000000 `light.theme.fg.default` |
 
 ![Prompt textarea default](components/crops/prompt-textarea-default.png) ![Prompt textarea focused](components/crops/prompt-textarea-focused.png) ![Prompt textarea filled](components/crops/prompt-textarea-filled.png)
 
@@ -559,8 +557,8 @@ The prompt box's icon-only submit button; its states were measured but the butto
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 48 x 48; padding 16px; radius 9999px; background #d2d9e2; text figmaSans 16/18.4 400, #ffffff `component.productShell.comm-signup-fill`; transition background 0.18s ease-out, box-shadow 0.18s ease-out; opacity 0.6; icon 16 x 20, #ffffff `component.productShell.comm-signup-fill` |
-| focus-visible | outline 2px dashed #000000, offset 4px |
+| default (same: hover) | size 48 x 48; padding 16px; radius 9999px; background #d2d9e2; text figmaSans 16/18.4 400, #ffffff `light.theme.bg`; transition background 0.18s ease-out, box-shadow 0.18s ease-out; opacity 0.6; icon 16 x 20, #ffffff `light.theme.bg` |
+| focus-visible | outline 2px dashed #000000 `light.theme.fg.default`, offset 4px |
 | pressed | background #4d49fc |
 
 ![Prompt submit default](components/crops/prompt-submit-default.png) ![Prompt submit hover](components/crops/prompt-submit-hover.png) ![Prompt submit focus-visible](components/crops/prompt-submit-focus-visible.png) ![Prompt submit pressed](components/crops/prompt-submit-pressed.png)
@@ -572,7 +570,7 @@ The /blog index (Topics and Search filter buttons, the newsletter field), the /d
 #### Downloads headline
 The /downloads masthead — "Figma downloads". Read as `dl-h1` on the downloads page.
 
-**Values (default).** size 780 x 72; background transparent; text figmaSans 72/72 400, #000000.
+**Values (default).** size 780 x 72; background transparent; text figmaSans 72/72 400, #000000 `light.theme.fg.default`.
 
 ![Downloads headline default](components/crops/dl-h1-default.png)
 
@@ -581,8 +579,8 @@ The "Desktop app for macOS" download link (desktop apps, mobile apps, font insta
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 195 x 20; background transparent; text figmaSans 18/25.2 330, #000000 |
-| focus-visible | outline 2px dashed #000000, offset 4px; layers a 195.0x20.0 2px dashed rgb(0, 0, 0) offset 4px |
+| default (same: hover, pressed) | size 195 x 20; background transparent; text figmaSans 18/25.2 330, #000000 `light.theme.fg.default` |
+| focus-visible | outline 2px dashed #000000 `light.theme.fg.default`, offset 4px; layers a 195.0x20.0 2px dashed rgb(0, 0, 0) offset 4px |
 
 ![Download link default](components/crops/dl-btn-default.png) ![Download link hover](components/crops/dl-btn-hover.png) ![Download link focus-visible](components/crops/dl-btn-focus-visible.png) ![Download link pressed](components/crops/dl-btn-pressed.png)
 
@@ -591,10 +589,10 @@ The blog index's "Topics" filter button — a local UI toggle; measured, never t
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 105.14 x 27; padding 8px 0px 0px 32px; background transparent; text figmaSans 18/18 330, #ffffff `component.productShell.comm-signup-fill`; icon 11.14 x 13, #ffffff `component.productShell.comm-signup-fill`; layers ::before rgb(255, 255, 255) 0px none 1; button::before.fig-1xfqluc 1pxx19px rgb(255, 255, 255) |
-| focus-visible | outline 1px dashed #ffffff `component.productShell.comm-signup-fill`, offset 4px; layers ::before rgb(255, 255, 255) 0px none 1; button.fig-1xfqluc 105.1x27.0 1px dashed rgb(255, 255, 255) offset 4px; button::before.fig-1xfqluc 1pxx19px rgb(255, 255, 255) |
+| default (same: hover, pressed) | size 105.14 x 27; padding 8px 0px 0px 32px; background transparent; text figmaSans 18/18 330, #ffffff `light.theme.bg`; icon 11.14 x 13, #ffffff `light.theme.bg`; layers ::before rgb(255, 255, 255) 0px none 1; button::before.fig-1xfqluc 1pxx19px rgb(255, 255, 255) |
+| focus-visible | outline 1px dashed #ffffff `light.theme.bg`, offset 4px; layers ::before rgb(255, 255, 255) 0px none 1; button.fig-1xfqluc 105.1x27.0 1px dashed rgb(255, 255, 255) offset 4px; button::before.fig-1xfqluc 1pxx19px rgb(255, 255, 255) |
 
-Child layers that carry the look: button::before 1pxx19px background #ffffff `component.productShell.comm-signup-fill`.
+Child layers that carry the look: button::before 1pxx19px background #ffffff `light.theme.bg`.
 
 ![Topics button default](components/crops/blog-topics-default.png) ![Topics button hover](components/crops/blog-topics-hover.png) ![Topics button focus-visible](components/crops/blog-topics-focus-visible.png) ![Topics button pressed](components/crops/blog-topics-pressed.png)
 
@@ -603,8 +601,8 @@ The blog index's "Search" button — a local UI toggle; measured, never toggled.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 40 x 27; background transparent; text figmaSans 18/25.2 330, #ffffff `component.productShell.comm-signup-fill`; icon 16 x 16, #ffffff `component.productShell.comm-signup-fill` |
-| focus-visible | outline 1px dashed #ffffff `component.productShell.comm-signup-fill`, offset 4px; layers button.fig-11smye 40.0x27.0 1px dashed rgb(255, 255, 255) offset 4px |
+| default (same: hover, pressed) | size 40 x 27; background transparent; text figmaSans 18/25.2 330, #ffffff `light.theme.bg`; icon 16 x 16, #ffffff `light.theme.bg` |
+| focus-visible | outline 1px dashed #ffffff `light.theme.bg`, offset 4px; layers button.fig-11smye 40.0x27.0 1px dashed rgb(255, 255, 255) offset 4px |
 
 ![Search button default](components/crops/blog-search-default.png) ![Search button hover](components/crops/blog-search-hover.png) ![Search button focus-visible](components/crops/blog-search-focus-visible.png) ![Search button pressed](components/crops/blog-search-pressed.png)
 
@@ -613,9 +611,9 @@ The editorial-newsletter e-mail input in the blog rail; focused and typed into t
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focused, filled) | size 743 x 53.89; padding 0px 70px 0px 0px; border B: 1px solid #ffffff `component.productShell.comm-signup-fill`; background transparent; text figmaSans 46/52.9 400, #ffffff `component.productShell.comm-signup-fill`; placeholder #757575; layers input.fig-1fitj2g 743.0x53.9 B:1px solid rgb(255, 255, 255) |
+| default (same: focused, filled) | size 743 x 53.89; padding 0px 70px 0px 0px; border B: 1px solid #ffffff `light.theme.bg`; background transparent; text figmaSans 46/52.9 400, #ffffff `light.theme.bg`; placeholder #757575; layers input.fig-1fitj2g 743.0x53.9 B:1px solid rgb(255, 255, 255) |
 
-Child layers that carry the look: input 743x53.9 border 1px solid #ffffff `component.productShell.comm-signup-fill`.
+Child layers that carry the look: input 743x53.9 border 1px solid #ffffff `light.theme.bg`.
 
 ![Newsletter field default](components/crops/blog-subscribe-default.png) ![Newsletter field focused](components/crops/blog-subscribe-focused.png) ![Newsletter field filled](components/crops/blog-subscribe-filled.png)
 
@@ -624,8 +622,8 @@ The "See open positions" link on /careers; measured, never followed. Read as `ca
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 194 x 46.39; padding 12px 22px; radius 8px; background #000000; text figmaSans 16/22.4 400, #ffffff `component.productShell.comm-signup-fill`; transition background 0.18s ease-out, box-shadow 0.18s ease-out; icon 20 x 20, #ffffff `component.productShell.comm-signup-fill` |
-| focus-visible | outline 2px dashed #000000, offset 4px |
+| default (same: hover, pressed) | size 194 x 46.39; padding 12px 22px; radius 8px; background #000000 `light.theme.fg.default`; text figmaSans 16/22.4 400, #ffffff `light.theme.bg`; transition background 0.18s ease-out, box-shadow 0.18s ease-out; icon 20 x 20, #ffffff `light.theme.bg` |
+| focus-visible | outline 2px dashed #000000 `light.theme.fg.default`, offset 4px |
 
 ![Careers CTA default](components/crops/careers-cta-default.png) ![Careers CTA hover](components/crops/careers-cta-hover.png) ![Careers CTA focus-visible](components/crops/careers-cta-focus-visible.png) ![Careers CTA pressed](components/crops/careers-cta-pressed.png)
 
@@ -634,7 +632,7 @@ An open-position link in the careers list; measured, never followed. Read as `jo
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 246 x 20; background transparent; text figmaSans 18/25.2 330, #000000 |
+| default (same: hover) | size 246 x 20; background transparent; text figmaSans 18/25.2 330, #000000 `light.theme.fg.default` |
 
 ![Job link default](components/crops/job-link-default.png) ![Job link hover](components/crops/job-link-hover.png)
 
@@ -647,7 +645,7 @@ A question row in the /design-systems FAQ (all accordions mount open); the close
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 720 x 97.59; padding 32px 0px 24px 0px; background transparent; text figmaSans 32/41.6 400, #000000; transition padding 0.25s ease; icon 32 x 32, #000000 |
+| default | size 720 x 97.59; padding 32px 0px 24px 0px; background transparent; text figmaSans 32/41.6 400, #000000 `light.theme.fg.default`; transition padding 0.25s ease; icon 32 x 32, #000000 `light.theme.fg.default` |
 | closed | size 720 x 105.59; padding 32px 0px |
 
 ![FAQ accordion default](components/crops/faq-acc-default.png) ![FAQ accordion closed](components/crops/faq-acc-closed.png)
@@ -659,7 +657,7 @@ The phone surface at 390 wide: the header with the nav button and 'Get started f
 #### Mobile top bar
 The phone header at 390 wide: the Figma mark, "Get started for free", the nav button and the locale button. Read as `m-topbar` on the home page at 390 wide.
 
-**Values (default).** size 390 x 72; background #ffffff `component.productShell.comm-signup-fill`; shadow oklch(0 0 none / 0.16) 0px 1px 0px 0px; text figmaSans 16/22.4 400, #ffffff `component.productShell.comm-signup-fill`; icon 32 x 48, #000000.
+**Values (default).** size 390 x 72; background #ffffff `light.theme.bg`; shadow oklch(0 0 none / 0.16) 0px 1px 0px 0px; text figmaSans 16/22.4 400, #ffffff `light.theme.bg`; icon 32 x 48, #000000 `light.theme.fg.default`.
 
 ![Mobile top bar default](components/crops/m-topbar-default.png)
 
@@ -668,9 +666,9 @@ The header "Get started for free" pill at 390 wide; measured never followed. Rea
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 198 x 46.39; padding 12px 22px; radius 8px; background #000000; text figmaSans 16/22.4 400, #ffffff `component.productShell.comm-signup-fill`; transition background 0.18s ease-out, box-shadow 0.18s ease-out; icon 20 x 20, #ffffff `component.productShell.comm-signup-fill` |
+| default | size 198 x 46.39; padding 12px 22px; radius 8px; background #000000 `light.theme.fg.default`; text figmaSans 16/22.4 400, #ffffff `light.theme.bg`; transition background 0.18s ease-out, box-shadow 0.18s ease-out; icon 20 x 20, #ffffff `light.theme.bg` |
 | hover | background oklch(0 0 none / 0.85) |
-| focus-visible | outline 2px dashed #000000, offset 4px |
+| focus-visible | outline 2px dashed #000000 `light.theme.fg.default`, offset 4px |
 | pressed | background oklch(0 0 none / 0.85) |
 
 ![Mobile header CTA default](components/crops/m-cta-default.png) ![Mobile header CTA hover](components/crops/m-cta-hover.png) ![Mobile header CTA focus-visible](components/crops/m-cta-focus-visible.png) ![Mobile header CTA pressed](components/crops/m-cta-pressed.png)
@@ -680,24 +678,24 @@ The "Open navigation menu" button — a local UI toggle; the opened state was me
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed, opened) | size 40 x 40; padding 8px; background transparent; text figmaSans 16/23.2 400, #000000; icon 24 x 24, #000000 |
-| focus-visible | outline 2px dashed #000000, offset 4px; layers button.fig-1aem8bs 40.0x40.0 2px dashed rgb(0, 0, 0) offset 4px |
+| default (same: hover, pressed, opened) | size 40 x 40; padding 8px; background transparent; text figmaSans 16/23.2 400, #000000 `light.theme.fg.default`; icon 24 x 24, #000000 `light.theme.fg.default` |
+| focus-visible | outline 2px dashed #000000 `light.theme.fg.default`, offset 4px; layers button.fig-1aem8bs 40.0x40.0 2px dashed rgb(0, 0, 0) offset 4px |
 
 ![Mobile menu button default](components/crops/m-menu-btn-default.png) ![Mobile menu button hover](components/crops/m-menu-btn-hover.png) ![Mobile menu button focus-visible](components/crops/m-menu-btn-focus-visible.png) ![Mobile menu button pressed](components/crops/m-menu-btn-pressed.png) ![Mobile menu button opened](components/crops/m-menu-btn-opened.png)
 
 #### Mobile nav overlay
 The accordion nav inside the nav overlay opened by the menu button (Products/Solutions/Community/Resources accordions plus the page links); its links were never followed. Read as `m-drawer` on the home page at 390 wide.
 
-**Values (default).** size 358 x 844; padding 110px 0px 0px 0px; background transparent; text figmaSans 24/28.8 400, #000000; icon 24 x 24, #000000; layers div.fig-5w9uj6 358.0x371.8 B:1px solid oklch(0 0 none / 0.16); button.dropdown-label.fig-1wo6hfm 358.0x61.8 T:1px solid oklch(0 0 none / 0.16); span::after.nav-highlight autox1px rgb(0, 0, 0); span::after.nav-highlight autox1px rgb(0, 0, 0); span::after.nav-highlight autox1px rgb(0, 0, 0); span::after.nav-highlight autox1px rgb(0, 0, 0).
+**Values (default).** size 358 x 844; padding 110px 0px 0px 0px; background transparent; text figmaSans 24/28.8 400, #000000 `light.theme.fg.default`; icon 24 x 24, #000000 `light.theme.fg.default`; layers div.fig-5w9uj6 358.0x371.8 B:1px solid oklch(0 0 none / 0.16); button.dropdown-label.fig-1wo6hfm 358.0x61.8 T:1px solid oklch(0 0 none / 0.16); span::after.nav-highlight autox1px rgb(0, 0, 0); span::after.nav-highlight autox1px rgb(0, 0, 0); span::after.nav-highlight autox1px rgb(0, 0, 0); span::after.nav-highlight autox1px rgb(0, 0, 0).
 
-Child layers that carry the look: div 358x371.8 border 1px solid oklch(0 0 none / 0.16); button 358x61.8 border 1px solid oklch(0 0 none / 0.16); span::after autox1px background #000000.
+Child layers that carry the look: div 358x371.8 border 1px solid oklch(0 0 none / 0.16); button 358x61.8 border 1px solid oklch(0 0 none / 0.16); span::after autox1px background #000000 `light.theme.fg.default`.
 
 ![Mobile nav overlay default](components/crops/m-drawer-default.png)
 
 #### Mobile hero headline
 The masthead at 390 wide. Read as `m-hero-h1` on the home page at 390 wide.
 
-**Values (default).** size 358 x 72; background transparent; text figmaSans 36/36 400, #000000.
+**Values (default).** size 358 x 72; background transparent; text figmaSans 36/36 400, #000000 `light.theme.fg.default`.
 
 ![Mobile hero headline default](components/crops/m-hero-h1-default.png)
 
@@ -706,21 +704,21 @@ The hero "Get started" pill at 390 wide; measured never followed. Read as `m-her
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 196.75 x 76.8; padding 24px 32px; radius 16px; background #000000; text figmaSans 24/28.8 400, #ffffff `component.productShell.comm-signup-fill`; transition background 0.18s ease-out, box-shadow 0.18s ease-out; icon 36 x 36, #ffffff `component.productShell.comm-signup-fill` |
+| default | size 196.75 x 76.8; padding 24px 32px; radius 16px; background #000000 `light.theme.fg.default`; text figmaSans 24/28.8 400, #ffffff `light.theme.bg`; transition background 0.18s ease-out, box-shadow 0.18s ease-out; icon 36 x 36, #ffffff `light.theme.bg` |
 | hover | background oklab(0 0 0 / 0.946565) |
-| focus-visible | outline 2px dashed #000000, offset 4px |
+| focus-visible | outline 2px dashed #000000 `light.theme.fg.default`, offset 4px |
 | pressed | background oklch(0 0 none / 0.85) |
 
 ![Mobile hero CTA default](components/crops/m-hero-cta-default.png) ![Mobile hero CTA hover](components/crops/m-hero-cta-hover.png) ![Mobile hero CTA focus-visible](components/crops/m-hero-cta-focus-visible.png) ![Mobile hero CTA pressed](components/crops/m-hero-cta-pressed.png)
 
 ### Footer
 
-The page footer: sitemap columns, social icons and the 'English' locale button.
+The page footer: sitemap columns, social icons and the 'English' locale button. Its field paints black directly, not through a theme scope.
 
 #### Footer
 The page footer: product/use-case/resource columns, social icons and the locale button. Read as `footer` on the home page.
 
-**Values (default).** size 1440 x 1261.47; padding 120px 0px; border T: 1px solid rgba(255, 255, 255, 0.16); background #000000; text figmaMono 16/20.8 400, rgba(255, 255, 255, 0.6).
+**Values (default).** size 1440 x 1261.47; padding 120px 0px; border T: 1px solid rgba(255, 255, 255, 0.16); background #000000 `light.theme.fg.default`; text figmaMono 16/20.8 400, rgba(255, 255, 255, 0.6).
 
 ![Footer default](components/crops/footer-default.png)
 
@@ -729,8 +727,8 @@ A footer sitemap link; measured, never followed. Read as `footer-link` on the ho
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 56.17 x 20; background transparent; text figmaSans 16/23.2 320, #ffffff `component.productShell.comm-signup-fill` |
-| focus-visible | outline 2px dashed #ffffff `component.productShell.comm-signup-fill`, offset 4px; layers a.fig-1czkxn0 56.2x20.0 2px dashed rgb(255, 255, 255) offset 4px |
+| default (same: hover, pressed) | size 56.17 x 20; background transparent; text figmaSans 16/23.2 320, #ffffff `light.theme.bg` |
+| focus-visible | outline 2px dashed #ffffff `light.theme.bg`, offset 4px; layers a.fig-1czkxn0 56.2x20.0 2px dashed rgb(255, 255, 255) offset 4px |
 
 ![Footer link default](components/crops/footer-link-default.png) ![Footer link hover](components/crops/footer-link-hover.png) ![Footer link focus-visible](components/crops/footer-link-focus-visible.png) ![Footer link pressed](components/crops/footer-link-pressed.png)
 
@@ -739,21 +737,10 @@ The "English" locale button in the footer — a local UI toggle for the locale l
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 118 x 39.19; padding 8px; background transparent; text figmaSans 16/23.2 400, #ffffff `component.productShell.comm-signup-fill`; icon 22 x 22, #ffffff `component.productShell.comm-signup-fill` |
-| focus-visible | outline 2px dashed #ffffff `component.productShell.comm-signup-fill`, offset 4px; layers button.fig-q9rm4z 118.0x39.2 2px dashed rgb(255, 255, 255) offset 4px |
+| default (same: hover, pressed) | size 118 x 39.19; padding 8px; background transparent; text figmaSans 16/23.2 400, #ffffff `light.theme.bg`; icon 22 x 22, #ffffff `light.theme.bg` |
+| focus-visible | outline 2px dashed #ffffff `light.theme.bg`, offset 4px; layers button.fig-q9rm4z 118.0x39.2 2px dashed rgb(255, 255, 255) offset 4px |
 
 ![Locale button default](components/crops/locale-btn-default.png) ![Locale button hover](components/crops/locale-btn-hover.png) ![Locale button focus-visible](components/crops/locale-btn-focus-visible.png) ![Locale button pressed](components/crops/locale-btn-pressed.png)
-
-### Dark sections
-
-The black-painted bands inside the light marketing pages (the closing call-to-action fields) — painted directly, not through a theme scope. They are not the declared :root[data-theme="dark"] layer, which no public page resolved.
-
-#### Dark section
-A black-painted band inside the light page (the closing call-to-action field); its fill is painted directly, not through a theme scope. Read as `dark-section` on the home page.
-
-**Values (default).** size 901.33 x 96.78; background transparent; text figmaSans 44/48.4 400, #000000.
-
-![Dark section default](components/crops/dark-section-default.png)
 
 ## Icons
 
@@ -785,7 +772,7 @@ Figma's product is the editor: the canvas, files, FigJam boards, Dev Mode inside
 
 ### Themes
 
-Every public figma.com page paints the `:root` light token layer — the marketing pages, /community, /login and /signup all resolved `--fig-theme-bg: #ffffff` on `<html>` without a `data-theme` attribute. The stylesheet declares a complete `:root[data-theme="dark"]` re-declaration of the `--fig-theme-*` roles (fg/bg invert, the primary button becomes a white pill, the alpha washes switch to white-on-black), but no public page carried the attribute while captured: the `dark` token set resolves declarations the site ships but did not paint. The black-painted bands inside the light pages (the closing call-to-action fields) are painted directly, not through a theme scope — they are measured as components, not a dark theme.
+Every public figma.com page paints the `:root` light token layer — the marketing pages, /community, /login and /signup all resolved `--fig-theme-bg: #ffffff` on `<html>` without a `data-theme` attribute. The stylesheet declares a complete `:root[data-theme="dark"]` re-declaration of the `--fig-theme-*` roles (fg/bg invert, the primary button becomes a white pill, the alpha washes switch to white-on-black), but no public page carried the attribute while captured: the `dark` token set resolves declarations the site ships but did not paint. The one black-painted surface on the light pages is the footer, measured as a component, not a dark theme.
 
 ### Fonts
 

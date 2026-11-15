@@ -40,28 +40,29 @@ Each rule links the screenshot or crop that shows it, under [Do and don't](#do-a
 
 ### Using tokens
 
-| Role | light |
-|---|---|
-| page | #ffffff `light.theme.bg` |
-| surface | rgba(0, 0, 0, 0.04) `light.theme.card.bg` |
-| text | #000000 `light.theme.fg.default` |
-| muted | rgba(0, 0, 0, 0.54) `light.theme.fg.muted` |
-| accent | #000000 `light.theme.btn.primary.bg.default` |
-| border | rgba(0, 0, 0, 0.16) `light.theme.border.default` |
+| Role | light | dark |
+|---|---|---|
+| page | #ffffff `light.theme.bg` | #000000 `dark.theme.bg` |
+| surface | rgba(0, 0, 0, 0.04) `light.theme.card.bg` | rgba(255, 255, 255, 0.08) `dark.theme.card.bg` |
+| text | #000000 `light.theme.fg.default` | #ffffff `dark.theme.fg.default` |
+| muted | rgba(0, 0, 0, 0.54) `light.theme.fg.muted` | rgba(255, 255, 255, 0.54) `dark.theme.fg.muted` |
+| accent | #000000 `light.theme.btn.primary.bg.default` | #ffffff `dark.theme.btn.primary.bg.default` |
+| border | rgba(0, 0, 0, 0.16) `light.theme.border.default` | rgba(255, 255, 255, 0.16) `dark.theme.border.default` |
 
 Fonts: `core.font.family.sans` is figmaSans, then 5 fallbacks; `core.font.family.mono` is figmaMono, then 4 fallbacks. Scales, counted as [DESIGN.md](DESIGN.md) holds them: no type styles under `core.typography`, 13 radius steps (`core.radius`), 13 spacing steps (`core.spacing`).
 
 ### Using components
 
-Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 181 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
+Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 180 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
 
 ### Accessibility
 
 | Theme | text on page | text on surface | muted on page | muted on surface |
 |---|---|---|---|---|
 | light | 21.00:1 pass | 19.22:1 pass | 4.58:1 pass | 4.49:1 fail |
+| dark | 21.00:1 pass | 18.35:1 pass | 6.05:1 pass | 5.98:1 pass |
 
-3 of 4 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Not checked, no palette: dark (declared). Focus tokens: `light.border.focusRing` #000000.
+7 of 8 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Focus tokens: `light.border.focusRing` #000000.
 
 <!-- brief:end -->
 
@@ -81,7 +82,7 @@ Scorecard: **12 of 25 met, 13 partly, 0 missing**; C5, V1, V2 are optional for a
 | F12 Elevation | Partly | Two declared levels: elevation.1 (rgba(0,0,0,0.1) 0 4px 32px) and elevation.2 (rgba(0,0,0,0.1) 0 24px 70px), each with a -Shadow alias - tied to the dropdown/popover layers they were measured on. The rubric's 3-5 levels are not all present; the public surface simply declares two. |
 | F13 Motion | Partly | Declared duration scale (180/250/400ms as --fig-animation-*) plus the measured control transition signature (background 0.18s + box-shadow 0.18s ease-out; header background 0.4s cubic-bezier(0.8,0,0.2,1)) and a motion.control transition token. The reduced-motion probe is recorded in raw: under prefers-reduced-motion the probed header CTA keeps its 0.18s transition - Figma does not strip control transitions there; no broader reduced-motion restyle was observable on public pages. |
 | F14 Layout | Partly | Two declared grid systems: --fig-grid-* (12 columns, 16px gutter, 40px margin, 1520px max content) and the --f-* page frame (48 columns, 1440px max, 53.3px gutters, 120px block padding), plus per-breakpoint redeclarations harvested at 480/560/768/960/1024/1280/1440/1600/1920px in css-vars.json. No z-index layer tokens were resolved. |
-| F15 Contrast | Partly | Script: primary text passes; secondary fails 1 pair, worst 4.49:1 light muted (light.theme.fg.muted) on surface (light.theme.card.bg); dark (declared) not checked (no palette) |
+| F15 Contrast | Partly | Script: primary text passes; secondary fails 1 pair, worst 4.49:1 light muted (light.theme.fg.muted) on surface (light.theme.card.bg) |
 | C1 Component coverage | Partly | About 13 of 19 checklist components paint publicly: button (nav/hero/plan/login/signup/contact/careers/download/next CTAs), icon button (comm-like, comm-banner-nav, m-menu-btn, blog-search, locale-btn), link (nav/footer/job/dropdown items), text field (contact first/last/email/topic, login+signup email, comm-search, blog-subscribe), text area (prompt-textarea), select (seat-combo combobox), switch (feature-switch), tabs (price-toggle segmented billing control, blog-topics, comm-cat chips), menu (nav-panel + mobile drawer), card (plan-card, comm-card, login/signup panels), list row (footer lists, blog rows, job-link rows), badge (theme.badge + comm-cat chips). Checkbox, radio, tooltip, dialog, toast, table and avatar never appear signed out - the pricing comparison grid renders as feature-acc accordions, not a checklist table. |
 | C2 States | Partly | Beyond default: real pointer hover, real keyboard focus-visible, DevTools-forced pressed, opened (dropdowns, drawer, accordions), focused and filled (typed-then-cleared) across 181 states on 64 components. Disabled, loading, error and validation states are absent rather than measured - nothing was submitted - and selected/toggled states (annual billing, alternate seats) were deliberately never switched because they re-price the grid. |
 | P1 Patterns | Partly | patterns.md covers the marketing chrome + mega-dropdowns, the home hero/section grammar, the pricing grid + comparison accordions, the contact multi-step form, the community/login/signup app-shell pattern, prompt surfaces, mobile chrome + drawer, motion/focus conventions and the declared-not-painted dark theme. Empty/loading/error, destructive confirmation, onboarding and search-results patterns are not reachable on the signed-out public surface. |
@@ -132,16 +133,17 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (no standalone SV
 3. **Do keep the CTA a black slab.** The primary action is a 46px-high black button at `radius.cta` 8px, white ink, hover softening to 85% black — never a pill, never a brand colour. See [nav-cta](components/crops/nav-cta-default.png) and [plan-cta](components/crops/plan-cta-default.png).
 4. **Do pair the two voices.** figmaSans carries everything from the 88px display1 to 12px labels on one variable face; figmaMono owns code and metric surfaces. See [hero-h1](components/crops/hero-h1-default.png).
 5. **Don't style the signed-in product from this package.** The editor and every post-login surface was never reached; `component.productShell.*` marks the app-shell measurements that do not share the marketing `--fig-*` layer. See [login-light-default](screenshots/login-light-default.png).
-6. **Don't treat the dark set as photographed.** Every `dark.*` token resolves a declaration the site ships under `:root[data-theme="dark"]` but no public page painted; the black closing bands in light pages are painted directly. See [dark-section](components/crops/dark-section-default.png).
+6. **Don't treat the dark set as photographed.** Every `dark.*` token resolves a declaration the site ships under `:root[data-theme="dark"]` but no public page painted; the only black-painted surface on the light pages is the footer's field. See [footer](components/crops/footer-default.png).
 7. **Don't fabricate form outcomes.** Contact, login, signup and the Make prompt were typed into then cleared — validation, error and success states are unverified. See [field-email](components/crops/field-email-filled.png).
 8. **Don't copy the brand.** The Figma mark, product glyphs and the demo imagery in captures are Figma's published artwork; borrow structure and proportion, not identity. See [mkt-logo](components/crops/mkt-logo-default.png).
 
 ## Rebuild
 
 ```sh
-PLAYWRIGHT=<playwright index.mjs> node tools/capture/public/public.mjs          # screenshots
-PLAYWRIGHT=<playwright index.mjs> node tools/capture/vars.mjs                   # raw/css-vars.json
-PLAYWRIGHT=<playwright index.mjs> node tools/capture/public/measure.mjs         # raw/components-computed.json
+RAW=~/.design-systems/figma/raw-shots PLAYWRIGHT=<playwright index.mjs> node tools/capture/public/public.mjs   # -> RAW full-colour shots
+python3 tools/capture/quantize.py ~/.design-systems/figma/raw-shots           # stitches + quantises -> screenshots/
+PLAYWRIGHT=<playwright index.mjs> node tools/capture/vars.mjs                 # raw/css-vars.json
+PLAYWRIGHT=<playwright index.mjs> node tools/capture/public/measure.mjs       # raw/components-computed.json
 PLAYWRIGHT=<playwright index.mjs> node tools/capture/public/build-measurements.mjs
 python3 tools/build_component_tokens.py && python3 tools/build_tokens.py
 python3 tools/build_style_guide.py && python3 tools/build_components_md.py

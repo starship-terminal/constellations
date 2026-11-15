@@ -1,19 +1,20 @@
 {
- "readAt": "2026-11-14",
+ "readAt": "2026-11-15",
  "source": "the stylesheet bodies read during a live signed-out load of www.figma.com / (the linked /_netlify/_next/static/css bundles from network responses plus the inline <style data-emotion> blocks, re-parsed with CSSStyleSheet); resolved in a probe carrying the real sheets on :root (light) and on :root[data-theme=\"dark\"] (the site's declared dark layer, which no public page painted while captured), at 1440 x 900",
  "sheets": [
   "https://www.figma.com/_netlify/_next/static/css/617e0bc399c83bea.css (1032 bytes)",
+  "https://f.vimeocdn.com/p/4.46.150/css/player.css (238277 bytes)",
   "inline-0 (54 bytes)",
   "inline-1 (12610 bytes)",
   "inline-2 (125894 bytes)",
-  "inline-3 (40126 bytes)"
+  "inline-3 (24220 bytes)"
  ],
  "counts": {
-  "rules": 63,
+  "rules": 60,
   "fonts": 4,
   "names": {
-   "theme": 130,
-   "app": 4,
+   "theme": 128,
+   "app": 7,
    "skins": 0,
    "vendor": 0,
    "utility": 0,
@@ -22,6 +23,11 @@
   "bySelector": {
    "[theme] .__variable_1a606a": 1,
    "[theme] .__variable_48aa6c": 1,
+   "[app] .ChromecastButton_module_chromecastButton__6a7b0286": 1,
+   "[app] .SpeedMenu_module_speedMenuPopover__74402423": 1,
+   "[app] .PopoverMenu_module_menu__9ead6f2c": 1,
+   "[app] :root": 1,
+   "[app] .AnimatedClock_module_hands__8976d762.AnimatedClock_module_reverse__8976d762": 1,
    "[theme] :root": 210,
    "[theme] @media (min-width: 560px) :root": 6,
    "[theme] @media (min-width: 768px) :root": 2,
@@ -37,19 +43,11 @@
    "[theme] @media (min-width: 768px) .fig-1p24k06": 1,
    "[theme] @media (min-width: 1024px) .fig-1p24k06": 4,
    "[theme] @media (min-width: 1280px) .fig-1p24k06": 4,
-   "[theme] .fig-8mvyzt": 13,
-   "[theme] .fig-1d61hkn": 13,
-   "[theme] .fig-1dfrfw8": 2,
-   "[theme] @media (min-width: 560px) .fig-1dfrfw8": 1,
-   "[theme] @media (min-width: 768px) .fig-1dfrfw8": 1,
-   "[theme] @media (min-width: 960px) .fig-1dfrfw8": 1,
-   "[theme] @media (min-width: 1280px) .fig-1dfrfw8": 1,
-   "[theme] @media (min-width: 1440px) .fig-1dfrfw8": 1,
-   "[theme] @media (min-width: 1920px) .fig-1dfrfw8": 1,
-   "[app] .fig-17xhnpg": 1,
    "[app] .fig-4jd8wh": 2,
    "[app] .fig-htl2p6": 2,
-   "[app] .fig-bxvc4r": 1
+   "[app] .fig-bxvc4r": 1,
+   "[theme] .fig-8mvyzt": 13,
+   "[theme] .fig-1d61hkn": 13
   }
  },
  "errors": [],
@@ -895,91 +893,51 @@
     "--f-primary-transparent-color": "rgba(255, 255, 255, 0.24)"
    },
    "bin": "theme"
-  },
-  {
-   "file": "inline-3",
-   "selector": ".fig-1dfrfw8",
-   "context": [],
-   "properties": {
-    "--slide-spacing": "0rem",
-    "--slide-size": "calc(calc(var(--f-col-width) * 1) - var(--f-gutter))"
-   },
-   "bin": "theme"
-  },
-  {
-   "file": "inline-3",
-   "selector": ".fig-1dfrfw8",
-   "context": [
-    "@media (min-width: 560px)"
-   ],
-   "properties": {
-    "--slide-size": "calc(var(--f-col-width) * 6)"
-   },
-   "bin": "theme"
-  },
-  {
-   "file": "inline-3",
-   "selector": ".fig-1dfrfw8",
-   "context": [
-    "@media (min-width: 768px)"
-   ],
-   "properties": {
-    "--slide-size": "calc(var(--f-col-width) * 10)"
-   },
-   "bin": "theme"
-  },
-  {
-   "file": "inline-3",
-   "selector": ".fig-1dfrfw8",
-   "context": [
-    "@media (min-width: 960px)"
-   ],
-   "properties": {
-    "--slide-size": "calc(var(--f-col-width) * 14)"
-   },
-   "bin": "theme"
-  },
-  {
-   "file": "inline-3",
-   "selector": ".fig-1dfrfw8",
-   "context": [
-    "@media (min-width: 1280px)"
-   ],
-   "properties": {
-    "--slide-size": "calc(var(--f-col-width) * 12)"
-   },
-   "bin": "theme"
-  },
-  {
-   "file": "inline-3",
-   "selector": ".fig-1dfrfw8",
-   "context": [
-    "@media (min-width: 1440px)"
-   ],
-   "properties": {
-    "--slide-size": "calc(var(--f-col-width) * 14)"
-   },
-   "bin": "theme"
-  },
-  {
-   "file": "inline-3",
-   "selector": ".fig-1dfrfw8",
-   "context": [
-    "@media (min-width: 1920px)"
-   ],
-   "properties": {
-    "--slide-size": "calc(var(--f-col-width) * 14)"
-   },
-   "bin": "theme"
   }
  ],
  "app": [
   {
-   "file": "inline-3",
-   "selector": ".fig-17xhnpg",
+   "file": "https://f.vimeocdn.com/p/4.46.150/css/player.css",
+   "selector": ".ChromecastButton_module_chromecastButton__6a7b0286",
    "context": [],
    "properties": {
-    "--radius": "1rem"
+    "--connected-color": "var(--color-two)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://f.vimeocdn.com/p/4.46.150/css/player.css",
+   "selector": ".SpeedMenu_module_speedMenuPopover__74402423",
+   "context": [],
+   "properties": {
+    "--menu-width": "16em"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://f.vimeocdn.com/p/4.46.150/css/player.css",
+   "selector": ".PopoverMenu_module_menu__9ead6f2c",
+   "context": [],
+   "properties": {
+    "--menu-transition-settings": "height 200ms ease,max-height 200ms ease"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://f.vimeocdn.com/p/4.46.150/css/player.css",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--clock-rotate-direction": "1"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://f.vimeocdn.com/p/4.46.150/css/player.css",
+   "selector": ".AnimatedClock_module_hands__8976d762.AnimatedClock_module_reverse__8976d762",
+   "context": [],
+   "properties": {
+    "--clock-rotate-direction": "-1"
    },
    "bin": "app"
   },
@@ -1053,10 +1011,15 @@
  ],
  "resolved": {
   "dark": {
+   "--clock-rotate-direction": {
+    "raw": "1",
+    "kind": "number",
+    "value": 1
+   },
    "--f-col-width": {
     "raw": "calc(min(100vw, 1440px) / 48)",
     "kind": "dimension",
-    "value": "26.6562px",
+    "value": "30px",
     "note": "viewport-relative, resolved at 1440 x 900"
    },
    "--f-columns": {
@@ -1067,7 +1030,7 @@
    "--f-gutter": {
     "raw": "calc(calc(min(100vw, 1440px) / 48) * 2)",
     "kind": "dimension",
-    "value": "53.3281px",
+    "value": "60px",
     "note": "viewport-relative, resolved at 1440 x 900"
    },
    "--f-lego-block-padding": {
@@ -1118,7 +1081,7 @@
    "--fig-grid-col-width": {
     "raw": "calc((min(100vw - (2.5rem * 2) - 0px, 95rem) - (1rem * (12 - 1))) / 12)",
     "kind": "dimension",
-    "value": "85.3281px",
+    "value": "98.6562px",
     "note": "viewport-relative, resolved at 1440 x 900"
    },
    "--fig-grid-columns": {
@@ -1580,10 +1543,15 @@
    }
   },
   "light": {
+   "--clock-rotate-direction": {
+    "raw": "1",
+    "kind": "number",
+    "value": 1
+   },
    "--f-col-width": {
     "raw": "calc(min(100vw, 1440px) / 48)",
     "kind": "dimension",
-    "value": "26.6562px",
+    "value": "30px",
     "note": "viewport-relative, resolved at 1440 x 900"
    },
    "--f-columns": {
@@ -1594,7 +1562,7 @@
    "--f-gutter": {
     "raw": "calc(calc(min(100vw, 1440px) / 48) * 2)",
     "kind": "dimension",
-    "value": "53.3281px",
+    "value": "60px",
     "note": "viewport-relative, resolved at 1440 x 900"
    },
    "--f-lego-block-padding": {
@@ -1645,7 +1613,7 @@
    "--fig-grid-col-width": {
     "raw": "calc((min(100vw - (2.5rem * 2) - 0px, 95rem) - (1rem * (12 - 1))) / 12)",
     "kind": "dimension",
-    "value": "85.3281px",
+    "value": "98.6562px",
     "note": "viewport-relative, resolved at 1440 x 900"
    },
    "--fig-grid-columns": {
@@ -1780,8 +1748,8 @@
    },
    "--fig-theme-badge-bg": {
     "raw": "color-mix(in oklch, #000000, transparent 92%)",
-    "kind": "other",
-    "note": "colour space not converted: oklch(0 0 none / 0.08)"
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0.08)"
    },
    "--fig-theme-badge-fg": {
     "raw": "#000000",
@@ -1795,23 +1763,23 @@
    },
    "--fig-theme-border": {
     "raw": "color-mix(in oklch, #000000, transparent 84%)",
-    "kind": "other",
-    "note": "colour space not converted: oklch(0 0 none / 0.16)"
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0.16)"
    },
    "--fig-theme-border-hover": {
     "raw": "color-mix(in oklch, #000000, transparent 60%)",
-    "kind": "other",
-    "note": "colour space not converted: oklch(0 0 none / 0.4)"
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0.4)"
    },
    "--fig-theme-btn-ghost-bg": {
     "raw": "color-mix(in oklch, #000000, transparent 100%)",
-    "kind": "other",
-    "note": "colour space not converted: oklch(0 0 none / 0)"
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0)"
    },
    "--fig-theme-btn-ghost-bg-hover": {
     "raw": "color-mix(in oklch, #000000, transparent 96%)",
-    "kind": "other",
-    "note": "colour space not converted: oklch(0 0 none / 0.04)"
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0.04)"
    },
    "--fig-theme-btn-primary-bg": {
     "raw": "#000000",
@@ -1820,8 +1788,8 @@
    },
    "--fig-theme-btn-primary-bg-hover": {
     "raw": "color-mix(in oklch, #000000, transparent 15%)",
-    "kind": "other",
-    "note": "colour space not converted: oklch(0 0 none / 0.85)"
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0.85)"
    },
    "--fig-theme-btn-primary-fg": {
     "raw": "#FFFFFF",
@@ -1830,8 +1798,8 @@
    },
    "--fig-theme-btn-secondary-bg": {
     "raw": "color-mix(in oklch, #000000, transparent 100%)",
-    "kind": "other",
-    "note": "colour space not converted: oklch(0 0 none / 0)"
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0)"
    },
    "--fig-theme-btn-secondary-fg": {
     "raw": "#000000",
@@ -1840,13 +1808,13 @@
    },
    "--fig-theme-btn-transparent-bg": {
     "raw": "color-mix(in oklch, #000000, transparent 96%)",
-    "kind": "other",
-    "note": "colour space not converted: oklch(0 0 none / 0.04)"
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0.04)"
    },
    "--fig-theme-btn-transparent-bg-hover": {
     "raw": "color-mix(in oklch, #000000, transparent 92%)",
-    "kind": "other",
-    "note": "colour space not converted: oklch(0 0 none / 0.08)"
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0.08)"
    },
    "--fig-theme-btn-transparent-fg": {
     "raw": "#000000",
@@ -1855,8 +1823,8 @@
    },
    "--fig-theme-card-bg": {
     "raw": "color-mix(in oklch, #000000, transparent 96%)",
-    "kind": "other",
-    "note": "colour space not converted: oklch(0 0 none / 0.04)"
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0.04)"
    },
    "--fig-theme-fg": {
     "raw": "#000000",
@@ -1865,8 +1833,8 @@
    },
    "--fig-theme-fg-muted": {
     "raw": "color-mix(in oklch, #000000, transparent 46%)",
-    "kind": "other",
-    "note": "colour space not converted: oklch(0 0 none / 0.54)"
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0.54)"
    },
    "--fig-theme-form-error-bg": {
     "raw": "#972121",
@@ -1880,13 +1848,13 @@
    },
    "--fig-theme-form-input-bg": {
     "raw": "color-mix(in oklch, #000000, transparent 92%)",
-    "kind": "other",
-    "note": "colour space not converted: oklch(0 0 none / 0.08)"
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0.08)"
    },
    "--fig-theme-form-placeholder": {
     "raw": "color-mix(in oklch, #000000, transparent 46%)",
-    "kind": "other",
-    "note": "colour space not converted: oklch(0 0 none / 0.54)"
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0.54)"
    },
    "--fig-typography-lh-loose": {
     "raw": "1.45",
