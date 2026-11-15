@@ -2048,21 +2048,21 @@
   "hm-h1": {
    "states": {
     "default": {
-     "tag": "div",
-     "classes": "dds-flex dds-no-scrollbar dds-items-center dds-mx-[-12px]",
-     "text": "For you Dining Movies Events Comedy Stores Activities Play",
+     "tag": "span",
+     "classes": "dds-text-primary dds-text-base dds-font-medium text-center",
+     "text": "Artists in your District",
      "rect": {
-      "x": 383.2,
-      "y": 17,
-      "w": 728,
-      "h": 36
+      "x": 88,
+      "y": 115,
+      "w": 263,
+      "h": 20
      },
      "style": {
-      "display": "flex",
+      "display": "block",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "728px",
-      "height": "36px",
+      "width": "263px",
+      "height": "20px",
       "minWidth": "auto",
       "maxWidth": "none",
       "minHeight": "auto",
@@ -2074,12 +2074,12 @@
       "marginRight": "0px",
       "marginBottom": "0px",
       "marginLeft": "0px",
-      "gap": "8px",
-      "rowGap": "8px",
-      "columnGap": "8px",
+      "gap": "normal",
+      "rowGap": "normal",
+      "columnGap": "normal",
       "flexDirection": "row",
-      "alignItems": "center",
-      "justifyContent": "space-around",
+      "alignItems": "normal",
+      "justifyContent": "normal",
       "gridTemplateColumns": "none",
       "borderTopWidth": "0px",
       "borderTopStyle": "solid",
@@ -2106,9 +2106,9 @@
       "outlineColor": "rgb(19, 19, 22)",
       "outlineOffset": "0px",
       "fontFamily": "BeVietnamPro, sans-serif",
-      "fontSize": "16px",
-      "fontWeight": "400",
-      "lineHeight": "24px",
+      "fontSize": "24px",
+      "fontWeight": "600",
+      "lineHeight": "20px",
       "letterSpacing": "normal",
       "textTransform": "none",
       "color": "rgb(19, 19, 22)",
@@ -2123,79 +2123,9 @@
       "cursor": "auto",
       "opacity": "1",
       "transform": "none",
-      "overflow": "auto",
+      "overflow": "visible",
       "zIndex": "auto",
       "top": "auto"
-     },
-     "paint": [
-      {
-       "node": "a.md:dds-px-2.dds-py-2",
-       "size": "84.0x36.0",
-       "bg": "rgb(234, 229, 255)",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
-       "radius": "9999px"
-      },
-      {
-       "node": "a.md:dds-px-2.dds-py-2",
-       "size": "84.0x36.0",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
-       "radius": "9999px"
-      },
-      {
-       "node": "a.md:dds-px-2.dds-py-2",
-       "size": "84.0x36.0",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
-       "radius": "9999px"
-      },
-      {
-       "node": "a.md:dds-px-2.dds-py-2",
-       "size": "84.0x36.0",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
-       "radius": "9999px"
-      },
-      {
-       "node": "a.md:dds-px-2.dds-py-2",
-       "size": "84.0x36.0",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
-       "radius": "9999px"
-      },
-      {
-       "node": "a.md:dds-px-2.dds-py-2",
-       "size": "84.0x36.0",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
-       "radius": "9999px"
-      },
-      {
-       "node": "a.md:dds-px-2.dds-py-2",
-       "size": "84.0x36.0",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
-       "radius": "9999px"
-      },
-      {
-       "node": "a.md:dds-px-2.dds-py-2",
-       "size": "84.0x36.0",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
-       "radius": "9999px"
-      }
-     ],
-     "textStyle": {
-      "node": "a.md:dds-px-2.dds-py-2",
-      "text": "For you",
-      "fontFamily": "BeVietnamPro, sans-serif",
-      "fontSize": "14px",
-      "lineHeight": "20px",
-      "fontWeight": "600",
-      "letterSpacing": "normal",
-      "color": "rgb(35, 18, 104)",
-      "textDecorationLine": "none",
-      "textTransform": "none"
-     },
-     "icon": {
-      "w": 0,
-      "h": 0,
-      "fill": "none",
-      "stroke": "none",
-      "color": "rgb(35, 18, 104)"
      },
      "crop": "components/crops/hm-h1-default.png",
      "via": "at rest"
@@ -2212,21 +2142,21 @@
   "hm-section": {
    "states": {
     "default": {
-     "tag": "div",
-     "classes": "dds-flex dds-no-scrollbar dds-items-center dds-mx-[-12px]",
-     "text": "For you Dining Movies Events Comedy Stores Activities Play",
+     "tag": "span",
+     "classes": "dds-text-primary dds-text-base dds-font-medium text-center",
+     "text": "Top Hindi movies near you",
      "rect": {
-      "x": 383.2,
-      "y": 17,
-      "w": 728,
-      "h": 36
+      "x": 88,
+      "y": 440,
+      "w": 314,
+      "h": 20
      },
      "style": {
-      "display": "flex",
+      "display": "block",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "728px",
-      "height": "36px",
+      "width": "314px",
+      "height": "20px",
       "minWidth": "auto",
       "maxWidth": "none",
       "minHeight": "auto",
@@ -2238,12 +2168,12 @@
       "marginRight": "0px",
       "marginBottom": "0px",
       "marginLeft": "0px",
-      "gap": "8px",
-      "rowGap": "8px",
-      "columnGap": "8px",
+      "gap": "normal",
+      "rowGap": "normal",
+      "columnGap": "normal",
       "flexDirection": "row",
-      "alignItems": "center",
-      "justifyContent": "space-around",
+      "alignItems": "normal",
+      "justifyContent": "normal",
       "gridTemplateColumns": "none",
       "borderTopWidth": "0px",
       "borderTopStyle": "solid",
@@ -2270,9 +2200,9 @@
       "outlineColor": "rgb(19, 19, 22)",
       "outlineOffset": "0px",
       "fontFamily": "BeVietnamPro, sans-serif",
-      "fontSize": "16px",
-      "fontWeight": "400",
-      "lineHeight": "24px",
+      "fontSize": "24px",
+      "fontWeight": "600",
+      "lineHeight": "20px",
       "letterSpacing": "normal",
       "textTransform": "none",
       "color": "rgb(19, 19, 22)",
@@ -2287,79 +2217,9 @@
       "cursor": "auto",
       "opacity": "1",
       "transform": "none",
-      "overflow": "auto",
+      "overflow": "visible",
       "zIndex": "auto",
       "top": "auto"
-     },
-     "paint": [
-      {
-       "node": "a.md:dds-px-2.dds-py-2",
-       "size": "84.0x36.0",
-       "bg": "rgb(234, 229, 255)",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
-       "radius": "9999px"
-      },
-      {
-       "node": "a.md:dds-px-2.dds-py-2",
-       "size": "84.0x36.0",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
-       "radius": "9999px"
-      },
-      {
-       "node": "a.md:dds-px-2.dds-py-2",
-       "size": "84.0x36.0",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
-       "radius": "9999px"
-      },
-      {
-       "node": "a.md:dds-px-2.dds-py-2",
-       "size": "84.0x36.0",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
-       "radius": "9999px"
-      },
-      {
-       "node": "a.md:dds-px-2.dds-py-2",
-       "size": "84.0x36.0",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
-       "radius": "9999px"
-      },
-      {
-       "node": "a.md:dds-px-2.dds-py-2",
-       "size": "84.0x36.0",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
-       "radius": "9999px"
-      },
-      {
-       "node": "a.md:dds-px-2.dds-py-2",
-       "size": "84.0x36.0",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
-       "radius": "9999px"
-      },
-      {
-       "node": "a.md:dds-px-2.dds-py-2",
-       "size": "84.0x36.0",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
-       "radius": "9999px"
-      }
-     ],
-     "textStyle": {
-      "node": "a.md:dds-px-2.dds-py-2",
-      "text": "For you",
-      "fontFamily": "BeVietnamPro, sans-serif",
-      "fontSize": "14px",
-      "lineHeight": "20px",
-      "fontWeight": "600",
-      "letterSpacing": "normal",
-      "color": "rgb(35, 18, 104)",
-      "textDecorationLine": "none",
-      "textTransform": "none"
-     },
-     "icon": {
-      "w": 0,
-      "h": 0,
-      "fill": "none",
-      "stroke": "none",
-      "color": "rgb(35, 18, 104)"
      },
      "crop": "components/crops/hm-section-default.png",
      "via": "at rest"
@@ -2381,7 +2241,7 @@
      "text": "Ramayana U | Hindi",
      "rect": {
       "x": 88,
-      "y": 167,
+      "y": 276,
       "w": 197.33,
       "h": 348.45
      },
@@ -2484,7 +2344,7 @@
      "text": "Ramayana U | Hindi",
      "rect": {
       "x": 88,
-      "y": 167,
+      "y": 276,
       "w": 197.33,
       "h": 348.45
      },
@@ -2692,7 +2552,7 @@
      "text": "Samay Raina",
      "rect": {
       "x": 88,
-      "y": 339.5,
+      "y": 167,
       "w": 190,
       "h": 222
      },
@@ -2787,7 +2647,7 @@
      "text": "Samay Raina",
      "rect": {
       "x": 88,
-      "y": 339.5,
+      "y": 167,
       "w": 190,
       "h": 222
      },
@@ -5806,15 +5666,98 @@
    "selector": "filter"
   },
   "at-h1": {
-   "states": {},
+   "states": {
+    "default": {
+     "tag": "span",
+     "classes": "dds-text-primary dds-text-3xl dds-font-bold",
+     "text": "Samay Raina",
+     "rect": {
+      "x": 989.4,
+      "y": 129,
+      "w": 350.58,
+      "h": 40
+     },
+     "style": {
+      "display": "block",
+      "position": "static",
+      "boxSizing": "border-box",
+      "width": "350.578px",
+      "height": "40px",
+      "minWidth": "auto",
+      "maxWidth": "none",
+      "minHeight": "auto",
+      "paddingTop": "0px",
+      "paddingRight": "0px",
+      "paddingBottom": "0px",
+      "paddingLeft": "0px",
+      "marginTop": "0px",
+      "marginRight": "0px",
+      "marginBottom": "0px",
+      "marginLeft": "0px",
+      "gap": "normal",
+      "rowGap": "normal",
+      "columnGap": "normal",
+      "flexDirection": "row",
+      "alignItems": "normal",
+      "justifyContent": "normal",
+      "gridTemplateColumns": "none",
+      "borderTopWidth": "0px",
+      "borderTopStyle": "solid",
+      "borderTopColor": "rgb(229, 231, 235)",
+      "borderRightWidth": "0px",
+      "borderRightStyle": "solid",
+      "borderRightColor": "rgb(229, 231, 235)",
+      "borderBottomWidth": "0px",
+      "borderBottomStyle": "solid",
+      "borderBottomColor": "rgb(229, 231, 235)",
+      "borderLeftWidth": "0px",
+      "borderLeftStyle": "solid",
+      "borderLeftColor": "rgb(229, 231, 235)",
+      "borderTopLeftRadius": "0px",
+      "borderTopRightRadius": "0px",
+      "borderBottomRightRadius": "0px",
+      "borderBottomLeftRadius": "0px",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "backdropFilter": "none",
+      "outlineWidth": "0px",
+      "outlineStyle": "none",
+      "outlineColor": "rgb(19, 19, 22)",
+      "outlineOffset": "0px",
+      "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+      "fontSize": "32px",
+      "fontWeight": "700",
+      "lineHeight": "40px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(19, 19, 22)",
+      "textDecorationLine": "none",
+      "textDecorationColor": "rgb(19, 19, 22)",
+      "textDecorationThickness": "auto",
+      "textUnderlineOffset": "auto",
+      "transitionProperty": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "transitionDelay": "0s",
+      "cursor": "auto",
+      "opacity": "1",
+      "transform": "none",
+      "overflow": "visible",
+      "zIndex": "auto",
+      "top": "auto"
+     },
+     "crop": "components/crops/at-h1-default.png",
+     "via": "at rest"
+    }
+   },
    "page": "artist",
    "run": "2026-11-15",
    "url": "https://www.district.in/events/samay-raina/artist",
    "title": "Artist name",
    "group": "Event / artist detail",
    "desc": "The artist page display name.",
-   "selector": "artist h1",
-   "missing": true
+   "selector": "artist h1"
   },
   "at-show": {
    "states": {
@@ -6501,27 +6444,27 @@
    "url": "https://www.district.in/events/samay-raina/artist",
    "title": "Book CTA",
    "group": "Event / artist detail",
-   "desc": "A booking button on the artist page; measured, never pressed — booking gates on the Zomato account.",
-   "selector": "book button"
+   "desc": "The booking link on the artist page — the show card itself navigates to the ticket page; measured at every paintable state, never followed — booking gates on the Zomato account.",
+   "selector": "booking card-link"
   },
   "tk-h1": {
    "states": {
     "default": {
-     "tag": "h2",
-     "classes": "dds-tracking-tight dds-text-lg dds-font-semibold dds-text-xl",
-     "text": "About",
+     "tag": "h3",
+     "classes": "dds-tracking-tight dds-text-2xl dds-font-bold dds-overflow-hidden",
+     "text": "All Stars Live",
      "rect": {
-      "x": 120,
-      "y": 680,
-      "w": 688,
-      "h": 32
+      "x": 104,
+      "y": 113,
+      "w": 169.13,
+      "h": 38
      },
      "style": {
-      "display": "block",
+      "display": "flow-root",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "688px",
-      "height": "32px",
+      "width": "169.125px",
+      "height": "38px",
       "minWidth": "auto",
       "maxWidth": "none",
       "minHeight": "auto",
@@ -6565,10 +6508,10 @@
       "outlineColor": "rgb(19, 19, 22)",
       "outlineOffset": "0px",
       "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
-      "fontSize": "24px",
-      "fontWeight": "600",
-      "lineHeight": "32px",
-      "letterSpacing": "-0.6px",
+      "fontSize": "28px",
+      "fontWeight": "700",
+      "lineHeight": "normal",
+      "letterSpacing": "-0.7px",
       "textTransform": "none",
       "color": "rgb(19, 19, 22)",
       "textDecorationLine": "none",
@@ -6582,7 +6525,7 @@
       "cursor": "auto",
       "opacity": "1",
       "transform": "none",
-      "overflow": "visible",
+      "overflow": "hidden",
       "zIndex": "auto",
       "top": "auto"
      },
@@ -6601,24 +6544,24 @@
   "tk-date": {
    "states": {
     "default": {
-     "tag": "div",
-     "classes": "flex flex-col h-screen w-full",
-     "text": "Gurugram Haryana All Stars Live Sun, 15 Nov, 1:00 PM About A comedy show where t",
+     "tag": "span",
+     "classes": "dds-text-offer dds-text-base dds-font-semibold !text-[14px]",
+     "text": "Sun, 15 Nov, 1:00 PM",
      "rect": {
-      "x": 0,
-      "y": 0,
-      "w": 1440,
-      "h": 900
+      "x": 104,
+      "y": 159,
+      "w": 162.13,
+      "h": 20
      },
      "style": {
-      "display": "flex",
+      "display": "block",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "1440px",
-      "height": "900px",
-      "minWidth": "0px",
+      "width": "162.125px",
+      "height": "20px",
+      "minWidth": "auto",
       "maxWidth": "none",
-      "minHeight": "0px",
+      "minHeight": "auto",
       "paddingTop": "0px",
       "paddingRight": "0px",
       "paddingBottom": "0px",
@@ -6630,7 +6573,7 @@
       "gap": "normal",
       "rowGap": "normal",
       "columnGap": "normal",
-      "flexDirection": "column",
+      "flexDirection": "row",
       "alignItems": "normal",
       "justifyContent": "normal",
       "gridTemplateColumns": "none",
@@ -6656,17 +6599,17 @@
       "backdropFilter": "none",
       "outlineWidth": "0px",
       "outlineStyle": "none",
-      "outlineColor": "rgb(0, 0, 0)",
+      "outlineColor": "rgb(109, 73, 253)",
       "outlineOffset": "0px",
       "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
-      "fontSize": "14px",
-      "fontWeight": "400",
-      "lineHeight": "21px",
+      "fontSize": "16px",
+      "fontWeight": "600",
+      "lineHeight": "20px",
       "letterSpacing": "normal",
       "textTransform": "none",
-      "color": "rgb(0, 0, 0)",
+      "color": "rgb(109, 73, 253)",
       "textDecorationLine": "none",
-      "textDecorationColor": "rgb(0, 0, 0)",
+      "textDecorationColor": "rgb(109, 73, 253)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
       "transitionProperty": "all",
@@ -6676,142 +6619,32 @@
       "cursor": "auto",
       "opacity": "1",
       "transform": "none",
-      "overflow": "hidden auto",
+      "overflow": "visible",
       "zIndex": "auto",
       "top": "auto"
-     },
-     "paint": [
-      {
-       "node": "div.dds-w-full.dds-bg-primary",
-       "size": "1440.0x75.0",
-       "border": "B:1px solid rgba(0, 0, 0, 0.08)",
-       "bg": "rgb(255, 255, 255)",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.12) 0px 1px 4px 0px"
-      },
-      {
-       "node": "div.dds-ml-3.5.dds-mr-2",
-       "size": "1.4x30.0",
-       "bg": "rgb(209, 213, 219)"
-      },
-      {
-       "node": "button.dds-flex.dds-items-center",
-       "size": "200.0x52.0",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
-       "radius": "9999px"
-      },
-      {
-       "node": "div.dds-w-[42px].dds-h-[42px]",
-       "size": "42.0x42.0",
-       "bg": "rgb(209, 213, 219)",
-       "radius": "9999px"
-      },
-      {
-       "node": "div.dds-cursor-pointer.dds-flex",
-       "size": "0.0x0.0",
-       "border": "T:1px solid rgba(0, 0, 0, 0.16) | R:1px solid rgba(0, 0, 0, 0.16) | B:1px solid rgba(0, 0, 0, 0.16) | L:1px solid rgba(0, 0, 0, 0.16)",
-       "bg": "rgb(255, 255, 255)",
-       "radius": "12px"
-      },
-      {
-       "node": "div.dds-sticky.dds-left-0",
-       "size": "0.0x0.0",
-       "border": "B:1px solid rgba(0, 0, 0, 0.08)",
-       "bg": "rgb(255, 255, 255)",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.12) 0px 4px 4px -4px"
-      },
-      {
-       "node": "div.dds-cursor-pointer.dds-flex",
-       "size": "0.0x0.0",
-       "border": "T:1px solid rgba(0, 0, 0, 0.16) | R:1px solid rgba(0, 0, 0, 0.16) | B:1px solid rgba(0, 0, 0, 0.16) | L:1px solid rgba(0, 0, 0, 0.16)",
-       "bg": "rgb(255, 255, 255)",
-       "radius": "12px"
-      },
-      {
-       "node": "div.w-full.bg-white",
-       "size": "1440.0x977.0",
-       "bg": "rgb(255, 255, 255)"
-      },
-      {
-       "node": "div.dds-relative.dds-w-full",
-       "size": "340.0x453.0",
-       "bgImage": "linear-gradient(0deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.75) 100%), url(…)"
-      },
-      {
-       "node": "div.dds-relative.dds-w-full",
-       "size": "884.0x453.0",
-       "bgImage": "linear-gradient(0deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.75) 100%), url(…)"
-      },
-      {
-       "node": "div.dds-flex.dds-flex-col",
-       "size": "688.0x58.0",
-       "border": "T:1px solid rgba(0, 0, 0, 0.08) | R:1px solid rgba(0, 0, 0, 0.08) | B:1px solid rgba(0, 0, 0, 0.08) | L:1px solid rgba(0, 0, 0, 0.08)",
-       "bg": "rgb(255, 255, 255)",
-       "radius": "16px"
-      },
-      {
-       "node": "div.fixed.inset-x-0",
-       "size": "400.0x84.0",
-       "bg": "rgb(255, 255, 255)",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.04) 0px 8px 12px 0px",
-       "radius": "16px"
-      },
-      {
-       "node": "button.dds-flex.dds-items-center",
-       "size": "163.0x52.0",
-       "bg": "rgb(19, 19, 22)",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
-       "radius": "12px"
-      },
-      {
-       "node": "div.dds-flex.dds-flex-col",
-       "size": "400.0x151.0",
-       "border": "T:1px solid rgb(255, 255, 255) | R:1px solid rgb(255, 255, 255) | B:1px solid rgb(255, 255, 255) | L:1px solid rgb(255, 255, 255)",
-       "bg": "rgba(255, 255, 255, 0.4)",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.04) 0px 8px 12px 0px",
-       "radius": "24px"
-      }
-     ],
-     "textStyle": {
-      "node": "span.dds-text-primary.dds-text-lg",
-      "text": "Gurugram",
-      "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
-      "fontSize": "16px",
-      "lineHeight": "24px",
-      "fontWeight": "600",
-      "letterSpacing": "normal",
-      "color": "rgb(19, 19, 22)",
-      "textDecorationLine": "none",
-      "textTransform": "none"
-     },
-     "icon": {
-      "w": 32,
-      "h": 32,
-      "fill": "none",
-      "stroke": "none",
-      "color": "rgb(100, 68, 228)"
      },
      "crop": "components/crops/tk-date-default.png",
      "via": "at rest"
     },
     "hover": {
-     "tag": "div",
-     "classes": "flex flex-col h-screen w-full",
-     "text": "Gurugram Haryana All Stars Live Sun, 15 Nov, 1:00 PM About A comedy show where t",
+     "tag": "span",
+     "classes": "dds-text-offer dds-text-base dds-font-semibold !text-[14px]",
+     "text": "Sun, 15 Nov, 1:00 PM",
      "rect": {
-      "x": 0,
-      "y": 0,
-      "w": 1440,
-      "h": 900
+      "x": 104,
+      "y": 159,
+      "w": 162.13,
+      "h": 20
      },
      "style": {
-      "display": "flex",
+      "display": "block",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "1440px",
-      "height": "900px",
-      "minWidth": "0px",
+      "width": "162.125px",
+      "height": "20px",
+      "minWidth": "auto",
       "maxWidth": "none",
-      "minHeight": "0px",
+      "minHeight": "auto",
       "paddingTop": "0px",
       "paddingRight": "0px",
       "paddingBottom": "0px",
@@ -6823,7 +6656,7 @@
       "gap": "normal",
       "rowGap": "normal",
       "columnGap": "normal",
-      "flexDirection": "column",
+      "flexDirection": "row",
       "alignItems": "normal",
       "justifyContent": "normal",
       "gridTemplateColumns": "none",
@@ -6849,17 +6682,17 @@
       "backdropFilter": "none",
       "outlineWidth": "0px",
       "outlineStyle": "none",
-      "outlineColor": "rgb(0, 0, 0)",
+      "outlineColor": "rgb(109, 73, 253)",
       "outlineOffset": "0px",
       "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
-      "fontSize": "14px",
-      "fontWeight": "400",
-      "lineHeight": "21px",
+      "fontSize": "16px",
+      "fontWeight": "600",
+      "lineHeight": "20px",
       "letterSpacing": "normal",
       "textTransform": "none",
-      "color": "rgb(0, 0, 0)",
+      "color": "rgb(109, 73, 253)",
       "textDecorationLine": "none",
-      "textDecorationColor": "rgb(0, 0, 0)",
+      "textDecorationColor": "rgb(109, 73, 253)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
       "transitionProperty": "all",
@@ -6869,142 +6702,32 @@
       "cursor": "auto",
       "opacity": "1",
       "transform": "none",
-      "overflow": "hidden auto",
+      "overflow": "visible",
       "zIndex": "auto",
       "top": "auto"
-     },
-     "paint": [
-      {
-       "node": "div.dds-w-full.dds-bg-primary",
-       "size": "1440.0x75.0",
-       "border": "B:1px solid rgba(0, 0, 0, 0.08)",
-       "bg": "rgb(255, 255, 255)",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.12) 0px 1px 4px 0px"
-      },
-      {
-       "node": "div.dds-ml-3.5.dds-mr-2",
-       "size": "1.4x30.0",
-       "bg": "rgb(209, 213, 219)"
-      },
-      {
-       "node": "button.dds-flex.dds-items-center",
-       "size": "200.0x52.0",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
-       "radius": "9999px"
-      },
-      {
-       "node": "div.dds-w-[42px].dds-h-[42px]",
-       "size": "42.0x42.0",
-       "bg": "rgb(209, 213, 219)",
-       "radius": "9999px"
-      },
-      {
-       "node": "div.dds-cursor-pointer.dds-flex",
-       "size": "0.0x0.0",
-       "border": "T:1px solid rgba(0, 0, 0, 0.16) | R:1px solid rgba(0, 0, 0, 0.16) | B:1px solid rgba(0, 0, 0, 0.16) | L:1px solid rgba(0, 0, 0, 0.16)",
-       "bg": "rgb(255, 255, 255)",
-       "radius": "12px"
-      },
-      {
-       "node": "div.dds-sticky.dds-left-0",
-       "size": "0.0x0.0",
-       "border": "B:1px solid rgba(0, 0, 0, 0.08)",
-       "bg": "rgb(255, 255, 255)",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.12) 0px 4px 4px -4px"
-      },
-      {
-       "node": "div.dds-cursor-pointer.dds-flex",
-       "size": "0.0x0.0",
-       "border": "T:1px solid rgba(0, 0, 0, 0.16) | R:1px solid rgba(0, 0, 0, 0.16) | B:1px solid rgba(0, 0, 0, 0.16) | L:1px solid rgba(0, 0, 0, 0.16)",
-       "bg": "rgb(255, 255, 255)",
-       "radius": "12px"
-      },
-      {
-       "node": "div.w-full.bg-white",
-       "size": "1440.0x977.0",
-       "bg": "rgb(255, 255, 255)"
-      },
-      {
-       "node": "div.dds-relative.dds-w-full",
-       "size": "340.0x453.0",
-       "bgImage": "linear-gradient(0deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.75) 100%), url(…)"
-      },
-      {
-       "node": "div.dds-relative.dds-w-full",
-       "size": "884.0x453.0",
-       "bgImage": "linear-gradient(0deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.75) 100%), url(…)"
-      },
-      {
-       "node": "div.dds-flex.dds-flex-col",
-       "size": "688.0x58.0",
-       "border": "T:1px solid rgba(0, 0, 0, 0.08) | R:1px solid rgba(0, 0, 0, 0.08) | B:1px solid rgba(0, 0, 0, 0.08) | L:1px solid rgba(0, 0, 0, 0.08)",
-       "bg": "rgb(255, 255, 255)",
-       "radius": "16px"
-      },
-      {
-       "node": "div.fixed.inset-x-0",
-       "size": "400.0x84.0",
-       "bg": "rgb(255, 255, 255)",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.04) 0px 8px 12px 0px",
-       "radius": "16px"
-      },
-      {
-       "node": "button.dds-flex.dds-items-center",
-       "size": "163.0x52.0",
-       "bg": "rgb(19, 19, 22)",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
-       "radius": "12px"
-      },
-      {
-       "node": "div.dds-flex.dds-flex-col",
-       "size": "400.0x151.0",
-       "border": "T:1px solid rgb(255, 255, 255) | R:1px solid rgb(255, 255, 255) | B:1px solid rgb(255, 255, 255) | L:1px solid rgb(255, 255, 255)",
-       "bg": "rgba(255, 255, 255, 0.4)",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.04) 0px 8px 12px 0px",
-       "radius": "24px"
-      }
-     ],
-     "textStyle": {
-      "node": "span.dds-text-primary.dds-text-lg",
-      "text": "Gurugram",
-      "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
-      "fontSize": "16px",
-      "lineHeight": "24px",
-      "fontWeight": "600",
-      "letterSpacing": "normal",
-      "color": "rgb(19, 19, 22)",
-      "textDecorationLine": "none",
-      "textTransform": "none"
-     },
-     "icon": {
-      "w": 32,
-      "h": 32,
-      "fill": "none",
-      "stroke": "none",
-      "color": "rgb(100, 68, 228)"
      },
      "crop": "components/crops/tk-date-hover.png",
      "via": "mouse hover"
     },
     "focus-visible": {
-     "tag": "div",
-     "classes": "flex flex-col h-screen w-full",
-     "text": "Gurugram Haryana All Stars Live Sun, 15 Nov, 1:00 PM About A comedy show where t",
+     "tag": "span",
+     "classes": "dds-text-offer dds-text-base dds-font-semibold !text-[14px]",
+     "text": "Sun, 15 Nov, 1:00 PM",
      "rect": {
-      "x": 0,
-      "y": 0,
-      "w": 1440,
-      "h": 900
+      "x": 104,
+      "y": 159,
+      "w": 162.13,
+      "h": 20
      },
      "style": {
-      "display": "flex",
+      "display": "block",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "1440px",
-      "height": "900px",
-      "minWidth": "0px",
+      "width": "162.125px",
+      "height": "20px",
+      "minWidth": "auto",
       "maxWidth": "none",
-      "minHeight": "0px",
+      "minHeight": "auto",
       "paddingTop": "0px",
       "paddingRight": "0px",
       "paddingBottom": "0px",
@@ -7016,7 +6739,7 @@
       "gap": "normal",
       "rowGap": "normal",
       "columnGap": "normal",
-      "flexDirection": "column",
+      "flexDirection": "row",
       "alignItems": "normal",
       "justifyContent": "normal",
       "gridTemplateColumns": "none",
@@ -7042,17 +6765,17 @@
       "backdropFilter": "none",
       "outlineWidth": "0px",
       "outlineStyle": "none",
-      "outlineColor": "rgb(0, 0, 0)",
+      "outlineColor": "rgb(109, 73, 253)",
       "outlineOffset": "0px",
       "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
-      "fontSize": "14px",
-      "fontWeight": "400",
-      "lineHeight": "21px",
+      "fontSize": "16px",
+      "fontWeight": "600",
+      "lineHeight": "20px",
       "letterSpacing": "normal",
       "textTransform": "none",
-      "color": "rgb(0, 0, 0)",
+      "color": "rgb(109, 73, 253)",
       "textDecorationLine": "none",
-      "textDecorationColor": "rgb(0, 0, 0)",
+      "textDecorationColor": "rgb(109, 73, 253)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
       "transitionProperty": "all",
@@ -7062,142 +6785,32 @@
       "cursor": "auto",
       "opacity": "1",
       "transform": "none",
-      "overflow": "hidden auto",
+      "overflow": "visible",
       "zIndex": "auto",
       "top": "auto"
-     },
-     "paint": [
-      {
-       "node": "div.dds-w-full.dds-bg-primary",
-       "size": "1440.0x75.0",
-       "border": "B:1px solid rgba(0, 0, 0, 0.08)",
-       "bg": "rgb(255, 255, 255)",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.12) 0px 1px 4px 0px"
-      },
-      {
-       "node": "div.dds-ml-3.5.dds-mr-2",
-       "size": "1.4x30.0",
-       "bg": "rgb(209, 213, 219)"
-      },
-      {
-       "node": "button.dds-flex.dds-items-center",
-       "size": "200.0x52.0",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
-       "radius": "9999px"
-      },
-      {
-       "node": "div.dds-w-[42px].dds-h-[42px]",
-       "size": "42.0x42.0",
-       "bg": "rgb(209, 213, 219)",
-       "radius": "9999px"
-      },
-      {
-       "node": "div.dds-cursor-pointer.dds-flex",
-       "size": "0.0x0.0",
-       "border": "T:1px solid rgba(0, 0, 0, 0.16) | R:1px solid rgba(0, 0, 0, 0.16) | B:1px solid rgba(0, 0, 0, 0.16) | L:1px solid rgba(0, 0, 0, 0.16)",
-       "bg": "rgb(255, 255, 255)",
-       "radius": "12px"
-      },
-      {
-       "node": "div.dds-sticky.dds-left-0",
-       "size": "0.0x0.0",
-       "border": "B:1px solid rgba(0, 0, 0, 0.08)",
-       "bg": "rgb(255, 255, 255)",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.12) 0px 4px 4px -4px"
-      },
-      {
-       "node": "div.dds-cursor-pointer.dds-flex",
-       "size": "0.0x0.0",
-       "border": "T:1px solid rgba(0, 0, 0, 0.16) | R:1px solid rgba(0, 0, 0, 0.16) | B:1px solid rgba(0, 0, 0, 0.16) | L:1px solid rgba(0, 0, 0, 0.16)",
-       "bg": "rgb(255, 255, 255)",
-       "radius": "12px"
-      },
-      {
-       "node": "div.w-full.bg-white",
-       "size": "1440.0x977.0",
-       "bg": "rgb(255, 255, 255)"
-      },
-      {
-       "node": "div.dds-relative.dds-w-full",
-       "size": "340.0x453.0",
-       "bgImage": "linear-gradient(0deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.75) 100%), url(…)"
-      },
-      {
-       "node": "div.dds-relative.dds-w-full",
-       "size": "884.0x453.0",
-       "bgImage": "linear-gradient(0deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.75) 100%), url(…)"
-      },
-      {
-       "node": "div.dds-flex.dds-flex-col",
-       "size": "688.0x58.0",
-       "border": "T:1px solid rgba(0, 0, 0, 0.08) | R:1px solid rgba(0, 0, 0, 0.08) | B:1px solid rgba(0, 0, 0, 0.08) | L:1px solid rgba(0, 0, 0, 0.08)",
-       "bg": "rgb(255, 255, 255)",
-       "radius": "16px"
-      },
-      {
-       "node": "div.fixed.inset-x-0",
-       "size": "400.0x84.0",
-       "bg": "rgb(255, 255, 255)",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.04) 0px 8px 12px 0px",
-       "radius": "16px"
-      },
-      {
-       "node": "button.dds-flex.dds-items-center",
-       "size": "163.0x52.0",
-       "bg": "rgb(19, 19, 22)",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
-       "radius": "12px"
-      },
-      {
-       "node": "div.dds-flex.dds-flex-col",
-       "size": "400.0x151.0",
-       "border": "T:1px solid rgb(255, 255, 255) | R:1px solid rgb(255, 255, 255) | B:1px solid rgb(255, 255, 255) | L:1px solid rgb(255, 255, 255)",
-       "bg": "rgba(255, 255, 255, 0.4)",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.04) 0px 8px 12px 0px",
-       "radius": "24px"
-      }
-     ],
-     "textStyle": {
-      "node": "span.dds-text-primary.dds-text-lg",
-      "text": "Gurugram",
-      "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
-      "fontSize": "16px",
-      "lineHeight": "24px",
-      "fontWeight": "600",
-      "letterSpacing": "normal",
-      "color": "rgb(19, 19, 22)",
-      "textDecorationLine": "none",
-      "textTransform": "none"
-     },
-     "icon": {
-      "w": 32,
-      "h": 32,
-      "fill": "none",
-      "stroke": "none",
-      "color": "rgb(100, 68, 228)"
      },
      "crop": "components/crops/tk-date-focus-visible.png",
-     "via": "Shift+Tab, Tab"
+     "via": "focus failed"
     },
     "pressed": {
-     "tag": "div",
-     "classes": "flex flex-col h-screen w-full",
-     "text": "Gurugram Haryana All Stars Live Sun, 15 Nov, 1:00 PM About A comedy show where t",
+     "tag": "span",
+     "classes": "dds-text-offer dds-text-base dds-font-semibold !text-[14px]",
+     "text": "Sun, 15 Nov, 1:00 PM",
      "rect": {
-      "x": 0,
-      "y": 0,
-      "w": 1440,
-      "h": 900
+      "x": 104,
+      "y": 159,
+      "w": 162.13,
+      "h": 20
      },
      "style": {
-      "display": "flex",
+      "display": "block",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "1440px",
-      "height": "900px",
-      "minWidth": "0px",
+      "width": "162.125px",
+      "height": "20px",
+      "minWidth": "auto",
       "maxWidth": "none",
-      "minHeight": "0px",
+      "minHeight": "auto",
       "paddingTop": "0px",
       "paddingRight": "0px",
       "paddingBottom": "0px",
@@ -7209,7 +6822,7 @@
       "gap": "normal",
       "rowGap": "normal",
       "columnGap": "normal",
-      "flexDirection": "column",
+      "flexDirection": "row",
       "alignItems": "normal",
       "justifyContent": "normal",
       "gridTemplateColumns": "none",
@@ -7235,17 +6848,17 @@
       "backdropFilter": "none",
       "outlineWidth": "0px",
       "outlineStyle": "none",
-      "outlineColor": "rgb(0, 0, 0)",
+      "outlineColor": "rgb(109, 73, 253)",
       "outlineOffset": "0px",
       "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
-      "fontSize": "14px",
-      "fontWeight": "400",
-      "lineHeight": "21px",
+      "fontSize": "16px",
+      "fontWeight": "600",
+      "lineHeight": "20px",
       "letterSpacing": "normal",
       "textTransform": "none",
-      "color": "rgb(0, 0, 0)",
+      "color": "rgb(109, 73, 253)",
       "textDecorationLine": "none",
-      "textDecorationColor": "rgb(0, 0, 0)",
+      "textDecorationColor": "rgb(109, 73, 253)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
       "transitionProperty": "all",
@@ -7255,119 +6868,9 @@
       "cursor": "auto",
       "opacity": "1",
       "transform": "none",
-      "overflow": "hidden auto",
+      "overflow": "visible",
       "zIndex": "auto",
       "top": "auto"
-     },
-     "paint": [
-      {
-       "node": "div.dds-w-full.dds-bg-primary",
-       "size": "1440.0x75.0",
-       "border": "B:1px solid rgba(0, 0, 0, 0.08)",
-       "bg": "rgb(255, 255, 255)",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.12) 0px 1px 4px 0px"
-      },
-      {
-       "node": "div.dds-ml-3.5.dds-mr-2",
-       "size": "1.4x30.0",
-       "bg": "rgb(209, 213, 219)"
-      },
-      {
-       "node": "button.dds-flex.dds-items-center",
-       "size": "200.0x52.0",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
-       "radius": "9999px"
-      },
-      {
-       "node": "div.dds-w-[42px].dds-h-[42px]",
-       "size": "42.0x42.0",
-       "bg": "rgb(209, 213, 219)",
-       "radius": "9999px"
-      },
-      {
-       "node": "div.dds-cursor-pointer.dds-flex",
-       "size": "0.0x0.0",
-       "border": "T:1px solid rgba(0, 0, 0, 0.16) | R:1px solid rgba(0, 0, 0, 0.16) | B:1px solid rgba(0, 0, 0, 0.16) | L:1px solid rgba(0, 0, 0, 0.16)",
-       "bg": "rgb(255, 255, 255)",
-       "radius": "12px"
-      },
-      {
-       "node": "div.dds-sticky.dds-left-0",
-       "size": "0.0x0.0",
-       "border": "B:1px solid rgba(0, 0, 0, 0.08)",
-       "bg": "rgb(255, 255, 255)",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.12) 0px 4px 4px -4px"
-      },
-      {
-       "node": "div.dds-cursor-pointer.dds-flex",
-       "size": "0.0x0.0",
-       "border": "T:1px solid rgba(0, 0, 0, 0.16) | R:1px solid rgba(0, 0, 0, 0.16) | B:1px solid rgba(0, 0, 0, 0.16) | L:1px solid rgba(0, 0, 0, 0.16)",
-       "bg": "rgb(255, 255, 255)",
-       "radius": "12px"
-      },
-      {
-       "node": "div.w-full.bg-white",
-       "size": "1440.0x977.0",
-       "bg": "rgb(255, 255, 255)"
-      },
-      {
-       "node": "div.dds-relative.dds-w-full",
-       "size": "340.0x453.0",
-       "bgImage": "linear-gradient(0deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.75) 100%), url(…)"
-      },
-      {
-       "node": "div.dds-relative.dds-w-full",
-       "size": "884.0x453.0",
-       "bgImage": "linear-gradient(0deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.75) 100%), url(…)"
-      },
-      {
-       "node": "div.dds-flex.dds-flex-col",
-       "size": "688.0x58.0",
-       "border": "T:1px solid rgba(0, 0, 0, 0.08) | R:1px solid rgba(0, 0, 0, 0.08) | B:1px solid rgba(0, 0, 0, 0.08) | L:1px solid rgba(0, 0, 0, 0.08)",
-       "bg": "rgb(255, 255, 255)",
-       "radius": "16px"
-      },
-      {
-       "node": "div.fixed.inset-x-0",
-       "size": "400.0x84.0",
-       "bg": "rgb(255, 255, 255)",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.04) 0px 8px 12px 0px",
-       "radius": "16px"
-      },
-      {
-       "node": "button.dds-flex.dds-items-center",
-       "size": "163.0x52.0",
-       "bg": "rgb(19, 19, 22)",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
-       "radius": "12px"
-      },
-      {
-       "node": "div.dds-flex.dds-flex-col",
-       "size": "400.0x151.0",
-       "border": "T:1px solid rgb(255, 255, 255) | R:1px solid rgb(255, 255, 255) | B:1px solid rgb(255, 255, 255) | L:1px solid rgb(255, 255, 255)",
-       "bg": "rgba(255, 255, 255, 0.4)",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.04) 0px 8px 12px 0px",
-       "radius": "24px"
-      }
-     ],
-     "textStyle": {
-      "node": "span.dds-text-primary.dds-text-lg",
-      "text": "Gurugram",
-      "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
-      "fontSize": "16px",
-      "lineHeight": "24px",
-      "fontWeight": "600",
-      "letterSpacing": "normal",
-      "color": "rgb(19, 19, 22)",
-      "textDecorationLine": "none",
-      "textTransform": "none"
-     },
-     "icon": {
-      "w": 32,
-      "h": 32,
-      "fill": "none",
-      "stroke": "none",
-      "color": "rgb(100, 68, 228)"
      },
      "crop": "components/crops/tk-date-pressed.png",
      "via": "CDP forcePseudoState :active:hover"
@@ -7384,21 +6887,21 @@
   "tk-price": {
    "states": {
     "default": {
-     "tag": "div",
-     "classes": "flex flex-col h-screen w-full",
-     "text": "Gurugram Haryana All Stars Live Sun, 15 Nov, 1:00 PM About A comedy show where t",
+     "tag": "span",
+     "classes": "dds-text-primary dds-text-base dds-font-normal text-[16px]",
+     "text": "₹149",
      "rect": {
-      "x": 0,
-      "y": 0,
-      "w": 1440,
-      "h": 900
+      "x": 952,
+      "y": 438,
+      "w": 41.19,
+      "h": 24
      },
      "style": {
-      "display": "flex",
+      "display": "inline",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "1440px",
-      "height": "900px",
+      "width": "auto",
+      "height": "auto",
       "minWidth": "0px",
       "maxWidth": "none",
       "minHeight": "0px",
@@ -7413,7 +6916,7 @@
       "gap": "normal",
       "rowGap": "normal",
       "columnGap": "normal",
-      "flexDirection": "column",
+      "flexDirection": "row",
       "alignItems": "normal",
       "justifyContent": "normal",
       "gridTemplateColumns": "none",
@@ -7439,139 +6942,29 @@
       "backdropFilter": "none",
       "outlineWidth": "0px",
       "outlineStyle": "none",
-      "outlineColor": "rgb(0, 0, 0)",
+      "outlineColor": "rgb(19, 19, 22)",
       "outlineOffset": "0px",
       "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
-      "fontSize": "14px",
-      "fontWeight": "400",
-      "lineHeight": "21px",
+      "fontSize": "18px",
+      "fontWeight": "700",
+      "lineHeight": "20px",
       "letterSpacing": "normal",
       "textTransform": "none",
-      "color": "rgb(0, 0, 0)",
+      "color": "rgb(19, 19, 22)",
       "textDecorationLine": "none",
-      "textDecorationColor": "rgb(0, 0, 0)",
+      "textDecorationColor": "rgb(19, 19, 22)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
       "transitionProperty": "all",
       "transitionDuration": "0s",
       "transitionTimingFunction": "ease",
       "transitionDelay": "0s",
-      "cursor": "auto",
+      "cursor": "pointer",
       "opacity": "1",
       "transform": "none",
-      "overflow": "hidden auto",
+      "overflow": "visible",
       "zIndex": "auto",
       "top": "auto"
-     },
-     "paint": [
-      {
-       "node": "div.dds-w-full.dds-bg-primary",
-       "size": "1440.0x75.0",
-       "border": "B:1px solid rgba(0, 0, 0, 0.08)",
-       "bg": "rgb(255, 255, 255)",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.12) 0px 1px 4px 0px"
-      },
-      {
-       "node": "div.dds-ml-3.5.dds-mr-2",
-       "size": "1.4x30.0",
-       "bg": "rgb(209, 213, 219)"
-      },
-      {
-       "node": "button.dds-flex.dds-items-center",
-       "size": "200.0x52.0",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
-       "radius": "9999px"
-      },
-      {
-       "node": "div.dds-w-[42px].dds-h-[42px]",
-       "size": "42.0x42.0",
-       "bg": "rgb(209, 213, 219)",
-       "radius": "9999px"
-      },
-      {
-       "node": "div.dds-cursor-pointer.dds-flex",
-       "size": "0.0x0.0",
-       "border": "T:1px solid rgba(0, 0, 0, 0.16) | R:1px solid rgba(0, 0, 0, 0.16) | B:1px solid rgba(0, 0, 0, 0.16) | L:1px solid rgba(0, 0, 0, 0.16)",
-       "bg": "rgb(255, 255, 255)",
-       "radius": "12px"
-      },
-      {
-       "node": "div.dds-sticky.dds-left-0",
-       "size": "0.0x0.0",
-       "border": "B:1px solid rgba(0, 0, 0, 0.08)",
-       "bg": "rgb(255, 255, 255)",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.12) 0px 4px 4px -4px"
-      },
-      {
-       "node": "div.dds-cursor-pointer.dds-flex",
-       "size": "0.0x0.0",
-       "border": "T:1px solid rgba(0, 0, 0, 0.16) | R:1px solid rgba(0, 0, 0, 0.16) | B:1px solid rgba(0, 0, 0, 0.16) | L:1px solid rgba(0, 0, 0, 0.16)",
-       "bg": "rgb(255, 255, 255)",
-       "radius": "12px"
-      },
-      {
-       "node": "div.w-full.bg-white",
-       "size": "1440.0x977.0",
-       "bg": "rgb(255, 255, 255)"
-      },
-      {
-       "node": "div.dds-relative.dds-w-full",
-       "size": "340.0x453.0",
-       "bgImage": "linear-gradient(0deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.75) 100%), url(…)"
-      },
-      {
-       "node": "div.dds-relative.dds-w-full",
-       "size": "884.0x453.0",
-       "bgImage": "linear-gradient(0deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.75) 100%), url(…)"
-      },
-      {
-       "node": "div.dds-flex.dds-flex-col",
-       "size": "688.0x58.0",
-       "border": "T:1px solid rgba(0, 0, 0, 0.08) | R:1px solid rgba(0, 0, 0, 0.08) | B:1px solid rgba(0, 0, 0, 0.08) | L:1px solid rgba(0, 0, 0, 0.08)",
-       "bg": "rgb(255, 255, 255)",
-       "radius": "16px"
-      },
-      {
-       "node": "div.fixed.inset-x-0",
-       "size": "400.0x84.0",
-       "bg": "rgb(255, 255, 255)",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.04) 0px 8px 12px 0px",
-       "radius": "16px"
-      },
-      {
-       "node": "button.dds-flex.dds-items-center",
-       "size": "163.0x52.0",
-       "bg": "rgb(19, 19, 22)",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
-       "radius": "12px"
-      },
-      {
-       "node": "div.dds-flex.dds-flex-col",
-       "size": "400.0x151.0",
-       "border": "T:1px solid rgb(255, 255, 255) | R:1px solid rgb(255, 255, 255) | B:1px solid rgb(255, 255, 255) | L:1px solid rgb(255, 255, 255)",
-       "bg": "rgba(255, 255, 255, 0.4)",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.04) 0px 8px 12px 0px",
-       "radius": "24px"
-      }
-     ],
-     "textStyle": {
-      "node": "span.dds-text-primary.dds-text-lg",
-      "text": "Gurugram",
-      "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
-      "fontSize": "16px",
-      "lineHeight": "24px",
-      "fontWeight": "600",
-      "letterSpacing": "normal",
-      "color": "rgb(19, 19, 22)",
-      "textDecorationLine": "none",
-      "textTransform": "none"
-     },
-     "icon": {
-      "w": 32,
-      "h": 32,
-      "fill": "none",
-      "stroke": "none",
-      "color": "rgb(100, 68, 228)"
      },
      "crop": "components/crops/tk-price-default.png",
      "via": "at rest"
@@ -7593,7 +6986,7 @@
      "text": "Book tickets",
      "rect": {
       "x": 1157,
-      "y": 696,
+      "y": 425,
       "w": 162.97,
       "h": 52
      },
@@ -7697,7 +7090,7 @@
      "text": "Book tickets",
      "rect": {
       "x": 1157,
-      "y": 696,
+      "y": 425,
       "w": 162.97,
       "h": 52
      },
@@ -7801,7 +7194,7 @@
      "text": "Book tickets",
      "rect": {
       "x": 1157,
-      "y": 696,
+      "y": 493,
       "w": 162.97,
       "h": 52
      },

@@ -4,6 +4,8 @@
 // feed (/), listing pages (/movies/, /events/, /events/comedy), an artist
 // page and a ticket page — paint the DDS light theme by default; a forced
 // html[data-theme=dark] pass measures the real dark declarations.
+import fs from 'node:fs';
+import path from 'node:path';
 import { BASE, M, launch, patch, open, closePromo, domFind, styleOf, crop, centre, RAW, UA, UA_MOBILE } from './lib.mjs';
 
 const OUT = process.env.OUT_JSON || path.join(RAW, 'components-computed.json');
@@ -279,8 +281,8 @@ async function home() {
   await S('nv-tab-active', q('a[href="/"]').filter({ hasText: /for you/i }).and(page.locator(':visible')).first(), B4, { group: g, title: 'Category tab (For you)', desc: 'The "For you" home tab — the selected state of the category row.', sel: 'For you tab' }, { noScroll: true });
   await S('nv-search', q('a[href*="/search"]').and(page.locator(':visible')).first(), B4, { group: g, title: 'Search field', desc: 'The search affordance linking to /search; hover/focus measured, never followed.', sel: 'search link' }, { noScroll: true });
   const gf = G.feed;
-  await S('hm-h1', await domFind(page, /top picks|trending|for you|recommended|explore/i, { sel: 'h1, h2, h3, div', tag: 'hmh', minW: 60, minH: 16 }), ['default'], { group: gf, title: 'Page heading', desc: 'The home feed heading.', sel: 'feed heading' }, { noScroll: true });
-  await S('hm-section', await domFind(page, /artist|movie|event|trend/i, { sel: 'h2, h3, h4, div', tag: 'hms', minW: 60, minH: 16 }), ['default'], { group: gf, title: 'Section heading', desc: 'A feed section heading (artists / movies / events rail).', sel: 'section heading' });
+  await S('hm-h1', await domFind(page, /near you|artists in|happening|sports mania/i, { sel: 'span.text-center, span[class*="text-center"]', tag: 'hmh', minW: 60, minH: 14 }), ['default'], { group: gf, title: 'Page heading', desc: 'The home feed heading.', sel: 'feed heading' }, { noScroll: true });
+  await S('hm-section', await domFind(page, /artists in|happening at venues|sports mania|movies near/i, { sel: 'span.text-center, span[class*="text-center"]', tag: 'hms', nth: 1, minW: 60, minH: 14 }), ['default'], { group: gf, title: 'Section heading', desc: 'A feed section heading (artists / movies / events rail).', sel: 'section heading' });
   const gc = G.cards;
   await S('mc-card', q('a[href*="movie-tickets-"]').and(page.locator(':visible')).first(), ['default', 'hover'], { group: gc, title: 'Movie card', desc: 'A movie card — poster art, title, certificate and language; hover measured, never followed.', sel: 'a[href*=movie-tickets-]' });
   await S('mc-title', q('a[href*="movie-tickets-"]').first().locator('h1, h2, h3, h4, p, [class*="line-clamp"]').and(page.locator(':visible')).first(), ['default'], { group: gc, title: 'Movie title', desc: 'The title line inside a movie card.', sel: 'card title' });
@@ -341,9 +343,9 @@ async function artist() {
   await sheetsFor('artist');
   await chrome('artist');
   const g = G.detail;
-  await S('at-h1', q('h1, h2').and(page.locator(':visible')).first(), ['default'], { group: g, title: 'Artist name', desc: 'The artist page display name.', sel: 'artist h1' }, { noScroll: true });
+  await S('at-h1', q('span.dds-text-3xl, h1, h2, h3').and(page.locator(':visible')).first(), ['default'], { group: g, title: 'Artist name', desc: 'The artist page display name.', sel: 'artist h1' }, { noScroll: true });
   await S('at-show', q('a[href*="buy-tickets"], a[href*="/events/"]').and(page.locator(':visible')).first(), ['default', 'hover'], { group: g, title: 'Show card', desc: 'An upcoming-show card on the artist page; hover measured, never followed.', sel: 'show card' });
-  await S('at-book', q('a, button').filter({ hasText: /book|tickets|rs\.|₹/i }).and(page.locator(':visible')).first(), B4, { group: g, title: 'Book CTA', desc: 'A booking button on the artist page; measured, never pressed — booking gates on the Zomato account.', sel: 'book button' }, { noScroll: true });
+  await S('at-book', q('a, button').filter({ hasText: /book|tickets|rs\.|₹/i }).and(page.locator(':visible')).first(), B4, { group: g, title: 'Book CTA', desc: 'The booking link on the artist page — the show card itself navigates to the ticket page; measured at every paintable state, never followed — booking gates on the Zomato account.', sel: 'booking card-link' }, { noScroll: true });
   save();
 }
 
@@ -352,10 +354,10 @@ async function tickets() {
   await sheetsFor('tickets');
   await chrome('tickets');
   const g = G.detail;
-  await S('tk-h1', q('h1, h2').and(page.locator(':visible')).first(), ['default'], { group: g, title: 'Event title', desc: 'The event detail title on the ticket page.', sel: 'ticket h1' }, { noScroll: true });
-  await S('tk-date', q('div, a, button').filter({ hasText: /(sat|sun|mon|apr|may|jan|feb|mar)/i }).and(page.locator(':visible')).first(), B4, { group: g, title: 'Date pill', desc: 'A date/time selector pill; measured, never confirmed.', sel: 'date pill' }, { noScroll: true });
-  await S('tk-price', q('div, span, p').filter({ hasText: /₹\d/i }).and(page.locator(':visible')).first(), ['default'], { group: g, title: 'Ticket price', desc: 'The ticket price line.', sel: 'price' });
-  await S('tk-book', q('button, a').filter({ hasText: /book|proceed|pay|continue/i }).and(page.locator(':visible')).first(), ['default', 'hover', 'focus-visible'], { group: g, title: 'Book button', desc: 'The primary Book/Proceed CTA; hover/focus measured, never pressed — payment gates on the Zomato account.', sel: 'Book CTA' }, { noScroll: true });
+  await S('tk-h1', q('h1, h2, h3').and(page.locator(':visible')).first(), ['default'], { group: g, title: 'Event title', desc: 'The event detail title on the ticket page.', sel: 'ticket h1' }, { noScroll: true });
+  await S('tk-date', q('span.dds-text-offer, span.dds-text-base').filter({ hasText: /(sat|sun|mon|tue|wed|thu|fri|apr|may|jan|feb|mar|nov)/i }).and(page.locator(':visible')).first(), B4, { group: g, title: 'Date pill', desc: 'A date/time selector pill; measured, never confirmed.', sel: 'date pill' }, { noScroll: true });
+  await S('tk-price', q('span').filter({ hasText: /₹\d/i }).and(page.locator(':visible')).first(), ['default'], { group: g, title: 'Ticket price', desc: 'The ticket price line.', sel: 'price' });
+  await S('tk-book', q('button').filter({ hasText: /book|proceed|pay|continue/i }).and(page.locator(':visible')).first(), ['default', 'hover', 'focus-visible'], { group: g, title: 'Book button', desc: 'The primary Book/Proceed CTA; hover/focus measured, never pressed — payment gates on the Zomato account.', sel: 'Book CTA' }, { noScroll: true });
   save();
 }
 

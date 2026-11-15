@@ -143,7 +143,7 @@ colors:
   text-muted: "#545459"
   text-on-accent: "#231268"
   action-primary: "#131316"
-  action-on-primary: "#f7f7f7"
+  action-on-primary: "#ffffff"
   border-hairline: "rgba(0, 0, 0, 0.08)"
   border-chip-line: "rgba(0, 0, 0, 0.24)"
 rounded:
@@ -204,7 +204,11 @@ Spacing from `core.space`: `12` 12px, `16` 16px, `20` 20px, `24` 24px, `32` 32px
 
 ## Elevation & Depth
 
-No shadow tokens were captured; depth comes from surface colours and borders. See [style-guide.html](style-guide.html).
+Shadows, resolved to CSS:
+
+| Token | box-shadow |
+|---|---|
+| `core.shadow.badge` | `rgba(0, 0, 0, 0.25) 0px 4px 4px 0px` |
 
 ## Shapes
 

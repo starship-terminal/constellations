@@ -44,20 +44,20 @@ code { font-family: var(--sg-mono); font-size: .9em; }
 .kv span { color: var(--color-neutral-ink, #000); opacity: .65; }
 /* ---- mocks ---- */
 .mock { border: 1px solid var(--color-neutral-hairline, #ddd); overflow: hidden; background: var(--color-neutral-paper, #fff); }
-.pills { display: flex; flex-wrap: wrap; gap: 8px; padding: 12px; background: var(--background-page, #121214); }
-.pill { display: inline-flex; align-items: center; gap: 8px; height: 40px; padding: 0 18px; border-radius: var(--radius-control, 12px); border: 1px solid var(--border-card-line, rgba(151,151,159,.12)); background: transparent; color: var(--text-ink, #efeff1); font: 500 16px var(--sg-sans); }
-.pill.on { background: var(--background-selected, rgba(151,151,159,.16)); }
-.card { border-radius: var(--radius-card, 8px); border: 1px solid var(--border-card-line, rgba(151,151,159,.12)); background: var(--background-card, #202024); padding: 16px; color: var(--text-ink, #efeff1); }
-.card h3 { font: 600 20px/1.4 var(--sg-sans); letter-spacing: -0.01em; margin: 0 0 4px; color: var(--text-strong, #fbfbfb); }
-.card p { font: 400 14px/1.45 var(--sg-sans); color: var(--text-muted, #96979e); margin: 0 0 12px; }
-.card .members { font: 400 14px var(--sg-sans); color: var(--text-ink, #efeff1); }
-.card .members i { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--text-online, #43b581); margin-right: 6px; }
-.btn { display: inline-flex; align-items: center; justify-content: center; height: 44px; padding: 0 24px; font-size: 16px; font-weight: 500; border-radius: var(--radius-control, 12px); border: 1px solid transparent; }
-.btn.primary { background: var(--action-primary, #5865f2); color: var(--action-on-primary, #fff); }
+.pills { display: flex; flex-wrap: wrap; gap: 8px; padding: 12px; background: var(--color-background-primary, #fff); }
+.pill { display: inline-flex; align-items: center; gap: 8px; height: 40px; padding: 0 18px; border-radius: var(--radius-pill, 9999px); border: 1px solid var(--color-border-subtle, rgba(0,0,0,.08)); background: transparent; color: var(--color-text-primary, #131316); font: 500 16px var(--sg-sans); }
+.pill.on { background: var(--color-surface-secondary, #f1f1f2); }
+.card { border-radius: var(--radius-chip, 8px); border: 1px solid var(--color-border-card-primary, rgba(0,0,0,.08)); background: var(--color-surface-primary, #fff); padding: 16px; color: var(--color-text-primary, #131316); }
+.card h3 { font: 600 20px/1.4 var(--sg-sans); letter-spacing: -0.01em; margin: 0 0 4px; color: var(--color-text-primary, #131316); }
+.card p { font: 400 14px/1.45 var(--sg-sans); color: var(--color-text-secondary, #545459); margin: 0 0 12px; }
+.card .members { font: 400 14px var(--sg-sans); color: var(--color-text-primary, #131316); }
+.card .members i { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--color-icon-success, #1abc50); margin-right: 6px; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: 44px; padding: 0 24px; font-size: 16px; font-weight: 500; border-radius: var(--radius-cta, 9999px); border: 1px solid transparent; }
+.btn.primary { background: var(--color-button-primary-background-default, #131316); color: var(--color-text-inverse, #f7f7f7); }
 .btn.small { height: 36px; font-size: 14px; }
-.btn.nav { background: var(--action-nav-pill, #fff); color: var(--text-ink, #000); border-radius: var(--radius-nav-pill, 16px); height: 39px; padding: 0 18px; }
-.hero { color: var(--text-ink-inverse, #fff); padding: 40px; font: 700 40px/1.1 var(--sg-serif); letter-spacing: -0.01em; background: linear-gradient(135deg, #1a2081, #5865f2); }
-.hero small { display: block; font: 400 20px/1.4 var(--sg-sans); color: var(--text-ink-inverse, #fff); opacity: .9; margin: 12px auto 20px; max-width: 46ch; }
+.btn.nav { background: var(--color-surface-offer-primary, #6d49fd); color: var(--color-text-inverse, #f7f7f7); border-radius: var(--radius-pill, 9999px); height: 39px; padding: 0 18px; }
+.hero { color: var(--color-text-inverse, #f7f7f7); padding: 40px; font: 700 40px/1.1 var(--sg-serif); letter-spacing: -0.01em; background: linear-gradient(135deg, var(--color-surface-offer-gradient-start, #401cce), var(--color-surface-offer-gradient-end, #bcaefe)); }
+.hero small { display: block; font: 400 20px/1.4 var(--sg-sans); color: var(--color-text-inverse, #f7f7f7); opacity: .9; margin: 12px auto 20px; max-width: 46ch; }
 .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
 .tile { border: 1px solid var(--border-card-line, rgba(151,151,159,.12)); padding: 14px; font-size: 13px; background: var(--background-card, #202024); border-radius: var(--radius-card, 8px); color: var(--text-ink, #efeff1); }
 .tile b { display: block; font: 600 14px/1.4 var(--sg-sans); margin-bottom: 4px; }
@@ -188,7 +188,7 @@ const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) 
 
 (function spacing() {
   let m = '';
-  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.space || {}, 'space.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
   for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
   for (const [n, t] of flat(TOK.core.border || {}, 'border.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
   for (const [n, t] of flat(TOK.core.easing || {}, 'easing.')) m += `<div><b>${esc(n)}</b> <span>cubic-bezier(${esc(t.v.join ? t.v.join(', ') : t.v)})</span></div>`;

@@ -57,13 +57,12 @@
   "height": 1403
  },
  "dimensionCheck": {
-  "status": "fail",
+  "status": "pass",
   "expected": {
    "width": 1440,
    "height": 1403
   },
-  "basis": "stitchedParts",
-  "error": "tile 1 clip.y=397 expected 900"
+  "basis": "stitchedParts"
  },
  "visualReview": {
   "status": "pending",
@@ -82,13 +81,15 @@
    "x": 0,
    "y": 0,
    "width": 1440,
-   "height": 900
+   "height": 900,
+   "documentY": 0
   },
   {
    "x": 0,
    "y": 397,
    "width": 1440,
-   "height": 503
+   "height": 503,
+   "documentY": 900
   }
  ]
 }

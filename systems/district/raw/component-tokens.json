@@ -85,9 +85,9 @@
             "description": "The 16px bold price line."
           },
           "section": {
-            "value": "{font.size.2xl}",
+            "value": "28px",
             "type": "fontSize",
-            "source": "computed fontSize of tk-h1 default (raw/components-computed.json); matches declared --font-size-2xl",
+            "source": "computed fontSize of tk-h1 default (raw/components-computed.json)",
             "description": "The 24px section/ticket heading."
           },
           "display": {
@@ -2462,17 +2462,13 @@
           "type": "fontWeight",
           "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-body1-font-weight",
           "description": "The declared `--typography-scale-body1-font-weight`."
-        }
-      },
-      "body1-letter-spacing": {
+        },
         "letterSpacing": {
           "value": "0px",
           "type": "other",
           "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-body1-letter-spacing",
           "description": "The declared `--typography-scale-body1-letter-spacing`."
-        }
-      },
-      "body1-line-height": {
+        },
         "lineHeight": {
           "value": "24px",
           "type": "dimension",
@@ -2492,17 +2488,13 @@
           "type": "fontWeight",
           "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-body2-font-weight",
           "description": "The declared `--typography-scale-body2-font-weight`."
-        }
-      },
-      "body2-letter-spacing": {
+        },
         "letterSpacing": {
           "value": "0px",
           "type": "other",
           "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-body2-letter-spacing",
           "description": "The declared `--typography-scale-body2-letter-spacing`."
-        }
-      },
-      "body2-line-height": {
+        },
         "lineHeight": {
           "value": "22px",
           "type": "dimension",
@@ -2522,17 +2514,13 @@
           "type": "fontWeight",
           "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-body3-font-weight",
           "description": "The declared `--typography-scale-body3-font-weight`."
-        }
-      },
-      "body3-letter-spacing": {
+        },
         "letterSpacing": {
           "value": "0px",
           "type": "other",
           "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-body3-letter-spacing",
           "description": "The declared `--typography-scale-body3-letter-spacing`."
-        }
-      },
-      "body3-line-height": {
+        },
         "lineHeight": {
           "value": "18px",
           "type": "dimension",
@@ -2552,17 +2540,13 @@
           "type": "fontWeight",
           "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-display1-font-weight",
           "description": "The declared `--typography-scale-display1-font-weight`."
-        }
-      },
-      "display1-letter-spacing": {
+        },
         "letterSpacing": {
           "value": "-.05rem",
           "type": "other",
           "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-display1-letter-spacing",
           "description": "The declared `--typography-scale-display1-letter-spacing`."
-        }
-      },
-      "display1-line-height": {
+        },
         "lineHeight": {
           "value": "72px",
           "type": "dimension",
@@ -2582,17 +2566,13 @@
           "type": "fontWeight",
           "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-display2-font-weight",
           "description": "The declared `--typography-scale-display2-font-weight`."
-        }
-      },
-      "display2-letter-spacing": {
+        },
         "letterSpacing": {
           "value": "-.04rem",
           "type": "other",
           "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-display2-letter-spacing",
           "description": "The declared `--typography-scale-display2-letter-spacing`."
-        }
-      },
-      "display2-line-height": {
+        },
         "lineHeight": {
           "value": "56px",
           "type": "dimension",
@@ -2612,17 +2592,13 @@
           "type": "fontWeight",
           "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-display3-font-weight",
           "description": "The declared `--typography-scale-display3-font-weight`."
-        }
-      },
-      "display3-letter-spacing": {
+        },
         "letterSpacing": {
           "value": "-.04rem",
           "type": "other",
           "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-display3-letter-spacing",
           "description": "The declared `--typography-scale-display3-letter-spacing`."
-        }
-      },
-      "display3-line-height": {
+        },
         "lineHeight": {
           "value": "42px",
           "type": "dimension",
@@ -2642,17 +2618,13 @@
           "type": "fontWeight",
           "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-headline1-font-weight",
           "description": "The declared `--typography-scale-headline1-font-weight`."
-        }
-      },
-      "headline1-letter-spacing": {
+        },
         "letterSpacing": {
           "value": "-.04rem",
           "type": "other",
           "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-headline1-letter-spacing",
           "description": "The declared `--typography-scale-headline1-letter-spacing`."
-        }
-      },
-      "headline1-line-height": {
+        },
         "lineHeight": {
           "value": "40px",
           "type": "dimension",
@@ -2672,17 +2644,13 @@
           "type": "fontWeight",
           "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-headline2-font-weight",
           "description": "The declared `--typography-scale-headline2-font-weight`."
-        }
-      },
-      "headline2-letter-spacing": {
+        },
         "letterSpacing": {
           "value": "-.03rem",
           "type": "other",
           "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-headline2-letter-spacing",
           "description": "The declared `--typography-scale-headline2-letter-spacing`."
-        }
-      },
-      "headline2-line-height": {
+        },
         "lineHeight": {
           "value": "34px",
           "type": "dimension",
@@ -2702,17 +2670,13 @@
           "type": "fontWeight",
           "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-headline3-font-weight",
           "description": "The declared `--typography-scale-headline3-font-weight`."
-        }
-      },
-      "headline3-letter-spacing": {
+        },
         "letterSpacing": {
           "value": "-.02rem",
           "type": "other",
           "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-headline3-letter-spacing",
           "description": "The declared `--typography-scale-headline3-letter-spacing`."
-        }
-      },
-      "headline3-line-height": {
+        },
         "lineHeight": {
           "value": "30px",
           "type": "dimension",
@@ -2732,17 +2696,13 @@
           "type": "fontWeight",
           "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-label1-font-weight",
           "description": "The declared `--typography-scale-label1-font-weight`."
-        }
-      },
-      "label1-letter-spacing": {
+        },
         "letterSpacing": {
           "value": "0px",
           "type": "other",
           "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-label1-letter-spacing",
           "description": "The declared `--typography-scale-label1-letter-spacing`."
-        }
-      },
-      "label1-line-height": {
+        },
         "lineHeight": {
           "value": "18px",
           "type": "dimension",
@@ -2762,17 +2722,13 @@
           "type": "fontWeight",
           "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-label2-font-weight",
           "description": "The declared `--typography-scale-label2-font-weight`."
-        }
-      },
-      "label2-letter-spacing": {
+        },
         "letterSpacing": {
           "value": "0px",
           "type": "other",
           "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-label2-letter-spacing",
           "description": "The declared `--typography-scale-label2-letter-spacing`."
-        }
-      },
-      "label2-line-height": {
+        },
         "lineHeight": {
           "value": "16px",
           "type": "dimension",
@@ -2792,17 +2748,13 @@
           "type": "fontWeight",
           "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-label3-font-weight",
           "description": "The declared `--typography-scale-label3-font-weight`."
-        }
-      },
-      "label3-letter-spacing": {
+        },
         "letterSpacing": {
           "value": "0px",
           "type": "other",
           "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-label3-letter-spacing",
           "description": "The declared `--typography-scale-label3-letter-spacing`."
-        }
-      },
-      "label3-line-height": {
+        },
         "lineHeight": {
           "value": "14px",
           "type": "dimension",
@@ -2822,17 +2774,13 @@
           "type": "fontWeight",
           "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-title-with-separator-font-weight",
           "description": "The declared `--typography-scale-title-with-separator-font-weight`."
-        }
-      },
-      "title-with-separator-letter-spacing": {
+        },
         "letterSpacing": {
           "value": "1.1875px",
           "type": "other",
           "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-title-with-separator-letter-spacing",
           "description": "The declared `--typography-scale-title-with-separator-letter-spacing`."
-        }
-      },
-      "title-with-separator-line-height": {
+        },
         "lineHeight": {
           "value": "14px",
           "type": "dimension",
@@ -2852,17 +2800,13 @@
           "type": "fontWeight",
           "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-title1-font-weight",
           "description": "The declared `--typography-scale-title1-font-weight`."
-        }
-      },
-      "title1-letter-spacing": {
+        },
         "letterSpacing": {
           "value": "-.01rem",
           "type": "other",
           "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-title1-letter-spacing",
           "description": "The declared `--typography-scale-title1-letter-spacing`."
-        }
-      },
-      "title1-line-height": {
+        },
         "lineHeight": {
           "value": "28px",
           "type": "dimension",
@@ -2882,17 +2826,13 @@
           "type": "fontWeight",
           "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-title2-font-weight",
           "description": "The declared `--typography-scale-title2-font-weight`."
-        }
-      },
-      "title2-letter-spacing": {
+        },
         "letterSpacing": {
           "value": "-.01rem",
           "type": "other",
           "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-title2-letter-spacing",
           "description": "The declared `--typography-scale-title2-letter-spacing`."
-        }
-      },
-      "title2-line-height": {
+        },
         "lineHeight": {
           "value": "22px",
           "type": "dimension",
@@ -2912,17 +2852,13 @@
           "type": "fontWeight",
           "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-title3-font-weight",
           "description": "The declared `--typography-scale-title3-font-weight`."
-        }
-      },
-      "title3-letter-spacing": {
+        },
         "letterSpacing": {
           "value": "-.01rem",
           "type": "other",
           "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-title3-letter-spacing",
           "description": "The declared `--typography-scale-title3-letter-spacing`."
-        }
-      },
-      "title3-line-height": {
+        },
         "lineHeight": {
           "value": "20px",
           "type": "dimension",
@@ -2942,17 +2878,13 @@
           "type": "fontWeight",
           "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-title4-font-weight",
           "description": "The declared `--typography-scale-title4-font-weight`."
-        }
-      },
-      "title4-letter-spacing": {
+        },
         "letterSpacing": {
           "value": "0px",
           "type": "other",
           "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-title4-letter-spacing",
           "description": "The declared `--typography-scale-title4-letter-spacing`."
-        }
-      },
-      "title4-line-height": {
+        },
         "lineHeight": {
           "value": "18px",
           "type": "dimension",
@@ -3019,6 +2951,14 @@
         "type": "dimension",
         "source": "computed borderTopLeftRadius of nv-tab default (raw/components-computed.json)",
         "description": "The 9999px category-tab pill radius."
+      }
+    },
+    "shadow": {
+      "badge": {
+        "value": "rgba(0, 0, 0, 0.25) 0px 4px 4px 0px",
+        "type": "other",
+        "source": "paint layer of the artist-page show-card badge (raw/components-computed.json)",
+        "description": "The show-card badge's painted shadow — a 4px drop at 25% black; every other public reading reported transparent or none."
       }
     },
     "motion": {
@@ -3633,9 +3573,9 @@
         "description": "The #131316 Book-tickets CTA (matches --color-button-primary-background)."
       },
       "on-primary": {
-        "value": "{color.button.primary.label.default}",
+        "value": "{color.brand-pure-white}",
         "type": "color",
-        "source": "the painted label of the Book-tickets CTA (screenshots/tickets-default.png); matches declared --color-button-primary-label; matches declared --color-button-primary-label",
+        "source": "computed label colour of tk-book default (raw/components-computed.json); matches declared color.brand-pure-white",
         "description": "The #f7f7f7 label on the Book CTA (matches --color-button-primary-label)."
       }
     },

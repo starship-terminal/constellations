@@ -2,13 +2,13 @@
 
 The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Captured from district.in on 2026-11-15, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was signed into, booked, bought or submitted; nav links, category tabs, filter chips, cards and Book buttons were measured, never followed or pressed. The public pages paint the light theme; the dark pass flips the product's own html[data-theme=dark] attribute, so both themes are real painted evidence.
 
-The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (34 components, 64 states). The page layouts are described in [patterns.md](patterns.md).
+The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (34 components, 65 states). The page layouts are described in [patterns.md](patterns.md).
 
 How to read an entry:
 
 - A colour is its value followed by the palette token in [tokens.json](tokens.json) with the same value, when there is one. Text is written family size/line-height weight, then its colour, for example `SF Pro 14/21 500, #21252e`, and is read from the first text node inside the component.
 - The state table has one row per state that differs. The first row lists every value; later rows list only what changes. A state with the same values as the first is named in its label, for example "default (same: focus-visible)". When the root paints nothing, "Child layers" names the first nodes inside it that do.
-- Crops are images of the component read from the live page, in [components/crops/](components/crops) (64 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
+- Crops are images of the component read from the live page, in [components/crops/](components/crops) (65 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
 
 ## Discovery list
 
@@ -41,7 +41,7 @@ Screenshots are named `{page}-{state}.png`: `{page}-dark-*` shots flip the produ
 
 Values that apply across entries, from the measurement files.
 
-**Focus.** 8 components were given a real keyboard focus. 2 draw an outline ring: `mv-chip` (1px auto #101010 `color.semantics-dark-background-universal-inverse-strong`, offset 0px), `tk-book` (1px auto #101010 `color.semantics-dark-background-universal-inverse-strong`, offset 0px). The other 6 show no measured change: `nv-mark`, `nv-tab`, `nv-tab-active`, `nv-search`, `at-book`, `tk-date`.
+**Focus.** 7 components were given a real keyboard focus. 2 draw an outline ring: `mv-chip` (1px auto #101010 `color.semantics-dark-background-universal-inverse-strong`, offset 0px), `tk-book` (1px auto #101010 `color.semantics-dark-background-universal-inverse-strong`, offset 0px). The other 5 show no measured change: `nv-mark`, `nv-tab`, `nv-tab-active`, `nv-search`, `at-book`.
 
 **Pressed.** Forced with DevTools (`CSS.forcePseudoState` :active:hover). Nothing a real press would submit was ever pressed.
 
@@ -120,18 +120,14 @@ The '/' For-you feed: the page heading and the section rails (artist headshots, 
 #### Page heading
 The home feed heading. Read as `hm-h1` on the home feed page.
 
-**Values (default).** size 728 x 36; background transparent; text BeVietnamPro 14/20 600, #231268 `color.purple.800`; layers a.md:dds-px-2.dds-py-2 84.0x36.0 #eae5ff `color.gradient-purple` transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px 9999px; a.md:dds-px-2.dds-py-2 84.0x36.0 transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px 9999px; a.md:dds-px-2.dds-py-2 84.0x36.0 transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px.
-
-Child layers that carry the look: a 84x36 background #eae5ff `color.gradient-purple` radius 9999px shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px; a 84x36 radius 9999px shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px; a 84x36 radius 9999px shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px.
+**Values (default).** size 263 x 20; background transparent; text BeVietnamPro 24/20 600, #131316 `color.button-outline-text`.
 
 ![Page heading default](components/crops/hm-h1-default.png)
 
 #### Section heading
 A feed section heading (artists / movies / events rail). Read as `hm-section` on the home feed page.
 
-**Values (default).** size 728 x 36; background transparent; text BeVietnamPro 14/20 600, #231268 `color.purple.800`; layers a.md:dds-px-2.dds-py-2 84.0x36.0 #eae5ff `color.gradient-purple` transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px 9999px; a.md:dds-px-2.dds-py-2 84.0x36.0 transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px 9999px; a.md:dds-px-2.dds-py-2 84.0x36.0 transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px.
-
-Child layers that carry the look: a 84x36 background #eae5ff `color.gradient-purple` radius 9999px shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px; a 84x36 radius 9999px shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px; a 84x36 radius 9999px shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px.
+**Values (default).** size 314 x 20; background transparent; text BeVietnamPro 24/20 600, #131316 `color.button-outline-text`.
 
 ![Section heading default](components/crops/hm-section-default.png)
 
@@ -266,7 +262,9 @@ The artist page and the ticket page: display names, upcoming-show cards, date pi
 #### Artist name
 The artist page display name. Read as `at-h1` on the artist page page.
 
-Not on the page when it was captured.
+**Values (default).** size 350.58 x 40; background transparent; text ui-sans-serif 32/40 700, #131316 `color.button-outline-text`.
+
+![Artist name default](components/crops/at-h1-default.png)
 
 #### Show card
 An upcoming-show card on the artist page; hover measured, never followed. Read as `at-show` on the artist page page.
@@ -280,7 +278,7 @@ Child layers that carry the look: div 296x544 border 1px solid rgba(0, 0, 0, 0.0
 ![Show card default](components/crops/at-show-default.png) ![Show card hover](components/crops/at-show-hover.png)
 
 #### Book CTA
-A booking button on the artist page; measured, never pressed — booking gates on the Zomato account. Read as `at-book` on the artist page page.
+The booking link on the artist page — the show card itself navigates to the ticket page; measured at every paintable state, never followed — booking gates on the Zomato account. Read as `at-book` on the artist page page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -293,7 +291,7 @@ Child layers that carry the look: div 296x544 border 1px solid rgba(0, 0, 0, 0.0
 #### Event title
 The event detail title on the ticket page. Read as `tk-h1` on the ticket page page.
 
-**Values (default).** size 688 x 32; background transparent; text ui-sans-serif 24/32 600, #131316 `color.button-outline-text`.
+**Values (default).** size 169.13 x 38; background transparent; text ui-sans-serif 28/normal 700, #131316 `color.button-outline-text`.
 
 ![Event title default](components/crops/tk-h1-default.png)
 
@@ -302,18 +300,16 @@ A date/time selector pill; measured, never confirmed. Read as `tk-date` on the t
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 1440 x 900; background transparent; text ui-sans-serif 16/24 600, #131316 `color.button-outline-text`; icon 32 x 32, #6444e4 `color.border-brand`; layers div.dds-w-full.dds-bg-primary 1440.0x75.0 #ffffff `color.brand-pure-white` B:1px solid rgba(0, 0, 0, 0.08) `color.black-alpha.8` transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(0, 0, 0, 0.12) 0px 1px 4px 0px; div.dds-ml-3.5.dds-mr-2 1.4x30.0 #d1d5db; button.dds-flex.dds-items-center 200.0x52.0 transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px 9999 |
+| default (same: hover, pressed) | size 162.13 x 20; background transparent; text ui-sans-serif 16/20 600, #6d49fd `color.button-brand-background` |
 
-Child layers that carry the look: div 1440x75 background #ffffff `color.brand-pure-white` border 1px solid rgba(0, 0, 0, 0.08) `color.black-alpha.8` shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(0, 0, 0, 0.12) 0px 1px 4px 0px; div 1.4x30 background #d1d5db; button 200x52 radius 9999px shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px.
+**Focus not capturable.** A real keyboard focus could not be held on this element (`focus-visible` recorded `via: focus failed`), so its focus look is uncaptured — not measured as absent.
 
-![Date pill default](components/crops/tk-date-default.png) ![Date pill hover](components/crops/tk-date-hover.png) ![Date pill focus-visible](components/crops/tk-date-focus-visible.png) ![Date pill pressed](components/crops/tk-date-pressed.png)
+![Date pill default](components/crops/tk-date-default.png) ![Date pill hover](components/crops/tk-date-hover.png) ![Date pill pressed](components/crops/tk-date-pressed.png)
 
 #### Ticket price
 The ticket price line. Read as `tk-price` on the ticket page page.
 
-**Values (default).** size 1440 x 900; background transparent; text ui-sans-serif 16/24 600, #131316 `color.button-outline-text`; icon 32 x 32, #6444e4 `color.border-brand`; layers div.dds-w-full.dds-bg-primary 1440.0x75.0 #ffffff `color.brand-pure-white` B:1px solid rgba(0, 0, 0, 0.08) `color.black-alpha.8` transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(0, 0, 0, 0.12) 0px 1px 4px 0px; div.dds-ml-3.5.dds-mr-2 1.4x30.0 #d1d5db; button.dds-flex.dds-items-center 200.0x52.0 transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px 9999.
-
-Child layers that carry the look: div 1440x75 background #ffffff `color.brand-pure-white` border 1px solid rgba(0, 0, 0, 0.08) `color.black-alpha.8` shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(0, 0, 0, 0.12) 0px 1px 4px 0px; div 1.4x30 background #d1d5db; button 200x52 radius 9999px shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px.
+**Values (default).** size 41.19 x 24; background transparent; text ui-sans-serif 18/20 700, #131316 `color.button-outline-text`.
 
 ![Ticket price default](components/crops/tk-price-default.png)
 
@@ -395,9 +391,9 @@ Booking and payment need the Zomato account — the Book/Proceed CTAs lead to si
 
 ### Pages
 
-- **Join, Log In and Share actions.** The server-detail Join and Share buttons and the auth submits gate on sign-in; they were measured at default/hover/focus-visible/pressed, never pressed.
-- **Invite pages.** /invite/<code> returned a dark frame signed out in this pass (the invite card did not paint); recorded as a boundary.
-- **Cookie banner.** A consent banner painted on first load; it was hidden for screenshots only — no consent choice was made.
+- **Book and Proceed actions.** The ticket-page Book buttons and the checkout they start gate on the Zomato account; they were measured at default/hover/focus-visible, never pressed.
+- **Search and checkout flows.** The nav search affordance links to /search and the booking flow continues into sign-in; neither was followed — the query box, seat picker and payment forms are an authenticated boundary.
+- **Dark pass.** The feed sections keep baked gradient art under html[data-theme=dark]; the repainted chrome and cards are the dark evidence, noted per component.
 
 ### States
 

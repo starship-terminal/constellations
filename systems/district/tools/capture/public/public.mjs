@@ -75,8 +75,14 @@ class Shooter {
         const off = y - top;              // where the wanted region starts inside the viewport
         const vis = Math.min(chunk, Math.max(0, hReal - y));
         if (off < 0 || vis <= 0) break;
-        try { await screenshotWithMetadata(p, { path: `${f}.part${i}.png`, scale: 'css', clip: { x: 0, y: off, width: this.vw, height: vis } }, this.requested); }
-        catch (e) { log('  ! part' + i, String(e.message).split('\n')[0]); }
+        try {
+          await screenshotWithMetadata(p, { path: `${f}.part${i}.png`, scale: 'css', clip: { x: 0, y: off, width: this.vw, height: vis } }, this.requested);
+          // clip.y is viewport-relative; record where the tile sits in the
+          // scroller so quantize.py checks coverage, not screenshot offsets.
+          const sidecar = JSON.parse(fs.readFileSync(`${f}.part${i}.png.capture.json`, 'utf8'));
+          sidecar.capture.scroller = { top, wanted: y, height: hReal };
+          fs.writeFileSync(`${f}.part${i}.png.capture.json`, JSON.stringify(sidecar, null, 2) + '\n');
+        } catch (e) { log('  ! part' + i, String(e.message).split('\n')[0]); }
       }
       await scroller.evaluate((e) => e.scrollTo(0, 0));
       this.count++; log('  shot', name, 'inner H=' + H);

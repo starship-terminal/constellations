@@ -57,13 +57,12 @@
   "height": 2945
  },
  "dimensionCheck": {
-  "status": "fail",
+  "status": "pass",
   "expected": {
    "width": 1440,
    "height": 2945
   },
-  "basis": "stitchedParts",
-  "error": "tile 1 clip.y=0 expected 900; tile 2 clip.y=0 expected 900; tile 3 clip.y=0 expected 900; tiles cover 245px of the reported 900px document"
+  "basis": "stitchedParts"
  },
  "visualReview": {
   "status": "pending",
@@ -84,25 +83,29 @@
    "x": 0,
    "y": 0,
    "width": 1440,
-   "height": 900
+   "height": 900,
+   "documentY": 0
   },
   {
    "x": 0,
    "y": 0,
    "width": 1440,
-   "height": 900
+   "height": 900,
+   "documentY": 900
   },
   {
    "x": 0,
    "y": 0,
    "width": 1440,
-   "height": 900
+   "height": 900,
+   "documentY": 1800
   },
   {
    "x": 0,
    "y": 0,
    "width": 1440,
-   "height": 245
+   "height": 245,
+   "documentY": 2700
   }
  ]
 }

@@ -452,10 +452,14 @@ for name in sorted(k for k in R if re.fullmatch(r"--font-(regular|medium|semibol
 for name in sorted(k for k in R if k.startswith("--typography-scale-")):
     if R[name] == D.get(name):
         rest = name[len("--typography-scale-"):]
-        fam, _, prop = rest.partition("-font-")
-        prop = prop or fam.split("-")[-1]
-        fam = fam if prop != fam else rest.rsplit("-", 1)[0]
-        prop = {"size": "fontSize", "weight": "fontWeight", "height": "lineHeight", "spacing": "letterSpacing"}.get(prop.replace("line-", "height").replace("letter-", "spacing"), "other") if "-" not in rest else {"size": "fontSize", "weight": "fontWeight", "height": "lineHeight", "spacing": "letterSpacing"}.get(prop, "other")
+        fam, prop = rest, "other"
+        for suffix, key in (
+            ("-font-size", "fontSize"), ("-font-weight", "fontWeight"),
+            ("-line-height", "lineHeight"), ("-letter-spacing", "letterSpacing"),
+        ):
+            if rest.endswith(suffix):
+                fam, prop = rest[: -len(suffix)], key
+                break
         SPEC["core"].setdefault("typography", {}).setdefault(fam, {})[prop] = decl(name, {"fontSize": "fontSize", "fontWeight": "fontWeight", "lineHeight": "dimension", "letterSpacing": "other"}.get(prop, "other"))
 if R.get("--page-max-width") == D.get("--page-max-width") and "--page-max-width" in R:
     SPEC["core"].setdefault("size", {})["page-max-width"] = decl("--page-max-width")
@@ -613,8 +617,8 @@ for key, comp, state, prop, group, prefer, desc in [
             raw = "#ffffff"
             src = "the painted field of /, /movies/, /events/ (screenshots/home-default.png); matches declared --color-background-primary"
         elif prop == "_ctaLabel":
-            raw = "#f7f7f7"
-            src = "the painted label of the Book-tickets CTA (screenshots/tickets-default.png); matches declared --color-button-primary-label"
+            raw = C[comp]["states"][state]["textStyle"]["color"]
+            src = f"computed label colour of {comp} {state} (raw/components-computed.json)"
         else:
             raw = st(comp, state)[prop]
             src = f"computed {prop} of {comp} {state} (raw/components-computed.json)"
@@ -692,9 +696,17 @@ for key, comp, state, prop, desc in [
 
 # ------------------------------------------------------------- elevation
 
-# No painted box-shadow was measured on the public surfaces (every reading
-# reported transparent or none); the declared --shadow-* utilities above are
-# the elevation evidence.
+# The artist-page show-card badge is the one painted shadow found on the
+# public surfaces (the paint walk's second layer on at-show/at-book); the
+# declared --shadow-* utilities above are the rest of the elevation evidence.
+try:
+    _badge_shadow = C["at-show"]["states"]["default"]["paint"][1]["shadow"]
+    SPEC["core"].setdefault("shadow", {})["badge"] = lit(
+        _badge_shadow, "other",
+        "paint layer of the artist-page show-card badge (raw/components-computed.json)",
+        "The show-card badge's painted shadow — a 4px drop at 25% black; every other public reading reported transparent or none.")
+except (KeyError, IndexError, TypeError):
+    pass
 # ------------------------------------------------------------------ motion
 
 mo = SPEC["core"].setdefault("motion", {})

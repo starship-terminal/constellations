@@ -173,21 +173,17 @@ Page: home. Selector: `feed heading`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 728 x 36 |
+| Size (w x h) | 263 x 20 |
 | Padding | 0px |
-| Gap | 8px |
 | Border | none |
 | Radius | 0px |
 | Background | transparent |
 | Box shadow | none |
 | Outline | none |
-| Font | BeVietnamPro 16px/24px 400 |
+| Font | BeVietnamPro 24px/20px 600 |
 | Letter spacing | normal |
 | Colour | #131316 |
-| Text node | a.md:dds-px-2.dds-py-2: BeVietnamPro 14px/20px 600, #231268 |
 | Transition | none |
-| Icon | 0 x 0, colour #231268 |
-| Painted layers | a.md:dds-px-2.dds-py-2 84.0x36.0 bg #eae5ff r 9999px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px; a.md:dds-px-2.dds-py-2 84.0x36.0 r 9999px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px; a.md:dds-px-2.dds-py-2 84.0x36.0 r 9999px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px; a.md:dds-px-2.dds-py-2 84.0x36.0 r 9999px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px; a.md:dds-px-2.dds-py-2 84.0x36.0 r 9999px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px; a.md:dds-px-2.dds-py-2 84.0x36.0 r 9999px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px |
 | How | at rest |
 
 Crops: `hm-h1-default.png`.
@@ -200,21 +196,17 @@ Page: home. Selector: `section heading`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 728 x 36 |
+| Size (w x h) | 314 x 20 |
 | Padding | 0px |
-| Gap | 8px |
 | Border | none |
 | Radius | 0px |
 | Background | transparent |
 | Box shadow | none |
 | Outline | none |
-| Font | BeVietnamPro 16px/24px 400 |
+| Font | BeVietnamPro 24px/20px 600 |
 | Letter spacing | normal |
 | Colour | #131316 |
-| Text node | a.md:dds-px-2.dds-py-2: BeVietnamPro 14px/20px 600, #231268 |
 | Transition | none |
-| Icon | 0 x 0, colour #231268 |
-| Painted layers | a.md:dds-px-2.dds-py-2 84.0x36.0 bg #eae5ff r 9999px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px; a.md:dds-px-2.dds-py-2 84.0x36.0 r 9999px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px; a.md:dds-px-2.dds-py-2 84.0x36.0 r 9999px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px; a.md:dds-px-2.dds-py-2 84.0x36.0 r 9999px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px; a.md:dds-px-2.dds-py-2 84.0x36.0 r 9999px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px; a.md:dds-px-2.dds-py-2 84.0x36.0 r 9999px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px |
 | How | at rest |
 
 Crops: `hm-section-default.png`.
@@ -618,9 +610,24 @@ Crops: `cm-filter-default.png`, `cm-filter-hover.png`, `cm-filter-focus-visible.
 
 Artist name. The artist page display name.
 
-Page: artist. Selector: `artist h1`. States: .
+Page: artist. Selector: `artist h1`. States: default.
 
-Not found on the page at capture time.
+| Property | default |
+|---|---|
+| Size (w x h) | 350.58 x 40 |
+| Padding | 0px |
+| Border | none |
+| Radius | 0px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | ui-sans-serif 32px/40px 700 |
+| Letter spacing | normal |
+| Colour | #131316 |
+| Transition | none |
+| How | at rest |
+
+Crops: `at-h1-default.png`.
 
 #### at-show
 
@@ -650,9 +657,9 @@ Crops: `at-show-default.png`, `at-show-hover.png`.
 
 #### at-book
 
-Book CTA. A booking button on the artist page; measured, never pressed — booking gates on the Zomato account.
+Book CTA. The booking link on the artist page — the show card itself navigates to the ticket page; measured at every paintable state, never followed — booking gates on the Zomato account.
 
-Page: artist. Selector: `book button`. States: default, hover, focus-visible, pressed.
+Page: artist. Selector: `booking card-link`. States: default, hover, focus-visible, pressed.
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
@@ -682,15 +689,15 @@ Page: tickets. Selector: `ticket h1`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 688 x 32 |
+| Size (w x h) | 169.13 x 38 |
 | Padding | 0px |
 | Border | none |
 | Radius | 0px |
 | Background | transparent |
 | Box shadow | none |
 | Outline | none |
-| Font | ui-sans-serif 24px/32px 600 |
-| Letter spacing | -0.6px |
+| Font | ui-sans-serif 28px/normal 700 |
+| Letter spacing | -0.7px |
 | Colour | #131316 |
 | Transition | none |
 | How | at rest |
@@ -705,21 +712,18 @@ Page: tickets. Selector: `date pill`. States: default, hover, focus-visible, pre
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 1440 x 900 | = | = | = |
+| Size (w x h) | 162.13 x 20 | = | = | = |
 | Padding | 0px | = | = | = |
 | Border | none | = | = | = |
 | Radius | 0px | = | = | = |
 | Background | transparent | = | = | = |
 | Box shadow | none | = | = | = |
 | Outline | none | = | = | = |
-| Font | ui-sans-serif 14px/21px 400 | = | = | = |
+| Font | ui-sans-serif 16px/20px 600 | = | = | = |
 | Letter spacing | normal | = | = | = |
-| Colour | #000000 | = | = | = |
-| Text node | span.dds-text-primary.dds-text-lg: ui-sans-serif 16px/24px 600, #131316 | = | = | = |
+| Colour | #6d49fd | = | = | = |
 | Transition | none | = | = | = |
-| Icon | 32 x 32, colour #6444e4 | = | = | = |
-| Painted layers | div.dds-w-full.dds-bg-primary 1440.0x75.0 bg #ffffff border B:1px solid #000000 @ 0.08 shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.12 0px 1px 4px 0px; div.dds-ml-3.5.dds-mr-2 1.4x30.0 bg #d1d5db; button.dds-flex.dds-items-center 200.0x52.0 r 9999px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px; div.dds-w-[42px].dds-h-[42px] 42.0x42.0 bg #d1d5db r 9999px; div.dds-cursor-pointer.dds-flex 0.0x0.0 bg #ffffff border T:1px solid #000000 @ 0.16 / R:1px solid #000000 @ 0.16 / B:1px solid #000000 @ 0.16 / L:1px solid #000000 @ 0.16 r 12px; div.dds-sticky.dds-left-0 0.0x0.0 bg #ffffff border B:1px solid #000000 @ 0.08 shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.12 0px 4px 4px -4px | = | = | = |
-| How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
+| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
 
 Crops: `tk-date-default.png`, `tk-date-hover.png`, `tk-date-focus-visible.png`, `tk-date-pressed.png`.
 
@@ -731,20 +735,18 @@ Page: tickets. Selector: `price`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 1440 x 900 |
+| Size (w x h) | 41.19 x 24 |
 | Padding | 0px |
 | Border | none |
 | Radius | 0px |
 | Background | transparent |
 | Box shadow | none |
 | Outline | none |
-| Font | ui-sans-serif 14px/21px 400 |
+| Font | ui-sans-serif 18px/20px 700 |
 | Letter spacing | normal |
-| Colour | #000000 |
-| Text node | span.dds-text-primary.dds-text-lg: ui-sans-serif 16px/24px 600, #131316 |
+| Colour | #131316 |
 | Transition | none |
-| Icon | 32 x 32, colour #6444e4 |
-| Painted layers | div.dds-w-full.dds-bg-primary 1440.0x75.0 bg #ffffff border B:1px solid #000000 @ 0.08 shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.12 0px 1px 4px 0px; div.dds-ml-3.5.dds-mr-2 1.4x30.0 bg #d1d5db; button.dds-flex.dds-items-center 200.0x52.0 r 9999px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px; div.dds-w-[42px].dds-h-[42px] 42.0x42.0 bg #d1d5db r 9999px; div.dds-cursor-pointer.dds-flex 0.0x0.0 bg #ffffff border T:1px solid #000000 @ 0.16 / R:1px solid #000000 @ 0.16 / B:1px solid #000000 @ 0.16 / L:1px solid #000000 @ 0.16 r 12px; div.dds-sticky.dds-left-0 0.0x0.0 bg #ffffff border B:1px solid #000000 @ 0.08 shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.12 0px 4px 4px -4px |
+| Cursor | pointer |
 | How | at rest |
 
 Crops: `tk-price-default.png`.
