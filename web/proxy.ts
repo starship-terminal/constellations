@@ -18,6 +18,7 @@
 // always allowed; DESIGN_SYSTEMS_ALLOWED_HOSTS adds more, comma-separated,
 // each `name` (any port) or `name:port`, case-insensitive: the same format
 // server/routes.py reads. Unset means loopback only.
+import { MCP_BODY_LIMIT, tooLarge } from "@/lib/mcp-batch";
 import { NextResponse, type NextRequest } from "next/server";
 // Loads the repo-root .env, where DESIGN_SYSTEMS_ALLOWED_HOSTS may live.
 import "@/lib/env";
@@ -73,7 +74,6 @@ function sameOrigin(origin: string, host: string | null): boolean {
 // provider settings). Checked against Content-Length before any route reads
 // the body. A request with no Content-Length (chunked) is not trusted to be
 // small: it is refused with 411 so a client cannot stream past the cap.
-const MCP_BODY_LIMIT = 256_000;
 const API_BODY_LIMIT = 128_000;
 
 function bodyLimit(pathname: string): number {
@@ -110,7 +110,10 @@ export function proxy(request: NextRequest) {
     if (length === null || !/^\d+$/.test(length.trim()))
       return refuse(411, "Send a Content-Length.");
     if (Number(length) > bodyLimit(request.nextUrl.pathname))
-      return refuse(413, "The request body is too large.");
+      // /api/mcp speaks JSON-RPC, so its refusal is a JSON-RPC error.
+      return request.nextUrl.pathname === "/api/mcp"
+        ? NextResponse.json(tooLarge(), { status: 413 })
+        : refuse(413, "The request body is too large.");
   }
 
   return NextResponse.next();

@@ -85,6 +85,9 @@ def _base_url(handler) -> str:
     return f"http://{addr[0]}:{addr[1]}"
 
 
+MCP_BODY_LIMIT = 256_000  # POST /api/mcp; web/proxy.ts holds the same cap
+
+
 def _body(handler, cap: int = 128_000) -> dict | None:
     try:
         n = int(handler.headers.get("content-length") or 0)
@@ -224,7 +227,12 @@ def handle_post(handler) -> bool:
             n = int(handler.headers.get("content-length") or 0)
         except ValueError:
             n = 0
-        if n <= 0 or n > 256_000:
+        if n > MCP_BODY_LIMIT:
+            _reply(handler, 413, {"jsonrpc": "2.0", "id": None,
+                                  "error": {"code": -32600,
+                                            "message": f"request body exceeds the {MCP_BODY_LIMIT}-byte limit"}})
+            return True
+        if n <= 0:
             _reply(handler, 400, {"jsonrpc": "2.0", "id": None,
                                   "error": {"code": -32600, "message": "a JSON-RPC body is required"}})
             return True
@@ -234,13 +242,11 @@ def handle_post(handler) -> bool:
             _reply(handler, 400, {"jsonrpc": "2.0", "id": None,
                                   "error": {"code": -32700, "message": "unparseable JSON"}})
             return True
-        mcp = _load("mcp")
-        msgs = raw if isinstance(raw, list) else [raw]
-        replies = [r for r in (mcp.handle(m) for m in msgs if isinstance(m, dict)) if r]
-        if not replies:
+        out = _load("mcp").handle_batch(raw)
+        if out is None:
             _empty(handler, 202)
-            return True
-        _reply(handler, 200, replies[0] if isinstance(raw, dict) else replies)
+        else:
+            _reply(handler, 200, out)
         return True
     chat = _load("chat")
     if path == "/api/provider/test":
