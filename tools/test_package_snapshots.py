@@ -111,7 +111,9 @@ console.log(JSON.stringify(out));
         sig = re.search(r"^\s*const SIGNED_PARAMS = .*?\n\s*const SIGNED = new RegExp\(.*?'i'\);$", src, re.M | re.S)
         cut = re.findall(r"^\s*const cutSigned = .*$", src, re.M)
         assert sig and len(cut) == 1, f"{label} has no SIGNED regex or no single cutSigned line"
-        return sig.group(0), cut[0].strip()
+        url = re.findall(r"^\s*const cutSignedUrl = .*$", src, re.M)
+        assert len(url) == 1, f"{label} has no single cutSignedUrl line"
+        return sig.group(0), cut[0].strip() + "\n" + url[0].strip()
 
     def test_snapshot_js_cut_signed_matches_the_kit(self):
         # #401 stopped a package copy's query at ( and ;, which kept &token= after ?crop=(0,0), an
@@ -126,7 +128,7 @@ console.log(JSON.stringify(out));
         # pass: every attribute, then the serialised page.
         for slug in PACKAGES:
             src = (folder(slug) / "snapshot.js").read_text()
-            self.assertIn("for (const a of [...n.attributes]) { const v = cutSigned(a.value); if (v !== a.value) n.setAttribute(a.name, v); }", src, slug)
+            self.assertIn("for (const a of [...n.attributes]) { const v = (a.name === 'style' ? cutSigned : cutSignedUrl)(a.value); if (v !== a.value) n.setAttribute(a.name, v); }", src, slug)
             self.assertRegex(src, r"\bhtml = cutSigned\('<!doctype html>\\n' \+ clone\.outerHTML\);", slug)
         cases = {
             'color:#fff;background:url(https://x/p.png?sig=1)': 'color:#fff;background:url(https://x/p.png)',
@@ -136,6 +138,13 @@ console.log(JSON.stringify(out));
             '<img data-src="https://x/p?options=a;b&token=abc">': '<img data-src="https://x/p">',
             'background:url(https://x/p.png?sig=1);color:red': 'background:url(https://x/p.png);color:red',
             'https://example.test/page?unit=7': 'https://example.test/page?unit=7',
+        }
+        # cutSignedUrl (every attribute but style) keeps a ;name: inside the query, so the token after it goes too
+        url_cases = {
+            '<img data-src="https://x/p?options=a;b:c&token=abc">': '<img data-src="https://x/p">',
+            'https://x/p?a=1;b:2&X-Amz-Signature=abc': 'https://x/p',
+            '<img data-src="https://x/p?crop=(0,0);b:c&token=abc">': '<img data-src="https://x/p">',
+            'https://example.test/page?unit=7;b:2': 'https://example.test/page?unit=7;b:2',
         }
         for path in copies:
             label = str(path.relative_to(ROOT))
@@ -148,6 +157,10 @@ console.log(JSON.stringify(out));
                 res = subprocess.run(["node", "-e", js], capture_output=True, text=True)
                 self.assertEqual(res.returncode, 0, (label, res.stderr))
                 self.assertEqual(json.loads(res.stdout), list(cases.values()), label)
+                js = sig + "\n" + cut + f"\nconsole.log(JSON.stringify({json.dumps(list(url_cases))}.map(cutSignedUrl)))"
+                res = subprocess.run(["node", "-e", js], capture_output=True, text=True)
+                self.assertEqual(res.returncode, 0, (label, res.stderr))
+                self.assertEqual(json.loads(res.stdout), list(url_cases.values()), label)
 
     def test_unsnap_flags_every_signed_url(self):
         for slug in PACKAGES:

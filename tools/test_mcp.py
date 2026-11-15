@@ -62,6 +62,29 @@ class MalformedRequestTest(unittest.TestCase):
                                "error": {"code": -32603, "message": "internal error"}})
 
 
+class BatchTest(unittest.TestCase):
+    PING = {"jsonrpc": "2.0", "id": 1, "method": "ping"}
+    NOTE = {"jsonrpc": "2.0", "method": "notifications/initialized"}
+
+    def test_empty_batch_is_one_invalid_request(self):
+        out = mcp.handle_batch([])
+        self.assertEqual(out["id"], None)
+        self.assertEqual(out["error"]["code"], -32600)
+
+    def test_each_non_object_member_gets_its_own_error(self):
+        out = mcp.handle_batch([1, "x", self.PING])
+        self.assertEqual([r.get("error", {}).get("code") for r in out], [-32600, -32600, None])
+        self.assertEqual(out[2]["id"], 1)
+
+    def test_only_notifications_get_nothing(self):
+        self.assertIsNone(mcp.handle_batch([self.NOTE, self.NOTE]))
+        self.assertIsNone(mcp.handle_batch(self.NOTE))
+
+    def test_single_message_and_scalar(self):
+        self.assertEqual(mcp.handle_batch(self.PING), {"jsonrpc": "2.0", "id": 1, "result": {}})
+        self.assertEqual(mcp.handle_batch(5)["error"]["code"], -32600)
+
+
 class StdioTest(unittest.TestCase):
     def test_session_survives_bad_lines(self):
         lines = [

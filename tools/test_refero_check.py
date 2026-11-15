@@ -9,6 +9,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent / "refero"))
 import check as refero_check  # noqa: E402
+import dump as refero_dump  # noqa: E402
 
 
 SCHEMA = """
@@ -60,6 +61,7 @@ class ReferoCheckTest(unittest.TestCase):
                         r["product_type"], r["design_style"], json.dumps(r["tags"])))
         db.commit()
         db.close()
+        refero_dump.write(self.refero / "refero.db", quiet=True)
 
     def write_catalog(self, rows):
         styles = [{k: r[k] for k in refero_check.CATALOG_FIELDS} for r in rows]
@@ -162,6 +164,29 @@ class ReferoCheckTest(unittest.TestCase):
         (self.refero / "catalog.json").write_text('{"styles": [null]}')
         self.assertIn("refero/catalog.json: a styles entry is not an object",
                       refero_check.check(self.refero))
+
+    def test_a_dump_that_disagrees_with_the_db_fails(self):
+        self.make(["alpha"])
+        db = sqlite3.connect(self.refero / "refero.db")
+        db.execute("UPDATE styles SET tagline='changed'")
+        db.commit()
+        db.close()
+        problems = refero_check.check(self.refero)
+        self.assertTrue(any("out of date in the dump: styles/u-alpha.json" in p
+                            for p in problems), problems)
+        refero_dump.write(self.refero / "refero.db", quiet=True)
+        self.assertFalse(any(".dump" in p for p in refero_check.check(self.refero)))
+
+    def test_a_missing_dump_fails(self):
+        self.make(["alpha"])
+        shutil.rmtree(self.refero / ".dump")
+        self.assertIn("refero/.dump/ is missing; run make refero-dump",
+                      refero_check.check(self.refero))
+
+    def test_the_dump_folder_is_not_a_style_folder(self):
+        self.make(["alpha"])
+        self.assertTrue((self.refero / ".dump" / "schema.sql").is_file())
+        self.assertEqual(refero_check.check(self.refero), [])
 
     def test_a_db_that_is_not_sqlite_only_skips_the_db_side(self):
         # A clone without `git lfs pull` holds the pointer file; the folder and

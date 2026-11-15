@@ -12,7 +12,6 @@ design-systems
 
 <p align="center">
   <a href="https://github.com/c-wenlong/designs/actions/workflows/check.yml"><img src="https://github.com/c-wenlong/designs/actions/workflows/check.yml/badge.svg" alt="Check"></a>
-  <a href="https://github.com/c-wenlong/designs/actions/workflows/pages.yml"><img src="https://github.com/c-wenlong/designs/actions/workflows/pages.yml/badge.svg" alt="Pages"></a>
   <img src="https://img.shields.io/badge/tools-stdlib--only-brightgreen.svg" alt="stdlib only">
   <img src="https://img.shields.io/badge/repo-private-red.svg" alt="Private repo">
 </p>
@@ -83,6 +82,9 @@ agent (the MCP server and `ds`).
 
 ## Features
 
+[FEATURES.md](FEATURES.md) is the full inventory of user-facing features,
+one line each with its status, surface, entry point and tests.
+
 | Area | What you get |
 | --- | --- |
 | **Packages** | 50 products under [systems/](systems), all in one layout: `tokens.json` (W3C DTCG, Tokens Studio multi-set), a generated `DESIGN.md`, a `style-guide.html` rendering every token, `components.md`, `patterns.md`, screenshots, and the tools that rebuild it |
@@ -116,7 +118,6 @@ cp .env.example .env                      # fill in what you use; .env is gitign
 
 | Variable | Used by |
 | --- | --- |
-| `STATICRYPT_PASSWORD` | The Pages workflow, encrypting every page of the built docs site |
 | `ANTHROPIC_API_KEY` | `tools/refero/classify.py`; the gallery chat's fallback provider (stays server-side) |
 | `R2_ACCOUNT_ID`, `R2_ACCESS_KEY_ID`, `R2_SECRET_ACCESS_KEY`, `R2_BUCKET` | `tools/refero/upload_r2.py`, the media mirror upload |
 | `DS_CHAT_MODEL` | Optional: the model the gallery chat calls when the browser has none saved |
@@ -180,14 +181,12 @@ another port and `--no-open` skips the browser. The app has three parts:
   platform (web, mobile or desktop), as a heatmap with the evidence
   behind each grade. The app reads [scorecard/](scorecard) live on each
   request; [tools/scorecard.py](tools/scorecard.py) only writes the
-  published site's copy under `docs/scorecard/`.
+  docs site's copy under `docs/scorecard/`.
 - **Docs**: the files under [docs/](docs), rendered.
 
-The library docs, without the gallery, are also published to GitHub Pages at
-https://c-wenlong.github.io/designs/ by [tools/site.py](tools/site.py),
-with every page encrypted by
-StatiCrypt, so it needs the password in the `STATICRYPT_PASSWORD` repository
-secret. `make help` lists the other targets (`make check` validates
+The library docs, without the gallery, are also built into a static docs
+site by [tools/site.py](tools/site.py) (`make docs`), which the home-server
+deployment serves. `make help` lists the other targets (`make check` validates
 [catalog.json](catalog.json) against the packages).
 
 ## Catalog
@@ -339,6 +338,15 @@ what is open, with the evidence.
 | <img src="systems/awwwards/icon.png" width="20" alt="awwwards"> | [awwwards](systems/awwwards/README.md) | Web-awards directory and curated gallery: near-achromatic ink-on-white chrome, Inter Tight at declared weights 300-800, six category accent triads plus a measured award gold, 8/14/72px radius steps, filter-bar dropdowns and site-card grids, hand-named CSS design tokens on :root | 2026-11-11 | light | 4 of 25 met, 17 partly, 4 missing | `icons/` |
 | <img src="systems/b150/icon.png" width="20" alt="b150"> | [b150](systems/b150/README.md) | Gen-AI builders' network marketing site: Tailwind v4 with a declared @layer theme token layer (warm creams on near-black chrome, coral-to-lime accents, --text-* scale, --radius-*), Fragment Mono labels under 120px Geist display, fully-round pill CTAs, marketing sections for Vibeathon, Talent, Free Resources and a contact form | 2026-11-11 | light | 3 of 25 met, 18 partly, 4 missing | `icons/` |
 | <img src="systems/avnier/icon.png" width="20" alt="avnier"> | [avnier](systems/avnier/README.md) | Fashion e-commerce storefront: achromatic black-on-white Shopify chrome, Space Mono tracked-uppercase labels, licensed display titles, square zero-radius controls, mega-menu and side-drawer navigation, scheme-name CSS design tokens | 2026-11-11 | light | 3 of 25 met, 17 partly, 5 missing | `icons/` |
+| <img src="systems/designmodo/icon.png" width="20" alt="designmodo"> | [designmodo](systems/designmodo/README.md) | design-tool SaaS marketing and email-builder app design: two systems on one domain - an InterVariable marketing surface over dark #071c26 hero bands (56px display, #f49a40 orange Sign Up pill, #27ae60 green Open App CTA, #0d1d24 near-black product CTAs that flip #fb754b coral on hover) and a Fira Sans Postcards app shell (60px navy header, #2198ed blue actions, #485f6b slate, 241px sidebar, 266x592 template cards with 9px FREE/NEW badges) gated by a measured Welcome-back modal | 2026-11-13 | light | not graded yet | `icons/` |
+| <img src="systems/designstripe/icon.png" width="20" alt="designstripe"> | [designstripe](systems/designstripe/README.md) | AI design-agent and asset-library product design: a real declared shadcn-style token layer (--background/--primary*/--muted*/--accent*/--border-*/--ring* semantics, --neutral-50..950 and --green-50..950 scales, Tailwind utility layer, declared .dark block) over a white light surface (#2c2c26 olive ink, #6d6e5e muted mono text, #e8e7d9 cream WAITLIST pill, #aaa674 olive-gold accents, #d0d0c8 hairlines), fontSerif display + fontMono UI, 96px serif heroes, a dark feature-accordion panel, aspect-square asset tiles, bordered tool cards and an ink footer | 2026-11-14 | light, dark | not graded yet | `icons/` |
+| <img src="systems/explore/icon.png" width="20" alt="explore"> | [explore](systems/explore/README.md) | ad-free creative-community design, reconstructed offline from the 2023-02-23 archive build: a signature mid-grey #9d9d9d field (fixed 60px header, hero, auth welcome panel, media placeholders) over white pages, one #ffc60a yellow accent (Sign up free, submits, PRO badge), #262626 dark pill submits, a warm-neutral ramp (#262626 ink to #efefef/#ebebeb hairlines), UntitledSans UI + UntitledSansMedium titles + LabilGrotesk-Medium display, 7-8px card/field radii against 20px category pills and 50px button pills, a 3-up 33.3%-wide post-card feed in a 1640px column, and split-screen auth pages | 2026-11-14 | light | not graded yet | `icons/` |
+| <img src="systems/factory/icon.png" width="20" alt="factory"> | [factory](systems/factory/README.md) | AI-dev-tool marketing and docs design: a Tailwind v4-style declared token layer (--font-geist-* stacks, a --color-base-* neutral ramp plus --color-accent-* orange steps and --color-<hue>-* hue scales, a --text-*/--leading-*/--tracking-* type ramp, --radius-* steps, --container-*/--breakpoint-* layout and --blur-*/--ease-*/--animate-* motion) with inverted theme mechanics - :root declares the dark palette and data-theme="light" remaps it, so marketing pages ship light with scoped dark [data-dark-hero]/.invert-color-scheme sections and a dark footer, docs.factory.com carries a real Light/Dark/System toggle, and auth.factory.ai is a separate dark sign-in card outside the shared layer. ~60px uppercase Geist mastheads, paired outline+dark pill CTAs, a mono install-command box, and Geist/Geist Mono self-hosted variable fonts | 2026-11-14 | light, dark | not graded yet | `icons/` |
+| <img src="systems/faire/icon.png" width="20" alt="faire"> | [faire](systems/faire/README.md) | Wholesale marketplace surfaces: a white field with near-black #333333 fs-buttons at 4px radius against 999px filter pills, a 2px #275ec5 focus ring, Graphik 14/20 UI text under Nantes 52/64 and GT Canon 30/38 serif mastheads, and the declared Slate token layer (--slate-* ramps, roles and the .fs-mode-on-surface inverse scope) readable straight off the bundles | 2026-11-14 | light | not graded yet | `icons/` |
+| <img src="systems/fal/icon.png" width="20" alt="fal"> | [fal](systems/fal/README.md) | generative-media infrastructure design: three declared token layers (a Tailwind v4-style app layer of 763 names - surface/content/stroke/overlay/badge/accent roles over HSL-triplet ramps - a Webflow marketing palette and a fumadocs docs layer) across three signed-out surfaces - a dark-bronze+cyan Focal Web marketing site (neon-lime CTA), a dark #121216 model catalog and playground (violet #783afb Sign-in-to-run, ghost washes, model cards), and a light Focal/Public-Sans docs - plus an OAuth-only login card and a 390px phone pass | 2026-11-14 | light, dark | not graded yet | `icons/` |
+| <img src="systems/family/icon.png" width="20" alt="family"> | [family](systems/family/README.md) | crypto-wallet marketing and product chrome: the marketing role layer (--body/--body-muted/--heading text, --blue/--orange/--beige/--gray-light, a full --graphic-* illustration palette) plus the app's declared product layer (a --family-*/--primary-* violet scale #9896ff, 9-step --danger-*/--valid-*/--warning-* status ramps, 21 named --wallet-* colours, --overlay-*/--input-*/--duration-*/--ease-* values), a white field with #343433 Family-face headings, #f2f0ed hairlines and near-black #171717 CTA pills, blog/support/docs/legal surfaces and the signed-out Aave Account login | 2026-11-14 | light, dark | not graded yet | `icons/` |
+| <img src="systems/farfetch/icon.png" width="20" alt="farfetch"> | [farfetch](systems/farfetch/README.md) | Luxury-fashion marketplace on the pulse token layer: a two-row sticky chrome (department links, 201px letterspaced wordmark, 44px icon hit areas, red Sale link), a 4-up product-card grid (3:4 image, wishlist heart, brand kicker, price), the PDP buy box with a square #222 Add To Bag, ~590 --colors-<family>-<role>-<state>-<slot> semantics, 'Farfetch Basis' UI type with 'Nimbus Roman D' editorial serif, square corners and a 1000px pill | 2026-11-14 | light | not graded yet | `icons/` |
+| <img src="systems/fibery/icon.png" width="20" alt="fibery"> | [fibery](systems/fibery/README.md) | modular work-platform and product-management design: a declared --fibery-* token layer (a culinary named palette - milk/cream/soup/tea/rusty/terracotta/mud -, basic-to-quaternary ramps for eight hues, page/text/menu/gray/form/business semantic roles, one --fibery-shadow-m) on a single warm light theme - soup #faebd6 page field, #fff5e8 menu bar, cream cards, #251d1a ink, dark 40px pill CTAs and the #3b758c form blue - with Suisse Intl UI + Fraunces serif display, hover-opened header dropdowns, pricing plan tiles, a template gallery, the fibery.io sign-up wizard and the login edge | 2026-11-14 | light | not graded yet | none |
 
 <!-- catalog:end -->
 
@@ -422,19 +430,19 @@ flowchart LR
   GEN["Generated README sections<br/>brief.py, health.py, design-md"]
   DATA["web/data/<br/>catalog.py build"]
   SCP["docs/scorecard/<br/>scorecard.py"]
-  SITE["site/<br/>site.py + StatiCrypt"]
+  SITE["site/<br/>site.py"]
   DOCS["docs/*.md"]
   API["server/<br/>/api routes + MCP, read-only"]
   APP["web/ app<br/>gallery, refero, scorecard, docs, chat"]
   DS["cli/ ds"]
-  PAGES["GitHub Pages<br/>encrypted"]
+  HOME["home server<br/>nginx"]
 
   SYS --> CAT --> DATA --> APP
   REF --> DATA
   CAT --> GEN
   AUD --> GEN
   AUD --> APP
-  AUD --> SCP --> SITE --> PAGES
+  AUD --> SCP --> SITE --> HOME
   DOCS --> SITE
   SYS --> API
   REF --> API
@@ -471,13 +479,7 @@ flowchart LR
   materialised from it, and `tools/refero/check.py` (inside `make check`)
   fails when the three disagree. Screenshots and videos live outside git in
   a host-side media mirror.
-- **Two deployments.** Pushes to `main` run
-  [pages.yml](.github/workflows/pages.yml): `make check`, then
-  `tools/site.py` builds `docs/` into `site/` (it never emits the gallery),
-  StatiCrypt encrypts every HTML page (the build fails if a page lacks
-  StatiCrypt's marker or a search index or sitemap appears; assets are
-  copied unencrypted)
-  and Pages deploys it. The home-server deployment
+- **One deployment.** The home-server deployment
   ([scripts/redeploy.sh](scripts/redeploy.sh),
   [scripts/deploy_trigger.py](scripts/deploy_trigger.py)) serves the app and
   the `/api/` routes behind nginx, with the refero media mirror at
@@ -506,8 +508,8 @@ flowchart LR
 | [cli/](cli) | `ds`, the stdlib-only terminal client for the remote MCP endpoint, and the `install.sh` that `/api/install.sh` serves |
 | [scripts/](scripts) | Ops, not library: `dev.sh` behind `make dev`, and the home-server deployment and media mirror scripts (`deploy_trigger.py`, `redeploy.sh`, `studio-deploy.sh`) |
 | [example/](example) | Shallow clones of public design-system repos, gitignored except [example/README.md](example/README.md). References, never a source of values |
-| [docs/](docs) | The published docs site's source: the library docs below, the home page, and the scorecard pages (generated into `docs/scorecard/`, gitignored) |
-| [site/](site) | The built docs site (`make docs` writes it), gitignored; the Pages workflow encrypts and deploys it |
+| [docs/](docs) | The docs site's source: the library docs below, the home page, and the scorecard pages (generated into `docs/scorecard/`, gitignored) |
+| [site/](site) | The built docs site (`make docs` writes it), gitignored; the home-server deployment serves it |
 | [scorecard/](scorecard) | The scorecard's rubric (`criteria.json`) and one dated file per audit (`audits/<date>.json`, `<date>-2.json` for a second run that day). `make grade` writes a new one with the scripted criteria re-checked ([tools/grade.py](tools/grade.py)) |
 | [tools/make_icons.py](tools/make_icons.py) | The site has two app icons, picked under Settings > Preferences. Flat, the default, is the prism mark in [docs/assets/favicon.svg](docs/assets/favicon.svg) with its renders in [docs/assets/icons/](docs/assets/icons), committed as drawn. This script derives the Glass set ([docs/assets/icons/glass/](docs/assets/icons/glass)) from its master render, [docs/assets/logo/hero-ai.png](docs/assets/logo/hero-ai.png). Every docs page's template head links the Flat favicon, the touch icon, the web app manifest ([docs/site.webmanifest](docs/site.webmanifest)) and [docs/assets/app-icon.js](docs/assets/app-icon.js), which swaps in the chosen set before first paint |
 | [tools/scorecard.py](tools/scorecard.py) | Writes the scorecard pages from [scorecard/](scorecard) |
@@ -519,6 +521,7 @@ flowchart LR
 | [docs/EVIDENCE.md](docs/EVIDENCE.md) | How every value says where it came from |
 | [docs/CAPTURE.md](docs/CAPTURE.md) | How to capture a new product, and the traps that cost time before |
 | [docs/RIGHTS.md](docs/RIGHTS.md) | Why this repo stays private, and what is not ours |
+| [docs/decisions/](docs/decisions) | Decision records: why the library does what it does (0001: motion as tokens plus a reduced-motion probe) |
 | [AGENTS.md](AGENTS.md) | Instructions for coding agents working here |
 
 ## Where the packages came from
@@ -545,14 +548,13 @@ interpreter lacks it; `make test PYTHON=<a python3 with Pillow>` covers
 those too. `make lint-design-md` runs Google's pinned DESIGN.md linter
 through `npx` in a temp dir.
 
-CI runs four workflows:
+CI runs three workflows:
 
 | Workflow | What it gates |
 | --- | --- |
 | [check.yml](.github/workflows/check.yml) | `make check` on every push to `main` and every pull request |
 | [app.yml](.github/workflows/app.yml) | Format check, media taxonomy check, typecheck, tests and a production build for `app/` when `app/**`, `systems/**`, `catalog.json`, `refero/catalog.json` or `tools/catalog.py` changes |
 | [web.yml](.github/workflows/web.yml) | Typecheck and a production build for `web/` when `web/**`, `tools/catalog.py` or `catalog.json` changes |
-| [pages.yml](.github/workflows/pages.yml) | `make check`, then the docs site build, StatiCrypt encryption and the Pages deploy; a stale generated section fails the deploy |
 
 Rules that bite: Brief, Health, `DESIGN.md`, `web/data/`,
 `docs/scorecard/` and `site/` are regenerated, never hand-edited; every
@@ -565,11 +567,13 @@ including the pre-commit checks.
 
 | Document | What it covers |
 | --- | --- |
+| [FEATURES.md](FEATURES.md) | Every user-facing feature by area: status, surface, entry point and tests |
 | [docs/DESIGN-SYSTEM.md](docs/DESIGN-SYSTEM.md) | The five layers a complete design system needs; the rubric the scorecard grades against |
 | [docs/PACKAGE.md](docs/PACKAGE.md) | What a package contains, file by file |
 | [docs/EVIDENCE.md](docs/EVIDENCE.md) | How every value says where it came from |
 | [docs/CAPTURE.md](docs/CAPTURE.md) | How to capture a new product, and the traps that cost time before |
 | [docs/RIGHTS.md](docs/RIGHTS.md) | Why this repo stays private, and what is not ours |
+| [docs/decisions/](docs/decisions) | Decision records: why the library does what it does (0001: motion as tokens plus a reduced-motion probe) |
 | [docs/TODO.md](docs/TODO.md) | Open work, newest first |
 | [refero/README.md](refero/README.md) | The refero snapshot: layout, provenance, refresh and the media mirror |
 | [example/README.md](example/README.md) | The public reference clones and the rules for using them |

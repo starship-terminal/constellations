@@ -12,7 +12,8 @@ from raw/css-vars.json and raw/components-computed.json. Adapted from the Course
 Every image's .capture.json sidecar travels with it: a plain capture's sidecar is copied next to the
 quantized PNG, and a stitched image's sidecar is rebuilt from its part tiles' sidecars — the parts'
 clips recorded under partClip, the union under capture.clip, and a fresh dimensionCheck against the
-stitched PNG's real pixel size (a part's own check can never vouch for the sheet).
+stitched PNG's real pixel size (a part's own check can never vouch for the sheet). A stitched image
+whose tiles lack sidecars gets none.
 """
 from PIL import Image
 import json, pathlib, re, shutil, sys
@@ -29,22 +30,42 @@ def sidecar_for(png):
     return json.loads(f.read_text()) if f.exists() else None
 
 
+def pixel_scale(meta):
+    """Device pixels per CSS pixel the tile was captured at: the recorded ratio, else the tile's own
+    PNG width over its clip width, else 1 (a sidecar that records neither is read as a 1x capture)."""
+    cap = meta.get('capture') or {}
+    if cap.get('scale') == 'css':
+        return 1
+    dpr = (meta.get('actual') or {}).get('devicePixelRatio') or (meta.get('requested') or {}).get('deviceScaleFactor')
+    if dpr:
+        return dpr
+    clip, png = cap.get('clip'), meta.get('png')
+    return png['width'] / clip['width'] if clip and png and clip.get('width') and png.get('width') else 1
+
+
 def stitched_sidecar(name, sheet, tile_paths):
-    """Rebuild name.png.capture.json from the part tiles' sidecars."""
+    """Rebuild name.png.capture.json from the part tiles' sidecars, or None when any tile cannot vouch.
+
+    Tile clips are CSS pixels, so the stitched clip stays in CSS pixels and the expected PNG size is
+    each clip times its pixel scale (a 2x capture is twice its clip). A tile with no sidecar or no clip
+    leaves the image without one: unmeasured shots are never marked as checked."""
     parts = [sidecar_for(f) for f in tile_paths]
-    meta = dict(parts[0]) if parts and parts[0] else {'schemaVersion': 1}
+    if not parts or any(not p for p in parts):
+        return None
+    clips = [(p.get('capture') or {}).get('clip') for p in parts]
+    scales = [pixel_scale(p) for p in parts]
+    if any(not c for c in clips):
+        return None
+    meta = dict(parts[0])
     meta['screenshot'] = f'{name}.png'
-    clips = [(p.get('capture') or {}).get('clip') for p in parts if p]
-    clips = [c for c in clips if c]
-    total_h = sum(c['height'] for c in clips)
-    meta['capture'] = {'mode': 'stitchedParts',
-                       'scale': (parts[0].get('capture') or {}).get('scale', 'device') if parts and parts[0] else 'device',
-                       'clip': {'x': 0, 'y': 0, 'width': sheet.width, 'height': total_h} if clips else None}
+    meta['capture'] = {'mode': 'stitchedParts', 'scale': (parts[0].get('capture') or {}).get('scale', 'device'),
+                       'clip': {'x': clips[0]['x'], 'y': clips[0]['y'], 'width': clips[0]['width'],
+                                'height': sum(c['height'] for c in clips)}}
     meta['png'] = {'width': sheet.width, 'height': sheet.height}
     meta['stitchedFrom'] = [f.name for f in tile_paths]
-    if clips:
-        meta['partClip'] = clips
-    expected = {'width': sheet.width, 'height': total_h} if clips else {'width': sheet.width, 'height': sheet.height}
+    meta['partClip'] = clips
+    expected = {'width': round(clips[0]['width'] * scales[0]),
+                'height': sum(round(c['height'] * s) for c, s in zip(clips, scales))}
     matches = abs(sheet.width - expected['width']) <= 1 and abs(sheet.height - expected['height']) <= 1
     meta['dimensionCheck'] = {'status': 'pass' if matches else 'fail', 'expected': expected, 'basis': 'stitchedParts'}
     if not matches:
@@ -77,9 +98,11 @@ for f in sorted(RAW.glob('*.png')):
         continue
     im = Image.open(f).convert('RGB')
     im.quantize(colors=256, method=Image.Quantize.MEDIANCUT, dither=Image.Dither.NONE).save(OUT / f.name, optimize=True)
-    if f.stem in stitched:
-        (OUT / f'{f.name}.capture.json').write_text(json.dumps(stitched[f.stem], indent=1) + '\n')
-    elif f.with_name(f.name + '.capture.json').exists():
-        shutil.copyfile(f.with_name(f.name + '.capture.json'), OUT / f'{f.name}.capture.json')
+    out_side = OUT / f'{f.name}.capture.json'
+    out_side.unlink(missing_ok=True)   # never leave a previous run's measurements beside a new image
+    if stitched.get(f.stem):
+        out_side.write_text(json.dumps(stitched[f.stem], indent=1) + '\n')
+    elif f.stem not in stitched and f.with_name(f.name + '.capture.json').exists():
+        shutil.copyfile(f.with_name(f.name + '.capture.json'), out_side)
     n += 1
 print(n, 'screenshots ->', OUT)

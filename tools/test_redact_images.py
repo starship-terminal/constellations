@@ -150,6 +150,32 @@ class Commands(unittest.TestCase):
             with self.assertRaises(SystemExit):                # a package with no images
                 R.main(["check", d, "--patterns", str(pats)])
 
+    def test_bad_patterns_or_rules_file_is_a_one_line_exit_2(self):
+        with tempfile.TemporaryDirectory() as d:
+            pkg = Path(d) / "pkg"
+            pkg.mkdir()
+            bad = Path(d) / "bad.json"
+            bad.write_text("notjson")
+            good = Path(d) / "p.json"
+            good.write_text(json.dumps({"replace": [["x", "y"]]}))
+            rules = Path(d) / "r.json"
+            rules.write_text("{}")
+            cases = [
+                (["check", str(pkg), "--patterns", str(Path(d) / "nope.json")], "nope.json"),
+                (["check", str(pkg), "--patterns", str(bad)], "bad.json"),
+                (["check", str(pkg), "--patterns", str(good), "--rules", str(bad)], "bad.json"),
+                (["check", str(pkg), "--patterns", str(good), "--rules", str(Path(d) / "gone.json")], "gone.json"),
+                (["apply", str(pkg), "--rules", str(bad)], "bad.json"),
+                (["apply", str(pkg), "--rules", str(rules), "--patterns", str(bad)], "bad.json"),
+            ]
+            for argv, name in cases:
+                err = io.StringIO()
+                with contextlib.redirect_stderr(err), self.assertRaises(SystemExit) as cm:
+                    R.main(argv)
+                self.assertEqual(cm.exception.code, 2, argv)
+                self.assertEqual(len(err.getvalue().strip().splitlines()), 1, err.getvalue())
+                self.assertIn(name, err.getvalue())
+
     def test_wrap_ignore_skips_only_wrapped_only_matches_of_listed_images(self):
         from unittest import mock
         with tempfile.TemporaryDirectory() as d:
@@ -391,6 +417,9 @@ class Matching(unittest.TestCase):
             (r"owner", "owner@x.test", True),                     # the whole local part
             (r"owner", "a.owner@x.test", False),
             (r"example", "x@example.com", False),                 # a piece of the domain
+            (r"wagmi@[0-9][0-9.x]*", "wagmi@2.15.2", True),       # an npm version string
+            (r"wagmi@[0-9][0-9.x]*", "wagmi.user@private.test", False),
+            (r"viem@[0-9][0-9.x]*", "viem.user@private.test", False),
         ]
         for allow, addr, ok in cases:
             self.assertEqual(R.email_allowed(addr, [allow]), ok, (allow, addr))

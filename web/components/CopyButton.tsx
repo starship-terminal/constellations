@@ -1,6 +1,8 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
 import { useToast } from "@/components/Toast";
+import { COPY_RESET_MS, copyLabel, copyOutcome, type CopyState } from "@/lib/copy-state";
 
 /** Copy text to the clipboard; rejects when the browser refused. */
 export function copyText(text: string): Promise<void> {
@@ -68,5 +70,36 @@ export function CopyButton({
     >
       {label}
     </button>
+  );
+}
+
+/** Compact copy control for a snippet: flips to "Copied" (or "Copy failed") for a moment, then reverts. */
+export function SnippetCopyButton({ text, what }: { text: string; what: string }) {
+  const [state, setState] = useState<CopyState>("idle");
+  const timer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
+  useEffect(() => () => clearTimeout(timer.current), []);
+  const label = copyLabel(state);
+  return (
+    <>
+      <button
+        type="button"
+        className="btn snip-copy"
+        data-state={state}
+        aria-label={`Copy ${what}`}
+        onClick={async () => {
+          const next = await copyOutcome(text, copyText);
+          setState(next);
+          clearTimeout(timer.current);
+          timer.current = setTimeout(() => setState("idle"), COPY_RESET_MS);
+        }}
+      >
+        <span key={state} className="snip-label">
+          {label}
+        </span>
+      </button>
+      <span className="sr-only" role="status">
+        {state === "copied" ? `${what} copied` : state === "failed" ? `Could not copy ${what}` : ""}
+      </span>
+    </>
   );
 }

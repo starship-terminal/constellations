@@ -83,6 +83,21 @@ def handle(req) -> dict | None:
         return _error(req, -32603, "internal error")
 
 
+def handle_batch(raw) -> dict | list | None:
+    """The reply body for one parsed JSON-RPC payload, shared by the stdio loop
+    and POST /api/mcp (web/lib/mcp-batch.ts mirrors it). None means nothing to
+    send back: a lone notification, or a batch of only notifications (HTTP 202).
+    An object gets one reply. A batch gets an array with one reply per member
+    that has one, a non-object member counting as its own Invalid Request. An
+    empty batch is a single Invalid Request, per JSON-RPC 2.0 section 6."""
+    if isinstance(raw, list):
+        if not raw:
+            return {"jsonrpc": "2.0", "id": None,
+                    "error": {"code": -32600, "message": "an empty batch is not a valid request"}}
+        return [r for r in (handle(m) for m in raw) if r is not None] or None
+    return handle(raw)
+
+
 def _dispatch(req: dict) -> dict | None:
     method = req.get("method")
     if not isinstance(method, str):
@@ -129,18 +144,7 @@ def main() -> None:
             _send({"jsonrpc": "2.0", "id": None,
                    "error": {"code": -32700, "message": "unparseable JSON"}})
             continue
-        if isinstance(req, list):
-            # A batch: one array of replies, none when every member is a
-            # notification; an empty batch is itself an invalid request.
-            if not req:
-                _send({"jsonrpc": "2.0", "id": None,
-                       "error": {"code": -32600, "message": "empty batch"}})
-                continue
-            replies = [r for r in (handle(m) for m in req) if r is not None]
-            if replies:
-                _send(replies)
-            continue
-        out = handle(req)
+        out = handle_batch(req)
         if out is not None:
             _send(out)
 

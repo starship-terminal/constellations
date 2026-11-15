@@ -3,11 +3,11 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 136,
-    "system_domains": 128,
-    "matched_domains": 101,
-    "missing_domains": 332,
-    "system_domains_absent_from_catalog": 27
+    "system_packages": 145,
+    "system_domains": 137,
+    "matched_domains": 108,
+    "missing_domains": 325,
+    "system_domains_absent_from_catalog": 29
   },
   "matched": {
     "1password.com": {
@@ -1052,6 +1052,23 @@
         }
       ]
     },
+    "designmodo.com": {
+      "catalog": [
+        {
+          "name": "Designmodo",
+          "domain": "designmodo.com",
+          "id": 459
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "designmodo",
+          "name": "Designmodo",
+          "url": "https://designmodo.com",
+          "name_match": true
+        }
+      ]
+    },
     "digg.com": {
       "catalog": [
         {
@@ -1562,6 +1579,23 @@
         }
       ]
     },
+    "explore.family": {
+      "catalog": [
+        {
+          "name": "Explore",
+          "domain": "explore.family",
+          "id": 292
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "explore",
+          "name": "Explore",
+          "url": "https://explore.family",
+          "name_match": true
+        }
+      ]
+    },
     "fable.co": {
       "catalog": [
         {
@@ -1575,6 +1609,91 @@
           "slug": "fable",
           "name": "Fable",
           "url": "https://fable.co",
+          "name_match": true
+        }
+      ]
+    },
+    "factory.ai": {
+      "catalog": [
+        {
+          "name": "Factory",
+          "domain": "factory.ai",
+          "id": 734
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "factory",
+          "name": "Factory",
+          "url": "https://factory.ai",
+          "name_match": true
+        }
+      ]
+    },
+    "faire.com": {
+      "catalog": [
+        {
+          "name": "Faire",
+          "domain": "faire.com",
+          "id": 155
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "faire",
+          "name": "Faire",
+          "url": "https://www.faire.com",
+          "name_match": true
+        }
+      ]
+    },
+    "fal.ai": {
+      "catalog": [
+        {
+          "name": "fal",
+          "domain": "fal.ai",
+          "id": 935
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "fal",
+          "name": "fal.ai",
+          "url": "https://fal.ai",
+          "name_match": true
+        }
+      ]
+    },
+    "family.co": {
+      "catalog": [
+        {
+          "name": "Family",
+          "domain": "family.co",
+          "id": 373
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "family",
+          "name": "Family",
+          "url": "https://family.co",
+          "name_match": true
+        }
+      ]
+    },
+    "farfetch.com": {
+      "catalog": [
+        {
+          "name": "Farfetch",
+          "domain": "farfetch.com",
+          "id": 99
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "farfetch",
+          "name": "FARFETCH",
+          "url": "https://www.farfetch.com",
           "name_match": true
         }
       ]
@@ -1917,13 +2036,6 @@
         "id": 670
       }
     ],
-    "designmodo.com": [
-      {
-        "name": "Designmodo",
-        "domain": "designmodo.com",
-        "id": 459
-      }
-    ],
     "designstripe.com": [
       {
         "name": "Designstripe",
@@ -1964,48 +2076,6 @@
         "name": "Equals",
         "domain": "equals.app",
         "id": 289
-      }
-    ],
-    "explore.family": [
-      {
-        "name": "Explore",
-        "domain": "explore.family",
-        "id": 292
-      }
-    ],
-    "factory.ai": [
-      {
-        "name": "Factory",
-        "domain": "factory.ai",
-        "id": 734
-      }
-    ],
-    "faire.com": [
-      {
-        "name": "Faire",
-        "domain": "faire.com",
-        "id": 155
-      }
-    ],
-    "fal.ai": [
-      {
-        "name": "fal",
-        "domain": "fal.ai",
-        "id": 935
-      }
-    ],
-    "family.co": [
-      {
-        "name": "Family",
-        "domain": "family.co",
-        "id": 373
-      }
-    ],
-    "farfetch.com": [
-      {
-        "name": "Farfetch",
-        "domain": "farfetch.com",
-        "id": 99
       }
     ],
     "feedhive.com": [
@@ -4203,6 +4273,14 @@
         "ios_guess": []
       }
     ],
+    "fibery.com": [
+      {
+        "slug": "fibery",
+        "name": "Fibery",
+        "url": "https://fibery.com",
+        "ios_guess": []
+      }
+    ],
     "gauth.com": [
       {
         "slug": "gauth",
@@ -4335,6 +4413,14 @@
         "slug": "superset-desktop",
         "name": "Superset (desktop)",
         "url": "https://superset.sh",
+        "ios_guess": []
+      }
+    ],
+    "visual.app": [
+      {
+        "slug": "designstripe",
+        "name": "Visual (designstripe)",
+        "url": "https://visual.app",
         "ios_guess": []
       }
     ],

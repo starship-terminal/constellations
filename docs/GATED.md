@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_78 of 136 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_87 of 145 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -431,6 +431,58 @@ Access: read-only (the marketing pages, /clubs, /books, genre/club/book detail p
 - cart, checkout and ebook purchase flows were never opened; App Store / Google Play badges and 'Get the app' CTAs were measured, never followed
 - the sign-in and sign-up forms were measured at rest and typed into then cleared, never submitted - validation, error, loading and success states are absent rather than measured; 'Continue with Google/Apple' was never pressed
 - 'Join the club', 'Want to read', the spoiler toggle, 'Read more' and the FAQ accordion are local UI - the disclosure toggles were opened for capture and nothing was submitted or joined
+
+## [Faire](../systems/faire) — `faire`
+Access: signed out (every captured surface is public; search results, product detail, cart, checkout, account and the brand portal are behind the sign-up/sign-in dialogs - a documented authenticated boundary never crossed)
+- every post-auth surface - search results, product detail, cart, checkout, account and the brand portal - sits behind the sign-up/sign-in dialogs; every product tile links ?signUp=product, an authenticated boundary never crossed
+- the /apply stepper's steps past 1 need a submitted first step; step 1 was filled and cleared, never sent
+- the observed sign-up dialog mounts no Apple SSO button; signup-apple is recorded missing
+
+## [Explore](../systems/explore) — `explore`
+Access: read-only (every public surface signed out; the site itself is offline - the product closed 2023-04-19 and the domain later lapsed - so all pages were replayed from a local Internet Archive mirror of the 2023-02-23 build, with the closure shell from the 2023-06-08 snapshot; auth forms were measured and typed into then cleared, never submitted; no backend was ever reached; member names and works on the SSR profiles are public archive records reproduced as captured)
+- every signed-in member surface (network feed, composer, notifications, saved, subscriptions, settings) plus the dark member-portfolio theme lives behind accounts that closed with the product - an authenticated boundary never reached
+- SPA routes whose API records were never archived (/user/*, /post/*) render signed-out shells; member profiles survive only in the three archived SSR HTML pages
+- the login/register/forgot-password fields were measured at rest and typed into then cleared, never submitted - validation, error, loading and success states are absent rather than measured
+
+## [Factory](../systems/factory) — `factory`
+Access: read-only (factory.com, docs.factory.com and the auth.factory.ai sign-in card are fully public signed out; everything behind app.factory.ai - the Droid console, missions and settings - is an authenticated boundary never reached; the /contact HubSpot form and the sign-in card were measured and typed into then cleared, never submitted; every CTA and link was measured, never followed; overlays were hidden, never answered)
+- every post-login app surface (the Droid console, missions, settings) sits behind app.factory.ai - an authenticated boundary never reached; the auth.factory.ai sign-in card is a different app that does not share the marketing token layer
+- the /contact HubSpot form and the sign-in card were measured at rest and typed into then cleared, never submitted - validation, error, loading and success states are absent rather than measured
+- factory.com/changelog and docs.factory.com/changelog answer a Vercel-login 404 shape; the working changelog at docs.factory.com/docs/changelog/release-notes was captured instead
+
+## [Visual (designstripe)](../systems/designstripe) — `designstripe`
+Access: read-only (the home page, /assets library and /assets/<kind>/<set> galleries, /tools, /about, /contact and /blog articles are fully public signed out; the design agents, account asset downloads and every post-waitlist surface are an authenticated boundary never reached; the WAITLIST buttons, nav links, category tiles, tool cards and article links were measured, never followed or submitted)
+- the design agents, account asset downloads and every post-waitlist surface need an account - an authenticated boundary never reached
+
+## [Family](../systems/family) — `family`
+Access: read-only (family.co marketing pages, /docs, /support and the app.family.co login are fully public signed out; the signed-in Aave Account product and the iOS wallet are authenticated/native boundaries never reached; Log In, Get Started, Download on iOS and every Watch link were measured, never followed, and the login field and support search were typed into and cleared, never submitted)
+- the signed-in Aave Account product and every post-login surface need an account - an authenticated boundary never reached
+- Log In, Get Started, Download on iOS and every Watch link were measured, never followed; the login field and support search were typed into and cleared, never submitted
+
+## [Fibery](../systems/fibery) — `fibery`
+Access: read-only (the marketing site, fibery.io/sign-up and fibery.io/login/ are fully public signed out; everything past login - workspaces, views, the app's dark/system theme - is an authenticated boundary never reached; the sign-up prompt and login e-mail field were typed into then cleared, never submitted; the OAuth POST forms were never pressed; the wizard never advanced; every link and CTA was measured, never followed; the consent layer and Intercom widget were hidden, never answered)
+- every post-login app surface - workspaces, entity views, whiteboards, automations, AI, admin - lives behind an account, an authenticated boundary never reached
+- the app's dark/system theme (advertised on the login page) is behind sign-in and was not captured; the token file deliberately ships core + light only
+- the sign-up wizard was never advanced past step one - 'Create workspace' and 'Start without AI' were never pressed - so steps 2+ and workspace creation are uncaptured
+- the sign-up prompt and login e-mail field were typed into then cleared and never submitted, and the OAuth POST forms were never pressed - validation, error, loading and success states are absent rather than measured
+- 'Book a demo' links to a scheduler that was never opened; 'Workspace SSO' was never followed
+
+## [fal.ai](../systems/fal) — `fal`
+Access: read-only (the marketing pages, the explore catalog, the model and API pages, the docs and the login card are fully public; everything past login - dashboard, API keys, billing, deployments, sandbox, inference - is an authenticated boundary never reached; OAuth, Sign-in-to-run, Open-in-Sandbox, Download, Contact-Sales and Get-Started were measured, never followed; the prompt field was filled and cleared without running a model; the consent card was hidden, never answered)
+- every post-login surface (dashboard, API keys, billing, deployments) lives behind fal's account - an authenticated boundary never reached
+- inference was never run: the prompt field was filled and cleared, Sign-in-to-run links to login signed out, Open-in-Sandbox and Download were measured, never followed
+- the OAuth buttons and Use-SSO were measured at rest, never followed; validation, error and success states are absent rather than measured
+
+## [Designmodo](../systems/designmodo) — `designmodo`
+Access: read-only (the marketing site, /pricing, /email-templates, /postcards, /slides, the /postcards/app/login form and the signed-out app shell behind the Welcome-back modal are public; the builder canvas and every post-login surface need an account - the modal was dismissed locally with Escape and every auth action measured, never submitted)
+- the Postcards builder canvas, saving work and every post-login surface need an account - never reached
+- the Welcome-back modal's actions (Continue with Google, email field, Login, Create Account) were measured, never submitted
+- the sign-in form's fields were typed into and cleared and Login was never pressed; validation, error and success states are absent rather than measured
+
+## [FARFETCH](../systems/farfetch) — `farfetch`
+Access: signed out (every captured surface is public); www.farfetch.com answers automation with Akamai 403 and the farfetch-contents.com CDNs with 429, so the DOM evidence is Wayback SSR snapshots served locally and painted by Farfetch's own archived CSS, fonts and images with scripts stripped
+- anything behind sign-in: account, wishlist contents, bag, checkout, order tracking, FARFETCH Access loyalty, private client
+- submitted states: search, newsletter and filters were typed/measured but never submitted
 
 ## [Digg](../systems/digg) — `digg`
 Access: read-only (the home feed, category feeds, story pages, /u/<source> profiles, /login, /sign-up and /privacy are fully public signed out; voting, commenting, submitting, following and settings are an authenticated boundary never reached; the vote pills, comment and source links were measured, never followed or pressed, and the Clerk fields were focused/filled, never submitted)

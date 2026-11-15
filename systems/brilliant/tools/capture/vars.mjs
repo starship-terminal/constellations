@@ -9,7 +9,9 @@ if (!SP) { console.error('set SP to a scratch directory outside the repository')
   const ctx = await b.newContext({ viewport: { width: 1440, height: 900 } });
   const p = await ctx.newPage();
   const fonts = [];
-  p.on('response', r => { const u = r.url(); if (/\.(woff2?|ttf|otf)(\?|$)/.test(u) || r.headers()['content-type']?.includes('font')) fonts.push(u); });
+  // A font response URL can carry a signed or per-account query: keep the path only.
+  const bare = (u) => u.split(/[?#]/)[0];
+  p.on('response', r => { const u = r.url(); if (/\.(woff2?|ttf|otf)(\?|$)/.test(u) || r.headers()['content-type']?.includes('font')) fonts.push(bare(u)); });
   await p.goto('https://brilliant.org/', { waitUntil: 'networkidle', timeout: 60000 });
   await p.waitForTimeout(1500);
   const out = await p.evaluate(() => {
@@ -19,7 +21,7 @@ if (!SP) { console.error('set SP to a scratch directory outside the repository')
     const root = {}, dark = {}, other = {}, fontfaces = [], keyframes = [], media = new Set();
     const walk = (rules) => { for (const r of rules) {
       if (r.cssRules && !r.style) { if (r.conditionText) media.add(r.conditionText); walk(r.cssRules); }
-      if (r.type === 5) fontfaces.push(r.cssText);
+      if (r.type === 5) fontfaces.push(noUrl(r.cssText));
       if (r.type === 7) keyframes.push(r.name);
       if (!r.style) continue;
       const sel = r.selectorText || '';

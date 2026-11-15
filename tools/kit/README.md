@@ -43,7 +43,7 @@ See [docs/CAPTURE.md](../../docs/CAPTURE.md#dependencies) for the full table.
 | Electron desktop app | The owner opens the app with `--remote-debugging-port`; screenshots and CSS variables are read live from the running app | `capture/electron/shot.mjs` ([docs/CAPTURE.md](../../docs/CAPTURE.md#desktop-apps)) |
 | Native desktop app | As the iOS route, with the app's own window | `capture/native/winid.swift`, `sample.py`, `native/` |
 
-`vars.mjs`, `layout.mjs`, `icons.mjs` and `quantize.py` serve both web routes.
+`vars.mjs`, `layout.mjs`, `icons.mjs`, `motion-probe.mjs` and `quantize.py` serve both web routes.
 The `build/` scripts serve every route.
 
 ## Screenshot dimensions and acceptance
@@ -87,7 +87,9 @@ Theme changes in the owner's account need approval, followed by restoration and
 verification. Keep public marketing demos separate from signed-in app coverage.
 
 Run the browser-free contract tests with
-`node --test tools/kit/capture/test_screenshot.mjs` (also included in `make test`).
+`node --test tools/kit/capture/test_screenshot.mjs` (also included in `make test`). The motion
+readings have their own: `node --test tools/kit/capture/test_motion.mjs` (the probe test needs the
+capture Playwright and is skipped without it).
 
 ## Generic: use as they are
 
@@ -99,6 +101,9 @@ Run the browser-free contract tests with
 | `capture/signed-in/unsnap.py` | Writes a snapshot to disk; refuses it if a redacted string or a signing parameter survived. Needs `SNAP_REDACT` |
 | `capture/signed-in/redact.example.json` | The shape of the redaction file, which lives in `~/.design-systems/<slug>-redact.json` |
 | `capture/signed-in/render-all.sh` | Renders every row of `shots.tsv`: a copy taken in dark (`-dark` in its label) in both themes, any other once |
+| `capture/motion.mjs` | The motion probe's library: normalises durations and easings, zips transition and animation lists, diffs a normal read against a reduced-motion one, and carries the two page readers. Tested in `capture/test_motion.mjs` |
+| `capture/motion-probe.mjs` | Reads every element's transitions and animations, the `@keyframes`, the authored `prefers-reduced-motion` rules and the motion custom properties, then reads the same elements again under `page.emulateMedia({ reducedMotion: 'reduce' })`. Writes `raw/motion.json`. `SNAPS=<dir>` for signed-in copies, `--urls` for public pages ([docs/CAPTURE.md](../../docs/CAPTURE.md#motion)) |
+| `build/motion.py` | Turns `raw/motion.json` into the `core.motion` token group with evidence labels. Product-free; `build_tokens.py` imports it when the file exists. Copied with the rest of `build/` |
 | `capture/native/shot.sh` | `shot.sh <slug> <theme> <name>`: the mirroring window alone, in sRGB, to `~/.design-systems/<slug>/raw-shots/<theme>/` |
 | `native/quantize.py` | The native `quantize.py`: keeps the window's transparent corners |
 | `native/crops.py` | Cuts `components/crops/` from `screenshots/` by `crops.json` |
@@ -117,10 +122,11 @@ Search each file for `PRODUCT (adapt)` first, then work down this list.
 | `capture/signed-in/measure.mjs` | `SPECS`: one entry per checklist component the product has, found by role or structure, never by account text; `M()` and `S()` helpers; the attribute list; the `_meta` source strings |
 | `capture/signed-in/build-measurements.mjs` | The heading (`PRODUCT`, or the `PRODUCT` env var; the kit's copy says ChatGPT) and the intro and States paragraph of `measurements.md` |
 | `capture/vars.mjs` | The probe `shell` (the kit's copy carries Claude's `data-theme="claude"` root and `.dframe` sidebar), which selectors carry the theme, how names are binned, the source string. If stylesheets are cross-origin, swap in manus's CDN-chunk reader or gauth's network-response reader |
+| `capture/motion-probe.mjs` | `prepare()`: what a public page needs before it shows its real UI (a promo or cookie dialog). Read the pages and states where the product moves, not only the landing page |
 | `capture/layout.mjs` | The product block naming the shell's regions; keep the generic part (widths, grids, fixed bars, dialogs, menus) |
 | `capture/icons.mjs` | Ships the inline-SVG strategy. For an icon font use `systems/claude/tools/capture/icons.mjs`; for SVG sprites, `systems/chatgpt/tools/capture/icons.mjs`. Fill `icon-names.tsv` |
 | `capture/public/*.mjs` | `BASE`, `PAGES`, the promo and dialog dismissers, `M()`, and the two prose blocks in `build-measurements.mjs`. `public.mjs` writes full-colour shots to `~/.design-systems/<slug>/raw-shots` unless `RAW` names another scratch folder |
-| `build/build_tokens.py` | The header constants and the whole mapping from readings to `core`, `light` and `dark`; keep the helpers, build and checks |
+| `build/build_tokens.py` | The header constants and the whole mapping from readings to `core`, `light` and `dark`; keep the helpers, build and checks, and the `motion.json` hook that adds `core.motion` |
 | `build/build_components_md.py` (signed-in) or `build_components_md.public.py` (public) | `PREFER`, `ORDER_GROUPS`, group and page descriptions, the intro and the Gaps section. The two read different measurement files, so use the one that matches the route |
 | `build/style-guide.template.html` | The theme attribute (`data-mode` or a `.dark` class), the token group names, and the whole Components section |
 | `native/measure.py` | `NAME` and the reading table `R`: one box per value, in capture pixels on this product's screens. It writes `raw/readings.json` and `raw/<slug>-measured.md` |

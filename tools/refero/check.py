@@ -10,9 +10,13 @@ similar.json, collections tables vs collections.json, screens table vs
 directory.json, coverage.json vs a recomputation. Every disagreement is
 printed and the exit code is 1 when any is found.
 
+The committed text dump in refero/.dump/ must be exactly what
+tools/refero/dump.py writes from refero.db (the dump is the merge surface).
+
 File-only safe: when refero.db is missing or is not a readable sqlite (a
 clone without `git lfs pull` holds the LFS pointer file), the folder and
-catalog checks still run and the db side is skipped with a note.
+catalog checks still run and the db side (dump comparison included) is
+skipped with a note.
 """
 
 import argparse
@@ -27,6 +31,7 @@ REFERO = ROOT / "refero"
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import coverage as coverage_mod  # noqa: E402  (sibling module)
+import dump as refero_dump  # noqa: E402  (sibling module)
 
 # The files every style folder carries. prompt.txt lives only in the db
 # (refero/README.md).
@@ -187,6 +192,13 @@ def check(refero: Path) -> list[str]:
         if "screens" in tables:
             nscreens = db.execute("SELECT COUNT(*) FROM screens").fetchone()[0]
         db.close()
+        # ---- the committed text dump (refero/.dump/, the merge surface) is
+        # exactly what the db dumps to
+        try:
+            problems += refero_dump.compare(refero / "refero.db")
+        except (refero_dump.DumpError, sqlite3.Error, OSError) as e:
+            problems.append(f"refero/{refero_dump.DUMP_DIRNAME}: cannot compare "
+                            f"with refero.db: {e}")
 
     # ---- the stores' slug sets agree
     for slug in sorted(set(metas) - set(catalog)):

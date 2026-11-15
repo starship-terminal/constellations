@@ -80,7 +80,7 @@ import numpy as np
 from PIL import Image, ImageFilter, ImageSequence
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from catalog import IMAGE_EXT, read_redaction, redaction_patterns, tool_env  # noqa: E402
+from catalog import IMAGE_EXT, read_json_object, read_redaction, redaction_patterns, tool_env  # noqa: E402
 
 Image.MAX_IMAGE_PIXELS = None
 warnings.simplefilter("ignore", Image.DecompressionBombWarning)
@@ -486,7 +486,7 @@ def save_256(im, f):
 
 def cmd_apply(args):
     pkg = Path(args.package)
-    rules = json.loads(Path(args.rules).read_text())
+    rules = read_json_object(args.rules, "rules file")
     ocr_cfg = dict(rules.get("ocr", {}))
     patterns = load_patterns(args.patterns) if args.patterns else []
     ocr_cfg["email_allow"] = ocr_cfg.get("email_allow", []) + load_email_allow(args.patterns)
@@ -563,7 +563,7 @@ def cmd_check(args):
     rules_file = package_rules(pkg, args.rules)
     cfg = {}
     if rules_file:
-        cfg = dict(json.loads(rules_file.read_text()).get("ocr", {}))
+        cfg = dict(read_json_object(rules_file, "rules file").get("ocr", {}))
         print(f"rules: {rules_file if args.rules else 'tools/redact-rules/' + rules_file.name}"
               + ("" if args.rules else " (loaded for this package)"), flush=True)
         # A rules file steers `apply`; it never switches a detector off in the check that guards a commit.

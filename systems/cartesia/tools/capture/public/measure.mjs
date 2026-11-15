@@ -27,7 +27,7 @@ out._meta ??= {};
 out.components ??= {};
 const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
 const save = () => fs.writeFileSync(OUT, JSON.stringify(out, null, 1) + '\n');
-const URLS = { home: '/', sonic: '/sonic', voices: '/voices', pricing: '/pricing', signin: PLAY + '/sign-in', signup: PLAY + '/sign-in/create', docs: DOCS + '/' };
+const URLS = { home: '/', sonic: '/sonic', voices: '/voices', pricing: '/pricing', signin: PLAY + '/sign-in', signup: PLAY + '/sign-in/create', docs: DOCS + '/', mobile: '/' };
 const abs = (key) => (URLS[key] && URLS[key].startsWith('http') ? URLS[key] : BASE + URLS[key]);
 let page, cdp, current, context, run, liveCtx;
 const touched = new Set();
@@ -377,7 +377,16 @@ async function home() {
   await S('hero-title', q('h1').filter({ visible: true }).first(), ['default'], { group: h, title: 'Hero headline', desc: 'The display headline (PP Kyoto / font-display) under the header.', sel: 'h1' }, { noScroll: true });
   await S('hero-lede', q('main p, section p').filter({ visible: true }).filter({ hasText: /voice|agent|speech/i }).first(), ['default'], { group: h, title: 'Hero copy', desc: 'The lede under the headline, ABC Diatype / font-sans.', sel: 'hero lede' });
   await S('hero-orb', q('button[aria-label*="Talk to" i], button[aria-label*="Skylar" i]').filter({ visible: true }).first(), B4, { group: h, title: 'Talk-to-Skylar orb', desc: 'The large round voice-agent button in the hero (icon-only, aria-labelled); measured, never pressed (a press starts a call).', sel: 'button[aria-label*="Talk to Skylar"]' });
-  await S('voice-choose', q('button[aria-label^="Choose" i]').filter({ visible: true }).first(), B4, { group: h, title: 'Voice chooser', desc: 'A round "Choose <voice>, <role>" button around the orb (icon-only, aria-labelled).', sel: 'button[aria-label^="Choose"]' });
+  // The carousel keeps duplicate chooser buttons that stay fully transparent
+  // (opacity 0); Playwright's visible filter still matches them, so pick the
+  // first chooser that actually paints.
+  const choosers = q('button[aria-label^="Choose" i]').filter({ visible: true });
+  let chooser = choosers.first();
+  for (let i = 0, n = await choosers.count(); i < n; i++) {
+    const el = choosers.nth(i);
+    if (await el.evaluate((e) => parseFloat(getComputedStyle(e).opacity) > 0.01).catch(() => false)) { chooser = el; break; }
+  }
+  await S('voice-choose', chooser, B4, { group: h, title: 'Voice chooser', desc: 'A round "Choose <voice>, <role>" button around the orb (icon-only, aria-labelled).', sel: 'button[aria-label^="Choose"]' });
   await S('voice-nav', q('button[aria-label*="Next voice" i], button[aria-label*="Previous voice" i]').filter({ visible: true }).first(), B4, { group: h, title: 'Voice carousel arrow', desc: 'A previous/next-voice arrow button in the hero voice carousel.', sel: 'button[aria-label*="voice"]' });
   await S('media-frame', q('button').filter({ hasText: /Play with sound|Play with/i }).or(q('button[aria-label*="Play with" i]')).filter({ visible: true }).first(), B4, { group: h, title: 'Media frame', desc: 'A customer-story media tile with a play affordance; measured, never pressed.', sel: 'button "Play with sound"' });
   // The story tile is the painted frame around the play button.
@@ -390,7 +399,11 @@ async function home() {
   await S('product-row', q('a').filter({ hasText: /Managed Agents\./i }).filter({ visible: true }).first(), B4, { group: s, title: 'Product row', desc: 'The wide Managed-Agents product row link; measured never followed.', sel: 'a "Managed Agents."' });
   await S('cta-link', q('a').filter({ hasText: /^\s*Our research\s*$/i }).filter({ visible: true }).first(), B4, { group: s, title: 'Text CTA', desc: 'The "Our research" pill link in the research section; measured never followed.', sel: 'a "Our research"' });
   await S('accordion-trigger', q('button[data-slot*="accordion"], button').filter({ hasText: /^\s*(Cloud|On-premise)\s*$/ }).filter({ visible: true }).first(), B4.concat('selected'), { group: s, title: 'Accordion trigger', desc: 'A Cloud/On-premise deployment accordion header; toggled for its collapsed/expanded state.', sel: 'button accordion "Cloud"' });
-  await S('accordion-content', q('[data-slot*="accordion-content"], [role="region"]').filter({ visible: true }).first(), ['default'], { group: s, title: 'Accordion content', desc: 'The expanded accordion region beside the deployment triggers.', sel: 'accordion content region' });
+  // Open a deployment section, then measure the expanded answer region —
+  // [role="region"] matches the trigger stack, not the content.
+  const accTrig = q('button[data-slot*="accordion"], button').filter({ hasText: /^\s*(Cloud|On-premise)\s*$/ }).filter({ visible: true }).first();
+  if (await accTrig.count()) { await accTrig.click({ timeout: 6000 }).catch(() => accTrig.evaluate((e) => e.click())); await page.waitForTimeout(900); }
+  await S('accordion-content', q('[data-slot="accordion-content"]').filter({ visible: true }).first(), ['default'], { group: s, title: 'Accordion content', desc: 'The expanded accordion region beside the deployment triggers, opened for the read.', sel: '[data-slot=accordion-content]' });
   save();
 }
 

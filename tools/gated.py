@@ -11,6 +11,7 @@ Usage:
     python3 tools/gated.py            # write docs/GATED.md
     python3 tools/gated.py --check    # exit 1 if the file is stale
 """
+import argparse
 import json
 import re
 import sys
@@ -50,7 +51,13 @@ def gate_lines(entry):
     return lines
 
 
-def main():
+def main(argv=None):
+    ap = argparse.ArgumentParser(
+        description="Write docs/GATED.md, the roll-up of surfaces signed-out captures never reached."
+    )
+    ap.add_argument("--check", action="store_true", help="write nothing; exit 1 if docs/GATED.md is stale")
+    args = ap.parse_args(argv)
+
     catalog = json.loads((ROOT / "catalog.json").read_text())
     systems = catalog["systems"]
 
@@ -91,7 +98,7 @@ def main():
         out.append(f"\n## No gated surface recorded\n\n{names}\n")
 
     text = "".join(out)
-    if "--check" in sys.argv:
+    if args.check:
         current = OUT.read_text() if OUT.exists() else ""
         if current != text:
             print("docs/GATED.md is stale — run python3 tools/gated.py")

@@ -7,7 +7,7 @@
 PYTHON ?= python3
 PORT ?= 8800
 
-.PHONY: help setup dev serve build docs scorecard grade check test brief design-md lint-design-md clean web web-build
+.PHONY: help setup dev serve build docs scorecard grade check test brief design-md lint-design-md refero-dump refero-db clean web web-build
 
 help: ## List the targets
 	@grep -E '^[a-z-]+:.*## ' $(MAKEFILE_LIST) | awk -F':.*## ' '{printf "  make %-14s %s\n", $$1, $$2}'
@@ -26,7 +26,7 @@ build: ## Write the app's data and screenshot thumbnails into web/data/
 web: build ## Run the Next.js app (web/) in dev mode on 127.0.0.1 (PORT, default 8800)
 	@pnpm --dir web exec next dev -H 127.0.0.1 -p $(PORT)
 
-web-build: ## Build the Next.js app for production (web/.next)
+web-build: ## Build the Next.js app for production (web/.next, or $$NEXT_DIST_DIR under web/)
 	@pnpm --dir web build
 
 docs: ## Generate the scorecard pages and build the docs site into site/
@@ -53,6 +53,12 @@ design-md: brief ## Rewrite every Brief, then regenerate every package's DESIGN.
 
 lint-design-md: ## Lint every DESIGN.md with Google's pinned linter (needs Node.js; runs npx in a temp dir)
 	@$(PYTHON) tools/catalog.py design-md --lint
+
+refero-dump: ## Rewrite refero/.dump/ (the text dump git merges) from refero/refero.db
+	@$(PYTHON) tools/refero/dump.py dump
+
+refero-db: ## Rebuild refero/refero.db from refero/.dump/ (after merging the dump), then rewrite the dump canonically
+	@$(PYTHON) tools/refero/dump.py load
 
 test: ## Run the tools' tests, then every package's own tests (systems/*/tools/test_*.py)
 	@$(PYTHON) -m unittest discover -s tools -p 'test_*.py'

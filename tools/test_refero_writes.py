@@ -14,6 +14,7 @@ TOOLS = Path(__file__).resolve().parent
 sys.path.insert(0, str(TOOLS / "refero"))
 import classify  # noqa: E402
 import fetch  # noqa: E402
+import dump as refero_dump  # noqa: E402
 
 RESULT = {"meta": {"url": "https://acme.example", "extractedAt": "2026-01-01"},
           "designSystem": {"theme": "light", "northStar": "Move fast"}}
@@ -144,6 +145,13 @@ class ClassifyWritesTest(ReferoTmp):
             fetch.cmd_catalog()
         self.classify_main(({"acme": self.LABELS}, [], None))
         self.assertEqual(self.catalog_row(), ("devtools", "minimal", ["saas"]))
+
+    def test_a_labelling_run_refreshes_the_text_dump(self):
+        self.run_fetch("Acme")
+        self.classify_main(({"acme": self.LABELS}, [], None))
+        row = json.loads((self.refero / ".dump" / "styles" / f"{UUID}.json").read_text())
+        self.assertEqual(row["product_type"], "devtools")
+        self.assertEqual(refero_dump.compare(self.refero / "refero.db"), [])
 
 
 if __name__ == "__main__":
