@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_86 of 144 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_87 of 145 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -483,6 +483,11 @@ Access: read-only (the marketing site, /pricing, /email-templates, /postcards, /
 Access: signed out (every captured surface is public); www.farfetch.com answers automation with Akamai 403 and the farfetch-contents.com CDNs with 429, so the DOM evidence is Wayback SSR snapshots served locally and painted by Farfetch's own archived CSS, fonts and images with scripts stripped
 - anything behind sign-in: account, wishlist contents, bag, checkout, order tracking, FARFETCH Access loyalty, private client
 - submitted states: search, newsletter and filters were typed/measured but never submitted
+
+## [Figma](../systems/figma) — `figma`
+Access: signed out (every captured surface is public; the editor and every post-login surface - files, boards, Dev Mode in a file, Make projects, community profiles and publish flows, admin - is an authenticated boundary never reached; the /login, /signup, /contact and /make forms were measured and typed into then cleared, never submitted; every CTA, nav item and community card was measured, never followed; the consent layer was hidden, never answered; Cloudflare challenged the automation on /dev-mode/ and /customers/ in the first pass and retries in fresh sessions succeeded - no challenge was answered by hand)
+- the editor and every post-login surface (files, the canvas, Dev Mode in a file, Make projects, community profiles and publish flows, account, admin) sits behind an account - an authenticated boundary never reached; /login and /signup were measured as forms, never submitted, and Continue with Google / Use single sign-on were never followed
+- submitted states: the /contact sales form, /make prompt, blog newsletter field, community search and the login/signup fields were typed into then cleared, never sent - validation, error, loading and success states are absent rather than measured
 
 ## Gate noted in access text only
 
