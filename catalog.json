@@ -12363,7 +12363,8 @@
           "icons: no standalone SVG set lifted this pass"
         ],
         "durationMin": null,
-        "durationNote": "wall-clock across the capture sessions including kit adaptation (shooter, stylesheet harvest, measurement and docs builders rewritten to the FlowMapp DOM and two hosts), the screenshot and measurement passes on a headless Linux server, and the offline build"
+        "durationNote": "wall-clock across the capture sessions including kit adaptation (shooter, stylesheet harvest, measurement and docs builders rewritten to the FlowMapp DOM and two hosts), the screenshot and measurement passes on a headless Linux server, and the offline build",
+        "pr": "https://github.com/starship-terminal/constellations/pull/594"
       },
       "layoutGaps": {
         "icons/": "the icon extraction pass was not run; the icons (the FlowMapp wordmark, the flyout feature glyphs, the squiggle-arrow CTA mark, the sitemap/user-flow node icons, the client brand marks) are visible in the crops and screenshots"
