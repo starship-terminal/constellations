@@ -89,6 +89,52 @@ class FakeChat:
         return self.reply
 
 
+class McpPostTest(unittest.TestCase):
+    PING = {"jsonrpc": "2.0", "id": 1, "method": "ping"}
+
+    def setUp(self):
+        self.routes = _routes()
+
+    def test_oversized_body_is_413_with_a_json_rpc_error(self):
+        n = self.routes.MCP_BODY_LIMIT + 1
+        _, h = _post(self.routes, "/api/mcp", raw=b" " * n)
+        self.assertEqual(h.status, 413)
+        self.assertEqual(h.json()["error"]["code"], -32600)
+        self.assertIn(str(self.routes.MCP_BODY_LIMIT), h.json()["error"]["message"])
+
+    def test_body_at_the_limit_is_read(self):
+        raw = json.dumps(self.PING).encode().ljust(self.routes.MCP_BODY_LIMIT)
+        _, h = _post(self.routes, "/api/mcp", raw=raw)
+        self.assertEqual(h.status, 200)
+
+    def test_missing_body_is_still_400(self):
+        _, h = _post(self.routes, "/api/mcp", raw=b"", length="")
+        self.assertEqual(h.status, 400)
+        self.assertEqual(h.json()["error"]["message"], "a JSON-RPC body is required")
+
+    def test_empty_batch_is_invalid_request(self):
+        _, h = _post(self.routes, "/api/mcp", [])
+        self.assertEqual(h.status, 200)
+        self.assertEqual(h.json()["error"]["code"], -32600)
+
+    def test_non_object_members_each_get_an_error(self):
+        _, h = _post(self.routes, "/api/mcp", [1, 2])
+        self.assertEqual(h.status, 200)
+        self.assertEqual([r["error"]["code"] for r in h.json()], [-32600, -32600])
+
+    def test_notification_only_batch_is_202(self):
+        note = {"jsonrpc": "2.0", "method": "notifications/initialized"}
+        for body in ([note], note):
+            _, h = _post(self.routes, "/api/mcp", body)
+            self.assertEqual(h.status, 202)
+
+    def test_object_gets_a_bare_reply_and_batch_an_array(self):
+        _, h = _post(self.routes, "/api/mcp", self.PING)
+        self.assertEqual(h.json(), {"jsonrpc": "2.0", "id": 1, "result": {}})
+        _, h = _post(self.routes, "/api/mcp", [self.PING])
+        self.assertEqual(h.json(), [{"jsonrpc": "2.0", "id": 1, "result": {}}])
+
+
 class BodyTest(unittest.TestCase):
     def setUp(self):
         self.routes = _routes()

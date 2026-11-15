@@ -4,6 +4,7 @@
 // notification-only bodies get 202. Stateless: no session header, GET gets a
 // 405 because there is no SSE stream to open. Mirrors server/mcp.py exactly.
 import { call, SPECS } from "@/lib/chat/library";
+import { handleBatch, textOverLimit, tooLargeResponse } from "@/lib/mcp-batch";
 
 export const dynamic = "force-dynamic";
 
@@ -86,22 +87,18 @@ async function dispatch(req: Rpc) {
 }
 
 export async function POST(req: Request) {
+  // web/proxy.ts refuses an oversized Content-Length first; this catches a body
+  // that reads larger than it declared.
+  const text = await req.text();
+  if (textOverLimit(text)) return tooLargeResponse();
   let raw: unknown;
   try {
-    raw = await req.json();
+    raw = JSON.parse(text);
   } catch {
     return Response.json({ jsonrpc: "2.0", id: null, error: { code: -32700, message: "unparseable JSON" } }, { status: 400 });
   }
-  const msgs = Array.isArray(raw) ? raw : [raw];
-  const replies = [];
-  for (const m of msgs) {
-    if (m && typeof m === "object" && !Array.isArray(m)) {
-      const r = await handle(m as Rpc);
-      if (r) replies.push(r);
-    }
-  }
-  if (!replies.length) return new Response(null, { status: 202 });
-  return Response.json(Array.isArray(raw) ? replies : replies[0]);
+  const out = await handleBatch(raw, (m) => handle(m as Rpc));
+  return out === null ? new Response(null, { status: 202 }) : Response.json(out);
 }
 
 export function GET() {
