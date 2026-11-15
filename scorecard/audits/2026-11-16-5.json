@@ -14921,6 +14921,262 @@
    "reviewedPlatform": "web"
   },
   {
+   "slug": "flask",
+   "grades": {
+    "F1": {
+     "grade": "partly",
+     "evidence": "No per-hue ramps exist on the public token layer. The neutral ramp is complete and declared: --ds-surface-0…4 (12/18/24/31/42 greys), --ds-fg-1…4 plus lead/subhead/placeholder, --ds-line-1…3 + edge, and a translucent-white interaction ladder (--ds-fill/-hover/-pressed/-selected/-row-hover/-control-*, glass/scrim washes). Hue roles exist as full 8-slot palettes (danger/warning/success/info each declare base, edge, fg, highlight, shade, text, tint, bevel) plus the red live-* ramp and the flair-1…3 gradient accents — they are role palettes, not lightness ramps."
+    },
+    "F2": {
+     "grade": "partly",
+     "evidence": "Page (dark.background.page → surface.0 #0c0c0c), surface (surface.1…4), scrim (--ds-scrim-*), overlay and card-veil roles are all declared; measured roles (demoCardBg, footerBg, fieldBg) alias the declared values they match. No separate raised/overlay shadow-bound role is named beyond the shadow.* composites, and nothing on the public surface opens a true modal — the demo's painted popover is a mock."
+    },
+    "F3": {
+     "grade": "partly",
+     "evidence": "Primary (fg.1), secondary (fg.2, navInk), muted (fg.3, fg-lead/-subhead/-placeholder roles) and on-accent (brand-fg, *-fg slots per status palette) are declared; measured text.ink/demoTabInk alias them. No disabled text role and no distinct link colour was observed — nav/footer/docs links are plain ink, and no disabled control is reachable signed out."
+    },
+    "F4": {
+     "grade": "partly",
+     "evidence": "Declared hairlines: line.1…3 plus line-edge, and --ds-focus + --ds-focus-ring as the focus ring roles. There is no named strong/default border pair beyond the line ramp; borders on measured components resolve through the line roles and element-border utilities."
+    },
+    "F5": {
+     "grade": "partly",
+     "evidence": "Hover and pressed are declared interaction-opacity roles (--ds-hover, --ds-pressed, --ds-fill, --ds-selected) and measured on the CTAs (ctaHover, heroCtaFill states, billing switch track). A default/hover/pressed triple is declared and measured; the brand accent itself is a neutral grey (brand 173 173 173) so 'accent' reads as the light pill on dark, matching the product."
+    },
+    "F6": {
+     "grade": "meets",
+     "evidence": "Four full status palettes are declared — --ds-danger-*, --ds-warning-*, --ds-success-*, --ds-info-*, each with base, edge, fg, highlight, shade, text, tint and bevel slots — plus the --ds-live-* recording palette. They are declared-not-triggered: no public surface paints a validation state, but the roles ship complete."
+    },
+    "F7": {
+     "grade": "na",
+     "evidence": "The site ships one theme — dark — on every public surface (color-scheme: dark on :root; no light variant or toggle exists). There is no second theme for parity to span; tokens.json carries a single dark set plus theme-independent core."
+    },
+    "F8": {
+     "grade": "partly",
+     "evidence": "One family: --ds-font-sans (ui-sans-serif/system-ui + emoji fallbacks), used for every role. The site declares no type-size ramp, weight ramp or named display/heading/body/label/caption/code roles — the tokens carry the two measured sizes/weights that were read (hero 64px/500, body 400)."
+    },
+    "F9": {
+     "grade": "missing",
+     "evidence": "No declared spacing scale exists in the harvested stylesheets — the Tailwind-style utilities compose spacing ad hoc; measured paddings are recorded per component but there is no base-unit scale to name."
+    },
+    "F10": {
+     "grade": "meets",
+     "evidence": "Declared radii: --ds-radius 12px, --ds-radius-control 9999px and the --radius alias, plus measured radius tokens (cta/button → control pill, navLink/card/field/switch → the 12px family). Border widths are measured per component in components.md."
+    },
+    "F11": {
+     "grade": "partly",
+     "evidence": "Measured control geometry is recorded (topbar-height 56, cta-height 32, button-height 40, chip-height, login field/button heights, switch dims, mobile top chrome) and the focus ring resolves as the declared --ds-focus/-ring roles. No declared S/M/L size ladder exists on the public surface."
+    },
+    "F12": {
+     "grade": "meets",
+     "evidence": "Four real shadow declarations become shadow.* composites (card, float, overlay, popover — the popover a two-layer 0 2px 8px/0 16px 40px), each named for its use, plus 11 declared shadow-* colour ingredients under shadow.color.*. That is the full ladder the site ships."
+    },
+    "F13": {
+     "grade": "partly",
+     "evidence": "Declared easings: --ease-out and --ease-in-out as cubicBezier tokens, plus the measured control transition signature (color+transform 0.15s ease-out) on the header CTA. No duration ramp is declared; the reduced-motion probe on the home page is recorded in raw."
+    },
+    "F14": {
+     "grade": "partly",
+     "evidence": "No declared breakpoint/grid/z-index token layer — the site uses Tailwind-style utility breakpoints (md: sticky header etc.) measured per component; content widths (hero 1200px) and the sticky chrome height are measured geometry."
+    },
+    "C1": {
+     "grade": "partly",
+     "evidence": "About 10 of 19 checklist components paint publicly: button (nav CTA, hero pills, plan CTAs, login buttons), link (nav/footer/docs/about links), text field (login e-mail), switch (billing), tabs (demo Context/Feedback), menu (mobile nav layer), card (plan cards, login panel, demo popover), badge/chip (demo version chip), list row (demo folder/file rows), accordion (FAQ). Checkbox, radio, tooltip, dialog (real), toast, table (real), avatar and select never appear signed out."
+    },
+    "C2": {
+     "grade": "partly",
+     "evidence": "Beyond default: real pointer hover, real keyboard focus-visible, DevTools-forced pressed, opened (FAQ accordion, Version chip, mobile menu), focused and filled (login e-mail, typed-then-cleared), and the toggled billing switch (off state). Disabled, loading, error and validation states are absent rather than measured — nothing was submitted and no public surface displays them."
+    },
+    "C3": {
+     "grade": "meets",
+     "evidence": "Real keyboard focus (Shift+Tab, Tab) was captured on every focusable component; the ring resolves through the declared --ds-focus/-ring roles and is recorded per component in raw/components-computed.json."
+    },
+    "C4": {
+     "grade": "meets",
+     "evidence": "Every measured colour aliases the declared --ds-* token its painted value matches (ink→fg.1, surfaces→surface.*, ctaFill→brand roles); every token carries $extensions.source and component geometry lives under core.component.* — components.md labels each colour with its token path."
+    },
+    "P1": {
+     "grade": "partly",
+     "evidence": "patterns.md covers the marketing chrome, the home hero + embedded product demo, the pricing grid with its billing switch and FAQ, the /mcp docs page, the login auth boundary, mobile chrome, and motion/focus conventions. Empty/loading/error, destructive confirmation, onboarding and search patterns are not reachable on the signed-out public surface."
+    },
+    "A1": {
+     "grade": "partly",
+     "evidence": "The font is fully named (the --ds-font-sans system stack; no self-hosted faces are loaded, so nothing needed licensing). Icons are a declared layoutGaps entry: no standalone SVG set was lifted; the Flask mark and demo glyphs are the product's artwork visible in crops/screenshots."
+    },
+    "K1": {
+     "grade": "meets",
+     "evidence": "The README states what was captured (10 routes + 3 mobile passes, the demo/pricing local states), how (Playwright headless, stylesheet harvest, computed styles), and what to distrust (the signed-in boundary, the demo mock's guarded states, the unreached mobile menu, pressed-state forcing, channel-list rounding, quantised screenshots)."
+    },
+    "V1": {
+     "grade": "partly",
+     "evidence": "Flask publishes no design principles document on its public surface; nothing to grade against the product's own wording. Left as evidence of absence rather than inferred."
+    },
+    "F15": {
+     "grade": "partly",
+     "evidence": "Script: primary text passes; secondary fails 2 pairs, worst 3.53:1 dark muted (dark.fg.3) on surface (dark.surface.2)"
+    },
+    "F16": {
+     "grade": "meets",
+     "evidence": "Script: 226 of 226 tokens name their source"
+    },
+    "K2": {
+     "grade": "meets",
+     "evidence": "Script: 8 rules, each linking a screenshot or crop"
+    },
+    "K3": {
+     "grade": "meets",
+     "evidence": "Script: DESIGN.md matches a fresh generation"
+    },
+    "C5": {
+     "grade": "na",
+     "evidence": "Optional for a capture, and this product does not publish it."
+    },
+    "V2": {
+     "grade": "na",
+     "evidence": "Optional for a capture, and this product does not publish it."
+    }
+   },
+   "name": "Flask",
+   "goodFor": "video-review and collaboration product marketing in a complete dark-only token layer (--ds-* channel-list roles: surface/fg/line/brand/danger/warning/success/info/live/flair ramps, glass/glow/metal/showcase/control/marker/media/scrim families, interaction-opacity roles, --ds-radius and the 9999px control pill, --ds-font-sans, --ease-* easings), a product demo embedded in the marketing hero (version chip, Context/Feedback tabs, share scope, folder rows), a pricing page with FAQ accordions and a billed-yearly/quarterly switch, an /mcp documentation page, and the signed-out login boundary",
+   "url": "https://flask.do",
+   "captured": "2026-11-15",
+   "themes": [
+    "dark"
+   ],
+   "platform": "web",
+   "category": "Productivity",
+   "reviewed": "2026-11-16",
+   "reviewedPlatform": "web"
+  },
+  {
+   "slug": "flowmapp",
+   "grades": {
+    "F1": {
+     "grade": "partly",
+     "evidence": "The marketing site ships a flat named palette, not stepped ramps (--dodger-blue, --primary-blue/--basic-blue, --alice-blue, --service-grey, --yellow-green, --pale-violet-red plus the Webflow _apps--- layer); the app set's --neutral-gray-* (40/80/120/160/320/400/560/880) is a partial neutral ramp and each --secondary-* hue carries 8/20/32/56/64 alpha steps, but no hue has a ~10-step ramp."
+    },
+    "F2": {
+     "grade": "partly",
+     "evidence": "light.background.page, surface.card, surface.card-featured (the inverted Team card), surface.field and app.surface.field-bg/popup/share-card are named; the share-viewer toolbar and popup overlay were measured but no raised/overlay/scrim roles are tokenised."
+    },
+    "F3": {
+     "grade": "partly",
+     "evidence": "light.text.ink/muted, app.text.ink/muted/link/viewer-ink and the on-fill inks (light.action.cta-ink/nav-ink, app.action.primary-ink) exist; no disabled text role paints signed out - forms were never submitted or disabled past the submit's fill change."
+    },
+    "F4": {
+     "grade": "partly",
+     "evidence": "light.border.focus-ring (white, measured on the marketing CTAs), app.border.oauth-border and app.border.share-card-border exist; no named default/strong border pair - hairline borders paint via component styles."
+    },
+    "F5": {
+     "grade": "meets",
+     "evidence": "default/hover/focus-visible/pressed were measured on real CTAs (nav-cta, nav-login, hero-cta, feat-cta, ptab tabs, login/signup/restore submits, share-viewer buttons); pressed is DevTools-forced as recorded."
+    },
+    "F6": {
+     "grade": "partly",
+     "evidence": "The app declares --primary-red-500 and --secondary-red/green/orange/yellow with alpha steps - the status hues exist as declarations; no error/validation/success state paints signed out (the forms were never submitted)."
+    },
+    "F7": {
+     "grade": "meets",
+     "evidence": "The product ships one theme signed out: every semantic role lives in the light set; the app set is a separate host's vocabulary, not a second theme. The declared-but-unpainted _apps---*-dark twins are emitted as declarations under core.apps.*."
+    },
+    "F8": {
+     "grade": "meets",
+     "evidence": "Self-hosted Inter (400-700, 48 @font-face rules harvested) with a measured family stack (core.font.family.inter), a 10-size measured scale (display 96 / hero 72 / mobileHero 40 / planName 36 / planCta 24 / body+faq+tab 16 / button 16 / eyebrow 12), 4 weights and 3 line-heights under named roles."
+    },
+    "F9": {
+     "grade": "missing",
+     "evidence": "No spacing scale is published as tokens: neither host declares spacing custom properties and the measured paddings live in raw/components-computed.json, not in a named scale."
+    },
+    "F10": {
+     "grade": "meets",
+     "evidence": "Measured radius scale core.radius.*: control 8px (nav links), button 12px (header CTAs), app-button 12px, field 16px + share-card 16px + popup 14px (app surfaces), card 24px (pricing cards), pill 1600px (the signature CTAs), plus the declared 20px apps.sizes.radius; borders are 1-2px hairlines."
+    },
+    "F11": {
+     "grade": "meets",
+     "evidence": "Measured control heights under component.*: topbar 82, nav-link 44.5, nav-cta 38.5, hero-cta, ptab 25.6, plan-cta 76, app field 374x56 (under component.app), mobile topbar/cta; focus ring recorded via light.border.focus-ring."
+    },
+    "F12": {
+     "grade": "missing",
+     "evidence": "No elevation scale is tokenised: the header's floating-bar shadow, the flyout shadow and the CTA halo were measured (component layer dumps) but no shadow levels are named tokens."
+    },
+    "F13": {
+     "grade": "meets",
+     "evidence": "motion.control records the measured 0.3s ease on background-color/color/border-color carried by nav links, CTAs and tabs; prefers-reduced-motion results are recorded in raw/components-computed.json _meta.reducedMotion."
+    },
+    "F14": {
+     "grade": "partly",
+     "evidence": "1440px and 390px passes were captured with per-width component geometry (component.topbar-height, hero-width, mobile-topbar-height); no breakpoint, column or z-index scale is declared or tokenised."
+    },
+    "C1": {
+     "grade": "partly",
+     "evidence": "About 13 of 19 checklist components are covered: button (nav-cta/hero-cta/submits), icon button (sh-toolbar buttons), link (nav-link/nav-demo/nav-login), text field (login/signup/contact inputs), select (the share-viewer project dropdown), tabs (ptab + sh structure/estimation), menu (Features flyout + mobile burger), toast (sh-popup), card (home/feat/plan/sh cards), list row (plan-row), avatar (hero-avatars), badge (trusted-mark/uf-tag); checkbox, radio, switch, tooltip, dialog, table, text area are absent or gated."
+    },
+    "C2": {
+     "grade": "meets",
+     "evidence": "Components carry default/hover/focus-visible/pressed plus opened (flyout, FAQ, tabs, dropdown, burger), filled (fields), enabled vs disabled (the sign-in submit's two measured fills) states; each entry records how the state was reached."
+    },
+    "C3": {
+     "grade": "meets",
+     "evidence": "focus-visible was measured on nav links, the nav login/CTA, tabs, FAQ, form fields and share-viewer buttons via CSS.forcePseudoState; where a real focus could not be held (nav-features) the crop is marked 'focus not capturable' rather than fabricated."
+    },
+    "C4": {
+     "grade": "meets",
+     "evidence": "components.md writes every colour next to its token path (#222222 `text.muted`, #f6f8fa `apps.colors.background.default`), and measured geometry names the component.* tokens."
+    },
+    "P1": {
+     "grade": "partly",
+     "evidence": "patterns.md documents the chrome, hero, pricing table, feature-page anatomy, the signed-out forms and the share viewer plus mobile/motion/focus; empty/loading/error, destructive and onboarding patterns are all post-login and declared as gaps."
+    },
+    "A1": {
+     "grade": "partly",
+     "evidence": "icon.png is the fetched apple-touch-icon and Inter is named with its system fallback stack; no standalone icon set was lifted - declared under layoutGaps."
+    },
+    "K1": {
+     "grade": "meets",
+     "evidence": "README.md states what was captured (routes, viewports, hosts), how values were read (declared css-var vs measured with $extensions.source), what to distrust (the two blues, unpainted dark declarations, forced presses, zoom-dependent geometry) and the rebuild commands."
+    },
+    "F15": {
+     "grade": "meets",
+     "evidence": "Script: all 4 pairs pass 4.5:1 across 1 themes; lowest 14.94:1 light muted (light.text.muted) on page (light.background.page)"
+    },
+    "F16": {
+     "grade": "meets",
+     "evidence": "Script: 237 of 237 tokens name their source"
+    },
+    "K2": {
+     "grade": "missing",
+     "evidence": "Script: no \"Do and don't\" section in the README"
+    },
+    "K3": {
+     "grade": "meets",
+     "evidence": "Script: DESIGN.md matches a fresh generation"
+    },
+    "C5": {
+     "grade": "na",
+     "evidence": "Optional for a capture, and this product does not publish it."
+    },
+    "V1": {
+     "grade": "na",
+     "evidence": "Optional for a capture, and this product does not publish it."
+    },
+    "V2": {
+     "grade": "na",
+     "evidence": "Optional for a capture, and this product does not publish it."
+    }
+   },
+   "name": "FlowMapp",
+   "goodFor": "blue-pill SaaS marketing and signed-out product design: the Webflow marketing site ships a legacy flat palette (--dodger-blue #0080ff, --primary-blue #0050ff, --bg #f6f8fa, --alice-blue #e8edf2) plus the Webflow _apps--- layer (typography, a 20px radius, chart ramps, declared-but-unpainted -dark twins), 72-96px Inter mastheads, and 1600px-radius dodger-blue CTA pills ringed by a translucent halo over white cards and an inverted black featured pricing card; plus the app's own ramp (--primary-basic-blue, --secondary-*, --neutral-gray-*) on the signed-out signin/signup/restore forms and the published read-only sitemap/user-flow demo viewers",
+   "url": "https://www.flowmapp.com",
+   "captured": "2026-11-16",
+   "themes": [
+    "light"
+   ],
+   "platform": "web",
+   "category": "Productivity",
+   "reviewed": "2026-11-16",
+   "reviewedPlatform": "web"
+  },
+  {
    "slug": "gauth",
    "name": "Gauth",
    "category": "Learning",
