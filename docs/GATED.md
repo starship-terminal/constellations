@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_92 of 150 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_93 of 151 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -516,6 +516,14 @@ Access: read-only (the www.flowmapp.com marketing pages, the signed-out app.flow
 Access: signed out (every captured surface is public; the product workspace behind /home and every post-login surface is an authenticated boundary never reached; /login was measured at rest, the Google and Email buttons never followed; the pricing billing switch was toggled for the monthly shot then toggled back; the FAQ accordions and the home demo's Version chip were opened locally; every link and CTA was measured, never followed; the public site paints dark only and no theme switcher or light theme was observed)
 - the product workspace behind /home and every post-login surface sits behind an account - an authenticated boundary never reached; Sign Up and Open Flask link to /home and were measured, never followed; /login was captured at rest, its Google and Email buttons never followed
 - submitted states: the login form was never submitted - validation, error, loading and success states are absent rather than measured
+
+## [Framer](../systems/framer) — `framer`
+Access: signed out (every captured surface is public; the dashboard, editor, CMS, publishing, workspaces and every post-login surface are an authenticated boundary never reached; /login was measured as a form, never submitted - /signup redirects to it - and Continue with Google was never followed; the pricing 'Yearly billing' switch, credits selects and every CTA/link were measured, never switched or followed; the 'We use cookies' consent card was hidden in the DOM, never answered; the public marketing stack and the community/gallery stack paint dark while /login is a separate light shell)
+- the dashboard, editor, CMS, publishing, workspaces and every post-login surface sit behind an account - an authenticated boundary never reached; /login was captured at rest, its Google button and Continue submit never followed, and /signup redirects to the same shell
+- submitted states: the login work-email field was never submitted and search inputs were never sent - validation, error, loading and success states are absent rather than measured
+- the community/marketplace stack's own stylesheet layer was not separately harvested - its values are measured component tokens, not declared variables; the mkt-logo crop and a full-size nav-panel measurement are recorded missing/weak rather than inferred (the measured login-panel is the full 1440px shell, not a bounded card)
+- prefers-reduced-motion is only partially honoured on the homepage and ignored on pricing, the gallery and login - recorded per page in raw/motion.json
+- no light marketing theme or theme switcher was observed; the only light surface is the /login auth shell
 
 ## Gate noted in access text only
 

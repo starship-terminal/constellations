@@ -898,5 +898,11 @@
     "groupId": "web-categories",
     "labels": ["Collaboration Tools", "Productivity"],
     "reason": "catalog.json describes a video review and collaboration workspace: marketing pages with an embedded product demo, a pricing page, an MCP documentation page and the signed-out login boundary."
+  },
+  {
+    "referenceId": "systems:framer",
+    "groupId": "web-categories",
+    "labels": ["Design & Media Editing", "Productivity"],
+    "reason": "catalog.json describes a website builder and AI design agent: marketing product pages (AI, agents, design, MCP), a pricing grid, community gallery and marketplace template indexes and the signed-out login shell."
   }
 ]
