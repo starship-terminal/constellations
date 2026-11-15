@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 151,
-    "system_domains": 143,
-    "matched_domains": 114,
-    "missing_domains": 319,
+    "system_packages": 152,
+    "system_domains": 144,
+    "matched_domains": 115,
+    "missing_domains": 318,
     "system_domains_absent_from_catalog": 29
   },
   "matched": {
@@ -1749,6 +1749,23 @@
         }
       ]
     },
+    "fiverr.com": {
+      "catalog": [
+        {
+          "name": "Fiverr",
+          "domain": "fiverr.com",
+          "id": 169
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "fiverr",
+          "name": "Fiverr",
+          "url": "https://www.fiverr.com",
+          "name_match": true
+        }
+      ]
+    },
     "flask.do": {
       "catalog": [
         {
@@ -2185,13 +2202,6 @@
         "name": "Fibery",
         "domain": "fibery.io",
         "id": 415
-      }
-    ],
-    "fiverr.com": [
-      {
-        "name": "Fiverr",
-        "domain": "fiverr.com",
-        "id": 169
       }
     ],
     "flutterflow.io": [

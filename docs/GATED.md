@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_93 of 151 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_94 of 152 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -521,6 +521,13 @@ Access: read-only (the www.flowmapp.com marketing pages, the signed-out app.flow
 Access: signed out (every captured surface is public; the product workspace behind /home and every post-login surface is an authenticated boundary never reached; /login was measured at rest, the Google and Email buttons never followed; the pricing billing switch was toggled for the monthly shot then toggled back; the FAQ accordions and the home demo's Version chip were opened locally; every link and CTA was measured, never followed; the public site paints dark only and no theme switcher or light theme was observed)
 - the product workspace behind /home and every post-login surface sits behind an account - an authenticated boundary never reached; Sign Up and Open Flask link to /home and were measured, never followed; /login was captured at rest, its Google and Email buttons never followed
 - submitted states: the login form was never submitted - validation, error, loading and success states are absent rather than measured
+
+## [Fiverr](../systems/fiverr) — `fiverr`
+Access: signed out (every captured surface is public; the buyer/seller account, orders, inbox, checkout and every post-login surface is an authenticated boundary never reached; the hero search, join and login fields were measured and typed into then cleared, never submitted)
+- the buyer/seller account, orders, inbox, checkout and every post-login surface was never reached
+- the gig card's Continue was measured, never pressed — the order/checkout flow it leads to is uncaptured
+- Contact me was measured, never pressed — the message flow it fronts needs an account
+- the join and login forms were typed into then cleared, never submitted; Continue-with-* was never pressed
 
 ## Gate noted in access text only
 
