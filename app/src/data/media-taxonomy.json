@@ -1241,6 +1241,11 @@
       "referenceId": "systems:foodnoms",
       "media": 204,
       "assignedMedia": 69
+    },
+    {
+      "referenceId": "systems:fourmula",
+      "media": 202,
+      "assignedMedia": 47
     }
   ],
   "assignments": [
@@ -283873,6 +283878,528 @@
           "termId": "web-ui-elements:table",
           "rule": "ui-table",
           "reason": "Capture filename explicitly names table; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:fourmula",
+      "mediaId": "systems/fourmula/screenshots/create-pdp-dark-pdp-dialog.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dialog-modal-window",
+          "rule": "ui-dialog",
+          "reason": "Capture filename explicitly names dialog & modal window; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:fourmula",
+      "mediaId": "systems/fourmula/screenshots/home-dark-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:fourmula",
+      "mediaId": "systems/fourmula/screenshots/home-dark-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:fourmula",
+      "mediaId": "systems/fourmula/screenshots/home-dark-menu.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:fourmula",
+      "mediaId": "systems/fourmula/screenshots/home-light-cookie.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:fourmula",
+      "mediaId": "systems/fourmula/screenshots/home-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:fourmula",
+      "mediaId": "systems/fourmula/screenshots/home-light-faq-opened.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:fourmula",
+      "mediaId": "systems/fourmula/screenshots/home-light-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:fourmula",
+      "mediaId": "systems/fourmula/screenshots/home-light-menu.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:fourmula",
+      "mediaId": "systems/fourmula/components/crops/auth-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:fourmula",
+      "mediaId": "systems/fourmula/components/crops/auth-signup-card-opened.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:fourmula",
+      "mediaId": "systems/fourmula/components/crops/auth-switch-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:switch-toggle",
+          "rule": "ui-toggle",
+          "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:fourmula",
+      "mediaId": "systems/fourmula/components/crops/auth-switch-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:switch-toggle",
+          "rule": "ui-toggle",
+          "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:fourmula",
+      "mediaId": "systems/fourmula/components/crops/faq-item-dark-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:fourmula",
+      "mediaId": "systems/fourmula/components/crops/faq-item-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:fourmula",
+      "mediaId": "systems/fourmula/components/crops/faq-item-hover.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:fourmula",
+      "mediaId": "systems/fourmula/components/crops/faq-item-opened.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:fourmula",
+      "mediaId": "systems/fourmula/components/crops/footer-dark-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:fourmula",
+      "mediaId": "systems/fourmula/components/crops/footer-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:fourmula",
+      "mediaId": "systems/fourmula/components/crops/footer-link-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:fourmula",
+      "mediaId": "systems/fourmula/components/crops/footer-link-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:fourmula",
+      "mediaId": "systems/fourmula/components/crops/footer-link-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:fourmula",
+      "mediaId": "systems/fourmula/components/crops/footer-link-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:fourmula",
+      "mediaId": "systems/fourmula/components/crops/m-faq-item-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:fourmula",
+      "mediaId": "systems/fourmula/components/crops/m-faq-item-opened.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:fourmula",
+      "mediaId": "systems/fourmula/components/crops/m-menu-pill-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:fourmula",
+      "mediaId": "systems/fourmula/components/crops/m-menu-pill-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:fourmula",
+      "mediaId": "systems/fourmula/components/crops/m-menu-pill-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:fourmula",
+      "mediaId": "systems/fourmula/components/crops/m-menu-pill-opened.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:fourmula",
+      "mediaId": "systems/fourmula/components/crops/m-menu-pill-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:fourmula",
+      "mediaId": "systems/fourmula/components/crops/menu-pill-dark-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:fourmula",
+      "mediaId": "systems/fourmula/components/crops/menu-pill-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:fourmula",
+      "mediaId": "systems/fourmula/components/crops/menu-pill-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:fourmula",
+      "mediaId": "systems/fourmula/components/crops/menu-pill-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:fourmula",
+      "mediaId": "systems/fourmula/components/crops/menu-pill-opened.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:fourmula",
+      "mediaId": "systems/fourmula/components/crops/menu-pill-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:fourmula",
+      "mediaId": "systems/fourmula/components/crops/pdp-reco-dialog-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dialog-modal-window",
+          "rule": "ui-dialog",
+          "reason": "Capture filename explicitly names dialog & modal window; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:fourmula",
+      "mediaId": "systems/fourmula/components/crops/pdp-signedin-chip-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:fourmula",
+      "mediaId": "systems/fourmula/components/crops/pdp-signedin-chip-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:fourmula",
+      "mediaId": "systems/fourmula/components/crops/pdp-upload-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:upload-download",
+          "rule": "ux-upload-download",
+          "reason": "Capture filename explicitly names upload & download; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:fourmula",
+      "mediaId": "systems/fourmula/components/crops/pdp-upload-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:upload-download",
+          "rule": "ux-upload-download",
+          "reason": "Capture filename explicitly names upload & download; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:fourmula",
+      "mediaId": "systems/fourmula/components/crops/pdp-upload-hover.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:upload-download",
+          "rule": "ux-upload-download",
+          "reason": "Capture filename explicitly names upload & download; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:fourmula",
+      "mediaId": "systems/fourmula/components/crops/pdp-upload-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:upload-download",
+          "rule": "ux-upload-download",
+          "reason": "Capture filename explicitly names upload & download; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:fourmula",
+      "mediaId": "systems/fourmula/components/crops/pdp-what-dialog-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dialog-modal-window",
+          "rule": "ui-dialog",
+          "reason": "Capture filename explicitly names dialog & modal window; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:fourmula",
+      "mediaId": "systems/fourmula/components/crops/theme-toggle-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:switch-toggle",
+          "rule": "ui-toggle",
+          "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:fourmula",
+      "mediaId": "systems/fourmula/components/crops/theme-toggle-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:switch-toggle",
+          "rule": "ui-toggle",
+          "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:fourmula",
+      "mediaId": "systems/fourmula/components/crops/theme-toggle-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:switch-toggle",
+          "rule": "ui-toggle",
+          "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
         }
       ]
     }

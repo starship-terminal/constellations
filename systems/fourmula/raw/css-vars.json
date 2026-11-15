@@ -1,0 +1,606 @@
+{
+ "readAt": "2026-11-16",
+ "source": "the stylesheet bodies read during a live signed-out load of fourmula.ai / (the linked cdn.prod.website-files.com CSS and any inline <style> blocks, re-parsed with CSSStyleSheet); resolved on document.body of a probe carrying the real sheets at 1440 x 900 — the light pass carries class=\"body dark\" (the site's inverted name for its light surface, isDarkMode=true, the first-visit default) and the dark pass class=\"body\"",
+ "sheets": [
+  "https://cdn.prod.website-files.com/6936c73d0da5b3bc5bb89ca4/css/fourmula-ai.shared.bbf639c1e.css (102562 bytes)",
+  "inline-0 (62 bytes)",
+  "inline-1 (239 bytes)",
+  "inline-2 (100 bytes)",
+  "inline-3 (753 bytes)",
+  "inline-4 (184 bytes)",
+  "inline-5 (188 bytes)",
+  "inline-6 (452 bytes)",
+  "inline-7 (87 bytes)",
+  "inline-8 (184 bytes)",
+  "inline-9 (270 bytes)",
+  "inline-10 (272 bytes)",
+  "inline-11 (591 bytes)"
+ ],
+ "counts": {
+  "rules": 10,
+  "fonts": 3,
+  "names": {
+   "theme": 32,
+   "app": 7,
+   "skins": 0,
+   "vendor": 0,
+   "utility": 0,
+   "tailwind": 0
+  },
+  "bySelector": {
+   "[theme] :root": 32,
+   "[theme] .body": 12,
+   "[theme] .body.dark": 12,
+   "[theme] @media screen and (max-width: 991px) body": 16,
+   "[theme] @media screen and (max-width: 767px) body": 16,
+   "[app] :root": 1,
+   "[app] @media (min-width: 992px) .hero__slider__row": 4,
+   "[app] @media (max-width: 991px) .hero__slider__row": 4,
+   "[app] @media (min-width: 768px) .dots-field": 2,
+   "[app] @media (max-width: 767px) .dots-field": 2
+  }
+ },
+ "errors": [],
+ "theme": [
+  {
+   "file": "https://cdn.prod.website-files.com/6936c73d0da5b3bc5bb89ca4/css/fourmula-ai.shared.bbf639c1e.css",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--mainbg": "#020108",
+    "--_font-family---font-family": "\"Sf Pro Display\", Arial, sans-serif",
+    "--_fonts---h1": "5.5rem",
+    "--_font-family---regular": "400",
+    "--_fonts---h2": "7.5rem",
+    "--_fonts---h3": "3.25rem",
+    "--_font-family---medium": "500",
+    "--_fonts---h4": "2.25rem",
+    "--_fonts---body-1": "1.125rem",
+    "--_fonts---body-2": "1rem",
+    "--_fonts---tag": "1.125rem",
+    "--_fonts---tag-small": "1.125rem",
+    "--_fonts---title-1": "1rem",
+    "--_fonts---title-2": ".875rem",
+    "--_fonts---small-text-1": ".75rem",
+    "--_fonts---small-text-2": ".625rem",
+    "--_fonts---body-3": "1.25rem",
+    "--_fonts---btn": "1.0625rem",
+    "--fonts-100": "white",
+    "--menu": "#272727",
+    "--menu-colors": "#fff3",
+    "--secondbg": "#111",
+    "--fonts-50": "#ffffff80",
+    "--lines": "#2a2a30",
+    "--fonts-30": "#ffffff4d",
+    "--fonts-64": "#ffffffa3",
+    "--mainbg-gradient": "#02010800",
+    "--fonts-20": "#fff3",
+    "--dots-pattern": "#1a1a1a",
+    "--_fonts---title-3": "1.5rem",
+    "--_fonts---h2-5": "4rem",
+    "--_font-family---size": "0px"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/6936c73d0da5b3bc5bb89ca4/css/fourmula-ai.shared.bbf639c1e.css",
+   "selector": ".body",
+   "context": [],
+   "properties": {
+    "--mainbg": "#020108",
+    "--fonts-100": "white",
+    "--menu": "#272727",
+    "--menu-colors": "#fff3",
+    "--secondbg": "#111",
+    "--fonts-50": "#ffffff80",
+    "--lines": "#2a2a30",
+    "--fonts-30": "#ffffff4d",
+    "--fonts-64": "#ffffffa3",
+    "--mainbg-gradient": "#02010800",
+    "--fonts-20": "#fff3",
+    "--dots-pattern": "#1a1a1a"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/6936c73d0da5b3bc5bb89ca4/css/fourmula-ai.shared.bbf639c1e.css",
+   "selector": ".body.dark",
+   "context": [],
+   "properties": {
+    "--mainbg": "white",
+    "--fonts-100": "#020108",
+    "--menu": "#020108",
+    "--menu-colors": "#fff3",
+    "--secondbg": "#f7f7f7",
+    "--fonts-50": "#02010880",
+    "--lines": "#d7d7d6",
+    "--fonts-30": "#0201084d",
+    "--fonts-64": "#020108a3",
+    "--mainbg-gradient": "#fff0",
+    "--fonts-20": "#02010833",
+    "--dots-pattern": "#d9d9d9"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/6936c73d0da5b3bc5bb89ca4/css/fourmula-ai.shared.bbf639c1e.css",
+   "selector": "body",
+   "context": [
+    "@media screen and (max-width: 991px)"
+   ],
+   "properties": {
+    "--_fonts---h1": "4.5rem",
+    "--_fonts---h2": "5.5rem",
+    "--_fonts---h3": "3.25rem",
+    "--_fonts---h4": "2.25rem",
+    "--_fonts---body-1": "1.125rem",
+    "--_fonts---body-2": "1rem",
+    "--_fonts---tag": "1.125rem",
+    "--_fonts---tag-small": "1.125rem",
+    "--_fonts---title-1": "1rem",
+    "--_fonts---title-2": ".875rem",
+    "--_fonts---small-text-1": ".75rem",
+    "--_fonts---small-text-2": ".625rem",
+    "--_fonts---body-3": "1.25rem",
+    "--_fonts---btn": "1.0625rem",
+    "--_fonts---title-3": "1.5rem",
+    "--_fonts---h2-5": "4rem"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/6936c73d0da5b3bc5bb89ca4/css/fourmula-ai.shared.bbf639c1e.css",
+   "selector": "body",
+   "context": [
+    "@media screen and (max-width: 767px)"
+   ],
+   "properties": {
+    "--_fonts---h1": "2.5rem",
+    "--_fonts---h2": "2.25rem",
+    "--_fonts---h3": "1.5rem",
+    "--_fonts---h4": "2rem",
+    "--_fonts---body-1": "1rem",
+    "--_fonts---body-2": ".875rem",
+    "--_fonts---tag": "1rem",
+    "--_fonts---tag-small": "1.125rem",
+    "--_fonts---title-1": "1rem",
+    "--_fonts---title-2": ".875rem",
+    "--_fonts---small-text-1": ".75rem",
+    "--_fonts---small-text-2": ".625rem",
+    "--_fonts---body-3": "1rem",
+    "--_fonts---btn": "1.0625rem",
+    "--_fonts---title-3": "1.5rem",
+    "--_fonts---h2-5": "2.25rem"
+   },
+   "bin": "theme"
+  }
+ ],
+ "app": [
+  {
+   "file": "inline-3",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--user-zoom": "1"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-6",
+   "selector": ".hero__slider__row",
+   "context": [
+    "@media (min-width: 992px)"
+   ],
+   "properties": {
+    "--tx": "0%",
+    "--ty": "0%",
+    "--tx-end": "0%",
+    "--ty-end": "-100%"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-6",
+   "selector": ".hero__slider__row",
+   "context": [
+    "@media (max-width: 991px)"
+   ],
+   "properties": {
+    "--tx": "0%",
+    "--ty": "0%",
+    "--tx-end": "-100%",
+    "--ty-end": "0%"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-11",
+   "selector": ".dots-field",
+   "context": [
+    "@media (min-width: 768px)"
+   ],
+   "properties": {
+    "--dot-size": "1rem",
+    "--dot-gap": "1rem"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-11",
+   "selector": ".dots-field",
+   "context": [
+    "@media (max-width: 767px)"
+   ],
+   "properties": {
+    "--dot-size": "0.5rem",
+    "--dot-gap": "0.5rem"
+   },
+   "bin": "app"
+  }
+ ],
+ "skins": [],
+ "vendor": [],
+ "utility": [],
+ "tailwind": [],
+ "fonts": [
+  {
+   "file": "https://cdn.prod.website-files.com/6936c73d0da5b3bc5bb89ca4/css/fourmula-ai.shared.bbf639c1e.css",
+   "font-family": "webflow-icons",
+   "src": "url(\"data:application/x-font-ttf;charset=utf-8;base64,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\") format(\"truetype\")",
+   "font-weight": "normal",
+   "font-style": "normal"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/6936c73d0da5b3bc5bb89ca4/css/fourmula-ai.shared.bbf639c1e.css",
+   "font-family": "\"Sf Pro Display\"",
+   "src": "url(…) format(\"opentype\")",
+   "font-weight": "500",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/6936c73d0da5b3bc5bb89ca4/css/fourmula-ai.shared.bbf639c1e.css",
+   "font-family": "\"Sf Pro Display\"",
+   "src": "url(…) format(\"opentype\")",
+   "font-weight": "400",
+   "font-style": "normal",
+   "font-display": "swap"
+  }
+ ],
+ "resolved": {
+  "dark": {
+   "--_font-family---font-family": {
+    "raw": "\"Sf Pro Display\", Arial, sans-serif",
+    "kind": "fontFamily",
+    "value": "\"Sf Pro Display\", Arial, sans-serif"
+   },
+   "--_font-family---medium": {
+    "raw": "500",
+    "kind": "number",
+    "value": 500
+   },
+   "--_font-family---regular": {
+    "raw": "400",
+    "kind": "number",
+    "value": 400
+   },
+   "--_font-family---size": {
+    "raw": "0px",
+    "kind": "dimension",
+    "value": "0px"
+   },
+   "--_fonts---body-1": {
+    "raw": "1.125rem",
+    "kind": "dimension",
+    "value": "14.9688px"
+   },
+   "--_fonts---body-2": {
+    "raw": "1rem",
+    "kind": "dimension",
+    "value": "13.2969px"
+   },
+   "--_fonts---body-3": {
+    "raw": "1.25rem",
+    "kind": "dimension",
+    "value": "16.625px"
+   },
+   "--_fonts---btn": {
+    "raw": "1.0625rem",
+    "kind": "dimension",
+    "value": "14.125px"
+   },
+   "--_fonts---h1": {
+    "raw": "5.5rem",
+    "kind": "dimension",
+    "value": "73.1875px"
+   },
+   "--_fonts---h2": {
+    "raw": "7.5rem",
+    "kind": "dimension",
+    "value": "99.8125px"
+   },
+   "--_fonts---h2-5": {
+    "raw": "4rem",
+    "kind": "dimension",
+    "value": "53.2188px"
+   },
+   "--_fonts---h3": {
+    "raw": "3.25rem",
+    "kind": "dimension",
+    "value": "43.25px"
+   },
+   "--_fonts---h4": {
+    "raw": "2.25rem",
+    "kind": "dimension",
+    "value": "29.9375px"
+   },
+   "--_fonts---small-text-1": {
+    "raw": ".75rem",
+    "kind": "dimension",
+    "value": "9.96875px"
+   },
+   "--_fonts---small-text-2": {
+    "raw": ".625rem",
+    "kind": "dimension",
+    "value": "8.3125px"
+   },
+   "--_fonts---tag": {
+    "raw": "1.125rem",
+    "kind": "dimension",
+    "value": "14.9688px"
+   },
+   "--_fonts---tag-small": {
+    "raw": "1.125rem",
+    "kind": "dimension",
+    "value": "14.9688px"
+   },
+   "--_fonts---title-1": {
+    "raw": "1rem",
+    "kind": "dimension",
+    "value": "13.2969px"
+   },
+   "--_fonts---title-2": {
+    "raw": ".875rem",
+    "kind": "dimension",
+    "value": "11.6406px"
+   },
+   "--_fonts---title-3": {
+    "raw": "1.5rem",
+    "kind": "dimension",
+    "value": "19.9531px"
+   },
+   "--dots-pattern": {
+    "raw": "#1a1a1a",
+    "kind": "color",
+    "value": "#1a1a1a"
+   },
+   "--fonts-100": {
+    "raw": "white",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--fonts-20": {
+    "raw": "#fff3",
+    "kind": "color",
+    "value": "rgba(255, 255, 255, 0.2)"
+   },
+   "--fonts-30": {
+    "raw": "#ffffff4d",
+    "kind": "color",
+    "value": "rgba(255, 255, 255, 0.3)"
+   },
+   "--fonts-50": {
+    "raw": "#ffffff80",
+    "kind": "color",
+    "value": "rgba(255, 255, 255, 0.5)"
+   },
+   "--fonts-64": {
+    "raw": "#ffffffa3",
+    "kind": "color",
+    "value": "rgba(255, 255, 255, 0.64)"
+   },
+   "--lines": {
+    "raw": "#2a2a30",
+    "kind": "color",
+    "value": "#2a2a30"
+   },
+   "--mainbg": {
+    "raw": "#020108",
+    "kind": "color",
+    "value": "#020108"
+   },
+   "--mainbg-gradient": {
+    "raw": "#02010800",
+    "kind": "color",
+    "value": "rgba(2, 1, 8, 0)"
+   },
+   "--menu": {
+    "raw": "#272727",
+    "kind": "color",
+    "value": "#272727"
+   },
+   "--menu-colors": {
+    "raw": "#fff3",
+    "kind": "color",
+    "value": "rgba(255, 255, 255, 0.2)"
+   },
+   "--secondbg": {
+    "raw": "#111",
+    "kind": "color",
+    "value": "#111111"
+   },
+   "--user-zoom": {
+    "raw": "1",
+    "kind": "number",
+    "value": 1
+   }
+  },
+  "light": {
+   "--_font-family---font-family": {
+    "raw": "\"Sf Pro Display\", Arial, sans-serif",
+    "kind": "fontFamily",
+    "value": "\"Sf Pro Display\", Arial, sans-serif"
+   },
+   "--_font-family---medium": {
+    "raw": "500",
+    "kind": "number",
+    "value": 500
+   },
+   "--_font-family---regular": {
+    "raw": "400",
+    "kind": "number",
+    "value": 400
+   },
+   "--_font-family---size": {
+    "raw": "0px",
+    "kind": "dimension",
+    "value": "0px"
+   },
+   "--_fonts---body-1": {
+    "raw": "1.125rem",
+    "kind": "dimension",
+    "value": "14.9688px"
+   },
+   "--_fonts---body-2": {
+    "raw": "1rem",
+    "kind": "dimension",
+    "value": "13.2969px"
+   },
+   "--_fonts---body-3": {
+    "raw": "1.25rem",
+    "kind": "dimension",
+    "value": "16.625px"
+   },
+   "--_fonts---btn": {
+    "raw": "1.0625rem",
+    "kind": "dimension",
+    "value": "14.125px"
+   },
+   "--_fonts---h1": {
+    "raw": "5.5rem",
+    "kind": "dimension",
+    "value": "73.1875px"
+   },
+   "--_fonts---h2": {
+    "raw": "7.5rem",
+    "kind": "dimension",
+    "value": "99.8125px"
+   },
+   "--_fonts---h2-5": {
+    "raw": "4rem",
+    "kind": "dimension",
+    "value": "53.2188px"
+   },
+   "--_fonts---h3": {
+    "raw": "3.25rem",
+    "kind": "dimension",
+    "value": "43.25px"
+   },
+   "--_fonts---h4": {
+    "raw": "2.25rem",
+    "kind": "dimension",
+    "value": "29.9375px"
+   },
+   "--_fonts---small-text-1": {
+    "raw": ".75rem",
+    "kind": "dimension",
+    "value": "9.96875px"
+   },
+   "--_fonts---small-text-2": {
+    "raw": ".625rem",
+    "kind": "dimension",
+    "value": "8.3125px"
+   },
+   "--_fonts---tag": {
+    "raw": "1.125rem",
+    "kind": "dimension",
+    "value": "14.9688px"
+   },
+   "--_fonts---tag-small": {
+    "raw": "1.125rem",
+    "kind": "dimension",
+    "value": "14.9688px"
+   },
+   "--_fonts---title-1": {
+    "raw": "1rem",
+    "kind": "dimension",
+    "value": "13.2969px"
+   },
+   "--_fonts---title-2": {
+    "raw": ".875rem",
+    "kind": "dimension",
+    "value": "11.6406px"
+   },
+   "--_fonts---title-3": {
+    "raw": "1.5rem",
+    "kind": "dimension",
+    "value": "19.9531px"
+   },
+   "--dots-pattern": {
+    "raw": "#d9d9d9",
+    "kind": "color",
+    "value": "#d9d9d9"
+   },
+   "--fonts-100": {
+    "raw": "#020108",
+    "kind": "color",
+    "value": "#020108"
+   },
+   "--fonts-20": {
+    "raw": "#02010833",
+    "kind": "color",
+    "value": "rgba(2, 1, 8, 0.2)"
+   },
+   "--fonts-30": {
+    "raw": "#0201084d",
+    "kind": "color",
+    "value": "rgba(2, 1, 8, 0.3)"
+   },
+   "--fonts-50": {
+    "raw": "#02010880",
+    "kind": "color",
+    "value": "rgba(2, 1, 8, 0.5)"
+   },
+   "--fonts-64": {
+    "raw": "#020108a3",
+    "kind": "color",
+    "value": "rgba(2, 1, 8, 0.64)"
+   },
+   "--lines": {
+    "raw": "#d7d7d6",
+    "kind": "color",
+    "value": "#d7d7d6"
+   },
+   "--mainbg": {
+    "raw": "white",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--mainbg-gradient": {
+    "raw": "#fff0",
+    "kind": "color",
+    "value": "rgba(255, 255, 255, 0)"
+   },
+   "--menu": {
+    "raw": "#020108",
+    "kind": "color",
+    "value": "#020108"
+   },
+   "--menu-colors": {
+    "raw": "#fff3",
+    "kind": "color",
+    "value": "rgba(255, 255, 255, 0.2)"
+   },
+   "--secondbg": {
+    "raw": "#f7f7f7",
+    "kind": "color",
+    "value": "#f7f7f7"
+   },
+   "--user-zoom": {
+    "raw": "1",
+    "kind": "number",
+    "value": 1
+   }
+  }
+ }
+}

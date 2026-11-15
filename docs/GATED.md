@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_96 of 154 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_97 of 155 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -540,6 +540,11 @@ Access: signed out (every surface captured is public; the app sits at app.flutte
 Access: read-only (the marketing site, pricing, help center, news, press, articles, comparison pages and legal are fully public; the product itself is an iOS/macOS app sold through the App Store - there is no web sign-in; every Download/Get-the-App link, press-kit zip and mailto was measured, never followed; the help search and newsletter field were typed into then cleared, never submitted; /open/settings/* is a static deep-link interstitial)
 - the product itself - food logging, AI scanning, widgets, the community database and subscription purchase - is an iOS/macOS app behind the App Store download, which was never installed or opened; /download is a JS redirect to apps.apple.com that was never followed
 - the help search modal was opened and typed into, but result rows were never clicked; the newsletter field was typed into then cleared, never submitted
+
+## [Fourmula](../systems/fourmula) — `fourmula`
+Access: signed out (every surface captured is public; app.fourmula.ai /start, /auth and /project/create-pdp are the only app surfaces a signed-out visitor sees - measured as forms, typed into then cleared, never submitted; uploads, the Shopify connection, generation and every post-login surface need an account and were never run; consent was never answered; every CTA and link was measured, never followed)
+- every post-login surface (dashboard, asset generation, results, account settings) lives behind app.fourmula.ai's auth wall - an authenticated boundary never reached
+- the auth fields, PDP uploads, Shopify Check connection and Start generation were measured at rest and typed into then cleared, never submitted - validation, error, loading and success states are absent rather than measured; the Start generation pill's dim accent/15% fill is its resting style, not a measured disabled state
 
 ## Gate noted in access text only
 
