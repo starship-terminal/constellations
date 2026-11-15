@@ -4,7 +4,7 @@
 // sidebar prefs ("ds-theme" / "ds-nav"), saved media ("ds-saved"), and the
 // data summary the server page passes in.
 
-import { Fragment, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useLightbox } from "@/components/Lightbox";
 import { readSavedPaths, readStoredProvider } from "@/components/storage";
 import { PROVIDER_EVENT } from "@/components/Chat";
@@ -277,13 +277,13 @@ export function Settings({ stats }: { stats: SettingsStats }) {
           </p>
           <dl className="meta snippets">
             {agentSnippets(origin).map((s) => (
-              <Fragment key={s.label}>
+              <div className="snip-row" key={s.label}>
                 <dt>{s.label}</dt>
                 <dd>
                   <code>{s.text}</code>
                   <SnippetCopyButton text={s.text} what={`${s.label} setup`} />
                 </dd>
-              </Fragment>
+              </div>
             ))}
           </dl>
           <p className="pref-note">
