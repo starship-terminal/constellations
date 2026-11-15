@@ -476,6 +476,60 @@ class RedactionLoaderTest(unittest.TestCase):
             self.assertEqual(sorted(h.rsplit(" ", 1)[1] for h in hits), ["2", "3"])
 
 
+class BadRedactionFileTest(unittest.TestCase):
+    """A bad --redact file is a one-line usage error (exit 2), never a traceback or exit 1."""
+
+    def run_scan(self, redact):
+        import subprocess
+        import sys
+        import tempfile
+        with tempfile.TemporaryDirectory() as d:
+            (Path(d) / "pkg").mkdir()
+            (Path(d) / "pkg" / "n.md").write_text("hello\n")
+            return subprocess.run([sys.executable, str(Path(catalog.__file__)), "scan", str(Path(d) / "pkg"),
+                                   "--redact", str(redact(d))], capture_output=True, text=True)
+
+    def assert_one_line_error(self, r, *words):
+        self.assertEqual(r.returncode, 2, r.stderr)
+        self.assertEqual(r.stdout, "")
+        self.assertEqual(len(r.stderr.strip().splitlines()), 1, r.stderr)
+        self.assertNotIn("Traceback", r.stderr)
+        for w in words:
+            self.assertIn(w, r.stderr)
+
+    def test_missing_file(self):
+        r = self.run_scan(lambda d: Path(d) / "does-not-exist.json")
+        self.assert_one_line_error(r, "does-not-exist.json", "not found")
+
+    def test_not_json(self):
+        def bad(d):
+            f = Path(d) / "bad.txt"
+            f.write_text("notjson\n")
+            return f
+        self.assert_one_line_error(self.run_scan(bad), "bad.txt", "not valid JSON")
+
+    def test_wrong_shape(self):
+        for body, word in [("[1, 2]", "JSON object"), ('{"replace": "x"}', "replace"),
+                           ('{"replace": [["a"], 5]}', "replace"), ('{"email_allow": [1]}', "email_allow")]:
+            def bad(d, body=body):
+                f = Path(d) / "shape.json"
+                f.write_text(body)
+                return f
+            self.assert_one_line_error(self.run_scan(bad), "shape.json", "wrong shape", word)
+
+    def test_a_directory_is_an_error_too(self):
+        self.assert_one_line_error(self.run_scan(lambda d: d), "cannot be read")
+
+    def test_valid_file_still_scans(self):
+        def good(d):
+            f = Path(d) / "ok.json"
+            f.write_text(json.dumps({"replace": [["hello", "i", "x"]]}))
+            return f
+        r = self.run_scan(good)
+        self.assertEqual(r.returncode, 1)                       # a hit is still exit 1
+        self.assertIn("redaction pattern 1", r.stdout)
+
+
 class ScanFailsLoudlyTest(unittest.TestCase):
     def test_missing_or_empty_folder_is_an_error_not_clean(self):
         import tempfile

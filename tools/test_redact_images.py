@@ -150,6 +150,32 @@ class Commands(unittest.TestCase):
             with self.assertRaises(SystemExit):                # a package with no images
                 R.main(["check", d, "--patterns", str(pats)])
 
+    def test_bad_patterns_or_rules_file_is_a_one_line_exit_2(self):
+        with tempfile.TemporaryDirectory() as d:
+            pkg = Path(d) / "pkg"
+            pkg.mkdir()
+            bad = Path(d) / "bad.json"
+            bad.write_text("notjson")
+            good = Path(d) / "p.json"
+            good.write_text(json.dumps({"replace": [["x", "y"]]}))
+            rules = Path(d) / "r.json"
+            rules.write_text("{}")
+            cases = [
+                (["check", str(pkg), "--patterns", str(Path(d) / "nope.json")], "nope.json"),
+                (["check", str(pkg), "--patterns", str(bad)], "bad.json"),
+                (["check", str(pkg), "--patterns", str(good), "--rules", str(bad)], "bad.json"),
+                (["check", str(pkg), "--patterns", str(good), "--rules", str(Path(d) / "gone.json")], "gone.json"),
+                (["apply", str(pkg), "--rules", str(bad)], "bad.json"),
+                (["apply", str(pkg), "--rules", str(rules), "--patterns", str(bad)], "bad.json"),
+            ]
+            for argv, name in cases:
+                err = io.StringIO()
+                with contextlib.redirect_stderr(err), self.assertRaises(SystemExit) as cm:
+                    R.main(argv)
+                self.assertEqual(cm.exception.code, 2, argv)
+                self.assertEqual(len(err.getvalue().strip().splitlines()), 1, err.getvalue())
+                self.assertIn(name, err.getvalue())
+
     def test_wrap_ignore_skips_only_wrapped_only_matches_of_listed_images(self):
         from unittest import mock
         with tempfile.TemporaryDirectory() as d:
