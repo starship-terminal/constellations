@@ -105,6 +105,10 @@ const desktop = {
       await clickEl(p.locator('[data-framer-name="Open"] [data-framer-name="Header"]').filter({ visible: true }).first()).catch(() => {});
       await wait(p, 600);
     });
+    // The search and accordion steps scrolled the page; the default view
+    // must start at the top (its sidecar records scroll.y).
+    await p.evaluate(() => scrollTo(0, 0));
+    await wait(p, 600);
     await S.view('default');
     await S.full();
   } },

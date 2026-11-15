@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-15T20:07:19.759Z",
+  "capturedAt": "2026-11-15T22:24:55.358Z",
   "screenshot": "help-dark-default.png",
   "sanitizedSourceUrl": "https://foodnoms.com/help",
   "requested": {
@@ -30,7 +30,7 @@
       "offsetLeft": 0,
       "offsetTop": 0,
       "pageLeft": 0,
-      "pageTop": 95
+      "pageTop": 0
     },
     "documentSize": {
       "width": 1440,
@@ -38,7 +38,7 @@
     },
     "scroll": {
       "x": 0,
-      "y": 95
+      "y": 0
     }
   },
   "capture": {

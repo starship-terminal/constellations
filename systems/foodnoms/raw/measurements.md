@@ -12,13 +12,13 @@ States: `hover` is a real pointer hover; `focus-visible` a real keyboard focus (
 
 Marketing header row. The top bar: app icon + Foodnoms name, News/Foodnoms+/Help links and the "Get the App" primary pill.
 
-Page: home. Selector: `[data-framer-name="Leading"] (header)`. States: default.
+Page: home. Selector: `[data-framer-name="Desktop"] (header)`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 166 x 36 |
+| Size (w x h) | 1200 x 40 |
 | Padding | 0px |
-| Gap | 24px |
+| Gap | 48px |
 | Border | none |
 | Radius | 0px |
 | Background | transparent |
@@ -29,6 +29,7 @@ Page: home. Selector: `[data-framer-name="Leading"] (header)`. States: default.
 | Colour | #000000 |
 | Text node | div.framer-text: Aquawax Pro Bold 24px/24px 700, color(display-p3 0.972549 0.384314 0.180392) |
 | Transition | none |
+| Painted layers | a.framer-5UbMV.framer-OHnkM 145.0x40.0 bg color(display-p3 0.972549 0.384 0.18) r 20px |
 | How | at rest |
 
 Crops: `nav-bar-default.png`.
@@ -76,7 +77,7 @@ Page: home. Selector: `header nav a`. States: default, hover, focus-visible, pre
 | Outline | none | = | 1px auto #101010 offset 1px | = |
 | Font | Aquawax Pro Medium 15px/15px 500 | = | = | = |
 | Letter spacing | normal | = | = | = |
-| Colour | color(display-p3 0.4 0.4 0.4) | color(display-p3 0.984314 0.631373 0.509804) | = | #ff9c7b |
+| Colour | color(display-p3 0.4 0.4 0.4) | color(display-p3 0.984314 0.631373 0.509804) | = | color(display-p3 0.984314 0.631373 0.509804) |
 | Transition | color 0.4s cubic-bezier(0.44, 0, 0.56, 1) | = | = | = |
 | Cursor | pointer | = | = | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
@@ -132,7 +133,7 @@ Page: home. Selector: `[data-framer-name="Hero"] [data-framer-name="Title"]`. St
 | Font | sans-serif 12px/normal 400 |
 | Letter spacing | normal |
 | Colour | #000000 |
-| Text node | div.framer-text.framer-styles-preset-17m3dyy: Aquawax Pro Bold 56px/61.6px 700, color(display-p3 0.945098 0.188235 0.188235) |
+| Text node | div.framer-text.framer-styles-preset-17m3dyy: Aquawax Pro Bold 56px/61.6px 700, color(display-p3 0.972549 0.384314 0.180392) |
 | Transition | none |
 | Painted layers | button 0.0x0.0 bg #000000 @ 0.2 r 40px; button 0.0x0.0 bg #000000 @ 0.2 r 40px |
 | How | at rest |
@@ -209,7 +210,6 @@ Page: home. Selector: `[data-framer-name="Weight"]`. States: default.
 | Font | sans-serif 12px/normal 400 |
 | Letter spacing | normal |
 | Colour | #000000 |
-| Text node | div.framer-text.framer-styles-preset-17m3dyy: Aquawax Pro Bold 56px/61.6px 700, color(display-p3 1 0.74902 0.007843) |
 | Transition | none |
 | Opacity | 0.6 |
 | How | at rest |
@@ -1582,26 +1582,28 @@ Crops: `vs-faq-h2-default.png`.
 
 #### ha-back
 
-Back link. The back/breadcrumb link at the top of a help article; measured, never followed.
+Back link. The "← Back" pill at the top of a help article (links to /help); measured, never followed.
 
-Page: help-article. Selector: `article Secondary/back link`. States: default, hover, focus-visible, pressed.
+Page: help-article. Selector: `article Secondary "← Back"`. States: default, hover, focus-visible, pressed.
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 33 x 18 | = | = | = |
-| Padding | 0px | = | = | = |
+| Size (w x h) | 95 x 40 | = | = | = |
+| Padding | 12px 18px | = | = | = |
+| Gap | 10px | = | = | = |
 | Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
+| Radius | 20px | = | = | = |
+| Background | color(display-p3 0.94902 0.94902 0.94902) | color(display-p3 0.901961 0.901961 0.901961) | = | = |
 | Box shadow | none | = | = | = |
 | Outline | none | = | 1px auto #101010 offset 1px | = |
-| Font | Aquawax Pro Medium 15px/15px 500 | = | = | = |
+| Font | sans-serif 12px/normal 400 | = | = | = |
 | Letter spacing | normal | = | = | = |
-| Colour | color(display-p3 0.4 0.4 0.4) | color(display-p3 0.984314 0.631373 0.509804) | = | color(display-p3 0.984314 0.631373 0.509804) |
-| Transition | color 0.4s cubic-bezier(0.44, 0, 0.56, 1) | = | = | = |
+| Colour | #0000ee | = | = | #ff0000 |
+| Text node | p.framer-text.framer-styles-preset-uhlqxi: Aquawax Pro DemiBold 16px/16px 600, color(display-p3 0.972549 0.384314 0.180392) | = | = | = |
+| Transition | none | = | = | = |
 | Cursor | pointer | = | = | = |
+| Painted layers | a.framer-5UbMV.framer-OHnkM 95.0x40.0 bg color(display-p3 0.94902 0.94902 0.94902) r 20px | a.framer-5UbMV.framer-OHnkM 95.0x40.0 bg color(display-p3 0.901961 0.901961 0.901961) r 20px | a.framer-5UbMV.framer-OHnkM 95.0x40.0 bg color(display-p3 0.94902 0.94902 0.94902) r 20px outline 1px auto #101010 offset 1px | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
-| Painted layers | - | = | a.framer-text.framer-styles-preset-277bjg 33.0x18.0 outline 1px auto #101010 offset 1px | = |
 
 Crops: `ha-back-default.png`, `ha-back-hover.png`, `ha-back-focus-visible.png`, `ha-back-pressed.png`.
 
@@ -1700,28 +1702,26 @@ Crops: `ha-h2-default.png`.
 
 #### ha-link
 
-Inline link. A link inside the article prose; measured, never followed.
+Inline link. A link inside a help article's prose (the /help/mcp article; the barcode article has none); measured, never followed.
 
-Page: help-article. Selector: `article a`. States: default, hover, focus-visible, pressed.
+Page: help-mcp. Selector: `article p a`. States: default, hover, focus-visible, pressed.
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 95 x 40 | = | = | = |
-| Padding | 12px 18px | = | = | = |
-| Gap | 10px | = | = | = |
+| Size (w x h) | 184 x 18 | = | = | = |
+| Padding | 0px | = | = | = |
 | Border | none | = | = | = |
-| Radius | 20px | = | = | = |
-| Background | color(display-p3 0.94902 0.94902 0.94902) | color(display-p3 0.901961 0.901961 0.901961) | = | = |
+| Radius | 0px | = | = | = |
+| Background | transparent | = | = | = |
 | Box shadow | none | = | = | = |
 | Outline | none | = | 1px auto #101010 offset 1px | = |
-| Font | sans-serif 12px/normal 400 | = | = | = |
+| Font | Aquawax Pro Medium 16px/25.6px 500 | = | = | = |
 | Letter spacing | normal | = | = | = |
-| Colour | #0000ee | = | = | #ff0000 |
-| Text node | p.framer-text.framer-styles-preset-uhlqxi: Aquawax Pro DemiBold 16px/16px 600, color(display-p3 0.972549 0.384314 0.180392) | = | = | = |
-| Transition | none | = | = | = |
+| Colour | color(display-p3 0.972549 0.384 0.18) | = | = | = |
+| Transition | color 0.4s cubic-bezier(0.44, 0, 0.56, 1) | = | = | = |
 | Cursor | pointer | = | = | = |
-| Painted layers | a.framer-5UbMV.framer-OHnkM 95.0x40.0 bg color(display-p3 0.94902 0.94902 0.94902) r 20px | a.framer-5UbMV.framer-OHnkM 95.0x40.0 bg color(display-p3 0.901961 0.901961 0.901961) r 20px | a.framer-5UbMV.framer-OHnkM 95.0x40.0 bg color(display-p3 0.94902 0.94902 0.94902) r 20px outline 1px auto #101010 offset 1px | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
+| Painted layers | - | = | a.framer-text.framer-styles-preset-ksvyhk 184.0x18.0 outline 1px auto #101010 offset 1px | = |
 
 Crops: `ha-link-default.png`, `ha-link-hover.png`, `ha-link-focus-visible.png`, `ha-link-pressed.png`.
 
@@ -1893,29 +1893,26 @@ Crops: `terms-h1-default.png`.
 
 #### terms-item
 
-Legal list item. A numbered section in the legal body list.
+Legal section heading. A numbered section heading inside the legal body ("1. Agreement to these Terms" style; the single Legal Item component holds the whole document).
 
-Page: terms. Selector: `[data-framer-name="Legal Item"]`. States: default.
+Page: terms. Selector: `Legal Item h3`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 1376 x 17246.52 |
+| Size (w x h) | 800 x 33.59 |
 | Padding | 0px |
-| Gap | 96px |
 | Border | none |
 | Radius | 0px |
 | Background | transparent |
 | Box shadow | none |
 | Outline | none |
-| Font | sans-serif 12px/normal 400 |
+| Font | Aquawax Pro Bold 28px/33.6px 700 |
 | Letter spacing | normal |
-| Colour | #000000 |
-| Text node | h1.framer-text.framer-styles-preset-8jky5r: Aquawax Pro Bold 44px/48.4px 700, color(display-p3 0.05098 0.05098 0.05098) |
+| Colour | color(display-p3 0.05098 0.05098 0.05098) |
 | Transition | none |
-| Painted layers | div.framer-pXL3U.framer-n3wha5 40.0x40.0 bg color(display-p3 0.972549 0.384314 0.180392); div.framer-1q4rhol 880.0x1137.8 bg color(display-p3 0.94902 0.94902 0.94902) r 18.8px |
 | How | at rest |
 
-Crops: none.
+Crops: `terms-item-default.png`.
 
 ### Open-in-app interstitial
 
@@ -1944,27 +1941,27 @@ Crops: `os-h1-default.png`.
 
 #### os-primary
 
-Interstitial action. The primary/secondary action pill on the interstitial (opens the App Store); measured, never followed.
+Interstitial action. The "Open in Foodnoms" pill on the interstitial — the page's own action (a deep link back into the app); measured, never followed.
 
-Page: open-signup. Selector: `interstitial Primary/Secondary`. States: default, hover, focus-visible, pressed.
+Page: open-signup. Selector: `interstitial Secondary "Open in Foodnoms"`. States: default, hover, focus-visible, pressed.
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 145 x 40 | = | = | = |
+| Size (w x h) | 181 x 40 | = | = | = |
 | Padding | 12px 18px | = | = | = |
 | Gap | 10px | = | = | = |
 | Border | none | = | = | = |
 | Radius | 20px | = | = | = |
-| Background | color(display-p3 0.972549 0.384 0.18) | color(display-p3 0.984314 0.631373 0.509804) | = | = |
+| Background | color(display-p3 0.94902 0.94902 0.94902) | color(display-p3 0.901961 0.901961 0.901961) | = | = |
 | Box shadow | none | = | = | = |
 | Outline | none | = | 1px auto #101010 offset 1px | = |
 | Font | sans-serif 12px/normal 400 | = | = | = |
 | Letter spacing | normal | = | = | = |
 | Colour | #0000ee | = | = | #ff0000 |
-| Text node | p.framer-text.framer-styles-preset-uhlqxi: Aquawax Pro DemiBold 16px/16px 600, color(display-p3 1 1 1) | = | = | = |
+| Text node | p.framer-text.framer-styles-preset-uhlqxi: Aquawax Pro DemiBold 16px/16px 600, color(display-p3 0.972549 0.384314 0.180392) | = | = | = |
 | Transition | none | = | = | = |
 | Cursor | pointer | = | = | = |
-| Painted layers | a.framer-5UbMV.framer-OHnkM 145.0x40.0 bg color(display-p3 0.972549 0.384 0.18) r 20px | a.framer-5UbMV.framer-OHnkM 145.0x40.0 bg color(display-p3 0.984314 0.631373 0.509804) r 20px | a.framer-5UbMV.framer-OHnkM 145.0x40.0 bg color(display-p3 0.972549 0.384 0.18) r 20px outline 1px auto #101010 offset 1px | = |
+| Painted layers | a.framer-5UbMV.framer-OHnkM 181.0x40.0 bg color(display-p3 0.94902 0.94902 0.94902) r 20px | a.framer-5UbMV.framer-OHnkM 181.0x40.0 bg color(display-p3 0.901961 0.901961 0.901961) r 20px | a.framer-5UbMV.framer-OHnkM 181.0x40.0 bg color(display-p3 0.94902 0.94902 0.94902) r 20px outline 1px auto #101010 offset 1px | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
 Crops: `os-primary-default.png`, `os-primary-hover.png`, `os-primary-focus-visible.png`, `os-primary-pressed.png`.

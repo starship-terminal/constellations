@@ -8,7 +8,7 @@ How to read an entry:
 
 - A colour is its value followed by the palette token in [tokens.json](tokens.json) with the same value, when there is one. Text is written family size/line-height weight, then its colour, for example `SF Pro 14/21 500, #21252e`, and is read from the first text node inside the component.
 - The state table has one row per state that differs. The first row lists every value; later rows list only what changes. A state with the same values as the first is named in its label, for example "default (same: focus-visible)". When the root paints nothing, "Child layers" names the first nodes inside it that do.
-- Crops are images of the component read from the live page, in [components/crops/](components/crops) (157 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
+- Crops are images of the component read from the live page, in [components/crops/](components/crops) (158 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
 
 ## Discovery list
 
@@ -54,7 +54,7 @@ Values that apply across entries, from the measurement files.
 
 | Duration | Easing | Property | Where |
 |---|---|---|---|
-| 0.4s | `cubic-bezier(0.44, 0, 0.56, 1)` | color | d-footer-link, d-nav-link, footer-link, ha-back, help-accordion-link, m-footer-link, na-inline-link, nav-link |
+| 0.4s | `cubic-bezier(0.44, 0, 0.56, 1)` | color | d-footer-link, d-nav-link, footer-link, ha-link, help-accordion-link, m-footer-link, na-inline-link, nav-link |
 
 **Card shapes.** Default-state values; the entries hold the states.
 
@@ -77,7 +77,9 @@ The marketing header: app-icon + Foodnoms wordmark, News / Foodnoms+ / Help link
 #### Marketing header row
 The top bar: app icon + Foodnoms name, News/Foodnoms+/Help links and the "Get the App" primary pill. Read as `nav-bar` on the home page.
 
-**Values (default).** size 166 x 36; background transparent; text Aquawax Pro Bold 24/24 700, #ff5406 `color.palette.misc-59`.
+**Values (default).** size 1200 x 40; background transparent; text Aquawax Pro Bold 24/24 700, #ff5406 `color.palette.misc-59`; layers a.framer-5UbMV.framer-OHnkM 145.0x40.0 color(display-p3 0.972549 0.384 0.18) 20px.
+
+Child layers that carry the look: a 145x40 background #ff5406 `color.palette.misc-59` radius 20px.
 
 ![Marketing header row default](components/crops/nav-bar-default.png)
 
@@ -96,7 +98,7 @@ A header link (News / Foodnoms+ / Help); measured, never followed. Read as `nav-
 | default | size 38 x 18; background transparent; text Aquawax Pro Medium 15/15 500, #666666 `color.palette.neutral-600`; transition color 0.4s cubic-bezier(0.44, 0, 0.56, 1) |
 | hover | text Aquawax Pro Medium 15/15 500, #ff9c7b `color.palette.accent-200` |
 | focus-visible | outline 1px auto #101010, offset 1px; layers a.framer-text.framer-styles-preset-277bjg 38.0x18.0 1px auto rgb(16, 16, 16) offset 1px |
-| pressed | text Aquawax Pro Medium 15/15 500, oklab(0.800062 0.111392 0.0847784) |
+| pressed | text Aquawax Pro Medium 15/15 500, #ff9c7b `color.palette.accent-200` |
 
 ![Nav link default](components/crops/nav-link-default.png) ![Nav link hover](components/crops/nav-link-hover.png) ![Nav link focus-visible](components/crops/nav-link-focus-visible.png) ![Nav link pressed](components/crops/nav-link-pressed.png)
 
@@ -118,7 +120,7 @@ The home page: the rotating-benefit hero ticker, the goal-pill marquee, the "As 
 #### Hero headline ticker
 The rotating benefit headline ("Track Nutrition", "Lose Weight", "Eat Healthy", …). The semantic h1 is visually hidden; this Title container is the painted display text. Read as `hero-ticker` on the home page.
 
-**Values (default).** size 411 x 133.59; background transparent; text Aquawax Pro Bold 56/61.6 700, #ff001e `color.palette.red`; layers button 0.0x0.0 rgba(0, 0, 0, 0.2) 40px; button 0.0x0.0 rgba(0, 0, 0, 0.2) 40px.
+**Values (default).** size 411 x 133.59; background transparent; text Aquawax Pro Bold 56/61.6 700, #ff5406 `color.palette.misc-59`; layers button 0.0x0.0 rgba(0, 0, 0, 0.2) 40px; button 0.0x0.0 rgba(0, 0, 0, 0.2) 40px.
 
 Child layers that carry the look: button 0x0 background rgba(0, 0, 0, 0.2) radius 40px; button 0x0 background rgba(0, 0, 0, 0.2) radius 40px.
 
@@ -145,7 +147,7 @@ The circular icon button beside the hero headline (a Framer "Button" component w
 #### Goal pill
 A nutrition-goal chip in the benefits marquee (Weight, Healthy, Sugars, Water, Sodium, Muscle, Alcohol, Caffeine). Read as `goal-pill` on the home page.
 
-**Values (default).** size 411 x 72; background transparent; text Aquawax Pro Bold 56/61.6 700, #ffbc00 `color.palette.yellow`; opacity 0.6.
+**Values (default).** size 411 x 72; background transparent; text sans-serif 12/normal 400, #000000 `color.palette.neutral-1000`; opacity 0.6.
 
 ![Goal pill default](components/crops/goal-pill-default.png)
 
@@ -583,14 +585,13 @@ The "Frequently Asked Questions" h2 in the article. Read as `vs-faq-h2` on the v
 ![FAQ heading default](components/crops/vs-faq-h2-default.png)
 
 #### Back link
-The back/breadcrumb link at the top of a help article; measured, never followed. Read as `ha-back` on the help article page.
+The "← Back" pill at the top of a help article (links to /help); measured, never followed. Read as `ha-back` on the help article page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 33 x 18; background transparent; text Aquawax Pro Medium 15/15 500, #666666 `color.palette.neutral-600`; transition color 0.4s cubic-bezier(0.44, 0, 0.56, 1) |
-| hover | text Aquawax Pro Medium 15/15 500, #ff9c7b `color.palette.accent-200` |
-| focus-visible | outline 1px auto #101010, offset 1px; layers a.framer-text.framer-styles-preset-277bjg 33.0x18.0 1px auto rgb(16, 16, 16) offset 1px |
-| pressed | text Aquawax Pro Medium 15/15 500, #ff9c7b `color.palette.accent-200` |
+| default (same: pressed) | size 95 x 40; padding 12px 18px; radius 20px; background #f2f2f2 `color.palette.neutral-50`; text Aquawax Pro DemiBold 16/16 600, #ff5406 `color.palette.misc-59` |
+| hover | background #e6e6e6 `color.palette.neutral-100` |
+| focus-visible | outline 1px auto #101010, offset 1px |
 
 ![Back link default](components/crops/ha-back-default.png) ![Back link hover](components/crops/ha-back-hover.png) ![Back link focus-visible](components/crops/ha-back-focus-visible.png) ![Back link pressed](components/crops/ha-back-pressed.png)
 
@@ -623,13 +624,12 @@ A section heading inside the article ("Scanning a Barcode"). Read as `ha-h2` on 
 ![Article section heading default](components/crops/ha-h2-default.png)
 
 #### Inline link
-A link inside the article prose; measured, never followed. Read as `ha-link` on the help article page.
+A link inside a help article's prose (the /help/mcp article; the barcode article has none); measured, never followed. Read as `ha-link` on the help-mcp page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: pressed) | size 95 x 40; padding 12px 18px; radius 20px; background #f2f2f2 `color.palette.neutral-50`; text Aquawax Pro DemiBold 16/16 600, #ff5406 `color.palette.misc-59` |
-| hover | background #e6e6e6 `color.palette.neutral-100` |
-| focus-visible | outline 1px auto #101010, offset 1px |
+| default (same: hover, pressed) | size 184 x 18; background transparent; text Aquawax Pro Medium 16/25.6 500, #ff5406 `color.palette.misc-59`; transition color 0.4s cubic-bezier(0.44, 0, 0.56, 1) |
+| focus-visible | outline 1px auto #101010, offset 1px; layers a.framer-text.framer-styles-preset-ksvyhk 184.0x18.0 1px auto rgb(16, 16, 16) offset 1px |
 
 ![Inline link default](components/crops/ha-link-default.png) ![Inline link hover](components/crops/ha-link-hover.png) ![Inline link focus-visible](components/crops/ha-link-focus-visible.png) ![Inline link pressed](components/crops/ha-link-pressed.png)
 
@@ -689,14 +689,12 @@ The /terms page: one tall Legal Item body under the h1 (/privacy is the same sha
 
 ![Terms headline default](components/crops/terms-h1-default.png)
 
-#### Legal list item
-A numbered section in the legal body list. Read as `terms-item` on the terms page.
+#### Legal section heading
+A numbered section heading inside the legal body ("1. Agreement to these Terms" style; the single Legal Item component holds the whole document). Read as `terms-item` on the terms page.
 
-**Values (default).** size 1376 x 17246.52; background transparent; text Aquawax Pro Bold 44/48.4 700, #0d0d0d `color.palette.neutral-950`; layers div.framer-pXL3U.framer-n3wha5 40.0x40.0 color(display-p3 0.972549 0.384314 0.180392); div.framer-1q4rhol 880.0x1137.8 color(display-p3 0.94902 0.94902 0.94902) 18.8px.
+**Values (default).** size 800 x 33.59; background transparent; text Aquawax Pro Bold 28/33.6 700, #0d0d0d `color.palette.neutral-950`.
 
-Child layers that carry the look: div 40x40 background #ff5406 `color.palette.misc-59`; div 880x1137.8 background #f2f2f2 `color.palette.neutral-50` radius 18.8px.
-
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Legal section heading default](components/crops/terms-item-default.png)
 
 ### Open-in-app interstitial
 
@@ -710,12 +708,12 @@ The /open/settings/sign-up page: the "Open in Foodnoms" interstitial an app deep
 ![Interstitial headline default](components/crops/os-h1-default.png)
 
 #### Interstitial action
-The primary/secondary action pill on the interstitial (opens the App Store); measured, never followed. Read as `os-primary` on the open-in-app interstitial page.
+The "Open in Foodnoms" pill on the interstitial — the page's own action (a deep link back into the app); measured, never followed. Read as `os-primary` on the open-in-app interstitial page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: pressed) | size 145 x 40; padding 12px 18px; radius 20px; background #ff5406 `color.palette.misc-59`; text Aquawax Pro DemiBold 16/16 600, #ffffff `color.palette.neutral-0` |
-| hover | background #ff9c7b `color.palette.accent-200` |
+| default (same: pressed) | size 181 x 40; padding 12px 18px; radius 20px; background #f2f2f2 `color.palette.neutral-50`; text Aquawax Pro DemiBold 16/16 600, #ff5406 `color.palette.misc-59` |
+| hover | background #e6e6e6 `color.palette.neutral-100` |
 | focus-visible | outline 1px auto #101010, offset 1px |
 
 ![Interstitial action default](components/crops/os-primary-default.png) ![Interstitial action hover](components/crops/os-primary-hover.png) ![Interstitial action focus-visible](components/crops/os-primary-focus-visible.png) ![Interstitial action pressed](components/crops/os-primary-pressed.png)

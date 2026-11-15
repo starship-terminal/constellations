@@ -4,7 +4,7 @@
 //   PLAYWRIGHT=/path/to/playwright/index.mjs node measure.mjs [page ...]
 //
 // Pages: home plus help news press family-plan vs-mfp help-article
-// news-article terms open-signup dark mobile.
+// help-mcp news-article terms open-signup dark mobile.
 // Writes raw/components-computed.json (merged) and one crop per component and
 // state into components/crops/; raw/measurements.md is built by
 // build-measurements.mjs.
@@ -34,7 +34,8 @@ const save = () => fs.writeFileSync(OUT, JSON.stringify(out, null, 1) + '\n');
 const URLS = {
   home: '/', plus: '/plus', help: '/help', news: '/news', press: '/press',
   'family-plan': '/family-plan', 'vs-mfp': '/vs/myfitnesspal',
-  'help-article': '/help/barcode-scanning', 'news-article': '/news/foodnoms-2',
+  'help-article': '/help/barcode-scanning', 'help-mcp': '/help/mcp',
+  'news-article': '/news/foodnoms-2',
   terms: '/terms', 'open-signup': '/open/settings/sign-up',
   dark: '/', mobile: '/',
 };
@@ -358,7 +359,7 @@ async function home() {
   await sheetsFor('home');
   await chrome('home');
   const g = G.shell;
-  await S('nav-bar', q('[data-framer-name="Leading"]').filter({ has: page.locator('a[aria-label="Foodnoms home"]') }).filter({ visible: true }).first(), ['default'], { group: g, title: 'Marketing header row', desc: 'The top bar: app icon + Foodnoms name, News/Foodnoms+/Help links and the "Get the App" primary pill.', sel: '[data-framer-name="Leading"] (header)' }, { noScroll: true });
+  await S('nav-bar', q('[data-framer-name="Desktop"]').filter({ has: page.locator('a[aria-label="Foodnoms home"]') }).filter({ visible: true }).first(), ['default'], { group: g, title: 'Marketing header row', desc: 'The top bar: app icon + Foodnoms name, News/Foodnoms+/Help links and the "Get the App" primary pill.', sel: '[data-framer-name="Desktop"] (header)' }, { noScroll: true });
   await S('nav-logo', q('a[aria-label="Foodnoms home"]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Logo', desc: 'The Foodnoms app-icon + wordmark in the header; links home.', sel: 'a[aria-label="Foodnoms home"]' }, { noScroll: true });
   await S('nav-link', q('a').filter({ hasText: /^\s*News\s*$/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Nav link', desc: 'A header link (News / Foodnoms+ / Help); measured, never followed.', sel: 'header nav a' }, { noScroll: true });
   await S('nav-cta', q('a[data-framer-name="Primary"]').filter({ hasText: /Get the App/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Get-the-App pill', desc: 'The orange "Get the App ↗" primary pill in the header; an App-Store link, measured never followed.', sel: 'a[data-framer-name="Primary"] "Get the App"' }, { noScroll: true });
@@ -480,12 +481,21 @@ async function helpArticle() {
   await sheetsFor('help-article');
   await chrome('help-article');
   const g = G.article;
-  await S('ha-back', q('a[data-framer-name="Secondary"], a').filter({ hasText: /Back|Help Center|Help/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Back link', desc: 'The back/breadcrumb link at the top of a help article; measured, never followed.', sel: 'article Secondary/back link' }, { allowLink: true, noScroll: true });
+  await S('ha-back', q('[data-framer-name="Article"] a[data-framer-name="Secondary"]').filter({ hasText: /Back/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Back link', desc: 'The "← Back" pill at the top of a help article (links to /help); measured, never followed.', sel: 'article Secondary "← Back"' }, { allowLink: true, noScroll: true });
   await S('ha-tag', q('[data-framer-name="Article"] [data-framer-name="Tag"], [data-framer-name="Tag"]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Article tag', desc: 'The category tag chip on a help article.', sel: 'article Tag' }, { noScroll: true });
   await S('ha-h1', q('[data-framer-name="Article"] h1, h1').filter({ visible: true }).first(), ['default'], { group: g, title: 'Article headline', desc: '"How do I scan barcodes?" — a help article title.', sel: 'article h1' }, { noScroll: true });
   await S('ha-body', q('[data-framer-name="Article"] p').filter({ hasText: /.{60,}/ }).filter({ visible: true }).first(), ['default'], { group: g, title: 'Article body', desc: 'A body paragraph inside the help article.', sel: 'article p' });
   await S('ha-h2', q('[data-framer-name="Article"] h2').filter({ visible: true }).first(), ['default'], { group: g, title: 'Article section heading', desc: 'A section heading inside the article ("Scanning a Barcode").', sel: 'article h2' });
-  await S('ha-link', q('[data-framer-name="Article"] a').filter({ hasText: /\S{3,}/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Inline link', desc: 'A link inside the article prose; measured, never followed.', sel: 'article a' }, { allowLink: true });
+  save();
+}
+
+// The barcode-scanning article's only anchor is its Back pill — the prose
+// carries no inline link — so the inline-link reading comes from /help/mcp,
+// which has real links inside its paragraphs.
+async function helpMcp() {
+  if (!(await newPage('help-mcp'))) return;
+  const g = G.article;
+  await S('ha-link', q('[data-framer-name="Article"] p a').filter({ hasText: /\S{3,}/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Inline link', desc: 'A link inside a help article\'s prose (the /help/mcp article; the barcode article has none); measured, never followed.', sel: 'article p a' }, { allowLink: true });
   save();
 }
 
@@ -509,7 +519,7 @@ async function terms() {
   await chrome('terms');
   const g = G.legal;
   await S('terms-h1', q('h1').filter({ visible: true }).first(), ['default'], { group: g, title: 'Terms headline', desc: '"Terms of Use".', sel: 'h1 on /terms' }, { noScroll: true });
-  await S('terms-item', q('[data-framer-name="Legal Item"]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Legal list item', desc: 'A numbered section in the legal body list.', sel: '[data-framer-name="Legal Item"]' });
+  await S('terms-item', q('[data-framer-name="Legal Item"] h3').filter({ visible: true }).first(), ['default'], { group: g, title: 'Legal section heading', desc: 'A numbered section heading inside the legal body ("1. Agreement to these Terms" style; the single Legal Item component holds the whole document).', sel: 'Legal Item h3' });
   save();
 }
 
@@ -519,7 +529,7 @@ async function openSignup() {
   await chrome('open-signup');
   const g = G.open;
   await S('os-h1', q('h1').filter({ visible: true }).first(), ['default'], { group: g, title: 'Interstitial headline', desc: '"Open in Foodnoms" — the deep-link interstitial shown when an app link is opened on the web.', sel: 'h1 on /open/settings/sign-up' }, { noScroll: true });
-  await S('os-primary', q('a[data-framer-name="Primary"], a[data-framer-name="Secondary"]').filter({ visible: true }).first(), B4, { group: g, title: 'Interstitial action', desc: 'The primary/secondary action pill on the interstitial (opens the App Store); measured, never followed.', sel: 'interstitial Primary/Secondary' }, { allowLink: true });
+  await S('os-primary', q('a[data-framer-name="Secondary"]').filter({ hasText: /Open in Foodnoms/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Interstitial action', desc: 'The "Open in Foodnoms" pill on the interstitial — the page\'s own action (a deep link back into the app); measured, never followed.', sel: 'interstitial Secondary "Open in Foodnoms"' }, { allowLink: true });
   save();
 }
 
@@ -566,7 +576,7 @@ out._meta.tool = 'tools/capture/public/measure.mjs';
 const { browser, context: ctx0 } = await launch();
 context = ctx0;
 const pages = process.argv.slice(2);
-const plan = { home, plus, help, news, press, 'family-plan': familyPlan, 'vs-mfp': vsMfp, 'help-article': helpArticle, 'news-article': newsArticle, terms, 'open-signup': openSignup, dark: darkp, mobile };
+const plan = { home, plus, help, news, press, 'family-plan': familyPlan, 'vs-mfp': vsMfp, 'help-article': helpArticle, 'help-mcp': helpMcp, 'news-article': newsArticle, terms, 'open-signup': openSignup, dark: darkp, mobile };
 const order = Object.keys(plan).filter((k) => !pages.length || pages.includes(k));
 const finishedPages = new Set();
 try {

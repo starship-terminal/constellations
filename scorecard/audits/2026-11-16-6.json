@@ -19447,7 +19447,7 @@
     },
     "F2": {
      "grade": "partly",
-     "evidence": "light.canvas plus surface.card/ring/chip and the same four in dark cover page, card fill and the field's inset ring; the footer is a measured painted plum-black. No overlay or scrim role exists - the search modal's overlay was not measured as a role."
+     "evidence": "light.canvas plus surface.card/ring/chip and the same four in dark cover page, card fill and the field's inset ring; the footer is a measured painted accent-orange panel. No overlay or scrim role exists - the search modal's overlay was not measured as a role."
     },
     "F3": {
      "grade": "partly",
@@ -19511,7 +19511,7 @@
     },
     "C4": {
      "grade": "partly",
-     "evidence": "Every role token aliases a declared --token-* variable and entry values pair with palette token names when one matches; the palette covers most paints, but the footer plum, a hover tint and browser-default link colours appear without tokens."
+     "evidence": "Every role token aliases a declared --token-* variable and entry values pair with palette token names when one matches; the palette covers most paints, but a hover tint and browser-default link colours appear without tokens."
     },
     "P1": {
      "grade": "partly",
@@ -19555,7 +19555,7 @@
     }
    },
    "name": "Foodnoms",
-   "goodFor": "nutrition-tracker marketing: a Framer site declaring ~90 --token-* custom properties in display-P3 (the #ff5406 accent ramp, a neutral ramp, #2f2f2f ink alphas and a per-nutrient hue set) with a real authored prefers-color-scheme dark theme, uploaded Aquawax Pro in three weights (56px hero ticker down to 15px nav), 40px/20px pill buttons, 18.8px #f2f2f2 feature cards, a Framer-composed pricing comparison table, help-center accordions with a Framer search modal, a newsletter capsule and a deep-plum footer",
+   "goodFor": "nutrition-tracker marketing: a Framer site declaring ~90 --token-* custom properties in display-P3 (the #ff5406 accent ramp, a neutral ramp, #2f2f2f ink alphas and a per-nutrient hue set) with a real authored prefers-color-scheme dark theme, uploaded Aquawax Pro in three weights (56px hero ticker down to 15px nav), 40px/20px pill buttons, 18.8px #f2f2f2 feature cards, a Framer-composed pricing comparison table, help-center accordions with a Framer search modal, a newsletter capsule and an accent-orange footer panel",
    "url": "https://foodnoms.com",
    "captured": "2026-11-16",
    "themes": [

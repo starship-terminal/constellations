@@ -3,7 +3,7 @@
 # Source of truth: tokens.json. DESIGN.md spec version alpha.
 version: "alpha"
 name: "Foodnoms"
-description: "nutrition-tracker marketing: a Framer site declaring ~90 --token-* custom properties in display-P3 (the #ff5406 accent ramp, a neutral ramp, #2f2f2f ink alphas and a per-nutrient hue set) with a real authored prefers-color-scheme dark theme, uploaded Aquawax Pro in three weights (56px hero ticker down to 15px nav), 40px/20px pill buttons, 18.8px #f2f2f2 feature cards, a Framer-composed pricing comparison table, help-center accordions with a Framer search modal, a newsletter capsule and a deep-plum footer"
+description: "nutrition-tracker marketing: a Framer site declaring ~90 --token-* custom properties in display-P3 (the #ff5406 accent ramp, a neutral ramp, #2f2f2f ink alphas and a per-nutrient hue set) with a real authored prefers-color-scheme dark theme, uploaded Aquawax Pro in three weights (56px hero ticker down to 15px nav), 40px/20px pill buttons, 18.8px #f2f2f2 feature cards, a Framer-composed pricing comparison table, help-center accordions with a Framer search modal, a newsletter capsule and an accent-orange footer panel"
 omitted:
   - section: "components"
     reason: "tokens.json has no components tokens under the colour set's `component` group"
@@ -104,7 +104,7 @@ It follows the DESIGN.md spec, version alpha. That format has no themes, no per-
 
 ## Overview
 
-Good for: nutrition-tracker marketing: a Framer site declaring ~90 --token-* custom properties in display-P3 (the #ff5406 accent ramp, a neutral ramp, #2f2f2f ink alphas and a per-nutrient hue set) with a real authored prefers-color-scheme dark theme, uploaded Aquawax Pro in three weights (56px hero ticker down to 15px nav), 40px/20px pill buttons, 18.8px #f2f2f2 feature cards, a Framer-composed pricing comparison table, help-center accordions with a Framer search modal, a newsletter capsule and a deep-plum footer.
+Good for: nutrition-tracker marketing: a Framer site declaring ~90 --token-* custom properties in display-P3 (the #ff5406 accent ramp, a neutral ramp, #2f2f2f ink alphas and a per-nutrient hue set) with a real authored prefers-color-scheme dark theme, uploaded Aquawax Pro in three weights (56px hero ticker down to 15px nav), 40px/20px pill buttons, 18.8px #f2f2f2 feature cards, a Framer-composed pricing comparison table, help-center accordions with a Framer search modal, a newsletter capsule and an accent-orange footer panel.
 
 Captured 2026-11-16, read-only (the marketing site, pricing, help center, news, press, articles, comparison pages and legal are fully public; the product itself is an iOS/macOS app sold through the App Store - there is no web sign-in; every Download/Get-the-App link, press-kit zip and mailto was measured, never followed; the help search and newsletter field were typed into then cleared, never submitted; /open/settings/* is a static deep-link interstitial). Themes: light, dark.
 
@@ -159,7 +159,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 2. **Do let the hues mean nutrients.** Red, yellow, blue, indigo, teal and steel (`light.hue.*`) paint feature-card titles, the hero ticker's rotating word and the goal pills — colour carries the metric, not decoration. See [hero-ticker](components/crops/hero-ticker-default.png) and [feature-card](components/crops/feature-card-default.png).
 3. **Do keep the Aquawax voice.** Every heading is Aquawax Pro Bold at 700 with no tracking; buttons sit at DemiBold 600, body at Medium 500. It is a rounded, friendly voice — not a grotesk. See [hero-ticker](components/crops/hero-ticker-default.png).
 4. **Do capsule the fields.** Inputs and submits are 40px-radius capsules on the card fill with an inset 1px ring (`light.surface.ring`), not bordered rectangles. See [nl-email](components/crops/nl-email-focused.png).
-5. **Do card on #f2f2f2.** Feature, value, review and news cards sit on `light.surface.card` at 18.8px radius — flat, borderless, never white-on-white with a shadow. See [feature-card](components/crops/feature-card-default.png).
+5. **Do card on #f2f2f2.** Feature, review and news cards sit on `light.surface.card` at 18.8px radius — flat, borderless, never white-on-white with a shadow. (The values trio is the exception: transparent and square, its glyphs painted straight in the nutrient hues.) See [feature-card](components/crops/feature-card-default.png).
 6. **Don't style the app from this package.** Foodnoms the product is an iOS/macOS app behind the App Store download; every downloaded surface is a documented boundary, not inferable from the marketing site.
 7. **Don't darken the accent on hover.** The accent lifts to a lighter tint on hover (`light.accent-hover`); darkening it is not the pattern.
 8. **Don't soften the dark theme.** The authored dark is a true black canvas with #1a1a1a cards — the accent pills and white text stay identical, and the .2/.4 text greys brighten to .8/.6. See [home-dark-default](screenshots/home-dark-default.png).

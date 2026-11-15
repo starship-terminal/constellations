@@ -61,7 +61,9 @@
    "width": 1440,
    "height": 17831
   },
-  "basis": "stitchedParts"
+  "basis": "stitchedParts",
+  "documentHeight": 17831,
+  "coveredHeight": 17831
  },
  "visualReview": {
   "status": "pending",

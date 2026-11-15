@@ -12578,7 +12578,7 @@
    "url": "https://foodnoms.com",
    "category": "fitness",
    "platform": "web",
-   "goodFor": "nutrition-tracker marketing: a Framer site declaring ~90 --token-* custom properties in display-P3 (the #ff5406 accent ramp, a neutral ramp, #2f2f2f ink alphas and a per-nutrient hue set) with a real authored prefers-color-scheme dark theme, uploaded Aquawax Pro in three weights (56px hero ticker down to 15px nav), 40px/20px pill buttons, 18.8px #f2f2f2 feature cards, a Framer-composed pricing comparison table, help-center accordions with a Framer search modal, a newsletter capsule and a deep-plum footer",
+   "goodFor": "nutrition-tracker marketing: a Framer site declaring ~90 --token-* custom properties in display-P3 (the #ff5406 accent ramp, a neutral ramp, #2f2f2f ink alphas and a per-nutrient hue set) with a real authored prefers-color-scheme dark theme, uploaded Aquawax Pro in three weights (56px hero ticker down to 15px nav), 40px/20px pill buttons, 18.8px #f2f2f2 feature cards, a Framer-composed pricing comparison table, help-center accordions with a Framer search modal, a newsletter capsule and an accent-orange footer panel",
    "tags": [
     "web",
     "mobile-app",

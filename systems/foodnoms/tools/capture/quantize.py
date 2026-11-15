@@ -67,10 +67,37 @@ def stitched_sidecar(name, sheet, tile_paths):
     expected = {'width': round(clips[0]['width'] * scales[0]),
                 'height': sum(round(c['height'] * s) for c, s in zip(clips, scales))}
     matches = abs(sheet.width - expected['width']) <= 1 and abs(sheet.height - expected['height']) <= 1
-    meta['dimensionCheck'] = {'status': 'pass' if matches else 'fail', 'expected': expected, 'basis': 'stitchedParts'}
+    errors = []
     if not matches:
-        meta['dimensionCheck']['error'] = (f"Stitched PNG {sheet.width}x{sheet.height}, "
-                                           f"expected {expected['width']}x{expected['height']} from the part clips")
+        errors.append(f"Stitched PNG {sheet.width}x{sheet.height}, "
+                      f"expected {expected['width']}x{expected['height']} from the part clips")
+    # Coverage: the tile clips must stack contiguously from y=0 and reach the
+    # recorded document height — public.mjs catches a tile failure and leaves
+    # the earlier parts behind, and a partial set must not read as complete.
+    # The only sanctioned shortfall is the run's own boundary: it caps a page
+    # at 8 tiles and logs the truncation.
+    y = clips[0]['y']
+    contiguous = abs(y) <= 1
+    for c in clips:
+        if abs(c['y'] - y) > 1:
+            contiguous = False
+            break
+        y += c['height']
+    covered = y - clips[0]['y']
+    doc = max((((p.get('actual') or {}).get('documentSize') or {}).get('height') or 0) for p in parts)
+    capped = len(tile_paths) >= 8
+    if not contiguous:
+        errors.append('part clips are not contiguous from y=0 (a tile is missing mid-capture)')
+    elif doc and covered < doc - 1 and not capped:
+        errors.append(f'tiles cover {covered:g}px of the {doc:g}px document (a tail tile never captured)')
+    meta['dimensionCheck'] = {'status': 'pass' if not errors else 'fail', 'expected': expected, 'basis': 'stitchedParts'}
+    if doc:
+        meta['dimensionCheck']['documentHeight'] = doc
+        meta['dimensionCheck']['coveredHeight'] = covered
+        if capped and covered < doc - 1:
+            meta['dimensionCheck']['note'] = 'capture truncated at the 8-tile boundary recorded by public.mjs'
+    if errors:
+        meta['dimensionCheck']['error'] = '; '.join(errors)
     return meta
 
 

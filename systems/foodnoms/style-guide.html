@@ -238,7 +238,7 @@ code { font-family: var(--sg-mono); font-size: .9em; }
 .hero .tick { font: 700 56px/61.6px var(--sg-serif); color: var(--hue-red, #ff001e); }
 .hero small { display: block; font: 500 18px/28.8px var(--sg-sans); color: var(--muted, #666); margin: 18px auto 26px; max-width: 46ch; }
 .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; padding: 20px; }
-.card { border-radius: var(--radius-card, 18.8px); background: var(--surface-card, #f2f2f2); padding: var(--component-card-feature-width, 40px) var(--space-40, 40px); color: var(--ink, #0d0d0d); }
+.card { border-radius: var(--radius-card, 18.8px); background: var(--surface-card, #f2f2f2); padding: var(--space-40, 40px); color: var(--ink, #0d0d0d); }
 .card .t { font: 700 28px/33.6px var(--sg-serif); margin-bottom: 8px; }
 .card .t.blue { color: var(--hue-blue, #0099f9); }
 .card .p { font: 500 16px/25.6px var(--sg-sans); color: var(--body, #333); }
@@ -251,9 +251,9 @@ table.cmp td, table.cmp th { border: 1px solid var(--surface-ring, #e6e6e6); pad
 .cmp-table th { font: 700 17px/23.8px var(--sg-serif); text-align: left; padding: 8px 18px; color: var(--ink, #0d0d0d); }
 .cmp-table td { padding: 8px 18px; border-top: 1px solid var(--surface-ring, #e6e6e6); color: var(--body, #333); border-radius: var(--radius-row, 12px); }
 .field { display: inline-flex; align-items: center; height: var(--component-field-height, 42px); padding: 0 18px; border-radius: var(--radius-pill, 40px); background: var(--surface-card, #f2f2f2); box-shadow: inset 0 0 0 1px var(--surface-ring, #e6e6e6); font: 500 16px/16px var(--sg-sans); color: var(--muted, #666); min-width: 200px; }
-.footer { padding: 26px 22px; background: #17141f; color: var(--on-dark-ink, #fff); border-radius: 12px; }
+.footer { padding: 26px 22px; background: var(--accent, #ff5406); color: var(--on-accent, #fff); border-radius: var(--radius-card, 18.8px); }
 .footer .cols { display: flex; gap: 56px; font: 700 17px/23.8px var(--sg-serif); }
-.footer .cols div > div { font: 500 15px/2 var(--sg-sans); color: #b9b6c8; }
+.footer .cols div > div { font: 500 15px/2 var(--sg-sans); color: var(--on-accent, #fff); }
 .ic { vertical-align: -3px; }
 </style>
 </head>
@@ -304,7 +304,7 @@ table.cmp td, table.cmp th { border: 1px solid var(--surface-ring, #e6e6e6); pad
   </div>
 
   <h2 class="sh">Footer</h2>
-  <p class="lead">The footer sits on a deep plum-black band with white link columns, identical in both themes.</p>
+  <p class="lead">The footer is an accent-orange panel at card radius with white link columns, identical in both themes.</p>
   <div class="footer"><div class="cols"><div>Explore<div>Download ↗<br>Foodnoms+<br>News</div></div><div>Comparisons<div>vs MyFitnessPal<br>vs Cronometer<br>vs Lose It!</div></div><div>Legal<div>Terms of Use<br>Privacy Policy</div></div></div></div>
 
   <h2 class="sh">Palette</h2>

@@ -187,10 +187,11 @@ for (const it of await mp.evaluate(() => [...document.querySelectorAll('svg')].m
   // The same SKIP as the desktop pass: without it this mobile sweep keeps
   // the trusted-by customer logos (a LogoN/icon--logo_large ancestor).
   if (SKIP.test(it.htmlCtx) || SKIP.test(it.ctx) || SKIP.test(it.chain)) continue;
-  const e = seen.get(geo) || { svg: it.html, vb: it.vb, sizes: new Set(), style: 'inline', seen: new Set(), label: new Set() };
+  const e = seen.get(geo) || { svg: it.html, vb: it.vb, sizes: new Set(), style: 'inline', seen: new Set(), label: new Set(), tints: new Set() };
   e.sizes.add(`${it.w}x${it.h}`);
   e.seen.add('mobile-home');
   if (it.ctx) e.label.add(it.ctx.slice(0, 50));
+  if (it.tint) e.tints.add(it.tint);
   seen.set(geo, e);
 }
 await browser.close();
