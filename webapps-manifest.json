@@ -1809,9 +1809,9 @@
     206
    ],
    "description": "The Collaborative Interface Design Tool",
-   "status": "pending",
-   "package": null,
-   "notes": "",
+   "status": "captured",
+   "package": "systems/figma",
+   "notes": "public signed-out surfaces only (marketing pages, /community and the /login /signup product-shell cards); the editor and every post-login surface is behind an account. Cloudflare challenged some routes; fresh-session retries succeeded",
    "batch": 6
   },
   {

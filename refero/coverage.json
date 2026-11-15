@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 147,
-    "system_domains": 139,
-    "matched_domains": 110,
-    "missing_domains": 323,
+    "system_packages": 148,
+    "system_domains": 140,
+    "matched_domains": 111,
+    "missing_domains": 322,
     "system_domains_absent_from_catalog": 29
   },
   "matched": {
@@ -1715,6 +1715,23 @@
         }
       ]
     },
+    "figma.com": {
+      "catalog": [
+        {
+          "name": "Figma",
+          "domain": "figma.com",
+          "id": 206
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "figma",
+          "name": "Figma",
+          "url": "https://www.figma.com",
+          "name_match": true
+        }
+      ]
+    },
     "getfernand.com": {
       "catalog": [
         {
@@ -2117,13 +2134,6 @@
         "name": "Fibery",
         "domain": "fibery.io",
         "id": 415
-      }
-    ],
-    "figma.com": [
-      {
-        "name": "Figma",
-        "domain": "figma.com",
-        "id": 206
       }
     ],
     "fingerprint.com": [
