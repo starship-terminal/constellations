@@ -12662,6 +12662,106 @@
    "layoutGaps": {
     "icons/": "no standalone SVG icon set was lifted on this pass; the Fiverr wordmark, collect heart, rating and category-tile glyphs are visible in the crops and screenshots"
    }
+  },
+  {
+   "slug": "flutterflow",
+   "name": "FlutterFlow",
+   "url": "https://flutterflow.io",
+   "category": "productivity",
+   "platform": "web",
+   "goodFor": "visual app builder marketing site: prompt-composer hero, pricing plans, enterprise contact form, Studio agency pages, light + dark",
+   "tags": [
+    "web",
+    "app-builder",
+    "ai",
+    "inter",
+    "light-dark",
+    "pill-fields",
+    "marketing"
+   ],
+   "shape": "reference",
+   "captured": "2026-03-01",
+   "access": "signed out (every surface captured is public; the app sits at app.flutterflow.io behind login)",
+   "themes": [
+    "light",
+    "dark"
+   ],
+   "widths": [
+    1440,
+    390
+   ],
+   "entry": "systems/flutterflow/README.md",
+   "tokens": "systems/flutterflow/tokens.json",
+   "styleGuide": "systems/flutterflow/style-guide.html",
+   "preview": {
+    "cover": "systems/flutterflow/screenshots/home-light-default.png",
+    "icon": "systems/flutterflow/icon.png",
+    "swatches": {
+     "light": {
+      "page": "light.color.page",
+      "surface": "light.color.card",
+      "text": "light.color.ink",
+      "muted": "light.color.muted",
+      "accent": "light.color.accent",
+      "border": "light.color.line"
+     },
+     "dark": {
+      "page": "dark.color.page",
+      "surface": "dark.color.card",
+      "text": "dark.color.ink",
+      "muted": "dark.color.muted",
+      "accent": "dark.color.accent",
+      "border": "dark.color.line"
+     }
+    },
+    "fonts": [
+     "core.fontFamily.sans",
+     "core.fontFamily.mono"
+    ]
+   },
+   "capture": {
+    "harness": "Devin",
+    "model": "SWE-2 Max",
+    "route": "public-web",
+    "version": "flutterflow.io, 2026-03-01; Astro site, release not exposed",
+    "routes": [
+     "/",
+     "/product",
+     "/pricing",
+     "/enterprise",
+     "/ai",
+     "/studio",
+     "/studio/showcase",
+     "/studio/faq",
+     "/studio/apply-to-be-a-developer",
+     "/customer-stories",
+     "/blog",
+     "/changelog",
+     "/about-us",
+     "/contact-us",
+     "/flutterflow-vs-studio",
+     "/flutterflow-developer-groups",
+     "/student-ambassadors",
+     "/studio/ai",
+     "/studio/desktop",
+     "/studio/changelog",
+     "/studio/work-with-developers",
+     "/privacy",
+     "/tos",
+     "/tos-marketplace"
+    ],
+    "durationMin": null,
+    "durationNote": "the capture ran across several sessions; active wall-clock time was not recorded; per-shot timestamps are in screenshots/*.capture.json",
+    "pr": "https://github.com/starship-terminal/constellations/pull/598",
+    "gaps": [
+     "app.flutterflow.io and everything behind Sign in / Start building / Open Studio was never opened: the dashboard, editor canvas, AI generation flow, billing and account surfaces are signed-in and out of scope",
+     "the prompt composer was measured, focused and typed in (then cleared) but never submitted, so the generation flow it starts is missing",
+     "the enterprise Talk-to-sales form and the Studio application form were never submitted, so their success and painted error states are missing (the error slot is recorded as declared DOM, not painted)",
+     "plan CTAs lead to a signed-in checkout and were not followed",
+     "dark shots were taken on home, product, pricing and enterprise only; the other pages' dark paint is covered by the token set but not screenshot-verified",
+     "blog and changelog article pages were not paged through"
+    ]
+   }
   }
  ]
 }

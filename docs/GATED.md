@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_94 of 152 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_95 of 153 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -528,6 +528,13 @@ Access: signed out (every captured surface is public; the buyer/seller account, 
 - the gig card's Continue was measured, never pressed — the order/checkout flow it leads to is uncaptured
 - Contact me was measured, never pressed — the message flow it fronts needs an account
 - the join and login forms were typed into then cleared, never submitted; Continue-with-* was never pressed
+
+## [FlutterFlow](../systems/flutterflow) — `flutterflow`
+Access: signed out (every surface captured is public; the app sits at app.flutterflow.io behind login)
+- app.flutterflow.io and everything behind Sign in / Start building / Open Studio was never opened: the dashboard, editor canvas, AI generation flow, billing and account surfaces are signed-in and out of scope
+- the prompt composer was measured, focused and typed in (then cleared) but never submitted, so the generation flow it starts is missing
+- the enterprise Talk-to-sales form and the Studio application form were never submitted, so their success and painted error states are missing (the error slot is recorded as declared DOM, not painted)
+- plan CTAs lead to a signed-in checkout and were not followed
 
 ## Gate noted in access text only
 
