@@ -892,5 +892,11 @@
     "groupId": "web-categories",
     "labels": ["Design & Media Editing", "Productivity"],
     "reason": "catalog.json describes a UX planning SaaS: a light Webflow marketing site, signed-out app auth forms, and published read-only sitemap/user-flow demo viewers; the editing workspace is gated."
+  },
+  {
+    "referenceId": "systems:flask",
+    "groupId": "web-categories",
+    "labels": ["Collaboration Tools", "Productivity"],
+    "reason": "catalog.json describes a video review and collaboration workspace: marketing pages with an embedded product demo, a pricing page, an MCP documentation page and the signed-out login boundary."
   }
 ]
