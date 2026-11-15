@@ -7,8 +7,6 @@ description: "chat-community and server-discovery product design: Discord ships 
 omitted:
   - section: "typography"
     reason: "tokens.json has no typography tokens under `core.typography`"
-  - section: "spacing"
-    reason: "tokens.json has no spacing tokens under `core.spacing`"
   - section: "components"
     reason: "tokens.json has no components tokens under the colour set's `component` group"
 colors:
@@ -1863,6 +1861,34 @@ rounded:
   control: "12px"
   nav-pill: "16px"
   hero-card: "96px"
+spacing:
+  "0": "0px"
+  "10": "10px"
+  "12": "12px"
+  "128": "128px"
+  "16": "16px"
+  "160": "160px"
+  "192": "192px"
+  "20": "20px"
+  "24": "24px"
+  "26": "26px"
+  "30": "30px"
+  "32": "32px"
+  "4": "4px"
+  "40": "40px"
+  "48": "48px"
+  "6": "6px"
+  "64": "64px"
+  "8": "8px"
+  "80": "80px"
+  "96": "96px"
+  lg: "20px"
+  md: "16px"
+  sm: "12px"
+  xl: "24px"
+  xs: "8px"
+  xxl: "32px"
+  xxs: "4px"
 ---
 
 # Discord
@@ -1879,7 +1905,7 @@ Captured 2026-11-15, read-only (the marketing pages, /servers discovery + catego
 
 A token set and component reference for Discord's public surface — for building chat-community apps, server-discovery grids, auth cards and marketing heroes in the style of the real thing. It was read from **discord.com** on **2026-11-15**, signed out, in headless Chromium at 1440 x 900 and 390 x 844. Captured: the marketing pages (/, /download, /nitro), the server-discovery pages (/servers, /servers/gaming), a /servers/<slug> detail page, the /login and /register auth cards, and 390px passes on the home page and discovery.
 
-Discord is worth a capture because it ships its real design-token layer to the browser — and because the site is two products in one. The marketing pages are a Webflow build in Ggsans/ABC Ginto over the brand palette; the app surfaces run the real Discord design system: "gg sans" body text, "ABC Ginto Discord Nord" display type, `:root` hue scales (`--neutral-1..100`, `--blurple-1..100`, `--plum-0..26`, the `--*-new-1..100` families, `--illo-*`, `--opacity-*`, `--brand-*`, `--primary-*`) and class-scoped semantic blocks `.theme-light`/`.theme-darker`/`.theme-dark`/`.theme-midnight` carrying `--background-base-*`/`--background-surface-*`/`--background-mod-*`, `--text-*`, `--border-*`, `--badge-*`, `--button-*`, `--input-*`. 4,400+ variables resolve per theme — and unlike most products, both themes really paint signed out: app surfaces carry `.theme-dark.theme-darker` while the marketing chrome injected into them sits under a `.theme-light` root. The app paints a `#121214`/`#202024` base with `#efeff1` ink, `#fbfbfb` strong text, `#5865f2` blurple on Join/Log In (`#4752c4` hover), `rgba(151,151,159,0.16)` selected pills, `#43b581` online green and 2px `#6aa8f4` focus rings; the auth card is an oklab `#26282c`-ish panel on the animated brand backdrop. **Boundary:** the whole client needs an account — /channels/* redirects to /login, invites are not accepted, and joining, sharing, and Nitro purchase gate on sign-in; every button was measured, never pressed. The app's standalone light surface (the account theme setting) and `.theme-dark`/`.theme-midnight` variants are declared but unpainted signed out.
+Discord is worth a capture because it ships its real design-token layer to the browser — and because the site is two products in one. The marketing pages are a Webflow build in Ggsans/ABC Ginto over the brand palette; the app surfaces run the real Discord design system: "gg sans" body text, "ABC Ginto Discord Nord" display type, `:root` hue scales (`--neutral-1..100`, `--blurple-1..100`, `--plum-0..26`, the `--*-new-1..100` families, `--illo-*`, `--opacity-*`, `--brand-*`, `--primary-*`) and class-scoped semantic blocks `.theme-light`/`.theme-darker`/`.theme-dark`/`.theme-midnight` carrying `--background-base-*`/`--background-surface-*`/`--background-mod-*`, `--text-*`, `--border-*`, `--badge-*`, `--button-*`, `--input-*`. 4,469 variables resolve per theme — and unlike most products, both themes really paint signed out: app surfaces carry `.theme-dark.theme-darker` while the marketing chrome injected into them sits under a `.theme-light` root. The app paints a `#121214`/`#202024` base with `#efeff1` ink, `#fbfbfb` strong text, `#5865f2` blurple on Join/Log In (`#4752c4` hover), `rgba(151,151,159,0.16)` selected pills, `#43b581` online green and 2px `#6aa8f4` focus rings; the auth card is an oklab `#26282c`-ish panel on the animated brand backdrop. **Boundary:** the whole client needs an account — /channels/* redirects to /login, invites are not accepted, and joining, sharing, and Nitro purchase gate on sign-in; every button was measured, never pressed. The app's standalone light surface (the account theme setting) and `.theme-dark`/`.theme-midnight` variants are declared but unpainted signed out.
 
 ## Colors
 
@@ -1898,7 +1924,7 @@ No composite type styles in tokens.json; the README text below names the faces a
 
 ## Layout
 
-No spacing scale in tokens.json.
+Spacing from `core.space`: `0` 0px, `10` 10px, `12` 12px, `128` 128px, `16` 16px, `160` 160px, `192` 192px, `20` 20px, `24` 24px, `26` 26px, `30` 30px, `32` 32px, `4` 4px, `40` 40px, `48` 48px, `6` 6px, `64` 64px, `8` 8px, `80` 80px, `96` 96px, `lg` 20px, `md` 16px, `sm` 12px, `xl` 24px, `xs` 8px, `xxl` 32px, `xxs` 4px.
 
 ## Elevation & Depth
 

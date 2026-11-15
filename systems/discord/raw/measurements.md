@@ -38,25 +38,25 @@ Crops: `mk-nav-default.png`.
 
 Nav link. The Download nav link; measured, never followed.
 
-Page: home. Selector: `nav a Download`. States: default, hover, focus-visible, pressed.
+Page: home. Selector: `header.nav a Download`. States: default, hover, focus-visible, pressed.
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 200 x 24 | = | = | = |
-| Padding | 0px | = | = | = |
+| Size (w x h) | 110 x 39.2 | = | = | = |
+| Padding | 10px 16px | = | = | = |
+| Gap | 8px | = | = | = |
 | Border | none | = | = | = |
-| Radius | 0px | = | 1px | = |
-| Background | transparent | = | = | = |
+| Radius | 12px | = | 1px | = |
+| Background | transparent | #5865f2 | = | #5865f2 |
 | Box shadow | none | = | = | = |
-| Outline | none | = | 2px solid #ffffff offset 2px | = |
-| Font | Abcgintodiscord 16px/24px 400 | = | = | = |
+| Outline | none | = | 2px solid #ffffff offset -2px | = |
+| Font | Abcgintodiscord 16px/19.2px 500 | = | = | = |
 | Letter spacing | normal | = | = | = |
 | Colour | #ffffff | = | = | = |
-| Transition | all 0.3s ease | = | = | = |
+| Transition | font-variation-settings 0.4s ease | = | = | = |
 | Cursor | pointer | = | = | = |
-| Ancestor paint | 1 up nav.dropdown-list-footer.w-dropdown-list bg #dddddd @ 0 | = | = | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
-| Painted layers | - | = | a.link-footer.top-new-link 200.0x24.0 r 1px outline 2px solid #ffffff offset 2px | = |
+| Painted layers | - | a.nav_link 110.0x39.2 bg #5865f2 r 12px | a.nav_link 110.0x39.2 r 1px outline 2px solid #ffffff offset -2px | a.nav_link 110.0x39.2 bg #5865f2 r 12px |
 
 Crops: `mk-nav-download-default.png`, `mk-nav-download-hover.png`, `mk-nav-download-focus-visible.png`, `mk-nav-download-pressed.png`.
 
@@ -112,31 +112,6 @@ Page: home. Selector: `nav Log In`. States: default, hover, focus-visible, press
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
 Crops: `mk-nav-login-default.png`, `mk-nav-login-hover.png`, `mk-nav-login-focus-visible.png`, `mk-nav-login-pressed.png`.
-
-#### mk-footer
-
-Site footer. The marketing sitemap footer.
-
-Page: home. Selector: `footer`. States: default.
-
-| Property | default |
-|---|---|
-| Size (w x h) | 236.52 x 270.55 |
-| Padding | 0px |
-| Border | none |
-| Radius | 0px |
-| Background | transparent |
-| Box shadow | none |
-| Outline | none |
-| Font | Ggsans 16px/24px 400 |
-| Letter spacing | normal |
-| Colour | #000000 |
-| Transition | none |
-| Cursor | pointer |
-| Icon | 236.52 x 259, colour #000000 |
-| How | at rest |
-
-Crops: `mk-footer-default.png`.
 
 ### Marketing hero
 
@@ -267,25 +242,27 @@ Crops: `dl-h1-default.png`.
 
 Download CTA. A platform download button; measured, never followed.
 
-Page: download. Selector: `download button`. States: default, hover, focus-visible, pressed.
+Page: download. Selector: `a.download-button`. States: default, hover, focus-visible, pressed.
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 110 x 39.2 | = | = | = |
-| Padding | 10px 16px | = | = | = |
-| Gap | 8px | = | = | = |
+| Size (w x h) | 228.5 x 48 | = | = | = |
+| Padding | 15px 24px 14px 24px | = | = | = |
 | Border | none | = | = | = |
-| Radius | 12px | = | 1px | = |
-| Background | transparent | #5865f2 | = | #5865f2 |
+| Radius | 12px | = | = | = |
+| Background | transparent | = | = | = |
 | Box shadow | none | = | = | = |
-| Outline | none | = | 2px solid #ffffff offset -2px | = |
-| Font | Abcgintodiscord 16px/19.2px 500 | = | = | = |
+| Outline | none | = | 1px solid #5865f2 offset 1px | = |
+| Font | ABC Ginto Normal 16px/20.8px 500 | = | = | = |
 | Letter spacing | normal | = | = | = |
 | Colour | #ffffff | = | = | = |
-| Transition | font-variation-settings 0.4s ease | = | = | = |
+| Text node | div.btn_text: ABC Ginto Normal 16px/20.8px 500, #ffffff | = | = | = |
+| Transition | all, background-color 0.3s, 0.4s ease, ease delay 0s, 0s | = | = | = |
 | Cursor | pointer | = | = | = |
+| Icon | 20 x 20, colour #ffffff, fill #000000 | = | = | = |
+| Ancestor paint | 1 up div.btn_wr.is_2025 bg #5865f2 @ 0 | = | = | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
-| Painted layers | - | a.nav_link.w--current 110.0x39.2 bg #5865f2 r 12px | a.nav_link.w--current 110.0x39.2 r 1px outline 2px solid #ffffff offset -2px | a.nav_link.w--current 110.0x39.2 bg #5865f2 r 12px |
+| Painted layers | - | = | a.btn.download-button 228.5x48.0 r 12px outline 1px solid #5865f2 offset 1px | = |
 
 Crops: `dl-cta-default.png`, `dl-cta-hover.png`, `dl-cta-focus-visible.png`, `dl-cta-pressed.png`.
 

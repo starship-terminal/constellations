@@ -46,11 +46,23 @@ def _resolve_alias(value, node, depth=0):
     return _resolve_alias(tgt.get("$value", value), node, depth + 1)
 
 
-BY_COLOR = {}
+BY_COLOR = {"light": {}, "dark": {}}
 for _set in ("core", "light", "dark"):
     for n, t in flat(T[_set]):
         if t["$type"] == "color":
-            BY_COLOR.setdefault(_resolve_alias(t["$value"], T[_set]), n)
+            v = _resolve_alias(t["$value"], T[_set])
+            if _set == "core":
+                BY_COLOR["light"].setdefault(v, n)
+                BY_COLOR["dark"].setdefault(v, n)
+            else:
+                BY_COLOR[_set].setdefault(v, n)
+
+# Which theme each component's readings were painted in. App surfaces paint
+# .theme-dark.theme-darker; marketing chrome paints .theme-light. Set per
+# component in the render loop and read by colour().
+_DARK_GROUPS = {"Server discovery", "Server card", "Server detail", "Sign-in / register"}
+_DARK_COMPONENTS = {"m-search", "m-card"}
+_THEME = "light"
 
 
 def _srgb_byte(x):
@@ -100,7 +112,7 @@ def colour(c, tokens=True):
     def label(v):
         if v == "rgba(0, 0, 0, 0)":
             return "transparent"
-        tok = BY_COLOR.get(v) if tokens else None
+        tok = BY_COLOR[_THEME].get(v) if tokens else None
         return f"{v} `{tok}`" if tok else v
 
     c = re.sub(r"oklch\(([\d.]+) ([\d.]+) ([\d.]+)(?:deg)?(?: / ([\d.]+%?))?\)",
@@ -470,6 +482,7 @@ for g in groups:
     for k, c in C.items():
         if c.get("group") != g:
             continue
+        _THEME = "dark" if (g in _DARK_GROUPS or k in _DARK_COMPONENTS) else "light"
         W()
         W(f"#### {c['title']}")
         desc = (c.get("desc") or "").strip()

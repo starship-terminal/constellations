@@ -327,14 +327,14 @@ def decl_color(name):
 # (Webflow naming). gg mono is the declared code face.
 
 fam = SPEC["core"].setdefault("font", {}).setdefault("family", {})
-for key, comp, state, desc in [
-    ("ui", "sc-name", "default", "\"gg sans\" — every app string: card names, counts, fields, buttons."),
-    ("display", "ds-h1", "default", "ABC Ginto Discord Nord — the display headings (DISCOVERABLE SERVERS, server names)."),
-    ("marketing", "nt-card", "default", "Ggsans — the Webflow marketing face (Nitro card body)."),
-    ("marketing-display", "mk-lede", "default", "Abcgintodiscord — the marketing hero lede and CTA labels."),
+for key, comp, state, desc, src_fn in [
+    ("ui", "sc-name", "default", "\"gg sans\" — every app string: card names, counts, fields, buttons.", st),
+    ("display", "ds-h1", "default", "ABC Ginto Discord Nord — the display headings (DISCOVERABLE SERVERS, server names).", ts),
+    ("marketing", "nt-card", "default", "Ggsans — the Webflow marketing face (the card's own computed fontFamily; its nested heading is Nord).", st),
+    ("marketing-display", "mk-lede", "default", "Abcgintodiscord — the marketing hero lede and CTA labels.", ts),
 ]:
     if have(comp, state, "fontFamily"):
-        v = ts(comp, state, "fontFamily")
+        v = src_fn(comp, state)["fontFamily"] if src_fn is st else ts(comp, state, "fontFamily")
         fam[key] = {"value": v, "type": "fontFamily",
                     "source": f"computed fontFamily of {comp} {state} (raw/components-computed.json)",
                     "description": desc}
@@ -452,6 +452,21 @@ for name in sorted(k for k in R if k.startswith("--drop-shadow-")):
 for name in sorted(k for k in R if k.startswith("--shadow-")):
     if R[name] == D.get(name):
         SPEC["core"].setdefault("shadow", {})[name[len("--shadow-"):]] = decl(name, "other")
+for name in sorted(k for k in R if k.startswith("--space-")):
+    if R[name] == D.get(name):
+        SPEC["core"].setdefault("space", {})[name[len("--space-"):]] = decl(name)
+for name in sorted(k for k in R if k.startswith("--size-")):
+    if R[name] == D.get(name):
+        SPEC["core"].setdefault("size", {})[name[len("--size-"):]] = decl(name)
+for name in sorted(k for k in R if k.startswith("--font-weight-")):
+    if R[name] == D.get(name):
+        SPEC["core"].setdefault("font", {}).setdefault("weight", {})[name[len("--font-weight-"):]] = decl(name, "fontWeight")
+for name in sorted(k for k in R if k.startswith("--font-display-")):
+    if R[name] == D.get(name):
+        SPEC["core"].setdefault("font", {}).setdefault("display", {})[name[len("--font-display-"):]] = decl(name, "fontFamily")
+for name in sorted(k for k in R if re.fullmatch(r"--font-(headline|primary|code)", k)):
+    if R[name] == D.get(name):
+        SPEC["core"].setdefault("font", {})[name[len("--font-"):]] = decl(name, "fontFamily")
 
 CORE_HANDLED = re.compile(
     r"^--(color-|leading-|tracking-|container-|breakpoint-|radius-|"

@@ -292,14 +292,14 @@ async function home() {
   await chrome('home');
   const g = G.hero;
   await S('mk-nav', q('header.nav, header[class*="nav"]').and(page.locator(':visible')).first(), ['default'], { group: G.mkt, title: 'Marketing nav', desc: 'The fixed marketing top bar — Discord wordmark, section links, Log In pill.', sel: 'header.nav' }, { noScroll: true });
-  await S('mk-nav-download', q('nav a').filter({ hasText: /^\s*download\s*$/i }).and(page.locator(':visible')).first(), B4, { group: G.mkt, title: 'Nav link', desc: 'The Download nav link; measured, never followed.', sel: 'nav a Download' }, { noScroll: true });
+  await S('mk-nav-download', q('header.nav a').filter({ hasText: /download/i }).and(page.locator(':visible')).first(), B4, { group: G.mkt, title: 'Nav link', desc: 'The Download nav link; measured, never followed.', sel: 'header.nav a Download' }, { noScroll: true });
   await S('mk-nav-drop', q('header.nav a, header.nav div, header.nav button, header.nav [class*="w-dropdown-toggle"]').filter({ hasText: /^\s*discover/i }).and(page.locator(':visible')).first(), B4, { group: G.mkt, title: 'Nav dropdown', desc: 'The Discover nav dropdown trigger; measured, never opened through.', sel: 'nav Discover' }, { noScroll: true });
   await S('mk-nav-login', q('a[class*="login-button"], header.nav a, header.nav button').filter({ hasText: /^\s*log ?in\s*$/i }).and(page.locator(':visible')).first(), B4, { group: G.mkt, title: 'Nav Log In', desc: 'The white Log In pill in the nav; measured, never followed.', sel: 'nav Log In' }, { noScroll: true });
   await S('mk-h1', q('h1').and(page.locator(':visible')).first(), ['default'], { group: g, title: 'Hero display', desc: '"GROUP CHAT THAT\u2019S ALL FUN & GAMES" — the hero display headline in Ggsans.', sel: 'h1' }, { noScroll: true });
   await S('mk-lede', q('p[class*="hero-p"], p').filter({ hasText: /great for playing games/i }).and(page.locator(':visible')).first(), ['default'], { group: g, title: 'Hero lede', desc: 'The hero supporting paragraph.', sel: 'p.hero-p' }, { noScroll: true });
   await S('mk-cta-download', q('a, button').filter({ hasText: /download for (linux|windows|mac)/i }).and(page.locator(':visible')).first(), B4, { group: g, title: 'Hero primary CTA', desc: 'The "Download for …" white button; hover/focus measured, never followed (it would start a download).', sel: 'hero Download' }, { noScroll: true });
   await S('mk-cta-open', q('a, button').filter({ hasText: /open discord in your browser/i }).and(page.locator(':visible')).first(), B4, { group: g, title: 'Hero secondary CTA', desc: 'The "Open Discord in your browser" brand-fill button; measured, never followed.', sel: 'hero Open Discord' }, { noScroll: true });
-  await S('mk-footer', q('footer').and(page.locator(':visible')).last(), ['default'], { group: G.mkt, title: 'Site footer', desc: 'The marketing sitemap footer.', sel: 'footer' }, { before: SETTLE });
+  await S('mk-footer', q('footer:not(.lottie)').and(page.locator(':visible')).last(), ['default'], { group: G.mkt, title: 'Site footer', desc: 'The marketing sitemap footer.', sel: 'footer' }, { before: SETTLE });
   save();
 }
 
@@ -309,7 +309,7 @@ async function download() {
   await chrome('download');
   const g = G.page;
   await S('dl-h1', q('h1, h2').and(page.locator(':visible')).first(), ['default'], { group: g, title: 'Download heading', desc: '"Download Discord wherever you hang out" — the download page heading.', sel: 'download h1' }, { noScroll: true });
-  await S('dl-cta', q('a, button').filter({ hasText: /download|get it/i }).and(page.locator(':visible')).first(), B4, { group: g, title: 'Download CTA', desc: 'A platform download button; measured, never followed.', sel: 'download button' }, { noScroll: true });
+  await S('dl-cta', q('a.download-button, a.btn.download-button').and(page.locator(':visible')).first(), B4, { group: g, title: 'Download CTA', desc: 'A platform download button; measured, never followed.', sel: 'a.download-button' }, { noScroll: true });
   save();
 }
 

@@ -2,13 +2,13 @@
 
 The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Captured from discord.com on 2026-11-15, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was signed into, bought or submitted and no form was ever sent; nav links, category pills, Join/Log In buttons and Share were measured, never followed. The app surfaces paint their dark theme signed out; the marketing chrome inside them paints .theme-light, so both themes are real painted evidence.
 
-The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (47 components, 100 states). The page layouts are described in [patterns.md](patterns.md).
+The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (46 components, 99 states). The page layouts are described in [patterns.md](patterns.md).
 
 How to read an entry:
 
 - A colour is its value followed by the palette token in [tokens.json](tokens.json) with the same value, when there is one. Text is written family size/line-height weight, then its colour, for example `SF Pro 14/21 500, #21252e`, and is read from the first text node inside the component.
 - The state table has one row per state that differs. The first row lists every value; later rows list only what changes. A state with the same values as the first is named in its label, for example "default (same: focus-visible)". When the root paints nothing, "Child layers" names the first nodes inside it that do.
-- Crops are images of the component read from the live page, in [components/crops/](components/crops) (100 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
+- Crops are images of the component read from the live page, in [components/crops/](components/crops) (99 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
 
 ## Discovery list
 
@@ -39,7 +39,7 @@ Screenshots are named `{page}-{state}.png`: there is no theme toggle signed out 
 
 Values that apply across entries, from the measurement files.
 
-**Focus.** 15 components were given a real keyboard focus. 7 draw an outline ring: `mk-nav-download` (2px solid #ffffff `always.white`, offset 2px), `mk-nav-login` (2px solid #5865f2 `ansi.bright.blue`, offset 4px), `dl-cta` (2px solid #ffffff `always.white`, offset -2px), `nt-cta` (2px solid #5865f2 `ansi.bright.blue`, offset 4px), `ds-tab` (2px solid #6aa8f4 `color.blue.new.30`, offset 2px), `ds-tab-all` (2px solid #6aa8f4 `color.blue.new.30`, offset 2px), `sv-share` (2px solid #6aa8f4 `color.blue.new.30`, offset 2px). The other 8 show no measured change: `mk-cta-download`, `mk-cta-open`, `sv-join`, `sv-chip`, `lg-submit`, `lg-forgot`, `lg-register`, `rg-submit`.
+**Focus.** 15 components were given a real keyboard focus. 7 draw an outline ring: `mk-nav-download` (2px solid #ffffff `always.white`, offset -2px), `mk-nav-login` (2px solid #5865f2 `ansi.bright.blue`, offset 4px), `dl-cta` (1px solid #5865f2 `ansi.bright.blue`, offset 1px), `nt-cta` (2px solid #5865f2 `ansi.bright.blue`, offset 4px), `ds-tab` (2px solid #6aa8f4 `color.blue.new.30`, offset 2px), `ds-tab-all` (2px solid #6aa8f4 `color.blue.new.30`, offset 2px), `sv-share` (2px solid #6aa8f4 `color.blue.new.30`, offset 2px). The other 8 show no measured change: `mk-cta-download`, `mk-cta-open`, `sv-join`, `sv-chip`, `lg-submit`, `lg-forgot`, `lg-register`, `rg-submit`.
 
 **Pressed.** Forced with DevTools (`CSS.forcePseudoState` :active:hover). Nothing a real press would submit was ever pressed.
 
@@ -50,8 +50,8 @@ Values that apply across entries, from the measurement files.
 | 0.05s | `ease-in` | background-color, border-color, color, opacity | lg-submit, rg-submit |
 | 0.2s | `ease-in-out` | background-color, border-color, box-shadow, color, none | ds-search-input, lg-email, mk-cta-open, sv-join |
 | 0.25s | `ease` | background-color | mk-nav-login |
-| 0.3s | `ease` | all | mk-cta-download, mk-nav-download |
-| 0.4s | `ease` | background-color, font-variation-settings | dl-cta, nt-cta |
+| 0.3s | `ease` | all | dl-cta, mk-cta-download |
+| 0.4s | `ease` | background-color, font-variation-settings | dl-cta, mk-nav-download, nt-cta |
 
 **Card shapes.** Default-state values; the entries hold the states.
 
@@ -82,8 +82,10 @@ The Download nav link; measured, never followed. Read as `mk-nav-download` on th
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 200 x 24; background transparent; text Abcgintodiscord 16/24 400, #ffffff `always.white`; transition all 0.3s ease |
-| focus-visible | radius 1px; outline 2px solid #ffffff `always.white`, offset 2px; layers a.link-footer.top-new-link 200.0x24.0 2px solid #ffffff `always.white` offset 2px 1px |
+| default | size 110 x 39.2; padding 10px 16px; radius 12px; background transparent; text Abcgintodiscord 16/19.2 500, #ffffff `always.white`; transition font-variation-settings 0.4s ease |
+| hover | background #5865f2 `ansi.bright.blue` |
+| focus-visible | radius 1px; outline 2px solid #ffffff `always.white`, offset -2px; layers a.nav_link 110.0x39.2 2px solid #ffffff `always.white` offset -2px 1px |
+| pressed | background #5865f2 `ansi.bright.blue` |
 
 ![Nav link default](components/crops/mk-nav-download-default.png) ![Nav link hover](components/crops/mk-nav-download-hover.png) ![Nav link focus-visible](components/crops/mk-nav-download-focus-visible.png) ![Nav link pressed](components/crops/mk-nav-download-pressed.png)
 
@@ -112,13 +114,6 @@ The white Log In pill in the nav; measured, never followed. Read as `mk-nav-logi
 | pressed | background #c7c8ce `color.plum.6` |
 
 ![Nav Log In default](components/crops/mk-nav-login-default.png) ![Nav Log In hover](components/crops/mk-nav-login-hover.png) ![Nav Log In focus-visible](components/crops/mk-nav-login-focus-visible.png) ![Nav Log In pressed](components/crops/mk-nav-login-pressed.png)
-
-#### Site footer
-The marketing sitemap footer. Read as `mk-footer` on the marketing home page.
-
-**Values (default).** size 236.52 x 270.55; background transparent; text Ggsans 16/24 400, #000000 `ansi.black`.
-
-![Site footer default](components/crops/mk-footer-default.png)
 
 ### Marketing hero
 
@@ -174,10 +169,8 @@ A platform download button; measured, never followed. Read as `dl-cta` on the do
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 110 x 39.2; padding 10px 16px; radius 12px; background transparent; text Abcgintodiscord 16/19.2 500, #ffffff `always.white`; transition font-variation-settings 0.4s ease |
-| hover | background #5865f2 `ansi.bright.blue` |
-| focus-visible | radius 1px; outline 2px solid #ffffff `always.white`, offset -2px; layers a.nav_link.w--current 110.0x39.2 2px solid #ffffff `always.white` offset -2px 1px |
-| pressed | background #5865f2 `ansi.bright.blue` |
+| default (same: hover, pressed) | size 228.5 x 48; padding 15px 24px 14px 24px; radius 12px; background transparent; text ABC Ginto Normal 16/20.8 500, #ffffff `always.white`; transition all 0.3s ease, background-color 0.4s ease; icon 20 x 20, #ffffff `always.white` |
+| focus-visible | outline 1px solid #5865f2 `ansi.bright.blue`, offset 1px; layers a.btn.download-button 228.5x48.0 1px solid #5865f2 `ansi.bright.blue` offset 1px 12px |
 
 ![Download CTA default](components/crops/dl-cta-default.png) ![Download CTA hover](components/crops/dl-cta-hover.png) ![Download CTA focus-visible](components/crops/dl-cta-focus-visible.png) ![Download CTA pressed](components/crops/dl-cta-pressed.png)
 
@@ -282,17 +275,17 @@ A discoverable-server card — banner art, icon, name, verified badge, descripti
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 322 x 362; background transparent; text gg sans 20/24 600, #fbfbfb `background.base.low`; icon 16 x 16, #23a559; layers article.guildItemContainer_OnY3sU 322.0x362.0 #202024 `color.neutral.82` T:1px solid rgba(151, 151, 159, 0.12) `background.mod.subtle` / R:1px solid rgba(151, 151, 159, 0.12) `background.mod.subtle` / B:1px solid rgba(151, 151, 159, 0.12) `background.mod.subtle` / L:1px solid rgba(151, 151, 159, 0.12) `background.mod.subtle` 8px; div.listIconContainer_OnY3sU 59.7x59.7 #202024 `color.neutral.82` 12 |
-| hover | layers article.guildItemContainer_OnY3sU 322.0x362.0 #242429 `color.neutral.79` T:1px solid rgba(151, 151, 159, 0.44) `color.opacity.44` / R:1px solid rgba(151, 151, 159, 0.44) `color.opacity.44` / B:1px solid rgba(151, 151, 159, 0.44) `color.opacity.44` / L:1px solid rgba(151, 151, 159, 0.44) `color.opacity.44` rgba(0, 0, 0, 0.14) 0px 1px 4px 0px 8px; div.listIconContainer_OnY3sU 59.7x59.7 #242429 `colo |
+| default | size 322 x 362; background transparent; text gg sans 20/24 600, #fbfbfb `badge.secondary.text`; icon 16 x 16, #23a559; layers article.guildItemContainer_OnY3sU 322.0x362.0 #202024 `background.base.low` T:1px solid rgba(151, 151, 159, 0.12) `background.mod.subtle` / R:1px solid rgba(151, 151, 159, 0.12) `background.mod.subtle` / B:1px solid rgba(151, 151, 159, 0.12) `background.mod.subtle` / L:1px solid rgba(151, 151, 159, 0.12) `background.mod.subtle` 8px; div.listIconContainer_OnY3sU 59.7x59.7 #202024 `background.base.l |
+| hover | layers article.guildItemContainer_OnY3sU 322.0x362.0 #242429 `background.surface.high` T:1px solid rgba(151, 151, 159, 0.44) `color.opacity.44` / R:1px solid rgba(151, 151, 159, 0.44) `color.opacity.44` / B:1px solid rgba(151, 151, 159, 0.44) `color.opacity.44` / L:1px solid rgba(151, 151, 159, 0.44) `color.opacity.44` rgba(0, 0, 0, 0.14) 0px 1px 4px 0px 8px; div.listIconContainer_OnY3sU 59.7x59.7 #24242 |
 
-Child layers that carry the look: article 322x362 background #202024 `color.neutral.82` border 1px solid rgba(151, 151, 159, 0.12) `background.mod.subtle` radius 8px; div 59.7x59.7 background #202024 `color.neutral.82` radius 12.7893px; div 8x8 background #43b581 `mint.green` radius 50%.
+Child layers that carry the look: article 322x362 background #202024 `background.base.low` border 1px solid rgba(151, 151, 159, 0.12) `background.mod.subtle` radius 8px; div 59.7x59.7 background #202024 `background.base.low` radius 12.7893px; div 8x8 background #43b581 `mint.green` radius 50%.
 
 ![Server card default](components/crops/sc-card-default.png) ![Server card hover](components/crops/sc-card-hover.png)
 
 #### Server name
 The server name line inside the card, with its verified check. Read as `sc-name` on the server discovery page.
 
-**Values (default).** size 99 x 24; background transparent; text gg sans 20/24 600, #fbfbfb `background.base.low`.
+**Values (default).** size 99 x 24; background transparent; text gg sans 20/24 600, #fbfbfb `badge.secondary.text`.
 
 ![Server name default](components/crops/sc-name-default.png)
 
@@ -367,7 +360,7 @@ A category chip in the detail sidebar; measured, never followed. Read as `sv-chi
 #### About heading
 The tracked ABOUT section label. Read as `sv-about` on the server detail page.
 
-**Values (default).** size 800 x 28.8; background transparent; text ABC Ginto Discord Nord 24/28.8 700, #fbfbfb `background.base.low`.
+**Values (default).** size 800 x 28.8; background transparent; text ABC Ginto Discord Nord 24/28.8 700, #fbfbfb `badge.secondary.text`.
 
 ![About heading default](components/crops/sv-about-default.png)
 
@@ -378,14 +371,14 @@ The auth surfaces on the animated brand backdrop: the Welcome-back card with its
 #### Auth card
 The sign-in card on the animated brand backdrop — form fields left, QR panel right. Read as `lg-card` on the login page.
 
-**Values (default).** size 784 x 414; padding 32px; radius 8px; background #242429 `color.neutral.79`; shadow rgba(0, 0, 0, 0.2) 0px 2px 10px 0px; text gg sans 24/32 600, #fbfbfb `background.base.low`; icon 16 x 16, #fbfbfb `background.base.low`.
+**Values (default).** size 784 x 414; padding 32px; radius 8px; background #242429 `background.surface.high`; shadow rgba(0, 0, 0, 0.2) 0px 2px 10px 0px; text gg sans 24/32 600, #fbfbfb `badge.secondary.text`; icon 16 x 16, #fbfbfb `badge.secondary.text`.
 
 ![Auth card default](components/crops/lg-card-default.png)
 
 #### Sign-in heading
 "Welcome back!" — the auth card heading. Read as `lg-h1` on the login page.
 
-**Values (default).** size 156 x 32; background transparent; text gg sans 24/32 600, #fbfbfb `background.base.low`.
+**Values (default).** size 156 x 32; background transparent; text gg sans 24/32 600, #fbfbfb `badge.secondary.text`.
 
 ![Sign-in heading default](components/crops/lg-h1-default.png)
 
@@ -438,7 +431,7 @@ The "Need an account? Register" link; measured, never followed. Read as `lg-regi
 #### QR panel
 The "Log in with QR Code" panel on the card’s right. Read as `lg-qr` on the login page.
 
-**Values (default).** size 240 x 322; background transparent; text gg sans 24/32 600, #fbfbfb `background.base.low`; layers div.qrCodeContainer_d4-PpI.qrCode_FDXpbQ 176.0x176.0 #ffffff `always.white` 4px.
+**Values (default).** size 240 x 322; background transparent; text gg sans 24/32 600, #fbfbfb `badge.secondary.text`; layers div.qrCodeContainer_d4-PpI.qrCode_FDXpbQ 176.0x176.0 #ffffff `always.white` 4px.
 
 Child layers that carry the look: div 176x176 background #ffffff `always.white` radius 4px.
 
@@ -447,7 +440,7 @@ Child layers that carry the look: div 176x176 background #ffffff `always.white` 
 #### Register heading
 "Create an account" — the register card heading. Read as `rg-h1` on the register page.
 
-**Values (default).** size 416 x 32; background transparent; text gg sans 24/32 600, #fbfbfb `background.base.low`.
+**Values (default).** size 416 x 32; background transparent; text gg sans 24/32 600, #fbfbfb `badge.secondary.text`.
 
 ![Register heading default](components/crops/rg-h1-default.png)
 
@@ -500,9 +493,9 @@ The discovery search field at 390px. Read as `m-search` on the server discovery 
 #### Mobile server card
 A server card at 390px. Read as `m-card` on the server discovery page at 390 wide.
 
-**Values (default).** size 358 x 380; background transparent; text gg sans 20/24 600, #fbfbfb `background.base.low`; icon 16 x 16, #23a559; layers article.guildItemContainer_OnY3sU 358.0x380.0 #202024 `color.neutral.82` T:1px solid rgba(151, 151, 159, 0.12) `background.mod.subtle` / R:1px solid rgba(151, 151, 159, 0.12) `background.mod.subtle` / B:1px solid rgba(151, 151, 159, 0.12) `background.mod.subtle` / L:1px solid rgba(151, 151, 159, 0.12) `background.mod.subtle` 8px; div.listIconContainer_OnY3sU 66.4x66.4 #202024 `color.neutral.82` 14.
+**Values (default).** size 358 x 380; background transparent; text gg sans 20/24 600, #fbfbfb `badge.secondary.text`; icon 16 x 16, #23a559; layers article.guildItemContainer_OnY3sU 358.0x380.0 #202024 `background.base.low` T:1px solid rgba(151, 151, 159, 0.12) `background.mod.subtle` / R:1px solid rgba(151, 151, 159, 0.12) `background.mod.subtle` / B:1px solid rgba(151, 151, 159, 0.12) `background.mod.subtle` / L:1px solid rgba(151, 151, 159, 0.12) `background.mod.subtle` 8px; div.listIconContainer_OnY3sU 66.4x66.4 #202024 `background.base.l.
 
-Child layers that carry the look: article 358x380 background #202024 `color.neutral.82` border 1px solid rgba(151, 151, 159, 0.12) `background.mod.subtle` radius 8px; div 66.4x66.4 background #202024 `color.neutral.82` radius 14.2281px; div 8x8 background #43b581 `mint.green` radius 50%.
+Child layers that carry the look: article 358x380 background #202024 `background.base.low` border 1px solid rgba(151, 151, 159, 0.12) `background.mod.subtle` radius 8px; div 66.4x66.4 background #202024 `background.base.low` radius 14.2281px; div 8x8 background #43b581 `mint.green` radius 50%.
 
 ![Mobile server card default](components/crops/m-card-default.png)
 

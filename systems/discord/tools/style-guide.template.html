@@ -13,6 +13,9 @@
   --sg-serif: "ABC Ginto Discord Nord", "gg sans", ui-sans-serif, system-ui, sans-serif;
   --sg-mono: "gg mono", ui-monospace, "SF Mono", Menlo, monospace;
 }
+.light {
+/*LIGHT2*/
+}
 [data-mode="dark"], .dark {
 /*DARK*/
 }
@@ -158,12 +161,25 @@ const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) 
     for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
     h += '</div>';
   }
+  // The shared colour layer is wider than color.*: always.*, ansi.*,
+  // background.* and other invariant colour vars live at their natural paths.
+  const shared = {};
+  for (const [n, t] of flat(TOK.core || {}, '')) {
+    if (t.t !== 'color' || n.startsWith('color.') || n.startsWith('component')) continue;
+    (shared[n.split('.')[0]] = shared[n.split('.')[0]] || []).push([n, t]);
+  }
+  for (const g of Object.keys(shared).sort()) {
+    h += `<div class="pal-h">${esc(g)}.*</div><div class="pal">`;
+    for (const [n, t] of shared[g]) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
   for (const [setname, label] of [['light', 'light roles'], ['dark', 'dark roles (the app surfaces\' .theme-darker paint)']]) {
     const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
     if (!roles.length) continue;
-    // The dark set's custom properties only resolve inside a .dark scope:
-    // swatch dots must live under it or they paint the light values/unset.
-    h += `<div class="pal-h">${label}</div><div class="pal${setname === 'dark' ? ' dark' : ''}">`;
+    // Each set's custom properties only resolve inside its own scope (.light
+    // re-declares the shared names :root holds), or a dark page repaint turns
+    // the "light roles" palette dark.
+    h += `<div class="pal-h">${label}</div><div class="pal ${setname}">`;
     for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
     h += '</div>';
   }

@@ -128,7 +128,7 @@ const want = [...new Set(result.rules.filter((r) => !r.context.includes('@layer 
   .filter((n) => !/^--(tw-|_|lightningcss-)/.test(n)).sort();
 const resolved = {};
 for (const pass of ['plain', 'light', 'dark']) {
-  await probe.setContent(shell(pass === 'plain' ? '' : pass === 'light' ? 'theme-light' : 'theme-darker'), { waitUntil: 'load' });
+  await probe.setContent(shell(pass === 'plain' ? '' : pass === 'light' ? 'theme-light' : 'theme-dark theme-darker'), { waitUntil: 'load' });
   resolved[pass] = await probe.evaluate((names) => {
     const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v);
     const box = document.createElement('div');

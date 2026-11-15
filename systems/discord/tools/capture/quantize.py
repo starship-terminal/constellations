@@ -56,6 +56,22 @@ def stitched_sidecar(name, sheet, tile_paths):
     scales = [pixel_scale(p) for p in parts]
     if any(not c for c in clips):
         return None
+    # A stitched sheet is only 'pass' if the tiles provably cover the page:
+    # contiguous indices, contiguous clip ranges, and the last tile reaching
+    # the reported document height. A capture that stopped early, or a lost
+    # tile, is a documented gap — never a shortened 'complete' page.
+    problems = []
+    y = clips[0]['y']
+    if y != 0:
+        problems.append(f"first tile starts at clip.y={y}, not 0")
+    for i, c in enumerate(clips):
+        if abs(c['y'] - y) > 2:
+            problems.append(f"tile {i} clip.y={c['y']} expected {y}")
+        y = c['y'] + c['height']
+    doc_h = next(((((p.get('actual') or {}).get('documentSize') or {}).get('height'))
+                  for p in parts if (p.get('actual') or {}).get('documentSize')), None)
+    if doc_h and abs(y - doc_h) > 8:
+        problems.append(f"tiles cover {y}px of the reported {doc_h}px document")
     meta = dict(parts[0])
     meta['screenshot'] = f'{name}.png'
     meta['capture'] = {'mode': 'stitchedParts', 'scale': (parts[0].get('capture') or {}).get('scale', 'device'),
@@ -67,10 +83,13 @@ def stitched_sidecar(name, sheet, tile_paths):
     expected = {'width': round(clips[0]['width'] * scales[0]),
                 'height': sum(round(c['height'] * s) for c, s in zip(clips, scales))}
     matches = abs(sheet.width - expected['width']) <= 1 and abs(sheet.height - expected['height']) <= 1
-    meta['dimensionCheck'] = {'status': 'pass' if matches else 'fail', 'expected': expected, 'basis': 'stitchedParts'}
+    meta['dimensionCheck'] = {'status': 'pass' if matches and not problems else 'fail', 'expected': expected, 'basis': 'stitchedParts'}
+    if problems:
+        meta['dimensionCheck']['error'] = '; '.join(problems)
     if not matches:
-        meta['dimensionCheck']['error'] = (f"Stitched PNG {sheet.width}x{sheet.height}, "
-                                           f"expected {expected['width']}x{expected['height']} from the part clips")
+        meta['dimensionCheck']['error'] = '; '.join(filter(None, [meta['dimensionCheck'].get('error'),
+            f"Stitched PNG {sheet.width}x{sheet.height}, "
+            f"expected {expected['width']}x{expected['height']} from the part clips"]))
     return meta
 
 
@@ -83,6 +102,12 @@ for f in RAW.glob('*.part*.png'):
 stitched = {}
 for name, ps in parts.items():
     ps = sorted(ps)
+    # Tiles must be a contiguous run from part0; a missing tile mid-capture is
+    # a hole, not a shorter page.
+    missing = [i for i in range(ps[-1][0] + 1) if i not in {i for i, _ in ps}]
+    if missing:
+        print(f'skipped {name}: missing tiles {missing} — a stitched sheet would hide the gap')
+        continue
     ims = [Image.open(f).convert('RGB') for _, f in ps]
     sheet = Image.new('RGB', (ims[0].width, sum(i.height for i in ims)))
     y = 0

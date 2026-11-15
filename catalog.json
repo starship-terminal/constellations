@@ -12334,7 +12334,7 @@
       },
       "capture": {
         "method": "public-web",
-        "source": "discord.com in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and crops from the live DOM. The site declares its token layer in its stylesheets (the :root hue scales plus .theme-light/.theme-darker/.theme-dark/.theme-midnight semantic blocks, ~4,470 resolved custom properties per theme), so the scales are declared values - hsl()/oklab() colours normalised to hex - and the surface roles are measured computed values aliased to the declarations they match. Both themes paint signed out: app surfaces carry .theme-dark.theme-darker while the marketing chrome on them sits under .theme-light.",
+        "source": "discord.com in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and crops from the live DOM. The site declares its token layer in its stylesheets (the :root hue scales plus .theme-light/.theme-darker/.theme-dark/.theme-midnight semantic blocks, ~4,469 resolved custom properties per theme), so the scales are declared values - hsl()/oklab() colours normalised to hex - and the surface roles are measured computed values aliased to the declarations they match. Both themes paint signed out: app surfaces carry .theme-dark.theme-darker while the marketing chrome on them sits under .theme-light.",
         "timestamp": "2026-11-15T12:00:00Z",
         "harness": "Devin",
         "model": "SWE-2 High",
