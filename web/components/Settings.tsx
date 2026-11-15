@@ -10,6 +10,8 @@ import { readSavedPaths, readStoredProvider } from "@/components/storage";
 import { PROVIDER_EVENT } from "@/components/Chat";
 import { setCollapsed, setTheme, usePrefs, type Theme } from "@/components/prefs";
 import { baseUrlOf } from "@/lib/provider-defaults";
+import { agentSnippets } from "@/lib/agent-snippets";
+import { SnippetCopyButton } from "@/components/CopyButton";
 
 export interface SettingsStats {
   repo: string;
@@ -273,31 +275,16 @@ export function Settings({ stats }: { stats: SettingsStats }) {
             Install the ds CLI or point a coding agent at the remote MCP endpoint — both read this
             library over the same /api/mcp transport, read-only.
           </p>
-          <dl className="meta">
-            <dt>CLI</dt>
-            <dd>
-              <code>curl -fsSL {origin || "https://<this-site>"}/api/install.sh | sh</code>
-            </dd>
-            <dt>MCP URL</dt>
-            <dd>
-              <code>{origin || "https://<this-site>"}/api/mcp</code>
-            </dd>
-            <dt>Claude</dt>
-            <dd>
-              <code>claude mcp add --transport http design-systems {origin}/api/mcp</code>
-            </dd>
-            <dt>swe</dt>
-            <dd>
-              <code>swe mcp add design-systems --url={origin}/api/mcp</code>
-            </dd>
-            <dt>Codex</dt>
-            <dd>
-              <code>[mcp_servers.design-systems] url = &quot;{origin}/api/mcp&quot;</code>
-            </dd>
-            <dt>OpenCode</dt>
-            <dd>
-              <code>{`"design-systems": { "type": "remote", "url": "${origin}/api/mcp" }`}</code>
-            </dd>
+          <dl className="meta snippets">
+            {agentSnippets(origin).map((s) => (
+              <div className="snip-row" key={s.label}>
+                <dt>{s.label}</dt>
+                <dd>
+                  <code>{s.text}</code>
+                  <SnippetCopyButton text={s.text} what={`${s.label} setup`} />
+                </dd>
+              </div>
+            ))}
           </dl>
           <p className="pref-note">
             Any harness that takes a remote (streamable-HTTP) MCP URL works. On a machine with the
