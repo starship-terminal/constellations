@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_91 of 149 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_93 of 151 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -160,13 +160,6 @@ Access: signed out (every captured surface is public; the product — scheduler,
 Access: signed out (every captured surface is public; the Dock workspace sits behind auth.dock.us and was never reached; the HubSpot demo form and the auth cards were measured, never filled or submitted)
 - the signed-in workspace entirely: rooms, deal portals, content library, learning paths, settings and billing live behind auth.dock.us and were never reached
 - the login/signup cards and the HubSpot demo form were measured as surfaces, never filled or submitted; their Continue/submit actions were never pressed
-
-## [FlutterFlow](../systems/flutterflow) — `flutterflow`
-Access: signed out (every surface captured is public; the app sits at app.flutterflow.io behind login)
-- app.flutterflow.io and everything behind Sign in / Start building / Open Studio was never opened: the dashboard, editor canvas, AI generation flow, billing and account surfaces are signed-in and out of scope
-- the prompt composer was measured, focused and typed in (then cleared) but never submitted, so the generation flow it starts is missing
-- the enterprise Talk-to-sales form and the Studio application form were never submitted, so their success and painted error states are missing (the error slot is recorded as declared DOM, not painted)
-- plan CTAs lead to a signed-in checkout and were not followed
 
 ## [Buy Me a Coffee](../systems/buymeacoffee) — `buymeacoffee`
 Access: signed out (every captured surface is public; the creator dashboard, shop/membership/extras managers, payouts, analytics and settings sit behind /login, the Stripe checkout behind Support was never opened, and the password step behind Continue-with-email was never submitted)
@@ -512,6 +505,24 @@ Access: read-only (the marketing site, the signed-out app.getfernand.com/auth/lo
 Access: signed out (every captured surface is public; the editor and every post-login surface - files, boards, Dev Mode in a file, Make projects, community profiles and publish flows, admin - is an authenticated boundary never reached; the /login, /signup, /contact and /make forms were measured and typed into then cleared, never submitted; every CTA, nav item and community card was measured, never followed; the consent layer was hidden, never answered; Cloudflare challenged the automation on /dev-mode/ and /customers/ in the first pass and retries in fresh sessions succeeded - no challenge was answered by hand; the dark theme is declared only - a complete :root[data-theme="dark"] token layer the stylesheets ship but no public page painted while captured)
 - the editor and every post-login surface (files, the canvas, Dev Mode in a file, Make projects, community profiles and publish flows, account, admin) sits behind an account - an authenticated boundary never reached; /login and /signup were measured as forms, never submitted, and Continue with Google / Use single sign-on were never followed
 - submitted states: the /contact sales form, /make prompt, blog newsletter field, community search and the login/signup fields were typed into then cleared, never sent - validation, error, loading and success states are absent rather than measured
+
+## [FlowMapp](../systems/flowmapp) — `flowmapp`
+Access: read-only (the www.flowmapp.com marketing pages, the signed-out app.flowmapp.com/signin, /signup and /restore forms, and the public /share/projects/215285 sitemap and user-flow demo viewers are fully public; every post-login app surface - the sitemap/user-flow editors, wireframes, content, estimation, dashboards, billing - is an authenticated boundary never reached; the auth and contact forms were measured and typed into then cleared, never submitted; every link and CTA was measured, never followed; no consent banner was observed on either host)
+- every post-login app surface (the sitemap/user-flow editors, wireframes, content planner, estimation and invoicing, project dashboard, team settings, billing) needs an account - an authenticated boundary never reached
+- the /signin, /signup, /restore and /contact-us forms were measured and typed into then cleared, never submitted - validation, error, loading and success states are absent rather than measured
+- the mobile 390px pass on app.flowmapp.com/signin hit an anti-bot challenge; the desktop pass captured it - recorded as a gap, not bypassed
+
+## [Flask](../systems/flask) — `flask`
+Access: signed out (every captured surface is public; the product workspace behind /home and every post-login surface is an authenticated boundary never reached; /login was measured at rest, the Google and Email buttons never followed; the pricing billing switch was toggled for the monthly shot then toggled back; the FAQ accordions and the home demo's Version chip were opened locally; every link and CTA was measured, never followed; the public site paints dark only and no theme switcher or light theme was observed)
+- the product workspace behind /home and every post-login surface sits behind an account - an authenticated boundary never reached; Sign Up and Open Flask link to /home and were measured, never followed; /login was captured at rest, its Google and Email buttons never followed
+- submitted states: the login form was never submitted - validation, error, loading and success states are absent rather than measured
+
+## [FlutterFlow](../systems/flutterflow) — `flutterflow`
+Access: signed out (every surface captured is public; the app sits at app.flutterflow.io behind login)
+- app.flutterflow.io and everything behind Sign in / Start building / Open Studio was never opened: the dashboard, editor canvas, AI generation flow, billing and account surfaces are signed-in and out of scope
+- the prompt composer was measured, focused and typed in (then cleared) but never submitted, so the generation flow it starts is missing
+- the enterprise Talk-to-sales form and the Studio application form were never submitted, so their success and painted error states are missing (the error slot is recorded as declared DOM, not painted)
+- plan CTAs lead to a signed-in checkout and were not followed
 
 ## Gate noted in access text only
 

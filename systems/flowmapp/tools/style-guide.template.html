@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FlowMapp style guide</title>
+<meta name="description" content="FlowMapp design tokens and the public marketing and app surfaces' components, rendered from tokens.json with the declared and measured values.">
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  --sg-sans: "Inter", ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-serif: "Inter", ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+.app {
+/*APP*/
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text-ink, #000); background: var(--background-page, #f6f8fa); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 700 38px/1.2 var(--sg-serif); margin: 0 0 4px; letter-spacing: -0.02em; }
+h2.sh { font: 600 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--text-ink, #000); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--alice-blue, #e8edf2); }
+.lead { max-width: 62ch; color: var(--text-ink, #000); opacity: .8; }
+.note { font-size: 13px; color: var(--text-ink, #000); opacity: .65; max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 600 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--text-ink, #000); opacity: .6; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+/* A non-light strip's values only read on its own field. */
+.pal.app { background: var(--background-page, #fff); color: var(--text-ink, #1f1f1f); padding: 12px; border-radius: 10px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--alice-blue, #e8edf2); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--text-ink, #000); opacity: .65; }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--alice-blue, #e8edf2); background: #fff; font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--text-ink, #000); opacity: .65; }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--alice-blue, #e8edf2); overflow: hidden; background: var(--white, #fff); }
+.navbar { display: flex; align-items: center; gap: 22px; height: var(--component-topbar-height, 82px); padding: 0 12px 0 22px; font-size: 16px; font-weight: 600; color: var(--text-ink, #000); background: var(--white, #fff); }
+.navbar .wm { font-weight: 700; font-size: 20px; letter-spacing: -0.02em; }
+.navbar .sp { flex: 1; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-nav-cta-height, 38px); padding: 0 18px; font-size: var(--font-size-body, 16px); font-weight: 600; border-radius: var(--radius-button, 12px); border: 1px solid transparent; }
+.btn.primary { background: var(--action-nav-fill, #000); color: var(--action-nav-ink, #fff); }
+/* The big marketing pills are dodger-blue inside a translucent halo of the
+   same hue at 20% — the site's signature ring. */
+.btn.accent { background: var(--action-cta-fill, #0080ff); color: var(--action-cta-ink, #fff); border-radius: var(--radius-pill, 1600px); height: var(--component-plan-cta-height, 76px); padding: 0 34px; font-size: var(--font-size-plan-cta, 24px); font-weight: 700; box-shadow: 0 0 0 12px var(--action-cta-ring, rgba(0,128,255,.2)), rgba(0,128,255,.34) 0 8px 10px; }
+.app .btn.primary { background: var(--action-primary-fill, #0050ff); color: var(--action-primary-ink, #fff); border-radius: var(--radius-field, 16px); }
+.app .btn.disabled { background: var(--action-primary-fill-disabled, #9fb8f9); color: var(--action-primary-ink, #fff); border-radius: var(--radius-field, 16px); }
+.btn.ghost { border-color: var(--alice-blue, #e8edf2); color: var(--text-ink, #000); }
+.btn.small { height: var(--component-nav-cta-height, 38px); font-size: 14px; }
+.hero { color: var(--text-ink, #000); padding: 64px 40px; font: var(--font-weight-bold, 700) var(--font-size-hero, 72px)/var(--font-line-height-hero, 1) var(--sg-serif); letter-spacing: -0.02em; text-align: center; background: linear-gradient(180deg, #fff, var(--background-page, #f6f8fa)); }
+.hero small { display: block; font: 500 var(--font-size-eyebrow, 12px)/1.4 var(--sg-sans); letter-spacing: .02em; color: var(--text-ink, #000); opacity: .8; margin: 0 0 18px; }
+.tag { display: inline-block; padding: 4px 14px; border-radius: var(--radius-pill, 1600px); background: var(--white, #fff); border: 1px solid var(--alice-blue, #e8edf2); font-size: var(--font-size-eyebrow, 12px); font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--text-muted, #222); }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
+.tile { border: 1px solid var(--alice-blue, #e8edf2); padding: 24px; font-size: 13px; background: var(--surface-card, #fff); border-radius: var(--radius-card, 24px); }
+.tile .img { height: 140px; background: var(--bg, #f6f8fa); border: 1px solid var(--alice-blue, #e8edf2); border-radius: 16px; margin-bottom: 10px; display: flex; align-items: flex-end; padding: 10px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--service-grey, #8c9baa); }
+.tile b { display: block; font: 400 var(--font-size-plan-name, 36px)/1.1 var(--sg-serif); margin-bottom: 4px; color: var(--text-ink, #000); }
+.tile .sub { opacity: .65; font-size: 12px; color: var(--dark-grey, #5f6a75); }
+.tile.dark { background: var(--surface-card-featured, #000); color: var(--white, #fff); }
+.tile.dark b, .tile.dark .sub { color: var(--white, #fff); }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--alice-blue, #e8edf2); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--alice-blue, #e8edf2); }
+.tr .ts { font-family: var(--sg-serif); }
+.tr .tv { font-size: 12px; color: var(--text-ink, #000); opacity: .65; font-family: var(--sg-mono); }
+.field { width: var(--component-app-field-width, 374px); height: var(--component-app-field-height, 56px); border: 1px solid var(--surface-field-bg, #f5f5f5); border-radius: var(--radius-field, 16px); background: var(--surface-field-bg, #f5f5f5); color: var(--text-muted, #999); padding: 0 16px; font-size: 16px; }
+.sharecard { display: inline-block; width: var(--component-app-share-card-width, 95px); min-height: var(--component-app-share-card-height, 104px); border: 2px solid var(--border-share-card-border, #1f1f1f); border-radius: var(--radius-share-card, 16px); background: var(--surface-share-card, #fff); padding: 8px; font-size: 12px; font-weight: 600; }
+.toast { display: inline-block; border-radius: var(--radius-popup, 14px); background: var(--surface-popup, rgba(0,0,0,.56)); color: #fff; padding: 12px 18px; font-size: 14px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>FlowMapp style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">FlowMapp, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the marketing site's flat legacy palette (<code>--bg</code>/<code>--black</code>/<code>--white</code>/<code>--dodger-blue</code>/<code>--primary-blue</code>/<code>--alice-blue</code>/<code>--service-grey</code>/<code>--dark-grey</code>/<code>--yellow-green</code>/<code>--pale-violet-red</code>) plus the Webflow <code>_apps---</code> variable layer (typography, the 20px radius, the shadcn-style colours, the chart ramp — including the declared-but-unpainted <code>-dark</code> twins), the app's own <code>--primary-*</code>/<code>--secondary-*</code>/<code>--neutral-gray-*</code> ramp, self-hosted Inter (400–700), the measured 12–96px type ramp, the 8px→24px→1600px radius ladder, and the measured component sizes. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from www.flowmapp.com and app.flowmapp.com, signed out, in headless Chromium. Everything post-login is a documented boundary; the sign-in, sign-up, restore and contact forms were measured and typed into then cleared, never submitted; the published demo project at /share/projects/215285 is the product's own read-only surface. Inter is a served face and is not loaded here: samples fall back to system sans. No dark theme exists signed out — the <code>_apps---*-dark</code> declarations are Webflow-template evidence nothing switches to.</p>
+
+  <h2 class="sh">The chrome</h2>
+  <p class="lead">The header pairs the wordmark with Try Demo Project, the Features flyout, Pricing/Help/Blog links, a plain Log in and the black 'Try for free' pill. The hero runs a 72px/700 masthead over the 'Over 400,000 users' trust line; the signature CTA is a dodger-blue 1600px-radius pill inside its translucent halo.</p>
+  <div class="mock" style="padding:0">
+    <div class="navbar"><span class="wm">Flowmapp</span><span style="font-weight:400;font-size:14px">Try Demo Project</span><span>Features</span><span>Use cases</span><span>Pricing</span><span class="sp"></span><span style="font-weight:400">Log in</span><span class="btn small primary">Try for free</span></div>
+    <div class="hero"><small>Over 400,000 users</small>Visual platform for<br>planning UX and<br>pitching web design<br><br><span class="btn accent">Start planning</span></div>
+  </div>
+
+  <h2 class="sh">Pricing cards</h2>
+  <p class="lead">The billing switcher is a white pill pair at 25.6px (the annual side carries the '45% off' badge); plan cards are white 24px-radius panels, and the featured Team card inverts to black — its button still paints the dodger-blue pill.</p>
+  <div class="mock" style="padding:20px">
+    <div class="grid">
+      <div class="tile"><b>Free</b><span class="sub">$0 / forever — freelancers starting out.</span></div>
+      <div class="tile"><b>Pro</b><span class="sub">$15 / $8.25 annual — standalone designers.</span></div>
+      <div class="tile dark"><b>Team</b><span class="sub">$35 / $19.25 annual — the inverted featured card.</span></div>
+      <div class="tile"><b>Agency</b><span class="sub">$99 / $54.45 annual — unlimited workspaces.</span></div>
+    </div>
+  </div>
+
+  <h2 class="sh">The app surface</h2>
+  <p class="lead">app.flowmapp.com declares its own ramp (<code>--primary-basic-blue</code> #0050ff, the <code>--neutral-gray-*</code> greys, the <code>--secondary-*</code> hue/alpha families); the signed-out auth cards and the public share viewer paint it. The sign-in submit sits disabled on #9fb8f9 until both fields validate, then paints the primary blue — both fills were measured, never submitted. The swatches in this scope carry the app set.</p>
+  <div class="mock app" style="padding:24px;max-width:460px">
+    <b style="font-size:20px;font-weight:500">Log In</b>
+    <p class="sub" style="color:var(--text-muted,#999);font-size:14px;margin:4px 0 16px">Log in to your FlowMapp workspace</p>
+    <input class="field" placeholder="Email"><br><br>
+    <input class="field" placeholder="Password"><br><br>
+    <span class="btn disabled" style="width:374px;height:56px;border-radius:var(--radius-field,16px)">Log In</span>
+  </div>
+  <div class="mock app" style="padding:24px;margin-top:12px">
+    <span class="sharecard">Press Room</span>
+    <span class="sharecard">Home</span>
+    <div style="margin-top:16px"><span class="toast">👋 Hi, Log In or Sign Up to start planning amazing websites!</span></div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The marketing palette is a two-layer declaration: the flat legacy names the components are styled with, and the Webflow <code>_apps</code> layer (colours, the chart ramp, sidebar and typography vars — the <code>-dark</code> twins are declared but never painted). The app re-declares nothing: it ships its own <code>--primary-*</code>/<code>--secondary-*</code>/<code>--neutral-*</code> ramp. Measured roles alias the declared values they match.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Radius and motion</h2>
+  <p class="lead">Radii climb 8px (nav links, flyout rows) → 12px (header and share-viewer buttons) → 16px (auth fields, share cards) → 24px (pricing cards) → the 1600px pill that makes every CTA fully round; the Webflow layer declares the 20px <code>--_apps---sizes--radius</code>. The control transition is the measured 0.3s on nav links and buttons.</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">Inter carries everything: display headings at 700 (96px feature pages, 72px home mastheads), nav links and buttons at 600, the trust eyebrow and app headings at 500, body and plan rows at 400 — the marketing sizes are measured (the sheets declare no size vars), and the app loads a narrower weight band from Google Fonts. Samples fall back to system sans.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared palette variables from the live stylesheets and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, open, focused, filled and enabled states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = /*TOKENS*/null;
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  // The marketing vocabulary is a flat namespace at the set roots (black,
+  // dodger.blue, apps.colors.*, …): collect the colour leaves wherever they
+  // live, grouped by first path segment.
+  const groups = {};
+  for (const [n, t] of flat(TOK.core, '')) {
+    if (t.t !== 'color' || n.startsWith('component')) continue;
+    (groups[n.split('.')[0]] ??= []).push([n, t]);
+  }
+  for (const g of Object.keys(groups).sort()) {
+    h += `<div class="pal-h">${esc(g)} (marketing vocabulary — the apps.* branch is the declared Webflow layer)</div><div class="pal">`;
+    for (const [n, t] of groups[g]) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  for (const [setname, label, scope] of [['light', 'light roles', ''], ['app', 'app vocabulary + roles', ' app']]) {
+    const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color');
+    if (!roles.length) continue;
+    // A non-core set's custom properties only resolve inside its own scope.
+    h += `<div class="pal-h">${label}</div><div class="pal${scope}">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.duration || {}, 'duration.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.easing || {}, 'easing.')) m += `<div><b>${esc(n)}</b> <span>cubic-bezier(${esc(t.v.join ? t.v.join(', ') : t.v)})</span></div>`;
+  for (const [n, t] of flat(TOK.core.motion || {}, 'motion.')) m += `<div><b>${esc(n)}</b> <span>${esc(String(t.v).slice(0, 90))}…</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  for (const setname of ['light', 'app']) {
+    for (const [n, t] of flat((TOK[setname] || {}).shadow || {}, `${setname}.shadow.`)) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  }
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+const resolveVal = (v, depth) => {
+  if (depth > 6 || typeof v !== 'string') return v;
+  const m = v.match(/^\{(.+)\}$/);
+  if (!m) return v;
+  // Aliases are set-relative: the palette scales live under TOK.core, surface
+  // roles under TOK.light / TOK.app. Try each root.
+  for (const root of [TOK.core, TOK.light, TOK.app, TOK]) {
+    let node = root;
+    for (const k of m[1].split('.')) node = node && node[k];
+    if (node && node.v !== undefined) return resolveVal(node.v, (depth || 0) + 1);
+  }
+  return v;
+};
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(resolveVal(t.v));
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.app || {}).fs || {}, 'app.fs.')) {
+    const px = parseFloat(resolveVal(t.v));
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">app ${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — FlowMapp</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>
