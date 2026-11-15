@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 145,
-    "system_domains": 137,
-    "matched_domains": 108,
-    "missing_domains": 325,
+    "system_packages": 148,
+    "system_domains": 140,
+    "matched_domains": 111,
+    "missing_domains": 322,
     "system_domains_absent_from_catalog": 29
   },
   "matched": {
@@ -1069,6 +1069,23 @@
         }
       ]
     },
+    "digg.com": {
+      "catalog": [
+        {
+          "name": "Digg",
+          "domain": "digg.com",
+          "id": 1431
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "digg",
+          "name": "Digg",
+          "url": "https://digg.com",
+          "name_match": true
+        }
+      ]
+    },
     "dock.us": {
       "catalog": [
         {
@@ -1681,6 +1698,23 @@
         }
       ]
     },
+    "feedhive.com": {
+      "catalog": [
+        {
+          "name": "FeedHive",
+          "domain": "feedhive.com",
+          "id": 476
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "feedhive",
+          "name": "FeedHive",
+          "url": "https://www.feedhive.com",
+          "name_match": true
+        }
+      ]
+    },
     "figma.com": {
       "catalog": [
         {
@@ -1695,6 +1729,23 @@
           "name": "Figma",
           "url": "https://www.figma.com",
           "name_match": true
+        }
+      ]
+    },
+    "getfernand.com": {
+      "catalog": [
+        {
+          "name": "Fernand",
+          "domain": "getfernand.com",
+          "id": 891
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "getfernand",
+          "name": "Fernand",
+          "url": "https://getfernand.com",
+          "name_match": false
         }
       ]
     },
@@ -2043,13 +2094,6 @@
         "id": 186
       }
     ],
-    "digg.com": [
-      {
-        "name": "Digg",
-        "domain": "digg.com",
-        "id": 1431
-      }
-    ],
     "dinnerladies.com.au": [
       {
         "name": "The Dinner Ladies",
@@ -2083,13 +2127,6 @@
         "name": "Equals",
         "domain": "equals.app",
         "id": 289
-      }
-    ],
-    "feedhive.com": [
-      {
-        "name": "FeedHive",
-        "domain": "feedhive.com",
-        "id": 476
       }
     ],
     "fibery.io": [
@@ -2202,13 +2239,6 @@
         "name": "Google Gemini",
         "domain": "gemini.google",
         "id": 907
-      }
-    ],
-    "getfernand.com": [
-      {
-        "name": "Fernand",
-        "domain": "getfernand.com",
-        "id": 891
       }
     ],
     "getmatter.com": [

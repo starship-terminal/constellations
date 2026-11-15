@@ -1779,8 +1779,8 @@
     891
    ],
    "description": "The fast, calm customer support platform for SaaS",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/getfernand",
    "notes": "",
    "batch": 6
   },
