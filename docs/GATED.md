@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_104 of 162 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_106 of 164 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -593,6 +593,11 @@ Access: read-only (every captured surface is public: the consumer marketplace, t
 Access: signed out (every captured surface is public; the app console and every post-login surface - API keys, transcription playground, usage, billing - is an authenticated boundary never reached; the /demo-request, pricing-calculator, login and signup fields were measured and typed into then cleared, never submitted; every CTA, SSO button, nav item and link was measured, never followed; the mega-menu opens by hover intent or keyboard, the pricing-mode toggle and FAQ accordions are local UI toggles, and the docs dark theme is the Mintlify site's own preference)
 - the app console and every post-login surface (API keys, transcription playground, usage, billing, settings) sits behind an account - an authenticated boundary never reached; app.gladia.io / and /signup were measured as forms, never submitted, and Continue-with SSO buttons were never followed
 - submitted states: the /demo-request form, the pricing-calculator fields and the auth cards were typed into then cleared, never sent - validation, error, loading and success states are absent rather than measured
+
+## [Frame.io](../systems/frame) — `frame`
+Access: signed out (every captured surface is public; the app and every post-login surface - projects, the review player, Camera to Cloud uploads, Drive and Transfer workspaces, admin, billing - is an authenticated boundary never reached; the accounts.frame.io/welcome sign-in and the /contact/form fields were measured and typed into then cleared, never submitted; every CTA, nav item, menu item and card was measured, never followed; no consent layer appeared for the en-US signed-out visitor and the cookie-preferences control was never pressed; the site ships no theme switch - every frame.io page paints the one dark theme, and accounts.frame.io/welcome is the lone light surface on a different stack)
+- the app and every post-login surface (projects, the review-and-approval player, Camera to Cloud uploads, Drive and Transfer workspaces, account, admin, billing) sits behind an account - an authenticated boundary never reached; accounts.frame.io/welcome was measured as a form, never submitted
+- submitted states: the /contact/form fields and the sign-in e-mail were typed into then cleared, never sent - validation, error, loading and success states are absent rather than measured
 
 ## Gate noted in access text only
 

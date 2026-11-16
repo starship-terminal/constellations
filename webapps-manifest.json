@@ -1944,8 +1944,8 @@
     1142
    ],
    "description": "One platform for all your creative work",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/frame",
    "notes": "",
    "batch": 7
   },

@@ -1,0 +1,497 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Frame.io style guide</title>
+<meta name="description" content="Frame.io design tokens and the public marketing surfaces' components, rendered from tokens.json with the declared and measured values.">
+<style>
+:root {
+  --font-family-gothic: "FrameGothic","FrameGothic Fallback";
+  --font-family-machina: "NeueMachinaInktrap","NeueMachinaInktrap Fallback";
+  --font-family-inter: "Inter","Inter Fallback";
+  --font-size-base: 16px;
+  --font-size-measured-hero: 80px;
+  --font-size-measured-sectionH2: 48px;
+  --font-size-measured-navLink: 14px;
+  --font-size-measured-button: 14px;
+  --font-size-measured-body: var(--font-size-base);
+  --font-size-measured-priceH1: 80px;
+  --font-weight-heroWeight: 600;
+  --font-weight-buttonWeight: 600;
+  --font-tracking-hero: -3.6px;
+  --font-tracking-navLink: 0.14px;
+  --color-accent: #f5f5f8;
+  --color-accentDefault: #f5f5f8;
+  --color-alpha-black-10: rgba(0, 0, 0, 0.1);
+  --color-alpha-black-100: #000000;
+  --color-alpha-black-20: rgba(0, 0, 0, 0.2);
+  --color-alpha-black-25: rgba(0, 0, 0, 0.25);
+  --color-alpha-black-30: rgba(0, 0, 0, 0.3);
+  --color-alpha-black-40: rgba(0, 0, 0, 0.4);
+  --color-alpha-black-5: rgba(0, 0, 0, 0.05);
+  --color-alpha-black-50: rgba(0, 0, 0, 0.5);
+  --color-alpha-black-60: rgba(0, 0, 0, 0.6);
+  --color-alpha-black-70: rgba(0, 0, 0, 0.7);
+  --color-alpha-black-80: rgba(0, 0, 0, 0.8);
+  --color-alpha-black-90: rgba(0, 0, 0, 0.9);
+  --color-alpha-cinder-50: rgba(13, 13, 24, 0.5);
+  --color-alpha-dark-10: rgba(13, 13, 24, 0.1);
+  --color-alpha-dark-20: rgba(13, 13, 24, 0.2);
+  --color-alpha-dark-30: rgba(13, 13, 24, 0.3);
+  --color-alpha-dark-40: rgba(13, 13, 24, 0.4);
+  --color-alpha-dark-5: rgba(13, 13, 24, 0.05);
+  --color-alpha-dark-50: rgba(13, 13, 24, 0.5);
+  --color-alpha-dark-60: rgba(13, 13, 24, 0.6);
+  --color-alpha-dark-70: rgba(13, 13, 24, 0.7);
+  --color-alpha-dark-80: rgba(13, 13, 24, 0.8);
+  --color-alpha-dark-90: rgba(13, 13, 24, 0.9);
+  --color-alpha-grey-30: rgba(54, 56, 74, 0.2);
+  --color-alpha-grey-80: rgba(46, 47, 64, 0.8);
+  --color-alpha-hawkes-20: rgba(209, 209, 251, 0.2);
+  --color-alpha-hawkes-60: rgba(209, 209, 251, 0.6);
+  --color-alpha-light-10: rgba(189, 189, 244, 0.1);
+  --color-alpha-light-15: rgba(209, 209, 251, 0.15);
+  --color-alpha-light-20: rgba(209, 209, 251, 0.2);
+  --color-alpha-light-30: rgba(220, 220, 255, 0.3);
+  --color-alpha-light-40: rgba(228, 228, 255, 0.4);
+  --color-alpha-light-5: rgba(157, 157, 255, 0.05);
+  --color-alpha-light-50: rgba(234, 234, 255, 0.5);
+  --color-alpha-light-60: rgba(234, 234, 255, 0.6);
+  --color-alpha-light-70: rgba(233, 233, 255, 0.7);
+  --color-alpha-light-80: rgba(240, 240, 255, 0.8);
+  --color-alpha-light-90: rgba(241, 244, 255, 0.9);
+  --color-alpha-perano-10: rgba(189, 189, 244, 0.1);
+  --color-brand-cobalt-default: #5b53ff;
+  --color-brand-cobalt-20: rgba(91, 83, 255, 0.2);
+  --color-brand-cobalt-dark: #5237f9;
+  --color-brand-cobalt-light: #6369ff;
+  --color-brand-coral-default: #fc856d;
+  --color-brand-coral-dark: #e36b52;
+  --color-brand-coral-light: #fca493;
+  --color-brand-electric-default: #47ebeb;
+  --color-brand-electric-dark: #00b8b9;
+  --color-brand-electric-light: #87ffff;
+  --color-brand-iris-default: #8952fd;
+  --color-brand-iris-dark: #632cda;
+  --color-brand-iris-light: #9f75f9;
+  --color-grey-00: #000000;
+  --color-grey-05: #0d0d18;
+  --color-grey-08: #12131d;
+  --color-grey-10: #161722;
+  --color-grey-100: #fcfcfc;
+  --color-grey-12: #1d1f2c;
+  --color-grey-15: #252736;
+  --color-grey-20: #2e2f40;
+  --color-grey-30: #36384a;
+  --color-grey-40: #4f5167;
+  --color-grey-50: #6a6b83;
+  --color-grey-60: #81859f;
+  --color-grey-70: #a3a4bf;
+  --color-grey-80: #c1c2d9;
+  --color-grey-88: #d5d6ea;
+  --color-grey-90: #dedfee;
+  --color-grey-93: #e8e9f3;
+  --color-grey-95: #f0f0f7;
+  --color-grey-97: #f5f5f8;
+  --color-turquoiseTriumph: #6199f6;
+  --overlay-dim: rgba(0, 0, 0, 0.2);
+  --overlay-dim40: rgba(0, 0, 0, 0.4);
+  --overlay-dim60: rgba(0, 0, 0, 0.6);
+  --overlay-dim80: rgba(0, 0, 0, 0.8);
+  --overlay-heavy: linear-gradient(0deg,rgb(0 0 0/20%),rgb(0 0 0/20%)),linear-gradient(180deg,rgb(0 0 0/0%) 50%,#000000),linear-gradient(7.96deg,#000000 14.71%,rgb(0 0 0/0%) 78.17%);
+  --overlay-light: linear-gradient(0deg,rgb(0 0 0/20%),rgb(0 0 0/20%)),linear-gradient(18.61deg,rgb(0 0 0/50.4%) 21.85%,rgb(0 0 0/0%) 73.55%);
+  --overlay-medium: linear-gradient(0deg,rgb(0 0 0/20%),rgb(0 0 0/20%)),linear-gradient(18.61deg,rgb(0 0 0/67.2%) 21.85%,rgb(0 0 0/0%) 73.55%);
+  --overlay-none: none;
+  --spacing-0: 0px;
+  --spacing-10: 10px;
+  --spacing-12: 12px;
+  --spacing-124: 124px;
+  --spacing-16: 16px;
+  --spacing-160: 160px;
+  --spacing-18: 18px;
+  --spacing-192: 192px;
+  --spacing-20: 20px;
+  --spacing-24: 24px;
+  --spacing-240: 240px;
+  --spacing-28: 28px;
+  --spacing-32: 32px;
+  --spacing-320: 320px;
+  --spacing-4: 4px;
+  --spacing-40: 40px;
+  --spacing-48: 48px;
+  --spacing-480: 480px;
+  --spacing-54: 54px;
+  --spacing-6: 6px;
+  --spacing-64: 64px;
+  --spacing-72: 72px;
+  --spacing-8: 8px;
+  --spacing-84: 84px;
+  --spacing-96: 96px;
+  --radius-10: 10px;
+  --radius-12: 12px;
+  --radius-16: 16px;
+  --radius-18: 18px;
+  --radius-2: 2px;
+  --radius-20: 20px;
+  --radius-40: 40px;
+  --radius-5: 5px;
+  --radius-6: 6px;
+  --radius-8: 8px;
+  --radius-large: 40px;
+  --radius-cta: 100px;
+  --radius-navLink: 0px;
+  --radius-card: var(--radius-10);
+  --radius-field: 0px;
+  --radius-panel: 0px;
+  --radius-menuBtn: 0px;
+  --layout-grid-columns: 12;
+  --layout-grid-maxContentWidth: 1080px;
+  --layout-maxWidth: 1080px;
+  --layout-navHeight: 80px;
+  --layout-navHeightPadded: 92px;
+  --motion-duration-150ms: 150ms;
+  --motion-duration-200ms: 200ms;
+  --motion-duration-300ms: 300ms;
+  --motion-duration-400ms: 400ms;
+  --motion-duration-500ms: 500ms;
+  --motion-duration-600ms: 600ms;
+  --motion-duration-60ms: 60ms;
+  --motion-duration-default-glow-transition-in-delay: 0ms;
+  --motion-duration-0-2ms: 0.2ms;
+  --motion-duration-duration-60ms: 60ms;
+  --motion-duration-100ms: 100ms;
+  --motion-duration-duration-150ms: 150ms;
+  --motion-duration-duration-200ms: 200ms;
+  --motion-duration-duration-300ms: 300ms;
+  --motion-duration-duration-400ms: 400ms;
+  --motion-duration-duration-500ms: 500ms;
+  --motion-duration-550ms: 550ms;
+  --motion-duration-duration-600ms: 600ms;
+  --motion-easing-basicButter: cubic-bezier(0.42, 0.0, 0.28, 0.99);
+  --motion-easing-default: cubic-bezier(0.25, 0.1, 0.25, 1.0);
+  --motion-easing-embellishment: cubic-bezier(0.42, 0.0, 0.0, 1.0);
+  --motion-easing-in: cubic-bezier(0.49, 0.025, 0.65, 0.65);
+  --motion-easing-inOut: cubic-bezier(0.49, 0.025, 0.49, 1.0);
+  --motion-easing-microBounce: cubic-bezier(0.0, 0.44, 0.6, 1.0);
+  --motion-easing-miniBounce: cubic-bezier(0.17, 0.89, 0.47, 1.13);
+  --motion-easing-out: cubic-bezier(0.28, 0.44, 0.49, 1.0);
+  --motion-easing-ease: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --motion-easing-ease-basic-butter: cubic-bezier(0.42, 0, 0.28, 0.99);
+  --motion-easing-ease-default: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --motion-easing-ease-embellishment: cubic-bezier(0.42, 0, 0, 1);
+  --motion-easing-ease-in: cubic-bezier(0.49, 0.025, 0.65, 0.65);
+  --motion-easing-ease-in-out: cubic-bezier(0.49, 0.025, 0.49, 1);
+  --motion-easing-ease-in-out-2: cubic-bezier(0.42, 0, 0.58, 1);
+  --motion-easing-ease-micro-bounce: cubic-bezier(0, 0.44, 0.6, 1);
+  --motion-easing-ease-mini-bounce: cubic-bezier(0.17, 0.89, 0.47, 1.13);
+  --motion-easing-ease-out: cubic-bezier(0.28, 0.44, 0.49, 1);
+  --motion-easing-ease-out-2: cubic-bezier(0, 0, 0.58, 1);
+  --motion-easing-linear: cubic-bezier(0, 0, 1, 1);
+  --motion-control: color 0.3s cubic-bezier(0, 0.44, 0.6, 1);
+  --motion-transition-color-600ms-ease-out: color var(--motion-duration-duration-600ms) var(--motion-easing-ease-out) 0ms;
+  --motion-transition-transform-600ms-ease-basic-butter: transform var(--motion-duration-duration-600ms) var(--motion-easing-ease-basic-butter) 0ms;
+  --motion-transition-color-300ms-ease-out: color var(--motion-duration-duration-300ms) var(--motion-easing-ease-out) 0ms;
+  --motion-transition-opacity-400ms-ease: opacity var(--motion-duration-duration-400ms) var(--motion-easing-ease) 0ms;
+  --motion-transition-transform-500ms-ease-basic-butter: transform var(--motion-duration-duration-500ms) var(--motion-easing-ease-basic-butter) 0ms;
+  --motion-transition-height-500ms-ease-basic-butter: height var(--motion-duration-duration-500ms) var(--motion-easing-ease-basic-butter) 0ms;
+  --motion-transition-background-300ms-ease-micro-bounce: background var(--motion-duration-duration-300ms) var(--motion-easing-ease-micro-bounce) 0ms;
+  --motion-transition-background-color-500ms-ease-micro-bounce: background-color var(--motion-duration-duration-500ms) var(--motion-easing-ease-micro-bounce) 0ms;
+  --motion-transition-border-color-500ms-ease-micro-bounce: border-color var(--motion-duration-duration-500ms) var(--motion-easing-ease-micro-bounce) 0ms;
+  --motion-transition-transform-300ms-ease-basic-butter: transform var(--motion-duration-duration-300ms) var(--motion-easing-ease-basic-butter) 0ms;
+  --motion-transition-color-300ms-ease-micro-bounce: color var(--motion-duration-duration-300ms) var(--motion-easing-ease-micro-bounce) 0ms;
+  --motion-transition-background-color-150ms-ease-default: background-color var(--motion-duration-duration-150ms) var(--motion-easing-ease-default) 0ms;
+  --motion-transition-color-150ms-ease-default: color var(--motion-duration-duration-150ms) var(--motion-easing-ease-default) 0ms;
+  --motion-transition-opacity-200ms-ease-default: opacity var(--motion-duration-duration-200ms) var(--motion-easing-ease-default) 0ms;
+  --motion-transition-opacity-200ms-ease-out: opacity var(--motion-duration-duration-200ms) var(--motion-easing-ease-out) 0ms;
+  --motion-transition-visibility-200ms-ease: visibility var(--motion-duration-duration-200ms) var(--motion-easing-ease) 0ms;
+  --motion-transition-box-shadow-300ms-ease-micro-bounce: box-shadow var(--motion-duration-duration-300ms) var(--motion-easing-ease-micro-bounce) 0ms;
+  --motion-transition-transform-400ms-ease-micro-bounce: transform var(--motion-duration-duration-400ms) var(--motion-easing-ease-micro-bounce) 0ms;
+  --motion-transition-opacity-300ms-ease-micro-bounce: opacity var(--motion-duration-duration-300ms) var(--motion-easing-ease-micro-bounce) 0ms;
+  --motion-transition-all-200ms-ease-out-2: all var(--motion-duration-duration-200ms) var(--motion-easing-ease-out-2) 0ms;
+  --motion-transition-opacity-200ms-ease: opacity var(--motion-duration-duration-200ms) var(--motion-easing-ease) 0ms;
+  --motion-transition-border-radius-200ms-ease: border-radius var(--motion-duration-duration-200ms) var(--motion-easing-ease) 0ms;
+  --motion-transition-color-200ms-ease: color var(--motion-duration-duration-200ms) var(--motion-easing-ease) 0ms;
+  --motion-transition-opacity-300ms-ease-default: opacity var(--motion-duration-duration-300ms) var(--motion-easing-ease-default) 0ms;
+  --motion-transition-transform-200ms-ease: transform var(--motion-duration-duration-200ms) var(--motion-easing-ease) 0ms;
+  --motion-transition-all-500ms-ease-basic-butter: all var(--motion-duration-duration-500ms) var(--motion-easing-ease-basic-butter) 0ms;
+  --motion-transition-height-300ms-ease-basic-butter: height var(--motion-duration-duration-300ms) var(--motion-easing-ease-basic-butter) 0ms;
+  --motion-transition-background-color-200ms-ease-default: background-color var(--motion-duration-duration-200ms) var(--motion-easing-ease-default) 0ms;
+  --motion-transition-color-200ms-ease-default: color var(--motion-duration-duration-200ms) var(--motion-easing-ease-default) 0ms;
+  --motion-transition-opacity-300ms-ease-basic-butter: opacity var(--motion-duration-duration-300ms) var(--motion-easing-ease-basic-butter) 0ms;
+  --motion-transition-opacity-600ms-ease-out-2: opacity var(--motion-duration-duration-600ms) var(--motion-easing-ease-out-2) 0ms;
+  --motion-transition-transform-200ms-ease-default: transform var(--motion-duration-duration-200ms) var(--motion-easing-ease-default) 0ms;
+  --motion-transition-transform-500ms-ease-mini-bounce: transform var(--motion-duration-duration-500ms) var(--motion-easing-ease-mini-bounce) 0ms;
+  --motion-transition-visibility-0ms-ease-delay300ms: visibility var(--motion-duration-default-glow-transition-in-delay) var(--motion-easing-ease) 300ms;
+  --motion-transition-all-300ms-ease-default-delay10ms: all var(--motion-duration-duration-300ms) var(--motion-easing-ease-default) 10ms;
+  --motion-transition-border-color-300ms-ease-default: border-color var(--motion-duration-duration-300ms) var(--motion-easing-ease-default) 0ms;
+  --motion-transition-opacity-200ms-ease-in-out-2: opacity var(--motion-duration-duration-200ms) var(--motion-easing-ease-in-out-2) 0ms;
+  --motion-transition-opacity-500ms-ease-out-2: opacity var(--motion-duration-duration-500ms) var(--motion-easing-ease-out-2) 0ms;
+  --motion-transition-fill-300ms-ease-micro-bounce-delay50ms: fill var(--motion-duration-duration-300ms) var(--motion-easing-ease-micro-bounce) 50ms;
+  --motion-transition-background-color-200ms-ease: background-color var(--motion-duration-duration-200ms) var(--motion-easing-ease) 0ms;
+  --motion-transition-background-color-300ms-ease: background-color var(--motion-duration-duration-300ms) var(--motion-easing-ease) 0ms;
+  --motion-transition-border-color-200ms-ease-in-out-2: border-color var(--motion-duration-duration-200ms) var(--motion-easing-ease-in-out-2) 0ms;
+  --motion-transition-box-shadow-200ms-ease: box-shadow var(--motion-duration-duration-200ms) var(--motion-easing-ease) 0ms;
+  --motion-transition-opacity-0-2ms-ease: opacity var(--motion-duration-0-2ms) var(--motion-easing-ease) 0ms;
+  --motion-transition-opacity-100ms-ease: opacity var(--motion-duration-100ms) var(--motion-easing-ease) 0ms;
+  --motion-transition-opacity-300ms-ease: opacity var(--motion-duration-duration-300ms) var(--motion-easing-ease) 0ms;
+  --motion-transition-opacity-500ms-ease: opacity var(--motion-duration-duration-500ms) var(--motion-easing-ease) 0ms;
+  --motion-transition-opacity-600ms-ease-basic-butter: opacity var(--motion-duration-duration-600ms) var(--motion-easing-ease-basic-butter) 0ms;
+  --motion-transition-transform-300ms-ease: transform var(--motion-duration-duration-300ms) var(--motion-easing-ease) 0ms;
+  --motion-transition-transform-400ms-ease-out: transform var(--motion-duration-duration-400ms) var(--motion-easing-ease-out) 0ms;
+  --zIndex-0: 0;
+  --zIndex-1: 1;
+  --zIndex-10: 10;
+  --zIndex-2: 2;
+  --zIndex-3: 3;
+  --zIndex-4: 4;
+  --zIndex-5: 5;
+  --zIndex-6: 6;
+  --zIndex-7: 7;
+  --zIndex-8: 8;
+  --zIndex-9: 9;
+  --zIndex-backgroundColor: -10;
+  --zIndex-max: 105;
+  --zIndex-modal: 110;
+  --zIndex-nav: 100;
+  --zIndex-neg: -1;
+  --component-topbar-height: 80px;
+  --component-announcement-height: 36px;
+  --component-cta-height: 39.75px;
+  --component-nav-panel-width: 1440px;
+  --component-nav-panel-height: 604.5px;
+  --component-hero-headline-width: 504px;
+  --component-field-height: 48px;
+  --component-submit-width: 97.84px;
+  --component-submit-height: 39.75px;
+  --component-plan-card-width: 252px;
+  --component-toggle-width: 91.98px;
+  --component-mobile-topbar-height: 120px;
+  --component-productShell-login-panel-width: 346px;
+  --component-productShell-login-field-height: 40px;
+  --component-productShell-login-field-bg: #ffffff;
+  --component-productShell-login-submit-fill: #5b53ff;
+  --component-productShell-login-submit-ink: #ffffff;
+  --theme-bg: var(--color-grey-00);
+  --theme-fg-default: var(--color-grey-100);
+  --theme-fg-muted: var(--color-alpha-light-50);
+  --theme-fg-nav: var(--color-grey-100);
+  --theme-fg-footer: var(--color-grey-100);
+  --theme-fg-declared: #fcfcfc;
+  --theme-btn-primary-bg: rgba(0, 0, 0, 0);
+  --theme-btn-primary-fg: var(--color-grey-00);
+  --theme-btn-primary-hoverBg: rgba(0, 0, 0, 0);
+  --theme-btn-secondary-border: var(--color-grey-100);
+  --theme-btn-secondary-fg: var(--color-grey-100);
+  --theme-border-focus: var(--color-grey-100);
+  --theme-banner-bg: var(--color-brand-cobalt-default);
+  --theme-banner-fg: var(--color-grey-100);
+  --theme-surface-card: rgba(16, 16, 23, 0.5);
+  --theme-form-field-ink: var(--color-grey-90);
+  --theme-form-field-border: var(--color-grey-20);
+  --theme-form-placeholder: var(--color-grey-90);
+  --theme-form-submit-bg: rgba(0, 0, 0, 0);
+  --theme-form-submit-fg: var(--color-grey-40);
+  --theme-accent: #f5f5f8;
+  --sg-sans: "Inter", ui-sans-serif, system-ui, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+  --sg-serif: "FrameGothic", "Inter", ui-sans-serif, system-ui, Arial, sans-serif;
+  --sg-mono: "NeueMachinaInktrap", ui-monospace, "SF Mono", Menlo, monospace;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--theme-fg-default, #fcfcfc); background: var(--theme-bg, #000); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 400 40px/1.2 var(--sg-serif); margin: 0 0 4px; letter-spacing: -0.02em; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--theme-fg-default, #fcfcfc); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--color-alpha-dark-20, rgba(252,252,252,.2)); }
+.lead { max-width: 62ch; color: var(--theme-fg-default, #fcfcfc); opacity: .8; }
+.note { font-size: 13px; color: var(--theme-fg-default, #fcfcfc); opacity: .65; max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--theme-fg-default, #fcfcfc); opacity: .6; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--color-alpha-dark-20, rgba(252,252,252,.25)); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--theme-fg-default, #fcfcfc); opacity: .65; }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--color-alpha-dark-20, rgba(252,252,252,.25)); background: var(--color-grey-05, #0d0d18); font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--theme-fg-default, #fcfcfc); opacity: .65; }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--color-alpha-dark-20, rgba(252,252,252,.2)); overflow: hidden; background: var(--theme-bg, #000); }
+.navbar { display: flex; align-items: center; gap: 22px; height: var(--component-topbar-height, 80px); padding: 0 12px 0 22px; font-size: 15px; color: var(--theme-fg-default, #fcfcfc); background: var(--theme-bg, #000); box-shadow: var(--color-alpha-dark-10, rgba(252,252,252,.16)) 0 -1px 0 0 inset; }
+.navbar .wm { font-weight: 600; font-size: 17px; letter-spacing: -0.02em; }
+.navbar .sp { flex: 1; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-cta-height, 40px); padding: 0 18px; font-size: 15px; font-weight: 500; border-radius: var(--radius-cta, 999px); border: 1px solid transparent; }
+/* The element's own background stays transparent: the real Button paints its
+   light fill on ::before (measured #f5f5f8 = grey-97, ringed #c1c2d9 =
+   grey-80), so the mock reproduces that layer rather than filling the span. */
+.btn.primary { position: relative; isolation: isolate; background: var(--theme-btn-primary-bg, transparent); color: var(--theme-btn-primary-fg, #0d0d18); }
+.btn.primary::before { content: ""; position: absolute; inset: 0; z-index: -1; border-radius: inherit; background: var(--color-grey-97, #f5f5f8); border: 1px solid var(--color-grey-80, #c1c2d9); }
+.btn.ghost { background: transparent; border-color: var(--theme-btn-secondary-border, rgba(252,252,252,.4)); color: var(--theme-btn-secondary-fg, #fcfcfc); }
+.btn.small { height: 32px; font-size: 13px; font-weight: 500; }
+.banner { background: var(--theme-banner-bg, #5b53ff); color: var(--theme-banner-fg, #fcfcfc); text-align: center; font-size: 13px; padding: 7px 12px; }
+.hero { color: var(--theme-fg-default, #fcfcfc); padding: 80px 40px; font: 600 var(--font-size-measured-hero, 80px)/1.1 var(--sg-serif); letter-spacing: -0.02em; text-align: center; background: var(--theme-bg, #000); }
+.hero small { display: block; font: 400 20px/1.4 var(--sg-sans); letter-spacing: 0; color: var(--theme-fg-default, #fcfcfc); opacity: .7; margin: 20px auto 26px; max-width: 46ch; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
+.tile { border: 1px solid var(--color-alpha-dark-20, rgba(252,252,252,.18)); border-radius: var(--radius-card, 16px); padding: 14px; font-size: 13px; background: var(--theme-surface-card, #0d0d18); }
+.tile .img { height: 140px; background: var(--color-alpha-dark-10, rgba(252,252,252,.08)); border-radius: 8px; margin-bottom: 10px; display: flex; align-items: flex-end; padding: 10px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }
+.tile b { display: block; font: 600 24px/1.2 var(--sg-serif); margin-bottom: 4px; }
+.tile .sub { color: var(--theme-fg-default, #fcfcfc); opacity: .6; font-size: 12px; }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--color-alpha-dark-20, rgba(252,252,252,.25)); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--color-alpha-dark-20, rgba(252,252,252,.15)); }
+.tr .ts { font-family: var(--sg-serif); }
+.tr .tv { font-size: 12px; color: var(--theme-fg-default, #fcfcfc); opacity: .65; font-family: var(--sg-mono); }
+/* The billing switch is two round radio controls, not a segmented pill: a
+   24px circle ringed grey-60, the selected side filling a 10px
+   turquoise-triumph dot inside it. */
+.radio-row { display: inline-flex; align-items: center; gap: 28px; font-size: 15px; color: var(--theme-fg-default, #fcfcfc); }
+.radio-row .opt { display: inline-flex; align-items: center; gap: 10px; }
+.radio-row .opt i { width: 24px; height: 24px; border-radius: 50%; border: 1px solid var(--color-grey-60, #81859f); display: inline-flex; align-items: center; justify-content: center; }
+.radio-row .opt.on i::after { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--color-turquoise-triumph, #6199f6); }
+.field { display: block; width: 280px; height: var(--component-field-height, 48px); padding: 0 14px; border: 0; border-bottom: 1px solid var(--theme-form-field-border, rgba(252,252,252,.3)); border-radius: var(--radius-field, 0); background: transparent; font-size: 15px; color: var(--theme-form-field-ink, #fcfcfc); }
+.badge { display: inline-flex; align-items: center; height: 15px; padding: 0 7px; border-radius: 999px; background: var(--color-turquoise-triumph, #6199f6); color: var(--color-grey-00, #000); font-size: 10px; font-weight: 500; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Frame.io style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">Frame.io, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the declared <code>--color-grey-00..100</code> neutral ramp the whole dark theme is built from, the five brand hues (<code>--color-coral</code>, <code>--color-iris</code>, <code>--color-electric</code>, <code>--color-cobalt</code>, <code>--color-turquoise-triumph</code>) and their light/dark steps, the <code>--color-alpha-*</code> ladders and named tints, the <code>--overlay-*</code> dims, the <code>--spacer-*</code> rem scale, the 12-column <code>--grid-*</code> on a 108rem <code>--global-max-width</code>, the 8rem <code>--nav-height</code>, the <code>--duration-*</code>/<code>--ease-*</code> motion steps and the <code>--z-index-*</code> stacking map. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from frame.io, signed out, in headless Chromium. Every public page paints this one dark theme — the site ships no theme switch. The app and every signed-in surface is a documented boundary; the contact and sign-in forms were measured, never submitted. FrameGothic, NeueMachinaInktrap and Inter are served faces and are not loaded here: samples fall back to system sans. accounts.frame.io/welcome (the sign-in surface) is a different stack — its measured values live under <code>component.productShell.*</code>.</p>
+
+  <h2 class="sh">The chrome</h2>
+  <p class="lead">Every page opens under the cobalt <code>--theme-banner-*</code> announcement strip, then the fixed 8rem header: the Frame.io waveform mark, the Features/Enterprise/Resources mega-menu triggers (click opens a full-width panel — hover does not), Pricing, Contact Us, Sign In and the white "Start Free Trial" pill (<code>--theme-btn-primary-*</code>) — the primary action inverts to ink-on-paper on the dark field. Below, a centred display hero in FrameGothic pairs the white pill with a bordered ghost.</p>
+  <div class="mock" style="padding:0">
+    <div class="banner">Put your creative context to work with new AI-powered capabilities →</div>
+    <div class="navbar"><span class="wm">)))&middot;</span><span>Features</span><span>Enterprise</span><span>Resources</span><span>Pricing</span><span class="sp"></span><span>Contact Us</span><span>Sign In</span><span class="btn small primary">Start Free Trial</span></div>
+    <div class="hero">One platform<br>for all your creative work.<small>Unify content, feedback, approvals and delivery in one AI-powered platform.</small><span class="btn primary">Start Free Trial</span>&nbsp;&nbsp;<span class="btn ghost">Take a Product Tour</span></div>
+  </div>
+
+  <h2 class="sh">Pricing</h2>
+  <p class="lead">/pricing runs the Monthly/Annually switch as two round radio controls — a 24px circle ringed grey-60, the picked side filling a 10px turquoise-triumph dot — the Annually side carrying a "SAVE 13%" badge, over raised <code>--theme-surface-card</code> plan cards at $0/$15/$25, with white <code>Sign Up Now</code>/<code>Start Free Trial</code> pills and the ghost <code>Book a Meeting</code> on Enterprise.</p>
+  <div class="mock" style="padding:20px">
+    <div class="radio-row"><span class="opt on"><i></i>Monthly</span><span class="opt"><i></i>Annually&nbsp;<span class="badge">SAVE 13%</span></span></div>
+    <div class="grid" style="margin-top:16px">
+      <div class="tile"><div class="img">Free</div><b>$0</b><span class="sub">2 members · 2 GB</span></div>
+      <div class="tile"><div class="img">Pro</div><b>$15</b><span class="sub">per member / mo</span></div>
+      <div class="tile"><div class="img">Team</div><b>$25</b><span class="sub">per member / mo</span></div>
+    </div>
+    <div style="margin-top:16px"><input class="field" placeholder="Name">&nbsp;<span class="btn primary">Submit</span></div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The dark theme is a 19-step neutral ramp — <code>--color-grey-00</code> #000000 through <code>--color-grey-100</code> #fcfcfc — with the five brand hues reserved for accents (the cobalt announcement banner, links, badges), the <code>--color-alpha-*</code> ladders for hairlines and washes, and the <code>--overlay-*</code> dims for scrims. Measured roles alias the declared values they match.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing, grid and motion</h2>
+  <p class="lead">The spacer scale runs 0.8rem steps from 0 to 48rem; the marketing grid is 12 columns inside a 108rem <code>--global-max-width</code>; the fixed header is 8rem. The default control motion is 0.3s on <code>--ease-default</code> — cubic-bezier(0.25,0.1,0.25,1).</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">Three served faces: <code>FrameGothic</code> (a 400-600 variable face, <code>--font-main</code>) carries every display heading — the hero runs 80px — <code>NeueMachinaInktrap</code> (<code>--font-secondary</code>) draws labels and kickers, and <code>Inter</code> (a 100-900 variable face, <code>--font-tertiary</code>) sets UI and body copy at the 1.6rem <code>--font-size-base</code>. The stacks are declared on the Next.js font-variable classes, so samples here fall back to system sans.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared --color-*/--font-*/--spacer-*/--grid-* variables from the live stylesheets and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, opened, focused and filled states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = {"core":{"font":{"family":{"gothic":{"v":"\"FrameGothic\",\"FrameGothic Fallback\"","t":"fontFamily","s":"css-var --font-main declared on .__variable_9d88cd (raw/css-vars.json); the probe cannot resolve a class-scoped declaration","d":"FrameGothic — every display heading on the site (a 400-600 variable face with an Arial-metric fallback), declared as --font-main."},"machina":{"v":"\"NeueMachinaInktrap\",\"NeueMachinaInktrap Fallback\"","t":"fontFamily","s":"css-var --font-secondary declared on .__variable_5c99cd (raw/css-vars.json); the probe cannot resolve a class-scoped declaration","d":"NeueMachinaInktrap — labels, kickers and the mono-flavoured UI type, declared as --font-secondary."},"inter":{"v":"\"Inter\",\"Inter Fallback\"","t":"fontFamily","s":"css-var --font-tertiary declared on .__variable_3586d7 (raw/css-vars.json); the probe cannot resolve a class-scoped declaration","d":"Inter — body copy and UI text (a 100-900 variable face), declared as --font-tertiary."}},"size":{"base":{"v":"16px","t":"dimension","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --font-size-base","d":"The 1.6rem (16px) root font size the rem grid is built on."},"measured":{"hero":{"v":"80px","t":"dimension","s":"computed fontSize of hero-h1 default (raw/components-computed.json)","d":"The home hero display heading (FrameGothic 80px at 1440)."},"sectionH2":{"v":"48px","t":"dimension","s":"computed fontSize of section-h2 default (raw/components-computed.json)","d":"A section heading size."},"navLink":{"v":"14px","t":"dimension","s":"computed fontSize of nav-pricing default (raw/components-computed.json)","d":"The header link size."},"button":{"v":"14px","t":"dimension","s":"computed fontSize of nav-cta default (raw/components-computed.json)","d":"The pill button label size."},"body":{"v":"{font.size.base}","t":"dimension","s":"computed fontSize of footer-link default (raw/components-computed.json); matches declared font.size.base","d":"Footer/body copy size."},"priceH1":{"v":"80px","t":"dimension","s":"computed fontSize of price-h1 default (raw/components-computed.json)","d":"The /pricing masthead size."}}},"weight":{"heroWeight":{"v":600,"t":"fontWeight","s":"computed fontWeight of hero-h1 default (raw/components-computed.json)","d":"The hero display weight (FrameGothic 400-600 variable)."},"buttonWeight":{"v":600,"t":"fontWeight","s":"computed fontWeight of nav-cta default (raw/components-computed.json)","d":"The pill label weight."}},"tracking":{"hero":{"v":"-3.6px","t":"dimension","s":"computed letterSpacing of hero-h1 default (raw/components-computed.json)","d":"The hero display letter-spacing."},"navLink":{"v":"0.14px","t":"dimension","s":"computed letterSpacing of nav-pricing default (raw/components-computed.json)","d":"The header link tracking."}}},"color":{"accent":{"v":"#f5f5f8","t":"color","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-accent","d":"The declared `--color-accent`."},"accentDefault":{"v":"#f5f5f8","t":"color","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-accent-default","d":"The declared `--color-accent-default`."},"alpha":{"black":{"10":{"v":"rgba(0, 0, 0, 0.1)","t":"color","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-alpha-black-10","d":"The declared `--color-alpha-black-10`."},"100":{"v":"#000000","t":"color","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-alpha-black-100","d":"The declared `--color-alpha-black-100`."},"20":{"v":"rgba(0, 0, 0, 0.2)","t":"color","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-alpha-black-20","d":"The declared `--color-alpha-black-20`."},"25":{"v":"rgba(0, 0, 0, 0.25)","t":"color","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-alpha-black-25","d":"The declared `--color-alpha-black-25`."},"30":{"v":"rgba(0, 0, 0, 0.3)","t":"color","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-alpha-black-30","d":"The declared `--color-alpha-black-30`."},"40":{"v":"rgba(0, 0, 0, 0.4)","t":"color","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-alpha-black-40","d":"The declared `--color-alpha-black-40`."},"5":{"v":"rgba(0, 0, 0, 0.05)","t":"color","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-alpha-black-5","d":"The declared `--color-alpha-black-5`."},"50":{"v":"rgba(0, 0, 0, 0.5)","t":"color","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-alpha-black-50","d":"The declared `--color-alpha-black-50`."},"60":{"v":"rgba(0, 0, 0, 0.6)","t":"color","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-alpha-black-60","d":"The declared `--color-alpha-black-60`."},"70":{"v":"rgba(0, 0, 0, 0.7)","t":"color","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-alpha-black-70","d":"The declared `--color-alpha-black-70`."},"80":{"v":"rgba(0, 0, 0, 0.8)","t":"color","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-alpha-black-80","d":"The declared `--color-alpha-black-80`."},"90":{"v":"rgba(0, 0, 0, 0.9)","t":"color","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-alpha-black-90","d":"The declared `--color-alpha-black-90`."}},"cinder":{"50":{"v":"rgba(13, 13, 24, 0.5)","t":"color","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-alpha-cinder-50","d":"The declared `--color-alpha-cinder-50`."}},"dark":{"10":{"v":"rgba(13, 13, 24, 0.1)","t":"color","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-alpha-dark-10","d":"The declared `--color-alpha-dark-10`."},"20":{"v":"rgba(13, 13, 24, 0.2)","t":"color","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-alpha-dark-20","d":"The declared `--color-alpha-dark-20`."},"30":{"v":"rgba(13, 13, 24, 0.3)","t":"color","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-alpha-dark-30","d":"The declared `--color-alpha-dark-30`."},"40":{"v":"rgba(13, 13, 24, 0.4)","t":"color","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-alpha-dark-40","d":"The declared `--color-alpha-dark-40`."},"5":{"v":"rgba(13, 13, 24, 0.05)","t":"color","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-alpha-dark-5","d":"The declared `--color-alpha-dark-5`."},"50":{"v":"rgba(13, 13, 24, 0.5)","t":"color","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-alpha-dark-50","d":"The declared `--color-alpha-dark-50`."},"60":{"v":"rgba(13, 13, 24, 0.6)","t":"color","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-alpha-dark-60","d":"The declared `--color-alpha-dark-60`."},"70":{"v":"rgba(13, 13, 24, 0.7)","t":"color","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-alpha-dark-70","d":"The declared `--color-alpha-dark-70`."},"80":{"v":"rgba(13, 13, 24, 0.8)","t":"color","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-alpha-dark-80","d":"The declared `--color-alpha-dark-80`."},"90":{"v":"rgba(13, 13, 24, 0.9)","t":"color","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-alpha-dark-90","d":"The declared `--color-alpha-dark-90`."}},"grey":{"30":{"v":"rgba(54, 56, 74, 0.2)","t":"color","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-alpha-grey-30","d":"The declared `--color-alpha-grey-30`."},"80":{"v":"rgba(46, 47, 64, 0.8)","t":"color","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-alpha-grey-80","d":"The declared `--color-alpha-grey-80`."}},"hawkes":{"20":{"v":"rgba(209, 209, 251, 0.2)","t":"color","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-alpha-hawkes-20","d":"The declared `--color-alpha-hawkes-20`."},"60":{"v":"rgba(209, 209, 251, 0.6)","t":"color","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-alpha-hawkes-60","d":"The declared `--color-alpha-hawkes-60`."}},"light":{"10":{"v":"rgba(189, 189, 244, 0.1)","t":"color","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-alpha-light-10","d":"The declared `--color-alpha-light-10`."},"15":{"v":"rgba(209, 209, 251, 0.15)","t":"color","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-alpha-light-15","d":"The declared `--color-alpha-light-15`."},"20":{"v":"rgba(209, 209, 251, 0.2)","t":"color","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-alpha-light-20","d":"The declared `--color-alpha-light-20`."},"30":{"v":"rgba(220, 220, 255, 0.3)","t":"color","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-alpha-light-30","d":"The declared `--color-alpha-light-30`."},"40":{"v":"rgba(228, 228, 255, 0.4)","t":"color","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-alpha-light-40","d":"The declared `--color-alpha-light-40`."},"5":{"v":"rgba(157, 157, 255, 0.05)","t":"color","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-alpha-light-5","d":"The declared `--color-alpha-light-5`."},"50":{"v":"rgba(234, 234, 255, 0.5)","t":"color","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-alpha-light-50","d":"The declared `--color-alpha-light-50`."},"60":{"v":"rgba(234, 234, 255, 0.6)","t":"color","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-alpha-light-60","d":"The declared `--color-alpha-light-60`."},"70":{"v":"rgba(233, 233, 255, 0.7)","t":"color","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-alpha-light-70","d":"The declared `--color-alpha-light-70`."},"80":{"v":"rgba(240, 240, 255, 0.8)","t":"color","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-alpha-light-80","d":"The declared `--color-alpha-light-80`."},"90":{"v":"rgba(241, 244, 255, 0.9)","t":"color","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-alpha-light-90","d":"The declared `--color-alpha-light-90`."}},"perano":{"10":{"v":"rgba(189, 189, 244, 0.1)","t":"color","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-alpha-perano-10","d":"The declared `--color-alpha-perano-10`."}}},"brand":{"cobalt":{"default":{"v":"#5b53ff","t":"color","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-cobalt","d":"The declared `--color-cobalt`."},"20":{"v":"rgba(91, 83, 255, 0.2)","t":"color","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-cobalt-20","d":"The declared `--color-cobalt-20`."},"dark":{"v":"#5237f9","t":"color","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-cobalt-dark","d":"The declared `--color-cobalt-dark`."},"light":{"v":"#6369ff","t":"color","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-cobalt-light","d":"The declared `--color-cobalt-light`."}},"coral":{"default":{"v":"#fc856d","t":"color","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-coral","d":"The declared `--color-coral`."},"dark":{"v":"#e36b52","t":"color","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-coral-dark","d":"The declared `--color-coral-dark`."},"light":{"v":"#fca493","t":"color","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-coral-light","d":"The declared `--color-coral-light`."}},"electric":{"default":{"v":"#47ebeb","t":"color","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-electric","d":"The declared `--color-electric`."},"dark":{"v":"#00b8b9","t":"color","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-electric-dark","d":"The declared `--color-electric-dark`."},"light":{"v":"#87ffff","t":"color","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-electric-light","d":"The declared `--color-electric-light`."}},"iris":{"default":{"v":"#8952fd","t":"color","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-iris","d":"The declared `--color-iris`."},"dark":{"v":"#632cda","t":"color","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-iris-dark","d":"The declared `--color-iris-dark`."},"light":{"v":"#9f75f9","t":"color","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-iris-light","d":"The declared `--color-iris-light`."}}},"grey":{"00":{"v":"#000000","t":"color","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-grey-00","d":"The declared `--color-grey-00`."},"05":{"v":"#0d0d18","t":"color","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-grey-05","d":"The declared `--color-grey-05`."},"08":{"v":"#12131d","t":"color","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-grey-08","d":"The declared `--color-grey-08`."},"10":{"v":"#161722","t":"color","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-grey-10","d":"The declared `--color-grey-10`."},"100":{"v":"#fcfcfc","t":"color","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-grey-100","d":"The declared `--color-grey-100`."},"12":{"v":"#1d1f2c","t":"color","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-grey-12","d":"The declared `--color-grey-12`."},"15":{"v":"#252736","t":"color","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-grey-15","d":"The declared `--color-grey-15`."},"20":{"v":"#2e2f40","t":"color","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-grey-20","d":"The declared `--color-grey-20`."},"30":{"v":"#36384a","t":"color","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-grey-30","d":"The declared `--color-grey-30`."},"40":{"v":"#4f5167","t":"color","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-grey-40","d":"The declared `--color-grey-40`."},"50":{"v":"#6a6b83","t":"color","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-grey-50","d":"The declared `--color-grey-50`."},"60":{"v":"#81859f","t":"color","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-grey-60","d":"The declared `--color-grey-60`."},"70":{"v":"#a3a4bf","t":"color","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-grey-70","d":"The declared `--color-grey-70`."},"80":{"v":"#c1c2d9","t":"color","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-grey-80","d":"The declared `--color-grey-80`."},"88":{"v":"#d5d6ea","t":"color","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-grey-88","d":"The declared `--color-grey-88`."},"90":{"v":"#dedfee","t":"color","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-grey-90","d":"The declared `--color-grey-90`."},"93":{"v":"#e8e9f3","t":"color","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-grey-93","d":"The declared `--color-grey-93`."},"95":{"v":"#f0f0f7","t":"color","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-grey-95","d":"The declared `--color-grey-95`."},"97":{"v":"#f5f5f8","t":"color","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-grey-97","d":"The declared `--color-grey-97`."}},"turquoiseTriumph":{"v":"#6199f6","t":"color","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-turquoise-triumph","d":"The declared `--color-turquoise-triumph`."}},"overlay":{"dim":{"v":"rgba(0, 0, 0, 0.2)","t":"color","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --overlay-dim","d":"The declared `--overlay-dim`."},"dim40":{"v":"rgba(0, 0, 0, 0.4)","t":"color","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --overlay-dim40","d":"The declared `--overlay-dim40`."},"dim60":{"v":"rgba(0, 0, 0, 0.6)","t":"color","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --overlay-dim60","d":"The declared `--overlay-dim60`."},"dim80":{"v":"rgba(0, 0, 0, 0.8)","t":"color","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --overlay-dim80","d":"The declared `--overlay-dim80`."},"heavy":{"v":"linear-gradient(0deg,rgb(0 0 0/20%),rgb(0 0 0/20%)),linear-gradient(180deg,rgb(0 0 0/0%) 50%,#000000),linear-gradient(7.96deg,#000000 14.71%,rgb(0 0 0/0%) 78.17%)","t":"other","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --overlay-heavy","d":"The declared `--overlay-heavy`."},"light":{"v":"linear-gradient(0deg,rgb(0 0 0/20%),rgb(0 0 0/20%)),linear-gradient(18.61deg,rgb(0 0 0/50.4%) 21.85%,rgb(0 0 0/0%) 73.55%)","t":"other","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --overlay-light","d":"The declared `--overlay-light`."},"medium":{"v":"linear-gradient(0deg,rgb(0 0 0/20%),rgb(0 0 0/20%)),linear-gradient(18.61deg,rgb(0 0 0/67.2%) 21.85%,rgb(0 0 0/0%) 73.55%)","t":"other","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --overlay-medium","d":"The declared `--overlay-medium`."},"none":{"v":"none","t":"other","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --overlay-none","d":"The declared `--overlay-none`."}},"spacing":{"0":{"v":"0px","t":"dimension","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --spacer-0","d":"The declared `--spacer-0`."},"10":{"v":"10px","t":"dimension","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --spacer-10","d":"The declared `--spacer-10`."},"12":{"v":"12px","t":"dimension","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --spacer-12","d":"The declared `--spacer-12`."},"124":{"v":"124px","t":"dimension","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --spacer-124","d":"The declared `--spacer-124`."},"16":{"v":"16px","t":"dimension","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --spacer-16","d":"The declared `--spacer-16`."},"160":{"v":"160px","t":"dimension","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --spacer-160","d":"The declared `--spacer-160`."},"18":{"v":"18px","t":"dimension","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --spacer-18","d":"The declared `--spacer-18`."},"192":{"v":"192px","t":"dimension","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --spacer-192","d":"The declared `--spacer-192`."},"20":{"v":"20px","t":"dimension","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --spacer-20","d":"The declared `--spacer-20`."},"24":{"v":"24px","t":"dimension","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --spacer-24","d":"The declared `--spacer-24`."},"240":{"v":"240px","t":"dimension","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --spacer-240","d":"The declared `--spacer-240`."},"28":{"v":"28px","t":"dimension","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --spacer-28","d":"The declared `--spacer-28`."},"32":{"v":"32px","t":"dimension","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --spacer-32","d":"The declared `--spacer-32`."},"320":{"v":"320px","t":"dimension","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --spacer-320","d":"The declared `--spacer-320`."},"4":{"v":"4px","t":"dimension","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --spacer-4","d":"The declared `--spacer-4`."},"40":{"v":"40px","t":"dimension","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --spacer-40","d":"The declared `--spacer-40`."},"48":{"v":"48px","t":"dimension","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --spacer-48","d":"The declared `--spacer-48`."},"480":{"v":"480px","t":"dimension","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --spacer-480","d":"The declared `--spacer-480`."},"54":{"v":"54px","t":"dimension","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --spacer-54","d":"The declared `--spacer-54`."},"6":{"v":"6px","t":"dimension","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --spacer-6","d":"The declared `--spacer-6`."},"64":{"v":"64px","t":"dimension","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --spacer-64","d":"The declared `--spacer-64`."},"72":{"v":"72px","t":"dimension","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --spacer-72","d":"The declared `--spacer-72`."},"8":{"v":"8px","t":"dimension","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --spacer-8","d":"The declared `--spacer-8`."},"84":{"v":"84px","t":"dimension","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --spacer-84","d":"The declared `--spacer-84`."},"96":{"v":"96px","t":"dimension","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --spacer-96","d":"The declared `--spacer-96`."}},"radius":{"10":{"v":"10px","t":"dimension","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --border-radius-10","d":"The declared `--border-radius-10`."},"12":{"v":"12px","t":"dimension","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --border-radius-12","d":"The declared `--border-radius-12`."},"16":{"v":"16px","t":"dimension","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --border-radius-16","d":"The declared `--border-radius-16`."},"18":{"v":"18px","t":"dimension","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --border-radius-18","d":"The declared `--border-radius-18`."},"2":{"v":"2px","t":"dimension","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --border-radius-2","d":"The declared `--border-radius-2`."},"20":{"v":"20px","t":"dimension","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --border-radius-20","d":"The declared `--border-radius-20`."},"40":{"v":"40px","t":"dimension","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --border-radius-40","d":"The declared `--border-radius-40`."},"5":{"v":"5px","t":"dimension","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --border-radius-5","d":"The declared `--border-radius-5`."},"6":{"v":"6px","t":"dimension","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --border-radius-6","d":"The declared `--border-radius-6`."},"8":{"v":"8px","t":"dimension","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --border-radius-8","d":"The declared `--border-radius-8`."},"large":{"v":"40px","t":"dimension","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --border-radius-large","d":"The declared `--border-radius-large`."},"cta":{"v":"100px","t":"dimension","s":"computed borderTopLeftRadius of nav-cta default (raw/components-computed.json)","d":"The CTA pill radius."},"navLink":{"v":"0px","t":"dimension","s":"computed borderTopLeftRadius of nav-pricing default (raw/components-computed.json)","d":"The header link radius."},"card":{"v":"{radius.10}","t":"dimension","s":"computed borderTopLeftRadius of plan-card default (raw/components-computed.json); matches declared --radius-10","d":"The plan-card corner radius."},"field":{"v":"0px","t":"dimension","s":"computed borderTopLeftRadius of form-email default (raw/components-computed.json)","d":"The contact field radius."},"panel":{"v":"0px","t":"dimension","s":"computed borderTopLeftRadius of nav-panel default (raw/components-computed.json)","d":"The mega-menu panel corner radius."},"menuBtn":{"v":"0px","t":"dimension","s":"computed borderTopLeftRadius of m-menu-btn default (raw/components-computed.json)","d":"The phone menu button radius."}},"layout":{"grid":{"columns":{"v":12,"t":"number","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --grid-number-of-columns","d":"The declared `--grid-number-of-columns`."},"maxContentWidth":{"v":"1080px","t":"dimension","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --grid-max-content-width","d":"The declared `--grid-max-content-width`."}},"maxWidth":{"v":"1080px","t":"dimension","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --global-max-width","d":"The declared `--global-max-width`."},"navHeight":{"v":"80px","t":"dimension","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --nav-height","d":"The declared `--nav-height`."},"navHeightPadded":{"v":"92px","t":"dimension","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --nav-height-padded","d":"The declared `--nav-height-padded`."}},"motion":{"duration":{"150ms":{"v":"150ms","t":"duration","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --duration-150ms","d":"The declared `--duration-150ms` duration."},"200ms":{"v":"200ms","t":"duration","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --duration-200ms","d":"The declared `--duration-200ms` duration."},"300ms":{"v":"300ms","t":"duration","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --duration-300ms","d":"The declared `--duration-300ms` duration."},"400ms":{"v":"400ms","t":"duration","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --duration-400ms","d":"The declared `--duration-400ms` duration."},"500ms":{"v":"500ms","t":"duration","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --duration-500ms","d":"The declared `--duration-500ms` duration."},"600ms":{"v":"600ms","t":"duration","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --duration-600ms","d":"The declared `--duration-600ms` duration."},"60ms":{"v":"60ms","t":"duration","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --duration-60ms","d":"The declared `--duration-60ms` duration."},"default-glow-transition-in-delay":{"v":"0ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--default-glow-transition-in-delay"},"d":"Custom property --default-glow-transition-in-delay, declared on .Glow_displayed."},"0_2ms":{"v":"0.2ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 1 element."},"duration-60ms":{"v":"60ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--duration-60ms"},"d":"Custom property --duration-60ms, declared on :root."},"100ms":{"v":"100ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 1 element."},"duration-150ms":{"v":"150ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--duration-150ms"},"d":"Custom property --duration-150ms, declared on :root."},"duration-200ms":{"v":"200ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--duration-200ms"},"d":"Custom property --duration-200ms, declared on :root."},"duration-300ms":{"v":"300ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--duration-300ms"},"d":"Custom property --duration-300ms, declared on :root."},"duration-400ms":{"v":"400ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--duration-400ms"},"d":"Custom property --duration-400ms, declared on :root."},"duration-500ms":{"v":"500ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--duration-500ms"},"d":"Custom property --duration-500ms, declared on :root."},"550ms":{"v":"550ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"duration-600ms":{"v":"600ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--duration-600ms"},"d":"Custom property --duration-600ms, declared on :root."}},"easing":{"basicButter":{"v":[0.42,0.0,0.28,0.99],"t":"cubicBezier","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --ease-basic-butter","d":"The declared `--ease-basic-butter` easing."},"default":{"v":[0.25,0.1,0.25,1.0],"t":"cubicBezier","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --ease-default","d":"The declared `--ease-default` easing."},"embellishment":{"v":[0.42,0.0,0.0,1.0],"t":"cubicBezier","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --ease-embellishment","d":"The declared `--ease-embellishment` easing."},"in":{"v":[0.49,0.025,0.65,0.65],"t":"cubicBezier","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --ease-in","d":"The declared `--ease-in` easing."},"inOut":{"v":[0.49,0.025,0.49,1.0],"t":"cubicBezier","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --ease-in-out","d":"The declared `--ease-in-out` easing."},"microBounce":{"v":[0.0,0.44,0.6,1.0],"t":"cubicBezier","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --ease-micro-bounce","d":"The declared `--ease-micro-bounce` easing."},"miniBounce":{"v":[0.17,0.89,0.47,1.13],"t":"cubicBezier","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --ease-mini-bounce","d":"The declared `--ease-mini-bounce` easing."},"out":{"v":[0.28,0.44,0.49,1.0],"t":"cubicBezier","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --ease-out","d":"The declared `--ease-out` easing."},"ease":{"v":[0.25,0.1,0.25,1],"t":"cubicBezier","s":{"evidence":"Derived","capture":"raw/motion.json#pages"},"d":"The keyword `ease`, expanded to its control points."},"ease-basic-butter":{"v":[0.42,0,0.28,0.99],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--ease-basic-butter"},"d":"Custom property --ease-basic-butter, declared on :root."},"ease-default":{"v":[0.25,0.1,0.25,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--ease-default"},"d":"Custom property --ease-default, declared on :root."},"ease-embellishment":{"v":[0.42,0,0,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--ease-embellishment"},"d":"Custom property --ease-embellishment, declared on :root."},"ease-in":{"v":[0.49,0.025,0.65,0.65],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--ease-in"},"d":"Custom property --ease-in, declared on :root."},"ease-in-out":{"v":[0.49,0.025,0.49,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--ease-in-out"},"d":"Custom property --ease-in-out, declared on :root."},"ease-in-out-2":{"v":[0.42,0,0.58,1],"t":"cubicBezier","s":{"evidence":"Derived","capture":"raw/motion.json#pages"},"d":"The keyword `ease-in-out`, expanded to its control points."},"ease-micro-bounce":{"v":[0,0.44,0.6,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--ease-micro-bounce"},"d":"Custom property --ease-micro-bounce, declared on :root."},"ease-mini-bounce":{"v":[0.17,0.89,0.47,1.13],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--ease-mini-bounce"},"d":"Custom property --ease-mini-bounce, declared on :root."},"ease-out":{"v":[0.28,0.44,0.49,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--ease-out"},"d":"Custom property --ease-out, declared on :root."},"ease-out-2":{"v":[0,0,0.58,1],"t":"cubicBezier","s":{"evidence":"Derived","capture":"raw/motion.json#pages"},"d":"The keyword `ease-out`, expanded to its control points."},"linear":{"v":[0,0,1,1],"t":"cubicBezier","s":{"evidence":"Derived","capture":"raw/motion.json#declared"},"d":"The keyword `linear`, expanded to its control points."}},"control":{"v":"color 0.3s cubic-bezier(0, 0.44, 0.6, 1)","t":"other","s":"computed transition of nav-cta default (raw/components-computed.json); the --duration-*/--ease-* steps are the declared durations and curves","d":"The control transition on the header CTA."},"transition":{"color-600ms-ease-out":{"v":{"duration":"{motion.duration.duration-600ms}","delay":"0ms","timingFunction":"{motion.easing.ease-out}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 336 elements."},"transform-600ms-ease-basic-butter":{"v":{"duration":"{motion.duration.duration-600ms}","delay":"0ms","timingFunction":"{motion.easing.ease-basic-butter}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 168 elements."},"color-300ms-ease-out":{"v":{"duration":"{motion.duration.duration-300ms}","delay":"0ms","timingFunction":"{motion.easing.ease-out}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 148 elements."},"opacity-400ms-ease":{"v":{"duration":"{motion.duration.duration-400ms}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 114 elements."},"transform-500ms-ease-basic-butter":{"v":{"duration":"{motion.duration.duration-500ms}","delay":"0ms","timingFunction":"{motion.easing.ease-basic-butter}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 90 elements."},"height-500ms-ease-basic-butter":{"v":{"duration":"{motion.duration.duration-500ms}","delay":"0ms","timingFunction":"{motion.easing.ease-basic-butter}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 84 elements."},"background-300ms-ease-micro-bounce":{"v":{"duration":"{motion.duration.duration-300ms}","delay":"0ms","timingFunction":"{motion.easing.ease-micro-bounce}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 59 elements."},"background-color-500ms-ease-micro-bounce":{"v":{"duration":"{motion.duration.duration-500ms}","delay":"0ms","timingFunction":"{motion.easing.ease-micro-bounce}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 54 elements."},"border-color-500ms-ease-micro-bounce":{"v":{"duration":"{motion.duration.duration-500ms}","delay":"0ms","timingFunction":"{motion.easing.ease-micro-bounce}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 54 elements."},"transform-300ms-ease-basic-butter":{"v":{"duration":"{motion.duration.duration-300ms}","delay":"0ms","timingFunction":"{motion.easing.ease-basic-butter}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 52 elements."},"color-300ms-ease-micro-bounce":{"v":{"duration":"{motion.duration.duration-300ms}","delay":"0ms","timingFunction":"{motion.easing.ease-micro-bounce}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 47 elements."},"background-color-150ms-ease-default":{"v":{"duration":"{motion.duration.duration-150ms}","delay":"0ms","timingFunction":"{motion.easing.ease-default}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 40 elements."},"color-150ms-ease-default":{"v":{"duration":"{motion.duration.duration-150ms}","delay":"0ms","timingFunction":"{motion.easing.ease-default}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 40 elements."},"opacity-200ms-ease-default":{"v":{"duration":"{motion.duration.duration-200ms}","delay":"0ms","timingFunction":"{motion.easing.ease-default}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 40 elements."},"opacity-200ms-ease-out":{"v":{"duration":"{motion.duration.duration-200ms}","delay":"0ms","timingFunction":"{motion.easing.ease-out}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 34 elements."},"visibility-200ms-ease":{"v":{"duration":"{motion.duration.duration-200ms}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 34 elements."},"box-shadow-300ms-ease-micro-bounce":{"v":{"duration":"{motion.duration.duration-300ms}","delay":"0ms","timingFunction":"{motion.easing.ease-micro-bounce}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 31 elements."},"transform-400ms-ease-micro-bounce":{"v":{"duration":"{motion.duration.duration-400ms}","delay":"0ms","timingFunction":"{motion.easing.ease-micro-bounce}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 24 elements."},"opacity-300ms-ease-micro-bounce":{"v":{"duration":"{motion.duration.duration-300ms}","delay":"0ms","timingFunction":"{motion.easing.ease-micro-bounce}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 21 elements."},"all-200ms-ease-out-2":{"v":{"duration":"{motion.duration.duration-200ms}","delay":"0ms","timingFunction":"{motion.easing.ease-out-2}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 16 elements."},"opacity-200ms-ease":{"v":{"duration":"{motion.duration.duration-200ms}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 15 elements."},"border-radius-200ms-ease":{"v":{"duration":"{motion.duration.duration-200ms}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 12 elements."},"color-200ms-ease":{"v":{"duration":"{motion.duration.duration-200ms}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 12 elements."},"opacity-300ms-ease-default":{"v":{"duration":"{motion.duration.duration-300ms}","delay":"0ms","timingFunction":"{motion.easing.ease-default}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 11 elements."},"transform-200ms-ease":{"v":{"duration":"{motion.duration.duration-200ms}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 11 elements."},"all-500ms-ease-basic-butter":{"v":{"duration":"{motion.duration.duration-500ms}","delay":"0ms","timingFunction":"{motion.easing.ease-basic-butter}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 8 elements."},"height-300ms-ease-basic-butter":{"v":{"duration":"{motion.duration.duration-300ms}","delay":"0ms","timingFunction":"{motion.easing.ease-basic-butter}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 8 elements."},"background-color-200ms-ease-default":{"v":{"duration":"{motion.duration.duration-200ms}","delay":"0ms","timingFunction":"{motion.easing.ease-default}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 4 elements."},"color-200ms-ease-default":{"v":{"duration":"{motion.duration.duration-200ms}","delay":"0ms","timingFunction":"{motion.easing.ease-default}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 4 elements."},"opacity-300ms-ease-basic-butter":{"v":{"duration":"{motion.duration.duration-300ms}","delay":"0ms","timingFunction":"{motion.easing.ease-basic-butter}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 4 elements."},"opacity-600ms-ease-out-2":{"v":{"duration":"{motion.duration.duration-600ms}","delay":"0ms","timingFunction":"{motion.easing.ease-out-2}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 4 elements."},"transform-200ms-ease-default":{"v":{"duration":"{motion.duration.duration-200ms}","delay":"0ms","timingFunction":"{motion.easing.ease-default}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 4 elements."},"transform-500ms-ease-mini-bounce":{"v":{"duration":"{motion.duration.duration-500ms}","delay":"0ms","timingFunction":"{motion.easing.ease-mini-bounce}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 4 elements."},"visibility-0ms-ease-delay300ms":{"v":{"duration":"{motion.duration.default-glow-transition-in-delay}","delay":"300ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 4 elements."},"all-300ms-ease-default-delay10ms":{"v":{"duration":"{motion.duration.duration-300ms}","delay":"10ms","timingFunction":"{motion.easing.ease-default}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 3 elements."},"border-color-300ms-ease-default":{"v":{"duration":"{motion.duration.duration-300ms}","delay":"0ms","timingFunction":"{motion.easing.ease-default}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 3 elements."},"opacity-200ms-ease-in-out-2":{"v":{"duration":"{motion.duration.duration-200ms}","delay":"0ms","timingFunction":"{motion.easing.ease-in-out-2}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 3 elements."},"opacity-500ms-ease-out-2":{"v":{"duration":"{motion.duration.duration-500ms}","delay":"0ms","timingFunction":"{motion.easing.ease-out-2}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 3 elements."},"fill-300ms-ease-micro-bounce-delay50ms":{"v":{"duration":"{motion.duration.duration-300ms}","delay":"50ms","timingFunction":"{motion.easing.ease-micro-bounce}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 2 elements."},"background-color-200ms-ease":{"v":{"duration":"{motion.duration.duration-200ms}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 1 element."},"background-color-300ms-ease":{"v":{"duration":"{motion.duration.duration-300ms}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 1 element."},"border-color-200ms-ease-in-out-2":{"v":{"duration":"{motion.duration.duration-200ms}","delay":"0ms","timingFunction":"{motion.easing.ease-in-out-2}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 1 element."},"box-shadow-200ms-ease":{"v":{"duration":"{motion.duration.duration-200ms}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 1 element."},"opacity-0_2ms-ease":{"v":{"duration":"{motion.duration.0_2ms}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 1 element."},"opacity-100ms-ease":{"v":{"duration":"{motion.duration.100ms}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 1 element."},"opacity-300ms-ease":{"v":{"duration":"{motion.duration.duration-300ms}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 1 element."},"opacity-500ms-ease":{"v":{"duration":"{motion.duration.duration-500ms}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 1 element."},"opacity-600ms-ease-basic-butter":{"v":{"duration":"{motion.duration.duration-600ms}","delay":"0ms","timingFunction":"{motion.easing.ease-basic-butter}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 1 element."},"transform-300ms-ease":{"v":{"duration":"{motion.duration.duration-300ms}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 1 element."},"transform-400ms-ease-out":{"v":{"duration":"{motion.duration.duration-400ms}","delay":"0ms","timingFunction":"{motion.easing.ease-out}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 1 element."}}},"zIndex":{"0":{"v":0,"t":"number","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --z-index-0","d":"The declared `--z-index-0`."},"1":{"v":1,"t":"number","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --z-index-1","d":"The declared `--z-index-1`."},"10":{"v":10,"t":"number","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --z-index-10","d":"The declared `--z-index-10`."},"2":{"v":2,"t":"number","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --z-index-2","d":"The declared `--z-index-2`."},"3":{"v":3,"t":"number","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --z-index-3","d":"The declared `--z-index-3`."},"4":{"v":4,"t":"number","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --z-index-4","d":"The declared `--z-index-4`."},"5":{"v":5,"t":"number","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --z-index-5","d":"The declared `--z-index-5`."},"6":{"v":6,"t":"number","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --z-index-6","d":"The declared `--z-index-6`."},"7":{"v":7,"t":"number","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --z-index-7","d":"The declared `--z-index-7`."},"8":{"v":8,"t":"number","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --z-index-8","d":"The declared `--z-index-8`."},"9":{"v":9,"t":"number","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --z-index-9","d":"The declared `--z-index-9`."},"backgroundColor":{"v":-10,"t":"number","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --z-index-background-color","d":"The declared `--z-index-background-color`."},"max":{"v":105,"t":"number","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --z-index-max","d":"The declared `--z-index-max`."},"modal":{"v":110,"t":"number","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --z-index-modal","d":"The declared `--z-index-modal`."},"nav":{"v":100,"t":"number","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --z-index-nav","d":"The declared `--z-index-nav`."},"neg":{"v":-1,"t":"number","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --z-index-neg","d":"The declared `--z-index-neg`."}},"component":{"topbar-height":{"v":"80px","t":"dimension","s":"measured h of mkt-header default (raw/components-computed.json)","d":"The fixed site header bar height."},"announcement-height":{"v":"36px","t":"dimension","s":"measured h of announcement default (raw/components-computed.json)","d":"The announcement banner height."},"cta-height":{"v":"39.75px","t":"dimension","s":"measured h of nav-cta default (raw/components-computed.json)","d":"The header CTA pill height."},"nav-panel-width":{"v":"1440px","t":"dimension","s":"measured w of nav-panel default (raw/components-computed.json)","d":"The open mega-menu panel width."},"nav-panel-height":{"v":"604.5px","t":"dimension","s":"measured h of nav-panel default (raw/components-computed.json)","d":"The open mega-menu panel height."},"hero-headline-width":{"v":"504px","t":"dimension","s":"measured w of hero-h1 default (raw/components-computed.json)","d":"The hero display heading's measure."},"field-height":{"v":"48px","t":"dimension","s":"measured h of form-email default (raw/components-computed.json)","d":"The contact field height."},"submit-width":{"v":"97.84px","t":"dimension","s":"measured w of form-submit default (raw/components-computed.json)","d":"The contact 'Submit' pill width."},"submit-height":{"v":"39.75px","t":"dimension","s":"measured h of form-submit default (raw/components-computed.json)","d":"The contact 'Submit' pill height."},"plan-card-width":{"v":"252px","t":"dimension","s":"measured w of plan-card default (raw/components-computed.json)","d":"The plan-card column width."},"toggle-width":{"v":"91.98px","t":"dimension","s":"measured w of price-toggle default (raw/components-computed.json)","d":"The Monthly/Annually toggle's Monthly side width."},"mobile-topbar-height":{"v":"120px","t":"dimension","s":"measured h of m-topbar default (raw/components-computed.json)","d":"The phone header bar height."},"productShell":{"login-panel-width":{"v":"346px","t":"dimension","s":"measured w of login-panel default on the accounts sign-in surface (raw/components-computed.json)","d":"The sign-in card width on accounts.frame.io/welcome."},"login-field-height":{"v":"40px","t":"dimension","s":"measured h of login-email default on the accounts sign-in surface (raw/components-computed.json)","d":"The sign-in e-mail field height."},"login-field-bg":{"v":"#ffffff","t":"color","s":"computed backgroundColor of login-email default on the accounts sign-in surface (raw/components-computed.json)","d":"The sign-in e-mail field fill."},"login-submit-fill":{"v":"#5b53ff","t":"color","s":"computed backgroundColor of login-submit default on the accounts sign-in surface (raw/components-computed.json)","d":"The 'Let's go' button fill (the accounts stack's cobalt)."},"login-submit-ink":{"v":"#ffffff","t":"color","s":"computed color of login-submit default on the accounts sign-in surface (raw/components-computed.json)","d":"The 'Let's go' button text."}}}},"light":{},"dark":{"theme":{"bg":{"v":"{color.grey.00}","t":"color","s":"computed backgroundColor of page-field default (raw/components-computed.json); matches declared color.grey.00","d":"The near-black page field every public page paints."},"fg":{"default":{"v":"{color.grey.100}","t":"color","s":"computed color of hero-h1 default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared color.grey.100","d":"The #fcfcfc ink on display copy, headings and body (grey-100)."},"muted":{"v":"{color.alpha.light.50}","t":"color","s":"computed color of section-h2 default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared color.alpha.light.50","d":"The section-heading ink."},"nav":{"v":"{color.grey.100}","t":"color","s":"computed color of nav-pricing default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared color.grey.100","d":"The header link ink."},"footer":{"v":"{color.grey.100}","t":"color","s":"computed color of footer-link default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared color.grey.100","d":"The footer link ink."},"declared":{"v":"#fcfcfc","t":"color","s":"css-var --main-font-color (dark)","d":"The declared --main-font-color ink role (#fcfcfc)."}},"btn":{"primary":{"bg":{"v":"rgba(0, 0, 0, 0)","t":"color","s":"computed backgroundColor of nav-cta default (raw/components-computed.json)","d":"The white fill of the 'Start Free Trial' pill — the site's primary action inverts to ink-on-paper."},"fg":{"v":"{color.grey.00}","t":"color","s":"computed color of nav-cta default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared color.grey.00","d":"The near-black text on the white CTA pill."},"hoverBg":{"v":"rgba(0, 0, 0, 0)","t":"color","s":"computed backgroundColor of nav-cta hover (raw/components-computed.json)","d":"The CTA pill's hover fill."}},"secondary":{"border":{"v":"{color.grey.100}","t":"color","s":"computed borderTopColor of hero-tour default (raw/components-computed.json); matches declared color.grey.100","d":"The 'Take a Product Tour' ghost button's border."},"fg":{"v":"{color.grey.100}","t":"color","s":"computed color of hero-tour default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared color.grey.100","d":"The ghost button's ink."}}},"border":{"focus":{"v":"{color.grey.100}","t":"color","s":"computed outlineColor of nav-cta focus-visible (raw/components-computed.json); matches declared color.grey.100","d":"The keyboard focus ring colour on the header CTA."}},"banner":{"bg":{"v":"{color.brand.cobalt.default}","t":"color","s":"computed backgroundColor of announcement default (raw/components-computed.json); matches declared color.brand.cobalt.default","d":"The announcement banner's cobalt-violet fill."},"fg":{"v":"{color.grey.100}","t":"color","s":"computed color of announcement default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared color.grey.100","d":"The announcement banner's ink."}},"surface":{"card":{"v":"rgba(16, 16, 23, 0.5)","t":"color","s":"computed backgroundColor of plan-card default (raw/components-computed.json)","d":"The plan card's raised dark fill on /pricing."}},"form":{"field":{"ink":{"v":"{color.grey.90}","t":"color","s":"computed color of form-email default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared color.grey.90","d":"The contact field's text ink."},"border":{"v":"{color.grey.20}","t":"color","s":"computed borderBottomColor of form-email default (raw/components-computed.json); matches declared color.grey.20","d":"The contact field's underline border."}},"placeholder":{"v":"{color.grey.90}","t":"color","s":"computed ::placeholder color of form-email default (raw/components-computed.json); matches declared color.grey.90","d":"The field label/placeholder ink."},"submit":{"bg":{"v":"rgba(0, 0, 0, 0)","t":"color","s":"computed backgroundColor of form-submit default (raw/components-computed.json)","d":"The contact form 'Submit' pill fill."},"fg":{"v":"{color.grey.40}","t":"color","s":"computed color of form-submit default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared color.grey.40","d":"The 'Submit' pill text."}}},"accent":{"v":"#f5f5f8","t":"color","s":"css-var --color-accent (dark)","d":"The declared --color-accent role — the light-grey accent (#f5f5f8)."}}}};
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  for (const [n, t] of flat(TOK.core.overlay || {}, 'overlay.').filter(([, t]) => t.t === 'color')) {
+    h += '';
+  }
+  const ov = flat(TOK.core.overlay || {}, 'overlay.').filter(([, t]) => t.t === 'color');
+  if (ov.length) {
+    h += '<div class="pal-h">overlay</div><div class="pal">';
+    for (const [n, t] of ov) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  const roles = flat(TOK.dark || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+  if (roles.length) {
+    h += '<div class="pal-h">dark roles (the painted theme)</div><div class="pal">';
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.layout || {}, 'layout.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.zIndex || {}, 'zIndex.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.motion || {}).duration || {}, 'motion.duration.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.motion || {}).easing || {}, 'motion.easing.')) m += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? 'cubic-bezier(' + t.v.join(', ') + ')' : t.v)}</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  for (const [n, t] of flat((TOK.core || {}).elevation || {}, 'elevation.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.breakpoint || {}), 'breakpoint.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.motion || {}).control ? {'motion.control': (TOK.core.motion||{}).control} : {}, '')) m += `<div><b>${esc(n)}</b> <span>${esc(String(t.v).slice(0, 90))}…</span></div>`;
+  if (TOK.core.motion && TOK.core.motion.control) m += `<div><b>motion.control</b> <span>${esc(String(TOK.core.motion.control.v).slice(0, 90))}…</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+const resolveVal = (v, depth) => {
+  if (depth > 6 || typeof v !== 'string') return v;
+  const m = v.match(/^\{(.+)\}$/);
+  if (!m) return v;
+  // Aliases are set-relative: {font.size.body} and the palette scales live
+  // under TOK.core, the painted roles under TOK.dark. Try each root.
+  for (const root of [TOK.core, TOK.dark, TOK]) {
+    let node = root;
+    for (const k of m[1].split('.')) node = node && node[k];
+    if (node && node.v !== undefined) return resolveVal(node.v, (depth || 0) + 1);
+  }
+  return v;
+};
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(resolveVal(t.v));
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Frame.io</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).tracking || {}, 'font.tracking.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>

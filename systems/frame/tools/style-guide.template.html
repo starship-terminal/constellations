@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Frame.io style guide</title>
+<meta name="description" content="Frame.io design tokens and the public marketing surfaces' components, rendered from tokens.json with the declared and measured values.">
+<style>
+:root {
+/*CORE*/
+/*DARK*/
+  --sg-sans: "Inter", ui-sans-serif, system-ui, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+  --sg-serif: "FrameGothic", "Inter", ui-sans-serif, system-ui, Arial, sans-serif;
+  --sg-mono: "NeueMachinaInktrap", ui-monospace, "SF Mono", Menlo, monospace;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--theme-fg-default, #fcfcfc); background: var(--theme-bg, #000); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 400 40px/1.2 var(--sg-serif); margin: 0 0 4px; letter-spacing: -0.02em; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--theme-fg-default, #fcfcfc); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--color-alpha-dark-20, rgba(252,252,252,.2)); }
+.lead { max-width: 62ch; color: var(--theme-fg-default, #fcfcfc); opacity: .8; }
+.note { font-size: 13px; color: var(--theme-fg-default, #fcfcfc); opacity: .65; max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--theme-fg-default, #fcfcfc); opacity: .6; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--color-alpha-dark-20, rgba(252,252,252,.25)); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--theme-fg-default, #fcfcfc); opacity: .65; }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--color-alpha-dark-20, rgba(252,252,252,.25)); background: var(--color-grey-05, #0d0d18); font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--theme-fg-default, #fcfcfc); opacity: .65; }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--color-alpha-dark-20, rgba(252,252,252,.2)); overflow: hidden; background: var(--theme-bg, #000); }
+.navbar { display: flex; align-items: center; gap: 22px; height: var(--component-topbar-height, 80px); padding: 0 12px 0 22px; font-size: 15px; color: var(--theme-fg-default, #fcfcfc); background: var(--theme-bg, #000); box-shadow: var(--color-alpha-dark-10, rgba(252,252,252,.16)) 0 -1px 0 0 inset; }
+.navbar .wm { font-weight: 600; font-size: 17px; letter-spacing: -0.02em; }
+.navbar .sp { flex: 1; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-cta-height, 40px); padding: 0 18px; font-size: 15px; font-weight: 500; border-radius: var(--radius-cta, 999px); border: 1px solid transparent; }
+/* The element's own background stays transparent: the real Button paints its
+   light fill on ::before (measured #f5f5f8 = grey-97, ringed #c1c2d9 =
+   grey-80), so the mock reproduces that layer rather than filling the span. */
+.btn.primary { position: relative; isolation: isolate; background: var(--theme-btn-primary-bg, transparent); color: var(--theme-btn-primary-fg, #0d0d18); }
+.btn.primary::before { content: ""; position: absolute; inset: 0; z-index: -1; border-radius: inherit; background: var(--color-grey-97, #f5f5f8); border: 1px solid var(--color-grey-80, #c1c2d9); }
+.btn.ghost { background: transparent; border-color: var(--theme-btn-secondary-border, rgba(252,252,252,.4)); color: var(--theme-btn-secondary-fg, #fcfcfc); }
+.btn.small { height: 32px; font-size: 13px; font-weight: 500; }
+.banner { background: var(--theme-banner-bg, #5b53ff); color: var(--theme-banner-fg, #fcfcfc); text-align: center; font-size: 13px; padding: 7px 12px; }
+.hero { color: var(--theme-fg-default, #fcfcfc); padding: 80px 40px; font: 600 var(--font-size-measured-hero, 80px)/1.1 var(--sg-serif); letter-spacing: -0.02em; text-align: center; background: var(--theme-bg, #000); }
+.hero small { display: block; font: 400 20px/1.4 var(--sg-sans); letter-spacing: 0; color: var(--theme-fg-default, #fcfcfc); opacity: .7; margin: 20px auto 26px; max-width: 46ch; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
+.tile { border: 1px solid var(--color-alpha-dark-20, rgba(252,252,252,.18)); border-radius: var(--radius-card, 16px); padding: 14px; font-size: 13px; background: var(--theme-surface-card, #0d0d18); }
+.tile .img { height: 140px; background: var(--color-alpha-dark-10, rgba(252,252,252,.08)); border-radius: 8px; margin-bottom: 10px; display: flex; align-items: flex-end; padding: 10px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }
+.tile b { display: block; font: 600 24px/1.2 var(--sg-serif); margin-bottom: 4px; }
+.tile .sub { color: var(--theme-fg-default, #fcfcfc); opacity: .6; font-size: 12px; }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--color-alpha-dark-20, rgba(252,252,252,.25)); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--color-alpha-dark-20, rgba(252,252,252,.15)); }
+.tr .ts { font-family: var(--sg-serif); }
+.tr .tv { font-size: 12px; color: var(--theme-fg-default, #fcfcfc); opacity: .65; font-family: var(--sg-mono); }
+/* The billing switch is two round radio controls, not a segmented pill: a
+   24px circle ringed grey-60, the selected side filling a 10px
+   turquoise-triumph dot inside it. */
+.radio-row { display: inline-flex; align-items: center; gap: 28px; font-size: 15px; color: var(--theme-fg-default, #fcfcfc); }
+.radio-row .opt { display: inline-flex; align-items: center; gap: 10px; }
+.radio-row .opt i { width: 24px; height: 24px; border-radius: 50%; border: 1px solid var(--color-grey-60, #81859f); display: inline-flex; align-items: center; justify-content: center; }
+.radio-row .opt.on i::after { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--color-turquoise-triumph, #6199f6); }
+.field { display: block; width: 280px; height: var(--component-field-height, 48px); padding: 0 14px; border: 0; border-bottom: 1px solid var(--theme-form-field-border, rgba(252,252,252,.3)); border-radius: var(--radius-field, 0); background: transparent; font-size: 15px; color: var(--theme-form-field-ink, #fcfcfc); }
+.badge { display: inline-flex; align-items: center; height: 15px; padding: 0 7px; border-radius: 999px; background: var(--color-turquoise-triumph, #6199f6); color: var(--color-grey-00, #000); font-size: 10px; font-weight: 500; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Frame.io style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">Frame.io, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the declared <code>--color-grey-00..100</code> neutral ramp the whole dark theme is built from, the five brand hues (<code>--color-coral</code>, <code>--color-iris</code>, <code>--color-electric</code>, <code>--color-cobalt</code>, <code>--color-turquoise-triumph</code>) and their light/dark steps, the <code>--color-alpha-*</code> ladders and named tints, the <code>--overlay-*</code> dims, the <code>--spacer-*</code> rem scale, the 12-column <code>--grid-*</code> on a 108rem <code>--global-max-width</code>, the 8rem <code>--nav-height</code>, the <code>--duration-*</code>/<code>--ease-*</code> motion steps and the <code>--z-index-*</code> stacking map. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from frame.io, signed out, in headless Chromium. Every public page paints this one dark theme — the site ships no theme switch. The app and every signed-in surface is a documented boundary; the contact and sign-in forms were measured, never submitted. FrameGothic, NeueMachinaInktrap and Inter are served faces and are not loaded here: samples fall back to system sans. accounts.frame.io/welcome (the sign-in surface) is a different stack — its measured values live under <code>component.productShell.*</code>.</p>
+
+  <h2 class="sh">The chrome</h2>
+  <p class="lead">Every page opens under the cobalt <code>--theme-banner-*</code> announcement strip, then the fixed 8rem header: the Frame.io waveform mark, the Features/Enterprise/Resources mega-menu triggers (click opens a full-width panel — hover does not), Pricing, Contact Us, Sign In and the white "Start Free Trial" pill (<code>--theme-btn-primary-*</code>) — the primary action inverts to ink-on-paper on the dark field. Below, a centred display hero in FrameGothic pairs the white pill with a bordered ghost.</p>
+  <div class="mock" style="padding:0">
+    <div class="banner">Put your creative context to work with new AI-powered capabilities →</div>
+    <div class="navbar"><span class="wm">)))&middot;</span><span>Features</span><span>Enterprise</span><span>Resources</span><span>Pricing</span><span class="sp"></span><span>Contact Us</span><span>Sign In</span><span class="btn small primary">Start Free Trial</span></div>
+    <div class="hero">One platform<br>for all your creative work.<small>Unify content, feedback, approvals and delivery in one AI-powered platform.</small><span class="btn primary">Start Free Trial</span>&nbsp;&nbsp;<span class="btn ghost">Take a Product Tour</span></div>
+  </div>
+
+  <h2 class="sh">Pricing</h2>
+  <p class="lead">/pricing runs the Monthly/Annually switch as two round radio controls — a 24px circle ringed grey-60, the picked side filling a 10px turquoise-triumph dot — the Annually side carrying a "SAVE 13%" badge, over raised <code>--theme-surface-card</code> plan cards at $0/$15/$25, with white <code>Sign Up Now</code>/<code>Start Free Trial</code> pills and the ghost <code>Book a Meeting</code> on Enterprise.</p>
+  <div class="mock" style="padding:20px">
+    <div class="radio-row"><span class="opt on"><i></i>Monthly</span><span class="opt"><i></i>Annually&nbsp;<span class="badge">SAVE 13%</span></span></div>
+    <div class="grid" style="margin-top:16px">
+      <div class="tile"><div class="img">Free</div><b>$0</b><span class="sub">2 members · 2 GB</span></div>
+      <div class="tile"><div class="img">Pro</div><b>$15</b><span class="sub">per member / mo</span></div>
+      <div class="tile"><div class="img">Team</div><b>$25</b><span class="sub">per member / mo</span></div>
+    </div>
+    <div style="margin-top:16px"><input class="field" placeholder="Name">&nbsp;<span class="btn primary">Submit</span></div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The dark theme is a 19-step neutral ramp — <code>--color-grey-00</code> #000000 through <code>--color-grey-100</code> #fcfcfc — with the five brand hues reserved for accents (the cobalt announcement banner, links, badges), the <code>--color-alpha-*</code> ladders for hairlines and washes, and the <code>--overlay-*</code> dims for scrims. Measured roles alias the declared values they match.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing, grid and motion</h2>
+  <p class="lead">The spacer scale runs 0.8rem steps from 0 to 48rem; the marketing grid is 12 columns inside a 108rem <code>--global-max-width</code>; the fixed header is 8rem. The default control motion is 0.3s on <code>--ease-default</code> — cubic-bezier(0.25,0.1,0.25,1).</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">Three served faces: <code>FrameGothic</code> (a 400-600 variable face, <code>--font-main</code>) carries every display heading — the hero runs 80px — <code>NeueMachinaInktrap</code> (<code>--font-secondary</code>) draws labels and kickers, and <code>Inter</code> (a 100-900 variable face, <code>--font-tertiary</code>) sets UI and body copy at the 1.6rem <code>--font-size-base</code>. The stacks are declared on the Next.js font-variable classes, so samples here fall back to system sans.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared --color-*/--font-*/--spacer-*/--grid-* variables from the live stylesheets and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, opened, focused and filled states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = /*TOKENS*/null;
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  for (const [n, t] of flat(TOK.core.overlay || {}, 'overlay.').filter(([, t]) => t.t === 'color')) {
+    h += '';
+  }
+  const ov = flat(TOK.core.overlay || {}, 'overlay.').filter(([, t]) => t.t === 'color');
+  if (ov.length) {
+    h += '<div class="pal-h">overlay</div><div class="pal">';
+    for (const [n, t] of ov) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  const roles = flat(TOK.dark || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+  if (roles.length) {
+    h += '<div class="pal-h">dark roles (the painted theme)</div><div class="pal">';
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.layout || {}, 'layout.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.zIndex || {}, 'zIndex.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.motion || {}).duration || {}, 'motion.duration.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.motion || {}).easing || {}, 'motion.easing.')) m += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? 'cubic-bezier(' + t.v.join(', ') + ')' : t.v)}</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  for (const [n, t] of flat((TOK.core || {}).elevation || {}, 'elevation.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.breakpoint || {}), 'breakpoint.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.motion || {}).control ? {'motion.control': (TOK.core.motion||{}).control} : {}, '')) m += `<div><b>${esc(n)}</b> <span>${esc(String(t.v).slice(0, 90))}…</span></div>`;
+  if (TOK.core.motion && TOK.core.motion.control) m += `<div><b>motion.control</b> <span>${esc(String(TOK.core.motion.control.v).slice(0, 90))}…</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+const resolveVal = (v, depth) => {
+  if (depth > 6 || typeof v !== 'string') return v;
+  const m = v.match(/^\{(.+)\}$/);
+  if (!m) return v;
+  // Aliases are set-relative: {font.size.body} and the palette scales live
+  // under TOK.core, the painted roles under TOK.dark. Try each root.
+  for (const root of [TOK.core, TOK.dark, TOK]) {
+    let node = root;
+    for (const k of m[1].split('.')) node = node && node[k];
+    if (node && node.v !== undefined) return resolveVal(node.v, (depth || 0) + 1);
+  }
+  return v;
+};
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(resolveVal(t.v));
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Frame.io</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).tracking || {}, 'font.tracking.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>
