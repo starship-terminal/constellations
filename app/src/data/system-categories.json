@@ -1030,5 +1030,14 @@
     "groupId": "web-categories",
     "labels": ["AI Tool", "Productivity"],
     "reason": "catalog.json describes an AI writing assistant: marketing and pricing pages, a free grammar checker, paraphrasing tool, AI detector and word counter, all signed out."
+  },
+  {
+    "referenceId": "systems:glorify",
+    "groupId": "web-categories",
+    "labels": [
+      "Design & Media Editing",
+      "Productivity"
+    ],
+    "reason": "catalog.json describes an e-commerce design tool: a Framer marketing site with pricing, template galleries and a Learn hub, the signed-out auth cards, and the anonymous editor (upload onboarding, Craft dialog, canvas chrome); the signed-in workspace is gated."
   }
 ]
