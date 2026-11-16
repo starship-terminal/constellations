@@ -1,0 +1,10 @@
+{
+  "_note": "Rules for systems/framer. Public signed-out capture (marketing pages, pricing, community gallery and marketplace indexes, contact, login at rest); no private data expected. Framer's own published contact addresses are allow-listed.",
+  "ocr": {
+    "emails": true,
+    "email_allow": [
+      "@framer\\.com$"
+    ]
+  },
+  "families": []
+}

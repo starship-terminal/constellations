@@ -1,0 +1,86 @@
+{
+  "F1": {
+    "grade": "partly",
+    "evidence": "The declared layer is 576 --token-<uuid> paints deduplicated to 68 values: a complete achromatic ramp (neutral-00 black through ~25 grey steps to neutral-ff white) plus the translucent alpha-white.05-.8 / alpha-black.05-.6 hairline ladder and a set of saturated accent paints (lime #cbff00, blue #0099ff, violets, greens, rose). They are colour styles, not lightness ramps per hue - no hue carries an ordered ramp."
+  },
+  "F2": {
+    "grade": "partly",
+    "evidence": "Measured roles: background.page (#000), surface.menuPanel/footerBg/loginPanel, form.fieldBg (the input is transparent; the fill is measured on its wrapper div); scrim behaviour observed behind the mega-dropdowns. The gallery page's field was never measured, so no gallery surface token is published. No named raised/overlay token family exists - Framer's paints are anonymous, so roles are measured aliases only."
+  },
+  "F3": {
+    "grade": "partly",
+    "evidence": "Primary (text.ink #fff), secondary/nav (text.navInk alpha-white.80 with navInkHover full white), on-accent (action.ctaInk #000 on white pills, planCtaInk #fff on blue), placeholder (form.placeholder) are measured. No disabled text role or distinct link colour was observed - links read as ink and no disabled control is reachable signed out."
+  },
+  "F4": {
+    "grade": "partly",
+    "evidence": "Hairlines resolve through the declared alpha-white ladder (alpha-white.7/.1/.15) measured on cards, menu panel and the footer; border.focusRing is measured (#101010 ring on the white Sign up pill). There is no named default/strong border pair in the declared layer - the paints are anonymous."
+  },
+  "F5": {
+    "grade": "partly",
+    "evidence": "Default/hover/pressed measured on the white CTAs (action.ctaFill #fff, ctaHover, forced-pressed state), the hero ghost (alpha-white.1 fill), and the #0099ff Pro plan CTA (planCtaFill). Hover lifts nav ink .8→1.0. Pressed is DevTools-forced so script-applied mousedown looks are unobserved."
+  },
+  "F6": {
+    "grade": "missing",
+    "evidence": "No success/warning/danger/info roles were observed on any public surface - no validation, error, banner or alert state is reachable signed out, and the accent paints are not labelled with status semantics in the opaque uuid layer."
+  },
+  "F7": {
+    "grade": "na",
+    "evidence": "One painted theme per stack: marketing and the community/gallery stack paint dark; /login is a separate light shell, not a second theme of the same system. No theme switcher or dark variant of the light shell exists; tokens.json carries one dark set plus theme-independent core."
+  },
+  "F8": {
+    "grade": "partly",
+    "evidence": "Families measured with fallbacks: GT Walsheim Medium 54px/500 on the hero (font.family.measured.display), Inter Variable on nav/body/CTA (measured.body), walsheim on the community stack (measured.community), Inter Variable UI on the auth shell (measured.auth); Azeret Mono and GT Walsheim presets declared in the sheets. Measured sizes/weights exist for hero, body and controls but there is no named 6-8-step scale - the type ramp is component-scoped --framer-* vars, not a published scale."
+  },
+  "F9": {
+    "grade": "missing",
+    "evidence": "No declared spacing scale exists in the harvested stylesheets - spacing is inline Framer-layout values; measured paddings/gaps are recorded per component but there is no base-unit scale to name."
+  },
+  "F10": {
+    "grade": "meets",
+    "evidence": "Radii measured per component: the 8px control/card family (hero CTA 34px pill shape, ghost button, fields, menu panel) and the pill 9999px on chips/buttons; border widths measured per component in components.md."
+  },
+  "F11": {
+    "grade": "partly",
+    "evidence": "Control heights measured: topbar 64px (desktop and mobile), hero CTA 34px, header CTA 30px, nav links 39.59px, plan cards 300px wide, credits select 250x34, gallery chips 30px, gallery Open 55x30, login field/button 30px. No size ramp (sm/md/lg) is declared, and icon sizing is crop-level evidence only."
+  },
+  "F12": {
+    "grade": "missing",
+    "evidence": "No elevation scale was observed - the mega-dropdown panels and cards separate by surface colour and hairlines, not a named shadow ladder; no shadow tokens were harvested or measured as a system."
+  },
+  "F13": {
+    "grade": "partly",
+    "evidence": "raw/motion.json probed four pages: 17 moving elements on home (scroll reveals, marquee loops) and 101 on the gallery, with durations/easings captured into core.motion.*. Reduced-motion coverage is partial - the homepage partially honours prefers-reduced-motion while pricing, gallery and login ignore it; recorded per page."
+  },
+  "F14": {
+    "grade": "partly",
+    "evidence": "Measured layout: 64px header, 650px mega-panel, 782px hero headline, 300px plan columns, 250px selects, mobile 390px drawer. No declared breakpoint/grid token layer exists - responsive behaviour is measured at the two captured widths only."
+  },
+  "C1": {
+    "grade": "partly",
+    "evidence": "37 components measured across chrome (header, dropdown triggers, mega-panel, logo, locale select), actions (header/hero/plan CTAs, ghost, billing switch, credits select), forms (login field, Google button, Continue submit, gallery search), the gallery index (filters, Open buttons, cards), the FAQ and the mobile drawer. Missing from the checklist: textarea, checkbox/radio, tab bar, modal, toast, pagination, table - none are reachable signed out."
+  },
+  "C2": {
+    "grade": "partly",
+    "evidence": "States beyond default captured: hover on nav links and CTAs, focus-visible on CTAs and the login field, forced pressed, the opened mega-dropdowns and the mobile drawer, the gallery search focused state. Disabled, error, loading and submitted states are absent - not fabricated."
+  },
+  "C3": {
+    "grade": "meets",
+    "evidence": "Focus-visible measured on the Sign up pill (#101010 ring, dark.color.border.focusRing) and the login work-email field; the mega-dropdown panel closes on blur so focus inside it could not be held - recorded as a gap rather than inferred."
+  },
+  "C4": {
+    "grade": "meets",
+    "evidence": "Every measured colour aliases the declared palette paint its value matches (ink→neutral-ff, navInk→alpha-white.80, planCtaFill→accent.blue, menuPanel→neutral-11...); every token carries $extensions.source and component geometry lives under core.component.* - components.md labels each colour with its token path."
+  },
+  "P1": {
+    "grade": "partly",
+    "evidence": "patterns.md covers the marketing chrome and mega-dropdowns, the hero + embedded demo, the pricing grid with its billing switch and credits selects, the community gallery index, the auth boundary card, mobile chrome and the motion/focus conventions. Empty/loading/error, destructive confirmation, onboarding and search-results patterns are not reachable on the signed-out public surface."
+  },
+  "A1": {
+    "grade": "partly",
+    "evidence": "Fonts are fully named (GT Walsheim Medium/Bold, Inter Variable, walsheim, Azeret Mono - 378 @font-face rules harvested into raw/css-vars.json with fallback stacks). Icons are a declared layoutGaps entry: no standalone SVG set was lifted; the Framer mark and UI glyphs are the product's artwork visible in crops/screenshots; icon.png is the site's own apple-touch icon via tools/fetch_icon.py."
+  },
+  "K1": {
+    "grade": "meets",
+    "evidence": "The README states what was captured (21 desktop routes + 4 mobile routes, the mega-dropdowns and the nav overlay), how (Playwright headless, body-scoped stylesheet harvest, computed styles, motion probe), and what to distrust (the signed-in boundary, the opaque uuid palette, SGD pricing, forced pressed states, quantised screenshots, the community stack's unharvested layer, weak nav-panel/logo measurements)."
+  }
+}

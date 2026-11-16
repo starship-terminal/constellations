@@ -1,0 +1,7883 @@
+{
+ "_meta": {
+  "readAt": "2026-11-16",
+  "probe": "page.emulateMedia({ reducedMotion }): 'no-preference' then 'reduce', same elements, same page",
+  "source": "public pages, headless Chromium, read at rest",
+  "notes": "Computed transitions and animations are read at rest; rules in :hover and other state selectors appear under `declared`. Outcome per element: removed (every transition and animation ends at or under 1 ms), reduced, kept, partial."
+ },
+ "summary": {
+  "moving": 1465,
+  "removed": 96,
+  "reduced": 0,
+  "kept": 1368,
+  "partial": 1,
+  "increased": 0,
+  "added": 0,
+  "behaviour": "partial",
+  "loops": []
+ },
+ "pages": {
+  "page-1": {
+   "url": "https://frame.io/",
+   "matchMedia": {
+    "normal": false,
+    "reduce": true
+   },
+   "scanned": 1966,
+   "capped": false,
+   "unreadableSheets": 1,
+   "sheetsTruncated": {
+    "declared": false,
+    "reducedRules": false,
+    "customProperties": false
+   },
+   "summary": {
+    "moving": 419,
+    "removed": 24,
+    "reduced": 0,
+    "kept": 395,
+    "partial": 0,
+    "increased": 0,
+    "added": 0,
+    "behaviour": "partial",
+    "loops": []
+   },
+   "groups": [
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 400,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 400,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "kept",
+       "from": 400,
+       "to": 400
+      }
+     ],
+     "count": 87,
+     "nodes": [
+      "img.Video_thumbnail.Video_shown.Image_image",
+      "img.Shadow_shadowImage.Image_image.Image_animated",
+      "img.Shadow_middleRightImg.Image_image.Image_animated"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "color",
+        "durationMs": 600,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.28, 0.44, 0.49, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "color",
+        "durationMs": 600,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.28, 0.44, 0.49, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "color",
+       "outcome": "kept",
+       "from": 600,
+       "to": 600
+      }
+     ],
+     "count": 84,
+     "nodes": [
+      "a.NavGroup_navGroupSubcategoryItemLink.listItemsByIndex_listItemsByIndexItemLink.typography_eyebrow",
+      "a.NavGroup_navGroupSubcategoryItemLink.listItemsByIndex_listItemsByIndexItemLink.typography_eyebrow::before"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 600,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.42, 0, 0.28, 0.99)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 600,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.42, 0, 0.28, 0.99)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "kept",
+       "from": 600,
+       "to": 600
+      }
+     ],
+     "count": 42,
+     "nodes": [
+      "span.NavGroup_navGroupSubcategoryItemInnerContent.listItemsByIndex_listItemsByIndexItemInner.typography_subnavigation"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "color",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.28, 0.44, 0.49, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "color",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.28, 0.44, 0.49, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "color",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 37,
+     "nodes": [
+      "button.Navigation_navigationMainItem.typography_navigation.typography_title2",
+      "a.Navigation_navigationMainItem.typography_navigation.typography_title2",
+      "a.NavItem_isReducedNavNavItem.typography_reducedNavigation.Navigation_navigationMainItem"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "background",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0, 0.44, 0.6, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "background",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0, 0.44, 0.6, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "background",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 22,
+     "nodes": [
+      "a.Button_textLink.Button_base.typography_button::before",
+      "a.Button_glass.Button_base.typography_button::before",
+      "a.Button_white.Button_base.typography_button::before"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 400,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0, 0.44, 0.6, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 400,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0, 0.44, 0.6, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "kept",
+       "from": 400,
+       "to": 400
+      }
+     ],
+     "count": 22,
+     "nodes": [
+      "span.AnimatedSvgArrow_arrowWrapper",
+      "span.AnimatedSvgArrow_cssTail::after"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "color",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0, 0.44, 0.6, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "color",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0, 0.44, 0.6, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "color",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 21,
+     "nodes": [
+      "a.Button_textLink.Button_base.typography_button",
+      "a.Button_glass.Button_base.typography_button",
+      "a.Button_white.Button_base.typography_button"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.28, 0.44, 0.49, 1)"
+       },
+       {
+        "property": "visibility",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.28, 0.44, 0.49, 1)"
+       },
+       {
+        "property": "visibility",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      },
+      {
+       "kind": "transition",
+       "key": "visibility",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      }
+     ],
+     "count": 17,
+     "nodes": [
+      "div.PricingCard_cardDetailBulletTooltip.typography_body"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "box-shadow",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0, 0.44, 0.6, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "box-shadow",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0, 0.44, 0.6, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "box-shadow",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 13,
+     "nodes": [
+      "a.Button_glass.Button_base.typography_button::after",
+      "a.Button_ghost.Button_base.typography_button::after"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.42, 0, 0.28, 0.99)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.42, 0, 0.28, 0.99)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 12,
+     "nodes": [
+      "svg"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "background-color",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+       },
+       {
+        "property": "color",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "background-color",
+       "outcome": "removed",
+       "from": 150,
+       "to": 0
+      },
+      {
+       "kind": "transition",
+       "key": "color",
+       "outcome": "removed",
+       "from": 150,
+       "to": 0
+      }
+     ],
+     "count": 10,
+     "nodes": [
+      "a[role=menuitem].LanguageSelector_item.typography_label",
+      "a[role=menuitem].LanguageSelector_item.typography_label.LanguageSelector_itemActive"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "removed",
+       "from": 200,
+       "to": 0
+      }
+     ],
+     "count": 10,
+     "nodes": [
+      "span.LanguageSelector_dot",
+      "span.LanguageSelector_dot.LanguageSelector_dotActive"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0, 0.44, 0.6, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0, 0.44, 0.6, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 9,
+     "nodes": [
+      "a.Button_white.Button_base.typography_button::after",
+      "button.UIButtonBase_uiButton.ButtonCarouselArrow_buttonCarouselArrow.global_carouselArrowsButtonPrev::after",
+      "button.UIButtonBase_uiButton.ButtonCarouselArrow_buttonCarouselArrow.global_carouselArrowsButtonNext::after"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease-out"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease-out"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "all",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      }
+     ],
+     "count": 4,
+     "nodes": [
+      "span.ToggleButton_navMobileButtonLineEl"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "height",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.42, 0, 0.28, 0.99)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "height",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.42, 0, 0.28, 0.99)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "height",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 4,
+     "nodes": [
+      "div.PricingCard_cardDetails"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 500,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.17, 0.89, 0.47, 1.13)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 500,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.17, 0.89, 0.47, 1.13)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "kept",
+       "from": 500,
+       "to": 500
+      }
+     ],
+     "count": 4,
+     "nodes": [
+      "div.MultiImageMediaContainer_mediaBackgroundContainer",
+      "div.MultiImageMediaContainer_mediaForegroundContainer"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "border-radius",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "border-radius",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "border-radius",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      }
+     ],
+     "count": 3,
+     "nodes": [
+      "figure.Navigation_backdrop.NavMobile_backdropMobile",
+      "figure.Navigation_backdrop",
+      "figure.Navigation_backdrop.Navigation_backdropMainNav"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 500,
+        "delayMs": 0,
+        "easing": "ease-out"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 500,
+        "delayMs": 0,
+        "easing": "ease-out"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "kept",
+       "from": 500,
+       "to": 500
+      }
+     ],
+     "count": 3,
+     "nodes": [
+      "button.CarouselWithToutsDesktop_descriptionButton.CarouselWithToutsDesktop_active",
+      "button.CarouselWithToutsDesktop_descriptionButton"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 500,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.42, 0, 0.28, 0.99)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 500,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.42, 0, 0.28, 0.99)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "kept",
+       "from": 500,
+       "to": 500
+      }
+     ],
+     "count": 3,
+     "nodes": [
+      "div.Navigation_navigationWrapper",
+      "img.FeatureCard_backgroundMedia.FeatureCard_fullWidth.Image_image",
+      "img.FeatureCard_backgroundMedia.FeatureCard_fullWidthWithShadows.FeatureCard_hotspotIsAtTop"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "fill",
+        "durationMs": 300,
+        "delayMs": 50,
+        "easing": "cubic-bezier(0, 0.44, 0.6, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "fill",
+        "durationMs": 300,
+        "delayMs": 50,
+        "easing": "cubic-bezier(0, 0.44, 0.6, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "fill",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 2,
+     "nodes": [
+      "path"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease-in-out"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease-in-out"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      }
+     ],
+     "count": 2,
+     "nodes": [
+      "div[role=application].Video_video.Video_cover"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [],
+      "animations": [],
+      "scrollBehavior": "smooth"
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": [],
+      "scrollBehavior": "smooth"
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "scroll",
+       "key": "scroll-behavior",
+       "outcome": "kept"
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "html.__variable_9d88cd.__variable_5c99cd.__variable_3586d7"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+       },
+       {
+        "property": "background-color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "color",
+       "outcome": "removed",
+       "from": 200,
+       "to": 0
+      },
+      {
+       "kind": "transition",
+       "key": "background-color",
+       "outcome": "removed",
+       "from": 200,
+       "to": 0
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "button.LanguageSelector_trigger.typography_footnote"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "button.RedirectedLanguageNotification_closeButton"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+       },
+       {
+        "property": "visibility",
+        "durationMs": 0,
+        "delayMs": 300,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "removed",
+       "from": 300,
+       "to": 0
+      },
+      {
+       "kind": "transition",
+       "key": "visibility",
+       "outcome": "removed",
+       "from": 0,
+       "to": 0
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "div.LanguageSelector_panel"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "removed",
+       "from": 300,
+       "to": 0
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "div.LanguageSelector_scrim"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.42, 0, 0.28, 0.99)"
+       },
+       {
+        "property": "transform",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.42, 0, 0.28, 0.99)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.42, 0, 0.28, 0.99)"
+       },
+       {
+        "property": "transform",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.42, 0, 0.28, 0.99)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      },
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "div.RedirectedLanguageNotification_languageBanner.RedirectedLanguageNotification_isHidden"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 600,
+        "delayMs": 0,
+        "easing": "ease-out"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 600,
+        "delayMs": 0,
+        "easing": "ease-out"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "kept",
+       "from": 600,
+       "to": 600
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "div[role=presentation].Navigation_backgroundDim"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "removed",
+       "from": 200,
+       "to": 0
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "svg"
+     ]
+    }
+   ],
+   "keyframes": [
+    {
+     "name": "SelectDropdown_expand__BDCif",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      },
+      {
+       "offset": "10%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      },
+      {
+       "offset": "50%",
+       "properties": [
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity",
+      "transform"
+     ]
+    },
+    {
+     "name": "SelectDropdown_fade-in__O_z6y",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      },
+      {
+       "offset": "90%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity",
+      "transform"
+     ]
+    }
+   ],
+   "reducedMotionRules": [
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".LanguageSelector_chevron, .LanguageSelector_dot, .LanguageSelector_item, .LanguageSelector_panel, .LanguageSelector_scrim, .LanguageSelector_trigger",
+     "declarations": {
+      "transition-behavior": "normal",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "transition-delay": "0s",
+      "transition-property": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".ScrollPrompter_track",
+     "declarations": {
+      "height": "auto"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".ScrollPrompter_stage",
+     "declarations": {
+      "position": "relative",
+      "height": "auto",
+      "min-height": "100svh"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".ScrollPrompter_unit",
+     "declarations": {
+      "opacity": "1",
+      "transition-behavior": "normal",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "transition-delay": "0s",
+      "transition-property": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion)",
+     "selector": ".Sequence_fallbackImageContainer",
+     "declarations": {
+      "display": "block"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion)",
+     "selector": ".Sequence_fallbackImageContainer + .Sequence_sequenceContainer",
+     "declarations": {
+      "display": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion)",
+     "selector": ".LaptopClose_laptopCloseImageSequence .LaptopClose_sequence",
+     "declarations": {
+      "height": "0px",
+      "visibility": "hidden"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion)",
+     "selector": ".LaptopClose_laptopCloseImageSequence .LaptopClose_modules:not(.LaptopClose_postSequence)",
+     "declarations": {
+      "position": "static",
+      "padding-bottom": "0px",
+      "aspect-ratio": "unset",
+      "grid-column-start": "1",
+      "grid-column-end": "span 12"
+     }
+    }
+   ],
+   "declared": [
+    {
+     "selector": ".UIButtonBase_base path",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "delayMs": 50
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".UIButtonBase_base::after",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationRaw": "var(--duration-300ms)",
+       "easing": "var(--ease-micro-bounce)"
+      }
+     ],
+     "animations": [],
+     "viaVar": true
+    },
+    {
+     "selector": ".FormInput_label",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "delayMs": 10
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".TextInput_label",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "delayMs": 10
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".SelectDropdown_label",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "delayMs": 10
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".DebugUI_wrapper",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 100,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "html",
+     "context": [],
+     "transitions": [],
+     "animations": [],
+     "scrollBehavior": "smooth"
+    },
+    {
+     "selector": "input:-webkit-autofill, input:-webkit-autofill:focus, input:-webkit-autofill:hover, select:-webkit-autofill, select:-webkit-autofill:focus, select:-webkit-autofill:hover, textarea:-webkit-autofill, te",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "delayMs": 99999000
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".Image_image",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 400,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".AnimatedSvgArrow_cssTail",
+     "context": [],
+     "transitions": [
+      {
+       "property": "width",
+       "durationRaw": "calc((var(--button-hover-progress))/1*var(--animation-duration))",
+       "easing": "var(--ease-micro-bounce)"
+      }
+     ],
+     "animations": [],
+     "viaVar": true
+    },
+    {
+     "selector": ".AnimatedSvgArrow_cssTail::after",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)"
+      }
+     ],
+     "animations": [],
+     "viaVar": true
+    },
+    {
+     "selector": ".Button_basePrimary::after",
+     "context": [],
+     "transitions": [
+      {
+       "property": "box-shadow",
+       "durationRaw": "var(--duration-300ms)",
+       "easing": "var(--ease-micro-bounce)"
+      }
+     ],
+     "animations": [],
+     "viaVar": true
+    },
+    {
+     "selector": ".Button_baseSolid::after",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".Video_video",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".decorations_overlay",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 100,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".Calendly_calendly",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "transform",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".LanguageSelector_panelOpen",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "delayMs": 0
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".LanguageSuggestionBanner_closeButton",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".RedirectedLanguageNotification_closeButton",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".Navigation_backdrop",
+     "context": [],
+     "transitions": [
+      {
+       "property": "border-radius",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".Navigation_subNavOpen .Navigation_backdrop",
+     "context": [],
+     "transitions": [
+      {
+       "property": "border-radius",
+       "durationMs": 550,
+       "delayMs": 100,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".Manifesto_text",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)"
+      }
+     ],
+     "animations": [],
+     "viaVar": true
+    },
+    {
+     "selector": ".Manifesto_buttonWrapper",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)"
+      }
+     ],
+     "animations": [],
+     "viaVar": true
+    },
+    {
+     "selector": ".ScrollPrompter_video",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".ScrollPrompter_unit",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 150,
+       "delayMs": 0,
+       "easing": "linear"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".ToggleButton_navMobileButtonLine .ToggleButton_navMobileButtonLineEl",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".ImageCloud_imageWrapper",
+     "context": [],
+     "transitions": [
+      {
+       "property": "transform",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".StackedSideBySideWrapper_stackedSideBySideWrapper .StackedSideBySideWrapper_contentWrapper",
+     "context": [
+      "@media (min-width: 768px)"
+     ],
+     "transitions": [
+      {
+       "property": "transform",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".StackedSideBySideWrapper_stackedSideBySideWrapper .StackedSideBySideWrapper_mediaOutro::after",
+     "context": [
+      "@media (min-width: 768px)"
+     ],
+     "transitions": [
+      {
+       "property": "transform",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".StackedSideBySideWrapper_stackedSideBySideWrapper .StackedSideBySideWrapper_mediaWrapper",
+     "context": [
+      "@media (min-width: 768px)"
+     ],
+     "transitions": [
+      {
+       "property": "transform",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".StackedSideBySideWrapper_stackedSideBySideWrapper .StackedSideBySideWrapper_media",
+     "context": [],
+     "transitions": [
+      {
+       "property": "transform",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".Card_media",
+     "context": [
+      "@media (min-width: 768px)"
+     ],
+     "transitions": [
+      {
+       "property": "transform",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".Card_mediaOutro::after",
+     "context": [
+      "@media (min-width: 768px)"
+     ],
+     "transitions": [
+      {
+       "property": "transform",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".Card_mediaScaler",
+     "context": [
+      "@media (min-width: 768px)"
+     ],
+     "transitions": [
+      {
+       "property": "transform",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".CardWrapper_cardWrapper:last-of-type .CardWrapper_content",
+     "context": [
+      "@media (min-width: 768px)"
+     ],
+     "transitions": [
+      {
+       "property": "transform",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".CardWrapper_cardWrapper .CardWrapper_content",
+     "context": [
+      "@media (min-width: 768px)"
+     ],
+     "transitions": [
+      {
+       "property": "transform",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-out"
+      },
+      {
+       "property": "opacity",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    }
+   ],
+   "customProperties": [
+    {
+     "name": "--animation-duration",
+     "declared": "var(--duration-600ms)",
+     "selector": ".SelectDropdown_optionsContainer",
+     "resolved": ""
+    },
+    {
+     "name": "--card-hover-duration",
+     "declared": "var(--duration-500ms)",
+     "selector": ".global_cardHover",
+     "resolved": ""
+    },
+    {
+     "name": "--card-hover-ease",
+     "declared": "var(--ease-basic-butter)",
+     "selector": ".global_cardHover",
+     "resolved": ""
+    },
+    {
+     "name": "--card-hover-transform-default-transition",
+     "declared": "var(--card-hover-duration) transform var(--card-hover-ease)",
+     "selector": ".global_cardHover",
+     "resolved": ""
+    },
+    {
+     "name": "--default-glow-transition-in-delay",
+     "declared": "0s",
+     "selector": ".Glow_displayed",
+     "resolved": ""
+    },
+    {
+     "name": "--duration-150ms",
+     "declared": "0.15s",
+     "selector": ":root",
+     "resolved": "0.15s"
+    },
+    {
+     "name": "--duration-200ms",
+     "declared": "0.2s",
+     "selector": ":root",
+     "resolved": "0.2s"
+    },
+    {
+     "name": "--duration-300ms",
+     "declared": "0.3s",
+     "selector": ":root",
+     "resolved": "0.3s"
+    },
+    {
+     "name": "--duration-400ms",
+     "declared": "0.4s",
+     "selector": ":root",
+     "resolved": "0.4s"
+    },
+    {
+     "name": "--duration-500ms",
+     "declared": "0.5s",
+     "selector": ":root",
+     "resolved": "0.5s"
+    },
+    {
+     "name": "--duration-600ms",
+     "declared": "0.6s",
+     "selector": ":root",
+     "resolved": "0.6s"
+    },
+    {
+     "name": "--duration-60ms",
+     "declared": "0.06s",
+     "selector": ":root",
+     "resolved": "0.06s"
+    },
+    {
+     "name": "--ease-basic-butter",
+     "declared": "cubic-bezier(0.42,0,0.28,0.99)",
+     "selector": ":root",
+     "resolved": "cubic-bezier(0.42,0,0.28,0.99)"
+    },
+    {
+     "name": "--ease-default",
+     "declared": "cubic-bezier(0.25,0.1,0.25,1)",
+     "selector": ":root",
+     "resolved": "cubic-bezier(0.25,0.1,0.25,1)"
+    },
+    {
+     "name": "--ease-embellishment",
+     "declared": "cubic-bezier(0.42,0,0,1)",
+     "selector": ":root",
+     "resolved": "cubic-bezier(0.42,0,0,1)"
+    },
+    {
+     "name": "--ease-in",
+     "declared": "cubic-bezier(0.49,0.025,0.65,0.65)",
+     "selector": ":root",
+     "resolved": "cubic-bezier(0.49,0.025,0.65,0.65)"
+    },
+    {
+     "name": "--ease-in-out",
+     "declared": "cubic-bezier(0.49,0.025,0.49,1)",
+     "selector": ":root",
+     "resolved": "cubic-bezier(0.49,0.025,0.49,1)"
+    },
+    {
+     "name": "--ease-micro-bounce",
+     "declared": "cubic-bezier(0,0.44,0.6,1)",
+     "selector": ":root",
+     "resolved": "cubic-bezier(0,0.44,0.6,1)"
+    },
+    {
+     "name": "--ease-mini-bounce",
+     "declared": "cubic-bezier(0.17,0.89,0.47,1.13)",
+     "selector": ":root",
+     "resolved": "cubic-bezier(0.17,0.89,0.47,1.13)"
+    },
+    {
+     "name": "--ease-out",
+     "declared": "cubic-bezier(0.28,0.44,0.49,1)",
+     "selector": ":root",
+     "resolved": "cubic-bezier(0.28,0.44,0.49,1)"
+    },
+    {
+     "name": "--end-transition",
+     "declared": "0.3",
+     "selector": ".HeroTransitionV4_mediaInner",
+     "resolved": ""
+    },
+    {
+     "name": "--entry-animation-progress",
+     "declared": "0",
+     "selector": ".HeroImageWall_heroImageWall",
+     "resolved": ""
+    },
+    {
+     "name": "--normalized-entry-animation-progress",
+     "declared": "calc(var(--entry-animation-progress)/2 + 0.5)",
+     "selector": ".HeroImageWall_heroImageWall .HeroImageWall_imageWrapper",
+     "resolved": ""
+    },
+    {
+     "name": "--start-transition",
+     "declared": "0.1",
+     "selector": ".HeroTransitionV4_mediaInner",
+     "resolved": ""
+    },
+    {
+     "name": "--transition-out-progress",
+     "declared": "0",
+     "selector": ".HeroScreen_heroScreen",
+     "resolved": ""
+    }
+   ]
+  },
+  "page-2": {
+   "url": "https://frame.io/pricing",
+   "matchMedia": {
+    "normal": false,
+    "reduce": true
+   },
+   "scanned": 9122,
+   "capped": false,
+   "unreadableSheets": 1,
+   "sheetsTruncated": {
+    "declared": false,
+    "reducedRules": false,
+    "customProperties": false
+   },
+   "summary": {
+    "moving": 475,
+    "removed": 24,
+    "reduced": 0,
+    "kept": 451,
+    "partial": 0,
+    "increased": 0,
+    "added": 0,
+    "behaviour": "partial",
+    "loops": []
+   },
+   "groups": [
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 500,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.42, 0, 0.28, 0.99)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 500,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.42, 0, 0.28, 0.99)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "kept",
+       "from": 500,
+       "to": 500
+      }
+     ],
+     "count": 85,
+     "nodes": [
+      "div.Navigation_navigationWrapper",
+      "svg",
+      "div.PricingTable_stickyCtaContainer"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "color",
+        "durationMs": 600,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.28, 0.44, 0.49, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "color",
+        "durationMs": 600,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.28, 0.44, 0.49, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "color",
+       "outcome": "kept",
+       "from": 600,
+       "to": 600
+      }
+     ],
+     "count": 84,
+     "nodes": [
+      "a.NavGroup_navGroupSubcategoryItemLink.listItemsByIndex_listItemsByIndexItemLink.typography_eyebrow",
+      "a.NavGroup_navGroupSubcategoryItemLink.listItemsByIndex_listItemsByIndexItemLink.typography_eyebrow::before"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "height",
+        "durationMs": 500,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.42, 0, 0.28, 0.99)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "height",
+        "durationMs": 500,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.42, 0, 0.28, 0.99)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "height",
+       "outcome": "kept",
+       "from": 500,
+       "to": 500
+      }
+     ],
+     "count": 84,
+     "nodes": [
+      "ul.PricingTable_sliderContainer",
+      "div.AccordionItem_content.PricingTable_features",
+      "div.AccordionItem_content.FaqItem_answer.typography_body"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 600,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.42, 0, 0.28, 0.99)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 600,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.42, 0, 0.28, 0.99)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "kept",
+       "from": 600,
+       "to": 600
+      }
+     ],
+     "count": 42,
+     "nodes": [
+      "span.NavGroup_navGroupSubcategoryItemInnerContent.listItemsByIndex_listItemsByIndexItemInner.typography_subnavigation"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "color",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.28, 0.44, 0.49, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "color",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.28, 0.44, 0.49, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "color",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 37,
+     "nodes": [
+      "button.Navigation_navigationMainItem.typography_navigation.typography_title2",
+      "a.Navigation_navigationMainItem.typography_navigation.typography_title2",
+      "a.NavItem_isReducedNavNavItem.typography_reducedNavigation.Navigation_navigationMainItem"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "background",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0, 0.44, 0.6, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "background",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0, 0.44, 0.6, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "background",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 23,
+     "nodes": [
+      "a.Button_textLink.Button_base.typography_button::before",
+      "a.Button_glass.Button_base.typography_button::before",
+      "a.Button_white.Button_base.typography_button::before"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.28, 0.44, 0.49, 1)"
+       },
+       {
+        "property": "visibility",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.28, 0.44, 0.49, 1)"
+       },
+       {
+        "property": "visibility",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      },
+      {
+       "kind": "transition",
+       "key": "visibility",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      }
+     ],
+     "count": 17,
+     "nodes": [
+      "div.PricingCard_cardDetailBulletTooltip.typography_body"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "box-shadow",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0, 0.44, 0.6, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "box-shadow",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0, 0.44, 0.6, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "box-shadow",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 14,
+     "nodes": [
+      "a.Button_glass.Button_base.typography_button::after",
+      "button.Button_glass.Button_base.typography_button::after"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "color",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0, 0.44, 0.6, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "color",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0, 0.44, 0.6, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "color",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 14,
+     "nodes": [
+      "a.Button_textLink.Button_base.typography_button",
+      "a.Button_glass.Button_base.typography_button",
+      "a.Button_white.Button_base.typography_button"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.42, 0, 0.28, 0.99)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.42, 0, 0.28, 0.99)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 12,
+     "nodes": [
+      "svg"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "background-color",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+       },
+       {
+        "property": "color",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "background-color",
+       "outcome": "removed",
+       "from": 150,
+       "to": 0
+      },
+      {
+       "kind": "transition",
+       "key": "color",
+       "outcome": "removed",
+       "from": 150,
+       "to": 0
+      }
+     ],
+     "count": 10,
+     "nodes": [
+      "a[role=menuitem].LanguageSelector_item.typography_label",
+      "a[role=menuitem].LanguageSelector_item.typography_label.LanguageSelector_itemActive"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "removed",
+       "from": 200,
+       "to": 0
+      }
+     ],
+     "count": 10,
+     "nodes": [
+      "span.LanguageSelector_dot",
+      "span.LanguageSelector_dot.LanguageSelector_dotActive"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 500,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.42, 0, 0.28, 0.99)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 500,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.42, 0, 0.28, 0.99)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "all",
+       "outcome": "kept",
+       "from": 500,
+       "to": 500
+      }
+     ],
+     "count": 8,
+     "nodes": [
+      "a.Button_glass.Button_base.typography_button",
+      "button.Button_glass.Button_base.typography_button"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 400,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 400,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "kept",
+       "from": 400,
+       "to": 400
+      }
+     ],
+     "count": 8,
+     "nodes": [
+      "img.BackgroundImage_image.BackgroundImage_anchorBottom.BackgroundImage_blendNormal",
+      "img.Shadow_shadowImage.Image_image.Image_animated",
+      "img.Shadow_middleRightImg.Image_image.Image_animated"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0, 0.44, 0.6, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0, 0.44, 0.6, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 7,
+     "nodes": [
+      "a.Button_white.Button_base.typography_button::after",
+      "button.Button_white.Button_base.typography_button::after"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease-out"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease-out"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "all",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      }
+     ],
+     "count": 4,
+     "nodes": [
+      "span.ToggleButton_navMobileButtonLineEl"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "height",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.42, 0, 0.28, 0.99)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "height",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.42, 0, 0.28, 0.99)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "height",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 4,
+     "nodes": [
+      "div.PricingCard_cardDetails"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "border-radius",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "border-radius",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "border-radius",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      }
+     ],
+     "count": 3,
+     "nodes": [
+      "figure.Navigation_backdrop.NavMobile_backdropMobile",
+      "figure.Navigation_backdrop",
+      "figure.Navigation_backdrop.Navigation_backdropMainNav"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [],
+      "animations": [],
+      "scrollBehavior": "smooth"
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": [],
+      "scrollBehavior": "smooth"
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "scroll",
+       "key": "scroll-behavior",
+       "outcome": "kept"
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "html.__variable_9d88cd.__variable_5c99cd.__variable_3586d7"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+       },
+       {
+        "property": "background-color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "color",
+       "outcome": "removed",
+       "from": 200,
+       "to": 0
+      },
+      {
+       "kind": "transition",
+       "key": "background-color",
+       "outcome": "removed",
+       "from": 200,
+       "to": 0
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "button.LanguageSelector_trigger.typography_footnote"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "button.RedirectedLanguageNotification_closeButton"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+       },
+       {
+        "property": "visibility",
+        "durationMs": 0,
+        "delayMs": 300,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "removed",
+       "from": 300,
+       "to": 0
+      },
+      {
+       "kind": "transition",
+       "key": "visibility",
+       "outcome": "removed",
+       "from": 0,
+       "to": 0
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "div.LanguageSelector_panel"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "removed",
+       "from": 300,
+       "to": 0
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "div.LanguageSelector_scrim"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.42, 0, 0.28, 0.99)"
+       },
+       {
+        "property": "transform",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.42, 0, 0.28, 0.99)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.42, 0, 0.28, 0.99)"
+       },
+       {
+        "property": "transform",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.42, 0, 0.28, 0.99)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      },
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "div.RedirectedLanguageNotification_languageBanner.RedirectedLanguageNotification_isHidden"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "transform",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "transform",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      },
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "div.Calendly_calendly.Calendly_hidden.Calendly_bottomRight"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 600,
+        "delayMs": 0,
+        "easing": "ease-out"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 600,
+        "delayMs": 0,
+        "easing": "ease-out"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "kept",
+       "from": 600,
+       "to": 600
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "div[role=presentation].Navigation_backgroundDim"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "removed",
+       "from": 200,
+       "to": 0
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "svg"
+     ]
+    }
+   ],
+   "keyframes": [
+    {
+     "name": "SelectDropdown_expand__BDCif",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      },
+      {
+       "offset": "10%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      },
+      {
+       "offset": "50%",
+       "properties": [
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity",
+      "transform"
+     ]
+    },
+    {
+     "name": "SelectDropdown_fade-in__O_z6y",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      },
+      {
+       "offset": "90%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity",
+      "transform"
+     ]
+    }
+   ],
+   "reducedMotionRules": [
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".LanguageSelector_chevron, .LanguageSelector_dot, .LanguageSelector_item, .LanguageSelector_panel, .LanguageSelector_scrim, .LanguageSelector_trigger",
+     "declarations": {
+      "transition-behavior": "normal",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "transition-delay": "0s",
+      "transition-property": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".ScrollPrompter_track",
+     "declarations": {
+      "height": "auto"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".ScrollPrompter_stage",
+     "declarations": {
+      "position": "relative",
+      "height": "auto",
+      "min-height": "100svh"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".ScrollPrompter_unit",
+     "declarations": {
+      "opacity": "1",
+      "transition-behavior": "normal",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "transition-delay": "0s",
+      "transition-property": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion)",
+     "selector": ".Sequence_fallbackImageContainer",
+     "declarations": {
+      "display": "block"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion)",
+     "selector": ".Sequence_fallbackImageContainer + .Sequence_sequenceContainer",
+     "declarations": {
+      "display": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion)",
+     "selector": ".LaptopClose_laptopCloseImageSequence .LaptopClose_sequence",
+     "declarations": {
+      "height": "0px",
+      "visibility": "hidden"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion)",
+     "selector": ".LaptopClose_laptopCloseImageSequence .LaptopClose_modules:not(.LaptopClose_postSequence)",
+     "declarations": {
+      "position": "static",
+      "padding-bottom": "0px",
+      "aspect-ratio": "unset",
+      "grid-column-start": "1",
+      "grid-column-end": "span 12"
+     }
+    }
+   ],
+   "declared": [
+    {
+     "selector": ".UIButtonBase_base path",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "delayMs": 50
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".UIButtonBase_base::after",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationRaw": "var(--duration-300ms)",
+       "easing": "var(--ease-micro-bounce)"
+      }
+     ],
+     "animations": [],
+     "viaVar": true
+    },
+    {
+     "selector": ".FormInput_label",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "delayMs": 10
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".TextInput_label",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "delayMs": 10
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".SelectDropdown_label",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "delayMs": 10
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".DebugUI_wrapper",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 100,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "html",
+     "context": [],
+     "transitions": [],
+     "animations": [],
+     "scrollBehavior": "smooth"
+    },
+    {
+     "selector": "input:-webkit-autofill, input:-webkit-autofill:focus, input:-webkit-autofill:hover, select:-webkit-autofill, select:-webkit-autofill:focus, select:-webkit-autofill:hover, textarea:-webkit-autofill, te",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "delayMs": 99999000
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".Image_image",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 400,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".AnimatedSvgArrow_cssTail",
+     "context": [],
+     "transitions": [
+      {
+       "property": "width",
+       "durationRaw": "calc((var(--button-hover-progress))/1*var(--animation-duration))",
+       "easing": "var(--ease-micro-bounce)"
+      }
+     ],
+     "animations": [],
+     "viaVar": true
+    },
+    {
+     "selector": ".AnimatedSvgArrow_cssTail::after",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)"
+      }
+     ],
+     "animations": [],
+     "viaVar": true
+    },
+    {
+     "selector": ".Button_basePrimary::after",
+     "context": [],
+     "transitions": [
+      {
+       "property": "box-shadow",
+       "durationRaw": "var(--duration-300ms)",
+       "easing": "var(--ease-micro-bounce)"
+      }
+     ],
+     "animations": [],
+     "viaVar": true
+    },
+    {
+     "selector": ".Button_baseSolid::after",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".Video_video",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".decorations_overlay",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 100,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".Calendly_calendly",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "transform",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".LanguageSelector_panelOpen",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "delayMs": 0
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".LanguageSuggestionBanner_closeButton",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".RedirectedLanguageNotification_closeButton",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".Navigation_backdrop",
+     "context": [],
+     "transitions": [
+      {
+       "property": "border-radius",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".Navigation_subNavOpen .Navigation_backdrop",
+     "context": [],
+     "transitions": [
+      {
+       "property": "border-radius",
+       "durationMs": 550,
+       "delayMs": 100,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".Manifesto_text",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)"
+      }
+     ],
+     "animations": [],
+     "viaVar": true
+    },
+    {
+     "selector": ".Manifesto_buttonWrapper",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)"
+      }
+     ],
+     "animations": [],
+     "viaVar": true
+    },
+    {
+     "selector": ".ScrollPrompter_video",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".ScrollPrompter_unit",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 150,
+       "delayMs": 0,
+       "easing": "linear"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".ToggleButton_navMobileButtonLine .ToggleButton_navMobileButtonLineEl",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".ImageCloud_imageWrapper",
+     "context": [],
+     "transitions": [
+      {
+       "property": "transform",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".StackedSideBySideWrapper_stackedSideBySideWrapper .StackedSideBySideWrapper_contentWrapper",
+     "context": [
+      "@media (min-width: 768px)"
+     ],
+     "transitions": [
+      {
+       "property": "transform",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".StackedSideBySideWrapper_stackedSideBySideWrapper .StackedSideBySideWrapper_mediaOutro::after",
+     "context": [
+      "@media (min-width: 768px)"
+     ],
+     "transitions": [
+      {
+       "property": "transform",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".StackedSideBySideWrapper_stackedSideBySideWrapper .StackedSideBySideWrapper_mediaWrapper",
+     "context": [
+      "@media (min-width: 768px)"
+     ],
+     "transitions": [
+      {
+       "property": "transform",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".StackedSideBySideWrapper_stackedSideBySideWrapper .StackedSideBySideWrapper_media",
+     "context": [],
+     "transitions": [
+      {
+       "property": "transform",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".Card_media",
+     "context": [
+      "@media (min-width: 768px)"
+     ],
+     "transitions": [
+      {
+       "property": "transform",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".Card_mediaOutro::after",
+     "context": [
+      "@media (min-width: 768px)"
+     ],
+     "transitions": [
+      {
+       "property": "transform",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".Card_mediaScaler",
+     "context": [
+      "@media (min-width: 768px)"
+     ],
+     "transitions": [
+      {
+       "property": "transform",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".CardWrapper_cardWrapper:last-of-type .CardWrapper_content",
+     "context": [
+      "@media (min-width: 768px)"
+     ],
+     "transitions": [
+      {
+       "property": "transform",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".CardWrapper_cardWrapper .CardWrapper_content",
+     "context": [
+      "@media (min-width: 768px)"
+     ],
+     "transitions": [
+      {
+       "property": "transform",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-out"
+      },
+      {
+       "property": "opacity",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    }
+   ],
+   "customProperties": [
+    {
+     "name": "--animation-duration",
+     "declared": "var(--duration-600ms)",
+     "selector": ".SelectDropdown_optionsContainer",
+     "resolved": ""
+    },
+    {
+     "name": "--card-hover-duration",
+     "declared": "var(--duration-500ms)",
+     "selector": ".global_cardHover",
+     "resolved": ""
+    },
+    {
+     "name": "--card-hover-ease",
+     "declared": "var(--ease-basic-butter)",
+     "selector": ".global_cardHover",
+     "resolved": ""
+    },
+    {
+     "name": "--card-hover-transform-default-transition",
+     "declared": "var(--card-hover-duration) transform var(--card-hover-ease)",
+     "selector": ".global_cardHover",
+     "resolved": ""
+    },
+    {
+     "name": "--default-glow-transition-in-delay",
+     "declared": "0s",
+     "selector": ".Glow_displayed",
+     "resolved": ""
+    },
+    {
+     "name": "--duration-150ms",
+     "declared": "0.15s",
+     "selector": ":root",
+     "resolved": "0.15s"
+    },
+    {
+     "name": "--duration-200ms",
+     "declared": "0.2s",
+     "selector": ":root",
+     "resolved": "0.2s"
+    },
+    {
+     "name": "--duration-300ms",
+     "declared": "0.3s",
+     "selector": ":root",
+     "resolved": "0.3s"
+    },
+    {
+     "name": "--duration-400ms",
+     "declared": "0.4s",
+     "selector": ":root",
+     "resolved": "0.4s"
+    },
+    {
+     "name": "--duration-500ms",
+     "declared": "0.5s",
+     "selector": ":root",
+     "resolved": "0.5s"
+    },
+    {
+     "name": "--duration-600ms",
+     "declared": "0.6s",
+     "selector": ":root",
+     "resolved": "0.6s"
+    },
+    {
+     "name": "--duration-60ms",
+     "declared": "0.06s",
+     "selector": ":root",
+     "resolved": "0.06s"
+    },
+    {
+     "name": "--ease-basic-butter",
+     "declared": "cubic-bezier(0.42,0,0.28,0.99)",
+     "selector": ":root",
+     "resolved": "cubic-bezier(0.42,0,0.28,0.99)"
+    },
+    {
+     "name": "--ease-default",
+     "declared": "cubic-bezier(0.25,0.1,0.25,1)",
+     "selector": ":root",
+     "resolved": "cubic-bezier(0.25,0.1,0.25,1)"
+    },
+    {
+     "name": "--ease-embellishment",
+     "declared": "cubic-bezier(0.42,0,0,1)",
+     "selector": ":root",
+     "resolved": "cubic-bezier(0.42,0,0,1)"
+    },
+    {
+     "name": "--ease-in",
+     "declared": "cubic-bezier(0.49,0.025,0.65,0.65)",
+     "selector": ":root",
+     "resolved": "cubic-bezier(0.49,0.025,0.65,0.65)"
+    },
+    {
+     "name": "--ease-in-out",
+     "declared": "cubic-bezier(0.49,0.025,0.49,1)",
+     "selector": ":root",
+     "resolved": "cubic-bezier(0.49,0.025,0.49,1)"
+    },
+    {
+     "name": "--ease-micro-bounce",
+     "declared": "cubic-bezier(0,0.44,0.6,1)",
+     "selector": ":root",
+     "resolved": "cubic-bezier(0,0.44,0.6,1)"
+    },
+    {
+     "name": "--ease-mini-bounce",
+     "declared": "cubic-bezier(0.17,0.89,0.47,1.13)",
+     "selector": ":root",
+     "resolved": "cubic-bezier(0.17,0.89,0.47,1.13)"
+    },
+    {
+     "name": "--ease-out",
+     "declared": "cubic-bezier(0.28,0.44,0.49,1)",
+     "selector": ":root",
+     "resolved": "cubic-bezier(0.28,0.44,0.49,1)"
+    },
+    {
+     "name": "--end-transition",
+     "declared": "0.3",
+     "selector": ".HeroTransitionV4_mediaInner",
+     "resolved": ""
+    },
+    {
+     "name": "--entry-animation-progress",
+     "declared": "0",
+     "selector": ".HeroImageWall_heroImageWall",
+     "resolved": ""
+    },
+    {
+     "name": "--normalized-entry-animation-progress",
+     "declared": "calc(var(--entry-animation-progress)/2 + 0.5)",
+     "selector": ".HeroImageWall_heroImageWall .HeroImageWall_imageWrapper",
+     "resolved": ""
+    },
+    {
+     "name": "--start-transition",
+     "declared": "0.1",
+     "selector": ".HeroTransitionV4_mediaInner",
+     "resolved": ""
+    },
+    {
+     "name": "--transition-out-progress",
+     "declared": "0",
+     "selector": ".HeroScreen_heroScreen",
+     "resolved": ""
+    }
+   ]
+  },
+  "page-3": {
+   "url": "https://frame.io/contact/form",
+   "matchMedia": {
+    "normal": false,
+    "reduce": true
+   },
+   "scanned": 707,
+   "capped": false,
+   "unreadableSheets": 1,
+   "sheetsTruncated": {
+    "declared": false,
+    "reducedRules": false,
+    "customProperties": false
+   },
+   "summary": {
+    "moving": 237,
+    "removed": 24,
+    "reduced": 0,
+    "kept": 213,
+    "partial": 0,
+    "increased": 0,
+    "added": 0,
+    "behaviour": "partial",
+    "loops": []
+   },
+   "groups": [
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "color",
+        "durationMs": 600,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.28, 0.44, 0.49, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "color",
+        "durationMs": 600,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.28, 0.44, 0.49, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "color",
+       "outcome": "kept",
+       "from": 600,
+       "to": 600
+      }
+     ],
+     "count": 84,
+     "nodes": [
+      "a.NavGroup_navGroupSubcategoryItemLink.listItemsByIndex_listItemsByIndexItemLink.typography_eyebrow",
+      "a.NavGroup_navGroupSubcategoryItemLink.listItemsByIndex_listItemsByIndexItemLink.typography_eyebrow::before"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 600,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.42, 0, 0.28, 0.99)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 600,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.42, 0, 0.28, 0.99)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "kept",
+       "from": 600,
+       "to": 600
+      }
+     ],
+     "count": 42,
+     "nodes": [
+      "span.NavGroup_navGroupSubcategoryItemInnerContent.listItemsByIndex_listItemsByIndexItemInner.typography_subnavigation"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "color",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.28, 0.44, 0.49, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "color",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.28, 0.44, 0.49, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "color",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 37,
+     "nodes": [
+      "button.Navigation_navigationMainItem.typography_navigation.typography_title2",
+      "a.Navigation_navigationMainItem.typography_navigation.typography_title2",
+      "a.NavItem_isReducedNavNavItem.typography_reducedNavigation.Navigation_navigationMainItem"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.42, 0, 0.28, 0.99)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.42, 0, 0.28, 0.99)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 12,
+     "nodes": [
+      "svg"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "background-color",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+       },
+       {
+        "property": "color",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "background-color",
+       "outcome": "removed",
+       "from": 150,
+       "to": 0
+      },
+      {
+       "kind": "transition",
+       "key": "color",
+       "outcome": "removed",
+       "from": 150,
+       "to": 0
+      }
+     ],
+     "count": 10,
+     "nodes": [
+      "a[role=menuitem].LanguageSelector_item.typography_label",
+      "a[role=menuitem].LanguageSelector_item.typography_label.LanguageSelector_itemActive"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "removed",
+       "from": 200,
+       "to": 0
+      }
+     ],
+     "count": 10,
+     "nodes": [
+      "span.LanguageSelector_dot",
+      "span.LanguageSelector_dot.LanguageSelector_dotActive"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "background",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0, 0.44, 0.6, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "background",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0, 0.44, 0.6, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "background",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 6,
+     "nodes": [
+      "a.Button_textLink.Button_base.typography_button::before",
+      "a.Button_glass.Button_base.typography_button::before",
+      "a.Button_white.Button_base.typography_button::before"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "color",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0, 0.44, 0.6, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "color",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0, 0.44, 0.6, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "color",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 5,
+     "nodes": [
+      "a.Button_textLink.Button_base.typography_button",
+      "a.Button_glass.Button_base.typography_button",
+      "a.Button_white.Button_base.typography_button"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease-out"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease-out"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "all",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      }
+     ],
+     "count": 4,
+     "nodes": [
+      "span.ToggleButton_navMobileButtonLineEl"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 300,
+        "delayMs": 10,
+        "easing": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 300,
+        "delayMs": 10,
+        "easing": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "all",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 3,
+     "nodes": [
+      "label.TextInput_label.typography_formLabel.FormInput_label"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "border-color",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "border-color",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "border-color",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 3,
+     "nodes": [
+      "input.TextInput_textInput.typography_body"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "border-radius",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "border-radius",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "border-radius",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      }
+     ],
+     "count": 3,
+     "nodes": [
+      "figure.Navigation_backdrop.NavMobile_backdropMobile",
+      "figure.Navigation_backdrop",
+      "figure.Navigation_backdrop.Navigation_backdropMainNav"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0, 0.44, 0.6, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0, 0.44, 0.6, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 3,
+     "nodes": [
+      "a.Button_white.Button_base.typography_button::after",
+      "button.Button_white.Button_base.typography_button::after"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 3,
+     "nodes": [
+      "div.TextInput_mask.FormInput_mask::after"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [],
+      "animations": [],
+      "scrollBehavior": "smooth"
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": [],
+      "scrollBehavior": "smooth"
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "scroll",
+       "key": "scroll-behavior",
+       "outcome": "kept"
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "html.__variable_9d88cd.__variable_5c99cd.__variable_3586d7"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "box-shadow",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0, 0.44, 0.6, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "box-shadow",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0, 0.44, 0.6, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "box-shadow",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "a.Button_glass.Button_base.typography_button::after"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+       },
+       {
+        "property": "background-color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "color",
+       "outcome": "removed",
+       "from": 200,
+       "to": 0
+      },
+      {
+       "kind": "transition",
+       "key": "background-color",
+       "outcome": "removed",
+       "from": 200,
+       "to": 0
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "button.LanguageSelector_trigger.typography_footnote"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "button.RedirectedLanguageNotification_closeButton"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease-in-out"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease-in-out"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "div[role=application].Video_video.Video_cover"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+       },
+       {
+        "property": "visibility",
+        "durationMs": 0,
+        "delayMs": 300,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "removed",
+       "from": 300,
+       "to": 0
+      },
+      {
+       "kind": "transition",
+       "key": "visibility",
+       "outcome": "removed",
+       "from": 0,
+       "to": 0
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "div.LanguageSelector_panel"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "removed",
+       "from": 300,
+       "to": 0
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "div.LanguageSelector_scrim"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.42, 0, 0.28, 0.99)"
+       },
+       {
+        "property": "transform",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.42, 0, 0.28, 0.99)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.42, 0, 0.28, 0.99)"
+       },
+       {
+        "property": "transform",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.42, 0, 0.28, 0.99)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      },
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "div.RedirectedLanguageNotification_languageBanner.RedirectedLanguageNotification_isHidden"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 400,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 400,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "kept",
+       "from": 400,
+       "to": 400
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "img.Video_thumbnail.Video_shown.Image_image"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 600,
+        "delayMs": 0,
+        "easing": "ease-out"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 600,
+        "delayMs": 0,
+        "easing": "ease-out"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "kept",
+       "from": 600,
+       "to": 600
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "div[role=presentation].Navigation_backgroundDim"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "removed",
+       "from": 200,
+       "to": 0
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "svg"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 500,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.42, 0, 0.28, 0.99)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 500,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.42, 0, 0.28, 0.99)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "kept",
+       "from": 500,
+       "to": 500
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "div.Navigation_navigationWrapper"
+     ]
+    }
+   ],
+   "keyframes": [
+    {
+     "name": "SelectDropdown_expand__BDCif",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      },
+      {
+       "offset": "10%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      },
+      {
+       "offset": "50%",
+       "properties": [
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity",
+      "transform"
+     ]
+    },
+    {
+     "name": "SelectDropdown_fade-in__O_z6y",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      },
+      {
+       "offset": "90%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity",
+      "transform"
+     ]
+    }
+   ],
+   "reducedMotionRules": [
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".LanguageSelector_chevron, .LanguageSelector_dot, .LanguageSelector_item, .LanguageSelector_panel, .LanguageSelector_scrim, .LanguageSelector_trigger",
+     "declarations": {
+      "transition-behavior": "normal",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "transition-delay": "0s",
+      "transition-property": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".ScrollPrompter_track",
+     "declarations": {
+      "height": "auto"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".ScrollPrompter_stage",
+     "declarations": {
+      "position": "relative",
+      "height": "auto",
+      "min-height": "100svh"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".ScrollPrompter_unit",
+     "declarations": {
+      "opacity": "1",
+      "transition-behavior": "normal",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "transition-delay": "0s",
+      "transition-property": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion)",
+     "selector": ".Sequence_fallbackImageContainer",
+     "declarations": {
+      "display": "block"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion)",
+     "selector": ".Sequence_fallbackImageContainer + .Sequence_sequenceContainer",
+     "declarations": {
+      "display": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion)",
+     "selector": ".LaptopClose_laptopCloseImageSequence .LaptopClose_sequence",
+     "declarations": {
+      "height": "0px",
+      "visibility": "hidden"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion)",
+     "selector": ".LaptopClose_laptopCloseImageSequence .LaptopClose_modules:not(.LaptopClose_postSequence)",
+     "declarations": {
+      "position": "static",
+      "padding-bottom": "0px",
+      "aspect-ratio": "unset",
+      "grid-column-start": "1",
+      "grid-column-end": "span 12"
+     }
+    }
+   ],
+   "declared": [
+    {
+     "selector": ".UIButtonBase_base path",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "delayMs": 50
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".UIButtonBase_base::after",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationRaw": "var(--duration-300ms)",
+       "easing": "var(--ease-micro-bounce)"
+      }
+     ],
+     "animations": [],
+     "viaVar": true
+    },
+    {
+     "selector": ".FormInput_label",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "delayMs": 10
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".TextInput_label",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "delayMs": 10
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".SelectDropdown_label",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "delayMs": 10
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".DebugUI_wrapper",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 100,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "html",
+     "context": [],
+     "transitions": [],
+     "animations": [],
+     "scrollBehavior": "smooth"
+    },
+    {
+     "selector": "input:-webkit-autofill, input:-webkit-autofill:focus, input:-webkit-autofill:hover, select:-webkit-autofill, select:-webkit-autofill:focus, select:-webkit-autofill:hover, textarea:-webkit-autofill, te",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "delayMs": 99999000
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".Image_image",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 400,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".AnimatedSvgArrow_cssTail",
+     "context": [],
+     "transitions": [
+      {
+       "property": "width",
+       "durationRaw": "calc((var(--button-hover-progress))/1*var(--animation-duration))",
+       "easing": "var(--ease-micro-bounce)"
+      }
+     ],
+     "animations": [],
+     "viaVar": true
+    },
+    {
+     "selector": ".AnimatedSvgArrow_cssTail::after",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)"
+      }
+     ],
+     "animations": [],
+     "viaVar": true
+    },
+    {
+     "selector": ".Button_basePrimary::after",
+     "context": [],
+     "transitions": [
+      {
+       "property": "box-shadow",
+       "durationRaw": "var(--duration-300ms)",
+       "easing": "var(--ease-micro-bounce)"
+      }
+     ],
+     "animations": [],
+     "viaVar": true
+    },
+    {
+     "selector": ".Button_baseSolid::after",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".Video_video",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".decorations_overlay",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 100,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".Calendly_calendly",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "transform",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".LanguageSelector_panelOpen",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "delayMs": 0
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".LanguageSuggestionBanner_closeButton",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".RedirectedLanguageNotification_closeButton",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".Navigation_backdrop",
+     "context": [],
+     "transitions": [
+      {
+       "property": "border-radius",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".Navigation_subNavOpen .Navigation_backdrop",
+     "context": [],
+     "transitions": [
+      {
+       "property": "border-radius",
+       "durationMs": 550,
+       "delayMs": 100,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".Manifesto_text",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)"
+      }
+     ],
+     "animations": [],
+     "viaVar": true
+    },
+    {
+     "selector": ".Manifesto_buttonWrapper",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)"
+      }
+     ],
+     "animations": [],
+     "viaVar": true
+    },
+    {
+     "selector": ".ScrollPrompter_video",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".ScrollPrompter_unit",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 150,
+       "delayMs": 0,
+       "easing": "linear"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".ToggleButton_navMobileButtonLine .ToggleButton_navMobileButtonLineEl",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".ImageCloud_imageWrapper",
+     "context": [],
+     "transitions": [
+      {
+       "property": "transform",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".StackedSideBySideWrapper_stackedSideBySideWrapper .StackedSideBySideWrapper_contentWrapper",
+     "context": [
+      "@media (min-width: 768px)"
+     ],
+     "transitions": [
+      {
+       "property": "transform",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".StackedSideBySideWrapper_stackedSideBySideWrapper .StackedSideBySideWrapper_mediaOutro::after",
+     "context": [
+      "@media (min-width: 768px)"
+     ],
+     "transitions": [
+      {
+       "property": "transform",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".StackedSideBySideWrapper_stackedSideBySideWrapper .StackedSideBySideWrapper_mediaWrapper",
+     "context": [
+      "@media (min-width: 768px)"
+     ],
+     "transitions": [
+      {
+       "property": "transform",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".StackedSideBySideWrapper_stackedSideBySideWrapper .StackedSideBySideWrapper_media",
+     "context": [],
+     "transitions": [
+      {
+       "property": "transform",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".Card_media",
+     "context": [
+      "@media (min-width: 768px)"
+     ],
+     "transitions": [
+      {
+       "property": "transform",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".Card_mediaOutro::after",
+     "context": [
+      "@media (min-width: 768px)"
+     ],
+     "transitions": [
+      {
+       "property": "transform",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".Card_mediaScaler",
+     "context": [
+      "@media (min-width: 768px)"
+     ],
+     "transitions": [
+      {
+       "property": "transform",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".CardWrapper_cardWrapper:last-of-type .CardWrapper_content",
+     "context": [
+      "@media (min-width: 768px)"
+     ],
+     "transitions": [
+      {
+       "property": "transform",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".CardWrapper_cardWrapper .CardWrapper_content",
+     "context": [
+      "@media (min-width: 768px)"
+     ],
+     "transitions": [
+      {
+       "property": "transform",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-out"
+      },
+      {
+       "property": "opacity",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    }
+   ],
+   "customProperties": [
+    {
+     "name": "--animation-duration",
+     "declared": "var(--duration-600ms)",
+     "selector": ".SelectDropdown_optionsContainer",
+     "resolved": ""
+    },
+    {
+     "name": "--card-hover-duration",
+     "declared": "var(--duration-500ms)",
+     "selector": ".global_cardHover",
+     "resolved": ""
+    },
+    {
+     "name": "--card-hover-ease",
+     "declared": "var(--ease-basic-butter)",
+     "selector": ".global_cardHover",
+     "resolved": ""
+    },
+    {
+     "name": "--card-hover-transform-default-transition",
+     "declared": "var(--card-hover-duration) transform var(--card-hover-ease)",
+     "selector": ".global_cardHover",
+     "resolved": ""
+    },
+    {
+     "name": "--default-glow-transition-in-delay",
+     "declared": "0s",
+     "selector": ".Glow_displayed",
+     "resolved": ""
+    },
+    {
+     "name": "--duration-150ms",
+     "declared": "0.15s",
+     "selector": ":root",
+     "resolved": "0.15s"
+    },
+    {
+     "name": "--duration-200ms",
+     "declared": "0.2s",
+     "selector": ":root",
+     "resolved": "0.2s"
+    },
+    {
+     "name": "--duration-300ms",
+     "declared": "0.3s",
+     "selector": ":root",
+     "resolved": "0.3s"
+    },
+    {
+     "name": "--duration-400ms",
+     "declared": "0.4s",
+     "selector": ":root",
+     "resolved": "0.4s"
+    },
+    {
+     "name": "--duration-500ms",
+     "declared": "0.5s",
+     "selector": ":root",
+     "resolved": "0.5s"
+    },
+    {
+     "name": "--duration-600ms",
+     "declared": "0.6s",
+     "selector": ":root",
+     "resolved": "0.6s"
+    },
+    {
+     "name": "--duration-60ms",
+     "declared": "0.06s",
+     "selector": ":root",
+     "resolved": "0.06s"
+    },
+    {
+     "name": "--ease-basic-butter",
+     "declared": "cubic-bezier(0.42,0,0.28,0.99)",
+     "selector": ":root",
+     "resolved": "cubic-bezier(0.42,0,0.28,0.99)"
+    },
+    {
+     "name": "--ease-default",
+     "declared": "cubic-bezier(0.25,0.1,0.25,1)",
+     "selector": ":root",
+     "resolved": "cubic-bezier(0.25,0.1,0.25,1)"
+    },
+    {
+     "name": "--ease-embellishment",
+     "declared": "cubic-bezier(0.42,0,0,1)",
+     "selector": ":root",
+     "resolved": "cubic-bezier(0.42,0,0,1)"
+    },
+    {
+     "name": "--ease-in",
+     "declared": "cubic-bezier(0.49,0.025,0.65,0.65)",
+     "selector": ":root",
+     "resolved": "cubic-bezier(0.49,0.025,0.65,0.65)"
+    },
+    {
+     "name": "--ease-in-out",
+     "declared": "cubic-bezier(0.49,0.025,0.49,1)",
+     "selector": ":root",
+     "resolved": "cubic-bezier(0.49,0.025,0.49,1)"
+    },
+    {
+     "name": "--ease-micro-bounce",
+     "declared": "cubic-bezier(0,0.44,0.6,1)",
+     "selector": ":root",
+     "resolved": "cubic-bezier(0,0.44,0.6,1)"
+    },
+    {
+     "name": "--ease-mini-bounce",
+     "declared": "cubic-bezier(0.17,0.89,0.47,1.13)",
+     "selector": ":root",
+     "resolved": "cubic-bezier(0.17,0.89,0.47,1.13)"
+    },
+    {
+     "name": "--ease-out",
+     "declared": "cubic-bezier(0.28,0.44,0.49,1)",
+     "selector": ":root",
+     "resolved": "cubic-bezier(0.28,0.44,0.49,1)"
+    },
+    {
+     "name": "--end-transition",
+     "declared": "0.3",
+     "selector": ".HeroTransitionV4_mediaInner",
+     "resolved": ""
+    },
+    {
+     "name": "--entry-animation-progress",
+     "declared": "0",
+     "selector": ".HeroImageWall_heroImageWall",
+     "resolved": ""
+    },
+    {
+     "name": "--normalized-entry-animation-progress",
+     "declared": "calc(var(--entry-animation-progress)/2 + 0.5)",
+     "selector": ".HeroImageWall_heroImageWall .HeroImageWall_imageWrapper",
+     "resolved": ""
+    },
+    {
+     "name": "--start-transition",
+     "declared": "0.1",
+     "selector": ".HeroTransitionV4_mediaInner",
+     "resolved": ""
+    },
+    {
+     "name": "--transition-out-progress",
+     "declared": "0",
+     "selector": ".HeroScreen_heroScreen",
+     "resolved": ""
+    }
+   ]
+  },
+  "page-4": {
+   "url": "https://frame.io/integrations",
+   "matchMedia": {
+    "normal": false,
+    "reduce": true
+   },
+   "scanned": 1621,
+   "capped": false,
+   "unreadableSheets": 1,
+   "sheetsTruncated": {
+    "declared": false,
+    "reducedRules": false,
+    "customProperties": false
+   },
+   "summary": {
+    "moving": 331,
+    "removed": 24,
+    "reduced": 0,
+    "kept": 307,
+    "partial": 0,
+    "increased": 0,
+    "added": 0,
+    "behaviour": "partial",
+    "loops": []
+   },
+   "groups": [
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "color",
+        "durationMs": 600,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.28, 0.44, 0.49, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "color",
+        "durationMs": 600,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.28, 0.44, 0.49, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "color",
+       "outcome": "kept",
+       "from": 600,
+       "to": 600
+      }
+     ],
+     "count": 84,
+     "nodes": [
+      "a.NavGroup_navGroupSubcategoryItemLink.listItemsByIndex_listItemsByIndexItemLink.typography_eyebrow",
+      "a.NavGroup_navGroupSubcategoryItemLink.listItemsByIndex_listItemsByIndexItemLink.typography_eyebrow::before"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "background-color",
+        "durationMs": 500,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0, 0.44, 0.6, 1)"
+       },
+       {
+        "property": "border-color",
+        "durationMs": 500,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0, 0.44, 0.6, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "background-color",
+        "durationMs": 500,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0, 0.44, 0.6, 1)"
+       },
+       {
+        "property": "border-color",
+        "durationMs": 500,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0, 0.44, 0.6, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "background-color",
+       "outcome": "kept",
+       "from": 500,
+       "to": 500
+      },
+      {
+       "kind": "transition",
+       "key": "border-color",
+       "outcome": "kept",
+       "from": 500,
+       "to": 500
+      }
+     ],
+     "count": 54,
+     "nodes": [
+      "div.LogoTextItem_logoTextItem.TileTable_tileItem"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 600,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.42, 0, 0.28, 0.99)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 600,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.42, 0, 0.28, 0.99)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "kept",
+       "from": 600,
+       "to": 600
+      }
+     ],
+     "count": 42,
+     "nodes": [
+      "span.NavGroup_navGroupSubcategoryItemInnerContent.listItemsByIndex_listItemsByIndexItemInner.typography_subnavigation"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "color",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.28, 0.44, 0.49, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "color",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.28, 0.44, 0.49, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "color",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 37,
+     "nodes": [
+      "button.Navigation_navigationMainItem.typography_navigation.typography_title2",
+      "a.Navigation_navigationMainItem.typography_navigation.typography_title2",
+      "a.NavItem_isReducedNavNavItem.typography_reducedNavigation.Navigation_navigationMainItem"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 400,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 400,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "kept",
+       "from": 400,
+       "to": 400
+      }
+     ],
+     "count": 18,
+     "nodes": [
+      "img.Shadow_shadowImage.Image_image.Image_animated",
+      "img.Shadow_middleRightImg.Image_image.Image_animated",
+      "img.Image_image.Image_animated"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.42, 0, 0.28, 0.99)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.42, 0, 0.28, 0.99)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 12,
+     "nodes": [
+      "svg"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "color",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      }
+     ],
+     "count": 11,
+     "nodes": [
+      "a.TileTable_anchorNavItem.typography_body.TileTable_active",
+      "a.TileTable_anchorNavItem.typography_body"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "transform",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "transform",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      },
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      }
+     ],
+     "count": 11,
+     "nodes": [
+      "a.TileTable_anchorNavItem.typography_body.TileTable_active::before",
+      "a.TileTable_anchorNavItem.typography_body::before"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "background-color",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+       },
+       {
+        "property": "color",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "background-color",
+       "outcome": "removed",
+       "from": 150,
+       "to": 0
+      },
+      {
+       "kind": "transition",
+       "key": "color",
+       "outcome": "removed",
+       "from": 150,
+       "to": 0
+      }
+     ],
+     "count": 10,
+     "nodes": [
+      "a[role=menuitem].LanguageSelector_item.typography_label",
+      "a[role=menuitem].LanguageSelector_item.typography_label.LanguageSelector_itemActive"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "removed",
+       "from": 200,
+       "to": 0
+      }
+     ],
+     "count": 10,
+     "nodes": [
+      "span.LanguageSelector_dot",
+      "span.LanguageSelector_dot.LanguageSelector_dotActive"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "background",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0, 0.44, 0.6, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "background",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0, 0.44, 0.6, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "background",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 8,
+     "nodes": [
+      "a.Button_textLink.Button_base.typography_button::before",
+      "a.Button_glass.Button_base.typography_button::before",
+      "a.Button_white.Button_base.typography_button::before"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "color",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0, 0.44, 0.6, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "color",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0, 0.44, 0.6, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "color",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 7,
+     "nodes": [
+      "a.Button_textLink.Button_base.typography_button",
+      "a.Button_glass.Button_base.typography_button",
+      "a.Button_white.Button_base.typography_button"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease-out"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease-out"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "all",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      }
+     ],
+     "count": 4,
+     "nodes": [
+      "span.ToggleButton_navMobileButtonLineEl"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "border-radius",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "border-radius",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "border-radius",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      }
+     ],
+     "count": 3,
+     "nodes": [
+      "figure.Navigation_backdrop.NavMobile_backdropMobile",
+      "figure.Navigation_backdrop",
+      "figure.Navigation_backdrop.Navigation_backdropMainNav"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "box-shadow",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0, 0.44, 0.6, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "box-shadow",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0, 0.44, 0.6, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "box-shadow",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 3,
+     "nodes": [
+      "a.Button_glass.Button_base.typography_button::after",
+      "div.Button_glass.Button_base.typography_button::after"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0, 0.44, 0.6, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0, 0.44, 0.6, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 2,
+     "nodes": [
+      "a.Button_white.Button_base.typography_button::after"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 400,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0, 0.44, 0.6, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 400,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0, 0.44, 0.6, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "kept",
+       "from": 400,
+       "to": 400
+      }
+     ],
+     "count": 2,
+     "nodes": [
+      "span.AnimatedSvgArrow_arrowWrapper",
+      "span.AnimatedSvgArrow_cssTail::after"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [],
+      "animations": [],
+      "scrollBehavior": "smooth"
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": [],
+      "scrollBehavior": "smooth"
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "scroll",
+       "key": "scroll-behavior",
+       "outcome": "kept"
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "html.__variable_9d88cd.__variable_5c99cd.__variable_3586d7"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+       },
+       {
+        "property": "background-color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "color",
+       "outcome": "removed",
+       "from": 200,
+       "to": 0
+      },
+      {
+       "kind": "transition",
+       "key": "background-color",
+       "outcome": "removed",
+       "from": 200,
+       "to": 0
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "button.LanguageSelector_trigger.typography_footnote"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 100,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 100,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "kept",
+       "from": 100,
+       "to": 100
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "div.decorations_overlay"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "button.RedirectedLanguageNotification_closeButton"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+       },
+       {
+        "property": "visibility",
+        "durationMs": 0,
+        "delayMs": 300,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "removed",
+       "from": 300,
+       "to": 0
+      },
+      {
+       "kind": "transition",
+       "key": "visibility",
+       "outcome": "removed",
+       "from": 0,
+       "to": 0
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "div.LanguageSelector_panel"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "removed",
+       "from": 300,
+       "to": 0
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "div.LanguageSelector_scrim"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.42, 0, 0.28, 0.99)"
+       },
+       {
+        "property": "transform",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.42, 0, 0.28, 0.99)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.42, 0, 0.28, 0.99)"
+       },
+       {
+        "property": "transform",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.42, 0, 0.28, 0.99)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      },
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "div.RedirectedLanguageNotification_languageBanner.RedirectedLanguageNotification_isHidden"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 500,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 500,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "kept",
+       "from": 500,
+       "to": 500
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "canvas.Glow_glowCanvas"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 600,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.42, 0, 0.28, 0.99)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 600,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.42, 0, 0.28, 0.99)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "kept",
+       "from": 600,
+       "to": 600
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "img.Hero_backgroundImageContainer.Image_image.Image_animated"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 600,
+        "delayMs": 0,
+        "easing": "ease-out"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 600,
+        "delayMs": 0,
+        "easing": "ease-out"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "kept",
+       "from": 600,
+       "to": 600
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "div[role=presentation].Navigation_backgroundDim"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "removed",
+       "from": 200,
+       "to": 0
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "svg"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 400,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.28, 0.44, 0.49, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 400,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.28, 0.44, 0.49, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "kept",
+       "from": 400,
+       "to": 400
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "div.TileTable_keyline"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 500,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.42, 0, 0.28, 0.99)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 500,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.42, 0, 0.28, 0.99)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "kept",
+       "from": 500,
+       "to": 500
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "div.Navigation_navigationWrapper"
+     ]
+    }
+   ],
+   "keyframes": [
+    {
+     "name": "SelectDropdown_expand__BDCif",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      },
+      {
+       "offset": "10%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      },
+      {
+       "offset": "50%",
+       "properties": [
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity",
+      "transform"
+     ]
+    },
+    {
+     "name": "SelectDropdown_fade-in__O_z6y",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      },
+      {
+       "offset": "90%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity",
+      "transform"
+     ]
+    }
+   ],
+   "reducedMotionRules": [
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".LanguageSelector_chevron, .LanguageSelector_dot, .LanguageSelector_item, .LanguageSelector_panel, .LanguageSelector_scrim, .LanguageSelector_trigger",
+     "declarations": {
+      "transition-behavior": "normal",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "transition-delay": "0s",
+      "transition-property": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".ScrollPrompter_track",
+     "declarations": {
+      "height": "auto"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".ScrollPrompter_stage",
+     "declarations": {
+      "position": "relative",
+      "height": "auto",
+      "min-height": "100svh"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".ScrollPrompter_unit",
+     "declarations": {
+      "opacity": "1",
+      "transition-behavior": "normal",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "transition-delay": "0s",
+      "transition-property": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion)",
+     "selector": ".Sequence_fallbackImageContainer",
+     "declarations": {
+      "display": "block"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion)",
+     "selector": ".Sequence_fallbackImageContainer + .Sequence_sequenceContainer",
+     "declarations": {
+      "display": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion)",
+     "selector": ".LaptopClose_laptopCloseImageSequence .LaptopClose_sequence",
+     "declarations": {
+      "height": "0px",
+      "visibility": "hidden"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion)",
+     "selector": ".LaptopClose_laptopCloseImageSequence .LaptopClose_modules:not(.LaptopClose_postSequence)",
+     "declarations": {
+      "position": "static",
+      "padding-bottom": "0px",
+      "aspect-ratio": "unset",
+      "grid-column-start": "1",
+      "grid-column-end": "span 12"
+     }
+    }
+   ],
+   "declared": [
+    {
+     "selector": ".UIButtonBase_base path",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "delayMs": 50
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".UIButtonBase_base::after",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationRaw": "var(--duration-300ms)",
+       "easing": "var(--ease-micro-bounce)"
+      }
+     ],
+     "animations": [],
+     "viaVar": true
+    },
+    {
+     "selector": ".FormInput_label",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "delayMs": 10
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".TextInput_label",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "delayMs": 10
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".SelectDropdown_label",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "delayMs": 10
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".DebugUI_wrapper",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 100,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "html",
+     "context": [],
+     "transitions": [],
+     "animations": [],
+     "scrollBehavior": "smooth"
+    },
+    {
+     "selector": "input:-webkit-autofill, input:-webkit-autofill:focus, input:-webkit-autofill:hover, select:-webkit-autofill, select:-webkit-autofill:focus, select:-webkit-autofill:hover, textarea:-webkit-autofill, te",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "delayMs": 99999000
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".Image_image",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 400,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".AnimatedSvgArrow_cssTail",
+     "context": [],
+     "transitions": [
+      {
+       "property": "width",
+       "durationRaw": "calc((var(--button-hover-progress))/1*var(--animation-duration))",
+       "easing": "var(--ease-micro-bounce)"
+      }
+     ],
+     "animations": [],
+     "viaVar": true
+    },
+    {
+     "selector": ".AnimatedSvgArrow_cssTail::after",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)"
+      }
+     ],
+     "animations": [],
+     "viaVar": true
+    },
+    {
+     "selector": ".Button_basePrimary::after",
+     "context": [],
+     "transitions": [
+      {
+       "property": "box-shadow",
+       "durationRaw": "var(--duration-300ms)",
+       "easing": "var(--ease-micro-bounce)"
+      }
+     ],
+     "animations": [],
+     "viaVar": true
+    },
+    {
+     "selector": ".Button_baseSolid::after",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".Video_video",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".decorations_overlay",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 100,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".Calendly_calendly",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "transform",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".LanguageSelector_panelOpen",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "delayMs": 0
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".LanguageSuggestionBanner_closeButton",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".RedirectedLanguageNotification_closeButton",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".Navigation_backdrop",
+     "context": [],
+     "transitions": [
+      {
+       "property": "border-radius",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".Navigation_subNavOpen .Navigation_backdrop",
+     "context": [],
+     "transitions": [
+      {
+       "property": "border-radius",
+       "durationMs": 550,
+       "delayMs": 100,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".Manifesto_text",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)"
+      }
+     ],
+     "animations": [],
+     "viaVar": true
+    },
+    {
+     "selector": ".Manifesto_buttonWrapper",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)"
+      }
+     ],
+     "animations": [],
+     "viaVar": true
+    },
+    {
+     "selector": ".ScrollPrompter_video",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".ScrollPrompter_unit",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 150,
+       "delayMs": 0,
+       "easing": "linear"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".ToggleButton_navMobileButtonLine .ToggleButton_navMobileButtonLineEl",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".ImageCloud_imageWrapper",
+     "context": [],
+     "transitions": [
+      {
+       "property": "transform",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".StackedSideBySideWrapper_stackedSideBySideWrapper .StackedSideBySideWrapper_contentWrapper",
+     "context": [
+      "@media (min-width: 768px)"
+     ],
+     "transitions": [
+      {
+       "property": "transform",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".StackedSideBySideWrapper_stackedSideBySideWrapper .StackedSideBySideWrapper_mediaOutro::after",
+     "context": [
+      "@media (min-width: 768px)"
+     ],
+     "transitions": [
+      {
+       "property": "transform",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".StackedSideBySideWrapper_stackedSideBySideWrapper .StackedSideBySideWrapper_mediaWrapper",
+     "context": [
+      "@media (min-width: 768px)"
+     ],
+     "transitions": [
+      {
+       "property": "transform",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".StackedSideBySideWrapper_stackedSideBySideWrapper .StackedSideBySideWrapper_media",
+     "context": [],
+     "transitions": [
+      {
+       "property": "transform",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".Card_media",
+     "context": [
+      "@media (min-width: 768px)"
+     ],
+     "transitions": [
+      {
+       "property": "transform",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".Card_mediaOutro::after",
+     "context": [
+      "@media (min-width: 768px)"
+     ],
+     "transitions": [
+      {
+       "property": "transform",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".Card_mediaScaler",
+     "context": [
+      "@media (min-width: 768px)"
+     ],
+     "transitions": [
+      {
+       "property": "transform",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".CardWrapper_cardWrapper:last-of-type .CardWrapper_content",
+     "context": [
+      "@media (min-width: 768px)"
+     ],
+     "transitions": [
+      {
+       "property": "transform",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".CardWrapper_cardWrapper .CardWrapper_content",
+     "context": [
+      "@media (min-width: 768px)"
+     ],
+     "transitions": [
+      {
+       "property": "transform",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-out"
+      },
+      {
+       "property": "opacity",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    }
+   ],
+   "customProperties": [
+    {
+     "name": "--animation-duration",
+     "declared": "var(--duration-600ms)",
+     "selector": ".SelectDropdown_optionsContainer",
+     "resolved": ""
+    },
+    {
+     "name": "--card-hover-duration",
+     "declared": "var(--duration-500ms)",
+     "selector": ".global_cardHover",
+     "resolved": ""
+    },
+    {
+     "name": "--card-hover-ease",
+     "declared": "var(--ease-basic-butter)",
+     "selector": ".global_cardHover",
+     "resolved": ""
+    },
+    {
+     "name": "--card-hover-transform-default-transition",
+     "declared": "var(--card-hover-duration) transform var(--card-hover-ease)",
+     "selector": ".global_cardHover",
+     "resolved": ""
+    },
+    {
+     "name": "--default-glow-transition-in-delay",
+     "declared": "0s",
+     "selector": ".Glow_displayed",
+     "resolved": ""
+    },
+    {
+     "name": "--duration-150ms",
+     "declared": "0.15s",
+     "selector": ":root",
+     "resolved": "0.15s"
+    },
+    {
+     "name": "--duration-200ms",
+     "declared": "0.2s",
+     "selector": ":root",
+     "resolved": "0.2s"
+    },
+    {
+     "name": "--duration-300ms",
+     "declared": "0.3s",
+     "selector": ":root",
+     "resolved": "0.3s"
+    },
+    {
+     "name": "--duration-400ms",
+     "declared": "0.4s",
+     "selector": ":root",
+     "resolved": "0.4s"
+    },
+    {
+     "name": "--duration-500ms",
+     "declared": "0.5s",
+     "selector": ":root",
+     "resolved": "0.5s"
+    },
+    {
+     "name": "--duration-600ms",
+     "declared": "0.6s",
+     "selector": ":root",
+     "resolved": "0.6s"
+    },
+    {
+     "name": "--duration-60ms",
+     "declared": "0.06s",
+     "selector": ":root",
+     "resolved": "0.06s"
+    },
+    {
+     "name": "--ease-basic-butter",
+     "declared": "cubic-bezier(0.42,0,0.28,0.99)",
+     "selector": ":root",
+     "resolved": "cubic-bezier(0.42,0,0.28,0.99)"
+    },
+    {
+     "name": "--ease-default",
+     "declared": "cubic-bezier(0.25,0.1,0.25,1)",
+     "selector": ":root",
+     "resolved": "cubic-bezier(0.25,0.1,0.25,1)"
+    },
+    {
+     "name": "--ease-embellishment",
+     "declared": "cubic-bezier(0.42,0,0,1)",
+     "selector": ":root",
+     "resolved": "cubic-bezier(0.42,0,0,1)"
+    },
+    {
+     "name": "--ease-in",
+     "declared": "cubic-bezier(0.49,0.025,0.65,0.65)",
+     "selector": ":root",
+     "resolved": "cubic-bezier(0.49,0.025,0.65,0.65)"
+    },
+    {
+     "name": "--ease-in-out",
+     "declared": "cubic-bezier(0.49,0.025,0.49,1)",
+     "selector": ":root",
+     "resolved": "cubic-bezier(0.49,0.025,0.49,1)"
+    },
+    {
+     "name": "--ease-micro-bounce",
+     "declared": "cubic-bezier(0,0.44,0.6,1)",
+     "selector": ":root",
+     "resolved": "cubic-bezier(0,0.44,0.6,1)"
+    },
+    {
+     "name": "--ease-mini-bounce",
+     "declared": "cubic-bezier(0.17,0.89,0.47,1.13)",
+     "selector": ":root",
+     "resolved": "cubic-bezier(0.17,0.89,0.47,1.13)"
+    },
+    {
+     "name": "--ease-out",
+     "declared": "cubic-bezier(0.28,0.44,0.49,1)",
+     "selector": ":root",
+     "resolved": "cubic-bezier(0.28,0.44,0.49,1)"
+    },
+    {
+     "name": "--end-transition",
+     "declared": "0.3",
+     "selector": ".HeroTransitionV4_mediaInner",
+     "resolved": ""
+    },
+    {
+     "name": "--entry-animation-progress",
+     "declared": "0",
+     "selector": ".HeroImageWall_heroImageWall",
+     "resolved": ""
+    },
+    {
+     "name": "--normalized-entry-animation-progress",
+     "declared": "calc(var(--entry-animation-progress)/2 + 0.5)",
+     "selector": ".HeroImageWall_heroImageWall .HeroImageWall_imageWrapper",
+     "resolved": ""
+    },
+    {
+     "name": "--start-transition",
+     "declared": "0.1",
+     "selector": ".HeroTransitionV4_mediaInner",
+     "resolved": ""
+    },
+    {
+     "name": "--transition-out-progress",
+     "declared": "0",
+     "selector": ".HeroScreen_heroScreen",
+     "resolved": ""
+    }
+   ]
+  },
+  "page-5": {
+   "url": "https://accounts.frame.io/welcome",
+   "matchMedia": {
+    "normal": false,
+    "reduce": true
+   },
+   "scanned": 73,
+   "capped": false,
+   "unreadableSheets": 0,
+   "sheetsTruncated": {
+    "declared": false,
+    "reducedRules": false,
+    "customProperties": false
+   },
+   "summary": {
+    "moving": 3,
+    "removed": 0,
+    "reduced": 0,
+    "kept": 2,
+    "partial": 1,
+    "increased": 0,
+    "added": 0,
+    "behaviour": "partial",
+    "loops": []
+   },
+   "groups": [
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "background-color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "box-shadow",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "opacity",
+        "durationMs": 0.2,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "background-color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "box-shadow",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "opacity",
+        "durationMs": 0.2,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "partial",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "background-color",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      },
+      {
+       "kind": "transition",
+       "key": "color",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      },
+      {
+       "kind": "transition",
+       "key": "box-shadow",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      },
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "removed",
+       "from": 0.2,
+       "to": 0.2
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "button.Button__StyledButton-tzx5l-0.fmdBhl.Button-tzx5l-3"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "background-color",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "background-color",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "background-color",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "input.TextInput__Input-a3o9vm-1.eelQya.TextInput-a3o9vm-4"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "border-color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease-in-out"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "border-color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease-in-out"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "border-color",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "input.TextInput__Input-a3o9vm-1.eelQya.TextInput-a3o9vm-4"
+     ]
+    }
+   ],
+   "keyframes": [],
+   "reducedMotionRules": [],
+   "declared": [
+    {
+     "selector": ".fmdBhl",
+     "context": [],
+     "transitions": [
+      {
+       "property": "background-color",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "color",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "box-shadow",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "opacity",
+       "durationMs": 0.2,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".gquDYJ",
+     "context": [],
+     "transitions": [
+      {
+       "property": "border-color",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".cNKycI input",
+     "context": [],
+     "transitions": [
+      {
+       "property": "background-color",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    }
+   ],
+   "customProperties": []
+  }
+ }
+}
