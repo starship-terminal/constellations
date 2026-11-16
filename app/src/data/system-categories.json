@@ -936,6 +936,12 @@
     "reason": "catalog.json describes a food-and-nutrition tracker: a marketing site for an iOS/macOS app with feature cards, a Free-vs-Plus comparison, help center, news, press and comparison articles."
   },
   {
+    "referenceId": "systems:framer",
+    "groupId": "web-categories",
+    "labels": ["Design & Media Editing", "Productivity"],
+    "reason": "catalog.json describes a website builder and AI design agent: marketing product pages (AI, agents, design, MCP), a pricing grid, community gallery and marketplace template indexes and the signed-out login shell."
+  },
+  {
     "referenceId": "systems:discord",
     "groupId": "web-categories",
     "labels": ["Communication Tools", "Social Networking"],
