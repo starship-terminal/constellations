@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 155,
-    "system_domains": 147,
-    "matched_domains": 118,
-    "missing_domains": 315,
+    "system_packages": 156,
+    "system_domains": 148,
+    "matched_domains": 119,
+    "missing_domains": 314,
     "system_domains_absent_from_catalog": 29
   },
   "matched": {
@@ -781,6 +781,23 @@
           "slug": "cartesia",
           "name": "Cartesia",
           "url": "https://www.cartesia.ai",
+          "name_match": true
+        }
+      ]
+    },
+    "chargetrip.com": {
+      "catalog": [
+        {
+          "name": "Chargetrip",
+          "domain": "chargetrip.com",
+          "id": 798
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "chargetrip",
+          "name": "Chargetrip",
+          "url": "https://www.chargetrip.com",
           "name_match": true
         }
       ]
@@ -2099,13 +2116,6 @@
         "name": "Calm",
         "domain": "calm.com",
         "id": 227
-      }
-    ],
-    "chargetrip.com": [
-      {
-        "name": "Chargetrip",
-        "domain": "chargetrip.com",
-        "id": 798
       }
     ],
     "classpass.com": [
