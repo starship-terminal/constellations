@@ -718,9 +718,9 @@
       "assignedMedia": 71
     },
     {
-      "referenceId": "systems:clearful",
-      "media": 95,
-      "assignedMedia": 95
+      "referenceId": "systems:clay-earth",
+      "media": 127,
+      "assignedMedia": 36
     },
     {
       "referenceId": "systems:clerk",
@@ -64276,776 +64276,112 @@
       ]
     },
     {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/screenshots/about-light-default.png",
+      "referenceId": "systems:clay-earth",
+      "mediaId": "systems/clay-earth/screenshots/about-dark-default.png",
       "terms": [
         {
           "termId": "web-page-types:about",
           "rule": "page-about",
           "reason": "Capture filename explicitly names about; local classification from recorded capture metadata."
-        },
-        {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
         }
       ]
     },
     {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/screenshots/about-light-full.png",
+      "referenceId": "systems:clay-earth",
+      "mediaId": "systems/clay-earth/screenshots/about-dark-full.png",
       "terms": [
         {
           "termId": "web-page-types:about",
           "rule": "page-about",
           "reason": "Capture filename explicitly names about; local classification from recorded capture metadata."
-        },
-        {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
         }
       ]
     },
     {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/screenshots/contact-light-default.png",
+      "referenceId": "systems:clay-earth",
+      "mediaId": "systems/clay-earth/screenshots/contact-dark-default.png",
       "terms": [
         {
           "termId": "web-page-types:contacts",
           "rule": "page-contacts",
           "reason": "Capture filename explicitly names contacts; local classification from recorded capture metadata."
-        },
-        {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
         }
       ]
     },
     {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/screenshots/contact-light-full.png",
+      "referenceId": "systems:clay-earth",
+      "mediaId": "systems/clay-earth/screenshots/contact-dark-full.png",
       "terms": [
         {
           "termId": "web-page-types:contacts",
           "rule": "page-contacts",
           "reason": "Capture filename explicitly names contacts; local classification from recorded capture metadata."
-        },
-        {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
         }
       ]
     },
     {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/screenshots/floweditor-light-default.png",
-      "terms": [
-        {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/screenshots/floweditor-light-full.png",
-      "terms": [
-        {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/screenshots/home-light-default.png",
+      "referenceId": "systems:clay-earth",
+      "mediaId": "systems/clay-earth/screenshots/home-dark-default.png",
       "terms": [
         {
           "termId": "web-page-types:home-page",
           "rule": "page-home",
           "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
-        },
-        {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
         }
       ]
     },
     {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/screenshots/home-light-full.png",
+      "referenceId": "systems:clay-earth",
+      "mediaId": "systems/clay-earth/screenshots/home-dark-full.png",
       "terms": [
         {
           "termId": "web-page-types:home-page",
           "rule": "page-home",
           "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
-        },
-        {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
         }
       ]
     },
     {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/screenshots/library-light-default.png",
+      "referenceId": "systems:clay-earth",
+      "mediaId": "systems/clay-earth/screenshots/home-dark-menu.png",
       "terms": [
         {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
         }
       ]
     },
     {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/screenshots/library-light-full.png",
-      "terms": [
-        {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/screenshots/mobile-home-light-default.png",
-      "terms": [
-        {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/screenshots/mobile-home-light-full.png",
-      "terms": [
-        {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/screenshots/mobile-home-light-menu-open.png",
-      "terms": [
-        {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/screenshots/mobile-library-light-default.png",
-      "terms": [
-        {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/screenshots/mobile-library-light-full.png",
-      "terms": [
-        {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/screenshots/mobile-pricing-light-default.png",
-      "terms": [
-        {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/screenshots/mobile-pricing-light-full.png",
-      "terms": [
-        {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/screenshots/press-light-default.png",
-      "terms": [
-        {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/screenshots/press-light-full.png",
-      "terms": [
-        {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/screenshots/pricing-light-default.png",
-      "terms": [
-        {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/screenshots/pricing-light-full.png",
-      "terms": [
-        {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/screenshots/privacy-light-default.png",
-      "terms": [
-        {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/screenshots/privacy-light-full.png",
-      "terms": [
-        {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/screenshots/prompts-light-default.png",
-      "terms": [
-        {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/screenshots/prompts-light-full.png",
-      "terms": [
-        {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/screenshots/signin-light-default.png",
+      "referenceId": "systems:clay-earth",
+      "mediaId": "systems/clay-earth/screenshots/signin-light-default.png",
       "terms": [
         {
           "termId": "web-page-types:log-in",
           "rule": "page-login",
           "reason": "Capture filename explicitly names log in; local classification from recorded capture metadata."
-        },
-        {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
         }
       ]
     },
     {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/screenshots/terms-light-default.png",
+      "referenceId": "systems:clay-earth",
+      "mediaId": "systems/clay-earth/components/crops/billing-toggle-default.png",
       "terms": [
         {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/screenshots/terms-light-full.png",
-      "terms": [
-        {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/screenshots/whatsnew-light-default.png",
-      "terms": [
-        {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/screenshots/whatsnew-light-full.png",
-      "terms": [
-        {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/screenshots/widgets-light-default.png",
-      "terms": [
-        {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/screenshots/widgets-light-full.png",
-      "terms": [
-        {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/components/crops/app-badge-default.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:badge",
-          "rule": "ui-badge",
-          "reason": "Capture filename explicitly names badge; local classification from recorded capture metadata."
-        },
-        {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/components/crops/billing-tab-default.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:tabs",
-          "rule": "ui-tabs",
-          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+          "termId": "web-ui-elements:switch-toggle",
+          "rule": "ui-toggle",
+          "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
         },
         {
           "termId": "web-ux-patterns:billing-plans",
           "rule": "ux-billing",
           "reason": "Capture filename explicitly names billing & plans; local classification from recorded capture metadata."
-        },
-        {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
         }
       ]
     },
     {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/components/crops/billing-tab-focus-visible.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:tabs",
-          "rule": "ui-tabs",
-          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
-        },
-        {
-          "termId": "web-ux-patterns:billing-plans",
-          "rule": "ux-billing",
-          "reason": "Capture filename explicitly names billing & plans; local classification from recorded capture metadata."
-        },
-        {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/components/crops/billing-tab-hover.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:tabs",
-          "rule": "ui-tabs",
-          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
-        },
-        {
-          "termId": "web-ux-patterns:billing-plans",
-          "rule": "ux-billing",
-          "reason": "Capture filename explicitly names billing & plans; local classification from recorded capture metadata."
-        },
-        {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/components/crops/billing-tab-pressed.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:tabs",
-          "rule": "ui-tabs",
-          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
-        },
-        {
-          "termId": "web-ux-patterns:billing-plans",
-          "rule": "ux-billing",
-          "reason": "Capture filename explicitly names billing & plans; local classification from recorded capture metadata."
-        },
-        {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/components/crops/cta-default.png",
-      "terms": [
-        {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/components/crops/cta-focus-visible.png",
-      "terms": [
-        {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/components/crops/cta-hover.png",
-      "terms": [
-        {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/components/crops/cta-pressed.png",
-      "terms": [
-        {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/components/crops/feature-card-default.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:cards-tiles",
-          "rule": "ui-cards",
-          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
-        },
-        {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/components/crops/feature-row-default.png",
-      "terms": [
-        {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/components/crops/footer-default.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:footer",
-          "rule": "ui-footer",
-          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
-        },
-        {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/components/crops/footer-link-default.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:footer",
-          "rule": "ui-footer",
-          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
-        },
-        {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/components/crops/footer-link-focus-visible.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:footer",
-          "rule": "ui-footer",
-          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
-        },
-        {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/components/crops/footer-link-hover.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:footer",
-          "rule": "ui-footer",
-          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
-        },
-        {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/components/crops/footer-link-pressed.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:footer",
-          "rule": "ui-footer",
-          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
-        },
-        {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/components/crops/footer-social-default.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:footer",
-          "rule": "ui-footer",
-          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
-        },
-        {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/components/crops/footer-social-focus-visible.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:footer",
-          "rule": "ui-footer",
-          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
-        },
-        {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/components/crops/footer-social-hover.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:footer",
-          "rule": "ui-footer",
-          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
-        },
-        {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/components/crops/footer-social-pressed.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:footer",
-          "rule": "ui-footer",
-          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
-        },
-        {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/components/crops/header-default.png",
-      "terms": [
-        {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/components/crops/hero-title-default.png",
-      "terms": [
-        {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/components/crops/library-h1-default.png",
-      "terms": [
-        {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/components/crops/logo-default.png",
-      "terms": [
-        {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/components/crops/m-header-default.png",
-      "terms": [
-        {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/components/crops/m-hero-default.png",
-      "terms": [
-        {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/components/crops/m-menu-button-default.png",
+      "referenceId": "systems:clay-earth",
+      "mediaId": "systems/clay-earth/components/crops/filter-button-default.png",
       "terms": [
         {
           "termId": "web-ui-elements:button",
@@ -65053,365 +64389,15 @@
           "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
         },
         {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
         }
       ]
     },
     {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/components/crops/m-menu-link-default.png",
-      "terms": [
-        {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/components/crops/m-menu-link-focus-visible.png",
-      "terms": [
-        {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/components/crops/m-menu-link-hover.png",
-      "terms": [
-        {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/components/crops/m-menu-link-pressed.png",
-      "terms": [
-        {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/components/crops/m-menu-open-default.png",
-      "terms": [
-        {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/components/crops/nav-cta-default.png",
-      "terms": [
-        {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/components/crops/nav-cta-focus-visible.png",
-      "terms": [
-        {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/components/crops/nav-cta-hover.png",
-      "terms": [
-        {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/components/crops/nav-cta-pressed.png",
-      "terms": [
-        {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/components/crops/nav-item-default.png",
-      "terms": [
-        {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/components/crops/nav-item-focus-visible.png",
-      "terms": [
-        {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/components/crops/nav-item-hover.png",
-      "terms": [
-        {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/components/crops/nav-item-pressed.png",
-      "terms": [
-        {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/components/crops/nav-signin-default.png",
-      "terms": [
-        {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/components/crops/nav-signin-focus-visible.png",
-      "terms": [
-        {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/components/crops/nav-signin-hover.png",
-      "terms": [
-        {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/components/crops/nav-signin-pressed.png",
-      "terms": [
-        {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/components/crops/plan-column-default.png",
-      "terms": [
-        {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/components/crops/plan-cta-default.png",
-      "terms": [
-        {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/components/crops/plan-cta-focus-visible.png",
-      "terms": [
-        {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/components/crops/plan-cta-hover.png",
-      "terms": [
-        {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/components/crops/plan-cta-pressed.png",
-      "terms": [
-        {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/components/crops/plan-price-default.png",
-      "terms": [
-        {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/components/crops/pricing-title-default.png",
-      "terms": [
-        {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/components/crops/prompt-card-default.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:cards-tiles",
-          "rule": "ui-cards",
-          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
-        },
-        {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/components/crops/prompt-card-focus-visible.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:cards-tiles",
-          "rule": "ui-cards",
-          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
-        },
-        {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/components/crops/prompt-card-hover.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:cards-tiles",
-          "rule": "ui-cards",
-          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
-        },
-        {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/components/crops/prompt-card-pressed.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:cards-tiles",
-          "rule": "ui-cards",
-          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
-        },
-        {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/components/crops/section-accent-default.png",
-      "terms": [
-        {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/components/crops/section-title-default.png",
-      "terms": [
-        {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/components/crops/signin-button-default.png",
+      "referenceId": "systems:clay-earth",
+      "mediaId": "systems/clay-earth/components/crops/filter-button-focus-visible.png",
       "terms": [
         {
           "termId": "web-ui-elements:button",
@@ -65419,84 +64405,294 @@
           "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
         },
         {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
         }
       ]
     },
     {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/components/crops/signin-image-default.png",
+      "referenceId": "systems:clay-earth",
+      "mediaId": "systems/clay-earth/components/crops/filter-button-hover.png",
       "terms": [
         {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/components/crops/tab-link-default.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:tabs",
-          "rule": "ui-tabs",
-          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
         },
         {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
         }
       ]
     },
     {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/components/crops/tab-link-focus-visible.png",
+      "referenceId": "systems:clay-earth",
+      "mediaId": "systems/clay-earth/components/crops/filter-button-pressed.png",
       "terms": [
         {
-          "termId": "web-ui-elements:tabs",
-          "rule": "ui-tabs",
-          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
         },
         {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
         }
       ]
     },
     {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/components/crops/tab-link-hover.png",
+      "referenceId": "systems:clay-earth",
+      "mediaId": "systems/clay-earth/components/crops/footer-default.png",
       "terms": [
         {
-          "termId": "web-ui-elements:tabs",
-          "rule": "ui-tabs",
-          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
-        },
-        {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
         }
       ]
     },
     {
-      "referenceId": "systems:clearful",
-      "mediaId": "systems/clearful/components/crops/tab-link-pressed.png",
+      "referenceId": "systems:clay-earth",
+      "mediaId": "systems/clay-earth/components/crops/footer-link-default.png",
       "terms": [
         {
-          "termId": "web-ui-elements:tabs",
-          "rule": "ui-tabs",
-          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
-        },
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clay-earth",
+      "mediaId": "systems/clay-earth/components/crops/footer-link-focus-visible.png",
+      "terms": [
         {
-          "termId": "web-fonts:manrope",
-          "rule": "font-primary",
-          "reason": "Exact primary family Manrope from systems/clearful/tokens.json#core.font.family.ui. Inherited package evidence; fallback families excluded."
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clay-earth",
+      "mediaId": "systems/clay-earth/components/crops/footer-link-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clay-earth",
+      "mediaId": "systems/clay-earth/components/crops/footer-link-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clay-earth",
+      "mediaId": "systems/clay-earth/components/crops/footer-social-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clay-earth",
+      "mediaId": "systems/clay-earth/components/crops/footer-social-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clay-earth",
+      "mediaId": "systems/clay-earth/components/crops/footer-social-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clay-earth",
+      "mediaId": "systems/clay-earth/components/crops/footer-social-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clay-earth",
+      "mediaId": "systems/clay-earth/components/crops/m-menu-button-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clay-earth",
+      "mediaId": "systems/clay-earth/components/crops/menu-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clay-earth",
+      "mediaId": "systems/clay-earth/components/crops/nav-dropdown-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dropdown",
+          "rule": "ui-dropdown",
+          "reason": "Capture filename explicitly names dropdown; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clay-earth",
+      "mediaId": "systems/clay-earth/components/crops/nav-dropdown-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dropdown",
+          "rule": "ui-dropdown",
+          "reason": "Capture filename explicitly names dropdown; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clay-earth",
+      "mediaId": "systems/clay-earth/components/crops/nav-dropdown-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dropdown",
+          "rule": "ui-dropdown",
+          "reason": "Capture filename explicitly names dropdown; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clay-earth",
+      "mediaId": "systems/clay-earth/components/crops/nav-dropdown-opened.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dropdown",
+          "rule": "ui-dropdown",
+          "reason": "Capture filename explicitly names dropdown; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clay-earth",
+      "mediaId": "systems/clay-earth/components/crops/nav-dropdown-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dropdown",
+          "rule": "ui-dropdown",
+          "reason": "Capture filename explicitly names dropdown; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clay-earth",
+      "mediaId": "systems/clay-earth/components/crops/plan-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clay-earth",
+      "mediaId": "systems/clay-earth/components/crops/plan-card-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clay-earth",
+      "mediaId": "systems/clay-earth/components/crops/plan-card-popular-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clay-earth",
+      "mediaId": "systems/clay-earth/components/crops/signin-toggle-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:switch-toggle",
+          "rule": "ui-toggle",
+          "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clay-earth",
+      "mediaId": "systems/clay-earth/components/crops/signin-toggle-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:switch-toggle",
+          "rule": "ui-toggle",
+          "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clay-earth",
+      "mediaId": "systems/clay-earth/components/crops/signin-toggle-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:switch-toggle",
+          "rule": "ui-toggle",
+          "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clay-earth",
+      "mediaId": "systems/clay-earth/components/crops/signin-toggle-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:switch-toggle",
+          "rule": "ui-toggle",
+          "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
         }
       ]
     },
