@@ -13466,6 +13466,113 @@
    "layoutGaps": {
     "icons/": "no standalone SVG icon set was lifted; the Framer mark and UI glyphs are visible in the crops and screenshots"
    }
+  },
+  {
+   "slug": "fresha",
+   "name": "Fresha",
+   "url": "https://www.fresha.com",
+   "category": "e-commerce",
+   "platform": "web",
+   "goodFor": "beauty and wellness booking-marketplace design: one Panda CSS token system (--made-with-panda) shared across four signed-out stacks with two parallel vocabularies (hashed Panda vars mapped back to readable colors.*/spacing.* names through the atomic classes, plus the partner app's readable --color-*/--typography-*/--sizing-* layer declared per data-theme); a 72px shell header, a giant Roobert hero with the signature split search pill (treatment/location/time fields + a round black search button), venue cards with 5.0 rating badges, a venue profile with bookable service rows and a 444x756 booking cart at the wizard boundary, black 48px CTA pills across /pricing and /for-business, the legacy /lp microsite (its own literal-value stylesheet, 16px-radius venue cards, 'from S$' price lines), a help-center search page, and the partners.fresha.com sign-in - the one painted dark theme (data-theme=auto under prefers-color-scheme: dark)",
+   "tags": [
+    "web",
+    "marketplace",
+    "booking",
+    "scheduling",
+    "design-tokens",
+    "light",
+    "dark",
+    "pill",
+    "roobert",
+    "signed-out",
+    "two-host"
+   ],
+   "shape": "reference",
+   "captured": "2026-11-15",
+   "access": "read-only (every captured surface is public: the consumer marketplace, the /user-flow and /auth sign-in shells, the partners.fresha.com professional sign-in, a public venue profile, the booking wizard at the service-selection boundary, /pricing and /for-business marketing, the legacy /lp category and browse pages, /help-center, /careers, /blog, /download-app and /cookies; every post-login surface - the customer account and the whole partner app (calendar, sales, clients, marketing) - is an authenticated boundary never reached; the sign-in fields were measured and typed into then cleared, never submitted; the booking Continue button was never pressed and no payment step was reached; no search, booking, OAuth, SSO or consent action was performed)",
+   "themes": [
+    "light",
+    "dark"
+   ],
+   "widths": [
+    1440,
+    390
+   ],
+   "entry": "systems/fresha/README.md",
+   "tokens": "systems/fresha/tokens.json",
+   "styleGuide": "systems/fresha/style-guide.html",
+   "designMd": {
+    "rounded": "light.partner.border.radius-"
+   },
+   "preview": {
+    "cover": "systems/fresha/screenshots/home-light-default.png",
+    "icon": "systems/fresha/icon.png",
+    "swatches": {
+     "light": {
+      "page": "light.colors.background.page",
+      "surface": "light.colors.background.elevated",
+      "text": "light.colors.foreground.neutral",
+      "muted": "light.colors.foreground.neutralFaded",
+      "accent": "light.colors.background.accent",
+      "border": "light.colors.border.neutral"
+     },
+     "dark": {
+      "page": "dark.colors.background.page",
+      "surface": "dark.colors.background.elevated",
+      "text": "dark.colors.foreground.neutral",
+      "muted": "dark.colors.foreground.neutralFaded",
+      "accent": "dark.colors.background.accent",
+      "border": "dark.colors.border.neutral"
+     }
+    },
+    "fonts": [
+     "core.font.body",
+     "core.font.display"
+    ]
+   },
+   "capture": {
+    "method": "public-web",
+    "source": "www.fresha.com and partners.fresha.com in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass with an iPhone-like context; computed styles and element crops from the live DOM, plus a stylesheet harvest resolved in probe documents under data-theme=light/dark/accent. All four public stacks share one Panda CSS system: hashed custom properties mapped back to readable token names through the atomic class names, plus the partner app's readable --color-*/--typography-*/--sizing-* layer; the legacy /lp microsite is a separate literal-value stylesheet. Local states reached by the site's own controls: the header menu drawer, the hero search's suggestions popover, the Business types flyout, the pricing FAQ disclosure, a booking service tick (ticked for the crop, then unticked), a filled auth email field (typed, shown filled, then cleared), the venue services scroll, and the partner sign-in's painted dark theme under an emulated dark preference",
+    "timestamp": "2026-11-15T21:58:00Z",
+    "harness": "Devin",
+    "model": "SWE-2 High",
+    "route": "public-web",
+    "routes": [
+     "/",
+     "/user-flow",
+     "/auth",
+     "partners.fresha.com/users/sign-in?lang=en-US&from=fresha (light + prefers-dark)",
+     "/a/ha-lu-hair-design-singapore-11-mohamed-sultan-road-f7vhwpo1",
+     "/a/ha-lu-hair-design-singapore-11-mohamed-sultan-road-f7vhwpo1/booking (service-selection step only)",
+     "/pricing",
+     "/for-business",
+     "/lp/en/bt/hair-salons",
+     "/lp/en/bt/hair-salons/in/singapore",
+     "/help-center (+ a topic page and an article)",
+     "/careers",
+     "/blog",
+     "/download-app",
+     "/cookies",
+     "mobile /, /auth, LP browse and the venue page"
+    ],
+    "gaps": [
+     "every post-login surface (the customer account and the whole partner app: calendar, sales, clients, marketing, billing) needs an account - an authenticated boundary never reached",
+     "the /auth and partner sign-in forms were measured and typed into then cleared, never submitted - validation, error, loading, success and verification-code states are absent rather than measured; no OAuth, SSO or passkey flow was started",
+     "the booking wizard stops at service selection: Continue was never pressed, so staff, time-slot, payment and confirmation steps are absent",
+     "the consumer and B2B sheets declare full dark and accent palettes but nothing signed out sets data-theme to them - only partners.fresha.com paints dark (data-theme=auto under prefers-color-scheme: dark); the dark and accent token sets are kept as declared evidence, marked painted vs declared per token",
+     "search was never executed - suggestion results and results pages are absent",
+     "the consumer home's app-install dialog never mounted during measurement - recorded as a gap; the menu drawer, search suggestions and the B2B flyout are the captured overlay evidence",
+     "pressed states are forced with DevTools (CSS.forcePseudoState), so any script-applied mousedown state is missing",
+     "venue content (staff, reviews, hours, prices) is that venue's published data, not a canonical template",
+     "icons: no standalone SVG set lifted this pass"
+    ],
+    "durationMin": null,
+    "durationNote": "wall-clock across the capture sessions including kit adaptation (shooter, stylesheet harvest with hashed-var name mapping, measurement and docs builders rewritten to the four stacks), the screenshot, measurement, mobile and reduced-motion passes on a headless Linux server, and the offline build",
+    "pr": "https://github.com/starship-terminal/constellations/pull/612"
+   },
+   "layoutGaps": {
+    "icons/": "the icon extraction pass was not run; the icons (the Fresha wordmark, the search and gallery glyphs, the SSO brand marks and the category icons) are visible in the crops and screenshots"
+   }
   }
  ]
 }
