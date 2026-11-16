@@ -1194,8 +1194,8 @@
     926
    ],
    "description": "Movies, Events, Dining, Sports & Concerts Nearby",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/district",
    "notes": "",
    "batch": 4
   },

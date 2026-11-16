@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_98 of 156 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_99 of 157 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -162,6 +162,10 @@ Access: read-only (the marketing pages, /servers discovery + categories, /server
 - the Join/Share/Nitro/submit controls were measured (hover/focus/pressed), never pressed - no account action was executed
 - auth fields were focused and filled then cleared, never submitted - no validation, error, loading or success state exists in this capture
 - /invite/<code> painted a dark frame but no invite card signed out in this pass - recorded as a boundary
+
+## [District](../systems/district) — `district`
+Access: signed out (booking and payment gate on the Zomato account and were never reached)
+- booking, payment, sign-in and every account surface need the Zomato account - the Book/Proceed CTAs and date pills were measured at every paintable state, never pressed
 
 ## [Dock](../systems/dock) — `dock`
 Access: signed out (every captured surface is public; the Dock workspace sits behind auth.dock.us and was never reached; the HubSpot demo form and the auth cards were measured, never filled or submitted)

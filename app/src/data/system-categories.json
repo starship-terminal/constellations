@@ -882,6 +882,12 @@
     "reason": "catalog.json describes a news aggregator and community feed (the 2025 Digg reboot): story cards with vote pills, category feeds, source profiles and ranked rails."
   },
   {
+    "referenceId": "systems:district",
+    "groupId": "web-categories",
+    "labels": ["Entertainment", "Travel & Booking"],
+    "reason": "catalog.json describes a live-event and venue booking product (District by Zomato): movie and venue cards, artist pages, ticket purchase flows and a gated checkout."
+  },
+  {
     "referenceId": "systems:getfernand",
     "groupId": "web-categories",
     "labels": ["Business", "Productivity"],
