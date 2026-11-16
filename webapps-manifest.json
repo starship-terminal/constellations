@@ -1164,8 +1164,8 @@
     1431
    ],
    "description": "News, before it trends",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/digg",
    "notes": "",
    "batch": 4
   },
@@ -1179,8 +1179,8 @@
     156
    ],
    "description": "Your Place to Talk and Hang Out",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/discord",
    "notes": "",
    "batch": 4
   },
@@ -1884,8 +1884,8 @@
     78
    ],
    "description": "Build applications faster than ever",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/flutterflow",
    "notes": "",
    "batch": 7
   },
@@ -2079,8 +2079,8 @@
     907
    ],
    "description": "Meet Gemini, Google's AI assistant",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/gemini",
    "notes": "",
    "batch": 7
   },

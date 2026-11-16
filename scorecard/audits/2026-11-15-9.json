@@ -1,7 +1,7 @@
 {
  "date": "2026-11-15",
  "rubric": "4",
- "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): orchestrated merge-train review",
+ "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): Human review against scorecard/criteria.json web wording over the built package: tokens.json role/scale counts, components.md state coverage, screenshots/crops inspection, and the capture's documented boundaries",
  "systems": [
   {
    "slug": "1password",
@@ -19054,111 +19054,87 @@
    "reviewedPlatform": "desktop"
   },
   {
-   "slug": "district",
+   "slug": "discord",
    "grades": {
     "F1": {
      "grade": "meets",
-     "evidence": "The full DDS hue scales emit under color.* per theme (grey, purple, pink, blue, red, yellow, green, ember, peach at 10 steps each, plus black-alpha-8..88, white-alpha-*, the pastel-01..12 and vivid-01..12 families and the brand/theme purples) — 589 resolved vars per theme."
+     "evidence": "The declared layer ships the ramps outright: --neutral-1..100, --blurple-1..100, --plum-0..26, the --red-new-*/--green-new-*/--blue-new-*/--yellow-new-* families, --illo-*, --opacity-* and --brand-* resolve per theme — 1,859 light / 1,865 dark leaves tokenised under color.*."
     },
     "F2": {
      "grade": "meets",
-     "evidence": "Declared --color-background-*/--color-surface-* per theme plus measured background.page/nav/footer/selected roles in light and background.page/nav/card in dark, all aliased to the declarations they match (light page -> color.background.primary #ffffff, dark page -> color.background.primary #131316)."
+     "evidence": "Declared surface roles per theme: --background-base-lowest/-lower/-low/-middle/-high (page through raised), --background-surface-*, --background-mod-normal/-subtle/-strong (fills/selected), --background-accent, --background-brand, --background-feedback-*, plus measured background.page/card/panel/field/selected/chip roles."
     },
     "F3": {
      "grade": "meets",
-     "evidence": "Declared --color-text-* per theme (primary/secondary/tertiary/quaternary/brand/accent-*/inverse/disabled) plus measured text.ink/muted/on-accent in light and text.ink in dark, aliased to them."
+     "evidence": "Declared text roles per theme: --text-normal/-muted/-subtle/-default/-strong/-inverse/-link/-brand/-positive/-negative/-warning plus the full --text-code-* family; measured ink/muted/strong/link/online roles alias them."
     },
     "F4": {
      "grade": "meets",
-     "evidence": "Declared --color-border-subtle/moderate/intense/brand/selection per theme plus measured border.hairline (black@8% nav) and border.chip-line (black@24% filter chip) in light and border.hairline (white@8%) in dark."
+     "evidence": "Declared --border-normal/-subtle/-muted/-strong/-focus/-feedback-* per theme; the 2px #6aa8f4 focus ring is measured on real controls and tokenised as border.focus."
     },
     "F5": {
      "grade": "meets",
-     "evidence": "The inverted-ink #131316 primary measured on the Book-tickets CTA at default/hover/focus-visible/pressed (action.primary/on-primary, matching --color-button-primary-background/--color-button-primary-label); --color-brand-district-purple #6444e4 and --color-theme-purple #6e52fa are declared and painted on brand accents."
+     "evidence": "Blurple action declared across --background-brand and --button-* roles; measured on real controls: Log In/Join #5865f2 default, #4752c4 hover, pressed measured on CTAs and the auth submit."
     },
     "F6": {
-     "grade": "partly",
-     "evidence": "--color-*-success/warning/error/notice families and the semantics-dark-* statuses are declared on both themes; the signed-out pages paint no status surface."
+     "grade": "meets",
+     "evidence": "Declared status families: --background-feedback-positive/-warning/-critical/-info, --border-feedback-*, --text-feedback-* and --text-positive/-negative/-warning in both themes; #43b581 online green measured on the member-count dot."
     },
     "F7": {
      "grade": "meets",
-     "evidence": "Both themes resolve from real declarations and both are measured paint: light is the default render and the dark pass applies the product's own html[data-theme=dark] attribute — nav, ink and hairlines repaint measured (#131316 page, #f7f7f7 ink, white@8% hairline); feed rails keep baked gradients, recorded honestly in components.md and patterns.md."
+     "evidence": "Both themes are real paint signed out: app surfaces carry .theme-dark.theme-darker while marketing chrome wraps in .theme-light; 1,859 light vs 1,865 dark leaves with matching semantic structure. The app's standalone light surface is declared but unpainted — documented."
     },
     "F8": {
      "grade": "meets",
-     "evidence": "BeVietnamPro measured across nav, cards, chips, prices (400/600/700); PassengerSerif declared across 5 @font-face weights (300-700, display serif); declared --font-size-xs..4xl, --line-height-* and a full --typography-scale-* layer; measured 14/16/24/40px ramp aliased to the scale."
+     "evidence": "Five served families named with stacks (gg sans UI, ABC Ginto Discord Nord display, ABC Ginto marketing display, Ggsans marketing, gg mono code), declared --font-weight-* steps, and a measured size ramp (display 56/31.2px, section 28/24px, body 20/16/14px, meta)."
     },
     "F9": {
      "grade": "meets",
-     "evidence": "A declared --space-4..80 step scale (12 steps) resolves identically per theme and emits under core.space.*; --page-max-width is declared."
+     "evidence": "Declared --space-*/--size-* spacing and sizing scales resolve per theme in the thousands of leaves under core (spacing, size, icon, control dimensions)."
     },
     "F10": {
      "grade": "meets",
-     "evidence": "Measured radius set: 6px filter chips, 8px mobile tabs, 12px Book CTA, 9999px category-tab pills (emitted as calc(infinity * 1px))."
+     "evidence": "Declared --radius-* scale (4/8/12/16/40px family) plus measured component radii: pills 40px marketing / 12px app, cards 8px, chips 10px, fields 3-8px, nav pill 16px."
     },
     "F11": {
-     "grade": "meets",
-     "evidence": "Measured dims at both widths under core.component: 75px nav bar, 84x36 tabs, 28x28 search, 197x348 movie cards, 190x222 artist cards, 236x325 venue cards, 56x32 chips, 163x52 Book CTA, ~410px footer; 390x60 bar and 364x272 card on mobile."
+     "grade": "partly",
+     "evidence": "Measured control heights (nav 80, search 64, tabs 57, CTAs 65/48/44/40, fields 44/38) tokenised under core.component; icon sizes measured (51px server icon, dots) but no declared icon-size scale."
     },
     "F12": {
      "grade": "partly",
-     "evidence": "No painted box-shadow was measured on any public component (every reading transparent or none); the declared --shadow-* utility layer exists in the harvest but the signed-out paint is flat."
+     "evidence": "Declared --elevation-*/--shadow-* vars resolve per theme; measured shadows are the auth card 0 2px 10px rgba(0,0,0,0.2) and the nitro card 0 2px 32px rgba(69,42,124,0.1) — no public multi-level elevation ramp in use."
     },
     "F13": {
      "grade": "partly",
-     "evidence": "One measured transition: the category tab's 0.2s cubic-bezier(0.4,0,0.2,1); no declared --duration-*/--ease-* tokens exist in the harvest."
+     "evidence": "Declared --motion-*/--duration-*/--ease-* vars exist in the harvest; transitions measured on controls; the hero/marketing fields are animated media. prefers-reduced-motion behaviour not exercised."
     },
     "F14": {
      "grade": "meets",
-     "evidence": "Layout dims measured at both widths (1440 desktop nav/rails/grids, 390 mobile bar/tabs/cards); the dds-* utility layer and --page-max-width give the layout vocabulary."
+     "evidence": "Declared --breakpoint-* steps resolve; layout widths measured (nav 80px rail, 640px search, 322px card columns, 800px section width); desktop 1440x900 and 390x844 mobile both captured."
     },
     "C1": {
      "grade": "partly",
-     "evidence": "34 measured components across 7 groups, covering about 8 of the rubric's 19 web kinds: button (Book CTA), link (nav mark, tabs, footer), tabs/category pills, card (movie/artist/venue/show cards), chip/badge (filter chips, certificate chips), filter/sort controls, footer, mobile bar. Not public: fields beyond the search affordance, checkbox/radio/switch, select, tooltip, dialog, toast, table, avatar list."
+     "evidence": "46 components over ~10 of 19 web kinds: button (CTAs, Join, Log In submit), link (nav, footer, detail links), text field (search, auth email/password), tabs/category pills (discovery filter row), card (server card, nitro card, auth card, rail), list row/grid item, badge/chip (category chips, verified badge, member counts), icon button (share), QR panel, mobile bar. Not public: textarea, checkbox, radio, switch, select menu, tooltip, dialog, toast, table, avatar list."
     },
     "C2": {
      "grade": "partly",
-     "evidence": "default/hover/focus-visible/DevTools-pressed on tabs, chips, CTAs and links; selected is the measured default on the For-you tab. No form fields exist signed out (search is a link affordance); disabled/error/loading states do not occur and were not fabricated."
+     "evidence": "default/hover/focus-visible/DevTools-pressed on controls plus focused/filled on search and auth fields; selected is the measured default on the All/Gaming pills. disabled/error/loading states do not occur signed out and were not fabricated."
     },
     "C3": {
      "grade": "meets",
-     "evidence": "Keyboard focus measured on the tab row, search affordance, chips and Book CTA (focus-visible states captured in components-computed.json)."
+     "evidence": "Focus-visible captured via keyboard on real controls — the 2px #6aa8f4 ring on search, tabs, cards and auth fields; where a control could not take focus the attempt is recorded, not read as absent."
     },
     "C4": {
      "grade": "meets",
-     "evidence": "Measured roles alias the declarations they match (text.ink -> color.text.primary, action.primary -> color.button.primary.background, background.selected -> color.gradient-purple, border.hairline -> color.border.subtle) in both themes."
-    },
-    "P1": {
-     "grade": "partly",
-     "evidence": "patterns.md covers the app shell (nav + tab row + footer), the feed rail composition, the listing filter+grid recipe, the artist/ticket detail flow, the attribute-driven dark theme and mobile. Empty/loading/error, destructive confirmation, onboarding and checkout do not exist signed out — the documented authenticated boundary."
-    },
-    "A1": {
-     "grade": "partly",
-     "evidence": "icon.png vendored at 128px; BeVietnamPro/PassengerSerif named with stacks (served faces not redistributed). No standalone SVG set lifted — declared layoutGap."
-    },
-    "K1": {
-     "grade": "meets",
-     "evidence": "README documents every captured route and width, the forced html[data-theme=dark] pass and its partial repaint, the Zomato-account booking boundary, the /stores/ challenge retry, and the honest missing components (standalone search field, mv-cert, at-h1)."
-    },
-    "F15": {
-     "grade": "meets",
-     "evidence": "Script: all 8 pairs pass 4.5:1 across 2 themes; lowest 6.14:1 light muted (light.text.muted) on surface (light.background.selected)"
-    },
-    "F16": {
-     "grade": "meets",
-     "evidence": "Script: 747 of 747 tokens name their source"
-    },
-    "K2": {
-     "grade": "missing",
-     "evidence": "Script: no \"Do and don't\" section in the README"
-    },
-    "K3": {
-     "grade": "meets",
-     "evidence": "Script: DESIGN.md matches a fresh generation"
+     "evidence": "components.md writes each reading with its token path from tokens.json where a declaration exists; measured roles alias the declared --background-mod-*/--text-*/--border-* vars they match."
     },
     "C5": {
      "grade": "na",
      "evidence": "Optional for a capture, and this product does not publish it."
+    },
+    "P1": {
+     "grade": "partly",
+     "evidence": "patterns.md covers the marketing shell and hero, the discovery search+tab+card-grid flow, the server-card composition, the server-detail CTA layout, the auth card, the two-themes-one-page split and mobile. Empty/loading/error, destructive confirmation, onboarding and account flows do not exist signed out — the documented authenticated boundary."
     },
     "V1": {
      "grade": "na",
@@ -19167,22 +19143,46 @@
     "V2": {
      "grade": "na",
      "evidence": "Optional for a capture, and this product does not publish it."
+    },
+    "A1": {
+     "grade": "partly",
+     "evidence": "icon.png vendored at 128px; fonts fully named with stacks (gg sans, ABC Ginto Nord/Discord, Ggsans, gg mono; served faces not redistributed). No standalone SVG set lifted — declared layoutGap."
+    },
+    "K1": {
+     "grade": "meets",
+     "evidence": "README states what was captured (10 surfaces, 2 widths, 46 components/~99 states), how (Playwright + dual-surface stylesheet harvest + computed styles), and what to distrust (account wall on the whole client, unpainted theme variants, invite boundary, declared-vs-measured split)."
+    },
+    "F15": {
+     "grade": "missing",
+     "evidence": "Script: primary text fails 1 pair; worst 1.21:1 light text (light.text.ink) on surface (light.background.card)"
+    },
+    "F16": {
+     "grade": "meets",
+     "evidence": "Script: 6386 of 6386 tokens name their source"
+    },
+    "K2": {
+     "grade": "missing",
+     "evidence": "Script: no \"Do and don't\" section in the README"
+    },
+    "K3": {
+     "grade": "meets",
+     "evidence": "Script: DESIGN.md matches a fresh generation"
     }
    },
-   "name": "District",
-   "goodFor": "Event/venue booking apps: category tab pills, movie and venue card grids, artist headshot rails, filter chips, rupee price lines and inverted-ink Book CTAs",
-   "url": "https://www.district.in",
+   "name": "Discord",
+   "goodFor": "chat-community and server-discovery product design: Discord ships its real design-token layer - :root hue scales (--neutral-*, --blurple-*, --plum-*, the --*-new-* families, --illo-*, --opacity-*) plus class-scoped .theme-light/.theme-darker semantic blocks carrying --background-base-*/--background-surface-*/--background-mod-*, --text-*, --border-*, --badge-*, --button-* and --input-* - over a gg-sans + ABC-Ginto app that paints .theme-dark.theme-darker (#121214/#202024 bases, #efeff1 ink, #5865f2 blurple actions, rgba(151,151,159,0.16) selected fills, #43b581 online green, 2px #6aa8f4 focus rings) next to a Ggsans Webflow marketing shell (blurple gradients, 56px Nord display, pill CTAs); signed-out server discovery, a searchable category-tab card grid with member counts and verified badges, a /servers/<slug> detail with Join/Share, and the login/register auth cards",
+   "url": "https://discord.com",
    "captured": "2026-11-15",
    "themes": [
     "light",
     "dark"
    ],
    "platform": "web",
-   "category": "Events",
+   "category": "Messaging",
    "reviewed": "2026-11-15",
    "reviewedPlatform": "web"
   }
  ],
  "base": "2026-10-16",
- "reviewMethod": "orchestrated merge-train review"
+ "reviewMethod": "Human review against scorecard/criteria.json web wording over the built package: tokens.json role/scale counts, components.md state coverage, screenshots/crops inspection, and the capture's documented boundaries"
 }
