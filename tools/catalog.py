@@ -685,8 +685,14 @@ def md_typography(style: dict) -> dict:
 
 
 def design_md_theme(system: dict) -> str:
-    """The first light theme, or the first theme when a package has no light one."""
-    return next((t for t in system["themes"] if t.startswith("light")), system["themes"][0])
+    """The theme the file actually exports. `themes` names the surfaces a
+    capture saw, not the palettes the token file ships, so the preferred light
+    theme can have no swatch set (Framer's /login is a captured light surface
+    while tokens.json only carries `dark`): the label is the swatch set the
+    export falls back to, not the preference."""
+    swatch_sets = system.get("preview", {}).get("swatches", {})
+    wanted = next((t for t in system["themes"] if t.startswith("light")), system["themes"][0])
+    return wanted if wanted in swatch_sets else next(iter(swatch_sets), wanted)
 
 
 def _roles(system: dict) -> dict:
@@ -803,6 +809,13 @@ def design_md_tokens(system: dict, res: Resolver | None = None) -> dict:
         if css and css != "none" and not md_colour(css):
             shadows.append((path, css))
 
+    theme_sets: list[str] = []
+    for path in res.flat:
+        set_name = path.split(".")[0]
+        if set_name.startswith("$") or set_name == "core" or set_name in theme_sets:
+            continue
+        theme_sets.append(set_name)
+
     front = {"version": DESIGN_MD_SPEC, "name": system["name"], "description": system["goodFor"]}
     omitted = []
     for group, data in (("typography", typography), ("rounded", rounded), ("spacing", spacing),
@@ -817,7 +830,8 @@ def design_md_tokens(system: dict, res: Resolver | None = None) -> dict:
     front.update({k: v for k, v in (("colors", colors), ("typography", typography), ("rounded", rounded),
                                     ("spacing", spacing), ("components", components)) if v})
     return {"front": front, "theme": design_md_theme(system), "sources": sources,
-            "roleFrom": role_from, "shadows": shadows, "skipped": skipped}
+            "roleFrom": role_from, "shadows": shadows, "skipped": skipped,
+            "sets": theme_sets}
 
 
 def _yaml_key(key: str) -> str:
@@ -902,7 +916,11 @@ def design_md(system: dict) -> str:
     tokens_rel = Path(system["tokens"]).relative_to(f"systems/{system['slug']}").as_posix()
     intro, parts = readme_parts((pkg / "README.md").read_text())
     src = lambda group: " and ".join(f"`{p.rstrip('.')}`" for p in sources[group])
-    other_themes = [t for t in system["themes"] if t != theme]
+    # The themes the token file holds beyond the exported one — the catalog's
+    # `themes` can name captured surfaces that never became a token set
+    # (Framer's light /login shell), so keep only names that are token sets.
+    token_sets = set(data["sets"])
+    other_themes = [t for t in system["themes"] if t != theme and t in token_sets]
 
     body = [f"# {system['name']}", "",
             f"Generated from [{tokens_rel}]({tokens_rel}) and [README.md](README.md) by the "
