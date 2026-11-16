@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 156,
-    "system_domains": 148,
-    "matched_domains": 118,
-    "missing_domains": 315,
+    "system_packages": 164,
+    "system_domains": 156,
+    "matched_domains": 126,
+    "missing_domains": 307,
     "system_domains_absent_from_catalog": 30
   },
   "matched": {
@@ -734,6 +734,23 @@
         }
       ]
     },
+    "calm.com": {
+      "catalog": [
+        {
+          "name": "Calm",
+          "domain": "calm.com",
+          "id": 227
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "calm",
+          "name": "Calm",
+          "url": "https://www.calm.com",
+          "name_match": true
+        }
+      ]
+    },
     "canva.com": {
       "catalog": [
         {
@@ -1082,6 +1099,57 @@
           "slug": "digg",
           "name": "Digg",
           "url": "https://digg.com",
+          "name_match": true
+        }
+      ]
+    },
+    "discord.com": {
+      "catalog": [
+        {
+          "name": "Discord",
+          "domain": "discord.com",
+          "id": 156
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "discord",
+          "name": "Discord",
+          "url": "https://discord.com",
+          "name_match": true
+        }
+      ]
+    },
+    "district.in": {
+      "catalog": [
+        {
+          "name": "District",
+          "domain": "district.in",
+          "id": 926
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "district",
+          "name": "District",
+          "url": "https://www.district.in",
+          "name_match": true
+        }
+      ]
+    },
+    "dji.com": {
+      "catalog": [
+        {
+          "name": "DJI",
+          "domain": "dji.com",
+          "id": 332
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "dji",
+          "name": "DJI",
+          "url": "https://www.dji.com",
           "name_match": true
         }
       ]
@@ -1851,6 +1919,57 @@
         }
       ]
     },
+    "fourthwall.com": {
+      "catalog": [
+        {
+          "name": "Fourthwall",
+          "domain": "fourthwall.com",
+          "id": 710
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "fourthwall",
+          "name": "Fourthwall",
+          "url": "https://fourthwall.com",
+          "name_match": true
+        }
+      ]
+    },
+    "framer.com": {
+      "catalog": [
+        {
+          "name": "Framer",
+          "domain": "framer.com",
+          "id": 189
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "framer",
+          "name": "Framer",
+          "url": "https://www.framer.com",
+          "name_match": true
+        }
+      ]
+    },
+    "fresha.com": {
+      "catalog": [
+        {
+          "name": "Fresha",
+          "domain": "fresha.com",
+          "id": 561
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "fresha",
+          "name": "Fresha",
+          "url": "https://www.fresha.com",
+          "name_match": true
+        }
+      ]
+    },
     "getfernand.com": {
       "catalog": [
         {
@@ -1894,6 +2013,23 @@
           "name": "TokenTracker",
           "url": "https://github.com/xiufengsun/TokenTracker",
           "name_match": false
+        }
+      ]
+    },
+    "gladia.io": {
+      "catalog": [
+        {
+          "name": "Gladia",
+          "domain": "gladia.io",
+          "id": 859
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "gladia",
+          "name": "Gladia",
+          "url": "https://www.gladia.io",
+          "name_match": true
         }
       ]
     },
@@ -2094,13 +2230,6 @@
         "id": 284
       }
     ],
-    "calm.com": [
-      {
-        "name": "Calm",
-        "domain": "calm.com",
-        "id": 227
-      }
-    ],
     "chargetrip.com": [
       {
         "name": "Chargetrip",
@@ -2220,27 +2349,6 @@
         "id": 762
       }
     ],
-    "discord.com": [
-      {
-        "name": "Discord",
-        "domain": "discord.com",
-        "id": 156
-      }
-    ],
-    "district.in": [
-      {
-        "name": "District",
-        "domain": "district.in",
-        "id": 926
-      }
-    ],
-    "dji.com": [
-      {
-        "name": "DJI",
-        "domain": "dji.com",
-        "id": 332
-      }
-    ],
     "equals.app": [
       {
         "name": "Equals",
@@ -2269,32 +2377,11 @@
         "id": 234
       }
     ],
-    "fourthwall.com": [
-      {
-        "name": "Fourthwall",
-        "domain": "fourthwall.com",
-        "id": 710
-      }
-    ],
     "frame.io": [
       {
         "name": "Frame.io",
         "domain": "frame.io",
         "id": 1142
-      }
-    ],
-    "framer.com": [
-      {
-        "name": "Framer",
-        "domain": "framer.com",
-        "id": 189
-      }
-    ],
-    "fresha.com": [
-      {
-        "name": "Fresha",
-        "domain": "fresha.com",
-        "id": 561
       }
     ],
     "front.com": [
@@ -2330,13 +2417,6 @@
         "name": "Pocket",
         "domain": "getpocket.com",
         "id": 228
-      }
-    ],
-    "gladia.io": [
-      {
-        "name": "Gladia",
-        "domain": "gladia.io",
-        "id": 859
       }
     ],
     "glassnode.com": [

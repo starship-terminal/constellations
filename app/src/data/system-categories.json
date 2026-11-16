@@ -882,6 +882,12 @@
     "reason": "catalog.json describes a news aggregator and community feed (the 2025 Digg reboot): story cards with vote pills, category feeds, source profiles and ranked rails."
   },
   {
+    "referenceId": "systems:district",
+    "groupId": "web-categories",
+    "labels": ["Entertainment", "Travel & Booking"],
+    "reason": "catalog.json describes a live-event and venue booking product (District by Zomato): movie and venue cards, artist pages, ticket purchase flows and a gated checkout."
+  },
+  {
     "referenceId": "systems:getfernand",
     "groupId": "web-categories",
     "labels": ["Business", "Productivity"],
@@ -934,5 +940,47 @@
     "groupId": "web-categories",
     "labels": ["Productivity", "Communication Tools"],
     "reason": "catalog.json describes a relationship manager (personal CRM): unified contacts, notes and reminders, public pricing and the app.me.sh sign-in boundary."
+  },
+  {
+    "referenceId": "systems:framer",
+    "groupId": "web-categories",
+    "labels": ["Design & Media Editing", "Productivity"],
+    "reason": "catalog.json describes a website builder and AI design agent: marketing product pages (AI, agents, design, MCP), a pricing grid, community gallery and marketplace template indexes and the signed-out login shell."
+  },
+  {
+    "referenceId": "systems:discord",
+    "groupId": "web-categories",
+    "labels": ["Communication Tools", "Social Networking"],
+    "reason": "catalog.json describes a chat-community platform: signed-out server discovery, server detail pages with Join/Share, and the login/register auth surface."
+  },
+  {
+    "referenceId": "systems:dji",
+    "groupId": "web-categories",
+    "labels": ["Electronic & Devices", "Marketplace"],
+    "reason": "catalog.json describes a consumer-drone and imaging-hardware brand site: product marketing pages, category grids, a store locator and links into the gated DJI store."
+  },
+  {
+    "referenceId": "systems:fourthwall",
+    "groupId": "web-categories",
+    "labels": ["Business", "Marketplace"],
+    "reason": "catalog.json describes a creator-commerce platform: a Webflow marketing site with a pricing grid, a styled-components print-on-demand product catalogue with product pages, Mintlify docs and Docusaurus help (each with a real dark toggle), and a Keycloak sign-up shell; the shop dashboard, designer and checkout are gated."
+  },
+  {
+    "referenceId": "systems:calm",
+    "groupId": "web-categories",
+    "labels": ["Health & Wellness"],
+    "reason": "catalog.json describes the Calm sleep-and-meditation app: the marketing pages, a dark signed-out /app/* preview shell, a login card and the health.calm.com B2B surface; the product past login is gated."
+  },
+  {
+    "referenceId": "systems:fresha",
+    "groupId": "web-categories",
+    "labels": ["Marketplace", "Scheduling Tools", "Health & Wellness"],
+    "reason": "catalog.json describes a beauty and wellness booking marketplace: a consumer browse-and-book flow, venue profiles, a booking wizard boundary, business scheduling software marketing and the partner sign-in."
+  },
+  {
+    "referenceId": "systems:gladia",
+    "groupId": "web-categories",
+    "labels": ["AI Tool", "Development Tools"],
+    "reason": "catalog.json describes an audio-transcription and speech-AI developer platform: the marketing pages, usage-based pricing with a calculator, the Mintlify docs site and the app-shell auth cards."
   }
 ]
