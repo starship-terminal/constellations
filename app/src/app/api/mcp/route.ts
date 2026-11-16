@@ -31,14 +31,40 @@ function tooLarge() {
   );
 }
 
+// Counts bytes as they arrive and cancels past the cap, so a request
+// without Content-Length cannot fill memory before the size check.
+async function readBody(request: Request) {
+  const reader = request.body?.getReader();
+  if (!reader) return "";
+  const parts: Uint8Array[] = [];
+  let total = 0;
+  for (;;) {
+    const { done, value } = await reader.read();
+    if (done) break;
+    total += value.byteLength;
+    if (total > MCP_BODY_LIMIT) {
+      await reader.cancel();
+      return null;
+    }
+    parts.push(value);
+  }
+  const body = new Uint8Array(total);
+  let offset = 0;
+  for (const part of parts) {
+    body.set(part, offset);
+    offset += part.byteLength;
+  }
+  return new TextDecoder().decode(body);
+}
+
 export async function POST(request: Request) {
   if (!isAllowedHost(request.headers.get("host"))) return refused();
   const declared = request.headers.get("content-length");
   if (declared && /^\d+$/.test(declared) && Number(declared) > MCP_BODY_LIMIT) {
     return tooLarge();
   }
-  const text = await request.text();
-  if (text.length > MCP_BODY_LIMIT) return tooLarge();
+  const text = await readBody(request);
+  if (text === null) return tooLarge();
   let raw: unknown;
   try {
     raw = JSON.parse(text);

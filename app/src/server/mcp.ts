@@ -1,10 +1,15 @@
 // The JSON-RPC handler behind POST /api/mcp. The tools are the same ones
 // the research chat uses, with no pinned or excluded references. One bad
 // call comes back as a tool error so the client's session keeps going.
+import { asSchema } from "ai";
 import { researchTools } from "@/server/research/agent";
 import { readLocalImage } from "@/server/sources/files";
+import { readReferenceImage } from "@/server/sources";
 
 export const MCP_BODY_LIMIT = 256_000;
+// One image tool can return a few megabytes of base64. A batch of them
+// would keep every reply until the last one finished.
+export const MCP_BATCH_LIMIT = 8;
 export const SERVER_INFO = { name: "constellations", version: "1.0.0" };
 export const INSTRUCTIONS =
   "Read-only search over a private Constellations library. " +
@@ -35,16 +40,24 @@ const error = (req: Rpc, code: number, message: string) =>
 const isObj = (v: unknown): v is Record<string, unknown> =>
   typeof v === "object" && v !== null && !Array.isArray(v);
 
-export function toolSpecs(): ToolSpec[] {
+async function jsonSchema(schema: unknown) {
+  try {
+    return await asSchema(schema as never).jsonSchema;
+  } catch {
+    return { type: "object" };
+  }
+}
+
+export async function toolSpecs(): Promise<ToolSpec[]> {
   const tools = researchTools({ excludedIds: [] }, false);
-  return Object.entries(tools).map(([name, spec]) => ({
-    name,
-    description:
-      typeof spec.description === "string" ? spec.description : undefined,
-    inputSchema: (
-      spec.inputSchema as { jsonSchema?: unknown }
-    ).jsonSchema ?? { type: "object" },
-  }));
+  return Promise.all(
+    Object.entries(tools).map(async ([name, spec]) => ({
+      name,
+      description:
+        typeof spec.description === "string" ? spec.description : undefined,
+      inputSchema: await jsonSchema(spec.inputSchema),
+    })),
+  );
 }
 
 async function callTool(name: string, args: Record<string, unknown>) {
@@ -56,8 +69,17 @@ async function callTool(name: string, args: Record<string, unknown>) {
       isError: true,
     };
   }
+  const parsed = await asSchema(
+    spec.inputSchema as Parameters<typeof asSchema>[0],
+  ).validate?.(args);
+  if (parsed && !parsed.success) {
+    return {
+      content: [{ type: "text", text: parsed.error.message.slice(0, 400) }],
+      isError: true,
+    };
+  }
   try {
-    const out = await spec.execute(args as never, {
+    const out = await spec.execute((parsed?.value ?? args) as never, {
       toolCallId: "mcp",
       messages: [],
       context: undefined,
@@ -85,9 +107,22 @@ async function callTool(name: string, args: Record<string, unknown>) {
 async function imageBlock(out: unknown) {
   if (!isObj(out) || out.visualEvidence !== "image-supplied") return null;
   const media = isObj(out.media) ? out.media : null;
-  const url = media && typeof media.url === "string" ? media.url : "";
-  if (!url) return null;
-  const file = await readLocalImage(url);
+  const mediaUrl = media && typeof media.url === "string" ? media.url : "";
+  if (mediaUrl) {
+    const file = await readLocalImage(mediaUrl);
+    if (file) {
+      return {
+        type: "image",
+        data: Buffer.from(file.data).toString("base64"),
+        mimeType: file.mediaType,
+      };
+    }
+  }
+  // inspectReference reports an image without a top-level media field.
+  // The screenshot is the first readable one on the reference.
+  const reference = isObj(out.reference) ? out.reference : null;
+  if (!reference) return null;
+  const file = await readReferenceImage(reference as never);
   if (!file) return null;
   return {
     type: "image",
@@ -119,10 +154,10 @@ async function dispatch(req: Rpc) {
     });
   }
   if (method === "ping") return result(req, {});
-  if (method === "tools/list") return result(req, { tools: toolSpecs() });
+  if (method === "tools/list") return result(req, { tools: await toolSpecs() });
   if (method === "tools/call") {
     const name = typeof params.name === "string" ? params.name : "";
-    if (!toolSpecs().some((s) => s.name === name)) {
+    if (!(await toolSpecs()).some((s) => s.name === name)) {
       return error(req, -32602, `unknown tool '${name}'`);
     }
     const args = params.arguments;
@@ -166,9 +201,23 @@ export async function handleBatch(raw: unknown) {
         },
       };
     }
-    const replies = (await Promise.all(raw.map(handle))).filter(
-      (r) => r !== null,
-    );
+    if (raw.length > MCP_BATCH_LIMIT) {
+      return {
+        jsonrpc: "2.0",
+        id: null,
+        error: {
+          code: -32600,
+          message: `a batch may contain at most ${MCP_BATCH_LIMIT} calls`,
+        },
+      };
+    }
+    // One at a time. An image call reads and encodes a file, and a batch
+    // that starts them all at once holds every reply until the last ends.
+    const replies = [];
+    for (const item of raw) {
+      const reply = await handle(item);
+      if (reply !== null) replies.push(reply);
+    }
     return replies.length ? replies : null;
   }
   return handle(raw);

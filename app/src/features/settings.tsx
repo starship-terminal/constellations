@@ -74,7 +74,7 @@ function agentLines(origin: string) {
     { label: "swe", text: `swe mcp add constellations --url=${base}/api/mcp` },
     {
       label: "Codex",
-      text: `[mcp_servers.constellations] url = "${base}/api/mcp"`,
+      text: `[mcp_servers.constellations]\nurl = "${base}/api/mcp"`,
     },
   ];
 }
