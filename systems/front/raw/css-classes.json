@@ -1,5 +1,5 @@
 {
- "readAt": "2026-11-16",
+ "readAt": "2026-11-17",
  "source": "front.com's compiled design layer: the bespoke semantic classes (surface-*, text-*, font-*, button-*, rounded-*, ease-*, duration-*) and the Tailwind colour-utility palette, verbatim from the _next CSS chunks, keyed by [data-theme] context",
  "rules": [
   {

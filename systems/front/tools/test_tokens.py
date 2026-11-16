@@ -54,7 +54,7 @@ class TokensTest(unittest.TestCase):
         self.assertEqual(app, dark, "app and dark should name the same roles")
         av = {n: t["$value"] for n, t in token_checks.tokens_of(T["app"])}
         dv = {n: t["$value"] for n, t in token_checks.tokens_of(T["dark"])}
-        self.assertNotEqual(av["color.bg.base"], dv["color.bg.base"])
+        self.assertNotEqual(av["color.bg.base.default"], dv["color.bg.base.default"])
 
     def test_companion_parity(self):
         """The embedded Froyo layer repaints the same --colors-* names light/dark."""
@@ -76,8 +76,10 @@ class TokensTest(unittest.TestCase):
         self.assertEqual(violet["surface.highlight"], "#dee948")
         self.assertEqual(violet["text.primary"], "#f8f1fe")
         app = {n: t["$value"] for n, t in token_checks.tokens_of(T["app"])}
-        self.assertIn("color.bg.surface.primary", app)
-        self.assertIn("color.bg.fill.brand", app)
+        self.assertIn("color.bg.surface.primary.default", app)
+        self.assertIn("color.bg.surface.primary.hover", app)
+        self.assertIn("color.bg.fill.brand.default", app)
+        self.assertIn("color.bg.fill.brand.hover", app)
         help_ = {n: t["$value"] for n, t in token_checks.tokens_of(T["help"])}
         self.assertIn("primary.color", help_)
 

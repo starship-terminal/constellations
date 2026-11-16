@@ -107,16 +107,16 @@ def have(comp, state, prop=None):
 
 
 def meas(comp, state, prop, ty, path, desc):
+    # A mapped component must exist: a missing key means the builder drifted
+    # from the capture, and its tokens would silently never be emitted.
+    if comp not in C:
+        raise KeyError(f"{path}: required component '{comp}' is not in raw/components-computed.json")
     if not have(comp, state, prop):
         return
-    node = SPEC["component"]
-    parts = path.split(".")
-    for p in parts[:-1]:
-        node = node.setdefault(p, {})
     via = C[comp]["states"][state].get("via") or "at rest"
-    node[parts[-1]] = lit(st(comp, state)[prop], ty,
+    emit_leaf(SPEC["component"], path, lit(st(comp, state)[prop], ty,
                           f"measured {comp} ({state}, {via}) on {C[comp].get('url', C[comp].get('page', ''))}",
-                          desc)
+                          desc))
 
 
 def meas_dim(comp, state, prop, path, desc):
@@ -182,15 +182,22 @@ for rule in V.get("theme", []):
         FTHEME.setdefault("dark", {}).update(rule.get("properties") or {})
 
 
-def fres(name, seen=()):
-    """Resolve a Froyo declaration: literal, or var(--other) chains."""
-    v = FROOT.get(name)
+def fres(name, theme=None, seen=()):
+    """Resolve a Froyo declaration: literal, or var(--other) chains.
+
+    A [data-theme] scope re-declares the semantic names it repaints, so a
+    themed lookup checks that scope's table before the :where(:root) one —
+    reading root alone resolves every theme to the light declarations.
+    """
+    v = FTHEME.get(theme, {}).get(name) if theme else None
+    if v is None:
+        v = FROOT.get(name)
     if v is None:
         return None
     v = v.strip()
     m = re.fullmatch(r"var\((--[a-z0-9-]+)\)", v)
     if m and m.group(1) not in seen:
-        return fres(m.group(1), seen + (name,))
+        return fres(m.group(1), theme, seen + (name,))
     return v
 
 
@@ -208,6 +215,57 @@ def nest(root, dotted, leaf):
     for p in parts[:-1]:
         node = node.setdefault(p, {})
     node[parts[-1]] = leaf
+
+
+def _is_leaf(d):
+    return isinstance(d, dict) and ("var" in d or "value" in d)
+
+
+LEAF_KEYS = {"value", "var", "type", "source", "description", "resolve", "responsive", "angle"}
+
+
+def emit_leaf(root, dotted, leaf):
+    """Write `leaf` at the dotted path.
+
+    A captured name can be both a leaf and the parent of longer names:
+    --color-bg-fill-brand sits beside --color-bg-fill-brand-hover/-pressed/
+    -disabled. When a leaf and a group must share a node, the leaf moves
+    inside the group under the first free of `default`, `base`, `self`, so
+    the base value and each variant stay separate tokens instead of the
+    variants silently attaching to (and being dropped from) the base leaf.
+    """
+    node = root
+    parts = dotted.split(".")
+    for p in parts[:-1]:
+        nxt = node.get(p)
+        if nxt is None:
+            nxt = node[p] = {}
+        elif _is_leaf(nxt):
+            nxt = node[p] = {"default": nxt}
+        node = nxt
+    last = parts[-1]
+    if last in node and not _is_leaf(node[last]):
+        for key in ("default", "base", "self"):
+            if key not in node[last]:
+                node[last][key] = leaf
+                return
+        raise ValueError(f"{dotted}: no free key to hold the leaf beside its group")
+    if _is_leaf(node.get(last)):
+        raise ValueError(f"{dotted}: duplicate token path")
+    node[last] = leaf
+
+
+def check_leaves(node, path=""):
+    """A token leaf must never also hold child tokens — the mixed shape is
+    what build() would silently truncate, losing every variant."""
+    if _is_leaf(node):
+        extra = set(node) - LEAF_KEYS
+        if extra:
+            raise ValueError(f"{path}: token leaf also holds child tokens {sorted(extra)}")
+        return
+    for k, v in node.items():
+        if isinstance(v, dict) and not k.startswith("_"):
+            check_leaves(v, f"{path}.{k}" if path else k)
 
 
 # ------------------------------------------------------------- marketing
@@ -385,7 +443,7 @@ for name, raw in sorted(FROOT.items()):
                 path = f"froyo.ramp.alpha.{hue}.{rest}"
         else:
             path = f"froyo.ramp.{mode}.{hue}.{rest}"
-        nest(SPEC["core"], path, lit(norm_color(v), "color", FROYO_SRC.format(name=name) + ("; `var()` alias resolved through the same sheet" if raw != v else ""),
+        emit_leaf(SPEC["core"], path, lit(norm_color(v), "color", FROYO_SRC.format(name=name) + ("; `var()` alias resolved through the same sheet" if raw != v else ""),
             f"The declared `{name}` — the Froyo {mode} {hue} ramp."))
         continue
     m = re.fullmatch(r"--colors-(.*)", name)
@@ -401,7 +459,7 @@ for name, raw in sorted(FROOT.items()):
                 break
             if ty == "fontWeight" and re.fullmatch(r"\d+", str(v)):
                 v = int(v)
-            nest(SPEC["core"], f"{path}.{key.replace('-', '.')}", lit(v, ty, FROYO_SRC.format(name=name), f"The declared `{name}`."))
+            emit_leaf(SPEC["core"], f"{path}.{key.replace('-', '.')}", lit(v, ty, FROYO_SRC.format(name=name), f"The declared `{name}`."))
             break
 
 # ------------------------------------------------- app / dark shell sets
@@ -411,7 +469,7 @@ def emit_color_tree(root, resolved, srctag):
             continue  # ramps live under core.primitive
         rest = name[len("--color-"):]
         leaf = var(name, "color", description=f"The resolved `{name}` on the {srctag} surface.")
-        nest(root, "color." + rest.replace("-", "."), leaf)
+        emit_leaf(root, "color." + rest.replace("-", "."), leaf)
 
 
 emit_color_tree(SPEC["app"], APP_L, "app.frontapp.com signin shell (light theme)")
@@ -428,7 +486,7 @@ for name in sorted(APP_L):
         path = f"alpha.{m2.group(1)}.{m2.group(2)}" if m2 else "alpha." + rest
     else:
         path = f"{hue}.{rest}"
-    nest(prim, path, lit(norm_color(APP_L[name]), "color",
+    emit_leaf(prim, path, lit(norm_color(APP_L[name]), "color",
         f"resolved `--color-primitive-{hue}-{rest}` on app.frontapp.com's signin shell (raw/css-vars.json: resolved.app)",
         f"The app shell's `{hue}` primitive ramp step."))
 
@@ -438,11 +496,11 @@ for tset, mode in (("companion", "light"), ("companionDark", "dark")):
         m = re.fullmatch(r"--colors-(.*)", name)
         if not m:
             continue
-        v = fres(name)
+        v = fres(name, mode)
         if v is None:
             continue
         alias = "" if raw == v else f" = `{raw.strip()}` → resolved through the same sheet"
-        nest(SPEC[tset], "color." + m.group(1).replace("-", "."),
+        emit_leaf(SPEC[tset], "color." + m.group(1).replace("-", "."),
              lit(norm_color(v), "color",
                  f"declared `{name}` under [data-theme=\"{mode}\"] in the Froyo token sheet{alias}",
                  f"The Froyo semantic `{name}` under [data-theme=\"{mode}\"]."))
@@ -454,7 +512,7 @@ for name in sorted(HELP):
         continue
     v = HELP[name]
     ty = "color" if re.fullmatch(r"#([0-9a-fA-F]{3,8})|rgba?\([^)]*\)", v.strip()) else ("fontFamily" if name == "--font" else "other")
-    nest(SPEC["help"], re.sub(r"[^a-zA-Z0-9]+", ".", rest).strip(".").lower(),
+    emit_leaf(SPEC["help"], re.sub(r"[^a-zA-Z0-9]+", ".", rest).strip(".").lower(),
          var(name, ty, description=f"The resolved `{name}` on help.front.com (Front's Knowledge Base product)."))
 
 # ------------------------------------------------------- measured component
@@ -466,15 +524,14 @@ meas_color("nav-try", "default", "color", "marketing.button.header.text", "Its l
 meas_dim("nav-try", "default", "borderTopLeftRadius", "marketing.button.header.radius", "Its corner radius.")
 meas_color("nav-demo", "default", "backgroundColor", "marketing.button.secondary.bg", "The \"Request a demo\" header button's painted fill.")
 meas_color("nav-demo", "default", "color", "marketing.button.secondary.text", "Its label colour.")
-meas_dim("hero-cta-try", "default", "height", "marketing.button.hero.height", "The hero \"Try for free\" (button-primary-violet) height.")
-meas_color("hero-cta-try", "default", "backgroundColor", "marketing.button.primary.bg", "The violet primary button's painted fill.")
-meas_color("hero-cta-try", "hover", "backgroundColor", "marketing.button.primary.bgHover", "Its hover fill.")
-meas_color("hero-cta-try", "pressed", "backgroundColor", "marketing.button.primary.bgActive", "Its :active fill (CDP-forced).")
-meas_color("hero-cta-try", "default", "color", "marketing.button.primary.text", "Its label colour.")
-meas_dim("hero-cta-try", "default", "borderTopLeftRadius", "marketing.button.primary.radius", "Its corner radius.")
-meas_dim("hero-cta-try", "default", "paddingLeft", "marketing.button.primary.paddingX", "Its horizontal padding.")
-meas_color("hero-cta-demo", "default", "backgroundColor", "marketing.button.heroSecondary.bg", "The hero \"Request a demo\" fill.")
-meas_color("hero-cta-demo", "default", "color", "marketing.button.heroSecondary.text", "Its label colour.")
+# The hero ships one CTA — "Request demo", the citron pill on the plum field.
+meas_dim("hero-cta", "default", "height", "marketing.button.hero.height", "The hero \"Request demo\" pill's measured height.")
+meas_color("hero-cta", "default", "backgroundColor", "marketing.button.primary.bg", "Its painted fill (the citron violet.surface.highlight).")
+meas_color("hero-cta", "hover", "backgroundColor", "marketing.button.primary.bgHover", "Its hover fill.")
+meas_color("hero-cta", "pressed", "backgroundColor", "marketing.button.primary.bgActive", "Its :active fill (CDP-forced).")
+meas_color("hero-cta", "default", "color", "marketing.button.primary.text", "Its label colour (the violet.button.textDefault ink).")
+meas_dim("hero-cta", "default", "borderTopLeftRadius", "marketing.button.primary.radius", "Its corner radius.")
+meas_dim("hero-cta", "default", "paddingLeft", "marketing.button.primary.paddingX", "Its horizontal padding.")
 meas_dim("billing-toggle", "default", "width", "marketing.billingSwitch.width", "The pricing billing switch's measured width.")
 meas_dim("billing-toggle", "default", "height", "marketing.billingSwitch.height", "Its measured height.")
 meas_color("faq-item", "opened", "color", "marketing.faq.openColour", "The FAQ disclosure's label colour while open.")
@@ -485,6 +542,18 @@ meas_color("plan-card", "default", "backgroundColor", "marketing.planCard.bg", "
 meas_color("plan-cta", "default", "backgroundColor", "marketing.planCta.bg", "A plan CTA's fill.")
 meas_color("footer", "default", "backgroundColor", "marketing.footer.bg", "The footer's painted background.")
 meas_color("footer-link", "default", "color", "marketing.footer.link", "A footer link's colour.")
+
+# The demo and signup forms' measured geometry.
+meas_dim("demo-email", "default", "height", "forms.demoEmail.height", "The demo form work-email field's measured height.")
+meas_color("demo-email", "default", "backgroundColor", "forms.demoEmail.bg", "Its painted fill.")
+meas_dim("demo-field", "default", "height", "forms.demoField.height", "The company-size select's measured height.")
+meas_dim("demo-submit", "default", "height", "forms.demoSubmit.height", "The demo submit's measured height.")
+meas_color("demo-submit", "default", "backgroundColor", "forms.demoSubmit.bg", "Its painted fill.")
+meas_dim("signup-field", "default", "height", "forms.signupField.height", "The marketing signup field's measured height.")
+meas_dim("signup-submit", "default", "height", "forms.signupSubmit.height", "The marketing signup submit's measured height.")
+meas_color("signup-submit", "default", "backgroundColor", "forms.signupSubmit.bg", "Its painted fill.")
+meas_dim("signup-app-submit", "default", "height", "forms.signupAppSubmit.height", "The app shell signup submit's measured height.")
+meas_color("signup-app-submit", "default", "backgroundColor", "forms.signupAppSubmit.bg", "Its painted fill.")
 
 # The app shell's painted values (measured, to confirm the resolved vars).
 meas_color("app-panel", "default", "backgroundColor", "app.panel.bg", "The signin card's painted fill.")
@@ -519,6 +588,12 @@ meas_color("devref-code", "default", "backgroundColor", "dev.code.bg", "A code b
 meas_color("devref-code", "default", "color", "dev.code.text", "Its text colour.")
 meas_dim("m-topbar", "default", "height", "marketing.mobile.headerHeight", "The 390px mobile header's measured height.")
 meas_dim("m-menu-btn", "default", "width", "marketing.mobile.burgerWidth", "The burger button's measured width at 390px.")
+
+# Every leaf written is a real leaf: a node carrying both a value and child
+# tokens is the shape that silently drops captured variants downstream.
+for _set, _tree in SPEC.items():
+    if not _set.startswith("_"):
+        check_leaves(_tree, _set)
 
 (RAW / "component-tokens.json").write_text(json.dumps(SPEC, indent=1, ensure_ascii=False) + "\n")
 

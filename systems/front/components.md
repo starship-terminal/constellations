@@ -1,14 +1,14 @@
 # Front components
 
-The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Captured from front.com, app.frontapp.com, help.front.com and dev.frontapp.com on 2026-11-15, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was signed into, booked, created or submitted; the demo, signup, signin, help-search and reset forms were never sent; every link, CTA, SSO button and submit was measured, never followed or pressed.
+The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Captured from front.com, app.frontapp.com, help.front.com and dev.frontapp.com on 2026-11-16, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was signed into, booked, created or submitted; the demo, signup, signin, help-search and reset forms were never sent; every link, CTA, SSO button and submit was measured, never followed or pressed.
 
-The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (68 components, 160 states). The page layouts are described in [patterns.md](patterns.md).
+The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (69 components, 164 states). The page layouts are described in [patterns.md](patterns.md).
 
 How to read an entry:
 
 - A colour is its value followed by the palette token in [tokens.json](tokens.json) with the same value, when there is one. Text is written family size/line-height weight, then its colour, for example `Inter 16/20.8 400, #000000`, and is read from the first text node inside the component.
 - The state table has one row per state that differs. The first row lists every value; later rows list only what changes. A state with the same values as the first is named in its label, for example "default (same: focus-visible)". When the root paints nothing, "Child layers" names the first nodes inside it that do.
-- Crops are images of the component read from the live page, in [components/crops/](components/crops) (156 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
+- Crops are images of the component read from the live page, in [components/crops/](components/crops) (160 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
 
 ## Discovery list
 
@@ -76,7 +76,7 @@ Screenshots are named `{page}-{theme}-state.png` where `{theme}` is the mode the
 
 Values that apply across entries, from the measurement files.
 
-**Focus.** 22 components were given a real keyboard focus. 13 draw an outline ring: `nav-menu-btn` (1px solid #8034bf `light.button.surface`, offset 2px), `nav-pricing` (1px solid #8034bf `light.button.surface`, offset 2px), `nav-signin` (1px solid #8034bf `light.button.surface`, offset 2px), `nav-demo` (1px solid #ffffff `light.surface.l0`, offset 2px), `nav-try` (1px solid #f8f1fe `light.button.textDefault`, offset 2px), `plan-cta` (1px solid #000000, offset 1.98438px), `sales-link` (1px solid #ffffff `light.surface.l0`, offset 2px), `faq-item` (1px solid #1c1e20 `core.component.marketing.faq.openColour`, offset 2px), `product-cta` (1px solid #f8f1fe `light.button.textDefault`, offset 2px), `demo-submit` (1px solid #5b1f76 `light.button.surfaceActive`, offset 2px), `m-menu-btn` (1px solid #1c1e20 `core.component.marketing.faq.openColour`, offset 1.98438px), `m-cta` (1px solid #000000, offset 1.98438px), `hero-cta` (1px solid #ffffff `light.surface.l0`, offset 2px). 1 draw a focus ring as a shadow instead: `dev-search`. The other 8 show no measured change: `signup-submit`, `app-continue`, `app-sso`, `app-forgot`, `appd-continue`, `appd-sso`, `appd-forgot`, `forgot-submit`.
+**Focus.** 23 components were given a real keyboard focus. 14 draw an outline ring: `nav-menu-btn` (1px solid #8034bf `light.button.surface`, offset 2px), `nav-pricing` (1px solid #8034bf `light.button.surface`, offset 2px), `nav-signin` (1px solid #8034bf `light.button.surface`, offset 2px), `nav-demo` (1px solid #ffffff `light.surface.l0`, offset 2px), `nav-try` (1px solid #f8f1fe `light.button.textDefault`, offset 2px), `plan-cta` (1px solid #5b1f76 `light.button.surfaceActive`, offset 2px), `sales-link` (1px solid #ffffff `light.surface.l0`, offset 2px), `faq-item` (1px solid #1c1e20 `core.component.marketing.faq.openColour`, offset 2px), `product-cta` (1px solid #f8f1fe `light.button.textDefault`, offset 2px), `demo-submit` (1px solid #300c41 `violet.surface.l0`, offset 2px), `signup-submit` (1px solid #300c41 `violet.surface.l0`, offset 2px), `m-menu-btn` (1px solid #1c1e20 `core.component.marketing.faq.openColour`, offset 1.98438px), `m-cta` (1px solid #000000, offset 1.98438px), `hero-cta` (1px solid #ffffff `light.surface.l0`, offset 2px). 1 draw a focus ring as a shadow instead: `dev-search`. The other 8 show no measured change: `app-continue`, `app-sso`, `app-forgot`, `appd-continue`, `appd-sso`, `appd-forgot`, `forgot-submit`, `signup-app-submit`.
 
 **Pressed.** Forced with DevTools (`CSS.forcePseudoState` :active:hover). Nothing a real press would submit was ever pressed.
 
@@ -84,7 +84,7 @@ Values that apply across entries, from the measurement files.
 
 | Duration | Easing | Property | Where |
 |---|---|---|---|
-| 0.1s | `ease` | background-color | app-continue, app-sso, appd-continue, appd-sso, forgot-submit, signup-submit |
+| 0.1s | `ease` | background-color | app-continue, app-sso, appd-continue, appd-sso, forgot-submit, signup-app-submit |
 | 0.15s | `cubic-bezier(0.16, 1, 0.3, 1)` | -webkit-box-shadow, box-shadow | dev-search |
 | 0.2s | `cubic-bezier(0.55, 0.085, 0.68, 0.53)` | background-color, border-color, color, fill, stroke, text-decoration-color | footer-link |
 | 0.4s | `cubic-bezier(0.16, 1, 0.3, 1)` | all, background-color, border-color, color, fill, stroke, text-decoration-color | demo-submit, hero-cta, m-cta, m-menu-btn, nav-demo, nav-menu-btn, nav-pricing, nav-signin and more |
@@ -95,10 +95,10 @@ Values that apply across entries, from the measurement files.
 | Card | Size | Border | Radius | Background | Shadow | Padding |
 |---|---|---|---|---|---|---|
 | [Mega-menu panel](#mega-menu-panel) | 1271 x 419 | 5px solid #e2dcf6 `light.button.surfaceOutlineActive` | 20px | #ffffff `light.surface.l0` | rgba(0, 0, 0, 0.04) 0px 60px 60px 0px, rgba(0, 0, 0, 0.03) 0px 30.375px 26.156px 0px, rgba(0, 0, 0, 0.02) 0px 12px 9.75px 0px, rgba(0, 0, 0, 0.01) 0px 2.625px 3.469px 0px | 32px 8px |
-| [Plan card](#plan-card) | 1440 x 738 | - | - | #300c41 `violet.surface.l0` | none | 120px 24px 0px 24px |
+| [Plan card](#plan-card) | 313 x 460 | - | 24px | #ffffff `light.surface.l0` | none | 0 |
 | [Site footer](#site-footer) | 1440 x 1481.39 | - | - | transparent | none | 0 |
 | [Auth panel](#auth-panel) | 332 x 576.69 | 1px solid rgba(0, 0, 0, 0.08) `help.border.color` | 20px | #ffffff `light.surface.l0` | rgba(0, 0, 0, 0.09) 0px 2px 8px 0px | 48px |
-| [Auth panel under [data-theme=dark]](#auth-panel-under-data-themedark) | 332 x 576.69 | 1px solid rgba(255, 255, 255, 0.08) | 20px | #221e29 `dark.color.bg.surface.highlight` | rgba(0, 0, 0, 0.09) 0px 2px 8px 0px | 48px |
+| [Auth panel under [data-theme=dark]](#auth-panel-under-data-themedark) | 332 x 576.69 | 1px solid rgba(255, 255, 255, 0.08) | 20px | #221e29 `dark.color.bg.surface.highlight.default` | rgba(0, 0, 0, 0.09) 0px 2px 8px 0px | 48px |
 | [Signup panel](#signup-panel) | 332 x 576.69 | 1px solid rgba(0, 0, 0, 0.08) `help.border.color` | 20px | #ffffff `light.surface.l0` | rgba(0, 0, 0, 0.09) 0px 2px 8px 0px | 48px |
 | [Reset panel](#reset-panel) | 332 x 576.69 | 1px solid rgba(0, 0, 0, 0.08) `help.border.color` | 20px | #ffffff `light.surface.l0` | rgba(0, 0, 0, 0.09) 0px 2px 8px 0px | 48px |
 | [Category card](#category-card) | 402 x 259 | 1px solid rgba(0, 0, 0, 0.08) `help.border.color` | 24px | #ffffff `light.surface.l0` | rgba(0, 0, 0, 0.08) 0px 1px 9px 0px | 32px |
@@ -278,7 +278,7 @@ The "Request demo" button under the hero copy — the hero's single CTA; links t
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 140 x 48; padding 12px 16px; radius 64px; background #dee948 `light.surface.highlight`; text Suisse Intl 16/24 500, #0d1d39 `light.button.textInverted`; transition color 0.4s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), text-decoration-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), fill 0.4s cubic-bezier(0.16, 1, 0.3, 1), stroke 0.4s cubic-bezier(0.16, 1, 0.3, 1) |
-| hover | background #d6d943 |
+| hover | background #d6d943 `core.component.marketing.button.primary.bgHover` |
 | focus-visible | outline 1px solid #ffffff `light.surface.l0`, offset 2px |
 | pressed | background #d3d140 `violet.button.surfaceActive` |
 
@@ -289,7 +289,7 @@ A customer-outcome stat card on the product page (rounded-20, the grid cells tha
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 312 x 358; padding 8px; radius 20px; background rgba(255, 255, 255, 0) `app.color.bg.fill.secondary`; text Suisse Intl 62/68 500, #001b38 `core.froyo.ramp.dark.blue.1000`; icon 14 x 14, #001b38 `core.froyo.ramp.dark.blue.1000` |
+| default | size 312 x 358; padding 8px; radius 20px; background rgba(255, 255, 255, 0) `app.color.bg.fill.secondary.default`; text Suisse Intl 62/68 500, #001b38 `core.froyo.ramp.dark.blue.1000`; icon 14 x 14, #001b38 `core.froyo.ramp.dark.blue.1000` |
 | hover | background #d4b5f4 |
 
 ![Customer-story card default](components/crops/feature-card-default.png) ![Customer-story card hover](components/crops/feature-card-hover.png)
@@ -318,21 +318,21 @@ Child layers that carry the look: div 66x36 background #8034bf `light.button.sur
 ![Billing switch default](components/crops/billing-toggle-default.png) ![Billing switch opened](components/crops/billing-toggle-opened.png)
 
 #### Plan card
-A pricing tier card (name, price per seat/month, feature list, CTA). Read as `plan-card` on the pricing page.
+A pricing tier card (name, price per seat/month, feature list, CTA) — the Starter column of the plan grid. Read as `plan-card` on the pricing page.
 
-**Values (default).** size 1440 x 738; padding 120px 24px 0px 24px; background #300c41 `violet.surface.l0`; image url(…); text Suisse Intl 14.5/20 400, #e2dcf6 `light.button.surfaceOutlineActive`; icon 20 x 20, #1c1e20 `core.component.marketing.faq.openColour`.
+**Values (default).** size 313 x 460; radius 24px; background #ffffff `light.surface.l0`; text Suisse Intl 20/28 500, #0d1d39 `light.button.textInverted`; icon 12 x 12, #1c1e20 `core.component.marketing.faq.openColour`.
 
 ![Plan card default](components/crops/plan-card-default.png)
 
 #### Plan CTA
-A plan's "Try for Free" action; links to /signup, measured never followed. Read as `plan-cta` on the pricing page.
+A plan card's "Try for Free" action (the first tier column's button); links to /signup, measured never followed. Read as `plan-cta` on the pricing page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 111 x 40; padding 0px 16px; radius 40px; background transparent; shadow #caccd0 0px 0px 0px 1px inset; text Suisse Intl 16/40 500, #000000; transition all 0.4s cubic-bezier(0.16, 1, 0.3, 1); layers button.block.button 111.0x40.0 rgb(202, 204, 208) 0px 0px 0px 1px inset 40px |
-| hover | shadow #a1a5ad 0px 0px 0px 1px inset; layers button.block.button 111.0x40.0 rgb(161, 165, 173) 0px 0px 0px 1px inset 40px |
-| focus-visible | shadow #a1a5ad 0px 0px 0px 1px inset; outline 1px solid #000000, offset 1.98438px; layers button.block.button 111.0x40.0 rgb(161, 165, 173) 0px 0px 0px 1px inset 1px solid rgb(0, 0, 0) offset 1.98438px 40px |
-| pressed | shadow #a1a5ad 0px 0px 0px 1px inset; layers button.block.button 111.0x40.0 rgb(161, 165, 173) 0px 0px 0px 1px inset 40px |
+| default | size 265 x 40; padding 0px 16px; radius 40px; background transparent; shadow #5b1f76 0px 0px 0px 1px inset; text Suisse Intl 16/40 500, #5b1f76 `light.button.surfaceActive`; transition color 0.4s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), text-decoration-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), fill 0.4s cubic-bezier(0.16, 1, 0.3, 1), stroke 0.4s cubic-bezier(0.16, 1, 0.3, 1); layers button.block.w-full 265.0x40.0 rgb(91, 31, 118) 0px 0px 0px 1px inset 40px |
+| hover | background rgba(91, 31, 118, 0.1); layers none |
+| focus-visible | outline 1px solid #5b1f76 `light.button.surfaceActive`, offset 2px; layers button.block.w-full 265.0x40.0 rgb(91, 31, 118) 0px 0px 0px 1px inset 1px solid rgb(91, 31, 118) offset 2px 40px |
+| pressed | background #5b1f76 `light.button.surfaceActive`; text Suisse Intl 16/40 500, #f8f1fe `light.button.textDefault`; layers none |
 
 ![Plan CTA default](components/crops/plan-cta-default.png) ![Plan CTA hover](components/crops/plan-cta-hover.png) ![Plan CTA focus-visible](components/crops/plan-cta-focus-visible.png) ![Plan CTA pressed](components/crops/plan-cta-pressed.png)
 
@@ -389,10 +389,8 @@ The demo form's submit button; its states were measured but the button was never
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 153 x 40; padding 0px 16px; radius 40px; background #5b1f76 `light.button.surfaceActive`; text Suisse Intl 16/40 500, #ffffff `light.surface.l0`; transition color 0.4s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), text-decoration-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), fill 0.4s cubic-bezier(0.16, 1, 0.3, 1), stroke 0.4s cubic-bezier(0.16, 1, 0.3, 1) |
-| hover | background #300c41 `violet.surface.l0` |
-| focus-visible | outline 1px solid #5b1f76 `light.button.surfaceActive`, offset 2px |
-| pressed | background #300c41 `violet.surface.l0` |
+| default (same: hover, pressed) | size 576 x 48; padding 12px 16px; radius 64px; background #f3f3f4 `light.button.surfaceDisabled`; text Suisse Intl 16/24 500, #caccd0 `light.button.textDisabled`; transition color 0.4s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), text-decoration-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), fill 0.4s cubic-bezier(0.16, 1, 0.3, 1), stroke 0.4s cubic-bezier(0.16, 1, 0.3, 1) |
+| focus-visible | outline 1px solid #300c41 `violet.surface.l0`, offset 2px |
 
 ![Demo submit default](components/crops/demo-submit-default.png) ![Demo submit hover](components/crops/demo-submit-hover.png) ![Demo submit focus-visible](components/crops/demo-submit-focus-visible.png) ![Demo submit pressed](components/crops/demo-submit-pressed.png)
 
@@ -413,6 +411,16 @@ The first field on the marketing signup form; focused and typed into then cleare
 
 ![Signup field default](components/crops/signup-field-default.png) ![Signup field focused](components/crops/signup-field-focused.png) ![Signup field filled](components/crops/signup-field-filled.png)
 
+#### Signup submit
+The marketing signup form's submit button (the rounded-[64px] "Submit" under the e-mail field); measured, never pressed. Read as `signup-submit` on the marketing signup page.
+
+| State | Values (later rows list only what changes from the first row) |
+|---|---|
+| default (same: hover, pressed) | size 480 x 48; padding 12px 16px; radius 64px; background #f3f3f4 `light.button.surfaceDisabled`; text Suisse Intl 16/24 500, #caccd0 `light.button.textDisabled`; transition color 0.4s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), text-decoration-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), fill 0.4s cubic-bezier(0.16, 1, 0.3, 1), stroke 0.4s cubic-bezier(0.16, 1, 0.3, 1) |
+| focus-visible | outline 1px solid #300c41 `violet.surface.l0`, offset 2px |
+
+![Signup submit default](components/crops/signup-submit-default.png) ![Signup submit hover](components/crops/signup-submit-hover.png) ![Signup submit focus-visible](components/crops/signup-submit-focus-visible.png) ![Signup submit pressed](components/crops/signup-submit-pressed.png)
+
 #### Company-size select
 The company-size select on the demo form; focused, never changed or submitted. Read as `demo-field` on the request-demo page.
 
@@ -427,21 +435,10 @@ The company-size select on the demo form; focused, never changed or submitted. R
 
 app.frontapp.com /signin, /signup and /forgot-password — the product SPA's auth cards on the real --color-* token layer (Indivisible, the 'Froyo' design system), painted light and under the shell's own [data-theme=dark] (the front-theme-preference localStorage key plus prefers-color-scheme). Fields were typed into then cleared; Continue, the SSO buttons and the submits were measured, never pressed.
 
-#### Signup submit
-The submit on app.frontapp.com/signup — the route paints the same auth card as /signin (email, password, "Sign in"); measured, never pressed. Read as `signup-submit` on the product signup page.
-
-| State | Values (later rows list only what changes from the first row) |
-|---|---|
-| default (same: focus-visible) | size 234 x 38; padding 0px 12px; radius 8px; background #6257f4 `app.color.accent.blue.highlight`; text system-ui 14/20 700, #ffffff `light.surface.l0`; transition background-color 0.1s ease |
-| hover | background #584def `app.color.accent.blue.text.primary` |
-| pressed | background #3c3faa `core.froyo.ramp.dark.blurple.800` |
-
-![Signup submit default](components/crops/signup-submit-default.png) ![Signup submit hover](components/crops/signup-submit-hover.png) ![Signup submit focus-visible](components/crops/signup-submit-focus-visible.png) ![Signup submit pressed](components/crops/signup-submit-pressed.png)
-
 #### Auth panel
 The sign-in card on app.frontapp.com — the elevated panel holding the e-mail field, Continue, the SSO buttons and the legal links. Read as `app-panel` on the signin page.
 
-**Values (default).** size 332 x 576.69; padding 48px; border 1px solid rgba(0, 0, 0, 0.08) `help.border.color`; radius 20px; background #ffffff `light.surface.l0`; shadow rgba(0, 0, 0, 0.09) 0px 2px 8px 0px; text system-ui 14/20 700, #ffffff `light.surface.l0`; icon 112 x 26.69, #15131b `app.color.bg.surface.inverse`.
+**Values (default).** size 332 x 576.69; padding 48px; border 1px solid rgba(0, 0, 0, 0.08) `help.border.color`; radius 20px; background #ffffff `light.surface.l0`; shadow rgba(0, 0, 0, 0.09) 0px 2px 8px 0px; text system-ui 14/20 700, #ffffff `light.surface.l0`; icon 112 x 26.69, #15131b `app.color.bg.base.inverse`.
 
 ![Auth panel default](components/crops/app-panel-default.png)
 
@@ -450,7 +447,7 @@ The e-mail input on the sign-in form; focused and typed into then cleared — En
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focused) | size 210 x 20; background transparent; text Arial 14/20 400, #15131b `app.color.bg.surface.inverse`; placeholder #a9abb2 `app.color.icon.disabled` |
+| default (same: focused) | size 210 x 20; background transparent; text Arial 14/20 400, #15131b `app.color.bg.base.inverse`; placeholder #a9abb2 `app.color.icon.disabled` |
 | filled | size 186 x 20 |
 
 ![Email field default](components/crops/app-email-default.png) ![Email field focused](components/crops/app-email-focused.png) ![Email field filled](components/crops/app-email-filled.png)
@@ -462,7 +459,7 @@ The sign-in form's primary button (the --color-bg-fill-brand fill); measured, ne
 |---|---|
 | default (same: focus-visible) | size 234 x 38; padding 0px 12px; radius 8px; background #6257f4 `app.color.accent.blue.highlight`; text system-ui 14/20 700, #ffffff `light.surface.l0`; transition background-color 0.1s ease |
 | hover | background #584def `app.color.accent.blue.text.primary` |
-| pressed | background #3c3faa `core.froyo.ramp.dark.blurple.800` |
+| pressed | background #3c3faa `app.color.bg.fill.primary.pressed` |
 
 ![Continue button default](components/crops/app-continue-default.png) ![Continue button hover](components/crops/app-continue-hover.png) ![Continue button focus-visible](components/crops/app-continue-focus-visible.png) ![Continue button pressed](components/crops/app-continue-pressed.png)
 
@@ -471,7 +468,7 @@ A single-sign-on button on the auth shell; measured, never pressed. Read as `app
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 234 x 38; padding 0px 12px; border 1px solid #d8d6db `app.color.border.secondary`; radius 8px; background rgba(255, 255, 255, 0) `app.color.bg.fill.secondary`; text system-ui 14/20 500, #15131b `app.color.bg.surface.inverse`; transition background-color 0.1s ease |
+| default (same: focus-visible) | size 234 x 38; padding 0px 12px; border 1px solid #d8d6db `app.color.border.secondary`; radius 8px; background rgba(255, 255, 255, 0) `app.color.bg.fill.secondary.default`; text system-ui 14/20 500, #15131b `app.color.bg.base.inverse`; transition background-color 0.1s ease |
 | hover | background rgba(0, 0, 0, 0.05) `help.article.bg.color` |
 | pressed | background rgba(0, 0, 0, 0.08) `help.border.color` |
 
@@ -483,14 +480,14 @@ The "Forgot password" link to /forgot-password; measured, never followed. Read a
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default (same: focus-visible) | size 234 x 16; background transparent; text system-ui 12/16 600, #584def `app.color.accent.blue.text.primary` |
-| hover, pressed | text system-ui 12/16 600, #3c3faa `core.froyo.ramp.dark.blurple.800` |
+| hover, pressed | text system-ui 12/16 600, #3c3faa `app.color.bg.fill.primary.pressed` |
 
 ![Forgot link default](components/crops/app-forgot-default.png) ![Forgot link hover](components/crops/app-forgot-hover.png) ![Forgot link focus-visible](components/crops/app-forgot-focus-visible.png) ![Forgot link pressed](components/crops/app-forgot-pressed.png)
 
 #### Auth panel under [data-theme=dark]
 The sign-in card on app.frontapp.com under [data-theme=dark] — the elevated panel holding the e-mail field, Continue, the SSO buttons and the legal links. Read as `appd-panel` on the signin (dark) page.
 
-**Values (default).** size 332 x 576.69; padding 48px; border 1px solid rgba(255, 255, 255, 0.08); radius 20px; background #221e29 `dark.color.bg.surface.highlight`; shadow rgba(0, 0, 0, 0.09) 0px 2px 8px 0px; text system-ui 14/20 700, #ffffff `light.surface.l0`; icon 112 x 26.69, #f4f2f8 `app.color.bg.surface.secondary`.
+**Values (default).** size 332 x 576.69; padding 48px; border 1px solid rgba(255, 255, 255, 0.08); radius 20px; background #221e29 `dark.color.bg.surface.highlight.default`; shadow rgba(0, 0, 0, 0.09) 0px 2px 8px 0px; text system-ui 14/20 700, #ffffff `light.surface.l0`; icon 112 x 26.69, #f4f2f8 `app.color.bg.base.secondary`.
 
 ![Auth panel under [data-theme=dark] default](components/crops/appd-panel-default.png)
 
@@ -499,7 +496,7 @@ The e-mail input on the sign-in form under [data-theme=dark]; focused and typed 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focused) | size 210 x 20; background transparent; text Arial 14/20 400, #f4f2f8 `app.color.bg.surface.secondary`; placeholder #656972 `app.color.icon.secondary` |
+| default (same: focused) | size 210 x 20; background transparent; text Arial 14/20 400, #f4f2f8 `app.color.bg.base.secondary`; placeholder #656972 `app.color.icon.secondary` |
 | filled | size 186 x 20 |
 
 ![Email field under [data-theme=dark] default](components/crops/appd-email-default.png) ![Email field under [data-theme=dark] focused](components/crops/appd-email-focused.png) ![Email field under [data-theme=dark] filled](components/crops/appd-email-filled.png)
@@ -520,7 +517,7 @@ A single-sign-on button on the auth shell under [data-theme=dark]; measured, nev
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 234 x 38; padding 0px 12px; border 1px solid #504c57 `app.color.accent.gray.highlight`; radius 8px; background rgba(255, 255, 255, 0) `app.color.bg.fill.secondary`; text system-ui 14/20 500, #f4f2f8 `app.color.bg.surface.secondary`; transition background-color 0.1s ease |
+| default (same: focus-visible) | size 234 x 38; padding 0px 12px; border 1px solid #504c57 `app.color.accent.gray.highlight`; radius 8px; background rgba(255, 255, 255, 0) `app.color.bg.fill.secondary.default`; text system-ui 14/20 500, #f4f2f8 `app.color.bg.base.secondary`; transition background-color 0.1s ease |
 | hover | background rgba(255, 255, 255, 0.05) |
 | pressed | background rgba(255, 255, 255, 0.08) |
 
@@ -539,7 +536,7 @@ The "Forgot password" link to /forgot-password; measured, never followed. Read a
 #### Signup panel
 The create-account card on app.frontapp.com/signup. Read as `signup-panel` on the product signup page.
 
-**Values (default).** size 332 x 576.69; padding 48px; border 1px solid rgba(0, 0, 0, 0.08) `help.border.color`; radius 20px; background #ffffff `light.surface.l0`; shadow rgba(0, 0, 0, 0.09) 0px 2px 8px 0px; text system-ui 14/20 700, #ffffff `light.surface.l0`; icon 112 x 26.69, #15131b `app.color.bg.surface.inverse`.
+**Values (default).** size 332 x 576.69; padding 48px; border 1px solid rgba(0, 0, 0, 0.08) `help.border.color`; radius 20px; background #ffffff `light.surface.l0`; shadow rgba(0, 0, 0, 0.09) 0px 2px 8px 0px; text system-ui 14/20 700, #ffffff `light.surface.l0`; icon 112 x 26.69, #15131b `app.color.bg.base.inverse`.
 
 ![Signup panel default](components/crops/signup-panel-default.png)
 
@@ -548,7 +545,7 @@ The e-mail input on the product signup form; typed into then cleared — never s
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focused) | size 210 x 20; background transparent; text Arial 14/20 400, #15131b `app.color.bg.surface.inverse`; placeholder #a9abb2 `app.color.icon.disabled` |
+| default (same: focused) | size 210 x 20; background transparent; text Arial 14/20 400, #15131b `app.color.bg.base.inverse`; placeholder #a9abb2 `app.color.icon.disabled` |
 | filled | size 186 x 20 |
 
 ![Signup email field default](components/crops/signup-email-default.png) ![Signup email field focused](components/crops/signup-email-focused.png) ![Signup email field filled](components/crops/signup-email-filled.png)
@@ -556,7 +553,7 @@ The e-mail input on the product signup form; typed into then cleared — never s
 #### Reset panel
 The reset-password card on app.frontapp.com/forgot-password. Read as `forgot-panel` on the forgot-password page.
 
-**Values (default).** size 332 x 576.69; padding 48px; border 1px solid rgba(0, 0, 0, 0.08) `help.border.color`; radius 20px; background #ffffff `light.surface.l0`; shadow rgba(0, 0, 0, 0.09) 0px 2px 8px 0px; text system-ui 14/20 700, #ffffff `light.surface.l0`; icon 112 x 26.69, #15131b `app.color.bg.surface.inverse`.
+**Values (default).** size 332 x 576.69; padding 48px; border 1px solid rgba(0, 0, 0, 0.08) `help.border.color`; radius 20px; background #ffffff `light.surface.l0`; shadow rgba(0, 0, 0, 0.09) 0px 2px 8px 0px; text system-ui 14/20 700, #ffffff `light.surface.l0`; icon 112 x 26.69, #15131b `app.color.bg.base.inverse`.
 
 ![Reset panel default](components/crops/forgot-panel-default.png)
 
@@ -565,7 +562,7 @@ The e-mail input on the reset form; typed into then cleared — never submitted.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focused) | size 210 x 20; background transparent; text Arial 14/20 400, #15131b `app.color.bg.surface.inverse`; placeholder #a9abb2 `app.color.icon.disabled` |
+| default (same: focused) | size 210 x 20; background transparent; text Arial 14/20 400, #15131b `app.color.bg.base.inverse`; placeholder #a9abb2 `app.color.icon.disabled` |
 | filled | size 186 x 20 |
 
 ![Reset email field default](components/crops/forgot-email-default.png) ![Reset email field focused](components/crops/forgot-email-focused.png) ![Reset email field filled](components/crops/forgot-email-filled.png)
@@ -577,9 +574,20 @@ The submit on /forgot-password — the route paints the same auth card as /signi
 |---|---|
 | default (same: focus-visible) | size 234 x 38; padding 0px 12px; radius 8px; background #6257f4 `app.color.accent.blue.highlight`; text system-ui 14/20 700, #ffffff `light.surface.l0`; transition background-color 0.1s ease |
 | hover | background #584def `app.color.accent.blue.text.primary` |
-| pressed | background #3c3faa `core.froyo.ramp.dark.blurple.800` |
+| pressed | background #3c3faa `app.color.bg.fill.primary.pressed` |
 
 ![Reset submit default](components/crops/forgot-submit-default.png) ![Reset submit hover](components/crops/forgot-submit-hover.png) ![Reset submit focus-visible](components/crops/forgot-submit-focus-visible.png) ![Reset submit pressed](components/crops/forgot-submit-pressed.png)
+
+#### Signup submit (app)
+The submit on app.frontapp.com/signup — the route paints the same auth card as /signin (email, password, "Sign in"); measured, never pressed. Read as `signup-app-submit` on the product signup page.
+
+| State | Values (later rows list only what changes from the first row) |
+|---|---|
+| default (same: focus-visible) | size 234 x 38; padding 0px 12px; radius 8px; background #6257f4 `app.color.accent.blue.highlight`; text system-ui 14/20 700, #ffffff `light.surface.l0`; transition background-color 0.1s ease |
+| hover | background #584def `app.color.accent.blue.text.primary` |
+| pressed | background #3c3faa `app.color.bg.fill.primary.pressed` |
+
+![Signup submit (app) default](components/crops/signup-app-submit-default.png) ![Signup submit (app) hover](components/crops/signup-app-submit-hover.png) ![Signup submit (app) focus-visible](components/crops/signup-app-submit-focus-visible.png) ![Signup submit (app) pressed](components/crops/signup-app-submit-pressed.png)
 
 ### Help centre (help.front.com)
 
@@ -608,7 +616,7 @@ A help-category card (kb-category-card) on the help home; measured, never follow
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 402 x 259; padding 32px; border 1px solid rgba(0, 0, 0, 0.08) `help.border.color`; radius 24px; background #ffffff `light.surface.l0`; shadow rgba(0, 0, 0, 0.08) 0px 1px 9px 0px; text CustomFont 18/24 600, #19191a `help.gray.shade90`; icon 32 x 32, #803fbf `help.secondary.color` |
-| hover | background #f5f5f5 `core.palette.white.100` |
+| hover | background #f5f5f5 `help.primary.bg.color.active` |
 
 ![Category card default](components/crops/help-card-default.png) ![Category card hover](components/crops/help-card-hover.png)
 
@@ -641,7 +649,7 @@ A second help-category card on the help home — the home lists categories, not 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 402 x 259; padding 32px; border 1px solid rgba(0, 0, 0, 0.08) `help.border.color`; radius 24px; background #ffffff `light.surface.l0`; shadow rgba(0, 0, 0, 0.08) 0px 1px 9px 0px; text CustomFont 18/24 600, #19191a `help.gray.shade90`; icon 32 x 32, #803fbf `help.secondary.color` |
-| hover | background #f5f5f5 `core.palette.white.100` |
+| hover | background #f5f5f5 `help.primary.bg.color.active` |
 
 ![Category card (second) default](components/crops/help-card-2-default.png) ![Category card (second) hover](components/crops/help-card-2-hover.png)
 

@@ -190,8 +190,16 @@ def leaf(path, spec, theme):
     return t
 
 
+LEAF_KEYS = {"value", "var", "type", "source", "description", "resolve", "responsive", "angle"}
+
+
 def build(node, theme, path=""):
     if isinstance(node, dict) and "type" in node and ("value" in node or "var" in node):
+        # A leaf that also holds child tokens must never be emitted quietly:
+        # the children would drop out of tokens.json with no trace.
+        extra = set(node) - LEAF_KEYS
+        if extra:
+            raise ValueError(f"{path}: token leaf also holds child tokens {sorted(extra)} — keep base values and variants as separate leaves")
         return leaf(path, node, theme)
     if isinstance(node, dict) and "$value" in node:
         return node  # already a DTCG leaf (typography composites)

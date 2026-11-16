@@ -53,7 +53,7 @@ Fonts: `core.font.family.intl` is Suisse Intl, then 6 fallbacks; `core.font.fami
 
 ### Using components
 
-Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 156 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
+Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 160 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
 
 ### Accessibility
 
@@ -61,7 +61,7 @@ Read [components.md](components.md) for the component inventory; [patterns.md](p
 |---|---|---|---|---|
 | light | 16.77:1 pass | 15.12:1 pass | 6.58:1 pass | 5.93:1 pass |
 
-4 of 4 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Not checked, no palette: dark. Focus tokens: `app.color.border.focus` #6257f4; `dark.color.border.focus` #6257f4; `companion.color.border.focus` #6257f4; `companionDark.color.border.focus` #6257f4.
+4 of 4 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Not checked, no palette: dark. Focus tokens: `app.color.border.focus.default` #6257f4; `app.color.border.focus.inverse` rgba(0, 0, 0, 0.2); `dark.color.border.focus.default` #6257f4; `dark.color.border.focus.inverse` rgba(255, 255, 255, 0.2).
 
 <!-- brief:end -->
 
@@ -75,7 +75,7 @@ Scorecard: **11 of 25 met, 14 partly, 0 missing**; C5, V1, V2 are optional for a
 |---|---|---|
 | F2 Background roles | Partly | Page/surface roles exist per layer: marketing surface.l0-l3/outer/highlight under all three section themes, app color.bg.* (base, surface.primary, fill.*) light and dark, companion color.bg.* semantics. No overlay or scrim role appears on the signed-out surfaces. |
 | F3 Text roles | Partly | Primary (text.primary), secondary (text.secondary), inactive (text.primaryInactive/secondaryInactive) and on-accent (button.textDefault/textInverted) roles are declared per marketing theme; the app carries color.text.* light and dark. No dedicated link colour and no visited role; disabled exists only as button.textDisabled. |
-| F4 Border roles | Partly | Default (palette.gray.200 hairline, button.border), strong (button.borderActive), focus (app/companion color.border.focus #6257f4) and disabled (button.borderDisabled) roles exist; measured on components. No semantic 'border.error/warning' role captured. |
+| F4 Border roles | Partly | Default (palette.gray.200 hairline, button.border), strong (button.borderActive), focus (app/companion color.border.focus.default #6257f4) and disabled (button.borderDisabled) roles exist; measured on components. No semantic 'border.error/warning' role captured. |
 | F6 Status colours | Partly | Green/pink/orange/yellow hue ramps exist as palette primitives and the app/froyo layers carry accent semantics, but no semantic success/warning/danger/info role paints publicly - forms were never submitted, so validation palettes stayed dormant. Honest absence. |
 | F9 Spacing | Partly | The Froyo spacing scale is declared (froyo.spacing.* rem steps); the marketing site's spacing is Tailwind-utility-derived, not a declared scale - measured component geometry (paddings, gaps, 40px controls, 48px fields) corroborates an 8px rhythm but no named spacing ramp ships. |
 | F11 Sizing | Partly | Measured control geometry is recorded (header 80, header buttons 40, hero CTA 48, fields 48, plan CTA 40, app inputs, billing switch 66x36, burger 44) plus the .button-size-* class family; the focus ring is measured on controls (focus-visible states). No declared S/M/L height ladder - each context ships one size. |
@@ -136,7 +136,7 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (no standalone SV
 1. **Do pick the token set of the stack you are building.** `violet`/`light`/`gray` are the marketing section themes, `app`/`dark` the auth shell, `companion`/`companionDark` the Froyo messenger layer, `help` the Knowledge Base — same role names, different paints. See [tokens.json](tokens.json) and [help-light-default](screenshots/help-light-default.png).
 2. **Do let plum and citron carry the brand.** The marketing hero sits on `violet.surface.l0` #300c41 behind `violet.text.primary` #f8f1fe; the citron `violet.surface.highlight` #dee948 is the accent reserved for the CTA. White and gray sections stay quiet — `light.text.primary` #0d1d39 ink, hairline `core.palette.gray.200` borders. See [hero-cta](components/crops/hero-cta-default.png) and [home-light-default](screenshots/home-light-default.png).
 3. **Do spend violet on the action.** `light.button.surface` #8034bf is the primary button fill on light sections; on plum sections the same role repaints to citron. Secondary actions stay bordered, ink-on-surface. See [nav-try](components/crops/nav-try-default.png) and [plan-cta](components/crops/plan-cta-default.png).
-4. **Do set the app shell in Froyo terms.** The auth card reads `app.color.bg.surface.primary`, `app.color.bg.fill.brand`, `app.color.text.*` — resolved values, not the marketing palette; its dark pass is the same token names under `dark.color.*`. See [appd-panel](components/crops/appd-panel-default.png).
+4. **Do set the app shell in Froyo terms.** The auth card reads `app.color.bg.surface.primary.default`, `app.color.bg.fill.brand.default`, `app.color.text.*` — resolved values, not the marketing palette; its dark pass is the same token names under `dark.color.*`. See [appd-panel](components/crops/appd-panel-default.png).
 5. **Don't style the signed-in workspace from this package.** Only the auth edge was captured — the inbox, contacts, rules and settings were never reached. See [signin-light-default](screenshots/signin-light-default.png).
 6. **Don't treat the marketing sets as a dark mode.** `violet` and `gray` are section themes on one light page; the `dark` set is the app's own `data-theme="dark"` repaint, a different stack. See [signindark-dark-default](screenshots/signindark-dark-default.png).
 7. **Don't fabricate form outcomes.** Demo, signup, auth and search fields were typed into then cleared — validation, error and success states are unverified. See [demo-email](components/crops/demo-email-filled.png).

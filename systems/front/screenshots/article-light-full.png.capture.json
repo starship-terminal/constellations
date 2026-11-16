@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-15T22:20:46.217Z",
+  "capturedAt": "2026-11-16T20:52:15.406Z",
   "screenshot": "article-light-full.png",
   "sanitizedSourceUrl": null,
   "requested": {
@@ -30,15 +30,15 @@
       "offsetLeft": 0,
       "offsetTop": 0,
       "pageLeft": 0,
-      "pageTop": 1495
+      "pageTop": 0
     },
     "documentSize": {
       "width": 1440,
-      "height": 9227
+      "height": 11055
     },
     "scroll": {
       "x": 0,
-      "y": 1495
+      "y": 0
     }
   },
   "capture": {
@@ -46,15 +46,17 @@
     "scale": "device",
     "clip": null
   },
-  "png": null,
+  "png": {
+    "width": 1440,
+    "height": 11055
+  },
   "dimensionCheck": {
-    "status": "fail",
+    "status": "pass",
     "expected": {
       "width": 1440,
-      "height": 9227
+      "height": 11055
     },
-    "basis": "fullPage",
-    "error": "page.screenshot: Timeout 30000ms exceeded.\nCall log:\n  - taking page screenshot\n  - waiting for fonts to load...\n  - fonts loaded\n"
+    "basis": "fullPage"
   },
   "visualReview": {
     "status": "pending",

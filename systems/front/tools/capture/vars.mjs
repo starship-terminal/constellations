@@ -168,12 +168,16 @@ const resolved = {};
   const want = hostNames('app');
   for (const [pass, theme] of [['app', 'light'], ['appDark', 'dark']]) {
     resolved[pass] = await appPage.evaluate(([want, theme]) => {
+      // A resolved custom property can hold a url() with a signed or per-account query:
+      // record it as url(…); data: and #fragment references keep their full value.
+      const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v);
       const html = document.documentElement;
       const saved = html.getAttribute('data-theme');
       html.setAttribute('data-theme', theme);
       const cs = getComputedStyle(html);
       const o = {};
-      for (const n of want) { const v = cs.getPropertyValue(n).trim(); if (v) o[n] = { raw: v.slice(0, 300), value: v.slice(0, 300) }; }
+      // Values stay whole: a mid-string cut would publish unclosed url()/string CSS.
+      for (const n of want) { const v = noUrl(cs.getPropertyValue(n).trim()); if (v) o[n] = { raw: v, value: v }; }
       saved === null ? html.removeAttribute('data-theme') : html.setAttribute('data-theme', saved);
       return o;
     }, [want, theme]);
@@ -184,9 +188,10 @@ const resolved = {};
 {
   const want = hostNames('help');
   resolved.help = await __helpPage.evaluate((want) => {
+    const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v);
     const cs = getComputedStyle(document.documentElement);
     const o = {};
-    for (const n of want) { const v = cs.getPropertyValue(n).trim(); if (v) o[n] = { raw: v.slice(0, 300), value: v.slice(0, 300) }; }
+    for (const n of want) { const v = noUrl(cs.getPropertyValue(n).trim()); if (v) o[n] = { raw: v, value: v }; }
     return o;
   }, want);
   await __helpCtx.close();
@@ -195,9 +200,10 @@ const resolved = {};
 {
   const want = hostNames('dev');
   resolved.dev = await __devPage.evaluate((want) => {
+    const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v);
     const cs = getComputedStyle(document.documentElement);
     const o = {};
-    for (const n of want) { const v = cs.getPropertyValue(n).trim(); if (v) o[n] = { raw: v.slice(0, 300), value: v.slice(0, 300) }; }
+    for (const n of want) { const v = noUrl(cs.getPropertyValue(n).trim()); if (v) o[n] = { raw: v, value: v }; }
     return o;
   }, want);
   await __devCtx.close();

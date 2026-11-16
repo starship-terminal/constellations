@@ -45,7 +45,7 @@ def flat(node, prefix=""):
 # carry their set prefix (violet.surface.l0, app.color.bg.fill.brand) so a
 # label always names a real path in tokens.json.
 PRIMARY = {"light.text.primary", "light.text.secondary", "violet.text.primary", "violet.surface.l0",
-           "light.surface.l0", "app.color.bg.base", "app.color.text.primary", "app.color.bg.fill.brand"}
+           "light.surface.l0", "app.color.bg.base.default", "app.color.text.primary", "app.color.bg.fill.brand.default"}
 BY_COLOR = {}
 for setname in ("light", "violet", "gray", "app", "dark", "companion", "companionDark", "help", "core"):
     for n, t in sorted(flat(T[setname], setname + "."), key=lambda it: (it[0].split(".", 1)[1] not in PRIMARY, it[0])):

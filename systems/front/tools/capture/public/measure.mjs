@@ -394,8 +394,11 @@ async function pricing() {
   const g = G.pricing;
   await S('pricing-h1', q('h1, h2').filter({ visible: true }).first(), ['default'], { group: g, title: 'Pricing heading', desc: 'The first heading on /pricing (the page carries no h1; the first h2 is measured instead).', sel: 'pricing h1/h2' }, { noScroll: true });
   await S('billing-toggle', q('label:has(input.peer), [role="switch"], [class*="switch" i]').filter({ visible: true }).first(), ['default', 'opened'], { group: g, title: 'Billing switch', desc: 'The "Billed Annually"/"SAVE 24%" switch — a local UI toggle that repaints the plan prices; the opened state is the monthly-billed side, toggled and restored.', sel: 'pricing billing switch' }, { allowLink: true, noScroll: true });
-  await S('plan-card', q('div, section, article').filter({ hasText: /per seat|\/ month|\/month/i }).filter({ visible: true }).first(), ['default'], { group: g, title: 'Plan card', desc: 'A pricing tier card (name, price per seat/month, feature list, CTA).', sel: 'plan card' });
-  await S('plan-cta', q('a, button').filter({ hasText: /^Try for Free$/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Plan CTA', desc: 'A plan\'s "Try for Free" action; links to /signup, measured never followed.', sel: 'plan Try for Free' });
+  // A plan tier card is a rounded-[24px] white column inside the pricing grid —
+  // an unscoped first match hits the full-width "Front AI Add-ons" section.
+  await S('plan-card', q('div[class*="bg-white"][class*="rounded-[24px]"], [class*="grid-cols-4"] > *').filter({ hasText: /\/seat\/mo|per seat/i }).filter({ visible: true }).first(), ['default'], { group: g, title: 'Plan card', desc: 'A pricing tier card (name, price per seat/month, feature list, CTA) — the Starter column of the plan grid.', sel: 'plan card' });
+  // The CTA inside a plan card, never the header's same-named button.
+  await S('plan-cta', q('div[class*="bg-white"][class*="rounded-[24px]"] button, [class*="grid-cols-4"] button').filter({ hasText: /^Try for Free$|^Request a Demo$/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Plan CTA', desc: 'A plan card\'s "Try for Free" action (the first tier column\'s button); links to /signup, measured never followed.', sel: 'plan card Try for Free' });
   await S('sales-link', q('a, button').filter({ hasText: /^Talk to sales$/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Talk-to-sales link', desc: 'The "Talk to sales" action in the pricing hero; links to /request-demo, measured never followed.', sel: 'Talk to sales' }, { noScroll: true });
   await S('faq-item', q('button').filter({ hasText: /What is a seat\?/ }).filter({ visible: true }).first(), [...B4, 'opened'], { group: g, title: 'FAQ disclosure', desc: 'A "Frequently asked questions" disclosure button ("What is a seat?") — a local UI toggle whose answer mounts below; opened by its own click, left open for the shot.', sel: 'pricing FAQ disclosure' });
   await S('faq-answer', q('div, p').filter({ hasText: /A seat is/i }).filter({ visible: true }).last(), ['default'], { group: g, title: 'FAQ answer', desc: 'The answer text revealed by the FAQ disclosure.', sel: 'FAQ answer' }, { open: async () => { const b = q('button').filter({ hasText: /What is a seat\?/ }).first(); if (await b.count()) { const e = await b.getAttribute('aria-expanded').catch(() => null); if (e !== 'true') { await b.click(); await page.waitForTimeout(800); } } } });
@@ -419,7 +422,9 @@ async function requestDemo() {
   await S('demo-h1', q('h1, h2').filter({ visible: true }).first(), ['default'], { group: g, title: 'Demo heading', desc: 'The first heading on /request-demo (no h1 ships; the first h2 is measured).', sel: 'request-demo h1/h2' }, { noScroll: true });
   await S('demo-email', q('input[type="email"], input[name="email"]').filter({ visible: true }).first(), FIELD, { group: g, title: 'Work email field', desc: 'The work-email input on the demo form; focused and typed into then cleared — the form was never submitted.', sel: 'request-demo input[type=email]' }, { fillText: 'name@example.com' });
   await S('demo-field', q('select').filter({ visible: true }).first(), ['default', 'focused'], { group: g, title: 'Company-size select', desc: 'The company-size select on the demo form; focused, never changed or submitted.', sel: 'request-demo select' });
-  await S('demo-submit', q('button[type="submit"], button').filter({ hasText: /Request|Submit|Get|Book/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Demo submit', desc: 'The demo form\'s submit button; its states were measured but the button was never clicked — the form was never sent.', sel: 'request-demo submit' });
+  // Scope to the form: an unscoped first match is the header's own "Request a
+  // demo" button, not the submit under the fields.
+  await S('demo-submit', q('form button, form [type="submit"], main button').filter({ hasText: /Request|Submit|Get|Book|Continue/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Demo submit', desc: 'The demo form\'s submit button; its states were measured but the button was never clicked — the form was never sent.', sel: 'request-demo form submit' });
   save();
 }
 
@@ -429,7 +434,7 @@ async function signup() {
   const g = G.forms;
   await S('signup-h1', q('h1, h2').filter({ visible: true }).first(), ['default'], { group: g, title: 'Signup headline', desc: 'The marketing /signup masthead.', sel: 'signup h1' }, { noScroll: true });
   await S('signup-field', q('input[type="email"], input[type="text"]').filter({ visible: true }).first(), FIELD, { group: g, title: 'Signup field', desc: 'The first field on the marketing signup form; focused and typed into then cleared — the form was never submitted.', sel: 'signup input' }, { fillText: 'name@example.com' });
-  await S('signup-submit', q('button[type="submit"], button, a').filter({ hasText: /Get started|Try for free|Create|Continue|Sign up/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Signup submit', desc: 'The marketing signup form\'s primary action; measured, never pressed.', sel: 'signup submit' });
+  await S('signup-submit', q('button[type="submit"], button, a, input[type="submit"]').filter({ hasText: /^Submit$|Get started|Try for free|Create|Continue|Sign up/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Signup submit', desc: 'The marketing signup form\'s submit button (the rounded-[64px] "Submit" under the e-mail field); measured, never pressed.', sel: 'signup submit' });
   save();
 }
 
@@ -463,7 +468,9 @@ async function signupApp() {
   const g = G.auth;
   await S('signup-panel', q('form, [class*="card" i], [class*="panel" i], main').filter({ hasText: /Sign up|email|Google|Create/i }).filter({ visible: true }).first(), ['default'], { group: g, title: 'Signup panel', desc: 'The create-account card on app.frontapp.com/signup.', sel: 'signup card' }, { noScroll: true });
   await S('signup-email', q('input[type="email"], input[name="email"]').filter({ visible: true }).first(), FIELD, { group: g, title: 'Signup email field', desc: 'The e-mail input on the product signup form; typed into then cleared — never submitted.', sel: 'signup email' }, { fillText: 'name@example.com' });
-  await S('signup-submit', q('button[type="submit"]').filter({ visible: true }).first(), B4, { group: g, title: 'Signup submit', desc: 'The submit on app.frontapp.com/signup — the route paints the same auth card as /signin (email, password, "Sign in"); measured, never pressed.', sel: 'signup submit' }, { noScroll: true });
+  // signup-app-submit, not signup-submit: the marketing /signup pass owns the
+  // bare key, and a shared key had this pass overwrite its measurements.
+  await S('signup-app-submit', q('button[type="submit"]').filter({ visible: true }).first(), B4, { group: g, title: 'Signup submit (app)', desc: 'The submit on app.frontapp.com/signup — the route paints the same auth card as /signin (email, password, "Sign in"); measured, never pressed.', sel: 'app signup submit' }, { noScroll: true });
   save();
 }
 async function forgot() {

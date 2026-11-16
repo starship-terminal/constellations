@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-15T22:20:37.841Z",
+  "capturedAt": "2026-11-16T20:52:01.219Z",
   "screenshot": "article-light-default.png",
   "sanitizedSourceUrl": null,
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 9227
+      "height": 11055
     },
     "scroll": {
       "x": 0,

@@ -1,6 +1,6 @@
 # Component measurements
 
-Computed styles read from front.com, app.frontapp.com, help.front.com and dev.frontapp.com on 2026-11-15 by `tools/capture/public/measure.mjs`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844; the appd-* components under app.frontapp.com's own [data-theme="dark"]), and written here by `tools/capture/public/build-measurements.mjs` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
+Computed styles read from front.com, app.frontapp.com, help.front.com and dev.frontapp.com on 2026-11-16 by `tools/capture/public/measure.mjs`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844; the appd-* components under app.frontapp.com's own [data-theme="dark"]), and written here by `tools/capture/public/build-measurements.mjs` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
 
 States: `hover` is a real pointer hover; `focus-visible` a real keyboard focus (Shift+Tab, Tab); `pressed` is forced with DevTools (`CSS.forcePseudoState` :active:hover), so no button was pressed; `focused` is a text field clicked into; `filled` is sample text typed and deleted again, with nothing sent; `opened`, `expanded` and the rest are resting states reached by the page or by a UI toggle.
 
@@ -586,52 +586,51 @@ Crops: `billing-toggle-default.png`, `billing-toggle-opened.png`.
 
 #### plan-card
 
-Plan card. A pricing tier card (name, price per seat/month, feature list, CTA).
+Plan card. A pricing tier card (name, price per seat/month, feature list, CTA) — the Starter column of the plan grid.
 
 Page: pricing. Selector: `plan card`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 1440 x 738 |
-| Padding | 120px 24px 0px 24px |
+| Size (w x h) | 313 x 460 |
+| Padding | 0px |
 | Border | none |
-| Radius | 0px |
-| Background | #300c41 |
-| Background image | url(…) |
+| Radius | 24px |
+| Background | #ffffff |
 | Box shadow | none |
 | Outline | none |
 | Font | Suisse Intl 14px/20px 400 |
 | Letter spacing | normal |
 | Colour | #1c1e20 |
-| Text node | div.text-violet-200.text-micro3: Suisse Intl 14.5px/20px 400, #e2dcf6, ls 0.87px |
+| Text node | span.flex.mr-[8px]: Suisse Intl 20px/28px 500, #0d1d39, ls 0.05px |
 | Transition | none |
-| Icon | 20 x 20, colour #1c1e20 |
-| Painted layers | section.flex.pt-[80px] 1440.0x738.0 bg #300c41; div.flex.flex-wrap 400.0x400.0 bg #5b1f76 r 8px; div.flex.w-[48px] 48.0x48.0 bg #dee948 r 8px; div.flex.flex-wrap 400.0x400.0 bg #5b1f76 r 8px; div.flex.w-[48px] 48.0x48.0 bg #dee948 r 8px |
+| Icon | 12 x 12, colour #1c1e20 |
+| Painted layers | div.flex.flex-col 313.0x460.0 bg #ffffff r 24px; div.flex.flex-col 313.0x358.0 border T:4px #f3f3f4; button.block.w-full 265.0x40.0 r 40px shadow #5b1f76 0px 0px 0px 1px inset |
 | How | at rest |
 
 Crops: `plan-card-default.png`.
 
 #### plan-cta
 
-Plan CTA. A plan's "Try for Free" action; links to /signup, measured never followed.
+Plan CTA. A plan card's "Try for Free" action (the first tier column's button); links to /signup, measured never followed.
 
-Page: pricing. Selector: `plan Try for Free`. States: default, hover, focus-visible, pressed.
+Page: pricing. Selector: `plan card Try for Free`. States: default, hover, focus-visible, pressed.
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 111 x 40 | = | = | = |
+| Size (w x h) | 265 x 40 | = | = | = |
 | Padding | 0px 16px | = | = | = |
 | Border | none | = | = | = |
 | Radius | 40px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | #caccd0 0px 0px 0px 1px inset | #a1a5ad 0px 0px 0px 1px inset | #a1a5ad 0px 0px 0px 1px inset | #a1a5ad 0px 0px 0px 1px inset |
-| Outline | none | = | 1px solid #000000 offset 1.98438px | = |
+| Background | transparent | #5b1f76 @ 0.1 | = | #5b1f76 |
+| Box shadow | #5b1f76 0px 0px 0px 1px inset | = | = | = |
+| Outline | none | = | 1px solid #5b1f76 offset 2px | = |
 | Font | Suisse Intl 16px/40px 500 | = | = | = |
 | Letter spacing | normal | = | = | = |
-| Colour | #000000 | = | = | = |
-| Transition | all 0.4s cubic-bezier(0.16, 1, 0.3, 1) | = | = | = |
+| Colour | #5b1f76 | = | = | #f8f1fe |
+| Transition | color, background-color, border-color, text-decoration-color, fill, stroke 0.4s cubic-bezier(0.16, 1, 0.3, 1) | = | = | = |
 | Cursor | pointer | = | = | = |
-| Painted layers | button.block.button 111.0x40.0 r 40px shadow #caccd0 0px 0px 0px 1px inset | button.block.button 111.0x40.0 r 40px shadow #a1a5ad 0px 0px 0px 1px inset | button.block.button 111.0x40.0 r 40px shadow #a1a5ad 0px 0px 0px 1px inset outline 1px solid #000000 offset 1.98438px | button.block.button 111.0x40.0 r 40px shadow #a1a5ad 0px 0px 0px 1px inset |
+| Painted layers | button.block.w-full 265.0x40.0 r 40px shadow #5b1f76 0px 0px 0px 1px inset | button.block.w-full 265.0x40.0 bg #5b1f76 @ 0.1 r 40px shadow #5b1f76 0px 0px 0px 1px inset | button.block.w-full 265.0x40.0 r 40px shadow #5b1f76 0px 0px 0px 1px inset outline 1px solid #5b1f76 offset 2px | button.block.w-full 265.0x40.0 bg #5b1f76 r 40px shadow #5b1f76 0px 0px 0px 1px inset |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
 Crops: `plan-cta-default.png`, `plan-cta-hover.png`, `plan-cta-focus-visible.png`, `plan-cta-pressed.png`.
@@ -769,23 +768,23 @@ Crops: `demo-email-default.png`, `demo-email-focused.png`, `demo-email-filled.pn
 
 Demo submit. The demo form's submit button; its states were measured but the button was never clicked — the form was never sent.
 
-Page: request-demo. Selector: `request-demo submit`. States: default, hover, focus-visible, pressed.
+Page: request-demo. Selector: `request-demo form submit`. States: default, hover, focus-visible, pressed.
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 153 x 40 | = | = | = |
-| Padding | 0px 16px | = | = | = |
+| Size (w x h) | 576 x 48 | = | = | = |
+| Padding | 12px 16px | = | = | = |
 | Border | none | = | = | = |
-| Radius | 40px | = | = | = |
-| Background | #5b1f76 | #300c41 | = | #300c41 |
+| Radius | 64px | = | = | = |
+| Background | #f3f3f4 | = | = | = |
 | Box shadow | none | = | = | = |
-| Outline | none | = | 1px solid #5b1f76 offset 2px | = |
-| Font | Suisse Intl 16px/40px 500 | = | = | = |
+| Outline | none | = | 1px solid #300c41 offset 2px | = |
+| Font | Suisse Intl 16px/24px 500 | = | = | = |
 | Letter spacing | normal | = | = | = |
-| Colour | #ffffff | = | = | = |
+| Colour | #caccd0 | = | = | = |
 | Transition | color, background-color, border-color, text-decoration-color, fill, stroke 0.4s cubic-bezier(0.16, 1, 0.3, 1) | = | = | = |
-| Cursor | pointer | = | = | = |
-| Painted layers | button.block.button 153.0x40.0 bg #5b1f76 r 40px | button.block.button 153.0x40.0 bg #300c41 r 40px | button.block.button 153.0x40.0 bg #5b1f76 r 40px outline 1px solid #5b1f76 offset 2px | button.block.button 153.0x40.0 bg #300c41 r 40px |
+| Cursor | not-allowed | = | = | = |
+| Painted layers | button.transition-colors.duration-400 576.0x48.0 bg #f3f3f4 r 64px | = | button.transition-colors.duration-400 576.0x48.0 bg #f3f3f4 r 64px outline 1px solid #300c41 offset 2px | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
 Crops: `demo-submit-default.png`, `demo-submit-hover.png`, `demo-submit-focus-visible.png`, `demo-submit-pressed.png`.
@@ -839,6 +838,31 @@ Page: signup. Selector: `signup input`. States: default, focused, filled.
 
 Crops: `signup-field-default.png`, `signup-field-focused.png`, `signup-field-filled.png`.
 
+#### signup-submit
+
+Signup submit. The marketing signup form's submit button (the rounded-[64px] "Submit" under the e-mail field); measured, never pressed.
+
+Page: signup. Selector: `signup submit`. States: default, hover, focus-visible, pressed.
+
+| Property | default | hover | focus-visible | pressed |
+|---|---|---|---|---|
+| Size (w x h) | 480 x 48 | = | = | = |
+| Padding | 12px 16px | = | = | = |
+| Border | none | = | = | = |
+| Radius | 64px | = | = | = |
+| Background | #f3f3f4 | = | = | = |
+| Box shadow | none | = | = | = |
+| Outline | none | = | 1px solid #300c41 offset 2px | = |
+| Font | Suisse Intl 16px/24px 500 | = | = | = |
+| Letter spacing | normal | = | = | = |
+| Colour | #caccd0 | = | = | = |
+| Transition | color, background-color, border-color, text-decoration-color, fill, stroke 0.4s cubic-bezier(0.16, 1, 0.3, 1) delay 0.1s | = | = | = |
+| Cursor | not-allowed | = | = | = |
+| Painted layers | button.transition-colors.duration-400 480.0x48.0 bg #f3f3f4 r 64px | = | button.transition-colors.duration-400 480.0x48.0 bg #f3f3f4 r 64px outline 1px solid #300c41 offset 2px | = |
+| How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
+
+Crops: `signup-submit-default.png`, `signup-submit-hover.png`, `signup-submit-focus-visible.png`, `signup-submit-pressed.png`.
+
 #### demo-field
 
 Company-size select. The company-size select on the demo form; focused, never changed or submitted.
@@ -865,33 +889,6 @@ Page: request-demo. Selector: `request-demo select`. States: default, focused.
 Crops: `demo-field-default.png`, `demo-field-focused.png`.
 
 ### Auth shell (app.frontapp.com)
-
-#### signup-submit
-
-Signup submit. The submit on app.frontapp.com/signup — the route paints the same auth card as /signin (email, password, "Sign in"); measured, never pressed.
-
-Page: signup-app. Selector: `signup submit`. States: default, hover, focus-visible, pressed.
-
-| Property | default | hover | focus-visible | pressed |
-|---|---|---|---|---|
-| Size (w x h) | 234 x 38 | = | = | = |
-| Padding | 0px 12px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 8px | = | = | = |
-| Background | #6257f4 | #584def | = | #3c3faa |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | system-ui 14px/20px 700 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #ffffff | = | = | = |
-| Text node | span.sc-385091d5-1.eegbkz: system-ui 14px/20px 700, #ffffff | = | = | = |
-| Transition | background-color 0.1s ease | = | = | = |
-| Cursor | pointer | = | = | = |
-| Painted layers | button.sc-385091d5-0.khndyR 234.0x38.0 bg #6257f4 r 8px | button.sc-385091d5-0.khndyR 234.0x38.0 bg #584def r 8px | = | button.sc-385091d5-0.khndyR 234.0x38.0 bg #3c3faa r 8px |
-| Ancestor paint | 2 up form.sc-f4506f74-1.kXddCT bg #ffffff shadow #000000 @ 0.09 0px 2px 8px 0px | = | = | = |
-| How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
-
-Crops: `signup-submit-default.png`, `signup-submit-hover.png`, `signup-submit-focus-visible.png`, `signup-submit-pressed.png`.
 
 #### app-panel
 
@@ -1182,7 +1179,7 @@ Page: signup-app. Selector: `signup card`. States: default.
 | Transition | none |
 | Cursor | default |
 | Icon | 112 x 26.69, colour #15131b |
-| Painted layers | form.sc-f4506f74-1.kXddCT 332.0x576.7 bg #ffffff border T:1px #000000 @ 0.08 / R:1px #000000 @ 0.08 / B:1px #000000 @ 0.08 / L:1px #000000 @ 0.08 r 20px shadow #000000 @ 0.09 0px 2px 8px 0px; div.sc-eafbd4e-2.fowyWF 234.0x38.0 bg #000000 @ 0.05 r 6px outline 2px solid #000000 @ 0 offset 0px; div.sc-eafbd4e-2.fowyWF 234.0x38.0 bg #000000 @ 0.05 r 6px outline 2px solid #000000 @ 0 offset 0px; button.sc-385091d5-0.khndyR 234.0x38.0 bg #6257f4 r 8px; div::before.sc-f4506f74-3.bcTkbZ 58.9062pxx1px bg #000000 @ 0.08; div::after.sc-f4506f74-3.bcTkbZ 58.9062pxx1px bg #000000 @ 0.08 |
+| Painted layers | form.sc-f4506f74-1.kXddCT 332.0x576.7 bg #ffffff border T:1px #000000 @ 0.08 / R:1px #000000 @ 0.08 / B:1px #000000 @ 0.08 / L:1px #000000 @ 0.08 r 20px shadow #000000 @ 0.09 0px 2px 8px 0px; div.sc-eafbd4e-2.fowyWF 234.0x38.0 bg #000000 @ 0.05 r 6px outline 2px solid #000000 @ 0 offset 0px; div.sc-eafbd4e-2.fowyWF 234.0x38.0 bg #000000 @ 0.05 r 6px outline 2px solid #000000 @ 0 offset 0px; button.sc-385091d5-0.khndyR 234.0x38.0 bg #6257f4 r 8px; div::before.sc-f4506f74-3.bcTkbZ 58.8906pxx1px bg #000000 @ 0.08; div::after.sc-f4506f74-3.bcTkbZ 58.9062pxx1px bg #000000 @ 0.08 |
 | How | at rest |
 
 Crops: `signup-panel-default.png`.
@@ -1293,6 +1290,33 @@ Page: forgot. Selector: `forgot submit`. States: default, hover, focus-visible, 
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
 Crops: `forgot-submit-default.png`, `forgot-submit-hover.png`, `forgot-submit-focus-visible.png`, `forgot-submit-pressed.png`.
+
+#### signup-app-submit
+
+Signup submit (app). The submit on app.frontapp.com/signup — the route paints the same auth card as /signin (email, password, "Sign in"); measured, never pressed.
+
+Page: signup-app. Selector: `app signup submit`. States: default, hover, focus-visible, pressed.
+
+| Property | default | hover | focus-visible | pressed |
+|---|---|---|---|---|
+| Size (w x h) | 234 x 38 | = | = | = |
+| Padding | 0px 12px | = | = | = |
+| Border | none | = | = | = |
+| Radius | 8px | = | = | = |
+| Background | #6257f4 | #584def | = | #3c3faa |
+| Box shadow | none | = | = | = |
+| Outline | none | = | = | = |
+| Font | system-ui 14px/20px 700 | = | = | = |
+| Letter spacing | normal | = | = | = |
+| Colour | #ffffff | = | = | = |
+| Text node | span.sc-385091d5-1.eegbkz: system-ui 14px/20px 700, #ffffff | = | = | = |
+| Transition | background-color 0.1s ease | = | = | = |
+| Cursor | pointer | = | = | = |
+| Painted layers | button.sc-385091d5-0.khndyR 234.0x38.0 bg #6257f4 r 8px | button.sc-385091d5-0.khndyR 234.0x38.0 bg #584def r 8px | = | button.sc-385091d5-0.khndyR 234.0x38.0 bg #3c3faa r 8px |
+| Ancestor paint | 2 up form.sc-f4506f74-1.kXddCT bg #ffffff shadow #000000 @ 0.09 0px 2px 8px 0px | = | = | = |
+| How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
+
+Crops: `signup-app-submit-default.png`, `signup-app-submit-hover.png`, `signup-app-submit-focus-visible.png`, `signup-app-submit-pressed.png`.
 
 ### Help centre (help.front.com)
 
