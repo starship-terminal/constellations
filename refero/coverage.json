@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 161,
-    "system_domains": 153,
-    "matched_domains": 124,
-    "missing_domains": 309,
+    "system_packages": 167,
+    "system_domains": 159,
+    "matched_domains": 130,
+    "missing_domains": 303,
     "system_domains_absent_from_catalog": 29
   },
   "matched": {
@@ -734,6 +734,23 @@
         }
       ]
     },
+    "calm.com": {
+      "catalog": [
+        {
+          "name": "Calm",
+          "domain": "calm.com",
+          "id": 227
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "calm",
+          "name": "Calm",
+          "url": "https://www.calm.com",
+          "name_match": true
+        }
+      ]
+    },
     "canva.com": {
       "catalog": [
         {
@@ -781,6 +798,23 @@
           "slug": "cartesia",
           "name": "Cartesia",
           "url": "https://www.cartesia.ai",
+          "name_match": true
+        }
+      ]
+    },
+    "chargetrip.com": {
+      "catalog": [
+        {
+          "name": "Chargetrip",
+          "domain": "chargetrip.com",
+          "id": 798
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "chargetrip",
+          "name": "Chargetrip",
+          "url": "https://www.chargetrip.com",
           "name_match": true
         }
       ]
@@ -1919,6 +1953,23 @@
         }
       ]
     },
+    "frame.io": {
+      "catalog": [
+        {
+          "name": "Frame.io",
+          "domain": "frame.io",
+          "id": 1142
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "frame",
+          "name": "Frame.io",
+          "url": "https://frame.io",
+          "name_match": true
+        }
+      ]
+    },
     "framer.com": {
       "catalog": [
         {
@@ -1932,6 +1983,23 @@
           "slug": "framer",
           "name": "Framer",
           "url": "https://www.framer.com",
+          "name_match": true
+        }
+      ]
+    },
+    "fresha.com": {
+      "catalog": [
+        {
+          "name": "Fresha",
+          "domain": "fresha.com",
+          "id": 561
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "fresha",
+          "name": "Fresha",
+          "url": "https://www.fresha.com",
           "name_match": true
         }
       ]
@@ -1996,6 +2064,40 @@
           "name": "TokenTracker",
           "url": "https://github.com/xiufengsun/TokenTracker",
           "name_match": false
+        }
+      ]
+    },
+    "gladia.io": {
+      "catalog": [
+        {
+          "name": "Gladia",
+          "domain": "gladia.io",
+          "id": 859
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "gladia",
+          "name": "Gladia",
+          "url": "https://www.gladia.io",
+          "name_match": true
+        }
+      ]
+    },
+    "glassnode.com": {
+      "catalog": [
+        {
+          "name": "Glassnode",
+          "domain": "glassnode.com",
+          "id": 87
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "glassnode",
+          "name": "Glassnode",
+          "url": "https://glassnode.com",
+          "name_match": true
         }
       ]
     },
@@ -2196,20 +2298,6 @@
         "id": 284
       }
     ],
-    "calm.com": [
-      {
-        "name": "Calm",
-        "domain": "calm.com",
-        "id": 227
-      }
-    ],
-    "chargetrip.com": [
-      {
-        "name": "Chargetrip",
-        "domain": "chargetrip.com",
-        "id": 798
-      }
-    ],
     "classpass.com": [
       {
         "name": "ClassPass",
@@ -2350,20 +2438,6 @@
         "id": 234
       }
     ],
-    "frame.io": [
-      {
-        "name": "Frame.io",
-        "domain": "frame.io",
-        "id": 1142
-      }
-    ],
-    "fresha.com": [
-      {
-        "name": "Fresha",
-        "domain": "fresha.com",
-        "id": 561
-      }
-    ],
     "gemini.google": [
       {
         "name": "Google Gemini",
@@ -2390,20 +2464,6 @@
         "name": "Pocket",
         "domain": "getpocket.com",
         "id": 228
-      }
-    ],
-    "gladia.io": [
-      {
-        "name": "Gladia",
-        "domain": "gladia.io",
-        "id": 859
-      }
-    ],
-    "glassnode.com": [
-      {
-        "name": "Glassnode",
-        "domain": "glassnode.com",
-        "id": 87
       }
     ],
     "glorify.com": [

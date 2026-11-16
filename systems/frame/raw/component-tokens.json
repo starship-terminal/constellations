@@ -1,0 +1,1370 @@
+{
+  "_about": "The token tree build_tokens.py turns into tokens.json. frame.io declares its design-token layer in the site's stylesheets (raw/css-vars.json): the theme-invariant scales under core.* (the grey/brand/alpha palette, the spacer scale, the grid, the durations and easings, the z-index map) and the painted roles under dark.* — the site's one theme, measured on the live pages and aliased to the declared variables whose values match. accounts.frame.io's sign-in surface is a different stack; its measured values live under component.productShell.* as literals.",
+  "core": {
+    "font": {
+      "family": {
+        "gothic": {
+          "value": "\"FrameGothic\",\"FrameGothic Fallback\"",
+          "type": "fontFamily",
+          "source": "css-var --font-main declared on .__variable_9d88cd (raw/css-vars.json); the probe cannot resolve a class-scoped declaration",
+          "description": "FrameGothic — every display heading on the site (a 400-600 variable face with an Arial-metric fallback), declared as --font-main."
+        },
+        "machina": {
+          "value": "\"NeueMachinaInktrap\",\"NeueMachinaInktrap Fallback\"",
+          "type": "fontFamily",
+          "source": "css-var --font-secondary declared on .__variable_5c99cd (raw/css-vars.json); the probe cannot resolve a class-scoped declaration",
+          "description": "NeueMachinaInktrap — labels, kickers and the mono-flavoured UI type, declared as --font-secondary."
+        },
+        "inter": {
+          "value": "\"Inter\",\"Inter Fallback\"",
+          "type": "fontFamily",
+          "source": "css-var --font-tertiary declared on .__variable_3586d7 (raw/css-vars.json); the probe cannot resolve a class-scoped declaration",
+          "description": "Inter — body copy and UI text (a 100-900 variable face), declared as --font-tertiary."
+        }
+      },
+      "size": {
+        "base": {
+          "value": "16px",
+          "type": "dimension",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --font-size-base",
+          "description": "The 1.6rem (16px) root font size the rem grid is built on."
+        },
+        "measured": {
+          "hero": {
+            "value": "80px",
+            "type": "dimension",
+            "source": "computed fontSize of hero-h1 default (raw/components-computed.json)",
+            "description": "The home hero display heading (FrameGothic 80px at 1440)."
+          },
+          "sectionH2": {
+            "value": "48px",
+            "type": "dimension",
+            "source": "computed fontSize of section-h2 default (raw/components-computed.json)",
+            "description": "A section heading size."
+          },
+          "navLink": {
+            "value": "14px",
+            "type": "dimension",
+            "source": "computed fontSize of nav-pricing default (raw/components-computed.json)",
+            "description": "The header link size."
+          },
+          "button": {
+            "value": "14px",
+            "type": "dimension",
+            "source": "computed fontSize of nav-cta default (raw/components-computed.json)",
+            "description": "The pill button label size."
+          },
+          "body": {
+            "value": "{font.size.base}",
+            "type": "dimension",
+            "source": "computed fontSize of footer-link default (raw/components-computed.json); matches declared font.size.base",
+            "description": "Footer/body copy size."
+          },
+          "priceH1": {
+            "value": "80px",
+            "type": "dimension",
+            "source": "computed fontSize of price-h1 default (raw/components-computed.json)",
+            "description": "The /pricing masthead size."
+          }
+        }
+      },
+      "weight": {
+        "heroWeight": {
+          "value": 600,
+          "type": "fontWeight",
+          "source": "computed fontWeight of hero-h1 default (raw/components-computed.json)",
+          "description": "The hero display weight (FrameGothic 400-600 variable)."
+        },
+        "buttonWeight": {
+          "value": 600,
+          "type": "fontWeight",
+          "source": "computed fontWeight of nav-cta default (raw/components-computed.json)",
+          "description": "The pill label weight."
+        }
+      },
+      "tracking": {
+        "hero": {
+          "value": "-3.6px",
+          "type": "dimension",
+          "source": "computed letterSpacing of hero-h1 default (raw/components-computed.json)",
+          "description": "The hero display letter-spacing."
+        },
+        "navLink": {
+          "value": "0.14px",
+          "type": "dimension",
+          "source": "computed letterSpacing of nav-pricing default (raw/components-computed.json)",
+          "description": "The header link tracking."
+        }
+      }
+    },
+    "color": {
+      "accent": {
+        "value": "#f5f5f8",
+        "type": "color",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-accent",
+        "description": "The declared `--color-accent`."
+      },
+      "accentDefault": {
+        "value": "#f5f5f8",
+        "type": "color",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-accent-default",
+        "description": "The declared `--color-accent-default`."
+      },
+      "alpha": {
+        "black": {
+          "10": {
+            "value": "rgba(0, 0, 0, 0.1)",
+            "type": "color",
+            "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-alpha-black-10",
+            "description": "The declared `--color-alpha-black-10`."
+          },
+          "100": {
+            "value": "#000000",
+            "type": "color",
+            "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-alpha-black-100",
+            "description": "The declared `--color-alpha-black-100`."
+          },
+          "20": {
+            "value": "rgba(0, 0, 0, 0.2)",
+            "type": "color",
+            "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-alpha-black-20",
+            "description": "The declared `--color-alpha-black-20`."
+          },
+          "25": {
+            "value": "rgba(0, 0, 0, 0.25)",
+            "type": "color",
+            "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-alpha-black-25",
+            "description": "The declared `--color-alpha-black-25`."
+          },
+          "30": {
+            "value": "rgba(0, 0, 0, 0.3)",
+            "type": "color",
+            "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-alpha-black-30",
+            "description": "The declared `--color-alpha-black-30`."
+          },
+          "40": {
+            "value": "rgba(0, 0, 0, 0.4)",
+            "type": "color",
+            "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-alpha-black-40",
+            "description": "The declared `--color-alpha-black-40`."
+          },
+          "5": {
+            "value": "rgba(0, 0, 0, 0.05)",
+            "type": "color",
+            "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-alpha-black-5",
+            "description": "The declared `--color-alpha-black-5`."
+          },
+          "50": {
+            "value": "rgba(0, 0, 0, 0.5)",
+            "type": "color",
+            "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-alpha-black-50",
+            "description": "The declared `--color-alpha-black-50`."
+          },
+          "60": {
+            "value": "rgba(0, 0, 0, 0.6)",
+            "type": "color",
+            "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-alpha-black-60",
+            "description": "The declared `--color-alpha-black-60`."
+          },
+          "70": {
+            "value": "rgba(0, 0, 0, 0.7)",
+            "type": "color",
+            "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-alpha-black-70",
+            "description": "The declared `--color-alpha-black-70`."
+          },
+          "80": {
+            "value": "rgba(0, 0, 0, 0.8)",
+            "type": "color",
+            "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-alpha-black-80",
+            "description": "The declared `--color-alpha-black-80`."
+          },
+          "90": {
+            "value": "rgba(0, 0, 0, 0.9)",
+            "type": "color",
+            "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-alpha-black-90",
+            "description": "The declared `--color-alpha-black-90`."
+          }
+        },
+        "cinder": {
+          "50": {
+            "value": "rgba(13, 13, 24, 0.5)",
+            "type": "color",
+            "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-alpha-cinder-50",
+            "description": "The declared `--color-alpha-cinder-50`."
+          }
+        },
+        "dark": {
+          "10": {
+            "value": "rgba(13, 13, 24, 0.1)",
+            "type": "color",
+            "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-alpha-dark-10",
+            "description": "The declared `--color-alpha-dark-10`."
+          },
+          "20": {
+            "value": "rgba(13, 13, 24, 0.2)",
+            "type": "color",
+            "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-alpha-dark-20",
+            "description": "The declared `--color-alpha-dark-20`."
+          },
+          "30": {
+            "value": "rgba(13, 13, 24, 0.3)",
+            "type": "color",
+            "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-alpha-dark-30",
+            "description": "The declared `--color-alpha-dark-30`."
+          },
+          "40": {
+            "value": "rgba(13, 13, 24, 0.4)",
+            "type": "color",
+            "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-alpha-dark-40",
+            "description": "The declared `--color-alpha-dark-40`."
+          },
+          "5": {
+            "value": "rgba(13, 13, 24, 0.05)",
+            "type": "color",
+            "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-alpha-dark-5",
+            "description": "The declared `--color-alpha-dark-5`."
+          },
+          "50": {
+            "value": "rgba(13, 13, 24, 0.5)",
+            "type": "color",
+            "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-alpha-dark-50",
+            "description": "The declared `--color-alpha-dark-50`."
+          },
+          "60": {
+            "value": "rgba(13, 13, 24, 0.6)",
+            "type": "color",
+            "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-alpha-dark-60",
+            "description": "The declared `--color-alpha-dark-60`."
+          },
+          "70": {
+            "value": "rgba(13, 13, 24, 0.7)",
+            "type": "color",
+            "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-alpha-dark-70",
+            "description": "The declared `--color-alpha-dark-70`."
+          },
+          "80": {
+            "value": "rgba(13, 13, 24, 0.8)",
+            "type": "color",
+            "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-alpha-dark-80",
+            "description": "The declared `--color-alpha-dark-80`."
+          },
+          "90": {
+            "value": "rgba(13, 13, 24, 0.9)",
+            "type": "color",
+            "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-alpha-dark-90",
+            "description": "The declared `--color-alpha-dark-90`."
+          }
+        },
+        "grey": {
+          "30": {
+            "value": "rgba(54, 56, 74, 0.2)",
+            "type": "color",
+            "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-alpha-grey-30",
+            "description": "The declared `--color-alpha-grey-30`."
+          },
+          "80": {
+            "value": "rgba(46, 47, 64, 0.8)",
+            "type": "color",
+            "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-alpha-grey-80",
+            "description": "The declared `--color-alpha-grey-80`."
+          }
+        },
+        "hawkes": {
+          "20": {
+            "value": "rgba(209, 209, 251, 0.2)",
+            "type": "color",
+            "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-alpha-hawkes-20",
+            "description": "The declared `--color-alpha-hawkes-20`."
+          },
+          "60": {
+            "value": "rgba(209, 209, 251, 0.6)",
+            "type": "color",
+            "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-alpha-hawkes-60",
+            "description": "The declared `--color-alpha-hawkes-60`."
+          }
+        },
+        "light": {
+          "10": {
+            "value": "rgba(189, 189, 244, 0.1)",
+            "type": "color",
+            "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-alpha-light-10",
+            "description": "The declared `--color-alpha-light-10`."
+          },
+          "15": {
+            "value": "rgba(209, 209, 251, 0.15)",
+            "type": "color",
+            "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-alpha-light-15",
+            "description": "The declared `--color-alpha-light-15`."
+          },
+          "20": {
+            "value": "rgba(209, 209, 251, 0.2)",
+            "type": "color",
+            "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-alpha-light-20",
+            "description": "The declared `--color-alpha-light-20`."
+          },
+          "30": {
+            "value": "rgba(220, 220, 255, 0.3)",
+            "type": "color",
+            "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-alpha-light-30",
+            "description": "The declared `--color-alpha-light-30`."
+          },
+          "40": {
+            "value": "rgba(228, 228, 255, 0.4)",
+            "type": "color",
+            "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-alpha-light-40",
+            "description": "The declared `--color-alpha-light-40`."
+          },
+          "5": {
+            "value": "rgba(157, 157, 255, 0.05)",
+            "type": "color",
+            "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-alpha-light-5",
+            "description": "The declared `--color-alpha-light-5`."
+          },
+          "50": {
+            "value": "rgba(234, 234, 255, 0.5)",
+            "type": "color",
+            "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-alpha-light-50",
+            "description": "The declared `--color-alpha-light-50`."
+          },
+          "60": {
+            "value": "rgba(234, 234, 255, 0.6)",
+            "type": "color",
+            "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-alpha-light-60",
+            "description": "The declared `--color-alpha-light-60`."
+          },
+          "70": {
+            "value": "rgba(233, 233, 255, 0.7)",
+            "type": "color",
+            "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-alpha-light-70",
+            "description": "The declared `--color-alpha-light-70`."
+          },
+          "80": {
+            "value": "rgba(240, 240, 255, 0.8)",
+            "type": "color",
+            "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-alpha-light-80",
+            "description": "The declared `--color-alpha-light-80`."
+          },
+          "90": {
+            "value": "rgba(241, 244, 255, 0.9)",
+            "type": "color",
+            "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-alpha-light-90",
+            "description": "The declared `--color-alpha-light-90`."
+          }
+        },
+        "perano": {
+          "10": {
+            "value": "rgba(189, 189, 244, 0.1)",
+            "type": "color",
+            "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-alpha-perano-10",
+            "description": "The declared `--color-alpha-perano-10`."
+          }
+        }
+      },
+      "brand": {
+        "cobalt": {
+          "default": {
+            "value": "#5b53ff",
+            "type": "color",
+            "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-cobalt",
+            "description": "The declared `--color-cobalt`."
+          },
+          "20": {
+            "value": "rgba(91, 83, 255, 0.2)",
+            "type": "color",
+            "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-cobalt-20",
+            "description": "The declared `--color-cobalt-20`."
+          },
+          "dark": {
+            "value": "#5237f9",
+            "type": "color",
+            "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-cobalt-dark",
+            "description": "The declared `--color-cobalt-dark`."
+          },
+          "light": {
+            "value": "#6369ff",
+            "type": "color",
+            "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-cobalt-light",
+            "description": "The declared `--color-cobalt-light`."
+          }
+        },
+        "coral": {
+          "default": {
+            "value": "#fc856d",
+            "type": "color",
+            "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-coral",
+            "description": "The declared `--color-coral`."
+          },
+          "dark": {
+            "value": "#e36b52",
+            "type": "color",
+            "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-coral-dark",
+            "description": "The declared `--color-coral-dark`."
+          },
+          "light": {
+            "value": "#fca493",
+            "type": "color",
+            "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-coral-light",
+            "description": "The declared `--color-coral-light`."
+          }
+        },
+        "electric": {
+          "default": {
+            "value": "#47ebeb",
+            "type": "color",
+            "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-electric",
+            "description": "The declared `--color-electric`."
+          },
+          "dark": {
+            "value": "#00b8b9",
+            "type": "color",
+            "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-electric-dark",
+            "description": "The declared `--color-electric-dark`."
+          },
+          "light": {
+            "value": "#87ffff",
+            "type": "color",
+            "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-electric-light",
+            "description": "The declared `--color-electric-light`."
+          }
+        },
+        "iris": {
+          "default": {
+            "value": "#8952fd",
+            "type": "color",
+            "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-iris",
+            "description": "The declared `--color-iris`."
+          },
+          "dark": {
+            "value": "#632cda",
+            "type": "color",
+            "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-iris-dark",
+            "description": "The declared `--color-iris-dark`."
+          },
+          "light": {
+            "value": "#9f75f9",
+            "type": "color",
+            "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-iris-light",
+            "description": "The declared `--color-iris-light`."
+          }
+        }
+      },
+      "grey": {
+        "00": {
+          "value": "#000000",
+          "type": "color",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-grey-00",
+          "description": "The declared `--color-grey-00`."
+        },
+        "05": {
+          "value": "#0d0d18",
+          "type": "color",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-grey-05",
+          "description": "The declared `--color-grey-05`."
+        },
+        "08": {
+          "value": "#12131d",
+          "type": "color",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-grey-08",
+          "description": "The declared `--color-grey-08`."
+        },
+        "10": {
+          "value": "#161722",
+          "type": "color",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-grey-10",
+          "description": "The declared `--color-grey-10`."
+        },
+        "100": {
+          "value": "#fcfcfc",
+          "type": "color",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-grey-100",
+          "description": "The declared `--color-grey-100`."
+        },
+        "12": {
+          "value": "#1d1f2c",
+          "type": "color",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-grey-12",
+          "description": "The declared `--color-grey-12`."
+        },
+        "15": {
+          "value": "#252736",
+          "type": "color",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-grey-15",
+          "description": "The declared `--color-grey-15`."
+        },
+        "20": {
+          "value": "#2e2f40",
+          "type": "color",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-grey-20",
+          "description": "The declared `--color-grey-20`."
+        },
+        "30": {
+          "value": "#36384a",
+          "type": "color",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-grey-30",
+          "description": "The declared `--color-grey-30`."
+        },
+        "40": {
+          "value": "#4f5167",
+          "type": "color",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-grey-40",
+          "description": "The declared `--color-grey-40`."
+        },
+        "50": {
+          "value": "#6a6b83",
+          "type": "color",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-grey-50",
+          "description": "The declared `--color-grey-50`."
+        },
+        "60": {
+          "value": "#81859f",
+          "type": "color",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-grey-60",
+          "description": "The declared `--color-grey-60`."
+        },
+        "70": {
+          "value": "#a3a4bf",
+          "type": "color",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-grey-70",
+          "description": "The declared `--color-grey-70`."
+        },
+        "80": {
+          "value": "#c1c2d9",
+          "type": "color",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-grey-80",
+          "description": "The declared `--color-grey-80`."
+        },
+        "88": {
+          "value": "#d5d6ea",
+          "type": "color",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-grey-88",
+          "description": "The declared `--color-grey-88`."
+        },
+        "90": {
+          "value": "#dedfee",
+          "type": "color",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-grey-90",
+          "description": "The declared `--color-grey-90`."
+        },
+        "93": {
+          "value": "#e8e9f3",
+          "type": "color",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-grey-93",
+          "description": "The declared `--color-grey-93`."
+        },
+        "95": {
+          "value": "#f0f0f7",
+          "type": "color",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-grey-95",
+          "description": "The declared `--color-grey-95`."
+        },
+        "97": {
+          "value": "#f5f5f8",
+          "type": "color",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-grey-97",
+          "description": "The declared `--color-grey-97`."
+        }
+      },
+      "turquoiseTriumph": {
+        "value": "#6199f6",
+        "type": "color",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --color-turquoise-triumph",
+        "description": "The declared `--color-turquoise-triumph`."
+      }
+    },
+    "overlay": {
+      "dim": {
+        "value": "rgba(0, 0, 0, 0.2)",
+        "type": "color",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --overlay-dim",
+        "description": "The declared `--overlay-dim`."
+      },
+      "dim40": {
+        "value": "rgba(0, 0, 0, 0.4)",
+        "type": "color",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --overlay-dim40",
+        "description": "The declared `--overlay-dim40`."
+      },
+      "dim60": {
+        "value": "rgba(0, 0, 0, 0.6)",
+        "type": "color",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --overlay-dim60",
+        "description": "The declared `--overlay-dim60`."
+      },
+      "dim80": {
+        "value": "rgba(0, 0, 0, 0.8)",
+        "type": "color",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --overlay-dim80",
+        "description": "The declared `--overlay-dim80`."
+      },
+      "heavy": {
+        "value": "linear-gradient(0deg,rgb(0 0 0/20%),rgb(0 0 0/20%)),linear-gradient(180deg,rgb(0 0 0/0%) 50%,#000000),linear-gradient(7.96deg,#000000 14.71%,rgb(0 0 0/0%) 78.17%)",
+        "type": "other",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --overlay-heavy",
+        "description": "The declared `--overlay-heavy`."
+      },
+      "light": {
+        "value": "linear-gradient(0deg,rgb(0 0 0/20%),rgb(0 0 0/20%)),linear-gradient(18.61deg,rgb(0 0 0/50.4%) 21.85%,rgb(0 0 0/0%) 73.55%)",
+        "type": "other",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --overlay-light",
+        "description": "The declared `--overlay-light`."
+      },
+      "medium": {
+        "value": "linear-gradient(0deg,rgb(0 0 0/20%),rgb(0 0 0/20%)),linear-gradient(18.61deg,rgb(0 0 0/67.2%) 21.85%,rgb(0 0 0/0%) 73.55%)",
+        "type": "other",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --overlay-medium",
+        "description": "The declared `--overlay-medium`."
+      },
+      "none": {
+        "value": "none",
+        "type": "other",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --overlay-none",
+        "description": "The declared `--overlay-none`."
+      }
+    },
+    "spacing": {
+      "0": {
+        "value": "0px",
+        "type": "dimension",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --spacer-0",
+        "description": "The declared `--spacer-0`."
+      },
+      "10": {
+        "value": "10px",
+        "type": "dimension",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --spacer-10",
+        "description": "The declared `--spacer-10`."
+      },
+      "12": {
+        "value": "12px",
+        "type": "dimension",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --spacer-12",
+        "description": "The declared `--spacer-12`."
+      },
+      "124": {
+        "value": "124px",
+        "type": "dimension",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --spacer-124",
+        "description": "The declared `--spacer-124`."
+      },
+      "16": {
+        "value": "16px",
+        "type": "dimension",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --spacer-16",
+        "description": "The declared `--spacer-16`."
+      },
+      "160": {
+        "value": "160px",
+        "type": "dimension",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --spacer-160",
+        "description": "The declared `--spacer-160`."
+      },
+      "18": {
+        "value": "18px",
+        "type": "dimension",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --spacer-18",
+        "description": "The declared `--spacer-18`."
+      },
+      "192": {
+        "value": "192px",
+        "type": "dimension",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --spacer-192",
+        "description": "The declared `--spacer-192`."
+      },
+      "20": {
+        "value": "20px",
+        "type": "dimension",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --spacer-20",
+        "description": "The declared `--spacer-20`."
+      },
+      "24": {
+        "value": "24px",
+        "type": "dimension",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --spacer-24",
+        "description": "The declared `--spacer-24`."
+      },
+      "240": {
+        "value": "240px",
+        "type": "dimension",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --spacer-240",
+        "description": "The declared `--spacer-240`."
+      },
+      "28": {
+        "value": "28px",
+        "type": "dimension",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --spacer-28",
+        "description": "The declared `--spacer-28`."
+      },
+      "32": {
+        "value": "32px",
+        "type": "dimension",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --spacer-32",
+        "description": "The declared `--spacer-32`."
+      },
+      "320": {
+        "value": "320px",
+        "type": "dimension",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --spacer-320",
+        "description": "The declared `--spacer-320`."
+      },
+      "4": {
+        "value": "4px",
+        "type": "dimension",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --spacer-4",
+        "description": "The declared `--spacer-4`."
+      },
+      "40": {
+        "value": "40px",
+        "type": "dimension",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --spacer-40",
+        "description": "The declared `--spacer-40`."
+      },
+      "48": {
+        "value": "48px",
+        "type": "dimension",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --spacer-48",
+        "description": "The declared `--spacer-48`."
+      },
+      "480": {
+        "value": "480px",
+        "type": "dimension",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --spacer-480",
+        "description": "The declared `--spacer-480`."
+      },
+      "54": {
+        "value": "54px",
+        "type": "dimension",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --spacer-54",
+        "description": "The declared `--spacer-54`."
+      },
+      "6": {
+        "value": "6px",
+        "type": "dimension",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --spacer-6",
+        "description": "The declared `--spacer-6`."
+      },
+      "64": {
+        "value": "64px",
+        "type": "dimension",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --spacer-64",
+        "description": "The declared `--spacer-64`."
+      },
+      "72": {
+        "value": "72px",
+        "type": "dimension",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --spacer-72",
+        "description": "The declared `--spacer-72`."
+      },
+      "8": {
+        "value": "8px",
+        "type": "dimension",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --spacer-8",
+        "description": "The declared `--spacer-8`."
+      },
+      "84": {
+        "value": "84px",
+        "type": "dimension",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --spacer-84",
+        "description": "The declared `--spacer-84`."
+      },
+      "96": {
+        "value": "96px",
+        "type": "dimension",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --spacer-96",
+        "description": "The declared `--spacer-96`."
+      }
+    },
+    "radius": {
+      "10": {
+        "value": "10px",
+        "type": "dimension",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --border-radius-10",
+        "description": "The declared `--border-radius-10`."
+      },
+      "12": {
+        "value": "12px",
+        "type": "dimension",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --border-radius-12",
+        "description": "The declared `--border-radius-12`."
+      },
+      "16": {
+        "value": "16px",
+        "type": "dimension",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --border-radius-16",
+        "description": "The declared `--border-radius-16`."
+      },
+      "18": {
+        "value": "18px",
+        "type": "dimension",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --border-radius-18",
+        "description": "The declared `--border-radius-18`."
+      },
+      "2": {
+        "value": "2px",
+        "type": "dimension",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --border-radius-2",
+        "description": "The declared `--border-radius-2`."
+      },
+      "20": {
+        "value": "20px",
+        "type": "dimension",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --border-radius-20",
+        "description": "The declared `--border-radius-20`."
+      },
+      "40": {
+        "value": "40px",
+        "type": "dimension",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --border-radius-40",
+        "description": "The declared `--border-radius-40`."
+      },
+      "5": {
+        "value": "5px",
+        "type": "dimension",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --border-radius-5",
+        "description": "The declared `--border-radius-5`."
+      },
+      "6": {
+        "value": "6px",
+        "type": "dimension",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --border-radius-6",
+        "description": "The declared `--border-radius-6`."
+      },
+      "8": {
+        "value": "8px",
+        "type": "dimension",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --border-radius-8",
+        "description": "The declared `--border-radius-8`."
+      },
+      "large": {
+        "value": "40px",
+        "type": "dimension",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --border-radius-large",
+        "description": "The declared `--border-radius-large`."
+      },
+      "cta": {
+        "value": "100px",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of nav-cta default (raw/components-computed.json)",
+        "description": "The CTA pill radius."
+      },
+      "navLink": {
+        "value": "0px",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of nav-pricing default (raw/components-computed.json)",
+        "description": "The header link radius."
+      },
+      "card": {
+        "value": "{radius.10}",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of plan-card default (raw/components-computed.json); matches declared --radius-10",
+        "description": "The plan-card corner radius."
+      },
+      "field": {
+        "value": "0px",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of form-email default (raw/components-computed.json)",
+        "description": "The contact field radius."
+      },
+      "panel": {
+        "value": "0px",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of nav-panel default (raw/components-computed.json)",
+        "description": "The mega-menu panel corner radius."
+      },
+      "menuBtn": {
+        "value": "0px",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of m-menu-btn default (raw/components-computed.json)",
+        "description": "The phone menu button radius."
+      }
+    },
+    "layout": {
+      "grid": {
+        "columns": {
+          "value": 12,
+          "type": "number",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --grid-number-of-columns",
+          "description": "The declared `--grid-number-of-columns`."
+        },
+        "maxContentWidth": {
+          "value": "1080px",
+          "type": "dimension",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --grid-max-content-width",
+          "description": "The declared `--grid-max-content-width`."
+        }
+      },
+      "maxWidth": {
+        "value": "1080px",
+        "type": "dimension",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --global-max-width",
+        "description": "The declared `--global-max-width`.",
+        "responsive": "viewport-conditional: also declared under @media (min-width:430px, min-width:600px, min-width:1240px, min-width:1921px); resolved at 1440 x 900"
+      },
+      "navHeight": {
+        "value": "80px",
+        "type": "dimension",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --nav-height",
+        "description": "The declared `--nav-height`."
+      },
+      "navHeightPadded": {
+        "value": "92px",
+        "type": "dimension",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --nav-height-padded",
+        "description": "The declared `--nav-height-padded`."
+      }
+    },
+    "motion": {
+      "duration": {
+        "150ms": {
+          "value": "0.15s",
+          "type": "duration",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --duration-150ms",
+          "description": "The declared `--duration-150ms` duration."
+        },
+        "200ms": {
+          "value": "0.2s",
+          "type": "duration",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --duration-200ms",
+          "description": "The declared `--duration-200ms` duration."
+        },
+        "300ms": {
+          "value": "0.3s",
+          "type": "duration",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --duration-300ms",
+          "description": "The declared `--duration-300ms` duration."
+        },
+        "400ms": {
+          "value": "0.4s",
+          "type": "duration",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --duration-400ms",
+          "description": "The declared `--duration-400ms` duration."
+        },
+        "500ms": {
+          "value": "0.5s",
+          "type": "duration",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --duration-500ms",
+          "description": "The declared `--duration-500ms` duration."
+        },
+        "600ms": {
+          "value": "0.6s",
+          "type": "duration",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --duration-600ms",
+          "description": "The declared `--duration-600ms` duration."
+        },
+        "60ms": {
+          "value": "0.06s",
+          "type": "duration",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --duration-60ms",
+          "description": "The declared `--duration-60ms` duration."
+        }
+      },
+      "easing": {
+        "basicButter": {
+          "value": "cubic-bezier(0.42,0,0.28,0.99)",
+          "type": "cubicBezier",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --ease-basic-butter",
+          "description": "The declared `--ease-basic-butter` easing."
+        },
+        "default": {
+          "value": "cubic-bezier(0.25,0.1,0.25,1)",
+          "type": "cubicBezier",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --ease-default",
+          "description": "The declared `--ease-default` easing."
+        },
+        "embellishment": {
+          "value": "cubic-bezier(0.42,0,0,1)",
+          "type": "cubicBezier",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --ease-embellishment",
+          "description": "The declared `--ease-embellishment` easing."
+        },
+        "in": {
+          "value": "cubic-bezier(0.49,0.025,0.65,0.65)",
+          "type": "cubicBezier",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --ease-in",
+          "description": "The declared `--ease-in` easing."
+        },
+        "inOut": {
+          "value": "cubic-bezier(0.49,0.025,0.49,1)",
+          "type": "cubicBezier",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --ease-in-out",
+          "description": "The declared `--ease-in-out` easing."
+        },
+        "microBounce": {
+          "value": "cubic-bezier(0,0.44,0.6,1)",
+          "type": "cubicBezier",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --ease-micro-bounce",
+          "description": "The declared `--ease-micro-bounce` easing."
+        },
+        "miniBounce": {
+          "value": "cubic-bezier(0.17,0.89,0.47,1.13)",
+          "type": "cubicBezier",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --ease-mini-bounce",
+          "description": "The declared `--ease-mini-bounce` easing."
+        },
+        "out": {
+          "value": "cubic-bezier(0.28,0.44,0.49,1)",
+          "type": "cubicBezier",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --ease-out",
+          "description": "The declared `--ease-out` easing."
+        }
+      },
+      "control": {
+        "value": "color 0.3s cubic-bezier(0, 0.44, 0.6, 1)",
+        "type": "other",
+        "source": "computed transition of nav-cta default (raw/components-computed.json); the --duration-*/--ease-* steps are the declared durations and curves",
+        "description": "The control transition on the header CTA."
+      }
+    },
+    "zIndex": {
+      "0": {
+        "value": 0,
+        "type": "number",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --z-index-0",
+        "description": "The declared `--z-index-0`."
+      },
+      "1": {
+        "value": 1,
+        "type": "number",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --z-index-1",
+        "description": "The declared `--z-index-1`."
+      },
+      "10": {
+        "value": 10,
+        "type": "number",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --z-index-10",
+        "description": "The declared `--z-index-10`."
+      },
+      "2": {
+        "value": 2,
+        "type": "number",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --z-index-2",
+        "description": "The declared `--z-index-2`."
+      },
+      "3": {
+        "value": 3,
+        "type": "number",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --z-index-3",
+        "description": "The declared `--z-index-3`."
+      },
+      "4": {
+        "value": 4,
+        "type": "number",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --z-index-4",
+        "description": "The declared `--z-index-4`."
+      },
+      "5": {
+        "value": 5,
+        "type": "number",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --z-index-5",
+        "description": "The declared `--z-index-5`."
+      },
+      "6": {
+        "value": 6,
+        "type": "number",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --z-index-6",
+        "description": "The declared `--z-index-6`."
+      },
+      "7": {
+        "value": 7,
+        "type": "number",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --z-index-7",
+        "description": "The declared `--z-index-7`."
+      },
+      "8": {
+        "value": 8,
+        "type": "number",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --z-index-8",
+        "description": "The declared `--z-index-8`."
+      },
+      "9": {
+        "value": 9,
+        "type": "number",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --z-index-9",
+        "description": "The declared `--z-index-9`."
+      },
+      "backgroundColor": {
+        "value": -10,
+        "type": "number",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --z-index-background-color",
+        "description": "The declared `--z-index-background-color`."
+      },
+      "max": {
+        "value": 105,
+        "type": "number",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --z-index-max",
+        "description": "The declared `--z-index-max`."
+      },
+      "modal": {
+        "value": 110,
+        "type": "number",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --z-index-modal",
+        "description": "The declared `--z-index-modal`."
+      },
+      "nav": {
+        "value": 100,
+        "type": "number",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --z-index-nav",
+        "description": "The declared `--z-index-nav`."
+      },
+      "neg": {
+        "value": -1,
+        "type": "number",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --z-index-neg",
+        "description": "The declared `--z-index-neg`."
+      }
+    }
+  },
+  "dark": {
+    "theme": {
+      "bg": {
+        "value": "{color.grey.00}",
+        "type": "color",
+        "source": "computed backgroundColor of page-field default (raw/components-computed.json); matches declared color.grey.00",
+        "description": "The near-black page field every public page paints."
+      },
+      "fg": {
+        "default": {
+          "value": "{color.grey.100}",
+          "type": "color",
+          "source": "computed color of hero-h1 default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared color.grey.100",
+          "description": "The #fcfcfc ink on display copy, headings and body (grey-100)."
+        },
+        "muted": {
+          "value": "{color.alpha.light.50}",
+          "type": "color",
+          "source": "computed color of section-h2 default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared color.alpha.light.50",
+          "description": "The section-heading ink."
+        },
+        "nav": {
+          "value": "{color.grey.100}",
+          "type": "color",
+          "source": "computed color of nav-pricing default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared color.grey.100",
+          "description": "The header link ink."
+        },
+        "footer": {
+          "value": "{color.grey.100}",
+          "type": "color",
+          "source": "computed color of footer-link default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared color.grey.100",
+          "description": "The footer link ink."
+        },
+        "declared": {
+          "var": "--main-font-color",
+          "type": "color",
+          "description": "The declared --main-font-color ink role (#fcfcfc)."
+        }
+      },
+      "btn": {
+        "primary": {
+          "bg": {
+            "value": "rgba(0, 0, 0, 0)",
+            "type": "color",
+            "source": "computed backgroundColor of nav-cta default (raw/components-computed.json)",
+            "description": "The white fill of the 'Start Free Trial' pill — the site's primary action inverts to ink-on-paper."
+          },
+          "fg": {
+            "value": "{color.grey.00}",
+            "type": "color",
+            "source": "computed color of nav-cta default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared color.grey.00",
+            "description": "The near-black text on the white CTA pill."
+          },
+          "hoverBg": {
+            "value": "rgba(0, 0, 0, 0)",
+            "type": "color",
+            "source": "computed backgroundColor of nav-cta hover (raw/components-computed.json)",
+            "description": "The CTA pill's hover fill."
+          }
+        },
+        "secondary": {
+          "border": {
+            "value": "{color.grey.100}",
+            "type": "color",
+            "source": "computed borderTopColor of hero-tour default (raw/components-computed.json); matches declared color.grey.100",
+            "description": "The 'Take a Product Tour' ghost button's border."
+          },
+          "fg": {
+            "value": "{color.grey.100}",
+            "type": "color",
+            "source": "computed color of hero-tour default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared color.grey.100",
+            "description": "The ghost button's ink."
+          }
+        }
+      },
+      "border": {
+        "focus": {
+          "value": "{color.grey.100}",
+          "type": "color",
+          "source": "computed outlineColor of nav-cta focus-visible (raw/components-computed.json); matches declared color.grey.100",
+          "description": "The keyboard focus ring colour on the header CTA."
+        }
+      },
+      "banner": {
+        "bg": {
+          "value": "{color.brand.cobalt.default}",
+          "type": "color",
+          "source": "computed backgroundColor of announcement default (raw/components-computed.json); matches declared color.brand.cobalt.default",
+          "description": "The announcement banner's cobalt-violet fill."
+        },
+        "fg": {
+          "value": "{color.grey.100}",
+          "type": "color",
+          "source": "computed color of announcement default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared color.grey.100",
+          "description": "The announcement banner's ink."
+        }
+      },
+      "surface": {
+        "card": {
+          "value": "rgba(16, 16, 23, 0.5)",
+          "type": "color",
+          "source": "computed backgroundColor of plan-card default (raw/components-computed.json)",
+          "description": "The plan card's raised dark fill on /pricing."
+        }
+      },
+      "form": {
+        "field": {
+          "ink": {
+            "value": "{color.grey.90}",
+            "type": "color",
+            "source": "computed color of form-email default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared color.grey.90",
+            "description": "The contact field's text ink."
+          },
+          "border": {
+            "value": "{color.grey.20}",
+            "type": "color",
+            "source": "computed borderBottomColor of form-email default (raw/components-computed.json); matches declared color.grey.20",
+            "description": "The contact field's underline border."
+          }
+        },
+        "placeholder": {
+          "value": "{color.grey.90}",
+          "type": "color",
+          "source": "computed ::placeholder color of form-email default (raw/components-computed.json); matches declared color.grey.90",
+          "description": "The field label/placeholder ink."
+        },
+        "submit": {
+          "bg": {
+            "value": "rgba(0, 0, 0, 0)",
+            "type": "color",
+            "source": "computed backgroundColor of form-submit default (raw/components-computed.json)",
+            "description": "The contact form 'Submit' pill fill."
+          },
+          "fg": {
+            "value": "{color.grey.40}",
+            "type": "color",
+            "source": "computed color of form-submit default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared color.grey.40",
+            "description": "The 'Submit' pill text."
+          }
+        }
+      },
+      "accent": {
+        "var": "--color-accent",
+        "type": "color",
+        "description": "The declared --color-accent role — the light-grey accent (#f5f5f8)."
+      }
+    }
+  },
+  "component": {
+    "topbar-height": {
+      "value": "80px",
+      "type": "dimension",
+      "source": "measured h of mkt-header default (raw/components-computed.json)",
+      "description": "The fixed site header bar height."
+    },
+    "announcement-height": {
+      "value": "36px",
+      "type": "dimension",
+      "source": "measured h of announcement default (raw/components-computed.json)",
+      "description": "The announcement banner height."
+    },
+    "cta-height": {
+      "value": "39.75px",
+      "type": "dimension",
+      "source": "measured h of nav-cta default (raw/components-computed.json)",
+      "description": "The header CTA pill height."
+    },
+    "nav-panel-width": {
+      "value": "1440px",
+      "type": "dimension",
+      "source": "measured w of nav-panel default (raw/components-computed.json)",
+      "description": "The open mega-menu panel width."
+    },
+    "nav-panel-height": {
+      "value": "604.5px",
+      "type": "dimension",
+      "source": "measured h of nav-panel default (raw/components-computed.json)",
+      "description": "The open mega-menu panel height."
+    },
+    "hero-headline-width": {
+      "value": "504px",
+      "type": "dimension",
+      "source": "measured w of hero-h1 default (raw/components-computed.json)",
+      "description": "The hero display heading's measure."
+    },
+    "field-height": {
+      "value": "48px",
+      "type": "dimension",
+      "source": "measured h of form-email default (raw/components-computed.json)",
+      "description": "The contact field height."
+    },
+    "submit-width": {
+      "value": "97.84px",
+      "type": "dimension",
+      "source": "measured w of form-submit default (raw/components-computed.json)",
+      "description": "The contact 'Submit' pill width."
+    },
+    "submit-height": {
+      "value": "39.75px",
+      "type": "dimension",
+      "source": "measured h of form-submit default (raw/components-computed.json)",
+      "description": "The contact 'Submit' pill height."
+    },
+    "plan-card-width": {
+      "value": "252px",
+      "type": "dimension",
+      "source": "measured w of plan-card default (raw/components-computed.json)",
+      "description": "The plan-card column width."
+    },
+    "toggle-width": {
+      "value": "91.98px",
+      "type": "dimension",
+      "source": "measured w of price-toggle default (raw/components-computed.json)",
+      "description": "The Monthly/Annually toggle's Monthly side width."
+    },
+    "mobile-topbar-height": {
+      "value": "120px",
+      "type": "dimension",
+      "source": "measured h of m-topbar default (raw/components-computed.json)",
+      "description": "The phone header bar height."
+    },
+    "productShell": {
+      "login-panel-width": {
+        "value": "346px",
+        "type": "dimension",
+        "source": "measured w of login-panel default on the accounts sign-in surface (raw/components-computed.json)",
+        "description": "The sign-in card width on accounts.frame.io/welcome."
+      },
+      "login-field-height": {
+        "value": "40px",
+        "type": "dimension",
+        "source": "measured h of login-email default on the accounts sign-in surface (raw/components-computed.json)",
+        "description": "The sign-in e-mail field height."
+      },
+      "login-field-bg": {
+        "value": "#ffffff",
+        "type": "color",
+        "source": "computed backgroundColor of login-email default on the accounts sign-in surface (raw/components-computed.json)",
+        "description": "The sign-in e-mail field fill."
+      },
+      "login-submit-fill": {
+        "value": "#5b53ff",
+        "type": "color",
+        "source": "computed backgroundColor of login-submit default on the accounts sign-in surface (raw/components-computed.json)",
+        "description": "The 'Let's go' button fill (the accounts stack's cobalt)."
+      },
+      "login-submit-ink": {
+        "value": "#ffffff",
+        "type": "color",
+        "source": "computed color of login-submit default on the accounts sign-in surface (raw/components-computed.json)",
+        "description": "The 'Let's go' button text."
+      }
+    }
+  }
+}

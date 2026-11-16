@@ -699,9 +699,9 @@
     227
    ],
    "description": "#1 app for sleep and meditation",
-   "status": "pending",
-   "package": null,
-   "notes": "Partial capture saved on branch capture-calm (2026-11-12 run stopped before the builders); resume from it, raw page copies in ~/.design-systems/calm/.",
+   "status": "captured",
+   "package": "systems/calm",
+   "notes": "Captured 2026-11-16: marketing + dark app-shell + B2B + help center, signed out; /signup-flow gated by PerimeterX (recorded as boundary).",
    "batch": 3
   },
   {
@@ -759,9 +759,9 @@
     798
    ],
    "description": "EV routing and e-mobility software",
-   "status": "pending",
-   "package": null,
-   "notes": "Partial capture saved on branch capture-chargetrip (2026-11-12 run stopped before the builders); resume from it, raw page copies in ~/.design-systems/chargetrip/.",
+   "status": "captured",
+   "package": "systems/chargetrip",
+   "notes": "Captured signed out 2026-11-12 from the WIP branch (measurements complete then); screenshots and the derived pipeline finished 2026-11-16. Boundaries: account.chargetrip.io sign-in measured never submitted; developers/playground shells only; nothing booked or sent; Cookie Settings card hidden, never answered.",
    "batch": 3
   },
   {
@@ -1944,8 +1944,8 @@
     1142
    ],
    "description": "One platform for all your creative work",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/frame",
    "notes": "",
    "batch": 7
   },
