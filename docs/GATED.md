@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_116 of 174 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_117 of 175 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -640,6 +640,11 @@ Access: signed out (every captured surface is public; the app and every post-log
 Access: signed out (every captured surface is public; the signed-in Studio workbench - chart editor, saved dashboards, alerts, API keys, billing - is an authenticated boundary never reached; the newsletter, contact and Auth0 username fields were typed into then cleared, never submitted; every CTA, nav item and link was measured, never followed; the studio dark-theme layer is declared but has no public control, so dark.studio.* tokens are labelled declared-not-painted; the research, docs and registry theme controls are the sites' own toggles; the Auth0 landing URL's volatile ?state= is sanitized to origin+path in every sidecar)
 - the signed-in Studio workbench - chart editor, saved dashboards, alerts, API keys, billing and every post-login surface - sits behind an account; the Auth0 card was measured as a form, never submitted, and Continue with Google was never followed
 - submitted states: the newsletter, contact and Auth0 username fields were typed into then cleared - validation, error, loading and success states are absent rather than measured
+
+## [Grok / xAI Docs](../systems/grok) — `grok`
+Access: signed out (every captured surface is public docs.x.ai; grok.com's chat product never cleared the Cloudflare managed challenge and x.ai, console.x.ai, status.x.ai and accounts.x.ai returned Cloudflare 403 blocks from the capture host - blocked boundaries, never claimed as captures; nothing was signed into, typed, searched, sent, bought or submitted; the only presses were local UI toggles - theme button, Ctrl+K, sidebar chevrons, SDK tabs, the phone nav button)
+- x.ai, console.x.ai, status.x.ai and accounts.x.ai returned Cloudflare 403 'Sorry, you have been blocked' from the capture host - marketing, console, auth and status surfaces were never reached
+- dark-only declarations (--border, --input, --ring, --alert, --on-alert, --background-*, --content-*, --sb-*) exist in the dark token set alone and were never inferred for light
 
 ## [Front](../systems/front) — `front`
 Access: signed out (every captured surface is public; the workspace and every post-login surface is an authenticated boundary never reached; the demo, signup, auth and search fields were measured and typed into then cleared, never submitted; every CTA, SSO button, nav item and link was measured, never followed; the Qualified 'Quinn' widget was measured at rest, never opened; the app dark theme is the shell's own front-theme-preference mechanism, verified painted as html[data-theme=dark]; the marketing violet/light/gray sets are section themes, not a page-level switch)

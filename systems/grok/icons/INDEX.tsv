@@ -1,0 +1,92 @@
+file	inferred_name	hash	sizes	viewBox	style	seen_on	place	text_or_label
+spacexsi-docs-home.svg	spacexsi-docs-home	9aee796a	39x16 49x20	0 7.4 24 9.2	fill	home; quickstart; models; pricing; generate-text; api-reference; release-notes; cookbook; faq; grok; grok-faq; grok-guide; grok-bot; build; x-subscription; search dialog; header; nav; dark	a; div	SpaceXSI Docs home
+open-api-sections-431f249f.svg	open-api-sections	431f249f	12x12 16x16	0 0 16 16	stroke	home; quickstart; models; pricing; generate-text; api-reference; release-notes; cookbook; faq; grok; grok-faq; grok-guide; grok-bot; build; x-subscription; search dialog; header; dark	button	Open API sections / More links
+search-k.svg	search-k	4e0d4e26	16x16	0 0 24 24	fill	home; quickstart; models; pricing; generate-text; api-reference; release-notes; cookbook; faq; grok; grok-faq; grok-guide; grok-bot; build; x-subscription; search dialog; header; dark	button	Search ⌘ K
+copy-code.svg	copy-code	4f8141e5	16x16	0 0 24 24	fill	home; quickstart; models; pricing; generate-text; api-reference; release-notes; faq; grok; grok-faq; grok-guide; grok-bot; build; x-subscription; search dialog; header; nav; dark	button	Copy code / Copy for LLM
+switch-to-dark-theme.svg	switch-to-dark-theme	c5b9f96f	16x16	0 0 24 24	fill	home; quickstart; models; pricing; generate-text; api-reference; release-notes; cookbook; faq; grok; grok-faq; grok-guide; grok-bot; build; x-subscription; search dialog; header; dark	button	Switch to dark theme / Switch to light theme
+agentic-coding.svg	agentic-coding	e3717e7f	16x16	0 0 24 24	stroke	home; quickstart; models; pricing; generate-text; api-reference; release-notes; faq; grok; grok-faq; grok-guide; grok-bot; build; x-subscription; search dialog; header; nav; dark	li; button; div	Agentic coding / IDE & tool integrations / Powers Grok Build
+configurable.svg	configurable	12063041	12x12 14x14 16x16	0 0 24 24	stroke	home; quickstart; models; pricing; generate-text; api-reference; release-notes; faq; grok; grok-faq; grok-guide; search dialog; header; nav; dark	a	Configurable / Create an API key / Purchase credits
+view-as-markdown.svg	view-as-markdown	41be18e0	16x16	0 0 24 24	fill	quickstart; models; pricing; generate-text; api-reference; release-notes; faq; grok; grok-faq; grok-guide; grok-bot; build; x-subscription	a	View as Markdown
+speech-to-speech.svg	speech-to-speech	7f091250	12x12	0 0 24 24	stroke	home; quickstart; models; pricing; generate-text; api-reference; release-notes; cookbook; faq; search dialog; header; nav; dark	button [&_[data-slot=icon]]:size-4	Speech to Speech / Generated Media / In Depth
+share-feedback.svg	share-feedback	e8914eb3	16x16	0 0 24 24	fill	quickstart; models; pricing; generate-text; api-reference; release-notes; faq; grok; grok-faq; grok-guide; grok-bot; build; x-subscription	button	Share feedback
+create-api-key.svg	create-api-key	b5fe75be	16x16	0 0 24 24	stroke	home; quickstart; models; pricing; generate-text; api-reference; release-notes; faq; search dialog; header; nav; dark	a	Create API key
+icon-d0acd0c8.svg	icon-d0acd0c8	d0acd0c8	16x16	0 0 24 24	stroke	quickstart; models; pricing; generate-text; release-notes; faq; grok; grok-faq; grok-guide; grok-bot; build; x-subscription	a	
+python.svg	python	b84c814d	16x16	0 0 24 24	fill	home; quickstart; generate-text; build; search dialog; header; nav; dark	button	Python
+javascript.svg	javascript	dc58513d	16x16	0 0 24 24	fill	home; quickstart; generate-text; build; search dialog; header; nav; dark	button	JavaScript
+copy-model-slug-grok-4-7.svg	copy-model-slug-grok-4-7	012aa5c1	12x24	0 0 15 15	fill	home; models; search dialog; header; nav; dark	span	Copy model slug grok-4.7
+image-video-api.svg	image-video-api	3d9c8b31	24x24	0 0 24 24	fill	home; models; search dialog; header; nav; dark	div	Image & Video API
+voice-api.svg	voice-api	3f5bf306	24x24	0 0 24 24	stroke	home; models; search dialog; header; nav; dark	div	Voice API
+2-00-1m-input-tokens.svg	2-00-1m-input-tokens	f610e385	16x16	0 0 24 24	stroke	home; search dialog; header; nav; dark	li	$2.00 / 1M input tokens / $6.00 / 1M output tokens
+icon-eee355e2.svg	icon-eee355e2	eee355e2	14x14	0 0 24 24	fill	models; pricing; generate-text; grok-guide	div; button; p	All tool names work in the Responses API
+icon-724f2cc9.svg	icon-724f2cc9	724f2cc9	12x12	0 0 24 24	stroke	quickstart; cookbook	a	Code Agentic coding with grok-4.7 on the / Chat Multi-turn conversations, reasoning / Images Generate, edit, and understand im
+bots-learn-quickly.svg	bots-learn-quickly	066c7c1a	27x27	0 0 100 100	fill	grok-bot	button differentiators__bot	Bots learn quickly
+agent-settings.svg	agent-settings	0dfaca36	15x15	0 0 300 300	fill	grok-bot	button	Agent settings
+close-navigation-menu.svg	close-navigation-menu	0fad39f7	20x20	0 0 24 24	stroke	nav	button	Close navigation menu
+icon-17824975.svg	icon-17824975	17824975	20x20	0 0 24 24	fill	cookbook	a	TypeScript · Advanced Meeting to Action 
+icon-178bf7f6.svg	icon-178bf7f6	178bf7f6	20x20	0 0 24 24	fill	cookbook	a	TypeScript · Intermediate Prompt Injecti
+bots-remember-you.svg	bots-remember-you	190f4871	27x27	0 0 100 100	fill	grok-bot	button differentiators__bot	Bots remember you
+mark-1b0fb979.svg	mark	1b0fb979	48x48	0 0 100 100	fill	grok-bot	a marketplace-row__mark; a	Pitch Deck Coach Reviews a pitch deck an
+sign-ups.svg	sign-ups	1c39b21b	36x36	0 0 100 100	fill	grok-bot	button	Sign-ups
+bot.svg	bot	1dde5d70	27x27	0 0 100 100	fill	grok-bot	button differentiators__bot	Talk to it like a teammate
+close-computer.svg	close-computer	1de19dda	14x14	0 0 300 300	fill	grok-bot	button	Close computer
+icon-21686ad4.svg	icon-21686ad4	21686ad4	36x36	0 0 100 100	fill	grok-bot	button	Fact check, Unread activity
+attach-docs-pages.svg	attach-docs-pages	270363f1	14x14	0 0 24 24	fill	grok-bot	button	Attach docs pages
+icon-2724ca19.svg	icon-2724ca19	2724ca19	20x20	0 0 24 24	fill	cookbook	a	TypeScript · Intermediate Prompt Caching
+icon-2743e385.svg	icon-2743e385	2743e385	20x20	0 0 24 24	fill	cookbook	a	TypeScript · Beginner Screenshot to Reac
+icon-29866ab6.svg	icon-29866ab6	29866ab6	20x20	0 0 24 24	fill	cookbook	a	TypeScript · Advanced WebRTC Voice Agent
+icon-33f8fb69.svg	icon-33f8fb69	33f8fb69	20x20	0 0 24 24	fill	cookbook	a	TypeScript · Python · Intermediate Web V
+bots-hand-off-work.svg	bots-hand-off-work	34af3f2a	28x28	0 0 100 100	fill	grok-bot	button differentiators__bot	Bots hand off work
+icon-3841b800.svg	icon-3841b800	3841b800	20x20	0 0 24 24	fill	cookbook	a	TypeScript · Intermediate Receipts to Sp
+icon-3ba1f80b.svg	icon-3ba1f80b	3ba1f80b	20x20	0 0 24 24	fill	cookbook	a	TypeScript · Intermediate CSV to Answers
+mark-3de7b627.svg	mark	3de7b627	48x48	0 0 100 100	fill	grok-bot	a marketplace-row__mark	Tradbot Watches your personal email and 
+icon-4326270e.svg	icon-4326270e	4326270e	20x20	0 0 24 24	fill	cookbook	a	TypeScript · Beginner Photo to Talking C
+icon-479032ec.svg	icon-479032ec	479032ec	20x20	0 0 24 24	fill	cookbook	a	TypeScript · Intermediate Docs to Cited 
+chief-of-staff-main-bot.svg	chief-of-staff-main-bot	4854f36c	24x24 36x36 40x40	0 0 100 100	fill	grok-bot	button; li	Chief of Staff, Main Bot / Your primary Bot Ask your main Bot what' / A team runs the campaign Several Bots sp
+voice-message.svg	voice-message	4dd7767e	14x14	0 0 300 300	fill	grok-bot	button baby-grok-bot-composer-send__mic	Voice message
+icon-4e1b62a1.svg	icon-4e1b62a1	4e1b62a1	20x20	0 0 24 24	fill	cookbook	a	TypeScript · Intermediate Database over 
+icon-52340591.svg	icon-52340591	52340591	20x20	0 0 24 24	fill	cookbook	a	TypeScript · Intermediate Reasoning Effo
+pause-carousel.svg	pause-carousel	58b9b5ad	14x14	0 0 24 24	fill	grok-bot	button	Pause carousel
+launch-drafts.svg	launch-drafts	5c80744a	36x36	0 0 100 100	fill	grok-bot	button	Launch drafts
+search.svg	search	5e49b6e0	14x14	0 0 300 300	fill	grok-bot	button	Search
+gmail.svg	gmail	61ebf72c	12x12 16x16 40x40	0.53 0.53 190.94 190.94	fill	grok-bot	button plugin-row__mono; button plugin-row__tint; button	Gmail / Gmail, connected / checks inbox
+expenses.svg	expenses	6eba0625	36x36	0 0 100 100	fill	grok-bot	button	Expenses
+icon-70d5cda1.svg	icon-70d5cda1	70d5cda1	20x20	0 0 24 24	fill	cookbook	a	TypeScript · Intermediate Storyboard to 
+bots-share-a-computer.svg	bots-share-a-computer	7e72ce77	27x27	0 0 100 100	fill	grok-bot	button differentiators__bot	Bots share a computer
+icon-82496c18.svg	icon-82496c18	82496c18	20x20	0 0 24 24	fill	cookbook	a	TypeScript · Intermediate Company to Cal
+inbox.svg	inbox	899d7ed0	24x24 36x36	0 0 100 100	fill	grok-bot	button; li	Inbox / Connect your tools Connect the apps you 
+icon-89e9bf2d.svg	icon-89e9bf2d	89e9bf2d	14x14	0 0 24 24	fill	grok-guide	div	
+search-docs.svg	search-docs	8b1a37f9	16x16	0 0 24 24	fill	nav	button	Search docs
+works-where-you-are.svg	works-where-you-are	91562d04	27x27	0 0 100 100	fill	grok-bot	button differentiators__bot	Works where you are
+icon-999556fd.svg	icon-999556fd	999556fd	14x14	0 0 24 24	fill	faq	div	
+icon-a10955a1.svg	icon-a10955a1	a10955a1	16x16	0 0 24 24	fill	cookbook	div	
+icon-a2a79be5.svg	icon-a2a79be5	a2a79be5	20x20	0 0 24 24	fill	cookbook	a	TypeScript · Beginner Podcast from a Lin
+icon-a2cc9f92.svg	icon-a2cc9f92	a2cc9f92	20x20	0 0 24 24	fill	cookbook	a	TypeScript · Intermediate Topics to Morn
+leads-unread-activity.svg	leads-unread-activity	a3c64279	24x24 36x36	0 0 100 100	fill	grok-bot	button; li	Leads, Unread activity / Leads / Give a Bot a job Hand a Bot one clear jo
+icon-a823dc70.svg	icon-a823dc70	a823dc70	16x16	0 0 24 24	fill	search dialog	div	Ask Grok anything Get an instant answer 
+send-message.svg	send-message	a8f53ee6	16x16	0 0 24 24	fill	grok-bot	button	Send message
+icon-a9683419.svg	icon-a9683419	a9683419	20x20	0 0 24 24	fill	cookbook	a	TypeScript · Intermediate Product Photo 
+icon-ab83386c.svg	icon-ab83386c	ab83386c	20x20	0 0 24 24	fill	cookbook	a	TypeScript · Intermediate 𝕏 Sentiment T
+icon-acf23a82.svg	icon-acf23a82	acf23a82	20x20	0 0 24 24	fill	cookbook	a	TypeScript · Intermediate Photo to Time-
+new-bot.svg	new-bot	acf8fcd0	14x14	0 0 300 300	fill	grok-bot	button; li	New Bot / Your primary Bot Ask your main Bot what' / A team runs the campaign Several Bots sp
+grok-bot-for-teams.svg	grok-bot-for-teams	af731c5e	12x12	0 0 24 24	fill	grok-bot	a; a differentiators__link	Grok Bot for teams / Browse all apps / Bots hand off work
+icon-b0fa2997.svg	icon-b0fa2997	b0fa2997	20x20	0 0 24 24	fill	cookbook	a	TypeScript · Intermediate Reviews to The
+google-calendar.svg	google-calendar	b3880214	12x12 16x16 40x40	7.03 1.03 177.94 177.94	fill	grok-bot	button plugin-row__mono; button plugin-row__tint; button	Google Calendar / Google Calendar, connected / checks calendar
+granola.svg	granola	bd388ca5	12x12 40x40	-1.266 -1.266 34.531 34.531	fill	grok-bot	button plugin-row__mono; button plugin-row__tint; button	Granola / Granola, not connected
+icon-bddbcc19.svg	icon-bddbcc19	bddbcc19	20x20	0 0 24 24	fill	cookbook	a	TypeScript · Intermediate 𝕏 Post to Fac
+notion.svg	notion	bfb43550	12x12 40x40	-21.74 -14.56 378.47 378.47	fill	grok-bot	button plugin-row__mono; button plugin-row__tint; button	Notion / Notion, not connected
+open-api-sections-c6ea8231.svg	open-api-sections	c6ea8231	12x12	0 0 16 16	stroke	header	button	Open API sections
+mark-cf664d23.svg	mark	cf664d23	48x48	0 0 100 100	fill	grok-bot	a marketplace-row__mark	Overheard Watches Reddit, Hacker News, n
+icon-d1f57712.svg	icon-d1f57712	d1f57712	20x20	0 0 24 24	fill	cookbook	a	TypeScript · Advanced Bug Report to Fix 
+mark-d58c5b44.svg	mark	d58c5b44	48x48	0 0 100 100	fill	grok-bot	a marketplace-row__mark; a	Meeting Recap Deck Turns your meeting no
+icon-da5d3e73.svg	icon-da5d3e73	da5d3e73	20x20	0 0 24 24	fill	cookbook	a	TypeScript · Advanced Video Dubbing Dub 
+icon-e2d205c4.svg	icon-e2d205c4	e2d205c4	20x20	0 0 24 24	fill	cookbook	a	TypeScript · Beginner Article to Read-Al
+icon-e81a461c.svg	icon-e81a461c	e81a461c	14x14	0 0 24 24	fill	grok-faq	div	
+grok-bot.svg	grok-bot	e84f57eb	24x24 36x36 40x40 64x64	0 0 100 100	fill	grok-bot	button; li	Grok Bot / Morning briefing Each morning, one Bot s / Dispatch
+google-drive.svg	google-drive	f20b9720	12x12 40x40	5.81 4.88 180.38 180.38	fill	grok-bot	button plugin-row__mono; button plugin-row__tint; button	Google Drive / Google Drive, connected
+icon-f29ebf47.svg	icon-f29ebf47	f29ebf47	20x20	0 0 24 24	fill	cookbook	a	Swift · Kotlin · Intermediate Mobile Voi
+icon-f2b0decc.svg	icon-f2b0decc	f2b0decc	20x20	0 0 24 24	fill	cookbook	a	TypeScript · Beginner Live Interpreter S
+slack.svg	slack	f59e4f5d	12x12 16x16 40x40	-2.246 -2.298 58.386 58.386	fill	grok-bot	button plugin-row__mono; button plugin-row__tint; button	Slack / Slack, connected / posts to #design
+icon-f8c29f52.svg	icon-f8c29f52	f8c29f52	20x20	0 0 24 24	fill	cookbook	a	TypeScript · Intermediate Phone Voice Ag
+icon-fd11eecd.svg	icon-fd11eecd	fd11eecd	16x24	0 0 24 24	stroke	search dialog	span	
+icon-fd4cbba4.svg	icon-fd4cbba4	fd4cbba4	20x20	0 0 24 24	fill	cookbook	a	TypeScript · Advanced Refund Agent with 
+chevron.svg	chevron	fd6e7668	12x12	0 0 300 300	fill	grok-bot	li gbm-island__chevron	Your primary Bot Ask your main Bot what' / Morning briefing Each morning, one Bot s / Use the computer and apps Your Bots shar

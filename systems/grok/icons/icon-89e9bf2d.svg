@@ -1,0 +1,8 @@
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" data-slot="icon">
+<circle cx="12" cy="12" r="9" stroke="currentColor">
+</circle>
+<circle cx="12" cy="15.4" r="1.2" fill="currentColor" stroke="none">
+</circle>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M12.395 7.5C12.9866 7.5 13.4489 8.01082 13.39 8.5995L13 12.5H11L10.61 8.5995C10.5511 8.01082 11.0134 7.5 11.605 7.5H12.395Z" fill="currentColor" stroke="none">
+</path>
+</svg>
