@@ -78,7 +78,7 @@ export async function createResearchStore(directory: string) {
     const version = Number(
       (await tx.execute("PRAGMA user_version")).rows[0].user_version,
     );
-    if (version > 17)
+    if (version > 19)
       throw new Error("Research database was created by a newer application.");
     if (version === 0) {
       for (const sql of migrations) await tx.execute(sql);
@@ -252,6 +252,26 @@ export async function createResearchStore(directory: string) {
       await seedNewCuratedCategories(tx, new Set(["systems:clay-earth"]));
       await seedNewCuratedMediaTerms(tx, new Set(["systems:clay-earth"]));
       await tx.execute("PRAGMA user_version = 17");
+    }
+    if (version < 18) {
+      // Same one-shot top-up, scoped to this batch's new reference: a store
+      // already at v17 never re-seeds, so the GoFundMe rows would never
+      // arrive. Scoping keeps cleared labels on older packages cleared — an
+      // empty assignment reads as "never labelled", so an unscoped pass
+      // would restore rows the user deleted.
+      await seedNewCuratedCategories(tx, new Set(["systems:gofundme"]));
+      await seedNewCuratedMediaTerms(tx, new Set(["systems:gofundme"]));
+      await tx.execute("PRAGMA user_version = 18");
+    }
+    if (version < 19) {
+      // Same one-shot top-up, scoped to this batch's new reference: a store
+      // already at v18 never re-seeds, so the Grammarly rows would never
+      // arrive. Scoping keeps cleared labels on older packages cleared — an
+      // empty assignment reads as "never labelled", so an unscoped pass
+      // would restore rows the user deleted.
+      await seedNewCuratedCategories(tx, new Set(["systems:grammarly"]));
+      await seedNewCuratedMediaTerms(tx, new Set(["systems:grammarly"]));
+      await tx.execute("PRAGMA user_version = 19");
     }
     await tx.commit();
   } catch (error) {

@@ -1,7 +1,7 @@
 {
  "date": "2026-11-17",
  "rubric": "4",
- "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): merge review (post design-md regen)",
+ "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): Greptile fix: db migration + inverse-fill guidance correction",
  "systems": [
   {
    "slug": "1password",
@@ -20863,103 +20863,103 @@
    "reviewedPlatform": "web"
   },
   {
-   "slug": "grammarly",
+   "slug": "gofundme",
    "grades": {
     "F1": {
-     "grade": "meets",
-     "evidence": "Two full ramp families on :root: the legacy GDS ramps (blue, blue-gray, gold, green, magenta, neutral-gray, purple, red, teal, yellow-green; ~8-10 steps each incl. neutral) and the Origin ramps (blue, gold, green, mulberry, neutral, orange, purple, red, teal, yellow, space). tokens.json core.palette.{gds,*}."
+     "grade": "partly",
+     "evidence": "No numeric ~10-step per-hue ramp exists in the shipped layer: the --hrt-color-* set is purely semantic. Each hue family instead carries role steps — color.surface.accent.blue/pink/purple/yellow (39 tokens), brand medium/strong/default, neutral default/subtle/strong, per-status surface/text/icon/border variants — resolved live from 618 declared vars."
     },
     "F2": {
-     "grade": "partly",
-     "evidence": "Page and surface roles are declared (color.background.base.default/subdued/inverse plus brand, interactive, neutral and the status fills; origin.* mirrors them). No raised/overlay/scrim role is published — the sign-in page's dim is a modal implementation detail, not a token. tokens.json light.color.background.*."
+     "grade": "meets",
+     "evidence": "color.surface.default/raised/on.overlay/overlay plus per-status surfaces; measured surface roles (page, promoFill #ccf88e, cardBg, menuPanel, footerBg) sit beside them in light.measured.color.*."
     },
     "F3": {
-     "grade": "partly",
-     "evidence": "Primary (text.base.default), secondary (text.base.subdued), inverse and brand/on-accent roles are declared and painted; no disabled text or distinct link colour is published — nav and footer links are plain ink, and no disabled control is reachable signed out. tokens.json light.color.text.*."
+     "grade": "meets",
+     "evidence": "color.text.default/headings (primary), supporting/neutral.strong (secondary), disabled.* (3 tokens), brand.on.strong + on.overlay text (on-accent), and text.brand.* (#4a9d44 link green with hover/active/pressed states) — every rubric role covered."
     },
     "F4": {
      "grade": "meets",
-     "evidence": "Default and subdued hairlines (border.base.default/subdued), inverse, brand and interactive borders, a declared focus border (border.focus.default #027e6f) measured as the 2px ring on 20 components, plus status borders. tokens.json light.color.border.*."
+     "evidence": "51 color.border.* tokens: default/strong/subtle per neutral+brand+status family, border.focused (the 1px #101010 ring measured on 26 components), border.disabled.*."
     },
     "F5": {
      "grade": "meets",
-     "evidence": "Every --button-* role declares default/hover/active (primary green deepens, secondary fills, ghost text darkens) and the measured state rows match. tokens.json light.button.*; components.md."
+     "evidence": "color.button.primary.surface default #274a34 / hover #2d6339 / pressed declared, plus the .strong variant #ccf88e/#e9fcce; hover and CDP-forced pressed measured on hero-cta, f-donate, create-continue and wp-button."
     },
     "F6": {
      "grade": "meets",
-     "evidence": "Full background/border/text/icon trios for success, warning and critical (danger) plus the suggestion-category palettes (correctness, clarity, engagement, delivery, addition, deletion, plagiarism) and the tag.* fills. tokens.json light.color.*; style-guide.html."
+     "evidence": "positive (success), negative (danger), warning and informative sets each carry surface/medium/subtle fills, text.default/strong, icon and border variants — all four rubric statuses with fill, text and border."
     },
     "F7": {
      "grade": "meets",
-     "evidence": "The product ships one painted theme on every public surface (light; no switch, prefers-color-scheme does not repaint). The declared dark set mirrors the same colour/origin/button/tag roles — parity in the declarations — but is never painted; labelled declared evidence, not a second shipped theme."
+     "evidence": "One theme paints: the consumer light ($themes declares only light). The [data-theme=\"pro\"] layer is declared-only evidence kept in raw/css-vars.json, documented as never painting the captured surface — not a shipped theme variant."
     },
     "F8": {
      "grade": "meets",
-     "evidence": "Matter (display) and Inter (text) with full fallback stacks plus Super Sans Mono VF/Super Serif VF in the Origin stacks; named roles heading-xxsmall..xlarge and text-xsmall..large carry size, weight, line-height and letter-spacing. tokens.json core.typography, core.fontFamily."
+     "evidence": "font.family.family.default (GoFundMe Sans) + .mono with fallbacks, 9 font sizes, 9 line heights, 5 weights, tracking; composite roles type.display (9), type.heading (17), type.body (13), type.legend; measured sizes in core.font.size.measured.*."
     },
     "F9": {
      "grade": "meets",
-     "evidence": "33 spacing tokens plus the origin-size scale on a 4px base; measured paddings and gaps conform. tokens.json core.spacing, core.size."
+     "evidence": "Declared --hrt-spacing-* emitted as core.size.spacing (18 steps) plus spacing.button and spacing.split-button padding sets; measured gaps in spacing.measured.*."
     },
     "F10": {
-     "grade": "meets",
-     "evidence": "Two declared radius scales (core.radius 21 steps on the Origin axis, radiusGds 11 on the GDS scale; GDS-skinned controls measure a 6px corner) and per-component border widths in components.md."
+     "grade": "partly",
+     "evidence": "core.radius.container (10 named steps xs..round), radius.measured.* per component; no border-width token set — the 1px rules appear only inside component entries."
     },
     "F11": {
-     "grade": "partly",
-     "evidence": "Control heights measured per component (24-60px across five stops), icon sizes in the component readings, and the focus ring measured (2px, 1-3px offset). No declared control-size ladder beyond the origin-size scale and no declared ring-width token (only component.focus.color). raw/components-computed.json."
+     "grade": "meets",
+     "evidence": "size.button.* control heights, size.width/screen/max scales, componentVars.asset icon sizes, and the measured 1px focus ring at 0-2px offset recorded per component in components.md."
     },
     "F12": {
-     "grade": "meets",
-     "evidence": "Origin elevation low/medium/high plus the legacy GDS shadow+outline pairs; the low pair rides the sticky header and dropdowns. tokens.json core.elevation; style-guide.html."
+     "grade": "partly",
+     "evidence": "Three declared levels — shadow.soft, shadow.medium.default/.strong, shadow.strong — plus shadow.measured.menuPanel on the dropdown; uses tie to toast/popover/dropdown rules, but the surface paints mostly flat."
     },
     "F13": {
      "grade": "meets",
-     "evidence": "Durations (100-300ms) and easings declared, the measured motion group holds the real transitions/animations from five pages, and the reduced-motion verdict (partial) is recorded. tokens.json core.motion; raw/motion.json."
+     "evidence": "26 durations + 15 easings + 35 transition recipes + 2 animations from --hrt-motion-*; raw/motion.json records a real prefers-reduced-motion probe — 62 transitions removed, behaviour 'partial', documented."
     },
     "F14": {
      "grade": "meets",
-     "evidence": "Five breakpoints from the media rules, header 65px and container readings, per-page grid readings at 1440/1920/1024/390 in raw/layout.json, and the z-index ladder. tokens.json core.breakpoint, core.layout, core.zIndex."
+     "evidence": "size.screen.* 7 breakpoints, size.width.* 7 content widths, size.max, 14 zIndex layers, and the 36-column hrt-row/hrt-col grid declarations harvested in raw/css-vars.json."
     },
     "C1": {
      "grade": "partly",
-     "evidence": "13 of 19 captured: button, icon button (info-icon-button), link, text field, text area (checker editor), select, tabs, menu (nav flyout), dialog (sign-in card), card, badge (sticker tag), list row (FAQ item), table (Compare Plans rows). Not published signed out: checkbox, radio, switch, tooltip, toast, avatar — all live inside app.grammarly.com. components.md."
+     "evidence": "About 11 of 19 checklist components on the signed-out surface: button (hero-cta/f-donate/wp-button/create-continue), icon button (m-menu-btn/f-media-nav), link, text field (signin-email/create-zip), select (create-country/wp-locale), radio pill (create-pill), menu (header dropdowns + mobile drawer), card (fundraiser-card/s-card), avatar, badge (media tag). text area, switch, tabs, tooltip, dialog, toast, table, list row never appear signed-out — toast/dialog exist in the sheets only."
     },
     "C2": {
-     "grade": "partly",
-     "evidence": "Captured through the UI: hover, focus-visible, focused/filled, selected (tab), open (flyout, mobile sheet); pressed forced via forcePseudoState (labelled). disabled/loading/error are not published on signed-out pages — declared in Gaps, not fabricated. components.md."
+     "grade": "meets",
+     "evidence": "default/hover/focus-visible/CDP-forced pressed on every control, focused+filled on the email/postcode fields, opened on the menu button and header dropdowns; disabled/loading/error states never appear on the public surface."
     },
     "C3": {
      "grade": "meets",
-     "evidence": "27 components took a real keyboard focus; 20 paint a 2px #027e6f ring at 1-3px offset — the site's consistent affordance. components.md Shared values."
+     "evidence": "26 of 27 keyboard-focused components draw a visible 1px #101010 outline ring (m-* controls draw the #e59700 ring); create-country is documented as drawing none — recorded in components.md's Focus note."
     },
     "C4": {
-     "grade": "partly",
-     "evidence": "Component entries name the palette token behind every measured colour (#027e6f `green.60`) but geometry, paddings and type are raw px — the semantic tokens do not map component-level dimensions. components.md."
+     "grade": "meets",
+     "evidence": "Component entries pair every colour with its tokens.json path (family-ranked so fills cite surface/button roles, not coincidental border twins); geometry cites measured tokens."
     },
     "P1": {
      "grade": "partly",
-     "evidence": "patterns.md covers the app shell and flyout nav, marketing heroes and cards, the plans grid, the checker tool, the sales form and sign-in, plus focus and motion. Not published signed out: validation errors, empty/loading/error, destructive confirmation, feedback, search, onboarding — all behind app.grammarly.com; gap declared."
+     "evidence": "patterns.md covers the chrome suite (promo + sticky header + mega-dropdowns), the hero, discover/search card rails with filtering, the fundraiser page, the wizard + auth boundaries and the WordPress content stack — shell, search/filtering, data display and form edges of the rubric set; destructive confirmation, feedback, empty/error and true forms/validation do not exist on the signed-out surface."
     },
     "A1": {
-     "grade": "meets",
-     "evidence": "38 inline SVGs indexed by role in icons/INDEX.tsv with currentColor preserved; Matter, Inter and the Super faces named with their fallbacks. icons/, README Fonts."
+     "grade": "partly",
+     "evidence": "Fonts named (GoFundMe Sans self-hosted + GoFundMe Sans Mono, fallbacks recorded) but no icon set was lifted — the declared layoutGap; glyphs visible only in crops and screenshots."
     },
     "K1": {
      "grade": "meets",
-     "evidence": "The README names every captured route, the signed-out method, the declared-only dark set, the typed-and-deleted field states and a What-to-distrust list including the 0x0 copy-button slot, the overlay-rendered suggestion cards and lazy-mounted sections. systems/grammarly/README.md."
+     "evidence": "README records scope, the capture method (Playwright/Chromium, signed out, two widths), the consent-overlay handling, the dual hrt/WordPress stacks, per-file provenance conventions and a distrust list including sign-in hydration variability and zero-size gaps."
     },
     "F15": {
-     "grade": "partly",
-     "evidence": "Script: all 4 checked pairs pass; lowest 4.54:1 light muted (light.color.text.base.subdued) on surface (light.color.background.base.subdued); dark (declared) not checked (no palette)"
+     "grade": "meets",
+     "evidence": "Script: all 4 pairs pass 4.5:1 across 1 themes; lowest 4.60:1 light muted (light.color.text.supporting.default) on surface (light.color.surface.neutral.subtle.default)"
     },
     "F16": {
      "grade": "meets",
-     "evidence": "Script: 1485 of 1485 tokens name their source"
+     "evidence": "Script: 767 of 767 tokens name their source"
     },
     "K2": {
-     "grade": "meets",
-     "evidence": "Script: 10 rules, each linking a screenshot or crop"
+     "grade": "partly",
+     "evidence": "Script: 7 rules, 6 linking an image (needs 3+, all linked)"
     },
     "K3": {
      "grade": "meets",
@@ -20978,20 +20978,19 @@
      "evidence": "Optional for a capture, and this product does not publish it."
     }
    },
-   "name": "Grammarly",
-   "goodFor": "AI writing assistant marketing site: Matter/Inter type, GDS + Origin token layers, three-column plans, free grammar checker tool, light only",
-   "url": "https://www.grammarly.com",
-   "captured": "2026-11-16",
+   "name": "GoFundMe",
+   "goodFor": "crowdfunding/fundraising design: a real shipped token layer - ~700 semantic --hrt-* custom properties on :root (brand greens #4A9D44/#274A34/#CCF88E, neutral ramps, blue/pink/purple/yellow accents, size/spacing/radius/type/motion/z-index scales) - white chrome with a #CCF88E promo banner, header mega-dropdowns (Donate/Fundraise/About), the centred hero with a dark-green 'Start a GoFundMe' pill, discover/search fundraiser cards with media tags and progress bars, a public /f/<slug> fundraiser page (raised line, progress meter, Donate now/Share/Message), the /create wizard at rest and the /sign-in auth boundary - plus the separate /c/* WordPress content stack measured as a second public system",
+   "url": "https://www.gofundme.com",
+   "captured": "2026-11-17",
    "themes": [
-    "light",
-    "dark (declared)"
+    "light"
    ],
    "platform": "web",
-   "category": "Productivity",
+   "category": "E-commerce",
    "reviewed": "2026-11-17",
    "reviewedPlatform": "web"
   }
  ],
  "base": "2026-10-16",
- "reviewMethod": "merge review (post design-md regen)"
+ "reviewMethod": "Greptile fix: db migration + inverse-fill guidance correction"
 }
