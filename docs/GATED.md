@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_103 of 161 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_104 of 162 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -581,6 +581,13 @@ Access: signed out (every captured surface is public; the dashboard, editor, CMS
 - the community/marketplace stack's own stylesheet layer was not separately harvested - its values are measured component tokens, not declared variables; the mkt-logo crop and a full-size nav-panel measurement are recorded missing/weak rather than inferred (the measured login-panel is the full 1440px shell, not a bounded card)
 - prefers-reduced-motion is only partially honoured on the homepage and ignored on pricing, the gallery and login - recorded per page in raw/motion.json
 - no light marketing theme or theme switcher was observed; the only light surface is the /login auth shell
+
+## [Fresha](../systems/fresha) — `fresha`
+Access: read-only (every captured surface is public: the consumer marketplace, the /user-flow and /auth sign-in shells, the partners.fresha.com professional sign-in, a public venue profile, the booking wizard at the service-selection boundary, /pricing and /for-business marketing, the legacy /lp category and browse pages, /help-center, /careers, /blog, /download-app and /cookies; every post-login surface - the customer account and the whole partner app (calendar, sales, clients, marketing) - is an authenticated boundary never reached; the sign-in fields were measured and typed into then cleared, never submitted; the booking Continue button was never pressed and no payment step was reached; no search, booking, OAuth, SSO or consent action was performed)
+- every post-login surface (the customer account and the whole partner app: calendar, sales, clients, marketing, billing) needs an account - an authenticated boundary never reached
+- the /auth and partner sign-in forms were measured and typed into then cleared, never submitted - validation, error, loading, success and verification-code states are absent rather than measured; no OAuth, SSO or passkey flow was started
+- the booking wizard stops at service selection: Continue was never pressed, so staff, time-slot, payment and confirmation steps are absent
+- venue content (staff, reviews, hours, prices) is that venue's published data, not a canonical template
 
 ## Gate noted in access text only
 

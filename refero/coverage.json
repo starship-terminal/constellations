@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 161,
-    "system_domains": 153,
-    "matched_domains": 124,
-    "missing_domains": 309,
+    "system_packages": 162,
+    "system_domains": 154,
+    "matched_domains": 125,
+    "missing_domains": 308,
     "system_domains_absent_from_catalog": 29
   },
   "matched": {
@@ -1953,6 +1953,23 @@
         }
       ]
     },
+    "fresha.com": {
+      "catalog": [
+        {
+          "name": "Fresha",
+          "domain": "fresha.com",
+          "id": 561
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "fresha",
+          "name": "Fresha",
+          "url": "https://www.fresha.com",
+          "name_match": true
+        }
+      ]
+    },
     "getfernand.com": {
       "catalog": [
         {
@@ -2348,13 +2365,6 @@
         "name": "Frame.io",
         "domain": "frame.io",
         "id": 1142
-      }
-    ],
-    "fresha.com": [
-      {
-        "name": "Fresha",
-        "domain": "fresha.com",
-        "id": 561
       }
     ],
     "front.com": [

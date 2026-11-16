@@ -964,5 +964,11 @@
     "groupId": "web-categories",
     "labels": ["Health & Wellness"],
     "reason": "catalog.json describes the Calm sleep-and-meditation app: the marketing pages, a dark signed-out /app/* preview shell, a login card and the health.calm.com B2B surface; the product past login is gated."
+  },
+  {
+    "referenceId": "systems:fresha",
+    "groupId": "web-categories",
+    "labels": ["Marketplace", "Scheduling Tools", "Health & Wellness"],
+    "reason": "catalog.json describes a beauty and wellness booking marketplace: a consumer browse-and-book flow, venue profiles, a booking wizard boundary, business scheduling software marketing and the partner sign-in."
   }
 ]

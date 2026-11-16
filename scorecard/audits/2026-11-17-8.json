@@ -1,7 +1,7 @@
 {
  "date": "2026-11-17",
  "rubric": "4",
- "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): post-merge Greptile fix-forward review",
+ "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): post-Greptile-fix merge review",
  "systems": [
   {
    "slug": "1password",
@@ -20217,8 +20217,137 @@
    "category": "Productivity",
    "reviewed": "2026-11-17",
    "reviewedPlatform": "web"
+  },
+  {
+   "slug": "fresha",
+   "grades": {
+    "F1": {
+     "grade": "partly",
+     "evidence": "The hued palettes are partial, not ~10-step ramps: colors.custom.* carries 4 slots per hue (50/700/default/punch across ~20 hues), colors.treasure.* 3 slots per metal tier, colors.app.* granite 3 steps, gray 5, prince 2, and each semantic accent/status is a state ladder (base/Hover/Active/Faded/FadedHover/FadedActive), not a lightness ramp. The neutral side is the strongest: background.neutralFaded->neutral ladder, foreground.neutral/NeutralFaded and the app granite ramp."
+    },
+    "F2": {
+     "grade": "meets",
+     "evidence": "light.colors.background.* declares page, pageFaded(+Hover/Active), base(+Hover/Active), elevated(+Hover/Active), overlay, overlayInPage, overlayOnImage, glass, glassClear, primary and disabled; the partner layer adds per-component surface roles. Overlay and scrim roles are all present as tokens."
+    },
+    "F3": {
+     "grade": "partly",
+     "evidence": "foreground.neutral (primary), neutralFaded (secondary/muted), disabled, onAccent, onPrimary and ghost are all declared, plus accent/danger/info/positive/warning text roles. There is no dedicated link colour role: links paint neutral ink or accent depending on surface, and the partner typography-link-* tokens are type styles, not a colour role."
+    },
+    "F4": {
+     "grade": "meets",
+     "evidence": "border.neutral (default), neutralFaded (strong on hairlines), accent, danger and transparent are declared; the focus role is the partner.utility.focus-ring / app.b2b.utility-focus-ring composite (0 0 0 2px surface + 0 0 0 4px ink). Measured components confirm hairline neutral rings on cards and fields."
+    },
+    "F5": {
+     "grade": "meets",
+     "evidence": "background.accent #6950f3 with accentHover #5c4ace and accentActive #403591, plus the accentFaded ladder; foreground.accent carries its own Hover/Active twins; primary CTA has primaryHover #262626 and primaryActive #4a4a4a measured in component states."
+    },
+    "F6": {
+     "grade": "meets",
+     "evidence": "positive, danger and info each carry a full ladder on background (base/Hover/Active/Faded/FadedHover/FadedActive), matching foreground.* and border.* roles in the light and dark sets; warning exists in the partner/B2B named layer (app.b2b.color-*-warning-*) and as foreground.warning. No validation state is triggered on signed-out surfaces - declared evidence."
+    },
+    "F7": {
+     "grade": "meets",
+     "evidence": "light and dark name the same 1048 tokens (enforced by the package test's parity check); the painted-parity observation is honest: dark paints only on partners.fresha.com sign-in (data-theme=auto under prefers-color-scheme: dark) and is declared-only on consumer/B2B, marked per token. The accent scope is declared-only everywhere and says so in $extensions.painted."
+    },
+    "F8": {
+     "grade": "meets",
+     "evidence": "core.font names four family roles with fallback stacks (body/header/link Roobert+AktivGroteskVF, display Tartuffo+Changa+PlayfairDisplay); the partner.typography.* scale holds the named roles: display-s..xl-bold, header-xs..4xl, subheader, body-2xs..xl in regular/medium/semibold plus letter-spacing twins, and link-2xs..l - a full 7+ step scale with weights and line heights in the shorthand values."
+    },
+    "F9": {
+     "grade": "meets",
+     "evidence": "core.spacing holds the Panda spacing scale (24 steps, 0..2400 plus negatives and sidePadding) on a 4px base; core.sizes mirrors it plus breakpoint sizes; the partner.spacing-* layer repeats it with readable names."
+    },
+    "F10": {
+     "grade": "meets",
+     "evidence": "partner.border.radius-xs(2px)/s(4)/sm(6)/m(8)/l+xl(12)/2xl(16)/3xl(20)/4xl(24)/rounded(999px) plus border.width-0..400; measured components confirm them (fields 12px, cards 16px, pills 999px, hairline 1px)."
+    },
+    "F11": {
+     "grade": "meets",
+     "evidence": "Control heights measured per size: 48px B2B CTA, 46px auth/partner fields, 60px help search, 72px header, 32px icon buttons (menu, gallery arrows), 24px mobile search field; component.* tokens record them; the focus ring's width and offset are the focus-ring composite (2px inner, 4px outer)."
+    },
+    "F12": {
+     "grade": "partly",
+     "evidence": "Two named elevation levels exist as shadows.level1/level2 in every theme set; the partner.elevation.* and per-component box-shadows (date tiles, table pinning) add component-scoped shadows but there is no 3-5 level ladder with per-use names (card/popover/dialog)."
+    },
+    "F13": {
+     "grade": "meets",
+     "evidence": "core.durations (10 steps, 0.1s-1s) and core.easings (5 cubic-bezier curves) are declared; core.motion records the measured transitions (0.18-0.2s colour/transform on pills and flyouts); raw/motion.json probes 8 pages twice and reports prefers-reduced-motion honoured on home/venue/LP and ignored on pricing/for-business/help/auth/partner - overall 'partial'."
+    },
+    "F14": {
+     "grade": "partly",
+     "evidence": "partner.breakpoints.{tablet,smalltablet,laptop,desktop} and sizes.breakpoint-* are declared; 1440px and 390px passes carry per-width geometry (component.header.height 72, nav-flyout 588x391 vs 350x559, business-type-card 379 vs 165). No grid-column or z-index scale was observed or tokenised."
+    },
+    "C1": {
+     "grade": "partly",
+     "evidence": "78 components cover 13 of 19 checklist items: button (b2b-cta/service-book/auth-continue/booking-continue), icon button (m-menu-button/gallery-button/carousel-button), link (shell-login-link/article-link/auth-cross-link), text field (auth/partner email, help-search, m-search-field, search pills), select (lp-sort-select, language-button), checkbox (booking-add-button service tick), tabs (venue-tab, booking-step), menu (menu-drawer, nav-flyout, menu-item), card (venue/plan/review/business-type/lp/topic/chooser), list row (service-row/feature-row), table (hours-table), avatar (staff-avatar), badge (rating-badge). Absent and unreachable signed out: text area, radio, switch, open tooltip (only the info-icon trigger), dialog (the home app-install dialog never mounted - recorded gap), toast."
+    },
+    "C2": {
+     "grade": "meets",
+     "evidence": "Beyond default, states were captured per component as the surface allowed: hover and focus-visible broadly, pressed via CSS.forcePseudoState (marked), selected/ticked (booking service), filled (auth email, typed then cleared), open (menu drawer, search suggestions, Business types flyout, FAQ disclosure), the venue services scroll state and partner's painted dark theme. Error/loading/disabled states are absent because every form-submission path is gated - recorded as gaps, not fabricated."
+    },
+    "C3": {
+     "grade": "partly",
+     "evidence": "focus-visible was measured on the interactive set and the evidence is kept honestly: most Panda controls paint a 2px *transparent* outline that does not change on focus (near-invisible keyboard focus, called out in README What to distrust and components.md Focus lines); the LP sort select and map button do paint a solid 2px ring, and that crop is the visible-focus example."
+    },
+    "C4": {
+     "grade": "meets",
+     "evidence": "components.md renders each entry as a condensed measured table and labels every colour that matches a token by token name (the build_components_md.py token-matching pass); geometry is in px as measured, colours resolve to light.*/partner.* names where they exist."
+    },
+    "P1": {
+     "grade": "partly",
+     "evidence": "patterns.md documents the site chrome, the marketplace hero + split search, venue + booking-boundary anatomy, the two sign-in shells, B2B marketing/pricing anatomy, the legacy LP microsite, help centre, themes and motion/focus. Empty/loading/error, destructive-confirmation and onboarding patterns are all post-login or post-submit and declared as gaps rather than written."
+    },
+    "A1": {
+     "grade": "partly",
+     "evidence": "icon.png is the fetched apple-touch-icon normalised to 128px; fonts are named with their real stacks and fallbacks (Roobert/AktivGroteskVF, Tartuffo display stack) with licence unknown - noted as fallback-named; no standalone SVG icon set was lifted - declared under layoutGaps."
+    },
+    "K1": {
+     "grade": "meets",
+     "evidence": "README states what was captured (routes, widths, dates, method), how each value was read (resolved css-var vs measured vs motion probe, with $extensions.source on every token), a What to distrust section (declared-vs-painted dark/accent, forced presses, invisible focus, the separate LP system), the Do and don't rules with image links, and the rebuild commands."
+    },
+    "F15": {
+     "grade": "meets",
+     "evidence": "Script: all 8 pairs pass 4.5:1 across 2 themes; lowest 4.54:1 light muted (light.colors.foreground.neutralFaded) on page (light.colors.background.page)"
+    },
+    "F16": {
+     "grade": "meets",
+     "evidence": "Script: 4102 of 4102 tokens name their source"
+    },
+    "K2": {
+     "grade": "meets",
+     "evidence": "Script: 5 rules, each linking a screenshot or crop"
+    },
+    "K3": {
+     "grade": "meets",
+     "evidence": "Script: DESIGN.md matches a fresh generation"
+    },
+    "C5": {
+     "grade": "na",
+     "evidence": "Optional for a capture, and this product does not publish it."
+    },
+    "V1": {
+     "grade": "na",
+     "evidence": "Optional for a capture, and this product does not publish it."
+    },
+    "V2": {
+     "grade": "na",
+     "evidence": "Optional for a capture, and this product does not publish it."
+    }
+   },
+   "name": "Fresha",
+   "goodFor": "beauty and wellness booking-marketplace design: one Panda CSS token system (--made-with-panda) shared across four signed-out stacks with two parallel vocabularies (hashed Panda vars mapped back to readable colors.*/spacing.* names through the atomic classes, plus the partner app's readable --color-*/--typography-*/--sizing-* layer declared per data-theme); a 72px shell header, a giant Roobert hero with the signature split search pill (treatment/location/time fields + a round black search button), venue cards with 5.0 rating badges, a venue profile with bookable service rows and a 444x756 booking cart at the wizard boundary, black 48px CTA pills across /pricing and /for-business, the legacy /lp microsite (its own literal-value stylesheet, 16px-radius venue cards, 'from S$' price lines), a help-center search page, and the partners.fresha.com sign-in - the one painted dark theme (data-theme=auto under prefers-color-scheme: dark)",
+   "url": "https://www.fresha.com",
+   "captured": "2026-11-15",
+   "themes": [
+    "light",
+    "dark"
+   ],
+   "platform": "web",
+   "category": "E-commerce",
+   "reviewed": "2026-11-17",
+   "reviewedPlatform": "web"
   }
  ],
  "base": "2026-10-16",
- "reviewMethod": "post-merge Greptile fix-forward review"
+ "reviewMethod": "post-Greptile-fix merge review"
 }
