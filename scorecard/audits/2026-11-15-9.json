@@ -1,7 +1,7 @@
 {
  "date": "2026-11-15",
  "rubric": "4",
- "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): manual review of css-vars.json, components-computed.json, tokens.json, components.md, README.md and screenshots against the rubric",
+ "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): Human review against scorecard/criteria.json web wording over the built package: tokens.json role/scale counts, components.md state coverage, screenshots/crops inspection, and the capture's documented boundaries",
  "systems": [
   {
    "slug": "1password",
@@ -19054,111 +19054,87 @@
    "reviewedPlatform": "desktop"
   },
   {
-   "slug": "dji",
+   "slug": "discord",
    "grades": {
     "F1": {
      "grade": "meets",
-     "evidence": "Declared hue ramps harvested from served CSS: --grey-1..11 (neutral), --brand-1..10 (#e7f3fb to #00326a), --red-1..10, --green-1..9 in core.color.*; every leaf carries $extensions.source to its CSS rule."
+     "evidence": "The declared layer ships the ramps outright: --neutral-1..100, --blurple-1..100, --plum-0..26, the --red-new-*/--green-new-*/--blue-new-*/--yellow-new-* families, --illo-*, --opacity-* and --brand-* resolve per theme — 1,859 light / 1,865 dark leaves tokenised under color.*."
     },
     "F2": {
      "grade": "meets",
-     "evidence": "Background roles in light/dark.color.*: --bg/--bg-0..--bg-7 bases, surface and overlay paints; section-scoped .light-theme/.dark-theme mappings resolved live."
+     "evidence": "Declared surface roles per theme: --background-base-lowest/-lower/-low/-middle/-high (page through raised), --background-surface-*, --background-mod-normal/-subtle/-strong (fills/selected), --background-accent, --background-brand, --background-feedback-*, plus measured background.page/card/panel/field/selected/chip roles."
     },
     "F3": {
      "grade": "meets",
-     "evidence": "--primary/--secondary/--tertiary/--disabled text roles aliased in both themes; brand text resolves to #005ab1 (light) / #2c8cdd (dark); on-accent is white on the brand #0070d5 Store/CTA fills, measured."
+     "evidence": "Declared text roles per theme: --text-normal/-muted/-subtle/-default/-strong/-inverse/-link/-brand/-positive/-negative/-warning plus the full --text-code-* family; measured ink/muted/strong/link/online roles alias them."
     },
     "F4": {
      "grade": "meets",
-     "evidence": "--border/--divider roles in both themes; focus borders measured on 11 components (st-link changes only its border on focus-visible)."
+     "evidence": "Declared --border-normal/-subtle/-muted/-strong/-focus/-feedback-* per theme; the 2px #6aa8f4 focus ring is measured on real controls and tokenised as border.focus."
     },
     "F5": {
      "grade": "meets",
-     "evidence": "CTA accent states measured: hm-buy/hm-learn/pd-buy/pd-watch hover and DevTools-forced pressed states; 0.3s ease transitions recorded."
+     "evidence": "Blurple action declared across --background-brand and --button-* roles; measured on real controls: Log In/Join #5865f2 default, #4752c4 hover, pressed measured on CTAs and the auth submit."
     },
     "F6": {
-     "grade": "partly",
-     "evidence": "success/warning/danger paths exist with red and green ramps, but only fill-role colours resolve — no measured text/border variants per status, and the public pages exercise none of them."
+     "grade": "meets",
+     "evidence": "Declared status families: --background-feedback-positive/-warning/-critical/-info, --border-feedback-*, --text-feedback-* and --text-positive/-negative/-warning in both themes; #43b581 online green measured on the member-count dot."
     },
     "F7": {
      "grade": "meets",
-     "evidence": "116 light leaves vs 117 dark leaves; every semantic role resolves in both the .light-theme and .dark-theme sections the product actually paints."
+     "evidence": "Both themes are real paint signed out: app surfaces carry .theme-dark.theme-darker while marketing chrome wraps in .theme-light; 1,859 light vs 1,865 dark leaves with matching semantic structure. The app's standalone light surface is declared but unpainted — documented."
     },
     "F8": {
      "grade": "meets",
-     "evidence": "--font-family + --font-family-jp with fallback stacks (Dji, Open Sans, PingFang SC, Microsoft YaHei, Helvetica Neue); --font-weight-* and --line-height-* declared; measured size roles (display/title/nav/label/caption) in core.font.size.measured.*."
+     "evidence": "Five served families named with stacks (gg sans UI, ABC Ginto Discord Nord display, ABC Ginto marketing display, Ggsans marketing, gg mono code), declared --font-weight-* steps, and a measured size ramp (display 56/31.2px, section 28/24px, body 20/16/14px, meta)."
     },
     "F9": {
      "grade": "meets",
-     "evidence": "--spacing-xs..--spacing-xl declared on an 8px base and emitted in core.spacing.*; measured gaps confirm."
+     "evidence": "Declared --space-*/--size-* spacing and sizing scales resolve per theme in the thousands of leaves under core (spacing, size, icon, control dimensions)."
     },
     "F10": {
-     "grade": "partly",
-     "evidence": "One declared --radius plus measured radii per component (nav 0, cards, pill CTAs); no named multi-step radius scale."
+     "grade": "meets",
+     "evidence": "Declared --radius-* scale (4/8/12/16/40px family) plus measured component radii: pills 40px marketing / 12px app, cards 8px, chips 10px, fields 3-8px, nav pill 16px."
     },
     "F11": {
      "grade": "partly",
-     "evidence": "Control heights measured (nav 64px, CTAs, search input); focus outline widths/offsets recorded; no declared icon-size or control-size scale."
+     "evidence": "Measured control heights (nav 80, search 64, tabs 57, CTAs 65/48/44/40, fields 44/38) tokenised under core.component; icon sizes measured (51px server icon, dots) but no declared icon-size scale."
     },
     "F12": {
      "grade": "partly",
-     "evidence": "Measured box-shadows on the card/subnav surfaces are thin; the product paints mostly flat. Levels are documented in measurements.md but no named elevation ramp exists."
+     "evidence": "Declared --elevation-*/--shadow-* vars resolve per theme; measured shadows are the auth card 0 2px 10px rgba(0,0,0,0.2) and the nitro card 0 2px 32px rgba(69,42,124,0.1) — no public multi-level elevation ramp in use."
     },
     "F13": {
-     "grade": "meets",
-     "evidence": "Motion extracted live: 0.1s/0.2s/0.3s ease and 0.6s ease-in-out across 12 components; recorded in raw/measurements.md."
+     "grade": "partly",
+     "evidence": "Declared --motion-*/--duration-*/--ease-* vars exist in the harvest; transitions measured on controls; the hero/marketing fields are animated media. prefers-reduced-motion behaviour not exercised."
     },
     "F14": {
      "grade": "meets",
-     "evidence": "--grid-width and --full-screen-height declared; 1440 desktop / 390 mobile widths captured; z-index roles (core.zIndex.modal = 1200) resolved."
+     "evidence": "Declared --breakpoint-* steps resolve; layout widths measured (nav 80px rail, 640px search, 322px card columns, 800px section width); desktop 1440x900 and 390x844 mobile both captured."
     },
     "C1": {
      "grade": "partly",
-     "evidence": "32 components / 79 states measured across 9 pages — nav, buttons, links, cards, search field, lists, tabs (pills). Signed-out marketing surfaces honestly cover ~9 of 19 checklist kinds; no dialogs, toasts, checkboxes, radios or tables exist signed out."
+     "evidence": "46 components over ~10 of 19 web kinds: button (CTAs, Join, Log In submit), link (nav, footer, detail links), text field (search, auth email/password), tabs/category pills (discovery filter row), card (server card, nitro card, auth card, rail), list row/grid item, badge/chip (category chips, verified badge, member counts), icon button (share), QR panel, mobile bar. Not public: textarea, checkbox, radio, switch, select menu, tooltip, dialog, toast, table, avatar list."
     },
     "C2": {
-     "grade": "meets",
-     "evidence": "79 states captured: hover, focus-visible and DevTools-forced pressed on CTAs and nav items."
+     "grade": "partly",
+     "evidence": "default/hover/focus-visible/DevTools-pressed on controls plus focused/filled on search and auth fields; selected is the measured default on the All/Gaming pills. disabled/error/loading states do not occur signed out and were not fabricated."
     },
     "C3": {
      "grade": "meets",
-     "evidence": "14 components received keyboard focus; 11 drew visible focus outlines. pd-buy/pd-watch honestly recorded as no measurable focus change."
+     "evidence": "Focus-visible captured via keyboard on real controls — the 2px #6aa8f4 ring on search, tabs, cards and auth fields; where a control could not take focus the attempt is recorded, not read as absent."
     },
     "C4": {
      "grade": "meets",
-     "evidence": "component-spec entries resolve measured values against declared --vars and emit aliases; specs cite token paths not raw hex."
-    },
-    "P1": {
-     "grade": "partly",
-     "evidence": "App shell (fixed nav + mega menu, footer), category browsing, product PDP, support search, store locator and mobile nav patterns written; the store checkout, login/register and purchase flows are a documented boundary — forms/validation and destructive patterns can't be evidenced signed out."
-    },
-    "A1": {
-     "grade": "meets",
-     "evidence": "icon.png (128px official favicon via fetch_icon.py); font families named — Dji (custom), Open Sans, FontAwesome icon font, PingFang SC / Microsoft YaHei system fallbacks — with fallback chains."
-    },
-    "K1": {
-     "grade": "meets",
-     "evidence": "README lists the geo-locale /sg scope, 9 captured surfaces, 32 components/79 states, section-scoped theming (no global toggle), and the store/account boundary explicitly."
-    },
-    "F15": {
-     "grade": "missing",
-     "evidence": "Script: primary text fails 1 pair; worst 1.29:1 light muted (light.text.muted) on surface (light.surface.footer)"
-    },
-    "F16": {
-     "grade": "meets",
-     "evidence": "Script: 316 of 316 tokens name their source"
-    },
-    "K2": {
-     "grade": "missing",
-     "evidence": "Script: no \"Do and don't\" section in the README"
-    },
-    "K3": {
-     "grade": "meets",
-     "evidence": "Script: DESIGN.md matches a fresh generation"
+     "evidence": "components.md writes each reading with its token path from tokens.json where a declaration exists; measured roles alias the declared --background-mod-*/--text-*/--border-* vars they match."
     },
     "C5": {
      "grade": "na",
      "evidence": "Optional for a capture, and this product does not publish it."
+    },
+    "P1": {
+     "grade": "partly",
+     "evidence": "patterns.md covers the marketing shell and hero, the discovery search+tab+card-grid flow, the server-card composition, the server-detail CTA layout, the auth card, the two-themes-one-page split and mobile. Empty/loading/error, destructive confirmation, onboarding and account flows do not exist signed out — the documented authenticated boundary."
     },
     "V1": {
      "grade": "na",
@@ -19167,22 +19143,46 @@
     "V2": {
      "grade": "na",
      "evidence": "Optional for a capture, and this product does not publish it."
+    },
+    "A1": {
+     "grade": "partly",
+     "evidence": "icon.png vendored at 128px; fonts fully named with stacks (gg sans, ABC Ginto Nord/Discord, Ggsans, gg mono; served faces not redistributed). No standalone SVG set lifted — declared layoutGap."
+    },
+    "K1": {
+     "grade": "meets",
+     "evidence": "README states what was captured (10 surfaces, 2 widths, 46 components/~99 states), how (Playwright + dual-surface stylesheet harvest + computed styles), and what to distrust (account wall on the whole client, unpainted theme variants, invite boundary, declared-vs-measured split)."
+    },
+    "F15": {
+     "grade": "missing",
+     "evidence": "Script: primary text fails 1 pair; worst 1.21:1 light text (light.text.ink) on surface (light.background.card)"
+    },
+    "F16": {
+     "grade": "meets",
+     "evidence": "Script: 6386 of 6386 tokens name their source"
+    },
+    "K2": {
+     "grade": "missing",
+     "evidence": "Script: no \"Do and don't\" section in the README"
+    },
+    "K3": {
+     "grade": "meets",
+     "evidence": "Script: DESIGN.md matches a fresh generation"
     }
    },
-   "name": "DJI",
-   "goodFor": "product-marketing and hardware-brand design: a declared token layer in the v3 bundles (--grey-0..12, --black-1..8/--white-1..8 + role names, --bg-0..7, --background-0..2, --brand-1..10 with --brand-primary-*/--brand-text-* roles, --green-*/--orange-*/--red-* status scales, --spacing-xs..xl, --radius, --grid-*/--col-width/--column-count, a --zindex-* ladder and --font-*/--line-height-*), section-scoped theming (:root .light-theme / :root .dark-theme re-declare the semantic roles and sections opt in by class - nav/listings/support light, hero/product/footer dark), the #0070d5 DJI blue Store pill with a 1408px radius, atom-design Buy Now/ghost CTA pairs (60px radius, 0.3s transitions), Open Sans + PingFang SC UI text, hero-vertical-card product grids, and two header generations (legacy dui-navbar over the hero, official-site-header on inner pages) plus a separate /sg/mobile site",
-   "url": "https://www.dji.com",
+   "name": "Discord",
+   "goodFor": "chat-community and server-discovery product design: Discord ships its real design-token layer - :root hue scales (--neutral-*, --blurple-*, --plum-*, the --*-new-* families, --illo-*, --opacity-*) plus class-scoped .theme-light/.theme-darker semantic blocks carrying --background-base-*/--background-surface-*/--background-mod-*, --text-*, --border-*, --badge-*, --button-* and --input-* - over a gg-sans + ABC-Ginto app that paints .theme-dark.theme-darker (#121214/#202024 bases, #efeff1 ink, #5865f2 blurple actions, rgba(151,151,159,0.16) selected fills, #43b581 online green, 2px #6aa8f4 focus rings) next to a Ggsans Webflow marketing shell (blurple gradients, 56px Nord display, pill CTAs); signed-out server discovery, a searchable category-tab card grid with member counts and verified badges, a /servers/<slug> detail with Join/Share, and the login/register auth cards",
+   "url": "https://discord.com",
    "captured": "2026-11-15",
    "themes": [
     "light",
     "dark"
    ],
    "platform": "web",
-   "category": "E-commerce",
+   "category": "Messaging",
    "reviewed": "2026-11-15",
    "reviewedPlatform": "web"
   }
  ],
  "base": "2026-10-16",
- "reviewMethod": "manual review of css-vars.json, components-computed.json, tokens.json, components.md, README.md and screenshots against the rubric"
+ "reviewMethod": "Human review against scorecard/criteria.json web wording over the built package: tokens.json role/scale counts, components.md state coverage, screenshots/crops inspection, and the capture's documented boundaries"
 }

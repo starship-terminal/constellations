@@ -1,0 +1,1475 @@
+{
+  "_about": "The token tree build_tokens.py turns into tokens.json. fourmula.ai's marketing layer declares a small Webflow variable set (fluid --_fonts---* sizes, the --fonts-* alpha ink ramp, themed --mainbg/--secondbg/--lines/--menu* colours) which lands as {var} leaves resolved per theme; .body.dark paints light and plain .body paints dark, so `light` resolves the .body.dark declarations and `dark` the .body ones. Painted control colours and all geometry are measured literals. The dark-only app.fourmula.ai Tailwind theme (--color-*, --text-*, --radius-*, --spacing, --ease-*, --blur-*) lands under core.* as literals resolved from raw/css-vars-app.json; its measured surfaces live under component.app.*.",
+  "core": {
+    "font": {
+      "family": {
+        "marketing": {
+          "var": "--_font-family---font-family",
+          "type": "fontFamily",
+          "description": "The declared marketing face: \"Sf Pro Display\", Arial, sans-serif — headings, buttons and nav paint it; plain wrapper chrome falls back to Arial."
+        },
+        "app": {
+          "value": "sfProFont, \"sfProFont Fallback\"",
+          "type": "fontFamily",
+          "source": "computed fontFamily of app-menu-btn default on app.fourmula.ai (raw/components-computed.json); the local next/font face the app's @theme layer declares",
+          "description": "The app's SF Pro face, served as the local sfProFont family with its metrics fallback."
+        },
+        "appSystem": {
+          "value": "ui-sans-serif,system-ui,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\"",
+          "type": "fontFamily",
+          "source": "declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --font-sans",
+          "description": "The app's declared --font-sans — the Tailwind default stack behind the local sfProFont face."
+        }
+      },
+      "weight": {
+        "regular": {
+          "var": "--_font-family---regular",
+          "type": "fontWeight",
+          "description": "The declared marketing regular (400)."
+        },
+        "medium": {
+          "var": "--_font-family---medium",
+          "type": "fontWeight",
+          "description": "The declared marketing medium (500) — nav overlay links, legal titles, the app's /start heading and medium-weight buttons paint it."
+        }
+      },
+      "size": {
+        "marketing": {
+          "h1": {
+            "var": "--_fonts---h1",
+            "type": "dimension",
+            "description": "The declared marketing h1 step (resolved fluid-rem at 1440)."
+          },
+          "h2": {
+            "var": "--_fonts---h2",
+            "type": "dimension",
+            "description": "The declared marketing h2 step."
+          },
+          "h2-5": {
+            "var": "--_fonts---h2-5",
+            "type": "dimension",
+            "description": "The declared marketing h2-5 step."
+          },
+          "h3": {
+            "var": "--_fonts---h3",
+            "type": "dimension",
+            "description": "The declared marketing h3 step."
+          },
+          "h4": {
+            "var": "--_fonts---h4",
+            "type": "dimension",
+            "description": "The declared marketing h4 step."
+          },
+          "body1": {
+            "var": "--_fonts---body-1",
+            "type": "dimension",
+            "description": "The declared body-1 step."
+          },
+          "body2": {
+            "var": "--_fonts---body-2",
+            "type": "dimension",
+            "description": "The declared body-2 step."
+          },
+          "body3": {
+            "var": "--_fonts---body-3",
+            "type": "dimension",
+            "description": "The declared body-3 step."
+          },
+          "button": {
+            "var": "--_fonts---btn",
+            "type": "dimension",
+            "description": "The declared button step."
+          },
+          "title1": {
+            "var": "--_fonts---title-1",
+            "type": "dimension",
+            "description": "The declared title-1 step."
+          },
+          "title2": {
+            "var": "--_fonts---title-2",
+            "type": "dimension",
+            "description": "The declared title-2 step."
+          },
+          "title3": {
+            "var": "--_fonts---title-3",
+            "type": "dimension",
+            "description": "The declared title-3 step."
+          },
+          "tag": {
+            "var": "--_fonts---tag",
+            "type": "dimension",
+            "description": "The declared tag step."
+          },
+          "tagSmall": {
+            "var": "--_fonts---tag-small",
+            "type": "dimension",
+            "description": "The declared small tag step."
+          },
+          "smallText1": {
+            "var": "--_fonts---small-text-1",
+            "type": "dimension",
+            "description": "The declared small-text-1 step."
+          },
+          "smallText2": {
+            "var": "--_fonts---small-text-2",
+            "type": "dimension",
+            "description": "The declared small-text-2 step."
+          }
+        },
+        "app": {
+          "2lg": {
+            "value": "24px",
+            "type": "dimension",
+            "source": "declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --text-2lg",
+            "description": "The app's declared `--text-2lg`."
+          },
+          "2xl": {
+            "value": "52px",
+            "type": "dimension",
+            "source": "declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --text-2xl",
+            "description": "The app's declared `--text-2xl`."
+          },
+          "2xs": {
+            "value": "9px",
+            "type": "dimension",
+            "source": "declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --text-2xs",
+            "description": "The app's declared `--text-2xs`."
+          },
+          "l": {
+            "value": "28px",
+            "type": "dimension",
+            "source": "declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --text-l",
+            "description": "The app's declared `--text-l`."
+          },
+          "lg": {
+            "value": "22px",
+            "type": "dimension",
+            "source": "declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --text-lg",
+            "description": "The app's declared `--text-lg`."
+          },
+          "m": {
+            "value": "18px",
+            "type": "dimension",
+            "source": "declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --text-m",
+            "description": "The app's declared `--text-m`."
+          },
+          "md": {
+            "value": "16px",
+            "type": "dimension",
+            "source": "declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --text-md",
+            "description": "The app's declared `--text-md`."
+          },
+          "sm": {
+            "value": "14px",
+            "type": "dimension",
+            "source": "declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --text-sm",
+            "description": "The app's declared `--text-sm`."
+          },
+          "xl": {
+            "value": "32px",
+            "type": "dimension",
+            "source": "declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --text-xl",
+            "description": "The app's declared `--text-xl`."
+          },
+          "xs": {
+            "value": "12px",
+            "type": "dimension",
+            "source": "declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --text-xs",
+            "description": "The app's declared `--text-xs`."
+          }
+        },
+        "measured": {
+          "hero": {
+            "value": "73.1963px",
+            "type": "dimension",
+            "source": "computed fontSize of hero-h1 default (raw/components-computed.json)",
+            "description": "The 73.2px painted hero masthead at 1440 — the resolved --_fonts---h1 step at the capture width."
+          },
+          "section": {
+            "value": "99.8131px",
+            "type": "dimension",
+            "source": "computed fontSize of section-h2 default (raw/components-computed.json)",
+            "description": "The 99.8px painted section heading at 1440."
+          },
+          "step": {
+            "value": "53.2336px",
+            "type": "dimension",
+            "source": "computed fontSize of step-h3 default (raw/components-computed.json)",
+            "description": "The 53.2px how-it-works step heading."
+          },
+          "legal": {
+            "value": "73.1963px",
+            "type": "dimension",
+            "source": "computed fontSize of legal-title default (raw/components-computed.json)",
+            "description": "The 73.2px legal page title."
+          },
+          "navOverlay": {
+            "value": "19.9626px",
+            "type": "dimension",
+            "source": "computed fontSize of nav-overlay-link default (raw/components-computed.json)",
+            "description": "The 20px menu-overlay link."
+          },
+          "control": {
+            "value": "14.1402px",
+            "type": "dimension",
+            "source": "computed fontSize of header-cta default (raw/components-computed.json)",
+            "description": "The 14.1px marketing button size."
+          },
+          "chrome": {
+            "value": "14.4px",
+            "type": "dimension",
+            "source": "computed fontSize of mkt-header default (raw/components-computed.json)",
+            "description": "The 14.4px default on header chrome (Arial fallback zone)."
+          },
+          "bodyLegal": {
+            "value": "14.972px",
+            "type": "dimension",
+            "source": "computed fontSize of legal-body default (raw/components-computed.json)",
+            "description": "The 15px legal body size."
+          },
+          "heroMobile": {
+            "value": "40.3092px",
+            "type": "dimension",
+            "source": "computed fontSize of m-hero-h1 default (raw/components-computed.json)",
+            "description": "The 40.3px mobile hero masthead at 390 wide."
+          },
+          "controlMobile": {
+            "value": "17.1314px",
+            "type": "dimension",
+            "source": "computed fontSize of m-step-cta default (raw/components-computed.json)",
+            "description": "The 17.1px mobile button size."
+          },
+          "appDisplay": {
+            "value": "52px",
+            "type": "dimension",
+            "source": "computed fontSize of start-h1 default (raw/components-computed.json)",
+            "description": "The app's 52px /start heading (--text-2xl)."
+          },
+          "appControl": {
+            "value": "14px",
+            "type": "dimension",
+            "source": "computed fontSize of app-create-btn default (raw/components-computed.json)",
+            "description": "The app's 14px control size (--text-sm)."
+          },
+          "appMeta": {
+            "value": "12px",
+            "type": "dimension",
+            "source": "computed fontSize of auth-forgot default (raw/components-computed.json)",
+            "description": "The app's 12px meta size (--text-xs)."
+          }
+        }
+      },
+      "lineHeight": {
+        "app2Xl": {
+          "value": 1.3333,
+          "type": "number",
+          "source": "declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --text-2xl--line-height",
+          "description": "The app's declared `--text-2xl--line-height` line-height ratio."
+        },
+        "appLg": {
+          "value": 1.5556,
+          "type": "number",
+          "source": "declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --text-lg--line-height",
+          "description": "The app's declared `--text-lg--line-height` line-height ratio."
+        },
+        "appSm": {
+          "value": 1.4286,
+          "type": "number",
+          "source": "declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --text-sm--line-height",
+          "description": "The app's declared `--text-sm--line-height` line-height ratio."
+        },
+        "appXl": {
+          "value": 1.4,
+          "type": "number",
+          "source": "declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --text-xl--line-height",
+          "description": "The app's declared `--text-xl--line-height` line-height ratio."
+        },
+        "appXs": {
+          "value": 1.3333,
+          "type": "number",
+          "source": "declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --text-xs--line-height",
+          "description": "The app's declared `--text-xs--line-height` line-height ratio."
+        },
+        "hero": {
+          "value": "68.8045px",
+          "type": "dimension",
+          "source": "computed lineHeight of hero-h1 default (raw/components-computed.json)",
+          "description": "The 68.8px hero line-height (~0.94)."
+        },
+        "section": {
+          "value": "99.8131px",
+          "type": "dimension",
+          "source": "computed lineHeight of section-h2 default (raw/components-computed.json)",
+          "description": "The 99.8px section line-height (1:1)."
+        },
+        "control": {
+          "value": "16.9682px",
+          "type": "dimension",
+          "source": "computed lineHeight of header-cta default (raw/components-computed.json)",
+          "description": "The 17px button line-height."
+        },
+        "navOverlay": {
+          "value": "29.9439px",
+          "type": "dimension",
+          "source": "computed lineHeight of nav-overlay-link default (raw/components-computed.json)",
+          "description": "The 29.9px overlay-link line-height."
+        }
+      },
+      "tracking": {
+        "appNormal": {
+          "value": "0px",
+          "type": "other",
+          "source": "declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --tracking-normal",
+          "description": "The app's declared `--tracking-normal`."
+        },
+        "appTighter": {
+          "value": "-.05em",
+          "type": "other",
+          "source": "declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --tracking-tighter",
+          "description": "The app's declared `--tracking-tighter`."
+        },
+        "hero": {
+          "value": "-2.19589px",
+          "type": "other",
+          "source": "computed letterSpacing of hero-h1 default (raw/components-computed.json)",
+          "description": "The -2.2px hero tracking."
+        },
+        "section": {
+          "value": "-2.99439px",
+          "type": "other",
+          "source": "computed letterSpacing of section-h2 default (raw/components-computed.json)",
+          "description": "The -3px section tracking."
+        },
+        "step": {
+          "value": "-1.59701px",
+          "type": "other",
+          "source": "computed letterSpacing of step-h3 default (raw/components-computed.json)",
+          "description": "The -1.6px step tracking."
+        },
+        "legal": {
+          "value": "-1.33084px",
+          "type": "other",
+          "source": "computed letterSpacing of legal-title default (raw/components-computed.json)",
+          "description": "The -1.33px legal title tracking."
+        },
+        "navOverlay": {
+          "value": "-0.174739px",
+          "type": "other",
+          "source": "computed letterSpacing of nav-overlay-link default (raw/components-computed.json)",
+          "description": "The -0.17px overlay-link tracking."
+        },
+        "control": {
+          "value": "-0.282804px",
+          "type": "other",
+          "source": "computed letterSpacing of header-cta default (raw/components-computed.json)",
+          "description": "The -0.28px button tracking."
+        },
+        "appDisplay": {
+          "value": "-2.08px",
+          "type": "other",
+          "source": "computed letterSpacing of start-h1 default (raw/components-computed.json)",
+          "description": "The -2.08px (-4%) app display tracking."
+        }
+      }
+    },
+    "appColor": {
+      "accent-500": {
+        "value": "#ff6b02",
+        "type": "color",
+        "source": "declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --color-accent-500",
+        "description": "The app's declared `--color-accent-500`."
+      },
+      "accent-600": {
+        "value": "#f94a00",
+        "type": "color",
+        "source": "declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --color-accent-600",
+        "description": "The app's declared `--color-accent-600`."
+      },
+      "alert-warning": {
+        "value": "#e093b2",
+        "type": "color",
+        "source": "declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --color-alert-warning",
+        "description": "The app's declared `--color-alert-warning`."
+      },
+      "base-100": {
+        "value": "#ffffff",
+        "type": "color",
+        "source": "declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --color-base-100",
+        "description": "The app's declared `--color-base-100`."
+      },
+      "base-200": {
+        "value": "#f2f2f2",
+        "type": "color",
+        "source": "declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --color-base-200",
+        "description": "The app's declared `--color-base-200`."
+      },
+      "base-500": {
+        "value": "#b0b4ba",
+        "type": "color",
+        "source": "declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --color-base-500",
+        "description": "The app's declared `--color-base-500`."
+      },
+      "base-600": {
+        "value": "#686a6e",
+        "type": "color",
+        "source": "declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --color-base-600",
+        "description": "The app's declared `--color-base-600`."
+      },
+      "base-625": {
+        "value": "#444547",
+        "type": "color",
+        "source": "declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --color-base-625",
+        "description": "The app's declared `--color-base-625`."
+      },
+      "base-650": {
+        "value": "#202020",
+        "type": "color",
+        "source": "declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --color-base-650",
+        "description": "The app's declared `--color-base-650`."
+      },
+      "base-700": {
+        "value": "#1a1a1a",
+        "type": "color",
+        "source": "declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --color-base-700",
+        "description": "The app's declared `--color-base-700`."
+      },
+      "base-750": {
+        "value": "#1e1e1e",
+        "type": "color",
+        "source": "declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --color-base-750",
+        "description": "The app's declared `--color-base-750`."
+      },
+      "base-800": {
+        "value": "#111111",
+        "type": "color",
+        "source": "declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --color-base-800",
+        "description": "The app's declared `--color-base-800`."
+      },
+      "base-900": {
+        "value": "#020108",
+        "type": "color",
+        "source": "declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --color-base-900",
+        "description": "The app's declared `--color-base-900`."
+      },
+      "blue-100": {
+        "value": "#dbeafe",
+        "type": "color",
+        "source": "declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --color-blue-100",
+        "description": "The app's declared `--color-blue-100`."
+      },
+      "blue-500": {
+        "value": "#2b7fff",
+        "type": "color",
+        "source": "declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --color-blue-500",
+        "description": "The app's declared `--color-blue-500`."
+      },
+      "error": {
+        "value": "#ff173f",
+        "type": "color",
+        "source": "declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --color-error",
+        "description": "The app's declared `--color-error`."
+      },
+      "error-500": {
+        "value": "#e82e1d",
+        "type": "color",
+        "source": "declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --color-error-500",
+        "description": "The app's declared `--color-error-500`."
+      },
+      "error-light": {
+        "value": "#ff9592",
+        "type": "color",
+        "source": "declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --color-error-light",
+        "description": "The app's declared `--color-error-light`."
+      },
+      "gray-600": {
+        "value": "#4a5565",
+        "type": "color",
+        "source": "declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --color-gray-600",
+        "description": "The app's declared `--color-gray-600`."
+      },
+      "invalid": {
+        "value": "#f63c34",
+        "type": "color",
+        "source": "declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --color-invalid",
+        "description": "The app's declared `--color-invalid`."
+      },
+      "neutral-alpha-3": {
+        "value": "rgba(0, 0, 51, 0.06)",
+        "type": "color",
+        "source": "declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --color-neutral-alpha-3",
+        "description": "The app's declared `--color-neutral-alpha-3`."
+      },
+      "overlay-black-50": {
+        "value": "rgba(0, 0, 0, 0.5)",
+        "type": "color",
+        "source": "declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --color-overlay-black-50",
+        "description": "The app's declared `--color-overlay-black-50`."
+      },
+      "overlay-black-alpha-1": {
+        "value": "rgba(0, 0, 0, 0.05)",
+        "type": "color",
+        "source": "declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --color-overlay-black-alpha-1",
+        "description": "The app's declared `--color-overlay-black-alpha-1`."
+      },
+      "red-500": {
+        "value": "#fb2c36",
+        "type": "color",
+        "source": "declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --color-red-500",
+        "description": "The app's declared `--color-red-500`."
+      },
+      "success": {
+        "value": "#46fea5",
+        "type": "color",
+        "source": "declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --color-success",
+        "description": "The app's declared `--color-success`."
+      },
+      "success-500": {
+        "value": "#0fa359",
+        "type": "color",
+        "source": "declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --color-success-500",
+        "description": "The app's declared `--color-success-500`."
+      },
+      "valid": {
+        "value": "#31cb4b",
+        "type": "color",
+        "source": "declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --color-valid",
+        "description": "The app's declared `--color-valid`."
+      },
+      "white": {
+        "value": "#ffffff",
+        "type": "color",
+        "source": "declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --color-white",
+        "description": "The app's declared `--color-white`."
+      },
+      "_note": "app.fourmula.ai's declared --color-* ramp: the base-100..900 neutral stack (#fff down to #020108), the #ff6b02 accent, and the semantic steps. Read from raw/css-vars-app.json — a separate layer from the marketing site's Webflow vars."
+    },
+    "spacing": {
+      "app": {
+        "value": "4px",
+        "type": "dimension",
+        "source": "declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --spacing",
+        "description": "The app's declared `--spacing`."
+      }
+    },
+    "radius": {
+      "app": {
+        "2xl": {
+          "value": "16px",
+          "type": "dimension",
+          "source": "declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --radius-2xl",
+          "description": "The app's declared `--radius-2xl`."
+        },
+        "3xl": {
+          "value": "24px",
+          "type": "dimension",
+          "source": "declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --radius-3xl",
+          "description": "The app's declared `--radius-3xl`."
+        },
+        "4xl": {
+          "value": "28px",
+          "type": "dimension",
+          "source": "declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --radius-4xl",
+          "description": "The app's declared `--radius-4xl`."
+        },
+        "5xl": {
+          "value": "32px",
+          "type": "dimension",
+          "source": "declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --radius-5xl",
+          "description": "The app's declared `--radius-5xl`."
+        },
+        "7xl": {
+          "value": "40px",
+          "type": "dimension",
+          "source": "declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --radius-7xl",
+          "description": "The app's declared `--radius-7xl`."
+        },
+        "lg": {
+          "value": "8px",
+          "type": "dimension",
+          "source": "declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --radius-lg",
+          "description": "The app's declared `--radius-lg`."
+        },
+        "md": {
+          "value": "6px",
+          "type": "dimension",
+          "source": "declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --radius-md",
+          "description": "The app's declared `--radius-md`."
+        },
+        "sm": {
+          "value": "4px",
+          "type": "dimension",
+          "source": "declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --radius-sm",
+          "description": "The app's declared `--radius-sm`."
+        },
+        "xl": {
+          "value": "12px",
+          "type": "dimension",
+          "source": "declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --radius-xl",
+          "description": "The app's declared `--radius-xl`."
+        }
+      }
+    },
+    "container": {
+      "3xs": {
+        "value": "256px",
+        "type": "dimension",
+        "source": "declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --container-3xs",
+        "description": "The app's declared `--container-3xs`."
+      },
+      "md": {
+        "value": "448px",
+        "type": "dimension",
+        "source": "declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --container-md",
+        "description": "The app's declared `--container-md`."
+      },
+      "xl": {
+        "value": "576px",
+        "type": "dimension",
+        "source": "declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --container-xl",
+        "description": "The app's declared `--container-xl`."
+      },
+      "xs": {
+        "value": "320px",
+        "type": "dimension",
+        "source": "declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --container-xs",
+        "description": "The app's declared `--container-xs`."
+      }
+    },
+    "blur": {
+      "2xl": {
+        "value": "40px",
+        "type": "dimension",
+        "source": "declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --blur-2xl",
+        "description": "The app's declared `--blur-2xl`."
+      },
+      "lg": {
+        "value": "16px",
+        "type": "dimension",
+        "source": "declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --blur-lg",
+        "description": "The app's declared `--blur-lg`."
+      },
+      "md": {
+        "value": "12px",
+        "type": "dimension",
+        "source": "declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --blur-md",
+        "description": "The app's declared `--blur-md`."
+      },
+      "sm": {
+        "value": "8px",
+        "type": "dimension",
+        "source": "declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --blur-sm",
+        "description": "The app's declared `--blur-sm`."
+      },
+      "xl": {
+        "value": "24px",
+        "type": "dimension",
+        "source": "declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --blur-xl",
+        "description": "The app's declared `--blur-xl`."
+      }
+    },
+    "easing": {
+      "appIn-Out": {
+        "value": "cubic-bezier(.4,0,.2,1)",
+        "type": "cubicBezier",
+        "source": "declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --ease-in-out",
+        "description": "The app's declared `--ease-in-out`."
+      },
+      "appOut": {
+        "value": "cubic-bezier(0,0,.2,1)",
+        "type": "cubicBezier",
+        "source": "declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --ease-out",
+        "description": "The app's declared `--ease-out`."
+      },
+      "appDefault": {
+        "value": "cubic-bezier(.4,0,.2,1)",
+        "type": "cubicBezier",
+        "source": "declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --default-transition-timing-function",
+        "description": "The app's declared `--default-transition-timing-function`."
+      },
+      "marketingControl": {
+        "value": "ease",
+        "type": "cubicBezier",
+        "source": "computed transitionTimingFunction of header-cta default (raw/components-computed.json)",
+        "description": "The plain `ease` curve on marketing controls."
+      }
+    },
+    "duration": {
+      "appDefault": {
+        "value": "0.15s",
+        "type": "duration",
+        "source": "declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --default-transition-duration",
+        "description": "The app's declared `--default-transition-duration`."
+      },
+      "marketingControl": {
+        "value": "0.2s",
+        "type": "duration",
+        "source": "computed transitionDuration of header-cta default (raw/components-computed.json)",
+        "description": "The 0.2s control transition on the marketing site's buttons and pills."
+      }
+    },
+    "animate": {
+      "appPulse": {
+        "value": "pulse 2s cubic-bezier(.4,0,.6,1)infinite",
+        "type": "other",
+        "source": "declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --animate-pulse",
+        "description": "The app's declared `--animate-pulse`."
+      }
+    },
+    "heroSlider": {
+      "tx": {
+        "value": "0%",
+        "type": "other",
+        "source": "declared custom property in the marketing site's Webflow css bundle (raw/css-vars.json): --tx on .hero__slider__row <@media (min-width: 992px)>",
+        "description": "The hero logo-strip translate variable (the desktop direction under >=992px)."
+      },
+      "ty": {
+        "value": "0%",
+        "type": "other",
+        "source": "declared custom property in the marketing site's Webflow css bundle (raw/css-vars.json): --ty on .hero__slider__row <@media (min-width: 992px)>",
+        "description": "The hero logo-strip translate variable (the desktop direction under >=992px)."
+      },
+      "txend": {
+        "value": "0%",
+        "type": "other",
+        "source": "declared custom property in the marketing site's Webflow css bundle (raw/css-vars.json): --tx-end on .hero__slider__row <@media (min-width: 992px)>",
+        "description": "The hero logo-strip translate variable (the desktop direction under >=992px)."
+      },
+      "tyend": {
+        "value": "-100%",
+        "type": "other",
+        "source": "declared custom property in the marketing site's Webflow css bundle (raw/css-vars.json): --ty-end on .hero__slider__row <@media (min-width: 992px)>",
+        "description": "The hero logo-strip translate variable (the desktop direction under >=992px)."
+      },
+      "txMobile": {
+        "value": "0%",
+        "type": "other",
+        "source": "declared custom property in the marketing site's Webflow css bundle (raw/css-vars.json): --tx on .hero__slider__row <@media (max-width: 991px)>",
+        "description": "The hero logo-strip translate variable (the phone direction under <=991px)."
+      },
+      "tyMobile": {
+        "value": "0%",
+        "type": "other",
+        "source": "declared custom property in the marketing site's Webflow css bundle (raw/css-vars.json): --ty on .hero__slider__row <@media (max-width: 991px)>",
+        "description": "The hero logo-strip translate variable (the phone direction under <=991px)."
+      },
+      "txendMobile": {
+        "value": "-100%",
+        "type": "other",
+        "source": "declared custom property in the marketing site's Webflow css bundle (raw/css-vars.json): --tx-end on .hero__slider__row <@media (max-width: 991px)>",
+        "description": "The hero logo-strip translate variable (the phone direction under <=991px)."
+      },
+      "tyendMobile": {
+        "value": "0%",
+        "type": "other",
+        "source": "declared custom property in the marketing site's Webflow css bundle (raw/css-vars.json): --ty-end on .hero__slider__row <@media (max-width: 991px)>",
+        "description": "The hero logo-strip translate variable (the phone direction under <=991px)."
+      },
+      "dotsSize": {
+        "value": "1rem",
+        "type": "other",
+        "source": "declared custom property in the marketing site's Webflow css bundle (raw/css-vars.json): --dot-size on .dots-field <@media (min-width: 768px)>",
+        "description": "The dotted-background field's dot/gap size (the desktop grid at >=768px)."
+      },
+      "dotsGap": {
+        "value": "1rem",
+        "type": "other",
+        "source": "declared custom property in the marketing site's Webflow css bundle (raw/css-vars.json): --dot-gap on .dots-field <@media (min-width: 768px)>",
+        "description": "The dotted-background field's dot/gap size (the desktop grid at >=768px)."
+      },
+      "dotsSizeMobile": {
+        "value": "0.5rem",
+        "type": "other",
+        "source": "declared custom property in the marketing site's Webflow css bundle (raw/css-vars.json): --dot-size on .dots-field <@media (max-width: 767px)>",
+        "description": "The dotted-background field's dot/gap size (the denser half-size under 768px)."
+      },
+      "dotsGapMobile": {
+        "value": "0.5rem",
+        "type": "other",
+        "source": "declared custom property in the marketing site's Webflow css bundle (raw/css-vars.json): --dot-gap on .dots-field <@media (max-width: 767px)>",
+        "description": "The dotted-background field's dot/gap size (the denser half-size under 768px)."
+      }
+    },
+    "fluid": {
+      "userZoom": {
+        "value": 1,
+        "type": "number",
+        "source": "declared custom property in the marketing site's Webflow css bundle (raw/css-vars.json): --user-zoom",
+        "description": "The declared `--user-zoom`."
+      }
+    }
+  },
+  "light": {
+    "background": {
+      "page": {
+        "var": "--mainbg",
+        "type": "color",
+        "description": "The declared page field. Resolved under the light (the .body.dark paint) declarations."
+      },
+      "surface": {
+        "var": "--secondbg",
+        "type": "color",
+        "description": "The declared secondary surface. Resolved under the light (the .body.dark paint) declarations."
+      },
+      "menu": {
+        "var": "--menu",
+        "type": "color",
+        "description": "The declared menu/overlay fill — the page ink in light, a lifted #272727 in dark. Resolved under the light (the .body.dark paint) declarations."
+      },
+      "dots": {
+        "var": "--dots-pattern",
+        "type": "color",
+        "description": "The declared dots-pattern ink. Resolved under the light (the .body.dark paint) declarations."
+      },
+      "pageFade": {
+        "var": "--mainbg-gradient",
+        "type": "color",
+        "description": "The declared transparent page-gradient stop used for fade-outs. Resolved under the light (the .body.dark paint) declarations."
+      },
+      "aiButton": {
+        "value": "#ffffff",
+        "type": "color",
+        "source": "computed backgroundColor of ai-btn default (raw/components-computed.json)",
+        "description": "The white circular AI-button fill on the hero band."
+      },
+      "chip": {
+        "value": "#ffffff",
+        "type": "color",
+        "source": "computed backgroundColor of hero-word default (raw/components-computed.json)",
+        "description": "The white rotating-word chip in the hero masthead."
+      },
+      "counter": {
+        "value": "rgba(255, 255, 255, 0.2)",
+        "type": "color",
+        "source": "computed backgroundColor of prc-counter default (raw/components-computed.json)",
+        "description": "The translucent header counter chip (white at 20% — the --menu-colors value)."
+      },
+      "outlineFill": {
+        "value": "#d9d9d9",
+        "type": "color",
+        "source": "computed backgroundColor of cookie-settings default (raw/components-computed.json)",
+        "description": "The #d9d9d9 outline-button fill in the consent layer."
+      }
+    },
+    "text": {
+      "ink": {
+        "var": "--fonts-100",
+        "type": "color",
+        "description": "The declared 100% ink. Resolved under the light (the .body.dark paint) declarations."
+      },
+      "muted": {
+        "var": "--fonts-64",
+        "type": "color",
+        "description": "The declared 64% ink. Resolved under the light (the .body.dark paint) declarations."
+      },
+      "dim": {
+        "var": "--fonts-50",
+        "type": "color",
+        "description": "The declared 50% ink. Resolved under the light (the .body.dark paint) declarations."
+      },
+      "faint": {
+        "var": "--fonts-30",
+        "type": "color",
+        "description": "The declared 30% ink. Resolved under the light (the .body.dark paint) declarations."
+      },
+      "hairlineInk": {
+        "var": "--fonts-20",
+        "type": "color",
+        "description": "The declared 20% ink — also the hairline borders paint. Resolved under the light (the .body.dark paint) declarations."
+      },
+      "overlayLink": {
+        "value": "{text.ink}",
+        "type": "color",
+        "source": "the menu overlay links paint the declared --fonts-100 ink (nav-overlay-link color, raw/components-computed.json)",
+        "description": "The menu-overlay link ink (the declared --fonts-100)."
+      }
+    },
+    "border": {
+      "rule": {
+        "var": "--lines",
+        "type": "color",
+        "description": "The declared hairline rule colour (FAQ rows, section dividers). Resolved under the light (the .body.dark paint) declarations."
+      },
+      "menuLine": {
+        "var": "--menu-colors",
+        "type": "color",
+        "description": "The declared overlay hairline (white at 20% in both paints). Resolved under the light (the .body.dark paint) declarations."
+      },
+      "hairline": {
+        "value": "rgba(2, 1, 8, 0.2)",
+        "type": "color",
+        "source": "computed borderTopColor of hero-word default (raw/components-computed.json)",
+        "description": "The chip/icon hairline — the --fonts-20 ink alpha."
+      },
+      "iconRing": {
+        "value": "rgba(2, 1, 8, 0.2)",
+        "type": "color",
+        "source": "computed borderTopColor of account-link default (raw/components-computed.json)",
+        "description": "The account-icon ring border."
+      },
+      "toggleRing": {
+        "value": "rgba(255, 255, 255, 0.2)",
+        "type": "color",
+        "source": "computed borderTopColor of theme-toggle default (raw/components-computed.json)",
+        "description": "The theme-toggle ring border."
+      }
+    },
+    "action": {
+      "fill": {
+        "value": "#020108",
+        "type": "color",
+        "source": "computed backgroundColor of header-cta default (raw/components-computed.json)",
+        "description": "The painted CTA fill — the page ink in light (#020108), white in dark."
+      },
+      "ink": {
+        "value": "#ffffff",
+        "type": "color",
+        "source": "computed color of header-cta default (raw/components-computed.json)",
+        "description": "The ink on the filled CTA — the inversion of the page ink."
+      },
+      "fillInverse": {
+        "value": "#ffffff",
+        "type": "color",
+        "source": "computed backgroundColor of step-cta default (raw/components-computed.json)",
+        "description": "The inverse CTA fill on the dark how-it-works band inside the light page (white pill on ink)."
+      },
+      "inkInverse": {
+        "value": "#020108",
+        "type": "color",
+        "source": "computed color of step-cta default (raw/components-computed.json)",
+        "description": "The ink on the inverse CTA."
+      }
+    }
+  },
+  "dark": {
+    "background": {
+      "page": {
+        "var": "--mainbg",
+        "type": "color",
+        "description": "The declared page field. Resolved under the dark (the plain .body paint) declarations."
+      },
+      "surface": {
+        "var": "--secondbg",
+        "type": "color",
+        "description": "The declared secondary surface. Resolved under the dark (the plain .body paint) declarations."
+      },
+      "menu": {
+        "var": "--menu",
+        "type": "color",
+        "description": "The declared menu/overlay fill — the page ink in light, a lifted #272727 in dark. Resolved under the dark (the plain .body paint) declarations."
+      },
+      "dots": {
+        "var": "--dots-pattern",
+        "type": "color",
+        "description": "The declared dots-pattern ink. Resolved under the dark (the plain .body paint) declarations."
+      },
+      "pageFade": {
+        "var": "--mainbg-gradient",
+        "type": "color",
+        "description": "The declared transparent page-gradient stop used for fade-outs. Resolved under the dark (the plain .body paint) declarations."
+      }
+    },
+    "text": {
+      "ink": {
+        "var": "--fonts-100",
+        "type": "color",
+        "description": "The declared 100% ink. Resolved under the dark (the plain .body paint) declarations."
+      },
+      "muted": {
+        "var": "--fonts-64",
+        "type": "color",
+        "description": "The declared 64% ink. Resolved under the dark (the plain .body paint) declarations."
+      },
+      "dim": {
+        "var": "--fonts-50",
+        "type": "color",
+        "description": "The declared 50% ink. Resolved under the dark (the plain .body paint) declarations."
+      },
+      "faint": {
+        "var": "--fonts-30",
+        "type": "color",
+        "description": "The declared 30% ink. Resolved under the dark (the plain .body paint) declarations."
+      },
+      "hairlineInk": {
+        "var": "--fonts-20",
+        "type": "color",
+        "description": "The declared 20% ink — also the hairline borders paint. Resolved under the dark (the plain .body paint) declarations."
+      },
+      "overlayLink": {
+        "value": "{text.ink}",
+        "type": "color",
+        "source": "the menu overlay links paint the declared --fonts-100 ink (nav-overlay-link color, raw/components-computed.json)",
+        "description": "The menu-overlay link ink (the declared --fonts-100)."
+      }
+    },
+    "border": {
+      "rule": {
+        "var": "--lines",
+        "type": "color",
+        "description": "The declared hairline rule colour (FAQ rows, section dividers). Resolved under the dark (the plain .body paint) declarations."
+      },
+      "menuLine": {
+        "var": "--menu-colors",
+        "type": "color",
+        "description": "The declared overlay hairline (white at 20% in both paints). Resolved under the dark (the plain .body paint) declarations."
+      }
+    },
+    "action": {
+      "fill": {
+        "value": "#ffffff",
+        "type": "color",
+        "source": "computed backgroundColor of header-cta-dark default (raw/components-computed.json)",
+        "description": "The painted CTA fill — the page ink in light (#020108), white in dark."
+      },
+      "ink": {
+        "value": "#020108",
+        "type": "color",
+        "source": "computed color of header-cta-dark default (raw/components-computed.json)",
+        "description": "The ink on the filled CTA — the inversion of the page ink."
+      },
+      "fillInverse": {
+        "value": "#ffffff",
+        "type": "color",
+        "source": "computed backgroundColor of step-cta-dark default (raw/components-computed.json)",
+        "description": "The inverse CTA fill on the dark how-it-works band inside the light page (white pill on ink)."
+      },
+      "inkInverse": {
+        "value": "#020108",
+        "type": "color",
+        "source": "computed color of step-cta-dark default (raw/components-computed.json)",
+        "description": "The ink on the inverse CTA."
+      }
+    }
+  },
+  "component": {
+    "marketing": {
+      "header-height": {
+        "value": "92.48px",
+        "type": "dimension",
+        "source": "measured h of mkt-header default (raw/components-computed.json)",
+        "description": "The 92.5px marketing header band."
+      },
+      "header-side-pad": {
+        "value": "26.6168px",
+        "type": "dimension",
+        "source": "computed paddingLeft of mkt-header default (raw/components-computed.json)",
+        "description": "The header's ~26.6px side padding."
+      },
+      "menu-pill-width": {
+        "value": "78.48px",
+        "type": "dimension",
+        "source": "measured w of menu-pill default (raw/components-computed.json)",
+        "description": "The ~78px Menu pill width."
+      },
+      "menu-pill-height": {
+        "value": "35.23px",
+        "type": "dimension",
+        "source": "measured h of menu-pill default (raw/components-computed.json)",
+        "description": "The ~35px header pill height."
+      },
+      "icon-btn": {
+        "value": "26.61px",
+        "type": "dimension",
+        "source": "measured h of theme-toggle default (raw/components-computed.json)",
+        "description": "The 26.6px square header icon buttons (theme toggle, account)."
+      },
+      "counter-chip": {
+        "value": "26.61px",
+        "type": "dimension",
+        "source": "measured h of prc-counter default (raw/components-computed.json)",
+        "description": "The 26.6px header counter chip."
+      },
+      "cta-width": {
+        "value": "101.81px",
+        "type": "dimension",
+        "source": "measured w of header-cta default (raw/components-computed.json)",
+        "description": "The ~102px header CTA width."
+      },
+      "cta-height": {
+        "value": "39.92px",
+        "type": "dimension",
+        "source": "measured h of header-cta default (raw/components-computed.json)",
+        "description": "The ~39.9px marketing CTA height."
+      },
+      "cta-radius": {
+        "value": "1317.53px",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of header-cta default (raw/components-computed.json)",
+        "description": "The fluid ~1318px radius — a full pill at any height."
+      },
+      "ai-btn": {
+        "value": "53.22px",
+        "type": "dimension",
+        "source": "measured h of ai-btn default (raw/components-computed.json)",
+        "description": "The 53.2px circular hero AI button."
+      },
+      "chip-radius": {
+        "value": "6.65421px",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of hero-word default (raw/components-computed.json)",
+        "description": "The 6.65px rotating-word chip radius."
+      },
+      "icon-ring": {
+        "value": "26.6168px",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of account-link default (raw/components-computed.json)",
+        "description": "The 26.6px account-icon ring radius."
+      },
+      "hero-h1-width": {
+        "value": "485.36px",
+        "type": "dimension",
+        "source": "measured w of hero-h1 default (raw/components-computed.json)",
+        "description": "The ~485px hero masthead line width."
+      },
+      "nav-overlay-height": {
+        "value": "528.98px",
+        "type": "dimension",
+        "source": "measured h of nav-overlay opened (raw/components-computed.json)",
+        "description": "The ~529px open menu overlay."
+      },
+      "nav-link-height": {
+        "value": "29.95px",
+        "type": "dimension",
+        "source": "measured h of nav-overlay-link default (raw/components-computed.json)",
+        "description": "The ~30px menu-overlay link row."
+      },
+      "faq-height": {
+        "value": "75.02px",
+        "type": "dimension",
+        "source": "measured h of faq-item default (raw/components-computed.json)",
+        "description": "The 75px FAQ row at rest."
+      },
+      "faq-open-height": {
+        "value": "118.02px",
+        "type": "dimension",
+        "source": "measured h of faq-item opened (raw/components-computed.json)",
+        "description": "The ~118px open FAQ row."
+      },
+      "faq-side-pad": {
+        "value": "26.6168px",
+        "type": "dimension",
+        "source": "computed paddingLeft of faq-item default (raw/components-computed.json)",
+        "description": "The 26.6px FAQ row padding."
+      },
+      "footer-height": {
+        "value": "811.78px",
+        "type": "dimension",
+        "source": "measured h of footer default (raw/components-computed.json)",
+        "description": "The ~812px footer."
+      },
+      "cookie-accept-width": {
+        "value": "150.39px",
+        "type": "dimension",
+        "source": "measured w of cookie-accept default (raw/components-computed.json)",
+        "description": "The ~150px consent Accept-all button."
+      },
+      "cookie-check-radius": {
+        "value": "19.9626px",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of cookie-check default (raw/components-computed.json)",
+        "description": "The ~20px consent checkbox card radius."
+      },
+      "legal-pad-top": {
+        "value": "106.467px",
+        "type": "dimension",
+        "source": "computed paddingTop of legal-section default (raw/components-computed.json)",
+        "description": "The ~106px legal section top padding."
+      },
+      "mobile-header-height": {
+        "value": "104.11px",
+        "type": "dimension",
+        "source": "measured h of m-header default (raw/components-computed.json)",
+        "description": "The ~104px phone header."
+      },
+      "mobile-menu-pill": {
+        "value": "42.69px",
+        "type": "dimension",
+        "source": "measured h of m-menu-pill default (raw/components-computed.json)",
+        "description": "The ~42.7px phone menu pill."
+      },
+      "mobile-nav-overlay": {
+        "value": "499.7px",
+        "type": "dimension",
+        "source": "measured h of m-nav-overlay opened (raw/components-computed.json)",
+        "description": "The ~56px phone menu overlay row."
+      },
+      "mobile-faq-height": {
+        "value": "94.69px",
+        "type": "dimension",
+        "source": "measured h of m-faq-item default (raw/components-computed.json)",
+        "description": "The ~95px phone FAQ row."
+      }
+    },
+    "app": {
+      "menu-btn": {
+        "value": "32px",
+        "type": "dimension",
+        "source": "measured h of app-menu-btn default on app.fourmula.ai (raw/components-computed.json)",
+        "description": "The 32px square app menu button."
+      },
+      "create-btn": {
+        "value": "32px",
+        "type": "dimension",
+        "source": "measured h of app-create-btn default on app.fourmula.ai (raw/components-computed.json)",
+        "description": "The 32px \"Create asset\" pill height."
+      },
+      "signin-btn": {
+        "value": "32px",
+        "type": "dimension",
+        "source": "measured h of app-signin-btn default on app.fourmula.ai (raw/components-computed.json)",
+        "description": "The 32px \"Sign in\" pill height."
+      },
+      "start-h1-width": {
+        "value": "432.33px",
+        "type": "dimension",
+        "source": "measured w of start-h1 default on app.fourmula.ai (raw/components-computed.json)",
+        "description": "The ~432px /start heading width."
+      },
+      "start-cta": {
+        "value": "40px",
+        "type": "dimension",
+        "source": "measured h of start-cta default on app.fourmula.ai (raw/components-computed.json)",
+        "description": "The 40px /start CTA height."
+      },
+      "auth-card-width": {
+        "value": "384px",
+        "type": "dimension",
+        "source": "measured w of auth-card default on app.fourmula.ai (raw/components-computed.json)",
+        "description": "The 384px sign-in card."
+      },
+      "auth-card-height": {
+        "value": "468.8px",
+        "type": "dimension",
+        "source": "measured h of auth-card default on app.fourmula.ai (raw/components-computed.json)",
+        "description": "The ~469px sign-in card height."
+      },
+      "auth-card-radius": {
+        "value": "28px",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of auth-card default (raw/components-computed.json)",
+        "description": "The 28px card radius (rounded-4xl)."
+      },
+      "auth-card-border": {
+        "value": "#1a1a1a",
+        "type": "color",
+        "source": "computed borderTopColor of auth-card default (raw/components-computed.json)",
+        "description": "The #1a1a1a card border (--color-base-700)."
+      },
+      "auth-card-bg": {
+        "value": "#111111",
+        "type": "color",
+        "source": "computed backgroundColor of auth-card default (raw/components-computed.json)",
+        "description": "The #111111 card fill (--color-base-800)."
+      },
+      "auth-card-backdrop": {
+        "value": "blur(24px)",
+        "type": "other",
+        "source": "computed backdropFilter of auth-card default (raw/components-computed.json)",
+        "description": "The blur(24px) card backdrop (--blur-xl)."
+      },
+      "auth-card-pad-x": {
+        "value": "32px",
+        "type": "dimension",
+        "source": "computed paddingLeft of auth-card default (raw/components-computed.json)",
+        "description": "The 32px card side padding."
+      },
+      "auth-card-gap": {
+        "value": "24px",
+        "type": "dimension",
+        "source": "computed gap of auth-card default (raw/components-computed.json)",
+        "description": "The 24px card section gap."
+      },
+      "field-height": {
+        "value": "48px",
+        "type": "dimension",
+        "source": "measured h of auth-field-email default on app.fourmula.ai (raw/components-computed.json)",
+        "description": "The 48px auth field height."
+      },
+      "field-width-email": {
+        "value": "286px",
+        "type": "dimension",
+        "source": "measured w of auth-field-email default on app.fourmula.ai (raw/components-computed.json)",
+        "description": "The ~286px email field width."
+      },
+      "google-height": {
+        "value": "40px",
+        "type": "dimension",
+        "source": "measured h of auth-google default on app.fourmula.ai (raw/components-computed.json)",
+        "description": "The 40px Google button height."
+      },
+      "submit-height": {
+        "value": "40px",
+        "type": "dimension",
+        "source": "measured h of auth-submit default on app.fourmula.ai (raw/components-computed.json)",
+        "description": "The 40px Sign-in submit height."
+      },
+      "submit-radius": {
+        "value": "9999px",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of auth-submit default (raw/components-computed.json)",
+        "description": "The full-pill submit (Tailwind rounded-full)."
+      },
+      "back-height": {
+        "value": "32px",
+        "type": "dimension",
+        "source": "measured h of auth-back default on app.fourmula.ai (raw/components-computed.json)",
+        "description": "The 32px Back pill height."
+      },
+      "eye-size": {
+        "value": "16px",
+        "type": "dimension",
+        "source": "measured h of auth-eye default on app.fourmula.ai (raw/components-computed.json)",
+        "description": "The 16px password-visibility icon."
+      },
+      "accent-fill": {
+        "value": "#ff6b02",
+        "type": "color",
+        "source": "computed backgroundColor of auth-submit default (raw/components-computed.json)",
+        "description": "The #ff6b02 accent fill on primary actions (--color-accent-500)."
+      },
+      "accent-ink": {
+        "value": "#020108",
+        "type": "color",
+        "source": "computed color of auth-submit default (raw/components-computed.json)",
+        "description": "The #020108 ink on the accent fill."
+      },
+      "accent-tint": {
+        "value": "rgba(255, 107, 2, 0.2)",
+        "type": "color",
+        "source": "computed backgroundColor of auth-google default (raw/components-computed.json)",
+        "description": "The accent-at-20% translucent fill on secondary pills (painted oklab ≈ #ff6b02 at 20%)."
+      },
+      "accent-disabled": {
+        "value": "rgba(255, 107, 2, 0.15)",
+        "type": "color",
+        "source": "computed backgroundColor of pdp-start-bottom default (raw/components-computed.json)",
+        "description": "The accent-at-15% fill on the not-ready Start generation submit."
+      },
+      "muted-ink": {
+        "value": "#686a6e",
+        "type": "color",
+        "source": "computed color of auth-forgot default (raw/components-computed.json)",
+        "description": "The #686a6e meta ink (--color-base-600)."
+      },
+      "dim-ink": {
+        "value": "#b0b4ba",
+        "type": "color",
+        "source": "computed color of auth-back default (raw/components-computed.json)",
+        "description": "The #b0b4ba secondary ink (--color-base-500)."
+      },
+      "ghost-fill": {
+        "value": "rgba(255, 255, 255, 0.05)",
+        "type": "color",
+        "source": "computed backgroundColor of auth-back default (raw/components-computed.json)",
+        "description": "The white-at-5% fill on the Back pill."
+      },
+      "link-accent": {
+        "value": "#ff6b02",
+        "type": "color",
+        "source": "computed color of auth-switch default (raw/components-computed.json)",
+        "description": "The #ff6b02 accent link ink."
+      },
+      "reco-dialog-width": {
+        "value": "480px",
+        "type": "dimension",
+        "source": "measured w of pdp-reco-dialog default on app.fourmula.ai (raw/components-computed.json)",
+        "description": "The 480px Recommendations (What can I upload?) dialog."
+      },
+      "reco-dialog-radius": {
+        "value": "28px",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of pdp-reco-dialog default (raw/components-computed.json)",
+        "description": "The 28px dialog radius (rounded-4xl)."
+      },
+      "dialog-bg": {
+        "value": "#1e1e1e",
+        "type": "color",
+        "source": "computed backgroundColor of pdp-reco-dialog default (raw/components-computed.json)",
+        "description": "The #1e1e1e dialog fill (--color-base-750)."
+      },
+      "what-dialog-width": {
+        "value": "880px",
+        "type": "dimension",
+        "source": "measured w of pdp-what-dialog default on app.fourmula.ai (raw/components-computed.json)",
+        "description": "The 880px What's-a-PDP explainer dialog."
+      },
+      "upload-height": {
+        "value": "40px",
+        "type": "dimension",
+        "source": "measured h of pdp-upload default on app.fourmula.ai (raw/components-computed.json)",
+        "description": "The 40px Upload Main Image button."
+      },
+      "shopify-cta-width": {
+        "value": "152px",
+        "type": "dimension",
+        "source": "measured w of pdp-shopify-cta default on app.fourmula.ai (raw/components-computed.json)",
+        "description": "The 152px Check connection pill."
+      },
+      "cancel-width": {
+        "value": "131px",
+        "type": "dimension",
+        "source": "measured w of pdp-cancel default on app.fourmula.ai (raw/components-computed.json)",
+        "description": "The 131px Cancel and close pill."
+      },
+      "dash-link-opacity": {
+        "value": 0.3,
+        "type": "number",
+        "source": "computed opacity of pdp-dash-link default (raw/components-computed.json)",
+        "description": "The 0.3 faded Dashboard link."
+      },
+      "signedin-chip": {
+        "value": "25px",
+        "type": "dimension",
+        "source": "measured h of pdp-signedin-chip default on app.fourmula.ai (raw/components-computed.json)",
+        "description": "The 25px Signed-in requirement chip."
+      },
+      "format-item-height": {
+        "value": "60px",
+        "type": "dimension",
+        "source": "measured h of pdp-format-static default on app.fourmula.ai (raw/components-computed.json)",
+        "description": "The 60px Static/Video content radio row."
+      },
+      "format-item-radius": {
+        "value": "16px",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of pdp-format-static default (raw/components-computed.json)",
+        "description": "The 16px radio-card radius (rounded-2xl)."
+      },
+      "format-item-bg": {
+        "value": "#1a1a1a",
+        "type": "color",
+        "source": "computed backgroundColor of pdp-format-static default (raw/components-computed.json)",
+        "description": "The #1a1a1a radio-card fill (--color-base-700)."
+      },
+      "format-item-ink": {
+        "value": "#ff6b02",
+        "type": "color",
+        "source": "computed color of pdp-format-static default (raw/components-computed.json)",
+        "description": "The accent ink on the selected radio."
+      },
+      "format-video-opacity": {
+        "value": 0.5,
+        "type": "number",
+        "source": "computed opacity of pdp-format-video default (raw/components-computed.json)",
+        "description": "The 0.5 disabled Video-content radio."
+      },
+      "start-bottom-width": {
+        "value": "591px",
+        "type": "dimension",
+        "source": "measured w of pdp-start-bottom default on app.fourmula.ai (raw/components-computed.json)",
+        "description": "The ~591px full-width footer submit."
+      },
+      "start-bottom-radius": {
+        "value": "12px",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of pdp-start-bottom default (raw/components-computed.json)",
+        "description": "The 12px footer-submit radius (rounded-xl)."
+      },
+      "start-header-width": {
+        "value": "123px",
+        "type": "dimension",
+        "source": "measured w of pdp-start-header default on app.fourmula.ai (raw/components-computed.json)",
+        "description": "The 123px header Start generation submit."
+      }
+    }
+  }
+}
