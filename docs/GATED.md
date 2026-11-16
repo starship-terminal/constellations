@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_111 of 169 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_112 of 170 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -629,6 +629,13 @@ Access: signed out (every captured surface is public; the workspace and every po
 - submitted states: the /request-demo and /signup forms, the auth cards and the help search were typed into then cleared, never sent - validation, error, loading and success states are absent rather than measured
 - the marketing violet/light/gray sets are [data-theme] section themes of one page, not a user-selectable dark mode; the dark set is the app auth shell's own theme, a different stack
 - disabled, error, loading and validation states never appear signed out - nothing was submitted
+
+## [GoFundMe](../systems/gofundme) — `gofundme`
+Access: signed out (every captured surface is public; the account, the donation flow, checkout and every post-login surface is an authenticated boundary never reached; the wizard's postcode field and the sign-in email field were typed into then cleared, never submitted; 'Donate now', 'Share', 'Message', 'Continue', 'Sign in', 'Start a GoFundMe' were measured, never activated)
+- the account, the donation flow, checkout and every post-login surface was never reached
+- the /create wizard was captured at its first public step only; its category pills and 'Continue' were measured, never submitted - later wizard steps sit behind it
+- the /sign-in Welcome card was measured signed-out; the email field was typed into then cleared and 'Continue'/SSO were never pressed - no account was ever touched; in some headless passes the island does not hydrate and only the empty shell records
+- some measured components are missing or zero-sized where the route did not serve them in a given pass (the donations heading, the search heading, the sign-in card's buttons); gaps are recorded, not fabricated
 
 ## Gate noted in access text only
 

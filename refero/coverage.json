@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 169,
-    "system_domains": 161,
-    "matched_domains": 131,
-    "missing_domains": 302,
+    "system_packages": 170,
+    "system_domains": 162,
+    "matched_domains": 132,
+    "missing_domains": 301,
     "system_domains_absent_from_catalog": 30
   },
   "matched": {
@@ -2118,6 +2118,23 @@
         }
       ]
     },
+    "gofundme.com": {
+      "catalog": [
+        {
+          "name": "GoFundMe",
+          "domain": "gofundme.com",
+          "id": 436
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "gofundme",
+          "name": "GoFundMe",
+          "url": "https://www.gofundme.com",
+          "name_match": true
+        }
+      ]
+    },
     "google.com": {
       "catalog": [
         {
@@ -2488,13 +2505,6 @@
         "name": "GlossGenius",
         "domain": "glossgenius.com",
         "id": 830
-      }
-    ],
-    "gofundme.com": [
-      {
-        "name": "GoFundMe",
-        "domain": "gofundme.com",
-        "id": 436
       }
     ],
     "grammarly.com": [
