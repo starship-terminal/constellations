@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_97 of 155 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_98 of 156 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -155,6 +155,12 @@ Access: signed out (every captured surface is public; the product — scheduler,
 - no booking was created: the booker's day cells, slot list and guest-details form were toggled as local state and Confirm was never pressed
 - signup, SSO and checkout were never followed; every Get-started/Sign-up-with/Continue action was measured only
 - booking pages vary per host: this capture is cal.com/peer's event type with its #292929 brand paint
+
+## [Mesh](../systems/clay-earth) — `clay-earth`
+Access: signed out (clay.earth 301-redirects to me.sh - the Clay product rebranded to Mesh, an Automattic product; every captured surface is public: the me.sh marketing routes and the app.me.sh sign-in card as a boundary; the app interior, plan checkout, downloads and every OAuth/sign-in action were never crossed; the sign-in e-mail field was focused and filled with placeholder text only)
+- the product itself: the Mesh app interior, plan checkout, downloads (/start targets) and every account surface sit behind app.me.sh and were never reached; the sign-in card was measured and its e-mail field focused and filled with placeholder text only, never submitted
+- no form was submitted, no plan purchased, no OAuth button pressed; the nav dropdowns and the mobile drawer were opened by their own toggles but nothing navigated
+- the marketing site runs three skins on one product: the black marketing routes, the warm-cream /pricing route and the light app.me.sh sign-in card (SF Pro, #ff6821) - all tokenised, none toggled by the user
 
 ## [Dock](../systems/dock) — `dock`
 Access: signed out (every captured surface is public; the Dock workspace sits behind auth.dock.us and was never reached; the HubSpot demo form and the auth cards were measured, never filled or submitted)

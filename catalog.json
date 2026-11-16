@@ -3506,6 +3506,108 @@
    }
   },
   {
+   "slug": "clay-earth",
+   "name": "Mesh",
+   "url": "https://me.sh",
+   "category": "productivity",
+   "platform": "web",
+   "goodFor": "Black-ground product pages with glass chrome and a warm-cream pricing route: a floating #000-page nav pill under a 3%-white sheen, #fefef7 VerlagCondensed display type over an animated counter, inverted #fdfcfa CTAs ringed by a blue-violet-amber gradient in a white glow, the #f2b98b tan wordmark accent, #f9f8f6 pricing cards with #fb7232 popular rings and Chronicle prices, and an SF Pro sign-in card in a second orange (#ff6821)",
+   "tags": [
+    "web",
+    "productivity",
+    "crm",
+    "next",
+    "b2c",
+    "dark",
+    "light",
+    "signed-out"
+   ],
+   "shape": "reference",
+   "captured": "2026-11-16",
+   "access": "signed out (clay.earth 301-redirects to me.sh - the Clay product rebranded to Mesh, an Automattic product; every captured surface is public: the me.sh marketing routes and the app.me.sh sign-in card as a boundary; the app interior, plan checkout, downloads and every OAuth/sign-in action were never crossed; the sign-in e-mail field was focused and filled with placeholder text only)",
+   "themes": [
+    "dark",
+    "light"
+   ],
+   "widths": [
+    1440,
+    390
+   ],
+   "entry": "systems/clay-earth/README.md",
+   "tokens": "systems/clay-earth/tokens.json",
+   "styleGuide": "systems/clay-earth/style-guide.html",
+   "preview": {
+    "cover": "systems/clay-earth/screenshots/home-dark-default.png",
+    "icon": "systems/clay-earth/icon.png",
+    "swatches": {
+     "dark": {
+      "page": "dark.surface.page",
+      "surface": "dark.surface.pill",
+      "text": "dark.text.primary",
+      "muted": "dark.text.muted",
+      "accent": "dark.accent",
+      "border": "dark.ring.control"
+     },
+     "light": {
+      "page": "light.surface.page",
+      "surface": "light.surface.card",
+      "text": "light.text.primary",
+      "muted": "light.text.muted",
+      "accent": "light.accent",
+      "border": "light.border.subtle"
+     }
+    },
+    "fonts": [
+     "core.font.family.ui",
+     "core.font.family.display"
+    ]
+   },
+   "designMd": {
+    "colors": [
+     "core.",
+     "dark.",
+     "light."
+    ]
+   },
+   "capture": {
+    "method": "public-web",
+    "source": "me.sh (a Next.js build, the redirect target of clay.earth - Clay rebranded to Mesh) plus the public app.me.sh sign-in card, in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and crops from the live DOM, pseudo-states forced over CDP, first painted child layers recorded so ::before/::after fills (nav sheen, CTA gradient ring, filter-pill wash) are measured where they paint; the stylesheet harvest declares 9 custom properties (Bulma column gaps and orb positions) and 9 @font-face faces - no declared design-token palette, so every token is a measured value (raw/css-vars.json resolved.dark). Everything behind sign-in or checkout is a documented boundary",
+    "timestamp": "2026-11-16T00:00:00Z",
+    "harness": "Devin",
+    "model": "SWE-2 High",
+    "route": "public-web",
+    "routes": [
+     "/",
+     "/pricing",
+     "/integrations",
+     "/nexus",
+     "/teams",
+     "/start",
+     "/stories",
+     "/serendipity",
+     "/notion",
+     "/story",
+     "/careers",
+     "/apple-vision-pro",
+     "/about",
+     "/contact",
+     "app.me.sh/login?signin (boundary card)",
+     "mobile / and /pricing"
+    ],
+    "gaps": [
+     "the product itself: the Mesh app interior, plan checkout, downloads (/start targets) and every account surface sit behind app.me.sh and were never reached; the sign-in card was measured and its e-mail field focused and filled with placeholder text only, never submitted",
+     "library.me.sh (the host /terms and /privacy link to) sits behind a Confirm-you-are-human verification gate and was never captured; /press/kit redirects to a public Notion press kit (clayearth.notion.site) which is external",
+     "no form was submitted, no plan purchased, no OAuth button pressed; the nav dropdowns and the mobile drawer were opened by their own toggles but nothing navigated",
+     "the marketing site runs three skins on one product: the black marketing routes, the warm-cream /pricing route and the light app.me.sh sign-in card (SF Pro, #ff6821) - all tokenised, none toggled by the user",
+     "no disabled/error/loading/toast states and no checkbox/radio/switch/tabs/table mount on the public surface; the mobile run occasionally hit a transient anti-bot challenge, retried clean"
+    ],
+    "durationMin": 180
+   },
+   "layoutGaps": {
+    "icons/": "no standalone SVG icon set was lifted; the glyphs (the m monogram, social marks, the hamburger) are visible in the crops and screenshots"
+   }
+  },
+  {
    "slug": "clerk",
    "name": "Clerk",
    "url": "https://clerk.com",
