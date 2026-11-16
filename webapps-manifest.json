@@ -1179,8 +1179,8 @@
     156
    ],
    "description": "Your Place to Talk and Hang Out",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/discord",
    "notes": "",
    "batch": 4
   },

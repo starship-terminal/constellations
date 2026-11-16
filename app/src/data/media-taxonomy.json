@@ -743,6 +743,11 @@
       "assignedMedia": 577
     },
     {
+      "referenceId": "systems:discord",
+      "media": 119,
+      "assignedMedia": 44
+    },
+    {
       "referenceId": "systems:dock",
       "media": 143,
       "assignedMedia": 143
@@ -107697,6 +107702,505 @@
           "termId": "web-fonts:inter",
           "rule": "font-primary",
           "reason": "Exact primary family Inter from systems/devin-desktop/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:discord",
+      "mediaId": "systems/discord/screenshots/download-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:upload-download",
+          "rule": "ux-upload-download",
+          "reason": "Capture filename explicitly names upload & download; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:discord",
+      "mediaId": "systems/discord/screenshots/download-full.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:upload-download",
+          "rule": "ux-upload-download",
+          "reason": "Capture filename explicitly names upload & download; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:discord",
+      "mediaId": "systems/discord/screenshots/home-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:discord",
+      "mediaId": "systems/discord/screenshots/home-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:discord",
+      "mediaId": "systems/discord/screenshots/login-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:log-in",
+          "rule": "page-login",
+          "reason": "Capture filename explicitly names log in; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:discord",
+      "mediaId": "systems/discord/screenshots/login-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:log-in",
+          "rule": "page-login",
+          "reason": "Capture filename explicitly names log in; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:discord",
+      "mediaId": "systems/discord/screenshots/register-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:sign-up",
+          "rule": "page-signup",
+          "reason": "Capture filename explicitly names sign up; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:discord",
+      "mediaId": "systems/discord/screenshots/register-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:sign-up",
+          "rule": "page-signup",
+          "reason": "Capture filename explicitly names sign up; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:discord",
+      "mediaId": "systems/discord/components/crops/ds-search-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:discord",
+      "mediaId": "systems/discord/components/crops/ds-search-input-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:search-field",
+          "rule": "ui-search-field",
+          "reason": "Capture filename explicitly names search field; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:discord",
+      "mediaId": "systems/discord/components/crops/ds-search-input-filled.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:search-field",
+          "rule": "ui-search-field",
+          "reason": "Capture filename explicitly names search field; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:discord",
+      "mediaId": "systems/discord/components/crops/ds-search-input-focused.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:search-field",
+          "rule": "ui-search-field",
+          "reason": "Capture filename explicitly names search field; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:discord",
+      "mediaId": "systems/discord/components/crops/ds-tab-all-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:discord",
+      "mediaId": "systems/discord/components/crops/ds-tab-all-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:discord",
+      "mediaId": "systems/discord/components/crops/ds-tab-all-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:discord",
+      "mediaId": "systems/discord/components/crops/ds-tab-all-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:discord",
+      "mediaId": "systems/discord/components/crops/ds-tab-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:discord",
+      "mediaId": "systems/discord/components/crops/ds-tab-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:discord",
+      "mediaId": "systems/discord/components/crops/ds-tab-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:discord",
+      "mediaId": "systems/discord/components/crops/ds-tab-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:discord",
+      "mediaId": "systems/discord/components/crops/gs-tab-gaming-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:discord",
+      "mediaId": "systems/discord/components/crops/lg-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:discord",
+      "mediaId": "systems/discord/components/crops/m-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:discord",
+      "mediaId": "systems/discord/components/crops/m-search-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:discord",
+      "mediaId": "systems/discord/components/crops/mk-cta-download-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:upload-download",
+          "rule": "ux-upload-download",
+          "reason": "Capture filename explicitly names upload & download; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:discord",
+      "mediaId": "systems/discord/components/crops/mk-cta-download-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:upload-download",
+          "rule": "ux-upload-download",
+          "reason": "Capture filename explicitly names upload & download; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:discord",
+      "mediaId": "systems/discord/components/crops/mk-cta-download-hover.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:upload-download",
+          "rule": "ux-upload-download",
+          "reason": "Capture filename explicitly names upload & download; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:discord",
+      "mediaId": "systems/discord/components/crops/mk-cta-download-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:upload-download",
+          "rule": "ux-upload-download",
+          "reason": "Capture filename explicitly names upload & download; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:discord",
+      "mediaId": "systems/discord/components/crops/mk-nav-download-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:upload-download",
+          "rule": "ux-upload-download",
+          "reason": "Capture filename explicitly names upload & download; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:discord",
+      "mediaId": "systems/discord/components/crops/mk-nav-download-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:upload-download",
+          "rule": "ux-upload-download",
+          "reason": "Capture filename explicitly names upload & download; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:discord",
+      "mediaId": "systems/discord/components/crops/mk-nav-download-hover.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:upload-download",
+          "rule": "ux-upload-download",
+          "reason": "Capture filename explicitly names upload & download; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:discord",
+      "mediaId": "systems/discord/components/crops/mk-nav-download-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:upload-download",
+          "rule": "ux-upload-download",
+          "reason": "Capture filename explicitly names upload & download; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:discord",
+      "mediaId": "systems/discord/components/crops/nt-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:discord",
+      "mediaId": "systems/discord/components/crops/sc-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:discord",
+      "mediaId": "systems/discord/components/crops/sc-card-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:discord",
+      "mediaId": "systems/discord/components/crops/sc-icon-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:icon",
+          "rule": "ui-icon",
+          "reason": "Capture filename explicitly names icon; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:discord",
+      "mediaId": "systems/discord/components/crops/sv-chip-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:discord",
+      "mediaId": "systems/discord/components/crops/sv-chip-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:discord",
+      "mediaId": "systems/discord/components/crops/sv-chip-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:discord",
+      "mediaId": "systems/discord/components/crops/sv-chip-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:discord",
+      "mediaId": "systems/discord/components/crops/sv-share-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:share",
+          "rule": "ux-share",
+          "reason": "Capture filename explicitly names share; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:discord",
+      "mediaId": "systems/discord/components/crops/sv-share-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:share",
+          "rule": "ux-share",
+          "reason": "Capture filename explicitly names share; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:discord",
+      "mediaId": "systems/discord/components/crops/sv-share-hover.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:share",
+          "rule": "ux-share",
+          "reason": "Capture filename explicitly names share; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:discord",
+      "mediaId": "systems/discord/components/crops/sv-share-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:share",
+          "rule": "ux-share",
+          "reason": "Capture filename explicitly names share; local classification from recorded capture metadata."
         }
       ]
     },

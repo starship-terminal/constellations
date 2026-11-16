@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 155,
-    "system_domains": 147,
-    "matched_domains": 118,
-    "missing_domains": 315,
+    "system_packages": 156,
+    "system_domains": 148,
+    "matched_domains": 119,
+    "missing_domains": 314,
     "system_domains_absent_from_catalog": 29
   },
   "matched": {
@@ -1082,6 +1082,23 @@
           "slug": "digg",
           "name": "Digg",
           "url": "https://digg.com",
+          "name_match": true
+        }
+      ]
+    },
+    "discord.com": {
+      "catalog": [
+        {
+          "name": "Discord",
+          "domain": "discord.com",
+          "id": 156
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "discord",
+          "name": "Discord",
+          "url": "https://discord.com",
           "name_match": true
         }
       ]
@@ -2218,13 +2235,6 @@
         "name": "The Dinner Ladies",
         "domain": "dinnerladies.com.au",
         "id": 762
-      }
-    ],
-    "discord.com": [
-      {
-        "name": "Discord",
-        "domain": "discord.com",
-        "id": 156
       }
     ],
     "district.in": [

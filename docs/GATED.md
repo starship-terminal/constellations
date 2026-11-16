@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_97 of 155 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_98 of 156 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -155,6 +155,13 @@ Access: signed out (every captured surface is public; the product — scheduler,
 - no booking was created: the booker's day cells, slot list and guest-details form were toggled as local state and Confirm was never pressed
 - signup, SSO and checkout were never followed; every Get-started/Sign-up-with/Continue action was measured only
 - booking pages vary per host: this capture is cal.com/peer's event type with its #292929 brand paint
+
+## [Discord](../systems/discord) — `discord`
+Access: read-only (the marketing pages, /servers discovery + categories, /servers/<slug> details, /login and /register are public signed out; the whole client - /channels/*, joining servers, invites, messages, settings - is an authenticated boundary never reached; every button and field was measured, never submitted or followed)
+- the whole Discord client needs an account - /channels/* redirects to /login; joining a server, accepting an invite, messages and settings are an authenticated boundary never reached
+- the Join/Share/Nitro/submit controls were measured (hover/focus/pressed), never pressed - no account action was executed
+- auth fields were focused and filled then cleared, never submitted - no validation, error, loading or success state exists in this capture
+- /invite/<code> painted a dark frame but no invite card signed out in this pass - recorded as a boundary
 
 ## [Dock](../systems/dock) — `dock`
 Access: signed out (every captured surface is public; the Dock workspace sits behind auth.dock.us and was never reached; the HubSpot demo form and the auth cards were measured, never filled or submitted)
