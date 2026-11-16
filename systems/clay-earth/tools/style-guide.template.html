@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mesh style guide</title>
+<meta name="description" content="Mesh (me.sh, reached through clay.earth) design tokens and the public site's components, rendered from tokens.json with the measured values.">
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  --sg-sans: var(--font-family-ui, "Verlag", -apple-system, BlinkMacSystemFont, "SF Pro", system-ui, sans-serif);
+  --sg-display: var(--font-family-display, "VerlagCondensed", "Arial Narrow", Impact, sans-serif);
+  --sg-serif: var(--font-family-serif, "ChronicleDisplayCondensed", Georgia, "Times New Roman", serif);
+  --sg-app: var(--font-family-app, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif);
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+[data-mode="dark"] {
+/*DARK*/
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: #1f1f1f; background: #f9f8f6; }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 400 44px/1.1 var(--sg-display); margin: 0 0 4px; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .1em; text-transform: uppercase; color: #86868b; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid #eceae8; }
+.lead { max-width: 62ch; color: #48494a; }
+.note { font-size: 13px; color: #86868b; max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: #86868b; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid #eceae8; display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: #86868b; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: #86868b; }
+/* ---- site mock: dark marketing surface ---- */
+.mock { border: 1px solid #eceae8; border-radius: 16px; overflow: hidden; }
+.mock.dark { background: var(--surface-page, #000); color: var(--text-body, rgba(255,255,255,.7)); border-color: #1f1f1f; }
+.navpill { display: flex; align-items: center; gap: 18px; height: var(--component-nav-height, 48px); padding: 0 24px; margin: 24px auto 0; max-width: 388px; border-radius: 16px; background: var(--surface-pill, rgba(255,255,255,.03)); box-shadow: var(--shadow-navPill, 0 0 0 .5px rgba(0,0,0,.06)); font-size: var(--font-size-nav, 12px); font-weight: 700; color: #fff; }
+.navpill .wm { color: var(--text-accent, #f2b98b); letter-spacing: .02em; }
+.navpill .sp { flex: 1; }
+.navpill .signin { height: var(--component-control-heightSigninLink, 34px); display: inline-flex; align-items: center; padding: 0 16px; border-radius: var(--component-control-radiusSigninLink, 8px); color: var(--text-muted, rgba(255,255,255,.64)); }
+.navpill .signin:hover { background: var(--navHover, rgba(255,255,255,.08)); color: #fff; }
+.navpill .gs { height: var(--component-control-heightNavCta, 32px); display: inline-flex; align-items: center; padding: 0 14px; border-radius: var(--component-control-radiusNavCta, 8px); box-shadow: var(--ring-control, inset 0 0 0 1px rgba(255,255,255,.24)); color: var(--text-body, rgba(255,255,255,.7)); font-size: 11px; }
+.hero { padding: 72px 40px 64px; text-align: center; }
+.hero .stat { font-size: var(--font-size-planLabel, 14px); font-weight: 700; letter-spacing: .08em; color: #fff; margin-bottom: 28px; }
+.hero .stat span { color: var(--text-body, rgba(255,255,255,.7)); font-weight: 400; }
+.hero h3 { font: 700 var(--font-size-display, 64px)/1 var(--sg-display); color: var(--text-primary, #fefef7); margin: 0; letter-spacing: -.01em; }
+.hero .lede { font: 400 var(--font-size-sub, 20px)/1.6 var(--sg-sans); color: var(--gray-400, #86868b); max-width: 44ch; margin: 22px auto 32px; }
+.cta { display: inline-flex; align-items: center; justify-content: center; height: var(--component-control-heightCta, 54px); padding: 0 27px; border-radius: var(--component-control-radiusCta, 14px); background: var(--fill-inverted, #fdfcfa); color: var(--text-onInverted, #000); font-size: var(--font-size-body, 18px); font-weight: 600; box-shadow: var(--shadow-ctaGlow, 0 0 4px 1px rgba(255,255,255,.98)); position: relative; }
+.cta::before { content: ""; position: absolute; inset: -27px -9px; border-radius: 999px; background: var(--gradient-ctaRing, linear-gradient(225deg, #32c5ff, #b620e0, #f7b500)); z-index: -1; opacity: .9; }
+/* ---- site mock: light pricing surface ---- */
+.mock.light { background: var(--surface-page, #f9f8f6); color: var(--text-primary, #1f1f1f); }
+.toggle { width: 226px; height: var(--component-control-heightToggle, 40px); margin: 24px auto; border-radius: var(--component-control-radiusToggle, 12px); background: var(--surface-chip, rgba(31,31,31,.06)); display: flex; align-items: center; justify-content: center; gap: 14px; font-size: 11px; font-weight: 600; letter-spacing: .06em; color: var(--text-primary, #1f1f1f); }
+.toggle b { background: #fff; border-radius: 8px; padding: 4px 8px; font-weight: 600; }
+.plans { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; padding: 20px 24px 28px; }
+.plan { border: 1px solid var(--border-subtle, #eceae8); border-radius: var(--component-card-radiusPlan, 16px); padding: 22px 24px; background: linear-gradient(#fff, rgba(255,255,255,.5)), var(--surface-card, rgba(149,149,149,.06)); }
+.plan.popular { border-color: var(--accent, #fb7232); box-shadow: var(--shadow-popularRing, 0 0 0 3px rgba(251,114,50,.24)); position: relative; }
+.plan .tag { position: absolute; top: -11px; left: 50%; transform: translateX(-50%); background: var(--accent, #fb7232); color: #fff; border-radius: 999px; padding: 3px 10px; font: 600 10px/1.4 var(--sg-sans); letter-spacing: .05em; }
+.plan .lbl { font: 600 var(--font-size-planLabel, 14px)/1 var(--sg-sans); color: var(--text-accent, #fb7232); letter-spacing: .08em; }
+.plan .price { font: 400 40px/1.1 var(--sg-serif); color: var(--text-primary, #1f1f1f); margin: 10px 0 14px; }
+.plan .price small { font: 400 14px/1 var(--sg-serif); color: var(--text-primary, #1f1f1f); }
+.pbtn { display: flex; align-items: center; justify-content: center; height: var(--component-control-heightPlanCta, 44px); border-radius: var(--component-control-radiusPlanCta, 10px); font-size: 12px; font-weight: 600; letter-spacing: .06em; }
+.pbtn.outline { border: 1px solid var(--border-control, rgba(31,31,31,.4)); color: var(--text-primary, #1f1f1f); }
+.pbtn.fill { background: var(--accent, #fb7232); color: var(--text-onAccent, #fff); }
+/* ---- sign-in card ---- */
+.signin { max-width: 340px; margin: 28px auto; padding: 28px; background: #fcfcfc; border: 1px solid #eceae8; border-radius: 16px; font-family: var(--sg-app); font-size: 14px; color: var(--text-muted, #48494a); }
+.signin .h { font-size: var(--font-size-signin, 32px); color: var(--text-muted, #48494a); margin-bottom: 16px; }
+.field { height: var(--component-control-heightField, 40px); border-radius: var(--component-control-radiusField, 6px); background: var(--field-fill, rgba(72,73,74,.04)); border: 1px solid var(--border-field, rgba(72,73,74,.1)); display: flex; align-items: center; padding: 0 12px; color: var(--text-muted, #48494a); margin-bottom: 12px; }
+.obtn { display: flex; align-items: center; justify-content: center; height: var(--component-control-heightOauth, 44px); border-radius: var(--component-control-radiusSigninBtn, 12px); color: #fff; margin-bottom: 10px; }
+.obtn.apple { background: var(--oauth-ink, #1f1f1e); }
+.obtn.google { background: var(--oauth-google, #5383ec); }
+.obtn.google:hover { background: var(--oauth-googleHover, rgba(83,131,236,.87)); }
+.obtn.email { background: var(--accentApp, #ff6821); color: rgba(255,255,255,.6); height: var(--component-control-heightField, 40px); }
+.signin .tgl { text-align: center; font-size: 12px; color: var(--text-muted, #48494a); margin-top: 6px; }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid #eceae8; padding: 6px 14px; text-align: left; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Mesh style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The mock is a reconstruction from tokens, not captured pixels — the real captures are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+
+  <h2 class="sh">Mesh, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>. me.sh (clay.earth's redirect target — the Clay product rebranded to Mesh, an Automattic product) declares no design-token CSS variables (its nine custom properties are Bulma column gaps and orb positions), so the whole palette is measured on the painted chrome: the black ground and its translucent whites, the #fb7232 marketing orange, the #f2b98b wordmark tan, the warm creams and the app surface's own #ff6821.</p>
+  <p class="note">Two page themes on different routes, not a toggle: / and the dark routes paint black; /pricing and the app.me.sh sign-in card paint warm light surfaces. Read from me.sh on 2026-11-16, signed out, in headless Chromium; library.me.sh (the Terms/Privacy host) sits behind a human-verification gate and was not captured. Nothing was signed into, paid for or submitted.</p>
+
+  <h2 class="sh">The dark marketing surface</h2>
+  <p class="lead">A floating glass nav pill on the black ground, VerlagCondensed display type in warm off-white, the animated counter and the inverted white CTA ringed by the blue-violet-amber gradient.</p>
+  <div class="mock dark" data-mode="dark">
+    <div class="navpill"><span class="wm">mesh</span><span>Releases</span><span>Resources</span><span>Company</span><span class="sp"></span><span class="signin">Sign In</span><span class="gs">Get Started</span></div>
+    <div class="hero">
+      <div class="stat">RELATIONSHIPS MANAGED: <span>193,249,849</span></div>
+      <h3>Every relationship, organized.</h3>
+      <div class="lede">Mesh brings together everyone you've ever met. Automatically organized, intelligently searchable, always up to date. For you and your team.</div>
+      <span class="cta">Get Mesh Free</span>
+    </div>
+  </div>
+
+  <h2 class="sh">The light pricing surface</h2>
+  <p class="lead">The warm-cream pricing route: a gray billing-toggle chip, hairline plan cards under a white sheen, the Chronicle-serif prices and the popular card's orange ring.</p>
+  <div class="mock light">
+    <div class="toggle">Pay monthly <b>Pay annually</b></div>
+    <div class="plans">
+      <div class="plan"><div class="lbl">PERSONAL</div><div class="price">Free <small>with credit card</small></div><span class="pbtn outline">Get started</span></div>
+      <div class="plan"><div class="lbl">PRO</div><div class="price">$10 <small>/ month</small></div><span class="pbtn outline">Try it free</span></div>
+      <div class="plan popular"><span class="tag">POPULAR</span><div class="lbl">TEAM</div><div class="price">$40 <small>per seat / month</small></div><span class="pbtn fill">Try it free</span></div>
+    </div>
+  </div>
+
+  <h2 class="sh">The sign-in card</h2>
+  <p class="lead">app.me.sh's boundary surface is a third stack — SF Pro Text on a #fcfcfc card, the app's own orange and the OAuth pair.</p>
+  <div class="mock light"><div class="signin">
+    <div class="h">Sign in to Mesh</div>
+    <div class="obtn apple">Sign in with Apple</div>
+    <div class="obtn google">Sign in with Google</div>
+    <div class="field">Enter your email</div>
+    <div class="obtn email">Sign in with email</div>
+    <div class="tgl">Don't have a Mesh account? Create account</div>
+  </div></div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The dark surface's ground is <code>dark.surface.page</code> #000 (<code>color.ink.950</code>) with translucent-white text and controls; the light surface's ground is <code>light.surface.page</code> #f9f8f6 (<code>color.paper.50</code>). The shared accent is <code>color.orange.500</code> #fb7232; the app stack's own orange is <code>color.orange-app.500</code> #ff6821; the wordmark tan is <code>color.tan.300</code> #f2b98b.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Component metrics</h2>
+  <p class="lead">Measured boxes: the 54/52px CTA pills, the 44px plan and OAuth buttons, the 40px field and toggle, the 48px nav pill and filter pills, and the 6-16px radius ladder (fields 6, pills 8, plan buttons 10, buttons and toggles 12, CTAs and cards 14-16).</p>
+  <div id="layout-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2>
+  <table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read CSS variables from the live stylesheet and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, filled and open states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = /*TOKENS*/null;
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  for (const [set, toks] of [['dark', TOK.dark], ['light', TOK.light]]) {
+    const roles = flat(toks || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+    if (!roles.length) continue;
+    h += `<div class="pal-h">${set} roles</div><div class="pal" data-mode="${set}">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  const grads = flat(TOK.core && TOK.core.gradient || {}, 'gradient.');
+  if (grads.length) {
+    h += `<div class="pal-h">gradients</div><div class="pal">`;
+    for (const [n, t] of grads) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc((t.v||[]).map(s=>s.color).join(' → '))}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function layout() {
+  let m = '';
+  for (const [n, t] of flat(TOK.dark && TOK.dark.component || {}, 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#layout-out').innerHTML = m;
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+</script>
+</body>
+</html>

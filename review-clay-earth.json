@@ -1,0 +1,86 @@
+{
+ "F1": {
+  "grade": "partly",
+  "evidence": "No declared palette exists (the harvest is 98 rules but only 9 custom properties, all Bulma column gaps and orb positions) so every ramp is measured: core.color.ink (5: #000 page -> #1d1d1f light-band ink), paper (3: #fdfcfa CTA -> #f9f8f6 pricing -> #fff), white-alpha (8: 3% sheen -> 70% body text), ink-alpha (4), orange (2: marketing #fb7232 + app #ff6821), tan (2: #f2b98b wordmark -> #efab74 hover), google (2: #5383ec + 87% hover) plus cream.0 and gray. Real measured ramps, but not ~10 steps per hue and none resolved from a declaration."
+ },
+ "F2": {
+  "grade": "partly",
+  "evidence": "dark.surface.page #000 (measured on documentElement - body itself is transparent), surface.band #0f0f10 (footer/features band), surface.pill/control (3%/6% white glass) cover the dark route; light.surface.page #f9f8f6 (pricing main), surface.card (6% grey plan fill), surface.chip (billing toggle) and field.fill cover the light routes. No raised/overlay/modal ladder exists on the captured routes."
+ },
+ "F3": {
+  "grade": "partly",
+  "evidence": "dark.text.primary #fefef7, text.body 70% white, text.muted 64%, text.faint 40%, text.accent #f2b98b (+#efab74 hover) and text.onInverted #000 cover the dark route; light.text.primary #1f1f1f, muted #48494a, accent #fb7232 and onAccent #fff cover the light routes. No disabled or placeholder text role painted."
+ },
+ "F4": {
+  "grade": "partly",
+  "evidence": "light.border.subtle #eceae8 (plan cards), border.control 40% ink (outline CTAs), border.field 10% ink (sign-in field), dark.ring.control 24% white (nav-cta inset ring) and dark.focus #101010 plus light.accentRing 24% orange (popular card) are tokenised. The subtle/control distinction is a 1-shade ladder, not a default/strong scale."
+ },
+ "F5": {
+  "grade": "partly",
+  "evidence": "Partial ladders measured: the plan-cta outline flips to the #fb7232 fill with white text on hover and holds it pressed; the nav-signin control gains an 8% white wash + full-white text on hover; Google OAuth steps #5383ec -> 87% alpha on hover/pressed. No designed default/hover/pressed ramp like a -500/-600/-700 scale exists - Mesh's interaction model is fill-swap, not shade-step."
+ },
+ "F6": {
+  "grade": "missing",
+  "evidence": "No success/warning/danger/info colour paints anywhere on the captured public surface; nothing was submitted so no form validation state was ever seen."
+ },
+ "F7": {
+  "grade": "meets",
+  "evidence": "Two real page themes tokenised honestly: dark for the marketing routes, light for the pricing route and the sign-in card - the site switches skin per route, not per user toggle. Shared component metrics live in core; the dark set scopes under [data-mode=dark] in the style guide so nothing collides."
+ },
+ "F8": {
+  "grade": "partly",
+  "evidence": "Four families tokenised: core.font.family.ui (Verlag), display (VerlagCondensed), serif (ChronicleCondensed/ChronicleTextG1Roman) and app (SFProText); core.font.size.* holds the measured 64/48/32/20/14/12px steps. Weights 400/600/700 are observed on entries, not tokenised; the 9 declared @font-face faces are recorded in raw/css-vars.json."
+ },
+ "F9": {
+  "grade": "partly",
+  "evidence": "No spacing scale exists to tokenise: paddings are measured per component (24px plan card, 24px nav pill, 16px drawer) but the site declares no space vars and the values are not a base-4/8 ladder."
+ },
+ "F10": {
+  "grade": "meets",
+  "evidence": "The painted radius ladder is tokenised in core.component.*.radius*: 16px nav pill/cards/CTA-bottom, 14px main CTA, 12px drawer/toggle/sign-in button, 10px plan CTA, 8px nav-cta/hamburger/sign-in link, 6px field; border widths are measured per entry (0-3px incl. the popular 3px ring)."
+ },
+ "F11": {
+  "grade": "meets",
+  "evidence": "Control heights measured in core.component.control: 54px main CTA, 52px bottom CTA, 48px nav pill/filter, 44px plan CTA/OAuth, 40px field/toggle, 34px sign-in link, 32px nav-cta/hamburger; the designed focus ring is tokenised as dark.focus #101010."
+ },
+ "F12": {
+  "grade": "partly",
+  "evidence": "Two real elevations tokenised: dark.shadow.ctaGlow (0 0 4px 1px 98% white) and dark.shadow.navPill (the layered glass hairline + drops), plus light.shadow.popularRing (3px 24% orange). No raised/modal elevation ladder exists on the captured routes."
+ },
+ "F13": {
+  "grade": "partly",
+  "evidence": "Measured but not tokenised: 0.3s transitions across buttons and links, the animated stat-counter digits (IQmOHa_animatedDigit) and the hero word rotation are recorded on the entries; the CTA's gradient ring is a real gradient token (gradient.ctaRing), as are filterWash/cardSheen/drawerSheen. No duration/easing tokens emit."
+ },
+ "F14": {
+  "grade": "partly",
+  "evidence": "Two widths measured (1440 desktop, 390 mobile with its own component group: hamburger, 374px drawer, 48px hero); breakpoints and z-layers are observed, not named."
+ },
+ "C1": {
+  "grade": "partly",
+  "evidence": "~8 of the checklist components on the public surface: button (cta/nav-cta/plan/billing-toggle), link (nav/footer/drawer), text field (sign-in e-mail), card (plan/menu/hero), menu (3 nav dropdowns + mobile drawer), toggle (billing), plus the sign-in card boundary and OAuth button pair. No select/accordion/carousel/checkbox/radio/switch/tabs/tooltip/toast/table/avatar/dialog mount signed out."
+ },
+ "C2": {
+  "grade": "meets",
+  "evidence": "94 states across 39 components: every interactive entry carries default + hover + focus-visible + pressed (CDP-forced, never a real press), the sign-in field adds focused + filled (placeholder text, deleted after), the nav dropdowns and mobile drawer add opened, the plan CTA is measured both outline and popular-filled."
+ },
+ "C3": {
+  "grade": "partly",
+  "evidence": "States measured by pseudo-forcing and real pointer/keyboard, recorded in raw/components-computed.json with the paint layer each value was read on; hover/focus-visible are real driven states, pressed is forced via CDP as documented. No disabled/loading/checked states exist on the surface."
+ },
+ "C4": {
+  "grade": "meets",
+  "evidence": "Two responsive contexts fully captured: 1440x900 desktop (all routes) and a real 390x844 mobile pass whose nav collapses to three fixed pieces and whose drawer was measured after pressing the actual y0DxmG_toggle hamburger - not tagged off-canvas."
+ },
+ "P1": {
+  "grade": "meets",
+  "evidence": "Honest provenance throughout: clay.earth -> me.sh redirect and the Clay->Mesh rebrand are documented in the README, catalog, components.md and gaps; library.me.sh's human-verification gate and the Notion press-kit redirect are recorded as uncaptured boundaries; nothing was signed in, submitted, purchased or downloaded."
+ },
+ "A1": {
+  "grade": "partly",
+  "evidence": "WCAG contrast checks pass 8/8 pairs (dark and light sets) per the scripted F15; the focus ring is tokenised (#101010) and focus-visible states are measured. But no keyboard-trap/screen-reader attributes were captured and the dropdown triggers are div-based buttons."
+ },
+ "K1": {
+  "grade": "meets",
+  "evidence": "Every captured claim traces to raw/components-computed.json + the crops/screenshots it names; the package states plainly that components.md entries are measured readings, not an invented component library, and the style guide is a token reconstruction, not a pixel-perfect replacement."
+ }
+}

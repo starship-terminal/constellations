@@ -1,7 +1,7 @@
 {
  "date": "2026-11-17",
  "rubric": "4",
- "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): DOM/CSS evidence review: read tokens.json role-by-role against raw/components-computed.json readings, the 46 screenshots and component entries; every grade cites the token paths and measured values it rests on",
+ "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): read the package end to end (README, components.md, patterns.md, tokens.json, style-guide.html), inspected screenshots and crops, checked measured roles against the declared FPDS/Tailwind layer",
  "systems": [
   {
    "slug": "1password",
@@ -19952,137 +19952,8 @@
    "category": "AI agents",
    "reviewed": "2026-10-25",
    "reviewedPlatform": "desktop"
-  },
-  {
-   "slug": "glorify",
-   "grades": {
-    "F1": {
-     "grade": "partly",
-     "evidence": "The app set carries a real 8-step neutral ramp both ways (neutral.dark.100-800, neutral.light.100-800), a 7-step dark ramp and 4-5-step status ramps (error/success/warning/info/green/orange/pink/red/yellow) resolved from the SPA's own :root declarations; the marketing side is a flat hashed --token-* palette with no stepped ramp, and no hue reaches ~10 steps."
-    },
-    "F2": {
-     "grade": "partly",
-     "evidence": "light.background.page and light.surface.card; app.background.page plus app.surface.card, field-bg, chrome-fill, inspector-fill and dialog-fill cover page/surface/overlay-ish roles. No raised or scrim role is tokenised."
-    },
-    "F3": {
-     "grade": "partly",
-     "evidence": "light.text.ink/body/muted/link and app.text.ink/body/muted/link exist, and on-accent inks are measured (light.action.cta-ink #fff9f3 on #455eed, app.action.primary-ink). No disabled text role: the login submit's ink stays #fff across disabled and enabled states - only its fill changes."
-    },
-    "F4": {
-     "grade": "partly",
-     "evidence": "light.border.focus-ring, app.border.field-border, app.border.field-focus and app.border.style-selected-border exist, but the auth fields honestly paint transparent borders (the .field-container wraps them) and no default/strong pair is named."
-    },
-    "F5": {
-     "grade": "meets",
-     "evidence": "default/hover/focus-visible/pressed were measured on real controls (nav-play hover rgb(55,75,190) vs default rgb(69,94,237), hero-cta, m-hero-cta, login-submit enabled vs disabled fills, learn-card); pressed is DevTools-forced as recorded."
-    },
-    "F6": {
-     "grade": "partly",
-     "evidence": "The app declares full status ramps - error/success/warning/info each 4-5 steps plus green/orange/pink/red/yellow - but they are declarations: no validation, error, success or info state paints on the signed-out surfaces (the forms were never submitted)."
-    },
-    "F7": {
-     "grade": "meets",
-     "evidence": "The product ships two surfaces signed out: the marketing light surface (no toggle, no dark media query) and the app's dark chrome. Each surface's semantic roles are complete in its own set - light.* for marketing, app.* for the SPA - and nothing pretends to be a re-themed twin."
-    },
-    "F8": {
-     "grade": "meets",
-     "evidence": "Families with fallback stacks (core.font.family.display PolySans Trial, family.body Inter, app.font.sans Frill Inter + app.font.mono), an 8-size measured scale (display/hero/h2/planName/body/button/eyebrow/mobileHero), 4 weights, 3 line-heights and app.leading/tracking - named roles cover display, heading, body, label and caption."
-    },
-    "F9": {
-     "grade": "partly",
-     "evidence": "The app declares app.spacing.default 4px plus named containers (780/860/980px, sidebar 300px) but no stepped space scale; the marketing sheet declares no spacing vars and measured paddings live in raw/components-computed.json, not tokens."
-    },
-    "F10": {
-     "grade": "meets",
-     "evidence": "Eight measured radii under core.radius.* (control/button/cta 8px, field 2px, app-button 8px, card 0px, dialog 16px, inspector 12px) plus the app's declared 5-step app.radius scale (3/5/6/8/10px); hairline borders paint at 1-2px."
-    },
-    "F11": {
-     "grade": "meets",
-     "evidence": "Measured control heights under core.component.*: topbar 64, nav-cta 42, hero-cta 42, billing-tab, plan-cta, mobile cta, the 352x384 auth card, 30px fields, 56px editor header, 48px rail tools, 280px inspector; the keyboard focus ring is recorded (light.border.focus-ring black outline)."
-    },
-    "F12": {
-     "grade": "missing",
-     "evidence": "No elevation scale is tokenised: only the app's declared shadow.highlight (a 1px inset focus ring, not an elevation level) and measured shadows inside component style dumps; no 3-5 named shadow levels exist."
-    },
-    "F13": {
-     "grade": "meets",
-     "evidence": "core.motion.control records the measured marketing transition; the app declares app.ease.in-out/out/out-expo as cubic-bezier arrays and app.animate.ping/spin; the reduced-motion probe is recorded in raw/components-computed.json _meta.reducedMotion."
-    },
-    "F14": {
-     "grade": "meets",
-     "evidence": "app.breakpoint.md 820px is declared; the app ships a 16-entry z-index scale (drawer/overlay/modal/popover/toasts/editor/header/tooltip); both 1440 and 390 widths were captured with per-width component geometry."
-    },
-    "C1": {
-     "grade": "partly",
-     "evidence": "About 11 of 19 checklist components are covered: button (nav-play/hero-cta/submits/OAuth), icon button (ed-tool rail, m-burger, ed-close), link (nav-link, footer-link, login-forgot), text field (login-field, craft brand), text area (ed-craft-area), tabs (ed-tab EDIT/LAYERS/PAGES, the Monthly/Yearly billing switch), menu (Features flyout, mobile menu overlay), dialog (ed-craft), card (plan/tpl/learn/mk/home/login), list row (plan-row, footer-col), badge (learn-tag). Select, checkbox, radio, switch, tooltip, toast, table, avatar are absent or gated."
-    },
-    "C2": {
-     "grade": "meets",
-     "evidence": "Components carry default/hover/focus-visible/pressed plus opened (Features flyout, Craft dialog, inspector Layers tab, mobile menu), filled (auth fields, craft textareas) and enabled-vs-disabled (login-submit, ed-add) states; each entry records how the state was reached."
-    },
-    "C3": {
-     "grade": "meets",
-     "evidence": "focus-visible was measured on marketing controls (nav-cta outlines black) and the auth fields' focused state was captured via the kit's forced focus; the editor inspector tab switch is an opened-state capture."
-    },
-    "C4": {
-     "grade": "meets",
-     "evidence": "components.md writes every colour next to its token path or measured source, and geometry names the core.component.* tokens; the semantic roles alias into the declared vocabularies."
-    },
-    "P1": {
-     "grade": "partly",
-     "evidence": "patterns.md documents the marketing shell, hero/sections, pricing with billing switch, feature pages, the template galleries (filter pills = search/filtering), the dark auth cards, the anonymous editor (onboarding + chrome + Craft dialog), mobile, motion and focus. Destructive confirmation, feedback/toast, empty/error and true form-validation patterns are all post-login or unsubmitted - declared as gaps."
-    },
-    "A1": {
-     "grade": "partly",
-     "evidence": "icon.png is the fetched site icon at 128px; Inter and PolySans Trial are named with fallback stacks and 414 @font-faces harvested (licences not recorded); no standalone icon set was lifted - declared under layoutGaps."
-    },
-    "K1": {
-     "grade": "meets",
-     "evidence": "README records scope and every captured route, the two-host architecture, how values were read (CSSOM harvest, per-state computed styles, paint lists, CDP-forced pressed), the signed-in boundary and exactly which actions were measured but never activated."
-    },
-    "F15": {
-     "grade": "meets",
-     "evidence": "Script: all 8 pairs pass 4.5:1 across 2 themes; lowest 4.74:1 light muted (light.text.muted) on page (light.background.page)"
-    },
-    "F16": {
-     "grade": "meets",
-     "evidence": "Script: 485 of 485 tokens name their source"
-    },
-    "K2": {
-     "grade": "partly",
-     "evidence": "Script: 7 rules, 6 linking an image (needs 3+, all linked)"
-    },
-    "K3": {
-     "grade": "missing",
-     "evidence": "Script: glorify: systems/glorify/DESIGN.md is out of date or hand-edited; run `make design-md`"
-    },
-    "C5": {
-     "grade": "na",
-     "evidence": "Optional for a capture, and this product does not publish it."
-    },
-    "V1": {
-     "grade": "na",
-     "evidence": "Optional for a capture, and this product does not publish it."
-    },
-    "V2": {
-     "grade": "na",
-     "evidence": "Optional for a capture, and this product does not publish it."
-    }
-   },
-   "name": "Glorify",
-   "goodFor": "design-tool marketing and signed-out product design across two hosts: a light-only Framer marketing site (hashed --token-* colour layer, Inter UI with PolySans display type, 64px floating nav, 838px hero measure, #455eed blue CTAs, three ~230px plan cards behind a Monthly/Yearly billing switch, a draggable /templates marquee, /template-marketplace cards and the /learn article hub) plus the dark app.glorify.com chrome its own :root vocabulary declares (--light-*/--dark-*/--active-*/--field-*/--cta-300 ramps and --glori-gradient): the signed-out login/register cards and the anonymous editor's upload onboarding, Craft dialog, 56px header, 48px tool rail and 280px inspector",
-   "url": "https://glorify.com",
-   "captured": "2026-11-17",
-   "themes": [
-    "light",
-    "dark"
-   ],
-   "platform": "web",
-   "category": "Productivity",
-   "reviewed": "2026-11-17",
-   "reviewedPlatform": "web"
   }
  ],
  "base": "2026-10-16",
- "reviewMethod": "DOM/CSS evidence review: read tokens.json role-by-role against raw/components-computed.json readings, the 46 screenshots and component entries; every grade cites the token paths and measured values it rests on"
+ "reviewMethod": "read the package end to end (README, components.md, patterns.md, tokens.json, style-guide.html), inspected screenshots and crops, checked measured roles against the declared FPDS/Tailwind layer"
 }
