@@ -13059,7 +13059,8 @@
      "icons: no standalone SVG set lifted this pass"
     ],
     "durationMin": null,
-    "durationNote": "wall-clock across the capture sessions including kit adaptation (shooter, stylesheet harvest, measurement and docs builders rewritten to the Framer marketing DOM and the app SPA), the screenshot and measurement passes on a headless Linux server, and the offline build"
+    "durationNote": "wall-clock across the capture sessions including kit adaptation (shooter, stylesheet harvest, measurement and docs builders rewritten to the Framer marketing DOM and the app SPA), the screenshot and measurement passes on a headless Linux server, and the offline build",
+    "pr": "https://github.com/starship-terminal/constellations/pull/621"
    },
    "layoutGaps": {
     "icons/": "the icon extraction pass was not run; the icons (the Glorify wordmark, the feature-flyout glyphs, the editor rail icons, the brand marks) are visible in the crops and screenshots"
