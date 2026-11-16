@@ -209,9 +209,20 @@ async function S(key, target, list, meta = {}, opts = {}) {
         via = 'CDP forcePseudoState :active:hover';
       } else if (st === 'focused') {
         const fld = (opts.fieldLoc || loc).filter({ visible: true }).first();
-        await fld.click({ timeout: 4000 }).catch(() => fld.evaluate((el) => el.focus()));
-        await page.waitForTimeout(400);
-        via = 'clicked into the field';
+        if (opts.focusInner) {
+          // A control whose label click toggles it (a checkbox) focuses its
+          // inner input directly — never clicked, never toggled.
+          await fld.evaluate((el) => {
+            const t = el.matches('input,textarea,select') ? el : (el.querySelector('input,textarea,select') || el);
+            t.focus();
+          });
+          await page.waitForTimeout(400);
+          via = 'focused the inner input via .focus() — never clicked (a label click would check the box)';
+        } else {
+          await fld.click({ timeout: 4000 }).catch(() => fld.evaluate((el) => el.focus()));
+          await page.waitForTimeout(400);
+          via = 'clicked into the field';
+        }
       } else if (st === 'filled') {
         const f = (opts.fieldLoc || loc).filter({ visible: true }).first();
         await f.click({ timeout: 4000 }).catch(() => f.evaluate((el) => el.focus()));
@@ -487,7 +498,7 @@ async function signup() {
   await S('signup-email', q('input[type="email"], input[name*="mail" i]').filter({ visible: true }).first(), FIELD, { group: g, title: 'Email field (sign-up)', desc: 'The sign-up e-mail input; focused and typed into then cleared — never submitted.', sel: 'signup email input' }, { noScroll: true, fillText: 'name@example.com' });
   await S('signup-pass', q('input[type="password"]').filter({ visible: true }).first(), FIELD, { group: g, title: 'Password field (sign-up)', desc: 'The sign-up password input; focused and typed into then cleared — never submitted.', sel: 'signup password input' }, { noScroll: true, fillText: 'sample-pass-123' });
   await S('signup-phone', q('input[type="tel"], input[name*="phone" i]').filter({ visible: true }).first(), FIELD, { group: g, title: 'Phone field (sign-up)', desc: 'The sign-up phone-number input; focused and typed into then cleared — never submitted.', sel: 'signup phone input' }, { noScroll: true, fillText: '555 010 0100' });
-  await S('signup-checkbox', q('input[type="checkbox"], [class*="Checkbox"]').filter({ visible: true }).first(), ['default', 'focused'], { group: g, title: 'Professional checkbox', desc: 'The "I confirm that I\'m a professional or business owner" checkbox; focused, never checked.', sel: 'signup checkbox' }, { noScroll: true });
+  await S('signup-checkbox', q('input[type="checkbox"], [class*="Checkbox"]').filter({ visible: true }).first(), ['default', 'focused'], { group: g, title: 'Professional checkbox', desc: 'The "I confirm that I\'m a professional or business owner" checkbox; focused via .focus() on its inner input — never clicked, never checked.', sel: 'signup checkbox' }, { noScroll: true, focusInner: true });
   await S('signup-promo', q('button, a').filter({ hasText: /promo/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Promo-code button', desc: 'The "Add Promo Code" secondary button; measured, never activated.', sel: 'signup promo button' }, { noScroll: true });
   await S('signup-submit', q('button').filter({ hasText: /sign ?up|get started|create|continue/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Sign-up submit', desc: 'The primary sign-up submit; its states were measured but the button was never clicked — no account was created.', sel: 'signup submit button' }, { noScroll: true });
   save();
@@ -523,8 +534,8 @@ async function bookservices() {
   await S('bk-pro-select', q('[class*="selectOuterContainer"], [class*="Select_select"], .gg-dropdown__control').filter({ visible: true }).first(), [...B4, 'opened'], { group: g, title: 'Professional select', desc: 'The "Select a Professional" react-select on the service list (Any Professional, the business\'s pros); opened was measured with its .gg-dropdown__menu held open — an option was never chosen.', sel: 'booking professional select' }, { before: { opened: openPro } });
   await S('bk-pro-option', q('.gg-dropdown__option, [class*="option"]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Professional option', desc: 'An option row inside the opened professional menu; measured while the menu was held open, never chosen.', sel: '.gg-dropdown__option' }, { open: openPro, noReset: true });
   await S('bk-service-card', q('[class*="ClassicService_root"], [class*="ClassicService_card"], [class*="service"]').filter({ hasText: /\$|min/i }).filter({ visible: true }).first(), ['default', 'hover'], { group: g, title: 'Service card', desc: 'A service card on the published list (category, name, description, price, duration, Select).', sel: 'booking service card' }, { pin: true });
-  await S('bk-service-select', q('button').filter({ hasText: /^Select$/ }).filter({ visible: true }).first(), [...B4, 'opened'], { group: g, title: 'Service Select button', desc: 'A service row\'s "Select" button marking it for booking; opened was measured after clicking it — the row flips to a selected state and the header becomes "BOOK 1 SERVICE". A local selection toggle, not a submission.', sel: 'booking Select button' }, { before: { opened: async (loc) => { await loc.click({ timeout: 4000 }).catch(() => loc.evaluate((el) => el.click())); await page.waitForTimeout(1200); return 'clicked "Select" on a service — the row is marked for booking, nothing sent'; } } });
-  await S('bk-book-btn', q('button, a').filter({ hasText: /book \d+ service|clear all/i }).filter({ visible: true }).first(), B4, { group: g, title: 'BOOK bar button', desc: 'The "BOOK n SERVICE" header bar; measured after a service was selected. In the screenshot pass it was clicked to reach /book — a public navigation, never a submission.', sel: 'booking BOOK button' });
+  await S('bk-service-select', q('button').filter({ hasText: /^Select$/ }).filter({ visible: true }).first(), [...B4, 'opened'], { group: g, title: 'Service Select button', desc: 'A service row\'s "Select" button marking it for booking; opened was measured on the same pinned node after clicking it — the button flips to its selected state and the header becomes "BOOK 1 SERVICE". A local selection toggle, not a submission.', sel: 'booking Select button' }, { pin: true, before: { opened: async (loc) => { await loc.click({ timeout: 4000 }).catch(() => loc.evaluate((el) => el.click())); await page.waitForTimeout(1200); return 'clicked "Select" on a service — the row is marked for booking, nothing sent'; } } });
+  await S('bk-book-btn', q('button, a').filter({ hasText: /book \d+ service/i }).filter({ visible: true }).first(), B4, { group: g, title: 'BOOK bar button', desc: 'The "BOOK n SERVICE" header bar; measured after a service was selected (the header\'s "Clear All" is a different control, never measured as this button). In the screenshot pass it was clicked to reach /book — a public navigation, never a submission.', sel: 'booking BOOK button' });
   save();
 }
 

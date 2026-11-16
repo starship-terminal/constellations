@@ -193,6 +193,10 @@ async function bookStep(p, S) {
   await clickEl(t);
   await wait(p, 5000);
   if (!/\/book/.test(p.url())) { log('  ! BOOK click did not reach /book:', p.url()); return; }
+  // The shots that follow are /book, not /services: record the route the
+  // flow actually reached (query/fragment stripped — the kit's URL allow-list
+  // means no params are expected, but never log them regardless).
+  S.requested.sanitizedSourceUrl = p.url().split('?')[0].split('#')[0];
   await S.view('book-calendar');
   // A day cell shows the time-slot list — read-only browsing, never booked.
   const day = p.locator('button, [role="button"], td, div').filter({ hasText: /^\s*2[0-9]\s*$/ }).filter({ visible: true }).first();

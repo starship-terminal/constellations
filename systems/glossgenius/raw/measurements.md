@@ -1148,7 +1148,7 @@ Crops: `signup-phone-default.png`, `signup-phone-focused.png`, `signup-phone-fil
 
 #### signup-checkbox
 
-Professional checkbox. The "I confirm that I'm a professional or business owner" checkbox; focused, never checked.
+Professional checkbox. The "I confirm that I'm a professional or business owner" checkbox; focused via .focus() on its inner input — never clicked, never checked.
 
 Page: signup. Selector: `signup checkbox`. States: default, focused.
 
@@ -1168,8 +1168,8 @@ Page: signup. Selector: `signup checkbox`. States: default, focused.
 | Text node | span.Text_root__XjK0i.Text_size-base__5hTlv: baselGrotesk 17px/21px 500, #2a2f2e | = |
 | Transition | none | = |
 | Cursor | default | = |
-| Painted layers | div.Checkbox_iconContainer__w3ypg 24.0x24.0 border T:1px #8e9695 / R:1px #8e9695 / B:1px #8e9695 / L:1px #8e9695 r 8px | div.Checkbox_iconContainer__w3ypg 24.0x24.0 bg #6b7976 border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 8px |
-| How | at rest | clicked into the field |
+| Painted layers | div.Checkbox_iconContainer__w3ypg 24.0x24.0 border T:1px #8e9695 / R:1px #8e9695 / B:1px #8e9695 / L:1px #8e9695 r 8px | input.Checkbox_input__iVUsy 24.0x24.0 outline 1px auto #101010 offset 2px; div.Checkbox_iconContainer__w3ypg 24.0x24.0 border T:1px #8e9695 / R:1px #8e9695 / B:1px #8e9695 / L:1px #8e9695 r 8px outline 1px solid #0d80a2 offset 0px |
+| How | at rest | focused the inner input via .focus() — never clicked (a label click would check the box) |
 
 Crops: `signup-checkbox-default.png`, `signup-checkbox-focused.png`.
 
@@ -1536,11 +1536,11 @@ Page: bookservices. Selector: `booking service card`. States: default, hover.
 | Painted layers | article.ClassicService_root__Mgwgs.ClassicService_card__1cK2m 1154.6x287.0 shadow #1b1d21 @ 0.5 0px 0px 46px 0px; div.ClassicService_main__r92Ya 750.5x287.0 bg #ffffff shadow #1b1d21 @ 0.5 0px 0px 46px 0px; div::before.ClassicService_main__r92Ya 750.469pxx64px image linear-gradient(#ffffff @ 0, #ffffff 12px); button.ClassicService_button__8gVD_ 94.0x36.0 image linear-gradient(to right, #505718 0%, #807443 100%); span::after.ClassicService_option__PIV5l 0pxx18px border R:1px #747c80 | = |
 | How | at rest | mouse hover |
 
-Crops: `bk-service-card-default.png`, `bk-service-card-hover.png`.
+Crops: `bk-service-card-hover.png`.
 
 #### bk-service-select
 
-Service Select button. A service row's "Select" button marking it for booking; opened was measured after clicking it — the row flips to a selected state and the header becomes "BOOK 1 SERVICE". A local selection toggle, not a submission.
+Service Select button. A service row's "Select" button marking it for booking; opened was measured on the same pinned node after clicking it — the button flips to its selected state and the header becomes "BOOK 1 SERVICE". A local selection toggle, not a submission.
 
 Page: bookservices. Selector: `booking Select button`. States: default, hover, focus-visible, pressed, opened.
 
@@ -1550,46 +1550,49 @@ Page: bookservices. Selector: `booking Select button`. States: default, hover, f
 | Padding | 0px 12px | = | = | = | = |
 | Border | none | = | = | = | = |
 | Radius | 0px | = | = | = | = |
-| Background | transparent | = | = | = | = |
-| Background image | linear-gradient(to right, #505718 0%, #807443 100%) | = | = | = | = |
+| Background | transparent | = | = | = | #1b1d21 |
+| Background image | linear-gradient(to right, #505718 0%, #807443 100%) | = | = | = | - |
 | Box shadow | none | = | = | = | = |
 | Outline | none | = | 1px auto #101010 offset 0px | = | = |
 | Font | basefont 12px/18px 400 | = | = | = | = |
 | Letter spacing | normal | = | = | = | = |
-| Colour | #ffffff | = | = | = | = |
+| Colour | #ffffff | = | = | = | #ffffff @ 0.5 |
 | Transition | background 0.3s ease | = | = | = | = |
 | Cursor | pointer | = | = | = | = |
-| ::after | 750.469px x 287px, absolute, bg #000000 @ 0, radius 0px | = | = | = | = |
-| Painted layers | button.ClassicService_button__8gVD_ 94.0x36.0 image linear-gradient(to right, #505718 0%, #807443 100%) | = | button.ClassicService_button__8gVD_ 94.0x36.0 image linear-gradient(to right, #505718 0%, #807443 100%) outline 1px auto #101010 offset 0px | = | = |
+| ::after | 750.469px x 287px, absolute, bg #000000 @ 0, radius 0px | = | = | = | 743.969px x 287px, absolute, bg #000000 @ 0, radius 0px |
+| Painted layers | button.ClassicService_button__8gVD_ 94.0x36.0 image linear-gradient(to right, #505718 0%, #807443 100%) | = | button.ClassicService_button__8gVD_ 94.0x36.0 image linear-gradient(to right, #505718 0%, #807443 100%) outline 1px auto #101010 offset 0px | = | button.ClassicService_button__8gVD_.ClassicService_buttonSelected__zlrdO 94.0x36.0 bg #1b1d21 |
 | Ancestor paint | 3 up div.ClassicService_main__r92Ya bg #ffffff shadow #1b1d21 @ 0.5 0px 0px 46px 0px | = | = | = | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover | clicked "Select" on a service — the row is marked for booking, nothing sent |
-| Opacity | - | 0.8 | = | 0.8 | = |
+| Opacity | - | 0.8 | = | 0.8 | 0.8 |
 
 Crops: `bk-service-select-default.png`, `bk-service-select-hover.png`, `bk-service-select-focus-visible.png`, `bk-service-select-pressed.png`, `bk-service-select-opened.png`.
 
 #### bk-book-btn
 
-BOOK bar button. The "BOOK n SERVICE" header bar; measured after a service was selected. In the screenshot pass it was clicked to reach /book — a public navigation, never a submission.
+BOOK bar button. The "BOOK n SERVICE" header bar; measured after a service was selected (the header's "Clear All" is a different control, never measured as this button). In the screenshot pass it was clicked to reach /book — a public navigation, never a submission.
 
 Page: bookservices. Selector: `booking BOOK button`. States: default, hover, focus-visible, pressed.
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 78 x 21 | = | = | = |
-| Padding | 0px | = | = | = |
+| Size (w x h) | 211 x 40 | = | = | = |
+| Padding | 12px 18px 11px 18px | = | = | = |
 | Border | none | = | = | = |
-| Radius | 0px | = | = | = |
+| Radius | 20px | = | = | = |
 | Background | transparent | = | = | = |
+| Background image | linear-gradient(to right, #505718 0%, #807443 100%) | = | = | = |
 | Box shadow | none | = | #727587 0px 0px 0px 3px | = |
 | Outline | none | = | = | = |
-| Font | headingfont 18px/normal 300 | = | = | = |
-| Letter spacing | 1px | = | = | = |
+| Font | headingfont 14px/normal 300 | = | = | = |
+| Letter spacing | 3px | = | = | = |
 | Colour | #ffffff | = | = | = |
-| Text node | span: headingfont 18px/normal 300, #ffffff, ls 1px | = | = | = |
-| Transition | none | = | = | = |
+| Text node | span: headingfont 14px/normal 300, #ffffff, ls 3px | = | = | = |
+| Transition | box-shadow, opacity, -webkit-box-shadow 0.2s ease-in-out | = | = | = |
 | Cursor | pointer | = | = | = |
+| Icon | 16 x 9.84, colour #ffffff | = | = | = |
+| Painted layers | button.Button_root__8nq_L.BookingHeader_btnBook__lrjRh 211.0x40.0 image linear-gradient(to right, #505718 0%, #807443 100%) r 20px | = | button.Button_root__8nq_L.BookingHeader_btnBook__lrjRh 211.0x40.0 image linear-gradient(to right, #505718 0%, #807443 100%) r 20px shadow #727587 0px 0px 0px 3px | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
-| Painted layers | - | = | button.Button_root__8nq_L.BookingHeader_btn___Br72 78.0x21.0 shadow #727587 0px 0px 0px 3px | = |
+| Opacity | - | 0.9 | = | 0.9 |
 
 Crops: `bk-book-btn-default.png`, `bk-book-btn-hover.png`, `bk-book-btn-focus-visible.png`, `bk-book-btn-pressed.png`.
 

@@ -55,7 +55,7 @@ Fonts: `core.font.family.display` is Basel Classic Book, then 2 fallbacks; `core
 
 ### Using components
 
-Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 198 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
+Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 197 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
 
 ### Accessibility
 
@@ -63,7 +63,7 @@ Read [components.md](components.md) for the component inventory; [patterns.md](p
 |---|---|---|---|---|
 | light | 16.81:1 pass | 18.26:1 pass | 3.65:1 fail | 3.97:1 fail |
 
-2 of 4 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Focus tokens: `core.deco.primary.focus` 55 42 172; `core.deco.tertiary.focus` 241 245 249; `core.deco.secondary.focus` 198 210 255; `core.deco.destructive.focus` 197 0 9.
+2 of 4 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Focus tokens: `app.control.focusring` #0d80a2; `app.input.border.focus` #444a49; `booking.control.focusring` #17a1cb; `booking.focus.box.shadow.thick` rgb(114, 117, 135) 0px 0px 0px 3px.
 
 <!-- brief:end -->
 
@@ -110,11 +110,11 @@ Every colour, radius, length and font on this package is one of two kinds, and `
 - **Declared** — `css-var <name>`: a custom property in the host's own stylesheet, harvested by `tools/capture/vars.mjs` (the marketing site's Webflow CDN bundle plus inline blocks; the app's Next.js CSS chunks loaded by /login; the booking site's own chunks on /services) and resolved in a probe document carrying that host's real sheets at 1440 x 900.
 - **Measured** — `measured/computed <what> of <component> <state>`: a computed style or bounding box read from the live DOM by `tools/capture/public/measure.mjs`, with a matching crop in `components/crops/`.
 
-The marketing names are emitted under `core` at their natural paths (`color.primary.gloss.black`, `color.super.pink`, `bg.*`, `size.*px`, `apps.*`…); the app's glossDS layer lives under `app` (`content.primary`, `surface.*`, `brand.*`, `space.*x`, `button.*`…); the booking site's family under `booking`. Measured roles (`light.text.ink`, `light.action.cta-fill`, `app.action.primary-fill`, `booking.action.book-fill`…) **alias** the declared token whose value they match, inside their own surface set — a booking role never aliases a marketing name that merely shares the value. The app's scoped `.dark` declarations and the marketing sheet's `[data-theme="dark"]` block are emitted verbatim: they are declarations nothing signed out switches to, not a captured dark surface.
+The marketing names are emitted under `core` at their natural paths (`color.primary.gloss.black`, `color.super.pink`, `bg.*`, `size.*px`, `apps.*`…); the app's glossDS layer lives under `app` (`content.primary`, `surface.*`, `brand.*`, `space.*x`, `button.*`…); the booking site's family under `booking`. Measured roles (`light.text.ink`, `light.action.cta-fill`, `app.action.primary-fill`, `booking.action.book-fill`…) **alias** the declared token whose value they match, inside their own surface set — a booking role never aliases a marketing name that merely shares the value. The app's scoped `.dark` declarations are emitted verbatim: they are declarations nothing signed out switches to, not a captured dark surface. Third-party sheets (the decagon.ai chat widget, reCAPTCHA, the Remixicon font) are harvested into an `external` bin for provenance only — never resolved, never part of a token set — and the `[data-theme="dark"]`/`[data-theme="light"]` declarations live there, not in the marketing vocabulary.
 
 ## What to distrust
 
-- **Nothing dark paints.** Every signed-out surface is light-only (no toggle; the app's `.dark` class is declared but never applied, and the `[data-theme="dark"]` rules come from an embedded sheet nothing sets). Do not present those declarations as a captured dark theme.
+- **Nothing dark paints.** Every signed-out surface is light-only (no toggle; the app's `.dark` class is declared but never applied, and the `[data-theme="dark"]` rules come from the third-party Decagon chat-widget sheet — an `external` provenance bin, not first-party evidence). Do not present those declarations as a captured dark theme.
 - **Three vocabularies, one name-space.** `--surface-primary`, `--black`, `--space-2x` and friends mean different values on the marketing site, the app and a booking site — the sets are deliberately separate; never read an `app` token onto the marketing surface or vice versa.
 - **Presses are forced.** `pressed` states were read with `CSS.forcePseudoState` — any script-driven mousedown look is uncaptured.
 - **The booking site is one business's skin.** honeyhivesalon.glossgenius.com paints the Organic-style layout; other businesses' sites re-skin the same chrome through other `.tokens_glossDS__*` layout classes and palette picks — treat `booking` tokens as this surface's resolution, not a universal brand set.

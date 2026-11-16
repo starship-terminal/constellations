@@ -8,7 +8,7 @@ How to read an entry:
 
 - A colour is its value followed by the token in [tokens.json](tokens.json) with the same value in the component's own surface set (light / app / booking — the three hosts declare separate vocabularies), when there is one. Text is written family size/line-height weight, then its colour, for example `baselGrotesk 16/24 600, #17150e`, and is read from the first text node inside the component.
 - The state table has one row per state that differs. The first row lists every value; later rows list only what changes. A state with the same values as the first is named in its label, for example "default (same: focus-visible)". When the root paints nothing, "Child layers" names the first nodes inside it that do.
-- Crops are images of the component read from the live page, in [components/crops/](components/crops) (198 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
+- Crops are images of the component read from the live page, in [components/crops/](components/crops) (197 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
 
 ## Discovery list
 
@@ -70,7 +70,7 @@ Values that apply across entries, from the measurement files.
 | Duration | Easing | Property | Where |
 |---|---|---|---|
 | 0.2s | `ease` | -webkit-box-shadow, box-shadow, opacity | bk-pro-select, forgot-field, login-field, login-pass, signup-email, signup-name, signup-pass, signup-phone |
-| 0.2s | `ease-in-out` | -webkit-box-shadow, box-shadow, opacity | bk-next, forgot-field, login-field, login-pass, signup-email, signup-name, signup-pass, signup-phone |
+| 0.2s | `ease-in-out` | -webkit-box-shadow, box-shadow, opacity | bk-book-btn, bk-next, forgot-field, login-field, login-pass, signup-email, signup-name, signup-pass and more |
 | 0.25s | `cubic-bezier(0.165, 0.84, 0.44, 1)` | background-color | m-topbar, mkt-header |
 | 0.3s | `cubic-bezier(0.165, 0.84, 0.44, 1)` | background-color, border-color, color | demo-email, demo-field, demo-select, feat-card, nav-hiw, nav-link, plan-card-popular |
 | 0.3s | `ease` | background | bk-service-select |
@@ -482,16 +482,16 @@ app.glossgenius.com/login — the signed-out sign-in card: e-mail and password f
 #### Sign-in headline
 The "Welcome back!" sign-in heading on app.glossgenius.com/login; pinned by size because a 1px hidden heading also matches. Read as `login-h1` on the app sign-in page.
 
-**Values (default).** size 390 x 37; background transparent; text baselClassic 36/37 500, #2a2f2e `border.field-border`.
+**Values (default).** size 390 x 37; background transparent; text baselClassic 36/37 500, #2a2f2e `banner.content.empty.1`.
 
 ![Sign-in headline default](components/crops/login-h1-default.png)
 
 #### Sign-in card
 The sign-in form card — e-mail and password fields, the primary "Log in" submit and the forgot-password link. Read as `login-card` on the app sign-in page.
 
-**Values (default).** size 390 x 230; background transparent; text baselGrotesk 17/21 500, #707877 `gray.600`; layers div.BaseInputContainer_root__UQzho.BaseInput_inputContainer__Q1AQt 390.0x59.0 rgb(255, 255, 255) T:1px rgb(201, 205, 204) / R:1px rgb(201, 205, 204) / B:1px rgb(201, 205, 204) / L:1px rgb(201, 205, 204) 12px; div.BaseInputContainer_root__UQzho.BaseInput_inputContainer__Q1AQt 390.0x59.0 rgb(255, 255, 255) T:1px rgb(201, 205, 204) / R:1px rgb(201, 205, 204) / B:1px rgb(201, 205, 204) / L:1px rgb(201.
+**Values (default).** size 390 x 230; background transparent; text baselGrotesk 17/21 500, #707877 `bottom.tab.bar.content.unselected`; layers div.BaseInputContainer_root__UQzho.BaseInput_inputContainer__Q1AQt 390.0x59.0 rgb(255, 255, 255) T:1px rgb(201, 205, 204) / R:1px rgb(201, 205, 204) / B:1px rgb(201, 205, 204) / L:1px rgb(201, 205, 204) 12px; div.BaseInputContainer_root__UQzho.BaseInput_inputContainer__Q1AQt 390.0x59.0 rgb(255, 255, 255) T:1px rgb(201, 205, 204) / R:1px rgb(201, 205, 204) / B:1px rgb(201, 205, 204) / L:1px rgb(201.
 
-Child layers that carry the look: div 390x59 background #ffffff `apps.colors.background.default` border 1px #c9cdcc `gray.300` radius 12px; div 390x59 background #ffffff `apps.colors.background.default` border 1px #c9cdcc `gray.300` radius 12px; button 28x28 border 1px transparent radius 1000px.
+Child layers that carry the look: div 390x59 background #ffffff `apps.colors.background.default` border 1px #c9cdcc `border.dark` radius 12px; div 390x59 background #ffffff `apps.colors.background.default` border 1px #c9cdcc `border.dark` radius 12px; button 28x28 border 1px transparent radius 1000px.
 
 ![Sign-in card default](components/crops/login-card-default.png)
 
@@ -500,7 +500,7 @@ The sign-in e-mail input; focused and typed into then cleared — never submitte
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 364 x 21; background transparent; text baselGrotesk 17/21 400, #2a2f2e `border.field-border`; transition box-shadow 0.2s ease-in-out, opacity 0.2s ease; opacity 0; placeholder #757575 |
+| default | size 364 x 21; background transparent; text baselGrotesk 17/21 400, #2a2f2e `banner.content.empty.1`; transition box-shadow 0.2s ease-in-out, opacity 0.2s ease; opacity 0; placeholder #757575 |
 | focused, filled | opacity none |
 
 ![Email field (sign-in) default](components/crops/login-field-default.png) ![Email field (sign-in) focused](components/crops/login-field-focused.png) ![Email field (sign-in) filled](components/crops/login-field-filled.png)
@@ -510,7 +510,7 @@ The sign-in password input; focused and typed into then cleared — never submit
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 324 x 21; background transparent; text baselGrotesk 17/21 400, #2a2f2e `border.field-border`; transition box-shadow 0.2s ease-in-out, opacity 0.2s ease; opacity 0; placeholder #757575 |
+| default | size 324 x 21; background transparent; text baselGrotesk 17/21 400, #2a2f2e `banner.content.empty.1`; transition box-shadow 0.2s ease-in-out, opacity 0.2s ease; opacity 0; placeholder #757575 |
 | focused, filled | opacity none |
 
 ![Password field (sign-in) default](components/crops/login-pass-default.png) ![Password field (sign-in) focused](components/crops/login-pass-focused.png) ![Password field (sign-in) filled](components/crops/login-pass-filled.png)
@@ -520,10 +520,10 @@ The primary "Log in" submit; its states were measured but the button was never c
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 390 x 48; padding 0px 24px; border 1px solid transparent; radius 1000px; background #2a2f2e `border.field-border`; text baselGrotesk 17/21 535, #ffffff `apps.colors.background.default` |
-| hover | background #444a49 `gray.800` |
+| default | size 390 x 48; padding 0px 24px; border 1px solid transparent; radius 1000px; background #2a2f2e `banner.content.empty.1`; text baselGrotesk 17/21 535, #ffffff `apps.colors.background.default` |
+| hover | background #444a49 `button.primary.brand.bg.hover` |
 | focus-visible | outline 1px auto #101010, offset 0px |
-| pressed | background #585f5e `gray.700` |
+| pressed | background #585f5e `button.primary.brand.bg.pressed` |
 
 ![Sign-in submit default](components/crops/login-submit-default.png) ![Sign-in submit hover](components/crops/login-submit-hover.png) ![Sign-in submit focus-visible](components/crops/login-submit-focus-visible.png) ![Sign-in submit pressed](components/crops/login-submit-pressed.png)
 
@@ -532,7 +532,7 @@ The "Forgot Password?" link to /forgot-password; measured, never followed. Read 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 117 x 20; background transparent; text baselGrotesk 15/19 500, #585f5e `gray.700` |
+| default (same: hover, pressed) | size 117 x 20; background transparent; text baselGrotesk 15/19 500, #585f5e `button.primary.brand.bg.pressed` |
 | focus-visible | outline 1px auto #101010, offset 1px; layers a.Login_forgotPasswordLink__06EN7 117.0x20.0 1px auto rgb(16, 16, 16) offset 1px |
 
 ![Forgot-password link default](components/crops/login-forgot-default.png) ![Forgot-password link hover](components/crops/login-forgot-hover.png) ![Forgot-password link focus-visible](components/crops/login-forgot-focus-visible.png) ![Forgot-password link pressed](components/crops/login-forgot-pressed.png)
@@ -542,17 +542,17 @@ The "Sign up for free trial" link beside the sign-in form; measured, never follo
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 129 x 18; background transparent; text baselGrotesk 15/19 500, #2a2f2e `border.field-border` |
-| hover | text baselGrotesk 15/19 500, #444a49 `gray.800` |
-| focus-visible | outline 1px auto #101010, offset 1px; text baselGrotesk 15/19 500, #585f5e `gray.700`; layers a.TextAction_root__0Cr5x.TextAction_secondary__EEy5G 129.0x18.0 1px auto rgb(16, 16, 16) offset 1px |
-| pressed | text baselGrotesk 15/19 500, #444a49 `gray.800` |
+| default | size 129 x 18; background transparent; text baselGrotesk 15/19 500, #2a2f2e `banner.content.empty.1` |
+| hover | text baselGrotesk 15/19 500, #444a49 `button.primary.brand.bg.hover` |
+| focus-visible | outline 1px auto #101010, offset 1px; text baselGrotesk 15/19 500, #585f5e `button.primary.brand.bg.pressed`; layers a.TextAction_root__0Cr5x.TextAction_secondary__EEy5G 129.0x18.0 1px auto rgb(16, 16, 16) offset 1px |
+| pressed | text baselGrotesk 15/19 500, #444a49 `button.primary.brand.bg.hover` |
 
 ![Sign-up link default](components/crops/login-signup-default.png) ![Sign-up link hover](components/crops/login-signup-hover.png) ![Sign-up link focus-visible](components/crops/login-signup-focus-visible.png) ![Sign-up link pressed](components/crops/login-signup-pressed.png)
 
 #### App footer
 The app's public footer band (About, Careers, Terms, Privacy, Contact, social icons); pinned by width because a 24px footer-classed icon also matches. Read as `login-footer` on the app sign-in page.
 
-**Values (default).** size 1440 x 109; padding 20px 72px; background #eef0f0 `gray.100`; text baselGrotesk 15/19 500, #2a2f2e `border.field-border`; icon 24 x 24, #585f5e `gray.700`.
+**Values (default).** size 1440 x 109; padding 20px 72px; background #eef0f0 `alert.default.bg`; text baselGrotesk 15/19 500, #2a2f2e `banner.content.empty.1`; icon 24 x 24, #585f5e `button.primary.brand.bg.pressed`.
 
 ![App footer default](components/crops/login-footer-default.png)
 
@@ -563,7 +563,7 @@ app.glossgenius.com/signup — the signed-out sign-up card: name, e-mail, passwo
 #### Sign-up headline
 The "Let's get started" sign-up heading on app.glossgenius.com/signup. Read as `signup-h1` on the app sign-up page.
 
-**Values (default).** size 450 x 37; background transparent; text baselClassic 36/37 500, #2a2f2e `border.field-border`.
+**Values (default).** size 450 x 37; background transparent; text baselClassic 36/37 500, #2a2f2e `banner.content.empty.1`.
 
 ![Sign-up headline default](components/crops/signup-h1-default.png)
 
@@ -572,7 +572,7 @@ The sign-up first-name input; focused and typed into then cleared — never subm
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 191 x 21; background transparent; text baselGrotesk 17/21 400, #2a2f2e `border.field-border`; transition box-shadow 0.2s ease-in-out, opacity 0.2s ease; opacity 0; placeholder #757575 |
+| default | size 191 x 21; background transparent; text baselGrotesk 17/21 400, #2a2f2e `banner.content.empty.1`; transition box-shadow 0.2s ease-in-out, opacity 0.2s ease; opacity 0; placeholder #757575 |
 | focused, filled | opacity none |
 
 ![Name field (sign-up) default](components/crops/signup-name-default.png) ![Name field (sign-up) focused](components/crops/signup-name-focused.png) ![Name field (sign-up) filled](components/crops/signup-name-filled.png)
@@ -582,7 +582,7 @@ The sign-up e-mail input; focused and typed into then cleared — never submitte
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 424 x 21; background transparent; text baselGrotesk 17/21 400, #2a2f2e `border.field-border`; transition box-shadow 0.2s ease-in-out, opacity 0.2s ease; opacity 0; placeholder #757575 |
+| default | size 424 x 21; background transparent; text baselGrotesk 17/21 400, #2a2f2e `banner.content.empty.1`; transition box-shadow 0.2s ease-in-out, opacity 0.2s ease; opacity 0; placeholder #757575 |
 | focused, filled | opacity none |
 
 ![Email field (sign-up) default](components/crops/signup-email-default.png) ![Email field (sign-up) focused](components/crops/signup-email-focused.png) ![Email field (sign-up) filled](components/crops/signup-email-filled.png)
@@ -592,7 +592,7 @@ The sign-up password input; focused and typed into then cleared — never submit
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 384 x 21; background transparent; text baselGrotesk 17/21 400, #2a2f2e `border.field-border`; transition box-shadow 0.2s ease-in-out, opacity 0.2s ease; opacity 0; placeholder #757575 |
+| default | size 384 x 21; background transparent; text baselGrotesk 17/21 400, #2a2f2e `banner.content.empty.1`; transition box-shadow 0.2s ease-in-out, opacity 0.2s ease; opacity 0; placeholder #757575 |
 | focused, filled | opacity none |
 
 ![Password field (sign-up) default](components/crops/signup-pass-default.png) ![Password field (sign-up) focused](components/crops/signup-pass-focused.png) ![Password field (sign-up) filled](components/crops/signup-pass-filled.png)
@@ -602,20 +602,20 @@ The sign-up phone-number input; focused and typed into then cleared — never su
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 424 x 21; background transparent; text baselGrotesk 17/21 400, #2a2f2e `border.field-border`; transition box-shadow 0.2s ease-in-out, opacity 0.2s ease; opacity 0; placeholder #757575 |
+| default | size 424 x 21; background transparent; text baselGrotesk 17/21 400, #2a2f2e `banner.content.empty.1`; transition box-shadow 0.2s ease-in-out, opacity 0.2s ease; opacity 0; placeholder #757575 |
 | focused, filled | opacity none |
 
 ![Phone field (sign-up) default](components/crops/signup-phone-default.png) ![Phone field (sign-up) focused](components/crops/signup-phone-focused.png) ![Phone field (sign-up) filled](components/crops/signup-phone-filled.png)
 
 #### Professional checkbox
-The "I confirm that I'm a professional or business owner" checkbox; focused, never checked. Read as `signup-checkbox` on the app sign-up page.
+The "I confirm that I'm a professional or business owner" checkbox; focused via .focus() on its inner input — never clicked, never checked. Read as `signup-checkbox` on the app sign-up page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 450 x 42; background transparent; text baselGrotesk 17/21 500, #2a2f2e `border.field-border`; layers div.Checkbox_iconContainer__w3ypg 24.0x24.0 T:1px rgb(142, 150, 149) / R:1px rgb(142, 150, 149) / B:1px rgb(142, 150, 149) / L:1px rgb(142, 150, 149) 8px |
-| focused | layers div.Checkbox_iconContainer__w3ypg 24.0x24.0 rgb(107, 121, 118) T:1px rgba(0, 0, 0, 0) / R:1px rgba(0, 0, 0, 0) / B:1px rgba(0, 0, 0, 0) / L:1px rgba(0, 0, 0, 0) 8px |
+| default | size 450 x 42; background transparent; text baselGrotesk 17/21 500, #2a2f2e `banner.content.empty.1`; layers div.Checkbox_iconContainer__w3ypg 24.0x24.0 T:1px rgb(142, 150, 149) / R:1px rgb(142, 150, 149) / B:1px rgb(142, 150, 149) / L:1px rgb(142, 150, 149) 8px |
+| focused | layers input.Checkbox_input__iVUsy 24.0x24.0 1px auto rgb(16, 16, 16) offset 2px; div.Checkbox_iconContainer__w3ypg 24.0x24.0 T:1px rgb(142, 150, 149) / R:1px rgb(142, 150, 149) / B:1px rgb(142, 150, 149) / L:1px rgb(142, 150, 149) 1px solid rgb(13, 128, 162) offset 0px 8px |
 
-Child layers that carry the look: div 24x24 border 1px #8e9695 `gray.500` radius 8px.
+Child layers that carry the look: div 24x24 border 1px #8e9695 `checkbox.unchecked.default` radius 8px.
 
 ![Professional checkbox default](components/crops/signup-checkbox-default.png) ![Professional checkbox focused](components/crops/signup-checkbox-focused.png)
 
@@ -624,10 +624,10 @@ The "Add Promo Code" secondary button; measured, never activated. Read as `signu
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 159 x 36; padding 0px 12px 0px 8px; border 1px solid #c9cdcc `gray.300`; radius 1000px; background #ffffff `apps.colors.background.default`; text baselGrotesk 15/21 535, #2a2f2e `border.field-border` |
-| hover | background #f7f9f9 `gray.50` |
+| default | size 159 x 36; padding 0px 12px 0px 8px; border 1px solid #c9cdcc `border.dark`; radius 1000px; background #ffffff `apps.colors.background.default`; text baselGrotesk 15/21 535, #2a2f2e `banner.content.empty.1` |
+| hover | background #f7f9f9 `button.secondary.hover` |
 | focus-visible | outline 1px auto #101010, offset 0px |
-| pressed | background #eef0f0 `gray.100` |
+| pressed | background #eef0f0 `alert.default.bg` |
 
 ![Promo-code button default](components/crops/signup-promo-default.png) ![Promo-code button hover](components/crops/signup-promo-hover.png) ![Promo-code button focus-visible](components/crops/signup-promo-focus-visible.png) ![Promo-code button pressed](components/crops/signup-promo-pressed.png)
 
@@ -636,10 +636,10 @@ The primary sign-up submit; its states were measured but the button was never cl
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 450 x 48; padding 0px 24px; border 1px solid transparent; radius 1000px; background #2a2f2e `border.field-border`; text baselGrotesk 17/21 535, #ffffff `apps.colors.background.default` |
-| hover | background #444a49 `gray.800` |
+| default | size 450 x 48; padding 0px 24px; border 1px solid transparent; radius 1000px; background #2a2f2e `banner.content.empty.1`; text baselGrotesk 17/21 535, #ffffff `apps.colors.background.default` |
+| hover | background #444a49 `button.primary.brand.bg.hover` |
 | focus-visible | outline 1px auto #101010, offset 0px |
-| pressed | background #585f5e `gray.700` |
+| pressed | background #585f5e `button.primary.brand.bg.pressed` |
 
 ![Sign-up submit default](components/crops/signup-submit-default.png) ![Sign-up submit hover](components/crops/signup-submit-hover.png) ![Sign-up submit focus-visible](components/crops/signup-submit-focus-visible.png) ![Sign-up submit pressed](components/crops/signup-submit-pressed.png)
 
@@ -650,7 +650,7 @@ app.glossgenius.com/forgot-password — the password-recovery card: one e-mail f
 #### Restore headline
 The "Password recovery" heading on app.glossgenius.com/forgot-password. Read as `forgot-h1` on the app password recovery page.
 
-**Values (default).** size 450 x 37; background transparent; text baselClassic 36/37 500, #2a2f2e `border.field-border`.
+**Values (default).** size 450 x 37; background transparent; text baselClassic 36/37 500, #2a2f2e `banner.content.empty.1`.
 
 ![Restore headline default](components/crops/forgot-h1-default.png)
 
@@ -659,7 +659,7 @@ The restore e-mail input; focused and typed into then cleared — never submitte
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 424 x 21; background transparent; text baselGrotesk 17/21 400, #2a2f2e `border.field-border`; transition box-shadow 0.2s ease-in-out, opacity 0.2s ease; opacity 0; placeholder #757575 |
+| default | size 424 x 21; background transparent; text baselGrotesk 17/21 400, #2a2f2e `banner.content.empty.1`; transition box-shadow 0.2s ease-in-out, opacity 0.2s ease; opacity 0; placeholder #757575 |
 | focused, filled | opacity none |
 
 ![Email field (restore) default](components/crops/forgot-field-default.png) ![Email field (restore) focused](components/crops/forgot-field-focused.png) ![Email field (restore) filled](components/crops/forgot-field-filled.png)
@@ -669,10 +669,10 @@ The "Send reset link" submit; its states were measured but the button was never 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 450 x 48; padding 0px 24px; border 1px solid transparent; radius 1000px; background #2a2f2e `border.field-border`; text baselGrotesk 17/21 535, #ffffff `apps.colors.background.default` |
-| hover | background #444a49 `gray.800` |
+| default | size 450 x 48; padding 0px 24px; border 1px solid transparent; radius 1000px; background #2a2f2e `banner.content.empty.1`; text baselGrotesk 17/21 535, #ffffff `apps.colors.background.default` |
+| hover | background #444a49 `button.primary.brand.bg.hover` |
 | focus-visible | outline 1px auto #101010, offset 0px |
-| pressed | background #585f5e `gray.700` |
+| pressed | background #585f5e `button.primary.brand.bg.pressed` |
 
 ![Restore submit default](components/crops/forgot-send-default.png) ![Restore submit hover](components/crops/forgot-send-hover.png) ![Restore submit focus-visible](components/crops/forgot-send-focus-visible.png) ![Restore submit pressed](components/crops/forgot-send-pressed.png)
 
@@ -681,10 +681,10 @@ The "Back to login" link; measured, never followed. Read as `forgot-back` on the
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 450 x 48; padding 0px 24px; border 1px solid transparent; radius 1000px; background transparent; text baselGrotesk 17/21 535, #2a2f2e `border.field-border` |
-| hover | background #f7f9f9 `gray.50` |
+| default | size 450 x 48; padding 0px 24px; border 1px solid transparent; radius 1000px; background transparent; text baselGrotesk 17/21 535, #2a2f2e `banner.content.empty.1` |
+| hover | background #f7f9f9 `button.secondary.hover` |
 | focus-visible | outline 1px auto #101010, offset 1px |
-| pressed | background #eef0f0 `gray.100` |
+| pressed | background #eef0f0 `alert.default.bg` |
 
 ![Back-to-login link default](components/crops/forgot-back-default.png) ![Back-to-login link hover](components/crops/forgot-back-hover.png) ![Back-to-login link focus-visible](components/crops/forgot-back-focus-visible.png) ![Back-to-login link pressed](components/crops/forgot-back-pressed.png)
 
@@ -759,27 +759,30 @@ A service card on the published list (category, name, description, price, durati
 |---|---|
 | default (same: hover) | size 1154.56 x 287; background transparent; shadow rgba(27, 29, 33, 0.5) 0px 0px 46px 0px; text headingfont 16/19.2 500, #0f0f11; layers article.ClassicService_root__Mgwgs.ClassicService_card__1cK2m 1154.6x287.0 rgba(27, 29, 33, 0.5) 0px 0px 46px 0px; div.ClassicService_main__r92Ya 750.5x287.0 rgb(255, 255, 255) rgba(27, 29, 33, 0.5) 0px 0px 46px 0px; div::before.ClassicService_main__r92Ya 750.469pxx64px; button.ClassicService_button__8gVD_ 94.0x36.0; span::after.ClassicService_option__PIV5l 0pxx18px R:1px rgb(116, 124, 128) |
 
-![Service card default](components/crops/bk-service-card-default.png) ![Service card hover](components/crops/bk-service-card-hover.png)
+![Service card hover](components/crops/bk-service-card-hover.png)
 
 #### Service Select button
-A service row's "Select" button marking it for booking; opened was measured after clicking it — the row flips to a selected state and the header becomes "BOOK 1 SERVICE". A local selection toggle, not a submission. Read as `bk-service-select` on the booking services page.
+A service row's "Select" button marking it for booking; opened was measured on the same pinned node after clicking it — the button flips to its selected state and the header becomes "BOOK 1 SERVICE". A local selection toggle, not a submission. Read as `bk-service-select` on the booking services page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: opened) | size 94 x 36; padding 0px 12px; background transparent; image linear-gradient(to right, #505718 `accent.gradient.primary` 0%, #807443 `accent.gradient.secondary` 100%); text basefont 12/18 400, #ffffff `apps.colors.background.default`; transition background 0.3s ease; layers ::after rgba(0, 0, 0, 0) 0px none 1 |
+| default | size 94 x 36; padding 0px 12px; background transparent; image linear-gradient(to right, #505718 `accent.gradient.primary` 0%, #807443 `accent.gradient.secondary` 100%); text basefont 12/18 400, #ffffff `apps.colors.background.default`; transition background 0.3s ease; layers ::after rgba(0, 0, 0, 0) 0px none 1 |
 | hover | opacity 0.8 |
 | focus-visible | outline 1px auto #101010, offset 0px |
 | pressed | opacity 0.8 |
+| opened | background #1b1d21 `bg.secondary.default`; image none; text basefont 12/18 400, rgba(255, 255, 255, 0.5) `color.primary.opacity.white.50`; opacity 0.8 |
 
 ![Service Select button default](components/crops/bk-service-select-default.png) ![Service Select button hover](components/crops/bk-service-select-hover.png) ![Service Select button focus-visible](components/crops/bk-service-select-focus-visible.png) ![Service Select button pressed](components/crops/bk-service-select-pressed.png) ![Service Select button opened](components/crops/bk-service-select-opened.png)
 
 #### BOOK bar button
-The "BOOK n SERVICE" header bar; measured after a service was selected. In the screenshot pass it was clicked to reach /book — a public navigation, never a submission. Read as `bk-book-btn` on the booking services page.
+The "BOOK n SERVICE" header bar; measured after a service was selected (the header's "Clear All" is a different control, never measured as this button). In the screenshot pass it was clicked to reach /book — a public navigation, never a submission. Read as `bk-book-btn` on the booking services page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 78 x 21; background transparent; text headingfont 18/normal 300, #ffffff `apps.colors.background.default` |
-| focus-visible | shadow #727587 0px 0px 0px 3px; layers button.Button_root__8nq_L.BookingHeader_btn___Br72 78.0x21.0 rgb(114, 117, 135) 0px 0px 0px 3px |
+| default | size 211 x 40; padding 12px 18px 11px 18px; radius 20px; background transparent; image linear-gradient(to right, #505718 `accent.gradient.primary` 0%, #807443 `accent.gradient.secondary` 100%); text headingfont 14/normal 300, #ffffff `apps.colors.background.default`; transition box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out, -webkit-box-shadow 0.2s ease-in-out; icon 16 x 9.84, #ffffff `apps.colors.background.default` |
+| hover | opacity 0.9 |
+| focus-visible | shadow #727587 0px 0px 0px 3px |
+| pressed | opacity 0.9 |
 
 ![BOOK bar button default](components/crops/bk-book-btn-default.png) ![BOOK bar button hover](components/crops/bk-book-btn-hover.png) ![BOOK bar button focus-visible](components/crops/bk-book-btn-focus-visible.png) ![BOOK bar button pressed](components/crops/bk-book-btn-pressed.png)
 

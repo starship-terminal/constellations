@@ -44,6 +44,9 @@
 //   app       any other custom property the sites' own sheets declare
 //   vendor    embedded widget/framework vars (swiper, recaptcha, cookie
 //             banners, Webflow internals, react-select's css-* hashes)
+//   external  third-party stylesheet bodies entirely (decagon.ai's chat
+//             widget, reCAPTCHA, jsdelivr icon fonts) — harvested for
+//             provenance, never resolved or emitted into a token set
 //   utility   a one-off `[--x:value]` arbitrary-property utility class
 //   tailwind  Tailwind internals: --tw-*, @layer properties
 import fs from 'node:fs';
@@ -64,7 +67,20 @@ const HOSTS = [
   ['app', LOGIN_URL],
   ['booking', BOOK_SERVICES],
 ];
-const sheets = [];
+// A stylesheet is first-party when the host being visited owns its origin:
+// the glossgenius.com hosts themselves, the Webflow CDN that serves the
+// site's own compiled bundle, and Google Fonts' css2 the site requests for
+// its font stack. Everything else (decagon.ai's chat widget, reCAPTCHA's
+// gstatic frame sheet, jsdelivr's icon font) is an embedded widget or vendor
+// frame — collected for provenance but never part of the host's token set,
+// and never loaded into that host's resolution shell, where its variables
+// would otherwise resolve as if they were the site's own.
+const FIRST_PARTY = (hostname) => hostname === 'cdn.prod.website-files.com'
+  || hostname === 'fonts.googleapis.com'
+  || hostname === 'glossgenius.com'
+  || hostname.endsWith('.glossgenius.com');
+const sheets = [];      // [label, cssText, party]
+const scopes = {};      // host -> { html, body, wrapper } class strings from the live DOM
 let page = null;
 for (const [host, url] of HOSTS) {
   let got = null;
@@ -81,7 +97,29 @@ for (const [host, url] of HOSTS) {
     await p.waitForTimeout(9000);
     if (await clearChallenge(p, { tries: 3, step: 1500 })) {
       const inline = await p.evaluate(() => [...document.styleSheets].filter((s) => !s.href).map((s, i) => { try { return ['inline-' + i, [...s.cssRules].map((r) => r.cssText).join('\n')]; } catch { return null; } }).filter(Boolean));
-      got = [...bodies.entries(), ...inline];
+      // The classes the live page scopes its variables under: the app's
+      // glossDS layer declares on :root and a .light/.dark scope element;
+      // a booking site declares on its own .tokens_glossDS__* layout
+      // wrapper. The resolution shells replay them so class-scoped names
+      // resolve instead of silently dropping.
+      scopes[host] = await p.evaluate(() => {
+        const cls = (el) => (el && typeof el.className === 'string' ? el.className : '');
+        const tok = document.querySelector('[class*="tokens_"]');
+        const scopeEl = document.querySelector('.light, .dark');
+        return {
+          html: cls(document.documentElement),
+          body: cls(document.body),
+          wrapper: [cls(tok), cls(scopeEl)].filter(Boolean).join(' '),
+        };
+      }).catch(() => ({ html: '', body: '', wrapper: '' }));
+      got = [
+        ...[...bodies.entries()].map(([u, css]) => {
+          let host3 = '';
+          try { host3 = new URL(u).hostname; } catch { /* keep third */ }
+          return [u, css, FIRST_PARTY(host3) ? 'first' : 'third'];
+        }),
+        ...inline.map(([n, css]) => [n, css, 'first']),
+      ];
       page = p;
     } else {
       console.log('challenge page on', host, '(try ' + (tries + 1) + ')');
@@ -89,7 +127,7 @@ for (const [host, url] of HOSTS) {
     }
   }
   if (!got) { console.log('blocked on', host, '; continuing without its sheets'); continue; }
-  for (const [name, css] of got) sheets.push([`${host} ${name}`, css]);
+  for (const [name, css, party] of got) sheets.push([`${host} ${name}`, css, party]);
 }
 if (!sheets.length) { console.log('no sheets harvested; css-vars.json not written'); await browser.close(); process.exit(2); }
 if (page) await page.close();
@@ -103,10 +141,10 @@ const result = await probe.evaluate((sheets) => {
   const rules = [];
   const fonts = [];
   const errors = [];
-  const walk = (list, ctx, file) => {
+  const walk = (list, ctx, file, party) => {
     for (const r of list) {
       if (r.type === CSSRule.FONT_FACE_RULE) {
-        const o = { file };
+        const o = { file, party };
         for (let i = 0; i < r.style.length; i++) o[r.style[i]] = noUrl(r.style.getPropertyValue(r.style[i]).trim());
         fonts.push(o);
         continue;
@@ -117,7 +155,7 @@ const result = await probe.evaluate((sheets) => {
           : r.constructor.name === 'CSSLayerBlockRule' ? '@layer ' + r.name
           : r.constructor.name === 'CSSContainerRule' ? '@container ' + r.conditionText
           : (r.cssText || '').split('{')[0].trim().slice(0, 120);
-        walk(r.cssRules, [...ctx, head], file);
+        walk(r.cssRules, [...ctx, head], file, party);
         continue;
       }
       if (!r.style) continue;
@@ -127,14 +165,14 @@ const result = await probe.evaluate((sheets) => {
         const k = r.style[i];
         if (k && k.startsWith('--')) { props[k] = noUrl(r.style.getPropertyValue(k).trim()); n++; }
       }
-      if (n) rules.push({ file, selector: (r.selectorText || '').slice(0, 200), context: ctx, properties: props });
-      if (r.cssRules && r.cssRules.length) walk(r.cssRules, [...ctx, (r.selectorText || '').slice(0, 120)], file);
+      if (n) rules.push({ file, party, selector: (r.selectorText || '').slice(0, 200), context: ctx, properties: props });
+      if (r.cssRules && r.cssRules.length) walk(r.cssRules, [...ctx, (r.selectorText || '').slice(0, 120)], file, party);
     }
   };
-  for (const [name, text] of sheets) {
+  for (const [name, text, party] of sheets) {
     const ss = new CSSStyleSheet();
     try { ss.replaceSync(text); } catch (e) { errors.push({ file: name, error: String(e) }); continue; }
-    walk(ss.cssRules, [], name);
+    walk(ss.cssRules, [], name, party);
   }
   return { rules, fonts, errors };
 }, sheets);
@@ -142,24 +180,32 @@ const result = await probe.evaluate((sheets) => {
 // ---- resolution: one probe document per host carrying its own sheets ----
 // Every surface is light-only: no dark media query and no theme attribute
 // anywhere in the harvested sheets, so each shell resolves one light pass.
-const hostsOf = (prefix) => sheets.filter(([n]) => n.startsWith(prefix + ' ')).map(([, css]) => css);
+// The probe shells replay each host's real scope classes — the app's .light
+// scope and a booking site's .tokens_glossDS__* layout wrapper — so names
+// declared under those selectors resolve on the probe element instead of
+// dropping. Custom properties inherit, so the inner probe reads every
+// ancestor scope at once.
+const hostsOf = (prefix) => sheets.filter(([n, , party]) => n.startsWith(prefix + ' ') && party === 'first').map(([, css]) => css);
 const SHELLS = {
-  light: { css: hostsOf('marketing') },
-  app: { css: hostsOf('app') },
-  booking: { css: hostsOf('booking') },
+  light: { css: hostsOf('marketing'), scope: scopes.marketing || {} },
+  app: { css: hostsOf('app'), scope: scopes.app || {} },
+  booking: { css: hostsOf('booking'), scope: scopes.booking || {} },
 };
 const shell = ({ css }) => '<!doctype html><html><head>'
   + css.map((c) => '<style>' + c.replace(/<\/style/gi, '<\\/style') + '</style>').join('')
   + '</head><body><div id="probe-root"></div></body></html>';
-const want = [...new Set(result.rules.filter((r) => !r.context.includes('@layer properties') && !/\\\[--/.test(r.selector || '')).flatMap((r) => Object.keys(r.properties)))]
+const want = [...new Set(result.rules.filter((r) => r.party !== 'third' && !r.context.includes('@layer properties') && !/\\\[--/.test(r.selector || '')).flatMap((r) => Object.keys(r.properties)))]
   .filter((n) => !/^--(tw-|lightningcss-|wp--preset-)/.test(n)).sort();
 const resolved = {};
 for (const pass of Object.keys(SHELLS)) {
   if (!SHELLS[pass].css.length) continue;
   await probe.setContent(shell(SHELLS[pass]), { waitUntil: 'load' });
-  resolved[pass] = await probe.evaluate((names) => {
+  resolved[pass] = await probe.evaluate(({ names, scope }) => {
     const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v);
+    if (scope.html) document.documentElement.className = scope.html;
+    if (scope.body) document.body.className = scope.body;
     const box = document.createElement('div');
+    box.className = scope.wrapper || '';
     box.style.cssText = 'position:absolute;left:0;top:0;width:1000px;height:1000px;visibility:hidden';
     const p = document.createElement('div');
     box.appendChild(p);
@@ -191,7 +237,11 @@ for (const pass of Object.keys(SHELLS)) {
     };
     const out = {};
     for (const name of names) {
-      let raw = noUrl(getComputedStyle(document.body).getPropertyValue(name).trim());
+      // The inner probe inherits every ancestor scope — :root, the replayed
+      // html/body classes and the wrapped layout scope — before the
+      // document-level fallbacks.
+      let raw = noUrl(getComputedStyle(p).getPropertyValue(name).trim());
+      if (!raw) raw = noUrl(getComputedStyle(document.body).getPropertyValue(name).trim());
       if (!raw) raw = noUrl(getComputedStyle(document.documentElement).getPropertyValue(name).trim());
       if (!raw) continue;
       const r = { raw: raw.length > 300 ? raw.slice(0, 300) + '…' : raw };
@@ -217,13 +267,14 @@ for (const pass of Object.keys(SHELLS)) {
     }
     box.remove();
     return out;
-  }, want);
+  }, { names: want, scope: SHELLS[pass].scope });
 }
 await browser.close();
 
 const THEME = /^--(_apps|---|_?[a-z]+---|(bg|black|white|dark|light|off-white|aaa|basel|burgandy|primary|secondary|tertiary|transparent|neutral|gray|grey|gloss|brand|content|surface|border|text|space|size|radius|font|shadow|elevation|accent|error|success|warning|info|red|green|orange|yellow|pink|purple|blue|amber|cerulean|coral|fuchsia|gold|jade|mauve|midnight|opal|orchid|pine|sage|sienna|smoke|sunset|violet|card|popover|input|ring|chart|destructive|muted|icon|container|line|ink|overlay|link|nav|button|chip|tag|badge|toggle|toast|input|checkbox|avatar|banner|alert|dialog|drawer|calendar|booking|book|member|service|screen|target|control|segment|gap|padding|organic|letter|bottom|temp|deprecated|white)-?)/;
 const VENDOR = /swiper|recaptcha|--wp--preset|cookiebot|cybot|--cb-|osano|gdpr|--hs-|--intercom|video-js|vjs-|stripe|sonner|--toast-|--w-|--webflow|css-[\da-z]+|emotion|gg-dropdown/i;
 const binOf = (r) => {
+  if (r.party === 'third') return 'external';
   const names = Object.keys(r.properties);
   if (/\\\[--/.test(r.selector || '')) return 'utility';
   if (names.every((n) => n.startsWith('--tw-')) || r.context.some((c) => c === '@layer properties')) return 'tailwind';
@@ -241,12 +292,13 @@ for (const r of ok) {
 const names = (bin) => [...new Set(ok.filter((r) => r.bin === bin).flatMap((r) => Object.keys(r.properties)))].sort();
 const out = {
   readAt: new Date().toLocaleDateString('en-CA'),
-  source: 'the stylesheet bodies read during live signed-out loads of glossgenius.com / (the Webflow CDN bundle + marketing-assets + inline <style> blocks), app.glossgenius.com /login (the Next.js CSS chunks) and honeyhivesalon.glossgenius.com /services (a real published booking site\'s chunks), re-parsed with CSSStyleSheet; resolved in per-host probes carrying each host\'s real sheets at 1440 x 900 — every surface is light-only (no dark media query, no theme attribute)',
-  sheets: sheets.map(([n, t]) => `${n} (${t.length} bytes)`),
+  source: 'the stylesheet bodies read during live signed-out loads of glossgenius.com / (the Webflow CDN bundle + marketing-assets + inline <style> blocks), app.glossgenius.com /login (the Next.js CSS chunks) and honeyhivesalon.glossgenius.com /services (a real published booking site\'s chunks), re-parsed with CSSStyleSheet; resolved in per-host probes carrying each host\'s first-party sheets at 1440 x 900 with the page\'s own scope classes replayed (.light, .tokens_glossDS__*) — every surface is light-only (no dark media query, no theme attribute). Third-party sheets (the decagon.ai chat widget, reCAPTCHA, icon fonts) are harvested under `external` for provenance only: never resolved, never part of a token set',
+  sheets: sheets.map(([n, t, party]) => `${n} (${t.length} bytes)${party === 'third' ? ' [third-party]' : ''}`),
+  scopes,
   counts: {
     rules: ok.length,
     fonts: result.fonts.length,
-    names: { theme: names('theme').length, app: names('app').length, vendor: names('vendor').length, utility: names('utility').length, tailwind: names('tailwind').length },
+    names: { theme: names('theme').length, app: names('app').length, vendor: names('vendor').length, utility: names('utility').length, tailwind: names('tailwind').length, external: names('external').length },
     bySelector,
   },
   errors: result.errors,
@@ -255,11 +307,12 @@ const out = {
   vendor: ok.filter((r) => r.bin === 'vendor'),
   utility: ok.filter((r) => r.bin === 'utility'),
   tailwind: ok.filter((r) => r.bin === 'tailwind'),
+  external: ok.filter((r) => r.bin === 'external'),
   fonts: result.fonts,
   resolved,
 };
 fs.mkdirSync(path.join(REF, 'raw'), { recursive: true });
 fs.writeFileSync(path.join(REF, 'raw', 'css-vars.json'), JSON.stringify(out, null, 1) + '\n');
-console.log(`css-vars.json: ${ok.length} rules, ${result.fonts.length} font faces; names theme ${out.counts.names.theme}, app ${out.counts.names.app}, vendor ${out.counts.names.vendor}, utility ${out.counts.names.utility}, tailwind ${out.counts.names.tailwind}`);
+console.log(`css-vars.json: ${ok.length} rules, ${result.fonts.length} font faces; names theme ${out.counts.names.theme}, app ${out.counts.names.app}, vendor ${out.counts.names.vendor}, utility ${out.counts.names.utility}, tailwind ${out.counts.names.tailwind}, external ${out.counts.names.external}`);
 console.log(`resolved: ${Object.entries(resolved).map(([k, v]) => k + ' ' + Object.keys(v).length).join(', ')}`);
 for (const [k, v] of Object.entries(bySelector).sort((a, b) => b[1] - a[1]).slice(0, 25)) console.log(`  ${v}\t${k.slice(0, 150)}`);

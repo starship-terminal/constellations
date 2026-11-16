@@ -353,7 +353,62 @@ def emit_named(setroot, name, val):
     emit(setroot, name, var(name, leaf_type(name, val)))
 
 
+# Complete type styles: the Webflow sheet splits each declared style across
+# --_typography---<style>--{font,font-weight,line-height,letter-spacing,
+# bottom-margin} while its size lives in --_responsive---font-size--<style>.
+# Emitted per-part, the family and size land on different branches and a
+# typography consumer (DESIGN.md) can never join them — so the part names
+# stay out of the name-driven pass and each style is emitted as one
+# composite token at typography.<style>.
+type_re = re.compile(r"--_typography---([a-z0-9-]+?)--(font|font-weight|line-height|letter-spacing|bottom-margin)$")
+TYPE_PARTS = {"font": "fontFamily", "font-weight": "fontWeight",
+              "line-height": "lineHeight", "letter-spacing": "letterSpacing"}
+type_parts = {}
+for name in HOST_NAMES["marketing"]:
+    m = type_re.fullmatch(name)
+    if m and declared(name, "light") is not None:
+        type_parts.setdefault(m.group(1), {})[m.group(2)] = name
+
+typo = {}
+for style, parts in sorted(type_parts.items()):
+    val, srcs = {}, []
+    for prop, key in TYPE_PARTS.items():
+        n = parts.get(prop)
+        if not n:
+            continue
+        srcs.append(n)
+        v = declared(n, "light")
+        if key == "fontWeight":
+            v = int(float(v))
+        elif key == "lineHeight":
+            v = float(v)
+        elif key == "letterSpacing":
+            v = norm_len(v)
+        val[key] = v
+    size_name = f"--_responsive---font-size--{style}"
+    size = declared(size_name, "light")
+    if size is not None:
+        val["fontSize"] = size
+        srcs.append(size_name)
+    if not val:
+        continue
+    typo[style] = {
+        "$value": val,
+        "$type": "typography",
+        "$extensions": {"source": "css-vars " + ", ".join(sorted(srcs)) + " (light)"},
+        "$description": (
+            f"The declared {style} type style, joined across the "
+            f"--_typography---{style}--* and --_responsive---font-size--{style} "
+            "collections so the exported style carries family, size, weight, "
+            "leading and tracking together."
+        ),
+    }
+if typo:
+    SPEC["core"].setdefault("typography", {}).update(typo)
+
 for name in mkt_names:
+    if type_re.fullmatch(name):
+        continue  # a composite type style owns this name (typography.<style>)
     emit_named(SPEC["core"], name, R.get(name))
 
 # The alias maps are collected in a second pass: emit() can rename a leaf to
@@ -361,6 +416,8 @@ for name in mkt_names:
 # EMITTED is only final once the whole set is written.
 color_alias = {}   # normalized colour -> token path for light-set aliasing
 for name in sorted(mkt_names, key=lambda n: n.startswith("--_")):
+    if type_re.fullmatch(name):
+        continue  # folded into the composite typography.<style> token
     color_alias.setdefault(norm_color(R.get(name)), EMITTED[name])
 
 for name in app_names:
@@ -386,9 +443,17 @@ role_alias = {
 }
 
 
+def norm_fill(v):
+    """Normalize every colour stop inside a paint string (a gradient's
+    measured rgb() stops) so a painted bgImage aliases the declared accent
+    token it matches."""
+    return COLOR_V.sub(lambda m: norm_color(m.group(0)) or m.group(0), str(v))
+
+
 def semcolor(raw, src, desc, theme="light"):
-    alias = role_alias[theme].get(norm_color(raw))
-    value = f"{{{alias}}}" if alias else norm_color(raw)
+    normed = norm_fill(raw)
+    alias = role_alias[theme].get(normed)
+    value = f"{{{alias}}}" if alias else normed
     return lit(value, "color", src + (f"; matches declared {alias}" if alias else ""), desc)
 
 
@@ -444,12 +509,12 @@ for root, theme, key, comp, state, prop, group, desc in [
      "The 'powered by GlossGenius' badge gray — the muted ink on the dark field."),
     (bsem, "booking", "card", "bk-service-card", "default", "backgroundColor", "surface",
      "The service-card surface — the rows paint no card fill over the dark field."),
-    (bsem, "booking", "select-fill", "bk-service-select", "default", "backgroundColor", "action",
-     "A service row's 'Select' button fill — transparent inside its white outline."),
+    (bsem, "booking", "select-fill", "bk-service-select", "default", "paint:bgImage", "action",
+     "A service row's 'Select' pill fill — the accent gradient the button paints as bgImage (its own backgroundColor stays transparent)."),
     (bsem, "booking", "select-ink", "bk-service-select", "default", "color", "action",
-     "The white 'Select' button ink on the dark field."),
-    (bsem, "booking", "book-fill", "bk-book-btn", "default", "backgroundColor", "action",
-     "The 'BOOK n SERVICE' bar's painted fill — transparent over the dark header."),
+     "The white 'Select' button ink on the accent gradient."),
+    (bsem, "booking", "book-fill", "bk-book-btn", "default", "paint:bgImage", "action",
+     "The header 'BOOK n SERVICE' bar fill — the same accent gradient, painted as bgImage."),
     (bsem, "booking", "book-ink", "bk-book-btn", "default", "color", "action",
      "The white 'BOOK n SERVICE' bar ink."),
 ]:
@@ -460,6 +525,9 @@ for root, theme, key, comp, state, prop, group, desc in [
         elif prop == "innerFill":
             raw = inner_fill(comp, state)
             src = f"the first opaque painted layer inside {comp} {state} (raw/components-computed.json paint list)"
+        elif prop == "paint:bgImage":
+            raw = painted(comp, state, "bgImage")
+            src = f"the painted bgImage layer of {comp} {state} (raw/components-computed.json paint list)"
         else:
             raw = st(comp, state)[prop]
             src = f"computed {prop} of {comp} {state} (raw/components-computed.json)"
