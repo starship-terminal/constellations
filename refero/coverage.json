@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 154,
-    "system_domains": 146,
-    "matched_domains": 117,
-    "missing_domains": 316,
+    "system_packages": 162,
+    "system_domains": 154,
+    "matched_domains": 125,
+    "missing_domains": 308,
     "system_domains_absent_from_catalog": 29
   },
   "matched": {
@@ -1086,6 +1086,57 @@
         }
       ]
     },
+    "discord.com": {
+      "catalog": [
+        {
+          "name": "Discord",
+          "domain": "discord.com",
+          "id": 156
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "discord",
+          "name": "Discord",
+          "url": "https://discord.com",
+          "name_match": true
+        }
+      ]
+    },
+    "district.in": {
+      "catalog": [
+        {
+          "name": "District",
+          "domain": "district.in",
+          "id": 926
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "district",
+          "name": "District",
+          "url": "https://www.district.in",
+          "name_match": true
+        }
+      ]
+    },
+    "dji.com": {
+      "catalog": [
+        {
+          "name": "DJI",
+          "domain": "dji.com",
+          "id": 332
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "dji",
+          "name": "DJI",
+          "url": "https://www.dji.com",
+          "name_match": true
+        }
+      ]
+    },
     "dock.us": {
       "catalog": [
         {
@@ -1817,6 +1868,91 @@
         }
       ]
     },
+    "foodnoms.com": {
+      "catalog": [
+        {
+          "name": "FoodNoms",
+          "domain": "foodnoms.com",
+          "id": 374
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "foodnoms",
+          "name": "Foodnoms",
+          "url": "https://foodnoms.com",
+          "name_match": true
+        }
+      ]
+    },
+    "fourmula.ai": {
+      "catalog": [
+        {
+          "name": "Fourmula.ai",
+          "domain": "fourmula.ai",
+          "id": 889
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "fourmula",
+          "name": "Fourmula",
+          "url": "https://fourmula.ai",
+          "name_match": true
+        }
+      ]
+    },
+    "fourthwall.com": {
+      "catalog": [
+        {
+          "name": "Fourthwall",
+          "domain": "fourthwall.com",
+          "id": 710
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "fourthwall",
+          "name": "Fourthwall",
+          "url": "https://fourthwall.com",
+          "name_match": true
+        }
+      ]
+    },
+    "framer.com": {
+      "catalog": [
+        {
+          "name": "Framer",
+          "domain": "framer.com",
+          "id": 189
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "framer",
+          "name": "Framer",
+          "url": "https://www.framer.com",
+          "name_match": true
+        }
+      ]
+    },
+    "fresha.com": {
+      "catalog": [
+        {
+          "name": "Fresha",
+          "domain": "fresha.com",
+          "id": 561
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "fresha",
+          "name": "Fresha",
+          "url": "https://www.fresha.com",
+          "name_match": true
+        }
+      ]
+    },
     "getfernand.com": {
       "catalog": [
         {
@@ -2203,27 +2339,6 @@
         "id": 762
       }
     ],
-    "discord.com": [
-      {
-        "name": "Discord",
-        "domain": "discord.com",
-        "id": 156
-      }
-    ],
-    "district.in": [
-      {
-        "name": "District",
-        "domain": "district.in",
-        "id": 926
-      }
-    ],
-    "dji.com": [
-      {
-        "name": "DJI",
-        "domain": "dji.com",
-        "id": 332
-      }
-    ],
     "equals.app": [
       {
         "name": "Equals",
@@ -2236,13 +2351,6 @@
         "name": "Fibery",
         "domain": "fibery.io",
         "id": 415
-      }
-    ],
-    "foodnoms.com": [
-      {
-        "name": "FoodNoms",
-        "domain": "foodnoms.com",
-        "id": 374
       }
     ],
     "forhers.com": [
@@ -2259,39 +2367,11 @@
         "id": 234
       }
     ],
-    "fourmula.ai": [
-      {
-        "name": "Fourmula.ai",
-        "domain": "fourmula.ai",
-        "id": 889
-      }
-    ],
-    "fourthwall.com": [
-      {
-        "name": "Fourthwall",
-        "domain": "fourthwall.com",
-        "id": 710
-      }
-    ],
     "frame.io": [
       {
         "name": "Frame.io",
         "domain": "frame.io",
         "id": 1142
-      }
-    ],
-    "framer.com": [
-      {
-        "name": "Framer",
-        "domain": "framer.com",
-        "id": 189
-      }
-    ],
-    "fresha.com": [
-      {
-        "name": "Fresha",
-        "domain": "fresha.com",
-        "id": 561
       }
     ],
     "front.com": [

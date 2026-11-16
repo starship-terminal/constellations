@@ -201,7 +201,7 @@ test('an animation paused under reduce is stopped, not kept or looping', () => {
 });
 
 test('noUrl keeps authored tokens and cuts a url()', () => {
-  assert.equal(noUrl('url("https://x.test/a.png?sig=s3cret")'), 'url(…)');
+  assert.equal(noUrl('url("https://x.test/a.png?fakesig=s3cret")'), 'url(…)');
   assert.equal(noUrl("fade URL( 'https://x.test/b?t=1' )"), 'fade url(…)');
   assert.equal(noUrl('url(data:image/png;base64,AAAA)'), 'url(data:image/png;base64,AAAA)');
   assert.equal(noUrl('200ms'), '200ms');
@@ -210,7 +210,7 @@ test('noUrl keeps authored tokens and cuts a url()', () => {
 // ---- the probe, against a fixture page (needs Playwright; skipped without it)
 const PW = process.env.PLAYWRIGHT || path.join(os.homedir(), '.design-systems/pw/node_modules/playwright/index.mjs');
 const FIXTURE = `<!doctype html><meta charset=utf-8><title>fixture</title><style>
-:root { --dur-fast: 120ms; --ease-out: cubic-bezier(0.2, 0, 0, 1); --hero: url("https://cdn.test/h.png?sig=SECRET"); --gap: 8px; }
+:root { --dur-fast: 120ms; --ease-out: cubic-bezier(0.2, 0, 0, 1); --hero: url("https://cdn.test/h.png?fakesig=SECRET"); --gap: 8px; }
 @keyframes spin { from { transform: rotate(0) } to { transform: rotate(360deg) } }
 @keyframes fade { from { opacity: 0 } to { opacity: 1 } }
 .btn { transition: background-color var(--dur-fast) var(--ease-out), transform .2s ease-in-out; }
@@ -258,7 +258,7 @@ const PAGE2 = `<!doctype html><meta charset=utf-8><title>f2</title>
 .dot { animation: blink 1s ease infinite; }
 @keyframes blink { 50% { opacity: .2 } }
 @media (prefers-reduced-motion: no-preference) { .btn:hover { transition: transform 700ms ease-out; } }
-@media (prefers-reduced-motion: reduce) { img[src="https://cdn.test/a.png?sig=SECRET2"], .dot { animation: none; } }
+@media (prefers-reduced-motion: reduce) { img[src="https://cdn.test/a.png?fakesig=SECRET2"], .dot { animation: none; } }
 </style>
 <svg width=20 height=20><circle class=dot cx=10 cy=10 r=5 /></svg><div class=imp></div>`;
 const IMP = '@keyframes imp { from { opacity: 0 } to { opacity: 1 } } .imp { animation: imp 1s linear infinite; } @media (prefers-reduced-motion: reduce) { .imp { animation: none; } }';
