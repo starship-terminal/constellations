@@ -952,5 +952,11 @@
     "groupId": "web-categories",
     "labels": ["Electronic & Devices", "Marketplace"],
     "reason": "catalog.json describes a consumer-drone and imaging-hardware brand site: product marketing pages, category grids, a store locator and links into the gated DJI store."
+  },
+  {
+    "referenceId": "systems:fourthwall",
+    "groupId": "web-categories",
+    "labels": ["Business", "Marketplace"],
+    "reason": "catalog.json describes a creator-commerce platform: a Webflow marketing site with a pricing grid, a styled-components print-on-demand product catalogue with product pages, Mintlify docs and Docusaurus help (each with a real dark toggle), and a Keycloak sign-up shell; the shop dashboard, designer and checkout are gated."
   }
 ]
