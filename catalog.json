@@ -3601,7 +3601,8 @@
      "the marketing site runs three skins on one product: the black marketing routes, the warm-cream /pricing route and the light app.me.sh sign-in card (SF Pro, #ff6821) - all tokenised, none toggled by the user",
      "no disabled/error/loading/toast states and no checkbox/radio/switch/tabs/table mount on the public surface; the mobile run occasionally hit a transient anti-bot challenge, retried clean"
     ],
-    "durationMin": 180
+    "durationMin": 180,
+    "pr": "https://github.com/starship-terminal/constellations/pull/608"
    },
    "layoutGaps": {
     "icons/": "no standalone SVG icon set was lifted; the glyphs (the m monogram, social marks, the hamburger) are visible in the crops and screenshots"
