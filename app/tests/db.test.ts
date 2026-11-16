@@ -469,6 +469,45 @@ test("version-eleven stores gain the Framer rows, without touching their own lab
   ).toBeGreaterThan(0);
 });
 
+test("version-twelve stores gain the Frame.io rows, without touching their own labels", async () => {
+  const { dir, store } = await open();
+  // A v12 store opened before the Frame.io rows existed: drop them and rewind.
+  await store.client.execute(
+    "DELETE FROM reference_categories WHERE reference_id='systems:frame'",
+  );
+  await store.client.execute(
+    "DELETE FROM media_term_assignments WHERE reference_id='systems:frame'",
+  );
+  await store.client.execute("PRAGMA user_version=12");
+  store.close();
+  stores.splice(stores.indexOf(store), 1);
+  const migrated = await createResearchStore(dir);
+  stores.push(migrated);
+  expect(
+    Number(
+      (await migrated.client.execute("PRAGMA user_version")).rows[0]
+        .user_version,
+    ),
+  ).toBe(13);
+  const categories = await migrated.listReferenceCategories();
+  // Two seed labels (Collaboration Tools + Design & Media Editing) land as
+  // two rows.
+  expect(
+    categories.filter((row) => row.referenceId === "systems:frame"),
+  ).toHaveLength(2);
+  expect(
+    (
+      await migrated.listReferenceCategoryDetails(["systems:frame"])
+    ).map((row) => row.label),
+  ).toEqual(
+    expect.arrayContaining(["Collaboration Tools", "Design & Media Editing"]),
+  );
+  const media = await migrated.listMediaTermAssignments();
+  expect(
+    media.filter((row) => row.referenceId === "systems:frame").length,
+  ).toBeGreaterThan(0);
+});
+
 test("version-twelve stores gain the Fourthwall rows, without touching their own labels", async () => {
   const { dir, store } = await open();
   // A v12 store opened before the Fourthwall rows existed: drop them and rewind.
@@ -536,6 +575,73 @@ test("version-thirteen stores gain the Calm rows, without touching their own lab
   expect(
     media.filter((row) => row.referenceId === "systems:calm").length,
   ).toBeGreaterThan(0);
+});
+
+test("version-fourteen stores gain the Chargetrip and Fresha rows, without touching their own labels", async () => {
+  const { dir, store } = await open();
+  // A v14 store opened before the Chargetrip rows existed: drop them and rewind.
+  await store.client.execute(
+    "DELETE FROM reference_categories WHERE reference_id='systems:chargetrip'",
+  );
+  await store.client.execute(
+    "DELETE FROM media_term_assignments WHERE reference_id='systems:chargetrip'",
+  );
+  // Fresha merged without a migration, so v13/v14 stores never got its rows
+  // either; drop them to simulate a store that predates this top-up.
+  await store.client.execute(
+    "DELETE FROM reference_categories WHERE reference_id='systems:fresha'",
+  );
+  await store.client.execute(
+    "DELETE FROM media_term_assignments WHERE reference_id='systems:fresha'",
+  );
+  // A user who cleared another package's labels: the scoped top-up must not
+  // resurrect them (an empty assignment reads as "never labelled" to the
+  // unscoped seed).
+  await store.client.execute(
+    "DELETE FROM reference_categories WHERE reference_id='systems:digg'",
+  );
+  await store.client.execute(
+    "DELETE FROM media_term_assignments WHERE reference_id='systems:digg'",
+  );
+  await store.client.execute("PRAGMA user_version=14");
+  store.close();
+  stores.splice(stores.indexOf(store), 1);
+  const migrated = await createResearchStore(dir);
+  stores.push(migrated);
+  expect(
+    Number(
+      (await migrated.client.execute("PRAGMA user_version")).rows[0]
+        .user_version,
+    ),
+  ).toBe(16);
+  const categories = await migrated.listReferenceCategories();
+  // The Chargetrip seed labels (Development Tools + Travel & Booking) land as
+  // two rows; Fresha's three labels land as three rows.
+  expect(
+    categories.filter((row) => row.referenceId === "systems:chargetrip"),
+  ).toHaveLength(2);
+  expect(
+    (await migrated.listReferenceCategoryDetails(["systems:chargetrip"])).map(
+      (row) => row.label,
+    ),
+  ).toEqual(["Development Tools", "Travel & Booking"]);
+  expect(
+    categories.filter((row) => row.referenceId === "systems:fresha"),
+  ).toHaveLength(3);
+  const media = await migrated.listMediaTermAssignments();
+  expect(
+    media.filter((row) => row.referenceId === "systems:chargetrip").length,
+  ).toBeGreaterThan(0);
+  expect(
+    media.filter((row) => row.referenceId === "systems:fresha").length,
+  ).toBeGreaterThan(0);
+  // The cleared digg rows stay cleared — the top-up seeds only its own batch.
+  expect(
+    categories.filter((row) => row.referenceId === "systems:digg"),
+  ).toHaveLength(0);
+  expect(
+    media.filter((row) => row.referenceId === "systems:digg"),
+  ).toHaveLength(0);
 });
 
 test("version-fifteen stores gain the ClassPass rows, without touching their own labels", async () => {

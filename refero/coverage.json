@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 164,
-    "system_domains": 156,
-    "matched_domains": 127,
-    "missing_domains": 306,
+    "system_packages": 166,
+    "system_domains": 158,
+    "matched_domains": 129,
+    "missing_domains": 304,
     "system_domains_absent_from_catalog": 29
   },
   "matched": {
@@ -798,6 +798,23 @@
           "slug": "cartesia",
           "name": "Cartesia",
           "url": "https://www.cartesia.ai",
+          "name_match": true
+        }
+      ]
+    },
+    "chargetrip.com": {
+      "catalog": [
+        {
+          "name": "Chargetrip",
+          "domain": "chargetrip.com",
+          "id": 798
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "chargetrip",
+          "name": "Chargetrip",
+          "url": "https://www.chargetrip.com",
           "name_match": true
         }
       ]
@@ -1953,6 +1970,23 @@
         }
       ]
     },
+    "frame.io": {
+      "catalog": [
+        {
+          "name": "Frame.io",
+          "domain": "frame.io",
+          "id": 1142
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "frame",
+          "name": "Frame.io",
+          "url": "https://frame.io",
+          "name_match": true
+        }
+      ]
+    },
     "framer.com": {
       "catalog": [
         {
@@ -2247,13 +2281,6 @@
         "id": 284
       }
     ],
-    "chargetrip.com": [
-      {
-        "name": "Chargetrip",
-        "domain": "chargetrip.com",
-        "id": 798
-      }
-    ],
     "clay.earth": [
       {
         "name": "Clay",
@@ -2385,13 +2412,6 @@
         "name": "Hims",
         "domain": "forhims.co.uk",
         "id": 234
-      }
-    ],
-    "frame.io": [
-      {
-        "name": "Frame.io",
-        "domain": "frame.io",
-        "id": 1142
       }
     ],
     "front.com": [

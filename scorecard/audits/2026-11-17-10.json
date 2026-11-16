@@ -20475,6 +20475,134 @@
    "category": "Media",
    "reviewed": "2026-11-17",
    "reviewedPlatform": "web"
+  },
+  {
+   "slug": "frame",
+   "grades": {
+    "F1": {
+     "grade": "partly",
+     "evidence": "A complete 19-step neutral ramp exists (color.grey.00..100, #000000 field through #fcfcfc ink), but per-hue ramps are shallow: the five brand hues (cobalt, iris, coral, electric, turquoise-triumph) carry only a default plus -light/-dark step and a single alpha tint each (color.brand.cobalt.20 = rgba(91,83,255,0.2)), not the rubric's ~10 steps per hue. The alpha ladders (color.alpha.black/dark/light-*, perano/cinder/hawkes/grey tints) are the deep ramps the site actually composes with."
+    },
+    "F2": {
+     "grade": "partly",
+     "evidence": "Page (theme.bg -> color.grey.00), surface (theme.surface.card rgba(16,16,23,0.5)), field (form.field.*) and a full declared scrim family (overlay.* - dim/dim40/dim60/dim80/heavy/light/medium/none, 8 steps) exist. No raised role exists - the mega-menu and mobile overlay paint child-layer shadows instead of a raised surface token."
+    },
+    "F3": {
+     "grade": "partly",
+     "evidence": "Primary (theme.fg.default -> color.grey.100), muted (theme.fg.muted -> color.alpha.light.50), nav/footer ink roles and on-accent (theme.btn.primary.fg near-black on the white pill) are named, plus theme.form.placeholder. There is no disabled text role and no distinct link colour - nav, footer and body links are plain ink, and no disabled control was reachable signed out."
+    },
+    "F4": {
+     "grade": "partly",
+     "evidence": "Three border roles are named: btn.secondary.border (the 1px grey.100 hairline ghost pill), form.field.border (color.grey.20) and theme.border.focus (the 1px dotted grey.100 outline offset 1px measured on focus-visible states). No explicit strong/hover border step exists on the public surface."
+    },
+    "F5": {
+     "grade": "partly",
+     "evidence": "The white CTA accent is stated across default, hover, focus-visible and DevTools-forced pressed on nav-cta/hero-cta/plan-*/m-cta/login-submit: the fill lives on a ::before child layer (#f5f5f8 -> color.accent) with pressed adding a cobalt-tinted inset ring, so theme.btn.primary.bg/hoverBg stay transparent on the element itself. The secondary ghost and form-submit variants carry the same states."
+    },
+    "F6": {
+     "grade": "missing",
+     "evidence": "No success, warning, danger or info colour appears anywhere in the public token layer or on a painted surface: the stylesheet harvest resolved no status variables and the forms were never submitted, so validation palettes stayed dormant. Honest absence, not a capture omission - nothing public paints a status fill, text or border."
+    },
+    "F7": {
+     "grade": "meets",
+     "evidence": "The product ships one painted theme and the package's semantic roles are complete for it: every theme.* role under dark (page, ink, muted, nav/footer ink, the primary/secondary button roles, border.focus, banner, surface.card and the form roles) is measured on the live dark surface. accounts.frame.io/welcome is a separate stack kept as component.productShell.* literals, not a theme."
+    },
+    "F8": {
+     "grade": "partly",
+     "evidence": "Three families with real fallback stacks are declared (font.family.gothic FrameGothic 400-600 variable + Arial-metric fallback, machina NeueMachinaInktrap, inter Inter 100-900 variable) with the @font-face rules harvested in raw/css-vars.json and a declared font.size.base 16px. There is no declared multi-step size ramp: heading sizes exist only as measured literals (font.size.measured.* - 80/48/44/16px), and weights line out at 400/600 without a named role ladder."
+    },
+    "F9": {
+     "grade": "meets",
+     "evidence": "Declared --spacer-* scale on a 4px base, 25 steps (0/4/6/10/12/16/18/20/24/28/32/40/48/54/64/72/84/96/124/160/192/240/320/480 plus spacer-8), resolved in raw/css-vars.json and emitted as core.spacing.*; measured paddings and gaps on 52 components corroborate the base unit."
+    },
+    "F10": {
+     "grade": "meets",
+     "evidence": "Declared --border-radius-* ladder 2/5/6/8/10/12/16/18/20/40px plus the named roles -large, card-border-radius, icons-border-radius, section-border-radius and testimonial-card-radius (17 radius tokens), measured per-component radii (cta/menuBtn/field/panel/card/navLink under core.radius.*) and measured 1px border widths on hairline roles."
+    },
+    "F11": {
+     "grade": "partly",
+     "evidence": "Measured control geometry is recorded (topbar-height 80, announcement-height 36, cta-height 39.75, field-height 48, submit 97.84x39.75, plan-card 252x796.59, toggle 91.98, nav-panel 1440x604.5, mobile-topbar-height 120) and the focus ring's width and offset (1px dotted, offset 1px on pills/links). There is no declared size scale or S/M/L variant ladder - the surface ships one control size per context."
+    },
+    "F12": {
+     "grade": "partly",
+     "evidence": "Elevation is painted on child layers rather than declared as a scale: the mega-menu panel and the wn-card editorial cards draw Shadow/shadowWrapper and glow layers (measured under Painted layers in raw/measurements.md), and the --card-hover-* variables declare a hover shadow treatment. No 3-5-level elevation ladder exists in the public token layer."
+    },
+    "F13": {
+     "grade": "partly",
+     "evidence": "Declared duration scale (motion.duration.* - 60/150/200/300/400/500/600ms as --duration-*) and an 8-curve easing ladder (motion.easing.* - default cubic-bezier(0.25,0.1,0.25,1), basic-butter, embellishment, micro/mini-bounce, in/out/in-out) plus --animation-duration and --card-hover-*, the measured control transition signature (motion.control) and the probe-measured transition/animation composite groups. raw/motion.json records the reduced-motion pass on 5 pages: verdict partial - 96 moving elements were removed under reduce but 1368 kept their motion, so frame.io only partly honours prefers-reduced-motion (an authored @media (prefers-reduced-motion: reduce) ruleset exists for the LanguageSelector chevron); recorded, not tidied."
+    },
+    "F14": {
+     "grade": "meets",
+     "evidence": "Declared grid frame (layout.grid.* - --grid-number-of-columns 12, --grid-max-content-width, --global-max-width 1080px), nav geometry (--nav-height 80px, --nav-height-padded) and a complete declared z-index layer map (core.zIndex.* - 16 tokens incl. nav, modal, max, neg and the 0-10 numeric rung). Two widths were captured (1440 and 390) with the mobile overlay and topbar measured."
+    },
+    "C1": {
+     "grade": "partly",
+     "evidence": "About 9 of 19 checklist components paint publicly: button (nav/hero/plan/contact/schedule/submit pills), icon button (m-menu-btn, locale-btn, cookie-prefs), link (nav/footer/menu items, sales-link), text field (form-name/email, login-email), text area (form-message), radio (price-toggle/price-toggle-alt — the Monthly/Annually billing switch is a pair of round radio controls: a 24px circle ringed grey-60 with a 10px turquoise-triumph dot on the selected side), menu (nav-panel mega-menu + m-drawer overlay), card (plan-card, int-card, wn-card, cust-card, login-panel) and accordion disclosures (ptable-acc, faq-acc). Checkbox, tabs, select, switch, tooltip, dialog, toast, table, avatar, badge and list row never appear signed out - the comparison grid renders as accordions, not a table."
+    },
+    "C2": {
+     "grade": "partly",
+     "evidence": "Beyond default: real pointer hover, real keyboard focus-visible, DevTools-forced pressed, opened (mega-menu, drawer, FAQ), closed (pricing accordion), focused and filled (typed-then-cleared) across 131 states on 52 components. Disabled, loading, error and validation states are absent rather than measured - nothing was submitted - and the selected billing state was deliberately never switched because it re-prices the grid."
+    },
+    "C3": {
+     "grade": "meets",
+     "evidence": "19 controls received a real keyboard focus (Shift+Tab/Tab) and held it for capture: 18 draw a 1px dotted grey.100 outline at offset <=1px and login-submit paints a focus shadow on the accounts stack; 2 more recorded via: focus failed. The measured states are recorded per component in components.md."
+    },
+    "C4": {
+     "grade": "meets",
+     "evidence": "components.md states the convention up front: every colour value is followed by the palette token in tokens.json with the same value when one exists (e.g. #fcfcfc `dark.theme.fg.declared`); measured roles alias their declared palette values in tokens.json itself (dark.theme.bg -> {color.grey.00})."
+    },
+    "P1": {
+     "grade": "partly",
+     "evidence": "patterns.md covers the dark marketing chrome + click-opened mega-menus, the home hero/section grammar on the 12-column 1080px frame, the pricing grid + comparison accordions, the contact form, the sign-in card on its separate stack, the index card grammar, mobile chrome + overlay, and motion/focus conventions. Empty/loading/error, destructive confirmation, onboarding and search-results patterns are not reachable on the signed-out public surface."
+    },
+    "A1": {
+     "grade": "partly",
+     "evidence": "Fonts are fully named with axes and provenance: FrameGothic (400-600 variable), NeueMachinaInktrap and Inter (100-900 variable) self-hosted woff/woff2 with Arial-metric fallbacks, harvested @font-face rules in raw/css-vars.json; the licence is not redistributed. Icons are a declared layoutGaps entry: no standalone SVG set was lifted; the Frame.io waveform mark and product glyphs are visible in crops/screenshots."
+    },
+    "K1": {
+     "grade": "meets",
+     "evidence": "README states the 19+3 route scope plus menus/drawer, the signed-out read-only method (forms typed-then-cleared, links never followed, no consent layer answered), the two stacks (marketing --* vs accounts styled-components), per-value provenance via $extensions.source, the single painted dark theme with the light welcome page kept as component.productShell.* literals, and a What-to-distrust list naming every gap."
+    },
+    "C5": {
+     "grade": "na",
+     "evidence": "Optional for a capture, and this product does not publish it."
+    },
+    "V1": {
+     "grade": "na",
+     "evidence": "Optional for a capture, and this product does not publish it."
+    },
+    "V2": {
+     "grade": "na",
+     "evidence": "Optional for a capture, and this product does not publish it."
+    },
+    "F15": {
+     "grade": "meets",
+     "evidence": "Script: all 4 pairs pass 4.5:1 across 1 themes; lowest 4.60:1 dark muted (dark.theme.fg.muted) on page (dark.theme.bg)"
+    },
+    "F16": {
+     "grade": "meets",
+     "evidence": "Script: 286 of 286 tokens name their source"
+    },
+    "K2": {
+     "grade": "meets",
+     "evidence": "Script: 8 rules, each linking a screenshot or crop"
+    },
+    "K3": {
+     "grade": "meets",
+     "evidence": "Script: DESIGN.md matches a fresh generation"
+    }
+   },
+   "name": "Frame.io",
+   "goodFor": "video-collaboration product and marketing design: a complete declared token layer on one painted dark theme (the 19-step --color-grey-00..100 neutral ramp from #000 field to #fcfcfc ink, five brand hues --color-cobalt/iris/coral/electric/turquoise-triumph with steps, per-hue alpha tints like --color-cobalt-20, the --color-alpha-* ladders, --color-accent, --overlay-* scrims, three font roles --font-main/-secondary/-tertiary, a --spacer-* scale, the --grid-* 12-column/1080px frame, --nav-height, --duration-*/--ease-*, --card-hover-* and a --z-index-* map) behind a dark marketing surface (near-black field, #fcfcfc ink, white CTA pills with near-black ink, translucent-ink hairlines, FrameGothic/NeueMachinaInktrap/Inter self-hosted variable faces), click-opened header mega-menus, a pricing grid with billing toggle and feature-comparison accordions, a contact form, index surfaces for customers/integrations/what's-new, the light accounts.frame.io sign-in card and a 390px pass with the nav overlay",
+   "url": "https://frame.io",
+   "captured": "2026-11-15",
+   "themes": [
+    "dark"
+   ],
+   "platform": "web",
+   "category": "Productivity",
+   "reviewed": "2026-11-17",
+   "reviewedPlatform": "web"
   }
  ],
  "base": "2026-10-16",
