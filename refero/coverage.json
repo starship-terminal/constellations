@@ -3,17 +3,11 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 169,
-    "system_domains": 161,
-<<<<<<< HEAD
+    "system_packages": 170,
+    "system_domains": 162,
     "matched_domains": 132,
     "missing_domains": 301,
-    "system_domains_absent_from_catalog": 29
-=======
-    "matched_domains": 131,
-    "missing_domains": 302,
     "system_domains_absent_from_catalog": 30
->>>>>>> origin/main
   },
   "matched": {
     "1password.com": {

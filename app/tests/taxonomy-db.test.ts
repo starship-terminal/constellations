@@ -70,11 +70,7 @@ test("v3 migration preserves research state and seeds vocabulary atomically", as
       (await migrated.client.execute("PRAGMA user_version")).rows[0]
         .user_version,
     ),
-<<<<<<< HEAD
   ).toBe(18);
-=======
-  ).toBe(17);
->>>>>>> origin/main
   expect(await migrated.listTaxonomyGroups()).toEqual(taxonomyGroups);
   expect(
     (await migrated.getConversation(conversation.id))?.messages[0].parts[0],
@@ -348,11 +344,7 @@ test("v4 upgrade preserves manual categories and v5 reopening preserves manual m
       (await migrated.client.execute("PRAGMA user_version")).rows[0]
         .user_version,
     ),
-<<<<<<< HEAD
   ).toBe(18);
-=======
-  ).toBe(17);
->>>>>>> origin/main
   expect(
     (await migrated.listReferenceCategories()).filter(
       (row) => row.referenceId === "systems:linear",
@@ -473,11 +465,7 @@ test("v4 upgrade skips deleted vocabulary terms without blocking research or res
       (await migrated.client.execute("PRAGMA user_version")).rows[0]
         .user_version,
     ),
-<<<<<<< HEAD
   ).toBe(18);
-=======
-  ).toBe(17);
->>>>>>> origin/main
   expect(
     (await migrated.getConversation(conversation.id))?.messages[0].parts[0],
   ).toEqual({ type: "text", text: "Keep this prompt" });

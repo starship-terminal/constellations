@@ -174,11 +174,7 @@ test("version-two stores preserve existing state while adding independent screen
       (await migrated.client.execute("PRAGMA user_version")).rows[0]
         .user_version,
     ),
-<<<<<<< HEAD
   ).toBe(18);
-=======
-  ).toBe(17);
->>>>>>> origin/main
   expect((await migrated.getConversation(conversation.id))?.title).toBe(
     "Keep research",
   );
@@ -282,11 +278,7 @@ test("version-five stores gain curated rows added since, without touching their 
       (await migrated.client.execute("PRAGMA user_version")).rows[0]
         .user_version,
     ),
-<<<<<<< HEAD
   ).toBe(18);
-=======
-  ).toBe(17);
->>>>>>> origin/main
   const categories = await migrated.listReferenceCategories();
   expect(
     categories.filter((row) => row.referenceId === "systems:dub"),
@@ -325,11 +317,7 @@ test("version-seven stores gain curated rows added since, without touching their
       (await migrated.client.execute("PRAGMA user_version")).rows[0]
         .user_version,
     ),
-<<<<<<< HEAD
   ).toBe(18);
-=======
-  ).toBe(17);
->>>>>>> origin/main
   const categories = await migrated.listReferenceCategories();
   // Two seed labels (Magazines & Newspapers + News) land as two rows.
   expect(
@@ -363,11 +351,7 @@ test("version-eight stores gain curated rows added since, without touching their
       (await migrated.client.execute("PRAGMA user_version")).rows[0]
         .user_version,
     ),
-<<<<<<< HEAD
   ).toBe(18);
-=======
-  ).toBe(17);
->>>>>>> origin/main
   const categories = await migrated.listReferenceCategories();
   // Two seed labels (Communication Tools + Social Networking) land as two rows.
   expect(
@@ -401,11 +385,7 @@ test("version-nine stores gain the District rows, without touching their own lab
       (await migrated.client.execute("PRAGMA user_version")).rows[0]
         .user_version,
     ),
-<<<<<<< HEAD
   ).toBe(18);
-=======
-  ).toBe(17);
->>>>>>> origin/main
   const categories = await migrated.listReferenceCategories();
   // Two seed labels (Entertainment + Travel & Booking) land as two rows.
   expect(
@@ -440,11 +420,7 @@ test("version-ten stores gain the DJI rows, without touching their own labels", 
       (await migrated.client.execute("PRAGMA user_version")).rows[0]
         .user_version,
     ),
-<<<<<<< HEAD
   ).toBe(18);
-=======
-  ).toBe(17);
->>>>>>> origin/main
   const categories = await migrated.listReferenceCategories();
   // Two seed labels (Electronic & Devices + Marketplace) land as two rows.
   expect(
@@ -478,11 +454,7 @@ test("version-eleven stores gain the Framer rows, without touching their own lab
       (await migrated.client.execute("PRAGMA user_version")).rows[0]
         .user_version,
     ),
-<<<<<<< HEAD
   ).toBe(18);
-=======
-  ).toBe(17);
->>>>>>> origin/main
   const categories = await migrated.listReferenceCategories();
   // Two seed labels (Design & Media Editing + Productivity) land as two rows.
   expect(
@@ -497,7 +469,6 @@ test("version-eleven stores gain the Framer rows, without touching their own lab
   ).toBeGreaterThan(0);
 });
 
-<<<<<<< HEAD
 test("version-twelve stores gain the Frame.io rows, without touching their own labels", async () => {
   const { dir, store } = await open();
   // A v12 store opened before the Frame.io rows existed: drop them and rewind.
@@ -537,8 +508,6 @@ test("version-twelve stores gain the Frame.io rows, without touching their own l
   ).toBeGreaterThan(0);
 });
 
-=======
->>>>>>> origin/main
 test("version-twelve stores gain the Fourthwall rows, without touching their own labels", async () => {
   const { dir, store } = await open();
   // A v12 store opened before the Fourthwall rows existed: drop them and rewind.
@@ -558,11 +527,7 @@ test("version-twelve stores gain the Fourthwall rows, without touching their own
       (await migrated.client.execute("PRAGMA user_version")).rows[0]
         .user_version,
     ),
-<<<<<<< HEAD
   ).toBe(18);
-=======
-  ).toBe(17);
->>>>>>> origin/main
   const categories = await migrated.listReferenceCategories();
   // Two seed labels (Business + Marketplace) land as two rows.
   expect(
@@ -597,11 +562,7 @@ test("version-thirteen stores gain the Calm rows, without touching their own lab
       (await migrated.client.execute("PRAGMA user_version")).rows[0]
         .user_version,
     ),
-<<<<<<< HEAD
   ).toBe(18);
-=======
-  ).toBe(17);
->>>>>>> origin/main
   const categories = await migrated.listReferenceCategories();
   // One seed label (Health & Wellness) lands as one row.
   expect(
@@ -652,11 +613,7 @@ test("version-fourteen stores gain the Chargetrip and Fresha rows, without touch
       (await migrated.client.execute("PRAGMA user_version")).rows[0]
         .user_version,
     ),
-<<<<<<< HEAD
   ).toBe(18);
-=======
-  ).toBe(17);
->>>>>>> origin/main
   const categories = await migrated.listReferenceCategories();
   // The Chargetrip seed labels (Development Tools + Travel & Booking) land as
   // two rows; Fresha's three labels land as three rows.
@@ -741,11 +698,7 @@ test("version-fifteen stores gain the ClassPass rows and the stranded Frame.io/G
       (await migrated.client.execute("PRAGMA user_version")).rows[0]
         .user_version,
     ),
-<<<<<<< HEAD
   ).toBe(18);
-=======
-  ).toBe(17);
->>>>>>> origin/main
   const categories = await migrated.listReferenceCategories();
   // The seed labels (Health & Wellness + Marketplace) land as two rows.
   expect(
@@ -811,7 +764,7 @@ test("version-twelve stores gain the Frame.io rows, without touching their own l
       (await migrated.client.execute("PRAGMA user_version")).rows[0]
         .user_version,
     ),
-  ).toBe(17);
+  ).toBe(18);
   const categories = await migrated.listReferenceCategories();
   // Two seed labels (Collaboration Tools + Design & Media Editing) land as
   // two rows.
@@ -859,7 +812,7 @@ test("version-sixteen stores gain the Clay/Mesh rows, without touching their own
       (await migrated.client.execute("PRAGMA user_version")).rows[0]
         .user_version,
     ),
-  ).toBe(17);
+  ).toBe(18);
   const categories = await migrated.listReferenceCategories();
   // The seed labels (Productivity + Communication Tools) land as two rows.
   expect(
@@ -937,21 +890,13 @@ test("version-seventeen stores gain the Clearful rows, without touching their ow
 
 test("future database versions are rejected without downgrading their schema", async () => {
   const { dir, store } = await open();
-<<<<<<< HEAD
   await store.client.execute("PRAGMA user_version=19");
-=======
-  await store.client.execute("PRAGMA user_version=18");
->>>>>>> origin/main
   await expect(createResearchStore(dir)).rejects.toThrow("newer application");
   expect(
     Number(
       (await store.client.execute("PRAGMA user_version")).rows[0].user_version,
     ),
-<<<<<<< HEAD
   ).toBe(19);
-=======
-  ).toBe(18);
->>>>>>> origin/main
 });
 
 test("updateSettings writes JSON on a fresh row and on a conflicting row", async () => {
