@@ -916,5 +916,11 @@
     "groupId": "web-categories",
     "labels": ["Marketplace"],
     "reason": "catalog.json describes a freelance services marketplace: the home and /categories directory, /search/gigs gig listings, a gig page with package pricing, seller profiles and the join/login auth edge."
+  },
+  {
+    "referenceId": "systems:gladia",
+    "groupId": "web-categories",
+    "labels": ["AI Tool", "Development Tools"],
+    "reason": "catalog.json describes an audio-transcription and speech-AI developer platform: the marketing pages, usage-based pricing with a calculator, the Mintlify docs site and the app-shell auth cards."
   }
 ]

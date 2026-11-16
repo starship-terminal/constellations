@@ -12762,6 +12762,129 @@
      "blog and changelog article pages were not paged through"
     ]
    }
+  },
+  {
+   "slug": "gladia",
+   "name": "Gladia",
+   "url": "https://www.gladia.io",
+   "category": "media",
+   "platform": "web",
+   "goodFor": "developer-audio-AI product and marketing design: a declared :root token layer of --color-neutral-0..1000 and --color-purple/blue/green/red/yellow/orange/pink ramps (brand purple #947afc) behind a dark-by-default glass surface (black --bg-primary, rgba glass nav, hairline translucent borders, purple #925bff brand CTAs), a 4px --space-* scale, --radius-* pill geometry, --font-size-10..80 ramp in 'Suisse Intl' with 'Geist Mono' code, --duration-*/--ease-* motion, and the semantic --text-*/--bg-*/--border-* roles re-pointed under body.light-mode on /library and .section--white on white sections; a hover-intent mega-menu header, an Async/Real-time pricing grid with a calculator, a demo-request form, a Mintlify docs site with a real light/dark preference, app-shell auth cards and a 390px pass",
+   "tags": [
+    "web",
+    "ai",
+    "audio",
+    "speech-api",
+    "developer",
+    "marketing",
+    "docs",
+    "pricing",
+    "dark",
+    "glass",
+    "signed-out",
+    "design-tokens"
+   ],
+   "shape": "reference",
+   "captured": "2026-11-16",
+   "access": "signed out (every captured surface is public; the app console and every post-login surface - API keys, transcription playground, usage, billing - is an authenticated boundary never reached; the /demo-request, pricing-calculator, login and signup fields were measured and typed into then cleared, never submitted; every CTA, SSO button, nav item and link was measured, never followed; the mega-menu opens by hover intent or keyboard, the pricing-mode toggle and FAQ accordions are local UI toggles, and the docs dark theme is the Mintlify site's own preference)",
+   "themes": [
+    "dark",
+    "light"
+   ],
+   "widths": [
+    1440,
+    390
+   ],
+   "entry": "systems/gladia/README.md",
+   "tokens": "systems/gladia/tokens.json",
+   "styleGuide": "systems/gladia/style-guide.html",
+   "preview": {
+    "cover": "systems/gladia/screenshots/home-dark-default.png",
+    "icon": "systems/gladia/icon.png",
+    "swatches": {
+     "dark": {
+      "page": "dark.bg.primary",
+      "surface": "dark.bg.secondary",
+      "text": "dark.text.primary",
+      "muted": "dark.text.secondary",
+      "accent": "dark.bg.brand",
+      "border": "dark.border.primary"
+     },
+     "light": {
+      "page": "light.bg.primary",
+      "surface": "light.bg.secondary",
+      "text": "light.text.primary",
+      "muted": "light.text.secondary",
+      "accent": "light.bg.brand",
+      "border": "light.border.primary"
+     }
+    },
+    "fonts": [
+     "core.font.family.sans",
+     "core.font.family.mono"
+    ]
+   },
+   "source": {
+    "path": "~/.design-systems/gladia/raw-shots (full-colour unmasked captures, outside the repo)"
+   },
+   "capture": {
+    "method": "public-web",
+    "source": "gladia.io in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and element crops from the live DOM, plus a stylesheet harvest (226 resolved custom properties per probe across :root, .light-mode and .section--white scopes, 5 @font-face rules). The marketing site's :root paints dark with no theme control (emulated prefers-color-scheme resolved identically); body.light-mode is the light scope /library paints and the token `light` set; /blog is a legacy Webflow stack on its own stylesheets; docs.gladia.io is a Mintlify stack with a real light/dark preference (dark captured as screenshots); app.gladia.io / and /signup are the product auth shell - a different stack - measured under component.auth.*. BOUNDARY: forms typed into then cleared never submitted; SSO never followed; the pricing calculator never changed values persistently",
+    "timestamp": "2026-11-15T22:48:00Z",
+    "harness": "Devin",
+    "model": "SWE-2 Max",
+    "route": "public-web",
+    "routes": [
+     "/",
+     "/pricing",
+     "/product/speech-to-text-api",
+     "/product/speech-to-text-api/real-time",
+     "/product/speech-to-text-api/async",
+     "/product/audio-intelligence",
+     "/use-cases/voice-agents",
+     "/use-cases/meeting-assistants",
+     "/use-cases/ccaas",
+     "/use-cases/media",
+     "/about-us",
+     "/blog",
+     "/changelog",
+     "/testimonials",
+     "/partners",
+     "/library",
+     "/demo-request",
+     "/security",
+     "/compliance-hub",
+     "/gladiaflow",
+     "/solaria-3",
+     "/creator-program",
+     "/start-up-studio",
+     "/meeting-assistant-market-map",
+     "/benchmark-reliability-checker",
+     "/competitors/benchmarks",
+     "docs.gladia.io/chapters/introduction",
+     "docs.gladia.io/chapters/pre-recorded-stt/quickstart",
+     "docs.gladia.io/api-reference",
+     "app.gladia.io/",
+     "app.gladia.io/signup",
+     "home header Product + Solutions + Developers + Resources + Company mega-menus",
+     "pricing Async/Real-time toggle",
+     "docs theme-dark preference",
+     "mobile /, /pricing, /demo-request, /library and docs quickstart plus the home nav sheet"
+    ],
+    "gaps": [
+     "the app console and every post-login surface (API keys, transcription playground, usage, billing, settings) sits behind an account - an authenticated boundary never reached; app.gladia.io / and /signup were measured as forms, never submitted, and Continue-with SSO buttons were never followed",
+     "submitted states: the /demo-request form, the pricing-calculator fields and the auth cards were typed into then cleared, never sent - validation, error, loading and success states are absent rather than measured",
+     "the pricing calculator re-prices as inputs change; the hours field was typed then cleared and the range/checkbox controls measured at rest, so alternate calculator prices are uncaptured",
+     "the docs dark theme was captured as screenshots via the site's own theme-preference control; the toggle state was never held during measurement, and the Mintlify stack's values are not folded into the marketing token sets",
+     "Solutions, Developers, Resources and Company mega-menu panels were screenshot-captured only; only the Product panel's contents were component-measured",
+     "detail pages: blog posts, docs articles beyond the three captured, use-case detail, competitor and legal pages are index- or exemplar-level captures",
+     "the /blog stack is a legacy Webflow build on its own stylesheets - measured at index level only",
+     "pressed states are DevTools-forced (CSS.forcePseudoState), so any script-applied mousedown state is missing",
+     "icons: the inline SVGs were collected (icons/INDEX.tsv); the raster/photographic marketing imagery is the product's artwork, not a token source"
+    ],
+    "durationMin": 240,
+    "durationNote": "wall-clock across the capture sessions including kit adaptation, the stylesheet harvest, the screenshot pass, the measurement pass and the offline build"
+   }
   }
  ]
 }

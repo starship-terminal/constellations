@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 153,
-    "system_domains": 145,
-    "matched_domains": 116,
-    "missing_domains": 317,
+    "system_packages": 154,
+    "system_domains": 146,
+    "matched_domains": 117,
+    "missing_domains": 316,
     "system_domains_absent_from_catalog": 29
   },
   "matched": {
@@ -1863,6 +1863,23 @@
         }
       ]
     },
+    "gladia.io": {
+      "catalog": [
+        {
+          "name": "Gladia",
+          "domain": "gladia.io",
+          "id": 859
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "gladia",
+          "name": "Gladia",
+          "url": "https://www.gladia.io",
+          "name_match": true
+        }
+      ]
+    },
     "google.com": {
       "catalog": [
         {
@@ -2310,13 +2327,6 @@
         "name": "Pocket",
         "domain": "getpocket.com",
         "id": 228
-      }
-    ],
-    "gladia.io": [
-      {
-        "name": "Gladia",
-        "domain": "gladia.io",
-        "id": 859
       }
     ],
     "glassnode.com": [
