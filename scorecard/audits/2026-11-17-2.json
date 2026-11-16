@@ -1,7 +1,7 @@
 {
  "date": "2026-11-17",
  "rubric": "4",
- "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): Captured signed-out public surfaces with Playwright; graded against the web wording of scorecard/criteria.json using measured evidence in raw/components-computed.json, css-vars.json, layout.json, motion.json, components.md and README.md; scripted criteria left to the check.",
+ "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): read the package end to end (README, components.md, patterns.md, tokens.json, style-guide.html), inspected screenshots and crops, checked measured roles against the declared FPDS/Tailwind layer",
  "systems": [
   {
    "slug": "1password",
@@ -15692,6 +15692,135 @@
    "reviewedPlatform": "web"
   },
   {
+   "slug": "fourmula",
+   "grades": {
+    "F1": {
+     "grade": "meets",
+     "evidence": "Two real palettes captured: the app's declared Tailwind @theme ramp under appColor — a neutral base-100..base-900 set with 625/650/750 half-steps, two orange accents (accent-500/-600), success/error/warning families plus blue/red/gray and overlay-black utilities; the marketing site's five-step --fonts-10/20/30/50/64 alpha ink ramp is retained as the per-theme text.muted/dim/faint/hairlineInk and border roles, resolved in both paints."
+    },
+    "F2": {
+     "grade": "meets",
+     "evidence": "background.page/menu/counter/chip/aiButton/surface resolve in both marketing paints (light #fff/#020108-menu, dark #020108/#272727-menu) and the app's base-800/750 card+dialog fills are declared under component.app.* plus appColor.base-*."
+    },
+    "F3": {
+     "grade": "meets",
+     "evidence": "text.ink/muted/overlayLink + action.ink/inkInverse resolve per theme (#020108 ink and white inverse in light, swapped in dark; muted is the fonts-64 alpha); the app's dim-ink #b0b4ba, muted-ink #686a6e and format-item-ink #ff6b02 are measured under component.app.*."
+    },
+    "F4": {
+     "grade": "meets",
+     "evidence": "border.rule (#d7d7d6 / #2a2a30), border.hairline (the fonts-20 alpha per theme), border.toggleRing, border.iconRing and border.menuRing resolve in both paints; the app card's 1px #1a1a1a border is measured."
+    },
+    "F5": {
+     "grade": "meets",
+     "evidence": "Default+hover+pressed measured on the marketing CTAs (header-cta, step-cta, how-cta), account-link, menu-pill and the app controls (app-create-btn, app-signin-btn, auth-submit, pdp-start-bottom); selected paints measured on pdp-format-static and the opened FAQ/menu states."
+    },
+    "F6": {
+     "grade": "partly",
+     "evidence": "The app's @theme declares success #46fea5, error #ff173f and a warning family under appColor, but no error/success state paints on the signed-out surfaces - declarations captured, painted states absent rather than measured."
+    },
+    "F7": {
+     "grade": "meets",
+     "evidence": "Both marketing paints are complete parallel sets (24 light + 17 dark tokens, same roles, documented inverted class names); the app's dark-only layer is captured under core.appColor/component.app and documented as having no public light theme."
+    },
+    "F8": {
+     "grade": "meets",
+     "evidence": "font.size.marketing.* is the declared --_fonts---* fluid ramp, font.size.measured.* the painted px at 1440/390 (73.2px hero, 40.3px mobile), font.size.app.* the declared 12-52px app scale; families and tracking captured for both systems."
+    },
+    "F9": {
+     "grade": "missing",
+     "evidence": "Neither surface declares a spacing scale on one base unit - the Webflow marketing stylesheet has no spacing tokens and the app uses Tailwind utilities directly; spacing exists only as measured component geometry (component.*-pad entries)."
+    },
+    "F10": {
+     "grade": "meets",
+     "evidence": "radius.app.sm..7xl is the app's declared 4-40px ramp; marketing radii are measured (6.65px chips, 26.6px icon rings, 28px app cards/dialogs, 16px format cards, fluid ~1318px pill sentinel values)."
+    },
+    "F11": {
+     "grade": "meets",
+     "evidence": "component.marketing.* and component.app.* carry measured heights/widths for 78 components (92.5px header, 40px CTAs, 384px auth card, 280x60 format cards, mobile 104px header)."
+    },
+    "F12": {
+     "grade": "missing",
+     "evidence": "No 3-5 level elevation scale exists: the marketing site is flat hairlines, the app card uses a 1px border + 24px backdrop blur rather than a shadow ramp; only the cookie modal's one-off shadow was measured."
+    },
+    "F13": {
+     "grade": "meets",
+     "evidence": "The two-pass motion probe found 337 moving elements; core.motion carries the measured 0.2s ease marketing control, the app's declared 150ms cubic-bezier(.4,0,.2,1) and 0.2s transitions, plus the honest reduced-motion finding (behaviour: ignores - nothing honours prefers-reduced-motion)."
+    },
+    "F14": {
+     "grade": "partly",
+     "evidence": "Widths 1440/390 and container.header-width/legal-width are captured and the mobile breakpoints were exercised; grid columns and z-index layers are not declared tokens on either surface - recorded as measured geometry only."
+    },
+    "C1": {
+     "grade": "partly",
+     "evidence": "78 components cover 12 of 19 checklist items: button (header-cta/step-cta/how-cta, cookie-accept/save, auth-submit, pdp-upload/shopify-cta/start-bottom), icon button (theme-toggle, account-link, app-menu-btn), link (nav-overlay/footer/legal links, pdp-dash-link), text field (auth email/password), checkbox (cookie-check), radio (pdp-format group), switch (theme-toggle), menu (menu-pill + nav-overlay), dialog (cookie-settings, pdp-reco/what dialogs), card (auth-card, format items), list row (faq-item), badge (prc-counter, hero chips, pdp-signedin-chip). Missing: text area, select, tabs, tooltip, toast, table, avatar - none paints signed out."
+    },
+    "C2": {
+     "grade": "meets",
+     "evidence": "176 states across 78 components (one — the auth reset view — is recorded as uncaptured rather than measured): real hover, focus-visible, focused and typed-then-cleared filled fields, DevTools-forced pressed, opened states (menu overlay, FAQ, consent manager, both PDP dialogs), selected (format radio) and disabled-look (format-video 0.5 opacity)."
+    },
+    "C3": {
+     "grade": "partly",
+     "evidence": "Keyboard focus was delivered to 19 interactive components and the state captured; none paints a visible focus change - no outline ring, shadow or border delta (an honest absence recorded in components.md). The consent buttons' #146ef5 paint is their hover state; no focus state was captured on them, so no focus treatment is claimed there."
+    },
+    "C4": {
+     "grade": "meets",
+     "evidence": "component.marketing.*/component.app.* tokenize the measured geometry, fills, inks, borders and radii per component, each with $extensions.source."
+    },
+    "C5": {
+     "grade": "partly",
+     "evidence": "Local keyboard/UI behaviour is documented per component (Escape dismisses dialogs, accordion opens, switchers swap auth views, Enter-safe guards never submit); screen-reader output and submission behaviour are absent because nothing was submitted and AT was not driven."
+    },
+    "P1": {
+     "grade": "meets",
+     "evidence": "patterns.md covers the marketing chrome and inverted theme, home, legal, app shell, start, auth card, create-PDP, mobile and motion/focus, each tied to tokens.json values and crops."
+    },
+    "V1": {
+     "grade": "meets",
+     "evidence": "The README's Do and don't lists 9 evidenced rules (invert with the theme, spend orange only in the app, keep the two systems apart, name the paint not the class, honest pill radii, no signed-in styling, no fabricated form outcomes, declared-vs-measured type, no brand copying), each linked to a crop."
+    },
+    "V2": {
+     "grade": "na",
+     "evidence": "Optional for a capture, and this product does not publish it."
+    },
+    "A1": {
+     "grade": "partly",
+     "evidence": "Fonts named with real stacks ('Sf Pro Display', Arial on marketing; the app's local sfProFont next/font build) with the proprietary-face caveat; no standalone SVG icon set was lifted - the layoutGaps entry records it."
+    },
+    "K1": {
+     "grade": "meets",
+     "evidence": "The README states the surfaces, both themes and the inverted class names, the read method, the boundaries (auth wall, uploads, Shopify, generation, consent), the two-token-layer warning and the distrust list."
+    },
+    "F15": {
+     "grade": "meets",
+     "evidence": "Script: all 8 pairs pass 4.5:1 across 2 themes; lowest 6.43:1 light muted (light.text.muted) on surface (light.background.surface)"
+    },
+    "F16": {
+     "grade": "meets",
+     "evidence": "Script: 316 of 316 tokens name their source"
+    },
+    "K2": {
+     "grade": "meets",
+     "evidence": "Script: 9 rules, each linking a screenshot or crop"
+    },
+    "K3": {
+     "grade": "meets",
+     "evidence": "Script: DESIGN.md matches a fresh generation"
+    }
+   },
+   "name": "Fourmula",
+   "goodFor": "AI product-photography design across two systems: a Webflow marketing site with two inverted paints (the isDarkMode toggle flips `dark` on <body> - .body.dark paints light, plain .body dark), a fluid --_fonts---* rem ramp, a five-step --fonts-* alpha ink scale and Sf Pro Display; plus a dark-only Next.js/Tailwind v4 app edge with a declared @theme ramp (base-100..900 neutrals, #ff6b02 accent, --text-* 9-52px, --radius-* 4-40px), a 384px/28px-radius sign-in card, accent/20% tint pills and the signed-out PDP generator",
+   "url": "https://fourmula.ai",
+   "captured": "2026-11-15",
+   "themes": [
+    "light",
+    "dark"
+   ],
+   "platform": "web",
+   "category": "AI agents",
+   "reviewed": "2026-11-16",
+   "reviewedPlatform": "web"
+  },
+  {
    "slug": "gauth",
    "name": "Gauth",
    "category": "Learning",
@@ -19823,137 +19952,8 @@
    "category": "AI agents",
    "reviewed": "2026-10-25",
    "reviewedPlatform": "desktop"
-  },
-  {
-   "slug": "grammarly",
-   "grades": {
-    "F1": {
-     "grade": "meets",
-     "evidence": "Two full ramp families on :root: the legacy GDS ramps (blue, blue-gray, gold, green, magenta, neutral-gray, purple, red, teal, yellow-green; ~8-10 steps each incl. neutral) and the Origin ramps (blue, gold, green, mulberry, neutral, orange, purple, red, teal, yellow, space). tokens.json core.palette.{gds,*}."
-    },
-    "F2": {
-     "grade": "partly",
-     "evidence": "Page and surface roles are declared (color.background.base.default/subdued/inverse plus brand, interactive, neutral and the status fills; origin.* mirrors them). No raised/overlay/scrim role is published — the sign-in page's dim is a modal implementation detail, not a token. tokens.json light.color.background.*."
-    },
-    "F3": {
-     "grade": "partly",
-     "evidence": "Primary (text.base.default), secondary (text.base.subdued), inverse and brand/on-accent roles are declared and painted; no disabled text or distinct link colour is published — nav and footer links are plain ink, and no disabled control is reachable signed out. tokens.json light.color.text.*."
-    },
-    "F4": {
-     "grade": "meets",
-     "evidence": "Default and subdued hairlines (border.base.default/subdued), inverse, brand and interactive borders, a declared focus border (border.focus.default #027e6f) measured as the 2px ring on 20 components, plus status borders. tokens.json light.color.border.*."
-    },
-    "F5": {
-     "grade": "meets",
-     "evidence": "Every --button-* role declares default/hover/active (primary green deepens, secondary fills, ghost text darkens) and the measured state rows match. tokens.json light.button.*; components.md."
-    },
-    "F6": {
-     "grade": "meets",
-     "evidence": "Full background/border/text/icon trios for success, warning and critical (danger) plus the suggestion-category palettes (correctness, clarity, engagement, delivery, addition, deletion, plagiarism) and the tag.* fills. tokens.json light.color.*; style-guide.html."
-    },
-    "F7": {
-     "grade": "meets",
-     "evidence": "The product ships one painted theme on every public surface (light; no switch, prefers-color-scheme does not repaint). The declared dark set mirrors the same colour/origin/button/tag roles — parity in the declarations — but is never painted; labelled declared evidence, not a second shipped theme."
-    },
-    "F8": {
-     "grade": "meets",
-     "evidence": "Matter (display) and Inter (text) with full fallback stacks plus Super Sans Mono VF/Super Serif VF in the Origin stacks; named roles heading-xxsmall..xlarge and text-xsmall..large carry size, weight, line-height and letter-spacing. tokens.json core.typography, core.fontFamily."
-    },
-    "F9": {
-     "grade": "meets",
-     "evidence": "33 spacing tokens plus the origin-size scale on a 4px base; measured paddings and gaps conform. tokens.json core.spacing, core.size."
-    },
-    "F10": {
-     "grade": "meets",
-     "evidence": "Two declared radius scales (core.radius 21 steps on the Origin axis, radiusGds 11 on the GDS scale; GDS-skinned controls measure a 6px corner) and per-component border widths in components.md."
-    },
-    "F11": {
-     "grade": "partly",
-     "evidence": "Control heights measured per component (24-60px across five stops), icon sizes in the component readings, and the focus ring measured (2px, 1-3px offset). No declared control-size ladder beyond the origin-size scale and no declared ring-width token (only component.focus.color). raw/components-computed.json."
-    },
-    "F12": {
-     "grade": "meets",
-     "evidence": "Origin elevation low/medium/high plus the legacy GDS shadow+outline pairs; the low pair rides the sticky header and dropdowns. tokens.json core.elevation; style-guide.html."
-    },
-    "F13": {
-     "grade": "meets",
-     "evidence": "Durations (100-300ms) and easings declared, the measured motion group holds the real transitions/animations from five pages, and the reduced-motion verdict (partial) is recorded. tokens.json core.motion; raw/motion.json."
-    },
-    "F14": {
-     "grade": "meets",
-     "evidence": "Five breakpoints from the media rules, header 65px and container readings, per-page grid readings at 1440/1920/1024/390 in raw/layout.json, and the z-index ladder. tokens.json core.breakpoint, core.layout, core.zIndex."
-    },
-    "C1": {
-     "grade": "partly",
-     "evidence": "13 of 19 captured: button, icon button (info-icon-button), link, text field, text area (checker editor), select, tabs, menu (nav flyout), dialog (sign-in card), card, badge (sticker tag), list row (FAQ item), table (Compare Plans rows). Not published signed out: checkbox, radio, switch, tooltip, toast, avatar — all live inside app.grammarly.com. components.md."
-    },
-    "C2": {
-     "grade": "partly",
-     "evidence": "Captured through the UI: hover, focus-visible, focused/filled, selected (tab), open (flyout, mobile sheet); pressed forced via forcePseudoState (labelled). disabled/loading/error are not published on signed-out pages — declared in Gaps, not fabricated. components.md."
-    },
-    "C3": {
-     "grade": "meets",
-     "evidence": "27 components took a real keyboard focus; 20 paint a 2px #027e6f ring at 1-3px offset — the site's consistent affordance. components.md Shared values."
-    },
-    "C4": {
-     "grade": "partly",
-     "evidence": "Component entries name the palette token behind every measured colour (#027e6f `green.60`) but geometry, paddings and type are raw px — the semantic tokens do not map component-level dimensions. components.md."
-    },
-    "P1": {
-     "grade": "partly",
-     "evidence": "patterns.md covers the app shell and flyout nav, marketing heroes and cards, the plans grid, the checker tool, the sales form and sign-in, plus focus and motion. Not published signed out: validation errors, empty/loading/error, destructive confirmation, feedback, search, onboarding — all behind app.grammarly.com; gap declared."
-    },
-    "A1": {
-     "grade": "meets",
-     "evidence": "38 inline SVGs indexed by role in icons/INDEX.tsv with currentColor preserved; Matter, Inter and the Super faces named with their fallbacks. icons/, README Fonts."
-    },
-    "K1": {
-     "grade": "meets",
-     "evidence": "The README names every captured route, the signed-out method, the declared-only dark set, the typed-and-deleted field states and a What-to-distrust list including the 0x0 copy-button slot, the overlay-rendered suggestion cards and lazy-mounted sections. systems/grammarly/README.md."
-    },
-    "F15": {
-     "grade": "partly",
-     "evidence": "Script: all 4 checked pairs pass; lowest 4.54:1 light muted (light.color.text.base.subdued) on surface (light.color.background.base.subdued); dark (declared) not checked (no palette)"
-    },
-    "F16": {
-     "grade": "meets",
-     "evidence": "Script: 1485 of 1485 tokens name their source"
-    },
-    "K2": {
-     "grade": "meets",
-     "evidence": "Script: 10 rules, each linking a screenshot or crop"
-    },
-    "K3": {
-     "grade": "meets",
-     "evidence": "Script: DESIGN.md matches a fresh generation"
-    },
-    "C5": {
-     "grade": "na",
-     "evidence": "Optional for a capture, and this product does not publish it."
-    },
-    "V1": {
-     "grade": "na",
-     "evidence": "Optional for a capture, and this product does not publish it."
-    },
-    "V2": {
-     "grade": "na",
-     "evidence": "Optional for a capture, and this product does not publish it."
-    }
-   },
-   "name": "Grammarly",
-   "goodFor": "AI writing assistant marketing site: Matter/Inter type, GDS + Origin token layers, three-column plans, free grammar checker tool, light only",
-   "url": "https://www.grammarly.com",
-   "captured": "2026-11-16",
-   "themes": [
-    "light",
-    "dark (declared)"
-   ],
-   "platform": "web",
-   "category": "Productivity",
-   "reviewed": "2026-11-17",
-   "reviewedPlatform": "web"
   }
  ],
  "base": "2026-10-16",
- "reviewMethod": "Captured signed-out public surfaces with Playwright; graded against the web wording of scorecard/criteria.json using measured evidence in raw/components-computed.json, css-vars.json, layout.json, motion.json, components.md and README.md; scripted criteria left to the check."
+ "reviewMethod": "read the package end to end (README, components.md, patterns.md, tokens.json, style-guide.html), inspected screenshots and crops, checked measured roles against the declared FPDS/Tailwind layer"
 }
