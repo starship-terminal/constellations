@@ -499,7 +499,7 @@ async function home() {
   await S('hero-cta', q('.hero-cta-row a.btn-primary, .hero-foot a.btn-primary, section a.btn-primary').filter({ hasText: /Start now/i }), B4, { group: h, title: 'Hero CTA', desc: 'The primary "Start now" hero action — the only hero action; measured, never followed.', sel: '.hero-cta-row a.btn-primary' });
   // No hero-cta2: the hero carries a single action; the broad "See/Explore"
   // filter previously matched a hidden mega-menu card. The cards themselves:
-  await S('mega-card', q('a.mega-card'), ['default'], { group: g, title: 'Mega-menu card', desc: 'A .mega-card tile inside the Features mega-menu (Get inspired / Designers / Help / Blog); measured with the menu open, never followed. The four tiles compute visibility:hidden until a Webflow reveal that never fired in the headless run — the geometry and styles are the authored values; no crop was saved because nothing painted.', sel: 'a.mega-card' }, { open: openMega, noScroll: true, noReset: true });
+  await S('mega-card', q('a.mega-card'), ['default'], { group: g, title: 'Mega-menu card', desc: 'A .mega-card tile inside the Features mega-menu (Get inspired / Designers / Help / Blog); measured with the menu open, never followed. The tiles compute visibility:hidden until a Webflow reveal — earlier passes read mid-reveal or before it; the settle wait lets it paint.', sel: 'a.mega-card' }, { open: openMega, noScroll: true, noReset: true });
   await page.mouse.move(10, 600);
   await page.keyboard.press('Escape').catch(() => {});
   // No signup-modal/signup-google entries: "Start now" navigates to the

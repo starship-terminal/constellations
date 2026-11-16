@@ -1,5 +1,5 @@
 {
-  "_about": "The token tree build_tokens.py turns into tokens.json. Fourthwall's five public hosts each declare their own layer (raw/css-vars.json): the Webflow marketing --_primitives---/--_surface---/--_rhythm---/ramp vocabulary in light (+ the on-ink dark-section resolutions in ink), the catalogue's --color-/--bg-/--text-/... names in catalog (light-dark() light branch), catalogDark (the dark branch under a forced color-scheme — declared, not painted) and signup (the same DS painted dark on /get-started), the Mintlify --gray-/--primary vocabulary in docs/docsDark (the real theme menu) and the Docusaurus --ifm-/--fw- layer in help/helpDark (the real toggle). Measured roles alias to the declared values they match.",
+  "_about": "The token tree build_tokens.py turns into tokens.json. Fourthwall's five public hosts each declare their own layer (raw/css-vars.json): the Webflow marketing --_primitives---/--_surface---/--_rhythm---/ramp vocabulary in light (+ the on-ink dark-section resolutions in ink), the catalogue's --color-/--bg-/--text-/... names in catalog (light-dark() light branch), catalogDark (the dark branch under a forced color-scheme — declared, not painted) and signup (the same DS resolved light on /get-started), the Mintlify --gray-/--primary vocabulary in docs/docsDark (the real theme menu) and the Docusaurus --ifm-/--fw- layer in help/helpDark (the real toggle). Measured roles alias to the declared values they match.",
   "core": {
     "font": {
       "family": {
@@ -5877,9 +5877,9 @@
     },
     "surface": {
       "card": {
-        "value": "rgba(0, 0, 0, 0)",
+        "value": "{color.white}",
         "type": "color",
-        "source": "computed backgroundColor of docs-card default (raw/components-computed.json)",
+        "source": "computed backgroundColor of docs-card default (raw/components-computed.json); matches declared color.white",
         "description": "A docs card surface in light."
       },
       "sidebar-bg": {
@@ -9320,7 +9320,7 @@
       "description": "The marketing footer height."
     },
     "plan-card-width": {
-      "value": "1120px",
+      "value": "544px",
       "type": "dimension",
       "source": "measured w of plan-card default (raw/components-computed.json)",
       "description": "A pricing plan-card width."

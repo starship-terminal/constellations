@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-15T20:29:50.974Z",
+  "capturedAt": "2026-11-16T18:31:10.670Z",
   "screenshot": "shops-light-full.png",
   "sanitizedSourceUrl": "https://fourthwall.com/shops",
   "requested": {
@@ -46,15 +46,17 @@
     "scale": "css",
     "clip": null
   },
-  "png": null,
+  "png": {
+    "width": 1440,
+    "height": 10004
+  },
   "dimensionCheck": {
-    "status": "fail",
+    "status": "pass",
     "expected": {
       "width": 1440,
       "height": 10004
     },
-    "basis": "fullPage",
-    "error": "page.screenshot: Timeout 30000ms exceeded.\nCall log:\n  - taking page screenshot\n  - waiting for fonts to load...\n  - fonts loaded\n"
+    "basis": "fullPage"
   },
   "visualReview": {
     "status": "pending",

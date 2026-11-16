@@ -293,10 +293,11 @@ export async function crop(page, locator, name, pad = 8) {
     const vp = page.viewportSize();
     const inView = box.y - pad >= 0 && box.y + box.height + pad <= vp.height && box.x >= 0 && box.x + box.width <= vp.width + 1;
     // A screenshot can stall waiting for document.fonts.ready while a lazy
-    // font request hangs; retry once, then fail without leaving a stale crop
-    // from an earlier run behind.
+    // font request hangs; give it room (the run's default 8s timed out on
+    // font loads that finish at ~15-30s) and retry, then fail without
+    // leaving a stale crop from an earlier run behind.
     let lastErr;
-    for (let i = 0; i < 2; i++) {
+    for (let i = 0; i < 3; i++) {
       try {
         if (inView) {
           const clip = {
@@ -305,9 +306,9 @@ export async function crop(page, locator, name, pad = 8) {
             width: Math.min(vp.width - Math.max(0, box.x - pad), box.width + 2 * pad),
             height: Math.min(vp.height - Math.max(0, box.y - pad), box.height + 2 * pad),
           };
-          await page.screenshot({ path: file, clip, animations: 'allow' });
+          await page.screenshot({ path: file, clip, animations: 'allow', timeout: 25000 });
         } else {
-          await locator.screenshot({ path: file, animations: 'allow' });
+          await locator.screenshot({ path: file, animations: 'allow', timeout: 25000 });
         }
         lastErr = null;
         break;
@@ -325,16 +326,28 @@ export async function centre(locator) {
   await locator.evaluate((el) => el.scrollIntoView({ block: 'center', inline: 'nearest', behavior: 'instant' })).catch(() => {});
   await locator.page().waitForTimeout(350);
   // The marketing reveal is a 1.8s (+stagger delay) opacity/transform
-  // transition that starts when the element scrolls into view: a fixed 350ms
+  // transition that can start a beat after the scroll lands: a fixed 350ms
   // read caught mid-animation styles (opacity:0, translateY(56px) on the
-  // published tile/design-preview defaults). Wait for the element's own
-  // running transitions/animations to finish, capped so a looping or
-  // never-firing animation cannot hang the run.
+  // published tile/design-preview defaults), and a getAnimations snapshot
+  // alone can land before the reveal class is even applied. Poll until the
+  // element's computed opacity/transform stop changing with no transition
+  // still running, capped so a looping or never-firing reveal cannot hang
+  // the run.
   try {
-    await locator.evaluate((el) => Promise.race([
-      Promise.allSettled(el.getAnimations({ subtree: true }).map((a) => a.finished)),
-      new Promise((r) => setTimeout(r, 3500)),
-    ]));
+    await locator.evaluate(async (el) => {
+      const probe = () => {
+        const cs = getComputedStyle(el);
+        const running = el.getAnimations({ subtree: true }).some((a) => a.playState === 'running');
+        return [cs.opacity, cs.transform, running];
+      };
+      let prev = probe();
+      for (let i = 0; i < 18; i++) {
+        await new Promise((r) => setTimeout(r, 250));
+        const cur = probe();
+        if (!cur[2] && cur[0] === prev[0] && cur[1] === prev[1]) return;
+        prev = cur;
+      }
+    });
   } catch { /* no getAnimations support: keep the fixed wait above */ }
   await locator.page().waitForTimeout(150);
 }

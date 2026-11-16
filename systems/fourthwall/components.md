@@ -1,6 +1,6 @@
 # Fourthwall components
 
-The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Captured from fourthwall.com, products.fourthwall.com, docs.fourthwall.com, help.fourthwall.com and the /get-started auth shell on 2026-11-15, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was signed into, bought, designed or submitted; the auth choices and 'Sign in to design' were never pressed; every link and CTA was measured, never followed.
+The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Captured from fourthwall.com, products.fourthwall.com, docs.fourthwall.com, help.fourthwall.com and the /get-started auth shell on 2026-11-16, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was signed into, bought, designed or submitted; the auth choices and 'Sign in to design' were never pressed; every link and CTA was measured, never followed.
 
 The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (101 components, 201 states). The page layouts are described in [patterns.md](patterns.md).
 
@@ -8,7 +8,7 @@ How to read an entry:
 
 - A colour is its value followed by the token in [tokens.json](tokens.json) with the same value in the component's own surface set (light+core marketing / ink / catalog / docs / help and their dark sets — the hosts carry separate vocabularies), when there is one. Text is written family size/line-height weight, then its colour, for example `Suisse Intl 17/28 420, #0a0a0a`, and is read from the first text node inside the component.
 - The state table has one row per state that differs. The first row lists every value; later rows list only what changes. A state with the same values as the first is named in its label, for example "default (same: focus-visible)". When the root paints nothing, "Child layers" names the first nodes inside it that do.
-- Crops are images of the component read from the live page, in [components/crops/](components/crops) (200 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
+- Crops are images of the component read from the live page, in [components/crops/](components/crops) (204 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
 
 ## Discovery list
 
@@ -31,10 +31,10 @@ Screenshots are named `{page}-{theme}-state.png` where `{theme}` is the surface 
 | Catalogue home | `products.fourthwall.com` | [default](screenshots/catalog-light-default.png), [full](screenshots/catalog-light-full.png), [quiz-answer](screenshots/catalog-light-quiz-answer.png), [search](screenshots/catalog-light-search.png) |
 | Product page | `products.fourthwall.com/comfort-colors-…-dtg` | [default](screenshots/catalog-pdp-light-default.png), [full](screenshots/catalog-pdp-light-full.png), [size-guide](screenshots/catalog-pdp-light-size-guide.png) |
 | Catalogue /all | `products.fourthwall.com/all` | [default](screenshots/catalog-all-light-default.png), [full](screenshots/catalog-all-light-full.png) |
-| Docs home | `docs.fourthwall.com` | [dark-default](screenshots/docs-dark-dark-default.png), [dark-full](screenshots/docs-dark-dark-full.png), [default](screenshots/docs-light-default.png), [full](screenshots/docs-light-full.png), [search](screenshots/docs-light-search.png), [theme-menu](screenshots/docs-light-theme-menu.png) |
+| Docs home | `docs.fourthwall.com` | [default](screenshots/docs-light-default.png), [full](screenshots/docs-light-full.png), [search](screenshots/docs-light-search.png), [theme-menu](screenshots/docs-light-theme-menu.png) |
 | Docs quickstart | `docs.fourthwall.com/quickstart` | [default](screenshots/docs-quickstart-light-default.png), [full](screenshots/docs-quickstart-light-full.png) |
 | Docs quickstart, dark | `docs.fourthwall.com/quickstart` | [default](screenshots/docs-dark-dark-default.png), [full](screenshots/docs-dark-dark-full.png) |
-| Help home | `help.fourthwall.com` | [dark-default](screenshots/help-dark-dark-default.png), [dark-full](screenshots/help-dark-dark-full.png), [default](screenshots/help-light-default.png), [full](screenshots/help-light-full.png), [search](screenshots/help-light-search.png) |
+| Help home | `help.fourthwall.com` | [default](screenshots/help-light-default.png), [full](screenshots/help-light-full.png), [search](screenshots/help-light-search.png) |
 | Help category | `help.fourthwall.com/category/setting-up-your-shop` | [default](screenshots/help-category-light-default.png), [full](screenshots/help-category-light-full.png) |
 | Help category, dark | `help.fourthwall.com/category/setting-up-your-shop` | [default](screenshots/help-dark-dark-default.png), [full](screenshots/help-dark-dark-full.png) |
 | Home, phone | `/` | [default](screenshots/mobile-home-light-default.png), [full](screenshots/mobile-home-light-full.png) |
@@ -82,8 +82,9 @@ Values that apply across entries, from the measurement files.
 | 0.2s | `ease` | background, box-shadow, color, text-decoration-color | billing-btn, blog-card, blog-news, closer-cta, contact-card, footer-link, help-theme, hero-cta and more |
 | 0.25s | `cubic-bezier(0.22, 1, 0.36, 1)` | opacity, scale, transform | docs-search-dialog |
 | 0.32s | `ease` | background-color, color | m-nav, mkt-logo, mkt-nav, nav-cta, nav-features, nav-link, nav-login |
+| 0.4s | `cubic-bezier(0.16, 1, 0.3, 1)` | transform | plan-card |
 | 0.9s | `cubic-bezier(0.16, 1, 0.3, 1)` | transform | cmpart-card |
-| 1.1s | `cubic-bezier(0.16, 1, 0.3, 1)` | opacity, transform | cmp-card |
+| 1.1s | `cubic-bezier(0.16, 1, 0.3, 1)` | opacity, transform, translate | cmp-card, plan-card |
 | 1.8s | `cubic-bezier(0.16, 1, 0.3, 1)` | opacity, transform | design-preview, shops-tile, tile |
 
 **Card shapes.** Default-state values; the entries hold the states.
@@ -91,10 +92,10 @@ Values that apply across entries, from the measurement files.
 | Card | Size | Border | Radius | Background | Shadow | Padding |
 |---|---|---|---|---|---|---|
 | [Product tile](#product-tile) | 336.88 x 428.31 | - | - | #f6f6f6 `_primitives.color.paper.soft` | none | 24px |
-| [Plan card](#plan-card) | 1120 x 613.53 | - | - | transparent | none | 0 |
+| [Plan card](#plan-card) | 544 x 613.53 | - | - | #18181b `_primitives.color.ink.deep` | none | 40px |
 | [Product card](#product-card) | 243.19 x 323.44 | - | - | transparent | none | 0 |
 | [Category link](#category-link) | 252 x 24 | - | - | transparent | none | 0 |
-| [Docs card](#docs-card) | 688.81 x 372 | - | - | transparent | none | 0 |
+| [Docs card](#docs-card) | 336.41 x 182 | 1px solid oklab(0.144787 0.00000661612 0.00000289828 / 0.1) | 16px | #ffffff `color.white` | none | 0 |
 | [Rating chip](#rating-chip) | 50 x 20 | - | 999px | #ffffff `_primitives.color.paper.default` | none | 4px 10px 4px 8px |
 | [Auth card](#auth-card) | 440 x 176 | - | - | transparent | none | 0 |
 | [Shop tile](#shop-tile) | 432 x 475.31 | - | - | transparent | none | 0 |
@@ -180,13 +181,13 @@ The "Start now" pill in the nav — it links to /get-started; measured, never ac
 ![Start now button default](components/crops/nav-cta-default.png) ![Start now button hover](components/crops/nav-cta-hover.png) ![Start now button focus-visible](components/crops/nav-cta-focus-visible.png) ![Start now button pressed](components/crops/nav-cta-pressed.png)
 
 #### Mega-menu card
-A .mega-card tile inside the Features mega-menu (Get inspired / Designers / Help / Blog); measured with the menu open, never followed. The four tiles compute visibility:hidden until a Webflow reveal that never fired in the headless run — the geometry and styles are the authored values; no crop was saved because nothing painted. Read as `mega-card` on the home page.
+A .mega-card tile inside the Features mega-menu (Get inspired / Designers / Help / Blog); measured with the menu open, never followed. The tiles compute visibility:hidden until a Webflow reveal — earlier passes read mid-reveal or before it; the settle wait lets it paint. Read as `mega-card` on the home page.
 
 **Values (default).** size 316 x 325.98; padding 4px 0px; background transparent; text Suisse Intl 16.99/28.04 400, #ffffff `_primitives.color.paper.default`; transition text-decoration-color 0.2s ease, color 0.2s ease; layers div.mega-card-img 316.0x210.7 rgba(255, 255, 255, 0.07).
 
 Child layers that carry the look: div 316x210.7 background rgba(255, 255, 255, 0.07).
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Mega-menu card default](components/crops/mega-card-default.png)
 
 ### Home
 
@@ -211,8 +212,7 @@ A .ph-tile product/showcase tile in the home scatter grid (product card with hov
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 336.88 x 428.31; padding 24px; background #f6f6f6 `_primitives.color.paper.soft`; text Suisse Intl 12/12 500, #0a0a0a `_primitives.color.ink.default`; transition opacity 1.8s cubic-bezier(0.16, 1, 0.3, 1), transform 1.8s cubic-bezier(0.16, 1, 0.3, 1); transform translate(0px, 56px); opacity 0 |
-| hover | transform none; opacity none |
+| default (same: hover) | size 336.88 x 428.31; padding 24px; background #f6f6f6 `_primitives.color.paper.soft`; text Suisse Intl 12/12 500, #0a0a0a `_primitives.color.ink.default`; transition opacity 1.8s cubic-bezier(0.16, 1, 0.3, 1), transform 1.8s cubic-bezier(0.16, 1, 0.3, 1) |
 
 ![Product tile default](components/crops/tile-default.png) ![Product tile hover](components/crops/tile-hover.png)
 
@@ -233,7 +233,7 @@ The .ws--trusted "trusted by" section — the creator/company logo wall. Read as
 #### Design preview carousel
 The storefront design-preview carousel in the .on-ink design section. Read as `design-preview` on the home page.
 
-**Values (default).** size 516 x 619.19; background transparent; text Suisse Intl 16.99/28.04 400, #0a0a0a `_primitives.color.ink.default`; transition opacity 1.8s cubic-bezier(0.16, 1, 0.3, 1), transform 1.8s cubic-bezier(0.16, 1, 0.3, 1); transform translate(0px, 56px); opacity 0.
+**Values (default).** size 516 x 619.19; background transparent; text Suisse Intl 16.99/28.04 400, #0a0a0a `_primitives.color.ink.default`; transition opacity 1.8s cubic-bezier(0.16, 1, 0.3, 1), transform 1.8s cubic-bezier(0.16, 1, 0.3, 1).
 
 ![Design preview carousel default](components/crops/design-preview-default.png)
 
@@ -278,22 +278,19 @@ The "Pay monthly" toggle button; measured, and clicked once to paint the monthly
 ![Billing option default](components/crops/billing-btn-default.png) ![Billing option hover](components/crops/billing-btn-hover.png) ![Billing option focus-visible](components/crops/billing-btn-focus-visible.png) ![Billing option pressed](components/crops/billing-btn-pressed.png)
 
 #### Plan card
-A plan card on /pricing (Free / Pro / Managed). Read as `plan-card` on the pricing page.
+A plan card on /pricing (Free / Pro) — one .plan-card cell inside the .pricing-plans grid. Read as `plan-card` on the pricing page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 1120 x 613.53; background transparent; text Saans 34.56/36.28 435, #ffffff `_primitives.color.paper.default`; icon 18 x 18, #ffffff `_primitives.color.paper.default`; layers div.plan-card.reveal 544.0x613.5 rgb(24, 24, 27); div::before.plan-card.reveal 870.375pxx981.625px; div::after.plan-card.reveal 870.375pxx981.625px; div.plan-divider 464.0x1.0 rgba(255, 255, 255, 0.12); a.btn-primary.w-variant-3f51f10e-51a2-5720-f2c2-15f30fbb69ef 464.0x55.0 rgb(255, 255, 255) 12px; div.plan-card.plan-card--pro 544.0x613.5 rgb(24, 22, 29) |
-
-Child layers that carry the look: div 544x613.5 background #18181b `_primitives.color.ink.deep`; div::before 870.375pxx981.625px image radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.086) 0px, transparent 58%); div::after 870.375pxx981.625px image radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.055) 0px, transparent 58%).
+| default | size 544 x 613.53; padding 40px; background #18181b `_primitives.color.ink.deep`; text Saans 34.56/36.28 435, #ffffff `_primitives.color.paper.default`; transition opacity 1.1s cubic-bezier(0.16, 1, 0.3, 1), translate 1.1s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); icon 18 x 18, #ffffff `_primitives.color.paper.default`; layers ::before rgba(0, 0, 0, 0) 0px none 0.918754; ::after rgba(0, 0, 0, 0) 0px none 0.307089 |
+| hover | transition transform 0.32s cubic-bezier(0.16, 1, 0.3, 1); layers ::before rgba(0, 0, 0, 0) 0px none 0.440095; ::after rgba(0, 0, 0, 0) 0px none 0.413754 |
 
 ![Plan card default](components/crops/plan-card-default.png) ![Plan card hover](components/crops/plan-card-hover.png)
 
 #### Plan feature row
-A feature row inside the plans comparison. Read as `plan-row` on the pricing page.
+A .plan-feature row inside a plan card's .plan-features list. Read as `plan-row` on the pricing page.
 
-**Values (default).** size 800 x 69; padding 20px 24px; background transparent; text Suisse Intl 16.99/normal 450, #0a0a0a `_primitives.color.ink.default`; layers div::before.ph-faq-icon 14pxx1.5px rgba(10, 10, 10, 0.6); div::after.ph-faq-icon 14pxx1.5px rgba(10, 10, 10, 0.6).
-
-Child layers that carry the look: div::before 14pxx1.5px background rgba(10, 10, 10, 0.6) `_primitives.color.ink.alpha.60`; div::after 14pxx1.5px background rgba(10, 10, 10, 0.6) `_primitives.color.ink.alpha.60`.
+**Values (default).** size 464 x 24.64; background transparent; text Suisse Intl 16.99/24.64 400, #ffffff `_primitives.color.paper.default`; icon 18 x 18, #ffffff `_primitives.color.paper.default`.
 
 ![Plan feature row default](components/crops/plan-row-default.png)
 
@@ -746,13 +743,12 @@ A sidebar nav link; measured, never followed. Read as `docs-side-item` on the do
 ![Sidebar item default](components/crops/docs-side-item-default.png) ![Sidebar item hover](components/crops/docs-side-item-hover.png) ![Sidebar item focus-visible](components/crops/docs-side-item-focus-visible.png) ![Sidebar item pressed](components/crops/docs-side-item-pressed.png)
 
 #### Docs card
-A card on the docs landing page; measured, never followed. Read as `docs-card` on the docs home page.
+A .card tile on the docs landing page (Platform API / Webhooks / …); measured, never followed. Read as `docs-card` on the docs home page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 688.81 x 372; background transparent; text Inter 16/24 600, #252525; layers div.card.block 336.4x182.0 rgb(255, 255, 255) T:1px solid oklab(0.144787 0.00000661612 0.00000289828 / 0.1) / R:1px solid oklab(0.144787 0.00000661612 0.00000289828 / 0.1) / B:1px solid oklab(0.144787 0.00000661612 0.00000289828 / 0.1) / L:1px solid oklab(0.144787 0.00000661612 0.00000289828 / 0.1) rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px |
-
-Child layers that carry the look: div 336.4x182 background #ffffff `color.white` border 1px solid oklab(0.144787 0.00000661612 0.00000289828 / 0.1) radius 16px shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 2px, transparent 0px 0px 0px 0px; a 0x0 border 1px solid #000000 `color.black`; svg 24x24 background #000000 `color.black`.
+| default | size 336.41 x 182; border 1px solid oklab(0.144787 0.00000661612 0.00000289828 / 0.1); radius 16px; background #ffffff `color.white`; text Inter 16/24 600, #252525 |
+| hover | border 1px solid #000000 `color.black` |
 
 ![Docs card default](components/crops/docs-card-default.png) ![Docs card hover](components/crops/docs-card-hover.png)
 
@@ -1036,7 +1032,7 @@ A footer sitemap link; measured, never followed. Read as `footer-link` on the ho
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 55 x 28.05; background transparent; text Suisse Intl 16.99/28.04 400, rgba(255, 255, 255, 0.5) `_primitives.color.paper.alpha.50`; transition color 0.2s ease; layers ::after rgba(255, 255, 255, 0.5) 0px none 1; a::after.footer-link 55pxx1px rgba(255, 255, 255, 0.5) |
-| hover | text Suisse Intl 16.99/28.04 400, #ffffff `_primitives.color.paper.default`; layers ::after rgb(255, 255, 255) 0px none 1; a::after.footer-link 55pxx1px rgb(255, 255, 255) |
+| hover | text Suisse Intl 16.99/28.04 400, rgba(255, 255, 255, 0.9); layers ::after rgba(255, 255, 255, 0.9) 0px none 1; a::after.footer-link 55pxx1px rgba(255, 255, 255, 0.9) |
 | focus-visible | outline 1px auto #101010, offset 1px; layers ::after rgba(255, 255, 255, 0.5) 0px none 1; a.footer-link 55.0x28.0 1px auto rgb(16, 16, 16) offset 1px; a::after.footer-link 55pxx1px rgba(255, 255, 255, 0.5) |
 | pressed | text Suisse Intl 16.99/28.04 400, #ffffff `_primitives.color.paper.default`; layers ::after rgb(255, 255, 255) 0px none 1; a::after.footer-link 55pxx1px rgb(255, 255, 255) |
 
@@ -1053,7 +1049,7 @@ A .page-section.on-ink dark band — the sheet's own on-ink scope class repaints
 
 **Values (default).** size 1440 x 1355.89; padding 140px 40px; background #0a0a0a `_primitives.color.ink.default`; text Saans 57.6/60.48 420, #ffffff `_primitives.color.paper.default`; icon 9 x 9, #ffffff `_primitives.color.paper.default`.
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Dark feature section default](components/crops/leg-section-default.png)
 
 #### Wordmark section
 The dark "Made with Fourthwall" wordmark band — on-ink surface values. Read as `wordmark-section` on the home page.
@@ -1074,17 +1070,18 @@ The .made-with "Made with Fourthwall" storefront showcase band — on-ink surfac
 
 **Values (default).** size 1440 x 1067.19; padding 140px 0px 0px 0px; background #0a0a0a `_primitives.color.ink.default`; text Saans 57.6/60.48 420, #ffffff `_primitives.color.paper.default`.
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Made-with band default](components/crops/made-with-default.png)
 
 #### Closer CTA
 The giant "Make something worth buying" word-link in the closing section — it carries the start flow; measured, never followed. Read as `closer-cta` on the home page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 412.88 x 135.47; background transparent; text Saans 57.6/60.48 420, #ffffff `_primitives.color.paper.default`; transition color 0.2s ease, text-decoration-color 0.2s ease |
-| focus-visible | size 414.28 x 135.93; outline 1px auto #101010, offset 1px; layers a.closer-link 414.3x135.9 1px auto rgb(16, 16, 16) offset 1px |
+| default (same: pressed) | size 412.88 x 135.47; background transparent; text Saans 57.6/60.48 420, #ffffff `_primitives.color.paper.default`; transition color 0.2s ease, text-decoration-color 0.2s ease |
+| hover | size 429.42 x 140.88 |
+| focus-visible | size 429.34 x 140.87; outline 1px auto #101010, offset 1px; layers a.closer-link 429.3x140.9 1px auto rgb(16, 16, 16) offset 1px |
 
-![Closer CTA default](components/crops/closer-cta-default.png) ![Closer CTA focus-visible](components/crops/closer-cta-focus-visible.png) ![Closer CTA pressed](components/crops/closer-cta-pressed.png)
+![Closer CTA default](components/crops/closer-cta-default.png) ![Closer CTA hover](components/crops/closer-cta-hover.png) ![Closer CTA focus-visible](components/crops/closer-cta-focus-visible.png) ![Closer CTA pressed](components/crops/closer-cta-pressed.png)
 
 ## Icons
 
@@ -1115,7 +1112,7 @@ Fourthwall's product is the creator storefront platform: every post-login surfac
 
 ### Themes
 
-The marketing site paints one light surface — no user-facing theme control was found (`color-scheme: normal`); its dark bands are the sheet's own on-ink scope classes (.on-ink, .leg-section.gs1000, .wordmark-section, .closer-section, the .is-warm nav/footer), captured as the ink set. products.fourthwall.com declares every role as light-dark(), so prefers-color-scheme: dark paints a real dark catalogue (the catalogDark set). docs.fourthwall.com's 'Change theme preference' menu sets html.dark for real (the docsDark set and measurements). help.fourthwall.com's colour-mode toggle sets data-theme="dark" for real (the helpDark set and measurements).
+The marketing site paints one light surface — no user-facing theme control was found (`color-scheme: normal`); its dark bands are the sheet's own on-ink scope classes (.on-ink, .leg-section.gs1000, .wordmark-section, .closer-section, the .is-warm nav/footer), captured as the ink set. products.fourthwall.com declares every role as a light-dark() pair — the catalogDark set is the declared dark branch resolved under a forced color-scheme probe: declared, not observed (the catalogue ships no theme toggle and no dark paint was captured signed out). docs.fourthwall.com's 'Change theme preference' menu sets html.dark for real (the docsDark set and measurements). help.fourthwall.com's colour-mode toggle sets data-theme="dark" for real (the helpDark set and measurements).
 
 ### Fonts
 

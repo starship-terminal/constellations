@@ -1,6 +1,6 @@
 # Fourthwall component measurements
 
-Computed styles read from fourthwall.com, products.fourthwall.com, docs.fourthwall.com and help.fourthwall.com on 2026-11-15 by `tools/capture/public/measure.mjs`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844) across the public surfaces — the marketing pages' light surface and on-ink dark sections, the products catalogue, the signed-out /get-started auth shell, and the docs and help sites in light plus the dark themes their own theme controls paint — with any consent layer hidden (never answered), and written here by `tools/capture/public/build-measurements.mjs` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
+Computed styles read from fourthwall.com, products.fourthwall.com, docs.fourthwall.com and help.fourthwall.com on 2026-11-16 by `tools/capture/public/measure.mjs`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844) across the public surfaces — the marketing pages' light surface and on-ink dark sections, the products catalogue, the signed-out /get-started auth shell, and the docs and help sites in light plus the dark themes their own theme controls paint — with any consent layer hidden (never answered), and written here by `tools/capture/public/build-measurements.mjs` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
 
 States: `hover` is a real pointer hover; `focus-visible` a real keyboard focus (Shift+Tab, Tab); `pressed` is forced with DevTools (`CSS.forcePseudoState` :active:hover), so no button was pressed; `focused` is a text field clicked into; `filled` is sample text typed and deleted again, with nothing sent; `opened`, `expanded` and the rest are resting states reached by the page or by a UI toggle.
 
@@ -195,7 +195,7 @@ Crops: `nav-cta-default.png`, `nav-cta-hover.png`, `nav-cta-focus-visible.png`, 
 
 #### mega-card
 
-Mega-menu card. A .mega-card tile inside the Features mega-menu (Get inspired / Designers / Help / Blog); measured with the menu open, never followed. The four tiles compute visibility:hidden until a Webflow reveal that never fired in the headless run — the geometry and styles are the authored values; no crop was saved because nothing painted.
+Mega-menu card. A .mega-card tile inside the Features mega-menu (Get inspired / Designers / Help / Blog); measured with the menu open, never followed. The tiles compute visibility:hidden until a Webflow reveal — earlier passes read mid-reveal or before it; the settle wait lets it paint.
 
 Page: home. Selector: `a.mega-card`. States: default.
 
@@ -216,7 +216,7 @@ Page: home. Selector: `a.mega-card`. States: default.
 | Painted layers | div.mega-card-img 316.0x210.7 bg #ffffff @ 0.07 |
 | How | at rest |
 
-Crops: none.
+Crops: `mega-card-default.png`.
 
 ### Home
 
@@ -288,8 +288,7 @@ Page: home. Selector: `a.ph-tile`. States: default, hover.
 | Colour | #0a0a0a | = |
 | Text node | div.ph-tile-rating.ph-tile-rating--flat: Suisse Intl 12px/12px 500, #0a0a0a | = |
 | Transition | opacity, transform 1.8s, 1.8s cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1) | = |
-| Transform | matrix(1, 0, 0, 1, 0, 56) | matrix(1, 0, 0, 1, 0, 0) |
-| Opacity | 0 | - |
+| Transform | matrix(1, 0, 0, 1, 0, 0) | = |
 | Cursor | pointer | = |
 | Painted layers | a.ph-tile.ph-tile--product 336.9x428.3 bg #f6f6f6; div.ph-tile-rating.ph-tile-rating--flat 50.0x20.0 bg #ffffff r 999px | = |
 | How | at rest | mouse hover |
@@ -369,8 +368,7 @@ Page: home. Selector: `.design-preview`. States: default.
 | Letter spacing | normal |
 | Colour | #0a0a0a |
 | Transition | opacity, transform 1.8s, 1.8s cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1) delay 0.15s |
-| Transform | matrix(1, 0, 0, 1, 0, 56) |
-| Opacity | 0 |
+| Transform | matrix(1, 0, 0, 1, 0, 0) |
 | How | at rest |
 
 Crops: `design-preview-default.png`.
@@ -429,7 +427,7 @@ Page: home. Selector: `.page-section.on-ink`. States: default.
 | Ancestor paint | 1 up div.page-content bg #ffffff |
 | How | at rest |
 
-Crops: none.
+Crops: `leg-section-default.png`.
 
 #### wordmark-section
 
@@ -480,7 +478,7 @@ Page: home. Selector: `.closer-section`. States: default.
 | Transition | none |
 | Cursor | pointer |
 | ::before | 1440px x 512.797px, absolute, bg #ad0132, radius 0px |
-| Painted layers | section.closer-section 1440.0x512.8 bg #0a0a0a; section::before.closer-section 1440pxx512.797px bg #ad0132; div.g1 971.7x346.0 image radial-gradient(circle, #e84678 @ 0.8 0px, #e84678 @ 0 50%); div.g2 914.3x325.6 image radial-gradient(circle, #960a37 @ 0.8 0px, #960a37 @ 0 50%); div.g3 1144.1x407.4 image radial-gradient(circle, #c61c4e @ 0.8 0px, #c61c4e @ 0 50%); div.g4 1735.8x618.1 image radial-gradient(circle, #46041e @ 0.8 0px, #46041e @ 0 50%) |
+| Painted layers | section.closer-section 1440.0x512.8 bg #0a0a0a; section::before.closer-section 1440pxx512.797px bg #ad0132; div.g1 948.5x337.8 image radial-gradient(circle, #e84678 @ 0.8 0px, #e84678 @ 0 50%); div.g2 1172.3x417.5 image radial-gradient(circle, #960a37 @ 0.8 0px, #960a37 @ 0 50%); div.g3 1193.5x425.0 image radial-gradient(circle, #c61c4e @ 0.8 0px, #c61c4e @ 0 50%); div.g4 1357.8x483.5 image radial-gradient(circle, #46041e @ 0.8 0px, #46041e @ 0 50%) |
 | Ancestor paint | 1 up main.site-main bg #0a0a0a |
 | How | at rest |
 
@@ -507,11 +505,11 @@ Page: home. Selector: `.made-with`. States: default.
 | Text node | h2.heading-h1.reveal: Saans 57.6px/60.48px 420, #ffffff, ls -1.152px |
 | Transition | none |
 | Cursor | grab |
-| Painted layers | section.made-with 1440.0x1067.2 bg #0a0a0a; div.tile-inner 397.8x251.6 bg #141414; div.tile-inner 350.2x257.5 bg #141414; div::after.tile-inner 397.797pxx251.547px shadow #ffffff @ 0.1 0px 0px 0px 1px inset; div.tile-inner 236.0x246.5 bg #141414; div.tile-inner 110.0x223.6 bg #141414 |
+| Painted layers | section.made-with 1440.0x1067.2 bg #0a0a0a; div.tile-inner 397.8x251.7 bg #141414; div.tile-inner 349.6x257.4 bg #141414; div::after.tile-inner 397.797pxx251.547px shadow #ffffff @ 0.1 0px 0px 0px 1px inset; div.tile-inner 235.2x246.4 bg #141414; div.tile-inner 109.4x223.5 bg #141414 |
 | Ancestor paint | 1 up div.page-content bg #ffffff |
 | How | at rest |
 
-Crops: none.
+Crops: `made-with-default.png`.
 
 #### closer-cta
 
@@ -521,7 +519,7 @@ Page: home. Selector: `.closer-section a.closer-link`. States: default, hover, f
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 412.88 x 135.47 | = | 414.28 x 135.93 | = |
+| Size (w x h) | 412.88 x 135.47 | 429.42 x 140.88 | 429.34 x 140.87 | = |
 | Padding | 0px | = | = | = |
 | Border | none | = | = | = |
 | Radius | 0px | = | = | = |
@@ -534,9 +532,9 @@ Page: home. Selector: `.closer-section a.closer-link`. States: default, hover, f
 | Transition | color, text-decoration-color 0.2s, 0.2s ease, ease delay 0s, 0s | = | = | = |
 | Cursor | pointer | = | = | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
-| Painted layers | - | = | a.closer-link 414.3x135.9 outline 1px auto #101010 offset 1px | = |
+| Painted layers | - | = | a.closer-link 429.3x140.9 outline 1px auto #101010 offset 1px | = |
 
-Crops: `closer-cta-default.png`, `closer-cta-focus-visible.png`, `closer-cta-pressed.png`.
+Crops: `closer-cta-default.png`, `closer-cta-hover.png`, `closer-cta-focus-visible.png`, `closer-cta-pressed.png`.
 
 ### Footer
 
@@ -583,11 +581,11 @@ Page: home. Selector: `footer Pricing link`. States: default, hover, focus-visib
 | Outline | none | = | 1px auto #101010 offset 1px | = |
 | Font | Suisse Intl 16.9995px/28.0492px 400 | = | = | = |
 | Letter spacing | normal | = | = | = |
-| Colour | #ffffff @ 0.5 | #ffffff | = | #ffffff |
+| Colour | #ffffff @ 0.5 | #ffffff @ 0.9 | = | #ffffff |
 | Transition | color 0.2s ease | = | = | = |
 | Cursor | pointer | = | = | = |
-| ::after | 55px x 1px, absolute, bg #ffffff @ 0.5, radius 0px | 55px x 1px, absolute, bg #ffffff, radius 0px | = | 55px x 1px, absolute, bg #ffffff, radius 0px |
-| Painted layers | a::after.footer-link 55pxx1px bg #ffffff @ 0.5 | a::after.footer-link 55pxx1px bg #ffffff | a.footer-link 55.0x28.0 outline 1px auto #101010 offset 1px; a::after.footer-link 55pxx1px bg #ffffff @ 0.5 | a::after.footer-link 55pxx1px bg #ffffff |
+| ::after | 55px x 1px, absolute, bg #ffffff @ 0.5, radius 0px | 55px x 1px, absolute, bg #ffffff @ 0.9, radius 0px | = | 55px x 1px, absolute, bg #ffffff, radius 0px |
+| Painted layers | a::after.footer-link 55pxx1px bg #ffffff @ 0.5 | a::after.footer-link 55pxx1px bg #ffffff @ 0.9 | a.footer-link 55.0x28.0 outline 1px auto #101010 offset 1px; a::after.footer-link 55pxx1px bg #ffffff @ 0.5 | a::after.footer-link 55pxx1px bg #ffffff |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
 Crops: `footer-link-default.png`, `footer-link-hover.png`, `footer-link-focus-visible.png`, `footer-link-pressed.png`.
@@ -673,55 +671,56 @@ Crops: `billing-btn-default.png`, `billing-btn-hover.png`, `billing-btn-focus-vi
 
 #### plan-card
 
-Plan card. A plan card on /pricing (Free / Pro / Managed).
+Plan card. A plan card on /pricing (Free / Pro) — one .plan-card cell inside the .pricing-plans grid.
 
-Page: pricing. Selector: `pricing plan card`. States: default, hover.
+Page: pricing. Selector: `.pricing-plans .plan-card`. States: default, hover.
 
 | Property | default | hover |
 |---|---|---|
-| Size (w x h) | 1120 x 613.53 | = |
-| Padding | 0px | = |
-| Gap | 64px 32px | = |
+| Size (w x h) | 544 x 613.53 | = |
+| Padding | 40px | = |
+| Gap | 24px normal | = |
 | Border | none | = |
 | Radius | 0px | = |
-| Background | transparent | = |
+| Background | #18181b | = |
 | Box shadow | none | = |
 | Outline | none | = |
 | Font | Suisse Intl 16.9995px/28.0492px 400 | = |
 | Letter spacing | normal | = |
 | Colour | #0a0a0a | = |
 | Text node | p.plan-price: Saans 34.56px/36.288px 435, #ffffff, ls -0.3456px | = |
-| Transition | none | = |
+| Transition | opacity, translate, transform 1.1s, 1.1s, 0.4s cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1) delay 0.26s, 0.26s, 0s | transform 0.32s cubic-bezier(0.16, 1, 0.3, 1) |
 | Icon | 18 x 18, colour #ffffff | = |
-| Painted layers | div.plan-card.reveal 544.0x613.5 bg #18181b; div::before.plan-card.reveal 870.375pxx981.625px image radial-gradient(circle at 50% 50%, #ffffff @ 0.086 0px, #000000 @ 0 58%); div::after.plan-card.reveal 870.375pxx981.625px image radial-gradient(circle at 50% 50%, #ffffff @ 0.055 0px, #000000 @ 0 58%); div.plan-divider 464.0x1.0 bg #ffffff @ 0.12; a.btn-primary.w-variant-3f51f10e-51a2-5720-f2c2-15f30fbb69ef 464.0x55.0 bg #ffffff r 12px; div.plan-card.plan-card--pro 544.0x613.5 bg #18161d | = |
+| ::before | 870.375px x 981.625px, absolute, bg #000000 @ 0 radial-gradient(circle at 50% 50%, #ffffff @ 0.086 0px, #000000 @ 0 58%), radius 0px | = |
+| ::after | 870.375px x 981.625px, absolute, bg #000000 @ 0 radial-gradient(circle at 50% 50%, #ffffff @ 0.055 0px, #000000 @ 0 58%), radius 0px | = |
+| Painted layers | div.plan-card.reveal 544.0x613.5 bg #18181b; div::before.plan-card.reveal 870.375pxx981.625px image radial-gradient(circle at 50% 50%, #ffffff @ 0.086 0px, #000000 @ 0 58%); div::after.plan-card.reveal 870.375pxx981.625px image radial-gradient(circle at 50% 50%, #ffffff @ 0.055 0px, #000000 @ 0 58%); div.plan-divider 464.0x1.0 bg #ffffff @ 0.12; a.btn-primary.w-variant-3f51f10e-51a2-5720-f2c2-15f30fbb69ef 464.0x55.0 bg #ffffff r 12px | = |
 | How | at rest | mouse hover |
+| Transform | - | matrix(1, 0, 0, 1, 0, 0) |
 
 Crops: `plan-card-default.png`, `plan-card-hover.png`.
 
 #### plan-row
 
-Plan feature row. A feature row inside the plans comparison.
+Plan feature row. A .plan-feature row inside a plan card's .plan-features list.
 
-Page: pricing. Selector: `pricing feature row`. States: default.
+Page: pricing. Selector: `.plan-card .plan-feature`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 800 x 69 |
-| Padding | 20px 24px |
-| Gap | normal 16px |
+| Size (w x h) | 464 x 24.64 |
+| Padding | 0px |
+| Gap | normal 12px |
 | Border | none |
 | Radius | 0px |
 | Background | transparent |
 | Box shadow | none |
 | Outline | none |
-| Font | Suisse Intl 16.9995px/normal 450 |
+| Font | Suisse Intl 16.9995px/24.6493px 400 |
 | Letter spacing | normal |
-| Colour | #0a0a0a |
-| Text node | div: Suisse Intl 16.9995px/normal 450, #0a0a0a |
+| Colour | #ffffff |
+| Text node | p.plan-feature-text: Suisse Intl 16.9995px/24.6493px 400, #ffffff |
 | Transition | none |
-| Cursor | pointer |
-| Painted layers | div::before.ph-faq-icon 14pxx1.5px bg #0a0a0a @ 0.6; div::after.ph-faq-icon 14pxx1.5px bg #0a0a0a @ 0.6 |
-| Ancestor paint | 1 up div.ph-faq-item bg #f6f6f6 |
+| Icon | 18 x 18, colour #ffffff |
 | How | at rest |
 
 Crops: `plan-row-default.png`.
@@ -1853,27 +1852,27 @@ Crops: `docs-side-item-default.png`, `docs-side-item-hover.png`, `docs-side-item
 
 #### docs-card
 
-Docs card. A card on the docs landing page; measured, never followed.
+Docs card. A .card tile on the docs landing page (Platform API / Webhooks / …); measured, never followed.
 
-Page: docs. Selector: `docs card`. States: default, hover.
+Page: docs. Selector: `docs .card`. States: default, hover.
 
 | Property | default | hover |
 |---|---|---|
-| Size (w x h) | 688.81 x 372 | = |
+| Size (w x h) | 336.41 x 182 | = |
 | Padding | 0px | = |
-| Gap | 0px 16px | = |
-| Border | none | = |
-| Radius | 0px | = |
-| Background | transparent | = |
-| Box shadow | none | = |
+| Border | 1px solid #0a0a0a @ 0.1 | 1px solid #000000 |
+| Radius | 16px | = |
+| Background | #ffffff | = |
+| Box shadow | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 2px, #000000 @ 0 0px 0px 0px 0px | = |
 | Outline | none | = |
 | Font | Inter 16px/28px 400 | = |
 | Letter spacing | normal | = |
 | Colour | #3e3e3e | = |
 | Text node | h2.not-prose.font-semibold: Inter 16px/24px 600, #252525 | = |
 | Transition | none | = |
-| Icon | 0 x 0, colour #9e9e9e, fill #000000 | = |
-| Painted layers | div.card.block 336.4x182.0 bg #ffffff border T:1px solid #0a0a0a @ 0.1 / R:1px solid #0a0a0a @ 0.1 / B:1px solid #0a0a0a @ 0.1 / L:1px solid #0a0a0a @ 0.1 r 16px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 2px, #000000 @ 0 0px 0px 0px 0px; a 0.0x0.0 border B:1px solid #000000; svg.forced-colors:forced-color-adjust-none.forced-colors:bg-[color:CanvasText]! 24.0x24.0 bg #000000; div.card.block 336.4x182.0 bg #ffffff border T:1px solid #0a0a0a @ 0.1 / R:1px solid #0a0a0a @ 0.1 / B:1px solid #0a0a0a @ 0.1 / L:1px solid #0a0a0a @ 0.1 r 16px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 2px, #000000 @ 0 0px 0px 0px 0px; a 0.0x0.0 border B:1px solid #000000; svg.forced-colors:forced-color-adjust-none.forced-colors:bg-[color:CanvasText]! 24.0x24.0 bg #000000 | = |
+| Cursor | pointer | = |
+| Icon | 0 x 0, colour #9e9e9e, fill #000000 | 0 x 0, colour #000000 |
+| Painted layers | div.card.block 336.4x182.0 bg #ffffff border T:1px solid #0a0a0a @ 0.1 / R:1px solid #0a0a0a @ 0.1 / B:1px solid #0a0a0a @ 0.1 / L:1px solid #0a0a0a @ 0.1 r 16px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 2px, #000000 @ 0 0px 0px 0px 0px; a 0.0x0.0 border B:1px solid #000000; svg.forced-colors:forced-color-adjust-none.forced-colors:bg-[color:CanvasText]! 24.0x24.0 bg #000000 | div.card.block 336.4x182.0 bg #ffffff border T:1px solid #000000 / R:1px solid #000000 / B:1px solid #000000 / L:1px solid #000000 r 16px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 2px, #000000 @ 0 0px 0px 0px 0px; a 0.0x0.0 border B:2px solid #000000; svg.forced-colors:forced-color-adjust-none.forced-colors:bg-[color:CanvasText]! 24.0x24.0 bg #000000 |
 | How | at rest | mouse hover |
 
 Crops: `docs-card-default.png`, `docs-card-hover.png`.
