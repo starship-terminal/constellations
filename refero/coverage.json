@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 173,
-    "system_domains": 165,
-    "matched_domains": 135,
-    "missing_domains": 298,
+    "system_packages": 174,
+    "system_domains": 166,
+    "matched_domains": 136,
+    "missing_domains": 297,
     "system_domains_absent_from_catalog": 30
   },
   "matched": {
@@ -2152,6 +2152,23 @@
         }
       ]
     },
+    "glossgenius.com": {
+      "catalog": [
+        {
+          "name": "GlossGenius",
+          "domain": "glossgenius.com",
+          "id": 830
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "glossgenius",
+          "name": "GlossGenius",
+          "url": "https://glossgenius.com",
+          "name_match": true
+        }
+      ]
+    },
     "gofundme.com": {
       "catalog": [
         {
@@ -2535,13 +2552,6 @@
         "name": "Pocket",
         "domain": "getpocket.com",
         "id": 228
-      }
-    ],
-    "glossgenius.com": [
-      {
-        "name": "GlossGenius",
-        "domain": "glossgenius.com",
-        "id": 830
       }
     ],
     "grok.com": [

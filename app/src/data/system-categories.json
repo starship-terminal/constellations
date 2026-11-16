@@ -24,6 +24,12 @@
     "reason": "catalog.json describes an AI-assisted visual app builder (prompt-to-app composer, pricing, Studio agency arm)."
   },
   {
+    "referenceId": "systems:glossgenius",
+    "groupId": "web-categories",
+    "labels": ["Scheduling Tools"],
+    "reason": "catalog.json describes salon and spa business software: the published booking website's service list and date-picker flow are the captured workflows."
+  },
+  {
     "referenceId": "systems:notebooklm",
     "groupId": "web-categories",
     "labels": ["AI Tool", "Productivity"],
