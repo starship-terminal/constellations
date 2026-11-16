@@ -3,7 +3,7 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 174,
+    "system_packages": 175,
     "system_domains": 166,
     "matched_domains": 136,
     "missing_domains": 297,
@@ -4724,6 +4724,14 @@
         "name": "Grok Bot (desktop)",
         "url": "https://x.ai/bot",
         "ios_guess": []
+      },
+      {
+        "slug": "grok",
+        "name": "Grok / xAI Docs",
+        "url": "https://docs.x.ai",
+        "ios_guess": [
+          "Grok"
+        ]
       }
     ],
     "zed.dev": [

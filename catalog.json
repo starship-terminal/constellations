@@ -14708,7 +14708,8 @@
      "inner-scroll architecture: the document never scrolls; -full captures expand the article's overflow-y-auto pane and are bounded at eight chunks, so any content past that bound is absent rather than scrolled"
     ],
     "durationMin": 300,
-    "durationNote": "wall-clock across the capture sessions including the blocked grok.com/x.ai attempts, kit adaptation, the stylesheet harvest, the screenshot pass, the measurement pass and the offline build"
+    "durationNote": "wall-clock across the capture sessions including the blocked grok.com/x.ai attempts, kit adaptation, the stylesheet harvest, the screenshot pass, the measurement pass and the offline build",
+    "pr": "https://github.com/starship-terminal/constellations/pull/622"
    }
   }
 ,
