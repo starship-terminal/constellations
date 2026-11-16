@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 155,
-    "system_domains": 147,
-    "matched_domains": 118,
-    "missing_domains": 315,
+    "system_packages": 156,
+    "system_domains": 148,
+    "matched_domains": 119,
+    "missing_domains": 314,
     "system_domains_absent_from_catalog": 29
   },
   "matched": {
@@ -821,6 +821,23 @@
           "slug": "claude-ios",
           "name": "Claude for iOS",
           "url": "https://claude.ai/download",
+          "name_match": true
+        }
+      ]
+    },
+    "clearful.com": {
+      "catalog": [
+        {
+          "name": "Clearful",
+          "domain": "clearful.com",
+          "id": 542
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "clearful",
+          "name": "Clearful",
+          "url": "https://clearful.com",
           "name_match": true
         }
       ]
@@ -2120,13 +2137,6 @@
         "name": "Clay",
         "domain": "clay.earth",
         "id": 658
-      }
-    ],
-    "clearful.com": [
-      {
-        "name": "Clearful",
-        "domain": "clearful.com",
-        "id": 542
       }
     ],
     "clipchamp.com": [

@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_97 of 155 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_98 of 156 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -155,6 +155,11 @@ Access: signed out (every captured surface is public; the product — scheduler,
 - no booking was created: the booker's day cells, slot list and guest-details form were toggled as local state and Confirm was never pressed
 - signup, SSO and checkout were never followed; every Get-started/Sign-up-with/Continue action was measured only
 - booking pages vary per host: this capture is cal.com/peer's event type with its #292929 brand paint
+
+## [Clearful](../systems/clearful) — `clearful`
+Access: signed out (the marketing routes, /library, /journal-prompts and legal are fully public; the journal app sits behind app.clearful.com sign-in - the public sign-in card was measured through the Flutter semantics overlay, never submitted; several CTA anchors point at # and were never followed)
+- the journal app itself - entries, editor, settings - sits behind app.clearful.com sign-in and was never crossed; the sign-in card was measured but never submitted
+- the sign-in card is a Flutter canvas: its colours cannot be read by CSSOM, so light.app.* values are pixel-sampled off the captured screenshot and labelled as such
 
 ## [Dock](../systems/dock) — `dock`
 Access: signed out (every captured surface is public; the Dock workspace sits behind auth.dock.us and was never reached; the HubSpot demo form and the auth cards were measured, never filled or submitted)
