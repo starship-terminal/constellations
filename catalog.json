@@ -3794,6 +3794,99 @@
     "icons/": "Claude's icons and the spark are Anthropic's artwork and are not kept here (docs/RIGHTS.md)"
    }
   },
+    {
+   "slug": "clearful",
+   "name": "Clearful",
+   "url": "https://clearful.com",
+   "category": "productivity",
+   "platform": "web",
+   "goodFor": "guided-journal marketing: a Webflow site that declares a real design-token palette (ten-step #1953ff blue ramp, grey ramp, radius steps, full semantic layer) over a single light theme - white ground, #f7f7f7 secondary bands, #d6e0ff brand-light sections, Literatatt display with Manrope UI, 999px blue pills with a 6px #adc2ff CTA halo, plus a Tailwind/Mulish /library sibling and a Flutter sign-in canvas",
+   "tags": [
+    "web",
+    "journal",
+    "wellness",
+    "webflow",
+    "tailwind",
+    "flutter",
+    "light",
+    "blue-accent",
+    "declared-tokens",
+    "pill",
+    "marketing",
+    "pricing",
+    "signed-out"
+   ],
+   "shape": "reference",
+   "captured": "2026-11-16",
+   "access": "signed out (the marketing routes, /library, /journal-prompts and legal are fully public; the journal app sits behind app.clearful.com sign-in - the public sign-in card was measured through the Flutter semantics overlay, never submitted; several CTA anchors point at # and were never followed)",
+   "themes": [
+    "light"
+   ],
+   "widths": [
+    1440,
+    390
+   ],
+   "entry": "systems/clearful/README.md",
+   "tokens": "systems/clearful/tokens.json",
+   "styleGuide": "systems/clearful/style-guide.html",
+   "preview": {
+    "cover": "systems/clearful/screenshots/home-light-default.png",
+    "icon": "systems/clearful/icon.png",
+    "swatches": {
+     "light": {
+      "page": "light.surface.page",
+      "surface": "light.surface.secondary",
+      "text": "light.text.primary",
+      "muted": "light.text.muted",
+      "accent": "light.accent",
+      "border": "light.border.subtle"
+     }
+    },
+    "fonts": [
+     "core.font.family.display",
+     "core.font.family.ui",
+     "core.font.family.library"
+    ]
+   },
+   "capture": {
+    "method": "public-web",
+    "source": "clearful.com in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and 63 element crops from the live DOM, plus a stylesheet harvest that fetches the cross-origin Webflow CDN sheet directly (54 resolved custom properties - the declared blue/grey ramps, radius steps and semantic layer - and 64 @font-face records). The Webflow marketing site declares its palette as --base-color-brand--*/--text-color--* custom properties, so core ramp tokens are the declared values and surface roles are measured computed values aliased to the declarations they match. The app.clearful.com sign-in is a Flutter canvas: controls measured through the semantics overlay at devicePixelRatio 1, colours pixel-sampled off the screenshot. BOUNDARY: the journal app and checkout sit behind sign-in, never crossed; nothing was typed, submitted or authenticated",
+    "timestamp": "2026-11-16T06:00:00Z",
+    "harness": "Devin",
+    "model": "SWE-2 High",
+    "route": "public-web",
+    "routes": [
+     "/",
+     "/pricing",
+     "/library",
+     "/journal-prompts",
+     "/whatsnew",
+     "/widgets",
+     "/floweditor",
+     "/contact",
+     "/about",
+     "/press",
+     "/terms",
+     "/privacy",
+     "app.clearful.com/#/sign-in",
+     "mobile /, /pricing and /library plus the mobile menu overlay"
+    ],
+    "gaps": [
+     "the journal app itself - entries, editor, settings - sits behind app.clearful.com sign-in and was never crossed; the sign-in card was measured but never submitted",
+     "the sign-in card is a Flutter canvas: its colours cannot be read by CSSOM, so light.app.* values are pixel-sampled off the captured screenshot and labelled as such",
+     "/journal-prompts threw a transient human-verification challenge on one pass and captured clean on retry; if it recurs the route is a boundary",
+     "several CTA anchors (the nav pill, hero CTA) point at # - their destinations resolve in-app and were never followed",
+     "pressed states are DevTools-forced (CSS.forcePseudoState), so any script-applied mousedown state is missing; disabled, error and loading states do not appear on the public surface",
+     "no standalone SVG icon set was lifted; the glyphs in crops and screenshots are Clearful's artwork"
+    ],
+    "durationMin": 240,
+    "durationNote": "wall-clock across the capture sessions including kit adaptation, DOM and Flutter-semantics probing, the stylesheet fetch-and-reparse harvest, screenshot and measurement passes and the offline build",
+    "pr": "https://github.com/starship-terminal/constellations/pull/609"
+   },
+   "layoutGaps": {
+    "icons/": "no standalone SVG icon set was lifted on this pass; the glyphs (the figure-mark logo, social marks, store badges) are visible in the crops and screenshots"
+   }
+  },
   {
    "slug": "clay-earth",
    "name": "Mesh",
