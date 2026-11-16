@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_102 of 160 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_103 of 161 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -575,6 +575,14 @@ Access: signed out (every captured surface is public; the dashboard, editor, CMS
 - the community/marketplace stack's own stylesheet layer was not separately harvested - its values are measured component tokens, not declared variables; the mkt-logo crop and a full-size nav-panel measurement are recorded missing/weak rather than inferred (the measured login-panel is the full 1440px shell, not a bounded card)
 - prefers-reduced-motion is only partially honoured on the homepage and ignored on pricing, the gallery and login - recorded per page in raw/motion.json
 - no light marketing theme or theme switcher was observed; the only light surface is the /login auth shell
+
+## [Front](../systems/front) — `front`
+Access: signed out (every captured surface is public; the workspace and every post-login surface is an authenticated boundary never reached; the demo, signup, auth and search fields were measured and typed into then cleared, never submitted; every CTA, SSO button, nav item and link was measured, never followed; the Qualified 'Quinn' widget was measured at rest, never opened; the app dark theme is the shell's own front-theme-preference mechanism, verified painted as html[data-theme=dark]; the marketing violet/light/gray sets are section themes, not a page-level switch)
+- the workspace and every post-login surface (inbox, contacts, rules, analytics, settings) sits behind an account - an authenticated boundary never reached; app /signin, /signup and /forgot-password were measured as forms, never submitted, and Google/Office 365/SAML SSO was never followed
+- app /signup and /forgot-password paint the same sign-in card as /signin (email, password, 'Sign in') - no dedicated signup or reset form exists signed out; recorded as painted, not inferred
+- submitted states: the /request-demo and /signup forms, the auth cards and the help search were typed into then cleared, never sent - validation, error, loading and success states are absent rather than measured
+- the marketing violet/light/gray sets are [data-theme] section themes of one page, not a user-selectable dark mode; the dark set is the app auth shell's own theme, a different stack
+- disabled, error, loading and validation states never appear signed out - nothing was submitted
 
 ## Gate noted in access text only
 
