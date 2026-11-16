@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 154,
-    "system_domains": 146,
-    "matched_domains": 117,
-    "missing_domains": 316,
+    "system_packages": 155,
+    "system_domains": 147,
+    "matched_domains": 118,
+    "missing_domains": 315,
     "system_domains_absent_from_catalog": 29
   },
   "matched": {
@@ -1913,6 +1913,23 @@
         }
       ]
     },
+    "grammarly.com": {
+      "catalog": [
+        {
+          "name": "Grammarly",
+          "domain": "grammarly.com",
+          "id": 42
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "grammarly",
+          "name": "Grammarly",
+          "url": "https://www.grammarly.com",
+          "name_match": true
+        }
+      ]
+    },
     "linear.app": {
       "catalog": [
         {
@@ -2355,13 +2372,6 @@
         "name": "GoFundMe",
         "domain": "gofundme.com",
         "id": 436
-      }
-    ],
-    "grammarly.com": [
-      {
-        "name": "Grammarly",
-        "domain": "grammarly.com",
-        "id": 42
       }
     ],
     "grok.com": [

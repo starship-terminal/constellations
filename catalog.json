@@ -4525,6 +4525,99 @@
    }
   },
   {
+   "slug": "grammarly",
+   "name": "Grammarly",
+   "url": "https://www.grammarly.com",
+   "category": "productivity",
+   "platform": "web",
+   "goodFor": "AI writing assistant marketing site: Matter/Inter type, GDS + Origin token layers, three-column plans, free grammar checker tool, light only",
+   "tags": [
+    "web",
+    "ai",
+    "writing",
+    "inter",
+    "matter",
+    "light",
+    "marketing",
+    "saas",
+    "tools"
+   ],
+   "shape": "reference",
+   "captured": "2026-11-16",
+   "access": "signed out (every surface captured is public; the product sits at app.grammarly.com behind login)",
+   "themes": [
+    "light",
+    "dark (declared)"
+   ],
+   "widths": [
+    1440,
+    390
+   ],
+   "entry": "systems/grammarly/README.md",
+   "tokens": "systems/grammarly/tokens.json",
+   "styleGuide": "systems/grammarly/style-guide.html",
+   "preview": {
+    "cover": "systems/grammarly/screenshots/home-light-default.png",
+    "icon": "systems/grammarly/icon.png",
+    "swatches": {
+     "light": {
+      "page": "light.color.background.base.default",
+      "surface": "light.color.background.base.subdued",
+      "text": "light.color.text.base.default",
+      "muted": "light.color.text.base.subdued",
+      "accent": "light.color.background.brand.default",
+      "border": "light.color.border.base.subdued"
+     }
+    },
+    "fonts": [
+     "core.fontFamily.heading",
+     "core.fontFamily.sans",
+     "core.fontFamily.mono"
+    ]
+   },
+   "capture": {
+    "harness": "Devin",
+    "model": "SWE-2 Max",
+    "route": "public-web",
+    "version": "www.grammarly.com, 2026-11-16; Next.js marketing site, release not exposed",
+    "routes": [
+     "/",
+     "/features",
+     "/plans",
+     "/business/enterprise",
+     "/business",
+     "/professionals",
+     "/students",
+     "/edu",
+     "/ai",
+     "/ai-agents",
+     "/grammar-check",
+     "/plagiarism-checker",
+     "/paraphrasing-tool",
+     "/ai-detector",
+     "/word-counter",
+     "/desktop",
+     "/browser",
+     "/trust",
+     "/contact/sales",
+     "/signin",
+     "/signup",
+     "/blog/"
+    ],
+    "durationMin": null,
+    "durationNote": "the capture ran across several sessions; active wall-clock time was not recorded; per-shot timestamps are in screenshots/*.capture.json",
+    "pr": "https://github.com/starship-terminal/constellations/pull/619",
+    "gaps": [
+     "app.grammarly.com and everything behind Log in / Sign up was never opened: the editor, dashboard, documents, account, billing and admin surfaces are signed-in and out of scope",
+     "no form was submitted (contact sales, sign-in, newsletter) and no checkout or trial started, so success and painted error states are missing",
+     "the free tools' result views (plagiarism report, AI-detector verdict, paraphrase output) each need a submit action the kit never performs; the grammar checker's live suggestion cards render in a product overlay outside the page's light DOM and are recorded missing",
+     "the captured /plans page paints no Monthly/Yearly billing switch; billing-switch is recorded missing rather than fabricated",
+     "dark values in tokens.json are declared evidence only: no public page mounts a dark theme, there is no switch, and prefers-color-scheme does not repaint",
+     "blog article pages were not paged through"
+    ]
+   }
+  },
+  {
    "slug": "grokbot",
    "name": "Grok Bot",
    "url": "https://x.ai/bot",

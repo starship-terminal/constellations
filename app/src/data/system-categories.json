@@ -922,5 +922,11 @@
     "groupId": "web-categories",
     "labels": ["Health & Wellness"],
     "reason": "catalog.json describes a food-and-nutrition tracker: a marketing site for an iOS/macOS app with feature cards, a Free-vs-Plus comparison, help center, news, press and comparison articles."
+  },
+  {
+    "referenceId": "systems:grammarly",
+    "groupId": "web-categories",
+    "labels": ["AI Tool", "Productivity"],
+    "reason": "catalog.json describes an AI writing assistant: marketing and pricing pages, a free grammar checker, paraphrasing tool, AI detector and word counter, all signed out."
   }
 ]
