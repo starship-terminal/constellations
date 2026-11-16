@@ -1,7 +1,7 @@
 {
  "date": "2026-11-17",
  "rubric": "4",
- "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): read the package end to end (README, components.md, patterns.md, tokens.json, style-guide.html), inspected screenshots and crops, checked measured roles against the declared FPDS/Tailwind layer",
+ "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): read the package's tokens.json, raw/ evidence, README, components.md and patterns.md; cross-checked every declared set against the resolved css-vars pools and measured components",
  "systems": [
   {
    "slug": "1password",
@@ -19954,107 +19954,91 @@
    "reviewedPlatform": "desktop"
   },
   {
-   "slug": "framer",
+   "slug": "fourthwall",
    "grades": {
     "F1": {
-     "grade": "partly",
-     "evidence": "The declared layer is 576 --token-<uuid> paints deduplicated to 68 values: a complete achromatic ramp (neutral-00 black through ~25 grey steps to neutral-ff white) plus the translucent alpha-white.05-.8 / alpha-black.05-.6 hairline ladder and a set of saturated accent paints (lime #cbff00, blue #0099ff, violets, greens, rose). They are colour styles, not lightness ramps per hue - no hue carries an ordered ramp."
+     "grade": "meets",
+     "evidence": "Every host ships a declared ramp: marketing's flat --gs0..gs1000 twelve-step neutral ramp plus hue ramps (--b*, --g*, --r*, --y*, --twitch*) and the --_primitives---color--ink/--paper alpha ladders; the catalogue's --color-gray-* ramp; docs' Mintlify --gray-* ramp; help's --ifm-color-gray-100..900. Emitted per set in tokens.json."
     },
     "F2": {
      "grade": "partly",
-     "evidence": "Measured roles: background.page (#000), surface.menuPanel/footerBg/galBg/loginPanel, form.fieldBg; scrim behaviour observed behind the mega-dropdowns. No named raised/overlay token family exists - Framer's paints are anonymous, so roles are measured aliases only."
+     "evidence": "Page (light.background.page/_surface.bg.page, catalog bg.primary, docs --background-light/-dark, help --ifm-background-color), surface (catalog bg.secondary, _surface.surface.bg.subtle, help cards) and canvas/section-soft roles exist in both catalogue branches and the real dark sets. No raised, overlay or scrim role was resolved — dropdowns/menus paint elevation, no dim layer on the public surface."
     },
     "F3": {
      "grade": "partly",
-     "evidence": "Primary (text.ink #fff), secondary/nav (text.navInk alpha-white.80 with navInkHover full white), on-accent (action.ctaInk #000 on white pills, planCtaInk #fff on blue), placeholder (form.placeholder) are measured. No disabled text role or distinct link colour was observed - links read as ink and no disabled control is reachable signed out."
+     "evidence": "Primary/body/heading/link/soft roles are declared per set (_surface.text.*, catalog text.primary/secondary/link, docs/help ink roles) and on-accent exists as _surface.text.action inverted in the ink scope. No disabled text role is declared or reachable signed out."
     },
     "F4": {
      "grade": "partly",
-     "evidence": "Hairlines resolve through the declared alpha-white ladder (alpha-white.7/.1/.15) measured on cards, menu panel and the footer; border.focusRing is measured (#101010 ring on the white Sign up pill). There is no named default/strong border pair in the declared layer - the paints are anonymous."
+     "evidence": "Default borders are covered (_surface.border.hairline rgba(10,10,10,.16), catalog border.primary.default/hover #b5b3b0/#8e8e89, help ifm hairlines) but no strong-border role and no focus-ring variable is declared on any host — focus is only a measured state, not a token."
     },
     "F5": {
      "grade": "partly",
-     "evidence": "Default/hover/pressed measured on the white CTAs (action.ctaFill #fff, ctaHover, forced-pressed state), the hero ghost (alpha-white.1 fill), and the #0099ff Pro plan CTA (planCtaFill). Hover lifts nav ink .8→1.0. Pressed is DevTools-forced so script-applied mousedown looks are unobserved."
+     "evidence": "The catalogue declares the full ladder (bg.primary.default/hover/active, bg.secondary.*, link defaults/secondary); the marketing _surface.bg.action has no hover/pressed variable (hover is measured on the pill as a style change, not a declared token)."
     },
     "F6": {
-     "grade": "missing",
-     "evidence": "No success/warning/danger/info roles were observed on any public surface - no validation, error, banner or alert state is reachable signed out, and the accent paints are not labelled with status semantics in the opaque uuid layer."
+     "grade": "partly",
+     "evidence": "The catalogue declares a complete success ladder (--bg/border/icon/text-success plus secondary/tertiary) and help ships all four --ifm-color-{success,warning,danger,info} sets with contrast background/foreground variants, but catalogue error/warning/info exist only as toastify vendor variables and nothing on the public surface painted a status state — forms were never submitted."
     },
     "F7": {
-     "grade": "na",
-     "evidence": "One painted theme per stack: marketing and the community/gallery stack paint dark; /login is a separate light shell, not a second theme of the same system. No theme switcher or dark variant of the light shell exists; tokens.json carries one dark set plus theme-independent core."
+     "grade": "meets",
+     "evidence": "Theme parity holds inside each host that ships a dark surface: catalogDark resolves every catalogue name through the same light-dark() declarations; docsDark and helpDark are the same var names under the hosts' real toggles (html.dark / data-theme=dark), captured painted. Marketing ships one theme — its ink scope is a section treatment, not a second theme."
     },
     "F8": {
-     "grade": "partly",
-     "evidence": "Families measured with fallbacks: GT Walsheim Medium 54px/500 on the hero (font.family.measured.display), Inter Variable on nav/body/CTA (measured.body), walsheim on the community stack (measured.community), Inter Variable UI on the auth shell (measured.auth); Azeret Mono and GT Walsheim presets declared in the sheets. Measured sizes/weights exist for hero, body and controls but there is no named 6-8-step scale - the type ramp is component-scoped --framer-* vars, not a published scale."
+     "grade": "meets",
+     "evidence": "Families with fallback stacks are named per host (Suisse Intl/Saans marketing, Suisse Int'l + Suisse Int'l Mono + Saans VF catalogue/auth, Inter + Paper Mono docs, Suisse Intl + Saans help — 61 @font-face harvested). core.font carries measured families, a six-step size scale (hero/lede/body/button/price/mobileHero), measured weights (400/500/435/420 — the variable axes) and line-heights; roles read as display/body/label/title."
     },
     "F9": {
-     "grade": "missing",
-     "evidence": "No declared spacing scale exists in the harvested stylesheets - spacing is inline Framer-layout values; measured paddings/gaps are recorded per component but there is no base-unit scale to name."
+     "grade": "meets",
+     "evidence": "The catalogue declares --space-0..2600 on a numbered scale and the marketing --_rhythm---* layer carries section pad-x/y steps (xs 40 through xl 180) — both emitted as tokens."
     },
     "F10": {
      "grade": "meets",
-     "evidence": "Radii measured per component: the 8px control/card family (hero CTA 34px pill shape, ghost button, fields, menu panel) and the pill 9999px on chips/buttons; border widths measured per component in components.md."
+     "evidence": "Declared radii per host (catalog --radius-0/100/150/200/300/600 + --radius-full/--button-radius-*; measured core.radius 7 steps across button/nav/card/dialog) and measured border widths; the 999px billing pill and 32px size-guide dialog are token-backed."
     },
     "F11": {
      "grade": "partly",
-     "evidence": "Control heights measured: topbar 64px (desktop and mobile), hero CTA 34px, header CTA 30px, nav links 39.59px, plan cards 300px wide, credits select 250x34, gallery chips 30px, gallery Open 55x30, login field/button 30px. No size ramp (sm/md/lg) is declared, and icon sizing is crop-level evidence only."
+     "evidence": "Measured control geometry is recorded (nav-height 71, CTA heights 52/48, billing-toggle 290x48, auth rows 440x48, docs-nav 112, docs-sidebar 288, docs-search 437x36, mobile nav) but no declared S/M/L size scale or icon-size tokens exist on any host, and no focus-ring width/offset token was resolved."
     },
     "F12": {
-     "grade": "missing",
-     "evidence": "No elevation scale was observed - the mega-dropdown panels and cards separate by surface colour and hairlines, not a named shadow ladder; no shadow tokens were harvested or measured as a system."
+     "grade": "meets",
+     "evidence": "The catalogue declares --shadow-0/25/100/150/200/250 (six levels) tied to raised surfaces and dialogs; marketing elevation is measured on the mega-menu and mobile drawer."
     },
     "F13": {
      "grade": "partly",
-     "evidence": "raw/motion.json probed four pages: 17 moving elements on home (scroll reveals, marquee loops) and 101 on the gallery, with durations/easings captured into core.motion.*. Reduced-motion coverage is partial - the homepage partially honours prefers-reduced-motion while pricing, gallery and login ignore it; recorded per page."
+     "evidence": "A full motion group exists (core.motion durations/easings/transitions/animations from raw/motion.json across five pages: the 0.2s control transitions, 0.45s cubic-bezier(0.16,1,0.3,1) menu, marquee/testimonial animations). The reduced-motion probe is recorded: one route honours it, others partially or ignore it — real evidence of partial support, not a clean prefers-reduced-motion story."
     },
     "F14": {
      "grade": "partly",
-     "evidence": "Measured layout: 64px header, 650px mega-panel, 782px hero headline, 300px plan columns, 250px selects, mobile 390px drawer. No declared breakpoint/grid token layer exists - responsive behaviour is measured at the two captured widths only."
+     "evidence": "Breakpoints are evidenced (marketing media-query redeclarations harvested, a measured 390px mobile pass with its own masthead scale) and content widths are measured (hero 1008, plan-card 1120, blog-card 1240, docs-sidebar 288, catalogue cards); no declared grid-column or z-index layer tokens were resolved."
     },
     "C1": {
      "grade": "partly",
-     "evidence": "37 components measured across chrome (header, dropdown triggers, mega-panel, logo, locale select), actions (header/hero/plan CTAs, ghost, billing switch, credits select), forms (login field, Google button, Continue submit, gallery search), the gallery index (filters, Open buttons, cards), the FAQ and the mobile drawer. Missing from the checklist: textarea, checkbox/radio, tab bar, modal, toast, pagination, table - none are reachable signed out."
+     "evidence": "About 14 of 19 checklist components paint publicly: button (nav-cta, hero-cta, auth providers, billing/carousel/menu/theme buttons, pdp CTAs), icon button (m-menu-btn, docs-theme-btn, help-theme, carousel-btn), link (nav/footer/help/auth links), text field (blog-news, cat/cmp/docs/help searches), tabs (billing-toggle, cat-tab), menu (mega-menu, mobile help drawer), dialog (pdp-sizeguide, docs search dialog, help search popover), card (plan/blog/prod/help/docs/cmp/contact/insp/quiz/rating cards), list row (plan-row, side items), badge (prod/pdp badges), table (cmpart-table). Checkbox, radio, switch, select, text area, tooltip, toast and avatar never appear signed out."
     },
     "C2": {
      "grade": "partly",
-     "evidence": "States beyond default captured: hover on nav links and CTAs, focus-visible on CTAs and the login field, forced pressed, the opened mega-dropdowns and the mobile drawer, the gallery search focused state. Disabled, error, loading and submitted states are absent - not fabricated."
+     "evidence": "Beyond default: real pointer hover, real keyboard focus-visible, DevTools-forced pressed, opened (mega-menu, dialogs, disclosures, drawers) and filled-then-cleared across 201 states on 101 components, plus a selected quiz answer and the monthly billing toggle. Disabled, loading, error and validation states are absent rather than measured — nothing was submitted."
     },
     "C3": {
      "grade": "meets",
-     "evidence": "Focus-visible measured on the Sign up pill (#101010 ring, dark.color.border.focusRing) and the login work-email field; the mega-dropdown panel closes on blur so focus inside it could not be held - recorded as a gap rather than inferred."
+     "evidence": "Real keyboard focus-visible states are captured on interactive components (nav-cta, auth providers, docs-search, docs/help sidebar items, docs-theme-btn, footer links) — 180 states include the focus-visible column throughout."
     },
     "C4": {
      "grade": "meets",
-     "evidence": "Every measured colour aliases the declared palette paint its value matches (ink→neutral-ff, navInk→alpha-white.80, planCtaFill→accent.blue, menuPanel→neutral-11...); every token carries $extensions.source and component geometry lives under core.component.* - components.md labels each colour with its token path."
+     "evidence": "components.md entries cite the token path in the component's own surface set for every measured value that has one (94 components), with literals marked where no declared name matches."
     },
     "P1": {
      "grade": "partly",
-     "evidence": "patterns.md covers the marketing chrome and mega-dropdowns, the hero + embedded demo, the pricing grid with its billing switch and credits selects, the community gallery index, the auth boundary card, mobile chrome and the motion/focus conventions. Empty/loading/error, destructive confirmation, onboarding and search-results patterns are not reachable on the signed-out public surface."
+     "evidence": "patterns.md covers the marketing chrome + mega-menu, the hero/section grammar including the on-ink dark bands, the pricing grid + billing toggle + FAQ, the catalogue home/quiz/PDP + size-guide dialog, the auth shell, the docs and help layouts with their real dark toggles, and mobile. Forms/validation, empty/loading/error, destructive confirmation and onboarding patterns are not reachable on the signed-out public surface."
     },
     "A1": {
      "grade": "partly",
-     "evidence": "Fonts are fully named (GT Walsheim Medium/Bold, Inter Variable, walsheim, Azeret Mono - 378 @font-face rules harvested into raw/css-vars.json with fallback stacks). Icons are a declared layoutGaps entry: no standalone SVG set was lifted; the Framer mark and UI glyphs are the product's artwork visible in crops/screenshots; icon.png is the site's own apple-touch icon via tools/fetch_icon.py."
+     "evidence": "Fonts are fully named with sources (Suisse Intl/Int'l + Mono, PP Telegraf, Saans/Saans VF, Inter VF, Paper Mono — 61 @font-face rules harvested in raw/css-vars.json; the style guide falls back to system faces). Icons are a declared layoutGaps entry: no standalone SVG set was lifted; marks are visible in crops/screenshots."
     },
     "K1": {
      "grade": "meets",
-     "evidence": "The README states what was captured (21 desktop routes + 4 mobile routes, the mega-dropdowns and the nav overlay), how (Playwright headless, body-scoped stylesheet harvest, computed styles, motion probe), and what to distrust (the signed-in boundary, the opaque uuid palette, SGD pricing, forced pressed states, quantised screenshots, the community stack's unharvested layer, weak nav-panel/logo measurements)."
-    },
-    "F15": {
-     "grade": "partly",
-     "evidence": "Script: all 4 checked pairs pass; lowest 13.07:1 dark muted (dark.color.text.navInk) on page (dark.color.background.page); light not checked (no palette)"
-    },
-    "F16": {
-     "grade": "meets",
-     "evidence": "Script: 179 of 179 tokens name their source"
-    },
-    "K2": {
-     "grade": "meets",
-     "evidence": "Script: 5 rules, each linking a screenshot or crop"
-    },
-    "K3": {
-     "grade": "meets",
-     "evidence": "Script: DESIGN.md matches a fresh generation"
+     "evidence": "README.md states what was captured (routes per host, viewports, the four-system token architecture), how every value was read (per-host probe shells, measured vs declared evidence labels), and what to distrust (signed-in surfaces, catalogDark as declared-not-painted, quantised screenshots, missing controls)."
     },
     "C5": {
      "grade": "na",
@@ -20067,22 +20051,45 @@
     "V2": {
      "grade": "na",
      "evidence": "Optional for a capture, and this product does not publish it."
+    },
+    "F15": {
+     "grade": "partly",
+     "evidence": "Script: all 8 checked pairs pass; lowest 5.11:1 ink muted (ink._surface.text.soft) on surface (ink._surface.bg.section.soft); catalog, catalogDark, signup, docs, docsDark, help, helpDark not checked (no palette)"
+    },
+    "F16": {
+     "grade": "meets",
+     "evidence": "Script: 2029 of 2029 tokens name their source"
+    },
+    "K2": {
+     "grade": "meets",
+     "evidence": "Script: 8 rules, each linking a screenshot or crop"
+    },
+    "K3": {
+     "grade": "meets",
+     "evidence": "Script: DESIGN.md matches a fresh generation"
     }
    },
-   "name": "Framer",
-   "goodFor": "website-builder and AI-design-agent product marketing: the public site's own colour styles harvested as 576 body-scoped --token-<uuid> declarations that deduplicate to 68 painted values (an achromatic #000-page to #fff-ink ramp, a white/black-alpha hairline ladder, the #cbff00 lime and vivid #0099ff/violet/green/rose accents), the header mega-dropdowns (Platform/Solutions/Resources), the centred GT-Walsheim hero with the embedded 'Ask Framer' demo, the pricing grid (Free/Basic/Pro/Enterprise at 300px, a credits-per-month select, the blue Pro CTA), the community/marketplace gallery index stack (dark, walsheim masthead, Trending/Recent/Vibe chips, Open cards), the light /login auth shell (Google button, work-email field) and the 390px nav overlay",
-   "url": "https://www.framer.com",
+   "name": "Fourthwall",
+   "goodFor": "creator-commerce marketing, product-catalogue, docs and help design: four design systems on four hosts - the Webflow marketing site (--_primitives---*/--_surface---*/--_rhythm---* layers with .on-ink dark-section scopes, flat --gs*/--b*/--g*/--r*/--y*/--twitch* ramps, #0a0a0a ink on #ffffff and the inverted white Start-now pill on ink bands), the styled-components product catalogue (--color*/--bg*/--text*/--border*/--input*/--radius*/--motion-* DS where every colour is a declared light-dark() pair, #161712 ink, #0042ff link blue, #b5b3b0 hairlines, the declared-not-painted catalogDark branch), the Keycloak auth shell at /get-started carrying the same catalogue DS in light, Mintlify docs (--gray-* ramp, --color-primary black, Inter + Paper Mono, a real html.dark paint through its own theme menu) and Docusaurus help (--ifm-* with #161712 primary-equals-ink, Saans display, a real data-theme=dark toggle); Suisse Int'l + PP Telegraf + Saans VF voices",
+   "url": "https://fourthwall.com",
    "captured": "2026-11-15",
    "themes": [
-    "dark",
-    "light"
+    "light",
+    "ink",
+    "catalog",
+    "catalogDark",
+    "signup",
+    "docs",
+    "docsDark",
+    "help",
+    "helpDark"
    ],
    "platform": "web",
-   "category": "Productivity",
+   "category": "E-commerce",
    "reviewed": "2026-11-17",
    "reviewedPlatform": "web"
   }
  ],
  "base": "2026-10-16",
- "reviewMethod": "read the package end to end (README, components.md, patterns.md, tokens.json, style-guide.html), inspected screenshots and crops, checked measured roles against the declared FPDS/Tailwind layer"
+ "reviewMethod": "read the package's tokens.json, raw/ evidence, README, components.md and patterns.md; cross-checked every declared set against the resolved css-vars pools and measured components"
 }

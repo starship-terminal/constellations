@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_101 of 159 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_102 of 160 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -560,6 +560,13 @@ Access: read-only (the marketing site, pricing, help center, news, press, articl
 Access: signed out (every surface captured is public; app.fourmula.ai /start, /auth and /project/create-pdp are the only app surfaces a signed-out visitor sees - measured as forms, typed into then cleared, never submitted; uploads, the Shopify connection, generation and every post-login surface need an account and were never run; consent was never answered; every CTA and link was measured, never followed)
 - every post-login surface (dashboard, asset generation, results, account settings) lives behind app.fourmula.ai's auth wall - an authenticated boundary never reached
 - the auth fields, PDP uploads, Shopify Check connection and Start generation were measured at rest and typed into then cleared, never submitted - validation, error, loading and success states are absent rather than measured; the Start generation pill's dim accent/15% fill is its resting style, not a measured disabled state
+
+## [Fourthwall](../systems/fourthwall) — `fourthwall`
+Access: signed out (every captured surface is public: the marketing pages, the product catalogue and one product page, the docs and help sites in light and in their own dark themes, and the /get-started auth shell; every post-login surface - the shop dashboard, product designer, checkout/orders, promotions, account - is an authenticated boundary never reached; the auth choices (Google/Apple/email) and the PDP 'Sign in to design' were measured at rest, never pressed, no OAuth flow started; searches and fields were typed into then cleared, never submitted; nothing was bought; the Osano consent layer was hidden, never answered)
+- every post-login surface (the shop dashboard, the product designer, checkout and order flow, promotions, account settings) sits behind an account - an authenticated boundary never reached
+- the auth choices (Google/Apple/email provider rows) and the PDP 'Sign in to design' were measured at rest and never pressed - no OAuth flow was started and no form was submitted
+- nothing was purchased; the PDP size guide and product-finder quiz are local toggles that were opened, never a checkout
+- the nav 'Start now' modal navigates to /get-started on this build instead of opening; the auth shell was captured instead
 
 ## [Framer](../systems/framer) — `framer`
 Access: signed out (every captured surface is public; the dashboard, editor, CMS, publishing, workspaces and every post-login surface are an authenticated boundary never reached; /login was measured as a form, never submitted - /signup redirects to it - and Continue with Google was never followed; the pricing 'Yearly billing' switch, credits selects and every CTA/link were measured, never switched or followed; the 'We use cookies' consent card was hidden in the DOM, never answered; the public marketing stack and the community/gallery stack paint dark while /login is a separate light shell)
