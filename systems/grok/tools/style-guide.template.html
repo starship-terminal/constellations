@@ -36,13 +36,14 @@ code { font-family: var(--sg-mono); font-size: .9em; color: var(--color-brand-da
 .kv span { opacity: .65; }
 /* ---- mocks ---- */
 .mock { border: 1px solid var(--border-muted, #e5e5e5); overflow: hidden; background: var(--bg-base, #fff); color: var(--fg-default, #0a0a0a); border-radius: 12px; }
-.topbar { display: flex; align-items: center; gap: 14px; height: var(--layout-topbarHeight, 64px); padding: 0 16px 0 20px; font-size: 14px; border-bottom: 1px solid var(--border-muted, #e5e5e5); background: var(--bg-base, #fff); }
+.topbar { display: flex; align-items: center; gap: 14px; height: var(--component-header-height, 80px); padding: 0 16px 0 20px; font-size: 14px; border-bottom: 1px solid var(--border-muted, #e5e5e5); background: var(--bg-base, #fff); }
 .topbar .wm { font-weight: 600; font-size: 15px; letter-spacing: -0.02em; }
 .topbar .nav { opacity: .75; display: flex; gap: 14px; font-size: 13px; }
 .topbar .sp { flex: 1; }
 .topbar .pill { display: inline-flex; align-items: center; gap: 8px; height: 32px; padding: 0 12px; border: 1px solid var(--border-muted, #e5e5e5); border-radius: var(--radius-lg, .5rem); font-size: 12px; color: var(--fg-muted, rgba(10,10,10,.6)); background: var(--bg-card, #f9f8f6); }
 .topbar .pill b { border: 1px solid var(--border-muted, #e5e5e5); border-radius: 4px; padding: 1px 5px; font-weight: 500; font-size: 10px; }
-.topbar .theme { width: 32px; height: 32px; border-radius: 50%; border: 1px solid var(--border-muted, #e5e5e5); display: inline-flex; align-items: center; justify-content: center; color: var(--fg-default, #0a0a0a); }
+.topbar .theme { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border-muted, #e5e5e5); display: inline-flex; align-items: center; justify-content: center; color: var(--fg-default, #0a0a0a); background: transparent; font: inherit; cursor: pointer; padding: 0; }
+.topbar .theme:hover { background: var(--bg-overlayHover, rgba(12,12,12,.05)); }
 .shell { display: flex; }
 .sb { width: var(--component-sidebar-width, 272px); flex: 0 0 auto; border-right: 1px solid var(--border-muted, #e5e5e5); padding: 18px 14px; font-size: 13px; background: var(--sidebar-background, #fff); color: var(--sidebar-foreground, #0a0a0a); }
 .sb .grp { font-size: 11px; text-transform: uppercase; letter-spacing: .08em; opacity: .55; margin: 14px 6px 6px; }
@@ -51,7 +52,7 @@ code { font-family: var(--sg-mono); font-size: .9em; color: var(--color-brand-da
 .art { flex: 1; padding: 28px 34px 40px; min-width: 0; }
 .art h3 { font: 500 30px/1.25 var(--sg-sans); letter-spacing: -0.02em; margin: 0 0 10px; }
 .art p { font-size: 14.5px; line-height: 1.7; color: var(--fg-default, #0a0a0a); margin: 0 0 14px; max-width: 62ch; }
-.art .ic { font-family: var(--sg-mono); font-size: .88em; color: var(--color-brand-darksolar, #cd7532); background: var(--bg-inset, #f6f6f6); border-radius: 4px; padding: 1px 5px; }
+.art .ic { font-family: var(--sg-mono); font-size: .88em; color: var(--color-brand-solar, #ff640a); }
 .btn { display: inline-flex; align-items: center; justify-content: center; height: 36px; padding: 0 16px; font-size: 13.5px; font-weight: 500; border-radius: var(--radius-lg, .5rem); border: 1px solid transparent; }
 .btn.primary { background: var(--primary-default, #0a0a0a); color: var(--primary-foreground, #f9f8f6); }
 .btn.ghost { background: transparent; border-color: var(--border-bold, #0a0a0a); color: var(--fg-default, #0a0a0a); }
@@ -83,9 +84,9 @@ table.cmp td, table.cmp th { border: 1px solid var(--border-muted, #e5e5e5); pad
   <p class="note">Read from docs.x.ai, signed out, in headless Chromium at 1440&times;900 (mobile pass at 390&times;844). The portal paints <b>light by default</b> — the <code>light</code> token set is that painted surface — and the header's "Switch to dark theme" button flips <code>html.dark</code>, which re-points the roles to the <code>dark</code> set; a few names (<code>--border</code>, <code>--input</code>, <code>--ring</code>, <code>--alert</code>, <code>--content-*</code>, <code>--sb-*</code>) exist in dark only. xVf and xMono are served variable faces (weight 200&ndash;800) and are not loaded here: samples fall back to system fonts. grok.com and the x.ai app/console surfaces behind Cloudflare were unreachable from the capture host and are documented boundaries, not captures.</p>
 
   <h2 class="sh">The surface</h2>
-  <p class="lead">Every docs page is a fixed 80px bar (wordmark, product switcher, section links, the &#8984;K search pill, a round theme button) over a two-column shell: a 272px <code>--sidebar-*</code> nav and the scrolling article. Inline code tints <code>--darksolar</code> and code samples sit in a dark <code>--bg-codeblock</code> panel in both themes, with SDK language tabs above them.</p>
-  <div class="mock">
-    <div class="topbar"><span class="wm">xAI Docs</span><span class="nav"><span>Docs</span><span>Cookbook</span><span>Grok</span></span><span class="sp"></span><span class="pill">Search docs <b>&#8984;K</b></span><span class="theme">&#9789;</span></div>
+  <p class="lead">Every docs page is a fixed 80px bar (wordmark, product switcher, section links, the &#8984;K search pill, a round theme button) over a two-column shell: a 272px <code>--sidebar-*</code> nav and the scrolling article. Inline code tints <code>--solar</code> and code samples sit in a dark <code>--bg-codeblock</code> panel in both themes, with SDK language tabs above them.</p>
+  <div class="mock" id="docs-mock" data-mode="light">
+    <div class="topbar"><span class="wm">xAI Docs</span><span class="nav"><span>Docs</span><span>Cookbook</span><span>Grok</span></span><span class="sp"></span><span class="pill">Search docs <b>&#8984;K</b></span><button type="button" class="theme" id="theme-toggle" aria-pressed="false" title="Switch to dark theme">&#9789;</button></div>
     <div class="shell">
       <div class="sb"><div class="grp">Get started</div><span class="ln on">Overview</span><span class="ln">Quickstart</span><span class="ln">Models</span><div class="grp">Capabilities</div><span class="ln">Generate text</span><span class="ln">Pricing</span></div>
       <div class="art"><h3>Quickstart</h3><p>Make your first request to the xAI API. Set <span class="ic">XAI_API_KEY</span> in your environment, then call the chat endpoint with <span class="ic">grok-4</span>.</p>
@@ -101,15 +102,17 @@ table.cmp td, table.cmp th { border: 1px solid var(--border-muted, #e5e5e5); pad
   <div id="roles-out"></div>
 
   <h2 class="sh">Spacing, radius, layout and motion</h2>
-  <p class="lead">Spacing is the Tailwind <code>--spacing</code> unit (0.25rem) plus <code>--spacing-g1</code>; radii run <code>--radius-sm..4xl</code>; <code>layout.*</code> carries the measured chrome — the 4rem topbar height, container widths, the table border width and the cmdk list height. Motion is <code>--ease-in/-out/-in-out</code> with a 150ms default transition.</p>
+  <p class="lead">Spacing is the Tailwind <code>--spacing</code> unit (0.25rem) plus <code>--spacing-g1</code>; radii run <code>--radius-sm..4xl</code>; <code>layout.*</code> carries the measured chrome — the 4rem topbar height, container widths, the table border width and the cmdk list height. <code>motion.*</code> is the measured set from the reduced-motion probe (docs/decisions/0001): the durations and easing curves elements actually run, the transitions and animations, and what <code>prefers-reduced-motion</code> changes.</p>
   <div id="spacing-out" class="kv"></div>
+  <div id="motion-out" class="kv"></div>
 
   <h2 class="sh">Shadows</h2>
   <div id="elev-out" class="kv"></div>
 
   <h2 class="sh">Type</h2>
-  <p class="lead">Two proprietary variable faces: <code>xVf</code> (the body and display face, weight 200&ndash;800) and <code>xMono</code> (code). The <code>--text-*</code> ramp runs xs&ndash;5xl with paired line-heights; weights are the named <code>--font-weight-*</code> steps. Samples below fall back to system sans because the faces are not bundled.</p>
+  <p class="lead">Two proprietary variable faces: <code>xVf</code> (the body and display face, weight 200&ndash;800) and <code>xMono</code> (code). The <code>--text-*</code> ramp runs xs&ndash;5xl with paired line-heights; weights are the named <code>--font-weight-*</code> steps. Below that, the ten <code>core.typography.*</code> composites — the display, heading, body, code and control styles measured off the live DOM. Samples fall back to system sans because the faces are not bundled.</p>
   <div id="type-out"></div>
+  <div id="typ-out"></div>
   <div id="fam-out" class="kv"></div>
 
   <h2 class="sh">Measured extras</h2>
@@ -177,6 +180,18 @@ const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) 
   $('#meas-out').innerHTML = m || '<div><b>none measured</b></div>';
 })();
 
+(function motion() {
+  const g = TOK.core.motion || {};
+  let m = '';
+  for (const [n, t] of flat(g.duration || {}, 'motion.duration.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(g.easing || {}, 'motion.easing.')) m += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? 'cubic-bezier(' + t.v.join(', ') + ')' : t.v)}</span></div>`;
+  const tr = Object.keys(g.transition || {}).length, an = Object.keys(g.animation || {}).length;
+  if (tr || an) m += `<div><b>measured</b> <span>${tr} transition tokens, ${an} animation tokens (tokens.json, core.motion)</span></div>`;
+  const rm = (g._extensions || {}).reducedMotion;
+  if (rm) m += `<div><b>reduced motion</b> <span>${esc(rm.behaviour)} — ${esc(String(rm.removed))} removed, ${esc(String(rm.kept))} kept across ${esc(String(rm.pages))} pages</span></div>`;
+  $('#motion-out').innerHTML = m || '<div><b>no motion probe</b></div>';
+})();
+
 const resolveVal = (v, depth) => {
   if (depth > 6 || typeof v !== 'string') return v;
   const m = v.match(/^\{(.+)\}$/);
@@ -203,6 +218,34 @@ const resolveVal = (v, depth) => {
   let f = '';
   for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
   $('#fam-out').innerHTML = f;
+})();
+
+// The measured core.typography.* composites — the styles the live DOM paints,
+// not just the declared scales. Samples fall back to system fonts (xVf/xMono
+// are not bundled).
+(function typ() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core || {}).typography || {}, 'typography.')) {
+    const v = t.v || {};
+    const fs = parseFloat(v.fontSize) || 14;
+    const mono = /mono/i.test(String(v.fontFamily));
+    const meta = [v.fontSize, v.lineHeight, 'w' + v.fontWeight, v.letterSpacing].filter(Boolean).join(' / ');
+    h += `<div class="tr"><span class="ts" style="font-family:${mono ? 'var(--sg-mono)' : 'var(--sg-sans)'};font-size:${Math.min(fs, 44)}px;font-weight:${esc(String(v.fontWeight || 400))};line-height:${esc(v.lineHeight || 'normal')}">${esc(n)} — The xAI docs 0123</span><span class="tv">${esc(meta)}</span></div>`;
+  }
+  $('#typ-out').innerHTML = h;
+})();
+
+// The mock's theme button flips data-mode the way docs.x.ai's own button flips
+// html.dark — the [data-mode="dark"] block carries the dark token set.
+(function themeToggle() {
+  const btn = $('#theme-toggle'), mock = $('#docs-mock');
+  if (!btn || !mock) return;
+  btn.addEventListener('click', () => {
+    const dark = mock.getAttribute('data-mode') !== 'dark';
+    mock.setAttribute('data-mode', dark ? 'dark' : 'light');
+    btn.setAttribute('aria-pressed', String(dark));
+    btn.title = dark ? 'Switch to light theme' : 'Switch to dark theme';
+  });
 })();
 </script>
 </body>

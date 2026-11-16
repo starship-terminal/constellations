@@ -298,21 +298,36 @@ for (const [key, g] of Object.entries(GROUPS)) {
     comp.run = new Date().toISOString();
     comp.states ??= {};
     let loc;
-    try { loc = await spec.find(page); } catch (e) { log(' ', spec.key, 'find failed:', e.message.split('\n')[0]); comp.missing = true; continue; }
-    if (!(await loc.count()) || !(await loc.first().isVisible().catch(() => false))) { log(' ', spec.key, 'absent'); comp.missing = true; continue; }
+    // A lookup miss must not erase states a previous run already measured —
+    // only a component with no good readings at all counts as missing.
+    const hasStates = () => Object.values(comp.states ?? {}).some((s) => s && s.style);
+    try { loc = await spec.find(page); } catch (e) {
+      log(' ', spec.key, 'find failed:', e.message.split('\n')[0]);
+      if (hasStates()) comp.rerunMiss = e.message.split('\n')[0]; else comp.missing = true;
+      continue;
+    }
+    if (!(await loc.count()) || !(await loc.first().isVisible().catch(() => false))) {
+      log(' ', spec.key, 'absent');
+      if (hasStates()) comp.rerunMiss = 'absent on this run'; else comp.missing = true;
+      continue;
+    }
     delete comp.missing;
+    delete comp.rerunMiss;
     loc = loc.first();
     for (const st of spec.states) {
       const name = typeof st === 'string' ? st : (st.name || 'opened');
+      // pressed/dark are cleared in finally so a failed read can never leak
+      // the forced state into the next measurement.
+      let pressed = null;
+      let darkOn = false;
       try {
         await reset();
         let viaText = 'resting state';
-        let pressed = null;
         if (st === 'hover') { await hover(loc); viaText = via.hover; }
         else if (st === 'focus-visible') { await kbFocus(loc); viaText = via['focus-visible']; }
         else if (st === 'focused') { await loc.click({ timeout: 3000 }).catch(() => loc.evaluate((el) => el.focus())); await page.waitForTimeout(400); viaText = 'the field clicked into'; }
         else if (st === 'pressed') { pressed = await pressOn(loc); viaText = via.pressed; }
-        else if (st === 'dark') { if (!(await setTheme(page, 'dark'))) { log(' ', spec.key, name, 'dark never painted — skipped'); continue; } viaText = via.dark; }
+        else if (st === 'dark') { if (!(await setTheme(page, 'dark'))) { log(' ', spec.key, name, 'dark never painted — skipped'); continue; } darkOn = true; viaText = via.dark; }
         else if (st && typeof st === 'object' && st.fn) { await st.fn(loc); viaText = st.via || 'reached by the component\'s own UI toggle'; }
         else if (typeof st === 'function') { await st(loc); viaText = 'reached by the component\'s own UI toggle'; }
         await centre(loc).catch(() => {});
@@ -321,12 +336,18 @@ for (const [key, g] of Object.entries(GROUPS)) {
         v.crop = await crop(page, loc, `${spec.key}-${name}`).catch((e) => { log('  crop failed', spec.key, name, e.message.split('\n')[0]); return undefined; });
         v.run = new Date().toISOString();
         comp.states[name] = v;
-        if (pressed != null) await pressOff(pressed);
-        if (st === 'dark') await setTheme(page, 'light').catch(() => {});
         log(' ', spec.key, name, 'ok');
       } catch (e) {
-        comp.states[name] = { error: e.message.split('\n')[0] };
+        // A failed rerun records the error beside the last good reading, not
+        // over it — a good saved state outlives a transient failure.
+        const prev = comp.states[name];
+        comp.states[name] = (prev && prev.style)
+          ? { ...prev, rerunError: e.message.split('\n')[0] }
+          : { error: e.message.split('\n')[0] };
         log(' ', spec.key, name, 'FAILED', e.message.split('\n')[0]);
+      } finally {
+        if (pressed != null) await pressOff(pressed).catch(() => {});
+        if (darkOn) await setTheme(page, 'light').catch(() => {});
       }
     }
     save();

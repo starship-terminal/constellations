@@ -317,12 +317,51 @@ if C_PATH.exists():
         lit(v, ty, f"measured {comp} {state} on {C[comp].get('page')} ({label})",
             "component", path)
 
-    style_tok("docs-code-block", "default", "borderRadius", "codeblock.radius", "other", "code panel corner")
-    style_tok("docs-code-block", "default", "backgroundColor", "codeblock.bg", "color", "code panel fill")
-    style_tok("docs-next-card", "default", "borderRadius", "navCard.radius", "other", "nav card corner")
-    style_tok("docs-next-card", "default", "backgroundColor", "navCard.bg", "color", "nav card fill")
-    style_tok("docs-search-pill", "default", "borderRadius", "searchPill.radius", "other", "search pill corner")
-    style_tok("docs-cta", "default", "borderRadius", "button.cta.radius", "other", "hero CTA corner")
+    def radius_tok(comp, state, path, label):
+        """The capture records the four corner properties, never the shorthand;
+        emit the shared radius when all four agree. Chromium reports a fully
+        rounded corner as its infinity clamp (3.35544e+07px) — that reads as a
+        pill, emitted at the full-radius bound."""
+        st = C.get(comp, {}).get("states", {}).get(state, {})
+        s = st.get("style") or {}
+        corners = [s.get(f"border{p}Radius") for p in
+                   ("TopLeft", "TopRight", "BottomRight", "BottomLeft")]
+        if not all(corners) or len(set(corners)) != 1:
+            return
+        v = corners[0]
+        desc = None
+        try:
+            if float(re.fullmatch(r"(-?\d+(?:\.\d+)?(?:e\+?\d+)?)px", v).group(1)) >= 9999:
+                v, desc = "9999px", "all four corners measure the full-radius clamp — a pill"
+        except Exception:
+            pass
+        lit(v, "dimension",
+            f"measured {comp} {state} on {C[comp].get('page')} ({label})",
+            "component", path, desc=desc)
+
+    def theme_alias(comp, state, prop, path, role, label):
+        """A measured fill that lands on a declared semantic role: the element's
+        class paints the role, so each theme set gets the alias and resolves
+        its own value instead of inheriting the light measurement."""
+        st = C.get(comp, {}).get("states", {}).get(state, {})
+        v = (st.get("style") or {}).get(prop)
+        if v is None:
+            return
+        leaf = {"type": "color", "value": "{" + role + "}",
+                "source": f"measured {comp} {state} on {C[comp].get('page')} ({label}) — the element's class paints the {role} role, so each theme resolves its own",
+                "description": label}
+        for t in ("light", "dark"):
+            emit_at(t, path, leaf)
+
+    radius_tok("docs-code-block", "default", "codeblock.radius", "code panel corner")
+    radius_tok("docs-next-card", "default", "navCard.radius", "nav card corner")
+    radius_tok("docs-search-pill", "default", "searchPill.radius", "search pill corner")
+    radius_tok("docs-cta", "default", "button.cta.radius", "hero CTA corner")
+    # The measured code node is transparent (the fill sits on its panel
+    # wrapper); the nav card's light fill matches --bg-card exactly. Both are
+    # declared roles that re-point per theme, so the tokens alias the roles.
+    theme_alias("docs-code-block", "default", "backgroundColor", "component.codeblock.bg", "bg.codeblock", "code panel fill")
+    theme_alias("docs-next-card", "default", "backgroundColor", "component.navCard.bg", "bg.card", "nav card fill")
     style_tok("prose-h1", "default", "fontSize", "type.h1.size", "other", "article h1")
     style_tok("prose-h1", "default", "lineHeight", "type.h1.lineHeight", "other", "article h1")
     style_tok("prose-p", "default", "fontSize", "type.body.size", "other", "article paragraph")
@@ -354,7 +393,7 @@ if C_PATH.exists():
     typ("prose-h2", "typography.h2", "a section heading — xVf 30px medium")
     typ("faq-question", "typography.h3", "the FAQ question heading — xVf 24px medium")
     typ("prose-p", "typography.body", "article body text — xVf 14px/24")
-    typ("prose-inline-code", "typography.inlineCode", "an inline code span — xMono 13.3px tinted --darksolar")
+    typ("prose-inline-code", "typography.inlineCode", "an inline code span — xMono 13.3px tinted --solar")
     typ("docs-code-block", "typography.codeBlock", "code inside the shiki panel — xMono 13px/20")
     typ("docs-sidebar-link", "typography.navLink", "a sidebar page link — xVf 13px medium")
     typ("docs-cta", "typography.button", "the primary CTA label — xVf 14px medium")

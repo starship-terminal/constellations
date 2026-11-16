@@ -83,7 +83,12 @@ def slim(node):
         if node.get("$description"):
             out["d"] = node["$description"]
         return out
-    return {k: slim(v) for k, v in node.items() if not k.startswith("$")}
+    out = {k: slim(v) for k, v in node.items() if not k.startswith("$")}
+    # Group-level extensions (the motion group's reducedMotion probe verdict)
+    # are evidence the guide renders; leaf extensions already ride as "s".
+    if "$extensions" in node:
+        out["_extensions"] = node["$extensions"]
+    return out
 
 
 # Inlined into a <script>: "<" as \u003c keeps a value holding "</script>" or "<!--"

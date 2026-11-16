@@ -32,12 +32,16 @@ alone — never inferred for light.
 
 Deterministic: same inputs, byte-identical output. Edit the raw inputs, never tokens.json.
 """
-import json, pathlib, re
+import json, pathlib, re, sys
 
 HERE = pathlib.Path(__file__).resolve().parent.parent
 RAW = HERE / "raw"
+sys.path.insert(0, str(HERE / "tools"))
+import motion as motion_mod  # tools/motion.py -> core.motion (docs/decisions/0001)
+
 V = json.loads((RAW / "css-vars.json").read_text())
 SPEC = json.loads((RAW / "component-tokens.json").read_text())
+MOTION = json.loads((RAW / "motion.json").read_text()) if (RAW / "motion.json").exists() else None
 
 # Resolved declarations per theme. vars.mjs resolves each custom property on a
 # probe document carrying the real sheets and the live page's own classes,
@@ -203,6 +207,13 @@ dark = build(SPEC["dark"], "dark")
 # theme-independent measured geometry (header height, sidebar width,
 # dialog and card sizes), so they hang off core and reach both themes.
 core["component"] = build(SPEC["component"], "light")
+# docs/decisions/0001: the motion probe's measured durations, easings,
+# transitions and animations are tokens too; curves a cubicBezier cannot
+# carry (steps(), linear()) are recorded under the group's notTokenised.
+if MOTION:
+    core["motion"], motion_nt = motion_mod.build(MOTION)
+    if motion_nt:
+        core["motion"].setdefault("$extensions", {})["notTokenised"] = motion_nt
 
 
 # every alias must point at a token that exists
@@ -249,7 +260,7 @@ tokens = {
     "$themes": [
         {"id": "light", "name": "Light", "selectedTokenSets": {"core": "source", "light": "enabled"},
          "$description": "The painted default: every docs.x.ai page boots html.light (next-themes reads localStorage.theme) — a white ground, near-black ink, the solar orange accent."},
-        {"id": "dark", "name": "Dark", "selectedTokenSets": {"dark": "enabled"},
+        {"id": "dark", "name": "Dark", "selectedTokenSets": {"core": "source", "dark": "enabled"},
          "$description": "The painted dark surface: the header's 'Switch to dark theme' button flips html.dark and .dark/:root.dark re-point the semantic roles — #0a0a0a ground, #d5d9e2 ink. A few names (--border, --input, --ring, --alert, --on-alert, --background-*, --content-*, --sb-*) exist in dark only."},
     ],
     "$metadata": {"tokenSetOrder": ["core", "light", "dark"]},

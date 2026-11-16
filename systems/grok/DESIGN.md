@@ -4,9 +4,6 @@
 version: "alpha"
 name: "Grok / xAI Docs"
 description: "developer-docs design: a declared Tailwind v4 token layer of --neutral2..98, the solar --solar/--darksolar accents (#ff640a), semantic --bg-*/--fg-*/--primary/--border-*/--sidebar-*/--chart-* roles re-pointed under html.dark by a real header theme button (15 names declared under .dark only), proprietary xVf/xMono variable faces on a --text-xs..5xl ramp, a fixed 80px header with a 208px cmdK search pill over a 272px sidebar and an inner-scrolling article, dark-tinted --bg-codeblock panels in both themes, shiki syntax colours, Radix SDK tabs, pricing tables, a 1000px cmdk search dialog, a full-screen 390px nav sheet"
-omitted:
-  - section: "components"
-    reason: "tokens.json has no components tokens under the colour set's `component` group"
 colors:
   primary: "#ff640a"
   neutral: "#ffffff"
@@ -81,6 +78,8 @@ colors:
   color-l4: "#ffffff"
   color-primary: "#0a0a0a"
   root-foreground: "#0c0c0c"
+  component-codeblock-bg: "#121212"
+  component-navCard-bg: "#f9f8f6"
 typography:
   display:
     fontFamily: "xVf"
@@ -146,6 +145,11 @@ rounded:
   base: "0.25rem"
 spacing:
   unit: "0.25rem"
+components:
+  codeblock:
+    backgroundColor: "{colors.component-codeblock-bg}"
+  navCard:
+    backgroundColor: "{colors.component-navCard-bg}"
 ---
 
 # Grok / xAI Docs
@@ -197,7 +201,7 @@ Corner radii from `core.radius`: `2xl` 1rem, `3xl` 1.5rem, `4xl` 2rem, `lg` 0.5r
 
 ## Components
 
-No component tokens map onto DESIGN.md's component properties.
+2 components from the `component` tokens of the `light` set, keeping only the properties DESIGN.md defines.
 
 Measured states, crops and the full inventory: [components.md](components.md), [components](components), [style-guide.html](style-guide.html).
 

@@ -843,7 +843,7 @@
      "lineHeight": "24px"
     },
     "$type": "typography",
-    "$description": "an inline code span — xMono 13.3px tinted --darksolar",
+    "$description": "an inline code span — xMono 13.3px tinted --solar",
     "$extensions": {
      "source": "measured prose-inline-code on /developers/quickstart (default state)"
     }
@@ -1228,6 +1228,24 @@
    "noise": {
     "type": "other",
     "var": "--noise"
+   }
+  },
+  "component": {
+   "codeblock": {
+    "bg": {
+     "type": "color",
+     "value": "{bg.codeblock}",
+     "source": "measured docs-code-block default on /overview (code panel fill) — the element's class paints the bg.codeblock role, so each theme resolves its own",
+     "description": "code panel fill"
+    }
+   },
+   "navCard": {
+    "bg": {
+     "type": "color",
+     "value": "{bg.card}",
+     "source": "measured docs-next-card default on /developers/quickstart (nav card fill) — the element's class paints the bg.card role, so each theme resolves its own",
+     "description": "nav card fill"
+    }
    }
   }
  },
@@ -1626,6 +1644,24 @@
     "type": "other",
     "var": "--noise"
    }
+  },
+  "component": {
+   "codeblock": {
+    "bg": {
+     "type": "color",
+     "value": "{bg.codeblock}",
+     "source": "measured docs-code-block default on /overview (code panel fill) — the element's class paints the bg.codeblock role, so each theme resolves its own",
+     "description": "code panel fill"
+    }
+   },
+   "navCard": {
+    "bg": {
+     "type": "color",
+     "value": "{bg.card}",
+     "source": "measured docs-next-card default on /developers/quickstart (nav card fill) — the element's class paints the bg.card role, so each theme resolves its own",
+     "description": "nav card fill"
+    }
+   }
   }
  },
  "component": {
@@ -1658,6 +1694,12 @@
     "type": "dimension",
     "value": "208px",
     "source": "measured docs-search-pill default on /overview (header search pill)"
+   },
+   "radius": {
+    "type": "dimension",
+    "value": "9999px",
+    "source": "measured docs-search-pill default on /overview (search pill corner)",
+    "description": "all four corners measure the full-radius clamp — a pill"
    }
   },
   "searchDialog": {
@@ -1678,6 +1720,12 @@
      "type": "dimension",
      "value": "40px",
      "source": "measured docs-cta default on /overview (hero CTA link)"
+    },
+    "radius": {
+     "type": "dimension",
+     "value": "9999px",
+     "source": "measured docs-cta default on /overview (hero CTA corner)",
+     "description": "all four corners measure the full-radius clamp — a pill"
     }
    }
   },
@@ -1687,10 +1735,10 @@
     "value": "156px",
     "source": "measured docs-next-card default on /developers/quickstart (the bg-card nav card)"
    },
-   "bg": {
-    "type": "color",
-    "value": "rgb(249, 248, 246)",
-    "source": "measured docs-next-card default on /developers/quickstart (nav card fill)"
+   "radius": {
+    "type": "dimension",
+    "value": "16px",
+    "source": "measured docs-next-card default on /developers/quickstart (nav card corner)"
    }
   },
   "tab": {
@@ -1736,10 +1784,10 @@
    }
   },
   "codeblock": {
-   "bg": {
-    "type": "color",
-    "value": "rgba(0, 0, 0, 0)",
-    "source": "measured docs-code-block default on /overview (code panel fill)"
+   "radius": {
+    "type": "dimension",
+    "value": "0px",
+    "source": "measured docs-code-block default on /overview (code panel corner)"
    }
   },
   "type": {
