@@ -3550,6 +3550,105 @@
    }
   },
   {
+   "slug": "classpass",
+   "name": "ClassPass",
+   "url": "https://classpass.com",
+   "category": "fitness",
+   "platform": "web",
+   "goodFor": "fitness-marketplace marketing: a Next.js site with no declared token layer (every value measured off the painted chrome) built on a #0055ff accent ramp with a real three-step press ladder (#0055ff -> #004de6 -> #0044cc), a #1a5ee5 link/focus blue, a #c0e0ff plan pill and a #fce172 promo yellow; TT Norms UI plus a Circuit rotating-word hero; 9999px pill buttons against 4px fields; a venue-search surface with comboboxes, filter pills and a dropdown panel; a credits plan carousel under a brand-tinted rgba(1,85,254,.1) shadow; and a black footer island",
+   "tags": [
+    "web",
+    "mobile-app",
+    "fitness",
+    "marketplace",
+    "booking",
+    "nextjs",
+    "light",
+    "blue-accent",
+    "marketing",
+    "pricing",
+    "search",
+    "signed-out"
+   ],
+   "shape": "reference",
+   "captured": "2026-11-16",
+   "access": "read-only (the marketing site, search, plans, features, how-it-works, fitness, gifts, reviews, partners, corporate-wellness, about, contact, blog and legal are fully public; /login's card and /walkthrough's carousel were measured as boundaries - nothing was signed into, searched for, booked or submitted; booking, member search results, credits and checkout sit behind sign-in or payment)",
+   "themes": [
+    "light"
+   ],
+   "widths": [
+    1440,
+    390
+   ],
+   "entry": "systems/classpass/README.md",
+   "tokens": "systems/classpass/tokens.json",
+   "styleGuide": "systems/classpass/style-guide.html",
+   "preview": {
+    "cover": "systems/classpass/screenshots/home-light-default.png",
+    "icon": "systems/classpass/icon.png",
+    "swatches": {
+     "light": {
+      "page": "light.surface.page",
+      "surface": "light.surface.card",
+      "text": "light.text.primary",
+      "muted": "light.text.muted",
+      "accent": "light.accent",
+      "border": "light.border.subtle"
+     }
+    },
+    "fonts": [
+     "core.font.family.display",
+     "core.font.family.ui"
+    ]
+   },
+   "source": {
+    "path": "~/.design-systems/classpass/raw-shots (full-colour captures, outside the repo)"
+   },
+   "capture": {
+    "method": "public-web",
+    "source": "classpass.com in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass at deviceScaleFactor 2; computed styles, painted layers and 112 element crops from the live DOM across 50 components and 113 state readings, plus a stylesheet harvest (4 custom-property rules, 9 @font-face faces, NO declared design-token palette - every token is a measured computed-style reading). The site geo-localizes by request origin: this capture shows SGD prices and Singapore studio content. BOUNDARY: booking, member search results, plan checkout and every account surface sit behind sign-in or payment; the /login card was focused and filled with placeholder text only and never submitted, and /walkthrough was read but never advanced",
+    "timestamp": "2026-11-16T18:50:00Z",
+    "harness": "Devin",
+    "model": "SWE-2 High",
+    "route": "public-web",
+    "routes": [
+     "/",
+     "/search",
+     "/plans",
+     "/features",
+     "/how-classpass-works",
+     "/fitness",
+     "/gifts",
+     "/try/reviews",
+     "/partners",
+     "/corporate-wellness",
+     "/about",
+     "/contact",
+     "/blog",
+     "/legal/terms-and-conditions",
+     "/login (boundary)",
+     "/walkthrough (boundary)",
+     "mobile /, /search and /plans plus the home menu overlay"
+    ],
+    "gaps": [
+     "the product itself - class booking, member search results, credits, plan checkout and account pages - sits behind sign-in or payment and was never crossed",
+     "Cloudflare challenges sequential navigation, so each route and measurement group ran in a fresh browser context; a route that hit the interstitial was retried until it cleared",
+     "the TrustArc consent overlay (#consent_blackbar) mounts on every route and was hidden for every shot, never answered",
+     "nav-login and nav-cta could not be given a real keyboard focus on this pass; their focus behaviour is published as unmeasured, not absent",
+     "pressed states are DevTools-forced (CSS.forcePseudoState), so any script-applied mousedown state is missing; disabled, error and loading states do not appear on the public surface",
+     "the app-store badge anchors hug the text line (117x12) while their badge art overflows as an oversized inline child; the crops capture the art, the boxes are honest",
+     "the rotating hero word, the venue map and the sticky trial CTA animate or render through third-party scripts; a capture's pixel state is a moment, not a spec",
+     "prices and studio content are geo-localized (SGD here) - layout and chrome are the invariant evidence"
+    ],
+    "durationMin": 180,
+    "durationNote": "wall-clock across the capture sessions including kit adaptation, DOM probing, fresh-context retries around Cloudflare, the stylesheet harvest, desktop/mobile screenshot passes, measurement passes and the offline build",
+    "pr": "https://github.com/starship-terminal/constellations/pull/607"
+   },
+   "layoutGaps": {
+    "icons/": "No standalone SVG icon set was lifted on this pass; the glyphs (the wordmark, social marks, stars, chevrons, carousel dots) are component artwork visible in the crops and screenshots."
+   }
+  },
+  {
    "slug": "claude",
    "name": "Claude",
    "url": "https://claude.ai",
@@ -14203,6 +14302,130 @@
    },
    "layoutGaps": {
     "icons/": "no standalone SVG icon set was lifted; the Glassnode mark, nav glyphs, theme-toggle icons and partner logos are visible in the crops and screenshots"
+   }
+  }
+,
+  {
+   "slug": "front",
+   "name": "Front",
+   "url": "https://front.com",
+   "category": "productivity",
+   "platform": "web",
+   "goodFor": "customer-operations SaaS marketing and product chrome: a Next.js + Tailwind marketing site whose design layer is compiled into bespoke classes - hue-utility ramps (.bg-violet-50..1000, citron, blue, gray), a .surface-l0..l3 semantic scale, a .text-display1 type ramp and a .button-* state layer - redeclared under three section themes ([data-theme=theme-dark-violet] plum, theme-white, theme-gray); plus three more public stacks: app.frontapp.com's auth shell painting the real Froyo --color-* token layer (light and a genuine data-theme=dark pass), help.front.com's Knowledge Base product, and dev.frontapp.com's ReadMe portal with the embedded Companion/Froyo token sheet; self-hosted Suisse Intl/Intl Mono/Suisse Works voices; mega-menu navigation, a billing-switch pricing grid and FAQ disclosures; a 390px pass",
+   "tags": [
+    "web",
+    "saas",
+    "customer-support",
+    "communication",
+    "marketing",
+    "pricing",
+    "help-centre",
+    "tailwind",
+    "light",
+    "dark",
+    "signed-out",
+    "design-tokens"
+   ],
+   "shape": "reference",
+   "captured": "2026-11-16",
+   "access": "signed out (every captured surface is public; the workspace and every post-login surface is an authenticated boundary never reached; the demo, signup, auth and search fields were measured and typed into then cleared, never submitted; every CTA, SSO button, nav item and link was measured, never followed; the Qualified 'Quinn' widget was measured at rest, never opened; the app dark theme is the shell's own front-theme-preference mechanism, verified painted as html[data-theme=dark]; the marketing violet/light/gray sets are section themes, not a page-level switch)",
+   "themes": [
+    "light",
+    "dark"
+   ],
+   "widths": [
+    1440,
+    390
+   ],
+   "entry": "systems/front/README.md",
+   "tokens": "systems/front/tokens.json",
+   "styleGuide": "systems/front/style-guide.html",
+   "preview": {
+    "cover": "systems/front/screenshots/home-light-default.png",
+    "icon": "systems/front/icon.png",
+    "swatches": {
+     "light": {
+      "page": "light.surface.l0",
+      "surface": "light.surface.l1",
+      "text": "light.text.primary",
+      "muted": "light.text.secondary",
+      "accent": "light.button.surface",
+      "border": "core.palette.gray.200"
+     }
+    },
+    "fonts": [
+     "core.font.family.intl",
+     "core.font.family.app"
+    ]
+   },
+   "source": {
+    "path": "~/.design-systems/front/raw-shots (full-colour captures, outside the repo)"
+   },
+   "capture": {
+    "method": "public-web",
+    "source": "front.com, app.frontapp.com, help.front.com and dev.frontapp.com in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and 156 element crops from the live DOM, plus a stylesheet harvest (5,315 custom-property rules, 71 @font-face rules, the marketing layer's 396 class rules kept verbatim, resolved values on the live app/help/dev pages). The marketing site's design layer is compiled into classes under three [data-theme] section themes, so its tokens are declared class values; the app shell's --color-* layer resolves on the live page in light and in a verified data-theme=dark pass; help/dev values are resolved on their live pages; dev's ReadMe --color-* layer is kept under vendor, not promoted. BOUNDARY: forms typed into then cleared never submitted; SSO and every CTA never followed; the Quinn widget never opened",
+    "timestamp": "2026-11-16T23:00:00Z",
+    "harness": "Devin",
+    "model": "SWE-2 Max",
+    "route": "public-web",
+    "routes": [
+     "/",
+     "/pricing",
+     "/product",
+     "/product/omnichannel-support-inbox",
+     "/product/ai",
+     "/customer-service",
+     "/customer-stories",
+     "/customer-stories/uber-freight",
+     "/integrations",
+     "/compare/front-vs-intercom",
+     "/industries/b2b-tech",
+     "/teams/customer-service-support",
+     "/resources",
+     "/blog",
+     "/blog/customer-service-automation-ai",
+     "/glossary",
+     "/about",
+     "/reviews",
+     "/download",
+     "/security",
+     "/request-demo",
+     "/signup",
+     "/whats-new",
+     "app.frontapp.com/signin",
+     "app.frontapp.com/signup",
+     "app.frontapp.com/forgot-password",
+     "app.frontapp.com/signin (dark, the shell's own front-theme-preference)",
+     "app.frontapp.com/signup (dark)",
+     "app.frontapp.com/forgot-password (dark)",
+     "help.front.com/",
+     "help.front.com article (first listed, one reader's click)",
+     "help.front.com/en/contact-us",
+     "dev.frontapp.com/docs/welcome",
+     "dev.frontapp.com/reference/getting-started",
+     "home header Product + Solutions + Resources mega menus",
+     "mobile /, /pricing, app sign-in (light + dark), help home and the mobile nav overlay"
+    ],
+    "gaps": [
+     "the workspace and every post-login surface (inbox, contacts, rules, analytics, settings) sits behind an account - an authenticated boundary never reached; app /signin, /signup and /forgot-password were measured as forms, never submitted, and Google/Office 365/SAML SSO was never followed",
+     "app /signup and /forgot-password paint the same sign-in card as /signin (email, password, 'Sign in') - no dedicated signup or reset form exists signed out; recorded as painted, not inferred",
+     "submitted states: the /request-demo and /signup forms, the auth cards and the help search were typed into then cleared, never sent - validation, error, loading and success states are absent rather than measured",
+     "academy.front.com, community.front.com, www.frontstatus.com and research.front.com are adjacent properties, not captured this pass",
+     "the Qualified 'Quinn' chat widget was measured and screenshot at rest, never opened - the chat panel is uncaptured",
+     "the Solutions and Resources mega-menu panels were screenshot-captured only; only the Product panel's contents were component-measured",
+     "the marketing violet/light/gray sets are [data-theme] section themes of one page, not a user-selectable dark mode; the dark set is the app auth shell's own theme, a different stack",
+     "dev.frontapp.com's own --color-* values are ReadMe vendor overrides kept in raw/css-vars.json under vendor; the companion sets are the embedded Froyo messenger sheet's semantics, not the dev page's own paint",
+     "detail pages: blog posts, customer stories, glossary terms, integrations and help articles are index- or exemplar-level captures (one story, one article opened)",
+     "reduced motion is mostly ignored by the marketing pages: the probe found transitions kept under prefers-reduced-motion: reduce - an honest absence, not a variant",
+     "pressed states are DevTools-forced (CSS.forcePseudoState), so any script-applied mousedown state is missing",
+     "disabled, error, loading and validation states never appear signed out - nothing was submitted",
+     "icons: no standalone SVG set lifted this pass"
+    ],
+    "durationMin": 300,
+    "durationNote": "wall-clock across the capture sessions including kit adaptation, recon probes, two screenshot passes (FAQ/menu actionability and full-page height-mismatch retries), the stylesheet harvest, three measurement passes (selector fixes for header CTAs, the flyout, selects and mobile controls) and the offline build"
+   },
+   "layoutGaps": {
+    "icons/": "no standalone SVG icon set was lifted; the Front mark, menu glyphs, plan badges and social icons are visible in the crops and screenshots"
    }
   }
  ]

@@ -20732,6 +20732,135 @@
    "category": "Productivity",
    "reviewed": "2026-11-17",
    "reviewedPlatform": "web"
+  },
+  {
+   "slug": "front",
+   "grades": {
+    "F1": {
+     "grade": "meets",
+     "evidence": "Three declared ramp layers: the marketing hue-utility palette (core.palette.*: violet 50-1000 plus citron, blue, gray, green, pink, salmon, orange, yellow in ~9 steps), the app shell's --color-primitive-* ramps (core.primitive.*, resolved on the live signin page), and the Froyo sheet's light/dark/alpha ramps (core.froyo.ramp.*)."
+    },
+    "F2": {
+     "grade": "partly",
+     "evidence": "Page/surface roles exist per layer: marketing surface.l0-l3/outer/highlight under all three section themes, app color.bg.* (base, surface.primary, fill.*) light and dark, companion color.bg.* semantics. No overlay or scrim role appears on the signed-out surfaces."
+    },
+    "F3": {
+     "grade": "partly",
+     "evidence": "Primary (text.primary), secondary (text.secondary), inactive (text.primaryInactive/secondaryInactive) and on-accent (button.textDefault/textInverted) roles are declared per marketing theme; the app carries color.text.* light and dark. No dedicated link colour and no visited role; disabled exists only as button.textDisabled."
+    },
+    "F4": {
+     "grade": "partly",
+     "evidence": "Default (palette.gray.200 hairline, button.border), strong (button.borderActive), focus (app/companion color.border.focus.default #6257f4) and disabled (button.borderDisabled) roles exist; measured on components. No semantic 'border.error/warning' role captured."
+    },
+    "F5": {
+     "grade": "meets",
+     "evidence": "Accent states are declared per theme: button.surface/surfaceActive plus the surfaceOutline*/surfaceTab* hover family (violet/light/gray), and the app color.fill.brand + interactive states were measured (hover, focus-visible, DevTools-forced pressed on nav-try, plan-cta, app-continue)."
+    },
+    "F6": {
+     "grade": "partly",
+     "evidence": "Green/pink/orange/yellow hue ramps exist as palette primitives and the app/froyo layers carry accent semantics, but no semantic success/warning/danger/info role paints publicly - forms were never submitted, so validation palettes stayed dormant. Honest absence."
+    },
+    "F7": {
+     "grade": "meets",
+     "evidence": "Parity holds inside each layer that ships more than one theme: violet/light/gray redeclare the same 28 roles, app and dark name the same 124 color.* roles (dark verified painted via html[data-theme=dark]), companion and companionDark the same 123. The marketing themes are section themes, not a user switch - stated, not fudged."
+    },
+    "F8": {
+     "grade": "meets",
+     "evidence": "Four named families with stacks (Suisse Intl, Suisse Intl Mono, Suisse Works on marketing - all @font-face-harvested; the app shell's Indivisible measured on the card, system-ui fallback recorded; the KB --font resolves under font.family.knowledgeBase). A 15-step declared type ramp (font.size.display1 62px through micro3) with paired lineHeights, tracking and font weights, plus the Froyo fontSize/fontWeight scales."
+    },
+    "F9": {
+     "grade": "partly",
+     "evidence": "The Froyo spacing scale is declared (froyo.spacing.* rem steps); the marketing site's spacing is Tailwind-utility-derived, not a declared scale - measured component geometry (paddings, gaps, 40px controls, 48px fields) corroborates an 8px rhythm but no named spacing ramp ships."
+    },
+    "F10": {
+     "grade": "meets",
+     "evidence": "A declared radius scale core.radius 4-40px (10 steps from .rounded-* classes), the pill radius measured (button 40px, hero CTA 64px-equivalent), the mega menu's rounded-20, and declared border widths/hairlines in the class layer; froyo.radius scale alongside."
+    },
+    "F11": {
+     "grade": "partly",
+     "evidence": "Measured control geometry is recorded (header 80, header buttons 40, hero CTA 48, fields 48, plan CTA 40, app inputs, billing switch 66x36, burger 44) plus the .button-size-* class family; the focus ring is measured on controls (focus-visible states). No declared S/M/L height ladder - each context ships one size."
+    },
+    "F12": {
+     "grade": "partly",
+     "evidence": "The Froyo shadow scale is declared (froyo.shadow.*); the marketing layer uses class-declared shadows (shadow-header-scrolled on the flyout) and the button shadow/border states are captured per theme. Not a tidy 3-5 level ladder tied to uses on the public surface."
+    },
+    "F13": {
+     "grade": "partly",
+     "evidence": "Declared motion scales exist (core.motion.duration 100-1000ms, easing.appear cubic-bezier(0.16,1,0.3,1), froyo.easings/durations) and the reduced-motion probe re-read 5 pages: marketing keeps its transitions under prefers-reduced-motion (raw/motion.json, 'ignores'), dev partially honours it - the reduced-motion delta is honestly small."
+    },
+    "F14": {
+     "grade": "partly",
+     "evidence": "Froyo breakpoints declared (froyo.breakpoint.*); marketing reflow measured at 1440 and 390 (mega menu -> burger + full-viewport drawer, plan grid collapses). No declared grid-column or z-index layer tokens; sticky/fixed chrome recorded in _meta.chrome."
+    },
+    "C1": {
+     "grade": "partly",
+     "evidence": "About 12 of 19 checklist components paint publicly: button (nav/plan/hero/auth/demo CTAs), icon button (burger, dev search), link (nav/footer/help crumb), text field (demo/signup/auth/help search), select (demo company-size), switch (billing toggle), menu (mega panel + mobile drawer), card (plan, help kb-category, auth panel, stat card), accordion (FAQ), list row (footer/help cards), badge (plan SAVE marks). No checkbox, radio, tabs, tooltip, dialog, toast, table, avatar or text area appears signed out."
+    },
+    "C2": {
+     "grade": "partly",
+     "evidence": "160 states over 68 components: real hover, real keyboard focus-visible, DevTools-forced pressed, locally-opened states (mega menu, billing switch, FAQ, burger drawer) and focused/filled-then-cleared fields. Disabled, loading, error, validation and selected states are absent rather than measured - nothing was submitted."
+    },
+    "C3": {
+     "grade": "meets",
+     "evidence": "focus-visible was measured on every interactive component group: header links and buttons, plan CTAs, FAQ disclosures, the auth card's submit/SSO/forgot links, help search and dev controls - a real keyboard focus ring paints on each."
+    },
+    "C4": {
+     "grade": "meets",
+     "evidence": "components.md and the component token tree (core.component.*) write measured geometry and colours alongside the declared roles they map to; every leaf carries $extensions.source naming the measurement or declaration."
+    },
+    "P1": {
+     "grade": "partly",
+     "evidence": "patterns.md covers the marketing chrome + mega menus, the plum/white/gray section alternation, the pricing switch + plan grid + FAQ, the demo/signup forms, the auth shell light+dark, help/dev chrome, mobile and motion/focus. Empty/loading/error, destructive confirmation, onboarding and search-results patterns are not reachable signed out."
+    },
+    "A1": {
+     "grade": "partly",
+     "evidence": "Fonts are fully named with provenance (71 @font-face rules in raw/css-vars.json; Suisse families self-hosted, the app's Indivisible and KB's CustomFont) and fallbacks are used in the style guide; the licence is not redistributed. No standalone icon set was lifted - declared as a layoutGaps entry, icons remain in crops/screenshots."
+    },
+    "K1": {
+     "grade": "meets",
+     "evidence": "The README names every captured surface and route, the four-stack architecture, how each layer's values were read (classes vs resolved vars vs measurement), the signed-in boundary, the honest section-theme/dark/app-distinction, and the full Rebuild recipe."
+    },
+    "F15": {
+     "grade": "partly",
+     "evidence": "Script: all 4 checked pairs pass; lowest 5.93:1 light muted (light.text.secondary) on surface (light.surface.l1); dark not checked (no palette)"
+    },
+    "F16": {
+     "grade": "meets",
+     "evidence": "Script: 1738 of 1738 tokens name their source"
+    },
+    "K2": {
+     "grade": "meets",
+     "evidence": "Script: 8 rules, each linking a screenshot or crop"
+    },
+    "K3": {
+     "grade": "meets",
+     "evidence": "Script: DESIGN.md matches a fresh generation"
+    },
+    "C5": {
+     "grade": "na",
+     "evidence": "Optional for a capture, and this product does not publish it."
+    },
+    "V1": {
+     "grade": "na",
+     "evidence": "Optional for a capture, and this product does not publish it."
+    },
+    "V2": {
+     "grade": "na",
+     "evidence": "Optional for a capture, and this product does not publish it."
+    }
+   },
+   "name": "Front",
+   "goodFor": "customer-operations SaaS marketing and product chrome: a Next.js + Tailwind marketing site whose design layer is compiled into bespoke classes - hue-utility ramps (.bg-violet-50..1000, citron, blue, gray), a .surface-l0..l3 semantic scale, a .text-display1 type ramp and a .button-* state layer - redeclared under three section themes ([data-theme=theme-dark-violet] plum, theme-white, theme-gray); plus three more public stacks: app.frontapp.com's auth shell painting the real Froyo --color-* token layer (light and a genuine data-theme=dark pass), help.front.com's Knowledge Base product, and dev.frontapp.com's ReadMe portal with the embedded Companion/Froyo token sheet; self-hosted Suisse Intl/Intl Mono/Suisse Works voices; mega-menu navigation, a billing-switch pricing grid and FAQ disclosures; a 390px pass",
+   "url": "https://front.com",
+   "captured": "2026-11-16",
+   "themes": [
+    "light",
+    "dark"
+   ],
+   "platform": "web",
+   "category": "Productivity",
+   "reviewed": "2026-11-17",
+   "reviewedPlatform": "web"
   }
  ],
  "base": "2026-10-16",

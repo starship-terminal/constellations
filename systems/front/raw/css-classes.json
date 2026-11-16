@@ -1,0 +1,3328 @@
+{
+ "readAt": "2026-11-17",
+ "source": "front.com's compiled design layer: the bespoke semantic classes (surface-*, text-*, font-*, button-*, rounded-*, ease-*, duration-*) and the Tailwind colour-utility palette, verbatim from the _next CSS chunks, keyed by [data-theme] context",
+ "rules": [
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".font-weight-regular",
+   "context": [],
+   "declarations": {
+    "font-weight": "400"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".font-weight-medium",
+   "context": [],
+   "declarations": {
+    "font-weight": "500"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".font-weight-bold",
+   "context": [],
+   "declarations": {
+    "font-weight": "600"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".font-size-d1",
+   "context": [],
+   "declarations": {
+    "font-size": "48px"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".font-size-d1",
+   "context": [
+    "@media (min-width: 800px)"
+   ],
+   "declarations": {
+    "font-size": "62px"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".font-size-d2",
+   "context": [],
+   "declarations": {
+    "font-size": "40px"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".font-size-d2",
+   "context": [
+    "@media (min-width: 800px)"
+   ],
+   "declarations": {
+    "font-size": "52px"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".font-size-d3",
+   "context": [],
+   "declarations": {
+    "font-size": "36px"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".font-size-d3",
+   "context": [
+    "@media (min-width: 800px)"
+   ],
+   "declarations": {
+    "font-size": "43px"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".font-size-h1",
+   "context": [],
+   "declarations": {
+    "font-size": "25px"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".font-size-h1",
+   "context": [
+    "@media (min-width: 800px)"
+   ],
+   "declarations": {
+    "font-size": "36px"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".font-size-h2",
+   "context": [],
+   "declarations": {
+    "font-size": "20px"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".font-size-h2",
+   "context": [
+    "@media (min-width: 800px)"
+   ],
+   "declarations": {
+    "font-size": "30px"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".font-size-h3",
+   "context": [],
+   "declarations": {
+    "font-size": "20px"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".font-size-h3",
+   "context": [
+    "@media (min-width: 800px)"
+   ],
+   "declarations": {
+    "font-size": "25px"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".font-size-h4",
+   "context": [],
+   "declarations": {
+    "font-size": "20px"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".font-size-h4",
+   "context": [
+    "@media (min-width: 800px)"
+   ],
+   "declarations": {
+    "font-size": "20px"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".font-size-p1",
+   "context": [],
+   "declarations": {
+    "font-size": "20px"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".font-size-p1",
+   "context": [
+    "@media (min-width: 800px)"
+   ],
+   "declarations": {
+    "font-size": "20px"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".font-size-p2",
+   "context": [],
+   "declarations": {
+    "font-size": "16px"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".font-size-p2",
+   "context": [
+    "@media (min-width: 800px)"
+   ],
+   "declarations": {
+    "font-size": "16px"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".font-size-c1",
+   "context": [],
+   "declarations": {
+    "font-size": "15px"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".font-size-c1",
+   "context": [
+    "@media (min-width: 800px)"
+   ],
+   "declarations": {
+    "font-size": "15px"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".font-size-c2",
+   "context": [],
+   "declarations": {
+    "font-size": "12px"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".font-size-c2",
+   "context": [
+    "@media (min-width: 800px)"
+   ],
+   "declarations": {
+    "font-size": "12px"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".font-size-m1",
+   "context": [],
+   "declarations": {
+    "font-size": "15px"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".font-size-m1",
+   "context": [
+    "@media (min-width: 800px)"
+   ],
+   "declarations": {
+    "font-size": "15px"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".font-size-m2",
+   "context": [],
+   "declarations": {
+    "font-size": "12px"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".font-size-m2",
+   "context": [
+    "@media (min-width: 800px)"
+   ],
+   "declarations": {
+    "font-size": "12px"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".font-line-height-d1",
+   "context": [],
+   "declarations": {
+    "line-height": "58px"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".font-line-height-d1",
+   "context": [
+    "@media (min-width: 800px)"
+   ],
+   "declarations": {
+    "line-height": "68px"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".font-line-height-d2",
+   "context": [],
+   "declarations": {
+    "line-height": "50px"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".font-line-height-d2",
+   "context": [
+    "@media (min-width: 800px)"
+   ],
+   "declarations": {
+    "line-height": "62px"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".font-line-height-d3",
+   "context": [],
+   "declarations": {
+    "line-height": "46px"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".font-line-height-d3",
+   "context": [
+    "@media (min-width: 800px)"
+   ],
+   "declarations": {
+    "line-height": "52px"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".font-line-height-h1",
+   "context": [],
+   "declarations": {
+    "line-height": "30px"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".font-line-height-h1",
+   "context": [
+    "@media (min-width: 800px)"
+   ],
+   "declarations": {
+    "line-height": "42px"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".font-line-height-h2",
+   "context": [],
+   "declarations": {
+    "line-height": "28px"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".font-line-height-h2",
+   "context": [
+    "@media (min-width: 800px)"
+   ],
+   "declarations": {
+    "line-height": "36px"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".font-line-height-h3",
+   "context": [],
+   "declarations": {
+    "line-height": "28px"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".font-line-height-h3",
+   "context": [
+    "@media (min-width: 800px)"
+   ],
+   "declarations": {
+    "line-height": "30px"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".font-line-height-h4",
+   "context": [],
+   "declarations": {
+    "line-height": "28px"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".font-line-height-h4",
+   "context": [
+    "@media (min-width: 800px)"
+   ],
+   "declarations": {
+    "line-height": "28px"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".font-line-height-p1",
+   "context": [],
+   "declarations": {
+    "line-height": "28px"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".font-line-height-p1",
+   "context": [
+    "@media (min-width: 800px)"
+   ],
+   "declarations": {
+    "line-height": "28px"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".font-line-height-p2",
+   "context": [],
+   "declarations": {
+    "line-height": "24px"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".font-line-height-p2",
+   "context": [
+    "@media (min-width: 800px)"
+   ],
+   "declarations": {
+    "line-height": "24px"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".font-line-height-c1",
+   "context": [],
+   "declarations": {
+    "line-height": "21px"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".font-line-height-c1",
+   "context": [
+    "@media (min-width: 800px)"
+   ],
+   "declarations": {
+    "line-height": "21px"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".font-line-height-c2",
+   "context": [],
+   "declarations": {
+    "line-height": "16px"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".font-line-height-c2",
+   "context": [
+    "@media (min-width: 800px)"
+   ],
+   "declarations": {
+    "line-height": "16px"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".font-line-height-m1",
+   "context": [],
+   "declarations": {
+    "line-height": "21px"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".font-line-height-m1",
+   "context": [
+    "@media (min-width: 800px)"
+   ],
+   "declarations": {
+    "line-height": "21px"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".font-line-height-m2",
+   "context": [],
+   "declarations": {
+    "line-height": "16px"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".font-line-height-m2",
+   "context": [
+    "@media (min-width: 800px)"
+   ],
+   "declarations": {
+    "line-height": "16px"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".font-letter-spacing-d1",
+   "context": [],
+   "declarations": {
+    "letter-spacing": "-1px"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".font-letter-spacing-d1",
+   "context": [
+    "@media (min-width: 800px)"
+   ],
+   "declarations": {
+    "letter-spacing": "-1.25px"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".font-letter-spacing-d2",
+   "context": [],
+   "declarations": {
+    "letter-spacing": "-0.75px"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".font-letter-spacing-d2",
+   "context": [
+    "@media (min-width: 800px)"
+   ],
+   "declarations": {
+    "letter-spacing": "-1px"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".font-letter-spacing-d3",
+   "context": [],
+   "declarations": {
+    "letter-spacing": "-0.75px"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".font-letter-spacing-h1",
+   "context": [],
+   "declarations": {
+    "letter-spacing": "-0.25px"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".font-letter-spacing-h1",
+   "context": [
+    "@media (min-width: 800px)"
+   ],
+   "declarations": {
+    "letter-spacing": "-0.65px"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".font-letter-spacing-h2",
+   "context": [],
+   "declarations": {
+    "letter-spacing": "0px"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".font-letter-spacing-h2",
+   "context": [
+    "@media (min-width: 800px)"
+   ],
+   "declarations": {
+    "letter-spacing": "-0.45px"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".font-letter-spacing-h3",
+   "context": [],
+   "declarations": {
+    "letter-spacing": "0px"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".font-letter-spacing-h3",
+   "context": [
+    "@media (min-width: 800px)"
+   ],
+   "declarations": {
+    "letter-spacing": "-0.25px"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".font-letter-spacing-h4, .font-letter-spacing-p1, .font-letter-spacing-p2",
+   "context": [],
+   "declarations": {
+    "letter-spacing": "0px"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".font-letter-spacing-c1, .font-letter-spacing-c2",
+   "context": [],
+   "declarations": {
+    "letter-spacing": "0.25px"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".font-letter-spacing-m1",
+   "context": [],
+   "declarations": {
+    "letter-spacing": "1px"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".font-letter-spacing-m2",
+   "context": [],
+   "declarations": {
+    "letter-spacing": "0.75px"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-gray\"] .text-primary, [data-theme=\"theme-white\"] .text-primary",
+   "context": [],
+   "declarations": {
+    "color": "rgb(13, 29, 57)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-dark-violet\"] .text-primary",
+   "context": [],
+   "declarations": {
+    "color": "rgb(248, 241, 254)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-gray\"] .text-primary-inactive, [data-theme=\"theme-white\"] .text-primary-inactive",
+   "context": [],
+   "declarations": {
+    "color": "rgb(142, 146, 155)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-dark-violet\"] .text-primary-inactive",
+   "context": [],
+   "declarations": {
+    "color": "rgb(208, 198, 240)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-gray\"] .text-secondary, [data-theme=\"theme-white\"] .text-secondary",
+   "context": [],
+   "declarations": {
+    "color": "rgb(91, 93, 99)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-dark-violet\"] .text-secondary",
+   "context": [],
+   "declarations": {
+    "color": "rgb(226, 220, 246)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-gray\"] .text-secondary-inactive, [data-theme=\"theme-white\"] .text-secondary-inactive",
+   "context": [],
+   "declarations": {
+    "color": "rgb(161, 165, 173)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-dark-violet\"] .text-secondary-inactive",
+   "context": [],
+   "declarations": {
+    "color": "rgb(248, 241, 254)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-white\"] .surface-l0",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(255, 255, 255)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-gray\"] .surface-l0",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(243, 243, 244)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-dark-violet\"] .surface-l0",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(48, 12, 65)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-white\"] .surface-l1",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(243, 243, 244)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-gray\"] .surface-l1",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(255, 255, 255)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-dark-violet\"] .surface-l1",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(91, 31, 118)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-gray\"] .surface-l1-hover, [data-theme=\"theme-white\"] .surface-l1-hover",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(222, 223, 226)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-dark-violet\"] .surface-l1-hover",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(128, 52, 191)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-gray\"] .surface-l1-active, [data-theme=\"theme-white\"] .surface-l1-active",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(222, 223, 226)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-dark-violet\"] .surface-l1-active",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(128, 52, 191)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-white\"] .surface-l2",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(255, 255, 255)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-gray\"] .surface-l2",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(243, 243, 244)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-dark-violet\"] .surface-l2",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(128, 52, 191)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-gray\"] .surface-l2-active, [data-theme=\"theme-white\"] .surface-l2-active",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(222, 223, 226)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-dark-violet\"] .surface-l2-active",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(168, 87, 241)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-white\"] .surface-l3",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(243, 243, 244)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-gray\"] .surface-l3",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(255, 255, 255)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-dark-violet\"] .surface-l3",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(168, 87, 241)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-gray\"] .surface-l3-active, [data-theme=\"theme-white\"] .surface-l3-active",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(222, 223, 226)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-dark-violet\"] .surface-l3-active",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(179, 117, 244)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-white\"] .surface-outer",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(243, 243, 244)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-dark-violet\"] .surface-outer, [data-theme=\"theme-gray\"] .surface-outer",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(255, 255, 255)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-dark-violet\"] .surface-highlight, [data-theme=\"theme-gray\"] .surface-highlight, [data-theme=\"theme-white\"] .surface-highlight",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(222, 233, 72)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-gray\"] .button-surface, [data-theme=\"theme-white\"] .button-surface",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(128, 52, 191)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-dark-violet\"] .button-surface",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(222, 233, 72)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-gray\"] .button-surface-active, [data-theme=\"theme-white\"] .button-surface-active",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(91, 31, 118)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-dark-violet\"] .button-surface-active",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(211, 209, 64)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-white\"] .button-surface-disabled",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(243, 243, 244)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-gray\"] .button-surface-disabled",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(222, 223, 226)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-dark-violet\"] .button-surface-disabled",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(36, 6, 49)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-gray\"] .button-focus, [data-theme=\"theme-white\"] .button-focus",
+   "context": [],
+   "declarations": {
+    "outline-color": "rgb(48, 12, 65)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-dark-violet\"] .button-focus",
+   "context": [],
+   "declarations": {
+    "outline-color": "rgb(255, 255, 255)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-dark-violet\"] .button-border, [data-theme=\"theme-gray\"] .button-border, [data-theme=\"theme-white\"] .button-border",
+   "context": [],
+   "declarations": {
+    "box-shadow": "rgb(175, 150, 246) 0px 0px 0px 1px inset"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-gray\"] .button-border-hover, [data-theme=\"theme-white\"] .button-border-hover",
+   "context": [],
+   "declarations": {
+    "box-shadow": "rgb(128, 52, 191) 0px 0px 0px 1px inset"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-dark-violet\"] .button-border-hover",
+   "context": [],
+   "declarations": {
+    "box-shadow": "rgb(226, 220, 246) 0px 0px 0px 1px inset"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-white\"] .button-border-disabled",
+   "context": [],
+   "declarations": {
+    "box-shadow": "rgb(243, 243, 244) 0px 0px 0px 1px inset"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-gray\"] .button-border-disabled",
+   "context": [],
+   "declarations": {
+    "box-shadow": "rgb(222, 223, 226) 0px 0px 0px 1px inset"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-dark-violet\"] .button-border-disabled",
+   "context": [],
+   "declarations": {
+    "box-shadow": "rgb(91, 31, 118) 0px 0px 0px 1px inset"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-dark-violet\"] .button-surface-outline-hover, [data-theme=\"theme-gray\"] .button-surface-outline-hover, [data-theme=\"theme-white\"] .button-surface-outline-hover",
+   "context": [],
+   "declarations": {
+    "background-color": "rgba(226, 220, 246, 0.2)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-dark-violet\"] .button-surface-outline-active, [data-theme=\"theme-gray\"] .button-surface-outline-active, [data-theme=\"theme-white\"] .button-surface-outline-active",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(226, 220, 246)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-white\"] .button-surface-outline-disabled",
+   "context": [],
+   "declarations": {
+    "background-color": "rgba(255, 255, 255, 0.2)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-gray\"] .button-surface-outline-disabled",
+   "context": [],
+   "declarations": {
+    "background-color": "rgba(242, 242, 243, 0.2)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-dark-violet\"] .button-surface-outline-disabled",
+   "context": [],
+   "declarations": {
+    "background-color": "rgba(48, 12, 65, 0.2)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-dark-violet\"] .button-text-outline-active, [data-theme=\"theme-gray\"] .button-text-outline-active, [data-theme=\"theme-white\"] .button-text-outline-active",
+   "context": [],
+   "declarations": {
+    "color": "rgb(13, 29, 57)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-gray\"] .button-text-default, [data-theme=\"theme-white\"] .button-text-default",
+   "context": [],
+   "declarations": {
+    "color": "rgb(248, 241, 254)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-dark-violet\"] .button-text-default, [data-theme=\"theme-gray\"] .button-text-inverted, [data-theme=\"theme-white\"] .button-text-inverted",
+   "context": [],
+   "declarations": {
+    "color": "rgb(13, 29, 57)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-dark-violet\"] .button-text-inverted",
+   "context": [],
+   "declarations": {
+    "color": "rgb(255, 255, 255)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-white\"] .button-text-disabled",
+   "context": [],
+   "declarations": {
+    "color": "rgb(202, 204, 208)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-gray\"] .button-text-disabled",
+   "context": [],
+   "declarations": {
+    "color": "rgb(161, 165, 173)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-dark-violet\"] .button-text-disabled",
+   "context": [],
+   "declarations": {
+    "color": "rgb(91, 31, 118)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-gray\"] .button-surface-tab-hover, [data-theme=\"theme-white\"] .button-surface-tab-hover",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(243, 243, 244)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-dark-violet\"] .button-surface-tab-hover",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(91, 31, 118)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-gray\"] .button-text-tab, [data-theme=\"theme-white\"] .button-text-tab",
+   "context": [],
+   "declarations": {
+    "color": "rgb(91, 93, 99)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-dark-violet\"] .button-text-tab",
+   "context": [],
+   "declarations": {
+    "color": "rgb(208, 198, 240)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-gray\"] .button-text-tab-active, [data-theme=\"theme-white\"] .button-text-tab-active",
+   "context": [],
+   "declarations": {
+    "color": "rgb(13, 29, 57)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-dark-violet\"] .button-text-tab-active",
+   "context": [],
+   "declarations": {
+    "color": "rgb(240, 244, 254)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-gray\"] .icon-brand, [data-theme=\"theme-white\"] .icon-brand",
+   "context": [],
+   "declarations": {
+    "color": "rgb(13, 29, 57)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-dark-violet\"] .icon-brand",
+   "context": [],
+   "declarations": {
+    "color": "rgb(222, 233, 72)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-dark-violet\"] .icon-default, [data-theme=\"theme-gray\"] .icon-default, [data-theme=\"theme-gray\"] .icon-inverted, [data-theme=\"theme-white\"] .icon-default, [data-theme=\"theme-white\"] .icon-inverted",
+   "context": [],
+   "declarations": {
+    "color": "rgb(13, 29, 57)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-dark-violet\"] .icon-inverted",
+   "context": [],
+   "declarations": {
+    "color": "rgb(248, 241, 254)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-gray\"] .icon-action, [data-theme=\"theme-white\"] .icon-action",
+   "context": [],
+   "declarations": {
+    "color": "rgb(142, 146, 155)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-dark-violet\"] .icon-action",
+   "context": [],
+   "declarations": {
+    "color": "rgb(255, 255, 255)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-gray\"] .icon-action-hover, [data-theme=\"theme-white\"] .icon-action-hover",
+   "context": [],
+   "declarations": {
+    "color": "rgb(91, 93, 99)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-dark-violet\"] .icon-action-hover",
+   "context": [],
+   "declarations": {
+    "color": "rgb(248, 241, 254)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-gray\"] .icon-action-active, [data-theme=\"theme-white\"] .icon-action-active",
+   "context": [],
+   "declarations": {
+    "color": "rgb(91, 93, 99)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-dark-violet\"] .icon-action-active",
+   "context": [],
+   "declarations": {
+    "color": "rgb(248, 241, 254)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-gray\"] .icon-action-inactive, [data-theme=\"theme-white\"] .icon-action-inactive",
+   "context": [],
+   "declarations": {
+    "color": "rgb(142, 146, 155)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-dark-violet\"] .icon-action-inactive",
+   "context": [],
+   "declarations": {
+    "color": "rgb(226, 220, 246)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-gray\"] .icon-rating, [data-theme=\"theme-white\"] .icon-rating",
+   "context": [],
+   "declarations": {
+    "color": "rgb(0, 27, 56)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-dark-violet\"] .icon-rating",
+   "context": [],
+   "declarations": {
+    "color": "rgb(222, 233, 72)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-gray\"] .card-hover-highlight, [data-theme=\"theme-white\"] .card-hover-highlight",
+   "context": [],
+   "declarations": {
+    "box-shadow": "rgb(222, 233, 72) 0px 0px 0px 8px"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-dark-violet\"] .card-hover-highlight",
+   "context": [],
+   "declarations": {
+    "box-shadow": "rgb(168, 87, 241) 0px 0px 0px 8px"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-gray\"] .border-active, [data-theme=\"theme-white\"] .border-active",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(48, 12, 65)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-dark-violet\"] .border-active",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(248, 241, 254)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-gray\"] .border-l0, [data-theme=\"theme-white\"] .border-l0",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(222, 223, 226)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-dark-violet\"] .border-l0",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(128, 52, 191)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-gray\"] .border-l1, [data-theme=\"theme-white\"] .border-l1",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(202, 204, 208)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-dark-violet\"] .border-l1",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(168, 87, 241)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-gray\"] .border-l2, [data-theme=\"theme-white\"] .border-l2",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(161, 165, 173)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-dark-violet\"] .border-l2",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(179, 117, 244)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-gray\"] .visible-dark-theme-only, [data-theme=\"theme-white\"] .visible-dark-theme-only",
+   "context": [],
+   "declarations": {
+    "display": "none"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-dark-violet\"] .visible-dark-theme-only, [data-theme=\"theme-gray\"] .visible-light-theme-only, [data-theme=\"theme-white\"] .visible-light-theme-only",
+   "context": [],
+   "declarations": {
+    "display": "block"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-dark-violet\"] .visible-light-theme-only",
+   "context": [],
+   "declarations": {
+    "display": "none"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-white\"] .visible-theme-white-only",
+   "context": [],
+   "declarations": {
+    "display": "block"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-dark-violet\"] .visible-theme-white-only, [data-theme=\"theme-gray\"] .visible-theme-white-only, [data-theme=\"theme-white\"] .visible-theme-gray-only",
+   "context": [],
+   "declarations": {
+    "display": "none"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-gray\"] .visible-theme-gray-only",
+   "context": [],
+   "declarations": {
+    "display": "block"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-dark-violet\"] .visible-theme-gray-only, [data-theme=\"theme-gray\"] .visible-theme-dark-violet-only, [data-theme=\"theme-white\"] .visible-theme-dark-violet-only",
+   "context": [],
+   "declarations": {
+    "display": "none"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-dark-violet\"] .visible-theme-dark-violet-only",
+   "context": [],
+   "declarations": {
+    "display": "block"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".link-cover::before",
+   "context": [],
+   "declarations": {
+    "content": "\"\"",
+    "display": "block",
+    "position": "absolute",
+    "top": "0px",
+    "left": "0px",
+    "right": "0px",
+    "bottom": "0px"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".border-spacing-0",
+   "context": [],
+   "declarations": {
+    "-webkit-border-horizontal-spacing": "",
+    "-webkit-border-vertical-spacing": ""
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".rounded-10",
+   "context": [],
+   "declarations": {
+    "border-top-left-radius": "10px",
+    "border-top-right-radius": "10px",
+    "border-bottom-right-radius": "10px",
+    "border-bottom-left-radius": "10px"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".rounded-12",
+   "context": [],
+   "declarations": {
+    "border-top-left-radius": "12px",
+    "border-top-right-radius": "12px",
+    "border-bottom-right-radius": "12px",
+    "border-bottom-left-radius": "12px"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".rounded-16",
+   "context": [],
+   "declarations": {
+    "border-top-left-radius": "16px",
+    "border-top-right-radius": "16px",
+    "border-bottom-right-radius": "16px",
+    "border-bottom-left-radius": "16px"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".rounded-19",
+   "context": [],
+   "declarations": {
+    "border-top-left-radius": "19px",
+    "border-top-right-radius": "19px",
+    "border-bottom-right-radius": "19px",
+    "border-bottom-left-radius": "19px"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".rounded-20",
+   "context": [],
+   "declarations": {
+    "border-top-left-radius": "20px",
+    "border-top-right-radius": "20px",
+    "border-bottom-right-radius": "20px",
+    "border-bottom-left-radius": "20px"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".rounded-30",
+   "context": [],
+   "declarations": {
+    "border-top-left-radius": "30px",
+    "border-top-right-radius": "30px",
+    "border-bottom-right-radius": "30px",
+    "border-bottom-left-radius": "30px"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".rounded-4",
+   "context": [],
+   "declarations": {
+    "border-top-left-radius": "4px",
+    "border-top-right-radius": "4px",
+    "border-bottom-right-radius": "4px",
+    "border-bottom-left-radius": "4px"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".rounded-40",
+   "context": [],
+   "declarations": {
+    "border-top-left-radius": "40px",
+    "border-top-right-radius": "40px",
+    "border-bottom-right-radius": "40px",
+    "border-bottom-left-radius": "40px"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".rounded-6",
+   "context": [],
+   "declarations": {
+    "border-top-left-radius": "6px",
+    "border-top-right-radius": "6px",
+    "border-bottom-right-radius": "6px",
+    "border-bottom-left-radius": "6px"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".rounded-8",
+   "context": [],
+   "declarations": {
+    "border-top-left-radius": "8px",
+    "border-top-right-radius": "8px",
+    "border-bottom-right-radius": "8px",
+    "border-bottom-left-radius": "8px"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".border-r-0",
+   "context": [],
+   "declarations": {
+    "border-right-width": "0px"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".border-t-0",
+   "context": [],
+   "declarations": {
+    "border-top-width": "0px"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".border-t-2",
+   "context": [],
+   "declarations": {
+    "border-top-width": "2px"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".border-blue-200",
+   "context": [],
+   "declarations": {
+    "border-top-color": "",
+    "border-right-color": "",
+    "border-bottom-color": "",
+    "border-left-color": ""
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".border-blue-800",
+   "context": [],
+   "declarations": {
+    "border-top-color": "",
+    "border-right-color": "",
+    "border-bottom-color": "",
+    "border-left-color": ""
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".border-blue-900",
+   "context": [],
+   "declarations": {
+    "border-top-color": "",
+    "border-right-color": "",
+    "border-bottom-color": "",
+    "border-left-color": ""
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".border-citron-500",
+   "context": [],
+   "declarations": {
+    "border-top-color": "",
+    "border-right-color": "",
+    "border-bottom-color": "",
+    "border-left-color": ""
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".border-gray-100",
+   "context": [],
+   "declarations": {
+    "border-top-color": "",
+    "border-right-color": "",
+    "border-bottom-color": "",
+    "border-left-color": ""
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".border-gray-200",
+   "context": [],
+   "declarations": {
+    "border-top-color": "",
+    "border-right-color": "",
+    "border-bottom-color": "",
+    "border-left-color": ""
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".border-gray-300",
+   "context": [],
+   "declarations": {
+    "border-top-color": "",
+    "border-right-color": "",
+    "border-bottom-color": "",
+    "border-left-color": ""
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".border-gray-500",
+   "context": [],
+   "declarations": {
+    "border-top-color": "",
+    "border-right-color": "",
+    "border-bottom-color": "",
+    "border-left-color": ""
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".border-gray-700",
+   "context": [],
+   "declarations": {
+    "border-top-color": "",
+    "border-right-color": "",
+    "border-bottom-color": "",
+    "border-left-color": ""
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".border-green-700",
+   "context": [],
+   "declarations": {
+    "border-top-color": "",
+    "border-right-color": "",
+    "border-bottom-color": "",
+    "border-left-color": ""
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".border-green-800",
+   "context": [],
+   "declarations": {
+    "border-top-color": "",
+    "border-right-color": "",
+    "border-bottom-color": "",
+    "border-left-color": ""
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".border-pink-700",
+   "context": [],
+   "declarations": {
+    "border-top-color": "",
+    "border-right-color": "",
+    "border-bottom-color": "",
+    "border-left-color": ""
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".border-violet-100",
+   "context": [],
+   "declarations": {
+    "border-top-color": "",
+    "border-right-color": "",
+    "border-bottom-color": "",
+    "border-left-color": ""
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".border-violet-200",
+   "context": [],
+   "declarations": {
+    "border-top-color": "",
+    "border-right-color": "",
+    "border-bottom-color": "",
+    "border-left-color": ""
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".border-violet-300",
+   "context": [],
+   "declarations": {
+    "border-top-color": "",
+    "border-right-color": "",
+    "border-bottom-color": "",
+    "border-left-color": ""
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".border-violet-500",
+   "context": [],
+   "declarations": {
+    "border-top-color": "",
+    "border-right-color": "",
+    "border-bottom-color": "",
+    "border-left-color": ""
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".border-violet-700",
+   "context": [],
+   "declarations": {
+    "border-top-color": "",
+    "border-right-color": "",
+    "border-bottom-color": "",
+    "border-left-color": ""
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".border-violet-800",
+   "context": [],
+   "declarations": {
+    "border-top-color": "",
+    "border-right-color": "",
+    "border-bottom-color": "",
+    "border-left-color": ""
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".border-opacity-40",
+   "context": [],
+   "declarations": {}
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".bg-blue-100",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(240 244 254/var(--tw-bg-opacity,1))"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".bg-blue-1000",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(0 27 56/var(--tw-bg-opacity,1))"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".bg-blue-200",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(212 223 252/var(--tw-bg-opacity,1))"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".bg-blue-300",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(183 204 250/var(--tw-bg-opacity,1))"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".bg-blue-800",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(13 56 131/var(--tw-bg-opacity,1))"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".bg-blue-900",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(13 29 57/var(--tw-bg-opacity,1))"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".bg-citron-100",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(238 252 151/var(--tw-bg-opacity,1))"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".bg-citron-500",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(222 233 72/var(--tw-bg-opacity,1))"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".bg-gray-100",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(243 243 244/var(--tw-bg-opacity,1))"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".bg-gray-200",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(222 223 226/var(--tw-bg-opacity,1))"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".bg-gray-300",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(202 204 208/var(--tw-bg-opacity,1))"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".bg-gray-400",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(161 165 173/var(--tw-bg-opacity,1))"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".bg-gray-50",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(249 250 251/var(--tw-bg-opacity,1))"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".bg-gray-500\\/40",
+   "context": [],
+   "declarations": {
+    "background-color": "rgba(141, 145, 154, 0.4)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".bg-gray-900",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(28 30 32/var(--tw-bg-opacity,1))"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".bg-gray-950",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(8 7 9/var(--tw-bg-opacity,1))"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".bg-green-100",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(230 248 240/var(--tw-bg-opacity,1))"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".bg-green-200",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(193 232 207/var(--tw-bg-opacity,1))"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".bg-green-300",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(158 217 179/var(--tw-bg-opacity,1))"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".bg-green-400",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(82 185 107/var(--tw-bg-opacity,1))"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".bg-green-700",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(44 104 69/var(--tw-bg-opacity,1))"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".bg-green-800",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(26 68 44/var(--tw-bg-opacity,1))"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".bg-green-900",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(10 34 20/var(--tw-bg-opacity,1))"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".bg-neutral-200",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(229 229 229/var(--tw-bg-opacity,1))"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".bg-orange-100",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(255 237 213/var(--tw-bg-opacity,1))"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".bg-orange-200",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(254 215 170/var(--tw-bg-opacity,1))"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".bg-pink-100",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(252 240 249/var(--tw-bg-opacity,1))"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".bg-pink-200",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(246 214 237/var(--tw-bg-opacity,1))"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".bg-pink-700",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(169 31 125/var(--tw-bg-opacity,1))"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".bg-pink-800",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(111 18 88/var(--tw-bg-opacity,1))"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".bg-pink-900",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(61 5 43/var(--tw-bg-opacity,1))"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".bg-salmon-200",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(254 215 210/var(--tw-bg-opacity,1))"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".bg-salmon-950",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(68 2 0/var(--tw-bg-opacity,1))"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".bg-violet-100",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(248 241 254/var(--tw-bg-opacity,1))"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".bg-violet-1000",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(36 6 49/var(--tw-bg-opacity,1))"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".bg-violet-200",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(226 220 246/var(--tw-bg-opacity,1))"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".bg-violet-300",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(208 198 240/var(--tw-bg-opacity,1))"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".bg-violet-400",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(175 150 246/var(--tw-bg-opacity,1))"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".bg-violet-50",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(245 243 255/var(--tw-bg-opacity,1))"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".bg-violet-600",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(168 87 241/var(--tw-bg-opacity,1))"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".bg-violet-700",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(128 52 191/var(--tw-bg-opacity,1))"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".bg-violet-800",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(91 31 118/var(--tw-bg-opacity,1))"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".bg-violet-900",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(48 12 65/var(--tw-bg-opacity,1))"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".bg-white-100",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(245 245 245/var(--tw-bg-opacity,1))"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".bg-yellow-200",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(244 222 155/var(--tw-bg-opacity,1))"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".bg-yellow-900",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(58 16 0/var(--tw-bg-opacity,1))"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".bg-opacity-40",
+   "context": [],
+   "declarations": {}
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".bg-opacity-50",
+   "context": [],
+   "declarations": {}
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".from-amber-100",
+   "context": [],
+   "declarations": {}
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".from-emerald-100",
+   "context": [],
+   "declarations": {}
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".from-sky-100",
+   "context": [],
+   "declarations": {}
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".from-violet-100",
+   "context": [],
+   "declarations": {}
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".from-violet-800",
+   "context": [],
+   "declarations": {}
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".via-blue-50",
+   "context": [],
+   "declarations": {}
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".via-fuchsia-50",
+   "context": [],
+   "declarations": {}
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".via-orange-50",
+   "context": [],
+   "declarations": {}
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".via-teal-50",
+   "context": [],
+   "declarations": {}
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".to-cyan-100",
+   "context": [],
+   "declarations": {}
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".to-indigo-100",
+   "context": [],
+   "declarations": {}
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".to-purple-100",
+   "context": [],
+   "declarations": {}
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".to-rose-100",
+   "context": [],
+   "declarations": {}
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".to-violet-900",
+   "context": [],
+   "declarations": {}
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".fill-violet-500",
+   "context": [],
+   "declarations": {
+    "fill": "rgb(179, 117, 244)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".fill-violet-600",
+   "context": [],
+   "declarations": {
+    "fill": "rgb(168, 87, 241)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".stroke-blue-900",
+   "context": [],
+   "declarations": {
+    "stroke": "rgb(13, 29, 57)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".text-caption1",
+   "context": [],
+   "declarations": {
+    "font-size": "15px",
+    "line-height": "21px",
+    "letter-spacing": "0.015em"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".text-caption2",
+   "context": [],
+   "declarations": {
+    "font-size": "12px",
+    "line-height": "16px",
+    "letter-spacing": "0.02em"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".text-display1",
+   "context": [],
+   "declarations": {
+    "font-size": "62px",
+    "line-height": "68px",
+    "letter-spacing": "-0.02em",
+    "font-weight": "500"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".text-display3",
+   "context": [],
+   "declarations": {
+    "font-size": "42px",
+    "line-height": "52px",
+    "letter-spacing": "-0.0175em",
+    "font-weight": "500"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".text-h1",
+   "context": [],
+   "declarations": {
+    "font-size": "36px",
+    "line-height": "42px",
+    "letter-spacing": "-0.0175em",
+    "font-weight": "500"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".text-h2",
+   "context": [],
+   "declarations": {
+    "font-size": "30px",
+    "line-height": "36px",
+    "letter-spacing": "-0.015em",
+    "font-weight": "500"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".text-h3",
+   "context": [],
+   "declarations": {
+    "font-size": "25px",
+    "line-height": "30px",
+    "letter-spacing": "-0.01em",
+    "font-weight": "500"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".text-h4",
+   "context": [],
+   "declarations": {
+    "font-size": "20px",
+    "line-height": "28px",
+    "letter-spacing": "0.0025em"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".text-micro1",
+   "context": [],
+   "declarations": {
+    "font-size": "15px",
+    "line-height": "21px",
+    "letter-spacing": "0.06em"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".text-micro2",
+   "context": [],
+   "declarations": {
+    "font-size": "12px",
+    "line-height": "16px",
+    "letter-spacing": "0.06em"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".text-micro3",
+   "context": [],
+   "declarations": {
+    "font-size": "14.5px",
+    "line-height": "20px",
+    "letter-spacing": "0.06em"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".text-p1",
+   "context": [],
+   "declarations": {
+    "font-size": "20px",
+    "line-height": "28px"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".text-p1, .text-p2",
+   "context": [],
+   "declarations": {
+    "letter-spacing": "0.0025em"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".text-p2",
+   "context": [],
+   "declarations": {
+    "font-size": "17px",
+    "line-height": "26px"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".text-blue-100",
+   "context": [],
+   "declarations": {
+    "color": "rgb(240 244 254/var(--tw-text-opacity,1))"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".text-blue-1000",
+   "context": [],
+   "declarations": {
+    "color": "rgb(0 27 56/var(--tw-text-opacity,1))"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".text-blue-300",
+   "context": [],
+   "declarations": {
+    "color": "rgb(183 204 250/var(--tw-text-opacity,1))"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".text-blue-600",
+   "context": [],
+   "declarations": {
+    "color": "rgb(50 126 234/var(--tw-text-opacity,1))"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".text-blue-700",
+   "context": [],
+   "declarations": {
+    "color": "rgb(22 88 191/var(--tw-text-opacity,1))"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".text-blue-800",
+   "context": [],
+   "declarations": {
+    "color": "rgb(13 56 131/var(--tw-text-opacity,1))"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".text-blue-900",
+   "context": [],
+   "declarations": {
+    "color": "rgb(13 29 57/var(--tw-text-opacity,1))"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".text-blue-950",
+   "context": [],
+   "declarations": {
+    "color": "rgb(27 27 27/var(--tw-text-opacity,1))"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".text-citron-500",
+   "context": [],
+   "declarations": {
+    "color": "rgb(222 233 72/var(--tw-text-opacity,1))"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".text-citron-900",
+   "context": [],
+   "declarations": {
+    "color": "rgb(29 31 4/var(--tw-text-opacity,1))"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".text-gray-100",
+   "context": [],
+   "declarations": {
+    "color": "rgb(243 243 244/var(--tw-text-opacity,1))"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".text-gray-200",
+   "context": [],
+   "declarations": {
+    "color": "rgb(222 223 226/var(--tw-text-opacity,1))"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".text-gray-500",
+   "context": [],
+   "declarations": {
+    "color": "rgb(142 146 155/var(--tw-text-opacity,1))"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".text-gray-600",
+   "context": [],
+   "declarations": {
+    "color": "rgb(124 128 136/var(--tw-text-opacity,1))"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".text-gray-700",
+   "context": [],
+   "declarations": {
+    "color": "rgb(91 93 99/var(--tw-text-opacity,1))"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".text-gray-800",
+   "context": [],
+   "declarations": {
+    "color": "rgb(58 60 64/var(--tw-text-opacity,1))"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".text-gray-900",
+   "context": [],
+   "declarations": {
+    "color": "rgb(28 30 32/var(--tw-text-opacity,1))"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".text-gray-950",
+   "context": [],
+   "declarations": {
+    "color": "rgb(8 7 9/var(--tw-text-opacity,1))"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".text-green-200",
+   "context": [],
+   "declarations": {
+    "color": "rgb(193 232 207/var(--tw-text-opacity,1))"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".text-green-300",
+   "context": [],
+   "declarations": {
+    "color": "rgb(158 217 179/var(--tw-text-opacity,1))"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".text-green-500",
+   "context": [],
+   "declarations": {
+    "color": "rgb(72 164 95/var(--tw-text-opacity,1))"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".text-green-800",
+   "context": [],
+   "declarations": {
+    "color": "rgb(26 68 44/var(--tw-text-opacity,1))"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".text-green-900",
+   "context": [],
+   "declarations": {
+    "color": "rgb(10 34 20/var(--tw-text-opacity,1))"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".text-indigo-50",
+   "context": [],
+   "declarations": {
+    "color": "rgb(238 242 255/var(--tw-text-opacity,1))"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".text-pink-200",
+   "context": [],
+   "declarations": {
+    "color": "rgb(246 214 237/var(--tw-text-opacity,1))"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".text-pink-300",
+   "context": [],
+   "declarations": {
+    "color": "rgb(240 188 228/var(--tw-text-opacity,1))"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".text-pink-400",
+   "context": [],
+   "declarations": {
+    "color": "rgb(247 119 209/var(--tw-text-opacity,1))"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".text-pink-800",
+   "context": [],
+   "declarations": {
+    "color": "rgb(111 18 88/var(--tw-text-opacity,1))"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".text-red-500",
+   "context": [],
+   "declarations": {
+    "color": "rgb(239 68 68/var(--tw-text-opacity,1))"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".text-salmon-800",
+   "context": [],
+   "declarations": {
+    "color": "rgb(125 8 0/var(--tw-text-opacity,1))"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".text-violet-100",
+   "context": [],
+   "declarations": {
+    "color": "rgb(248 241 254/var(--tw-text-opacity,1))"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".text-violet-1000",
+   "context": [],
+   "declarations": {
+    "color": "rgb(36 6 49/var(--tw-text-opacity,1))"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".text-violet-200",
+   "context": [],
+   "declarations": {
+    "color": "rgb(226 220 246/var(--tw-text-opacity,1))"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".text-violet-300",
+   "context": [],
+   "declarations": {
+    "color": "rgb(208 198 240/var(--tw-text-opacity,1))"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".text-violet-400",
+   "context": [],
+   "declarations": {
+    "color": "rgb(175 150 246/var(--tw-text-opacity,1))"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".text-violet-800",
+   "context": [],
+   "declarations": {
+    "color": "rgb(91 31 118/var(--tw-text-opacity,1))"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".text-violet-900",
+   "context": [],
+   "declarations": {
+    "color": "rgb(48 12 65/var(--tw-text-opacity,1))"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".text-yellow-800",
+   "context": [],
+   "declarations": {
+    "color": "rgb(104 40 0/var(--tw-text-opacity,1))"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".outline-violet-200",
+   "context": [],
+   "declarations": {
+    "outline-color": "rgb(226, 220, 246)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".outline-violet-500",
+   "context": [],
+   "declarations": {
+    "outline-color": "rgb(179, 117, 244)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".duration-1000",
+   "context": [],
+   "declarations": {
+    "transition-duration": "1s"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".duration-200",
+   "context": [],
+   "declarations": {
+    "transition-duration": "0.2s"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".duration-300",
+   "context": [],
+   "declarations": {
+    "transition-duration": "0.3s"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".duration-400",
+   "context": [],
+   "declarations": {
+    "transition-duration": "0.4s"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".duration-500",
+   "context": [],
+   "declarations": {
+    "transition-duration": "0.5s"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".duration-600",
+   "context": [],
+   "declarations": {
+    "transition-duration": "0.6s"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".duration-800",
+   "context": [],
+   "declarations": {
+    "transition-duration": "0.8s"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".ease-appear",
+   "context": [],
+   "declarations": {
+    "transition-timing-function": "cubic-bezier(0.16, 1, 0.3, 1)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".ease-in-out-cubic",
+   "context": [],
+   "declarations": {
+    "transition-timing-function": "cubic-bezier(0.645, 0.045, 0.355, 1)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".ease-in-out-quad",
+   "context": [],
+   "declarations": {
+    "transition-timing-function": "cubic-bezier(0.455, 0.03, 0.515, 0.955)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": ".ease-in-quad",
+   "context": [],
+   "declarations": {
+    "transition-timing-function": "cubic-bezier(0.55, 0.085, 0.68, 0.53)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-white\"] .placeholder\\:text-primary-inactive::placeholder",
+   "context": [],
+   "declarations": {
+    "color": "rgb(142, 146, 155)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-gray\"] .placeholder\\:text-primary-inactive::placeholder",
+   "context": [],
+   "declarations": {
+    "color": "rgb(142, 146, 155)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-dark-violet\"] .placeholder\\:text-primary-inactive::placeholder",
+   "context": [],
+   "declarations": {
+    "color": "rgb(208, 198, 240)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-gray\"] .hover\\:text-primary:hover, [data-theme=\"theme-white\"] .hover\\:text-primary:hover",
+   "context": [],
+   "declarations": {
+    "color": "rgb(13, 29, 57)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-dark-violet\"] .hover\\:text-primary:hover",
+   "context": [],
+   "declarations": {
+    "color": "rgb(248, 241, 254)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-gray\"] .hover\\:surface-l1-active:hover, [data-theme=\"theme-white\"] .hover\\:surface-l1-active:hover",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(222, 223, 226)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-dark-violet\"] .hover\\:surface-l1-active:hover",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(128, 52, 191)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-gray\"] .hover\\:surface-l2-active:hover, [data-theme=\"theme-white\"] .hover\\:surface-l2-active:hover",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(222, 223, 226)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-dark-violet\"] .hover\\:surface-l2-active:hover",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(168, 87, 241)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-gray\"] .hover\\:surface-l3-active:hover, [data-theme=\"theme-white\"] .hover\\:surface-l3-active:hover",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(222, 223, 226)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-dark-violet\"] .hover\\:surface-l3-active:hover",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(179, 117, 244)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-gray\"] .hover\\:button-surface-active:hover, [data-theme=\"theme-white\"] .hover\\:button-surface-active:hover",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(91, 31, 118)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-dark-violet\"] .hover\\:button-surface-active:hover",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(211, 209, 64)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-white\"] .hover\\:button-surface-disabled:hover",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(243, 243, 244)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-gray\"] .hover\\:button-surface-disabled:hover",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(222, 223, 226)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-dark-violet\"] .hover\\:button-surface-disabled:hover",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(36, 6, 49)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-gray\"] .hover\\:button-border-hover:hover, [data-theme=\"theme-white\"] .hover\\:button-border-hover:hover",
+   "context": [],
+   "declarations": {
+    "box-shadow": "rgb(128, 52, 191) 0px 0px 0px 1px inset"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-dark-violet\"] .hover\\:button-border-hover:hover",
+   "context": [],
+   "declarations": {
+    "box-shadow": "rgb(226, 220, 246) 0px 0px 0px 1px inset"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-white\"] .hover\\:button-border-disabled:hover",
+   "context": [],
+   "declarations": {
+    "box-shadow": "rgb(243, 243, 244) 0px 0px 0px 1px inset"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-gray\"] .hover\\:button-border-disabled:hover",
+   "context": [],
+   "declarations": {
+    "box-shadow": "rgb(222, 223, 226) 0px 0px 0px 1px inset"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-dark-violet\"] .hover\\:button-border-disabled:hover",
+   "context": [],
+   "declarations": {
+    "box-shadow": "rgb(91, 31, 118) 0px 0px 0px 1px inset"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-dark-violet\"] .hover\\:button-surface-outline-hover:hover, [data-theme=\"theme-gray\"] .hover\\:button-surface-outline-hover:hover, [data-theme=\"theme-white\"] .hover\\:button-surface-outline-hover:hover",
+   "context": [],
+   "declarations": {
+    "background-color": "rgba(226, 220, 246, 0.2)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-white\"] .hover\\:button-surface-outline-disabled:hover",
+   "context": [],
+   "declarations": {
+    "background-color": "rgba(255, 255, 255, 0.2)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-gray\"] .hover\\:button-surface-outline-disabled:hover",
+   "context": [],
+   "declarations": {
+    "background-color": "rgba(242, 242, 243, 0.2)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-dark-violet\"] .hover\\:button-surface-outline-disabled:hover",
+   "context": [],
+   "declarations": {
+    "background-color": "rgba(48, 12, 65, 0.2)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-white\"] .hover\\:button-text-disabled:hover",
+   "context": [],
+   "declarations": {
+    "color": "rgb(202, 204, 208)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-gray\"] .hover\\:button-text-disabled:hover",
+   "context": [],
+   "declarations": {
+    "color": "rgb(161, 165, 173)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-dark-violet\"] .hover\\:button-text-disabled:hover",
+   "context": [],
+   "declarations": {
+    "color": "rgb(91, 31, 118)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-gray\"] .hover\\:button-surface-tab-hover:hover, [data-theme=\"theme-white\"] .hover\\:button-surface-tab-hover:hover",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(243, 243, 244)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-dark-violet\"] .hover\\:button-surface-tab-hover:hover",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(91, 31, 118)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-gray\"] .hover\\:button-text-tab-active:hover, [data-theme=\"theme-white\"] .hover\\:button-text-tab-active:hover",
+   "context": [],
+   "declarations": {
+    "color": "rgb(13, 29, 57)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-dark-violet\"] .hover\\:button-text-tab-active:hover",
+   "context": [],
+   "declarations": {
+    "color": "rgb(240, 244, 254)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-gray\"] .hover\\:icon-action-hover:hover, [data-theme=\"theme-white\"] .hover\\:icon-action-hover:hover",
+   "context": [],
+   "declarations": {
+    "color": "rgb(91, 93, 99)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-dark-violet\"] .hover\\:icon-action-hover:hover",
+   "context": [],
+   "declarations": {
+    "color": "rgb(248, 241, 254)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-gray\"] .hover\\:card-hover-highlight:hover, [data-theme=\"theme-white\"] .hover\\:card-hover-highlight:hover",
+   "context": [],
+   "declarations": {
+    "box-shadow": "rgb(222, 233, 72) 0px 0px 0px 8px"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-dark-violet\"] .hover\\:card-hover-highlight:hover",
+   "context": [],
+   "declarations": {
+    "box-shadow": "rgb(168, 87, 241) 0px 0px 0px 8px"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-white\"] .focus-visible\\:button-focus:focus-visible",
+   "context": [],
+   "declarations": {
+    "outline-color": "rgb(48, 12, 65)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-gray\"] .focus-visible\\:button-focus:focus-visible",
+   "context": [],
+   "declarations": {
+    "outline-color": "rgb(48, 12, 65)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-dark-violet\"] .focus-visible\\:button-focus:focus-visible",
+   "context": [],
+   "declarations": {
+    "outline-color": "rgb(255, 255, 255)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-white\"] .active\\:button-surface-disabled:active",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(243, 243, 244)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-gray\"] .active\\:button-surface-disabled:active",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(222, 223, 226)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-dark-violet\"] .active\\:button-surface-disabled:active",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(36, 6, 49)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-white\"] .active\\:button-border-disabled:active",
+   "context": [],
+   "declarations": {
+    "box-shadow": "rgb(243, 243, 244) 0px 0px 0px 1px inset"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-gray\"] .active\\:button-border-disabled:active",
+   "context": [],
+   "declarations": {
+    "box-shadow": "rgb(222, 223, 226) 0px 0px 0px 1px inset"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-dark-violet\"] .active\\:button-border-disabled:active",
+   "context": [],
+   "declarations": {
+    "box-shadow": "rgb(91, 31, 118) 0px 0px 0px 1px inset"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-dark-violet\"] .active\\:button-surface-outline-active:active, [data-theme=\"theme-gray\"] .active\\:button-surface-outline-active:active, [data-theme=\"theme-white\"] .active\\:button-surface-outline-active:a",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(226, 220, 246)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-white\"] .active\\:button-surface-outline-disabled:active",
+   "context": [],
+   "declarations": {
+    "background-color": "rgba(255, 255, 255, 0.2)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-gray\"] .active\\:button-surface-outline-disabled:active",
+   "context": [],
+   "declarations": {
+    "background-color": "rgba(242, 242, 243, 0.2)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-dark-violet\"] .active\\:button-surface-outline-disabled:active",
+   "context": [],
+   "declarations": {
+    "background-color": "rgba(48, 12, 65, 0.2)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-dark-violet\"] .active\\:button-text-outline-active:active, [data-theme=\"theme-gray\"] .active\\:button-text-outline-active:active, [data-theme=\"theme-white\"] .active\\:button-text-outline-active:active",
+   "context": [],
+   "declarations": {
+    "color": "rgb(13, 29, 57)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-white\"] .active\\:button-text-disabled:active",
+   "context": [],
+   "declarations": {
+    "color": "rgb(202, 204, 208)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-gray\"] .active\\:button-text-disabled:active",
+   "context": [],
+   "declarations": {
+    "color": "rgb(161, 165, 173)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-dark-violet\"] .active\\:button-text-disabled:active",
+   "context": [],
+   "declarations": {
+    "color": "rgb(91, 31, 118)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-white\"] .group:hover .group-hover\\:surface-l1",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(243, 243, 244)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-gray\"] .group:hover .group-hover\\:surface-l1",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(255, 255, 255)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-dark-violet\"] .group:hover .group-hover\\:surface-l1",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(91, 31, 118)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-gray\"] .group:hover .group-hover\\:surface-l1-hover, [data-theme=\"theme-white\"] .group:hover .group-hover\\:surface-l1-hover",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(222, 223, 226)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-dark-violet\"] .group:hover .group-hover\\:surface-l1-hover",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(128, 52, 191)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-gray\"] .group:hover .group-hover\\:surface-l1-active, [data-theme=\"theme-white\"] .group:hover .group-hover\\:surface-l1-active",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(222, 223, 226)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-dark-violet\"] .group:hover .group-hover\\:surface-l1-active",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(128, 52, 191)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-dark-violet\"] .group:hover .group-hover\\:surface-highlight, [data-theme=\"theme-gray\"] .group:hover .group-hover\\:surface-highlight, [data-theme=\"theme-white\"] .group:hover .group-hover\\:surface-highlig",
+   "context": [],
+   "declarations": {
+    "background-color": "rgb(222, 233, 72)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-gray\"] .group:hover .group-hover\\:icon-action-active, [data-theme=\"theme-white\"] .group:hover .group-hover\\:icon-action-active",
+   "context": [],
+   "declarations": {
+    "color": "rgb(91, 93, 99)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-dark-violet\"] .group:hover .group-hover\\:icon-action-active",
+   "context": [],
+   "declarations": {
+    "color": "rgb(248, 241, 254)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-white\"] .max-lg\\:surface-l0",
+   "context": [
+    "@media not all and (min-width: 1000px)"
+   ],
+   "declarations": {
+    "background-color": "rgb(255, 255, 255)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-gray\"] .max-lg\\:surface-l0",
+   "context": [
+    "@media not all and (min-width: 1000px)"
+   ],
+   "declarations": {
+    "background-color": "rgb(243, 243, 244)"
+   }
+  },
+  {
+   "file": "marketing front.com/_next/static/css/6c5f2edacdfdbd90.css",
+   "selector": "[data-theme=\"theme-dark-violet\"] .max-lg\\:surface-l0",
+   "context": [
+    "@media not all and (min-width: 1000px)"
+   ],
+   "declarations": {
+    "background-color": "rgb(48, 12, 65)"
+   }
+  }
+ ]
+}

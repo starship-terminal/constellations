@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 167,
-    "system_domains": 159,
-    "matched_domains": 130,
-    "missing_domains": 303,
+    "system_packages": 169,
+    "system_domains": 161,
+    "matched_domains": 132,
+    "missing_domains": 301,
     "system_domains_absent_from_catalog": 29
   },
   "matched": {
@@ -832,6 +832,23 @@
           "slug": "chatgpt",
           "name": "ChatGPT",
           "url": "https://chatgpt.com",
+          "name_match": true
+        }
+      ]
+    },
+    "classpass.com": {
+      "catalog": [
+        {
+          "name": "ClassPass",
+          "domain": "classpass.com",
+          "id": 256
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "classpass",
+          "name": "ClassPass",
+          "url": "https://classpass.com",
           "name_match": true
         }
       ]
@@ -2021,6 +2038,23 @@
         }
       ]
     },
+    "front.com": {
+      "catalog": [
+        {
+          "name": "Front",
+          "domain": "front.com",
+          "id": 23
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "front",
+          "name": "Front",
+          "url": "https://front.com",
+          "name_match": true
+        }
+      ]
+    },
     "getfernand.com": {
       "catalog": [
         {
@@ -2298,13 +2332,6 @@
         "id": 284
       }
     ],
-    "classpass.com": [
-      {
-        "name": "ClassPass",
-        "domain": "classpass.com",
-        "id": 256
-      }
-    ],
     "clay.earth": [
       {
         "name": "Clay",
@@ -2429,13 +2456,6 @@
         "name": "Hims",
         "domain": "forhims.co.uk",
         "id": 234
-      }
-    ],
-    "front.com": [
-      {
-        "name": "Front",
-        "domain": "front.com",
-        "id": 23
       }
     ],
     "gemini.google": [

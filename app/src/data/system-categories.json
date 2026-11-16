@@ -954,6 +954,12 @@
     "reason": "catalog.json describes a guided-journal app: a marketing site for journaling flows, prompts library, pricing and a mobile-app download."
   },
   {
+    "referenceId": "systems:classpass",
+    "groupId": "web-categories",
+    "labels": ["Health & Wellness", "Marketplace"],
+    "reason": "catalog.json describes a fitness-and-wellness booking marketplace: studio search with filter pills and venue cards, a credits-plan carousel, gift, corporate-wellness and studio-partner pages."
+  },
+  {
     "referenceId": "systems:framer",
     "groupId": "web-categories",
     "labels": ["Design & Media Editing", "Productivity"],
@@ -1000,5 +1006,11 @@
     "groupId": "web-categories",
     "labels": ["Collaboration Tools", "Design & Media Editing"],
     "reason": "catalog.json describes a video review-and-collaboration product: marketing and feature pages, a pricing grid, customer and integration indexes, a contact form and the accounts sign-in surface."
+  },
+  {
+    "referenceId": "systems:front",
+    "groupId": "web-categories",
+    "labels": ["Communication Tools", "Business"],
+    "reason": "catalog.json describes an AI customer-operations platform: a shared-inbox/omnichannel product (email, chat, channels), customer-service marketing, pricing tiers, a help centre and developer docs."
   }
 ]
