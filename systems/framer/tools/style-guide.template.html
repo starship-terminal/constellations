@@ -9,6 +9,10 @@
 :root {
 /*CORE*/
 /*LIGHT*/
+  /* guide chrome scaffolding — the page's own paint, not tokens */
+  --fg-1: #fafafa; --fg-2: #a0a0a0; --fg-3: #6f6f6f;
+  --surface-0: #0c0c0c; --surface-1: #121212;
+  --line-1: #1c1c1c; --line-2: #282828;
   --sg-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --sg-serif: var(--sg-sans);
   --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
@@ -38,19 +42,19 @@ code { font-family: var(--sg-mono); font-size: .9em; }
 .kv b { font-weight: 500; }
 .kv span { color: var(--fg-3, #6f6f6f); }
 /* ---- mocks ---- */
-.mock { border: 1px solid var(--line-2, #282828); overflow: hidden; background: var(--surface-0, #0c0c0c); border-radius: var(--radius-default, 12px); }
+.mock { border: 1px solid var(--line-2, #282828); overflow: hidden; background: var(--surface-0, #0c0c0c); border-radius: 12px; }
 .navbar { display: flex; align-items: center; gap: 22px; height: var(--component-topbar-height, 64px); padding: 0 12px 0 22px; font-size: 15px; color: var(--fg-2, #a0a0a0); background: var(--surface-0, #0c0c0c); box-shadow: var(--line-1, #1c1c1c) 0 -1px 0 0 inset; }
 .navbar .wm { font-weight: 600; font-size: 17px; letter-spacing: -0.02em; color: var(--fg-1, #fafafa); font-style: italic; }
 .navbar .sp { flex: 1; }
-.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-cta-height, 40px); padding: 0 18px; font-size: 15px; font-weight: 500; border-radius: var(--radius-control, 9999px); border: 1px solid transparent; }
-.btn.primary { background: var(--action-ctaFill, var(--brand-highlight, #cacaca)); color: var(--action-ctaInk, var(--brand-fg, #090909)); }
-.btn.ghost { background: var(--control-light, rgba(250,250,250,.06)); color: var(--fg-1, #fafafa); }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-cta-height, 30px); padding: 0 18px; font-size: 15px; font-weight: 500; border-radius: var(--radius-measured-cta, 8px); border: 1px solid transparent; }
+.btn.primary { background: var(--color-action-ctaFill, #cacaca); color: var(--color-action-ctaInk, #090909); }
+.btn.ghost { background: var(--color-action-heroGhost, rgba(255,255,255,.1)); color: var(--fg-1, #fafafa); }
 .btn.small { height: 32px; font-size: 13px; font-weight: 500; }
 .hero { color: var(--fg-1, #fafafa); padding: 80px 40px; font: 600 var(--font-size-measured-hero, 60px)/1.15 var(--sg-serif); letter-spacing: -0.02em; text-align: left; background: var(--surface-0, #0c0c0c); }
 .hero small { display: block; font: 400 18px/1.5 var(--sg-sans); color: var(--fg-2, #a0a0a0); margin: 20px 0 26px; max-width: 46ch; }
 .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
-.tile { border: 1px solid var(--line-2, #282828); border-radius: var(--radius-default, 12px); padding: 14px; font-size: 13px; background: var(--surface-1, #121212); }
-.tile .img { height: 140px; background: var(--fill, rgba(250,250,250,.0485)); border-radius: 8px; margin-bottom: 10px; display: flex; align-items: flex-end; padding: 10px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--fg-3, #6f6f6f); }
+.tile { border: 1px solid var(--line-2, #282828); border-radius: var(--radius-measured-planCard, 12px); padding: 14px; font-size: 13px; background: var(--surface-1, #121212); }
+.tile .img { height: 140px; background: var(--color-palette-alpha-white-5, rgba(255,255,255,.0485)); border-radius: 8px; margin-bottom: 10px; display: flex; align-items: flex-end; padding: 10px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--fg-3, #6f6f6f); }
 .tile b { display: block; font: 600 20px/1.2 var(--sg-serif); margin-bottom: 4px; color: var(--fg-1, #fafafa); }
 .tile .sub { color: var(--fg-3, #6f6f6f); font-size: 12px; }
 table.cmp { border-collapse: collapse; font-size: 14px; }
@@ -58,11 +62,12 @@ table.cmp td, table.cmp th { border: 1px solid var(--line-2, #282828); padding: 
 .tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--line-1, #1c1c1c); }
 .tr .ts { font-family: var(--sg-serif); }
 .tr .tv { font-size: 12px; color: var(--fg-3, #6f6f6f); font-family: var(--sg-mono); }
-.field { display: block; width: 280px; height: var(--component-login-field-height, 40px); padding: 0 14px; border: 1px solid var(--line-2, #282828); border-radius: var(--radius-default, 12px); background: var(--control-light, rgba(250,250,250,.06)); font-size: 15px; color: var(--fg-1, #fafafa); }
-.badge { display: inline-flex; align-items: center; height: 22px; padding: 0 8px; border-radius: var(--radius-control, 9999px); background: var(--brand-tint, rgba(173,173,173,.18)); color: var(--brand-text, #adadad); font-size: 12px; font-weight: 500; }
-.switch { display: inline-flex; align-items: center; width: var(--component-switch-width, 36px); height: var(--component-switch-height, 20px); border-radius: 9999px; background: var(--action-switchTrack, var(--fill-strong, rgba(250,250,250,.0873))); padding: 2px; }
+.field { display: block; width: 280px; height: var(--component-login-field-height, 40px); padding: 0 14px; border: 1px solid var(--color-palette-alpha-black-10, rgba(0,0,0,.1)); border-radius: var(--radius-measured-field, 8px); background: linear-gradient(var(--color-form-fieldBg, rgba(0,0,0,.05)), var(--color-form-fieldBg, rgba(0,0,0,.05))), var(--color-surface-loginPanel, #fff); font-size: 15px; color: var(--color-form-fieldInk, #222); }
+.field::placeholder { color: var(--color-form-placeholder, #999); }
+.badge { display: inline-flex; align-items: center; height: 22px; padding: 0 8px; border-radius: var(--radius-measured-chip, 8px); background: var(--color-palette-alpha-white-15, rgba(255,255,255,.15)); color: var(--color-palette-alpha-white-80, #adadad); font-size: 12px; font-weight: 500; }
+.switch { display: inline-flex; align-items: center; width: var(--component-switch-width, 36px); height: var(--component-switch-height, 20px); border-radius: 9999px; background: var(--color-palette-alpha-white-10, rgba(255,255,255,.1)); padding: 2px; }
 .switch i { width: 16px; height: 16px; border-radius: 50%; background: var(--fg-1, #fafafa); }
-.chip { display: inline-flex; align-items: center; gap: 6px; height: var(--component-chip-height, 28px); padding: 0 12px; border-radius: var(--radius-control, 9999px); background: var(--control-light, rgba(250,250,250,.06)); color: var(--chip-fg-unselected, #868686); font-size: 13px; }
+.chip { display: inline-flex; align-items: center; gap: 6px; height: var(--component-gallery-filter-height, 30px); padding: 0 12px; border-radius: var(--radius-measured-chip, 8px); background: var(--color-palette-neutral-1f, #1f1f1f); color: var(--color-text-galFilterInk, #fff); font-size: 13px; }
 </style>
 </head>
 <body class="dark">
@@ -75,7 +80,7 @@ table.cmp td, table.cmp th { border: 1px solid var(--line-2, #282828); padding: 
   <p class="note">Read from framer.com, signed out, in headless Chromium. The dashboard, editor and every post-login surface is a documented boundary; the /login form was measured, never submitted. Every www page paints the dark <code>--token-&lt;uuid&gt;</code> palette — the only layer the site declares; no light variant or theme switcher exists. /community/gallery and /marketplace are the dark community stack; /login is the light auth shell.</p>
 
   <h2 class="sh">The chrome</h2>
-  <p class="lead">The site header is a dark bar on the black field: the Framer mark, the Platform/Solutions/Resources mega-dropdown triggers, Pricing and Enterprise links, "Log in" and the "Sign up" button. Below, the hero — "Framer is the pro website builder with a world-class design agent." — pairs the lime "Get started for free" pill with the ghost "Install the MCP" button.</p>
+  <p class="lead">The site header is a dark bar on the black field: the Framer mark, the Platform/Solutions/Resources mega-dropdown triggers, Pricing and Enterprise links, "Log in" and the "Sign up" button. Below, the hero — "Framer is the pro website builder with a world-class design agent." — pairs the white "Get started for free" pill with the ghost "Install the MCP" button.</p>
   <div class="mock" style="padding:0">
     <div class="navbar"><span class="wm">Framer</span><span class="sp"></span><span>Platform</span><span>Pricing</span><span>Enterprise</span><span class="btn small primary">Sign up</span></div>
     <div class="hero">Framer is the pro website builder<br>with a world-class design agent.<small>Build your website with agents and make it your own on a fully editable design canvas.</small><span class="btn primary">Get started for free</span>&nbsp;&nbsp;<span class="btn ghost">Install the MCP</span></div>
@@ -123,6 +128,32 @@ const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','
 const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
 const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
 
+const resolveVal = (v, depth) => {
+  if (depth > 6 || typeof v !== 'string') return v;
+  const m = v.match(/^\{(.+)\}$/);
+  if (!m) return v;
+  // Aliases are set-relative: scales live under TOK.core, the roles under
+  // TOK.dark. Try each root.
+  for (const root of [TOK.core, TOK.dark, TOK]) {
+    let node = root;
+    for (const k of m[1].split('.')) node = node && node[k];
+    if (node && node.v !== undefined) return resolveVal(node.v, (depth || 0) + 1);
+  }
+  return v;
+};
+
+// Composite values (transitions, animations) are objects of aliased parts —
+// render each piece with its alias resolved so no cell reads "[object Object]".
+const motionVal = (t) => {
+  const piece = (x) => {
+    const r = resolveVal(x, 0);
+    return Array.isArray(r) ? 'cubic-bezier(' + r.join(', ') + ')' : String(r);
+  };
+  if (t && t.v && typeof t.v === 'object')
+    return Object.entries(t.v).map(([k, x]) => `${k} ${piece(x)}`).join(', ');
+  return String(t && t.v);
+};
+
 (function palette() {
   let h = '';
   for (const [g, grp] of Object.entries(TOK.core.color || {})) {
@@ -149,9 +180,9 @@ const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) 
   for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
   for (const [n, t] of flat(TOK.core.layout || {}, 'layout.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
   for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat(TOK.core.duration || {}, 'duration.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat(TOK.core.easing || {}, 'easing.')) m += `<div><b>${esc(n)}</b> <span>cubic-bezier(${esc(t.v.join ? t.v.join(', ') : t.v)})</span></div>`;
-  for (const [n, t] of flat((TOK.core.motion || {}).ease || {}, 'motion.ease.')) m += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? 'cubic-bezier(' + t.v.join(', ') + ')' : t.v)}</span></div>`;
+  // Durations and easing curves live under core.motion, not top-level groups.
+  for (const [n, t] of flat((TOK.core.motion || {}).duration || {}, 'motion.duration.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.motion || {}).easing || {}, 'motion.easing.')) m += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? 'cubic-bezier(' + t.v.join(', ') + ')' : t.v)}</span></div>`;
   $('#spacing-out').innerHTML = m;
 })();
 
@@ -171,25 +202,11 @@ const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) 
   for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
   for (const [n, t] of flat((TOK.core.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
   for (const [n, t] of flat((TOK.core.motion || {}), 'motion.')) {
-    if (n.startsWith('motion.ease')) continue;
-    m += `<div><b>${esc(n)}</b> <span>${esc(String(t.v).slice(0, 90))}…</span></div>`;
+    if (n.startsWith('motion.duration.') || n.startsWith('motion.easing.')) continue;
+    m += `<div><b>${esc(n)}</b> <span>${esc(motionVal(t).slice(0, 90))}…</span></div>`;
   }
   $('#meas-out').innerHTML = m;
 })();
-
-const resolveVal = (v, depth) => {
-  if (depth > 6 || typeof v !== 'string') return v;
-  const m = v.match(/^\{(.+)\}$/);
-  if (!m) return v;
-  // Aliases are set-relative: scales live under TOK.core, the roles under
-  // TOK.dark. Try each root.
-  for (const root of [TOK.core, TOK.dark, TOK]) {
-    let node = root;
-    for (const k of m[1].split('.')) node = node && node[k];
-    if (node && node.v !== undefined) return resolveVal(node.v, (depth || 0) + 1);
-  }
-  return v;
-};
 
 (function type() {
   let h = '';
@@ -197,7 +214,8 @@ const resolveVal = (v, depth) => {
     const px = parseFloat(resolveVal(t.v));
     h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
   }
-  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  // The captured line heights are exported under font.height, not lineHeight.
+  for (const [n, t] of flat((TOK.core.font || {}).height || {}, 'font.height.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
   for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Framer</span><span class="tv">${esc(t.v)}</span></div>`;
   for (const [n, t] of flat((TOK.core.font || {}).tracking || {}, 'font.tracking.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
   $('#type-out').innerHTML = h;

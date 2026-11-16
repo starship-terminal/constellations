@@ -5,7 +5,7 @@
   },
   "F2": {
     "grade": "partly",
-    "evidence": "Measured roles: background.page (#000), surface.menuPanel/footerBg/galBg/loginPanel, form.fieldBg; scrim behaviour observed behind the mega-dropdowns. No named raised/overlay token family exists - Framer's paints are anonymous, so roles are measured aliases only."
+    "evidence": "Measured roles: background.page (#000), surface.menuPanel/footerBg/loginPanel, form.fieldBg (the input is transparent; the fill is measured on its wrapper div); scrim behaviour observed behind the mega-dropdowns. The gallery page's field was never measured, so no gallery surface token is published. No named raised/overlay token family exists - Framer's paints are anonymous, so roles are measured aliases only."
   },
   "F3": {
     "grade": "partly",

@@ -41,6 +41,14 @@ def css_val(name, t):
     v, ty = t["$value"], t["$type"]
     if ty == "cubicBezier":
         return "cubic-bezier(%s)" % ", ".join(str(x) for x in v)
+    if ty == "transition":
+        # "color var(--motion-transition-…)" composes into a valid shorthand:
+        # the token holds duration, easing and delay, the property its name's.
+        return " ".join(alias(str(v[k])) for k in ("duration", "timingFunction", "delay") if v.get(k))
+    if ty == "animation":
+        return " ".join(alias(str(v[k])) for k in
+                        ("name", "duration", "timingFunction", "delay", "iterationCount", "direction", "fillMode")
+                        if v.get(k) not in (None, ""))
     if ty == "shadow":
         if isinstance(v, str):
             return alias(v)
