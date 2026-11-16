@@ -634,7 +634,7 @@
           "value": "{color.palette.neutral-ff}",
           "type": "color",
           "source": "computed backgroundColor of hero-cta default (raw/components-computed.json); matches declared color.palette.neutral-ff",
-          "description": "The hero \"Get started for free\" pill fill — the lime accent."
+          "description": "The hero \"Get started for free\" pill fill — white."
         },
         "heroCtaInk": {
           "value": "{color.palette.neutral-00}",
@@ -689,10 +689,10 @@
       },
       "form": {
         "fieldBg": {
-          "value": "rgba(0, 0, 0, 0)",
+          "value": "{color.palette.alpha-black.5}",
           "type": "color",
-          "source": "computed backgroundColor of login-email default (raw/components-computed.json)",
-          "description": "The sign-in e-mail field fill on the light auth shell."
+          "source": "computed backgroundColor of div.i1ubxgci, the ancestor that paints the login-email default fill (raw/components-computed.json); matches declared color.palette.alpha-black.5",
+          "description": "The sign-in e-mail field fill on the light auth shell — painted on the field's wrapper div; the input itself is transparent."
         },
         "fieldInk": {
           "value": "{color.palette.neutral-22}",
@@ -720,17 +720,11 @@
           "source": "computed backgroundColor of footer default (raw/components-computed.json); matches declared color.palette.neutral-00",
           "description": "The footer surface fill."
         },
-        "galBg": {
-          "value": "rgba(0, 0, 0, 0)",
-          "type": "color",
-          "source": "computed backgroundColor of gal-h1 default (raw/components-computed.json)",
-          "description": "The community-gallery page surface (the dark community stack)."
-        },
         "menuPanel": {
           "value": "rgba(0, 0, 0, 0)",
           "type": "color",
           "source": "computed backgroundColor of nav-panel default (raw/components-computed.json)",
-          "description": "The Platform mega-dropdown panel fill."
+          "description": "The Platform mega-dropdown panel fill — transparent: the menu floats over the page field and only its item pills paint."
         }
       },
       "background": {

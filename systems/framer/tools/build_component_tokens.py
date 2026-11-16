@@ -149,6 +149,25 @@ def resolved(name):
     return e
 
 
+def painted_bg(comp, state):
+    """The fill a surface role should publish: the box's own background when it
+    paints one, else the nearest recorded ancestor that does. The /login e-mail
+    input is transparent — the div wrapping it paints the field — so reading the
+    element alone loses the visible fill. Returns (None, None) when neither the
+    box nor a recorded ancestor paints, leaving the role unpublished rather than
+    exporting a transparent heading as a page surface (the case galBg hits: the
+    gallery page's field was never measured)."""
+    own = st(comp, state).get("backgroundColor")
+    if own and norm_color(own) != "rgba(0, 0, 0, 0)":
+        return own, f"computed backgroundColor of {comp} {state} (raw/components-computed.json)"
+    for a in C[comp]["states"][state].get("ancestors", []):
+        bg = a.get("bg")
+        if bg and norm_color(bg) != "rgba(0, 0, 0, 0)":
+            return bg, (f"computed backgroundColor of {a['node']}, the ancestor that paints "
+                        f"the {comp} {state} fill (raw/components-computed.json)")
+    return None, None
+
+
 def var(name, ty="color", **kw):
     d = {"var": name, "type": ty}
     d.update(kw)
@@ -267,13 +286,14 @@ for key, comp, state, prop, group, desc in [
     ("focusRing", "nav-cta", "focus-visible", "outlineColor", "border",
      "The keyboard focus ring colour on the header CTA."),
     ("heroCtaFill", "hero-cta", "default", "backgroundColor", "action",
-     "The hero \"Get started for free\" pill fill — the lime accent."),
+     "The hero \"Get started for free\" pill fill — white."),
     ("heroCtaInk", "hero-cta", "default", "color", "action",
      "The hero CTA text."),
     ("heroGhost", "hero-mcp", "default", "backgroundColor", "action",
      "The \"Install the MCP\" ghost button fill."),
-    ("fieldBg", "login-email", "default", "backgroundColor", "form",
-     "The sign-in e-mail field fill on the light auth shell."),
+    ("fieldBg", "login-email", "default", "paintedBg", "form",
+     "The sign-in e-mail field fill on the light auth shell — painted on the "
+     "field's wrapper div; the input itself is transparent."),
     ("fieldInk", "login-email", "default", "color", "form",
      "The field text ink on the auth shell."),
     ("placeholder", "login-email", "default", "placeholder", "form",
@@ -292,14 +312,18 @@ for key, comp, state, prop, group, desc in [
      "The FAQ question ink."),
     ("footerBg", "footer", "default", "backgroundColor", "surface",
      "The footer surface fill."),
-    ("galBg", "gal-h1", "default", "backgroundColor", "surface",
+    # galBg stays unpublished today: gal-h1 is the transparent masthead, not
+    # the page surface, and no ancestor or page paint was recorded for it —
+    # the role appears only once a painted gallery surface is measured.
+    ("galBg", "gal-h1", "default", "paintedBg", "surface",
      "The community-gallery page surface (the dark community stack)."),
     ("galCardBtn", "gal-open", "default", "backgroundColor", "action",
      "A gallery card's \"Open\" button fill."),
     ("galFilterInk", "gal-filter", "default", "color", "text",
      "A gallery sort button's ink."),
     ("menuPanel", "nav-panel", "default", "backgroundColor", "surface",
-     "The Platform mega-dropdown panel fill."),
+     "The Platform mega-dropdown panel fill — transparent: the menu floats "
+     "over the page field and only its item pills paint."),
 ]:
     try:
         if prop == "color":
@@ -308,6 +332,8 @@ for key, comp, state, prop, group, desc in [
         elif prop == "placeholder":
             raw = (C[comp]["states"][state].get("placeholder") or {}).get("color")
             src = f"computed ::placeholder color of {comp} {state} (raw/components-computed.json)"
+        elif prop == "paintedBg":
+            raw, src = painted_bg(comp, state)
         else:
             raw = st(comp, state)[prop]
             src = f"computed {prop} of {comp} {state} (raw/components-computed.json)"
