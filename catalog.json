@@ -12371,7 +12371,8 @@
           "icons: no standalone SVG set lifted this pass"
         ],
         "durationMin": null,
-        "durationNote": "wall-clock duration was not recorded for this capture"
+        "durationNote": "wall-clock duration was not recorded for this capture",
+        "pr": "https://github.com/starship-terminal/constellations/pull/613"
       },
       "layoutGaps": {
         "icons/": "no standalone SVG icon set was lifted; the Frame.io waveform mark and product glyphs are visible in the crops and screenshots"
