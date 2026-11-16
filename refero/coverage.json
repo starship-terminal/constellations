@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 164,
-    "system_domains": 156,
-    "matched_domains": 126,
-    "missing_domains": 307,
+    "system_packages": 169,
+    "system_domains": 161,
+    "matched_domains": 131,
+    "missing_domains": 302,
     "system_domains_absent_from_catalog": 30
   },
   "matched": {
@@ -802,6 +802,23 @@
         }
       ]
     },
+    "chargetrip.com": {
+      "catalog": [
+        {
+          "name": "Chargetrip",
+          "domain": "chargetrip.com",
+          "id": 798
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "chargetrip",
+          "name": "Chargetrip",
+          "url": "https://www.chargetrip.com",
+          "name_match": true
+        }
+      ]
+    },
     "chatgpt.com": {
       "catalog": [
         {
@@ -815,6 +832,23 @@
           "slug": "chatgpt",
           "name": "ChatGPT",
           "url": "https://chatgpt.com",
+          "name_match": true
+        }
+      ]
+    },
+    "classpass.com": {
+      "catalog": [
+        {
+          "name": "ClassPass",
+          "domain": "classpass.com",
+          "id": 256
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "classpass",
+          "name": "ClassPass",
+          "url": "https://classpass.com",
           "name_match": true
         }
       ]
@@ -1936,6 +1970,23 @@
         }
       ]
     },
+    "frame.io": {
+      "catalog": [
+        {
+          "name": "Frame.io",
+          "domain": "frame.io",
+          "id": 1142
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "frame",
+          "name": "Frame.io",
+          "url": "https://frame.io",
+          "name_match": true
+        }
+      ]
+    },
     "framer.com": {
       "catalog": [
         {
@@ -1966,6 +2017,23 @@
           "slug": "fresha",
           "name": "Fresha",
           "url": "https://www.fresha.com",
+          "name_match": true
+        }
+      ]
+    },
+    "front.com": {
+      "catalog": [
+        {
+          "name": "Front",
+          "domain": "front.com",
+          "id": 23
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "front",
+          "name": "Front",
+          "url": "https://front.com",
           "name_match": true
         }
       ]
@@ -2029,6 +2097,23 @@
           "slug": "gladia",
           "name": "Gladia",
           "url": "https://www.gladia.io",
+          "name_match": true
+        }
+      ]
+    },
+    "glassnode.com": {
+      "catalog": [
+        {
+          "name": "Glassnode",
+          "domain": "glassnode.com",
+          "id": 87
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "glassnode",
+          "name": "Glassnode",
+          "url": "https://glassnode.com",
           "name_match": true
         }
       ]
@@ -2230,20 +2315,6 @@
         "id": 284
       }
     ],
-    "chargetrip.com": [
-      {
-        "name": "Chargetrip",
-        "domain": "chargetrip.com",
-        "id": 798
-      }
-    ],
-    "classpass.com": [
-      {
-        "name": "ClassPass",
-        "domain": "classpass.com",
-        "id": 256
-      }
-    ],
     "clay.earth": [
       {
         "name": "Clay",
@@ -2377,20 +2448,6 @@
         "id": 234
       }
     ],
-    "frame.io": [
-      {
-        "name": "Frame.io",
-        "domain": "frame.io",
-        "id": 1142
-      }
-    ],
-    "front.com": [
-      {
-        "name": "Front",
-        "domain": "front.com",
-        "id": 23
-      }
-    ],
     "gemini.google": [
       {
         "name": "Google Gemini",
@@ -2417,13 +2474,6 @@
         "name": "Pocket",
         "domain": "getpocket.com",
         "id": 228
-      }
-    ],
-    "glassnode.com": [
-      {
-        "name": "Glassnode",
-        "domain": "glassnode.com",
-        "id": 87
       }
     ],
     "glorify.com": [

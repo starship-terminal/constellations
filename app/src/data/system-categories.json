@@ -636,6 +636,12 @@
     "reason": "catalog.json describes a real-time AI voice and audio product (text-to-speech, voice agents) — the AI Tool label."
   },
   {
+    "referenceId": "systems:chargetrip",
+    "groupId": "web-categories",
+    "labels": ["Development Tools", "Travel & Booking"],
+    "reason": "catalog.json describes a developer-facing EV routing API (GraphQL routing engine, no-code tools, plan pricing) for the EV charging/travel industry."
+  },
+  {
     "referenceId": "systems:copy",
     "groupId": "web-categories",
     "labels": ["AI Tool"],
@@ -894,6 +900,12 @@
     "reason": "catalog.json describes a customer-support helpdesk SaaS: an editorial light marketing site, signed-out app login/signup, and a docs center with a real dark-mode toggle; the product workspace is gated."
   },
   {
+    "referenceId": "systems:glassnode",
+    "groupId": "web-categories",
+    "labels": ["Web3 & Crypto", "Finance"],
+    "reason": "catalog.json describes a digital-asset market-intelligence platform: marketing pages, a Vector pricing page, the signed-out Studio shell, research, docs, a tokenization registry and the Auth0 login."
+  },
+  {
     "referenceId": "systems:figma",
     "groupId": "web-categories",
     "labels": ["Design & Media Editing", "Productivity"],
@@ -942,6 +954,12 @@
     "reason": "catalog.json describes a relationship manager (personal CRM): unified contacts, notes and reminders, public pricing and the app.me.sh sign-in boundary."
   },
   {
+    "referenceId": "systems:classpass",
+    "groupId": "web-categories",
+    "labels": ["Health & Wellness", "Marketplace"],
+    "reason": "catalog.json describes a fitness-and-wellness booking marketplace: studio search with filter pills and venue cards, a credits-plan carousel, gift, corporate-wellness and studio-partner pages."
+  },
+  {
     "referenceId": "systems:framer",
     "groupId": "web-categories",
     "labels": ["Design & Media Editing", "Productivity"],
@@ -982,5 +1000,17 @@
     "groupId": "web-categories",
     "labels": ["AI Tool", "Development Tools"],
     "reason": "catalog.json describes an audio-transcription and speech-AI developer platform: the marketing pages, usage-based pricing with a calculator, the Mintlify docs site and the app-shell auth cards."
+  },
+  {
+    "referenceId": "systems:frame",
+    "groupId": "web-categories",
+    "labels": ["Collaboration Tools", "Design & Media Editing"],
+    "reason": "catalog.json describes a video review-and-collaboration product: marketing and feature pages, a pricing grid, customer and integration indexes, a contact form and the accounts sign-in surface."
+  },
+  {
+    "referenceId": "systems:front",
+    "groupId": "web-categories",
+    "labels": ["Communication Tools", "Business"],
+    "reason": "catalog.json describes an AI customer-operations platform: a shared-inbox/omnichannel product (email, chat, channels), customer-service marketing, pricing tiers, a help centre and developer docs."
   }
 ]

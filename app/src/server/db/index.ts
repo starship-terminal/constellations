@@ -176,12 +176,12 @@ export async function createResearchStore(directory: string) {
     }
     if (version < 13) {
       // Same one-shot top-up, scoped to this batch's new reference: a store
-      // already at v12 never re-seeds, so the Fourthwall rows would never
-      // arrive. Scoping keeps cleared labels on older packages cleared — an
-      // empty assignment reads as "never labelled", so an unscoped pass
-      // would restore rows the user deleted.
-      await seedNewCuratedCategories(tx, new Set(["systems:fourthwall"]));
-      await seedNewCuratedMediaTerms(tx, new Set(["systems:fourthwall"]));
+      // already at v12 never re-seeds, so the Frame.io and Fourthwall rows
+      // would never arrive. Scoping keeps cleared labels on older packages
+      // cleared — an empty assignment reads as "never labelled", so an
+      // unscoped pass would restore rows the user deleted.
+      await seedNewCuratedCategories(tx, new Set(["systems:frame", "systems:fourthwall"]));
+      await seedNewCuratedMediaTerms(tx, new Set(["systems:frame", "systems:fourthwall"]));
       await tx.execute("PRAGMA user_version = 13");
     }
     if (version < 14) {
@@ -193,6 +193,55 @@ export async function createResearchStore(directory: string) {
       await seedNewCuratedCategories(tx, new Set(["systems:calm"]));
       await seedNewCuratedMediaTerms(tx, new Set(["systems:calm"]));
       await tx.execute("PRAGMA user_version = 14");
+    }
+    if (version < 15) {
+      // Same one-shot top-up, scoped to this batch's new references: a store
+      // already at v14 never re-seeds, so the Chargetrip rows would never
+      // arrive. systems:fresha is included because it merged without a
+      // migration and its rows are stranded on v13/v14 stores. Scoping keeps
+      // cleared labels on older packages cleared — an empty assignment
+      // reads as "never labelled", so an unscoped pass would restore rows
+      // the user deleted.
+      await seedNewCuratedCategories(
+        tx,
+        new Set(["systems:fresha", "systems:chargetrip"]),
+      );
+      await seedNewCuratedMediaTerms(
+        tx,
+        new Set(["systems:fresha", "systems:chargetrip"]),
+      );
+      await tx.execute("PRAGMA user_version = 15");
+    }
+    if (version < 16) {
+      // Same one-shot top-up, scoped to this batch's new references: a store
+      // already at v15 never re-seeds, so the ClassPass rows would never
+      // arrive. systems:frame is included because its v13 top-up only runs
+      // below v13, leaving v13-v15 stores without the rows; systems:gladia,
+      // systems:glassnode and systems:front merged without a migration and
+      // are stranded entirely. Scoping keeps cleared labels on older
+      // packages cleared — an empty assignment reads as "never labelled",
+      // so an unscoped pass would restore rows the user deleted.
+      await seedNewCuratedCategories(
+        tx,
+        new Set([
+          "systems:classpass",
+          "systems:frame",
+          "systems:front",
+          "systems:gladia",
+          "systems:glassnode",
+        ]),
+      );
+      await seedNewCuratedMediaTerms(
+        tx,
+        new Set([
+          "systems:classpass",
+          "systems:frame",
+          "systems:front",
+          "systems:gladia",
+          "systems:glassnode",
+        ]),
+      );
+      await tx.execute("PRAGMA user_version = 16");
     }
     if (version < 17) {
       // Same one-shot top-up, scoped to this batch's new reference: a store
