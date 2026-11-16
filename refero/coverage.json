@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 162,
-    "system_domains": 154,
-    "matched_domains": 125,
-    "missing_domains": 308,
+    "system_packages": 164,
+    "system_domains": 156,
+    "matched_domains": 127,
+    "missing_domains": 306,
     "system_domains_absent_from_catalog": 29
   },
   "matched": {
@@ -730,6 +730,23 @@
           "slug": "calendly",
           "name": "Calendly",
           "url": "https://calendly.com",
+          "name_match": true
+        }
+      ]
+    },
+    "calm.com": {
+      "catalog": [
+        {
+          "name": "Calm",
+          "domain": "calm.com",
+          "id": 227
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "calm",
+          "name": "Calm",
+          "url": "https://www.calm.com",
           "name_match": true
         }
       ]
@@ -2016,6 +2033,23 @@
         }
       ]
     },
+    "gladia.io": {
+      "catalog": [
+        {
+          "name": "Gladia",
+          "domain": "gladia.io",
+          "id": 859
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "gladia",
+          "name": "Gladia",
+          "url": "https://www.gladia.io",
+          "name_match": true
+        }
+      ]
+    },
     "google.com": {
       "catalog": [
         {
@@ -2213,13 +2247,6 @@
         "id": 284
       }
     ],
-    "calm.com": [
-      {
-        "name": "Calm",
-        "domain": "calm.com",
-        "id": 227
-      }
-    ],
     "chargetrip.com": [
       {
         "name": "Chargetrip",
@@ -2400,13 +2427,6 @@
         "name": "Pocket",
         "domain": "getpocket.com",
         "id": 228
-      }
-    ],
-    "gladia.io": [
-      {
-        "name": "Gladia",
-        "domain": "gladia.io",
-        "id": 859
       }
     ],
     "glassnode.com": [
