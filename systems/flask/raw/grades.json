@@ -1,0 +1,86 @@
+{
+  "F1": {
+    "grade": "partly",
+    "evidence": "No per-hue ramps exist on the public token layer. The neutral ramp is complete and declared: --ds-surface-0…4 (12/18/24/31/42 greys), --ds-fg-1…4 plus lead/subhead/placeholder, --ds-line-1…3 + edge, and a translucent-white interaction ladder (--ds-fill/-hover/-pressed/-selected/-row-hover/-control-*, glass/scrim washes). Hue roles exist as full 8-slot palettes (danger/warning/success/info each declare base, edge, fg, highlight, shade, text, tint, bevel) plus the red live-* ramp and the flair-1…3 gradient accents — they are role palettes, not lightness ramps."
+  },
+  "F2": {
+    "grade": "partly",
+    "evidence": "Page (dark.background.page → surface.0 #0c0c0c), surface (surface.1…4), scrim (--ds-scrim-*), overlay and card-veil roles are all declared; measured roles (demoCardBg, footerBg, fieldBg) alias the declared values they match. No separate raised/overlay shadow-bound role is named beyond the shadow.* composites, and nothing on the public surface opens a true modal — the demo's painted popover is a mock."
+  },
+  "F3": {
+    "grade": "partly",
+    "evidence": "Primary (fg.1), secondary (fg.2, navInk), muted (fg.3, fg-lead/-subhead/-placeholder roles) and on-accent (brand-fg, *-fg slots per status palette) are declared; measured text.ink/demoTabInk alias them. No disabled text role and no distinct link colour was observed — nav/footer/docs links are plain ink, and no disabled control is reachable signed out."
+  },
+  "F4": {
+    "grade": "partly",
+    "evidence": "Declared hairlines: line.1…3 plus line-edge, and --ds-focus + --ds-focus-ring as the focus ring roles. There is no named strong/default border pair beyond the line ramp; borders on measured components resolve through the line roles and element-border utilities."
+  },
+  "F5": {
+    "grade": "partly",
+    "evidence": "Hover and pressed are declared interaction-opacity roles (--ds-hover, --ds-pressed, --ds-fill, --ds-selected) and measured on the CTAs (ctaHover, heroCtaFill states, billing switch track). A default/hover/pressed triple is declared and measured; the brand accent itself is a neutral grey (brand 173 173 173) so 'accent' reads as the light pill on dark, matching the product."
+  },
+  "F6": {
+    "grade": "meets",
+    "evidence": "Four full status palettes are declared — --ds-danger-*, --ds-warning-*, --ds-success-*, --ds-info-*, each with base, edge, fg, highlight, shade, text, tint and bevel slots — plus the --ds-live-* recording palette. They are declared-not-triggered: no public surface paints a validation state, but the roles ship complete."
+  },
+  "F7": {
+    "grade": "na",
+    "evidence": "The site ships one theme — dark — on every public surface (color-scheme: dark on :root; no light variant or toggle exists). There is no second theme for parity to span; tokens.json carries a single dark set plus theme-independent core."
+  },
+  "F8": {
+    "grade": "partly",
+    "evidence": "One family: --ds-font-sans (ui-sans-serif/system-ui + emoji fallbacks), used for every role. The site declares no type-size ramp, weight ramp or named display/heading/body/label/caption/code roles — the tokens carry the two measured sizes/weights that were read (hero 64px/500, body 400)."
+  },
+  "F9": {
+    "grade": "missing",
+    "evidence": "No declared spacing scale exists in the harvested stylesheets — the Tailwind-style utilities compose spacing ad hoc; measured paddings are recorded per component but there is no base-unit scale to name."
+  },
+  "F10": {
+    "grade": "meets",
+    "evidence": "Declared radii: --ds-radius 12px, --ds-radius-control 9999px and the --radius alias, plus measured radius tokens (cta/button → control pill, navLink/card/field/switch → the 12px family). Border widths are measured per component in components.md."
+  },
+  "F11": {
+    "grade": "partly",
+    "evidence": "Measured control geometry is recorded (topbar-height 56, cta-height 32, button-height 40, chip-height, login field/button heights, switch dims, mobile top chrome) and the focus ring resolves as the declared --ds-focus/-ring roles. No declared S/M/L size ladder exists on the public surface."
+  },
+  "F12": {
+    "grade": "meets",
+    "evidence": "Four real shadow declarations become shadow.* composites (card, float, overlay, popover — the popover a two-layer 0 2px 8px/0 16px 40px), each named for its use, plus 11 declared shadow-* colour ingredients under shadow.color.*. That is the full ladder the site ships."
+  },
+  "F13": {
+    "grade": "partly",
+    "evidence": "Declared easings: --ease-out and --ease-in-out as cubicBezier tokens, plus the measured control transition signature (color+transform 0.15s ease-out) on the header CTA. No duration ramp is declared; the reduced-motion probe on the home page is recorded in raw."
+  },
+  "F14": {
+    "grade": "partly",
+    "evidence": "No declared breakpoint/grid/z-index token layer — the site uses Tailwind-style utility breakpoints (md: sticky header etc.) measured per component; content widths (hero 1200px) and the sticky chrome height are measured geometry."
+  },
+  "C1": {
+    "grade": "partly",
+    "evidence": "About 10 of 19 checklist components paint publicly: button (nav CTA, hero pills, plan CTAs, login buttons), link (nav/footer/docs/about links), text field (login e-mail), switch (billing), tabs (demo Context/Feedback), menu (mobile nav layer), card (plan cards, login panel, demo popover), badge/chip (demo version chip), list row (demo folder/file rows), accordion (FAQ). Checkbox, radio, tooltip, dialog (real), toast, table (real), avatar and select never appear signed out."
+  },
+  "C2": {
+    "grade": "partly",
+    "evidence": "Beyond default: real pointer hover, real keyboard focus-visible, DevTools-forced pressed, opened (FAQ accordion, Version chip, mobile menu), focused and filled (login e-mail, typed-then-cleared), and the toggled billing switch (off state). Disabled, loading, error and validation states are absent rather than measured — nothing was submitted and no public surface displays them."
+  },
+  "C3": {
+    "grade": "meets",
+    "evidence": "Real keyboard focus (Shift+Tab, Tab) was captured on every focusable component; the ring resolves through the declared --ds-focus/-ring roles and is recorded per component in raw/components-computed.json."
+  },
+  "C4": {
+    "grade": "meets",
+    "evidence": "Every measured colour aliases the declared --ds-* token its painted value matches (ink→fg.1, surfaces→surface.*, ctaFill→brand roles); every token carries $extensions.source and component geometry lives under core.component.* — components.md labels each colour with its token path."
+  },
+  "P1": {
+    "grade": "partly",
+    "evidence": "patterns.md covers the marketing chrome, the home hero + embedded product demo, the pricing grid with its billing switch and FAQ, the /mcp docs page, the login auth boundary, mobile chrome, and motion/focus conventions. Empty/loading/error, destructive confirmation, onboarding and search patterns are not reachable on the signed-out public surface."
+  },
+  "A1": {
+    "grade": "partly",
+    "evidence": "The font is fully named (the --ds-font-sans system stack; no self-hosted faces are loaded, so nothing needed licensing). Icons are a declared layoutGaps entry: no standalone SVG set was lifted; the Flask mark and demo glyphs are the product's artwork visible in crops/screenshots."
+  },
+  "K1": {
+    "grade": "meets",
+    "evidence": "The README states what was captured (10 routes + 3 mobile passes, the demo/pricing local states), how (Playwright headless, stylesheet harvest, computed styles), and what to distrust (the signed-in boundary, the demo mock's guarded states, the unreached mobile menu, pressed-state forcing, channel-list rounding, quantised screenshots)."
+  }
+}

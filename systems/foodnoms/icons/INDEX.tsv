@@ -1,0 +1,14 @@
+file	name	hash	rendered sizes	viewBox	source	tint	seen on	next to
+wordmark.svg	wordmark	4f6f9c07	120x33	0 0 144 40	inline	-	home	Label
+shield-check.svg	shield-check	21f0628f	40x40	0 0 40 40	mask data-URI	#72a2c5	home	Symbol
+cloud.svg	cloud	913d2669	40x40	0 0 40 40	mask data-URI	#00a9dd	home	Symbol
+eye-off.svg	eye-off	5dffb688	40x40	0 0 40 40	mask data-URI	#5856de	home	Symbol
+star.svg	star	6ce593ca	18x18, 17x18	0 0 40 40	mask data-URI	#ff5406	home	Symbol
+check-circle.svg	check-circle	e837ac61	16x16	0 0 40 40	mask data-URI	#ff5406, #5856de	plus	Symbol
+xmark-circle.svg	xmark-circle	3afb6bdb	16x16	0 0 40 40	mask data-URI	#cccccc	plus	Symbol
+search.svg	search	97f3be8d	32x32	0 0 256 256	inline	-	help	Variant 1
+xmark.svg	xmark	ba2a2934	22x22, 20x20	0 0 40 40	inline	-	help, mobile-home	Symbol; Close navigation menu
+question.svg	question	851d9f02	40x40	0 0 40 40	mask data-URI	#ff5406	help	Symbol
+search-small.svg	search-small	df299cea	16x16	0 0 40 40	mask data-URI	#ffffff	help	Symbol
+megaphone.svg	megaphone	a02cda67	40x40	0 0 40 40	mask data-URI	#ff5406	news	Symbol
+newspaper.svg	newspaper	e2577ed8	40x40	0 0 40 40	mask data-URI	#ff5406	press	Symbol

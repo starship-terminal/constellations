@@ -80,7 +80,10 @@ export async function seedMediaTaxonomy(tx: Transaction) {
  * left alone entirely — topping up never reapplies a curated label over a
  * user's manual choice, nor restores one a user removed.
  */
-export async function seedNewCuratedCategories(tx: Transaction) {
+export async function seedNewCuratedCategories(
+  tx: Transaction,
+  onlyReferences?: ReadonlySet<string>,
+) {
   const { taxonomySnapshots } = await import("@/contracts/taxonomy");
   const { default: assignments } =
     await import("@/data/system-categories.json");
@@ -97,6 +100,10 @@ export async function seedNewCuratedCategories(tx: Transaction) {
     ),
   );
   for (const assignment of assignments) {
+    // A top-up scoped to one batch's new references never resurrects labels a
+    // user cleared on an older package: those references are skipped before
+    // the empty-assignment check can read them as "never labelled".
+    if (onlyReferences && !onlyReferences.has(assignment.referenceId)) continue;
     const group = taxonomySnapshots
       .flatMap((snapshot) => snapshot.groups)
       .find((candidate) => candidate.id === assignment.groupId);
@@ -122,7 +129,10 @@ export async function seedNewCuratedCategories(tx: Transaction) {
 }
 
 /** The media side of v6; a labelled media pair is never touched again. */
-export async function seedNewCuratedMediaTerms(tx: Transaction) {
+export async function seedNewCuratedMediaTerms(
+  tx: Transaction,
+  onlyReferences?: ReadonlySet<string>,
+) {
   const { default: seed } = await import("@/data/media-taxonomy.json");
   const known = new Set(
     (await tx.execute("SELECT id FROM taxonomy_terms")).rows.map((row) =>
@@ -137,6 +147,8 @@ export async function seedNewCuratedMediaTerms(tx: Transaction) {
     ).rows.map((row) => `${row.reference_id}${row.media_id}`),
   );
   const entries = seed.assignments.flatMap((assignment) => {
+    if (onlyReferences && !onlyReferences.has(assignment.referenceId))
+      return [];
     if (labeled.has(`${assignment.referenceId}${assignment.mediaId}`))
       return [];
     return assignment.terms
