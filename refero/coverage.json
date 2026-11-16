@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 166,
-    "system_domains": 158,
-    "matched_domains": 129,
-    "missing_domains": 304,
+    "system_packages": 167,
+    "system_domains": 159,
+    "matched_domains": 130,
+    "missing_domains": 303,
     "system_domains_absent_from_catalog": 29
   },
   "matched": {
@@ -2004,6 +2004,23 @@
         }
       ]
     },
+    "front.com": {
+      "catalog": [
+        {
+          "name": "Front",
+          "domain": "front.com",
+          "id": 23
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "front",
+          "name": "Front",
+          "url": "https://front.com",
+          "name_match": true
+        }
+      ]
+    },
     "getfernand.com": {
       "catalog": [
         {
@@ -2419,13 +2436,6 @@
         "name": "Hims",
         "domain": "forhims.co.uk",
         "id": 234
-      }
-    ],
-    "front.com": [
-      {
-        "name": "Front",
-        "domain": "front.com",
-        "id": 23
       }
     ],
     "gemini.google": [
