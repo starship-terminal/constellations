@@ -32,7 +32,9 @@ def flat(node, prefix=""):
 
 
 def cssname(path):
-    return "--" + re.sub(r"[^a-zA-Z0-9-]", "-", path.replace(".", "-"))
+    # Keep the product's own leading underscores (--_primitives-*/--_surface-*
+    # are the Webflow names); the template's var() reads this same scheme.
+    return "--" + re.sub(r"[^a-zA-Z0-9_-]", "-", path.replace(".", "-"))
 
 
 def alias(v):

@@ -527,8 +527,11 @@ async function pricing() {
   await S('price-h1', q('h1'), ['default'], { group: g, title: 'Pricing headline', desc: 'The /pricing masthead.', sel: 'pricing h1' }, { noScroll: true });
   await S('billing-toggle', q('.billing-toggle'), ['default'], { group: g, title: 'Billing toggle', desc: 'The "Pay yearly / Pay monthly" toggle — the monthly state was painted by clicking it (a local UI toggle; Pro reads $19 vs $15).', sel: '.billing-toggle' });
   await S('billing-btn', q('.billing-toggle-btn').filter({ hasText: /monthly/i }).first(), B4, { group: g, title: 'Billing option', desc: 'The "Pay monthly" toggle button; measured, and clicked once to paint the monthly state.', sel: '.billing-toggle-btn monthly' });
-  await S('plan-card', q('[class*="plan"], [class*="price"], .ph-pricing-card').filter({ hasText: /\$|Free/ }), ['default', 'hover'], { group: g, title: 'Plan card', desc: 'A plan card on /pricing (Free / Pro / Managed).', sel: 'pricing plan card' });
-  await S('plan-row', q('.ph-faq-summary, [class*="feature-row"], [class*="plan"] li, tr'), ['default'], { group: g, title: 'Plan feature row', desc: 'A feature row inside the plans comparison.', sel: 'pricing feature row' });
+  // .pricing-plans is the two-column grid itself (1120px wide) — the cards are
+  // its .plan-card children; .plan-feature rows live inside each card's
+  // .plan-features list (.ph-faq-summary is the FAQ disclosure, not a row).
+  await S('plan-card', q('.pricing-plans .plan-card'), ['default', 'hover'], { group: g, title: 'Plan card', desc: 'A plan card on /pricing (Free / Pro) — one .plan-card cell inside the .pricing-plans grid.', sel: '.pricing-plans .plan-card' });
+  await S('plan-row', q('.plan-card .plan-feature'), ['default'], { group: g, title: 'Plan feature row', desc: 'A .plan-feature row inside a plan card\'s .plan-features list.', sel: '.plan-card .plan-feature' });
   await S('faq-summary', q('.ph-faq-summary'), [...B4, 'opened'], { group: g, title: 'FAQ disclosure', desc: 'A disclosure button in the pricing FAQ; the opened state was measured after clicking it (a local UI toggle).', sel: '.ph-faq-summary' }, { before: { opened: async (loc) => { await loc.click({ timeout: 4000 }).catch(() => loc.evaluate((el) => el.click())); await page.waitForTimeout(700); return 'clicked the FAQ summary to expand its answer'; } } });
   save();
 }
@@ -660,7 +663,9 @@ async function docs() {
   await S('docs-theme-btn', q('button[aria-label="Change theme preference"], button[aria-label*="theme preference" i]'), B4, { group: g, title: 'Theme menu button', desc: 'The "Change theme preference" button — the docs site\'s real Light/Dark/System menu; measured, the Dark choice is made only on the docsdark pass.', sel: 'docs theme button' }, { noScroll: true });
   await S('docs-sidebar', q('[class*="sidebar"], aside, nav[class*="side"]'), ['default'], { group: g, title: 'Docs sidebar', desc: 'The Mintlify sidebar nav tree.', sel: 'docs sidebar' });
   await S('docs-side-item', q('[class*="sidebar"] a, aside a').filter({ hasText: /Quickstart|Authentication|Overview/i }), B4, { group: g, title: 'Sidebar item', desc: 'A sidebar nav link; measured, never followed.', sel: 'docs sidebar link' });
-  await S('docs-card', q('a[class*="card"], [class*="Card"], [class*="card"]').filter({ hasText: /API|Guide|Quickstart|Webhook/i }), ['default', 'hover'], { group: g, title: 'Docs card', desc: 'A card on the docs landing page; measured, never followed.', sel: 'docs card' });
+  // The cards are Mintlify's div.card/a.card tiles — not the .columns grid
+  // wrapper that holds them (a bare [class*="card"] matched the whole grid).
+  await S('docs-card', q('.mdx-content .card, div.card, a.card').filter({ hasText: /API|Guide|Quickstart|Webhook/i }), ['default', 'hover'], { group: g, title: 'Docs card', desc: 'A .card tile on the docs landing page (Platform API / Webhooks / …); measured, never followed.', sel: 'docs .card' });
   save();
 }
 

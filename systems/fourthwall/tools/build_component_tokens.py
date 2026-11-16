@@ -24,9 +24,10 @@ token set:
                           `catalogDark` the dark branch under a forced
                           color-scheme (declared, never painted signed out).
   auth.fourthwall.com     /get-started's Keycloak signup — the SAME catalogue
-                          DS painted in its dark branch for real. The `signup`
-                          set is the catalogue vocabulary resolved on the auth
-                          shell: the painted dark catalogue surface.
+                          DS, resolved in its light branch: the capture painted
+                          it light and the `signup` set is that resolution
+                          (its light-dark() pairs follow the visitor's
+                          colour-scheme like the catalogue's).
   docs.fourthwall.com     Mintlify — --gray-*/--primary*/--color-*/tailwind-ish
                           --container-*/--ease-*/--leading-*/--font-*. Channel
                           triplets ("238 238 238") are emitted as colours.
@@ -61,7 +62,7 @@ R = pool("light")        # marketing :root, light
 RI = pool("ink")         # marketing body.on-ink — the dark-section scope
 RC = pool("catalog")     # products shell, light
 RCD = pool("catalogDark")  # products shell, forced dark color-scheme
-RA = pool("signup")      # the auth shell — the catalogue DS painted dark
+RA = pool("signup")      # the auth shell — the catalogue DS resolved light
 RD = pool("docs")        # Mintlify, light
 RDD = pool("docsDark")   # Mintlify, html.dark
 RH = pool("help")        # Docusaurus, data-theme=light
@@ -83,7 +84,7 @@ SPEC = {"_about": (
     "light (+ the on-ink dark-section resolutions in ink), the catalogue's "
     "--color-/--bg-/--text-/... names in catalog (light-dark() light branch), "
     "catalogDark (the dark branch under a forced color-scheme — declared, not "
-    "painted) and signup (the same DS painted dark on /get-started), the Mintlify "
+    "painted) and signup (the same DS resolved light on /get-started), the Mintlify "
     "--gray-/--primary vocabulary in docs/docsDark (the real theme menu) and "
     "the Docusaurus --ifm-/--fw- layer in help/helpDark (the real toggle). "
     "Measured roles alias to the declared values they match."),
@@ -398,7 +399,7 @@ for name in ink_emitted:
 
 # The catalogue vocabulary — emitted in all three shells; catalogDark carries
 # the light-dark() dark branch (forced color-scheme, declared not painted) and
-# auth the painted dark resolution on /get-started.
+# auth the light resolution the /get-started capture painted.
 for name in host_names("catalog", RC):
     emit_named(SPEC["catalog"], name, RC.get(name))
 ALIAS["catalog"] = {}
@@ -592,7 +593,7 @@ for theme, name, comp, desc in [
                 desc)
     except KeyError:
         pass
-# auth page field: the measured auth card already covers the painted dark field.
+# auth page field: the measured auth card already covers the painted field.
 
 # ------------------------------------------------------------------ shape
 #

@@ -1,6 +1,6 @@
 {
  "_meta": {
-  "read": "2026-11-15",
+  "read": "2026-11-16",
   "viewport": "1440 x 900 (mobile group 390 x 844); fourthwall.com paints one light surface with scoped on-ink dark sections (no user toggle); products.fourthwall.com + /get-started paint the catalogue DS light; docs.fourthwall.com paints dark via its own theme menu (the docsdark group); help.fourthwall.com paints dark via its own colour-mode toggle (the helpdark group)",
   "tool": "tools/capture/public/measure.mjs",
   "sheets": {
@@ -4668,7 +4668,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-15",
+   "run": "2026-11-16",
    "url": "https://fourthwall.com/",
    "title": "Nav bar",
    "group": "Site chrome",
@@ -4769,7 +4769,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-15",
+   "run": "2026-11-16",
    "url": "https://fourthwall.com/",
    "title": "Wordmark",
    "group": "Site chrome",
@@ -5090,9 +5090,9 @@
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "5.09986px",
       "transitionProperty": "background-color, color",
-      "transitionDuration": "0s",
+      "transitionDuration": "0.32s, 0.32s",
       "transitionTimingFunction": "ease, ease",
-      "transitionDelay": "0.5s",
+      "transitionDelay": "0.18s, 0.18s",
       "cursor": "pointer",
       "opacity": "1",
       "transform": "none",
@@ -5253,7 +5253,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-15",
+   "run": "2026-11-16",
    "url": "https://fourthwall.com/",
    "title": "Mega-menu trigger",
    "group": "Site chrome",
@@ -5693,7 +5693,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-15",
+   "run": "2026-11-16",
    "url": "https://fourthwall.com/",
    "title": "Nav link",
    "group": "Site chrome",
@@ -6133,7 +6133,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-15",
+   "run": "2026-11-16",
    "url": "https://fourthwall.com/",
    "title": "Log in link",
    "group": "Site chrome",
@@ -6299,7 +6299,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-15",
+   "run": "2026-11-16",
    "url": "https://fourthwall.com/",
    "title": "Mega-menu panel",
    "group": "Site chrome",
@@ -6393,7 +6393,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-15",
+   "run": "2026-11-16",
    "url": "https://fourthwall.com/",
    "title": "Hero headline",
    "group": "Home",
@@ -6487,7 +6487,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-15",
+   "run": "2026-11-16",
    "url": "https://fourthwall.com/",
    "title": "Hero lede",
    "group": "Home",
@@ -6502,7 +6502,7 @@
      "text": "4.7 Comfort Colors Garment-Dyed Heavyweight T-Shirt",
      "rect": {
       "x": 40,
-      "y": 236.8,
+      "y": 180.8,
       "w": 336.88,
       "h": 428.31
      },
@@ -6570,8 +6570,8 @@
       "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
       "transitionDelay": "0s",
       "cursor": "pointer",
-      "opacity": "0",
-      "transform": "matrix(1, 0, 0, 1, 0, 56)",
+      "opacity": "1",
+      "transform": "matrix(1, 0, 0, 1, 0, 0)",
       "overflow": "visible",
       "zIndex": "auto",
       "top": "auto"
@@ -6610,7 +6610,7 @@
      "text": "4.7 Comfort Colors Garment-Dyed Heavyweight T-Shirt",
      "rect": {
       "x": 40,
-      "y": 471.8,
+      "y": 236.8,
       "w": 336.88,
       "h": 428.31
      },
@@ -6714,7 +6714,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-15",
+   "run": "2026-11-16",
    "url": "https://fourthwall.com/",
    "title": "Product tile",
    "group": "Home",
@@ -6841,7 +6841,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-15",
+   "run": "2026-11-16",
    "url": "https://fourthwall.com/",
    "title": "Rating chip",
    "group": "Home",
@@ -6959,11 +6959,12 @@
       "textTransform": "none"
      },
      "crop": "components/crops/brand-grid-default.png",
-     "via": "at rest"
+     "via": "at rest",
+     "rerunError": "locator.evaluate: Timeout 8000ms exceeded.\nCall log:\n  - waiting for locator('.ws--trusted').first()\n"
     }
    },
    "page": "home",
-   "run": "2026-11-15",
+   "run": "2026-11-16",
    "url": "https://fourthwall.com/",
    "title": "Logo wall",
    "group": "Home",
@@ -7108,26 +7109,26 @@
       },
       {
        "node": "a.design-dot.w-button",
-       "size": "8.0x8.0",
-       "bg": "rgba(255, 255, 255, 0.3)",
-       "radius": "999px"
-      },
-      {
-       "node": "a.design-dot.w-button",
-       "size": "8.0x8.0",
-       "bg": "rgba(255, 255, 255, 0.3)",
-       "radius": "999px"
-      },
-      {
-       "node": "a.design-dot.w-button",
        "size": "36.0x8.0",
        "bg": "rgba(255, 255, 255, 0.3)",
        "radius": "999px"
       },
       {
+       "node": "a.design-dot.w-button",
+       "size": "8.0x8.0",
+       "bg": "rgba(255, 255, 255, 0.3)",
+       "radius": "999px"
+      },
+      {
        "node": "a::after.design-dot.w-button",
-       "size": "36pxx8px",
+       "size": "8pxx8px",
        "bg": "rgb(255, 255, 255)",
+       "radius": "999px"
+      },
+      {
+       "node": "a.design-dot.w-button",
+       "size": "8.0x8.0",
+       "bg": "rgba(255, 255, 255, 0.3)",
        "radius": "999px"
       }
      ],
@@ -7158,12 +7159,12 @@
       "stroke": "none",
       "color": "rgb(255, 255, 255)"
      },
-     "cropError": "locator.screenshot: Timeout 474.7699999999895ms exceeded.",
+     "cropError": "locator.screenshot: Timeout 6306.110999999975ms exceeded.",
      "via": "at rest"
     }
    },
    "page": "home",
-   "run": "2026-11-15",
+   "run": "2026-11-16",
    "url": "https://fourthwall.com/",
    "title": "Dark feature section",
    "group": "On-ink (dark sections)",
@@ -7312,7 +7313,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-15",
+   "run": "2026-11-16",
    "url": "https://fourthwall.com/",
    "title": "Wordmark section",
    "group": "On-ink (dark sections)",
@@ -7431,32 +7432,32 @@
       },
       {
        "node": "div.g1",
-       "size": "971.7x346.0",
+       "size": "1222.7x435.4",
        "bgImage": "radial-gradient(circle, rgba(232, 70, 120, 0.8) 0px, rgba(232, 70, 120, 0) 50%)"
       },
       {
        "node": "div.g2",
-       "size": "914.3x325.6",
+       "size": "1049.3x373.7",
        "bgImage": "radial-gradient(circle, rgba(150, 10, 55, 0.8) 0px, rgba(150, 10, 55, 0) 50%)"
       },
       {
        "node": "div.g3",
-       "size": "1144.1x407.4",
+       "size": "982.8x350.0",
        "bgImage": "radial-gradient(circle, rgba(198, 28, 78, 0.8) 0px, rgba(198, 28, 78, 0) 50%)"
       },
       {
        "node": "div.g4",
-       "size": "1735.8x618.1",
+       "size": "1362.3x485.1",
        "bgImage": "radial-gradient(circle, rgba(70, 4, 30, 0.8) 0px, rgba(70, 4, 30, 0) 50%)"
       },
       {
        "node": "div.g5",
-       "size": "2360.7x840.7",
+       "size": "1901.1x677.0",
        "bgImage": "radial-gradient(circle, rgba(230, 106, 148, 0.8) 0px, rgba(230, 106, 148, 0) 50%)"
       },
       {
        "node": "div.g6",
-       "size": "1787.0x636.4",
+       "size": "1585.4x564.6",
        "bgImage": "radial-gradient(circle, rgba(185, 218, 152, 0.8) 0px, rgba(185, 218, 152, 0) 50%)"
       }
      ],
@@ -7480,12 +7481,12 @@
       "textDecorationLine": "none",
       "textTransform": "none"
      },
-     "crop": "components/crops/closer-default.png",
+     "cropError": "page.screenshot: Timeout 8000ms exceeded.\nCall log:\n  - taking page screenshot\n  - waiting for fonts to load...\n  - font",
      "via": "at rest"
     }
    },
    "page": "home",
-   "run": "2026-11-15",
+   "run": "2026-11-16",
    "url": "https://fourthwall.com/",
    "title": "Closing CTA section",
    "group": "On-ink (dark sections)",
@@ -7673,7 +7674,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-15",
+   "run": "2026-11-16",
    "url": "https://fourthwall.com/",
    "title": "Footer",
    "group": "Footer",
@@ -8114,7 +8115,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-15",
+   "run": "2026-11-16",
    "url": "https://fourthwall.com/",
    "title": "Footer link",
    "group": "Footer",
@@ -23956,7 +23957,7 @@
      "text": "",
      "rect": {
       "x": 748,
-      "y": 160.5,
+      "y": 104.5,
       "w": 516,
       "h": 619.19
      },
@@ -24024,8 +24025,8 @@
       "transitionTimingFunction": "cubic-bezier(0.16, 1, 0.3, 1), cubic-bezier(0.16, 1, 0.3, 1)",
       "transitionDelay": "0.15s",
       "cursor": "auto",
-      "opacity": "0",
-      "transform": "matrix(1, 0, 0, 1, 0, 56)",
+      "opacity": "1",
+      "transform": "matrix(1, 0, 0, 1, 0, 0)",
       "overflow": "visible",
       "zIndex": "auto",
       "top": "auto"
@@ -24035,7 +24036,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-15",
+   "run": "2026-11-16",
    "url": "https://fourthwall.com/",
    "title": "Design preview carousel",
    "group": "Home",
@@ -24049,28 +24050,28 @@
      "classes": "made-with",
      "text": "Made with Fourthwall",
      "rect": {
-      "x": 0,
-      "y": -11.8,
-      "w": 1440,
-      "h": 1067.19
+      "x": 40,
+      "y": 6051.2,
+      "w": 1360,
+      "h": 925.19
      },
      "style": {
       "display": "block",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "1440px",
-      "height": "1067.19px",
+      "width": "1360px",
+      "height": "925.188px",
       "minWidth": "0px",
-      "maxWidth": "1440px",
+      "maxWidth": "1880px",
       "minHeight": "0px",
       "paddingTop": "140px",
       "paddingRight": "0px",
       "paddingBottom": "0px",
       "paddingLeft": "0px",
       "marginTop": "0px",
-      "marginRight": "0px",
+      "marginRight": "40px",
       "marginBottom": "0px",
-      "marginLeft": "0px",
+      "marginLeft": "40px",
       "gap": "normal",
       "rowGap": "normal",
       "columnGap": "normal",
@@ -24127,42 +24128,17 @@
      "paint": [
       {
        "node": "section.made-with",
-       "size": "1440.0x1067.2",
+       "size": "1360.0x925.2",
        "bg": "rgb(10, 10, 10)"
       },
       {
        "node": "div.tile-inner",
-       "size": "397.8x251.6",
+       "size": "397.8x251.5",
        "bg": "rgb(20, 20, 20)"
       },
       {
        "node": "div.tile-inner",
-       "size": "350.2x257.5",
-       "bg": "rgb(20, 20, 20)"
-      },
-      {
-       "node": "div::after.tile-inner",
-       "size": "397.797pxx251.547px",
-       "shadow": "rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset"
-      },
-      {
-       "node": "div.tile-inner",
-       "size": "236.0x246.5",
-       "bg": "rgb(20, 20, 20)"
-      },
-      {
-       "node": "div.tile-inner",
-       "size": "110.0x223.6",
-       "bg": "rgb(20, 20, 20)"
-      },
-      {
-       "node": "div.tile-inner",
-       "size": "8.8x196.2",
-       "bg": "rgb(20, 20, 20)"
-      },
-      {
-       "node": "div.tile-inner",
-       "size": "59.1x169.9",
+       "size": "350.3x253.7",
        "bg": "rgb(20, 20, 20)"
       },
       {
@@ -24172,12 +24148,22 @@
       },
       {
        "node": "div.tile-inner",
-       "size": "99.6x147.4",
+       "size": "236.1x240.3",
        "bg": "rgb(20, 20, 20)"
       },
       {
        "node": "div.tile-inner",
-       "size": "121.8x129.3",
+       "size": "110.1x216.8",
+       "bg": "rgb(20, 20, 20)"
+      },
+      {
+       "node": "div.tile-inner",
+       "size": "8.9x189.9",
+       "bg": "rgb(20, 20, 20)"
+      },
+      {
+       "node": "div.tile-inner",
+       "size": "59.0x164.6",
        "bg": "rgb(20, 20, 20)"
       },
       {
@@ -24187,12 +24173,27 @@
       },
       {
        "node": "div.tile-inner",
-       "size": "133.1x115.3",
+       "size": "99.5x143.1",
        "bg": "rgb(20, 20, 20)"
       },
       {
        "node": "div.tile-inner",
-       "size": "138.4x104.8",
+       "size": "121.8x126.0",
+       "bg": "rgb(20, 20, 20)"
+      },
+      {
+       "node": "div::after.tile-inner",
+       "size": "397.797pxx251.547px",
+       "shadow": "rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset"
+      },
+      {
+       "node": "div.tile-inner",
+       "size": "133.1x112.9",
+       "bg": "rgb(20, 20, 20)"
+      },
+      {
+       "node": "div.tile-inner",
+       "size": "138.4x103.1",
        "bg": "rgb(20, 20, 20)"
       },
       {
@@ -24221,12 +24222,12 @@
       "textDecorationLine": "none",
       "textTransform": "none"
      },
-     "cropError": "locator.screenshot: Timeout 7991.880999999994ms exceeded.",
+     "cropError": "locator.screenshot: Timeout 3917.2949999999837ms exceeded.\nCall log:\n  - taking element screenshot\n  - waiting for fonts",
      "via": "at rest"
     }
    },
    "page": "home",
-   "run": "2026-11-15",
+   "run": "2026-11-16",
    "url": "https://fourthwall.com/",
    "title": "Made-with band",
    "group": "On-ink (dark sections)",
@@ -24323,10 +24324,10 @@
      "classes": "closer-link",
      "text": "Make something worth buying",
      "rect": {
-      "x": 513.6,
-      "y": 382.7,
-      "w": 412.88,
-      "h": 135.47
+      "x": 505.3,
+      "y": 380,
+      "w": 429.38,
+      "h": 140.86
      },
      "style": {
       "display": "inline",
@@ -24398,7 +24399,7 @@
       "zIndex": "auto",
       "top": "auto"
      },
-     "cropError": "page.screenshot: Timeout 8000ms exceeded.\nCall log:\n  - taking page screenshot\n  - waiting for fonts to load...\n  - font",
+     "crop": "components/crops/closer-cta-hover.png",
      "via": "mouse hover"
     },
     "focus-visible": {
@@ -24406,10 +24407,10 @@
      "classes": "closer-link",
      "text": "Make something worth buying",
      "rect": {
-      "x": 512.9,
-      "y": 382.5,
-      "w": 414.28,
-      "h": 135.93
+      "x": 505.3,
+      "y": 379.9,
+      "w": 429.39,
+      "h": 140.89
      },
      "style": {
       "display": "inline",
@@ -24484,7 +24485,7 @@
      "paint": [
       {
        "node": "a.closer-link",
-       "size": "414.3x135.9",
+       "size": "429.4x140.9",
        "outline": "1px auto rgb(16, 16, 16) offset 1px"
       }
      ],
@@ -24576,7 +24577,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-15",
+   "run": "2026-11-16",
    "url": "https://fourthwall.com/",
    "title": "Closer CTA",
    "group": "On-ink (dark sections)",
@@ -26666,7 +26667,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-15",
+   "run": "2026-11-16",
    "url": "https://fourthwall.com/",
    "title": "Start now button",
    "group": "Site chrome",
@@ -26762,11 +26763,12 @@
        "bg": "rgba(255, 255, 255, 0.07)"
       }
      ],
+     "crop": "components/crops/mega-card-default.png",
      "via": "at rest"
     }
    },
    "page": "home",
-   "run": "2026-11-15",
+   "run": "2026-11-16",
    "url": "https://fourthwall.com/",
    "title": "Mega-menu card",
    "group": "Site chrome",
@@ -27190,7 +27192,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-15",
+   "run": "2026-11-16",
    "url": "https://fourthwall.com/",
    "title": "Hero CTA",
    "group": "Home",

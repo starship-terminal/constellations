@@ -39,8 +39,10 @@ export const RAW = path.join(REF, 'raw');
 // products.fourthwall.com is the public product catalogue, a styled-components
 // React app shipping the Fourthwall design system proper: --color-* ramps and
 // --bg-*/--border-*/--text-*/--icon-*/--font-*/--space-*/--radius-*/--shadow-*/
-// --motion-*/--input-*/--button-*/--panel-* semantics resolved with light-dark(),
-// so prefers-color-scheme: dark paints a real dark surface. fourthwall.com/
+// --motion-*/--input-*/--button-*/--panel-* semantics resolved with light-dark().
+// Its dark branch is declared, not toggled: the catalogue ships no theme
+// control, so the catalogDark values are a forced colour-scheme resolution,
+// never an observed painted surface. fourthwall.com/
 // get-started redirects to auth.fourthwall.com (Keycloak) with the same DS
 // behind the signed-out Sign-up-with-Google/Apple/email choices.
 // docs.fourthwall.com is Mintlify (light class on <html>, a "Change theme
@@ -322,6 +324,19 @@ export async function crop(page, locator, name, pad = 8) {
 export async function centre(locator) {
   await locator.evaluate((el) => el.scrollIntoView({ block: 'center', inline: 'nearest', behavior: 'instant' })).catch(() => {});
   await locator.page().waitForTimeout(350);
+  // The marketing reveal is a 1.8s (+stagger delay) opacity/transform
+  // transition that starts when the element scrolls into view: a fixed 350ms
+  // read caught mid-animation styles (opacity:0, translateY(56px) on the
+  // published tile/design-preview defaults). Wait for the element's own
+  // running transitions/animations to finish, capped so a looping or
+  // never-firing animation cannot hang the run.
+  try {
+    await locator.evaluate((el) => Promise.race([
+      Promise.allSettled(el.getAnimations({ subtree: true }).map((a) => a.finished)),
+      new Promise((r) => setTimeout(r, 3500)),
+    ]));
+  } catch { /* no getAnimations support: keep the fixed wait above */ }
+  await locator.page().waitForTimeout(150);
 }
 
 // 256 colours, and a crop larger than about 1.2 megapixels (a whole sidebar or

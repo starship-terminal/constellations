@@ -257,7 +257,7 @@ tokens = {
         {"id": "catalog", "name": "Catalogue", "selectedTokenSets": {"core": "source", "catalog": "enabled"},
          "$description": "The product catalogue: products.fourthwall.com's own DS (--color-*/--bg-*/--text-*/--font-*/--space-*/--radius-*/--motion-*) in its light-dark() light branch — the only catalogue surface visitors paint."},
         {"id": "catalogDark", "name": "Catalogue dark", "selectedTokenSets": {"core": "source", "catalogDark": "enabled"},
-         "$description": "The catalogue DS's declared dark branch: the same semantic names resolve through light-dark() under a dark color-scheme (--bg-primary #161712). Declared but never painted signed out — the catalogue ships no theme toggle; see the auth theme for the same vocabulary painted dark for real."},
+         "$description": "The catalogue DS's declared dark branch: the same semantic names resolve through light-dark() under a dark color-scheme (--bg-primary #161712). Declared but never painted signed out — the catalogue ships no theme toggle, so these are forced-probe resolutions, not an observed public theme (docsDark and helpDark are the genuinely toggled themes)."},
         {"id": "signup", "name": "Auth (signup)", "selectedTokenSets": {"core": "source", "signup": "enabled"},
          "$description": "The /get-started signup shell: auth.fourthwall.com's Keycloak pages ship the catalogue DS in light (--bg-primary #ffffff, --text-primary #161712 — its own light-dark() pairs follow the visitor's color-scheme like the catalogue's; the catalogDark set carries the same dark branch). Nothing was typed or submitted."},
         {"id": "docs", "name": "Docs", "selectedTokenSets": {"core": "source", "docs": "enabled"},

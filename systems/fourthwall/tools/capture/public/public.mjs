@@ -5,8 +5,8 @@
 // Names are {page}-{theme}-{state}.png; mobile ones get a `mobile-` prefix. fourthwall.com
 // (Webflow) paints one light surface with scoped dark "on-ink" sections — there is no
 // marketing theme toggle, so the dark sections are shot as part of the light page, not
-// as a theme. products.fourthwall.com paints the catalogue DS in light (its dark side is
-// reached through the real prefers-color-scheme media, see the catalog-dark shots).
+// as a theme. products.fourthwall.com paints the catalogue DS in light (its light-dark()
+// dark branch is declared only — no theme toggle, so there are no catalog-dark shots).
 // /get-started redirects to auth.fourthwall.com (Keycloak); shot at rest, nothing typed.
 // docs.fourthwall.com (Mintlify) ships a real "Change theme preference" menu — the
 // docs-dark shots are the genuinely toggled theme. help.fourthwall.com (Docusaurus)

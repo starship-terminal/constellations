@@ -38,61 +38,61 @@
 /*SET:helpDark*/
 }
 * { box-sizing: border-box; }
-body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--_primitives-color-ink, #0a0a0a); background: var(--_primitives-color-paper, #fff); }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--_primitives-color-ink-default, #0a0a0a); background: var(--_primitives-color-paper-default, #fff); }
 main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
 h1 { font: 435 38px/1.2 var(--sg-display); margin: 0 0 4px; letter-spacing: -0.02em; }
-h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--_primitives-color-ink, #0a0a0a); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--gs200, #f2f2f2); }
-.lead { max-width: 62ch; color: var(--_primitives-color-ink, #0a0a0a); opacity: .8; }
-.note { font-size: 13px; color: var(--_primitives-color-ink, #0a0a0a); opacity: .65; max-width: 62ch; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--_primitives-color-ink-default, #0a0a0a); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--gs-200, #f2f2f2); }
+.lead { max-width: 62ch; color: var(--_primitives-color-ink-default, #0a0a0a); opacity: .8; }
+.note { font-size: 13px; color: var(--_primitives-color-ink-default, #0a0a0a); opacity: .65; max-width: 62ch; }
 code { font-family: var(--sg-mono); font-size: .9em; }
-.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--_primitives-color-ink, #0a0a0a); opacity: .6; margin: 18px 0 6px; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--_primitives-color-ink-default, #0a0a0a); opacity: .6; margin: 18px 0 6px; }
 .pal { display: flex; flex-wrap: wrap; gap: 8px; }
 /* A non-light strip's values only read on its own field: the ink/dark-role
    names resolve to near-white inks, invisible on the white page. */
-.pal.ink { background: var(--gs900, #1b1d19); color: #f2f2f2; padding: 12px; border-radius: 10px; }
-.pal.catalogDark { background: var(--bg-page, #101010); color: var(--text-primary, #f2f2f2); padding: 12px; border-radius: 10px; }
-.pal.docsDark { background: var(--background-dark, #0f1117); color: #fff; padding: 12px; border-radius: 10px; }
+.pal.ink { background: var(--_surface-bg-page, var(--gs-900, #1b1d19)); color: var(--_surface-text-body, #f2f2f2); padding: 12px; border-radius: 10px; }
+.pal.catalogDark { background: var(--bg-primary-default, #101010); color: var(--text-primary-default, #f2f2f2); padding: 12px; border-radius: 10px; }
+.pal.docsDark { background: var(--surface-card, #0f1117); color: var(--text-ink, #fff); padding: 12px; border-radius: 10px; }
 .pal.helpDark { background: var(--ifm-background-color, #1b1b1d); color: #fff; padding: 12px; border-radius: 10px; }
 .sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
-.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--gs400, #e3e2e1); display: inline-flex; flex: 0 0 auto; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--gs-400, #e3e2e1); display: inline-flex; flex: 0 0 auto; }
 .sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
 .sw .nm { font: 500 11px/1.3 var(--sg-mono); }
 .sw .vl { font: 400 11px/1.3 var(--sg-mono); color: inherit; opacity: .65; }
-.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--gs200, #f2f2f2); background: #fff; font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--gs-200, #f2f2f2); background: #fff; font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
 .kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
 .kv b { font-weight: 500; }
 .kv span { color: inherit; opacity: .65; }
 /* ---- mocks ---- */
-.mock { border: 1px solid var(--gs200, #f2f2f2); overflow: hidden; background: var(--_primitives-color-paper, #fff); }
-.navbar { display: flex; align-items: center; gap: 22px; height: var(--component-nav-height, 64px); padding: 0 12px 0 22px; font-size: 15px; color: var(--_primitives-color-ink, #0a0a0a); background: var(--_primitives-color-paper, #fff); box-shadow: var(--gs200, #f2f2f2) 0 1px 0 0; }
+.mock { border: 1px solid var(--gs-200, #f2f2f2); overflow: hidden; background: var(--_primitives-color-paper-default, #fff); }
+.navbar { display: flex; align-items: center; gap: 22px; height: var(--component-nav-height, 64px); padding: 0 12px 0 22px; font-size: 15px; color: var(--_primitives-color-ink-default, #0a0a0a); background: var(--_primitives-color-paper-default, #fff); box-shadow: var(--gs-200, #f2f2f2) 0 1px 0 0; }
 .navbar .wm { font: 465 17px/1 var(--sg-display); letter-spacing: -0.01em; }
 .navbar .sp { flex: 1; }
-.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-nav-cta-height, 36px); padding: 0 16px; font-size: var(--_primitives-font-size-control-md, 15px); font-weight: 465; border-radius: var(--_primitives-radius-lg, 12px); border: 1px solid transparent; }
-.btn.primary { background: var(--_surface-bg-action, var(--_primitives-color-ink, #0a0a0a)); color: var(--_surface-text-action, #fff); }
-.btn.ghost { border-color: var(--gs400, #e3e2e1); color: var(--_primitives-color-ink, #0a0a0a); }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-nav-cta-height, 36px); padding: 0 16px; font-size: var(--_primitives-font-size-body-fluid-md, 15px); font-weight: 465; border-radius: var(--_primitives-radius-lg, 12px); border: 1px solid transparent; }
+.btn.primary { background: var(--_surface-bg-action, var(--_primitives-color-ink-default, #0a0a0a)); color: var(--_surface-text-action, #fff); }
+.btn.ghost { border-color: var(--gs-400, #e3e2e1); color: var(--_primitives-color-ink-default, #0a0a0a); }
 .btn.small { height: var(--component-nav-cta-height, 34px); border-radius: var(--_primitives-radius-lg, 12px); font-size: 13px; }
-.btn.blue { background: var(--b500, #0042ff); color: #fff; }
-.hero { color: var(--_primitives-color-ink, #0a0a0a); padding: 72px 40px; font: 435 var(--_primitives-font-size-display-xl, 57.5px)/1.05 var(--sg-display); letter-spacing: -0.02em; text-align: left; background: var(--_primitives-color-paper, #fff); }
-.hero small { display: block; font: 400 var(--_primitives-font-size-body-fluid-md, 17px)/var(--_primitives-line-height-relaxed, 1.65) var(--sg-sans); color: var(--_primitives-color-ink, #0a0a0a); opacity: .72; margin: 16px 0 22px; max-width: 46ch; }
-.tag { display: inline-block; padding: 4px 14px; border-radius: 40px; background: var(--_primitives-color-paper, #fff); border: 1px solid var(--gs300, #eaeae9); font-size: 12px; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: var(--gs700, #40413d); }
+.btn.blue { background: var(--b-500, #0042ff); color: #fff; }
+.hero { color: var(--_primitives-color-ink-default, #0a0a0a); padding: 72px 40px; font: 435 var(--_primitives-font-size-display-xl, 57.5px)/1.05 var(--sg-display); letter-spacing: -0.02em; text-align: left; background: var(--_primitives-color-paper-default, #fff); }
+.hero small { display: block; font: 400 var(--_primitives-font-size-body-fluid-md, 17px)/var(--_primitives-line-height-relaxed, 1.65) var(--sg-sans); color: var(--_primitives-color-ink-default, #0a0a0a); opacity: .72; margin: 16px 0 22px; max-width: 46ch; }
+.tag { display: inline-block; padding: 4px 14px; border-radius: 40px; background: var(--_primitives-color-paper-default, #fff); border: 1px solid var(--gs-300, #eaeae9); font-size: 12px; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: var(--gs-700, #40413d); }
 .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
-.tile { border: 1px solid var(--gs200, #f2f2f2); padding: 24px; font-size: 13px; background: var(--_surface-bg-subtle, var(--gs100, #fff)); border-radius: var(--_primitives-radius-lg, 12px); }
-.tile .img { height: 140px; background: var(--gs200, #f2f2f2); border-radius: 8px; margin-bottom: 10px; display: flex; align-items: flex-end; padding: 10px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--gs600, #696963); }
-.tile b { display: block; font: 465 18px/1.25 var(--sg-display); margin-bottom: 4px; color: var(--_primitives-color-ink, #0a0a0a); }
-.tile .sub { opacity: .65; font-size: 12px; color: var(--gs600, #696963); }
-.tile.dark, .ink .tile { background: var(--_surface-bg-page, var(--gs1000, #0a0a0a)); border-color: var(--gs800, #272825); color: var(--_surface-text-body, #f2f2f2); }
+.tile { border: 1px solid var(--gs-200, #f2f2f2); padding: 24px; font-size: 13px; background: var(--_surface-surface-bg-subtle-default, var(--gs-100, #fff)); border-radius: var(--_primitives-radius-lg, 12px); }
+.tile .img { height: 140px; background: var(--gs-200, #f2f2f2); border-radius: 8px; margin-bottom: 10px; display: flex; align-items: flex-end; padding: 10px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--gs-600, #696963); }
+.tile b { display: block; font: 465 18px/1.25 var(--sg-display); margin-bottom: 4px; color: var(--_primitives-color-ink-default, #0a0a0a); }
+.tile .sub { opacity: .65; font-size: 12px; color: var(--gs-600, #696963); }
+.tile.dark, .ink .tile { background: var(--_surface-bg-page, var(--gs-1000, #0a0a0a)); border-color: var(--gs-800, #272825); color: var(--_surface-text-body, #f2f2f2); }
 .ink .tile b, .ink .tile .sub { color: var(--_surface-text-heading, #f2f2f2); }
 table.cmp { border-collapse: collapse; font-size: 14px; }
-table.cmp td, table.cmp th { border: 1px solid var(--gs200, #f2f2f2); padding: 6px 14px; text-align: left; }
-.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--gs200, #f2f2f2); }
+table.cmp td, table.cmp th { border: 1px solid var(--gs-200, #f2f2f2); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--gs-200, #f2f2f2); }
 .tr .ts { font-family: var(--sg-display); }
 .tr .tv { font-size: 12px; color: inherit; opacity: .65; font-family: var(--sg-mono); }
-.field { width: 320px; height: 42px; border: 1px solid var(--border-default, var(--gs400, #e3e2e1)); border-radius: var(--_primitives-radius-lg, 12px); background: var(--input-bg, #fff); color: var(--text-primary, #0a0a0a); padding: 0 12px; font-size: 14px; }
-.field::placeholder { color: var(--text-secondary, #8e8e89); }
-.badge { display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: 11px; font-weight: 500; background: var(--b100, #f2f5fe); color: var(--b500, #0042ff); }
-.seg { display: inline-flex; border-radius: 999px; background: var(--gs200, #f2f2f2); padding: 4px; font-size: 13px; }
-.seg span { padding: 6px 14px; border-radius: 999px; color: var(--gs700, #40413d); }
-.seg span.on { background: var(--_primitives-color-ink, #0a0a0a); color: #fff; }
+.field { width: 320px; height: 42px; border: 1px solid var(--input-border-default, var(--gs-400, #e3e2e1)); border-radius: var(--_primitives-radius-lg, 12px); background: var(--input-bg-default, #fff); color: var(--text-primary-default, #0a0a0a); padding: 0 12px; font-size: 14px; }
+.field::placeholder { color: var(--text-secondary-default, #8e8e89); }
+.badge { display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: 11px; font-weight: 500; background: var(--b-100, #f2f5fe); color: var(--b-500, #0042ff); }
+.seg { display: inline-flex; border-radius: 999px; background: var(--gs-200, #f2f2f2); padding: 4px; font-size: 13px; }
+.seg span { padding: 6px 14px; border-radius: 999px; color: var(--gs-700, #40413d); }
+.seg span.on { background: var(--_primitives-color-ink-default, #0a0a0a); color: #fff; }
 </style>
 </head>
 <body>
@@ -102,7 +102,7 @@ table.cmp td, table.cmp th { border: 1px solid var(--gs200, #f2f2f2); padding: 6
 
   <h2 class="sh">Fourthwall, measured</h2>
   <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the marketing Webflow layer (<code>--_primitives---*</code> primitives, <code>--_surface---*</code> roles, the flat <code>--gs*</code>/<code>--b*</code>/<code>--g*</code>/<code>--r*</code>/<code>--y*</code> ramps and <code>--twitch</code>), the on-ink scope classes the dark sections carry, the catalogue design system's <code>--color-*</code>/<code>--bg-*</code>/<code>--text-*</code>/<code>--space-*</code> vocabulary resolved through <code>light-dark()</code> in both schemes, the auth shell's own resolutions, the Mintlify docs' <code>--gray-*</code>/<code>--primary*</code> pair and the Docusaurus help's <code>--ifm-*</code>/<code>--fw-*</code> pair — each set emitted under its own scope class. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
-  <p class="note">Read from fourthwall.com, products.fourthwall.com, docs.fourthwall.com, help.fourthwall.com and the /get-started auth shell, signed out, in headless Chromium. Everything post-login is a documented boundary; the catalogue's dark surface is painted by prefers-color-scheme (no class toggle), docs dark by its own "Change theme preference" menu and help dark by its own colour-mode toggle. Suisse Intl and Saans are served faces, not loaded here: samples fall back to system sans.</p>
+  <p class="note">Read from fourthwall.com, products.fourthwall.com, docs.fourthwall.com, help.fourthwall.com and the /get-started auth shell, signed out, in headless Chromium. Everything post-login is a documented boundary; the catalogue's dark branch is declared through light-dark() and was resolved under a forced colour-scheme probe (the catalogue ships no theme toggle — declared, not painted), docs dark by its own "Change theme preference" menu and help dark by its own colour-mode toggle. Suisse Intl and Saans are served faces, not loaded here: samples fall back to system sans.</p>
 
   <h2 class="sh">The chrome</h2>
   <p class="lead">The fixed nav pairs the wordmark with Features (mega-menu), Product catalog, Pricing and Learn, Log in and the "Start now" pill — an ink button on the paper surface. The hero runs the Saans display masthead with the near-black 12px-radius CTA; sections are labelled by small caps brows and the dark bands are the sheet's own on-ink scopes.</p>
@@ -124,11 +124,11 @@ table.cmp td, table.cmp th { border: 1px solid var(--gs200, #f2f2f2); padding: 6
 
   <h2 class="sh">The catalogue surface</h2>
   <p class="lead">products.fourthwall.com paints the design system proper: <code>--color-*</code> ramps and semantic <code>--bg-*</code>/<code>--text-*</code>/<code>--border-*</code>/<code>--input-*</code>/<code>--button-*</code> roles declared as <code>light-dark()</code> pairs — the <code>.catalog</code> scope carries the light side here. The auth shell at /get-started re-declares the same DS.</p>
-  <div class="catalog" style="padding:20px;border:1px solid var(--border-default,#e3e2e1);background:var(--bg-page,#fff);color:var(--text-primary,#0a0a0a)">
+  <div class="catalog" style="padding:20px;border:1px solid var(--border-primary-default,#e3e2e1);background:var(--bg-primary-default,#fff);color:var(--text-primary-default,#0a0a0a)">
     <div class="grid">
-      <div class="tile" style="background:var(--bg-surface,#fff);border:1px solid var(--border-default,#e3e2e1);color:var(--text-primary,#0a0a0a)"><div class="img" style="background:var(--bg-subtle,#f2f2f2);color:var(--text-secondary,#696963)">product</div><b style="color:var(--text-primary,#0a0a0a)">Comfort Colors 1717</b><span class="sub" style="color:var(--text-secondary,#696963)">From $15.45 · 16 colours</span></div>
+      <div class="tile" style="background:var(--surface-card,#fff);border:1px solid var(--border-primary-default,#e3e2e1);color:var(--text-primary-default,#0a0a0a)"><div class="img" style="background:var(--bg-secondary-default,#f2f2f2);color:var(--text-secondary-default,#696963)">product</div><b style="color:var(--text-primary-default,#0a0a0a)">Comfort Colors 1717</b><span class="sub" style="color:var(--text-secondary-default,#696963)">From $15.45 · 16 colours</span></div>
     </div>
-    <div style="margin-top:14px"><input class="field" placeholder="Search products" style="background:var(--input-bg,#fff);border-color:var(--input-border,#e3e2e1);color:var(--input-text,#0a0a0a)"> <span class="btn primary" style="background:var(--button-primary-bg,#0a0a0a);color:var(--button-primary-text,#fff)">Sign in to design</span></div>
+    <div style="margin-top:14px"><input class="field" placeholder="Search products" style="background:var(--input-bg-default,#fff);border-color:var(--input-border-default,#e3e2e1);color:var(--text-primary-default,#0a0a0a)"> <span class="btn primary" style="background:var(--bg-primary-invert,#0a0a0a);color:var(--text-primary-invert,#fff)">Sign in to design</span></div>
   </div>
 
   <h2 class="sh">Palette</h2>
@@ -156,7 +156,7 @@ table.cmp td, table.cmp th { border: 1px solid var(--gs200, #f2f2f2); padding: 6
 const TOK = /*TOKENS*/null;
 const $ = (s) => document.querySelector(s);
 const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
-const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9_-]/g, '-');
 const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
 
 // Each surface set's swatches must be painted inside its own scope class or
@@ -166,8 +166,8 @@ const SURFACES = [
   ['light', 'marketing measured roles', ''],
   ['ink', 'on-ink scoped values (dark sections)', ' ink'],
   ['catalog', 'catalogue/auth DS (light)', ' catalog'],
-  ['catalogDark', 'catalogue DS under prefers-color-scheme: dark', ' catalogDark'],
-  ['signup', 'auth shell overrides', ' catalog'],
+  ['catalogDark', 'catalogue declared dark branch (forced colour-scheme probe, never painted)', ' catalogDark'],
+  ['signup', 'auth shell overrides', ' signup'],
   ['docs', 'docs (Mintlify light)', ' docs'],
   ['docsDark', 'docs under html.dark', ' docsDark'],
   ['help', 'help (Docusaurus light)', ' help'],

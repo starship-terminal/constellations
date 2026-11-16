@@ -333,12 +333,22 @@ def W(s=""):
 shots = sorted(p.name for p in Path("screenshots").glob("*.png"))
 
 
+# One page name can prefix another (docs/docs-dark, help/help-dark), so a bare
+# `docs-(light|dark)-` match would also claim docs-dark's shots. Assign every
+# file to the longest page prefix it matches and let each row link only its
+# own page.
+PAGE_PREFIXES = sorted((p for p, _, _ in SHOTS + MOBILE), key=len, reverse=True)
+
+
 def links(prefix):
     out = []
     for f in shots:
-        m = re.fullmatch(re.escape(prefix) + r"-(?:light|dark)-(.+)\.png", f)
-        if m:
-            out.append(f"[{m.group(1)}](screenshots/{f})")
+        for p in PAGE_PREFIXES:
+            m = re.fullmatch(re.escape(p) + r"-(?:light|dark)-(.+)\.png", f)
+            if m:
+                if p == prefix:
+                    out.append(f"[{m.group(1)}](screenshots/{f})")
+                break
     return ", ".join(out)
 
 
@@ -566,7 +576,7 @@ W("- **The quiz's later steps** (recommendations after several answers), the cat
 W()
 W("### Themes")
 W()
-W("The marketing site paints one light surface — no user-facing theme control was found (`color-scheme: normal`); its dark bands are the sheet's own on-ink scope classes (.on-ink, .leg-section.gs1000, .wordmark-section, .closer-section, the .is-warm nav/footer), captured as the ink set. products.fourthwall.com declares every role as light-dark(), so prefers-color-scheme: dark paints a real dark catalogue (the catalogDark set). docs.fourthwall.com's 'Change theme preference' menu sets html.dark for real (the docsDark set and measurements). help.fourthwall.com's colour-mode toggle sets data-theme=\"dark\" for real (the helpDark set and measurements).")
+W("The marketing site paints one light surface — no user-facing theme control was found (`color-scheme: normal`); its dark bands are the sheet's own on-ink scope classes (.on-ink, .leg-section.gs1000, .wordmark-section, .closer-section, the .is-warm nav/footer), captured as the ink set. products.fourthwall.com declares every role as a light-dark() pair — the catalogDark set is the declared dark branch resolved under a forced color-scheme probe: declared, not observed (the catalogue ships no theme toggle and no dark paint was captured signed out). docs.fourthwall.com's 'Change theme preference' menu sets html.dark for real (the docsDark set and measurements). help.fourthwall.com's colour-mode toggle sets data-theme=\"dark\" for real (the helpDark set and measurements).")
 W()
 W("### Fonts")
 W()

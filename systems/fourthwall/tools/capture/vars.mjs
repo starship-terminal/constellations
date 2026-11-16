@@ -16,8 +16,8 @@
 //                           --bg-*/--border-*/--text-*/--icon-*/--font-*/
 //                           --space-*/--radius-*/--shadow-*/--motion-*/
 //                           --input-*/--button-*/--panel-* semantics wrapped
-//                           in light-dark(), so prefers-color-scheme: dark is
-//                           a real painted surface
+//                           in light-dark() — the dark branch is declared only
+//                           (no theme toggle, never painted signed out)
 //   /get-started            redirects to auth.fourthwall.com (Keycloak) —
 //                           the same catalogue DS behind the signed-out
 //                           Google/Apple/email choices
@@ -38,8 +38,8 @@
 // sheets: `light` the marketing :root, `ink` the marketing shell with the
 // on-ink scope class applied to body (the dark-section remap the real pages
 // paint), `catalog` the products shell, `catalogDark` the products shell
-// resolved under an emulated prefers-color-scheme: dark (the light-dark()
-// dark side the catalogue really paints), `signup` the get-started/auth
+// resolved under an emulated prefers-color-scheme: dark (the declared
+// light-dark() dark branch — a forced probe, not an observed theme), `signup` the get-started/auth
 // sheets, `docs` the Mintlify shell, `docsDark` it with html.dark (the site's
 // own theme menu), `help` the Docusaurus shell and `helpDark` it under
 // data-theme="dark" (the site's own toggle). Colours come back as sRGB hex,
@@ -158,9 +158,10 @@ const result = await probe.evaluate((sheets) => {
 const hostsOf = (prefix) => sheets.filter(([n]) => n.startsWith(prefix + ' ')).map(([, css]) => css);
 // `ink` carries the marketing on-ink scope classes the real pages put on dark
 // sections (.on-ink is the umbrella the sheet defines); `catalogDark` is the
-// same products sheets resolved under an emulated dark color-scheme (its
-// light-dark() values really repaint); `docsDark` adds html.dark, `helpDark`
-// data-theme="dark" — both are the hosts' own toggle classes.
+// same products sheets resolved under an emulated dark color-scheme (the
+// declared light-dark() branch, not an observed paint); `docsDark` adds
+// html.dark, `helpDark` data-theme="dark" — both are the hosts' own toggle
+// classes.
 const SHELLS = {
   light: { css: hostsOf('marketing'), html: '', body: '' },
   ink: { css: hostsOf('marketing'), html: '', body: 'on-ink site-footer' },
