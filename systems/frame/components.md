@@ -1,6 +1,6 @@
 # Frame.io components
 
-The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Captured from frame.io on 2026-11-15, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was signed into, bought or submitted; the contact form and the sign-in field were never sent; every link and CTA was measured, never followed.
+The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Captured from frame.io on 2026-11-16, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was signed into, bought or submitted; the contact form and the sign-in field were never sent; every link and CTA was measured, never followed.
 
 The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (52 components, 131 states). The page layouts are described in [patterns.md](patterns.md).
 
@@ -8,11 +8,11 @@ How to read an entry:
 
 - A colour is its value followed by the palette token in [tokens.json](tokens.json) with the same value, when there is one. Text is written family size/line-height weight, then its colour, for example `Inter 16/20.8 400, #fcfcfc`, and is read from the first text node inside the component.
 - The state table has one row per state that differs. The first row lists every value; later rows list only what changes. A state with the same values as the first is named in its label, for example "default (same: focus-visible)". When the root paints nothing, "Child layers" names the first nodes inside it that do.
-- Crops are images of the component read from the live page, in [components/crops/](components/crops) (126 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
+- Crops are images of the component read from the live page, in [components/crops/](components/crops) (127 files, named `{component}-{state}.png`, shot at 2x device scale; a crop over about 1.2 megapixels is halved to 1x by the quantize step, so check a file's own dimensions before reading pixels off it). Screenshots are in [screenshots/](screenshots).
 
 ## Discovery list
 
-Screenshots are named `{page}-{theme}-state.png` where `{theme}` is the mode the page painted at capture: `dark` for every frame.io page — the site ships no theme switch, so the dark theme is the only painted surface (the `dark` token set) — and `light` for accounts.frame.io/welcome, the sign-in surface on a different stack. Desktop shots are 1440 x 900 at 1x; `-full` shots are whole pages bounded at eight chunks; mobile shots are `mobile-{page}-{theme}-{state}.png`, 780 wide (390 at 2x).
+Screenshots are named `{page}-{theme}-state.png` where `{theme}` is the mode the page painted at capture: `dark` for every frame.io page — the site ships no theme switch, so the dark theme is the only painted surface (the `dark` token set) — and `light` for accounts.frame.io/welcome, the sign-in surface on a different stack. Desktop shots are 1440 x 900 at 1x; `-full` shots are whole pages bounded at eight chunks; mobile shots are `mobile-{page}-{theme}-{state}.png` — the `-default` viewports are 780 wide (390 at 2x), the `-full` pages are captured at css scale and are 390 wide.
 
 | Surface | URL | Screenshots |
 |---|---|---|
@@ -38,7 +38,7 @@ Screenshots are named `{page}-{theme}-state.png` where `{theme}` is the mode the
 | Home, phone | `/` | [default](screenshots/mobile-home-dark-default.png), [drawer](screenshots/mobile-home-dark-drawer.png), [full](screenshots/mobile-home-dark-full.png) |
 | Pricing, phone | `/pricing` | [default](screenshots/mobile-pricing-dark-default.png), [full](screenshots/mobile-pricing-dark-full.png) |
 | Contact form, phone | `/contact/form` | [default](screenshots/mobile-contact-form-dark-default.png), [full](screenshots/mobile-contact-form-dark-full.png) |
-| Sign in, phone | `accounts.frame.io/welcome` | [default](screenshots/mobile-welcome-light-default.png) |
+| Sign in, phone | `accounts.frame.io/welcome` | [default](screenshots/mobile-welcome-light-default.png), [full](screenshots/mobile-welcome-light-full.png) |
 
 ### Overlays and transient states
 
@@ -51,7 +51,7 @@ Screenshots are named `{page}-{theme}-state.png` where `{theme}` is the mode the
 | Resources mega-menu | every page header | the same activation on 'Resources' | [home-dark-menu-resources](screenshots/home-dark-menu-resources.png) |
 | Mobile nav overlay | home page, phone width | the 'Toggle mobile navigation' button's own toggle | [mobile-home-dark-drawer](screenshots/mobile-home-dark-drawer.png), [m-drawer](#mobile-nav-overlay) |
 | Billing toggle | /pricing | the Monthly/Annually switch was measured at rest — flipping re-prices the grid, so it was never switched | [price-toggle](#billing-toggle), [price-toggle-alt](#billing-toggle-annual) |
-| Comparison accordions | /pricing | clicked one comparison-row category — a local UI toggle | [ptable-acc](#feature-comparison-accordion), [pricing-dark-accordion-open](screenshots/pricing-dark-accordion-open.png) |
+| Comparison accordions | /pricing | clicked one comparison-row category — a local UI toggle | [ptable-acc](#feature-comparison-accordion) — the accordion-open screenshot was not captured this run (the accordion trigger did not open) |
 | Pricing FAQ | /pricing | clicked one FAQ row — a local UI toggle | [faq-acc](#faq-accordion) |
 | Contact form fields | /contact/form | typed into then cleared — nothing sent; Submit was never pressed | [form-name](#name-field), [form-email](#email-field), [form-message](#message-field) |
 | Sign-in field | accounts.frame.io/welcome | typed into then cleared — nothing sent; 'Let's go' was never pressed | [login-email](#email-field-sign-in) |
@@ -101,9 +101,9 @@ The chrome on every public page: the cobalt announcement banner, the fixed 8rem 
 #### Site header
 The fixed top bar on every public page (header is a 0-height sentinel; the painted bar is nav.mainNavigation, 80px under the 36px announcement strip): the Frame.io mark, the Features/Enterprise/Resources mega-menu triggers, Pricing, Contact Us, Sign In and the "Start Free Trial" pill. Read as `mkt-header` on the home page.
 
-**Values (default).** size 1440 x 80; background transparent; text FrameGothic 14/13.44 600, #fcfcfc `dark.theme.fg.declared`; icon 30 x 34, #fcfcfc `dark.theme.fg.declared`; layers span.ToggleButton_navMobileButtonLineEl__IvuHL 0.0x0.0 rgb(240, 240, 247) 9.33333px; span.ToggleButton_navMobileButtonLineEl__IvuHL 0.0x0.0 rgb(240, 240, 247) 9.33333px; span.ToggleButton_navMobileButtonLineEl__IvuHL 0.0x0.0 rgb(240, 240, 247) 9.33333px; span.ToggleButton_navMobileButtonLineEl__IvuHL 0.0x0.0 rgb(240, 240, 247) 9.33333px; a::before.Button_glass__B8SwH.Button_base__1G9eD autoxauto r.
+**Values (default).** size 1440 x 80; background transparent; text FrameGothic 14/13.44 600, #fcfcfc `dark.theme.fg.declared`; icon 30 x 34, #fcfcfc `dark.theme.fg.declared`; layers a::before.Button_white__XYP1F.Button_base__1G9eD 155.25pxx37.75px rgb(245, 245, 248) T:1px solid rgb(193, 194, 217) / R:1px solid rgb(193, 194, 217) / B:1px solid rgb(193, 194, 217) / L:1px solid rgb(193, 194, 217) 100px; figure.Navigation_backdrop__xQNG2 1440.0x80.0 rgba(13, 13, 24, 0.3).
 
-Child layers that carry the look: span 0x0 background #f0f0f7 `core.color.grey.95` radius 9.33333px; span 0x0 background #f0f0f7 `core.color.grey.95` radius 9.33333px; span 0x0 background #f0f0f7 `core.color.grey.95` radius 9.33333px.
+Child layers that carry the look: a::before 155.25pxx37.75px background #f5f5f8 `dark.theme.accent` border 1px solid #c1c2d9 `core.color.grey.80` radius 100px; figure 1440x80 background rgba(13, 13, 24, 0.3) `core.color.alpha.dark.30`.
 
 ![Site header default](components/crops/mkt-header-default.png)
 
@@ -133,8 +133,9 @@ The "Features" header button — click opens the mega-menu (the group gains NavG
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed, opened) | size 83.92 x 80; background transparent; text FrameGothic 14/13.44 600, #fcfcfc `dark.theme.fg.declared`; transition color 0.3s cubic-bezier(0.28, 0.44, 0.49, 1); icon 9.8 x 9.8, #fcfcfc `dark.theme.fg.declared`; layers ::before rgba(0, 0, 0, 0) 0px none 1 |
+| default (same: hover, pressed) | size 83.92 x 80; background transparent; text FrameGothic 14/13.44 600, #fcfcfc `dark.theme.fg.declared`; transition color 0.3s cubic-bezier(0.28, 0.44, 0.49, 1); icon 9.8 x 9.8, #fcfcfc `dark.theme.fg.declared`; layers ::before rgba(0, 0, 0, 0) 0px none 1 |
 | focus-visible | outline 1px dotted #fcfcfc `dark.theme.fg.declared`, offset 0px; layers ::before rgba(0, 0, 0, 0) 0px none 1; button.Navigation_navigationMainItem__pIZar.typography_navigation__70PKN 83.9x80.0 1px dotted rgb(252, 252, 252) offset 0px |
+| opened | icon 12.94 x 12.94, #fcfcfc `dark.theme.fg.declared` |
 
 ![Mega-menu trigger default](components/crops/nav-trigger-default.png) ![Mega-menu trigger hover](components/crops/nav-trigger-hover.png) ![Mega-menu trigger focus-visible](components/crops/nav-trigger-focus-visible.png) ![Mega-menu trigger pressed](components/crops/nav-trigger-pressed.png) ![Mega-menu trigger opened](components/crops/nav-trigger-opened.png)
 
@@ -190,21 +191,21 @@ The white "Start Free Trial" header pill; links to the trial sign-up, measured n
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 157.25 x 39.75; padding 0px 24px; radius 100px; background transparent; text FrameGothic 14/13.44 600, #000000 `core.color.alpha.black.100`; transition color 0.3s cubic-bezier(0, 0.44, 0.6, 1); layers ::before rgb(245, 245, 248) 1px none 1; ::after rgba(0, 0, 0, 0) 0px rgb(193, 194, 217) 0px 0px 0px 2px inset 0; a::before.Button_white__XYP1F.Button_base__1G9eD 155.25pxx37.75px rgb(245, 245, 248) T:1px solid rgb(193, 194, 217) / R:1px solid rgb(193, 194, 217) / B:1px solid rgb(193, 194, 217) / L:1px solid rgb(193, 194, 217) 100px; a::after.Button_white__XYP1F.Button_base__1G9eD 157.25pxx39.75px  |
+| default | size 157.25 x 39.75; padding 0px 24px; radius 100px; background transparent; text FrameGothic 14/13.44 600, #000000 `core.color.alpha.black.100`; transition color 0.3s cubic-bezier(0, 0.44, 0.6, 1); layers ::before rgb(245, 245, 248) 1px none 1; ::after rgba(0, 0, 0, 0) 0px rgb(193, 194, 217) 0px 0px 0px 2px inset 0; a::before.Button_white__XYP1F.Button_base__1G9eD 155.25pxx37.75px rgb(245, 245, 248) T:1px solid rgb(193, 194, 217) / R:1px solid rgb(193, 194, 217) / B:1px solid rgb(193, 194, 217) / L:1px solid rgb(193, 194, 217) 100px |
 | hover | layers ::before rgba(233, 233, 255, 0.7) 1px none 1; ::after rgba(0, 0, 0, 0) 0px rgb(252, 252, 252) 0px 0px 0px 2px inset 1; a::before.Button_white__XYP1F.Button_base__1G9eD 155.25pxx37.75px rgba(233, 233, 255, 0.7) T:1px solid rgb(193, 194, 217) / R:1px solid rgb(193, 194, 217) / B:1px solid rgb(193, 194, 217) / L:1px solid rgb(193, 194, 217) 100px; a::after.Button_white__XYP1F.Button_base__1G9eD 157.2 |
 | focus-visible | outline 1px dotted #fcfcfc `dark.theme.fg.declared`, offset 1px; layers ::before rgba(233, 233, 255, 0.7) 1px none 1; ::after rgba(0, 0, 0, 0) 0px rgb(193, 194, 217) 0px 0px 0px 2px inset 0; a.Button_white__XYP1F.Button_base__1G9eD 157.3x39.8 1px dotted rgb(252, 252, 252) offset 1px 100px; a::before.Button_white__XYP1F.Button_base__1G9eD 155.25pxx37.75px rgba(233, 233, 255, 0.7) T:1px solid rgb(193, 194, 217) / R:1px solid rgb(193, 194, 217) / B:1px solid rgb(193, 194 |
-| pressed | layers ::before rgba(245, 245, 248, 1) 0px none 1; ::after rgba(0, 0, 0, 0) 0px rgba(209, 209, 251, 0.2) 0px 0px 0px 4px inset 0; a::before.Button_white__XYP1F.Button_base__1G9eD 157.25pxx39.75px rgba(245, 245, 248, 1) 100px; a::after.Button_white__XYP1F.Button_base__1G9eD 157.25pxx39.75px rgba(209, 209, 251, 0.2) 0px 0px 0px 4px inset 100px |
+| pressed | text FrameGothic 14/13.44 600, #fcfcfc `dark.theme.fg.declared`; layers ::before rgba(0, 0, 0, 0) 0px none 1; ::after rgba(0, 0, 0, 0) 0px rgba(209, 209, 251, 0.2) 0px 0px 0px 4px inset 1; a::after.Button_white__XYP1F.Button_base__1G9eD 157.25pxx39.75px rgba(209, 209, 251, 0.2) 0px 0px 0px 4px inset 100px |
 
-Child layers that carry the look: a::before 155.25pxx37.75px background #f5f5f8 `dark.theme.accent` border 1px solid #c1c2d9 `core.color.grey.80` radius 100px; a::after 157.25pxx39.75px radius 100px shadow #c1c2d9 `core.color.grey.80` 0px 0px 0px 2px inset.
+Child layers that carry the look: a::before 155.25pxx37.75px background #f5f5f8 `dark.theme.accent` border 1px solid #c1c2d9 `core.color.grey.80` radius 100px.
 
 ![Header CTA default](components/crops/nav-cta-default.png) ![Header CTA hover](components/crops/nav-cta-hover.png) ![Header CTA focus-visible](components/crops/nav-cta-focus-visible.png) ![Header CTA pressed](components/crops/nav-cta-pressed.png)
 
 #### Site footer
 The dark footer on every public page: link columns, legal row, "Cookie preferences" and the language selector. Read as `footer` on the home page.
 
-**Values (default).** size 1440 x 838.39; padding 96px 0px 48px 0px; background transparent; text NeueMachinaInktrap 12/10.8 400, rgba(233, 233, 255, 0.7) `core.color.alpha.light.70`; transform translate(0px, -14.598px); icon 30 x 34, #fcfcfc `dark.theme.fg.declared`; layers div::before.Footer_rowSecondary__dHZWA.global_grid__4e_JW 1080pxx2px rgba(189, 189, 244, 0.1) 2px; div.LanguageSelector_scrim__Ub2pG 1440.0x838.4 rgba(13, 13, 24, 0.6); div.LanguageSelector_panel__Deh_H 280.0x500.8 rgba(13, 13, 24, 0.8) T:1px solid rgba(157, 157, 255, 0.05) / R:1px solid rgba(157, 157, 255, 0.05) / B:1px solid rgba(157, 157, 255, 0.05) / L:1px solid rgba(157, 157, 255, 0.05) rgba(.
+**Values (default).** size 1440 x 838.39; padding 96px 0px 48px 0px; background transparent; text NeueMachinaInktrap 12/10.8 400, rgba(233, 233, 255, 0.7) `core.color.alpha.light.70`; transform translate(0px, -14.598px); icon 30 x 34, #fcfcfc `dark.theme.fg.declared`; layers div::before.Footer_rowSecondary__dHZWA.global_grid__4e_JW 1080pxx2px rgba(189, 189, 244, 0.1) 2px; div.Footer_backdrop__Asw9G 1440.0x838.4 rgba(13, 13, 24, 0.8).
 
-Child layers that carry the look: div::before 1080pxx2px background rgba(189, 189, 244, 0.1) `core.color.alpha.light.10` radius 2px; div 1440x838.4 background rgba(13, 13, 24, 0.6) `core.color.alpha.dark.60`; div 280x500.8 background rgba(13, 13, 24, 0.8) `core.color.alpha.dark.80` border 1px solid rgba(157, 157, 255, 0.05) `core.color.alpha.light.5` radius 12px shadow rgba(0, 0, 0, 0.4) `core.color.alpha.black.40` 0px -8px 32px 0px.
+Child layers that carry the look: div::before 1080pxx2px background rgba(189, 189, 244, 0.1) `core.color.alpha.light.10` radius 2px; div 1440x838.4 background rgba(13, 13, 24, 0.8) `core.color.alpha.dark.80`.
 
 ![Site footer default](components/crops/footer-default.png)
 
@@ -222,9 +223,10 @@ The "English (US)" footer trigger (LanguageSelector_trigger); measured at rest, 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: pressed) | size 120 x 32; padding 4px 8px; radius 5px; background transparent; text FrameGothic 10/normal 400, #6a6b83 `core.color.grey.50`; transition color 0.2s cubic-bezier(0.25, 0.1, 0.25, 1), background-color 0.2s cubic-bezier(0.25, 0.1, 0.25, 1); icon 16 x 16, #6a6b83 `core.color.grey.50` |
+| default | size 120 x 32; padding 4px 8px; radius 5px; background transparent; text FrameGothic 10/normal 400, #6a6b83 `core.color.grey.50`; transition color 0.2s cubic-bezier(0.25, 0.1, 0.25, 1), background-color 0.2s cubic-bezier(0.25, 0.1, 0.25, 1); icon 16 x 16, #6a6b83 `core.color.grey.50` |
 | hover | background rgba(157, 157, 255, 0.05) `core.color.alpha.light.5`; text FrameGothic 10/normal 400, #fcfcfc `dark.theme.fg.declared`; icon 16 x 16, #fcfcfc `dark.theme.fg.declared` |
 | focus-visible | outline 2px solid #5b53ff `core.color.brand.cobalt.default`, offset 2px; layers button.LanguageSelector_trigger__IwXGd.typography_footnote__h8r_U 120.0x32.0 2px solid rgb(91, 83, 255) offset 2px 5px |
+| pressed | background rgba(157, 157, 255, 0.05) `core.color.alpha.light.5`; text FrameGothic 10/normal 400, #fcfcfc `dark.theme.fg.declared`; icon 16 x 16, #fcfcfc `dark.theme.fg.declared` |
 
 ![Language selector default](components/crops/locale-btn-default.png) ![Language selector hover](components/crops/locale-btn-hover.png) ![Language selector focus-visible](components/crops/locale-btn-focus-visible.png) ![Language selector pressed](components/crops/locale-btn-pressed.png)
 
@@ -254,12 +256,12 @@ The hero "Start Free Trial" button; measured, never followed. Read as `hero-cta`
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 157.25 x 39.75; padding 0px 24px; radius 100px; background transparent; text FrameGothic 14/13.44 600, #000000 `core.color.alpha.black.100`; transition color 0.3s cubic-bezier(0, 0.44, 0.6, 1); layers ::before rgb(245, 245, 248) 1px none 1; ::after rgba(0, 0, 0, 0) 0px rgb(193, 194, 217) 0px 0px 0px 2px inset 0; a::before.Button_white__XYP1F.Button_base__1G9eD 155.25pxx37.75px rgb(245, 245, 248) T:1px solid rgb(193, 194, 217) / R:1px solid rgb(193, 194, 217) / B:1px solid rgb(193, 194, 217) / L:1px solid rgb(193, 194, 217) 100px; a::after.Button_white__XYP1F.Button_base__1G9eD 157.25pxx39.75px  |
+| default | size 157.25 x 39.75; padding 0px 24px; radius 100px; background transparent; text FrameGothic 14/13.44 600, #000000 `core.color.alpha.black.100`; transition color 0.3s cubic-bezier(0, 0.44, 0.6, 1); layers ::before rgb(245, 245, 248) 1px none 1; ::after rgba(0, 0, 0, 0) 0px rgb(193, 194, 217) 0px 0px 0px 2px inset 0; a::before.Button_white__XYP1F.Button_base__1G9eD 155.25pxx37.75px rgb(245, 245, 248) T:1px solid rgb(193, 194, 217) / R:1px solid rgb(193, 194, 217) / B:1px solid rgb(193, 194, 217) / L:1px solid rgb(193, 194, 217) 100px |
 | hover | layers ::before rgba(233, 233, 255, 0.7) 1px none 1; ::after rgba(0, 0, 0, 0) 0px rgb(252, 252, 252) 0px 0px 0px 2px inset 1; a::before.Button_white__XYP1F.Button_base__1G9eD 155.25pxx37.75px rgba(233, 233, 255, 0.7) T:1px solid rgb(193, 194, 217) / R:1px solid rgb(193, 194, 217) / B:1px solid rgb(193, 194, 217) / L:1px solid rgb(193, 194, 217) 100px; a::after.Button_white__XYP1F.Button_base__1G9eD 157.2 |
 | focus-visible | outline 1px dotted #fcfcfc `dark.theme.fg.declared`, offset 1px; layers ::before rgba(233, 233, 255, 0.7) 1px none 1; ::after rgba(0, 0, 0, 0) 0px rgb(193, 194, 217) 0px 0px 0px 2px inset 0; a.Button_white__XYP1F.Button_base__1G9eD 157.3x39.8 1px dotted rgb(252, 252, 252) offset 1px 100px; a::before.Button_white__XYP1F.Button_base__1G9eD 155.25pxx37.75px rgba(233, 233, 255, 0.7) T:1px solid rgb(193, 194, 217) / R:1px solid rgb(193, 194, 217) / B:1px solid rgb(193, 194 |
-| pressed | text FrameGothic 14/13.44 600, #a3a3a3; layers ::before rgba(245, 245, 248, 0.353) 0px none 1; ::after rgba(0, 0, 0, 0) 0px rgba(209, 209, 251, 0.2) 0px 0px 0px 4px inset 0.648449; a::before.Button_white__XYP1F.Button_base__1G9eD 157.25pxx39.75px rgba(245, 245, 248, 0.353) 100px; a::after.Button_white__XYP1F.Button_base__1G9eD 157.25pxx39.75px rgba(209, 209, 251, 0.2) 0px 0px 0px 4px inset 100px |
+| pressed | text FrameGothic 14/13.44 600, #fcfcfc `dark.theme.fg.declared`; layers ::before rgba(0, 0, 0, 0) 0px none 1; ::after rgba(0, 0, 0, 0) 0px rgba(209, 209, 251, 0.2) 0px 0px 0px 4px inset 1; a::after.Button_white__XYP1F.Button_base__1G9eD 157.25pxx39.75px rgba(209, 209, 251, 0.2) 0px 0px 0px 4px inset 100px |
 
-Child layers that carry the look: a::before 155.25pxx37.75px background #f5f5f8 `dark.theme.accent` border 1px solid #c1c2d9 `core.color.grey.80` radius 100px; a::after 157.25pxx39.75px radius 100px shadow #c1c2d9 `core.color.grey.80` 0px 0px 0px 2px inset.
+Child layers that carry the look: a::before 155.25pxx37.75px background #f5f5f8 `dark.theme.accent` border 1px solid #c1c2d9 `core.color.grey.80` radius 100px.
 
 ![Hero CTA default](components/crops/hero-cta-default.png) ![Hero CTA hover](components/crops/hero-cta-hover.png) ![Hero CTA focus-visible](components/crops/hero-cta-focus-visible.png) ![Hero CTA pressed](components/crops/hero-cta-pressed.png)
 
@@ -268,9 +270,10 @@ The hero "Take a Product Tour" ghost button; measured, never followed. Read as `
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: pressed) | size 208.67 x 39.75; padding 0px 24px; radius 100px; background transparent; text FrameGothic 14/13.44 600, #fcfcfc `dark.theme.fg.declared`; transition color 0.3s cubic-bezier(0, 0.44, 0.6, 1); icon 4.44 x 7.5, #fcfcfc `dark.theme.fg.declared`; layers ::before rgba(209, 209, 251, 0.2) 0px none 1; ::after rgba(0, 0, 0, 0) 0px rgba(157, 157, 255, 0.05) 0px 0px 0px 1px inset 1; a::before.Button_glass__B8SwH.Button_base__1G9eD 208.672pxx39.75px rgba(209, 209, 251, 0.2) 100px; a::after.Button_glass__B8SwH.Button_base__1G9eD 208.672pxx39.75px rgba(157, 157, 255, 0.05) 0px 0px 0px 1px inset 100px; span::after.AnimatedSvgArrow_cssTail__yibfW 20pxx1.656 |
+| default | size 208.67 x 39.75; padding 0px 24px; radius 100px; background transparent; text FrameGothic 14/13.44 600, #fcfcfc `dark.theme.fg.declared`; transition color 0.3s cubic-bezier(0, 0.44, 0.6, 1); icon 4.44 x 7.5, #fcfcfc `dark.theme.fg.declared`; layers ::before rgba(209, 209, 251, 0.2) 0px none 1; ::after rgba(0, 0, 0, 0) 0px rgba(157, 157, 255, 0.05) 0px 0px 0px 1px inset 1; a::before.Button_glass__B8SwH.Button_base__1G9eD 208.672pxx39.75px rgba(209, 209, 251, 0.2) 100px; a::after.Button_glass__B8SwH.Button_base__1G9eD 208.672pxx39.75px rgba(157, 157, 255, 0.05) 0px 0px 0px 1px inset 100px; span::after.AnimatedSvgArrow_cssTail__yibfW 20pxx1.656 |
 | hover | layers ::before rgba(220, 220, 255, 0.3) 0px none 1; ::after rgba(0, 0, 0, 0) 0px rgba(189, 189, 244, 0.1) 0px 0px 0px 2px inset 1; a::before.Button_glass__B8SwH.Button_base__1G9eD 208.672pxx39.75px rgba(220, 220, 255, 0.3) 100px; a::after.Button_glass__B8SwH.Button_base__1G9eD 208.672pxx39.75px rgba(189, 189, 244, 0.1) 0px 0px 0px 2px inset 100px; span::after.AnimatedSvgArrow_cssTail__yibfW 20pxx1.65625 |
-| focus-visible | outline 1px dotted #fcfcfc `dark.theme.fg.declared`, offset 1px; layers ::before rgba(220, 220, 255, 0.3) 0px none 1; ::after rgba(0, 0, 0, 0) 0px rgba(157, 157, 255, 0.05) 0px 0px 0px 1px inset 1; a.Button_glass__B8SwH.Button_base__1G9eD 208.7x39.8 1px dotted rgb(252, 252, 252) offset 1px 100px; a::before.Button_glass__B8SwH.Button_base__1G9eD 208.672pxx39.75px rgba(220, 220, 255, 0.3) 100px; a::after.Button_glass__B8SwH.Button_base__1G9eD 208.672pxx39.75px rgba(157, |
+| focus-visible | outline 1px dotted #fcfcfc `dark.theme.fg.declared`, offset 1px; layers ::before rgba(220, 220, 255, 0.298) 0px none 1; ::after rgba(0, 0, 0, 0) 0px rgba(157, 157, 255, 0.05) 0px 0px 0px 1px inset 1; a.Button_glass__B8SwH.Button_base__1G9eD 208.7x39.8 1px dotted rgb(252, 252, 252) offset 1px 100px; a::before.Button_glass__B8SwH.Button_base__1G9eD 208.672pxx39.75px rgba(220, 220, 255, 0.298) 100px; a::after.Button_glass__B8SwH.Button_base__1G9eD 208.672pxx39.75px rgba( |
+| pressed | layers ::before rgba(0, 0, 0, 0) 0px none 1; ::after rgba(0, 0, 0, 0) 0px rgba(209, 209, 251, 0.2) 0px 0px 0px 4px inset 1; a::after.Button_glass__B8SwH.Button_base__1G9eD 208.672pxx39.75px rgba(209, 209, 251, 0.2) 0px 0px 0px 4px inset 100px; span::after.AnimatedSvgArrow_cssTail__yibfW 20pxx1.65625px rgb(245, 245, 248) 1px |
 
 Child layers that carry the look: a::before 208.672pxx39.75px background rgba(209, 209, 251, 0.2) `core.color.alpha.hawkes.20` radius 100px; a::after 208.672pxx39.75px radius 100px shadow rgba(157, 157, 255, 0.05) `core.color.alpha.light.5` 0px 0px 0px 1px inset; span::after 20pxx1.65625px background #f5f5f8 `dark.theme.accent` radius 1px.
 
@@ -295,7 +298,7 @@ The /pricing masthead. Read as `price-h1` on the pricing page.
 ![Pricing headline default](components/crops/price-h1-default.png)
 
 #### Billing toggle
-The "Monthly" side of the Monthly/Annually billing switch (the Annually side carries a "SAVE 13%" badge); a local UI toggle, measured at rest — the alternate price state was not toggled. Read as `price-toggle` on the pricing page.
+The "Monthly" side of the Monthly/Annually billing switch — a pair of round radio controls (a 24px circle ringed grey-60, a 10px turquoise-triumph dot on the selected side), not a segmented pill; a local UI toggle, measured at rest — the alternate price state was not toggled. Read as `price-toggle` on the pricing page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -307,7 +310,7 @@ Child layers that carry the look: figure 24x24 border 1px solid #81859f `core.co
 ![Billing toggle default](components/crops/price-toggle-default.png) ![Billing toggle hover](components/crops/price-toggle-hover.png) ![Billing toggle focus-visible](components/crops/price-toggle-focus-visible.png) ![Billing toggle pressed](components/crops/price-toggle-pressed.png)
 
 #### Billing toggle (annual)
-The "Annually — SAVE 13%" side of the billing switch; measured at rest, never toggled. Read as `price-toggle-alt` on the pricing page.
+The "Annually — SAVE 13%" side of the billing switch — the same round radio control, measured at rest, never toggled. Read as `price-toggle-alt` on the pricing page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -330,12 +333,12 @@ A plan card's "Sign Up Now" button; measured, never followed or clicked (it begi
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 202 x 39.75; padding 0px 24px; radius 100px; background transparent; text FrameGothic 14/13.44 600, #000000 `core.color.alpha.black.100`; transition color 0.3s cubic-bezier(0, 0.44, 0.6, 1); layers ::before rgb(245, 245, 248) 1px none 1; ::after rgba(0, 0, 0, 0) 0px rgb(193, 194, 217) 0px 0px 0px 2px inset 0; a::before.Button_white__XYP1F.Button_base__1G9eD 200pxx37.75px rgb(245, 245, 248) T:1px solid rgb(193, 194, 217) / R:1px solid rgb(193, 194, 217) / B:1px solid rgb(193, 194, 217) / L:1px solid rgb(193, 194, 217) 100px; a::after.Button_white__XYP1F.Button_base__1G9eD 202pxx39.75px rgb(19 |
-| hover | layers ::before rgba(233, 233, 255, 0.7) 1px none 1; ::after rgba(0, 0, 0, 0) 0px rgb(252, 252, 252) 0px 0px 0px 2px inset 1; a::before.Button_white__XYP1F.Button_base__1G9eD 200pxx37.75px rgba(233, 233, 255, 0.7) T:1px solid rgb(193, 194, 217) / R:1px solid rgb(193, 194, 217) / B:1px solid rgb(193, 194, 217) / L:1px solid rgb(193, 194, 217) 100px; a::after.Button_white__XYP1F.Button_base__1G9eD 202pxx39 |
-| focus-visible | outline 1px dotted #fcfcfc `dark.theme.fg.declared`, offset 1px; layers ::before rgba(233, 233, 255, 0.7) 1px none 1; ::after rgba(0, 0, 0, 0) 0px rgb(193, 194, 217) 0px 0px 0px 2px inset 0; a.Button_white__XYP1F.Button_base__1G9eD 202.0x39.8 1px dotted rgb(252, 252, 252) offset 1px 100px; a::before.Button_white__XYP1F.Button_base__1G9eD 200pxx37.75px rgba(233, 233, 255, 0.7) T:1px solid rgb(193, 194, 217) / R:1px solid rgb(193, 194, 217) / B:1px solid rgb(193, 194, 2 |
-| pressed | text FrameGothic 14/13.44 600, #fcfcfc `dark.theme.fg.declared`; layers ::before rgba(0, 0, 0, 0) 0px none 1; ::after rgba(0, 0, 0, 0) 0px rgba(209, 209, 251, 0.2) 0px 0px 0px 4px inset 1; a::after.Button_white__XYP1F.Button_base__1G9eD 202pxx39.75px rgba(209, 209, 251, 0.2) 0px 0px 0px 4px inset 100px |
+| default | size 202 x 39.75; padding 0px 24px; radius 100px; background transparent; text FrameGothic 14/13.44 600, #000000 `core.color.alpha.black.100`; transition color 0.3s cubic-bezier(0, 0.44, 0.6, 1); layers ::before rgb(245, 245, 248) 1px none 1; ::after rgba(0, 0, 0, 0) 0px rgb(193, 194, 217) 0px 0px 0px 2px inset 0; a::before.Button_white__XYP1F.Button_base__1G9eD 200pxx37.75px rgb(245, 245, 248) T:1px solid rgb(193, 194, 217) / R:1px solid rgb(193, 194, 217) / B:1px solid rgb(193, 194, 217) / L:1px solid rgb(193, 194, 217) 100px |
+| hover | layers ::before rgb(245, 245, 248) 1px none 1; ::after rgba(0, 0, 0, 0) 0px rgb(252, 252, 252) 0px 0px 0px 2px inset 0; a::before.Button_white__XYP1F.Button_base__1G9eD 200pxx37.75px rgb(245, 245, 248) T:1px solid rgb(193, 194, 217) / R:1px solid rgb(193, 194, 217) / B:1px solid rgb(193, 194, 217) / L:1px solid rgb(193, 194, 217) 100px |
+| focus-visible | outline 1px dotted #fcfcfc `dark.theme.fg.declared`, offset 1px; layers ::before rgba(233, 233, 255, 0.706) 1px none 1; ::after rgba(0, 0, 0, 0) 0px rgb(193, 194, 217) 0px 0px 0px 2px inset 0; a.Button_white__XYP1F.Button_base__1G9eD 202.0x39.8 1px dotted rgb(252, 252, 252) offset 1px 100px; a::before.Button_white__XYP1F.Button_base__1G9eD 200pxx37.75px rgba(233, 233, 255, 0.706) T:1px solid rgb(193, 194, 217) / R:1px solid rgb(193, 194, 217) / B:1px solid rgb(193, 19 |
+| pressed | text FrameGothic 14/13.44 600, #a3a3a3; layers ::before rgba(245, 245, 248, 0.353) 0px none 1; ::after rgba(0, 0, 0, 0) 0px rgba(209, 209, 251, 0.2) 0px 0px 0px 4px inset 0.648422; a::before.Button_white__XYP1F.Button_base__1G9eD 202pxx39.75px rgba(245, 245, 248, 0.353) 100px; a::after.Button_white__XYP1F.Button_base__1G9eD 202pxx39.75px rgba(209, 209, 251, 0.2) 0px 0px 0px 4px inset 100px |
 
-Child layers that carry the look: a::before 200pxx37.75px background #f5f5f8 `dark.theme.accent` border 1px solid #c1c2d9 `core.color.grey.80` radius 100px; a::after 202pxx39.75px radius 100px shadow #c1c2d9 `core.color.grey.80` 0px 0px 0px 2px inset.
+Child layers that carry the look: a::before 200pxx37.75px background #f5f5f8 `dark.theme.accent` border 1px solid #c1c2d9 `core.color.grey.80` radius 100px.
 
 ![Plan CTA default](components/crops/plan-signup-default.png) ![Plan CTA hover](components/crops/plan-signup-hover.png) ![Plan CTA focus-visible](components/crops/plan-signup-focus-visible.png) ![Plan CTA pressed](components/crops/plan-signup-pressed.png)
 
@@ -344,12 +347,12 @@ A plan card's "Start Free Trial" button; measured, never followed. Read as `plan
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 202 x 39.75; padding 0px 24px; radius 100px; background transparent; text FrameGothic 14/13.44 600, #000000 `core.color.alpha.black.100`; transition color 0.3s cubic-bezier(0, 0.44, 0.6, 1); layers ::before rgb(245, 245, 248) 1px none 1; ::after rgba(0, 0, 0, 0) 0px rgb(193, 194, 217) 0px 0px 0px 2px inset 0; a::before.Button_white__XYP1F.Button_base__1G9eD 200pxx37.75px rgb(245, 245, 248) T:1px solid rgb(193, 194, 217) / R:1px solid rgb(193, 194, 217) / B:1px solid rgb(193, 194, 217) / L:1px solid rgb(193, 194, 217) 100px; a::after.Button_white__XYP1F.Button_base__1G9eD 202pxx39.75px rgb(19 |
+| default | size 202 x 39.75; padding 0px 24px; radius 100px; background transparent; text FrameGothic 14/13.44 600, #000000 `core.color.alpha.black.100`; transition color 0.3s cubic-bezier(0, 0.44, 0.6, 1); layers ::before rgb(245, 245, 248) 1px none 1; ::after rgba(0, 0, 0, 0) 0px rgb(193, 194, 217) 0px 0px 0px 2px inset 0; a::before.Button_white__XYP1F.Button_base__1G9eD 200pxx37.75px rgb(245, 245, 248) T:1px solid rgb(193, 194, 217) / R:1px solid rgb(193, 194, 217) / B:1px solid rgb(193, 194, 217) / L:1px solid rgb(193, 194, 217) 100px |
 | hover | layers ::before rgba(233, 233, 255, 0.7) 1px none 1; ::after rgba(0, 0, 0, 0) 0px rgb(252, 252, 252) 0px 0px 0px 2px inset 1; a::before.Button_white__XYP1F.Button_base__1G9eD 200pxx37.75px rgba(233, 233, 255, 0.7) T:1px solid rgb(193, 194, 217) / R:1px solid rgb(193, 194, 217) / B:1px solid rgb(193, 194, 217) / L:1px solid rgb(193, 194, 217) 100px; a::after.Button_white__XYP1F.Button_base__1G9eD 202pxx39 |
-| focus-visible | outline 1px dotted #fcfcfc `dark.theme.fg.declared`, offset 1px; layers ::before rgba(234, 234, 254, 0.72) 1px none 1; ::after rgba(0, 0, 0, 0) 0px rgb(193, 194, 217) 0px 0px 0px 2px inset 0; a.Button_white__XYP1F.Button_base__1G9eD 202.0x39.8 1px dotted rgb(252, 252, 252) offset 1px 100px; a::before.Button_white__XYP1F.Button_base__1G9eD 200pxx37.75px rgba(234, 234, 254, 0.72) T:1px solid rgb(193, 194, 217) / R:1px solid rgb(193, 194, 217) / B:1px solid rgb(193, 194, |
-| pressed | text FrameGothic 14/13.44 600, #dbdbdb; layers ::before rgba(245, 245, 248, 0.13) 0px none 1; ::after rgba(0, 0, 0, 0) 0px rgba(209, 209, 251, 0.2) 0px 0px 0px 4px inset 0.869216; a::before.Button_white__XYP1F.Button_base__1G9eD 202pxx39.75px rgba(245, 245, 248, 0.13) 100px; a::after.Button_white__XYP1F.Button_base__1G9eD 202pxx39.75px rgba(209, 209, 251, 0.2) 0px 0px 0px 4px inset 100px |
+| focus-visible | outline 1px dotted #fcfcfc `dark.theme.fg.declared`, offset 1px; layers ::before rgba(240, 240, 251, 0.843) 1px none 1; ::after rgba(0, 0, 0, 0) 0px rgb(193, 194, 217) 0px 0px 0px 2px inset 0; a.Button_white__XYP1F.Button_base__1G9eD 202.0x39.8 1px dotted rgb(252, 252, 252) offset 1px 100px; a::before.Button_white__XYP1F.Button_base__1G9eD 200pxx37.75px rgba(240, 240, 251, 0.843) T:1px solid rgb(193, 194, 217) / R:1px solid rgb(193, 194, 217) / B:1px solid rgb(193, 19 |
+| pressed | text FrameGothic 14/13.44 600, #fcfcfc `dark.theme.fg.declared`; layers ::before rgba(0, 0, 0, 0) 0px none 1; ::after rgba(0, 0, 0, 0) 0px rgba(209, 209, 251, 0.2) 0px 0px 0px 4px inset 1; a::after.Button_white__XYP1F.Button_base__1G9eD 202pxx39.75px rgba(209, 209, 251, 0.2) 0px 0px 0px 4px inset 100px |
 
-Child layers that carry the look: a::before 200pxx37.75px background #f5f5f8 `dark.theme.accent` border 1px solid #c1c2d9 `core.color.grey.80` radius 100px; a::after 202pxx39.75px radius 100px shadow #c1c2d9 `core.color.grey.80` 0px 0px 0px 2px inset.
+Child layers that carry the look: a::before 200pxx37.75px background #f5f5f8 `dark.theme.accent` border 1px solid #c1c2d9 `core.color.grey.80` radius 100px.
 
 ![Plan trial CTA default](components/crops/plan-trial-default.png) ![Plan trial CTA hover](components/crops/plan-trial-hover.png) ![Plan trial CTA focus-visible](components/crops/plan-trial-focus-visible.png) ![Plan trial CTA pressed](components/crops/plan-trial-pressed.png)
 
@@ -358,12 +361,12 @@ The Enterprise card's "Book a Meeting" button; measured, never followed. Read as
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 202 x 39.75; padding 0px 24px; radius 100px; background transparent; text FrameGothic 14/13.44 600, #000000 `core.color.alpha.black.100`; transition color 0.3s cubic-bezier(0, 0.44, 0.6, 1); layers ::before rgb(245, 245, 248) 1px none 1; ::after rgba(0, 0, 0, 0) 0px rgb(193, 194, 217) 0px 0px 0px 2px inset 0; button::before.Button_white__XYP1F.Button_base__1G9eD 200pxx37.75px rgb(245, 245, 248) T:1px solid rgb(193, 194, 217) / R:1px solid rgb(193, 194, 217) / B:1px solid rgb(193, 194, 217) / L:1px solid rgb(193, 194, 217) 100px; button::after.Button_white__XYP1F.Button_base__1G9eD 202pxx39.7 |
+| default | size 202 x 39.75; padding 0px 24px; radius 100px; background transparent; text FrameGothic 14/13.44 600, #000000 `core.color.alpha.black.100`; transition color 0.3s cubic-bezier(0, 0.44, 0.6, 1); layers ::before rgb(245, 245, 248) 1px none 1; ::after rgba(0, 0, 0, 0) 0px rgb(193, 194, 217) 0px 0px 0px 2px inset 0; button::before.Button_white__XYP1F.Button_base__1G9eD 200pxx37.75px rgb(245, 245, 248) T:1px solid rgb(193, 194, 217) / R:1px solid rgb(193, 194, 217) / B:1px solid rgb(193, 194, 217) / L:1px solid rgb(193, 194, 217) 100px |
 | hover | layers ::before rgba(233, 233, 255, 0.7) 1px none 1; ::after rgba(0, 0, 0, 0) 0px rgb(252, 252, 252) 0px 0px 0px 2px inset 1; button::before.Button_white__XYP1F.Button_base__1G9eD 200pxx37.75px rgba(233, 233, 255, 0.7) T:1px solid rgb(193, 194, 217) / R:1px solid rgb(193, 194, 217) / B:1px solid rgb(193, 194, 217) / L:1px solid rgb(193, 194, 217) 100px; button::after.Button_white__XYP1F.Button_base__1G9e |
-| focus-visible | outline 1px dotted #fcfcfc `dark.theme.fg.declared`, offset 0px; layers ::before rgba(238, 238, 252, 0.792) 1px none 1; ::after rgba(0, 0, 0, 0) 0px rgb(193, 194, 217) 0px 0px 0px 2px inset 0; button.Button_white__XYP1F.Button_base__1G9eD 202.0x39.8 1px dotted rgb(252, 252, 252) offset 0px 100px; button::before.Button_white__XYP1F.Button_base__1G9eD 200pxx37.75px rgba(238, 238, 252, 0.792) T:1px solid rgb(193, 194, 217) / R:1px solid rgb(193, 194, 217) / B:1px solid r |
-| pressed | text FrameGothic 14/13.44 600, #fcfcfc `dark.theme.fg.declared`; layers ::before rgba(0, 0, 0, 0) 0px none 1; ::after rgba(0, 0, 0, 0) 0px rgba(209, 209, 251, 0.2) 0px 0px 0px 4px inset 1; button::after.Button_white__XYP1F.Button_base__1G9eD 202pxx39.75px rgba(209, 209, 251, 0.2) 0px 0px 0px 4px inset 100px |
+| focus-visible | outline 1px dotted #fcfcfc `dark.theme.fg.declared`, offset 0px; layers ::before rgba(237, 237, 253, 0.776) 1px none 1; ::after rgba(0, 0, 0, 0) 0px rgb(193, 194, 217) 0px 0px 0px 2px inset 0; button.Button_white__XYP1F.Button_base__1G9eD 202.0x39.8 1px dotted rgb(252, 252, 252) offset 0px 100px; button::before.Button_white__XYP1F.Button_base__1G9eD 200pxx37.75px rgba(237, 237, 253, 0.776) T:1px solid rgb(193, 194, 217) / R:1px solid rgb(193, 194, 217) / B:1px solid r |
+| pressed | text FrameGothic 14/13.44 600, #eaeaea; layers ::before rgba(245, 245, 248, 0.07) 0px none 1; ::after rgba(0, 0, 0, 0) 0px rgba(209, 209, 251, 0.2) 0px 0px 0px 4px inset 0.929097; button::before.Button_white__XYP1F.Button_base__1G9eD 202pxx39.75px rgba(245, 245, 248, 0.07) 100px; button::after.Button_white__XYP1F.Button_base__1G9eD 202pxx39.75px rgba(209, 209, 251, 0.2) 0px 0px 0px 4px inset 100px |
 
-Child layers that carry the look: button::before 200pxx37.75px background #f5f5f8 `dark.theme.accent` border 1px solid #c1c2d9 `core.color.grey.80` radius 100px; button::after 202pxx39.75px radius 100px shadow #c1c2d9 `core.color.grey.80` 0px 0px 0px 2px inset.
+Child layers that carry the look: button::before 200pxx37.75px background #f5f5f8 `dark.theme.accent` border 1px solid #c1c2d9 `core.color.grey.80` radius 100px.
 
 ![Plan meeting CTA default](components/crops/plan-meeting-default.png) ![Plan meeting CTA hover](components/crops/plan-meeting-hover.png) ![Plan meeting CTA focus-visible](components/crops/plan-meeting-focus-visible.png) ![Plan meeting CTA pressed](components/crops/plan-meeting-pressed.png)
 
@@ -372,8 +375,7 @@ A category row in the feature-comparison table (Users, Storage, Projects & works
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 1080 x 36.09; padding 0px 0px 10px 0px; background transparent; text FrameGothic 18/26.1 400, #fcfcfc `dark.theme.fg.declared`; icon 10 x 10, #fcfcfc `dark.theme.fg.declared` |
-| closed | icon 10.67 x 10.67, #fcfcfc `dark.theme.fg.declared` |
+| default (same: closed) | size 1080 x 36.09; padding 0px 0px 10px 0px; background transparent; text FrameGothic 18/26.1 400, #fcfcfc `dark.theme.fg.declared`; icon 10 x 10, #fcfcfc `dark.theme.fg.declared` |
 
 ![Feature-comparison accordion default](components/crops/ptable-acc-default.png) ![Feature-comparison accordion closed](components/crops/ptable-acc-closed.png)
 
@@ -402,12 +404,12 @@ The white "Schedule a Meeting" button on /contact (it mounts a Calendly schedule
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 186.53 x 39.75; padding 0px 24px; radius 100px; background transparent; text FrameGothic 14/13.44 600, #000000 `core.color.alpha.black.100`; transition color 0.3s cubic-bezier(0, 0.44, 0.6, 1); layers ::before rgb(245, 245, 248) 1px none 1; ::after rgba(0, 0, 0, 0) 0px rgb(193, 194, 217) 0px 0px 0px 2px inset 0; button::before.Button_white__XYP1F.Button_base__1G9eD 184.531pxx37.75px rgb(245, 245, 248) T:1px solid rgb(193, 194, 217) / R:1px solid rgb(193, 194, 217) / B:1px solid rgb(193, 194, 217) / L:1px solid rgb(193, 194, 217) 100px; button::after.Button_white__XYP1F.Button_base__1G9eD 186.53 |
+| default | size 186.53 x 39.75; padding 0px 24px; radius 100px; background transparent; text FrameGothic 14/13.44 600, #000000 `core.color.alpha.black.100`; transition color 0.3s cubic-bezier(0, 0.44, 0.6, 1); layers ::before rgb(245, 245, 248) 1px none 1; ::after rgba(0, 0, 0, 0) 0px rgb(193, 194, 217) 0px 0px 0px 2px inset 0; button::before.Button_white__XYP1F.Button_base__1G9eD 184.531pxx37.75px rgb(245, 245, 248) T:1px solid rgb(193, 194, 217) / R:1px solid rgb(193, 194, 217) / B:1px solid rgb(193, 194, 217) / L:1px solid rgb(193, 194, 217) 100px |
 | hover | layers ::before rgba(233, 233, 255, 0.7) 1px none 1; ::after rgba(0, 0, 0, 0) 0px rgb(252, 252, 252) 0px 0px 0px 2px inset 1; button::before.Button_white__XYP1F.Button_base__1G9eD 184.531pxx37.75px rgba(233, 233, 255, 0.7) T:1px solid rgb(193, 194, 217) / R:1px solid rgb(193, 194, 217) / B:1px solid rgb(193, 194, 217) / L:1px solid rgb(193, 194, 217) 100px; button::after.Button_white__XYP1F.Button_base__ |
 | focus-visible | outline 1px dotted #fcfcfc `dark.theme.fg.declared`, offset 0px; layers ::before rgba(233, 233, 255, 0.7) 1px none 1; ::after rgba(0, 0, 0, 0) 0px rgb(193, 194, 217) 0px 0px 0px 2px inset 0; button.Button_white__XYP1F.Button_base__1G9eD 186.5x39.8 1px dotted rgb(252, 252, 252) offset 0px 100px; button::before.Button_white__XYP1F.Button_base__1G9eD 184.531pxx37.75px rgba(233, 233, 255, 0.7) T:1px solid rgb(193, 194, 217) / R:1px solid rgb(193, 194, 217) / B:1px solid r |
 | pressed | text FrameGothic 14/13.44 600, #fcfcfc `dark.theme.fg.declared`; layers ::before rgba(0, 0, 0, 0) 0px none 1; ::after rgba(0, 0, 0, 0) 0px rgba(209, 209, 251, 0.2) 0px 0px 0px 4px inset 1; button::after.Button_white__XYP1F.Button_base__1G9eD 186.531pxx39.75px rgba(209, 209, 251, 0.2) 0px 0px 0px 4px inset 100px |
 
-Child layers that carry the look: button::before 184.531pxx37.75px background #f5f5f8 `dark.theme.accent` border 1px solid #c1c2d9 `core.color.grey.80` radius 100px; button::after 186.531pxx39.75px radius 100px shadow #c1c2d9 `core.color.grey.80` 0px 0px 0px 2px inset.
+Child layers that carry the look: button::before 184.531pxx37.75px background #f5f5f8 `dark.theme.accent` border 1px solid #c1c2d9 `core.color.grey.80` radius 100px.
 
 ![Schedule a Meeting default](components/crops/schedule-btn-default.png) ![Schedule a Meeting hover](components/crops/schedule-btn-hover.png) ![Schedule a Meeting focus-visible](components/crops/schedule-btn-focus-visible.png) ![Schedule a Meeting pressed](components/crops/schedule-btn-pressed.png)
 
@@ -430,11 +432,11 @@ The /contact/form card: 'Enter your info below. We'll get back to you shortly.' 
 #### Contact form card
 The dark form card on /contact/form — "Enter your info below. We'll get back to you shortly." with Name/Email/Message fields and a Submit pill; never submitted. Read as `form-panel` on the contact form page.
 
-**Values (default).** size 1440 x 1543.47; background transparent; text FrameGothic 80/83.2 600, #fcfcfc `dark.theme.fg.declared`; layers div.PageSection_pageSection__8v9It.PageSection_isNextSectionSameLevel__ujiEc 1440.0x1543.5 rgb(0, 0, 0); div::before.PageSection_pageSection__8v9It.PageSection_isNextSectionSameLevel__ujiEc 1440pxx1543.47px rgb(0, 0, 0); div.Form_inner__RZlVF.global_subgrid__ZRhT6 1080.0x545.8 rgba(13, 13, 24, 0.5) T:1px solid rgba(189, 189, 244, 0.1) / R:1px solid rgba(189, 189, 244, 0.1) / B:1px solid rgba(189, .
+**Values (default).** size 1440 x 1543.47; background transparent; text FrameGothic 80/83.2 600, #fcfcfc `dark.theme.fg.declared`; layers div.PageSection_pageSection__8v9It.PageSection_isNextSectionSameLevel__ujiEc 1440.0x1543.5 rgb(0, 0, 0); div.Form_inner__RZlVF.global_subgrid__ZRhT6 1080.0x545.8 rgba(13, 13, 24, 0.5) T:1px solid rgba(189, 189, 244, 0.1) / R:1px solid rgba(189, 189, 244, 0.1) / B:1px solid rgba(189, 189, 244, 0.1) / L:1px solid rgba(189, 189, 244, 0.1) 5px; input.TextInput_textInput__d8dTK.typography_body__vVxn5 4.
 
-Child layers that carry the look: div 1440x1543.5 background #000000 `core.color.alpha.black.100`; div::before 1440pxx1543.47px background #000000 `core.color.alpha.black.100`; div 1080x545.8 background rgba(13, 13, 24, 0.5) `core.color.alpha.cinder.50` border 1px solid rgba(189, 189, 244, 0.1) `core.color.alpha.light.10` radius 5px.
+Child layers that carry the look: div 1440x1543.5 background #000000 `core.color.alpha.black.100`; div 1080x545.8 background rgba(13, 13, 24, 0.5) `core.color.alpha.cinder.50` border 1px solid rgba(189, 189, 244, 0.1) `core.color.alpha.light.10` radius 5px; input 431x48 border 1px solid #2e2f40 `core.color.grey.20`.
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Contact form card default](components/crops/form-panel-default.png)
 
 #### Name field
 The underlined "Name" input; focused and typed into then cleared — never submitted. Read as `form-name` on the contact form page.
@@ -442,8 +444,7 @@ The underlined "Name" input; focused and typed into then cleared — never submi
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 431 x 48; padding 1px 2px; border B: 1px solid #2e2f40 `core.color.grey.20`; background transparent; text FrameGothic 15/21.75 400, #dedfee `core.color.grey.90`; transition border-color 0.3s cubic-bezier(0.25, 0.1, 0.25, 1); placeholder #dedfee `core.color.grey.90`; layers input.TextInput_textInput__d8dTK.typography_body__vVxn5 431.0x48.0 B:1px solid rgb(46, 47, 64) |
-| focused | border B: 1px solid #ededee; layers input.TextInput_textInput__d8dTK.typography_body__vVxn5 431.0x48.0 B:1px solid rgb(237, 237, 238) |
-| filled | border B: 1px solid #fcfcfc `dark.theme.fg.declared`; layers input.TextInput_textInput__d8dTK.typography_body__vVxn5 431.0x48.0 B:1px solid rgb(252, 252, 252) |
+| focused, filled | border B: 1px solid #fcfcfc `dark.theme.fg.declared`; layers input.TextInput_textInput__d8dTK.typography_body__vVxn5 431.0x48.0 B:1px solid rgb(252, 252, 252) |
 
 Child layers that carry the look: input 431x48 border 1px solid #2e2f40 `core.color.grey.20`.
 
@@ -478,11 +479,11 @@ The form's pill "Submit" button; its states were measured but the button was nev
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 97.84 x 39.75; padding 0px 24px; radius 100px; background transparent; text FrameGothic 14/13.44 600, #4f5167 `core.color.grey.40`; transition color 0.3s cubic-bezier(0, 0.44, 0.6, 1); layers ::before rgba(189, 189, 244, 0.1) 1px none 1; ::after rgba(0, 0, 0, 0) 0px rgb(193, 194, 217) 0px 0px 0px 2px inset 0; button::before.Button_white__XYP1F.Button_base__1G9eD 95.8438pxx37.75px rgba(189, 189, 244, 0.1) T:1px solid rgb(193, 194, 217) / R:1px solid rgb(193, 194, 217) / B:1px solid rgb(193, 194, 217) / L:1px solid rgb(193, 194, 217) 100px; button::after.Button_white__XYP1F.Button_base__ |
+| default (same: hover, pressed) | size 97.84 x 39.75; padding 0px 24px; radius 100px; background transparent; text FrameGothic 14/13.44 600, #4f5167 `core.color.grey.40`; transition color 0.3s cubic-bezier(0, 0.44, 0.6, 1); layers ::before rgba(189, 189, 244, 0.1) 1px none 1; ::after rgba(0, 0, 0, 0) 0px rgb(193, 194, 217) 0px 0px 0px 2px inset 0; button::before.Button_white__XYP1F.Button_base__1G9eD 95.8438pxx37.75px rgba(189, 189, 244, 0.1) T:1px solid rgb(193, 194, 217) / R:1px solid rgb(193, 194, 217) / B:1px solid rgb(193, 194, 217) / L:1px solid rgb(193, 194, 217) 100px; div::after.SubmitButtonAnimation_dot__vO6gD 2.5 |
 
 **Focus not capturable.** A real keyboard focus could not be held on this element (`focus-visible` recorded `via: focus failed`), so its focus look is uncaptured — not measured as absent.
 
-Child layers that carry the look: button::before 95.8438pxx37.75px background rgba(189, 189, 244, 0.1) `core.color.alpha.light.10` border 1px solid #c1c2d9 `core.color.grey.80` radius 100px; button::after autoxauto radius 100px shadow #c1c2d9 `core.color.grey.80` 0px 0px 0px 2px inset; div 0x0 background #5237f9 `core.color.brand.cobalt.dark` radius 50%.
+Child layers that carry the look: button::before 95.8438pxx37.75px background rgba(189, 189, 244, 0.1) `core.color.alpha.light.10` border 1px solid #c1c2d9 `core.color.grey.80` radius 100px; div::after 2.5pxx2.5px background #fcfcfc `dark.theme.fg.declared` radius 50%.
 
 ![Submit default](components/crops/form-submit-default.png) ![Submit hover](components/crops/form-submit-hover.png) ![Submit pressed](components/crops/form-submit-pressed.png)
 
@@ -493,9 +494,9 @@ accounts.frame.io/welcome — where 'Sign In' lands — the light styled-compone
 #### Sign-in panel
 The accounts.frame.io/welcome sign-in card — the Frame.io mark, "Welcome / Enter your email to get started.", an e-mail field and a "Let's go" submit on a light page (styled-components — a different stack from the marketing site); never submitted. Read as `login-panel` on the sign-in page.
 
-**Values (default).** size 346 x 345.84; background transparent; text Avenir Next 24/normal 700, #000000 `core.color.alpha.black.100`; icon 56 x 64, #000000 `core.color.alpha.black.100`; layers input.TextInput__Input-a3o9vm-1.irdNuq 346.0x40.0 rgb(255, 255, 255) T:1px solid rgb(224, 71, 95) / R:1px solid rgb(224, 71, 95) / B:1px solid rgb(224, 71, 95) / L:1px solid rgb(224, 71, 95) 4px; input.TextInput__Input-a3o9vm-1.eelQya 0.0x0.0 rgb(255, 255, 255) T:1px solid rgb(43, 47, 59) / R:1px solid rgb(43, 47, 59) / B:1px solid rgb(43, 47, 59) / L:1px solid rgb(43, 47, 59) 4px; button.Button__.
+**Values (default).** size 346 x 345.84; background transparent; text Avenir Next 24/normal 700, #000000 `core.color.alpha.black.100`; icon 56 x 64, #000000 `core.color.alpha.black.100`; layers input.TextInput__Input-a3o9vm-1.irdNuq 346.0x40.0 rgb(255, 255, 255) T:1px solid rgb(224, 71, 95) / R:1px solid rgb(224, 71, 95) / B:1px solid rgb(224, 71, 95) / L:1px solid rgb(224, 71, 95) 4px; button.Button__StyledButton-tzx5l-0.fmdBhl 346.0x40.0 rgb(91, 83, 255) rgba(0, 0, 0, 0) 0px 0px 0px 0px inset 6px.
 
-Child layers that carry the look: input 346x40 background #ffffff `core.component.productShell.login-field-bg` border 1px solid #e0475f radius 4px; input 0x0 background #ffffff `core.component.productShell.login-field-bg` border 1px solid #2b2f3b radius 4px; button 346x40 background #5b53ff `core.color.brand.cobalt.default` radius 6px shadow transparent 0px 0px 0px 0px inset.
+Child layers that carry the look: input 346x40 background #ffffff `core.component.productShell.login-field-bg` border 1px solid #e0475f radius 4px; button 346x40 background #5b53ff `core.color.brand.cobalt.default` radius 6px shadow transparent 0px 0px 0px 0px inset.
 
 ![Sign-in panel default](components/crops/login-panel-default.png)
 
@@ -592,9 +593,9 @@ The phone surface at 390 wide: the header with the nav button and 'Start Free Tr
 #### Mobile top bar
 The phone header at 390 wide: the Frame.io mark, "Start Free Trial" and the nav button. Read as `m-topbar` on the home page at 390 wide.
 
-**Values (default).** size 390 x 120; background transparent; text FrameGothic 12/12 600, #fcfcfc `dark.theme.fg.declared`; transition transform 0.5s cubic-bezier(0.42, 0, 0.28, 0.99); icon 24 x 24, #fcfcfc `dark.theme.fg.declared`; layers div.RedirectedLanguageNotification_languageBanner__1K3ws.RedirectedLanguageNotification_isHidden__PSJK8 390.0x36.0 rgb(82, 55, 249) rgba(0, 0, 0, 0.5) 0px 0px 16px 0px 6px; div.AnnouncementBanner_announcementBanner__g9QLM.Navigation_navigationBannerEl__zSvOh 390.0x48.0 rgb(91, 83, 255); span.ToggleButton_navMobileButtonLineEl__IvuHL 5.7x5.7 rgb(240, 240, 247) 9.33333px; span.ToggleButton_navMobile.
+**Values (default).** size 390 x 120; background transparent; text FrameGothic 12/12 600, #fcfcfc `dark.theme.fg.declared`; transition transform 0.5s cubic-bezier(0.42, 0, 0.28, 0.99); icon 24 x 24, #fcfcfc `dark.theme.fg.declared`; layers div.AnnouncementBanner_announcementBanner__g9QLM.Navigation_navigationBannerEl__zSvOh 390.0x48.0 rgb(91, 83, 255); span.ToggleButton_navMobileButtonLineEl__IvuHL 5.7x5.7 rgb(240, 240, 247) 9.33333px; span.ToggleButton_navMobileButtonLineEl__IvuHL 5.7x5.7 rgb(240, 240, 247) 9.33333px; span.ToggleButton_navMobileButtonLineEl__IvuHL 5.7x5.7 rgb(240, 240, 247) 9.33333px; span.ToggleButton_navMobileBut.
 
-Child layers that carry the look: div 390x36 background #5237f9 `core.color.brand.cobalt.dark` radius 6px shadow rgba(0, 0, 0, 0.5) `core.color.alpha.black.50` 0px 0px 16px 0px; div 390x48 background #5b53ff `core.color.brand.cobalt.default` image linear-gradient(355deg, rgba(255, 255, 255, 0.15) 4.03%, rgba(255, 255, 255, 0) 95.81%), n; span 5.7x5.7 background #f0f0f7 `core.color.grey.95` radius 9.33333px.
+Child layers that carry the look: div 390x48 background #5b53ff `core.color.brand.cobalt.default` image linear-gradient(355deg, rgba(255, 255, 255, 0.15) 4.03%, rgba(255, 255, 255, 0) 95.81%), n; span 5.7x5.7 background #f0f0f7 `core.color.grey.95` radius 9.33333px; span 5.7x5.7 background #f0f0f7 `core.color.grey.95` radius 9.33333px.
 
 ![Mobile top bar default](components/crops/m-topbar-default.png)
 
@@ -603,12 +604,10 @@ The nav overlay's white "Start Free Trial" pill at 390 wide — the closed top b
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 165 x 37.75; padding 0px 24px; radius 100px; background transparent; text FrameGothic 14/13.44 600, #000000 `core.color.alpha.black.100`; transition color 0.3s cubic-bezier(0, 0.44, 0.6, 1); layers ::before rgb(245, 245, 248) 1px none 1; ::after rgba(0, 0, 0, 0) 0px rgb(193, 194, 217) 0px 0px 0px 2px inset 0; a::before.Button_white__XYP1F.Button_base__1G9eD 163pxx35.75px rgb(245, 245, 248) T:1px solid rgb(193, 194, 217) / R:1px solid rgb(193, 194, 217) / B:1px solid rgb(193, 194, 217) / L:1px solid rgb(193, 194, 217) 100px; a::after.Button_white__XYP1F.Button_base__1G9eD 165pxx37.75px rgb(19 |
-| pressed | text FrameGothic 14/13.44 600, #5b5b5b; layers ::before rgba(245, 245, 248, 0.64) 0px none 1; ::after rgba(0, 0, 0, 0) 0px rgba(209, 209, 251, 0.2) 0px 0px 0px 4px inset 0.361525; a::before.Button_white__XYP1F.Button_base__1G9eD 165pxx37.75px rgba(245, 245, 248, 0.64) 100px; a::after.Button_white__XYP1F.Button_base__1G9eD 165pxx37.75px rgba(209, 209, 251, 0.2) 0px 0px 0px 4px inset 100px |
+| default | size 165 x 37.75; padding 0px 24px; radius 100px; background transparent; text FrameGothic 14/13.44 600, #000000 `core.color.alpha.black.100`; transition color 0.3s cubic-bezier(0, 0.44, 0.6, 1); layers ::before rgb(245, 245, 248) 1px none 1; ::after rgba(0, 0, 0, 0) 0px rgb(193, 194, 217) 0px 0px 0px 2px inset 0 |
+| pressed | text FrameGothic 14/13.44 600, #fcfcfc `dark.theme.fg.declared`; layers ::before rgba(0, 0, 0, 0) 0px none 1; ::after rgba(0, 0, 0, 0) 0px rgba(209, 209, 251, 0.2) 0px 0px 0px 4px inset 1 |
 
 **Focus not capturable.** A real keyboard focus could not be held on this element (`focus-visible` recorded `via: focus failed`), so its focus look is uncaptured — not measured as absent.
-
-Child layers that carry the look: a::before 163pxx35.75px background #f5f5f8 `dark.theme.accent` border 1px solid #c1c2d9 `core.color.grey.80` radius 100px; a::after 165pxx37.75px radius 100px shadow #c1c2d9 `core.color.grey.80` 0px 0px 0px 2px inset.
 
 No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
 
@@ -619,7 +618,7 @@ The "Toggle mobile navigation" button — a local UI toggle; the opened state wa
 |---|---|
 | default (same: hover, pressed) | size 25 x 20; background transparent; text Arial 13.33/normal 400, #fcfcfc `dark.theme.fg.declared`; transform matrix(0, -1, 1, 0, 0, 0); layers span.ToggleButton_navMobileButtonLineEl__IvuHL 5.7x5.7 rgb(240, 240, 247) 9.33333px; span.ToggleButton_navMobileButtonLineEl__IvuHL 5.7x5.7 rgb(240, 240, 247) 9.33333px; span.ToggleButton_navMobileButtonLineEl__IvuHL 5.7x5.7 rgb(240, 240, 247) 9.33333px; span.ToggleButton_navMobileButtonLineEl__IvuHL 5.7x5.7 rgb(240, 240, 247) 9.33333px |
 | focus-visible | outline 1px dotted #fcfcfc `dark.theme.fg.declared`, offset 0px; layers button.ToggleButton_navMobileButton__WW3qe 25.0x20.0 1px dotted rgb(252, 252, 252) offset 0px; span.ToggleButton_navMobileButtonLineEl__IvuHL 5.7x5.7 rgb(240, 240, 247) 9.33333px; span.ToggleButton_navMobileButtonLineEl__IvuHL 5.7x5.7 rgb(240, 240, 247) 9.33333px; span.ToggleButton_navMobileButtonLineEl__IvuHL 5.7x5.7 rgb(240, 240, 247) 9.33333px; span.ToggleButton_navMobileButtonLineEl__IvuHL 5.7 |
-| opened | size 20 x 25; transform none; layers span.ToggleButton_navMobileButtonLineEl__IvuHL 18.4x18.4 rgb(240, 240, 247) 9.33333px; span.ToggleButton_navMobileButtonLineEl__IvuHL 18.4x18.4 rgb(240, 240, 247) 9.33333px; span.ToggleButton_navMobileButtonLineEl__IvuHL 18.4x18.4 rgb(240, 240, 247) 9.33333px; span.ToggleButton_navMobileButtonLineEl__IvuHL 18.4x18.4 rgb(240, 240, 247) 9.33333px |
+| opened | size 20.15 x 23.77; transform matrix(0.849411, -0.126644, 0.126644, 0.849411, 0, 0); layers span.ToggleButton_navMobileButtonLineEl__IvuHL 9.3x7.5 rgb(240, 240, 247) 9.33333px; span.ToggleButton_navMobileButtonLineEl__IvuHL 7.5x9.3 rgb(240, 240, 247) 9.33333px; span.ToggleButton_navMobileButtonLineEl__IvuHL 9.3x7.5 rgb(240, 240, 247) 9.33333px; span.ToggleButton_navMobileButtonLineEl__IvuHL 7.5x9.3 rgb(240, 240, 247) 9.33333px |
 
 Child layers that carry the look: span 5.7x5.7 background #f0f0f7 `core.color.grey.95` radius 9.33333px; span 5.7x5.7 background #f0f0f7 `core.color.grey.95` radius 9.33333px; span 5.7x5.7 background #f0f0f7 `core.color.grey.95` radius 9.33333px.
 
@@ -644,11 +643,11 @@ The hero "Start Free Trial" button at 390 wide; measured never followed. Read as
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 342 x 37.75; padding 0px 24px; radius 100px; background transparent; text FrameGothic 14/13.44 600, #000000 `core.color.alpha.black.100`; transition color 0.3s cubic-bezier(0, 0.44, 0.6, 1); layers ::before rgb(245, 245, 248) 1px none 1; ::after rgba(0, 0, 0, 0) 0px rgb(193, 194, 217) 0px 0px 0px 2px inset 0; a::before.Button_white__XYP1F.Button_base__1G9eD 340pxx35.75px rgb(245, 245, 248) T:1px solid rgb(193, 194, 217) / R:1px solid rgb(193, 194, 217) / B:1px solid rgb(193, 194, 217) / L:1px solid rgb(193, 194, 217) 100px; a::after.Button_white__XYP1F.Button_base__1G9eD 342pxx37.75px rgb(19 |
+| default (same: hover) | size 342 x 37.75; padding 0px 24px; radius 100px; background transparent; text FrameGothic 14/13.44 600, #000000 `core.color.alpha.black.100`; transition color 0.3s cubic-bezier(0, 0.44, 0.6, 1); layers ::before rgb(245, 245, 248) 1px none 1; ::after rgba(0, 0, 0, 0) 0px rgb(193, 194, 217) 0px 0px 0px 2px inset 0; a::before.Button_white__XYP1F.Button_base__1G9eD 340pxx35.75px rgb(245, 245, 248) T:1px solid rgb(193, 194, 217) / R:1px solid rgb(193, 194, 217) / B:1px solid rgb(193, 194, 217) / L:1px solid rgb(193, 194, 217) 100px |
 | focus-visible | outline 1px dotted #fcfcfc `dark.theme.fg.declared`, offset 1px; layers ::before rgb(245, 245, 248) 1px none 1; ::after rgba(0, 0, 0, 0) 0px rgb(193, 194, 217) 0px 0px 0px 2px inset 0; a.Button_white__XYP1F.Button_base__1G9eD 342.0x37.8 1px dotted rgb(252, 252, 252) offset 1px 100px; a::before.Button_white__XYP1F.Button_base__1G9eD 340pxx35.75px rgb(245, 245, 248) T:1px solid rgb(193, 194, 217) / R:1px solid rgb(193, 194, 217) / B:1px solid rgb(193, 194, 217) / L:1px  |
 | pressed | text FrameGothic 14/13.44 600, #fcfcfc `dark.theme.fg.declared`; layers ::before rgba(0, 0, 0, 0) 0px none 1; ::after rgba(0, 0, 0, 0) 0px rgba(209, 209, 251, 0.2) 0px 0px 0px 4px inset 1; a::after.Button_white__XYP1F.Button_base__1G9eD 342pxx37.75px rgba(209, 209, 251, 0.2) 0px 0px 0px 4px inset 100px |
 
-Child layers that carry the look: a::before 340pxx35.75px background #f5f5f8 `dark.theme.accent` border 1px solid #c1c2d9 `core.color.grey.80` radius 100px; a::after 342pxx37.75px radius 100px shadow #c1c2d9 `core.color.grey.80` 0px 0px 0px 2px inset.
+Child layers that carry the look: a::before 340pxx35.75px background #f5f5f8 `dark.theme.accent` border 1px solid #c1c2d9 `core.color.grey.80` radius 100px.
 
 ![Mobile hero CTA default](components/crops/m-hero-cta-default.png) ![Mobile hero CTA hover](components/crops/m-hero-cta-hover.png) ![Mobile hero CTA focus-visible](components/crops/m-hero-cta-focus-visible.png) ![Mobile hero CTA pressed](components/crops/m-hero-cta-pressed.png)
 

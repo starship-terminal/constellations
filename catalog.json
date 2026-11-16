@@ -13438,7 +13438,6 @@
      "case studies, release notes, integration detail pages and resource articles are index-level captures (plus the Ford case study); the remaining public sitemap (lp/* campaign landings) is the same templates with different copy, uncaptured",
      "mega-menu items' focus/hover is partially covered - the panel closes on blur before a keyboard focus can always be held",
      "mobile hover is not meaningful on a touch surface; the drawer CTA's hover state was skipped and its default/focus/pressed states recorded instead",
-     "mobile sign-in default shot exists but the mobile -full stitch of the welcome page failed its dimension check, so only the 390x844 default exists for that surface",
      "pressed states are DevTools-forced (CSS.forcePseudoState), so any script-applied mousedown state is missing",
      "icons: no standalone SVG set lifted this pass"
     ],

@@ -57,7 +57,7 @@
   },
   "C1": {
     "grade": "partly",
-    "evidence": "About 9 of 19 checklist components paint publicly: button (nav/hero/plan/contact/schedule/submit pills), icon button (m-menu-btn, locale-btn, cookie-prefs), link (nav/footer/menu items, sales-link), text field (form-name/email, login-email), text area (form-message), tabs (price-toggle segmented billing control), menu (nav-panel mega-menu + m-drawer overlay), card (plan-card, int-card, wn-card, cust-card, login-panel) and accordion disclosures (ptable-acc, faq-acc). Checkbox, radio, select, switch, tooltip, dialog, toast, table, avatar, badge and list row never appear signed out - the comparison grid renders as accordions, not a table."
+    "evidence": "About 9 of 19 checklist components paint publicly: button (nav/hero/plan/contact/schedule/submit pills), icon button (m-menu-btn, locale-btn, cookie-prefs), link (nav/footer/menu items, sales-link), text field (form-name/email, login-email), text area (form-message), radio (price-toggle/price-toggle-alt — the Monthly/Annually billing switch is a pair of round radio controls: a 24px circle ringed grey-60 with a 10px turquoise-triumph dot on the selected side), menu (nav-panel mega-menu + m-drawer overlay), card (plan-card, int-card, wn-card, cust-card, login-panel) and accordion disclosures (ptable-acc, faq-acc). Checkbox, tabs, select, switch, tooltip, dialog, toast, table, avatar, badge and list row never appear signed out - the comparison grid renders as accordions, not a table."
   },
   "C2": {
     "grade": "partly",
@@ -65,7 +65,7 @@
   },
   "C3": {
     "grade": "meets",
-    "evidence": "Over 30 controls received a real keyboard focus (Shift+Tab/Tab): pills and links draw a 1px dotted grey.100 outline offset 1px, the login field and submit paint their own focus treatments on the accounts stack, and the measured states are recorded per component in components.md."
+    "evidence": "19 controls received a real keyboard focus (Shift+Tab/Tab) and held it for capture: 18 draw a 1px dotted grey.100 outline at offset <=1px and login-submit paints a focus shadow on the accounts stack; 2 more recorded via: focus failed. The measured states are recorded per component in components.md."
   },
   "C4": {
     "grade": "meets",

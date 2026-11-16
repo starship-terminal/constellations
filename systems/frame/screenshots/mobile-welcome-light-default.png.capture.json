@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-15T20:58:35.816Z",
+  "capturedAt": "2026-11-16T19:33:29.272Z",
   "screenshot": "mobile-welcome-light-default.png",
   "sanitizedSourceUrl": "https://accounts.frame.io/welcome",
   "requested": {
@@ -17,7 +17,7 @@
   "actual": {
     "innerWidth": 390,
     "innerHeight": 844,
-    "devicePixelRatio": 1,
+    "devicePixelRatio": 2,
     "theme": {
       "classes": [],
       "attributes": {},
@@ -51,13 +51,12 @@
     "height": 1688
   },
   "dimensionCheck": {
-    "status": "fail",
+    "status": "pass",
     "expected": {
-      "width": 390,
-      "height": 844
+      "width": 780,
+      "height": 1688
     },
-    "basis": "configuredViewport",
-    "error": "Screenshot dimension mismatch: PNG 780x1688, expected 390x844"
+    "basis": "configuredViewport"
   },
   "visualReview": {
     "status": "pending",

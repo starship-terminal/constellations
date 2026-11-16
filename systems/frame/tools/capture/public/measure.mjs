@@ -162,6 +162,9 @@ async function S(key, target, list, meta = {}, opts = {}) {
   if (!listed.has(key)) listed.set(key, new Set());
   for (const st of list) listed.get(key).add(st);
   delete out.components[key].missing;
+  // A fresh reading clears the marker a previous missed pass left; a new
+  // miss re-records it below.
+  delete out.components[key].recaptureMissed;
   if (opts.open) { await reset(); try { await opts.open(); } catch (e) { log('  ! open failed', key, String(e.message).slice(0, 80)); } }
   const loc = target.filter({ visible: true }).first();
   if (!(await loc.count())) {
@@ -187,7 +190,48 @@ async function S(key, target, list, meta = {}, opts = {}) {
       } else if (st === 'focus-visible') {
         via = await kbFocus((opts.focusLoc || loc).filter({ visible: true }).first());
       } else if (st === 'pressed') {
-        undo = await forcePseudo((opts.pressLoc || loc).filter({ visible: true }).first(), ['active', 'hover']);
+        const pl = (opts.pressLoc || loc).filter({ visible: true }).first();
+        // The forced pseudo-state still paints through the element's own
+        // transition, so listen for the transition itself: getComputedStyle
+        // sampling is unreliable here (a fixed delay caught mid-fade values —
+        // a Button_white press read as alpha 0.35 / mid-grey text instead of
+        // the settled transparent + #fcfcfc — and the headless compositor can
+        // hold a mid-flight value level across several polls). Attach the
+        // listener before forcing so no transitionrun is missed; a pressed
+        // style identical to default starts no transition and resolves at
+        // the first timeout.
+        const settled = pl.evaluate((el) => new Promise((resolve) => {
+          let started = false, finished = false, quiet = 0;
+          const fin = (v) => {
+            if (finished) return;
+            finished = true;
+            el.removeEventListener('transitionrun', ping);
+            el.removeEventListener('transitionstart', ping);
+            el.removeEventListener('transitionend', ping);
+            el.removeEventListener('transitioncancel', ping);
+            resolve(v);
+          };
+          // Every transition event re-arms a 300ms quiet window; when the
+          // stream stops, the fade is done. Stray ends from animations that
+          // were already running only ever stretch the window, never finish
+          // early — pending-counting would let one fake a settle.
+          const ping = () => {
+            started = true;
+            clearTimeout(quiet);
+            clearTimeout(endCap);
+            endCap = setTimeout(() => fin('end-timeout'), 8000);
+            quiet = setTimeout(() => fin('settled'), 300);
+          };
+          el.addEventListener('transitionrun', ping);
+          el.addEventListener('transitionstart', ping);
+          el.addEventListener('transitionend', ping);
+          el.addEventListener('transitioncancel', ping);
+          let endCap = 0;
+          const noStart = setTimeout(() => { if (!started) fin('no-transition'); }, 2500);
+        }));
+        undo = await forcePseudo(pl, ['active', 'hover']);
+        await settled;
+        await page.waitForTimeout(120);
         via = 'CDP forcePseudoState :active:hover';
       } else if (st === 'focused') {
         const fld = (opts.fieldLoc || loc).filter({ visible: true }).first();
@@ -393,8 +437,8 @@ async function pricing() {
   await chrome('pricing');
   const g = G.pricing;
   await S('price-h1', q('h1').filter({ visible: true }).first(), ['default'], { group: g, title: 'Pricing headline', desc: 'The /pricing masthead.', sel: 'h1' }, { noScroll: true });
-  await S('price-toggle', q('[role="radio"], button').filter({ hasText: /^Monthly$/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Billing toggle', desc: 'The "Monthly" side of the Monthly/Annually billing switch (the Annually side carries a "SAVE 13%" badge); a local UI toggle, measured at rest — the alternate price state was not toggled.', sel: 'billing Monthly control' }, { noScroll: true });
-  await S('price-toggle-alt', q('[role="radio"], button').filter({ hasText: /Annually/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Billing toggle (annual)', desc: 'The "Annually — SAVE 13%" side of the billing switch; measured at rest, never toggled.', sel: 'billing Annually control' }, { noScroll: true });
+  await S('price-toggle', q('[role="radio"], button').filter({ hasText: /^Monthly$/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Billing toggle', desc: 'The "Monthly" side of the Monthly/Annually billing switch — a pair of round radio controls (a 24px circle ringed grey-60, a 10px turquoise-triumph dot on the selected side), not a segmented pill; a local UI toggle, measured at rest — the alternate price state was not toggled.', sel: 'billing Monthly control' }, { noScroll: true });
+  await S('price-toggle-alt', q('[role="radio"], button').filter({ hasText: /Annually/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Billing toggle (annual)', desc: 'The "Annually — SAVE 13%" side of the billing switch — the same round radio control, measured at rest, never toggled.', sel: 'billing Annually control' }, { noScroll: true });
   await S('plan-card', await domFind(page, /\S/, { sel: '[class*="PricingCard_pricingCard__"]', tag: 'plancard', minW: 150, minH: 300, leaf: false }), ['default'], { group: g, title: 'Plan card', desc: 'A pricing plan card (Free / Pro / Team / Enterprise, $0–$25 monthly); the card wrapping a "Sign Up Now" CTA.', sel: '[class*=PricingCard_pricingCard__]' });
   await S('plan-signup', q('main a, main button').filter({ hasText: /^Sign Up Now$/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Plan CTA', desc: 'A plan card\'s "Sign Up Now" button; measured, never followed or clicked (it begins account creation).', sel: 'plan Sign Up Now' });
   await S('plan-trial', q('main a, main button').filter({ hasText: /^Start Free Trial$/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Plan trial CTA', desc: 'A plan card\'s "Start Free Trial" button; measured, never followed.', sel: 'plan Start Free Trial' });

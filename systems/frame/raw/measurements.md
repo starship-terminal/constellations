@@ -1,6 +1,6 @@
 # Frame.io component measurements
 
-Computed styles read from frame.io on 2026-11-15 by `tools/capture/public/measure.mjs`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844) across the site's painted surfaces — the dark marketing pages (home, pricing, contact, contact/form, customers, the Ford case study, integrations and what's-new), the light sign-in surface at accounts.frame.io/welcome (a separate styled-components stack that shares none of the marketing site's custom properties), and the mobile nav overlay — with the cookie consent layer hidden (never answered), and written here by `tools/capture/public/build-measurements.mjs` from [components-computed.json](components-computed.json). frame.io exposes no signed-out theme switch; the marketing pages paint the one dark theme and the welcome page paints its own light theme. One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
+Computed styles read from frame.io on 2026-11-16 by `tools/capture/public/measure.mjs`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844) across the site's painted surfaces — the dark marketing pages (home, pricing, contact, contact/form, customers, the Ford case study, integrations and what's-new), the light sign-in surface at accounts.frame.io/welcome (a separate styled-components stack that shares none of the marketing site's custom properties), and the mobile nav overlay — with the cookie consent layer hidden (never answered), and written here by `tools/capture/public/build-measurements.mjs` from [components-computed.json](components-computed.json). frame.io exposes no signed-out theme switch; the marketing pages paint the one dark theme and the welcome page paints its own light theme. One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
 
 States: `hover` is a real pointer hover; `focus-visible` a real keyboard focus (Shift+Tab, Tab); `pressed` is forced with DevTools (`CSS.forcePseudoState` :active:hover), so no button was pressed; `focused` is a text field clicked into; `filled` is sample text typed and deleted again, with nothing sent; `opened`, `expanded` and the rest are resting states reached by the page or by a UI toggle.
 
@@ -29,7 +29,7 @@ Page: home. Selector: `nav[class*=mainNavigation]`. States: default.
 | Text node | span.Navigation_navigationMainItemInner__mMl9H: FrameGothic 14px/13.44px 600, #fcfcfc, ls 0.14px |
 | Transition | none |
 | Icon | 30 x 34, colour #fcfcfc |
-| Painted layers | span.ToggleButton_navMobileButtonLineEl__IvuHL 0.0x0.0 bg #f0f0f7 r 9.33333px; span.ToggleButton_navMobileButtonLineEl__IvuHL 0.0x0.0 bg #f0f0f7 r 9.33333px; span.ToggleButton_navMobileButtonLineEl__IvuHL 0.0x0.0 bg #f0f0f7 r 9.33333px; span.ToggleButton_navMobileButtonLineEl__IvuHL 0.0x0.0 bg #f0f0f7 r 9.33333px; a::before.Button_glass__B8SwH.Button_base__1G9eD autoxauto bg #d1d1fb @ 0.2 r 100px; a::after.Button_glass__B8SwH.Button_base__1G9eD autoxauto r 100px shadow #9d9dff @ 0.05 0px 0px 0px 1px inset |
+| Painted layers | a::before.Button_white__XYP1F.Button_base__1G9eD 155.25pxx37.75px bg #f5f5f8 border T:1px solid #c1c2d9 / R:1px solid #c1c2d9 / B:1px solid #c1c2d9 / L:1px solid #c1c2d9 r 100px; figure.Navigation_backdrop__xQNG2 1440.0x80.0 bg #0d0d18 @ 0.3 |
 | How | at rest |
 
 Crops: `mkt-header-default.png`.
@@ -55,7 +55,7 @@ Page: home. Selector: `html`. States: default.
 | Text node | a: FrameGothic 12px/12px 600, #fcfcfc, ls 0.12px |
 | Transition | none |
 | Icon | 24 x 24, colour #fcfcfc |
-| Painted layers | html.__variable_9d88cd.__variable_5c99cd 1440.0x11936.9 bg #000000; div.RedirectedLanguageNotification_languageBanner__1K3ws.RedirectedLanguageNotification_isHidden__PSJK8 600.0x36.0 bg #5237f9 r 6px shadow #000000 @ 0.5 0px 0px 16px 0px; div.AnnouncementBanner_announcementBanner__g9QLM.Navigation_navigationBannerEl__zSvOh 1440.0x36.0 bg #5b53ff image linear-gradient(355deg, #ffffff @ 0.15 4.03%, #ffffff @ 0 95.81%), none; span.ToggleButton_navMobileButtonLineEl__IvuHL 0.0x0.0 bg #f0f0f7 r 9.33333px; span.ToggleButton_navMobileButtonLineEl__IvuHL 0.0x0.0 bg #f0f0f7 r 9.33333px; span.ToggleButton_navMobileButtonLineEl__IvuHL 0.0x0.0 bg #f0f0f7 r 9.33333px |
+| Painted layers | html.__variable_9d88cd.__variable_5c99cd 1440.0x11936.9 bg #000000; div.AnnouncementBanner_announcementBanner__g9QLM.Navigation_navigationBannerEl__zSvOh 1440.0x36.0 bg #5b53ff image linear-gradient(355deg, #ffffff @ 0.15 4.03%, #ffffff @ 0 95.81%), none; a::before.Button_white__XYP1F.Button_base__1G9eD 155.25pxx37.75px bg #f5f5f8 border T:1px solid #c1c2d9 / R:1px solid #c1c2d9 / B:1px solid #c1c2d9 / L:1px solid #c1c2d9 r 100px |
 | How | at rest |
 
 Crops: none.
@@ -133,7 +133,7 @@ Page: home. Selector: `button[class*=navigationMainItem] Features`. States: defa
 | Text node | span.Navigation_navigationMainItemInner__mMl9H: FrameGothic 14px/13.44px 600, #fcfcfc, ls 0.14px | = | = | = | = |
 | Transition | color 0.3s cubic-bezier(0.28, 0.44, 0.49, 1) | = | = | = | = |
 | Cursor | pointer | = | = | = | = |
-| Icon | 9.8 x 9.8, colour #fcfcfc | = | = | = | = |
+| Icon | 9.8 x 9.8, colour #fcfcfc | = | = | = | 12.94 x 12.94, colour #fcfcfc |
 | ::before | 111.922px x 80px, absolute, bg #000000 @ 0, radius 0px | = | = | = | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover | own toggle |
 | Painted layers | - | = | button.Navigation_navigationMainItem__pIZar.typography_navigation__70PKN 83.9x80.0 outline 1px dotted #fcfcfc offset 0px | = | = |
@@ -292,13 +292,13 @@ Page: home. Selector: `header a Start Free Trial`. States: default, hover, focus
 | Outline | none | = | 1px dotted #fcfcfc offset 1px | = |
 | Font | FrameGothic 14px/13.44px 600 | = | = | = |
 | Letter spacing | 0.14px | = | = | = |
-| Colour | #000000 | = | = | = |
-| Text node | span.Button_buttonText__Yzd9S: FrameGothic 14px/13.44px 600, #000000, ls 0.14px | = | = | = |
+| Colour | #000000 | = | = | #fcfcfc |
+| Text node | span.Button_buttonText__Yzd9S: FrameGothic 14px/13.44px 600, #000000, ls 0.14px | = | = | span.Button_buttonText__Yzd9S: FrameGothic 14px/13.44px 600, #fcfcfc, ls 0.14px |
 | Transition | color 0.3s cubic-bezier(0, 0.44, 0.6, 1) | = | = | = |
 | Cursor | pointer | = | = | = |
-| ::before | 155.25px x 37.75px, absolute, bg #f5f5f8, radius 100px | 155.25px x 37.75px, absolute, bg #e9e9ff @ 0.7, radius 100px | 155.25px x 37.75px, absolute, bg #e9e9ff @ 0.7, radius 100px | 157.25px x 39.75px, absolute, bg #f5f5f8, radius 100px |
+| ::before | 155.25px x 37.75px, absolute, bg #f5f5f8, radius 100px | 155.25px x 37.75px, absolute, bg #e9e9ff @ 0.7, radius 100px | 155.25px x 37.75px, absolute, bg #e9e9ff @ 0.7, radius 100px | 157.25px x 39.75px, absolute, bg #000000 @ 0, radius 100px |
 | ::after | 157.25px x 39.75px, absolute, bg #000000 @ 0, radius 100px, shadow #c1c2d9 0px 0px 0px 2px inset | 157.25px x 39.75px, absolute, bg #000000 @ 0, radius 100px, shadow #fcfcfc 0px 0px 0px 2px inset | = | 157.25px x 39.75px, absolute, bg #000000 @ 0, radius 100px, shadow #d1d1fb @ 0.2 0px 0px 0px 4px inset |
-| Painted layers | a::before.Button_white__XYP1F.Button_base__1G9eD 155.25pxx37.75px bg #f5f5f8 border T:1px solid #c1c2d9 / R:1px solid #c1c2d9 / B:1px solid #c1c2d9 / L:1px solid #c1c2d9 r 100px; a::after.Button_white__XYP1F.Button_base__1G9eD 157.25pxx39.75px r 100px shadow #c1c2d9 0px 0px 0px 2px inset | a::before.Button_white__XYP1F.Button_base__1G9eD 155.25pxx37.75px bg #e9e9ff @ 0.7 border T:1px solid #c1c2d9 / R:1px solid #c1c2d9 / B:1px solid #c1c2d9 / L:1px solid #c1c2d9 r 100px; a::after.Button_white__XYP1F.Button_base__1G9eD 157.25pxx39.75px r 100px shadow #fcfcfc 0px 0px 0px 2px inset | a.Button_white__XYP1F.Button_base__1G9eD 157.3x39.8 r 100px outline 1px dotted #fcfcfc offset 1px; a::before.Button_white__XYP1F.Button_base__1G9eD 155.25pxx37.75px bg #e9e9ff @ 0.7 border T:1px solid #c1c2d9 / R:1px solid #c1c2d9 / B:1px solid #c1c2d9 / L:1px solid #c1c2d9 r 100px; a::after.Button_white__XYP1F.Button_base__1G9eD 157.25pxx39.75px r 100px shadow #c1c2d9 0px 0px 0px 2px inset | a::before.Button_white__XYP1F.Button_base__1G9eD 157.25pxx39.75px bg #f5f5f8 r 100px; a::after.Button_white__XYP1F.Button_base__1G9eD 157.25pxx39.75px r 100px shadow #d1d1fb @ 0.2 0px 0px 0px 4px inset |
+| Painted layers | a::before.Button_white__XYP1F.Button_base__1G9eD 155.25pxx37.75px bg #f5f5f8 border T:1px solid #c1c2d9 / R:1px solid #c1c2d9 / B:1px solid #c1c2d9 / L:1px solid #c1c2d9 r 100px | a::before.Button_white__XYP1F.Button_base__1G9eD 155.25pxx37.75px bg #e9e9ff @ 0.7 border T:1px solid #c1c2d9 / R:1px solid #c1c2d9 / B:1px solid #c1c2d9 / L:1px solid #c1c2d9 r 100px; a::after.Button_white__XYP1F.Button_base__1G9eD 157.25pxx39.75px r 100px shadow #fcfcfc 0px 0px 0px 2px inset | a.Button_white__XYP1F.Button_base__1G9eD 157.3x39.8 r 100px outline 1px dotted #fcfcfc offset 1px; a::before.Button_white__XYP1F.Button_base__1G9eD 155.25pxx37.75px bg #e9e9ff @ 0.7 border T:1px solid #c1c2d9 / R:1px solid #c1c2d9 / B:1px solid #c1c2d9 / L:1px solid #c1c2d9 r 100px | a::after.Button_white__XYP1F.Button_base__1G9eD 157.25pxx39.75px r 100px shadow #d1d1fb @ 0.2 0px 0px 0px 4px inset |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
 Crops: `nav-cta-default.png`, `nav-cta-hover.png`, `nav-cta-focus-visible.png`, `nav-cta-pressed.png`.
@@ -325,7 +325,7 @@ Page: home. Selector: `footer`. States: default.
 | Transition | none |
 | Transform | matrix(1, 0, 0, 1, 0, -14.598) |
 | Icon | 30 x 34, colour #fcfcfc |
-| Painted layers | div::before.Footer_rowSecondary__dHZWA.global_grid__4e_JW 1080pxx2px bg #bdbdf4 @ 0.1 r 2px; div.LanguageSelector_scrim__Ub2pG 1440.0x838.4 bg #0d0d18 @ 0.6; div.LanguageSelector_panel__Deh_H 280.0x500.8 bg #0d0d18 @ 0.8 border T:1px solid #9d9dff @ 0.05 / R:1px solid #9d9dff @ 0.05 / B:1px solid #9d9dff @ 0.05 / L:1px solid #9d9dff @ 0.05 r 12px shadow #000000 @ 0.4 0px -8px 32px 0px; span.LanguageSelector_dot__ZO75h 6.0x6.0 bg #5b53ff r 50%; span.LanguageSelector_dot__ZO75h.LanguageSelector_dotActive__xYbke 6.0x6.0 bg #5b53ff r 50%; span.LanguageSelector_dot__ZO75h 6.0x6.0 bg #5b53ff r 50% |
+| Painted layers | div::before.Footer_rowSecondary__dHZWA.global_grid__4e_JW 1080pxx2px bg #bdbdf4 @ 0.1 r 2px; div.Footer_backdrop__Asw9G 1440.0x838.4 bg #0d0d18 @ 0.8 |
 | How | at rest |
 
 Crops: `footer-default.png`.
@@ -367,17 +367,17 @@ Page: home. Selector: `footer English (US)`. States: default, hover, focus-visib
 | Gap | 8px | = | = | = |
 | Border | none | = | = | = |
 | Radius | 5px | = | = | = |
-| Background | transparent | #9d9dff @ 0.05 | = | = |
+| Background | transparent | #9d9dff @ 0.05 | = | #9d9dff @ 0.05 |
 | Box shadow | none | = | = | = |
 | Outline | none | = | 2px solid #5b53ff offset 2px | = |
 | Font | FrameGothic 10px/normal 400 | = | = | = |
 | Letter spacing | normal | = | = | = |
-| Colour | #6a6b83 | #fcfcfc | = | = |
+| Colour | #6a6b83 | #fcfcfc | = | #fcfcfc |
 | Transition | color, background-color 0.2s, 0.2s cubic-bezier(0.25, 0.1, 0.25, 1), cubic-bezier(0.25, 0.1, 0.25, 1) delay 0s, 0s | = | = | = |
 | Cursor | pointer | = | = | = |
-| Icon | 16 x 16, colour #6a6b83 | 16 x 16, colour #fcfcfc | = | = |
+| Icon | 16 x 16, colour #6a6b83 | 16 x 16, colour #fcfcfc | = | 16 x 16, colour #fcfcfc |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
-| Painted layers | - | button.LanguageSelector_trigger__IwXGd.typography_footnote__h8r_U 120.0x32.0 bg #9d9dff @ 0.05 r 5px | button.LanguageSelector_trigger__IwXGd.typography_footnote__h8r_U 120.0x32.0 r 5px outline 2px solid #5b53ff offset 2px | = |
+| Painted layers | - | button.LanguageSelector_trigger__IwXGd.typography_footnote__h8r_U 120.0x32.0 bg #9d9dff @ 0.05 r 5px | button.LanguageSelector_trigger__IwXGd.typography_footnote__h8r_U 120.0x32.0 r 5px outline 2px solid #5b53ff offset 2px | button.LanguageSelector_trigger__IwXGd.typography_footnote__h8r_U 120.0x32.0 bg #9d9dff @ 0.05 r 5px |
 
 Crops: `locale-btn-default.png`, `locale-btn-hover.png`, `locale-btn-focus-visible.png`, `locale-btn-pressed.png`.
 
@@ -449,13 +449,13 @@ Page: home. Selector: `main Start Free Trial`. States: default, hover, focus-vis
 | Outline | none | = | 1px dotted #fcfcfc offset 1px | = |
 | Font | FrameGothic 14px/13.44px 600 | = | = | = |
 | Letter spacing | 0.14px | = | = | = |
-| Colour | #000000 | = | = | #a3a3a3 |
-| Text node | span.Button_buttonText__Yzd9S: FrameGothic 14px/13.44px 600, #000000, ls 0.14px | = | = | span.Button_buttonText__Yzd9S: FrameGothic 14px/13.44px 600, #a3a3a3, ls 0.14px |
+| Colour | #000000 | = | = | #fcfcfc |
+| Text node | span.Button_buttonText__Yzd9S: FrameGothic 14px/13.44px 600, #000000, ls 0.14px | = | = | span.Button_buttonText__Yzd9S: FrameGothic 14px/13.44px 600, #fcfcfc, ls 0.14px |
 | Transition | color 0.3s cubic-bezier(0, 0.44, 0.6, 1) | = | = | = |
 | Cursor | pointer | = | = | = |
-| ::before | 155.25px x 37.75px, absolute, bg #f5f5f8, radius 100px | 155.25px x 37.75px, absolute, bg #e9e9ff @ 0.7, radius 100px | 155.25px x 37.75px, absolute, bg #e9e9ff @ 0.7, radius 100px | 157.25px x 39.75px, absolute, bg #f5f5f8 @ 0.353, radius 100px |
+| ::before | 155.25px x 37.75px, absolute, bg #f5f5f8, radius 100px | 155.25px x 37.75px, absolute, bg #e9e9ff @ 0.7, radius 100px | 155.25px x 37.75px, absolute, bg #e9e9ff @ 0.7, radius 100px | 157.25px x 39.75px, absolute, bg #000000 @ 0, radius 100px |
 | ::after | 157.25px x 39.75px, absolute, bg #000000 @ 0, radius 100px, shadow #c1c2d9 0px 0px 0px 2px inset | 157.25px x 39.75px, absolute, bg #000000 @ 0, radius 100px, shadow #fcfcfc 0px 0px 0px 2px inset | = | 157.25px x 39.75px, absolute, bg #000000 @ 0, radius 100px, shadow #d1d1fb @ 0.2 0px 0px 0px 4px inset |
-| Painted layers | a::before.Button_white__XYP1F.Button_base__1G9eD 155.25pxx37.75px bg #f5f5f8 border T:1px solid #c1c2d9 / R:1px solid #c1c2d9 / B:1px solid #c1c2d9 / L:1px solid #c1c2d9 r 100px; a::after.Button_white__XYP1F.Button_base__1G9eD 157.25pxx39.75px r 100px shadow #c1c2d9 0px 0px 0px 2px inset | a::before.Button_white__XYP1F.Button_base__1G9eD 155.25pxx37.75px bg #e9e9ff @ 0.7 border T:1px solid #c1c2d9 / R:1px solid #c1c2d9 / B:1px solid #c1c2d9 / L:1px solid #c1c2d9 r 100px; a::after.Button_white__XYP1F.Button_base__1G9eD 157.25pxx39.75px r 100px shadow #fcfcfc 0px 0px 0px 2px inset | a.Button_white__XYP1F.Button_base__1G9eD 157.3x39.8 r 100px outline 1px dotted #fcfcfc offset 1px; a::before.Button_white__XYP1F.Button_base__1G9eD 155.25pxx37.75px bg #e9e9ff @ 0.7 border T:1px solid #c1c2d9 / R:1px solid #c1c2d9 / B:1px solid #c1c2d9 / L:1px solid #c1c2d9 r 100px; a::after.Button_white__XYP1F.Button_base__1G9eD 157.25pxx39.75px r 100px shadow #c1c2d9 0px 0px 0px 2px inset | a::before.Button_white__XYP1F.Button_base__1G9eD 157.25pxx39.75px bg #f5f5f8 @ 0.353 r 100px; a::after.Button_white__XYP1F.Button_base__1G9eD 157.25pxx39.75px r 100px shadow #d1d1fb @ 0.2 0px 0px 0px 4px inset |
+| Painted layers | a::before.Button_white__XYP1F.Button_base__1G9eD 155.25pxx37.75px bg #f5f5f8 border T:1px solid #c1c2d9 / R:1px solid #c1c2d9 / B:1px solid #c1c2d9 / L:1px solid #c1c2d9 r 100px | a::before.Button_white__XYP1F.Button_base__1G9eD 155.25pxx37.75px bg #e9e9ff @ 0.7 border T:1px solid #c1c2d9 / R:1px solid #c1c2d9 / B:1px solid #c1c2d9 / L:1px solid #c1c2d9 r 100px; a::after.Button_white__XYP1F.Button_base__1G9eD 157.25pxx39.75px r 100px shadow #fcfcfc 0px 0px 0px 2px inset | a.Button_white__XYP1F.Button_base__1G9eD 157.3x39.8 r 100px outline 1px dotted #fcfcfc offset 1px; a::before.Button_white__XYP1F.Button_base__1G9eD 155.25pxx37.75px bg #e9e9ff @ 0.7 border T:1px solid #c1c2d9 / R:1px solid #c1c2d9 / B:1px solid #c1c2d9 / L:1px solid #c1c2d9 r 100px | a::after.Button_white__XYP1F.Button_base__1G9eD 157.25pxx39.75px r 100px shadow #d1d1fb @ 0.2 0px 0px 0px 4px inset |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
 Crops: `hero-cta-default.png`, `hero-cta-hover.png`, `hero-cta-focus-visible.png`, `hero-cta-pressed.png`.
@@ -483,9 +483,9 @@ Page: home. Selector: `main Take a Product Tour`. States: default, hover, focus-
 | Transition | color 0.3s cubic-bezier(0, 0.44, 0.6, 1) | = | = | = |
 | Cursor | pointer | = | = | = |
 | Icon | 4.44 x 7.5, colour #fcfcfc | = | = | = |
-| ::before | 208.672px x 39.75px, absolute, bg #d1d1fb @ 0.2, radius 100px | 208.672px x 39.75px, absolute, bg #dcdcff @ 0.3, radius 100px | 208.672px x 39.75px, absolute, bg #dcdcff @ 0.3, radius 100px | = |
-| ::after | 208.672px x 39.75px, absolute, bg #000000 @ 0, radius 100px, shadow #9d9dff @ 0.05 0px 0px 0px 1px inset | 208.672px x 39.75px, absolute, bg #000000 @ 0, radius 100px, shadow #bdbdf4 @ 0.1 0px 0px 0px 2px inset | = | = |
-| Painted layers | a::before.Button_glass__B8SwH.Button_base__1G9eD 208.672pxx39.75px bg #d1d1fb @ 0.2 r 100px; a::after.Button_glass__B8SwH.Button_base__1G9eD 208.672pxx39.75px r 100px shadow #9d9dff @ 0.05 0px 0px 0px 1px inset; span::after.AnimatedSvgArrow_cssTail__yibfW 20pxx1.65625px bg #f5f5f8 r 1px | a::before.Button_glass__B8SwH.Button_base__1G9eD 208.672pxx39.75px bg #dcdcff @ 0.3 r 100px; a::after.Button_glass__B8SwH.Button_base__1G9eD 208.672pxx39.75px r 100px shadow #bdbdf4 @ 0.1 0px 0px 0px 2px inset; span::after.AnimatedSvgArrow_cssTail__yibfW 20pxx1.65625px bg #f5f5f8 r 1px | a.Button_glass__B8SwH.Button_base__1G9eD 208.7x39.8 r 100px outline 1px dotted #fcfcfc offset 1px; a::before.Button_glass__B8SwH.Button_base__1G9eD 208.672pxx39.75px bg #dcdcff @ 0.3 r 100px; a::after.Button_glass__B8SwH.Button_base__1G9eD 208.672pxx39.75px r 100px shadow #9d9dff @ 0.05 0px 0px 0px 1px inset; span::after.AnimatedSvgArrow_cssTail__yibfW 20pxx1.65625px bg #f5f5f8 r 1px | = |
+| ::before | 208.672px x 39.75px, absolute, bg #d1d1fb @ 0.2, radius 100px | 208.672px x 39.75px, absolute, bg #dcdcff @ 0.3, radius 100px | 208.672px x 39.75px, absolute, bg #dcdcff @ 0.298, radius 100px | 208.672px x 39.75px, absolute, bg #000000 @ 0, radius 100px |
+| ::after | 208.672px x 39.75px, absolute, bg #000000 @ 0, radius 100px, shadow #9d9dff @ 0.05 0px 0px 0px 1px inset | 208.672px x 39.75px, absolute, bg #000000 @ 0, radius 100px, shadow #bdbdf4 @ 0.1 0px 0px 0px 2px inset | = | 208.672px x 39.75px, absolute, bg #000000 @ 0, radius 100px, shadow #d1d1fb @ 0.2 0px 0px 0px 4px inset |
+| Painted layers | a::before.Button_glass__B8SwH.Button_base__1G9eD 208.672pxx39.75px bg #d1d1fb @ 0.2 r 100px; a::after.Button_glass__B8SwH.Button_base__1G9eD 208.672pxx39.75px r 100px shadow #9d9dff @ 0.05 0px 0px 0px 1px inset; span::after.AnimatedSvgArrow_cssTail__yibfW 20pxx1.65625px bg #f5f5f8 r 1px | a::before.Button_glass__B8SwH.Button_base__1G9eD 208.672pxx39.75px bg #dcdcff @ 0.3 r 100px; a::after.Button_glass__B8SwH.Button_base__1G9eD 208.672pxx39.75px r 100px shadow #bdbdf4 @ 0.1 0px 0px 0px 2px inset; span::after.AnimatedSvgArrow_cssTail__yibfW 20pxx1.65625px bg #f5f5f8 r 1px | a.Button_glass__B8SwH.Button_base__1G9eD 208.7x39.8 r 100px outline 1px dotted #fcfcfc offset 1px; a::before.Button_glass__B8SwH.Button_base__1G9eD 208.672pxx39.75px bg #dcdcff @ 0.298 r 100px; a::after.Button_glass__B8SwH.Button_base__1G9eD 208.672pxx39.75px r 100px shadow #9d9dff @ 0.05 0px 0px 0px 1px inset; span::after.AnimatedSvgArrow_cssTail__yibfW 20pxx1.65625px bg #f5f5f8 r 1px | a::after.Button_glass__B8SwH.Button_base__1G9eD 208.672pxx39.75px r 100px shadow #d1d1fb @ 0.2 0px 0px 0px 4px inset; span::after.AnimatedSvgArrow_cssTail__yibfW 20pxx1.65625px bg #f5f5f8 r 1px |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
 Crops: `hero-tour-default.png`, `hero-tour-hover.png`, `hero-tour-focus-visible.png`, `hero-tour-pressed.png`.
@@ -541,7 +541,7 @@ Crops: `price-h1-default.png`.
 
 #### price-toggle
 
-Billing toggle. The "Monthly" side of the Monthly/Annually billing switch (the Annually side carries a "SAVE 13%" badge); a local UI toggle, measured at rest — the alternate price state was not toggled.
+Billing toggle. The "Monthly" side of the Monthly/Annually billing switch — a pair of round radio controls (a 24px circle ringed grey-60, a 10px turquoise-triumph dot on the selected side), not a segmented pill; a local UI toggle, measured at rest — the alternate price state was not toggled.
 
 Page: pricing. Selector: `billing Monthly control`. States: default, hover, focus-visible, pressed.
 
@@ -567,7 +567,7 @@ Crops: `price-toggle-default.png`, `price-toggle-hover.png`, `price-toggle-focus
 
 #### price-toggle-alt
 
-Billing toggle (annual). The "Annually — SAVE 13%" side of the billing switch; measured at rest, never toggled.
+Billing toggle (annual). The "Annually — SAVE 13%" side of the billing switch — the same round radio control, measured at rest, never toggled.
 
 Page: pricing. Selector: `billing Annually control`. States: default, hover, focus-visible, pressed.
 
@@ -613,7 +613,7 @@ Page: pricing. Selector: `[class*=PricingCard_pricingCard__]`. States: default.
 | Text node | div.PricingCard_cardEyebrow__WHDag.typography_eyebrow__vJy3S: NeueMachinaInktrap 12px/10.8px 400, #6199f6, ls 0.72px |
 | Transition | none |
 | Icon | 16 x 17, colour #fcfcfc |
-| Painted layers | div.PricingCard_pricingCard__iX2Cv.PricingCard_pricingCardColumns4__WxrbD 252.0x796.6 bg #101017 @ 0.5 border T:1px solid #9d9dff @ 0.1 / R:1px solid #9d9dff @ 0.1 / B:1px solid #9d9dff @ 0.1 / L:1px solid #9d9dff @ 0.1 r 10px shadow #181826 12px 12px 50px 0px inset, #000000 @ 0.31 84.68px 149.711px 80px 0px, #000000 @ 0.26 54.885px 97.035px 46.852px 0px, #000000 @ 0.23 32.618px 57.666px 25.481px 0px, #000000 @ 0.2 16.936px 29.942px 13px 0px, #000000 @ 0.18 6.9px 12.199px 6.519px 0px, #000000 @ 0.2 1.568px 2.772px 3.148px 0px; div.PricingCard_cardDescription__l9bxj.typography_body__vVxn5 202.0x114.3 border T:1px solid #d1d1fb @ 0.2; a::before.Button_white__XYP1F.Button_base__1G9eD 200pxx37.75px bg #f5f5f8 border T:1px solid #c1c2d9 / R:1px solid #c1c2d9 / B:1px solid #c1c2d9 / L:1px solid #c1c2d9 r 100px; a::after.Button_white__XYP1F.Button_base__1G9eD 202pxx39.75px r 100px shadow #c1c2d9 0px 0px 0px 2px inset; div.PricingCard_cardDetailBulletTooltip__CSk2g.typography_body__vVxn5 202.0x134.8 bg #0d0d18 border T:1px solid #bdbdf4 @ 0.1 / R:1px solid #bdbdf4 @ 0.1 / B:1px solid #bdbdf4 @ 0.1 / L:1px solid #bdbdf4 @ 0.1 r 10px 10px 0px; div::after.PricingCard_cardDetailBulletTooltip__CSk2g.typography_body__vVxn5 40pxx12px bg #0d0d18 r 10px 10px 0px |
+| Painted layers | div.PricingCard_pricingCard__iX2Cv.PricingCard_pricingCardColumns4__WxrbD 252.0x796.6 bg #101017 @ 0.5 border T:1px solid #9d9dff @ 0.1 / R:1px solid #9d9dff @ 0.1 / B:1px solid #9d9dff @ 0.1 / L:1px solid #9d9dff @ 0.1 r 10px shadow #181826 12px 12px 50px 0px inset, #000000 @ 0.31 84.68px 149.711px 80px 0px, #000000 @ 0.26 54.885px 97.035px 46.852px 0px, #000000 @ 0.23 32.618px 57.666px 25.481px 0px, #000000 @ 0.2 16.936px 29.942px 13px 0px, #000000 @ 0.18 6.9px 12.199px 6.519px 0px, #000000 @ 0.2 1.568px 2.772px 3.148px 0px; div.PricingCard_cardDescription__l9bxj.typography_body__vVxn5 202.0x114.3 border T:1px solid #d1d1fb @ 0.2; a::before.Button_white__XYP1F.Button_base__1G9eD 200pxx37.75px bg #f5f5f8 border T:1px solid #c1c2d9 / R:1px solid #c1c2d9 / B:1px solid #c1c2d9 / L:1px solid #c1c2d9 r 100px |
 | How | at rest |
 
 Crops: `plan-card-default.png`.
@@ -636,13 +636,13 @@ Page: pricing. Selector: `plan Sign Up Now`. States: default, hover, focus-visib
 | Outline | none | = | 1px dotted #fcfcfc offset 1px | = |
 | Font | FrameGothic 14px/13.44px 600 | = | = | = |
 | Letter spacing | 0.14px | = | = | = |
-| Colour | #000000 | = | = | #fcfcfc |
-| Text node | span.Button_buttonText__Yzd9S: FrameGothic 14px/13.44px 600, #000000, ls 0.14px | = | = | span.Button_buttonText__Yzd9S: FrameGothic 14px/13.44px 600, #fcfcfc, ls 0.14px |
+| Colour | #000000 | = | = | #a3a3a3 |
+| Text node | span.Button_buttonText__Yzd9S: FrameGothic 14px/13.44px 600, #000000, ls 0.14px | = | = | span.Button_buttonText__Yzd9S: FrameGothic 14px/13.44px 600, #a3a3a3, ls 0.14px |
 | Transition | color 0.3s cubic-bezier(0, 0.44, 0.6, 1) | = | = | = |
 | Cursor | pointer | = | = | = |
-| ::before | 200px x 37.75px, absolute, bg #f5f5f8, radius 100px | 200px x 37.75px, absolute, bg #e9e9ff @ 0.7, radius 100px | 200px x 37.75px, absolute, bg #e9e9ff @ 0.7, radius 100px | 202px x 39.75px, absolute, bg #000000 @ 0, radius 100px |
+| ::before | 200px x 37.75px, absolute, bg #f5f5f8, radius 100px | = | 200px x 37.75px, absolute, bg #e9e9ff @ 0.706, radius 100px | 202px x 39.75px, absolute, bg #f5f5f8 @ 0.353, radius 100px |
 | ::after | 202px x 39.75px, absolute, bg #000000 @ 0, radius 100px, shadow #c1c2d9 0px 0px 0px 2px inset | 202px x 39.75px, absolute, bg #000000 @ 0, radius 100px, shadow #fcfcfc 0px 0px 0px 2px inset | = | 202px x 39.75px, absolute, bg #000000 @ 0, radius 100px, shadow #d1d1fb @ 0.2 0px 0px 0px 4px inset |
-| Painted layers | a::before.Button_white__XYP1F.Button_base__1G9eD 200pxx37.75px bg #f5f5f8 border T:1px solid #c1c2d9 / R:1px solid #c1c2d9 / B:1px solid #c1c2d9 / L:1px solid #c1c2d9 r 100px; a::after.Button_white__XYP1F.Button_base__1G9eD 202pxx39.75px r 100px shadow #c1c2d9 0px 0px 0px 2px inset | a::before.Button_white__XYP1F.Button_base__1G9eD 200pxx37.75px bg #e9e9ff @ 0.7 border T:1px solid #c1c2d9 / R:1px solid #c1c2d9 / B:1px solid #c1c2d9 / L:1px solid #c1c2d9 r 100px; a::after.Button_white__XYP1F.Button_base__1G9eD 202pxx39.75px r 100px shadow #fcfcfc 0px 0px 0px 2px inset | a.Button_white__XYP1F.Button_base__1G9eD 202.0x39.8 r 100px outline 1px dotted #fcfcfc offset 1px; a::before.Button_white__XYP1F.Button_base__1G9eD 200pxx37.75px bg #e9e9ff @ 0.7 border T:1px solid #c1c2d9 / R:1px solid #c1c2d9 / B:1px solid #c1c2d9 / L:1px solid #c1c2d9 r 100px; a::after.Button_white__XYP1F.Button_base__1G9eD 202pxx39.75px r 100px shadow #c1c2d9 0px 0px 0px 2px inset | a::after.Button_white__XYP1F.Button_base__1G9eD 202pxx39.75px r 100px shadow #d1d1fb @ 0.2 0px 0px 0px 4px inset |
+| Painted layers | a::before.Button_white__XYP1F.Button_base__1G9eD 200pxx37.75px bg #f5f5f8 border T:1px solid #c1c2d9 / R:1px solid #c1c2d9 / B:1px solid #c1c2d9 / L:1px solid #c1c2d9 r 100px | = | a.Button_white__XYP1F.Button_base__1G9eD 202.0x39.8 r 100px outline 1px dotted #fcfcfc offset 1px; a::before.Button_white__XYP1F.Button_base__1G9eD 200pxx37.75px bg #e9e9ff @ 0.706 border T:1px solid #c1c2d9 / R:1px solid #c1c2d9 / B:1px solid #c1c2d9 / L:1px solid #c1c2d9 r 100px | a::before.Button_white__XYP1F.Button_base__1G9eD 202pxx39.75px bg #f5f5f8 @ 0.353 r 100px; a::after.Button_white__XYP1F.Button_base__1G9eD 202pxx39.75px r 100px shadow #d1d1fb @ 0.2 0px 0px 0px 4px inset |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
 Crops: `plan-signup-default.png`, `plan-signup-hover.png`, `plan-signup-focus-visible.png`, `plan-signup-pressed.png`.
@@ -665,13 +665,13 @@ Page: pricing. Selector: `plan Start Free Trial`. States: default, hover, focus-
 | Outline | none | = | 1px dotted #fcfcfc offset 1px | = |
 | Font | FrameGothic 14px/13.44px 600 | = | = | = |
 | Letter spacing | 0.14px | = | = | = |
-| Colour | #000000 | = | = | #dbdbdb |
-| Text node | span.Button_buttonText__Yzd9S: FrameGothic 14px/13.44px 600, #000000, ls 0.14px | = | = | span.Button_buttonText__Yzd9S: FrameGothic 14px/13.44px 600, #dbdbdb, ls 0.14px |
+| Colour | #000000 | = | = | #fcfcfc |
+| Text node | span.Button_buttonText__Yzd9S: FrameGothic 14px/13.44px 600, #000000, ls 0.14px | = | = | span.Button_buttonText__Yzd9S: FrameGothic 14px/13.44px 600, #fcfcfc, ls 0.14px |
 | Transition | color 0.3s cubic-bezier(0, 0.44, 0.6, 1) | = | = | = |
 | Cursor | pointer | = | = | = |
-| ::before | 200px x 37.75px, absolute, bg #f5f5f8, radius 100px | 200px x 37.75px, absolute, bg #e9e9ff @ 0.7, radius 100px | 200px x 37.75px, absolute, bg #eaeafe @ 0.72, radius 100px | 202px x 39.75px, absolute, bg #f5f5f8 @ 0.13, radius 100px |
+| ::before | 200px x 37.75px, absolute, bg #f5f5f8, radius 100px | 200px x 37.75px, absolute, bg #e9e9ff @ 0.7, radius 100px | 200px x 37.75px, absolute, bg #f0f0fb @ 0.843, radius 100px | 202px x 39.75px, absolute, bg #000000 @ 0, radius 100px |
 | ::after | 202px x 39.75px, absolute, bg #000000 @ 0, radius 100px, shadow #c1c2d9 0px 0px 0px 2px inset | 202px x 39.75px, absolute, bg #000000 @ 0, radius 100px, shadow #fcfcfc 0px 0px 0px 2px inset | = | 202px x 39.75px, absolute, bg #000000 @ 0, radius 100px, shadow #d1d1fb @ 0.2 0px 0px 0px 4px inset |
-| Painted layers | a::before.Button_white__XYP1F.Button_base__1G9eD 200pxx37.75px bg #f5f5f8 border T:1px solid #c1c2d9 / R:1px solid #c1c2d9 / B:1px solid #c1c2d9 / L:1px solid #c1c2d9 r 100px; a::after.Button_white__XYP1F.Button_base__1G9eD 202pxx39.75px r 100px shadow #c1c2d9 0px 0px 0px 2px inset | a::before.Button_white__XYP1F.Button_base__1G9eD 200pxx37.75px bg #e9e9ff @ 0.7 border T:1px solid #c1c2d9 / R:1px solid #c1c2d9 / B:1px solid #c1c2d9 / L:1px solid #c1c2d9 r 100px; a::after.Button_white__XYP1F.Button_base__1G9eD 202pxx39.75px r 100px shadow #fcfcfc 0px 0px 0px 2px inset | a.Button_white__XYP1F.Button_base__1G9eD 202.0x39.8 r 100px outline 1px dotted #fcfcfc offset 1px; a::before.Button_white__XYP1F.Button_base__1G9eD 200pxx37.75px bg #eaeafe @ 0.72 border T:1px solid #c1c2d9 / R:1px solid #c1c2d9 / B:1px solid #c1c2d9 / L:1px solid #c1c2d9 r 100px; a::after.Button_white__XYP1F.Button_base__1G9eD 202pxx39.75px r 100px shadow #c1c2d9 0px 0px 0px 2px inset | a::before.Button_white__XYP1F.Button_base__1G9eD 202pxx39.75px bg #f5f5f8 @ 0.13 r 100px; a::after.Button_white__XYP1F.Button_base__1G9eD 202pxx39.75px r 100px shadow #d1d1fb @ 0.2 0px 0px 0px 4px inset |
+| Painted layers | a::before.Button_white__XYP1F.Button_base__1G9eD 200pxx37.75px bg #f5f5f8 border T:1px solid #c1c2d9 / R:1px solid #c1c2d9 / B:1px solid #c1c2d9 / L:1px solid #c1c2d9 r 100px | a::before.Button_white__XYP1F.Button_base__1G9eD 200pxx37.75px bg #e9e9ff @ 0.7 border T:1px solid #c1c2d9 / R:1px solid #c1c2d9 / B:1px solid #c1c2d9 / L:1px solid #c1c2d9 r 100px; a::after.Button_white__XYP1F.Button_base__1G9eD 202pxx39.75px r 100px shadow #fcfcfc 0px 0px 0px 2px inset | a.Button_white__XYP1F.Button_base__1G9eD 202.0x39.8 r 100px outline 1px dotted #fcfcfc offset 1px; a::before.Button_white__XYP1F.Button_base__1G9eD 200pxx37.75px bg #f0f0fb @ 0.843 border T:1px solid #c1c2d9 / R:1px solid #c1c2d9 / B:1px solid #c1c2d9 / L:1px solid #c1c2d9 r 100px | a::after.Button_white__XYP1F.Button_base__1G9eD 202pxx39.75px r 100px shadow #d1d1fb @ 0.2 0px 0px 0px 4px inset |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
 Crops: `plan-trial-default.png`, `plan-trial-hover.png`, `plan-trial-focus-visible.png`, `plan-trial-pressed.png`.
@@ -694,13 +694,13 @@ Page: pricing. Selector: `plan Book a Meeting`. States: default, hover, focus-vi
 | Outline | none | = | 1px dotted #fcfcfc offset 0px | = |
 | Font | FrameGothic 14px/13.44px 600 | = | = | = |
 | Letter spacing | 0.14px | = | = | = |
-| Colour | #000000 | = | = | #fcfcfc |
-| Text node | span.Button_buttonText__Yzd9S: FrameGothic 14px/13.44px 600, #000000, ls 0.14px | = | = | span.Button_buttonText__Yzd9S: FrameGothic 14px/13.44px 600, #fcfcfc, ls 0.14px |
+| Colour | #000000 | = | = | #eaeaea |
+| Text node | span.Button_buttonText__Yzd9S: FrameGothic 14px/13.44px 600, #000000, ls 0.14px | = | = | span.Button_buttonText__Yzd9S: FrameGothic 14px/13.44px 600, #eaeaea, ls 0.14px |
 | Transition | color 0.3s cubic-bezier(0, 0.44, 0.6, 1) | = | = | = |
 | Cursor | pointer | = | = | = |
-| ::before | 200px x 37.75px, absolute, bg #f5f5f8, radius 100px | 200px x 37.75px, absolute, bg #e9e9ff @ 0.7, radius 100px | 200px x 37.75px, absolute, bg #eeeefc @ 0.792, radius 100px | 202px x 39.75px, absolute, bg #000000 @ 0, radius 100px |
+| ::before | 200px x 37.75px, absolute, bg #f5f5f8, radius 100px | 200px x 37.75px, absolute, bg #e9e9ff @ 0.7, radius 100px | 200px x 37.75px, absolute, bg #ededfd @ 0.776, radius 100px | 202px x 39.75px, absolute, bg #f5f5f8 @ 0.07, radius 100px |
 | ::after | 202px x 39.75px, absolute, bg #000000 @ 0, radius 100px, shadow #c1c2d9 0px 0px 0px 2px inset | 202px x 39.75px, absolute, bg #000000 @ 0, radius 100px, shadow #fcfcfc 0px 0px 0px 2px inset | = | 202px x 39.75px, absolute, bg #000000 @ 0, radius 100px, shadow #d1d1fb @ 0.2 0px 0px 0px 4px inset |
-| Painted layers | button::before.Button_white__XYP1F.Button_base__1G9eD 200pxx37.75px bg #f5f5f8 border T:1px solid #c1c2d9 / R:1px solid #c1c2d9 / B:1px solid #c1c2d9 / L:1px solid #c1c2d9 r 100px; button::after.Button_white__XYP1F.Button_base__1G9eD 202pxx39.75px r 100px shadow #c1c2d9 0px 0px 0px 2px inset | button::before.Button_white__XYP1F.Button_base__1G9eD 200pxx37.75px bg #e9e9ff @ 0.7 border T:1px solid #c1c2d9 / R:1px solid #c1c2d9 / B:1px solid #c1c2d9 / L:1px solid #c1c2d9 r 100px; button::after.Button_white__XYP1F.Button_base__1G9eD 202pxx39.75px r 100px shadow #fcfcfc 0px 0px 0px 2px inset | button.Button_white__XYP1F.Button_base__1G9eD 202.0x39.8 r 100px outline 1px dotted #fcfcfc offset 0px; button::before.Button_white__XYP1F.Button_base__1G9eD 200pxx37.75px bg #eeeefc @ 0.792 border T:1px solid #c1c2d9 / R:1px solid #c1c2d9 / B:1px solid #c1c2d9 / L:1px solid #c1c2d9 r 100px; button::after.Button_white__XYP1F.Button_base__1G9eD 202pxx39.75px r 100px shadow #c1c2d9 0px 0px 0px 2px inset | button::after.Button_white__XYP1F.Button_base__1G9eD 202pxx39.75px r 100px shadow #d1d1fb @ 0.2 0px 0px 0px 4px inset |
+| Painted layers | button::before.Button_white__XYP1F.Button_base__1G9eD 200pxx37.75px bg #f5f5f8 border T:1px solid #c1c2d9 / R:1px solid #c1c2d9 / B:1px solid #c1c2d9 / L:1px solid #c1c2d9 r 100px | button::before.Button_white__XYP1F.Button_base__1G9eD 200pxx37.75px bg #e9e9ff @ 0.7 border T:1px solid #c1c2d9 / R:1px solid #c1c2d9 / B:1px solid #c1c2d9 / L:1px solid #c1c2d9 r 100px; button::after.Button_white__XYP1F.Button_base__1G9eD 202pxx39.75px r 100px shadow #fcfcfc 0px 0px 0px 2px inset | button.Button_white__XYP1F.Button_base__1G9eD 202.0x39.8 r 100px outline 1px dotted #fcfcfc offset 0px; button::before.Button_white__XYP1F.Button_base__1G9eD 200pxx37.75px bg #ededfd @ 0.776 border T:1px solid #c1c2d9 / R:1px solid #c1c2d9 / B:1px solid #c1c2d9 / L:1px solid #c1c2d9 r 100px | button::before.Button_white__XYP1F.Button_base__1G9eD 202pxx39.75px bg #f5f5f8 @ 0.07 r 100px; button::after.Button_white__XYP1F.Button_base__1G9eD 202pxx39.75px r 100px shadow #d1d1fb @ 0.2 0px 0px 0px 4px inset |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
 Crops: `plan-meeting-default.png`, `plan-meeting-hover.png`, `plan-meeting-focus-visible.png`, `plan-meeting-pressed.png`.
@@ -725,7 +725,7 @@ Page: pricing. Selector: `comparison category accordion`. States: default, close
 | Colour | #fcfcfc | = |
 | Transition | none | = |
 | Cursor | pointer | = |
-| Icon | 10 x 10, colour #fcfcfc, fill #000000 | 10.67 x 10.67, colour #fcfcfc, fill #000000 |
+| Icon | 10 x 10, colour #fcfcfc, fill #000000 | = |
 | How | at rest | own toggle |
 
 Crops: `ptable-acc-default.png`, `ptable-acc-closed.png`.
@@ -804,7 +804,7 @@ Page: contact. Selector: `contact Schedule a Meeting`. States: default, hover, f
 | Cursor | pointer | = | = | = |
 | ::before | 184.531px x 37.75px, absolute, bg #f5f5f8, radius 100px | 184.531px x 37.75px, absolute, bg #e9e9ff @ 0.7, radius 100px | 184.531px x 37.75px, absolute, bg #e9e9ff @ 0.7, radius 100px | 186.531px x 39.75px, absolute, bg #000000 @ 0, radius 100px |
 | ::after | 186.531px x 39.75px, absolute, bg #000000 @ 0, radius 100px, shadow #c1c2d9 0px 0px 0px 2px inset | 186.531px x 39.75px, absolute, bg #000000 @ 0, radius 100px, shadow #fcfcfc 0px 0px 0px 2px inset | = | 186.531px x 39.75px, absolute, bg #000000 @ 0, radius 100px, shadow #d1d1fb @ 0.2 0px 0px 0px 4px inset |
-| Painted layers | button::before.Button_white__XYP1F.Button_base__1G9eD 184.531pxx37.75px bg #f5f5f8 border T:1px solid #c1c2d9 / R:1px solid #c1c2d9 / B:1px solid #c1c2d9 / L:1px solid #c1c2d9 r 100px; button::after.Button_white__XYP1F.Button_base__1G9eD 186.531pxx39.75px r 100px shadow #c1c2d9 0px 0px 0px 2px inset | button::before.Button_white__XYP1F.Button_base__1G9eD 184.531pxx37.75px bg #e9e9ff @ 0.7 border T:1px solid #c1c2d9 / R:1px solid #c1c2d9 / B:1px solid #c1c2d9 / L:1px solid #c1c2d9 r 100px; button::after.Button_white__XYP1F.Button_base__1G9eD 186.531pxx39.75px r 100px shadow #fcfcfc 0px 0px 0px 2px inset | button.Button_white__XYP1F.Button_base__1G9eD 186.5x39.8 r 100px outline 1px dotted #fcfcfc offset 0px; button::before.Button_white__XYP1F.Button_base__1G9eD 184.531pxx37.75px bg #e9e9ff @ 0.7 border T:1px solid #c1c2d9 / R:1px solid #c1c2d9 / B:1px solid #c1c2d9 / L:1px solid #c1c2d9 r 100px; button::after.Button_white__XYP1F.Button_base__1G9eD 186.531pxx39.75px r 100px shadow #c1c2d9 0px 0px 0px 2px inset | button::after.Button_white__XYP1F.Button_base__1G9eD 186.531pxx39.75px r 100px shadow #d1d1fb @ 0.2 0px 0px 0px 4px inset |
+| Painted layers | button::before.Button_white__XYP1F.Button_base__1G9eD 184.531pxx37.75px bg #f5f5f8 border T:1px solid #c1c2d9 / R:1px solid #c1c2d9 / B:1px solid #c1c2d9 / L:1px solid #c1c2d9 r 100px | button::before.Button_white__XYP1F.Button_base__1G9eD 184.531pxx37.75px bg #e9e9ff @ 0.7 border T:1px solid #c1c2d9 / R:1px solid #c1c2d9 / B:1px solid #c1c2d9 / L:1px solid #c1c2d9 r 100px; button::after.Button_white__XYP1F.Button_base__1G9eD 186.531pxx39.75px r 100px shadow #fcfcfc 0px 0px 0px 2px inset | button.Button_white__XYP1F.Button_base__1G9eD 186.5x39.8 r 100px outline 1px dotted #fcfcfc offset 0px; button::before.Button_white__XYP1F.Button_base__1G9eD 184.531pxx37.75px bg #e9e9ff @ 0.7 border T:1px solid #c1c2d9 / R:1px solid #c1c2d9 / B:1px solid #c1c2d9 / L:1px solid #c1c2d9 r 100px | button::after.Button_white__XYP1F.Button_base__1G9eD 186.531pxx39.75px r 100px shadow #d1d1fb @ 0.2 0px 0px 0px 4px inset |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
 Crops: `schedule-btn-default.png`, `schedule-btn-hover.png`, `schedule-btn-focus-visible.png`, `schedule-btn-pressed.png`.
@@ -859,10 +859,10 @@ Page: contactform. Selector: `contact form`. States: default.
 | Colour | #fcfcfc |
 | Text node | h1.PortableText_title1__NfBJS.typography_title1__Na5gU: FrameGothic 80px/83.2px 600, #fcfcfc, ls -3.6px |
 | Transition | none |
-| Painted layers | div.PageSection_pageSection__8v9It.PageSection_isNextSectionSameLevel__ujiEc 1440.0x1543.5 bg #000000; div::before.PageSection_pageSection__8v9It.PageSection_isNextSectionSameLevel__ujiEc 1440pxx1543.47px bg #000000; div.Form_inner__RZlVF.global_subgrid__ZRhT6 1080.0x545.8 bg #0d0d18 @ 0.5 border T:1px solid #bdbdf4 @ 0.1 / R:1px solid #bdbdf4 @ 0.1 / B:1px solid #bdbdf4 @ 0.1 / L:1px solid #bdbdf4 @ 0.1 r 5px; input.TextInput_textInput__d8dTK.typography_body__vVxn5 431.0x48.0 border B:1px solid #2e2f40; div::after.TextInput_mask__TFnE6.FormInput_mask__lOHDF 431pxx48px image radial-gradient(circle, #fcfcfc, #fcfcfc @ 0); input.TextInput_textInput__d8dTK.typography_body__vVxn5 431.0x48.0 border B:1px solid #2e2f40 |
+| Painted layers | div.PageSection_pageSection__8v9It.PageSection_isNextSectionSameLevel__ujiEc 1440.0x1543.5 bg #000000; div.Form_inner__RZlVF.global_subgrid__ZRhT6 1080.0x545.8 bg #0d0d18 @ 0.5 border T:1px solid #bdbdf4 @ 0.1 / R:1px solid #bdbdf4 @ 0.1 / B:1px solid #bdbdf4 @ 0.1 / L:1px solid #bdbdf4 @ 0.1 r 5px; input.TextInput_textInput__d8dTK.typography_body__vVxn5 431.0x48.0 border B:1px solid #2e2f40; input.TextInput_textInput__d8dTK.typography_body__vVxn5 431.0x48.0 border B:1px solid #2e2f40; input.TextInput_textInput__d8dTK.typography_body__vVxn5 886.0x48.0 border B:1px solid #2e2f40; button::before.Button_white__XYP1F.Button_base__1G9eD 95.8438pxx37.75px bg #bdbdf4 @ 0.1 border T:1px solid #c1c2d9 / R:1px solid #c1c2d9 / B:1px solid #c1c2d9 / L:1px solid #c1c2d9 r 100px |
 | How | at rest |
 
-Crops: none.
+Crops: `form-panel-default.png`.
 
 #### form-name
 
@@ -874,7 +874,7 @@ Page: contactform. Selector: `contact Name input`. States: default, focused, fil
 |---|---|---|---|
 | Size (w x h) | 431 x 48 | = | = |
 | Padding | 1px 2px | = | = |
-| Border | T: none; R: none; B: 1px solid #2e2f40; L: none | T: none; R: none; B: 1px solid #ededee; L: none | T: none; R: none; B: 1px solid #fcfcfc; L: none |
+| Border | T: none; R: none; B: 1px solid #2e2f40; L: none | T: none; R: none; B: 1px solid #fcfcfc; L: none | T: none; R: none; B: 1px solid #fcfcfc; L: none |
 | Radius | 0px | = | = |
 | Background | transparent | = | = |
 | Box shadow | none | = | = |
@@ -885,7 +885,7 @@ Page: contactform. Selector: `contact Name input`. States: default, focused, fil
 | Transition | border-color 0.3s cubic-bezier(0.25, 0.1, 0.25, 1) | = | = |
 | Cursor | text | = | = |
 | Placeholder | #dedfee, opacity 1 | = | = |
-| Painted layers | input.TextInput_textInput__d8dTK.typography_body__vVxn5 431.0x48.0 border B:1px solid #2e2f40 | input.TextInput_textInput__d8dTK.typography_body__vVxn5 431.0x48.0 border B:1px solid #ededee | input.TextInput_textInput__d8dTK.typography_body__vVxn5 431.0x48.0 border B:1px solid #fcfcfc |
+| Painted layers | input.TextInput_textInput__d8dTK.typography_body__vVxn5 431.0x48.0 border B:1px solid #2e2f40 | input.TextInput_textInput__d8dTK.typography_body__vVxn5 431.0x48.0 border B:1px solid #fcfcfc | input.TextInput_textInput__d8dTK.typography_body__vVxn5 431.0x48.0 border B:1px solid #fcfcfc |
 | How | at rest | clicked into the field | typed "Example Name", then deleted; nothing sent |
 
 Crops: `form-name-default.png`, `form-name-focused.png`, `form-name-filled.png`.
@@ -966,7 +966,7 @@ Page: contactform. Selector: `contact Submit`. States: default, hover, focus-vis
 | Cursor | not-allowed | = | = | = |
 | ::before | 95.8438px x 37.75px, absolute, bg #bdbdf4 @ 0.1, radius 100px | = | = | = |
 | ::after | auto x auto, absolute, bg #000000 @ 0, radius 100px, shadow #c1c2d9 0px 0px 0px 2px inset | = | = | = |
-| Painted layers | button::before.Button_white__XYP1F.Button_base__1G9eD 95.8438pxx37.75px bg #bdbdf4 @ 0.1 border T:1px solid #c1c2d9 / R:1px solid #c1c2d9 / B:1px solid #c1c2d9 / L:1px solid #c1c2d9 r 100px; button::after.Button_white__XYP1F.Button_base__1G9eD autoxauto r 100px shadow #c1c2d9 0px 0px 0px 2px inset; div.SubmitButtonAnimation_background__VJYM2 0.0x0.0 bg #5237f9 r 50%; div::after.SubmitButtonAnimation_dot__vO6gD 2.5pxx2.5px bg #fcfcfc r 50%; div.SubmitButtonAnimation_tickShort__FhPZR.SubmitButtonAnimation_line__41zDk 3.5x3.5 bg #fcfcfc r 2.5px; div.SubmitButtonAnimation_tickLong__NI2f2.SubmitButtonAnimation_line__41zDk 3.5x3.5 bg #fcfcfc r 2.5px | = | = | = |
+| Painted layers | button::before.Button_white__XYP1F.Button_base__1G9eD 95.8438pxx37.75px bg #bdbdf4 @ 0.1 border T:1px solid #c1c2d9 / R:1px solid #c1c2d9 / B:1px solid #c1c2d9 / L:1px solid #c1c2d9 r 100px; div::after.SubmitButtonAnimation_dot__vO6gD 2.5pxx2.5px bg #fcfcfc r 50% | = | = | = |
 | How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
 
 Crops: `form-submit-default.png`, `form-submit-hover.png`, `form-submit-focus-visible.png`, `form-submit-pressed.png`.
@@ -994,7 +994,7 @@ Page: welcome. Selector: `welcome form`. States: default.
 | Text node | h1.StyledHeader__Title-sc-1mv5dl-1.kEJACn: Avenir Next 24px/normal 700, #000000 |
 | Transition | none |
 | Icon | 56 x 64, colour #000000 |
-| Painted layers | input.TextInput__Input-a3o9vm-1.irdNuq 346.0x40.0 bg #ffffff border T:1px solid #e0475f / R:1px solid #e0475f / B:1px solid #e0475f / L:1px solid #e0475f r 4px; input.TextInput__Input-a3o9vm-1.eelQya 0.0x0.0 bg #ffffff border T:1px solid #2b2f3b / R:1px solid #2b2f3b / B:1px solid #2b2f3b / L:1px solid #2b2f3b r 4px; button.Button__StyledButton-tzx5l-0.fmdBhl 346.0x40.0 bg #5b53ff r 6px shadow #000000 @ 0 0px 0px 0px 0px inset |
+| Painted layers | input.TextInput__Input-a3o9vm-1.irdNuq 346.0x40.0 bg #ffffff border T:1px solid #e0475f / R:1px solid #e0475f / B:1px solid #e0475f / L:1px solid #e0475f r 4px; button.Button__StyledButton-tzx5l-0.fmdBhl 346.0x40.0 bg #5b53ff r 6px shadow #000000 @ 0 0px 0px 0px 0px inset |
 | How | at rest |
 
 Crops: `login-panel-default.png`.
@@ -1252,7 +1252,7 @@ Page: mobile. Selector: `mobile header`. States: default.
 | Transition | transform 0.5s cubic-bezier(0.42, 0, 0.28, 0.99) |
 | Transform | matrix(1, 0, 0, 1, 0, 0) |
 | Icon | 24 x 24, colour #fcfcfc |
-| Painted layers | div.RedirectedLanguageNotification_languageBanner__1K3ws.RedirectedLanguageNotification_isHidden__PSJK8 390.0x36.0 bg #5237f9 r 6px shadow #000000 @ 0.5 0px 0px 16px 0px; div.AnnouncementBanner_announcementBanner__g9QLM.Navigation_navigationBannerEl__zSvOh 390.0x48.0 bg #5b53ff image linear-gradient(355deg, #ffffff @ 0.15 4.03%, #ffffff @ 0 95.81%), none; span.ToggleButton_navMobileButtonLineEl__IvuHL 5.7x5.7 bg #f0f0f7 r 9.33333px; span.ToggleButton_navMobileButtonLineEl__IvuHL 5.7x5.7 bg #f0f0f7 r 9.33333px; span.ToggleButton_navMobileButtonLineEl__IvuHL 5.7x5.7 bg #f0f0f7 r 9.33333px; span.ToggleButton_navMobileButtonLineEl__IvuHL 5.7x5.7 bg #f0f0f7 r 9.33333px |
+| Painted layers | div.AnnouncementBanner_announcementBanner__g9QLM.Navigation_navigationBannerEl__zSvOh 390.0x48.0 bg #5b53ff image linear-gradient(355deg, #ffffff @ 0.15 4.03%, #ffffff @ 0 95.81%), none; span.ToggleButton_navMobileButtonLineEl__IvuHL 5.7x5.7 bg #f0f0f7 r 9.33333px; span.ToggleButton_navMobileButtonLineEl__IvuHL 5.7x5.7 bg #f0f0f7 r 9.33333px; span.ToggleButton_navMobileButtonLineEl__IvuHL 5.7x5.7 bg #f0f0f7 r 9.33333px; span.ToggleButton_navMobileButtonLineEl__IvuHL 5.7x5.7 bg #f0f0f7 r 9.33333px; a::before.Button_white__XYP1F.Button_base__1G9eD autoxauto bg #f5f5f8 border T:1px solid #c1c2d9 / R:1px solid #c1c2d9 / B:1px solid #c1c2d9 / L:1px solid #c1c2d9 r 100px |
 | How | at rest |
 
 Crops: `m-topbar-default.png`.
@@ -1275,13 +1275,11 @@ Page: mobile. Selector: `mobile drawer Start Free Trial`. States: default, focus
 | Outline | none | = | = |
 | Font | FrameGothic 14px/13.44px 600 | = | = |
 | Letter spacing | 0.14px | = | = |
-| Colour | #000000 | = | #5b5b5b |
-| Text node | span.Button_buttonText__Yzd9S: FrameGothic 14px/13.44px 600, #000000, ls 0.14px | - | - |
+| Colour | #000000 | = | #fcfcfc |
 | Transition | color 0.3s cubic-bezier(0, 0.44, 0.6, 1) | = | = |
 | Cursor | pointer | = | = |
-| ::before | 163px x 35.75px, absolute, bg #f5f5f8, radius 100px | = | 165px x 37.75px, absolute, bg #f5f5f8 @ 0.64, radius 100px |
+| ::before | 163px x 35.75px, absolute, bg #f5f5f8, radius 100px | = | 165px x 37.75px, absolute, bg #000000 @ 0, radius 100px |
 | ::after | 165px x 37.75px, absolute, bg #000000 @ 0, radius 100px, shadow #c1c2d9 0px 0px 0px 2px inset | = | 165px x 37.75px, absolute, bg #000000 @ 0, radius 100px, shadow #d1d1fb @ 0.2 0px 0px 0px 4px inset |
-| Painted layers | a::before.Button_white__XYP1F.Button_base__1G9eD 163pxx35.75px bg #f5f5f8 border T:1px solid #c1c2d9 / R:1px solid #c1c2d9 / B:1px solid #c1c2d9 / L:1px solid #c1c2d9 r 100px; a::after.Button_white__XYP1F.Button_base__1G9eD 165pxx37.75px r 100px shadow #c1c2d9 0px 0px 0px 2px inset | = | a::before.Button_white__XYP1F.Button_base__1G9eD 165pxx37.75px bg #f5f5f8 @ 0.64 r 100px; a::after.Button_white__XYP1F.Button_base__1G9eD 165pxx37.75px r 100px shadow #d1d1fb @ 0.2 0px 0px 0px 4px inset |
 | How | at rest | focus failed | CDP forcePseudoState :active:hover |
 
 Crops: none.
@@ -1294,7 +1292,7 @@ Page: mobile. Selector: `mobile nav toggle`. States: default, hover, focus-visib
 
 | Property | default | hover | focus-visible | pressed | opened |
 |---|---|---|---|---|---|
-| Size (w x h) | 25 x 20 | = | = | = | 20 x 25 |
+| Size (w x h) | 25 x 20 | = | = | = | 20.15 x 23.77 |
 | Padding | 0px | = | = | = | = |
 | Border | none | = | = | = | = |
 | Radius | 0px | = | = | = | = |
@@ -1305,9 +1303,9 @@ Page: mobile. Selector: `mobile nav toggle`. States: default, hover, focus-visib
 | Letter spacing | normal | = | = | = | = |
 | Colour | #fcfcfc | = | = | = | = |
 | Transition | none | = | = | = | = |
-| Transform | matrix(0, -1, 1, 0, 0, 0) | = | = | = | matrix(1, 0, 0, 1, 0, 0) |
+| Transform | matrix(0, -1, 1, 0, 0, 0) | = | = | = | matrix(0.849411, -0.126644, 0.126644, 0.849411, 0, 0) |
 | Cursor | pointer | = | = | = | = |
-| Painted layers | span.ToggleButton_navMobileButtonLineEl__IvuHL 5.7x5.7 bg #f0f0f7 r 9.33333px; span.ToggleButton_navMobileButtonLineEl__IvuHL 5.7x5.7 bg #f0f0f7 r 9.33333px; span.ToggleButton_navMobileButtonLineEl__IvuHL 5.7x5.7 bg #f0f0f7 r 9.33333px; span.ToggleButton_navMobileButtonLineEl__IvuHL 5.7x5.7 bg #f0f0f7 r 9.33333px | = | button.ToggleButton_navMobileButton__WW3qe 25.0x20.0 outline 1px dotted #fcfcfc offset 0px; span.ToggleButton_navMobileButtonLineEl__IvuHL 5.7x5.7 bg #f0f0f7 r 9.33333px; span.ToggleButton_navMobileButtonLineEl__IvuHL 5.7x5.7 bg #f0f0f7 r 9.33333px; span.ToggleButton_navMobileButtonLineEl__IvuHL 5.7x5.7 bg #f0f0f7 r 9.33333px; span.ToggleButton_navMobileButtonLineEl__IvuHL 5.7x5.7 bg #f0f0f7 r 9.33333px | = | span.ToggleButton_navMobileButtonLineEl__IvuHL 18.4x18.4 bg #f0f0f7 r 9.33333px; span.ToggleButton_navMobileButtonLineEl__IvuHL 18.4x18.4 bg #f0f0f7 r 9.33333px; span.ToggleButton_navMobileButtonLineEl__IvuHL 18.4x18.4 bg #f0f0f7 r 9.33333px; span.ToggleButton_navMobileButtonLineEl__IvuHL 18.4x18.4 bg #f0f0f7 r 9.33333px |
+| Painted layers | span.ToggleButton_navMobileButtonLineEl__IvuHL 5.7x5.7 bg #f0f0f7 r 9.33333px; span.ToggleButton_navMobileButtonLineEl__IvuHL 5.7x5.7 bg #f0f0f7 r 9.33333px; span.ToggleButton_navMobileButtonLineEl__IvuHL 5.7x5.7 bg #f0f0f7 r 9.33333px; span.ToggleButton_navMobileButtonLineEl__IvuHL 5.7x5.7 bg #f0f0f7 r 9.33333px | = | button.ToggleButton_navMobileButton__WW3qe 25.0x20.0 outline 1px dotted #fcfcfc offset 0px; span.ToggleButton_navMobileButtonLineEl__IvuHL 5.7x5.7 bg #f0f0f7 r 9.33333px; span.ToggleButton_navMobileButtonLineEl__IvuHL 5.7x5.7 bg #f0f0f7 r 9.33333px; span.ToggleButton_navMobileButtonLineEl__IvuHL 5.7x5.7 bg #f0f0f7 r 9.33333px; span.ToggleButton_navMobileButtonLineEl__IvuHL 5.7x5.7 bg #f0f0f7 r 9.33333px | = | span.ToggleButton_navMobileButtonLineEl__IvuHL 9.3x7.5 bg #f0f0f7 r 9.33333px; span.ToggleButton_navMobileButtonLineEl__IvuHL 7.5x9.3 bg #f0f0f7 r 9.33333px; span.ToggleButton_navMobileButtonLineEl__IvuHL 9.3x7.5 bg #f0f0f7 r 9.33333px; span.ToggleButton_navMobileButtonLineEl__IvuHL 7.5x9.3 bg #f0f0f7 r 9.33333px |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover | own toggle |
 
 Crops: `m-menu-btn-default.png`, `m-menu-btn-hover.png`, `m-menu-btn-focus-visible.png`, `m-menu-btn-pressed.png`, `m-menu-btn-opened.png`.
@@ -1385,7 +1383,7 @@ Page: mobile. Selector: `mobile hero Start Free Trial`. States: default, hover, 
 | Cursor | pointer | = | = | = |
 | ::before | 340px x 35.75px, absolute, bg #f5f5f8, radius 100px | = | = | 342px x 37.75px, absolute, bg #000000 @ 0, radius 100px |
 | ::after | 342px x 37.75px, absolute, bg #000000 @ 0, radius 100px, shadow #c1c2d9 0px 0px 0px 2px inset | = | = | 342px x 37.75px, absolute, bg #000000 @ 0, radius 100px, shadow #d1d1fb @ 0.2 0px 0px 0px 4px inset |
-| Painted layers | a::before.Button_white__XYP1F.Button_base__1G9eD 340pxx35.75px bg #f5f5f8 border T:1px solid #c1c2d9 / R:1px solid #c1c2d9 / B:1px solid #c1c2d9 / L:1px solid #c1c2d9 r 100px; a::after.Button_white__XYP1F.Button_base__1G9eD 342pxx37.75px r 100px shadow #c1c2d9 0px 0px 0px 2px inset | = | a.Button_white__XYP1F.Button_base__1G9eD 342.0x37.8 r 100px outline 1px dotted #fcfcfc offset 1px; a::before.Button_white__XYP1F.Button_base__1G9eD 340pxx35.75px bg #f5f5f8 border T:1px solid #c1c2d9 / R:1px solid #c1c2d9 / B:1px solid #c1c2d9 / L:1px solid #c1c2d9 r 100px; a::after.Button_white__XYP1F.Button_base__1G9eD 342pxx37.75px r 100px shadow #c1c2d9 0px 0px 0px 2px inset | a::after.Button_white__XYP1F.Button_base__1G9eD 342pxx37.75px r 100px shadow #d1d1fb @ 0.2 0px 0px 0px 4px inset |
+| Painted layers | a::before.Button_white__XYP1F.Button_base__1G9eD 340pxx35.75px bg #f5f5f8 border T:1px solid #c1c2d9 / R:1px solid #c1c2d9 / B:1px solid #c1c2d9 / L:1px solid #c1c2d9 r 100px | = | a.Button_white__XYP1F.Button_base__1G9eD 342.0x37.8 r 100px outline 1px dotted #fcfcfc offset 1px; a::before.Button_white__XYP1F.Button_base__1G9eD 340pxx35.75px bg #f5f5f8 border T:1px solid #c1c2d9 / R:1px solid #c1c2d9 / B:1px solid #c1c2d9 / L:1px solid #c1c2d9 r 100px | a::after.Button_white__XYP1F.Button_base__1G9eD 342pxx37.75px r 100px shadow #d1d1fb @ 0.2 0px 0px 0px 4px inset |
 | How | at rest | mouse hover | keydown then focus() | CDP forcePseudoState :active:hover |
 
 Crops: `m-hero-cta-default.png`, `m-hero-cta-hover.png`, `m-hero-cta-focus-visible.png`, `m-hero-cta-pressed.png`.

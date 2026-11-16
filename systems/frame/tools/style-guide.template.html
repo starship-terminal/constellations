@@ -38,7 +38,11 @@ code { font-family: var(--sg-mono); font-size: .9em; }
 .navbar .wm { font-weight: 600; font-size: 17px; letter-spacing: -0.02em; }
 .navbar .sp { flex: 1; }
 .btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-cta-height, 40px); padding: 0 18px; font-size: 15px; font-weight: 500; border-radius: var(--radius-cta, 999px); border: 1px solid transparent; }
-.btn.primary { background: var(--theme-btn-primary-bg, #fcfcfc); color: var(--theme-btn-primary-fg, #0d0d18); }
+/* The element's own background stays transparent: the real Button paints its
+   light fill on ::before (measured #f5f5f8 = grey-97, ringed #c1c2d9 =
+   grey-80), so the mock reproduces that layer rather than filling the span. */
+.btn.primary { position: relative; isolation: isolate; background: var(--theme-btn-primary-bg, transparent); color: var(--theme-btn-primary-fg, #0d0d18); }
+.btn.primary::before { content: ""; position: absolute; inset: 0; z-index: -1; border-radius: inherit; background: var(--color-grey-97, #f5f5f8); border: 1px solid var(--color-grey-80, #c1c2d9); }
 .btn.ghost { background: transparent; border-color: var(--theme-btn-secondary-border, rgba(252,252,252,.4)); color: var(--theme-btn-secondary-fg, #fcfcfc); }
 .btn.small { height: 32px; font-size: 13px; font-weight: 500; }
 .banner { background: var(--theme-banner-bg, #5b53ff); color: var(--theme-banner-fg, #fcfcfc); text-align: center; font-size: 13px; padding: 7px 12px; }
@@ -54,11 +58,15 @@ table.cmp td, table.cmp th { border: 1px solid var(--color-alpha-dark-20, rgba(2
 .tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--color-alpha-dark-20, rgba(252,252,252,.15)); }
 .tr .ts { font-family: var(--sg-serif); }
 .tr .tv { font-size: 12px; color: var(--theme-fg-default, #fcfcfc); opacity: .65; font-family: var(--sg-mono); }
-.pill-nav { display: inline-flex; background: var(--color-grey-10, #14141f); border-radius: 999px; padding: 4px; gap: 4px; font-size: 14px; color: var(--theme-fg-default, #fcfcfc); opacity: .95; }
-.pill-nav span { padding: 6px 14px; border-radius: 999px; }
-.pill-nav .on { background: var(--theme-btn-primary-bg, #fcfcfc); color: var(--theme-btn-primary-fg, #0d0d18); }
+/* The billing switch is two round radio controls, not a segmented pill: a
+   24px circle ringed grey-60, the selected side filling a 10px
+   turquoise-triumph dot inside it. */
+.radio-row { display: inline-flex; align-items: center; gap: 28px; font-size: 15px; color: var(--theme-fg-default, #fcfcfc); }
+.radio-row .opt { display: inline-flex; align-items: center; gap: 10px; }
+.radio-row .opt i { width: 24px; height: 24px; border-radius: 50%; border: 1px solid var(--color-grey-60, #81859f); display: inline-flex; align-items: center; justify-content: center; }
+.radio-row .opt.on i::after { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--color-turquoise-triumph, #6199f6); }
 .field { display: block; width: 280px; height: var(--component-field-height, 48px); padding: 0 14px; border: 0; border-bottom: 1px solid var(--theme-form-field-border, rgba(252,252,252,.3)); border-radius: var(--radius-field, 0); background: transparent; font-size: 15px; color: var(--theme-form-field-ink, #fcfcfc); }
-.badge { display: inline-flex; align-items: center; height: 22px; padding: 0 8px; border-radius: 999px; background: var(--color-brand-cobalt-default, #5b53ff); color: #fcfcfc; font-size: 12px; font-weight: 500; }
+.badge { display: inline-flex; align-items: center; height: 15px; padding: 0 7px; border-radius: 999px; background: var(--color-turquoise-triumph, #6199f6); color: var(--color-grey-00, #000); font-size: 10px; font-weight: 500; }
 </style>
 </head>
 <body>
@@ -79,9 +87,9 @@ table.cmp td, table.cmp th { border: 1px solid var(--color-alpha-dark-20, rgba(2
   </div>
 
   <h2 class="sh">Pricing</h2>
-  <p class="lead">/pricing runs the white-pill Monthly/Annually toggle (the Annually side carries a "SAVE 13%" badge) over raised <code>--theme-surface-card</code> plan cards at $0/$15/$25, with white <code>Sign Up Now</code>/<code>Start Free Trial</code> pills and the ghost <code>Book a Meeting</code> on Enterprise.</p>
+  <p class="lead">/pricing runs the Monthly/Annually switch as two round radio controls — a 24px circle ringed grey-60, the picked side filling a 10px turquoise-triumph dot — the Annually side carrying a "SAVE 13%" badge, over raised <code>--theme-surface-card</code> plan cards at $0/$15/$25, with white <code>Sign Up Now</code>/<code>Start Free Trial</code> pills and the ghost <code>Book a Meeting</code> on Enterprise.</p>
   <div class="mock" style="padding:20px">
-    <div class="pill-nav"><span class="on">Monthly</span><span>Annually&nbsp;<span class="badge">SAVE 13%</span></span></div>
+    <div class="radio-row"><span class="opt on"><i></i>Monthly</span><span class="opt"><i></i>Annually&nbsp;<span class="badge">SAVE 13%</span></span></div>
     <div class="grid" style="margin-top:16px">
       <div class="tile"><div class="img">Free</div><b>$0</b><span class="sub">2 members · 2 GB</span></div>
       <div class="tile"><div class="img">Pro</div><b>$15</b><span class="sub">per member / mo</span></div>

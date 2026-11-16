@@ -50,6 +50,12 @@ def css_val(name, t):
     if ty == "gradient":
         angle = t["$extensions"].get("angle", "180deg")
         return f"linear-gradient({angle}, " + ", ".join(f'{alias(s["color"])} {round(s["position"] * 100, 2)}%' for s in v) + ")"
+    if ty == "transition":
+        # DTCG composite {duration, delay, timingFunction}; the animated
+        # property lives in $extensions. Emit the CSS shorthand so the custom
+        # property is a usable transition, not a dict dump.
+        prop = t["$extensions"].get("property", "all")
+        return f'{prop} {alias(v["duration"])} {alias(v["timingFunction"])} {alias(v.get("delay", "0ms"))}'
     return alias(v)
 
 

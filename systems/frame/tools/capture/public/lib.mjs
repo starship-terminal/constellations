@@ -208,9 +208,17 @@ export async function styleOf(locator) {
     for (const n of nodes) {
       if (paint.length >= 14) break;
       if (n.closest('svg') && n.tagName.toLowerCase() !== 'svg') continue;
+      const rr = n.getBoundingClientRect();
       for (const pe of [null, '::before', '::after']) {
         const c = getComputedStyle(n, pe);
         if (pe && (c.content === 'none' || c.content === 'normal')) continue;
+        // A hidden or zero-size layer paints nothing: a collapsed mobile-menu
+        // line or an unopened panel must not land in `paint` as if it carried
+        // the component's look.
+        if (c.display === 'none' || c.visibility === 'hidden' || c.opacity === '0') continue;
+        const pw = pe ? parseFloat(c.width) : rr.width;
+        const ph = pe ? parseFloat(c.height) : rr.height;
+        if (pw <= 0 || ph <= 0) continue;
         const bw = ['Top', 'Right', 'Bottom', 'Left'].map((sd) => parseFloat(c[`border${sd}Width`]) > 0 && c[`border${sd}Style`] !== 'none' ? `${sd[0]}:${c[`border${sd}Width`]} ${c[`border${sd}Style`]} ${c[`border${sd}Color`]}` : '').filter(Boolean);
         const bg = c.backgroundColor !== 'rgba(0, 0, 0, 0)' ? c.backgroundColor : '';
         const bgi = c.backgroundImage !== 'none' && !/^url\("?https?:/.test(c.backgroundImage) ? noUrl(c.backgroundImage).replace(/url\("data:[^)]{60,}\)/g, 'url(data:…)').slice(0, 200) : '';
@@ -218,7 +226,6 @@ export async function styleOf(locator) {
         const ol = c.outlineStyle !== 'none' && parseFloat(c.outlineWidth) > 0 ? `${c.outlineWidth} ${c.outlineStyle} ${c.outlineColor} offset ${c.outlineOffset}` : '';
         if (!(bw.length || bg || bgi || sh || ol)) continue;
         if (n.tagName === 'IMG' && !bw.length && !sh) continue;
-        const rr = n.getBoundingClientRect();
         paint.push({
           node: n.tagName.toLowerCase() + (pe || '') + cls(n).slice(0, 2).map((x) => '.' + x).join(''),
           size: pe ? `${c.width}x${c.height}` : `${rr.width.toFixed(1)}x${rr.height.toFixed(1)}`,

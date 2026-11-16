@@ -313,11 +313,11 @@ W("How to read an entry:")
 W()
 W("- A colour is its value followed by the palette token in [tokens.json](tokens.json) with the same value, when there is one. Text is written family size/line-height weight, then its colour, for example `Inter 16/20.8 400, #fcfcfc`, and is read from the first text node inside the component.")
 W("- The state table has one row per state that differs. The first row lists every value; later rows list only what changes. A state with the same values as the first is named in its label, for example \"default (same: focus-visible)\". When the root paints nothing, \"Child layers\" names the first nodes inside it that do.")
-W(f"- Crops are images of the component read from the live page, in [components/crops/](components/crops) ({n_crops} files, named `{{component}}-{{state}}.png`, at 2x). Screenshots are in [screenshots/](screenshots).")
+W(f"- Crops are images of the component read from the live page, in [components/crops/](components/crops) ({n_crops} files, named `{{component}}-{{state}}.png`, shot at 2x device scale; a crop over about 1.2 megapixels is halved to 1x by the quantize step, so check a file's own dimensions before reading pixels off it). Screenshots are in [screenshots/](screenshots).")
 W()
 W("## Discovery list")
 W()
-W("Screenshots are named `{page}-{theme}-state.png` where `{theme}` is the mode the page painted at capture: `dark` for every frame.io page — the site ships no theme switch, so the dark theme is the only painted surface (the `dark` token set) — and `light` for accounts.frame.io/welcome, the sign-in surface on a different stack. Desktop shots are 1440 x 900 at 1x; `-full` shots are whole pages bounded at eight chunks; mobile shots are `mobile-{page}-{theme}-{state}.png`, 780 wide (390 at 2x).")
+W("Screenshots are named `{page}-{theme}-state.png` where `{theme}` is the mode the page painted at capture: `dark` for every frame.io page — the site ships no theme switch, so the dark theme is the only painted surface (the `dark` token set) — and `light` for accounts.frame.io/welcome, the sign-in surface on a different stack. Desktop shots are 1440 x 900 at 1x; `-full` shots are whole pages bounded at eight chunks; mobile shots are `mobile-{page}-{theme}-{state}.png` — the `-default` viewports are 780 wide (390 at 2x), the `-full` pages are captured at css scale and are 390 wide.")
 W()
 W("| Surface | URL | Screenshots |")
 W("|---|---|---|")
@@ -336,7 +336,7 @@ OVER = [
     ("Resources mega-menu", "every page header", "the same activation on 'Resources'", "[home-dark-menu-resources](screenshots/home-dark-menu-resources.png)"),
     ("Mobile nav overlay", "home page, phone width", "the 'Toggle mobile navigation' button's own toggle", "[mobile-home-dark-drawer](screenshots/mobile-home-dark-drawer.png), [m-drawer](#mobile-nav-overlay)"),
     ("Billing toggle", "/pricing", "the Monthly/Annually switch was measured at rest — flipping re-prices the grid, so it was never switched", "[price-toggle](#billing-toggle), [price-toggle-alt](#billing-toggle-annual)"),
-    ("Comparison accordions", "/pricing", "clicked one comparison-row category — a local UI toggle", "[ptable-acc](#feature-comparison-accordion), [pricing-dark-accordion-open](screenshots/pricing-dark-accordion-open.png)"),
+    ("Comparison accordions", "/pricing", "clicked one comparison-row category — a local UI toggle", "[ptable-acc](#feature-comparison-accordion)" + (", [pricing-dark-accordion-open](screenshots/pricing-dark-accordion-open.png)" if "pricing-dark-accordion-open.png" in shots else " — the accordion-open screenshot was not captured this run (the accordion trigger did not open)")),
     ("Pricing FAQ", "/pricing", "clicked one FAQ row — a local UI toggle", "[faq-acc](#faq-accordion)"),
     ("Contact form fields", "/contact/form", "typed into then cleared — nothing sent; Submit was never pressed", "[form-name](#name-field), [form-email](#email-field), [form-message](#message-field)"),
     ("Sign-in field", "accounts.frame.io/welcome", "typed into then cleared — nothing sent; 'Let's go' was never pressed", "[login-email](#email-field-sign-in)"),
