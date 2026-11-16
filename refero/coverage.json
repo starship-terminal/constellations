@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 166,
-    "system_domains": 158,
-    "matched_domains": 129,
-    "missing_domains": 304,
+    "system_packages": 168,
+    "system_domains": 160,
+    "matched_domains": 131,
+    "missing_domains": 302,
     "system_domains_absent_from_catalog": 29
   },
   "matched": {
@@ -2021,6 +2021,23 @@
         }
       ]
     },
+    "front.com": {
+      "catalog": [
+        {
+          "name": "Front",
+          "domain": "front.com",
+          "id": 23
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "front",
+          "name": "Front",
+          "url": "https://front.com",
+          "name_match": true
+        }
+      ]
+    },
     "getfernand.com": {
       "catalog": [
         {
@@ -2080,6 +2097,23 @@
           "slug": "gladia",
           "name": "Gladia",
           "url": "https://www.gladia.io",
+          "name_match": true
+        }
+      ]
+    },
+    "glassnode.com": {
+      "catalog": [
+        {
+          "name": "Glassnode",
+          "domain": "glassnode.com",
+          "id": 87
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "glassnode",
+          "name": "Glassnode",
+          "url": "https://glassnode.com",
           "name_match": true
         }
       ]
@@ -2414,13 +2448,6 @@
         "id": 234
       }
     ],
-    "front.com": [
-      {
-        "name": "Front",
-        "domain": "front.com",
-        "id": 23
-      }
-    ],
     "gemini.google": [
       {
         "name": "Google Gemini",
@@ -2447,13 +2474,6 @@
         "name": "Pocket",
         "domain": "getpocket.com",
         "id": 228
-      }
-    ],
-    "glassnode.com": [
-      {
-        "name": "Glassnode",
-        "domain": "glassnode.com",
-        "id": 87
       }
     ],
     "glorify.com": [

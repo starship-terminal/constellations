@@ -653,8 +653,9 @@ test("version-fifteen stores gain the ClassPass rows and the stranded Frame.io/G
   await store.client.execute(
     "DELETE FROM media_term_assignments WHERE reference_id='systems:classpass'",
   );
-  // Frame.io's v13 top-up only runs below v13 and Gladia merged without a
-  // migration, so a v13-v15 store never received their rows either.
+  // Frame.io's v13 top-up only runs below v13; Gladia, Glassnode and Front
+  // merged without a migration, so a v13-v15 store never received their rows
+  // either.
   await store.client.execute(
     "DELETE FROM reference_categories WHERE reference_id='systems:frame'",
   );
@@ -666,6 +667,18 @@ test("version-fifteen stores gain the ClassPass rows and the stranded Frame.io/G
   );
   await store.client.execute(
     "DELETE FROM media_term_assignments WHERE reference_id='systems:gladia'",
+  );
+  await store.client.execute(
+    "DELETE FROM reference_categories WHERE reference_id='systems:glassnode'",
+  );
+  await store.client.execute(
+    "DELETE FROM media_term_assignments WHERE reference_id='systems:glassnode'",
+  );
+  await store.client.execute(
+    "DELETE FROM reference_categories WHERE reference_id='systems:front'",
+  );
+  await store.client.execute(
+    "DELETE FROM media_term_assignments WHERE reference_id='systems:front'",
   );
   // A user who cleared another package's labels: the scoped top-up must not
   // resurrect them (an empty assignment reads as "never labelled" to the
@@ -703,6 +716,12 @@ test("version-fifteen stores gain the ClassPass rows and the stranded Frame.io/G
   expect(
     categories.filter((row) => row.referenceId === "systems:gladia"),
   ).toHaveLength(2);
+  expect(
+    categories.filter((row) => row.referenceId === "systems:glassnode"),
+  ).toHaveLength(2);
+  expect(
+    categories.filter((row) => row.referenceId === "systems:front"),
+  ).toHaveLength(2);
   const media = await migrated.listMediaTermAssignments();
   expect(
     media.filter((row) => row.referenceId === "systems:classpass").length,
@@ -712,6 +731,12 @@ test("version-fifteen stores gain the ClassPass rows and the stranded Frame.io/G
   ).toBeGreaterThan(0);
   expect(
     media.filter((row) => row.referenceId === "systems:gladia").length,
+  ).toBeGreaterThan(0);
+  expect(
+    media.filter((row) => row.referenceId === "systems:glassnode").length,
+  ).toBeGreaterThan(0);
+  expect(
+    media.filter((row) => row.referenceId === "systems:front").length,
   ).toBeGreaterThan(0);
   // The cleared digg rows stay cleared — the top-up seeds only its own batch.
   expect(
