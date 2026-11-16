@@ -13,7 +13,7 @@
  },
  "F4": {
   "grade": "partly",
-  "evidence": "border.subtle #e4e1d5 and border.onDark #4d4846 tokenise the dashed hairlines inside the plan cards, and light.focus #005fcc the browser auto outline. No default/strong border ladder - fields are borderless fills and most borders are 0px."
+  "evidence": "border.subtle #e4e1d5 and border.onDark #4d4846 tokenise the dashed hairlines inside the plan cards, and light.focus #101010 the auto outline the header/footer controls draw (plan/slider/form controls still draw #005fcc). No default/strong border ladder - fields are borderless fills and most borders are 0px."
  },
  "F5": {
   "grade": "partly",
@@ -41,7 +41,7 @@
  },
  "F11": {
   "grade": "partly",
-  "evidence": "Control heights measured in light.component (48px CTA, 40px nav/plan pills, 46px sign-in field) and the 1px #005fcc focus ring is tokenised as light.focus; no named control-size ladder and icon sizes are recorded only on the entries."
+  "evidence": "Control heights measured in light.component (48px CTA, 40px nav/plan pills, 46px sign-in field) and the 1px auto focus ring is tokenised as light.focus (#101010; #005fcc on plan/slider/form controls); no named control-size ladder and icon sizes are recorded only on the entries."
  },
  "F12": {
   "grade": "partly",
@@ -61,11 +61,11 @@
  },
  "C2": {
   "grade": "partly",
-  "evidence": "default/hover/focus-visible/pressed on every interactive entry (pressed via CDP), focused on the six fields, filled on form-input and signin-input (test text typed and cleared), opened on the Products flyout. No disabled/error/loading/selected states exist on the captured routes; no form was ever submitted."
+  "evidence": "default/hover/focus-visible/pressed attempted on every interactive entry (pressed via CDP); 97 of 99 state slots measured - the nav-cta and nav-signin hover slots timed out and are published as unmeasured, not filled in. focused on the six fields, filled on form-input and signin-input (test text typed and cleared), opened on the Products flyout and mobile menu. No disabled/error/loading/selected states exist on the captured routes; no form was ever submitted."
  },
  "C3": {
   "grade": "partly",
-  "evidence": "13 of 14 drivable controls show a visible 1px #005fcc focus ring (tokenised as light.focus); nav-item (the Products trigger) could not be given a real keyboard focus - recorded as a miss, not an absence."
+  "evidence": "13 of 14 drivable controls draw a visible 1px focus outline - #101010 on header/footer controls (tokenised as light.focus), #005fcc on the plan/slider/form controls, oklch on the sign-in pair; nav-item (the Products trigger) could not be given a real keyboard focus - recorded as a miss, not an absence."
  },
  "C4": {
   "grade": "meets",

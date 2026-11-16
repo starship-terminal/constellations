@@ -37,10 +37,11 @@ code { font-family: var(--sg-mono); font-size: .9em; }
 .navbar { display: flex; align-items: center; gap: 22px; height: var(--component-header-height, 64px); padding: 0 20px; margin: 12px; background: var(--surface-card, #fffffb); border-radius: 8px; font-size: 14px; }
 .navbar .wm { font: 700 15px/1 var(--sg-sans); letter-spacing: .02em; }
 .navbar .sp { flex: 1; }
-.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-control-heightCta, 48px); padding: 0 20px; border-radius: var(--component-control-radiusButton, 8px); font-size: 15px; font-weight: 500; border: 0; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-control-heightCta, 48px); padding: 0 20px; border-radius: var(--component-control-radiusButton, 8px); font-size: var(--font-size-control, 16px); font-weight: 500; border: 0; }
+.btn.outline { background: transparent; border: 1px solid var(--fill-ink, #262322); color: var(--text-primary, #262322); }
 .btn.accent { background: var(--accent, #f94d00); color: var(--accentText, #f4f3f2); }
 .btn.ink { background: var(--fill-ink, #262322); color: var(--text-onDark, #f4f3f2); height: var(--component-control-heightNav, 40px); }
-.hero { background: var(--surface-dark, #262322); color: var(--text-onDark, #f4f3f2); padding: 72px 40px; font: 400 53px/0.89 var(--sg-display); letter-spacing: -0.02em; text-align: center; }
+.hero { background: var(--surface-dark, #262322); color: var(--text-onDark, #f4f3f2); padding: 72px 40px; font: 400 var(--font-size-display, 88px)/0.89 var(--sg-display); letter-spacing: -0.02em; text-align: center; }
 .hero small { display: block; font: 400 18px/1.6 var(--sg-sans); color: var(--text-onDarkMuted, rgba(255,255,251,.52)); margin: 20px auto 26px; max-width: 46ch; }
 .hero .row { display: flex; gap: 10px; justify-content: center; }
 .plans { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; padding: 20px; }
@@ -67,7 +68,7 @@ table.cmp td, table.cmp th { border: 1px solid var(--border-subtle, #e4e1d5); pa
   <h2 class="sh">The site chrome</h2>
   <p class="lead">A cream page under a white header bar; dark ink pills carry the sign-in and "Book a demo" actions. The hero is the site's dark island: Cirka display type over the ink ground with the orange CTA.</p>
   <div class="mock">
-    <div class="navbar"><span class="wm">chargetrip</span><span class="sp"></span><span>Products</span><span>Pricing</span><span>About</span><span class="btn ink">Sign in</span><span class="btn accent" style="height:40px">Contact sales</span></div>
+    <div class="navbar"><span class="wm">chargetrip</span><span class="sp"></span><span>Products</span><span>Pricing</span><span>About</span><span class="btn ink" style="height:40px">Contact sales</span><span class="btn outline" style="height:40px">Sign in</span></div>
     <div class="hero">Build for free and go live<br>with the best plan for you.
       <small>The pricing page's 88px Cirka headline — the dark band is the marketing site's own hero island, not a theme.</small>
       <div class="row"><span class="btn accent">Book a demo</span><span class="btn ink" style="height:48px">Plan a route</span></div>

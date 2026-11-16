@@ -19,12 +19,15 @@ right — the outlined **Sign in**
 ([nav-signin](components/crops/nav-signin-default.png)) and the dark
 `#262322` **Contact sales**
 ([nav-cta](components/crops/nav-cta-default.png)). The **Products** item is
-a menu trigger whose own press opens a 927x316 mega panel: grouped link
-cards on the cream field with 16px-radius hover fills and a green status
-dot ([menu-panel](components/crops/menu-panel-default.png),
+a menu trigger whose own press opens a 1376x816 mega panel — grouped link
+cards (the No-code card is 453x776) on the cream field and a green status
+dot
+([menu-panel](components/crops/menu-panel-default.png),
 [menu-card](components/crops/menu-card-default.png), the open state in
-[home-light-menu](screenshots/home-light-menu.png)). Every control's
-keyboard focus is the browser's 1px `#005fcc` auto outline.
+[home-light-menu](screenshots/home-light-menu.png)). Keyboard focus draws
+a 1px auto outline — `#101010` on the header and footer controls,
+`#005fcc` on the plan, slider and form controls, an oklch ring on the
+sign-in pair.
 
 ## The hero band — the dark island
 
@@ -81,11 +84,12 @@ outside the ink ramp.
 ## The sign-in card — a second stack
 
 account.chargetrip.io/sign-in is a different build: Tailwind v4 with
-oklch colours and plain Geist, not the Framer bundle. Its 48px Cirka-less
-headline sits on a cream-ish `oklch(0.9492 ...)` surface
+oklch colours and Geist for UI text, not the Framer bundle. Its 48px headline in
+`Cirka, serif` sits on a cream-ish `oklch(0.9492 ...)` surface
 ([signin-h1](components/crops/signin-h1-default.png)); the 46px email
 field focuses with a ring ([signin-input](components/crops/signin-input-focused.png)),
-the dark **Continue** darkens and shrinks to scale(0.97) on press
+the dark **Continue** lightens to `oklch(0.8244 ...)` and shrinks to
+scale(0.97) on press
 ([signin-continue](components/crops/signin-continue-pressed.png)), and the
 secondary **Create account** is an outlined 40px action
 ([signin-create](components/crops/signin-create-default.png)). A

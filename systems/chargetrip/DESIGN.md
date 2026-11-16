@@ -60,7 +60,7 @@ colors:
   border-subtle: "#e4e1d5"
   border-onDark: "#4d4846"
   status-online: "#278859"
-  focus: "#005fcc"
+  focus: "#101010"
 components:
   header:
     height: "64px"
@@ -137,6 +137,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - **The tokens mix declared and measured.** The palette resolves the bundle's own `--token-*` vars; roles and component metrics are computed-style readings. Each token's `$extensions.source` says which.
 - **Quantised screenshots.** `screenshots/` are 256-colour PNGs; read exact colours from tokens or the raw files.
 - **One focus could not be driven.** `nav-item` (the Products menu trigger) could not be given a real keyboard focus; its focus behaviour is unmeasured, not absent.
+- **Two hovers are unmeasured.** `nav-cta` and `nav-signin` answered `default`/`focus-visible`/`pressed` but their hover reads timed out on this pass; `components.md` shows those slots as unmeasured rather than reusing the old rows.
 
 ### Do and don't (from README.md)
 

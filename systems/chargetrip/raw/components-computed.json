@@ -1,6 +1,6 @@
 {
  "_meta": {
-  "read": "2026-11-12",
+  "read": "2026-11-16",
   "viewport": "1440 x 900 (mobile group 390 x 844), light theme",
   "tool": "tools/capture/public/measure.mjs",
   "sheets": {
@@ -81,7 +81,7 @@
      "animation": ""
     },
     {
-     "selector": ".intercom-namespace .intercom-with-namespace-1wkumtz",
+     "selector": ".intercom-namespace .intercom-with-namespace-8n5ksp",
      "transition": "opacity 400ms, width 400ms, transform 300ms",
      "animation": ""
     }
@@ -145,7 +145,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "rgb(0, 0, 0)",
       "outlineOffset": "0px",
@@ -186,13 +186,13 @@
      "paint": [
       {
        "node": "a.framer-SWyCz.framer-i5yBN",
-       "size": "138.7x40.0",
+       "size": "139.0x40.0",
        "bg": "rgb(38, 35, 34)",
        "radius": "8px"
       },
       {
        "node": "a::after.framer-SWyCz.framer-i5yBN",
-       "size": "80.7344pxx40px",
+       "size": "83pxx40px",
        "border": "T:1px solid rgb(38, 35, 34) | R:1px solid rgb(38, 35, 34) | B:1px solid rgb(38, 35, 34) | L:1px solid rgb(38, 35, 34)",
        "radius": "8px"
       },
@@ -270,12 +270,12 @@
      },
      "crop": "components/crops/header-default.png",
      "via": "at rest",
-     "run": "2026-11-12"
+     "run": "2026-11-16"
     }
    },
    "page": "home",
    "view": "desktop",
-   "run": "2026-11-12",
+   "run": "2026-11-16",
    "url": "https://www.chargetrip.com/",
    "title": "Header",
    "group": "Shell and navigation",
@@ -338,7 +338,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "rgb(0, 0, 238)",
       "outlineOffset": "0px",
@@ -373,12 +373,12 @@
      },
      "crop": "components/crops/logo-default.png",
      "via": "at rest",
-     "run": "2026-11-12"
+     "run": "2026-11-16"
     }
    },
    "page": "home",
    "view": "desktop",
-   "run": "2026-11-12",
+   "run": "2026-11-16",
    "url": "https://www.chargetrip.com/",
    "title": "Logo",
    "group": "Shell and navigation",
@@ -392,16 +392,16 @@
      "classes": "framer-1n6ms1e-container",
      "text": "Products",
      "rect": {
-      "x": 448.5,
+      "x": 446,
       "y": 16,
-      "w": 98.81,
+      "w": 99,
       "h": 32
      },
      "style": {
       "display": "block",
       "position": "relative",
       "boxSizing": "border-box",
-      "width": "98.8125px",
+      "width": "99px",
       "height": "32px",
       "minWidth": "auto",
       "maxWidth": "none",
@@ -441,7 +441,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "rgb(0, 0, 0)",
       "outlineOffset": "0px",
@@ -481,23 +481,23 @@
      },
      "crop": "components/crops/nav-item-default.png",
      "via": "at rest",
-     "run": "2026-11-12"
+     "run": "2026-11-16"
     },
     "hover": {
      "tag": "div",
      "classes": "framer-1n6ms1e-container",
      "text": "Products",
      "rect": {
-      "x": 448.5,
+      "x": 446,
       "y": 16,
-      "w": 98.81,
+      "w": 99,
       "h": 32
      },
      "style": {
       "display": "block",
       "position": "relative",
       "boxSizing": "border-box",
-      "width": "98.8125px",
+      "width": "99px",
       "height": "32px",
       "minWidth": "auto",
       "maxWidth": "none",
@@ -537,7 +537,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "rgb(0, 0, 0)",
       "outlineOffset": "0px",
@@ -578,30 +578,30 @@
      "paint": [
       {
        "node": "div.framer-tBbOV.framer-i5yBN",
-       "size": "98.8x32.0",
+       "size": "99.0x32.0",
        "bg": "rgba(221, 59, 0, 0.15)",
        "radius": "24px"
       }
      ],
      "crop": "components/crops/nav-item-hover.png",
      "via": "mouse hover",
-     "run": "2026-11-12"
+     "run": "2026-11-16"
     },
     "focus-visible": {
      "tag": "div",
      "classes": "framer-1n6ms1e-container",
      "text": "Products",
      "rect": {
-      "x": 448.5,
+      "x": 446,
       "y": 16,
-      "w": 98.81,
+      "w": 99,
       "h": 32
      },
      "style": {
       "display": "block",
       "position": "relative",
       "boxSizing": "border-box",
-      "width": "98.8125px",
+      "width": "99px",
       "height": "32px",
       "minWidth": "auto",
       "maxWidth": "none",
@@ -641,7 +641,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "rgb(0, 0, 0)",
       "outlineOffset": "0px",
@@ -675,37 +675,29 @@
       "lineHeight": "28.8px",
       "fontWeight": "400",
       "letterSpacing": "normal",
-      "color": "rgb(39, 35, 34)",
+      "color": "rgb(38, 35, 34)",
       "textDecorationLine": "none",
       "textTransform": "none"
      },
-     "paint": [
-      {
-       "node": "div.framer-tBbOV.framer-i5yBN",
-       "size": "98.8x32.0",
-       "bg": "rgba(221, 59, 0, 0)",
-       "radius": "24px"
-      }
-     ],
      "crop": "components/crops/nav-item-focus-visible.png",
      "via": "focus failed",
-     "run": "2026-11-12"
+     "run": "2026-11-16"
     },
     "pressed": {
      "tag": "div",
      "classes": "framer-1n6ms1e-container",
      "text": "Products",
      "rect": {
-      "x": 448.5,
+      "x": 446,
       "y": 16,
-      "w": 98.81,
+      "w": 99,
       "h": 32
      },
      "style": {
       "display": "block",
       "position": "relative",
       "boxSizing": "border-box",
-      "width": "98.8125px",
+      "width": "99px",
       "height": "32px",
       "minWidth": "auto",
       "maxWidth": "none",
@@ -745,7 +737,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "rgb(0, 0, 0)",
       "outlineOffset": "0px",
@@ -785,23 +777,23 @@
      },
      "crop": "components/crops/nav-item-pressed.png",
      "via": "CDP forcePseudoState :active:hover",
-     "run": "2026-11-12"
+     "run": "2026-11-16"
     },
     "opened": {
      "tag": "div",
      "classes": "framer-1n6ms1e-container",
      "text": "Products",
      "rect": {
-      "x": 448.5,
+      "x": 446,
       "y": 16,
-      "w": 98.81,
+      "w": 99,
       "h": 32
      },
      "style": {
       "display": "block",
       "position": "relative",
       "boxSizing": "border-box",
-      "width": "98.8125px",
+      "width": "99px",
       "height": "32px",
       "minWidth": "auto",
       "maxWidth": "none",
@@ -841,7 +833,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "rgb(0, 0, 0)",
       "outlineOffset": "0px",
@@ -882,19 +874,19 @@
      "paint": [
       {
        "node": "div.framer-tBbOV.framer-i5yBN",
-       "size": "98.8x32.0",
+       "size": "99.0x32.0",
        "bg": "rgba(221, 59, 0, 0.15)",
        "radius": "24px"
       }
      ],
      "crop": "components/crops/nav-item-opened.png",
      "via": "own toggle",
-     "run": "2026-11-12"
+     "run": "2026-11-16"
     }
    },
    "page": "home",
    "view": "desktop",
-   "run": "2026-11-12",
+   "run": "2026-11-16",
    "url": "https://www.chargetrip.com/",
    "title": "Nav item",
    "group": "Shell and navigation",
@@ -905,38 +897,38 @@
    "states": {
     "default": {
      "tag": "div",
-     "classes": "framer-p3fl6f",
-     "text": "Products No-code API Use cases eMSP & CPO Commercial fleets Rental & Leasing Ret",
+     "classes": "framer-inmgw0",
+     "text": "No-code Get ready-made solutions API Build your own custom solutions Integration",
      "rect": {
-      "x": 24,
-      "y": 7817.6,
-      "w": 927.31,
-      "h": 316.03
+      "x": 32,
+      "y": 76,
+      "w": 1376,
+      "h": 816
      },
      "style": {
-      "display": "flex",
+      "display": "grid",
       "position": "relative",
       "boxSizing": "border-box",
-      "width": "927.312px",
-      "height": "316.031px",
+      "width": "1376px",
+      "height": "816px",
       "minWidth": "auto",
       "maxWidth": "none",
       "minHeight": "auto",
-      "paddingTop": "24px",
+      "paddingTop": "0px",
       "paddingRight": "0px",
       "paddingBottom": "40px",
-      "paddingLeft": "64px",
+      "paddingLeft": "0px",
       "marginTop": "0px",
       "marginRight": "0px",
       "marginBottom": "0px",
       "marginLeft": "0px",
-      "gap": "10px",
-      "rowGap": "10px",
-      "columnGap": "10px",
+      "gap": "8px",
+      "rowGap": "8px",
+      "columnGap": "8px",
       "flexDirection": "row",
-      "alignItems": "flex-start",
+      "alignItems": "normal",
       "justifyContent": "center",
-      "gridTemplateColumns": "none",
+      "gridTemplateColumns": "453.328px 453.328px 453.344px",
       "borderTopWidth": "0px",
       "borderTopStyle": "none",
       "borderTopColor": "rgb(0, 0, 0)",
@@ -957,7 +949,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "rgb(0, 0, 0)",
       "outlineOffset": "0px",
@@ -979,117 +971,116 @@
       "cursor": "auto",
       "opacity": "1",
       "transform": "none",
-      "overflow": "hidden",
+      "overflow": "visible",
       "zIndex": "auto",
       "top": "0px"
      },
      "textStyle": {
-      "node": "p.framer-text.framer-styles-preset-phy7qs",
-      "text": "Products",
-      "fontFamily": "\"Geist Variable\", \"Geist Placeholder\", sans-serif",
-      "fontSize": "16px",
-      "lineHeight": "24px",
+      "node": "p.framer-text.framer-styles-preset-472in1",
+      "text": "No-code",
+      "fontFamily": "\"Geist Medium\", \"Geist Medium Placeholder\", sans-serif",
+      "fontSize": "22px",
+      "lineHeight": "26px",
       "fontWeight": "400",
       "letterSpacing": "normal",
-      "color": "rgb(135, 127, 120)",
+      "color": "rgb(239, 237, 229)",
       "textDecorationLine": "none",
       "textTransform": "none"
      },
      "paint": [
       {
-       "node": "div",
-       "size": "8.0x8.0",
-       "bg": "rgb(39, 136, 89)",
-       "radius": "100%"
+       "node": "a.framer-39qt1e.framer-152olpk",
+       "size": "453.3x776.0",
+       "bg": "rgb(239, 237, 229)",
+       "radius": "8px"
       },
       {
-       "node": "a.framer-1vyggok.framer-1oqc6h7",
-       "size": "97.8x32.0",
+       "node": "a.framer-2ndwuz.framer-152olpk",
+       "size": "453.3x776.0",
        "bg": "rgb(239, 237, 229)",
-       "radius": "16px"
-      }
-     ],
-     "ancestors": [
+       "radius": "8px"
+      },
       {
-       "up": 1,
-       "node": "div.framer-PkeUF.framer-npPic",
-       "radius": "24px 24px 0px 0px",
-       "bg": "rgb(255, 255, 251)"
+       "node": "a.framer-vb2o8e.framer-152olpk",
+       "size": "453.3x776.0",
+       "bg": "rgb(239, 237, 229)",
+       "radius": "8px"
       }
      ],
      "crop": "components/crops/menu-panel-default.png",
      "via": "at rest",
-     "run": "2026-11-12"
+     "run": "2026-11-16"
     }
    },
    "page": "home",
    "view": "desktop",
-   "run": "2026-11-12",
+   "run": "2026-11-16",
    "url": "https://www.chargetrip.com/",
    "title": "Mega menu",
    "group": "Shell and navigation",
    "desc": "The Products mega-menu card row (No-code / API / Integration Partners photo cards), held open by the nav-item toggle.",
-   "selector": "card-row ancestor of a[href=\"./no-code\"]"
+   "selector": "card-row ancestor of the in-menu a[href=\"./no-code\"] (top < 800, not the footer copy)",
+   "recaptureMissed": "2026-11-16"
   },
   "menu-card": {
    "states": {
     "default": {
-     "tag": "div",
-     "classes": "framer-p3fl6f",
-     "text": "Products No-code API Use cases eMSP & CPO Commercial fleets Rental & Leasing Ret",
+     "tag": "a",
+     "classes": "framer-39qt1e framer-152olpk",
+     "text": "No-code Get ready-made solutions",
      "rect": {
-      "x": 24,
-      "y": 442.6,
-      "w": 927.31,
-      "h": 316.03
+      "x": 32,
+      "y": 76,
+      "w": 453.33,
+      "h": 776
      },
      "style": {
       "display": "flex",
       "position": "relative",
       "boxSizing": "border-box",
-      "width": "927.312px",
-      "height": "316.031px",
+      "width": "453.328px",
+      "height": "776px",
       "minWidth": "auto",
       "maxWidth": "none",
       "minHeight": "auto",
-      "paddingTop": "24px",
-      "paddingRight": "0px",
-      "paddingBottom": "40px",
-      "paddingLeft": "64px",
+      "paddingTop": "16px",
+      "paddingRight": "16px",
+      "paddingBottom": "16px",
+      "paddingLeft": "16px",
       "marginTop": "0px",
       "marginRight": "0px",
       "marginBottom": "0px",
       "marginLeft": "0px",
-      "gap": "10px",
-      "rowGap": "10px",
-      "columnGap": "10px",
+      "gap": "0px",
+      "rowGap": "0px",
+      "columnGap": "0px",
       "flexDirection": "row",
       "alignItems": "flex-start",
       "justifyContent": "center",
       "gridTemplateColumns": "none",
       "borderTopWidth": "0px",
       "borderTopStyle": "none",
-      "borderTopColor": "rgb(0, 0, 0)",
+      "borderTopColor": "rgb(0, 0, 238)",
       "borderRightWidth": "0px",
       "borderRightStyle": "none",
-      "borderRightColor": "rgb(0, 0, 0)",
+      "borderRightColor": "rgb(0, 0, 238)",
       "borderBottomWidth": "0px",
       "borderBottomStyle": "none",
-      "borderBottomColor": "rgb(0, 0, 0)",
+      "borderBottomColor": "rgb(0, 0, 238)",
       "borderLeftWidth": "0px",
       "borderLeftStyle": "none",
-      "borderLeftColor": "rgb(0, 0, 0)",
-      "borderTopLeftRadius": "0px",
-      "borderTopRightRadius": "0px",
-      "borderBottomRightRadius": "0px",
-      "borderBottomLeftRadius": "0px",
-      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "borderLeftColor": "rgb(0, 0, 238)",
+      "borderTopLeftRadius": "8px",
+      "borderTopRightRadius": "8px",
+      "borderBottomRightRadius": "8px",
+      "borderBottomLeftRadius": "8px",
+      "backgroundColor": "rgb(239, 237, 229)",
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
-      "outlineColor": "rgb(0, 0, 0)",
+      "outlineColor": "rgb(0, 0, 238)",
       "outlineOffset": "0px",
       "fontFamily": "sans-serif",
       "fontSize": "12px",
@@ -1097,16 +1088,16 @@
       "lineHeight": "normal",
       "letterSpacing": "normal",
       "textTransform": "none",
-      "color": "rgb(0, 0, 0)",
+      "color": "rgb(0, 0, 238)",
       "textDecorationLine": "none",
-      "textDecorationColor": "rgb(0, 0, 0)",
+      "textDecorationColor": "rgb(0, 0, 238)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
       "transitionProperty": "all",
       "transitionDuration": "0s",
       "transitionTimingFunction": "ease",
       "transitionDelay": "0s",
-      "cursor": "auto",
+      "cursor": "pointer",
       "opacity": "1",
       "transform": "none",
       "overflow": "hidden",
@@ -1114,53 +1105,39 @@
       "top": "0px"
      },
      "textStyle": {
-      "node": "p.framer-text.framer-styles-preset-phy7qs",
-      "text": "Products",
-      "fontFamily": "\"Geist Variable\", \"Geist Placeholder\", sans-serif",
-      "fontSize": "16px",
-      "lineHeight": "24px",
+      "node": "p.framer-text.framer-styles-preset-472in1",
+      "text": "No-code",
+      "fontFamily": "\"Geist Medium\", \"Geist Medium Placeholder\", sans-serif",
+      "fontSize": "22px",
+      "lineHeight": "26px",
       "fontWeight": "400",
       "letterSpacing": "normal",
-      "color": "rgb(135, 127, 120)",
+      "color": "rgb(239, 237, 229)",
       "textDecorationLine": "none",
       "textTransform": "none"
      },
      "paint": [
       {
-       "node": "div",
-       "size": "8.0x8.0",
-       "bg": "rgb(39, 136, 89)",
-       "radius": "100%"
-      },
-      {
-       "node": "a.framer-1vyggok.framer-1oqc6h7",
-       "size": "97.8x32.0",
+       "node": "a.framer-39qt1e.framer-152olpk",
+       "size": "453.3x776.0",
        "bg": "rgb(239, 237, 229)",
-       "radius": "16px"
-      }
-     ],
-     "ancestors": [
-      {
-       "up": 1,
-       "node": "div.framer-PkeUF.framer-npPic",
-       "radius": "24px 24px 0px 0px",
-       "bg": "rgb(255, 255, 251)"
+       "radius": "8px"
       }
      ],
      "crop": "components/crops/menu-card-default.png",
      "via": "at rest",
-     "run": "2026-11-12"
+     "run": "2026-11-16"
     }
    },
    "page": "home",
    "view": "desktop",
-   "run": "2026-11-12",
+   "run": "2026-11-16",
    "url": "https://www.chargetrip.com/",
    "title": "Menu card",
    "group": "Shell and navigation",
    "desc": "The No-code photo card inside the open mega menu.",
-   "selector": "card ancestor of a[href=\"./no-code\"]",
-   "recaptureMissed": "2026-11-12"
+   "selector": "card ancestor of the in-menu a[href=\"./no-code\"]",
+   "recaptureMissed": "2026-11-16"
   },
   "nav-cta": {
    "states": {
@@ -1169,16 +1146,16 @@
      "classes": "framer-SWyCz framer-i5yBN framer-5wj5p7 framer-v-5csu7",
      "text": "Contact sales",
      "rect": {
-      "x": 1164.5,
+      "x": 1162,
       "y": 12,
-      "w": 138.73,
+      "w": 139,
       "h": 40
      },
      "style": {
       "display": "flex",
       "position": "relative",
       "boxSizing": "border-box",
-      "width": "138.734px",
+      "width": "139px",
       "height": "40px",
       "minWidth": "0px",
       "maxWidth": "none",
@@ -1218,7 +1195,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "rgb(0, 0, 238)",
       "outlineOffset": "0px",
@@ -1259,14 +1236,14 @@
      "paint": [
       {
        "node": "a.framer-SWyCz.framer-i5yBN",
-       "size": "138.7x40.0",
+       "size": "139.0x40.0",
        "bg": "rgb(38, 35, 34)",
        "radius": "8px"
       }
      ],
      "crop": "components/crops/nav-cta-default.png",
      "via": "at rest",
-     "run": "2026-11-12"
+     "run": "2026-11-16"
     },
     "hover": {
      "error": "locator.evaluate: Timeout 8000ms exceeded.\nCall log:\n  - waiting for locator('a[data-framer-name=\"Background Dark Primary / Fill\"]').filter({ visible: true }).first().filter({ visible: true }).first()"
@@ -1276,16 +1253,16 @@
      "classes": "framer-SWyCz framer-i5yBN framer-5wj5p7 framer-v-5csu7",
      "text": "Contact sales",
      "rect": {
-      "x": 1164.5,
+      "x": 1162,
       "y": 12,
-      "w": 138.73,
+      "w": 139,
       "h": 40
      },
      "style": {
       "display": "flex",
       "position": "relative",
       "boxSizing": "border-box",
-      "width": "138.734px",
+      "width": "139px",
       "height": "40px",
       "minWidth": "0px",
       "maxWidth": "none",
@@ -1327,7 +1304,7 @@
       "backdropFilter": "none",
       "outlineWidth": "1px",
       "outlineStyle": "auto",
-      "outlineColor": "rgb(0, 95, 204)",
+      "outlineColor": "rgb(16, 16, 16)",
       "outlineOffset": "1px",
       "fontFamily": "sans-serif",
       "fontSize": "12px",
@@ -1366,31 +1343,31 @@
      "paint": [
       {
        "node": "a.framer-SWyCz.framer-i5yBN",
-       "size": "138.7x40.0",
+       "size": "139.0x40.0",
        "bg": "rgb(38, 35, 34)",
-       "outline": "1px auto rgb(0, 95, 204) offset 1px",
+       "outline": "1px auto rgb(16, 16, 16) offset 1px",
        "radius": "8px"
       }
      ],
      "crop": "components/crops/nav-cta-focus-visible.png",
      "via": "Shift+Tab, Tab",
-     "run": "2026-11-12"
+     "run": "2026-11-16"
     },
     "pressed": {
      "tag": "a",
      "classes": "framer-SWyCz framer-i5yBN framer-5wj5p7 framer-v-5csu7",
      "text": "Contact sales",
      "rect": {
-      "x": 1164.5,
+      "x": 1162,
       "y": 12,
-      "w": 138.73,
+      "w": 139,
       "h": 40
      },
      "style": {
       "display": "flex",
       "position": "relative",
       "boxSizing": "border-box",
-      "width": "138.734px",
+      "width": "139px",
       "height": "40px",
       "minWidth": "0px",
       "maxWidth": "none",
@@ -1430,7 +1407,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 0, 0)",
       "outlineOffset": "0px",
@@ -1471,19 +1448,19 @@
      "paint": [
       {
        "node": "a.framer-SWyCz.framer-i5yBN",
-       "size": "138.7x40.0",
+       "size": "139.0x40.0",
        "bg": "rgb(38, 35, 34)",
        "radius": "8px"
       }
      ],
      "crop": "components/crops/nav-cta-pressed.png",
      "via": "CDP forcePseudoState :active:hover",
-     "run": "2026-11-12"
+     "run": "2026-11-16"
     }
    },
    "page": "home",
    "view": "desktop",
-   "run": "2026-11-12",
+   "run": "2026-11-16",
    "url": "https://www.chargetrip.com/",
    "title": "Nav CTA",
    "group": "Shell and navigation",
@@ -1497,16 +1474,16 @@
      "classes": "framer-SWyCz framer-i5yBN framer-5wj5p7 framer-v-yv5yuz",
      "text": "Sign in",
      "rect": {
-      "x": 1311.3,
+      "x": 1309,
       "y": 12,
-      "w": 80.73,
+      "w": 83,
       "h": 40
      },
      "style": {
       "display": "flex",
       "position": "relative",
       "boxSizing": "border-box",
-      "width": "80.7344px",
+      "width": "83px",
       "height": "40px",
       "minWidth": "0px",
       "maxWidth": "none",
@@ -1546,7 +1523,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "rgb(0, 0, 238)",
       "outlineOffset": "0px",
@@ -1586,7 +1563,7 @@
      },
      "::after": {
       "content": "\"\"",
-      "width": "80.7344px",
+      "width": "83px",
       "height": "40px",
       "position": "absolute",
       "backgroundColor": "rgba(0, 0, 0, 0)",
@@ -1603,14 +1580,14 @@
      "paint": [
       {
        "node": "a::after.framer-SWyCz.framer-i5yBN",
-       "size": "80.7344pxx40px",
+       "size": "83pxx40px",
        "border": "T:1px solid rgb(38, 35, 34) | R:1px solid rgb(38, 35, 34) | B:1px solid rgb(38, 35, 34) | L:1px solid rgb(38, 35, 34)",
        "radius": "8px"
       }
      ],
      "crop": "components/crops/nav-signin-default.png",
      "via": "at rest",
-     "run": "2026-11-12"
+     "run": "2026-11-16"
     },
     "hover": {
      "error": "locator.evaluate: Timeout 8000ms exceeded.\nCall log:\n  - waiting for locator('a[data-framer-name=\"Background Dark Primary / Outline\"]').filter({ visible: true }).first().filter({ visible: true }).firs"
@@ -1620,16 +1597,16 @@
      "classes": "framer-SWyCz framer-i5yBN framer-5wj5p7 framer-v-yv5yuz",
      "text": "Sign in",
      "rect": {
-      "x": 1311.3,
+      "x": 1309,
       "y": 12,
-      "w": 80.73,
+      "w": 83,
       "h": 40
      },
      "style": {
       "display": "flex",
       "position": "relative",
       "boxSizing": "border-box",
-      "width": "80.7344px",
+      "width": "83px",
       "height": "40px",
       "minWidth": "0px",
       "maxWidth": "none",
@@ -1671,7 +1648,7 @@
       "backdropFilter": "none",
       "outlineWidth": "1px",
       "outlineStyle": "auto",
-      "outlineColor": "rgb(0, 95, 204)",
+      "outlineColor": "rgb(16, 16, 16)",
       "outlineOffset": "1px",
       "fontFamily": "sans-serif",
       "fontSize": "12px",
@@ -1709,7 +1686,7 @@
      },
      "::after": {
       "content": "\"\"",
-      "width": "80.7344px",
+      "width": "83px",
       "height": "40px",
       "position": "absolute",
       "backgroundColor": "rgba(0, 0, 0, 0)",
@@ -1726,36 +1703,36 @@
      "paint": [
       {
        "node": "a.framer-SWyCz.framer-i5yBN",
-       "size": "80.7x40.0",
-       "outline": "1px auto rgb(0, 95, 204) offset 1px",
+       "size": "83.0x40.0",
+       "outline": "1px auto rgb(16, 16, 16) offset 1px",
        "radius": "8px"
       },
       {
        "node": "a::after.framer-SWyCz.framer-i5yBN",
-       "size": "80.7344pxx40px",
+       "size": "83pxx40px",
        "border": "T:1px solid rgb(40, 35, 34) | R:1px solid rgb(40, 35, 34) | B:1px solid rgb(40, 35, 34) | L:1px solid rgb(40, 35, 34)",
        "radius": "8px"
       }
      ],
      "crop": "components/crops/nav-signin-focus-visible.png",
      "via": "Shift+Tab, Tab",
-     "run": "2026-11-12"
+     "run": "2026-11-16"
     },
     "pressed": {
      "tag": "a",
      "classes": "framer-SWyCz framer-i5yBN framer-5wj5p7 framer-v-yv5yuz",
      "text": "Sign in",
      "rect": {
-      "x": 1311.3,
+      "x": 1309,
       "y": 12,
-      "w": 80.73,
+      "w": 83,
       "h": 40
      },
      "style": {
       "display": "flex",
       "position": "relative",
       "boxSizing": "border-box",
-      "width": "80.7344px",
+      "width": "83px",
       "height": "40px",
       "minWidth": "0px",
       "maxWidth": "none",
@@ -1795,7 +1772,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 0, 0)",
       "outlineOffset": "0px",
@@ -1835,7 +1812,7 @@
      },
      "::after": {
       "content": "\"\"",
-      "width": "80.7344px",
+      "width": "83px",
       "height": "40px",
       "position": "absolute",
       "backgroundColor": "rgba(0, 0, 0, 0)",
@@ -1852,19 +1829,19 @@
      "paint": [
       {
        "node": "a::after.framer-SWyCz.framer-i5yBN",
-       "size": "80.7344pxx40px",
+       "size": "83pxx40px",
        "border": "T:1px solid rgb(38, 35, 34) | R:1px solid rgb(38, 35, 34) | B:1px solid rgb(38, 35, 34) | L:1px solid rgb(38, 35, 34)",
        "radius": "8px"
       }
      ],
      "crop": "components/crops/nav-signin-pressed.png",
      "via": "CDP forcePseudoState :active:hover",
-     "run": "2026-11-12"
+     "run": "2026-11-16"
     }
    },
    "page": "home",
    "view": "desktop",
-   "run": "2026-11-12",
+   "run": "2026-11-16",
    "url": "https://www.chargetrip.com/",
    "title": "Sign-in button",
    "group": "Shell and navigation",
@@ -1879,7 +1856,7 @@
      "text": "A driver's route plan is your revenue plan.",
      "rect": {
       "x": 292.3,
-      "y": -7231,
+      "y": 144,
       "w": 855.34,
       "h": 156
      },
@@ -1927,7 +1904,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "rgb(244, 243, 242)",
       "outlineOffset": "0px",
@@ -1955,12 +1932,12 @@
      },
      "crop": "components/crops/hero-title-default.png",
      "via": "at rest",
-     "run": "2026-11-12"
+     "run": "2026-11-16"
     }
    },
    "page": "home",
    "view": "desktop",
-   "run": "2026-11-12",
+   "run": "2026-11-16",
    "url": "https://www.chargetrip.com/",
    "title": "Hero title",
    "group": "Home",
@@ -2023,7 +2000,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "rgba(255, 255, 251, 0.52)",
       "outlineOffset": "0px",
@@ -2051,12 +2028,12 @@
      },
      "crop": "components/crops/hero-sub-default.png",
      "via": "at rest",
-     "run": "2026-11-12"
+     "run": "2026-11-16"
     }
    },
    "page": "home",
    "view": "desktop",
-   "run": "2026-11-12",
+   "run": "2026-11-16",
    "url": "https://www.chargetrip.com/",
    "title": "Hero subcopy",
    "group": "Home",
@@ -2067,37 +2044,37 @@
    "states": {
     "default": {
      "tag": "div",
-     "classes": "framer-1xxin9i",
+     "classes": "framer-pl228f",
      "text": "A driver's route plan is your revenue plan. Every charge decision has a direct i",
      "rect": {
-      "x": 72,
-      "y": 144,
-      "w": 1295.98,
-      "h": 354.39
+      "x": 24,
+      "y": 72,
+      "w": 1391.98,
+      "h": 1086
      },
      "style": {
       "display": "flex",
       "position": "relative",
       "boxSizing": "border-box",
-      "width": "1295.98px",
-      "height": "354.391px",
+      "width": "1391.98px",
+      "height": "1086px",
       "minWidth": "auto",
       "maxWidth": "none",
       "minHeight": "auto",
-      "paddingTop": "0px",
-      "paddingRight": "0px",
+      "paddingTop": "72px",
+      "paddingRight": "48px",
       "paddingBottom": "0px",
-      "paddingLeft": "0px",
+      "paddingLeft": "48px",
       "marginTop": "0px",
       "marginRight": "0px",
       "marginBottom": "0px",
       "marginLeft": "0px",
-      "gap": "32px 8px",
-      "rowGap": "32px",
-      "columnGap": "8px",
+      "gap": "0px",
+      "rowGap": "0px",
+      "columnGap": "0px",
       "flexDirection": "column",
       "alignItems": "center",
-      "justifyContent": "center",
+      "justifyContent": "flex-start",
       "gridTemplateColumns": "none",
       "borderTopWidth": "0px",
       "borderTopStyle": "none",
@@ -2111,15 +2088,15 @@
       "borderLeftWidth": "0px",
       "borderLeftStyle": "none",
       "borderLeftColor": "rgb(0, 0, 0)",
-      "borderTopLeftRadius": "0px",
-      "borderTopRightRadius": "0px",
-      "borderBottomRightRadius": "0px",
-      "borderBottomLeftRadius": "0px",
+      "borderTopLeftRadius": "24px",
+      "borderTopRightRadius": "24px",
+      "borderBottomRightRadius": "24px",
+      "borderBottomLeftRadius": "24px",
       "backgroundColor": "rgba(0, 0, 0, 0)",
-      "backgroundImage": "none",
+      "backgroundImage": "radial-gradient(103% 223% at 49.2% 170.8%, rgb(56, 49, 47) 35%, rgb(38, 35, 33) 67.3371%)",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "rgb(0, 0, 0)",
       "outlineOffset": "0px",
@@ -2141,8 +2118,8 @@
       "cursor": "auto",
       "opacity": "1",
       "transform": "none",
-      "overflow": "visible",
-      "zIndex": "2",
+      "overflow": "hidden",
+      "zIndex": "auto",
       "top": "0px"
      },
      "textStyle": {
@@ -2159,32 +2136,38 @@
      },
      "paint": [
       {
+       "node": "div.framer-pl228f",
+       "size": "1392.0x1086.0",
+       "bgImage": "radial-gradient(103% 223% at 49.2% 170.8%, rgb(56, 49, 47) 35%, rgb(38, 35, 33) 67.3371%)",
+       "radius": "24px"
+      },
+      {
        "node": "a.framer-0phDM.framer-npPic",
-       "size": "147.2x48.0",
+       "size": "148.0x48.0",
        "bg": "rgb(249, 77, 0)",
        "radius": "8px"
       },
       {
        "node": "div.framer-144aqy4",
-       "size": "163.2x163.2",
+       "size": "164.0x164.0",
        "bg": "rgb(252, 101, 45)",
        "radius": "999px"
       },
       {
        "node": "div.framer-e7hcqw",
-       "size": "163.2x163.2",
+       "size": "164.0x164.0",
        "bg": "rgb(221, 59, 0)",
        "radius": "999px"
       },
       {
        "node": "a.framer-0phDM.framer-npPic",
-       "size": "180.7x48.0",
+       "size": "179.0x48.0",
        "bg": "rgb(68, 64, 63)",
        "radius": "8px"
       },
       {
        "node": "a::after.framer-0phDM.framer-npPic",
-       "size": "180.703pxx48px",
+       "size": "179pxx48px",
        "border": "T:1px solid rgba(0, 0, 0, 0) | R:1px solid rgba(0, 0, 0, 0) | B:1px solid rgba(0, 0, 0, 0) | L:1px solid rgba(0, 0, 0, 0)",
        "radius": "8px"
       },
@@ -2196,15 +2179,47 @@
       },
       {
        "node": "div.framer-144aqy4",
-       "size": "196.7x196.7",
+       "size": "195.0x195.0",
        "bg": "rgb(82, 76, 74)",
        "radius": "999px"
       },
       {
        "node": "div.framer-e7hcqw",
-       "size": "196.7x196.7",
+       "size": "195.0x195.0",
        "bg": "rgb(77, 72, 70)",
        "radius": "999px"
+      },
+      {
+       "node": "div.framer-66rowr",
+       "size": "320.0x317.0",
+       "bg": "rgb(255, 255, 251)",
+       "shadow": "rgba(255, 255, 251, 0.16) 0px 0px 0px 4px, rgba(0, 0, 0, 0.4) 0px 25px 50px -12px",
+       "radius": "12px"
+      },
+      {
+       "node": "div.framer-13tegad",
+       "size": "272.0x32.0",
+       "bg": "rgb(239, 237, 229)",
+       "radius": "8px"
+      },
+      {
+       "node": "div.framer-p2nrne",
+       "size": "134.0x28.0",
+       "bg": "rgb(255, 255, 251)",
+       "radius": "6px"
+      },
+      {
+       "node": "div.framer-1hlh9ij.hidden-1arhkz7",
+       "size": "342.0x114.6",
+       "bg": "rgb(255, 255, 251)",
+       "shadow": "rgba(255, 255, 251, 0.16) 0px 0px 0px 4px, rgba(0, 0, 0, 0.4) 0px 25px 50px -12px",
+       "radius": "12px"
+      },
+      {
+       "node": "div::after.framer-6amsv",
+       "size": "22pxx22px",
+       "border": "T:1px solid rgb(255, 255, 251) | R:1px solid rgb(255, 255, 251) | B:1px solid rgb(255, 255, 251) | L:1px solid rgb(255, 255, 251)",
+       "radius": "11px"
       }
      ],
      "icon": {
@@ -2216,12 +2231,12 @@
      },
      "crop": "components/crops/hero-card-default.png",
      "via": "at rest",
-     "run": "2026-11-12"
+     "run": "2026-11-16"
     }
    },
    "page": "home",
    "view": "desktop",
-   "run": "2026-11-12",
+   "run": "2026-11-16",
    "url": "https://www.chargetrip.com/",
    "title": "Hero band",
    "group": "Home",
@@ -2235,16 +2250,16 @@
      "classes": "framer-0phDM framer-npPic framer-bATTh framer-bqiwy8",
      "text": "Book a demo",
      "rect": {
-      "x": 552.1,
-      "y": 450.4,
-      "w": 147.16,
+      "x": 552.5,
+      "y": 378.4,
+      "w": 148,
       "h": 48
      },
      "style": {
       "display": "flex",
       "position": "relative",
       "boxSizing": "border-box",
-      "width": "147.156px",
+      "width": "148px",
       "height": "48px",
       "minWidth": "0px",
       "maxWidth": "none",
@@ -2284,7 +2299,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "rgb(0, 0, 238)",
       "outlineOffset": "0px",
@@ -2325,19 +2340,19 @@
      "paint": [
       {
        "node": "a.framer-0phDM.framer-npPic",
-       "size": "147.2x48.0",
+       "size": "148.0x48.0",
        "bg": "rgb(249, 77, 0)",
        "radius": "8px"
       },
       {
        "node": "div.framer-144aqy4",
-       "size": "163.2x163.2",
+       "size": "164.0x164.0",
        "bg": "rgb(252, 101, 45)",
        "radius": "999px"
       },
       {
        "node": "div.framer-e7hcqw",
-       "size": "163.2x163.2",
+       "size": "164.0x164.0",
        "bg": "rgb(221, 59, 0)",
        "radius": "999px"
       }
@@ -2351,23 +2366,23 @@
      },
      "crop": "components/crops/cta-accent-default.png",
      "via": "at rest",
-     "run": "2026-11-12"
+     "run": "2026-11-16"
     },
     "hover": {
      "tag": "a",
      "classes": "framer-0phDM framer-npPic framer-bATTh framer-bqiwy8",
      "text": "Book a demo",
      "rect": {
-      "x": 464.1,
+      "x": 464.5,
       "y": 0.4,
-      "w": 147.16,
+      "w": 148,
       "h": 48
      },
      "style": {
       "display": "flex",
       "position": "relative",
       "boxSizing": "border-box",
-      "width": "147.156px",
+      "width": "148px",
       "height": "48px",
       "minWidth": "0px",
       "maxWidth": "none",
@@ -2407,7 +2422,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "rgb(0, 0, 238)",
       "outlineOffset": "0px",
@@ -2448,19 +2463,19 @@
      "paint": [
       {
        "node": "a.framer-0phDM.framer-npPic",
-       "size": "147.2x48.0",
+       "size": "148.0x48.0",
        "bg": "rgb(249, 77, 0)",
        "radius": "8px"
       },
       {
        "node": "div.framer-144aqy4",
-       "size": "163.2x163.2",
+       "size": "164.0x164.0",
        "bg": "rgb(252, 101, 45)",
        "radius": "999px"
       },
       {
        "node": "div.framer-e7hcqw",
-       "size": "163.2x163.2",
+       "size": "164.0x164.0",
        "bg": "rgb(221, 59, 0)",
        "radius": "999px"
       }
@@ -2474,23 +2489,23 @@
      },
      "crop": "components/crops/cta-accent-hover.png",
      "via": "mouse hover",
-     "run": "2026-11-12"
+     "run": "2026-11-16"
     },
     "focus-visible": {
      "tag": "a",
      "classes": "framer-0phDM framer-npPic framer-bATTh framer-bqiwy8",
      "text": "Book a demo",
      "rect": {
-      "x": 464.1,
+      "x": 464.5,
       "y": 0.4,
-      "w": 147.16,
+      "w": 148,
       "h": 48
      },
      "style": {
       "display": "flex",
       "position": "relative",
       "boxSizing": "border-box",
-      "width": "147.156px",
+      "width": "148px",
       "height": "48px",
       "minWidth": "0px",
       "maxWidth": "none",
@@ -2532,7 +2547,7 @@
       "backdropFilter": "none",
       "outlineWidth": "1px",
       "outlineStyle": "auto",
-      "outlineColor": "rgb(0, 95, 204)",
+      "outlineColor": "rgb(16, 16, 16)",
       "outlineOffset": "1px",
       "fontFamily": "sans-serif",
       "fontSize": "12px",
@@ -2571,20 +2586,20 @@
      "paint": [
       {
        "node": "a.framer-0phDM.framer-npPic",
-       "size": "147.2x48.0",
+       "size": "148.0x48.0",
        "bg": "rgb(249, 77, 0)",
-       "outline": "1px auto rgb(0, 95, 204) offset 1px",
+       "outline": "1px auto rgb(16, 16, 16) offset 1px",
        "radius": "8px"
       },
       {
        "node": "div.framer-144aqy4",
-       "size": "163.2x163.2",
+       "size": "164.0x164.0",
        "bg": "rgb(252, 101, 45)",
        "radius": "999px"
       },
       {
        "node": "div.framer-e7hcqw",
-       "size": "163.2x163.2",
+       "size": "164.0x164.0",
        "bg": "rgb(221, 59, 0)",
        "radius": "999px"
       }
@@ -2598,23 +2613,23 @@
      },
      "crop": "components/crops/cta-accent-focus-visible.png",
      "via": "Shift+Tab, Tab",
-     "run": "2026-11-12"
+     "run": "2026-11-16"
     },
     "pressed": {
      "tag": "a",
      "classes": "framer-0phDM framer-npPic framer-bATTh framer-bqiwy8",
      "text": "Book a demo",
      "rect": {
-      "x": 464.1,
+      "x": 464.5,
       "y": 0.4,
-      "w": 147.16,
+      "w": 148,
       "h": 48
      },
      "style": {
       "display": "flex",
       "position": "relative",
       "boxSizing": "border-box",
-      "width": "147.156px",
+      "width": "148px",
       "height": "48px",
       "minWidth": "0px",
       "maxWidth": "none",
@@ -2654,7 +2669,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 0, 0)",
       "outlineOffset": "0px",
@@ -2695,19 +2710,19 @@
      "paint": [
       {
        "node": "a.framer-0phDM.framer-npPic",
-       "size": "147.2x48.0",
+       "size": "148.0x48.0",
        "bg": "rgb(249, 77, 0)",
        "radius": "8px"
       },
       {
        "node": "div.framer-144aqy4",
-       "size": "163.2x163.2",
+       "size": "164.0x164.0",
        "bg": "rgb(252, 101, 45)",
        "radius": "999px"
       },
       {
        "node": "div.framer-e7hcqw",
-       "size": "163.2x163.2",
+       "size": "164.0x164.0",
        "bg": "rgb(221, 59, 0)",
        "radius": "999px"
       }
@@ -2721,12 +2736,12 @@
      },
      "crop": "components/crops/cta-accent-pressed.png",
      "via": "CDP forcePseudoState :active:hover",
-     "run": "2026-11-12"
+     "run": "2026-11-16"
     }
    },
    "page": "home",
    "view": "desktop",
-   "run": "2026-11-12",
+   "run": "2026-11-16",
    "url": "https://www.chargetrip.com/",
    "title": "Accent CTA",
    "group": "Home",
@@ -2740,16 +2755,16 @@
      "classes": "framer-0phDM framer-npPic framer-bATTh framer-bqiwy8",
      "text": "Plan a route",
      "rect": {
-      "x": 619.2,
+      "x": 620.5,
       "y": 0.4,
-      "w": 180.7,
+      "w": 179,
       "h": 48
      },
      "style": {
       "display": "flex",
       "position": "relative",
       "boxSizing": "border-box",
-      "width": "180.703px",
+      "width": "179px",
       "height": "48px",
       "minWidth": "0px",
       "maxWidth": "none",
@@ -2789,7 +2804,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "rgb(0, 0, 238)",
       "outlineOffset": "0px",
@@ -2829,7 +2844,7 @@
      },
      "::after": {
       "content": "\"\"",
-      "width": "180.703px",
+      "width": "179px",
       "height": "48px",
       "position": "absolute",
       "backgroundColor": "rgba(0, 0, 0, 0)",
@@ -2846,13 +2861,13 @@
      "paint": [
       {
        "node": "a.framer-0phDM.framer-npPic",
-       "size": "180.7x48.0",
+       "size": "179.0x48.0",
        "bg": "rgb(68, 64, 63)",
        "radius": "8px"
       },
       {
        "node": "a::after.framer-0phDM.framer-npPic",
-       "size": "180.703pxx48px",
+       "size": "179pxx48px",
        "border": "T:1px solid rgba(0, 0, 0, 0) | R:1px solid rgba(0, 0, 0, 0) | B:1px solid rgba(0, 0, 0, 0) | L:1px solid rgba(0, 0, 0, 0)",
        "radius": "8px"
       },
@@ -2864,13 +2879,13 @@
       },
       {
        "node": "div.framer-144aqy4",
-       "size": "196.7x196.7",
+       "size": "195.0x195.0",
        "bg": "rgb(82, 76, 74)",
        "radius": "999px"
       },
       {
        "node": "div.framer-e7hcqw",
-       "size": "196.7x196.7",
+       "size": "195.0x195.0",
        "bg": "rgb(77, 72, 70)",
        "radius": "999px"
       }
@@ -2884,23 +2899,23 @@
      },
      "crop": "components/crops/cta-dark-default.png",
      "via": "at rest",
-     "run": "2026-11-12"
+     "run": "2026-11-16"
     },
     "hover": {
      "tag": "a",
      "classes": "framer-0phDM framer-npPic framer-bATTh framer-bqiwy8",
      "text": "Plan a route",
      "rect": {
-      "x": 619.2,
+      "x": 620.5,
       "y": 0.4,
-      "w": 180.7,
+      "w": 179,
       "h": 48
      },
      "style": {
       "display": "flex",
       "position": "relative",
       "boxSizing": "border-box",
-      "width": "180.703px",
+      "width": "179px",
       "height": "48px",
       "minWidth": "0px",
       "maxWidth": "none",
@@ -2940,7 +2955,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "rgb(0, 0, 238)",
       "outlineOffset": "0px",
@@ -2980,7 +2995,7 @@
      },
      "::after": {
       "content": "\"\"",
-      "width": "180.703px",
+      "width": "179px",
       "height": "48px",
       "position": "absolute",
       "backgroundColor": "rgba(0, 0, 0, 0)",
@@ -2997,13 +3012,13 @@
      "paint": [
       {
        "node": "a.framer-0phDM.framer-npPic",
-       "size": "180.7x48.0",
+       "size": "179.0x48.0",
        "bg": "rgb(68, 64, 63)",
        "radius": "8px"
       },
       {
        "node": "a::after.framer-0phDM.framer-npPic",
-       "size": "180.703pxx48px",
+       "size": "179pxx48px",
        "border": "T:1px solid rgba(0, 0, 0, 0) | R:1px solid rgba(0, 0, 0, 0) | B:1px solid rgba(0, 0, 0, 0) | L:1px solid rgba(0, 0, 0, 0)",
        "radius": "8px"
       },
@@ -3015,13 +3030,13 @@
       },
       {
        "node": "div.framer-144aqy4",
-       "size": "196.7x196.7",
+       "size": "195.0x195.0",
        "bg": "rgb(82, 76, 74)",
        "radius": "999px"
       },
       {
        "node": "div.framer-e7hcqw",
-       "size": "196.7x196.7",
+       "size": "195.0x195.0",
        "bg": "rgb(77, 72, 70)",
        "radius": "999px"
       }
@@ -3035,23 +3050,23 @@
      },
      "crop": "components/crops/cta-dark-hover.png",
      "via": "mouse hover",
-     "run": "2026-11-12"
+     "run": "2026-11-16"
     },
     "focus-visible": {
      "tag": "a",
      "classes": "framer-0phDM framer-npPic framer-bATTh framer-bqiwy8",
      "text": "Plan a route",
      "rect": {
-      "x": 619.2,
+      "x": 620.5,
       "y": 0.4,
-      "w": 180.7,
+      "w": 179,
       "h": 48
      },
      "style": {
       "display": "flex",
       "position": "relative",
       "boxSizing": "border-box",
-      "width": "180.703px",
+      "width": "179px",
       "height": "48px",
       "minWidth": "0px",
       "maxWidth": "none",
@@ -3093,7 +3108,7 @@
       "backdropFilter": "none",
       "outlineWidth": "1px",
       "outlineStyle": "auto",
-      "outlineColor": "rgb(0, 95, 204)",
+      "outlineColor": "rgb(16, 16, 16)",
       "outlineOffset": "1px",
       "fontFamily": "sans-serif",
       "fontSize": "12px",
@@ -3131,7 +3146,7 @@
      },
      "::after": {
       "content": "\"\"",
-      "width": "180.703px",
+      "width": "179px",
       "height": "48px",
       "position": "absolute",
       "backgroundColor": "rgba(0, 0, 0, 0)",
@@ -3148,14 +3163,14 @@
      "paint": [
       {
        "node": "a.framer-0phDM.framer-npPic",
-       "size": "180.7x48.0",
+       "size": "179.0x48.0",
        "bg": "rgb(68, 64, 63)",
-       "outline": "1px auto rgb(0, 95, 204) offset 1px",
+       "outline": "1px auto rgb(16, 16, 16) offset 1px",
        "radius": "8px"
       },
       {
        "node": "a::after.framer-0phDM.framer-npPic",
-       "size": "180.703pxx48px",
+       "size": "179pxx48px",
        "border": "T:1px solid rgba(0, 0, 0, 0) | R:1px solid rgba(0, 0, 0, 0) | B:1px solid rgba(0, 0, 0, 0) | L:1px solid rgba(0, 0, 0, 0)",
        "radius": "8px"
       },
@@ -3167,13 +3182,13 @@
       },
       {
        "node": "div.framer-144aqy4",
-       "size": "196.7x196.7",
+       "size": "195.0x195.0",
        "bg": "rgb(82, 76, 74)",
        "radius": "999px"
       },
       {
        "node": "div.framer-e7hcqw",
-       "size": "196.7x196.7",
+       "size": "195.0x195.0",
        "bg": "rgb(77, 72, 70)",
        "radius": "999px"
       }
@@ -3187,23 +3202,23 @@
      },
      "crop": "components/crops/cta-dark-focus-visible.png",
      "via": "Shift+Tab, Tab",
-     "run": "2026-11-12"
+     "run": "2026-11-16"
     },
     "pressed": {
      "tag": "a",
      "classes": "framer-0phDM framer-npPic framer-bATTh framer-bqiwy8",
      "text": "Plan a route",
      "rect": {
-      "x": 619.2,
+      "x": 620.5,
       "y": 0.4,
-      "w": 180.7,
+      "w": 179,
       "h": 48
      },
      "style": {
       "display": "flex",
       "position": "relative",
       "boxSizing": "border-box",
-      "width": "180.703px",
+      "width": "179px",
       "height": "48px",
       "minWidth": "0px",
       "maxWidth": "none",
@@ -3243,7 +3258,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 0, 0)",
       "outlineOffset": "0px",
@@ -3283,7 +3298,7 @@
      },
      "::after": {
       "content": "\"\"",
-      "width": "180.703px",
+      "width": "179px",
       "height": "48px",
       "position": "absolute",
       "backgroundColor": "rgba(0, 0, 0, 0)",
@@ -3300,13 +3315,13 @@
      "paint": [
       {
        "node": "a.framer-0phDM.framer-npPic",
-       "size": "180.7x48.0",
+       "size": "179.0x48.0",
        "bg": "rgb(68, 64, 63)",
        "radius": "8px"
       },
       {
        "node": "a::after.framer-0phDM.framer-npPic",
-       "size": "180.703pxx48px",
+       "size": "179pxx48px",
        "border": "T:1px solid rgba(0, 0, 0, 0) | R:1px solid rgba(0, 0, 0, 0) | B:1px solid rgba(0, 0, 0, 0) | L:1px solid rgba(0, 0, 0, 0)",
        "radius": "8px"
       },
@@ -3318,13 +3333,13 @@
       },
       {
        "node": "div.framer-144aqy4",
-       "size": "196.7x196.7",
+       "size": "195.0x195.0",
        "bg": "rgb(82, 76, 74)",
        "radius": "999px"
       },
       {
        "node": "div.framer-e7hcqw",
-       "size": "196.7x196.7",
+       "size": "195.0x195.0",
        "bg": "rgb(77, 72, 70)",
        "radius": "999px"
       }
@@ -3338,12 +3353,12 @@
      },
      "crop": "components/crops/cta-dark-pressed.png",
      "via": "CDP forcePseudoState :active:hover",
-     "run": "2026-11-12"
+     "run": "2026-11-16"
     }
    },
    "page": "home",
    "view": "desktop",
-   "run": "2026-11-12",
+   "run": "2026-11-16",
    "url": "https://www.chargetrip.com/",
    "title": "Dark CTA",
    "group": "Home",
@@ -3406,7 +3421,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "rgb(38, 35, 34)",
       "outlineOffset": "0px",
@@ -3434,12 +3449,12 @@
      },
      "crop": "components/crops/section-title-default.png",
      "via": "at rest",
-     "run": "2026-11-12"
+     "run": "2026-11-16"
     }
    },
    "page": "home",
    "view": "desktop",
-   "run": "2026-11-12",
+   "run": "2026-11-16",
    "url": "https://www.chargetrip.com/",
    "title": "Section title",
    "group": "Home",
@@ -7802,7 +7817,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "oklch(0.2591 0.0049 39.4)",
       "outlineOffset": "0px",
@@ -7839,13 +7854,13 @@
      ],
      "crop": "components/crops/signin-h1-default.png",
      "via": "at rest",
-     "run": "2026-11-12"
+     "run": "2026-11-16"
     }
    },
    "page": "signin",
    "view": "desktop",
-   "run": "2026-11-12",
-   "url": "https://www.chargetrip.comhttps://account.chargetrip.io/sign-in",
+   "run": "2026-11-16",
+   "url": "https://account.chargetrip.io/sign-in",
    "title": "Sign-in title",
    "group": "Sign-in page (boundary)",
    "desc": "\"Sign in to your account.\" in 48px Cirka.",
@@ -7956,7 +7971,7 @@
      },
      "crop": "components/crops/signin-input-default.png",
      "via": "at rest",
-     "run": "2026-11-12"
+     "run": "2026-11-16"
     },
     "focused": {
      "tag": "input",
@@ -8051,7 +8066,7 @@
        "node": "div.input-form-control.will-change-color",
        "outline": "0px solid oklch(0.4444 0.0105 44.76)",
        "radius": "12px",
-       "bg": "oklab(0.9492 0.0000542435 0.0110999)"
+       "bg": "oklab(0.9492 0.0000542448 0.0110999)"
       }
      ],
      "placeholder": {
@@ -8061,7 +8076,7 @@
      },
      "crop": "components/crops/signin-input-focused.png",
      "via": "clicked into the field",
-     "run": "2026-11-12"
+     "run": "2026-11-16"
     },
     "filled": {
      "tag": "input",
@@ -8172,8 +8187,8 @@
    },
    "page": "signin",
    "view": "desktop",
-   "run": "2026-11-12",
-   "url": "https://www.chargetrip.comhttps://account.chargetrip.io/sign-in",
+   "run": "2026-11-16",
+   "url": "https://account.chargetrip.io/sign-in",
    "title": "E-mail field",
    "group": "Sign-in page (boundary)",
    "desc": "The E-mail-address field on the sign-in card; filled with sample text then deleted, Continue never pressed.",
@@ -8182,10 +8197,232 @@
   "signin-continue": {
    "states": {
     "default": {
-     "error": "locator.evaluate: Timeout 8000ms exceeded.\nCall log:\n  - waiting for locator('button').filter({ hasText: /continue/i }).filter({ visible: true }).first().filter({ visible: true }).first().filter({ vis"
+     "tag": "button",
+     "classes": "ct-link base-button relative inline-flex",
+     "text": "Continue",
+     "rect": {
+      "x": 56,
+      "y": 328,
+      "w": 384,
+      "h": 40
+     },
+     "style": {
+      "display": "flex",
+      "position": "relative",
+      "boxSizing": "border-box",
+      "width": "384px",
+      "height": "40px",
+      "minWidth": "auto",
+      "maxWidth": "none",
+      "minHeight": "auto",
+      "paddingTop": "0px",
+      "paddingRight": "12px",
+      "paddingBottom": "0px",
+      "paddingLeft": "12px",
+      "marginTop": "0px",
+      "marginRight": "0px",
+      "marginBottom": "0px",
+      "marginLeft": "0px",
+      "gap": "normal 8px",
+      "rowGap": "normal",
+      "columnGap": "8px",
+      "flexDirection": "row",
+      "alignItems": "center",
+      "justifyContent": "center",
+      "gridTemplateColumns": "none",
+      "borderTopWidth": "2px",
+      "borderTopStyle": "solid",
+      "borderTopColor": "rgba(0, 0, 0, 0)",
+      "borderRightWidth": "2px",
+      "borderRightStyle": "solid",
+      "borderRightColor": "rgba(0, 0, 0, 0)",
+      "borderBottomWidth": "2px",
+      "borderBottomStyle": "solid",
+      "borderBottomColor": "rgba(0, 0, 0, 0)",
+      "borderLeftWidth": "2px",
+      "borderLeftStyle": "solid",
+      "borderLeftColor": "rgba(0, 0, 0, 0)",
+      "borderTopLeftRadius": "12px",
+      "borderTopRightRadius": "12px",
+      "borderBottomRightRadius": "12px",
+      "borderBottomLeftRadius": "12px",
+      "backgroundColor": "oklch(0.2591 0.0049 39.4)",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "backdropFilter": "none",
+      "outlineWidth": "3px",
+      "outlineStyle": "none",
+      "outlineColor": "oklch(0.5152 0.0118 58.04)",
+      "outlineOffset": "1px",
+      "fontFamily": "Geist, sans-serif",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "lineHeight": "20px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "oklch(0.995 0.0034 67.78)",
+      "textDecorationLine": "none",
+      "textDecorationColor": "oklch(0.995 0.0034 67.78)",
+      "textDecorationThickness": "auto",
+      "textUnderlineOffset": "auto",
+      "transitionProperty": "color, background-color, border-color, scale",
+      "transitionDuration": "0.15s",
+      "transitionTimingFunction": "cubic-bezier(0.2, 0, 0, 1)",
+      "transitionDelay": "0s",
+      "cursor": "pointer",
+      "opacity": "1",
+      "transform": "none",
+      "overflow": "visible",
+      "zIndex": "auto",
+      "top": "0px"
+     },
+     "textStyle": {
+      "node": "span.font-medium",
+      "text": "Continue",
+      "fontFamily": "Geist, sans-serif",
+      "fontSize": "14px",
+      "lineHeight": "20px",
+      "fontWeight": "500",
+      "letterSpacing": "normal",
+      "color": "oklch(0.995 0.0034 67.78)",
+      "textDecorationLine": "none",
+      "textTransform": "none"
+     },
+     "paint": [
+      {
+       "node": "button.ct-link.base-button",
+       "size": "384.0x40.0",
+       "border": "T:2px solid rgba(0, 0, 0, 0) | R:2px solid rgba(0, 0, 0, 0) | B:2px solid rgba(0, 0, 0, 0) | L:2px solid rgba(0, 0, 0, 0)",
+       "bg": "oklch(0.2591 0.0049 39.4)",
+       "radius": "12px"
+      }
+     ],
+     "ancestors": [
+      {
+       "up": 3,
+       "node": "div.card.rounded-4xl",
+       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklch(0.9046 0.0199 87.52 / 0.32) 0px 0px 0px 1px, oklch(0 0 0 / 0.16) 0px 0px 1px 0px",
+       "radius": "20px",
+       "bg": "oklch(0.997 0.0041 91.45)"
+      }
+     ],
+     "crop": "components/crops/signin-continue-default.png",
+     "via": "at rest",
+     "run": "2026-11-16"
     },
     "hover": {
-     "error": "locator.hover: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator('button').filter({ hasText: /continue/i }).filter({ visible: true }).first().filter({ visible: true }).first().filter({ visibl"
+     "tag": "button",
+     "classes": "ct-link base-button relative inline-flex",
+     "text": "Continue",
+     "rect": {
+      "x": 56,
+      "y": 328,
+      "w": 384,
+      "h": 40
+     },
+     "style": {
+      "display": "flex",
+      "position": "relative",
+      "boxSizing": "border-box",
+      "width": "384px",
+      "height": "40px",
+      "minWidth": "auto",
+      "maxWidth": "none",
+      "minHeight": "auto",
+      "paddingTop": "0px",
+      "paddingRight": "12px",
+      "paddingBottom": "0px",
+      "paddingLeft": "12px",
+      "marginTop": "0px",
+      "marginRight": "0px",
+      "marginBottom": "0px",
+      "marginLeft": "0px",
+      "gap": "normal 8px",
+      "rowGap": "normal",
+      "columnGap": "8px",
+      "flexDirection": "row",
+      "alignItems": "center",
+      "justifyContent": "center",
+      "gridTemplateColumns": "none",
+      "borderTopWidth": "2px",
+      "borderTopStyle": "solid",
+      "borderTopColor": "rgba(0, 0, 0, 0)",
+      "borderRightWidth": "2px",
+      "borderRightStyle": "solid",
+      "borderRightColor": "rgba(0, 0, 0, 0)",
+      "borderBottomWidth": "2px",
+      "borderBottomStyle": "solid",
+      "borderBottomColor": "rgba(0, 0, 0, 0)",
+      "borderLeftWidth": "2px",
+      "borderLeftStyle": "solid",
+      "borderLeftColor": "rgba(0, 0, 0, 0)",
+      "borderTopLeftRadius": "12px",
+      "borderTopRightRadius": "12px",
+      "borderBottomRightRadius": "12px",
+      "borderBottomLeftRadius": "12px",
+      "backgroundColor": "oklch(0.3751 0.0058 34.3)",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "backdropFilter": "none",
+      "outlineWidth": "3px",
+      "outlineStyle": "none",
+      "outlineColor": "oklch(0.5152 0.0118 58.04)",
+      "outlineOffset": "1px",
+      "fontFamily": "Geist, sans-serif",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "lineHeight": "20px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "oklch(0.995 0.0034 67.78)",
+      "textDecorationLine": "none",
+      "textDecorationColor": "oklch(0.995 0.0034 67.78)",
+      "textDecorationThickness": "auto",
+      "textUnderlineOffset": "auto",
+      "transitionProperty": "color, background-color, border-color, scale",
+      "transitionDuration": "0.15s",
+      "transitionTimingFunction": "cubic-bezier(0.2, 0, 0, 1)",
+      "transitionDelay": "0s",
+      "cursor": "pointer",
+      "opacity": "1",
+      "transform": "none",
+      "overflow": "visible",
+      "zIndex": "auto",
+      "top": "0px"
+     },
+     "textStyle": {
+      "node": "span.font-medium",
+      "text": "Continue",
+      "fontFamily": "Geist, sans-serif",
+      "fontSize": "14px",
+      "lineHeight": "20px",
+      "fontWeight": "500",
+      "letterSpacing": "normal",
+      "color": "oklch(0.995 0.0034 67.78)",
+      "textDecorationLine": "none",
+      "textTransform": "none"
+     },
+     "paint": [
+      {
+       "node": "button.ct-link.base-button",
+       "size": "384.0x40.0",
+       "border": "T:2px solid rgba(0, 0, 0, 0) | R:2px solid rgba(0, 0, 0, 0) | B:2px solid rgba(0, 0, 0, 0) | L:2px solid rgba(0, 0, 0, 0)",
+       "bg": "oklch(0.3751 0.0058 34.3)",
+       "radius": "12px"
+      }
+     ],
+     "ancestors": [
+      {
+       "up": 3,
+       "node": "div.card.rounded-4xl",
+       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklch(0.9046 0.0199 87.52 / 0.32) 0px 0px 0px 1px, oklch(0 0 0 / 0.16) 0px 0px 1px 0px",
+       "radius": "20px",
+       "bg": "oklch(0.997 0.0041 91.45)"
+      }
+     ],
+     "crop": "components/crops/signin-continue-hover.png",
+     "via": "mouse hover",
+     "run": "2026-11-16"
     },
     "focus-visible": {
      "tag": "button",
@@ -8300,7 +8537,7 @@
      ],
      "crop": "components/crops/signin-continue-focus-visible.png",
      "via": "Shift+Tab, Tab",
-     "run": "2026-11-12"
+     "run": "2026-11-16"
     },
     "pressed": {
      "tag": "button",
@@ -8352,11 +8589,11 @@
       "borderTopRightRadius": "12px",
       "borderBottomRightRadius": "12px",
       "borderBottomLeftRadius": "12px",
-      "backgroundColor": "oklch(0.8244 0.0077 80.72)",
+      "backgroundColor": "oklab(0.2591 0.00378639 0.00311018)",
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "oklch(0.5152 0.0118 58.04)",
       "outlineOffset": "1px",
@@ -8399,7 +8636,7 @@
        "node": "button.ct-link.base-button",
        "size": "372.5x38.8",
        "border": "T:2px solid rgba(0, 0, 0, 0) | R:2px solid rgba(0, 0, 0, 0) | B:2px solid rgba(0, 0, 0, 0) | L:2px solid rgba(0, 0, 0, 0)",
-       "bg": "oklch(0.8244 0.0077 80.72)",
+       "bg": "oklab(0.2591 0.00378639 0.00311018)",
        "radius": "12px"
       }
      ],
@@ -8414,13 +8651,13 @@
      ],
      "crop": "components/crops/signin-continue-pressed.png",
      "via": "CDP forcePseudoState :active:hover",
-     "run": "2026-11-12"
+     "run": "2026-11-16"
     }
    },
    "page": "signin",
    "view": "desktop",
-   "run": "2026-11-12",
-   "url": "https://www.chargetrip.comhttps://account.chargetrip.io/sign-in",
+   "run": "2026-11-16",
+   "url": "https://account.chargetrip.io/sign-in",
    "title": "Continue button",
    "group": "Sign-in page (boundary)",
    "desc": "The dark Continue button; measured in all non-submitting states, never pressed for real.",
@@ -8482,7 +8719,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "oklch(0.5152 0.0118 58.04)",
       "outlineOffset": "1px",
@@ -8540,7 +8777,7 @@
      ],
      "crop": "components/crops/signin-create-default.png",
      "via": "at rest",
-     "run": "2026-11-12"
+     "run": "2026-11-16"
     },
     "hover": {
      "tag": "a",
@@ -8592,11 +8829,11 @@
       "borderTopRightRadius": "12px",
       "borderBottomRightRadius": "12px",
       "borderBottomLeftRadius": "12px",
-      "backgroundColor": "oklch(0.9162 0.0182 89.36)",
+      "backgroundColor": "oklab(0.9492 0.0000542448 0.0110999)",
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "oklch(0.5152 0.0118 58.04)",
       "outlineOffset": "1px",
@@ -8639,7 +8876,7 @@
        "node": "a.ct-link.base-button",
        "size": "384.0x40.0",
        "border": "T:2px solid rgba(0, 0, 0, 0) | R:2px solid rgba(0, 0, 0, 0) | B:2px solid rgba(0, 0, 0, 0) | L:2px solid rgba(0, 0, 0, 0)",
-       "bg": "oklch(0.9162 0.0182 89.36)",
+       "bg": "oklab(0.9492 0.0000542448 0.0110999)",
        "radius": "12px"
       }
      ],
@@ -8654,7 +8891,7 @@
      ],
      "crop": "components/crops/signin-create-hover.png",
      "via": "mouse hover",
-     "run": "2026-11-12"
+     "run": "2026-11-16"
     },
     "focus-visible": {
      "tag": "a",
@@ -8769,7 +9006,7 @@
      ],
      "crop": "components/crops/signin-create-focus-visible.png",
      "via": "Shift+Tab, Tab",
-     "run": "2026-11-12"
+     "run": "2026-11-16"
     },
     "pressed": {
      "tag": "a",
@@ -8821,11 +9058,11 @@
       "borderTopRightRadius": "12px",
       "borderBottomRightRadius": "12px",
       "borderBottomLeftRadius": "12px",
-      "backgroundColor": "oklch(0.9046 0.0199 87.52)",
+      "backgroundColor": "oklab(0.9492 0.0000542448 0.0110999)",
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "oklch(0.5152 0.0118 58.04)",
       "outlineOffset": "1px",
@@ -8868,7 +9105,7 @@
        "node": "a.ct-link.base-button",
        "size": "372.5x38.8",
        "border": "T:2px solid rgba(0, 0, 0, 0) | R:2px solid rgba(0, 0, 0, 0) | B:2px solid rgba(0, 0, 0, 0) | L:2px solid rgba(0, 0, 0, 0)",
-       "bg": "oklch(0.9046 0.0199 87.52)",
+       "bg": "oklab(0.9492 0.0000542448 0.0110999)",
        "radius": "12px"
       }
      ],
@@ -8883,13 +9120,13 @@
      ],
      "crop": "components/crops/signin-create-pressed.png",
      "via": "CDP forcePseudoState :active:hover",
-     "run": "2026-11-12"
+     "run": "2026-11-16"
     }
    },
    "page": "signin",
    "view": "desktop",
-   "run": "2026-11-12",
-   "url": "https://www.chargetrip.comhttps://account.chargetrip.io/sign-in",
+   "run": "2026-11-16",
+   "url": "https://account.chargetrip.io/sign-in",
    "title": "Create-account button",
    "group": "Sign-in page (boundary)",
    "desc": "The secondary Create-account action; never followed.",
@@ -8951,7 +9188,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "oklch(0.2591 0.0049 39.4)",
       "outlineOffset": "0px",
@@ -8979,13 +9216,13 @@
      },
      "crop": "components/crops/signin-trust-default.png",
      "via": "at rest",
-     "run": "2026-11-12"
+     "run": "2026-11-16"
     }
    },
    "page": "signin",
    "view": "desktop",
-   "run": "2026-11-12",
-   "url": "https://www.chargetrip.comhttps://account.chargetrip.io/sign-in",
+   "run": "2026-11-16",
+   "url": "https://account.chargetrip.io/sign-in",
    "title": "Trust row",
    "group": "Sign-in page (boundary)",
    "desc": "A check-marked reassurance row under the hero panel.",
@@ -9047,7 +9284,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "rgb(0, 0, 0)",
       "outlineOffset": "0px",
@@ -9100,7 +9337,7 @@
       },
       {
        "node": "a.framer-1vyggok.framer-1oqc6h7",
-       "size": "97.8x32.0",
+       "size": "98.0x32.0",
        "bg": "rgb(239, 237, 229)",
        "radius": "16px"
       },
@@ -9111,19 +9348,19 @@
       },
       {
        "node": "a.framer-0phDM.framer-npPic",
-       "size": "105.8x40.0",
+       "size": "106.0x40.0",
        "bg": "rgb(68, 64, 63)",
        "radius": "8px"
       },
       {
        "node": "div.framer-144aqy4",
-       "size": "121.8x121.8",
+       "size": "122.0x122.0",
        "bg": "rgb(82, 76, 74)",
        "radius": "999px"
       },
       {
        "node": "div.framer-e7hcqw",
-       "size": "121.8x121.8",
+       "size": "122.0x122.0",
        "bg": "rgb(77, 72, 70)",
        "radius": "999px"
       },
@@ -9142,12 +9379,12 @@
      },
      "crop": "components/crops/footer-default.png",
      "via": "at rest",
-     "run": "2026-11-12"
+     "run": "2026-11-16"
     }
    },
    "page": "home",
    "view": "desktop",
-   "run": "2026-11-12",
+   "run": "2026-11-16",
    "url": "https://www.chargetrip.com/",
    "title": "Footer",
    "group": "Footer",
@@ -9163,7 +9400,7 @@
      "rect": {
       "x": 88,
       "y": 514.6,
-      "w": 63.53,
+      "w": 65,
       "h": 21
      },
      "style": {
@@ -9210,7 +9447,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "rgb(38, 35, 34)",
       "outlineOffset": "0px",
@@ -9238,7 +9475,7 @@
      },
      "crop": "components/crops/footer-link-default.png",
      "via": "at rest",
-     "run": "2026-11-12"
+     "run": "2026-11-16"
     },
     "hover": {
      "tag": "a",
@@ -9247,7 +9484,7 @@
      "rect": {
       "x": 88,
       "y": 514.6,
-      "w": 63.53,
+      "w": 65,
       "h": 21
      },
      "style": {
@@ -9294,7 +9531,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "rgb(249, 77, 0)",
       "outlineOffset": "0px",
@@ -9322,7 +9559,7 @@
      },
      "crop": "components/crops/footer-link-hover.png",
      "via": "mouse hover",
-     "run": "2026-11-12"
+     "run": "2026-11-16"
     },
     "focus-visible": {
      "tag": "a",
@@ -9331,7 +9568,7 @@
      "rect": {
       "x": 88,
       "y": 514.6,
-      "w": 63.53,
+      "w": 65,
       "h": 21
      },
      "style": {
@@ -9380,7 +9617,7 @@
       "backdropFilter": "none",
       "outlineWidth": "1px",
       "outlineStyle": "auto",
-      "outlineColor": "rgb(0, 95, 204)",
+      "outlineColor": "rgb(16, 16, 16)",
       "outlineOffset": "1px",
       "fontFamily": "\"Geist Variable\", \"Geist Placeholder\", sans-serif",
       "fontSize": "16px",
@@ -9407,13 +9644,13 @@
      "paint": [
       {
        "node": "a.framer-text.framer-styles-preset-zjjg3u",
-       "size": "63.5x21.0",
-       "outline": "1px auto rgb(0, 95, 204) offset 1px"
+       "size": "65.0x21.0",
+       "outline": "1px auto rgb(16, 16, 16) offset 1px"
       }
      ],
      "crop": "components/crops/footer-link-focus-visible.png",
      "via": "Shift+Tab, Tab",
-     "run": "2026-11-12"
+     "run": "2026-11-16"
     },
     "pressed": {
      "tag": "a",
@@ -9422,7 +9659,7 @@
      "rect": {
       "x": 88,
       "y": 514.6,
-      "w": 63.53,
+      "w": 65,
       "h": 21
      },
      "style": {
@@ -9469,7 +9706,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "rgb(249, 77, 0)",
       "outlineOffset": "0px",
@@ -9497,12 +9734,12 @@
      },
      "crop": "components/crops/footer-link-pressed.png",
      "via": "CDP forcePseudoState :active:hover",
-     "run": "2026-11-12"
+     "run": "2026-11-16"
     }
    },
    "page": "home",
    "view": "desktop",
-   "run": "2026-11-12",
+   "run": "2026-11-16",
    "url": "https://www.chargetrip.com/",
    "title": "Footer link",
    "group": "Footer",
@@ -9517,7 +9754,7 @@
      "rect": {
       "x": 743,
       "y": 652.2,
-      "w": 62.13,
+      "w": 61,
       "h": 21
      },
      "style": {
@@ -9564,7 +9801,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "rgb(38, 35, 34)",
       "outlineOffset": "0px",
@@ -9592,7 +9829,7 @@
      },
      "crop": "components/crops/footer-social-default.png",
      "via": "at rest",
-     "run": "2026-11-12"
+     "run": "2026-11-16"
     },
     "hover": {
      "tag": "a",
@@ -9601,7 +9838,7 @@
      "rect": {
       "x": 743,
       "y": 652.2,
-      "w": 62.13,
+      "w": 61,
       "h": 21
      },
      "style": {
@@ -9648,7 +9885,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "rgb(249, 77, 0)",
       "outlineOffset": "0px",
@@ -9676,7 +9913,7 @@
      },
      "crop": "components/crops/footer-social-hover.png",
      "via": "mouse hover",
-     "run": "2026-11-12"
+     "run": "2026-11-16"
     },
     "focus-visible": {
      "tag": "a",
@@ -9685,7 +9922,7 @@
      "rect": {
       "x": 743,
       "y": 652.2,
-      "w": 62.13,
+      "w": 61,
       "h": 21
      },
      "style": {
@@ -9734,7 +9971,7 @@
       "backdropFilter": "none",
       "outlineWidth": "1px",
       "outlineStyle": "auto",
-      "outlineColor": "rgb(0, 95, 204)",
+      "outlineColor": "rgb(16, 16, 16)",
       "outlineOffset": "1px",
       "fontFamily": "\"Geist Variable\", \"Geist Placeholder\", sans-serif",
       "fontSize": "16px",
@@ -9761,13 +9998,13 @@
      "paint": [
       {
        "node": "a.framer-text.framer-styles-preset-zjjg3u",
-       "size": "62.1x21.0",
-       "outline": "1px auto rgb(0, 95, 204) offset 1px"
+       "size": "61.0x21.0",
+       "outline": "1px auto rgb(16, 16, 16) offset 1px"
       }
      ],
      "crop": "components/crops/footer-social-focus-visible.png",
      "via": "Shift+Tab, Tab",
-     "run": "2026-11-12"
+     "run": "2026-11-16"
     },
     "pressed": {
      "tag": "a",
@@ -9776,7 +10013,7 @@
      "rect": {
       "x": 743,
       "y": 652.2,
-      "w": 62.13,
+      "w": 61,
       "h": 21
      },
      "style": {
@@ -9823,7 +10060,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "rgb(249, 77, 0)",
       "outlineOffset": "0px",
@@ -9851,12 +10088,12 @@
      },
      "crop": "components/crops/footer-social-pressed.png",
      "via": "CDP forcePseudoState :active:hover",
-     "run": "2026-11-12"
+     "run": "2026-11-16"
     }
    },
    "page": "home",
    "view": "desktop",
-   "run": "2026-11-12",
+   "run": "2026-11-16",
    "url": "https://www.chargetrip.com/",
    "title": "Social link",
    "group": "Footer",
@@ -9871,7 +10108,7 @@
      "rect": {
       "x": 524.7,
       "y": 583.4,
-      "w": 55.28,
+      "w": 56,
       "h": 21
      },
      "style": {
@@ -9918,7 +10155,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "rgb(38, 35, 34)",
       "outlineOffset": "0px",
@@ -9946,7 +10183,7 @@
      },
      "crop": "components/crops/newsletter-cta-default.png",
      "via": "at rest",
-     "run": "2026-11-12"
+     "run": "2026-11-16"
     },
     "hover": {
      "tag": "a",
@@ -9955,7 +10192,7 @@
      "rect": {
       "x": 524.7,
       "y": 583.4,
-      "w": 55.28,
+      "w": 56,
       "h": 21
      },
      "style": {
@@ -10002,7 +10239,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "rgb(249, 77, 0)",
       "outlineOffset": "0px",
@@ -10030,7 +10267,7 @@
      },
      "crop": "components/crops/newsletter-cta-hover.png",
      "via": "mouse hover",
-     "run": "2026-11-12"
+     "run": "2026-11-16"
     },
     "focus-visible": {
      "tag": "a",
@@ -10039,7 +10276,7 @@
      "rect": {
       "x": 524.7,
       "y": 583.4,
-      "w": 55.28,
+      "w": 56,
       "h": 21
      },
      "style": {
@@ -10088,7 +10325,7 @@
       "backdropFilter": "none",
       "outlineWidth": "1px",
       "outlineStyle": "auto",
-      "outlineColor": "rgb(0, 95, 204)",
+      "outlineColor": "rgb(16, 16, 16)",
       "outlineOffset": "1px",
       "fontFamily": "\"Geist Variable\", \"Geist Placeholder\", sans-serif",
       "fontSize": "16px",
@@ -10115,13 +10352,13 @@
      "paint": [
       {
        "node": "a.framer-text.framer-styles-preset-zjjg3u",
-       "size": "55.3x21.0",
-       "outline": "1px auto rgb(0, 95, 204) offset 1px"
+       "size": "56.0x21.0",
+       "outline": "1px auto rgb(16, 16, 16) offset 1px"
       }
      ],
      "crop": "components/crops/newsletter-cta-focus-visible.png",
      "via": "Shift+Tab, Tab",
-     "run": "2026-11-12"
+     "run": "2026-11-16"
     },
     "pressed": {
      "tag": "a",
@@ -10130,7 +10367,7 @@
      "rect": {
       "x": 524.7,
       "y": 583.4,
-      "w": 55.28,
+      "w": 56,
       "h": 21
      },
      "style": {
@@ -10177,7 +10414,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "rgb(249, 77, 0)",
       "outlineOffset": "0px",
@@ -10205,12 +10442,12 @@
      },
      "crop": "components/crops/newsletter-cta-pressed.png",
      "via": "CDP forcePseudoState :active:hover",
-     "run": "2026-11-12"
+     "run": "2026-11-16"
     }
    },
    "page": "home",
    "view": "desktop",
-   "run": "2026-11-12",
+   "run": "2026-11-16",
    "url": "https://www.chargetrip.com/",
    "title": "Newsletter CTA",
    "group": "Footer",
@@ -10273,7 +10510,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "rgb(0, 0, 0)",
       "outlineOffset": "0px",
@@ -10321,12 +10558,12 @@
      ],
      "crop": "components/crops/status-pill-default.png",
      "via": "at rest",
-     "run": "2026-11-12"
+     "run": "2026-11-16"
     }
    },
    "page": "home",
    "view": "desktop",
-   "run": "2026-11-12",
+   "run": "2026-11-16",
    "url": "https://www.chargetrip.com/",
    "title": "Status pill",
    "group": "Footer",
@@ -10337,27 +10574,27 @@
    "states": {
     "default": {
      "tag": "div",
-     "classes": "framer-1l0tvyf",
-     "text": "100 75 50 25 0",
+     "classes": "framer-j22163",
+     "text": "Sign in No-code Get ready-made solutions API Build your own custom solutions Int",
      "rect": {
-      "x": 55.7,
-      "y": 758.6,
-      "w": 272,
-      "h": 171
+      "x": 0,
+      "y": 8,
+      "w": 390,
+      "h": 64
      },
      "style": {
       "display": "flex",
-      "position": "relative",
+      "position": "absolute",
       "boxSizing": "border-box",
-      "width": "272px",
-      "height": "171px",
-      "minWidth": "auto",
-      "maxWidth": "none",
-      "minHeight": "auto",
+      "width": "390px",
+      "height": "64px",
+      "minWidth": "0px",
+      "maxWidth": "1568px",
+      "minHeight": "0px",
       "paddingTop": "0px",
-      "paddingRight": "0px",
+      "paddingRight": "8px",
       "paddingBottom": "0px",
-      "paddingLeft": "0px",
+      "paddingLeft": "8px",
       "marginTop": "0px",
       "marginRight": "0px",
       "marginBottom": "0px",
@@ -10389,7 +10626,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "rgb(0, 0, 0)",
       "outlineOffset": "0px",
@@ -10412,45 +10649,116 @@
       "opacity": "1",
       "transform": "none",
       "overflow": "hidden",
-      "zIndex": "auto",
+      "zIndex": "2",
       "top": "0px"
      },
      "textStyle": {
-      "node": "p.framer-text.framer-styles-preset-1sz90s2",
-      "text": "100",
-      "fontFamily": "Geist, \"Geist Placeholder\", sans-serif",
-      "fontSize": "12px",
-      "lineHeight": "15px",
-      "fontWeight": "500",
+      "node": "p.framer-text.framer-styles-preset-ooof01",
+      "text": "Sign in",
+      "fontFamily": "\"Geist Variable\", \"Geist Placeholder\", sans-serif",
+      "fontSize": "18px",
+      "lineHeight": "28.8px",
+      "fontWeight": "400",
       "letterSpacing": "normal",
-      "color": "rgb(135, 127, 120)",
+      "color": "rgb(38, 35, 34)",
       "textDecorationLine": "none",
       "textTransform": "none"
      },
-     "ancestors": [
+     "paint": [
       {
-       "up": 1,
-       "node": "div.framer-66rowr",
-       "shadow": "rgba(255, 255, 251, 0.16) 0px 0px 0px 4px, rgba(0, 0, 0, 0.4) 0px 25px 50px -12px",
-       "radius": "12px",
-       "bg": "rgb(255, 255, 251)"
+       "node": "div.framer-1eg8t2t",
+       "size": "374.0x64.0",
+       "bg": "rgba(252, 252, 251, 0)",
+       "radius": "12px"
+      },
+      {
+       "node": "div::after.framer-1eg8t2t",
+       "size": "374pxx64px",
+       "border": "B:1px solid rgb(239, 237, 229)",
+       "radius": "12px"
+      },
+      {
+       "node": "a::after.framer-SWyCz.framer-i5yBN",
+       "size": "83pxx40px",
+       "border": "T:1px solid rgb(38, 35, 34) | R:1px solid rgb(38, 35, 34) | B:1px solid rgb(38, 35, 34) | L:1px solid rgb(38, 35, 34)",
+       "radius": "8px"
+      },
+      {
+       "node": "div.framer-fp75hx",
+       "size": "40.0x40.0",
+       "bg": "rgb(7, 28, 31)",
+       "radius": "8px"
+      },
+      {
+       "node": "div.framer-dy9a3h",
+       "size": "16.0x16.0",
+       "bgImage": "url(data:…)%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 stroke-dasharray=%22%22></path></svg>\")"
+      },
+      {
+       "node": "div.framer-12qdk4p",
+       "size": "12.0x10.0",
+       "bgImage": "url(data:…)%22></path></svg>\")"
+      },
+      {
+       "node": "div::after.framer-11xip4",
+       "size": "374pxx314px",
+       "border": "B:1px solid rgb(239, 237, 229)"
+      },
+      {
+       "node": "a.framer-39qt1e.framer-152olpk",
+       "size": "350.0x86.0",
+       "bg": "rgb(249, 77, 0)",
+       "radius": "8px"
+      },
+      {
+       "node": "a.framer-2ndwuz.framer-152olpk",
+       "size": "350.0x86.0",
+       "bg": "rgb(7, 28, 31)",
+       "radius": "8px"
+      },
+      {
+       "node": "a.framer-vb2o8e.framer-152olpk",
+       "size": "350.0x86.0",
+       "bg": "rgb(239, 237, 229)",
+       "radius": "8px"
+      },
+      {
+       "node": "div.framer-1sy0dfs",
+       "size": "350.0x338.0",
+       "bg": "rgb(239, 237, 229)",
+       "radius": "12px"
+      },
+      {
+       "node": "div::after.framer-x2zq4f",
+       "size": "350pxx58px",
+       "border": "B:1px solid rgb(221, 217, 203)"
+      },
+      {
+       "node": "div.framer-1m7ojrj",
+       "size": "16.0x16.0",
+       "bgImage": "url(data:…)%22 stroke-linecap=%22square%22 stroke-linejoin=%22round%22 stroke-dasharray=%22%22></path></svg>\")"
+      },
+      {
+       "node": "div.framer-1m7ojrj",
+       "size": "16.0x16.0",
+       "bgImage": "url(data:…)%22 stroke-linecap=%22square%22 stroke-linejoin=%22round%22 stroke-dasharray=%22%22></path></svg>\")"
       }
      ],
      "icon": {
-      "w": 1,
-      "h": 171,
+      "w": 106,
+      "h": 24,
       "fill": "rgb(0, 0, 0)",
       "stroke": "none",
       "color": "rgb(0, 0, 0)"
      },
-     "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
+     "crop": "components/crops/m-header-default.png",
      "via": "at rest",
-     "run": "2026-11-12"
+     "run": "2026-11-16"
     }
    },
    "page": "home",
    "view": "mobile",
-   "run": "2026-11-12",
+   "run": "2026-11-16",
    "url": "https://www.chargetrip.com/",
    "title": "Mobile header",
    "group": "Mobile (390 wide)",
@@ -10513,7 +10821,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "rgb(0, 0, 0)",
       "outlineOffset": "0px",
@@ -10559,12 +10867,12 @@
      ],
      "crop": "components/crops/m-menu-button-default.png",
      "via": "at rest",
-     "run": "2026-11-12"
+     "run": "2026-11-16"
     }
    },
    "page": "home",
    "view": "mobile",
-   "run": "2026-11-12",
+   "run": "2026-11-16",
    "url": "https://www.chargetrip.com/",
    "title": "Menu button",
    "group": "Mobile (390 wide)",
@@ -10574,21 +10882,21 @@
   "m-menu-open": {
    "states": {
     "default": {
-     "tag": "body",
-     "classes": "",
-     "text": "A driver's route plan is your revenue plan. Every charge decision has a direct i",
+     "tag": "div",
+     "classes": "framer-qrgq69-container",
+     "text": "Planned maintenance - 08/04/26 - 7.00PM - 10.00PM (CET). Sign in No-code Get rea",
      "rect": {
       "x": 0,
-      "y": 0,
+      "y": 8,
       "w": 390,
-      "h": 8758.94
+      "h": 828
      },
      "style": {
       "display": "block",
-      "position": "static",
+      "position": "fixed",
       "boxSizing": "border-box",
       "width": "390px",
-      "height": "8758.94px",
+      "height": "828px",
       "minWidth": "0px",
       "maxWidth": "none",
       "minHeight": "0px",
@@ -10623,11 +10931,11 @@
       "borderTopRightRadius": "0px",
       "borderBottomRightRadius": "0px",
       "borderBottomLeftRadius": "0px",
-      "backgroundColor": "rgb(239, 237, 229)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "rgb(0, 0, 0)",
       "outlineOffset": "0px",
@@ -10650,183 +10958,184 @@
       "opacity": "1",
       "transform": "none",
       "overflow": "visible",
-      "zIndex": "auto",
-      "top": "auto"
+      "zIndex": "10",
+      "top": "8px"
      },
      "textStyle": {
-      "node": "h1.framer-text",
-      "text": "A driver's route plan is your revenue pl",
-      "fontFamily": "\"Cirka Regular\", \"Cirka Regular Placeholder\", sans-serif",
-      "fontSize": "56px",
-      "lineHeight": "52px",
+      "node": "p.framer-text.framer-styles-preset-ldb0w0",
+      "text": "Planned maintenance - 08/04/26 - 7.00PM ",
+      "fontFamily": "\"Geist Regular\", \"Geist Regular Placeholder\", sans-serif",
+      "fontSize": "16px",
+      "lineHeight": "24px",
       "fontWeight": "400",
-      "letterSpacing": "-0.2px",
-      "color": "rgb(244, 243, 242)",
+      "letterSpacing": "normal",
+      "color": "rgb(255, 255, 251)",
       "textDecorationLine": "none",
       "textTransform": "none"
      },
      "paint": [
       {
-       "node": "body",
-       "size": "390.0x8758.9",
-       "bg": "rgb(239, 237, 229)"
+       "node": "div.framer-1yyuo68",
+       "size": "390.0x828.0",
+       "bg": "rgba(0, 0, 0, 0.2)"
       },
       {
-       "node": "div.framer-txXah.framer-SVSxo",
-       "size": "390.0x8758.9",
-       "bg": "rgb(239, 237, 229)"
+       "node": "div.framer-e2feec",
+       "size": "373.9x828.0",
+       "bg": "rgb(255, 255, 251)",
+       "shadow": "rgba(0, 0, 0, 0.12) 0px 0px 40px 0px",
+       "radius": "3.20856% / 1.44928%"
       },
       {
-       "node": "div.framer-pl228f",
-       "size": "374.0x1092.6",
-       "bgImage": "radial-gradient(103% 223% at 49.2% 170.8%, rgb(56, 49, 47) 35%, rgb(38, 35, 33) 67.3371%)",
-       "radius": "20px"
+       "node": "div.framer-10hg0ls",
+       "size": "479.0x40.0",
+       "bg": "rgb(38, 35, 34)",
+       "radius": "0px 0px 12px 12px"
       },
       {
-       "node": "a.framer-0phDM.framer-npPic",
-       "size": "147.2x48.0",
+       "node": "div.framer-1eg8t2t",
+       "size": "374.0x64.0",
+       "bg": "rgb(255, 255, 251)",
+       "radius": "12px 12px 0px 0px"
+      },
+      {
+       "node": "div::after.framer-1eg8t2t",
+       "size": "374pxx64px",
+       "border": "B:1px solid rgb(239, 237, 229)",
+       "radius": "12px 12px 0px 0px"
+      },
+      {
+       "node": "a::after.framer-SWyCz.framer-i5yBN",
+       "size": "83pxx40px",
+       "border": "T:1px solid rgb(38, 35, 34) | R:1px solid rgb(38, 35, 34) | B:1px solid rgb(38, 35, 34) | L:1px solid rgb(38, 35, 34)",
+       "radius": "8px"
+      },
+      {
+       "node": "div.framer-fp75hx",
+       "size": "40.0x40.0",
+       "bg": "rgb(38, 35, 34)",
+       "radius": "8px"
+      },
+      {
+       "node": "div.framer-dy9a3h",
+       "size": "16.0x16.0",
+       "bgImage": "url(data:…)%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 stroke-dasharray=%22%22></path></svg>\")"
+      },
+      {
+       "node": "div.framer-12qdk4p",
+       "size": "12.0x10.0",
+       "bgImage": "url(data:…)%22></path></svg>\")"
+      },
+      {
+       "node": "div::after.framer-11xip4",
+       "size": "374pxx314px",
+       "border": "B:1px solid rgb(239, 237, 229)"
+      },
+      {
+       "node": "a.framer-39qt1e.framer-152olpk",
+       "size": "350.0x86.0",
        "bg": "rgb(249, 77, 0)",
        "radius": "8px"
       },
       {
-       "node": "div.framer-144aqy4",
-       "size": "163.2x163.2",
-       "bg": "rgb(252, 101, 45)",
-       "radius": "999px"
+       "node": "a.framer-2ndwuz.framer-152olpk",
+       "size": "350.0x86.0",
+       "bg": "rgb(7, 28, 31)",
+       "radius": "8px"
       },
       {
-       "node": "div.framer-e7hcqw",
-       "size": "163.2x163.2",
-       "bg": "rgb(221, 59, 0)",
-       "radius": "999px"
-      },
-      {
-       "node": "div.framer-66rowr",
-       "size": "320.0x311.0",
-       "bg": "rgb(255, 255, 251)",
-       "shadow": "rgba(255, 255, 251, 0.16) 0px 0px 0px 4px, rgba(0, 0, 0, 0.4) 0px 25px 50px -12px",
-       "radius": "12px"
-      },
-      {
-       "node": "div.framer-13tegad",
-       "size": "272.0x32.0",
+       "node": "a.framer-vb2o8e.framer-152olpk",
+       "size": "350.0x86.0",
        "bg": "rgb(239, 237, 229)",
        "radius": "8px"
       },
       {
-       "node": "div.framer-p2nrne",
-       "size": "134.0x28.0",
-       "bg": "rgb(255, 255, 251)",
-       "radius": "6px"
-      },
-      {
-       "node": "div.framer-1r4qbaw",
-       "size": "171.0x40.0",
-       "bg": "rgb(68, 64, 63)",
-       "radius": "8px"
-      },
-      {
-       "node": "div.framer-GoXp7.framer-k91t78",
-       "size": "153.0x24.0",
-       "bg": "rgb(244, 243, 242)"
-      },
-      {
-       "node": "div.framer-IBPvv.framer-um07cm",
-       "size": "153.0x24.0",
-       "bg": "rgb(244, 243, 242)"
-      },
-      {
-       "node": "div.framer-1nifud8",
-       "size": "171.0x40.0",
-       "bg": "rgb(68, 64, 63)",
-       "radius": "8px"
-      },
-      {
-       "node": "div.framer-2yNFB.framer-1ckw4y4",
-       "size": "153.0x24.0",
-       "bg": "rgb(244, 243, 242)"
+       "node": "div.framer-1sy0dfs",
+       "size": "350.0x338.0",
+       "bg": "rgb(239, 237, 229)",
+       "radius": "12px"
       }
      ],
      "icon": {
-      "w": 8,
-      "h": 8,
+      "w": 106,
+      "h": 24,
       "fill": "rgb(0, 0, 0)",
       "stroke": "none",
-      "color": "rgb(0, 0, 238)"
+      "color": "rgb(0, 0, 0)"
      },
      "crop": "components/crops/m-menu-open-default.png",
      "via": "at rest",
-     "run": "2026-11-12"
+     "run": "2026-11-16"
     }
    },
    "page": "home",
    "view": "mobile",
-   "run": "2026-11-12",
+   "run": "2026-11-16",
    "url": "https://www.chargetrip.com/",
    "title": "Mobile menu, open",
    "group": "Mobile (390 wide)",
    "desc": "The full-screen menu overlay after the trigger's own toggle: orange No-code card, dark API card, Integration Partners, the Use-cases list.",
-   "selector": "body with the menu open"
+   "selector": "fixed menu overlay ancestor of the in-menu a[href=\"./no-code\"]"
   },
   "m-menu-card": {
    "states": {
     "default": {
-     "tag": "div",
-     "classes": "framer-x3gn3",
-     "text": "Products No-code API",
+     "tag": "a",
+     "classes": "framer-39qt1e framer-152olpk",
+     "text": "No-code Get ready-made solutions",
      "rect": {
-      "x": 32,
-      "y": 7469.7,
-      "w": 326,
-      "h": 92.81
+      "x": 20,
+      "y": 88,
+      "w": 350,
+      "h": 86
      },
      "style": {
       "display": "flex",
       "position": "relative",
       "boxSizing": "border-box",
-      "width": "326px",
-      "height": "92.8125px",
-      "minWidth": "13%",
+      "width": "350px",
+      "height": "86px",
+      "minWidth": "auto",
       "maxWidth": "none",
       "minHeight": "auto",
-      "paddingTop": "0px",
-      "paddingRight": "0px",
-      "paddingBottom": "0px",
-      "paddingLeft": "0px",
+      "paddingTop": "16px",
+      "paddingRight": "16px",
+      "paddingBottom": "16px",
+      "paddingLeft": "16px",
       "marginTop": "0px",
       "marginRight": "0px",
       "marginBottom": "0px",
       "marginLeft": "0px",
-      "gap": "12px",
-      "rowGap": "12px",
-      "columnGap": "12px",
-      "flexDirection": "column",
+      "gap": "0px",
+      "rowGap": "0px",
+      "columnGap": "0px",
+      "flexDirection": "row",
       "alignItems": "flex-start",
       "justifyContent": "center",
       "gridTemplateColumns": "none",
       "borderTopWidth": "0px",
       "borderTopStyle": "none",
-      "borderTopColor": "rgb(0, 0, 0)",
+      "borderTopColor": "rgb(0, 0, 238)",
       "borderRightWidth": "0px",
       "borderRightStyle": "none",
-      "borderRightColor": "rgb(0, 0, 0)",
+      "borderRightColor": "rgb(0, 0, 238)",
       "borderBottomWidth": "0px",
       "borderBottomStyle": "none",
-      "borderBottomColor": "rgb(0, 0, 0)",
+      "borderBottomColor": "rgb(0, 0, 238)",
       "borderLeftWidth": "0px",
       "borderLeftStyle": "none",
-      "borderLeftColor": "rgb(0, 0, 0)",
-      "borderTopLeftRadius": "0px",
-      "borderTopRightRadius": "0px",
-      "borderBottomRightRadius": "0px",
-      "borderBottomLeftRadius": "0px",
-      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "borderLeftColor": "rgb(0, 0, 238)",
+      "borderTopLeftRadius": "8px",
+      "borderTopRightRadius": "8px",
+      "borderBottomRightRadius": "8px",
+      "borderBottomLeftRadius": "8px",
+      "backgroundColor": "rgb(249, 77, 0)",
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
-      "outlineColor": "rgb(0, 0, 0)",
+      "outlineColor": "rgb(0, 0, 238)",
       "outlineOffset": "0px",
       "fontFamily": "sans-serif",
       "fontSize": "12px",
@@ -10834,16 +11143,16 @@
       "lineHeight": "normal",
       "letterSpacing": "normal",
       "textTransform": "none",
-      "color": "rgb(0, 0, 0)",
+      "color": "rgb(0, 0, 238)",
       "textDecorationLine": "none",
-      "textDecorationColor": "rgb(0, 0, 0)",
+      "textDecorationColor": "rgb(0, 0, 238)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
       "transitionProperty": "all",
       "transitionDuration": "0s",
       "transitionTimingFunction": "ease",
       "transitionDelay": "0s",
-      "cursor": "auto",
+      "cursor": "pointer",
       "opacity": "1",
       "transform": "none",
       "overflow": "hidden",
@@ -10851,25 +11160,33 @@
       "top": "0px"
      },
      "textStyle": {
-      "node": "p.framer-text.framer-styles-preset-phy7qs",
-      "text": "Products",
-      "fontFamily": "\"Geist Variable\", \"Geist Placeholder\", sans-serif",
-      "fontSize": "16px",
-      "lineHeight": "24px",
+      "node": "h4.framer-text.framer-styles-preset-1o67j2j",
+      "text": "No-code",
+      "fontFamily": "\"PP Cirka Medium\", \"PP Cirka Medium Placeholder\", sans-serif",
+      "fontSize": "28px",
+      "lineHeight": "30px",
       "fontWeight": "400",
       "letterSpacing": "normal",
-      "color": "rgb(135, 127, 120)",
+      "color": "rgb(239, 237, 229)",
       "textDecorationLine": "none",
       "textTransform": "none"
      },
+     "paint": [
+      {
+       "node": "a.framer-39qt1e.framer-152olpk",
+       "size": "350.0x86.0",
+       "bg": "rgb(249, 77, 0)",
+       "radius": "8px"
+      }
+     ],
      "crop": "components/crops/m-menu-card-default.png",
      "via": "at rest",
-     "run": "2026-11-12"
+     "run": "2026-11-16"
     }
    },
    "page": "home",
    "view": "mobile",
-   "run": "2026-11-12",
+   "run": "2026-11-16",
    "url": "https://www.chargetrip.com/",
    "title": "Mobile menu card",
    "group": "Mobile (390 wide)",
@@ -10932,7 +11249,7 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
+      "outlineWidth": "3px",
       "outlineStyle": "none",
       "outlineColor": "rgb(244, 243, 242)",
       "outlineOffset": "0px",
@@ -10960,16 +11277,215 @@
      },
      "crop": "components/crops/m-hero-default.png",
      "via": "at rest",
-     "run": "2026-11-12"
+     "run": "2026-11-16"
     }
    },
    "page": "home",
    "view": "mobile",
-   "run": "2026-11-12",
+   "run": "2026-11-16",
    "url": "https://www.chargetrip.com/",
    "title": "Mobile headline",
    "group": "Mobile (390 wide)",
    "selector": "h1 at 390"
+  },
+  "page-ground": {
+   "states": {
+    "default": {
+     "tag": "body",
+     "classes": "",
+     "text": "A driver's route plan is your revenue plan. Every charge decision has a direct i",
+     "rect": {
+      "x": 0,
+      "y": -886,
+      "w": 1440,
+      "h": 8274.78
+     },
+     "style": {
+      "display": "block",
+      "position": "static",
+      "boxSizing": "border-box",
+      "width": "1440px",
+      "height": "8274.78px",
+      "minWidth": "0px",
+      "maxWidth": "none",
+      "minHeight": "0px",
+      "paddingTop": "0px",
+      "paddingRight": "0px",
+      "paddingBottom": "0px",
+      "paddingLeft": "0px",
+      "marginTop": "0px",
+      "marginRight": "0px",
+      "marginBottom": "0px",
+      "marginLeft": "0px",
+      "gap": "normal",
+      "rowGap": "normal",
+      "columnGap": "normal",
+      "flexDirection": "row",
+      "alignItems": "normal",
+      "justifyContent": "normal",
+      "gridTemplateColumns": "none",
+      "borderTopWidth": "0px",
+      "borderTopStyle": "none",
+      "borderTopColor": "rgb(0, 0, 0)",
+      "borderRightWidth": "0px",
+      "borderRightStyle": "none",
+      "borderRightColor": "rgb(0, 0, 0)",
+      "borderBottomWidth": "0px",
+      "borderBottomStyle": "none",
+      "borderBottomColor": "rgb(0, 0, 0)",
+      "borderLeftWidth": "0px",
+      "borderLeftStyle": "none",
+      "borderLeftColor": "rgb(0, 0, 0)",
+      "borderTopLeftRadius": "0px",
+      "borderTopRightRadius": "0px",
+      "borderBottomRightRadius": "0px",
+      "borderBottomLeftRadius": "0px",
+      "backgroundColor": "rgb(239, 237, 229)",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "backdropFilter": "none",
+      "outlineWidth": "3px",
+      "outlineStyle": "none",
+      "outlineColor": "rgb(0, 0, 0)",
+      "outlineOffset": "0px",
+      "fontFamily": "sans-serif",
+      "fontSize": "12px",
+      "fontWeight": "400",
+      "lineHeight": "normal",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(0, 0, 0)",
+      "textDecorationLine": "none",
+      "textDecorationColor": "rgb(0, 0, 0)",
+      "textDecorationThickness": "auto",
+      "textUnderlineOffset": "auto",
+      "transitionProperty": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "transitionDelay": "0s",
+      "cursor": "auto",
+      "opacity": "1",
+      "transform": "none",
+      "overflow": "visible",
+      "zIndex": "auto",
+      "top": "auto"
+     },
+     "textStyle": {
+      "node": "h1.framer-text",
+      "text": "A driver's route plan is your revenue pl",
+      "fontFamily": "\"Cirka Regular\", \"Cirka Regular Placeholder\", sans-serif",
+      "fontSize": "88px",
+      "lineHeight": "78px",
+      "fontWeight": "400",
+      "letterSpacing": "-0.5px",
+      "color": "rgb(244, 243, 242)",
+      "textDecorationLine": "none",
+      "textTransform": "none"
+     },
+     "paint": [
+      {
+       "node": "body",
+       "size": "1440.0x8274.8",
+       "bg": "rgb(239, 237, 229)"
+      },
+      {
+       "node": "div.framer-Up5El.framer-SVSxo",
+       "size": "1440.0x8274.8",
+       "bg": "rgb(239, 237, 229)"
+      },
+      {
+       "node": "div.framer-pl228f",
+       "size": "1392.0x1086.0",
+       "bgImage": "radial-gradient(103% 223% at 49.2% 170.8%, rgb(56, 49, 47) 35%, rgb(38, 35, 33) 67.3371%)",
+       "radius": "24px"
+      },
+      {
+       "node": "a.framer-0phDM.framer-npPic",
+       "size": "148.0x48.0",
+       "bg": "rgb(249, 77, 0)",
+       "radius": "8px"
+      },
+      {
+       "node": "div.framer-144aqy4",
+       "size": "164.0x164.0",
+       "bg": "rgb(252, 101, 45)",
+       "radius": "999px"
+      },
+      {
+       "node": "div.framer-e7hcqw",
+       "size": "164.0x164.0",
+       "bg": "rgb(221, 59, 0)",
+       "radius": "999px"
+      },
+      {
+       "node": "a.framer-0phDM.framer-npPic",
+       "size": "179.0x48.0",
+       "bg": "rgb(68, 64, 63)",
+       "radius": "8px"
+      },
+      {
+       "node": "a::after.framer-0phDM.framer-npPic",
+       "size": "179pxx48px",
+       "border": "T:1px solid rgba(0, 0, 0, 0) | R:1px solid rgba(0, 0, 0, 0) | B:1px solid rgba(0, 0, 0, 0) | L:1px solid rgba(0, 0, 0, 0)",
+       "radius": "8px"
+      },
+      {
+       "node": "div::after.framer-133laaa",
+       "size": "40pxx40px",
+       "border": "T:1px solid rgb(68, 64, 63) | R:1px solid rgb(68, 64, 63) | B:1px solid rgb(68, 64, 63) | L:1px solid rgb(68, 64, 63)",
+       "radius": "4px"
+      },
+      {
+       "node": "div.framer-144aqy4",
+       "size": "195.0x195.0",
+       "bg": "rgb(82, 76, 74)",
+       "radius": "999px"
+      },
+      {
+       "node": "div.framer-e7hcqw",
+       "size": "195.0x195.0",
+       "bg": "rgb(77, 72, 70)",
+       "radius": "999px"
+      },
+      {
+       "node": "div.framer-66rowr",
+       "size": "320.0x317.0",
+       "bg": "rgb(255, 255, 251)",
+       "shadow": "rgba(255, 255, 251, 0.16) 0px 0px 0px 4px, rgba(0, 0, 0, 0.4) 0px 25px 50px -12px",
+       "radius": "12px"
+      },
+      {
+       "node": "div.framer-13tegad",
+       "size": "272.0x32.0",
+       "bg": "rgb(239, 237, 229)",
+       "radius": "8px"
+      },
+      {
+       "node": "div.framer-p2nrne",
+       "size": "134.0x28.0",
+       "bg": "rgb(255, 255, 251)",
+       "radius": "6px"
+      }
+     ],
+     "icon": {
+      "w": 8,
+      "h": 8,
+      "fill": "rgb(0, 0, 0)",
+      "stroke": "none",
+      "color": "rgb(0, 0, 238)"
+     },
+     "via": "at rest",
+     "run": "2026-11-16"
+    }
+   },
+   "page": "home",
+   "view": "desktop",
+   "run": "2026-11-16",
+   "url": "https://www.chargetrip.com/",
+   "title": "Page ground",
+   "group": "Home",
+   "desc": "The body element's own painted fill — the warm-cream ground under every section.",
+   "selector": "document.body"
   }
  }
 }

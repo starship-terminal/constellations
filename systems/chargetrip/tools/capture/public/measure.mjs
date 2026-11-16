@@ -102,7 +102,7 @@ async function forcePseudo(loc, classes) {
 
 function comp(key, meta) {
   const c = (out.components[key] ??= { states: {} });
-  Object.assign(c, { page: current, view, run, url: URLS[current] && BASE + URLS[current] }, meta);
+  Object.assign(c, { page: current, view, run, url: URLS[current] && new URL(URLS[current], BASE).href }, meta);
   touched.add(key);
   c.states ??= {};
   return c;
@@ -307,35 +307,53 @@ async function home() {
   const navItem = q('[class*="-container"]').filter({ hasText: /^Products$/ }).filter({ visible: true }).first();
   await S('nav-item', navItem, [...B4, 'opened'], { group: g, title: 'Nav item', desc: 'The "Products" menu trigger; its own press opens the mega menu (opened state, then the menu stays up for the next two entries).', sel: 'div[text=Products] inside the bar' }, { noScroll: true });
   // The mega menu, held open by the Products toggle above: the card row under
-  // the bar inside [data-framer-name^="Desktop -"].
-  await page.evaluate(() => {
-    const panel = [...document.querySelectorAll('a[href="./no-code"]')].map((a) => { for (let n = a, i = 0; n && i < 8; i++, n = n.parentElement) { const r = n.getBoundingClientRect(); if (r.width > 900 && r.height > 300 && r.height < 800) return n; } return null; }).find(Boolean);
-    if (panel) panel.setAttribute('data-m-panel', '1');
-  });
-  await S('menu-panel', q('[data-m-panel="1"]'), ['default'], { group: g, title: 'Mega menu', desc: 'The Products mega-menu card row (No-code / API / Integration Partners photo cards), held open by the nav-item toggle.', sel: 'card-row ancestor of a[href="./no-code"]' }, { noScroll: true, noReset: true });
-  await page.evaluate(() => {
-    const a = document.querySelector('a[href="./no-code"]');
-    for (let n = a, i = 0; a && n && i < 6; i++, n = n.parentElement) {
+  // the bar. The footer repeats ./no-code in its own nav column far below the
+  // viewport, so only the link inside the open menu counts — the candidate
+  // with its top edge inside the menu band right under the header. The menu
+  // closes when the pointer leaves the nav region (reset() parks the cursor
+  // in the corner after every entry), so each entry re-opens it idempotently.
+  const menuIsOpen = () => page.evaluate(() =>
+    [...document.querySelectorAll('a[href="./no-code"]')].some((a) => { const r = a.getBoundingClientRect(); return r.height > 0 && r.top >= 0 && r.top < 800; }));
+  const ensureMenuOpen = async () => {
+    if (!(await menuIsOpen())) { await toggle(navItem); await page.waitForTimeout(1200); }
+  };
+  const markMenu = () => page.evaluate(() => {
+    const link = [...document.querySelectorAll('a[href="./no-code"]')]
+      .map((a) => ({ a, r: a.getBoundingClientRect() }))
+      .filter(({ r }) => r.height > 0 && r.top >= 0 && r.top < 800)
+      .sort((x, y) => x.r.top - y.r.top)[0];
+    if (!link) return;
+    link.a.setAttribute('data-m-nocode', '1');
+    for (let n = link.a, i = 0; n && i < 8; i++, n = n.parentElement) {
       const r = n.getBoundingClientRect();
-      if (r.width > 250 && r.width < 700 && r.height > 90 && r.height < 700) { n.setAttribute('data-m-card', '1'); return; }
+      if (r.width > 900 && r.height > 300 && r.height <= 900) { n.setAttribute('data-m-panel', '1'); break; }
+    }
+    for (let n = link.a, i = 0; n && i < 6; i++, n = n.parentElement) {
+      const r = n.getBoundingClientRect();
+      if (r.width > 250 && r.width < 700 && r.height > 90 && r.height <= 800) { n.setAttribute('data-m-card', '1'); break; }
     }
   });
-  await S('menu-card', q('[data-m-card="1"]'), ['default'], { group: g, title: 'Menu card', desc: 'The No-code photo card inside the open mega menu.', sel: 'card ancestor of a[href="./no-code"]' }, { noScroll: true, noReset: true });
+  await S('menu-panel', q('[data-m-panel="1"]'), ['default'], { group: g, title: 'Mega menu', desc: 'The Products mega-menu card row (No-code / API / Integration Partners photo cards), held open by the nav-item toggle.', sel: 'card-row ancestor of the in-menu a[href="./no-code"] (top < 800, not the footer copy)' }, { noScroll: true, noReset: true, open: async () => { await ensureMenuOpen(); await markMenu(); } });
+  await S('menu-card', q('[data-m-card="1"]'), ['default'], { group: g, title: 'Menu card', desc: 'The No-code photo card inside the open mega menu.', sel: 'card ancestor of the in-menu a[href="./no-code"]' }, { noScroll: true, noReset: true, open: ensureMenuOpen });
   await page.keyboard.press('Escape'); await page.waitForTimeout(600);
   await S('nav-cta', q('a[data-framer-name="Background Dark Primary / Fill"]').filter({ visible: true }).first(), B4, { group: g, title: 'Nav CTA', desc: 'The dark "Contact sales" button; links to /contact/sales, measured never followed.', sel: 'a.Background Dark Primary / Fill' }, { noScroll: true });
   await S('nav-signin', q('a[data-framer-name="Background Dark Primary / Outline"]').filter({ visible: true }).first(), B4, { group: g, title: 'Sign-in button', desc: 'The outlined "Sign in" button; links to account.chargetrip.com, measured never followed.', sel: 'a.Background Dark Primary / Outline' }, { noScroll: true });
   const h = G.home;
   await S('hero-title', q('h1').filter({ visible: true }).first(), ['default'], { group: h, title: 'Hero title', desc: 'The 88px Cirka display headline on the dark hero card.', sel: 'h1' }, { noScroll: true });
   await S('hero-sub', q('p, div').filter({ hasText: /Every charge decision/ }).filter({ visible: true }).last(), ['default'], { group: h, title: 'Hero subcopy', desc: 'The muted lede under the display headline.', sel: 'the lede paragraph under h1' }, { noScroll: true });
-  // The dark hero band: the nearest ancestor of the h1 that paints a dark fill.
+  // The dark hero band: the nearest ancestor of the h1 that paints — a dark
+  // fill or a non-none background image (the band is drawn with a gradient,
+  // so a colour-only check falls through to the transparent content wrapper).
+  // No wrapper fallback: if nothing paints, the entry records a miss.
   await page.evaluate(() => {
     const h = document.querySelector('h1');
-    for (let n = h, i = 0; h && n && i < 10; i++, n = n.parentElement) {
+    for (let n = h, i = 0; h && n && i < 12; i++, n = n.parentElement) {
       const r = n.getBoundingClientRect(); const cs = getComputedStyle(n);
-      const m = cs.backgroundColor.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)/);
-      if (r.width > 900 && r.height < 1400 && m && +m[1] < 100 && +m[2] < 100 && +m[3] < 100) { n.setAttribute('data-m-hero', '1'); return; }
+      const m = cs.backgroundColor.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*([\d.]+))?\)/);
+      const dark = m && (m[4] === undefined || +m[4] > 0.5) && +m[1] < 100 && +m[2] < 100 && +m[3] < 100;
+      const painted = dark || cs.backgroundImage !== 'none';
+      if (r.width > 900 && r.height < 1400 && painted) { n.setAttribute('data-m-hero', '1'); return; }
     }
-    h && h.parentElement.setAttribute('data-m-hero', '1');
   });
   await S('hero-card', q('[data-m-hero="1"]'), ['default'], { group: h, title: 'Hero band', desc: 'The dark rounded hero card the headline sits on.', sel: 'dark ancestor of h1 (marked in-page)' }, { noScroll: true });
   await S('cta-accent', q('a[data-framer-name="Large / Accent"]').filter({ visible: true }).first(), B4, { group: h, title: 'Accent CTA', desc: 'The orange "Book a demo" button (links to a HubSpot meeting page, never followed).', sel: 'a.Large / Accent' }, { noScroll: true });
@@ -347,6 +365,9 @@ async function home() {
     return true;
   });
   await S('section-title', h2ok ? q('[data-m-h2="1"]') : q('[data-m-h2="__none__"]'), ['default'], { group: h, title: 'Section title', sel: 'first visible h2, marked where it mounts' });
+  // The page ground: the body element's own painted fill (the warm cream
+  // under every section). Read directly — no visible element carries it.
+  await S('page-ground', q('body'), ['default'], { group: h, title: 'Page ground', desc: "The body element's own painted fill — the warm-cream ground under every section.", sel: 'document.body' }, { noScroll: true, crop: false });
   save();
 }
 
@@ -426,11 +447,18 @@ async function mobile() {
   if (!(await newPage('home', { mobile: true }))) return;
   const g = G.mobile;
   await page.evaluate(() => {
+    // The top bar: the outermost ancestor of the hamburger still inside the
+    // header zone (top <= 100). Walking without a top bound previously let a
+    // chart container pass the size check and publish 100/75/50/25/0 as the
+    // header.
     const btn = document.querySelector('[data-framer-name="Button Icon"]');
+    let cand = null;
     for (let n = btn, i = 0; btn && n && i < 8; i++, n = n.parentElement) {
       const r = n.getBoundingClientRect();
-      if (r.width >= 300 && r.height >= 40 && r.height <= 120) { n.setAttribute('data-m-mheader', '1'); return; }
+      if (r.top > 140 || r.width > 480 || r.height > 200) break;
+      if (r.top <= 100 && r.width >= 300 && r.height >= 40 && r.height <= 140) cand = n;
     }
+    if (cand) cand.setAttribute('data-m-mheader', '1');
   });
   await S('m-header', q('[data-m-mheader="1"]'), ['default'], { group: g, title: 'Mobile header', sel: 'the mobile top bar at y=0' }, { noScroll: true });
   const menuBtn = q('[data-framer-name="Button Icon"]').filter({ visible: true }).first();
@@ -438,10 +466,25 @@ async function mobile() {
   if (await menuBtn.count()) {
     try { await toggle(menuBtn); await page.waitForTimeout(1500); } catch (e) { log('  ! mobile menu toggle failed', String(e.message).split('\n')[0]); }
   }
-  // The open overlay: the no-code card's tall ancestor inside the menu.
-  await S('m-menu-open', q('body'), ['default'], { group: g, title: 'Mobile menu, open', desc: 'The full-screen menu overlay after the trigger\'s own toggle: orange No-code card, dark API card, Integration Partners, the Use-cases list.', sel: 'body with the menu open' }, { noScroll: true, crop: true });
+  // The open overlay: the menu container, not body — the outermost fixed
+  // ancestor of the in-viewport no-code link (the page's own copy sits behind
+  // the overlay), falling back to the link's top-level ancestor.
   await page.evaluate(() => {
-    const a = [...document.querySelectorAll('a[href="./no-code"]')].find((n) => n.getBoundingClientRect().height > 0);
+    const links = [...document.querySelectorAll('a[href="./no-code"]')].filter((n) => { const r = n.getBoundingClientRect(); return r.height > 0 && r.top > -50 && r.top < innerHeight; });
+    const inMenu = links.find((n) => { for (let m = n; m && m !== document.body; m = m.parentElement) if (getComputedStyle(m).position === 'fixed') return true; return false; });
+    const link = inMenu || links[links.length - 1];
+    if (!link) return;
+    let mark = null;
+    for (let n = link, i = 0; n && n !== document.body && i < 12; i++, n = n.parentElement) {
+      if (getComputedStyle(n).position === 'fixed' && n.getBoundingClientRect().width <= 420) mark = n;
+    }
+    if (!mark) { mark = link; while (mark.parentElement && mark.parentElement !== document.body) mark = mark.parentElement; }
+    if (mark && mark !== document.body) mark.setAttribute('data-m-mopen', '1');
+  });
+  await S('m-menu-open', q('[data-m-mopen="1"]'), ['default'], { group: g, title: 'Mobile menu, open', desc: 'The full-screen menu overlay after the trigger\'s own toggle: orange No-code card, dark API card, Integration Partners, the Use-cases list.', sel: 'fixed menu overlay ancestor of the in-menu a[href="./no-code"]' }, { noScroll: true, crop: true });
+  await page.evaluate(() => {
+    const links = [...document.querySelectorAll('a[href="./no-code"]')].filter((n) => { const r = n.getBoundingClientRect(); return r.height > 0 && r.top > -50 && r.top < innerHeight; });
+    const a = links.find((n) => { for (let m = n; m && m !== document.body; m = m.parentElement) if (getComputedStyle(m).position === 'fixed') return true; return false; }) || links[links.length - 1];
     for (let n = a, i = 0; a && n && i < 6; i++, n = n.parentElement) {
       const r = n.getBoundingClientRect();
       if (r.width > 250 && r.width < 700 && r.height > 80 && r.height < 700) { n.setAttribute('data-m-mcard', '1'); return; }

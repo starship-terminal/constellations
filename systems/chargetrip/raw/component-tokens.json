@@ -194,9 +194,9 @@
   "surface": {
    "page": {
     "type": "color",
-    "description": "The warm-cream page ground (body's own fill, painted identically at both widths).",
+    "description": "The warm-cream page ground (the body element's own fill, painted identically at both widths).",
     "value": "{color.paper.200}",
-    "source": "computed paint.0.bg of m-menu-open default (raw/components-computed.json); same value as core.color.paper.200"
+    "source": "computed backgroundColor of page-ground default (raw/components-computed.json); same value as core.color.paper.200"
    },
    "card": {
     "type": "color",
@@ -220,9 +220,9 @@
    },
    "muted": {
     "type": "color",
-    "description": "Secondary text on the light pages (menu cards, footer meta, status line).",
+    "description": "Secondary text on the light pages (the status line, footer meta, form hints).",
     "value": "{color.ink.300}",
-    "source": "computed textStyle.color of menu-panel default (raw/components-computed.json); same value as core.color.ink.300"
+    "source": "computed textStyle.color of status-pill default (raw/components-computed.json); same value as core.color.ink.300"
    },
    "onDark": {
     "type": "color",
@@ -293,8 +293,8 @@
   },
   "focus": {
    "type": "color",
-   "description": "The keyboard-focus ring where one is drawn (the browser's default auto outline).",
-   "value": "#005fcc",
+   "description": "The keyboard-focus ring the header/footer controls draw (1px auto); plan, slider and form controls still draw the #005fcc ring — recorded per entry.",
+   "value": "#101010",
    "source": "computed outlineColor of cta-accent focus-visible (raw/components-computed.json)"
   }
  },

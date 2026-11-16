@@ -1,6 +1,6 @@
 # Component measurements
 
-Computed styles read from www.chargetrip.com (plus the public account.chargetrip.io sign-in card) on 2026-11-12 by `tools/capture/public/measure.mjs`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844) in the site's one light theme (the "Cookie Settings" card was hidden, never answered), and written here by `tools/capture/public/build-measurements.mjs` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
+Computed styles read from www.chargetrip.com (plus the public account.chargetrip.io sign-in card) on 2026-11-16 by `tools/capture/public/measure.mjs`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844) in the site's one light theme (the "Cookie Settings" card was hidden, never answered), and written here by `tools/capture/public/build-measurements.mjs` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
 
 States: `hover` is a real pointer hover; `focus-visible` a real keyboard focus (Shift+Tab, Tab); `pressed` is forced with DevTools (`CSS.forcePseudoState` :active:hover), so no button was pressed; `focused` is a text field clicked into; `filled` is sample text typed and deleted again, with nothing sent; `opened`, `expanded` and the rest are resting states reached by the page or by a UI toggle.
 
@@ -30,7 +30,7 @@ Page: home. Selector: `div[data-framer-name="Content"] at y=0`. States: default.
 | Text node | p.framer-text.framer-styles-preset-ooof01: Geist Variable 18px/28.8px 400, #efede5 |
 | Transition | none |
 | Icon | 106 x 24, colour #000000 |
-| Painted layers | a.framer-SWyCz.framer-i5yBN 138.7x40.0 bg #262322 r 8px; a::after.framer-SWyCz.framer-i5yBN 80.7344pxx40px border T:1px solid #262322 / R:1px solid #262322 / B:1px solid #262322 / L:1px solid #262322 r 8px; a.framer-39qt1e.framer-152olpk 453.3x776.0 bg #efede5 r 8px; a.framer-2ndwuz.framer-152olpk 453.3x776.0 bg #efede5 r 8px; a.framer-vb2o8e.framer-152olpk 453.3x776.0 bg #efede5 r 8px; div.framer-1m7ojrj 16.0x16.0 image url(data:…)%22 stroke-linecap=%22square%22 stroke-linejoin=%22round%22 stroke-dasharray=%2 |
+| Painted layers | a.framer-SWyCz.framer-i5yBN 139.0x40.0 bg #262322 r 8px; a::after.framer-SWyCz.framer-i5yBN 83pxx40px border T:1px solid #262322 / R:1px solid #262322 / B:1px solid #262322 / L:1px solid #262322 r 8px; a.framer-39qt1e.framer-152olpk 453.3x776.0 bg #efede5 r 8px; a.framer-2ndwuz.framer-152olpk 453.3x776.0 bg #efede5 r 8px; a.framer-vb2o8e.framer-152olpk 453.3x776.0 bg #efede5 r 8px; div.framer-1m7ojrj 16.0x16.0 image url(data:…)%22 stroke-linecap=%22square%22 stroke-linejoin=%22round%22 stroke-dasharray=%2 |
 | How | at rest |
 
 Crops: `header-default.png`.
@@ -69,7 +69,7 @@ Page: home. Selector: `div[text=Products] inside the bar`. States: default, hove
 
 | Property | default | hover | focus-visible | pressed | opened |
 |---|---|---|---|---|---|
-| Size (w x h) | 98.81 x 32 | = | = | = | = |
+| Size (w x h) | 99 x 32 | = | = | = | = |
 | Padding | 0px | = | = | = | = |
 | Border | none | = | = | = | = |
 | Radius | 0px | = | = | = | = |
@@ -79,10 +79,10 @@ Page: home. Selector: `div[text=Products] inside the bar`. States: default, hove
 | Font | sans-serif 12px/normal 400 | = | = | = | = |
 | Letter spacing | normal | = | = | = | = |
 | Colour | #000000 | = | = | = | = |
-| Text node | p.framer-text.framer-styles-preset-ooof01: Geist Variable 18px/28.8px 400, #262322 | p.framer-text.framer-styles-preset-ooof01: Geist Variable 18px/28.8px 400, #dc3b04 | p.framer-text.framer-styles-preset-ooof01: Geist Variable 18px/28.8px 400, #272322 | = | p.framer-text.framer-styles-preset-ooof01: Geist Variable 18px/28.8px 400, #dd3b00 |
+| Text node | p.framer-text.framer-styles-preset-ooof01: Geist Variable 18px/28.8px 400, #262322 | p.framer-text.framer-styles-preset-ooof01: Geist Variable 18px/28.8px 400, #dc3b04 | = | = | p.framer-text.framer-styles-preset-ooof01: Geist Variable 18px/28.8px 400, #dd3b00 |
 | Transition | none | = | = | = | = |
 | How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover | own toggle |
-| Painted layers | - | div.framer-tBbOV.framer-i5yBN 98.8x32.0 bg #dd3b00 @ 0.15 r 24px | div.framer-tBbOV.framer-i5yBN 98.8x32.0 bg #dd3b00 @ 0 r 24px | = | div.framer-tBbOV.framer-i5yBN 98.8x32.0 bg #dd3b00 @ 0.15 r 24px |
+| Painted layers | - | div.framer-tBbOV.framer-i5yBN 99.0x32.0 bg #dd3b00 @ 0.15 r 24px | = | = | div.framer-tBbOV.framer-i5yBN 99.0x32.0 bg #dd3b00 @ 0.15 r 24px |
 
 Crops: `nav-item-default.png`, `nav-item-hover.png`, `nav-item-focus-visible.png`, `nav-item-pressed.png`, `nav-item-opened.png`.
 
@@ -90,13 +90,13 @@ Crops: `nav-item-default.png`, `nav-item-hover.png`, `nav-item-focus-visible.png
 
 Mega menu. The Products mega-menu card row (No-code / API / Integration Partners photo cards), held open by the nav-item toggle.
 
-Page: home. Selector: `card-row ancestor of a[href="./no-code"]`. States: default.
+Page: home. Selector: `card-row ancestor of the in-menu a[href="./no-code"] (top < 800, not the footer copy)`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 927.31 x 316.03 |
-| Padding | 24px 0px 40px 64px |
-| Gap | 10px |
+| Size (w x h) | 1376 x 816 |
+| Padding | 0px 0px 40px 0px |
+| Gap | 8px |
 | Border | none |
 | Radius | 0px |
 | Background | transparent |
@@ -105,10 +105,9 @@ Page: home. Selector: `card-row ancestor of a[href="./no-code"]`. States: defaul
 | Font | sans-serif 12px/normal 400 |
 | Letter spacing | normal |
 | Colour | #000000 |
-| Text node | p.framer-text.framer-styles-preset-phy7qs: Geist Variable 16px/24px 400, #877f78 |
+| Text node | p.framer-text.framer-styles-preset-472in1: Geist Medium 22px/26px 400, #efede5 |
 | Transition | none |
-| Painted layers | div 8.0x8.0 bg #278859 r 100%; a.framer-1vyggok.framer-1oqc6h7 97.8x32.0 bg #efede5 r 16px |
-| Ancestor paint | 1 up div.framer-PkeUF.framer-npPic bg #fffffb |
+| Painted layers | a.framer-39qt1e.framer-152olpk 453.3x776.0 bg #efede5 r 8px; a.framer-2ndwuz.framer-152olpk 453.3x776.0 bg #efede5 r 8px; a.framer-vb2o8e.framer-152olpk 453.3x776.0 bg #efede5 r 8px |
 | How | at rest |
 
 Crops: `menu-panel-default.png`.
@@ -117,25 +116,25 @@ Crops: `menu-panel-default.png`.
 
 Menu card. The No-code photo card inside the open mega menu.
 
-Page: home. Selector: `card ancestor of a[href="./no-code"]`. States: default.
+Page: home. Selector: `card ancestor of the in-menu a[href="./no-code"]`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 927.31 x 316.03 |
-| Padding | 24px 0px 40px 64px |
-| Gap | 10px |
+| Size (w x h) | 453.33 x 776 |
+| Padding | 16px |
+| Gap | 0px |
 | Border | none |
-| Radius | 0px |
-| Background | transparent |
+| Radius | 8px |
+| Background | #efede5 |
 | Box shadow | none |
 | Outline | none |
 | Font | sans-serif 12px/normal 400 |
 | Letter spacing | normal |
-| Colour | #000000 |
-| Text node | p.framer-text.framer-styles-preset-phy7qs: Geist Variable 16px/24px 400, #877f78 |
+| Colour | #0000ee |
+| Text node | p.framer-text.framer-styles-preset-472in1: Geist Medium 22px/26px 400, #efede5 |
 | Transition | none |
-| Painted layers | div 8.0x8.0 bg #278859 r 100%; a.framer-1vyggok.framer-1oqc6h7 97.8x32.0 bg #efede5 r 16px |
-| Ancestor paint | 1 up div.framer-PkeUF.framer-npPic bg #fffffb |
+| Cursor | pointer |
+| Painted layers | a.framer-39qt1e.framer-152olpk 453.3x776.0 bg #efede5 r 8px |
 | How | at rest |
 
 Crops: `menu-card-default.png`.
@@ -148,21 +147,21 @@ Page: home. Selector: `a.Background Dark Primary / Fill`. States: default, hover
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 138.73 x 40 | - | = | = |
+| Size (w x h) | 139 x 40 | - | = | = |
 | Padding | 0px 12px | - | = | = |
 | Gap | 4px | - | = | = |
 | Border | none | - | = | = |
 | Radius | 8px | - | = | = |
 | Background | #262322 | - | = | = |
 | Box shadow | none | - | = | = |
-| Outline | none | - | 1px auto #005fcc offset 1px | = |
+| Outline | none | - | 1px auto #101010 offset 1px | = |
 | Font | sans-serif 12px/normal 400 | - | = | = |
 | Letter spacing | normal | - | = | = |
 | Colour | #0000ee | - | = | #ff0000 |
 | Text node | p.framer-text.framer-styles-preset-ooof01: Geist Variable 18px/28.8px 400, #efede5 | - | = | = |
 | Transition | none | - | = | = |
 | Cursor | pointer | - | = | = |
-| Painted layers | a.framer-SWyCz.framer-i5yBN 138.7x40.0 bg #262322 r 8px | - | a.framer-SWyCz.framer-i5yBN 138.7x40.0 bg #262322 r 8px outline 1px auto #005fcc offset 1px | = |
+| Painted layers | a.framer-SWyCz.framer-i5yBN 139.0x40.0 bg #262322 r 8px | - | a.framer-SWyCz.framer-i5yBN 139.0x40.0 bg #262322 r 8px outline 1px auto #101010 offset 1px | = |
 | How | at rest | - | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 | Error | - | locator.evaluate: Timeout 8000ms exceeded. Call log:   - waiting for locator('a[data-framer-name="Background Dark Primary / Fill"]').filter({ visible: true }).first().filter({ visible: true }).first() | = | = |
 
@@ -176,22 +175,22 @@ Page: home. Selector: `a.Background Dark Primary / Outline`. States: default, ho
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 80.73 x 40 | - | = | = |
+| Size (w x h) | 83 x 40 | - | = | = |
 | Padding | 0px 12px | - | = | = |
 | Gap | 4px | - | = | = |
 | Border | none | - | = | = |
 | Radius | 8px | - | = | = |
 | Background | transparent | - | = | = |
 | Box shadow | none | - | = | = |
-| Outline | none | - | 1px auto #005fcc offset 1px | = |
+| Outline | none | - | 1px auto #101010 offset 1px | = |
 | Font | sans-serif 12px/normal 400 | - | = | = |
 | Letter spacing | normal | - | = | = |
 | Colour | #0000ee | - | = | #ff0000 |
 | Text node | p.framer-text.framer-styles-preset-ooof01: Geist Variable 18px/28.8px 400, #262322 | - | p.framer-text.framer-styles-preset-ooof01: Geist Variable 18px/28.8px 400, #282322 | = |
 | Transition | none | - | = | = |
 | Cursor | pointer | - | = | = |
-| ::after | 80.7344px x 40px, absolute, bg #000000 @ 0, radius 8px | - | = | = |
-| Painted layers | a::after.framer-SWyCz.framer-i5yBN 80.7344pxx40px border T:1px solid #262322 / R:1px solid #262322 / B:1px solid #262322 / L:1px solid #262322 r 8px | - | a.framer-SWyCz.framer-i5yBN 80.7x40.0 r 8px outline 1px auto #005fcc offset 1px; a::after.framer-SWyCz.framer-i5yBN 80.7344pxx40px border T:1px solid #282322 / R:1px solid #282322 / B:1px solid #282322 / L:1px solid #282322 r 8px | = |
+| ::after | 83px x 40px, absolute, bg #000000 @ 0, radius 8px | - | = | = |
+| Painted layers | a::after.framer-SWyCz.framer-i5yBN 83pxx40px border T:1px solid #262322 / R:1px solid #262322 / B:1px solid #262322 / L:1px solid #262322 r 8px | - | a.framer-SWyCz.framer-i5yBN 83.0x40.0 r 8px outline 1px auto #101010 offset 1px; a::after.framer-SWyCz.framer-i5yBN 83pxx40px border T:1px solid #282322 / R:1px solid #282322 / B:1px solid #282322 / L:1px solid #282322 r 8px | = |
 | How | at rest | - | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 | Error | - | locator.evaluate: Timeout 8000ms exceeded. Call log:   - waiting for locator('a[data-framer-name="Background Dark Primary / Outline"]').filter({ visible: true }).first().filter({ visible: true }).firs | = | = |
 
@@ -253,12 +252,13 @@ Page: home. Selector: `dark ancestor of h1 (marked in-page)`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 1295.98 x 354.39 |
-| Padding | 0px |
-| Gap | 32px 8px |
+| Size (w x h) | 1391.98 x 1086 |
+| Padding | 72px 48px 0px 48px |
+| Gap | 0px |
 | Border | none |
-| Radius | 0px |
+| Radius | 24px |
 | Background | transparent |
+| Background image | radial-gradient(103% 223% at 49.2% 170.8%, #38312f 35%, #262321 67.3371%) |
 | Box shadow | none |
 | Outline | none |
 | Font | sans-serif 12px/normal 400 |
@@ -267,7 +267,7 @@ Page: home. Selector: `dark ancestor of h1 (marked in-page)`. States: default.
 | Text node | h1.framer-text: Cirka Regular 88px/78px 400, #f4f3f2, ls -0.5px |
 | Transition | none |
 | Icon | 8 x 8, colour #0000ee, fill #000000 |
-| Painted layers | a.framer-0phDM.framer-npPic 147.2x48.0 bg #f94d00 r 8px; div.framer-144aqy4 163.2x163.2 bg #fc652d r 999px; div.framer-e7hcqw 163.2x163.2 bg #dd3b00 r 999px; a.framer-0phDM.framer-npPic 180.7x48.0 bg #44403f r 8px; a::after.framer-0phDM.framer-npPic 180.703pxx48px border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 8px; div::after.framer-133laaa 40pxx40px border T:1px solid #44403f / R:1px solid #44403f / B:1px solid #44403f / L:1px solid #44403f r 4px |
+| Painted layers | div.framer-pl228f 1392.0x1086.0 image radial-gradient(103% 223% at 49.2% 170.8%, #38312f 35%, #262321 67.3371%) r 24px; a.framer-0phDM.framer-npPic 148.0x48.0 bg #f94d00 r 8px; div.framer-144aqy4 164.0x164.0 bg #fc652d r 999px; div.framer-e7hcqw 164.0x164.0 bg #dd3b00 r 999px; a.framer-0phDM.framer-npPic 179.0x48.0 bg #44403f r 8px; a::after.framer-0phDM.framer-npPic 179pxx48px border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 8px |
 | How | at rest |
 
 Crops: `hero-card-default.png`.
@@ -280,14 +280,14 @@ Page: home. Selector: `a.Large / Accent`. States: default, hover, focus-visible,
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 147.16 x 48 | = | = | = |
+| Size (w x h) | 148 x 48 | = | = | = |
 | Padding | 8px 12px | = | = | = |
 | Gap | 10px | = | = | = |
 | Border | none | = | = | = |
 | Radius | 8px | = | = | = |
 | Background | #f94d00 | = | = | = |
 | Box shadow | none | = | = | = |
-| Outline | none | = | 1px auto #005fcc offset 1px | = |
+| Outline | none | = | 1px auto #101010 offset 1px | = |
 | Font | sans-serif 12px/normal 400 | = | = | = |
 | Letter spacing | normal | = | = | = |
 | Colour | #0000ee | = | = | #ff0000 |
@@ -295,7 +295,7 @@ Page: home. Selector: `a.Large / Accent`. States: default, hover, focus-visible,
 | Transition | none | = | = | = |
 | Cursor | default | = | = | = |
 | Icon | 8 x 8, colour #0000ee, fill #000000 | = | = | 8 x 8, colour #ff0000, fill #000000 |
-| Painted layers | a.framer-0phDM.framer-npPic 147.2x48.0 bg #f94d00 r 8px; div.framer-144aqy4 163.2x163.2 bg #fc652d r 999px; div.framer-e7hcqw 163.2x163.2 bg #dd3b00 r 999px | = | a.framer-0phDM.framer-npPic 147.2x48.0 bg #f94d00 r 8px outline 1px auto #005fcc offset 1px; div.framer-144aqy4 163.2x163.2 bg #fc652d r 999px; div.framer-e7hcqw 163.2x163.2 bg #dd3b00 r 999px | = |
+| Painted layers | a.framer-0phDM.framer-npPic 148.0x48.0 bg #f94d00 r 8px; div.framer-144aqy4 164.0x164.0 bg #fc652d r 999px; div.framer-e7hcqw 164.0x164.0 bg #dd3b00 r 999px | = | a.framer-0phDM.framer-npPic 148.0x48.0 bg #f94d00 r 8px outline 1px auto #101010 offset 1px; div.framer-144aqy4 164.0x164.0 bg #fc652d r 999px; div.framer-e7hcqw 164.0x164.0 bg #dd3b00 r 999px | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
 Crops: `cta-accent-default.png`, `cta-accent-hover.png`, `cta-accent-focus-visible.png`, `cta-accent-pressed.png`.
@@ -308,14 +308,14 @@ Page: home. Selector: `a.Large / Dark`. States: default, hover, focus-visible, p
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 180.7 x 48 | = | = | = |
+| Size (w x h) | 179 x 48 | = | = | = |
 | Padding | 8px 12px 8px 4px | = | = | = |
 | Gap | 10px | = | = | = |
 | Border | none | = | = | = |
 | Radius | 8px | = | = | = |
 | Background | #44403f | = | = | = |
 | Box shadow | none | = | = | = |
-| Outline | none | = | 1px auto #005fcc offset 1px | = |
+| Outline | none | = | 1px auto #101010 offset 1px | = |
 | Font | sans-serif 12px/normal 400 | = | = | = |
 | Letter spacing | normal | = | = | = |
 | Colour | #0000ee | = | = | #ff0000 |
@@ -323,8 +323,8 @@ Page: home. Selector: `a.Large / Dark`. States: default, hover, focus-visible, p
 | Transition | none | = | = | = |
 | Cursor | default | = | = | = |
 | Icon | 8 x 8, colour #0000ee, fill #000000 | = | = | 8 x 8, colour #ff0000, fill #000000 |
-| ::after | 180.703px x 48px, absolute, bg #000000 @ 0, radius 8px | = | = | = |
-| Painted layers | a.framer-0phDM.framer-npPic 180.7x48.0 bg #44403f r 8px; a::after.framer-0phDM.framer-npPic 180.703pxx48px border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 8px; div::after.framer-133laaa 40pxx40px border T:1px solid #44403f / R:1px solid #44403f / B:1px solid #44403f / L:1px solid #44403f r 4px; div.framer-144aqy4 196.7x196.7 bg #524c4a r 999px; div.framer-e7hcqw 196.7x196.7 bg #4d4846 r 999px | = | a.framer-0phDM.framer-npPic 180.7x48.0 bg #44403f r 8px outline 1px auto #005fcc offset 1px; a::after.framer-0phDM.framer-npPic 180.703pxx48px border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 8px; div::after.framer-133laaa 40pxx40px border T:1px solid #44403f / R:1px solid #44403f / B:1px solid #44403f / L:1px solid #44403f r 4px; div.framer-144aqy4 196.7x196.7 bg #524c4a r 999px; div.framer-e7hcqw 196.7x196.7 bg #4d4846 r 999px | = |
+| ::after | 179px x 48px, absolute, bg #000000 @ 0, radius 8px | = | = | = |
+| Painted layers | a.framer-0phDM.framer-npPic 179.0x48.0 bg #44403f r 8px; a::after.framer-0phDM.framer-npPic 179pxx48px border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 8px; div::after.framer-133laaa 40pxx40px border T:1px solid #44403f / R:1px solid #44403f / B:1px solid #44403f / L:1px solid #44403f r 4px; div.framer-144aqy4 195.0x195.0 bg #524c4a r 999px; div.framer-e7hcqw 195.0x195.0 bg #4d4846 r 999px | = | a.framer-0phDM.framer-npPic 179.0x48.0 bg #44403f r 8px outline 1px auto #101010 offset 1px; a::after.framer-0phDM.framer-npPic 179pxx48px border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 8px; div::after.framer-133laaa 40pxx40px border T:1px solid #44403f / R:1px solid #44403f / B:1px solid #44403f / L:1px solid #44403f r 4px; div.framer-144aqy4 195.0x195.0 bg #524c4a r 999px; div.framer-e7hcqw 195.0x195.0 bg #4d4846 r 999px | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
 Crops: `cta-dark-default.png`, `cta-dark-hover.png`, `cta-dark-focus-visible.png`, `cta-dark-pressed.png`.
@@ -351,6 +351,32 @@ Page: home. Selector: `first visible h2, marked where it mounts`. States: defaul
 | How | at rest |
 
 Crops: `section-title-default.png`.
+
+#### page-ground
+
+Page ground. The body element's own painted fill — the warm-cream ground under every section.
+
+Page: home. Selector: `document.body`. States: default.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 1440 x 8274.78 |
+| Padding | 0px |
+| Border | none |
+| Radius | 0px |
+| Background | #efede5 |
+| Box shadow | none |
+| Outline | none |
+| Font | sans-serif 12px/normal 400 |
+| Letter spacing | normal |
+| Colour | #000000 |
+| Text node | h1.framer-text: Cirka Regular 88px/78px 400, #f4f3f2, ls -0.5px |
+| Transition | none |
+| Icon | 8 x 8, colour #0000ee, fill #000000 |
+| Painted layers | body 1440.0x8274.8 bg #efede5; div.framer-Up5El.framer-SVSxo 1440.0x8274.8 bg #efede5; div.framer-pl228f 1392.0x1086.0 image radial-gradient(103% 223% at 49.2% 170.8%, #38312f 35%, #262321 67.3371%) r 24px; a.framer-0phDM.framer-npPic 148.0x48.0 bg #f94d00 r 8px; div.framer-144aqy4 164.0x164.0 bg #fc652d r 999px; div.framer-e7hcqw 164.0x164.0 bg #dd3b00 r 999px |
+| How | at rest |
+
+Crops: none.
 
 ### Pricing
 
@@ -857,27 +883,26 @@ Page: signin. Selector: `button:has-text("Continue")`. States: default, hover, f
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Error | locator.evaluate: Timeout 8000ms exceeded. Call log:   - waiting for locator('button').filter({ hasText: /continue/i }).filter({ visible: true }).first().filter({ visible: true }).first().filter({ vis | locator.hover: Timeout 5000ms exceeded. Call log:   - waiting for locator('button').filter({ hasText: /continue/i }).filter({ visible: true }).first().filter({ visible: true }).first().filter({ visibl | - | - |
-| Size (w x h) | - | = | 384 x 40 | 372.48 x 38.8 |
-| Padding | - | = | 0px 12px | 0px 12px |
-| Gap | - | = | normal 8px | normal 8px |
-| Border | - | = | 2px solid #000000 @ 0 | 2px solid #000000 @ 0 |
-| Radius | - | = | 12px | 12px |
-| Background | - | = | oklch(0.2591 0.0049 39.4) | oklch(0.8244 0.0077 80.72) |
-| Box shadow | - | = | none | none |
-| Outline | - | = | 1px solid oklch(0.5152 0.0118 58.04) offset 1px | none |
-| Font | - | = | Geist 14px/20px 400 | Geist 14px/20px 400 |
-| Letter spacing | - | = | normal | normal |
-| Colour | - | = | oklch(0.995 0.0034 67.78) | oklch(0.995 0.0034 67.78) |
-| Text node | - | = | span.font-medium: Geist 14px/20px 500, oklch(0.995 0.0034 67.78) | span.font-medium: Geist 14px/20px 500, oklch(0.995 0.0034 67.78) |
-| Transition | - | = | color, background-color, border-color, scale 0.15s cubic-bezier(0.2, 0, 0, 1) | color, background-color, border-color, scale 0.15s cubic-bezier(0.2, 0, 0, 1) |
-| Cursor | - | = | pointer | pointer |
-| Painted layers | - | = | button.ct-link.base-button 384.0x40.0 bg oklch(0.2591 0.0049 39.4) border T:2px solid #000000 @ 0 / R:2px solid #000000 @ 0 / B:2px solid #000000 @ 0 / L:2px solid #000000 @ 0 r 12px outline 1px solid oklch(0.5152 0.0118 58.04) offset 1px | button.ct-link.base-button 372.5x38.8 bg oklch(0.8244 0.0077 80.72) border T:2px solid #000000 @ 0 / R:2px solid #000000 @ 0 / B:2px solid #000000 @ 0 / L:2px solid #000000 @ 0 r 12px |
-| Ancestor paint | - | = | 3 up div.card.rounded-4xl bg oklch(0.997 0.0041 91.45) shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, oklch(0.9046 0.0199 87.52 / 0.32) 0px 0px 0px 1px, oklch(0 0 0 / 0.16) 0px 0px 1px 0px | 3 up div.card.rounded-4xl bg oklch(0.997 0.0041 91.45) shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, oklch(0.9046 0.0199 87.52 / 0.32) 0px 0px 0px 1px, oklch(0 0 0 / 0.16) 0px 0px 1px 0px |
-| How | - | - | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
+| Size (w x h) | 384 x 40 | = | = | 372.48 x 38.8 |
+| Padding | 0px 12px | = | = | = |
+| Gap | normal 8px | = | = | = |
+| Border | 2px solid #000000 @ 0 | = | = | = |
+| Radius | 12px | = | = | = |
+| Background | oklch(0.2591 0.0049 39.4) | oklch(0.3751 0.0058 34.3) | = | #262322 |
+| Box shadow | none | = | = | = |
+| Outline | none | = | 1px solid oklch(0.5152 0.0118 58.04) offset 1px | = |
+| Font | Geist 14px/20px 400 | = | = | = |
+| Letter spacing | normal | = | = | = |
+| Colour | oklch(0.995 0.0034 67.78) | = | = | = |
+| Text node | span.font-medium: Geist 14px/20px 500, oklch(0.995 0.0034 67.78) | = | = | = |
+| Transition | color, background-color, border-color, scale 0.15s cubic-bezier(0.2, 0, 0, 1) | = | = | = |
+| Cursor | pointer | = | = | = |
+| Painted layers | button.ct-link.base-button 384.0x40.0 bg oklch(0.2591 0.0049 39.4) border T:2px solid #000000 @ 0 / R:2px solid #000000 @ 0 / B:2px solid #000000 @ 0 / L:2px solid #000000 @ 0 r 12px | button.ct-link.base-button 384.0x40.0 bg oklch(0.3751 0.0058 34.3) border T:2px solid #000000 @ 0 / R:2px solid #000000 @ 0 / B:2px solid #000000 @ 0 / L:2px solid #000000 @ 0 r 12px | button.ct-link.base-button 384.0x40.0 bg oklch(0.2591 0.0049 39.4) border T:2px solid #000000 @ 0 / R:2px solid #000000 @ 0 / B:2px solid #000000 @ 0 / L:2px solid #000000 @ 0 r 12px outline 1px solid oklch(0.5152 0.0118 58.04) offset 1px | button.ct-link.base-button 372.5x38.8 bg #262322 border T:2px solid #000000 @ 0 / R:2px solid #000000 @ 0 / B:2px solid #000000 @ 0 / L:2px solid #000000 @ 0 r 12px |
+| Ancestor paint | 3 up div.card.rounded-4xl bg oklch(0.997 0.0041 91.45) shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, oklch(0.9046 0.0199 87.52 / 0.32) 0px 0px 0px 1px, oklch(0 0 0 / 0.16) 0px 0px 1px 0px | = | = | = |
+| How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 | Transform | - | = | = | matrix(0.97, 0, 0, 0.97, 0, 0) |
 
-Crops: `signin-continue-focus-visible.png`, `signin-continue-pressed.png`.
+Crops: `signin-continue-default.png`, `signin-continue-hover.png`, `signin-continue-focus-visible.png`, `signin-continue-pressed.png`.
 
 #### signin-create
 
@@ -892,7 +917,7 @@ Page: signin. Selector: `:has-text("Create account")`. States: default, hover, f
 | Gap | normal 8px | = | = | = |
 | Border | 2px solid #000000 @ 0 | = | = | = |
 | Radius | 12px | = | = | = |
-| Background | oklch(0.9492 0.0111 89.72) | oklch(0.9162 0.0182 89.36) | = | oklch(0.9046 0.0199 87.52) |
+| Background | oklch(0.9492 0.0111 89.72) | #f1eee6 | = | #f1eee6 |
 | Box shadow | none | = | = | = |
 | Outline | none | = | 1px solid oklch(0.5152 0.0118 58.04) offset 1px | = |
 | Font | Geist 14px/20px 400 | = | = | = |
@@ -901,7 +926,7 @@ Page: signin. Selector: `:has-text("Create account")`. States: default, hover, f
 | Text node | span.font-medium: Geist 14px/20px 500, oklch(0.2591 0.0049 39.4) | = | = | = |
 | Transition | color, background-color, border-color, scale 0.15s cubic-bezier(0.2, 0, 0, 1) | = | = | = |
 | Cursor | pointer | = | = | = |
-| Painted layers | a.ct-link.base-button 384.0x40.0 bg oklch(0.9492 0.0111 89.72) border T:2px solid #000000 @ 0 / R:2px solid #000000 @ 0 / B:2px solid #000000 @ 0 / L:2px solid #000000 @ 0 r 12px | a.ct-link.base-button 384.0x40.0 bg oklch(0.9162 0.0182 89.36) border T:2px solid #000000 @ 0 / R:2px solid #000000 @ 0 / B:2px solid #000000 @ 0 / L:2px solid #000000 @ 0 r 12px | a.ct-link.base-button 384.0x40.0 bg oklch(0.9492 0.0111 89.72) border T:2px solid #000000 @ 0 / R:2px solid #000000 @ 0 / B:2px solid #000000 @ 0 / L:2px solid #000000 @ 0 r 12px outline 1px solid oklch(0.5152 0.0118 58.04) offset 1px | a.ct-link.base-button 372.5x38.8 bg oklch(0.9046 0.0199 87.52) border T:2px solid #000000 @ 0 / R:2px solid #000000 @ 0 / B:2px solid #000000 @ 0 / L:2px solid #000000 @ 0 r 12px |
+| Painted layers | a.ct-link.base-button 384.0x40.0 bg oklch(0.9492 0.0111 89.72) border T:2px solid #000000 @ 0 / R:2px solid #000000 @ 0 / B:2px solid #000000 @ 0 / L:2px solid #000000 @ 0 r 12px | a.ct-link.base-button 384.0x40.0 bg #f1eee6 border T:2px solid #000000 @ 0 / R:2px solid #000000 @ 0 / B:2px solid #000000 @ 0 / L:2px solid #000000 @ 0 r 12px | a.ct-link.base-button 384.0x40.0 bg oklch(0.9492 0.0111 89.72) border T:2px solid #000000 @ 0 / R:2px solid #000000 @ 0 / B:2px solid #000000 @ 0 / L:2px solid #000000 @ 0 r 12px outline 1px solid oklch(0.5152 0.0118 58.04) offset 1px | a.ct-link.base-button 372.5x38.8 bg #f1eee6 border T:2px solid #000000 @ 0 / R:2px solid #000000 @ 0 / B:2px solid #000000 @ 0 / L:2px solid #000000 @ 0 r 12px |
 | Ancestor paint | 3 up div.card.rounded-4xl bg oklch(0.997 0.0041 91.45) shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, oklch(0.9046 0.0199 87.52 / 0.32) 0px 0px 0px 1px, oklch(0 0 0 / 0.16) 0px 0px 1px 0px | = | = | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 | Transform | - | = | = | matrix(0.97, 0, 0, 0.97, 0, 0) |
@@ -955,7 +980,7 @@ Page: home. Selector: `ancestor of "chargetrip presents"`. States: default.
 | Text node | p.framer-text.framer-styles-preset-phy7qs: Geist Variable 16px/24px 400, #877f78 |
 | Transition | none |
 | Icon | 94 x 20.02, colour #000000 |
-| Painted layers | div.framer-PkeUF.framer-npPic 1392.0x481.2 bg #fffffb r 24px 24px 0px 0px; div 8.0x8.0 bg #278859 r 100%; a.framer-1vyggok.framer-1oqc6h7 97.8x32.0 bg #efede5 r 16px; div::after.framer-cuy8cf 462.672pxx316.031px border L:1px solid #c7c0aa @ 0.2; a.framer-0phDM.framer-npPic 105.8x40.0 bg #44403f r 8px; div.framer-144aqy4 121.8x121.8 bg #524c4a r 999px |
+| Painted layers | div.framer-PkeUF.framer-npPic 1392.0x481.2 bg #fffffb r 24px 24px 0px 0px; div 8.0x8.0 bg #278859 r 100%; a.framer-1vyggok.framer-1oqc6h7 98.0x32.0 bg #efede5 r 16px; div::after.framer-cuy8cf 462.672pxx316.031px border L:1px solid #c7c0aa @ 0.2; a.framer-0phDM.framer-npPic 106.0x40.0 bg #44403f r 8px; div.framer-144aqy4 122.0x122.0 bg #524c4a r 999px |
 | How | at rest |
 
 Crops: `footer-default.png`.
@@ -968,20 +993,20 @@ Page: home. Selector: `footer a:has-text("No-code")`. States: default, hover, fo
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 63.53 x 21 | = | = | = |
+| Size (w x h) | 65 x 21 | = | = | = |
 | Padding | 0px | = | = | = |
 | Border | none | = | = | = |
 | Radius | 0px | = | = | = |
 | Background | transparent | = | = | = |
 | Box shadow | none | = | = | = |
-| Outline | none | = | 1px auto #005fcc offset 1px | = |
+| Outline | none | = | 1px auto #101010 offset 1px | = |
 | Font | Geist Variable 16px/22.4px 400 | = | = | = |
 | Letter spacing | normal | = | = | = |
 | Colour | #262322 | #f94d00 | = | #f94d00 |
 | Transition | none | = | = | = |
 | Cursor | pointer | = | = | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
-| Painted layers | - | = | a.framer-text.framer-styles-preset-zjjg3u 63.5x21.0 outline 1px auto #005fcc offset 1px | = |
+| Painted layers | - | = | a.framer-text.framer-styles-preset-zjjg3u 65.0x21.0 outline 1px auto #101010 offset 1px | = |
 
 Crops: `footer-link-default.png`, `footer-link-hover.png`, `footer-link-focus-visible.png`, `footer-link-pressed.png`.
 
@@ -993,20 +1018,20 @@ Page: home. Selector: `footer social a`. States: default, hover, focus-visible, 
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 62.13 x 21 | = | = | = |
+| Size (w x h) | 61 x 21 | = | = | = |
 | Padding | 0px | = | = | = |
 | Border | none | = | = | = |
 | Radius | 0px | = | = | = |
 | Background | transparent | = | = | = |
 | Box shadow | none | = | = | = |
-| Outline | none | = | 1px auto #005fcc offset 1px | = |
+| Outline | none | = | 1px auto #101010 offset 1px | = |
 | Font | Geist Variable 16px/22.4px 400 | = | = | = |
 | Letter spacing | normal | = | = | = |
 | Colour | #262322 | #f94d00 | = | #f94d00 |
 | Transition | none | = | = | = |
 | Cursor | pointer | = | = | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
-| Painted layers | - | = | a.framer-text.framer-styles-preset-zjjg3u 62.1x21.0 outline 1px auto #005fcc offset 1px | = |
+| Painted layers | - | = | a.framer-text.framer-styles-preset-zjjg3u 61.0x21.0 outline 1px auto #101010 offset 1px | = |
 
 Crops: `footer-social-default.png`, `footer-social-hover.png`, `footer-social-focus-visible.png`, `footer-social-pressed.png`.
 
@@ -1018,20 +1043,20 @@ Page: home. Selector: `footer a:has-text("Sign up")`. States: default, hover, fo
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 55.28 x 21 | = | = | = |
+| Size (w x h) | 56 x 21 | = | = | = |
 | Padding | 0px | = | = | = |
 | Border | none | = | = | = |
 | Radius | 0px | = | = | = |
 | Background | transparent | = | = | = |
 | Box shadow | none | = | = | = |
-| Outline | none | = | 1px auto #005fcc offset 1px | = |
+| Outline | none | = | 1px auto #101010 offset 1px | = |
 | Font | Geist Variable 16px/22.4px 400 | = | = | = |
 | Letter spacing | normal | = | = | = |
 | Colour | #262322 | #f94d00 | = | #f94d00 |
 | Transition | none | = | = | = |
 | Cursor | pointer | = | = | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
-| Painted layers | - | = | a.framer-text.framer-styles-preset-zjjg3u 55.3x21.0 outline 1px auto #005fcc offset 1px | = |
+| Painted layers | - | = | a.framer-text.framer-styles-preset-zjjg3u 56.0x21.0 outline 1px auto #101010 offset 1px | = |
 
 Crops: `newsletter-cta-default.png`, `newsletter-cta-hover.png`, `newsletter-cta-focus-visible.png`, `newsletter-cta-pressed.png`.
 
@@ -1071,8 +1096,8 @@ Page: home. Selector: `the mobile top bar at y=0`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 272 x 171 |
-| Padding | 0px |
+| Size (w x h) | 390 x 64 |
+| Padding | 0px 8px |
 | Gap | 10px |
 | Border | none |
 | Radius | 0px |
@@ -1082,13 +1107,13 @@ Page: home. Selector: `the mobile top bar at y=0`. States: default.
 | Font | sans-serif 12px/normal 400 |
 | Letter spacing | normal |
 | Colour | #000000 |
-| Text node | p.framer-text.framer-styles-preset-1sz90s2: Geist 12px/15px 500, #877f78 |
+| Text node | p.framer-text.framer-styles-preset-ooof01: Geist Variable 18px/28.8px 400, #262322 |
 | Transition | none |
-| Icon | 1 x 171, colour #000000 |
-| Ancestor paint | 1 up div.framer-66rowr bg #fffffb shadow #fffffb @ 0.16 0px 0px 0px 4px, #000000 @ 0.4 0px 25px 50px -12px |
+| Icon | 106 x 24, colour #000000 |
+| Painted layers | div.framer-1eg8t2t 374.0x64.0 bg #fcfcfb @ 0 r 12px; div::after.framer-1eg8t2t 374pxx64px border B:1px solid #efede5 r 12px; a::after.framer-SWyCz.framer-i5yBN 83pxx40px border T:1px solid #262322 / R:1px solid #262322 / B:1px solid #262322 / L:1px solid #262322 r 8px; div.framer-fp75hx 40.0x40.0 bg #071c1f r 8px; div.framer-dy9a3h 16.0x16.0 image url(data:…)%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 stroke-dasharray=%22; div.framer-12qdk4p 12.0x10.0 image url(data:…)%22></path></svg>") |
 | How | at rest |
 
-Crops: none.
+Crops: `m-header-default.png`.
 
 #### m-menu-button
 
@@ -1120,24 +1145,24 @@ Crops: `m-menu-button-default.png`.
 
 Mobile menu, open. The full-screen menu overlay after the trigger's own toggle: orange No-code card, dark API card, Integration Partners, the Use-cases list.
 
-Page: home. Selector: `body with the menu open`. States: default.
+Page: home. Selector: `fixed menu overlay ancestor of the in-menu a[href="./no-code"]`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 390 x 8758.94 |
+| Size (w x h) | 390 x 828 |
 | Padding | 0px |
 | Border | none |
 | Radius | 0px |
-| Background | #efede5 |
+| Background | transparent |
 | Box shadow | none |
 | Outline | none |
 | Font | sans-serif 12px/normal 400 |
 | Letter spacing | normal |
 | Colour | #000000 |
-| Text node | h1.framer-text: Cirka Regular 56px/52px 400, #f4f3f2, ls -0.2px |
+| Text node | p.framer-text.framer-styles-preset-ldb0w0: Geist Regular 16px/24px 400, #fffffb |
 | Transition | none |
-| Icon | 8 x 8, colour #0000ee, fill #000000 |
-| Painted layers | body 390.0x8758.9 bg #efede5; div.framer-txXah.framer-SVSxo 390.0x8758.9 bg #efede5; div.framer-pl228f 374.0x1092.6 image radial-gradient(103% 223% at 49.2% 170.8%, #38312f 35%, #262321 67.3371%) r 20px; a.framer-0phDM.framer-npPic 147.2x48.0 bg #f94d00 r 8px; div.framer-144aqy4 163.2x163.2 bg #fc652d r 999px; div.framer-e7hcqw 163.2x163.2 bg #dd3b00 r 999px |
+| Icon | 106 x 24, colour #000000 |
+| Painted layers | div.framer-1yyuo68 390.0x828.0 bg #000000 @ 0.2; div.framer-e2feec 373.9x828.0 bg #fffffb r 3.20856% / 1.44928% shadow #000000 @ 0.12 0px 0px 40px 0px; div.framer-10hg0ls 479.0x40.0 bg #262322 r 0px 0px 12px 12px; div.framer-1eg8t2t 374.0x64.0 bg #fffffb r 12px 12px 0px 0px; div::after.framer-1eg8t2t 374pxx64px border B:1px solid #efede5 r 12px 12px 0px 0px; a::after.framer-SWyCz.framer-i5yBN 83pxx40px border T:1px solid #262322 / R:1px solid #262322 / B:1px solid #262322 / L:1px solid #262322 r 8px |
 | How | at rest |
 
 Crops: `m-menu-open-default.png`.
@@ -1150,19 +1175,21 @@ Page: home. Selector: `card ancestor of a[href="./no-code"]`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 326 x 92.81 |
-| Padding | 0px |
-| Gap | 12px |
+| Size (w x h) | 350 x 86 |
+| Padding | 16px |
+| Gap | 0px |
 | Border | none |
-| Radius | 0px |
-| Background | transparent |
+| Radius | 8px |
+| Background | #f94d00 |
 | Box shadow | none |
 | Outline | none |
 | Font | sans-serif 12px/normal 400 |
 | Letter spacing | normal |
-| Colour | #000000 |
-| Text node | p.framer-text.framer-styles-preset-phy7qs: Geist Variable 16px/24px 400, #877f78 |
+| Colour | #0000ee |
+| Text node | h4.framer-text.framer-styles-preset-1o67j2j: PP Cirka Medium 28px/30px 400, #efede5 |
 | Transition | none |
+| Cursor | pointer |
+| Painted layers | a.framer-39qt1e.framer-152olpk 350.0x86.0 bg #f94d00 r 8px |
 | How | at rest |
 
 Crops: `m-menu-card-default.png`.

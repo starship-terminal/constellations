@@ -1,14 +1,14 @@
 # Chargetrip components
 
-The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Captured from www.chargetrip.com (plus the public sign-in card on account.chargetrip.io) on 2026-11-12, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was signed into, booked, sent or submitted.
+The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Captured from www.chargetrip.com (plus the public sign-in card on account.chargetrip.io) on 2026-11-16, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was signed into, booked, sent or submitted.
 
-The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (45 components, 98 states).
+The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (46 components, 99 states).
 
 How to read an entry:
 
 - A colour is its value followed by the palette token in [tokens.json](tokens.json) with the same value, when there is one. Text is written family size/line-height weight, then its colour, for example `Inter 14/21 500, #111827`, and is read from the first text node inside the component.
 - The state table has one row per state that differs. The first row lists every value; later rows list only what changes. A state with the same values as the first is named in its label, for example "default (same: focus-visible)". When the root paints nothing, "Child layers" names the first nodes inside it that do.
-- Crops are images of the component read from the live page, in [components/crops/](components/crops) (94 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
+- Crops are images of the component read from the live page, in [components/crops/](components/crops) (96 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
 
 ## Discovery list
 
@@ -38,16 +38,16 @@ Screenshots are named `{page}-light-{state}.png`: the marketing site paints one 
 
 | State | Where | How it was reached | Captured |
 |---|---|---|---|
-| Products menu, open | header, desktop | the nav item's own press | [home-light-menu](screenshots/home-light-menu.png), [menu-panel](#products-menu-panel) |
+| Products menu, open | header, desktop | the nav item's own press | [home-light-menu](screenshots/home-light-menu.png), [menu-panel](#mega-menu) |
 | Mobile menu, open | header, phone | the menu trigger's own press | [mobile-home-light-menu-open](screenshots/mobile-home-light-menu-open.png), [m-menu-open](#mobile-menu-open) |
 
 ## Shared values
 
 Values that apply across entries, from the measurement files.
 
-**Focus.** 13 components were given a real keyboard focus (a further 1 could not be driven: `nav-item`). 13 show a visible focus state: `nav-cta` (1px auto #005fcc, offset 1px), `nav-signin` (1px auto #005fcc, offset 1px), `cta-accent` (1px auto #005fcc, offset 1px), `cta-dark` (1px auto #005fcc, offset 1px), `logo-chip` (1px auto #005fcc, offset 1px), `plan-cta` (1px auto #005fcc, offset 1px), `plan-cta-dark` (1px auto #005fcc, offset 1px), `form-submit` (1px auto #005fcc, offset 0px), `signin-continue` (1px solid oklch(0.5152 0.0118 58.04), offset 1px), `signin-create` (1px solid oklch(0.5152 0.0118 58.04), offset 1px), `footer-link` (1px auto #005fcc, offset 1px), `footer-social` (1px auto #005fcc, offset 1px), `newsletter-cta` (1px auto #005fcc, offset 1px).
+**Focus.** 13 components were given a real keyboard focus (a further 1 could not be driven: `nav-item`). 13 show a visible focus state: `nav-cta` (1px auto #101010, offset 1px), `nav-signin` (1px auto #101010, offset 1px), `cta-accent` (1px auto #101010, offset 1px), `cta-dark` (1px auto #101010, offset 1px), `logo-chip` (1px auto #005fcc, offset 1px), `plan-cta` (1px auto #005fcc, offset 1px), `plan-cta-dark` (1px auto #005fcc, offset 1px), `form-submit` (1px auto #005fcc, offset 0px), `signin-continue` (1px solid oklch(0.5152 0.0118 58.04), offset 1px), `signin-create` (1px solid oklch(0.5152 0.0118 58.04), offset 1px), `footer-link` (1px auto #101010, offset 1px), `footer-social` (1px auto #101010, offset 1px), `newsletter-cta` (1px auto #101010, offset 1px).
 
-**Pressed.** Forced with DevTools (`CSS.forcePseudoState` :active:hover): the marketing controls' painted fills do not move (the anchors' UA `:active` red only shows on their unstyled `color`); the footer text links take the orange accent on press; and the sign-in card's Tailwind buttons darken and shrink to scale(0.97). Nothing a real press would submit was ever pressed.
+**Pressed.** Forced with DevTools (`CSS.forcePseudoState` :active:hover): the marketing controls' painted fills do not move (the anchors' UA `:active` red only shows on their unstyled `color`); the footer text links take the orange accent on press; and the sign-in card's Tailwind buttons lighten and shrink to scale(0.97). Nothing a real press would submit was ever pressed.
 
 **Motion.** Transitions measured on the components, by duration.
 
@@ -63,7 +63,7 @@ Values that apply across entries, from the measurement files.
 | [Plan card (light)](#plan-card-light) | 458.66 x 628.84 | - | 24px | #fffffb `color.paper.0` | none | 72px |
 | [Plan card (dark)](#plan-card-dark) | 442.67 x 586.84 | - | 16px | #262322 `color.ink.800` | none | 38px 72px 72px 72px |
 | [Book-a-demo card](#book-a-demo-card) | 205.3 x 65.09 | - | 12px | #fffffb `color.paper.0` | none | 8px 12px |
-| [Hero band](#hero-band) | 1295.98 x 354.39 | - | 8px | #f94d00 `color.orange.500` | none | 0 |
+| [Hero band](#hero-band) | 1391.98 x 1086 | - | 24px | radial-gradient(103% 223% at 49.2% 170.8%, #38312f 35%, #262321 67.3371%) | none | 72px 48px 0px 48px |
 
 ## Components
 
@@ -76,7 +76,7 @@ The white 64px top bar: wordmark, the Products/Use-cases/Developers/Pricing/Comp
 
 **Values (default).** size 1440 x 64; padding 16px 0px 0px 0px; background transparent; text Geist Variable 18/28.8 400, #efede5 `color.paper.200`; icon 106 x 24, #000000.
 
-Child layers that carry the look: a 138.7x40 background #262322 `color.ink.800` radius 8px; a::after 80.7344pxx40px border 1px solid #262322 `color.ink.800` radius 8px; a 453.3x776 background #efede5 `color.paper.200` radius 8px.
+Child layers that carry the look: a 139x40 background #262322 `color.ink.800` radius 8px; a::after 83pxx40px border 1px solid #262322 `color.ink.800` radius 8px; a 453.3x776 background #efede5 `color.paper.200` radius 8px.
 
 ![Header default](components/crops/header-default.png)
 
@@ -92,28 +92,25 @@ The "Products" menu trigger; its own press opens the mega menu (opened state, th
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: pressed) | size 98.81 x 32; background transparent; text Geist Variable 18/28.8 400, #262322 `color.ink.800` |
-| hover | text Geist Variable 18/28.8 400, #dc3b04; child paint div.framer-tBbOV.framer-i5yBN: size 98.8x32.0; background rgba(221, 59, 0, 0.15); radius 24px |
-| focus-visible | text Geist Variable 18/28.8 400, #272322; child paint div.framer-tBbOV.framer-i5yBN: size 98.8x32.0; background rgba(221, 59, 0, 0); radius 24px |
-| opened | text Geist Variable 18/28.8 400, #dd3b00 `color.orange.600`; child paint div.framer-tBbOV.framer-i5yBN: size 98.8x32.0; background rgba(221, 59, 0, 0.15); radius 24px |
+| default (same: focus-visible, pressed) | size 99 x 32; background transparent; text Geist Variable 18/28.8 400, #262322 `color.ink.800` |
+| hover | text Geist Variable 18/28.8 400, #dc3b04; child paint div.framer-tBbOV.framer-i5yBN: size 99.0x32.0; background rgba(221, 59, 0, 0.15); radius 24px |
+| opened | text Geist Variable 18/28.8 400, #dd3b00 `color.orange.600`; child paint div.framer-tBbOV.framer-i5yBN: size 99.0x32.0; background rgba(221, 59, 0, 0.15); radius 24px |
 
 ![Nav item default](components/crops/nav-item-default.png) ![Nav item hover](components/crops/nav-item-hover.png) ![Nav item focus-visible](components/crops/nav-item-focus-visible.png) ![Nav item pressed](components/crops/nav-item-pressed.png) ![Nav item opened](components/crops/nav-item-opened.png)
 
 #### Mega menu
 The Products mega-menu card row (No-code / API / Integration Partners photo cards), held open by the nav-item toggle. Read as `menu-panel` on the home page.
 
-**Values (default).** size 927.31 x 316.03; padding 24px 0px 40px 64px; background transparent; text Geist Variable 16/24 400, #877f78 `color.ink.300`.
+**Values (default).** size 1376 x 816; padding 0px 0px 40px 0px; background transparent; text Geist Medium 22/26 400, #efede5 `color.paper.200`.
 
-Child layers that carry the look: div 8x8 background #278859 radius 100%; a 97.8x32 background #efede5 `color.paper.200` radius 16px.
+Child layers that carry the look: a 453.3x776 background #efede5 `color.paper.200` radius 8px; a 453.3x776 background #efede5 `color.paper.200` radius 8px; a 453.3x776 background #efede5 `color.paper.200` radius 8px.
 
 ![Mega menu default](components/crops/menu-panel-default.png)
 
 #### Menu card
 The No-code photo card inside the open mega menu. Read as `menu-card` on the home page.
 
-**Values (default).** size 927.31 x 316.03; padding 24px 0px 40px 64px; background transparent; text Geist Variable 16/24 400, #877f78 `color.ink.300`.
-
-Child layers that carry the look: div 8x8 background #278859 radius 100%; a 97.8x32 background #efede5 `color.paper.200` radius 16px.
+**Values (default).** size 453.33 x 776; padding 16px; radius 8px; background #efede5 `color.paper.200`; text Geist Medium 22/26 400, #efede5 `color.paper.200`.
 
 ![Menu card default](components/crops/menu-card-default.png)
 
@@ -122,8 +119,9 @@ The dark "Contact sales" button; links to /contact/sales, measured never followe
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: pressed) | size 138.73 x 40; padding 0px 12px; radius 8px; background #262322 `color.ink.800`; text Geist Variable 18/28.8 400, #efede5 `color.paper.200` |
-| focus-visible | outline 1px auto #005fcc, offset 1px; child paint a.framer-SWyCz.framer-i5yBN: outline 1px auto rgb(0, 95, 204) offset 1px |
+| default (same: pressed) | size 139 x 40; padding 0px 12px; radius 8px; background #262322 `color.ink.800`; text Geist Variable 18/28.8 400, #efede5 `color.paper.200` |
+| focus-visible | outline 1px auto #101010, offset 1px; child paint a.framer-SWyCz.framer-i5yBN: outline 1px auto rgb(16, 16, 16) offset 1px |
+| hover | size unmeasured — the capture failed on this pass |
 
 ![Nav CTA default](components/crops/nav-cta-default.png) ![Nav CTA focus-visible](components/crops/nav-cta-focus-visible.png) ![Nav CTA pressed](components/crops/nav-cta-pressed.png)
 
@@ -132,10 +130,11 @@ The outlined "Sign in" button; links to account.chargetrip.com, measured never f
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: pressed) | size 80.73 x 40; padding 0px 12px; radius 8px; background transparent; text Geist Variable 18/28.8 400, #262322 `color.ink.800` |
-| focus-visible | outline 1px auto #005fcc, offset 1px; text Geist Variable 18/28.8 400, #282322; child paint a.framer-SWyCz.framer-i5yBN: size 80.7x40.0; radius 8px; outline 1px auto rgb(0, 95, 204) offset 1px; a::after.framer-SWyCz.framer-i5yBN: border 1px solid #282322 |
+| default (same: pressed) | size 83 x 40; padding 0px 12px; radius 8px; background transparent; text Geist Variable 18/28.8 400, #262322 `color.ink.800` |
+| focus-visible | outline 1px auto #101010, offset 1px; text Geist Variable 18/28.8 400, #282322; child paint a.framer-SWyCz.framer-i5yBN: size 83.0x40.0; radius 8px; outline 1px auto rgb(16, 16, 16) offset 1px; a::after.framer-SWyCz.framer-i5yBN: border 1px solid #282322 |
+| hover | size unmeasured — the capture failed on this pass |
 
-Child layers that carry the look: a::after 80.7344pxx40px border 1px solid #262322 `color.ink.800` radius 8px.
+Child layers that carry the look: a::after 83pxx40px border 1px solid #262322 `color.ink.800` radius 8px.
 
 ![Sign-in button default](components/crops/nav-signin-default.png) ![Sign-in button focus-visible](components/crops/nav-signin-focus-visible.png) ![Sign-in button pressed](components/crops/nav-signin-pressed.png)
 
@@ -160,9 +159,7 @@ The muted lede under the display headline. Read as `hero-sub` on the home page.
 #### Hero band
 The dark rounded hero card the headline sits on. Read as `hero-card` on the home page.
 
-**Values (default).** size 1295.98 x 354.39; background transparent; text Cirka Regular 88/78 400, #f4f3f2 `color.paper.100`; icon 8 x 8, #0000ee.
-
-Child layers that carry the look: a 147.2x48 background #f94d00 `color.orange.500` radius 8px; div 163.2x163.2 background #fc652d `measured.cta-orbit` radius 999px; div 163.2x163.2 background #dd3b00 `color.orange.600` radius 999px.
+**Values (default).** size 1391.98 x 1086; padding 72px 48px 0px 48px; radius 24px; background transparent; image radial-gradient(103% 223% at 49.2% 170.8%, #38312f 35%, #262321 67.3371%); text Cirka Regular 88/78 400, #f4f3f2 `color.paper.100`; icon 8 x 8, #0000ee.
 
 ![Hero band default](components/crops/hero-card-default.png)
 
@@ -171,8 +168,8 @@ The orange "Book a demo" button (links to a HubSpot meeting page, never followed
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 147.16 x 48; padding 8px 12px; radius 8px; background #f94d00 `color.orange.500`; text Geist Variable 16/24 400, #f4f3f2 `color.paper.100`; icon 8 x 8, #0000ee |
-| focus-visible | outline 1px auto #005fcc, offset 1px; child paint a.framer-0phDM.framer-npPic: outline 1px auto rgb(0, 95, 204) offset 1px |
+| default (same: hover) | size 148 x 48; padding 8px 12px; radius 8px; background #f94d00 `color.orange.500`; text Geist Variable 16/24 400, #f4f3f2 `color.paper.100`; icon 8 x 8, #0000ee |
+| focus-visible | outline 1px auto #101010, offset 1px; child paint a.framer-0phDM.framer-npPic: outline 1px auto rgb(16, 16, 16) offset 1px |
 | pressed | icon 8 x 8, #ff0000 |
 
 ![Accent CTA default](components/crops/cta-accent-default.png) ![Accent CTA hover](components/crops/cta-accent-hover.png) ![Accent CTA focus-visible](components/crops/cta-accent-focus-visible.png) ![Accent CTA pressed](components/crops/cta-accent-pressed.png)
@@ -182,8 +179,8 @@ The dark "Plan a route" button with its map thumbnail (links to go.chargetrip.co
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 180.7 x 48; padding 8px 12px 8px 4px; radius 8px; background #44403f `color.ink.700`; text Geist Variable 16/24 400, #f4f3f2 `color.paper.100`; icon 8 x 8, #0000ee |
-| focus-visible | outline 1px auto #005fcc, offset 1px; child paint a.framer-0phDM.framer-npPic: outline 1px auto rgb(0, 95, 204) offset 1px |
+| default (same: hover) | size 179 x 48; padding 8px 12px 8px 4px; radius 8px; background #44403f `color.ink.700`; text Geist Variable 16/24 400, #f4f3f2 `color.paper.100`; icon 8 x 8, #0000ee |
+| focus-visible | outline 1px auto #101010, offset 1px; child paint a.framer-0phDM.framer-npPic: outline 1px auto rgb(16, 16, 16) offset 1px |
 | pressed | icon 8 x 8, #ff0000 |
 
 ![Dark CTA default](components/crops/cta-dark-default.png) ![Dark CTA hover](components/crops/cta-dark-hover.png) ![Dark CTA focus-visible](components/crops/cta-dark-focus-visible.png) ![Dark CTA pressed](components/crops/cta-dark-pressed.png)
@@ -194,6 +191,13 @@ Read as `section-title` on the home page.
 **Values (default).** size 619.98 x 144; background transparent; text Cirka Regular 48/48 400, #262322 `color.ink.800`.
 
 ![Section title default](components/crops/section-title-default.png)
+
+#### Page ground
+The body element's own painted fill — the warm-cream ground under every section. Read as `page-ground` on the home page.
+
+**Values (default).** size 1440 x 8274.78; background #efede5 `color.paper.200`; text Cirka Regular 88/78 400, #f4f3f2 `color.paper.100`; icon 8 x 8, #0000ee.
+
+No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
 
 ### Pricing
 
@@ -381,10 +385,12 @@ The dark Continue button; measured in all non-submitting states, never pressed f
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| focus-visible | size 384 x 40; padding 0px 12px; border 2px solid transparent; radius 12px; background oklch(0.2591 0.0049 39.4); outline 1px solid oklch(0.5152 0.0118 58.04), offset 1px; wrapper div.card.rounded-4xl: shadow oklch(0.9046 0.0199 87.52 / 0.32) 0px 0px 0px 1px, oklch(0 0 0 / 0.16) 0px 0px 1px 0px; text Geist 14/20 500, oklch(0.995 0.0034 67.78); transition color 0.15s cubic-bezier(0.2, 0, 0, 1), background-color 0.15s cubic-bezier(0.2, 0, 0, 1), border-color 0.15s cubic-bezier(0.2, 0, 0, 1), scale 0.15s cubic-bezier(0.2, 0, 0, 1) |
-| pressed | size 372.48 x 38.8; background oklch(0.8244 0.0077 80.72); outline none; transform scale(0.97); child paint button.ct-link.base-button: size 372.5x38.8; background oklch(0.8244 0.0077 80.72) |
+| default | size 384 x 40; padding 0px 12px; border 2px solid transparent; radius 12px; background oklch(0.2591 0.0049 39.4); wrapper div.card.rounded-4xl: shadow oklch(0.9046 0.0199 87.52 / 0.32) 0px 0px 0px 1px, oklch(0 0 0 / 0.16) 0px 0px 1px 0px; text Geist 14/20 500, oklch(0.995 0.0034 67.78); transition color 0.15s cubic-bezier(0.2, 0, 0, 1), background-color 0.15s cubic-bezier(0.2, 0, 0, 1), border-color 0.15s cubic-bezier(0.2, 0, 0, 1), scale 0.15s cubic-bezier(0.2, 0, 0, 1) |
+| hover | background oklch(0.3751 0.0058 34.3); child paint button.ct-link.base-button: background oklch(0.3751 0.0058 34.3) |
+| focus-visible | outline 1px solid oklch(0.5152 0.0118 58.04), offset 1px; child paint button.ct-link.base-button: outline 1px solid oklch(0.5152 0.0118 58.04) offset 1px |
+| pressed | size 372.48 x 38.8; background oklab(0.2591 0.00378639 0.00311018); transform scale(0.97); child paint button.ct-link.base-button: size 372.5x38.8; background oklab(0.2591 0.00378639 0.00311018) |
 
-![Continue button focus-visible](components/crops/signin-continue-focus-visible.png) ![Continue button pressed](components/crops/signin-continue-pressed.png)
+![Continue button default](components/crops/signin-continue-default.png) ![Continue button hover](components/crops/signin-continue-hover.png) ![Continue button focus-visible](components/crops/signin-continue-focus-visible.png) ![Continue button pressed](components/crops/signin-continue-pressed.png)
 
 #### Create-account button
 The secondary Create-account action; never followed. Read as `signin-create` on the sign-in page.
@@ -392,9 +398,9 @@ The secondary Create-account action; never followed. Read as `signin-create` on 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 384 x 40; padding 0px 12px; border 2px solid transparent; radius 12px; background oklch(0.9492 0.0111 89.72); wrapper div.card.rounded-4xl: shadow oklch(0.9046 0.0199 87.52 / 0.32) 0px 0px 0px 1px, oklch(0 0 0 / 0.16) 0px 0px 1px 0px; text Geist 14/20 500, oklch(0.2591 0.0049 39.4); transition color 0.15s cubic-bezier(0.2, 0, 0, 1), background-color 0.15s cubic-bezier(0.2, 0, 0, 1), border-color 0.15s cubic-bezier(0.2, 0, 0, 1), scale 0.15s cubic-bezier(0.2, 0, 0, 1) |
-| hover | background oklch(0.9162 0.0182 89.36); child paint a.ct-link.base-button: background oklch(0.9162 0.0182 89.36) |
+| hover | background oklab(0.9492 0.0000542448 0.0110999); child paint a.ct-link.base-button: background oklab(0.9492 0.0000542448 0.0110999) |
 | focus-visible | outline 1px solid oklch(0.5152 0.0118 58.04), offset 1px; child paint a.ct-link.base-button: outline 1px solid oklch(0.5152 0.0118 58.04) offset 1px |
-| pressed | size 372.48 x 38.8; background oklch(0.9046 0.0199 87.52); transform scale(0.97); child paint a.ct-link.base-button: size 372.5x38.8; background oklch(0.9046 0.0199 87.52) |
+| pressed | size 372.48 x 38.8; background oklab(0.9492 0.0000542448 0.0110999); transform scale(0.97); child paint a.ct-link.base-button: size 372.5x38.8; background oklab(0.9492 0.0000542448 0.0110999) |
 
 ![Create-account button default](components/crops/signin-create-default.png) ![Create-account button hover](components/crops/signin-create-hover.png) ![Create-account button focus-visible](components/crops/signin-create-focus-visible.png) ![Create-account button pressed](components/crops/signin-create-pressed.png)
 
@@ -421,9 +427,9 @@ Read as `footer-link` on the home page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 63.53 x 21; background transparent; text Geist Variable 16/22.4 400, #262322 `color.ink.800` |
+| default | size 65 x 21; background transparent; text Geist Variable 16/22.4 400, #262322 `color.ink.800` |
 | hover | text Geist Variable 16/22.4 400, #f94d00 `color.orange.500` |
-| focus-visible | outline 1px auto #005fcc, offset 1px; child paint a.framer-text.framer-styles-preset-zjjg3u: size 63.5x21.0; outline 1px auto rgb(0, 95, 204) offset 1px |
+| focus-visible | outline 1px auto #101010, offset 1px; child paint a.framer-text.framer-styles-preset-zjjg3u: size 65.0x21.0; outline 1px auto rgb(16, 16, 16) offset 1px |
 | pressed | text Geist Variable 16/22.4 400, #f94d00 `color.orange.500` |
 
 ![Footer link default](components/crops/footer-link-default.png) ![Footer link hover](components/crops/footer-link-hover.png) ![Footer link focus-visible](components/crops/footer-link-focus-visible.png) ![Footer link pressed](components/crops/footer-link-pressed.png)
@@ -433,9 +439,9 @@ Read as `footer-social` on the home page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 62.13 x 21; background transparent; text Geist Variable 16/22.4 400, #262322 `color.ink.800` |
+| default | size 61 x 21; background transparent; text Geist Variable 16/22.4 400, #262322 `color.ink.800` |
 | hover | text Geist Variable 16/22.4 400, #f94d00 `color.orange.500` |
-| focus-visible | outline 1px auto #005fcc, offset 1px; child paint a.framer-text.framer-styles-preset-zjjg3u: size 62.1x21.0; outline 1px auto rgb(0, 95, 204) offset 1px |
+| focus-visible | outline 1px auto #101010, offset 1px; child paint a.framer-text.framer-styles-preset-zjjg3u: size 61.0x21.0; outline 1px auto rgb(16, 16, 16) offset 1px |
 | pressed | text Geist Variable 16/22.4 400, #f94d00 `color.orange.500` |
 
 ![Social link default](components/crops/footer-social-default.png) ![Social link hover](components/crops/footer-social-hover.png) ![Social link focus-visible](components/crops/footer-social-focus-visible.png) ![Social link pressed](components/crops/footer-social-pressed.png)
@@ -445,9 +451,9 @@ The footer newsletter "Sign up" button; never followed. Read as `newsletter-cta`
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 55.28 x 21; background transparent; text Geist Variable 16/22.4 400, #262322 `color.ink.800` |
+| default | size 56 x 21; background transparent; text Geist Variable 16/22.4 400, #262322 `color.ink.800` |
 | hover | text Geist Variable 16/22.4 400, #f94d00 `color.orange.500` |
-| focus-visible | outline 1px auto #005fcc, offset 1px; child paint a.framer-text.framer-styles-preset-zjjg3u: size 55.3x21.0; outline 1px auto rgb(0, 95, 204) offset 1px |
+| focus-visible | outline 1px auto #101010, offset 1px; child paint a.framer-text.framer-styles-preset-zjjg3u: size 56.0x21.0; outline 1px auto rgb(16, 16, 16) offset 1px |
 | pressed | text Geist Variable 16/22.4 400, #f94d00 `color.orange.500` |
 
 ![Newsletter CTA default](components/crops/newsletter-cta-default.png) ![Newsletter CTA hover](components/crops/newsletter-cta-hover.png) ![Newsletter CTA focus-visible](components/crops/newsletter-cta-focus-visible.png) ![Newsletter CTA pressed](components/crops/newsletter-cta-pressed.png)
@@ -468,9 +474,11 @@ The same surface at phone width, with its menu overlay.
 #### Mobile header
 Read as `m-header` on the home page at 390 wide.
 
-**Values (default).** size 272 x 171; background transparent; wrapper div.framer-66rowr: shadow rgba(255, 255, 251, 0.16) 0px 0px 0px 4px, rgba(0, 0, 0, 0.4) 0px 25px 50px -12px; text Geist 12/15 500, #877f78 `color.ink.300`; icon 1 x 171, #000000.
+**Values (default).** size 390 x 64; padding 0px 8px; background transparent; text Geist Variable 18/28.8 400, #262322 `color.ink.800`; icon 106 x 24, #000000.
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+Child layers that carry the look: div 374x64 background rgba(252, 252, 251, 0) radius 12px; div::after 374pxx64px border 1px solid #efede5 `color.paper.200` radius 12px; a::after 83pxx40px border 1px solid #262322 `color.ink.800` radius 8px.
+
+![Mobile header default](components/crops/m-header-default.png)
 
 #### Menu button
 The dark-teal hamburger at the bar's right edge; its own press opens the menu overlay. Read as `m-menu-button` on the home page at 390 wide.
@@ -482,14 +490,16 @@ The dark-teal hamburger at the bar's right edge; its own press opens the menu ov
 #### Mobile menu, open
 The full-screen menu overlay after the trigger's own toggle: orange No-code card, dark API card, Integration Partners, the Use-cases list. Read as `m-menu-open` on the home page at 390 wide.
 
-**Values (default).** size 390 x 8758.94; background #efede5 `color.paper.200`; text Cirka Regular 56/52 400, #f4f3f2 `color.paper.100`; icon 8 x 8, #0000ee.
+**Values (default).** size 390 x 828; background transparent; text Geist Regular 16/24 400, #fffffb `color.paper.0`; icon 106 x 24, #000000.
+
+Child layers that carry the look: div 390x828 background rgba(0, 0, 0, 0.2); div 373.9x828 background #fffffb `color.paper.0` radius 3.20856% / 1.44928% shadow rgba(0, 0, 0, 0.12) 0px 0px 40px 0px; div 479x40 background #262322 `color.ink.800` radius 0px 0px 12px 12px.
 
 ![Mobile menu, open default](components/crops/m-menu-open-default.png)
 
 #### Mobile menu card
 The orange No-code card in the open mobile menu. Read as `m-menu-card` on the home page at 390 wide.
 
-**Values (default).** size 326 x 92.81; background transparent; text Geist Variable 16/24 400, #877f78 `color.ink.300`.
+**Values (default).** size 350 x 86; padding 16px; radius 8px; background #f94d00 `color.orange.500`; text PP Cirka Medium 28/30 400, #efede5 `color.paper.200`.
 
 ![Mobile menu card default](components/crops/m-menu-card-default.png)
 

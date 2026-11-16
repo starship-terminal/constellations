@@ -81,7 +81,7 @@ class Shooter {
         try {
           const meta = JSON.parse(fs.readFileSync(sideTmp, 'utf8'));
           meta.screenshot = path.basename(final);
-          fs.writeFileSync(sideFinal, JSON.stringify(meta, null, 2) + '\n');
+          fs.writeFileSync(sideTmp, JSON.stringify(meta, null, 2) + '\n');
         } catch { /* keep the sidecar as written */ }
         fs.renameSync(sideTmp, sideFinal);
         keep.add(path.basename(sideFinal));

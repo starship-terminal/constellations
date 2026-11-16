@@ -206,14 +206,15 @@ def paint_diff(cur, base):
 
 
 def state_rows(c):
-    states = [s for s in c["states"] if "style" in c["states"][s]]
-    if not states:
-        return [], states
-    base = props(c["states"][states[0]])
-    base_paint = paint_sig(c["states"][states[0]])
-    rows = [(states[0], base)]
+    states = list(c["states"])
+    good = [s for s in states if "style" in c["states"][s]]
+    if not good:
+        return ([(", ".join(states), {"size": "unmeasured — the capture failed on this pass"})] if states else []), states
+    base = props(c["states"][good[0]])
+    base_paint = paint_sig(c["states"][good[0]])
+    rows = [(good[0], base)]
     same = []
-    for st in states[1:]:
+    for st in good[1:]:
         p = props(c["states"][st])
         diff = {k: p[k] for k in ORDER if k in p and p.get(k) != base.get(k)}
         pd = paint_diff(paint_sig(c["states"][st]), base_paint)
@@ -225,12 +226,15 @@ def state_rows(c):
         if not diff:
             same.append(st)
             continue
-        if rows[-1][0] != states[0] and rows[-1][1] == diff:
+        if rows[-1][0] != good[0] and rows[-1][1] == diff:
             rows[-1] = (rows[-1][0] + ", " + st, diff)
         else:
             rows.append((st, diff))
     if same:
-        rows[0] = (f"{states[0]} (same: {', '.join(same)})", base)
+        rows[0] = (f"{good[0]} (same: {', '.join(same)})", base)
+    missed = [s for s in states if "style" not in c["states"][s]]
+    if missed:
+        rows.append((", ".join(missed), {"size": "unmeasured — the capture failed on this pass"}))
     return rows, states
 
 
@@ -347,7 +351,7 @@ W()
 W("| State | Where | How it was reached | Captured |")
 W("|---|---|---|---|")
 OVER = [
-    ("Products menu, open", "header, desktop", "the nav item's own press", "[home-light-menu](screenshots/home-light-menu.png), [menu-panel](#products-menu-panel)"),
+    ("Products menu, open", "header, desktop", "the nav item's own press", "[home-light-menu](screenshots/home-light-menu.png), [menu-panel](#mega-menu)"),
     ("Mobile menu, open", "header, phone", "the menu trigger's own press", "[mobile-home-light-menu-open](screenshots/mobile-home-light-menu-open.png), [m-menu-open](#mobile-menu-open)"),
 ]
 for r in OVER:
@@ -400,7 +404,7 @@ if without:
     line += f" The other {len(without)} show no change a keyboard user can see: {', '.join(without)}."
 W(line)
 W()
-W("**Pressed.** Forced with DevTools (`CSS.forcePseudoState` :active:hover): the marketing controls' painted fills do not move (the anchors' UA `:active` red only shows on their unstyled `color`); the footer text links take the orange accent on press; and the sign-in card's Tailwind buttons darken and shrink to scale(0.97). Nothing a real press would submit was ever pressed.")
+W("**Pressed.** Forced with DevTools (`CSS.forcePseudoState` :active:hover): the marketing controls' painted fills do not move (the anchors' UA `:active` red only shows on their unstyled `color`); the footer text links take the orange accent on press; and the sign-in card's Tailwind buttons lighten and shrink to scale(0.97). Nothing a real press would submit was ever pressed.")
 W()
 W("**Motion.** Transitions measured on the components, by duration.")
 W()
@@ -440,7 +444,7 @@ W()
 W("| Card | Size | Border | Radius | Background | Shadow | Padding |")
 W("|---|---|---|---|---|---|---|")
 # PRODUCT (adapt): the card-like components to compare in one table.
-for k in ["plan-card", "plan-card-dark", "demo-card"]:
+for k in ["plan-card", "plan-card-dark", "demo-card", "hero-card"]:
     c = C.get(k)
     # A card the capture could not find is saved with missing: true and no states.
     if not c or c.get("missing"):
@@ -449,10 +453,10 @@ for k in ["plan-card", "plan-card-dark", "demo-card"]:
     if st is None:
         continue
     p = props(st)
-    if ("radius" not in p or p["background"] == "transparent") and st.get("paint"):
+    if ("radius" not in p or (p["background"] == "transparent" and "image" not in p)) and st.get("paint"):
         p0 = next((x for x in st["paint"] if x.get("bg") and x.get("radius")), st["paint"][0])
         p = dict(p, border=colour(p0["border"].split(" | ")[0][2:]) if p0.get("border") else "-", radius=p0.get("radius", "-"), background=colour(p0.get("bg", "")) or "-", shadow=colour(p0.get("shadow", ""), tokens=False) or "none")
-    W(f"| [{c['title']}](#{re.sub(r'[^a-z0-9 -]', '', c['title'].lower()).replace(' ', '-')}) | {p['size']} | {p.get('border', '-')} | {p.get('radius', '-')} | {p.get('background', '-')} | {p.get('shadow', 'none')} | {p.get('padding', '0')} |")
+    W(f"| [{c['title']}](#{re.sub(r'[^a-z0-9 -]', '', c['title'].lower()).replace(' ', '-')}) | {p['size']} | {p.get('border', '-')} | {p.get('radius', '-')} | {p.get('image') or p.get('background', '-')} | {p.get('shadow', 'none')} | {p.get('padding', '0')} |")
 W()
 
 # ------------------------------------------------ entries
