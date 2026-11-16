@@ -358,7 +358,7 @@ export function readMotionInPage({ props, cap, pseudos }) {
 export function readSheetsInPage({ varName, varValue, cap }) {
   const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v);
   const nameRe = new RegExp(varName, 'i'), valueRe = new RegExp(varValue, 'i');
-  // A selector or a condition can hold a signed URL too (img[src="https://…?sig=…"]).
+  // A selector or a condition can hold a signed URL too (img[src="https://…?fakesig=…"]).
   // (no url() in that form, so a quoted value holding a URL or a query string is replaced whole)
   const clean = (s) => noUrl(String(s || '').replace(/__[A-Za-z0-9_-]{5,6}/g, ''))
     .replace(/(["'])(?:(?!\1).)*(?:\/\/|[?&][^=\s"']+=)(?:(?!\1).)*\1/g, '"<url>"')

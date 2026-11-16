@@ -78,7 +78,7 @@ export async function createResearchStore(directory: string) {
     const version = Number(
       (await tx.execute("PRAGMA user_version")).rows[0].user_version,
     );
-    if (version > 9)
+    if (version > 13)
       throw new Error("Research database was created by a newer application.");
     if (version === 0) {
       for (const sql of migrations) await tx.execute(sql);
@@ -136,13 +136,71 @@ export async function createResearchStore(directory: string) {
     }
     if (version < 9) {
       // Same one-shot top-up, scoped to this batch's new reference: a store
-      // already at v8 never re-seeds, so the Chargetrip rows would never arrive.
+      // already at v8 never re-seeds, so the Discord rows would never
+      // arrive. Scoping keeps cleared labels on older packages cleared — an
+      // empty assignment reads as "never labelled", so an unscoped pass
+      // would restore rows the user deleted.
+      await seedNewCuratedCategories(tx, new Set(["systems:discord"]));
+      await seedNewCuratedMediaTerms(tx, new Set(["systems:discord"]));
+      await tx.execute("PRAGMA user_version = 9");
+    }
+    if (version < 10) {
+      // Same one-shot top-up, scoped to this batch's new reference: a store
+      // already at v9 never re-seeds, so the District rows would never
+      // arrive. Scoping keeps cleared labels on older packages cleared — an
+      // empty assignment reads as "never labelled", so an unscoped pass
+      // would restore rows the user deleted.
+      await seedNewCuratedCategories(tx, new Set(["systems:district"]));
+      await seedNewCuratedMediaTerms(tx, new Set(["systems:district"]));
+      await tx.execute("PRAGMA user_version = 10");
+    }
+    if (version < 11) {
+      // Same one-shot top-up, scoped to this batch's new reference: a store
+      // already at v10 never re-seeds, so the DJI rows would never arrive.
       // Scoping keeps cleared labels on older packages cleared — an empty
       // assignment reads as "never labelled", so an unscoped pass would
       // restore rows the user deleted.
-      await seedNewCuratedCategories(tx, new Set(["systems:chargetrip"]));
-      await seedNewCuratedMediaTerms(tx, new Set(["systems:chargetrip"]));
-      await tx.execute("PRAGMA user_version = 9");
+      await seedNewCuratedCategories(tx, new Set(["systems:dji"]));
+      await seedNewCuratedMediaTerms(tx, new Set(["systems:dji"]));
+      await tx.execute("PRAGMA user_version = 11");
+    }
+    if (version < 12) {
+      // Same one-shot top-up, scoped to this batch's new reference: a store
+      // already at v11 never re-seeds, so the Framer rows would never
+      // arrive. Scoping keeps cleared labels on older packages cleared — an
+      // empty assignment reads as "never labelled", so an unscoped pass
+      // would restore rows the user deleted.
+      await seedNewCuratedCategories(tx, new Set(["systems:framer"]));
+      await seedNewCuratedMediaTerms(tx, new Set(["systems:framer"]));
+      await tx.execute("PRAGMA user_version = 12");
+    }
+    if (version < 13) {
+      // Same one-shot top-up, scoped to this batch's new reference: a store
+      // already at v12 never re-seeds, so the Fourthwall rows would never
+      // arrive. Scoping keeps cleared labels on older packages cleared — an
+      // empty assignment reads as "never labelled", so an unscoped pass
+      // would restore rows the user deleted.
+      await seedNewCuratedCategories(tx, new Set(["systems:fourthwall"]));
+      await seedNewCuratedMediaTerms(tx, new Set(["systems:fourthwall"]));
+      await tx.execute("PRAGMA user_version = 13");
+    }
+    if (version < 15) {
+      // Same one-shot top-up, scoped to this batch's new references: a store
+      // already at v14 never re-seeds, so the Chargetrip rows would never
+      // arrive. systems:fresha is included because it merged without a
+      // migration and its rows are stranded on v13/v14 stores. Scoping keeps
+      // cleared labels on older packages cleared — an empty assignment
+      // reads as "never labelled", so an unscoped pass would restore rows
+      // the user deleted.
+      await seedNewCuratedCategories(
+        tx,
+        new Set(["systems:fresha", "systems:chargetrip"]),
+      );
+      await seedNewCuratedMediaTerms(
+        tx,
+        new Set(["systems:fresha", "systems:chargetrip"]),
+      );
+      await tx.execute("PRAGMA user_version = 15");
     }
     await tx.commit();
   } catch (error) {
