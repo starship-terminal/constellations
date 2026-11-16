@@ -37,12 +37,12 @@ code { font-family: var(--sg-mono); font-size: .9em; }
 .kv span { color: var(--color-neutral-ink, #000); opacity: .65; }
 /* ---- mocks ---- */
 .mock { border: 1px solid var(--color-neutral-hairline, #ddd); overflow: hidden; background: var(--color-neutral-paper, #fff); }
-.navbar { display: flex; align-items: center; gap: 22px; height: 64px; padding: 0 12px 0 22px; font-size: 15px; background: var(--color-neutral-grey, #ededed); border-radius: var(--radius-button, 16px); }
+.navbar { display: flex; align-items: center; gap: 22px; height: 64px; padding: 0 12px 0 22px; font-size: 15px; background: var(--color-neutral-grey, #ededed); }
 .navbar .wm { font-weight: 700; font-size: 20px; letter-spacing: -0.02em; }
 .navbar .sp { flex: 1; }
-.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-control-height, 50px); padding: 0 24px; font-size: 16px; font-weight: 400; border-radius: var(--radius-button, 16px); border: 1px solid transparent; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-control-height, 56px); padding: 0 24px; font-size: 16px; font-weight: 400; border-radius: var(--radius-pill, 100px); border: 1px solid transparent; }
 .btn.primary { background: var(--color-neutral-soft-ink, #1e1e1e); color: var(--text-on-dark, #ebebeb); }
-.btn.small { height: var(--component-button-height, 39px); border-radius: var(--radius-control, 10px); font-size: 15px; }
+.btn.small { height: var(--component-tab-height, 26px); border-radius: var(--radius-tab, 100px); font-size: 15px; }
 .hero { color: var(--color-neutral-ink, #0f0f0f); padding: 72px 40px; font: 400 60px/1 var(--sg-serif); letter-spacing: .01em; text-align: center; }
 .hero small { display: block; font: 400 18px/1.5 var(--sg-sans); color: var(--color-neutral-ink, #000); margin: 16px auto 22px; max-width: 46ch; }
 .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
@@ -70,14 +70,14 @@ table.cmp td, table.cmp th { border: 1px solid var(--color-neutral-hairline, #dd
   <p class="note">Read from calm.com on 2026-11-12, signed out, in headed Chromium under Xvfb, with the WordPress health.calm.com B2B surface read alongside. The product behind the login card is a documented boundary; the /app/sleep, /app/meditate and /app/music preview pages are public and paint the dark shell. Figtree is a served face and is not loaded here: samples fall back to system sans.</p>
 
   <h2 class="sh">The chrome</h2>
-  <p class="lead">A transparent header floats over the hero photograph: the rounded app-icon logo, the Sleep/Stress &amp; Anxiety/Mindfulness links, the Calm Health dropdown, Log In and the white Try-Calm-for-Free pill. A cookie-consent bottom sheet sits below; it was measured, then hidden, never answered.</p>
+  <p class="lead">A navy-scrim-gradient header floats over the hero photograph: the rounded app-icon logo, the Sleep/Stress &amp; Anxiety/Mindfulness links, the Calm Health dropdown, Log In and the white Try-Calm-for-Free pill. A cookie-consent bottom sheet sits below; it was measured, then hidden, never answered.</p>
   <div class="mock" style="padding:20px;background:var(--color-app-canvas,#22264a);color:var(--color-app-text,#f5f6fb)">
     <div class="navbar" style="background:transparent;color:var(--color-app-text,#f5f6fb)"><span class="wm">Calm</span><span>Sleep</span><span>Stress &amp; Anxiety</span><span>Mindfulness</span><span>Calm Health</span><span class="sp"></span><span>Log In</span><span class="btn small" style="background:var(--color-neutral-paper,#fff);color:var(--color-neutral-ink,#1a2456)">Try Calm for Free</span></div>
     <div class="hero" style="color:var(--color-app-text,#f5f6fb)">Calm your mind. Change your life.<small>The #1 app for sleep, meditation and relaxation</small><span class="btn" style="background:var(--color-neutral-paper,#fff);color:var(--color-neutral-ink,#1a2456)">Try Calm for Free</span></div>
   </div>
 
   <h2 class="sh">The auth cards</h2>
-  <p class="lead">Log In and Try Calm for Free each open a white modal card over a dimmed backdrop: a navy "Sign in with Email" pill, white social sign-in pills and an X close. Both cards were opened by their own buttons and never submitted.</p>
+  <p class="lead">Log In opens a white modal card in place: a navy "Sign in with Email" pill, white social sign-in pills and an X close. It was opened by its own button and never submitted. Try Calm for Free navigates to /signup-flow instead — the landing stayed PerimeterX-blocked, so no signup card was captured.</p>
   <div class="mock" style="padding:20px;background:rgba(15,20,45,.75)">
     <div class="tile" style="margin:0 auto;max-width:380px;border-radius:var(--radius-card,24px);background:var(--color-neutral-paper,#fff);color:var(--color-neutral-ink,#1a2456)"><b>Log into your account</b><span class="sub">to continue to Calm</span><div style="margin-top:14px"><span class="btn primary" style="width:100%;justify-content:center">Sign in with Email</span></div></div>
   </div>
@@ -86,16 +86,16 @@ table.cmp td, table.cmp th { border: 1px solid var(--color-neutral-hairline, #dd
   <p class="lead">/app/sleep, /app/meditate and /app/music paint a dark-only signed-out preview of the product: a scene-gradient canvas and a deep left rail with icon items, white selected category pills over dark unselected ones, rounded content tiles, a gradient upsell bar and a bottom signup bar with the blue-violet Sign-up-today pill.</p>
   <div class="mock" style="padding:20px;background:var(--color-app-canvas,#22264a);color:var(--color-app-text,#f5f6fb)">
     <div style="display:flex;gap:14px;align-items:flex-start">
-      <div style="width:92px;border-radius:var(--radius-card,16px);background:var(--color-app-rail,#181a35);padding:14px 8px;display:flex;flex-direction:column;gap:10px;font-size:12px;color:var(--color-app-muted,#9fa3c7)"><span>Home</span><span style="color:var(--color-app-text,#f5f6fb)">Meditate</span><span>Sleep</span><span>Music</span></div>
+      <div style="width:92px;border-radius:var(--radius-card,16px);background:var(--color-app-rail,#181a35);padding:14px 8px;display:flex;flex-direction:column;gap:10px;font-size:12px;color:var(--color-app-pill-text,#fff)"><span>Home</span><span style="color:var(--color-app-text,#f5f6fb)">Meditate</span><span>Sleep</span><span>Music</span></div>
       <div style="flex:1">
         <div class="navbar" style="background:transparent"><span class="toggle"><span class="on" style="background:var(--color-neutral-paper,#fff);color:var(--color-app-canvas,#22264a)">All</span><span>Meditations</span><span>Soundscapes</span></span></div>
         <div class="grid" style="margin-top:14px">
-          <div class="tile" style="border-radius:var(--radius-tile,16px);background:var(--color-app-card,#2e3160);border:none;color:var(--color-app-text,#f5f6fb)"><b>A Woodland Stroll</b><span class="sub" style="color:var(--color-app-muted,#9fa3c7)">Sleep Story</span></div>
-          <div class="tile" style="border-radius:var(--radius-tile,16px);background:var(--color-app-card,#2e3160);border:none;color:var(--color-app-text,#f5f6fb)"><b>Break the Stress Cycle</b><span class="sub" style="color:var(--color-app-muted,#9fa3c7)">Meditation</span></div>
+          <div class="tile" style="border-radius:var(--radius-tile,16px);background:var(--color-app-card-scrim,rgba(72,72,72,.4));border:none;color:var(--color-app-text,#f5f6fb)"><b>A Woodland Stroll</b><span class="sub" style="color:var(--color-app-pill-text,#fff)">Sleep Story</span></div>
+          <div class="tile" style="border-radius:var(--radius-tile,16px);background:var(--color-app-card-scrim,rgba(72,72,72,.4));border:none;color:var(--color-app-text,#f5f6fb)"><b>Break the Stress Cycle</b><span class="sub" style="color:var(--color-app-pill-text,#fff)">Meditation</span></div>
         </div>
       </div>
     </div>
-    <div style="margin-top:18px"><span class="btn" style="height:38px;border-radius:var(--radius-control,999px);background:linear-gradient(90deg,var(--color-brand-blue,#60b4e7),var(--color-brand-violet,#6461e0));color:#fff;padding:0 18px;font-size:14px">Sign up today</span> <span class="btn" style="height:38px;border-radius:var(--radius-control,999px);background:var(--color-neutral-paper,#fff);color:var(--color-app-canvas,#22264a);padding:0 18px;font-size:14px">Try Calm for Free</span></div>
+    <div style="margin-top:18px"><span class="btn" style="height:38px;border-radius:var(--radius-pill,100px);background:linear-gradient(90deg,var(--color-brand-blue,#60b4e7),var(--color-brand-violet,#6461e0));color:#fff;padding:0 18px;font-size:14px">Sign up today</span> <span class="btn" style="height:38px;border-radius:var(--radius-pill,100px);background:var(--color-neutral-paper,#fff);color:var(--color-app-canvas,#22264a);padding:0 18px;font-size:14px">Try Calm for Free</span></div>
   </div>
 
   <h2 class="sh">Palette</h2>
@@ -114,6 +114,10 @@ table.cmp td, table.cmp th { border: 1px solid var(--color-neutral-hairline, #dd
   <div id="type-out"></div>
   <div id="fam-out" class="kv"></div>
 
+  <h2 class="sh">Zendesk Garden (help center)</h2>
+  <p class="lead">/faq/web is a Zendesk Guide help center themed to Calm — the one captured surface that ships a declared token layer. Its <code>--zd-*</code> custom properties are emitted under <code>core.zd</code>: the palette below, font sizes/weights/families and line heights.</p>
+  <div id="zd-out" class="kv"></div>
+
   <h2 class="sh">Measured extras</h2>
   <div id="meas-out" class="kv"></div>
 
@@ -129,10 +133,13 @@ const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) 
 (function palette() {
   let h = '';
   for (const [g, grp] of Object.entries(TOK.core.color || {})) {
-    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color' || t.t === 'gradient');
     if (!items.length) continue;
     h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
-    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    for (const [n, t] of items) {
+      const label = t.t === 'gradient' ? ((t.angle ? t.angle + ' ' : '') + (t.v || []).map(st => st.color).join(' → ')) : t.v;
+      h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(label)}</div></div></div>`;
+    }
     h += '</div>';
   }
   for (const [setname, label] of [['light', 'light roles'], ['dark', 'dark roles (app shell)']]) {
@@ -167,6 +174,16 @@ const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) 
   for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
   for (const [n, t] of flat((TOK.light.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
   $('#meas-out').innerHTML = m;
+})();
+
+(function zd() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.zd || {}, 'zd.')) {
+    const label = (t.v && typeof t.v === 'object' && t.v.color) ? (t.v.color + ' ' + (t.v.position ?? '')) : (typeof t.v === 'object' ? JSON.stringify(t.v) : t.v);
+    const isCol = t.t === 'color';
+    m += `<div><b>${isCol ? `<span class="dot" style="display:inline-block;vertical-align:-2px;margin-right:6px"><i style="background:var(${cssname(n)});display:inline-block;width:12px;height:12px;border-radius:50%"></i></span>` : ''}${esc(n)}</b> <span>${esc(label)}</span></div>`;
+  }
+  $('#zd-out').innerHTML = m || '<div><b>none</b></div>';
 })();
 
 (function type() {

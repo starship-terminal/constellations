@@ -38169,45 +38169,45 @@
     },
     {
       "referenceId": "systems:calm",
-      "mediaId": "systems/calm/components/crops/signup-pill-default.png",
+      "mediaId": "systems/calm/components/crops/signup-button-default.png",
       "terms": [
         {
-          "termId": "web-ui-elements:tags-chips",
-          "rule": "ui-chips",
-          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
         }
       ]
     },
     {
       "referenceId": "systems:calm",
-      "mediaId": "systems/calm/components/crops/signup-pill-focus-visible.png",
+      "mediaId": "systems/calm/components/crops/signup-button-focus-visible.png",
       "terms": [
         {
-          "termId": "web-ui-elements:tags-chips",
-          "rule": "ui-chips",
-          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
         }
       ]
     },
     {
       "referenceId": "systems:calm",
-      "mediaId": "systems/calm/components/crops/signup-pill-hover.png",
+      "mediaId": "systems/calm/components/crops/signup-button-hover.png",
       "terms": [
         {
-          "termId": "web-ui-elements:tags-chips",
-          "rule": "ui-chips",
-          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
         }
       ]
     },
     {
       "referenceId": "systems:calm",
-      "mediaId": "systems/calm/components/crops/signup-pill-pressed.png",
+      "mediaId": "systems/calm/components/crops/signup-button-pressed.png",
       "terms": [
         {
-          "termId": "web-ui-elements:tags-chips",
-          "rule": "ui-chips",
-          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
         }
       ]
     },

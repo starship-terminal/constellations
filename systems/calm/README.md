@@ -26,7 +26,7 @@ Read this before designing in this style. Take every value from [tokens.json](to
 ### Principles
 
 1. Do keep the palette quiet.
-2. Do make actions white pills.
+2. Do make actions pills.
 3. Do let the photography carry the hero.
 4. Do paint the preview shell dark and soft.
 5. Do spend the gradient where it sells.
@@ -125,7 +125,7 @@ One served family does almost everything. **Figtree** (300/400/500 italic+normal
 | Elevation | partly | the auth-card backdrop and any painted shadows are measured where they exist; no levelled scale is offered on this surface |
 | Motion | captured | measured transitions on the tabs, pills and nav controls |
 | Sizing, layout | captured | component boxes in [raw/components-computed.json](raw/components-computed.json); `component.*` heights/radii/rail width |
-| Button, link, tab | captured | `nav-cta`, `hero-cta`, `learn-more`, `d-login`, `d-cta`, `signup-pill`, `login-email-btn`, `login-social-btn`, `h-cta`; `nav-link`, `footer-link`, `m-nav-item`, `rail-item`; `tab`, `tab-active` |
+| Button, link, tab | captured | `nav-cta`, `hero-cta`, `learn-more`, `d-login`, `d-cta`, `signup-button`, `login-email-btn`, `login-social-btn`, `h-cta`; `nav-link`, `footer-link`, `m-nav-item`, `rail-item`; `tab`, `tab-active` |
 | Menu | captured | the full-screen mobile menu ([mobile-home-light-menu](screenshots/mobile-home-light-menu.png), `m-menu-open`, `m-nav-item`); the desktop nav items are buttons that swap the view — no panel paints to capture |
 | Card | captured | `login-dialog`, `content-card`, `med-card`, `h-card` |
 | Badge | captured | `card-badge` (the New chip on content artwork) |
@@ -145,10 +145,10 @@ One served family does almost everything. **Figtree** (300/400/500 italic+normal
 ## Do and don't
 
 1. **Do keep the palette quiet.** Navy ink on white with photographic heroes is the whole marketing palette; restraint is the look. See [home-light-default](screenshots/home-light-default.png).
-2. **Do make actions white pills.** The header CTA, hero action and section links are fully-rounded white pills with navy labels — the gradient is spent on the logo tile and the signup pill, not on every button. See [nav-cta](components/crops/nav-cta-default.png).
+2. **Do make actions pills.** The header CTA is a fully-rounded white pill with navy ink, the hero action is the `#2477AA -> #6461E0` gradient pill, and the section links are transparent card buttons — the shape is constant, the fill is not. See [nav-cta](components/crops/nav-cta-default.png).
 3. **Do let the photography carry the hero.** The header floats over lake-and-mountain photography under a navy scrim gradient; text and pills sit directly on the image, not on cards. See [home-light-default](screenshots/home-light-default.png).
 4. **Do paint the preview shell dark and soft.** The /app/* surface is a scene-gradient canvas with a deep icon rail, white selected pills and rounded content tiles — a genuinely different surface, not an inverted theme. See [sleep-dark-default](screenshots/sleep-dark-default.png).
-5. **Do spend the gradient where it sells.** The calm-blue→violet ramp appears on the app-icon logo tile, the Sign-up-today pill and the upsell bar — moments of conversion, not chrome. See [signup-pill](components/crops/signup-pill-default.png).
+5. **Do spend the gradient where it sells.** The calm-blue→violet ramp appears on the app-icon logo tile, the Sign-up-today button and the mobile menu — moments of conversion, not chrome (the upsell bar's field is translucent white, not a gradient). See [signup-button](components/crops/signup-button-default.png).
 6. **Do keep auth in a card.** Login is a white modal card over a dimmed backdrop with a navy primary pill and outline social pills — never an inline form. See [home-light-login](screenshots/home-light-login.png).
 7. **Don't style the product from this package.** Every value is the public surface's; playback and the signed-in app are uncaptured.
 8. **Don't treat the preview shell as a theme.** There is no dark toggle; the dark set describes the /app/* preview surface only.

@@ -337,15 +337,26 @@ for k, c in C.items():
         for d in ("Top", "Right", "Bottom", "Left")
         for p in ("Color", "Width", "Style")
     )
+    # A focus that changes fill or ink instead of drawing a ring: the dark
+    # pills swap background/text colours. Counted so "no measured change"
+    # only names components that genuinely repaint nothing.
+    fill = s["backgroundColor"] != base["backgroundColor"] or s["backgroundImage"] != base["backgroundImage"]
+    ink = s["color"] != base["color"]
     desc = f"{s['outlineWidth']} {s['outlineStyle']} {colour(s['outlineColor'])}, offset {s['outlineOffset']}" if ring else (f"on a child: {child_ring}" if child_ring else None)
-    foc.append((k, ring or bool(child_ring), shadow, border, desc))
-with_ring = [f"`{k}` ({r})" for k, ring, sh, bd, r in foc if ring]
-with_shadow = [f"`{k}`" for k, ring, sh, bd, r in foc if not ring and sh]
-with_border = [f"`{k}`" for k, ring, sh, bd, r in foc if not ring and not sh and bd]
-without = [f"`{k}`" for k, ring, sh, bd, r in foc if not ring and not sh and not bd]
+    foc.append((k, ring or bool(child_ring), shadow, border, fill, ink, desc))
+with_ring = [f"`{k}` ({r})" for k, ring, sh, bd, fl, ik, r in foc if ring]
+with_shadow = [f"`{k}`" for k, ring, sh, bd, fl, ik, r in foc if not ring and sh]
+with_fill = [f"`{k}`" for k, ring, sh, bd, fl, ik, r in foc if not ring and not sh and fl]
+with_ink = [f"`{k}`" for k, ring, sh, bd, fl, ik, r in foc if not ring and not sh and not fl and ik]
+with_border = [f"`{k}`" for k, ring, sh, bd, fl, ik, r in foc if not ring and not sh and not fl and not ik and bd]
+without = [f"`{k}`" for k, ring, sh, bd, fl, ik, r in foc if not ring and not sh and not fl and not ik and not bd]
 parts = [f"{len(with_ring)} draw an outline ring: {', '.join(with_ring)}."]
 if with_shadow:
     parts.append(f"{len(with_shadow)} draw a focus ring as a shadow instead: {', '.join(with_shadow)}.")
+if with_fill:
+    parts.append(f"{len(with_fill)} change fill instead: {', '.join(with_fill)}.")
+if with_ink:
+    parts.append(f"{len(with_ink)} change only their text colour: {', '.join(with_ink)}.")
 if with_border:
     parts.append(f"{len(with_border)} change only their border: {', '.join(with_border)}.")
 if without:

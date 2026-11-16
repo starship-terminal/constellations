@@ -149,6 +149,22 @@ def gradient_full(comp, state):
     return []
 
 
+def gradient_angle(comp, state):
+    """The measured linear-gradient angle, e.g. "113.79deg", or None."""
+    try:
+        c = C[comp]["states"][state]
+    except KeyError:
+        return None
+    hay = [c.get("style", {}).get("backgroundImage", "")]
+    hay += [n.get("bgImage", "") for n in c.get("paint", [])]
+    hay += [n.get("bgImage", "") for n in c.get("ancestors", [])]
+    for h in hay:
+        m = re.search(r"linear-gradient\(\s*(-?[\d.]+)(deg|turn|rad|grad)", h)
+        if m:
+            return m.group(1) + "deg" if m.group(2) == "deg" else m.group(0).split("(")[1].split(",")[0].strip()
+    return None
+
+
 def have(comp, state, prop=None):
     try:
         s = st(comp, state)
@@ -234,13 +250,14 @@ scrimstops = gradient_full("header", "default")
 if len(scrimstops) >= 2:
     neutral["scrim"] = {"value": [{"color": col, "position": pos} for col, pos in scrimstops],
                         "type": "gradient",
+                        "angle": gradient_angle("header", "default"),
                         "source": "computed backgroundImage of header default (raw/components-computed.json)",
                         "description": "The navy scrim the header paints over the hero photograph so the white nav stays legible."}
 
 brand = SPEC["core"].setdefault("color", {}).setdefault("brand", {})
 # the brand gradient ends: the hero CTA and the Sign-up-today pill paint
 # linear-gradient(#2477aa -> #6461e0)
-stops = gradient_stops("signup-pill", "default") or gradient_stops("logo", "default") or gradient_stops("upsell", "default")
+stops = gradient_stops("signup-button", "default") or gradient_stops("logo", "default") or gradient_stops("upsell", "default")
 if len(stops) >= 2:
     brand["blue"] = {"value": stops[0], "type": "color",
                      "source": "first stop of the painted linear-gradient on the Sign-up-today pill / logo tile (raw/components-computed.json)",
@@ -249,7 +266,7 @@ if len(stops) >= 2:
                        "source": "last stop of the painted linear-gradient on the Sign-up-today pill / logo tile (raw/components-computed.json)",
                        "description": "The violet gradient end."}
 for key, comp, state, prop, desc in [
-    ("cta-ink", "signup-pill", "default", "color", "The white text on the gradient pill."),
+    ("cta-ink", "signup-button", "default", "color", "The white text on the gradient pill."),
     ("hero-ink", "hero-title", "default", "color", "The navy the hero headline paints over the photograph."),
 ]:
     put(brand, key, comp, state, prop, "color", desc)
@@ -258,6 +275,7 @@ menustops = gradient_full("m-menu-open", "default")
 if len(menustops) >= 2:
     brand["menu"] = {"value": [{"color": col, "position": pos} for col, pos in menustops],
                      "type": "gradient",
+                     "angle": gradient_angle("m-menu-open", "default"),
                      "source": "computed backgroundImage of m-menu-open default (raw/components-computed.json)",
                      "description": "The lighter calm-blue to violet ramp the mobile menu paints."}
 
@@ -284,6 +302,7 @@ if len(scenestops) < 2:
 if len(scenestops) >= 2:
     appc["scene"] = {"value": [{"color": col, "position": pos} for col, pos in scenestops],
                      "type": "gradient",
+                     "angle": gradient_angle("scene", "default"),
                      "source": scene_src,
                      "description": "The scene gradient the /app/* preview shell paints behind everything."}
     appc["canvas"] = {"value": scenestops[-1][0], "type": "color",
@@ -307,6 +326,7 @@ if len(barstops) >= 2:
     appc["bar"] = {"value": [{"color": col, "position": pos} for col, pos in barstops],
                    "type": "gradient",
                    "source": "computed backgroundImage of signup-bar default (raw/components-computed.json)",
+                   "angle": gradient_angle("signup-bar", "default"),
                    "description": "The light-blue gradient the bottom signup bar paints."}
 appstops = gradient_stops("upsell", "default")
 if len(appstops) >= 2:
@@ -315,6 +335,7 @@ if len(appstops) >= 2:
     appc["icon-ramp"] = {"value": [{"color": col, "position": pos}
                                    for col, pos in gradient_full("upsell", "default")],
                          "type": "gradient",
+                         "angle": gradient_angle("upsell", "default"),
                          "source": "computed backgroundImage of the TimeIconWrapper inside upsell default (raw/components-computed.json)",
                          "description": "The cyan-to-violet gradient the clock icon inside the upsell banner paints."}
 
@@ -417,12 +438,21 @@ radius = SPEC["core"].setdefault("radius", {})
 for key, comp, state, prop, desc in [
     ("pill", "nav-cta", "default", "borderTopLeftRadius", "The fully-rounded nav/hero pills."),
     ("tab", "tab", "default", "borderTopLeftRadius", "The category-pill radius."),
-    ("tile", "content-card", "default", "borderTopLeftRadius", "The content-tile radius."),
+    ("tile", "content-card", "default", "PAINT_RADIUS:ImageWrapper", "The content-tile artwork radius."),
     ("rail-item", "rail-item", "default", "borderTopLeftRadius", "The rail-item radius."),
     ("card", "login-dialog", "default", "borderTopLeftRadius", "The auth-card radius."),
     ("badge", "card-badge", "default", "borderTopLeftRadius", "The New-badge radius."),
     ("menu", "m-menu-button", "default", "borderTopLeftRadius", "The menu-button radius."),
 ]:
+    if prop.startswith("PAINT_RADIUS:"):
+        want = prop.split(":", 1)[1].lower()
+        node = next((n for n in (C.get(comp, {}).get("states", {}).get(state, {}).get("paint") or [])
+                     if want in str(n.get("node", "")).lower() and n.get("radius")), None)
+        if node:
+            radius[key] = {"value": node["radius"], "type": "dimension",
+                           "source": f"measured borderRadius of the {want} layer painted inside {comp} {state} (raw/components-computed.json)",
+                           "description": desc}
+        continue
     if have(comp, state, prop):
         radius[key] = {"value": st(comp, state)[prop], "type": "dimension",
                        "source": f"computed {prop} of {comp} {state} (raw/components-computed.json)",
@@ -473,9 +503,10 @@ for comp, state in (("nav-cta", "focus-visible"), ("nav-link", "focus-visible"))
                 break
     except KeyError:
         continue
+# no backdrop token: the login card's own fill is the only measured paint in
+# its subtree, and the dimmed overlay layer was never captured as a node.
 for key, comp, state, prop, ty, desc in [
     ("card-border", "content-card", "default", "borderTopColor", "color", "The content-tile border, when painted."),
-    ("backdrop", "login-dialog", "default", "paint", "color", "The dimmed backdrop under the auth card."),
     ("control-transition", "tab", "default", "transitionDuration", "duration", "The category pill's transition."),
     ("nav-transition", "nav-link", "default", "transitionDuration", "duration", "The nav link's transition."),
     ("cta-transition", "nav-cta", "default", "transitionDuration", "duration", "The CTA pill's transition."),
@@ -488,6 +519,10 @@ for key, comp, state, prop, ty, desc in [
         v = (v or "").strip()
         if not v or v == "none":
             continue
+        if prop == "borderTopColor":
+            s0 = st(comp, state)
+            if s0.get("borderTopStyle") in ("none", "hidden") or s0.get("borderTopWidth") in ("0px", "0"):
+                continue
         if ty == "duration":
             v = v.split(",")[0].strip()
             if v == "0s":
@@ -500,22 +535,32 @@ for key, comp, state, prop, ty, desc in [
     except KeyError:
         pass
 
-# the two painted elevations: the health card's lift and the auth card over the scrim
+# the painted elevations: the health card's lift, the auth card over the
+# scrim, and the content tile's shadow on its ImageWrapper layer
 shadows = {}
-for key, cname, state, desc in [
-    ("card", "h-card", "default", "The B2B card's lift."),
-    ("dialog", "login-dialog", "default", "The auth card's elevation over the scrim."),
+for key, cname, state, paint_node, desc in [
+    ("card", "h-card", "default", None, "The B2B card's lift."),
+    ("dialog", "login-dialog", "default", None, "The auth card's elevation over the scrim."),
+    ("tile", "content-card", "default", "ImageWrapper", "The content tile's lift, painted on its artwork layer."),
 ]:
     try:
-        s = st(cname, state)
+        if paint_node:
+            want = paint_node.lower()
+            node = next((n for n in (C[cname]["states"][state].get("paint") or [])
+                         if want in str(n.get("node", "")).lower() and n.get("shadow")), None)
+            shadow_str = node["shadow"] if node else ""
+            src = f"measured boxShadow of the {paint_node} layer painted inside {cname} {state} (raw/components-computed.json)"
+        else:
+            shadow_str = st(cname, state).get("boxShadow", "")
+            src = f"computed boxShadow of {cname} {state} (raw/components-computed.json)"
         m = re.findall(
             r"(rgba?\([\d.,\s]+\)|#[0-9a-fA-F]{3,8})\s+(-?\d+(?:\.\d+)?px)\s+(-?\d+(?:\.\d+)?px)\s+(-?\d+(?:\.\d+)?px)\s+(-?\d+(?:\.\d+)?px)",
-            s.get("boxShadow", ""))
+            shadow_str)
         if m:
             shadows[key] = {"value": [{"color": norm_color(a), "offsetX": x, "offsetY": y,
                                        "blur": bl, "spread": sp} for a, x, y, bl, sp in m],
                             "type": "shadow",
-                            "source": f"computed boxShadow of {cname} {state} (raw/components-computed.json)",
+                            "source": src,
                             "description": desc}
     except KeyError:
         pass
@@ -530,7 +575,7 @@ for key, cname, state, prop, desc in [
     ("hero-cta.height", "hero-cta", "default", "height", "The hero action height."),
     ("tab.height", "tab", "default", "height", "A category pill's height."),
     ("card.radius", "login-dialog", "default", "borderTopLeftRadius", "The auth-card corner radius."),
-    ("tile.radius", "content-card", "default", "borderTopLeftRadius", "A content tile's corner radius."),
+    ("tile.radius", "content-card", "default", "PAINT_RADIUS:ImageWrapper", "A content tile's artwork corner radius."),
     ("rail.width", "rail", "default", "width", "The app rail's width."),
     ("rail-item.height", "rail-item", "default", "height", "A rail item's height."),
     ("header.height", "header", "default", "height", "The marketing header height."),
@@ -538,14 +583,25 @@ for key, cname, state, prop, desc in [
     ("banner.height", "cookie-banner", "default", "height", "The consent bottom-sheet height."),
     ("signup-bar.height", "signup-bar", "default", "height", "The bottom signup bar's height."),
 ]:
-    if have(cname, state, prop):
-        node = comp
-        parts = key.split(".")
-        for p in parts[:-1]:
-            node = node.setdefault(p, {})
-        node[parts[-1]] = {"type": "dimension", "value": st(cname, state)[prop],
-                           "source": f"computed {prop} of {cname} {state} (raw/components-computed.json)",
-                           "description": desc}
+    if prop.startswith("PAINT_RADIUS:"):
+        want = prop.split(":", 1)[1].lower()
+        pn = next((n for n in (C.get(cname, {}).get("states", {}).get(state, {}).get("paint") or [])
+                   if want in str(n.get("node", "")).lower() and n.get("radius")), None)
+        if not pn:
+            continue
+        val, src = pn["radius"], f"measured borderRadius of the {want} layer painted inside {cname} {state} (raw/components-computed.json)"
+    elif have(cname, state, prop):
+        val = st(cname, state)[prop]
+        src = f"computed {prop} of {cname} {state} (raw/components-computed.json)"
+    else:
+        continue
+    node = comp
+    parts = key.split(".")
+    for p_ in parts[:-1]:
+        node = node.setdefault(p_, {})
+    node[parts[-1]] = {"type": "dimension", "value": val,
+                       "source": src,
+                       "description": desc}
 
 # -------------------------------------------------- help center declared layer
 

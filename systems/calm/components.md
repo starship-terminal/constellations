@@ -45,7 +45,7 @@ Screenshots are named `{page}-{theme}-state.png`: the marketing pages paint `lig
 
 Values that apply across entries, from the measurement files.
 
-**Focus.** 27 components were given a real keyboard focus. 16 draw an outline ring: `h-cta` (2px solid #f8d22d, offset 0px), `h-card` (1px solid #eccd37, offset 0.9375px), `nav-link` (1px auto #101010, offset 0px), `nav-trigger` (1px auto #101010, offset 0px), `nav-login` (1px auto #101010, offset 0px), `rail-item` (1px auto #101010, offset 1px), `rail-item-active` (1px auto #101010, offset 1px), `topbar-search` (1px auto #101010, offset 1px), `tab-active` (1px auto #101010, offset 1px), `tab` (1px auto #101010, offset 1px), `content-card` (1px auto #101010, offset 0px), `see-all` (1px auto #101010, offset 1px), `med-card` (1px auto #101010, offset 0px), `footer-link` (1px auto #101010, offset 1px), `social-icon` (1px auto #101010, offset 0px), `m-nav-item` (1px auto #101010, offset 0px). The other 11 show no measured change: `h-nav-link`, `h-mega-trigger`, `nav-cta`, `hero-cta`, `learn-more`, `d-login`, `d-cta`, `carousel-arrow`, `signup-pill`, `login-email-btn`, `login-social-btn`.
+**Focus.** 27 components were given a real keyboard focus. 16 draw an outline ring: `h-cta` (2px solid #f8d22d, offset 0px), `h-card` (1px solid #eccd37, offset 0.9375px), `nav-link` (1px auto #101010, offset 0px), `nav-trigger` (1px auto #101010, offset 0px), `nav-login` (1px auto #101010, offset 0px), `rail-item` (1px auto #101010, offset 1px), `rail-item-active` (1px auto #101010, offset 1px), `topbar-search` (1px auto #101010, offset 1px), `tab-active` (1px auto #101010, offset 1px), `tab` (1px auto #101010, offset 1px), `content-card` (1px auto #101010, offset 0px), `see-all` (1px auto #101010, offset 1px), `med-card` (1px auto #101010, offset 0px), `footer-link` (1px auto #101010, offset 1px), `social-icon` (1px auto #101010, offset 0px), `m-nav-item` (1px auto #101010, offset 0px). 2 change fill instead: `h-nav-link`, `h-mega-trigger`. The other 9 show no measured change: `nav-cta`, `hero-cta`, `learn-more`, `d-login`, `d-cta`, `carousel-arrow`, `login-email-btn`, `login-social-btn`, `signup-button`.
 
 **Pressed.** Forced with DevTools (`CSS.forcePseudoState` :active:hover). Nothing a real press would submit was ever pressed.
 
@@ -334,18 +334,6 @@ The bottom notification bar ("Get notified of new Calm content ...") — a full-
 
 ![Signup bar default](components/crops/signup-bar-default.png)
 
-#### Signup pill
-The gradient Sign-up-today pill in the bottom bar; never pressed for real. Read as `signup-pill` on the sleep (app shell) page.
-
-| State | Values (later rows list only what changes from the first row) |
-|---|---|
-| default | size 147.89 x 56; padding 14px 17.7778px; radius 100px; background transparent; image linear-gradient(#2477aa `color.brand.blue` 0%, #6461e0 `color.brand.violet` 100%); text Figtree 18/28 500, #ffffff `color.neutral.paper`; transition all 0.3s ease-out; layers ::before rgba(0, 0, 0, 0.15) 0px none 0; ::after rgba(0, 0, 0, 0) 2px none 0 |
-| hover | layers ::before rgba(0, 0, 0, 0.15) 0px none 1; ::after rgba(0, 0, 0, 0) 2px none 0 |
-| focus-visible | layers ::before rgba(0, 0, 0, 0.15) 0px none 1; ::after rgba(0, 0, 0, 0) 2px none 1 |
-| pressed | layers ::before rgba(0, 0, 0, 0.15) 0px none 1; ::after rgba(0, 0, 0, 0) 2px none 0 |
-
-![Signup pill default](components/crops/signup-pill-default.png) ![Signup pill hover](components/crops/signup-pill-hover.png) ![Signup pill focus-visible](components/crops/signup-pill-focus-visible.png) ![Signup pill pressed](components/crops/signup-pill-pressed.png)
-
 #### Section title
 The page title of an app-shell section (Meditate). Read as `med-title` on the meditate (app shell) page.
 
@@ -364,6 +352,18 @@ A featured content card on the Meditate surface (the shared CardContainer: artwo
 Child layers that carry the look: div 300x200 radius 16px shadow rgba(0, 0, 0, 0.2) 0px 4px 12px 0px; div 28x28 background rgba(72, 72, 72, 0.4) `color.app.card-scrim` radius 50%.
 
 ![Meditate card default](components/crops/med-card-default.png) ![Meditate card hover](components/crops/med-card-hover.png) ![Meditate card focus-visible](components/crops/med-card-focus-visible.png) ![Meditate card pressed](components/crops/med-card-pressed.png)
+
+#### Signup button
+The gradient Sign-up-today button (pill-shaped) in the bottom bar; never pressed for real. Read as `signup-button` on the sleep (app shell) page.
+
+| State | Values (later rows list only what changes from the first row) |
+|---|---|
+| default | size 147.89 x 56; padding 14px 17.7778px; radius 100px; background transparent; image linear-gradient(#2477aa `color.brand.blue` 0%, #6461e0 `color.brand.violet` 100%); text Figtree 18/28 500, #ffffff `color.neutral.paper`; transition all 0.3s ease-out; layers ::before rgba(0, 0, 0, 0.15) 0px none 0; ::after rgba(0, 0, 0, 0) 2px none 0 |
+| hover | layers ::before rgba(0, 0, 0, 0.15) 0px none 1; ::after rgba(0, 0, 0, 0) 2px none 0 |
+| focus-visible | layers ::before rgba(0, 0, 0, 0.15) 0px none 1; ::after rgba(0, 0, 0, 0) 2px none 1 |
+| pressed | layers ::before rgba(0, 0, 0, 0.15) 0px none 1; ::after rgba(0, 0, 0, 0) 2px none 0 |
+
+![Signup button default](components/crops/signup-button-default.png) ![Signup button hover](components/crops/signup-button-hover.png) ![Signup button focus-visible](components/crops/signup-button-focus-visible.png) ![Signup button pressed](components/crops/signup-button-pressed.png)
 
 ### Login and signup
 

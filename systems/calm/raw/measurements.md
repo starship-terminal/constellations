@@ -875,34 +875,6 @@ Page: sleep. Selector: `a.UpsellFooter`. States: default.
 
 Crops: `signup-bar-default.png`.
 
-#### signup-pill
-
-Signup pill. The gradient Sign-up-today pill in the bottom bar; never pressed for real.
-
-Page: sleep. Selector: `Sign up today`. States: default, hover, focus-visible, pressed.
-
-| Property | default | hover | focus-visible | pressed |
-|---|---|---|---|---|
-| Size (w x h) | 147.89 x 56 | = | = | = |
-| Padding | 14px 17.7778px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 100px | = | = | = |
-| Background | transparent | = | = | = |
-| Background image | linear-gradient(#2477aa 0%, #6461e0 100%) | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Figtree 18px/28px 500 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #ffffff | = | = | = |
-| Transition | all 0.3s ease-out | = | = | = |
-| Cursor | pointer | = | = | = |
-| ::before | 147.891px x 56px, absolute, bg #000000 @ 0.15, radius 100px | = | = | = |
-| ::after | 147.891px x 56px, absolute, bg #000000 @ 0, radius 100px | = | 159.891px x 68px, absolute, bg #000000 @ 0, radius 100px | = |
-| Painted layers | button.styles__Wrapper-sc-7193a2d7-0.lgttZs 147.9x56.0 image linear-gradient(#2477aa 0%, #6461e0 100%) r 100px; button::before.styles__Wrapper-sc-7193a2d7-0.lgttZs 147.891pxx56px bg #000000 @ 0.15 r 100px; button::after.styles__Wrapper-sc-7193a2d7-0.lgttZs 147.891pxx56px border T:2px solid #ffffff / R:2px solid #ffffff / B:2px solid #ffffff / L:2px solid #ffffff r 100px | = | button.styles__Wrapper-sc-7193a2d7-0.bfLmPO 147.9x56.0 image linear-gradient(#2477aa 0%, #6461e0 100%) r 100px; button::before.styles__Wrapper-sc-7193a2d7-0.bfLmPO 147.891pxx56px bg #000000 @ 0.15 r 100px; button::after.styles__Wrapper-sc-7193a2d7-0.bfLmPO 159.891pxx68px border T:2px solid #ffffff / R:2px solid #ffffff / B:2px solid #ffffff / L:2px solid #ffffff r 100px | button.styles__Wrapper-sc-7193a2d7-0.bualYm 147.9x56.0 image linear-gradient(#2477aa 0%, #6461e0 100%) r 100px; button::before.styles__Wrapper-sc-7193a2d7-0.bualYm 147.891pxx56px bg #000000 @ 0.15 r 100px; button::after.styles__Wrapper-sc-7193a2d7-0.bualYm 147.891pxx56px border T:2px solid #ffffff / R:2px solid #ffffff / B:2px solid #ffffff / L:2px solid #ffffff r 100px |
-| How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
-
-Crops: `signup-pill-default.png`, `signup-pill-hover.png`, `signup-pill-focus-visible.png`, `signup-pill-pressed.png`.
-
 #### med-title
 
 Section title. The page title of an app-shell section (Meditate).
@@ -952,6 +924,34 @@ Page: meditate. Selector: `a.CardContainer`. States: default, hover, focus-visib
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
 Crops: `med-card-default.png`, `med-card-hover.png`, `med-card-focus-visible.png`, `med-card-pressed.png`.
+
+#### signup-button
+
+Signup button. The gradient Sign-up-today button (pill-shaped) in the bottom bar; never pressed for real.
+
+Page: sleep. Selector: `Sign up today button`. States: default, hover, focus-visible, pressed.
+
+| Property | default | hover | focus-visible | pressed |
+|---|---|---|---|---|
+| Size (w x h) | 147.89 x 56 | = | = | = |
+| Padding | 14px 17.7778px | = | = | = |
+| Border | none | = | = | = |
+| Radius | 100px | = | = | = |
+| Background | transparent | = | = | = |
+| Background image | linear-gradient(#2477aa 0%, #6461e0 100%) | = | = | = |
+| Box shadow | none | = | = | = |
+| Outline | none | = | = | = |
+| Font | Figtree 18px/28px 500 | = | = | = |
+| Letter spacing | normal | = | = | = |
+| Colour | #ffffff | = | = | = |
+| Transition | all 0.3s ease-out | = | = | = |
+| Cursor | pointer | = | = | = |
+| ::before | 147.891px x 56px, absolute, bg #000000 @ 0.15, radius 100px | = | = | = |
+| ::after | 147.891px x 56px, absolute, bg #000000 @ 0, radius 100px | = | 159.891px x 68px, absolute, bg #000000 @ 0, radius 100px | = |
+| Painted layers | button.styles__Wrapper-sc-7193a2d7-0.lgttZs 147.9x56.0 image linear-gradient(#2477aa 0%, #6461e0 100%) r 100px; button::before.styles__Wrapper-sc-7193a2d7-0.lgttZs 147.891pxx56px bg #000000 @ 0.15 r 100px; button::after.styles__Wrapper-sc-7193a2d7-0.lgttZs 147.891pxx56px border T:2px solid #ffffff / R:2px solid #ffffff / B:2px solid #ffffff / L:2px solid #ffffff r 100px | = | button.styles__Wrapper-sc-7193a2d7-0.bfLmPO 147.9x56.0 image linear-gradient(#2477aa 0%, #6461e0 100%) r 100px; button::before.styles__Wrapper-sc-7193a2d7-0.bfLmPO 147.891pxx56px bg #000000 @ 0.15 r 100px; button::after.styles__Wrapper-sc-7193a2d7-0.bfLmPO 159.891pxx68px border T:2px solid #ffffff / R:2px solid #ffffff / B:2px solid #ffffff / L:2px solid #ffffff r 100px | button.styles__Wrapper-sc-7193a2d7-0.bualYm 147.9x56.0 image linear-gradient(#2477aa 0%, #6461e0 100%) r 100px; button::before.styles__Wrapper-sc-7193a2d7-0.bualYm 147.891pxx56px bg #000000 @ 0.15 r 100px; button::after.styles__Wrapper-sc-7193a2d7-0.bualYm 147.891pxx56px border T:2px solid #ffffff / R:2px solid #ffffff / B:2px solid #ffffff / L:2px solid #ffffff r 100px |
+| How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
+
+Crops: `signup-button-default.png`, `signup-button-hover.png`, `signup-button-focus-visible.png`, `signup-button-pressed.png`.
 
 ### Footer
 

@@ -27,7 +27,10 @@ out.components ??= {};
 const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
 const save = () => fs.writeFileSync(OUT, JSON.stringify(out, null, 1) + '\n');
 const URLS = { home: BASE + '/', sleep: BASE + '/app/sleep', meditate: BASE + '/app/meditate', login: BASE + '/', health: HEALTH + '/' };
-let page, cdp, current, context, run, liveCtx;
+let page, cdp, current, context, run;
+// One live context per viewport width: a single liveCtx reused across the
+// desktop and mobile passes would measure the mobile pages at 1440px.
+const liveCtx = {};
 const touched = new Set();
 const listed = new Map();
 // Routes PerimeterX gates this run: components last measured on them keep their
@@ -57,14 +60,15 @@ async function newPage(key, { mobile = false, wait = 8000, promo = 'close', url 
   current = key;
   const b = context.browser();
   for (let attempt = 0; attempt < 20; attempt++) {
-    if (!liveCtx) {
-      liveCtx = await b.newContext(mobile
+    const mode = mobile ? 'mobile' : 'desktop';
+    if (!liveCtx[mode]) {
+      liveCtx[mode] = await b.newContext(mobile
         ? { viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, userAgent: UA_DESKTOP, locale: 'en-US' }
         : { viewport: { width: 1440, height: 900 }, deviceScaleFactor: 2, userAgent: UA_DESKTOP, locale: 'en-US' });
-      await patch(liveCtx);
+      await patch(liveCtx[mode]);
     }
-    page = await liveCtx.newPage();
-    cdp = await liveCtx.newCDPSession(page);
+    page = await liveCtx[mode].newPage();
+    cdp = await liveCtx[mode].newCDPSession(page);
     await cdp.send('DOM.enable');
     await cdp.send('CSS.enable');
     page.setDefaultTimeout(8000);
@@ -77,7 +81,7 @@ async function newPage(key, { mobile = false, wait = 8000, promo = 'close', url 
     log('  BLOCKED', key, attempt < 2 ? '- same-context retry in 90s' : '- fresh context after 5 min quiet');
     await page.close().catch(() => {});
     if (attempt < 2) { await new Promise((r) => setTimeout(r, 90000)); }
-    else { await liveCtx.close().catch(() => {}); liveCtx = null; await new Promise((r) => setTimeout(r, 300000)); }
+    else { await liveCtx[mode].close().catch(() => {}); liveCtx[mode] = null; await new Promise((r) => setTimeout(r, 300000)); }
   }
   failedPages.add(key);
   return false;
@@ -385,7 +389,7 @@ async function sleep() {
   await S('see-all', q('a, button').filter({ hasText: /^\s*See All\s*/ }).filter({ visible: true }).first(), B4, { group: g, title: 'See All', desc: 'A section "See All" link with its chevron.', sel: 'See All' });
   await S('carousel-arrow', q('button[aria-label*="carousel" i][aria-label*="next" i]').filter({ visible: true }).first(), B4, { group: g, title: 'Carousel arrow', desc: 'A rail carousel arrow (the "Scroll carousel towards next items" chevron).', sel: 'button[aria-label*=carousel][aria-label*=next]' });
   await S('signup-bar', q('a[class*="Upsell" i], [class*="Upsell" i]').filter({ hasText: /Get notified of new Calm content/i }).filter({ visible: true }).first(), ['default'], { group: g, title: 'Signup bar', desc: 'The bottom notification bar ("Get notified of new Calm content ...") — a full-width anchor carrying the Sign-up-today gradient pill; never submitted.', sel: 'a.UpsellFooter' }, { noScroll: true });
-  await S('signup-pill', q('button, a').filter({ hasText: /^\s*Sign up today\s*$/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Signup pill', desc: 'The gradient Sign-up-today pill in the bottom bar; never pressed for real.', sel: 'Sign up today' }, { noScroll: true });
+  await S('signup-button', q('button, a').filter({ hasText: /^\s*Sign up today\s*$/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Signup button', desc: 'The gradient Sign-up-today button (pill-shaped) in the bottom bar; never pressed for real.', sel: 'Sign up today' }, { noScroll: true });
   save();
   await closePage();
 }
@@ -472,7 +476,7 @@ try {
     if (want) for (const st of Object.keys(c.states || {})) if (!want.has(st)) delete c.states[st];
   }
   save();
-  await liveCtx?.close().catch(() => {});
+  for (const c of Object.values(liveCtx)) await c?.close().catch(() => {});
   await browser.close();
 }
 console.log('components-computed.json:', Object.keys(out.components).length, 'components');

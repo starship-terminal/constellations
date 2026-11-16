@@ -76,7 +76,7 @@ for _set in THEMES:
 def slim(node):
     if isinstance(node, dict) and "$value" in node:
         out = {"v": node["$value"], "t": node["$type"], "s": node["$extensions"]["source"]}
-        for k in ("compact", "darkVariationAxis"):
+        for k in ("compact", "darkVariationAxis", "angle"):
             if k in node["$extensions"]:
                 out[k] = node["$extensions"][k]
         if node.get("$description"):

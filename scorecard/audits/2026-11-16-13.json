@@ -19966,7 +19966,7 @@
     },
     "F3": {
      "grade": "meets",
-     "evidence": "Measured text roles in light (on-paper ink, muted, faint, link, hero text, text-on-action) and dark (text.primary, text.muted, text.on.active for the white selected pill). Disabled is absent — no disabled control paints on the signed-out surface."
+     "evidence": "Measured text roles in light (on-paper ink, muted, faint, link, hero text, text-on-action) and dark (text.primary, text.pill for unselected labels, text.on.active for the selected pill's ink). The dark shell draws no muted text role — every rail and tab label is the same white. Disabled is absent — no disabled control paints on the signed-out surface."
     },
     "F4": {
      "grade": "partly",
@@ -20046,7 +20046,7 @@
     },
     "F16": {
      "grade": "meets",
-     "evidence": "Script: 235 of 235 tokens name their source"
+     "evidence": "Script: 234 of 234 tokens name their source"
     },
     "K2": {
      "grade": "partly",

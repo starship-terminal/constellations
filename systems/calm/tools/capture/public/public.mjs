@@ -147,11 +147,13 @@ const desktop = {
 const mobile = {
   home: { path: '/', wait: 12000, run: async (p, S) => {
     await S.view('default');
+    // the full-page shot must come before the menu opens: the panel is a
+    // fixed full-screen overlay and would cover the capture's first screen
+    await S.full();
     await step('menu', async () => {
       const m = p.locator('button[aria-label*="menu" i], button[data-testid*="menu" i]').filter({ visible: true }).first();
       if (await m.count()) { await clickEl(m); await wait(p, 1500); await S.view('menu'); }
     });
-    await S.full();
   } },
 };
 

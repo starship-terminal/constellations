@@ -126,7 +126,11 @@ for name, ps in parts.items():
             stale.unlink()
             stale_sc = stale.with_name(stale.name + '.capture.json')
             stale_sc.unlink(missing_ok=True)
-        stitched[name] = None
+        # and the previously published pair in screenshots/: an old complete
+        # export beside a failed recapture reads as current evidence
+        for pub in (OUT / f'{name}.png', OUT / f'{name}.png.capture.json'):
+            pub.unlink(missing_ok=True)
+        stitched[name] = False   # failed recapture: nothing valid to export
         continue
     ims = [Image.open(f).convert('RGB') for _, f in ps]
     sheet = Image.new('RGB', (ims[0].width, sum(i.height for i in ims)))
@@ -141,7 +145,7 @@ n = 0
 for f in sorted(RAW.glob('*.png')):
     if '.part' in f.name:
         continue
-    if f.stem in stitched and stitched[f.stem] is None:
+    if stitched.get(f.stem) is False:
         continue  # failed recapture: no stitched sheet, nothing to export
 
     im = Image.open(f).convert('RGB')
