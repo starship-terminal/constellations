@@ -886,5 +886,11 @@
     "groupId": "web-categories",
     "labels": ["Design & Media Editing", "Productivity"],
     "reason": "catalog.json describes a design tool: the marketing pages for the design editor, FigJam, Slides, Dev Mode and Make, a pricing grid, community resource grids and the login/signup app shells."
+  },
+  {
+    "referenceId": "systems:frame",
+    "groupId": "web-categories",
+    "labels": ["Collaboration Tools", "Design & Media Editing"],
+    "reason": "catalog.json describes a video review-and-collaboration product: marketing and feature pages, a pricing grid, customer and integration indexes, a contact form and the accounts sign-in surface."
   }
 ]

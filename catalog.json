@@ -12271,6 +12271,111 @@
       "layoutGaps": {
         "icons/": "no standalone SVG icon set was lifted; the Figma mark and product glyphs are visible in the crops and screenshots"
       }
+    },
+    {
+      "slug": "frame",
+      "name": "Frame.io",
+      "url": "https://frame.io",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "video-collaboration product and marketing design: a complete declared token layer on one painted dark theme (the 19-step --color-grey-00..100 neutral ramp from #000 field to #fcfcfc ink, five brand hues --color-cobalt/iris/coral/electric/turquoise-triumph with steps, per-hue alpha tints like --color-cobalt-20, the --color-alpha-* ladders, --color-accent, --overlay-* scrims, three font roles --font-main/-secondary/-tertiary, a --spacer-* scale, the --grid-* 12-column/1080px frame, --nav-height, --duration-*/--ease-*, --card-hover-* and a --z-index-* map) behind a dark marketing surface (near-black field, #fcfcfc ink, white CTA pills with near-black ink, translucent-ink hairlines, FrameGothic/NeueMachinaInktrap/Inter self-hosted variable faces), click-opened header mega-menus, a pricing grid with billing toggle and feature-comparison accordions, a contact form, index surfaces for customers/integrations/what's-new, the light accounts.frame.io sign-in card and a 390px pass with the nav overlay",
+      "tags": [
+        "web",
+        "video",
+        "collaboration",
+        "creative",
+        "marketing",
+        "pricing",
+        "css-modules",
+        "dark",
+        "variable-font",
+        "signed-out",
+        "design-tokens"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-15",
+      "access": "signed out (every captured surface is public; the app and every post-login surface - projects, the review player, Camera to Cloud uploads, Drive and Transfer workspaces, admin, billing - is an authenticated boundary never reached; the accounts.frame.io/welcome sign-in and the /contact/form fields were measured and typed into then cleared, never submitted; every CTA, nav item, menu item and card was measured, never followed; no consent layer appeared for the en-US signed-out visitor and the cookie-preferences control was never pressed; the site ships no theme switch - every frame.io page paints the one dark theme, and accounts.frame.io/welcome is the lone light surface on a different stack)",
+      "themes": [
+        "dark"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/frame/README.md",
+      "tokens": "systems/frame/tokens.json",
+      "styleGuide": "systems/frame/style-guide.html",
+      "preview": {
+        "cover": "systems/frame/screenshots/home-dark-default.png",
+        "icon": "systems/frame/icon.png",
+        "swatches": {
+          "dark": {
+            "page": "dark.theme.bg",
+            "surface": "dark.theme.surface.card",
+            "text": "dark.theme.fg.default",
+            "muted": "dark.theme.fg.muted",
+            "accent": "dark.theme.accent",
+            "border": "dark.theme.btn.secondary.border"
+          }
+        },
+        "fonts": [
+          "core.font.family.gothic",
+          "core.font.family.inter",
+          "core.font.family.machina"
+        ]
+      },
+      "source": {
+        "path": "~/.design-systems/frame/raw-shots (full-colour captures, outside the repo)"
+      },
+      "capture": {
+        "method": "public-web",
+        "source": "frame.io and accounts.frame.io in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and 126 element crops from the live DOM, plus a stylesheet harvest (607 rules declare custom properties - 118 theme, 377 app, 3 vendor; 222 names resolved per probe; 12 @font-face rules). The marketing Next.js + CSS-modules site declares its token layer in stylesheets, so scales are declared values and surface roles are measured computed values aliased to the declared palette; accounts.frame.io/welcome is the sign-in surface - a different styled-components stack that does not share the marketing --* layer - measured under component.productShell.*. a five-page prefers-reduced-motion probe (raw/motion.json; verdict partial) feeds the core.motion composite groups. BOUNDARY: the sign-in and contact forms were typed into then cleared, never submitted; menu links were never followed; the Calendly scheduler, consent manager and locale list were never opened",
+        "timestamp": "2026-11-15T21:45:00Z",
+        "harness": "Devin",
+        "model": "SWE-2 Max",
+        "route": "public-web",
+        "routes": [
+          "/",
+          "/features/workflow-management",
+          "/features/review-and-approval",
+          "/features/c2c",
+          "/pricing",
+          "/enterprise",
+          "/enterprise/media-and-entertainment",
+          "/customers",
+          "/case-studies/ford",
+          "/integrations",
+          "/resources",
+          "/whats-new",
+          "/contact",
+          "/contact/form",
+          "/security",
+          "/ai",
+          "/drive",
+          "/transfer",
+          "https://accounts.frame.io/welcome",
+          "home header Features + Enterprise + Resources mega-menus",
+          "mobile /, /pricing/ and /contact/form plus the home nav overlay"
+        ],
+        "gaps": [
+          "the app and every post-login surface (projects, the review-and-approval player, Camera to Cloud uploads, Drive and Transfer workspaces, account, admin, billing) sits behind an account - an authenticated boundary never reached; accounts.frame.io/welcome was measured as a form, never submitted",
+          "submitted states: the /contact/form fields and the sign-in e-mail were typed into then cleared, never sent - validation, error, loading and success states are absent rather than measured",
+          "the /pricing Monthly/Annually billing switch re-prices the grid when flipped; measured at rest and never switched, so the annual price state is uncaptured",
+          "Schedule a Meeting mounts a Calendly scheduler - a third-party widget; the button was measured at rest and never pressed, so the scheduler frame is uncaptured",
+          "the Cookie preferences consent manager and the footer locale list were measured at rest, never opened - no consent layer appeared for the en-US signed-out visitor otherwise",
+          "case studies, release notes, integration detail pages and resource articles are index-level captures (plus the Ford case study); the remaining public sitemap (lp/* campaign landings) is the same templates with different copy, uncaptured",
+          "mega-menu items' focus/hover is partially covered - the panel closes on blur before a keyboard focus can always be held",
+          "mobile hover is not meaningful on a touch surface; the drawer CTA's hover state was skipped and its default/focus/pressed states recorded instead",
+          "mobile sign-in default shot exists but the mobile -full stitch of the welcome page failed its dimension check, so only the 390x844 default exists for that surface",
+          "pressed states are DevTools-forced (CSS.forcePseudoState), so any script-applied mousedown state is missing",
+          "icons: no standalone SVG set lifted this pass"
+        ],
+        "durationMin": null,
+        "durationNote": "wall-clock duration was not recorded for this capture"
+      },
+      "layoutGaps": {
+        "icons/": "no standalone SVG icon set was lifted; the Frame.io waveform mark and product glyphs are visible in the crops and screenshots"
+      }
     }
   ]
 }
