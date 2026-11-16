@@ -12673,7 +12673,7 @@
     ],
     "durationMin": null,
     "durationNote": "wall-clock across the capture sessions including kit adaptation (shooter, stylesheet harvest with hashed-var name mapping, measurement and docs builders rewritten to the four stacks), the screenshot, measurement, mobile and reduced-motion passes on a headless Linux server, and the offline build",
-    "pr": null
+    "pr": "https://github.com/starship-terminal/constellations/pull/612"
    },
    "layoutGaps": {
     "icons/": "the icon extraction pass was not run; the icons (the Fresha wordmark, the search and gallery glyphs, the SSO brand marks and the category icons) are visible in the crops and screenshots"
