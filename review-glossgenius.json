@@ -1,0 +1,23 @@
+{
+  "F1": {"grade": "meets", "evidence": "Webflow core collections carry per-hue ramps: core.deco (393 tokens), core.color (76), core.apps (66), gray scale; extracted raw from glossgenius.com CSS variables."},
+  "F2": {"grade": "partly", "evidence": "light.surface has page and surface; booking.bg covers 35 background roles. Raised/overlay/scrim not separated as semantic roles on the marketing surface."},
+  "F3": {"grade": "partly", "evidence": "light.text.ink and light.text.muted measured; on-accent and disabled text roles exist in app tokens (app.disabled) but were not reachable signed-out."},
+  "F4": {"grade": "partly", "evidence": "light.border roles and booking.focus captured; a distinct strong border role is not published as a separate token on public surfaces."},
+  "F5": {"grade": "meets", "evidence": "Hero and pricing CTAs measured in default, hover and pressed states (plan-cta, hero-cta in raw/components-computed.json)."},
+  "F6": {"grade": "partly", "evidence": "app.warning and toast tokens exist in the app stylesheet, but signed-out surfaces expose no status components, so fill/text/border per status is incomplete."},
+  "F7": {"grade": "meets", "evidence": "Marketing and booking ship a single light theme; all semantic roles exist within it. No dark variant is published."},
+  "F8": {"grade": "meets", "evidence": "core.typography (72) plus font tokens across surfaces; Basel Classic Book (display) and Basel Grotesk Book (body) named with fallback stacks and a measured size scale."},
+  "F9": {"grade": "meets", "evidence": "app.space (26), app.padding (13) and core.size spacing groups extracted on a 4px base."},
+  "F10": {"grade": "meets", "evidence": "Radius tokens extracted on all three surfaces (app.radius, core.radius, booking radii)."},
+  "F11": {"grade": "meets", "evidence": "Control heights measured per component; app.size/app.target sizing scales and booking.focus ring tokens captured."},
+  "F12": {"grade": "partly", "evidence": "Card and popover shadows captured on measured components, but not organised into named elevation levels by the source stylesheets."},
+  "F13": {"grade": "partly", "evidence": "A core.motion token and component transitions exist; durations/easing are thin and reduced-motion behaviour is not published."},
+  "F14": {"grade": "meets", "evidence": "app.breakpoint, core.layout and core.responsive token groups plus desktop (1440px) and mobile (390px) captures."},
+  "C1": {"grade": "partly", "evidence": "14 of 19 checklist components documented: button, link, text field, select, checkbox, radio, switch, menu, card, list row, badge, avatar, icon button, pricing table. Tooltip, dialog, toast, tabs, text area not reachable signed-out."},
+  "C2": {"grade": "meets", "evidence": "Default, hover, focus-visible, pressed, selected, opened and filled states measured where each applies (raw/components-computed.json)."},
+  "C3": {"grade": "meets", "evidence": "focus-visible states captured for links, buttons and form fields across marketing, auth and booking surfaces."},
+  "C4": {"grade": "meets", "evidence": "components.md entries are written against tokens.json names with raw/component-tokens.json provenance."},
+  "P1": {"grade": "partly", "evidence": "patterns.md covers marketing chrome, forms, pricing and the public booking flow; empty/loading/error and destructive-confirmation patterns are not reachable signed-out."},
+  "A1": {"grade": "partly", "evidence": "Fonts named with roles; the product's icon set is not published as an indexed set on public pages."},
+  "K1": {"grade": "meets", "evidence": "README documents captured surfaces, method, boundaries (no sign-in, no booking submission) and what to distrust."}
+}

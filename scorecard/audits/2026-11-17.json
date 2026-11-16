@@ -1,7 +1,7 @@
 {
  "date": "2026-11-17",
  "rubric": "4",
- "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): Reviewed generated tokens.json, raw/component-tokens.json, components.md, patterns.md and README against the signed-out capture scope; graded only what public marketing, auth and booking surfaces expose",
+ "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): read the package end to end (README, components.md, patterns.md, tokens.json, style-guide.html), inspected screenshots and crops, checked measured roles against the declared FPDS/Tailwind layer",
  "systems": [
   {
    "slug": "1password",
@@ -15563,6 +15563,264 @@
    "reviewedPlatform": "web"
   },
   {
+   "slug": "foodnoms",
+   "grades": {
+    "F1": {
+     "grade": "partly",
+     "evidence": "core.color.palette is a flat declared palette of 54 colours: an accent ramp (5 steps), a neutral ramp from white to black (~10 steps), #2f2f2f ink alpha washes and single-value nutrient hues. The neutral and accent ramps are real but no hue carries a full ~10-step ramp; the nutrient hues are single values."
+    },
+    "F2": {
+     "grade": "partly",
+     "evidence": "light.canvas plus surface.card/ring/chip and the same four in dark cover page, card fill and the field's inset ring; the footer is a measured painted accent-orange panel. No overlay or scrim role exists - the search modal's overlay was not measured as a role."
+    },
+    "F3": {
+     "grade": "partly",
+     "evidence": "light/dark ink, body, muted, field-ink, on-accent, accent-text and on-dark.ink cover primary, secondary, muted, on-accent and on-dark; no dedicated link or disabled role (article links reuse accent-text or the painted blue inside the anchor)."
+    },
+    "F4": {
+     "grade": "partly",
+     "evidence": "light/dark surface.ring (the 1px capsule field ring) and the measured focus.ring/focus.width/focus.offset exist; no solid default or strong border role paints anywhere - cards and pills are borderless."
+    },
+    "F5": {
+     "grade": "partly",
+     "evidence": "accent and accent-hover are tokenized in both themes (the site's own default->hover pair); pressed resolves to the same paint as hover, so no distinct pressed step exists."
+    },
+    "F6": {
+     "grade": "missing",
+     "evidence": "No success/warning/danger/info roles paint anywhere on the public surface - no forms that render validation, no banners, no toasts while signed out. The nutrient hue set is data colour, not status."
+    },
+    "F7": {
+     "grade": "meets",
+     "evidence": "Two authored themes: the site's own prefers-color-scheme media rule re-declares 39 --token-* names; both sets carry the same roles and the dark pass was captured under an emulated dark scheme - the path a dark-system visitor takes."
+    },
+    "F8": {
+     "grade": "meets",
+     "evidence": "One family (uploaded Aquawax Pro) in three painted weights (Bold 700, DemiBold 600, Medium 500) plus the declared-but-unpainted Fragment Mono; 8 composite roles (ticker, page, heading-2, title, lede, body, button, ui) over a measured 56-15px ramp, all tracked at 0."
+    },
+    "F9": {
+     "grade": "partly",
+     "evidence": "3 spacing steps under core.space (12, 18, 40 - the pill padding and card padding the site reuses); most layout spacing is Framer auto-layout gaps measured inline in entries, not a shipped scale."
+    },
+    "F10": {
+     "grade": "partly",
+     "evidence": "6 radius steps (none, row 12, card 18.8, button 20, pill 40, pill-lg 50) tokenized; border widths appear only inline in entries (the 1px capsule ring) - no border-width set."
+    },
+    "F11": {
+     "grade": "meets",
+     "evidence": "core.component holds the control sizes: pill height 40 and padding-x 18, field height 42, card width/padding; icon rendered sizes are in icons/INDEX.tsv; the focus ring is 1px at 0-1px offset (#101010 desktop, #e59700 in the mobile chrome)."
+    },
+    "F12": {
+     "grade": "na",
+     "evidence": "The site paints no elevation: every measured component's box-shadow is none or the 1px inset field ring (tokenized under surface.ring) - there are no shadow levels to tokenise."
+    },
+    "F13": {
+     "grade": "meets",
+     "evidence": "core.duration and core.easing tokenize the measured transitions (color 400ms cubic-bezier(.44,0,.56,1) and friends) and raw/motion.json records the reduced-motion probe: the site ignores it - 125 moving records, none removed - captured as honest product behavior."
+    },
+    "F14": {
+     "grade": "partly",
+     "evidence": "Component widths/paddings are in core.component and a 390px pass is captured; no breakpoint, grid-column or z-index tokens - Framer's layout is auto-layout, not a tokenized grid."
+    },
+    "C1": {
+     "grade": "partly",
+     "evidence": "About 11 of the 19 checklist components exist on the captured surface: button, icon button, link, text field (search + email), menu/accordion, dialog (the search modal), card, list row (accordion items, pricing rows), table (the Framer comparison), badge (tag chip) and the nav bar; text area, select, checkbox, radio, switch, tooltip, toast and avatar are not present on the public marketing surface."
+    },
+    "C2": {
+     "grade": "meets",
+     "evidence": "hover, focus-visible, DevTools-forced pressed, focused and filled (the newsletter field typed-then-cleared) plus the opened accordion and search-modal states were measured where they exist; disabled, error and loading never appear on the public surface."
+    },
+    "C3": {
+     "grade": "meets",
+     "evidence": "22 components were given a real keyboard focus; 21 draw the browser-auto 1px ring (#101010 desktop, #e59700 in the mobile chrome) and only nl-submit shows no measured change - recorded as measured, not assumed."
+    },
+    "C4": {
+     "grade": "partly",
+     "evidence": "Every role token aliases a declared --token-* variable and entry values pair with palette token names when one matches; the palette covers most paints, but a hover tint and browser-default link colours appear without tokens."
+    },
+    "P1": {
+     "grade": "partly",
+     "evidence": "11 written patterns cover chrome, hero marquee, cards, pricing comparison, help accordions, article longform, newsletter/press, legal, dark remap, mobile and footer; forms, destructive confirmation, feedback, onboarding and empty/error do not exist on the public surface."
+    },
+    "A1": {
+     "grade": "partly",
+     "evidence": "Fonts named (Aquawax Pro Bold/DemiBold/Medium, Fragment Mono declared) with the proprietary-uploaded-face caveat; 13 lifted SVGs with INDEX.tsv (source + tint). Aquawax Pro's licence terms are not identified beyond 'proprietary uploaded font'."
+    },
+    "K1": {
+     "grade": "meets",
+     "evidence": "README records scope, the per-file table, the capture method per step, a Do-and-don't list, an honest Coverage table, and the App-Store/download, mailto, newsletter and search boundaries."
+    },
+    "F15": {
+     "grade": "meets",
+     "evidence": "Script: all 8 pairs pass 4.5:1 across 2 themes; lowest 5.12:1 light muted (light.muted) on surface (light.surface.card)"
+    },
+    "F16": {
+     "grade": "meets",
+     "evidence": "Script: 192 of 192 tokens name their source"
+    },
+    "K2": {
+     "grade": "partly",
+     "evidence": "Script: 9 rules, 6 linking an image (needs 3+, all linked)"
+    },
+    "K3": {
+     "grade": "meets",
+     "evidence": "Script: DESIGN.md matches a fresh generation"
+    },
+    "C5": {
+     "grade": "na",
+     "evidence": "Optional for a capture, and this product does not publish it."
+    },
+    "V1": {
+     "grade": "na",
+     "evidence": "Optional for a capture, and this product does not publish it."
+    },
+    "V2": {
+     "grade": "na",
+     "evidence": "Optional for a capture, and this product does not publish it."
+    }
+   },
+   "name": "Foodnoms",
+   "goodFor": "nutrition-tracker marketing: a Framer site declaring ~90 --token-* custom properties in display-P3 (the #ff5406 accent ramp, a neutral ramp, #2f2f2f ink alphas and a per-nutrient hue set) with a real authored prefers-color-scheme dark theme, uploaded Aquawax Pro in three weights (56px hero ticker down to 15px nav), 40px/20px pill buttons, 18.8px #f2f2f2 feature cards, a Framer-composed pricing comparison table, help-center accordions with a Framer search modal, a newsletter capsule and an accent-orange footer panel",
+   "url": "https://foodnoms.com",
+   "captured": "2026-11-16",
+   "themes": [
+    "light",
+    "dark"
+   ],
+   "platform": "web",
+   "category": "Fitness",
+   "reviewed": "2026-11-16",
+   "reviewedPlatform": "web"
+  },
+  {
+   "slug": "fourmula",
+   "grades": {
+    "F1": {
+     "grade": "meets",
+     "evidence": "Two real palettes captured: the app's declared Tailwind @theme ramp under appColor — a neutral base-100..base-900 set with 625/650/750 half-steps, two orange accents (accent-500/-600), success/error/warning families plus blue/red/gray and overlay-black utilities; the marketing site's five-step --fonts-10/20/30/50/64 alpha ink ramp is retained as the per-theme text.muted/dim/faint/hairlineInk and border roles, resolved in both paints."
+    },
+    "F2": {
+     "grade": "meets",
+     "evidence": "background.page/menu/counter/chip/aiButton/surface resolve in both marketing paints (light #fff/#020108-menu, dark #020108/#272727-menu) and the app's base-800/750 card+dialog fills are declared under component.app.* plus appColor.base-*."
+    },
+    "F3": {
+     "grade": "meets",
+     "evidence": "text.ink/muted/overlayLink + action.ink/inkInverse resolve per theme (#020108 ink and white inverse in light, swapped in dark; muted is the fonts-64 alpha); the app's dim-ink #b0b4ba, muted-ink #686a6e and format-item-ink #ff6b02 are measured under component.app.*."
+    },
+    "F4": {
+     "grade": "meets",
+     "evidence": "border.rule (#d7d7d6 / #2a2a30), border.hairline (the fonts-20 alpha per theme), border.toggleRing, border.iconRing and border.menuRing resolve in both paints; the app card's 1px #1a1a1a border is measured."
+    },
+    "F5": {
+     "grade": "meets",
+     "evidence": "Default+hover+pressed measured on the marketing CTAs (header-cta, step-cta, how-cta), account-link, menu-pill and the app controls (app-create-btn, app-signin-btn, auth-submit, pdp-start-bottom); selected paints measured on pdp-format-static and the opened FAQ/menu states."
+    },
+    "F6": {
+     "grade": "partly",
+     "evidence": "The app's @theme declares success #46fea5, error #ff173f and a warning family under appColor, but no error/success state paints on the signed-out surfaces - declarations captured, painted states absent rather than measured."
+    },
+    "F7": {
+     "grade": "meets",
+     "evidence": "Both marketing paints are complete parallel sets (24 light + 17 dark tokens, same roles, documented inverted class names); the app's dark-only layer is captured under core.appColor/component.app and documented as having no public light theme."
+    },
+    "F8": {
+     "grade": "meets",
+     "evidence": "font.size.marketing.* is the declared --_fonts---* fluid ramp, font.size.measured.* the painted px at 1440/390 (73.2px hero, 40.3px mobile), font.size.app.* the declared 12-52px app scale; families and tracking captured for both systems."
+    },
+    "F9": {
+     "grade": "missing",
+     "evidence": "Neither surface declares a spacing scale on one base unit - the Webflow marketing stylesheet has no spacing tokens and the app uses Tailwind utilities directly; spacing exists only as measured component geometry (component.*-pad entries)."
+    },
+    "F10": {
+     "grade": "meets",
+     "evidence": "radius.app.sm..7xl is the app's declared 4-40px ramp; marketing radii are measured (6.65px chips, 26.6px icon rings, 28px app cards/dialogs, 16px format cards, fluid ~1318px pill sentinel values)."
+    },
+    "F11": {
+     "grade": "meets",
+     "evidence": "component.marketing.* and component.app.* carry measured heights/widths for 78 components (92.5px header, 40px CTAs, 384px auth card, 280x60 format cards, mobile 104px header)."
+    },
+    "F12": {
+     "grade": "missing",
+     "evidence": "No 3-5 level elevation scale exists: the marketing site is flat hairlines, the app card uses a 1px border + 24px backdrop blur rather than a shadow ramp; only the cookie modal's one-off shadow was measured."
+    },
+    "F13": {
+     "grade": "meets",
+     "evidence": "The two-pass motion probe found 337 moving elements; core.motion carries the measured 0.2s ease marketing control, the app's declared 150ms cubic-bezier(.4,0,.2,1) and 0.2s transitions, plus the honest reduced-motion finding (behaviour: ignores - nothing honours prefers-reduced-motion)."
+    },
+    "F14": {
+     "grade": "partly",
+     "evidence": "Widths 1440/390 and container.header-width/legal-width are captured and the mobile breakpoints were exercised; grid columns and z-index layers are not declared tokens on either surface - recorded as measured geometry only."
+    },
+    "C1": {
+     "grade": "partly",
+     "evidence": "78 components cover 12 of 19 checklist items: button (header-cta/step-cta/how-cta, cookie-accept/save, auth-submit, pdp-upload/shopify-cta/start-bottom), icon button (theme-toggle, account-link, app-menu-btn), link (nav-overlay/footer/legal links, pdp-dash-link), text field (auth email/password), checkbox (cookie-check), radio (pdp-format group), switch (theme-toggle), menu (menu-pill + nav-overlay), dialog (cookie-settings, pdp-reco/what dialogs), card (auth-card, format items), list row (faq-item), badge (prc-counter, hero chips, pdp-signedin-chip). Missing: text area, select, tabs, tooltip, toast, table, avatar - none paints signed out."
+    },
+    "C2": {
+     "grade": "meets",
+     "evidence": "176 states across 78 components (one — the auth reset view — is recorded as uncaptured rather than measured): real hover, focus-visible, focused and typed-then-cleared filled fields, DevTools-forced pressed, opened states (menu overlay, FAQ, consent manager, both PDP dialogs), selected (format radio) and disabled-look (format-video 0.5 opacity)."
+    },
+    "C3": {
+     "grade": "partly",
+     "evidence": "Keyboard focus was delivered to 19 interactive components and the state captured; none paints a visible focus change - no outline ring, shadow or border delta (an honest absence recorded in components.md). The consent buttons' #146ef5 paint is their hover state; no focus state was captured on them, so no focus treatment is claimed there."
+    },
+    "C4": {
+     "grade": "meets",
+     "evidence": "component.marketing.*/component.app.* tokenize the measured geometry, fills, inks, borders and radii per component, each with $extensions.source."
+    },
+    "C5": {
+     "grade": "partly",
+     "evidence": "Local keyboard/UI behaviour is documented per component (Escape dismisses dialogs, accordion opens, switchers swap auth views, Enter-safe guards never submit); screen-reader output and submission behaviour are absent because nothing was submitted and AT was not driven."
+    },
+    "P1": {
+     "grade": "meets",
+     "evidence": "patterns.md covers the marketing chrome and inverted theme, home, legal, app shell, start, auth card, create-PDP, mobile and motion/focus, each tied to tokens.json values and crops."
+    },
+    "V1": {
+     "grade": "meets",
+     "evidence": "The README's Do and don't lists 9 evidenced rules (invert with the theme, spend orange only in the app, keep the two systems apart, name the paint not the class, honest pill radii, no signed-in styling, no fabricated form outcomes, declared-vs-measured type, no brand copying), each linked to a crop."
+    },
+    "V2": {
+     "grade": "na",
+     "evidence": "Optional for a capture, and this product does not publish it."
+    },
+    "A1": {
+     "grade": "partly",
+     "evidence": "Fonts named with real stacks ('Sf Pro Display', Arial on marketing; the app's local sfProFont next/font build) with the proprietary-face caveat; no standalone SVG icon set was lifted - the layoutGaps entry records it."
+    },
+    "K1": {
+     "grade": "meets",
+     "evidence": "The README states the surfaces, both themes and the inverted class names, the read method, the boundaries (auth wall, uploads, Shopify, generation, consent), the two-token-layer warning and the distrust list."
+    },
+    "F15": {
+     "grade": "meets",
+     "evidence": "Script: all 8 pairs pass 4.5:1 across 2 themes; lowest 6.43:1 light muted (light.text.muted) on surface (light.background.surface)"
+    },
+    "F16": {
+     "grade": "meets",
+     "evidence": "Script: 316 of 316 tokens name their source"
+    },
+    "K2": {
+     "grade": "meets",
+     "evidence": "Script: 9 rules, each linking a screenshot or crop"
+    },
+    "K3": {
+     "grade": "meets",
+     "evidence": "Script: DESIGN.md matches a fresh generation"
+    }
+   },
+   "name": "Fourmula",
+   "goodFor": "AI product-photography design across two systems: a Webflow marketing site with two inverted paints (the isDarkMode toggle flips `dark` on <body> - .body.dark paints light, plain .body dark), a fluid --_fonts---* rem ramp, a five-step --fonts-* alpha ink scale and Sf Pro Display; plus a dark-only Next.js/Tailwind v4 app edge with a declared @theme ramp (base-100..900 neutrals, #ff6b02 accent, --text-* 9-52px, --radius-* 4-40px), a 384px/28px-radius sign-in card, accent/20% tint pills and the signed-out PDP generator",
+   "url": "https://fourmula.ai",
+   "captured": "2026-11-15",
+   "themes": [
+    "light",
+    "dark"
+   ],
+   "platform": "web",
+   "category": "AI agents",
+   "reviewed": "2026-11-16",
+   "reviewedPlatform": "web"
+  },
+  {
    "slug": "gauth",
    "name": "Gauth",
    "category": "Learning",
@@ -19694,136 +19952,8 @@
    "category": "AI agents",
    "reviewed": "2026-10-25",
    "reviewedPlatform": "desktop"
-  },
-  {
-   "slug": "glossgenius",
-   "grades": {
-    "F1": {
-     "grade": "meets",
-     "evidence": "Webflow core collections carry per-hue ramps: core.deco (393 tokens), core.color (76), core.apps (66), gray scale; extracted raw from glossgenius.com CSS variables."
-    },
-    "F2": {
-     "grade": "partly",
-     "evidence": "light.surface has page and surface; booking.bg covers 35 background roles. Raised/overlay/scrim not separated as semantic roles on the marketing surface."
-    },
-    "F3": {
-     "grade": "partly",
-     "evidence": "light.text.ink and light.text.muted measured; on-accent and disabled text roles exist in app tokens (app.disabled) but were not reachable signed-out."
-    },
-    "F4": {
-     "grade": "partly",
-     "evidence": "light.border roles and booking.focus captured; a distinct strong border role is not published as a separate token on public surfaces."
-    },
-    "F5": {
-     "grade": "meets",
-     "evidence": "Hero and pricing CTAs measured in default, hover and pressed states (plan-cta, hero-cta in raw/components-computed.json)."
-    },
-    "F6": {
-     "grade": "partly",
-     "evidence": "app.warning and toast tokens exist in the app stylesheet, but signed-out surfaces expose no status components, so fill/text/border per status is incomplete."
-    },
-    "F7": {
-     "grade": "meets",
-     "evidence": "Marketing and booking ship a single light theme; all semantic roles exist within it. No dark variant is published."
-    },
-    "F8": {
-     "grade": "meets",
-     "evidence": "core.typography (72) plus font tokens across surfaces; Basel Classic Book (display) and Basel Grotesk Book (body) named with fallback stacks and a measured size scale."
-    },
-    "F9": {
-     "grade": "meets",
-     "evidence": "app.space (26), app.padding (13) and core.size spacing groups extracted on a 4px base."
-    },
-    "F10": {
-     "grade": "meets",
-     "evidence": "Radius tokens extracted on all three surfaces (app.radius, core.radius, booking radii)."
-    },
-    "F11": {
-     "grade": "meets",
-     "evidence": "Control heights measured per component; app.size/app.target sizing scales and booking.focus ring tokens captured."
-    },
-    "F12": {
-     "grade": "partly",
-     "evidence": "Card and popover shadows captured on measured components, but not organised into named elevation levels by the source stylesheets."
-    },
-    "F13": {
-     "grade": "partly",
-     "evidence": "A core.motion token and component transitions exist; durations/easing are thin and reduced-motion behaviour is not published."
-    },
-    "F14": {
-     "grade": "meets",
-     "evidence": "app.breakpoint, core.layout and core.responsive token groups plus desktop (1440px) and mobile (390px) captures."
-    },
-    "C1": {
-     "grade": "partly",
-     "evidence": "14 of 19 checklist components documented: button, link, text field, select, checkbox, radio, switch, menu, card, list row, badge, avatar, icon button, pricing table. Tooltip, dialog, toast, tabs, text area not reachable signed-out."
-    },
-    "C2": {
-     "grade": "meets",
-     "evidence": "Default, hover, focus-visible, pressed, selected, opened and filled states measured where each applies (raw/components-computed.json)."
-    },
-    "C3": {
-     "grade": "meets",
-     "evidence": "focus-visible states captured for links, buttons and form fields across marketing, auth and booking surfaces."
-    },
-    "C4": {
-     "grade": "meets",
-     "evidence": "components.md entries are written against tokens.json names with raw/component-tokens.json provenance."
-    },
-    "P1": {
-     "grade": "partly",
-     "evidence": "patterns.md covers marketing chrome, forms, pricing and the public booking flow; empty/loading/error and destructive-confirmation patterns are not reachable signed-out."
-    },
-    "A1": {
-     "grade": "partly",
-     "evidence": "Fonts named with roles; the product's icon set is not published as an indexed set on public pages."
-    },
-    "K1": {
-     "grade": "meets",
-     "evidence": "README documents captured surfaces, method, boundaries (no sign-in, no booking submission) and what to distrust."
-    },
-    "F15": {
-     "grade": "partly",
-     "evidence": "Script: primary text passes; secondary fails 2 pairs, worst 3.65:1 light muted (light.text.muted) on page (core.color.primary.gloss.white)"
-    },
-    "F16": {
-     "grade": "meets",
-     "evidence": "Script: 1477 of 1477 tokens name their source"
-    },
-    "K2": {
-     "grade": "missing",
-     "evidence": "Script: no \"Do and don't\" section in the README"
-    },
-    "K3": {
-     "grade": "meets",
-     "evidence": "Script: DESIGN.md matches a fresh generation"
-    },
-    "C5": {
-     "grade": "na",
-     "evidence": "Optional for a capture, and this product does not publish it."
-    },
-    "V1": {
-     "grade": "na",
-     "evidence": "Optional for a capture, and this product does not publish it."
-    },
-    "V2": {
-     "grade": "na",
-     "evidence": "Optional for a capture, and this product does not publish it."
-    }
-   },
-   "name": "GlossGenius",
-   "goodFor": "Salon and spa business software across three public surfaces: a Webflow marketing site declaring a --_x---* variable layer (gloss-black #17150e ink on gloss-white #f0f7f6, a 16-hue --_color---super--* accent family, pill buttons, Basel/Fraunces serif display) with mega-menu nav, an annual-default pricing grid and a two-step demo form; the Next.js glossDS auth surfaces (/login, /signup, /forgot-password — --content-*/--surface-*/--brand-* ramps, 1000px pill radius); and a real published booking website (honeyhivesalon.glossgenius.com) re-skinning its own .tokens_glossDS__* family — service list, professional select and the public /book date-picker",
-   "url": "https://glossgenius.com",
-   "captured": "2026-11-16",
-   "themes": [
-    "light"
-   ],
-   "platform": "web",
-   "category": "Productivity",
-   "reviewed": "2026-11-17",
-   "reviewedPlatform": "web"
   }
  ],
  "base": "2026-10-16",
- "reviewMethod": "Reviewed generated tokens.json, raw/component-tokens.json, components.md, patterns.md and README against the signed-out capture scope; graded only what public marketing, auth and booking surfaces expose"
+ "reviewMethod": "read the package end to end (README, components.md, patterns.md, tokens.json, style-guide.html), inspected screenshots and crops, checked measured roles against the declared FPDS/Tailwind layer"
 }
