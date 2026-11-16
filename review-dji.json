@@ -1,0 +1,86 @@
+{
+  "F1": {
+    "grade": "meets",
+    "evidence": "Declared hue ramps harvested from served CSS: --grey-1..11 (neutral), --brand-1..10 (#e7f3fb to #00326a), --red-1..10, --green-1..9 in core.color.*; every leaf carries $extensions.source to its CSS rule."
+  },
+  "F2": {
+    "grade": "meets",
+    "evidence": "Background roles in light/dark.color.*: --bg/--bg-0..--bg-7 bases, surface and overlay paints; section-scoped .light-theme/.dark-theme mappings resolved live."
+  },
+  "F3": {
+    "grade": "meets",
+    "evidence": "--primary/--secondary/--tertiary/--disabled text roles aliased in both themes; brand text resolves to #005ab1 (light) / #2c8cdd (dark); on-accent is white on the brand #0070d5 Store/CTA fills, measured."
+  },
+  "F4": {
+    "grade": "meets",
+    "evidence": "--border/--divider roles in both themes; keyboard focus measured on 14 components — 11 draw a real outline ring, pd-buy/pd-watch change their fill, st-link changes only its text colour; borders that changed on 0-width sides were not counted."
+  },
+  "F5": {
+    "grade": "meets",
+    "evidence": "CTA accent states measured: hm-buy/hm-learn/pd-buy/pd-watch hover and DevTools-forced pressed states; 0.3s ease transitions recorded."
+  },
+  "F6": {
+    "grade": "partly",
+    "evidence": "success/warning/danger paths exist with red and green ramps, but only fill-role colours resolve — no measured text/border variants per status, and the public pages exercise none of them."
+  },
+  "F7": {
+    "grade": "meets",
+    "evidence": "116 light leaves vs 117 dark leaves; every semantic role resolves in both the .light-theme and .dark-theme sections the product actually paints."
+  },
+  "F8": {
+    "grade": "meets",
+    "evidence": "--font-family + --font-family-jp with fallback stacks (Dji, Open Sans, PingFang SC, Microsoft YaHei, Helvetica Neue); --font-weight-* and --line-height-* declared; measured size roles (display/title/nav/label/caption) in core.font.size.measured.*."
+  },
+  "F9": {
+    "grade": "meets",
+    "evidence": "--spacing-xs..--spacing-xl declared on an 8px base and emitted in core.spacing.*; measured gaps confirm."
+  },
+  "F10": {
+    "grade": "partly",
+    "evidence": "One declared --radius emitted as core.radius.default plus measured radii per component (Store pill, ghost CTA, hero/mobile CTAs); no named multi-step radius scale."
+  },
+  "F11": {
+    "grade": "partly",
+    "evidence": "Control heights measured (nav 64px, CTAs, search input); focus outline widths/offsets recorded; no declared icon-size or control-size scale."
+  },
+  "F12": {
+    "grade": "partly",
+    "evidence": "Measured box-shadows on the card/subnav surfaces are thin; the product paints mostly flat. Levels are documented in measurements.md but no named elevation ramp exists."
+  },
+  "F13": {
+    "grade": "meets",
+    "evidence": "Motion extracted live: 0.1s/0.2s/0.3s ease and 0.6s ease-in-out across 12 components; recorded in raw/measurements.md."
+  },
+  "F14": {
+    "grade": "meets",
+    "evidence": "--grid-width and --full-screen-height declared; 1440 desktop / 390 mobile widths captured; z-index roles (core.zIndex.modal = 1200) resolved."
+  },
+  "C1": {
+    "grade": "partly",
+    "evidence": "32 components / 79 states measured across 9 pages — nav, buttons, links, cards, search field, lists, tabs (pills). Signed-out marketing surfaces honestly cover ~9 of 19 checklist kinds; no dialogs, toasts, checkboxes, radios or tables exist signed out."
+  },
+  "C2": {
+    "grade": "meets",
+    "evidence": "79 states captured: hover, focus-visible and DevTools-forced pressed on CTAs and nav items."
+  },
+  "C3": {
+    "grade": "meets",
+    "evidence": "14 components received keyboard focus; 11 drew visible focus outlines. pd-buy/pd-watch honestly recorded as no measurable focus change."
+  },
+  "C4": {
+    "grade": "meets",
+    "evidence": "component-spec entries resolve measured values against declared --vars and emit aliases; specs cite token paths not raw hex."
+  },
+  "P1": {
+    "grade": "partly",
+    "evidence": "App shell (fixed nav + mega menu, footer), category browsing, product PDP, support search, store locator and mobile nav patterns written; the store checkout, login/register and purchase flows are a documented boundary — forms/validation and destructive patterns can't be evidenced signed out."
+  },
+  "A1": {
+    "grade": "meets",
+    "evidence": "icon.png (128px official favicon via fetch_icon.py); font families named — Dji (custom), Open Sans, FontAwesome icon font, PingFang SC / Microsoft YaHei system fallbacks — with fallback chains."
+  },
+  "K1": {
+    "grade": "meets",
+    "evidence": "README lists the geo-locale /sg scope, 9 captured surfaces, 32 components/79 states, section-scoped theming (no global toggle), and the store/account boundary explicitly."
+  }
+}

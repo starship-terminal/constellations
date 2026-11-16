@@ -1179,8 +1179,8 @@
     156
    ],
    "description": "Your Place to Talk and Hang Out",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/discord",
    "notes": "",
    "batch": 4
   },
@@ -1194,8 +1194,8 @@
     926
    ],
    "description": "Movies, Events, Dining, Sports & Concerts Nearby",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/district",
    "notes": "",
    "batch": 4
   },
@@ -1209,8 +1209,8 @@
     332
    ],
    "description": "The Future Of Possible",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/dji",
    "notes": "",
    "batch": 4
   },

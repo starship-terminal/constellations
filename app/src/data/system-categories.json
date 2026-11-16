@@ -882,6 +882,12 @@
     "reason": "catalog.json describes a news aggregator and community feed (the 2025 Digg reboot): story cards with vote pills, category feeds, source profiles and ranked rails."
   },
   {
+    "referenceId": "systems:district",
+    "groupId": "web-categories",
+    "labels": ["Entertainment", "Travel & Booking"],
+    "reason": "catalog.json describes a live-event and venue booking product (District by Zomato): movie and venue cards, artist pages, ticket purchase flows and a gated checkout."
+  },
+  {
     "referenceId": "systems:getfernand",
     "groupId": "web-categories",
     "labels": ["Business", "Productivity"],
@@ -934,5 +940,17 @@
     "groupId": "web-categories",
     "labels": ["Design & Media Editing", "Productivity"],
     "reason": "catalog.json describes a website builder and AI design agent: marketing product pages (AI, agents, design, MCP), a pricing grid, community gallery and marketplace template indexes and the signed-out login shell."
+  },
+  {
+    "referenceId": "systems:discord",
+    "groupId": "web-categories",
+    "labels": ["Communication Tools", "Social Networking"],
+    "reason": "catalog.json describes a chat-community platform: signed-out server discovery, server detail pages with Join/Share, and the login/register auth surface."
+  },
+  {
+    "referenceId": "systems:dji",
+    "groupId": "web-categories",
+    "labels": ["Electronic & Devices", "Marketplace"],
+    "reason": "catalog.json describes a consumer-drone and imaging-hardware brand site: product marketing pages, category grids, a store locator and links into the gated DJI store."
   }
 ]
