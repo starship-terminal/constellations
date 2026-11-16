@@ -504,6 +504,40 @@ test("version-twelve stores gain the Fourthwall rows, without touching their own
   ).toBeGreaterThan(0);
 });
 
+test("version-thirteen stores gain the Calm rows, without touching their own labels", async () => {
+  const { dir, store } = await open();
+  // A v13 store opened before the Calm rows existed: drop them and rewind.
+  await store.client.execute(
+    "DELETE FROM reference_categories WHERE reference_id='systems:calm'",
+  );
+  await store.client.execute(
+    "DELETE FROM media_term_assignments WHERE reference_id='systems:calm'",
+  );
+  await store.client.execute("PRAGMA user_version=13");
+  store.close();
+  stores.splice(stores.indexOf(store), 1);
+  const migrated = await createResearchStore(dir);
+  stores.push(migrated);
+  expect(
+    Number(
+      (await migrated.client.execute("PRAGMA user_version")).rows[0]
+        .user_version,
+    ),
+  ).toBe(15);
+  const categories = await migrated.listReferenceCategories();
+  // One seed label (Health & Wellness) lands as one row.
+  expect(
+    categories.filter((row) => row.referenceId === "systems:calm"),
+  ).toHaveLength(1);
+  expect(
+    (await migrated.listReferenceCategoryDetails(["systems:calm"]))[0].label,
+  ).toBe("Health & Wellness");
+  const media = await migrated.listMediaTermAssignments();
+  expect(
+    media.filter((row) => row.referenceId === "systems:calm").length,
+  ).toBeGreaterThan(0);
+});
+
 test("version-fourteen stores gain the Chargetrip and Fresha rows, without touching their own labels", async () => {
   const { dir, store } = await open();
   // A v14 store opened before the Chargetrip rows existed: drop them and rewind.

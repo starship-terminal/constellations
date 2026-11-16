@@ -699,9 +699,9 @@
     227
    ],
    "description": "#1 app for sleep and meditation",
-   "status": "pending",
-   "package": null,
-   "notes": "Partial capture saved on branch capture-calm (2026-11-12 run stopped before the builders); resume from it, raw page copies in ~/.design-systems/calm/.",
+   "status": "captured",
+   "package": "systems/calm",
+   "notes": "Captured 2026-11-16: marketing + dark app-shell + B2B + help center, signed out; /signup-flow gated by PerimeterX (recorded as boundary).",
    "batch": 3
   },
   {

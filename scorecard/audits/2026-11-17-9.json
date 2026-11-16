@@ -20346,6 +20346,135 @@
    "category": "E-commerce",
    "reviewed": "2026-11-17",
    "reviewedPlatform": "web"
+  },
+  {
+   "slug": "gladia",
+   "grades": {
+    "F1": {
+     "grade": "meets",
+     "evidence": "color.neutral.0-1000 (12 steps) plus purple/blue/green/red/yellow/orange/pink ramps resolved to hex in core.color.* from the declared --color-* layer."
+    },
+    "F2": {
+     "grade": "meets",
+     "evidence": "bg.primary/secondary/tertiary/elevated/sunken/glass/glassLight/inverse/brand roles re-point per scope; the overlay/scrim use is the declared gradient.bento-scrim and the rgba glass fills."
+    },
+    "F3": {
+     "grade": "meets",
+     "evidence": "text.primary/secondary/tertiary/disabled/inverse/link/brand plus error/success/warning text roles in both sets; on-accent reads through text.inverse."
+    },
+    "F4": {
+     "grade": "meets",
+     "evidence": "border.primary/secondary/tertiary/subtle/card/active/brand plus border.focus #1a9eff and the transparent hairlines; measured focus rings corroborate."
+    },
+    "F5": {
+     "grade": "partly",
+     "evidence": "bg.brand/text.brand/border.brand are declared, and the measured nav-cta hover lifts to rgba(255,255,255,0.88) at scale(1.02) with pressed identical; no distinct declared hover/active accent tokens exist."
+    },
+    "F6": {
+     "grade": "partly",
+     "evidence": "text.error/success/warning roles and the full red/green/yellow/blue ramps exist, but no status fill or border roles and no info role appears on the public surface; validation states never painted signed out."
+    },
+    "F7": {
+     "grade": "meets",
+     "evidence": "dark (the :root every marketing page paints) and light (the body.light-mode scope /library paints) carry the same 29 semantic roles re-pointed; the docs Mintlify dark preference is a different stack captured as screenshots, noted in the README."
+    },
+    "F8": {
+     "grade": "partly",
+     "evidence": "font.family.sans/mono with fallback stacks, 17 size steps 10-80, 4 weights, 5 line-heights and font.text.body.* body roles; no named display/heading/label role tokens beyond the body set."
+    },
+    "F9": {
+     "grade": "meets",
+     "evidence": "space.0-48 on the declared 4px --space base plus semantic space.cardGap/pageX/sectionY/sectionYSm."
+    },
+    "F10": {
+     "grade": "meets",
+     "evidence": "radius.0-6 (8-48px) plus core.radius.full 9999px; measured components confirm the pill geometry and 1px hairline borders."
+    },
+    "F11": {
+     "grade": "partly",
+     "evidence": "Measured control geometry exists (field.height 44px, headerCta.height 32px, range.height 20px under core.component) and focus rings measured at 2px offset 2px, but icon sizes and the focus-ring spec are not tokens."
+    },
+    "F12": {
+     "grade": "partly",
+     "evidence": "Four declared levels shadow.sm/md/lg/xl plus shadow.none; the names do not tie levels to uses, and the measured surfaces lean on glass+border rather than elevation shadows."
+    },
+    "F13": {
+     "grade": "meets",
+     "evidence": "duration.0-480 and ease.in/out/in-out/linear/spring are declared; the motion probe (raw/motion.json) records 1926 moving nodes and partial honouring of prefers-reduced-motion, documented in measurements.md."
+    },
+    "F14": {
+     "grade": "partly",
+     "evidence": "layout.maxW.container 1200px, navbar.*, hero.* and cta.* layout vars plus component geometry; breakpoints live in media queries and are not tokens, and no z-index scale is declared."
+    },
+    "C1": {
+     "grade": "partly",
+     "evidence": "Publicly present checklist components are covered: button, icon button, link, text field, select, checkbox, tabs, menu, card, badge (10 of 19); text area, radio, switch, tooltip, dialog, toast, list row, table, avatar do not appear on the signed-out surface - honest absence."
+    },
+    "C2": {
+     "grade": "meets",
+     "evidence": "132 states across 58 components: real hover, keyboard focus-visible, DevTools-forced pressed, focused/filled fields and opened toggles; disabled/loading/error states are unreachable without submitting and are listed in Gaps."
+    },
+    "C3": {
+     "grade": "meets",
+     "evidence": "15 components captured a real keyboard focus ring (purple #947afc on nav, #1a9eff on the pricing toggle, #7e65e1 in the auth shell); see components.md Shared values."
+    },
+    "C4": {
+     "grade": "meets",
+     "evidence": "Component entries write values as token names (light.bg.primary, core.color.neutral.800, core.color.alpha.white12) beside the raw reading."
+    },
+    "P1": {
+     "grade": "partly",
+     "evidence": "patterns.md covers the app shell (glass navbar+mega-menu+mobile drawer), forms, pricing grid, docs chrome and auth edge; empty/loading/error, destructive confirmation and onboarding patterns do not exist on the public surface."
+    },
+    "A1": {
+     "grade": "meets",
+     "evidence": "54 product SVGs in icons/ with INDEX.tsv naming roles; fonts named (Suisse Intl, Geist Mono) with licence/fallback guidance in README Fonts."
+    },
+    "K1": {
+     "grade": "meets",
+     "evidence": "README states scope, the three reading passes, the signed-out boundary and a What to distrust list naming the zero-size readings and stack boundaries."
+    },
+    "C5": {
+     "grade": "na",
+     "evidence": "Optional for a capture, and this product does not publish it."
+    },
+    "V1": {
+     "grade": "na",
+     "evidence": "Optional for a capture, and this product does not publish it."
+    },
+    "V2": {
+     "grade": "na",
+     "evidence": "Optional for a capture, and this product does not publish it."
+    },
+    "F15": {
+     "grade": "meets",
+     "evidence": "Script: all 8 pairs pass 4.5:1 across 2 themes; lowest 7.60:1 light muted (light.text.secondary) on surface (light.bg.secondary)"
+    },
+    "F16": {
+     "grade": "meets",
+     "evidence": "Script: 258 of 258 tokens name their source"
+    },
+    "K2": {
+     "grade": "meets",
+     "evidence": "Script: 8 rules, each linking a screenshot or crop"
+    },
+    "K3": {
+     "grade": "meets",
+     "evidence": "Script: DESIGN.md matches a fresh generation"
+    }
+   },
+   "name": "Gladia",
+   "goodFor": "developer-audio-AI product and marketing design: a declared :root token layer of --color-neutral-0..1000 and --color-purple/blue/green/red/yellow/orange/pink ramps (brand purple #947afc) behind a dark-by-default glass surface (black --bg-primary, rgba glass nav, hairline translucent borders, purple #925bff brand CTAs), a 4px --space-* scale, --radius-* pill geometry, --font-size-10..80 ramp in 'Suisse Intl' with 'Geist Mono' code, --duration-*/--ease-* motion, and the semantic --text-*/--bg-*/--border-* roles re-pointed under body.light-mode on /library and .section--white on white sections; a hover-intent mega-menu header, an Async/Real-time pricing grid with a calculator, a demo-request form, a Mintlify docs site with a real light/dark preference, app-shell auth cards and a 390px pass",
+   "url": "https://www.gladia.io",
+   "captured": "2026-11-16",
+   "themes": [
+    "dark",
+    "light"
+   ],
+   "platform": "web",
+   "category": "Media",
+   "reviewed": "2026-11-17",
+   "reviewedPlatform": "web"
   }
  ],
  "base": "2026-10-16",

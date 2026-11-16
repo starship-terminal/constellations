@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_104 of 162 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_106 of 164 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -155,6 +155,12 @@ Access: signed out (every captured surface is public; the product — scheduler,
 - no booking was created: the booker's day cells, slot list and guest-details form were toggled as local state and Confirm was never pressed
 - signup, SSO and checkout were never followed; every Get-started/Sign-up-with/Continue action was measured only
 - booking pages vary per host: this capture is cal.com/peer's event type with its #292929 brand paint
+
+## [Calm](../systems/calm) — `calm`
+Access: signed out (every captured surface is public; the product past the login card, playback, library, checkout and every signed-in surface were never reached)
+- the signed-in product entirely: playback, the home feed, library, profile, check-ins and checkout live behind the login card and were never reached
+- the login card was opened by its own button, measured, and never filled or submitted; the Try Calm for Free button navigates to /signup-flow, which stayed PerimeterX-blocked this run and is recorded as a boundary
+- no public pricing/plans page exists signed out: plan choices sit behind /signup-flow; /family (six premium accounts, SGD 93.99/year geolocated) and /gift (Gift a Year / Gift a Lifetime) are the public purchasable surfaces
 
 ## [Chargetrip](../systems/chargetrip) — `chargetrip`
 Access: signed out (every captured surface is public: the www.chargetrip.com marketing routes, the account.chargetrip.io sign-in card, and developers/playground shells as boundaries; the routing engine, dashboard, API keys and every form submit were never crossed; the Cookie Settings card was hidden, never answered)
@@ -589,6 +595,11 @@ Access: read-only (every captured surface is public: the consumer marketplace, t
 - the /auth and partner sign-in forms were measured and typed into then cleared, never submitted - validation, error, loading, success and verification-code states are absent rather than measured; no OAuth, SSO or passkey flow was started
 - the booking wizard stops at service selection: Continue was never pressed, so staff, time-slot, payment and confirmation steps are absent
 - venue content (staff, reviews, hours, prices) is that venue's published data, not a canonical template
+
+## [Gladia](../systems/gladia) — `gladia`
+Access: signed out (every captured surface is public; the app console and every post-login surface - API keys, transcription playground, usage, billing - is an authenticated boundary never reached; the /demo-request, pricing-calculator, login and signup fields were measured and typed into then cleared, never submitted; every CTA, SSO button, nav item and link was measured, never followed; the mega-menu opens by hover intent or keyboard, the pricing-mode toggle and FAQ accordions are local UI toggles, and the docs dark theme is the Mintlify site's own preference)
+- the app console and every post-login surface (API keys, transcription playground, usage, billing, settings) sits behind an account - an authenticated boundary never reached; app.gladia.io / and /signup were measured as forms, never submitted, and Continue-with SSO buttons were never followed
+- submitted states: the /demo-request form, the pricing-calculator fields and the auth cards were typed into then cleared, never sent - validation, error, loading and success states are absent rather than measured
 
 ## Gate noted in access text only
 

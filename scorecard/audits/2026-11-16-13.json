@@ -1,7 +1,7 @@
 {
  "date": "2026-11-16",
  "rubric": "4",
- "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): human review of the measurement files, screenshots and generated docs",
+ "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): manual review of the measured package: tokens.json, components.md, patterns.md, README distrust list and the raw/ files against scorecard/criteria.json",
  "systems": [
   {
    "slug": "1password",
@@ -19954,103 +19954,103 @@
    "reviewedPlatform": "desktop"
   },
   {
-   "slug": "chargetrip",
+   "slug": "calm",
    "grades": {
     "F1": {
      "grade": "partly",
-     "evidence": "Declared --token-* ramps resolve to core.color.paper (6 steps #fffffb->#c7c0aa), ink (6: #877f78->#2c241e), orange (5 + a 12% tint, around the #f94d00 CTA) and green (2). Real declared vars, but not ~10 steps per hue; the paper and green ramps are short."
+     "evidence": "No declared per-hue ramp exists on the main surfaces — styled-components compiles Calm's theme into literals, so measured roles emit under core.color.neutral/brand/app. The only declared ramp is the Zendesk Garden --zd-* layer on /faq/web (blue, green, grey, red, kale and friends at real steps), emitted under core.zd.color.*."
     },
     "F2": {
-     "grade": "partly",
-     "evidence": "light.surface.page #efede5 (the cream ground), surface.card #fffffb (plan cards, footer panel, demo card) and surface.dark #262322 (hero band, Popular card) cover the painted grounds; translucent white/paper alphas tokenise the scrims. No raised/overlay/modal surface ladder exists on the captured routes."
+     "grade": "meets",
+     "evidence": "Measured page/field surfaces in light (surface.page #f6f6f7, surface.field, the navy header scrim and the white auth-card backdrop) and a dark layer built from painted roles only (surface.page = the scene gradient's deep stop, surface.rail black@30%, surface.pill/active/raised from the tab and top-bar pills)."
     },
     "F3": {
-     "grade": "partly",
-     "evidence": "text.primary #262322, text.muted #877f78, text.onDark #f4f3f2, text.onDarkMuted white-alpha.52 and accentText cover what paints. No disabled text role (none painted) and no distinct link colour - footer links are ink that flips to orange on hover/press."
+     "grade": "meets",
+     "evidence": "Measured text roles in light (on-paper ink, muted, faint, link, hero text, text-on-action) and dark (text.primary, text.pill for unselected labels, text.on.active for the selected pill's ink). The dark shell draws no muted text role — every rail and tab label is the same white. Disabled is absent — no disabled control paints on the signed-out surface."
     },
     "F4": {
      "grade": "partly",
-     "evidence": "border.subtle #e4e1d5 and border.onDark #4d4846 tokenise the dashed hairlines inside the plan cards, and light.focus #101010 the auto outline the header/footer controls draw (plan/slider/form controls still draw #005fcc). No default/strong border ladder - fields are borderless fills and most borders are 0px."
+     "evidence": "The black@8% hairline (neutral.hairline), the content-tile border (measured.card-border #000000) and the painted 1px focus ring (measured.focus-ring) are measured; no strong-border role paints signed out."
     },
     "F5": {
-     "grade": "partly",
-     "evidence": "accent #f94d00 default; the marketing CTAs measurably do not repaint on hover or press (states identical). The stateful accent evidence is the nav-item hover wash rgba(221,59,0,0.15) (light.navHover) and the footer links' orange hover/press - no designed accent hover/pressed step exists to tokenise."
+     "grade": "meets",
+     "evidence": "The header CTA (nav-cta), hero CTA, dark login and signup pills, tabs and rail items were all measured at default/hover/focus-visible/CDP-pressed; the tab gains its white fill on selected (tab-active vs tab)."
     },
     "F6": {
      "grade": "partly",
-     "evidence": "A real status green paints: the 'Stable' footer dot rgb(39,136,89) (light.status.online) with the declared #2c9a65/#0d7b46 pair in core.color.green. No warning/danger/info colour paints anywhere on the public surface."
+     "evidence": "No status surface paints on the signed-out routes; the only status palette is the declared Garden --zd-* green/red families on the help center, emitted under core.zd.color."
     },
     "F7": {
-     "grade": "meets",
-     "evidence": "Every captured route paints exactly one light theme and the Framer bundle declares no dark variant; the dark hero band and Popular plan card are dark islands inside the light theme, tokenised as light.surface.dark/text.onDark roles, not a second set."
+     "grade": "partly",
+     "evidence": "Both surfaces are genuinely painted and tokenised (light ~20 leaves, dark ~10), but they are different products, not a theme toggle — the dark set carries no border/link roles to mirror light's, and roles that exist on one surface were never painted on the other."
     },
     "F8": {
-     "grade": "partly",
-     "evidence": "Two real families tokenised: core.font.family.ui (Geist Variable) and family.display (Cirka Regular) with the bundle's Placeholder fallbacks; core.font.size.* holds the measured 88/64/48/18/16/16px steps with line-heights in the descriptions. Weight stays 400/500; no named caption/code roles and Inter's 50 faces are bundle cargo no measured component paints."
+     "grade": "meets",
+     "evidence": "Figtree serves in 6 weights/styles from the Next.js bundle and runs every measured surface (ITC Souvenir and Neue Plak are served but paint nowhere); a measured 12-step ramp emits under core.font.size (display through health-display) with weights and the measured display/h2 line heights."
     },
     "F9": {
      "grade": "partly",
-     "evidence": "No spacing scale exists to tokenise: paddings are measured per component (72px plan-card, 8px 12px demo-card) but the Framer bundle declares no space vars and the values are not a base-4/8 ladder."
+     "evidence": "No declared spacing scale exists — every gap/height is a measured literal; control/tab/header/banner/signup-bar heights and rail widths emit under component.* and the Garden --zd-spacing-* steps emit under core.zd.spacing."
     },
     "F10": {
      "grade": "meets",
-     "evidence": "The painted radii ladder is tokenised in light.component.*.radius*: 8px buttons, 10px submit, 12px demo-card, 16px dark card, 24px plan/footer cards, plus the 999px decorative discs and 100% status dot; border widths are measured per entry (0-2px, dashed hairlines)."
+     "evidence": "Seven measured radii emit under core.radius: the fully-rounded pill, tab, tile, rail-item, login card, badge and mobile menu button; a 1px focus-ring width is measured."
     },
     "F11": {
      "grade": "partly",
-     "evidence": "Control heights measured in light.component (48px CTA, 40px nav/plan pills, 46px sign-in field) and the 1px auto focus ring is tokenised as light.focus (#101010; #005fcc on plan/slider/form controls); no named control-size ladder and icon sizes are recorded only on the entries."
+     "evidence": "Control heights are measured (56px pills, 48px rail items and search link, 26px tabs, 64/100px headers, 92px signup bar) and the 1px/0px-offset focus ring is captured; only one control size paints per role and icon sizes are limited to the measured 18px social icons and 32px carousel arrows."
     },
     "F12": {
      "grade": "partly",
-     "evidence": "Nearly flat: the demo-card icon's 1.5px #fffffb ring and the sign-in card's wrapper shadows (oklch hairline + 1px black-16%) are measured on the entries; no 3-5 level elevation ladder exists to capture."
+     "evidence": "Two measured elevations emit under core.shadow: the B2B card's 0 2px 12px black@8% lift and the auth card's 0 8px 24px black@25% over the scrim; every other measured box-shadow reads none — Calm genuinely favours fills over shadows."
     },
     "F13": {
      "grade": "partly",
-     "evidence": "Measured but not tokenised: the sign-in card's 150ms color/scale (cubic-bezier 0.2,0,0,1) and the input's 200ms ease-out repaints are recorded on the entries; the marketing controls' hovers are instant and no duration/easing tokens emit."
+     "evidence": "Two measured 300ms transitions emit (nav-transition, cta-transition) and the reduced-motion pass is recorded in raw (header transition stays 0.3s ease-out, animation none 0s, scroll-behavior auto); no declared duration/easing layer exists."
     },
     "F14": {
      "grade": "partly",
-     "evidence": "Two widths measured (1440 desktop, 390 mobile with its own component group); the layout is Framer auto-layout, no declared grid vars exist to tokenise; breakpoints and z-layers are observed, not named."
+     "evidence": "Header heights at both viewports, the 240px app rail, the 300px content-card grid columns and the 1425px fixed header are measured; breakpoints/z-index layers are inferred from the 1440 vs 390 responsive pass, not a declared scale."
     },
     "C1": {
      "grade": "partly",
-     "evidence": "~9 of the checklist components on the public surface: button (cta/plan/submit/sign-in pills), link (nav/footer/status), text field (sales + sign-in), select (sales), slider (pricing usage), card (plan/demo/menu/hero), menu (Products flyout + mobile menu) - plus a sign-in card outside the checklist. No checkbox/radio/switch/tabs/tooltip/toast/table/avatar/badge/dialog mount signed out."
+     "evidence": "50 components/130 states measured: buttons (nav/hero/dark/login pills), icon buttons (menu, dialog close, search link, carousel arrows), links, tabs + selected, the full-screen mobile menu, the login dialog, content/health cards, the New badge, rail and rail items, the footer and the consent banner. Text field, select, checkbox, radio, switch, toast, table, avatar and tooltip never paint on the signed-out public surface."
     },
     "C2": {
-     "grade": "partly",
-     "evidence": "default/hover/focus-visible/pressed attempted on every interactive entry (pressed via CDP); 97 of 99 state slots measured - the nav-cta and nav-signin hover slots timed out and are published as unmeasured, not filled in. focused on the six fields, filled on form-input and signin-input (test text typed and cleared), opened on the Products flyout and mobile menu. No disabled/error/loading/selected states exist on the captured routes; no form was ever submitted."
+     "grade": "meets",
+     "evidence": "Every interactive component carries hover, focus-visible and CDP-pressed readings plus default; selected is measured on tab-active and rail-item-active; the opened states (login dialog, mobile menu) are captured as screenshots and measured boxes."
     },
     "C3": {
-     "grade": "partly",
-     "evidence": "13 of 14 drivable controls draw a visible 1px focus outline - #101010 on header/footer controls (tokenised as light.focus), #005fcc on the plan/slider/form controls, oklch on the sign-in pair; nav-item (the Products trigger) could not be given a real keyboard focus - recorded as a miss, not an absence."
+     "grade": "meets",
+     "evidence": "Focus-visible was captured via real keyboard focus on every interactive component; the painted 1px outline (measured.focus-ring, #101010 on the light nav) is emitted as a token."
     },
     "C4": {
-     "grade": "meets",
-     "evidence": "Every component row cites the palette token beside the measured value where one matches (#262322 `color.ink.800`, #f94d00 `color.orange.500`, #fffffb `color.paper.0`); unmatched values stay raw readings."
+     "grade": "partly",
+     "evidence": "components.md entries carry the measured values with crops and provenance; where a value became a token the entry names it, but the bulk of spec lines are raw measured literals because Calm declares no token layer to alias to."
     },
     "P1": {
      "grade": "partly",
-     "evidence": "Seven written patterns in patterns.md: header + Products flyout, the dark-hero island, the pricing surface with its slider, the contact-sales form, the sign-in card (second stack, boundary), the footer, the mobile menu. No forms-validation, empty/loading/error, destructive, search/filter, data-display or onboarding patterns exist on the public surface."
+     "evidence": "patterns.md covers the public architecture: the scrim header + hero, the rounded CTA system, the auth card and gated signup flow, the dark preview shell composition (rail/tabs/cards/upsell/signup bars), the B2B surface, the footer and the mobile menu. Forms-and-validation, onboarding and destructive flows do not exist on the signed-out surface and are documented as boundaries."
     },
     "A1": {
      "grade": "partly",
-     "evidence": "Font provenance is recorded: the Framer bundle's 83 @font-face faces (Inter, Geist family, Cirka, Fragment/Geist Mono) in raw/css-vars.json fonts, with the rendered families tokenised. No standalone icon set was lifted - the glyphs are component artwork in crops/screenshots, declared under layoutGaps."
+     "evidence": "Fonts are named with their provenance (Figtree 300–700 plus unused Souvenir/Neue Plak faces, served from the Calm CDN, not distributed; style guide falls back to system sans). Icons were not lifted to a standalone set — the logo, rail glyphs and social icons are visible in crops and screenshots, recorded as a layoutGap."
     },
     "K1": {
      "grade": "meets",
-     "evidence": "README covers scope (15 marketing routes + sign-in card + developers/playground boundaries at two widths), every file, the reading method, the distrust section (two stacks, boundary, unmeasured nav-item focus), the font story, a coverage table and the do/don't rules."
+     "evidence": "The README states what was captured (routes, viewports, signed out, headed-under-Xvfb and why), how every file is generated, the PerimeterX retry policy, and a What-to-distrust list including the auth boundary, the gated /signup-flow landing and the two-dates provenance."
     },
     "F15": {
-     "grade": "partly",
-     "evidence": "Script: primary text passes; secondary fails 2 pairs, worst 3.35:1 light muted (light.text.muted) on page (light.surface.page)"
+     "grade": "meets",
+     "evidence": "Script: all 8 pairs pass 4.5:1 across 2 themes; lowest 10.94:1 light text (core.color.neutral.on-paper) on surface (core.color.neutral.field)"
     },
     "F16": {
      "grade": "meets",
-     "evidence": "Script: 62 of 62 tokens name their source"
+     "evidence": "Script: 234 of 234 tokens name their source"
     },
     "K2": {
      "grade": "partly",
-     "evidence": "Script: 9 rules, 0 linking an image (needs 3+, all linked)"
+     "evidence": "Script: 8 rules, 6 linking an image (needs 3+, all linked)"
     },
     "K3": {
      "grade": "meets",
@@ -20069,19 +20069,20 @@
      "evidence": "Optional for a capture, and this product does not publish it."
     }
    },
-   "name": "Chargetrip",
-   "goodFor": "Warm-cream B2B SaaS pages with an editorial serif: a #efede5 paper ground under near-white #fffffb cards, a warm ink ramp (#262322 text and dark fills, #877f78 muted), one #f94d00 orange for every action, Geist for UI paired with Cirka at an 88/64/48 display scale, dark hero and plan-card islands inside the single light theme, and 8/10/12/16/24px radii",
-   "url": "https://www.chargetrip.com",
-   "captured": "2026-11-12",
+   "name": "Calm",
+   "goodFor": "Meditation-app marketing with a calm blue system: photographic lake/mountain heroes under a navy scrim header, white pill actions, a dark-only signed-out /app/* preview shell with an indigo canvas, icon rail nav, white selected pills and content tiles, gradient upsell bars, a modal login card, and a light-blue WordPress B2B surface on health.calm.com",
+   "url": "https://www.calm.com",
+   "captured": "2026-11-16",
    "themes": [
-    "light"
+    "light",
+    "dark"
    ],
    "platform": "web",
-   "category": "Travel",
+   "category": "Fitness",
    "reviewed": "2026-11-16",
    "reviewedPlatform": "web"
   }
  ],
  "base": "2026-10-16",
- "reviewMethod": "human review of the measurement files, screenshots and generated docs"
+ "reviewMethod": "manual review of the measured package: tokens.json, components.md, patterns.md, README distrust list and the raw/ files against scorecard/criteria.json"
 }
