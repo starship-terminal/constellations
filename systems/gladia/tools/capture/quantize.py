@@ -13,6 +13,11 @@ Every image's .capture.json sidecar travels with it: a plain capture's sidecar i
 quantized PNG, and a stitched image's sidecar is rebuilt from its part tiles' sidecars — the parts'
 clips recorded under partClip, the union under capture.clip, and a fresh dimensionCheck against the
 stitched PNG's real pixel size (a part's own check can never vouch for the sheet).
+
+A capture only publishes when its sidecar's dimensionCheck passed. screenshotWithMetadata invalidates
+the same-path sidecar before shooting, so a failed recapture leaves a failing (or half-written, or
+missing) sidecar beside the raw PNG — the raw file stays, and the previously published screenshot and
+sidecar in screenshots/ keep standing as the last good evidence instead of being overwritten.
 """
 from PIL import Image
 import json, pathlib, re, shutil, sys
@@ -146,16 +151,32 @@ for name, ps in parts.items():
     print('stitched', name, sheet.size)
 
 n = 0
+skipped = []
 for f in sorted(RAW.glob('*.png')):
     if '.part' in f.name:
+        continue
+    # Publish only a capture whose own check passed. screenshotWithMetadata
+    # invalidates the same-path sidecar before shooting, so a failed recapture
+    # leaves a failing sidecar beside the raw PNG — the tile loop refuses
+    # those, and a plain capture must not publish one either: the previously
+    # published screenshot and sidecar stay as the last good evidence.
+    if f.stem in stitched:
+        meta = stitched[f.stem]
+    else:
+        meta = sidecar_for(f)
+    status = ((meta or {}).get('dimensionCheck') or {}).get('status')
+    if status != 'pass':
+        skipped.append(f'{f.name} (sidecar {status or "missing"})')
         continue
     im = Image.open(f).convert('RGB')
     im.quantize(colors=256, method=Image.Quantize.MEDIANCUT, dither=Image.Dither.NONE).save(OUT / f.name, optimize=True)
     out_side = OUT / f'{f.name}.capture.json'
     out_side.unlink(missing_ok=True)   # never leave a previous run's measurements beside a new image
     if f.stem in stitched:
-        out_side.write_text(json.dumps(stitched[f.stem], indent=1) + '\n')
-    elif f.with_name(f.name + '.capture.json').exists():
+        out_side.write_text(json.dumps(meta, indent=1) + '\n')
+    else:
         shutil.copyfile(f.with_name(f.name + '.capture.json'), out_side)
     n += 1
 print(n, 'screenshots ->', OUT)
+for s in skipped:
+    print('  skipped (kept the earlier published shot):', s)

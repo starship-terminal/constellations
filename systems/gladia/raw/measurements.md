@@ -1,8 +1,8 @@
 # Gladia component measurements
 
-Computed styles read from gladia.io on 2026-11-15 by `tools/capture/public/measure.mjs`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844) across the site's painted surfaces — the dark :root marketing pages (home, product, pricing, demo-request and the index pages), /library on the light body.light-mode scope, /blog on the legacy Webflow stack, the Mintlify docs site at docs.gladia.io (its own token layer and a real light/dark preference), the product auth shell at app.gladia.io / and /signup, and the mobile nav sheet — and written here by `tools/capture/public/build-measurements.mjs` from [components-computed.json](components-computed.json). The marketing site ships no theme control: an emulated prefers-color-scheme pass resolved :root identically, and body.light-mode is the only light scope a page mounts. One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
+Computed styles read from gladia.io by `tools/capture/public/measure.mjs`, first read 2026-11-16, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844) across the site's painted surfaces — the dark :root marketing pages (home, product, pricing, demo-request and the index pages), /library on the light body.light-mode scope, /blog on the legacy Webflow stack, the Mintlify docs site at docs.gladia.io (its own token layer and a real light/dark preference), the product auth shell at app.gladia.io / and /signup, and the mobile nav sheet — and written here by `tools/capture/public/build-measurements.mjs` from [components-computed.json](components-computed.json). Later recaptures merge into the same file: every entry names the run date its states were read under "Read", and a state a re-read missed keeps its earlier reading under its earlier date with the failed attempt beside it. The marketing site ships no theme control: an emulated prefers-color-scheme pass resolved :root identically, and body.light-mode is the only light scope a page mounts. One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
 
-States: `hover` is a real pointer hover; `focus-visible` a real keyboard focus (Shift+Tab, Tab); `pressed` is forced with DevTools (`CSS.forcePseudoState` :active:hover), so no button was pressed; `focused` is a text field clicked into; `filled` is sample text typed and deleted again, with nothing sent; `opened`, `expanded` and the rest are resting states reached by the page or by a UI toggle.
+States: `hover` is a real pointer hover; `focus-visible` a real keyboard focus (Shift+Tab, Tab); `pressed` is forced with DevTools (`CSS.forcePseudoState` :active:hover), so no button was pressed; `focused` is a text field clicked into, or a real keyboard focus on a toggle control (a click there would flip the value, so it is never clicked); `filled` is sample text typed and deleted again, with nothing sent; `opened`, `expanded` and the rest are resting states reached by the page or by a UI toggle.
 
 ## Components
 
@@ -12,34 +12,37 @@ States: `hover` is a real pointer hover; `focus-visible` a real keyboard focus (
 
 Site header. The floating rounded glass navbar at the top of every marketing page: the Gladia wordmark, the Product/Solutions/Developers/Resources/Company mega-menu triggers, Pricing, "Request a demo" and the signup CTA.
 
-Page: home. Selector: `header.site-nav`. States: default.
+Page: home. Selector: `header.site-nav nav.navbar`. States: default.
+Read: 2026-11-16.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 1440 x 0 |
+| Size (w x h) | 1200 x 72 |
 | Padding | 0px |
-| Border | none |
-| Radius | 0px |
-| Background | transparent |
+| Border | 1px solid #1f1f1f |
+| Radius | 20px |
+| Background | #000000 @ 0.65 |
 | Box shadow | none |
+| Backdrop filter | blur(40px) |
 | Outline | none |
 | Font | Suisse Intl 16px/22.4px 400 |
 | Letter spacing | normal |
 | Colour | #ffffff |
 | Text node | span.mega-menu-nav-label: Suisse Intl 15px/normal 400, #ffffff @ 0.68 |
 | Transition | none |
+| Transform | matrix(1, 0, 0, 1, 0, 0) |
 | Icon | 109.94 x 28, colour #ffffff |
 | Painted layers | nav.navbar 1200.0x72.0 bg #000000 @ 0.65 border T:1px solid #1f1f1f / R:1px solid #1f1f1f / B:1px solid #1f1f1f / L:1px solid #1f1f1f r 20px; a.btn.btn-secondary 146.0x32.0 bg #1c1c1e border T:1px solid #ffffff @ 0.12 / R:1px solid #ffffff @ 0.12 / B:1px solid #ffffff @ 0.12 / L:1px solid #ffffff @ 0.12 r 40px; a.btn.btn-primary 81.0x32.0 bg #ffffff r 40px; button.navbar-menu-toggle 0.0x0.0 bg #ffffff @ 0.04 border T:1px solid #ffffff @ 0.1 / R:1px solid #ffffff @ 0.1 / B:1px solid #ffffff @ 0.1 / L:1px solid #ffffff @ 0.1 r 999px; span.navbar-menu-toggle-line 0.0x0.0 bg #ffffff r 1px; span.navbar-menu-toggle-line 0.0x0.0 bg #ffffff r 1px |
-| Ancestor paint | 1 up body.homepage-v3 bg #000000 |
 | How | at rest |
 
-Crops: none.
+Crops: `mkt-header-default.png`.
 
 #### mkt-logo
 
 Logo. The inline-SVG Gladia symbol + wordmark in the header, linking home.
 
 Page: home. Selector: `header a.navbar-logo`. States: default.
+Read: 2026-11-16.
 
 | Property | default |
 |---|---|
@@ -66,6 +69,7 @@ Crops: `mkt-logo-default.png`.
 Mega-menu trigger. The "Product" header button — a hover-intent trigger whose aria-expanded flips while the mega-menu mounts (the opened panel is the mega-panel component below). Hover is the site's own activation, focus+Enter the fallback.
 
 Page: home. Selector: `button[data-menu=product]`. States: default, hover, focus-visible, pressed.
+Read: 2026-11-16.
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
@@ -94,6 +98,7 @@ Crops: `nav-menu-btn-default.png`, `nav-menu-btn-hover.png`, `nav-menu-btn-focus
 Mega-menu panel. The product mega-menu panel opened by the "Product" trigger — glass card with product and feature links; its links were never followed.
 
 Page: home. Selector: `.mega-menu-panel`. States: default.
+Read: 2026-11-16.
 
 | Property | default |
 |---|---|
@@ -121,6 +126,7 @@ Crops: `mega-panel-default.png`.
 Mega-menu item. A product link inside the opened mega-menu; measured, never followed.
 
 Page: home. Selector: `.mega-menu a`. States: default, hover.
+Read: 2026-11-16.
 
 | Property | default | hover |
 |---|---|---|
@@ -149,6 +155,7 @@ Crops: `mega-item-default.png`, `mega-item-hover.png`.
 Nav link. The "Pricing" header link; measured, never followed.
 
 Page: home. Selector: `header a Pricing`. States: default, hover, focus-visible, pressed.
+Read: 2026-11-16.
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
@@ -175,6 +182,7 @@ Crops: `nav-pricing-default.png`, `nav-pricing-hover.png`, `nav-pricing-focus-vi
 Demo link. The "Request a demo" header link to /demo-request; measured, never followed.
 
 Page: home. Selector: `header a Request a demo`. States: default, hover, focus-visible, pressed.
+Read: 2026-11-16.
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
@@ -202,6 +210,7 @@ Crops: `nav-demo-default.png`, `nav-demo-hover.png`, `nav-demo-focus-visible.png
 Header CTA. The header signup CTA (the brand-purple fill) linking to app.gladia.io/signup; measured, never followed.
 
 Page: home. Selector: `header signup CTA`. States: default, hover, focus-visible, pressed.
+Read: 2026-11-16.
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
@@ -231,6 +240,7 @@ Crops: `nav-cta-default.png`, `nav-cta-hover.png`, `nav-cta-focus-visible.png`, 
 Hero headline. The home masthead display heading on the dark :root surface.
 
 Page: home. Selector: `h1`. States: default.
+Read: 2026-11-16.
 
 | Property | default |
 |---|---|
@@ -255,33 +265,36 @@ Crops: `hero-h1-default.png`.
 Hero badge. The announcement badge/pill above the hero headline; measured, never followed.
 
 Page: home. Selector: `hero badge`. States: default.
+Read: 2026-11-16.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 0 x 0 |
-| Padding | 16px 32px |
-| Gap | 16px |
-| Border | T: 1px solid #947afc @ 0.18; R: none; B: none; L: none |
-| Radius | 0px |
-| Background | #000000 |
-| Background image | linear-gradient(90deg, #947afc @ 0.1 0%, #947afc @ 0.03 42%, #000000 @ 0 100%), none |
+| Size (w x h) | 338.11 x 37.59 |
+| Padding | 4px 12px 4px 4px |
+| Gap | 8px |
+| Border | 1px solid #000000 @ 0.12 |
+| Radius | 9999px |
+| Background | #ffffff |
 | Box shadow | none |
 | Outline | none |
 | Font | Suisse Intl 16px/22.4px 400 |
 | Letter spacing | normal |
 | Colour | #ffffff |
-| Transition | background, border-color 0.16s, 0.16s cubic-bezier(0, 0, 0.2, 1), cubic-bezier(0, 0, 0.2, 1) delay 0s, 0s |
-| Cursor | pointer |
-| Painted layers | a.mega-menu-news-callout 0.0x0.0 bg #000000 image linear-gradient(90deg, #947afc @ 0.1 0%, #947afc @ 0.03 42%, #000000 @ 0 100%), none border T:1px solid #947afc @ 0.18; span.mega-menu-news-callout-tag 0.0x0.0 bg #947afc @ 0.16 border T:1px solid #947afc @ 0.32 / R:1px solid #947afc @ 0.32 / B:1px solid #947afc @ 0.32 / L:1px solid #947afc @ 0.32 r 999px; span::before.mega-menu-news-callout-tag 5pxx5px bg #947afc r 50% |
+| Text node | span.pill-badge: Suisse Intl 14px/19.6px 500, #000000 @ 0.8 |
+| Transition | border-color 0.16s cubic-bezier(0, 0, 0.2, 1) |
+| Transform | matrix(1, 0, 0, 1, 0, 0) |
+| Cursor | default |
+| Painted layers | div.announce-pill.counter-pill 338.1x37.6 bg #ffffff border T:1px solid #000000 @ 0.12 / R:1px solid #000000 @ 0.12 / B:1px solid #000000 @ 0.12 / L:1px solid #000000 @ 0.12 r 9999px; span.pill-badge 53.0x27.6 bg #000000 @ 0.06 r 9999px; span.badge-dot.pulse 6.0x6.0 bg #947afc r 50%; span::after.badge-dot.pulse 12pxx12px bg #947afc r 50% |
 | How | at rest |
 
-Crops: none.
+Crops: `hero-badge-default.png`.
 
 #### section-h2
 
 Section heading. A marketing section heading further down the home page — a display-size h2, so transient microcopy never counts.
 
 Page: home. Selector: `h2 (display size)`. States: default.
+Read: 2026-11-16.
 
 | Property | default |
 |---|---|
@@ -305,6 +318,7 @@ Crops: `section-h2-default.png`.
 Glass card. A frosted-glass marketing card (the site's --bg-glass + blur + hairline border treatment); measured, never followed.
 
 Page: home. Selector: `.glass-card`. States: .
+Read: .
 
 Not found on the page at capture time.
 
@@ -315,6 +329,7 @@ Not found on the page at capture time.
 Footer. The page footer: sitemap columns, social icons, legal links and the Gladia mark.
 
 Page: home. Selector: `footer`. States: default.
+Read: 2026-11-16.
 
 | Property | default |
 |---|---|
@@ -342,6 +357,7 @@ Crops: `footer-default.png`.
 Footer link. A footer sitemap link; measured, never followed.
 
 Page: home. Selector: `footer a`. States: default, hover, focus-visible, pressed.
+Read: 2026-11-16.
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
@@ -369,6 +385,7 @@ Crops: `footer-link-default.png`, `footer-link-hover.png`, `footer-link-focus-vi
 Product headline. The /product/speech-to-text-api masthead on the dark surface.
 
 Page: product. Selector: `h1`. States: default.
+Read: 2026-11-16.
 
 | Property | default |
 |---|---|
@@ -393,6 +410,7 @@ Crops: `prod-h1-default.png`.
 Product CTA. A call-to-action on the product page; measured, never followed.
 
 Page: product. Selector: `product page CTA`. States: default, hover, focus-visible, pressed.
+Read: 2026-11-16.
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
@@ -419,22 +437,25 @@ Crops: `prod-cta-default.png`, `prod-cta-hover.png`, `prod-cta-focus-visible.png
 
 Code sample. A code sample block on the product page — mono face on an elevated surface.
 
-Page: product. Selector: `product pre/code`. States: default.
+Page: product. Selector: `pre.stt-dev-code__body`. States: default.
+Read: 2026-11-16.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 16.48 x 16.8 |
-| Padding | 0px |
-| Border | none |
-| Radius | 0px |
-| Background | transparent |
+| Size (w x h) | 549.5 x 681.94 |
+| Padding | 20px |
+| Border | T: 1px solid #ffffff @ 0.08; R: 1px solid #ffffff @ 0.1; B: 1px solid #ffffff @ 0.1; L: 1px solid #ffffff @ 0.1 |
+| Radius | 0px 0px 16px 16px |
+| Background | #141414 |
 | Box shadow | none |
 | Outline | none |
-| Font | Suisse Intl 12px/16.8px 400 |
-| Letter spacing | 0.24px |
-| Colour | #727272 |
+| Font | Geist Mono 13px/20.15px 400 |
+| Letter spacing | normal |
+| Colour | #ffffff @ 0.82 |
+| Text node | code: Geist Mono 13px/20.15px 400, #ffffff @ 0.82 |
 | Transition | none |
-| Ancestor paint | 1 up div.stt-lang bg #000000 |
+| Painted layers | pre.stt-dev-code__body 549.5x681.9 bg #141414 border T:1px solid #ffffff @ 0.08 / R:1px solid #ffffff @ 0.1 / B:1px solid #ffffff @ 0.1 / L:1px solid #ffffff @ 0.1 r 0px 0px 16px 16px |
+| Ancestor paint | 1 up div.stt-dev-code bg #111111 |
 | How | at rest |
 
 Crops: `prod-code-default.png`.
@@ -444,6 +465,7 @@ Crops: `prod-code-default.png`.
 Feature heading. A feature section heading on the product page.
 
 Page: product. Selector: `product h2/h3`. States: default.
+Read: 2026-11-16.
 
 | Property | default |
 |---|---|
@@ -469,6 +491,7 @@ Crops: `prod-feature-default.png`.
 Pricing headline. The /pricing masthead.
 
 Page: pricing. Selector: `h1`. States: default.
+Read: 2026-11-16.
 
 | Property | default |
 |---|---|
@@ -493,6 +516,7 @@ Crops: `price-h1-default.png`.
 Pricing mode: Async. The "Async" half of the pricing-mode segmented toggle (data-pricing-mode, aria-pressed); a local UI toggle that re-prices the grid — the opened state was measured after its own toggle.
 
 Page: pricing. Selector: `button[data-pricing-mode=async]`. States: default, hover, focus-visible, pressed, opened.
+Read: 2026-11-16.
 
 | Property | default | hover | focus-visible | pressed | opened |
 |---|---|---|---|---|---|
@@ -519,6 +543,7 @@ Crops: `price-mode-async-default.png`, `price-mode-async-hover.png`, `price-mode
 Pricing mode: Real-time. The "Real-time" half of the pricing-mode segmented toggle; a local UI toggle — the opened state was measured after its own toggle, then the async side was restored.
 
 Page: pricing. Selector: `button[data-pricing-mode=realtime]`. States: default, hover, focus-visible, pressed, opened.
+Read: 2026-11-16.
 
 | Property | default | hover | focus-visible | pressed | opened |
 |---|---|---|---|---|---|
@@ -542,28 +567,30 @@ Crops: `price-mode-rt-default.png`, `price-mode-rt-hover.png`, `price-mode-rt-fo
 
 #### plan-card
 
-Plan card. A plan card on /pricing — one column of the pricing grid: name, per-hour price, feature list and its CTA.
+Plan card. A plan card on /pricing — one column of the pricing grid (.pricing-grid--plans > .pricing-card): name, per-hour price, feature list and its CTA.
 
-Page: pricing. Selector: `pricing plan card`. States: default.
+Page: pricing. Selector: `.pricing-card`. States: default.
+Read: 2026-11-16.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 880 x 888.13 |
-| Padding | 0px |
-| Gap | 24px |
-| Border | none |
-| Radius | 0px |
+| Size (w x h) | 428 x 888.13 |
+| Padding | 48px 40px 40px 40px |
+| Gap | 32px |
+| Border | 1px solid #ffffff @ 0.08 |
+| Radius | 24px |
 | Background | transparent |
-| Box shadow | none |
+| Box shadow | #000000 @ 0.22 0px 8px 28px 0px |
+| Backdrop filter | blur(22px) saturate(1.65) |
 | Outline | none |
 | Font | Suisse Intl 16px/22.4px 400 |
 | Letter spacing | normal |
 | Colour | #ffffff |
-| Transition | opacity, filter, transform, visibility 0.28s, 0.28s, 0.32s, 0s cubic-bezier(0.4, 0, 1, 1), cubic-bezier(0.4, 0, 1, 1), cubic-bezier(0.4, 0, 1, 1), linear delay 0s, 0s, 0s, 0.32s |
-| Transform | matrix(1, 0, 0, 1, -48, 0) |
-| Opacity | 0 |
+| Transition | opacity, transform, border-color, box-shadow 1.4s, 1.4s, 0.32s, 0.32s cubic-bezier(0, 0, 0.2, 1), cubic-bezier(0, 0, 0.2, 1), cubic-bezier(0, 0, 0.2, 1), cubic-bezier(0, 0, 0.2, 1) delay 0.1s |
+| Transform | matrix(1, 0, 0, 1, 0, 0) |
 | Icon | 16 x 16, colour #a3a3a3 |
-| Painted layers | div.pricing-card.glass-card 428.0x888.1 border T:1px solid #ffffff @ 0.08 / R:1px solid #ffffff @ 0.08 / B:1px solid #ffffff @ 0.08 / L:1px solid #ffffff @ 0.08 r 24px shadow #000000 @ 0.22 0px 8px 28px 0px; div::before.pricing-card.glass-card 426pxx886.125px image linear-gradient(#000000 @ 0.72, #000000 @ 0.6 55%, #000000 @ 0.52) r 24px; a.btn.btn-primary 346.0x40.0 bg #ffffff r 40px; ul.pricing-card__features 346.0x528.1 border T:1px solid #ffffff @ 0.08; div.pricing-card.pricing-card--featured 428.0x888.1 border T:1px solid #947afc @ 0.22 / R:1px solid #947afc @ 0.22 / B:1px solid #947afc @ 0.22 / L:1px solid #947afc @ 0.22 r 24px shadow #000000 @ 0.22 0px 8px 28px 0px, #947afc @ 0.1 0px 0px 48px 0px; div::before.pricing-card.pricing-card--featured 426pxx886.125px image linear-gradient(#000000 @ 0.72, #000000 @ 0.6 55%, #000000 @ 0.52) r 24px |
+| ::before | 426px x 886.125px, absolute, bg #000000 @ 0 linear-gradient(#000000 @ 0.72, #000000 @ 0.6 55%, #000000 @ 0.52), radius 24px |
+| Painted layers | div.pricing-card.glass-card 428.0x888.1 border T:1px solid #ffffff @ 0.08 / R:1px solid #ffffff @ 0.08 / B:1px solid #ffffff @ 0.08 / L:1px solid #ffffff @ 0.08 r 24px shadow #000000 @ 0.22 0px 8px 28px 0px; div::before.pricing-card.glass-card 426pxx886.125px image linear-gradient(#000000 @ 0.72, #000000 @ 0.6 55%, #000000 @ 0.52) r 24px; a.btn.btn-primary 346.0x40.0 bg #ffffff r 40px; ul.pricing-card__features 346.0x528.1 border T:1px solid #ffffff @ 0.08 |
 | How | at rest |
 
 Crops: none.
@@ -572,36 +599,36 @@ Crops: none.
 
 Plan CTA. A plan card's primary action ("Start with 50€ free credits" or the enterprise contact link); measured, never followed.
 
-Page: pricing. Selector: `plan card CTA`. States: default, hover, focus-visible, pressed.
+Page: pricing. Selector: `.pricing-card CTA`. States: default, hover, focus-visible, pressed.
+Read: 2026-11-16.
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 0 x 0 | - | = | - |
-| Padding | 16px 32px | - | = | - |
-| Gap | 16px | - | = | - |
-| Border | T: 1px solid #947afc @ 0.18; R: none; B: none; L: none | - | = | - |
-| Radius | 0px | - | = | - |
-| Background | #000000 | - | = | - |
-| Background image | linear-gradient(90deg, #947afc @ 0.1 0%, #947afc @ 0.03 42%, #000000 @ 0 100%), none | - | = | - |
-| Box shadow | none | - | = | - |
-| Outline | none | - | = | - |
-| Font | Suisse Intl 16px/22.4px 400 | - | = | - |
-| Letter spacing | normal | - | = | - |
-| Colour | #ffffff | - | = | - |
-| Transition | background, border-color 0.16s, 0.16s cubic-bezier(0, 0, 0.2, 1), cubic-bezier(0, 0, 0.2, 1) delay 0s, 0s | - | = | - |
-| Cursor | pointer | - | = | - |
-| Painted layers | a.mega-menu-news-callout 0.0x0.0 bg #000000 image linear-gradient(90deg, #947afc @ 0.1 0%, #947afc @ 0.03 42%, #000000 @ 0 100%), none border T:1px solid #947afc @ 0.18; span.mega-menu-news-callout-tag 0.0x0.0 bg #947afc @ 0.16 border T:1px solid #947afc @ 0.32 / R:1px solid #947afc @ 0.32 / B:1px solid #947afc @ 0.32 / L:1px solid #947afc @ 0.32 r 999px; span::before.mega-menu-news-callout-tag 5pxx5px bg #947afc r 50% | - | = | - |
-| Ancestor paint | 1 up div.mega-menu-panel-body.mega-menu-panel-body--product bg #000000 | - | = | - |
-| How | at rest | - | focus failed | - |
-| Error | - | locator.hover: Element is not visible Call log:   - waiting for locator('a, button').filter({ hasText: /Start with/credits/Contact/Talk to/Get started/ }).first().first().first()     - locator resolve | = | locator.evaluate: Timeout 8000ms exceeded. Call log:   - waiting for locator('a, button').filter({ hasText: /Start with/credits/Contact/Talk to/Get started/ }).first().first().first()  |
+| Size (w x h) | 346 x 40 | = | = | 352.92 x 40.8 |
+| Padding | 8px 20px | = | = | = |
+| Border | none | = | = | = |
+| Radius | 40px | = | = | = |
+| Background | #ffffff | = | = | = |
+| Box shadow | none | = | = | = |
+| Outline | none | = | = | = |
+| Font | Suisse Intl 14px/19.6px 400 | = | = | = |
+| Letter spacing | normal | = | = | = |
+| Colour | #000000 | = | = | = |
+| Transition | transform 0.16s cubic-bezier(0, 0, 0.2, 1) | = | = | = |
+| Cursor | pointer | = | = | = |
+| Painted layers | a.btn.btn-primary 346.0x40.0 bg #ffffff r 40px | = | = | a.btn.btn-primary 352.9x40.8 bg #ffffff r 40px |
+| Ancestor paint | 3 up div.pricing-card.glass-card shadow #000000 @ 0.22 0px 8px 28px 0px | = | = | = |
+| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Transform | - | = | = | matrix(1.02, 0, 0, 1.02, 0, 0) |
 
-Crops: none.
+Crops: `plan-cta-default.png`, `plan-cta-hover.png`, `plan-cta-focus-visible.png`, `plan-cta-pressed.png`.
 
 #### calc-hours
 
 Calculator hours field. The pricing calculator's hours-per-month number input (default 500); typed into then cleared — a local UI control, nothing submitted.
 
 Page: pricing. Selector: `#calc-hours`. States: default, focused, filled.
+Read: 2026-11-16.
 
 | Property | default | focused | filled |
 |---|---|---|---|
@@ -628,16 +655,17 @@ Crops: `calc-hours-default.png`, `calc-hours-focused.png`, `calc-hours-filled.pn
 Calculator range. The "Hours of audio per month" range slider in the calculator; measured at rest, never dragged.
 
 Page: pricing. Selector: `pricing-calc range input`. States: default, focused.
+Read: 2026-11-16.
 
 | Property | default | focused |
 |---|---|---|
 | Size (w x h) | 391 x 20 | = |
 | Padding | 0px | = |
 | Border | none | = |
-| Radius | 0px | = |
+| Radius | 0px | 8px |
 | Background | transparent | = |
 | Box shadow | none | = |
-| Outline | none | = |
+| Outline | none | 2px solid #925bff offset 4px |
 | Font | Arial 13.3333px/normal 400 | = |
 | Letter spacing | normal | = |
 | Colour | #9d968e | = |
@@ -645,7 +673,8 @@ Page: pricing. Selector: `pricing-calc range input`. States: default, focused.
 | Cursor | pointer | = |
 | Placeholder | #9d968e, opacity 1 | = |
 | Ancestor paint | 3 up div.pricing-calc.glass-card shadow #000000 @ 0.22 0px 8px 28px 0px | = |
-| How | at rest | clicked into the field |
+| How | at rest | keyboard focus (Shift+Tab, Tab), never clicked |
+| Painted layers | - | input.pricing-calc__range 391.0x20.0 r 8px outline 2px solid #925bff offset 4px |
 
 Crops: `calc-range-default.png`, `calc-range-focused.png`.
 
@@ -654,6 +683,7 @@ Crops: `calc-range-default.png`, `calc-range-focused.png`.
 Calculator feature checkbox. A feature add-on checkbox in the pricing calculator (summarization, sentiment, translation, NER, PII); a local UI control — measured, never toggled.
 
 Page: pricing. Selector: `calculator checkbox`. States: default, focused.
+Read: 2026-11-16.
 
 | Property | default | focused |
 |---|---|---|
@@ -663,7 +693,7 @@ Page: pricing. Selector: `calculator checkbox`. States: default, focused.
 | Radius | 0px | = |
 | Background | transparent | = |
 | Box shadow | none | = |
-| Outline | none | = |
+| Outline | none | 1px auto #101010 offset 2px |
 | Font | Arial 13.3333px/normal 400 | = |
 | Letter spacing | normal | = |
 | Colour | #000000 | = |
@@ -671,7 +701,8 @@ Page: pricing. Selector: `calculator checkbox`. States: default, focused.
 | Opacity | 0 | = |
 | Cursor | default | = |
 | Placeholder | #000000, opacity 1 | = |
-| How | at rest | clicked into the field |
+| How | at rest | keyboard focus (Shift+Tab, Tab), never clicked |
+| Painted layers | - | input 13.0x13.0 outline 1px auto #101010 offset 2px |
 
 Crops: `calc-feature-default.png`, `calc-feature-focused.png`.
 
@@ -680,6 +711,7 @@ Crops: `calc-feature-default.png`, `calc-feature-focused.png`.
 FAQ accordion. A question row in the pricing FAQ; the opened state was measured after its own toggle — a local UI toggle.
 
 Page: pricing. Selector: `pricing FAQ row`. States: default, opened.
+Read: 2026-11-16.
 
 | Property | default | opened |
 |---|---|---|
@@ -707,6 +739,7 @@ Crops: `faq-acc-default.png`, `faq-acc-opened.png`.
 Demo headline. The /demo-request masthead over the sales form.
 
 Page: demo. Selector: `h1`. States: default.
+Read: 2026-11-16.
 
 | Property | default |
 |---|---|
@@ -731,6 +764,7 @@ Crops: `demo-h1-default.png`.
 Email field. The work-e-mail input on the demo-request form; focused and typed into then cleared — never submitted.
 
 Page: demo. Selector: `#demo-email`. States: default, focused, filled.
+Read: 2026-11-16.
 
 | Property | default | focused | filled |
 |---|---|---|---|
@@ -758,6 +792,7 @@ Crops: `demo-email-default.png`, `demo-email-focused.png`, `demo-email-filled.pn
 First-name field. The first-name input on the demo-request form; focused and typed into then cleared — never submitted.
 
 Page: demo. Selector: `#demo-first-name`. States: default, focused, filled.
+Read: 2026-11-16.
 
 | Property | default | focused | filled |
 |---|---|---|---|
@@ -784,6 +819,7 @@ Crops: `demo-name-default.png`, `demo-name-focused.png`, `demo-name-filled.png`.
 Company-size select. The company-size select on the demo-request form; measured at rest, never changed.
 
 Page: demo. Selector: `#demo-company-size`. States: default, focused.
+Read: 2026-11-16.
 
 | Property | default | focused |
 |---|---|---|
@@ -802,33 +838,36 @@ Page: demo. Selector: `#demo-company-size`. States: default, focused.
 | Cursor | pointer | = |
 | Painted layers | select.form-input.form-select 462.0x44.0 bg #ffffff @ 0.04 image url(data:…) border T:1px solid #ffffff @ 0.08 / R:1px solid #ffffff @ 0.08 / B:1px solid #ffffff @ 0.08 / L:1px solid #ffffff @ 0.08 r 8px; option 0.0x0.0 bg #1c1c1e; option 0.0x0.0 bg #1c1c1e; option 0.0x0.0 bg #1c1c1e; option 0.0x0.0 bg #1c1c1e; option 0.0x0.0 bg #1c1c1e | select.form-input.form-select 462.0x44.0 bg #ffffff @ 0.06 image url(data:…) border T:1px solid #947afc / R:1px solid #947afc / B:1px solid #947afc / L:1px solid #947afc r 8px; option 0.0x0.0 bg #1c1c1e; option 0.0x0.0 bg #1c1c1e; option 0.0x0.0 bg #1c1c1e; option 0.0x0.0 bg #1c1c1e; option 0.0x0.0 bg #1c1c1e |
 | Ancestor paint | 3 up div.contact-form-card.hero-ebook-form-card bg #000000 shadow #ffffff @ 0.06 0px 1px 0px 0px inset, #000000 @ 0.28 0px 24px 48px 0px | = |
-| How | at rest | clicked into the field |
+| How | at rest | keyboard focus (Shift+Tab, Tab), never clicked |
 
 Crops: `demo-company-size-default.png`, `demo-company-size-focused.png`.
 
 #### demo-terms
 
-Terms checkbox. The required terms-acceptance checkbox on the demo-request form; measured at rest, never toggled.
+Terms checkbox. The required terms-acceptance checkbox on the demo-request form (the input is visually hidden behind its styled label); measured at rest, never toggled.
 
-Page: demo. Selector: `demo terms checkbox`. States: default, focused.
+Page: demo. Selector: `demo terms checkbox label`. States: default, focused.
+Read: 2026-11-16.
 
 | Property | default | focused |
 |---|---|---|
-| Size (w x h) | 0 x 0 | = |
+| Size (w x h) | 462 x 18 | = |
 | Padding | 0px | = |
+| Gap | 12px | = |
 | Border | none | = |
 | Radius | 0px | = |
 | Background | transparent | = |
 | Box shadow | none | = |
 | Outline | none | = |
-| Font | Arial 13.3333px/normal 400 | = |
+| Font | Suisse Intl 16px/22.4px 400 | = |
 | Letter spacing | normal | = |
-| Colour | #000000 | = |
+| Colour | #ffffff | = |
+| Text node | span.form-checkbox-label: Suisse Intl 12px/18px 400, #727272 | = |
 | Transition | none | = |
-| Opacity | 0 | = |
-| Cursor | default | = |
-| Placeholder | #000000, opacity 1 | = |
-| How | at rest | clicked into the field |
+| Cursor | pointer | = |
+| Painted layers | span.form-checkbox-mark 16.0x16.0 bg #1c1c1e border T:1px solid #252525 / R:1px solid #252525 / B:1px solid #252525 / L:1px solid #252525 | input 0.0x0.0 outline 1px auto #101010 offset 2px; span.form-checkbox-mark 16.0x16.0 bg #1c1c1e border T:1px solid #252525 / R:1px solid #252525 / B:1px solid #252525 / L:1px solid #252525 outline 2px solid #1a9eff offset 2px |
+| Ancestor paint | 3 up div.contact-form-card.hero-ebook-form-card bg #000000 shadow #ffffff @ 0.06 0px 1px 0px 0px inset, #000000 @ 0.28 0px 24px 48px 0px | = |
+| How | at rest | focus failed |
 
 Crops: `demo-terms-default.png`, `demo-terms-focused.png`.
 
@@ -837,6 +876,7 @@ Crops: `demo-terms-default.png`, `demo-terms-focused.png`.
 Submit button. The demo-request form's submit button; its states were measured but the button was never clicked — the form was never sent.
 
 Page: demo. Selector: `#demo-form-btn`. States: default, hover, focus-visible, pressed.
+Read: 2026-11-16.
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
@@ -867,6 +907,7 @@ Crops: `demo-submit-default.png`, `demo-submit-hover.png`, `demo-submit-focus-vi
 Library headline. The /library masthead — the one marketing page that carries body.light-mode and paints the light token scope.
 
 Page: library. Selector: `h1`. States: default.
+Read: 2026-11-15.
 
 | Property | default |
 |---|---|
@@ -891,6 +932,7 @@ Crops: `lib-h1-default.png`.
 Resource card. A content card on the library index; measured, never followed.
 
 Page: library. Selector: `library card link`. States: default, hover.
+Read: 2026-11-15.
 
 | Property | default | hover |
 |---|---|---|
@@ -918,6 +960,7 @@ Crops: none.
 Blog headline. The /blog index masthead on the legacy Webflow stack — its own stylesheets, painted light.
 
 Page: blog. Selector: `h1`. States: default.
+Read: 2026-11-15.
 
 | Property | default |
 |---|---|
@@ -941,6 +984,7 @@ Crops: none.
 Article card. An article card in the blog index; measured, never followed.
 
 Page: blog. Selector: `blog article card`. States: default, hover.
+Read: 2026-11-15.
 
 | Property | default | hover |
 |---|---|---|
@@ -970,6 +1014,7 @@ Crops: none.
 Docs headline. The docs introduction masthead on the Mintlify stack.
 
 Page: docs-home. Selector: `docs h1`. States: default.
+Read: 2026-11-15.
 
 | Property | default |
 |---|---|
@@ -993,6 +1038,7 @@ Crops: `docs-h1-default.png`.
 Sidebar link. A sidebar navigation link in the docs tree; measured, never followed.
 
 Page: docs-home. Selector: `docs sidebar link`. States: default, hover.
+Read: 2026-11-15.
 
 | Property | default | hover |
 |---|---|---|
@@ -1020,6 +1066,7 @@ Crops: `docs-nav-link-default.png`, `docs-nav-link-hover.png`.
 Doc page headline. "Quickstart" — a docs article headline on the Mintlify stack.
 
 Page: docs. Selector: `docs article h1`. States: default.
+Read: 2026-11-16.
 
 | Property | default |
 |---|---|
@@ -1043,33 +1090,36 @@ Crops: `docs-h1b-default.png`.
 Search trigger. The docs' search button — a local UI toggle for the search overlay; measured, never opened.
 
 Page: docs. Selector: `docs search button`. States: default, hover, focus-visible, pressed.
+Read: 2026-11-16.
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 0 x 0 | - | = | = |
-| Padding | 0px | - | = | = |
-| Border | none | - | = | = |
-| Radius | 0px | - | = | = |
-| Background | transparent | - | = | = |
-| Box shadow | none | - | = | = |
-| Outline | none | - | = | = |
-| Font | Inter 16px/24px 400 | - | = | = |
-| Letter spacing | normal | - | = | = |
-| Colour | #717171 | - | = | #515151 |
-| Transition | none | - | = | = |
-| Cursor | pointer | - | = | = |
-| Icon | 0 x 0, colour #717171, fill #000000 | - | = | 0 x 0, colour #515151, fill #000000 |
-| Painted layers | svg.forced-colors:forced-color-adjust-none.forced-colors:bg-[color:CanvasText]! 0.0x0.0 bg #717171 | - | = | = |
-| How | at rest | - | focus failed | CDP forcePseudoState :active:hover |
-| Error | - | locator.hover: Element is not visible Call log:   - waiting for locator('button[aria-label*="search" i], button[id*="search" i]').first().first().first()     - locator resolved to <button type="button | = | = |
+| Size (w x h) | 224 x 36 | = | = | = |
+| Padding | 0px 12px 0px 14px | = | = | = |
+| Gap | 8px | = | = | = |
+| Border | none | = | = | = |
+| Radius | 12px | = | = | = |
+| Background | #ffffff | = | = | = |
+| Box shadow | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #9fa0a0 @ 0.3 0px 0px 0px 1px, #000000 @ 0 0px 0px 0px 0px | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #515151 @ 0.3 0px 0px 0px 1px, #000000 @ 0 0px 0px 0px 0px | = | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #515151 @ 0.3 0px 0px 0px 1px, #000000 @ 0 0px 0px 0px 0px |
+| Outline | none | = | 1px auto #2e343e offset 0px | = |
+| Font | Inter 14px/24px 400 | = | = | = |
+| Letter spacing | normal | = | = | = |
+| Colour | #717171 | = | = | = |
+| Text node | div.truncate.min-w-0: Inter 14px/24px 400, #717171 | = | = | = |
+| Transition | none | = | = | = |
+| Cursor | pointer | = | = | = |
+| Icon | 16 x 16, colour #3f4040, fill #000000 | 16 x 16, colour #262627, fill #000000 | = | 16 x 16, colour #262627, fill #000000 |
+| Painted layers | button.group/search.flex 224.0x36.0 bg #ffffff r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #9fa0a0 @ 0.3 0px 0px 0px 1px, #000000 @ 0 0px 0px 0px 0px | button.group/search.flex 224.0x36.0 bg #ffffff r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #515151 @ 0.3 0px 0px 0px 1px, #000000 @ 0 0px 0px 0px 0px | button.group/search.flex 224.0x36.0 bg #ffffff r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #9fa0a0 @ 0.3 0px 0px 0px 1px, #000000 @ 0 0px 0px 0px 0px outline 1px auto #2e343e offset 0px | button.group/search.flex 224.0x36.0 bg #ffffff r 12px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #515151 @ 0.3 0px 0px 0px 1px, #000000 @ 0 0px 0px 0px 0px |
+| How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
-Crops: none.
+Crops: `docs-search-default.png`, `docs-search-hover.png`, `docs-search-focus-visible.png`, `docs-search-pressed.png`.
 
 #### docs-theme-btn
 
 Theme toggle. The docs' theme-preference control — a local UI toggle that flips the Mintlify page between light and dark; measured at rest, never switched here (the dark surface is captured in the screenshots pass).
 
 Page: docs. Selector: `docs theme button`. States: default, hover, focus-visible, pressed.
+Read: 2026-11-16.
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
@@ -1093,24 +1143,27 @@ Crops: `docs-theme-btn-default.png`, `docs-theme-btn-hover.png`, `docs-theme-btn
 
 #### docs-code
 
-Code block. A code block on the docs article; Mintlify's own syntax-highlight layer paints these.
+Code block. A code block on the docs article; Mintlify's own syntax-highlight layer paints these. Inline code (`transcribe()` and friends) is a different element and never counts.
 
-Page: docs. Selector: `docs pre/code`. States: default.
+Page: docs. Selector: `docs pre`. States: default.
+Read: 2026-11-16.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 112 x 20 |
-| Padding | 2px 8px |
+| Size (w x h) | 592 x 24 |
+| Padding | 0px |
 | Border | none |
-| Radius | 6px |
-| Background | #efefef @ 0.5 |
-| Box shadow | none |
+| Radius | 0px |
+| Background | transparent |
+| Box shadow | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #3b82f6 @ 0.5 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px |
 | Outline | none |
-| Font | Paper Mono 14px/21px 500 |
+| Font | Paper Mono 14px/24px 400 |
 | Letter spacing | normal |
-| Colour | oklch(0.21 0.034 264.665) |
+| Colour | #1f2328 |
+| Text node | span: Paper Mono 14px/24px 400, #953800 |
 | Transition | none |
-| Painted layers | code 112.0x20.0 bg #efefef @ 0.5 r 6px |
+| Painted layers | pre.shiki.shiki-themes 592.0x24.0 shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #3b82f6 @ 0.5 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px; code 592.0x24.0 shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #3b82f6 @ 0.5 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px; span.line 200.0x16.0 shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #3b82f6 @ 0.5 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px; span 24.0x16.0 shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #3b82f6 @ 0.5 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px; span 64.0x16.0 shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #3b82f6 @ 0.5 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px; span 112.0x16.0 shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #3b82f6 @ 0.5 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px |
+| Ancestor paint | 1 up div.font-mono.whitespace-pre shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #3b82f6 @ 0.5 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px outline 0px solid #0b0b0c; 2 up div.min-w-full!.h-full shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #3b82f6 @ 0.5 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px outline 0px solid #0b0b0c; 3 up div.size-full.rounded-[inherit] shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #3b82f6 @ 0.5 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px outline 0px solid #0b0b0c |
 | How | at rest |
 
 Crops: `docs-code-default.png`.
@@ -1120,6 +1173,7 @@ Crops: `docs-code-default.png`.
 Code-language tab. A language tab on a docs code sample; a local UI toggle — measured, never switched.
 
 Page: docs. Selector: `docs code tab`. States: default, opened.
+Read: 2026-11-16.
 
 | Property | default | opened |
 |---|---|---|
@@ -1149,6 +1203,7 @@ Crops: `docs-tab-default.png`, `docs-tab-opened.png`.
 Login panel. The sign-in card on app.gladia.io/ — the shell's only signed-out landing: fields, SSO and the sign-in action. Measured, never submitted.
 
 Page: login. Selector: `app.gladia.io login card`. States: default.
+Read: 2026-11-15.
 
 | Property | default |
 |---|---|
@@ -1176,6 +1231,7 @@ Crops: `login-panel-default.png`.
 Email field. The e-mail input on the sign-in shell; focused and typed into then cleared — never submitted.
 
 Page: login. Selector: `login email input`. States: default, focused, filled.
+Read: 2026-11-15.
 
 | Property | default | focused | filled |
 |---|---|---|---|
@@ -1201,6 +1257,7 @@ Crops: none.
 Password field. The password input on the sign-in shell; focused and typed into then cleared — never submitted.
 
 Page: login. Selector: `login password input`. States: default, focused, filled.
+Read: 2026-11-15.
 
 | Property | default | focused | filled |
 |---|---|---|---|
@@ -1227,6 +1284,7 @@ Crops: `login-password-default.png`, `login-password-focused.png`, `login-passwo
 SSO button. A "Continue with" SSO button on the sign-in shell; measured, never pressed.
 
 Page: login. Selector: `login SSO button`. States: default, hover, focus-visible, pressed.
+Read: 2026-11-15.
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
@@ -1255,6 +1313,7 @@ Crops: `login-sso-default.png`, `login-sso-hover.png`, `login-sso-focus-visible.
 Sign-in button. The sign-in action; its states were measured but the button was never clicked — nothing was submitted.
 
 Page: login. Selector: `login submit`. States: default, hover, focus-visible, pressed.
+Read: 2026-11-15.
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
@@ -1281,6 +1340,7 @@ Crops: `login-submit-default.png`, `login-submit-hover.png`, `login-submit-focus
 Sign-up link. The sign-up link on the login shell; measured, never followed.
 
 Page: login. Selector: `login sign-up link`. States: .
+Read: .
 
 Not found on the page at capture time.
 
@@ -1289,6 +1349,7 @@ Not found on the page at capture time.
 Signup panel. The sign-up card on app.gladia.io/signup; measured, never submitted.
 
 Page: signup. Selector: `app.gladia.io/signup card`. States: default.
+Read: 2026-11-15.
 
 | Property | default |
 |---|---|
@@ -1316,6 +1377,7 @@ Crops: `signup-panel-default.png`.
 Email field (signup). The e-mail input on the sign-up shell; focused and typed into then cleared — never submitted.
 
 Page: signup. Selector: `signup email input`. States: default, focused, filled.
+Read: 2026-11-15.
 
 | Property | default | focused | filled |
 |---|---|---|---|
@@ -1341,6 +1403,7 @@ Crops: none.
 SSO button (signup). A "Continue with" SSO button on /signup; measured, never pressed.
 
 Page: signup. Selector: `signup SSO button`. States: default, hover, focus-visible, pressed.
+Read: 2026-11-15.
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
@@ -1369,6 +1432,7 @@ Crops: `signup-sso-default.png`, `signup-sso-hover.png`, `signup-sso-focus-visib
 Sign-up button. The sign-up action; measured, never clicked — nothing was submitted.
 
 Page: signup. Selector: `signup submit`. States: default, hover, focus-visible, pressed.
+Read: 2026-11-15.
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
@@ -1396,11 +1460,67 @@ Crops: `signup-submit-default.png`, `signup-submit-hover.png`, `signup-submit-fo
 
 Mobile top bar. The phone header at 390 wide: the wordmark and the "Open menu" button.
 
-Page: mobile. Selector: `mobile header`. States: default.
+Page: mobile. Selector: `mobile nav.navbar`. States: default.
+Read: 2026-11-16.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 390 x 0 |
+| Size (w x h) | 358 x 56 |
+| Padding | 0px |
+| Border | 1px solid #1f1f1f |
+| Radius | 20px |
+| Background | #000000 @ 0.65 |
+| Box shadow | none |
+| Backdrop filter | blur(40px) |
+| Outline | none |
+| Font | Suisse Intl 16px/22.4px 400 |
+| Letter spacing | normal |
+| Colour | #ffffff |
+| Text node | span.btn-text: Suisse Intl 14px/19.6px 400, #000000 |
+| Transition | none |
+| Transform | matrix(1, 0, 0, 1, 0, 0) |
+| Icon | 0 x 0, colour #ffffff |
+| Painted layers | nav.navbar 358.0x56.0 bg #000000 @ 0.65 border T:1px solid #1f1f1f / R:1px solid #1f1f1f / B:1px solid #1f1f1f / L:1px solid #1f1f1f r 20px; a.btn.btn-secondary 0.0x0.0 bg #1c1c1e border T:1px solid #ffffff @ 0.12 / R:1px solid #ffffff @ 0.12 / B:1px solid #ffffff @ 0.12 / L:1px solid #ffffff @ 0.12 r 40px; a.btn.btn-primary 77.0x36.0 bg #ffffff r 40px; button.navbar-menu-toggle 36.0x36.0 bg #ffffff @ 0.04 border T:1px solid #ffffff @ 0.1 / R:1px solid #ffffff @ 0.1 / B:1px solid #ffffff @ 0.1 / L:1px solid #ffffff @ 0.1 r 999px; span.navbar-menu-toggle-line 18.0x1.5 bg #ffffff r 1px; span.navbar-menu-toggle-line 18.0x1.5 bg #ffffff r 1px |
+| How | at rest |
+
+Crops: `m-topbar-default.png`.
+
+#### m-menu-btn
+
+Mobile menu button. The "Open menu" button — a local UI toggle; the opened state was measured after activating it.
+
+Page: mobile. Selector: `navbar-menu-toggle`. States: default, hover, focus-visible, pressed, opened.
+Read: 2026-11-16.
+
+| Property | default | hover | focus-visible | pressed | opened |
+|---|---|---|---|---|---|
+| Size (w x h) | 36 x 36 | = | = | = | = |
+| Padding | 0px | = | = | = | = |
+| Border | 1px solid #ffffff @ 0.1 | 1px solid #ffffff @ 0.18 | 1px solid #ffffff @ 0.18 | 1px solid #ffffff @ 0.18 | 1px solid #ffffff @ 0.18 |
+| Radius | 999px | = | = | = | = |
+| Background | #ffffff @ 0.04 | #ffffff @ 0.1 | #ffffff @ 0.1 | #ffffff @ 0.1 | #ffffff @ 0.1 |
+| Box shadow | none | = | = | = | = |
+| Outline | none | = | 2px solid #947afc offset 2px | = | = |
+| Font | Suisse Intl 13.3333px/normal 400 | = | = | = | = |
+| Letter spacing | normal | = | = | = | = |
+| Colour | #ffffff | = | = | = | = |
+| Transition | background, border-color 0.16s, 0.16s cubic-bezier(0, 0, 0.2, 1), cubic-bezier(0, 0, 0.2, 1) delay 0s, 0s | = | = | = | = |
+| Cursor | pointer | = | = | = | = |
+| Painted layers | button.navbar-menu-toggle 36.0x36.0 bg #ffffff @ 0.04 border T:1px solid #ffffff @ 0.1 / R:1px solid #ffffff @ 0.1 / B:1px solid #ffffff @ 0.1 / L:1px solid #ffffff @ 0.1 r 999px; span.navbar-menu-toggle-line 18.0x1.5 bg #ffffff r 1px; span.navbar-menu-toggle-line 18.0x1.5 bg #ffffff r 1px | button.navbar-menu-toggle 36.0x36.0 bg #ffffff @ 0.1 border T:1px solid #ffffff @ 0.18 / R:1px solid #ffffff @ 0.18 / B:1px solid #ffffff @ 0.18 / L:1px solid #ffffff @ 0.18 r 999px; span.navbar-menu-toggle-line 18.0x1.5 bg #ffffff r 1px; span.navbar-menu-toggle-line 18.0x1.5 bg #ffffff r 1px | button.navbar-menu-toggle 36.0x36.0 bg #ffffff @ 0.1 border T:1px solid #ffffff @ 0.18 / R:1px solid #ffffff @ 0.18 / B:1px solid #ffffff @ 0.18 / L:1px solid #ffffff @ 0.18 r 999px outline 2px solid #947afc offset 2px; span.navbar-menu-toggle-line 18.0x1.5 bg #ffffff r 1px; span.navbar-menu-toggle-line 18.0x1.5 bg #ffffff r 1px | button.navbar-menu-toggle 36.0x36.0 bg #ffffff @ 0.1 border T:1px solid #ffffff @ 0.18 / R:1px solid #ffffff @ 0.18 / B:1px solid #ffffff @ 0.18 / L:1px solid #ffffff @ 0.18 r 999px; span.navbar-menu-toggle-line 18.0x1.5 bg #ffffff r 1px; span.navbar-menu-toggle-line 18.0x1.5 bg #ffffff r 1px | button.navbar-menu-toggle.is-open 36.0x36.0 bg #ffffff @ 0.1 border T:1px solid #ffffff @ 0.18 / R:1px solid #ffffff @ 0.18 / B:1px solid #ffffff @ 0.18 / L:1px solid #ffffff @ 0.18 r 999px; span.navbar-menu-toggle-line 13.8x13.8 bg #ffffff r 1px; span.navbar-menu-toggle-line 13.8x13.8 bg #ffffff r 1px |
+| How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover | own toggle |
+
+Crops: `m-menu-btn-default.png`, `m-menu-btn-hover.png`, `m-menu-btn-focus-visible.png`, `m-menu-btn-pressed.png`, `m-menu-btn-opened.png`.
+
+#### m-drawer
+
+Mobile nav overlay. The navigation sheet opened by the menu button (div#mobileNav.mobile-nav, .is-open while aria-hidden flips to false); its links were never followed.
+
+Page: mobile. Selector: `#mobileNav.mobile-nav`. States: default.
+Read: 2026-11-16.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 390 x 844 |
 | Padding | 0px |
 | Border | none |
 | Radius | 0px |
@@ -1410,62 +1530,10 @@ Page: mobile. Selector: `mobile header`. States: default.
 | Font | Suisse Intl 16px/22.4px 400 |
 | Letter spacing | normal |
 | Colour | #ffffff |
-| Text node | span.btn-text: Suisse Intl 14px/19.6px 400, #000000 |
+| Text node | span: Suisse Intl 16px/normal 500, #ffffff, ls -0.16px |
 | Transition | none |
-| Icon | 0 x 0, colour #ffffff |
-| Painted layers | nav.navbar 358.0x56.0 bg #000000 @ 0.65 border T:1px solid #1f1f1f / R:1px solid #1f1f1f / B:1px solid #1f1f1f / L:1px solid #1f1f1f r 20px; a.btn.btn-secondary 0.0x0.0 bg #1c1c1e border T:1px solid #ffffff @ 0.12 / R:1px solid #ffffff @ 0.12 / B:1px solid #ffffff @ 0.12 / L:1px solid #ffffff @ 0.12 r 40px; a.btn.btn-primary 77.0x36.0 bg #ffffff r 40px; button.navbar-menu-toggle 36.0x36.0 bg #ffffff @ 0.04 border T:1px solid #ffffff @ 0.1 / R:1px solid #ffffff @ 0.1 / B:1px solid #ffffff @ 0.1 / L:1px solid #ffffff @ 0.1 r 999px; span.navbar-menu-toggle-line 18.0x1.5 bg #ffffff r 1px; span.navbar-menu-toggle-line 18.0x1.5 bg #ffffff r 1px |
-| Ancestor paint | 1 up body.homepage-v3 bg #000000 |
-| How | at rest |
-
-Crops: none.
-
-#### m-menu-btn
-
-Mobile menu button. The "Open menu" button — a local UI toggle; the opened state was measured after activating it.
-
-Page: mobile. Selector: `navbar-menu-toggle`. States: default, hover, focus-visible, pressed, opened.
-
-| Property | default | hover | focus-visible | pressed | opened |
-|---|---|---|---|---|---|
-| Size (w x h) | 36 x 36 | = | = | = | = |
-| Padding | 0px | = | = | = | = |
-| Border | 1px solid #ffffff @ 0.1 | = | 1px solid #ffffff @ 0.18 | 1px solid #ffffff @ 0.18 | = |
-| Radius | 999px | = | = | = | = |
-| Background | #ffffff @ 0.04 | = | #ffffff @ 0.1 | #ffffff @ 0.1 | = |
-| Box shadow | none | = | = | = | = |
-| Outline | none | = | 2px solid #947afc offset 2px | = | = |
-| Font | Suisse Intl 13.3333px/normal 400 | = | = | = | = |
-| Letter spacing | normal | = | = | = | = |
-| Colour | #ffffff | = | = | = | = |
-| Transition | background, border-color 0.16s, 0.16s cubic-bezier(0, 0, 0.2, 1), cubic-bezier(0, 0, 0.2, 1) delay 0s, 0s | = | = | = | = |
-| Cursor | pointer | = | = | = | = |
-| Painted layers | button.navbar-menu-toggle 36.0x36.0 bg #ffffff @ 0.04 border T:1px solid #ffffff @ 0.1 / R:1px solid #ffffff @ 0.1 / B:1px solid #ffffff @ 0.1 / L:1px solid #ffffff @ 0.1 r 999px; span.navbar-menu-toggle-line 18.0x1.5 bg #ffffff r 1px; span.navbar-menu-toggle-line 18.0x1.5 bg #ffffff r 1px | = | button.navbar-menu-toggle 36.0x36.0 bg #ffffff @ 0.1 border T:1px solid #ffffff @ 0.18 / R:1px solid #ffffff @ 0.18 / B:1px solid #ffffff @ 0.18 / L:1px solid #ffffff @ 0.18 r 999px outline 2px solid #947afc offset 2px; span.navbar-menu-toggle-line 18.0x1.5 bg #ffffff r 1px; span.navbar-menu-toggle-line 18.0x1.5 bg #ffffff r 1px | button.navbar-menu-toggle 36.0x36.0 bg #ffffff @ 0.1 border T:1px solid #ffffff @ 0.18 / R:1px solid #ffffff @ 0.18 / B:1px solid #ffffff @ 0.18 / L:1px solid #ffffff @ 0.18 r 999px; span.navbar-menu-toggle-line 18.0x1.5 bg #ffffff r 1px; span.navbar-menu-toggle-line 18.0x1.5 bg #ffffff r 1px | button.navbar-menu-toggle.is-open 36.0x36.0 bg #ffffff @ 0.04 border T:1px solid #ffffff @ 0.1 / R:1px solid #ffffff @ 0.1 / B:1px solid #ffffff @ 0.1 / L:1px solid #ffffff @ 0.1 r 999px; span.navbar-menu-toggle-line 13.8x13.8 bg #ffffff r 1px; span.navbar-menu-toggle-line 13.8x13.8 bg #ffffff r 1px |
-| How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover | own toggle |
-
-Crops: `m-menu-btn-default.png`, `m-menu-btn-hover.png`, `m-menu-btn-focus-visible.png`, `m-menu-btn-pressed.png`, `m-menu-btn-opened.png`.
-
-#### m-drawer
-
-Mobile nav overlay. The navigation sheet opened by the menu button (role="dialog", aria-label="Navigation"); its links were never followed.
-
-Page: mobile. Selector: `.mobile-nav`. States: default.
-
-| Property | default |
-|---|---|
-| Size (w x h) | 390 x 354 |
-| Padding | 0px |
-| Border | none |
-| Radius | 0px |
-| Background | transparent |
-| Box shadow | none |
-| Outline | none |
-| Font | Times New Roman 16px/normal 400 |
-| Letter spacing | normal |
-| Colour | #000000 |
-| Text node | span: Axeptio Inter 24px/30px 700, #ffffff |
-| Transition | none |
-| Icon | 60 x 60, colour #000000 |
-| Painted layers | div.sc-idOiZg.jXQppL 390.0x354.0 bg #080000; div.sc-dIUeWJ.jpWSxN 390.0x259.0 bg #080000; div.sc-gsTEea.cThCJt 390.0x21.0 bg #040404 @ 0.2 border T:1px solid #ededed; div.sc-hKgJUU.fEwsMZ 390.0x95.0 border T:1px solid #ededed; button.sc-dlfnuX.kokjqF 130.2x94.0 bg #ffffff border R:1px solid #ededed r 0px 0px 0px 16px shadow #000000 @ 0 0px 0px 0px 0px inset; button.sc-dlfnuX.kokjqF 130.2x94.0 bg #ffffff border R:1px solid #ededed shadow #000000 @ 0 0px 0px 0px 0px inset |
+| Icon | 16 x 16, colour #ffffff @ 0.8 |
+| Painted layers | div.mobile-nav-backdrop 390.0x844.0 bg #000000 @ 0.55; div.mobile-nav-sheet 358.0x744.0 bg #0d0d0d border T:1px solid #1f1f1f / R:1px solid #1f1f1f / B:1px solid #1f1f1f / L:1px solid #1f1f1f r 20px; div.mobile-nav-section.is-open 324.0x640.0 border B:1px solid #ffffff @ 0.06; span.mega-menu-item-icon 32.0x32.0 bg #ffffff @ 0.05 border T:1px solid #ffffff @ 0.06 / R:1px solid #ffffff @ 0.06 / B:1px solid #ffffff @ 0.06 / L:1px solid #ffffff @ 0.06 r 8px; span.mega-menu-item-icon 32.0x32.0 bg #ffffff @ 0.05 border T:1px solid #ffffff @ 0.06 / R:1px solid #ffffff @ 0.06 / B:1px solid #ffffff @ 0.06 / L:1px solid #ffffff @ 0.06 r 8px; span.mega-menu-item-icon 32.0x32.0 bg #ffffff @ 0.05 border T:1px solid #ffffff @ 0.06 / R:1px solid #ffffff @ 0.06 / B:1px solid #ffffff @ 0.06 / L:1px solid #ffffff @ 0.06 r 8px |
 | How | at rest |
 
 Crops: `m-drawer-default.png`.
@@ -1475,6 +1543,7 @@ Crops: `m-drawer-default.png`.
 Mobile hero headline. The masthead at 390 wide.
 
 Page: mobile. Selector: `mobile h1`. States: default.
+Read: 2026-11-16.
 
 | Property | default |
 |---|---|

@@ -50,11 +50,11 @@ Each rule links the screenshot or crop that shows it, under [Do and don't](#do-a
 | accent | #947afc `dark.bg.brand` | #947afc `light.bg.brand` |
 | border | #252525 `dark.border.primary` | #e5e5e5 `light.border.primary` |
 
-Fonts: `core.font.family.sans` is Suisse Intl, then 3 fallbacks; `core.font.family.mono` is Geist Mono, then 2 fallbacks. Scales, counted as [DESIGN.md](DESIGN.md) holds them: no type styles under `core.typography`, 7 radius steps (`core.radius`), 26 spacing steps (`core.space`).
+Fonts: `core.font.family.sans` is Suisse Intl, then 3 fallbacks; `core.font.family.mono` is Geist Mono, then 2 fallbacks. Scales, counted as [DESIGN.md](DESIGN.md) holds them: no type styles under `core.typography`, 8 radius steps (`core.radius`), 26 spacing steps (`core.space`).
 
 ### Using components
 
-Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 109 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
+Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 120 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
 
 ### Accessibility
 
@@ -100,9 +100,9 @@ Three passes read the site, all signed out:
 
 ## What to distrust
 
-- **`mkt-header` and `m-topbar` read 0px tall**: the navbar content is absolutely positioned inside a zero-height wrapper; the real bar (1200 x 72) is the `nav.navbar` child layer listed in the entry, and `--nav-bar-height` is 70px.
-- **`hero-badge`, `lib-card`, `blog-card`, `blog-h1`, `docs-search`, `demo-terms`, `login-email`, `signup-email`, `plan-cta` and `glass-card` read 0x0 or missed**: the selectors matched elements the page kept hidden, zero-sized or renamed — honest misses kept in the data, not gaps filled by hand.
+- **`lib-card`, `blog-card`, `blog-h1` and `glass-card` read 0x0 or missed**: the selectors matched elements the page kept hidden, zero-sized or renamed — honest misses kept in the data, not gaps filled by hand. `glass-card` and `login-signup-link` mount nothing the selectors could settle on at all.
 - **The auth shell's `login-email`/`signup-email` are 0x0** because the app keeps the email step behind the SSO screen; the password field measured 336 x 24.
+- **`demo-terms`' `focused` state could not land a keyboard focus** (the real input is visually hidden behind its `label.form-checkbox`), so that reading is the label at rest — the `via` field says so.
 - **Quantised screenshots** are 256-colour PNGs; read exact colours from `tokens.json`, never from a screenshot pixel.
 - **The docs `dark` theme and the auth shell are different stacks**: their values live in measurements and screenshots, not in the marketing token sets — do not read `dark.*` tokens as the docs' or app's theme.
 - **Calculator prices, plan amounts and marketing copy** are content, not style: only frames and components were measured, and alternate calculator outputs were never captured.
@@ -130,7 +130,8 @@ Captured, all signed out: 26 marketing pages plus their header mega-menus, the p
 
 ```sh
 cd systems/gladia
-PLAYWRIGHT=~/.design-systems/pw/node_modules/playwright/index.mjs node tools/capture/public/public.mjs   # screenshots
+PLAYWRIGHT=~/.design-systems/pw/node_modules/playwright/index.mjs node tools/capture/public/public.mjs   # full-colour shots -> ~/.design-systems/gladia/raw-shots
+python3 tools/capture/quantize.py ~/.design-systems/gladia/raw-shots                                    # publish them -> screenshots/ (only a capture whose sidecar passes)
 PLAYWRIGHT=~/.design-systems/pw/node_modules/playwright/index.mjs node tools/capture/vars.mjs           # css-vars.json
 PLAYWRIGHT=~/.design-systems/pw/node_modules/playwright/index.mjs node tools/capture/public/measure.mjs # components-computed.json
 node tools/capture/public/build-measurements.mjs                                                       # measurements.md

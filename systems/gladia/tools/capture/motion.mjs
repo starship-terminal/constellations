@@ -192,10 +192,19 @@ export function diffMotion(base, reduced) {
   }
   if (base?.scrollBehavior) items.push({ kind: 'scroll', key: 'scroll-behavior', outcome: reduced?.scrollBehavior ? 'kept' : 'removed' });
   else if (reduced?.scrollBehavior) items.push({ kind: 'scroll', key: 'scroll-behavior', outcome: 'added' });
-  for (const t of reducedT.values()) items.push({ kind: 'transition', key: t.property, outcome: 'added', from: 0, to: t.durationMs });
+  // An unmatched entry under reduce counts as added motion only when it is real
+  // motion: the common reset (`transition: all 0.01ms`, a 0.01ms animation, a
+  // paused one) exists so animationend still fires, and NEGLIGIBLE_MS already
+  // defines it as no motion. An unreadable duration (var() unresolved, kept as
+  // durationRaw) cannot be called negligible, so it still counts.
+  for (const t of reducedT.values()) {
+    if (!t.durationRaw && t.durationMs <= NEGLIGIBLE_MS) continue;
+    items.push({ kind: 'transition', key: t.property, outcome: 'added', from: 0, to: t.durationMs });
+  }
   for (const a of reducedA.values()) {
+    if (stopped(a) || (!a.durationRaw && a.durationMs <= NEGLIGIBLE_MS)) continue;
     const item = { kind: 'animation', key: a.name, outcome: 'added', from: 0, to: a.durationMs };
-    if (!stopped(a) && a.iterationCount === 'infinite') item.loops = true;
+    if (a.iterationCount === 'infinite') item.loops = true;
     items.push(item);
   }
   const REDUCING = new Set(['removed', 'shortened']);

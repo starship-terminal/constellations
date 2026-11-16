@@ -53,6 +53,7 @@ rounded:
   "4": "32px"
   "5": "40px"
   "6": "48px"
+  full: "9999px"
 spacing:
   "0": "0px"
   "1": "4px"
@@ -134,7 +135,7 @@ Shadows, resolved to CSS:
 
 ## Shapes
 
-Corner radii from `core.radius`: `0` 0px, `1` 8px, `2` 16px, `3` 24px, `4` 32px, `5` 40px, `6` 48px.
+Corner radii from `core.radius`: `0` 0px, `1` 8px, `2` 16px, `3` 24px, `4` 32px, `5` 40px, `6` 48px, `full` 9999px.
 
 ## Components
 
@@ -152,9 +153,9 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
-- **`mkt-header` and `m-topbar` read 0px tall**: the navbar content is absolutely positioned inside a zero-height wrapper; the real bar (1200 x 72) is the `nav.navbar` child layer listed in the entry, and `--nav-bar-height` is 70px.
-- **`hero-badge`, `lib-card`, `blog-card`, `blog-h1`, `docs-search`, `demo-terms`, `login-email`, `signup-email`, `plan-cta` and `glass-card` read 0x0 or missed**: the selectors matched elements the page kept hidden, zero-sized or renamed — honest misses kept in the data, not gaps filled by hand.
+- **`lib-card`, `blog-card`, `blog-h1` and `glass-card` read 0x0 or missed**: the selectors matched elements the page kept hidden, zero-sized or renamed — honest misses kept in the data, not gaps filled by hand. `glass-card` and `login-signup-link` mount nothing the selectors could settle on at all.
 - **The auth shell's `login-email`/`signup-email` are 0x0** because the app keeps the email step behind the SSO screen; the password field measured 336 x 24.
+- **`demo-terms`' `focused` state could not land a keyboard focus** (the real input is visually hidden behind its `label.form-checkbox`), so that reading is the label at rest — the `via` field says so.
 - **Quantised screenshots** are 256-colour PNGs; read exact colours from `tokens.json`, never from a screenshot pixel.
 - **The docs `dark` theme and the auth shell are different stacks**: their values live in measurements and screenshots, not in the marketing token sets — do not read `dark.*` tokens as the docs' or app's theme.
 - **Calculator prices, plan amounts and marketing copy** are content, not style: only frames and components were measured, and alternate calculator outputs were never captured.

@@ -145,7 +145,7 @@ for hue in ["neutral", "purple", "blue", "green", "red", "yellow", "orange", "pi
         VAR(f"--color-{hue}", "color", f"color.{hue}.default")
         emitted.add(f"--color-{hue}")
 if "--color-white" in R:
-    VAR("--color-white", "color", "core.color.white")
+    VAR("--color-white", "color", "color.white")
     emitted.add("--color-white")
 for n in sorted(k for k in R if re.fullmatch(r"--alpha-(white|black)-\d+", k)):
     VAR(n, "color", f"color.alpha.{cam(n.replace('--alpha-', '--'))}")
@@ -180,7 +180,7 @@ for n in sorted(k for k in R if re.fullmatch(r"--text-body-(size|sm|md|lg)", k))
     VAR(n, "dimension", f"font.text.body.{cam(n[len('--text-body-'):])}")
     emitted.add(n)
 if "--text-body-lh" in R:
-    VAR("--text-body-lh", "number", "core.font.text.body.lh")
+    VAR("--text-body-lh", "number", "font.text.body.lh")
     emitted.add("--text-body-lh")
 
 # ------------------------------------------------------------- core scales
@@ -194,7 +194,7 @@ for n in sorted(k for k in R if re.fullmatch(r"--radius-\d+", k)):
     VAR(n, "dimension", f"radius.{n[len('--radius-'):]}")
     emitted.add(n)
 if "--radius-full" in R:
-    VAR("--radius-full", "dimension", "core.radius.full")
+    VAR("--radius-full", "dimension", "radius.full")
     emitted.add("--radius-full")
 for n in sorted(k for k in R if re.fullmatch(r"--shadow-[a-z]+", k)):
     VAR(n, "other", f"shadow.{n[len('--shadow-'):]}",
@@ -229,7 +229,7 @@ for n in sorted(k for k in R if re.fullmatch(r"--gradient-[a-z-]+", k)):
     VAR(n, "other", f"gradient.{cam(n[len('--gradient-'):])}")
     emitted.add(n)
 if "--text-body-color" in R:
-    VAR("--text-body-color", "color", "core.font.text.body.color")
+    VAR("--text-body-color", "color", "font.text.body.color")
     emitted.add("--text-body-color")
 
 # ------------------------------------------------------- semantic roles

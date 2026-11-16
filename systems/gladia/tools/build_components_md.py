@@ -252,7 +252,7 @@ GROUP_INTRO = {
     "Product pages": "The product marketing pages (/product/speech-to-text-api and siblings): the masthead, code samples, feature headings and CTAs.",
     "Blog, library and marketing indexes": "The /library index (the one marketing page on the light .light-mode scope), and /blog — a legacy Webflow stack on its own stylesheets, painted light.",
     "Docs site (Mintlify)": "docs.gladia.io — a Mintlify docs site with its own token layer and a real light/dark preference: the search trigger, the theme-preference control (never held), sidebar links, code blocks and language tabs.",
-    "Mobile (390 wide)": "The phone surface at 390 wide: the header with the 'Open menu' button, the nav sheet (role=dialog), the hero.",
+    "Mobile (390 wide)": "The phone surface at 390 wide: the header with the 'Open menu' button, the nav sheet (div#mobileNav.mobile-nav), the hero.",
     "Footer": "The page footer: sitemap columns, social icons and legal links.",
 }
 
@@ -319,11 +319,25 @@ def links(prefix):
 
 n_crops = len(list(Path("components/crops").glob("*.png")))
 n_states = sum(len(c["states"]) for c in C.values())
+
+# The captured icon set: tools/capture/icons.mjs collects every distinct
+# inline <svg> into icons/ and writes icons/INDEX.tsv (file, inferred_name,
+# hash, rendered sizes, viewBox, style, seen_on, place, text_or_label). The
+# table below is that index, so the section never contradicts the package.
 icons = []
+idx = Path("icons/INDEX.tsv")
+if idx.exists():
+    rows = [l.split("\t") for l in idx.read_text().splitlines() if l.strip()]
+    header = rows[0]
+    for r in rows[1:]:
+        d = dict(zip(header, r + [""] * (len(header) - len(r))))
+        icons.append([d.get("file", ""), d.get("inferred_name", ""), d.get("hash", ""),
+                      d.get("sizes", ""), d.get("viewBox", ""), d.get("style", ""),
+                      d.get("seen_on", ""), d.get("place", ""), d.get("text_or_label", "")])
 
 W("# Gladia components")
 W()
-W(f"The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Captured from gladia.io on {J['_meta']['read']}, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was signed into, bought or submitted; the demo-request, calculator, login and signup forms were never sent; every link and CTA was measured, never followed.")
+W(f"The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. First read from gladia.io on {J['_meta']['read']}, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Later recaptures merge into the same file, so every entry names the date its own states were read; a state a re-read missed keeps its earlier date and says so. Nothing was signed into, bought or submitted; the demo-request, calculator, login and signup forms were never sent; every link and CTA was measured, never followed.")
 W()
 W(f"The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) ({len(C)} components, {n_states} states). The page layouts are described in [patterns.md](patterns.md).")
 W()
@@ -474,6 +488,28 @@ for g in groups:
             desc += "."
         where = PAGE_NAME.get(c["page"], c["page"])
         W(f"{desc + ' ' if desc else ''}Read as `{k}` on the {where} page{' at 390 wide' if g.startswith('Mobile') else ''}.")
+        # Provenance: each state carries the date of the run that measured it.
+        # A component a recapture missed keeps its earlier readings under the
+        # earlier date (recaptureMissed), and a state whose re-read failed
+        # keeps its earlier style under rerunError — never republished under
+        # the new run's date.
+        by_run = {}
+        for s, v in c["states"].items():
+            by_run.setdefault(v.get("run") or c.get("run") or J["_meta"]["read"], []).append(s)
+        prov = []
+        if len(by_run) == 1:
+            prov.append(f"Read on {next(iter(by_run))}.")
+        elif by_run:
+            prov.append("States read on " + "; ".join(f"{r} ({', '.join(sorted(ss))})" for r, ss in sorted(by_run.items())) + ".")
+        if c.get("recaptureMissed"):
+            prov.append(f"A {c['recaptureMissed']} recapture missed it — the {c.get('run')} readings are retained, not remeasured.")
+        for s, v in c["states"].items():
+            if v.get("rerunError"):
+                prov.append(f"`{s}` kept its {v.get('run')} reading after a failed re-read ({v['rerunError'][:90]}).")
+            elif v.get("error"):
+                prov.append(f"`{s}` failed at capture ({v['error'][:90]}).")
+        if prov:
+            W(" ".join(prov))
         W()
         if c.get("missing"):
             W("Not on the page when it was captured.")
@@ -503,7 +539,10 @@ for g in groups:
 W()
 W("## Icons")
 W()
-W("No standalone SVG icon set was lifted on this pass; the icons in the crops and screenshots (the Gladia mark, the mega-menu glyphs, social glyphs, partner logos) are the product's artwork. Declared under layoutGaps in the catalog entry.")
+if icons:
+    W(f"{len(icons)} distinct inline-SVG icons were collected from the live pages into [icons/](icons) by `tools/capture/icons.mjs`, indexed in [icons/INDEX.tsv](icons/INDEX.tsv): a file is named from `tools/capture/icon-names.tsv` where its geometry hash is listed, else the label or class of the control it sits in, else `icon-<hash>`; colour is kept as `currentColor` wherever it matched the text colour, so each icon recolours from CSS `color` the way it does on the site. The icons are the product's artwork — borrow the set's grammar (sizes, stroke-vs-fill, naming roles), never the artwork itself.")
+else:
+    W("No standalone SVG icon set was lifted on this pass; the icons in the crops and screenshots (the Gladia mark, the mega-menu glyphs, social glyphs, partner logos) are the product's artwork. Declared under layoutGaps in the catalog entry.")
 W()
 W("| Icon | Rendered sizes | View box | Style | Seen on | Next to |")
 W("|---|---|---|---|---|---|")

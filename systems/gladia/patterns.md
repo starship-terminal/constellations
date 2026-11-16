@@ -10,11 +10,11 @@ The triggers open a full-width mega-menu by hover intent (keyboard focus + Enter
 
 ## Home and product pages
 
-The home hero is a display masthead in Suisse Intl ~80/94.8 (`hero-h1`) on the black field, topped by a black announcement badge (`hero-badge`) carrying a purple-tinted gradient and a rgba(148,122,252,0.18) hairline. Section headings step down to 48/57.6 (`section-h2`). Product pages (`/product/speech-to-text-api` and its real-time/async children, `/product/audio-intelligence`, the `/use-cases/*` family) repeat the same grammar: dark field, display h1, feature grids, code blocks in Geist Mono, and CTA pills — measured as `prod-h1`, `prod-cta`, `prod-code`.
+The home hero is a display masthead in Suisse Intl ~80/94.8 (`hero-h1`) on the black field, topped by a white announcement pill (`hero-badge`, `.announce-pill`, 338 x 38 — a "Live" marker beside an animated counter). Section headings step down to 48/57.6 (`section-h2`). Product pages (`/product/speech-to-text-api` and its real-time/async children, `/product/audio-intelligence`, the `/use-cases/*` family) repeat the same grammar: dark field, display h1, feature grids, code blocks in Geist Mono, and CTA pills — measured as `prod-h1`, `prod-cta`, `prod-code`.
 
 ## Pricing
 
-/pricing leads with an Async/Real-time segmented toggle (`price-mode-async`/`price-mode-rt`, aria-pressed, a local UI toggle that re-prices the grid; focus draws the 2px `light.border.focus` #1a9eff ring). Plan cards (`plan-card`, 880px columns) carry per-plan CTAs, and a usage calculator pairs an hours text field (44px, `component.field.height`) with a 20px range track and 13px feature checkboxes — the hours field was typed into then cleared, the range and checkboxes measured at rest. FAQ rows (`faq-acc`, 720px) accordion open.
+/pricing leads with an Async/Real-time segmented toggle (`price-mode-async`/`price-mode-rt`, aria-pressed, a local UI toggle that re-prices the grid; focus draws the 2px `light.border.focus` #1a9eff ring). Plan cards (`plan-card`, 428px columns in the 880px `.pricing-grid--plans`) carry per-plan CTAs (`plan-cta`, 346 x 40), and a usage calculator pairs an hours text field (44px, `component.field.height`) with a 20px range track and 13px feature checkboxes — the hours field was typed into then cleared, the range and checkboxes measured at rest and keyboard-focused, never dragged or toggled. FAQ rows (`faq-acc`, 720px) accordion open.
 
 ## Demo request
 
@@ -34,11 +34,11 @@ app.gladia.io / and /signup are the product auth shell — a different stack aga
 
 ## Mobile (390px)
 
-The phone surface keeps the same bar: a top bar with the mark and a 36 x 36 "Open menu" button (`m-menu-btn`) that toggles a 390 x 354 overlay sheet (`m-drawer`) of nav links — measured opened and closed. The hero drops to a smaller masthead (`m-hero-h1`, 342 x 144).
+The phone surface keeps the same bar: a top bar (`m-topbar`, the 358 x 56 `nav.navbar`) with the mark and a 36 x 36 "Open menu" button (`m-menu-btn`) that toggles a full-height 390 x 844 overlay (`m-drawer`, `div#mobileNav.mobile-nav`: a dimming backdrop plus a 358 x 744 dark sheet of nav links at 20px radius) — measured opened and closed. The hero drops to a smaller masthead (`m-hero-h1`, 342 x 144).
 
 ## Motion and focus
 
-Marketing controls transition fast — 0.16–0.32s `cubic-bezier(0, 0, 0.2, 1)` on colour, background and transform, with the spring easing reserved for the pill hover scale; page-level elements run longer 0.8–1.25s entrance fades. The motion probe saw heavy ambient animation (1926 moving elements across 6 pages) that only partially subsides under `prefers-reduced-motion`. Focus is an outline ring: 2px `light.bg.brand` purple on nav triggers, 2px `light.border.focus` #1a9eff on the pricing toggle, the auth shell's #7e65e1, and plain 1px auto rings elsewhere — measured as `focus-visible` states.
+Marketing controls transition fast — 0.16–0.32s `cubic-bezier(0, 0, 0.2, 1)` on colour, background and transform, with the spring easing reserved for the pill hover scale; page-level elements run longer 0.8–1.25s entrance fades. The motion probe saw heavy ambient animation (1926 moving elements across 6 pages) that fully subsides under `prefers-reduced-motion` — every moving element stops, and the only reduced-mode transitions left are negligible ≤1ms resets. Focus is an outline ring: 2px `light.bg.brand` purple on nav triggers, 2px `light.border.focus` #1a9eff on the pricing toggle, the auth shell's #7e65e1, and plain 1px auto rings elsewhere — measured as `focus-visible` states.
 
 ## Theme architecture
 

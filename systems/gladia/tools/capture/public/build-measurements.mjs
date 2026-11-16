@@ -48,9 +48,9 @@ const L = [];
 const W = (s = '') => L.push(s);
 W('# Gladia component measurements');
 W('');
-W(`Computed styles read from gladia.io on ${J._meta.read} by \`tools/capture/public/measure.mjs\`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844) across the site's painted surfaces — the dark :root marketing pages (home, product, pricing, demo-request and the index pages), /library on the light body.light-mode scope, /blog on the legacy Webflow stack, the Mintlify docs site at docs.gladia.io (its own token layer and a real light/dark preference), the product auth shell at app.gladia.io / and /signup, and the mobile nav sheet — and written here by \`tools/capture/public/build-measurements.mjs\` from [components-computed.json](components-computed.json). The marketing site ships no theme control: an emulated prefers-color-scheme pass resolved :root identically, and body.light-mode is the only light scope a page mounts. One table per component: a column per state, a row per property. A cell that repeats the first state's value reads \`=\`. Colours are hex, with \`@ alpha\` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.`);
+W(`Computed styles read from gladia.io by \`tools/capture/public/measure.mjs\`, first read ${J._meta.read}, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844) across the site's painted surfaces — the dark :root marketing pages (home, product, pricing, demo-request and the index pages), /library on the light body.light-mode scope, /blog on the legacy Webflow stack, the Mintlify docs site at docs.gladia.io (its own token layer and a real light/dark preference), the product auth shell at app.gladia.io / and /signup, and the mobile nav sheet — and written here by \`tools/capture/public/build-measurements.mjs\` from [components-computed.json](components-computed.json). Later recaptures merge into the same file: every entry names the run date its states were read under "Read", and a state a re-read missed keeps its earlier reading under its earlier date with the failed attempt beside it. The marketing site ships no theme control: an emulated prefers-color-scheme pass resolved :root identically, and body.light-mode is the only light scope a page mounts. One table per component: a column per state, a row per property. A cell that repeats the first state's value reads \`=\`. Colours are hex, with \`@ alpha\` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.`);
 W('');
-W('States: `hover` is a real pointer hover; `focus-visible` a real keyboard focus (Shift+Tab, Tab); `pressed` is forced with DevTools (`CSS.forcePseudoState` :active:hover), so no button was pressed; `focused` is a text field clicked into; `filled` is sample text typed and deleted again, with nothing sent; `opened`, `expanded` and the rest are resting states reached by the page or by a UI toggle.');
+W('States: `hover` is a real pointer hover; `focus-visible` a real keyboard focus (Shift+Tab, Tab); `pressed` is forced with DevTools (`CSS.forcePseudoState` :active:hover), so no button was pressed; `focused` is a text field clicked into, or a real keyboard focus on a toggle control (a click there would flip the value, so it is never clicked); `filled` is sample text typed and deleted again, with nothing sent; `opened`, `expanded` and the rest are resting states reached by the page or by a UI toggle.');
 W('');
 W('## Components');
 const groups = [];
@@ -66,6 +66,19 @@ for (const g of groups) {
     W('');
     const states = Object.keys(c.states);
     W(`Page: ${c.page}. Selector: \`${esc(c.selector)}\`. States: ${states.join(', ')}.`);
+    // Provenance: each state carries the run that measured it. A component a
+    // recapture missed keeps its earlier readings under the earlier run
+    // (recaptureMissed); a state whose re-read failed keeps its earlier style
+    // and records the attempt as rerunError — neither republishes under the
+    // new run's date.
+    const runs = {};
+    for (const s of states) (runs[(c.states[s].run || c.run || J._meta.read)] ||= []).push(s);
+    const runBits = Object.keys(runs).length === 1
+      ? `Read: ${Object.keys(runs)[0]}`
+      : `Read: ${Object.entries(runs).sort().map(([r, ss]) => `${r} (${ss.sort().join(', ')})`).join('; ')}`;
+    W(`${runBits}.${c.recaptureMissed ? ` A ${c.recaptureMissed} recapture missed it — the ${c.run} readings are retained, not remeasured.` : ''}`);
+    const reruns = states.filter((s) => c.states[s].rerunError).map((s) => `\`${s}\` kept its ${c.states[s].run} reading after a failed re-read (${esc(c.states[s].rerunError.slice(0, 90))})`);
+    if (reruns.length) { W(''); W(`- ${reruns.join('\n- ')}`); }
     W('');
     if (c.missing) { W('Not found on the page at capture time.'); continue; }
     const rows = {};

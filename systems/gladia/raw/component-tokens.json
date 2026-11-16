@@ -193,6 +193,10 @@
      "var": "--color-pink"
     }
    },
+   "white": {
+    "type": "color",
+    "var": "--color-white"
+   },
    "alpha": {
     "black24": {
      "type": "color",
@@ -299,34 +303,6 @@
       "type": "color",
       "var": "--badge-yellow-bg"
      }
-    }
-   }
-  },
-  "core": {
-   "color": {
-    "white": {
-     "type": "color",
-     "var": "--color-white"
-    }
-   },
-   "font": {
-    "text": {
-     "body": {
-      "lh": {
-       "type": "number",
-       "var": "--text-body-lh"
-      },
-      "color": {
-       "type": "color",
-       "var": "--text-body-color"
-      }
-     }
-    }
-   },
-   "radius": {
-    "full": {
-     "type": "dimension",
-     "var": "--radius-full"
     }
    }
   },
@@ -510,6 +486,14 @@
      "sm": {
       "type": "dimension",
       "var": "--text-body-sm"
+     },
+     "lh": {
+      "type": "number",
+      "var": "--text-body-lh"
+     },
+     "color": {
+      "type": "color",
+      "var": "--text-body-color"
      }
     }
    }
@@ -648,6 +632,10 @@
    "6": {
     "type": "dimension",
     "var": "--radius-6"
+   },
+   "full": {
+    "type": "dimension",
+    "var": "--radius-full"
    }
   },
   "shadow": {
@@ -1114,12 +1102,12 @@
   "header": {
    "height": {
     "type": "dimension",
-    "value": "0px",
+    "value": "72px",
     "source": "measured mkt-header default on home (site header height)"
    },
    "width": {
     "type": "dimension",
-    "value": "1440px",
+    "value": "1200px",
     "source": "measured mkt-header default on home (site header width)"
    }
   },
@@ -1142,7 +1130,7 @@
   "planCard": {
    "width": {
     "type": "dimension",
-    "value": "880px",
+    "value": "428px",
     "source": "measured plan-card default on pricing (pricing plan card)"
    }
   },
@@ -1163,7 +1151,7 @@
   "mobileHeader": {
    "height": {
     "type": "dimension",
-    "value": "0px",
+    "value": "56px",
     "source": "measured m-topbar default on mobile (mobile top bar)"
    }
   },

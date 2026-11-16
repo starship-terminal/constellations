@@ -94,6 +94,9 @@ async function navMenu(p, S, name, shotName) {
       await btn.focus().catch(() => {});
       await p.keyboard.press('Enter').catch(() => {});
       await wait(p, 900);
+      // Check before Escape: a keyboard-opened menu must stay open for its
+      // shot — pressing Escape first closes it before the loop re-tests.
+      if (await open()) break;
       await p.keyboard.press('Escape').catch(() => {});
       await wait(p, 300);
     }

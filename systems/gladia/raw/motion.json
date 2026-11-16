@@ -7,13 +7,13 @@
  },
  "summary": {
   "moving": 1926,
-  "removed": 1871,
+  "removed": 1926,
   "reduced": 0,
   "kept": 0,
-  "partial": 55,
+  "partial": 0,
   "increased": 0,
-  "added": 3869,
-  "behaviour": "partial",
+  "added": 0,
+  "behaviour": "honours",
   "loops": []
  },
  "pages": {
@@ -33,49 +33,16 @@
    },
    "summary": {
     "moving": 635,
-    "removed": 593,
+    "removed": 635,
     "reduced": 0,
     "kept": 0,
-    "partial": 42,
+    "partial": 0,
     "increased": 0,
-    "added": 1473,
-    "behaviour": "partial",
+    "added": 0,
+    "behaviour": "honours",
     "loops": []
    },
    "groups": [
-    {
-     "base": {
-      "transitions": [],
-      "animations": []
-     },
-     "reduced": {
-      "transitions": [
-       {
-        "property": "all",
-        "durationMs": 0.01,
-        "delayMs": 0,
-        "easing": "ease"
-       }
-      ],
-      "animations": []
-     },
-     "outcome": "added",
-     "items": [
-      {
-       "kind": "transition",
-       "key": "all",
-       "outcome": "added",
-       "from": 0,
-       "to": 0.01
-      }
-     ],
-     "count": 1473,
-     "nodes": [
-      "head",
-      "script",
-      "meta"
-     ]
-    },
     {
      "base": {
       "transitions": [
@@ -769,7 +736,7 @@
       ],
       "animations": []
      },
-     "outcome": "partial",
+     "outcome": "removed",
      "items": [
       {
        "kind": "animation",
@@ -777,13 +744,6 @@
        "outcome": "removed",
        "from": 2400,
        "to": 0
-      },
-      {
-       "kind": "transition",
-       "key": "all",
-       "outcome": "added",
-       "from": 0,
-       "to": 0.01
       }
      ],
      "count": 9,
@@ -818,7 +778,7 @@
       ],
       "animations": []
      },
-     "outcome": "partial",
+     "outcome": "removed",
      "items": [
       {
        "kind": "animation",
@@ -826,13 +786,6 @@
        "outcome": "removed",
        "from": 2800,
        "to": 0
-      },
-      {
-       "kind": "transition",
-       "key": "all",
-       "outcome": "added",
-       "from": 0,
-       "to": 0.01
       }
      ],
      "count": 9,
@@ -2312,19 +2265,12 @@
       ],
       "animations": []
      },
-     "outcome": "partial",
+     "outcome": "removed",
      "items": [
       {
        "kind": "scroll",
        "key": "scroll-behavior",
        "outcome": "removed"
-      },
-      {
-       "kind": "transition",
-       "key": "all",
-       "outcome": "added",
-       "from": 0,
-       "to": 0.01
       }
      ],
      "count": 1,
@@ -2359,7 +2305,7 @@
       ],
       "animations": []
      },
-     "outcome": "partial",
+     "outcome": "removed",
      "items": [
       {
        "kind": "animation",
@@ -2367,13 +2313,6 @@
        "outcome": "removed",
        "from": 11000,
        "to": 0
-      },
-      {
-       "kind": "transition",
-       "key": "all",
-       "outcome": "added",
-       "from": 0,
-       "to": 0.01
       }
      ],
      "count": 1,
@@ -2408,7 +2347,7 @@
       ],
       "animations": []
      },
-     "outcome": "partial",
+     "outcome": "removed",
      "items": [
       {
        "kind": "animation",
@@ -2416,13 +2355,6 @@
        "outcome": "removed",
        "from": 12500,
        "to": 0
-      },
-      {
-       "kind": "transition",
-       "key": "all",
-       "outcome": "added",
-       "from": 0,
-       "to": 0.01
       }
      ],
      "count": 1,
@@ -2457,7 +2389,7 @@
       ],
       "animations": []
      },
-     "outcome": "partial",
+     "outcome": "removed",
      "items": [
       {
        "kind": "animation",
@@ -2465,13 +2397,6 @@
        "outcome": "removed",
        "from": 14000,
        "to": 0
-      },
-      {
-       "kind": "transition",
-       "key": "all",
-       "outcome": "added",
-       "from": 0,
-       "to": 0.01
       }
      ],
      "count": 1,
@@ -2506,7 +2431,7 @@
       ],
       "animations": []
      },
-     "outcome": "partial",
+     "outcome": "removed",
      "items": [
       {
        "kind": "animation",
@@ -2514,13 +2439,6 @@
        "outcome": "removed",
        "from": 9500,
        "to": 0
-      },
-      {
-       "kind": "transition",
-       "key": "all",
-       "outcome": "added",
-       "from": 0,
-       "to": 0.01
       }
      ],
      "count": 1,
@@ -2555,7 +2473,7 @@
       ],
       "animations": []
      },
-     "outcome": "partial",
+     "outcome": "removed",
      "items": [
       {
        "kind": "animation",
@@ -2563,13 +2481,6 @@
        "outcome": "removed",
        "from": 750,
        "to": 0
-      },
-      {
-       "kind": "transition",
-       "key": "all",
-       "outcome": "added",
-       "from": 0,
-       "to": 0.01
       }
      ],
      "count": 1,
@@ -2615,20 +2526,13 @@
        }
       ]
      },
-     "outcome": "partial",
+     "outcome": "removed",
      "items": [
       {
        "kind": "animation",
        "key": "borderRotate",
        "outcome": "removed",
        "from": 20000,
-       "to": 0.01
-      },
-      {
-       "kind": "transition",
-       "key": "all",
-       "outcome": "added",
-       "from": 0,
        "to": 0.01
       }
      ],
@@ -2675,20 +2579,13 @@
        }
       ]
      },
-     "outcome": "partial",
+     "outcome": "removed",
      "items": [
       {
        "kind": "animation",
        "key": "dot-pulse",
        "outcome": "removed",
        "from": 2000,
-       "to": 0.01
-      },
-      {
-       "kind": "transition",
-       "key": "all",
-       "outcome": "added",
-       "from": 0,
        "to": 0.01
       }
      ],
@@ -2735,20 +2632,13 @@
        }
       ]
      },
-     "outcome": "partial",
+     "outcome": "removed",
      "items": [
       {
        "kind": "animation",
        "key": "fadeInDown",
        "outcome": "removed",
        "from": 600,
-       "to": 0.01
-      },
-      {
-       "kind": "transition",
-       "key": "all",
-       "outcome": "added",
-       "from": 0,
        "to": 0.01
       }
      ],
@@ -2784,7 +2674,7 @@
       ],
       "animations": []
      },
-     "outcome": "partial",
+     "outcome": "removed",
      "items": [
       {
        "kind": "animation",
@@ -2792,13 +2682,6 @@
        "outcome": "removed",
        "from": 5000,
        "to": 0
-      },
-      {
-       "kind": "transition",
-       "key": "all",
-       "outcome": "added",
-       "from": 0,
-       "to": 0.01
       }
      ],
      "count": 1,
@@ -2844,20 +2727,13 @@
        }
       ]
      },
-     "outcome": "partial",
+     "outcome": "removed",
      "items": [
       {
        "kind": "animation",
        "key": "hpHeroCanvasRise",
        "outcome": "removed",
        "from": 3000,
-       "to": 0.01
-      },
-      {
-       "kind": "transition",
-       "key": "all",
-       "outcome": "added",
-       "from": 0,
        "to": 0.01
       }
      ],
@@ -2893,7 +2769,7 @@
       ],
       "animations": []
      },
-     "outcome": "partial",
+     "outcome": "removed",
      "items": [
       {
        "kind": "animation",
@@ -2901,13 +2777,6 @@
        "outcome": "removed",
        "from": 2200,
        "to": 0
-      },
-      {
-       "kind": "transition",
-       "key": "all",
-       "outcome": "added",
-       "from": 0,
-       "to": 0.01
       }
      ],
      "count": 1,
@@ -2942,7 +2811,7 @@
       ],
       "animations": []
      },
-     "outcome": "partial",
+     "outcome": "removed",
      "items": [
       {
        "kind": "animation",
@@ -2950,13 +2819,6 @@
        "outcome": "removed",
        "from": 2400,
        "to": 0
-      },
-      {
-       "kind": "transition",
-       "key": "all",
-       "outcome": "added",
-       "from": 0,
-       "to": 0.01
       }
      ],
      "count": 1,
@@ -2991,7 +2853,7 @@
       ],
       "animations": []
      },
-     "outcome": "partial",
+     "outcome": "removed",
      "items": [
       {
        "kind": "animation",
@@ -2999,13 +2861,6 @@
        "outcome": "removed",
        "from": 9000,
        "to": 0
-      },
-      {
-       "kind": "transition",
-       "key": "all",
-       "outcome": "added",
-       "from": 0,
-       "to": 0.01
       }
      ],
      "count": 1,
@@ -3051,20 +2906,13 @@
        }
       ]
      },
-     "outcome": "partial",
+     "outcome": "removed",
      "items": [
       {
        "kind": "animation",
        "key": "scrollLogoBelt",
        "outcome": "removed",
        "from": 80000,
-       "to": 0.01
-      },
-      {
-       "kind": "transition",
-       "key": "all",
-       "outcome": "added",
-       "from": 0,
        "to": 0.01
       }
      ],
@@ -3111,20 +2959,13 @@
        }
       ]
      },
-     "outcome": "partial",
+     "outcome": "removed",
      "items": [
       {
        "kind": "animation",
        "key": "scrollLogoBelt",
        "outcome": "removed",
        "from": 80000,
-       "to": 0.01
-      },
-      {
-       "kind": "transition",
-       "key": "all",
-       "outcome": "added",
-       "from": 0,
        "to": 0.01
       }
      ],
@@ -3160,7 +3001,7 @@
       ],
       "animations": []
      },
-     "outcome": "partial",
+     "outcome": "removed",
      "items": [
       {
        "kind": "animation",
@@ -3168,13 +3009,6 @@
        "outcome": "removed",
        "from": 26000,
        "to": 0
-      },
-      {
-       "kind": "transition",
-       "key": "all",
-       "outcome": "added",
-       "from": 0,
-       "to": 0.01
       }
      ],
      "count": 1,
@@ -3209,7 +3043,7 @@
       ],
       "animations": []
      },
-     "outcome": "partial",
+     "outcome": "removed",
      "items": [
       {
        "kind": "animation",
@@ -3217,13 +3051,6 @@
        "outcome": "removed",
        "from": 30000,
        "to": 0
-      },
-      {
-       "kind": "transition",
-       "key": "all",
-       "outcome": "added",
-       "from": 0,
-       "to": 0.01
       }
      ],
      "count": 1,
@@ -3258,7 +3085,7 @@
       ],
       "animations": []
      },
-     "outcome": "partial",
+     "outcome": "removed",
      "items": [
       {
        "kind": "animation",
@@ -3266,13 +3093,6 @@
        "outcome": "removed",
        "from": 22000,
        "to": 0
-      },
-      {
-       "kind": "transition",
-       "key": "all",
-       "outcome": "added",
-       "from": 0,
-       "to": 0.01
       }
      ],
      "count": 1,
@@ -3307,7 +3127,7 @@
       ],
       "animations": []
      },
-     "outcome": "partial",
+     "outcome": "removed",
      "items": [
       {
        "kind": "animation",
@@ -3315,13 +3135,6 @@
        "outcome": "removed",
        "from": 9000,
        "to": 0
-      },
-      {
-       "kind": "transition",
-       "key": "all",
-       "outcome": "added",
-       "from": 0,
-       "to": 0.01
       }
      ],
      "count": 1,
@@ -3356,7 +3169,7 @@
       ],
       "animations": []
      },
-     "outcome": "partial",
+     "outcome": "removed",
      "items": [
       {
        "kind": "animation",
@@ -3364,13 +3177,6 @@
        "outcome": "removed",
        "from": 9000,
        "to": 0
-      },
-      {
-       "kind": "transition",
-       "key": "all",
-       "outcome": "added",
-       "from": 0,
-       "to": 0.01
       }
      ],
      "count": 1,
@@ -3405,7 +3211,7 @@
       ],
       "animations": []
      },
-     "outcome": "partial",
+     "outcome": "removed",
      "items": [
       {
        "kind": "animation",
@@ -3413,13 +3219,6 @@
        "outcome": "removed",
        "from": 40000,
        "to": 0
-      },
-      {
-       "kind": "transition",
-       "key": "all",
-       "outcome": "added",
-       "from": 0,
-       "to": 0.01
       }
      ],
      "count": 1,
@@ -3454,7 +3253,7 @@
       ],
       "animations": []
      },
-     "outcome": "partial",
+     "outcome": "removed",
      "items": [
       {
        "kind": "animation",
@@ -3462,13 +3261,6 @@
        "outcome": "removed",
        "from": 46000,
        "to": 0
-      },
-      {
-       "kind": "transition",
-       "key": "all",
-       "outcome": "added",
-       "from": 0,
-       "to": 0.01
       }
      ],
      "count": 1,
@@ -3503,7 +3295,7 @@
       ],
       "animations": []
      },
-     "outcome": "partial",
+     "outcome": "removed",
      "items": [
       {
        "kind": "animation",
@@ -3511,13 +3303,6 @@
        "outcome": "removed",
        "from": 34000,
        "to": 0
-      },
-      {
-       "kind": "transition",
-       "key": "all",
-       "outcome": "added",
-       "from": 0,
-       "to": 0.01
       }
      ],
      "count": 1,
@@ -11065,49 +10850,16 @@
    },
    "summary": {
     "moving": 450,
-    "removed": 442,
+    "removed": 450,
     "reduced": 0,
     "kept": 0,
-    "partial": 8,
+    "partial": 0,
     "increased": 0,
-    "added": 807,
-    "behaviour": "partial",
+    "added": 0,
+    "behaviour": "honours",
     "loops": []
    },
    "groups": [
-    {
-     "base": {
-      "transitions": [],
-      "animations": []
-     },
-     "reduced": {
-      "transitions": [
-       {
-        "property": "all",
-        "durationMs": 0.01,
-        "delayMs": 0,
-        "easing": "ease"
-       }
-      ],
-      "animations": []
-     },
-     "outcome": "added",
-     "items": [
-      {
-       "kind": "transition",
-       "key": "all",
-       "outcome": "added",
-       "from": 0,
-       "to": 0.01
-      }
-     ],
-     "count": 807,
-     "nodes": [
-      "html.js-reveal",
-      "head",
-      "script"
-     ]
-    },
     {
      "base": {
       "transitions": [
@@ -12425,20 +12177,13 @@
        }
       ]
      },
-     "outcome": "partial",
+     "outcome": "removed",
      "items": [
       {
        "kind": "animation",
        "key": "fadeInDown",
        "outcome": "removed",
        "from": 600,
-       "to": 0.01
-      },
-      {
-       "kind": "transition",
-       "key": "all",
-       "outcome": "added",
-       "from": 0,
        "to": 0.01
       }
      ],
@@ -12474,7 +12219,7 @@
       ],
       "animations": []
      },
-     "outcome": "partial",
+     "outcome": "removed",
      "items": [
       {
        "kind": "animation",
@@ -12482,13 +12227,6 @@
        "outcome": "removed",
        "from": 850,
        "to": 0
-      },
-      {
-       "kind": "transition",
-       "key": "all",
-       "outcome": "added",
-       "from": 0,
-       "to": 0.01
       }
      ],
      "count": 1,
@@ -12523,7 +12261,7 @@
       ],
       "animations": []
      },
-     "outcome": "partial",
+     "outcome": "removed",
      "items": [
       {
        "kind": "animation",
@@ -12531,13 +12269,6 @@
        "outcome": "removed",
        "from": 850,
        "to": 0
-      },
-      {
-       "kind": "transition",
-       "key": "all",
-       "outcome": "added",
-       "from": 0,
-       "to": 0.01
       }
      ],
      "count": 1,
@@ -12572,7 +12303,7 @@
       ],
       "animations": []
      },
-     "outcome": "partial",
+     "outcome": "removed",
      "items": [
       {
        "kind": "animation",
@@ -12580,13 +12311,6 @@
        "outcome": "removed",
        "from": 850,
        "to": 0
-      },
-      {
-       "kind": "transition",
-       "key": "all",
-       "outcome": "added",
-       "from": 0,
-       "to": 0.01
       }
      ],
      "count": 1,
@@ -12621,7 +12345,7 @@
       ],
       "animations": []
      },
-     "outcome": "partial",
+     "outcome": "removed",
      "items": [
       {
        "kind": "animation",
@@ -12629,13 +12353,6 @@
        "outcome": "removed",
        "from": 850,
        "to": 0
-      },
-      {
-       "kind": "transition",
-       "key": "all",
-       "outcome": "added",
-       "from": 0,
-       "to": 0.01
       }
      ],
      "count": 1,
@@ -12670,7 +12387,7 @@
       ],
       "animations": []
      },
-     "outcome": "partial",
+     "outcome": "removed",
      "items": [
       {
        "kind": "animation",
@@ -12678,13 +12395,6 @@
        "outcome": "removed",
        "from": 80000,
        "to": 0
-      },
-      {
-       "kind": "transition",
-       "key": "all",
-       "outcome": "added",
-       "from": 0,
-       "to": 0.01
       }
      ],
      "count": 1,
@@ -12719,7 +12429,7 @@
       ],
       "animations": []
      },
-     "outcome": "partial",
+     "outcome": "removed",
      "items": [
       {
        "kind": "animation",
@@ -12727,13 +12437,6 @@
        "outcome": "removed",
        "from": 80000,
        "to": 0
-      },
-      {
-       "kind": "transition",
-       "key": "all",
-       "outcome": "added",
-       "from": 0,
-       "to": 0.01
       }
      ],
      "count": 1,
@@ -13174,7 +12877,7 @@
       ],
       "animations": []
      },
-     "outcome": "partial",
+     "outcome": "removed",
      "items": [
       {
        "kind": "transition",
@@ -13195,13 +12898,6 @@
        "key": "transform",
        "outcome": "removed",
        "from": 560,
-       "to": 0.01
-      },
-      {
-       "kind": "transition",
-       "key": "visibility",
-       "outcome": "added",
-       "from": 0,
        "to": 0.01
       }
      ],
@@ -17866,49 +17562,16 @@
    },
    "summary": {
     "moving": 487,
-    "removed": 484,
+    "removed": 487,
     "reduced": 0,
     "kept": 0,
-    "partial": 3,
+    "partial": 0,
     "increased": 0,
-    "added": 1204,
-    "behaviour": "partial",
+    "added": 0,
+    "behaviour": "honours",
     "loops": []
    },
    "groups": [
-    {
-     "base": {
-      "transitions": [],
-      "animations": []
-     },
-     "reduced": {
-      "transitions": [
-       {
-        "property": "all",
-        "durationMs": 0.01,
-        "delayMs": 0,
-        "easing": "ease"
-       }
-      ],
-      "animations": []
-     },
-     "outcome": "added",
-     "items": [
-      {
-       "kind": "transition",
-       "key": "all",
-       "outcome": "added",
-       "from": 0,
-       "to": 0.01
-      }
-     ],
-     "count": 1204,
-     "nodes": [
-      "html.page-stt-api.page-stt-hub.stt-motion",
-      "head",
-      "script"
-     ]
-    },
     {
      "base": {
       "transitions": [
@@ -19558,20 +19221,13 @@
        }
       ]
      },
-     "outcome": "partial",
+     "outcome": "removed",
      "items": [
       {
        "kind": "animation",
        "key": "fadeInDown",
        "outcome": "removed",
        "from": 600,
-       "to": 0.01
-      },
-      {
-       "kind": "transition",
-       "key": "all",
-       "outcome": "added",
-       "from": 0,
        "to": 0.01
       }
      ],
@@ -19618,20 +19274,13 @@
        }
       ]
      },
-     "outcome": "partial",
+     "outcome": "removed",
      "items": [
       {
        "kind": "animation",
        "key": "scrollLogoBelt",
        "outcome": "removed",
        "from": 80000,
-       "to": 0.01
-      },
-      {
-       "kind": "transition",
-       "key": "all",
-       "outcome": "added",
-       "from": 0,
        "to": 0.01
       }
      ],
@@ -19678,20 +19327,13 @@
        }
       ]
      },
-     "outcome": "partial",
+     "outcome": "removed",
      "items": [
       {
        "kind": "animation",
        "key": "scrollLogoBelt",
        "outcome": "removed",
        "from": 80000,
-       "to": 0.01
-      },
-      {
-       "kind": "transition",
-       "key": "all",
-       "outcome": "added",
-       "from": 0,
        "to": 0.01
       }
      ],
@@ -24841,49 +24483,16 @@
    },
    "summary": {
     "moving": 345,
-    "removed": 343,
+    "removed": 345,
     "reduced": 0,
     "kept": 0,
-    "partial": 2,
+    "partial": 0,
     "increased": 0,
-    "added": 385,
-    "behaviour": "partial",
+    "added": 0,
+    "behaviour": "honours",
     "loops": []
    },
    "groups": [
-    {
-     "base": {
-      "transitions": [],
-      "animations": []
-     },
-     "reduced": {
-      "transitions": [
-       {
-        "property": "all",
-        "durationMs": 0.01,
-        "delayMs": 0,
-        "easing": "ease"
-       }
-      ],
-      "animations": []
-     },
-     "outcome": "added",
-     "items": [
-      {
-       "kind": "transition",
-       "key": "all",
-       "outcome": "added",
-       "from": 0,
-       "to": 0.01
-      }
-     ],
-     "count": 385,
-     "nodes": [
-      "html.js-reveal",
-      "head",
-      "script"
-     ]
-    },
     {
      "base": {
       "transitions": [
@@ -25769,20 +25378,13 @@
        }
       ]
      },
-     "outcome": "partial",
+     "outcome": "removed",
      "items": [
       {
        "kind": "animation",
        "key": "fadeInDown",
        "outcome": "removed",
        "from": 600,
-       "to": 0.01
-      },
-      {
-       "kind": "transition",
-       "key": "all",
-       "outcome": "added",
-       "from": 0,
        "to": 0.01
       }
      ],
@@ -25818,7 +25420,7 @@
       ],
       "animations": []
      },
-     "outcome": "partial",
+     "outcome": "removed",
      "items": [
       {
        "kind": "animation",
@@ -25826,13 +25428,6 @@
        "outcome": "removed",
        "from": 800,
        "to": 0
-      },
-      {
-       "kind": "transition",
-       "key": "all",
-       "outcome": "added",
-       "from": 0,
-       "to": 0.01
       }
      ],
      "count": 1,

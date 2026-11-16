@@ -125,6 +125,28 @@ test('diffMotion: partial, none and added', () => {
   assert.equal(diffMotion({ transitions: [], animations: [], scrollBehavior: 'smooth' }, motionOf({})).outcome, 'removed');
 });
 
+test('a negligible unmatched entry under reduce is not added motion', () => {
+  // The reset a reduced-motion stylesheet paints — `transition: all 0.01ms`
+  // (so animationend still fires), a 0.01ms animation, a paused one — must
+  // not count as added motion: gladia's pulse groups were 'partial' only
+  // because of it. An element whose motion fully stops reads 'removed'.
+  const reset = motionOf({ transitionProperty: 'all', transitionDuration: '0.01ms' });
+  assert.equal(diffMotion(base, reset).outcome, 'removed');
+  assert.deepEqual(diffMotion(base, reset).items.map((i) => i.outcome), ['removed', 'removed', 'removed']);
+  const withReset = structuredClone(base);
+  withReset.transitions.push({ property: 'all', durationMs: 0.01, delayMs: 0, easing: 'ease' });
+  assert.equal(diffMotion(base, withReset).outcome, 'kept');
+  const still = motionOf({ animationName: 'none', animationPlayState: 'paused', transitionProperty: 'all', transitionDuration: '0.01ms' });
+  still.animations = [{ name: 'other', durationMs: 0.01, delayMs: 0, easing: 'ease', iterationCount: '1', direction: 'normal', fillMode: 'none', playState: 'running' }];
+  assert.equal(diffMotion(base, still).outcome, 'removed');
+  // an unreadable duration on an unmatched property is not provably
+  // negligible: it still counts as added motion
+  const raw = motionOf({ transitionProperty: 'color', transitionDuration: 'var(--d)' });
+  const rd = diffMotion(base, raw);
+  assert.equal(rd.outcome, 'partial');
+  assert.equal(rd.items.find((i) => i.key === 'color').outcome, 'added');
+});
+
 test('groupRecords folds equal motion into one group, in a stable order', () => {
   const recs = [
     { node: 'button.btn', base, reduced: motionOf({}) },

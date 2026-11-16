@@ -50,7 +50,7 @@ class TokensTest(unittest.TestCase):
         self.assertEqual(core["color.neutral.0"], "#ffffff")
         self.assertEqual(core["color.neutral.1000"], "#000000")
         self.assertEqual(core["font.size.80"], "80px")
-        self.assertEqual(core["core.radius.full"], "9999px")
+        self.assertEqual(core["radius.full"], "9999px")
         self.assertEqual(core["space.4"], "16px")
         self.assertEqual(core["duration.240"], "240ms")
 

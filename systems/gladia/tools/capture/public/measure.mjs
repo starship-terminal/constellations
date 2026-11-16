@@ -170,6 +170,9 @@ async function S(key, target, list, meta = {}, opts = {}) {
   if (!listed.has(key)) listed.set(key, new Set());
   for (const st of list) listed.get(key).add(st);
   delete out.components[key].missing;
+  // A fresh successful pass clears the stale miss flag — it is re-stamped
+  // below only if this run actually misses or fails a listed state.
+  delete out.components[key].recaptureMissed;
   if (opts.open) { await reset(); try { await opts.open(); } catch (e) { log('  ! open failed', key, String(e.message).slice(0, 80)); } }
   const loc = target.filter({ visible: true }).first();
   if (!(await loc.count())) {
@@ -199,9 +202,20 @@ async function S(key, target, list, meta = {}, opts = {}) {
         via = 'CDP forcePseudoState :active:hover';
       } else if (st === 'focused') {
         const fld = (opts.fieldLoc || loc).filter({ visible: true }).first();
-        await fld.click({ timeout: 4000 }).catch(() => fld.evaluate((el) => el.focus()));
-        await page.waitForTimeout(400);
-        via = 'clicked into the field';
+        // A click is how a user lands in a text field, but on a toggle control
+        // (checkbox, radio, range, select, button or its ARIA form) a click
+        // flips the value instead of only focusing it — the pricing
+        // calculator's checkbox and range live in this branch. Those get a
+        // real keyboard focus so the at-rest reading still stands.
+        const toggleCtl = await fld.evaluate((el) => el.matches('input[type="checkbox"], input[type="radio"], input[type="range"], input[type="file"], select, button, [role="checkbox"], [role="radio"], [role="switch"], [role="slider"], [role="combobox"]')).catch(() => false);
+        if (toggleCtl) {
+          const how = await kbFocus(fld);
+          via = how === 'focus failed' ? 'focus failed' : `keyboard focus (${how}), never clicked`;
+        } else {
+          await fld.click({ timeout: 4000 }).catch(() => fld.evaluate((el) => el.focus()));
+          await page.waitForTimeout(400);
+          via = 'clicked into the field';
+        }
       } else if (st === 'filled') {
         const f = (opts.fieldLoc || loc).filter({ visible: true }).first();
         await f.click({ timeout: 4000 }).catch(() => f.evaluate((el) => el.focus()));
@@ -257,6 +271,20 @@ async function toggle(loc, { allowLink = false } = {}) {
 }
 
 const q = (sel) => page.locator(sel);
+// First candidate that paints a real box. Playwright's { visible: true }
+// lets through nodes inside zero-height wrappers and clipped overlays
+// (header.site-nav wraps the fixed nav.navbar, a hidden checkbox input sits
+// behind its styled label, a closed mega-menu keeps zero-sized links), so
+// "visible" alone is not an honest measurement target — the box is.
+async function sized(loc, { minW = 1, minH = 1 } = {}) {
+  const n = await loc.count().catch(() => 0);
+  for (let i = 0; i < n; i++) {
+    const el = loc.nth(i);
+    const box = await el.boundingBox().catch(() => null);
+    if (box && box.width >= minW && box.height >= minH) return el;
+  }
+  return loc.filter({ visible: true }).first();
+}
 const B4 = ['default', 'hover', 'focus-visible', 'pressed'];
 
 async function sheetsFor(key) {
@@ -340,7 +368,7 @@ async function openMobileMenu() {
   const b = q('button.navbar-menu-toggle, button[aria-label="Open menu"]').filter({ visible: true }).first();
   if (!(await b.count())) return 'no menu toggle';
   const open = async () => (await b.getAttribute('aria-expanded').catch(() => null)) === 'true'
-    || (await q('.mobile-nav.is-visible, .mobile-nav[aria-hidden="false"]').count()) > 0;
+    || (await q('.mobile-nav.is-open, .mobile-nav.is-visible, .mobile-nav[aria-hidden="false"], #mobileNav[aria-hidden="false"]').count()) > 0;
   if (await open()) return 'the nav overlay was already open';
   for (let i = 0; i < 3; i++) {
     await b.click({ timeout: 4000 }).catch(() => b.evaluate((el) => el.click()));
@@ -361,7 +389,9 @@ async function home() {
   await sheetsFor('home');
   await chrome('home');
   const g = G.shell;
-  await S('mkt-header', q('header.site-nav, header').filter({ visible: true }).first(), ['default'], { group: g, title: 'Site header', desc: 'The floating rounded glass navbar at the top of every marketing page: the Gladia wordmark, the Product/Solutions/Developers/Resources/Company mega-menu triggers, Pricing, "Request a demo" and the signup CTA.', sel: 'header.site-nav' }, { noScroll: true });
+  // header.site-nav is a zero-height wrapper — the painted bar is the fixed
+  // nav.navbar inside it; measuring the wrapper reported 0px tall.
+  await S('mkt-header', await sized(q('header.site-nav nav.navbar, nav.navbar'), { minW: 100, minH: 20 }), ['default'], { group: g, title: 'Site header', desc: 'The floating rounded glass navbar at the top of every marketing page: the Gladia wordmark, the Product/Solutions/Developers/Resources/Company mega-menu triggers, Pricing, "Request a demo" and the signup CTA.', sel: 'header.site-nav nav.navbar' }, { noScroll: true });
   await S('mkt-logo', q('header a.navbar-logo, header a[aria-label="Gladia"]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Logo', desc: 'The inline-SVG Gladia symbol + wordmark in the header, linking home.', sel: 'header a.navbar-logo' }, { noScroll: true });
   await S('nav-menu-btn', q('button[data-menu="product"]').filter({ visible: true }).first(), B4, { group: g, title: 'Mega-menu trigger', desc: 'The "Product" header button — a hover-intent trigger whose aria-expanded flips while the mega-menu mounts (the opened panel is the mega-panel component below). Hover is the site\'s own activation, focus+Enter the fallback.', sel: 'button[data-menu=product]' }, { noScroll: true });
   await S('mega-panel', q('.mega-menu .mega-menu-panel, #mega-panel-product').filter({ visible: true }).first(), ['default'], { group: g, title: 'Mega-menu panel', desc: 'The product mega-menu panel opened by the "Product" trigger — glass card with product and feature links; its links were never followed.', sel: '.mega-menu-panel' }, { open: () => openMegaMenu('product'), noScroll: true, noReset: true });
@@ -372,7 +402,10 @@ async function home() {
   await S('nav-cta', q('header a').filter({ hasText: /Start.*free|Get started|Sign up/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Header CTA', desc: 'The header signup CTA (the brand-purple fill) linking to app.gladia.io/signup; measured, never followed.', sel: 'header signup CTA' }, { noScroll: true });
   const h = G.home;
   await S('hero-h1', await domFind(page, /\S/, { sel: 'h1', tag: 'h1', minW: 200, minH: 20 }), ['default'], { group: h, title: 'Hero headline', desc: 'The home masthead display heading on the dark :root surface.', sel: 'h1' }, { noScroll: true });
-  await S('hero-badge', q('[class*="badge"], [class*="pill"], a').filter({ hasText: /Solaria|new|announc/i }).filter({ visible: true }).first(), ['default'], { group: h, title: 'Hero badge', desc: 'The announcement badge/pill above the hero headline; measured, never followed.', sel: 'hero badge' }, { noScroll: true });
+  // A page-wide /new/i text match catches hidden links first (the closed
+  // mega-menu's "New ..." callout measures 0x0) — take the first that paints;
+  // the current pill is .announce-pill reading "Live".
+  await S('hero-badge', await sized(q('[class*="badge"], [class*="pill"], [class*="announc"], a').filter({ hasText: /Solaria|\bnew\b|announc|\bLive\b/i }), { minW: 30, minH: 12 }), ['default'], { group: h, title: 'Hero badge', desc: 'The announcement badge/pill above the hero headline; measured, never followed.', sel: 'hero badge' }, { noScroll: true });
   await S('section-h2', await domFind(page, /\S{6,}/, { sel: 'h2', tag: 'h2', minW: 200, minH: 40 }), ['default'], { group: h, title: 'Section heading', desc: 'A marketing section heading further down the home page — a display-size h2, so transient microcopy never counts.', sel: 'h2 (display size)' });
   await S('glass-card', q('.glass-card, [class*="b__card"], [class*="glass"]').filter({ hasText: /\S{4,}/ }).filter({ visible: true }).first(), ['default', 'hover'], { group: h, title: 'Glass card', desc: 'A frosted-glass marketing card (the site\'s --bg-glass + blur + hairline border treatment); measured, never followed.', sel: '.glass-card' });
   const f = G.footer;
@@ -388,7 +421,11 @@ async function product() {
   const g = G.products;
   await S('prod-h1', q('h1').filter({ visible: true }).first(), ['default'], { group: g, title: 'Product headline', desc: 'The /product/speech-to-text-api masthead on the dark surface.', sel: 'h1' }, { noScroll: true });
   await S('prod-cta', q('a, button').filter({ hasText: /Start.*free|Get started|Try|Request a demo/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Product CTA', desc: 'A call-to-action on the product page; measured, never followed.', sel: 'product page CTA' });
-  await S('prod-code', q('pre, code, [class*="code"]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Code sample', desc: 'A code sample block on the product page — mono face on an elevated surface.', sel: 'product pre/code' });
+  // The sample container is pre.stt-dev-code__body; a bare [class*="code"]
+  // matches the stt-lang__code language label ("EN") first, and inline <code>
+  // is a different component — only a real block counts here.
+  const prodCode = (await q('pre.stt-dev-code__body').count()) ? q('pre.stt-dev-code__body') : q('pre').filter({ hasText: /\S{8,}/ });
+  await S('prod-code', prodCode.filter({ visible: true }).first(), ['default'], { group: g, title: 'Code sample', desc: 'A code sample block on the product page — mono face on an elevated surface.', sel: 'pre.stt-dev-code__body' });
   await S('prod-feature', q('h2, h3').filter({ hasText: /\S{4,}/ }).filter({ visible: true }).first(), ['default'], { group: g, title: 'Feature heading', desc: 'A feature section heading on the product page.', sel: 'product h2/h3' });
   save();
 }
@@ -401,8 +438,11 @@ async function pricing() {
   await S('price-h1', q('h1').filter({ visible: true }).first(), ['default'], { group: g, title: 'Pricing headline', desc: 'The /pricing masthead.', sel: 'h1' }, { noScroll: true });
   await S('price-mode-async', q('button[data-pricing-mode="async"]').filter({ visible: true }).first(), [...B4, 'opened'], { group: g, title: 'Pricing mode: Async', desc: 'The "Async" half of the pricing-mode segmented toggle (data-pricing-mode, aria-pressed); a local UI toggle that re-prices the grid — the opened state was measured after its own toggle.', sel: 'button[data-pricing-mode=async]' }, { noScroll: true });
   await S('price-mode-rt', q('button[data-pricing-mode="realtime"]').filter({ visible: true }).first(), [...B4, 'opened'], { group: g, title: 'Pricing mode: Real-time', desc: 'The "Real-time" half of the pricing-mode segmented toggle; a local UI toggle — the opened state was measured after its own toggle, then the async side was restored.', sel: 'button[data-pricing-mode=realtime]' }, { noScroll: true });
-  await S('plan-card', q('[class*="plan"], [class*="pricing-card"], [class*="card"]').filter({ hasText: /€|hour|credit|month|Custom/ }).filter({ visible: true }).first(), ['default'], { group: g, title: 'Plan card', desc: 'A plan card on /pricing — one column of the pricing grid: name, per-hour price, feature list and its CTA.', sel: 'pricing plan card' });
-  await S('plan-cta', q('a, button').filter({ hasText: /Start with|credits|Contact|Talk to|Get started/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Plan CTA', desc: 'A plan card\'s primary action ("Start with 50€ free credits" or the enterprise contact link); measured, never followed.', sel: 'plan card CTA' });
+  await S('plan-card', q('.pricing-card').filter({ hasText: /€|hour|credit|month|Custom/ }).filter({ visible: true }).first(), ['default'], { group: g, title: 'Plan card', desc: 'A plan card on /pricing — one column of the pricing grid (.pricing-grid--plans > .pricing-card): name, per-hour price, feature list and its CTA.', sel: '.pricing-card' });
+  // Scoped inside the pricing card: a page-wide CTA text filter matches
+  // unrelated marketing links (a hidden "Startup Studio ... credits" link in
+  // the closed mega-menu won the race once).
+  await S('plan-cta', await sized(q('.pricing-card a, .pricing-card button').filter({ hasText: /Start|credit|Contact|Talk to|Get started|free/ }), { minW: 40, minH: 20 }), B4, { group: g, title: 'Plan CTA', desc: 'A plan card\'s primary action ("Start with 50€ free credits" or the enterprise contact link); measured, never followed.', sel: '.pricing-card CTA' });
   await S('calc-hours', q('#calc-hours, input[name="calc-hours"]').filter({ visible: true }).first(), FIELD, { group: g, title: 'Calculator hours field', desc: 'The pricing calculator\'s hours-per-month number input (default 500); typed into then cleared — a local UI control, nothing submitted.', sel: '#calc-hours' }, { fillText: '500' });
   await S('calc-range', q('input.pricing-calc__range, input[type="range"][aria-label*="Hours"]').filter({ visible: true }).first(), ['default', 'focused'], { group: g, title: 'Calculator range', desc: 'The "Hours of audio per month" range slider in the calculator; measured at rest, never dragged.', sel: 'pricing-calc range input' });
   await S('calc-feature', q('input[type="checkbox"]').filter({ visible: true }).first(), ['default', 'focused'], { group: g, title: 'Calculator feature checkbox', desc: 'A feature add-on checkbox in the pricing calculator (summarization, sentiment, translation, NER, PII); a local UI control — measured, never toggled.', sel: 'calculator checkbox' });
@@ -419,7 +459,10 @@ async function demo() {
   await S('demo-email', q('#demo-email, input[type="email"]').filter({ visible: true }).first(), FIELD, { group: g, title: 'Email field', desc: 'The work-e-mail input on the demo-request form; focused and typed into then cleared — never submitted.', sel: '#demo-email' }, { noScroll: true, fillText: 'name@example.com' });
   await S('demo-name', q('#demo-first-name, input[name="first"]').filter({ visible: true }).first(), FIELD, { group: g, title: 'First-name field', desc: 'The first-name input on the demo-request form; focused and typed into then cleared — never submitted.', sel: '#demo-first-name' }, { fillText: 'Alex' });
   await S('demo-company-size', q('#demo-company-size, select').filter({ visible: true }).first(), ['default', 'focused'], { group: g, title: 'Company-size select', desc: 'The company-size select on the demo-request form; measured at rest, never changed.', sel: '#demo-company-size' });
-  await S('demo-terms', q('input[type="checkbox"]').filter({ visible: true }).first(), ['default', 'focused'], { group: g, title: 'Terms checkbox', desc: 'The required terms-acceptance checkbox on the demo-request form; measured at rest, never toggled.', sel: 'demo terms checkbox' });
+  // The checkbox input itself is visually hidden behind its styled label;
+  // measure the label (the visible control) but focus the real input inside
+  // it — the label is not focusable, the input is.
+  await S('demo-terms', await sized(q('label:has(input[type="checkbox"]), .contact-form__checkbox, [class*="checkbox"]'), { minW: 10, minH: 10 }), ['default', 'focused'], { group: g, title: 'Terms checkbox', desc: 'The required terms-acceptance checkbox on the demo-request form (the input is visually hidden behind its styled label); measured at rest, never toggled.', sel: 'demo terms checkbox label' }, { fieldLoc: q('label.form-checkbox input[type="checkbox"], form input[type="checkbox"], input[type="checkbox"]') });
   await S('demo-submit', q('#demo-form-btn, button[type="submit"]').filter({ visible: true }).first(), B4, { group: g, title: 'Submit button', desc: 'The demo-request form\'s submit button; its states were measured but the button was never clicked — the form was never sent.', sel: '#demo-form-btn' }, { noScroll: true });
   save();
 }
@@ -456,9 +499,11 @@ async function docs() {
   await sheetsFor('docs');
   const g = G.docs;
   await S('docs-h1b', q('h1').filter({ visible: true }).first(), ['default'], { group: g, title: 'Doc page headline', desc: '"Quickstart" — a docs article headline on the Mintlify stack.', sel: 'docs article h1' }, { noScroll: true });
-  await S('docs-search', q('button[aria-label*="search" i], button[id*="search" i]').filter({ visible: true }).first(), B4, { group: g, title: 'Search trigger', desc: 'The docs\' search button — a local UI toggle for the search overlay; measured, never opened.', sel: 'docs search button' }, { noScroll: true });
+  // Mintlify mounts more than one search control; the first match can be the
+  // hidden mobile one (0x0), so take the first candidate with a real box.
+  await S('docs-search', await sized(q('button[aria-label*="search" i], button[id*="search" i], button:has-text("Search"), [class*="search" i] button'), { minW: 20, minH: 20 }), B4, { group: g, title: 'Search trigger', desc: 'The docs\' search button — a local UI toggle for the search overlay; measured, never opened.', sel: 'docs search button' }, { noScroll: true });
   await S('docs-theme-btn', q('button[id*="theme" i], button[aria-label*="theme" i]').filter({ visible: true }).first(), B4, { group: g, title: 'Theme toggle', desc: 'The docs\' theme-preference control — a local UI toggle that flips the Mintlify page between light and dark; measured at rest, never switched here (the dark surface is captured in the screenshots pass).', sel: 'docs theme button' }, { noScroll: true });
-  await S('docs-code', q('pre, code').filter({ visible: true }).first(), ['default'], { group: g, title: 'Code block', desc: 'A code block on the docs article; Mintlify\'s own syntax-highlight layer paints these.', sel: 'docs pre/code' });
+  await S('docs-code', q('pre').filter({ hasText: /\S{4,}/ }).filter({ visible: true }).first(), ['default'], { group: g, title: 'Code block', desc: 'A code block on the docs article; Mintlify\'s own syntax-highlight layer paints these. Inline code (`transcribe()` and friends) is a different element and never counts.', sel: 'docs pre' });
   await S('docs-tab', q('[role="tab"], button').filter({ hasText: /Python|JavaScript|cURL|TypeScript/ }).filter({ visible: true }).first(), ['default', 'opened'], { group: g, title: 'Code-language tab', desc: 'A language tab on a docs code sample; a local UI toggle — measured, never switched.', sel: 'docs code tab' });
   save();
 }
@@ -493,10 +538,14 @@ async function mobile() {
   if (!(await newPage('mobile', { mobile: true, url: BASE + '/' }))) return;
   await chrome('mobile');
   const g = G.mobile;
-  await S('m-topbar', q('header.site-nav, header').filter({ visible: true }).first(), ['default'], { group: g, title: 'Mobile top bar', desc: 'The phone header at 390 wide: the wordmark and the "Open menu" button.', sel: 'mobile header' }, { noScroll: true });
+  // header.site-nav is a zero-height wrapper — the painted bar is nav.navbar.
+  await S('m-topbar', await sized(q('header.site-nav nav.navbar, nav.navbar'), { minW: 100, minH: 20 }), ['default'], { group: g, title: 'Mobile top bar', desc: 'The phone header at 390 wide: the wordmark and the "Open menu" button.', sel: 'mobile nav.navbar' }, { noScroll: true });
   const ham = q('button.navbar-menu-toggle, button[aria-label="Open menu"]').filter({ visible: true }).first();
   await S('m-menu-btn', ham, [...B4, 'opened'], { group: g, title: 'Mobile menu button', desc: 'The "Open menu" button — a local UI toggle; the opened state was measured after activating it.', sel: 'navbar-menu-toggle' }, { noScroll: true, allowLink: true });
-  await S('m-drawer', q('.mobile-nav, #mobileNav, [role="dialog"]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Mobile nav overlay', desc: 'The navigation sheet opened by the menu button (role="dialog", aria-label="Navigation"); its links were never followed.', sel: '.mobile-nav' }, { open: openMobileMenu, noScroll: true, noReset: true });
+  // The drawer is div#mobileNav.mobile-nav, which takes .is-open while its
+  // aria-hidden flips to false. It must be selected by name — a bare
+  // [role="dialog"] fallback matches the Axeptio consent widget first.
+  await S('m-drawer', q('#mobileNav, .mobile-nav').filter({ visible: true }).first(), ['default'], { group: g, title: 'Mobile nav overlay', desc: 'The navigation sheet opened by the menu button (div#mobileNav.mobile-nav, .is-open while aria-hidden flips to false); its links were never followed.', sel: '#mobileNav.mobile-nav' }, { open: openMobileMenu, noScroll: true, noReset: true });
   await page.keyboard.press('Escape').catch(() => {});
   await S('m-hero-h1', q('h1').filter({ visible: true }).first(), ['default'], { group: g, title: 'Mobile hero headline', desc: 'The masthead at 390 wide.', sel: 'mobile h1' });
   save();

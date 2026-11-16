@@ -89,10 +89,11 @@ export async function closePromo(page) {
     const hit = await page.evaluate(() => {
       let n = 0;
       // Any cookie/consent layer (aria-label or class naming cookies).
-      // gladia.io mounted none during the probes; the generic find
-      // below is the fallback. Hidden, never answered — Allow/Dismiss are
-      // never clicked.
-      document.querySelectorAll('[aria-label*="cookie consent" i], [aria-label="Consent Manager" i], [id*="cookie-consent" i], [id*="cookie_consent" i], [class*="cookie-banner" i], [class*="cookie_banner" i]').forEach((x) => { x.style.setProperty('display', 'none', 'important'); n++; });
+      // gladia.io mounts the Axeptio consent widget (#axeptio_overlay, its
+      // .ax-widget-container dialog): it intercepts pointer events over the
+      // whole viewport and its generic text find can miss, so it is hidden
+      // by name. Hidden, never answered — Allow/Dismiss are never clicked.
+      document.querySelectorAll('[aria-label*="cookie consent" i], [aria-label="Consent Manager" i], [id*="cookie-consent" i], [id*="cookie_consent" i], [class*="cookie-banner" i], [class*="cookie_banner" i], [id*="axeptio" i], [class*="axeptio" i], [class*="ax-widget" i]').forEach((x) => { x.style.setProperty('display', 'none', 'important'); n++; });
       // Any other fixed consent/cookie overlay (never body/html): hidden,
       // never answered.
       document.querySelectorAll('div[id*="onetrust" i], div[class*="onetrust" i], div[id*="termly" i], iframe[title*="privacy" i]').forEach((x) => { x.style.setProperty('display', 'none', 'important'); n++; });
@@ -101,7 +102,7 @@ export async function closePromo(page) {
         const r = x.getBoundingClientRect();
         const cs = getComputedStyle(x);
         return (cs.position === 'fixed' || cs.position === 'sticky')
-          && /note about our cookies|we use cookies|uses cookies, pixel tags|cookie settings|cookies settings|we value privacy|personal data \(such as identifiers|allow all cookies/i.test(t)
+          && /note about our cookies|we use cookies|uses cookies, pixel tags|cookie settings|cookies settings|we value (your )?privacy|personal data \(such as identifiers|allow all cookies|consents verified by/i.test(t)
           && t.length < 1600 && r.width > 200 && r.width < 1400 && r.height > 60 && +cs.zIndex > 5;
       });
       if (box) { box.style.setProperty('display', 'none', 'important'); n++; }

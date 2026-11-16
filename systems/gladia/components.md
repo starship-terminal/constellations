@@ -1,6 +1,6 @@
 # Gladia components
 
-The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Captured from gladia.io on 2026-11-15, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was signed into, bought or submitted; the demo-request, calculator, login and signup forms were never sent; every link and CTA was measured, never followed.
+The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. First read from gladia.io on 2026-11-16, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Later recaptures merge into the same file, so every entry names the date its own states were read; a state a re-read missed keeps its earlier date and says so. Nothing was signed into, bought or submitted; the demo-request, calculator, login and signup forms were never sent; every link and CTA was measured, never followed.
 
 The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (58 components, 132 states). The page layouts are described in [patterns.md](patterns.md).
 
@@ -8,7 +8,7 @@ How to read an entry:
 
 - A colour is its value followed by the palette token in [tokens.json](tokens.json) with the same value, when there is one. Text is written family size/line-height weight, then its colour, for example `Inter 16/20.8 400, #000000`, and is read from the first text node inside the component.
 - The state table has one row per state that differs. The first row lists every value; later rows list only what changes. A state with the same values as the first is named in its label, for example "default (same: focus-visible)". When the root paints nothing, "Child layers" names the first nodes inside it that do.
-- Crops are images of the component read from the live page, in [components/crops/](components/crops) (109 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
+- Crops are images of the component read from the live page, in [components/crops/](components/crops) (120 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
 
 ## Discovery list
 
@@ -72,7 +72,7 @@ Screenshots are named `{page}-{theme}-state.png` where `{theme}` is the mode the
 
 Values that apply across entries, from the measurement files.
 
-**Focus.** 15 components were given a real keyboard focus. 15 draw an outline ring: `nav-menu-btn` (2px solid #947afc `light.bg.brand`, offset 2px), `nav-pricing` (1px auto #101010, offset 1px), `nav-demo` (1px auto #101010, offset 1px), `nav-cta` (1px auto #101010, offset 1px), `footer-link` (1px auto #101010, offset 1px), `prod-cta` (1px auto #101010, offset 1px), `price-mode-async` (2px solid #1a9eff `light.border.focus`, offset 2px), `price-mode-rt` (2px solid #1a9eff `light.border.focus`, offset 2px), `demo-submit` (1px auto #101010, offset 0px), `docs-theme-btn` (1px auto #2e343e, offset 0px), `login-sso` (2px solid #7e65e1, offset 2px), `login-submit` (2px solid #7e65e1, offset 2px), `signup-sso` (2px solid #7e65e1, offset 2px), `signup-submit` (2px solid #7e65e1, offset 2px), `m-menu-btn` (2px solid #947afc `light.bg.brand`, offset 2px).
+**Focus.** 16 components were given a real keyboard focus. 16 draw an outline ring: `nav-menu-btn` (2px solid #947afc `light.bg.brand`, offset 2px), `nav-pricing` (1px auto #101010, offset 1px), `nav-demo` (1px auto #101010, offset 1px), `nav-cta` (1px auto #101010, offset 1px), `footer-link` (1px auto #101010, offset 1px), `prod-cta` (1px auto #101010, offset 1px), `price-mode-async` (2px solid #1a9eff `light.border.focus`, offset 2px), `price-mode-rt` (2px solid #1a9eff `light.border.focus`, offset 2px), `demo-submit` (1px auto #101010, offset 0px), `docs-search` (1px auto #2e343e, offset 0px), `docs-theme-btn` (1px auto #2e343e, offset 0px), `login-sso` (2px solid #7e65e1, offset 2px), `login-submit` (2px solid #7e65e1, offset 2px), `signup-sso` (2px solid #7e65e1, offset 2px), `signup-submit` (2px solid #7e65e1, offset 2px), `m-menu-btn` (2px solid #947afc `light.bg.brand`, offset 2px).
 
 **Pressed.** Forced with DevTools (`CSS.forcePseudoState` :active:hover). Nothing a real press would submit was ever pressed.
 
@@ -85,23 +85,22 @@ Values that apply across entries, from the measurement files.
 | 0.2s | `cubic-bezier(0.4, 0, 0.2, 1)` | --tw-gradient-from, --tw-gradient-to, --tw-gradient-via, background-color, border-color, color, fill, outline-color, stroke, text-decoration-color | docs-theme-btn |
 | 0.25s | `cubic-bezier(0, 0, 0.2, 1)` | box-shadow | nav-cta, nav-demo |
 | 0.25s | `cubic-bezier(0.34, 1.56, 0.64, 1)` | transform | nav-cta, nav-demo |
-| 0.28s | `cubic-bezier(0.4, 0, 1, 1)` | filter, opacity | plan-card |
-| 0.32s | `cubic-bezier(0, 0, 0.2, 1)` | color | price-mode-async, price-mode-rt |
-| 0.32s | `cubic-bezier(0.4, 0, 1, 1)` | transform | plan-card |
+| 0.32s | `cubic-bezier(0, 0, 0.2, 1)` | border-color, box-shadow, color | plan-card, price-mode-async, price-mode-rt |
 | 0.8s | `cubic-bezier(0, 0, 0.2, 1)` | opacity, transform | demo-h1, lib-h1 |
 | 0.9s | `cubic-bezier(0.22, 1, 0.36, 1)` | opacity, transform | prod-h1 |
 | 1.25s | `cubic-bezier(0, 0, 0.2, 1)` | opacity, transform | demo-submit |
+| 1.4s | `cubic-bezier(0, 0, 0.2, 1)` | opacity, transform | plan-card |
 
 **Card shapes.** Default-state values; the entries hold the states.
 
 | Card | Size | Border | Radius | Background | Shadow | Padding |
 |---|---|---|---|---|---|---|
 | [Mega-menu panel](#mega-menu-panel) | 1080 x 361.66 | - | - | transparent | none | 0 |
-| [Plan card](#plan-card) | 880 x 888.13 | - | - | transparent | none | 0 |
+| [Plan card](#plan-card) | 428 x 888.13 | 1px solid rgba(255, 255, 255, 0.08) `core.color.alpha.white8` | 24px | transparent | rgba(0, 0, 0, 0.22) 0px 8px 28px 0px | 48px 40px 40px 40px |
 | [Footer](#footer) | 1440 x 849.38 | T: 1px solid #0c0c0c `core.color.neutral.900` | - | transparent | none | 72px 0px 64px 0px |
 | [Login panel](#login-panel) | 720 x 900 | - | - | transparent | none | 0 |
 | [Signup panel](#signup-panel) | 720 x 900 | - | - | transparent | none | 0 |
-| [Mobile nav overlay](#mobile-nav-overlay) | 390 x 354 | - | - | transparent | none | 0 |
+| [Mobile nav overlay](#mobile-nav-overlay) | 390 x 844 | - | - | transparent | none | 0 |
 
 ## Components
 
@@ -111,15 +110,15 @@ The floating glass navbar on every marketing page: the Gladia wordmark, the Prod
 
 #### Site header
 The floating rounded glass navbar at the top of every marketing page: the Gladia wordmark, the Product/Solutions/Developers/Resources/Company mega-menu triggers, Pricing, "Request a demo" and the signup CTA. Read as `mkt-header` on the home page.
+Read on 2026-11-16.
 
-**Values (default).** size 1440 x 0; background transparent; text Suisse Intl 15/normal 400, rgba(255, 255, 255, 0.68); icon 109.94 x 28, #ffffff `light.bg.primary`; layers nav.navbar 1200.0x72.0 rgba(0, 0, 0, 0.65) T:1px solid rgb(31, 31, 31) / R:1px solid rgb(31, 31, 31) / B:1px solid rgb(31, 31, 31) / L:1px solid rgb(31, 31, 31) 20px; a.btn.btn-secondary 146.0x32.0 rgb(28, 28, 30) T:1px solid rgba(255, 255, 255, 0.12) / R:1px solid rgba(255, 255, 255, 0.12) / B:1px solid rgba(255, 255, 255, 0.12) / L:1px solid rgba(255, 255, 255, 0.12) 40px; a.btn.btn-primary 81.0.
+**Values (default).** size 1200 x 72; border 1px solid #1f1f1f; radius 20px; background rgba(0, 0, 0, 0.65); text Suisse Intl 15/normal 400, rgba(255, 255, 255, 0.68); icon 109.94 x 28, #ffffff `light.bg.primary`.
 
-Child layers that carry the look: nav 1200x72 background rgba(0, 0, 0, 0.65) border 1px solid #1f1f1f radius 20px; a 146x32 background #1c1c1e `core.color.neutral.800` border 1px solid rgba(255, 255, 255, 0.12) `core.color.alpha.white12` radius 40px; a 81x32 background #ffffff `light.bg.primary` radius 40px.
-
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Site header default](components/crops/mkt-header-default.png)
 
 #### Logo
 The inline-SVG Gladia symbol + wordmark in the header, linking home. Read as `mkt-logo` on the home page.
+Read on 2026-11-16.
 
 **Values (default).** size 323.5 x 28; background transparent; text Suisse Intl 16/22.4 400, #ffffff `light.bg.primary`; icon 109.94 x 28, #ffffff `light.bg.primary`.
 
@@ -127,6 +126,7 @@ The inline-SVG Gladia symbol + wordmark in the header, linking home. Read as `mk
 
 #### Mega-menu trigger
 The "Product" header button — a hover-intent trigger whose aria-expanded flips while the mega-menu mounts (the opened panel is the mega-panel component below). Hover is the site's own activation, focus+Enter the fallback. Read as `nav-menu-btn` on the home page.
+Read on 2026-11-16.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -139,6 +139,7 @@ The "Product" header button — a hover-intent trigger whose aria-expanded flips
 
 #### Mega-menu panel
 The product mega-menu panel opened by the "Product" trigger — glass card with product and feature links; its links were never followed. Read as `mega-panel` on the home page.
+Read on 2026-11-16.
 
 **Values (default).** size 1080 x 361.66; background transparent; text Geist Mono 11/15.4 400, rgba(148, 122, 252, 0.95); layers div.mega-menu-panel-body.mega-menu-panel-body--product 1080.0x361.7 rgb(0, 0, 0) 23px; div.mega-menu-grid.mega-menu-grid--flat 0.0x0.0 rgb(0, 0, 0); div.mega-menu-overview-card 360.0x361.7 R:1px solid rgba(255, 255, 255, 0.1) rgba(255, 255, 255, 0.14) 0px 1px 0px 0px inset; div::before.mega-menu-overview-card 1pxx361.656px; span.btn.btn-primary 138.0x32.0 rgb(255, 255, 255) 40px; div.mega-menu-ove.
 
@@ -148,6 +149,7 @@ Child layers that carry the look: div 1080x361.7 background #000000 `light.bg.in
 
 #### Mega-menu item
 A product link inside the opened mega-menu; measured, never followed. Read as `mega-item` on the home page.
+Read on 2026-11-16.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -160,6 +162,7 @@ Child layers that carry the look: span 138x32 background #ffffff `light.bg.prima
 
 #### Nav link
 The "Pricing" header link; measured, never followed. Read as `nav-pricing` on the home page.
+Read on 2026-11-16.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -172,6 +175,7 @@ The "Pricing" header link; measured, never followed. Read as `nav-pricing` on th
 
 #### Demo link
 The "Request a demo" header link to /demo-request; measured, never followed. Read as `nav-demo` on the home page.
+Read on 2026-11-16.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -184,6 +188,7 @@ The "Request a demo" header link to /demo-request; measured, never followed. Rea
 
 #### Header CTA
 The header signup CTA (the brand-purple fill) linking to app.gladia.io/signup; measured, never followed. Read as `nav-cta` on the home page.
+Read on 2026-11-16.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -200,6 +205,7 @@ The home hero: the announcement badge, the display masthead on the dark :root su
 
 #### Hero headline
 The home masthead display heading on the dark :root surface. Read as `hero-h1` on the home page.
+Read on 2026-11-16.
 
 **Values (default).** size 767.41 x 189.59; background transparent; text Suisse Intl 79/94.8 400, #000000 `light.bg.inverse`.
 
@@ -207,13 +213,15 @@ The home masthead display heading on the dark :root surface. Read as `hero-h1` o
 
 #### Hero badge
 The announcement badge/pill above the hero headline; measured, never followed. Read as `hero-badge` on the home page.
+Read on 2026-11-16.
 
-**Values (default).** size 0 x 0; padding 16px 32px; border T: 1px solid rgba(148, 122, 252, 0.18); background #000000 `light.bg.inverse`; image linear-gradient(90deg, rgba(148, 122, 252, 0.1) 0%, rgba(148, 122, 252, 0.03) 42%, transparent 100%), none; text Suisse Intl 16/22.4 400, #ffffff `light.bg.primary`; transition background 0.16s cubic-bezier(0, 0, 0.2, 1), border-color 0.16s cubic-bezier(0, 0, 0.2, 1).
+**Values (default).** size 338.11 x 37.59; padding 4px 12px 4px 4px; border 1px solid rgba(0, 0, 0, 0.12) `light.border.transparent`; radius 9999px; background #ffffff `light.bg.primary`; text Suisse Intl 14/19.6 500, rgba(0, 0, 0, 0.8); transition border-color 0.16s cubic-bezier(0, 0, 0.2, 1).
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Hero badge default](components/crops/hero-badge-default.png)
 
 #### Section heading
 A marketing section heading further down the home page — a display-size h2, so transient microcopy never counts. Read as `section-h2` on the home page.
+Read on 2026-11-16.
 
 **Values (default).** size 523.19 x 57.59; background transparent; text Suisse Intl 48/57.6 400, #ffffff `light.bg.primary`.
 
@@ -230,6 +238,7 @@ The /pricing grid: the Async/Real-time pricing-mode segmented toggle (aria-press
 
 #### Pricing headline
 The /pricing masthead. Read as `price-h1` on the pricing page.
+Read on 2026-11-16.
 
 **Values (default).** size 860 x 76.8; background transparent; text Suisse Intl 64/76.8 400, #ffffff `light.bg.primary`.
 
@@ -237,6 +246,7 @@ The /pricing masthead. Read as `price-h1` on the pricing page.
 
 #### Pricing mode: Async
 The "Async" half of the pricing-mode segmented toggle (data-pricing-mode, aria-pressed); a local UI toggle that re-prices the grid — the opened state was measured after its own toggle. Read as `price-mode-async` on the pricing page.
+Read on 2026-11-16.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -247,6 +257,7 @@ The "Async" half of the pricing-mode segmented toggle (data-pricing-mode, aria-p
 
 #### Pricing mode: Real-time
 The "Real-time" half of the pricing-mode segmented toggle; a local UI toggle — the opened state was measured after its own toggle, then the async side was restored. Read as `price-mode-rt` on the pricing page.
+Read on 2026-11-16.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -259,25 +270,29 @@ The "Real-time" half of the pricing-mode segmented toggle; a local UI toggle —
 ![Pricing mode: Real-time default](components/crops/price-mode-rt-default.png) ![Pricing mode: Real-time hover](components/crops/price-mode-rt-hover.png) ![Pricing mode: Real-time focus-visible](components/crops/price-mode-rt-focus-visible.png) ![Pricing mode: Real-time pressed](components/crops/price-mode-rt-pressed.png) ![Pricing mode: Real-time opened](components/crops/price-mode-rt-opened.png)
 
 #### Plan card
-A plan card on /pricing — one column of the pricing grid: name, per-hour price, feature list and its CTA. Read as `plan-card` on the pricing page.
+A plan card on /pricing — one column of the pricing grid (.pricing-grid--plans > .pricing-card): name, per-hour price, feature list and its CTA. Read as `plan-card` on the pricing page.
+Read on 2026-11-16.
 
-**Values (default).** size 880 x 888.13; background transparent; text Suisse Intl 16/22.4 400, #ffffff `light.bg.primary`; transition opacity 0.28s cubic-bezier(0.4, 0, 1, 1), filter 0.28s cubic-bezier(0.4, 0, 1, 1), transform 0.32s cubic-bezier(0.4, 0, 1, 1); transform translate(-48px, 0px); opacity 0; icon 16 x 16, #a3a3a3 `light.text.disabled`; layers div.pricing-card.glass-card 428.0x888.1 T:1px solid rgba(255, 255, 255, 0.08) / R:1px solid rgba(255, 255, 255, 0.08) / B:1px solid rgba(255, 255, 255, 0.08) / L:1px solid rgba(255, 255, 255, 0.08) rgba(0, 0, 0, 0.22) 0px 8px 28px 0px 24px; div::before.pricing-card.glass-card 426pxx886.125px 24px; a.btn.btn-primary 346.0x40.0 rgb(255, 255, 255) 40px; ul.pricing-card__features 346.0x528.1 T:1px sol.
-
-Child layers that carry the look: div 428x888.1 border 1px solid rgba(255, 255, 255, 0.08) `core.color.alpha.white8` radius 24px shadow rgba(0, 0, 0, 0.22) 0px 8px 28px 0px; div::before 426pxx886.125px image linear-gradient(rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.6) 55%, rgba(0, 0, 0, 0.52)) radius 24px; a 346x40 background #ffffff `light.bg.primary` radius 40px.
+**Values (default).** size 428 x 888.13; padding 48px 40px 40px 40px; border 1px solid rgba(255, 255, 255, 0.08) `core.color.alpha.white8`; radius 24px; background transparent; shadow rgba(0, 0, 0, 0.22) 0px 8px 28px 0px; text Suisse Intl 16/22.4 400, #ffffff `light.bg.primary`; transition opacity 1.4s cubic-bezier(0, 0, 0.2, 1), transform 1.4s cubic-bezier(0, 0, 0.2, 1), border-color 0.32s cubic-bezier(0, 0, 0.2, 1), box-shadow 0.32s cubic-bezier(0, 0, 0.2, 1); icon 16 x 16, #a3a3a3 `light.text.disabled`; layers ::before rgba(0, 0, 0, 0) 0px none 1.
 
 No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
 
 #### Plan CTA
 A plan card's primary action ("Start with 50€ free credits" or the enterprise contact link); measured, never followed. Read as `plan-cta` on the pricing page.
+Read on 2026-11-16.
 
-**Values (default).** size 0 x 0; padding 16px 32px; border T: 1px solid rgba(148, 122, 252, 0.18); background #000000 `light.bg.inverse`; image linear-gradient(90deg, rgba(148, 122, 252, 0.1) 0%, rgba(148, 122, 252, 0.03) 42%, transparent 100%), none; text Suisse Intl 16/22.4 400, #ffffff `light.bg.primary`; transition background 0.16s cubic-bezier(0, 0, 0.2, 1), border-color 0.16s cubic-bezier(0, 0, 0.2, 1).
+| State | Values (later rows list only what changes from the first row) |
+|---|---|
+| default (same: hover) | size 346 x 40; padding 8px 20px; radius 40px; background #ffffff `light.bg.primary`; text Suisse Intl 14/19.6 400, #000000 `light.bg.inverse`; transition transform 0.16s cubic-bezier(0, 0, 0.2, 1) |
+| pressed | size 352.92 x 40.8; transform scale(1.02) |
 
 **Focus not capturable.** A real keyboard focus could not be held on this element (`focus-visible` recorded `via: focus failed`), so its focus look is uncaptured — not measured as absent.
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Plan CTA default](components/crops/plan-cta-default.png) ![Plan CTA hover](components/crops/plan-cta-hover.png) ![Plan CTA pressed](components/crops/plan-cta-pressed.png)
 
 #### Calculator hours field
 The pricing calculator's hours-per-month number input (default 500); typed into then cleared — a local UI control, nothing submitted. Read as `calc-hours` on the pricing page.
+Read on 2026-11-16.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -287,24 +302,29 @@ The pricing calculator's hours-per-month number input (default 500); typed into 
 
 #### Calculator range
 The "Hours of audio per month" range slider in the calculator; measured at rest, never dragged. Read as `calc-range` on the pricing page.
+Read on 2026-11-16.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focused) | size 391 x 20; background transparent; text Arial 13.33/normal 400, #9d968e; placeholder #9d968e |
+| default | size 391 x 20; background transparent; text Arial 13.33/normal 400, #9d968e; placeholder #9d968e |
+| focused | radius 8px; outline 2px solid #925bff `core.color.purple.500`, offset 4px; layers input.pricing-calc__range 391.0x20.0 2px solid rgb(146, 91, 255) offset 4px 8px |
 
 ![Calculator range default](components/crops/calc-range-default.png) ![Calculator range focused](components/crops/calc-range-focused.png)
 
 #### Calculator feature checkbox
 A feature add-on checkbox in the pricing calculator (summarization, sentiment, translation, NER, PII); a local UI control — measured, never toggled. Read as `calc-feature` on the pricing page.
+Read on 2026-11-16.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focused) | size 13 x 13; background transparent; text Arial 13.33/normal 400, #000000 `light.bg.inverse`; opacity 0; placeholder #000000 `light.bg.inverse` |
+| default | size 13 x 13; background transparent; text Arial 13.33/normal 400, #000000 `light.bg.inverse`; opacity 0; placeholder #000000 `light.bg.inverse` |
+| focused | outline 1px auto #101010, offset 2px; layers input 13.0x13.0 1px auto rgb(16, 16, 16) offset 2px |
 
 ![Calculator feature checkbox default](components/crops/calc-feature-default.png) ![Calculator feature checkbox focused](components/crops/calc-feature-focused.png)
 
 #### FAQ accordion
 A question row in the pricing FAQ; the opened state was measured after its own toggle — a local UI toggle. Read as `faq-acc` on the pricing page.
+Read on 2026-11-16.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -319,6 +339,7 @@ The /demo-request form: e-mail, name, company-size select, the terms checkbox an
 
 #### Demo headline
 The /demo-request masthead over the sales form. Read as `demo-h1` on the demo-request page.
+Read on 2026-11-16.
 
 **Values (default).** size 860 x 76.8; background transparent; text Suisse Intl 64/76.8 400, #ffffff `light.bg.primary`; transition opacity 0.8s cubic-bezier(0, 0, 0.2, 1), transform 0.8s cubic-bezier(0, 0, 0.2, 1).
 
@@ -326,6 +347,7 @@ The /demo-request masthead over the sales form. Read as `demo-h1` on the demo-re
 
 #### Email field
 The work-e-mail input on the demo-request form; focused and typed into then cleared — never submitted. Read as `demo-email` on the demo-request page.
+Read on 2026-11-16.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -336,6 +358,7 @@ The work-e-mail input on the demo-request form; focused and typed into then clea
 
 #### First-name field
 The first-name input on the demo-request form; focused and typed into then cleared — never submitted. Read as `demo-name` on the demo-request page.
+Read on 2026-11-16.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -346,6 +369,7 @@ The first-name input on the demo-request form; focused and typed into then clear
 
 #### Company-size select
 The company-size select on the demo-request form; measured at rest, never changed. Read as `demo-company-size` on the demo-request page.
+Read on 2026-11-16.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -355,16 +379,20 @@ The company-size select on the demo-request form; measured at rest, never change
 ![Company-size select default](components/crops/demo-company-size-default.png) ![Company-size select focused](components/crops/demo-company-size-focused.png)
 
 #### Terms checkbox
-The required terms-acceptance checkbox on the demo-request form; measured at rest, never toggled. Read as `demo-terms` on the demo-request page.
+The required terms-acceptance checkbox on the demo-request form (the input is visually hidden behind its styled label); measured at rest, never toggled. Read as `demo-terms` on the demo-request page.
+Read on 2026-11-16.
 
-| State | Values (later rows list only what changes from the first row) |
-|---|---|
-| default (same: focused) | size 0 x 0; background transparent; text Arial 13.33/normal 400, #000000 `light.bg.inverse`; opacity 0; placeholder #000000 `light.bg.inverse` |
+**Values (default).** size 462 x 18; background transparent; text Suisse Intl 12/18 400, #727272 `light.text.tertiary`; layers span.form-checkbox-mark 16.0x16.0 rgb(28, 28, 30) T:1px solid rgb(37, 37, 37) / R:1px solid rgb(37, 37, 37) / B:1px solid rgb(37, 37, 37) / L:1px solid rgb(37, 37, 37).
 
-![Terms checkbox default](components/crops/demo-terms-default.png) ![Terms checkbox focused](components/crops/demo-terms-focused.png)
+**Focus not capturable.** A real keyboard focus could not be held on this element (`focused` recorded `via: focus failed`), so its focus look is uncaptured — not measured as absent.
+
+Child layers that carry the look: span 16x16 background #1c1c1e `core.color.neutral.800` border 1px solid #252525 `core.color.neutral.700`.
+
+![Terms checkbox default](components/crops/demo-terms-default.png)
 
 #### Submit button
 The demo-request form's submit button; its states were measured but the button was never clicked — the form was never sent. Read as `demo-submit` on the demo-request page.
+Read on 2026-11-16.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -379,6 +407,7 @@ app.gladia.io / and /signup — the product shell's auth cards (e-mail/password,
 
 #### Login panel
 The sign-in card on app.gladia.io/ — the shell's only signed-out landing: fields, SSO and the sign-in action. Measured, never submitted. Read as `login-panel` on the login page.
+Read on 2026-11-15.
 
 **Values (default).** size 720 x 900; background transparent; text Inter 24/32 600, #ffffff `light.bg.primary`; layers div.relative.py-2 360.0x40.0 rgb(21, 24, 29) rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgb(46, 52, 62) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px 8px; div.relative.py-2 360.0x40.0 rgb(21, 24, 29) rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgb(46, 52, 62) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px .
 
@@ -388,6 +417,7 @@ Child layers that carry the look: div 360x40 background #15181d radius 8px shado
 
 #### Email field
 The e-mail input on the sign-in shell; focused and typed into then cleared — never submitted. Read as `login-email` on the login page.
+Read on 2026-11-15.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -397,6 +427,7 @@ No crop was saved for this entry (a whole page or a hidden element); the values 
 
 #### Password field
 The password input on the sign-in shell; focused and typed into then cleared — never submitted. Read as `login-password` on the login page.
+Read on 2026-11-15.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -406,6 +437,7 @@ The password input on the sign-in shell; focused and typed into then cleared —
 
 #### SSO button
 A "Continue with" SSO button on the sign-in shell; measured, never pressed. Read as `login-sso` on the login page.
+Read on 2026-11-15.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -416,6 +448,7 @@ A "Continue with" SSO button on the sign-in shell; measured, never pressed. Read
 
 #### Sign-in button
 The sign-in action; its states were measured but the button was never clicked — nothing was submitted. Read as `login-submit` on the login page.
+Read on 2026-11-15.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -431,6 +464,7 @@ Not on the page when it was captured.
 
 #### Signup panel
 The sign-up card on app.gladia.io/signup; measured, never submitted. Read as `signup-panel` on the signup page.
+Read on 2026-11-15.
 
 **Values (default).** size 720 x 900; background transparent; text Inter 24/32 600, #ffffff `light.bg.primary`; layers div.relative.py-2 360.0x40.0 rgb(21, 24, 29) rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgb(46, 52, 62) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px 8px; div.relative.py-2 360.0x40.0 rgb(21, 24, 29) rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgb(46, 52, 62) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px .
 
@@ -440,6 +474,7 @@ Child layers that carry the look: div 360x40 background #15181d radius 8px shado
 
 #### Email field (signup)
 The e-mail input on the sign-up shell; focused and typed into then cleared — never submitted. Read as `signup-email` on the signup page.
+Read on 2026-11-15.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -449,6 +484,7 @@ No crop was saved for this entry (a whole page or a hidden element); the values 
 
 #### SSO button (signup)
 A "Continue with" SSO button on /signup; measured, never pressed. Read as `signup-sso` on the signup page.
+Read on 2026-11-15.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -459,6 +495,7 @@ A "Continue with" SSO button on /signup; measured, never pressed. Read as `signu
 
 #### Sign-up button
 The sign-up action; measured, never clicked — nothing was submitted. Read as `signup-submit` on the signup page.
+Read on 2026-11-15.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -473,6 +510,7 @@ The product marketing pages (/product/speech-to-text-api and siblings): the mast
 
 #### Product headline
 The /product/speech-to-text-api masthead on the dark surface. Read as `prod-h1` on the product page.
+Read on 2026-11-16.
 
 **Values (default).** size 639.98 x 95.03; background transparent; text Suisse Intl 79.2/95.04 400, #ffffff `light.bg.primary`; transition opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1), transform 0.9s cubic-bezier(0.22, 1, 0.36, 1).
 
@@ -480,6 +518,7 @@ The /product/speech-to-text-api masthead on the dark surface. Read as `prod-h1` 
 
 #### Product CTA
 A call-to-action on the product page; measured, never followed. Read as `prod-cta` on the product page.
+Read on 2026-11-16.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -492,13 +531,15 @@ A call-to-action on the product page; measured, never followed. Read as `prod-ct
 
 #### Code sample
 A code sample block on the product page — mono face on an elevated surface. Read as `prod-code` on the product page.
+Read on 2026-11-16.
 
-**Values (default).** size 16.48 x 16.8; background transparent; text Suisse Intl 12/16.8 400, #727272 `light.text.tertiary`.
+**Values (default).** size 549.5 x 681.94; padding 20px; border T: 1px solid rgba(255, 255, 255, 0.08) `core.color.alpha.white8`; R: 1px solid rgba(255, 255, 255, 0.1); B: 1px solid rgba(255, 255, 255, 0.1); L: 1px solid rgba(255, 255, 255, 0.1); radius 0px 0px 16px 16px; background #141414; text Geist Mono 13/20.15 400, rgba(255, 255, 255, 0.82).
 
 ![Code sample default](components/crops/prod-code-default.png)
 
 #### Feature heading
 A feature section heading on the product page. Read as `prod-feature` on the product page.
+Read on 2026-11-16.
 
 **Values (default).** size 398.41 x 52; background transparent; text Suisse Intl 40/52 400, #ffffff `light.bg.primary`.
 
@@ -510,6 +551,7 @@ The /library index (the one marketing page on the light .light-mode scope), and 
 
 #### Library headline
 The /library masthead — the one marketing page that carries body.light-mode and paints the light token scope. Read as `lib-h1` on the library page.
+Read on 2026-11-15.
 
 **Values (default).** size 357.64 x 57.59; background transparent; text Suisse Intl 48/57.6 400, #000000 `light.bg.inverse`; transition opacity 0.8s cubic-bezier(0, 0, 0.2, 1), transform 0.8s cubic-bezier(0, 0, 0.2, 1).
 
@@ -517,6 +559,9 @@ The /library masthead — the one marketing page that carries body.light-mode an
 
 #### Resource card
 A content card on the library index; measured, never followed. Read as `lib-card` on the library page.
+Read on 2026-11-15. `hover` failed at capture (locator.hover: Element is not visible
+Call log:
+  - waiting for locator('a').filter({ has:).
 
 **Values (default).** size 0 x 0; padding 10px 32px; background transparent; text Suisse Intl 16/22.4 400, #000000 `light.bg.inverse`; transition background 0.16s cubic-bezier(0, 0, 0.2, 1).
 
@@ -524,6 +569,7 @@ No crop was saved for this entry (a whole page or a hidden element); the values 
 
 #### Blog headline
 The /blog index masthead on the legacy Webflow stack — its own stylesheets, painted light. Read as `blog-h1` on the blog page.
+Read on 2026-11-15.
 
 **Values (default).** size 0 x 0; background transparent; text Suisseintl 120/132 400, #ffffff `light.bg.primary`.
 
@@ -531,6 +577,9 @@ No crop was saved for this entry (a whole page or a hidden element); the values 
 
 #### Article card
 An article card in the blog index; measured, never followed. Read as `blog-card` on the blog page.
+Read on 2026-11-15. `hover` failed at capture (locator.hover: Element is not visible
+Call log:
+  - waiting for locator('a').filter({ has:).
 
 **Values (default).** size 0 x 0; padding 16px 12px; border 1px solid #0d0d0d; radius 12px; background transparent; text Suisseintl 16/24 400, #ffffff `light.bg.primary`.
 
@@ -542,6 +591,7 @@ docs.gladia.io — a Mintlify docs site with its own token layer and a real ligh
 
 #### Docs headline
 The docs introduction masthead on the Mintlify stack. Read as `docs-h1` on the docs introduction page.
+Read on 2026-11-15.
 
 **Values (default).** size 309.7 x 40; background transparent; text Inter 36/40 600, #181818.
 
@@ -549,6 +599,7 @@ The docs introduction masthead on the Mintlify stack. Read as `docs-h1` on the d
 
 #### Sidebar link
 A sidebar navigation link in the docs tree; measured, never followed. Read as `docs-nav-link` on the docs introduction page.
+Read on 2026-11-15.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -559,6 +610,7 @@ A sidebar navigation link in the docs tree; measured, never followed. Read as `d
 
 #### Doc page headline
 "Quickstart" — a docs article headline on the Mintlify stack. Read as `docs-h1b` on the docs quickstart page.
+Read on 2026-11-16.
 
 **Values (default).** size 172.02 x 40; background transparent; text Inter 36/40 600, #181818.
 
@@ -566,20 +618,20 @@ A sidebar navigation link in the docs tree; measured, never followed. Read as `d
 
 #### Search trigger
 The docs' search button — a local UI toggle for the search overlay; measured, never opened. Read as `docs-search` on the docs quickstart page.
+Read on 2026-11-16.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 0 x 0; background transparent; text Inter 16/24 400, #717171; layers svg.forced-colors:forced-color-adjust-none.forced-colors:bg-[color:CanvasText]! 0.0x0.0 rgb(113, 113, 113) |
-| pressed | text Inter 16/24 400, #515151 `light.text.link` |
+| default | size 224 x 36; padding 0px 12px 0px 14px; radius 12px; background #ffffff `light.bg.primary`; shadow oklab(0.704915 -0.00107276 -0.000326514 / 0.3) 0px 0px 0px 1px; text Inter 14/24 400, #717171; icon 16 x 16, #3f4040 |
+| hover | shadow oklab(0.434945 0.0000198185 0.00000870228 / 0.3) 0px 0px 0px 1px; icon 16 x 16, #262627 |
+| focus-visible | outline 1px auto #2e343e, offset 0px |
+| pressed | shadow oklab(0.434945 0.0000198185 0.00000870228 / 0.3) 0px 0px 0px 1px; icon 16 x 16, #262627 |
 
-**Focus not capturable.** A real keyboard focus could not be held on this element (`focus-visible` recorded `via: focus failed`), so its focus look is uncaptured — not measured as absent.
-
-Child layers that carry the look: svg 0x0 background #717171.
-
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Search trigger default](components/crops/docs-search-default.png) ![Search trigger hover](components/crops/docs-search-hover.png) ![Search trigger focus-visible](components/crops/docs-search-focus-visible.png) ![Search trigger pressed](components/crops/docs-search-pressed.png)
 
 #### Theme toggle
 The docs' theme-preference control — a local UI toggle that flips the Mintlify page between light and dark; measured at rest, never switched here (the dark surface is captured in the screenshots pass). Read as `docs-theme-btn` on the docs quickstart page.
+Read on 2026-11-16.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -589,14 +641,16 @@ The docs' theme-preference control — a local UI toggle that flips the Mintlify
 ![Theme toggle default](components/crops/docs-theme-btn-default.png) ![Theme toggle hover](components/crops/docs-theme-btn-hover.png) ![Theme toggle focus-visible](components/crops/docs-theme-btn-focus-visible.png) ![Theme toggle pressed](components/crops/docs-theme-btn-pressed.png)
 
 #### Code block
-A code block on the docs article; Mintlify's own syntax-highlight layer paints these. Read as `docs-code` on the docs quickstart page.
+A code block on the docs article; Mintlify's own syntax-highlight layer paints these. Inline code (`transcribe()` and friends) is a different element and never counts. Read as `docs-code` on the docs quickstart page.
+Read on 2026-11-16.
 
-**Values (default).** size 112 x 20; padding 2px 8px; radius 6px; background oklab(0.952046 0.000043273 0.0000191331 / 0.5); text Paper Mono 14/21 500, oklch(0.21 0.034 264.665).
+**Values (default).** size 592 x 24; background transparent; shadow rgba(59, 130, 246, 0.5) 0px 0px 0px 0px; text Paper Mono 14/24 400, #953800; layers pre.shiki.shiki-themes 592.0x24.0 rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(59, 130, 246, 0.5) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px; code 592.0x24.0 rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(59, 130, 246, 0.5) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0.
 
 ![Code block default](components/crops/docs-code-default.png)
 
 #### Code-language tab
 A language tab on a docs code sample; a local UI toggle — measured, never switched. Read as `docs-tab` on the docs quickstart page.
+Read on 2026-11-16.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -609,39 +663,42 @@ Child layers that carry the look: div 75x2 background #2e343e radius 9999px.
 
 ### Mobile (390 wide)
 
-The phone surface at 390 wide: the header with the 'Open menu' button, the nav sheet (role=dialog), the hero.
+The phone surface at 390 wide: the header with the 'Open menu' button, the nav sheet (div#mobileNav.mobile-nav), the hero.
 
 #### Mobile top bar
 The phone header at 390 wide: the wordmark and the "Open menu" button. Read as `m-topbar` on the home page at 390 wide.
+Read on 2026-11-16.
 
-**Values (default).** size 390 x 0; background transparent; text Suisse Intl 14/19.6 400, #000000 `light.bg.inverse`; layers nav.navbar 358.0x56.0 rgba(0, 0, 0, 0.65) T:1px solid rgb(31, 31, 31) / R:1px solid rgb(31, 31, 31) / B:1px solid rgb(31, 31, 31) / L:1px solid rgb(31, 31, 31) 20px; a.btn.btn-secondary 0.0x0.0 rgb(28, 28, 30) T:1px solid rgba(255, 255, 255, 0.12) / R:1px solid rgba(255, 255, 255, 0.12) / B:1px solid rgba(255, 255, 255, 0.12) / L:1px solid rgba(255, 255, 255, 0.12) 40px; a.btn.btn-primary 77.0x36..
+**Values (default).** size 358 x 56; border 1px solid #1f1f1f; radius 20px; background rgba(0, 0, 0, 0.65); text Suisse Intl 14/19.6 400, #000000 `light.bg.inverse`.
 
-Child layers that carry the look: nav 358x56 background rgba(0, 0, 0, 0.65) border 1px solid #1f1f1f radius 20px; a 0x0 background #1c1c1e `core.color.neutral.800` border 1px solid rgba(255, 255, 255, 0.12) `core.color.alpha.white12` radius 40px; a 77x36 background #ffffff `light.bg.primary` radius 40px.
-
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Mobile top bar default](components/crops/m-topbar-default.png)
 
 #### Mobile menu button
 The "Open menu" button — a local UI toggle; the opened state was measured after activating it. Read as `m-menu-btn` on the home page at 390 wide.
+Read on 2026-11-16.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, opened) | size 36 x 36; border 1px solid rgba(255, 255, 255, 0.1); radius 999px; background rgba(255, 255, 255, 0.04); text Suisse Intl 13.33/normal 400, #ffffff `light.bg.primary`; transition background 0.16s cubic-bezier(0, 0, 0.2, 1), border-color 0.16s cubic-bezier(0, 0, 0.2, 1) |
+| default | size 36 x 36; border 1px solid rgba(255, 255, 255, 0.1); radius 999px; background rgba(255, 255, 255, 0.04); text Suisse Intl 13.33/normal 400, #ffffff `light.bg.primary`; transition background 0.16s cubic-bezier(0, 0, 0.2, 1), border-color 0.16s cubic-bezier(0, 0, 0.2, 1) |
+| hover | border 1px solid rgba(255, 255, 255, 0.18); background rgba(255, 255, 255, 0.1) |
 | focus-visible | border 1px solid rgba(255, 255, 255, 0.18); background rgba(255, 255, 255, 0.1); outline 2px solid #947afc `light.bg.brand`, offset 2px |
-| pressed | border 1px solid rgba(255, 255, 255, 0.18); background rgba(255, 255, 255, 0.1) |
+| pressed, opened | border 1px solid rgba(255, 255, 255, 0.18); background rgba(255, 255, 255, 0.1) |
 
 ![Mobile menu button default](components/crops/m-menu-btn-default.png) ![Mobile menu button hover](components/crops/m-menu-btn-hover.png) ![Mobile menu button focus-visible](components/crops/m-menu-btn-focus-visible.png) ![Mobile menu button pressed](components/crops/m-menu-btn-pressed.png) ![Mobile menu button opened](components/crops/m-menu-btn-opened.png)
 
 #### Mobile nav overlay
-The navigation sheet opened by the menu button (role="dialog", aria-label="Navigation"); its links were never followed. Read as `m-drawer` on the home page at 390 wide.
+The navigation sheet opened by the menu button (div#mobileNav.mobile-nav, .is-open while aria-hidden flips to false); its links were never followed. Read as `m-drawer` on the home page at 390 wide.
+Read on 2026-11-16.
 
-**Values (default).** size 390 x 354; background transparent; text Axeptio Inter 24/30 700, #ffffff `light.bg.primary`; icon 60 x 60, #000000 `light.bg.inverse`; layers div.sc-idOiZg.jXQppL 390.0x354.0 rgb(8, 0, 0); div.sc-dIUeWJ.jpWSxN 390.0x259.0 rgb(8, 0, 0); div.sc-gsTEea.cThCJt 390.0x21.0 rgba(4, 4, 4, 0.2) T:1px solid rgb(237, 237, 237); div.sc-hKgJUU.fEwsMZ 390.0x95.0 T:1px solid rgb(237, 237, 237); button.sc-dlfnuX.kokjqF 130.2x94.0 rgb(255, 255, 255) R:1px solid rgb(237, 237, 237) rgba(0, 0, 0, 0) 0px 0px 0px 0px inset 0px 0px 0px 16px; button.sc-dlfnuX..
+**Values (default).** size 390 x 844; background transparent; text Suisse Intl 16/normal 500, #ffffff `light.bg.primary`; icon 16 x 16, rgba(255, 255, 255, 0.8); layers div.mobile-nav-backdrop 390.0x844.0 rgba(0, 0, 0, 0.55); div.mobile-nav-sheet 358.0x744.0 rgb(13, 13, 13) T:1px solid rgb(31, 31, 31) / R:1px solid rgb(31, 31, 31) / B:1px solid rgb(31, 31, 31) / L:1px solid rgb(31, 31, 31) 20px; div.mobile-nav-section.is-open 324.0x640.0 B:1px solid rgba(255, 255, 255, 0.06); span.mega-menu-item-icon 32.0x32.0 rgba(255, 255, 255, 0.05) T:1px solid rgba(255, 255, .
 
-Child layers that carry the look: div 390x354 background #080000; div 390x259 background #080000; div 390x21 background rgba(4, 4, 4, 0.2) border 1px solid #ededed.
+Child layers that carry the look: div 390x844 background rgba(0, 0, 0, 0.55); div 358x744 background #0d0d0d border 1px solid #1f1f1f radius 20px; div 324x640 border 1px solid rgba(255, 255, 255, 0.06).
 
 ![Mobile nav overlay default](components/crops/m-drawer-default.png)
 
 #### Mobile hero headline
 The masthead at 390 wide. Read as `m-hero-h1` on the home page at 390 wide.
+Read on 2026-11-16.
 
 **Values (default).** size 342 x 144; background transparent; text Suisse Intl 40/48 400, #000000 `light.bg.inverse`.
 
@@ -653,6 +710,7 @@ The page footer: sitemap columns, social icons and legal links.
 
 #### Footer
 The page footer: sitemap columns, social icons, legal links and the Gladia mark. Read as `footer` on the home page.
+Read on 2026-11-16.
 
 **Values (default).** size 1440 x 849.38; padding 72px 0px 64px 0px; border T: 1px solid #0c0c0c `core.color.neutral.900`; background transparent; text Suisse Intl 14/19.6 400, #ffffff `light.bg.primary`; icon 94.23 x 24, #ffffff `light.bg.primary`.
 
@@ -660,6 +718,7 @@ The page footer: sitemap columns, social icons, legal links and the Gladia mark.
 
 #### Footer link
 A footer sitemap link; measured, never followed. Read as `footer-link` on the home page.
+Read on 2026-11-16.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -672,10 +731,64 @@ A footer sitemap link; measured, never followed. Read as `footer-link` on the ho
 
 ## Icons
 
-No standalone SVG icon set was lifted on this pass; the icons in the crops and screenshots (the Gladia mark, the mega-menu glyphs, social glyphs, partner logos) are the product's artwork. Declared under layoutGaps in the catalog entry.
+54 distinct inline-SVG icons were collected from the live pages into [icons/](icons) by `tools/capture/icons.mjs`, indexed in [icons/INDEX.tsv](icons/INDEX.tsv): a file is named from `tools/capture/icon-names.tsv` where its geometry hash is listed, else the label or class of the control it sits in, else `icon-<hash>`; colour is kept as `currentColor` wherever it matched the text colour, so each icon recolours from CSS `color` the way it does on the site. The icons are the product's artwork — borrow the set's grammar (sizes, stroke-vs-fill, naming roles), never the artwork itself.
 
 | Icon | Rendered sizes | View box | Style | Seen on | Next to |
 |---|---|---|---|---|---|
+| [show-all-features](icons/show-all-features.svg) | 20x20 | 0 0 20 20 | stroke | home; product-stt; product-realtime; pricing; nav | Show all features / Is Gladia’s speech-to-text API more accu |
+| [expand](icons/expand.svg) | 14x14 | 0 0 16 16 | stroke | home; nav | Expand |
+| [icon-7b3ca081](icons/icon-7b3ca081.svg) | 16x16 | 0 0 16 16 | stroke | home; nav | WebSocket streaming, REST upload, and li / Any audio format  |
+| [see-the-report](icons/see-the-report.svg) | 11x11 | 0 0 12 12 | stroke | home; nav | See the report |
+| [video-stream](icons/video-stream.svg) | 14x14 | 0 0 14 14 | stroke | home; nav | Video Stream |
+| [icon-6ef40b59](icons/icon-6ef40b59.svg) | 16x16 | 0 0 16 16 | stroke | home; nav | Pipeline complete · 3.29s total |
+| [real-time](icons/real-time.svg) | 14x14 20x20 | 0 0 24 24 | fill | product-stt; product-realtime; use-case-voice-agents | Real-time |
+| [microphone](icons/microphone.svg) | 14x14 | 0 0 14 14 | stroke | home; nav | Microphone |
+| [phone-call](icons/phone-call.svg) | 14x14 | 0 0 14 14 | stroke | home; nav | Phone Call |
+| [audio-stream-received](icons/audio-stream-received.svg) | 14x14 | 0 0 14 14 | stroke | home; nav | Audio stream received |
+| [cell-icon](icons/cell-icon-0d131177.svg) | 20x20 36x36 | 0 0 24 24 | fill | product-stt; product-realtime | Word-level timestamps on every utterance |
+| [icon-2a0a5bac](icons/icon-2a0a5bac.svg) | 20x20 36x36 | 0 0 24 24 | fill | product-realtime; use-case-voice-agents | 99.9% uptime SLA on Enterprise |
+| [icon-33ba7308](icons/icon-33ba7308.svg) | 20x20 36x36 | 0 0 24 24 | fill | product-realtime; use-case-voice-agents | Custom vocabulary for product names, acr |
+| [cell-icon](icons/cell-icon-4d2c2c93.svg) | 20x20 | 0 0 24 24 | fill | product-stt; product-realtime |  |
+| [cell-icon](icons/cell-icon-4fbca3e7.svg) | 20x20 | 0 0 24 24 | fill | product-stt; product-realtime |  |
+| [cell-icon](icons/cell-icon-95116016.svg) | 20x20 | 0 0 24 24 | fill | product-stt; product-realtime |  |
+| [cell-icon](icons/cell-icon-98813b14.svg) | 20x20 | 0 0 24 24 | fill | product-stt; product-realtime |  |
+| [cell-icon](icons/cell-icon-9ec3b75a.svg) | 20x20 | 0 0 24 24 | fill | product-stt; product-realtime |  |
+| [cell-icon](icons/cell-icon-a3e2b2aa.svg) | 20x20 | 0 0 24 24 | fill | product-stt; use-case-voice-agents |  |
+| [see-our-startup-program](icons/see-our-startup-program.svg) | 14x14 | 0 0 16 16 | stroke | pricing; partners | See our Startup Program / Complete guide to building voice a |
+| [cell-icon](icons/cell-icon-e895a871.svg) | 20x20 | 0 0 24 24 | fill | product-stt; product-realtime |  |
+| [cell-icon](icons/cell-icon-efe59b19.svg) | 20x20 36x36 | 0 0 24 24 | fill | product-stt; product-realtime | 100+ languages, so no call falls outside |
+| [learn-more](icons/learn-more.svg) | 14x14 16x16 | 0 0 24 24 | stroke | product-stt; product-realtime | Learn more / Discover the Product / Read the Docs |
+| [cell-icon](icons/cell-icon-00879a4c.svg) | 20x20 | 0 0 24 24 | fill | product-stt |  |
+| [icon-0437c395](icons/icon-0437c395.svg) | 36x36 | 0 0 24 24 | fill | product-realtime | #1 on Switchboard: the lowest error rate |
+| [icon-0b661a95](icons/icon-0b661a95.svg) | 36x36 | 0 0 24 24 | fill | product-realtime | WebSockets, SIP, VoIP for any protocol |
+| [icon-1628de06](icons/icon-1628de06.svg) | 36x36 | 0 0 24 24 | fill | product-realtime | Code-switching detected mid-sentence, au / Auto language det |
+| [view-our-docs](icons/view-our-docs.svg) | 14x14 | 0 0 24 24 | stroke | use-case-voice-agents | View our docs |
+| [icon](icons/icon-21348b79.svg) | 20x20 | 0 0 24 24 | fill | product-stt |  |
+| [icon-2275df80](icons/icon-2275df80.svg) | 36x36 | 0 0 24 24 | fill | product-realtime | Audio enhancer: pre-processing for noisy |
+| [icon](icons/icon-29eb2b36.svg) | 20x20 | 0 0 24 24 | fill | product-stt |  |
+| [icon-2aec7ebb](icons/icon-2aec7ebb.svg) | 20x20 | 0 0 20 20 | stroke | demo-request | How do I get started with your API? / What authentication me |
+| [100-languages](icons/100-languages.svg) | 14x14 | 0 0 24 24 | fill | use-case-voice-agents | 100+ languages |
+| [icon-35d4c0db](icons/icon-35d4c0db.svg) | 36x36 | 0 0 24 24 | fill | product-realtime | Twilio, Recall, Meeting BaaS for telepho |
+| [enable-sound](icons/enable-sound.svg) | 16x16 | 0 0 16 16 | fill | solaria-3 | Enable sound |
+| [cell-icon](icons/cell-icon-4dd43b47.svg) | 20x20 | 0 0 24 24 | fill | product-stt |  |
+| [icon-535ce5b0](icons/icon-535ce5b0.svg) | 36x36 | 0 0 24 24 | fill | product-realtime | Sub-300ms end-to-end latency for uninter |
+| [gladia](icons/gladia.svg) | 24x24 | 0 0 82 82 | fill | nav | Gladia |
+| [25-concurrent-requests](icons/25-concurrent-requests.svg) | 16x16 | 0 0 16 16 | stroke | pricing | 25 concurrent requests / Rates drop as volume grows / Up to  |
+| [enterprise-terms](icons/enterprise-terms.svg) | 14x14 | 0 0 24 24 | fill | use-case-voice-agents | Enterprise terms |
+| [icon-68cba3f5](icons/icon-68cba3f5.svg) | 36x36 | 0 0 24 24 | fill | product-realtime | Adjustable endpointing to tune speed vs. |
+| [play-video](icons/play-video.svg) | 16x16 | 0 0 16 16 | fill | solaria-3 | Play video |
+| [replay-video](icons/replay-video.svg) | 16x16 | 0 0 24 24 | stroke | solaria-3 | Replay video |
+| [icon-8cbae4e5](icons/icon-8cbae4e5.svg) | 36x36 | 0 0 24 24 | fill | product-realtime | Multi-channel transcription with separat / Pipecat, LiveKit, |
+| [product](icons/product-8ef4f869.svg) | 12x12 | 0 0 12 12 | stroke | nav | Product |
+| [product](icons/product-b7561d22.svg) | 16x16 | 0 0 16 16 | stroke | nav | Product / Solutions / Developers |
+| [unmute-video](icons/unmute-video.svg) | 16x16 | 0 0 16 16 | fill | solaria-3 | Unmute video |
+| [cell-icon](icons/cell-icon-db87ac53.svg) | 20x20 | 0 0 24 24 | fill | product-realtime |  |
+| [icon-dbd3411d](icons/icon-dbd3411d.svg) | 36x36 | 0 0 24 24 | fill | product-realtime | Stable finals: partials resolve into acc |
+| [icon-ddaf5acc](icons/icon-ddaf5acc.svg) | 36x36 | 0 0 24 24 | fill | product-realtime | 103ms partial transcripts: words appear  |
+| [copy-sample-response](icons/copy-sample-response.svg) | 14x14 | 0 0 24 24 | stroke | product-stt | Copy sample response |
+| [icon-eed8bccb](icons/icon-eed8bccb.svg) | 20x20 | 0 0 20 20 | stroke | use-case-voice-agents | Does Gladia integrate with LiveKit, Pipe / What happens to l |
+| [icon](icons/icon-f01ede7a.svg) | 20x20 | 0 0 24 24 | fill | product-stt |  |
+| [icon-fbe2ec3d](icons/icon-fbe2ec3d.svg) | 16x16 | 0 0 24 24 | fill | product-realtime | #1 on European business audio and conver / Optimized for EN, |
 
 ## Gaps
 

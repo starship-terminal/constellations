@@ -1,6 +1,6 @@
 {
  "_meta": {
-  "read": "2026-11-15",
+  "read": "2026-11-16",
   "viewport": "1440 x 900 (mobile group 390 x 844); every www.gladia.io marketing page paints the dark :root token layer except /library (body.light-mode, light) and /blog (legacy Webflow stack, light); docs.gladia.io is a Mintlify site with its own layer and a real light/dark preference; app.gladia.io / and /signup are the product shell, painted dark",
   "tool": "tools/capture/public/measure.mjs",
   "sheets": {
@@ -1451,14 +1451,9 @@
      "animation": "auto ease 0s 1 normal none running none"
     },
     {
-     "selector": "body.homepage-v3 > #announceBar .ab__leaf-fall",
-     "transition": "",
-     "animation": "ab-leaf-fall var(--dur, 11s) linear var(--delay, 0s) infinite"
-    },
-    {
-     "selector": "body.homepage-v3 > #announceBar .ab__leaf-fall",
-     "transition": "",
-     "animation": "auto ease 0s 1 normal none running none"
+     "selector": "body.homepage-v3 > #announceBar .ab__link",
+     "transition": "transform 0.16s ease-out, background 0.16s ease-out",
+     "animation": ""
     },
     {
      "selector": "body.homepage-v3 > #announceBar .ab__close",
@@ -7450,8 +7445,8 @@
      "node": "div.ab",
      "z": "9000",
      "pos": "fixed",
-     "rect": "1160x73@140,802",
-     "text": "2026 Meeting Assistant Market Map I Fall"
+     "rect": "1160x75@140,800",
+     "text": "Join us at the OVHcloud AI Summit||Nov 1"
     },
     {
      "node": "nav.navbar",
@@ -7560,8 +7555,8 @@
      "node": "div.ab",
      "z": "9000",
      "pos": "fixed",
-     "rect": "342x142@24,689",
-     "text": "2026 Meeting Assistant Market Map I Fall"
+     "rect": "366x72@12,760",
+     "text": "Join us at the OVHcloud AI Summit||Save "
     },
     {
      "node": "nav.navbar",
@@ -7699,32 +7694,32 @@
   "mkt-header": {
    "states": {
     "default": {
-     "tag": "header",
-     "classes": "site-nav",
+     "tag": "nav",
+     "classes": "navbar",
      "text": "Product Solutions Pricing Developers Resources Company Request a demo Request a ",
      "rect": {
-      "x": 0,
-      "y": 0,
-      "w": 1440,
-      "h": 0
+      "x": 120,
+      "y": 24,
+      "w": 1200,
+      "h": 72
      },
      "style": {
       "display": "block",
-      "position": "relative",
+      "position": "fixed",
       "boxSizing": "border-box",
-      "width": "1440px",
-      "height": "0px",
+      "width": "1200px",
+      "height": "72px",
       "minWidth": "0px",
-      "maxWidth": "none",
+      "maxWidth": "1200px",
       "minHeight": "0px",
       "paddingTop": "0px",
       "paddingRight": "0px",
       "paddingBottom": "0px",
       "paddingLeft": "0px",
       "marginTop": "0px",
-      "marginRight": "0px",
+      "marginRight": "120px",
       "marginBottom": "0px",
-      "marginLeft": "0px",
+      "marginLeft": "120px",
       "gap": "normal",
       "rowGap": "normal",
       "columnGap": "normal",
@@ -7732,26 +7727,26 @@
       "alignItems": "normal",
       "justifyContent": "normal",
       "gridTemplateColumns": "none",
-      "borderTopWidth": "0px",
-      "borderTopStyle": "none",
-      "borderTopColor": "rgb(255, 255, 255)",
-      "borderRightWidth": "0px",
-      "borderRightStyle": "none",
-      "borderRightColor": "rgb(255, 255, 255)",
-      "borderBottomWidth": "0px",
-      "borderBottomStyle": "none",
-      "borderBottomColor": "rgb(255, 255, 255)",
-      "borderLeftWidth": "0px",
-      "borderLeftStyle": "none",
-      "borderLeftColor": "rgb(255, 255, 255)",
-      "borderTopLeftRadius": "0px",
-      "borderTopRightRadius": "0px",
-      "borderBottomRightRadius": "0px",
-      "borderBottomLeftRadius": "0px",
-      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "borderTopWidth": "1px",
+      "borderTopStyle": "solid",
+      "borderTopColor": "rgb(31, 31, 31)",
+      "borderRightWidth": "1px",
+      "borderRightStyle": "solid",
+      "borderRightColor": "rgb(31, 31, 31)",
+      "borderBottomWidth": "1px",
+      "borderBottomStyle": "solid",
+      "borderBottomColor": "rgb(31, 31, 31)",
+      "borderLeftWidth": "1px",
+      "borderLeftStyle": "solid",
+      "borderLeftColor": "rgb(31, 31, 31)",
+      "borderTopLeftRadius": "20px",
+      "borderTopRightRadius": "20px",
+      "borderBottomRightRadius": "20px",
+      "borderBottomLeftRadius": "20px",
+      "backgroundColor": "rgba(0, 0, 0, 0.65)",
       "backgroundImage": "none",
       "boxShadow": "none",
-      "backdropFilter": "none",
+      "backdropFilter": "blur(40px)",
       "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
@@ -7773,10 +7768,10 @@
       "transitionDelay": "0s",
       "cursor": "auto",
       "opacity": "1",
-      "transform": "none",
+      "transform": "matrix(1, 0, 0, 1, 0, 0)",
       "overflow": "visible",
       "zIndex": "100",
-      "top": "0px"
+      "top": "24px"
      },
      "paint": [
       {
@@ -7817,64 +7812,6 @@
        "size": "0.0x0.0",
        "bg": "rgb(255, 255, 255)",
        "radius": "1px"
-      },
-      {
-       "node": "a.btn.btn-secondary",
-       "size": "0.0x0.0",
-       "border": "T:1px solid rgba(255, 255, 255, 0.12) | R:1px solid rgba(255, 255, 255, 0.12) | B:1px solid rgba(255, 255, 255, 0.12) | L:1px solid rgba(255, 255, 255, 0.12)",
-       "bg": "rgb(28, 28, 30)",
-       "radius": "40px"
-      },
-      {
-       "node": "a.btn.btn-primary",
-       "size": "0.0x0.0",
-       "bg": "rgb(255, 255, 255)",
-       "radius": "40px"
-      },
-      {
-       "node": "div.mega-menu",
-       "size": "2.0x1.9",
-       "border": "T:1px solid rgba(148, 122, 252, 0.14) | R:1px solid rgba(148, 122, 252, 0.14) | B:1px solid rgba(148, 122, 252, 0.14) | L:1px solid rgba(148, 122, 252, 0.14)",
-       "bg": "rgba(6, 6, 8, 0.94)",
-       "shadow": "rgba(0, 0, 0, 0.72) 0px 32px 100px 0px, rgba(255, 255, 255, 0.04) 0px 0px 0px 1px inset, rgba(148, 122, 252, 0.07) 0px 0px 140px 0px",
-       "radius": "24px"
-      },
-      {
-       "node": "div::before.mega-menu",
-       "size": "0pxx0px",
-       "bgImage": "radial-gradient(70% 55% at 12% -5%, rgba(148, 122, 252, 0.18), rgba(0, 0, 0, 0) 58%), radial-gradient(45% 40% at 88% 110%, rgba(88, 28, 135, 0.12), rgba(0, 0, 0, 0) 55%)",
-       "radius": "24px"
-      },
-      {
-       "node": "div.mega-menu-panel-body.mega-menu-panel-body--product",
-       "size": "0.0x0.0",
-       "bg": "rgb(0, 0, 0)",
-       "radius": "23px"
-      },
-      {
-       "node": "div.mega-menu-grid.mega-menu-grid--flat",
-       "size": "0.0x0.0",
-       "bg": "rgb(0, 0, 0)"
-      },
-      {
-       "node": "div.mega-menu-overview-card",
-       "size": "0.0x0.0",
-       "border": "R:1px solid rgba(255, 255, 255, 0.1)",
-       "bgImage": "linear-gradient(160deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0) 42%), linear-gradient(rgba(0, 0, 0, 0.42) 0%, rgba(0, 0, 0, 0.58) 100%)",
-       "shadow": "rgba(255, 255, 255, 0.14) 0px 1px 0px 0px inset"
-      },
-      {
-       "node": "div::before.mega-menu-overview-card",
-       "size": "1pxxauto",
-       "bgImage": "linear-gradient(rgba(255, 255, 255, 0.45) 0%, rgba(255, 255, 255, 0.08) 45%, rgba(148, 122, 252, 0.4) 100%)"
-      }
-     ],
-     "ancestors": [
-      {
-       "up": 1,
-       "node": "body.homepage-v3",
-       "radius": "0px",
-       "bg": "rgb(0, 0, 0)"
       }
      ],
      "textStyle": {
@@ -7896,18 +7833,18 @@
       "stroke": "none",
       "color": "rgb(255, 255, 255)"
      },
-     "cropError": "locator.screenshot: Timeout 7992.945ms exceeded.\nCall log:\n  - taking element screenshot\n  - waiting for fonts to load..",
+     "crop": "components/crops/mkt-header-default.png",
      "via": "at rest",
-     "run": "2026-11-15"
+     "run": "2026-11-16"
     }
    },
    "page": "home",
-   "run": "2026-11-15",
+   "run": "2026-11-16",
    "url": "https://www.gladia.io/",
    "title": "Site header",
    "group": "Site chrome",
    "desc": "The floating rounded glass navbar at the top of every marketing page: the Gladia wordmark, the Product/Solutions/Developers/Resources/Company mega-menu triggers, Pricing, \"Request a demo\" and the signup CTA.",
-   "selector": "header.site-nav"
+   "selector": "header.site-nav nav.navbar"
   },
   "mkt-logo": {
    "states": {
@@ -8000,11 +7937,11 @@
      },
      "crop": "components/crops/mkt-logo-default.png",
      "via": "at rest",
-     "run": "2026-11-15"
+     "run": "2026-11-16"
     }
    },
    "page": "home",
-   "run": "2026-11-15",
+   "run": "2026-11-16",
    "url": "https://www.gladia.io/",
    "title": "Logo",
    "group": "Site chrome",
@@ -8114,7 +8051,7 @@
      },
      "crop": "components/crops/nav-menu-btn-default.png",
      "via": "at rest",
-     "run": "2026-11-15"
+     "run": "2026-11-16"
     },
     "hover": {
      "tag": "button",
@@ -8217,7 +8154,7 @@
      },
      "crop": "components/crops/nav-menu-btn-hover.png",
      "via": "mouse hover",
-     "run": "2026-11-15"
+     "run": "2026-11-16"
     },
     "focus-visible": {
      "tag": "button",
@@ -8327,7 +8264,7 @@
      },
      "crop": "components/crops/nav-menu-btn-focus-visible.png",
      "via": "Shift+Tab, Tab",
-     "run": "2026-11-15"
+     "run": "2026-11-16"
     },
     "pressed": {
      "tag": "button",
@@ -8430,11 +8367,11 @@
      },
      "crop": "components/crops/nav-menu-btn-pressed.png",
      "via": "CDP forcePseudoState :active:hover",
-     "run": "2026-11-15"
+     "run": "2026-11-16"
     }
    },
    "page": "home",
-   "run": "2026-11-15",
+   "run": "2026-11-16",
    "url": "https://www.gladia.io/",
    "title": "Mega-menu trigger",
    "group": "Site chrome",
@@ -8622,11 +8559,11 @@
      },
      "crop": "components/crops/mega-panel-default.png",
      "via": "at rest",
-     "run": "2026-11-15"
+     "run": "2026-11-16"
     }
    },
    "page": "home",
-   "run": "2026-11-15",
+   "run": "2026-11-16",
    "url": "https://www.gladia.io/",
    "title": "Mega-menu panel",
    "group": "Site chrome",
@@ -8746,7 +8683,7 @@
      },
      "crop": "components/crops/mega-item-default.png",
      "via": "at rest",
-     "run": "2026-11-15"
+     "run": "2026-11-16"
     },
     "hover": {
      "tag": "a",
@@ -8859,11 +8796,11 @@
      },
      "crop": "components/crops/mega-item-hover.png",
      "via": "mouse hover",
-     "run": "2026-11-15"
+     "run": "2026-11-16"
     }
    },
    "page": "home",
-   "run": "2026-11-15",
+   "run": "2026-11-16",
    "url": "https://www.gladia.io/",
    "title": "Mega-menu item",
    "group": "Site chrome",
@@ -8954,7 +8891,7 @@
      },
      "crop": "components/crops/nav-pricing-default.png",
      "via": "at rest",
-     "run": "2026-11-15"
+     "run": "2026-11-16"
     },
     "hover": {
      "tag": "a",
@@ -9038,7 +8975,7 @@
      },
      "crop": "components/crops/nav-pricing-hover.png",
      "via": "mouse hover",
-     "run": "2026-11-15"
+     "run": "2026-11-16"
     },
     "focus-visible": {
      "tag": "a",
@@ -9129,7 +9066,7 @@
      ],
      "crop": "components/crops/nav-pricing-focus-visible.png",
      "via": "Shift+Tab, Tab",
-     "run": "2026-11-15"
+     "run": "2026-11-16"
     },
     "pressed": {
      "tag": "a",
@@ -9213,11 +9150,11 @@
      },
      "crop": "components/crops/nav-pricing-pressed.png",
      "via": "CDP forcePseudoState :active:hover",
-     "run": "2026-11-15"
+     "run": "2026-11-16"
     }
    },
    "page": "home",
-   "run": "2026-11-15",
+   "run": "2026-11-16",
    "url": "https://www.gladia.io/",
    "title": "Nav link",
    "group": "Site chrome",
@@ -9329,7 +9266,7 @@
      },
      "crop": "components/crops/nav-demo-default.png",
      "via": "at rest",
-     "run": "2026-11-15"
+     "run": "2026-11-16"
     },
     "hover": {
      "tag": "a",
@@ -9434,7 +9371,7 @@
      },
      "crop": "components/crops/nav-demo-hover.png",
      "via": "mouse hover",
-     "run": "2026-11-15"
+     "run": "2026-11-16"
     },
     "focus-visible": {
      "tag": "a",
@@ -9540,7 +9477,7 @@
      },
      "crop": "components/crops/nav-demo-focus-visible.png",
      "via": "Shift+Tab, Tab",
-     "run": "2026-11-15"
+     "run": "2026-11-16"
     },
     "pressed": {
      "tag": "a",
@@ -9645,11 +9582,11 @@
      },
      "crop": "components/crops/nav-demo-pressed.png",
      "via": "CDP forcePseudoState :active:hover",
-     "run": "2026-11-15"
+     "run": "2026-11-16"
     }
    },
    "page": "home",
-   "run": "2026-11-15",
+   "run": "2026-11-16",
    "url": "https://www.gladia.io/",
    "title": "Demo link",
    "group": "Site chrome",
@@ -9760,7 +9697,7 @@
      },
      "crop": "components/crops/nav-cta-default.png",
      "via": "at rest",
-     "run": "2026-11-15"
+     "run": "2026-11-16"
     },
     "hover": {
      "tag": "a",
@@ -9864,7 +9801,7 @@
      },
      "crop": "components/crops/nav-cta-hover.png",
      "via": "mouse hover",
-     "run": "2026-11-15"
+     "run": "2026-11-16"
     },
     "focus-visible": {
      "tag": "a",
@@ -9969,7 +9906,7 @@
      },
      "crop": "components/crops/nav-cta-focus-visible.png",
      "via": "Shift+Tab, Tab",
-     "run": "2026-11-15"
+     "run": "2026-11-16"
     },
     "pressed": {
      "tag": "a",
@@ -10073,11 +10010,11 @@
      },
      "crop": "components/crops/nav-cta-pressed.png",
      "via": "CDP forcePseudoState :active:hover",
-     "run": "2026-11-15"
+     "run": "2026-11-16"
     }
    },
    "page": "home",
-   "run": "2026-11-15",
+   "run": "2026-11-16",
    "url": "https://www.gladia.io/",
    "title": "Header CTA",
    "group": "Site chrome",
@@ -10180,11 +10117,11 @@
      },
      "crop": "components/crops/hero-h1-default.png",
      "via": "at rest",
-     "run": "2026-11-15"
+     "run": "2026-11-16"
     }
    },
    "page": "home",
-   "run": "2026-11-15",
+   "run": "2026-11-16",
    "url": "https://www.gladia.io/",
    "title": "Hero headline",
    "group": "Home",
@@ -10194,57 +10131,57 @@
   "hero-badge": {
    "states": {
     "default": {
-     "tag": "a",
-     "classes": "mega-menu-news-callout",
-     "text": "New Blind test: compare STT models Upload your audio, vote on transcripts with m",
+     "tag": "div",
+     "classes": "announce-pill counter-pill",
+     "text": "Live 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7",
      "rect": {
-      "x": 0,
-      "y": 0,
-      "w": 0,
-      "h": 0
+      "x": 550.9,
+      "y": 132,
+      "w": 338.11,
+      "h": 37.59
      },
      "style": {
       "display": "flex",
-      "position": "relative",
+      "position": "static",
       "boxSizing": "border-box",
-      "width": "auto",
-      "height": "auto",
-      "minWidth": "0px",
+      "width": "338.109px",
+      "height": "37.5938px",
+      "minWidth": "auto",
       "maxWidth": "none",
-      "minHeight": "0px",
-      "paddingTop": "16px",
-      "paddingRight": "32px",
-      "paddingBottom": "16px",
-      "paddingLeft": "32px",
+      "minHeight": "auto",
+      "paddingTop": "4px",
+      "paddingRight": "12px",
+      "paddingBottom": "4px",
+      "paddingLeft": "4px",
       "marginTop": "0px",
       "marginRight": "0px",
       "marginBottom": "0px",
       "marginLeft": "0px",
-      "gap": "16px",
-      "rowGap": "16px",
-      "columnGap": "16px",
+      "gap": "8px",
+      "rowGap": "8px",
+      "columnGap": "8px",
       "flexDirection": "row",
       "alignItems": "center",
       "justifyContent": "normal",
       "gridTemplateColumns": "none",
       "borderTopWidth": "1px",
       "borderTopStyle": "solid",
-      "borderTopColor": "rgba(148, 122, 252, 0.18)",
-      "borderRightWidth": "0px",
-      "borderRightStyle": "none",
-      "borderRightColor": "rgb(255, 255, 255)",
-      "borderBottomWidth": "0px",
-      "borderBottomStyle": "none",
-      "borderBottomColor": "rgb(255, 255, 255)",
-      "borderLeftWidth": "0px",
-      "borderLeftStyle": "none",
-      "borderLeftColor": "rgb(255, 255, 255)",
-      "borderTopLeftRadius": "0px",
-      "borderTopRightRadius": "0px",
-      "borderBottomRightRadius": "0px",
-      "borderBottomLeftRadius": "0px",
-      "backgroundColor": "rgb(0, 0, 0)",
-      "backgroundImage": "linear-gradient(90deg, rgba(148, 122, 252, 0.1) 0%, rgba(148, 122, 252, 0.03) 42%, rgba(0, 0, 0, 0) 100%), none",
+      "borderTopColor": "rgba(0, 0, 0, 0.12)",
+      "borderRightWidth": "1px",
+      "borderRightStyle": "solid",
+      "borderRightColor": "rgba(0, 0, 0, 0.12)",
+      "borderBottomWidth": "1px",
+      "borderBottomStyle": "solid",
+      "borderBottomColor": "rgba(0, 0, 0, 0.12)",
+      "borderLeftWidth": "1px",
+      "borderLeftStyle": "solid",
+      "borderLeftColor": "rgba(0, 0, 0, 0.12)",
+      "borderTopLeftRadius": "9999px",
+      "borderTopRightRadius": "9999px",
+      "borderBottomRightRadius": "9999px",
+      "borderBottomLeftRadius": "9999px",
+      "backgroundColor": "rgb(255, 255, 255)",
+      "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
       "outlineWidth": "0px",
@@ -10262,46 +10199,63 @@
       "textDecorationColor": "rgb(255, 255, 255)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
-      "transitionProperty": "background, border-color",
-      "transitionDuration": "0.16s, 0.16s",
-      "transitionTimingFunction": "cubic-bezier(0, 0, 0.2, 1), cubic-bezier(0, 0, 0.2, 1)",
-      "transitionDelay": "0s, 0s",
-      "cursor": "pointer",
+      "transitionProperty": "border-color",
+      "transitionDuration": "0.16s",
+      "transitionTimingFunction": "cubic-bezier(0, 0, 0.2, 1)",
+      "transitionDelay": "0s",
+      "cursor": "default",
       "opacity": "1",
-      "transform": "none",
+      "transform": "matrix(1, 0, 0, 1, 0, 0)",
       "overflow": "visible",
-      "zIndex": "1",
+      "zIndex": "auto",
       "top": "auto"
      },
      "paint": [
       {
-       "node": "a.mega-menu-news-callout",
-       "size": "0.0x0.0",
-       "border": "T:1px solid rgba(148, 122, 252, 0.18)",
-       "bg": "rgb(0, 0, 0)",
-       "bgImage": "linear-gradient(90deg, rgba(148, 122, 252, 0.1) 0%, rgba(148, 122, 252, 0.03) 42%, rgba(0, 0, 0, 0) 100%), none"
+       "node": "div.announce-pill.counter-pill",
+       "size": "338.1x37.6",
+       "border": "T:1px solid rgba(0, 0, 0, 0.12) | R:1px solid rgba(0, 0, 0, 0.12) | B:1px solid rgba(0, 0, 0, 0.12) | L:1px solid rgba(0, 0, 0, 0.12)",
+       "bg": "rgb(255, 255, 255)",
+       "radius": "9999px"
       },
       {
-       "node": "span.mega-menu-news-callout-tag",
-       "size": "0.0x0.0",
-       "border": "T:1px solid rgba(148, 122, 252, 0.32) | R:1px solid rgba(148, 122, 252, 0.32) | B:1px solid rgba(148, 122, 252, 0.32) | L:1px solid rgba(148, 122, 252, 0.32)",
-       "bg": "rgba(148, 122, 252, 0.16)",
-       "radius": "999px"
+       "node": "span.pill-badge",
+       "size": "53.0x27.6",
+       "bg": "rgba(0, 0, 0, 0.06)",
+       "radius": "9999px"
       },
       {
-       "node": "span::before.mega-menu-news-callout-tag",
-       "size": "5pxx5px",
+       "node": "span.badge-dot.pulse",
+       "size": "6.0x6.0",
+       "bg": "rgb(148, 122, 252)",
+       "radius": "50%"
+      },
+      {
+       "node": "span::after.badge-dot.pulse",
+       "size": "12pxx12px",
        "bg": "rgb(148, 122, 252)",
        "radius": "50%"
       }
      ],
-     "cropError": "no box for hero-badge-default",
+     "textStyle": {
+      "node": "span.pill-badge",
+      "text": "Live",
+      "fontFamily": "\"Suisse Intl\", -apple-system, BlinkMacSystemFont, sans-serif",
+      "fontSize": "14px",
+      "lineHeight": "19.6px",
+      "fontWeight": "500",
+      "letterSpacing": "normal",
+      "color": "rgba(0, 0, 0, 0.8)",
+      "textDecorationLine": "none",
+      "textTransform": "none"
+     },
+     "crop": "components/crops/hero-badge-default.png",
      "via": "at rest",
-     "run": "2026-11-15"
+     "run": "2026-11-16"
     }
    },
    "page": "home",
-   "run": "2026-11-15",
+   "run": "2026-11-16",
    "url": "https://www.gladia.io/",
    "title": "Hero badge",
    "group": "Home",
@@ -10392,11 +10346,11 @@
      },
      "crop": "components/crops/section-h2-default.png",
      "via": "at rest",
-     "run": "2026-11-15"
+     "run": "2026-11-16"
     }
    },
    "page": "home",
-   "run": "2026-11-15",
+   "run": "2026-11-16",
    "url": "https://www.gladia.io/",
    "title": "Section heading",
    "group": "Home",
@@ -10406,7 +10360,7 @@
   "glass-card": {
    "states": {},
    "page": "home",
-   "run": "2026-11-15",
+   "run": "2026-11-16",
    "url": "https://www.gladia.io/",
    "title": "Glass card",
    "group": "Home",
@@ -10565,11 +10519,11 @@
      },
      "crop": "components/crops/footer-default.png",
      "via": "at rest",
-     "run": "2026-11-15"
+     "run": "2026-11-16"
     }
    },
    "page": "home",
-   "run": "2026-11-15",
+   "run": "2026-11-16",
    "url": "https://www.gladia.io/",
    "title": "Footer",
    "group": "Footer",
@@ -10660,7 +10614,7 @@
      },
      "crop": "components/crops/footer-link-default.png",
      "via": "at rest",
-     "run": "2026-11-15"
+     "run": "2026-11-16"
     },
     "hover": {
      "tag": "a",
@@ -10744,7 +10698,7 @@
      },
      "crop": "components/crops/footer-link-hover.png",
      "via": "mouse hover",
-     "run": "2026-11-15"
+     "run": "2026-11-16"
     },
     "focus-visible": {
      "tag": "a",
@@ -10835,7 +10789,7 @@
      ],
      "crop": "components/crops/footer-link-focus-visible.png",
      "via": "Shift+Tab, Tab",
-     "run": "2026-11-15"
+     "run": "2026-11-16"
     },
     "pressed": {
      "tag": "a",
@@ -10919,11 +10873,11 @@
      },
      "crop": "components/crops/footer-link-pressed.png",
      "via": "CDP forcePseudoState :active:hover",
-     "run": "2026-11-15"
+     "run": "2026-11-16"
     }
    },
    "page": "home",
-   "run": "2026-11-15",
+   "run": "2026-11-16",
    "url": "https://www.gladia.io/",
    "title": "Footer link",
    "group": "Footer",
@@ -11014,11 +10968,11 @@
      },
      "crop": "components/crops/prod-h1-default.png",
      "via": "at rest",
-     "run": "2026-11-15"
+     "run": "2026-11-16"
     }
    },
    "page": "product",
-   "run": "2026-11-15",
+   "run": "2026-11-16",
    "url": "https://www.gladia.io/product/speech-to-text-api",
    "title": "Product headline",
    "group": "Product pages",
@@ -11130,7 +11084,7 @@
      },
      "crop": "components/crops/prod-cta-default.png",
      "via": "at rest",
-     "run": "2026-11-15"
+     "run": "2026-11-16"
     },
     "hover": {
      "tag": "a",
@@ -11235,7 +11189,7 @@
      },
      "crop": "components/crops/prod-cta-hover.png",
      "via": "mouse hover",
-     "run": "2026-11-15"
+     "run": "2026-11-16"
     },
     "focus-visible": {
      "tag": "a",
@@ -11341,7 +11295,7 @@
      },
      "crop": "components/crops/prod-cta-focus-visible.png",
      "via": "Shift+Tab, Tab",
-     "run": "2026-11-15"
+     "run": "2026-11-16"
     },
     "pressed": {
      "tag": "a",
@@ -11446,11 +11400,11 @@
      },
      "crop": "components/crops/prod-cta-pressed.png",
      "via": "CDP forcePseudoState :active:hover",
-     "run": "2026-11-15"
+     "run": "2026-11-16"
     }
    },
    "page": "product",
-   "run": "2026-11-15",
+   "run": "2026-11-16",
    "url": "https://www.gladia.io/product/speech-to-text-api",
    "title": "Product CTA",
    "group": "Product pages",
@@ -11460,28 +11414,28 @@
   "prod-code": {
    "states": {
     "default": {
-     "tag": "span",
-     "classes": "stt-lang__code",
-     "text": "EN",
+     "tag": "pre",
+     "classes": "stt-dev-code__body",
+     "text": "{ \"result\": { \"transcription\": { \"languages\": [\"en\", \"es\"], \"utterances\": [ { \"s",
      "rect": {
-      "x": 379.3,
-      "y": 419.2,
-      "w": 16.48,
-      "h": 16.8
+      "x": 717.5,
+      "y": 109.1,
+      "w": 549.5,
+      "h": 681.94
      },
      "style": {
       "display": "block",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "16.4844px",
-      "height": "16.7969px",
+      "width": "549.5px",
+      "height": "681.938px",
       "minWidth": "auto",
       "maxWidth": "none",
       "minHeight": "auto",
-      "paddingTop": "0px",
-      "paddingRight": "0px",
-      "paddingBottom": "0px",
-      "paddingLeft": "0px",
+      "paddingTop": "20px",
+      "paddingRight": "20px",
+      "paddingBottom": "20px",
+      "paddingLeft": "20px",
       "marginTop": "0px",
       "marginRight": "0px",
       "marginBottom": "0px",
@@ -11493,39 +11447,39 @@
       "alignItems": "normal",
       "justifyContent": "normal",
       "gridTemplateColumns": "none",
-      "borderTopWidth": "0px",
-      "borderTopStyle": "none",
-      "borderTopColor": "rgb(114, 114, 114)",
-      "borderRightWidth": "0px",
-      "borderRightStyle": "none",
-      "borderRightColor": "rgb(114, 114, 114)",
-      "borderBottomWidth": "0px",
-      "borderBottomStyle": "none",
-      "borderBottomColor": "rgb(114, 114, 114)",
-      "borderLeftWidth": "0px",
-      "borderLeftStyle": "none",
-      "borderLeftColor": "rgb(114, 114, 114)",
+      "borderTopWidth": "1px",
+      "borderTopStyle": "solid",
+      "borderTopColor": "rgba(255, 255, 255, 0.08)",
+      "borderRightWidth": "1px",
+      "borderRightStyle": "solid",
+      "borderRightColor": "rgba(255, 255, 255, 0.1)",
+      "borderBottomWidth": "1px",
+      "borderBottomStyle": "solid",
+      "borderBottomColor": "rgba(255, 255, 255, 0.1)",
+      "borderLeftWidth": "1px",
+      "borderLeftStyle": "solid",
+      "borderLeftColor": "rgba(255, 255, 255, 0.1)",
       "borderTopLeftRadius": "0px",
       "borderTopRightRadius": "0px",
-      "borderBottomRightRadius": "0px",
-      "borderBottomLeftRadius": "0px",
-      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "borderBottomRightRadius": "16px",
+      "borderBottomLeftRadius": "16px",
+      "backgroundColor": "rgb(20, 20, 20)",
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
       "outlineWidth": "0px",
       "outlineStyle": "none",
-      "outlineColor": "rgb(114, 114, 114)",
+      "outlineColor": "rgba(255, 255, 255, 0.82)",
       "outlineOffset": "0px",
-      "fontFamily": "\"Suisse Intl\", -apple-system, BlinkMacSystemFont, sans-serif",
-      "fontSize": "12px",
+      "fontFamily": "\"Geist Mono\", \"JetBrains Mono\", monospace",
+      "fontSize": "13px",
       "fontWeight": "400",
-      "lineHeight": "16.8px",
-      "letterSpacing": "0.24px",
-      "textTransform": "uppercase",
-      "color": "rgb(114, 114, 114)",
+      "lineHeight": "20.15px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgba(255, 255, 255, 0.82)",
       "textDecorationLine": "none",
-      "textDecorationColor": "rgb(114, 114, 114)",
+      "textDecorationColor": "rgba(255, 255, 255, 0.82)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
       "transitionProperty": "all",
@@ -11535,30 +11489,51 @@
       "cursor": "auto",
       "opacity": "1",
       "transform": "none",
-      "overflow": "visible",
+      "overflow": "auto",
       "zIndex": "auto",
       "top": "auto"
      },
+     "paint": [
+      {
+       "node": "pre.stt-dev-code__body",
+       "size": "549.5x681.9",
+       "border": "T:1px solid rgba(255, 255, 255, 0.08) | R:1px solid rgba(255, 255, 255, 0.1) | B:1px solid rgba(255, 255, 255, 0.1) | L:1px solid rgba(255, 255, 255, 0.1)",
+       "bg": "rgb(20, 20, 20)",
+       "radius": "0px 0px 16px 16px"
+      }
+     ],
      "ancestors": [
       {
        "up": 1,
-       "node": "div.stt-lang",
+       "node": "div.stt-dev-code",
        "radius": "0px",
-       "bg": "rgb(0, 0, 0)"
+       "bg": "rgb(17, 17, 17)"
       }
      ],
+     "textStyle": {
+      "node": "code",
+      "text": "{\n  \"result\": {\n    \"transcription\": {\n ",
+      "fontFamily": "\"Geist Mono\", \"JetBrains Mono\", monospace",
+      "fontSize": "13px",
+      "lineHeight": "20.15px",
+      "fontWeight": "400",
+      "letterSpacing": "normal",
+      "color": "rgba(255, 255, 255, 0.82)",
+      "textDecorationLine": "none",
+      "textTransform": "none"
+     },
      "crop": "components/crops/prod-code-default.png",
      "via": "at rest",
-     "run": "2026-11-15"
+     "run": "2026-11-16"
     }
    },
    "page": "product",
-   "run": "2026-11-15",
+   "run": "2026-11-16",
    "url": "https://www.gladia.io/product/speech-to-text-api",
    "title": "Code sample",
    "group": "Product pages",
    "desc": "A code sample block on the product page — mono face on an elevated surface.",
-   "selector": "product pre/code"
+   "selector": "pre.stt-dev-code__body"
   },
   "prod-feature": {
    "states": {
@@ -11568,7 +11543,7 @@
      "text": "Two ways to transcribe",
      "rect": {
       "x": 520.8,
-      "y": 408.7,
+      "y": 407.1,
       "w": 398.41,
       "h": 52
      },
@@ -11644,11 +11619,11 @@
      },
      "crop": "components/crops/prod-feature-default.png",
      "via": "at rest",
-     "run": "2026-11-15"
+     "run": "2026-11-16"
     }
    },
    "page": "product",
-   "run": "2026-11-15",
+   "run": "2026-11-16",
    "url": "https://www.gladia.io/product/speech-to-text-api",
    "title": "Feature heading",
    "group": "Product pages",
@@ -11739,11 +11714,11 @@
      },
      "crop": "components/crops/price-h1-default.png",
      "via": "at rest",
-     "run": "2026-11-15"
+     "run": "2026-11-16"
     }
    },
    "page": "pricing",
-   "run": "2026-11-15",
+   "run": "2026-11-16",
    "url": "https://www.gladia.io/pricing",
    "title": "Pricing headline",
    "group": "Pricing",
@@ -11842,7 +11817,7 @@
      ],
      "crop": "components/crops/price-mode-async-default.png",
      "via": "at rest",
-     "run": "2026-11-15"
+     "run": "2026-11-16"
     },
     "hover": {
      "tag": "button",
@@ -11934,7 +11909,7 @@
      ],
      "crop": "components/crops/price-mode-async-hover.png",
      "via": "mouse hover",
-     "run": "2026-11-15"
+     "run": "2026-11-16"
     },
     "focus-visible": {
      "tag": "button",
@@ -12034,7 +12009,7 @@
      ],
      "crop": "components/crops/price-mode-async-focus-visible.png",
      "via": "Shift+Tab, Tab",
-     "run": "2026-11-15"
+     "run": "2026-11-16"
     },
     "pressed": {
      "tag": "button",
@@ -12126,7 +12101,7 @@
      ],
      "crop": "components/crops/price-mode-async-pressed.png",
      "via": "CDP forcePseudoState :active:hover",
-     "run": "2026-11-15"
+     "run": "2026-11-16"
     },
     "opened": {
      "tag": "button",
@@ -12218,11 +12193,11 @@
      ],
      "crop": "components/crops/price-mode-async-opened.png",
      "via": "own toggle",
-     "run": "2026-11-15"
+     "run": "2026-11-16"
     }
    },
    "page": "pricing",
-   "run": "2026-11-15",
+   "run": "2026-11-16",
    "url": "https://www.gladia.io/pricing",
    "title": "Pricing mode: Async",
    "group": "Pricing",
@@ -12321,7 +12296,7 @@
      ],
      "crop": "components/crops/price-mode-rt-default.png",
      "via": "at rest",
-     "run": "2026-11-15"
+     "run": "2026-11-16"
     },
     "hover": {
      "tag": "button",
@@ -12413,7 +12388,7 @@
      ],
      "crop": "components/crops/price-mode-rt-hover.png",
      "via": "mouse hover",
-     "run": "2026-11-15"
+     "run": "2026-11-16"
     },
     "focus-visible": {
      "tag": "button",
@@ -12513,7 +12488,7 @@
      ],
      "crop": "components/crops/price-mode-rt-focus-visible.png",
      "via": "Shift+Tab, Tab",
-     "run": "2026-11-15"
+     "run": "2026-11-16"
     },
     "pressed": {
      "tag": "button",
@@ -12605,7 +12580,7 @@
      ],
      "crop": "components/crops/price-mode-rt-pressed.png",
      "via": "CDP forcePseudoState :active:hover",
-     "run": "2026-11-15"
+     "run": "2026-11-16"
     },
     "opened": {
      "tag": "button",
@@ -12697,11 +12672,11 @@
      ],
      "crop": "components/crops/price-mode-rt-opened.png",
      "via": "own toggle",
-     "run": "2026-11-15"
+     "run": "2026-11-16"
     }
    },
    "page": "pricing",
-   "run": "2026-11-15",
+   "run": "2026-11-16",
    "url": "https://www.gladia.io/pricing",
    "title": "Pricing mode: Real-time",
    "group": "Pricing",
@@ -12712,58 +12687,58 @@
    "states": {
     "default": {
      "tag": "div",
-     "classes": "pricing-grid pricing-grid--duo pricing-grid--plans reveal",
+     "classes": "pricing-card glass-card",
      "text": "",
      "rect": {
       "x": 232,
       "y": 6.2,
-      "w": 880,
+      "w": 428,
       "h": 888.13
      },
      "style": {
-      "display": "grid",
-      "position": "static",
+      "display": "flex",
+      "position": "relative",
       "boxSizing": "border-box",
-      "width": "880px",
+      "width": "428px",
       "height": "888.125px",
       "minWidth": "auto",
-      "maxWidth": "880px",
+      "maxWidth": "none",
       "minHeight": "auto",
-      "paddingTop": "0px",
-      "paddingRight": "0px",
-      "paddingBottom": "0px",
-      "paddingLeft": "0px",
+      "paddingTop": "48px",
+      "paddingRight": "40px",
+      "paddingBottom": "40px",
+      "paddingLeft": "40px",
       "marginTop": "0px",
       "marginRight": "0px",
       "marginBottom": "0px",
       "marginLeft": "0px",
-      "gap": "24px",
-      "rowGap": "24px",
-      "columnGap": "24px",
-      "flexDirection": "row",
-      "alignItems": "stretch",
+      "gap": "32px",
+      "rowGap": "32px",
+      "columnGap": "32px",
+      "flexDirection": "column",
+      "alignItems": "normal",
       "justifyContent": "normal",
-      "gridTemplateColumns": "428px 428px",
-      "borderTopWidth": "0px",
-      "borderTopStyle": "none",
-      "borderTopColor": "rgb(255, 255, 255)",
-      "borderRightWidth": "0px",
-      "borderRightStyle": "none",
-      "borderRightColor": "rgb(255, 255, 255)",
-      "borderBottomWidth": "0px",
-      "borderBottomStyle": "none",
-      "borderBottomColor": "rgb(255, 255, 255)",
-      "borderLeftWidth": "0px",
-      "borderLeftStyle": "none",
-      "borderLeftColor": "rgb(255, 255, 255)",
-      "borderTopLeftRadius": "0px",
-      "borderTopRightRadius": "0px",
-      "borderBottomRightRadius": "0px",
-      "borderBottomLeftRadius": "0px",
+      "gridTemplateColumns": "none",
+      "borderTopWidth": "1px",
+      "borderTopStyle": "solid",
+      "borderTopColor": "rgba(255, 255, 255, 0.08)",
+      "borderRightWidth": "1px",
+      "borderRightStyle": "solid",
+      "borderRightColor": "rgba(255, 255, 255, 0.08)",
+      "borderBottomWidth": "1px",
+      "borderBottomStyle": "solid",
+      "borderBottomColor": "rgba(255, 255, 255, 0.08)",
+      "borderLeftWidth": "1px",
+      "borderLeftStyle": "solid",
+      "borderLeftColor": "rgba(255, 255, 255, 0.08)",
+      "borderTopLeftRadius": "24px",
+      "borderTopRightRadius": "24px",
+      "borderBottomRightRadius": "24px",
+      "borderBottomLeftRadius": "24px",
       "backgroundColor": "rgba(0, 0, 0, 0)",
       "backgroundImage": "none",
-      "boxShadow": "none",
-      "backdropFilter": "none",
+      "boxShadow": "rgba(0, 0, 0, 0.22) 0px 8px 28px 0px",
+      "backdropFilter": "blur(22px) saturate(1.65)",
       "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
@@ -12779,16 +12754,32 @@
       "textDecorationColor": "rgb(255, 255, 255)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
-      "transitionProperty": "opacity, filter, transform, visibility",
-      "transitionDuration": "0.28s, 0.28s, 0.32s, 0s",
-      "transitionTimingFunction": "cubic-bezier(0.4, 0, 1, 1), cubic-bezier(0.4, 0, 1, 1), cubic-bezier(0.4, 0, 1, 1), linear",
-      "transitionDelay": "0s, 0s, 0s, 0.32s",
+      "transitionProperty": "opacity, transform, border-color, box-shadow",
+      "transitionDuration": "1.4s, 1.4s, 0.32s, 0.32s",
+      "transitionTimingFunction": "cubic-bezier(0, 0, 0.2, 1), cubic-bezier(0, 0, 0.2, 1), cubic-bezier(0, 0, 0.2, 1), cubic-bezier(0, 0, 0.2, 1)",
+      "transitionDelay": "0.1s",
       "cursor": "auto",
-      "opacity": "0",
-      "transform": "matrix(1, 0, 0, 1, -48, 0)",
-      "overflow": "visible",
+      "opacity": "1",
+      "transform": "matrix(1, 0, 0, 1, 0, 0)",
+      "overflow": "hidden",
       "zIndex": "auto",
-      "top": "auto"
+      "top": "0px"
+     },
+     "::before": {
+      "content": "\"\"",
+      "width": "426px",
+      "height": "886.125px",
+      "position": "absolute",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "backgroundImage": "linear-gradient(rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.6) 55%, rgba(0, 0, 0, 0.52))",
+      "boxShadow": "none",
+      "borderTopWidth": "0px",
+      "borderTopStyle": "none",
+      "borderTopColor": "rgb(255, 255, 255)",
+      "borderRadius": "24px",
+      "inset": "0px 0px 0px 0px",
+      "opacity": "1",
+      "transition": "opacity 0.32s cubic-bezier(0, 0, 0.2, 1)"
      },
      "paint": [
       {
@@ -12814,31 +12805,6 @@
        "node": "ul.pricing-card__features",
        "size": "346.0x528.1",
        "border": "T:1px solid rgba(255, 255, 255, 0.08)"
-      },
-      {
-       "node": "div.pricing-card.pricing-card--featured",
-       "size": "428.0x888.1",
-       "border": "T:1px solid color(srgb 0.580392 0.478431 0.988235 / 0.22) | R:1px solid color(srgb 0.580392 0.478431 0.988235 / 0.22) | B:1px solid color(srgb 0.580392 0.478431 0.988235 / 0.22) | L:1px solid color(srgb 0.580392 0.478431 0.988235 / 0.22)",
-       "shadow": "rgba(0, 0, 0, 0.22) 0px 8px 28px 0px, color(srgb 0.580392 0.478431 0.988235 / 0.1) 0px 0px 48px 0px",
-       "radius": "24px"
-      },
-      {
-       "node": "div::before.pricing-card.pricing-card--featured",
-       "size": "426pxx886.125px",
-       "bgImage": "linear-gradient(rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.6) 55%, rgba(0, 0, 0, 0.52))",
-       "radius": "24px"
-      },
-      {
-       "node": "a.btn.btn-secondary",
-       "size": "346.0x40.0",
-       "border": "T:1px solid rgba(255, 255, 255, 0.12) | R:1px solid rgba(255, 255, 255, 0.12) | B:1px solid rgba(255, 255, 255, 0.12) | L:1px solid rgba(255, 255, 255, 0.12)",
-       "bg": "rgb(28, 28, 30)",
-       "radius": "40px"
-      },
-      {
-       "node": "ul.pricing-card__features",
-       "size": "346.0x528.1",
-       "border": "T:1px solid rgba(255, 255, 255, 0.08)"
       }
      ],
      "icon": {
@@ -12848,263 +12814,433 @@
       "stroke": "rgb(163, 163, 163)",
       "color": "rgb(163, 163, 163)"
      },
-     "cropError": "locator.screenshot: Timeout 7982.317999999999ms exceeded.\nCall log:\n  - taking element screenshot\n  - waiting for fonts ",
+     "cropError": "locator.screenshot: Timeout 7990.544999999984ms exceeded.\nCall log:\n  - taking element screenshot\n  - waiting for fonts ",
      "via": "at rest",
-     "run": "2026-11-15"
+     "run": "2026-11-16"
     }
    },
    "page": "pricing",
-   "run": "2026-11-15",
+   "run": "2026-11-16",
    "url": "https://www.gladia.io/pricing",
    "title": "Plan card",
    "group": "Pricing",
-   "desc": "A plan card on /pricing — one column of the pricing grid: name, per-hour price, feature list and its CTA.",
-   "selector": "pricing plan card"
+   "desc": "A plan card on /pricing — one column of the pricing grid (.pricing-grid--plans > .pricing-card): name, per-hour price, feature list and its CTA.",
+   "selector": ".pricing-card"
   },
   "plan-cta": {
    "states": {
     "default": {
      "tag": "a",
-     "classes": "mega-menu-news-callout",
-     "text": "Startup Studio $3,000 in credits for startups 12 months of credits and a dedicat",
+     "classes": "btn btn-primary btn-md",
+     "text": "",
      "rect": {
-      "x": 0,
-      "y": 0,
-      "w": 0,
-      "h": 0
+      "x": 273,
+      "y": 430.2,
+      "w": 346,
+      "h": 40
      },
      "style": {
-      "display": "flex",
-      "position": "relative",
+      "display": "inline-flex",
+      "position": "static",
       "boxSizing": "border-box",
-      "width": "auto",
-      "height": "auto",
+      "width": "346px",
+      "height": "40px",
       "minWidth": "0px",
       "maxWidth": "none",
       "minHeight": "0px",
-      "paddingTop": "16px",
-      "paddingRight": "32px",
-      "paddingBottom": "16px",
-      "paddingLeft": "32px",
+      "paddingTop": "8px",
+      "paddingRight": "20px",
+      "paddingBottom": "8px",
+      "paddingLeft": "20px",
       "marginTop": "0px",
       "marginRight": "0px",
       "marginBottom": "0px",
       "marginLeft": "0px",
-      "gap": "16px",
-      "rowGap": "16px",
-      "columnGap": "16px",
+      "gap": "normal",
+      "rowGap": "normal",
+      "columnGap": "normal",
       "flexDirection": "row",
       "alignItems": "center",
-      "justifyContent": "normal",
+      "justifyContent": "center",
       "gridTemplateColumns": "none",
-      "borderTopWidth": "1px",
-      "borderTopStyle": "solid",
-      "borderTopColor": "rgba(148, 122, 252, 0.18)",
+      "borderTopWidth": "0px",
+      "borderTopStyle": "none",
+      "borderTopColor": "rgb(0, 0, 0)",
       "borderRightWidth": "0px",
       "borderRightStyle": "none",
-      "borderRightColor": "rgb(255, 255, 255)",
+      "borderRightColor": "rgb(0, 0, 0)",
       "borderBottomWidth": "0px",
       "borderBottomStyle": "none",
-      "borderBottomColor": "rgb(255, 255, 255)",
+      "borderBottomColor": "rgb(0, 0, 0)",
       "borderLeftWidth": "0px",
       "borderLeftStyle": "none",
-      "borderLeftColor": "rgb(255, 255, 255)",
-      "borderTopLeftRadius": "0px",
-      "borderTopRightRadius": "0px",
-      "borderBottomRightRadius": "0px",
-      "borderBottomLeftRadius": "0px",
-      "backgroundColor": "rgb(0, 0, 0)",
-      "backgroundImage": "linear-gradient(90deg, rgba(148, 122, 252, 0.1) 0%, rgba(148, 122, 252, 0.03) 42%, rgba(0, 0, 0, 0) 100%), none",
+      "borderLeftColor": "rgb(0, 0, 0)",
+      "borderTopLeftRadius": "40px",
+      "borderTopRightRadius": "40px",
+      "borderBottomRightRadius": "40px",
+      "borderBottomLeftRadius": "40px",
+      "backgroundColor": "rgb(255, 255, 255)",
+      "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
       "outlineWidth": "0px",
       "outlineStyle": "none",
-      "outlineColor": "rgb(255, 255, 255)",
+      "outlineColor": "rgb(0, 0, 0)",
       "outlineOffset": "0px",
       "fontFamily": "\"Suisse Intl\", -apple-system, BlinkMacSystemFont, sans-serif",
-      "fontSize": "16px",
+      "fontSize": "14px",
       "fontWeight": "400",
-      "lineHeight": "22.4px",
+      "lineHeight": "19.6px",
       "letterSpacing": "normal",
       "textTransform": "none",
-      "color": "rgb(255, 255, 255)",
+      "color": "rgb(0, 0, 0)",
       "textDecorationLine": "none",
-      "textDecorationColor": "rgb(255, 255, 255)",
+      "textDecorationColor": "rgb(0, 0, 0)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
-      "transitionProperty": "background, border-color",
-      "transitionDuration": "0.16s, 0.16s",
-      "transitionTimingFunction": "cubic-bezier(0, 0, 0.2, 1), cubic-bezier(0, 0, 0.2, 1)",
-      "transitionDelay": "0s, 0s",
+      "transitionProperty": "transform",
+      "transitionDuration": "0.16s",
+      "transitionTimingFunction": "cubic-bezier(0, 0, 0.2, 1)",
+      "transitionDelay": "0s",
       "cursor": "pointer",
       "opacity": "1",
       "transform": "none",
       "overflow": "visible",
-      "zIndex": "1",
+      "zIndex": "auto",
       "top": "auto"
      },
      "paint": [
       {
-       "node": "a.mega-menu-news-callout",
-       "size": "0.0x0.0",
-       "border": "T:1px solid rgba(148, 122, 252, 0.18)",
-       "bg": "rgb(0, 0, 0)",
-       "bgImage": "linear-gradient(90deg, rgba(148, 122, 252, 0.1) 0%, rgba(148, 122, 252, 0.03) 42%, rgba(0, 0, 0, 0) 100%), none"
-      },
-      {
-       "node": "span.mega-menu-news-callout-tag",
-       "size": "0.0x0.0",
-       "border": "T:1px solid rgba(148, 122, 252, 0.32) | R:1px solid rgba(148, 122, 252, 0.32) | B:1px solid rgba(148, 122, 252, 0.32) | L:1px solid rgba(148, 122, 252, 0.32)",
-       "bg": "rgba(148, 122, 252, 0.16)",
-       "radius": "999px"
-      },
-      {
-       "node": "span::before.mega-menu-news-callout-tag",
-       "size": "5pxx5px",
-       "bg": "rgb(148, 122, 252)",
-       "radius": "50%"
+       "node": "a.btn.btn-primary",
+       "size": "346.0x40.0",
+       "bg": "rgb(255, 255, 255)",
+       "radius": "40px"
       }
      ],
      "ancestors": [
       {
-       "up": 1,
-       "node": "div.mega-menu-panel-body.mega-menu-panel-body--product",
-       "radius": "23px",
-       "bg": "rgb(0, 0, 0)"
+       "up": 3,
+       "node": "div.pricing-card.glass-card",
+       "shadow": "rgba(0, 0, 0, 0.22) 0px 8px 28px 0px",
+       "radius": "24px",
+       "bg": "rgba(0, 0, 0, 0)"
       }
      ],
-     "cropError": "no box for plan-cta-default",
+     "crop": "components/crops/plan-cta-default.png",
      "via": "at rest",
-     "run": "2026-11-15"
+     "run": "2026-11-16"
     },
     "hover": {
-     "error": "locator.hover: Element is not visible\nCall log:\n  - waiting for locator('a, button').filter({ hasText: /Start with|credits|Contact|Talk to|Get started/ }).first().first().first()\n    - locator resolve"
+     "tag": "a",
+     "classes": "btn btn-primary btn-md",
+     "text": "",
+     "rect": {
+      "x": 273,
+      "y": 430.2,
+      "w": 346,
+      "h": 40
+     },
+     "style": {
+      "display": "inline-flex",
+      "position": "static",
+      "boxSizing": "border-box",
+      "width": "346px",
+      "height": "40px",
+      "minWidth": "0px",
+      "maxWidth": "none",
+      "minHeight": "0px",
+      "paddingTop": "8px",
+      "paddingRight": "20px",
+      "paddingBottom": "8px",
+      "paddingLeft": "20px",
+      "marginTop": "0px",
+      "marginRight": "0px",
+      "marginBottom": "0px",
+      "marginLeft": "0px",
+      "gap": "normal",
+      "rowGap": "normal",
+      "columnGap": "normal",
+      "flexDirection": "row",
+      "alignItems": "center",
+      "justifyContent": "center",
+      "gridTemplateColumns": "none",
+      "borderTopWidth": "0px",
+      "borderTopStyle": "none",
+      "borderTopColor": "rgb(0, 0, 0)",
+      "borderRightWidth": "0px",
+      "borderRightStyle": "none",
+      "borderRightColor": "rgb(0, 0, 0)",
+      "borderBottomWidth": "0px",
+      "borderBottomStyle": "none",
+      "borderBottomColor": "rgb(0, 0, 0)",
+      "borderLeftWidth": "0px",
+      "borderLeftStyle": "none",
+      "borderLeftColor": "rgb(0, 0, 0)",
+      "borderTopLeftRadius": "40px",
+      "borderTopRightRadius": "40px",
+      "borderBottomRightRadius": "40px",
+      "borderBottomLeftRadius": "40px",
+      "backgroundColor": "rgb(255, 255, 255)",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "backdropFilter": "none",
+      "outlineWidth": "0px",
+      "outlineStyle": "none",
+      "outlineColor": "rgb(0, 0, 0)",
+      "outlineOffset": "0px",
+      "fontFamily": "\"Suisse Intl\", -apple-system, BlinkMacSystemFont, sans-serif",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "lineHeight": "19.6px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(0, 0, 0)",
+      "textDecorationLine": "none",
+      "textDecorationColor": "rgb(0, 0, 0)",
+      "textDecorationThickness": "auto",
+      "textUnderlineOffset": "auto",
+      "transitionProperty": "transform",
+      "transitionDuration": "0.16s",
+      "transitionTimingFunction": "cubic-bezier(0, 0, 0.2, 1)",
+      "transitionDelay": "0s",
+      "cursor": "pointer",
+      "opacity": "1",
+      "transform": "none",
+      "overflow": "visible",
+      "zIndex": "auto",
+      "top": "auto"
+     },
+     "paint": [
+      {
+       "node": "a.btn.btn-primary",
+       "size": "346.0x40.0",
+       "bg": "rgb(255, 255, 255)",
+       "radius": "40px"
+      }
+     ],
+     "ancestors": [
+      {
+       "up": 3,
+       "node": "div.pricing-card.glass-card",
+       "shadow": "rgba(0, 0, 0, 0.22) 0px 8px 28px 0px",
+       "radius": "24px",
+       "bg": "rgba(0, 0, 0, 0)"
+      }
+     ],
+     "crop": "components/crops/plan-cta-hover.png",
+     "via": "mouse hover",
+     "run": "2026-11-16"
     },
     "focus-visible": {
      "tag": "a",
-     "classes": "mega-menu-news-callout",
-     "text": "Startup Studio $3,000 in credits for startups 12 months of credits and a dedicat",
+     "classes": "btn btn-primary btn-md",
+     "text": "",
      "rect": {
-      "x": 0,
-      "y": 0,
-      "w": 0,
-      "h": 0
+      "x": 273,
+      "y": 430.2,
+      "w": 346,
+      "h": 40
      },
      "style": {
-      "display": "flex",
-      "position": "relative",
+      "display": "inline-flex",
+      "position": "static",
       "boxSizing": "border-box",
-      "width": "auto",
-      "height": "auto",
+      "width": "346px",
+      "height": "40px",
       "minWidth": "0px",
       "maxWidth": "none",
       "minHeight": "0px",
-      "paddingTop": "16px",
-      "paddingRight": "32px",
-      "paddingBottom": "16px",
-      "paddingLeft": "32px",
+      "paddingTop": "8px",
+      "paddingRight": "20px",
+      "paddingBottom": "8px",
+      "paddingLeft": "20px",
       "marginTop": "0px",
       "marginRight": "0px",
       "marginBottom": "0px",
       "marginLeft": "0px",
-      "gap": "16px",
-      "rowGap": "16px",
-      "columnGap": "16px",
+      "gap": "normal",
+      "rowGap": "normal",
+      "columnGap": "normal",
       "flexDirection": "row",
       "alignItems": "center",
-      "justifyContent": "normal",
+      "justifyContent": "center",
       "gridTemplateColumns": "none",
-      "borderTopWidth": "1px",
-      "borderTopStyle": "solid",
-      "borderTopColor": "rgba(148, 122, 252, 0.18)",
+      "borderTopWidth": "0px",
+      "borderTopStyle": "none",
+      "borderTopColor": "rgb(0, 0, 0)",
       "borderRightWidth": "0px",
       "borderRightStyle": "none",
-      "borderRightColor": "rgb(255, 255, 255)",
+      "borderRightColor": "rgb(0, 0, 0)",
       "borderBottomWidth": "0px",
       "borderBottomStyle": "none",
-      "borderBottomColor": "rgb(255, 255, 255)",
+      "borderBottomColor": "rgb(0, 0, 0)",
       "borderLeftWidth": "0px",
       "borderLeftStyle": "none",
-      "borderLeftColor": "rgb(255, 255, 255)",
-      "borderTopLeftRadius": "0px",
-      "borderTopRightRadius": "0px",
-      "borderBottomRightRadius": "0px",
-      "borderBottomLeftRadius": "0px",
-      "backgroundColor": "rgb(0, 0, 0)",
-      "backgroundImage": "linear-gradient(90deg, rgba(148, 122, 252, 0.1) 0%, rgba(148, 122, 252, 0.03) 42%, rgba(0, 0, 0, 0) 100%), none",
+      "borderLeftColor": "rgb(0, 0, 0)",
+      "borderTopLeftRadius": "40px",
+      "borderTopRightRadius": "40px",
+      "borderBottomRightRadius": "40px",
+      "borderBottomLeftRadius": "40px",
+      "backgroundColor": "rgb(255, 255, 255)",
+      "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
       "outlineWidth": "0px",
       "outlineStyle": "none",
-      "outlineColor": "rgb(255, 255, 255)",
+      "outlineColor": "rgb(0, 0, 0)",
       "outlineOffset": "0px",
       "fontFamily": "\"Suisse Intl\", -apple-system, BlinkMacSystemFont, sans-serif",
-      "fontSize": "16px",
+      "fontSize": "14px",
       "fontWeight": "400",
-      "lineHeight": "22.4px",
+      "lineHeight": "19.6px",
       "letterSpacing": "normal",
       "textTransform": "none",
-      "color": "rgb(255, 255, 255)",
+      "color": "rgb(0, 0, 0)",
       "textDecorationLine": "none",
-      "textDecorationColor": "rgb(255, 255, 255)",
+      "textDecorationColor": "rgb(0, 0, 0)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
-      "transitionProperty": "background, border-color",
-      "transitionDuration": "0.16s, 0.16s",
-      "transitionTimingFunction": "cubic-bezier(0, 0, 0.2, 1), cubic-bezier(0, 0, 0.2, 1)",
-      "transitionDelay": "0s, 0s",
+      "transitionProperty": "transform",
+      "transitionDuration": "0.16s",
+      "transitionTimingFunction": "cubic-bezier(0, 0, 0.2, 1)",
+      "transitionDelay": "0s",
       "cursor": "pointer",
       "opacity": "1",
       "transform": "none",
       "overflow": "visible",
-      "zIndex": "1",
+      "zIndex": "auto",
       "top": "auto"
      },
      "paint": [
       {
-       "node": "a.mega-menu-news-callout",
-       "size": "0.0x0.0",
-       "border": "T:1px solid rgba(148, 122, 252, 0.18)",
-       "bg": "rgb(0, 0, 0)",
-       "bgImage": "linear-gradient(90deg, rgba(148, 122, 252, 0.1) 0%, rgba(148, 122, 252, 0.03) 42%, rgba(0, 0, 0, 0) 100%), none"
-      },
-      {
-       "node": "span.mega-menu-news-callout-tag",
-       "size": "0.0x0.0",
-       "border": "T:1px solid rgba(148, 122, 252, 0.32) | R:1px solid rgba(148, 122, 252, 0.32) | B:1px solid rgba(148, 122, 252, 0.32) | L:1px solid rgba(148, 122, 252, 0.32)",
-       "bg": "rgba(148, 122, 252, 0.16)",
-       "radius": "999px"
-      },
-      {
-       "node": "span::before.mega-menu-news-callout-tag",
-       "size": "5pxx5px",
-       "bg": "rgb(148, 122, 252)",
-       "radius": "50%"
+       "node": "a.btn.btn-primary",
+       "size": "346.0x40.0",
+       "bg": "rgb(255, 255, 255)",
+       "radius": "40px"
       }
      ],
      "ancestors": [
       {
-       "up": 1,
-       "node": "div.mega-menu-panel-body.mega-menu-panel-body--product",
-       "radius": "23px",
-       "bg": "rgb(0, 0, 0)"
+       "up": 3,
+       "node": "div.pricing-card.glass-card",
+       "shadow": "rgba(0, 0, 0, 0.22) 0px 8px 28px 0px",
+       "radius": "24px",
+       "bg": "rgba(0, 0, 0, 0)"
       }
      ],
-     "cropError": "no box for plan-cta-focus-visible",
+     "crop": "components/crops/plan-cta-focus-visible.png",
      "via": "focus failed",
-     "run": "2026-11-15"
+     "run": "2026-11-16"
     },
     "pressed": {
-     "error": "locator.evaluate: Timeout 8000ms exceeded.\nCall log:\n  - waiting for locator('a, button').filter({ hasText: /Start with|credits|Contact|Talk to|Get started/ }).first().first().first()\n"
+     "tag": "a",
+     "classes": "btn btn-primary btn-md",
+     "text": "",
+     "rect": {
+      "x": 269.5,
+      "y": 429.8,
+      "w": 352.92,
+      "h": 40.8
+     },
+     "style": {
+      "display": "inline-flex",
+      "position": "static",
+      "boxSizing": "border-box",
+      "width": "346px",
+      "height": "40px",
+      "minWidth": "0px",
+      "maxWidth": "none",
+      "minHeight": "0px",
+      "paddingTop": "8px",
+      "paddingRight": "20px",
+      "paddingBottom": "8px",
+      "paddingLeft": "20px",
+      "marginTop": "0px",
+      "marginRight": "0px",
+      "marginBottom": "0px",
+      "marginLeft": "0px",
+      "gap": "normal",
+      "rowGap": "normal",
+      "columnGap": "normal",
+      "flexDirection": "row",
+      "alignItems": "center",
+      "justifyContent": "center",
+      "gridTemplateColumns": "none",
+      "borderTopWidth": "0px",
+      "borderTopStyle": "none",
+      "borderTopColor": "rgb(0, 0, 0)",
+      "borderRightWidth": "0px",
+      "borderRightStyle": "none",
+      "borderRightColor": "rgb(0, 0, 0)",
+      "borderBottomWidth": "0px",
+      "borderBottomStyle": "none",
+      "borderBottomColor": "rgb(0, 0, 0)",
+      "borderLeftWidth": "0px",
+      "borderLeftStyle": "none",
+      "borderLeftColor": "rgb(0, 0, 0)",
+      "borderTopLeftRadius": "40px",
+      "borderTopRightRadius": "40px",
+      "borderBottomRightRadius": "40px",
+      "borderBottomLeftRadius": "40px",
+      "backgroundColor": "rgb(255, 255, 255)",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "backdropFilter": "none",
+      "outlineWidth": "0px",
+      "outlineStyle": "none",
+      "outlineColor": "rgb(0, 0, 0)",
+      "outlineOffset": "0px",
+      "fontFamily": "\"Suisse Intl\", -apple-system, BlinkMacSystemFont, sans-serif",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "lineHeight": "19.6px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(0, 0, 0)",
+      "textDecorationLine": "none",
+      "textDecorationColor": "rgb(0, 0, 0)",
+      "textDecorationThickness": "auto",
+      "textUnderlineOffset": "auto",
+      "transitionProperty": "transform",
+      "transitionDuration": "0.16s",
+      "transitionTimingFunction": "cubic-bezier(0, 0, 0.2, 1)",
+      "transitionDelay": "0s",
+      "cursor": "pointer",
+      "opacity": "1",
+      "transform": "matrix(1.02, 0, 0, 1.02, 0, 0)",
+      "overflow": "visible",
+      "zIndex": "auto",
+      "top": "auto"
+     },
+     "paint": [
+      {
+       "node": "a.btn.btn-primary",
+       "size": "352.9x40.8",
+       "bg": "rgb(255, 255, 255)",
+       "radius": "40px"
+      }
+     ],
+     "ancestors": [
+      {
+       "up": 3,
+       "node": "div.pricing-card.glass-card",
+       "shadow": "rgba(0, 0, 0, 0.22) 0px 8px 28px 0px",
+       "radius": "24px",
+       "bg": "rgba(0, 0, 0, 0)"
+      }
+     ],
+     "crop": "components/crops/plan-cta-pressed.png",
+     "via": "CDP forcePseudoState :active:hover",
+     "run": "2026-11-16"
     }
    },
    "page": "pricing",
-   "run": "2026-11-15",
+   "run": "2026-11-16",
    "url": "https://www.gladia.io/pricing",
    "title": "Plan CTA",
    "group": "Pricing",
    "desc": "A plan card's primary action (\"Start with 50€ free credits\" or the enterprise contact link); measured, never followed.",
-   "selector": "plan card CTA"
+   "selector": ".pricing-card CTA"
   },
   "calc-hours": {
    "states": {
@@ -13113,7 +13249,7 @@
      "classes": "",
      "text": "",
      "rect": {
-      "x": 566.5,
+      "x": 568.5,
       "y": 400.7,
       "w": 72,
       "h": 19.59
@@ -13203,7 +13339,7 @@
      },
      "crop": "components/crops/calc-hours-default.png",
      "via": "at rest",
-     "run": "2026-11-15"
+     "run": "2026-11-16"
     },
     "focused": {
      "tag": "input",
@@ -13300,7 +13436,7 @@
      },
      "crop": "components/crops/calc-hours-focused.png",
      "via": "clicked into the field",
-     "run": "2026-11-15"
+     "run": "2026-11-16"
     },
     "filled": {
      "tag": "input",
@@ -13397,11 +13533,11 @@
      },
      "crop": "components/crops/calc-hours-filled.png",
      "via": "typed \"500\", then deleted; nothing sent",
-     "run": "2026-11-15"
+     "run": "2026-11-16"
     }
    },
    "page": "pricing",
-   "run": "2026-11-15",
+   "run": "2026-11-16",
    "url": "https://www.gladia.io/pricing",
    "title": "Calculator hours field",
    "group": "Pricing",
@@ -13506,7 +13642,7 @@
      },
      "crop": "components/crops/calc-range-default.png",
      "via": "at rest",
-     "run": "2026-11-15"
+     "run": "2026-11-16"
     },
     "focused": {
      "tag": "input",
@@ -13554,18 +13690,18 @@
       "borderLeftWidth": "0px",
       "borderLeftStyle": "none",
       "borderLeftColor": "rgb(157, 150, 142)",
-      "borderTopLeftRadius": "0px",
-      "borderTopRightRadius": "0px",
-      "borderBottomRightRadius": "0px",
-      "borderBottomLeftRadius": "0px",
+      "borderTopLeftRadius": "8px",
+      "borderTopRightRadius": "8px",
+      "borderBottomRightRadius": "8px",
+      "borderBottomLeftRadius": "8px",
       "backgroundColor": "rgba(0, 0, 0, 0)",
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
-      "outlineStyle": "none",
-      "outlineColor": "rgb(157, 150, 142)",
-      "outlineOffset": "0px",
+      "outlineWidth": "2px",
+      "outlineStyle": "solid",
+      "outlineColor": "rgb(146, 91, 255)",
+      "outlineOffset": "4px",
       "fontFamily": "Arial",
       "fontSize": "13.3333px",
       "fontWeight": "400",
@@ -13588,6 +13724,14 @@
       "zIndex": "auto",
       "top": "auto"
      },
+     "paint": [
+      {
+       "node": "input.pricing-calc__range",
+       "size": "391.0x20.0",
+       "outline": "2px solid rgb(146, 91, 255) offset 4px",
+       "radius": "8px"
+      }
+     ],
      "ancestors": [
       {
        "up": 3,
@@ -13603,12 +13747,12 @@
       "fontSize": "13.3333px"
      },
      "crop": "components/crops/calc-range-focused.png",
-     "via": "clicked into the field",
-     "run": "2026-11-15"
+     "via": "keyboard focus (Shift+Tab, Tab), never clicked",
+     "run": "2026-11-16"
     }
    },
    "page": "pricing",
-   "run": "2026-11-15",
+   "run": "2026-11-16",
    "url": "https://www.gladia.io/pricing",
    "title": "Calculator range",
    "group": "Pricing",
@@ -13704,7 +13848,7 @@
      },
      "crop": "components/crops/calc-feature-default.png",
      "via": "at rest",
-     "run": "2026-11-15"
+     "run": "2026-11-16"
     },
     "focused": {
      "tag": "input",
@@ -13760,10 +13904,10 @@
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
-      "outlineStyle": "none",
-      "outlineColor": "rgb(0, 0, 0)",
-      "outlineOffset": "0px",
+      "outlineWidth": "1px",
+      "outlineStyle": "auto",
+      "outlineColor": "rgb(16, 16, 16)",
+      "outlineOffset": "2px",
       "fontFamily": "Arial",
       "fontSize": "13.3333px",
       "fontWeight": "400",
@@ -13786,18 +13930,25 @@
       "zIndex": "auto",
       "top": "14px"
      },
+     "paint": [
+      {
+       "node": "input",
+       "size": "13.0x13.0",
+       "outline": "1px auto rgb(16, 16, 16) offset 2px"
+      }
+     ],
      "placeholder": {
       "color": "rgb(0, 0, 0)",
       "opacity": "1",
       "fontSize": "13.3333px"
      },
      "crop": "components/crops/calc-feature-focused.png",
-     "via": "clicked into the field",
-     "run": "2026-11-15"
+     "via": "keyboard focus (Shift+Tab, Tab), never clicked",
+     "run": "2026-11-16"
     }
    },
    "page": "pricing",
-   "run": "2026-11-15",
+   "run": "2026-11-16",
    "url": "https://www.gladia.io/pricing",
    "title": "Calculator feature checkbox",
    "group": "Pricing",
@@ -13895,7 +14046,7 @@
      },
      "crop": "components/crops/faq-acc-default.png",
      "via": "at rest",
-     "run": "2026-11-15"
+     "run": "2026-11-16"
     },
     "opened": {
      "tag": "button",
@@ -13986,11 +14137,11 @@
      },
      "crop": "components/crops/faq-acc-opened.png",
      "via": "own toggle",
-     "run": "2026-11-15"
+     "run": "2026-11-16"
     }
    },
    "page": "pricing",
-   "run": "2026-11-15",
+   "run": "2026-11-16",
    "url": "https://www.gladia.io/pricing",
    "title": "FAQ accordion",
    "group": "Pricing",
@@ -14081,11 +14232,11 @@
      },
      "crop": "components/crops/demo-h1-default.png",
      "via": "at rest",
-     "run": "2026-11-15"
+     "run": "2026-11-16"
     }
    },
    "page": "demo",
-   "run": "2026-11-15",
+   "run": "2026-11-16",
    "url": "https://www.gladia.io/demo-request",
    "title": "Demo headline",
    "group": "Demo request form",
@@ -14199,7 +14350,7 @@
      },
      "crop": "components/crops/demo-email-default.png",
      "via": "at rest",
-     "run": "2026-11-15"
+     "run": "2026-11-16"
     },
     "focused": {
      "tag": "input",
@@ -14207,7 +14358,7 @@
      "text": "Work email",
      "rect": {
       "x": 185,
-      "y": 428.2,
+      "y": 529.2,
       "w": 462,
       "h": 44
      },
@@ -14306,7 +14457,7 @@
      },
      "crop": "components/crops/demo-email-focused.png",
      "via": "clicked into the field",
-     "run": "2026-11-15"
+     "run": "2026-11-16"
     },
     "filled": {
      "tag": "input",
@@ -14314,7 +14465,7 @@
      "text": "Work email",
      "rect": {
       "x": 185,
-      "y": 428.2,
+      "y": 529.2,
       "w": 462,
       "h": 44
      },
@@ -14413,11 +14564,11 @@
      },
      "crop": "components/crops/demo-email-filled.png",
      "via": "typed \"name@example.com\", then deleted; nothing sent",
-     "run": "2026-11-15"
+     "run": "2026-11-16"
     }
    },
    "page": "demo",
-   "run": "2026-11-15",
+   "run": "2026-11-16",
    "url": "https://www.gladia.io/demo-request",
    "title": "Email field",
    "group": "Demo request form",
@@ -14522,7 +14673,7 @@
      },
      "crop": "components/crops/demo-name-default.png",
      "via": "at rest",
-     "run": "2026-11-15"
+     "run": "2026-11-16"
     },
     "focused": {
      "tag": "input",
@@ -14620,7 +14771,7 @@
      },
      "crop": "components/crops/demo-name-focused.png",
      "via": "clicked into the field",
-     "run": "2026-11-15"
+     "run": "2026-11-16"
     },
     "filled": {
      "tag": "input",
@@ -14718,11 +14869,11 @@
      },
      "crop": "components/crops/demo-name-filled.png",
      "via": "typed \"Alex\", then deleted; nothing sent",
-     "run": "2026-11-15"
+     "run": "2026-11-16"
     }
    },
    "page": "demo",
-   "run": "2026-11-15",
+   "run": "2026-11-16",
    "url": "https://www.gladia.io/demo-request",
    "title": "First-name field",
    "group": "Demo request form",
@@ -14862,7 +15013,7 @@
      ],
      "crop": "components/crops/demo-company-size-default.png",
      "via": "at rest",
-     "run": "2026-11-15"
+     "run": "2026-11-16"
     },
     "focused": {
      "tag": "select",
@@ -14994,12 +15145,12 @@
       }
      ],
      "crop": "components/crops/demo-company-size-focused.png",
-     "via": "clicked into the field",
-     "run": "2026-11-15"
+     "via": "keyboard focus (Shift+Tab, Tab), never clicked",
+     "run": "2026-11-16"
     }
    },
    "page": "demo",
-   "run": "2026-11-15",
+   "run": "2026-11-16",
    "url": "https://www.gladia.io/demo-request",
    "title": "Company-size select",
    "group": "Demo request form",
@@ -15009,24 +15160,24 @@
   "demo-terms": {
    "states": {
     "default": {
-     "tag": "input",
-     "classes": "",
-     "text": "",
+     "tag": "label",
+     "classes": "form-checkbox",
+     "text": "I read and accept terms and conditions.",
      "rect": {
       "x": 185,
-      "y": 449.8,
-      "w": 0,
-      "h": 0
+      "y": 441.8,
+      "w": 462,
+      "h": 18
      },
      "style": {
-      "display": "block",
-      "position": "absolute",
+      "display": "flex",
+      "position": "static",
       "boxSizing": "border-box",
-      "width": "0px",
-      "height": "0px",
-      "minWidth": "0px",
+      "width": "462px",
+      "height": "18px",
+      "minWidth": "auto",
       "maxWidth": "none",
-      "minHeight": "0px",
+      "minHeight": "auto",
       "paddingTop": "0px",
       "paddingRight": "0px",
       "paddingBottom": "0px",
@@ -15035,25 +15186,25 @@
       "marginRight": "0px",
       "marginBottom": "0px",
       "marginLeft": "0px",
-      "gap": "normal",
-      "rowGap": "normal",
-      "columnGap": "normal",
+      "gap": "12px",
+      "rowGap": "12px",
+      "columnGap": "12px",
       "flexDirection": "row",
-      "alignItems": "normal",
+      "alignItems": "flex-start",
       "justifyContent": "normal",
       "gridTemplateColumns": "none",
       "borderTopWidth": "0px",
       "borderTopStyle": "none",
-      "borderTopColor": "rgb(0, 0, 0)",
+      "borderTopColor": "rgb(255, 255, 255)",
       "borderRightWidth": "0px",
       "borderRightStyle": "none",
-      "borderRightColor": "rgb(0, 0, 0)",
+      "borderRightColor": "rgb(255, 255, 255)",
       "borderBottomWidth": "0px",
       "borderBottomStyle": "none",
-      "borderBottomColor": "rgb(0, 0, 0)",
+      "borderBottomColor": "rgb(255, 255, 255)",
       "borderLeftWidth": "0px",
       "borderLeftStyle": "none",
-      "borderLeftColor": "rgb(0, 0, 0)",
+      "borderLeftColor": "rgb(255, 255, 255)",
       "borderTopLeftRadius": "0px",
       "borderTopRightRadius": "0px",
       "borderBottomRightRadius": "0px",
@@ -15064,58 +15215,82 @@
       "backdropFilter": "none",
       "outlineWidth": "0px",
       "outlineStyle": "none",
-      "outlineColor": "rgb(0, 0, 0)",
+      "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
-      "fontFamily": "Arial",
-      "fontSize": "13.3333px",
+      "fontFamily": "\"Suisse Intl\", -apple-system, BlinkMacSystemFont, sans-serif",
+      "fontSize": "16px",
       "fontWeight": "400",
-      "lineHeight": "normal",
+      "lineHeight": "22.4px",
       "letterSpacing": "normal",
       "textTransform": "none",
-      "color": "rgb(0, 0, 0)",
+      "color": "rgb(255, 255, 255)",
       "textDecorationLine": "none",
-      "textDecorationColor": "rgb(0, 0, 0)",
+      "textDecorationColor": "rgb(255, 255, 255)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
       "transitionProperty": "all",
       "transitionDuration": "0s",
       "transitionTimingFunction": "ease",
       "transitionDelay": "0s",
-      "cursor": "default",
-      "opacity": "0",
+      "cursor": "pointer",
+      "opacity": "1",
       "transform": "none",
       "overflow": "visible",
       "zIndex": "auto",
-      "top": "0px"
+      "top": "auto"
      },
-     "placeholder": {
-      "color": "rgb(0, 0, 0)",
-      "opacity": "1",
-      "fontSize": "13.3333px"
+     "paint": [
+      {
+       "node": "span.form-checkbox-mark",
+       "size": "16.0x16.0",
+       "border": "T:1px solid rgb(37, 37, 37) | R:1px solid rgb(37, 37, 37) | B:1px solid rgb(37, 37, 37) | L:1px solid rgb(37, 37, 37)",
+       "bg": "rgb(28, 28, 30)"
+      }
+     ],
+     "ancestors": [
+      {
+       "up": 3,
+       "node": "div.contact-form-card.hero-ebook-form-card",
+       "shadow": "rgba(255, 255, 255, 0.06) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.28) 0px 24px 48px 0px",
+       "radius": "24px",
+       "bg": "rgb(0, 0, 0)"
+      }
+     ],
+     "textStyle": {
+      "node": "span.form-checkbox-label",
+      "text": "I read and accept",
+      "fontFamily": "\"Suisse Intl\", -apple-system, BlinkMacSystemFont, sans-serif",
+      "fontSize": "12px",
+      "lineHeight": "18px",
+      "fontWeight": "400",
+      "letterSpacing": "normal",
+      "color": "rgb(114, 114, 114)",
+      "textDecorationLine": "none",
+      "textTransform": "none"
      },
      "crop": "components/crops/demo-terms-default.png",
      "via": "at rest",
-     "run": "2026-11-15"
+     "run": "2026-11-16"
     },
     "focused": {
-     "tag": "input",
-     "classes": "",
-     "text": "",
+     "tag": "label",
+     "classes": "form-checkbox",
+     "text": "I read and accept terms and conditions.",
      "rect": {
       "x": 185,
-      "y": 449.8,
-      "w": 0,
-      "h": 0
+      "y": 441.8,
+      "w": 462,
+      "h": 18
      },
      "style": {
-      "display": "block",
-      "position": "absolute",
+      "display": "flex",
+      "position": "static",
       "boxSizing": "border-box",
-      "width": "0px",
-      "height": "0px",
-      "minWidth": "0px",
+      "width": "462px",
+      "height": "18px",
+      "minWidth": "auto",
       "maxWidth": "none",
-      "minHeight": "0px",
+      "minHeight": "auto",
       "paddingTop": "0px",
       "paddingRight": "0px",
       "paddingBottom": "0px",
@@ -15124,25 +15299,25 @@
       "marginRight": "0px",
       "marginBottom": "0px",
       "marginLeft": "0px",
-      "gap": "normal",
-      "rowGap": "normal",
-      "columnGap": "normal",
+      "gap": "12px",
+      "rowGap": "12px",
+      "columnGap": "12px",
       "flexDirection": "row",
-      "alignItems": "normal",
+      "alignItems": "flex-start",
       "justifyContent": "normal",
       "gridTemplateColumns": "none",
       "borderTopWidth": "0px",
       "borderTopStyle": "none",
-      "borderTopColor": "rgb(0, 0, 0)",
+      "borderTopColor": "rgb(255, 255, 255)",
       "borderRightWidth": "0px",
       "borderRightStyle": "none",
-      "borderRightColor": "rgb(0, 0, 0)",
+      "borderRightColor": "rgb(255, 255, 255)",
       "borderBottomWidth": "0px",
       "borderBottomStyle": "none",
-      "borderBottomColor": "rgb(0, 0, 0)",
+      "borderBottomColor": "rgb(255, 255, 255)",
       "borderLeftWidth": "0px",
       "borderLeftStyle": "none",
-      "borderLeftColor": "rgb(0, 0, 0)",
+      "borderLeftColor": "rgb(255, 255, 255)",
       "borderTopLeftRadius": "0px",
       "borderTopRightRadius": "0px",
       "borderBottomRightRadius": "0px",
@@ -15153,47 +15328,77 @@
       "backdropFilter": "none",
       "outlineWidth": "0px",
       "outlineStyle": "none",
-      "outlineColor": "rgb(0, 0, 0)",
+      "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
-      "fontFamily": "Arial",
-      "fontSize": "13.3333px",
+      "fontFamily": "\"Suisse Intl\", -apple-system, BlinkMacSystemFont, sans-serif",
+      "fontSize": "16px",
       "fontWeight": "400",
-      "lineHeight": "normal",
+      "lineHeight": "22.4px",
       "letterSpacing": "normal",
       "textTransform": "none",
-      "color": "rgb(0, 0, 0)",
+      "color": "rgb(255, 255, 255)",
       "textDecorationLine": "none",
-      "textDecorationColor": "rgb(0, 0, 0)",
+      "textDecorationColor": "rgb(255, 255, 255)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
       "transitionProperty": "all",
       "transitionDuration": "0s",
       "transitionTimingFunction": "ease",
       "transitionDelay": "0s",
-      "cursor": "default",
-      "opacity": "0",
+      "cursor": "pointer",
+      "opacity": "1",
       "transform": "none",
       "overflow": "visible",
       "zIndex": "auto",
-      "top": "0px"
+      "top": "auto"
      },
-     "placeholder": {
-      "color": "rgb(0, 0, 0)",
-      "opacity": "1",
-      "fontSize": "13.3333px"
+     "paint": [
+      {
+       "node": "input",
+       "size": "0.0x0.0",
+       "outline": "1px auto rgb(16, 16, 16) offset 2px"
+      },
+      {
+       "node": "span.form-checkbox-mark",
+       "size": "16.0x16.0",
+       "border": "T:1px solid rgb(37, 37, 37) | R:1px solid rgb(37, 37, 37) | B:1px solid rgb(37, 37, 37) | L:1px solid rgb(37, 37, 37)",
+       "bg": "rgb(28, 28, 30)",
+       "outline": "2px solid rgb(26, 158, 255) offset 2px"
+      }
+     ],
+     "ancestors": [
+      {
+       "up": 3,
+       "node": "div.contact-form-card.hero-ebook-form-card",
+       "shadow": "rgba(255, 255, 255, 0.06) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.28) 0px 24px 48px 0px",
+       "radius": "24px",
+       "bg": "rgb(0, 0, 0)"
+      }
+     ],
+     "textStyle": {
+      "node": "span.form-checkbox-label",
+      "text": "I read and accept",
+      "fontFamily": "\"Suisse Intl\", -apple-system, BlinkMacSystemFont, sans-serif",
+      "fontSize": "12px",
+      "lineHeight": "18px",
+      "fontWeight": "400",
+      "letterSpacing": "normal",
+      "color": "rgb(114, 114, 114)",
+      "textDecorationLine": "none",
+      "textTransform": "none"
      },
      "crop": "components/crops/demo-terms-focused.png",
-     "via": "clicked into the field",
-     "run": "2026-11-15"
+     "via": "focus failed",
+     "run": "2026-11-16"
     }
    },
    "page": "demo",
-   "run": "2026-11-15",
+   "run": "2026-11-16",
    "url": "https://www.gladia.io/demo-request",
    "title": "Terms checkbox",
    "group": "Demo request form",
-   "desc": "The required terms-acceptance checkbox on the demo-request form; measured at rest, never toggled.",
-   "selector": "demo terms checkbox"
+   "desc": "The required terms-acceptance checkbox on the demo-request form (the input is visually hidden behind its styled label); measured at rest, never toggled.",
+   "selector": "demo terms checkbox label"
   },
   "demo-submit": {
    "states": {
@@ -15203,7 +15408,7 @@
      "text": "Submit Submit",
      "rect": {
       "x": 185,
-      "y": 571.3,
+      "y": 563.3,
       "w": 462,
       "h": 48
      },
@@ -15308,7 +15513,7 @@
      },
      "crop": "components/crops/demo-submit-default.png",
      "via": "at rest",
-     "run": "2026-11-15"
+     "run": "2026-11-16"
     },
     "hover": {
      "tag": "button",
@@ -15316,7 +15521,7 @@
      "text": "Submit Submit",
      "rect": {
       "x": 185,
-      "y": 852.3,
+      "y": 563.3,
       "w": 462,
       "h": 48
      },
@@ -15421,7 +15626,7 @@
      },
      "crop": "components/crops/demo-submit-hover.png",
      "via": "mouse hover",
-     "run": "2026-11-15"
+     "run": "2026-11-16"
     },
     "focus-visible": {
      "tag": "button",
@@ -15429,7 +15634,7 @@
      "text": "Submit Submit",
      "rect": {
       "x": 185,
-      "y": 852.3,
+      "y": 563.3,
       "w": 462,
       "h": 48
      },
@@ -15535,7 +15740,7 @@
      },
      "crop": "components/crops/demo-submit-focus-visible.png",
      "via": "Shift+Tab, Tab",
-     "run": "2026-11-15"
+     "run": "2026-11-16"
     },
     "pressed": {
      "tag": "button",
@@ -15543,7 +15748,7 @@
      "text": "Submit Submit",
      "rect": {
       "x": 185,
-      "y": 852.3,
+      "y": 563.3,
       "w": 462,
       "h": 48
      },
@@ -15648,11 +15853,11 @@
      },
      "crop": "components/crops/demo-submit-pressed.png",
      "via": "CDP forcePseudoState :active:hover",
-     "run": "2026-11-15"
+     "run": "2026-11-16"
     }
    },
    "page": "demo",
-   "run": "2026-11-15",
+   "run": "2026-11-16",
    "url": "https://www.gladia.io/demo-request",
    "title": "Submit button",
    "group": "Demo request form",
@@ -16459,11 +16664,11 @@
      },
      "crop": "components/crops/docs-h1b-default.png",
      "via": "at rest",
-     "run": "2026-11-15"
+     "run": "2026-11-16"
     }
    },
    "page": "docs",
-   "run": "2026-11-15",
+   "run": "2026-11-16",
    "url": "https://docs.gladia.io/chapters/pre-recorded-stt/quickstart",
    "title": "Doc page headline",
    "group": "Docs site (Mintlify)",
@@ -16474,37 +16679,37 @@
    "states": {
     "default": {
      "tag": "button",
-     "classes": "text-gray-500 w-8 h-8 flex",
-     "text": "Search...",
+     "classes": "group/search flex pointer-events-auto rounded-xl",
+     "text": "Search... Ctrl K",
      "rect": {
-      "x": 0,
-      "y": 0,
-      "w": 0,
-      "h": 0
+      "x": 24,
+      "y": 64,
+      "w": 224,
+      "h": 36
      },
      "style": {
       "display": "flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "32px",
-      "height": "32px",
-      "minWidth": "0px",
+      "width": "224px",
+      "height": "36px",
+      "minWidth": "auto",
       "maxWidth": "none",
-      "minHeight": "0px",
+      "minHeight": "auto",
       "paddingTop": "0px",
-      "paddingRight": "0px",
+      "paddingRight": "12px",
       "paddingBottom": "0px",
-      "paddingLeft": "0px",
+      "paddingLeft": "14px",
       "marginTop": "0px",
       "marginRight": "0px",
       "marginBottom": "0px",
       "marginLeft": "0px",
-      "gap": "normal",
-      "rowGap": "normal",
-      "columnGap": "normal",
+      "gap": "8px",
+      "rowGap": "8px",
+      "columnGap": "8px",
       "flexDirection": "row",
       "alignItems": "center",
-      "justifyContent": "center",
+      "justifyContent": "space-between",
       "gridTemplateColumns": "none",
       "borderTopWidth": "0px",
       "borderTopStyle": "solid",
@@ -16518,20 +16723,20 @@
       "borderLeftWidth": "0px",
       "borderLeftStyle": "solid",
       "borderLeftColor": "rgb(239, 239, 239)",
-      "borderTopLeftRadius": "0px",
-      "borderTopRightRadius": "0px",
-      "borderBottomRightRadius": "0px",
-      "borderBottomLeftRadius": "0px",
-      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "borderTopLeftRadius": "12px",
+      "borderTopRightRadius": "12px",
+      "borderBottomRightRadius": "12px",
+      "borderBottomLeftRadius": "12px",
+      "backgroundColor": "rgb(255, 255, 255)",
       "backgroundImage": "none",
-      "boxShadow": "none",
+      "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.704915 -0.00107276 -0.000326514 / 0.3) 0px 0px 0px 1px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
       "backdropFilter": "none",
       "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(113, 113, 113)",
       "outlineOffset": "0px",
       "fontFamily": "Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif",
-      "fontSize": "16px",
+      "fontSize": "14px",
       "fontWeight": "400",
       "lineHeight": "24px",
       "letterSpacing": "normal",
@@ -16548,64 +16753,187 @@
       "cursor": "pointer",
       "opacity": "1",
       "transform": "none",
-      "overflow": "visible",
+      "overflow": "hidden",
       "zIndex": "auto",
       "top": "auto"
      },
      "paint": [
       {
-       "node": "svg.forced-colors:forced-color-adjust-none.forced-colors:bg-[color:CanvasText]!",
-       "size": "0.0x0.0",
-       "bg": "rgb(113, 113, 113)"
+       "node": "button.group/search.flex",
+       "size": "224.0x36.0",
+       "bg": "rgb(255, 255, 255)",
+       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.704915 -0.00107276 -0.000326514 / 0.3) 0px 0px 0px 1px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+       "radius": "12px"
       }
      ],
+     "textStyle": {
+      "node": "div.truncate.min-w-0",
+      "text": "Search...",
+      "fontFamily": "Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif",
+      "fontSize": "14px",
+      "lineHeight": "24px",
+      "fontWeight": "400",
+      "letterSpacing": "normal",
+      "color": "rgb(113, 113, 113)",
+      "textDecorationLine": "none",
+      "textTransform": "none"
+     },
      "icon": {
-      "w": 0,
-      "h": 0,
+      "w": 16,
+      "h": 16,
       "fill": "rgb(0, 0, 0)",
       "stroke": "none",
-      "color": "rgb(113, 113, 113)"
+      "color": "rgb(63, 64, 64)"
      },
-     "cropError": "no box for docs-search-default",
+     "crop": "components/crops/docs-search-default.png",
      "via": "at rest",
-     "run": "2026-11-15"
+     "run": "2026-11-16"
     },
     "hover": {
-     "error": "locator.hover: Element is not visible\nCall log:\n  - waiting for locator('button[aria-label*=\"search\" i], button[id*=\"search\" i]').first().first().first()\n    - locator resolved to <button type=\"button"
+     "tag": "button",
+     "classes": "group/search flex pointer-events-auto rounded-xl",
+     "text": "Search... Ctrl K",
+     "rect": {
+      "x": 24,
+      "y": 64,
+      "w": 224,
+      "h": 36
+     },
+     "style": {
+      "display": "flex",
+      "position": "static",
+      "boxSizing": "border-box",
+      "width": "224px",
+      "height": "36px",
+      "minWidth": "auto",
+      "maxWidth": "none",
+      "minHeight": "auto",
+      "paddingTop": "0px",
+      "paddingRight": "12px",
+      "paddingBottom": "0px",
+      "paddingLeft": "14px",
+      "marginTop": "0px",
+      "marginRight": "0px",
+      "marginBottom": "0px",
+      "marginLeft": "0px",
+      "gap": "8px",
+      "rowGap": "8px",
+      "columnGap": "8px",
+      "flexDirection": "row",
+      "alignItems": "center",
+      "justifyContent": "space-between",
+      "gridTemplateColumns": "none",
+      "borderTopWidth": "0px",
+      "borderTopStyle": "solid",
+      "borderTopColor": "rgb(239, 239, 239)",
+      "borderRightWidth": "0px",
+      "borderRightStyle": "solid",
+      "borderRightColor": "rgb(239, 239, 239)",
+      "borderBottomWidth": "0px",
+      "borderBottomStyle": "solid",
+      "borderBottomColor": "rgb(239, 239, 239)",
+      "borderLeftWidth": "0px",
+      "borderLeftStyle": "solid",
+      "borderLeftColor": "rgb(239, 239, 239)",
+      "borderTopLeftRadius": "12px",
+      "borderTopRightRadius": "12px",
+      "borderBottomRightRadius": "12px",
+      "borderBottomLeftRadius": "12px",
+      "backgroundColor": "rgb(255, 255, 255)",
+      "backgroundImage": "none",
+      "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.434945 0.0000198185 0.00000870228 / 0.3) 0px 0px 0px 1px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+      "backdropFilter": "none",
+      "outlineWidth": "0px",
+      "outlineStyle": "none",
+      "outlineColor": "rgb(113, 113, 113)",
+      "outlineOffset": "0px",
+      "fontFamily": "Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "lineHeight": "24px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(113, 113, 113)",
+      "textDecorationLine": "none",
+      "textDecorationColor": "rgb(113, 113, 113)",
+      "textDecorationThickness": "auto",
+      "textUnderlineOffset": "auto",
+      "transitionProperty": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "transitionDelay": "0s",
+      "cursor": "pointer",
+      "opacity": "1",
+      "transform": "none",
+      "overflow": "hidden",
+      "zIndex": "auto",
+      "top": "auto"
+     },
+     "paint": [
+      {
+       "node": "button.group/search.flex",
+       "size": "224.0x36.0",
+       "bg": "rgb(255, 255, 255)",
+       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.434945 0.0000198185 0.00000870228 / 0.3) 0px 0px 0px 1px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+       "radius": "12px"
+      }
+     ],
+     "textStyle": {
+      "node": "div.truncate.min-w-0",
+      "text": "Search...",
+      "fontFamily": "Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif",
+      "fontSize": "14px",
+      "lineHeight": "24px",
+      "fontWeight": "400",
+      "letterSpacing": "normal",
+      "color": "rgb(113, 113, 113)",
+      "textDecorationLine": "none",
+      "textTransform": "none"
+     },
+     "icon": {
+      "w": 16,
+      "h": 16,
+      "fill": "rgb(0, 0, 0)",
+      "stroke": "none",
+      "color": "rgb(38, 38, 39)"
+     },
+     "crop": "components/crops/docs-search-hover.png",
+     "via": "mouse hover",
+     "run": "2026-11-16"
     },
     "focus-visible": {
      "tag": "button",
-     "classes": "text-gray-500 w-8 h-8 flex",
-     "text": "Search...",
+     "classes": "group/search flex pointer-events-auto rounded-xl",
+     "text": "Search... Ctrl K",
      "rect": {
-      "x": 0,
-      "y": 0,
-      "w": 0,
-      "h": 0
+      "x": 24,
+      "y": 64,
+      "w": 224,
+      "h": 36
      },
      "style": {
       "display": "flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "32px",
-      "height": "32px",
-      "minWidth": "0px",
+      "width": "224px",
+      "height": "36px",
+      "minWidth": "auto",
       "maxWidth": "none",
-      "minHeight": "0px",
+      "minHeight": "auto",
       "paddingTop": "0px",
-      "paddingRight": "0px",
+      "paddingRight": "12px",
       "paddingBottom": "0px",
-      "paddingLeft": "0px",
+      "paddingLeft": "14px",
       "marginTop": "0px",
       "marginRight": "0px",
       "marginBottom": "0px",
       "marginLeft": "0px",
-      "gap": "normal",
-      "rowGap": "normal",
-      "columnGap": "normal",
+      "gap": "8px",
+      "rowGap": "8px",
+      "columnGap": "8px",
       "flexDirection": "row",
       "alignItems": "center",
-      "justifyContent": "center",
+      "justifyContent": "space-between",
       "gridTemplateColumns": "none",
       "borderTopWidth": "0px",
       "borderTopStyle": "solid",
@@ -16619,20 +16947,20 @@
       "borderLeftWidth": "0px",
       "borderLeftStyle": "solid",
       "borderLeftColor": "rgb(239, 239, 239)",
-      "borderTopLeftRadius": "0px",
-      "borderTopRightRadius": "0px",
-      "borderBottomRightRadius": "0px",
-      "borderBottomLeftRadius": "0px",
-      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "borderTopLeftRadius": "12px",
+      "borderTopRightRadius": "12px",
+      "borderBottomRightRadius": "12px",
+      "borderBottomLeftRadius": "12px",
+      "backgroundColor": "rgb(255, 255, 255)",
       "backgroundImage": "none",
-      "boxShadow": "none",
+      "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.704915 -0.00107276 -0.000326514 / 0.3) 0px 0px 0px 1px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
       "backdropFilter": "none",
-      "outlineWidth": "0px",
-      "outlineStyle": "none",
-      "outlineColor": "rgb(113, 113, 113)",
+      "outlineWidth": "1px",
+      "outlineStyle": "auto",
+      "outlineColor": "rgb(46, 52, 62)",
       "outlineOffset": "0px",
       "fontFamily": "Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif",
-      "fontSize": "16px",
+      "fontSize": "14px",
       "fontWeight": "400",
       "lineHeight": "24px",
       "letterSpacing": "normal",
@@ -16649,61 +16977,76 @@
       "cursor": "pointer",
       "opacity": "1",
       "transform": "none",
-      "overflow": "visible",
+      "overflow": "hidden",
       "zIndex": "auto",
       "top": "auto"
      },
      "paint": [
       {
-       "node": "svg.forced-colors:forced-color-adjust-none.forced-colors:bg-[color:CanvasText]!",
-       "size": "0.0x0.0",
-       "bg": "rgb(113, 113, 113)"
+       "node": "button.group/search.flex",
+       "size": "224.0x36.0",
+       "bg": "rgb(255, 255, 255)",
+       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.704915 -0.00107276 -0.000326514 / 0.3) 0px 0px 0px 1px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+       "outline": "1px auto rgb(46, 52, 62) offset 0px",
+       "radius": "12px"
       }
      ],
+     "textStyle": {
+      "node": "div.truncate.min-w-0",
+      "text": "Search...",
+      "fontFamily": "Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif",
+      "fontSize": "14px",
+      "lineHeight": "24px",
+      "fontWeight": "400",
+      "letterSpacing": "normal",
+      "color": "rgb(113, 113, 113)",
+      "textDecorationLine": "none",
+      "textTransform": "none"
+     },
      "icon": {
-      "w": 0,
-      "h": 0,
+      "w": 16,
+      "h": 16,
       "fill": "rgb(0, 0, 0)",
       "stroke": "none",
-      "color": "rgb(113, 113, 113)"
+      "color": "rgb(63, 64, 64)"
      },
-     "cropError": "no box for docs-search-focus-visible",
-     "via": "focus failed",
-     "run": "2026-11-15"
+     "crop": "components/crops/docs-search-focus-visible.png",
+     "via": "Shift+Tab, Tab",
+     "run": "2026-11-16"
     },
     "pressed": {
      "tag": "button",
-     "classes": "text-gray-500 w-8 h-8 flex",
-     "text": "Search...",
+     "classes": "group/search flex pointer-events-auto rounded-xl",
+     "text": "Search... Ctrl K",
      "rect": {
-      "x": 0,
-      "y": 0,
-      "w": 0,
-      "h": 0
+      "x": 24,
+      "y": 64,
+      "w": 224,
+      "h": 36
      },
      "style": {
       "display": "flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "32px",
-      "height": "32px",
-      "minWidth": "0px",
+      "width": "224px",
+      "height": "36px",
+      "minWidth": "auto",
       "maxWidth": "none",
-      "minHeight": "0px",
+      "minHeight": "auto",
       "paddingTop": "0px",
-      "paddingRight": "0px",
+      "paddingRight": "12px",
       "paddingBottom": "0px",
-      "paddingLeft": "0px",
+      "paddingLeft": "14px",
       "marginTop": "0px",
       "marginRight": "0px",
       "marginBottom": "0px",
       "marginLeft": "0px",
-      "gap": "normal",
-      "rowGap": "normal",
-      "columnGap": "normal",
+      "gap": "8px",
+      "rowGap": "8px",
+      "columnGap": "8px",
       "flexDirection": "row",
       "alignItems": "center",
-      "justifyContent": "center",
+      "justifyContent": "space-between",
       "gridTemplateColumns": "none",
       "borderTopWidth": "0px",
       "borderTopStyle": "solid",
@@ -16717,27 +17060,27 @@
       "borderLeftWidth": "0px",
       "borderLeftStyle": "solid",
       "borderLeftColor": "rgb(239, 239, 239)",
-      "borderTopLeftRadius": "0px",
-      "borderTopRightRadius": "0px",
-      "borderBottomRightRadius": "0px",
-      "borderBottomLeftRadius": "0px",
-      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "borderTopLeftRadius": "12px",
+      "borderTopRightRadius": "12px",
+      "borderBottomRightRadius": "12px",
+      "borderBottomLeftRadius": "12px",
+      "backgroundColor": "rgb(255, 255, 255)",
       "backgroundImage": "none",
-      "boxShadow": "none",
+      "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.434945 0.0000198185 0.00000870228 / 0.3) 0px 0px 0px 1px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
       "backdropFilter": "none",
       "outlineWidth": "0px",
       "outlineStyle": "none",
-      "outlineColor": "rgb(81, 81, 81)",
+      "outlineColor": "rgb(113, 113, 113)",
       "outlineOffset": "0px",
       "fontFamily": "Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif",
-      "fontSize": "16px",
+      "fontSize": "14px",
       "fontWeight": "400",
       "lineHeight": "24px",
       "letterSpacing": "normal",
       "textTransform": "none",
-      "color": "rgb(81, 81, 81)",
+      "color": "rgb(113, 113, 113)",
       "textDecorationLine": "none",
-      "textDecorationColor": "rgb(81, 81, 81)",
+      "textDecorationColor": "rgb(113, 113, 113)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
       "transitionProperty": "all",
@@ -16747,31 +17090,45 @@
       "cursor": "pointer",
       "opacity": "1",
       "transform": "none",
-      "overflow": "visible",
+      "overflow": "hidden",
       "zIndex": "auto",
       "top": "auto"
      },
      "paint": [
       {
-       "node": "svg.forced-colors:forced-color-adjust-none.forced-colors:bg-[color:CanvasText]!",
-       "size": "0.0x0.0",
-       "bg": "rgb(113, 113, 113)"
+       "node": "button.group/search.flex",
+       "size": "224.0x36.0",
+       "bg": "rgb(255, 255, 255)",
+       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.434945 0.0000198185 0.00000870228 / 0.3) 0px 0px 0px 1px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+       "radius": "12px"
       }
      ],
+     "textStyle": {
+      "node": "div.truncate.min-w-0",
+      "text": "Search...",
+      "fontFamily": "Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif",
+      "fontSize": "14px",
+      "lineHeight": "24px",
+      "fontWeight": "400",
+      "letterSpacing": "normal",
+      "color": "rgb(113, 113, 113)",
+      "textDecorationLine": "none",
+      "textTransform": "none"
+     },
      "icon": {
-      "w": 0,
-      "h": 0,
+      "w": 16,
+      "h": 16,
       "fill": "rgb(0, 0, 0)",
       "stroke": "none",
-      "color": "rgb(81, 81, 81)"
+      "color": "rgb(38, 38, 39)"
      },
-     "cropError": "no box for docs-search-pressed",
+     "crop": "components/crops/docs-search-pressed.png",
      "via": "CDP forcePseudoState :active:hover",
-     "run": "2026-11-15"
+     "run": "2026-11-16"
     }
    },
    "page": "docs",
-   "run": "2026-11-15",
+   "run": "2026-11-16",
    "url": "https://docs.gladia.io/chapters/pre-recorded-stt/quickstart",
    "title": "Search trigger",
    "group": "Docs site (Mintlify)",
@@ -16877,7 +17234,7 @@
      },
      "crop": "components/crops/docs-theme-btn-default.png",
      "via": "at rest",
-     "run": "2026-11-15"
+     "run": "2026-11-16"
     },
     "hover": {
      "tag": "button",
@@ -16976,7 +17333,7 @@
      },
      "crop": "components/crops/docs-theme-btn-hover.png",
      "via": "mouse hover",
-     "run": "2026-11-15"
+     "run": "2026-11-16"
     },
     "focus-visible": {
      "tag": "button",
@@ -17076,7 +17433,7 @@
      },
      "crop": "components/crops/docs-theme-btn-focus-visible.png",
      "via": "Shift+Tab, Tab",
-     "run": "2026-11-15"
+     "run": "2026-11-16"
     },
     "pressed": {
      "tag": "button",
@@ -17175,11 +17532,11 @@
      },
      "crop": "components/crops/docs-theme-btn-pressed.png",
      "via": "CDP forcePseudoState :active:hover",
-     "run": "2026-11-15"
+     "run": "2026-11-16"
     }
    },
    "page": "docs",
-   "run": "2026-11-15",
+   "run": "2026-11-16",
    "url": "https://docs.gladia.io/chapters/pre-recorded-stt/quickstart",
    "title": "Theme toggle",
    "group": "Docs site (Mintlify)",
@@ -17189,28 +17546,28 @@
   "docs-code": {
    "states": {
     "default": {
-     "tag": "code",
-     "classes": "",
-     "text": "transcribe()",
+     "tag": "pre",
+     "classes": "shiki shiki-themes github-light-default dark-plus",
+     "text": "npm install @gladiaio/sdk",
      "rect": {
-      "x": 450,
-      "y": 426,
-      "w": 112,
-      "h": 20
+      "x": 420,
+      "y": 462,
+      "w": 592,
+      "h": 24
      },
      "style": {
-      "display": "inline",
+      "display": "block",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "auto",
-      "height": "auto",
+      "width": "592px",
+      "height": "24px",
       "minWidth": "0px",
-      "maxWidth": "none",
+      "maxWidth": "100%",
       "minHeight": "0px",
-      "paddingTop": "2px",
-      "paddingRight": "8px",
-      "paddingBottom": "2px",
-      "paddingLeft": "8px",
+      "paddingTop": "0px",
+      "paddingRight": "0px",
+      "paddingBottom": "0px",
+      "paddingLeft": "0px",
       "marginTop": "0px",
       "marginRight": "0px",
       "marginBottom": "0px",
@@ -17234,27 +17591,27 @@
       "borderLeftWidth": "0px",
       "borderLeftStyle": "solid",
       "borderLeftColor": "rgb(239, 239, 239)",
-      "borderTopLeftRadius": "6px",
-      "borderTopRightRadius": "6px",
-      "borderBottomRightRadius": "6px",
-      "borderBottomLeftRadius": "6px",
-      "backgroundColor": "oklab(0.952046 0.000043273 0.0000191331 / 0.5)",
+      "borderTopLeftRadius": "0px",
+      "borderTopRightRadius": "0px",
+      "borderBottomRightRadius": "0px",
+      "borderBottomLeftRadius": "0px",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
       "backgroundImage": "none",
-      "boxShadow": "none",
+      "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(59, 130, 246, 0.5) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
       "backdropFilter": "none",
       "outlineWidth": "0px",
-      "outlineStyle": "none",
-      "outlineColor": "oklch(0.21 0.034 264.665)",
+      "outlineStyle": "solid",
+      "outlineColor": "rgb(31, 35, 40)",
       "outlineOffset": "0px",
       "fontFamily": "\"Paper Mono\", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace",
       "fontSize": "14px",
-      "fontWeight": "500",
-      "lineHeight": "21px",
+      "fontWeight": "400",
+      "lineHeight": "24px",
       "letterSpacing": "normal",
       "textTransform": "none",
-      "color": "oklch(0.21 0.034 264.665)",
+      "color": "rgb(31, 35, 40)",
       "textDecorationLine": "none",
-      "textDecorationColor": "oklch(0.21 0.034 264.665)",
+      "textDecorationColor": "rgb(31, 35, 40)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
       "transitionProperty": "all",
@@ -17264,30 +17621,92 @@
       "cursor": "auto",
       "opacity": "1",
       "transform": "none",
-      "overflow": "visible",
+      "overflow": "auto",
       "zIndex": "auto",
       "top": "auto"
      },
      "paint": [
       {
+       "node": "pre.shiki.shiki-themes",
+       "size": "592.0x24.0",
+       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(59, 130, 246, 0.5) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px"
+      },
+      {
        "node": "code",
-       "size": "112.0x20.0",
-       "bg": "oklab(0.952046 0.000043273 0.0000191331 / 0.5)",
-       "radius": "6px"
+       "size": "592.0x24.0",
+       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(59, 130, 246, 0.5) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px"
+      },
+      {
+       "node": "span.line",
+       "size": "200.0x16.0",
+       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(59, 130, 246, 0.5) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px"
+      },
+      {
+       "node": "span",
+       "size": "24.0x16.0",
+       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(59, 130, 246, 0.5) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px"
+      },
+      {
+       "node": "span",
+       "size": "64.0x16.0",
+       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(59, 130, 246, 0.5) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px"
+      },
+      {
+       "node": "span",
+       "size": "112.0x16.0",
+       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(59, 130, 246, 0.5) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px"
       }
      ],
+     "ancestors": [
+      {
+       "up": 1,
+       "node": "div.font-mono.whitespace-pre",
+       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(59, 130, 246, 0.5) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+       "outline": "0px solid rgb(11, 11, 12)",
+       "radius": "0px",
+       "bg": "rgba(0, 0, 0, 0)"
+      },
+      {
+       "up": 2,
+       "node": "div.min-w-full!.h-full",
+       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(59, 130, 246, 0.5) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+       "outline": "0px solid rgb(11, 11, 12)",
+       "radius": "0px",
+       "bg": "rgba(0, 0, 0, 0)"
+      },
+      {
+       "up": 3,
+       "node": "div.size-full.rounded-[inherit]",
+       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(59, 130, 246, 0.5) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+       "outline": "0px solid rgb(11, 11, 12)",
+       "radius": "14px",
+       "bg": "rgba(0, 0, 0, 0)"
+      }
+     ],
+     "textStyle": {
+      "node": "span",
+      "text": "npm",
+      "fontFamily": "\"Paper Mono\", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace",
+      "fontSize": "14px",
+      "lineHeight": "24px",
+      "fontWeight": "400",
+      "letterSpacing": "normal",
+      "color": "rgb(149, 56, 0)",
+      "textDecorationLine": "none",
+      "textTransform": "none"
+     },
      "crop": "components/crops/docs-code-default.png",
      "via": "at rest",
-     "run": "2026-11-15"
+     "run": "2026-11-16"
     }
    },
    "page": "docs",
-   "run": "2026-11-15",
+   "run": "2026-11-16",
    "url": "https://docs.gladia.io/chapters/pre-recorded-stt/quickstart",
    "title": "Code block",
    "group": "Docs site (Mintlify)",
-   "desc": "A code block on the docs article; Mintlify's own syntax-highlight layer paints these.",
-   "selector": "docs pre/code"
+   "desc": "A code block on the docs article; Mintlify's own syntax-highlight layer paints these. Inline code (`transcribe()` and friends) is a different element and never counts.",
+   "selector": "docs pre"
   },
   "docs-tab": {
    "states": {
@@ -17393,7 +17812,7 @@
      },
      "crop": "components/crops/docs-tab-default.png",
      "via": "at rest",
-     "run": "2026-11-15"
+     "run": "2026-11-16"
     },
     "opened": {
      "tag": "button",
@@ -17503,11 +17922,11 @@
      },
      "crop": "components/crops/docs-tab-opened.png",
      "via": "own toggle",
-     "run": "2026-11-15"
+     "run": "2026-11-16"
     }
    },
    "page": "docs",
-   "run": "2026-11-15",
+   "run": "2026-11-16",
    "url": "https://docs.gladia.io/chapters/pre-recorded-stt/quickstart",
    "title": "Code-language tab",
    "group": "Docs site (Mintlify)",
@@ -20407,32 +20826,32 @@
   "m-topbar": {
    "states": {
     "default": {
-     "tag": "header",
-     "classes": "site-nav",
+     "tag": "nav",
+     "classes": "navbar",
      "text": "Sign up Sign up",
      "rect": {
-      "x": 0,
-      "y": 0,
-      "w": 390,
-      "h": 0
+      "x": 16,
+      "y": 16,
+      "w": 358,
+      "h": 56
      },
      "style": {
       "display": "block",
-      "position": "relative",
+      "position": "fixed",
       "boxSizing": "border-box",
-      "width": "390px",
-      "height": "0px",
+      "width": "358px",
+      "height": "56px",
       "minWidth": "0px",
-      "maxWidth": "none",
+      "maxWidth": "1200px",
       "minHeight": "0px",
       "paddingTop": "0px",
       "paddingRight": "0px",
       "paddingBottom": "0px",
       "paddingLeft": "0px",
       "marginTop": "0px",
-      "marginRight": "0px",
+      "marginRight": "16px",
       "marginBottom": "0px",
-      "marginLeft": "0px",
+      "marginLeft": "16px",
       "gap": "normal",
       "rowGap": "normal",
       "columnGap": "normal",
@@ -20440,26 +20859,26 @@
       "alignItems": "normal",
       "justifyContent": "normal",
       "gridTemplateColumns": "none",
-      "borderTopWidth": "0px",
-      "borderTopStyle": "none",
-      "borderTopColor": "rgb(255, 255, 255)",
-      "borderRightWidth": "0px",
-      "borderRightStyle": "none",
-      "borderRightColor": "rgb(255, 255, 255)",
-      "borderBottomWidth": "0px",
-      "borderBottomStyle": "none",
-      "borderBottomColor": "rgb(255, 255, 255)",
-      "borderLeftWidth": "0px",
-      "borderLeftStyle": "none",
-      "borderLeftColor": "rgb(255, 255, 255)",
-      "borderTopLeftRadius": "0px",
-      "borderTopRightRadius": "0px",
-      "borderBottomRightRadius": "0px",
-      "borderBottomLeftRadius": "0px",
-      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "borderTopWidth": "1px",
+      "borderTopStyle": "solid",
+      "borderTopColor": "rgb(31, 31, 31)",
+      "borderRightWidth": "1px",
+      "borderRightStyle": "solid",
+      "borderRightColor": "rgb(31, 31, 31)",
+      "borderBottomWidth": "1px",
+      "borderBottomStyle": "solid",
+      "borderBottomColor": "rgb(31, 31, 31)",
+      "borderLeftWidth": "1px",
+      "borderLeftStyle": "solid",
+      "borderLeftColor": "rgb(31, 31, 31)",
+      "borderTopLeftRadius": "20px",
+      "borderTopRightRadius": "20px",
+      "borderBottomRightRadius": "20px",
+      "borderBottomLeftRadius": "20px",
+      "backgroundColor": "rgba(0, 0, 0, 0.65)",
       "backgroundImage": "none",
       "boxShadow": "none",
-      "backdropFilter": "none",
+      "backdropFilter": "blur(40px)",
       "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(255, 255, 255)",
@@ -20481,10 +20900,10 @@
       "transitionDelay": "0s",
       "cursor": "auto",
       "opacity": "1",
-      "transform": "none",
+      "transform": "matrix(1, 0, 0, 1, 0, 0)",
       "overflow": "visible",
-      "zIndex": "300",
-      "top": "0px"
+      "zIndex": "310",
+      "top": "16px"
      },
      "paint": [
       {
@@ -20525,66 +20944,6 @@
        "size": "18.0x1.5",
        "bg": "rgb(255, 255, 255)",
        "radius": "1px"
-      },
-      {
-       "node": "div.mobile-nav-backdrop",
-       "size": "390.0x844.0",
-       "bg": "rgba(0, 0, 0, 0.55)"
-      },
-      {
-       "node": "div.mobile-nav-sheet",
-       "size": "350.8x729.1",
-       "border": "T:1px solid rgb(31, 31, 31) | R:1px solid rgb(31, 31, 31) | B:1px solid rgb(31, 31, 31) | L:1px solid rgb(31, 31, 31)",
-       "bg": "rgb(13, 13, 13)",
-       "radius": "20px"
-      },
-      {
-       "node": "div.mobile-nav-section.is-open",
-       "size": "317.5x627.2",
-       "border": "B:1px solid rgba(255, 255, 255, 0.06)"
-      },
-      {
-       "node": "span.mega-menu-item-icon",
-       "size": "31.4x31.4",
-       "border": "T:1px solid rgba(255, 255, 255, 0.06) | R:1px solid rgba(255, 255, 255, 0.06) | B:1px solid rgba(255, 255, 255, 0.06) | L:1px solid rgba(255, 255, 255, 0.06)",
-       "bg": "rgba(255, 255, 255, 0.05)",
-       "radius": "8px"
-      },
-      {
-       "node": "span.mega-menu-item-icon",
-       "size": "31.4x31.4",
-       "border": "T:1px solid rgba(255, 255, 255, 0.06) | R:1px solid rgba(255, 255, 255, 0.06) | B:1px solid rgba(255, 255, 255, 0.06) | L:1px solid rgba(255, 255, 255, 0.06)",
-       "bg": "rgba(255, 255, 255, 0.05)",
-       "radius": "8px"
-      },
-      {
-       "node": "span.mega-menu-item-icon",
-       "size": "31.4x31.4",
-       "border": "T:1px solid rgba(255, 255, 255, 0.06) | R:1px solid rgba(255, 255, 255, 0.06) | B:1px solid rgba(255, 255, 255, 0.06) | L:1px solid rgba(255, 255, 255, 0.06)",
-       "bg": "rgba(255, 255, 255, 0.05)",
-       "radius": "8px"
-      },
-      {
-       "node": "span.mega-menu-item-icon",
-       "size": "31.4x31.4",
-       "border": "T:1px solid rgba(255, 255, 255, 0.06) | R:1px solid rgba(255, 255, 255, 0.06) | B:1px solid rgba(255, 255, 255, 0.06) | L:1px solid rgba(255, 255, 255, 0.06)",
-       "bg": "rgba(255, 255, 255, 0.05)",
-       "radius": "8px"
-      },
-      {
-       "node": "span.mega-menu-item-icon",
-       "size": "31.4x31.4",
-       "border": "T:1px solid rgba(255, 255, 255, 0.06) | R:1px solid rgba(255, 255, 255, 0.06) | B:1px solid rgba(255, 255, 255, 0.06) | L:1px solid rgba(255, 255, 255, 0.06)",
-       "bg": "rgba(255, 255, 255, 0.05)",
-       "radius": "8px"
-      }
-     ],
-     "ancestors": [
-      {
-       "up": 1,
-       "node": "body.homepage-v3",
-       "radius": "0px",
-       "bg": "rgb(0, 0, 0)"
       }
      ],
      "textStyle": {
@@ -20606,18 +20965,18 @@
       "stroke": "none",
       "color": "rgb(255, 255, 255)"
      },
-     "cropError": "locator.screenshot: Timeout 7986.77899999998ms exceeded.\nCall log:\n  - taking element screenshot\n  - waiting for fonts t",
+     "crop": "components/crops/m-topbar-default.png",
      "via": "at rest",
-     "run": "2026-11-15"
+     "run": "2026-11-16"
     }
    },
    "page": "mobile",
-   "run": "2026-11-15",
+   "run": "2026-11-16",
    "url": "https://www.gladia.io/",
    "title": "Mobile top bar",
    "group": "Mobile (390 wide)",
    "desc": "The phone header at 390 wide: the wordmark and the \"Open menu\" button.",
-   "selector": "mobile header"
+   "selector": "mobile nav.navbar"
   },
   "m-menu-btn": {
    "states": {
@@ -20724,7 +21083,7 @@
      ],
      "crop": "components/crops/m-menu-btn-default.png",
      "via": "at rest",
-     "run": "2026-11-15"
+     "run": "2026-11-16"
     },
     "hover": {
      "tag": "button",
@@ -20762,21 +21121,21 @@
       "gridTemplateColumns": "none",
       "borderTopWidth": "1px",
       "borderTopStyle": "solid",
-      "borderTopColor": "rgba(255, 255, 255, 0.1)",
+      "borderTopColor": "rgba(255, 255, 255, 0.18)",
       "borderRightWidth": "1px",
       "borderRightStyle": "solid",
-      "borderRightColor": "rgba(255, 255, 255, 0.1)",
+      "borderRightColor": "rgba(255, 255, 255, 0.18)",
       "borderBottomWidth": "1px",
       "borderBottomStyle": "solid",
-      "borderBottomColor": "rgba(255, 255, 255, 0.1)",
+      "borderBottomColor": "rgba(255, 255, 255, 0.18)",
       "borderLeftWidth": "1px",
       "borderLeftStyle": "solid",
-      "borderLeftColor": "rgba(255, 255, 255, 0.1)",
+      "borderLeftColor": "rgba(255, 255, 255, 0.18)",
       "borderTopLeftRadius": "999px",
       "borderTopRightRadius": "999px",
       "borderBottomRightRadius": "999px",
       "borderBottomLeftRadius": "999px",
-      "backgroundColor": "rgba(255, 255, 255, 0.04)",
+      "backgroundColor": "rgba(255, 255, 255, 0.1)",
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
@@ -20810,8 +21169,8 @@
       {
        "node": "button.navbar-menu-toggle",
        "size": "36.0x36.0",
-       "border": "T:1px solid rgba(255, 255, 255, 0.1) | R:1px solid rgba(255, 255, 255, 0.1) | B:1px solid rgba(255, 255, 255, 0.1) | L:1px solid rgba(255, 255, 255, 0.1)",
-       "bg": "rgba(255, 255, 255, 0.04)",
+       "border": "T:1px solid rgba(255, 255, 255, 0.18) | R:1px solid rgba(255, 255, 255, 0.18) | B:1px solid rgba(255, 255, 255, 0.18) | L:1px solid rgba(255, 255, 255, 0.18)",
+       "bg": "rgba(255, 255, 255, 0.1)",
        "radius": "999px"
       },
       {
@@ -20829,7 +21188,7 @@
      ],
      "crop": "components/crops/m-menu-btn-hover.png",
      "via": "mouse hover",
-     "run": "2026-11-15"
+     "run": "2026-11-16"
     },
     "focus-visible": {
      "tag": "button",
@@ -20935,7 +21294,7 @@
      ],
      "crop": "components/crops/m-menu-btn-focus-visible.png",
      "via": "Shift+Tab, Tab",
-     "run": "2026-11-15"
+     "run": "2026-11-16"
     },
     "pressed": {
      "tag": "button",
@@ -21040,7 +21399,7 @@
      ],
      "crop": "components/crops/m-menu-btn-pressed.png",
      "via": "CDP forcePseudoState :active:hover",
-     "run": "2026-11-15"
+     "run": "2026-11-16"
     },
     "opened": {
      "tag": "button",
@@ -21078,21 +21437,21 @@
       "gridTemplateColumns": "none",
       "borderTopWidth": "1px",
       "borderTopStyle": "solid",
-      "borderTopColor": "rgba(255, 255, 255, 0.1)",
+      "borderTopColor": "rgba(255, 255, 255, 0.18)",
       "borderRightWidth": "1px",
       "borderRightStyle": "solid",
-      "borderRightColor": "rgba(255, 255, 255, 0.1)",
+      "borderRightColor": "rgba(255, 255, 255, 0.18)",
       "borderBottomWidth": "1px",
       "borderBottomStyle": "solid",
-      "borderBottomColor": "rgba(255, 255, 255, 0.1)",
+      "borderBottomColor": "rgba(255, 255, 255, 0.18)",
       "borderLeftWidth": "1px",
       "borderLeftStyle": "solid",
-      "borderLeftColor": "rgba(255, 255, 255, 0.1)",
+      "borderLeftColor": "rgba(255, 255, 255, 0.18)",
       "borderTopLeftRadius": "999px",
       "borderTopRightRadius": "999px",
       "borderBottomRightRadius": "999px",
       "borderBottomLeftRadius": "999px",
-      "backgroundColor": "rgba(255, 255, 255, 0.04)",
+      "backgroundColor": "rgba(255, 255, 255, 0.1)",
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
@@ -21126,8 +21485,8 @@
       {
        "node": "button.navbar-menu-toggle.is-open",
        "size": "36.0x36.0",
-       "border": "T:1px solid rgba(255, 255, 255, 0.1) | R:1px solid rgba(255, 255, 255, 0.1) | B:1px solid rgba(255, 255, 255, 0.1) | L:1px solid rgba(255, 255, 255, 0.1)",
-       "bg": "rgba(255, 255, 255, 0.04)",
+       "border": "T:1px solid rgba(255, 255, 255, 0.18) | R:1px solid rgba(255, 255, 255, 0.18) | B:1px solid rgba(255, 255, 255, 0.18) | L:1px solid rgba(255, 255, 255, 0.18)",
+       "bg": "rgba(255, 255, 255, 0.1)",
        "radius": "999px"
       },
       {
@@ -21145,11 +21504,11 @@
      ],
      "crop": "components/crops/m-menu-btn-opened.png",
      "via": "own toggle",
-     "run": "2026-11-15"
+     "run": "2026-11-16"
     }
    },
    "page": "mobile",
-   "run": "2026-11-15",
+   "run": "2026-11-16",
    "url": "https://www.gladia.io/",
    "title": "Mobile menu button",
    "group": "Mobile (390 wide)",
@@ -21160,20 +21519,20 @@
    "states": {
     "default": {
      "tag": "div",
-     "classes": "sc-aemIz cQIZoP ax-widget-container",
-     "text": "We value your privacy We use cookies to enhance your browsing experience, serve ",
+     "classes": "mobile-nav is-open",
+     "text": "Product Speech-to-text API Real-time speech-to-text Async speech-to-text Audio i",
      "rect": {
       "x": 0,
-      "y": 490,
+      "y": 0,
       "w": 390,
-      "h": 354
+      "h": 844
      },
      "style": {
       "display": "block",
-      "position": "absolute",
-      "boxSizing": "content-box",
+      "position": "fixed",
+      "boxSizing": "border-box",
       "width": "390px",
-      "height": "354px",
+      "height": "844px",
       "minWidth": "0px",
       "maxWidth": "none",
       "minHeight": "0px",
@@ -21194,16 +21553,16 @@
       "gridTemplateColumns": "none",
       "borderTopWidth": "0px",
       "borderTopStyle": "none",
-      "borderTopColor": "rgb(0, 0, 0)",
+      "borderTopColor": "rgb(255, 255, 255)",
       "borderRightWidth": "0px",
       "borderRightStyle": "none",
-      "borderRightColor": "rgb(0, 0, 0)",
+      "borderRightColor": "rgb(255, 255, 255)",
       "borderBottomWidth": "0px",
       "borderBottomStyle": "none",
-      "borderBottomColor": "rgb(0, 0, 0)",
+      "borderBottomColor": "rgb(255, 255, 255)",
       "borderLeftWidth": "0px",
       "borderLeftStyle": "none",
-      "borderLeftColor": "rgb(0, 0, 0)",
+      "borderLeftColor": "rgb(255, 255, 255)",
       "borderTopLeftRadius": "0px",
       "borderTopRightRadius": "0px",
       "borderBottomRightRadius": "0px",
@@ -21214,17 +21573,17 @@
       "backdropFilter": "none",
       "outlineWidth": "0px",
       "outlineStyle": "none",
-      "outlineColor": "rgb(0, 0, 0)",
+      "outlineColor": "rgb(255, 255, 255)",
       "outlineOffset": "0px",
-      "fontFamily": "\"Times New Roman\"",
+      "fontFamily": "\"Suisse Intl\", -apple-system, BlinkMacSystemFont, sans-serif",
       "fontSize": "16px",
       "fontWeight": "400",
-      "lineHeight": "normal",
+      "lineHeight": "22.4px",
       "letterSpacing": "normal",
       "textTransform": "none",
-      "color": "rgb(0, 0, 0)",
+      "color": "rgb(255, 255, 255)",
       "textDecorationLine": "none",
-      "textDecorationColor": "rgb(0, 0, 0)",
+      "textDecorationColor": "rgb(255, 255, 255)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
       "transitionProperty": "all",
@@ -21235,85 +21594,134 @@
       "opacity": "1",
       "transform": "none",
       "overflow": "visible",
-      "zIndex": "1100",
-      "top": "490px"
+      "zIndex": "290",
+      "top": "0px"
      },
      "paint": [
       {
-       "node": "div.sc-idOiZg.jXQppL",
-       "size": "390.0x354.0",
-       "bg": "rgb(8, 0, 0)"
+       "node": "div.mobile-nav-backdrop",
+       "size": "390.0x844.0",
+       "bg": "rgba(0, 0, 0, 0.55)"
       },
       {
-       "node": "div.sc-dIUeWJ.jpWSxN",
-       "size": "390.0x259.0",
-       "bg": "rgb(8, 0, 0)"
+       "node": "div.mobile-nav-sheet",
+       "size": "358.0x744.0",
+       "border": "T:1px solid rgb(31, 31, 31) | R:1px solid rgb(31, 31, 31) | B:1px solid rgb(31, 31, 31) | L:1px solid rgb(31, 31, 31)",
+       "bg": "rgb(13, 13, 13)",
+       "radius": "20px"
       },
       {
-       "node": "div.sc-gsTEea.cThCJt",
-       "size": "390.0x21.0",
-       "border": "T:1px solid rgb(237, 237, 237)",
-       "bg": "rgba(4, 4, 4, 0.2)"
+       "node": "div.mobile-nav-section.is-open",
+       "size": "324.0x640.0",
+       "border": "B:1px solid rgba(255, 255, 255, 0.06)"
       },
       {
-       "node": "div.sc-hKgJUU.fEwsMZ",
-       "size": "390.0x95.0",
-       "border": "T:1px solid rgb(237, 237, 237)"
+       "node": "span.mega-menu-item-icon",
+       "size": "32.0x32.0",
+       "border": "T:1px solid rgba(255, 255, 255, 0.06) | R:1px solid rgba(255, 255, 255, 0.06) | B:1px solid rgba(255, 255, 255, 0.06) | L:1px solid rgba(255, 255, 255, 0.06)",
+       "bg": "rgba(255, 255, 255, 0.05)",
+       "radius": "8px"
       },
       {
-       "node": "button.sc-dlfnuX.kokjqF",
-       "size": "130.2x94.0",
-       "border": "R:1px solid rgb(237, 237, 237)",
-       "bg": "rgb(255, 255, 255)",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px inset",
-       "radius": "0px 0px 0px 16px"
+       "node": "span.mega-menu-item-icon",
+       "size": "32.0x32.0",
+       "border": "T:1px solid rgba(255, 255, 255, 0.06) | R:1px solid rgba(255, 255, 255, 0.06) | B:1px solid rgba(255, 255, 255, 0.06) | L:1px solid rgba(255, 255, 255, 0.06)",
+       "bg": "rgba(255, 255, 255, 0.05)",
+       "radius": "8px"
       },
       {
-       "node": "button.sc-dlfnuX.kokjqF",
-       "size": "130.2x94.0",
-       "border": "R:1px solid rgb(237, 237, 237)",
-       "bg": "rgb(255, 255, 255)",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px inset"
+       "node": "span.mega-menu-item-icon",
+       "size": "32.0x32.0",
+       "border": "T:1px solid rgba(255, 255, 255, 0.06) | R:1px solid rgba(255, 255, 255, 0.06) | B:1px solid rgba(255, 255, 255, 0.06) | L:1px solid rgba(255, 255, 255, 0.06)",
+       "bg": "rgba(255, 255, 255, 0.05)",
+       "radius": "8px"
       },
       {
-       "node": "button.sc-dlfnuX.kokjqF",
-       "size": "129.5x94.0",
-       "bg": "rgb(255, 255, 255)",
-       "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px inset",
-       "radius": "0px 0px 16px"
+       "node": "span.mega-menu-item-icon",
+       "size": "32.0x32.0",
+       "border": "T:1px solid rgba(255, 255, 255, 0.06) | R:1px solid rgba(255, 255, 255, 0.06) | B:1px solid rgba(255, 255, 255, 0.06) | L:1px solid rgba(255, 255, 255, 0.06)",
+       "bg": "rgba(255, 255, 255, 0.05)",
+       "radius": "8px"
+      },
+      {
+       "node": "span.mega-menu-item-icon",
+       "size": "32.0x32.0",
+       "border": "T:1px solid rgba(255, 255, 255, 0.06) | R:1px solid rgba(255, 255, 255, 0.06) | B:1px solid rgba(255, 255, 255, 0.06) | L:1px solid rgba(255, 255, 255, 0.06)",
+       "bg": "rgba(255, 255, 255, 0.05)",
+       "radius": "8px"
+      },
+      {
+       "node": "span.mega-menu-item-icon",
+       "size": "32.0x32.0",
+       "border": "T:1px solid rgba(255, 255, 255, 0.06) | R:1px solid rgba(255, 255, 255, 0.06) | B:1px solid rgba(255, 255, 255, 0.06) | L:1px solid rgba(255, 255, 255, 0.06)",
+       "bg": "rgba(255, 255, 255, 0.05)",
+       "radius": "8px"
+      },
+      {
+       "node": "span.mega-menu-item-icon",
+       "size": "32.0x32.0",
+       "border": "T:1px solid rgba(255, 255, 255, 0.06) | R:1px solid rgba(255, 255, 255, 0.06) | B:1px solid rgba(255, 255, 255, 0.06) | L:1px solid rgba(255, 255, 255, 0.06)",
+       "bg": "rgba(255, 255, 255, 0.05)",
+       "radius": "8px"
+      },
+      {
+       "node": "span.mega-menu-item-icon",
+       "size": "32.0x32.0",
+       "border": "T:1px solid rgba(255, 255, 255, 0.06) | R:1px solid rgba(255, 255, 255, 0.06) | B:1px solid rgba(255, 255, 255, 0.06) | L:1px solid rgba(255, 255, 255, 0.06)",
+       "bg": "rgba(255, 255, 255, 0.05)",
+       "radius": "8px"
+      },
+      {
+       "node": "span.mega-menu-item-icon",
+       "size": "32.0x32.0",
+       "border": "T:1px solid rgba(255, 255, 255, 0.06) | R:1px solid rgba(255, 255, 255, 0.06) | B:1px solid rgba(255, 255, 255, 0.06) | L:1px solid rgba(255, 255, 255, 0.06)",
+       "bg": "rgba(255, 255, 255, 0.05)",
+       "radius": "8px"
+      },
+      {
+       "node": "div.mobile-nav-section",
+       "size": "324.0x70.0",
+       "border": "B:1px solid rgba(255, 255, 255, 0.06)"
+      },
+      {
+       "node": "span.mega-menu-item-icon",
+       "size": "32.0x32.0",
+       "border": "T:1px solid rgba(255, 255, 255, 0.06) | R:1px solid rgba(255, 255, 255, 0.06) | B:1px solid rgba(255, 255, 255, 0.06) | L:1px solid rgba(255, 255, 255, 0.06)",
+       "bg": "rgba(255, 255, 255, 0.05)",
+       "radius": "8px"
       }
      ],
      "textStyle": {
       "node": "span",
-      "text": "We value your privacy",
-      "fontFamily": "\"Axeptio Inter\", Inter, \"Axeptio CJK Fallback\", sans-serif",
-      "fontSize": "24px",
-      "lineHeight": "30px",
-      "fontWeight": "700",
-      "letterSpacing": "normal",
+      "text": "Product",
+      "fontFamily": "\"Suisse Intl\", -apple-system, BlinkMacSystemFont, sans-serif",
+      "fontSize": "16px",
+      "lineHeight": "normal",
+      "fontWeight": "500",
+      "letterSpacing": "-0.16px",
       "color": "rgb(255, 255, 255)",
       "textDecorationLine": "none",
       "textTransform": "none"
      },
      "icon": {
-      "w": 60,
-      "h": 60,
-      "fill": "rgb(0, 0, 0)",
+      "w": 16,
+      "h": 16,
+      "fill": "none",
       "stroke": "none",
-      "color": "rgb(0, 0, 0)"
+      "color": "rgba(255, 255, 255, 0.8)"
      },
      "crop": "components/crops/m-drawer-default.png",
      "via": "at rest",
-     "run": "2026-11-15"
+     "run": "2026-11-16"
     }
    },
    "page": "mobile",
-   "run": "2026-11-15",
+   "run": "2026-11-16",
    "url": "https://www.gladia.io/",
    "title": "Mobile nav overlay",
    "group": "Mobile (390 wide)",
-   "desc": "The navigation sheet opened by the menu button (role=\"dialog\", aria-label=\"Navigation\"); its links were never followed.",
-   "selector": ".mobile-nav"
+   "desc": "The navigation sheet opened by the menu button (div#mobileNav.mobile-nav, .is-open while aria-hidden flips to false); its links were never followed.",
+   "selector": "#mobileNav.mobile-nav"
   },
   "m-hero-h1": {
    "states": {
@@ -21411,11 +21819,11 @@
      },
      "crop": "components/crops/m-hero-h1-default.png",
      "via": "at rest",
-     "run": "2026-11-15"
+     "run": "2026-11-16"
     }
    },
    "page": "mobile",
-   "run": "2026-11-15",
+   "run": "2026-11-16",
    "url": "https://www.gladia.io/",
    "title": "Mobile hero headline",
    "group": "Mobile (390 wide)",
