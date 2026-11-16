@@ -13343,6 +13343,104 @@
    "layoutGaps": {
     "icons/": "no standalone SVG icon set was lifted; the Framer mark and UI glyphs are visible in the crops and screenshots"
    }
+  },
+  {
+   "slug": "gofundme",
+   "name": "GoFundMe",
+   "url": "https://www.gofundme.com",
+   "category": "e-commerce",
+   "platform": "web",
+   "goodFor": "crowdfunding/fundraising design: a real shipped token layer - ~700 semantic --hrt-* custom properties on :root (brand greens #4A9D44/#274A34/#CCF88E, neutral ramps, blue/pink/purple/yellow accents, size/spacing/radius/type/motion/z-index scales) - white chrome with a #CCF88E promo banner, header mega-dropdowns (Donate/Fundraise/About), the centred hero with a dark-green 'Start a GoFundMe' pill, discover/search fundraiser cards with media tags and progress bars, a public /f/<slug> fundraiser page (raised line, progress meter, Donate now/Share/Message), the /create wizard at rest and the /sign-in auth boundary - plus the separate /c/* WordPress content stack measured as a second public system",
+   "tags": [
+    "web",
+    "crowdfunding",
+    "fundraising",
+    "nonprofit",
+    "marketplace",
+    "search",
+    "light",
+    "semantic-tokens",
+    "signed-out"
+   ],
+   "shape": "reference",
+   "captured": "2026-11-17",
+   "access": "signed out (every captured surface is public; the account, the donation flow, checkout and every post-login surface is an authenticated boundary never reached; the wizard's postcode field and the sign-in email field were typed into then cleared, never submitted; 'Donate now', 'Share', 'Message', 'Continue', 'Sign in', 'Start a GoFundMe' were measured, never activated)",
+   "themes": [
+    "light"
+   ],
+   "widths": [
+    1440,
+    390
+   ],
+   "entry": "systems/gofundme/README.md",
+   "tokens": "systems/gofundme/tokens.json",
+   "styleGuide": "systems/gofundme/style-guide.html",
+   "preview": {
+    "cover": "systems/gofundme/screenshots/home-light-default.png",
+    "icon": "systems/gofundme/icon.png",
+    "swatches": {
+     "light": {
+      "page": "light.color.surface.default.default",
+      "surface": "light.color.surface.neutral.subtle.default",
+      "text": "light.color.text.default",
+      "muted": "light.color.text.supporting.default",
+      "accent": "light.color.button.primary.surface.default",
+      "border": "light.color.border.neutral.subtle.default"
+     }
+    },
+    "fonts": [
+     "core.font.family.family.default",
+     "core.font.family.family.mono"
+    ]
+   },
+   "source": {
+    "path": "~/.design-systems/gofundme/raw-shots (full-colour captures, outside the repo)"
+   },
+   "capture": {
+    "method": "public-web",
+    "source": "gofundme.com public signed-out surface in Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; the ~700-name --hrt-* custom-property layer harvested from the live stylesheets and resolved in a probe document; computed styles and component crops from the live DOM; the fundraiser slug picked live from the first public card on /discover at run time. The Transcend 'Privacy Information' consent banner is hidden, never answered; intermittent edge challenges were retried on fresh contexts",
+    "timestamp": "2026-11-17T03:30:00Z",
+    "harness": "Devin",
+    "model": "SWE-2 Max",
+    "route": "public-web",
+    "routes": [
+     "/",
+     "/discover",
+     "/s?q=medical",
+     "/f/<slug> (first public card on /discover)",
+     "/c/about-us",
+     "/c/accessibility-statement",
+     "/c/pricing",
+     "/c/how-it-works",
+     "/c/why-gofundme",
+     "/c/crowdfunding",
+     "/c/fundraising-ideas",
+     "/c/charity-fundraising",
+     "/c/start",
+     "/c/careers",
+     "/c/blog",
+     "/c/safety",
+     "/sign-in",
+     "/create/fundraiser/category"
+    ],
+    "gaps": [
+     "the account, the donation flow, checkout and every post-login surface was never reached",
+     "'Donate now' was measured in every state, never pressed - the donation flow it starts is uncaptured",
+     "'Share', 'Message' and 'Report fundraiser' were measured, never pressed - the flows they front are uncaptured",
+     "the /create wizard was captured at its first public step only; its category pills and 'Continue' were measured, never submitted - later wizard steps sit behind it",
+     "the /sign-in Welcome card was measured signed-out; the email field was typed into then cleared and 'Continue'/SSO were never pressed - no account was ever touched; in some headless passes the island does not hydrate and only the empty shell records",
+     "the mobile nav overlay was opened for the drawer shot and measurement; its links were never followed",
+     "some measured components are missing or zero-sized where the route did not serve them in a given pass (the donations heading, the search heading, the sign-in card's buttons); gaps are recorded, not fabricated",
+     "the [data-theme=\"pro\"] layer is declared in the CSS but never paints on the consumer pages; it is kept in raw/css-vars.json as declared-only evidence, not tokens",
+     "icons: no standalone SVG set lifted this pass"
+    ],
+    "durationMin": null,
+    "durationNote": "capture ran in several passes on 2026-11-17 because intermittent edge challenges and a late-mounting consent banner forced retries; wall-clock duration not recorded",
+    "pr": ""
+   },
+   "layoutGaps": {
+    "icons/": "no standalone SVG icon set was lifted on this pass; the GoFundMe mark and control glyphs are visible in the crops and screenshots"
+   }
   }
  ]
 }
