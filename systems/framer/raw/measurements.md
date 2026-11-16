@@ -224,7 +224,7 @@ Crops: `hero-h1-default.png`.
 
 #### hero-cta
 
-Hero CTA. The lime "Get started for free" pill in the hero; links to the auth shell, measured never followed.
+Hero CTA. The white "Get started for free" pill in the hero; links to the auth shell, measured never followed.
 
 Page: home. Selector: `hero Get started for free`. States: default, hover, focus-visible, pressed.
 

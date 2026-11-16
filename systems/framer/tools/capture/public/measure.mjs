@@ -378,7 +378,7 @@ async function home() {
   await S('nav-cta', q('a, button').filter({ hasText: /^Sign up$/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Header CTA', desc: 'The "Sign up" header button; links to the auth shell, measured never followed.', sel: 'header a Sign up' }, { noScroll: true });
 
   await S('hero-h1', await domFind(page, /\S/, { sel: 'h1', tag: 'h1', minW: 200, minH: 20 }), ['default'], { group: h, title: 'Hero headline', desc: '"Framer is the pro website builder with a world-class design agent" — the www.framer.com hero display heading.', sel: 'h1' }, { noScroll: true });
-  await S('hero-cta', q('a').filter({ hasText: /^Get started for free$/ }).filter({ visible: true }).first(), B4, { group: h, title: 'Hero CTA', desc: 'The lime "Get started for free" pill in the hero; links to the auth shell, measured never followed.', sel: 'hero Get started for free' });
+  await S('hero-cta', q('a').filter({ hasText: /^Get started for free$/ }).filter({ visible: true }).first(), B4, { group: h, title: 'Hero CTA', desc: 'The white "Get started for free" pill in the hero; links to the auth shell, measured never followed.', sel: 'hero Get started for free' });
   await S('hero-mcp', q('a, button').filter({ hasText: /Install the MCP/i }).filter({ visible: true }).first(), B4, { group: h, title: 'Hero secondary button', desc: 'The "Install the MCP" ghost button beside the hero CTA; measured, never followed.', sel: 'hero Install the MCP' });
   await S('section-h2', q('h2').filter({ hasText: /\S/ }).filter({ visible: true }).first(), ['default'], { group: h, title: 'Section heading', desc: 'A marketing section heading further down the home page.', sel: 'h2' });
 
