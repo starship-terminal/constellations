@@ -3550,6 +3550,105 @@
    }
   },
   {
+   "slug": "classpass",
+   "name": "ClassPass",
+   "url": "https://classpass.com",
+   "category": "fitness",
+   "platform": "web",
+   "goodFor": "fitness-marketplace marketing: a Next.js site with no declared token layer (every value measured off the painted chrome) built on a #0055ff accent ramp with a real three-step press ladder (#0055ff -> #004de6 -> #0044cc), a #1a5ee5 link/focus blue, a #c0e0ff plan pill and a #fce172 promo yellow; TT Norms UI plus a Circuit rotating-word hero; 9999px pill buttons against 4px fields; a venue-search surface with comboboxes, filter pills and a dropdown panel; a credits plan carousel under a brand-tinted rgba(1,85,254,.1) shadow; and a black footer island",
+   "tags": [
+    "web",
+    "mobile-app",
+    "fitness",
+    "marketplace",
+    "booking",
+    "nextjs",
+    "light",
+    "blue-accent",
+    "marketing",
+    "pricing",
+    "search",
+    "signed-out"
+   ],
+   "shape": "reference",
+   "captured": "2026-11-16",
+   "access": "read-only (the marketing site, search, plans, features, how-it-works, fitness, gifts, reviews, partners, corporate-wellness, about, contact, blog and legal are fully public; /login's card and /walkthrough's carousel were measured as boundaries - nothing was signed into, searched for, booked or submitted; booking, member search results, credits and checkout sit behind sign-in or payment)",
+   "themes": [
+    "light"
+   ],
+   "widths": [
+    1440,
+    390
+   ],
+   "entry": "systems/classpass/README.md",
+   "tokens": "systems/classpass/tokens.json",
+   "styleGuide": "systems/classpass/style-guide.html",
+   "preview": {
+    "cover": "systems/classpass/screenshots/home-light-default.png",
+    "icon": "systems/classpass/icon.png",
+    "swatches": {
+     "light": {
+      "page": "light.surface.page",
+      "surface": "light.surface.card",
+      "text": "light.text.primary",
+      "muted": "light.text.muted",
+      "accent": "light.accent",
+      "border": "light.border.subtle"
+     }
+    },
+    "fonts": [
+     "core.font.family.display",
+     "core.font.family.ui"
+    ]
+   },
+   "source": {
+    "path": "~/.design-systems/classpass/raw-shots (full-colour captures, outside the repo)"
+   },
+   "capture": {
+    "method": "public-web",
+    "source": "classpass.com in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass at deviceScaleFactor 2; computed styles, painted layers and 112 element crops from the live DOM across 50 components and 113 state readings, plus a stylesheet harvest (4 custom-property rules, 9 @font-face faces, NO declared design-token palette - every token is a measured computed-style reading). The site geo-localizes by request origin: this capture shows SGD prices and Singapore studio content. BOUNDARY: booking, member search results, plan checkout and every account surface sit behind sign-in or payment; the /login card was focused and filled with placeholder text only and never submitted, and /walkthrough was read but never advanced",
+    "timestamp": "2026-11-16T18:50:00Z",
+    "harness": "Devin",
+    "model": "SWE-2 High",
+    "route": "public-web",
+    "routes": [
+     "/",
+     "/search",
+     "/plans",
+     "/features",
+     "/how-classpass-works",
+     "/fitness",
+     "/gifts",
+     "/try/reviews",
+     "/partners",
+     "/corporate-wellness",
+     "/about",
+     "/contact",
+     "/blog",
+     "/legal/terms-and-conditions",
+     "/login (boundary)",
+     "/walkthrough (boundary)",
+     "mobile /, /search and /plans plus the home menu overlay"
+    ],
+    "gaps": [
+     "the product itself - class booking, member search results, credits, plan checkout and account pages - sits behind sign-in or payment and was never crossed",
+     "Cloudflare challenges sequential navigation, so each route and measurement group ran in a fresh browser context; a route that hit the interstitial was retried until it cleared",
+     "the TrustArc consent overlay (#consent_blackbar) mounts on every route and was hidden for every shot, never answered",
+     "nav-login and nav-cta could not be given a real keyboard focus on this pass; their focus behaviour is published as unmeasured, not absent",
+     "pressed states are DevTools-forced (CSS.forcePseudoState), so any script-applied mousedown state is missing; disabled, error and loading states do not appear on the public surface",
+     "the app-store badge anchors hug the text line (117x12) while their badge art overflows as an oversized inline child; the crops capture the art, the boxes are honest",
+     "the rotating hero word, the venue map and the sticky trial CTA animate or render through third-party scripts; a capture's pixel state is a moment, not a spec",
+     "prices and studio content are geo-localized (SGD here) - layout and chrome are the invariant evidence"
+    ],
+    "durationMin": 180,
+    "durationNote": "wall-clock across the capture sessions including kit adaptation, DOM probing, fresh-context retries around Cloudflare, the stylesheet harvest, desktop/mobile screenshot passes, measurement passes and the offline build",
+    "pr": "https://github.com/starship-terminal/constellations/pull/607"
+   },
+   "layoutGaps": {
+    "icons/": "No standalone SVG icon set was lifted on this pass; the glyphs (the wordmark, social marks, stars, chevrons, carousel dots) are component artwork visible in the crops and screenshots."
+   }
+  },
+  {
    "slug": "claude",
    "name": "Claude",
    "url": "https://claude.ai",

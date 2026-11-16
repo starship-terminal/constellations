@@ -948,6 +948,12 @@
     "reason": "catalog.json describes a food-and-nutrition tracker: a marketing site for an iOS/macOS app with feature cards, a Free-vs-Plus comparison, help center, news, press and comparison articles."
   },
   {
+    "referenceId": "systems:classpass",
+    "groupId": "web-categories",
+    "labels": ["Health & Wellness", "Marketplace"],
+    "reason": "catalog.json describes a fitness-and-wellness booking marketplace: studio search with filter pills and venue cards, a credits-plan carousel, gift, corporate-wellness and studio-partner pages."
+  },
+  {
     "referenceId": "systems:framer",
     "groupId": "web-categories",
     "labels": ["Design & Media Editing", "Productivity"],

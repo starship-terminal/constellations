@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_109 of 167 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_110 of 168 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -168,6 +168,11 @@ Access: signed out (every captured surface is public: the www.chargetrip.com mar
 - no form was submitted and nothing was booked: the sales form and newsletter field were focused, Book-a-demo / Plan-a-route / Contact-sales / Sign-in / Create-account / Send were never followed; the Cookie Settings card was hidden, never answered
 - developers.chargetrip.com and playground.chargetrip.com were captured as boundary shells only; the credential-gated playground was never used
 - the sign-in card runs a different stack (Tailwind v4, oklch) from the Framer marketing site; its tokens are marked measured, not declared
+
+## [ClassPass](../systems/classpass) — `classpass`
+Access: read-only (the marketing site, search, plans, features, how-it-works, fitness, gifts, reviews, partners, corporate-wellness, about, contact, blog and legal are fully public; /login's card and /walkthrough's carousel were measured as boundaries - nothing was signed into, searched for, booked or submitted; booking, member search results, credits and checkout sit behind sign-in or payment)
+- the product itself - class booking, member search results, credits, plan checkout and account pages - sits behind sign-in or payment and was never crossed
+- nav-login and nav-cta could not be given a real keyboard focus on this pass; their focus behaviour is published as unmeasured, not absent
 
 ## [Discord](../systems/discord) — `discord`
 Access: read-only (the marketing pages, /servers discovery + categories, /servers/<slug> details, /login and /register are public signed out; the whole client - /channels/*, joining servers, invites, messages, settings - is an authenticated boundary never reached; every button and field was measured, never submitted or followed)

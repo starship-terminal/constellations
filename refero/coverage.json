@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 167,
-    "system_domains": 159,
-    "matched_domains": 130,
-    "missing_domains": 303,
+    "system_packages": 168,
+    "system_domains": 160,
+    "matched_domains": 131,
+    "missing_domains": 302,
     "system_domains_absent_from_catalog": 29
   },
   "matched": {
@@ -832,6 +832,23 @@
           "slug": "chatgpt",
           "name": "ChatGPT",
           "url": "https://chatgpt.com",
+          "name_match": true
+        }
+      ]
+    },
+    "classpass.com": {
+      "catalog": [
+        {
+          "name": "ClassPass",
+          "domain": "classpass.com",
+          "id": 256
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "classpass",
+          "name": "ClassPass",
+          "url": "https://classpass.com",
           "name_match": true
         }
       ]
@@ -2296,13 +2313,6 @@
         "name": "Bento",
         "domain": "bento.me",
         "id": 284
-      }
-    ],
-    "classpass.com": [
-      {
-        "name": "ClassPass",
-        "domain": "classpass.com",
-        "id": 256
       }
     ],
     "clay.earth": [

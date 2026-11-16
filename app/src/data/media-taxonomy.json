@@ -703,6 +703,11 @@
       "assignedMedia": 88
     },
     {
+      "referenceId": "systems:classpass",
+      "media": 150,
+      "assignedMedia": 56
+    },
+    {
       "referenceId": "systems:claude",
       "media": 746,
       "assignedMedia": 452
@@ -57198,6 +57203,662 @@
           "termId": "ios-ui-elements:text-field",
           "rule": "ui-text-field",
           "reason": "Capture filename explicitly names text field; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:classpass",
+      "mediaId": "systems/classpass/screenshots/about-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:about",
+          "rule": "page-about",
+          "reason": "Capture filename explicitly names about; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:classpass",
+      "mediaId": "systems/classpass/screenshots/about-light-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:about",
+          "rule": "page-about",
+          "reason": "Capture filename explicitly names about; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:classpass",
+      "mediaId": "systems/classpass/screenshots/contact-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:contacts",
+          "rule": "page-contacts",
+          "reason": "Capture filename explicitly names contacts; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:classpass",
+      "mediaId": "systems/classpass/screenshots/contact-light-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:contacts",
+          "rule": "page-contacts",
+          "reason": "Capture filename explicitly names contacts; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:classpass",
+      "mediaId": "systems/classpass/screenshots/home-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:classpass",
+      "mediaId": "systems/classpass/screenshots/home-light-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:classpass",
+      "mediaId": "systems/classpass/screenshots/home-light-menu.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:classpass",
+      "mediaId": "systems/classpass/screenshots/mobile-search-light-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:classpass",
+      "mediaId": "systems/classpass/screenshots/mobile-search-light-full.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:classpass",
+      "mediaId": "systems/classpass/screenshots/search-light-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:classpass",
+      "mediaId": "systems/classpass/screenshots/search-light-filter-open.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:classpass",
+      "mediaId": "systems/classpass/screenshots/search-light-full.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:classpass",
+      "mediaId": "systems/classpass/screenshots/signin-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:log-in",
+          "rule": "page-login",
+          "reason": "Capture filename explicitly names log in; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:classpass",
+      "mediaId": "systems/classpass/components/crops/app-badge-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:badge",
+          "rule": "ui-badge",
+          "reason": "Capture filename explicitly names badge; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:classpass",
+      "mediaId": "systems/classpass/components/crops/app-badge-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:badge",
+          "rule": "ui-badge",
+          "reason": "Capture filename explicitly names badge; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:classpass",
+      "mediaId": "systems/classpass/components/crops/faq-question-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:classpass",
+      "mediaId": "systems/classpass/components/crops/faq-question-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:classpass",
+      "mediaId": "systems/classpass/components/crops/faq-question-hover.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:classpass",
+      "mediaId": "systems/classpass/components/crops/faq-question-opened.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:classpass",
+      "mediaId": "systems/classpass/components/crops/faq-question-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:classpass",
+      "mediaId": "systems/classpass/components/crops/filter-multi-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:classpass",
+      "mediaId": "systems/classpass/components/crops/filter-multi-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:classpass",
+      "mediaId": "systems/classpass/components/crops/filter-multi-hover.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:classpass",
+      "mediaId": "systems/classpass/components/crops/filter-multi-opened.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:classpass",
+      "mediaId": "systems/classpass/components/crops/filter-multi-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:classpass",
+      "mediaId": "systems/classpass/components/crops/filter-panel-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:classpass",
+      "mediaId": "systems/classpass/components/crops/filter-pill-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:classpass",
+      "mediaId": "systems/classpass/components/crops/filter-pill-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:classpass",
+      "mediaId": "systems/classpass/components/crops/filter-pill-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:classpass",
+      "mediaId": "systems/classpass/components/crops/filter-pill-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:classpass",
+      "mediaId": "systems/classpass/components/crops/footer-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:classpass",
+      "mediaId": "systems/classpass/components/crops/footer-link-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:classpass",
+      "mediaId": "systems/classpass/components/crops/footer-link-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:classpass",
+      "mediaId": "systems/classpass/components/crops/footer-link-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:classpass",
+      "mediaId": "systems/classpass/components/crops/footer-link-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:classpass",
+      "mediaId": "systems/classpass/components/crops/footer-social-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:classpass",
+      "mediaId": "systems/classpass/components/crops/footer-social-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:classpass",
+      "mediaId": "systems/classpass/components/crops/footer-social-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:classpass",
+      "mediaId": "systems/classpass/components/crops/footer-social-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:classpass",
+      "mediaId": "systems/classpass/components/crops/hero-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:classpass",
+      "mediaId": "systems/classpass/components/crops/m-menu-button-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:classpass",
+      "mediaId": "systems/classpass/components/crops/menu-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:classpass",
+      "mediaId": "systems/classpass/components/crops/nav-dropdown-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dropdown",
+          "rule": "ui-dropdown",
+          "reason": "Capture filename explicitly names dropdown; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:classpass",
+      "mediaId": "systems/classpass/components/crops/nav-dropdown-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dropdown",
+          "rule": "ui-dropdown",
+          "reason": "Capture filename explicitly names dropdown; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:classpass",
+      "mediaId": "systems/classpass/components/crops/nav-dropdown-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dropdown",
+          "rule": "ui-dropdown",
+          "reason": "Capture filename explicitly names dropdown; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:classpass",
+      "mediaId": "systems/classpass/components/crops/nav-dropdown-opened.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dropdown",
+          "rule": "ui-dropdown",
+          "reason": "Capture filename explicitly names dropdown; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:classpass",
+      "mediaId": "systems/classpass/components/crops/nav-dropdown-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dropdown",
+          "rule": "ui-dropdown",
+          "reason": "Capture filename explicitly names dropdown; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:classpass",
+      "mediaId": "systems/classpass/components/crops/plan-pill-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:classpass",
+      "mediaId": "systems/classpass/components/crops/search-box-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:classpass",
+      "mediaId": "systems/classpass/components/crops/search-field-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:search-field",
+          "rule": "ui-search-field",
+          "reason": "Capture filename explicitly names search field; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:classpass",
+      "mediaId": "systems/classpass/components/crops/search-field-filled.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:search-field",
+          "rule": "ui-search-field",
+          "reason": "Capture filename explicitly names search field; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:classpass",
+      "mediaId": "systems/classpass/components/crops/search-field-focused.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:search-field",
+          "rule": "ui-search-field",
+          "reason": "Capture filename explicitly names search field; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:classpass",
+      "mediaId": "systems/classpass/components/crops/search-loc-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:classpass",
+      "mediaId": "systems/classpass/components/crops/search-loc-focused.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:classpass",
+      "mediaId": "systems/classpass/components/crops/venue-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:classpass",
+      "mediaId": "systems/classpass/components/crops/venue-card-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
         }
       ]
     },
