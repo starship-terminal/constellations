@@ -699,9 +699,9 @@
     227
    ],
    "description": "#1 app for sleep and meditation",
-   "status": "pending",
-   "package": null,
-   "notes": "Partial capture saved on branch capture-calm (2026-11-12 run stopped before the builders); resume from it, raw page copies in ~/.design-systems/calm/.",
+   "status": "captured",
+   "package": "systems/calm",
+   "notes": "Captured 2026-11-16: marketing + dark app-shell + B2B + help center, signed out; /signup-flow gated by PerimeterX (recorded as boundary).",
    "batch": 3
   },
   {
@@ -1179,8 +1179,8 @@
     156
    ],
    "description": "Your Place to Talk and Hang Out",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/discord",
    "notes": "",
    "batch": 4
   },
@@ -1194,8 +1194,8 @@
     926
    ],
    "description": "Movies, Events, Dining, Sports & Concerts Nearby",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/district",
    "notes": "",
    "batch": 4
   },
@@ -1209,8 +1209,8 @@
     332
    ],
    "description": "The Future Of Possible",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/dji",
    "notes": "",
    "batch": 4
   },
