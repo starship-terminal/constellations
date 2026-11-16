@@ -131,7 +131,7 @@
     "durationMin": null,
     "gaps": [
      "go.aaply.app returned \"Not found\" on /login, /sign, /signup and /workspace/demo: the authenticated product is unreachable to this client, so only the marketing site is measured",
-     "the billing segment's held lime fill paints on a sibling shape, not the text atom \u2014 segments measure transparent in both positions",
+     "the billing segment's held lime fill paints on a sibling shape, not the text atom — segments measure transparent in both positions",
      "reviews carousel measured on its first slide only"
     ],
     "pr": "https://github.com/c-wenlong/designs/pull/441",
@@ -449,8 +449,8 @@
      "/sg/en/cart"
     ],
     "gaps": [
-     "Fit Predictor widget (Fits.me) never mounted in headless Chromium on this product/geo \u2014 recorded as an honest miss",
-     "Bag drawer, checkout, account area, store stock check, size-guide drawer and search results need a cart item, account, purchase or form submit \u2014 not captured",
+     "Fit Predictor widget (Fits.me) never mounted in headless Chromium on this product/geo — recorded as an honest miss",
+     "Bag drawer, checkout, account area, store stock check, size-guide drawer and search results need a cart item, account, purchase or form submit — not captured",
      "OneTrust consent banner never mounted (SDK network-blocked); its selectors are known, its styling unmeasured",
      "Cart route renders the home page when the bag is empty",
      "Geo/region variant is the served Singapore storefront; other regions not captured"
@@ -577,7 +577,7 @@
    },
    "capture": {
     "method": "public-web",
-    "source": "adidas.com.cn China flagship in headless Chromium, 1440x900 + 390x844; computed styles and crops from the live DOM. BOUNDARY: the global adidas.com storefront is Akamai-blocked from the capture environment \u2014 every regional domain answers HTTP 403 Reference Error (headless, headed Chrome, curl, IPv6, Wayback), so this package covers adidas.com.cn, a related but different zh-CN front end",
+    "source": "adidas.com.cn China flagship in headless Chromium, 1440x900 + 390x844; computed styles and crops from the live DOM. BOUNDARY: the global adidas.com storefront is Akamai-blocked from the capture environment — every regional domain answers HTTP 403 Reference Error (headless, headed Chrome, curl, IPv6, Wayback), so this package covers adidas.com.cn, a related but different zh-CN front end",
     "timestamp": "2026-11-10T17:30:00Z",
     "harness": "Devin",
     "model": "SWE-2 Max",
@@ -589,7 +589,7 @@
      "/cart"
     ],
     "gaps": [
-     "adidas.com global storefront unreachable (Akamai 403 on every regional domain) \u2014 package covers adidas.com.cn only",
+     "adidas.com global storefront unreachable (Akamai 403 on every regional domain) — package covers adidas.com.cn only",
      "pages are fixed-height app shells with inner scroll containers: -full screenshots capture the viewport shell, not a tall page",
      "add-to-cart captured in its disabled state (grey text/border); enabled purchase bar not captured",
      "plp-title, product-card-price, size-cell, accordion, m-header recorded misses; WeChat tooltip surfaces not measured",
@@ -669,7 +669,7 @@
     ],
     "gaps": [
      "Email sign up modal mounts empty: its remote Demandware fragment did not render headless, so its fields are unmeasured",
-     "Add to cart captured mid-hydration as 'Loading \u2026'; resting label state not captured",
+     "Add to cart captured mid-hydration as 'Loading …'; resting label state not captured",
      "sign-in beyond the form, account area, checkout and purchases deliberately uncaptured (nothing submitted)",
      "search-panel container and cart-close button eluded marking; qty-select absent on a one-variant PDP",
      "OneTrust consent banner never mounted (SDK network-blocked); selectors known, styling unmeasured"
@@ -1796,7 +1796,7 @@
    },
    "capture": {
     "method": "public-web",
-    "source": "asos.com in headed Chrome (Playwright channel 'chrome' \u2014 Akamai 403s headless), desktop 1440x900 and mobile 390x844 at 2x; computed styles and crops from the live DOM via data-testid selectors; CSS vars from stylesheet response bodies + inline styles resolved in a probe; geo-served Singapore (SGD)",
+    "source": "asos.com in headed Chrome (Playwright channel 'chrome' — Akamai 403s headless), desktop 1440x900 and mobile 390x844 at 2x; computed styles and crops from the live DOM via data-testid selectors; CSS vars from stylesheet response bodies + inline styles resolved in a probe; geo-served Singapore (SGD)",
     "timestamp": "2026-11-10T19:30:00Z",
     "harness": "Devin",
     "model": "SWE-2 Max",
@@ -1966,7 +1966,7 @@
      "mobile /collections/tous-les-produits"
     ],
     "gaps": [
-     "/cart is a 404 for everyone \u2014 the cart is the side-cart drawer opened by PANIER (measured as cart-drawer/cart-empty); the 404 page is recorded as cart-page/cart-title",
+     "/cart is a 404 for everyone — the cart is the side-cart drawer opened by PANIER (measured as cart-drawer/cart-empty); the 404 page is recorded as cart-page/cart-title",
      "checkout and everything behind sign-in (nothing was added to the cart)",
      "the PDP is a sample: the shop grid's first product at run time",
      "the Axeptio consent layer and the shipping-country popup are hidden in captures, never answered",
@@ -2047,7 +2047,7 @@
     ],
     "gaps": [
      "the site detail is a sample: the first /websites/ card whose page still has a Vote button (SOTD winners have closed voting); recorded as site_url",
-     "the card hover layer (Vote Now) stayed display:none under headless hover \u2014 card-cta/card-action are recorded misses; home-light-card-hover shows it",
+     "the card hover layer (Vote Now) stayed display:none under headless hover — card-cta/card-action are recorded misses; home-light-card-hover shows it",
      "Log in / Sign Up did not render on the captured headless loads; no public login page exists signed-out (/session/login 404s)",
      "voting and /submit/ were never performed (a vote records a score); account, jury and Pro areas are behind sign-in",
      "submit-cta-2 is a recorded miss: no measurable CTA rendered on /submit/ headless",
@@ -2111,7 +2111,7 @@
    },
    "capture": {
     "method": "public-web",
-    "source": "b150.ai in headless Chrome (Playwright), desktop 1440x900 and mobile 390x844 at 2x; computed styles and crops from the live DOM; CSS vars from stylesheet response bodies + inline styles \u2014 the declared @layer theme block lands in the app bin",
+    "source": "b150.ai in headless Chrome (Playwright), desktop 1440x900 and mobile 390x844 at 2x; computed styles and crops from the live DOM; CSS vars from stylesheet response bodies + inline styles — the declared @layer theme block lands in the app bin",
     "timestamp": "2026-11-11T05:30:00Z",
     "harness": "Devin",
     "model": "SWE-2 Max",
@@ -3065,7 +3065,7 @@
    ],
    "shape": "reference",
    "captured": "2026-11-11",
-   "access": "signed out (every captured surface is public; the product \u2014 scheduler, event types, availability, bookings, workflows, insights, settings \u2014 sits behind app.cal.com login and was never reached; no booking was created)",
+   "access": "signed out (every captured surface is public; the product — scheduler, event types, availability, bookings, workflows, insights, settings — sits behind app.cal.com login and was never reached; no booking was created)",
    "themes": [
     "light",
     "dark"
@@ -7672,7 +7672,7 @@
    },
    "capture": {
     "method": "public-web",
-    "source": "calendly.com (an Astro/Tailwind marketing site declaring a --color-*/--text-ui-*/--radius-ui-* token layer with .dark islands, plus the public invitee booking pages on /calendly-demo \u2014 a separate booking-kit application with its own --coreColor*/--primary-color* layer in Proxima Nova) in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and crops from the live DOM. Both token layers are declared and used directly; the booking calendar's painted blues (#006bff, #004eba, #f4f8ff) are atomic classes measured on the elements. The workspace behind /app/login is a documented boundary",
+    "source": "calendly.com (an Astro/Tailwind marketing site declaring a --color-*/--text-ui-*/--radius-ui-* token layer with .dark islands, plus the public invitee booking pages on /calendly-demo — a separate booking-kit application with its own --coreColor*/--primary-color* layer in Proxima Nova) in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and crops from the live DOM. Both token layers are declared and used directly; the booking calendar's painted blues (#006bff, #004eba, #f4f8ff) are atomic classes measured on the elements. The workspace behind /app/login is a documented boundary",
     "timestamp": "2026-11-12T10:00:00Z",
     "harness": "Devin",
     "model": "SWE-2 High",
@@ -7864,7 +7864,7 @@
    },
    "capture": {
     "method": "public-web",
-    "source": "doordash.com's signed-out surface captured from Internet Archive Wayback Machine snapshots of the product's own SSR pages (live *.doordash.com Cloudflare-403s this client on every route tried \u2014 headless and headed): the consumer-web-next Next.js/styled-components stack declaring the prism --base-*/--usage-*/--comp-* token layers, plus careersatdoordash.com (WordPress/Tailwind). Computed styles, crops and full-page shots in headless Chromium (Playwright) at 1440x900 1x and 390x844 2x; every token and measurement is per-snapshot archival evidence, not a current live read",
+    "source": "doordash.com's signed-out surface captured from Internet Archive Wayback Machine snapshots of the product's own SSR pages (live *.doordash.com Cloudflare-403s this client on every route tried — headless and headed): the consumer-web-next Next.js/styled-components stack declaring the prism --base-*/--usage-*/--comp-* token layers, plus careersatdoordash.com (WordPress/Tailwind). Computed styles, crops and full-page shots in headless Chromium (Playwright) at 1440x900 1x and 390x844 2x; every token and measurement is per-snapshot archival evidence, not a current live read",
     "timestamp": "2026-11-13T09:00:00Z",
     "harness": "Devin",
     "model": "SWE-2 High",
@@ -7880,10 +7880,10 @@
      "/en-US/p/seasonal-holidays/ (20261025153234)",
      "/en-US/promos/ (20261008212700)",
      "careersatdoordash.com/ (20261009000533)",
-     "mobile /, /en-US/store/\u2026 and /food-delivery/"
+     "mobile /, /en-US/store/… and /food-delivery/"
     ],
     "gaps": [
-     "live *.doordash.com is Cloudflare-blocked for this client; every route is a Wayback snapshot of the product's own SSR output, labelled per route in raw/archive-urls.json \u2014 archival evidence, not a current live capture",
+     "live *.doordash.com is Cloudflare-blocked for this client; every route is a Wayback snapshot of the product's own SSR output, labelled per route in raw/archive-urls.json — archival evidence, not a current live capture",
      "hydration-dependent content is absent: the HSA/FSA and seasonal catalog bodies and the DashPass page sit on the product's loading spinner; lazy directory rows and some imagery never hydrated under the archive",
      "the signed-in product entirely: the address gate, sign-in, ordering, cart, checkout, DashPass purchase, merchant and Dasher onboarding were never crossed; the identity.doordash.com OAuth anchors were measured, never followed",
      "the address-search field was focused once for measurement, never filled or submitted; the cookie banner and dormant Turnstile nodes were hidden and never answered",
@@ -7892,7 +7892,7 @@
      "icons: no standalone SVG set lifted this pass; icon.png is the site's published favicon (32 px source, the largest the site ships, upscaled to 128 px)"
     ],
     "durationMin": 240,
-    "durationNote": "worktree creation to package-complete, spread over 2026-11-12 \u2192 2026-11-13",
+    "durationNote": "worktree creation to package-complete, spread over 2026-11-12 → 2026-11-13",
     "pr": "https://github.com/starship-terminal/constellations/pull/509"
    },
    "layoutGaps": {
@@ -7968,13 +7968,13 @@
      "mobile / and /about"
     ],
     "gaps": [
-     "app.dona.ai entirely: the to-do product \u2014 lists, the advertised light/dark/black UI themes, sync, accounts \u2014 lives behind sign-in and was never reached; Login and Try for free open that host and were never followed",
+     "app.dona.ai entirely: the to-do product — lists, the advertised light/dark/black UI themes, sync, accounts — lives behind sign-in and was never reached; Login and Try for free open that host and were never followed",
      "the newsletter form was measured, focused and sample-filled (cleared after); Join our newsletter was never pressed, so the 'Thank you! You're in.' success state and any error state are uncaptured",
      "external links (twitter.com/getdona, the Discord invite) were never followed",
      "no disabled, error or loading states exist on the public surface",
      "the video modal was opened, captured and hidden again; the YouTube embed was never played",
      "the cookie banner was captured as its own state then hidden; Accept was never clicked",
-     "the unstyled logo/social anchors paint UA link colours (#0000ee, #ff0000 on :active) \u2014 recorded as browser defaults, not Dona values",
+     "the unstyled logo/social anchors paint UA link colours (#0000ee, #ff0000 on :active) — recorded as browser defaults, not Dona values",
      "icons: no standalone SVG set lifted this pass"
     ],
     "durationMin": 105,
@@ -8006,7 +8006,7 @@
    ],
    "shape": "reference",
    "captured": "2026-11-13",
-   "access": "signed out (every captured surface is public; checkout, a filled cart, /account past the login/register forms and subscription management were never reached \u2014 nothing was added to the cart, no form was ever submitted, and no consent or newsletter overlay was ever answered)",
+   "access": "signed out (every captured surface is public; checkout, a filled cart, /account past the login/register forms and subscription management were never reached — nothing was added to the cart, no form was ever submitted, and no consent or newsletter overlay was ever answered)",
    "themes": [
     "light"
    ],
@@ -8063,10 +8063,10 @@
      "mobile / and /collections/all and /products/orange-sanguine-piment"
     ],
     "gaps": [
-     "checkout, a filled cart, payment, /account past the login and register forms, and subscription management were never reached \u2014 nothing was added to the cart and no submit was ever pressed",
+     "checkout, a filled cart, payment, /account past the login and register forms, and subscription management were never reached — nothing was added to the cart and no submit was ever pressed",
      "the newsletter drawer is unmeasured: its header toggle is display:none at both captured widths, and the Klaviyo popup never mounted during the pass",
      "the Shop nav dropdown is marked has-dropdown but its panel is not in the signed-out DOM",
-     "the subscription (Appstle) purchase-option radios did not render on load signed out \u2014 they appear in the variant screenshot after a pack-size is picked, never toggled",
+     "the subscription (Appstle) purchase-option radios did not render on load signed out — they appear in the variant screenshot after a pack-size is picked, never toggled",
      "sold-out/disabled/error states, pagination and footer social links do not paint on the public surface",
      "the /en locale duplicates the French surface and was not captured separately",
      "icons: no standalone SVG set lifted this pass"
@@ -8171,11 +8171,11 @@
     "gaps": [
      "the signed-in product entirely: chat threads, health record, prescriptions, appointments, account and billing sit behind the sign-in card and were never reached",
      "the ?modal=signin card was rendered from its public URL and measured; Log in with email, the OAuth buttons and Create an account were never pressed",
-     "Start chat, Send message, Check My Symptoms, the starter chips and the Anonymous badge were measured, never pressed \u2014 each would start a session or submit text",
+     "Start chat, Send message, Check My Symptoms, the starter chips and the Anonymous badge were measured, never pressed — each would start a session or submit text",
      "site-menu drawer and footer links to account surfaces were measured, never followed",
      "the cookie/consent layers and the reCAPTCHA badge were hidden, never answered",
      "the Tailwind content pages keep literal utility colours under data-theme=dark, so the dark capture set is scoped to the token-driven app surfaces",
-     "full-page shots are capped at eight chunks; Wall of Love (~8841px) and mobile home (~8469px) hit the cap \u2014 a documented truncation",
+     "full-page shots are capped at eight chunks; Wall of Love (~8841px) and mobile home (~8469px) hit the cap — a documented truncation",
      "condensed-button hover was unreachable (element outside the viewport); recorded as an error state, not a value",
      "icons: no standalone SVG set lifted this pass"
     ],
@@ -8296,7 +8296,7 @@
    ],
    "shape": "reference",
    "captured": "2026-11-13",
-   "access": "signed out (every captured surface is public; the product \u2014 the secrets dashboard, projects, configs, service tokens, logs and billing \u2014 sits behind sign-in on dashboard.doppler.com and was never reached; the demo request form was never submitted)",
+   "access": "signed out (every captured surface is public; the product — the secrets dashboard, projects, configs, service tokens, logs and billing — sits behind sign-in on dashboard.doppler.com and was never reached; the demo request form was never submitted)",
    "themes": [
     "dark"
    ],
@@ -8328,7 +8328,7 @@
    },
    "capture": {
     "method": "public-web",
-    "source": "doppler.com (a Next.js/Tailwind marketing site painting one dark theme; the palette and type scale live in named utilities \u2014 .bg-warm-black, .text-silver, .text-h3, .text-labelSm \u2014 with only --global-ease/--global-transition left as custom properties) in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles, painted layers and crops from the live DOM across nine routes plus the footer and the opened Platform mega-menu and mobile menu. The workspace behind dashboard.doppler.com is a documented boundary",
+    "source": "doppler.com (a Next.js/Tailwind marketing site painting one dark theme; the palette and type scale live in named utilities — .bg-warm-black, .text-silver, .text-h3, .text-labelSm — with only --global-ease/--global-transition left as custom properties) in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles, painted layers and crops from the live DOM across nine routes plus the footer and the opened Platform mega-menu and mobile menu. The workspace behind dashboard.doppler.com is a documented boundary",
     "timestamp": "2026-11-13T09:40:00Z",
     "harness": "Devin",
     "model": "SWE-2 Max",
@@ -8693,7 +8693,7 @@
    },
    "capture": {
     "method": "public-web",
-    "source": "care.com (a Next.js app over an MUI component layer \u2014 CareHeaderContainer/MegaMenu/CareMobileDrawer/CareTag \u2014 plus a legacy Proxima Nova login surface at /vis/auth) in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and crops from the live DOM. The site declares almost no custom properties, so tokens are measured computed values plus the @font-face list; /babysitters is a real public marketplace listing (first name + initial, photos, rates, tags \u2014 no contact details). The member product behind the login/join shells is a documented boundary",
+    "source": "care.com (a Next.js app over an MUI component layer — CareHeaderContainer/MegaMenu/CareMobileDrawer/CareTag — plus a legacy Proxima Nova login surface at /vis/auth) in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and crops from the live DOM. The site declares almost no custom properties, so tokens are measured computed values plus the @font-face list; /babysitters is a real public marketplace listing (first name + initial, photos, rates, tags — no contact details). The member product behind the login/join shells is a documented boundary",
     "timestamp": "2026-11-12T06:00:00Z",
     "harness": "Devin",
     "model": "SWE-2 High",
@@ -8983,7 +8983,7 @@
    },
    "capture": {
     "method": "public-web",
-    "source": "dopper.com \u2014 two hosts: www.dopper.com (Next.js/Storyblok marketing, dopper-navigation shadow-DOM header) and shop.dopper.com (Magento 2, theme Dopper/dopper_b2c) in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and crops from the live DOM. The marketing :root layer declares 44 product custom properties (--darkBlue/--deep-sea/--sand/--yellow/--carribean/--glowing-coral ramps with -1/-2/-3 tints, --border-radius-xs..l, --ease-*/--bounce-*, --z-*, --touch-target-min), resolved light; vendor layers (HubSpot/Trellis, Cookiebot) binned out. The shop compiles the palette to literals \u2014 shop values are measured. The customer account, checkout and filled cart are a documented boundary",
+    "source": "dopper.com — two hosts: www.dopper.com (Next.js/Storyblok marketing, dopper-navigation shadow-DOM header) and shop.dopper.com (Magento 2, theme Dopper/dopper_b2c) in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and crops from the live DOM. The marketing :root layer declares 44 product custom properties (--darkBlue/--deep-sea/--sand/--yellow/--carribean/--glowing-coral ramps with -1/-2/-3 tints, --border-radius-xs..l, --ease-*/--bounce-*, --z-*, --touch-target-min), resolved light; vendor layers (HubSpot/Trellis, Cookiebot) binned out. The shop compiles the palette to literals — shop values are measured. The customer account, checkout and filled cart are a documented boundary",
     "timestamp": "2026-11-13T02:00:00Z",
     "harness": "Devin",
     "model": "SWE-2 High",
@@ -9449,7 +9449,7 @@
    },
    "capture": {
     "method": "public-web",
-    "source": "cron.com (a static dark marketing page plus a light Next.js content app at /blog, /changelog and /blog/<post>) in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and crops from the live DOM. The content pages' stylesheets declare the var layer \u2014 the 14-step --gray10..--gray900 ramp, --chronos brand oranges, the named --eclipse/--snow/--dieter/--urushi/--ratio set, --text-default, --material-*/--object-* roles, --elevation-low/-high, --disabled-opacity, --z-index-popover, --animation-duration-default and --sans-serif-font \u2014 harvested by tools/capture/vars.mjs from the inline <style> and the /blog sheets; the dark home is literal CSS so its values are measured computed styles. The app past Login/Sign up is a documented boundary",
+    "source": "cron.com (a static dark marketing page plus a light Next.js content app at /blog, /changelog and /blog/<post>) in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and crops from the live DOM. The content pages' stylesheets declare the var layer — the 14-step --gray10..--gray900 ramp, --chronos brand oranges, the named --eclipse/--snow/--dieter/--urushi/--ratio set, --text-default, --material-*/--object-* roles, --elevation-low/-high, --disabled-opacity, --z-index-popover, --animation-duration-default and --sans-serif-font — harvested by tools/capture/vars.mjs from the inline <style> and the /blog sheets; the dark home is literal CSS so its values are measured computed styles. The app past Login/Sign up is a documented boundary",
     "timestamp": "2026-11-12T16:00:00Z",
     "harness": "Devin",
     "model": "SWE-2 High",
@@ -9542,7 +9542,7 @@
    },
    "capture": {
     "method": "public-web",
-    "source": "dribbble.com (a Rails app in three CSS eras \u2014 the mini-master bundle in Mona Sans with hardcoded values, Vite/Shoelace components declaring the --sl-* token layer re-bound to the Dribbble pink, and Algolia/intl-tel-input vendor styles) in headless Chromium (Playwright) behind an AWS WAF challenge, desktop 1440x900 and a 390x844 mobile pass; computed styles and crops from the live DOM. The --sl-*/--btn-*/--input-*/--zi-*/--site-nav-* variables are declared evidence; the ink/pink/surface colours and geometry are measured computed values. The signed-in product behind /session/new is a documented boundary",
+    "source": "dribbble.com (a Rails app in three CSS eras — the mini-master bundle in Mona Sans with hardcoded values, Vite/Shoelace components declaring the --sl-* token layer re-bound to the Dribbble pink, and Algolia/intl-tel-input vendor styles) in headless Chromium (Playwright) behind an AWS WAF challenge, desktop 1440x900 and a 390x844 mobile pass; computed styles and crops from the live DOM. The --sl-*/--btn-*/--input-*/--zi-*/--site-nav-* variables are declared evidence; the ink/pink/surface colours and geometry are measured computed values. The signed-in product behind /session/new is a documented boundary",
     "timestamp": "2026-11-13T01:30:00Z",
     "harness": "Devin",
     "model": "SWE-2 High",
@@ -9562,11 +9562,11 @@
     ],
     "gaps": [
      "the signed-in product entirely: posting, following, hiring flows, inboxes and dashboards sit behind sign-in and were never reached",
-     "the signed-out feed is a teaser \u2014 one shot card then a sign-up wall; measured as the boundary, never followed",
-     "/session/new and /signups/new captured as surfaces; the email field typed sample text and deleted it \u2014 nothing was submitted and no OAuth flow started; the Continue-with-Google GSI button is third-party-rendered and was hidden like every overlay, so it is a documented gap",
+     "the signed-out feed is a teaser — one shot card then a sign-up wall; measured as the boundary, never followed",
+     "/session/new and /signups/new captured as surfaces; the email field typed sample text and deleted it — nothing was submitted and no OAuth flow started; the Continue-with-Google GSI button is third-party-rendered and was hidden like every overlay, so it is a documented gap",
      "every Start-Project-Brief, Get-in-touch, Follow, Apply, Sign-up and Get-Started action was measured, never followed",
      "the floating project-brief card, the Google One Tap prompt and any consent overlay were hidden per capture, never answered",
-     "the pink Start-Project-Brief nav link exists in the header DOM but paints 0x0 at 1440 on the home page \u2014 documented, not measured",
+     "the pink Start-Project-Brief nav link exists in the header DOM but paints 0x0 at 1440 on the home page — documented, not measured",
      "the home hero rotates its accent word and media card; crops catch one frame",
      "full-page shots are capped at eight chunks; the designer profile's bounded stitch is recorded in its sidecar",
      "icons: no standalone SVG set lifted this pass"
@@ -9632,7 +9632,7 @@
    },
    "capture": {
     "method": "public-web",
-    "source": "curater.org (a Vite/React SPA, TanStack Router, with a shadcn/Tailwind + --Curater-* var layer) in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and crops from the live DOM. 177 :root vars resolved on a probe. The feed scrolls in an inner .feedScrollArea container (document scrollHeight stays at viewport), so full-page captures expand the scroller and its ancestors. /taste client-side redirects to /taste/soon and Playwright locators never resolve on it \u2014 its components are measured through main-world DOM queries. The signed-in app is a documented boundary",
+    "source": "curater.org (a Vite/React SPA, TanStack Router, with a shadcn/Tailwind + --Curater-* var layer) in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and crops from the live DOM. 177 :root vars resolved on a probe. The feed scrolls in an inner .feedScrollArea container (document scrollHeight stays at viewport), so full-page captures expand the scroller and its ancestors. /taste client-side redirects to /taste/soon and Playwright locators never resolve on it — its components are measured through main-world DOM queries. The signed-in app is a documented boundary",
     "timestamp": "2026-11-12T18:30:00Z",
     "harness": "Devin",
     "model": "SWE-2 High",
@@ -9649,7 +9649,7 @@
     "gaps": [
      "the signed-in product entirely: creating curations, the TasteScope questionnaire, saving items and settings sit behind 'Log in or sign up' / Google SSO and were never reached",
      "the search field collapses when the pointer leaves the toggle area; it was opened locally and left open, nothing typed or submitted",
-     "/feed is an inner-scroll surface: desktop full-page bounded at 27,850px, mobile at 57,550px \u2014 the tail is a documented boundary",
+     "/feed is an inner-scroll surface: desktop full-page bounded at 27,850px, mobile at 57,550px — the tail is a documented boundary",
      "one curation and one profile captured as representatives of their page types; the catalog's full range is not enumerated",
      "disabled, error and loading states never appear on the public surface",
      "icons: no standalone SVG set lifted this pass"
@@ -10718,12 +10718,12 @@
     "gaps": [
      "the signed-in product entirely: Create, Composer, Chat, Library, artist-page publishing, account settings and billing need an account and were never reached; /login and /sign-in were measured as forms and never submitted",
      "search is gated: the rail's Search button opens the log-in dialog (captured as evidence), so a real search surface is uncaptured",
-     "every Create button, prompt submit and Attach control was measured, never pressed \u2014 a prompt is a generation request",
+     "every Create button, prompt submit and Attach control was measured, never pressed — a prompt is a generation request",
      "Like, Remix, Share and every player-bar gated control were measured, never pressed",
      "the Get-Pro and Start-free CTAs were measured, never followed past the public card; checkout is uncaptured",
      "the Cookiebot overlay and Google One-Tap prompt were hidden, never answered",
      "no error, loading or empty states on the public surface; two failed hovers (player-prev/player-next) are recorded as failures in the JSON",
-     "/charts and mobile / scroll past one GPU texture; their full shots are tiled *.part0/.part1 \u2014 an inner-scroller boundary",
+     "/charts and mobile / scroll past one GPU texture; their full shots are tiled *.part0/.part1 — an inner-scroller boundary",
      "icons: no standalone SVG set lifted this pass"
     ],
     "durationMin": 150,
@@ -13536,7 +13536,7 @@
    "url": "https://www.fiverr.com",
    "category": "e-commerce",
    "platform": "web",
-   "goodFor": "freelance-marketplace design: a white sticky header with a Browse-categories drawer and a green Join pill, the dark photographic hero band with a dark-skinned search form, Macan type, popular-service chips, a /categories directory, gig cards with star ratings and localized 'From S$xx' pricing, the Basic/Standard/Premium package tablist on a gig page's pricing card, and the /join + /login auth edge \u2014 all measured as computed styles (the site's stylesheet is a hashed atomic layer with no named token layer)",
+   "goodFor": "freelance-marketplace design: a white sticky header with a Browse-categories drawer and a green Join pill, the dark photographic hero band with a dark-skinned search form, Macan type, popular-service chips, a /categories directory, gig cards with star ratings and localized 'From S$xx' pricing, the Basic/Standard/Premium package tablist on a gig page's pricing card, and the /join + /login auth edge — all measured as computed styles (the site's stylesheet is a hashed atomic layer with no named token layer)",
    "tags": [
     "web",
     "marketplace",
@@ -13605,8 +13605,8 @@
     ],
     "gaps": [
      "the buyer/seller account, orders, inbox, checkout and every post-login surface was never reached",
-     "the gig card's Continue was measured, never pressed \u2014 the order/checkout flow it leads to is uncaptured",
-     "Contact me was measured, never pressed \u2014 the message flow it fronts needs an account",
+     "the gig card's Continue was measured, never pressed — the order/checkout flow it leads to is uncaptured",
+     "Contact me was measured, never pressed — the message flow it fronts needs an account",
      "the join and login forms were typed into then cleared, never submitted; Continue-with-* was never pressed",
      "the package tabs were not switched (switching re-prices the card), so Standard/Premium price panels are uncaptured",
      "filter panels opened but filtered result states were not exercised (applying re-runs the search)",
@@ -14602,6 +14602,113 @@
    },
    "layoutGaps": {
     "icons/": "no standalone SVG icon set was lifted; the Glassnode mark, nav glyphs, theme-toggle icons and partner logos are visible in the crops and screenshots"
+   }
+  },
+  {
+   "slug": "grok",
+   "name": "Grok / xAI Docs",
+   "url": "https://docs.x.ai",
+   "category": "ai-chat",
+   "platform": "web",
+   "goodFor": "developer-docs design: a declared Tailwind v4 token layer of --neutral2..98, the solar --solar/--darksolar accents (#ff640a), semantic --bg-*/--fg-*/--primary/--border-*/--sidebar-*/--chart-* roles re-pointed under html.dark by a real header theme button (15 names declared under .dark only), proprietary xVf/xMono variable faces on a --text-xs..5xl ramp, a fixed 80px header with a 208px cmdK search pill over a 272px sidebar and an inner-scrolling article, dark-tinted --bg-codeblock panels in both themes, shiki syntax colours, Radix SDK tabs, pricing tables, a 1000px cmdk search dialog, a full-screen 390px nav sheet",
+   "tags": [
+    "web",
+    "ai",
+    "chat",
+    "xai",
+    "developer",
+    "docs",
+    "api",
+    "pricing",
+    "search",
+    "light",
+    "dark",
+    "signed-out",
+    "design-tokens"
+   ],
+   "shape": "reference",
+   "captured": "2026-11-17",
+   "access": "signed out (every captured surface is public docs.x.ai; grok.com's chat product never cleared the Cloudflare managed challenge and x.ai, console.x.ai, status.x.ai and accounts.x.ai returned Cloudflare 403 blocks from the capture host - blocked boundaries, never claimed as captures; nothing was signed into, typed, searched, sent, bought or submitted; the only presses were local UI toggles - theme button, Ctrl+K, sidebar chevrons, SDK tabs, the phone nav button)",
+   "themes": [
+    "light",
+    "dark"
+   ],
+   "widths": [
+    1440,
+    390
+   ],
+   "entry": "systems/grok/README.md",
+   "tokens": "systems/grok/tokens.json",
+   "styleGuide": "systems/grok/style-guide.html",
+   "preview": {
+    "cover": "systems/grok/screenshots/home-light-default.png",
+    "icon": "systems/grok/icon.png",
+    "swatches": {
+     "light": {
+      "page": "light.bg.base",
+      "surface": "light.bg.card",
+      "text": "light.fg.default",
+      "muted": "light.fg.muted",
+      "accent": "core.color.brand.solar",
+      "border": "light.border.muted"
+     },
+     "dark": {
+      "page": "dark.bg.base",
+      "surface": "dark.bg.card",
+      "text": "dark.fg.default",
+      "muted": "dark.fg.muted",
+      "accent": "core.color.brand.solar",
+      "border": "dark.border.muted"
+     }
+    },
+    "fonts": [
+     "core.font.family.sans",
+     "core.font.family.mono"
+    ]
+   },
+   "source": {
+    "path": "~/.design-systems/grok/raw-shots (full-colour unmasked captures, outside the repo)"
+   },
+   "capture": {
+    "method": "public-web",
+    "source": "docs.x.ai in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and element crops from the live DOM, plus a stylesheet harvest (512 rules, 3 @font-face, 240 light + 255 dark resolved custom properties in a probe carrying the live page's own next/font classes). The portal boots html.light (next-themes, localStorage.theme) and the header's 'Switch to dark theme' button repaints html.dark; the article scrolls inside its own overflow-y-auto pane, expanded and restored for bounded full-page captures. BOUNDARY: grok.com's chat surface never cleared the Cloudflare managed challenge (bounded headless and headed attempts); x.ai, console.x.ai, status.x.ai and accounts.x.ai returned Cloudflare 403 - the chat product, console, auth and status surfaces are documented boundaries, not captures",
+    "timestamp": "2026-11-17T21:30:00Z",
+    "harness": "Devin",
+    "model": "SWE-2 Max",
+    "route": "public-web",
+    "routes": [
+     "docs.x.ai/overview",
+     "docs.x.ai/developers/quickstart",
+     "docs.x.ai/developers/models",
+     "docs.x.ai/developers/pricing",
+     "docs.x.ai/developers/rate-limits",
+     "docs.x.ai/developers/faq/general",
+     "docs.x.ai/developers/model-capabilities/text/generate-text",
+     "docs.x.ai/developers/rest-api-reference/inference",
+     "docs.x.ai/developers/release-notes",
+     "docs.x.ai/cookbook",
+     "docs.x.ai/grok/overview",
+     "docs.x.ai/grok/faq",
+     "docs.x.ai/grok/user-guide",
+     "docs.x.ai/grok-bot/overview",
+     "docs.x.ai/build/overview",
+     "docs.x.ai/x-subscription/overview",
+     "verified html.dark repaints on overview, quickstart, pricing, generate-text, api-reference and grok overview",
+     "the Ctrl+K search dialog, the product switcher, an opened sidebar group, an SDK tab switch and the 390px nav sheet as transient states",
+     "BLOCKED: grok.com (Cloudflare managed challenge, never cleared), x.ai, console.x.ai, status.x.ai, accounts.x.ai (Cloudflare 403)"
+    ],
+    "gaps": [
+     "the Grok chat product (grok.com) is a blocked boundary: the Cloudflare managed challenge never cleared in headless or headed Chromium under Xvfb, including a bounded Turnstile wait - no pixel or token of the app is in this package",
+     "x.ai, console.x.ai, status.x.ai and accounts.x.ai returned Cloudflare 403 'Sorry, you have been blocked' from the capture host - marketing, console, auth and status surfaces were never reached",
+     "search results: the cmdk dialog was opened and its resting suggestions measured, but no query was ever typed - result rows and the 'Ask Grok' answer path are uncaptured",
+     "dark-only declarations (--border, --input, --ring, --alert, --on-alert, --background-*, --content-*, --sb-*) exist in the dark token set alone and were never inferred for light",
+     "the xVf and xMono faces are self-hosted and not shipped in the package; crops show them, the style guide falls back to system fonts",
+     "pressed states are DevTools-forced (CSS.forcePseudoState), so any script-applied mousedown state is missing",
+     "prefers-reduced-motion is ignored on most probed pages (two of eight partially honour it) - see raw/motion.json",
+     "inner-scroll architecture: the document never scrolls; -full captures expand the article's overflow-y-auto pane and are bounded at eight chunks, so any content past that bound is absent rather than scrolled"
+    ],
+    "durationMin": 300,
+    "durationNote": "wall-clock across the capture sessions including the blocked grok.com/x.ai attempts, kit adaptation, the stylesheet harvest, the screenshot pass, the measurement pass and the offline build"
    }
   }
 ,
