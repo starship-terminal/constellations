@@ -928,5 +928,14 @@
     "groupId": "web-categories",
     "labels": ["Health & Wellness"],
     "reason": "catalog.json describes a food-and-nutrition tracker: a marketing site for an iOS/macOS app with feature cards, a Free-vs-Plus comparison, help center, news, press and comparison articles."
+  },
+  {
+    "referenceId": "systems:glorify",
+    "groupId": "web-categories",
+    "labels": [
+      "Design & Media Editing",
+      "Productivity"
+    ],
+    "reason": "catalog.json describes an e-commerce design tool: a Framer marketing site with pricing, template galleries and a Learn hub, the signed-out auth cards, and the anonymous editor (upload onboarding, Craft dialog, canvas chrome); the signed-in workspace is gated."
   }
 ]

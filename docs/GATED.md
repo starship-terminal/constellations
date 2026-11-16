@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_97 of 155 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_98 of 156 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -545,6 +545,12 @@ Access: read-only (the marketing site, pricing, help center, news, press, articl
 Access: signed out (every surface captured is public; app.fourmula.ai /start, /auth and /project/create-pdp are the only app surfaces a signed-out visitor sees - measured as forms, typed into then cleared, never submitted; uploads, the Shopify connection, generation and every post-login surface need an account and were never run; consent was never answered; every CTA and link was measured, never followed)
 - every post-login surface (dashboard, asset generation, results, account settings) lives behind app.fourmula.ai's auth wall - an authenticated boundary never reached
 - the auth fields, PDP uploads, Shopify Check connection and Start generation were measured at rest and typed into then cleared, never submitted - validation, error, loading and success states are absent rather than measured; the Start generation pill's dim accent/15% fill is its resting style, not a measured disabled state
+
+## [Glorify](../systems/glorify) — `glorify`
+Access: signed out (every captured surface is public; the signed-in workspace, saved files, billing and account settings are an authenticated boundary never reached; the auth and Craft fields were measured and typed into then cleared, never submitted; Login, Signup, Share, Download, Replace and 'Add to canvas' were measured, never pressed; no trial was started, no OAuth followed and nothing was purchased)
+- every signed-in product surface (saved designs, workspaces, team/billing, the editor beyond the anonymous scratch file) needs an account - an authenticated boundary never reached
+- the login, register and Craft fields were measured and typed into then cleared, never submitted - validation, error, loading and success states are absent rather than measured
+- the anonymous editor's file content, layers and canvas tools beyond the onboarding and the Craft dialog were not exercised - the scratch file was never saved
 
 ## Gate noted in access text only
 

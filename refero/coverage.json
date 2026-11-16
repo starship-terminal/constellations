@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 155,
-    "system_domains": 147,
-    "matched_domains": 118,
-    "missing_domains": 315,
+    "system_packages": 156,
+    "system_domains": 148,
+    "matched_domains": 119,
+    "missing_domains": 314,
     "system_domains_absent_from_catalog": 29
   },
   "matched": {
@@ -1897,6 +1897,23 @@
         }
       ]
     },
+    "glorify.com": {
+      "catalog": [
+        {
+          "name": "Glorify",
+          "domain": "glorify.com",
+          "id": 583
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "glorify",
+          "name": "Glorify",
+          "url": "https://glorify.com",
+          "name_match": true
+        }
+      ]
+    },
     "google.com": {
       "catalog": [
         {
@@ -2344,13 +2361,6 @@
         "name": "Glassnode",
         "domain": "glassnode.com",
         "id": 87
-      }
-    ],
-    "glorify.com": [
-      {
-        "name": "Glorify",
-        "domain": "glorify.com",
-        "id": 583
       }
     ],
     "glossgenius.com": [
