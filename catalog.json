@@ -12883,7 +12883,8 @@
      "icons: the inline SVGs were collected (icons/INDEX.tsv); the raster/photographic marketing imagery is the product's artwork, not a token source"
     ],
     "durationMin": 240,
-    "durationNote": "wall-clock across the capture sessions including kit adaptation, the stylesheet harvest, the screenshot pass, the measurement pass and the offline build"
+    "durationNote": "wall-clock across the capture sessions including kit adaptation, the stylesheet harvest, the screenshot pass, the measurement pass and the offline build",
+    "pr": "https://github.com/starship-terminal/constellations/pull/614"
    }
   }
  ]
