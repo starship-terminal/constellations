@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_114 of 172 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_116 of 174 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -173,6 +173,11 @@ Access: signed out (every captured surface is public: the www.chargetrip.com mar
 Access: read-only (the marketing site, search, plans, features, how-it-works, fitness, gifts, reviews, partners, corporate-wellness, about, contact, blog and legal are fully public; /login's card and /walkthrough's carousel were measured as boundaries - nothing was signed into, searched for, booked or submitted; booking, member search results, credits and checkout sit behind sign-in or payment)
 - the product itself - class booking, member search results, credits, plan checkout and account pages - sits behind sign-in or payment and was never crossed
 - nav-login and nav-cta could not be given a real keyboard focus on this pass; their focus behaviour is published as unmeasured, not absent
+
+## [Clearful](../systems/clearful) — `clearful`
+Access: signed out (the marketing routes, /library, /journal-prompts and legal are fully public; the journal app sits behind app.clearful.com sign-in - the public sign-in card was measured through the Flutter semantics overlay, never submitted; several CTA anchors point at # and were never followed)
+- the journal app itself - entries, editor, settings - sits behind app.clearful.com sign-in and was never crossed; the sign-in card was measured but never submitted
+- the sign-in card is a Flutter canvas: its colours cannot be read by CSSOM, so light.app.* values are pixel-sampled off the captured screenshot and labelled as such
 
 ## [Mesh](../systems/clay-earth) — `clay-earth`
 Access: signed out (clay.earth 301-redirects to me.sh - the Clay product rebranded to Mesh, an Automattic product; every captured surface is public: the me.sh marketing routes and the app.me.sh sign-in card as a boundary; the app interior, plan checkout, downloads and every OAuth/sign-in action were never crossed; the sign-in e-mail field was focused and filled with placeholder text only)
@@ -650,6 +655,12 @@ Access: signed out (every captured surface is public; the account, the donation 
 - the /create wizard was captured at its first public step only; its category pills and 'Continue' were measured, never submitted - later wizard steps sit behind it
 - the /sign-in Welcome card was measured signed-out; the email field was typed into then cleared and 'Continue'/SSO were never pressed - no account was ever touched; in some headless passes the island does not hydrate and only the empty shell records
 - some measured components are missing or zero-sized where the route did not serve them in a given pass (the donations heading, the search heading, the sign-in card's buttons); gaps are recorded, not fabricated
+
+## [Glorify](../systems/glorify) — `glorify`
+Access: signed out (every captured surface is public; the signed-in workspace, saved files, billing and account settings are an authenticated boundary never reached; the auth and Craft fields were measured and typed into then cleared, never submitted; Login, Signup, Share, Download, Replace and 'Add to canvas' were measured, never pressed; no trial was started, no OAuth followed and nothing was purchased)
+- every signed-in product surface (saved designs, workspaces, team/billing, the editor beyond the anonymous scratch file) needs an account - an authenticated boundary never reached
+- the login, register and Craft fields were measured and typed into then cleared, never submitted - validation, error, loading and success states are absent rather than measured
+- the anonymous editor's file content, layers and canvas tools beyond the onboarding and the Craft dialog were not exercised - the scratch file was never saved
 
 ## Gate noted in access text only
 

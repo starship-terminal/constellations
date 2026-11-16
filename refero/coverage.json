@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 172,
-    "system_domains": 164,
-    "matched_domains": 134,
-    "missing_domains": 299,
+    "system_packages": 174,
+    "system_domains": 166,
+    "matched_domains": 136,
+    "missing_domains": 297,
     "system_domains_absent_from_catalog": 30
   },
   "matched": {
@@ -872,6 +872,23 @@
           "slug": "claude-ios",
           "name": "Claude for iOS",
           "url": "https://claude.ai/download",
+          "name_match": true
+        }
+      ]
+    },
+    "clearful.com": {
+      "catalog": [
+        {
+          "name": "Clearful",
+          "domain": "clearful.com",
+          "id": 542
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "clearful",
+          "name": "Clearful",
+          "url": "https://clearful.com",
           "name_match": true
         }
       ]
@@ -2118,6 +2135,23 @@
         }
       ]
     },
+    "glorify.com": {
+      "catalog": [
+        {
+          "name": "Glorify",
+          "domain": "glorify.com",
+          "id": 583
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "glorify",
+          "name": "Glorify",
+          "url": "https://glorify.com",
+          "name_match": true
+        }
+      ]
+    },
     "glossgenius.com": {
       "catalog": [
         {
@@ -2373,13 +2407,6 @@
         "id": 658
       }
     ],
-    "clearful.com": [
-      {
-        "name": "Clearful",
-        "domain": "clearful.com",
-        "id": 542
-      }
-    ],
     "clipchamp.com": [
       {
         "name": "Clipchamp",
@@ -2525,13 +2552,6 @@
         "name": "Pocket",
         "domain": "getpocket.com",
         "id": 228
-      }
-    ],
-    "glorify.com": [
-      {
-        "name": "Glorify",
-        "domain": "glorify.com",
-        "id": 583
       }
     ],
     "grok.com": [

@@ -1,0 +1,16 @@
+{
+ "_note": "Rules for systems/glorify. A fully public signed-out capture: every route is public marketing, a signed-out auth card, or the product's own anonymous Play-for-free editor on a scratch /file/<id> the SPA creates. The auth fields were typed into with sample text (name@example.com, 'Example User', 'sample-pass-123', 'Example Brand', 'A sample product description') and cleared, never submitted, so no PII is reachable. No trial, checkout, login or share flow was activated. Every email the OCR finds is published content: glorify.com addresses printed in the marketing/footer pages, placeholder addresses in the product copy and form fields, and article authors' published addresses. No regions need masking.",
+ "ocr": {
+  "emails": true,
+  "email_allow": [
+   "@glorify(app)?\\.(com|co|app)$",
+   "@glorif\\w*\\.\\w+$",
+   "@example\\.(com|org|inc)$",
+   "@gmail\\.com$",
+   "@mail\\.com$",
+   "@everyone$",
+   "@here$"
+  ]
+ },
+ "families": []
+}
