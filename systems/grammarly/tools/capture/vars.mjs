@@ -1,0 +1,159 @@
+// Dumps every custom property grammarly.com's pages declare, by stylesheet, selector and
+// media condition, sorted into who owns it, plus the font faces, the fonts that
+// loaded, and the dark-theme checks.
+//
+//   PLAYWRIGHT=<path to playwright index.mjs> node vars.mjs     (writes raw/css-vars.json)
+//
+// grammarly.com's own CSS sits on static-web.grammarly.com, so the CSSOM
+// refuses to read it cross-origin. The script keeps every stylesheet
+// response body and parses it in the page with a constructed CSSStyleSheet,
+// which reads it exactly as the browser does. Owners:
+//   grammarly   the site's own variables: the GDS layer (--origin-*, --color-*,
+//               --button-*, --space-*, --radius-*, --elevation-*, --font-stack-*)
+//               and the marketing modules' shorthand, on :root,
+//               [data-gds-theme=light] and [data-gds-theme=dark]
+//   transcend   Transcend's consent banner (transcend-airgap.css)
+//   gsi         Google's sign-in button styles
+import fs from 'node:fs';
+import path from 'node:path';
+import { BASE, launch, open, RAW, drain } from './public/lib.mjs';
+
+const PAGES = {
+  home: '/', plans: '/plans', features: '/features',
+  'grammar-check': '/grammar-check', 'ai-detector': '/ai-detector',
+  signin: '/signin', 'contact-sales': '/contact/sales', business: '/business',
+};
+const clean = (s) => String(s)
+  .replace(/(https?:\/\/[^\s"')?]+)\?[^\s"')]*/g, '$1')
+  .replace(/url\(\s*["']?data:[^)]{80,}\)/g, 'url(data:…)');
+
+function owner(name, sheet, selector, media) {
+  if (/transcend|airgap/.test(sheet)) return 'transcend';
+  if (/accounts\.google\.com|\/gsi\//.test(sheet)) return 'gsi';
+  return 'grammarly';
+}
+
+const decls = new Map();
+const faces = new Map();
+const fontsLoaded = {};
+const checks = {};
+const resolved = {};
+const sheetsSeen = {};
+
+const { browser, context } = await launch();
+for (const [key, p] of Object.entries(PAGES)) {
+  const page = await context.newPage();
+  const bodies = new Map();
+  // Each body is read asynchronously; the reads, late ones included, are awaited after the page opens
+  // (settled() below, bounded by drain()), so a sheet still in flight is not silently left out.
+  const pending = [];
+  page.on('response', (r) => {
+    if (r.request().resourceType() !== 'stylesheet') return;
+    pending.push(r.text().then((t) => { bodies.set(r.url().split('?')[0], t); }, () => { /* body gone */ }));
+  });
+  const settled = async () => {
+    if (!(await drain(pending))) console.log('  ! some stylesheet bodies did not finish within 15s');
+    const hrefs = await page.evaluate(() => [...document.styleSheets].map((s) => s.href).filter(Boolean));
+    return [...new Set(hrefs.map((h) => h.split('?')[0]).filter((h) => !bodies.has(h)))];
+  };
+  console.log('open', key);
+  await open(page, BASE + p, { wait: 7000 });
+  const unread = await settled();
+  if (unread.length) console.log('  ! stylesheets the page loaded but whose body was not read:', unread.join(', '));
+  // inline sheets (CSS-in-JS) are readable through the CSSOM directly
+  const inline = await page.evaluate(() => [...document.styleSheets].filter((s) => !s.href).map((s, i) => { try { return ['inline-' + i, [...s.cssRules].map((r) => r.cssText).join('\n')]; } catch { return null; } }).filter(Boolean));
+  const sheets = [...bodies.entries()].map(([u, t]) => [u.replace(/^https?:\/\/[^/]+/, '').replace(/^.*\/_next\/static\/css\//, 'css/').replace(/^.*\/css\//, 'css/'), t]).concat(inline);
+  sheetsSeen[key] = sheets.map(([n, t]) => `${n} (${t.length} bytes)`).concat(unread.map((u) => `${u} (body not read)`));
+  const found = await page.evaluate((sheets) => {
+    // A custom property can hold a url() with a signed or per-account query: record it as url(…).
+    // Its value keeps the authored tokens, so this matches URL( too, escapes and space inside the parens.
+    const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v);
+    // The masked src of two faces can match (same family, weight and style, different files), so each face also keeps a hash of its src with the queries cut, only to tell them apart.
+    const srcId = (v) => { let h = 5381; for (const ch of v.replace(/\?[^"')\s]*/g, '')) h = ((h << 5) + h + ch.charCodeAt(0)) | 0; return (h >>> 0).toString(36); };
+    const res = [], ff = [];
+    for (const [name, text] of sheets) {
+      const s = new CSSStyleSheet();
+      try { s.replaceSync(text); } catch { continue; }
+      const walk = (rules, media) => {
+        for (const r of rules) {
+          if (r instanceof CSSMediaRule) { walk(r.cssRules, [...media, r.conditionText]); continue; }
+          if (r instanceof CSSSupportsRule) { walk(r.cssRules, [...media, `@supports ${r.conditionText}`]); continue; }
+          if (typeof CSSScopeRule !== 'undefined' && r instanceof CSSScopeRule) { walk(r.cssRules, [...media, `@scope (${r.start})`]); continue; }
+          if (r instanceof CSSFontFaceRule) { ff.push({ family: r.style.getPropertyValue('font-family').replace(/["']/g, ''), weight: r.style.getPropertyValue('font-weight'), style: r.style.getPropertyValue('font-style'), src: noUrl(r.style.getPropertyValue('src')), sid: srcId(r.style.getPropertyValue('src')), sheet: name }); continue; }
+          if (r.cssRules && !r.style) { walk(r.cssRules, media); continue; }
+          if (!r.style) continue;
+          for (const n of r.style) if (n.startsWith('--')) res.push({ sheet: name, selector: (r.selectorText || '').replace(/__[A-Za-z0-9_-]{5,6}\b/g, ''), media: media.join(' and ') || null, name: n, value: noUrl(r.style.getPropertyValue(n).trim()) });
+        }
+      };
+      walk(s.cssRules, []);
+    }
+    return { res, ff };
+  }, sheets);
+  for (const d of found.res) {
+    const sheet = d.sheet.startsWith('inline-') ? 'inline' : d.sheet;
+    const o = owner(d.name, sheet, d.selector, d.media);
+    const k = [o, sheet, d.selector, d.media, d.name].join('|');
+    const e = decls.get(k) || { owner: o, sheet, selector: d.selector, media: d.media, name: d.name, value: clean(d.value), pages: [] };
+    if (!e.pages.includes(key)) e.pages.push(key);
+    decls.set(k, e);
+  }
+  for (const f of found.ff) {
+    const k = [f.family, f.weight, f.style, f.sid, clean(f.src).replace(/data:[^)]*/, 'data:…').slice(0, 300)].join('|');
+    const { sid, ...face } = f;
+    faces.set(k, { ...face, src: clean(f.src).replace(/url\("?data:[^)]*\)/g, 'url(data:…)').slice(0, 300), sheet: f.sheet.startsWith('inline-') ? 'inline' : f.sheet });
+  }
+  fontsLoaded[key] = await page.evaluate(() => [...new Set([...document.fonts].filter((f) => f.status === 'loaded').map((f) => `${f.family.replace(/"/g, '')} ${f.weight} ${f.style}`))].sort());
+  // dark theme: does anything set a theme attribute, and does the page change under prefers-color-scheme: dark?
+  const sample = () => page.evaluate(() => [[100, 100], [700, 300], [720, 850], [1300, 450], [300, 600]].map(([x, y]) => {
+    let n = document.elementFromPoint(x, y); const t = n; while (n && getComputedStyle(n).backgroundColor === 'rgba(0, 0, 0, 0)') n = n.parentElement;
+    return (n ? getComputedStyle(n).backgroundColor : '-') + ' / ' + (t ? getComputedStyle(t).color : '-');
+  }));
+  const light = await sample();
+  await page.emulateMedia({ colorScheme: 'dark' });
+  await page.waitForTimeout(1200);
+  const dark = await sample();
+  await page.emulateMedia({ colorScheme: 'light' });
+  checks[key] = {
+    html: await page.evaluate(() => [...document.documentElement.attributes].map((a) => `${a.name}=${a.value}`)),
+    themeAttributes: await page.evaluate(() => [...document.querySelectorAll('[data-gds-theme],[data-theme],[data-color-scheme]')].map((e) => `${e.tagName.toLowerCase()}.${String(e.className).split(' ')[0].replace(/__[\w-]{5,6}$/, '')} ${['data-gds-theme', 'data-theme', 'data-color-scheme'].filter((a) => e.hasAttribute(a)).map((a) => `${a}=${e.getAttribute(a)}`).join(' ')}`)),
+    prefersDarkChangesPage: JSON.stringify(light) !== JSON.stringify(dark),
+    samplesLight: light, samplesDark: dark,
+  };
+  // every grammarly variable declared on :root or a gds-theme scope, resolved
+  // by the browser at four widths, plus the same names resolved again under
+  // data-gds-theme="dark" — declared evidence, never painted by the site
+  if (key === 'home' || key === 'plans' || key === 'grammar-check') {
+    // Every grammarly variable whose declaration can land on the root: a
+    // selector carrying :root or :where(:root, :host) and no media condition.
+    const names = [...decls.values()].filter((d) => d.owner === 'grammarly' && /:root|:host/.test(d.selector) && !d.media).map((d) => d.name);
+    resolved[key] = {};
+    for (const w of [390, 768, 1024, 1440]) {
+      await page.setViewportSize({ width: w, height: 900 });
+      await page.waitForTimeout(400);
+      resolved[key][w] = await page.evaluate((ns) => { const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v); const cs = getComputedStyle(document.documentElement); return Object.fromEntries([...new Set(ns)].sort().map((n) => [n, noUrl(cs.getPropertyValue(n).trim())])); }, names);
+    }
+    await page.setViewportSize({ width: 1440, height: 900 });
+    // Both dark layers, resolved the way a scoped element would see them:
+    // gds-theme=dark for the --color-*/--button-* set and
+    // origin-theme=grammarly + origin-mode=dark for the --origin-* set.
+    // Declared evidence: the public site never mounts either attribute.
+    await page.evaluate(() => { document.documentElement.setAttribute('data-gds-theme', 'dark'); document.documentElement.setAttribute('data-origin-theme', 'grammarly'); document.documentElement.setAttribute('data-origin-mode', 'dark'); });
+    await page.waitForTimeout(400);
+    resolved[key].dark = await page.evaluate((ns) => { const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v); const cs = getComputedStyle(document.documentElement); return Object.fromEntries([...new Set(ns)].sort().map((n) => [n, noUrl(cs.getPropertyValue(n).trim())])); }, names);
+    await page.evaluate(() => { for (const a of ['data-gds-theme', 'data-origin-theme', 'data-origin-mode']) document.documentElement.removeAttribute(a); });
+  }
+  await page.close();
+}
+await browser.close();
+
+const sortKey = (d) => [d.owner, d.selector, d.media || '', d.name].join('|');
+const all = [...decls.values()].sort((a, b) => (sortKey(a) < sortKey(b) ? -1 : 1));
+const count = {};
+for (const d of all) count[d.owner] = (count[d.owner] || 0) + 1;
+const outFile = path.join(RAW, 'css-vars.json');
+fs.writeFileSync(outFile, JSON.stringify({
+  url: BASE, read: new Date().toLocaleDateString('en-CA'), pages: PAGES, counts: count,
+  decls: all, resolved, fontFaces: [...faces.values()].sort((a, b) => (a.family + a.weight < b.family + b.weight ? -1 : 1)),
+  fontsLoaded, themeChecks: checks, sheets: sheetsSeen,
+}, null, 1) + '\n');
+console.log(count, '->', outFile);

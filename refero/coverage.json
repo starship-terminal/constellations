@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 170,
-    "system_domains": 162,
-    "matched_domains": 132,
-    "missing_domains": 301,
+    "system_packages": 171,
+    "system_domains": 163,
+    "matched_domains": 133,
+    "missing_domains": 300,
     "system_domains_absent_from_catalog": 30
   },
   "matched": {
@@ -2168,6 +2168,23 @@
         }
       ]
     },
+    "grammarly.com": {
+      "catalog": [
+        {
+          "name": "Grammarly",
+          "domain": "grammarly.com",
+          "id": 42
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "grammarly",
+          "name": "Grammarly",
+          "url": "https://www.grammarly.com",
+          "name_match": true
+        }
+      ]
+    },
     "linear.app": {
       "catalog": [
         {
@@ -2505,13 +2522,6 @@
         "name": "GlossGenius",
         "domain": "glossgenius.com",
         "id": 830
-      }
-    ],
-    "grammarly.com": [
-      {
-        "name": "Grammarly",
-        "domain": "grammarly.com",
-        "id": 42
       }
     ],
     "grok.com": [

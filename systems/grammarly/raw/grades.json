@@ -1,0 +1,86 @@
+{
+ "F1": {
+  "grade": "meets",
+  "evidence": "Two full ramp families on :root: the legacy GDS ramps (blue, blue-gray, gold, green, magenta, neutral-gray, purple, red, teal, yellow-green; ~8-10 steps each incl. neutral) and the Origin ramps (blue, gold, green, mulberry, neutral, orange, purple, red, teal, yellow, space). tokens.json core.palette.{gds,*}."
+ },
+ "F2": {
+  "grade": "partly",
+  "evidence": "Page and surface roles are declared (color.background.base.default/subdued/inverse plus brand, interactive, neutral and the status fills; origin.* mirrors them). No raised/overlay/scrim role is published — the sign-in page's dim is a modal implementation detail, not a token. tokens.json light.color.background.*."
+ },
+ "F3": {
+  "grade": "partly",
+  "evidence": "Primary (text.base.default), secondary (text.base.subdued), inverse and brand/on-accent roles are declared and painted; no disabled text or distinct link colour is published — nav and footer links are plain ink, and no disabled control is reachable signed out. tokens.json light.color.text.*."
+ },
+ "F4": {
+  "grade": "meets",
+  "evidence": "Default and subdued hairlines (border.base.default/subdued), inverse, brand and interactive borders, a declared focus border (border.focus.default #027e6f) measured as the 2px ring on 20 components, plus status borders. tokens.json light.color.border.*."
+ },
+ "F5": {
+  "grade": "meets",
+  "evidence": "Every --button-* role declares default/hover/active (primary green deepens, secondary fills, ghost text darkens) and the measured state rows match. tokens.json light.button.*; components.md."
+ },
+ "F6": {
+  "grade": "meets",
+  "evidence": "Full background/border/text/icon trios for success, warning and critical (danger) plus the suggestion-category palettes (correctness, clarity, engagement, delivery, addition, deletion, plagiarism) and the tag.* fills. tokens.json light.color.*; style-guide.html."
+ },
+ "F7": {
+  "grade": "meets",
+  "evidence": "The product ships one painted theme on every public surface (light; no switch, prefers-color-scheme does not repaint). The declared dark set mirrors the same colour/origin/button/tag roles — parity in the declarations — but is never painted; labelled declared evidence, not a second shipped theme."
+ },
+ "F8": {
+  "grade": "meets",
+  "evidence": "Matter (display) and Inter (text) with full fallback stacks plus Super Sans Mono VF/Super Serif VF in the Origin stacks; named roles heading-xxsmall..xlarge and text-xsmall..large carry size, weight, line-height and letter-spacing. tokens.json core.typography, core.fontFamily."
+ },
+ "F9": {
+  "grade": "meets",
+  "evidence": "33 spacing tokens plus the origin-size scale on a 4px base; measured paddings and gaps conform. tokens.json core.spacing, core.size."
+ },
+ "F10": {
+  "grade": "meets",
+  "evidence": "Two declared radius scales (core.radius 21 steps on the Origin axis, radiusGds 11 on the GDS scale; GDS-skinned controls measure a 6px corner) and per-component border widths in components.md."
+ },
+ "F11": {
+  "grade": "partly",
+  "evidence": "Control heights measured per component (24-60px across five stops), icon sizes in the component readings, and the focus ring measured (2px, 1-3px offset). No declared control-size ladder beyond the origin-size scale and no declared ring-width token (only component.focus.color). raw/components-computed.json."
+ },
+ "F12": {
+  "grade": "meets",
+  "evidence": "Origin elevation low/medium/high plus the legacy GDS shadow+outline pairs; the low pair rides the sticky header and dropdowns. tokens.json core.elevation; style-guide.html."
+ },
+ "F13": {
+  "grade": "meets",
+  "evidence": "Durations (100-300ms) and easings declared, the measured motion group holds the real transitions/animations from five pages, and the reduced-motion verdict (partial) is recorded. tokens.json core.motion; raw/motion.json."
+ },
+ "F14": {
+  "grade": "meets",
+  "evidence": "Five breakpoints from the media rules, header 65px and container readings, per-page grid readings at 1440/1920/1024/390 in raw/layout.json, and the z-index ladder. tokens.json core.breakpoint, core.layout, core.zIndex."
+ },
+ "C1": {
+  "grade": "partly",
+  "evidence": "13 of 19 captured: button, icon button (info-icon-button), link, text field, text area (checker editor), select, tabs, menu (nav flyout), dialog (sign-in card), card, badge (sticker tag), list row (FAQ item), table (Compare Plans rows). Not published signed out: checkbox, radio, switch, tooltip, toast, avatar — all live inside app.grammarly.com. components.md."
+ },
+ "C2": {
+  "grade": "partly",
+  "evidence": "Captured through the UI: hover, focus-visible, focused/filled, selected (tab), open (flyout, mobile sheet); pressed forced via forcePseudoState (labelled). disabled/loading/error are not published on signed-out pages — declared in Gaps, not fabricated. components.md."
+ },
+ "C3": {
+  "grade": "meets",
+  "evidence": "27 components took a real keyboard focus; 20 paint a 2px #027e6f ring at 1-3px offset — the site's consistent affordance. components.md Shared values."
+ },
+ "C4": {
+  "grade": "partly",
+  "evidence": "Component entries name the palette token behind every measured colour (#027e6f `green.60`) but geometry, paddings and type are raw px — the semantic tokens do not map component-level dimensions. components.md."
+ },
+ "P1": {
+  "grade": "partly",
+  "evidence": "patterns.md covers the app shell and flyout nav, marketing heroes and cards, the plans grid, the checker tool, the sales form and sign-in, plus focus and motion. Not published signed out: validation errors, empty/loading/error, destructive confirmation, feedback, search, onboarding — all behind app.grammarly.com; gap declared."
+ },
+ "A1": {
+  "grade": "meets",
+  "evidence": "38 inline SVGs indexed by role in icons/INDEX.tsv with currentColor preserved; Matter, Inter and the Super faces named with their fallbacks. icons/, README Fonts."
+ },
+ "K1": {
+  "grade": "meets",
+  "evidence": "The README names every captured route, the signed-out method, the declared-only dark set, the typed-and-deleted field states and a What-to-distrust list including the 0x0 copy-button slot, the overlay-rendered suggestion cards and lazy-mounted sections. systems/grammarly/README.md."
+ }
+}

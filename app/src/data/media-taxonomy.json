@@ -808,6 +808,11 @@
       "assignedMedia": 54
     },
     {
+      "referenceId": "systems:grammarly",
+      "media": 193,
+      "assignedMedia": 193
+    },
+    {
       "referenceId": "systems:grokbot",
       "media": 140,
       "assignedMedia": 78
@@ -125634,6 +125639,2414 @@
           "termId": "ios-ui-elements:tooltip",
           "rule": "ui-tooltip",
           "reason": "Capture filename explicitly names tooltip; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/screenshots/ai-agents-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/screenshots/ai-agents-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/screenshots/ai-detector-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/screenshots/ai-detector-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/screenshots/ai-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/screenshots/ai-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/screenshots/blog-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/screenshots/blog-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/screenshots/browser-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/screenshots/browser-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/screenshots/business-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/screenshots/business-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/screenshots/contact-sales-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:contacts",
+          "rule": "page-contacts",
+          "reason": "Capture filename explicitly names contacts; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/screenshots/contact-sales-light-field-focused.png",
+      "terms": [
+        {
+          "termId": "web-page-types:contacts",
+          "rule": "page-contacts",
+          "reason": "Capture filename explicitly names contacts; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/screenshots/contact-sales-light-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:contacts",
+          "rule": "page-contacts",
+          "reason": "Capture filename explicitly names contacts; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/screenshots/desktop-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/screenshots/desktop-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/screenshots/edu-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/screenshots/edu-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/screenshots/enterprise-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/screenshots/enterprise-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/screenshots/features-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/screenshots/features-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/screenshots/features-light-tab-proofreading.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/screenshots/grammar-check-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/screenshots/grammar-check-light-filled.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/screenshots/grammar-check-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/screenshots/home-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/screenshots/home-light-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/screenshots/home-light-nav-product-open.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/screenshots/mobile-grammar-check-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/screenshots/mobile-grammar-check-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/screenshots/mobile-home-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/screenshots/mobile-home-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/screenshots/mobile-home-light-menu-open.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/screenshots/mobile-plans-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/screenshots/mobile-plans-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/screenshots/paraphrasing-tool-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/screenshots/paraphrasing-tool-light-filled.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/screenshots/paraphrasing-tool-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/screenshots/plagiarism-checker-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/screenshots/plagiarism-checker-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/screenshots/plans-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/screenshots/plans-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/screenshots/professionals-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/screenshots/professionals-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/screenshots/signin-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:log-in",
+          "rule": "page-login",
+          "reason": "Capture filename explicitly names log in; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/screenshots/signin-light-email-filled.png",
+      "terms": [
+        {
+          "termId": "web-page-types:log-in",
+          "rule": "page-login",
+          "reason": "Capture filename explicitly names log in; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/screenshots/signin-light-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:log-in",
+          "rule": "page-login",
+          "reason": "Capture filename explicitly names log in; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/screenshots/signup-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:sign-up",
+          "rule": "page-signup",
+          "reason": "Capture filename explicitly names sign up; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/screenshots/signup-light-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:sign-up",
+          "rule": "page-signup",
+          "reason": "Capture filename explicitly names sign up; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/screenshots/students-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/screenshots/students-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/screenshots/trust-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/screenshots/trust-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/screenshots/word-counter-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/screenshots/word-counter-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/banner-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/brand-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/btn-carousel-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:carousel",
+          "rule": "ui-carousel",
+          "reason": "Capture filename explicitly names carousel; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/btn-carousel-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:carousel",
+          "rule": "ui-carousel",
+          "reason": "Capture filename explicitly names carousel; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/btn-carousel-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:carousel",
+          "rule": "ui-carousel",
+          "reason": "Capture filename explicitly names carousel; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/btn-carousel-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:carousel",
+          "rule": "ui-carousel",
+          "reason": "Capture filename explicitly names carousel; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/btn-google-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/btn-google-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/btn-google-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/btn-google-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/btn-hero-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/btn-hero-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/btn-hero-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/btn-hero-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/checker-cta-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/checker-cta-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/checker-cta-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/checker-cta-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/checker-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/checker-editor-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/checker-editor-focused.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/checker-filled-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/faq-item-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/feature-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/feature-card-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/feature-card-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/feature-card-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/footer-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/footer-link-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/footer-link-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/footer-link-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/footer-link-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/form-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/form-input-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/form-input-filled.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/form-input-focused.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/form-label-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/form-select-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/form-select-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/form-select-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/form-select-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/form-submit-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/form-submit-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/form-submit-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/form-submit-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/getting-started-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/header-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/hero-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/hero-lede-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/info-icon-button-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ui-elements:icon",
+          "rule": "ui-icon",
+          "reason": "Capture filename explicitly names icon; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/info-icon-button-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ui-elements:icon",
+          "rule": "ui-icon",
+          "reason": "Capture filename explicitly names icon; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/info-icon-button-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ui-elements:icon",
+          "rule": "ui-icon",
+          "reason": "Capture filename explicitly names icon; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/info-icon-button-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ui-elements:icon",
+          "rule": "ui-icon",
+          "reason": "Capture filename explicitly names icon; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/link-legal-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/link-legal-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/link-legal-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/link-legal-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/m-header-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/m-hero-btn-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/m-hero-btn-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/m-hero-btn-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/m-hero-btn-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/m-menu-button-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/m-menu-button-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/m-menu-button-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/m-menu-button-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/m-menu-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/nav-demo-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/nav-demo-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/nav-demo-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/nav-demo-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/nav-link-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/nav-link-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/nav-link-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/nav-link-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/nav-login-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/nav-login-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/nav-login-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/nav-login-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/nav-menu-button-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/nav-menu-button-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/nav-menu-button-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/nav-menu-button-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/nav-panel-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/nav-panel-item-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/nav-panel-item-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/nav-panel-item-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/nav-signup-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/nav-signup-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/nav-signup-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/nav-signup-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/plan-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/plan-card-plain-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/plan-cta-primary-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/plan-cta-primary-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/plan-cta-primary-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/plan-cta-primary-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/plan-cta-secondary-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/plan-cta-secondary-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/plan-cta-secondary-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/plan-cta-secondary-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/plan-grid-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/section-dark-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/signin-continue-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/signin-continue-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/signin-continue-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/signin-continue-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/signin-dialog-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dialog-modal-window",
+          "rule": "ui-dialog",
+          "reason": "Capture filename explicitly names dialog & modal window; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/signin-email-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/signin-email-filled.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/signin-email-focused.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/signin-help-link-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/signin-help-link-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/signin-help-link-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/signin-help-link-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/signin-provider-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/signin-provider-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/signin-provider-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/signin-provider-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/stat-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/stat-card-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/stat-card-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/stat-card-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/suggestion-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/suggestions-panel-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/tab-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/tab-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/tab-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/tab-list-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ui-elements:list",
+          "rule": "ui-list",
+          "reason": "Capture filename explicitly names list; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/tab-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/tab-selected-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/tools-nav-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/tools-nav-item-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/tools-nav-item-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/tools-nav-item-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:grammarly",
+      "mediaId": "systems/grammarly/components/crops/tools-nav-item-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/grammarly/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
         }
       ]
     },
