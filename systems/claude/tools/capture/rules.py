@@ -61,15 +61,29 @@ def parse(css):
         elif c in '"\'':
             quote = c
         elif c == '{':
+            # A declaration before a nested rule (`color: red; .title {`) was
+            # folded into the nested selector. Reset the prelude at the last
+            # semicolon so the nested head is only the selector.
+            if stack and not stack[-1][0].startswith('@'):
+                semi = css.rfind(';', stack[-1][1], i)
+                if semi != -1:
+                    start = semi + 1
             stack.append((css[start:i].strip(), i + 1))
             start = i + 1
         elif c == '}':
             if stack:
                 head, body_start = stack.pop()
                 body = css[body_start:i]
-                # a step inside @keyframes (0%, from, to) is not a style rule
-                if not head.startswith('@') and '{' not in body and not any(h.startswith(('@keyframes', '@-webkit-keyframes')) for h, _ in stack):
-                    yield [h for h, _ in stack], head, body
+                # a step inside @keyframes (0%, from, to) is not a style rule.
+                # Declarations that sat beside a nested rule are still here,
+                # with the nested block between them; keep those declarations.
+                if not head.startswith('@') and not any(h.startswith(('@keyframes', '@-webkit-keyframes')) for h, _ in stack):
+                    if '{' in body:
+                        # Drop the nested selector too, so `color: red; .title`
+                        # does not survive as a declaration name.
+                        body = re.sub(r'[^{};]*\{[^{}]*\}', '', body)
+                    if ':' in body:
+                        yield [h for h, _ in stack], head, body
             start = i + 1
         elif c == ';' and not stack:
             start = i + 1
