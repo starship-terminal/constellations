@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Glassnode style guide</title>
+<meta name="description" content="Glassnode design tokens and the public signed-out surfaces' components, rendered from tokens.json with the declared and measured values.">
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  --sg-sans: "Inter", ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-serif: ui-serif, Georgia, "Times New Roman", serif;
+  --sg-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+[data-mode="dark"], .dark {
+/*DARK*/
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--theme-text-primary-default, #1a1a1a); background: var(--theme-bg-default, #fff); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 600 40px/1.2 var(--sg-sans); margin: 0 0 4px; letter-spacing: -0.02em; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--theme-text-primary-default, #1a1a1a); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--theme-border-default, #e4e5e7); }
+.lead { max-width: 62ch; color: var(--theme-text-primary-default, #1a1a1a); opacity: .8; }
+.note { font-size: 13px; color: var(--theme-text-primary-default, #1a1a1a); opacity: .65; max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--theme-text-primary-default, #1a1a1a); opacity: .6; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--theme-border-default, #e4e5e7); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--theme-text-primary-default, #1a1a1a); opacity: .65; }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--theme-border-default, #e4e5e7); background: #fff; font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--theme-text-primary-default, #1a1a1a); opacity: .65; }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--theme-border-default, #e4e5e7); overflow: hidden; background: var(--theme-bg-default, #fff); }
+.navbar { display: flex; align-items: center; gap: 22px; height: var(--component-topbar-height, 72px); padding: 0 12px 0 22px; font-size: 14px; color: var(--theme-text-primary-default, #1a1a1a); background: var(--theme-bg-default, #fff); box-shadow: var(--theme-border-default, #e4e5e7) 0 1px 0 0; }
+.navbar .wm { font-weight: 600; font-size: 17px; letter-spacing: -0.02em; }
+.navbar .sp { flex: 1; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-cta-height, 33px); padding: 0 18px; font-size: 14px; font-weight: 500; border-radius: var(--radius-cta, var(--radius-02, 4px)); border: 1px solid transparent; }
+.btn.primary { background: var(--theme-button-color, var(--palette-ultramarine-50, #4559dc)); color: var(--palette-white, #fff); }
+.btn.dark { background: var(--theme-text-primary-default, #1a1a1a); color: var(--palette-white, #fff); }
+.btn.ghost { background: transparent; border-color: var(--theme-border-default, #e4e5e7); color: var(--theme-text-primary-default, #1a1a1a); }
+.btn.accent { background: var(--palette-accent, #16cc8c); color: var(--palette-white, #fff); }
+.btn.small { height: 32px; font-size: 13px; font-weight: 500; }
+.hero { color: var(--theme-text-primary-default, #1a1a1a); padding: 80px 40px; font: 600 var(--font-size-600, 56px)/1.1 var(--sg-sans); letter-spacing: -0.02em; text-align: left; background: var(--theme-bg-default, #fff); }
+.hero small { display: block; font: 400 var(--font-size-300, 18px)/1.5 var(--sg-sans); color: var(--theme-text-primary-default, #1a1a1a); opacity: .75; margin: 20px 0 26px; max-width: 46ch; }
+.hero .new { display: inline-flex; align-items: center; gap: 8px; font: 500 13px/1 var(--sg-sans); letter-spacing: 0; color: var(--theme-text-primary-default, #1a1a1a); border: 1px solid var(--theme-border-default, #e4e5e7); border-radius: 9999px; padding: 7px 14px; margin-bottom: 24px; }
+.hero .new b { color: var(--palette-accent, #16cc8c); }
+.hero .prompt { display: flex; align-items: center; justify-content: space-between; max-width: 560px; border: 1px solid var(--theme-border-default, #e4e5e7); border-radius: var(--radius-field, var(--radius-02, 4px)); background: var(--theme-bg-tinted, #f7f8fa); font: 400 13px/1.4 var(--sg-mono); padding: 12px 14px; margin: 0 0 26px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
+.tile { border: 1px solid var(--theme-border-default, #e4e5e7); border-radius: var(--radius-planCard, var(--radius-03, 8px)); padding: 14px; font-size: 13px; background: var(--theme-bg-tinted, #f7f8fa); }
+.tile .img { height: 140px; background: var(--palette-grey-10, #f7f8fa); border-radius: var(--radius-02, 4px); margin-bottom: 10px; display: flex; align-items: flex-end; padding: 10px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }
+.tile b { display: block; font: 600 var(--font-size-400, 22px)/1.3 var(--sg-sans); margin-bottom: 4px; }
+.tile .sub { color: var(--theme-text-primary-default, #1a1a1a); opacity: .7; font-size: 12px; }
+.studio-bar { display: flex; align-items: center; gap: 18px; height: var(--component-studio-navbar-height, 70px); padding: 0 20px; font-size: 13px; background: var(--studio-background-default, #fff); color: var(--studio-content-primary-default, #1a1a1a); border-bottom: 1px solid var(--studio-border-2-default, #e4e5e7); }
+.studio-bar .wm { font-weight: 700; }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--theme-border-default, #e4e5e7); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--theme-border-default, #e4e5e7); }
+.tr .ts { font-family: var(--sg-sans); }
+.tr .tv { font-size: 12px; color: var(--theme-text-primary-default, #1a1a1a); opacity: .65; font-family: var(--sg-mono); }
+.field { display: inline-block; width: 280px; height: var(--component-field-height, 40px); padding: 0 14px; border: 1px solid var(--theme-border-default, #e4e5e7); border-radius: var(--radius-field, var(--radius-02, 4px)); background: var(--palette-white, #fff); font-size: 14px; color: var(--theme-text-primary-default, #1a1a1a); }
+.darkcard { background: var(--tokenization-color-panel, #1c1c1c); color: var(--tokenization-color-ink, #f2f2f2); border-radius: var(--radius-tokenization-md, 8px); font: 400 13px/1.6 var(--sg-mono); padding: 14px 16px; }
+.darkcard .up { color: var(--palette-accent, #16cc8c); }
+.darkcard .down { color: var(--tokenization-color-bad, #f6465d); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Glassnode style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">Glassnode, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the shared GDS palette primitives (<code>palette.*</code> — the grey ramp, ultramarine <code>#4559dc</code>, the green accent <code>#16cc8c</code>, status ramps and the registry's chart colours), the marketing site's <code>--light_*</code>/<code>--button-*</code> roles (<code>light.theme.*</code>), the studio shell's painted light <code>--gds-*</code> roles (<code>light.studio.*</code>), the Ghost research publication's painted <code>--rf-*</code> roles in both themes (<code>light/dark.research.*</code>), the tokenization registry's <code>--color-*</code> roles (<code>dark.tokenization.*</code> painted by default, <code>light.tokenization.*</code> via its theme button), and the measured roles under <code>light.measured.*</code> plus the geometry under <code>core.component.*</code>. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from glassnode.com and its public subdomains, signed out, in headed Chromium under Xvfb. The signed-in Studio workbench and every post-login surface is a documented boundary; the newsletter, contact and Auth0 username fields were typed into and cleared, never submitted; the Auth0 landing URL's volatile <code>?state=</code> is never recorded. The studio's <code>html[data-theme="dark-theme"]</code> layer is declared but has no public theme control — every <code>dark.studio.*</code> token is labelled declared-not-painted. Inter, fraktion, JetBrains Mono and Roboto are served faces and are not loaded here: samples fall back to system fonts.</p>
+
+  <h2 class="sh">The chrome</h2>
+  <p class="lead">The marketing header is a white bar on the white page: the glassnode wordmark, the Products dropdown trigger (a hover opens it), Pricing, Data and About, then the dark "Launch Studio" pill. Below, the hero pairs the "Pioneering digital asset market intelligence" display headline with a product-chart mock and the partner-reports promo link.</p>
+  <div class="mock" style="padding:0">
+    <div class="navbar"><span class="wm">glassnode</span><span>Products ▾</span><span>Pricing</span><span>Data</span><span>About</span><span class="sp"></span><span class="btn small dark">Launch Studio</span></div>
+    <div class="hero">Pioneering digital asset market intelligence<small>Built for investing, trading, and research. Access a unified platform that integrates spot, futures, options, ETFs, DATs, and on-chain data.</small><span class="btn dark">Launch Studio</span>&nbsp;&nbsp;<span class="btn ghost">Contact us</span></div>
+  </div>
+
+  <h2 class="sh">The studio shell and the dark set</h2>
+  <p class="lead">studio.glassnode.com paints light signed out: the navbar carries Home, Dashboards, Charts, Market Compass, Alpha Lab, Research, Tokenization, search, a "Log in" that hands to Auth0 and the dark "Sign up". The studio's <code>html[data-theme="dark-theme"]</code> redeclaration — the same <code>--gds-*</code> roles plus Ant Design <code>--ant-*</code> vars — has no public control, so <code>dark.studio.*</code> is declared-not-painted. The registry at tokenization.glassnode.com paints dark by default; its dark card below uses painted <code>dark.tokenization.*</code> values, not the studio's declared ones.</p>
+  <div class="mock" style="padding:0">
+    <div class="studio-bar"><span class="wm">glassnode</span><span>Home</span><span>Dashboards</span><span>Charts</span><span>Market Compass</span><span>Alpha Lab</span><span class="sp"></span><span>Log in</span><span class="btn small dark">Sign up</span></div>
+    <div class="grid" style="padding:16px">
+      <div class="tile"><div class="img">Advanced</div><b>Plan card</b><span class="sub">metric catalog expander · Configure</span></div>
+      <div class="tile"><div class="img">Professional</div><b>Plan card</b><span class="sub">metric catalog expander · Configure</span></div>
+    </div>
+  </div>
+  <div class="mock dark" style="padding:20px; margin-top:12px">
+    <div class="darkcard">BTC tokenized supply <span class="up">▲ +2.4%</span> · ETH <span class="down">▼ −0.8%</span><br><span class="up">registry dark surface — painted, not declared</span></div>
+  </div>
+
+  <h2 class="sh">Pricing, research, docs and the auth card</h2>
+  <p class="lead">/pricing/vector arranges the Bitcoin Vector plan card beside the quarterly/monthly billing select and FAQ accordions. research.glassnode.com is a Ghost publication with a real dark toggle; docs.glassnode.com is a GitBook stack with its own token layer and theme buttons; auth.glassnode.com/u/login is the Auth0 card the studio "Log in" hands to — four more stacks, kept as measured component tokens and the registry/research roles.</p>
+  <div class="mock" style="padding:20px">
+    <div class="grid">
+      <div class="tile"><div class="img">Vector</div><b>Bitcoin Vector</b><span class="sub">quarterly / monthly · Download sample</span></div>
+      <div class="tile"><div class="img">Auth0</div><b>Sign in</b><span class="sub">username + password · Continue · Continue with Google</span></div>
+      <div class="tile"><div class="img">Research</div><b>The Week Onchain</b><span class="sub">Ghost article cards · subscribe field</span></div>
+    </div>
+    <div style="margin-top:16px"><input class="field" placeholder="Enter your email">&nbsp;<span class="btn accent">Send me free research</span></div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead"><code>core.palette.*</code> holds the declared primitives the surfaces share: the grey ramp, ultramarine (the brand blue), green/red/yellow/rose status ramps, the darken alpha steps, the lone indigo, the marketing accent and second grey ramps, the Ghost palette steps and the registry's chart series. The semantic roles under <code>light.theme.*</code> (marketing), <code>light/dark.studio.*</code>, <code>light/dark.research.*</code> and <code>light/dark.tokenization.*</code> resolve to them; measured roles alias the declared values they match.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing, radius, layout and motion</h2>
+  <p class="lead">The space ramp is 4px-based (<code>--space-*</code> on marketing, <code>--gds-spacing-*</code> on the shell, <code>--spacing</code> 4px on the registry). Radii run 0-24px plus full. The marketing grid caps at <code>--grid-width</code>; the shell sizes its pages through <code>--gds-page-width-*</code>, <code>--gds-navbar-height</code> and <code>--gds-sidebar-width</code>. Motion is the marketing <code>--transition_*</code> shorthands and the registry's duration/easing pair.</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">Five faces across the surfaces: <code>fraktion</code> is the marketing display face over an Inter body; <code>Inter/Inter Variable</code> carries the studio shell, the research publication and the registry; <code>JetBrains Mono</code> is the registry mono; <code>Roboto</code> and <code>IBM Plex Mono</code> are the GitBook docs fonts. The GDS <code>--gds-font-size-*</code> ramp below is the shell's declared scale; the measured marketing sizes are the <code>font.size.measured.*</code> entries. Samples fall back to system sans.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared --gds-*/--light_*/--rf-*/--color-* variables from the live stylesheets and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, opened, focused and filled states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from; the studio dark layer is labelled declared-not-painted</td></tr></table>
+</main>
+<script>
+const TOK = /*TOKENS*/null;
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.palette || {})) {
+    const items = (grp && grp.t ? [['palette.' + g, grp]] : flat(grp, 'palette.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">palette.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  for (const [setname, label] of [['light', 'light roles — marketing theme.*, studio.*, research.*, tokenization.* + measured.*'], ['dark', 'dark roles — studio.* is DECLARED-NOT-PAINTED (no public control); research.* and tokenization.* are painted']]) {
+    const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color');
+    if (!roles.length) continue;
+    // The dark set's custom properties only resolve inside a .dark scope:
+    // swatch dots must live under it or they paint the light values/unset.
+    h += `<div class="pal-h">${label}</div><div class="pal${setname === 'dark' ? ' dark' : ''}">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.layout || {}, 'layout.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.breakpoint || {}, 'breakpoint.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.zIndex || {}, 'zIndex.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.opacity || {}, 'opacity.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.motion || {}, 'motion.')) m += `<div><b>${esc(n)}</b> <span>${esc(String(t.v).slice(0, 80))}</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  // This package keeps its shadow steps in core.elevation (the declared
+  // --shadow-* / --gds-shadow-* tokens across the surfaces), not per-theme sets.
+  for (const [n, t] of flat((TOK.core || {}).elevation || {}, 'elevation.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => (x.inset ? 'inset ' : '') + x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.light.measured || {}, 'light.measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+const resolveVal = (v, depth) => {
+  if (depth > 6 || typeof v !== 'string') return v;
+  const m = v.match(/^\{(.+)\}$/);
+  if (!m) return v;
+  // Aliases are set-relative: the palette scales live under TOK.core,
+  // semantic roles under TOK.light / TOK.dark. Try each root.
+  for (const root of [TOK.core, TOK.light, TOK.dark, TOK]) {
+    let node = root;
+    for (const k of m[1].split('.')) node = node && node[k];
+    if (node && node.v !== undefined) return resolveVal(node.v, (depth || 0) + 1);
+  }
+  return v;
+};
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(resolveVal(t.v));
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — Pioneering digital asset market intelligence</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — glassnode</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).tracking || {}, 'font.tracking.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>

@@ -894,6 +894,12 @@
     "reason": "catalog.json describes a customer-support helpdesk SaaS: an editorial light marketing site, signed-out app login/signup, and a docs center with a real dark-mode toggle; the product workspace is gated."
   },
   {
+    "referenceId": "systems:glassnode",
+    "groupId": "web-categories",
+    "labels": ["Web3 & Crypto", "Finance"],
+    "reason": "catalog.json describes a digital-asset market-intelligence platform: marketing pages, a Vector pricing page, the signed-out Studio shell, research, docs, a tokenization registry and the Auth0 login."
+  },
+  {
     "referenceId": "systems:figma",
     "groupId": "web-categories",
     "labels": ["Design & Media Editing", "Productivity"],
