@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_111 of 169 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_112 of 170 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -178,6 +178,7 @@ Access: read-only (the marketing site, search, plans, features, how-it-works, fi
 Access: signed out (the marketing routes, /library, /journal-prompts and legal are fully public; the journal app sits behind app.clearful.com sign-in - the public sign-in card was measured through the Flutter semantics overlay, never submitted; several CTA anchors point at # and were never followed)
 - the journal app itself - entries, editor, settings - sits behind app.clearful.com sign-in and was never crossed; the sign-in card was measured but never submitted
 - the sign-in card is a Flutter canvas: its colours cannot be read by CSSOM, so light.app.* values are pixel-sampled off the captured screenshot and labelled as such
+
 ## [Mesh](../systems/clay-earth) — `clay-earth`
 Access: signed out (clay.earth 301-redirects to me.sh - the Clay product rebranded to Mesh, an Automattic product; every captured surface is public: the me.sh marketing routes and the app.me.sh sign-in card as a boundary; the app interior, plan checkout, downloads and every OAuth/sign-in action were never crossed; the sign-in e-mail field was focused and filled with placeholder text only)
 - the product itself: the Mesh app interior, plan checkout, downloads (/start targets) and every account surface sit behind app.me.sh and were never reached; the sign-in card was measured and its e-mail field focused and filled with placeholder text only, never submitted
