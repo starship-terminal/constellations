@@ -18,6 +18,12 @@
     "reason": "catalog.json describes an AI music product: a song-generation composer, public charts and genre shelves, artist and playlist pages and a paid Pro tier."
   },
   {
+    "referenceId": "systems:flutterflow",
+    "groupId": "web-categories",
+    "labels": ["AI Tool", "Development Tools"],
+    "reason": "catalog.json describes an AI-assisted visual app builder (prompt-to-app composer, pricing, Studio agency arm)."
+  },
+  {
     "referenceId": "systems:notebooklm",
     "groupId": "web-categories",
     "labels": ["AI Tool", "Productivity"],
@@ -876,6 +882,12 @@
     "reason": "catalog.json describes a news aggregator and community feed (the 2025 Digg reboot): story cards with vote pills, category feeds, source profiles and ranked rails."
   },
   {
+    "referenceId": "systems:district",
+    "groupId": "web-categories",
+    "labels": ["Entertainment", "Travel & Booking"],
+    "reason": "catalog.json describes a live-event and venue booking product (District by Zomato): movie and venue cards, artist pages, ticket purchase flows and a gated checkout."
+  },
+  {
     "referenceId": "systems:getfernand",
     "groupId": "web-categories",
     "labels": ["Business", "Productivity"],
@@ -886,6 +898,12 @@
     "groupId": "web-categories",
     "labels": ["Design & Media Editing", "Productivity"],
     "reason": "catalog.json describes a design tool: the marketing pages for the design editor, FigJam, Slides, Dev Mode and Make, a pricing grid, community resource grids and the login/signup app shells."
+  },
+  {
+    "referenceId": "systems:fourmula",
+    "groupId": "web-categories",
+    "labels": ["AI Tool", "Design & Media Editing"],
+    "reason": "catalog.json describes an AI product-photography generator for e-commerce brands: a two-theme Webflow marketing site and a signed-out Next.js app edge with sign-in and a PDP generator."
   },
   {
     "referenceId": "systems:fingerprint",
@@ -904,6 +922,42 @@
     "groupId": "web-categories",
     "labels": ["Collaboration Tools", "Productivity"],
     "reason": "catalog.json describes a video review and collaboration workspace: marketing pages with an embedded product demo, a pricing page, an MCP documentation page and the signed-out login boundary."
+  },
+  {
+    "referenceId": "systems:fiverr",
+    "groupId": "web-categories",
+    "labels": ["Marketplace"],
+    "reason": "catalog.json describes a freelance services marketplace: the home and /categories directory, /search/gigs gig listings, a gig page with package pricing, seller profiles and the join/login auth edge."
+  },
+  {
+    "referenceId": "systems:foodnoms",
+    "groupId": "web-categories",
+    "labels": ["Health & Wellness"],
+    "reason": "catalog.json describes a food-and-nutrition tracker: a marketing site for an iOS/macOS app with feature cards, a Free-vs-Plus comparison, help center, news, press and comparison articles."
+  },
+  {
+    "referenceId": "systems:framer",
+    "groupId": "web-categories",
+    "labels": ["Design & Media Editing", "Productivity"],
+    "reason": "catalog.json describes a website builder and AI design agent: marketing product pages (AI, agents, design, MCP), a pricing grid, community gallery and marketplace template indexes and the signed-out login shell."
+  },
+  {
+    "referenceId": "systems:discord",
+    "groupId": "web-categories",
+    "labels": ["Communication Tools", "Social Networking"],
+    "reason": "catalog.json describes a chat-community platform: signed-out server discovery, server detail pages with Join/Share, and the login/register auth surface."
+  },
+  {
+    "referenceId": "systems:dji",
+    "groupId": "web-categories",
+    "labels": ["Electronic & Devices", "Marketplace"],
+    "reason": "catalog.json describes a consumer-drone and imaging-hardware brand site: product marketing pages, category grids, a store locator and links into the gated DJI store."
+  },
+  {
+    "referenceId": "systems:fourthwall",
+    "groupId": "web-categories",
+    "labels": ["Business", "Marketplace"],
+    "reason": "catalog.json describes a creator-commerce platform: a Webflow marketing site with a pricing grid, a styled-components print-on-demand product catalogue with product pages, Mintlify docs and Docusaurus help (each with a real dark toggle), and a Keycloak sign-up shell; the shop dashboard, designer and checkout are gated."
   },
   {
     "referenceId": "systems:fresha",
