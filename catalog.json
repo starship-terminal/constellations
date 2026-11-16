@@ -13907,7 +13907,8 @@
      "icons: no standalone SVG set lifted this pass"
     ],
     "durationMin": 480,
-    "durationNote": "wall-clock across the capture sessions including kit adaptation, the stylesheet harvest, the screenshot pass (Cloudflare challenges needed headed retries), three measurement passes and the offline build"
+    "durationNote": "wall-clock across the capture sessions including kit adaptation, the stylesheet harvest, the screenshot pass (Cloudflare challenges needed headed retries), three measurement passes and the offline build",
+    "pr": "https://github.com/starship-terminal/constellations/pull/617"
    },
    "layoutGaps": {
     "icons/": "no standalone SVG icon set was lifted; the Glassnode mark, nav glyphs, theme-toggle icons and partner logos are visible in the crops and screenshots"
