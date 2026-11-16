@@ -78,7 +78,7 @@ export async function createResearchStore(directory: string) {
     const version = Number(
       (await tx.execute("PRAGMA user_version")).rows[0].user_version,
     );
-    if (version > 19)
+    if (version > 20)
       throw new Error("Research database was created by a newer application.");
     if (version === 0) {
       for (const sql of migrations) await tx.execute(sql);
@@ -272,6 +272,12 @@ export async function createResearchStore(directory: string) {
       await seedNewCuratedCategories(tx, new Set(["systems:grammarly"]));
       await seedNewCuratedMediaTerms(tx, new Set(["systems:grammarly"]));
       await tx.execute("PRAGMA user_version = 19");
+    }
+    if (version < 20) {
+      // v20: systems:clearful package rows.
+      await seedNewCuratedCategories(tx, new Set(["systems:clearful"]));
+      await seedNewCuratedMediaTerms(tx, new Set(["systems:clearful"]));
+      await tx.execute("PRAGMA user_version = 20");
     }
     await tx.commit();
   } catch (error) {

@@ -948,6 +948,12 @@
     "reason": "catalog.json describes a food-and-nutrition tracker: a marketing site for an iOS/macOS app with feature cards, a Free-vs-Plus comparison, help center, news, press and comparison articles."
   },
   {
+    "referenceId": "systems:clearful",
+    "groupId": "web-categories",
+    "labels": ["Health & Wellness", "Productivity"],
+    "reason": "catalog.json describes a guided-journal app: a marketing site for journaling flows, prompts library, pricing and a mobile-app download."
+  },
+  {
     "referenceId": "systems:clay-earth",
     "groupId": "web-categories",
     "labels": ["Productivity", "Communication Tools"],

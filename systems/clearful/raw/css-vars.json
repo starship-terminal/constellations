@@ -1,0 +1,868 @@
+{
+ "readAt": "2026-11-16",
+ "source": "clearful.com's inline <style> rules and its Webflow/Google-Fonts CDN stylesheets (cross-origin to the CSSOM, fetched directly as public static files), read through the CSSOM on the live home page and re-parsed in a probe document",
+ "sheets": [
+  {
+   "name": "inline-0",
+   "media": "",
+   "bytes": 62
+  },
+  {
+   "name": "https://cdn.prod.website-files.com/5e4b0f5ddc74af1bd44a4e2a/css/clearful.webflow.08821de8c.min.css",
+   "media": "",
+   "bytes": 189322
+  },
+  {
+   "name": "inline-2",
+   "media": "",
+   "bytes": 474
+  },
+  {
+   "name": "https://fonts.googleapis.com/css?family=Petit+Formal+Script:regular%7CMuli:300,regular,500,600,700,800,900%7CHomemade+Apple:regular%7CLora:regular,500,600,700%7CInter:100,200,300,regular,500,600,700,800,900%7CPrata:regular%7CManrope:200,300,regular,500,600,700,800%7CTenor+Sans:regular",
+   "media": "",
+   "bytes": 6152
+  },
+  {
+   "name": "inline-4",
+   "media": "",
+   "bytes": 2819
+  }
+ ],
+ "counts": {
+  "rules": 1,
+  "fonts": 64,
+  "names": {
+   "token": 0,
+   "app": 54,
+   "framework": 0,
+   "utility": 0
+  },
+  "bySelector": {
+   "[app] :root": 54
+  }
+ },
+ "errors": [],
+ "token": [],
+ "app": [
+  {
+   "file": "https://cdn.prod.website-files.com/5e4b0f5ddc74af1bd44a4e2a/css/clearful.webflow.08821de8c.min.css",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--background-color--background-primary": "var(--base-color-neutral--white)",
+    "--text-color--text-primary": "var(--base-color-neutral--grey-900)",
+    "--base-color-neutral--grey-900": "#222",
+    "--link-color--link-primary": "var(--base-color-neutral--grey-900)",
+    "--base-color-neutral--black": "#000",
+    "--base-color-neutral--grey-000": "#f7f7f7",
+    "--base-color-neutral--grey-500": "#7e7e7e",
+    "--base-color-neutral--grey-700": "#515151",
+    "--base-color-neutral--grey-600": "#626262",
+    "--brand-blue<deleted|variable-94e7093d>": "#2b40ff",
+    "--base-color-neutral--grey-400": "#9e9e9e",
+    "--base-color-brand--blue-500": "#1953ff",
+    "--base-color-brand--blue-600<deleted|variable-78f99fb0>": "#1b1bbc",
+    "--base-color-neutral--grey-100": "#e1e1e1",
+    "--base-color-neutral--grey-800": "#3b3b3b",
+    "--base-color-brand--blue-50": "#ebf0ff",
+    "--base-color-brand--blue-100": "#d6e0ff",
+    "--base-color-brand--blue-700<deleted|variable-bd5d0583>": "#1a2291",
+    "--border-color--border-primary": "var(--base-color-neutral--grey-100)",
+    "--border-radius--border-radius-large": "1rem",
+    "--text-color--text-brand-dark": "var(--base-color-brand--blue-900)",
+    "--base-color-neutral--white": "white",
+    "--text-color--text-brand": "var(--base-color-brand--blue-500)",
+    "--background-color--background-secondary": "var(--base-color-neutral--grey-000)",
+    "--background-color--background-tertiary": "var(--base-color-neutral--grey-100)",
+    "--background-color--background-alternate": "white",
+    "--text-color--text-secondary": "var(--base-color-neutral--grey-700)",
+    "--text-color--text-alternate": "var(--base-color-neutral--grey-000)",
+    "--border-radius--border-radius-medium": ".5rem",
+    "--link-color--link-secondary": "var(--base-color-neutral--grey-600)",
+    "--border-radius--border-radius-xlarge": "1.5rem",
+    "--base-color-brand--blue-200": "#adc2ff",
+    "--base-color-brand--blue-300": "#809fff",
+    "--text-color--text-tertiary": "var(--base-color-neutral--grey-400)",
+    "--background-color--background-brand": "var(--base-color-brand--blue-500)",
+    "--background-color--background-brand-light": "var(--base-color-brand--blue-100)",
+    "--background-color--background-brand-dark": "var(--base-color-brand--blue-950)",
+    "--text-color--text-brand-light": "var(--base-color-brand--blue-50)",
+    "--base-color-neutral--grey-200": "#cfcfcf",
+    "--base-color-neutral--grey-300": "#b1b1b1",
+    "--border-color--border-secondary": "white",
+    "--border-color--border-tertiary": "white",
+    "--border-color--border-brand-blue": "var(--base-color-brand--blue-500)",
+    "--link-color--link-alternate": "var(--base-color-neutral--white)",
+    "--secondary-font-family": "Literatatt,sans-serif",
+    "--primary-font-family": "Manrope,sans-serif",
+    "--border-radius--border-radius-small": ".25rem",
+    "--link-color--color": "var(--base-color-brand--blue-500)",
+    "--base-color-brand--blue-400": "#4d79ff",
+    "--base-color-brand--blue-600": "#0039e6",
+    "--base-color-brand--blue-700": "#002db3",
+    "--base-color-brand--blue-800": "#002185",
+    "--base-color-brand--blue-900": "#001452",
+    "--base-color-brand--blue-950": "#000e38"
+   },
+   "bin": "app"
+  }
+ ],
+ "framework": [],
+ "utility": [],
+ "fonts": [
+  {
+   "file": "https://cdn.prod.website-files.com/5e4b0f5ddc74af1bd44a4e2a/css/clearful.webflow.08821de8c.min.css",
+   "font-family": "webflow-icons",
+   "src": "url(\"data:application/x-font-ttf;charset=utf-8;base64,AAEAAAALAIAAAwAwT1MvMg8SBiUAAAC8AAAAYGNtYXDpP+a4AAABHAAAAFxnYXNwAAAAEAAAAXgAAAAIZ2x5ZmhS2XEAAAGAAAADHGhlYWQTFw3HAAAEnAAAADZoaGVhCXYFgQAABNQAAAAkaG10eCe4A1oAAAT4AAAAMGxvY2EDtALGAAAFKAAAABptYXhwABAAPgAABUQAAAAgbmFtZSoCsMsAAAVkAAABznBvc3QAAwAAAAAHNAAAACAAAwP4AZAABQAAApkCzAAAAI8CmQLMAAAB6wAzAQkAAAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAAAAAAAABAAADpAwPA/8AAQAPAAEAAAAABAAAAAAAAAAAAAAAgAAAAAAADAAAAAwAAABwAAQADAAAAHAADAAEAAAAcAAQAQAAAAAwACAACAAQAAQAg5gPpA//9//8AAAAAACDmAOkA//3//wAB/+MaBBcIAAMAAQAAAAAAAAAAAAAAAAABAAH//wAPAAEAAAAAAAAAAAACAAA3OQEAAAAAAQAAAAAAAAAAAAIAADc5AQAAAAABAAAAAAAAAAAAAgAANzkBAAAAAAEBIAAAAyADgAAFAAAJAQcJARcDIP5AQAGA/oBAAcABwED+gP6AQAABAOAAAALgA4AABQAAEwEXCQEH4AHAQP6AAYBAAcABwED+gP6AQAAAAwDAAOADQALAAA8AHwAvAAABISIGHQEUFjMhMjY9ATQmByEiBh0BFBYzITI2PQE0JgchIgYdARQWMyEyNj0BNCYDIP3ADRMTDQJADRMTDf3ADRMTDQJADRMTDf3ADRMTDQJADRMTAsATDSANExMNIA0TwBMNIA0TEw0gDRPAEw0gDRMTDSANEwAAAAABAJ0AtAOBApUABQAACQIHCQEDJP7r/upcAXEBcgKU/usBFVz+fAGEAAAAAAL//f+9BAMDwwAEAAkAABcBJwEXAwE3AQdpA5ps/GZsbAOabPxmbEMDmmz8ZmwDmvxmbAOabAAAAgAA/8AEAAPAAB0AOwAABSInLgEnJjU0Nz4BNzYzMTIXHgEXFhUUBw4BBwYjNTI3PgE3NjU0Jy4BJyYjMSIHDgEHBhUUFx4BFxYzAgBqXV6LKCgoKIteXWpqXV6LKCgoKIteXWpVSktvICEhIG9LSlVVSktvICEhIG9LSlVAKCiLXl1qal1eiygoKCiLXl1qal1eiygoZiEgb0tKVVVKS28gISEgb0tKVVVKS28gIQABAAABwAIAA8AAEgAAEzQ3PgE3NjMxFSIHDgEHBhUxIwAoKIteXWpVSktvICFmAcBqXV6LKChmISBvS0pVAAAAAgAA/8AFtgPAADIAOgAAARYXHgEXFhUUBw4BBwYHIxUhIicuAScmNTQ3PgE3NjMxOAExNDc+ATc2MzIXHgEXFhcVATMJATMVMzUEjD83NlAXFxYXTjU1PQL8kz01Nk8XFxcXTzY1PSIjd1BQWlJJSXInJw3+mdv+2/7c25MCUQYcHFg5OUA/ODlXHBwIAhcXTzY1PTw1Nk8XF1tQUHcjIhwcYUNDTgL+3QFt/pOTkwABAAAAAQAAmM7nP18PPPUACwQAAAAAANciZKUAAAAA1yJkpf/9/70FtgPDAAAACAACAAAAAAAAAAEAAAPA/8AAAAW3//3//QW2AAEAAAAAAAAAAAAAAAAAAAAMBAAAAAAAAAAAAAAAAgAAAAQAASAEAADgBAAAwAQAAJ0EAP/9BAAAAAQAAAAFtwAAAAAAAAAKABQAHgAyAEYAjACiAL4BFgE2AY4AAAABAAAADAA8AAMAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAADgCuAAEAAAAAAAEADQAAAAEAAAAAAAIABwCWAAEAAAAAAAMADQBIAAEAAAAAAAQADQCrAAEAAAAAAAUACwAnAAEAAAAAAAYADQBvAAEAAAAAAAoAGgDSAAMAAQQJAAEAGgANAAMAAQQJAAIADgCdAAMAAQQJAAMAGgBVAAMAAQQJAAQAGgC4AAMAAQQJAAUAFgAyAAMAAQQJAAYAGgB8AAMAAQQJAAoANADsd2ViZmxvdy1pY29ucwB3AGUAYgBmAGwAbwB3AC0AaQBjAG8AbgBzVmVyc2lvbiAxLjAAVgBlAHIAcwBpAG8AbgAgADEALgAwd2ViZmxvdy1pY29ucwB3AGUAYgBmAGwAbwB3AC0AaQBjAG8AbgBzd2ViZmxvdy1pY29ucwB3AGUAYgBmAGwAbwB3AC0AaQBjAG8AbgBzUmVndWxhcgBSAGUAZwB1AGwAYQByd2ViZmxvdy1pY29ucwB3AGUAYgBmAGwAbwB3AC0AaQBjAG8AbgBzRm9udCBnZW5lcmF0ZWQgYnkgSWNvTW9vbi4ARgBvAG4AdAAgAGcAZQBuAGUAcgBhAHQAZQBkACAAYgB5ACAASQBjAG8ATQBvAG8AbgAuAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==\") format(\"truetype\")",
+   "font-weight": "400",
+   "font-style": "normal"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/5e4b0f5ddc74af1bd44a4e2a/css/clearful.webflow.08821de8c.min.css",
+   "font-family": "\"Fa brands 400\"",
+   "src": "url(\"https://uploads-ssl.webflow.com/5e4b0f5ddc74af1bd44a4e2a/5f0e0d34e7b7aef2116159e2_fa-brands-400.woff2\") format(\"woff2\")",
+   "font-weight": "400",
+   "font-style": "normal",
+   "font-display": "auto"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/5e4b0f5ddc74af1bd44a4e2a/css/clearful.webflow.08821de8c.min.css",
+   "font-family": "\"Fa solid 900\"",
+   "src": "url(\"https://uploads-ssl.webflow.com/5e4b0f5ddc74af1bd44a4e2a/5f0e0d35d2880d34c62dc7db_fa-solid-900.woff2\") format(\"woff2\")",
+   "font-weight": "400",
+   "font-style": "normal",
+   "font-display": "auto"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/5e4b0f5ddc74af1bd44a4e2a/css/clearful.webflow.08821de8c.min.css",
+   "font-family": "\"Fa 100\"",
+   "src": "url(\"https://uploads-ssl.webflow.com/5e4b0f5ddc74af1bd44a4e2a/62cd977521ffca12b7dd650c_fa-thin-100.woff2\") format(\"woff2\")",
+   "font-weight": "100",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/5e4b0f5ddc74af1bd44a4e2a/css/clearful.webflow.08821de8c.min.css",
+   "font-family": "\"Fa 300\"",
+   "src": "url(\"https://uploads-ssl.webflow.com/5e4b0f5ddc74af1bd44a4e2a/62cd9775b712da6d62d1723f_fa-light-300.woff2\") format(\"woff2\")",
+   "font-weight": "300",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/5e4b0f5ddc74af1bd44a4e2a/css/clearful.webflow.08821de8c.min.css",
+   "font-family": "\"Fa 400\"",
+   "src": "url(\"https://uploads-ssl.webflow.com/5e4b0f5ddc74af1bd44a4e2a/62cd98f5ec85a7763ef5ee52_fa-regular-400.woff2\") format(\"woff2\")",
+   "font-weight": "400",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/5e4b0f5ddc74af1bd44a4e2a/css/clearful.webflow.08821de8c.min.css",
+   "font-family": "Intervariable",
+   "src": "url(\"https://uploads-ssl.webflow.com/5e4b0f5ddc74af1bd44a4e2a/660c2766571848ff8f146ac9_InterVariable.ttf\") format(\"truetype\")",
+   "font-weight": "100 900",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/5e4b0f5ddc74af1bd44a4e2a/css/clearful.webflow.08821de8c.min.css",
+   "font-family": "Intervariable",
+   "src": "url(\"https://uploads-ssl.webflow.com/5e4b0f5ddc74af1bd44a4e2a/660c277aaa537601b891e5f8_InterVariable-Italic.ttf\") format(\"truetype\")",
+   "font-weight": "100 900",
+   "font-style": "italic",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/5e4b0f5ddc74af1bd44a4e2a/css/clearful.webflow.08821de8c.min.css",
+   "font-family": "\"Fraunces Variablefont Soft Wonk Opsz Wght\"",
+   "src": "url(\"https://uploads-ssl.webflow.com/5e4b0f5ddc74af1bd44a4e2a/6615d80f253aa876d8e99165_Fraunces-Italic-VariableFont_SOFT%2CWONK%2Copsz%2Cwght.ttf\") format(\"truetype\")",
+   "font-weight": "100 900",
+   "font-style": "italic",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/5e4b0f5ddc74af1bd44a4e2a/css/clearful.webflow.08821de8c.min.css",
+   "font-family": "\"Fraunces Variablefont Soft Wonk Opsz Wght\"",
+   "src": "url(\"https://uploads-ssl.webflow.com/5e4b0f5ddc74af1bd44a4e2a/6615d80f8367addf23845b07_Fraunces-VariableFont_SOFT%2CWONK%2Copsz%2Cwght.ttf\") format(\"truetype\")",
+   "font-weight": "100 900",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/5e4b0f5ddc74af1bd44a4e2a/css/clearful.webflow.08821de8c.min.css",
+   "font-family": "\"Crimsonpro Variablefont Wght\"",
+   "src": "url(\"https://uploads-ssl.webflow.com/5e4b0f5ddc74af1bd44a4e2a/66171a8d44c9917aa610e64a_CrimsonPro-Italic-VariableFont_wght.ttf\") format(\"truetype\")",
+   "font-weight": "200 900",
+   "font-style": "italic",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/5e4b0f5ddc74af1bd44a4e2a/css/clearful.webflow.08821de8c.min.css",
+   "font-family": "\"Crimsonpro Variablefont Wght\"",
+   "src": "url(\"https://uploads-ssl.webflow.com/5e4b0f5ddc74af1bd44a4e2a/66171a8d6a0803d2cc098fe2_CrimsonPro-VariableFont_wght.ttf\") format(\"truetype\")",
+   "font-weight": "200 900",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/5e4b0f5ddc74af1bd44a4e2a/css/clearful.webflow.08821de8c.min.css",
+   "font-family": "\"Epilogue Variablefont Wght\"",
+   "src": "url(\"https://uploads-ssl.webflow.com/5e4b0f5ddc74af1bd44a4e2a/662187473748f7dcf15f4554_Epilogue-Italic-VariableFont_wght.ttf\") format(\"truetype\")",
+   "font-weight": "100 900",
+   "font-style": "italic",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/5e4b0f5ddc74af1bd44a4e2a/css/clearful.webflow.08821de8c.min.css",
+   "font-family": "\"Epilogue Variablefont Wght\"",
+   "src": "url(\"https://uploads-ssl.webflow.com/5e4b0f5ddc74af1bd44a4e2a/66218748114d5e8113a1f3e3_Epilogue-VariableFont_wght.ttf\") format(\"truetype\")",
+   "font-weight": "100 900",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/5e4b0f5ddc74af1bd44a4e2a/css/clearful.webflow.08821de8c.min.css",
+   "font-family": "\"Bricolagegrotesque Variablefont Opsz Wdth Wght\"",
+   "src": "url(\"https://uploads-ssl.webflow.com/5e4b0f5ddc74af1bd44a4e2a/6622866f5db298d2e6b882d0_BricolageGrotesque-VariableFont_opsz%2Cwdth%2Cwght.ttf\") format(\"truetype\")",
+   "font-weight": "200 800",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/5e4b0f5ddc74af1bd44a4e2a/css/clearful.webflow.08821de8c.min.css",
+   "font-family": "\"Alegreya Variablefont Wght\"",
+   "src": "url(\"https://uploads-ssl.webflow.com/5e4b0f5ddc74af1bd44a4e2a/663295160c9e92585beea20b_Alegreya-Italic-VariableFont_wght.ttf\") format(\"truetype\")",
+   "font-weight": "400 900",
+   "font-style": "italic",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/5e4b0f5ddc74af1bd44a4e2a/css/clearful.webflow.08821de8c.min.css",
+   "font-family": "\"Alegreya Variablefont Wght\"",
+   "src": "url(\"https://uploads-ssl.webflow.com/5e4b0f5ddc74af1bd44a4e2a/663295166a0be96bba62877f_Alegreya-VariableFont_wght.ttf\") format(\"truetype\")",
+   "font-weight": "400 900",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/5e4b0f5ddc74af1bd44a4e2a/css/clearful.webflow.08821de8c.min.css",
+   "font-family": "\"Playfairdisplay Variablefont Wght\"",
+   "src": "url(\"https://uploads-ssl.webflow.com/5e4b0f5ddc74af1bd44a4e2a/66330f240b962eee341ce04f_PlayfairDisplay-Italic-VariableFont_wght.ttf\") format(\"truetype\")",
+   "font-weight": "400 900",
+   "font-style": "italic",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/5e4b0f5ddc74af1bd44a4e2a/css/clearful.webflow.08821de8c.min.css",
+   "font-family": "\"Playfairdisplay Variablefont Wght\"",
+   "src": "url(\"https://uploads-ssl.webflow.com/5e4b0f5ddc74af1bd44a4e2a/66330f24460ef02a97e634d6_PlayfairDisplay-VariableFont_wght.ttf\") format(\"truetype\")",
+   "font-weight": "400 900",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/5e4b0f5ddc74af1bd44a4e2a/css/clearful.webflow.08821de8c.min.css",
+   "font-family": "Sportinggrotesque",
+   "src": "url(\"https://uploads-ssl.webflow.com/5e4b0f5ddc74af1bd44a4e2a/66218d04f9a6fe43af633582_SportingGrotesque-Regular.otf\") format(\"opentype\")",
+   "font-weight": "400",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/5e4b0f5ddc74af1bd44a4e2a/css/clearful.webflow.08821de8c.min.css",
+   "font-family": "Sportinggrotesque",
+   "src": "url(\"https://uploads-ssl.webflow.com/5e4b0f5ddc74af1bd44a4e2a/66218d0454bd592c59ddfb7d_SportingGrotesque-Bold.otf\") format(\"opentype\")",
+   "font-weight": "700",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/5e4b0f5ddc74af1bd44a4e2a/css/clearful.webflow.08821de8c.min.css",
+   "font-family": "Literatatt",
+   "src": "url(\"https://uploads-ssl.webflow.com/5e4b0f5ddc74af1bd44a4e2a/6633a7a0baded6761f16ac2a_LiterataTT-TextLightItalic.otf\") format(\"opentype\")",
+   "font-weight": "300",
+   "font-style": "italic",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/5e4b0f5ddc74af1bd44a4e2a/css/clearful.webflow.08821de8c.min.css",
+   "font-family": "Literatatt",
+   "src": "url(\"https://uploads-ssl.webflow.com/5e4b0f5ddc74af1bd44a4e2a/6633a7a17acb039d1bf92952_LiterataTT-TextLight.otf\") format(\"opentype\")",
+   "font-weight": "300",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/5e4b0f5ddc74af1bd44a4e2a/css/clearful.webflow.08821de8c.min.css",
+   "font-family": "Literatatt",
+   "src": "url(\"https://uploads-ssl.webflow.com/5e4b0f5ddc74af1bd44a4e2a/6633a7a0f915865b6f0108c9_LiterataTT-TextRegular.otf\") format(\"opentype\")",
+   "font-weight": "400",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/5e4b0f5ddc74af1bd44a4e2a/css/clearful.webflow.08821de8c.min.css",
+   "font-family": "Literatatt",
+   "src": "url(\"https://uploads-ssl.webflow.com/5e4b0f5ddc74af1bd44a4e2a/6633a7a02f130bab1ca37041_LiterataTT-TextItalic.otf\") format(\"opentype\")",
+   "font-weight": "400",
+   "font-style": "italic",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/5e4b0f5ddc74af1bd44a4e2a/css/clearful.webflow.08821de8c.min.css",
+   "font-family": "Literatatt",
+   "src": "url(\"https://uploads-ssl.webflow.com/5e4b0f5ddc74af1bd44a4e2a/6633a7a17550d55e9c7dfaeb_LiterataTT-TextMedium.otf\") format(\"opentype\")",
+   "font-weight": "500",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/5e4b0f5ddc74af1bd44a4e2a/css/clearful.webflow.08821de8c.min.css",
+   "font-family": "Literatatt",
+   "src": "url(\"https://uploads-ssl.webflow.com/5e4b0f5ddc74af1bd44a4e2a/6633a7a19c94177292169c42_LiterataTT-TextMediumItalic.otf\") format(\"opentype\")",
+   "font-weight": "500",
+   "font-style": "italic",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/5e4b0f5ddc74af1bd44a4e2a/css/clearful.webflow.08821de8c.min.css",
+   "font-family": "Literatatt",
+   "src": "url(\"https://uploads-ssl.webflow.com/5e4b0f5ddc74af1bd44a4e2a/6633a7a0fe4c41e950698858_LiterataTT-TextSemibold.otf\") format(\"opentype\")",
+   "font-weight": "600",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/5e4b0f5ddc74af1bd44a4e2a/css/clearful.webflow.08821de8c.min.css",
+   "font-family": "Literatatt",
+   "src": "url(\"https://uploads-ssl.webflow.com/5e4b0f5ddc74af1bd44a4e2a/6633a7a06e97d26d9e3b0645_LiterataTT-TextSemiboldItalic.otf\") format(\"opentype\")",
+   "font-weight": "600",
+   "font-style": "italic",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/5e4b0f5ddc74af1bd44a4e2a/css/clearful.webflow.08821de8c.min.css",
+   "font-family": "Literatatt",
+   "src": "url(\"https://uploads-ssl.webflow.com/5e4b0f5ddc74af1bd44a4e2a/6633a7a18b2da496c21ded0c_LiterataTT-TextBold.otf\") format(\"opentype\")",
+   "font-weight": "700",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/5e4b0f5ddc74af1bd44a4e2a/css/clearful.webflow.08821de8c.min.css",
+   "font-family": "Literatatt",
+   "src": "url(\"https://uploads-ssl.webflow.com/5e4b0f5ddc74af1bd44a4e2a/6633a7a18bdde7e41586099f_LiterataTT-TextBoldItalic.otf\") format(\"opentype\")",
+   "font-weight": "700",
+   "font-style": "italic",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/5e4b0f5ddc74af1bd44a4e2a/css/clearful.webflow.08821de8c.min.css",
+   "font-family": "Literatatt",
+   "src": "url(\"https://uploads-ssl.webflow.com/5e4b0f5ddc74af1bd44a4e2a/6633a7a1ba2de18bfe25e676_LiterataTT-TextExtrabold.otf\") format(\"opentype\")",
+   "font-weight": "800",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://cdn.prod.website-files.com/5e4b0f5ddc74af1bd44a4e2a/css/clearful.webflow.08821de8c.min.css",
+   "font-family": "Literatatt",
+   "src": "url(\"https://uploads-ssl.webflow.com/5e4b0f5ddc74af1bd44a4e2a/6633a7a07e17cfaa6146340a_LiterataTT-TextExtraboldItalic.otf\") format(\"opentype\")",
+   "font-weight": "800",
+   "font-style": "italic",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css?family=Petit+Formal+Script:regular%7CMuli:300,regular,500,600,700,800,900%7CHomemade+Apple:regular%7CLora:regular,500,600,700%7CInter:100,200,300,regular,500,600,700,800,900%7CPrata:regular%7CManrope:200,300,regular,500,600,700,800%7CTenor+Sans:regular",
+   "font-family": "\"Homemade Apple\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(\"https://fonts.gstatic.com/s/homemadeapple/v24/Qw3EZQFXECDrI2q789EKQZJob0x6XH0.ttf\") format(\"truetype\")"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css?family=Petit+Formal+Script:regular%7CMuli:300,regular,500,600,700,800,900%7CHomemade+Apple:regular%7CLora:regular,500,600,700%7CInter:100,200,300,regular,500,600,700,800,900%7CPrata:regular%7CManrope:200,300,regular,500,600,700,800%7CTenor+Sans:regular",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "100",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuLyeAZ9hjQ.ttf\") format(\"truetype\")"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css?family=Petit+Formal+Script:regular%7CMuli:300,regular,500,600,700,800,900%7CHomemade+Apple:regular%7CLora:regular,500,600,700%7CInter:100,200,300,regular,500,600,700,800,900%7CPrata:regular%7CManrope:200,300,regular,500,600,700,800%7CTenor+Sans:regular",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "200",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuDyfAZ9hjQ.ttf\") format(\"truetype\")"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css?family=Petit+Formal+Script:regular%7CMuli:300,regular,500,600,700,800,900%7CHomemade+Apple:regular%7CLora:regular,500,600,700%7CInter:100,200,300,regular,500,600,700,800,900%7CPrata:regular%7CManrope:200,300,regular,500,600,700,800%7CTenor+Sans:regular",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "300",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuOKfAZ9hjQ.ttf\") format(\"truetype\")"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css?family=Petit+Formal+Script:regular%7CMuli:300,regular,500,600,700,800,900%7CHomemade+Apple:regular%7CLora:regular,500,600,700%7CInter:100,200,300,regular,500,600,700,800,900%7CPrata:regular%7CManrope:200,300,regular,500,600,700,800%7CTenor+Sans:regular",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuLyfAZ9hjQ.ttf\") format(\"truetype\")"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css?family=Petit+Formal+Script:regular%7CMuli:300,regular,500,600,700,800,900%7CHomemade+Apple:regular%7CLora:regular,500,600,700%7CInter:100,200,300,regular,500,600,700,800,900%7CPrata:regular%7CManrope:200,300,regular,500,600,700,800%7CTenor+Sans:regular",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuI6fAZ9hjQ.ttf\") format(\"truetype\")"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css?family=Petit+Formal+Script:regular%7CMuli:300,regular,500,600,700,800,900%7CHomemade+Apple:regular%7CLora:regular,500,600,700%7CInter:100,200,300,regular,500,600,700,800,900%7CPrata:regular%7CManrope:200,300,regular,500,600,700,800%7CTenor+Sans:regular",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "600",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuGKYAZ9hjQ.ttf\") format(\"truetype\")"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css?family=Petit+Formal+Script:regular%7CMuli:300,regular,500,600,700,800,900%7CHomemade+Apple:regular%7CLora:regular,500,600,700%7CInter:100,200,300,regular,500,600,700,800,900%7CPrata:regular%7CManrope:200,300,regular,500,600,700,800%7CTenor+Sans:regular",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuFuYAZ9hjQ.ttf\") format(\"truetype\")"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css?family=Petit+Formal+Script:regular%7CMuli:300,regular,500,600,700,800,900%7CHomemade+Apple:regular%7CLora:regular,500,600,700%7CInter:100,200,300,regular,500,600,700,800,900%7CPrata:regular%7CManrope:200,300,regular,500,600,700,800%7CTenor+Sans:regular",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "800",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuDyYAZ9hjQ.ttf\") format(\"truetype\")"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css?family=Petit+Formal+Script:regular%7CMuli:300,regular,500,600,700,800,900%7CHomemade+Apple:regular%7CLora:regular,500,600,700%7CInter:100,200,300,regular,500,600,700,800,900%7CPrata:regular%7CManrope:200,300,regular,500,600,700,800%7CTenor+Sans:regular",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "900",
+   "src": "url(\"https://fonts.gstatic.com/s/inter/v20/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuBWYAZ9hjQ.ttf\") format(\"truetype\")"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css?family=Petit+Formal+Script:regular%7CMuli:300,regular,500,600,700,800,900%7CHomemade+Apple:regular%7CLora:regular,500,600,700%7CInter:100,200,300,regular,500,600,700,800,900%7CPrata:regular%7CManrope:200,300,regular,500,600,700,800%7CTenor+Sans:regular",
+   "font-family": "Lora",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(\"https://fonts.gstatic.com/s/lora/v37/0QI6MX1D_JOuGQbT0gvTJPa787weuxJBkqg.ttf\") format(\"truetype\")"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css?family=Petit+Formal+Script:regular%7CMuli:300,regular,500,600,700,800,900%7CHomemade+Apple:regular%7CLora:regular,500,600,700%7CInter:100,200,300,regular,500,600,700,800,900%7CPrata:regular%7CManrope:200,300,regular,500,600,700,800%7CTenor+Sans:regular",
+   "font-family": "Lora",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(\"https://fonts.gstatic.com/s/lora/v37/0QI6MX1D_JOuGQbT0gvTJPa787wsuxJBkqg.ttf\") format(\"truetype\")"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css?family=Petit+Formal+Script:regular%7CMuli:300,regular,500,600,700,800,900%7CHomemade+Apple:regular%7CLora:regular,500,600,700%7CInter:100,200,300,regular,500,600,700,800,900%7CPrata:regular%7CManrope:200,300,regular,500,600,700,800%7CTenor+Sans:regular",
+   "font-family": "Lora",
+   "font-style": "normal",
+   "font-weight": "600",
+   "src": "url(\"https://fonts.gstatic.com/s/lora/v37/0QI6MX1D_JOuGQbT0gvTJPa787zAvBJBkqg.ttf\") format(\"truetype\")"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css?family=Petit+Formal+Script:regular%7CMuli:300,regular,500,600,700,800,900%7CHomemade+Apple:regular%7CLora:regular,500,600,700%7CInter:100,200,300,regular,500,600,700,800,900%7CPrata:regular%7CManrope:200,300,regular,500,600,700,800%7CTenor+Sans:regular",
+   "font-family": "Lora",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(\"https://fonts.gstatic.com/s/lora/v37/0QI6MX1D_JOuGQbT0gvTJPa787z5vBJBkqg.ttf\") format(\"truetype\")"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css?family=Petit+Formal+Script:regular%7CMuli:300,regular,500,600,700,800,900%7CHomemade+Apple:regular%7CLora:regular,500,600,700%7CInter:100,200,300,regular,500,600,700,800,900%7CPrata:regular%7CManrope:200,300,regular,500,600,700,800%7CTenor+Sans:regular",
+   "font-family": "Manrope",
+   "font-style": "normal",
+   "font-weight": "200",
+   "src": "url(\"https://fonts.gstatic.com/s/manrope/v23/xn7_YHE41ni1AdIRqAuZuw1Bx9mbZk59FN_C-bw.ttf\") format(\"truetype\")"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css?family=Petit+Formal+Script:regular%7CMuli:300,regular,500,600,700,800,900%7CHomemade+Apple:regular%7CLora:regular,500,600,700%7CInter:100,200,300,regular,500,600,700,800,900%7CPrata:regular%7CManrope:200,300,regular,500,600,700,800%7CTenor+Sans:regular",
+   "font-family": "Manrope",
+   "font-style": "normal",
+   "font-weight": "300",
+   "src": "url(\"https://fonts.gstatic.com/s/manrope/v23/xn7_YHE41ni1AdIRqAuZuw1Bx9mbZk6jFN_C-bw.ttf\") format(\"truetype\")"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css?family=Petit+Formal+Script:regular%7CMuli:300,regular,500,600,700,800,900%7CHomemade+Apple:regular%7CLora:regular,500,600,700%7CInter:100,200,300,regular,500,600,700,800,900%7CPrata:regular%7CManrope:200,300,regular,500,600,700,800%7CTenor+Sans:regular",
+   "font-family": "Manrope",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(\"https://fonts.gstatic.com/s/manrope/v23/xn7_YHE41ni1AdIRqAuZuw1Bx9mbZk79FN_C-bw.ttf\") format(\"truetype\")"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css?family=Petit+Formal+Script:regular%7CMuli:300,regular,500,600,700,800,900%7CHomemade+Apple:regular%7CLora:regular,500,600,700%7CInter:100,200,300,regular,500,600,700,800,900%7CPrata:regular%7CManrope:200,300,regular,500,600,700,800%7CTenor+Sans:regular",
+   "font-family": "Manrope",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(\"https://fonts.gstatic.com/s/manrope/v23/xn7_YHE41ni1AdIRqAuZuw1Bx9mbZk7PFN_C-bw.ttf\") format(\"truetype\")"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css?family=Petit+Formal+Script:regular%7CMuli:300,regular,500,600,700,800,900%7CHomemade+Apple:regular%7CLora:regular,500,600,700%7CInter:100,200,300,regular,500,600,700,800,900%7CPrata:regular%7CManrope:200,300,regular,500,600,700,800%7CTenor+Sans:regular",
+   "font-family": "Manrope",
+   "font-style": "normal",
+   "font-weight": "600",
+   "src": "url(\"https://fonts.gstatic.com/s/manrope/v23/xn7_YHE41ni1AdIRqAuZuw1Bx9mbZk4jE9_C-bw.ttf\") format(\"truetype\")"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css?family=Petit+Formal+Script:regular%7CMuli:300,regular,500,600,700,800,900%7CHomemade+Apple:regular%7CLora:regular,500,600,700%7CInter:100,200,300,regular,500,600,700,800,900%7CPrata:regular%7CManrope:200,300,regular,500,600,700,800%7CTenor+Sans:regular",
+   "font-family": "Manrope",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(\"https://fonts.gstatic.com/s/manrope/v23/xn7_YHE41ni1AdIRqAuZuw1Bx9mbZk4aE9_C-bw.ttf\") format(\"truetype\")"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css?family=Petit+Formal+Script:regular%7CMuli:300,regular,500,600,700,800,900%7CHomemade+Apple:regular%7CLora:regular,500,600,700%7CInter:100,200,300,regular,500,600,700,800,900%7CPrata:regular%7CManrope:200,300,regular,500,600,700,800%7CTenor+Sans:regular",
+   "font-family": "Manrope",
+   "font-style": "normal",
+   "font-weight": "800",
+   "src": "url(\"https://fonts.gstatic.com/s/manrope/v23/xn7_YHE41ni1AdIRqAuZuw1Bx9mbZk59E9_C-bw.ttf\") format(\"truetype\")"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css?family=Petit+Formal+Script:regular%7CMuli:300,regular,500,600,700,800,900%7CHomemade+Apple:regular%7CLora:regular,500,600,700%7CInter:100,200,300,regular,500,600,700,800,900%7CPrata:regular%7CManrope:200,300,regular,500,600,700,800%7CTenor+Sans:regular",
+   "font-family": "Muli",
+   "font-style": "normal",
+   "font-weight": "300",
+   "src": "url(\"https://fonts.gstatic.com/s/muli/v34/7Aulp_0qiz-aVz7u3PJLcUMYOFmQkEk30e0.ttf\") format(\"truetype\")"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css?family=Petit+Formal+Script:regular%7CMuli:300,regular,500,600,700,800,900%7CHomemade+Apple:regular%7CLora:regular,500,600,700%7CInter:100,200,300,regular,500,600,700,800,900%7CPrata:regular%7CManrope:200,300,regular,500,600,700,800%7CTenor+Sans:regular",
+   "font-family": "Muli",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(\"https://fonts.gstatic.com/s/muli/v34/7Aulp_0qiz-aVz7u3PJLcUMYOFnOkEk30e0.ttf\") format(\"truetype\")"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css?family=Petit+Formal+Script:regular%7CMuli:300,regular,500,600,700,800,900%7CHomemade+Apple:regular%7CLora:regular,500,600,700%7CInter:100,200,300,regular,500,600,700,800,900%7CPrata:regular%7CManrope:200,300,regular,500,600,700,800%7CTenor+Sans:regular",
+   "font-family": "Muli",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(\"https://fonts.gstatic.com/s/muli/v34/7Aulp_0qiz-aVz7u3PJLcUMYOFn8kEk30e0.ttf\") format(\"truetype\")"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css?family=Petit+Formal+Script:regular%7CMuli:300,regular,500,600,700,800,900%7CHomemade+Apple:regular%7CLora:regular,500,600,700%7CInter:100,200,300,regular,500,600,700,800,900%7CPrata:regular%7CManrope:200,300,regular,500,600,700,800%7CTenor+Sans:regular",
+   "font-family": "Muli",
+   "font-style": "normal",
+   "font-weight": "600",
+   "src": "url(\"https://fonts.gstatic.com/s/muli/v34/7Aulp_0qiz-aVz7u3PJLcUMYOFkQl0k30e0.ttf\") format(\"truetype\")"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css?family=Petit+Formal+Script:regular%7CMuli:300,regular,500,600,700,800,900%7CHomemade+Apple:regular%7CLora:regular,500,600,700%7CInter:100,200,300,regular,500,600,700,800,900%7CPrata:regular%7CManrope:200,300,regular,500,600,700,800%7CTenor+Sans:regular",
+   "font-family": "Muli",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(\"https://fonts.gstatic.com/s/muli/v34/7Aulp_0qiz-aVz7u3PJLcUMYOFkpl0k30e0.ttf\") format(\"truetype\")"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css?family=Petit+Formal+Script:regular%7CMuli:300,regular,500,600,700,800,900%7CHomemade+Apple:regular%7CLora:regular,500,600,700%7CInter:100,200,300,regular,500,600,700,800,900%7CPrata:regular%7CManrope:200,300,regular,500,600,700,800%7CTenor+Sans:regular",
+   "font-family": "Muli",
+   "font-style": "normal",
+   "font-weight": "800",
+   "src": "url(\"https://fonts.gstatic.com/s/muli/v34/7Aulp_0qiz-aVz7u3PJLcUMYOFlOl0k30e0.ttf\") format(\"truetype\")"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css?family=Petit+Formal+Script:regular%7CMuli:300,regular,500,600,700,800,900%7CHomemade+Apple:regular%7CLora:regular,500,600,700%7CInter:100,200,300,regular,500,600,700,800,900%7CPrata:regular%7CManrope:200,300,regular,500,600,700,800%7CTenor+Sans:regular",
+   "font-family": "Muli",
+   "font-style": "normal",
+   "font-weight": "900",
+   "src": "url(\"https://fonts.gstatic.com/s/muli/v34/7Aulp_0qiz-aVz7u3PJLcUMYOFlnl0k30e0.ttf\") format(\"truetype\")"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css?family=Petit+Formal+Script:regular%7CMuli:300,regular,500,600,700,800,900%7CHomemade+Apple:regular%7CLora:regular,500,600,700%7CInter:100,200,300,regular,500,600,700,800,900%7CPrata:regular%7CManrope:200,300,regular,500,600,700,800%7CTenor+Sans:regular",
+   "font-family": "\"Petit Formal Script\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(\"https://fonts.gstatic.com/s/petitformalscript/v19/B50TF6xQr2TXJBnGOFME6u5OR83oRP5qkH7gOw.ttf\") format(\"truetype\")"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css?family=Petit+Formal+Script:regular%7CMuli:300,regular,500,600,700,800,900%7CHomemade+Apple:regular%7CLora:regular,500,600,700%7CInter:100,200,300,regular,500,600,700,800,900%7CPrata:regular%7CManrope:200,300,regular,500,600,700,800%7CTenor+Sans:regular",
+   "font-family": "Prata",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(\"https://fonts.gstatic.com/s/prata/v22/6xKhdSpbNNCT-sWPCms.ttf\") format(\"truetype\")"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css?family=Petit+Formal+Script:regular%7CMuli:300,regular,500,600,700,800,900%7CHomemade+Apple:regular%7CLora:regular,500,600,700%7CInter:100,200,300,regular,500,600,700,800,900%7CPrata:regular%7CManrope:200,300,regular,500,600,700,800%7CTenor+Sans:regular",
+   "font-family": "\"Tenor Sans\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(\"https://fonts.gstatic.com/s/tenorsans/v21/bx6ANxqUneKx06UkIXISn3V4Dw.ttf\") format(\"truetype\")"
+  }
+ ],
+ "resolved": {
+  "light": {
+   "--background-color--background-alternate": {
+    "raw": "white",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--background-color--background-brand": {
+    "raw": "#1953ff",
+    "kind": "color",
+    "value": "#1953ff"
+   },
+   "--background-color--background-brand-dark": {
+    "raw": "#000e38",
+    "kind": "color",
+    "value": "#000e38"
+   },
+   "--background-color--background-brand-light": {
+    "raw": "#d6e0ff",
+    "kind": "color",
+    "value": "#d6e0ff"
+   },
+   "--background-color--background-primary": {
+    "raw": "white",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--background-color--background-secondary": {
+    "raw": "#f7f7f7",
+    "kind": "color",
+    "value": "#f7f7f7"
+   },
+   "--background-color--background-tertiary": {
+    "raw": "#e1e1e1",
+    "kind": "color",
+    "value": "#e1e1e1"
+   },
+   "--base-color-brand--blue-100": {
+    "raw": "#d6e0ff",
+    "kind": "color",
+    "value": "#d6e0ff"
+   },
+   "--base-color-brand--blue-200": {
+    "raw": "#adc2ff",
+    "kind": "color",
+    "value": "#adc2ff"
+   },
+   "--base-color-brand--blue-300": {
+    "raw": "#809fff",
+    "kind": "color",
+    "value": "#809fff"
+   },
+   "--base-color-brand--blue-400": {
+    "raw": "#4d79ff",
+    "kind": "color",
+    "value": "#4d79ff"
+   },
+   "--base-color-brand--blue-50": {
+    "raw": "#ebf0ff",
+    "kind": "color",
+    "value": "#ebf0ff"
+   },
+   "--base-color-brand--blue-500": {
+    "raw": "#1953ff",
+    "kind": "color",
+    "value": "#1953ff"
+   },
+   "--base-color-brand--blue-600": {
+    "raw": "#0039e6",
+    "kind": "color",
+    "value": "#0039e6"
+   },
+   "--base-color-brand--blue-600<deleted|variable-78f99fb0>": {
+    "raw": "#1b1bbc",
+    "kind": "color",
+    "value": "#1b1bbc"
+   },
+   "--base-color-brand--blue-700": {
+    "raw": "#002db3",
+    "kind": "color",
+    "value": "#002db3"
+   },
+   "--base-color-brand--blue-700<deleted|variable-bd5d0583>": {
+    "raw": "#1a2291",
+    "kind": "color",
+    "value": "#1a2291"
+   },
+   "--base-color-brand--blue-800": {
+    "raw": "#002185",
+    "kind": "color",
+    "value": "#002185"
+   },
+   "--base-color-brand--blue-900": {
+    "raw": "#001452",
+    "kind": "color",
+    "value": "#001452"
+   },
+   "--base-color-brand--blue-950": {
+    "raw": "#000e38",
+    "kind": "color",
+    "value": "#000e38"
+   },
+   "--base-color-neutral--black": {
+    "raw": "#000",
+    "kind": "color",
+    "value": "#000000"
+   },
+   "--base-color-neutral--grey-000": {
+    "raw": "#f7f7f7",
+    "kind": "color",
+    "value": "#f7f7f7"
+   },
+   "--base-color-neutral--grey-100": {
+    "raw": "#e1e1e1",
+    "kind": "color",
+    "value": "#e1e1e1"
+   },
+   "--base-color-neutral--grey-200": {
+    "raw": "#cfcfcf",
+    "kind": "color",
+    "value": "#cfcfcf"
+   },
+   "--base-color-neutral--grey-300": {
+    "raw": "#b1b1b1",
+    "kind": "color",
+    "value": "#b1b1b1"
+   },
+   "--base-color-neutral--grey-400": {
+    "raw": "#9e9e9e",
+    "kind": "color",
+    "value": "#9e9e9e"
+   },
+   "--base-color-neutral--grey-500": {
+    "raw": "#7e7e7e",
+    "kind": "color",
+    "value": "#7e7e7e"
+   },
+   "--base-color-neutral--grey-600": {
+    "raw": "#626262",
+    "kind": "color",
+    "value": "#626262"
+   },
+   "--base-color-neutral--grey-700": {
+    "raw": "#515151",
+    "kind": "color",
+    "value": "#515151"
+   },
+   "--base-color-neutral--grey-800": {
+    "raw": "#3b3b3b",
+    "kind": "color",
+    "value": "#3b3b3b"
+   },
+   "--base-color-neutral--grey-900": {
+    "raw": "#222",
+    "kind": "color",
+    "value": "#222222"
+   },
+   "--base-color-neutral--white": {
+    "raw": "white",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--border-color--border-brand-blue": {
+    "raw": "#1953ff",
+    "kind": "color",
+    "value": "#1953ff"
+   },
+   "--border-color--border-primary": {
+    "raw": "#e1e1e1",
+    "kind": "color",
+    "value": "#e1e1e1"
+   },
+   "--border-color--border-secondary": {
+    "raw": "white",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--border-color--border-tertiary": {
+    "raw": "white",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--border-radius--border-radius-large": {
+    "raw": "1rem",
+    "kind": "dimension",
+    "value": "16px"
+   },
+   "--border-radius--border-radius-medium": {
+    "raw": ".5rem",
+    "kind": "dimension",
+    "value": "8px"
+   },
+   "--border-radius--border-radius-small": {
+    "raw": ".25rem",
+    "kind": "dimension",
+    "value": "4px"
+   },
+   "--border-radius--border-radius-xlarge": {
+    "raw": "1.5rem",
+    "kind": "dimension",
+    "value": "24px"
+   },
+   "--brand-blue<deleted|variable-94e7093d>": {
+    "raw": "#2b40ff",
+    "kind": "color",
+    "value": "#2b40ff"
+   },
+   "--link-color--color": {
+    "raw": "#1953ff",
+    "kind": "color",
+    "value": "#1953ff"
+   },
+   "--link-color--link-alternate": {
+    "raw": "white",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--link-color--link-primary": {
+    "raw": "#222",
+    "kind": "color",
+    "value": "#222222"
+   },
+   "--link-color--link-secondary": {
+    "raw": "#626262",
+    "kind": "color",
+    "value": "#626262"
+   },
+   "--primary-font-family": {
+    "raw": "Manrope,sans-serif",
+    "kind": "fontFamily",
+    "value": "Manrope,sans-serif"
+   },
+   "--secondary-font-family": {
+    "raw": "Literatatt,sans-serif",
+    "kind": "fontFamily",
+    "value": "Literatatt,sans-serif"
+   },
+   "--text-color--text-alternate": {
+    "raw": "#f7f7f7",
+    "kind": "color",
+    "value": "#f7f7f7"
+   },
+   "--text-color--text-brand": {
+    "raw": "#1953ff",
+    "kind": "color",
+    "value": "#1953ff"
+   },
+   "--text-color--text-brand-dark": {
+    "raw": "#001452",
+    "kind": "color",
+    "value": "#001452"
+   },
+   "--text-color--text-brand-light": {
+    "raw": "#ebf0ff",
+    "kind": "color",
+    "value": "#ebf0ff"
+   },
+   "--text-color--text-primary": {
+    "raw": "#222",
+    "kind": "color",
+    "value": "#222222"
+   },
+   "--text-color--text-secondary": {
+    "raw": "#515151",
+    "kind": "color",
+    "value": "#515151"
+   },
+   "--text-color--text-tertiary": {
+    "raw": "#9e9e9e",
+    "kind": "color",
+    "value": "#9e9e9e"
+   }
+  }
+ }
+}
