@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 155,
-    "system_domains": 147,
-    "matched_domains": 118,
-    "missing_domains": 315,
+    "system_packages": 156,
+    "system_domains": 148,
+    "matched_domains": 119,
+    "missing_domains": 314,
     "system_domains_absent_from_catalog": 29
   },
   "matched": {
@@ -798,6 +798,23 @@
           "slug": "chatgpt",
           "name": "ChatGPT",
           "url": "https://chatgpt.com",
+          "name_match": true
+        }
+      ]
+    },
+    "classpass.com": {
+      "catalog": [
+        {
+          "name": "ClassPass",
+          "domain": "classpass.com",
+          "id": 256
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "classpass",
+          "name": "ClassPass",
+          "url": "https://classpass.com",
           "name_match": true
         }
       ]
@@ -2106,13 +2123,6 @@
         "name": "Chargetrip",
         "domain": "chargetrip.com",
         "id": 798
-      }
-    ],
-    "classpass.com": [
-      {
-        "name": "ClassPass",
-        "domain": "classpass.com",
-        "id": 256
       }
     ],
     "clay.earth": [
