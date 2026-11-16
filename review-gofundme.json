@@ -1,0 +1,86 @@
+{
+  "F1": {
+    "grade": "partly",
+    "evidence": "No numeric ~10-step per-hue ramp exists in the shipped layer: the --hrt-color-* set is purely semantic. Each hue family instead carries role steps — color.surface.accent.blue/pink/purple/yellow (39 tokens), brand medium/strong/default, neutral default/subtle/strong, per-status surface/text/icon/border variants — resolved live from 618 declared vars."
+  },
+  "F2": {
+    "grade": "meets",
+    "evidence": "color.surface.default/raised/on.overlay/overlay plus per-status surfaces; measured surface roles (page, promoFill #ccf88e, cardBg, menuPanel, footerBg) sit beside them in light.measured.color.*."
+  },
+  "F3": {
+    "grade": "meets",
+    "evidence": "color.text.default/headings (primary), supporting/neutral.strong (secondary), disabled.* (3 tokens), brand.on.strong + on.overlay text (on-accent), and text.brand.* (#4a9d44 link green with hover/active/pressed states) — every rubric role covered."
+  },
+  "F4": {
+    "grade": "meets",
+    "evidence": "51 color.border.* tokens: default/strong/subtle per neutral+brand+status family, border.focused (the 1px #101010 ring measured on 26 components), border.disabled.*."
+  },
+  "F5": {
+    "grade": "meets",
+    "evidence": "color.button.primary.surface default #274a34 / hover #2d6339 / pressed declared, plus the .strong variant #ccf88e/#e9fcce; hover and CDP-forced pressed measured on hero-cta, f-donate, create-continue and wp-button."
+  },
+  "F6": {
+    "grade": "meets",
+    "evidence": "positive (success), negative (danger), warning and informative sets each carry surface/medium/subtle fills, text.default/strong, icon and border variants — all four rubric statuses with fill, text and border."
+  },
+  "F7": {
+    "grade": "meets",
+    "evidence": "One theme paints: the consumer light ($themes declares only light). The [data-theme=\"pro\"] layer is declared-only evidence kept in raw/css-vars.json, documented as never painting the captured surface — not a shipped theme variant."
+  },
+  "F8": {
+    "grade": "meets",
+    "evidence": "font.family.family.default (GoFundMe Sans) + .mono with fallbacks, 9 font sizes, 9 line heights, 5 weights, tracking; composite roles type.display (9), type.heading (17), type.body (13), type.legend; measured sizes in core.font.size.measured.*."
+  },
+  "F9": {
+    "grade": "meets",
+    "evidence": "Declared --hrt-spacing-* emitted as core.size.spacing (18 steps) plus spacing.button and spacing.split-button padding sets; measured gaps in spacing.measured.*."
+  },
+  "F10": {
+    "grade": "partly",
+    "evidence": "core.radius.container (10 named steps xs..round), radius.measured.* per component; no border-width token set — the 1px rules appear only inside component entries."
+  },
+  "F11": {
+    "grade": "meets",
+    "evidence": "size.button.* control heights, size.width/screen/max scales, componentVars.asset icon sizes, and the measured 1px focus ring at 0-2px offset recorded per component in components.md."
+  },
+  "F12": {
+    "grade": "partly",
+    "evidence": "Three declared levels — shadow.soft, shadow.medium.default/.strong, shadow.strong — plus shadow.measured.menuPanel on the dropdown; uses tie to toast/popover/dropdown rules, but the surface paints mostly flat."
+  },
+  "F13": {
+    "grade": "meets",
+    "evidence": "26 durations + 15 easings + 35 transition recipes + 2 animations from --hrt-motion-*; raw/motion.json records a real prefers-reduced-motion probe — 62 transitions removed, behaviour 'partial', documented."
+  },
+  "F14": {
+    "grade": "meets",
+    "evidence": "size.screen.* 7 breakpoints, size.width.* 7 content widths, size.max, 14 zIndex layers, and the 36-column hrt-row/hrt-col grid declarations harvested in raw/css-vars.json."
+  },
+  "C1": {
+    "grade": "partly",
+    "evidence": "About 11 of 19 checklist components on the signed-out surface: button (hero-cta/f-donate/wp-button/create-continue), icon button (m-menu-btn/f-media-nav), link, text field (signin-email/create-zip), select (create-country/wp-locale), radio pill (create-pill), menu (header dropdowns + mobile drawer), card (fundraiser-card/s-card), avatar, badge (media tag). text area, switch, tabs, tooltip, dialog, toast, table, list row never appear signed-out — toast/dialog exist in the sheets only."
+  },
+  "C2": {
+    "grade": "meets",
+    "evidence": "default/hover/focus-visible/CDP-forced pressed on every control, focused+filled on the email/postcode fields, opened on the menu button and header dropdowns; disabled/loading/error states never appear on the public surface."
+  },
+  "C3": {
+    "grade": "meets",
+    "evidence": "26 of 27 keyboard-focused components draw a visible 1px #101010 outline ring (m-* controls draw the #e59700 ring); create-country is documented as drawing none — recorded in components.md's Focus note."
+  },
+  "C4": {
+    "grade": "meets",
+    "evidence": "Component entries pair every colour with its tokens.json path (family-ranked so fills cite surface/button roles, not coincidental border twins); geometry cites measured tokens."
+  },
+  "P1": {
+    "grade": "partly",
+    "evidence": "patterns.md covers the chrome suite (promo + sticky header + mega-dropdowns), the hero, discover/search card rails with filtering, the fundraiser page, the wizard + auth boundaries and the WordPress content stack — shell, search/filtering, data display and form edges of the rubric set; destructive confirmation, feedback, empty/error and true forms/validation do not exist on the signed-out surface."
+  },
+  "A1": {
+    "grade": "partly",
+    "evidence": "Fonts named (GoFundMe Sans self-hosted + GoFundMe Sans Mono, fallbacks recorded) but no icon set was lifted — the declared layoutGap; glyphs visible only in crops and screenshots."
+  },
+  "K1": {
+    "grade": "meets",
+    "evidence": "README records scope, the capture method (Playwright/Chromium, signed out, two widths), the consent-overlay handling, the dual hrt/WordPress stacks, per-file provenance conventions and a distrust list including sign-in hydration variability and zero-size gaps."
+  }
+}

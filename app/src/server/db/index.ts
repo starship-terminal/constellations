@@ -78,7 +78,7 @@ export async function createResearchStore(directory: string) {
     const version = Number(
       (await tx.execute("PRAGMA user_version")).rows[0].user_version,
     );
-    if (version > 15)
+    if (version > 20)
       throw new Error("Research database was created by a newer application.");
     if (version === 0) {
       for (const sql of migrations) await tx.execute(sql);
@@ -176,12 +176,12 @@ export async function createResearchStore(directory: string) {
     }
     if (version < 13) {
       // Same one-shot top-up, scoped to this batch's new reference: a store
-      // already at v12 never re-seeds, so the Fourthwall rows would never
-      // arrive. Scoping keeps cleared labels on older packages cleared — an
-      // empty assignment reads as "never labelled", so an unscoped pass
-      // would restore rows the user deleted.
-      await seedNewCuratedCategories(tx, new Set(["systems:fourthwall"]));
-      await seedNewCuratedMediaTerms(tx, new Set(["systems:fourthwall"]));
+      // already at v12 never re-seeds, so the Frame.io and Fourthwall rows
+      // would never arrive. Scoping keeps cleared labels on older packages
+      // cleared — an empty assignment reads as "never labelled", so an
+      // unscoped pass would restore rows the user deleted.
+      await seedNewCuratedCategories(tx, new Set(["systems:frame", "systems:fourthwall"]));
+      await seedNewCuratedMediaTerms(tx, new Set(["systems:frame", "systems:fourthwall"]));
       await tx.execute("PRAGMA user_version = 13");
     }
     if (version < 14) {
@@ -195,14 +195,93 @@ export async function createResearchStore(directory: string) {
       await tx.execute("PRAGMA user_version = 14");
     }
     if (version < 15) {
+      // Same one-shot top-up, scoped to this batch's new references: a store
+      // already at v14 never re-seeds, so the Chargetrip rows would never
+      // arrive. systems:fresha is included because it merged without a
+      // migration and its rows are stranded on v13/v14 stores. Scoping keeps
+      // cleared labels on older packages cleared — an empty assignment
+      // reads as "never labelled", so an unscoped pass would restore rows
+      // the user deleted.
+      await seedNewCuratedCategories(
+        tx,
+        new Set(["systems:fresha", "systems:chargetrip"]),
+      );
+      await seedNewCuratedMediaTerms(
+        tx,
+        new Set(["systems:fresha", "systems:chargetrip"]),
+      );
+      await tx.execute("PRAGMA user_version = 15");
+    }
+    if (version < 16) {
+      // Same one-shot top-up, scoped to this batch's new references: a store
+      // already at v15 never re-seeds, so the ClassPass rows would never
+      // arrive. systems:frame is included because its v13 top-up only runs
+      // below v13, leaving v13-v15 stores without the rows; systems:gladia,
+      // systems:glassnode and systems:front merged without a migration and
+      // are stranded entirely. Scoping keeps cleared labels on older
+      // packages cleared — an empty assignment reads as "never labelled",
+      // so an unscoped pass would restore rows the user deleted.
+      await seedNewCuratedCategories(
+        tx,
+        new Set([
+          "systems:classpass",
+          "systems:frame",
+          "systems:front",
+          "systems:gladia",
+          "systems:glassnode",
+        ]),
+      );
+      await seedNewCuratedMediaTerms(
+        tx,
+        new Set([
+          "systems:classpass",
+          "systems:frame",
+          "systems:front",
+          "systems:gladia",
+          "systems:glassnode",
+        ]),
+      );
+      await tx.execute("PRAGMA user_version = 16");
+    }
+    if (version < 17) {
       // Same one-shot top-up, scoped to this batch's new reference: a store
-      // already at v14 never re-seeds, so the GlossGenius rows would never
+      // already at v16 never re-seeds, so the Clay/Mesh rows would never
+      // arrive. Scoping keeps cleared labels on older packages cleared — an
+      // empty assignment reads as "never labelled", so an unscoped pass
+      // would restore rows the user deleted.
+      await seedNewCuratedCategories(tx, new Set(["systems:clay-earth"]));
+      await seedNewCuratedMediaTerms(tx, new Set(["systems:clay-earth"]));
+      await tx.execute("PRAGMA user_version = 17");
+    }
+    if (version < 18) {
+      // Same one-shot top-up, scoped to this batch's new reference: a store
+      // already at v17 never re-seeds, so the GoFundMe rows would never
+      // arrive. Scoping keeps cleared labels on older packages cleared — an
+      // empty assignment reads as "never labelled", so an unscoped pass
+      // would restore rows the user deleted.
+      await seedNewCuratedCategories(tx, new Set(["systems:gofundme"]));
+      await seedNewCuratedMediaTerms(tx, new Set(["systems:gofundme"]));
+      await tx.execute("PRAGMA user_version = 18");
+    }
+    if (version < 19) {
+      // Same one-shot top-up, scoped to this batch's new reference: a store
+      // already at v18 never re-seeds, so the Grammarly rows would never
+      // arrive. Scoping keeps cleared labels on older packages cleared — an
+      // empty assignment reads as "never labelled", so an unscoped pass
+      // would restore rows the user deleted.
+      await seedNewCuratedCategories(tx, new Set(["systems:grammarly"]));
+      await seedNewCuratedMediaTerms(tx, new Set(["systems:grammarly"]));
+      await tx.execute("PRAGMA user_version = 19");
+    }
+    if (version < 20) {
+      // Same one-shot top-up, scoped to this batch's new reference: a store
+      // already at v19 never re-seeds, so the GlossGenius rows would never
       // arrive. Scoping keeps cleared labels on older packages cleared — an
       // empty assignment reads as "never labelled", so an unscoped pass
       // would restore rows the user deleted.
       await seedNewCuratedCategories(tx, new Set(["systems:glossgenius"]));
       await seedNewCuratedMediaTerms(tx, new Set(["systems:glossgenius"]));
-      await tx.execute("PRAGMA user_version = 15");
+      await tx.execute("PRAGMA user_version = 20");
     }
     await tx.commit();
   } catch (error) {

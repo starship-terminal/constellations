@@ -1,7 +1,7 @@
 {
  "date": "2026-11-17",
  "rubric": "4",
- "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): Reviewed generated tokens.json, raw/component-tokens.json, components.md, patterns.md and README against the signed-out capture scope; graded only what public marketing, auth and booking surfaces expose",
+ "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): Greptile thread: regrade F1/F6 to actual token coverage",
  "systems": [
   {
    "slug": "1password",
@@ -20477,103 +20477,103 @@
    "reviewedPlatform": "web"
   },
   {
-   "slug": "glossgenius",
+   "slug": "glassnode",
    "grades": {
     "F1": {
-     "grade": "meets",
-     "evidence": "Webflow core collections carry per-hue ramps: core.deco (393 tokens), core.color (76), core.apps (66), gray scale; extracted raw from glossgenius.com CSS variables."
+     "grade": "partly",
+     "evidence": "Uneven declared ramps: grey 11 steps (10-90), ultramarine 6, green 5, yellow 4, red 3, rose 2, indigo 1, plus a 10-step darken alpha ladder and greyAlt/utilGrey partials (core.palette.*, declared --gds-color-* layer). Full per-hue ramps are not present."
     },
     "F2": {
-     "grade": "partly",
-     "evidence": "light.surface has page and surface; booking.bg covers 35 background roles. Raised/overlay/scrim not separated as semantic roles on the marketing surface."
+     "grade": "meets",
+     "evidence": "Page (light.theme.bg.default #fff, dark.tokenization.color.ink #141414), surface/tinted (theme.bg.tinted #f7f8fa, tokenization.color.panel/.raise), studio.background.* full role set (default/tinted/dark/accent/active/hover/error/info/warning + disabled.default/.on.dark), research.bg.*, and a scrim role: studio.overlay (declared in both themes). No public surface opened a true modal, so overlay is declared-not-demonstrated but named."
     },
     "F3": {
-     "grade": "partly",
-     "evidence": "light.text.ink and light.text.muted measured; on-accent and disabled text roles exist in app tokens (app.disabled) but were not reachable signed-out."
+     "grade": "meets",
+     "evidence": "Primary (theme.text.primary.default, studio.content.primary.*, tokenization.color.fg), secondary/tertiary/muted (theme.text.secondary/tertiary, studio.content.secondary/tertiary, tokenization.color.dim/.faint), on-accent (tokenization.color.accent.ink, theme.button.text.color, measured.action.ctaInk), link (theme.text.link.*, studio.link.content.*, tokenization.color.link) and disabled text (studio.content.disabled.default/.on.dark) are all declared or measured."
     },
     "F4": {
-     "grade": "partly",
-     "evidence": "light.border roles and booking.focus captured; a distinct strong border role is not published as a separate token on public surfaces."
+     "grade": "meets",
+     "evidence": "Default (theme.border.default #dedfe1, studio.border.1/.2, tokenization.color.line.default/.soft), strong (tokenization.color.line.strong, theme.border.hover #1a1a1a, studio.border.active) and focus (light.measured.border.focusRing ink 1px auto offset 1px measured on nav-link; studio.focus #6888fb and research.focus declared) are all named."
     },
     "F5": {
      "grade": "meets",
-     "evidence": "Hero and pricing CTAs measured in default, hover and pressed states (plan-cta, hero-cta in raw/components-computed.json)."
+     "evidence": "Default/hover/pressed are declared (theme.button.hover.color, studio.button.* roles, gds interaction vars) and measured: nav-cta, st-signup-btn, auth-continue and the registry/theme controls each carry measured hover, focus-visible and DevTools-forced pressed states; hover deepening is recorded per component in raw/measurements.md."
     },
     "F6": {
      "grade": "partly",
-     "evidence": "app.warning and toast tokens exist in the app stylesheet, but signed-out surfaces expose no status components, so fill/text/border per status is incomplete."
+     "evidence": "Status roles are incomplete: error ships studio.background/.border/.content.error, warning background+content, info background only, success only tag.success; tokenization.color.ok/.warn/.bad fills exist for the token editor surface. Fill+text+border for every status is not present."
     },
     "F7": {
-     "grade": "meets",
-     "evidence": "Marketing and booking ship a single light theme; all semantic roles exist within it. No dark variant is published."
+     "grade": "partly",
+     "evidence": "Parity holds inside each themed surface: studio dark mirrors the light --gds-* role set 1:1 (including *.on.dark companions), the research --rf-* roles exist in both painted themes, and the registry's --color-* roles redeclare for light. But marketing ships light only (in-page dark sections, no semantic dark layer), the studio dark is declared-not-painted (no public control reaches it), and the GitBook docs themes live outside the token tree as component.docs.*."
     },
     "F8": {
-     "grade": "meets",
-     "evidence": "core.typography (72) plus font tokens across surfaces; Basel Classic Book (display) and Basel Grotesk Book (body) named with fallback stacks and a measured size scale."
+     "grade": "partly",
+     "evidence": "Six families with real fallback stacks (marketing system stack + painted fraktion, GDS Inter Variable, Ghost serif/mono, registry Inter + JetBrains Mono, GitBook Roboto + IBM Plex Mono), the GDS --gds-font-size-* ramp (050-600, ~8 steps), weights, line-heights and tracking are declared. Named roles are thin: font.size.measured.hero/section/body/studioPlan cover display/body but label/caption/code roles are not named as tokens."
     },
     "F9": {
      "grade": "meets",
-     "evidence": "app.space (26), app.padding (13) and core.size spacing groups extracted on a 4px base."
+     "evidence": "core.spacing holds the marketing --space-* ramp (14 steps on the 4px base) plus the registry's --spacing 4px base; the studio --gds-spacing-* layer shares the same 4px unit. Measured component geometry (paddings, gaps, control heights under core.component) corroborates the base."
     },
     "F10": {
      "grade": "meets",
-     "evidence": "Radius tokens extracted on all three surfaces (app.radius, core.radius, booking radii)."
+     "evidence": "core.radius holds the declared --gds-border-radius-* steps (none/01-04/full), the registry --radius-md/lg pair and measured radii for cta/navLink/field/planCard/authCard; core.border.width holds the --gds-border-width-* steps."
     },
     "F11": {
-     "grade": "meets",
-     "evidence": "Control heights measured per component; app.size/app.target sizing scales and booking.focus ring tokens captured."
+     "grade": "partly",
+     "evidence": "Control heights are measured (component.topbar-height 72px, cta-height ~33px, field-height 40px, studio-navbar-height 70px, mobile-topbar-height, nav/sidebar/page widths under core.layout) and the focus ring's width+offset is measured (1px auto, offset 1px). No icon set was lifted, so icon sizes are absent - recorded under layoutGaps, not inferred."
     },
     "F12": {
-     "grade": "partly",
-     "evidence": "Card and popover shadows captured on measured components, but not organised into named elevation levels by the source stylesheets."
+     "grade": "meets",
+     "evidence": "core.elevation holds the declared steps tied to uses: marketing --shadow-low and --shadow-cookie-banner, the studio --shadow-01..03 and --gds-shadow-005/01/02 plus border/inset shadows, and the registry --shadow-sm/--shadow. Multiple levels across the surfaces; Ant Design dark shadow shorthands are kept literal under dark.studio.ant.*."
     },
     "F13": {
      "grade": "partly",
-     "evidence": "A core.motion token and component transitions exist; durations/easing are thin and reduced-motion behaviour is not published."
+     "evidence": "Durations and easings are declared (motion.marketing.default/slow --transition_* shorthands, motion.tokenization.duration/easing, motion.docs.duration/easeInOut) and one measured control transition (motion.controlNavCta). Reduced-motion evidence is thin: the probe found no reduced-motion rule on the home nav element - recorded, not inferred."
     },
     "F14": {
      "grade": "meets",
-     "evidence": "app.breakpoint, core.layout and core.responsive token groups plus desktop (1440px) and mobile (390px) captures."
+     "evidence": "core.breakpoint holds the marketing --screen_* steps; core.layout the grid width, form width, footer height, nav heights (desktop+mobile), gutters, section rhythm, studio page-width/navbar/sidebar widths, Ghost containers and the registry container steps plus docs aiChatWidth; core.zIndex holds the marketing --z_index_* ladder and the --gds-zindex-* steps."
     },
     "C1": {
      "grade": "partly",
-     "evidence": "14 of 19 checklist components documented: button, link, text field, select, checkbox, radio, switch, menu, card, list row, badge, avatar, icon button, pricing table. Tooltip, dialog, toast, tabs, text area not reachable signed-out."
+     "evidence": "Of the 19 checklist components the public surface genuinely ships about ten: button (nav-cta, st-signup-btn, auth-continue, vec-download-btn, newsletter-btn), icon button (st-search-btn, res/docs/tok theme buttons, m-menu-btn), link (nav/footer/sidebar/docs links), text field (newsletter, auth username/password, res-subscribe, m-newsletter), select (vec-billing-select), menu (nav-dropdown-btn + nav-menu-item, m-drawer), card (st-plan-card, res-post-card, contact-category, auth-card, vec-plan-card), list row (tok-nav-item, docs-side-link, st-metrics-expander), FAQ/accordion rows. Textarea, checkbox, radio, switch, tabs, tooltip, dialog, toast, table, avatar and badge are absent from the signed-out surface - honest absence, not a capture omission."
     },
     "C2": {
      "grade": "meets",
-     "evidence": "Default, hover, focus-visible, pressed, selected, opened and filled states measured where each applies (raw/components-computed.json)."
+     "evidence": "178 states across 71 components: hover, focus-visible, DevTools-forced pressed, focused, filled and opened are measured per control (nav, CTAs, fields, theme toggles, dropdown, drawer, expanders, FAQ). Disabled/loading/error/selected do not apply on the signed-out surface and are documented as gaps, not absences."
     },
     "C3": {
      "grade": "meets",
-     "evidence": "focus-visible states captured for links, buttons and form fields across marketing, auth and booking surfaces."
+     "evidence": "A real keyboard focus (Shift+Tab/Tab) was held on interactive components across every surface: nav links draw a 1px auto outline in ink (measured.border.focusRing), studio/docs/registry controls their own rings, and the states that could not hold focus are recorded via 'focus failed'/timeout, never as measured absences (see components.md Shared values > Focus)."
     },
     "C4": {
      "grade": "meets",
-     "evidence": "components.md entries are written against tokens.json names with raw/component-tokens.json provenance."
+     "evidence": "Component entries in components.md write every colour as its value followed by the matching tokens.json path when one exists (e.g. '#1a1a1a `core.palette.grey.90`'), and geometry cites component.* tokens in patterns.md."
     },
     "P1": {
      "grade": "partly",
-     "evidence": "patterns.md covers marketing chrome, forms, pricing and the public booking flow; empty/loading/error and destructive-confirmation patterns are not reachable signed-out."
+     "evidence": "patterns.md covers the app shell (marketing chrome + studio navbar + registry sidebar), forms (newsletter, contact, Auth0 card), search and filtering (studio/docs/registry search controls, metric catalog), data display (pricing grids, stat rows, post cards, expanders), navigation (Products dropdown, mobile drawer) and theme switching. Empty/loading/error, destructive confirmation, onboarding and validation patterns are unreachable signed out - documented gaps."
     },
     "A1": {
      "grade": "partly",
-     "evidence": "Fonts named with roles; the product's icon set is not published as an indexed set on public pages."
+     "evidence": "No standalone SVG icon set was lifted (catalog layoutGaps.icons): glyphs are visible only inside crops and screenshots. Fonts are named with their surfaces and fallback stacks (fraktion/Inter/Inter Variable/JetBrains Mono/Roboto/IBM Plex Mono, self-hosted; licences not published on the surfaces)."
     },
     "K1": {
      "grade": "meets",
-     "evidence": "README documents captured surfaces, method, boundaries (no sign-in, no booking submission) and what to distrust."
+     "evidence": "README states scope (five public stacks, signed out), method (headed Chromium under Xvfb, computed styles, stylesheet harvest), the declared-vs-painted-vs-measured split (dark.studio.* labelled declared-not-painted), what to distrust, and rebuild commands for every builder."
     },
     "F15": {
      "grade": "partly",
-     "evidence": "Script: primary text passes; secondary fails 2 pairs, worst 3.65:1 light muted (light.text.muted) on page (core.color.primary.gloss.white)"
+     "evidence": "Script: primary text passes; secondary fails 1 pair, worst 4.33:1 light muted (light.measured.form.placeholder) on surface (light.theme.bg.tinted)"
     },
     "F16": {
      "grade": "meets",
-     "evidence": "Script: 1407 of 1407 tokens name their source"
+     "evidence": "Script: 550 of 550 tokens name their source"
     },
     "K2": {
      "grade": "meets",
-     "evidence": "Script: 10 rules, each linking a screenshot or crop"
+     "evidence": "Script: 8 rules, each linking a screenshot or crop"
     },
     "K3": {
      "grade": "meets",
@@ -20592,19 +20592,20 @@
      "evidence": "Optional for a capture, and this product does not publish it."
     }
    },
-   "name": "GlossGenius",
-   "goodFor": "Salon and spa business software across three public surfaces: a Webflow marketing site declaring a --_x---* variable layer (gloss-black #17150e ink on gloss-white #f0f7f6, a 16-hue --_color---super--* accent family, pill buttons, Basel/Fraunces serif display) with mega-menu nav, an annual-default pricing grid and a two-step demo form; the Next.js glossDS auth surfaces (/login, /signup, /forgot-password, --content-*/--surface-*/--brand-* ramps, 1000px pill radius); and a real published booking website (honeyhivesalon.glossgenius.com) re-skinning its own .tokens_glossDS__* family, service list, professional select and the public /book date-picker",
-   "url": "https://glossgenius.com",
+   "name": "Glassnode",
+   "goodFor": "crypto-analytics product and marketing design across five public stacks: the marketing site's --base_grey_*/--base_ultramarine_* ramps and --light_*/--button-* roles (ultramarine #4559dc, green accent #16cc8c, fraktion display + Inter), the studio shell's declared --gds-* design system (painted light; a full html[data-theme=dark-theme] + Ant Design --ant-* layer that no public control reaches, kept as declared-not-painted tokens), the Ghost research publication's --rf-* roles in both painted themes, the GitBook docs platform layer kept as component.docs.*, and the dark-by-default tokenization registry's --color-* roles plus --c1--c7 chart palette; a Products mega-dropdown, a Vector pricing page, studio pricing/charts/dashboards signed-out views, the Auth0 login card and a 390px pass",
+   "url": "https://glassnode.com",
    "captured": "2026-11-16",
    "themes": [
-    "light"
+    "light",
+    "dark"
    ],
    "platform": "web",
-   "category": "Productivity",
+   "category": "Finance",
    "reviewed": "2026-11-17",
    "reviewedPlatform": "web"
   }
  ],
  "base": "2026-10-16",
- "reviewMethod": "Reviewed generated tokens.json, raw/component-tokens.json, components.md, patterns.md and README against the signed-out capture scope; graded only what public marketing, auth and booking surfaces expose"
+ "reviewMethod": "Greptile thread: regrade F1/F6 to actual token coverage"
 }

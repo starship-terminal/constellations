@@ -3320,6 +3320,99 @@
    }
   },
   {
+   "slug": "chargetrip",
+   "name": "Chargetrip",
+   "url": "https://www.chargetrip.com",
+   "category": "travel",
+   "platform": "web",
+   "goodFor": "Warm-cream B2B SaaS pages with an editorial serif: a #efede5 paper ground under near-white #fffffb cards, a warm ink ramp (#262322 text and dark fills, #877f78 muted), one #f94d00 orange for every action, Geist for UI paired with Cirka at an 88/64/48 display scale, dark hero and plan-card islands inside the single light theme, and 8/10/12/16/24px radii",
+   "tags": [
+    "web",
+    "travel",
+    "api",
+    "ev",
+    "b2b",
+    "framer",
+    "light",
+    "signed-out"
+   ],
+   "shape": "reference",
+   "captured": "2026-11-12",
+   "access": "signed out (every captured surface is public: the www.chargetrip.com marketing routes, the account.chargetrip.io sign-in card, and developers/playground shells as boundaries; the routing engine, dashboard, API keys and every form submit were never crossed; the Cookie Settings card was hidden, never answered)",
+   "themes": [
+    "light"
+   ],
+   "widths": [
+    1440,
+    390
+   ],
+   "entry": "systems/chargetrip/README.md",
+   "tokens": "systems/chargetrip/tokens.json",
+   "styleGuide": "systems/chargetrip/style-guide.html",
+   "preview": {
+    "cover": "systems/chargetrip/screenshots/home-light-default.png",
+    "icon": "systems/chargetrip/icon.png",
+    "swatches": {
+     "light": {
+      "page": "light.surface.page",
+      "surface": "light.surface.card",
+      "text": "light.text.primary",
+      "muted": "light.text.muted",
+      "accent": "light.accent",
+      "border": "light.border.subtle"
+     }
+    },
+    "fonts": [
+     "core.font.family.ui",
+     "core.font.family.display"
+    ]
+   },
+   "designMd": {
+    "colors": [
+     "core.",
+     "light."
+    ]
+   },
+   "capture": {
+    "method": "public-web",
+    "source": "www.chargetrip.com (a Framer build) plus the public account.chargetrip.io sign-in card, developers.chargetrip.com and playground.chargetrip.com, in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and crops from the live DOM, CSS custom properties read through the CSSOM and re-parsed in a probe document (raw/css-vars.json resolved.light). The bundle declares a --token-<uuid> palette on body which the color tokens resolve through; roles and component metrics are measured computed values. Everything behind sign-in or booking is a documented boundary",
+    "timestamp": "2026-11-12T00:00:00Z",
+    "harness": "Devin",
+    "model": "SWE-2 High",
+    "route": "public-web",
+    "routes": [
+     "/",
+     "/products/routing",
+     "/api",
+     "/no-code",
+     "/cpo",
+     "/pricing/api",
+     "/pricing/nocode",
+     "/about",
+     "/newsroom",
+     "/contact",
+     "/contact/sales",
+     "/legal/terms-and-conditions",
+     "account.chargetrip.io/sign-in (boundary card)",
+     "developers.chargetrip.com/",
+     "playground.chargetrip.com/ (credential-gated shell)",
+     "mobile / and /pricing/api"
+    ],
+    "gaps": [
+     "the product itself: the routing engine, dashboard, API keys and the authenticated app sit behind account.chargetrip.io and were never reached; the sign-in card was measured and filled with the documented name@example.com test address, never submitted",
+     "no form was submitted and nothing was booked: the sales form and newsletter field were focused, Book-a-demo / Plan-a-route / Contact-sales / Sign-in / Create-account / Send were never followed; the Cookie Settings card was hidden, never answered",
+     "the nav-item Products trigger could not be driven to a real keyboard focus; its focus behaviour is unmeasured",
+     "developers.chargetrip.com and playground.chargetrip.com were captured as boundary shells only; the credential-gated playground was never used",
+     "the sign-in card runs a different stack (Tailwind v4, oklch) from the Framer marketing site; its tokens are marked measured, not declared",
+     "no disabled/error/loading/toast states and no checkbox/radio/switch/tabs/table mount on the public surface"
+    ],
+    "durationMin": 180
+   },
+   "layoutGaps": {
+    "icons/": "no standalone SVG icon set was lifted; the glyphs (the wordmark, social marks, check icons, the status dot) are visible in the crops and screenshots"
+   }
+  },
+  {
    "slug": "chatgpt",
    "name": "ChatGPT",
    "url": "https://chatgpt.com",
@@ -3454,6 +3547,105 @@
    },
    "layoutGaps": {
     "icons/": "ChatGPT's icons are OpenAI's artwork and are not kept here (docs/RIGHTS.md)"
+   }
+  },
+  {
+   "slug": "classpass",
+   "name": "ClassPass",
+   "url": "https://classpass.com",
+   "category": "fitness",
+   "platform": "web",
+   "goodFor": "fitness-marketplace marketing: a Next.js site with no declared token layer (every value measured off the painted chrome) built on a #0055ff accent ramp with a real three-step press ladder (#0055ff -> #004de6 -> #0044cc), a #1a5ee5 link/focus blue, a #c0e0ff plan pill and a #fce172 promo yellow; TT Norms UI plus a Circuit rotating-word hero; 9999px pill buttons against 4px fields; a venue-search surface with comboboxes, filter pills and a dropdown panel; a credits plan carousel under a brand-tinted rgba(1,85,254,.1) shadow; and a black footer island",
+   "tags": [
+    "web",
+    "mobile-app",
+    "fitness",
+    "marketplace",
+    "booking",
+    "nextjs",
+    "light",
+    "blue-accent",
+    "marketing",
+    "pricing",
+    "search",
+    "signed-out"
+   ],
+   "shape": "reference",
+   "captured": "2026-11-16",
+   "access": "read-only (the marketing site, search, plans, features, how-it-works, fitness, gifts, reviews, partners, corporate-wellness, about, contact, blog and legal are fully public; /login's card and /walkthrough's carousel were measured as boundaries - nothing was signed into, searched for, booked or submitted; booking, member search results, credits and checkout sit behind sign-in or payment)",
+   "themes": [
+    "light"
+   ],
+   "widths": [
+    1440,
+    390
+   ],
+   "entry": "systems/classpass/README.md",
+   "tokens": "systems/classpass/tokens.json",
+   "styleGuide": "systems/classpass/style-guide.html",
+   "preview": {
+    "cover": "systems/classpass/screenshots/home-light-default.png",
+    "icon": "systems/classpass/icon.png",
+    "swatches": {
+     "light": {
+      "page": "light.surface.page",
+      "surface": "light.surface.card",
+      "text": "light.text.primary",
+      "muted": "light.text.muted",
+      "accent": "light.accent",
+      "border": "light.border.subtle"
+     }
+    },
+    "fonts": [
+     "core.font.family.display",
+     "core.font.family.ui"
+    ]
+   },
+   "source": {
+    "path": "~/.design-systems/classpass/raw-shots (full-colour captures, outside the repo)"
+   },
+   "capture": {
+    "method": "public-web",
+    "source": "classpass.com in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass at deviceScaleFactor 2; computed styles, painted layers and 112 element crops from the live DOM across 50 components and 113 state readings, plus a stylesheet harvest (4 custom-property rules, 9 @font-face faces, NO declared design-token palette - every token is a measured computed-style reading). The site geo-localizes by request origin: this capture shows SGD prices and Singapore studio content. BOUNDARY: booking, member search results, plan checkout and every account surface sit behind sign-in or payment; the /login card was focused and filled with placeholder text only and never submitted, and /walkthrough was read but never advanced",
+    "timestamp": "2026-11-16T18:50:00Z",
+    "harness": "Devin",
+    "model": "SWE-2 High",
+    "route": "public-web",
+    "routes": [
+     "/",
+     "/search",
+     "/plans",
+     "/features",
+     "/how-classpass-works",
+     "/fitness",
+     "/gifts",
+     "/try/reviews",
+     "/partners",
+     "/corporate-wellness",
+     "/about",
+     "/contact",
+     "/blog",
+     "/legal/terms-and-conditions",
+     "/login (boundary)",
+     "/walkthrough (boundary)",
+     "mobile /, /search and /plans plus the home menu overlay"
+    ],
+    "gaps": [
+     "the product itself - class booking, member search results, credits, plan checkout and account pages - sits behind sign-in or payment and was never crossed",
+     "Cloudflare challenges sequential navigation, so each route and measurement group ran in a fresh browser context; a route that hit the interstitial was retried until it cleared",
+     "the TrustArc consent overlay (#consent_blackbar) mounts on every route and was hidden for every shot, never answered",
+     "nav-login and nav-cta could not be given a real keyboard focus on this pass; their focus behaviour is published as unmeasured, not absent",
+     "pressed states are DevTools-forced (CSS.forcePseudoState), so any script-applied mousedown state is missing; disabled, error and loading states do not appear on the public surface",
+     "the app-store badge anchors hug the text line (117x12) while their badge art overflows as an oversized inline child; the crops capture the art, the boxes are honest",
+     "the rotating hero word, the venue map and the sticky trial CTA animate or render through third-party scripts; a capture's pixel state is a moment, not a spec",
+     "prices and studio content are geo-localized (SGD here) - layout and chrome are the invariant evidence"
+    ],
+    "durationMin": 180,
+    "durationNote": "wall-clock across the capture sessions including kit adaptation, DOM probing, fresh-context retries around Cloudflare, the stylesheet harvest, desktop/mobile screenshot passes, measurement passes and the offline build",
+    "pr": "https://github.com/starship-terminal/constellations/pull/607"
+   },
+   "layoutGaps": {
+    "icons/": "No standalone SVG icon set was lifted on this pass; the glyphs (the wordmark, social marks, stars, chevrons, carousel dots) are component artwork visible in the crops and screenshots."
    }
   },
   {
@@ -3600,6 +3792,109 @@
    },
    "layoutGaps": {
     "icons/": "Claude's icons and the spark are Anthropic's artwork and are not kept here (docs/RIGHTS.md)"
+   }
+  },
+  {
+   "slug": "clay-earth",
+   "name": "Mesh",
+   "url": "https://me.sh",
+   "category": "productivity",
+   "platform": "web",
+   "goodFor": "Black-ground product pages with glass chrome and a warm-cream pricing route: a floating #000-page nav pill under a 3%-white sheen, #fefef7 VerlagCondensed display type over an animated counter, inverted #fdfcfa CTAs ringed by a blue-violet-amber gradient in a white glow, the #f2b98b tan wordmark accent, #f9f8f6 pricing cards with #fb7232 popular rings and Chronicle prices, and an SF Pro sign-in card in a second orange (#ff6821)",
+   "tags": [
+    "web",
+    "productivity",
+    "crm",
+    "next",
+    "b2c",
+    "dark",
+    "light",
+    "signed-out"
+   ],
+   "shape": "reference",
+   "captured": "2026-11-16",
+   "access": "signed out (clay.earth 301-redirects to me.sh - the Clay product rebranded to Mesh, an Automattic product; every captured surface is public: the me.sh marketing routes and the app.me.sh sign-in card as a boundary; the app interior, plan checkout, downloads and every OAuth/sign-in action were never crossed; the sign-in e-mail field was focused and filled with placeholder text only)",
+   "themes": [
+    "dark",
+    "light"
+   ],
+   "widths": [
+    1440,
+    390
+   ],
+   "entry": "systems/clay-earth/README.md",
+   "tokens": "systems/clay-earth/tokens.json",
+   "styleGuide": "systems/clay-earth/style-guide.html",
+   "preview": {
+    "cover": "systems/clay-earth/screenshots/home-dark-default.png",
+    "icon": "systems/clay-earth/icon.png",
+    "swatches": {
+     "dark": {
+      "page": "dark.surface.page",
+      "surface": "dark.surface.pill",
+      "text": "dark.text.primary",
+      "muted": "dark.text.muted",
+      "accent": "dark.accent",
+      "border": "dark.ring.control"
+     },
+     "light": {
+      "page": "light.surface.page",
+      "surface": "light.surface.card",
+      "text": "light.text.primary",
+      "muted": "light.text.muted",
+      "accent": "light.accent",
+      "border": "light.border.subtle"
+     }
+    },
+    "fonts": [
+     "core.font.family.ui",
+     "core.font.family.display"
+    ]
+   },
+   "designMd": {
+    "colors": [
+     "core.",
+     "dark.",
+     "light."
+    ]
+   },
+   "capture": {
+    "method": "public-web",
+    "source": "me.sh (a Next.js build, the redirect target of clay.earth - Clay rebranded to Mesh) plus the public app.me.sh sign-in card, in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and crops from the live DOM, pseudo-states forced over CDP, first painted child layers recorded so ::before/::after fills (nav sheen, CTA gradient ring, filter-pill wash) are measured where they paint; the stylesheet harvest declares 9 custom properties (Bulma column gaps and orb positions) and 9 @font-face faces - no declared design-token palette, so every token is a measured value (raw/css-vars.json resolved.dark). Everything behind sign-in or checkout is a documented boundary",
+    "timestamp": "2026-11-16T00:00:00Z",
+    "harness": "Devin",
+    "model": "SWE-2 High",
+    "route": "public-web",
+    "routes": [
+     "/",
+     "/pricing",
+     "/integrations",
+     "/nexus",
+     "/teams",
+     "/start",
+     "/stories",
+     "/serendipity",
+     "/notion",
+     "/story",
+     "/careers",
+     "/apple-vision-pro",
+     "/about",
+     "/contact",
+     "app.me.sh/login?signin (boundary card)",
+     "mobile / and /pricing"
+    ],
+    "gaps": [
+     "the product itself: the Mesh app interior, plan checkout, downloads (/start targets) and every account surface sit behind app.me.sh and were never reached; the sign-in card was measured and its e-mail field focused and filled with placeholder text only, never submitted",
+     "library.me.sh (the host /terms and /privacy link to) sits behind a Confirm-you-are-human verification gate and was never captured; /press/kit redirects to a public Notion press kit (clayearth.notion.site) which is external",
+     "no form was submitted, no plan purchased, no OAuth button pressed; the nav dropdowns and the mobile drawer were opened by their own toggles but nothing navigated",
+     "the marketing site runs three skins on one product: the black marketing routes, the warm-cream /pricing route and the light app.me.sh sign-in card (SF Pro, #ff6821) - all tokenised, none toggled by the user",
+     "no disabled/error/loading/toast states and no checkbox/radio/switch/tabs/table mount on the public surface; the mobile run occasionally hit a transient anti-bot challenge, retried clean"
+    ],
+    "durationMin": 180,
+    "pr": "https://github.com/starship-terminal/constellations/pull/608"
+   },
+   "layoutGaps": {
+    "icons/": "no standalone SVG icon set was lifted; the glyphs (the m monogram, social marks, the hamburger) are visible in the crops and screenshots"
    }
   },
   {
@@ -4999,6 +5294,99 @@
    },
    "layoutGaps": {
     "icons/": "Grab's icons, 3D service icons and illustrations are its artwork and are not kept here (docs/RIGHTS.md)"
+   }
+  },
+  {
+   "slug": "grammarly",
+   "name": "Grammarly",
+   "url": "https://www.grammarly.com",
+   "category": "productivity",
+   "platform": "web",
+   "goodFor": "AI writing assistant marketing site: Matter/Inter type, GDS + Origin token layers, three-column plans, free grammar checker tool, light only",
+   "tags": [
+    "web",
+    "ai",
+    "writing",
+    "inter",
+    "matter",
+    "light",
+    "marketing",
+    "saas",
+    "tools"
+   ],
+   "shape": "reference",
+   "captured": "2026-11-16",
+   "access": "signed out (every surface captured is public; the product sits at app.grammarly.com behind login)",
+   "themes": [
+    "light",
+    "dark (declared)"
+   ],
+   "widths": [
+    1440,
+    390
+   ],
+   "entry": "systems/grammarly/README.md",
+   "tokens": "systems/grammarly/tokens.json",
+   "styleGuide": "systems/grammarly/style-guide.html",
+   "preview": {
+    "cover": "systems/grammarly/screenshots/home-light-default.png",
+    "icon": "systems/grammarly/icon.png",
+    "swatches": {
+     "light": {
+      "page": "light.color.background.base.default",
+      "surface": "light.color.background.base.subdued",
+      "text": "light.color.text.base.default",
+      "muted": "light.color.text.base.subdued",
+      "accent": "light.color.background.brand.default",
+      "border": "light.color.border.base.subdued"
+     }
+    },
+    "fonts": [
+     "core.fontFamily.heading",
+     "core.fontFamily.sans",
+     "core.fontFamily.mono"
+    ]
+   },
+   "capture": {
+    "harness": "Devin",
+    "model": "SWE-2 Max",
+    "route": "public-web",
+    "version": "www.grammarly.com, 2026-11-16; Next.js marketing site, release not exposed",
+    "routes": [
+     "/",
+     "/features",
+     "/plans",
+     "/business/enterprise",
+     "/business",
+     "/professionals",
+     "/students",
+     "/edu",
+     "/ai",
+     "/ai-agents",
+     "/grammar-check",
+     "/plagiarism-checker",
+     "/paraphrasing-tool",
+     "/ai-detector",
+     "/word-counter",
+     "/desktop",
+     "/browser",
+     "/trust",
+     "/contact/sales",
+     "/signin",
+     "/signup",
+     "/blog/"
+    ],
+    "durationMin": null,
+    "durationNote": "the capture ran across several sessions; active wall-clock time was not recorded; per-shot timestamps are in screenshots/*.capture.json",
+    "pr": "https://github.com/starship-terminal/constellations/pull/619",
+    "gaps": [
+     "app.grammarly.com and everything behind Log in / Sign up was never opened: the editor, dashboard, documents, account, billing and admin surfaces are signed-in and out of scope",
+     "no form was submitted (contact sales, sign-in, newsletter) and no checkout or trial started, so success and painted error states are missing",
+     "the free tools' result views (plagiarism report, AI-detector verdict, paraphrase output) each need a submit action the kit never performs; the grammar checker's live suggestion cards render in a product overlay outside the page's light DOM and are recorded missing",
+     "the captured /plans page paints no Monthly/Yearly billing switch; billing-switch is recorded missing rather than fabricated",
+     "dark values in tokens.json are declared evidence only: no public page mounts a dark theme, there is no switch, and prefers-color-scheme does not repaint",
+     "blog article pages were not paged through"
+    ]
    }
   },
   {
@@ -13897,6 +14285,452 @@
     "durationMin": 240,
     "durationNote": "wall-clock across the capture sessions including kit adaptation, the stylesheet harvest, the screenshot pass, the measurement pass and the offline build",
     "pr": "https://github.com/starship-terminal/constellations/pull/614"
+   }
+  },
+  {
+   "slug": "frame",
+   "name": "Frame.io",
+   "url": "https://frame.io",
+   "category": "productivity",
+   "platform": "web",
+   "goodFor": "video-collaboration product and marketing design: a complete declared token layer on one painted dark theme (the 19-step --color-grey-00..100 neutral ramp from #000 field to #fcfcfc ink, five brand hues --color-cobalt/iris/coral/electric/turquoise-triumph with steps, per-hue alpha tints like --color-cobalt-20, the --color-alpha-* ladders, --color-accent, --overlay-* scrims, three font roles --font-main/-secondary/-tertiary, a --spacer-* scale, the --grid-* 12-column/1080px frame, --nav-height, --duration-*/--ease-*, --card-hover-* and a --z-index-* map) behind a dark marketing surface (near-black field, #fcfcfc ink, white CTA pills with near-black ink, translucent-ink hairlines, FrameGothic/NeueMachinaInktrap/Inter self-hosted variable faces), click-opened header mega-menus, a pricing grid with billing toggle and feature-comparison accordions, a contact form, index surfaces for customers/integrations/what's-new, the light accounts.frame.io sign-in card and a 390px pass with the nav overlay",
+   "tags": [
+    "web",
+    "video",
+    "collaboration",
+    "creative",
+    "marketing",
+    "pricing",
+    "css-modules",
+    "dark",
+    "variable-font",
+    "signed-out",
+    "design-tokens"
+   ],
+   "shape": "reference",
+   "captured": "2026-11-15",
+   "access": "signed out (every captured surface is public; the app and every post-login surface - projects, the review player, Camera to Cloud uploads, Drive and Transfer workspaces, admin, billing - is an authenticated boundary never reached; the accounts.frame.io/welcome sign-in and the /contact/form fields were measured and typed into then cleared, never submitted; every CTA, nav item, menu item and card was measured, never followed; no consent layer appeared for the en-US signed-out visitor and the cookie-preferences control was never pressed; the site ships no theme switch - every frame.io page paints the one dark theme, and accounts.frame.io/welcome is the lone light surface on a different stack)",
+   "themes": [
+    "dark"
+   ],
+   "widths": [
+    1440,
+    390
+   ],
+   "entry": "systems/frame/README.md",
+   "tokens": "systems/frame/tokens.json",
+   "styleGuide": "systems/frame/style-guide.html",
+   "preview": {
+    "cover": "systems/frame/screenshots/home-dark-default.png",
+    "icon": "systems/frame/icon.png",
+    "swatches": {
+     "dark": {
+      "page": "dark.theme.bg",
+      "surface": "dark.theme.surface.card",
+      "text": "dark.theme.fg.default",
+      "muted": "dark.theme.fg.muted",
+      "accent": "dark.theme.accent",
+      "border": "dark.theme.btn.secondary.border"
+     }
+    },
+    "fonts": [
+     "core.font.family.gothic",
+     "core.font.family.inter",
+     "core.font.family.machina"
+    ]
+   },
+   "source": {
+    "path": "~/.design-systems/frame/raw-shots (full-colour captures, outside the repo)"
+   },
+   "capture": {
+    "method": "public-web",
+    "source": "frame.io and accounts.frame.io in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and 126 element crops from the live DOM, plus a stylesheet harvest (607 rules declare custom properties - 118 theme, 377 app, 3 vendor; 222 names resolved per probe; 12 @font-face rules). The marketing Next.js + CSS-modules site declares its token layer in stylesheets, so scales are declared values and surface roles are measured computed values aliased to the declared palette; accounts.frame.io/welcome is the sign-in surface - a different styled-components stack that does not share the marketing --* layer - measured under component.productShell.*. a five-page prefers-reduced-motion probe (raw/motion.json; verdict partial) feeds the core.motion composite groups. BOUNDARY: the sign-in and contact forms were typed into then cleared, never submitted; menu links were never followed; the Calendly scheduler, consent manager and locale list were never opened",
+    "timestamp": "2026-11-15T21:45:00Z",
+    "harness": "Devin",
+    "model": "SWE-2 Max",
+    "route": "public-web",
+    "routes": [
+     "/",
+     "/features/workflow-management",
+     "/features/review-and-approval",
+     "/features/c2c",
+     "/pricing",
+     "/enterprise",
+     "/enterprise/media-and-entertainment",
+     "/customers",
+     "/case-studies/ford",
+     "/integrations",
+     "/resources",
+     "/whats-new",
+     "/contact",
+     "/contact/form",
+     "/security",
+     "/ai",
+     "/drive",
+     "/transfer",
+     "https://accounts.frame.io/welcome",
+     "home header Features + Enterprise + Resources mega-menus",
+     "mobile /, /pricing/ and /contact/form plus the home nav overlay"
+    ],
+    "gaps": [
+     "the app and every post-login surface (projects, the review-and-approval player, Camera to Cloud uploads, Drive and Transfer workspaces, account, admin, billing) sits behind an account - an authenticated boundary never reached; accounts.frame.io/welcome was measured as a form, never submitted",
+     "submitted states: the /contact/form fields and the sign-in e-mail were typed into then cleared, never sent - validation, error, loading and success states are absent rather than measured",
+     "the /pricing Monthly/Annually billing switch re-prices the grid when flipped; measured at rest and never switched, so the annual price state is uncaptured",
+     "Schedule a Meeting mounts a Calendly scheduler - a third-party widget; the button was measured at rest and never pressed, so the scheduler frame is uncaptured",
+     "the Cookie preferences consent manager and the footer locale list were measured at rest, never opened - no consent layer appeared for the en-US signed-out visitor otherwise",
+     "case studies, release notes, integration detail pages and resource articles are index-level captures (plus the Ford case study); the remaining public sitemap (lp/* campaign landings) is the same templates with different copy, uncaptured",
+     "mega-menu items' focus/hover is partially covered - the panel closes on blur before a keyboard focus can always be held",
+     "mobile hover is not meaningful on a touch surface; the drawer CTA's hover state was skipped and its default/focus/pressed states recorded instead",
+     "pressed states are DevTools-forced (CSS.forcePseudoState), so any script-applied mousedown state is missing",
+     "icons: no standalone SVG set lifted this pass"
+    ],
+    "durationMin": null,
+    "durationNote": "wall-clock duration was not recorded for this capture",
+    "pr": "https://github.com/starship-terminal/constellations/pull/613"
+   },
+   "layoutGaps": {
+    "icons/": "no standalone SVG icon set was lifted; the Frame.io waveform mark and product glyphs are visible in the crops and screenshots"
+   }
+  },
+  {
+   "slug": "glassnode",
+   "name": "Glassnode",
+   "url": "https://glassnode.com",
+   "category": "finance",
+   "platform": "web",
+   "goodFor": "crypto-analytics product and marketing design across five public stacks: the marketing site's --base_grey_*/--base_ultramarine_* ramps and --light_*/--button-* roles (ultramarine #4559dc, green accent #16cc8c, fraktion display + Inter), the studio shell's declared --gds-* design system (painted light; a full html[data-theme=dark-theme] + Ant Design --ant-* layer that no public control reaches, kept as declared-not-painted tokens), the Ghost research publication's --rf-* roles in both painted themes, the GitBook docs platform layer kept as component.docs.*, and the dark-by-default tokenization registry's --color-* roles plus --c1--c7 chart palette; a Products mega-dropdown, a Vector pricing page, studio pricing/charts/dashboards signed-out views, the Auth0 login card and a 390px pass",
+   "tags": [
+    "web",
+    "crypto",
+    "analytics",
+    "finance",
+    "marketing",
+    "docs",
+    "pricing",
+    "dark",
+    "light",
+    "signed-out",
+    "design-tokens"
+   ],
+   "shape": "reference",
+   "captured": "2026-11-16",
+   "access": "signed out (every captured surface is public; the signed-in Studio workbench - chart editor, saved dashboards, alerts, API keys, billing - is an authenticated boundary never reached; the newsletter, contact and Auth0 username fields were typed into then cleared, never submitted; every CTA, nav item and link was measured, never followed; the studio dark-theme layer is declared but has no public control, so dark.studio.* tokens are labelled declared-not-painted; the research, docs and registry theme controls are the sites' own toggles; the Auth0 landing URL's volatile ?state= is sanitized to origin+path in every sidecar)",
+   "themes": [
+    "light",
+    "dark"
+   ],
+   "widths": [
+    1440,
+    390
+   ],
+   "entry": "systems/glassnode/README.md",
+   "tokens": "systems/glassnode/tokens.json",
+   "styleGuide": "systems/glassnode/style-guide.html",
+   "preview": {
+    "cover": "systems/glassnode/screenshots/home-light-default.png",
+    "icon": "systems/glassnode/icon.png",
+    "swatches": {
+     "light": {
+      "page": "light.theme.bg.default",
+      "surface": "light.theme.bg.tinted",
+      "text": "light.theme.text.primary.default",
+      "muted": "light.measured.form.placeholder",
+      "accent": "core.palette.accent",
+      "border": "light.theme.border.default"
+     },
+     "dark": {
+      "page": "dark.tokenization.color.ink",
+      "surface": "dark.tokenization.color.panel",
+      "text": "dark.tokenization.color.fg",
+      "muted": "dark.tokenization.color.dim",
+      "accent": "dark.tokenization.color.accent.default",
+      "border": "dark.tokenization.color.line.default"
+     }
+    },
+    "fonts": [
+     "core.font.family.marketing",
+     "core.font.family.default"
+    ]
+   },
+   "source": {
+    "path": "~/.design-systems/glassnode/raw-shots (full-colour captures, outside the repo)"
+   },
+   "capture": {
+    "method": "public-web",
+    "source": "glassnode.com + studio/research/docs/tokenization/auth subdomains in headed Chromium under Xvfb (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and 170 element crops from the live DOM, plus a stylesheet harvest (556 rules, nine resolved surface+theme profiles - marketing, studioLight/Dark, researchLight/Dark, docsLight/Dark, tokenizationDark/Light - 170 @font-face rules). Five stacks share the GDS layer: marketing --base_*/--light_*, studio --gds-* + html[data-theme=dark-theme] --ant-* (declared-not-painted: no public control), Ghost --rf-* in both painted themes, GitBook platform vars kept under component.docs.*, registry --color-* dark by default. BOUNDARY: forms typed into then cleared never submitted; no CTA or link followed; the Auth0 ?state= never recorded",
+    "timestamp": "2026-11-16T20:00:00Z",
+    "harness": "Devin",
+    "model": "SWE-2 Max",
+    "route": "public-web",
+    "routes": [
+     "/",
+     "/products/studio",
+     "/products/data",
+     "/products/research",
+     "/products/studio/market-compass",
+     "/products/studio/alpha-lab",
+     "/pricing/vector",
+     "/about",
+     "/contact",
+     "/customer-stories",
+     "/solutions/trading-and-investing",
+     "/solutions/crypto-content-creation",
+     "studio.glassnode.com/pricing",
+     "studio.glassnode.com/charts",
+     "studio.glassnode.com/dashboards",
+     "studio.glassnode.com/market-compass",
+     "studio.glassnode.com/get-listed",
+     "studio.glassnode.com/contact",
+     "auth.glassnode.com/u/login",
+     "research.glassnode.com/ + first index article",
+     "docs.glassnode.com/",
+     "docs.glassnode.com/data/metric-catalog",
+     "tokenization.glassnode.com/",
+     "home header Products dropdown",
+     "research + docs theme-dark surfaces, tokenization theme-light surface",
+     "mobile /, studio /pricing, research, docs and tokenization plus the home nav drawer"
+    ],
+    "gaps": [
+     "the signed-in Studio workbench - chart editor, saved dashboards, alerts, API keys, billing and every post-login surface - sits behind an account; the Auth0 card was measured as a form, never submitted, and Continue with Google was never followed",
+     "submitted states: the newsletter, contact and Auth0 username fields were typed into then cleared - validation, error, loading and success states are absent rather than measured",
+     "the studio dark theme is declared-not-painted: html[data-theme=dark-theme] redeclares --gds-* and --ant-* but no public theme control exists on the signed-out shell, so no screenshot or measured state paints it - dark.studio.* tokens carry the label",
+     "glassnode.com/events stayed behind a Cloudflare/security challenge after repeated headed retries - recorded as a gap, not fabricated",
+     "docs.glassnode.com/data/metric-catalog's full-page screenshot timed out twice (bounded at eight chunks); the viewport capture stands and the page's components were measured",
+     "theme toggles (research, docs, tokenization) were measured at rest; the switched surfaces are screenshot + token evidence, not held measured states",
+     "pressed states are DevTools-forced (CSS.forcePseudoState), so any script-applied mousedown state is missing",
+     "a few controls intermittently failed a single state under Cloudflare flake (res-theme-toggle hover, docs-search focus, newsletter-btn pressed, nav-menu-item hover) - recorded as failed attempts, not measured absences",
+     "res-article-tag measured a zero-size element (no visible tag link row on the captured article); docs-code was not found on the metric catalog page",
+     "detail pages: research articles, customer stories and docs articles are index- or exemplar-level captures",
+     "icons: no standalone SVG set lifted this pass"
+    ],
+    "durationMin": 480,
+    "durationNote": "wall-clock across the capture sessions including kit adaptation, the stylesheet harvest, the screenshot pass (Cloudflare challenges needed headed retries), three measurement passes and the offline build",
+    "pr": "https://github.com/starship-terminal/constellations/pull/617"
+   },
+   "layoutGaps": {
+    "icons/": "no standalone SVG icon set was lifted; the Glassnode mark, nav glyphs, theme-toggle icons and partner logos are visible in the crops and screenshots"
+   }
+  }
+,
+  {
+   "slug": "front",
+   "name": "Front",
+   "url": "https://front.com",
+   "category": "productivity",
+   "platform": "web",
+   "goodFor": "customer-operations SaaS marketing and product chrome: a Next.js + Tailwind marketing site whose design layer is compiled into bespoke classes - hue-utility ramps (.bg-violet-50..1000, citron, blue, gray), a .surface-l0..l3 semantic scale, a .text-display1 type ramp and a .button-* state layer - redeclared under three section themes ([data-theme=theme-dark-violet] plum, theme-white, theme-gray); plus three more public stacks: app.frontapp.com's auth shell painting the real Froyo --color-* token layer (light and a genuine data-theme=dark pass), help.front.com's Knowledge Base product, and dev.frontapp.com's ReadMe portal with the embedded Companion/Froyo token sheet; self-hosted Suisse Intl/Intl Mono/Suisse Works voices; mega-menu navigation, a billing-switch pricing grid and FAQ disclosures; a 390px pass",
+   "tags": [
+    "web",
+    "saas",
+    "customer-support",
+    "communication",
+    "marketing",
+    "pricing",
+    "help-centre",
+    "tailwind",
+    "light",
+    "dark",
+    "signed-out",
+    "design-tokens"
+   ],
+   "shape": "reference",
+   "captured": "2026-11-16",
+   "access": "signed out (every captured surface is public; the workspace and every post-login surface is an authenticated boundary never reached; the demo, signup, auth and search fields were measured and typed into then cleared, never submitted; every CTA, SSO button, nav item and link was measured, never followed; the Qualified 'Quinn' widget was measured at rest, never opened; the app dark theme is the shell's own front-theme-preference mechanism, verified painted as html[data-theme=dark]; the marketing violet/light/gray sets are section themes, not a page-level switch)",
+   "themes": [
+    "light",
+    "dark"
+   ],
+   "widths": [
+    1440,
+    390
+   ],
+   "entry": "systems/front/README.md",
+   "tokens": "systems/front/tokens.json",
+   "styleGuide": "systems/front/style-guide.html",
+   "preview": {
+    "cover": "systems/front/screenshots/home-light-default.png",
+    "icon": "systems/front/icon.png",
+    "swatches": {
+     "light": {
+      "page": "light.surface.l0",
+      "surface": "light.surface.l1",
+      "text": "light.text.primary",
+      "muted": "light.text.secondary",
+      "accent": "light.button.surface",
+      "border": "core.palette.gray.200"
+     }
+    },
+    "fonts": [
+     "core.font.family.intl",
+     "core.font.family.app"
+    ]
+   },
+   "source": {
+    "path": "~/.design-systems/front/raw-shots (full-colour captures, outside the repo)"
+   },
+   "capture": {
+    "method": "public-web",
+    "source": "front.com, app.frontapp.com, help.front.com and dev.frontapp.com in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and 156 element crops from the live DOM, plus a stylesheet harvest (5,315 custom-property rules, 71 @font-face rules, the marketing layer's 396 class rules kept verbatim, resolved values on the live app/help/dev pages). The marketing site's design layer is compiled into classes under three [data-theme] section themes, so its tokens are declared class values; the app shell's --color-* layer resolves on the live page in light and in a verified data-theme=dark pass; help/dev values are resolved on their live pages; dev's ReadMe --color-* layer is kept under vendor, not promoted. BOUNDARY: forms typed into then cleared never submitted; SSO and every CTA never followed; the Quinn widget never opened",
+    "timestamp": "2026-11-16T23:00:00Z",
+    "harness": "Devin",
+    "model": "SWE-2 Max",
+    "route": "public-web",
+    "routes": [
+     "/",
+     "/pricing",
+     "/product",
+     "/product/omnichannel-support-inbox",
+     "/product/ai",
+     "/customer-service",
+     "/customer-stories",
+     "/customer-stories/uber-freight",
+     "/integrations",
+     "/compare/front-vs-intercom",
+     "/industries/b2b-tech",
+     "/teams/customer-service-support",
+     "/resources",
+     "/blog",
+     "/blog/customer-service-automation-ai",
+     "/glossary",
+     "/about",
+     "/reviews",
+     "/download",
+     "/security",
+     "/request-demo",
+     "/signup",
+     "/whats-new",
+     "app.frontapp.com/signin",
+     "app.frontapp.com/signup",
+     "app.frontapp.com/forgot-password",
+     "app.frontapp.com/signin (dark, the shell's own front-theme-preference)",
+     "app.frontapp.com/signup (dark)",
+     "app.frontapp.com/forgot-password (dark)",
+     "help.front.com/",
+     "help.front.com article (first listed, one reader's click)",
+     "help.front.com/en/contact-us",
+     "dev.frontapp.com/docs/welcome",
+     "dev.frontapp.com/reference/getting-started",
+     "home header Product + Solutions + Resources mega menus",
+     "mobile /, /pricing, app sign-in (light + dark), help home and the mobile nav overlay"
+    ],
+    "gaps": [
+     "the workspace and every post-login surface (inbox, contacts, rules, analytics, settings) sits behind an account - an authenticated boundary never reached; app /signin, /signup and /forgot-password were measured as forms, never submitted, and Google/Office 365/SAML SSO was never followed",
+     "app /signup and /forgot-password paint the same sign-in card as /signin (email, password, 'Sign in') - no dedicated signup or reset form exists signed out; recorded as painted, not inferred",
+     "submitted states: the /request-demo and /signup forms, the auth cards and the help search were typed into then cleared, never sent - validation, error, loading and success states are absent rather than measured",
+     "academy.front.com, community.front.com, www.frontstatus.com and research.front.com are adjacent properties, not captured this pass",
+     "the Qualified 'Quinn' chat widget was measured and screenshot at rest, never opened - the chat panel is uncaptured",
+     "the Solutions and Resources mega-menu panels were screenshot-captured only; only the Product panel's contents were component-measured",
+     "the marketing violet/light/gray sets are [data-theme] section themes of one page, not a user-selectable dark mode; the dark set is the app auth shell's own theme, a different stack",
+     "dev.frontapp.com's own --color-* values are ReadMe vendor overrides kept in raw/css-vars.json under vendor; the companion sets are the embedded Froyo messenger sheet's semantics, not the dev page's own paint",
+     "detail pages: blog posts, customer stories, glossary terms, integrations and help articles are index- or exemplar-level captures (one story, one article opened)",
+     "reduced motion is mostly ignored by the marketing pages: the probe found transitions kept under prefers-reduced-motion: reduce - an honest absence, not a variant",
+     "pressed states are DevTools-forced (CSS.forcePseudoState), so any script-applied mousedown state is missing",
+     "disabled, error, loading and validation states never appear signed out - nothing was submitted",
+     "icons: no standalone SVG set lifted this pass"
+    ],
+    "durationMin": 300,
+    "durationNote": "wall-clock across the capture sessions including kit adaptation, recon probes, two screenshot passes (FAQ/menu actionability and full-page height-mismatch retries), the stylesheet harvest, three measurement passes (selector fixes for header CTAs, the flyout, selects and mobile controls) and the offline build"
+   },
+   "layoutGaps": {
+    "icons/": "no standalone SVG icon set was lifted; the Front mark, menu glyphs, plan badges and social icons are visible in the crops and screenshots"
+   }
+  },
+  {
+   "slug": "gofundme",
+   "name": "GoFundMe",
+   "url": "https://www.gofundme.com",
+   "category": "e-commerce",
+   "platform": "web",
+   "goodFor": "crowdfunding/fundraising design: a real shipped token layer - ~700 semantic --hrt-* custom properties on :root (brand greens #4A9D44/#274A34/#CCF88E, neutral ramps, blue/pink/purple/yellow accents, size/spacing/radius/type/motion/z-index scales) - white chrome with a #CCF88E promo banner, header mega-dropdowns (Donate/Fundraise/About), the centred hero with a dark-green 'Start a GoFundMe' pill, discover/search fundraiser cards with media tags and progress bars, a public /f/<slug> fundraiser page (raised line, progress meter, Donate now/Share/Message), the /create wizard at rest and the /sign-in auth boundary - plus the separate /c/* WordPress content stack measured as a second public system",
+   "tags": [
+    "web",
+    "crowdfunding",
+    "fundraising",
+    "nonprofit",
+    "marketplace",
+    "search",
+    "light",
+    "semantic-tokens",
+    "signed-out"
+   ],
+   "shape": "reference",
+   "captured": "2026-11-17",
+   "access": "signed out (every captured surface is public; the account, the donation flow, checkout and every post-login surface is an authenticated boundary never reached; the wizard's postcode field and the sign-in email field were typed into then cleared, never submitted; 'Donate now', 'Share', 'Message', 'Continue', 'Sign in', 'Start a GoFundMe' were measured, never activated)",
+   "themes": [
+    "light"
+   ],
+   "widths": [
+    1440,
+    390
+   ],
+   "entry": "systems/gofundme/README.md",
+   "tokens": "systems/gofundme/tokens.json",
+   "styleGuide": "systems/gofundme/style-guide.html",
+   "preview": {
+    "cover": "systems/gofundme/screenshots/home-light-default.png",
+    "icon": "systems/gofundme/icon.png",
+    "swatches": {
+     "light": {
+      "page": "light.color.surface.default.default",
+      "surface": "light.color.surface.neutral.subtle.default",
+      "text": "light.color.text.default",
+      "muted": "light.color.text.supporting.default",
+      "accent": "light.color.button.primary.surface.default",
+      "border": "light.color.border.neutral.subtle.default"
+     }
+    },
+    "fonts": [
+     "core.font.family.family.default",
+     "core.font.family.family.mono"
+    ]
+   },
+   "source": {
+    "path": "~/.design-systems/gofundme/raw-shots (full-colour captures, outside the repo)"
+   },
+   "capture": {
+    "method": "public-web",
+    "source": "gofundme.com public signed-out surface in Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; the ~700-name --hrt-* custom-property layer harvested from the live stylesheets and resolved in a probe document; computed styles and component crops from the live DOM; the fundraiser slug picked live from the first public card on /discover at run time. The Transcend 'Privacy Information' consent banner is hidden, never answered; intermittent edge challenges were retried on fresh contexts",
+    "timestamp": "2026-11-17T03:30:00Z",
+    "harness": "Devin",
+    "model": "SWE-2 Max",
+    "route": "public-web",
+    "routes": [
+     "/",
+     "/discover",
+     "/s?q=medical",
+     "/f/<slug> (first public card on /discover)",
+     "/c/about-us",
+     "/c/accessibility-statement",
+     "/c/pricing",
+     "/c/how-it-works",
+     "/c/why-gofundme",
+     "/c/crowdfunding",
+     "/c/fundraising-ideas",
+     "/c/charity-fundraising",
+     "/c/start",
+     "/c/careers",
+     "/c/blog",
+     "/c/safety",
+     "/sign-in",
+     "/create/fundraiser/category"
+    ],
+    "gaps": [
+     "the account, the donation flow, checkout and every post-login surface was never reached",
+     "'Donate now' was measured in every state, never pressed - the donation flow it starts is uncaptured",
+     "'Share', 'Message' and 'Report fundraiser' were measured, never pressed - the flows they front are uncaptured",
+     "the /create wizard was captured at its first public step only; its category pills and 'Continue' were measured, never submitted - later wizard steps sit behind it",
+     "the /sign-in Welcome card was measured signed-out; the email field was typed into then cleared and 'Continue'/SSO were never pressed - no account was ever touched; in some headless passes the island does not hydrate and only the empty shell records",
+     "the mobile nav overlay was opened for the drawer shot and measurement; its links were never followed",
+     "some measured components are missing or zero-sized where the route did not serve them in a given pass (the donations heading, the search heading, the sign-in card's buttons); gaps are recorded, not fabricated",
+     "the [data-theme=\"pro\"] layer is declared in the CSS but never paints on the consumer pages; it is kept in raw/css-vars.json as declared-only evidence, not tokens",
+     "icons: no standalone SVG set lifted this pass"
+    ],
+    "durationMin": null,
+    "durationNote": "capture ran in several passes on 2026-11-17 because intermittent edge challenges and a late-mounting consent banner forced retries; wall-clock duration not recorded",
+    "pr": "https://github.com/starship-terminal/constellations/pull/620"
+   },
+   "layoutGaps": {
+    "icons/": "no standalone SVG icon set was lifted on this pass; the GoFundMe mark and control glyphs are visible in the crops and screenshots"
    }
   }
  ]

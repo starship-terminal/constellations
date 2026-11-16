@@ -3,11 +3,11 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 164,
-    "system_domains": 156,
-    "matched_domains": 127,
-    "missing_domains": 306,
-    "system_domains_absent_from_catalog": 29
+    "system_packages": 172,
+    "system_domains": 164,
+    "matched_domains": 134,
+    "missing_domains": 299,
+    "system_domains_absent_from_catalog": 30
   },
   "matched": {
     "1password.com": {
@@ -802,6 +802,23 @@
         }
       ]
     },
+    "chargetrip.com": {
+      "catalog": [
+        {
+          "name": "Chargetrip",
+          "domain": "chargetrip.com",
+          "id": 798
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "chargetrip",
+          "name": "Chargetrip",
+          "url": "https://www.chargetrip.com",
+          "name_match": true
+        }
+      ]
+    },
     "chatgpt.com": {
       "catalog": [
         {
@@ -815,6 +832,23 @@
           "slug": "chatgpt",
           "name": "ChatGPT",
           "url": "https://chatgpt.com",
+          "name_match": true
+        }
+      ]
+    },
+    "classpass.com": {
+      "catalog": [
+        {
+          "name": "ClassPass",
+          "domain": "classpass.com",
+          "id": 256
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "classpass",
+          "name": "ClassPass",
+          "url": "https://classpass.com",
           "name_match": true
         }
       ]
@@ -1936,6 +1970,23 @@
         }
       ]
     },
+    "frame.io": {
+      "catalog": [
+        {
+          "name": "Frame.io",
+          "domain": "frame.io",
+          "id": 1142
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "frame",
+          "name": "Frame.io",
+          "url": "https://frame.io",
+          "name_match": true
+        }
+      ]
+    },
     "framer.com": {
       "catalog": [
         {
@@ -1966,6 +2017,23 @@
           "slug": "fresha",
           "name": "Fresha",
           "url": "https://www.fresha.com",
+          "name_match": true
+        }
+      ]
+    },
+    "front.com": {
+      "catalog": [
+        {
+          "name": "Front",
+          "domain": "front.com",
+          "id": 23
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "front",
+          "name": "Front",
+          "url": "https://front.com",
           "name_match": true
         }
       ]
@@ -2033,6 +2101,23 @@
         }
       ]
     },
+    "glassnode.com": {
+      "catalog": [
+        {
+          "name": "Glassnode",
+          "domain": "glassnode.com",
+          "id": 87
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "glassnode",
+          "name": "Glassnode",
+          "url": "https://glassnode.com",
+          "name_match": true
+        }
+      ]
+    },
     "glossgenius.com": {
       "catalog": [
         {
@@ -2046,6 +2131,23 @@
           "slug": "glossgenius",
           "name": "GlossGenius",
           "url": "https://glossgenius.com",
+          "name_match": true
+        }
+      ]
+    },
+    "gofundme.com": {
+      "catalog": [
+        {
+          "name": "GoFundMe",
+          "domain": "gofundme.com",
+          "id": 436
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "gofundme",
+          "name": "GoFundMe",
+          "url": "https://www.gofundme.com",
           "name_match": true
         }
       ]
@@ -2080,6 +2182,23 @@
           "name": "Gemini Notebook (NotebookLM)",
           "url": "https://notebook.google.com",
           "name_match": false
+        }
+      ]
+    },
+    "grammarly.com": {
+      "catalog": [
+        {
+          "name": "Grammarly",
+          "domain": "grammarly.com",
+          "id": 42
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "grammarly",
+          "name": "Grammarly",
+          "url": "https://www.grammarly.com",
+          "name_match": true
         }
       ]
     },
@@ -2247,20 +2366,6 @@
         "id": 284
       }
     ],
-    "chargetrip.com": [
-      {
-        "name": "Chargetrip",
-        "domain": "chargetrip.com",
-        "id": 798
-      }
-    ],
-    "classpass.com": [
-      {
-        "name": "ClassPass",
-        "domain": "classpass.com",
-        "id": 256
-      }
-    ],
     "clay.earth": [
       {
         "name": "Clay",
@@ -2394,20 +2499,6 @@
         "id": 234
       }
     ],
-    "frame.io": [
-      {
-        "name": "Frame.io",
-        "domain": "frame.io",
-        "id": 1142
-      }
-    ],
-    "front.com": [
-      {
-        "name": "Front",
-        "domain": "front.com",
-        "id": 23
-      }
-    ],
     "gemini.google": [
       {
         "name": "Google Gemini",
@@ -2436,32 +2527,11 @@
         "id": 228
       }
     ],
-    "glassnode.com": [
-      {
-        "name": "Glassnode",
-        "domain": "glassnode.com",
-        "id": 87
-      }
-    ],
     "glorify.com": [
       {
         "name": "Glorify",
         "domain": "glorify.com",
         "id": 583
-      }
-    ],
-    "gofundme.com": [
-      {
-        "name": "GoFundMe",
-        "domain": "gofundme.com",
-        "id": 436
-      }
-    ],
-    "grammarly.com": [
-      {
-        "name": "Grammarly",
-        "domain": "grammarly.com",
-        "id": 42
       }
     ],
     "grok.com": [
@@ -4504,6 +4574,14 @@
           "Luma",
           "Luma AI"
         ]
+      }
+    ],
+    "me.sh": [
+      {
+        "slug": "clay-earth",
+        "name": "Mesh",
+        "url": "https://me.sh",
+        "ios_guess": []
       }
     ],
     "metabase.com": [
