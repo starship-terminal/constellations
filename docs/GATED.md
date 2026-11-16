@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_99 of 157 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_100 of 158 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -166,6 +166,10 @@ Access: read-only (the marketing pages, /servers discovery + categories, /server
 ## [District](../systems/district) — `district`
 Access: signed out (booking and payment gate on the Zomato account and were never reached)
 - booking, payment, sign-in and every account surface need the Zomato account - the Book/Proceed CTAs and date pills were measured at every paintable state, never pressed
+
+## [DJI](../systems/dji) — `dji`
+Access: read-only (the /sg home, /camera-drones, /handheld, /mavic-4-pro, /support, /company, /where-to-buy/* and the /sg/mobile site are fully public signed out; the store (store.dji.com), Login/Register and checkout gate on a DJI account - an authenticated boundary never reached; the Store, Buy Now, Watch Video and search controls were measured at every paintable state, never followed or pressed)
+- the store (store.dji.com), Login/Register (member-service redirects) and checkout gate on a DJI account - an authenticated boundary never reached; the Store and Buy Now CTAs were measured, never followed
 
 ## [Dock](../systems/dock) — `dock`
 Access: signed out (every captured surface is public; the Dock workspace sits behind auth.dock.us and was never reached; the HubSpot demo form and the auth cards were measured, never filled or submitted)

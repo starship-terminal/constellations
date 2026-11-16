@@ -940,5 +940,11 @@
     "groupId": "web-categories",
     "labels": ["Communication Tools", "Social Networking"],
     "reason": "catalog.json describes a chat-community platform: signed-out server discovery, server detail pages with Join/Share, and the login/register auth surface."
+  },
+  {
+    "referenceId": "systems:dji",
+    "groupId": "web-categories",
+    "labels": ["Electronic & Devices", "Marketplace"],
+    "reason": "catalog.json describes a consumer-drone and imaging-hardware brand site: product marketing pages, category grids, a store locator and links into the gated DJI store."
   }
 ]

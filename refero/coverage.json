@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 157,
-    "system_domains": 149,
-    "matched_domains": 120,
-    "missing_domains": 313,
+    "system_packages": 158,
+    "system_domains": 150,
+    "matched_domains": 121,
+    "missing_domains": 312,
     "system_domains_absent_from_catalog": 29
   },
   "matched": {
@@ -1116,6 +1116,23 @@
           "slug": "district",
           "name": "District",
           "url": "https://www.district.in",
+          "name_match": true
+        }
+      ]
+    },
+    "dji.com": {
+      "catalog": [
+        {
+          "name": "DJI",
+          "domain": "dji.com",
+          "id": 332
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "dji",
+          "name": "DJI",
+          "url": "https://www.dji.com",
           "name_match": true
         }
       ]
@@ -2252,13 +2269,6 @@
         "name": "The Dinner Ladies",
         "domain": "dinnerladies.com.au",
         "id": 762
-      }
-    ],
-    "dji.com": [
-      {
-        "name": "DJI",
-        "domain": "dji.com",
-        "id": 332
       }
     ],
     "equals.app": [
