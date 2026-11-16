@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 164,
-    "system_domains": 156,
-    "matched_domains": 127,
-    "missing_domains": 306,
+    "system_packages": 166,
+    "system_domains": 158,
+    "matched_domains": 129,
+    "missing_domains": 304,
     "system_domains_absent_from_catalog": 29
   },
   "matched": {
@@ -2067,6 +2067,23 @@
         }
       ]
     },
+    "glassnode.com": {
+      "catalog": [
+        {
+          "name": "Glassnode",
+          "domain": "glassnode.com",
+          "id": 87
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "glassnode",
+          "name": "Glassnode",
+          "url": "https://glassnode.com",
+          "name_match": true
+        }
+      ]
+    },
     "google.com": {
       "catalog": [
         {
@@ -2437,13 +2454,6 @@
         "name": "Pocket",
         "domain": "getpocket.com",
         "id": 228
-      }
-    ],
-    "glassnode.com": [
-      {
-        "name": "Glassnode",
-        "domain": "glassnode.com",
-        "id": 87
       }
     ],
     "glorify.com": [
