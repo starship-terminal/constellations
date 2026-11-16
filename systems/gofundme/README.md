@@ -20,7 +20,7 @@ GoFundMe is worth a capture because it is a current reference for a real, shippe
 ## Do and don't
 
 1. **Do keep the chrome white.** The header, card surfaces and footer are white on the white page; the brand green surfaces in the header mark, the promo banner and action fills. See [home-light-default](screenshots/home-light-default.png).
-2. **Do use the dark-green primary fill for the one action that matters.** "Start a GoFundMe", "Donate now" and "Continue" are #274A34 (`color.button.primary.surface`) pills with #CCF88E text — the dark end of the brand ramp, not the mid green. See [hero-cta](components/crops/hero-cta-default.png) and [f-donate](components/crops/f-donate-default.png).
+2. **Do pair the two brand greens as inverse action fills.** The hero "Start a GoFundMe", "Share" and wizard "Continue" pills are #274A34 (`color.button.primary.surface.default`) with #CCF88E text; the fundraiser "Donate now" flips the pair — #CCF88E (`color.button.primary.surface.strong.default`) fill with #274A34 text. See [hero-cta](components/crops/hero-cta-default.png) and [f-donate](components/crops/f-donate-default.png).
 3. **Do let the mid greens carry signals, not actions.** #4A9D44 (`color.surface.brand`) fills the mark and goal bars; #CCF88E (`color.surface.brand.medium`) fills the promo banner and tags. See [mkt-promo](components/crops/mkt-promo-default.png).
 4. **Do round actions fully.** Buttons, pills and the search control are full-radius pills; cards and fields keep small radii. See [nav-start](components/crops/nav-start-default.png) and [create-zip](components/crops/create-zip-default.png).
 5. **Don't invent a dark theme.** The consumer site paints one light theme; `[data-theme="pro"]` in the sheets is a declared Pro skin that never paints on these surfaces. See [raw/css-vars.json](raw/css-vars.json).
@@ -36,7 +36,7 @@ Read this before designing in this style. Take every value from [tokens.json](to
 ### Principles
 
 1. Do keep the chrome white.
-2. Do use the dark-green primary fill for the one action that matters.
+2. Do pair the two brand greens as inverse action fills.
 3. Do let the mid greens carry signals, not actions.
 4. Do round actions fully.
 5. Don't invent a dark theme.
