@@ -636,6 +636,12 @@
     "reason": "catalog.json describes a real-time AI voice and audio product (text-to-speech, voice agents) — the AI Tool label."
   },
   {
+    "referenceId": "systems:chargetrip",
+    "groupId": "web-categories",
+    "labels": ["Development Tools", "Travel & Booking"],
+    "reason": "catalog.json describes a developer-facing EV routing API (GraphQL routing engine, no-code tools, plan pricing) for the EV charging/travel industry."
+  },
+  {
     "referenceId": "systems:copy",
     "groupId": "web-categories",
     "labels": ["AI Tool"],

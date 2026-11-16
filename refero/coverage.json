@@ -802,6 +802,23 @@
         }
       ]
     },
+    "chargetrip.com": {
+      "catalog": [
+        {
+          "name": "Chargetrip",
+          "domain": "chargetrip.com",
+          "id": 798
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "chargetrip",
+          "name": "Chargetrip",
+          "url": "https://www.chargetrip.com",
+          "name_match": true
+        }
+      ]
+    },
     "chatgpt.com": {
       "catalog": [
         {
@@ -2245,13 +2262,6 @@
         "name": "Bento",
         "domain": "bento.me",
         "id": 284
-      }
-    ],
-    "chargetrip.com": [
-      {
-        "name": "Chargetrip",
-        "domain": "chargetrip.com",
-        "id": 798
       }
     ],
     "classpass.com": [

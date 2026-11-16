@@ -1,0 +1,7 @@
+{
+  "_note": "The filled-state crops (components/crops/form-input-filled.png, signin-input-filled.png) show the probe's own test address name@example.com typed into the forms; example.com is the reserved documentation domain, not private data, allowed.",
+  "ocr": {
+    "emails": true,
+    "email_allow": ["@example\\.com$"]
+  }
+}

@@ -162,6 +162,13 @@ Access: signed out (every captured surface is public; the product past the login
 - the login card was opened by its own button, measured, and never filled or submitted; the Try Calm for Free button navigates to /signup-flow, which stayed PerimeterX-blocked this run and is recorded as a boundary
 - no public pricing/plans page exists signed out: plan choices sit behind /signup-flow; /family (six premium accounts, SGD 93.99/year geolocated) and /gift (Gift a Year / Gift a Lifetime) are the public purchasable surfaces
 
+## [Chargetrip](../systems/chargetrip) — `chargetrip`
+Access: signed out (every captured surface is public: the www.chargetrip.com marketing routes, the account.chargetrip.io sign-in card, and developers/playground shells as boundaries; the routing engine, dashboard, API keys and every form submit were never crossed; the Cookie Settings card was hidden, never answered)
+- the product itself: the routing engine, dashboard, API keys and the authenticated app sit behind account.chargetrip.io and were never reached; the sign-in card was measured and filled with the documented name@example.com test address, never submitted
+- no form was submitted and nothing was booked: the sales form and newsletter field were focused, Book-a-demo / Plan-a-route / Contact-sales / Sign-in / Create-account / Send were never followed; the Cookie Settings card was hidden, never answered
+- developers.chargetrip.com and playground.chargetrip.com were captured as boundary shells only; the credential-gated playground was never used
+- the sign-in card runs a different stack (Tailwind v4, oklch) from the Framer marketing site; its tokens are marked measured, not declared
+
 ## [Discord](../systems/discord) — `discord`
 Access: read-only (the marketing pages, /servers discovery + categories, /servers/<slug> details, /login and /register are public signed out; the whole client - /channels/*, joining servers, invites, messages, settings - is an authenticated boundary never reached; every button and field was measured, never submitted or followed)
 - the whole Discord client needs an account - /channels/* redirects to /login; joining a server, accepting an invite, messages and settings are an authenticated boundary never reached
