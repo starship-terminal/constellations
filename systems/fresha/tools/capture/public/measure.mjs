@@ -321,7 +321,24 @@ async function home() {
   await S('search-treatment-field', tf, ['default', 'focused'], { group: G.search, title: 'Treatment field', desc: 'The "All treatments" combobox of the hero search bar. Focused opens a suggestion list; nothing is submitted.', sel: 'input/[role=combobox] treatments' });
   const locField = q('input[placeholder*="location" i], input[placeholder*="Current location" i]').first();
   await S('search-location-field', (await locField.count()) ? locField : await domFind(page, /Current location/i, { sel: 'input,button', tag: 'loc' }), ['default', 'focused'], { group: G.search, title: 'Location field', desc: 'The "Current location" input of the hero search bar. Focused only — no query is sent.', sel: 'input location' });
-  const when = await domFind(page, /Any time/i, { sel: 'button,input,[role="combobox"],[role="button"],div,li,span', tag: 'when' });
+  // The "Any time" control sits in the same hero search bar as the treatment
+  // and location fields — mark that bar (the smallest ancestor holding both
+  // fields) and find the control inside it, so a "any time" phrase in a
+  // review or a promotion cannot be mistaken for it.
+  await page.evaluate(() => {
+    document.querySelectorAll('[data-m-mark="searchbar"]').forEach((x) => x.removeAttribute('data-m-mark'));
+    const f = document.querySelector('input[placeholder*="treatment" i], input[aria-label*="treatment" i], [role="combobox"]');
+    if (!f) return;
+    let n = f;
+    for (let i = 0; i < 8 && n; i++) {
+      if (n.querySelector && n.querySelector('input[placeholder*="location" i], input[placeholder*="Current location" i]')) break;
+      n = n.parentElement;
+    }
+    if (n && n !== f) n.setAttribute('data-m-mark', 'searchbar');
+  }).catch(() => {});
+  let when = await domFind(page, /Any time/i, { sel: 'button,input,[role="combobox"],[role="button"]', tag: 'when', root: '[data-m-mark="searchbar"]' });
+  if (!(await when.count())) when = await domFind(page, /^\s*Any time\s*$/i, { sel: 'button,input,[role="combobox"],[role="button"],div,li,span', tag: 'when', leaf: true, root: '[data-m-mark="searchbar"]' });
+  if (!(await when.count())) when = await domFind(page, /^\s*Any time\s*$/i, { sel: 'button,input,[role="combobox"],[role="button"],div,li,span', tag: 'when', leaf: true });
   await S('search-when-control', when, ['default', 'focused'], { group: G.search, title: 'When control', desc: 'The "Any time" control of the hero search bar: opens the date/time popover. Focused state only in the field view; the open popover is measured where it mounts.', sel: '"Any time" control' });
   const searchBtn = await domFind(page, /^Search$/, { sel: 'button,[role="button"]', tag: 'searchbtn' });
   await S('search-button', (await searchBtn.count()) ? searchBtn : q('button[type="submit"]').first(), B4, { group: G.search, title: 'Search button', desc: 'The hero search submit. Measured, never pressed — a press runs a search query.', sel: 'button "Search"' });
@@ -344,8 +361,12 @@ async function home() {
   await S('venue-card', cardLoc, ['default', 'hover'], { group: G.card, title: 'Venue card', desc: 'A recommended-venue card in the home carousel: photo, name, rating badge and score, address line and a tag ("Best in Class", "Featured"). The whole card is one link; measured, never followed.', sel: 'a[href*="/a/"]' });
   const rating = await domFind(page, /^\d\.\d\s*\(?\d|\d\.\d$/, { sel: 'span,div,p', tag: 'rating', minW: 16, minH: 10 });
   await S('rating-badge', rating, ['default'], { group: G.card, title: 'Rating badge', desc: 'The score chip on a venue card ("4.9" with a star): badge fill plus the count beside it. The screen-reader "4.9 rating" copy is excluded.', sel: 'rating chip' });
-  const prevBtn = await domFind(page, /prev|next|arrow|scroll/i, { sel: 'button[aria-label], [role="button"][aria-label]', tag: 'prev' });
-  const carouselPrev = (await prevBtn.count()) ? prevBtn : q('button[aria-label]').last();
+  // The arrows are plain buttons whose text IS "Previous"/"Next" (no
+  // aria-label); the favourite hearts (aria-label "Sign in to add to
+  // favorites") must never match.
+  let prevBtn = await domFind(page, /^(Previous|Next)$/i, { sel: 'button,[role="button"]', tag: 'prev', leaf: true });
+  if (!(await prevBtn.count())) prevBtn = await domFind(page, /prev|next|arrow|scroll/i, { sel: 'button[aria-label], [role="button"][aria-label]', tag: 'prev' });
+  const carouselPrev = (await prevBtn.count()) ? prevBtn : q('button[aria-label*="prev" i], button[aria-label*="next" i]').first();
   await S('carousel-button', carouselPrev, B4, { group: G.home, title: 'Carousel arrow', desc: 'The circular Prev/Next buttons on the recommended carousel.', sel: 'button[aria-label] arrow' });
   await S('footer', q('footer').first(), ['default'], { group: G.shell, title: 'Footer', desc: 'The site footer: link columns, app badges, region and legal links.', sel: 'footer' });
   await page.close();
@@ -483,14 +504,20 @@ async function pricing() {
   await S('b2b-header', q('header, nav').first(), ['default'], { group: G.business, title: 'B2B top bar', desc: 'The marketing app bar shared by /for-business, /pricing, /blog and /careers: product logo, Business types / Features flyouts, Marketplace, Pricing, Help, Blog, "Try for free".', sel: 'header' }, { noScroll: true });
   const planCard = await domFind(page, /Independent|^Team$|Enterprise/i, { sel: 'article,li,div[class*="card" i],div', tag: 'plan', up: 'article,li', minW: 200, minH: 200 });
   await S('plan-card', planCard, ['default', 'hover'], { group: G.pricing, title: 'Plan card', desc: 'A pricing plan column (Independent / Team / Enterprise): plan name, monthly price, "7 day trial" badge, feature list and its CTA.', sel: 'article plan' });
-  const price = await domFind(page, /S?\$|€|£|\d+%|free/i, { sel: 'span,p,div', tag: 'price', minW: 0, minH: 0 });
+  // The price, the feature rows and the info badges all live inside the
+  // marked plan card — scoping keeps a "20 free messages" feature line or the
+  // header's Menu button from being saved as them.
+  const price = await domFind(page, /SGD|\$\s*\d|USD|EUR|GBP|€\s*\d|£\s*\d|per month|per year/i, { sel: 'span,p,div,h2,h3', tag: 'price', leaf: true, minW: 20, root: '[data-m-mark="plan"]' });
   await S('plan-price', price, ['default'], { group: G.pricing, title: 'Plan price', desc: 'The price display inside a plan card (amount + period + commission line).', sel: 'price' });
   const cta = await domFind(page, /Try for free|Get started|Contact sales|Get a demo/i, { sel: 'button,a', tag: 'cta' });
   await S('plan-cta', cta, B4, { group: G.pricing, title: 'Plan CTA', desc: 'The plan card\'s call to action. Measured, never pressed: a press starts sign-up.', sel: 'button CTA' });
-  const feat = await domFind(page, /card processing|Marketplace|payment/i, { sel: 'li,tr,div', tag: 'feat', leaf: true, minW: 100 });
+  const feat = await domFind(page, /calendar|messages|client|booking|payment|notification|website|report|card processing|Marketplace/i, { sel: 'li,tr,p,div', tag: 'feat', leaf: true, minW: 100, root: '[data-m-mark="plan"]' });
   await S('feature-row', feat, ['default'], { group: G.pricing, title: 'Feature row', desc: 'A line in a plan\'s feature list (label plus checkmark or info icon).', sel: 'li feature' });
-  const info = q('button[aria-label*="info" i], [role="button"][aria-label*="info" i], button:has(svg)').first();
-  const infoBtn = await domFind(page, /Description of|more info/i, { sel: 'button,[role="button"]', tag: 'info' });
+  // The "i" badges live in the comparison rows below the plan cards, as 16x16
+  // buttons whose only text is the aria-label ("Description of the price of …",
+  // "Definition of a team member") — domFind reads aria-labels now.
+  const info = q('button[aria-label*="Description" i], button[aria-label*="Definition" i], button[aria-label*="info" i], [role="button"][aria-label*="Description" i]').first();
+  const infoBtn = await domFind(page, /Description of|Definition of|more info|^\s*(i|info|ⓘ)\s*$/i, { sel: 'button,[role="button"],span,a', tag: 'info', leaf: true });
   const ib = (await infoBtn.count()) ? infoBtn : info;
   if (await ib.count()) {
     await S('info-icon', ib, ['default', 'hover', 'focus-visible'], { group: G.pricing, title: 'Info icon', desc: 'The "i" badge beside a feature — hovering opens a tooltip.', sel: 'button info' });
@@ -563,15 +590,26 @@ async function lp() {
   // the foot. Hidden radios/checkboxes in the DOM belong to an unpainted block.
   const chip = await domFind(page, /Beauty Salons|Barbers|Nail Salons|Medspas/i, { sel: 'a,button,li', tag: 'chip', leaf: true, minW: 40 });
   await S('lp-category-chip', chip, ['default', 'hover'], { group: G.lp, title: 'Category chip', desc: 'A category pill in the footer browse row (Beauty Salons, Barbers, Nail Salons …). A link; measured, never followed.', sel: 'category chip' });
-  const svcLine = await domFind(page, /S\$\d+|from SGD|\$\d+/i, { sel: 'div,li,span,p', tag: 'svcl', leaf: true, minW: 20, minH: 8 });
-  await S('lp-price', svcLine, ['default'], { group: G.lp, title: 'Card price', desc: 'A service price inside a venue card ("$98", "from $0").', sel: 'price span' });
-  const seeAll = await domFind(page, /See all \d+ services/i, { sel: 'span,button,div,a', tag: 'seeall' });
-  await S('lp-see-all', seeAll, ['default', 'hover'], { group: G.lp, title: 'See all services link', desc: 'The "See all N services" link inside a venue card. Measured, never followed.', sel: 'see-all link' });
-  const sel = q('select').first();
-  await S('lp-sort-select', sel, ['default', 'focus-visible'], { group: G.form, title: 'Sort select', desc: 'The "Sort by" native select over the results list.', sel: 'select' });
+  // The card is measured first so its mark can scope the price and the
+  // see-all link — unscoped, a page-wide "from $"/services query lands on the
+  // header blurb or the whole services list instead of the card's own nodes.
   const card = await domFind(page, /reviews?|stars?|\d\.\d/i, { sel: 'a,article,li,div', tag: 'lpcard', up: 'article,li', minW: 240, minH: 100 });
   const lpc = (await card.count()) ? card : q('article, ol li').nth(1);
   await S('lp-venue-card', lpc, ['default', 'hover'], { group: G.lp, title: 'Browse venue card', desc: 'A venue result in the /lp list: photo, name, address, rating and review count, next-availability line.', sel: 'article venue' });
+  const svcLine = await domFind(page, /S\$\s*\d+|from\s+S?GD|from\s+\$|\$\s*\d+/i, { sel: 'div,li,span,p', tag: 'svcl', leaf: true, minW: 10, minH: 8, root: '[data-m-mark="lpcard"]' });
+  await S('lp-price', svcLine, ['default'], { group: G.lp, title: 'Card price', desc: 'A service price inside a venue card ("$98", "from $0").', sel: 'price span' });
+  const seeAll = await domFind(page, /See all \d+ services/i, { sel: 'a,button,span,div,p', tag: 'seeall', leaf: true, root: '[data-m-mark="lpcard"]' });
+  await S('lp-see-all', seeAll, ['default', 'hover'], { group: G.lp, title: 'See all services link', desc: 'The "See all N services" link inside a venue card. Measured, never followed.', sel: 'see-all link' });
+  // The page's only other <select> is the header's language picker — never a
+  // fallback: if no select offers sort criteria, the component stays missing
+  // rather than measuring the wrong control.
+  const sortMarked = await page.evaluate(() => {
+    const s = [...document.querySelectorAll('select')].find((x) => /recommend|price|rating|distance|review|sort|nearest|popular/i.test(x.innerText || ''));
+    if (s) s.setAttribute('data-m-mark', 'sortsel');
+    return !!s;
+  }).catch(() => false);
+  const sel = sortMarked ? q('[data-m-mark="sortsel"]') : page.locator('[data-m-mark="__none__"]');
+  await S('lp-sort-select', sel, ['default', 'focus-visible'], { group: G.form, title: 'Sort select', desc: 'The "Sort by" native select over the results list.', sel: 'select' });
   const mapBtn = await domFind(page, /See map|Map/i, { sel: 'button,a', tag: 'map' });
   await S('lp-map-button', mapBtn, B4, { group: G.lp, title: 'See map button', desc: 'Opens the map panel over the results. Measured at rest and opened by its own control where the overlay mounts.', sel: 'button "See map"' });
   if (await mapBtn.count()) {

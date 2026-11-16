@@ -118,19 +118,23 @@ export async function closePromo(page) {
   return true;
 }
 
-// Finds a visible element in-page whose trimmed innerText matches reText,
-// tags it with data-m-mark="<tag>" and returns a locator for it. up optionally
-// retargets an ancestor (closest()). Use where getByRole/hasText miss nodes
-// whose text lives in nested spans.
-export async function domFind(page, reText, { sel = 'button, a', tag = 'm', up = null, nth = 0, leaf = true, minW = 0, minH = 0 } = {}) {
+// Finds a visible element in-page whose trimmed innerText (or aria-label, for
+// icon-only controls whose innerText is empty) matches reText, tags it with
+// data-m-mark="<tag>" and returns a locator for it. up optionally retargets an
+// ancestor (closest()); root scopes the search to descendants of a selector
+// (a marked container such as '[data-m-mark="plan"]'). Use where
+// getByRole/hasText miss nodes whose text lives in nested spans.
+export async function domFind(page, reText, { sel = 'button, a', tag = 'm', up = null, nth = 0, leaf = true, minW = 0, minH = 0, root = null } = {}) {
   const ok = await page.evaluate(
-    ([src, flags, s, t, upSel, i, leafOnly, w, h]) => {
+    ([src, flags, s, t, upSel, i, leafOnly, w, h, rootSel]) => {
       const re = new RegExp(src, flags);
       document.querySelectorAll(`[data-m-mark="${t}"]`).forEach((n) => n.removeAttribute('data-m-mark'));
-      const els = [...document.querySelectorAll(s)].filter((n) => {
+      const scope = rootSel ? document.querySelector(rootSel) : document;
+      if (!scope) return false;
+      const els = [...scope.querySelectorAll(s)].filter((n) => {
         const r = n.getBoundingClientRect();
         const cs = getComputedStyle(n);
-        return r.width >= w && r.height >= h && r.width > 0 && r.height > 0 && cs.visibility !== 'hidden' && cs.opacity !== '0' && re.test((n.innerText || '').trim());
+        return r.width >= w && r.height >= h && r.width > 0 && r.height > 0 && cs.visibility !== 'hidden' && cs.opacity !== '0' && re.test((n.innerText || n.getAttribute('aria-label') || n.getAttribute('placeholder') || '').trim());
       });
       // leaf: a container holding another match is a wrapper, not the target
       const pool = leafOnly ? els.filter((n) => !els.some((o) => o !== n && n.contains(o))) : els;
@@ -139,7 +143,7 @@ export async function domFind(page, reText, { sel = 'button, a', tag = 'm', up =
       (upSel ? el.closest(upSel) || el : el).setAttribute('data-m-mark', t);
       return true;
     },
-    [reText.source, reText.flags, sel, tag, up, nth, leaf, minW, minH],
+    [reText.source, reText.flags, sel, tag, up, nth, leaf, minW, minH, root],
   );
   return ok ? page.locator(`[data-m-mark="${tag}"]`) : page.locator('[data-m-mark="__none__"]');
 }

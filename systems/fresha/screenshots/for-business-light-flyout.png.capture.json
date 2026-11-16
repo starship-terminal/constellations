@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-15T22:02:23.912Z",
+  "capturedAt": "2026-11-16T19:21:10.769Z",
   "screenshot": "for-business-light-flyout.png",
   "sanitizedSourceUrl": "https://www.fresha.com/for-business",
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 13582
+      "height": 13572
     },
     "scroll": {
       "x": 0,

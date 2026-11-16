@@ -178,10 +178,13 @@ async function bookingTicked(p, S, shotName) {
 const desktop = {
   home: { url: BASE + '/', wait: 9000, theme: 'light', run: async (p, S) => {
     await S.view('default');
+    // The whole-page shot is taken before the interaction states: the
+    // popovers these open can leave the document shortened, and the full
+    // reference must be the resting page.
+    await S.full();
     await step('menu', () => menuDrawer(p, S, 'menu'));
     await step('app-dialog', () => appDialog(p, S, 'app-dialog'));
     await step('search-focus', () => searchFocus(p, S, 'search-focus'));
-    await S.full();
   } },
   'user-flow': { url: USERFLOW, wait: 8000, theme: 'light', run: async (p, S) => {
     await S.view('default');
@@ -202,12 +205,12 @@ const desktop = {
   } },
   venue: { url: VENUE, wait: 10000, theme: 'light', run: async (p, S) => {
     await S.view('default');
+    await S.full();
     await step('services', async () => {
       const s = await domFind(p, /^Services$/, { sel: 'a,button,[role="tab"]', tag: 'svc-t' });
       if (await s.count()) { await clickEl(s.first()); await wait(p, 900); }
       await S.view('services');
     });
-    await S.full();
   } },
   booking: { url: VENUE_BOOKING, wait: 11000, theme: 'light', run: async (p, S) => {
     await S.view('default');
@@ -215,6 +218,7 @@ const desktop = {
   } },
   pricing: { url: BASE + '/pricing', wait: 9000, theme: 'light', run: async (p, S) => {
     await S.view('default');
+    await S.full();
     await step('faq-open', async () => {
       const faq = await domFind(p, /How do|What is|Can I/i, { sel: 'button, summary', tag: 'sfaq', minW: 200 });
       if (!(await faq.count())) return;
@@ -223,17 +227,16 @@ const desktop = {
       await wait(p, 800);
       await S.view('faq-open');
     });
-    await S.full();
   } },
   'for-business': { url: BASE + '/for-business', wait: 9000, theme: 'light', run: async (p, S) => {
     await S.view('default');
-    await step('flyout', () => navFlyout(p, S, 'flyout'));
     await S.full();
+    await step('flyout', () => navFlyout(p, S, 'flyout'));
   } },
   'lp-browse': { url: LP_BROWSE, wait: 11000, theme: 'light', run: async (p, S) => {
     await S.view('default');
-    await step('map', () => mapOverlay(p, S, 'map'));
     await S.full();
+    await step('map', () => mapOverlay(p, S, 'map'));
   } },
   'lp-category': { url: LP_CAT, wait: 9000, theme: 'light', run: async (p, S) => {
     await S.view('default');
@@ -263,8 +266,8 @@ const desktop = {
 const mobile = {
   home: { url: BASE + '/', wait: 9000, theme: 'light', run: async (p, S) => {
     await S.view('default');
-    await step('menu', () => menuDrawer(p, S, 'menu'));
     await S.full();
+    await step('menu', () => menuDrawer(p, S, 'menu'));
   } },
   auth: { url: AUTH, wait: 8000, theme: 'light', run: async (p, S) => {
     await S.view('default');
@@ -291,7 +294,11 @@ for (const { k, mob } of runs) {
   await patch(ctx);
   const p = await ctx.newPage();
   log(name);
-  const S = new Shooter(p, `${name}-${spec.theme}`, vw, vh, dpr, spec.url);
+  // A route key that already ends in the theme (partner-signin-dark) is its
+  // own stem: appending spec.theme again would write *-dark-dark files the
+  // package does not link.
+  const stem = name.endsWith(`-${spec.theme}`) ? name : `${name}-${spec.theme}`;
+  const S = new Shooter(p, stem, vw, vh, dpr, spec.url);
   try {
     await p.goto(spec.url, { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
     if (!(await clearChallenge(p))) { log('  BLOCKED challenge', spec.url); await ctx.close(); continue; }

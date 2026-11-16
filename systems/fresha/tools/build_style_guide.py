@@ -37,8 +37,19 @@ def alias(v):
     return re.sub(r"\{([^{}]+)\}", lambda m: f"var({cssname(m.group(1))})", str(v))
 
 
+GENERIC_FAMILIES = {
+    "serif", "sans-serif", "monospace", "cursive", "fantasy", "system-ui",
+    "ui-serif", "ui-sans-serif", "ui-monospace", "ui-rounded",
+    "math", "emoji", "fangsong",
+}
+
+
 def css_val(name, t):
     v, ty = t["$value"], t["$type"]
+    if ty == "fontFamily" and isinstance(v, list):
+        # a stack is a CSS family list: named faces quoted, generics bare
+        # (quoting a generic would read it as a font literally named that)
+        return ", ".join(x if str(x).lower() in GENERIC_FAMILIES else json.dumps(str(x)) for x in v)
     if ty in ("transition", "animation"):
         return None   # composites with no single CSS value; the Motion section reads them from the token tree
     if ty == "cubicBezier":

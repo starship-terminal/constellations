@@ -26,7 +26,7 @@ Choosing a service enters the booking wizard at `/booking` — the signed-out bo
 
 ## The legacy LP microsite
 
-`/lp/en/bt/*` is Fresha's older marketplace front-end — a separate stylesheet with literal values (no token vars): an LP header with its own search strip, a category hero ("Find Hair Salons near me"), a city chip rail (`lp-category-chip`), then on browse pages the sort select (`lp-sort-select`), venue cards (`lp-venue-card` 381x543 with photo, rating count, category and "from S$" price line — `lp-price`), a "Show on map" button (`lp-map-button`) and pagination (`lp-pagination`). The category hub `/lp/en/bt/hair-salons` and the Singapore browse page were both captured, desktop and 390.
+`/lp/en/bt/*` is Fresha's older marketplace front-end — a separate stylesheet with literal values (no token vars): an LP header with its own search strip, a category hero ("Find Hair Salons near me"), a city chip rail (`lp-category-chip`), then on browse pages venue cards (`lp-venue-card` 381x543 with photo, rating count, category and "from S$" price line — `lp-price`), a "Show on map" button (`lp-map-button`) and pagination (`lp-pagination`). The category hub `/lp/en/bt/hair-salons` and the Singapore browse page were both captured, desktop and 390.
 
 ## Help, careers, app
 
@@ -38,4 +38,4 @@ One painted theme per surface: **light** everywhere except the partner sign-in, 
 
 ## Motion and focus
 
-The Panda system declares `durations.*` (.1s–1s) and `easings.*` (five cubic-beziers); measured transitions sit at 0.18–0.2s on colour/transform (search pill, buttons, flyout). prefers-reduced-motion is only partially honoured: home, venue and LP reduce some motion; pricing, for-business, help, auth and partner ignore it ([raw/motion.json](raw/motion.json)). Keyboard focus paints a real ring only on a few controls — the LP sort select and map button show a solid 2px ring; most Panda controls carry a 2px transparent outline that never colours in, so focus is nearly invisible (see the Focus line in components.md). Pressed states were forced via `CSS.forcePseudoState`; the solid CTAs shrink ~4% rather than recolour.
+The Panda system declares `durations.*` (.1s–1s) and `easings.*` (five cubic-beziers); measured transitions sit at 0.18–0.2s on colour/transform (search pill, buttons, flyout). prefers-reduced-motion is only partially honoured: home, venue and LP reduce some motion; pricing, for-business, help, auth and partner ignore it ([raw/motion.json](raw/motion.json)). Keyboard focus paints a ring two ways: most Panda controls fade in a `::before` pill shadow (white 2px + near-black 4px, opacity 0 to 1) while their 2px outline stays transparent; the LP map button shows a solid 2px outline instead (see the Focus line in components.md). Pressed states were forced via `CSS.forcePseudoState`; the solid CTAs shrink ~4% rather than recolour.

@@ -12658,7 +12658,7 @@
      "/blog",
      "/download-app",
      "/cookies",
-     "mobile /, /auth, LP browse, the venue page and /for-business"
+     "mobile /, /auth, LP browse and the venue page"
     ],
     "gaps": [
      "every post-login surface (the customer account and the whole partner app: calendar, sales, clients, marketing, billing) needs an account - an authenticated boundary never reached",

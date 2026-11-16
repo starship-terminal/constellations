@@ -26,11 +26,11 @@ Read this before designing in this style. Take every value from [tokens.json](to
 
 ### Principles
 
-1. Do
-2. Do
-3. Don't
-4. Don't
-5. Don't
+1. Do draw buttons, chips and the search bar as full pills (radius 999px)
+2. Do put near-black `#0d0d0d` text on white/`#f5f5f5` grounds
+3. Do set display headings in Roobert bold
+4. Don't give cards heavy borders or shadows
+5. Do borrow Fresha's `::before` focus ring
 
 Each rule links the screenshot or crop that shows it, under [Do and don't](#do-and-dont).
 
@@ -49,7 +49,7 @@ Fonts: `core.font.body` is Roobert, then 2 fallbacks; `core.font.display` is Tar
 
 ### Using components
 
-Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 183 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
+Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 182 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
 
 ### Accessibility
 
@@ -74,8 +74,8 @@ Scorecard: **17 of 25 met, 8 partly, 0 missing**; C5, V1, V2 are optional for a 
 | F3 Text roles | Partly | foreground.neutral (primary), neutralFaded (secondary/muted), disabled, onAccent, onPrimary and ghost are all declared, plus accent/danger/info/positive/warning text roles. There is no dedicated link colour role: links paint neutral ink or accent depending on surface, and the partner typography-link-* tokens are type styles, not a colour role. |
 | F12 Elevation | Partly | Two named elevation levels exist as shadows.level1/level2 in every theme set; the partner.elevation.* and per-component box-shadows (date tiles, table pinning) add component-scoped shadows but there is no 3-5 level ladder with per-use names (card/popover/dialog). |
 | F14 Layout | Partly | partner.breakpoints.{tablet,smalltablet,laptop,desktop} and sizes.breakpoint-* are declared; 1440px and 390px passes carry per-width geometry (component.header.height 72, nav-flyout 588x391 vs 350x559, business-type-card 379 vs 165). No grid-column or z-index scale was observed or tokenised. |
-| C1 Component coverage | Partly | 78 components cover 13 of 19 checklist items: button (b2b-cta/service-book/auth-continue/booking-continue), icon button (m-menu-button/gallery-button/carousel-button), link (shell-login-link/article-link/auth-cross-link), text field (auth/partner email, help-search, m-search-field, search pills), select (lp-sort-select, language-button), checkbox (booking-add-button service tick), tabs (venue-tab, booking-step), menu (menu-drawer, nav-flyout, menu-item), card (venue/plan/review/business-type/lp/topic/chooser), list row (service-row/feature-row), table (hours-table), avatar (staff-avatar), badge (rating-badge). Absent and unreachable signed out: text area, radio, switch, open tooltip (only the info-icon trigger), dialog (the home app-install dialog never mounted - recorded gap), toast. |
-| C3 Focus | Partly | focus-visible was measured on the interactive set and the evidence is kept honestly: most Panda controls paint a 2px *transparent* outline that does not change on focus (near-invisible keyboard focus, called out in README What to distrust and components.md Focus lines); the LP sort select and map button do paint a solid 2px ring, and that crop is the visible-focus example. |
+| C1 Component coverage | Partly | 78 components cover 13 of 19 checklist items: button (b2b-cta/service-book/auth-continue/booking-continue), icon button (m-menu-button/gallery-button/carousel-button), link (shell-login-link/article-link/auth-cross-link), text field (auth/partner email, help-search, m-search-field, search pills), select (language-button; the LP browse page has no sort control - recorded as lp-sort-select missing), checkbox (booking-add-button service tick), tabs (venue-tab, booking-step), menu (menu-drawer, nav-flyout, menu-item), card (venue/plan/review/business-type/lp/topic/chooser), list row (service-row/feature-row), table (hours-table), avatar (staff-avatar), badge (rating-badge). Absent and unreachable signed out: text area, radio, switch, open tooltip (only the info-icon trigger), dialog (the home app-install dialog never mounted - recorded gap), toast. |
+| C3 Focus | Partly | focus-visible was measured on the interactive set and the evidence is kept honestly: most Panda controls fade in a ::before pill ring (a white 2px plus near-black 4px box-shadow, opacity 0 to 1) while their 2px outline stays transparent - a real but subtle ring; the LP map button paints a solid 2px outline ring, and its crop is the visible-focus example (called out in README What to distrust and the components.md Focus lines). |
 | P1 Patterns | Partly | patterns.md documents the site chrome, the marketplace hero + split search, venue + booking-boundary anatomy, the two sign-in shells, B2B marketing/pricing anatomy, the legacy LP microsite, help centre, themes and motion/focus. Empty/loading/error, destructive-confirmation and onboarding patterns are all post-login or post-submit and declared as gaps rather than written. |
 | A1 Assets | Partly | icon.png is the fetched apple-touch-icon normalised to 128px; fonts are named with their real stacks and fallbacks (Roobert/AktivGroteskVF, Tartuffo display stack) with licence unknown - noted as fallback-named; no standalone SVG icon set was lifted - declared under layoutGaps. |
 
@@ -100,12 +100,12 @@ The light set is the painted palette of every signed-out surface. The dark set i
 - **The two vocabularies are the same system spelled twice.** `colors.foreground.neutral` (hashed layer) and `partner.color.foreground-neutral` (named layer) resolve to the same paint; do not mix them as if they were two palettes. The `app.b2b.*` group is the same named layer the b2b sheet declares unscoped on `:root`.
 - **Presses are forced.** `pressed` states were read with `CSS.forcePseudoState` — any script-driven mousedown look is uncaptured.
 - **The LP microsite is a different system.** Literal values, hashed class names, its own 16px card radius and pill chips; its two panel-offset vars are the only custom properties it declares.
-- **Focus is nearly invisible on Panda controls.** Most buttons carry a 2px *transparent* outline that does not change on focus-visible — only the LP select/map button drew a solid ring. Do not assume Fresha's invisible-focus habit is a style worth copying.
+- **The focus ring is a `::before` shadow, not the outline.** Most Panda controls declare a 2px *transparent* outline that never colours in; the visible ring is a `::before` layer (a white 2px + near-black 4px pill shadow) that fades in on focus-visible. Read the Focus block in components.md — a plain outline check misses it.
 - **The consumer home's app-install dialog never mounted** during measurement (`appDialog` stayed unmounted); menu, search and the flyout are the captured overlay evidence.
 
 ## Coverage
 
-- 15 desktop routes and 5 mobile routes captured signed out (see the catalog's `capture.routes`), every page at 1440 x 900 with `.capture.json` dimension sidecars; the partners sign-in was captured light and under an emulated dark preference, the only surface that paints dark.
+- 15 desktop routes and 4 mobile routes captured signed out (see the catalog's `capture.routes`), every page at 1440 x 900 with `.capture.json` dimension sidecars; the partners sign-in was captured light and under an emulated dark preference, the only surface that paints dark.
 - 78 components measured in ~180 states across the four stacks, with element crops in [components/crops/](components/crops): the opened menu drawer, the hero search's suggestions popover, the Business types flyout, the pricing FAQ disclosure, a ticked booking service (unticked again after), filled-then-cleared auth email fields and forced-pressed controls.
 - Foundations: the full declared `light`/`dark`/`accent` token sets per stack (painted vs declared marked per token in `$extensions`), the Panda spacing/sizing/radius/duration/easing scales, the Roobert/Tartuffo font roles, and a measured motion pass over 8 pages (reduce honoured on the consumer and LP pages, ignored on pricing, for-business, help, auth and the partner sign-in).
 - Missing surfaces and states, each with its reason, are listed under [Gaps](components.md#gaps) in components.md and in the catalog's `capture.gaps`: every post-login surface; submitted-form, search-results, disabled, loading, error and toast states; the booking wizard past service selection; the LP map overlays; individual blog and careers articles; terms.fresha.com pages.
@@ -113,11 +113,11 @@ The light set is the painted palette of every signed-out surface. The dark set i
 
 ## Do and don't
 
-- **Do** draw buttons, chips, fields and the search bar as full pills (radius 999px): the CTA, the menu button, the category chips and the split search bar all are. ![Primary button](components/crops/b2b-cta-default.png)
-- **Do** put near-black `#0d0d0d` text on white/`#f5f5f5` grounds; reserve violet `#6950f3` for accent scopes and B2B highlights, not for primary buttons. ![Accent card](components/crops/review-card-default.png)
-- **Don't** put the display heading in Roobert — the marketing hero and LP titles use the Tartuffo/Changa/PlayfairDisplay stack (`--font-display`), while UI text is Roobert/AktivGroteskVF. ![Display heading](components/crops/b2b-hero-title-default.png)
-- **Don't** give cards heavy borders or shadows: venue, plan and review cards sit on a hairline `#e5e5e5`/`#d3d3d3` ring or a faint `#f0f0ff` accent fill, with `shadows.level1/level2` reserved for popovers. ![Venue card](components/crops/lp-venue-card-default.png)
-- **Don't** keep Fresha's near-invisible focus: most Panda controls show no ring on focus-visible at all, so borrow a visible focus treatment (the LP pages' own 2px solid outline is a working example). ![Focus ring](components/crops/lp-map-button-focus-visible.png)
+- **Do draw buttons, chips and the search bar as full pills (radius 999px)** — the CTAs, the menu button, the category chips and the split search bar all are; text fields are the exception, at 12px corners on both sign-in email fields. ![Primary button](components/crops/b2b-cta-default.png)
+- **Do put near-black `#0d0d0d` text on white/`#f5f5f5` grounds** — reserve violet `#6950f3` for accent scopes and B2B highlights, not for primary buttons. ![Accent card](components/crops/review-card-default.png)
+- **Do set display headings in Roobert bold** — the captured consumer (64px/68px 700) and B2B (56px/60px 700) heroes both use `Roobert, AktivGroteskVF, sans-serif`; the Tartuffo/Changa/PlayfairDisplay stack is only declared (`--font-display`, the partner `--typography-display-*` vars) — nothing captured paints it. ![Display heading](components/crops/b2b-hero-title-default.png)
+- **Don't give cards heavy borders or shadows** — venue, plan and review cards sit on a hairline `#e5e5e5`/`#d3d3d3` ring or a faint `#f0f0ff` accent fill, with `shadows.level1/level2` reserved for popovers. ![Venue card](components/crops/lp-venue-card-default.png)
+- **Do borrow Fresha's `::before` focus ring** — most Panda controls fade in a pill-shaped double ring (a `rgb(255,255,255) 0 0 0 2px` + `rgb(13,13,13) 0 0 0 4px` shadow, opacity 0 to 1) on focus-visible instead of colouring their 2px transparent outline; only the LP pages paint a solid 2px outline ring. ![Focus ring](components/crops/shell-login-link-focus-visible.png)
 
 ## Rebuild
 

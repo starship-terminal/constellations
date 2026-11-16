@@ -77,6 +77,35 @@ def num(x):
     return re.sub(r"(\d+\.\d\d)\d+", r"\1", x)
 
 
+def px(x):
+    try:
+        return float(str(x).replace("px", ""))
+    except ValueError:
+        return 0.0
+
+
+def transparent(c):
+    m = re.fullmatch(r"rgba?\((\d+), (\d+), (\d+)(?:, ([\d.]+))?\)", (c or "").strip())
+    return bool(m) and m.group(4) is not None and float(m.group(4)) == 0
+
+
+def pseudo_paint(p):
+    """The paint a ::before/::after dict carries, or '' when it draws nothing
+    visible (opacity 0, or no fill/border/shadow/image at all)."""
+    if not p or px(p.get("opacity", "1")) == 0:
+        return ""
+    bits = []
+    if (p.get("boxShadow") or "none") != "none":
+        bits.append("shadow " + colour(p["boxShadow"], tokens=False))
+    if px(p.get("borderTopWidth", "0px")) > 0 and p.get("borderTopStyle") not in (None, "none"):
+        bits.append(f"border {p['borderTopWidth']} {p['borderTopStyle']} {colour(p['borderTopColor'])}")
+    if p.get("backgroundColor") not in (None, "", "rgba(0, 0, 0, 0)"):
+        bits.append("bg " + colour(p["backgroundColor"]))
+    if p.get("backgroundImage") not in (None, "", "none"):
+        bits.append("image")
+    return "; ".join(bits)
+
+
 def font(fz, lh, fw, f):
     lh = lh.replace("px", "") if lh != "normal" else "normal"
     return f"{fam(f)} {num(fz.replace('px', ''))}/{num(lh)} {fw}"
@@ -110,8 +139,21 @@ def props(v):
         layers = [x for x in layers if not x.startswith("transparent")]
         if layers:
             o["shadow"] = ", ".join(layers)
-    if s["outlineStyle"] != "none" and float(s["outlineWidth"].replace("px", "")) > 0:
+    if s["outlineStyle"] != "none" and px(s["outlineWidth"]) > 0:
         o["outline"] = f"{s['outlineWidth']} {s['outlineStyle']} {colour(s['outlineColor'])}, offset {s['outlineOffset']}"
+    pseudo = []
+    for pe in ("::before", "::after"):
+        p = v.get(pe)
+        if not p:
+            continue
+        body = pseudo_paint(p)
+        if not body:
+            continue
+        dims = f"{num(p.get('width', '?'))}x{num(p.get('height', '?'))}"
+        rad = f", radius {p['borderRadius']}" if p.get("borderRadius") not in (None, "0px") else ""
+        pseudo.append(f"{pe} {dims}: {body}{rad}, opacity {p.get('opacity', '1')}")
+    if pseudo:
+        o["pseudo"] = " + ".join(pseudo)
     t = v.get("textStyle")
     if t:
         o["text"] = f"{font(t['fontSize'], t['lineHeight'], t['fontWeight'], t['fontFamily'])}, {colour(t['color'])}"
@@ -146,7 +188,7 @@ def props(v):
     return o
 
 
-ORDER = ["size", "padding", "border", "radius", "background", "image", "shadow", "outline", "text", "transition", "transform", "opacity", "icon", "placeholder"]
+ORDER = ["size", "padding", "border", "radius", "background", "image", "shadow", "outline", "pseudo", "text", "transition", "transform", "opacity", "icon", "placeholder"]
 
 
 def state_rows(c):
@@ -218,12 +260,12 @@ GROUP_INTRO = {
     "Search": "The hero search row on the consumer home: a What are you looking for? treatment field, a Current location field, an Any time control and the round search button. The fields were focused only; nothing was searched.",
     "Cards": "The marketplace venue card (photo, name, rating, area, category) and the business-type tile on /for-business.",
     "Sign-in shell": "The /user-flow chooser (a back button, the customer-or-business card and a language button), the /auth consumer sign-in (email field, Continue, Google/Facebook/Apple SSO buttons, a passkey button, cross-links) and the partners.fresha.com professional sign-in (email, Continue, an SSO row and a decoy password field). Nothing was submitted; the email fields were typed into and cleared.",
-    "Form controls": "The sign-in email fields, the LP browse sort select and the partner form's decoy password input.",
+    "Form controls": "The sign-in email fields and the partner form's decoy password input (the LP browse page carries no sort select — `lp-sort-select` is recorded as missing).",
     "Venue page": "A public venue profile (/a/<slug>): breadcrumb, gallery, venue title and tabs, the service list with per-service Book buttons, the Book now bar, opening-hours table, staff and review cards. Booking a service was never pressed.",
     "Booking wizard": "The /booking step the venue's Book controls lead to, captured at the service-selection boundary: the step header, category pills, service rows with their own Add checkboxes and the summary cart. One service was ticked then unticked to record both states; Continue was never pressed and nothing was booked.",
     "For-business marketing": "The /for-business B2B landing (the same Panda system as the partner app): the nav with the Business types flyout button, the display hero, the Get a demo / Watch film buttons, the business-type grid and the stat row.",
     "Pricing": "The /pricing page: plan cards with prices and CTAs, the feature rows, the small info icons and the FAQ disclosures (one was opened for its capture).",
-    "Marketplace browse (/lp)": "The legacy /lp/ microsite (its own stylesheet, literal values, no token vars): the LP header, the category chip rail, the sort select, browse venue cards, the Show on map button and pagination. The category page /lp/en/bt/hair-salons and the Singapore browse page were both captured.",
+    "Marketplace browse (/lp)": "The legacy /lp/ microsite (its own stylesheet, literal values, no token vars): the LP header, the category chip rail, browse venue cards, the Show on map button and pagination. The category page /lp/en/bt/hair-salons and the Singapore browse page were both captured.",
     "Help centre": "The /help-center surface: the 654px search pill (focused only, nothing searched) and the topic/article cards.",
     "Mobile (390 wide)": "A few components as a phone draws them, at 390 x 844 with an iPhone user agent: the mobile sticky header and menu button, the compact search field and a venue card.",
 }
@@ -238,7 +280,7 @@ SHOTS = [
     ("pricing", "Pricing: the plan cards, feature list and the FAQ (one disclosure opened).", "/pricing"),
     ("for-business", "For business: nav, display hero, business-type grid and stats; the Business types flyout open.", "/for-business"),
     ("lp-category", "Legacy LP category page: hero, city chips, global venue rows.", "/lp/en/bt/hair-salons"),
-    ("lp-browse", "Legacy LP browse: category chip rail, sort, venue cards, map button, pagination.", "/lp/en/bt/hair-salons/in/singapore"),
+    ("lp-browse", "Legacy LP browse: category chip rail, venue cards, map button, pagination.", "/lp/en/bt/hair-salons/in/singapore"),
     ("help", "Help centre: the search pill and the topic/article lists.", "/help-center"),
     ("careers", "Careers.", "/careers"),
     ("blog", "The blog index.", "/blog"),
@@ -318,17 +360,49 @@ W("## Shared values")
 W()
 W("Values that apply across entries, from the measurement files.")
 W()
+def ring_of(st_f, st_d):
+    """The visible ring a focus-visible state draws, or None: a painted root
+    outline (a non-transparent colour — the common 2px transparent outline is
+    not a ring), a ::before/::after layer that becomes visible on focus (the
+    Panda controls fade a ring shadow in with opacity 0 -> 1), or a new ring
+    painted by an ancestor."""
+    s = st_f["style"]
+    parts = []
+    if s["outlineStyle"] != "none" and px(s["outlineWidth"]) > 0 and not transparent(s["outlineColor"]):
+        parts.append(f"outline {s['outlineWidth']} {s['outlineStyle']} {colour(s['outlineColor'])}, offset {s['outlineOffset']}")
+    for pe in ("::before", "::after"):
+        p = st_f.get(pe)
+        body = pseudo_paint(p)
+        if not body or pseudo_paint((st_d or {}).get(pe)):
+            continue
+        rad = f", radius {p['borderRadius']}" if p.get("borderRadius") not in (None, "0px") else ""
+        parts.append(f"{pe} {body}{rad} (opacity 0 to 1)")
+    foc_anc = {(a["node"], a.get("outline"), a.get("shadow")) for a in st_f.get("ancestors", [])}
+    base_anc = {(a["node"], a.get("outline"), a.get("shadow")) for a in (st_d or {}).get("ancestors", [])}
+    for node, ol, sh in sorted(foc_anc - base_anc):
+        if ol:
+            parts.append(f"ancestor outline {colour(ol)}")
+        elif sh:
+            parts.append(f"ancestor shadow {colour(sh, tokens=False)}")
+    return "; ".join(parts) or None
+
+
 foc = []
 for k, c in C.items():
     st = c["states"].get("focus-visible")
     if not st or "style" not in st:
         continue
-    s = st["style"]
-    ring = s["outlineStyle"] != "none" and float(s["outlineWidth"].replace("px", "")) > 0
-    foc.append((k, f"{s['outlineWidth']} {s['outlineStyle']} {colour(s['outlineColor'])}, offset {s['outlineOffset']}" if ring else None))
-with_ring = [f"`{k}` ({r})" for k, r in foc if r]
-without = [f"`{k}`" for k, r in foc if not r]
-W(f"**Focus.** {len(foc)} components were given a real keyboard focus. {len(with_ring)} draw a visible ring: {', '.join(with_ring)}. The rest draw none or keep the same outline: {', '.join(without)}.")
+    base = c["states"].get("default") or next((s for s in c["states"].values() if "style" in s), None)
+    foc.append((k, ring_of(st, base)))
+ring_groups = {}
+for k, r in foc:
+    ring_groups.setdefault(r, []).append(k)
+with_ring = [r for r in ring_groups if r]
+W(f"**Focus.** {len(foc)} components were given a real keyboard focus. {sum(len(ring_groups[r]) for r in with_ring)} draw a visible ring.")
+for r in with_ring:
+    W(f"- {r}: {', '.join(f'`{k}`' for k in ring_groups[r])}.")
+if None in ring_groups:
+    W(f"The rest draw none — most declare only a 2px transparent outline that stays invisible: {', '.join(f'`{k}`' for k in ring_groups[None])}.")
 W()
 W("**Pressed.** Measured by forcing :active through DevTools. Fresha's solid buttons (the auth/partner Continue, the B2B CTAs, the map button) shrink slightly on press (the B2B CTA goes from 180x48 to about 173x46); the text buttons barely change.")
 W()
@@ -380,9 +454,23 @@ for k in ["venue-card", "lp-venue-card", "m-venue-card", "plan-card", "business-
     if st is None:
         continue
     p = props(st)
+    # A transparent root borrows paint only from a real surface: a non-pseudo
+    # descendant covering ~the whole card. A smaller child (a carousel button,
+    # an avatar, a chip) describes itself, not the card — the root's own
+    # values stand then, even when that means "transparent, no radius".
     if ("radius" not in p or p["background"] == "transparent") and st.get("paint"):
-        p0 = next((x for x in st["paint"] if x.get("bg") and x.get("radius")), st["paint"][0])
-        p = dict(p, border=colour(p0["border"].split(" | ")[0][2:]) if p0.get("border") else "-", radius=p0.get("radius", "-"), background=colour(p0.get("bg", "")) or "-", shadow=colour(p0.get("shadow", ""), tokens=False) or "none")
+        rw, rh = px(st["rect"]["w"]), px(st["rect"]["h"])
+
+        def full_surface(x):
+            if "::" in x["node"] or not x.get("bg") or transparent(x["bg"]):
+                return False
+            m = re.match(r"([\d.]+)x([\d.]+)", x["size"].replace("px", ""))
+            return bool(m) and float(m.group(1)) >= 0.9 * rw and float(m.group(2)) >= 0.9 * rh
+
+        p0 = next((x for x in st["paint"] if full_surface(x)), None)
+        if p0:
+            tag = re.sub(r"\..*$", "", p0["node"])
+            p = dict(p, border=colour(p0["border"].split(" | ")[0][2:]) if p0.get("border") else "-", radius=p0.get("radius", "-"), background=f"{colour(p0['bg'])} (a full-size {tag} inside)", shadow=colour(p0.get("shadow", ""), tokens=False) or "none")
     W(f"| [{c['title']}](#{re.sub(r'[^a-z0-9 -]', '', c['title'].lower()).replace(' ', '-')}) | {p['size']} | {p.get('border', '-')} | {p.get('radius', '-')} | {p.get('background', '-')} | {p.get('shadow', 'none')} | {p.get('padding', '0')} |")
 W()
 
@@ -444,7 +532,7 @@ W("### States")
 W()
 W("- **Pressed** was forced with DevTools, so a state a script adds on mousedown (if any) is missing.")
 W("- **Hover on the menu item and the venue tab** could not be applied (the elements unmount or move when the pointer leaves); those entries hold the states that did take.")
-W("- **A carousel arrow's hover/focus** measured 1x1 — the button only paints full-size while the pointer is over the carousel — so only its default and pressed readings stand.")
+W("- **The LP browse sort select** does not exist on the captured page — its only `<select>` is the header's language picker; `lp-sort-select` is recorded missing rather than measured on the wrong control.")
 W("- **Disabled, loading and error states** do not exist on the captured controls (sign-in forms disable Continue until an email is present, but no disabled example was recorded).")
 W()
 W("### Themes")

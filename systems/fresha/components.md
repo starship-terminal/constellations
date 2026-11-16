@@ -1,14 +1,14 @@
 # Fresha components
 
-The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Captured from fresha.com's signed-out surfaces on 2026-11-15, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was signed into, booked, bought, sent or submitted.
+The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Captured from fresha.com's signed-out surfaces on 2026-11-16, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was signed into, booked, bought, sent or submitted.
 
-The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (78 components, 181 states).
+The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (79 components, 183 states).
 
 How to read an entry:
 
 - A colour is its value followed by the token in [tokens.json](tokens.json) with the same value, when there is one. Text is written family size/line-height weight, then its colour, for example `Roobert 16/16 400, #262627`, and is read from the first text node inside the component.
 - The state table has one row per state that differs. The first row lists every value; later rows list only what changes. A state with the same values as the first is named in its label, for example "default (same: focus-visible)". When the root paints nothing, "Child layers" names the first nodes inside it that do.
-- Crops are images of the component read from the live page, in [components/crops/](components/crops) (183 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
+- Crops are images of the component read from the live page, in [components/crops/](components/crops) (182 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
 
 ## Discovery list
 
@@ -25,7 +25,7 @@ Screenshots are named `{page}-light-{state}.png`; the partner sign-in also has `
 | Pricing: the plan cards, feature list and the FAQ (one disclosure opened). | `/pricing` | [default](screenshots/pricing-light-default.png), [faq-open](screenshots/pricing-light-faq-open.png), [full](screenshots/pricing-light-full.png) |
 | For business: nav, display hero, business-type grid and stats; the Business types flyout open. | `/for-business` | [default](screenshots/for-business-light-default.png), [flyout](screenshots/for-business-light-flyout.png), [full](screenshots/for-business-light-full.png) |
 | Legacy LP category page: hero, city chips, global venue rows. | `/lp/en/bt/hair-salons` | [default](screenshots/lp-category-light-default.png), [full](screenshots/lp-category-light-full.png) |
-| Legacy LP browse: category chip rail, sort, venue cards, map button, pagination. | `/lp/en/bt/hair-salons/in/singapore` | [default](screenshots/lp-browse-light-default.png), [full](screenshots/lp-browse-light-full.png) |
+| Legacy LP browse: category chip rail, venue cards, map button, pagination. | `/lp/en/bt/hair-salons/in/singapore` | [default](screenshots/lp-browse-light-default.png), [full](screenshots/lp-browse-light-full.png) |
 | Help centre: the search pill and the topic/article lists. | `/help-center` | [default](screenshots/help-light-default.png), [full](screenshots/help-light-full.png) |
 | Careers. | `/careers` | [default](screenshots/careers-light-default.png), [full](screenshots/careers-light-full.png) |
 | The blog index. | `/blog` | [default](screenshots/blog-light-default.png), [full](screenshots/blog-light-full.png) |
@@ -52,7 +52,14 @@ Screenshots are named `{page}-light-{state}.png`; the partner sign-in also has `
 
 Values that apply across entries, from the measurement files.
 
-**Focus.** 27 components were given a real keyboard focus. 23 draw a visible ring: `shell-menu-button` (2px solid transparent, offset 2px), `shell-getapp-button` (2px solid transparent, offset 2px), `search-button` (2px solid transparent, offset 2px), `back-button` (2px solid transparent, offset 2px), `language-button` (2px solid transparent, offset 2px), `auth-back` (2px solid transparent, offset 2px), `auth-continue` (2px solid transparent, offset 2px), `sso-button` (2px solid transparent, offset 2px), `partner-continue` (2px solid transparent, offset 2px), `partner-sso` (2px solid transparent, offset 2px), `venue-tab` (2px solid transparent, offset 2px), `gallery-button` (2px solid transparent, offset 2px), `service-book-button` (2px solid transparent, offset 2px), `booking-add-button` (2px solid transparent, offset 2px), `booking-continue` (2px solid transparent, offset 2px), `plan-cta` (2px solid transparent, offset 2px), `info-icon` (2px solid transparent, offset 2px), `lp-sort-select` (2px solid #0d0d0d `colors.background.primary`, offset 2px), `lp-map-button` (2px solid #0d0d0d `colors.background.primary`, offset 2px), `m-menu-button` (2px solid transparent, offset 2px), `nav-flyout-button` (2px solid transparent, offset 2px), `b2b-cta` (2px solid transparent, offset 2px), `watch-button` (2px solid transparent, offset 2px). The rest draw none or keep the same outline: `shell-login-link`, `shell-business-link`, `chooser-card`, `book-now`.
+**Focus.** 27 components were given a real keyboard focus. 20 draw a visible ring.
+- ::before shadow #ffffff 0px 0px 0px 2px, #0d0d0d 0px 0px 0px 4px, radius 999px (opacity 0 to 1): `shell-login-link`, `shell-business-link`, `shell-menu-button`, `shell-getapp-button`, `search-button`, `carousel-button`, `back-button`, `auth-back`, `auth-continue`, `sso-button`, `book-now`, `gallery-button`, `service-book-button`.
+- ::before shadow #ffffff 0px 0px 0px 2px, #0d0d0d 0px 0px 0px 4px (opacity 0 to 1): `language-button`, `m-menu-button`.
+- ::before shadow #ffffff 0px 0px 0px 2px, radius 999px (opacity 0 to 1): `partner-continue`, `partner-sso`.
+- ::before shadow #ffffff 0px 0px 0px 2px inset; border 2px solid #0d0d0d `colors.background.primary`, radius 8px (opacity 0 to 1): `venue-tab`.
+- outline 1px auto #101010, offset 0px: `info-icon`.
+- outline 2px solid #0d0d0d `colors.background.primary`, offset 2px: `lp-map-button`.
+The rest draw none — most declare only a 2px transparent outline that stays invisible: `chooser-card`, `booking-add-button`, `booking-continue`, `plan-cta`, `nav-flyout-button`, `b2b-cta`, `watch-button`.
 
 **Pressed.** Measured by forcing :active through DevTools. Fresha's solid buttons (the auth/partner Continue, the B2B CTAs, the map button) shrink slightly on press (the B2B CTA goes from 180x48 to about 173x46); the text buttons barely change.
 
@@ -60,8 +67,9 @@ Values that apply across entries, from the measurement files.
 
 | Duration | Easing | Property | Where |
 |---|---|---|---|
+| 0.1s | `cubic-bezier(0.85, 0, 0.15, 1)` | opacity | carousel-button |
 | 0.15s | `cubic-bezier(0.4, 0, 0.2, 1)` | all | faq-item |
-| 0.2s | `cubic-bezier(0, 0.55, 0.45, 1)` | background-color, border-color, color, fill, stroke, text-decoration-color, transform | b2b-cta, info-icon, nav-flyout-button, plan-cta, watch-button |
+| 0.2s | `cubic-bezier(0, 0.55, 0.45, 1)` | background-color, border-color, color, fill, stroke, text-decoration-color, transform | b2b-cta, nav-flyout-button, plan-cta, watch-button |
 | 0.2s | `cubic-bezier(0.4, 0, 0.2, 1)` | all | article-link, topic-card |
 | 0.2s | `cubic-bezier(0.85, 0, 0.15, 1)` | block-size, max-inline-size | auth-back, auth-continue, back-button, book-now, booking-continue, gallery-button, m-header, partner-continue and more |
 | 0.25s | `cubic-bezier(0.42, 0, 0.58, 1)` | border-color | lp-category-chip |
@@ -71,20 +79,20 @@ Values that apply across entries, from the measurement files.
 
 | Card | Size | Border | Radius | Background | Shadow | Padding |
 |---|---|---|---|---|---|---|
-| [Venue card](#venue-card) | 322 x 284.66 | - | 999px | rgba(19, 19, 19, 0.33) `colors.background.shade600` | none | 0 |
-| [Browse venue card](#browse-venue-card) | 381.33 x 543.5 | - | 16px | #f5f5f5 `colors.app.dark.foreground.neutral` | none | 0 |
-| [Mobile venue card](#mobile-venue-card) | 236 x 227.33 | - | - | - | #ffffff 0px 0px 0px 2px, #0d0d0d 0px 0px 0px 4px | 0 |
-| [Plan card](#plan-card) | 277 x 368.5 | 1px #dbddff `colors.background.accentFadedHover` | 999px | #f0f0ff `colors.background.accentFaded` | none | 0 |
-| [Business-type card](#business-type-card) | 378.66 x 378.67 | 1px #d3d3d3 `colors.background.neutralFadedActive` | 999px | #ffffff `colors.background.base` | none | 0 |
+| [Venue card](#venue-card) | 322 x 284.66 | - | - | transparent | none | 0 |
+| [Browse venue card](#browse-venue-card) | 381.33 x 543.5 | - | - | transparent | none | 0 |
+| [Mobile venue card](#mobile-venue-card) | 236 x 227.33 | - | - | transparent | none | 0 |
+| [Plan card](#plan-card) | 277 x 368.5 | - | - | transparent | none | 0 |
+| [Business-type card](#business-type-card) | 378.66 x 378.67 | - | 18px | transparent | none | 0 |
 | [Customer/professional card](#customerprofessional-card) | 368 x 42 | - | - | transparent | none | 0 |
-| [Review card](#review-card) | 418 x 170 | 1px #f0f0ff `colors.background.accentFaded` | 999px | #f0f0ff `colors.background.accentFaded` | none | 0 |
+| [Review card](#review-card) | 418 x 170 | - | - | transparent | none | 0 |
 | [Help topic card](#help-topic-card) | 362.66 x 210 | 1px solid #e5e5e5 `colors.background.neutral` | 8px | #ffffff `colors.background.base` | none | 32px |
 | [Article link](#article-link) | 362.67 x 234 | 1px solid #e5e5e5 `colors.background.neutral` | 8px | #ffffff `colors.background.base` | none | 32px |
-| [Cart summary](#cart-summary) | 444 x 756 | 1px #e5e5e5 `colors.background.neutral` | 8px | #ffffff `colors.background.base` | none | 0px 32px |
-| [Search suggestions](#search-suggestions) | 536 x 2049 | - | 999px | #0d0d0d `colors.background.primary` | none | 0 |
+| [Cart summary](#cart-summary) | 444 x 756 | - | - | transparent | none | 0px 32px |
+| [Search suggestions](#search-suggestions) | 536 x 2049 | - | - | transparent | none | 0 |
 | [Nav flyout](#nav-flyout) | 588 x 391 | - | 16px | #f5f5f5 `colors.app.dark.foreground.neutral` | none | 0 |
-| [Menu drawer](#menu-drawer) | 198 x 177 | - | 8px | rgba(19, 19, 19, 0) `colors.background.transparent` | none | 0 |
-| [Opening times](#opening-times) | 418 x 250 | - | 999px | #78d240 | none | 0 |
+| [Menu drawer](#menu-drawer) | 198 x 177 | - | - | transparent | none | 0 |
+| [Opening times](#opening-times) | 418 x 250 | - | - | transparent | none | 0 |
 
 ## Components
 
@@ -106,7 +114,8 @@ Header link to the /user-flow chooser. Measured, never followed. Read as `shell-
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 86.41 x 48; radius 999px; background transparent; text Roobert 16/22 600, #0d0d0d `colors.background.primary`; transition max-inline-size 0.2s cubic-bezier(0.85, 0, 0.15, 1) |
+| default (same: hover, pressed) | size 86.41 x 48; radius 999px; background transparent; text Roobert 16/22 600, #0d0d0d `colors.background.primary`; transition max-inline-size 0.2s cubic-bezier(0.85, 0, 0.15, 1) |
+| focus-visible | pseudo ::before 86.40pxx48px: shadow #ffffff 0px 0px 0px 2px, #0d0d0d 0px 0px 0px 4px, radius 999px, opacity 1 |
 
 Child layers that carry the look: a::before 86.4062pxx48px radius 999px shadow #ffffff `colors.background.base` 0px 0px 0px 2px, #0d0d0d `colors.background.primary` 0px 0px 0px 4px; div 86.4x48 background rgba(19, 19, 19, 0) `colors.background.transparent` border 1px rgba(255, 255, 255, 0) `colors.background.onLoud` radius 999px.
 
@@ -117,7 +126,8 @@ Header link to the B2B marketing app. Measured, never followed. Read as `shell-b
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 153.61 x 48; radius 999px; background transparent; text Roobert 16/22 600, #0d0d0d `colors.background.primary`; transition max-inline-size 0.2s cubic-bezier(0.85, 0, 0.15, 1) |
+| default (same: hover, pressed) | size 153.61 x 48; radius 999px; background transparent; text Roobert 16/22 600, #0d0d0d `colors.background.primary`; transition max-inline-size 0.2s cubic-bezier(0.85, 0, 0.15, 1) |
+| focus-visible | pseudo ::before 153.60pxx48px: shadow #ffffff 0px 0px 0px 2px, #0d0d0d 0px 0px 0px 4px, radius 999px, opacity 1 |
 
 Child layers that carry the look: a::before 153.609pxx48px radius 999px shadow #ffffff `colors.background.base` 0px 0px 0px 2px, #0d0d0d `colors.background.primary` 0px 0px 0px 4px; div 153.6x48 background #ffffff `colors.background.base` border 1px #d3d3d3 `colors.background.neutralFadedActive` radius 999px.
 
@@ -128,7 +138,8 @@ Header button that opens the consumer drawer (aria-haspopup). Read as `shell-men
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible) | size 109.61 x 48; radius 999px; background transparent; outline 2px solid transparent, offset 2px; text Roobert 16/22 600, #0d0d0d `colors.background.primary`; transition max-inline-size 0.2s cubic-bezier(0.85, 0, 0.15, 1); icon 24 x 24, #0d0d0d `colors.background.primary` |
+| default (same: hover) | size 109.61 x 48; radius 999px; background transparent; outline 2px solid transparent, offset 2px; text Roobert 16/22 600, #0d0d0d `colors.background.primary`; transition max-inline-size 0.2s cubic-bezier(0.85, 0, 0.15, 1); icon 24 x 24, #0d0d0d `colors.background.primary` |
+| focus-visible | pseudo ::before 109.60pxx48px: shadow #ffffff 0px 0px 0px 2px, #0d0d0d 0px 0px 0px 4px, radius 999px, opacity 1 |
 | pressed | icon 23.04 x 23.04, #0d0d0d `colors.background.primary` |
 
 Child layers that carry the look: button 109.6x48 radius 999px; button::before 109.609pxx48px radius 999px shadow #ffffff `colors.background.base` 0px 0px 0px 2px, #0d0d0d `colors.background.primary` 0px 0px 0px 4px; div 109.6x48 background #ffffff `colors.background.base` border 1px #d3d3d3 `colors.background.neutralFadedActive` radius 999px.
@@ -140,7 +151,9 @@ Header button. Opens the app-download dialog on click — captured open where th
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 160.91 x 48; radius 999px; background transparent; outline 2px solid transparent, offset 2px; text Roobert 16/22 600, #0d0d0d `colors.background.primary`; transition max-inline-size 0.2s cubic-bezier(0.85, 0, 0.15, 1); icon 24 x 24, #0d0d0d `colors.background.primary` |
+| default (same: hover) | size 160.91 x 48; radius 999px; background transparent; outline 2px solid transparent, offset 2px; text Roobert 16/22 600, #0d0d0d `colors.background.primary`; transition max-inline-size 0.2s cubic-bezier(0.85, 0, 0.15, 1); icon 24 x 24, #0d0d0d `colors.background.primary` |
+| focus-visible | pseudo ::before 160.90pxx48px: shadow #ffffff 0px 0px 0px 2px, #0d0d0d 0px 0px 0px 4px, radius 999px, opacity 1 |
+| pressed | icon 23.04 x 23.04, #0d0d0d `colors.background.primary` |
 
 Child layers that carry the look: button 160.9x48 radius 999px; button::before 160.906pxx48px radius 999px shadow #ffffff `colors.background.base` 0px 0px 0px 2px, #0d0d0d `colors.background.primary` 0px 0px 0px 4px; div 160.9x48 background #ffffff `colors.background.base` border 1px #d3d3d3 `colors.background.neutralFadedActive` radius 999px.
 
@@ -189,6 +202,13 @@ The mega-menu under "Business types": a column of vertical links (Salon, Barber,
 
 ![Nav flyout default](components/crops/nav-flyout-default.png)
 
+#### Tooltip
+The tooltip an info icon opens on hover: dark fill, small body copy. Opened by hovering its trigger, dismissed by moving off. Read as `tooltip` on the pricing page.
+
+**Values (default).** size 260 x 48; padding 8px; radius 8px; background #141414 `colors.app.background.primary`; shadow rgba(0, 0, 0, 0.05) 0px 1px 2px 0px; text Roobert 12/16 400, #ffffff `colors.background.base`.
+
+![Tooltip default](components/crops/tooltip-default.png)
+
 ### Consumer home
 
 The marketplace landing page: a large display hero and the card carousels that follow it (recommended venues, categories, app promo).
@@ -205,9 +225,13 @@ The circular Prev/Next buttons on the recommended carousel. Read as `carousel-bu
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: pressed) | size 32 x 32; radius 999px; background rgba(19, 19, 19, 0.33) `colors.background.shade600`; outline 2px solid transparent, offset 2px; text Roobert 16/18.4 400, #0d0d0d `colors.background.primary`; icon 20 x 20, #0d0d0d `colors.background.primary` |
+| default (same: hover) | size 48 x 48; radius 999px; background transparent; outline 2px solid transparent, offset 2px; text Roobert 16/18.4 400, #0d0d0d `colors.background.primary`; transition opacity 0.1s cubic-bezier(0.85, 0, 0.15, 1); transform translate(0px, -24px) |
+| pressed | opacity 0 |
+| focus-visible | pseudo ::before 48pxx48px: shadow #ffffff 0px 0px 0px 2px, #0d0d0d 0px 0px 0px 4px, radius 999px, opacity 1 |
 
-![Carousel arrow default](components/crops/carousel-button-default.png) ![Carousel arrow pressed](components/crops/carousel-button-pressed.png)
+Child layers that carry the look: button 48x48 radius 999px; button::before 48pxx48px radius 999px shadow #ffffff `colors.background.base` 0px 0px 0px 2px, #0d0d0d `colors.background.primary` 0px 0px 0px 4px; div 48x48 background #ffffff `colors.background.base` border 1px #d3d3d3 `colors.background.neutralFadedActive` radius 999px.
+
+![Carousel arrow default](components/crops/carousel-button-default.png) ![Carousel arrow pressed](components/crops/carousel-button-pressed.png) ![Carousel arrow hover](components/crops/carousel-button-hover.png) ![Carousel arrow focus-visible](components/crops/carousel-button-focus-visible.png)
 
 ### Search
 
@@ -240,7 +264,9 @@ The "Any time" control of the hero search bar: opens the date/time popover. Focu
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focused) | size 326 x 402; padding 32px; radius 16px; background #f2f2f2 `colors.background.baseActive`; text Roobert 19/24 600, #0d0d0d `colors.background.primary`; icon 24 x 24, #ffc00a `colors.background.warning` |
+| default (same: focused) | size 274.53 x 22; padding 1px 2px; background transparent; outline 2px solid transparent, offset 2px; text Roobert 14/20 500, #000000 `colors.app.black`; placeholder #0d0d0d `colors.background.primary` |
+
+Child layers that carry the look: input 274.5x22.
 
 ![When control default](components/crops/search-when-control-default.png) ![When control focused](components/crops/search-when-control-focused.png)
 
@@ -249,7 +275,8 @@ The hero search submit. Measured, never pressed — a press runs a search query.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 94.41 x 48; radius 999px; background transparent; outline 2px solid transparent, offset 2px; text Roobert 16/22 600, #ffffff `colors.background.base`; transition max-inline-size 0.2s cubic-bezier(0.85, 0, 0.15, 1) |
+| default (same: hover, pressed) | size 94.41 x 48; radius 999px; background transparent; outline 2px solid transparent, offset 2px; text Roobert 16/22 600, #ffffff `colors.background.base`; transition max-inline-size 0.2s cubic-bezier(0.85, 0, 0.15, 1) |
+| focus-visible | pseudo ::before 94.40pxx48px: shadow #ffffff 0px 0px 0px 2px, #0d0d0d 0px 0px 0px 4px, radius 999px, opacity 1 |
 
 Child layers that carry the look: button 94.4x48 radius 999px; button::before 94.4062pxx48px radius 999px shadow #ffffff `colors.background.base` 0px 0px 0px 2px, #0d0d0d `colors.background.primary` 0px 0px 0px 4px; div 94.4x48 background #0d0d0d `colors.background.primary` border 1px #0d0d0d `colors.background.primary` radius 999px.
 
@@ -298,7 +325,8 @@ The round "Go back" control every auth-shell page carries. Read as `back-button`
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 48 x 48; radius 999px; background transparent; outline 2px solid transparent, offset 2px; text Roobert 16/18.4 400, #0d0d0d `colors.background.primary`; transition max-inline-size 0.2s cubic-bezier(0.85, 0, 0.15, 1) |
+| default (same: hover, pressed) | size 48 x 48; radius 999px; background transparent; outline 2px solid transparent, offset 2px; text Roobert 16/18.4 400, #0d0d0d `colors.background.primary`; transition max-inline-size 0.2s cubic-bezier(0.85, 0, 0.15, 1) |
+| focus-visible | pseudo ::before 48pxx48px: shadow #ffffff 0px 0px 0px 2px, #0d0d0d 0px 0px 0px 4px, radius 999px, opacity 1 |
 
 Child layers that carry the look: button 48x48 radius 999px; button::before 48pxx48px radius 999px shadow #ffffff `colors.background.base` 0px 0px 0px 2px, #0d0d0d `colors.background.primary` 0px 0px 0px 4px; div 48x48 background rgba(19, 19, 19, 0) `colors.background.transparent` border 1px rgba(255, 255, 255, 0) `colors.background.onLoud` radius 999px.
 
@@ -318,8 +346,9 @@ The "English (US)" locale picker on the chooser. Measured; not opened (opening i
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 97.81 x 36; padding 8px 0px; background transparent; outline 2px solid transparent, offset 2px; text Roobert 14/20 500, #6950f3 `colors.background.accent`; icon 20 x 20, #6950f3 `colors.background.accent` |
+| default | size 97.81 x 36; padding 8px 0px; background transparent; outline 2px solid transparent, offset 2px; text Roobert 14/20 500, #6950f3 `colors.background.accent`; icon 20 x 20, #6950f3 `colors.background.accent` |
 | hover | text Roobert 14/20 500, #5c4ace `colors.background.accentHover`; icon 20 x 20, #5c4ace `colors.background.accentHover` |
+| focus-visible | pseudo ::before 97.81pxx36px: shadow #ffffff 0px 0px 0px 2px, #0d0d0d 0px 0px 0px 4px, opacity 1 |
 | pressed | text Roobert 14/20 500, #403591 `colors.background.accentActive`; icon 20 x 20, #403591 `colors.background.accentActive` |
 
 Child layers that carry the look: button 97.8x36; button::before 97.8125pxx36px shadow #ffffff `colors.background.base` 0px 0px 0px 2px, #0d0d0d `colors.background.primary` 0px 0px 0px 4px.
@@ -331,7 +360,8 @@ Read as `auth-back` on the consumer sign-in page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 48 x 48; radius 999px; background transparent; outline 2px solid transparent, offset 2px; text Roobert 16/18.4 400, #0d0d0d `colors.background.primary`; transition max-inline-size 0.2s cubic-bezier(0.85, 0, 0.15, 1) |
+| default (same: hover, pressed) | size 48 x 48; radius 999px; background transparent; outline 2px solid transparent, offset 2px; text Roobert 16/18.4 400, #0d0d0d `colors.background.primary`; transition max-inline-size 0.2s cubic-bezier(0.85, 0, 0.15, 1) |
+| focus-visible | pseudo ::before 48pxx48px: shadow #ffffff 0px 0px 0px 2px, #0d0d0d 0px 0px 0px 4px, radius 999px, opacity 1 |
 
 Child layers that carry the look: button 48x48 radius 999px; button::before 48pxx48px radius 999px shadow #ffffff `colors.background.base` 0px 0px 0px 2px, #0d0d0d `colors.background.primary` 0px 0px 0px 4px; div 48x48 background rgba(19, 19, 19, 0) `colors.background.transparent` border 1px rgba(255, 255, 255, 0) `colors.background.onLoud` radius 999px.
 
@@ -342,7 +372,8 @@ The email submit — a press requests a verification code, so it is only measure
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 448 x 48; radius 999px; background transparent; outline 2px solid transparent, offset 2px; text Roobert 16/22 600, #ffffff `colors.background.base`; transition max-inline-size 0.2s cubic-bezier(0.85, 0, 0.15, 1) |
+| default (same: hover, pressed) | size 448 x 48; radius 999px; background transparent; outline 2px solid transparent, offset 2px; text Roobert 16/22 600, #ffffff `colors.background.base`; transition max-inline-size 0.2s cubic-bezier(0.85, 0, 0.15, 1) |
+| focus-visible | pseudo ::before 448pxx48px: shadow #ffffff 0px 0px 0px 2px, #0d0d0d 0px 0px 0px 4px, radius 999px, opacity 1 |
 
 Child layers that carry the look: button 448x48 radius 999px; button::before 448pxx48px radius 999px shadow #ffffff `colors.background.base` 0px 0px 0px 2px, #0d0d0d `colors.background.primary` 0px 0px 0px 4px; div 448x48 background #0d0d0d `colors.background.primary` border 1px #0d0d0d `colors.background.primary` radius 999px.
 
@@ -353,7 +384,8 @@ Child layers that carry the look: button 448x48 radius 999px; button::before 448
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 448 x 48; radius 999px; background transparent; outline 2px solid transparent, offset 2px; text Roobert 16/22 600, #0d0d0d `colors.background.primary`; transition max-inline-size 0.2s cubic-bezier(0.85, 0, 0.15, 1) |
+| default (same: hover, pressed) | size 448 x 48; radius 999px; background transparent; outline 2px solid transparent, offset 2px; text Roobert 16/22 600, #0d0d0d `colors.background.primary`; transition max-inline-size 0.2s cubic-bezier(0.85, 0, 0.15, 1) |
+| focus-visible | pseudo ::before 448pxx48px: shadow #ffffff 0px 0px 0px 2px, #0d0d0d 0px 0px 0px 4px, radius 999px, opacity 1 |
 
 Child layers that carry the look: button 448x48 radius 999px; button::before 448pxx48px radius 999px shadow #ffffff `colors.background.base` 0px 0px 0px 2px, #0d0d0d `colors.background.primary` 0px 0px 0px 4px; div 448x48 background #ffffff `colors.background.base` border 1px #d3d3d3 `colors.background.neutralFadedActive` radius 999px.
 
@@ -387,7 +419,8 @@ The professional sign-in submit. Measured, never pressed. Read as `partner-conti
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 396 x 48; radius 999px; background transparent; outline 2px solid transparent, offset 2px; text Roobert 17/24 600, #ffffff `colors.background.base`; transition max-inline-size 0.2s cubic-bezier(0.85, 0, 0.15, 1) |
+| default (same: hover, pressed) | size 396 x 48; radius 999px; background transparent; outline 2px solid transparent, offset 2px; text Roobert 17/24 600, #ffffff `colors.background.base`; transition max-inline-size 0.2s cubic-bezier(0.85, 0, 0.15, 1) |
+| focus-visible | pseudo ::before 396pxx48px: shadow #ffffff 0px 0px 0px 2px, radius 999px, opacity 1 |
 
 Child layers that carry the look: button 396x48 radius 999px; div 396x48 background #0d0d0d `colors.background.primary` border 1px #0d0d0d `colors.background.primary` radius 999px.
 
@@ -398,7 +431,8 @@ Read as `partner-sso` on the partner sign-in page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 396 x 48; radius 999px; background transparent; outline 2px solid transparent, offset 2px; text Roobert 17/24 600, #0d0d0d `colors.background.primary`; transition max-inline-size 0.2s cubic-bezier(0.85, 0, 0.15, 1) |
+| default (same: hover, pressed) | size 396 x 48; radius 999px; background transparent; outline 2px solid transparent, offset 2px; text Roobert 17/24 600, #0d0d0d `colors.background.primary`; transition max-inline-size 0.2s cubic-bezier(0.85, 0, 0.15, 1) |
+| focus-visible | pseudo ::before 396pxx48px: shadow #ffffff 0px 0px 0px 2px, radius 999px, opacity 1 |
 
 Child layers that carry the look: button 396x48 radius 999px; div 396x48 background #ffffff `colors.background.base` border 1px #d3d3d3 `colors.background.neutralFadedActive` radius 999px.
 
@@ -416,7 +450,7 @@ The link sending customers back to the consumer sign-in. Measured, never followe
 
 ### Form controls
 
-The sign-in email fields, the LP browse sort select and the partner form's decoy password input.
+The sign-in email fields and the partner form's decoy password input (the LP browse page carries no sort select — `lp-sort-select` is recorded as missing).
 
 #### Email field
 The auth shell's single text input: "We'll send you a verification code". Typed into then cleared; Continue is never pressed — no code is ever requested. Read as `auth-email-field` on the consumer sign-in page.
@@ -439,12 +473,7 @@ The professional sign-in's email input. Typed into then cleared; nothing is subm
 #### Sort select
 The "Sort by" native select over the results list. Read as `lp-sort-select` on the LP browse page.
 
-| State | Values (later rows list only what changes from the first row) |
-|---|---|
-| default | size 103.31 x 36; border 1px solid #767676 `colors.foreground.neutralFaded`; background transparent; text Roobert 16/18.4 400, #000000 `colors.app.black`; opacity 0 |
-| focus-visible | outline 2px solid #0d0d0d `colors.background.primary`, offset 2px |
-
-![Sort select default](components/crops/lp-sort-select-default.png) ![Sort select focus-visible](components/crops/lp-sort-select-focus-visible.png)
+Not on the page when it was captured.
 
 #### Hidden password input
 An off-viewport input[type=password] (x≈-1278) in the partner sign-in form — a browser-autocomplete decoy, not a painted control. The real flow is email + verification code. Read as `partner-decoy-password` on the partner sign-in page.
@@ -471,7 +500,8 @@ The sticky section nav (Services / Team / Reviews / About / Photos) — anchor l
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 48.41 x 52; radius 2px; background rgba(19, 19, 19, 0) `colors.background.transparent`; outline 2px solid transparent, offset 2px; text Roobert 14/20 500, #0d0d0d `colors.background.primary` |
+| default | size 48.41 x 52; radius 2px; background rgba(19, 19, 19, 0) `colors.background.transparent`; outline 2px solid transparent, offset 2px; pseudo ::after 48.40pxx4px: bg #0d0d0d `colors.background.primary`, radius 4px 4px 0px 0px, opacity 1; text Roobert 14/20 500, #0d0d0d `colors.background.primary` |
+| focus-visible | pseudo ::before 64.40pxx48px: shadow #ffffff 0px 0px 0px 2px inset; border 2px solid #0d0d0d `colors.background.primary`, radius 8px, opacity 1 + ::after 48.40pxx4px: bg #0d0d0d `colors.background.primary`, radius 4px 4px 0px 0px, opacity 1 |
 
 ![Venue section tab default](components/crops/venue-tab-default.png) ![Venue section tab focus-visible](components/crops/venue-tab-focus-visible.png)
 
@@ -480,7 +510,8 @@ The venue page's primary CTA — the primary button style. Never pressed: a pres
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 388 x 48; radius 999px; background transparent; text Roobert 16/22 600, #ffffff `colors.background.base`; transition max-inline-size 0.2s cubic-bezier(0.85, 0, 0.15, 1) |
+| default (same: hover, pressed) | size 388 x 48; radius 999px; background transparent; text Roobert 16/22 600, #ffffff `colors.background.base`; transition max-inline-size 0.2s cubic-bezier(0.85, 0, 0.15, 1) |
+| focus-visible | pseudo ::before 388pxx48px: shadow #ffffff 0px 0px 0px 2px, #0d0d0d 0px 0px 0px 4px, radius 999px, opacity 1 |
 
 Child layers that carry the look: a::before 388pxx48px radius 999px shadow #ffffff `colors.background.base` 0px 0px 0px 2px, #0d0d0d `colors.background.primary` 0px 0px 0px 4px; div 388x48 background #0d0d0d `colors.background.primary` border 1px #0d0d0d `colors.background.primary` radius 999px.
 
@@ -491,7 +522,8 @@ Child layers that carry the look: a::before 388pxx48px radius 999px shadow #ffff
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 123.61 x 36; radius 999px; background transparent; outline 2px solid transparent, offset 2px; text Roobert 14/20 500, #0d0d0d `colors.background.primary`; transition max-inline-size 0.2s cubic-bezier(0.85, 0, 0.15, 1) |
+| default (same: hover, pressed) | size 123.61 x 36; radius 999px; background transparent; outline 2px solid transparent, offset 2px; text Roobert 14/20 500, #0d0d0d `colors.background.primary`; transition max-inline-size 0.2s cubic-bezier(0.85, 0, 0.15, 1) |
+| focus-visible | pseudo ::before 123.60pxx36px: shadow #ffffff 0px 0px 0px 2px, #0d0d0d 0px 0px 0px 4px, radius 999px, opacity 1 |
 
 Child layers that carry the look: button 123.6x36 radius 999px; button::before 123.609pxx36px radius 999px shadow #ffffff `colors.background.base` 0px 0px 0px 2px, #0d0d0d `colors.background.primary` 0px 0px 0px 4px; div 123.6x36 background #ffffff `colors.background.base` border 1px #d3d3d3 `colors.background.neutralFadedActive` radius 999px.
 
@@ -520,7 +552,8 @@ The per-service select control. Never pressed. Read as `service-book-button` on 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 65.61 x 36; radius 999px; background transparent; outline 2px solid transparent, offset 2px; text Roobert 14/20 500, #0d0d0d `colors.background.primary`; transition max-inline-size 0.2s cubic-bezier(0.85, 0, 0.15, 1) |
+| default (same: hover, pressed) | size 65.61 x 36; radius 999px; background transparent; outline 2px solid transparent, offset 2px; text Roobert 14/20 500, #0d0d0d `colors.background.primary`; transition max-inline-size 0.2s cubic-bezier(0.85, 0, 0.15, 1) |
+| focus-visible | pseudo ::before 65.60pxx36px: shadow #ffffff 0px 0px 0px 2px, #0d0d0d 0px 0px 0px 4px, radius 999px, opacity 1 |
 
 Child layers that carry the look: button 65.6x36 radius 999px; button::before 65.6094pxx36px radius 999px shadow #ffffff `colors.background.base` 0px 0px 0px 2px, #0d0d0d `colors.background.primary` 0px 0px 0px 4px; div 65.6x36 background #ffffff `colors.background.base` border 1px #d3d3d3 `colors.background.neutralFadedActive` radius 999px.
 
@@ -715,7 +748,7 @@ Child layers that carry the look: div 98.9x30 background #f0f0ff `colors.backgro
 #### Plan price
 The price display inside a plan card (amount + period + commission line). Read as `plan-price` on the pricing page.
 
-**Values (default).** size 277 x 22.5; background transparent; text Roobert 15/22.5 400, #767676 `colors.foreground.neutralFaded`.
+**Values (default).** size 277 x 44; background transparent; text Roobert 40/44 700, #141414 `colors.app.background.primary`.
 
 ![Plan price default](components/crops/plan-price-default.png)
 
@@ -734,9 +767,7 @@ The plan card's call to action. Measured, never pressed: a press starts sign-up.
 #### Feature row
 A line in a plan's feature list (label plus checkmark or info icon). Read as `feature-row` on the pricing page.
 
-**Values (default).** size 280 x 48; background transparent; text Roobert 17/24 600, #141414 `colors.app.background.primary`; icon 24 x 24, #141414 `colors.app.background.primary`.
-
-Child layers that carry the look: a 171.8x48 background #ffffff `colors.background.base` border 1px #d3d3d3 `colors.background.neutralFadedActive` radius 999px; a 101.6x48 background #141414 `colors.app.background.primary` border 1px transparent radius 999px; button 117.2x48 background #ffffff `colors.background.base` border 1px #d3d3d3 `colors.background.neutralFadedActive` radius 999px.
+**Values (default).** size 277 x 22.5; background transparent; text Roobert 15/22.5 400, #767676 `colors.foreground.neutralFaded`.
 
 ![Feature row default](components/crops/feature-row-default.png)
 
@@ -745,9 +776,8 @@ The "i" badge beside a feature — hovering opens a tooltip. Read as `info-icon`
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 117.2 x 48; padding 0px 20px; border 1px solid #d3d3d3 `colors.background.neutralFadedActive`; radius 999px; background #ffffff `colors.background.base`; text Roobert 17/24 600, #141414 `colors.app.background.primary`; transition transform 0.2s cubic-bezier(0, 0.55, 0.45, 1); icon 24 x 24, #141414 `colors.app.background.primary` |
-| hover | border 1px solid #bfbfbf `colors.background.neutralActive`; background #f5f5f5 `colors.app.dark.foreground.neutral` |
-| focus-visible | outline 2px solid transparent, offset 2px |
+| default (same: hover) | size 16 x 16; background transparent; text Roobert 15/20 400, #767676 `colors.foreground.neutralFaded`; icon 17 x 16, #767676 `colors.foreground.neutralFaded` |
+| focus-visible | outline 1px auto #101010, offset 0px |
 
 ![Info icon default](components/crops/info-icon-default.png) ![Info icon hover](components/crops/info-icon-hover.png) ![Info icon focus-visible](components/crops/info-icon-focus-visible.png)
 
@@ -762,7 +792,7 @@ A pricing FAQ disclosure: question row with a chevron. The open state is capture
 
 ### Marketplace browse (/lp)
 
-The legacy /lp/ microsite (its own stylesheet, literal values, no token vars): the LP header, the category chip rail, the sort select, browse venue cards, the Show on map button and pagination. The category page /lp/en/bt/hair-salons and the Singapore browse page were both captured.
+The legacy /lp/ microsite (its own stylesheet, literal values, no token vars): the LP header, the category chip rail, browse venue cards, the Show on map button and pagination. The category page /lp/en/bt/hair-salons and the Singapore browse page were both captured.
 
 #### LP top bar
 The /lp microsite chrome: its own stylesheet, no Panda vars — every value here is measured. Read as `lp-header` on the LP browse page.
@@ -819,16 +849,15 @@ The "See all N services" link inside a venue card. Measured, never followed. Rea
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 381.33 x 243.02; background transparent; text Roobert 14/20 500, #0d0d0d `colors.background.primary` |
-
-Child layers that carry the look: div 381.3x64 background #f5f5f5 `colors.app.dark.foreground.neutral` radius 16px; div 381.3x64 background #f5f5f5 `colors.app.dark.foreground.neutral` radius 16px; div 381.3x64 background #f5f5f5 `colors.app.dark.foreground.neutral` radius 16px.
+| default | size 381.33 x 19; background transparent; text Roobert 14/19 500, #6950f3 `colors.background.accent` |
+| hover | text Roobert 14/19 500, #5c4ace `colors.background.accentHover` |
 
 ![See all services link default](components/crops/lp-see-all-default.png) ![See all services link hover](components/crops/lp-see-all-hover.png)
 
 #### Card price
 A service price inside a venue card ("$98", "from $0"). Read as `lp-price` on the LP browse page.
 
-**Values (default).** size 1224 x 44; background transparent; text Roobert 16/22 400, #767676 `colors.foreground.neutralFaded`.
+**Values (default).** size 26.7 x 20; background transparent; text Roobert 14/20 500, #0d0d0d `colors.background.primary`.
 
 ![Card price default](components/crops/lp-price-default.png)
 
@@ -881,7 +910,8 @@ The 32x32 icon-only burger (aria-label "Menu") in the mobile bar. Read as `m-men
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 32 x 32; background transparent; outline 2px solid transparent, offset 2px; text Roobert 16/18.4 400, #0d0d0d `colors.background.primary`; icon 32 x 32, #0d0d0d `colors.background.primary` |
+| default (same: hover, pressed) | size 32 x 32; background transparent; outline 2px solid transparent, offset 2px; text Roobert 16/18.4 400, #0d0d0d `colors.background.primary`; icon 32 x 32, #0d0d0d `colors.background.primary` |
+| focus-visible | pseudo ::before 32pxx32px: shadow #ffffff 0px 0px 0px 2px, #0d0d0d 0px 0px 0px 4px, opacity 1 |
 
 Child layers that carry the look: button 32x32; button::before 32pxx32px shadow #ffffff `colors.background.base` 0px 0px 0px 2px, #0d0d0d `colors.background.primary` 0px 0px 0px 4px.
 
@@ -921,7 +951,7 @@ Child layers that carry the look: a::before 236pxx227.328px shadow #ffffff `colo
 
 - **Pressed** was forced with DevTools, so a state a script adds on mousedown (if any) is missing.
 - **Hover on the menu item and the venue tab** could not be applied (the elements unmount or move when the pointer leaves); those entries hold the states that did take.
-- **A carousel arrow's hover/focus** measured 1x1 — the button only paints full-size while the pointer is over the carousel — so only its default and pressed readings stand.
+- **The LP browse sort select** does not exist on the captured page — its only `<select>` is the header's language picker; `lp-sort-select` is recorded missing rather than measured on the wrong control.
 - **Disabled, loading and error states** do not exist on the captured controls (sign-in forms disable Continue until an email is present, but no disabled example was recorded).
 
 ### Themes

@@ -1,6 +1,6 @@
 # Component measurements
 
-Computed styles read from www.gauth.com on undefined by `tools/capture/measure.mjs`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), and written here by `tools/capture/build-measurements.mjs` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
+Computed styles read from www.fresha.com on 2026-11-16 by `tools/capture/public/measure.mjs`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), and written here by `tools/capture/public/build-measurements.mjs` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
 
 States: `hover` is a real pointer hover; `focus-visible` a real keyboard focus (Shift+Tab, Tab); `pressed` is forced with DevTools (`CSS.forcePseudoState` :active:hover), so no button was pressed; `focused` is a text field clicked into; `filled` is sample text typed and deleted again, with nothing sent; `opened`, `expanded` and the rest are resting states reached by the page or by a UI toggle.
 
@@ -57,7 +57,7 @@ Page: home. Selector: `a:has-text("Log in")`. States: default, hover, focus-visi
 | Transition | max-inline-size 0.2s cubic-bezier(0.85, 0, 0.15, 1) | = | = | = |
 | Cursor | pointer | = | = | = |
 | ::before | 86.4062px x 48px, absolute, bg #000000 @ 0, radius 999px, shadow #ffffff 0px 0px 0px 2px, #0d0d0d 0px 0px 0px 4px | = | = | = |
-| Painted layers | a::before.pos_relative.before:bx-s_border-box 86.4062pxx48px r 999px shadow #ffffff 0px 0px 0px 2px, #0d0d0d 0px 0px 0px 4px; div.d_inline-flex.jc_center 86.4x48.0 bg #131313 @ 0 border T:1px #ffffff @ 0 / R:1px #ffffff @ 0 / B:1px #ffffff @ 0 / L:1px #ffffff @ 0 r 999px | a::before.pos_relative.before:bx-s_border-box 86.4062pxx48px r 999px shadow #ffffff 0px 0px 0px 2px, #0d0d0d 0px 0px 0px 4px; div.d_inline-flex.jc_center 86.4x48.0 bg #131313 @ 0.04 border T:1px #ffffff @ 0 / R:1px #ffffff @ 0 / B:1px #ffffff @ 0 / L:1px #ffffff @ 0 r 999px | = | a::before.pos_relative.before:bx-s_border-box 86.4062pxx48px r 999px shadow #ffffff 0px 0px 0px 2px, #0d0d0d 0px 0px 0px 4px; div.d_inline-flex.jc_center 82.9x46.1 bg #131313 @ 0.08 border T:1px #ffffff @ 0 / R:1px #ffffff @ 0 / B:1px #ffffff @ 0 / L:1px #ffffff @ 0 r 999px |
+| Painted layers | a::before.pos_relative.before:bx-s_border-box 86.4062pxx48px r 999px shadow #ffffff 0px 0px 0px 2px, #0d0d0d 0px 0px 0px 4px; div.d_inline-flex.jc_center 86.4x48.0 bg #131313 @ 0 border T:1px #ffffff @ 0 / R:1px #ffffff @ 0 / B:1px #ffffff @ 0 / L:1px #ffffff @ 0 r 999px | a::before.pos_relative.before:bx-s_border-box 86.4062pxx48px r 999px shadow #ffffff 0px 0px 0px 2px, #0d0d0d 0px 0px 0px 4px; div.d_inline-flex.jc_center 86.4x48.0 bg #131313 @ 0.04 border T:1px #ffffff @ 0 / R:1px #ffffff @ 0 / B:1px #ffffff @ 0 / L:1px #ffffff @ 0 r 999px | = | a::before.pos_relative.before:bx-s_border-box 86.4062pxx48px r 999px shadow #ffffff 0px 0px 0px 2px, #0d0d0d 0px 0px 0px 4px; div.d_inline-flex.jc_center 86.4x48.0 bg #131313 @ 0.08 border T:1px #ffffff @ 0 / R:1px #ffffff @ 0 / B:1px #ffffff @ 0 / L:1px #ffffff @ 0 r 999px |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
 Crops: `shell-login-link-default.png`, `shell-login-link-hover.png`, `shell-login-link-focus-visible.png`, `shell-login-link-pressed.png`.
@@ -138,9 +138,9 @@ Page: home. Selector: `button:has-text("Get the app")`. States: default, hover, 
 | Text node | span.ta_inherit.textStyle_body.m.semibold: Roobert 16px/22px 600, #0d0d0d, ls -0.1px | = | = | = |
 | Transition | max-inline-size 0.2s cubic-bezier(0.85, 0, 0.15, 1) | = | = | = |
 | Cursor | pointer | = | = | = |
-| Icon | 24 x 24, colour #0d0d0d | = | = | = |
+| Icon | 24 x 24, colour #0d0d0d | = | = | 23.04 x 23.04, colour #0d0d0d |
 | ::before | 160.906px x 48px, absolute, bg #000000 @ 0, radius 999px, shadow #ffffff 0px 0px 0px 2px, #0d0d0d 0px 0px 0px 4px | = | = | = |
-| Painted layers | button.ring_none.pos_relative 160.9x48.0 r 999px outline 2px solid #000000 @ 0 offset 2px; button::before.ring_none.pos_relative 160.906pxx48px r 999px shadow #ffffff 0px 0px 0px 2px, #0d0d0d 0px 0px 0px 4px; div.d_inline-flex.jc_center 160.9x48.0 bg #ffffff border T:1px #d3d3d3 / R:1px #d3d3d3 / B:1px #d3d3d3 / L:1px #d3d3d3 r 999px | = | = | button.ring_none.pos_relative 160.9x48.0 r 999px outline 2px solid #000000 @ 0 offset 2px; button::before.ring_none.pos_relative 160.906pxx48px r 999px shadow #ffffff 0px 0px 0px 2px, #0d0d0d 0px 0px 0px 4px; div.d_inline-flex.jc_center 160.9x48.0 bg #f2f2f2 border T:1px #acacac / R:1px #acacac / B:1px #acacac / L:1px #acacac r 999px |
+| Painted layers | button.ring_none.pos_relative 160.9x48.0 r 999px outline 2px solid #000000 @ 0 offset 2px; button::before.ring_none.pos_relative 160.906pxx48px r 999px shadow #ffffff 0px 0px 0px 2px, #0d0d0d 0px 0px 0px 4px; div.d_inline-flex.jc_center 160.9x48.0 bg #ffffff border T:1px #d3d3d3 / R:1px #d3d3d3 / B:1px #d3d3d3 / L:1px #d3d3d3 r 999px | = | = | button.ring_none.pos_relative 160.9x48.0 r 999px outline 2px solid #000000 @ 0 offset 2px; button::before.ring_none.pos_relative 160.906pxx48px r 999px shadow #ffffff 0px 0px 0px 2px, #0d0d0d 0px 0px 0px 4px; div.d_inline-flex.jc_center 154.5x46.1 bg #f2f2f2 border T:1px #acacac / R:1px #acacac / B:1px #acacac / L:1px #acacac r 999px |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
 Crops: `shell-getapp-button-default.png`, `shell-getapp-button-hover.png`, `shell-getapp-button-focus-visible.png`, `shell-getapp-button-pressed.png`.
@@ -204,23 +204,24 @@ Crops: `menu-drawer-default.png`.
 
 Menu drawer item. A row in the menu popover. Measured, never followed.
 
-Page: home. Selector: `menu item`. States: default.
+Page: home. Selector: `menu item`. States: default, hover.
 
-| Property | default |
-|---|---|
-| Size (w x h) | 198 x 20 |
-| Padding | 0px |
-| Border | none |
-| Radius | 0px |
-| Background | transparent |
-| Box shadow | none |
-| Outline | none |
-| Font | Roobert 14px/20px 500 |
-| Letter spacing | -0.1px |
-| Colour | #6950f3 |
-| Transition | none |
-| Cursor | pointer |
-| How | at rest |
+| Property | default | hover |
+|---|---|---|
+| Size (w x h) | 198 x 20 | - |
+| Padding | 0px | - |
+| Border | none | - |
+| Radius | 0px | - |
+| Background | transparent | - |
+| Box shadow | none | - |
+| Outline | none | - |
+| Font | Roobert 14px/20px 500 | - |
+| Letter spacing | -0.1px | - |
+| Colour | #6950f3 | - |
+| Transition | none | - |
+| Cursor | pointer | - |
+| How | at rest | - |
+| Error | - | locator.hover: Timeout 5000ms exceeded. Call log:   - waiting for locator('[data-m-mark="drawer-signup"]').first().first()  |
 
 Crops: `menu-item-default.png`.
 
@@ -277,6 +278,30 @@ Page: business. Selector: `[role=menu] flyout`. States: default.
 
 Crops: `nav-flyout-default.png`.
 
+#### tooltip
+
+Tooltip. The tooltip an info icon opens on hover: dark fill, small body copy. Opened by hovering its trigger, dismissed by moving off.
+
+Page: pricing. Selector: `[role=tooltip]`. States: default.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 260 x 48 |
+| Padding | 8px |
+| Border | none |
+| Radius | 8px |
+| Background | #141414 |
+| Box shadow | #000000 @ 0.05 0px 1px 2px 0px |
+| Outline | none |
+| Font | Roobert 12px/16px 400 |
+| Letter spacing | -0.1px |
+| Colour | #ffffff |
+| Transition | none |
+| Painted layers | div.z_50.us_none 260.0x48.0 bg #141414 r 8px shadow #000000 @ 0.05 0px 1px 2px 0px |
+| How | at rest |
+
+Crops: `tooltip-default.png`.
+
 ### Consumer home
 
 #### home-hero-title
@@ -306,29 +331,30 @@ Crops: `home-hero-title-default.png`.
 
 Carousel arrow. The circular Prev/Next buttons on the recommended carousel.
 
-Page: home. Selector: `button[aria-label] arrow`. States: default, pressed.
+Page: home. Selector: `button[aria-label] arrow`. States: default, pressed, hover, focus-visible.
 
-| Property | default | pressed |
-|---|---|---|
-| Size (w x h) | 32 x 32 | = |
-| Padding | 0px | = |
-| Border | none | = |
-| Radius | 999px | = |
-| Background | #131313 @ 0.33 | = |
-| Box shadow | none | = |
-| Outline | 2px solid #000000 @ 0 offset 2px | = |
-| Font | Roobert 16px/18.4px 400 | = |
-| Letter spacing | -0.1px | = |
-| Colour | #0d0d0d | = |
-| Transition | none | = |
-| Cursor | pointer | = |
-| Icon | 20 x 20, colour #0d0d0d | = |
-| ::before | 32px x 32px, absolute, bg #000000 @ 0, radius 999px, shadow #ffffff 0px 0px 0px 2px, #0d0d0d 0px 0px 0px 4px | = |
-| ::after | 48px x 48px, absolute, bg #000000 @ 0, radius 0px | = |
-| Painted layers | button.ring_none.pos_relative 32.0x32.0 bg #131313 @ 0.33 r 999px outline 2px solid #000000 @ 0 offset 2px; button::before.ring_none.pos_relative 32pxx32px r 999px shadow #ffffff 0px 0px 0px 2px, #0d0d0d 0px 0px 0px 4px | = |
-| How | at rest | CDP forcePseudoState :active:hover |
+| Property | default | pressed | hover | focus-visible |
+|---|---|---|---|---|
+| Size (w x h) | 48 x 48 | = | = | = |
+| Padding | 0px | = | = | = |
+| Border | none | = | = | = |
+| Radius | 999px | = | = | = |
+| Background | transparent | = | = | = |
+| Box shadow | none | = | = | = |
+| Outline | 2px solid #000000 @ 0 offset 2px | = | = | = |
+| Font | Roobert 16px/18.4px 400 | = | = | = |
+| Letter spacing | -0.1px | = | = | = |
+| Colour | #0d0d0d | = | = | = |
+| Transition | opacity 0.1s cubic-bezier(0.85, 0, 0.15, 1) | = | = | = |
+| Transform | matrix(1, 0, 0, 1, 0, -24) | = | = | = |
+| Cursor | pointer | = | = | = |
+| Icon | 0 x 0, colour #0d0d0d | = | = | = |
+| ::before | 48px x 48px, absolute, bg #000000 @ 0, radius 999px, shadow #ffffff 0px 0px 0px 2px, #0d0d0d 0px 0px 0px 4px | = | = | = |
+| Painted layers | button.ring_none.pos_absolute 48.0x48.0 r 999px outline 2px solid #000000 @ 0 offset 2px; button::before.ring_none.pos_absolute 48pxx48px r 999px shadow #ffffff 0px 0px 0px 2px, #0d0d0d 0px 0px 0px 4px; div.d_inline-flex.jc_center 48.0x48.0 bg #ffffff border T:1px #d3d3d3 / R:1px #d3d3d3 / B:1px #d3d3d3 / L:1px #d3d3d3 r 999px | button.ring_none.pos_absolute 48.0x48.0 r 999px outline 2px solid #000000 @ 0 offset 2px; button::before.ring_none.pos_absolute 48pxx48px r 999px shadow #ffffff 0px 0px 0px 2px, #0d0d0d 0px 0px 0px 4px; div.d_inline-flex.jc_center 46.1x46.1 bg #f2f2f2 border T:1px #acacac / R:1px #acacac / B:1px #acacac / L:1px #acacac r 999px | button.ring_none.pos_absolute 48.0x48.0 r 999px outline 2px solid #000000 @ 0 offset 2px; button::before.ring_none.pos_absolute 48pxx48px r 999px shadow #ffffff 0px 0px 0px 2px, #0d0d0d 0px 0px 0px 4px; div.d_inline-flex.jc_center 48.0x48.0 bg #f5f5f5 border T:1px #bfbfbf / R:1px #bfbfbf / B:1px #bfbfbf / L:1px #bfbfbf r 999px | = |
+| How | at rest | CDP forcePseudoState :active:hover | mouse hover | element.focus() |
+| Opacity | - | 0 | = | = |
 
-Crops: `carousel-button-default.png`, `carousel-button-pressed.png`.
+Crops: `carousel-button-default.png`, `carousel-button-pressed.png`, `carousel-button-hover.png`, `carousel-button-focus-visible.png`.
 
 ### Search
 
@@ -394,21 +420,22 @@ Page: home. Selector: `"Any time" control`. States: default, focused.
 
 | Property | default | focused |
 |---|---|---|
-| Size (w x h) | 326 x 402 | = |
-| Padding | 32px | = |
+| Size (w x h) | 274.53 x 22 | = |
+| Padding | 1px 2px | = |
 | Border | none | = |
-| Radius | 16px | = |
-| Background | #f2f2f2 | = |
+| Radius | 0px | = |
+| Background | transparent | = |
 | Box shadow | none | = |
-| Outline | none | = |
-| Font | Roobert 16px/18.4px 400 | = |
+| Outline | 2px solid #000000 @ 0 offset 2px | = |
+| Font | Roobert 14px/20px 500 | = |
 | Letter spacing | -0.1px | = |
-| Colour | #0d0d0d | = |
-| Text node | h3.textStyle_header.xs.semibold.mbe_150: Roobert 19px/24px 600, #0d0d0d, ls -0.2px | = |
+| Colour | #000000 | = |
 | Transition | none | = |
-| Icon | 24 x 24, colour #ffc00a | = |
-| Painted layers | div.bg-c_background.neutralFaded.bdr_xl 326.0x402.0 bg #f2f2f2 r 16px | = |
+| Cursor | text | = |
+| Placeholder | #0d0d0d, opacity 1 | = |
+| Painted layers | input.ap_none.bg-c_transparent 274.5x22.0 outline 2px solid #000000 @ 0 offset 2px | = |
 | How | at rest | clicked into the field |
+| Ancestor paint | - | 2 up label.d_flex.ai_center bg #ffffff shadow #131313 @ 0.08 0px 2px 8px 0px, #131313 @ 0.12 0px 4px 20px 0px |
 
 Crops: `search-when-control-default.png`, `search-when-control-focused.png`.
 
@@ -434,8 +461,8 @@ Page: home. Selector: `button "Search"`. States: default, hover, focus-visible, 
 | Transition | max-inline-size 0.2s cubic-bezier(0.85, 0, 0.15, 1) | = | = | = |
 | Cursor | pointer | = | = | = |
 | ::before | 94.4062px x 48px, absolute, bg #000000 @ 0, radius 999px, shadow #ffffff 0px 0px 0px 2px, #0d0d0d 0px 0px 0px 4px | = | = | = |
-| Painted layers | button.ring_none.pos_relative 94.4x48.0 r 999px outline 2px solid #000000 @ 0 offset 2px; button::before.ring_none.pos_relative 94.4062pxx48px r 999px shadow #ffffff 0px 0px 0px 2px, #0d0d0d 0px 0px 0px 4px; div.d_inline-flex.jc_center 94.4x48.0 bg #0d0d0d border T:1px #0d0d0d / R:1px #0d0d0d / B:1px #0d0d0d / L:1px #0d0d0d r 999px | button.ring_none.pos_relative 94.4x48.0 r 999px outline 2px solid #000000 @ 0 offset 2px; button::before.ring_none.pos_relative 94.4062pxx48px r 999px shadow #ffffff 0px 0px 0px 2px, #0d0d0d 0px 0px 0px 4px; div.d_inline-flex.jc_center 94.4x48.0 bg #262626 border T:1px #262626 / R:1px #262626 / B:1px #262626 / L:1px #262626 r 999px | = | button.ring_none.pos_relative 94.4x48.0 r 999px outline 2px solid #000000 @ 0 offset 2px; button::before.ring_none.pos_relative 94.4062pxx48px r 999px shadow #ffffff 0px 0px 0px 2px, #0d0d0d 0px 0px 0px 4px; div.d_inline-flex.jc_center 94.4x48.0 bg #4a4a4a border T:1px #4a4a4a / R:1px #4a4a4a / B:1px #4a4a4a / L:1px #4a4a4a r 999px |
-| Ancestor paint | 1 up form.bdr_[100px].ov_hidden bg #ffffff; 2 up div.bkdp_[saturate(4.5)_blur(10px)].bx-sh_[inset_0_0_0_6px_rgb(156_156_156_/_8%)] shadow #9c9c9c @ 0.08 0px 0px 0px 6px inset | = | = | = |
+| Painted layers | button.ring_none.pos_relative 94.4x48.0 r 999px outline 2px solid #000000 @ 0 offset 2px; button::before.ring_none.pos_relative 94.4062pxx48px r 999px shadow #ffffff 0px 0px 0px 2px, #0d0d0d 0px 0px 0px 4px; div.d_inline-flex.jc_center 94.4x48.0 bg #0d0d0d border T:1px #0d0d0d / R:1px #0d0d0d / B:1px #0d0d0d / L:1px #0d0d0d r 999px | button.ring_none.pos_relative 94.4x48.0 r 999px outline 2px solid #000000 @ 0 offset 2px; button::before.ring_none.pos_relative 94.4062pxx48px r 999px shadow #ffffff 0px 0px 0px 2px, #0d0d0d 0px 0px 0px 4px; div.d_inline-flex.jc_center 94.4x48.0 bg #262626 border T:1px #262626 / R:1px #262626 / B:1px #262626 / L:1px #262626 r 999px | = | button.ring_none.pos_relative 94.4x48.0 r 999px outline 2px solid #000000 @ 0 offset 2px; button::before.ring_none.pos_relative 94.4062pxx48px r 999px shadow #ffffff 0px 0px 0px 2px, #0d0d0d 0px 0px 0px 4px; div.d_inline-flex.jc_center 90.6x46.1 bg #4a4a4a border T:1px #4a4a4a / R:1px #4a4a4a / B:1px #4a4a4a / L:1px #4a4a4a r 999px |
+| Ancestor paint | 1 up form.bdr_[100px].ov_hidden bg #f2f2f2; 2 up div.bkdp_[saturate(4.5)_blur(10px)].bx-sh_[inset_0_0_0_6px_rgb(156_156_156_/_8%)] shadow #9c9c9c @ 0.08 0px 0px 0px 6px inset | = | 1 up form.bdr_[100px].ov_hidden bg #ffffff; 2 up div.bkdp_[saturate(4.5)_blur(10px)].bx-sh_[inset_0_0_0_6px_rgb(156_156_156_/_8%)] shadow #9c9c9c @ 0.08 0px 0px 0px 6px inset | 1 up form.bdr_[100px].ov_hidden bg #ffffff; 2 up div.bkdp_[saturate(4.5)_blur(10px)].bx-sh_[inset_0_0_0_6px_rgb(156_156_156_/_8%)] shadow #9c9c9c @ 0.08 0px 0px 0px 6px inset |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
 Crops: `search-button-default.png`, `search-button-hover.png`, `search-button-focus-visible.png`, `search-button-pressed.png`.
@@ -463,7 +490,7 @@ Page: home. Selector: `a[href*="/a/"]`. States: default, hover.
 | Text node | p.textStyle_body.m.semibold.flex-g_1: Roobert 16px/22px 600, #0d0d0d, ls -0.1px | = |
 | Transition | none | = |
 | Icon | 14 x 14, colour #ffc00a | = |
-| Painted layers | a::before.pos_absolute.before:bx-s_border-box 322pxx284.656px shadow #ffffff 0px 0px 0px 2px, #0d0d0d 0px 0px 0px 4px; button.ring_none.pos_relative 32.0x32.0 bg #131313 @ 0.33 r 999px outline 2px solid #000000 @ 0 offset 2px; button::before.ring_none.pos_relative 32pxx32px r 999px shadow #ffffff 0px 0px 0px 2px, #0d0d0d 0px 0px 0px 4px; div.bx-sh_[0_8px_40px_0_rgba(13,13,13,0.12),_0_0_0_0.5px_token(colors.background.shade300),_-1.25px_0_0_-0.75px_token(colors.background.shade300),_1.25px_0_0_-0.75px_token(colors.background.shade300)].d_inline-flex 119.7x24.0 image linear-gradient(#ffffff @ 0.7, #ffffff @ 0.7) r 999px shadow #0d0d0d @ 0.12 0px 8px 40px 0px, #131313 @ 0.1 0px 0px 0px 0.5px, #131313 @ 0.1 -1.25px 0px 0px -0.75px, #131313 @ 0.1 1.25px 0px 0px -0.75px; div::before.bx-sh_[0_8px_40px_0_rgba(13,13,13,0.12),_0_0_0_0.5px_token(colors.background.shade300),_-1.25px_0_0_-0.75px_token(colors.background.shade300),_1.25px_0_0_-0.75px_token(colors.background.shade300)].d_inline-flex 119.703pxx24px r 999px shadow #ffffff @ 0.15 0px 1px 0px 0px inset, #ffffff @ 0.1 0px -1px 0px 0px inset, #ffffff @ 0.2 0px 40px 10px -40px inset, #ffffff @ 0.2 0px -40px 10px -40px inset | = |
+| Painted layers | a::before.pos_absolute.before:bx-s_border-box 322pxx284.656px shadow #ffffff 0px 0px 0px 2px, #0d0d0d 0px 0px 0px 4px; button.ring_none.pos_relative 32.0x32.0 bg #131313 @ 0.33 r 999px outline 2px solid #000000 @ 0 offset 2px; button::before.ring_none.pos_relative 32pxx32px r 999px shadow #ffffff 0px 0px 0px 2px, #0d0d0d 0px 0px 0px 4px; div.bx-sh_[0_8px_40px_0_rgba(13,13,13,0.12),_0_0_0_0.5px_token(colors.background.shade300),_-1.25px_0_0_-0.75px_token(colors.background.shade300),_1.25px_0_0_-0.75px_token(colors.background.shade300)].d_inline-flex 177.2x24.0 image linear-gradient(#ffffff @ 0.7, #ffffff @ 0.7) r 999px shadow #0d0d0d @ 0.12 0px 8px 40px 0px, #131313 @ 0.1 0px 0px 0px 0.5px, #131313 @ 0.1 -1.25px 0px 0px -0.75px, #131313 @ 0.1 1.25px 0px 0px -0.75px; div::before.bx-sh_[0_8px_40px_0_rgba(13,13,13,0.12),_0_0_0_0.5px_token(colors.background.shade300),_-1.25px_0_0_-0.75px_token(colors.background.shade300),_1.25px_0_0_-0.75px_token(colors.background.shade300)].d_inline-flex 177.203pxx24px r 999px shadow #ffffff @ 0.15 0px 1px 0px 0px inset, #ffffff @ 0.1 0px -1px 0px 0px inset, #ffffff @ 0.2 0px 40px 10px -40px inset, #ffffff @ 0.2 0px -40px 10px -40px inset | = |
 | How | at rest | mouse hover |
 
 Crops: `venue-card-default.png`, `venue-card-hover.png`.
@@ -874,27 +901,9 @@ Crops: `partner-email-field-default.png`, `partner-email-field-focused.png`, `pa
 
 Sort select. The "Sort by" native select over the results list.
 
-Page: lp. Selector: `select`. States: default, focus-visible.
+Page: lp. Selector: `select`. States: .
 
-| Property | default | focus-visible |
-|---|---|---|
-| Size (w x h) | 103.31 x 36 | = |
-| Padding | 0px | = |
-| Border | 1px solid #767676 | = |
-| Radius | 0px | = |
-| Background | transparent | = |
-| Box shadow | none | = |
-| Outline | none | 2px solid #0d0d0d offset 2px |
-| Font | Roobert 16px/18.4px 400 | = |
-| Letter spacing | normal | = |
-| Colour | #000000 | = |
-| Transition | none | = |
-| Opacity | 0 | = |
-| Cursor | pointer | = |
-| Painted layers | select 103.3x36.0 border T:1px #767676 / R:1px #767676 / B:1px #767676 / L:1px #767676 | select 103.3x36.0 border T:1px #767676 / R:1px #767676 / B:1px #767676 / L:1px #767676 outline 2px solid #0d0d0d offset 2px |
-| How | at rest | Shift+Tab, Tab |
-
-Crops: `lp-sort-select-default.png`, `lp-sort-select-focus-visible.png`.
+Not found on the page at capture time.
 
 #### partner-decoy-password
 
@@ -1601,16 +1610,16 @@ Page: pricing. Selector: `price`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 277 x 22.5 |
+| Size (w x h) | 277 x 44 |
 | Padding | 0px |
 | Border | none |
 | Radius | 0px |
 | Background | transparent |
 | Box shadow | none |
 | Outline | none |
-| Font | Roobert 15px/22.5px 400 |
+| Font | Roobert 40px/44px 700 |
 | Letter spacing | -0.1px |
-| Colour | #767676 |
+| Colour | #141414 |
 | Transition | none |
 | How | at rest |
 
@@ -1651,21 +1660,17 @@ Page: pricing. Selector: `li feature`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 280 x 48 |
+| Size (w x h) | 277 x 22.5 |
 | Padding | 0px |
-| Gap | 16px |
 | Border | none |
 | Radius | 0px |
 | Background | transparent |
 | Box shadow | none |
 | Outline | none |
-| Font | Roobert 16px/24px 400 |
+| Font | Roobert 15px/22.5px 400 |
 | Letter spacing | -0.1px |
-| Colour | #141414 |
-| Text node | span: Roobert 17px/24px 600, #141414, ls -0.2px |
+| Colour | #767676 |
 | Transition | none |
-| Icon | 24 x 24, colour #141414 |
-| Painted layers | a.textStyle_body.m.semibold.tw_nowrap 171.8x48.0 bg #ffffff border T:1px #d3d3d3 / R:1px #d3d3d3 / B:1px #d3d3d3 / L:1px #d3d3d3 r 999px; a.textStyle_body.m.semibold.tw_nowrap 101.6x48.0 bg #141414 border T:1px #000000 @ 0 / R:1px #000000 @ 0 / B:1px #000000 @ 0 / L:1px #000000 @ 0 r 999px; button.textStyle_body.m.semibold.tw_nowrap 117.2x48.0 bg #ffffff border T:1px #d3d3d3 / R:1px #d3d3d3 / B:1px #d3d3d3 / L:1px #d3d3d3 r 999px |
 | How | at rest |
 
 Crops: `feature-row-default.png`.
@@ -1678,21 +1683,21 @@ Page: pricing. Selector: `button info`. States: default, hover, focus-visible.
 
 | Property | default | hover | focus-visible |
 |---|---|---|---|
-| Size (w x h) | 117.2 x 48 | = | = |
-| Padding | 0px 20px | = | = |
-| Border | 1px solid #d3d3d3 | 1px solid #bfbfbf | = |
-| Radius | 999px | = | = |
-| Background | #ffffff | #f5f5f5 | = |
+| Size (w x h) | 16 x 16 | = | = |
+| Padding | 0px | = | = |
+| Border | none | = | = |
+| Radius | 0px | = | = |
+| Background | transparent | = | = |
 | Box shadow | none | = | = |
-| Outline | none | = | 2px solid #000000 @ 0 offset 2px |
-| Font | Roobert 17px/24px 600 | = | = |
-| Letter spacing | -0.2px | = | = |
-| Colour | #141414 | = | = |
-| Transition | transform 0.2s cubic-bezier(0, 0.55, 0.45, 1) | = | = |
+| Outline | none | = | 1px auto #101010 offset 0px |
+| Font | Roobert 15px/20px 400 | = | = |
+| Letter spacing | -0.1px | = | = |
+| Colour | #767676 | = | = |
+| Transition | none | = | = |
 | Cursor | pointer | = | = |
-| Icon | 24 x 24, colour #141414 | = | = |
-| Painted layers | button.textStyle_body.m.semibold.tw_nowrap 117.2x48.0 bg #ffffff border T:1px #d3d3d3 / R:1px #d3d3d3 / B:1px #d3d3d3 / L:1px #d3d3d3 r 999px | button.textStyle_body.m.semibold.tw_nowrap 117.2x48.0 bg #f5f5f5 border T:1px #bfbfbf / R:1px #bfbfbf / B:1px #bfbfbf / L:1px #bfbfbf r 999px | button.textStyle_body.m.semibold.tw_nowrap 117.2x48.0 bg #ffffff border T:1px #d3d3d3 / R:1px #d3d3d3 / B:1px #d3d3d3 / L:1px #d3d3d3 r 999px outline 2px solid #000000 @ 0 offset 2px |
+| Icon | 17 x 16, colour #767676 | = | = |
 | How | at rest | mouse hover | Shift+Tab, Tab |
+| Painted layers | - | = | button.d_none.laptop:d_block 16.0x16.0 outline 1px auto #101010 offset 0px |
 
 Crops: `info-icon-default.png`, `info-icon-hover.png`, `info-icon-focus-visible.png`.
 
@@ -1865,21 +1870,18 @@ Page: lp. Selector: `see-all link`. States: default, hover.
 
 | Property | default | hover |
 |---|---|---|
-| Size (w x h) | 381.33 x 243.02 | = |
+| Size (w x h) | 381.33 x 19 | = |
 | Padding | 0px | = |
-| Gap | 16px | = |
 | Border | none | = |
 | Radius | 0px | = |
 | Background | transparent | = |
 | Box shadow | none | = |
 | Outline | none | = |
-| Font | Roobert 16px/18.4px 400 | = |
-| Letter spacing | normal | = |
-| Colour | #0d1619 | = |
-| Text node | p.axDOAG.FkLavb: Roobert 14px/20px 500, #0d0d0d, ls -0.1px | = |
+| Font | Roobert 14px/19px 500 | = |
+| Letter spacing | -0.1px | = |
+| Colour | #6950f3 | #5c4ace |
 | Transition | none | = |
 | Cursor | pointer | = |
-| Painted layers | div.jc1E8C 381.3x64.0 bg #f5f5f5 r 16px; div.jc1E8C 381.3x64.0 bg #f5f5f5 r 16px; div.jc1E8C 381.3x64.0 bg #f5f5f5 r 16px | div.jc1E8C 381.3x64.0 bg #f5f5f5 r 16px; div.jc1E8C 381.3x64.0 bg #0d0d0d @ 0.1 r 16px; div.jc1E8C 381.3x64.0 bg #f5f5f5 r 16px |
 | How | at rest | mouse hover |
 
 Crops: `lp-see-all-default.png`, `lp-see-all-hover.png`.
@@ -1892,17 +1894,18 @@ Page: lp. Selector: `price span`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 1224 x 44 |
+| Size (w x h) | 26.7 x 20 |
 | Padding | 0px |
 | Border | none |
 | Radius | 0px |
 | Background | transparent |
 | Box shadow | none |
 | Outline | none |
-| Font | Roobert 16px/22px 400 |
+| Font | Roobert 14px/20px 500 |
 | Letter spacing | -0.1px |
-| Colour | #767676 |
+| Colour | #0d0d0d |
 | Transition | none |
+| Cursor | pointer |
 | How | at rest |
 
 Crops: `lp-price-default.png`.
@@ -2098,7 +2101,7 @@ Crops: `m-venue-card-default.png`.
 
 ## Transitions declared in the readable stylesheets
 
-Gauth's own CSS is served cross-origin, so this list holds only what the CSSOM could read on each page (antd's CSS-in-JS and inline styles); the per-state Transition rows above are computed values and cover Gauth's own rules.
+Fresha compiles its Panda layer to hashed selectors and atomic class names, so this list holds the transitions and animations the CSSOM could read on each page, by hashed selector; the per-state Transition rows above are computed values and cover the same rules.
 
 - auth: `inset-inline-start 0.18s, inline-size 0.18s, opacity 0.12s`, `max-inline-size`, `none`, `scale var(--duration-var) var(--easing-var), max-inline-size var(--duration-var-1) var(--easing-var-1), padding var(--duration-var-1) var(--easing-var-1), gap var(--duration-var-1) var(--easing-var-1)`, `scale`
 

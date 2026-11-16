@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "capturedAt": "2026-11-15T22:02:35.014Z",
+  "capturedAt": "2026-11-16T19:20:44.371Z",
   "screenshot": "for-business-light-full.png",
   "sanitizedSourceUrl": "https://www.fresha.com/for-business",
   "requested": {
@@ -34,7 +34,7 @@
     },
     "documentSize": {
       "width": 1440,
-      "height": 13805
+      "height": 13572
     },
     "scroll": {
       "x": 0,
@@ -48,13 +48,13 @@
   },
   "png": {
     "width": 1440,
-    "height": 13805
+    "height": 13572
   },
   "dimensionCheck": {
     "status": "pass",
     "expected": {
       "width": 1440,
-      "height": 13805
+      "height": 13572
     },
     "basis": "fullPage"
   },
