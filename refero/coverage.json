@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 170,
-    "system_domains": 162,
-    "matched_domains": 132,
-    "missing_domains": 301,
+    "system_packages": 172,
+    "system_domains": 164,
+    "matched_domains": 134,
+    "missing_domains": 299,
     "system_domains_absent_from_catalog": 30
   },
   "matched": {
@@ -2135,6 +2135,23 @@
         }
       ]
     },
+    "gofundme.com": {
+      "catalog": [
+        {
+          "name": "GoFundMe",
+          "domain": "gofundme.com",
+          "id": 436
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "gofundme",
+          "name": "GoFundMe",
+          "url": "https://www.gofundme.com",
+          "name_match": true
+        }
+      ]
+    },
     "google.com": {
       "catalog": [
         {
@@ -2165,6 +2182,23 @@
           "name": "Gemini Notebook (NotebookLM)",
           "url": "https://notebook.google.com",
           "name_match": false
+        }
+      ]
+    },
+    "grammarly.com": {
+      "catalog": [
+        {
+          "name": "Grammarly",
+          "domain": "grammarly.com",
+          "id": 42
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "grammarly",
+          "name": "Grammarly",
+          "url": "https://www.grammarly.com",
+          "name_match": true
         }
       ]
     },
@@ -2498,20 +2532,6 @@
         "name": "GlossGenius",
         "domain": "glossgenius.com",
         "id": 830
-      }
-    ],
-    "gofundme.com": [
-      {
-        "name": "GoFundMe",
-        "domain": "gofundme.com",
-        "id": 436
-      }
-    ],
-    "grammarly.com": [
-      {
-        "name": "Grammarly",
-        "domain": "grammarly.com",
-        "id": 42
       }
     ],
     "grok.com": [
