@@ -904,5 +904,11 @@
     "groupId": "web-categories",
     "labels": ["Collaboration Tools", "Productivity"],
     "reason": "catalog.json describes a video review and collaboration workspace: marketing pages with an embedded product demo, a pricing page, an MCP documentation page and the signed-out login boundary."
+  },
+  {
+    "referenceId": "systems:fresha",
+    "groupId": "web-categories",
+    "labels": ["Marketplace", "Scheduling Tools", "Health & Wellness"],
+    "reason": "catalog.json describes a beauty and wellness booking marketplace: a consumer browse-and-book flow, venue profiles, a booking wizard boundary, business scheduling software marketing and the partner sign-in."
   }
 ]
