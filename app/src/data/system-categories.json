@@ -964,5 +964,11 @@
     "groupId": "web-categories",
     "labels": ["Marketplace", "Scheduling Tools", "Health & Wellness"],
     "reason": "catalog.json describes a beauty and wellness booking marketplace: a consumer browse-and-book flow, venue profiles, a booking wizard boundary, business scheduling software marketing and the partner sign-in."
+  },
+  {
+    "referenceId": "systems:gladia",
+    "groupId": "web-categories",
+    "labels": ["AI Tool", "Development Tools"],
+    "reason": "catalog.json describes an audio-transcription and speech-AI developer platform: the marketing pages, usage-based pricing with a calculator, the Mintlify docs site and the app-shell auth cards."
   }
 ]
