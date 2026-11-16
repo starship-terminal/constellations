@@ -195,7 +195,7 @@ Crops: `nav-cta-default.png`, `nav-cta-hover.png`, `nav-cta-focus-visible.png`, 
 
 #### mega-card
 
-Mega-menu card. A .mega-card tile inside the Features mega-menu (Get inspired / Designers / Help / Blog); measured with the menu open, never followed.
+Mega-menu card. A .mega-card tile inside the Features mega-menu (Get inspired / Designers / Help / Blog); measured with the menu open, never followed. The four tiles compute visibility:hidden until a Webflow reveal that never fired in the headless run — the geometry and styles are the authored values; no crop was saved because nothing painted.
 
 Page: home. Selector: `a.mega-card`. States: default.
 
@@ -216,7 +216,7 @@ Page: home. Selector: `a.mega-card`. States: default.
 | Painted layers | div.mega-card-img 316.0x210.7 bg #ffffff @ 0.07 |
 | How | at rest |
 
-Crops: `mega-card-default.png`.
+Crops: none.
 
 ### Home
 

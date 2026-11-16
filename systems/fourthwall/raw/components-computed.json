@@ -4399,7 +4399,7 @@
      "z": "200",
      "pos": "sticky",
      "rect": "1440x56@0,0",
-     "text": "Help center|Fourthwall \u2197"
+     "text": "Help center|Fourthwall ↗"
     },
     {
      "node": "div.navbar-sidebar__backdrop",
@@ -6303,7 +6303,7 @@
    "url": "https://fourthwall.com/",
    "title": "Mega-menu panel",
    "group": "Site chrome",
-   "desc": "The Features mega-menu panel \u2014 nav columns plus featured cards; opened by hovering its own trigger.",
+   "desc": "The Features mega-menu panel — nav columns plus featured cards; opened by hovering its own trigger.",
    "selector": ".mega-clip"
   },
   "hero-h1": {
@@ -6397,7 +6397,7 @@
    "url": "https://fourthwall.com/",
    "title": "Hero headline",
    "group": "Home",
-   "desc": "\"One platform for premium products and branded shops.\" \u2014 the display masthead.",
+   "desc": "\"One platform for premium products and branded shops.\" — the display masthead.",
    "selector": "h1"
   },
   "hero-sub": {
@@ -6805,7 +6805,7 @@
       "top": "auto"
      },
      "::before": {
-      "content": "\"\u2605\"",
+      "content": "\"★\"",
       "width": "10px",
       "height": "11.4062px",
       "position": "static",
@@ -6967,7 +6967,7 @@
    "url": "https://fourthwall.com/",
    "title": "Logo wall",
    "group": "Home",
-   "desc": "The .ws--trusted \"trusted by\" section \u2014 the creator/company logo wall.",
+   "desc": "The .ws--trusted \"trusted by\" section — the creator/company logo wall.",
    "selector": ".ws--trusted",
    "recaptureMissed": "2026-11-15"
   },
@@ -7167,7 +7167,7 @@
    "url": "https://fourthwall.com/",
    "title": "Dark feature section",
    "group": "On-ink (dark sections)",
-   "desc": "A .page-section.on-ink dark band \u2014 the sheet's own on-ink scope class repaints the --_surface---* variables; measured as painted, no theme toggle exists.",
+   "desc": "A .page-section.on-ink dark band — the sheet's own on-ink scope class repaints the --_surface---* variables; measured as painted, no theme toggle exists.",
    "selector": ".page-section.on-ink"
   },
   "wordmark-section": {
@@ -7175,7 +7175,7 @@
     "default": {
      "tag": "section",
      "classes": "wordmark-section",
-     "text": "\u00a9 Fourthwall Acceptable Use Policy Terms of Service Privacy Policy Your Privacy ",
+     "text": "© Fourthwall Acceptable Use Policy Terms of Service Privacy Policy Your Privacy ",
      "rect": {
       "x": 0,
       "y": 442.9,
@@ -7290,7 +7290,7 @@
      ],
      "textStyle": {
       "node": "span",
-      "text": "\u00a9 Fourthwall",
+      "text": "© Fourthwall",
       "fontFamily": "\"Suisse Intl\", Arial, sans-serif",
       "fontSize": "16.9995px",
       "lineHeight": "28.0492px",
@@ -7316,7 +7316,7 @@
    "url": "https://fourthwall.com/",
    "title": "Wordmark section",
    "group": "On-ink (dark sections)",
-   "desc": "The dark \"Made with Fourthwall\" wordmark band \u2014 on-ink surface values.",
+   "desc": "The dark \"Made with Fourthwall\" wordmark band — on-ink surface values.",
    "selector": ".wordmark-section",
    "recaptureMissed": "2026-11-15"
   },
@@ -7677,7 +7677,7 @@
    "url": "https://fourthwall.com/",
    "title": "Footer",
    "group": "Footer",
-   "desc": "The .site-footer.is-warm footer \u2014 sitemap columns, social and legal links on the ink surface.",
+   "desc": "The .site-footer.is-warm footer — sitemap columns, social and legal links on the ink surface.",
    "selector": "footer.site-footer",
    "recaptureMissed": "2026-11-15"
   },
@@ -8333,7 +8333,7 @@
    "url": "https://fourthwall.com/pricing",
    "title": "Billing toggle",
    "group": "Pricing",
-   "desc": "The \"Pay yearly / Pay monthly\" toggle \u2014 the monthly state was painted by clicking it (a local UI toggle; Pro reads $19 vs $15).",
+   "desc": "The \"Pay yearly / Pay monthly\" toggle — the monthly state was painted by clicking it (a local UI toggle; Pro reads $19 vs $15).",
    "selector": ".billing-toggle"
   },
   "billing-btn": {
@@ -10377,7 +10377,7 @@
    "url": "https://fourthwall.com/blog",
    "title": "Newsletter field",
    "group": "Blog",
-   "desc": "The newsletter email input on /blog; focused and typed into then cleared \u2014 never subscribed.",
+   "desc": "The newsletter email input on /blog; focused and typed into then cleared — never subscribed.",
    "selector": "blog email input"
   },
   "cmp-h1": {
@@ -10746,7 +10746,7 @@
    "url": "https://fourthwall.com/compare",
    "title": "Platform search",
    "group": "Compare",
-   "desc": "The \"Compare Fourthwall to\u2026\" search field; focused and typed into then cleared \u2014 a local filter, nothing sent.",
+   "desc": "The \"Compare Fourthwall to…\" search field; focused and typed into then cleared — a local filter, nothing sent.",
    "selector": ".cmp-search input"
   },
   "cmp-card": {
@@ -10754,7 +10754,7 @@
     "default": {
      "tag": "a",
      "classes": "cmp-row reveal w-inline-block in",
-     "text": "Fourthwall vs Shopify Shopify runs $39\u2013$399 a month and sells creator features a",
+     "text": "Fourthwall vs Shopify Shopify runs $39–$399 a month and sells creator features a",
      "rect": {
       "x": 40,
       "y": 370.2,
@@ -10868,7 +10868,7 @@
     "hover": {
      "tag": "a",
      "classes": "cmp-row reveal w-inline-block in",
-     "text": "Fourthwall vs Shopify Shopify runs $39\u2013$399 a month and sells creator features a",
+     "text": "Fourthwall vs Shopify Shopify runs $39–$399 a month and sells creator features a",
      "rect": {
       "x": 40,
       "y": 370.2,
@@ -10985,7 +10985,7 @@
    "url": "https://fourthwall.com/compare",
    "title": "Comparison card",
    "group": "Compare",
-   "desc": "A comparison card linking to a vs-page (Shopify, Patreon\u2026); measured, never followed.",
+   "desc": "A comparison card linking to a vs-page (Shopify, Patreon…); measured, never followed.",
    "selector": "compare card"
   },
   "cmpart-h1": {
@@ -12171,7 +12171,7 @@
    "url": "https://fourthwall.com/get-started",
    "title": "Auth card",
    "group": "Signup (auth shell)",
-   "desc": "The signed-out auth surface at /get-started (auth.fourthwall.com, Keycloak on the catalogue DS) \u2014 the panel holding the Google/Apple/email choices; measured at rest, nothing pressed.",
+   "desc": "The signed-out auth surface at /get-started (auth.fourthwall.com, Keycloak on the catalogue DS) — the panel holding the Google/Apple/email choices; measured at rest, nothing pressed.",
    "selector": "auth card"
   },
   "auth-google": {
@@ -12623,7 +12623,7 @@
    "url": "https://fourthwall.com/get-started",
    "title": "Google provider",
    "group": "Signup (auth shell)",
-   "desc": "The \"Continue with Google\" provider button; states measured, never pressed \u2014 no OAuth flow was started.",
+   "desc": "The \"Continue with Google\" provider button; states measured, never pressed — no OAuth flow was started.",
    "selector": "auth Google"
   },
   "auth-apple": {
@@ -13990,7 +13990,7 @@
    "url": "https://products.fourthwall.com/",
    "title": "Catalogue nav",
    "group": "Product catalogue",
-   "desc": "The products.fourthwall.com top bar \u2014 logo, category tabs, search, Log in / Sign up.",
+   "desc": "The products.fourthwall.com top bar — logo, category tabs, search, Log in / Sign up.",
    "selector": "catalog header"
   },
   "cat-search": {
@@ -14265,7 +14265,7 @@
    "url": "https://products.fourthwall.com/",
    "title": "Catalogue search",
    "group": "Product catalogue",
-   "desc": "The catalogue search field \u2014 a bare input[type=text] in the nav; focused and typed into then cleared \u2014 a local filter, nothing sent.",
+   "desc": "The catalogue search field — a bare input[type=text] in the nav; focused and typed into then cleared — a local filter, nothing sent.",
    "selector": "catalog search"
   },
   "quiz-card": {
@@ -14929,7 +14929,7 @@
    "url": "https://products.fourthwall.com/",
    "title": "Quiz option",
    "group": "Product catalogue",
-   "desc": "A product-finder answer chip; clicking selects it locally (the quiz needs more steps before recommending) \u2014 nothing is submitted.",
+   "desc": "A product-finder answer chip; clicking selects it locally (the quiz needs more steps before recommending) — nothing is submitted.",
    "selector": "catalog quiz option"
   },
   "prod-card": {
@@ -15814,7 +15814,7 @@
    "url": "https://products.fourthwall.com/comfort-colors-garment-dyed-heavyweight-t-shirt-dtg",
    "title": "Colour swatch",
    "group": "Product page",
-   "desc": "A colour swatch button on the PDP (classless styled-components swatch buttons); selecting one repaints the photo locally \u2014 measured, selection states only.",
+   "desc": "A colour swatch button on the PDP (classless styled-components swatch buttons); selecting one repaints the photo locally — measured, selection states only.",
    "selector": "pdp swatch"
   },
   "pdp-sizeguide-btn": {
@@ -16164,7 +16164,7 @@
    "url": "https://products.fourthwall.com/comfort-colors-garment-dyed-heavyweight-t-shirt-dtg",
    "title": "Size-guide button",
    "group": "Product page",
-   "desc": "The \"Size guide\" control \u2014 a local dialog toggle.",
+   "desc": "The \"Size guide\" control — a local dialog toggle.",
    "selector": "pdp Size guide",
    "recaptureMissed": "2026-11-15"
   },
@@ -16683,7 +16683,7 @@
    "url": "https://products.fourthwall.com/comfort-colors-garment-dyed-heavyweight-t-shirt-dtg",
    "title": "Sign-in-to-design CTA",
    "group": "Product page",
-   "desc": "The \"Sign in to design\" action \u2014 it starts an auth flow; measured, never pressed.",
+   "desc": "The \"Sign in to design\" action — it starts an auth flow; measured, never pressed.",
    "selector": "pdp Sign in to design"
   },
   "pdp-desc": {
@@ -16931,7 +16931,7 @@
    "url": "https://docs.fourthwall.com/",
    "title": "Docs navbar",
    "group": "Developer docs",
-   "desc": "The Mintlify top bar \u2014 logo, tabs, search and the theme menu.",
+   "desc": "The Mintlify top bar — logo, tabs, search and the theme menu.",
    "selector": "docs navbar"
   },
   "docs-search": {
@@ -17387,7 +17387,7 @@
    "url": "https://docs.fourthwall.com/",
    "title": "Search trigger",
    "group": "Developer docs",
-   "desc": "The docs search control \u2014 opens the cmdk dialog; states measured.",
+   "desc": "The docs search control — opens the cmdk dialog; states measured.",
    "selector": "docs search"
   },
   "docs-theme-btn": {
@@ -17766,7 +17766,7 @@
    "url": "https://docs.fourthwall.com/",
    "title": "Theme menu button",
    "group": "Developer docs",
-   "desc": "The \"Change theme preference\" button \u2014 the docs site's real Light/Dark/System menu; measured, the Dark choice is made only on the docsdark pass.",
+   "desc": "The \"Change theme preference\" button — the docs site's real Light/Dark/System menu; measured, the Dark choice is made only on the docsdark pass.",
    "selector": "docs theme button"
   },
   "docs-sidebar": {
@@ -19746,7 +19746,7 @@
    "url": "https://docs.fourthwall.com/quickstart",
    "title": "Docs page (dark)",
    "group": "Developer docs (dark)",
-   "desc": "The docs article surface under html.dark \u2014 reached through the site's own theme menu, not a reconstruction.",
+   "desc": "The docs article surface under html.dark — reached through the site's own theme menu, not a reconstruction.",
    "selector": "docs main (dark)"
   },
   "dd-h1": {
@@ -20285,7 +20285,7 @@
     "default": {
      "tag": "nav",
      "classes": "theme-layout-navbar navbar navbar--fixed-top",
-     "text": "Help center Fourthwall \u2197",
+     "text": "Help center Fourthwall ↗",
      "rect": {
       "x": 0,
       "y": 0,
@@ -20402,7 +20402,7 @@
    "url": "https://help.fourthwall.com/",
    "title": "Help navbar",
    "group": "Help center",
-   "desc": "The Docusaurus navbar \u2014 \"Help center\" wordmark, the ctrl-K search, the Fourthwall link and the colour-mode toggle.",
+   "desc": "The Docusaurus navbar — \"Help center\" wordmark, the ctrl-K search, the Fourthwall link and the colour-mode toggle.",
    "selector": ".navbar"
   },
   "help-search": {
@@ -20701,7 +20701,7 @@
    "url": "https://help.fourthwall.com/",
    "title": "Search field",
    "group": "Help center",
-   "desc": "The help search field (ctrl-K hint); focused and typed into then cleared \u2014 a local filter, nothing sent.",
+   "desc": "The help search field (ctrl-K hint); focused and typed into then cleared — a local filter, nothing sent.",
    "selector": "help search input"
   },
   "help-theme": {
@@ -21096,7 +21096,7 @@
    "url": "https://help.fourthwall.com/",
    "title": "Colour-mode toggle",
    "group": "Help center",
-   "desc": "The navbar colour-mode button \u2014 the help site's real dark toggle (data-theme); its states were measured but it was only switched on the helpdark pass.",
+   "desc": "The navbar colour-mode button — the help site's real dark toggle (data-theme); its states were measured but it was only switched on the helpdark pass.",
    "selector": "help theme toggle"
   },
   "help-fw-link": {
@@ -21104,7 +21104,7 @@
     "default": {
      "tag": "a",
      "classes": "navbar__item navbar__link",
-     "text": "Fourthwall \u2197",
+     "text": "Fourthwall ↗",
      "rect": {
       "x": 1271,
       "y": 12,
@@ -21194,7 +21194,7 @@
     "hover": {
      "tag": "a",
      "classes": "navbar__item navbar__link",
-     "text": "Fourthwall \u2197",
+     "text": "Fourthwall ↗",
      "rect": {
       "x": 1271,
       "y": 12,
@@ -21284,7 +21284,7 @@
     "focus-visible": {
      "tag": "a",
      "classes": "navbar__item navbar__link",
-     "text": "Fourthwall \u2197",
+     "text": "Fourthwall ↗",
      "rect": {
       "x": 1271,
       "y": 12,
@@ -21381,7 +21381,7 @@
     "pressed": {
      "tag": "a",
      "classes": "navbar__item navbar__link",
-     "text": "Fourthwall \u2197",
+     "text": "Fourthwall ↗",
      "rect": {
       "x": 1271,
       "y": 12,
@@ -21474,7 +21474,7 @@
    "url": "https://help.fourthwall.com/",
    "title": "Fourthwall link",
    "group": "Help center",
-   "desc": "The \"Fourthwall \u2197\" navbar link back to the product; measured, never followed.",
+   "desc": "The \"Fourthwall ↗\" navbar link back to the product; measured, never followed.",
    "selector": "help Fourthwall link"
   },
   "help-card": {
@@ -21651,7 +21651,7 @@
    "url": "https://help.fourthwall.com/",
    "title": "Category link",
    "group": "Help center",
-   "desc": "A category link row on the help landing list (\"Setting up your shop\", \"Design my storefront\", \u2026); measured, never followed.",
+   "desc": "A category link row on the help landing list (\"Setting up your shop\", \"Design my storefront\", …); measured, never followed.",
    "selector": "help category link"
   },
   "help-side-item": {
@@ -22730,12 +22730,12 @@
       {
        "node": "li::after.breadcrumbs__item",
        "size": "8pxx8px",
-       "bgImage": "url(data:\u2026)"
+       "bgImage": "url(data:…)"
       },
       {
        "node": "li::after.breadcrumbs__item",
        "size": "8pxx8px",
-       "bgImage": "url(data:\u2026)"
+       "bgImage": "url(data:…)"
       },
       {
        "node": "span.breadcrumbs__link",
@@ -22784,7 +22784,7 @@
    "url": "https://help.fourthwall.com/category/setting-up-your-shop",
    "title": "Help page (dark)",
    "group": "Help center (dark)",
-   "desc": "The help category surface under data-theme=dark \u2014 reached through the site's own colour-mode toggle, not a reconstruction.",
+   "desc": "The help category surface under data-theme=dark — reached through the site's own colour-mode toggle, not a reconstruction.",
    "selector": "help main (dark)"
   },
   "hd-h1": {
@@ -22886,7 +22886,7 @@
     "default": {
      "tag": "nav",
      "classes": "theme-layout-navbar navbar navbar--fixed-top",
-     "text": "Help center \u2318 K Fourthwall \u2197",
+     "text": "Help center ⌘ K Fourthwall ↗",
      "rect": {
       "x": 0,
       "y": 0,
@@ -24230,7 +24230,7 @@
    "url": "https://fourthwall.com/",
    "title": "Made-with band",
    "group": "On-ink (dark sections)",
-   "desc": "The .made-with \"Made with Fourthwall\" storefront showcase band \u2014 on-ink surface values.",
+   "desc": "The .made-with \"Made with Fourthwall\" storefront showcase band — on-ink surface values.",
    "selector": ".made-with"
   },
   "closer-cta": {
@@ -24580,7 +24580,7 @@
    "url": "https://fourthwall.com/",
    "title": "Closer CTA",
    "group": "On-ink (dark sections)",
-   "desc": "The giant \"Make something worth buying\" word-link in the closing section \u2014 it carries the start flow; measured, never followed.",
+   "desc": "The giant \"Make something worth buying\" word-link in the closing section — it carries the start flow; measured, never followed.",
    "selector": ".closer-section a.closer-link"
   },
   "cmpart-card": {
@@ -24588,7 +24588,7 @@
     "default": {
      "tag": "div",
      "classes": "plan-card plan-card--pro",
-     "text": "Choose Fourthwall if You\u2019d rather not pay a monthly store fee You want print-on-",
+     "text": "Choose Fourthwall if You’d rather not pay a monthly store fee You want print-on-",
      "rect": {
       "x": 160,
       "y": 148.2,
@@ -25425,7 +25425,7 @@
    "url": "https://products.fourthwall.com/",
    "title": "Category tab",
    "group": "Product catalogue",
-   "desc": "A category tab in the catalogue nav strip (Discover / All Products / Apparel\u2026); measured, never followed. Focus/pressed states were not reliably measurable (hydration nav swap).",
+   "desc": "A category tab in the catalogue nav strip (Discover / All Products / Apparel…); measured, never followed. Focus/pressed states were not reliably measurable (hydration nav swap).",
    "selector": "catalog category tab"
   },
   "pdp-size": {
@@ -25433,7 +25433,7 @@
     "default": {
      "tag": "span",
      "classes": "",
-     "text": "S\u20134XL",
+     "text": "S–4XL",
      "rect": {
       "x": 992,
       "y": 386,
@@ -25519,7 +25519,7 @@
    "url": "https://products.fourthwall.com/comfort-colors-garment-dyed-heavyweight-t-shirt-dtg",
    "title": "Size-range label",
    "group": "Product page",
-   "desc": "The static \"S\u20134XL\" size-range label \u2014 no per-size option exists on the public PDP.",
+   "desc": "The static \"S–4XL\" size-range label — no per-size option exists on the public PDP.",
    "selector": "pdp size range"
   },
   "pdp-sizeguide": {
@@ -26670,7 +26670,7 @@
    "url": "https://fourthwall.com/",
    "title": "Start now button",
    "group": "Site chrome",
-   "desc": "The \"Start now\" pill in the nav \u2014 it links to /get-started; measured, never activated.",
+   "desc": "The \"Start now\" pill in the nav — it links to /get-started; measured, never activated.",
    "selector": ".nav-bar a.btn-primary"
   },
   "mega-card": {
@@ -26762,7 +26762,6 @@
        "bg": "rgba(255, 255, 255, 0.07)"
       }
      ],
-     "crop": "components/crops/mega-card-default.png",
      "via": "at rest"
     }
    },
@@ -26771,7 +26770,7 @@
    "url": "https://fourthwall.com/",
    "title": "Mega-menu card",
    "group": "Site chrome",
-   "desc": "A .mega-card tile inside the Features mega-menu (Get inspired / Designers / Help / Blog); measured with the menu open, never followed.",
+   "desc": "A .mega-card tile inside the Features mega-menu (Get inspired / Designers / Help / Blog); measured with the menu open, never followed. The four tiles compute visibility:hidden until a Webflow reveal that never fired in the headless run — the geometry and styles are the authored values; no crop was saved because nothing painted.",
    "selector": "a.mega-card"
   },
   "hero-cta": {
@@ -27195,7 +27194,7 @@
    "url": "https://fourthwall.com/",
    "title": "Hero CTA",
    "group": "Home",
-   "desc": "The primary \"Start now\" hero action \u2014 the only hero action; measured, never followed.",
+   "desc": "The primary \"Start now\" hero action — the only hero action; measured, never followed.",
    "selector": ".hero-cta-row a.btn-primary"
   }
  }

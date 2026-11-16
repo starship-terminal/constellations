@@ -180,13 +180,13 @@ The "Start now" pill in the nav — it links to /get-started; measured, never ac
 ![Start now button default](components/crops/nav-cta-default.png) ![Start now button hover](components/crops/nav-cta-hover.png) ![Start now button focus-visible](components/crops/nav-cta-focus-visible.png) ![Start now button pressed](components/crops/nav-cta-pressed.png)
 
 #### Mega-menu card
-A .mega-card tile inside the Features mega-menu (Get inspired / Designers / Help / Blog); measured with the menu open, never followed. Read as `mega-card` on the home page.
+A .mega-card tile inside the Features mega-menu (Get inspired / Designers / Help / Blog); measured with the menu open, never followed. The four tiles compute visibility:hidden until a Webflow reveal that never fired in the headless run — the geometry and styles are the authored values; no crop was saved because nothing painted. Read as `mega-card` on the home page.
 
 **Values (default).** size 316 x 325.98; padding 4px 0px; background transparent; text Suisse Intl 16.99/28.04 400, #ffffff `_primitives.color.paper.default`; transition text-decoration-color 0.2s ease, color 0.2s ease; layers div.mega-card-img 316.0x210.7 rgba(255, 255, 255, 0.07).
 
 Child layers that carry the look: div 316x210.7 background rgba(255, 255, 255, 0.07).
 
-![Mega-menu card default](components/crops/mega-card-default.png)
+No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
 
 ### Home
 
