@@ -156,6 +156,12 @@ Access: signed out (every captured surface is public; the product — scheduler,
 - signup, SSO and checkout were never followed; every Get-started/Sign-up-with/Continue action was measured only
 - booking pages vary per host: this capture is cal.com/peer's event type with its #292929 brand paint
 
+## [Calm](../systems/calm) — `calm`
+Access: signed out (every captured surface is public; the product past the login card, playback, library, checkout and every signed-in surface were never reached)
+- the signed-in product entirely: playback, the home feed, library, profile, check-ins and checkout live behind the login card and were never reached
+- the login card was opened by its own button, measured, and never filled or submitted; the Try Calm for Free button navigates to /signup-flow, which stayed PerimeterX-blocked this run and is recorded as a boundary
+- no public pricing/plans page exists signed out: plan choices sit behind /signup-flow; /family (six premium accounts, SGD 93.99/year geolocated) and /gift (Gift a Year / Gift a Lifetime) are the public purchasable surfaces
+
 ## [Discord](../systems/discord) — `discord`
 Access: read-only (the marketing pages, /servers discovery + categories, /servers/<slug> details, /login and /register are public signed out; the whole client - /channels/*, joining servers, invites, messages, settings - is an authenticated boundary never reached; every button and field was measured, never submitted or followed)
 - the whole Discord client needs an account - /channels/* redirects to /login; joining a server, accepting an invite, messages and settings are an authenticated boundary never reached

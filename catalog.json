@@ -3143,6 +3143,103 @@
    }
   },
   {
+   "slug": "calm",
+   "name": "Calm",
+   "url": "https://www.calm.com",
+   "category": "fitness",
+   "platform": "web",
+   "goodFor": "Meditation-app marketing with a calm blue system: photographic lake/mountain heroes under a navy scrim header, white pill actions, a dark-only signed-out /app/* preview shell with an indigo canvas, icon rail nav, white selected pills and content tiles, gradient upsell bars, a modal login card, and a light-blue WordPress B2B surface on health.calm.com",
+   "tags": [
+    "web",
+    "meditation",
+    "sleep",
+    "wellness",
+    "consumer",
+    "marketing",
+    "styled-components",
+    "next-js",
+    "light",
+    "dark",
+    "signed-out"
+   ],
+   "shape": "reference",
+   "captured": "2026-11-16",
+   "access": "signed out (every captured surface is public; the product past the login card, playback, library, checkout and every signed-in surface were never reached)",
+   "themes": [
+    "light",
+    "dark"
+   ],
+   "widths": [
+    1440,
+    390
+   ],
+   "entry": "systems/calm/README.md",
+   "tokens": "systems/calm/tokens.json",
+   "styleGuide": "systems/calm/style-guide.html",
+   "preview": {
+    "cover": "systems/calm/screenshots/home-light-default.png",
+    "icon": "systems/calm/icon.png",
+    "swatches": {
+     "light": {
+      "page": "core.color.neutral.paper",
+      "surface": "core.color.neutral.field",
+      "text": "core.color.neutral.on-paper",
+      "muted": "core.color.neutral.muted",
+      "accent": "core.color.brand.blue",
+      "border": "core.color.neutral.hairline"
+     },
+     "dark": {
+      "page": "core.color.app.canvas",
+      "surface": "core.color.app.pill",
+      "text": "core.color.app.text",
+      "muted": "core.color.app.pill-text",
+      "accent": "core.color.brand.violet",
+      "border": "core.color.app.rail"
+     }
+    },
+    "fonts": [
+     "core.font.family.body",
+     "core.font.family.display",
+     "core.font.family.app"
+    ]
+   },
+   "capture": {
+    "method": "public-web",
+    "source": "calm.com (a Next.js marketing app in styled-components behind PerimeterX, over a public dark signed-out app preview on /app/sleep, /app/meditate and /app/music) plus the WordPress health.calm.com B2B site, in headed Chromium under Xvfb (Playwright; the headless and emulated-touch fingerprints are refused), desktop 1440x900 and a 390x844 real-Chrome mobile pass; computed styles and crops from the live DOM. styled-components compiles Calm's theme into literals, so tokens are measured computed values; the login card was opened by its own button and never submitted; the product past login is a documented boundary",
+    "timestamp": "2026-11-16T08:00:00Z",
+    "harness": "Devin",
+    "model": "SWE-2 High",
+    "route": "public-web",
+    "routes": [
+     "/",
+     "/app/sleep",
+     "/app/meditate",
+     "/app/music",
+     "/family",
+     "/gift",
+     "/science",
+     "/mindfulness-tips",
+     "/faq/web",
+     "/terms",
+     "health.calm.com/",
+     "health.calm.com/calm-for-organizations/",
+     "mobile /"
+    ],
+    "gaps": [
+     "the signed-in product entirely: playback, the home feed, library, profile, check-ins and checkout live behind the login card and were never reached",
+     "the login card was opened by its own button, measured, and never filled or submitted; the Try Calm for Free button navigates to /signup-flow, which stayed PerimeterX-blocked this run and is recorded as a boundary",
+     "no public pricing/plans page exists signed out: plan choices sit behind /signup-flow; /family (six premium accounts, SGD 93.99/year geolocated) and /gift (Gift a Year / Gift a Lifetime) are the public purchasable surfaces",
+     "perimeterX intermittently returned its 403 px-captcha shell or dropped the connection; blocked routes were waited out on the same context (the clearance cookie lives there) and then on fresh contexts; a route that never opened is recorded as not captured rather than inferred",
+     "icons: no standalone SVG set lifted this pass"
+    ],
+    "durationMin": null,
+    "durationNote": "wall-clock duration was not yet recorded for this capture"
+   },
+   "layoutGaps": {
+    "icons/": "the icon extraction pass was not run; the icons (the Calm app-icon logo, the rail nav's glyphs, content artwork, the footer social icons) are visible in the crops and screenshots"
+   }
+  },
+  {
    "slug": "capy-desktop",
    "name": "Capy (desktop)",
    "url": "https://capy.ai",

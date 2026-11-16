@@ -734,6 +734,23 @@
         }
       ]
     },
+    "calm.com": {
+      "catalog": [
+        {
+          "name": "Calm",
+          "domain": "calm.com",
+          "id": 227
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "calm",
+          "name": "Calm",
+          "url": "https://www.calm.com",
+          "name_match": true
+        }
+      ]
+    },
     "canva.com": {
       "catalog": [
         {
@@ -2211,13 +2228,6 @@
         "name": "Bento",
         "domain": "bento.me",
         "id": 284
-      }
-    ],
-    "calm.com": [
-      {
-        "name": "Calm",
-        "domain": "calm.com",
-        "id": 227
       }
     ],
     "chargetrip.com": [
