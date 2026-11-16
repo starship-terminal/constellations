@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 148,
-    "system_domains": 140,
-    "matched_domains": 111,
-    "missing_domains": 322,
+    "system_packages": 149,
+    "system_domains": 141,
+    "matched_domains": 112,
+    "missing_domains": 321,
     "system_domains_absent_from_catalog": 29
   },
   "matched": {
@@ -730,6 +730,23 @@
           "slug": "calendly",
           "name": "Calendly",
           "url": "https://calendly.com",
+          "name_match": true
+        }
+      ]
+    },
+    "calm.com": {
+      "catalog": [
+        {
+          "name": "Calm",
+          "domain": "calm.com",
+          "id": 227
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "calm",
+          "name": "Calm",
+          "url": "https://www.calm.com",
           "name_match": true
         }
       ]
@@ -1973,13 +1990,6 @@
         "name": "Bento",
         "domain": "bento.me",
         "id": 284
-      }
-    ],
-    "calm.com": [
-      {
-        "name": "Calm",
-        "domain": "calm.com",
-        "id": 227
       }
     ],
     "chargetrip.com": [
