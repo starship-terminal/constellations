@@ -213,13 +213,32 @@ export async function createResearchStore(directory: string) {
       await tx.execute("PRAGMA user_version = 15");
     }
     if (version < 16) {
-      // Same one-shot top-up, scoped to this batch's new reference: a store
+      // Same one-shot top-up, scoped to this batch's new references: a store
       // already at v15 never re-seeds, so the ClassPass rows would never
-      // arrive. Scoping keeps cleared labels on older packages cleared — an
-      // empty assignment reads as "never labelled", so an unscoped pass
+      // arrive. systems:frame is included because its v13 top-up only runs
+      // below v13, leaving v13-v15 stores without the rows; systems:gladia
+      // and systems:glassnode merged without a migration and are stranded
+      // entirely. Scoping keeps cleared labels on older packages cleared —
+      // an empty assignment reads as "never labelled", so an unscoped pass
       // would restore rows the user deleted.
-      await seedNewCuratedCategories(tx, new Set(["systems:classpass"]));
-      await seedNewCuratedMediaTerms(tx, new Set(["systems:classpass"]));
+      await seedNewCuratedCategories(
+        tx,
+        new Set([
+          "systems:classpass",
+          "systems:frame",
+          "systems:gladia",
+          "systems:glassnode",
+        ]),
+      );
+      await seedNewCuratedMediaTerms(
+        tx,
+        new Set([
+          "systems:classpass",
+          "systems:frame",
+          "systems:gladia",
+          "systems:glassnode",
+        ]),
+      );
       await tx.execute("PRAGMA user_version = 16");
     }
     await tx.commit();

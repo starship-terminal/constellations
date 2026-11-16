@@ -488,7 +488,7 @@ test("version-twelve stores gain the Frame.io rows, without touching their own l
       (await migrated.client.execute("PRAGMA user_version")).rows[0]
         .user_version,
     ),
-  ).toBe(13);
+  ).toBe(16);
   const categories = await migrated.listReferenceCategories();
   // Two seed labels (Collaboration Tools + Design & Media Editing) land as
   // two rows.
@@ -644,7 +644,7 @@ test("version-fourteen stores gain the Chargetrip and Fresha rows, without touch
   ).toHaveLength(0);
 });
 
-test("version-fifteen stores gain the ClassPass rows, without touching their own labels", async () => {
+test("version-fifteen stores gain the ClassPass rows and the stranded Frame.io/Gladia rows, without touching their own labels", async () => {
   const { dir, store } = await open();
   // A v15 store opened before the ClassPass rows existed: drop them and rewind.
   await store.client.execute(
@@ -652,6 +652,20 @@ test("version-fifteen stores gain the ClassPass rows, without touching their own
   );
   await store.client.execute(
     "DELETE FROM media_term_assignments WHERE reference_id='systems:classpass'",
+  );
+  // Frame.io's v13 top-up only runs below v13 and Gladia merged without a
+  // migration, so a v13-v15 store never received their rows either.
+  await store.client.execute(
+    "DELETE FROM reference_categories WHERE reference_id='systems:frame'",
+  );
+  await store.client.execute(
+    "DELETE FROM media_term_assignments WHERE reference_id='systems:frame'",
+  );
+  await store.client.execute(
+    "DELETE FROM reference_categories WHERE reference_id='systems:gladia'",
+  );
+  await store.client.execute(
+    "DELETE FROM media_term_assignments WHERE reference_id='systems:gladia'",
   );
   // A user who cleared another package's labels: the scoped top-up must not
   // resurrect them (an empty assignment reads as "never labelled" to the
@@ -683,9 +697,21 @@ test("version-fifteen stores gain the ClassPass rows, without touching their own
       (row) => row.label,
     ),
   ).toEqual(["Health & Wellness", "Marketplace"]);
+  expect(
+    categories.filter((row) => row.referenceId === "systems:frame"),
+  ).toHaveLength(2);
+  expect(
+    categories.filter((row) => row.referenceId === "systems:gladia"),
+  ).toHaveLength(2);
   const media = await migrated.listMediaTermAssignments();
   expect(
     media.filter((row) => row.referenceId === "systems:classpass").length,
+  ).toBeGreaterThan(0);
+  expect(
+    media.filter((row) => row.referenceId === "systems:frame").length,
+  ).toBeGreaterThan(0);
+  expect(
+    media.filter((row) => row.referenceId === "systems:gladia").length,
   ).toBeGreaterThan(0);
   // The cleared digg rows stay cleared — the top-up seeds only its own batch.
   expect(
