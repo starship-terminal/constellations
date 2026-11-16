@@ -1,0 +1,1274 @@
+{
+  "readAt": "2026-11-16",
+  "source": "me.sh's inline <style> bundles and same-origin sheets (a React/CSS-modules app), read through the CSSOM on the live home page and re-parsed in a probe document",
+  "sheets": [
+    {
+      "name": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "media": "",
+      "bytes": 48903
+    },
+    {
+      "name": "https://me.sh/_next/static/chunks/185vxxcy5qd22.css",
+      "media": "",
+      "bytes": 176374
+    },
+    {
+      "name": "https://me.sh/_next/static/chunks/296mf4y6_fa9f.css",
+      "media": "",
+      "bytes": 35969
+    },
+    {
+      "name": "https://me.sh/_next/static/chunks/10w2bmjobjds4.css",
+      "media": "",
+      "bytes": 11020
+    },
+    {
+      "name": "https://me.sh/_next/static/chunks/01ymzq5uuezyp.css",
+      "media": "",
+      "bytes": 19039
+    }
+  ],
+  "counts": {
+    "rules": 98,
+    "fonts": 9,
+    "names": {
+      "token": 0,
+      "app": 9,
+      "framework": 0,
+      "utility": 0
+    },
+    "bySelector": {
+      "[app] .columns.is-variable": 1,
+      "[app] .columns.is-variable.is-0": 1,
+      "[app] @media screen and (max-width: 768px) .columns.is-variable.is-0-mobile": 1,
+      "[app] @media screen and (min-width: 769px), print .columns.is-variable.is-0-tablet": 1,
+      "[app] @media screen and (min-width: 769px) and (max-width: 1023px) .columns.is-variable.is-0-tablet-only": 1,
+      "[app] @media screen and (max-width: 1023px) .columns.is-variable.is-0-touch": 1,
+      "[app] @media screen and (min-width: 1024px) .columns.is-variable.is-0-desktop": 1,
+      "[app] @media screen and (min-width: 1024px) and (max-width: 1215px) .columns.is-variable.is-0-desktop-only": 1,
+      "[app] @media screen and (min-width: 1216px) .columns.is-variable.is-0-widescreen": 1,
+      "[app] @media screen and (min-width: 1216px) and (max-width: 1407px) .columns.is-variable.is-0-widescreen-only": 1,
+      "[app] @media screen and (min-width: 1408px) .columns.is-variable.is-0-fullhd": 1,
+      "[app] .columns.is-variable.is-1": 1,
+      "[app] @media screen and (max-width: 768px) .columns.is-variable.is-1-mobile": 1,
+      "[app] @media screen and (min-width: 769px), print .columns.is-variable.is-1-tablet": 1,
+      "[app] @media screen and (min-width: 769px) and (max-width: 1023px) .columns.is-variable.is-1-tablet-only": 1,
+      "[app] @media screen and (max-width: 1023px) .columns.is-variable.is-1-touch": 1,
+      "[app] @media screen and (min-width: 1024px) .columns.is-variable.is-1-desktop": 1,
+      "[app] @media screen and (min-width: 1024px) and (max-width: 1215px) .columns.is-variable.is-1-desktop-only": 1,
+      "[app] @media screen and (min-width: 1216px) .columns.is-variable.is-1-widescreen": 1,
+      "[app] @media screen and (min-width: 1216px) and (max-width: 1407px) .columns.is-variable.is-1-widescreen-only": 1,
+      "[app] @media screen and (min-width: 1408px) .columns.is-variable.is-1-fullhd": 1,
+      "[app] .columns.is-variable.is-2": 1,
+      "[app] @media screen and (max-width: 768px) .columns.is-variable.is-2-mobile": 1,
+      "[app] @media screen and (min-width: 769px), print .columns.is-variable.is-2-tablet": 1,
+      "[app] @media screen and (min-width: 769px) and (max-width: 1023px) .columns.is-variable.is-2-tablet-only": 1,
+      "[app] @media screen and (max-width: 1023px) .columns.is-variable.is-2-touch": 1,
+      "[app] @media screen and (min-width: 1024px) .columns.is-variable.is-2-desktop": 1,
+      "[app] @media screen and (min-width: 1024px) and (max-width: 1215px) .columns.is-variable.is-2-desktop-only": 1,
+      "[app] @media screen and (min-width: 1216px) .columns.is-variable.is-2-widescreen": 1,
+      "[app] @media screen and (min-width: 1216px) and (max-width: 1407px) .columns.is-variable.is-2-widescreen-only": 1,
+      "[app] @media screen and (min-width: 1408px) .columns.is-variable.is-2-fullhd": 1,
+      "[app] .columns.is-variable.is-3": 1,
+      "[app] @media screen and (max-width: 768px) .columns.is-variable.is-3-mobile": 1,
+      "[app] @media screen and (min-width: 769px), print .columns.is-variable.is-3-tablet": 1,
+      "[app] @media screen and (min-width: 769px) and (max-width: 1023px) .columns.is-variable.is-3-tablet-only": 1,
+      "[app] @media screen and (max-width: 1023px) .columns.is-variable.is-3-touch": 1,
+      "[app] @media screen and (min-width: 1024px) .columns.is-variable.is-3-desktop": 1,
+      "[app] @media screen and (min-width: 1024px) and (max-width: 1215px) .columns.is-variable.is-3-desktop-only": 1,
+      "[app] @media screen and (min-width: 1216px) .columns.is-variable.is-3-widescreen": 1,
+      "[app] @media screen and (min-width: 1216px) and (max-width: 1407px) .columns.is-variable.is-3-widescreen-only": 1,
+      "[app] @media screen and (min-width: 1408px) .columns.is-variable.is-3-fullhd": 1,
+      "[app] .columns.is-variable.is-4": 1,
+      "[app] @media screen and (max-width: 768px) .columns.is-variable.is-4-mobile": 1,
+      "[app] @media screen and (min-width: 769px), print .columns.is-variable.is-4-tablet": 1,
+      "[app] @media screen and (min-width: 769px) and (max-width: 1023px) .columns.is-variable.is-4-tablet-only": 1,
+      "[app] @media screen and (max-width: 1023px) .columns.is-variable.is-4-touch": 1,
+      "[app] @media screen and (min-width: 1024px) .columns.is-variable.is-4-desktop": 1,
+      "[app] @media screen and (min-width: 1024px) and (max-width: 1215px) .columns.is-variable.is-4-desktop-only": 1,
+      "[app] @media screen and (min-width: 1216px) .columns.is-variable.is-4-widescreen": 1,
+      "[app] @media screen and (min-width: 1216px) and (max-width: 1407px) .columns.is-variable.is-4-widescreen-only": 1,
+      "[app] @media screen and (min-width: 1408px) .columns.is-variable.is-4-fullhd": 1,
+      "[app] .columns.is-variable.is-5": 1,
+      "[app] @media screen and (max-width: 768px) .columns.is-variable.is-5-mobile": 1,
+      "[app] @media screen and (min-width: 769px), print .columns.is-variable.is-5-tablet": 1,
+      "[app] @media screen and (min-width: 769px) and (max-width: 1023px) .columns.is-variable.is-5-tablet-only": 1,
+      "[app] @media screen and (max-width: 1023px) .columns.is-variable.is-5-touch": 1,
+      "[app] @media screen and (min-width: 1024px) .columns.is-variable.is-5-desktop": 1,
+      "[app] @media screen and (min-width: 1024px) and (max-width: 1215px) .columns.is-variable.is-5-desktop-only": 1,
+      "[app] @media screen and (min-width: 1216px) .columns.is-variable.is-5-widescreen": 1,
+      "[app] @media screen and (min-width: 1216px) and (max-width: 1407px) .columns.is-variable.is-5-widescreen-only": 1,
+      "[app] @media screen and (min-width: 1408px) .columns.is-variable.is-5-fullhd": 1,
+      "[app] .columns.is-variable.is-6": 1,
+      "[app] @media screen and (max-width: 768px) .columns.is-variable.is-6-mobile": 1,
+      "[app] @media screen and (min-width: 769px), print .columns.is-variable.is-6-tablet": 1,
+      "[app] @media screen and (min-width: 769px) and (max-width: 1023px) .columns.is-variable.is-6-tablet-only": 1,
+      "[app] @media screen and (max-width: 1023px) .columns.is-variable.is-6-touch": 1,
+      "[app] @media screen and (min-width: 1024px) .columns.is-variable.is-6-desktop": 1,
+      "[app] @media screen and (min-width: 1024px) and (max-width: 1215px) .columns.is-variable.is-6-desktop-only": 1,
+      "[app] @media screen and (min-width: 1216px) .columns.is-variable.is-6-widescreen": 1,
+      "[app] @media screen and (min-width: 1216px) and (max-width: 1407px) .columns.is-variable.is-6-widescreen-only": 1,
+      "[app] @media screen and (min-width: 1408px) .columns.is-variable.is-6-fullhd": 1,
+      "[app] .columns.is-variable.is-7": 1,
+      "[app] @media screen and (max-width: 768px) .columns.is-variable.is-7-mobile": 1,
+      "[app] @media screen and (min-width: 769px), print .columns.is-variable.is-7-tablet": 1,
+      "[app] @media screen and (min-width: 769px) and (max-width: 1023px) .columns.is-variable.is-7-tablet-only": 1,
+      "[app] @media screen and (max-width: 1023px) .columns.is-variable.is-7-touch": 1,
+      "[app] @media screen and (min-width: 1024px) .columns.is-variable.is-7-desktop": 1,
+      "[app] @media screen and (min-width: 1024px) and (max-width: 1215px) .columns.is-variable.is-7-desktop-only": 1,
+      "[app] @media screen and (min-width: 1216px) .columns.is-variable.is-7-widescreen": 1,
+      "[app] @media screen and (min-width: 1216px) and (max-width: 1407px) .columns.is-variable.is-7-widescreen-only": 1,
+      "[app] @media screen and (min-width: 1408px) .columns.is-variable.is-7-fullhd": 1,
+      "[app] .columns.is-variable.is-8": 1,
+      "[app] @media screen and (max-width: 768px) .columns.is-variable.is-8-mobile": 1,
+      "[app] @media screen and (min-width: 769px), print .columns.is-variable.is-8-tablet": 1,
+      "[app] @media screen and (min-width: 769px) and (max-width: 1023px) .columns.is-variable.is-8-tablet-only": 1,
+      "[app] @media screen and (max-width: 1023px) .columns.is-variable.is-8-touch": 1,
+      "[app] @media screen and (min-width: 1024px) .columns.is-variable.is-8-desktop": 1,
+      "[app] @media screen and (min-width: 1024px) and (max-width: 1215px) .columns.is-variable.is-8-desktop-only": 1,
+      "[app] @media screen and (min-width: 1216px) .columns.is-variable.is-8-widescreen": 1,
+      "[app] @media screen and (min-width: 1216px) and (max-width: 1407px) .columns.is-variable.is-8-widescreen-only": 1,
+      "[app] @media screen and (min-width: 1408px) .columns.is-variable.is-8-fullhd": 1,
+      "[app] .JKz61q_integrations .JKz61q_integrationsGraphicContainer .JKz61q_orbs .JKz61q_facebookOrb": 3,
+      "[app] .JKz61q_integrations .JKz61q_integrationsGraphicContainer .JKz61q_orbs .JKz61q_notionOrb": 3,
+      "[app] .JKz61q_integrations .JKz61q_integrationsGraphicContainer .JKz61q_orbs .JKz61q_instagramOrb": 3,
+      "[app] .JKz61q_integrations .JKz61q_integrationsGraphicContainer .JKz61q_orbs .JKz61q_twitterOrb": 3,
+      "[app] .JKz61q_integrations .JKz61q_integrationsGraphicContainer .JKz61q_orbs .JKz61q_whatsappOrb": 3,
+      "[app] ._Q-Atq_avatarMotion": 2,
+      "[app] @media (max-width: 991px) ._Q-Atq_testimonialAvatars": 3
+    }
+  },
+  "errors": [],
+  "token": [],
+  "app": [
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable",
+      "context": [],
+      "properties": {
+        "--columnGap": ".75rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-0",
+      "context": [],
+      "properties": {
+        "--columnGap": "0rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-0-mobile",
+      "context": [
+        "@media screen and (max-width: 768px)"
+      ],
+      "properties": {
+        "--columnGap": "0rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-0-tablet",
+      "context": [
+        "@media screen and (min-width: 769px), print"
+      ],
+      "properties": {
+        "--columnGap": "0rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-0-tablet-only",
+      "context": [
+        "@media screen and (min-width: 769px) and (max-width: 1023px)"
+      ],
+      "properties": {
+        "--columnGap": "0rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-0-touch",
+      "context": [
+        "@media screen and (max-width: 1023px)"
+      ],
+      "properties": {
+        "--columnGap": "0rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-0-desktop",
+      "context": [
+        "@media screen and (min-width: 1024px)"
+      ],
+      "properties": {
+        "--columnGap": "0rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-0-desktop-only",
+      "context": [
+        "@media screen and (min-width: 1024px) and (max-width: 1215px)"
+      ],
+      "properties": {
+        "--columnGap": "0rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-0-widescreen",
+      "context": [
+        "@media screen and (min-width: 1216px)"
+      ],
+      "properties": {
+        "--columnGap": "0rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-0-widescreen-only",
+      "context": [
+        "@media screen and (min-width: 1216px) and (max-width: 1407px)"
+      ],
+      "properties": {
+        "--columnGap": "0rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-0-fullhd",
+      "context": [
+        "@media screen and (min-width: 1408px)"
+      ],
+      "properties": {
+        "--columnGap": "0rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-1",
+      "context": [],
+      "properties": {
+        "--columnGap": ".25rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-1-mobile",
+      "context": [
+        "@media screen and (max-width: 768px)"
+      ],
+      "properties": {
+        "--columnGap": ".25rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-1-tablet",
+      "context": [
+        "@media screen and (min-width: 769px), print"
+      ],
+      "properties": {
+        "--columnGap": ".25rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-1-tablet-only",
+      "context": [
+        "@media screen and (min-width: 769px) and (max-width: 1023px)"
+      ],
+      "properties": {
+        "--columnGap": ".25rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-1-touch",
+      "context": [
+        "@media screen and (max-width: 1023px)"
+      ],
+      "properties": {
+        "--columnGap": ".25rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-1-desktop",
+      "context": [
+        "@media screen and (min-width: 1024px)"
+      ],
+      "properties": {
+        "--columnGap": ".25rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-1-desktop-only",
+      "context": [
+        "@media screen and (min-width: 1024px) and (max-width: 1215px)"
+      ],
+      "properties": {
+        "--columnGap": ".25rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-1-widescreen",
+      "context": [
+        "@media screen and (min-width: 1216px)"
+      ],
+      "properties": {
+        "--columnGap": ".25rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-1-widescreen-only",
+      "context": [
+        "@media screen and (min-width: 1216px) and (max-width: 1407px)"
+      ],
+      "properties": {
+        "--columnGap": ".25rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-1-fullhd",
+      "context": [
+        "@media screen and (min-width: 1408px)"
+      ],
+      "properties": {
+        "--columnGap": ".25rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-2",
+      "context": [],
+      "properties": {
+        "--columnGap": ".5rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-2-mobile",
+      "context": [
+        "@media screen and (max-width: 768px)"
+      ],
+      "properties": {
+        "--columnGap": ".5rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-2-tablet",
+      "context": [
+        "@media screen and (min-width: 769px), print"
+      ],
+      "properties": {
+        "--columnGap": ".5rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-2-tablet-only",
+      "context": [
+        "@media screen and (min-width: 769px) and (max-width: 1023px)"
+      ],
+      "properties": {
+        "--columnGap": ".5rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-2-touch",
+      "context": [
+        "@media screen and (max-width: 1023px)"
+      ],
+      "properties": {
+        "--columnGap": ".5rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-2-desktop",
+      "context": [
+        "@media screen and (min-width: 1024px)"
+      ],
+      "properties": {
+        "--columnGap": ".5rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-2-desktop-only",
+      "context": [
+        "@media screen and (min-width: 1024px) and (max-width: 1215px)"
+      ],
+      "properties": {
+        "--columnGap": ".5rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-2-widescreen",
+      "context": [
+        "@media screen and (min-width: 1216px)"
+      ],
+      "properties": {
+        "--columnGap": ".5rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-2-widescreen-only",
+      "context": [
+        "@media screen and (min-width: 1216px) and (max-width: 1407px)"
+      ],
+      "properties": {
+        "--columnGap": ".5rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-2-fullhd",
+      "context": [
+        "@media screen and (min-width: 1408px)"
+      ],
+      "properties": {
+        "--columnGap": ".5rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-3",
+      "context": [],
+      "properties": {
+        "--columnGap": ".75rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-3-mobile",
+      "context": [
+        "@media screen and (max-width: 768px)"
+      ],
+      "properties": {
+        "--columnGap": ".75rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-3-tablet",
+      "context": [
+        "@media screen and (min-width: 769px), print"
+      ],
+      "properties": {
+        "--columnGap": ".75rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-3-tablet-only",
+      "context": [
+        "@media screen and (min-width: 769px) and (max-width: 1023px)"
+      ],
+      "properties": {
+        "--columnGap": ".75rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-3-touch",
+      "context": [
+        "@media screen and (max-width: 1023px)"
+      ],
+      "properties": {
+        "--columnGap": ".75rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-3-desktop",
+      "context": [
+        "@media screen and (min-width: 1024px)"
+      ],
+      "properties": {
+        "--columnGap": ".75rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-3-desktop-only",
+      "context": [
+        "@media screen and (min-width: 1024px) and (max-width: 1215px)"
+      ],
+      "properties": {
+        "--columnGap": ".75rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-3-widescreen",
+      "context": [
+        "@media screen and (min-width: 1216px)"
+      ],
+      "properties": {
+        "--columnGap": ".75rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-3-widescreen-only",
+      "context": [
+        "@media screen and (min-width: 1216px) and (max-width: 1407px)"
+      ],
+      "properties": {
+        "--columnGap": ".75rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-3-fullhd",
+      "context": [
+        "@media screen and (min-width: 1408px)"
+      ],
+      "properties": {
+        "--columnGap": ".75rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-4",
+      "context": [],
+      "properties": {
+        "--columnGap": "1rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-4-mobile",
+      "context": [
+        "@media screen and (max-width: 768px)"
+      ],
+      "properties": {
+        "--columnGap": "1rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-4-tablet",
+      "context": [
+        "@media screen and (min-width: 769px), print"
+      ],
+      "properties": {
+        "--columnGap": "1rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-4-tablet-only",
+      "context": [
+        "@media screen and (min-width: 769px) and (max-width: 1023px)"
+      ],
+      "properties": {
+        "--columnGap": "1rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-4-touch",
+      "context": [
+        "@media screen and (max-width: 1023px)"
+      ],
+      "properties": {
+        "--columnGap": "1rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-4-desktop",
+      "context": [
+        "@media screen and (min-width: 1024px)"
+      ],
+      "properties": {
+        "--columnGap": "1rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-4-desktop-only",
+      "context": [
+        "@media screen and (min-width: 1024px) and (max-width: 1215px)"
+      ],
+      "properties": {
+        "--columnGap": "1rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-4-widescreen",
+      "context": [
+        "@media screen and (min-width: 1216px)"
+      ],
+      "properties": {
+        "--columnGap": "1rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-4-widescreen-only",
+      "context": [
+        "@media screen and (min-width: 1216px) and (max-width: 1407px)"
+      ],
+      "properties": {
+        "--columnGap": "1rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-4-fullhd",
+      "context": [
+        "@media screen and (min-width: 1408px)"
+      ],
+      "properties": {
+        "--columnGap": "1rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-5",
+      "context": [],
+      "properties": {
+        "--columnGap": "1.25rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-5-mobile",
+      "context": [
+        "@media screen and (max-width: 768px)"
+      ],
+      "properties": {
+        "--columnGap": "1.25rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-5-tablet",
+      "context": [
+        "@media screen and (min-width: 769px), print"
+      ],
+      "properties": {
+        "--columnGap": "1.25rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-5-tablet-only",
+      "context": [
+        "@media screen and (min-width: 769px) and (max-width: 1023px)"
+      ],
+      "properties": {
+        "--columnGap": "1.25rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-5-touch",
+      "context": [
+        "@media screen and (max-width: 1023px)"
+      ],
+      "properties": {
+        "--columnGap": "1.25rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-5-desktop",
+      "context": [
+        "@media screen and (min-width: 1024px)"
+      ],
+      "properties": {
+        "--columnGap": "1.25rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-5-desktop-only",
+      "context": [
+        "@media screen and (min-width: 1024px) and (max-width: 1215px)"
+      ],
+      "properties": {
+        "--columnGap": "1.25rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-5-widescreen",
+      "context": [
+        "@media screen and (min-width: 1216px)"
+      ],
+      "properties": {
+        "--columnGap": "1.25rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-5-widescreen-only",
+      "context": [
+        "@media screen and (min-width: 1216px) and (max-width: 1407px)"
+      ],
+      "properties": {
+        "--columnGap": "1.25rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-5-fullhd",
+      "context": [
+        "@media screen and (min-width: 1408px)"
+      ],
+      "properties": {
+        "--columnGap": "1.25rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-6",
+      "context": [],
+      "properties": {
+        "--columnGap": "1.5rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-6-mobile",
+      "context": [
+        "@media screen and (max-width: 768px)"
+      ],
+      "properties": {
+        "--columnGap": "1.5rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-6-tablet",
+      "context": [
+        "@media screen and (min-width: 769px), print"
+      ],
+      "properties": {
+        "--columnGap": "1.5rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-6-tablet-only",
+      "context": [
+        "@media screen and (min-width: 769px) and (max-width: 1023px)"
+      ],
+      "properties": {
+        "--columnGap": "1.5rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-6-touch",
+      "context": [
+        "@media screen and (max-width: 1023px)"
+      ],
+      "properties": {
+        "--columnGap": "1.5rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-6-desktop",
+      "context": [
+        "@media screen and (min-width: 1024px)"
+      ],
+      "properties": {
+        "--columnGap": "1.5rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-6-desktop-only",
+      "context": [
+        "@media screen and (min-width: 1024px) and (max-width: 1215px)"
+      ],
+      "properties": {
+        "--columnGap": "1.5rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-6-widescreen",
+      "context": [
+        "@media screen and (min-width: 1216px)"
+      ],
+      "properties": {
+        "--columnGap": "1.5rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-6-widescreen-only",
+      "context": [
+        "@media screen and (min-width: 1216px) and (max-width: 1407px)"
+      ],
+      "properties": {
+        "--columnGap": "1.5rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-6-fullhd",
+      "context": [
+        "@media screen and (min-width: 1408px)"
+      ],
+      "properties": {
+        "--columnGap": "1.5rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-7",
+      "context": [],
+      "properties": {
+        "--columnGap": "1.75rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-7-mobile",
+      "context": [
+        "@media screen and (max-width: 768px)"
+      ],
+      "properties": {
+        "--columnGap": "1.75rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-7-tablet",
+      "context": [
+        "@media screen and (min-width: 769px), print"
+      ],
+      "properties": {
+        "--columnGap": "1.75rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-7-tablet-only",
+      "context": [
+        "@media screen and (min-width: 769px) and (max-width: 1023px)"
+      ],
+      "properties": {
+        "--columnGap": "1.75rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-7-touch",
+      "context": [
+        "@media screen and (max-width: 1023px)"
+      ],
+      "properties": {
+        "--columnGap": "1.75rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-7-desktop",
+      "context": [
+        "@media screen and (min-width: 1024px)"
+      ],
+      "properties": {
+        "--columnGap": "1.75rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-7-desktop-only",
+      "context": [
+        "@media screen and (min-width: 1024px) and (max-width: 1215px)"
+      ],
+      "properties": {
+        "--columnGap": "1.75rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-7-widescreen",
+      "context": [
+        "@media screen and (min-width: 1216px)"
+      ],
+      "properties": {
+        "--columnGap": "1.75rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-7-widescreen-only",
+      "context": [
+        "@media screen and (min-width: 1216px) and (max-width: 1407px)"
+      ],
+      "properties": {
+        "--columnGap": "1.75rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-7-fullhd",
+      "context": [
+        "@media screen and (min-width: 1408px)"
+      ],
+      "properties": {
+        "--columnGap": "1.75rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-8",
+      "context": [],
+      "properties": {
+        "--columnGap": "2rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-8-mobile",
+      "context": [
+        "@media screen and (max-width: 768px)"
+      ],
+      "properties": {
+        "--columnGap": "2rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-8-tablet",
+      "context": [
+        "@media screen and (min-width: 769px), print"
+      ],
+      "properties": {
+        "--columnGap": "2rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-8-tablet-only",
+      "context": [
+        "@media screen and (min-width: 769px) and (max-width: 1023px)"
+      ],
+      "properties": {
+        "--columnGap": "2rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-8-touch",
+      "context": [
+        "@media screen and (max-width: 1023px)"
+      ],
+      "properties": {
+        "--columnGap": "2rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-8-desktop",
+      "context": [
+        "@media screen and (min-width: 1024px)"
+      ],
+      "properties": {
+        "--columnGap": "2rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-8-desktop-only",
+      "context": [
+        "@media screen and (min-width: 1024px) and (max-width: 1215px)"
+      ],
+      "properties": {
+        "--columnGap": "2rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-8-widescreen",
+      "context": [
+        "@media screen and (min-width: 1216px)"
+      ],
+      "properties": {
+        "--columnGap": "2rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-8-widescreen-only",
+      "context": [
+        "@media screen and (min-width: 1216px) and (max-width: 1407px)"
+      ],
+      "properties": {
+        "--columnGap": "2rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "selector": ".columns.is-variable.is-8-fullhd",
+      "context": [
+        "@media screen and (min-width: 1408px)"
+      ],
+      "properties": {
+        "--columnGap": "2rem"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/296mf4y6_fa9f.css",
+      "selector": ".JKz61q_integrations .JKz61q_integrationsGraphicContainer .JKz61q_orbs .JKz61q_facebookOrb",
+      "context": [],
+      "properties": {
+        "--angle": "calc(139.8deg + var(--orbit-progress,0) * -17.5deg)",
+        "--rx": "37.9em",
+        "--ry": "37.9em"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/296mf4y6_fa9f.css",
+      "selector": ".JKz61q_integrations .JKz61q_integrationsGraphicContainer .JKz61q_orbs .JKz61q_notionOrb",
+      "context": [],
+      "properties": {
+        "--angle": "calc(66deg + var(--orbit-progress,0) * -12.5deg)",
+        "--rx": "39.7em",
+        "--ry": "39.7em"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/296mf4y6_fa9f.css",
+      "selector": ".JKz61q_integrations .JKz61q_integrationsGraphicContainer .JKz61q_orbs .JKz61q_instagramOrb",
+      "context": [],
+      "properties": {
+        "--angle": "calc(0deg + var(--orbit-progress,0) * -22.5deg)",
+        "--rx": "30.6em",
+        "--ry": "30.6em"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/296mf4y6_fa9f.css",
+      "selector": ".JKz61q_integrations .JKz61q_integrationsGraphicContainer .JKz61q_orbs .JKz61q_twitterOrb",
+      "context": [],
+      "properties": {
+        "--angle": "calc(-161.5deg + var(--orbit-progress,0) * -27.5deg)",
+        "--rx": "45.5em",
+        "--ry": "45.5em"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/296mf4y6_fa9f.css",
+      "selector": ".JKz61q_integrations .JKz61q_integrationsGraphicContainer .JKz61q_orbs .JKz61q_whatsappOrb",
+      "context": [],
+      "properties": {
+        "--angle": "calc(-110deg + var(--orbit-progress,0) * 30deg)",
+        "--rx": "34.2em",
+        "--ry": "34.2em"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/296mf4y6_fa9f.css",
+      "selector": "._Q-Atq_avatarMotion",
+      "context": [],
+      "properties": {
+        "--avatar-orbit-x": "12px",
+        "--avatar-orbit-y": "8px"
+      },
+      "bin": "app"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/296mf4y6_fa9f.css",
+      "selector": "._Q-Atq_testimonialAvatars",
+      "context": [
+        "@media (max-width: 991px)"
+      ],
+      "properties": {
+        "--mobile-avatar-edge-space": "32px",
+        "--mobile-active-avatar-overhang": "1.28em",
+        "--mobile-avatar-gutter": "calc(var(--mobile-avatar-edge-space) + var(--mobile-active-avatar-overhang))"
+      },
+      "bin": "app"
+    }
+  ],
+  "framework": [],
+  "utility": [],
+  "fonts": [
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "font-weight": "400",
+      "font-family": "ChronicleTextG1Roman",
+      "font-style": "normal",
+      "src": "url(\"../media/chronicletextg1-roman-pro.0islf9gagt4yy.woff2\") format(\"woff2\"), url(\"../media/chronicletextg1-roman-pro.2c7szqr8lrv9w.woff\") format(\"woff\")"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "font-weight": "400",
+      "font-family": "ChronicleTextG1Roman",
+      "font-style": "italic",
+      "src": "url(\"../media/ChronicleTextG1-Italic-Pro.31tgj3820bid0.woff2\") format(\"woff2\"), url(\"../media/ChronicleTextG1-Italic-Pro.2t-k_0z73jww0.woff\") format(\"woff\")"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "font-weight": "400",
+      "font-family": "ChronicleCondensed",
+      "font-style": "normal",
+      "src": "url(\"../media/chronicledispcond-roman.1-0_wec2yw94e.woff2\") format(\"woff2\"), url(\"../media/chronicledispcond-roman.2pq8jllqqnxx9.woff\") format(\"woff\")"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "font-weight": "400",
+      "font-family": "Verlag",
+      "font-style": "normal",
+      "src": "url(\"../media/Verlag-Book2.3zxruign72ys0.woff2\") format(\"woff2\"), url(\"../media/Verlag-Book2.3k-s7rr5yrj20.woff\") format(\"woff\")"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "font-weight": "400",
+      "font-family": "Verlag",
+      "font-style": "italic",
+      "src": "url(\"../media/verlag-bookitalic.2bdlb8yh7dta0.woff2\") format(\"woff2\"), url(\"../media/verlag-bookitalic.2gla_hbdvobxj.woff\") format(\"woff\")"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "font-weight": "700",
+      "font-family": "Verlag",
+      "font-style": "normal",
+      "src": "url(\"../media/verlag-bold.257x9op0inzrj.woff2\") format(\"woff2\"), url(\"../media/verlag-bold.00aav1h3b7fxj.woff\") format(\"woff\")"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "font-weight": "700",
+      "font-family": "Verlag",
+      "font-style": "italic",
+      "src": "url(\"../media/verlag-bolditalic.0y5jd33zhkhv-.woff2\") format(\"woff2\"), url(\"../media/verlag-bolditalic.1nftn2nxi2tcb.woff\") format(\"woff\")"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "font-weight": "700",
+      "font-family": "VerlagCondensed",
+      "font-style": "normal",
+      "src": "url(\"../media/Verlag-Condensed-Bold.3ks285ybjgkum.woff2\") format(\"woff2\"), url(\"../media/Verlag-Condensed-Bold.2z6ei_2c29-21.woff\") format(\"woff\")"
+    },
+    {
+      "file": "https://me.sh/_next/static/chunks/3qeqdexum-wcc.css",
+      "font-weight": "900",
+      "font-family": "VerlagCondensed",
+      "font-style": "normal",
+      "src": "url(\"../media/Verlag-Condensed-Black.3875f_5d3km02.woff2\") format(\"woff2\"), url(\"../media/Verlag-Condensed-Black.06oat5b7w8c8k.woff\") format(\"woff\")"
+    }
+  ],
+  "resolved": {
+    "dark": {}
+  }
+}
