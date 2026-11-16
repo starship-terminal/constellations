@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_95 of 153 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_96 of 154 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -160,6 +160,14 @@ Access: signed out (every captured surface is public; the product — scheduler,
 Access: signed out (every captured surface is public; the Dock workspace sits behind auth.dock.us and was never reached; the HubSpot demo form and the auth cards were measured, never filled or submitted)
 - the signed-in workspace entirely: rooms, deal portals, content library, learning paths, settings and billing live behind auth.dock.us and were never reached
 - the login/signup cards and the HubSpot demo form were measured as surfaces, never filled or submitted; their Continue/submit actions were never pressed
+
+## [GlossGenius](../systems/glossgenius) — `glossgenius`
+Access: signed out (every captured surface is public); the product app behind sign-in (calendar, clients, payments, marketing tools — app.glossgenius.com/ redirects to /calendar) was never reached; the login, signup, restore and demo forms were measured and typed into then cleared, never submitted; the published booking flow was browsed read-only to its public /book date-picker — no slot confirmed, no appointment booked; every CTA measured, never followed; no consent banner was observed on any host
+- everything post-login — the calendar, clients, payments, marketing and business tools behind app.glossgenius.com sign-in (the app root redirects to /calendar); an authenticated boundary never reached
+- submitted states: the login, signup, forgot-password and get-demo forms were typed into then cleared, never sent — validation, error, loading and success states are absent rather than measured
+- the booking flow stops at the public /book date-picker — slot confirmation, the YOUR DETAILS form and payment were never reached; 'Next' never pressed
+- the booking site is one business's skin (honeyhivesalon.glossgenius.com, Organic-style layout) — other businesses re-skin the same chrome through other .tokens_glossDS__* layout classes; booking tokens are this surface's resolution, not a universal brand set
+- an edge security-verification page blocked app.glossgenius.com/login on one pass; a retry in a fresh context succeeded and no challenge was answered by hand
 
 ## [Buy Me a Coffee](../systems/buymeacoffee) — `buymeacoffee`
 Access: signed out (every captured surface is public; the creator dashboard, shop/membership/extras managers, payouts, analytics and settings sit behind /login, the Stripe checkout behind Support was never opened, and the password step behind Continue-with-email was never submitted)

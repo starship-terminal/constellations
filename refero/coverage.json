@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 153,
-    "system_domains": 145,
-    "matched_domains": 116,
-    "missing_domains": 317,
+    "system_packages": 154,
+    "system_domains": 146,
+    "matched_domains": 117,
+    "missing_domains": 316,
     "system_domains_absent_from_catalog": 29
   },
   "matched": {
@@ -1863,6 +1863,23 @@
         }
       ]
     },
+    "glossgenius.com": {
+      "catalog": [
+        {
+          "name": "GlossGenius",
+          "domain": "glossgenius.com",
+          "id": 830
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "glossgenius",
+          "name": "GlossGenius",
+          "url": "https://glossgenius.com",
+          "name_match": true
+        }
+      ]
+    },
     "google.com": {
       "catalog": [
         {
@@ -2331,13 +2348,6 @@
         "name": "Glorify",
         "domain": "glorify.com",
         "id": 583
-      }
-    ],
-    "glossgenius.com": [
-      {
-        "name": "GlossGenius",
-        "domain": "glossgenius.com",
-        "id": 830
       }
     ],
     "gofundme.com": [
