@@ -59,7 +59,7 @@ Screenshots are named `{page}-{theme}-state.png` where `{theme}` is the mode the
 
 Values that apply across entries, from the measurement files.
 
-**Focus.** 17 components were given a real keyboard focus. 11 draw an outline ring: `nav-dropdown-btn` (1px auto #101010 `dark.color.border.focusRing`, offset 0px), `nav-pricing` (1px auto #101010 `dark.color.border.focusRing`, offset 1px), `nav-login` (1px auto #101010 `dark.color.border.focusRing`, offset 1px), `nav-cta` (1px auto #101010 `dark.color.border.focusRing`, offset 1px), `hero-cta` (1px auto #101010 `dark.color.border.focusRing`, offset 1px), `hero-mcp` (1px auto #101010 `dark.color.border.focusRing`, offset 1px), `footer-link` (1px auto #101010 `dark.color.border.focusRing`, offset 1px), `locale-select` (1px auto #101010 `dark.color.border.focusRing`, offset 0px), `plan-cta` (1px auto #101010 `dark.color.border.focusRing`, offset 1px), `contact-link` (1px auto #101010 `dark.color.border.focusRing`, offset 0px), `m-hero-cta` (1px auto #e59700, offset 1px). The other 6 show no measured change: `credits-select`, `login-google`, `login-submit`, `gal-filter`, `gal-open`, `gal-comm`.
+**Focus.** 17 components were given a real keyboard focus. 11 draw an outline ring: `nav-dropdown-btn` (1px auto #101010 `dark.color.border.focusRing`, offset 0px), `nav-pricing` (1px auto #101010 `dark.color.border.focusRing`, offset 1px), `nav-login` (1px auto #101010 `dark.color.border.focusRing`, offset 1px), `nav-cta` (1px auto #101010 `dark.color.border.focusRing`, offset 1px), `hero-cta` (1px auto #101010 `dark.color.border.focusRing`, offset 1px), `hero-mcp` (1px auto #101010 `dark.color.border.focusRing`, offset 1px), `footer-link` (1px auto #101010 `dark.color.border.focusRing`, offset 1px), `locale-select` (1px auto #101010 `dark.color.border.focusRing`, offset 0px), `plan-cta` (1px auto #101010 `dark.color.border.focusRing`, offset 1px), `contact-link` (1px auto #101010 `dark.color.border.focusRing`, offset 0px), `m-hero-cta` (1px auto #e59700, offset 1px). 2 change only their fill or ink: `login-google`, `login-submit`. The other 4 show no ring, border or fill change: `credits-select`, `gal-filter`, `gal-open`, `gal-comm`.
 
 **Pressed.** Forced with DevTools (`CSS.forcePseudoState` :active:hover). Nothing a real press would submit was ever pressed.
 
@@ -164,7 +164,7 @@ The "Sign up" header button; links to the auth shell, measured never followed. R
 
 ### Home
 
-The home hero: the display masthead over the live editor-demo canvas, the lime 'Get started for free' pill beside the ghost 'Install the MCP' button, and section headings.
+The home hero: the display masthead over the live editor-demo canvas, the white 'Get started for free' pill beside the ghost 'Install the MCP' button, and section headings.
 
 #### Hero headline
 "Framer is the pro website builder with a world-class design agent" — the www.framer.com hero display heading. Read as `hero-h1` on the home page.
@@ -174,7 +174,7 @@ The home hero: the display masthead over the live editor-demo canvas, the lime '
 ![Hero headline default](components/crops/hero-h1-default.png)
 
 #### Hero CTA
-The lime "Get started for free" pill in the hero; links to the auth shell, measured never followed. Read as `hero-cta` on the home page.
+The white "Get started for free" pill in the hero; links to the auth shell, measured never followed. Read as `hero-cta` on the home page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -317,7 +317,7 @@ The work e-mail input on the sign-in card; focused and typed into then cleared �
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focused, filled) | size 228 x 30; padding 0px 7px 1px 7px; radius 8px; background transparent; text Inter Variable UI 12/normal 450, #222222 `core.color.palette.neutral-22`; placeholder #999999 `core.color.palette.neutral-99` |
+| default (same: focused, filled) | size 228 x 30; padding 0px 7px 1px 7px; radius 8px; background transparent; text Inter Variable UI 12/normal 450, #222222 `core.color.palette.neutral-22`; placeholder #999999 `core.color.palette.neutral-99`; ancestor 1 up div.i1ubxgci bg rgba(0, 0, 0, 0.05) `core.color.palette.alpha-black.5` |
 
 ![Email field (login) default](components/crops/login-email-default.png) ![Email field (login) focused](components/crops/login-email-focused.png) ![Email field (login) filled](components/crops/login-email-filled.png)
 
@@ -347,7 +347,8 @@ The "Search Gallery" input; focused and typed into then cleared — never search
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focused) | size 203 x 14.39; padding 0px 0px 0px 1px; background transparent; text inter 12/14.4 450, #ffffff `core.color.palette.neutral-ff`; placeholder #999999 `core.color.palette.neutral-99` |
+| default | size 203 x 14.39; padding 0px 0px 0px 1px; background transparent; text inter 12/14.4 450, #ffffff `core.color.palette.neutral-ff`; placeholder #999999 `core.color.palette.neutral-99`; ancestor 1 up label.Wf6zXG_field bg #1f1f1f `core.color.palette.neutral-1f` |
+| focused | ancestor 1 up label.Wf6zXG_field bg #1f1f1f `core.color.palette.neutral-1f` shadow #333333 0px 0px 0px 1px inset |
 
 ![Gallery search default](components/crops/gal-search-default.png) ![Gallery search focused](components/crops/gal-search-focused.png)
 
@@ -411,7 +412,7 @@ Child layers that carry the look: div 20x2 background #ffffff `core.color.palett
 #### Mobile nav overlay
 The nav overlay opened by the menu button (the page links plus Log in/Sign up); its links were never followed. Read as `m-drawer` on the home page at 390 wide.
 
-**Values (default).** size 390 x 844; background transparent; text Inter Variable 14/14 400, #ffffff `core.color.palette.neutral-ff`; layers nav.framer-vzLJR.framer-140pdlc 390.0x844.0 rgb(0, 0, 0); div.framer-z96yy7 390.0x844.0 rgb(0, 0, 0); div.framer-ngytjn 16.0x24.0; a.framer-uTdPy.framer-aZ6KF 55.2x19.6 rgba(255, 255, 255, 0) 8px; div.framer-4mgnl8 51.2x15.6 rgba(255, 255, 255, 0.1) 8px; a.framer-uTdPy.framer-aZ6KF 60.1x19.6 rgba(255, 255, 255, 0) 8px.
+**Values (default).** size 390 x 844; background transparent; text Inter Variable 14/14 400, #ffffff `core.color.palette.neutral-ff`; layers nav.framer-vzLJR.framer-140pdlc 390.0x844.0 rgb(0, 0, 0); div.framer-z96yy7 390.0x844.0 rgb(0, 0, 0); div.framer-ngytjn 16.0x24.0; a.framer-uTdPy.framer-aZ6KF 55.2x19.6 rgba(255, 255, 255, 0) 8px; div.framer-4mgnl8 51.2x15.6 rgba(255, 255, 255, 0.1) 8px; a.framer-uTdPy.framer-aZ6KF 60.1x19.6 rgba(255, 255, 255, 0) 8px; ancestor 1 up div.framer-nwUvx.framer-k4Apk bg #000000 `core.color.palette.neutral-00`.
 
 Child layers that carry the look: nav 390x844 background #000000 `core.color.palette.neutral-00`; div 390x844 background #000000 `core.color.palette.neutral-00`; div 16x24 image url(data:…)%22></path></svg>").
 

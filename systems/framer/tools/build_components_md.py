@@ -173,10 +173,26 @@ def props(v):
             bits.append(" ".join(x for x in (p["node"], p.get("size"), p.get("bg"), p.get("border"), p.get("shadow"), p.get("outline"), p.get("radius")) if x))
     if bits:
         o["layers"] = "; ".join(bits)[:400]
+    # Paint on a wrapping node — the fill the /login e-mail's wrapper paints
+    # behind the transparent input, and the 1px inset ring the gallery search's
+    # label wrapper gains on focus. Without it a captured focus state that
+    # lives on the parent would diff to nothing.
+    anc = []
+    for a in v.get("ancestors", []):
+        bits = [f"{a['up']} up {a['node']}"]
+        if a.get("bg") and a["bg"] != "rgba(0, 0, 0, 0)":
+            bits.append("bg " + colour(a["bg"]))
+        if a.get("shadow"):
+            bits.append("shadow " + colour(a["shadow"], tokens=False))
+        if a.get("outline"):
+            bits.append("outline " + colour(a["outline"], tokens=False))
+        anc.append(" ".join(bits))
+    if anc:
+        o["ancestor"] = "; ".join(anc)
     return o
 
 
-ORDER = ["size", "padding", "border", "radius", "background", "image", "shadow", "outline", "text", "transition", "transform", "opacity", "icon", "placeholder", "layers"]
+ORDER = ["size", "padding", "border", "radius", "background", "image", "shadow", "outline", "text", "transition", "transform", "opacity", "icon", "placeholder", "layers", "ancestor"]
 
 
 def state_rows(c):
@@ -243,7 +259,7 @@ PAGE_NAME = {"home": "home", "pricing": "pricing", "contact": "contact", "login"
 
 GROUP_INTRO = {
     "Site chrome": "The header on every marketing page: the Framer mark, the Platform/Solutions/Resources mega-dropdown triggers (an `a` without href whose panel opens on hover), Pricing and Enterprise links, Log in and Sign up; the mega-dropdown panel opens under the trigger.",
-    "Home": "The home hero: the display masthead over the live editor-demo canvas, the lime 'Get started for free' pill beside the ghost 'Install the MCP' button, and section headings.",
+    "Home": "The home hero: the display masthead over the live editor-demo canvas, the white 'Get started for free' pill beside the ghost 'Install the MCP' button, and section headings.",
     "Pricing": "The /pricing grid: the 'Yearly billing' switch and the 'Credits per month' selects that re-price the cards, the Free/Basic/Pro/Enterprise columns and their CTAs, and the FAQ rows below.",
     "Contact": "The /contact directory: the masthead over the Support / Billing / Emergency / Sales / Abuse cards — a contact surface, not a form.",
     "Login (auth shell)": "/login — the auth shell's sign-in card ('Welcome to Framer', Google SSO and a work-e-mail field + Continue), a light third stack that does not share the --token-<uuid> layer. Measured as a form, never submitted.",
@@ -367,19 +383,25 @@ for k, c in C.items():
         for d in ("Top", "Right", "Bottom", "Left")
         for p in ("Color", "Width", "Style")
     )
+    # A keyboard focus can also be a fill or ink change — the login buttons
+    # darken their background on focus-visible and draw no ring or border.
+    paint = s["backgroundColor"] != base["backgroundColor"] or s["color"] != base["color"]
     desc = f"{s['outlineWidth']} {s['outlineStyle']} {colour(s['outlineColor'])}, offset {s['outlineOffset']}" if ring else (f"on a child: {child_ring}" if child_ring else None)
-    foc.append((k, ring or bool(child_ring), shadow, border, desc))
-with_ring = [f"`{k}` ({r})" for k, ring, sh, bd, r in foc if ring]
-with_shadow = [f"`{k}`" for k, ring, sh, bd, r in foc if not ring and sh]
-with_border = [f"`{k}`" for k, ring, sh, bd, r in foc if not ring and not sh and bd]
-without = [f"`{k}`" for k, ring, sh, bd, r in foc if not ring and not sh and not bd]
+    foc.append((k, ring or bool(child_ring), shadow, border, paint, desc))
+with_ring = [f"`{k}` ({r})" for k, ring, sh, bd, pt, r in foc if ring]
+with_shadow = [f"`{k}`" for k, ring, sh, bd, pt, r in foc if not ring and sh]
+with_border = [f"`{k}`" for k, ring, sh, bd, pt, r in foc if not ring and not sh and bd]
+with_paint = [f"`{k}`" for k, ring, sh, bd, pt, r in foc if not ring and not sh and not bd and pt]
+without = [f"`{k}`" for k, ring, sh, bd, pt, r in foc if not ring and not sh and not bd and not pt]
 parts = [f"{len(with_ring)} draw an outline ring: {', '.join(with_ring)}."]
 if with_shadow:
     parts.append(f"{len(with_shadow)} draw a focus ring as a shadow instead: {', '.join(with_shadow)}.")
 if with_border:
     parts.append(f"{len(with_border)} change only their border: {', '.join(with_border)}.")
+if with_paint:
+    parts.append(f"{len(with_paint)} change only their fill or ink: {', '.join(with_paint)}.")
 if without:
-    parts.append(f"The other {len(without)} show no measured change: {', '.join(without)}.")
+    parts.append(f"The other {len(without)} show no ring, border or fill change: {', '.join(without)}.")
 W(f"**Focus.** {len(foc)} components were given a real keyboard focus. {' '.join(parts)}")
 W()
 W("**Pressed.** Forced with DevTools (`CSS.forcePseudoState` :active:hover). Nothing a real press would submit was ever pressed.")

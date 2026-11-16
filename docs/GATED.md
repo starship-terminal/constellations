@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_102 of 160 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_104 of 162 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -561,6 +561,13 @@ Access: signed out (every surface captured is public; app.fourmula.ai /start, /a
 - every post-login surface (dashboard, asset generation, results, account settings) lives behind app.fourmula.ai's auth wall - an authenticated boundary never reached
 - the auth fields, PDP uploads, Shopify Check connection and Start generation were measured at rest and typed into then cleared, never submitted - validation, error, loading and success states are absent rather than measured; the Start generation pill's dim accent/15% fill is its resting style, not a measured disabled state
 
+## [Fourthwall](../systems/fourthwall) — `fourthwall`
+Access: signed out (every captured surface is public: the marketing pages, the product catalogue and one product page, the docs and help sites in light and in their own dark themes, and the /get-started auth shell; every post-login surface - the shop dashboard, product designer, checkout/orders, promotions, account - is an authenticated boundary never reached; the auth choices (Google/Apple/email) and the PDP 'Sign in to design' were measured at rest, never pressed, no OAuth flow started; searches and fields were typed into then cleared, never submitted; nothing was bought; the Osano consent layer was hidden, never answered)
+- every post-login surface (the shop dashboard, the product designer, checkout and order flow, promotions, account settings) sits behind an account - an authenticated boundary never reached
+- the auth choices (Google/Apple/email provider rows) and the PDP 'Sign in to design' were measured at rest and never pressed - no OAuth flow was started and no form was submitted
+- nothing was purchased; the PDP size guide and product-finder quiz are local toggles that were opened, never a checkout
+- the nav 'Start now' modal navigates to /get-started on this build instead of opening; the auth shell was captured instead
+
 ## [Framer](../systems/framer) — `framer`
 Access: signed out (every captured surface is public; the dashboard, editor, CMS, publishing, workspaces and every post-login surface are an authenticated boundary never reached; /login was measured as a form, never submitted - /signup redirects to it - and Continue with Google was never followed; the pricing 'Yearly billing' switch, credits selects and every CTA/link were measured, never switched or followed; the 'We use cookies' consent card was hidden in the DOM, never answered; the public marketing stack and the community/gallery stack paint dark while /login is a separate light shell)
 - the dashboard, editor, CMS, publishing, workspaces and every post-login surface sit behind an account - an authenticated boundary never reached; /login was captured at rest, its Google button and Continue submit never followed, and /signup redirects to the same shell
@@ -568,6 +575,13 @@ Access: signed out (every captured surface is public; the dashboard, editor, CMS
 - the community/marketplace stack's own stylesheet layer was not separately harvested - its values are measured component tokens, not declared variables; the mkt-logo crop and a full-size nav-panel measurement are recorded missing/weak rather than inferred (the measured login-panel is the full 1440px shell, not a bounded card)
 - prefers-reduced-motion is only partially honoured on the homepage and ignored on pricing, the gallery and login - recorded per page in raw/motion.json
 - no light marketing theme or theme switcher was observed; the only light surface is the /login auth shell
+
+## [Fresha](../systems/fresha) — `fresha`
+Access: read-only (every captured surface is public: the consumer marketplace, the /user-flow and /auth sign-in shells, the partners.fresha.com professional sign-in, a public venue profile, the booking wizard at the service-selection boundary, /pricing and /for-business marketing, the legacy /lp category and browse pages, /help-center, /careers, /blog, /download-app and /cookies; every post-login surface - the customer account and the whole partner app (calendar, sales, clients, marketing) - is an authenticated boundary never reached; the sign-in fields were measured and typed into then cleared, never submitted; the booking Continue button was never pressed and no payment step was reached; no search, booking, OAuth, SSO or consent action was performed)
+- every post-login surface (the customer account and the whole partner app: calendar, sales, clients, marketing, billing) needs an account - an authenticated boundary never reached
+- the /auth and partner sign-in forms were measured and typed into then cleared, never submitted - validation, error, loading, success and verification-code states are absent rather than measured; no OAuth, SSO or passkey flow was started
+- the booking wizard stops at service selection: Continue was never pressed, so staff, time-slot, payment and confirmation steps are absent
+- venue content (staff, reviews, hours, prices) is that venue's published data, not a canonical template
 
 ## [Frame.io](../systems/frame) — `frame`
 Access: signed out (every captured surface is public; the app and every post-login surface - projects, the review player, Camera to Cloud uploads, Drive and Transfer workspaces, admin, billing - is an authenticated boundary never reached; the accounts.frame.io/welcome sign-in and the /contact/form fields were measured and typed into then cleared, never submitted; every CTA, nav item, menu item and card was measured, never followed; no consent layer appeared for the en-US signed-out visitor and the cookie-preferences control was never pressed; the site ships no theme switch - every frame.io page paints the one dark theme, and accounts.frame.io/welcome is the lone light surface on a different stack)
