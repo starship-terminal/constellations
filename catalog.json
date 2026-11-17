@@ -16436,6 +16436,7 @@
     "model": "grok-4.7",
     "route": "public-web",
     "durationMin": 180,
+    "pr": "https://github.com/starship-terminal/constellations/pull/650",
     "gaps": [
      "Sign-in at https://id.kraken.com/sign-in was photographed at rest. The email field was focused. Nothing was typed. Continue, Google, Apple and passkey were not followed.",
      "Create an account at https://www.kraken.com/sign-up was photographed at rest. Continue was not submitted and the Google and Apple buttons were not followed.",
