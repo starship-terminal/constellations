@@ -1491,6 +1491,12 @@
     "reason": "catalog.json describes the xAI/Grok developer documentation portal: quickstart and model docs, API reference, token pricing tables, rate limits, release notes, a cmdK search surface and the Grok help section."
   },
   {
+    "referenceId": "systems:hashnode",
+    "groupId": "web-categories",
+    "labels": ["Social Networking", "Development Tools"],
+    "reason": "catalog.json describes Hashnode's signed-out developer-blogging product: the marketing pages, public feed and post cards, public profiles and posts, Pro pricing, the agents install page, changelog, hackathons and brand surfaces, plus the Town Hall hosted-blog engine's index/article/archive."
+  },
+  {
     "referenceId": "systems:clipchamp",
     "groupId": "web-categories",
     "labels": [
