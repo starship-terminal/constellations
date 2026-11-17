@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 182,
-    "system_domains": 173,
-    "matched_domains": 143,
-    "missing_domains": 290,
+    "system_packages": 186,
+    "system_domains": 177,
+    "matched_domains": 147,
+    "missing_domains": 286,
     "system_domains_absent_from_catalog": 30
   },
   "matched": {
@@ -2304,6 +2304,23 @@
         }
       ]
     },
+    "grow.google": {
+      "catalog": [
+        {
+          "name": "Grow with Google",
+          "domain": "grow.google",
+          "id": 294
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "grow",
+          "name": "Grow with Google",
+          "url": "https://grow.google",
+          "name_match": true
+        }
+      ]
+    },
     "gumroad.com": {
       "catalog": [
         {
@@ -2334,6 +2351,57 @@
           "slug": "hashnode",
           "name": "Hashnode",
           "url": "https://hashnode.com",
+          "name_match": true
+        }
+      ]
+    },
+    "hbomax.com": {
+      "catalog": [
+        {
+          "name": "HBO Max",
+          "domain": "hbomax.com",
+          "id": 337
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "hbomax",
+          "name": "HBO Max",
+          "url": "https://www.hbomax.com",
+          "name_match": false
+        }
+      ]
+    },
+    "helloivy.co": {
+      "catalog": [
+        {
+          "name": "Hello Ivy",
+          "domain": "helloivy.co",
+          "id": 602
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "helloivy",
+          "name": "Hello Ivy",
+          "url": "https://www.helloivy.co",
+          "name_match": false
+        }
+      ]
+    },
+    "hitchd.com": {
+      "catalog": [
+        {
+          "name": "Hitchd",
+          "domain": "hitchd.com",
+          "id": 786
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "hitchd",
+          "name": "Hitchd",
+          "url": "https://www.hitchd.com",
           "name_match": true
         }
       ]
@@ -2652,20 +2720,6 @@
         "id": 629
       }
     ],
-    "grow.google": [
-      {
-        "name": "Grow with Google",
-        "domain": "grow.google",
-        "id": 294
-      }
-    ],
-    "hbomax.com": [
-      {
-        "name": "HBO Max",
-        "domain": "hbomax.com",
-        "id": 337
-      }
-    ],
     "headspace.com": [
       {
         "name": "Headspace",
@@ -2673,25 +2727,11 @@
         "id": 113
       }
     ],
-    "helloivy.co": [
-      {
-        "name": "Hello Ivy",
-        "domain": "helloivy.co",
-        "id": 602
-      }
-    ],
     "helloklean.com": [
       {
         "name": "Hello Klean",
         "domain": "helloklean.com",
         "id": 633
-      }
-    ],
-    "hitchd.com": [
-      {
-        "name": "Hitchd",
-        "domain": "hitchd.com",
-        "id": 786
       }
     ],
     "homerun.co": [

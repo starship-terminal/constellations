@@ -1491,6 +1491,15 @@
   "reason": "catalog.json describes the xAI/Grok developer documentation portal: quickstart and model docs, API reference, token pricing tables, rate limits, release notes, a cmdK search surface and the Grok help section."
  },
  {
+  "referenceId": "systems:hbomax",
+  "groupId": "web-categories",
+  "labels": [
+   "Video Streaming",
+   "Entertainment"
+  ],
+  "reason": "catalog.json describes a video streaming service's signed-out marketing site: hero title carousel, subscription plan cards, content rails and title detail pages."
+ },
+ {
   "referenceId": "systems:hashnode",
   "groupId": "web-categories",
   "labels": [
@@ -1517,6 +1526,14 @@
   "reason": "catalog.json describes a digital-products marketplace: the Discover browse grid with category pills and product cards, a creator subdomain product page with tier pricing, a public checkout form and the signed-out login/signup edge."
  },
  {
+  "referenceId": "systems:grow",
+  "groupId": "web-categories",
+  "labels": [
+   "Education"
+  ],
+  "reason": "catalog.json describes Google's Grow with Google program site: Career Certificate pages, the certificates catalog, AI training courses and graduate/partner stories — a public learning program, enrolment on Coursera."
+ },
+ {
   "referenceId": "systems:cofounder",
   "groupId": "web-categories",
   "labels": [
@@ -1535,6 +1552,14 @@
   "reason": "catalog.json describes a college career network: the students/employers/career-centers marketing stack, employer pricing and request-a-demo Marketo forms, a careers page with a departments filter, a blog and learn hub, legal and corporate pages, and the consumer app's signed-out 'Log in or sign up' card at /access - all signed-out, with the job feed and registration behind a Cloudflare boundary."
  },
  {
+  "referenceId": "systems:helloivy",
+  "groupId": "web-categories",
+  "labels": [
+   "Project Management"
+  ],
+  "reason": "catalog.json describes Hello Ivy, a project-management tool for interior designers: projects, clients, files and feedback across the marketing site, the app login boundary and the public share document."
+ },
+ {
   "referenceId": "systems:cohere",
   "groupId": "web-categories",
   "labels": [
@@ -1550,5 +1575,14 @@
    "Web3 & Crypto"
   ],
   "reason": "catalog.json describes Coinbase's crypto-exchange marketing site (Singapore locale): the home/explore price tables, Coinbase One/Business/Prime product pages, developer platform, USDC, learn/about/careers/blog surfaces, legal pages and the login.coinbase.com sign-in boundary."
+ },
+ {
+  "referenceId": "systems:hitchd",
+  "groupId": "web-categories",
+  "labels": [
+   "Fundraising",
+   "Marketplace"
+  ],
+  "reason": "catalog.json describes a honeymoon cash-gift registry: the closure-notice home, marketing content pages (blog, destination trips, guides), the signed-out auth forms at rest and the public demo registry where guests fund a couple's listed gifts."
  }
 ]

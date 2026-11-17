@@ -21890,6 +21890,134 @@
    "category": "E-commerce",
    "reviewed": "2026-11-17",
    "reviewedPlatform": "web"
+  },
+  {
+   "slug": "grow",
+   "grades": {
+    "F1": {
+     "grade": "meets",
+     "evidence": "core.color.palette holds the declared --glue-{blue,green,grey,red,yellow,purple}-{50..900} ramps resolved from the stylesheet (grey is the neutral ramp); every step carries its css-var provenance in raw/css-vars.json."
+    },
+    "F2": {
+     "grade": "partly",
+     "evidence": "light.color.surface has base (#fff page), muted (#f8f9fa), footer (#eff2f7) and the #18191d editorial dark section; the mega-menu is the overlay but paints the same white with a shadow and no scrim role was measured \u2014 the video modal was opened and closed without measuring a scrim."
+    },
+    "F3": {
+     "grade": "partly",
+     "evidence": "light.color.ink primary #202124, secondary #3c4043, tertiary #5f6368 and inverse #ffffff are measured; link.default/hover/wash/pressed and button.primary.fg (on-accent) exist; no disabled text role exists on the public surface to measure."
+    },
+    "F4": {
+     "grade": "partly",
+     "evidence": "light.color.line.hairline #dadce0 (measured expansion-panel border) is the only border role; focus is core.focusRing colour/width/offset. No strong border role is painted anywhere on the site."
+    },
+    "F5": {
+     "grade": "meets",
+     "evidence": "light.button.primary bg #3186ff, bgHover/bgPressed #185abc and link hoverWash/pressed washes are all measured states of the real pill and text links."
+    },
+    "F6": {
+     "grade": "missing",
+     "evidence": "grow.google's marketing surface paints no status colours \u2014 no success/warning/danger/info fill, text or border appears on any captured route; the declared red/green/yellow ramps are palette steps only, and the stat numbers' brand hues are decoration (one measured, the rest noted in the token description)."
+    },
+    "F7": {
+     "grade": "meets",
+     "evidence": "The product ships one theme (light only \u2014 no control, no applied dark media query) and every semantic role exists in that single set; the dark hero is a light-set section paint, not a second theme."
+    },
+    "F8": {
+     "grade": "meets",
+     "evidence": "core.typography has 11 named roles (display-1/2, headline, title, stat, body, body-small, eyebrow, caption, nav, button) all measured with family, size, weight, line-height and letter-spacing; core.font.family.sans carries the Google Sans Flex stack with Arial/Helvetica fallbacks."
+    },
+    "F9": {
+     "grade": "missing",
+     "evidence": "No spacing scale exists on the product: the glue bundle declares only colour variables, so core.space holds measured control paddings (button 24/40px, nav 12px, tab, page inset 72px) labelled as measured, never a published scale \u2014 the README's do/don't says not to invent one."
+    },
+    "F10": {
+     "grade": "partly",
+     "evidence": "core.radius has all four measured radii (pill 48, bar 120, card 8, control 4); border widths were not tokenised (the 1px hairline is recorded only through its colour role)."
+    },
+    "F11": {
+     "grade": "partly",
+     "evidence": "core.geometry has the measured control heights (header 64, nav item 48, button 50, drawer button 48, jumplink 38) and core.focusRing width 2px offset 1px; the product ships one control size, and icon sizes live in icons/INDEX.tsv (18/24px) rather than as tokens."
+    },
+    "F12": {
+     "grade": "partly",
+     "evidence": "Two measured levels: core.shadow.elevation-1 (card/bar/hover) and button-pressed; the mega-panel's rgba(60,64,67,0.2) drop is captured in components.md but not tokenised as a third level. The site simply paints fewer levels than the rubric's 3-5."
+    },
+    "F13": {
+     "grade": "meets",
+     "evidence": "core.motion is the full probe group (docs/decisions/0001): measured durations (200ms dominates), easing curves as cubicBezier tokens, per-element transition tokens with uses counts, the animations the pages run and the prefers-reduced-motion verdict recorded per token and in the group's $extensions (partially honoured on the 6 probed pages)."
+    },
+    "F14": {
+     "grade": "partly",
+     "evidence": "The 1296px content column with 72px page inset (core.space.page.x, geometry widths) and the 1440 vs 390 layouts are measured; breakpoints are inferred behaviour (the site switches chrome below ~1024px per the two captured widths) and no z-index or grid-column tokens were captured."
+    },
+    "C1": {
+     "grade": "partly",
+     "evidence": "About 10 of the 19 exist on this marketing surface and all are captured: button, icon button (drawer), link, select (footer language), tabs (jumplinks and curriculum), menu (mega-menu), dialog (video modal), card, badge (stat chip, graduate badge), list row (mega-menu item). Text field, text area, checkbox, radio, switch, tooltip, toast, table and avatar do not exist on grow.google's public pages."
+    },
+    "C2": {
+     "grade": "meets",
+     "evidence": "Every interactive component was measured in default/hover/focus-visible/pressed (pressed via DevTools-forced pseudo-state), plus opened states for the mega-menu, drawer, FAQ expansion and video modal; selected (active tab) is captured in the tab row."
+    },
+    "C3": {
+     "grade": "meets",
+     "evidence": "12 components carry a real keyboard-focus reading; components.md's Focus paragraph documents the 2px #1a73e8 box-shadow ring at 1px offset vs the transparent outline."
+    },
+    "C4": {
+     "grade": "meets",
+     "evidence": "Every colour and token-matched value in components.md is labelled with its tokens.json path (build_components_md.py prints the palette/role token beside each reading)."
+    },
+    "P1": {
+     "grade": "partly",
+     "evidence": "patterns.md writes the app shell, navigation/mega-menu, promo banner, hero/CTA composition, the certificates catalog, the certificate-detail/FAQ pattern, the AI course card, footer and mobile drawer. Forms/validation, empty/error, destructive confirmation and search do not exist on this surface and are named as boundaries."
+    },
+    "A1": {
+     "grade": "meets",
+     "evidence": "icons/INDEX.tsv indexes 31 captured inline SVGs by inferred role, size and the routes they appear on; the font is named (Google Sans Flex, Google's proprietary face) with its measured fallback stack."
+    },
+    "K1": {
+     "grade": "meets",
+     "evidence": "README records what was captured (11 US routes + transient states + mobile + the APAC variant), how (the rebuild commands, bare contexts vs the /intl/ALL_sg/ redirect), and what to distrust (no dark theme, no declared spacing scale, pressed-state artifacts, the badge-card geometry discrepancy, partial reduced-motion honouring)."
+    },
+    "F15": {
+     "grade": "meets",
+     "evidence": "Script: all 4 pairs pass 4.5:1 across 1 themes; lowest 9.92:1 light muted (light.color.ink.secondary) on surface (light.color.surface.muted)"
+    },
+    "F16": {
+     "grade": "meets",
+     "evidence": "Script: 199 of 199 tokens name their source"
+    },
+    "K2": {
+     "grade": "meets",
+     "evidence": "Script: 9 rules, each linking a screenshot or crop"
+    },
+    "K3": {
+     "grade": "meets",
+     "evidence": "Script: DESIGN.md matches a fresh generation"
+    },
+    "C5": {
+     "grade": "na",
+     "evidence": "Optional for a capture, and this product does not publish it."
+    },
+    "V1": {
+     "grade": "na",
+     "evidence": "Optional for a capture, and this product does not publish it."
+    },
+    "V2": {
+     "grade": "na",
+     "evidence": "Optional for a capture, and this product does not publish it."
+    }
+   },
+   "name": "Grow with Google",
+   "goodFor": "program and certificate marketing pages in Google's glue marketing style: a light-only white surface, Google Sans Flex display ramp (60/72 hero, 48/56 catalog, 36/24 home headline), the declared --glue-* colour ramps, the painted #3186ff accent on filled 48px-radius pills and links, #185abc hover, #eff2f7 footer band, a 120px jumplinks pill bar, #dadce0 hairline FAQ rows, the full-bleed 1440px mega-menu and the #18191d editorial dark hero on certificate pages; plus the US/APAC regional split the root route serves by request characteristics",
+   "url": "https://grow.google",
+   "captured": "2026-11-17",
+   "themes": [
+    "light"
+   ],
+   "platform": "web",
+   "category": "Learning",
+   "reviewed": "2026-11-17",
+   "reviewedPlatform": "web"
   }
  ],
  "base": "2026-10-16",
