@@ -22149,6 +22149,134 @@
    "reviewedPlatform": "web"
   },
   {
+   "slug": "cohere",
+   "grades": {
+    "F1": {
+     "grade": "meets",
+     "evidence": "Real declared ramps tokenised from the utility layer: neutral 9 steps, quartz 9, blue 11, green 9, coral 8, plus volcanic 5, mushroom 5, marble 4, danger 5 and success 2 — 70 colours across the named Tailwind palette families (core.color.*), each citing its .bg-* rule."
+    },
+    "F2": {
+     "grade": "meets",
+     "evidence": "light.surface.page #fff (body), raised #f0eee9 (callout-card fill), dark #17171c (footer band), band #355146 (the green CTA band), banner #000 (promo strip) and overlay.scrim rgba(33,33,33,.2) (the declared .bg-black/20 mobile scrim). The dark surfaces are measured as islands inside the single light theme."
+    },
+    "F3": {
+     "grade": "partly",
+     "evidence": "light.text.primary #212121, nav #000, onDark #fafafa, onAccent/banner #fff, visited {coral.700} and muted {volcanic.700} are tokenised — the last from the declared disabled:text-volcanic-700 on the sign-in field, measured as the OAuth focus outline; it never paints as body text signed out. No live disabled or placeholder text role exists to capture."
+    },
+    "F4": {
+     "grade": "meets",
+     "evidence": "A real border ladder: border.subtle #dadce0 (OAuth rows), border.input #bdbdbd (the sign-in field), border.onDark #525260 (the 1px neutral-40 separator the footer's mobile accordion rows declare — measured on their hidden desktop clones and labelled as such) and the focus outlines (1px auto #101010; OAuth row 1px #616161 offset 4; CTA pill border-swap to neutral-95)."
+    },
+    "F5": {
+     "grade": "meets",
+     "evidence": "Both pill fills measured through default/hover/focus-visible/pressed: dark (#17171c -> #000 on nav-cta) and light (white). cta-dark's own hover is recorded as an error state — the ease-button-gradient hover animation re-renders the node — and the identical swap is captured on nav-cta."
+    },
+    "F6": {
+     "grade": "partly",
+     "evidence": "danger (5 steps) and success (2 steps) are declared in the palette and tokenised, but they never paint in a validation/status role on the public surface; no warning or info family exists and nothing was submitted so no validation state was seen."
+    },
+    "F7": {
+     "grade": "meets",
+     "evidence": "One theme ships: every route paints the same light surface. The promo banner, footer band, green CTA band and product-hero dark islands are surfaces inside it, captured as light.* roles rather than a dark theme."
+    },
+    "F8": {
+     "grade": "meets",
+     "evidence": "Five families tokenised with full fallback stacks (font.family.ui Unica77 Cohere Web, display CohereVariable, displayMeasured CohereText — the face the hero actually paints, mono/eyebrow CohereMono), the declared web3-* type scale, and 10 measured sizes (96px hero, 72px product h1s, 60px section/mobile, 18/16/14px body scale)."
+    },
+    "F9": {
+     "grade": "partly",
+     "evidence": "One declared primitive: core.spacing.unit .25rem/4px (.gap-1) — the gap ladder exists in the sheet (gap-0.5..36) but multiples are unnamed. Measured paddings live in component dimensions; no named spacing ladder is declared."
+    },
+    "F10": {
+     "grade": "meets",
+     "evidence": "The custom declared radius scale is tokenised (rounded-sm 4px, md 6.8px, lg 12px, xl 22px, 2xl 30px, 3xl 1.5rem, full 9999px — not the Tailwind defaults) plus measured control 9999px and card 22px; 1px/2px border widths measured on the sign-in card and CTA pills."
+    },
+    "F11": {
+     "grade": "meets",
+     "evidence": "Control heights measured per component: nav-cta 36px, OAuth rows 40px, menu rows 44px, pill CTAs 53.2px, sign-in field 60px, banner 48px, header 60px, mobile bar 60px; social icons 24px, menu button 32px; focus ring 1px offset 0-4px."
+    },
+    "F12": {
+     "grade": "missing",
+     "evidence": "Nothing on the public surface paints a real drop shadow: the pill CTAs use 2px transparent borders and 1px rings, and the focus-visible shadow stacks read rgba(0,0,0,0). No elevation ladder exists to tokenise — recorded, not invented."
+    },
+    "F13": {
+     "grade": "meets",
+     "evidence": "Declared durations .duration-0..1000 (150/200/300/500ms tokenised) plus measured nav-cta 0.3s and nav-item 0.2s; four curves tokenised (ease-in/out/in-out declared + the measured `ease` on the pills); the menu's 0.5s clip-path transition is measured, and the sheets declare motion-safe:/motion-reduce: variants gating the transform and glow effects on prefers-reduced-motion."
+    },
+    "F14": {
+     "grade": "partly",
+     "evidence": "Three declared content wrappers (max-w-web3-full-screen 2280px, internal 1920px, blog 1390px), the declared z layer names (background 0, content 20, nav 100) and per-component measured widths at two breakpoints (1440/390). Breakpoints are observed (lg:flex blocks, the 390 pass) but not named."
+    },
+    "C1": {
+     "grade": "partly",
+     "evidence": "~10 of the 19 checklist components on the public surface: button (dark/light pills), icon button (banner close, hamburger, social), link (nav/footer/menu), menu (mobile overlay + scrim), tabs (pricing on/off), accordion (FAQ), card (callout), text field (sign-in email), submit button (green Log-in), badge (certification anchors). No select/checkbox/radio/switch/dialog/toast/table mounts signed out."
+    },
+    "C2": {
+     "grade": "meets",
+     "evidence": "97 states across 39 components: default/hover/focus-visible/pressed on every interactive control, 'opened' on the FAQ accordion and mobile menu, 'focused' on the sign-in field, on/off on the pricing tabs. The single honest gap (cta-dark hover, node re-renders) is recorded as an error state."
+    },
+    "C3": {
+     "grade": "meets",
+     "evidence": "18 components captured a visible keyboard focus: the 1px #101010 auto outline on nav/banner/card/tab/FAQ/footer controls, the CTA's neutral-95 border swap, the OAuth row's 1px #616161 offset-4 outline and the mobile menu's #e59700 amber ring."
+    },
+    "C4": {
+     "grade": "meets",
+     "evidence": "components.md writes every state in token terms — values followed by the matching core.color.* name — with the shared-values tables (focus, motion, card shapes, text) built from the same token map."
+    },
+    "P1": {
+     "grade": "meets",
+     "evidence": "patterns.md covers every captured surface: banner+header chrome, the gradient pill language, the hero and callout sections, the pricing table/FAQ, the dark product heroes, the two footer bands, the sign-in card and the mobile pass."
+    },
+    "A1": {
+     "grade": "partly",
+     "evidence": "icon.png fetched from the declared apple-touch-icon (128px); 49 @font-face records harvested with their file URLs. No standalone SVG icon set was lifted — the glyphs in crops are the site's artwork."
+    },
+    "K1": {
+     "grade": "meets",
+     "evidence": "README states the routes, widths, tooling and boundary, plus an explicit Known gaps section (the uncapturable cta-dark hover, unswitched pricing tabs, declared-only visited colour, the no-shadow finding and the screenshot-only routes)."
+    },
+    "F15": {
+     "grade": "meets",
+     "evidence": "Script: all 4 pairs pass 4.5:1 across 1 themes; lowest 5.34:1 light muted (light.text.muted) on surface (light.surface.raised)"
+    },
+    "F16": {
+     "grade": "meets",
+     "evidence": "Script: 160 of 160 tokens name their source"
+    },
+    "K2": {
+     "grade": "meets",
+     "evidence": "Script: 6 rules, each linking a screenshot or crop"
+    },
+    "K3": {
+     "grade": "meets",
+     "evidence": "Script: DESIGN.md matches a fresh generation"
+    },
+    "C5": {
+     "grade": "na",
+     "evidence": "Optional for a capture, and this product does not publish it."
+    },
+    "V1": {
+     "grade": "na",
+     "evidence": "Optional for a capture, and this product does not publish it."
+    },
+    "V2": {
+     "grade": "na",
+     "evidence": "Optional for a capture, and this product does not publish it."
+    }
+   },
+   "name": "Cohere",
+   "goodFor": "enterprise AI platform marketing: a Next.js/Tailwind v3/Sanity build painting one light theme (pureWhite ground, volcanic-900 ink) whose declared layer lives in utility rules - the named palette (volcanic/coral/mushroom/marble/quartz/onyx/neutral), the web3-* type scale and custom radii (rounded-xl 22px, rounded-2xl 30px) - with dark islands (pureBlack promo banner, neutral-15 footer, #355146 green CTA band), 9999px pill CTAs carrying a ::before quartz-500-to-coral-500 gradient sweep, and CohereText/Unica77/CohereMono type",
+   "url": "https://cohere.com",
+   "captured": "2026-11-17",
+   "themes": [
+    "light"
+   ],
+   "platform": "web",
+   "category": "AI research",
+   "reviewed": "2026-11-17",
+   "reviewedPlatform": "web"
+  },
+  {
    "slug": "hitchd",
    "grades": {
     "F1": {
