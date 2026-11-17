@@ -1543,5 +1543,14 @@
       "AI Tool"
     ],
     "reason": "catalog.json describes Cohere's enterprise AI platform marketing site: the Command/North product pages, per-model pricing rate table, models overview, developer and customer-story surfaces, legal pages and the dashboard.cohere.com sign-in boundary."
+  },
+  {
+    "referenceId": "systems:hitchd",
+    "groupId": "web-categories",
+    "labels": [
+      "Fundraising",
+      "Marketplace"
+    ],
+    "reason": "catalog.json describes a honeymoon cash-gift registry: the closure-notice home, marketing content pages (blog, destination trips, guides), the signed-out auth forms at rest and the public demo registry where guests fund a couple's listed gifts."
   }
 ]

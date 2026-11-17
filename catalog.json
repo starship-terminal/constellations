@@ -15679,6 +15679,93 @@
     "durationNote": "wall-clock across the capture sessions including route probing, kit adaptation, the theme-repaint verification, the screenshot pass, the measurement/layout/motion/icon passes and the offline build",
     "pr": "https://github.com/starship-terminal/constellations/pull/633"
    }
+  },
+  {
+   "slug": "hitchd",
+   "name": "Hitchd",
+   "url": "https://www.hitchd.com",
+   "category": "e-commerce",
+   "platform": "web",
+   "goodFor": "Honeymoon-registry and cash-gifting design: a Foundation marketing stack (self-hosted DDNR hairline serif + Inter Variable on warm paper #f6f3ef with a near-black ink) that is currently a one-viewport closure notice, plus two Angular apps - the couple auth surface (48px fields at 8px radius, 50px disabled pill) and the guest registry (sample banner + black Try It Free pill, couple hero in the registry's own display faces, Sort by select, gift tiles, and a card-tap gift modal with a disabled Give pill). One light theme; the money path and every internal registry route are documented boundaries",
+   "tags": [
+    "web",
+    "wedding",
+    "registry",
+    "crowdfunding",
+    "angular",
+    "foundation",
+    "light",
+    "serif-display",
+    "signed-out",
+    "closure"
+   ],
+   "shape": "reference",
+   "captured": "2026-11-17",
+   "access": "signed out (the marketing pages, content pages and demo registries are fully public; the auth forms were read at rest - nothing was focused, typed or submitted; the gift modal's Give/contribute flow and every payment step were never entered; the registry's internal routes /contributions, /payment-methods, /ask and /quick-thanks bounce the guest to / and were recorded as boundaries)",
+   "themes": [
+    "light"
+   ],
+   "widths": [
+    1440,
+    390
+   ],
+   "entry": "systems/hitchd/README.md",
+   "tokens": "systems/hitchd/tokens.json",
+   "styleGuide": "systems/hitchd/style-guide.html",
+   "preview": {
+    "cover": "systems/hitchd/screenshots/home-light-default.png",
+    "icon": "systems/hitchd/icon.png",
+    "swatches": {
+     "light": {
+      "page": "light.color.surface.page",
+      "surface": "light.color.surface.cream",
+      "text": "light.color.text.ink",
+      "muted": "light.color.text.muted",
+      "accent": "light.color.action.ctaFill",
+      "border": "light.color.border.field"
+     }
+    },
+    "fonts": [
+     "core.font.family.display",
+     "core.font.family.text",
+     "core.font.family.registry"
+    ]
+   },
+   "capture": {
+    "method": "public-web",
+    "source": "hitchd.com in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass at 2x; computed styles and element crops from the live DOM on 20 components, a stylesheet harvest (almost no declared variables - ~10 radio-control flags - so the token layer is measured computed styles aliased to a measured palette) plus 77 @font-face records, layout readings on 22 page passes, motion probed on 6 pages (145 moving transitions; prefers-reduced-motion is ignored) and an icon index (3 inline SVGs plus 58 linked references). The site is a Foundation marketing stack plus two Angular apps; the registry app's boot is nondeterministic, so the measurer waits for the gift list itself with one reload retry. BOUNDARY: the couple dashboard and every post-login surface, the Give/contribute/payment steps, and the registry's internal routes (all bounce to /) were never crossed; auth forms were read at rest only",
+    "timestamp": "2026-11-17T18:00:00Z",
+    "harness": "Devin",
+    "model": "SWE-2 High",
+    "route": "public-web",
+    "routes": [
+     "/",
+     "/login",
+     "/signup",
+     "/forgot-password",
+     "/blog",
+     "/blog/what-is-a-honeymoon-registry",
+     "/terms",
+     "/privacy",
+     "/trips/australia",
+     "/guides/add-hitchd-to-knot-wedding-webiste",
+     "/zoeandnoah (+ sort open, filtered, gift modal at rest)",
+     "/avaandbenjamin (countdown)",
+     "mobile /, /login, /blog, /blog/what-is-a-honeymoon-registry, /zoeandnoah, /avaandbenjamin"
+    ],
+    "gaps": [
+     "no dark theme exists anywhere - no variant declared, no theme control found - so the package is light-only by evidence, not by omission",
+     "/blog is ~50,000px tall; its tiled full-page capture exceeded the timeout and is documented as a truncation boundary",
+     "focus/hover/pressed states on the auth controls were never forced (focusing a field is the first step of signing in)",
+     "the demo registry's .mobile-menu drawer exists with owner links but no guest-facing control opens it - measured hidden at rest",
+     "the registry's internal routes (/contributions, /payment-methods, /ask, /quick-thanks) bounce the signed-out guest to /",
+     "the closing site's redirected marketing routes (/how-it-works, /about, /pricing, /*-alternative, /referrals, /honeymoon-registry) 301 to /",
+     "only 3 inline SVGs paint on the public surface; the rest of the iconography is linked brand/social SVGs, indexed but not vendored"
+    ],
+    "durationMin": 420,
+    "durationNote": "wall-clock across the capture sessions including kit adaptation, the flaky Angular registry app's repeated measurement passes, and the offline build",
+    "pr": "https://github.com/starship-terminal/constellations/pull/634"
+   }
   }
  ]
 }

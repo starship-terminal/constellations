@@ -379,6 +379,29 @@ export async function createResearchStore(directory: string) {
       await seedNewCuratedMediaTerms(tx, new Set(["systems:helloivy"]));
       await tx.execute("PRAGMA user_version = 30");
     }
+    if (version < 31) {
+      // Same one-shot top-up, scoped to this batch's new reference: a store
+      // already at v30 never re-seeds, so the Hitchd rows would never
+      // arrive. Scoping keeps cleared labels on older packages cleared — an
+      // empty assignment reads as "never labelled", so an unscoped pass
+      // would restore rows the user deleted.
+      await seedNewCuratedCategories(tx, new Set(["systems:hitchd"]));
+      await seedNewCuratedMediaTerms(tx, new Set(["systems:hitchd"]));
+      // The media seed also gained two joinhandshake screenshots since v28
+      // shipped. A v28 store already labelled that package's other media, so
+      // re-seeding the whole reference would resurrect any rows a user
+      // cleared; the two media IDs are new and cannot have been cleared, so
+      // top up just those.
+      await seedNewCuratedMediaTerms(
+        tx,
+        new Set(["systems:joinhandshake"]),
+        new Set([
+          "systems/joinhandshake/screenshots/home-light-consent.png",
+          "systems/joinhandshake/screenshots/mobile-home-light-drawer.png",
+        ]),
+      );
+      await tx.execute("PRAGMA user_version = 31");
+    }
     await tx.commit();
   } catch (error) {
     await tx.rollback();
