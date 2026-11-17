@@ -16475,7 +16475,8 @@
      "the Inter and Geist Mono faces are next/font-licensed and not shipped; crops show them, the style guide falls back to system fonts"
     ],
     "durationMin": 180,
-    "durationNote": "wall-clock across the capture sessions including the probes, the kit adaptation, the two-surface stylesheet harvest, the screenshot and measurement passes, the icon collection and the offline build"
+    "durationNote": "wall-clock across the capture sessions including the probes, the kit adaptation, the two-surface stylesheet harvest, the screenshot and measurement passes, the icon collection and the offline build",
+   "pr": "https://github.com/starship-terminal/constellations/pull/658"
    }
   }
  ]
