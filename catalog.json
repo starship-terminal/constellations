@@ -3794,7 +3794,7 @@
     "icons/": "Claude's icons and the spark are Anthropic's artwork and are not kept here (docs/RIGHTS.md)"
    }
   },
-    {
+  {
    "slug": "clearful",
    "name": "Clearful",
    "url": "https://clearful.com",
@@ -5244,7 +5244,7 @@
    ],
    "shape": "reference",
    "captured": "2026-11-16",
-   "access": "signed out (every captured surface is public); the product app behind sign-in (calendar, clients, payments, marketing tools \u2014 app.glossgenius.com/ redirects to /calendar) was never reached; the login, signup, restore and demo forms were measured and typed into then cleared, never submitted; the published booking flow was browsed read-only to its public /book date-picker \u2014 no slot confirmed, no appointment booked; every CTA measured, never followed; no consent banner was observed on any host",
+   "access": "signed out (every captured surface is public); the product app behind sign-in (calendar, clients, payments, marketing tools — app.glossgenius.com/ redirects to /calendar) was never reached; the login, signup, restore and demo forms were measured and typed into then cleared, never submitted; the published booking flow was browsed read-only to its public /book date-picker — no slot confirmed, no appointment booked; every CTA measured, never followed; no consent banner was observed on any host",
    "themes": [
     "light"
    ],
@@ -5278,7 +5278,7 @@
    },
    "capture": {
     "method": "public-web",
-    "source": "glossgenius.com (a Webflow marketing site with a bundled CDN stylesheet and inline blocks declaring the --_color---*/--_size---*/--_typography---*/--_layout---*/--bg-* layer plus @font-face), app.glossgenius.com (a Next.js SPA whose CSS-module glossDS layer \u2014 --content-*/--surface-*/--brand-*/--space-*x/--radius-*/--font-* plus --button-*/--input-*/--checkbox-* \u2014 is declared on :root and scoped .light/.dark; only the light scope paints signed out) and honeyhivesalon.glossgenius.com (a real published business booking website with its own .tokens_glossDS__* family) in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and 198 element crops from the live DOM, plus a stylesheet harvest resolving 822 marketing + 477 app + 99 booking custom properties. BOUNDARY: everything post-login; the demo form's step-2 was read with its display:none wrapper unhidden \u2014 its 'Get a demo' step link was never activated; the edge briefly served a security-verification block on app.glossgenius.com/login once \u2014 a retry in a fresh context succeeded, no challenge was answered by hand",
+    "source": "glossgenius.com (a Webflow marketing site with a bundled CDN stylesheet and inline blocks declaring the --_color---*/--_size---*/--_typography---*/--_layout---*/--bg-* layer plus @font-face), app.glossgenius.com (a Next.js SPA whose CSS-module glossDS layer — --content-*/--surface-*/--brand-*/--space-*x/--radius-*/--font-* plus --button-*/--input-*/--checkbox-* — is declared on :root and scoped .light/.dark; only the light scope paints signed out) and honeyhivesalon.glossgenius.com (a real published business booking website with its own .tokens_glossDS__* family) in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and 198 element crops from the live DOM, plus a stylesheet harvest resolving 822 marketing + 477 app + 99 booking custom properties. BOUNDARY: everything post-login; the demo form's step-2 was read with its display:none wrapper unhidden — its 'Get a demo' step link was never activated; the edge briefly served a security-verification block on app.glossgenius.com/login once — a retry in a fresh context succeeded, no challenge was answered by hand",
     "timestamp": "2026-11-16T19:35:00Z",
     "harness": "Devin",
     "model": "Devin",
@@ -5307,14 +5307,14 @@
      "home header How-it-works + Businesses mega-menus, pricing Monthly/Annual switch and tier picker, FAQ details, mobile /, /pricing, /signup and booking services"
     ],
     "gaps": [
-     "everything post-login \u2014 the calendar, clients, payments, marketing and business tools behind app.glossgenius.com sign-in (the app root redirects to /calendar); an authenticated boundary never reached",
-     "submitted states: the login, signup, forgot-password and get-demo forms were typed into then cleared, never sent \u2014 validation, error, loading and success states are absent rather than measured",
-     "the booking flow stops at the public /book date-picker \u2014 slot confirmation, the YOUR DETAILS form and payment were never reached; 'Next' never pressed",
-     "the booking site is one business's skin (honeyhivesalon.glossgenius.com, Organic-style layout) \u2014 other businesses re-skin the same chrome through other .tokens_glossDS__* layout classes; booking tokens are this surface's resolution, not a universal brand set",
-     "the demo form's step-2 (the real HubSpot fields) was measured with .get-demo-form-step-2's display:none cleared inline \u2014 the 'Get a demo' step link itself was never activated",
-     "the app's .dark class and the marketing sheet's [data-theme=\"dark\"] block are declarations nothing signed out applies \u2014 declared evidence, not a painted dark theme",
+     "everything post-login — the calendar, clients, payments, marketing and business tools behind app.glossgenius.com sign-in (the app root redirects to /calendar); an authenticated boundary never reached",
+     "submitted states: the login, signup, forgot-password and get-demo forms were typed into then cleared, never sent — validation, error, loading and success states are absent rather than measured",
+     "the booking flow stops at the public /book date-picker — slot confirmation, the YOUR DETAILS form and payment were never reached; 'Next' never pressed",
+     "the booking site is one business's skin (honeyhivesalon.glossgenius.com, Organic-style layout) — other businesses re-skin the same chrome through other .tokens_glossDS__* layout classes; booking tokens are this surface's resolution, not a universal brand set",
+     "the demo form's step-2 (the real HubSpot fields) was measured with .get-demo-form-step-2's display:none cleared inline — the 'Get a demo' step link itself was never activated",
+     "the app's .dark class and the marketing sheet's [data-theme=\"dark\"] block are declarations nothing signed out applies — declared evidence, not a painted dark theme",
      "an edge security-verification page blocked app.glossgenius.com/login on one pass; a retry in a fresh context succeeded and no challenge was answered by hand",
-     "pressed states are DevTools-forced (CSS.forcePseudoState) \u2014 script-driven mousedown looks are uncaptured",
+     "pressed states are DevTools-forced (CSS.forcePseudoState) — script-driven mousedown looks are uncaptured",
      "icons: no standalone SVG icon set lifted this pass"
     ],
     "durationMin": 420,
@@ -5702,7 +5702,8 @@
      "carousel-next, yearly-billing, FAQ-open, cookie-modal and mobile-nav states are local UI toggles only - nothing was accepted, purchased or submitted"
     ],
     "durationMin": null,
-    "durationNote": "wall-clock duration was not recorded for this capture"
+    "durationNote": "wall-clock duration was not recorded for this capture",
+    "pr": "https://github.com/starship-terminal/constellations/pull/626"
    }
   },
   {
@@ -14789,8 +14790,7 @@
     "durationNote": "wall-clock across the capture sessions including the blocked grok.com/x.ai attempts, kit adaptation, the stylesheet harvest, the screenshot pass, the measurement pass and the offline build",
     "pr": "https://github.com/starship-terminal/constellations/pull/622"
    }
-  }
-,
+  },
   {
    "slug": "front",
    "name": "Front",
