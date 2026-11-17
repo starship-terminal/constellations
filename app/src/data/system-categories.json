@@ -1518,6 +1518,22 @@
   "reason": "catalog.json describes Microsoft's Clipchamp video editor: marketing pages for the browser video editor, templates, stock library, pricing tiers and an education/work surface."
  },
  {
+  "referenceId": "systems:httpie",
+  "groupId": "web-categories",
+  "labels": [
+   "Development Tools"
+  ],
+  "reason": "catalog.json describes HTTPie's API-client product: the marketing pages, CLI/desktop download surfaces, documentation and changelog, plus the HTTPie-for-Web client's signed-out incognito request builder."
+ },
+ {
+  "referenceId": "systems:headspace",
+  "groupId": "web-categories",
+  "labels": [
+   "Health & Wellness"
+  ],
+  "reason": "catalog.json describes the Headspace meditation-and-sleep product: the marketing pages, the free-preview content library, the plans block, the signed-out Auth0 auth cards, the checkout shell and the organizations.headspace.com B2B surface; the member app past login is gated."
+ },
+ {
   "referenceId": "systems:gumroad",
   "groupId": "web-categories",
   "labels": [
@@ -1550,6 +1566,15 @@
    "Productivity"
   ],
   "reason": "catalog.json describes a college career network: the students/employers/career-centers marketing stack, employer pricing and request-a-demo Marketo forms, a careers page with a departments filter, a blog and learn hub, legal and corporate pages, and the consumer app's signed-out 'Log in or sign up' card at /access - all signed-out, with the job feed and registration behind a Cloudflare boundary."
+ },
+ {
+  "referenceId": "systems:homerun",
+  "groupId": "web-categories",
+  "labels": [
+   "Business",
+   "Productivity"
+  ],
+  "reason": "catalog.json describes Homerun's signed-out hiring/ATS product: the marketing pages, product/features/pricing/customers surfaces, blog/templates/integrations/guides/updates libraries, trial and legal pages, the jobs.homerun.co careers app with its public job ads and application wizard, and the two sign-in boundaries."
  },
  {
   "referenceId": "systems:helloivy",

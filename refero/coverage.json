@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 186,
-    "system_domains": 177,
-    "matched_domains": 147,
-    "missing_domains": 286,
+    "system_packages": 189,
+    "system_domains": 180,
+    "matched_domains": 150,
+    "missing_domains": 283,
     "system_domains_absent_from_catalog": 30
   },
   "matched": {
@@ -2372,6 +2372,23 @@
         }
       ]
     },
+    "headspace.com": {
+      "catalog": [
+        {
+          "name": "Headspace",
+          "domain": "headspace.com",
+          "id": 113
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "headspace",
+          "name": "Headspace",
+          "url": "https://www.headspace.com",
+          "name_match": true
+        }
+      ]
+    },
     "helloivy.co": {
       "catalog": [
         {
@@ -2402,6 +2419,40 @@
           "slug": "hitchd",
           "name": "Hitchd",
           "url": "https://www.hitchd.com",
+          "name_match": true
+        }
+      ]
+    },
+    "homerun.co": {
+      "catalog": [
+        {
+          "name": "Homerun",
+          "domain": "homerun.co",
+          "id": 417
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "homerun",
+          "name": "Homerun",
+          "url": "https://www.homerun.co",
+          "name_match": true
+        }
+      ]
+    },
+    "httpie.io": {
+      "catalog": [
+        {
+          "name": "HTTPie",
+          "domain": "httpie.io",
+          "id": 540
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "httpie",
+          "name": "HTTPie",
+          "url": "https://httpie.io",
           "name_match": true
         }
       ]
@@ -2720,32 +2771,11 @@
         "id": 629
       }
     ],
-    "headspace.com": [
-      {
-        "name": "Headspace",
-        "domain": "headspace.com",
-        "id": 113
-      }
-    ],
     "helloklean.com": [
       {
         "name": "Hello Klean",
         "domain": "helloklean.com",
         "id": 633
-      }
-    ],
-    "homerun.co": [
-      {
-        "name": "Homerun",
-        "domain": "homerun.co",
-        "id": 417
-      }
-    ],
-    "httpie.io": [
-      {
-        "name": "HTTPie",
-        "domain": "httpie.io",
-        "id": 540
       }
     ],
     "huddlekit.com": [

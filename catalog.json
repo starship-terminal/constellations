@@ -16063,6 +16063,315 @@
     "durationNote": "wall-clock across the capture sessions including kit adaptation, the flaky Angular registry app's repeated measurement passes, and the offline build",
     "pr": "https://github.com/starship-terminal/constellations/pull/634"
    }
+  },
+  {
+   "slug": "headspace",
+   "name": "Headspace",
+   "url": "https://www.headspace.com",
+   "category": "fitness",
+   "platform": "web",
+   "goodFor": "Meditation, sleep and mental-health product across four public surfaces: the Next.js marketing site (generated Emotion classes, no custom-property layer, Headspace Apercu 200-700, blue #0061ef primary pills and dark #2d2c2b secondary pills on a warm #f9f4f2 ground, hover mega-menu, topic pages with pastel tints), the /content free-preview library and /articles hub, the /subscriptions plans block (billing switch, seat slider), the signed-out Auth0 universal login/signup cards on auth.headspace.com, the checkout.headspace.com self-serve shell, and the organizations.headspace.com B2B surface (yellow #ffce00 cards, white pill CTA going #ff7e1d orange on hover)",
+   "tags": [
+      "web",
+      "meditation",
+      "sleep",
+      "mental-health",
+      "wellness",
+      "marketing",
+      "light",
+      "signed-out",
+      "pricing",
+      "design-tokens"
+   ],
+   "shape": "reference",
+   "captured": "2026-11-17",
+   "access": "signed out (every captured surface is public); the member app behind auth.headspace.com login was never reached; the universal login/signup, newsletter, redeem-code and checkout forms were measured empty, never filled or submitted; no trial started, no plan bought, no code redeemed; every CTA measured, never followed; the OneTrust consent layer was hidden, never answered",
+   "themes": [
+      "light"
+   ],
+   "widths": [
+      1440,
+      390
+   ],
+   "entry": "systems/headspace/README.md",
+   "tokens": "systems/headspace/tokens.json",
+   "styleGuide": "systems/headspace/style-guide.html",
+   "preview": {
+      "cover": "systems/headspace/screenshots/home-light-default.png",
+      "icon": "systems/headspace/icon.png",
+      "swatches": {
+         "light": {
+            "page": "light.color.surface.page",
+            "surface": "light.color.surface.auth-card",
+            "text": "light.color.ink.primary",
+            "muted": "light.color.ink.muted",
+            "accent": "light.color.brand.blue",
+            "border": "light.color.line.field"
+         }
+      },
+      "fonts": [
+         "core.font.family.display",
+         "core.font.family.body"
+      ]
+   },
+   "source": {
+      "path": "~/.design-systems/headspace/raw-shots (full-colour captures, outside the repo)"
+   },
+   "capture": {
+      "method": "public-web",
+      "source": "www.headspace.com (a Next.js marketing site compiled to generated Emotion classes with 275+ inline style blocks; the stylesheets declare only a small :root palette - 27 custom properties including --secondary-blue #0061ef, --primary-blue #0040ea, --orange #ff7e1d, --primary-warm-grey-700 #2d2c2b, --2ndary-warm-grey-100 #f9f4f2 - resolved by the harvest and cross-checked against the measured component values; Headspace Apercu + Apercu Pro Mono @font-face), organizations.headspace.com (the B2B marketing host), checkout.headspace.com (the self-serve checkout shell) and auth.headspace.com (the Auth0 universal login/signup the /login and /signup routes redirect to) in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and 64 element crops from the live DOM. BOUNDARY: everything post-login; forms measured empty; /pricing serves a real 404",
+      "timestamp": "2026-11-17T08:00:00Z",
+      "harness": "Devin",
+      "model": "Devin",
+      "route": "public-web",
+      "routes": [
+         "/",
+         "/app",
+         "/meditation",
+         "/mindfulness",
+         "/sleep",
+         "/online-therapy",
+         "/coaching",
+         "/ai-mental-health-companion",
+         "/mental-health",
+         "/mental-health/anxiety",
+         "/science",
+         "/about-us",
+         "/articles",
+         "/articles/can-you-use-hsa-or-fsa-for-mental-health",
+         "/content",
+         "/content/topics/100",
+         "/subscriptions",
+         "/family-plan",
+         "/buy/gift",
+         "/share-headspace",
+         "/code",
+         "/app/mindful-families",
+         "organizations.headspace.com/",
+         "organizations.headspace.com/employers",
+         "checkout.headspace.com/checkout (viewed only)",
+         "/login and /signup -> auth.headspace.com universal pages (measured empty)",
+         "home header For-You mega-menu, mobile /, /subscriptions, /meditation, /content and the mobile nav sheet"
+      ],
+      "gaps": [
+         "everything post-login - the member home, meditation player, streaks, settings and the whole signed-in app behind auth.headspace.com; an authenticated boundary never reached",
+         "submitted states: the universal login/signup, newsletter, redeem-code and checkout forms were measured empty, never sent - validation, error, loading and success states are absent rather than measured",
+         "no trial started, no plan bought, no code redeemed, no gift sent, no guest pass claimed - every transactional step past the painted form is a recorded gap",
+         "/pricing answers a real 404 ('Whoops! Something's changed'); the plans live on /subscriptions - a recorded absence, not a capture",
+         "no dark theme: no control, no attribute, no applied prefers-color-scheme rules on any captured page",
+         "pressed states are DevTools-forced (CSS.forcePseudoState) - script-driven mousedown looks are uncaptured",
+         "the OneTrust consent banner/preferences were hidden (display:none), never answered - no consent state captured",
+         "the checkout shell's form fields, the feature/testimonial cards, the FAQ accordion, the plan cards and billing switch, the content tiles, the footer language selector and app badges, and the mobile nav sheet did not match the kit's structural selectors on this pass - recorded as absent components, not measured",
+         "full-page screenshots capture the real scrollable area: on pages whose content overflows horizontally the -full PNG is wider than the 1440 viewport, and pages taller than 8 tiles truncate from the bottom; sidecars record the document size"
+      ],
+      "durationMin": 240,
+      "durationNote": "wall-clock across the capture sessions including reachability probes, kit adaptation from the Grok capture, the stylesheet harvest, the screenshot pass, the measurement pass and the offline build",
+      "pr": "https://github.com/starship-terminal/constellations/pull/631"
+   },
+   "layoutGaps": {}
+},
+  {
+   "slug": "homerun",
+   "name": "Homerun",
+   "url": "https://www.homerun.co",
+   "category": "productivity",
+   "platform": "web",
+   "goodFor": "Homerun's hiring/ATS marketing: a Webflow build whose :root carries two palette layers at once - the current --_updated-colors-v2---* set (beige grounds, the #4f75fe brand-blue ramp, the warm-brown ink scale, secondary/tertiary accents) plus the legacy named layer it replaced - over a single light theme with #2d2323 dark bands, GT Walsheim 900 display + GT America UI type, 12px-radius blue/dark button pairs, and the same system running through the jobs.homerun.co careers app (#466af6 accent), the Angular app.homerun.co/login card (its own --ui-* token layer) and the .NET app.homerun.hr sign-in (#00b16b green)",
+   "tags": [
+    "web",
+    "saas",
+    "hr",
+    "ats",
+    "hiring",
+    "webflow",
+    "light",
+    "blue-accent",
+    "declared-tokens",
+    "marketing",
+    "pricing",
+    "careers",
+    "signed-out"
+   ],
+   "shape": "reference",
+   "captured": "2026-11-17",
+   "access": "signed out (the marketing routes and careers site are fully public; the ATS and HR apps sit behind sign-in - both public login cards were measured at rest, never submitted; the public application wizard was never advanced past its first step; consent banners were hidden without answering them; sign-up/login/apply links were never followed)",
+   "themes": [
+    "light"
+   ],
+   "widths": [
+    1440,
+    390
+   ],
+   "entry": "systems/homerun/README.md",
+   "tokens": "systems/homerun/tokens.json",
+   "styleGuide": "systems/homerun/style-guide.html",
+   "preview": {
+    "cover": "systems/homerun/screenshots/home-light-default.png",
+    "icon": "systems/homerun/icon.png",
+    "swatches": {
+     "light": {
+      "page": "light.surface.page",
+      "surface": "light.surface.band",
+      "text": "light.text.primary",
+      "muted": "light.text.muted",
+      "accent": "light.accent",
+      "border": "light.border.subtle"
+     }
+    },
+    "fonts": [
+     "core.font.family.display",
+     "core.font.family.sans"
+    ]
+   },
+   "capture": {
+    "method": "public-web",
+    "source": "www.homerun.co, jobs.homerun.co, app.homerun.co/login and app.homerun.hr/Account/Logon in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and 161 element crops from the live DOM, plus a four-surface stylesheet harvest that fetches the cross-origin CDN sheets directly (499 rules, 66 @font-face records, 654 variable names resolved per surface: www 87, jobs 168, app 350, apphr 0). The marketing site is a Webflow build whose :root declares the current --_updated-colors-v2---* palette plus a large legacy named layer, both kept; the Angular sign-in declares its own --ui-* control roles. core ramp tokens are the declared values; surface roles are measured computed values aliased to the declarations they match. BOUNDARY: the ATS and HR apps sit behind sign-in, never crossed; the application wizard was never advanced or submitted; nothing was typed, sent or authenticated",
+    "timestamp": "2026-11-17T12:00:00Z",
+    "harness": "Devin",
+    "model": "SWE-2 High",
+    "route": "public-web",
+    "routes": [
+     "/",
+     "/ats",
+     "/hr",
+     "/product/features",
+     "/pricing",
+     "/customers",
+     "/about",
+     "/contact",
+     "/blog",
+     "/templates",
+     "/integrations",
+     "/guides",
+     "/updates/",
+     "/trial",
+     "/privacy-statement",
+     "jobs.homerun.co/, /open/en and /open/en/apply",
+     "app.homerun.co/login",
+     "app.homerun.hr/Account/Logon",
+     "mobile /, /pricing and /ats plus the opened mobile menu"
+    ],
+    "gaps": [
+     "the ATS and HR apps sit behind sign-in and were never crossed; both login cards were measured at rest and never submitted, no credentials exist in the capture",
+     "the application wizard was never advanced past its first step: nothing was typed, uploaded or submitted, and its file input/checkbox paint through custom controls over 0x0 inputs",
+     "pressed states are DevTools-forced (CSS.forcePseudoState), so any script-applied mousedown state is missing; disabled, error and loading states do not appear on the public surface",
+     "the pricing feature table sits below the lazy-load line: pricing-table/-head/-row kept earlier readings under recaptureMissed provenance",
+     "blog/guide/update/template article pages and customer stories are index-list captures only",
+     "apphr declares no custom properties - plain Tailwind utility CSS - so its tokens are measured values",
+     "consent was never answered, so a consent-accepted render of the careers site is not in the set"
+    ],
+    "durationMin": 300,
+    "durationNote": "wall-clock across the capture sessions including kit adaptation, four-surface route probing, the stylesheet harvest and per-surface resolution, screenshot and measurement passes, and the offline build"
+   }
+  },
+  {
+   "slug": "httpie",
+   "name": "HTTPie",
+   "url": "https://httpie.io",
+   "category": "productivity",
+   "platform": "web",
+   "goodFor": "API-client product design across two surfaces on one compact hand-written token layer: httpie.io's marketing and docs site (a 1440px site-container frame on a 12-col site-grid, dark-boot html.dark with a real LIGHT/AUTO/DARK ThemeToggle radio stack in the footer, the Pie Headline/PolyPie/Pie Monospace proprietary faces, and fenced code panels painted by a ten-colour code-* syntax palette) plus /app, the HTTPie-for-Web client running signed out in its 'Incognito space' (a 49px icon rail, a Drafts shelf with a real empty state, request cards in a tab strip, the method/URL/Send request line, Params/Headers/Auth/Body panel tabs, a resting 'Not sent' response pane and the environments manager as another tab). Semantic roles --color-bg-z0..z3, --color-primary/-secondary/-tertiary ink, --color-accent green #73dc8c dark / #52ab66 light, --color-alt-accent blue, --color-warning red, --color-focus, --color-borders(-subtle), --color-selection, --color-backdrop, --color-shadows and --color-code-* - declared on :root, re-pointed under .dark:root, and persisted through localStorage.theme; everything else literal rgb() on old-Tailwind + CSS Modules classes harvested into core.palette.*",
+   "tags": [
+    "web",
+    "developer-tools",
+    "api-client",
+    "marketing",
+    "docs",
+    "dark",
+    "light",
+    "signed-out",
+    "design-tokens"
+   ],
+   "shape": "reference",
+   "captured": "2026-11-17",
+   "access": "signed out (every captured surface is public: httpie.io marketing/docs/blog/legal pages and /app, the HTTPie-for-Web client that runs unsigned in its 'Incognito space'; sign-in and every account surface - named spaces, sync, shared collections - never entered; the HTTPie AI 'Try it out' action never pressed; Send never pressed on /app - issuing a request is a network side effect, so the response pane stands at its resting 'Not sent' state; the desktop/CLI binaries behind /download never fetched; /pricing 404s and is kept as the product's not-found page; /discord redirects off-site; nothing was signed into, typed, searched, sent, bought or submitted; the only presses were local UI toggles - the ThemeToggle radios, the method and Incognito-space controls, the request and environments tabs, the Cmd+K DocSearch dialog opened for icons and closed unqueried)",
+   "themes": [
+    "dark",
+    "light"
+   ],
+   "widths": [
+    1440,
+    390
+   ],
+   "entry": "systems/httpie/README.md",
+   "tokens": "systems/httpie/tokens.json",
+   "styleGuide": "systems/httpie/style-guide.html",
+   "preview": {
+    "cover": "systems/httpie/screenshots/app-dark-default.png",
+    "icon": "systems/httpie/icon.png",
+    "swatches": {
+     "dark": {
+      "page": "dark.bg.z0",
+      "surface": "dark.bg.z1",
+      "text": "dark.text.primary",
+      "muted": "dark.text.secondary",
+      "accent": "dark.accent.default",
+      "border": "dark.border.default"
+     },
+     "light": {
+      "page": "light.bg.z0",
+      "surface": "light.bg.z1",
+      "text": "light.text.primary",
+      "muted": "light.text.secondary",
+      "accent": "light.accent.default",
+      "border": "light.border.default"
+     }
+    },
+    "fonts": [
+     "core.font.family.headline",
+     "core.font.family.body",
+     "core.font.family.mono"
+    ]
+   },
+   "source": "capture",
+   "capture": {
+    "method": "public-web",
+    "source": "httpie.io in headless Chromium (Playwright), desktop 1440x900 and a 390x844 @2x mobile pass; computed styles and element crops from the live DOM, plus a stylesheet harvest (15 sheets, 806 rules, 16 @font-face, 40 light + 40 dark resolved custom properties, 152 literal palette declarations). Every page boots html.dark - AUTO follows prefers-color-scheme and headless Chromium's light preference still resolves dark - and the footer's own LIGHT MODE / AUTO / DARK MODE ThemeToggle radios repaint html.light, persisting to localStorage.theme, which /app reads; /app's light pass detours through the homepage to press the control. The docs manuals scroll inside a ~76-96k px inner overflow pane, expanded and restored for full-page captures bounded at three 14k px chunks (the truncation is in each sidecar); streams bounded at eight chunks. BOUNDARY: sign-in and account surfaces never entered; HTTPie AI 'Try it out' never pressed; Send never pressed on /app (a real request is a network side effect) - the response pane is evidence only at 'Not sent'; desktop/CLI binaries never fetched; /pricing is a 404; /discord redirects off-site",
+    "timestamp": "2026-11-17T09:00:00Z",
+    "harness": "Devin",
+    "model": "SWE-2 Max",
+    "route": "public-web",
+    "routes": [
+     "httpie.io/",
+     "httpie.io/desktop",
+     "httpie.io/cli",
+     "httpie.io/ai",
+     "httpie.io/docs",
+     "httpie.io/docs/desktop",
+     "httpie.io/docs/cli",
+     "httpie.io/jobs",
+     "httpie.io/blog",
+     "httpie.io/blog/changelog-0027",
+     "httpie.io/download",
+     "httpie.io/about",
+     "httpie.io/terms",
+     "httpie.io/privacy",
+     "httpie.io/pricing (404 - captured as the not-found page)",
+     "httpie.io/app (the HTTPie-for-Web client, signed out in the 'Incognito space')",
+     "verified html.light repaints on home, desktop, cli, ai, docs-desktop, jobs, blog, blog-post, download and /app (the footer ThemeToggle radios; on /app via localStorage.theme)",
+     "the method menu, the Headers/Auth/Body/Response request tabs, the environments manager and settings, the Incognito-space tab and the first-run 'Introducing HTTPie AI' dialog as transient states",
+     "390px passes on home, cli, blog, docs-desktop and /app",
+     "BLOCKED: sign-in and every account surface (named spaces, sync, shared collections), HTTPie AI generation, the response surface after a real Send, the desktop/CLI binaries, external redirects (/discord and social links)"
+    ],
+    "gaps": [
+     "the signed-in product (named spaces, sync, shared collections, the avatar and Sign-in prompts) is a boundary - measured, never entered",
+     "HTTPie AI 'Try it out' is an account/paid generation flow - the promo dialog is evidence, the action is not",
+     "the response surface after Send is uncaptured by policy: pressing Send issues a real request, so only the resting 'Not sent' pane is evidence",
+     "the desktop app and CLI binaries behind /download were never fetched or run",
+     "the Cmd+K DocSearch dialog was opened for the icon collection but never queried - search results are uncaptured",
+     "the newsletter inputs were measured and focused, never typed or submitted - the success/mail flow is absent",
+     "the Import/Migrate card, + Collection's Create dialog submit and 'Create environment' were never confirmed - the surfaces behind them are absent",
+     "the changelog post carries no fenced code block, so prose-pre is recorded as missing in components.md and docs-code-block is the syntax-block evidence instead",
+     "the docs -full shots are the top 42k px of ~76-96k px articles, a deliberate bound recorded in each sidecar",
+     "the Pie faces (Pie Headline/FK Screamer, PolyPie, Pie Monospace, Pie Symbols) are licensed woff2 loaded by the site and not shipped; crops show them, the style guide falls back to system fonts",
+     "pressed states are DevTools-forced (CSS.forcePseudoState), so any script-applied mousedown state is missing",
+     "prefers-reduced-motion is ignored by the product - raw/motion.json records the probe's verdict",
+     "/app is a desktop-first shell; the 390px read is a compressed variant documented as limited"
+    ],
+    "durationMin": 300,
+    "pr": "https://github.com/starship-terminal/constellations/pull/635",
+    "durationNote": "wall-clock across the capture session including route and DOM probes, kit adaptation, the stylesheet harvest, two screenshot passes, the measurement pass and the offline build"
+   }
   }
  ]
 }
