@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_122 of 180 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_123 of 181 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -691,6 +691,11 @@ Access: signed out (every captured surface is public gumroad.com or a public cre
 Access: signed out (every captured surface is public: joinhandshake.com's marketing pages serve a plain load, and app.joinhandshake.com/access - the 'Log in or sign up' card - cleared its Cloudflare challenge intermittently and was captured on the loads that did; /explore, /signup, the registration flow and support.joinhandshake.com never cleared - blocked boundaries, not captures; nothing was signed into, typed, searched, sent, bought or submitted; the only presses were local UI toggles - the nav's hover-opened mega menu, segment tabs, FAQ and department accordions, the phone's 'Open menu' button)
 - the consumer app's signed-in surfaces - /explore, /signup, registration, dashboards - are a blocked boundary: the Cloudflare managed challenge never cleared across fresh-context retries
 - the Marketo lead forms were measured at rest; no field was filled and nothing was submitted - validation, error and success states are absent
+
+## [Homerun](../systems/homerun) — `homerun`
+Access: signed out (the marketing routes and careers site are fully public; the ATS and HR apps sit behind sign-in - both public login cards were measured at rest, never submitted; the public application wizard was never advanced past its first step; consent banners were hidden without answering them; sign-up/login/apply links were never followed)
+- the ATS and HR apps sit behind sign-in and were never crossed; both login cards were measured at rest and never submitted, no credentials exist in the capture
+- the application wizard was never advanced past its first step: nothing was typed, uploaded or submitted, and its file input/checkbox paint through custom controls over 0x0 inputs
 
 ## Gate noted in access text only
 

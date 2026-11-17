@@ -78,7 +78,7 @@ export async function createResearchStore(directory: string) {
     const version = Number(
       (await tx.execute("PRAGMA user_version")).rows[0].user_version,
     );
-    if (version > 28)
+    if (version > 29)
       throw new Error("Research database was created by a newer application.");
     if (version === 0) {
       for (const sql of migrations) await tx.execute(sql);
@@ -358,6 +358,31 @@ export async function createResearchStore(directory: string) {
       await seedNewCuratedCategories(tx, new Set(["systems:joinhandshake"]));
       await seedNewCuratedMediaTerms(tx, new Set(["systems:joinhandshake"]));
       await tx.execute("PRAGMA user_version = 28");
+    }
+    if (version < 29) {
+      // Same one-shot top-up, scoped to this batch's new reference: a store
+      // already at v28 never re-seeds, so the Homerun rows would never
+      // arrive. Scoping keeps cleared labels on older packages cleared — an
+      // empty assignment reads as "never labelled", so an unscoped pass
+      // would restore rows the user deleted.
+      await seedNewCuratedCategories(tx, new Set(["systems:homerun"]));
+      await seedNewCuratedMediaTerms(tx, new Set(["systems:homerun"]));
+      // The regenerated seed also gained five Hashnode crop assignments no
+      // store has labelled yet (they entered the seed file with this batch).
+      // Backfill just those media ids: scoping the pass to the whole
+      // systems:hashnode reference would restore labels a user cleared.
+      await seedNewCuratedMediaTerms(
+        tx,
+        new Set(["systems:hashnode"]),
+        new Set([
+          "systems/hashnode/components/crops/app-sidebar-dark.png",
+          "systems/hashnode/components/crops/app-sidebar-default.png",
+          "systems/hashnode/components/crops/feed-trending-default.png",
+          "systems/hashnode/components/crops/post-card-dark.png",
+          "systems/hashnode/components/crops/post-comments-link-default.png",
+        ]),
+      );
+      await tx.execute("PRAGMA user_version = 29");
     }
     await tx.commit();
   } catch (error) {
