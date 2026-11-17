@@ -16372,6 +16372,103 @@
     "pr": "https://github.com/starship-terminal/constellations/pull/635",
     "durationNote": "wall-clock across the capture session including route and DOM probes, kit adaptation, the stylesheet harvest, two screenshot passes, the measurement pass and the offline build"
    }
+  },
+  {
+   "slug": "klarna",
+   "name": "Klarna",
+   "url": "https://www.klarna.com/us/",
+   "category": "finance",
+   "platform": "web",
+   "goodFor": "Shopper marketing in Klarna UI: a white page, ink #0b051d, brand pink #ffa8cd on pills and the QR card, pill radius 99999px, Klarna Title on display and Klarna Text on nav and buttons. Tokens are inline custom properties on :root / .klarna-ui-DEFAULT-light, with a declared .klarna-ui-DEFAULT-dark sheet the public pages do not paint.",
+   "tags": [
+    "web",
+    "finance",
+    "payments",
+    "marketing",
+    "shopping",
+    "pills",
+    "light",
+    "design-tokens",
+    "signed-out"
+   ],
+   "shape": "reference",
+   "captured": "2026-11-18",
+   "access": "signed out (US marketing at www.klarna.com/us/ and the country picker at /international/ are public; the OneTrust banner was hidden and never answered; Sign in was opened once to the app.klarna.com QR interstitial and not followed; no account, checkout, search submission or purchase)",
+   "themes": [
+    "light",
+    "dark"
+   ],
+   "widths": [
+    1440,
+    390
+   ],
+   "entry": "systems/klarna/README.md",
+   "tokens": "systems/klarna/tokens.json",
+   "styleGuide": "systems/klarna/style-guide.html",
+   "preview": {
+    "cover": "systems/klarna/screenshots/home-light-default.png",
+    "icon": "systems/klarna/icon.png",
+    "swatches": {
+     "light": {
+      "page": "light.page",
+      "surface": "light.surface",
+      "text": "light.text",
+      "muted": "light.muted",
+      "accent": "light.accent",
+      "border": "light.border"
+     },
+     "dark": {
+      "page": "dark.page",
+      "surface": "dark.surface",
+      "text": "dark.text",
+      "muted": "dark.muted",
+      "accent": "dark.accent",
+      "border": "dark.border"
+     }
+    },
+    "fonts": [
+     "core.fonts.font.brand.title",
+     "core.fonts.font.brand.text",
+     "core.fonts.font.monospace"
+    ]
+   },
+   "designMd": {
+    "colors": ["light."],
+    "typography": ["core.typography"],
+    "rounded": ["core.radiuses"],
+    "spacing": ["core.spaces"]
+   },
+   "capture": {
+    "method": "public-web",
+    "source": "www.klarna.com/us/ in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass. Klarna UI custom properties were read from inline style blocks (raw/css-vars.json): light on :root, .klarna-ui-DEFAULT-light and dark on .klarna-ui-DEFAULT-dark. Computed styles for nav, Sign in, the pink pill, search, help tabs and the sign-in boundary are in raw/components-computed.json. Motion is raw/motion.json. OneTrust was hidden, never clicked. The app.klarna.com login URL stopped at the QR interstitial.",
+    "timestamp": "2026-11-18T00:00:00Z",
+    "harness": "Grok",
+    "model": "grok-4.7",
+    "route": "public-web",
+    "routes": [
+     "/international/",
+     "/us/",
+     "/us/what-is-klarna/",
+     "/us/shopping/",
+     "/us/klarna-app/",
+     "/us/help/",
+     "/us/help/klarna-card/",
+     "/us/buyer-protection/",
+     "/us/personal-account/",
+     "/us/phishing/",
+     "app.klarna.com/login?market=US&locale=en-US",
+     "mobile /international/, /us/, /us/shopping/, /us/help/"
+    ],
+    "gaps": [
+     "Klarna app sign-in at https://app.klarna.com/login?market=US&locale=en-US stops at a QR interstitial (Continue securely in the Klarna app). Continue on web? was not followed, so the typed sign-in form was not captured",
+     "Signed-in payments, purchases, portfolio, savings and account sit behind that sign-in and were not captured",
+     "Checkout was not started. Shop now and Get the app were not followed into a purchase",
+     "Search overlay on https://www.klarna.com/us/ was opened and not submitted, so search results were not captured",
+     "The cookie preference center was not opened. The OneTrust banner was hidden and never answered",
+     "The language and region dialog was opened. Confirm was not submitted"
+    ],
+    "durationMin": 180
+   }
   }
  ]
 }

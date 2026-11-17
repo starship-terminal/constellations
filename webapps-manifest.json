@@ -2589,8 +2589,8 @@
     272
    ],
    "description": "Shop, Track Purchases, Make Payments",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/klarna",
    "notes": "",
    "batch": 9
   },

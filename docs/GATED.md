@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_131 of 189 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_132 of 190 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -738,6 +738,14 @@ Access: signed out (every captured surface is public: httpie.io marketing/docs/b
 - HTTPie AI 'Try it out' is an account/paid generation flow - the promo dialog is evidence, the action is not
 - the newsletter inputs were measured and focused, never typed or submitted - the success/mail flow is absent
 - the Import/Migrate card, + Collection's Create dialog submit and 'Create environment' were never confirmed - the surfaces behind them are absent
+
+## [Klarna](../systems/klarna) — `klarna`
+Access: signed out (US marketing at www.klarna.com/us/ and the country picker at /international/ are public; the OneTrust banner was hidden and never answered; Sign in was opened once to the app.klarna.com QR interstitial and not followed; no account, checkout, search submission or purchase)
+- Klarna app sign-in at https://app.klarna.com/login?market=US&locale=en-US stops at a QR interstitial (Continue securely in the Klarna app). Continue on web? was not followed, so the typed sign-in form was not captured
+- Signed-in payments, purchases, portfolio, savings and account sit behind that sign-in and were not captured
+- Checkout was not started. Shop now and Get the app were not followed into a purchase
+- Search overlay on https://www.klarna.com/us/ was opened and not submitted, so search results were not captured
+- The language and region dialog was opened. Confirm was not submitted
 
 ## Gate noted in access text only
 
