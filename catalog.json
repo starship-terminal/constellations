@@ -4076,7 +4076,7 @@
   ],
   "durationMin": 300,
   "durationNote": "wall-clock across the capture sessions including kit adaptation, route probing under heavy machine contention, the stylesheet harvest and Fluent-scoped token resolution, screenshot and measurement passes, and the offline build",
-  "pr": null
+  "pr": "https://github.com/starship-terminal/constellations/pull/624"
  },
  "layoutGaps": {
   "icons/": "no standalone SVG icon set was lifted on this pass; the glyphs (the clapper mark, social marks) are visible in the crops and screenshots"
