@@ -2184,9 +2184,9 @@
     337
    ],
    "description": "Stream HBO, series, movies, and more",
-   "status": "pending",
-   "package": null,
-   "notes": "",
+   "status": "captured",
+   "package": "systems/hbomax",
+   "notes": "signed-out marketing site only (/sg/en): auth.hbomax.com, play.hbomax.com and help.hbomax.com were link-observed, never opened",
    "batch": 8
   },
   {

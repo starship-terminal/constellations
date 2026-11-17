@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 181,
-    "system_domains": 172,
-    "matched_domains": 142,
-    "missing_domains": 291,
+    "system_packages": 187,
+    "system_domains": 178,
+    "matched_domains": 148,
+    "missing_domains": 285,
     "system_domains_absent_from_catalog": 30
   },
   "matched": {
@@ -923,6 +923,23 @@
           "slug": "cofounder",
           "name": "Cofounder",
           "url": "https://cofounder.co",
+          "name_match": true
+        }
+      ]
+    },
+    "cohere.com": {
+      "catalog": [
+        {
+          "name": "Cohere",
+          "domain": "cohere.com",
+          "id": 576
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "cohere",
+          "name": "Cohere",
+          "url": "https://cohere.com",
           "name_match": true
         }
       ]
@@ -2270,6 +2287,23 @@
         }
       ]
     },
+    "grow.google": {
+      "catalog": [
+        {
+          "name": "Grow with Google",
+          "domain": "grow.google",
+          "id": 294
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "grow",
+          "name": "Grow with Google",
+          "url": "https://grow.google",
+          "name_match": true
+        }
+      ]
+    },
     "gumroad.com": {
       "catalog": [
         {
@@ -2300,6 +2334,74 @@
           "slug": "hashnode",
           "name": "Hashnode",
           "url": "https://hashnode.com",
+          "name_match": true
+        }
+      ]
+    },
+    "hbomax.com": {
+      "catalog": [
+        {
+          "name": "HBO Max",
+          "domain": "hbomax.com",
+          "id": 337
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "hbomax",
+          "name": "HBO Max",
+          "url": "https://www.hbomax.com",
+          "name_match": false
+        }
+      ]
+    },
+    "headspace.com": {
+      "catalog": [
+        {
+          "name": "Headspace",
+          "domain": "headspace.com",
+          "id": 113
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "headspace",
+          "name": "Headspace",
+          "url": "https://www.headspace.com",
+          "name_match": true
+        }
+      ]
+    },
+    "helloivy.co": {
+      "catalog": [
+        {
+          "name": "Hello Ivy",
+          "domain": "helloivy.co",
+          "id": 602
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "helloivy",
+          "name": "Hello Ivy",
+          "url": "https://www.helloivy.co",
+          "name_match": false
+        }
+      ]
+    },
+    "hitchd.com": {
+      "catalog": [
+        {
+          "name": "Hitchd",
+          "domain": "hitchd.com",
+          "id": 786
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "hitchd",
+          "name": "Hitchd",
+          "url": "https://www.hitchd.com",
           "name_match": true
         }
       ]
@@ -2509,13 +2611,6 @@
         "id": 658
       }
     ],
-    "cohere.com": [
-      {
-        "name": "Cohere",
-        "domain": "cohere.com",
-        "id": 576
-      }
-    ],
     "coinbase.com": [
       {
         "name": "Coinbase",
@@ -2649,46 +2744,11 @@
         "id": 629
       }
     ],
-    "grow.google": [
-      {
-        "name": "Grow with Google",
-        "domain": "grow.google",
-        "id": 294
-      }
-    ],
-    "hbomax.com": [
-      {
-        "name": "HBO Max",
-        "domain": "hbomax.com",
-        "id": 337
-      }
-    ],
-    "headspace.com": [
-      {
-        "name": "Headspace",
-        "domain": "headspace.com",
-        "id": 113
-      }
-    ],
-    "helloivy.co": [
-      {
-        "name": "Hello Ivy",
-        "domain": "helloivy.co",
-        "id": 602
-      }
-    ],
     "helloklean.com": [
       {
         "name": "Hello Klean",
         "domain": "helloklean.com",
         "id": 633
-      }
-    ],
-    "hitchd.com": [
-      {
-        "name": "Hitchd",
-        "domain": "hitchd.com",
-        "id": 786
       }
     ],
     "httpie.io": [
