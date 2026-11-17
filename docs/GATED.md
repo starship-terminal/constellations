@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_131 of 189 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_132 of 190 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -738,6 +738,15 @@ Access: signed out (every captured surface is public: httpie.io marketing/docs/b
 - HTTPie AI 'Try it out' is an account/paid generation flow - the promo dialog is evidence, the action is not
 - the newsletter inputs were measured and focused, never typed or submitted - the success/mail flow is absent
 - the Import/Migrate card, + Collection's Create dialog submit and 'Create environment' were never confirmed - the surfaces behind them are absent
+
+## [Kickstarter](../systems/kickstarter) — `kickstarter`
+Access: signed out (every captured surface is public; login, signup, pledge, save, checkout and the project editor past the first /start step were not entered; the email field was typed into and cleared; Continue, Next, Back this project, Save and Sign in with Apple were measured, never activated)
+- https://www.kickstarter.com/login — the account after Continue, and Sign in with Apple (OAuth), were not entered. The email field was typed into and cleared. Turnstile was not solved.
+- https://www.kickstarter.com/signup — redirects to /login. Account creation was not started.
+- https://www.kickstarter.com/projects/shirtaloon/hwfwm — Back this project, Remind me, and the share controls were measured and not followed. Pledge and checkout are gated.
+- https://www.kickstarter.com/start — the category step is public. Next was not pressed. The project editor, story, rewards, and launch sit behind an account.
+- Save this project on home and Discover cards requires an account and was not activated.
+- Comments, updates posting, messages, and the creator dashboard were not opened.
 
 ## Gate noted in access text only
 
