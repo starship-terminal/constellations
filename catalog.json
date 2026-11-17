@@ -15341,6 +15341,7 @@
      "/app is a desktop-first shell; the 390px read is a compressed variant documented as limited"
     ],
     "durationMin": 300,
+    "pr": "https://github.com/starship-terminal/constellations/pull/635",
     "durationNote": "wall-clock across the capture session including route and DOM probes, kit adaptation, the stylesheet harvest, two screenshot passes, the measurement pass and the offline build"
    }
   }
