@@ -15486,7 +15486,7 @@
     ],
     "durationMin": 340,
     "durationNote": "wall-clock across the capture sessions including kit adaptation, the stylesheet harvest, the screenshot pass (Cloudflare retries on the app routes), three measurement passes with selector fixes, the layout and motion probes, and the offline build",
-    "pr": "TBD"
+    "pr": "https://github.com/starship-terminal/constellations/pull/629"
    }
   }
  ]
