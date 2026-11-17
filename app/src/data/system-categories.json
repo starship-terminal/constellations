@@ -1466,5 +1466,11 @@
     "groupId": "web-categories",
     "labels": ["AI Tool", "Development Tools"],
     "reason": "catalog.json describes the xAI/Grok developer documentation portal: quickstart and model docs, API reference, token pricing tables, rate limits, release notes, a cmdK search surface and the Grok help section."
+  },
+  {
+    "referenceId": "systems:grow",
+    "groupId": "web-categories",
+    "labels": ["Education"],
+    "reason": "catalog.json describes Google's Grow with Google program site: Career Certificate pages, the certificates catalog, AI training courses and graduate/partner stories — a public learning program, enrolment on Coursera."
   }
 ]

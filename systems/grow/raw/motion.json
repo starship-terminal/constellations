@@ -1,0 +1,3751 @@
+{
+ "_meta": {
+  "readAt": "2026-11-17",
+  "probe": "page.emulateMedia({ reducedMotion }): 'no-preference' then 'reduce', same elements, same page",
+  "source": "public pages, headless Chromium, read at rest",
+  "notes": "Computed transitions and animations are read at rest; rules in :hover and other state selectors appear under `declared`. Outcome per element: removed (every transition and animation ends at or under 1 ms), reduced, kept, partial."
+ },
+ "summary": {
+  "moving": 1997,
+  "removed": 1,
+  "reduced": 0,
+  "kept": 1870,
+  "partial": 126,
+  "increased": 0,
+  "added": 0,
+  "behaviour": "partial",
+  "loops": [
+   "bsp-ticker-tape"
+  ]
+ },
+ "pages": {
+  "page-1": {
+   "url": "https://grow.google/",
+   "matchMedia": {
+    "normal": false,
+    "reduce": true
+   },
+   "scanned": 2056,
+   "capped": false,
+   "unreadableSheets": 4,
+   "sheetsTruncated": {
+    "declared": false,
+    "reducedRules": false,
+    "customProperties": false
+   },
+   "summary": {
+    "moving": 295,
+    "removed": 0,
+    "reduced": 0,
+    "kept": 274,
+    "partial": 21,
+    "increased": 0,
+    "added": 0,
+    "behaviour": "partial",
+    "loops": []
+   },
+   "groups": [
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "background-color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "box-shadow",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "background-color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "box-shadow",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "background-color",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      },
+      {
+       "kind": "transition",
+       "key": "box-shadow",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      },
+      {
+       "kind": "transition",
+       "key": "color",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      }
+     ],
+     "count": 158,
+     "nodes": [
+      "a.glue-header__link.glue-header__skip-content",
+      "div.glue-header__logo",
+      "a.glue-header__logo-link"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "background-color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "background-color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "background-color",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      },
+      {
+       "kind": "transition",
+       "key": "color",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      }
+     ],
+     "count": 50,
+     "nodes": [
+      "a.glue-header__stepped-nav-controls-container",
+      "a",
+      "a.glue-font-weight-regular"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 300,
+        "delayMs": 10,
+        "easing": "ease-in-out"
+       },
+       {
+        "property": "left",
+        "durationMs": 0,
+        "delayMs": 300,
+        "easing": "linear"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 300,
+        "delayMs": 10,
+        "easing": "ease-in-out"
+       },
+       {
+        "property": "left",
+        "durationMs": 0,
+        "delayMs": 300,
+        "easing": "linear"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "partial",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      },
+      {
+       "kind": "transition",
+       "key": "left",
+       "outcome": "removed",
+       "from": 0,
+       "to": 0
+      }
+     ],
+     "count": 21,
+     "nodes": [
+      "div[role=button].glue-header__stepped-nav-controls.glue-header__link.glue-stepped-page-1",
+      "div[role=button].glue-header__stepped-nav-controls.glue-header__link.glue-stepped-page-2",
+      "div[role=button].glue-header__stepped-nav-controls.glue-header__link.glue-stepped-page-3"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "border",
+        "durationMs": 250,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "border",
+        "durationMs": 250,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "border",
+       "outcome": "kept",
+       "from": 250,
+       "to": 250
+      }
+     ],
+     "count": 20,
+     "nodes": [
+      "div.glue-card::before"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "box-shadow",
+        "durationMs": 250,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "box-shadow",
+        "durationMs": 250,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "box-shadow",
+       "outcome": "kept",
+       "from": 250,
+       "to": 250
+      }
+     ],
+     "count": 20,
+     "nodes": [
+      "a.glue-card"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 600,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 600,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "kept",
+       "from": 600,
+       "to": 600
+      }
+     ],
+     "count": 14,
+     "nodes": [
+      "svg[role=presentation]"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "background",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "background",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "background",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 4,
+     "nodes": [
+      "div.glue-header__container",
+      "div[role=navigation].glue-header__container.glue-header__stepped-nav",
+      "div.glue-header__container.glue-header__container--linkbar"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "ease-in"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "ease-in"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "kept",
+       "from": 150,
+       "to": 150
+      }
+     ],
+     "count": 4,
+     "nodes": [
+      "ul[role=menu].glue-header__list.header-sub_links"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "width",
+        "durationMs": 3000,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "width",
+        "durationMs": 3000,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      },
+      {
+       "kind": "transition",
+       "key": "width",
+       "outcome": "kept",
+       "from": 3000,
+       "to": 3000
+      }
+     ],
+     "count": 2,
+     "nodes": [
+      "div[role=button].glue-header__drawer-backdrop",
+      "div.glue-header__drawer-backdrop"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "background",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "box-shadow",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "background",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "box-shadow",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      },
+      {
+       "kind": "transition",
+       "key": "background",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      },
+      {
+       "kind": "transition",
+       "key": "box-shadow",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 2,
+     "nodes": [
+      "div.glue-header__bar.glue-header__bar--mobile",
+      "div.glue-header__bar.glue-header__bar--desktop.glue-header"
+     ]
+    }
+   ],
+   "keyframes": [],
+   "reducedMotionRules": [],
+   "declared": [],
+   "customProperties": []
+  },
+  "page-2": {
+   "url": "https://grow.google/certificates",
+   "matchMedia": {
+    "normal": false,
+    "reduce": true
+   },
+   "scanned": 2836,
+   "capped": false,
+   "unreadableSheets": 4,
+   "sheetsTruncated": {
+    "declared": false,
+    "reducedRules": false,
+    "customProperties": false
+   },
+   "summary": {
+    "moving": 342,
+    "removed": 0,
+    "reduced": 0,
+    "kept": 321,
+    "partial": 21,
+    "increased": 0,
+    "added": 0,
+    "behaviour": "partial",
+    "loops": [
+     "bsp-ticker-tape"
+    ]
+   },
+   "groups": [
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "background-color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "box-shadow",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "background-color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "box-shadow",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "background-color",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      },
+      {
+       "kind": "transition",
+       "key": "box-shadow",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      },
+      {
+       "kind": "transition",
+       "key": "color",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      }
+     ],
+     "count": 150,
+     "nodes": [
+      "a.glue-header__link.glue-header__skip-content",
+      "div.glue-header__logo",
+      "a.glue-header__logo-link"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "background-color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "background-color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "background-color",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      },
+      {
+       "kind": "transition",
+       "key": "color",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      }
+     ],
+     "count": 90,
+     "nodes": [
+      "a.glue-header__stepped-nav-controls-container",
+      "a",
+      "a.glue-font-weight-regular"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "height",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease-out"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "height",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease-out"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "height",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      }
+     ],
+     "count": 25,
+     "nodes": [
+      "div[role=region].glue-expansion-panel__content"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 100,
+        "delayMs": 0,
+        "easing": "ease-out"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 100,
+        "delayMs": 0,
+        "easing": "ease-out"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "kept",
+       "from": 100,
+       "to": 100
+      }
+     ],
+     "count": 25,
+     "nodes": [
+      "svg[role=presentation]"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 300,
+        "delayMs": 10,
+        "easing": "ease-in-out"
+       },
+       {
+        "property": "left",
+        "durationMs": 0,
+        "delayMs": 300,
+        "easing": "linear"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 300,
+        "delayMs": 10,
+        "easing": "ease-in-out"
+       },
+       {
+        "property": "left",
+        "durationMs": 0,
+        "delayMs": 300,
+        "easing": "linear"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "partial",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      },
+      {
+       "kind": "transition",
+       "key": "left",
+       "outcome": "removed",
+       "from": 0,
+       "to": 0
+      }
+     ],
+     "count": 21,
+     "nodes": [
+      "div[role=button].glue-header__stepped-nav-controls.glue-header__link.glue-stepped-page-1",
+      "div[role=button].glue-header__stepped-nav-controls.glue-header__link.glue-stepped-page-2",
+      "div[role=button].glue-header__stepped-nav-controls.glue-header__link.glue-stepped-page-3"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 600,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 600,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "kept",
+       "from": 600,
+       "to": 600
+      }
+     ],
+     "count": 14,
+     "nodes": [
+      "svg[role=presentation]"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "background",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "background",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "background",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 4,
+     "nodes": [
+      "div.glue-header__container",
+      "div[role=navigation].glue-header__container.glue-header__stepped-nav",
+      "div.glue-header__container.glue-header__container--linkbar"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "ease-in"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "ease-in"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "kept",
+       "from": 150,
+       "to": 150
+      }
+     ],
+     "count": 4,
+     "nodes": [
+      "ul[role=menu].glue-header__list.header-sub_links"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [],
+      "animations": [
+       {
+        "name": "bsp-ticker-tape",
+        "durationMs": 200000,
+        "delayMs": 0,
+        "easing": "linear",
+        "iterationCount": "infinite",
+        "direction": "normal",
+        "fillMode": "none",
+        "playState": "running"
+       }
+      ]
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": [
+       {
+        "name": "bsp-ticker-tape",
+        "durationMs": 200000,
+        "delayMs": 0,
+        "easing": "linear",
+        "iterationCount": "infinite",
+        "direction": "normal",
+        "fillMode": "none",
+        "playState": "running"
+       }
+      ]
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "animation",
+       "key": "bsp-ticker-tape",
+       "outcome": "kept",
+       "from": 200000,
+       "to": 200000,
+       "loops": true
+      }
+     ],
+     "count": 2,
+     "nodes": [
+      "div.bsp-ticker-tape__list"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "all",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 2,
+     "nodes": [
+      "button.glue-jumplinks.glue-jumplinks__button--prev",
+      "button.glue-jumplinks.glue-jumplinks__button--next"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "width",
+        "durationMs": 3000,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "width",
+        "durationMs": 3000,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      },
+      {
+       "kind": "transition",
+       "key": "width",
+       "outcome": "kept",
+       "from": 3000,
+       "to": 3000
+      }
+     ],
+     "count": 2,
+     "nodes": [
+      "div[role=button].glue-header__drawer-backdrop",
+      "div.glue-header__drawer-backdrop"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "background",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "box-shadow",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "background",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "box-shadow",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      },
+      {
+       "kind": "transition",
+       "key": "background",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      },
+      {
+       "kind": "transition",
+       "key": "box-shadow",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 2,
+     "nodes": [
+      "div.glue-header__bar.glue-header__bar--mobile",
+      "div.glue-header__bar.glue-header__bar--desktop.glue-header"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "top",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "top",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "top",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "div[role=navigation].glue-jumplinks"
+     ]
+    }
+   ],
+   "keyframes": [],
+   "reducedMotionRules": [],
+   "declared": [],
+   "customProperties": []
+  },
+  "page-3": {
+   "url": "https://grow.google/certificates/ux-design/",
+   "matchMedia": {
+    "normal": false,
+    "reduce": true
+   },
+   "scanned": 2743,
+   "capped": false,
+   "unreadableSheets": 4,
+   "sheetsTruncated": {
+    "declared": false,
+    "reducedRules": false,
+    "customProperties": false
+   },
+   "summary": {
+    "moving": 292,
+    "removed": 0,
+    "reduced": 0,
+    "kept": 271,
+    "partial": 21,
+    "increased": 0,
+    "added": 0,
+    "behaviour": "partial",
+    "loops": [
+     "bsp-ticker-tape"
+    ]
+   },
+   "groups": [
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "background-color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "box-shadow",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "background-color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "box-shadow",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "background-color",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      },
+      {
+       "kind": "transition",
+       "key": "box-shadow",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      },
+      {
+       "kind": "transition",
+       "key": "color",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      }
+     ],
+     "count": 141,
+     "nodes": [
+      "a.glue-header__link.glue-header__skip-content",
+      "div.glue-header__logo",
+      "a.glue-header__logo-link"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "background-color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "background-color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "background-color",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      },
+      {
+       "kind": "transition",
+       "key": "color",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      }
+     ],
+     "count": 59,
+     "nodes": [
+      "a.glue-header__stepped-nav-controls-container",
+      "a",
+      "a.glue-font-weight-regular"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "height",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease-out"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "height",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease-out"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "height",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      }
+     ],
+     "count": 21,
+     "nodes": [
+      "div[role=region].glue-expansion-panel__content"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 100,
+        "delayMs": 0,
+        "easing": "ease-out"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 100,
+        "delayMs": 0,
+        "easing": "ease-out"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "kept",
+       "from": 100,
+       "to": 100
+      }
+     ],
+     "count": 21,
+     "nodes": [
+      "svg[role=presentation]"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 300,
+        "delayMs": 10,
+        "easing": "ease-in-out"
+       },
+       {
+        "property": "left",
+        "durationMs": 0,
+        "delayMs": 300,
+        "easing": "linear"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 300,
+        "delayMs": 10,
+        "easing": "ease-in-out"
+       },
+       {
+        "property": "left",
+        "durationMs": 0,
+        "delayMs": 300,
+        "easing": "linear"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "partial",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      },
+      {
+       "kind": "transition",
+       "key": "left",
+       "outcome": "removed",
+       "from": 0,
+       "to": 0
+      }
+     ],
+     "count": 21,
+     "nodes": [
+      "div[role=button].glue-header__stepped-nav-controls.glue-header__link.glue-stepped-page-1",
+      "div[role=button].glue-header__stepped-nav-controls.glue-header__link.glue-stepped-page-2",
+      "div[role=button].glue-header__stepped-nav-controls.glue-header__link.glue-stepped-page-3"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 600,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 600,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "kept",
+       "from": 600,
+       "to": 600
+      }
+     ],
+     "count": 14,
+     "nodes": [
+      "svg[role=presentation]"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "background",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "background",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "background",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 4,
+     "nodes": [
+      "div.glue-header__container",
+      "div[role=navigation].glue-header__container.glue-header__stepped-nav",
+      "div.glue-header__container.glue-header__container--linkbar"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "ease-in"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "ease-in"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "kept",
+       "from": 150,
+       "to": 150
+      }
+     ],
+     "count": 4,
+     "nodes": [
+      "ul[role=menu].glue-header__list.header-sub_links"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [],
+      "animations": [
+       {
+        "name": "bsp-ticker-tape",
+        "durationMs": 208000,
+        "delayMs": 0,
+        "easing": "linear",
+        "iterationCount": "infinite",
+        "direction": "normal",
+        "fillMode": "none",
+        "playState": "running"
+       }
+      ]
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": [
+       {
+        "name": "bsp-ticker-tape",
+        "durationMs": 208000,
+        "delayMs": 0,
+        "easing": "linear",
+        "iterationCount": "infinite",
+        "direction": "normal",
+        "fillMode": "none",
+        "playState": "running"
+       }
+      ]
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "animation",
+       "key": "bsp-ticker-tape",
+       "outcome": "kept",
+       "from": 208000,
+       "to": 208000,
+       "loops": true
+      }
+     ],
+     "count": 2,
+     "nodes": [
+      "div.bsp-ticker-tape__list"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "width",
+        "durationMs": 3000,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "width",
+        "durationMs": 3000,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      },
+      {
+       "kind": "transition",
+       "key": "width",
+       "outcome": "kept",
+       "from": 3000,
+       "to": 3000
+      }
+     ],
+     "count": 2,
+     "nodes": [
+      "div[role=button].glue-header__drawer-backdrop",
+      "div.glue-header__drawer-backdrop"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "background",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "box-shadow",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "background",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "box-shadow",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      },
+      {
+       "kind": "transition",
+       "key": "background",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      },
+      {
+       "kind": "transition",
+       "key": "box-shadow",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 2,
+     "nodes": [
+      "div.glue-header__bar.glue-header__bar--mobile",
+      "div.glue-header__bar.glue-header__bar--desktop.glue-header"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease-in"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease-in"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "div.glue-video__container.glue-video__container--inline.glue-video--hidden"
+     ]
+    }
+   ],
+   "keyframes": [],
+   "reducedMotionRules": [],
+   "declared": [],
+   "customProperties": []
+  },
+  "page-4": {
+   "url": "https://grow.google/ai/",
+   "matchMedia": {
+    "normal": false,
+    "reduce": true
+   },
+   "scanned": 2087,
+   "capped": false,
+   "unreadableSheets": 4,
+   "sheetsTruncated": {
+    "declared": false,
+    "reducedRules": false,
+    "customProperties": false
+   },
+   "summary": {
+    "moving": 276,
+    "removed": 1,
+    "reduced": 0,
+    "kept": 254,
+    "partial": 21,
+    "increased": 0,
+    "added": 0,
+    "behaviour": "partial",
+    "loops": []
+   },
+   "groups": [
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "background-color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "box-shadow",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "background-color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "box-shadow",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "background-color",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      },
+      {
+       "kind": "transition",
+       "key": "box-shadow",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      },
+      {
+       "kind": "transition",
+       "key": "color",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      }
+     ],
+     "count": 145,
+     "nodes": [
+      "a.glue-header__link.glue-header__skip-content",
+      "div.glue-header__logo",
+      "a.glue-header__logo-link"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "background-color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "background-color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "background-color",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      },
+      {
+       "kind": "transition",
+       "key": "color",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      }
+     ],
+     "count": 63,
+     "nodes": [
+      "a.glue-header__stepped-nav-controls-container",
+      "a",
+      "a.glue-font-weight-regular"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 300,
+        "delayMs": 10,
+        "easing": "ease-in-out"
+       },
+       {
+        "property": "left",
+        "durationMs": 0,
+        "delayMs": 300,
+        "easing": "linear"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 300,
+        "delayMs": 10,
+        "easing": "ease-in-out"
+       },
+       {
+        "property": "left",
+        "durationMs": 0,
+        "delayMs": 300,
+        "easing": "linear"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "partial",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      },
+      {
+       "kind": "transition",
+       "key": "left",
+       "outcome": "removed",
+       "from": 0,
+       "to": 0
+      }
+     ],
+     "count": 21,
+     "nodes": [
+      "div[role=button].glue-header__stepped-nav-controls.glue-header__link.glue-stepped-page-1",
+      "div[role=button].glue-header__stepped-nav-controls.glue-header__link.glue-stepped-page-2",
+      "div[role=button].glue-header__stepped-nav-controls.glue-header__link.glue-stepped-page-3"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 600,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 600,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "kept",
+       "from": 600,
+       "to": 600
+      }
+     ],
+     "count": 14,
+     "nodes": [
+      "svg[role=presentation]"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "height",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease-out"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "height",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease-out"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "height",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      }
+     ],
+     "count": 6,
+     "nodes": [
+      "div[role=region].glue-expansion-panel__content"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 100,
+        "delayMs": 0,
+        "easing": "ease-out"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 100,
+        "delayMs": 0,
+        "easing": "ease-out"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "kept",
+       "from": 100,
+       "to": 100
+      }
+     ],
+     "count": 6,
+     "nodes": [
+      "svg[role=presentation]"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "background",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "background",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "background",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 4,
+     "nodes": [
+      "div.glue-header__container",
+      "div[role=navigation].glue-header__container.glue-header__stepped-nav",
+      "div.glue-header__container.glue-header__container--linkbar"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "ease-in"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "ease-in"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "kept",
+       "from": 150,
+       "to": 150
+      }
+     ],
+     "count": 4,
+     "nodes": [
+      "ul[role=menu].glue-header__list.header-sub_links"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "border",
+        "durationMs": 250,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "border",
+        "durationMs": 250,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "border",
+       "outcome": "kept",
+       "from": 250,
+       "to": 250
+      }
+     ],
+     "count": 3,
+     "nodes": [
+      "div.glue-card::before"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "box-shadow",
+        "durationMs": 250,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "box-shadow",
+        "durationMs": 250,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "box-shadow",
+       "outcome": "kept",
+       "from": 250,
+       "to": 250
+      }
+     ],
+     "count": 3,
+     "nodes": [
+      "div.glue-card.glue-carousel__item.glue-card-no-hover"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "width",
+        "durationMs": 3000,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "width",
+        "durationMs": 3000,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      },
+      {
+       "kind": "transition",
+       "key": "width",
+       "outcome": "kept",
+       "from": 3000,
+       "to": 3000
+      }
+     ],
+     "count": 2,
+     "nodes": [
+      "div[role=button].glue-header__drawer-backdrop",
+      "div.glue-header__drawer-backdrop"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 250,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 250,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "kept",
+       "from": 250,
+       "to": 250
+      }
+     ],
+     "count": 2,
+     "nodes": [
+      "button.glue-carousel.glue-carousel__button--prev.glue-is-inactive",
+      "button.glue-carousel.glue-carousel__button--next.glue-is-inactive"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "background",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "box-shadow",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "background",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "box-shadow",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      },
+      {
+       "kind": "transition",
+       "key": "background",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      },
+      {
+       "kind": "transition",
+       "key": "box-shadow",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 2,
+     "nodes": [
+      "div.glue-header__bar.glue-header__bar--mobile",
+      "div.glue-header__bar.glue-header__bar--desktop.glue-header"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 400,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "removed",
+       "from": 400,
+       "to": 0
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "div.glue-carousel__list"
+     ]
+    }
+   ],
+   "keyframes": [],
+   "reducedMotionRules": [],
+   "declared": [],
+   "customProperties": []
+  },
+  "page-5": {
+   "url": "https://grow.google/stories/",
+   "matchMedia": {
+    "normal": false,
+    "reduce": true
+   },
+   "scanned": 6123,
+   "capped": false,
+   "unreadableSheets": 4,
+   "sheetsTruncated": {
+    "declared": false,
+    "reducedRules": false,
+    "customProperties": false
+   },
+   "summary": {
+    "moving": 530,
+    "removed": 0,
+    "reduced": 0,
+    "kept": 509,
+    "partial": 21,
+    "increased": 0,
+    "added": 0,
+    "behaviour": "partial",
+    "loops": []
+   },
+   "groups": [
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "background-color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "box-shadow",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "background-color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "box-shadow",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "background-color",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      },
+      {
+       "kind": "transition",
+       "key": "box-shadow",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      },
+      {
+       "kind": "transition",
+       "key": "color",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      }
+     ],
+     "count": 251,
+     "nodes": [
+      "a.glue-header__link.glue-header__skip-content",
+      "div.glue-header__logo",
+      "a.glue-header__logo-link"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "border",
+        "durationMs": 250,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "border",
+        "durationMs": 250,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "border",
+       "outcome": "kept",
+       "from": 250,
+       "to": 250
+      }
+     ],
+     "count": 65,
+     "nodes": [
+      "div.glue-card::before"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "box-shadow",
+        "durationMs": 250,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "box-shadow",
+        "durationMs": 250,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "box-shadow",
+       "outcome": "kept",
+       "from": 250,
+       "to": 250
+      }
+     ],
+     "count": 65,
+     "nodes": [
+      "div.glue-card.glue-modal__triggerandpop__wrap.glue-modal__trigger",
+      "a.glue-card"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "background-color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "background-color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "background-color",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      },
+      {
+       "kind": "transition",
+       "key": "color",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      }
+     ],
+     "count": 51,
+     "nodes": [
+      "a.glue-header__stepped-nav-controls-container",
+      "a",
+      "a.glue-font-weight-regular"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 250,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 250,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "kept",
+       "from": 250,
+       "to": 250
+      }
+     ],
+     "count": 51,
+     "nodes": [
+      "div.glue-modal-wrapper.glue-modal-wrapper-span-10"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 300,
+        "delayMs": 10,
+        "easing": "ease-in-out"
+       },
+       {
+        "property": "left",
+        "durationMs": 0,
+        "delayMs": 300,
+        "easing": "linear"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 300,
+        "delayMs": 10,
+        "easing": "ease-in-out"
+       },
+       {
+        "property": "left",
+        "durationMs": 0,
+        "delayMs": 300,
+        "easing": "linear"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "partial",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      },
+      {
+       "kind": "transition",
+       "key": "left",
+       "outcome": "removed",
+       "from": 0,
+       "to": 0
+      }
+     ],
+     "count": 21,
+     "nodes": [
+      "div[role=button].glue-header__stepped-nav-controls.glue-header__link.glue-stepped-page-1",
+      "div[role=button].glue-header__stepped-nav-controls.glue-header__link.glue-stepped-page-2",
+      "div[role=button].glue-header__stepped-nav-controls.glue-header__link.glue-stepped-page-3"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 600,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 600,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "kept",
+       "from": 600,
+       "to": 600
+      }
+     ],
+     "count": 14,
+     "nodes": [
+      "svg[role=presentation]"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "background",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "background",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "background",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 4,
+     "nodes": [
+      "div.glue-header__container",
+      "div[role=navigation].glue-header__container.glue-header__stepped-nav",
+      "div.glue-header__container.glue-header__container--linkbar"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "ease-in"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "ease-in"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "kept",
+       "from": 150,
+       "to": 150
+      }
+     ],
+     "count": 4,
+     "nodes": [
+      "ul[role=menu].glue-header__list.header-sub_links"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "width",
+        "durationMs": 3000,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "width",
+        "durationMs": 3000,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      },
+      {
+       "kind": "transition",
+       "key": "width",
+       "outcome": "kept",
+       "from": 3000,
+       "to": 3000
+      }
+     ],
+     "count": 2,
+     "nodes": [
+      "div[role=button].glue-header__drawer-backdrop",
+      "div.glue-header__drawer-backdrop"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "background",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "box-shadow",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "background",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "box-shadow",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      },
+      {
+       "kind": "transition",
+       "key": "background",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      },
+      {
+       "kind": "transition",
+       "key": "box-shadow",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 2,
+     "nodes": [
+      "div.glue-header__bar.glue-header__bar--mobile",
+      "div.glue-header__bar.glue-header__bar--desktop.glue-header"
+     ]
+    }
+   ],
+   "keyframes": [],
+   "reducedMotionRules": [],
+   "declared": [],
+   "customProperties": []
+  },
+  "page-6": {
+   "url": "https://grow.google/our-mission/",
+   "matchMedia": {
+    "normal": false,
+    "reduce": true
+   },
+   "scanned": 1846,
+   "capped": false,
+   "unreadableSheets": 4,
+   "sheetsTruncated": {
+    "declared": false,
+    "reducedRules": false,
+    "customProperties": false
+   },
+   "summary": {
+    "moving": 262,
+    "removed": 0,
+    "reduced": 0,
+    "kept": 241,
+    "partial": 21,
+    "increased": 0,
+    "added": 0,
+    "behaviour": "partial",
+    "loops": []
+   },
+   "groups": [
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "background-color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "box-shadow",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "background-color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "box-shadow",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "background-color",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      },
+      {
+       "kind": "transition",
+       "key": "box-shadow",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      },
+      {
+       "kind": "transition",
+       "key": "color",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      }
+     ],
+     "count": 137,
+     "nodes": [
+      "a.glue-header__link.glue-header__skip-content",
+      "div.glue-header__logo",
+      "a.glue-header__logo-link"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "background-color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "background-color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "background-color",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      },
+      {
+       "kind": "transition",
+       "key": "color",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      }
+     ],
+     "count": 66,
+     "nodes": [
+      "a.glue-header__stepped-nav-controls-container",
+      "a",
+      "a.glue-font-weight-regular"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 300,
+        "delayMs": 10,
+        "easing": "ease-in-out"
+       },
+       {
+        "property": "left",
+        "durationMs": 0,
+        "delayMs": 300,
+        "easing": "linear"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 300,
+        "delayMs": 10,
+        "easing": "ease-in-out"
+       },
+       {
+        "property": "left",
+        "durationMs": 0,
+        "delayMs": 300,
+        "easing": "linear"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "partial",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      },
+      {
+       "kind": "transition",
+       "key": "left",
+       "outcome": "removed",
+       "from": 0,
+       "to": 0
+      }
+     ],
+     "count": 21,
+     "nodes": [
+      "div[role=button].glue-header__stepped-nav-controls.glue-header__link.glue-stepped-page-1",
+      "div[role=button].glue-header__stepped-nav-controls.glue-header__link.glue-stepped-page-2",
+      "div[role=button].glue-header__stepped-nav-controls.glue-header__link.glue-stepped-page-3"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 600,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 600,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "kept",
+       "from": 600,
+       "to": 600
+      }
+     ],
+     "count": 14,
+     "nodes": [
+      "svg[role=presentation]"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "height",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease-out"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "height",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease-out"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "height",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      }
+     ],
+     "count": 6,
+     "nodes": [
+      "div[role=region].glue-expansion-panel__content"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 100,
+        "delayMs": 0,
+        "easing": "ease-out"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 100,
+        "delayMs": 0,
+        "easing": "ease-out"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "kept",
+       "from": 100,
+       "to": 100
+      }
+     ],
+     "count": 6,
+     "nodes": [
+      "svg[role=presentation]"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "background",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "background",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "background",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 4,
+     "nodes": [
+      "div.glue-header__container",
+      "div[role=navigation].glue-header__container.glue-header__stepped-nav",
+      "div.glue-header__container.glue-header__container--linkbar"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "ease-in"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "ease-in"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "kept",
+       "from": 150,
+       "to": 150
+      }
+     ],
+     "count": 4,
+     "nodes": [
+      "ul[role=menu].glue-header__list.header-sub_links"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "width",
+        "durationMs": 3000,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "width",
+        "durationMs": 3000,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      },
+      {
+       "kind": "transition",
+       "key": "width",
+       "outcome": "kept",
+       "from": 3000,
+       "to": 3000
+      }
+     ],
+     "count": 2,
+     "nodes": [
+      "div[role=button].glue-header__drawer-backdrop",
+      "div.glue-header__drawer-backdrop"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "background",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "box-shadow",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "background",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "box-shadow",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      },
+      {
+       "kind": "transition",
+       "key": "background",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      },
+      {
+       "kind": "transition",
+       "key": "box-shadow",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 2,
+     "nodes": [
+      "div.glue-header__bar.glue-header__bar--mobile",
+      "div.glue-header__bar.glue-header__bar--desktop.glue-header"
+     ]
+    }
+   ],
+   "keyframes": [],
+   "reducedMotionRules": [],
+   "declared": [],
+   "customProperties": []
+  }
+ }
+}
