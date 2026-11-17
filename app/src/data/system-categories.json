@@ -1609,5 +1609,14 @@
    "Marketplace"
   ],
   "reason": "catalog.json describes a honeymoon cash-gift registry: the closure-notice home, marketing content pages (blog, destination trips, guides), the signed-out auth forms at rest and the public demo registry where guests fund a couple's listed gifts."
+ },
+ {
+  "referenceId": "systems:column",
+  "groupId": "web-categories",
+  "labels": [
+   "Finance",
+   "Development Tools"
+  ],
+  "reason": "catalog.json describes developer banking APIs - ledgers, transfers, bank accounts and card issuing - a finance product sold to developers."
  }
 ]
