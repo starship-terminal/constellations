@@ -16428,6 +16428,7 @@
     "version": "marketing site, main.css id 34f42d00dd489cfa18358327b0fd45c4",
     "durationMin": 90,
     "durationNote": "Public capture of kitchen.co: route probe, kit adaptation, screenshot and measurement passes, motion probe, offline build.",
+    "pr": "https://github.com/starship-terminal/constellations/pull/641",
     "gaps": [
      "Workspace app (https://kitchen.co/login redirects to https://kitchen.co/login/workspace): Continue was not pressed, so the signed-in client portal was not captured",
      "Get started (https://kitchen.co/get-started): the email signup form was measured and not submitted",
