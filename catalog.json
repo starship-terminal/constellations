@@ -4582,6 +4582,105 @@
    }
   },
   {
+   "slug": "column",
+   "name": "Column",
+   "url": "https://column.com/",
+   "category": "finance",
+   "platform": "web",
+   "goodFor": "developer-banking marketing: a Gatsby + styled-components build shipping a real named token layer in its sheets - ten --color-<family>-<step> ramps (blue-800 #111a4a navy the brand ink, blue-600 #1e4199 links, cyan-900 #011821 the dark band, gray-50/100 grounds), a 71-step --space-* scale, --text-*/--lh-*/--letter-spacing-* type scales, --font-* stacks (SuisseIntl, SuisseIntlMono, Inter) and weights, --radii-*/--screen-*/--cols-* layers and the five-layer --shadow-product; a semantic --bg-color-*/--text-color-*/--btn-*/--form-*/--link-* layer that .color-palette--primary binds for the light theme and .color-palette-inverted--* rebinds on the dark infrastructure island",
+   "tags": [
+    "web",
+    "finance",
+    "banking",
+    "developer-tools",
+    "gatsby",
+    "styled-components",
+    "design-tokens",
+    "light",
+    "dark-islands",
+    "marketing",
+    "signed-out"
+   ],
+   "shape": "reference",
+   "captured": "2026-11-17",
+   "access": "signed out (the marketing routes are fully public; the Column product sits behind dashboard.column.com - the /login form was measured at rest only: the email field was focused once for its computed style, no text was typed, nothing submitted, and no passkey flow was started; the styled-components cookie banner was hidden, never answered)",
+   "themes": [
+    "light"
+   ],
+   "widths": [
+    1440,
+    390
+   ],
+   "entry": "systems/column/README.md",
+   "tokens": "systems/column/tokens.json",
+   "styleGuide": "systems/column/style-guide.html",
+   "preview": {
+    "cover": "systems/column/screenshots/home-light-default.png",
+    "icon": "systems/column/icon.png",
+    "swatches": {
+     "light": {
+      "page": "light.surface.page",
+      "surface": "light.surface.secondary",
+      "text": "light.text.heading",
+      "muted": "light.text.body",
+      "accent": "light.accent",
+      "border": "light.border.input"
+     }
+    },
+    "fonts": [
+     "core.font.family.sans",
+     "core.font.family.mono",
+     "core.font.family.ui"
+    ]
+   },
+   "capture": {
+    "method": "public-web",
+    "source": "column.com in headless Chromium (Playwright) - the site renders clean headless, no bot wall - desktop 1440x900 and 390x844 mobile passes; computed styles and 42 element crops from the live DOM, plus a stylesheet harvest (479 rules, 509 app custom properties, 11 @font-face records) that resolves every var() chain across the :root scale block and the .color-palette--*/.color-palette-inverted--* semantic classes. Selectors ride the styled-components sc-* class hooks (Header__SiteHeader, _closer__Wrapper, _scale__StatsWrapper, _infrastructure__Wrapper, ProductScreen__Wrapper); the GetStartedMenu's hidden Sign-up choice is documented, not measured. dashboard.column.com/login is the app's own sign-in surface measured at rest. BOUNDARY: the product, dashboard, ledgers, transfers and every account/passkey action sit behind sign-in, never crossed; nothing was typed, submitted or authenticated",
+    "timestamp": "2026-11-17T16:30:00Z",
+    "harness": "Devin",
+    "model": "SWE-2 High",
+    "route": "public-web",
+    "routes": [
+     "/",
+     "/ach/",
+     "/bank-accounts/",
+     "/book-transfers/",
+     "/card-programs/",
+     "/checks/",
+     "/global-banking/",
+     "/international-wires/",
+     "/loan-origination/",
+     "/multicurrency/",
+     "/realtime/",
+     "/stablecoins/",
+     "/wire/",
+     "/company/",
+     "/careers/",
+     "/blog/",
+     "/security/",
+     "/contact/",
+     "/legal/privacy-notice/",
+     "dashboard.column.com/login",
+     "mobile /, /ach/, /card-programs/ and /blog/ plus the open menu overlay"
+    ],
+    "gaps": [
+     "the Column product - dashboard, ledgers, transfers - sits behind dashboard.column.com sign-in and was never crossed; the login form was measured at rest but never submitted",
+     "the navy Sign-up choice inside the GetStartedMenu renders eager but visibility:hidden at rest, so it is documented rather than measured; the Get started trigger was never pressed (its label reads as a signup step, which the kit refuses to toggle)",
+     "the sheets declare no duration/ease tokens, so the motion scale is only what the chrome measurably transitions",
+     "the email field's ring styling lives on its label wrapper, not the input - the focused reading covers the field, and the wrapper's ring is recorded on the card's painted layers",
+     "the product pages other than ach/card-programs are captured as full screenshots only; their internal components were not individually measured",
+     "pressed states are DevTools-forced (CSS.forcePseudoState), so any script-applied mousedown state is missing; disabled, error and loading states do not appear on the public surface",
+     "no standalone SVG icon set was lifted; the glyphs in crops and screenshots are Column's artwork"
+    ],
+    "durationMin": 240,
+    "durationNote": "wall-clock across the capture sessions including kit adaptation, route and DOM probing, the stylesheet harvest, screenshot and measurement passes with selector correction, and the offline build",
+    "pr": "https://github.com/starship-terminal/constellations/pull/XXX"
+   },
+   "layoutGaps": {
+    "icons/": "no standalone SVG icon set was lifted on this pass; the glyphs (the logo, menu chevrons, passkey mark) are visible in the crops and screenshots"
+   }
+  },
+  {
    "slug": "conductor-desktop",
    "name": "Conductor (desktop)",
    "url": "https://conductor.build",
@@ -16072,104 +16171,104 @@
    "platform": "web",
    "goodFor": "Meditation, sleep and mental-health product across four public surfaces: the Next.js marketing site (generated Emotion classes, no custom-property layer, Headspace Apercu 200-700, blue #0061ef primary pills and dark #2d2c2b secondary pills on a warm #f9f4f2 ground, hover mega-menu, topic pages with pastel tints), the /content free-preview library and /articles hub, the /subscriptions plans block (billing switch, seat slider), the signed-out Auth0 universal login/signup cards on auth.headspace.com, the checkout.headspace.com self-serve shell, and the organizations.headspace.com B2B surface (yellow #ffce00 cards, white pill CTA going #ff7e1d orange on hover)",
    "tags": [
-      "web",
-      "meditation",
-      "sleep",
-      "mental-health",
-      "wellness",
-      "marketing",
-      "light",
-      "signed-out",
-      "pricing",
-      "design-tokens"
+    "web",
+    "meditation",
+    "sleep",
+    "mental-health",
+    "wellness",
+    "marketing",
+    "light",
+    "signed-out",
+    "pricing",
+    "design-tokens"
    ],
    "shape": "reference",
    "captured": "2026-11-17",
    "access": "signed out (every captured surface is public); the member app behind auth.headspace.com login was never reached; the universal login/signup, newsletter, redeem-code and checkout forms were measured empty, never filled or submitted; no trial started, no plan bought, no code redeemed; every CTA measured, never followed; the OneTrust consent layer was hidden, never answered",
    "themes": [
-      "light"
+    "light"
    ],
    "widths": [
-      1440,
-      390
+    1440,
+    390
    ],
    "entry": "systems/headspace/README.md",
    "tokens": "systems/headspace/tokens.json",
    "styleGuide": "systems/headspace/style-guide.html",
    "preview": {
-      "cover": "systems/headspace/screenshots/home-light-default.png",
-      "icon": "systems/headspace/icon.png",
-      "swatches": {
-         "light": {
-            "page": "light.color.surface.page",
-            "surface": "light.color.surface.auth-card",
-            "text": "light.color.ink.primary",
-            "muted": "light.color.ink.muted",
-            "accent": "light.color.brand.blue",
-            "border": "light.color.line.field"
-         }
-      },
-      "fonts": [
-         "core.font.family.display",
-         "core.font.family.body"
-      ]
+    "cover": "systems/headspace/screenshots/home-light-default.png",
+    "icon": "systems/headspace/icon.png",
+    "swatches": {
+     "light": {
+      "page": "light.color.surface.page",
+      "surface": "light.color.surface.auth-card",
+      "text": "light.color.ink.primary",
+      "muted": "light.color.ink.muted",
+      "accent": "light.color.brand.blue",
+      "border": "light.color.line.field"
+     }
+    },
+    "fonts": [
+     "core.font.family.display",
+     "core.font.family.body"
+    ]
    },
    "source": {
-      "path": "~/.design-systems/headspace/raw-shots (full-colour captures, outside the repo)"
+    "path": "~/.design-systems/headspace/raw-shots (full-colour captures, outside the repo)"
    },
    "capture": {
-      "method": "public-web",
-      "source": "www.headspace.com (a Next.js marketing site compiled to generated Emotion classes with 275+ inline style blocks; the stylesheets declare only a small :root palette - 27 custom properties including --secondary-blue #0061ef, --primary-blue #0040ea, --orange #ff7e1d, --primary-warm-grey-700 #2d2c2b, --2ndary-warm-grey-100 #f9f4f2 - resolved by the harvest and cross-checked against the measured component values; Headspace Apercu + Apercu Pro Mono @font-face), organizations.headspace.com (the B2B marketing host), checkout.headspace.com (the self-serve checkout shell) and auth.headspace.com (the Auth0 universal login/signup the /login and /signup routes redirect to) in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and 64 element crops from the live DOM. BOUNDARY: everything post-login; forms measured empty; /pricing serves a real 404",
-      "timestamp": "2026-11-17T08:00:00Z",
-      "harness": "Devin",
-      "model": "Devin",
-      "route": "public-web",
-      "routes": [
-         "/",
-         "/app",
-         "/meditation",
-         "/mindfulness",
-         "/sleep",
-         "/online-therapy",
-         "/coaching",
-         "/ai-mental-health-companion",
-         "/mental-health",
-         "/mental-health/anxiety",
-         "/science",
-         "/about-us",
-         "/articles",
-         "/articles/can-you-use-hsa-or-fsa-for-mental-health",
-         "/content",
-         "/content/topics/100",
-         "/subscriptions",
-         "/family-plan",
-         "/buy/gift",
-         "/share-headspace",
-         "/code",
-         "/app/mindful-families",
-         "organizations.headspace.com/",
-         "organizations.headspace.com/employers",
-         "checkout.headspace.com/checkout (viewed only)",
-         "/login and /signup -> auth.headspace.com universal pages (measured empty)",
-         "home header For-You mega-menu, mobile /, /subscriptions, /meditation, /content and the mobile nav sheet"
-      ],
-      "gaps": [
-         "everything post-login - the member home, meditation player, streaks, settings and the whole signed-in app behind auth.headspace.com; an authenticated boundary never reached",
-         "submitted states: the universal login/signup, newsletter, redeem-code and checkout forms were measured empty, never sent - validation, error, loading and success states are absent rather than measured",
-         "no trial started, no plan bought, no code redeemed, no gift sent, no guest pass claimed - every transactional step past the painted form is a recorded gap",
-         "/pricing answers a real 404 ('Whoops! Something's changed'); the plans live on /subscriptions - a recorded absence, not a capture",
-         "no dark theme: no control, no attribute, no applied prefers-color-scheme rules on any captured page",
-         "pressed states are DevTools-forced (CSS.forcePseudoState) - script-driven mousedown looks are uncaptured",
-         "the OneTrust consent banner/preferences were hidden (display:none), never answered - no consent state captured",
-         "the checkout shell's form fields, the feature/testimonial cards, the FAQ accordion, the plan cards and billing switch, the content tiles, the footer language selector and app badges, and the mobile nav sheet did not match the kit's structural selectors on this pass - recorded as absent components, not measured",
-         "full-page screenshots capture the real scrollable area: on pages whose content overflows horizontally the -full PNG is wider than the 1440 viewport, and pages taller than 8 tiles truncate from the bottom; sidecars record the document size"
-      ],
-      "durationMin": 240,
-      "durationNote": "wall-clock across the capture sessions including reachability probes, kit adaptation from the Grok capture, the stylesheet harvest, the screenshot pass, the measurement pass and the offline build",
-      "pr": "https://github.com/starship-terminal/constellations/pull/631"
+    "method": "public-web",
+    "source": "www.headspace.com (a Next.js marketing site compiled to generated Emotion classes with 275+ inline style blocks; the stylesheets declare only a small :root palette - 27 custom properties including --secondary-blue #0061ef, --primary-blue #0040ea, --orange #ff7e1d, --primary-warm-grey-700 #2d2c2b, --2ndary-warm-grey-100 #f9f4f2 - resolved by the harvest and cross-checked against the measured component values; Headspace Apercu + Apercu Pro Mono @font-face), organizations.headspace.com (the B2B marketing host), checkout.headspace.com (the self-serve checkout shell) and auth.headspace.com (the Auth0 universal login/signup the /login and /signup routes redirect to) in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and 64 element crops from the live DOM. BOUNDARY: everything post-login; forms measured empty; /pricing serves a real 404",
+    "timestamp": "2026-11-17T08:00:00Z",
+    "harness": "Devin",
+    "model": "Devin",
+    "route": "public-web",
+    "routes": [
+     "/",
+     "/app",
+     "/meditation",
+     "/mindfulness",
+     "/sleep",
+     "/online-therapy",
+     "/coaching",
+     "/ai-mental-health-companion",
+     "/mental-health",
+     "/mental-health/anxiety",
+     "/science",
+     "/about-us",
+     "/articles",
+     "/articles/can-you-use-hsa-or-fsa-for-mental-health",
+     "/content",
+     "/content/topics/100",
+     "/subscriptions",
+     "/family-plan",
+     "/buy/gift",
+     "/share-headspace",
+     "/code",
+     "/app/mindful-families",
+     "organizations.headspace.com/",
+     "organizations.headspace.com/employers",
+     "checkout.headspace.com/checkout (viewed only)",
+     "/login and /signup -> auth.headspace.com universal pages (measured empty)",
+     "home header For-You mega-menu, mobile /, /subscriptions, /meditation, /content and the mobile nav sheet"
+    ],
+    "gaps": [
+     "everything post-login - the member home, meditation player, streaks, settings and the whole signed-in app behind auth.headspace.com; an authenticated boundary never reached",
+     "submitted states: the universal login/signup, newsletter, redeem-code and checkout forms were measured empty, never sent - validation, error, loading and success states are absent rather than measured",
+     "no trial started, no plan bought, no code redeemed, no gift sent, no guest pass claimed - every transactional step past the painted form is a recorded gap",
+     "/pricing answers a real 404 ('Whoops! Something's changed'); the plans live on /subscriptions - a recorded absence, not a capture",
+     "no dark theme: no control, no attribute, no applied prefers-color-scheme rules on any captured page",
+     "pressed states are DevTools-forced (CSS.forcePseudoState) - script-driven mousedown looks are uncaptured",
+     "the OneTrust consent banner/preferences were hidden (display:none), never answered - no consent state captured",
+     "the checkout shell's form fields, the feature/testimonial cards, the FAQ accordion, the plan cards and billing switch, the content tiles, the footer language selector and app badges, and the mobile nav sheet did not match the kit's structural selectors on this pass - recorded as absent components, not measured",
+     "full-page screenshots capture the real scrollable area: on pages whose content overflows horizontally the -full PNG is wider than the 1440 viewport, and pages taller than 8 tiles truncate from the bottom; sidecars record the document size"
+    ],
+    "durationMin": 240,
+    "durationNote": "wall-clock across the capture sessions including reachability probes, kit adaptation from the Grok capture, the stylesheet harvest, the screenshot pass, the measurement pass and the offline build",
+    "pr": "https://github.com/starship-terminal/constellations/pull/631"
    },
    "layoutGaps": {}
-},
+  },
   {
    "slug": "homerun",
    "name": "Homerun",
