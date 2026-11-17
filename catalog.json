@@ -15431,6 +15431,63 @@
     "durationNote": "wall-clock across the capture sessions including kit adaptation, the stylesheet harvest, the screenshot pass, the measurement pass, the icon/motion/layout probes and the offline build",
     "pr": "https://github.com/starship-terminal/constellations/pull/627"
    }
+  },
+  {
+   "slug": "joinhandshake",
+   "name": "Handshake",
+   "url": "https://joinhandshake.com",
+   "category": "productivity",
+   "platform": "web",
+   "goodFor": "marketing-site and auth-gate design: a floating transparent-over-hero pill nav that inverts to ink-on-white under scroll (nav top-offset swaps to --desktop-nav-top-offset-with-banner when the notification band shows), a lime #d3fb52 'Sign up' pill (hover #a1dd3b), ink #14151c headline/footer and the blue #2e6aff CTA utility ramp (--cta/-hover/-active/-visited), proprietary NoiGrotesk + SansPlomb faces, a 160px uppercase hero (86px on the phone) over a 920x88 rounded-3xl job-search field, a 12-col grid of 116px tracks inside --container-*/--content-max-width, alternating bg-neutral-0/-10 section bands, segment switchers, FAQ and department accordions, Marketo lead forms, pricing tables, plus the consumer app's signed-out /access card painted by the Rosetta --rosetta-* layer (bg.primary #fff, fg.primary #121212, interactive.primary #04191b)",
+   "tags": ["web", "marketing", "careers", "hiring", "education", "students", "employers", "pricing", "blog", "forms", "light", "signed-out", "design-tokens"],
+   "shape": "reference",
+   "captured": "2026-11-17",
+   "access": "signed out (every captured surface is public: joinhandshake.com's marketing pages serve a plain load, and app.joinhandshake.com/access - the 'Log in or sign up' card - cleared its Cloudflare challenge intermittently and was captured on the loads that did; /explore, /signup, the registration flow and support.joinhandshake.com never cleared - blocked boundaries, not captures; nothing was signed into, typed, searched, sent, bought or submitted; the only presses were local UI toggles - the nav's hover-opened mega menu, segment tabs, FAQ and department accordions, the phone's 'Open menu' button)",
+   "themes": ["light", "access"],
+   "widths": [1440, 390],
+   "entry": "systems/joinhandshake/README.md",
+   "tokens": "systems/joinhandshake/tokens.json",
+   "styleGuide": "systems/joinhandshake/style-guide.html",
+   "preview": {
+    "cover": "systems/joinhandshake/screenshots/home-light-default.png",
+    "icon": "systems/joinhandshake/icon.png",
+    "swatches": {
+     "light": {"page": "light.bg.page", "surface": "light.bg.muted", "text": "light.fg.body", "muted": "light.tab.fg", "accent": "light.button.primary.bg", "border": "light.input.search.border"},
+     "access": {"page": "access.rosettaBg.primary", "surface": "access.rosettaBg.surface", "text": "access.rosettaFg.primary", "muted": "access.rosettaFg.secondary", "accent": "access.rosettaInteractive.primary", "border": "access.rosettaFg.border"}
+    },
+    "fonts": ["core.font.family.noiGrotesk", "core.font.family.sansPlomb"]
+   },
+   "source": {"path": "~/.design-systems/joinhandshake/raw-shots (full-colour captures, outside the repo)"},
+   "capture": {
+    "method": "public-web",
+    "source": "joinhandshake.com and app.joinhandshake.com/access in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and element crops from the live DOM, plus a stylesheet harvest (2387 rules, 135 @font-face, 472 site + 242 app resolved custom properties in a probe document). The marketing site scrolls the document; full-page captures are bounded at eight chunks. BOUNDARY: app.joinhandshake.com/explore, /signup, the registration flow and support.joinhandshake.com never cleared the Cloudflare managed challenge from the capture host - documented boundaries, not captures",
+    "timestamp": "2026-11-17T05:00:00Z",
+    "harness": "Devin",
+    "model": "SWE-2 Max",
+    "route": "public-web",
+    "routes": [
+     "joinhandshake.com/ (default, nav mega menu, full)",
+     "joinhandshake.com/students, /students/whos-hiring, /employers, /employers/pricing, /employers/request-more-info, /career-centers, /career-centers/contact, /career-centers/marketing-toolkit",
+     "joinhandshake.com/careers, /about, /ai, /ai/enterprise, /ai/opportunities, /research/ai, /blog + one article, /learn, /legal/tos, /privacy-policy, /newsroom, /accessibility, /security",
+     "app.joinhandshake.com/access desktop and 390px (on the loads that cleared the Cloudflare challenge)",
+     "segment tab, FAQ and department-accordion opens and the 390px 'Open menu' nav sheet as transient states",
+     "BLOCKED: app.joinhandshake.com/explore and /signup (Cloudflare managed challenge, never cleared), support.joinhandshake.com (Cloudflare 403)"
+    ],
+    "gaps": [
+     "the consumer app's signed-in surfaces - /explore, /signup, registration, dashboards - are a blocked boundary: the Cloudflare managed challenge never cleared across fresh-context retries",
+     "support.joinhandshake.com returned Cloudflare 403 from the capture host - the help centre was never reached",
+     "search results: the hero, blog and careers search fields were measured at rest but no query was ever typed - results states are uncaptured",
+     "the Marketo lead forms were measured at rest; no field was filled and nothing was submitted - validation, error and success states are absent",
+     "the floating nav's scrolled state (solid white pill, ink links) is visible in the page screenshots but was not separately state-measured; the rest state over the hero is the measured one",
+     "the NoiGrotesk, SansPlomb, Chicago FLF and Rosetta faces are proprietary and not shipped; crops show them, the style guide falls back to system fonts",
+     "pressed states are DevTools-forced (CSS.forcePseudoState), so any script-applied mousedown state is missing",
+     "prefers-reduced-motion is ignored on all seven probed marketing routes - see raw/motion.json",
+     "the Ketch consent banner was captured where the page mounted it and then hidden, never answered - the preference centre behind its buttons is uncaptured"
+    ],
+    "durationMin": 340,
+    "durationNote": "wall-clock across the capture sessions including kit adaptation, the stylesheet harvest, the screenshot pass (Cloudflare retries on the app routes), three measurement passes with selector fixes, the layout and motion probes, and the offline build",
+    "pr": "https://github.com/starship-terminal/constellations/pull/629"
+   }
   }
  ]
 }
