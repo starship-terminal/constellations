@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_131 of 189 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_132 of 190 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -738,6 +738,17 @@ Access: signed out (every captured surface is public: httpie.io marketing/docs/b
 - HTTPie AI 'Try it out' is an account/paid generation flow - the promo dialog is evidence, the action is not
 - the newsletter inputs were measured and focused, never typed or submitted - the success/mail flow is absent
 - the Import/Migrate card, + Collection's Create dialog submit and 'Create environment' were never confirmed - the surfaces behind them are absent
+
+## [Jace AI](../systems/jace) — `jace`
+Access: signed out (marketing routes are public; app.jace.ai/signin was measured at rest, OAuth and SSO never followed, the sales form was focused and a sample string typed then deleted, nothing submitted)
+- the inbox, drafts, labels, Flows, settings and billing sit behind https://app.jace.ai/signin and were never crossed; the sign-in card was measured at rest
+- Continue with Google on https://app.jace.ai/signin is an OAuth flow and was not followed (hover and a DevTools-forced pressed state only)
+- Continue with Outlook on https://app.jace.ai/signin is an OAuth flow and was not followed (hover only)
+- Enterprise SSO at https://app.jace.ai/enterprise-sso (Launch the SSO portal) was not followed
+- the sales form at https://jace.ai/contact/sales (Send a request) was shown at rest, focused, and a sample string typed then deleted; it was not submitted, so no posted validation error was captured
+- checkout and payment sit behind sign-in and were not opened
+- account deletion and settings sit behind sign-in (public docs mention them) and were not opened
+- marketing home and pricing ignore prefers-reduced-motion; sign-in is partial (raw/motion.json)
 
 ## Gate noted in access text only
 

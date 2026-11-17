@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 189,
-    "system_domains": 180,
-    "matched_domains": 150,
-    "missing_domains": 283,
+    "system_packages": 190,
+    "system_domains": 181,
+    "matched_domains": 151,
+    "missing_domains": 282,
     "system_domains_absent_from_catalog": 30
   },
   "matched": {
@@ -2457,6 +2457,23 @@
         }
       ]
     },
+    "jace.ai": {
+      "catalog": [
+        {
+          "name": "Jace AI",
+          "domain": "jace.ai",
+          "id": 838
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "jace",
+          "name": "Jace AI",
+          "url": "https://jace.ai",
+          "name_match": true
+        }
+      ]
+    },
     "joinhandshake.com": {
       "catalog": [
         {
@@ -2832,13 +2849,6 @@
         "name": "InVision",
         "domain": "invisionapp.com",
         "id": 319
-      }
-    ],
-    "jace.ai": [
-      {
-        "name": "Jace AI",
-        "domain": "jace.ai",
-        "id": 838
       }
     ],
     "jasper.ai": [

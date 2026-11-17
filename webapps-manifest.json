@@ -2439,8 +2439,8 @@
     838
    ],
    "description": "Your 24/7 email assistant that drafts for you",
-   "status": "pending",
-   "package": null,
+   "status": "captured",
+   "package": "systems/jace",
    "notes": "",
    "batch": 9
   },

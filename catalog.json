@@ -16372,6 +16372,112 @@
     "pr": "https://github.com/starship-terminal/constellations/pull/635",
     "durationNote": "wall-clock across the capture session including route and DOM probes, kit adaptation, the stylesheet harvest, two screenshot passes, the measurement pass and the offline build"
    }
+  },
+  {
+   "slug": "jace",
+   "name": "Jace AI",
+   "url": "https://jace.ai",
+   "category": "productivity",
+   "platform": "web",
+   "goodFor": "AI email assistant marketing plus a dark product shell: a Next.js/Tailwind v4 cream site (sand #fffefd, ink #2d2d2d, Geist Sans, Gelica display, 9999px pills, lemon #ffdc61 and ember #ff7d55) whose product token layer is a separate custom-property theme (bare :root dark #333437 / #fff2e7, light overrides only under html.light), Inter Variable and Instrument Serif in the product tokens, and a sign-in card of Google, Outlook and SSO",
+   "tags": [
+    "web",
+    "ai",
+    "email",
+    "productivity",
+    "nextjs",
+    "tailwind",
+    "light",
+    "dark",
+    "pills",
+    "marketing",
+    "pricing",
+    "signed-out"
+   ],
+   "shape": "reference",
+   "captured": "2026-11-18",
+   "access": "signed out (marketing routes are public; app.jace.ai/signin was measured at rest, OAuth and SSO never followed, the sales form was focused and a sample string typed then deleted, nothing submitted)",
+   "themes": [
+    "light",
+    "dark"
+   ],
+   "widths": [
+    1440,
+    390
+   ],
+   "entry": "systems/jace/README.md",
+   "tokens": "systems/jace/tokens.json",
+   "styleGuide": "systems/jace/style-guide.html",
+   "preview": {
+    "cover": "systems/jace/screenshots/home-light-default.png",
+    "icon": "systems/jace/icon.png",
+    "swatches": {
+     "light": {
+      "page": "core.color.marketing.page",
+      "surface": "light.surface.default",
+      "text": "core.color.marketing.ink",
+      "muted": "light.text.body.muted",
+      "accent": "core.color.ember.500",
+      "border": "light.border.base"
+     },
+     "dark": {
+      "page": "dark.surface.default",
+      "surface": "dark.surface.input",
+      "text": "dark.text.body.default",
+      "muted": "dark.text.body.muted",
+      "accent": "dark.surface.brand.DEFAULT",
+      "border": "dark.border.base"
+     }
+    },
+    "fonts": [
+     "core.font.marketingSans",
+     "core.font.marketingDisplay",
+     "core.font.sans"
+    ]
+   },
+   "capture": {
+    "method": "public-web",
+    "source": "jace.ai and app.jace.ai/signin in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and 90 element crops from the live DOM, plus a stylesheet harvest that resolves the product custom properties on bare :root (dark, the theme sign-in paints) and under html.light (declared, not painted on the marketing site). Marketing paint that the product tokens do not name is stored as core.color.marketing and core.font.marketingSans/marketingDisplay from computed styles. BOUNDARY: the inbox, drafts, labels, Flows, settings, billing and every OAuth/SSO/signup action sit behind sign-in and were never crossed; the sales form was not submitted",
+    "timestamp": "2026-11-18T12:00:00Z",
+    "harness": "Grok Build",
+    "model": "grok-4.7",
+    "route": "public-web",
+    "routes": [
+     "/",
+     "/pricing",
+     "/about",
+     "/brand",
+     "/blog",
+     "/changelog",
+     "/docs/guides-getting-started",
+     "/integrations/gmail",
+     "/lawyers",
+     "/press",
+     "/terms",
+     "/privacy",
+     "/contact/sales",
+     "/features",
+     "app.jace.ai/signin",
+     "mobile /, /pricing, /blog, /docs and sign-in"
+    ],
+    "gaps": [
+     "the inbox, drafts, labels, Flows, settings and billing sit behind https://app.jace.ai/signin and were never crossed; the sign-in card was measured at rest",
+     "Continue with Google on https://app.jace.ai/signin is an OAuth flow and was not followed (hover and a DevTools-forced pressed state only)",
+     "Continue with Outlook on https://app.jace.ai/signin is an OAuth flow and was not followed (hover only)",
+     "Enterprise SSO at https://app.jace.ai/enterprise-sso (Launch the SSO portal) was not followed",
+     "Sign up at https://app.jace.ai/signup, and the Get started / Get Started for Free / Try Pro / Start your free trial CTAs that leave for it, were not followed",
+     "the sales form at https://jace.ai/contact/sales (Send a request) was shown at rest, focused, and a sample string typed then deleted; it was not submitted, so no posted validation error was captured",
+     "checkout and payment sit behind sign-in and were not opened",
+     "account deletion and settings sit behind sign-in (public docs mention them) and were not opened",
+     "the product light theme (html.light) is declared and tokenised but no public page adds that class, so it was not observed painted",
+     "Slack and Outlook integration pages, remaining blog posts, docs, persona and template URLs (sitemap has 134) were not shot individually",
+     "the affiliate partner link https://partners.dub.co/jace is external and was not captured",
+     "pressed states are DevTools-forced (CSS.forcePseudoState), so any script-applied mousedown state is missing",
+     "marketing home and pricing ignore prefers-reduced-motion; sign-in is partial (raw/motion.json)"
+    ],
+    "durationMin": 180,
+    "durationNote": "wall-clock across the capture session including kit adaptation, route and DOM probing, the stylesheet harvest, screenshot and measurement passes, and the offline build"
+   }
   }
  ]
 }
