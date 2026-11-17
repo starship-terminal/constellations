@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_131 of 189 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_132 of 190 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -738,6 +738,15 @@ Access: signed out (every captured surface is public: httpie.io marketing/docs/b
 - HTTPie AI 'Try it out' is an account/paid generation flow - the promo dialog is evidence, the action is not
 - the newsletter inputs were measured and focused, never typed or submitted - the success/mail flow is absent
 - the Import/Migrate card, + Collection's Create dialog submit and 'Create environment' were never confirmed - the surfaces behind them are absent
+
+## [Kraken](../systems/kraken) — `kraken`
+Access: signed out (trading, wallets, account and any submitted form were not entered)
+- Sign-in at https://id.kraken.com/sign-in was photographed at rest. The email field was focused. Nothing was typed. Continue, Google, Apple and passkey were not followed.
+- Create an account at https://www.kraken.com/sign-up was photographed at rest. Continue was not submitted and the Google and Apple buttons were not followed.
+- Kraken Pro trading at https://pro.kraken.com/app/trade and the markets at https://pro.kraken.com/app/markets/spot sit behind sign-in. The /pro marketing page was captured. The app was not opened.
+- The consumer app at https://app.kraken.com/ and the product routes behind /app (xstocks, borrow, onchain, auto-earn, perpetual futures, Kraken+, dollar-cost averaging, crypto card) require an account. The /app marketing page was captured.
+- Portfolio, wallets, checkout, KYC and card issuance require an account and were not entered.
+- The institutions contact form on https://www.kraken.com/institutions (Get in touch) was not submitted.
 
 ## Gate noted in access text only
 
