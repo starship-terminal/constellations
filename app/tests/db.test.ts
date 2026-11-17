@@ -174,7 +174,7 @@ test("version-two stores preserve existing state while adding independent screen
       (await migrated.client.execute("PRAGMA user_version")).rows[0]
         .user_version,
     ),
-  ).toBe(30);
+  ).toBe(31);
   expect((await migrated.getConversation(conversation.id))?.title).toBe(
     "Keep research",
   );
@@ -278,7 +278,7 @@ test("version-five stores gain curated rows added since, without touching their 
       (await migrated.client.execute("PRAGMA user_version")).rows[0]
         .user_version,
     ),
-  ).toBe(30);
+  ).toBe(31);
   const categories = await migrated.listReferenceCategories();
   expect(
     categories.filter((row) => row.referenceId === "systems:dub"),
@@ -317,7 +317,7 @@ test("version-seven stores gain curated rows added since, without touching their
       (await migrated.client.execute("PRAGMA user_version")).rows[0]
         .user_version,
     ),
-  ).toBe(30);
+  ).toBe(31);
   const categories = await migrated.listReferenceCategories();
   // Two seed labels (Magazines & Newspapers + News) land as two rows.
   expect(
@@ -351,7 +351,7 @@ test("version-eight stores gain curated rows added since, without touching their
       (await migrated.client.execute("PRAGMA user_version")).rows[0]
         .user_version,
     ),
-  ).toBe(30);
+  ).toBe(31);
   const categories = await migrated.listReferenceCategories();
   // Two seed labels (Communication Tools + Social Networking) land as two rows.
   expect(
@@ -385,7 +385,7 @@ test("version-nine stores gain the District rows, without touching their own lab
       (await migrated.client.execute("PRAGMA user_version")).rows[0]
         .user_version,
     ),
-  ).toBe(30);
+  ).toBe(31);
   const categories = await migrated.listReferenceCategories();
   // Two seed labels (Entertainment + Travel & Booking) land as two rows.
   expect(
@@ -420,7 +420,7 @@ test("version-ten stores gain the DJI rows, without touching their own labels", 
       (await migrated.client.execute("PRAGMA user_version")).rows[0]
         .user_version,
     ),
-  ).toBe(30);
+  ).toBe(31);
   const categories = await migrated.listReferenceCategories();
   // Two seed labels (Electronic & Devices + Marketplace) land as two rows.
   expect(
@@ -454,7 +454,7 @@ test("version-eleven stores gain the Framer rows, without touching their own lab
       (await migrated.client.execute("PRAGMA user_version")).rows[0]
         .user_version,
     ),
-  ).toBe(30);
+  ).toBe(31);
   const categories = await migrated.listReferenceCategories();
   // Two seed labels (Design & Media Editing + Productivity) land as two rows.
   expect(
@@ -488,7 +488,7 @@ test("version-twelve stores gain the Fourthwall rows, without touching their own
       (await migrated.client.execute("PRAGMA user_version")).rows[0]
         .user_version,
     ),
-  ).toBe(30);
+  ).toBe(31);
   const categories = await migrated.listReferenceCategories();
   // Two seed labels (Business + Marketplace) land as two rows.
   expect(
@@ -523,7 +523,7 @@ test("version-thirteen stores gain the Calm rows, without touching their own lab
       (await migrated.client.execute("PRAGMA user_version")).rows[0]
         .user_version,
     ),
-  ).toBe(30);
+  ).toBe(31);
   const categories = await migrated.listReferenceCategories();
   // One seed label (Health & Wellness) lands as one row.
   expect(
@@ -574,7 +574,7 @@ test("version-fourteen stores gain the Chargetrip and Fresha rows, without touch
       (await migrated.client.execute("PRAGMA user_version")).rows[0]
         .user_version,
     ),
-  ).toBe(30);
+  ).toBe(31);
   const categories = await migrated.listReferenceCategories();
   // The Chargetrip seed labels (Development Tools + Travel & Booking) land as
   // two rows; Fresha's three labels land as three rows.
@@ -659,7 +659,7 @@ test("version-fifteen stores gain the ClassPass rows and the stranded Frame.io/G
       (await migrated.client.execute("PRAGMA user_version")).rows[0]
         .user_version,
     ),
-  ).toBe(30);
+  ).toBe(31);
   const categories = await migrated.listReferenceCategories();
   // The seed labels (Health & Wellness + Marketplace) land as two rows.
   expect(
@@ -725,7 +725,7 @@ test("version-twelve stores gain the Frame.io rows, without touching their own l
       (await migrated.client.execute("PRAGMA user_version")).rows[0]
         .user_version,
     ),
-  ).toBe(30);
+  ).toBe(31);
   const categories = await migrated.listReferenceCategories();
   // Two seed labels (Collaboration Tools + Design & Media Editing) land as
   // two rows.
@@ -773,7 +773,7 @@ test("version-sixteen stores gain the Clay/Mesh rows, without touching their own
       (await migrated.client.execute("PRAGMA user_version")).rows[0]
         .user_version,
     ),
-  ).toBe(30);
+  ).toBe(31);
   const categories = await migrated.listReferenceCategories();
   // The seed labels (Productivity + Communication Tools) land as two rows.
   expect(
@@ -825,7 +825,7 @@ test("version-nineteen stores gain the Clearful rows, without touching their own
       (await migrated.client.execute("PRAGMA user_version")).rows[0]
         .user_version,
     ),
-  ).toBe(30);
+  ).toBe(31);
   const categories = await migrated.listReferenceCategories();
   // The seed labels (Health & Wellness + Productivity) land as two rows.
   expect(
@@ -877,7 +877,7 @@ test("version-twenty-two stores gain the Grok rows, without touching their own l
       (await migrated.client.execute("PRAGMA user_version")).rows[0]
         .user_version,
     ),
-  ).toBe(30);
+  ).toBe(31);
   const categories = await migrated.listReferenceCategories();
   // The seed labels (AI Tool + Development Tools) land as two rows.
   expect(
@@ -930,7 +930,7 @@ test("version-twenty-four stores gain the Hashnode rows, without touching their 
       (await migrated.client.execute("PRAGMA user_version")).rows[0]
         .user_version,
     ),
-  ).toBe(30);
+  ).toBe(31);
   const categories = await migrated.listReferenceCategories();
   // The seed labels (Social Networking + Development Tools) land as two rows.
   expect(
@@ -983,7 +983,7 @@ test("version-twenty-three stores gain the Clipchamp rows, without touching thei
       (await migrated.client.execute("PRAGMA user_version")).rows[0]
         .user_version,
     ),
-  ).toBe(30);
+  ).toBe(31);
   const categories = await migrated.listReferenceCategories();
   // The seed labels (Design & Media Editing + Productivity) land as two rows.
   expect(
@@ -1035,7 +1035,7 @@ test("version-twenty-five stores gain the Gumroad rows, without touching their o
       (await migrated.client.execute("PRAGMA user_version")).rows[0]
         .user_version,
     ),
-  ).toBe(30);
+  ).toBe(31);
   const categories = await migrated.listReferenceCategories();
   // The seed label (Marketplace) lands as one row.
   expect(
@@ -1087,7 +1087,7 @@ test("version-twenty-six stores gain the Cofounder rows, without touching their 
       (await migrated.client.execute("PRAGMA user_version")).rows[0]
         .user_version,
     ),
-  ).toBe(30);
+  ).toBe(31);
   const categories = await migrated.listReferenceCategories();
   // The seed labels (AI Tool + Productivity) land as two rows.
   expect(
@@ -1140,7 +1140,7 @@ test("version-twenty-seven stores gain the Handshake rows, without touching thei
       (await migrated.client.execute("PRAGMA user_version")).rows[0]
         .user_version,
     ),
-  ).toBe(30);
+  ).toBe(31);
   const categories = await migrated.listReferenceCategories();
   // The seed labels (Marketplace + Productivity) land as two rows.
   expect(
@@ -1192,7 +1192,7 @@ test("version-twenty-eight stores gain the Cohere rows, without touching their o
       (await migrated.client.execute("PRAGMA user_version")).rows[0]
         .user_version,
     ),
-  ).toBe(30);
+  ).toBe(31);
   const categories = await migrated.listReferenceCategories();
   // The seed label (AI Tool) lands as one row.
   expect(
@@ -1216,25 +1216,15 @@ test("version-twenty-eight stores gain the Cohere rows, without touching their o
   ).toHaveLength(0);
 });
 
-test("version-twenty-nine stores gain the Hitchd rows, without touching their own labels", async () => {
+test("version-twenty-nine stores gain the Hello Ivy rows, without touching their own labels", async () => {
   const { dir, store } = await open();
-  // A v29 store opened before the Hitchd rows existed: drop them and
+  // A v29 store opened before the Hello Ivy rows existed: drop them and
   // rewind past the v30 top-up.
   await store.client.execute(
-    "DELETE FROM reference_categories WHERE reference_id='systems:hitchd'",
+    "DELETE FROM reference_categories WHERE reference_id='systems:helloivy'",
   );
   await store.client.execute(
-    "DELETE FROM media_term_assignments WHERE reference_id='systems:hitchd'",
-  );
-  // The media seed also grew two joinhandshake screenshots after v28 shipped.
-  // v30 tops up just those media IDs — simulate the v29 store by deleting
-  // them, plus one joinhandshake media row standing in for a label the user
-  // cleared: the scoped top-up must not resurrect the cleared one.
-  await store.client.execute(
-    "DELETE FROM media_term_assignments WHERE reference_id='systems:joinhandshake' AND media_id IN ('systems/joinhandshake/screenshots/home-light-consent.png','systems/joinhandshake/screenshots/mobile-home-light-drawer.png')",
-  );
-  await store.client.execute(
-    "DELETE FROM media_term_assignments WHERE reference_id='systems:joinhandshake' AND media_id = (SELECT media_id FROM media_term_assignments WHERE reference_id='systems:joinhandshake' AND media_id NOT IN ('systems/joinhandshake/screenshots/home-light-consent.png','systems/joinhandshake/screenshots/mobile-home-light-drawer.png') LIMIT 1)",
+    "DELETE FROM media_term_assignments WHERE reference_id='systems:helloivy'",
   );
   // A user who cleared another package's labels: the scoped top-up must not
   // resurrect them (an empty assignment reads as "never labelled" to the
@@ -1255,7 +1245,62 @@ test("version-twenty-nine stores gain the Hitchd rows, without touching their ow
       (await migrated.client.execute("PRAGMA user_version")).rows[0]
         .user_version,
     ),
-  ).toBe(30);
+  ).toBe(31);
+  const categories = await migrated.listReferenceCategories();
+  // The seed label (Project Management) lands as one row.
+  expect(
+    categories.filter((row) => row.referenceId === "systems:helloivy"),
+  ).toHaveLength(1);
+  expect(
+    (await migrated.listReferenceCategoryDetails(["systems:helloivy"])).map(
+      (row) => row.label,
+    ),
+  ).toEqual(["Project Management"]);
+  const media = await migrated.listMediaTermAssignments();
+  expect(
+    media.filter((row) => row.referenceId === "systems:helloivy").length,
+  ).toBeGreaterThan(0);
+
+test("version-thirty stores gain the Hitchd rows, without touching their own labels", async () => {
+  const { dir, store } = await open();
+  // A v30 store opened before the Hitchd rows existed: drop them and
+  // rewind past the v31 top-up.
+  await store.client.execute(
+    "DELETE FROM reference_categories WHERE reference_id='systems:hitchd'",
+  );
+  await store.client.execute(
+    "DELETE FROM media_term_assignments WHERE reference_id='systems:hitchd'",
+  );
+  // The media seed also grew two joinhandshake screenshots after v28 shipped.
+  // v31 tops up just those media IDs — simulate the v30 store by deleting
+  // them, plus one joinhandshake media row standing in for a label the user
+  // cleared: the scoped top-up must not resurrect the cleared one.
+  await store.client.execute(
+    "DELETE FROM media_term_assignments WHERE reference_id='systems:joinhandshake' AND media_id IN ('systems/joinhandshake/screenshots/home-light-consent.png','systems/joinhandshake/screenshots/mobile-home-light-drawer.png')",
+  );
+  await store.client.execute(
+    "DELETE FROM media_term_assignments WHERE reference_id='systems:joinhandshake' AND media_id = (SELECT media_id FROM media_term_assignments WHERE reference_id='systems:joinhandshake' AND media_id NOT IN ('systems/joinhandshake/screenshots/home-light-consent.png','systems/joinhandshake/screenshots/mobile-home-light-drawer.png') LIMIT 1)",
+  );
+  // A user who cleared another package's labels: the scoped top-up must not
+  // resurrect them (an empty assignment reads as "never labelled" to the
+  // unscoped seed).
+  await store.client.execute(
+    "DELETE FROM reference_categories WHERE reference_id='systems:digg'",
+  );
+  await store.client.execute(
+    "DELETE FROM media_term_assignments WHERE reference_id='systems:digg'",
+  );
+  await store.client.execute("PRAGMA user_version=30");
+  store.close();
+  stores.splice(stores.indexOf(store), 1);
+  const migrated = await createResearchStore(dir);
+  stores.push(migrated);
+  expect(
+    Number(
+      (await migrated.client.execute("PRAGMA user_version")).rows[0]
+        .user_version,
+    ),
+  ).toBe(31);
   const categories = await migrated.listReferenceCategories();
   // The seed labels (Fundraising + Marketplace) land as two rows.
   expect(
@@ -1294,6 +1339,7 @@ test("version-twenty-nine stores gain the Hitchd rows, without touching their ow
       .map((a) => a.mediaId),
   ).size;
   expect(Number(remaining.rows[0].n)).toBe(seedCount - 1);
+
   // The cleared digg rows stay cleared — the top-up seeds only its own batch.
   expect(
     categories.filter((row) => row.referenceId === "systems:digg"),
@@ -1305,13 +1351,13 @@ test("version-twenty-nine stores gain the Hitchd rows, without touching their ow
 
 test("future database versions are rejected without downgrading their schema", async () => {
   const { dir, store } = await open();
-  await store.client.execute("PRAGMA user_version=31");
+  await store.client.execute("PRAGMA user_version=32");
   await expect(createResearchStore(dir)).rejects.toThrow("newer application");
   expect(
     Number(
       (await store.client.execute("PRAGMA user_version")).rows[0].user_version,
     ),
-  ).toBe(31);
+  ).toBe(32);
 });
 
 test("updateSettings writes JSON on a fresh row and on a conflicting row", async () => {

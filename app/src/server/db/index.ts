@@ -371,7 +371,17 @@ export async function createResearchStore(directory: string) {
     }
     if (version < 30) {
       // Same one-shot top-up, scoped to this batch's new reference: a store
-      // already at v29 never re-seeds, so the Hitchd rows would never
+      // already at v29 never re-seeds, so the Hello Ivy rows would never
+      // arrive. Scoping keeps cleared labels on older packages cleared — an
+      // empty assignment reads as "never labelled", so an unscoped pass
+      // would restore rows the user deleted.
+      await seedNewCuratedCategories(tx, new Set(["systems:helloivy"]));
+      await seedNewCuratedMediaTerms(tx, new Set(["systems:helloivy"]));
+      await tx.execute("PRAGMA user_version = 30");
+    }
+    if (version < 31) {
+      // Same one-shot top-up, scoped to this batch's new reference: a store
+      // already at v30 never re-seeds, so the Hitchd rows would never
       // arrive. Scoping keeps cleared labels on older packages cleared — an
       // empty assignment reads as "never labelled", so an unscoped pass
       // would restore rows the user deleted.
@@ -390,7 +400,7 @@ export async function createResearchStore(directory: string) {
           "systems/joinhandshake/screenshots/mobile-home-light-drawer.png",
         ]),
       );
-      await tx.execute("PRAGMA user_version = 30");
+      await tx.execute("PRAGMA user_version = 31");
     }
     await tx.commit();
   } catch (error) {

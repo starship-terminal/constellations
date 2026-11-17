@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 182,
-    "system_domains": 173,
-    "matched_domains": 143,
-    "missing_domains": 290,
+    "system_packages": 183,
+    "system_domains": 174,
+    "matched_domains": 144,
+    "missing_domains": 289,
     "system_domains_absent_from_catalog": 30
   },
   "matched": {
@@ -2321,6 +2321,23 @@
         }
       ]
     },
+    "helloivy.co": {
+      "catalog": [
+        {
+          "name": "Hello Ivy",
+          "domain": "helloivy.co",
+          "id": 602
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "helloivy",
+          "name": "Hello Ivy",
+          "url": "https://www.helloivy.co",
+          "name_match": false
+        }
+      ]
+    },
     "hitchd.com": {
       "catalog": [
         {
@@ -2678,13 +2695,6 @@
         "name": "Headspace",
         "domain": "headspace.com",
         "id": 113
-      }
-    ],
-    "helloivy.co": [
-      {
-        "name": "Hello Ivy",
-        "domain": "helloivy.co",
-        "id": 602
       }
     ],
     "helloklean.com": [
