@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_121 of 179 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_127 of 185 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -190,6 +190,14 @@ Access: signed out (the marketing routes are fully public; the editor sits behin
 - the editor itself - timeline, assets, export - sits behind app.clipchamp.com sign-in and was never crossed; the sign-in card was measured at rest but never submitted
 - no credentials field renders on the sign-in card until the email path is entered; that path was never crossed, so no field was measured
 
+## [Cofounder](../systems/cofounder) — `cofounder`
+Access: signed out (the marketing routes are fully public; the Cofounder OS sits behind app.cofounder.co sign-in - the login card was measured at rest only; CTA anchors to the app were never followed; the hero copy-prompt button writes the clipboard so it was never pressed; no form was submitted and nothing was authenticated)
+- the Cofounder OS - workspace, integrations, billing - sits behind app.cofounder.co sign-in and was never crossed; the login card was measured at rest but never submitted
+
+## [Cohere](../systems/cohere) — `cohere`
+Access: signed out (the marketing routes are fully public; the Cohere product sits behind dashboard.cohere.com sign-in - the welcome/login card was measured at rest only with no credentials typed and nothing submitted; nav/hero CTAs to sign-up and sales forms were never followed; no OAuth flow was started)
+- the Cohere product - North, Command, the dashboard - sits behind dashboard.cohere.com sign-in and was never crossed; the login card was measured at rest but never submitted
+
 ## [Discord](../systems/discord) — `discord`
 Access: read-only (the marketing pages, /servers discovery + categories, /servers/<slug> details, /login and /register are public signed out; the whole client - /channels/*, joining servers, invites, messages, settings - is an authenticated boundary never reached; every button and field was measured, never submitted or followed)
 - the whole Discord client needs an account - /channels/* redirects to /login; joining a server, accepting an invite, messages and settings are an authenticated boundary never reached
@@ -223,6 +231,11 @@ Access: signed out (every surface captured is public; the product sits at app.gr
 - app.grammarly.com and everything behind Log in / Sign up was never opened: the editor, dashboard, documents, account, billing and admin surfaces are signed-in and out of scope
 - no form was submitted (contact sales, sign-in, newsletter) and no checkout or trial started, so success and painted error states are missing
 - the free tools' result views (plagiarism report, AI-detector verdict, paraphrase output) each need a submit action the kit never performs; the grammar checker's live suggestion cards render in a product overlay outside the page's light DOM and are recorded missing
+
+## [HBO Max](../systems/hbomax) — `hbomax`
+Access: signed out (every captured surface is public; sign-in, plan checkout, the help centre and account surfaces were link-observed only and never opened)
+- auth.hbomax.com sign-in, plan selection and checkout, help.hbomax.com and every account surface were observed as links only and never opened; no form was submitted and no trial or plan was started
+- carousel-next, yearly-billing, FAQ-open, cookie-modal and mobile-nav states are local UI toggles only - nothing was accepted, purchased or submitted
 
 ## [Buy Me a Coffee](../systems/buymeacoffee) — `buymeacoffee`
 Access: signed out (every captured surface is public; the creator dashboard, shop/membership/extras managers, payouts, analytics and settings sit behind /login, the Stripe checkout behind Support was never opened, and the password step behind Continue-with-email was never submitted)
@@ -686,6 +699,21 @@ Access: signed out (every captured surface is public gumroad.com or a public cre
 - post-login surfaces: the seller dashboard (products, sales, payouts, analytics), the buyer library and account settings were never reached - the capture was signed out end to end
 - search results: the marketplace search fields were measured empty; no query was ever submitted
 - checkout beyond the empty public form: payment, confirmation and post-purchase screens were never reached
+
+## [Handshake](../systems/joinhandshake) — `joinhandshake`
+Access: signed out (every captured surface is public: joinhandshake.com's marketing pages serve a plain load, and app.joinhandshake.com/access - the 'Log in or sign up' card - cleared its Cloudflare challenge intermittently and was captured on the loads that did; /explore, /signup, the registration flow and support.joinhandshake.com never cleared - blocked boundaries, not captures; nothing was signed into, typed, searched, sent, bought or submitted; the only presses were local UI toggles - the nav's hover-opened mega menu, segment tabs, FAQ and department accordions, the phone's 'Open menu' button)
+- the consumer app's signed-in surfaces - /explore, /signup, registration, dashboards - are a blocked boundary: the Cloudflare managed challenge never cleared across fresh-context retries
+- the Marketo lead forms were measured at rest; no field was filled and nothing was submitted - validation, error and success states are absent
+
+## [Hello Ivy](../systems/helloivy) — `helloivy`
+Access: signed out (every captured surface is public: www.helloivy.co marketing routes, app.helloivy.co/login at rest and the public share document, and the hosted /docs platform; nothing was signed into, typed, searched, sent, bought or submitted; the only presses were local UI toggles - the Framer menu overlay, the footer's real 'Change theme' control, the pricing FAQ accordion, the share page's settings popover and the phone's menu drawer; every link was measured, never followed; the workspace and every post-auth surface was never entered)
+- the signed-in product (the workspace, projects, clients, files and settings behind /login) is a boundary: the login card was measured at rest, fields never typed, 'Continue' never pressed
+- the app's semantic layer resolves only where its inline section.main_section theme exists - the public share route; /login carries no section so app roles there are measured, not themed
+
+## [Hitchd](../systems/hitchd) — `hitchd`
+Access: signed out (the marketing pages, content pages and demo registries are fully public; the auth forms were read at rest - nothing was focused, typed or submitted; the gift modal's Give/contribute flow and every payment step were never entered; the registry's internal routes /contributions, /payment-methods, /ask and /quick-thanks bounce the guest to / and were recorded as boundaries)
+- focus/hover/pressed states on the auth controls were never forced (focusing a field is the first step of signing in)
+- the registry's internal routes (/contributions, /payment-methods, /ask, /quick-thanks) bounce the signed-out guest to /
 
 ## Gate noted in access text only
 

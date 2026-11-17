@@ -1,0 +1,2320 @@
+{
+ "core": {
+  "color": {
+   "site": {
+    "bg": {
+     "type": "color",
+     "value": "#14151c",
+     "source": "css-var --bg declared on the Tailwind arbitrary-property utility class .\\[--bg\\:\\#14151C\\] — the product's own value applied per element, not a :root variable"
+    },
+    "cta": {
+     "type": "color",
+     "value": "#2e6aff",
+     "source": "css-var --cta declared on the Tailwind arbitrary-property utility class .\\[--cta\\:\\#2E6AFF\\] — the product's own value applied per element, not a :root variable"
+    },
+    "ctaActive": {
+     "type": "color",
+     "value": "#6fbb28",
+     "source": "css-var --cta-active declared on the Tailwind arbitrary-property utility class .\\[--cta-active\\:\\#6FBB28\\] — the product's own value applied per element, not a :root variable"
+    },
+    "ctaHover": {
+     "type": "color",
+     "value": "#1552d6",
+     "source": "css-var --cta-hover declared on the Tailwind arbitrary-property utility class .\\[--cta-hover\\:\\#1552D6\\] — the product's own value applied per element, not a :root variable"
+    },
+    "ctaVisited": {
+     "type": "color",
+     "value": "#6fbb28",
+     "source": "css-var --cta-visited declared on the Tailwind arbitrary-property utility class .\\[--cta-visited\\:\\#6FBB28\\] — the product's own value applied per element, not a :root variable"
+    },
+    "text": {
+     "type": "color",
+     "value": "#14151c",
+     "source": "css-var --text declared on the Tailwind arbitrary-property utility class .\\[--text\\:\\#14151C\\] — the product's own value applied per element, not a :root variable"
+    }
+   },
+   "framer": {
+    "00d6b1f2-ffba-47cc-a311-eb0682e2f8b5": {
+     "type": "color",
+     "var": "--token-00d6b1f2-ffba-47cc-a311-eb0682e2f8b5",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "02b24819-d131-4db0-ad50-04c60a8b807a": {
+     "type": "color",
+     "var": "--token-02b24819-d131-4db0-ad50-04c60a8b807a",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "04c5aa86-e05d-4362-a3a2-70312c73b0e9": {
+     "type": "color",
+     "var": "--token-04c5aa86-e05d-4362-a3a2-70312c73b0e9",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "089c3dbf-4f41-4221-b7d6-ae39d611e102": {
+     "type": "color",
+     "var": "--token-089c3dbf-4f41-4221-b7d6-ae39d611e102",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "09648668-0e7c-42a0-9f76-b34134ebed88": {
+     "type": "color",
+     "var": "--token-09648668-0e7c-42a0-9f76-b34134ebed88",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "09e5027f-2f21-4367-ac07-7da1830b788f": {
+     "type": "color",
+     "var": "--token-09e5027f-2f21-4367-ac07-7da1830b788f",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "1564935d-2cce-4e10-86c5-41112199d7e8": {
+     "type": "color",
+     "var": "--token-1564935d-2cce-4e10-86c5-41112199d7e8",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "18a62245-67b6-44b2-b30f-a323e60b0121": {
+     "type": "color",
+     "var": "--token-18a62245-67b6-44b2-b30f-a323e60b0121",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "1bb76b84-55e5-4c6e-8c05-ceef58f14a43": {
+     "type": "color",
+     "var": "--token-1bb76b84-55e5-4c6e-8c05-ceef58f14a43",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "1d804827-2a73-4ceb-97dd-020f3016e038": {
+     "type": "color",
+     "var": "--token-1d804827-2a73-4ceb-97dd-020f3016e038",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "1f376138-2a27-4d03-accb-78d481edd219": {
+     "type": "color",
+     "var": "--token-1f376138-2a27-4d03-accb-78d481edd219",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "1fca5de0-07fd-47ed-a059-ace669a2ccb3": {
+     "type": "color",
+     "var": "--token-1fca5de0-07fd-47ed-a059-ace669a2ccb3",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "225b0c93-892f-46e5-b3c5-ff6ef9228094": {
+     "type": "color",
+     "var": "--token-225b0c93-892f-46e5-b3c5-ff6ef9228094",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "246bb7df-58d9-4d76-b2c7-e6267355d0b7": {
+     "type": "color",
+     "var": "--token-246bb7df-58d9-4d76-b2c7-e6267355d0b7",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "24ccea63-a288-4de4-8c94-07c5025e7e7e": {
+     "type": "color",
+     "var": "--token-24ccea63-a288-4de4-8c94-07c5025e7e7e",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "2677716e-9e7d-4a65-a8cc-78fc3a0c8ab7": {
+     "type": "color",
+     "var": "--token-2677716e-9e7d-4a65-a8cc-78fc3a0c8ab7",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "2740330e-65d1-4fe3-92e4-5ccaba72f238": {
+     "type": "color",
+     "var": "--token-2740330e-65d1-4fe3-92e4-5ccaba72f238",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "28e78ced-d806-470f-8549-afc933dc6010": {
+     "type": "color",
+     "var": "--token-28e78ced-d806-470f-8549-afc933dc6010",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "2a50ffb1-3223-49df-a271-78c89f56dc4c": {
+     "type": "color",
+     "var": "--token-2a50ffb1-3223-49df-a271-78c89f56dc4c",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "2ae2c93a-eefd-46f2-a463-590ca5fcd36e": {
+     "type": "color",
+     "var": "--token-2ae2c93a-eefd-46f2-a463-590ca5fcd36e",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "2f29236f-917e-4efc-9fbf-906ec364ae22": {
+     "type": "color",
+     "var": "--token-2f29236f-917e-4efc-9fbf-906ec364ae22",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "33869df4-3a2a-41b3-91f2-bd6a24bd7598": {
+     "type": "color",
+     "var": "--token-33869df4-3a2a-41b3-91f2-bd6a24bd7598",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "3387fa0b-ee93-41ed-837a-a09e10adc6ea": {
+     "type": "color",
+     "var": "--token-3387fa0b-ee93-41ed-837a-a09e10adc6ea",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "34020426-7962-4ed2-ab00-c0a27ae48e76": {
+     "type": "color",
+     "var": "--token-34020426-7962-4ed2-ab00-c0a27ae48e76",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "36654104-8ecc-40f6-bacb-00ac08a25f29": {
+     "type": "color",
+     "var": "--token-36654104-8ecc-40f6-bacb-00ac08a25f29",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "3a7db051-2c5a-4eea-90f3-483fa25dc7d5": {
+     "type": "color",
+     "var": "--token-3a7db051-2c5a-4eea-90f3-483fa25dc7d5",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "401bd359-b3ce-4951-9322-aa466f647f92": {
+     "type": "color",
+     "var": "--token-401bd359-b3ce-4951-9322-aa466f647f92",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "429ed8b6-42a6-438d-bc5a-7310640b1392": {
+     "type": "color",
+     "var": "--token-429ed8b6-42a6-438d-bc5a-7310640b1392",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "4434606a-ed75-4d49-8f91-000c9872106b": {
+     "type": "color",
+     "var": "--token-4434606a-ed75-4d49-8f91-000c9872106b",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "4742f1bf-3d8d-4904-a38b-7e39a9ae76cd": {
+     "type": "color",
+     "var": "--token-4742f1bf-3d8d-4904-a38b-7e39a9ae76cd",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "49e6e7a7-d58b-4c1f-a9ba-0b25d67a30f6": {
+     "type": "color",
+     "var": "--token-49e6e7a7-d58b-4c1f-a9ba-0b25d67a30f6",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "4a3e6160-1dda-4985-8efe-e8bab5f59a2a": {
+     "type": "color",
+     "var": "--token-4a3e6160-1dda-4985-8efe-e8bab5f59a2a",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "4ddb4291-f2e5-4f31-9076-366e21e9ab32": {
+     "type": "color",
+     "var": "--token-4ddb4291-f2e5-4f31-9076-366e21e9ab32",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "4f82731f-0275-4e60-9c76-b626428c6cb9": {
+     "type": "color",
+     "var": "--token-4f82731f-0275-4e60-9c76-b626428c6cb9",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "58dd1997-5aad-4b04-a21b-33dae23fafc9": {
+     "type": "color",
+     "var": "--token-58dd1997-5aad-4b04-a21b-33dae23fafc9",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "5dc74602-07d6-440b-b7a5-d799f0cb28cb": {
+     "type": "color",
+     "var": "--token-5dc74602-07d6-440b-b7a5-d799f0cb28cb",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "6a9dbf50-f0ff-49ee-8651-53f504c0f5dc": {
+     "type": "color",
+     "var": "--token-6a9dbf50-f0ff-49ee-8651-53f504c0f5dc",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "6c12887e-1fea-4ec0-bdac-ee52c0e03f57": {
+     "type": "color",
+     "var": "--token-6c12887e-1fea-4ec0-bdac-ee52c0e03f57",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "6c621e68-cbf1-4faf-a500-3fc11fa7290d": {
+     "type": "color",
+     "var": "--token-6c621e68-cbf1-4faf-a500-3fc11fa7290d",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "6d14e9c9-d8bf-40c9-8c9c-023a4c462bc0": {
+     "type": "color",
+     "var": "--token-6d14e9c9-d8bf-40c9-8c9c-023a4c462bc0",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "715d14ed-987f-49ca-aae3-dff3a080b6dd": {
+     "type": "color",
+     "var": "--token-715d14ed-987f-49ca-aae3-dff3a080b6dd",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "71e74c2f-f995-4e95-80d4-bde2b3068c3b": {
+     "type": "color",
+     "var": "--token-71e74c2f-f995-4e95-80d4-bde2b3068c3b",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "7509cc64-b578-4e00-8e69-ea2d85bc1acc": {
+     "type": "color",
+     "var": "--token-7509cc64-b578-4e00-8e69-ea2d85bc1acc",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "7bf23964-929b-4693-825d-04fd8b45c90e": {
+     "type": "color",
+     "var": "--token-7bf23964-929b-4693-825d-04fd8b45c90e",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "7fcdaff0-0ece-4ef7-ac44-4f33c5d3f998": {
+     "type": "color",
+     "var": "--token-7fcdaff0-0ece-4ef7-ac44-4f33c5d3f998",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "8917d8a3-b942-46ed-b19c-3b99cd991b5f": {
+     "type": "color",
+     "var": "--token-8917d8a3-b942-46ed-b19c-3b99cd991b5f",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "89f46ebe-6475-422b-a352-933c538a6f86": {
+     "type": "color",
+     "var": "--token-89f46ebe-6475-422b-a352-933c538a6f86",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "8a75d059-dc18-4138-a0a8-bac32ac9ee48": {
+     "type": "color",
+     "var": "--token-8a75d059-dc18-4138-a0a8-bac32ac9ee48",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "8f926180-85b1-4643-ae87-0e0697a5dfa5": {
+     "type": "color",
+     "var": "--token-8f926180-85b1-4643-ae87-0e0697a5dfa5",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "93745c2f-a915-431f-bf89-7849647e0baa": {
+     "type": "color",
+     "var": "--token-93745c2f-a915-431f-bf89-7849647e0baa",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "958a6369-86de-458c-b44f-8726bb76b59c": {
+     "type": "color",
+     "var": "--token-958a6369-86de-458c-b44f-8726bb76b59c",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "95e6a8d4-cd19-45b6-97da-42aa056868de": {
+     "type": "color",
+     "var": "--token-95e6a8d4-cd19-45b6-97da-42aa056868de",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "984b86b1-e6d5-41fd-a369-89bf43bed0d7": {
+     "type": "color",
+     "var": "--token-984b86b1-e6d5-41fd-a369-89bf43bed0d7",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "99aaff53-254a-47cf-a944-7822b3bf678e": {
+     "type": "color",
+     "var": "--token-99aaff53-254a-47cf-a944-7822b3bf678e",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "9a889b22-6b9d-4156-b8ff-7492b8f6353e": {
+     "type": "color",
+     "var": "--token-9a889b22-6b9d-4156-b8ff-7492b8f6353e",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "9bc81069-b7b8-4d87-8c24-886145b7c040": {
+     "type": "color",
+     "var": "--token-9bc81069-b7b8-4d87-8c24-886145b7c040",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "a034b855-6320-472e-b944-1278f7d355c9": {
+     "type": "color",
+     "var": "--token-a034b855-6320-472e-b944-1278f7d355c9",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "a38bc50b-a1a8-4dc1-865c-22999c3ae2b4": {
+     "type": "color",
+     "var": "--token-a38bc50b-a1a8-4dc1-865c-22999c3ae2b4",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "a66113d6-dd7d-4009-b13f-95a36a15e3c7": {
+     "type": "color",
+     "var": "--token-a66113d6-dd7d-4009-b13f-95a36a15e3c7",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "a767dfa2-32c6-4156-a3d9-c8009354ed91": {
+     "type": "color",
+     "var": "--token-a767dfa2-32c6-4156-a3d9-c8009354ed91",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "a9aec4c5-a368-4a2d-b1af-cbdebf760531": {
+     "type": "color",
+     "var": "--token-a9aec4c5-a368-4a2d-b1af-cbdebf760531",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "b31c1066-2278-42b4-a5c6-b5f121fc41b9": {
+     "type": "color",
+     "var": "--token-b31c1066-2278-42b4-a5c6-b5f121fc41b9",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "b4a3f643-7478-4bb1-8737-4efc3d79ced4": {
+     "type": "color",
+     "var": "--token-b4a3f643-7478-4bb1-8737-4efc3d79ced4",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "b5b488cd-b204-48c3-9271-34b75b456a15": {
+     "type": "color",
+     "var": "--token-b5b488cd-b204-48c3-9271-34b75b456a15",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "baa5b080-5973-4df4-b441-f4e642b1c275": {
+     "type": "color",
+     "var": "--token-baa5b080-5973-4df4-b441-f4e642b1c275",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "bbcff7f9-8802-4a68-b309-97e5b64894e6": {
+     "type": "color",
+     "var": "--token-bbcff7f9-8802-4a68-b309-97e5b64894e6",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "bc22d475-4b04-4dcf-a489-000b72e2171b": {
+     "type": "color",
+     "var": "--token-bc22d475-4b04-4dcf-a489-000b72e2171b",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "bcd8d727-7649-4174-8c13-c203c0e84df2": {
+     "type": "color",
+     "var": "--token-bcd8d727-7649-4174-8c13-c203c0e84df2",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "be074fc3-c003-4e62-9c41-ae70adb72a75": {
+     "type": "color",
+     "var": "--token-be074fc3-c003-4e62-9c41-ae70adb72a75",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "bf13514c-efef-401c-a1d2-05328c26d44a": {
+     "type": "color",
+     "var": "--token-bf13514c-efef-401c-a1d2-05328c26d44a",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "c02c125d-0845-4ca2-aeb0-911c97165daf": {
+     "type": "color",
+     "var": "--token-c02c125d-0845-4ca2-aeb0-911c97165daf",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "c1a92950-da25-49eb-9482-e1cfb091727d": {
+     "type": "color",
+     "var": "--token-c1a92950-da25-49eb-9482-e1cfb091727d",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "c3aac9be-f01f-4244-ba41-5b0aa26f286c": {
+     "type": "color",
+     "var": "--token-c3aac9be-f01f-4244-ba41-5b0aa26f286c",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "c5583c21-56ea-40f2-bd5f-aab56412a3da": {
+     "type": "color",
+     "var": "--token-c5583c21-56ea-40f2-bd5f-aab56412a3da",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "c8309141-eabd-4932-9f84-494a50d857eb": {
+     "type": "color",
+     "var": "--token-c8309141-eabd-4932-9f84-494a50d857eb",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "c8814748-7a51-4c7e-a47a-4852ae350697": {
+     "type": "color",
+     "var": "--token-c8814748-7a51-4c7e-a47a-4852ae350697",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "cb9b55b3-6230-45f1-90a2-3a4aa30d8a89": {
+     "type": "color",
+     "var": "--token-cb9b55b3-6230-45f1-90a2-3a4aa30d8a89",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "cea31574-e182-4ee0-9bd0-655bf8324f7f": {
+     "type": "color",
+     "var": "--token-cea31574-e182-4ee0-9bd0-655bf8324f7f",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "d002beb2-3c90-4e96-abaf-05b048e7b9f6": {
+     "type": "color",
+     "var": "--token-d002beb2-3c90-4e96-abaf-05b048e7b9f6",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "d07e1b38-01a3-4f02-b714-3bc829a3f4d7": {
+     "type": "color",
+     "var": "--token-d07e1b38-01a3-4f02-b714-3bc829a3f4d7",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "d5681730-75ad-4ce8-a29d-a3a82a22e3da": {
+     "type": "color",
+     "var": "--token-d5681730-75ad-4ce8-a29d-a3a82a22e3da",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "d68ada00-b9e7-44d9-8044-77e06df52552": {
+     "type": "color",
+     "var": "--token-d68ada00-b9e7-44d9-8044-77e06df52552",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "db5b7ab7-1a23-4d91-80d5-2522f6fe702a": {
+     "type": "color",
+     "var": "--token-db5b7ab7-1a23-4d91-80d5-2522f6fe702a",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "dcfe5de2-aaec-47ad-8532-5af875890752": {
+     "type": "color",
+     "var": "--token-dcfe5de2-aaec-47ad-8532-5af875890752",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "e1500739-a9cb-4f01-a680-ce7539d8cf4c": {
+     "type": "color",
+     "var": "--token-e1500739-a9cb-4f01-a680-ce7539d8cf4c",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "e2c96be4-e2a2-479c-9d91-f16cb80dc376": {
+     "type": "color",
+     "var": "--token-e2c96be4-e2a2-479c-9d91-f16cb80dc376",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "e45612eb-a27e-4c13-ae38-4c16a543b271": {
+     "type": "color",
+     "var": "--token-e45612eb-a27e-4c13-ae38-4c16a543b271",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "e577a0df-e6be-4d05-81ae-8c5fd4a51f95": {
+     "type": "color",
+     "var": "--token-e577a0df-e6be-4d05-81ae-8c5fd4a51f95",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "e7237701-d0af-4a3d-bd2d-bca0db83a168": {
+     "type": "color",
+     "var": "--token-e7237701-d0af-4a3d-bd2d-bca0db83a168",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "e823c0bf-20e8-4e8d-b3b5-7c1da89a63cf": {
+     "type": "color",
+     "var": "--token-e823c0bf-20e8-4e8d-b3b5-7c1da89a63cf",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "e91cc39f-fbfc-42d0-9af2-b3526e2efeef": {
+     "type": "color",
+     "var": "--token-e91cc39f-fbfc-42d0-9af2-b3526e2efeef",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "ea09e2d9-bb3f-443a-8ce8-80f08a13faee": {
+     "type": "color",
+     "var": "--token-ea09e2d9-bb3f-443a-8ce8-80f08a13faee",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "eb234ceb-0656-487d-b935-1fc52102e3f3": {
+     "type": "color",
+     "var": "--token-eb234ceb-0656-487d-b935-1fc52102e3f3",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "ece6f6a2-f42e-4717-aca0-4588cf4dea5a": {
+     "type": "color",
+     "var": "--token-ece6f6a2-f42e-4717-aca0-4588cf4dea5a",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "ef7ca3cf-e063-4a44-b0e3-f85c8aff839e": {
+     "type": "color",
+     "var": "--token-ef7ca3cf-e063-4a44-b0e3-f85c8aff839e",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "ef8c3886-1874-4214-b0ec-059b32e9d7f5": {
+     "type": "color",
+     "var": "--token-ef8c3886-1874-4214-b0ec-059b32e9d7f5",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "f2207144-aaa7-43f3-a086-36dc1635354a": {
+     "type": "color",
+     "var": "--token-f2207144-aaa7-43f3-a086-36dc1635354a",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "f8760b86-f03a-4f32-8b3b-dda4e871b673": {
+     "type": "color",
+     "var": "--token-f8760b86-f03a-4f32-8b3b-dda4e871b673",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "f8d4d9f2-c148-478e-9f1b-a43f8a3cc1fe": {
+     "type": "color",
+     "var": "--token-f8d4d9f2-c148-478e-9f1b-a43f8a3cc1fe",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "f94d4fbd-c6b9-4068-a874-597ae3cba5c3": {
+     "type": "color",
+     "var": "--token-f94d4fbd-c6b9-4068-a874-597ae3cba5c3",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    },
+    "f9b146e8-eb40-4079-a780-d91c7a5f56f5": {
+     "type": "color",
+     "var": "--token-f9b146e8-eb40-4079-a780-d91c7a5f56f5",
+     "description": "a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"
+    }
+   }
+  },
+  "layout": {
+   "gridGapXDesktop": {
+    "type": "dimension",
+    "value": "24px",
+    "source": "css-var --grid-gap-x-desktop declared on the Tailwind arbitrary-property utility class .\\[--grid-gap-x-desktop\\:24px\\]"
+   },
+   "gridGapXMobile": {
+    "type": "dimension",
+    "value": "12px",
+    "source": "css-var --grid-gap-x-mobile declared on the Tailwind arbitrary-property utility class .\\[--grid-gap-x-mobile\\:12px\\]"
+   },
+   "gridGapXTablet": {
+    "type": "dimension",
+    "value": "16px",
+    "source": "css-var --grid-gap-x-tablet declared on the Tailwind arbitrary-property utility class .\\[--grid-gap-x-tablet\\:16px\\]"
+   },
+   "desktopNavHeight": {
+    "type": "dimension",
+    "var": "--desktop-nav-height"
+   },
+   "desktopNavTopOffset": {
+    "type": "dimension",
+    "var": "--desktop-nav-top-offset"
+   },
+   "desktopNavTopOffsetWithBanner": {
+    "type": "dimension",
+    "var": "--desktop-nav-top-offset-with-banner"
+   },
+   "fullDesktopNavHeight": {
+    "type": "dimension",
+    "var": "--full-desktop-nav-height"
+   },
+   "fullMobileNavHeight": {
+    "type": "dimension",
+    "var": "--full-mobile-nav-height"
+   },
+   "fullTabletNavHeight": {
+    "type": "dimension",
+    "var": "--full-tablet-nav-height"
+   },
+   "notificationBannerHeight": {
+    "type": "dimension",
+    "var": "--notification-banner-height"
+   },
+   "notificationBannerOffset": {
+    "type": "dimension",
+    "var": "--notification-banner-offset"
+   }
+  },
+  "font": {
+   "family": {
+    "noiGrotesk": {
+     "type": "fontFamily",
+     "var": "--font-noi-grotesk",
+     "description": "NoiGrotesk — the marketing site's display/brand face with its metrics-matched fallback"
+    },
+    "sansPlomb": {
+     "type": "fontFamily",
+     "var": "--font-sans-plomb",
+     "description": "SansPlomb — the body face with its metrics-matched fallback"
+    },
+    "sansPlombSwap": {
+     "type": "fontFamily",
+     "var": "--font-sans-plomb-swap",
+     "description": "SansPlombSwap — the swap-metrics twin the site pairs with sans-plomb"
+    }
+   },
+   "weight": {
+    "bold": {
+     "type": "fontWeight",
+     "var": "--font-weight-bold"
+    },
+    "light": {
+     "type": "fontWeight",
+     "var": "--font-weight-light"
+    },
+    "medium": {
+     "type": "fontWeight",
+     "var": "--font-weight-medium"
+    },
+    "normal": {
+     "type": "fontWeight",
+     "var": "--font-weight-normal"
+    },
+    "semibold": {
+     "type": "fontWeight",
+     "var": "--font-weight-semibold"
+    }
+   },
+   "leading": {
+    "lg": {
+     "type": "number",
+     "value": 1.1,
+     "source": "css-var --leading-lg (site)"
+    },
+    "md": {
+     "type": "number",
+     "value": 1.0,
+     "source": "css-var --leading-md (site)"
+    },
+    "sm": {
+     "type": "number",
+     "value": 0.9,
+     "source": "css-var --leading-sm (site)"
+    },
+    "xl": {
+     "type": "number",
+     "value": 1.4,
+     "source": "css-var --leading-xl (site)"
+    },
+    "xs": {
+     "type": "number",
+     "value": 0.85,
+     "source": "css-var --leading-xs (site)"
+    }
+   },
+   "tracking": {
+    "lg": {
+     "type": "other",
+     "var": "--tracking-lg"
+    },
+    "sm": {
+     "type": "other",
+     "var": "--tracking-sm"
+    }
+   }
+  },
+  "space": {
+   "unit": {
+    "type": "dimension",
+    "var": "--spacing",
+    "description": "the 4px unit the spacing scale multiplies"
+   }
+  },
+  "container": {
+   "2xl": {
+    "type": "dimension",
+    "var": "--container-2xl"
+   },
+   "3xl": {
+    "type": "dimension",
+    "var": "--container-3xl"
+   },
+   "3xs": {
+    "type": "dimension",
+    "var": "--container-3xs"
+   },
+   "4xl": {
+    "type": "dimension",
+    "var": "--container-4xl"
+   },
+   "5xl": {
+    "type": "dimension",
+    "var": "--container-5xl"
+   },
+   "6xl": {
+    "type": "dimension",
+    "var": "--container-6xl"
+   },
+   "7xl": {
+    "type": "dimension",
+    "var": "--container-7xl"
+   },
+   "lg": {
+    "type": "dimension",
+    "var": "--container-lg"
+   },
+   "md": {
+    "type": "dimension",
+    "var": "--container-md"
+   },
+   "sm": {
+    "type": "dimension",
+    "var": "--container-sm"
+   },
+   "xl": {
+    "type": "dimension",
+    "var": "--container-xl"
+   },
+   "xs": {
+    "type": "dimension",
+    "var": "--container-xs"
+   }
+  },
+  "ease": {
+   "in": {
+    "type": "cubicBezier",
+    "var": "--ease-in"
+   },
+   "inOut": {
+    "type": "cubicBezier",
+    "var": "--ease-in-out"
+   },
+   "out": {
+    "type": "cubicBezier",
+    "var": "--ease-out"
+   },
+   "default": {
+    "type": "cubicBezier",
+    "var": "--default-transition-timing-function"
+   }
+  },
+  "duration": {
+   "default": {
+    "type": "duration",
+    "var": "--default-transition-duration"
+   }
+  },
+  "blur": {
+   "2xl": {
+    "type": "dimension",
+    "var": "--blur-2xl"
+   },
+   "md": {
+    "type": "dimension",
+    "var": "--blur-md"
+   },
+   "sm": {
+    "type": "dimension",
+    "var": "--blur-sm"
+   },
+   "xl": {
+    "type": "dimension",
+    "var": "--blur-xl"
+   }
+  },
+  "shadow": {
+   "2xl": {
+    "type": "other",
+    "var": "--drop-shadow-2xl",
+    "description": "drop-shadow filter value, kept as the computed string"
+   },
+   "md": {
+    "type": "other",
+    "var": "--drop-shadow-md",
+    "description": "drop-shadow filter value, kept as the computed string"
+   }
+  },
+  "animation": {
+   "pulse": {
+    "type": "other",
+    "var": "--animate-pulse",
+    "description": "animation shorthand as declared"
+   },
+   "spin": {
+    "type": "other",
+    "var": "--animate-spin",
+    "description": "animation shorthand as declared"
+   }
+  },
+  "aspect": {
+   "video": {
+    "type": "other",
+    "var": "--aspect-video"
+   }
+  },
+  "typography": {
+   "display": {
+    "$value": {
+     "fontFamily": "SansPlomb, \"SansPlomb Fallback\", sans-serif",
+     "fontSize": "160px",
+     "fontWeight": 600,
+     "lineHeight": "128px",
+     "letterSpacing": "-4px"
+    },
+    "$type": "typography",
+    "$description": "the hero headline — the brand face at its largest",
+    "$extensions": {
+     "source": "measured hs-hero-h1 on / (default state)"
+    }
+   },
+   "navLink": {
+    "$value": {
+     "fontFamily": "NoiGrotesk, \"NoiGrotesk Fallback\", sans-serif",
+     "fontSize": "14px",
+     "fontWeight": 400,
+     "lineHeight": "19.6px",
+     "letterSpacing": "-0.21px"
+    },
+    "$type": "typography",
+    "$description": "a nav section item",
+    "$extensions": {
+     "source": "measured hs-nav-link on / (default state)"
+    }
+   },
+   "button": {
+    "$value": {
+     "fontFamily": "NoiGrotesk, \"NoiGrotesk Fallback\", sans-serif",
+     "fontSize": "14px",
+     "fontWeight": 500,
+     "lineHeight": "15.4px",
+     "letterSpacing": "-0.21px"
+    },
+    "$type": "typography",
+    "$description": "the nav sign-up button label",
+    "$extensions": {
+     "source": "measured hs-signup-button on / (default state)"
+    }
+   },
+   "searchButton": {
+    "$value": {
+     "fontFamily": "NoiGrotesk, \"NoiGrotesk Fallback\", sans-serif",
+     "fontSize": "16px",
+     "fontWeight": 400,
+     "lineHeight": "24px"
+    },
+    "$type": "typography",
+    "$description": "the \"Search jobs\" button label",
+    "$extensions": {
+     "source": "measured hs-search-button on / (default state)"
+    }
+   },
+   "pill": {
+    "$value": {
+     "fontFamily": "NoiGrotesk, \"NoiGrotesk Fallback\", sans-serif",
+     "fontSize": "14px",
+     "fontWeight": 500,
+     "lineHeight": "11.9px",
+     "letterSpacing": "-0.21px"
+    },
+    "$type": "typography",
+    "$description": "a job-type pill label",
+    "$extensions": {
+     "source": "measured hs-filter-pill on / (default state)"
+    }
+   },
+   "accordion": {
+    "$value": {
+     "fontFamily": "NoiGrotesk, \"NoiGrotesk Fallback\", sans-serif",
+     "fontSize": "18px",
+     "fontWeight": 400,
+     "lineHeight": "25.2px",
+     "letterSpacing": "-0.27px"
+    },
+    "$type": "typography",
+    "$description": "an FAQ question",
+    "$extensions": {
+     "source": "measured hs-faq on /employers/ (default state)"
+    }
+   },
+   "footerLink": {
+    "$value": {
+     "fontFamily": "NoiGrotesk, \"NoiGrotesk Fallback\", sans-serif",
+     "fontSize": "16px",
+     "fontWeight": 400,
+     "lineHeight": "24px"
+    },
+    "$type": "typography",
+    "$description": "a footer link",
+    "$extensions": {
+     "source": "measured hs-footer-link on / (default state)"
+    }
+   },
+   "cta": {
+    "$value": {
+     "fontFamily": "NoiGrotesk, \"NoiGrotesk Fallback\", sans-serif",
+     "fontSize": "16px",
+     "fontWeight": 500,
+     "lineHeight": "17.6px",
+     "letterSpacing": "-0.24px"
+    },
+    "$type": "typography",
+    "$description": "a CTA pill label",
+    "$extensions": {
+     "source": "measured hs-cta on /employers/ (default state)"
+    }
+   },
+   "arrowLink": {
+    "$value": {
+     "fontFamily": "NoiGrotesk, \"NoiGrotesk Fallback\", sans-serif",
+     "fontSize": "16px",
+     "fontWeight": 500,
+     "lineHeight": "22.4px",
+     "letterSpacing": "-0.24px"
+    },
+    "$type": "typography",
+    "$description": "the arrow-suffixed text link",
+    "$extensions": {
+     "source": "measured stu-text-link on /students/ (default state)"
+    }
+   },
+   "input": {
+    "$value": {
+     "fontFamily": "\"Noi Grotesk\", system-ui, sans-serif",
+     "fontSize": "17px",
+     "fontWeight": 400,
+     "lineHeight": "23.8px",
+     "letterSpacing": "-0.34px"
+    },
+    "$type": "typography",
+    "$description": "the login email field text",
+    "$extensions": {
+     "source": "measured app-email-field on https://app.joinhandshake.com/access (default state)"
+    }
+   },
+   "appButton": {
+    "$value": {
+     "fontFamily": "\"Noi Grotesk\", system-ui, sans-serif",
+     "fontSize": "15px",
+     "fontWeight": 500,
+     "lineHeight": "18px"
+    },
+    "$type": "typography",
+    "$description": "the \"Continue with email\" button label",
+    "$extensions": {
+     "source": "measured app-continue-button on https://app.joinhandshake.com/access (default state)"
+    }
+   },
+   "category": {
+    "$value": {
+     "fontFamily": "NoiGrotesk, \"NoiGrotesk Fallback\", sans-serif",
+     "fontSize": "16px",
+     "fontWeight": 600,
+     "lineHeight": "24px"
+    },
+    "$type": "typography",
+    "$description": "an uppercase blog category link",
+    "$extensions": {
+     "source": "measured blog-category-link on /blog/ (default state)"
+    }
+   },
+   "legalNav": {
+    "$value": {
+     "fontFamily": "NoiGrotesk, \"NoiGrotesk Fallback\", sans-serif",
+     "fontSize": "16px",
+     "fontWeight": 400,
+     "lineHeight": "22.4px",
+     "letterSpacing": "-0.24px"
+    },
+    "$type": "typography",
+    "$description": "a legal rail link",
+    "$extensions": {
+     "source": "measured legal-nav-link on /legal/tos/ (default state)"
+    }
+   }
+  }
+ },
+ "light": {
+  "bg": {
+   "page": {
+    "type": "color",
+    "value": "rgb(255, 255, 255)",
+    "source": "painted section band 'section.w-full.bg-neutral-0.pt-16' measured by the layout probe on careers@1440 (the bg-neutral-0 white band the index pages alternate)"
+   },
+   "muted": {
+    "type": "color",
+    "value": "rgb(243, 244, 250)",
+    "source": "painted section band 'section.py-16.lg:py-20.bg-neutral-10' measured by the layout probe on blog@1440 (the bg-neutral-10 band between the white ones)"
+   },
+   "nav": {
+    "type": "color",
+    "value": "rgba(0, 0, 0, 0)",
+    "source": "measured hs-nav default on / (the fixed nav bar fill)"
+   },
+   "footer": {
+    "type": "color",
+    "value": "rgb(20, 21, 28)",
+    "source": "measured hs-footer default on / (the footer band fill)"
+   }
+  },
+  "fg": {
+   "navLink": {
+    "type": "color",
+    "value": "rgb(255, 255, 255)",
+    "source": "measured hs-nav-link default on / (nav item text)"
+   },
+   "body": {
+    "type": "color",
+    "value": "rgb(20, 21, 28)",
+    "source": "measured car-dept-button default on /careers/ (department accordion header text — the ink body copy)"
+   },
+   "headline": {
+    "type": "color",
+    "value": "rgb(255, 255, 255)",
+    "source": "measured hs-hero-h1 default on / (hero headline ink)"
+   }
+  },
+  "button": {
+   "primary": {
+    "bg": {
+     "type": "color",
+     "value": "rgb(211, 251, 82)",
+     "source": "measured hs-signup-button default on / (\"Sign up\" button fill)"
+    },
+    "fg": {
+     "type": "color",
+     "value": "rgb(20, 21, 28)",
+     "source": "measured hs-signup-button default on / (\"Sign up\" button label)"
+    },
+    "hover": {
+     "type": "color",
+     "value": "rgb(161, 221, 59)",
+     "source": "measured hs-signup-button hover on / (\"Sign up\" button hover fill)"
+    }
+   }
+  },
+  "link": {
+   "nav": {
+    "type": "color",
+    "value": "rgb(255, 255, 255)",
+    "source": "measured hs-login-link default on / (\"Log in\" link colour)"
+   },
+   "accent": {
+    "type": "color",
+    "value": "rgb(255, 255, 255)",
+    "source": "measured stu-text-link default on /students/ (the arrow text link colour)"
+   },
+   "accentHover": {
+    "type": "color",
+    "value": "rgb(255, 255, 255)",
+    "source": "measured stu-text-link hover on /students/ (the arrow text link hover)"
+   },
+   "footer": {
+    "type": "color",
+    "value": "rgb(255, 255, 255)",
+    "source": "measured hs-footer-link default on / (footer link colour)"
+   }
+  },
+  "cta": {
+   "bg": {
+    "type": "color",
+    "value": "oklab(0 0 0 / 0)",
+    "source": "measured hs-cta default on /employers/ (CTA pill fill)"
+   },
+   "fg": {
+    "type": "color",
+    "value": "rgb(255, 255, 255)",
+    "source": "measured hs-cta default on /employers/ (CTA pill label)"
+   },
+   "hover": {
+    "type": "color",
+    "value": "rgb(255, 255, 255)",
+    "source": "measured hs-cta hover on /employers/ (CTA pill hover fill)"
+   }
+  },
+  "input": {
+   "search": {
+    "bg": {
+     "type": "color",
+     "value": "rgb(255, 255, 255)",
+     "source": "measured hs-search-input default on / (hero search field fill)"
+    },
+    "border": {
+     "type": "color",
+     "value": "rgb(37, 38, 48)",
+     "source": "measured hs-search-input default on / (hero search field border)"
+    }
+   }
+  },
+  "pill": {
+   "bg": {
+    "type": "color",
+    "value": "rgba(0, 0, 0, 0)",
+    "source": "measured hs-filter-pill default on / (job-type pill fill)"
+   }
+  },
+  "banner": {
+   "bg": {
+    "type": "color",
+    "value": "rgb(211, 251, 82)",
+    "source": "measured hs-banner default on /employers/ (notification banner fill)"
+   }
+  },
+  "tab": {
+   "fg": {
+    "type": "color",
+    "value": "rgb(169, 170, 174)",
+    "source": "measured hs-segment-tab default on /employers/ (segment tab text (the unselected tab paints a muted grey))"
+   }
+  },
+  "accordion": {
+   "question": {
+    "type": "color",
+    "value": "rgb(255, 255, 255)",
+    "source": "measured hs-faq default on /employers/ (FAQ question text)"
+   }
+  },
+  "type": {
+   "hero": {
+    "size": {
+     "type": "other",
+     "value": "160px",
+     "source": "measured hs-hero-h1 default on / (hero headline size)"
+    },
+    "lineHeight": {
+     "type": "other",
+     "value": "128px",
+     "source": "measured hs-hero-h1 default on / (hero headline leading)"
+    }
+   }
+  },
+  "nav": {
+   "legalActive": {
+    "type": "color",
+    "value": "rgb(0, 0, 0)",
+    "source": "measured legal-nav-active default on /legal/tos/ (legal rail active link)"
+   },
+   "legal": {
+    "type": "color",
+    "value": "rgb(0, 0, 0)",
+    "source": "measured legal-nav-link default on /legal/tos/ (legal rail link)"
+   }
+  }
+ },
+ "access": {
+  "component": {
+   "nav": {
+    "iconSize": {
+     "type": "dimension",
+     "var": "--nav-icon-size"
+    },
+    "iconTransitionDuration": {
+     "type": "duration",
+     "var": "--nav-icon-transition-duration"
+    },
+    "incidentBannerHeight": {
+     "type": "dimension",
+     "var": "--nav-incident-banner-height"
+    },
+    "mobileItemLeftPadding": {
+     "type": "dimension",
+     "var": "--nav-mobile-item-left-padding"
+    },
+    "panelTransitionDuration": {
+     "type": "duration",
+     "var": "--nav-panel-transition-duration"
+    },
+    "subItemIndent": {
+     "type": "dimension",
+     "var": "--nav-sub-item-indent"
+    },
+    "topNavHeight": {
+     "type": "dimension",
+     "var": "--nav-top-nav-height"
+    },
+    "viewingAsHeaderHeight": {
+     "type": "dimension",
+     "var": "--nav-viewing-as-header-height"
+    }
+   }
+  },
+  "rosettaAvatar": {
+   "blue": {
+    "type": "color",
+    "var": "--rosetta-avatar-blue"
+   },
+   "cyan": {
+    "type": "color",
+    "var": "--rosetta-avatar-cyan"
+   },
+   "gray": {
+    "type": "color",
+    "var": "--rosetta-avatar-gray"
+   },
+   "green": {
+    "type": "color",
+    "var": "--rosetta-avatar-green"
+   },
+   "orange": {
+    "type": "color",
+    "var": "--rosetta-avatar-orange"
+   },
+   "purple": {
+    "type": "color",
+    "var": "--rosetta-avatar-purple"
+   }
+  },
+  "rosettaBg": {
+   "disabled": {
+    "type": "color",
+    "var": "--rosetta-bg-disabled"
+   },
+   "featureCallout": {
+    "type": "color",
+    "var": "--rosetta-bg-feature-callout"
+   },
+   "inverted": {
+    "type": "color",
+    "var": "--rosetta-bg-inverted"
+   },
+   "invertedDisabled": {
+    "type": "color",
+    "var": "--rosetta-bg-inverted-disabled"
+   },
+   "invertedSecondary": {
+    "type": "color",
+    "var": "--rosetta-bg-inverted-secondary"
+   },
+   "primary": {
+    "type": "color",
+    "var": "--rosetta-bg-primary"
+   },
+   "secondary": {
+    "type": "color",
+    "var": "--rosetta-bg-secondary"
+   },
+   "selected": {
+    "type": "color",
+    "var": "--rosetta-bg-selected"
+   },
+   "statusInfo": {
+    "type": "color",
+    "var": "--rosetta-bg-status-info"
+   },
+   "statusNegative": {
+    "type": "color",
+    "var": "--rosetta-bg-status-negative"
+   },
+   "statusNeutral": {
+    "type": "color",
+    "var": "--rosetta-bg-status-neutral"
+   },
+   "statusPositive": {
+    "type": "color",
+    "var": "--rosetta-bg-status-positive"
+   },
+   "statusWarning": {
+    "type": "color",
+    "var": "--rosetta-bg-status-warning"
+   },
+   "surface": {
+    "type": "color",
+    "var": "--rosetta-bg-surface"
+   }
+  },
+  "deprecated": {
+   "backgroundAccentFive": {
+    "type": "color",
+    "var": "--rosetta-colors-background-accentFive--deprecated",
+    "description": "a --rosetta-colors-* name the Rosetta sheet marks deprecated"
+   },
+   "backgroundAccentFour": {
+    "type": "color",
+    "var": "--rosetta-colors-background-accentFour--deprecated",
+    "description": "a --rosetta-colors-* name the Rosetta sheet marks deprecated"
+   },
+   "backgroundAccentOne": {
+    "type": "color",
+    "var": "--rosetta-colors-background-accentOne--deprecated",
+    "description": "a --rosetta-colors-* name the Rosetta sheet marks deprecated"
+   },
+   "backgroundAccentThree": {
+    "type": "color",
+    "var": "--rosetta-colors-background-accentThree--deprecated",
+    "description": "a --rosetta-colors-* name the Rosetta sheet marks deprecated"
+   },
+   "backgroundAccentTwo": {
+    "type": "color",
+    "var": "--rosetta-colors-background-accentTwo--deprecated",
+    "description": "a --rosetta-colors-* name the Rosetta sheet marks deprecated"
+   },
+   "backgroundInvertedSecondary": {
+    "type": "color",
+    "var": "--rosetta-colors-background-invertedSecondary--deprecated",
+    "description": "a --rosetta-colors-* name the Rosetta sheet marks deprecated"
+   },
+   "backgroundInvertedTertiary": {
+    "type": "color",
+    "var": "--rosetta-colors-background-invertedTertiary--deprecated",
+    "description": "a --rosetta-colors-* name the Rosetta sheet marks deprecated"
+   },
+   "backgroundQuaternary": {
+    "type": "color",
+    "var": "--rosetta-colors-background-quaternary--deprecated",
+    "description": "a --rosetta-colors-* name the Rosetta sheet marks deprecated"
+   },
+   "backgroundSelectedHover": {
+    "type": "color",
+    "var": "--rosetta-colors-background-selectedHover--deprecated",
+    "description": "a --rosetta-colors-* name the Rosetta sheet marks deprecated"
+   },
+   "backgroundSelectedPress": {
+    "type": "color",
+    "var": "--rosetta-colors-background-selectedPress--deprecated",
+    "description": "a --rosetta-colors-* name the Rosetta sheet marks deprecated"
+   },
+   "backgroundTertiary": {
+    "type": "color",
+    "var": "--rosetta-colors-background-tertiary--deprecated",
+    "description": "a --rosetta-colors-* name the Rosetta sheet marks deprecated"
+   },
+   "brandHsBlue": {
+    "type": "color",
+    "var": "--rosetta-colors-brand-hsBlue--deprecated",
+    "description": "a --rosetta-colors-* name the Rosetta sheet marks deprecated"
+   },
+   "brandHsMidnight": {
+    "type": "color",
+    "var": "--rosetta-colors-brand-hsMidnight--deprecated",
+    "description": "a --rosetta-colors-* name the Rosetta sheet marks deprecated"
+   },
+   "brandHsRed": {
+    "type": "color",
+    "var": "--rosetta-colors-brand-hsRed--deprecated",
+    "description": "a --rosetta-colors-* name the Rosetta sheet marks deprecated"
+   },
+   "brandHsTwilight": {
+    "type": "color",
+    "var": "--rosetta-colors-brand-hsTwilight--deprecated",
+    "description": "a --rosetta-colors-* name the Rosetta sheet marks deprecated"
+   },
+   "brandHsTwilightDark": {
+    "type": "color",
+    "var": "--rosetta-colors-brand-hsTwilightDark--deprecated",
+    "description": "a --rosetta-colors-* name the Rosetta sheet marks deprecated"
+   },
+   "foregroundAccentFive": {
+    "type": "color",
+    "var": "--rosetta-colors-foreground-accentFive--deprecated",
+    "description": "a --rosetta-colors-* name the Rosetta sheet marks deprecated"
+   },
+   "foregroundAccentFour": {
+    "type": "color",
+    "var": "--rosetta-colors-foreground-accentFour--deprecated",
+    "description": "a --rosetta-colors-* name the Rosetta sheet marks deprecated"
+   },
+   "foregroundAccentOne": {
+    "type": "color",
+    "var": "--rosetta-colors-foreground-accentOne--deprecated",
+    "description": "a --rosetta-colors-* name the Rosetta sheet marks deprecated"
+   },
+   "foregroundAccentThree": {
+    "type": "color",
+    "var": "--rosetta-colors-foreground-accentThree--deprecated",
+    "description": "a --rosetta-colors-* name the Rosetta sheet marks deprecated"
+   },
+   "foregroundAccentTwo": {
+    "type": "color",
+    "var": "--rosetta-colors-foreground-accentTwo--deprecated",
+    "description": "a --rosetta-colors-* name the Rosetta sheet marks deprecated"
+   },
+   "foregroundInteractiveHover": {
+    "type": "color",
+    "var": "--rosetta-colors-foreground-interactiveHover--deprecated",
+    "description": "a --rosetta-colors-* name the Rosetta sheet marks deprecated"
+   },
+   "foregroundInteractivePress": {
+    "type": "color",
+    "var": "--rosetta-colors-foreground-interactivePress--deprecated",
+    "description": "a --rosetta-colors-* name the Rosetta sheet marks deprecated"
+   }
+  },
+  "rosettaFg": {
+   "border": {
+    "type": "color",
+    "var": "--rosetta-fg-border"
+   },
+   "disabled": {
+    "type": "color",
+    "var": "--rosetta-fg-disabled"
+   },
+   "inverted": {
+    "type": "color",
+    "var": "--rosetta-fg-inverted"
+   },
+   "invertedBorder": {
+    "type": "color",
+    "var": "--rosetta-fg-inverted-border"
+   },
+   "invertedDisabled": {
+    "type": "color",
+    "var": "--rosetta-fg-inverted-disabled"
+   },
+   "primary": {
+    "type": "color",
+    "var": "--rosetta-fg-primary"
+   },
+   "secondary": {
+    "type": "color",
+    "var": "--rosetta-fg-secondary"
+   },
+   "statusInfo": {
+    "type": "color",
+    "var": "--rosetta-fg-status-info"
+   },
+   "statusNegative": {
+    "type": "color",
+    "var": "--rosetta-fg-status-negative"
+   },
+   "statusPositive": {
+    "type": "color",
+    "var": "--rosetta-fg-status-positive"
+   },
+   "statusWarning": {
+    "type": "color",
+    "var": "--rosetta-fg-status-warning"
+   }
+  },
+  "rosettaFont": {
+   "familyBrand": {
+    "type": "fontFamily",
+    "var": "--rosetta-font-family-brand"
+   },
+   "familyMono": {
+    "type": "fontFamily",
+    "var": "--rosetta-font-family-mono"
+   },
+   "familySans": {
+    "type": "fontFamily",
+    "var": "--rosetta-font-family-sans"
+   }
+  },
+  "rosettaInteractive": {
+   "focusOutline": {
+    "type": "color",
+    "var": "--rosetta-interactive-focusOutline"
+   },
+   "hovered": {
+    "type": "color",
+    "var": "--rosetta-interactive-hovered"
+   },
+   "invertedFocusOutline": {
+    "type": "color",
+    "var": "--rosetta-interactive-inverted-focusOutline"
+   },
+   "invertedHovered": {
+    "type": "color",
+    "var": "--rosetta-interactive-inverted-hovered"
+   },
+   "invertedPressed": {
+    "type": "color",
+    "var": "--rosetta-interactive-inverted-pressed"
+   },
+   "pressed": {
+    "type": "color",
+    "var": "--rosetta-interactive-pressed"
+   },
+   "primary": {
+    "type": "color",
+    "var": "--rosetta-interactive-primary"
+   }
+  },
+  "rosettaShadow": {
+   "elevationFive": {
+    "type": "other",
+    "var": "--rosetta-shadow-elevation-five"
+   },
+   "elevationFour": {
+    "type": "other",
+    "var": "--rosetta-shadow-elevation-four"
+   },
+   "elevationOne": {
+    "type": "other",
+    "var": "--rosetta-shadow-elevation-one"
+   },
+   "elevationThree": {
+    "type": "other",
+    "var": "--rosetta-shadow-elevation-three"
+   },
+   "elevationTwo": {
+    "type": "other",
+    "var": "--rosetta-shadow-elevation-two"
+   },
+   "elevationZero": {
+    "type": "other",
+    "var": "--rosetta-shadow-elevation-zero"
+   },
+   "one": {
+    "type": "other",
+    "var": "--rosetta-shadow-one"
+   },
+   "three": {
+    "type": "other",
+    "var": "--rosetta-shadow-three"
+   },
+   "two": {
+    "type": "other",
+    "var": "--rosetta-shadow-two"
+   }
+  },
+  "rosettaSize": {
+   "borderActive": {
+    "type": "dimension",
+    "var": "--rosetta-size-border-active"
+   },
+   "borderRegular": {
+    "type": "dimension",
+    "var": "--rosetta-size-border-regular"
+   },
+   "containedLg": {
+    "type": "dimension",
+    "var": "--rosetta-size-contained-lg"
+   },
+   "containedMd": {
+    "type": "dimension",
+    "var": "--rosetta-size-contained-md"
+   },
+   "containedSm": {
+    "type": "dimension",
+    "var": "--rosetta-size-contained-sm"
+   },
+   "containedXl": {
+    "type": "dimension",
+    "var": "--rosetta-size-contained-xl"
+   },
+   "containedXs": {
+    "type": "dimension",
+    "var": "--rosetta-size-contained-xs"
+   },
+   "containedXxs": {
+    "type": "dimension",
+    "var": "--rosetta-size-contained-xxs"
+   },
+   "controlGap": {
+    "type": "dimension",
+    "var": "--rosetta-size-control-gap"
+   },
+   "controlHeightLg": {
+    "type": "dimension",
+    "var": "--rosetta-size-control-height-lg"
+   },
+   "controlHeightMd": {
+    "type": "dimension",
+    "var": "--rosetta-size-control-height-md"
+   },
+   "controlHeightSm": {
+    "type": "dimension",
+    "var": "--rosetta-size-control-height-sm"
+   },
+   "controlHeightXs": {
+    "type": "dimension",
+    "var": "--rosetta-size-control-height-xs"
+   },
+   "controlPaddingLg": {
+    "type": "dimension",
+    "var": "--rosetta-size-control-padding-lg"
+   },
+   "controlPaddingMd": {
+    "type": "dimension",
+    "var": "--rosetta-size-control-padding-md"
+   },
+   "controlPaddingSm": {
+    "type": "dimension",
+    "var": "--rosetta-size-control-padding-sm"
+   },
+   "controlPaddingXs": {
+    "type": "dimension",
+    "var": "--rosetta-size-control-padding-xs"
+   },
+   "fontBase": {
+    "type": "dimension",
+    "var": "--rosetta-size-font-base"
+   },
+   "fontDisplayWeightBold": {
+    "type": "number",
+    "var": "--rosetta-size-font-displayWeight-bold"
+   },
+   "fontDisplayWeightRegular": {
+    "type": "number",
+    "var": "--rosetta-size-font-displayWeight-regular"
+   },
+   "fontFs1": {
+    "type": "dimension",
+    "var": "--rosetta-size-font-fs1"
+   },
+   "fontFs2": {
+    "type": "dimension",
+    "var": "--rosetta-size-font-fs2"
+   },
+   "fontFs3": {
+    "type": "dimension",
+    "var": "--rosetta-size-font-fs3"
+   },
+   "fontFs4": {
+    "type": "dimension",
+    "var": "--rosetta-size-font-fs4"
+   },
+   "fontFs5": {
+    "type": "dimension",
+    "var": "--rosetta-size-font-fs5"
+   },
+   "fontFs6": {
+    "type": "dimension",
+    "var": "--rosetta-size-font-fs6"
+   },
+   "fontFs7": {
+    "type": "dimension",
+    "var": "--rosetta-size-font-fs7"
+   },
+   "fontFs8": {
+    "type": "dimension",
+    "var": "--rosetta-size-font-fs8"
+   },
+   "fontFs9": {
+    "type": "dimension",
+    "var": "--rosetta-size-font-fs9"
+   },
+   "fontWeightBold": {
+    "type": "number",
+    "var": "--rosetta-size-font-weight-bold"
+   },
+   "fontWeightRegular": {
+    "type": "number",
+    "var": "--rosetta-size-font-weight-regular"
+   },
+   "fontWeightSemiBold": {
+    "type": "number",
+    "var": "--rosetta-size-font-weight-semiBold"
+   },
+   "lineHeightLh1": {
+    "type": "dimension",
+    "var": "--rosetta-size-lineHeight-lh1"
+   },
+   "lineHeightLh2": {
+    "type": "dimension",
+    "var": "--rosetta-size-lineHeight-lh2"
+   },
+   "lineHeightLh3": {
+    "type": "dimension",
+    "var": "--rosetta-size-lineHeight-lh3"
+   },
+   "lineHeightLh4": {
+    "type": "dimension",
+    "var": "--rosetta-size-lineHeight-lh4"
+   },
+   "lineHeightLh5": {
+    "type": "dimension",
+    "var": "--rosetta-size-lineHeight-lh5"
+   },
+   "lineHeightLh6": {
+    "type": "dimension",
+    "var": "--rosetta-size-lineHeight-lh6"
+   },
+   "lineHeightLh7": {
+    "type": "dimension",
+    "var": "--rosetta-size-lineHeight-lh7"
+   },
+   "lineHeightLh8": {
+    "type": "dimension",
+    "var": "--rosetta-size-lineHeight-lh8"
+   },
+   "radiusContainer": {
+    "type": "dimension",
+    "var": "--rosetta-size-radius-container"
+   },
+   "radiusFour": {
+    "type": "dimension",
+    "var": "--rosetta-size-radius-four"
+   },
+   "radiusInputRegular": {
+    "type": "dimension",
+    "var": "--rosetta-size-radius-input-regular"
+   },
+   "radiusInputSmall": {
+    "type": "dimension",
+    "var": "--rosetta-size-radius-input-small"
+   },
+   "radiusMax": {
+    "type": "dimension",
+    "var": "--rosetta-size-radius-max"
+   },
+   "radiusOne": {
+    "type": "dimension",
+    "var": "--rosetta-size-radius-one"
+   },
+   "radiusThree": {
+    "type": "dimension",
+    "var": "--rosetta-size-radius-three"
+   },
+   "radiusTwo": {
+    "type": "dimension",
+    "var": "--rosetta-size-radius-two"
+   },
+   "radiusZero": {
+    "type": "dimension",
+    "var": "--rosetta-size-radius-zero"
+   },
+   "space12": {
+    "type": "dimension",
+    "var": "--rosetta-size-space-12"
+   },
+   "space16": {
+    "type": "dimension",
+    "var": "--rosetta-size-space-16"
+   },
+   "space2": {
+    "type": "dimension",
+    "var": "--rosetta-size-space-2"
+   },
+   "space20": {
+    "type": "dimension",
+    "var": "--rosetta-size-space-20"
+   },
+   "space24": {
+    "type": "dimension",
+    "var": "--rosetta-size-space-24"
+   },
+   "space32": {
+    "type": "dimension",
+    "var": "--rosetta-size-space-32"
+   },
+   "space4": {
+    "type": "dimension",
+    "var": "--rosetta-size-space-4"
+   },
+   "space48": {
+    "type": "dimension",
+    "var": "--rosetta-size-space-48"
+   },
+   "space64": {
+    "type": "dimension",
+    "var": "--rosetta-size-space-64"
+   },
+   "space8": {
+    "type": "dimension",
+    "var": "--rosetta-size-space-8"
+   },
+   "spaceBase": {
+    "type": "dimension",
+    "var": "--rosetta-size-space-base"
+   },
+   "spacingBase": {
+    "type": "dimension",
+    "var": "--rosetta-size-spacing-base"
+   },
+   "spacingEight": {
+    "type": "dimension",
+    "var": "--rosetta-size-spacing-eight"
+   },
+   "spacingFive": {
+    "type": "dimension",
+    "var": "--rosetta-size-spacing-five"
+   },
+   "spacingFour": {
+    "type": "dimension",
+    "var": "--rosetta-size-spacing-four"
+   },
+   "spacingHalf": {
+    "type": "dimension",
+    "var": "--rosetta-size-spacing-half"
+   },
+   "spacingOne": {
+    "type": "dimension",
+    "var": "--rosetta-size-spacing-one"
+   },
+   "spacingSix": {
+    "type": "dimension",
+    "var": "--rosetta-size-spacing-six"
+   },
+   "spacingSixteen": {
+    "type": "dimension",
+    "var": "--rosetta-size-spacing-sixteen"
+   },
+   "spacingThree": {
+    "type": "dimension",
+    "var": "--rosetta-size-spacing-three"
+   },
+   "spacingTwelve": {
+    "type": "dimension",
+    "var": "--rosetta-size-spacing-twelve"
+   },
+   "spacingTwo": {
+    "type": "dimension",
+    "var": "--rosetta-size-spacing-two"
+   },
+   "standaloneLg": {
+    "type": "dimension",
+    "var": "--rosetta-size-standalone-lg"
+   },
+   "standaloneMd": {
+    "type": "dimension",
+    "var": "--rosetta-size-standalone-md"
+   },
+   "standaloneSm": {
+    "type": "dimension",
+    "var": "--rosetta-size-standalone-sm"
+   },
+   "standaloneXl": {
+    "type": "dimension",
+    "var": "--rosetta-size-standalone-xl"
+   },
+   "standaloneXs": {
+    "type": "dimension",
+    "var": "--rosetta-size-standalone-xs"
+   }
+  },
+  "rosettaSpacing": {
+   "bodyLarge": {
+    "type": "other",
+    "var": "--rosetta-spacing-body-large"
+   },
+   "bodyMedium": {
+    "type": "number",
+    "var": "--rosetta-spacing-body-medium"
+   },
+   "bodySmall": {
+    "type": "other",
+    "var": "--rosetta-spacing-body-small"
+   },
+   "bodyXlarge": {
+    "type": "other",
+    "var": "--rosetta-spacing-body-xlarge"
+   },
+   "brandLarge": {
+    "type": "other",
+    "var": "--rosetta-spacing-brand-large"
+   },
+   "brandSmall": {
+    "type": "other",
+    "var": "--rosetta-spacing-brand-small"
+   },
+   "headingLarge": {
+    "type": "other",
+    "var": "--rosetta-spacing-heading-large"
+   },
+   "headingMedium": {
+    "type": "other",
+    "var": "--rosetta-spacing-heading-medium"
+   },
+   "headingSmall": {
+    "type": "other",
+    "var": "--rosetta-spacing-heading-small"
+   },
+   "headingXlarge": {
+    "type": "other",
+    "var": "--rosetta-spacing-heading-xlarge"
+   },
+   "mono1": {
+    "type": "other",
+    "var": "--rosetta-spacing-mono-1"
+   },
+   "mono2": {
+    "type": "other",
+    "var": "--rosetta-spacing-mono-2"
+   },
+   "mono3": {
+    "type": "number",
+    "var": "--rosetta-spacing-mono-3"
+   },
+   "mono4": {
+    "type": "number",
+    "var": "--rosetta-spacing-mono-4"
+   }
+  },
+  "rosettaType": {
+   "bodyLargeMediumLineHeight": {
+    "type": "number",
+    "var": "--rosetta-type-body-large-medium-lineHeight"
+   },
+   "bodyLargeMediumSize": {
+    "type": "dimension",
+    "var": "--rosetta-type-body-large-medium-size"
+   },
+   "bodyLargeMediumWeight": {
+    "type": "number",
+    "var": "--rosetta-type-body-large-medium-weight"
+   },
+   "bodyLargeRegularLineHeight": {
+    "type": "number",
+    "var": "--rosetta-type-body-large-regular-lineHeight"
+   },
+   "bodyLargeRegularSize": {
+    "type": "dimension",
+    "var": "--rosetta-type-body-large-regular-size"
+   },
+   "bodyLargeRegularWeight": {
+    "type": "number",
+    "var": "--rosetta-type-body-large-regular-weight"
+   },
+   "bodyMediumMediumLineHeight": {
+    "type": "number",
+    "var": "--rosetta-type-body-medium-medium-lineHeight"
+   },
+   "bodyMediumMediumSize": {
+    "type": "dimension",
+    "var": "--rosetta-type-body-medium-medium-size"
+   },
+   "bodyMediumMediumWeight": {
+    "type": "number",
+    "var": "--rosetta-type-body-medium-medium-weight"
+   },
+   "bodyMediumRegularLineHeight": {
+    "type": "number",
+    "var": "--rosetta-type-body-medium-regular-lineHeight"
+   },
+   "bodyMediumRegularSize": {
+    "type": "dimension",
+    "var": "--rosetta-type-body-medium-regular-size"
+   },
+   "bodyMediumRegularWeight": {
+    "type": "number",
+    "var": "--rosetta-type-body-medium-regular-weight"
+   },
+   "bodySmallMediumLineHeight": {
+    "type": "number",
+    "var": "--rosetta-type-body-small-medium-lineHeight"
+   },
+   "bodySmallMediumSize": {
+    "type": "dimension",
+    "var": "--rosetta-type-body-small-medium-size"
+   },
+   "bodySmallMediumWeight": {
+    "type": "number",
+    "var": "--rosetta-type-body-small-medium-weight"
+   },
+   "bodySmallRegularLineHeight": {
+    "type": "number",
+    "var": "--rosetta-type-body-small-regular-lineHeight"
+   },
+   "bodySmallRegularSize": {
+    "type": "dimension",
+    "var": "--rosetta-type-body-small-regular-size"
+   },
+   "bodySmallRegularWeight": {
+    "type": "number",
+    "var": "--rosetta-type-body-small-regular-weight"
+   },
+   "bodyXlargeMediumLineHeight": {
+    "type": "number",
+    "var": "--rosetta-type-body-xlarge-medium-lineHeight"
+   },
+   "bodyXlargeMediumSize": {
+    "type": "dimension",
+    "var": "--rosetta-type-body-xlarge-medium-size"
+   },
+   "bodyXlargeMediumWeight": {
+    "type": "number",
+    "var": "--rosetta-type-body-xlarge-medium-weight"
+   },
+   "bodyXlargeRegularLineHeight": {
+    "type": "number",
+    "var": "--rosetta-type-body-xlarge-regular-lineHeight"
+   },
+   "bodyXlargeRegularSize": {
+    "type": "dimension",
+    "var": "--rosetta-type-body-xlarge-regular-size"
+   },
+   "bodyXlargeRegularWeight": {
+    "type": "number",
+    "var": "--rosetta-type-body-xlarge-regular-weight"
+   },
+   "brandLargeLineHeight": {
+    "type": "number",
+    "var": "--rosetta-type-brand-large-lineHeight"
+   },
+   "brandLargeSize": {
+    "type": "dimension",
+    "var": "--rosetta-type-brand-large-size"
+   },
+   "brandLargeWeight": {
+    "type": "number",
+    "var": "--rosetta-type-brand-large-weight"
+   },
+   "brandSmallLineHeight": {
+    "type": "number",
+    "var": "--rosetta-type-brand-small-lineHeight"
+   },
+   "brandSmallSize": {
+    "type": "dimension",
+    "var": "--rosetta-type-brand-small-size"
+   },
+   "brandSmallWeight": {
+    "type": "number",
+    "var": "--rosetta-type-brand-small-weight"
+   },
+   "headingLargeLineHeight": {
+    "type": "number",
+    "var": "--rosetta-type-heading-large-lineHeight"
+   },
+   "headingLargeSize": {
+    "type": "dimension",
+    "var": "--rosetta-type-heading-large-size"
+   },
+   "headingLargeWeight": {
+    "type": "number",
+    "var": "--rosetta-type-heading-large-weight"
+   },
+   "headingMediumLineHeight": {
+    "type": "number",
+    "var": "--rosetta-type-heading-medium-lineHeight"
+   },
+   "headingMediumSize": {
+    "type": "dimension",
+    "var": "--rosetta-type-heading-medium-size"
+   },
+   "headingMediumWeight": {
+    "type": "number",
+    "var": "--rosetta-type-heading-medium-weight"
+   },
+   "headingSmallLineHeight": {
+    "type": "number",
+    "var": "--rosetta-type-heading-small-lineHeight"
+   },
+   "headingSmallSize": {
+    "type": "dimension",
+    "var": "--rosetta-type-heading-small-size"
+   },
+   "headingSmallWeight": {
+    "type": "number",
+    "var": "--rosetta-type-heading-small-weight"
+   },
+   "headingXlargeLineHeight": {
+    "type": "number",
+    "var": "--rosetta-type-heading-xlarge-lineHeight"
+   },
+   "headingXlargeSize": {
+    "type": "dimension",
+    "var": "--rosetta-type-heading-xlarge-size"
+   },
+   "headingXlargeWeight": {
+    "type": "number",
+    "var": "--rosetta-type-heading-xlarge-weight"
+   },
+   "mono1MediumLineHeight": {
+    "type": "number",
+    "var": "--rosetta-type-mono-1-medium-lineHeight"
+   },
+   "mono1MediumSize": {
+    "type": "dimension",
+    "var": "--rosetta-type-mono-1-medium-size"
+   },
+   "mono1MediumWeight": {
+    "type": "number",
+    "var": "--rosetta-type-mono-1-medium-weight"
+   },
+   "mono1RegularLineHeight": {
+    "type": "number",
+    "var": "--rosetta-type-mono-1-regular-lineHeight"
+   },
+   "mono1RegularSize": {
+    "type": "dimension",
+    "var": "--rosetta-type-mono-1-regular-size"
+   },
+   "mono1RegularWeight": {
+    "type": "number",
+    "var": "--rosetta-type-mono-1-regular-weight"
+   },
+   "mono2MediumLineHeight": {
+    "type": "number",
+    "var": "--rosetta-type-mono-2-medium-lineHeight"
+   },
+   "mono2MediumSize": {
+    "type": "dimension",
+    "var": "--rosetta-type-mono-2-medium-size"
+   },
+   "mono2MediumWeight": {
+    "type": "number",
+    "var": "--rosetta-type-mono-2-medium-weight"
+   },
+   "mono2RegularLineHeight": {
+    "type": "number",
+    "var": "--rosetta-type-mono-2-regular-lineHeight"
+   },
+   "mono2RegularSize": {
+    "type": "dimension",
+    "var": "--rosetta-type-mono-2-regular-size"
+   },
+   "mono2RegularWeight": {
+    "type": "number",
+    "var": "--rosetta-type-mono-2-regular-weight"
+   },
+   "mono3MediumLineHeight": {
+    "type": "number",
+    "var": "--rosetta-type-mono-3-medium-lineHeight"
+   },
+   "mono3MediumSize": {
+    "type": "dimension",
+    "var": "--rosetta-type-mono-3-medium-size"
+   },
+   "mono3MediumWeight": {
+    "type": "number",
+    "var": "--rosetta-type-mono-3-medium-weight"
+   },
+   "mono3RegularLineHeight": {
+    "type": "number",
+    "var": "--rosetta-type-mono-3-regular-lineHeight"
+   },
+   "mono3RegularSize": {
+    "type": "dimension",
+    "var": "--rosetta-type-mono-3-regular-size"
+   },
+   "mono3RegularWeight": {
+    "type": "number",
+    "var": "--rosetta-type-mono-3-regular-weight"
+   },
+   "mono4MediumLineHeight": {
+    "type": "number",
+    "var": "--rosetta-type-mono-4-medium-lineHeight"
+   },
+   "mono4MediumSize": {
+    "type": "dimension",
+    "var": "--rosetta-type-mono-4-medium-size"
+   },
+   "mono4MediumWeight": {
+    "type": "number",
+    "var": "--rosetta-type-mono-4-medium-weight"
+   },
+   "mono4RegularLineHeight": {
+    "type": "number",
+    "var": "--rosetta-type-mono-4-regular-lineHeight"
+   },
+   "mono4RegularSize": {
+    "type": "dimension",
+    "var": "--rosetta-type-mono-4-regular-size"
+   },
+   "mono4RegularWeight": {
+    "type": "number",
+    "var": "--rosetta-type-mono-4-regular-weight"
+   }
+  },
+  "rosettaTypography": {
+   "fontFamilyDisplay": {
+    "type": "fontFamily",
+    "var": "--rosetta-typography-font-family-display"
+   },
+   "fontFamilyText": {
+    "type": "fontFamily",
+    "var": "--rosetta-typography-font-family-text"
+   }
+  }
+ },
+ "component": {
+  "nav": {
+   "height": {
+    "type": "dimension",
+    "value": "56px",
+    "source": "measured hs-nav default on / (fixed pill nav height)"
+   },
+   "width": {
+    "type": "dimension",
+    "value": "1440px",
+    "source": "measured hs-nav default on / (fixed pill nav width)"
+   },
+   "radius": {
+    "type": "dimension",
+    "value": "0px",
+    "source": "measured hs-nav default on / (pill nav corner)"
+   }
+  },
+  "button": {
+   "signup": {
+    "height": {
+     "type": "dimension",
+     "value": "40px",
+     "source": "measured hs-signup-button default on / (nav sign-up button)"
+    },
+    "radius": {
+     "type": "dimension",
+     "value": "8px",
+     "source": "measured hs-signup-button default on / (nav sign-up corner)"
+    }
+   },
+   "search": {
+    "height": {
+     "type": "dimension",
+     "value": "56px",
+     "source": "measured hs-search-button default on / (\"Search jobs\" button)"
+    },
+    "radius": {
+     "type": "dimension",
+     "value": "12px",
+     "source": "measured hs-search-button default on / (\"Search jobs\" corner)"
+    }
+   },
+   "cta": {
+    "height": {
+     "type": "dimension",
+     "value": "40px",
+     "source": "measured hs-cta default on /employers/ (CTA pill)"
+    },
+    "radius": {
+     "type": "dimension",
+     "value": "8px",
+     "source": "measured hs-cta default on /employers/ (CTA corner)"
+    }
+   },
+   "continue": {
+    "height": {
+     "type": "dimension",
+     "value": "40px",
+     "source": "measured app-continue-button default on https://app.joinhandshake.com/access (\"Continue with email\" button)"
+    },
+    "radius": {
+     "type": "dimension",
+     "value": "8px",
+     "source": "measured app-continue-button default on https://app.joinhandshake.com/access (\"Continue\" corner)"
+    }
+   }
+  },
+  "input": {
+   "search": {
+    "height": {
+     "type": "dimension",
+     "value": "88px",
+     "source": "measured hs-search-input default on / (hero search field)"
+    },
+    "radius": {
+     "type": "dimension",
+     "value": "24px",
+     "source": "measured hs-search-input default on / (search field corner)"
+    }
+   },
+   "email": {
+    "height": {
+     "type": "dimension",
+     "value": "48px",
+     "source": "measured app-email-field default on https://app.joinhandshake.com/access (login email field)"
+    },
+    "radius": {
+     "type": "dimension",
+     "value": "8px",
+     "source": "measured app-email-field default on https://app.joinhandshake.com/access (login email field corner)"
+    }
+   }
+  },
+  "pill": {
+   "height": {
+    "type": "dimension",
+    "value": "45.91px",
+    "source": "measured hs-filter-pill default on / (job-type pill)"
+   },
+   "radius": {
+    "type": "dimension",
+    "value": "8px",
+    "source": "measured hs-filter-pill default on / (job-type pill corner)"
+   }
+  },
+  "banner": {
+   "height": {
+    "type": "dimension",
+    "value": "40px",
+    "source": "measured hs-banner default on /employers/ (notification banner)"
+   }
+  },
+  "footer": {
+   "height": {
+    "type": "dimension",
+    "value": "766.25px",
+    "source": "measured hs-footer default on / (footer band)"
+   }
+  },
+  "accordion": {
+   "rowHeight": {
+    "type": "dimension",
+    "value": "25.2px",
+    "source": "measured hs-faq default on /employers/ (FAQ question row)"
+   }
+  },
+  "page": {
+   "width": {
+    "type": "dimension",
+    "value": "1440px",
+    "source": "measured app-shell default on https://app.joinhandshake.com/access (the /access page shell — the viewport-wide main, not the card (the card itself is not separately measured))"
+   }
+  },
+  "mobileHeader": {
+   "height": {
+    "type": "dimension",
+    "value": "48px",
+    "source": "measured m-hs-topbar default on / (mobile top bar)"
+   }
+  },
+  "mobileMenuButton": {
+   "size": {
+    "type": "dimension",
+    "value": "16px",
+    "source": "measured m-hs-hamburger default on / (\"Open menu\" button)"
+   }
+  },
+  "mobileDrawer": {
+   "width": {
+    "type": "dimension",
+    "value": "390px",
+    "source": "measured m-hs-drawer opened on / (opened nav sheet)"
+   }
+  },
+  "card": {
+   "blog": {
+    "radius": {
+     "type": "dimension",
+     "value": "0px",
+     "source": "measured blog-card default on /blog/ (article card corner)"
+    }
+   }
+  }
+ }
+}

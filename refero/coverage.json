@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 179,
-    "system_domains": 170,
-    "matched_domains": 140,
-    "missing_domains": 293,
+    "system_packages": 185,
+    "system_domains": 176,
+    "matched_domains": 146,
+    "missing_domains": 287,
     "system_domains_absent_from_catalog": 30
   },
   "matched": {
@@ -906,6 +906,40 @@
           "slug": "clipchamp",
           "name": "Clipchamp",
           "url": "https://clipchamp.com",
+          "name_match": true
+        }
+      ]
+    },
+    "cofounder.co": {
+      "catalog": [
+        {
+          "name": "Cofounder",
+          "domain": "cofounder.co",
+          "id": 746
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "cofounder",
+          "name": "Cofounder",
+          "url": "https://cofounder.co",
+          "name_match": true
+        }
+      ]
+    },
+    "cohere.com": {
+      "catalog": [
+        {
+          "name": "Cohere",
+          "domain": "cohere.com",
+          "id": 576
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "cohere",
+          "name": "Cohere",
+          "url": "https://cohere.com",
           "name_match": true
         }
       ]
@@ -2304,6 +2338,74 @@
         }
       ]
     },
+    "hbomax.com": {
+      "catalog": [
+        {
+          "name": "HBO Max",
+          "domain": "hbomax.com",
+          "id": 337
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "hbomax",
+          "name": "HBO Max",
+          "url": "https://www.hbomax.com",
+          "name_match": false
+        }
+      ]
+    },
+    "helloivy.co": {
+      "catalog": [
+        {
+          "name": "Hello Ivy",
+          "domain": "helloivy.co",
+          "id": 602
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "helloivy",
+          "name": "Hello Ivy",
+          "url": "https://www.helloivy.co",
+          "name_match": false
+        }
+      ]
+    },
+    "hitchd.com": {
+      "catalog": [
+        {
+          "name": "Hitchd",
+          "domain": "hitchd.com",
+          "id": 786
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "hitchd",
+          "name": "Hitchd",
+          "url": "https://www.hitchd.com",
+          "name_match": true
+        }
+      ]
+    },
+    "joinhandshake.com": {
+      "catalog": [
+        {
+          "name": "Handshake",
+          "domain": "joinhandshake.com",
+          "id": 785
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "joinhandshake",
+          "name": "Handshake",
+          "url": "https://joinhandshake.com",
+          "name_match": false
+        }
+      ]
+    },
     "linear.app": {
       "catalog": [
         {
@@ -2475,20 +2577,6 @@
         "id": 658
       }
     ],
-    "cofounder.co": [
-      {
-        "name": "Cofounder",
-        "domain": "cofounder.co",
-        "id": 746
-      }
-    ],
-    "cohere.com": [
-      {
-        "name": "Cohere",
-        "domain": "cohere.com",
-        "id": 576
-      }
-    ],
     "coinbase.com": [
       {
         "name": "Coinbase",
@@ -2622,13 +2710,6 @@
         "id": 629
       }
     ],
-    "hbomax.com": [
-      {
-        "name": "HBO Max",
-        "domain": "hbomax.com",
-        "id": 337
-      }
-    ],
     "headspace.com": [
       {
         "name": "Headspace",
@@ -2636,25 +2717,11 @@
         "id": 113
       }
     ],
-    "helloivy.co": [
-      {
-        "name": "Hello Ivy",
-        "domain": "helloivy.co",
-        "id": 602
-      }
-    ],
     "helloklean.com": [
       {
         "name": "Hello Klean",
         "domain": "helloklean.com",
         "id": 633
-      }
-    ],
-    "hitchd.com": [
-      {
-        "name": "Hitchd",
-        "domain": "hitchd.com",
-        "id": 786
       }
     ],
     "homerun.co": [
@@ -2753,13 +2820,6 @@
         "name": "Jitter",
         "domain": "jitter.video",
         "id": 318
-      }
-    ],
-    "joinhandshake.com": [
-      {
-        "name": "Handshake",
-        "domain": "joinhandshake.com",
-        "id": 785
       }
     ],
     "kickstarter.com": [
