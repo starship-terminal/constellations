@@ -15526,7 +15526,8 @@
      "full-page captures are bounded; the bound and stitching are recorded in each .capture.json sidecar"
     ],
     "durationMin": 300,
-    "durationNote": "wall-clock across the capture sessions including route probing, kit adaptation, the theme-repaint verification, the screenshot pass, the measurement/layout/motion/icon passes and the offline build"
+    "durationNote": "wall-clock across the capture sessions including route probing, kit adaptation, the theme-repaint verification, the screenshot pass, the measurement/layout/motion/icon passes and the offline build",
+    "pr": "https://github.com/starship-terminal/constellations/pull/633"
    }
   }
  ]
