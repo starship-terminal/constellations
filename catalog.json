@@ -6229,7 +6229,8 @@
      "no validation, disabled, loading or toast state appears signed out because nothing was submitted"
     ],
     "durationMin": 180,
-    "durationNote": "one session: kit adapt, public capture at 1440 and 390, measurements, token build, style guide, review"
+    "durationNote": "one session: kit adapt, public capture at 1440 and 390, measurements, token build, style guide, review",
+    "pr": "https://github.com/starship-terminal/constellations/pull/654"
    },
    "layoutGaps": {
     "icons/": "no standalone SVG icon set was lifted; the wordmark and menu glyph stay in the screenshots"
