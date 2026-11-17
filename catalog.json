@@ -3794,7 +3794,7 @@
     "icons/": "Claude's icons and the spark are Anthropic's artwork and are not kept here (docs/RIGHTS.md)"
    }
   },
-    {
+  {
    "slug": "clearful",
    "name": "Clearful",
    "url": "https://clearful.com",
@@ -4037,51 +4037,51 @@
       "accent": "light.accent",
       "border": "light.border.outlineCta"
      }
+    },
+    "fonts": [
+     "core.font.family.display",
+     "core.font.family.ui"
+    ]
+   },
+   "capture": {
+    "method": "public-web",
+    "source": "clipchamp.com in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and 87 element crops from the live DOM, plus a stylesheet harvest that fetches the cross-origin CDN sheets directly (569 variable names across 31 rules - the whole .fui-FluentProvider Fluent v9 layer plus the marketing --color-* ramps - and 24 @font-face records). The site is a server-rendered React build with CSS-modules classes carrying semantic suffixes, measured via [class*=] selectors. core ramp tokens are the declared values; surface roles are measured computed values aliased to the declarations they match. The app.clipchamp.com login card is a styled-components/Fluent surface measured at rest. BOUNDARY: the editor, checkout and every OAuth/account action sit behind sign-in, never crossed; the email path holding the only field was never entered; nothing was typed, submitted or authenticated",
+    "timestamp": "2026-11-17T12:00:00Z",
+    "harness": "Devin",
+    "model": "SWE-2 High",
+    "route": "public-web",
+    "routes": [
+     "/en/",
+     "/en/pricing/",
+     "/en/features/",
+     "/en/products/",
+     "/en/clipchamp-for-work/",
+     "/en/clipchamp-for-education/",
+     "/en/templates/",
+     "/en/company/",
+     "/en/blog/",
+     "/en/whats-new/",
+     "/en/stock/",
+     "/en/screen-recorder/",
+     "app.clipchamp.com/login",
+     "mobile /en/, /en/pricing/ and /en/features/ plus the mobile drawer open state"
+    ],
+    "gaps": [
+     "the editor itself - timeline, assets, export - sits behind app.clipchamp.com sign-in and was never crossed; the sign-in card was measured at rest but never submitted",
+     "no credentials field renders on the sign-in card until the email path is entered; that path was never crossed, so no field was measured",
+     "pressed states are DevTools-forced (CSS.forcePseudoState), so any script-applied mousedown state is missing; disabled, error and loading states do not appear on the public surface",
+     "the nav dropdown is hover-held: a submenu link's focus-visible/pressed states close the panel under the pointer and are honestly absent",
+     "Cloudflare intermittently serves a security check on marketing routes; blocked attempts were retried and only real paints were kept",
+     "no standalone SVG icon set was lifted; the glyphs in crops and screenshots are Clipchamp's artwork"
+    ],
+    "durationMin": 300,
+    "durationNote": "wall-clock across the capture sessions including kit adaptation, route probing under heavy machine contention, the stylesheet harvest and Fluent-scoped token resolution, screenshot and measurement passes, and the offline build",
+    "pr": "https://github.com/starship-terminal/constellations/pull/624"
+   },
+   "layoutGaps": {
+    "icons/": "no standalone SVG icon set was lifted on this pass; the glyphs (the clapper mark, social marks) are visible in the crops and screenshots"
+   }
   },
-  "fonts": [
-   "core.font.family.display",
-   "core.font.family.ui"
-  ]
- },
- "capture": {
-  "method": "public-web",
-  "source": "clipchamp.com in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and 87 element crops from the live DOM, plus a stylesheet harvest that fetches the cross-origin CDN sheets directly (569 variable names across 31 rules - the whole .fui-FluentProvider Fluent v9 layer plus the marketing --color-* ramps - and 24 @font-face records). The site is a server-rendered React build with CSS-modules classes carrying semantic suffixes, measured via [class*=] selectors. core ramp tokens are the declared values; surface roles are measured computed values aliased to the declarations they match. The app.clipchamp.com login card is a styled-components/Fluent surface measured at rest. BOUNDARY: the editor, checkout and every OAuth/account action sit behind sign-in, never crossed; the email path holding the only field was never entered; nothing was typed, submitted or authenticated",
-  "timestamp": "2026-11-17T12:00:00Z",
-  "harness": "Devin",
-  "model": "SWE-2 High",
-  "route": "public-web",
-  "routes": [
-   "/en/",
-   "/en/pricing/",
-   "/en/features/",
-   "/en/products/",
-   "/en/clipchamp-for-work/",
-   "/en/clipchamp-for-education/",
-   "/en/templates/",
-   "/en/company/",
-   "/en/blog/",
-   "/en/whats-new/",
-   "/en/stock/",
-   "/en/screen-recorder/",
-   "app.clipchamp.com/login",
-   "mobile /en/, /en/pricing/ and /en/features/ plus the mobile drawer open state"
-  ],
-  "gaps": [
-   "the editor itself - timeline, assets, export - sits behind app.clipchamp.com sign-in and was never crossed; the sign-in card was measured at rest but never submitted",
-   "no credentials field renders on the sign-in card until the email path is entered; that path was never crossed, so no field was measured",
-   "pressed states are DevTools-forced (CSS.forcePseudoState), so any script-applied mousedown state is missing; disabled, error and loading states do not appear on the public surface",
-   "the nav dropdown is hover-held: a submenu link's focus-visible/pressed states close the panel under the pointer and are honestly absent",
-   "Cloudflare intermittently serves a security check on marketing routes; blocked attempts were retried and only real paints were kept",
-   "no standalone SVG icon set was lifted; the glyphs in crops and screenshots are Clipchamp's artwork"
-  ],
-  "durationMin": 300,
-  "durationNote": "wall-clock across the capture sessions including kit adaptation, route probing under heavy machine contention, the stylesheet harvest and Fluent-scoped token resolution, screenshot and measurement passes, and the offline build",
-  "pr": "https://github.com/starship-terminal/constellations/pull/624"
- },
- "layoutGaps": {
-  "icons/": "no standalone SVG icon set was lifted on this pass; the glyphs (the clapper mark, social marks) are visible in the crops and screenshots"
- }
-},
   {
    "slug": "clerk",
    "name": "Clerk",
@@ -4485,6 +4485,100 @@
    },
    "layoutGaps": {
     "icons/": "no standalone SVG icon set was lifted on this pass; the glyphs (the wordmark, social marks, certification badges) are visible in the crops and screenshots"
+   }
+  },
+  {
+   "slug": "coinbase",
+   "name": "Coinbase",
+   "url": "https://www.coinbase.com/en-sg",
+   "category": "finance",
+   "platform": "web",
+   "goodFor": "crypto exchange marketing: a styled-components build shipping the Coinbase Design System (CDS) almost verbatim - the declared theme lives inline on div.coinbase.light (~830 vars) and div.coinbase.dark (~210): eleven primitive ramps (blue60 #0052ff the brand, the gray neutral ramp, status green/orange/red and six accent families), the 54-role --color-* semantic layer (fg/bg/washes/lines/elevations/accents), space/radius/border-width/type/icon/avatar/control scales, the shadow-elevation ladder and the CoinbaseDisplay/Sans/Text/Mono/Condensed faces; one light scheme with a .coinbase.dark asset-band island and radius-1000 pill controls",
+   "tags": [
+    "web",
+    "finance",
+    "crypto",
+    "styled-components",
+    "cds",
+    "design-tokens",
+    "light",
+    "dark-islands",
+    "pills",
+    "marketing",
+    "pricing-table",
+    "signed-out"
+   ],
+   "shape": "reference",
+   "captured": "2026-11-17",
+   "access": "signed out (the marketing routes are fully public; the Coinbase product sits behind login.coinbase.com - the /signin redirect's card was measured at rest only: the email field was focused once for its computed style, no text was typed, nothing submitted, and no OAuth/passkey flow was started; the OneTrust consent layer was hidden, never answered)",
+   "themes": [
+    "light"
+   ],
+   "widths": [
+    1440,
+    390
+   ],
+   "entry": "systems/coinbase/README.md",
+   "tokens": "systems/coinbase/tokens.json",
+   "styleGuide": "systems/coinbase/style-guide.html",
+   "preview": {
+    "cover": "systems/coinbase/screenshots/home-light-default.png",
+    "icon": "systems/coinbase/icon.png",
+    "swatches": {
+     "light": {
+      "page": "light.surface.page",
+      "surface": "light.surface.raised",
+      "text": "light.text.primary",
+      "muted": "light.text.muted",
+      "accent": "light.accent",
+      "border": "light.border.subtle"
+     }
+    },
+    "fonts": [
+     "core.font.family.display",
+     "core.font.family.sans",
+     "core.font.family.mono"
+    ]
+   },
+   "capture": {
+    "method": "public-web",
+    "source": "coinbase.com/en-sg in headed Chromium (Playwright headless:false) under xvfb-run - Cloudflare holds headless Chromium on the managed challenge - desktop 1440x900 and a 390x844 mobile pass; computed styles and 88 element crops from the live DOM, plus a stylesheet harvest (957 rules, 11 @font-face records) that also reads the declared CDS theme straight off the div.coinbase.light (830 vars) and div.coinbase.dark (210 vars) theme elements' inline styles - the design layer ships as theme-element custom properties, not utility rules. Selectors ride data-testid hooks and CDS classes, constrained to painted containers (the nav/mega-menu clones and 0x0 OuterWrappers are skipped for the StickyWrapper bars). The login.coinbase.com/signin card is the app's own styled surface measured at rest. The site geolocates to the Singapore locale (en-sg). BOUNDARY: the product, trading, wallets and every OAuth/passkey/account action sit behind sign-in, never crossed; nothing was typed, submitted or authenticated",
+    "timestamp": "2026-11-17T14:00:00Z",
+    "harness": "Devin",
+    "model": "SWE-2 High",
+    "route": "public-web",
+    "routes": [
+     "/en-sg",
+     "/en-sg/explore",
+     "/en-sg/one",
+     "/en-sg/business",
+     "/en-sg/prime",
+     "/en-sg/advanced-trade",
+     "/en-sg/developer-platform",
+     "/en-sg/usdc",
+     "/en-sg/learn",
+     "/en-sg/about",
+     "/en-sg/careers",
+     "/en-sg/blog",
+     "/legal/privacy",
+     "login.coinbase.com/signin",
+     "mobile /en-sg, /en-sg/explore, /en-sg/one and /en-sg/business plus the open menu overlay"
+    ],
+    "gaps": [
+     "the Coinbase product - portfolio, trading, wallets - sits behind login.coinbase.com sign-in and was never crossed; the sign-in card was measured at rest but never submitted",
+     "the marketing controls measured 0s transitions (no motion); the only animated chrome is the promo/search/menu links at 0.2s ease-in-out, so the motion scale is thin",
+     "nothing on the marketing surface paints a real drop shadow - the declared --shadow-elevation1/2 ladder is tokenised but unmeasured in the wild",
+     "the email field's focused border change lives on its container wrapper, not the input - the focused state records no outline change on the field itself",
+     "business/advanced-trade/developer-platform/usdc/learn/about/careers/blog/legal are captured as full screenshots only; their internal components were not individually measured",
+     "pressed states are DevTools-forced (CSS.forcePseudoState), so any script-applied mousedown state is missing; disabled, error and loading states do not appear on the public surface",
+     "no standalone SVG icon set was lifted; the glyphs in crops and screenshots are Coinbase's artwork"
+    ],
+    "durationMin": 300,
+    "durationNote": "wall-clock across the capture sessions including kit adaptation, Cloudflare/headed-browser probing, route and DOM probing, the theme-element harvest, screenshot and measurement passes with selector correction, and the offline build",
+    "pr": "https://github.com/starship-terminal/constellations/pull/637"
+   },
+   "layoutGaps": {
+    "icons/": "no standalone SVG icon set was lifted on this pass; the glyphs (the logo, social marks, passkey/OAuth marks) are visible in the crops and screenshots"
    }
   },
   {
@@ -5520,7 +5614,7 @@
    ],
    "shape": "reference",
    "captured": "2026-11-16",
-   "access": "signed out (every captured surface is public); the product app behind sign-in (calendar, clients, payments, marketing tools \u2014 app.glossgenius.com/ redirects to /calendar) was never reached; the login, signup, restore and demo forms were measured and typed into then cleared, never submitted; the published booking flow was browsed read-only to its public /book date-picker \u2014 no slot confirmed, no appointment booked; every CTA measured, never followed; no consent banner was observed on any host",
+   "access": "signed out (every captured surface is public); the product app behind sign-in (calendar, clients, payments, marketing tools — app.glossgenius.com/ redirects to /calendar) was never reached; the login, signup, restore and demo forms were measured and typed into then cleared, never submitted; the published booking flow was browsed read-only to its public /book date-picker — no slot confirmed, no appointment booked; every CTA measured, never followed; no consent banner was observed on any host",
    "themes": [
     "light"
    ],
@@ -5554,7 +5648,7 @@
    },
    "capture": {
     "method": "public-web",
-    "source": "glossgenius.com (a Webflow marketing site with a bundled CDN stylesheet and inline blocks declaring the --_color---*/--_size---*/--_typography---*/--_layout---*/--bg-* layer plus @font-face), app.glossgenius.com (a Next.js SPA whose CSS-module glossDS layer \u2014 --content-*/--surface-*/--brand-*/--space-*x/--radius-*/--font-* plus --button-*/--input-*/--checkbox-* \u2014 is declared on :root and scoped .light/.dark; only the light scope paints signed out) and honeyhivesalon.glossgenius.com (a real published business booking website with its own .tokens_glossDS__* family) in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and 198 element crops from the live DOM, plus a stylesheet harvest resolving 822 marketing + 477 app + 99 booking custom properties. BOUNDARY: everything post-login; the demo form's step-2 was read with its display:none wrapper unhidden \u2014 its 'Get a demo' step link was never activated; the edge briefly served a security-verification block on app.glossgenius.com/login once \u2014 a retry in a fresh context succeeded, no challenge was answered by hand",
+    "source": "glossgenius.com (a Webflow marketing site with a bundled CDN stylesheet and inline blocks declaring the --_color---*/--_size---*/--_typography---*/--_layout---*/--bg-* layer plus @font-face), app.glossgenius.com (a Next.js SPA whose CSS-module glossDS layer — --content-*/--surface-*/--brand-*/--space-*x/--radius-*/--font-* plus --button-*/--input-*/--checkbox-* — is declared on :root and scoped .light/.dark; only the light scope paints signed out) and honeyhivesalon.glossgenius.com (a real published business booking website with its own .tokens_glossDS__* family) in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and 198 element crops from the live DOM, plus a stylesheet harvest resolving 822 marketing + 477 app + 99 booking custom properties. BOUNDARY: everything post-login; the demo form's step-2 was read with its display:none wrapper unhidden — its 'Get a demo' step link was never activated; the edge briefly served a security-verification block on app.glossgenius.com/login once — a retry in a fresh context succeeded, no challenge was answered by hand",
     "timestamp": "2026-11-16T19:35:00Z",
     "harness": "Devin",
     "model": "Devin",
@@ -5583,14 +5677,14 @@
      "home header How-it-works + Businesses mega-menus, pricing Monthly/Annual switch and tier picker, FAQ details, mobile /, /pricing, /signup and booking services"
     ],
     "gaps": [
-     "everything post-login \u2014 the calendar, clients, payments, marketing and business tools behind app.glossgenius.com sign-in (the app root redirects to /calendar); an authenticated boundary never reached",
-     "submitted states: the login, signup, forgot-password and get-demo forms were typed into then cleared, never sent \u2014 validation, error, loading and success states are absent rather than measured",
-     "the booking flow stops at the public /book date-picker \u2014 slot confirmation, the YOUR DETAILS form and payment were never reached; 'Next' never pressed",
-     "the booking site is one business's skin (honeyhivesalon.glossgenius.com, Organic-style layout) \u2014 other businesses re-skin the same chrome through other .tokens_glossDS__* layout classes; booking tokens are this surface's resolution, not a universal brand set",
-     "the demo form's step-2 (the real HubSpot fields) was measured with .get-demo-form-step-2's display:none cleared inline \u2014 the 'Get a demo' step link itself was never activated",
-     "the app's .dark class and the marketing sheet's [data-theme=\"dark\"] block are declarations nothing signed out applies \u2014 declared evidence, not a painted dark theme",
+     "everything post-login — the calendar, clients, payments, marketing and business tools behind app.glossgenius.com sign-in (the app root redirects to /calendar); an authenticated boundary never reached",
+     "submitted states: the login, signup, forgot-password and get-demo forms were typed into then cleared, never sent — validation, error, loading and success states are absent rather than measured",
+     "the booking flow stops at the public /book date-picker — slot confirmation, the YOUR DETAILS form and payment were never reached; 'Next' never pressed",
+     "the booking site is one business's skin (honeyhivesalon.glossgenius.com, Organic-style layout) — other businesses re-skin the same chrome through other .tokens_glossDS__* layout classes; booking tokens are this surface's resolution, not a universal brand set",
+     "the demo form's step-2 (the real HubSpot fields) was measured with .get-demo-form-step-2's display:none cleared inline — the 'Get a demo' step link itself was never activated",
+     "the app's .dark class and the marketing sheet's [data-theme=\"dark\"] block are declarations nothing signed out applies — declared evidence, not a painted dark theme",
      "an edge security-verification page blocked app.glossgenius.com/login on one pass; a retry in a fresh context succeeded and no challenge was answered by hand",
-     "pressed states are DevTools-forced (CSS.forcePseudoState) \u2014 script-driven mousedown looks are uncaptured",
+     "pressed states are DevTools-forced (CSS.forcePseudoState) — script-driven mousedown looks are uncaptured",
      "icons: no standalone SVG icon set lifted this pass"
     ],
     "durationMin": 420,
@@ -15066,8 +15160,7 @@
     "durationNote": "wall-clock across the capture sessions including the blocked grok.com/x.ai attempts, kit adaptation, the stylesheet harvest, the screenshot pass, the measurement pass and the offline build",
     "pr": "https://github.com/starship-terminal/constellations/pull/622"
    }
-  }
-,
+  },
   {
    "slug": "front",
    "name": "Front",
@@ -15551,7 +15644,7 @@
     "routes": [
      "hashnode.com/",
      "hashnode.com/feed",
-     "hashnode.com/posts/i-used-to-be-a-magician/\u2026",
+     "hashnode.com/posts/i-used-to-be-a-magician/…",
      "hashnode.com/@anish78",
      "hashnode.com/pro",
      "hashnode.com/agents",
@@ -15563,7 +15656,7 @@
      "hashnode.com/onboard (rest only)",
      "hashnode.com/blog (redirects to the blog engine)",
      "townhall.hashnode.com/",
-     "townhall.hashnode.com/why-diy-qa-doesnt-work-anymore-\u2026",
+     "townhall.hashnode.com/why-diy-qa-doesnt-work-anymore-…",
      "townhall.hashnode.com/archive",
      "verified html.dark repaints on home, feed, post, pro, changelog (Theme menu) and th-home, th-post (prefers-color-scheme)",
      "the Ctrl+K search dialogs, the Theme and More menus, an opened FAQ accordion, changelog/agents tab switches, the sidebar toggle and the 390px nav sheet as transient states",
@@ -15697,12 +15790,32 @@
    "category": "productivity",
    "platform": "web",
    "goodFor": "marketing-site and auth-gate design: a floating transparent-over-hero pill nav that inverts to ink-on-white under scroll (nav top-offset swaps to --desktop-nav-top-offset-with-banner when the notification band shows), a lime #d3fb52 'Sign up' pill (hover #a1dd3b), ink #14151c headline/footer and the blue #2e6aff CTA utility ramp (--cta/-hover/-active/-visited), proprietary NoiGrotesk + SansPlomb faces, a 160px uppercase hero (86px on the phone) over a 920x88 rounded-3xl job-search field, a 12-col grid of 116px tracks inside --container-*/--content-max-width, alternating bg-neutral-0/-10 section bands, segment switchers, FAQ and department accordions, Marketo lead forms, pricing tables, plus the consumer app's signed-out /access card painted by the Rosetta --rosetta-* layer (bg.primary #fff, fg.primary #121212, interactive.primary #04191b)",
-   "tags": ["web", "marketing", "careers", "hiring", "education", "students", "employers", "pricing", "blog", "forms", "light", "signed-out", "design-tokens"],
+   "tags": [
+    "web",
+    "marketing",
+    "careers",
+    "hiring",
+    "education",
+    "students",
+    "employers",
+    "pricing",
+    "blog",
+    "forms",
+    "light",
+    "signed-out",
+    "design-tokens"
+   ],
    "shape": "reference",
    "captured": "2026-11-17",
    "access": "signed out (every captured surface is public: joinhandshake.com's marketing pages serve a plain load, and app.joinhandshake.com/access - the 'Log in or sign up' card - cleared its Cloudflare challenge intermittently and was captured on the loads that did; /explore, /signup, the registration flow and support.joinhandshake.com never cleared - blocked boundaries, not captures; nothing was signed into, typed, searched, sent, bought or submitted; the only presses were local UI toggles - the nav's hover-opened mega menu, segment tabs, FAQ and department accordions, the phone's 'Open menu' button)",
-   "themes": ["light", "access"],
-   "widths": [1440, 390],
+   "themes": [
+    "light",
+    "access"
+   ],
+   "widths": [
+    1440,
+    390
+   ],
    "entry": "systems/joinhandshake/README.md",
    "tokens": "systems/joinhandshake/tokens.json",
    "styleGuide": "systems/joinhandshake/style-guide.html",
@@ -15710,12 +15823,31 @@
     "cover": "systems/joinhandshake/screenshots/home-light-default.png",
     "icon": "systems/joinhandshake/icon.png",
     "swatches": {
-     "light": {"page": "light.bg.page", "surface": "light.bg.muted", "text": "light.fg.body", "muted": "light.tab.fg", "accent": "light.button.primary.bg", "border": "light.input.search.border"},
-     "access": {"page": "access.rosettaBg.primary", "surface": "access.rosettaBg.surface", "text": "access.rosettaFg.primary", "muted": "access.rosettaFg.secondary", "accent": "access.rosettaInteractive.primary", "border": "access.rosettaFg.border"}
+     "light": {
+      "page": "light.bg.page",
+      "surface": "light.bg.muted",
+      "text": "light.fg.body",
+      "muted": "light.tab.fg",
+      "accent": "light.button.primary.bg",
+      "border": "light.input.search.border"
+     },
+     "access": {
+      "page": "access.rosettaBg.primary",
+      "surface": "access.rosettaBg.surface",
+      "text": "access.rosettaFg.primary",
+      "muted": "access.rosettaFg.secondary",
+      "accent": "access.rosettaInteractive.primary",
+      "border": "access.rosettaFg.border"
+     }
     },
-    "fonts": ["core.font.family.noiGrotesk", "core.font.family.sansPlomb"]
+    "fonts": [
+     "core.font.family.noiGrotesk",
+     "core.font.family.sansPlomb"
+    ]
    },
-   "source": {"path": "~/.design-systems/joinhandshake/raw-shots (full-colour captures, outside the repo)"},
+   "source": {
+    "path": "~/.design-systems/joinhandshake/raw-shots (full-colour captures, outside the repo)"
+   },
    "capture": {
     "method": "public-web",
     "source": "joinhandshake.com and app.joinhandshake.com/access in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and element crops from the live DOM, plus a stylesheet harvest (2387 rules, 135 @font-face, 472 site + 242 app resolved custom properties in a probe document). The marketing site scrolls the document; full-page captures are bounded at eight chunks. BOUNDARY: app.joinhandshake.com/explore, /signup, the registration flow and support.joinhandshake.com never cleared the Cloudflare managed challenge from the capture host - documented boundaries, not captures",

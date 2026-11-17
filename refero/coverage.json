@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 188,
-    "system_domains": 179,
-    "matched_domains": 149,
-    "missing_domains": 284,
+    "system_packages": 189,
+    "system_domains": 180,
+    "matched_domains": 150,
+    "missing_domains": 283,
     "system_domains_absent_from_catalog": 30
   },
   "matched": {
@@ -940,6 +940,23 @@
           "slug": "cohere",
           "name": "Cohere",
           "url": "https://cohere.com",
+          "name_match": true
+        }
+      ]
+    },
+    "coinbase.com": {
+      "catalog": [
+        {
+          "name": "Coinbase",
+          "domain": "coinbase.com",
+          "id": 163
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "coinbase",
+          "name": "Coinbase",
+          "url": "https://www.coinbase.com/en-sg",
           "name_match": true
         }
       ]
@@ -2626,13 +2643,6 @@
         "name": "Clay",
         "domain": "clay.earth",
         "id": 658
-      }
-    ],
-    "coinbase.com": [
-      {
-        "name": "Coinbase",
-        "domain": "coinbase.com",
-        "id": 163
       }
     ],
     "column.com": [
