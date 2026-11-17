@@ -15393,6 +15393,92 @@
    }
   },
   {
+   "slug": "grow",
+   "name": "Grow with Google",
+   "url": "https://grow.google",
+   "category": "learning",
+   "platform": "web",
+   "goodFor": "program and certificate marketing pages in Google's glue marketing style: a light-only white surface, Google Sans Flex display ramp (60/72 hero, 48/56 catalog, 36/24 home headline), the declared --glue-* colour ramps, the painted #3186ff accent on filled 48px-radius pills and links, #185abc hover, #eff2f7 footer band, a 120px jumplinks pill bar, #dadce0 hairline FAQ rows, the full-bleed 1440px mega-menu and the #18191d editorial dark hero on certificate pages; plus the US/APAC regional split the root route serves by request characteristics",
+   "tags": [
+    "web",
+    "google",
+    "education",
+    "certificates",
+    "marketing",
+    "glue",
+    "light",
+    "signed-out",
+    "regional-variant"
+   ],
+   "shape": "reference",
+   "captured": "2026-11-17",
+   "access": "signed out (every captured surface is public; enrolment on Coursera, Google accounts and all outbound links were measured, never followed; the footer's language select was never changed — its form posts to services.google.com; the hero YouTube embed was opened and closed, never played; no sign-in exists on grow.google)",
+   "themes": [
+    "light"
+   ],
+   "widths": [
+    1440,
+    390
+   ],
+   "entry": "systems/grow/README.md",
+   "tokens": "systems/grow/tokens.json",
+   "styleGuide": "systems/grow/style-guide.html",
+   "preview": {
+    "cover": "systems/grow/screenshots/home-light-default.png",
+    "icon": "systems/grow/icon.png",
+    "swatches": {
+     "light": {
+      "page": "light.color.surface.base",
+      "surface": "light.color.surface.muted",
+      "text": "light.color.ink.primary",
+      "muted": "light.color.ink.secondary",
+      "accent": "light.button.primary.bg",
+      "border": "light.color.line.hairline"
+     }
+    },
+    "fonts": [
+     "core.font.family.sans"
+    ]
+   },
+   "capture": {
+    "method": "public-web",
+    "source": "grow.google's US edition in headless Chromium (Playwright) — bare contexts with no user agent or locale, because this host's real-UA or locale-bearing requests are 302'd from / to the regional /intl/ALL_sg/ edition (retained as the apac-* screenshot variant). Desktop 1440x900 and a 390x844 mobile pass; computed styles and element crops from the live DOM, plus a first-party stylesheet harvest (the ~676KB versioned gstatic gwg-us bundle: 19 rules, 266 @font-face, 54 resolved custom properties — the --glue-* colour ramps are the only declared variables).",
+    "timestamp": "2026-11-17T13:30:00Z",
+    "harness": "Devin",
+    "model": "SWE-2 Max",
+    "route": "public-web",
+    "routes": [
+     "grow.google/ (US edition, bare context)",
+     "grow.google/certificates",
+     "grow.google/certificates/ux-design/",
+     "grow.google/certificates/data-analytics/",
+     "grow.google/ai/",
+     "grow.google/ai-professional/",
+     "grow.google/stories/",
+     "grow.google/our-mission/",
+     "grow.google/partners/",
+     "grow.google/employers/",
+     "grow.google/news-insights/",
+     "the Career Certificates mega-menu, the mobile navigation drawer, one FAQ expansion row and the hero video modal as local UI toggles",
+     "VARIANT: grow.google/intl/ALL_sg/ (the APAC regional edition this host's real-UA requests reach) — screenshot evidence only",
+     "BOUNDARY: coursera.org enrolment, Google accounts, outbound links, the footer's language select (posts to services.google.com) and YouTube playback — measured or opened, never followed, changed or played"
+    ],
+    "gaps": [
+     "enrolment and accounts live off grow.google (coursera.org, Google sign-in): every CTA was measured, never followed",
+     "the APAC regional edition (/intl/ALL_sg/) is a variant surface: different promo stack and shorter page; no tokens come from it",
+     "the hero video's YouTube player controls are uncaptured — the embed was opened and closed, never played",
+     "the footer's region/language <select> posts to services.google.com and was never changed",
+     "the glue bundle declares only the colour ramps as custom properties: spacing, type, radii and shadows are measured computed styles, not a declared scale",
+     "pressed states are DevTools-forced (CSS.forcePseudoState), so any script-applied mousedown state is missing; the 5px outline:auto in pressed reads is Chrome's artifact",
+     "prefers-reduced-motion is only partially honoured on the probed pages — see raw/motion.json",
+     "full-page mobile captures are bounded and tiled (.partN), with the clip in each .capture.json sidecar"
+    ],
+    "durationMin": 240,
+    "durationNote": "wall-clock across the capture sessions including the regional-redirect investigation, kit adaptation, the stylesheet harvest, the screenshot pass, the measurement pass, icon/motion/layout probes and the offline build",
+    "pr": "https://github.com/starship-terminal/constellations/pull/628"
+   }
+  },
+  {
    "slug": "hashnode",
    "name": "Hashnode",
    "url": "https://hashnode.com",

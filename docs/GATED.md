@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_126 of 184 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_127 of 185 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -684,6 +684,10 @@ Access: signed out (every captured surface is public; the signed-in workspace, s
 - every signed-in product surface (saved designs, workspaces, team/billing, the editor beyond the anonymous scratch file) needs an account - an authenticated boundary never reached
 - the login, register and Craft fields were measured and typed into then cleared, never submitted - validation, error, loading and success states are absent rather than measured
 - the anonymous editor's file content, layers and canvas tools beyond the onboarding and the Craft dialog were not exercised - the scratch file was never saved
+
+## [Grow with Google](../systems/grow) — `grow`
+Access: signed out (every captured surface is public; enrolment on Coursera, Google accounts and all outbound links were measured, never followed; the footer's language select was never changed — its form posts to services.google.com; the hero YouTube embed was opened and closed, never played; no sign-in exists on grow.google)
+- enrolment and accounts live off grow.google (coursera.org, Google sign-in): every CTA was measured, never followed
 
 ## [Hashnode](../systems/hashnode) — `hashnode`
 Access: signed out (every captured surface is public: hashnode.com marketing/feed/posts/profiles/product sections and townhall.hashnode.com; /login and every post-auth surface never entered; engineering.hashnode.com returned 429, help./docs./blog./api./support./changelog./weekly. subdomains do not resolve, status.hashnode.com is a Better Stack page not the product - blocked boundaries, never claimed as captures; nothing was signed into, typed, searched, sent, bought or submitted; the only presses were local UI toggles - the search dialogs, Theme/More menus, FAQ and tab rows, the sidebar toggle, the phone nav button)

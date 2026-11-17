@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 184,
-    "system_domains": 175,
-    "matched_domains": 145,
-    "missing_domains": 288,
+    "system_packages": 185,
+    "system_domains": 176,
+    "matched_domains": 146,
+    "missing_domains": 287,
     "system_domains_absent_from_catalog": 30
   },
   "matched": {
@@ -2287,6 +2287,23 @@
         }
       ]
     },
+    "grow.google": {
+      "catalog": [
+        {
+          "name": "Grow with Google",
+          "domain": "grow.google",
+          "id": 294
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "grow",
+          "name": "Grow with Google",
+          "url": "https://grow.google",
+          "name_match": true
+        }
+      ]
+    },
     "gumroad.com": {
       "catalog": [
         {
@@ -2691,13 +2708,6 @@
         "name": "Grok",
         "domain": "grok.com",
         "id": 629
-      }
-    ],
-    "grow.google": [
-      {
-        "name": "Grow with Google",
-        "domain": "grow.google",
-        "id": 294
       }
     ],
     "headspace.com": [
