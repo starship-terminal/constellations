@@ -15140,6 +15140,7 @@
      "the /feed and home streams grow on scroll: full-page shots are bounded at eight chunks (the bound is in each .capture.json sidecar) and only the top of the stream was measured"
     ],
     "durationMin": 240,
+    "pr": "https://github.com/starship-terminal/constellations/pull/625",
     "durationNote": "wall-clock across the capture session including reachability probes, kit adaptation, the two-surface stylesheet harvest, the screenshot pass, the measurement pass and the offline build"
    }
   }
