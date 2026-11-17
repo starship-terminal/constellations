@@ -15036,6 +15036,112 @@
    "layoutGaps": {
     "icons/": "the icon extraction pass was not run; the icons (the Glorify wordmark, the feature-flyout glyphs, the editor rail icons, the brand marks) are visible in the crops and screenshots"
    }
+  },
+  {
+   "slug": "hashnode",
+   "name": "Hashnode",
+   "url": "https://hashnode.com",
+   "category": "media",
+   "platform": "web",
+   "goodFor": "developer-blogging product design across two surfaces on one Tailwind v4 token layer: hashnode.com's signed-out app shell (a bg-sidebar rail with peer/menu-button nav, Search Ctrl+K, a real Light/Dark/System Theme menu, a solid 'Start your blog' CTA and the feed's post-card grammar with ghost upvote/bookmark actions) plus townhall.hashnode.com, the hosted blog engine (sticky header with a bg-surface pill nav, post cards, a text-article-title/text-reading prose layer with a TOC rail and dark-tinted --code-block panels). Semantic roles --background/--foreground, --primary/-secondary/-accent/-muted/-card/-popover(+foregrounds), --destructive/-success/-warning wash families, --brand/--link #2962ff, --sidebar-*, --chart-1..5, --code-block, --selection, --scrim; scene palettes --pro-* gold, --buildful green, --ai-*, --landing-*, the 36-name --tod-* time-of-day hero; --elevation-* shadow stacks; system-stack --font-app + next/font --font-inter on a --text-xs..6xl ramp with --text-body/-reading/-title-* prose roles; --radius .5rem; --command dark-only",
+   "tags": [
+    "web",
+    "blog",
+    "publishing",
+    "developer",
+    "community",
+    "feed",
+    "prose",
+    "docs",
+    "light",
+    "dark",
+    "signed-out",
+    "design-tokens"
+   ],
+   "shape": "reference",
+   "captured": "2026-11-17",
+   "access": "signed out (every captured surface is public: hashnode.com marketing/feed/posts/profiles/product sections and townhall.hashnode.com; /login and every post-auth surface never entered; engineering.hashnode.com returned 429, help./docs./blog./api./support./changelog./weekly. subdomains do not resolve, status.hashnode.com is a Better Stack page not the product - blocked boundaries, never claimed as captures; nothing was signed into, typed, searched, sent, bought or submitted; the only presses were local UI toggles - the search dialogs, Theme/More menus, FAQ and tab rows, the sidebar toggle, the phone nav button)",
+   "themes": [
+    "light",
+    "dark"
+   ],
+   "widths": [
+    1440,
+    390
+   ],
+   "entry": "systems/hashnode/README.md",
+   "tokens": "systems/hashnode/tokens.json",
+   "styleGuide": "systems/hashnode/style-guide.html",
+   "preview": {
+    "cover": "systems/hashnode/screenshots/home-light-default.png",
+    "icon": "systems/hashnode/icon.png",
+    "swatches": {
+     "light": {
+      "page": "light.root.background",
+      "surface": "light.surface.default",
+      "text": "light.root.foreground",
+      "muted": "light.muted.foreground",
+      "accent": "light.brand.default",
+      "border": "light.border.default"
+     },
+     "dark": {
+      "page": "dark.root.background",
+      "surface": "dark.surface.default",
+      "text": "dark.root.foreground",
+      "muted": "dark.muted.foreground",
+      "accent": "dark.brand.default",
+      "border": "dark.border.default"
+     }
+    },
+    "fonts": [
+     "core.font.family.app",
+     "core.font.family.inter",
+     "core.font.family.code"
+    ]
+   },
+   "source": "capture",
+   "capture": {
+    "method": "public-web",
+    "source": "hashnode.com and townhall.hashnode.com in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and element crops from the live DOM, plus a two-surface stylesheet harvest (10,577 rules, 25 @font-face, 242 light + 243 dark resolved custom properties in a probe carrying the live pages' own next/font classes). Both surfaces boot html.light; hashnode.com's sidebar Theme menu (Light / Dark / System) repaints html.dark and the blog engine paints the same classes under prefers-color-scheme (its own toggle produced no repaint headless, so blog dark evidence is the OS-preference path). hashnode.com scrolls inside viewport-high overflow-y-auto panes, expanded and restored for bounded full-page captures. BOUNDARY: /login and every post-auth surface never entered; engineering.hashnode.com returned 429; help./docs./blog./api./support./changelog./weekly. subdomains do not resolve; status.hashnode.com is a Better Stack page not the product",
+    "timestamp": "2026-11-17T04:30:00Z",
+    "harness": "Devin",
+    "model": "SWE-2 Max",
+    "route": "public-web",
+    "routes": [
+     "hashnode.com/",
+     "hashnode.com/feed",
+     "hashnode.com/posts/i-used-to-be-a-magician/\u2026",
+     "hashnode.com/@anish78",
+     "hashnode.com/pro",
+     "hashnode.com/agents",
+     "hashnode.com/changelog",
+     "hashnode.com/hackathons",
+     "hashnode.com/brand",
+     "hashnode.com/alternatives/medium",
+     "hashnode.com/code-of-conduct",
+     "hashnode.com/onboard (rest only)",
+     "hashnode.com/blog (redirects to the blog engine)",
+     "townhall.hashnode.com/",
+     "townhall.hashnode.com/why-diy-qa-doesnt-work-anymore-\u2026",
+     "townhall.hashnode.com/archive",
+     "verified html.dark repaints on home, feed, post, pro, changelog (Theme menu) and th-home, th-post (prefers-color-scheme)",
+     "the Ctrl+K search dialogs, the Theme and More menus, an opened FAQ accordion, changelog/agents tab switches, the sidebar toggle and the 390px nav sheet as transient states",
+     "BLOCKED: /login and post-auth surfaces (never entered), engineering.hashnode.com (429), help./docs./blog./api./support./changelog./weekly. subdomains (NXDOMAIN/unreachable), status.hashnode.com (Better Stack page, not the product)"
+    ],
+    "gaps": [
+     "the signed-in product (/login and everything behind it - dashboard, editor, settings, the onboarding submit) is a boundary: the Sign in / Start your blog / Get Pro links were measured, never followed",
+     "engineering.hashnode.com answered HTTP 429 from the capture host on every try; help./blog./docs. subdomains are NXDOMAIN and api./support./changelog./weekly. unreachable - documented boundaries",
+     "the blog engine's 'Toggle theme' button produced no repaint and no menu headless, so blog dark evidence is emulated prefers-color-scheme + reload, recorded as such in each state's via",
+     "search results: both Ctrl-K dialogs were opened and their resting contents measured, but no query was ever typed - result rows are uncaptured",
+     "five components read as absent on this pass (the profile sticky header, the Get Pro plan CTA, the deferred onboarding field, the blog article's pre wrapper, the blog search suggestion row) - recorded as missing, not measured as absent",
+     "dark-only --command exists in the dark token set alone and was never inferred for light",
+     "the Inter face is loaded through next/font and not shipped in the package; crops show it, the style guide falls back to system fonts",
+     "pressed states are DevTools-forced (CSS.forcePseudoState), so any script-applied mousedown state is missing",
+     "the /feed and home streams grow on scroll: full-page shots are bounded at eight chunks (the bound is in each .capture.json sidecar) and only the top of the stream was measured"
+    ],
+    "durationMin": 240,
+    "durationNote": "wall-clock across the capture session including reachability probes, kit adaptation, the two-surface stylesheet harvest, the screenshot pass, the measurement pass and the offline build"
+   }
   }
  ]
 }
