@@ -1504,5 +1504,13 @@
       "Productivity"
     ],
     "reason": "catalog.json describes Microsoft's Clipchamp video editor: marketing pages for the browser video editor, templates, stock library, pricing tiers and an education/work surface."
+  },
+  {
+    "referenceId": "systems:httpie",
+    "groupId": "web-categories",
+    "labels": [
+      "Development Tools"
+    ],
+    "reason": "catalog.json describes HTTPie's API-client product: the marketing pages, CLI/desktop download surfaces, documentation and changelog, plus the HTTPie-for-Web client's signed-out incognito request builder."
   }
 ]

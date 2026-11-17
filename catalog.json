@@ -15235,6 +15235,114 @@
     "pr": "https://github.com/starship-terminal/constellations/pull/625",
     "durationNote": "wall-clock across the capture session including reachability probes, kit adaptation, the two-surface stylesheet harvest, the screenshot pass, the measurement pass and the offline build"
    }
+  },
+  {
+   "slug": "httpie",
+   "name": "HTTPie",
+   "url": "https://httpie.io",
+   "category": "productivity",
+   "platform": "web",
+   "goodFor": "API-client product design across two surfaces on one compact hand-written token layer: httpie.io's marketing and docs site (a 1440px site-container frame on a 12-col site-grid, dark-boot html.dark with a real LIGHT/AUTO/DARK ThemeToggle radio stack in the footer, the Pie Headline/PolyPie/Pie Monospace proprietary faces, and fenced code panels painted by a ten-colour code-* syntax palette) plus /app, the HTTPie-for-Web client running signed out in its 'Incognito space' (a 49px icon rail, a Drafts shelf with a real empty state, request cards in a tab strip, the method/URL/Send request line, Params/Headers/Auth/Body panel tabs, a resting 'Not sent' response pane and the environments manager as another tab). Semantic roles --color-bg-z0..z3, --color-primary/-secondary/-tertiary ink, --color-accent green #73dc8c dark / #52ab66 light, --color-alt-accent blue, --color-warning red, --color-focus, --color-borders(-subtle), --color-selection, --color-backdrop, --color-shadows and --color-code-* - declared on :root, re-pointed under .dark:root, and persisted through localStorage.theme; everything else literal rgb() on old-Tailwind + CSS Modules classes harvested into core.palette.*",
+   "tags": [
+    "web",
+    "developer-tools",
+    "api-client",
+    "marketing",
+    "docs",
+    "dark",
+    "light",
+    "signed-out",
+    "design-tokens"
+   ],
+   "shape": "reference",
+   "captured": "2026-11-17",
+   "access": "signed out (every captured surface is public: httpie.io marketing/docs/blog/legal pages and /app, the HTTPie-for-Web client that runs unsigned in its 'Incognito space'; sign-in and every account surface - named spaces, sync, shared collections - never entered; the HTTPie AI 'Try it out' action never pressed; Send never pressed on /app - issuing a request is a network side effect, so the response pane stands at its resting 'Not sent' state; the desktop/CLI binaries behind /download never fetched; /pricing 404s and is kept as the product's not-found page; /discord redirects off-site; nothing was signed into, typed, searched, sent, bought or submitted; the only presses were local UI toggles - the ThemeToggle radios, the method and Incognito-space controls, the request and environments tabs, the Cmd+K DocSearch dialog opened for icons and closed unqueried)",
+   "themes": [
+    "dark",
+    "light"
+   ],
+   "widths": [
+    1440,
+    390
+   ],
+   "entry": "systems/httpie/README.md",
+   "tokens": "systems/httpie/tokens.json",
+   "styleGuide": "systems/httpie/style-guide.html",
+   "preview": {
+    "cover": "systems/httpie/screenshots/app-dark-default.png",
+    "icon": "systems/httpie/icon.png",
+    "swatches": {
+     "dark": {
+      "page": "dark.bg.z0",
+      "surface": "dark.bg.z1",
+      "text": "dark.text.primary",
+      "muted": "dark.text.secondary",
+      "accent": "dark.accent.default",
+      "border": "dark.border.default"
+     },
+     "light": {
+      "page": "light.bg.z0",
+      "surface": "light.bg.z1",
+      "text": "light.text.primary",
+      "muted": "light.text.secondary",
+      "accent": "light.accent.default",
+      "border": "light.border.default"
+     }
+    },
+    "fonts": [
+     "core.font.family.headline",
+     "core.font.family.body",
+     "core.font.family.mono"
+    ]
+   },
+   "source": "capture",
+   "capture": {
+    "method": "public-web",
+    "source": "httpie.io in headless Chromium (Playwright), desktop 1440x900 and a 390x844 @2x mobile pass; computed styles and element crops from the live DOM, plus a stylesheet harvest (15 sheets, 806 rules, 16 @font-face, 40 light + 40 dark resolved custom properties, 152 literal palette declarations). Every page boots html.dark - AUTO follows prefers-color-scheme and headless Chromium's light preference still resolves dark - and the footer's own LIGHT MODE / AUTO / DARK MODE ThemeToggle radios repaint html.light, persisting to localStorage.theme, which /app reads; /app's light pass detours through the homepage to press the control. The docs manuals scroll inside a ~76-96k px inner overflow pane, expanded and restored for full-page captures bounded at three 14k px chunks (the truncation is in each sidecar); streams bounded at eight chunks. BOUNDARY: sign-in and account surfaces never entered; HTTPie AI 'Try it out' never pressed; Send never pressed on /app (a real request is a network side effect) - the response pane is evidence only at 'Not sent'; desktop/CLI binaries never fetched; /pricing is a 404; /discord redirects off-site",
+    "timestamp": "2026-11-17T09:00:00Z",
+    "harness": "Devin",
+    "model": "SWE-2 Max",
+    "route": "public-web",
+    "routes": [
+     "httpie.io/",
+     "httpie.io/desktop",
+     "httpie.io/cli",
+     "httpie.io/ai",
+     "httpie.io/docs",
+     "httpie.io/docs/desktop",
+     "httpie.io/docs/cli",
+     "httpie.io/jobs",
+     "httpie.io/blog",
+     "httpie.io/blog/changelog-0027",
+     "httpie.io/download",
+     "httpie.io/about",
+     "httpie.io/terms",
+     "httpie.io/privacy",
+     "httpie.io/pricing (404 - captured as the not-found page)",
+     "httpie.io/app (the HTTPie-for-Web client, signed out in the 'Incognito space')",
+     "verified html.light repaints on home, desktop, cli, ai, docs-desktop, jobs, blog, blog-post, download and /app (the footer ThemeToggle radios; on /app via localStorage.theme)",
+     "the method menu, the Headers/Auth/Body/Response request tabs, the environments manager and settings, the Incognito-space tab and the first-run 'Introducing HTTPie AI' dialog as transient states",
+     "390px passes on home, cli, blog, docs-desktop and /app",
+     "BLOCKED: sign-in and every account surface (named spaces, sync, shared collections), HTTPie AI generation, the response surface after a real Send, the desktop/CLI binaries, external redirects (/discord and social links)"
+    ],
+    "gaps": [
+     "the signed-in product (named spaces, sync, shared collections, the avatar and Sign-in prompts) is a boundary - measured, never entered",
+     "HTTPie AI 'Try it out' is an account/paid generation flow - the promo dialog is evidence, the action is not",
+     "the response surface after Send is uncaptured by policy: pressing Send issues a real request, so only the resting 'Not sent' pane is evidence",
+     "the desktop app and CLI binaries behind /download were never fetched or run",
+     "the Cmd+K DocSearch dialog was opened for the icon collection but never queried - search results are uncaptured",
+     "the newsletter inputs were measured and focused, never typed or submitted - the success/mail flow is absent",
+     "the Import/Migrate card, + Collection's Create dialog submit and 'Create environment' were never confirmed - the surfaces behind them are absent",
+     "the changelog post carries no fenced code block, so prose-pre is recorded as missing in components.md and docs-code-block is the syntax-block evidence instead",
+     "the docs -full shots are the top 42k px of ~76-96k px articles, a deliberate bound recorded in each sidecar",
+     "the Pie faces (Pie Headline/FK Screamer, PolyPie, Pie Monospace, Pie Symbols) are licensed woff2 loaded by the site and not shipped; crops show them, the style guide falls back to system fonts",
+     "pressed states are DevTools-forced (CSS.forcePseudoState), so any script-applied mousedown state is missing",
+     "prefers-reduced-motion is ignored by the product - raw/motion.json records the probe's verdict",
+     "/app is a desktop-first shell; the 390px read is a compressed variant documented as limited"
+    ],
+    "durationMin": 300,
+    "durationNote": "wall-clock across the capture session including route and DOM probes, kit adaptation, the stylesheet harvest, two screenshot passes, the measurement pass and the offline build"
+   }
   }
  ]
 }

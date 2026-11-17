@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_118 of 176 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_120 of 178 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -676,6 +676,13 @@ Access: signed out (every captured surface is public; the signed-in workspace, s
 Access: signed out (every captured surface is public: hashnode.com marketing/feed/posts/profiles/product sections and townhall.hashnode.com; /login and every post-auth surface never entered; engineering.hashnode.com returned 429, help./docs./blog./api./support./changelog./weekly. subdomains do not resolve, status.hashnode.com is a Better Stack page not the product - blocked boundaries, never claimed as captures; nothing was signed into, typed, searched, sent, bought or submitted; the only presses were local UI toggles - the search dialogs, Theme/More menus, FAQ and tab rows, the sidebar toggle, the phone nav button)
 - the signed-in product (/login and everything behind it - dashboard, editor, settings, the onboarding submit) is a boundary: the Sign in / Start your blog / Get Pro links were measured, never followed
 - five components read as absent on this pass (the profile sticky header, the Get Pro plan CTA, the deferred onboarding field, the blog article's pre wrapper, the blog search suggestion row) - recorded as missing, not measured as absent
+
+## [HTTPie](../systems/httpie) — `httpie`
+Access: signed out (every captured surface is public: httpie.io marketing/docs/blog/legal pages and /app, the HTTPie-for-Web client that runs unsigned in its 'Incognito space'; sign-in and every account surface - named spaces, sync, shared collections - never entered; the HTTPie AI 'Try it out' action never pressed; Send never pressed on /app - issuing a request is a network side effect, so the response pane stands at its resting 'Not sent' state; the desktop/CLI binaries behind /download never fetched; /pricing 404s and is kept as the product's not-found page; /discord redirects off-site; nothing was signed into, typed, searched, sent, bought or submitted; the only presses were local UI toggles - the ThemeToggle radios, the method and Incognito-space controls, the request and environments tabs, the Cmd+K DocSearch dialog opened for icons and closed unqueried)
+- the signed-in product (named spaces, sync, shared collections, the avatar and Sign-in prompts) is a boundary - measured, never entered
+- HTTPie AI 'Try it out' is an account/paid generation flow - the promo dialog is evidence, the action is not
+- the newsletter inputs were measured and focused, never typed or submitted - the success/mail flow is absent
+- the Import/Migrate card, + Collection's Create dialog submit and 'Create environment' were never confirmed - the surfaces behind them are absent
 
 ## Gate noted in access text only
 
