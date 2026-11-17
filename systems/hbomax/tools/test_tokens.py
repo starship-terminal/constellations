@@ -50,10 +50,10 @@ class TokensTest(unittest.TestCase):
 
     def test_scales_survived(self):
         core = {n: t["$value"] for n, t in token_checks.tokens_of(T["core"])}
-        self.assertEqual(core["border.corner.action.sm"], "2px")
-        self.assertEqual(core["border.corner.action.md"], "4px")
-        self.assertEqual(core["border.corner.action.lg"], "8px")
-        self.assertEqual(core["spacer.space.horizontal.far.sm"], "10px")
+        self.assertEqual(core["border.corner.action.sm.self"], "2px")
+        self.assertEqual(core["border.corner.action.md.self"], "4px")
+        self.assertEqual(core["border.corner.action.lg.self"], "8px")
+        self.assertEqual(core["spacer.space.horizontal.far.sm.self"], "10px")
         self.assertEqual(core["font.action.md.bp05.fontSize"], "20px")
         self.assertEqual(core["font.action.md.bp05.lineHeight"], 1.35)
         self.assertIn("Max Sans", core["font.family.primary"])

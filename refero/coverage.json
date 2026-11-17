@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 175,
-    "system_domains": 166,
-    "matched_domains": 136,
-    "missing_domains": 297,
+    "system_packages": 176,
+    "system_domains": 167,
+    "matched_domains": 137,
+    "missing_domains": 296,
     "system_domains_absent_from_catalog": 30
   },
   "matched": {
@@ -2236,6 +2236,23 @@
         }
       ]
     },
+    "hbomax.com": {
+      "catalog": [
+        {
+          "name": "HBO Max",
+          "domain": "hbomax.com",
+          "id": 337
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "hbomax",
+          "name": "HBO Max",
+          "url": "https://www.hbomax.com",
+          "name_match": false
+        }
+      ]
+    },
     "linear.app": {
       "catalog": [
         {
@@ -2580,13 +2597,6 @@
         "name": "Hashnode",
         "domain": "hashnode.com",
         "id": 194
-      }
-    ],
-    "hbomax.com": [
-      {
-        "name": "HBO Max",
-        "domain": "hbomax.com",
-        "id": 337
       }
     ],
     "headspace.com": [

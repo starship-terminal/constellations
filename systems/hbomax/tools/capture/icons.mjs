@@ -76,18 +76,25 @@ async function grab(p, tag) {
   }
   console.log(' ', tag, list.length, 'svgs,', fresh, 'new');
 }
-// The article scrolls in its own pane; the document itself stays at 0.
-// Both are walked so icons lower in the article or the sidebar are seen.
+// These pages scroll the document itself; inner-scroller panes are also
+// walked so icons lower in any scrollable region are seen. A page with no
+// inner scroller must still collect at every document step — grabbing only
+// inside the scroller loop meant normal routes contributed nothing.
 async function scrollAll(p, tag) {
-  const scs = await p.evaluate(() => {
+  const { docH, inners } = await p.evaluate(() => {
     const out = [];
     for (const el of document.querySelectorAll('div,main,aside,section,nav')) {
       const cs = getComputedStyle(el);
       if ((cs.overflowY === 'auto' || cs.overflowY === 'scroll') && el.scrollHeight > el.clientHeight + 100) out.push(el.scrollHeight);
     }
-    return out.slice(0, 3);
+    return { docH: document.documentElement.scrollHeight, inners: out.slice(0, 3) };
   });
-  for (const h of scs) {
+  const vh = await p.evaluate(() => innerHeight);
+  for (let y = 0; y < docH; y += Math.round(vh * 0.8)) {
+    await p.evaluate((y) => scrollTo(0, y), y);
+    await wait(p, 220); await grab(p, tag);
+  }
+  for (const h of inners) {
     for (let y = 0; y < h; y += 700) {
       await p.evaluate((y) => { const els = [...document.querySelectorAll('div,main,aside,section,nav')].filter((el) => { const cs = getComputedStyle(el); return (cs.overflowY === 'auto' || cs.overflowY === 'scroll') && el.scrollHeight > el.clientHeight + 100; }); els.forEach((el) => { el.scrollTop = y; }); }, y);
       await wait(p, 220); await grab(p, tag);

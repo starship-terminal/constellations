@@ -399,14 +399,14 @@ colors:
   color-utility-skeleton-fill-mid: "rgba(65, 65, 65, 0.6)"
   nav: "rgba(0, 0, 0, 0.7)"
   text: "#ffffff"
-  accentFill: "rgba(0, 0, 0, 0)"
+  accentFill: "#dddddd"
   accentText: "#000000"
   signinFill: "rgba(0, 0, 0, 0)"
-  measured-ctaHover: "rgba(0, 0, 0, 0)"
+  measured-ctaHover: "#dddddd"
   measured-signinHover: "rgba(0, 0, 0, 0)"
   measured-faqOpen: "#ffffff"
-  measured-chooseFill: "rgba(0, 0, 0, 0)"
-  measured-consentFill: "rgba(0, 0, 0, 0)"
+  measured-chooseFill: "#dddddd"
+  measured-consentFill: "#dddddd"
 components:
   color-component-inline-message-error:
     textColor: "{colors.color-component-inline-message-error-text}"

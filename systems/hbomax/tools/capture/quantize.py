@@ -83,6 +83,23 @@ for f in RAW.glob('*.part*.png'):
 stitched = {}
 for name, ps in parts.items():
     ps = sorted(ps)
+    # A tiled full-page shot is only published when the parts it left behind
+    # prove the capture finished: contiguous part numbers from 0, and clips
+    # that cover the whole captured region top to bottom (each sidecar records
+    # the document height and its own clip; the shooter caps at 8 tiles). A
+    # dead run's surviving tiles must not stitch into a shortened -full.png
+    # whose dimension check passes only against itself.
+    nums = [n for n, _ in ps]
+    metas = [sidecar_for(f) for _, f in ps]
+    clips = [(m.get('capture') or {}).get('clip') if m else None for m in metas]
+    doc_h = max((m.get('actual') or {}).get('documentSize', {}).get('height', 0) for m in metas) if all(metas) else 0
+    contiguous = (nums == list(range(len(ps))) and all(clips) and clips[0]['y'] == 0
+                  and all(clips[i]['y'] == clips[i - 1]['y'] + clips[i - 1]['height'] for i in range(1, len(clips))))
+    intended = min(doc_h, 8 * clips[0]['height']) if contiguous and doc_h else 0
+    complete = contiguous and (not intended or clips[-1]['y'] + clips[-1]['height'] >= intended)
+    if not complete:
+        print('skip', name, '- part tiles do not cover the recorded capture; not stitching')
+        continue
     ims = [Image.open(f).convert('RGB') for _, f in ps]
     sheet = Image.new('RGB', (ims[0].width, sum(i.height for i in ims)))
     y = 0

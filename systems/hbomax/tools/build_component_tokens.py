@@ -71,11 +71,14 @@ for name in sorted(n for n in R if n.startswith("--color_")):
     node[last] = {"var": name, "type": "color"}
 
 # ------------------------------------------------------------- dimensions
-# --spacer-space-horizontal-far-sm-bp-03 -> core.spacer.space.horizontal.far.sm.bp03
-# --border-corner-action-lg-bp-01        -> core.border.corner.action.lg.bp01
+# --spacer-space-horizontal-far-sm-bp-03 -> core.spacer.space.horizontal.far.sm.bp.03
+# --border-corner-action-lg-bp-01        -> core.border.corner.action.lg.bp.01
+# The -bp-NN suffix splits into its own group levels (bp.03): folding it into
+# the size key ("sm.bp03") would leave a literal period inside a token name,
+# which DTCG reserves as the path separator.
 for name in sorted(n for n in R if n.startswith("--spacer-") or n.startswith("--border-")):
     fam = "spacer" if name.startswith("--spacer-") else "border"
-    rest = re.sub(r"-bp-(\d+)$", r".bp\1", name[len("--" + fam + "-"):])
+    rest = name[len("--" + fam + "-"):]
     path = [fam] + rest.split("-")
     node, last = descend(SPEC["core"], path)
     node[last] = {"var": name, "type": "dimension"}
@@ -169,7 +172,7 @@ BY_VALUE = {}
 def collect(node, prefix=""):
     for k, v in node.items():
         if isinstance(v, dict) and "var" in v:
-            BY_VALUE.setdefault(norm_color(R[v["var"]]), prefix + k)
+            BY_VALUE.setdefault(norm_color(R[v["var"]]), []).append(prefix + k)
         elif isinstance(v, dict):
             collect(v, prefix + k + ".")
 
@@ -177,11 +180,28 @@ def collect(node, prefix=""):
 collect(SPEC["dark"]["color"], "color.")
 
 
+def pick_role(candidates, prop):
+    """Several dark roles can share one paint; prefer the path whose role
+    matches what was measured (a fill measurement should not cite a
+    border token)."""
+    is_fill = prop.endswith("backgroundColor") or prop.endswith(".bg") or "fill" in prop
+    if is_fill:
+        for c in candidates:
+            if ".fill." in c or c.endswith(".fill"):
+                return c
+    else:
+        for c in candidates:
+            if ".text." in c or c.endswith(".text"):
+                return c
+    return candidates[0]
+
+
 def role(path, comp, state, prop, desc):
     v = norm_color(stprop(comp, state, prop))
     if not v or v == "transparent":
         return
-    target = BY_VALUE.get(v)
+    cands = BY_VALUE.get(v, [])
+    target = pick_role(cands, prop) if cands else None
     leaf = {"type": "color", "description": desc}
     if target:
         leaf["value"] = "{%s}" % target
@@ -200,9 +220,11 @@ for path, comp, state, prop, desc in [
     ("page", "header-bar", "default", "ancestors.0.bg", "The ground the navbar sits on (body's own paint)."),
     ("nav", "header-bar", "default", "backgroundColor", "The navbar's painted surface."),
     ("text", "detail-title", "default", "color", "The display type's white."),
-    ("accentFill", "hero-cta", "default", "backgroundColor", "The 'Start Subscription' pill's fill."),
+    # The CTA pills paint their fill on ::before — the root box is transparent,
+    # so the role must read the painted pseudo-element layer.
+    ("accentFill", "hero-cta", "default", "::before.backgroundColor", "The 'Start Subscription' pill's fill (painted on ::before)."),
     ("accentText", "hero-cta", "default", "color", "Text on the primary pill."),
-    ("signinFill", "header-signin", "default", "backgroundColor", "The Sign In pill's fill."),
+    ("signinFill", "header-signin", "default", "::before.backgroundColor", "The Sign In pill's fill."),
     ("link", "footer-link", "default", "color", "Footer link colour."),
     ("focus", "header-nav-link", "focus-visible", "outlineColor", "The keyboard-focus ring where one is drawn."),
 ]:
@@ -215,12 +237,12 @@ for path, comp, state, prop, desc in [
 
 meas = SPEC["dark"].setdefault("measured", {})
 for comp, state, key, prop, desc in [
-    ("hero-cta", "hover", "ctaHover", "backgroundColor", "The CTA fill on hover."),
-    ("hero-cta", "pressed", "ctaPress", "backgroundColor", "The CTA fill under :active, forced with CDP forcePseudoState."),
+    ("hero-cta", "hover", "ctaHover", "::before.backgroundColor", "The CTA fill on hover (painted on ::before)."),
+    ("hero-cta", "pressed", "ctaPress", "::before.backgroundColor", "The CTA fill under :active, forced with CDP forcePseudoState."),
     ("header-signin", "hover", "signinHover", "backgroundColor", "The Sign In pill on hover."),
     ("faq-item", "opened", "faqOpen", "color", "The open FAQ item's text colour."),
-    ("plan-choose", "default", "chooseFill", "backgroundColor", "A plan card's Choose button fill."),
-    ("consent-accept", "default", "consentFill", "backgroundColor", "The consent modal's Accept fill."),
+    ("plan-choose", "default", "chooseFill", "::before.backgroundColor", "A plan card's Choose button fill (painted on ::before)."),
+    ("consent-accept", "default", "consentFill", "::before.backgroundColor", "The consent modal's Accept fill (painted on ::before)."),
 ]:
     try:
         v = norm_color(stprop(comp, state, prop))

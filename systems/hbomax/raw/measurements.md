@@ -71,7 +71,7 @@ Page: /sg/en. Selector: `a (text Sign In)`. States: default, hover, focus-visibl
 | Transition | background-color, color, opacity 0.2s cubic-bezier(0, 0, 0.34, 1) | = | = | = |
 | Cursor | pointer | = | = | = |
 | ::before | 136px x 44px, absolute, bg #000000 @ 0, radius 8px | = | = | = |
-| How | resting state | mouse hover over the element | keyboard focus (Shift+Tab, Tab) | CDP CSS.forcePseudoState(:active:hover) — no real press |
+| How | resting state | mouse hover over the element | focus failed | CDP CSS.forcePseudoState(:active:hover) — no real press |
 
 Crops: `header-signin-default.png`, `header-signin-hover.png`, `header-signin-focus-visible.png`, `header-signin-pressed.png`.
 
@@ -104,32 +104,6 @@ Page: /sg/en. Selector: `.carousel, [class*="carousel"], [class*="Carousel"]`. S
 
 Crops: `hero-carousel-default.png`.
 
-#### hero-slide
-
-Active carousel slide. The currently painted slide: backdrop image, title and meta row.
-
-Page: /sg/en. Selector: `.carousel-item.active, [class*="carousel"] [class*="active"]`. States: default.
-
-| Property | default |
-|---|---|
-| Size (w x h) | 261.83 x 98.63 |
-| Padding | 0px 56px |
-| Border | T: 10px solid #000000 @ 0; R: none; B: 10px solid #000000 @ 0; L: none |
-| Radius | 100% |
-| Background | transparent |
-| Box shadow | none |
-| Outline | none |
-| Font | Max Sans 56px/89.6px 100 |
-| Letter spacing | normal |
-| Colour | #ffffff |
-| Transition | all 0.5s ease-in-out |
-| Transform | matrix(0.9, 0, 0, 0.9, 0, 0) |
-| Cursor | pointer |
-| Painted layers | li.active 261.8x98.6 border T:10px solid / B:10px solid r 100% |
-| How | resting state |
-
-Crops: `hero-slide-default.png`.
-
 #### hero-cta
 
 Slide CTA ("Start Subscription"). The white pill call-to-action in the active slide — an auth.hbomax.com link, hovered and focused but never pressed.
@@ -153,7 +127,7 @@ Page: /sg/en. Selector: `a (text Start Subscription/Subscribe/Sign Up)`. States:
 | Cursor | pointer | = | = | - |
 | ::before | 140.406px x 44px, absolute, bg #dddddd, radius 8px | = | = | - |
 | Painted layers | a::before.sc-bfd2ca80-0.dDxZmm 140.406pxx44px bg #dddddd r 8px | = | = | - |
-| How | resting state | mouse hover over the element | keyboard focus (Shift+Tab, Tab) | - |
+| How | resting state | mouse hover over the element | focus failed | - |
 | Error | - | = | = | cdpSession.send: Protocol error (DOM.getNodeForLocation): No node found at given location |
 
 Crops: `hero-cta-default.png`, `hero-cta-hover.png`, `hero-cta-focus-visible.png`.
@@ -209,7 +183,30 @@ Page: /sg/en. Selector: `.carousel-indicators [data-bs-target], .carousel-indica
 | Painted layers | li 256.1x98.6 border T:10px solid / B:10px solid r 100% | = |
 | How | resting state | mouse hover over the element |
 
-Crops: `hero-indicator-default.png`.
+Crops: `hero-indicator-default.png`, `hero-indicator-hover.png`.
+
+#### hero-slide
+
+Active carousel slide. The currently painted slide: backdrop image, title and meta row.
+
+Page: /sg/en. Selector: `.carousel .carousel-item.active`. States: default.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 1096 x 430.97 |
+| Padding | 0px |
+| Border | none |
+| Radius | 0px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | Max Sans 18px/28.8px 400 |
+| Letter spacing | normal |
+| Colour | #ffffff |
+| Transition | all 0.5s ease-in-out |
+| How | resting state |
+
+Crops: `hero-slide-default.png`.
 
 ### Plans
 
@@ -281,7 +278,7 @@ Page: /sg/en. Selector: `button/a (text Choose/Select/Continue)`. States: defaul
 | Cursor | pointer | = | = | - |
 | ::before | 292.953px x 52px, absolute, bg #dddddd, radius 8px | = | = | - |
 | Painted layers | a::before.sc-bfd2ca80-0.dDxZmm 292.953pxx52px bg #dddddd r 8px | = | = | - |
-| How | resting state | mouse hover over the element | keyboard focus (Shift+Tab, Tab) | - |
+| How | resting state | mouse hover over the element | focus failed | - |
 | Error | - | = | = | cdpSession.send: Protocol error (DOM.getNodeForLocation): No node found at given location |
 
 Crops: `plan-choose-default.png`, `plan-choose-hover.png`, `plan-choose-focus-visible.png`.
@@ -338,7 +335,7 @@ Page: /sg/en. Selector: `.max-section-faq button, [class*="faq" i] button`. Stat
 | Cursor | pointer | = | = | = |
 | Icon | 24 x 24, colour #ffffff | = | = | = |
 | Ancestor paint | 1 up div.sc-24ae6219-0.iVmMkq bg #dddddd @ 0.1 | = | = | = |
-| How | resting state | mouse hover over the element | keyboard focus (Shift+Tab, Tab) | the item's own press — the answer expanded |
+| How | resting state | mouse hover over the element | focus failed | the item's own press — the answer expanded |
 
 Crops: `faq-item-default.png`, `faq-item-hover.png`, `faq-item-focus-visible.png`, `faq-item-opened.png`.
 
@@ -356,23 +353,24 @@ Not found on the page at capture time.
 
 Title card link. A poster card in a rail — a link to the title's detail page.
 
-Page: /sg/en. Selector: `a:has(img)`. States: default, hover, focus-visible.
+Page: /sg/en. Selector: `main a[href*="/show/"], main a[href*="/movie/"]`. States: default, hover, focus-visible.
 
 | Property | default | hover | focus-visible |
 |---|---|---|---|
-| Size (w x h) | 44.39 x 40 | = | = |
-| Padding | 4px 0px | = | = |
+| Size (w x h) | 350 x 141.05 | = | = |
+| Padding | 0px | = | = |
 | Border | none | = | = |
 | Radius | 0px | = | = |
 | Background | transparent | = | = |
 | Box shadow | none | = | = |
 | Outline | none | = | = |
-| Font | Max Sans 20px/20px 400 | = | = |
+| Font | Max Sans 18px/28.8px 400 | = | = |
 | Letter spacing | normal | = | = |
 | Colour | #ffffff | = | = |
+| Text node | p.sc-3477fb85-0.gpxYhN: Max Sans 14px/18.9px 600, #ffffff | = | = |
 | Transition | none | = | = |
 | Cursor | pointer | = | = |
-| How | resting state | mouse hover over the element | keyboard focus (Shift+Tab, Tab) |
+| How | resting state | mouse hover over the element | focus failed |
 
 Crops: `rail-card-default.png`, `rail-card-hover.png`, `rail-card-focus-visible.png`.
 
@@ -402,29 +400,31 @@ Page: /sg/en/movies. Selector: `[class*="shelf" i], [class*="rail" i], [class*="
 | Ancestor paint | 1 up main.w-100.min-vh-100 bg #000000 |
 | How | resting state |
 
-Crops: `browse-rail-section-default.png`.
+Crops: none.
 
 #### browse-rail-card
 
 Title card link. A poster card in a browse row — a link to the title's detail page.
 
-Page: /sg/en/movies. Selector: `a:has(img)`. States: default, hover, focus-visible.
+Page: /sg/en/movies. Selector: `main a[href*="/show/"], main a[href*="/movie/"]`. States: default, hover, focus-visible.
 
 | Property | default | hover | focus-visible |
 |---|---|---|---|
-| Size (w x h) | 44.39 x 40 | = | = |
-| Padding | 4px 0px | = | = |
+| Size (w x h) | 315 x 201.28 | = | = |
+| Padding | 0px | = | = |
 | Border | none | = | = |
 | Radius | 0px | = | = |
 | Background | transparent | = | = |
 | Box shadow | none | = | = |
 | Outline | none | = | = |
-| Font | Max Sans 20px/20px 400 | = | = |
+| Font | Max Sans 18px/28.8px 400 | = | = |
 | Letter spacing | normal | = | = |
-| Colour | #ffffff | = | = |
+| Colour | #ffffff @ 0.8 | = | = |
+| Text node | span.sc-72c045a5-22.gRkBms: Max Sans 11.834px/16.0942px 700, #ffffff @ 0.8 | = | = |
 | Transition | none | = | = |
 | Cursor | pointer | = | = |
-| How | resting state | mouse hover over the element | keyboard focus (Shift+Tab, Tab) |
+| Painted layers | div.sc-72c045a5-0.emcCTt 323.0x185.2 border T:2px solid / R:2px solid / B:2px solid / L:2px solid r 4px | = | = |
+| How | resting state | mouse hover over the element | focus failed |
 
 Crops: `browse-rail-card-default.png`, `browse-rail-card-hover.png`, `browse-rail-card-focus-visible.png`.
 
@@ -505,6 +505,95 @@ Crops: `lang-selector-default.png`, `lang-selector-hover.png`, `lang-selector-op
 
 Detail backdrop hero. The full-bleed backdrop area on a title detail page.
 
+Page: /sg/en/show/e6e7bad9-d48d-4434-b334-7c651ffc4bdf. Selector: `[class*="hero" i], [class*="backdrop" i], [class*="detail" i]:has(img)`. States: default.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 1425 x 842 |
+| Padding | 0px |
+| Border | none |
+| Radius | 0px |
+| Background | transparent |
+| Background image | url(…) |
+| Box shadow | none |
+| Outline | none |
+| Font | Max Sans 18px/28.8px 400 |
+| Letter spacing | normal |
+| Colour | #ffffff |
+| Text node | p.text-left: Max Sans 17px/27.2px 600, #ffffff |
+| Transition | none |
+| Icon | 20 x 20, colour #ffffff |
+| ::before | 1425px x 842px, absolute, bg #000000 @ 0 linear-gradient(#000000 @ 0.6 0%, #000000 @ 0 19.6%), radial-gradient(97.07% 97.07% at 60.4% -13.07%, #000000 @ 0 56.64%, radius 0px |
+| Painted layers | section::before.sc-678a58aa-0.bCQeII 1425pxx842px image linear-gradient(#000000 @ 0.6 0%, #000000 @ 0 19.6%), radial-gradient(97.07% 97.07% at 60.; a::before.sc-bfd2ca80-0.dDxZmm 195.812pxx52px bg #dddddd r 8px; a::before.sc-bfd2ca80-0.dDxZmm 206.547pxx52px bg #3e3e3e @ 0.75 border T:1px solid / R:1px solid / B:1px solid / L:1px solid r 8px |
+| Ancestor paint | 1 up main.w-100.min-vh-100 bg #000000 |
+| How | resting state |
+
+Crops: `detail-hero-default.png`.
+
+#### detail-title
+
+Title heading. The title's display heading on the detail page.
+
+Page: /sg/en/show/e6e7bad9-d48d-4434-b334-7c651ffc4bdf. Selector: `h1`. States: default.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 59.73 x 27.19 |
+| Padding | 0px |
+| Border | none |
+| Radius | 0px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | Max Sans 17px/27.2px 600 |
+| Letter spacing | normal |
+| Colour | #ffffff |
+| Text node | strong: Max Sans 17px/27.2px 700, #ffffff |
+| Transition | none |
+| How | resting state |
+
+Crops: `detail-title-default.png`.
+
+#### detail-meta
+
+Meta row. The year · rating · runtime/seasons line under the title.
+
+Page: /sg/en/show/e6e7bad9-d48d-4434-b334-7c651ffc4bdf. Selector: `[class*="meta" i], h1 ~ *`. States: .
+
+Not found on the page at capture time.
+
+#### detail-cta
+
+Detail "Start Subscription" CTA. The subscribe call-to-action on a title page — an auth link, hovered and focused only.
+
+Page: /sg/en/show/e6e7bad9-d48d-4434-b334-7c651ffc4bdf. Selector: `a (text Start Subscription/Subscribe)`. States: default, hover, focus-visible, pressed.
+
+| Property | default | hover | focus-visible | pressed |
+|---|---|---|---|---|
+| Size (w x h) | 140.41 x 44 | = | = | - |
+| Padding | 10px 18px | = | = | - |
+| Border | none | = | = | - |
+| Radius | 8px | = | = | - |
+| Background | transparent | = | = | - |
+| Box shadow | none | = | = | - |
+| Outline | none | = | = | - |
+| Font | Max Sans 18px/28.8px 400 | = | = | - |
+| Letter spacing | normal | = | = | - |
+| Colour | #000000 | = | = | - |
+| Text node | span.sc-bfd2ca80-3.hvTQkZ: Max Sans 15.385px/20.7698px 700, #000000 | = | = | - |
+| Transition | background-color, color, opacity 0.2s cubic-bezier(0, 0, 0.34, 1) | = | = | - |
+| Cursor | pointer | = | = | - |
+| ::before | 140.406px x 44px, absolute, bg #dddddd, radius 8px | = | = | - |
+| Painted layers | a::before.sc-bfd2ca80-0.dDxZmm 140.406pxx44px bg #dddddd r 8px | = | = | - |
+| How | resting state | mouse hover over the element | focus failed | - |
+| Error | - | = | = | cdpSession.send: Protocol error (DOM.getNodeForLocation): No node found at given location |
+
+Crops: `detail-cta-default.png`, `detail-cta-hover.png`, `detail-cta-focus-visible.png`.
+
+#### movie-detail-hero
+
+Detail backdrop hero. The full-bleed backdrop area on a title detail page.
+
 Page: /sg/en/movie/710798da-f811-40be-9ed9-3a7443e36278. Selector: `[class*="hero" i], [class*="backdrop" i], [class*="detail" i]:has(img)`. States: default.
 
 | Property | default |
@@ -527,9 +616,9 @@ Page: /sg/en/movie/710798da-f811-40be-9ed9-3a7443e36278. Selector: `[class*="her
 | Ancestor paint | 1 up main.w-100.min-vh-100 bg #000000 |
 | How | resting state |
 
-Crops: `detail-hero-default.png`.
+Crops: `movie-detail-hero-default.png`.
 
-#### detail-title
+#### movie-detail-title
 
 Title heading. The title's display heading on the detail page.
 
@@ -551,9 +640,9 @@ Page: /sg/en/movie/710798da-f811-40be-9ed9-3a7443e36278. Selector: `h1`. States:
 | Transition | none |
 | How | resting state |
 
-Crops: `detail-title-default.png`.
+Crops: `movie-detail-title-default.png`.
 
-#### detail-meta
+#### movie-detail-meta
 
 Meta row. The year · rating · runtime/seasons line under the title.
 
@@ -561,7 +650,7 @@ Page: /sg/en/movie/710798da-f811-40be-9ed9-3a7443e36278. Selector: `[class*="met
 
 Not found on the page at capture time.
 
-#### detail-cta
+#### movie-detail-cta
 
 Detail "Start Subscription" CTA. The subscribe call-to-action on a title page — an auth link, hovered and focused only.
 
@@ -584,95 +673,12 @@ Page: /sg/en/movie/710798da-f811-40be-9ed9-3a7443e36278. Selector: `a (text Star
 | Cursor | pointer | = | = | - |
 | ::before | 140.406px x 44px, absolute, bg #dddddd, radius 8px | = | = | - |
 | Painted layers | a::before.sc-bfd2ca80-0.dDxZmm 140.406pxx44px bg #dddddd r 8px | = | = | - |
-| How | resting state | mouse hover over the element | keyboard focus (Shift+Tab, Tab) | - |
+| How | resting state | mouse hover over the element | focus failed | - |
 | Error | - | = | = | cdpSession.send: Protocol error (DOM.getNodeForLocation): No node found at given location |
 
-Crops: `detail-cta-default.png`, `detail-cta-hover.png`, `detail-cta-focus-visible.png`.
-
-### Legal prose
-
-#### legal-h1
-
-Legal page title. The "Privacy Policy" heading.
-
-Page: /privacy. Selector: `main h1, h1`. States: default.
-
-| Property | default |
-|---|---|
-| Size (w x h) | 600 x 30 |
-| Padding | 0px |
-| Border | none |
-| Radius | 0px |
-| Background | transparent |
-| Box shadow | none |
-| Outline | none |
-| Font | sans 24px/30px 400 |
-| Letter spacing | normal |
-| Colour | #202124 |
-| Text node | span: sans 24px/30px 500, #202124 |
-| Transition | none |
-| How | resting state |
-
-Crops: `legal-h1-default.png`.
-
-#### legal-p
-
-Legal paragraph. A body paragraph of the policy.
-
-Page: /privacy. Selector: `main p, article p, p`. States: default.
-
-| Property | default |
-|---|---|
-| Size (w x h) | 228.52 x 20 |
-| Padding | 0px |
-| Border | none |
-| Radius | 0px |
-| Background | transparent |
-| Box shadow | none |
-| Outline | none |
-| Font | sans 15px/24px 400 |
-| Letter spacing | normal |
-| Colour | #5f6368 |
-| Transition | none |
-| How | resting state |
-
-Crops: `legal-p-default.png`.
-
-#### legal-link
-
-Legal inline link. A link inside the policy prose.
-
-Page: /privacy. Selector: `main p a, article a`. States: .
-
-Not found on the page at capture time.
+Crops: `movie-detail-cta-default.png`, `movie-detail-cta-hover.png`, `movie-detail-cta-focus-visible.png`.
 
 ### Cookie consent
-
-#### consent-dialog
-
-Consent modal. The cookie-preferences modal that opens over a fresh visit — measured as loaded, never accepted or rejected (closePromo hides it for the other groups).
-
-Page: /sg/en. Selector: `[role="dialog"], [class*="consent" i], [class*="cookie" i]`. States: default.
-
-| Property | default |
-|---|---|
-| Size (w x h) | 692 x 148.19 |
-| Padding | 0px 40px |
-| Border | T: none; R: none; B: 1px solid #ffffff @ 0.5; L: none |
-| Radius | 0px |
-| Background | transparent |
-| Box shadow | none |
-| Outline | none |
-| Font | Max Sans 18px/28.8px 400 |
-| Letter spacing | normal |
-| Colour | #ffffff |
-| Text node | p: Max Sans 18px/28.8px 400, #ffffff |
-| Transition | none |
-| Painted layers | div.sc-97e6fddb-4.fCEnZK 692.0x148.2 border B:1px solid; a 77.4x16.0 border T:2px solid / R:2px solid / B:2px solid / L:2px solid; a::before autox1.5px image linear-gradient(to top, #71b8f2 0px, #71b8f2 1px, #000000 @ 0 1px); a 115.6x16.0 border T:2px solid / R:2px solid / B:2px solid / L:2px solid; a::before autox1.5px image linear-gradient(to top, #71b8f2 0px, #71b8f2 1px, #000000 @ 0 1px) |
-| Ancestor paint | 1 up div.modal-content.border-0 bg #191919 |
-| How | resting state |
-
-Crops: `consent-dialog-default.png`.
 
 #### consent-accept
 
@@ -728,6 +734,31 @@ Page: /sg/en. Selector: `button (text Manage/Reject/Settings)`. States: default,
 | How | resting state | mouse hover over the element |
 
 Crops: `consent-manage-default.png`, `consent-manage-hover.png`.
+
+#### consent-dialog
+
+Consent modal. The cookie-preferences modal that opens over a fresh visit — measured as loaded, never accepted or rejected (closePromo hides it for the other groups).
+
+Page: /sg/en. Selector: `.modal, [role="dialog"], [class*="consent" i][class*="modal" i]`. States: default.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 1425 x 900 |
+| Padding | 0px |
+| Border | none |
+| Radius | 0px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | Max Sans 18px/28.8px 400 |
+| Letter spacing | normal |
+| Colour | #ffffff |
+| Text node | h3.sc-97e6fddb-1.dwmKEE: Max Sans 28px/37.8px 600, #ffffff |
+| Transition | none |
+| Painted layers | div.modal-content.border-0 692.0x358.0 bg #191919 r 4.8px; div.sc-97e6fddb-4.fCEnZK 692.0x148.2 border B:1px solid; a 77.4x16.0 border T:2px solid / R:2px solid / B:2px solid / L:2px solid; a::before autox1.5px image linear-gradient(to top, #71b8f2 0px, #71b8f2 1px, #000000 @ 0 1px); a 115.6x16.0 border T:2px solid / R:2px solid / B:2px solid / L:2px solid; a::before autox1.5px image linear-gradient(to top, #71b8f2 0px, #71b8f2 1px, #000000 @ 0 1px) |
+| How | resting state |
+
+Crops: `consent-dialog-default.png`.
 
 ### Site chrome (mobile)
 
@@ -799,11 +830,69 @@ Page: /sg/en. Selector: `a (text Start Subscription)`. States: default.
 
 Crops: `m-hero-cta-default.png`.
 
+### Legal prose
+
+#### legal-h1
+
+Legal page title. The "Privacy Policy" heading.
+
+Page: /privacy. Selector: `main h1, h1`. States: .
+
+Not found on the page at capture time.
+
+#### legal-p
+
+Legal paragraph. A body paragraph of the policy.
+
+Page: /privacy. Selector: `main p, article p, p`. States: default.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 1348 x 29.91 |
+| Padding | 0px 0px 0px 30px |
+| Border | none |
+| Radius | 0px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | Muli 17.6px/29.92px 400 |
+| Letter spacing | normal |
+| Colour | #000000 |
+| Transition | none |
+| How | resting state |
+
+Crops: `legal-p-default.png`.
+
+#### legal-link
+
+Legal inline link. A link inside the policy prose.
+
+Page: /privacy. Selector: `main p a, article a`. States: default, hover.
+
+| Property | default | hover |
+|---|---|---|
+| Size (w x h) | 111.92 x 22 | = |
+| Padding | 0px | = |
+| Border | none | = |
+| Radius | 0px | = |
+| Background | transparent | = |
+| Box shadow | none | = |
+| Outline | none | = |
+| Font | Muli 17.6px/29.92px 400 | = |
+| Letter spacing | normal | = |
+| Colour | #317ab9 | = |
+| Transition | none | = |
+| Cursor | pointer | = |
+| ::after | auto x auto, static, bg #000000 @ 0, radius 0px | = |
+| How | resting state | mouse hover over the element |
+
+Crops: `legal-link-default.png`, `legal-link-hover.png`.
+
 ## Transitions declared in the readable stylesheets
 
 www.hbomax.com serves its own CSS same-origin (/dotcom/generated and /dotcom/_next/static), so this list is the site's own transition declarations the CSSOM could read on each page.
 
-- /privacy: `box-shadow 150ms cubic-bezier(0.4, 0, 0.2, 1)`, `max-height 200ms ease-in, visibility 200ms, opacity 200ms linear 200ms`, `opacity 200ms linear, visibility 200ms, max-height 200ms ease-out 200ms`, `visibility 200ms, opacity 200ms linear 200ms`, `opacity 200ms linear, visibility 200ms`, `background-color 200ms ease-in-out`, `filter 1.5s cubic-bezier(0.65, 0.05, 0.36, 1), background-color 1.5s cubic-bezier(0.65, 0.`, `background-color 1.5s cubic-bezier(0.65, 0.05, 0.36, 1)`, `color 1.5s cubic-bezier(0.65, 0.05, 0.36, 1)`, `100ms cubic-bezier(0.4, 0, 1, 1)`, `transform 250ms cubic-bezier(0.4, 0, 1, 1) 400ms`
+- /privacy: `border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out`, `color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-ou`, `opacity 0.15s linear`, `height 0.35s`, `transform 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-i`, `background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-`, `width 0.6s`, `transform 0.3s ease-out`, `transform 0.6s ease-in-out`, `opacity 0.6s`, `opacity 0.15s`, `transform 420ms cubic-bezier(0.165, 0.84, 0.44, 1)`
 
 - /sg/en: `color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-ou`, `transform 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-i`, `background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-`, `border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out`, `transform 0.3s ease-out`, `transform 0.6s ease-in-out`, `opacity 0.6s`, `opacity 0.15s`, `background-color 0.5s ease-in-out`, `max-height 2s cubic-bezier(0, 1, 0, 1)`, `max-height 2s ease-in-out`, `0.3s`
 

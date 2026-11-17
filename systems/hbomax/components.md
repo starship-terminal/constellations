@@ -4,13 +4,13 @@ The discovery list of every page and view captured, then one entry per component
 
 **Where this was read.** `hbomax.com` redirects to `www.hbomax.com`, which serves the marketing site in the visitor's locale — the capture host resolved to Singapore, so everything below is the `/sg/en` locale (title 'HBO Max | Stream Series and Movies', canonical www.hbomax.com). Akamai's edge returns a 403 'Access Denied' page to headless Chromium, so every capture here ran headed under Xvfb — that block is documented as an access constraint, not worked around. The app itself (play.hbomax.com), sign-in and checkout (auth.hbomax.com) and the help centre (help.hbomax.com) are separate signed-in or out-of-scope surfaces, listed under Gaps.
 
-The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (37 components, 55 states). The page layouts are described in [patterns.md](patterns.md).
+The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (41 components, 62 states). The page layouts are described in [patterns.md](patterns.md).
 
 How to read an entry:
 
 - A colour is its value followed by the palette token in [tokens.json](tokens.json) with the same value, when there is one. Text is written family size/line-height weight, then its colour, for example `Inter 16/20.8 400, #000000`, and is read from the first text node inside the component.
 - The state table has one row per state that differs. The first row lists every value; later rows list only what changes. A state with the same values as the first is named in its label, for example "default (same: focus-visible)". When the root paints nothing, "Child layers" names the first nodes inside it that do.
-- Crops are images of the component read from the live page, in [components/crops/](components/crops) (51 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
+- Crops are images of the component read from the live page, in [components/crops/](components/crops) (57 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
 
 ## Discovery list
 
@@ -49,7 +49,7 @@ Screenshots are named `{page}-{theme}-{state}.png` where `{theme}` is the surfac
 
 Values that apply across entries, from the measurement files.
 
-**Focus.** 8 components were given a real keyboard focus. 1 draw an outline ring: `consent-accept` (on a child: 3px solid rgb(0, 0, 0) offset -6px). The other 7 show no measured change: `header-signin`, `hero-cta`, `plan-choose`, `faq-item`, `rail-card`, `detail-cta`, `browse-rail-card`.
+**Focus.** 1 components were given a real keyboard focus. 1 draw an outline ring: `consent-accept` (on a child: 3px solid rgb(0, 0, 0) offset -6px).
 
 **Pressed.** Forced with DevTools (`CSS.forcePseudoState` :active:hover). Nothing a real press would submit was ever pressed.
 
@@ -66,10 +66,10 @@ Values that apply across entries, from the measurement files.
 
 | Card | Size | Border | Radius | Background | Shadow | Padding |
 |---|---|---|---|---|---|---|
-| [Consent modal](#consent-modal) | 692 x 148.19 | B: 1px solid rgba(255, 255, 255, 0.5) `dark.color.action.neutral.border.selected` | - | transparent | none | 0px 40px |
-| [Title card link](#title-card-link) | 44.39 x 40 | - | - | transparent | none | 4px 0px |
+| [Consent modal](#consent-modal) | 1425 x 900 | - | - | transparent | none | 0 |
+| [Title card link](#title-card-link) | 350 x 141.05 | - | - | transparent | none | 0 |
 | [FAQ section](#faq-section) | 1425 x 391 | - | - | transparent | none | 0 |
-| [Active carousel slide](#active-carousel-slide) | 261.83 x 98.63 | T: 10px solid transparent; B: 10px solid transparent | 100% | transparent | none | 0px 56px |
+| [Active carousel slide](#active-carousel-slide) | 1096 x 430.97 | - | - | transparent | none | 0 |
 
 ## Components
 
@@ -79,7 +79,7 @@ The fixed shell every marketing page carries: the translucent navbar over the he
 
 #### Fixed navigation bar
 The translucent gradient bar over every page: HBO Max wordmark, nav links and the Sign In button. Read as `header-bar` on the home page.
-Read on 2026-11-17T04:25:57.481Z.
+Read on 2026-11-17T06:33:27.284Z.
 
 **Values (default).** size 1425 x 60; padding 8px 16px; background rgba(0, 0, 0, 0.7) `dark.color.component.button.utility.overlay.fill.base`; text Max Sans 15.38/20.76 700, #ffffff `dark.color.action.primary.fill.high`; transition background-color 0.5s ease-in-out.
 
@@ -97,13 +97,15 @@ Not on the page when it was captured.
 
 #### "Sign In" button
 The pill button that leads to auth.hbomax.com — hovered and focused only, never pressed (pressing would leave the public site). Read as `header-signin` on the home page.
-States read on 2026-11-17T04:25:58.677Z (default); 2026-11-17T04:26:01.053Z (hover); 2026-11-17T04:26:06.884Z (focus-visible); 2026-11-17T04:26:10.112Z (pressed).
+States read on 2026-11-17T06:33:28.329Z (default); 2026-11-17T06:33:30.290Z (hover); 2026-11-17T06:33:37.027Z (focus-visible); 2026-11-17T06:33:45.499Z (pressed).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 136 x 44; padding 10px 18px; radius 8px; background transparent; text Max Sans 15.38/20.76 700, #ffffff `dark.color.action.primary.fill.high`; transition background-color 0.2s cubic-bezier(0, 0, 0.34, 1), color 0.2s cubic-bezier(0, 0, 0.34, 1), opacity 0.2s cubic-bezier(0, 0, 0.34, 1); layers ::before rgba(0, 0, 0, 0) 0px none 1 |
+| default (same: hover, pressed) | size 136 x 44; padding 10px 18px; radius 8px; background transparent; text Max Sans 15.38/20.76 700, #ffffff `dark.color.action.primary.fill.high`; transition background-color 0.2s cubic-bezier(0, 0, 0.34, 1), color 0.2s cubic-bezier(0, 0, 0.34, 1), opacity 0.2s cubic-bezier(0, 0, 0.34, 1); layers ::before rgba(0, 0, 0, 0) 0px none 1 |
 
-!["Sign In" button default](components/crops/header-signin-default.png) !["Sign In" button hover](components/crops/header-signin-hover.png) !["Sign In" button focus-visible](components/crops/header-signin-focus-visible.png) !["Sign In" button pressed](components/crops/header-signin-pressed.png)
+**Focus not capturable.** A real keyboard focus could not be held on this element (`focus-visible` recorded `via: focus failed`), so its focus look is uncaptured — not measured as absent.
+
+!["Sign In" button default](components/crops/header-signin-default.png) !["Sign In" button hover](components/crops/header-signin-hover.png) !["Sign In" button pressed](components/crops/header-signin-pressed.png)
 
 ### Hero
 
@@ -111,7 +113,7 @@ The full-bleed autoplay carousel under the navbar (Bootstrap markup): backdrop a
 
 #### Hero carousel
 The full-bleed autoplay carousel under the navbar — backdrop art, title treatment, a "Start Subscription" CTA per slide. Read as `hero-carousel` on the home page.
-Read on 2026-11-17T04:26:18.831Z.
+Read on 2026-11-17T06:34:00.000Z.
 
 **Values (default).** size 1425 x 694.22; background transparent; text Max Sans 35/47.25 600, #ffffff `dark.color.action.primary.fill.high`; icon 14 x 26, #ffffff `dark.color.action.primary.fill.high`; layers li 256.1x98.6 T:10px solid / B:10px solid 100%; li 292.1x98.6 T:10px solid / B:10px solid 100%; li 410.6x98.6 T:10px solid / B:10px solid 100%; li.active 261.8x98.6 T:10px solid / B:10px solid 100%; li 244.0x98.6 T:10px solid / B:10px solid 100%; li 239.6x98.6 T:10px solid / B:10px solid 100%.
 
@@ -119,29 +121,23 @@ Child layers that carry the look: li 256.1x98.6 border 10px solid radius 100%; l
 
 ![Hero carousel default](components/crops/hero-carousel-default.png)
 
-#### Active carousel slide
-The currently painted slide: backdrop image, title and meta row. Read as `hero-slide` on the home page.
-Read on 2026-11-17T04:26:25.015Z.
-
-**Values (default).** size 261.83 x 98.63; padding 0px 56px; border T: 10px solid transparent; B: 10px solid transparent; radius 100%; background transparent; text Max Sans 56/89.6 100, #ffffff `dark.color.action.primary.fill.high`; transition all 0.5s ease-in-out; transform scale(0.9).
-
-![Active carousel slide default](components/crops/hero-slide-default.png)
-
 #### Slide CTA ("Start Subscription")
 The white pill call-to-action in the active slide — an auth.hbomax.com link, hovered and focused but never pressed. Read as `hero-cta` on the home page.
-States read on 2026-11-17T04:26:25.229Z (pressed); 2026-11-17T04:26:28.004Z (default); 2026-11-17T04:26:30.124Z (hover); 2026-11-17T04:26:36.450Z (focus-visible). `pressed` failed at capture (cdpSession.send: Protocol error (DOM.getNodeForLocation): No node found at given location).
+States read on 2026-11-17T06:34:10.364Z (pressed); 2026-11-17T06:34:17.025Z (default); 2026-11-17T06:34:19.573Z (hover); 2026-11-17T06:34:25.278Z (focus-visible). `pressed` failed at capture (cdpSession.send: Protocol error (DOM.getNodeForLocation): No node found at given location).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible) | size 140.41 x 44; padding 10px 18px; radius 8px; background transparent; text Max Sans 15.38/20.76 700, #000000 `dark.color.surface.low`; transition background-color 0.2s cubic-bezier(0, 0, 0.34, 1), color 0.2s cubic-bezier(0, 0, 0.34, 1), opacity 0.2s cubic-bezier(0, 0, 0.34, 1); layers ::before rgb(221, 221, 221) 0px none 1; a::before.sc-bfd2ca80-0.dDxZmm 140.406pxx44px rgb(221, 221, 221) 8px |
+| default (same: hover) | size 140.41 x 44; padding 10px 18px; radius 8px; background transparent; text Max Sans 15.38/20.76 700, #000000 `dark.color.surface.low`; transition background-color 0.2s cubic-bezier(0, 0, 0.34, 1), color 0.2s cubic-bezier(0, 0, 0.34, 1), opacity 0.2s cubic-bezier(0, 0, 0.34, 1); layers ::before rgb(221, 221, 221) 0px none 1; a::before.sc-bfd2ca80-0.dDxZmm 140.406pxx44px rgb(221, 221, 221) 8px |
+
+**Focus not capturable.** A real keyboard focus could not be held on this element (`focus-visible` recorded `via: focus failed`), so its focus look is uncaptured — not measured as absent.
 
 Child layers that carry the look: a::before 140.406pxx44px background #dddddd `dark.color.action.neutral.border.mid` radius 8px.
 
-![Slide CTA ("Start Subscription") default](components/crops/hero-cta-default.png) ![Slide CTA ("Start Subscription") hover](components/crops/hero-cta-hover.png) ![Slide CTA ("Start Subscription") focus-visible](components/crops/hero-cta-focus-visible.png)
+![Slide CTA ("Start Subscription") default](components/crops/hero-cta-default.png) ![Slide CTA ("Start Subscription") hover](components/crops/hero-cta-hover.png)
 
 #### Carousel "Next" control
 The arrow that advances the hero — "opened" is the slide reached by its own press (a local UI toggle). Read as `hero-next` on the home page.
-States read on 2026-11-17T04:26:38.005Z (default); 2026-11-17T04:26:40.236Z (hover); 2026-11-17T04:26:51.350Z (opened).
+States read on 2026-11-17T06:34:27.930Z (default); 2026-11-17T06:34:31.430Z (hover); 2026-11-17T06:34:37.153Z (opened).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -151,13 +147,21 @@ States read on 2026-11-17T04:26:38.005Z (default); 2026-11-17T04:26:40.236Z (hov
 
 #### Carousel indicator
 A slide indicator tab under the hero. Read as `hero-indicator` on the home page.
-States read on 2026-11-17T04:26:55.342Z (default); 2026-11-17T04:27:19.645Z (hover).
+States read on 2026-11-17T06:34:39.252Z (default); 2026-11-17T06:34:43.734Z (hover).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default (same: hover) | size 256.09 x 98.63; padding 0px 56px; border T: 10px solid transparent; B: 10px solid transparent; radius 100%; background transparent; text Max Sans 56/89.6 100, #ffffff `dark.color.action.primary.fill.high`; transition all 0.5s ease-in-out; transform scale(0.9); opacity 0.5 |
 
-![Carousel indicator default](components/crops/hero-indicator-default.png)
+![Carousel indicator default](components/crops/hero-indicator-default.png) ![Carousel indicator hover](components/crops/hero-indicator-hover.png)
+
+#### Active carousel slide
+The currently painted slide: backdrop image, title and meta row. Read as `hero-slide` on the home page.
+Read on 2026-11-17T06:34:09.360Z.
+
+**Values (default).** size 1096 x 430.97; background transparent; text Max Sans 18/28.8 400, #ffffff `dark.color.action.primary.fill.high`; transition all 0.5s ease-in-out.
+
+![Active carousel slide default](components/crops/hero-slide-default.png)
 
 ### Plans
 
@@ -165,7 +169,7 @@ The subscription section: the monthly/yearly billing toggle, the tier cards and 
 
 #### Plans section
 The "Choose your plan" section: billing toggle plus the tier cards. Read as `plan-section` on the home page.
-Read on 2026-11-17T04:27:52.679Z.
+Read on 2026-11-17T06:34:49.620Z.
 
 **Values (default).** size 1425 x 591; background transparent; image url(…); text Max Sans 64/86.4 700, #ffffff `dark.color.action.primary.fill.high`; transition opacity 1s ease, transform 1s ease; icon 83.45 x 59.98, #ffffff `dark.color.action.primary.fill.high`; layers ::before rgba(0, 0, 0, 0) 0px none 1.
 
@@ -183,15 +187,17 @@ Not on the page when it was captured.
 
 #### "Choose" plan button
 The button on a tier card that leads to checkout — hovered and focused only, never pressed. Read as `plan-choose` on the home page.
-States read on 2026-11-17T04:27:53.553Z (pressed); 2026-11-17T04:27:58.466Z (default); 2026-11-17T04:28:00.969Z (hover); 2026-11-17T04:28:02.680Z (focus-visible). `pressed` failed at capture (cdpSession.send: Protocol error (DOM.getNodeForLocation): No node found at given location).
+States read on 2026-11-17T06:34:49.631Z (pressed); 2026-11-17T06:34:50.820Z (default); 2026-11-17T06:34:57.440Z (hover); 2026-11-17T06:35:03.333Z (focus-visible). `pressed` failed at capture (cdpSession.send: Protocol error (DOM.getNodeForLocation): No node found at given location).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible) | size 292.95 x 52; padding 10px 30px; radius 8px; background transparent; text Max Sans 20/27 700, #000000 `dark.color.surface.low`; transition background-color 0.2s cubic-bezier(0, 0, 0.34, 1), color 0.2s cubic-bezier(0, 0, 0.34, 1), opacity 0.2s cubic-bezier(0, 0, 0.34, 1); layers ::before rgb(221, 221, 221) 0px none 1; a::before.sc-bfd2ca80-0.dDxZmm 292.953pxx52px rgb(221, 221, 221) 8px |
+| default (same: hover) | size 292.95 x 52; padding 10px 30px; radius 8px; background transparent; text Max Sans 20/27 700, #000000 `dark.color.surface.low`; transition background-color 0.2s cubic-bezier(0, 0, 0.34, 1), color 0.2s cubic-bezier(0, 0, 0.34, 1), opacity 0.2s cubic-bezier(0, 0, 0.34, 1); layers ::before rgb(221, 221, 221) 0px none 1; a::before.sc-bfd2ca80-0.dDxZmm 292.953pxx52px rgb(221, 221, 221) 8px |
+
+**Focus not capturable.** A real keyboard focus could not be held on this element (`focus-visible` recorded `via: focus failed`), so its focus look is uncaptured — not measured as absent.
 
 Child layers that carry the look: a::before 292.953pxx52px background #dddddd `dark.color.action.neutral.border.mid` radius 8px.
 
-!["Choose" plan button default](components/crops/plan-choose-default.png) !["Choose" plan button hover](components/crops/plan-choose-hover.png) !["Choose" plan button focus-visible](components/crops/plan-choose-focus-visible.png)
+!["Choose" plan button default](components/crops/plan-choose-default.png) !["Choose" plan button hover](components/crops/plan-choose-hover.png)
 
 ### FAQ
 
@@ -199,7 +205,7 @@ The 'Questions' accordion near the foot of the home page, opened by its own chev
 
 #### FAQ section
 The "Questions" accordion near the foot of the home page. Read as `faq-section` on the home page.
-Read on 2026-11-17T04:28:04.618Z.
+Read on 2026-11-17T06:35:09.101Z.
 
 **Values (default).** size 1425 x 391; background transparent; text Max Sans 20/27 700, #ffffff `dark.color.action.primary.fill.high`; icon 24 x 24, #ffffff `dark.color.action.primary.fill.high`; layers div.sc-24ae6219-0.iVmMkq 920.0x391.0 rgba(221, 221, 221, 0.1) 8px; div.sc-7be0c765-0.kYwFex 872.0x1.0 rgba(255, 255, 255, 0.3); div.sc-7be0c765-0.kYwFex 872.0x1.0 rgba(255, 255, 255, 0.3); div.sc-7be0c765-0.kYwFex 872.0x1.0 rgba(255, 255, 255, 0.3); div.sc-7be0c765-0.kYwFex 872.0x1.0 rgba(255, 255, 255, 0.3); div.sc-7be0c765-0.kYwFex 872.0x1.0 rgba(255, 255, 255, 0.3).
 
@@ -209,13 +215,15 @@ Child layers that carry the look: div 920x391 background rgba(221, 221, 221, 0.1
 
 #### FAQ accordion item
 One question row. "opened" is its own chevron press revealing the answer. Read as `faq-item` on the home page.
-States read on 2026-11-17T04:28:05.696Z (default); 2026-11-17T04:28:08.045Z (hover); 2026-11-17T04:28:19.912Z (focus-visible); 2026-11-17T04:28:33.887Z (opened).
+States read on 2026-11-17T06:35:11.026Z (default); 2026-11-17T06:35:13.359Z (hover); 2026-11-17T06:35:14.860Z (focus-visible); 2026-11-17T06:35:18.918Z (opened).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, opened) | size 920 x 55; padding 14px 24px; background transparent; text Max Sans 20/27 700, #ffffff `dark.color.action.primary.fill.high`; icon 24 x 24, #ffffff `dark.color.action.primary.fill.high` |
+| default (same: hover, opened) | size 920 x 55; padding 14px 24px; background transparent; text Max Sans 20/27 700, #ffffff `dark.color.action.primary.fill.high`; icon 24 x 24, #ffffff `dark.color.action.primary.fill.high` |
 
-![FAQ accordion item default](components/crops/faq-item-default.png) ![FAQ accordion item hover](components/crops/faq-item-hover.png) ![FAQ accordion item focus-visible](components/crops/faq-item-focus-visible.png) ![FAQ accordion item opened](components/crops/faq-item-opened.png)
+**Focus not capturable.** A real keyboard focus could not be held on this element (`focus-visible` recorded `via: focus failed`), so its focus look is uncaptured — not measured as absent.
+
+![FAQ accordion item default](components/crops/faq-item-default.png) ![FAQ accordion item hover](components/crops/faq-item-hover.png) ![FAQ accordion item opened](components/crops/faq-item-opened.png)
 
 ### Content rails
 
@@ -228,31 +236,37 @@ Not on the page when it was captured.
 
 #### Title card link
 A poster card in a rail — a link to the title's detail page. Read as `rail-card` on the home page.
-States read on 2026-11-17T04:28:34.748Z (default); 2026-11-17T04:28:36.548Z (hover); 2026-11-17T04:28:37.833Z (focus-visible).
+States read on 2026-11-17T06:35:34.456Z (default); 2026-11-17T06:35:37.926Z (hover); 2026-11-17T06:35:41.803Z (focus-visible).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible) | size 44.39 x 40; padding 4px 0px; background transparent; text Max Sans 20/20 400, #ffffff `dark.color.action.primary.fill.high` |
+| default (same: hover) | size 350 x 141.05; background transparent; text Max Sans 14/18.9 600, #ffffff `dark.color.action.primary.fill.high` |
 
-![Title card link default](components/crops/rail-card-default.png) ![Title card link hover](components/crops/rail-card-hover.png) ![Title card link focus-visible](components/crops/rail-card-focus-visible.png)
+**Focus not capturable.** A real keyboard focus could not be held on this element (`focus-visible` recorded `via: focus failed`), so its focus look is uncaptured — not measured as absent.
+
+![Title card link default](components/crops/rail-card-default.png) ![Title card link hover](components/crops/rail-card-hover.png)
 
 #### Content rail
 A horizontal "Discover" row of title cards. Read as `browse-rail-section` on the movies browse page.
-Read on 2026-11-17T04:31:19.187Z.
+Read on 2026-11-17T06:29:20.842Z.
 
 **Values (default).** size 1425 x 768; background transparent; image url(…); text Max Sans 48/57.6 600, #ffffff `dark.color.action.primary.fill.high`; layers ::before rgba(0, 0, 0, 0) 0px none 1.
 
-![Content rail default](components/crops/browse-rail-section-default.png)
+No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
 
 #### Title card link
 A poster card in a browse row — a link to the title's detail page. Read as `browse-rail-card` on the movies browse page.
-States read on 2026-11-17T04:31:20.707Z (default); 2026-11-17T04:31:22.661Z (hover); 2026-11-17T04:31:23.957Z (focus-visible).
+States read on 2026-11-17T06:29:48.725Z (default); 2026-11-17T06:29:51.783Z (hover); 2026-11-17T06:29:53.886Z (focus-visible).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible) | size 44.39 x 40; padding 4px 0px; background transparent; text Max Sans 20/20 400, #ffffff `dark.color.action.primary.fill.high` |
+| default (same: hover) | size 315 x 201.28; background transparent; text Max Sans 11.83/16.09 700, rgba(255, 255, 255, 0.8) `dark.color.general.border.low`; layers div.sc-72c045a5-0.emcCTt 323.0x185.2 T:2px solid / R:2px solid / B:2px solid / L:2px solid 4px |
 
-![Title card link default](components/crops/browse-rail-card-default.png) ![Title card link hover](components/crops/browse-rail-card-hover.png) ![Title card link focus-visible](components/crops/browse-rail-card-focus-visible.png)
+**Focus not capturable.** A real keyboard focus could not be held on this element (`focus-visible` recorded `via: focus failed`), so its focus look is uncaptured — not measured as absent.
+
+Child layers that carry the look: div 323x185.2 border 2px solid radius 4px.
+
+![Title card link default](components/crops/browse-rail-card-default.png) ![Title card link hover](components/crops/browse-rail-card-hover.png)
 
 ### Footer
 
@@ -270,7 +284,7 @@ Not on the page when it was captured.
 
 #### Legal link
 A link in the footer's legal row (Privacy Policy, Terms of Use). Read as `footer-legal-link` on the home page.
-States read on 2026-11-17T04:28:39.182Z (default); 2026-11-17T04:28:41.047Z (hover).
+States read on 2026-11-17T06:35:45.312Z (default); 2026-11-17T06:35:47.736Z (hover).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -280,7 +294,7 @@ States read on 2026-11-17T04:28:39.182Z (default); 2026-11-17T04:28:41.047Z (hov
 
 #### Language selector
 The "English" selector in the footer. "opened" is its own press listing the locales — a local UI toggle, no locale is switched. Read as `lang-selector` on the home page.
-States read on 2026-11-17T04:28:42.428Z (default); 2026-11-17T04:28:44.253Z (hover); 2026-11-17T04:29:02.630Z (opened).
+States read on 2026-11-17T06:35:50.448Z (default); 2026-11-17T06:35:52.933Z (hover); 2026-11-17T06:35:56.577Z (opened).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -293,37 +307,74 @@ States read on 2026-11-17T04:28:42.428Z (default); 2026-11-17T04:28:44.253Z (hov
 The backdrop hero, display title, meta row and subscribe CTA on the series and movie detail pages.
 
 #### Detail backdrop hero
-The full-bleed backdrop area on a title detail page. Read as `detail-hero` on the movie detail page.
-Read on 2026-11-17T04:30:44.214Z.
+The full-bleed backdrop area on a title detail page. Read as `detail-hero` on the series detail page.
+Read on 2026-11-17T06:27:39.259Z.
 
-**Values (default).** size 1425 x 842; background transparent; image url(…); text Max Sans 17/27.2 600, #ffffff `dark.color.action.primary.fill.high`; layers ::before rgba(0, 0, 0, 0) 0px none 1.
+**Values (default).** size 1425 x 842; background transparent; image url(…); text Max Sans 17/27.2 600, #ffffff `dark.color.action.primary.fill.high`; icon 20 x 20, #ffffff `dark.color.action.primary.fill.high`; layers ::before rgba(0, 0, 0, 0) 0px none 1.
 
 ![Detail backdrop hero default](components/crops/detail-hero-default.png)
 
 #### Title heading
-The title's display heading on the detail page. Read as `detail-title` on the movie detail page.
-Read on 2026-11-17T04:30:46.755Z.
+The title's display heading on the detail page. Read as `detail-title` on the series detail page.
+Read on 2026-11-17T06:27:40.167Z.
 
-**Values (default).** size 167.64 x 27.19; background transparent; text Max Sans 17/27.2 700, #ffffff `dark.color.action.primary.fill.high`.
+**Values (default).** size 59.73 x 27.19; background transparent; text Max Sans 17/27.2 700, #ffffff `dark.color.action.primary.fill.high`.
 
 ![Title heading default](components/crops/detail-title-default.png)
 
 #### Meta row
-The year · rating · runtime/seasons line under the title. Read as `detail-meta` on the movie detail page.
+The year · rating · runtime/seasons line under the title. Read as `detail-meta` on the series detail page.
 
 Not on the page when it was captured.
 
 #### Detail "Start Subscription" CTA
-The subscribe call-to-action on a title page — an auth link, hovered and focused only. Read as `detail-cta` on the movie detail page.
-States read on 2026-11-17T04:30:47.495Z (pressed); 2026-11-17T04:30:52.414Z (default); 2026-11-17T04:30:55.300Z (hover); 2026-11-17T04:30:56.532Z (focus-visible). `pressed` failed at capture (cdpSession.send: Protocol error (DOM.getNodeForLocation): No node found at given location).
+The subscribe call-to-action on a title page — an auth link, hovered and focused only. Read as `detail-cta` on the series detail page.
+States read on 2026-11-17T06:27:40.176Z (pressed); 2026-11-17T06:27:41.071Z (default); 2026-11-17T06:27:43.051Z (hover); 2026-11-17T06:27:44.399Z (focus-visible). `pressed` failed at capture (cdpSession.send: Protocol error (DOM.getNodeForLocation): No node found at given location).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible) | size 140.41 x 44; padding 10px 18px; radius 8px; background transparent; text Max Sans 15.38/20.76 700, #000000 `dark.color.surface.low`; transition background-color 0.2s cubic-bezier(0, 0, 0.34, 1), color 0.2s cubic-bezier(0, 0, 0.34, 1), opacity 0.2s cubic-bezier(0, 0, 0.34, 1); layers ::before rgb(221, 221, 221) 0px none 1; a::before.sc-bfd2ca80-0.dDxZmm 140.406pxx44px rgb(221, 221, 221) 8px |
+| default (same: hover) | size 140.41 x 44; padding 10px 18px; radius 8px; background transparent; text Max Sans 15.38/20.76 700, #000000 `dark.color.surface.low`; transition background-color 0.2s cubic-bezier(0, 0, 0.34, 1), color 0.2s cubic-bezier(0, 0, 0.34, 1), opacity 0.2s cubic-bezier(0, 0, 0.34, 1); layers ::before rgb(221, 221, 221) 0px none 1; a::before.sc-bfd2ca80-0.dDxZmm 140.406pxx44px rgb(221, 221, 221) 8px |
+
+**Focus not capturable.** A real keyboard focus could not be held on this element (`focus-visible` recorded `via: focus failed`), so its focus look is uncaptured — not measured as absent.
 
 Child layers that carry the look: a::before 140.406pxx44px background #dddddd `dark.color.action.neutral.border.mid` radius 8px.
 
-![Detail "Start Subscription" CTA default](components/crops/detail-cta-default.png) ![Detail "Start Subscription" CTA hover](components/crops/detail-cta-hover.png) ![Detail "Start Subscription" CTA focus-visible](components/crops/detail-cta-focus-visible.png)
+![Detail "Start Subscription" CTA default](components/crops/detail-cta-default.png) ![Detail "Start Subscription" CTA hover](components/crops/detail-cta-hover.png)
+
+#### Detail backdrop hero
+The full-bleed backdrop area on a title detail page. Read as `movie-detail-hero` on the movie detail page.
+Read on 2026-11-17T06:28:19.272Z.
+
+**Values (default).** size 1425 x 842; background transparent; image url(…); text Max Sans 17/27.2 600, #ffffff `dark.color.action.primary.fill.high`; layers ::before rgba(0, 0, 0, 0) 0px none 1.
+
+![Detail backdrop hero default](components/crops/movie-detail-hero-default.png)
+
+#### Title heading
+The title's display heading on the detail page. Read as `movie-detail-title` on the movie detail page.
+Read on 2026-11-17T06:28:20.359Z.
+
+**Values (default).** size 167.64 x 27.19; background transparent; text Max Sans 17/27.2 700, #ffffff `dark.color.action.primary.fill.high`.
+
+![Title heading default](components/crops/movie-detail-title-default.png)
+
+#### Meta row
+The year · rating · runtime/seasons line under the title. Read as `movie-detail-meta` on the movie detail page.
+
+Not on the page when it was captured.
+
+#### Detail "Start Subscription" CTA
+The subscribe call-to-action on a title page — an auth link, hovered and focused only. Read as `movie-detail-cta` on the movie detail page.
+States read on 2026-11-17T06:28:20.377Z (pressed); 2026-11-17T06:28:21.665Z (default); 2026-11-17T06:28:43.268Z (hover); 2026-11-17T06:28:45.143Z (focus-visible). `pressed` failed at capture (cdpSession.send: Protocol error (DOM.getNodeForLocation): No node found at given location).
+
+| State | Values (later rows list only what changes from the first row) |
+|---|---|
+| default (same: hover) | size 140.41 x 44; padding 10px 18px; radius 8px; background transparent; text Max Sans 15.38/20.76 700, #000000 `dark.color.surface.low`; transition background-color 0.2s cubic-bezier(0, 0, 0.34, 1), color 0.2s cubic-bezier(0, 0, 0.34, 1), opacity 0.2s cubic-bezier(0, 0, 0.34, 1); layers ::before rgb(221, 221, 221) 0px none 1; a::before.sc-bfd2ca80-0.dDxZmm 140.406pxx44px rgb(221, 221, 221) 8px |
+
+**Focus not capturable.** A real keyboard focus could not be held on this element (`focus-visible` recorded `via: focus failed`), so its focus look is uncaptured — not measured as absent.
+
+Child layers that carry the look: a::before 140.406pxx44px background #dddddd `dark.color.action.neutral.border.mid` radius 8px.
+
+![Detail "Start Subscription" CTA default](components/crops/movie-detail-cta-default.png) ![Detail "Start Subscription" CTA hover](components/crops/movie-detail-cta-hover.png)
 
 ### Legal prose
 
@@ -331,42 +382,34 @@ The privacy policy: headings, paragraphs and inline links.
 
 #### Legal page title
 The "Privacy Policy" heading. Read as `legal-h1` on the privacy policy page.
-Read on 2026-11-17T04:31:36.983Z.
 
-**Values (default).** size 600 x 30; background transparent; text sans 24/30 500, #202124.
-
-![Legal page title default](components/crops/legal-h1-default.png)
+Not on the page when it was captured.
 
 #### Legal paragraph
 A body paragraph of the policy. Read as `legal-p` on the privacy policy page.
-Read on 2026-11-17T04:31:37.802Z.
+Read on 2026-11-17T06:30:17.911Z.
 
-**Values (default).** size 228.52 x 20; background transparent; text sans 15/24 400, #5f6368.
+**Values (default).** size 1348 x 29.91; padding 0px 0px 0px 30px; background transparent; text Muli 17.6/29.92 400, #000000 `dark.color.surface.low`.
 
 ![Legal paragraph default](components/crops/legal-p-default.png)
 
 #### Legal inline link
 A link inside the policy prose. Read as `legal-link` on the privacy policy page.
+States read on 2026-11-17T06:30:19.160Z (default); 2026-11-17T06:30:21.205Z (hover).
 
-Not on the page when it was captured.
+| State | Values (later rows list only what changes from the first row) |
+|---|---|
+| default (same: hover) | size 111.92 x 22; background transparent; text Muli 17.6/29.92 400, #317ab9; layers ::after rgba(0, 0, 0, 0) 0px none 1 |
+
+![Legal inline link default](components/crops/legal-link-default.png) ![Legal inline link hover](components/crops/legal-link-hover.png)
 
 ### Cookie consent
 
 The consent modal that opens over a fresh visit — measured as loaded; Accept/Manage were styled, never pressed.
 
-#### Consent modal
-The cookie-preferences modal that opens over a fresh visit — measured as loaded, never accepted or rejected (closePromo hides it for the other groups). Read as `consent-dialog` on the home page.
-Read on 2026-11-17T04:32:04.045Z.
-
-**Values (default).** size 692 x 148.19; padding 0px 40px; border B: 1px solid rgba(255, 255, 255, 0.5) `dark.color.action.neutral.border.selected`; background transparent; text Max Sans 18/28.8 400, #ffffff `dark.color.action.primary.fill.high`; layers div.sc-97e6fddb-4.fCEnZK 692.0x148.2 B:1px solid; a 77.4x16.0 T:2px solid / R:2px solid / B:2px solid / L:2px solid; a::before autox1.5px; a 115.6x16.0 T:2px solid / R:2px solid / B:2px solid / L:2px solid; a::before autox1.5px.
-
-Child layers that carry the look: div 692x148.2 border 1px solid; a 77.4x16 border 2px solid; a::before autox1.5px image linear-gradient(to top, #71b8f2 `dark.color.action.link.text.base` 0px, #71b8f2 `dark.colo.
-
-![Consent modal default](components/crops/consent-dialog-default.png)
-
 #### "Accept All Cookies" button
 The primary consent button — styles only, never pressed. Read as `consent-accept` on the home page.
-States read on 2026-11-17T04:32:06.819Z (default); 2026-11-17T04:32:08.738Z (hover); 2026-11-17T04:32:10.230Z (focus-visible); 2026-11-17T04:32:11.519Z (pressed).
+States read on 2026-11-17T06:30:41.880Z (default); 2026-11-17T06:30:44.896Z (hover); 2026-11-17T06:30:51.940Z (focus-visible); 2026-11-17T06:30:54.853Z (pressed).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -380,7 +423,7 @@ Child layers that carry the look: button::before 152pxx52px background #dddddd `
 
 #### "Manage" / "Reject" control
 A secondary consent control — styles only, never pressed. Read as `consent-manage` on the home page.
-States read on 2026-11-17T04:32:12.398Z (default); 2026-11-17T04:32:14.213Z (hover).
+States read on 2026-11-17T06:30:58.377Z (default); 2026-11-17T06:31:00.761Z (hover).
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -390,6 +433,16 @@ States read on 2026-11-17T04:32:12.398Z (default); 2026-11-17T04:32:14.213Z (hov
 Child layers that carry the look: button::before 212pxx52px background #dddddd `dark.color.action.neutral.border.mid` radius 8px.
 
 !["Manage" / "Reject" control default](components/crops/consent-manage-default.png) !["Manage" / "Reject" control hover](components/crops/consent-manage-hover.png)
+
+#### Consent modal
+The cookie-preferences modal that opens over a fresh visit — measured as loaded, never accepted or rejected (closePromo hides it for the other groups). Read as `consent-dialog` on the home page.
+Read on 2026-11-17T06:30:39.467Z.
+
+**Values (default).** size 1425 x 900; background transparent; text Max Sans 28/37.8 600, #ffffff `dark.color.action.primary.fill.high`; layers div.modal-content.border-0 692.0x358.0 rgb(25, 25, 25) 4.8px; div.sc-97e6fddb-4.fCEnZK 692.0x148.2 B:1px solid; a 77.4x16.0 T:2px solid / R:2px solid / B:2px solid / L:2px solid; a::before autox1.5px; a 115.6x16.0 T:2px solid / R:2px solid / B:2px solid / L:2px solid; a::before autox1.5px.
+
+Child layers that carry the look: div 692x358 background #191919 `dark.color.surface.high` radius 4.8px; div 692x148.2 border 1px solid; a 77.4x16 border 2px solid.
+
+![Consent modal default](components/crops/consent-dialog-default.png)
 
 ### Site chrome (mobile)
 
@@ -425,15 +478,25 @@ Child layers that carry the look: a::before 136pxx40px background #dddddd `dark.
 
 ## Icons
 
-5 distinct inline-SVG icons were collected from the live pages into [icons/](icons) by `tools/capture/icons.mjs`, indexed in [icons/INDEX.tsv](icons/INDEX.tsv): a file is named from `tools/capture/icon-names.tsv` where its geometry hash is listed, else the label or class of the control it sits in, else `icon-<hash>`; colour is kept as `currentColor` wherever it matched the text colour, so each icon recolours from CSS `color` the way it does on the site. The icons are the product's artwork — borrow the set's grammar (sizes, stroke-vs-fill, naming roles), never the artwork itself.
+15 distinct inline-SVG icons were collected from the live pages into [icons/](icons) by `tools/capture/icons.mjs`, indexed in [icons/INDEX.tsv](icons/INDEX.tsv): a file is named from `tools/capture/icon-names.tsv` where its geometry hash is listed, else the label or class of the control it sits in, else `icon-<hash>`; colour is kept as `currentColor` wherever it matched the text colour, so each icon recolours from CSS `color` the way it does on the site. The icons are the product's artwork — borrow the set's grammar (sizes, stroke-vs-fill, naming roles), never the artwork itself.
 
 | Icon | Rendered sizes | View box | Style | Seen on | Next to |
 |---|---|---|---|---|---|
-| [english](icons/english-1ce3b9dd.svg) | 28x28 | 0 0 48 48 | fill | cookie modal; faq open; language list | English |
-| [english](icons/english-45f96d96.svg) | 24x24 | 0 0 48 48 | fill | cookie modal; faq open; language list | English |
-| [icon-463cd2fe](icons/icon-463cd2fe.svg) | 24x24 | 0 0 48 48 | fill | cookie modal; faq open; language list | What is the HBO Max & Viu Bundle? / What does the HBO Max &  |
-| [icon-5f45d4f3](icons/icon-5f45d4f3.svg) | 16x16 | 0 0 48 48 | fill | cookie modal; faq open; language list | Stream on 2 devices at once / Full HD video resolution / Wat |
-| [previous-carousel-slide](icons/previous-carousel-slide.svg) | 14x26 | 0 0 14 26 | stroke | cookie modal; faq open; language list | Previous Carousel Slide / Next Carousel Slide |
+| [english](icons/english-1ce3b9dd.svg) | 28x28 | 0 0 48 48 | fill | home; movies; shows; channel; show; collection; sitemap; corp-info; cookie modal; faq open; language list | English / Season 1 |
+| [english](icons/english-45f96d96.svg) | 24x24 | 0 0 48 48 | fill | home; movies; shows; channel; show; collection; sitemap; corp-info; cookie modal; faq open; language list | English |
+| [icon-5f45d4f3](icons/icon-5f45d4f3.svg) | 16x16 | 0 0 48 48 | fill | home; show; movie; cookie modal; faq open; language list | Stream on 2 devices at once / Full HD video resolution / Wat |
+| [icon-463cd2fe](icons/icon-463cd2fe.svg) | 24x24 | 0 0 48 48 | fill | home; cookie modal; faq open; language list | What is the HBO Max & Viu Bundle? / What does the HBO Max &  |
+| [previous-carousel-slide](icons/previous-carousel-slide.svg) | 14x26 | 0 0 14 26 | stroke | home; cookie modal; faq open; language list | Previous Carousel Slide / Next Carousel Slide |
+| [icon-afd3d768](icons/icon-afd3d768.svg) | 28x28 | 0 0 48 48 | fill | movies; shows; channel; collection |  |
+| [icon-b0dca436](icons/icon-b0dca436.svg) | 28x28 | 0 0 48 48 | fill | movies; shows; channel; collection |  |
+| [icon-40a6cc80](icons/icon-40a6cc80.svg) | 61x25 | 0 0 240 98.57 | fill | channel |  |
+| [icon-4b9f7d59](icons/icon-4b9f7d59.svg) | 59x35 | 0 0 184 109.14 | fill | channel |  |
+| [icon-4ca9a6de](icons/icon-4ca9a6de.svg) | 63x32 | 0 0 200 101.27 | fill | channel |  |
+| [icon-4f3cdfa8](icons/icon-4f3cdfa8.svg) | 42x42 | 0 0 160 159.94 | fill | channel |  |
+| [watch-trailer](icons/watch-trailer.svg) | 20x20 | 0 0 48 48 | fill | show | Watch Trailer |
+| [icon-7509c25a](icons/icon-7509c25a.svg) | 63x30 | 0 0 184.5 88.5 | fill | channel |  |
+| [icon-d3459f78](icons/icon-d3459f78.svg) | 46x46 | 0 0 160 160 | fill | channel |  |
+| [icon-d96e4be1](icons/icon-d96e4be1.svg) | 42x25 | 0 0 150 88.24 | fill | channel |  |
 
 ## Gaps
 

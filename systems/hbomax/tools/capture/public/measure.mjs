@@ -106,7 +106,9 @@ const HERO = [
     sel: '.carousel, [class*="carousel"], [class*="Carousel"]', find: (p) => p.locator('.carousel, [class*="carousel"], [class*="Carousel"]').filter({ visible: true }).first(), states: ['default'] },
   { key: 'hero-slide', group: 'Hero', title: 'Active carousel slide',
     desc: 'The currently painted slide: backdrop image, title and meta row.',
-    sel: '.carousel-item.active, [class*="carousel"] [class*="active"]', find: (p) => p.locator('.carousel-item.active, [class*="carousel"] [class*="active"]').filter({ visible: true }).first(), states: ['default'] },
+    // Scoped to the Bootstrap hero carousel: a bare [class*="active"] also
+    // matches the language dropdown's li.active, which is not the slide.
+    sel: '.carousel .carousel-item.active', find: (p) => p.locator('.carousel .carousel-item.active').filter({ visible: true }).first(), states: ['default'] },
   { key: 'hero-cta', group: 'Hero', title: 'Slide CTA ("Start Subscription")',
     desc: 'The white pill call-to-action in the active slide — an auth.hbomax.com link, hovered and focused but never pressed.',
     sel: 'a (text Start Subscription|Subscribe|Sign Up)', find: async (p) => await domFind(p, /start subscription|subscribe|sign up/i, { sel: 'a', tag: 'hc', minW: 60, minH: 24 }), states: ['default', 'hover', 'focus-visible', 'pressed'] },
@@ -114,7 +116,7 @@ const HERO = [
     desc: 'The arrow that advances the hero — "opened" is the slide reached by its own press (a local UI toggle).',
     sel: '.carousel-control-next, [class*="carousel"] [aria-label*="next" i], [class*="carousel"] button:last-of-type',
     find: (p) => p.locator('.carousel-control-next, [aria-label*="next" i]').filter({ visible: true }).first(),
-    states: ['default', 'hover', { name: 'opened', via: 'the carousel Next arrow\'s own press — the slide advanced one step', fn: async (loc) => { await loc.click({ timeout: 5000 }).catch(() => {}); await page.waitForTimeout(1400); } }] },
+    states: ['default', 'hover', { name: 'opened', via: 'the carousel Next arrow\'s own press — the slide advanced one step', fn: async (loc) => { await loc.click({ timeout: 5000, force: true }); await page.waitForTimeout(1400); } }] },
   { key: 'hero-indicator', group: 'Hero', title: 'Carousel indicator',
     desc: 'A slide indicator tab under the hero.',
     sel: '.carousel-indicators [data-bs-target], .carousel-indicators li, .carousel-indicators button', find: (p) => p.locator('.carousel-indicators li, .carousel-indicators button, [data-bs-target]').filter({ visible: true }).first(), states: ['default', 'hover'] },
@@ -133,7 +135,7 @@ const PLANS = [
     desc: 'The monthly/yearly switch above the cards. "opened" is the prices repainted by its own press — the plan-yearly screenshot shows the result.',
     sel: '[class*="toggle" i] button, [role="switch"], [class*="billing" i] button',
     find: (p) => p.locator('[role="switch"], [class*="toggle" i] button, [class*="billing" i] button').filter({ visible: true }).first(),
-    states: ['default', 'hover', { name: 'opened', via: 'the billing toggle\'s own press — the card prices repainted', fn: async (loc) => { await loc.click({ timeout: 5000 }).catch(() => {}); await page.waitForTimeout(900); } }] },
+    states: ['default', 'hover', { name: 'opened', via: 'the billing toggle\'s own press — the card prices repainted', fn: async (loc) => { await loc.click({ timeout: 5000, force: true }); await page.waitForTimeout(900); } }] },
   { key: 'plan-choose', group: 'Plans', title: '"Choose" plan button',
     desc: 'The button on a tier card that leads to checkout — hovered and focused only, never pressed.',
     sel: 'button|a (text Choose|Select|Continue)', find: async (p) => await domFind(p, /choose|select|get started/i, { sel: 'button, a', tag: 'ch', minW: 60, minH: 24 }), states: ['default', 'hover', 'focus-visible', 'pressed'] },
@@ -148,7 +150,7 @@ const FAQ = [
     desc: 'One question row. "opened" is its own chevron press revealing the answer.',
     sel: '.max-section-faq button, [class*="faq" i] button',
     find: (p) => p.locator('.max-section-faq button, [class*="faq" i] button').filter({ visible: true }).first(),
-    states: ['default', 'hover', 'focus-visible', { name: 'opened', via: 'the item\'s own press — the answer expanded', fn: async (loc) => { await loc.click({ timeout: 5000 }).catch(() => {}); await page.waitForTimeout(900); } }] },
+    states: ['default', 'hover', 'focus-visible', { name: 'opened', via: 'the item\'s own press — the answer expanded', fn: async (loc) => { await loc.click({ timeout: 5000, force: true }); await page.waitForTimeout(900); } }] },
 ];
 
 // A title card inside a "Discover" rail and the rail itself.
@@ -158,7 +160,9 @@ const RAIL = [
     sel: '[class*="shelf" i], [class*="rail" i], [class*="carousel" i]:below(:text("Discover"))', find: (p) => p.locator('section').filter({ hasText: /discover|trending|popular/i }).first(), states: ['default'] },
   { key: 'rail-card', group: 'Content rails', title: 'Title card link',
     desc: 'A poster card in a rail — a link to the title\'s detail page.',
-    sel: 'a:has(img)', find: (p) => p.locator('main a:has(img), [class*="shelf" i] a, [class*="card" i]').filter({ visible: true }).first(), states: ['default', 'hover', 'focus-visible'] },
+    // Poster cards are the links into /show/… and /movie/… detail pages;
+    // a bare a:has(img) also matches the navbar's a.navbar-brand logo link.
+    sel: 'main a[href*="/show/"], main a[href*="/movie/"]', find: (p) => p.locator('main a[href*="/show/"], main a[href*="/movie/"]').filter({ visible: true }).first(), states: ['default', 'hover', 'focus-visible'] },
 ];
 
 // The footer: link columns, legal row, the language selector.
@@ -176,7 +180,7 @@ const FOOTER = [
     desc: 'The "English" selector in the footer. "opened" is its own press listing the locales — a local UI toggle, no locale is switched.',
     sel: '[class*="language" i] button, footer button:has-text("English")',
     find: (p) => p.locator('[class*="language" i] button, footer button').filter({ hasText: /english/i }).filter({ visible: true }).first(),
-    states: ['default', 'hover', { name: 'opened', via: 'the selector\'s own press — the locale list opened, nothing chosen', fn: async (loc) => { await loc.click({ timeout: 5000 }).catch(() => {}); await page.waitForTimeout(1100); } }] },
+    states: ['default', 'hover', { name: 'opened', via: 'the selector\'s own press — the locale list opened, nothing chosen', fn: async (loc) => { await loc.click({ timeout: 5000, force: true }); await page.waitForTimeout(1100); } }] },
 ];
 
 // Detail-page parts: the backdrop hero, the title, the meta row, the CTA.
@@ -211,7 +215,9 @@ const CONSENT_SETUP = async (p) => { await p.waitForTimeout(4000); };
 const CONSENT = [
   { key: 'consent-dialog', group: 'Cookie consent', title: 'Consent modal',
     desc: 'The cookie-preferences modal that opens over a fresh visit — measured as loaded, never accepted or rejected (closePromo hides it for the other groups).',
-    sel: '[role="dialog"], [class*="consent" i], [class*="cookie" i]', find: (p) => p.locator('[role="dialog"], [class*="consent" i], [class*="cookie" i]').filter({ visible: true }).last(), states: ['default'] },
+    // The Bootstrap .modal is the dialog itself; a bare [class*="consent" i]
+    // first matches inner containers (consent-description-container).
+    sel: '.modal, [role="dialog"], [class*="consent" i][class*="modal" i]', find: (p) => p.locator('.modal, [role="dialog"], [class*="consent" i][class*="modal" i]').filter({ visible: true }).last(), states: ['default'] },
   { key: 'consent-accept', group: 'Cookie consent', title: '"Accept All Cookies" button',
     desc: 'The primary consent button — styles only, never pressed.',
     sel: 'button (text Accept)', find: async (p) => await domFind(p, /accept/i, { sel: 'button', tag: 'ac', minW: 60, minH: 24 }), states: ['default', 'hover', 'focus-visible', 'pressed'] },
@@ -244,7 +250,10 @@ const MOBILE = [
 const GROUPS = {
   home: { page: 'home', specs: [...CHROME, ...HERO, ...PLANS, ...FAQ, ...RAIL, ...FOOTER] },
   detail: { page: 'show', specs: DETAIL },
-  'detail-movie': { page: 'movie', specs: DETAIL },
+  // The movie group gets its own key prefix — sharing detail-* keys would let
+  // a failed movie rerun leave the earlier show readings under the movie's
+  // page/url, and a successful one would overwrite the show's evidence.
+  'detail-movie': { page: 'movie', specs: DETAIL.map((s) => ({ ...s, key: 'movie-' + s.key })) },
   movies: { page: 'movies', specs: RAIL.map((s) => ({ ...s, key: 'browse-' + s.key, desc: s.desc.replace('rail', 'browse row') })) },
   legal: { page: 'privacy', specs: LEGAL },
   consent: { page: 'home', promo: 'keep', setup: CONSENT_SETUP, specs: CONSENT },
@@ -276,6 +285,22 @@ for (const [key, g] of Object.entries(GROUPS)) {
   const url = BASE + URLS[g.page];
   log('open', key, g.mobile ? '(mobile)' : '', url);
   await open(page, url, { wait: 7000, promo: g.promo ?? 'close' });
+  // A Chromium network-error page must never be measured: it paints its own
+  // h1/p ("Your connection was interrupted", "A network change was detected")
+  // which would be committed as the site's legal prose. Reload once; if the
+  // error persists the group's specs are left absent, not filled with the
+  // error page's text.
+  const ERR_TEXT = /your connection was interrupted|a network change was detected|this site can.t be reached/i;
+  if (ERR_TEXT.test(await page.evaluate(() => document.body?.innerText || '').catch(() => ''))) {
+    log('  error page detected — reloading', url);
+    await page.reload({ waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
+    await page.waitForTimeout(7000);
+    if (ERR_TEXT.test(await page.evaluate(() => document.body?.innerText || '').catch(() => ''))) {
+      log('  error page persists — group skipped');
+      await page.close().catch(() => {});
+      continue;
+    }
+  }
   await page.addStyleTag({ content: '*{caret-color:transparent!important}' });
   if (g.setup) await g.setup(page).catch((e) => log('  setup failed:', e.message));
   // the readable sheets' transition declarations, for measurements.md
@@ -307,16 +332,16 @@ for (const [key, g] of Object.entries(GROUPS)) {
     const hasStates = () => Object.values(comp.states ?? {}).some((s) => s && s.style);
     try { loc = await spec.find(page); } catch (e) {
       log(' ', spec.key, 'find failed:', e.message.split('\n')[0]);
-      if (hasStates()) comp.rerunMiss = e.message.split('\n')[0]; else comp.missing = true;
+      if (hasStates()) comp.recaptureMissed = e.message.split('\n')[0]; else comp.missing = true;
       continue;
     }
     if (!(await loc.count()) || !(await loc.first().isVisible().catch(() => false))) {
       log(' ', spec.key, 'absent');
-      if (hasStates()) comp.rerunMiss = 'absent on this run'; else comp.missing = true;
+      if (hasStates()) comp.recaptureMissed = 'absent on this run'; else comp.missing = true;
       continue;
     }
     delete comp.missing;
-    delete comp.rerunMiss;
+    delete comp.recaptureMissed;
     loc = loc.first();
     for (const st of spec.states) {
       const name = typeof st === 'string' ? st : (st.name || 'opened');
@@ -328,7 +353,15 @@ for (const [key, g] of Object.entries(GROUPS)) {
         await reset();
         let viaText = 'resting state';
         if (st === 'hover') { await hover(loc); viaText = via.hover; }
-        else if (st === 'focus-visible') { await kbFocus(loc); viaText = via['focus-visible']; }
+        else if (st === 'focus-visible') {
+          await kbFocus(loc);
+          // A reading is only a focus state if the keyboard pass actually
+          // landed on the target — otherwise it is recorded as a failed
+          // attempt (build_components_md treats 'focus failed' as not a
+          // state, so a miss can never read as a measured absence).
+          const focused = await loc.evaluate((el) => el === document.activeElement || el.contains(document.activeElement)).catch(() => false);
+          viaText = focused ? via['focus-visible'] : 'focus failed';
+        }
         else if (st === 'focused') { await loc.click({ timeout: 3000 }).catch(() => loc.evaluate((el) => el.focus())); await page.waitForTimeout(400); viaText = 'the field clicked into'; }
         else if (st === 'pressed') { pressed = await pressOn(loc); viaText = via.pressed; }
         else if (st === 'dark') { if (!(await setTheme(page, 'dark'))) { log(' ', spec.key, name, 'dark never painted — skipped'); continue; } darkOn = true; viaText = via.dark; }

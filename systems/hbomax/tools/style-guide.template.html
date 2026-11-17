@@ -14,7 +14,7 @@
   --sg-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
 }
 * { box-sizing: border-box; }
-body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--page, #f5f5f7); background: var(--nav, #000000); }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--page, #f5f5f7); background: var(--color-surface-low, #000000); }
 main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
 h1 { font: 800 40px/1.2 var(--sg-display); margin: 0 0 4px; letter-spacing: -0.02em; }
 h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .1em; text-transform: uppercase; color: var(--link, #71b8f2); margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--color-utility-border-base, #3a3a3a); }
@@ -33,7 +33,7 @@ code { font-family: var(--sg-mono); font-size: .9em; }
 .kv span { color: var(--color-action-neutral-text-low, rgba(255,255,255,.65)); }
 /* ---- site mock ---- */
 .mock { border: 1px solid var(--color-utility-border-base, #3a3a3a); border-radius: 16px; overflow: hidden; background: #000; }
-.navbar { display: flex; align-items: center; gap: 22px; height: 64px; padding: 0 24px; font-size: 14px; background: linear-gradient(180deg, rgba(0,0,0,.85), rgba(0,0,0,0)); }
+.navbar { display: flex; align-items: center; gap: 22px; height: 60px; padding: 0 24px; font-size: 14px; background: linear-gradient(180deg, rgba(0,0,0,.85), rgba(0,0,0,0)); }
 .navbar .wm { font: 800 17px/1 var(--sg-display); letter-spacing: .08em; color: #fff; }
 .navbar .sp { flex: 1; }
 .navbar .nl { color: var(--color-action-neutral-text-mid, rgba(255,255,255,.8)); font-size: 13px; }
@@ -102,6 +102,10 @@ table.cmp td, table.cmp th { border: 1px solid var(--color-utility-border-base, 
   <h2 class="sh">Measured extras</h2>
   <div id="meas-out" class="kv"></div>
 
+  <h2 class="sh">Motion</h2>
+  <p class="lead">Durations, easings and transitions read live by the motion probe, including what <code>prefers-reduced-motion</code> changes.</p>
+  <div id="motion-out" class="kv"></div>
+
   <h2 class="sh">How the values were read</h2>
   <table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the site's own design-token stylesheet and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed and opened states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
 </main>
@@ -151,6 +155,12 @@ const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) 
   let m = '';
   for (const [n, t] of flat(TOK.dark && TOK.dark.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
   $('#meas-out').innerHTML = m;
+})();
+
+(function motion() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core && TOK.core.motion || {}, 'motion.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#motion-out').innerHTML = m || '<i>no motion tokens emitted</i>';
 })();
 </script>
 </body>

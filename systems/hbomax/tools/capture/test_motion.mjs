@@ -324,6 +324,10 @@ test('motion-probe finds its package folder when the path has a space', { skip: 
   const cap = path.join(pkg, 'tools', 'capture');
   fs.mkdirSync(cap, { recursive: true });
   for (const f of ['motion-probe.mjs', 'motion.mjs', 'safe-url.mjs']) fs.copyFileSync(path.join(here, f), path.join(cap, f));
+  // motion-probe.mjs imports ./public/lib.mjs (closePromo/patch/UA) — copy the
+  // product helpers too or the fixture fails on the missing module.
+  fs.mkdirSync(path.join(cap, 'public'), { recursive: true });
+  fs.copyFileSync(path.join(here, 'public', 'lib.mjs'), path.join(cap, 'public', 'lib.mjs'));
   fs.writeFileSync(path.join(pkg, 'page.html'), FIXTURE);
   execFileSync(process.execPath, [path.join(cap, 'motion-probe.mjs'), '--urls', 'file://' + path.join(pkg, 'page.html').replace(/ /g, '%20')], { env: { ...process.env, PLAYWRIGHT: PW }, timeout: 120000, stdio: 'pipe' });
   assert.ok(fs.existsSync(path.join(pkg, 'raw', 'motion.json')));

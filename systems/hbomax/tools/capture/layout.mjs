@@ -48,7 +48,9 @@ function measure() {
   const main = document.querySelector('main') || document.body;
   out.main = { el: tag(main), ...R(main) };
   out.sections = [...main.querySelectorAll('section, [class*="-section"], [class*="section--"], table, .docs-search-modal')].filter((e) => vis(e) && R(e).w > 300).map((e) => { const h = e.querySelector('h1,h2,h3'); return { el: tag(e), bg: getComputedStyle(e).backgroundColor, ...R(e), heading: h ? h.innerText.slice(0, 50).replace(/\n/g, ' ') : '' }; }).slice(0, 16);
-  out.body = { font: getComputedStyle(document.body).fontFamily.slice(0, 90), size: getComputedStyle(document.body).fontSize, bg: getComputedStyle(document.body).backgroundColor, color: getComputedStyle(document.body).color };
+  // Keep the full font stack: truncating it mid-name produces an unterminated
+  // string downstream (the truncated stack became core.font.family.primary).
+  out.body = { font: getComputedStyle(document.body).fontFamily, size: getComputedStyle(document.body).fontSize, bg: getComputedStyle(document.body).backgroundColor, color: getComputedStyle(document.body).color };
   return out;
 }
 
