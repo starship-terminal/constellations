@@ -78,7 +78,7 @@ export async function createResearchStore(directory: string) {
     const version = Number(
       (await tx.execute("PRAGMA user_version")).rows[0].user_version,
     );
-    if (version > 27)
+    if (version > 28)
       throw new Error("Research database was created by a newer application.");
     if (version === 0) {
       for (const sql of migrations) await tx.execute(sql);
@@ -348,6 +348,16 @@ export async function createResearchStore(directory: string) {
       await seedNewCuratedCategories(tx, new Set(["systems:cofounder"]));
       await seedNewCuratedMediaTerms(tx, new Set(["systems:cofounder"]));
       await tx.execute("PRAGMA user_version = 27");
+    }
+    if (version < 28) {
+      // Same one-shot top-up, scoped to this batch's new reference: a store
+      // already at v27 never re-seeds, so the Cohere rows would never
+      // arrive. Scoping keeps cleared labels on older packages cleared — an
+      // empty assignment reads as "never labelled", so an unscoped pass
+      // would restore rows the user deleted.
+      await seedNewCuratedCategories(tx, new Set(["systems:cohere"]));
+      await seedNewCuratedMediaTerms(tx, new Set(["systems:cohere"]));
+      await tx.execute("PRAGMA user_version = 28");
     }
     await tx.commit();
   } catch (error) {

@@ -1521,5 +1521,13 @@
       "Productivity"
     ],
     "reason": "catalog.json describes Cofounder's AI agent-orchestration marketing site: a pixel-art hero, an agent tools band, how-to guides, pricing cards and the Cofounder OS sign-in boundary."
+  },
+  {
+    "referenceId": "systems:cohere",
+    "groupId": "web-categories",
+    "labels": [
+      "AI Tool"
+    ],
+    "reason": "catalog.json describes Cohere's enterprise AI platform marketing site: the Command/North product pages, per-model pricing rate table, models overview, developer and customer-story surfaces, legal pages and the dashboard.cohere.com sign-in boundary."
   }
 ]

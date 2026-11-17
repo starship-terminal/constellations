@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 179,
-    "system_domains": 170,
-    "matched_domains": 140,
-    "missing_domains": 293,
+    "system_packages": 180,
+    "system_domains": 171,
+    "matched_domains": 141,
+    "missing_domains": 292,
     "system_domains_absent_from_catalog": 30
   },
   "matched": {
@@ -923,6 +923,23 @@
           "slug": "cofounder",
           "name": "Cofounder",
           "url": "https://cofounder.co",
+          "name_match": true
+        }
+      ]
+    },
+    "cohere.com": {
+      "catalog": [
+        {
+          "name": "Cohere",
+          "domain": "cohere.com",
+          "id": 576
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "cohere",
+          "name": "Cohere",
+          "url": "https://cohere.com",
           "name_match": true
         }
       ]
@@ -2473,13 +2490,6 @@
         "name": "Clay",
         "domain": "clay.earth",
         "id": 658
-      }
-    ],
-    "cohere.com": [
-      {
-        "name": "Cohere",
-        "domain": "cohere.com",
-        "id": 576
       }
     ],
     "coinbase.com": [
