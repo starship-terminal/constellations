@@ -15119,7 +15119,8 @@
      "full-page mobile captures are bounded and tiled (.partN), with the clip in each .capture.json sidecar"
     ],
     "durationMin": 240,
-    "durationNote": "wall-clock across the capture sessions including the regional-redirect investigation, kit adaptation, the stylesheet harvest, the screenshot pass, the measurement pass, icon/motion/layout probes and the offline build"
+    "durationNote": "wall-clock across the capture sessions including the regional-redirect investigation, kit adaptation, the stylesheet harvest, the screenshot pass, the measurement pass, icon/motion/layout probes and the offline build",
+    "pr": "https://github.com/starship-terminal/constellations/pull/628"
    }
   }
  ]
