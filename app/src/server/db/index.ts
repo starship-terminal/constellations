@@ -339,6 +339,16 @@ export async function createResearchStore(directory: string) {
       await seedNewCuratedMediaTerms(tx, new Set(["systems:gumroad"]));
       await tx.execute("PRAGMA user_version = 26");
     }
+    if (version < 27) {
+      // Same one-shot top-up, scoped to this batch's new reference: a store
+      // already at v26 never re-seeds, so the Hitchd rows would never
+      // arrive. Scoping keeps cleared labels on older packages cleared — an
+      // empty assignment reads as "never labelled", so an unscoped pass
+      // would restore rows the user deleted.
+      await seedNewCuratedCategories(tx, new Set(["systems:hitchd"]));
+      await seedNewCuratedMediaTerms(tx, new Set(["systems:hitchd"]));
+      await tx.execute("PRAGMA user_version = 27");
+    }
     await tx.commit();
   } catch (error) {
     await tx.rollback();

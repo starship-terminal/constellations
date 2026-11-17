@@ -1,0 +1,86 @@
+{
+  "F1": {
+    "grade": "partly",
+    "evidence": "Hitchd declares almost no custom properties (~10 radio-control flags), so the palette is measured: 10 flat colours in core.palette (ink #000000, cream #f6f3ef, heroInk/paper whites, muted #484a4c, fieldLine #d2d2d7, disabled greys, registry white, giftPrice #545759). No per-hue ramp exists on the site to capture."
+  },
+  "F2": {
+    "grade": "partly",
+    "evidence": "light.color.surface covers page (auth body #ffffff), cream (announcement strip), modal, menu and footer, all measured. Raised/overlay/scrim are not separated roles on the public surface - the modal paints flat white over the list."
+  },
+  "F3": {
+    "grade": "partly",
+    "evidence": "Primary (text.ink), secondary (text.muted), inverse-on-photo (text.inverse), link, disabled label (action.disabledInk), hashtag, price and lead roles are measured. An on-accent text role does not exist publicly: the CTA is a teal text link and the pills are disabled."
+  },
+  "F4": {
+    "grade": "partly",
+    "evidence": "border.field (1px #d2d2d7 on the auth inputs) is measured. No strong or focus border role paints on the public surface - a field's focus ring is only reachable by focusing toward sign-in, a documented boundary."
+  },
+  "F5": {
+    "grade": "partly",
+    "evidence": "Accents are measured at default only: the teal Try It Free link #008cba, the disabled Continue pill #cdcfd0 and the disabled Give pill #c5c8ca. Hover and pressed were never forced (the only enabled control is a nav link; the auth/Give presses are the boundary)."
+  },
+  "F6": {
+    "grade": "missing",
+    "evidence": "No success, warning, danger or info colour appears on any captured surface or in the stylesheet harvest - the signed-out product carries no status components."
+  },
+  "F7": {
+    "grade": "meets",
+    "evidence": "Hitchd paints one light theme and every semantic role the package ships lives inside it. No dark variant, theme attribute or theme control exists on any surveyed page or app, so there is no parity gap."
+  },
+  "F8": {
+    "grade": "meets",
+    "evidence": "Five named families with real fallback stacks (DDNR display, Inter Variable text/auth/article, the registry's own display face 'classic'), a 10-step measured size scale (88px hero to 14px helper), weights 100-600, line heights and tracking, all measured per element."
+  },
+  "F9": {
+    "grade": "partly",
+    "evidence": "Five measured spacing tokens from real components (strip padding, field x-padding, button padding, card and modal padding). Hitchd publishes no spacing scale, so no stepped base unit exists to capture."
+  },
+  "F10": {
+    "grade": "meets",
+    "evidence": "Corner radii measured per component (field 8px, auth/Give pills 50px and 100px, card, modal, CTA) plus the 1px field border width - the shape layer the public surface actually uses."
+  },
+  "F11": {
+    "grade": "partly",
+    "evidence": "Control geometry is measured per component (field 450x48, submit 48px high, Give pill 50px, closure header 96px, banner 98px, registry banner) and icon glyphs measured (24x24). The focus ring's width/offset was never capturable - documented gap."
+  },
+  "F12": {
+    "grade": "partly",
+    "evidence": "Component shadows are parsed into DTCG layers where they paint (card, modal, header checks; most Hitchd surfaces are flat). No named elevation levels are published by the product."
+  },
+  "F13": {
+    "grade": "meets",
+    "evidence": "145 moving transitions measured across 6 pages into core.motion duration and easing token groups (dominant 0.15s ease-in/ease-in-out); the probe records that the site ignores prefers-reduced-motion - measured, not assumed."
+  },
+  "F14": {
+    "grade": "partly",
+    "evidence": "raw/layout.json holds 22 page passes (landmarks, Foundation .row/.grid-x bands, fixed/sticky layers, scrollers) at both widths plus measured component geometry; Hitchd publishes no breakpoint or content-width scale as tokens."
+  },
+  "C1": {
+    "grade": "partly",
+    "evidence": "About 8 of 19 checklist components paint publicly: button (Continue and Give pills), link (nav/footer/hashtag/CTA), text field (auth input), select (Sort by), menu (the hidden .mobile-menu drawer), dialog (gift modal), card (gift tile, blog row, auth card). Icon button, text area, checkbox, radio, switch, tabs, tooltip, toast, table, avatar and badge do not appear on the signed-out surface."
+  },
+  "C2": {
+    "grade": "partly",
+    "evidence": "Beyond default: the Sort by select's opened state and its filtered ('Still needed') state, the gift modal opened by its own card tap, and disabled buttons (Continue, Give) captured as real states. Hover/focus-visible/pressed were never forced on the auth controls - a documented gap."
+  },
+  "C3": {
+    "grade": "missing",
+    "evidence": "No focus ring is captured: focusing a field is the first step of signing in and was never done; the rest of the public surface shows no focus-visible painting."
+  },
+  "C4": {
+    "grade": "meets",
+    "evidence": "components.md states the convention up front and every colour in its tables is followed by the palette token it matches; the spec values cite token names, not raw hex."
+  },
+  "P1": {
+    "grade": "partly",
+    "evidence": "patterns.md covers the closure chrome stack, the content/prose pages, the auth card form pattern, the registry header/filter/gift-grid composition and the gift modal, plus a boundaries table. Empty/loading/error, onboarding and destructive patterns do not exist on the public surface."
+  },
+  "A1": {
+    "grade": "partly",
+    "evidence": "3 inline SVGs lifted to icons/unnamed/ plus 58 linked SVG references indexed in icons/INDEX.tsv (Hitchd's glyphs carry no names in the DOM). Fonts are named with provenance: DDNR + Inter Variable self-hosted, ~20 registry display faces, Google-served text faces - licences not published."
+  },
+  "K1": {
+    "grade": "meets",
+    "evidence": "README states what was captured (three surfaces, two widths, one theme), how (read-only, at rest), the exact boundaries (auth, money path, internal-route bounces, redirected routes, the /blog truncation) and what to distrust."
+  }
+}

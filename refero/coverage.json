@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 178,
-    "system_domains": 169,
-    "matched_domains": 139,
-    "missing_domains": 294,
+    "system_packages": 179,
+    "system_domains": 170,
+    "matched_domains": 140,
+    "missing_domains": 293,
     "system_domains_absent_from_catalog": 30
   },
   "matched": {
@@ -2287,6 +2287,23 @@
         }
       ]
     },
+    "hitchd.com": {
+      "catalog": [
+        {
+          "name": "Hitchd",
+          "domain": "hitchd.com",
+          "id": 786
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "hitchd",
+          "name": "Hitchd",
+          "url": "https://www.hitchd.com",
+          "name_match": true
+        }
+      ]
+    },
     "linear.app": {
       "catalog": [
         {
@@ -2638,13 +2655,6 @@
         "name": "Hello Klean",
         "domain": "helloklean.com",
         "id": 633
-      }
-    ],
-    "hitchd.com": [
-      {
-        "name": "Hitchd",
-        "domain": "hitchd.com",
-        "id": 786
       }
     ],
     "homerun.co": [

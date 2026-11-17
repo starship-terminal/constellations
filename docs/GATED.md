@@ -10,7 +10,7 @@ incomplete — the capture was scoped to public surfaces on purpose — it is
 the queue for any future authenticated pass, which needs the owner's
 account and a fresh capture contract (docs/CAPTURE.md, docs/RIGHTS.md).
 
-_120 of 178 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
+_121 of 179 packages name gated surfaces in their gaps; 51 more mark a gate in their access text; 7 report none._
 
 ## [aaply](../systems/aaply) — `aaply`
 Access: signed out (every surface captured is public; the app host go.aaply.app returned "Not found" on every route and was not captured)
@@ -682,6 +682,11 @@ Access: signed out (every captured surface is public gumroad.com or a public cre
 - post-login surfaces: the seller dashboard (products, sales, payouts, analytics), the buyer library and account settings were never reached - the capture was signed out end to end
 - search results: the marketplace search fields were measured empty; no query was ever submitted
 - checkout beyond the empty public form: payment, confirmation and post-purchase screens were never reached
+
+## [Hitchd](../systems/hitchd) — `hitchd`
+Access: signed out (the marketing pages, content pages and demo registries are fully public; the auth forms were read at rest - nothing was focused, typed or submitted; the gift modal's Give/contribute flow and every payment step were never entered; the registry's internal routes /contributions, /payment-methods, /ask and /quick-thanks bounce the guest to / and were recorded as boundaries)
+- focus/hover/pressed states on the auth controls were never forced (focusing a field is the first step of signing in)
+- the registry's internal routes (/contributions, /payment-methods, /ask, /quick-thanks) bounce the signed-out guest to /
 
 ## Gate noted in access text only
 
